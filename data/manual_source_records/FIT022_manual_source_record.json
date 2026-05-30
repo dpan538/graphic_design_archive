@@ -1,0 +1,150 @@
+{
+  "recordStatus": "candidate",
+  "captureMethod": "manual",
+  "enteredBy": "Codex",
+  "enteredDate": "2026-05-30",
+  "source": {
+    "sourceId": "SRC025",
+    "sourceName": "Internet Archive",
+    "sourceRecordUrl": "https://archive.org/details/shmh-1928.05.19",
+    "sourceIdentifier": "shmh-1928.05.19",
+    "accessDate": "2026-05-30"
+  },
+  "sourceMetadata": {
+    "sourceTitle": "上海漫畫 1928.05.19 第五期",
+    "sourceCreator": "上海漫畫",
+    "sourceCreatorRole": "creator_or_institution_from_target",
+    "sourceDateText": "1928-05-19",
+    "sourcePlaceText": "China / web holding",
+    "sourceObjectType": "periodical issue",
+    "sourceHoldingInstitution": "Internet Archive",
+    "sourceCollection": "",
+    "sourceDescription": "Issue-level record for the Shanghai Manhua / 上海漫畫 periodical issue dated 1928-05-19. Use this as a parent source for page-level graphic material, pictorial/comics layout, advertising fragments, and Shanghai urban visual culture; scans remain source-linked only until reuse terms and object/page boundaries are reviewed.",
+    "sourceRightsText": "Internet Archive issue page",
+    "sourceRightsUri": "",
+    "sourceCreditLine": ""
+  },
+  "normalizedMetadata": {
+    "normalizedTitle": "上海漫畫 1928.05.19 第五期",
+    "normalizedDateStart": 1928,
+    "normalizedDateEnd": 1928,
+    "normalizedPlace": "China / web holding",
+    "historicalNodeIds": [
+      "HN005",
+      "HN007",
+      "HN013"
+    ],
+    "movementIds": [],
+    "themeTerms": [
+      "shanghai_manhua"
+    ],
+    "language": ""
+  },
+  "rights": {
+    "rightsState": "link_only",
+    "imageUsePolicy": "do_not_display",
+    "metadataPolicy": "source metadata may be indexed with citation",
+    "thumbnailPolicy": "not displayed",
+    "fullImagePolicy": "not displayed",
+    "localCopyPermitted": false,
+    "rightsBasis": "Image presence IMG00. The source page may contain scan/reader access, but this project has no item-level display permission or stable image-use evidence. Ingest issue metadata and source link only; render an empty image frame with rights text.",
+    "rightsReviewRequired": true,
+    "rightsReviewer": "",
+    "rightsReviewDate": "",
+    "rightsNotes": "IMG00 requires an empty image frame with rights/status text and a source link."
+  },
+  "citation": {
+    "citationText": "Internet Archive. \"上海漫畫 1928.05.19 第五期.\" Accessed 2026-05-30. https://archive.org/details/shmh-1928.05.19",
+    "citationStyle": "project_draft",
+    "citationUrl": "https://archive.org/details/shmh-1928.05.19",
+    "accessDate": "2026-05-30"
+  },
+  "publicationDisplay": {
+    "imagePresenceCode": "IMG00",
+    "imagePresenceBasis": "ready_manual_link_only_issue: Internet Archive exact issue page opened with title, issue date, identifier, and reader/embed affordances. Treat as image-present but non-renderable here; supplementary context should be checked against Shanghai Manhua research and page-level issue scans before any image display.",
+    "imageFrameBehavior": "empty_rights_frame",
+    "imageSizePolicy": "template_defined",
+    "layoutNote": "Image size is selected by the publication template; IMG code only controls image presence and display permission state."
+  },
+  "classifications": [
+    {
+      "classificationType": "first_ingest_scope_cell",
+      "classificationValue": "C07",
+      "source": "controlled_vocabulary",
+      "confidence": "high",
+      "reviewer": "Codex",
+      "note": "Shanghai Sketch / yuefenpai first-ingest cell"
+    },
+    {
+      "classificationType": "record_family",
+      "classificationValue": "periodical issue",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from first-ingest target selection."
+    },
+    {
+      "classificationType": "image_presence_code",
+      "classificationValue": "IMG00",
+      "source": "editorial_judgment",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Ingest issue metadata only and no image display"
+    },
+    {
+      "classificationType": "historical_node",
+      "classificationValue": "HN005",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from first-ingest scope cell; requires record-level confirmation."
+    },
+    {
+      "classificationType": "historical_node",
+      "classificationValue": "HN007",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from first-ingest scope cell; requires record-level confirmation."
+    },
+    {
+      "classificationType": "historical_node",
+      "classificationValue": "HN013",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from first-ingest scope cell; requires record-level confirmation."
+    },
+    {
+      "classificationType": "movement_or_regional_formation",
+      "classificationValue": "RM081",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from scope cell; may be regional movement rather than canonical MV term."
+    },
+    {
+      "classificationType": "regional_event_node",
+      "classificationValue": "REN055",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from first-ingest scope cell."
+    }
+  ],
+  "relations": [],
+  "uncertaintyNotes": [
+    {
+      "field": "rights",
+      "issue": "manual_review_required",
+      "displayNote": "Rights state is a conservative draft and must be verified against the source record before publication.",
+      "internalNote": "Ingest issue metadata only; preserve empty image frame because source-side scan evidence exists but project display rights are not cleared."
+    },
+    {
+      "field": "classification",
+      "issue": "scope_cell_inherited",
+      "displayNote": "Historical classifications are inherited from the first-ingest scope cell until source-level metadata is reviewed.",
+      "internalNote": "Issue-level periodical parent for Shanghai pictorial/comics/advertising material; page-level children can be promoted later if rights and object boundaries are verified."
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "recordStatus": "candidate",
+  "captureMethod": "manual",
+  "enteredBy": "Codex",
+  "enteredDate": "2026-05-30",
+  "source": {
+    "sourceId": "SRC055",
+    "sourceName": "Getty ULAN",
+    "sourceRecordUrl": "https://www.getty.edu/vow/ULANFullDisplay?subjectid=500028112",
+    "sourceIdentifier": "subjectid:500028112",
+    "accessDate": "2026-05-30"
+  },
+  "sourceMetadata": {
+    "sourceTitle": "Walter Gropius authority record",
+    "sourceCreator": "Walter Gropius",
+    "sourceCreatorRole": "creator_or_institution_from_target",
+    "sourceDateText": "1883-1969",
+    "sourcePlaceText": "Germany / US",
+    "sourceObjectType": "authority record",
+    "sourceHoldingInstitution": "Getty ULAN",
+    "sourceCollection": "",
+    "sourceDescription": "Authority-only normalization target",
+    "sourceRightsText": "Getty ULAN person record",
+    "sourceRightsUri": "",
+    "sourceCreditLine": ""
+  },
+  "normalizedMetadata": {
+    "normalizedTitle": "Walter Gropius authority record",
+    "normalizedDateStart": 1883,
+    "normalizedDateEnd": 1969,
+    "normalizedPlace": "Germany / US",
+    "historicalNodeIds": [
+      "HN008",
+      "HN014"
+    ],
+    "movementIds": [],
+    "themeTerms": [
+      "bauhaus"
+    ],
+    "language": ""
+  },
+  "rights": {
+    "rightsState": "metadata_open",
+    "imageUsePolicy": "metadata_only",
+    "metadataPolicy": "text/authority/event metadata may be indexed with citation",
+    "thumbnailPolicy": "not applicable",
+    "fullImagePolicy": "not applicable",
+    "localCopyPermitted": false,
+    "rightsBasis": "Image presence IMG04. Ingest as authority record. Default policy follows the project rule that image display must be justified by item-level evidence.",
+    "rightsReviewRequired": false,
+    "rightsReviewer": "",
+    "rightsReviewDate": "",
+    "rightsNotes": "IMG04 means the publication page has no image frame; it is not a copyright clearance tier."
+  },
+  "citation": {
+    "citationText": "Getty ULAN. \"Walter Gropius authority record.\" Accessed 2026-05-30. https://www.getty.edu/vow/ULANFullDisplay?subjectid=500028112",
+    "citationStyle": "project_draft",
+    "citationUrl": "https://www.getty.edu/vow/ULANFullDisplay?subjectid=500028112",
+    "accessDate": "2026-05-30"
+  },
+  "publicationDisplay": {
+    "imagePresenceCode": "IMG04",
+    "imagePresenceBasis": "ready_manual_text_authority: Getty ULAN result confirms Walter Gropius authority ID variants roles and dates",
+    "imageFrameBehavior": "no_image_frame",
+    "imageSizePolicy": "not_applicable",
+    "layoutNote": "Image size is selected by the publication template; IMG code only controls image presence and display permission state."
+  },
+  "classifications": [
+    {
+      "classificationType": "first_ingest_scope_cell",
+      "classificationValue": "C01",
+      "source": "controlled_vocabulary",
+      "confidence": "high",
+      "reviewer": "Codex",
+      "note": "Bauhaus / 1919 founding first-ingest cell"
+    },
+    {
+      "classificationType": "record_family",
+      "classificationValue": "authority record",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from first-ingest target selection."
+    },
+    {
+      "classificationType": "image_presence_code",
+      "classificationValue": "IMG04",
+      "source": "editorial_judgment",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Ingest as authority record"
+    },
+    {
+      "classificationType": "historical_node",
+      "classificationValue": "HN008",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from first-ingest scope cell; requires record-level confirmation."
+    },
+    {
+      "classificationType": "historical_node",
+      "classificationValue": "HN014",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from first-ingest scope cell; requires record-level confirmation."
+    },
+    {
+      "classificationType": "movement_or_regional_formation",
+      "classificationValue": "RM075",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from scope cell; may be regional movement rather than canonical MV term."
+    },
+    {
+      "classificationType": "regional_event_node",
+      "classificationValue": "REN049",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from first-ingest scope cell."
+    }
+  ],
+  "relations": [],
+  "uncertaintyNotes": [
+    {
+      "field": "rights",
+      "issue": "manual_review_required",
+      "displayNote": "Rights state is a conservative draft and must be verified against the source record before publication.",
+      "internalNote": "Ingest as authority record"
+    },
+    {
+      "field": "classification",
+      "issue": "scope_cell_inherited",
+      "displayNote": "Historical classifications are inherited from the first-ingest scope cell until source-level metadata is reviewed.",
+      "internalNote": "Authority-only normalization target"
+    }
+  ]
+}

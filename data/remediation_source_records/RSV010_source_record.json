@@ -1,0 +1,115 @@
+{
+  "recordStatus": "candidate",
+  "captureMethod": "manual",
+  "enteredBy": "Codex",
+  "enteredDate": "2026-05-30",
+  "source": {
+    "sourceId": "SRC052",
+    "sourceName": "South African History Archive",
+    "sourceRecordUrl": "https://www.saha.org.za/collections/AL2446/2619_2.htm",
+    "sourceIdentifier": "2619_2.htm",
+    "accessDate": "2026-05-30"
+  },
+  "sourceMetadata": {
+    "sourceTitle": "THERE SHALL BE WORK AND SECURITY ALL SHALL ENJOY EQUAL HUMAN RIGHTS AFRICA MAYIBUYE THE PEOPLE SHALL GOVERN",
+    "sourceCreator": "",
+    "sourceCreatorRole": "",
+    "sourceDateText": "1982",
+    "sourcePlaceText": "",
+    "sourceObjectType": "poster item record",
+    "sourceHoldingInstitution": "South African History Archive",
+    "sourceCollection": "",
+    "sourceDescription": "SAHA exact item page confirms call number 2619, identifier AL2446_2619, title, date, subject, description, creator Judy Seidman/Medu Art Ensemble, type, format, source, language, coverage, and rights note.",
+    "sourceRightsText": "SAHA states copyright may be held by individual postermakers/organizations; keep external/source viewing only.",
+    "sourceRightsUri": "",
+    "sourceCreditLine": "South African History Archive"
+  },
+  "normalizedMetadata": {
+    "normalizedTitle": "THERE SHALL BE WORK AND SECURITY ALL SHALL ENJOY EQUAL HUMAN RIGHTS AFRICA MAYIBUYE THE PEOPLE SHALL GOVERN",
+    "normalizedDateStart": 1982,
+    "normalizedDateEnd": 1982,
+    "normalizedPlace": "",
+    "historicalNodeIds": [],
+    "movementIds": [],
+    "themeTerms": [
+      "C12",
+      "remediation"
+    ],
+    "language": ""
+  },
+  "rights": {
+    "rightsState": "link_only",
+    "imageUsePolicy": "do_not_display",
+    "metadataPolicy": "source metadata may be indexed with citation",
+    "thumbnailPolicy": "not displayed",
+    "fullImagePolicy": "not displayed",
+    "localCopyPermitted": false,
+    "rightsBasis": "SAHA states copyright may be held by individual postermakers/organizations; keep external/source viewing only.",
+    "rightsReviewRequired": true,
+    "rightsReviewer": "",
+    "rightsReviewDate": "",
+    "rightsNotes": "IMG00 requires an empty image frame with rights/status text and a source link."
+  },
+  "citation": {
+    "citationText": "South African History Archive. \"THERE SHALL BE WORK AND SECURITY ALL SHALL ENJOY EQUAL HUMAN RIGHTS AFRICA MAYIBUYE THE PEOPLE SHALL GOVERN.\" Accessed 2026-05-30. https://www.saha.org.za/collections/AL2446/2619_2.htm",
+    "citationStyle": "project_draft",
+    "citationUrl": "https://www.saha.org.za/collections/AL2446/2619_2.htm",
+    "accessDate": "2026-05-30"
+  },
+  "publicationDisplay": {
+    "imagePresenceCode": "IMG00",
+    "imagePresenceBasis": "SAHA exact item page confirms call number 2619, identifier AL2446_2619, title, date, subject, description, creator Judy Seidman/Medu Art Ensemble, type, format, source, language, coverage, and rights note.",
+    "imageFrameBehavior": "empty_rights_frame",
+    "imageSizePolicy": "template_defined",
+    "layoutNote": "Image state controls display permission only; size remains template-defined."
+  },
+  "classifications": [
+    {
+      "classificationType": "remediation_verification",
+      "classificationValue": "RSV010",
+      "source": "editorial_judgment",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "promote_to_candidate_after_source_capture"
+    },
+    {
+      "classificationType": "first_ingest_scope_cell",
+      "classificationValue": "C12",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from fallback remediation verification."
+    },
+    {
+      "classificationType": "record_family",
+      "classificationValue": "poster item record",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Derived from remediation verification row."
+    },
+    {
+      "classificationType": "image_presence_code",
+      "classificationValue": "IMG00",
+      "source": "editorial_judgment",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "SAHA states copyright may be held by individual postermakers/organizations; keep external/source viewing only."
+    }
+  ],
+  "relations": [],
+  "uncertaintyNotes": [
+    {
+      "field": "source",
+      "issue": "remediation_candidate",
+      "displayNote": "This candidate was created from a remediation verification pass and still requires source-field capture.",
+      "internalNote": "Need source-level field capture into manual source record."
+    },
+    {
+      "field": "promotion",
+      "issue": "not_original_target_when_contextual",
+      "displayNote": "Some remediation records are contextual replacements rather than exact replacements for the original target.",
+      "internalNote": "promote_to_candidate_after_source_capture"
+    }
+  ]
+}

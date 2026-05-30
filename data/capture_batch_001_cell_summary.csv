@@ -1,0 +1,23 @@
+cell_id,cell_name,cell_type,assigned_count,img00_count,img01_count,img02_count,img03_count,img04_count,source_names,sample_capture_ids,cell_status,next_generation_action
+C01,Bauhaus / 1919 founding,existing_scope_cell,0,0,0,0,0,0,,,empty_after_capture,Needs targeted query/source plan in the next generation.
+C02,Polish Poster School,existing_scope_cell,1,0,0,0,0,1,Library of Congress loc.gov API,ECAP043,has_candidates,Review candidates against cell definition before source-record generation.
+C03,IBM corporate design,existing_scope_cell,0,0,0,0,0,0,,,empty_after_capture,Needs targeted query/source plan in the next generation.
+C04,Taller de Grafica Popular,existing_scope_cell,1,0,0,1,0,0,V&A Collections API,ECAP028,has_candidates,Review candidates against cell definition before source-record generation.
+C05,Brigadas Ramona Parra,existing_scope_cell,0,0,0,0,0,0,,,empty_after_capture,Needs targeted query/source plan in the next generation.
+C06,World Design Conference 1960 / NDC,existing_scope_cell,0,0,0,0,0,0,,,empty_after_capture,Needs targeted query/source plan in the next generation.
+C07,Shanghai Sketch / yuefenpai,existing_scope_cell,0,0,0,0,0,0,,,empty_after_capture,Needs targeted query/source plan in the next generation.
+C08,Minjung / Kwangju poster,existing_scope_cell,0,0,0,0,0,0,,,empty_after_capture,Needs targeted query/source plan in the next generation.
+C09,Singapore multilingual poster/logotype,existing_scope_cell,0,0,0,0,0,0,,,empty_after_capture,Needs targeted query/source plan in the next generation.
+C10,NID development communication,existing_scope_cell,0,0,0,0,0,0,,,empty_after_capture,Needs targeted query/source plan in the next generation.
+C11,Iranian modern poster design,existing_scope_cell,0,0,0,0,0,0,,,empty_after_capture,Needs targeted query/source plan in the next generation.
+C12,Medu / Culture and Resistance,existing_scope_cell,4,0,0,2,0,2,V&A Collections API,ECAP027; ECAP033; ECAP034; ECAP036,has_candidates,Review candidates against cell definition before source-record generation.
+C13,NAIDOC / land-rights posters,existing_scope_cell,0,0,0,0,0,0,,,empty_after_capture,Needs targeted query/source plan in the next generation.
+C14,Gran Fury / ACT UP,existing_scope_cell,1,0,0,0,0,1,Library of Congress loc.gov API,ECAP042,has_candidates,Review candidates against cell definition before source-record generation.
+C15,Early web / CSS / GeoCities,existing_scope_cell,0,0,0,0,0,0,,,empty_after_capture,Needs targeted query/source plan in the next generation.
+PC01,Art Nouveau and Belle Epoque poster culture,proposed_new_cell,6,0,0,0,6,0,Art Institute of Chicago API; Cleveland Museum Open Access API,ECAP002; ECAP003; ECAP015; ECAP016; ECAP019,new_cell_candidate,Decide whether to add this proposed cell to the historical framework.
+PC02,World War public-information and propaganda posters,proposed_new_cell,8,3,3,0,0,2,Art Institute of Chicago API; Library of Congress loc.gov API,ECAP001; ECAP007; ECAP009; ECAP044; ECAP045,new_cell_candidate,Decide whether to add this proposed cell to the historical framework.
+PC03,1970s London political solidarity posters,proposed_new_cell,3,0,0,0,0,3,V&A Collections API,ECAP035; ECAP038; ECAP039,new_cell_candidate,Decide whether to add this proposed cell to the historical framework.
+PC04,South and Central Asian political poster collections,proposed_new_cell,1,0,0,0,0,1,Library of Congress loc.gov API,ECAP041,new_cell_candidate,Decide whether to add this proposed cell to the historical framework.
+PC05,Contemporary campaign graphics and network circulation,proposed_new_cell,1,1,0,0,0,0,Art Institute of Chicago API,ECAP008,new_cell_candidate,Decide whether to add this proposed cell to the historical framework.
+PC06,Exhibition poster as design-history metadata,proposed_new_cell,4,2,0,2,0,0,Art Institute of Chicago API; V&A Collections API,ECAP006; ECAP011; ECAP029; ECAP030,new_cell_candidate,Decide whether to add this proposed cell to the historical framework.
+UNASSIGNED,Unassigned capture pool,unassigned_pool,20,6,1,3,7,3,Art Institute of Chicago API; Cleveland Museum Open Access API; Library of Congress loc.gov API; V&A Collections API,ECAP004; ECAP005; ECAP010; ECAP012; ECAP013,needs_review,Review unassigned rows and decide whether new cells are needed.

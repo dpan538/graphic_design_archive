@@ -1,0 +1,21 @@
+.DS_Store
+**/.DS_Store
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Node / Next
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env*
+
+# Local editor/system noise
+.idea/
+.vscode/
+*.swp
+
+# Temporary files
+*.tmp
+*.log

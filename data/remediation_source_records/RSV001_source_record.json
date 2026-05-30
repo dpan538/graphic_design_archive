@@ -1,0 +1,115 @@
+{
+  "recordStatus": "candidate",
+  "captureMethod": "manual",
+  "enteredBy": "Codex",
+  "enteredDate": "2026-05-30",
+  "source": {
+    "sourceId": "SRC063",
+    "sourceName": "Biblioteca Nacional Digital de Chile",
+    "sourceRecordUrl": "https://www.bibliotecanacionaldigital.gob.cl/bnd/649/w3-article-605531.html",
+    "sourceIdentifier": "605531",
+    "accessDate": "2026-05-30"
+  },
+  "sourceMetadata": {
+    "sourceTitle": "Contra la dictadura ... pintaremos hasta el cielo!! [estampa]",
+    "sourceCreator": "",
+    "sourceCreatorRole": "",
+    "sourceDateText": "[198-?]",
+    "sourcePlaceText": "",
+    "sourceObjectType": "poster record",
+    "sourceHoldingInstitution": "Biblioteca Nacional Digital de Chile",
+    "sourceCollection": "",
+    "sourceDescription": "Exact BND article page confirms title, physical description, BRP publication data, subject/classification, BND id 605531, and use/reproduction statement.",
+    "sourceRightsText": "Terms say use is exclusive to accredited researchers; keep metadata/link only.",
+    "sourceRightsUri": "",
+    "sourceCreditLine": "Biblioteca Nacional Digital de Chile"
+  },
+  "normalizedMetadata": {
+    "normalizedTitle": "Contra la dictadura ... pintaremos hasta el cielo!! [estampa]",
+    "normalizedDateStart": null,
+    "normalizedDateEnd": null,
+    "normalizedPlace": "",
+    "historicalNodeIds": [],
+    "movementIds": [],
+    "themeTerms": [
+      "C05",
+      "remediation"
+    ],
+    "language": ""
+  },
+  "rights": {
+    "rightsState": "link_only",
+    "imageUsePolicy": "do_not_display",
+    "metadataPolicy": "source metadata may be indexed with citation",
+    "thumbnailPolicy": "not displayed",
+    "fullImagePolicy": "not displayed",
+    "localCopyPermitted": false,
+    "rightsBasis": "Terms say use is exclusive to accredited researchers; keep metadata/link only.",
+    "rightsReviewRequired": true,
+    "rightsReviewer": "",
+    "rightsReviewDate": "",
+    "rightsNotes": "IMG00 requires an empty image frame with rights/status text and a source link."
+  },
+  "citation": {
+    "citationText": "Biblioteca Nacional Digital de Chile. \"Contra la dictadura ... pintaremos hasta el cielo!! [estampa].\" Accessed 2026-05-30. https://www.bibliotecanacionaldigital.gob.cl/bnd/649/w3-article-605531.html",
+    "citationStyle": "project_draft",
+    "citationUrl": "https://www.bibliotecanacionaldigital.gob.cl/bnd/649/w3-article-605531.html",
+    "accessDate": "2026-05-30"
+  },
+  "publicationDisplay": {
+    "imagePresenceCode": "IMG00",
+    "imagePresenceBasis": "Exact BND article page confirms title, physical description, BRP publication data, subject/classification, BND id 605531, and use/reproduction statement.",
+    "imageFrameBehavior": "empty_rights_frame",
+    "imageSizePolicy": "template_defined",
+    "layoutNote": "Image state controls display permission only; size remains template-defined."
+  },
+  "classifications": [
+    {
+      "classificationType": "remediation_verification",
+      "classificationValue": "RSV001",
+      "source": "editorial_judgment",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "promote_to_candidate_after_source_capture"
+    },
+    {
+      "classificationType": "first_ingest_scope_cell",
+      "classificationValue": "C05",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from fallback remediation verification."
+    },
+    {
+      "classificationType": "record_family",
+      "classificationValue": "poster record",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Derived from remediation verification row."
+    },
+    {
+      "classificationType": "image_presence_code",
+      "classificationValue": "IMG00",
+      "source": "editorial_judgment",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Terms say use is exclusive to accredited researchers; keep metadata/link only."
+    }
+  ],
+  "relations": [],
+  "uncertaintyNotes": [
+    {
+      "field": "source",
+      "issue": "remediation_candidate",
+      "displayNote": "This candidate was created from a remediation verification pass and still requires source-field capture.",
+      "internalNote": "Need source-level field capture into manual source record."
+    },
+    {
+      "field": "promotion",
+      "issue": "not_original_target_when_contextual",
+      "displayNote": "Some remediation records are contextual replacements rather than exact replacements for the original target.",
+      "internalNote": "promote_to_candidate_after_source_capture"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "recordStatus": "candidate",
+  "captureMethod": "manual",
+  "enteredBy": "Codex",
+  "enteredDate": "2026-05-30",
+  "source": {
+    "sourceId": "SRC064",
+    "sourceName": "NDL Search",
+    "sourceRecordUrl": "https://ndlsearch.ndl.go.jp/books/R100000002-I000001036466",
+    "sourceIdentifier": "I000001036466",
+    "accessDate": "2026-05-30"
+  },
+  "sourceMetadata": {
+    "sourceTitle": "世界デザイン会議議事録",
+    "sourceCreator": "",
+    "sourceCreatorRole": "",
+    "sourceDateText": "1961",
+    "sourcePlaceText": "",
+    "sourceObjectType": "bibliographic record",
+    "sourceHoldingInstitution": "NDL Search",
+    "sourceCollection": "",
+    "sourceDescription": "NDL search result confirms bibliographic ID 000001036466, persistent identifier info:ndljp/pid/8799615, editor, publisher, year, extent, and access limitations.",
+    "sourceRightsText": "Bibliographic metadata is public; digitized viewing/reuse is restricted or access-limited; no image frame.",
+    "sourceRightsUri": "",
+    "sourceCreditLine": "NDL Search"
+  },
+  "normalizedMetadata": {
+    "normalizedTitle": "世界デザイン会議議事録",
+    "normalizedDateStart": 1961,
+    "normalizedDateEnd": 1961,
+    "normalizedPlace": "",
+    "historicalNodeIds": [],
+    "movementIds": [],
+    "themeTerms": [
+      "C06",
+      "remediation"
+    ],
+    "language": ""
+  },
+  "rights": {
+    "rightsState": "metadata_limited",
+    "imageUsePolicy": "metadata_only",
+    "metadataPolicy": "source metadata may be indexed with citation",
+    "thumbnailPolicy": "not applicable",
+    "fullImagePolicy": "not applicable",
+    "localCopyPermitted": false,
+    "rightsBasis": "Bibliographic metadata is public; digitized viewing/reuse is restricted or access-limited; no image frame.",
+    "rightsReviewRequired": true,
+    "rightsReviewer": "",
+    "rightsReviewDate": "",
+    "rightsNotes": "IMG04 means no image frame; source media is not captured."
+  },
+  "citation": {
+    "citationText": "NDL Search. \"世界デザイン会議議事録.\" Accessed 2026-05-30. https://ndlsearch.ndl.go.jp/books/R100000002-I000001036466",
+    "citationStyle": "project_draft",
+    "citationUrl": "https://ndlsearch.ndl.go.jp/books/R100000002-I000001036466",
+    "accessDate": "2026-05-30"
+  },
+  "publicationDisplay": {
+    "imagePresenceCode": "IMG04",
+    "imagePresenceBasis": "NDL search result confirms bibliographic ID 000001036466, persistent identifier info:ndljp/pid/8799615, editor, publisher, year, extent, and access limitations.",
+    "imageFrameBehavior": "no_image_frame",
+    "imageSizePolicy": "not_applicable",
+    "layoutNote": "Text/source page; no image frame."
+  },
+  "classifications": [
+    {
+      "classificationType": "remediation_verification",
+      "classificationValue": "RSV004",
+      "source": "editorial_judgment",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "promote_to_candidate_after_source_capture"
+    },
+    {
+      "classificationType": "first_ingest_scope_cell",
+      "classificationValue": "C06",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from fallback remediation verification."
+    },
+    {
+      "classificationType": "record_family",
+      "classificationValue": "bibliographic record",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Derived from remediation verification row."
+    },
+    {
+      "classificationType": "image_presence_code",
+      "classificationValue": "IMG04",
+      "source": "editorial_judgment",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Bibliographic metadata is public; digitized viewing/reuse is restricted or access-limited; no image frame."
+    }
+  ],
+  "relations": [],
+  "uncertaintyNotes": [
+    {
+      "field": "source",
+      "issue": "remediation_candidate",
+      "displayNote": "This candidate was created from a remediation verification pass and still requires source-field capture.",
+      "internalNote": "Need capture of NDL fields and optional authority link."
+    },
+    {
+      "field": "promotion",
+      "issue": "not_original_target_when_contextual",
+      "displayNote": "Some remediation records are contextual replacements rather than exact replacements for the original target.",
+      "internalNote": "promote_to_candidate_after_source_capture"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "archive-box-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Rights-aware archive index reading prototype for modern graphic design history.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^15.5.18",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.23",
+    "postcss": "^8.4.49",
+    "puppeteer-core": "^25.1.0",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3"
+  }
+}

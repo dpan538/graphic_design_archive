@@ -1,0 +1,141 @@
+{
+  "recordStatus": "candidate",
+  "captureMethod": "manual",
+  "enteredBy": "Codex",
+  "enteredDate": "2026-05-30",
+  "source": {
+    "sourceId": "SRC049",
+    "sourceName": "W3C",
+    "sourceRecordUrl": "https://www.w3.org/TR/REC-CSS1-961217",
+    "sourceIdentifier": "REC-CSS1-961217",
+    "accessDate": "2026-05-30"
+  },
+  "sourceMetadata": {
+    "sourceTitle": "Cascading Style Sheets level 1 Recommendation",
+    "sourceCreator": "W3C; Hakon Wium Lie; Bert Bos",
+    "sourceCreatorRole": "creator_or_institution_from_target",
+    "sourceDateText": "1996-12-17",
+    "sourcePlaceText": "Web / transnational",
+    "sourceObjectType": "web capture",
+    "sourceHoldingInstitution": "W3C",
+    "sourceCollection": "",
+    "sourceDescription": "Standards record grounding CSS as interface visual culture infrastructure",
+    "sourceRightsText": "W3C Recommendation page",
+    "sourceRightsUri": "",
+    "sourceCreditLine": ""
+  },
+  "normalizedMetadata": {
+    "normalizedTitle": "Cascading Style Sheets level 1 Recommendation",
+    "normalizedDateStart": 1996,
+    "normalizedDateEnd": 1996,
+    "normalizedPlace": "Web / transnational",
+    "historicalNodeIds": [
+      "HN015",
+      "HN014"
+    ],
+    "movementIds": [],
+    "themeTerms": [
+      "early_web_css_geocities"
+    ],
+    "language": ""
+  },
+  "rights": {
+    "rightsState": "metadata_open",
+    "imageUsePolicy": "metadata_only",
+    "metadataPolicy": "text/authority/event metadata may be indexed with citation",
+    "thumbnailPolicy": "not applicable",
+    "fullImagePolicy": "not applicable",
+    "localCopyPermitted": false,
+    "rightsBasis": "Image presence IMG04. Ingest as standards/text page. Default policy follows the project rule that image display must be justified by item-level evidence.",
+    "rightsReviewRequired": false,
+    "rightsReviewer": "",
+    "rightsReviewDate": "",
+    "rightsNotes": "IMG04 means the publication page has no image frame; it is not a copyright clearance tier."
+  },
+  "citation": {
+    "citationText": "W3C. \"Cascading Style Sheets level 1 Recommendation.\" Accessed 2026-05-30. https://www.w3.org/TR/REC-CSS1-961217",
+    "citationStyle": "project_draft",
+    "citationUrl": "https://www.w3.org/TR/REC-CSS1-961217",
+    "accessDate": "2026-05-30"
+  },
+  "publicationDisplay": {
+    "imagePresenceCode": "IMG04",
+    "imagePresenceBasis": "ready_manual_text_standard: W3C CSS1 Recommendation page opened as stable standards document",
+    "imageFrameBehavior": "no_image_frame",
+    "imageSizePolicy": "not_applicable",
+    "layoutNote": "Image size is selected by the publication template; IMG code only controls image presence and display permission state."
+  },
+  "classifications": [
+    {
+      "classificationType": "first_ingest_scope_cell",
+      "classificationValue": "C15",
+      "source": "controlled_vocabulary",
+      "confidence": "high",
+      "reviewer": "Codex",
+      "note": "Early web / CSS / GeoCities first-ingest cell"
+    },
+    {
+      "classificationType": "record_family",
+      "classificationValue": "web capture",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from first-ingest target selection."
+    },
+    {
+      "classificationType": "image_presence_code",
+      "classificationValue": "IMG04",
+      "source": "editorial_judgment",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Ingest as standards/text page"
+    },
+    {
+      "classificationType": "historical_node",
+      "classificationValue": "HN015",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from first-ingest scope cell; requires record-level confirmation."
+    },
+    {
+      "classificationType": "historical_node",
+      "classificationValue": "HN014",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from first-ingest scope cell; requires record-level confirmation."
+    },
+    {
+      "classificationType": "movement_or_regional_formation",
+      "classificationValue": "RM089",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from scope cell; may be regional movement rather than canonical MV term."
+    },
+    {
+      "classificationType": "regional_event_node",
+      "classificationValue": "REN063",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from first-ingest scope cell."
+    }
+  ],
+  "relations": [],
+  "uncertaintyNotes": [
+    {
+      "field": "rights",
+      "issue": "manual_review_required",
+      "displayNote": "Rights state is a conservative draft and must be verified against the source record before publication.",
+      "internalNote": "Ingest as standards/text page"
+    },
+    {
+      "field": "classification",
+      "issue": "scope_cell_inherited",
+      "displayNote": "Historical classifications are inherited from the first-ingest scope cell until source-level metadata is reviewed.",
+      "internalNote": "Standards record grounding CSS as interface visual culture infrastructure"
+    }
+  ]
+}

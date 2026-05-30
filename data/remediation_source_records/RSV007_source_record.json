@@ -1,0 +1,115 @@
+{
+  "recordStatus": "candidate",
+  "captureMethod": "manual",
+  "enteredBy": "Codex",
+  "enteredDate": "2026-05-30",
+  "source": {
+    "sourceId": "SRC066",
+    "sourceName": "National Library Board Singapore",
+    "sourceRecordUrl": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=52075cdb-44d7-417c-a38f-d9f248a416fb",
+    "sourceIdentifier": "article-detail",
+    "accessDate": "2026-05-30"
+  },
+  "sourceMetadata": {
+    "sourceTitle": "Tamil Road Signs",
+    "sourceCreator": "",
+    "sourceCreatorRole": "",
+    "sourceDateText": "1991-1992 context",
+    "sourcePlaceText": "",
+    "sourceObjectType": "reference article",
+    "sourceHoldingInstitution": "National Library Board Singapore",
+    "sourceCollection": "",
+    "sourceDescription": "NLB page resolves and provides stable Singapore multilingual signage context; it is useful for the C09 cell but does not replace NAS item-level records directly.",
+    "sourceRightsText": "Text/reference article; no local image capture.",
+    "sourceRightsUri": "",
+    "sourceCreditLine": "National Library Board Singapore"
+  },
+  "normalizedMetadata": {
+    "normalizedTitle": "Tamil Road Signs",
+    "normalizedDateStart": 1991,
+    "normalizedDateEnd": 1992,
+    "normalizedPlace": "",
+    "historicalNodeIds": [],
+    "movementIds": [],
+    "themeTerms": [
+      "C09",
+      "remediation"
+    ],
+    "language": ""
+  },
+  "rights": {
+    "rightsState": "metadata_limited",
+    "imageUsePolicy": "metadata_only",
+    "metadataPolicy": "source metadata may be indexed with citation",
+    "thumbnailPolicy": "not applicable",
+    "fullImagePolicy": "not applicable",
+    "localCopyPermitted": false,
+    "rightsBasis": "Text/reference article; no local image capture.",
+    "rightsReviewRequired": true,
+    "rightsReviewer": "",
+    "rightsReviewDate": "",
+    "rightsNotes": "IMG04 means no image frame; source media is not captured."
+  },
+  "citation": {
+    "citationText": "National Library Board Singapore. \"Tamil Road Signs.\" Accessed 2026-05-30. https://www.nlb.gov.sg/main/article-detail?cmsuuid=52075cdb-44d7-417c-a38f-d9f248a416fb",
+    "citationStyle": "project_draft",
+    "citationUrl": "https://www.nlb.gov.sg/main/article-detail?cmsuuid=52075cdb-44d7-417c-a38f-d9f248a416fb",
+    "accessDate": "2026-05-30"
+  },
+  "publicationDisplay": {
+    "imagePresenceCode": "IMG04",
+    "imagePresenceBasis": "NLB page resolves and provides stable Singapore multilingual signage context; it is useful for the C09 cell but does not replace NAS item-level records directly.",
+    "imageFrameBehavior": "no_image_frame",
+    "imageSizePolicy": "not_applicable",
+    "layoutNote": "Text/source page; no image frame."
+  },
+  "classifications": [
+    {
+      "classificationType": "remediation_verification",
+      "classificationValue": "RSV007",
+      "source": "editorial_judgment",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "promote_as_contextual_candidate_not_direct_replacement"
+    },
+    {
+      "classificationType": "first_ingest_scope_cell",
+      "classificationValue": "C09",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from fallback remediation verification."
+    },
+    {
+      "classificationType": "record_family",
+      "classificationValue": "reference article",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Derived from remediation verification row."
+    },
+    {
+      "classificationType": "image_presence_code",
+      "classificationValue": "IMG04",
+      "source": "editorial_judgment",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Text/reference article; no local image capture."
+    }
+  ],
+  "relations": [],
+  "uncertaintyNotes": [
+    {
+      "field": "source",
+      "issue": "remediation_candidate",
+      "displayNote": "This candidate was created from a remediation verification pass and still requires source-field capture.",
+      "internalNote": "Need exact NAS/Roots object records for object-level signage/logotype records."
+    },
+    {
+      "field": "promotion",
+      "issue": "not_original_target_when_contextual",
+      "displayNote": "Some remediation records are contextual replacements rather than exact replacements for the original target.",
+      "internalNote": "promote_as_contextual_candidate_not_direct_replacement"
+    }
+  ]
+}

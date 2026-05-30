@@ -1,0 +1,150 @@
+{
+  "recordStatus": "candidate",
+  "captureMethod": "manual",
+  "enteredBy": "Codex",
+  "enteredDate": "2026-05-30",
+  "source": {
+    "sourceId": "SRC053",
+    "sourceName": "National Institute of Design",
+    "sourceRecordUrl": "https://www.nid.edu/about/history-of-nid",
+    "sourceIdentifier": "history-of-nid",
+    "accessDate": "2026-05-30"
+  },
+  "sourceMetadata": {
+    "sourceTitle": "History of NID",
+    "sourceCreator": "National Institute of Design",
+    "sourceCreatorRole": "creator_or_institution_from_target",
+    "sourceDateText": "1961 onward",
+    "sourcePlaceText": "India",
+    "sourceObjectType": "institutional page",
+    "sourceHoldingInstitution": "National Institute of Design",
+    "sourceCollection": "",
+    "sourceDescription": "Institutional-history anchor for postcolonial design education",
+    "sourceRightsText": "NID history page",
+    "sourceRightsUri": "",
+    "sourceCreditLine": ""
+  },
+  "normalizedMetadata": {
+    "normalizedTitle": "History of NID",
+    "normalizedDateStart": 1961,
+    "normalizedDateEnd": 1961,
+    "normalizedPlace": "India",
+    "historicalNodeIds": [
+      "HN010",
+      "HN011",
+      "HN014"
+    ],
+    "movementIds": [],
+    "themeTerms": [
+      "nid"
+    ],
+    "language": ""
+  },
+  "rights": {
+    "rightsState": "metadata_open",
+    "imageUsePolicy": "metadata_only",
+    "metadataPolicy": "text/authority/event metadata may be indexed with citation",
+    "thumbnailPolicy": "not applicable",
+    "fullImagePolicy": "not applicable",
+    "localCopyPermitted": false,
+    "rightsBasis": "Image presence IMG04. Ingest as institutional page. Default policy follows the project rule that image display must be justified by item-level evidence.",
+    "rightsReviewRequired": false,
+    "rightsReviewer": "",
+    "rightsReviewDate": "",
+    "rightsNotes": "IMG04 means the publication page has no image frame; it is not a copyright clearance tier."
+  },
+  "citation": {
+    "citationText": "National Institute of Design. \"History of NID.\" Accessed 2026-05-30. https://www.nid.edu/about/history-of-nid",
+    "citationStyle": "project_draft",
+    "citationUrl": "https://www.nid.edu/about/history-of-nid",
+    "accessDate": "2026-05-30"
+  },
+  "publicationDisplay": {
+    "imagePresenceCode": "IMG04",
+    "imagePresenceBasis": "ready_manual_text_institution: NID history page opened with establishment and India Report context",
+    "imageFrameBehavior": "no_image_frame",
+    "imageSizePolicy": "not_applicable",
+    "layoutNote": "Image size is selected by the publication template; IMG code only controls image presence and display permission state."
+  },
+  "classifications": [
+    {
+      "classificationType": "first_ingest_scope_cell",
+      "classificationValue": "C10",
+      "source": "controlled_vocabulary",
+      "confidence": "high",
+      "reviewer": "Codex",
+      "note": "NID development communication first-ingest cell"
+    },
+    {
+      "classificationType": "record_family",
+      "classificationValue": "institutional page",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from first-ingest target selection."
+    },
+    {
+      "classificationType": "image_presence_code",
+      "classificationValue": "IMG04",
+      "source": "editorial_judgment",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Ingest as institutional page"
+    },
+    {
+      "classificationType": "historical_node",
+      "classificationValue": "HN010",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from first-ingest scope cell; requires record-level confirmation."
+    },
+    {
+      "classificationType": "historical_node",
+      "classificationValue": "HN011",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from first-ingest scope cell; requires record-level confirmation."
+    },
+    {
+      "classificationType": "historical_node",
+      "classificationValue": "HN014",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from first-ingest scope cell; requires record-level confirmation."
+    },
+    {
+      "classificationType": "movement_or_regional_formation",
+      "classificationValue": "RM084",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from scope cell; may be regional movement rather than canonical MV term."
+    },
+    {
+      "classificationType": "regional_event_node",
+      "classificationValue": "REN058",
+      "source": "controlled_vocabulary",
+      "confidence": "medium",
+      "reviewer": "Codex",
+      "note": "Inherited from first-ingest scope cell."
+    }
+  ],
+  "relations": [],
+  "uncertaintyNotes": [
+    {
+      "field": "rights",
+      "issue": "manual_review_required",
+      "displayNote": "Rights state is a conservative draft and must be verified against the source record before publication.",
+      "internalNote": "Ingest as institutional page"
+    },
+    {
+      "field": "classification",
+      "issue": "scope_cell_inherited",
+      "displayNote": "Historical classifications are inherited from the first-ingest scope cell until source-level metadata is reviewed.",
+      "internalNote": "Institutional-history anchor for postcolonial design education"
+    }
+  ]
+}

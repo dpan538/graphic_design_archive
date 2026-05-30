@@ -1,0 +1,384 @@
+{
+  "meta": {
+    "generatedAt": "2026-05-30",
+    "status": "mock",
+    "note": "Static frontend mock for the first archive box prototype. This is not final publication data and does not mint final SEQ/GD display numbers. Public display numbers exclude HN and folder-membership segments."
+  },
+  "folderTypes": [
+    {
+      "type": "region",
+      "label": "Region",
+      "color": "#2F5BEA",
+      "scopeNote": "Geographic and transregional folder views. Time remains the default sorting axis."
+    },
+    {
+      "type": "theme",
+      "label": "Theme",
+      "color": "#111111",
+      "scopeNote": "Research themes such as propaganda, corporate identity, gender, decolonization, technology, or circulation."
+    },
+    {
+      "type": "medium",
+      "label": "Medium",
+      "color": "#D94A38",
+      "scopeNote": "Material and technological formats such as poster, periodical, identity manual, type specimen, interface, or print process."
+    },
+    {
+      "type": "movement",
+      "label": "Movement",
+      "color": "#E2C044",
+      "scopeNote": "Historical formations, movements, schools, and named design cultures."
+    }
+  ],
+  "folders": [
+    {
+      "folderId": "FOL-REGION-UNITED-STATES",
+      "type": "region",
+      "slug": "united-states",
+      "title": "United States",
+      "dateStart": 1917,
+      "dateEnd": 1976,
+      "scopeNote": "United States records in the current staged pool, including wartime posters and institutional identity material.",
+      "surfaceIds": ["SURF-ECAP001", "SURF-NASA-INDEX"],
+      "relatedFolderIds": ["FOL-THEME-PUBLIC-INFORMATION-PROPAGANDA", "FOL-MEDIUM-POSTER", "FOL-MEDIUM-IDENTITY-MANUAL"],
+      "authorityRefs": {"regionIds": ["REG003"], "geoIds": []}
+    },
+    {
+      "folderId": "FOL-REGION-FRANCE",
+      "type": "region",
+      "slug": "france",
+      "title": "France",
+      "dateStart": 1894,
+      "dateEnd": 1900,
+      "scopeNote": "French commercial lithography and Belle Epoque poster culture represented in the staged pool.",
+      "surfaceIds": ["SURF-ECAP002"],
+      "relatedFolderIds": ["FOL-MOVEMENT-ART-NOUVEAU-BELLE-EPOQUE", "FOL-MEDIUM-POSTER"],
+      "authorityRefs": {"regionIds": ["REG001"], "geoIds": ["GEO005"]}
+    },
+    {
+      "folderId": "FOL-THEME-PUBLIC-INFORMATION-PROPAGANDA",
+      "type": "theme",
+      "slug": "public-information-propaganda",
+      "title": "Public Information and Propaganda",
+      "dateStart": 1917,
+      "dateEnd": 1945,
+      "scopeNote": "Posters and printed communications used for wartime, state, civic, or political persuasion.",
+      "surfaceIds": ["SURF-ECAP001"],
+      "relatedFolderIds": ["FOL-REGION-UNITED-STATES", "FOL-MEDIUM-POSTER"],
+      "authorityRefs": {"themeKeys": ["public-information-propaganda"]}
+    },
+    {
+      "folderId": "FOL-MEDIUM-POSTER",
+      "type": "medium",
+      "slug": "poster",
+      "title": "Poster",
+      "dateStart": 1894,
+      "dateEnd": 1970,
+      "scopeNote": "Large-format printed public graphics. Folder contains sheets, cards, and rights-restricted stubs.",
+      "surfaceIds": ["SURF-ECAP002", "SURF-ECAP001", "SURF-CARD-001", "SURF-STUB-001"],
+      "relatedFolderIds": ["FOL-MOVEMENT-ART-NOUVEAU-BELLE-EPOQUE", "FOL-THEME-PUBLIC-INFORMATION-PROPAGANDA"],
+      "authorityRefs": {"mediaIds": []}
+    },
+    {
+      "folderId": "FOL-MEDIUM-IDENTITY-MANUAL",
+      "type": "medium",
+      "slug": "identity-manual",
+      "title": "Identity Manual",
+      "dateStart": 1976,
+      "dateEnd": 1976,
+      "scopeNote": "Corporate and institutional identity standards, manuals, indexes, and application systems.",
+      "surfaceIds": ["SURF-NASA-INDEX"],
+      "relatedFolderIds": ["FOL-REGION-UNITED-STATES", "FOL-THEME-CORPORATE-INSTITUTIONAL-IDENTITY"],
+      "authorityRefs": {"mediaIds": []}
+    },
+    {
+      "folderId": "FOL-MOVEMENT-ART-NOUVEAU-BELLE-EPOQUE",
+      "type": "movement",
+      "slug": "art-nouveau-belle-epoque",
+      "title": "Art Nouveau and Belle Epoque Poster Culture",
+      "dateStart": 1890,
+      "dateEnd": 1910,
+      "scopeNote": "Commercial lithography, theatrical posters, illustrated magazines, and display culture around Art Nouveau.",
+      "surfaceIds": ["SURF-ECAP002", "SURF-CARD-001"],
+      "relatedFolderIds": ["FOL-REGION-FRANCE", "FOL-MEDIUM-POSTER"],
+      "authorityRefs": {"movementIds": ["MV002"], "regionalMovementIds": ["RM002"]}
+    },
+    {
+      "folderId": "FOL-THEME-CORPORATE-INSTITUTIONAL-IDENTITY",
+      "type": "theme",
+      "slug": "corporate-institutional-identity",
+      "title": "Corporate and Institutional Identity",
+      "dateStart": 1950,
+      "dateEnd": 2000,
+      "scopeNote": "Identity systems, standards manuals, institutional graphics, and visual governance.",
+      "surfaceIds": ["SURF-NASA-INDEX"],
+      "relatedFolderIds": ["FOL-MEDIUM-IDENTITY-MANUAL"],
+      "authorityRefs": {"themeKeys": ["corporate-institutional-identity"]}
+    }
+  ],
+  "surfaces": [
+    {
+      "surfaceId": "SURF-ECAP002",
+      "sourceRecordId": "ECAP002",
+      "surfaceType": "sheet",
+      "templateId": "sheet.main.v0",
+      "provisionalDisplayNumber": "GD / 1894 / STAGED-0002 / M-p01",
+      "seqLabel": "STAGED-0002",
+      "historicalNodeIds": ["HN006"],
+      "movementIds": ["MV002"],
+      "title": "La Gismonda (Sarah Bernhardt)",
+      "creator": "Alphonse Mucha",
+      "dateText": "1894",
+      "dateStart": 1894,
+      "dateEnd": 1894,
+      "placeText": "France",
+      "objectType": "poster",
+      "medium": "color lithograph",
+      "sourceName": "Art Institute of Chicago API",
+      "sourceUrl": "https://www.artic.edu/artworks/18948/la-gismonda-sarah-bernhardt",
+      "accessDate": "2026-05-30",
+      "completenessScore": 76,
+      "reviewGates": {
+        "sourceUrl": true,
+        "rightsReviewed": true,
+        "dateKnown": true,
+        "classificationKnown": true
+      },
+      "image": {
+        "state": "IMG03",
+        "hasImageFrame": true,
+        "url": null,
+        "credit": "Open image candidate. Frontend mock may render frame without loading remote image.",
+        "licenseLabel": "Open/PD evidence required before real image display."
+      },
+      "rights": {
+        "state": "open_candidate",
+        "displayPolicy": "image_allowed_when_evidence_present",
+        "label": "Open candidate; verify item-level evidence before publication."
+      },
+      "folders": [
+        {"folderId": "FOL-REGION-FRANCE", "type": "region", "title": "France"},
+        {"folderId": "FOL-MEDIUM-POSTER", "type": "medium", "title": "Poster"},
+        {"folderId": "FOL-MOVEMENT-ART-NOUVEAU-BELLE-EPOQUE", "type": "movement", "title": "Art Nouveau and Belle Epoque Poster Culture"}
+      ],
+      "tables": [
+        {"kind": "SOURCE", "rows": [["Title", "La Gismonda (Sarah Bernhardt)"], ["Creator", "Alphonse Mucha"], ["Source", "Art Institute of Chicago API"]]},
+        {"kind": "NORMALIZED", "rows": [["Object type", "Poster"], ["Medium", "Color lithograph"], ["Date", "1894"]]},
+        {"kind": "RIGHTS", "rows": [["Image state", "IMG03"], ["Policy", "Open candidate; evidence required"]]},
+        {"kind": "CLASSIFICATION", "rows": [["Movement", "Art Nouveau"], ["Medium", "Poster"], ["Region", "France"]]},
+        {"kind": "RELATIONS", "rows": [["associated_with", "Belle Epoque poster culture"], ["depicts_or_promotes", "Theatrical performance"]]},
+        {"kind": "CITATIONS", "rows": [["Source URL", "https://www.artic.edu/artworks/18948/la-gismonda-sarah-bernhardt"], ["Access date", "2026-05-30"]]}
+      ]
+    },
+    {
+      "surfaceId": "SURF-ECAP001",
+      "sourceRecordId": "ECAP001",
+      "surfaceType": "sheet",
+      "templateId": "sheet.img00.v0",
+      "provisionalDisplayNumber": "GD / 1917-1918 / STAGED-0001 / M-p01",
+      "seqLabel": "STAGED-0001",
+      "historicalNodeIds": ["HN007"],
+      "movementIds": [],
+      "title": "Buy a Little Present for the Kaiser",
+      "creator": "Unknown Artist; published by Society of Poster Art",
+      "dateText": "1917/18",
+      "dateStart": 1917,
+      "dateEnd": 1918,
+      "placeText": "United States",
+      "objectType": "poster",
+      "medium": "Color lithograph on cream wove paper",
+      "sourceName": "Art Institute of Chicago API",
+      "sourceUrl": "https://www.artic.edu/artworks/7962",
+      "accessDate": "2026-05-30",
+      "completenessScore": 68,
+      "reviewGates": {
+        "sourceUrl": true,
+        "rightsReviewed": false,
+        "dateKnown": true,
+        "classificationKnown": true
+      },
+      "image": {
+        "state": "IMG00",
+        "hasImageFrame": true,
+        "url": null,
+        "credit": null,
+        "licenseLabel": "Image not displayed. Rights evidence is insufficient."
+      },
+      "rights": {
+        "state": "rights_review_required",
+        "displayPolicy": "empty_rights_frame",
+        "label": "Do not display source image until item-level rights evidence is reviewed."
+      },
+      "folders": [
+        {"folderId": "FOL-REGION-UNITED-STATES", "type": "region", "title": "United States"},
+        {"folderId": "FOL-THEME-PUBLIC-INFORMATION-PROPAGANDA", "type": "theme", "title": "Public Information and Propaganda"},
+        {"folderId": "FOL-MEDIUM-POSTER", "type": "medium", "title": "Poster"}
+      ],
+      "tables": [
+        {"kind": "SOURCE", "rows": [["Title", "Buy a Little Present for the Kaiser"], ["Creator", "Unknown Artist"], ["Source", "Art Institute of Chicago API"]]},
+        {"kind": "NORMALIZED", "rows": [["Object type", "Poster"], ["Medium", "Color lithograph"], ["Date", "1917/18"]]},
+        {"kind": "RIGHTS", "rows": [["Image state", "IMG00"], ["Policy", "Empty image frame with source return"]]},
+        {"kind": "CLASSIFICATION", "rows": [["Theme", "Public information and propaganda"], ["Medium", "Poster"], ["Region", "United States"]]},
+        {"kind": "RELATIONS", "rows": [["associated_with", "World War public-information graphics"], ["published_by", "Society of Poster Art"]]},
+        {"kind": "CITATIONS", "rows": [["Source URL", "https://www.artic.edu/artworks/7962"], ["Access date", "2026-05-30"]]}
+      ]
+    },
+    {
+      "surfaceId": "SURF-NASA-INDEX",
+      "sourceRecordId": "MANUAL-NASA-INDEX",
+      "surfaceType": "sheet",
+      "templateId": "sheet.text.v0",
+      "provisionalDisplayNumber": "GD / 1976 / STAGED-9001 / L-p02",
+      "seqLabel": "STAGED-9001",
+      "historicalNodeIds": ["HN012"],
+      "movementIds": [],
+      "title": "NASA Graphics Standards Manual Index",
+      "creator": "NASA; Danne & Blackburn context",
+      "dateText": "1976",
+      "dateStart": 1976,
+      "dateEnd": 1976,
+      "placeText": "United States",
+      "objectType": "identity manual index",
+      "medium": "printed standards manual",
+      "sourceName": "Manual/demo source",
+      "sourceUrl": "https://www.nasa.gov/",
+      "accessDate": "2026-05-30",
+      "completenessScore": 72,
+      "reviewGates": {
+        "sourceUrl": true,
+        "rightsReviewed": false,
+        "dateKnown": true,
+        "classificationKnown": true
+      },
+      "image": {
+        "state": "IMG04",
+        "hasImageFrame": false,
+        "url": null,
+        "credit": null,
+        "licenseLabel": "No image frame on this continuation/text page."
+      },
+      "rights": {
+        "state": "text_reference_only",
+        "displayPolicy": "no_image_frame",
+        "label": "Text/reference page. No image bay should be rendered."
+      },
+      "folders": [
+        {"folderId": "FOL-REGION-UNITED-STATES", "type": "region", "title": "United States"},
+        {"folderId": "FOL-MEDIUM-IDENTITY-MANUAL", "type": "medium", "title": "Identity Manual"},
+        {"folderId": "FOL-THEME-CORPORATE-INSTITUTIONAL-IDENTITY", "type": "theme", "title": "Corporate and Institutional Identity"}
+      ],
+      "tables": [
+        {"kind": "SOURCE", "rows": [["Title", "NASA Graphics Standards Manual Index"], ["Source", "Manual/demo source"]]},
+        {"kind": "NORMALIZED", "rows": [["Object type", "Identity manual index"], ["Date", "1976"], ["Page role", "Continuation/text page"]]},
+        {"kind": "RIGHTS", "rows": [["Image state", "IMG04"], ["Policy", "No image frame"]]},
+        {"kind": "CLASSIFICATION", "rows": [["Theme", "Corporate and institutional identity"], ["Medium", "Identity manual"], ["Region", "United States"]]},
+        {"kind": "RELATIONS", "rows": [["part_of", "NASA Graphics Standards Manual"], ["discusses", "Index and application categories"]]},
+        {"kind": "CITATIONS", "rows": [["Source URL", "https://www.nasa.gov/"], ["Access date", "2026-05-30"]]}
+      ]
+    },
+    {
+      "surfaceId": "SURF-CARD-001",
+      "sourceRecordId": "ECAP003",
+      "surfaceType": "card",
+      "templateId": "card.sparse.v0",
+      "provisionalDisplayNumber": "GD / 1896 / STAGED-CARD-0001 / S-p01",
+      "seqLabel": "STAGED-CARD-0001",
+      "historicalNodeIds": ["HN006"],
+      "movementIds": ["MV002"],
+      "title": "Zodiaque (La Plume)",
+      "creator": "Alphonse Mucha",
+      "dateText": "1896",
+      "dateStart": 1896,
+      "dateEnd": 1896,
+      "placeText": "France",
+      "objectType": "poster / periodical graphic",
+      "medium": "lithographic print",
+      "sourceName": "Art Institute of Chicago API",
+      "sourceUrl": "https://www.artic.edu/",
+      "accessDate": "2026-05-30",
+      "completenessScore": 52,
+      "reviewGates": {
+        "sourceUrl": true,
+        "rightsReviewed": false,
+        "dateKnown": true,
+        "classificationKnown": true
+      },
+      "image": {
+        "state": "IMG03",
+        "hasImageFrame": true,
+        "url": null,
+        "credit": "Sparse card mock. Real image display requires item-level evidence.",
+        "licenseLabel": "Open candidate; not yet promoted to main sheet."
+      },
+      "rights": {
+        "state": "open_candidate_needs_review",
+        "displayPolicy": "thumbnail_or_frame_after_review",
+        "label": "Sparse card. Promote only after source and rights review."
+      },
+      "folders": [
+        {"folderId": "FOL-REGION-FRANCE", "type": "region", "title": "France"},
+        {"folderId": "FOL-MEDIUM-POSTER", "type": "medium", "title": "Poster"},
+        {"folderId": "FOL-MOVEMENT-ART-NOUVEAU-BELLE-EPOQUE", "type": "movement", "title": "Art Nouveau and Belle Epoque Poster Culture"}
+      ],
+      "tables": [
+        {"kind": "SOURCE", "rows": [["Title", "Zodiaque (La Plume)"], ["Source", "Art Institute of Chicago API"]]},
+        {"kind": "NORMALIZED", "rows": [["Surface reason", "Sparse card: below main sheet threshold"], ["Date", "1896"]]},
+        {"kind": "RIGHTS", "rows": [["Image state", "IMG03"], ["Policy", "Evidence required before promotion"]]},
+        {"kind": "CLASSIFICATION", "rows": [["Movement", "Art Nouveau"], ["Medium", "Poster / periodical graphic"]]},
+        {"kind": "RELATIONS", "rows": [["possibly_same_context_as", "La Plume illustrated press culture"]]},
+        {"kind": "CITATIONS", "rows": [["Source", "Art Institute of Chicago API"], ["Access date", "2026-05-30"]]}
+      ]
+    },
+    {
+      "surfaceId": "SURF-STUB-001",
+      "sourceRecordId": "FALLBACK-001",
+      "surfaceType": "fallback_stub",
+      "templateId": "stub.fallback.v0",
+      "provisionalDisplayNumber": "GD / undated / STAGED-STUB-0001 / S-p01",
+      "seqLabel": "STAGED-STUB-0001",
+      "historicalNodeIds": [],
+      "movementIds": [],
+      "title": "Unresolved poster source path",
+      "creator": "Unknown",
+      "dateText": "undated",
+      "dateStart": null,
+      "dateEnd": null,
+      "placeText": "Unresolved",
+      "objectType": "source path",
+      "medium": "poster search path",
+      "sourceName": "Fallback source stub",
+      "sourceUrl": "https://example.org/source-search-path",
+      "accessDate": "2026-05-30",
+      "completenessScore": 34,
+      "reviewGates": {
+        "sourceUrl": true,
+        "rightsReviewed": false,
+        "dateKnown": false,
+        "classificationKnown": false
+      },
+      "image": {
+        "state": "IMG00",
+        "hasImageFrame": true,
+        "url": null,
+        "credit": null,
+        "licenseLabel": "No image displayed. Stub preserves the research area with a source path."
+      },
+      "rights": {
+        "state": "not_ingested",
+        "displayPolicy": "link_only_stub",
+        "label": "Not ingested. Link-only research item."
+      },
+      "folders": [
+        {"folderId": "FOL-MEDIUM-POSTER", "type": "medium", "title": "Poster"}
+      ],
+      "tables": [
+        {"kind": "SOURCE", "rows": [["Target label", "Unresolved poster source path"], ["Source status", "Fallback stub"]]},
+        {"kind": "NORMALIZED", "rows": [["Surface reason", "Below main sheet threshold"], ["Action", "Review source path before ingest"]]},
+        {"kind": "RIGHTS", "rows": [["Image state", "IMG00"], ["Policy", "Link-only stub"]]},
+        {"kind": "CLASSIFICATION", "rows": [["Medium", "Poster"], ["Status", "Unassigned/fallback"]]},
+        {"kind": "RELATIONS", "rows": [["may_relate_to", "Poster folder"], ["requires_review", "true"]]},
+        {"kind": "CITATIONS", "rows": [["Source/search path", "https://example.org/source-search-path"], ["Access date", "2026-05-30"]]}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1031 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================================
+   Archive Box — museum / loose-leaf interface.
+   1-bit / paper / typewriter, designed to read like a serious printed manual
+   (NASA Graphics Standards-era). Fixed, non-scrolling viewport; navigation by
+   page-turning. Large floating icons for Index / Folders / Search.
+   ========================================================================= */
+
+:root {
+  --paper: #ece7d9;
+  --paper-2: #e3dccb;
+  --paper-3: #d8cfb9;
+  --ink: #19150f;
+  /* darker, more legible secondary ink (was #6e665a) */
+  --ink-soft: #4b4337;
+  --line: #19150f;
+  --line-soft: #a99d83;
+
+  --region: #2F5BEA;
+  --theme: #2c2924;
+  --medium: #D94A38;
+  --movement: #E2C044;
+
+  --folder-color: var(--ink);
+}
+
+/* +~20% base unit so all rem-based UI text reads larger. */
+html {
+  font-size: 21px;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--paper);
+  color: var(--ink);
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  background-image: radial-gradient(rgba(25, 21, 15, 0.035) 1px, transparent 1px);
+  background-size: 6px 6px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Typography primitives -------------------------------------------- */
+
+.label-caps {
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.col-justify {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.rule-soft {
+  border: 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+/* ---- App shell (no sidebar column) ------------------------------------ */
+
+.app {
+  position: relative;
+  height: 100dvh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.app__main {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* A scrollable main (only the Index / table-of-contents page uses this). */
+.app__main--scroll {
+  overflow-y: auto;
+}
+
+.wordmark {
+  position: absolute;
+  top: 1rem;
+  left: 1.1rem;
+  z-index: 30;
+  max-width: 15rem;
+}
+
+.nav-icons {
+  position: absolute;
+  top: 1rem;
+  right: 1.1rem;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.nav-icon {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.12rem;
+  border: 1.5px solid var(--line);
+  background-color: var(--paper);
+  box-shadow: 0 2px 0 rgba(25, 21, 15, 0.3);
+}
+
+.nav-icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.nav-icon span {
+  font-size: 0.42rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.nav-icon:hover,
+.nav-icon[data-active="true"] {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+/* Fixed right region: search panel (when open) above the counts card.
+   Content stages reserve room for it so it never occludes anything. */
+.corner-stack {
+  position: absolute;
+  right: 1.1rem;
+  bottom: 1.1rem;
+  z-index: 35;
+  width: 17rem;
+  max-width: calc(100vw - 5.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  align-items: stretch;
+}
+
+.search-stack {
+  position: absolute;
+  right: 1.1rem;
+  z-index: 36;
+  width: 17rem;
+  max-width: calc(100vw - 5.5rem);
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* On the reader, lift the stack above the bottom-right page-turn control. */
+.corner-stack--reader {
+  bottom: 5.4rem;
+}
+
+.search-stack--reader {
+  right: 1.1rem;
+}
+
+/* Left index menu (under the wordmark), toggled by the Index icon. */
+.index-menu {
+  position: absolute;
+  top: 5.4rem;
+  left: 1.1rem;
+  z-index: 38;
+  width: 16rem;
+  max-height: 76vh;
+  overflow-y: auto;
+  background-color: var(--paper);
+  border: 1.5px solid var(--line);
+  box-shadow: 0 2px 0 rgba(25, 21, 15, 0.3), 0 14px 30px rgba(25, 21, 15, 0.26);
+  padding: 0.7rem 0.2rem 0.5rem;
+}
+
+.index-type {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.7rem 0.2rem;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--line-soft);
+  margin: 0.5rem 0.5rem 0.2rem;
+}
+
+.index-type:first-child {
+  margin-top: 0;
+}
+
+.index-link {
+  display: block;
+  padding: 0.22rem 0.95rem;
+  font-size: 0.66rem;
+  line-height: 1.3;
+}
+
+.index-link:hover {
+  background-color: var(--paper-2);
+  text-decoration: underline;
+}
+
+.corner-card {
+  border: 1.5px solid var(--line);
+  background-color: var(--paper);
+  box-shadow: 0 2px 0 rgba(25, 21, 15, 0.3);
+  padding: 0.95rem 1.05rem;
+}
+
+/* Slide-in contextual panel (reader contents / index). */
+.panel-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 45;
+  width: min(23rem, 90vw);
+  background-color: var(--paper-2);
+  border-left: 1.5px solid var(--line);
+  box-shadow: -18px 0 34px rgba(25, 21, 15, 0.28);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.panel-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* ---- Loose-leaf sheet (vertical A4) ----------------------------------- */
+
+.leaf-stage {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.4rem 1.4rem 0.4rem;
+}
+
+.leaf {
+  position: relative;
+  background-color: var(--paper);
+  border: 1.5px solid var(--line);
+  box-shadow: 0 1px 0 rgba(25, 21, 15, 0.32), 0 10px 26px rgba(25, 21, 15, 0.22);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ISO A4 portrait proportion (210 : 297). */
+.leaf--single {
+  height: 100%;
+  aspect-ratio: 210 / 297;
+  max-width: 100%;
+}
+
+.leaf-spread {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  /* Each individual leaf keeps its A4 portrait ratio (210:297).
+     Two leaves plus the 2rem gutter together drive the spread width. */
+  height: 100%;
+  max-width: 100%;
+  gap: 0;
+}
+
+.leaf-spread .leaf {
+  /* Let each leaf use its A4 aspect-ratio; do not stretch to fill */
+  flex: 0 0 auto;
+  height: 100%;
+  aspect-ratio: 210 / 297;
+  min-width: 0;
+  width: auto;
+}
+
+.leaf-gutter {
+  width: 2rem;
+  background-color: var(--paper-3);
+  border-top: 1.5px solid var(--line);
+  border-bottom: 1.5px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.4rem 0;
+}
+
+.binder-ring {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 9999px;
+  background-color: var(--paper);
+  box-shadow: inset 0 0 0 2px var(--line), inset 0 2px 2px rgba(25, 21, 15, 0.4);
+}
+
+/* fixed folder-colour bar on the left edge (same place on every leaf) */
+.folder-color-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 7px;
+  z-index: 5;
+  background-color: var(--folder-color);
+}
+
+/* the printable body, with a consistent margin column on the left */
+.leaf__body {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 1.4rem 1.5rem 1rem 2rem;
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+
+/* consistent header band: context (left) + accession number (right) */
+.leaf__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1.5px solid var(--line);
+  padding-bottom: 0.4rem;
+}
+
+.leaf__context {
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  font-size: 0.56rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding-top: 0.1rem;
+}
+
+.leaf__accession {
+  text-align: right;
+  line-height: 1.25;
+  flex-shrink: 0;
+}
+
+.leaf__accession .acc-no {
+  font-weight: 700;
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+}
+
+.leaf__accession .acc-pg {
+  color: var(--ink-soft);
+  font-size: 0.56rem;
+  letter-spacing: 0.1em;
+}
+
+.leaf__title {
+  font-weight: 700;
+  line-height: 1.08;
+  font-size: 1.5rem;
+}
+
+.leaf__title--sm {
+  font-size: 1.15rem;
+}
+
+.leaf__sub {
+  color: var(--ink-soft);
+  font-size: 0.62rem;
+  letter-spacing: 0.02em;
+}
+
+/* footer markers */
+.sheet-markers {
+  margin-top: auto;
+  border-top: 1px solid var(--line-soft);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.4rem;
+  font-size: 0.52rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ---- Clean spec sections (no boxes) ----------------------------------- */
+
+.spec {
+  break-inside: avoid;
+}
+
+.spec__label {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  border-bottom: 1.5px solid var(--line);
+  padding-bottom: 0.12rem;
+  margin-bottom: 0.25rem;
+}
+
+.spec__label .k {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+}
+
+.spec__label .sub {
+  color: var(--ink-soft);
+  font-size: 0.52rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.spec table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.spec th,
+.spec td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.12rem 0.6rem 0.12rem 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.spec th {
+  font-weight: 400;
+  color: var(--ink-soft);
+  width: 34%;
+  white-space: normal;
+}
+
+.spec td {
+  width: 66%;
+}
+
+.spec tr + tr th,
+.spec tr + tr td {
+  border-top: 1px solid var(--line-soft);
+}
+
+/* quiet definition rows used by rights / source / etc. */
+.deflist {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.02rem 0.55rem;
+  font-size: 0.6rem;
+}
+
+.deflist dt {
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 0.52rem;
+  padding-top: 0.06rem;
+}
+
+.deflist dd {
+  text-align: left;
+}
+
+.source-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border-bottom: 1.5px solid var(--line);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.source-link:hover {
+  color: var(--medium);
+}
+
+/* ---- Image bay (quiet, no game-like cross) ---------------------------- */
+
+.image-bay {
+  position: relative;
+  border: 1.5px solid var(--line);
+  background-color: var(--paper-2);
+  overflow: hidden;
+}
+
+.image-bay--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+/* ---- Register / index entries ----------------------------------------- */
+
+.reg-row {
+  display: grid;
+  grid-template-columns: 4.6rem 1fr auto;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.16rem 0;
+  border-bottom: 1px dotted var(--line-soft);
+  font-size: 0.7rem;
+  width: 100%;
+  text-align: left;
+}
+
+.reg-row .date {
+  color: var(--ink-soft);
+  font-size: 0.62rem;
+}
+
+.reg-row .title {
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reg-row:hover .title {
+  text-decoration: underline;
+}
+
+.reg-row .pg {
+  color: var(--ink-soft);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+}
+
+/* ---- Table-of-contents (Index page, NASA-manual style) ---------------- */
+
+/* ── /contents page two-column shell ─────────────────────────────────── */
+
+.toc-shell {
+  min-height: 100%;
+  display: block;
+}
+
+.toc-sidebar {
+  width: 13.8rem;
+  position: fixed;
+  top: 6.15rem;
+  left: 1.45rem;
+  z-index: 25;
+  max-height: calc(100dvh - 7.4rem);
+  overflow: visible;
+  padding: 0;
+}
+
+.toc-nav {
+  border: 1.5px solid var(--line);
+  padding: 0.5rem 0 0.6rem;
+  background-color: var(--paper);
+  box-shadow: 0 2px 0 rgba(25, 21, 15, 0.18);
+}
+
+.toc-nav__head {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0 0.7rem 0.4rem;
+  border-bottom: 1px solid var(--line-soft);
+  margin-bottom: 0.35rem;
+  color: var(--ink-soft);
+}
+
+.toc-nav__group {
+  margin-top: 0.25rem;
+}
+
+.toc-nav__type {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.toc-nav__type:hover {
+  text-decoration: underline;
+}
+
+/* ── Main TOC body ────────────────────────────────────────────────────── */
+
+.toc {
+  width: min(68rem, calc(100vw - 25rem));
+  min-width: 0;
+  padding: 5.5rem 2rem 4rem 0;
+  margin-left: 17.2rem;
+}
+
+.toc h1 {
+  font-weight: 700;
+  font-size: 1.7rem;
+  line-height: 1.1;
+}
+
+.toc__sect {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  gap: 1.35rem;
+  border-top: 1.5px solid var(--line);
+  padding: 0.9rem 0;
+  scroll-margin-top: 1.2rem;
+}
+
+.toc__secthead {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+}
+
+.toc__entry {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  padding: 0.1rem 0;
+}
+
+.toc__entry .lead {
+  flex: 1;
+  border-bottom: 1px dotted var(--line-soft);
+  transform: translateY(-0.18rem);
+}
+
+.toc__entry .ref {
+  color: var(--ink-soft);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  max-width: 23rem;
+  overflow-wrap: anywhere;
+}
+
+.toc__entry a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Folder drawer ----------------------------------------------------- */
+
+.drawer-stage {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4.2rem 1.5rem 2.2rem;
+}
+
+.folder-scroll {
+  width: 100%;
+  max-width: 52rem;
+  max-height: calc(100dvh - 5.5rem);
+  overflow-y: auto;
+  overflow-x: visible;
+  overscroll-behavior: contain;
+  padding: 3.4rem 1.15rem 5.2rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-soft) transparent;
+}
+
+.folder-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.folder-scroll::-webkit-scrollbar-thumb {
+  background: var(--line-soft);
+}
+
+.folder-stack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.folder-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  text-align: left;
+  background-color: var(--paper);
+  border: 1.5px solid var(--line);
+  border-bottom: none;
+  box-shadow: 0 1px 0 rgba(25, 21, 15, 0.3), 0 12px 24px rgba(25, 21, 15, 0.2);
+  margin-top: -3.45rem;
+  padding: 1.4rem 1.6rem 1.5rem;
+  min-height: 7.6rem;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.folder-card:last-child {
+  border-bottom: 1.5px solid var(--line);
+}
+
+.folder-card:first-child {
+  margin-top: 0;
+}
+
+.folder-card:hover,
+.folder-card:focus-visible {
+  transform: translateY(-1.4rem);
+  box-shadow: 0 2px 0 rgba(25, 21, 15, 0.36), 0 22px 40px rgba(25, 21, 15, 0.3);
+  z-index: 5;
+}
+
+.folder-card[data-folder-type="region"] {
+  --folder-color: var(--region);
+}
+
+.folder-card[data-folder-type="theme"] {
+  --folder-color: var(--theme);
+}
+
+.folder-card[data-folder-type="medium"] {
+  --folder-color: var(--medium);
+}
+
+.folder-card[data-folder-type="movement"] {
+  --folder-color: var(--movement);
+}
+
+.folder-tab {
+  position: absolute;
+  top: -1.5rem;
+  left: 1.4rem;
+  height: 1.55rem;
+  padding: 0 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--paper);
+  border: 1.5px solid var(--line);
+  border-bottom: none;
+  border-top: 5px solid var(--folder-color, var(--line));
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.folder-chip {
+  display: inline-block;
+  width: 0.62rem;
+  height: 0.62rem;
+  border: 1px solid var(--line);
+  background-color: var(--folder-color, var(--line));
+}
+
+/* big drawer title is the fig.2 exception: pinned, not scaled by +20% */
+.folder-title {
+  display: block;
+  font-weight: 700;
+  line-height: 1;
+  font-size: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.folder-reveal {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease, opacity 0.2s ease;
+}
+
+.folder-card:hover .folder-reveal,
+.folder-card:focus-within .folder-reveal {
+  max-height: 9rem;
+  opacity: 1;
+}
+
+.folder-card .folder-action--idle {
+  display: inline;
+}
+.folder-card .folder-action--hover {
+  display: none;
+}
+.folder-card:hover .folder-action--idle,
+.folder-card:focus-within .folder-action--idle {
+  display: none;
+}
+.folder-card:hover .folder-action--hover,
+.folder-card:focus-within .folder-action--hover {
+  display: inline;
+}
+
+/* ---- Index rows (reader contents panel) ------------------------------- */
+
+.idx-row {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.55rem 0.9rem;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 0.7rem;
+}
+
+.idx-row[data-active="true"] {
+  background-color: var(--paper);
+  border-left: 5px solid var(--folder-color);
+  font-weight: 700;
+}
+
+.idx-row:hover {
+  background-color: var(--paper);
+}
+
+/* ---- Buttons & page-turn ---------------------------------------------- */
+
+.btn-turn {
+  border: 1.5px solid var(--line);
+  background-color: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.btn-turn:hover:not(:disabled) {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+.btn-turn:disabled {
+  opacity: 0.3;
+}
+
+/* fixed page-turn control, bottom-right corner of the viewport */
+.page-turn {
+  position: absolute;
+  right: 1.1rem;
+  bottom: 1.1rem;
+  z-index: 32;
+  display: flex;
+  align-items: stretch;
+  gap: 0.4rem;
+  background-color: var(--paper);
+  border: 1.5px solid var(--line);
+  box-shadow: 0 2px 0 rgba(25, 21, 15, 0.3);
+  padding: 0.35rem;
+}
+
+.page-turn button {
+  width: 2.4rem;
+  height: 2.4rem;
+  font-size: 1.1rem;
+}
+
+.page-turn .meter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0.5rem;
+  font-size: 0.56rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.page-turn .meter b {
+  color: var(--ink);
+  font-size: 0.66rem;
+}
+
+.page-turn__sep {
+  width: 1px;
+  background-color: var(--line-soft);
+  margin: 0.2rem 0;
+}
+
+/* ---- Empty image frame (IMG00 / IMG02) -------------------------------- */
+
+.image-bay--empty-frame {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  min-height: 12rem;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.image-bay__hatch {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      rgba(25, 21, 15, 0.08) 0,
+      rgba(25, 21, 15, 0.08) 1px,
+      transparent 1px,
+      transparent 9px
+    );
+}
+
+.image-bay__empty-copy {
+  position: relative;
+  z-index: 1;
+  width: calc(100% - 1.2rem);
+  margin: auto;
+  padding: 0.65rem 0.7rem;
+  border: 1px solid var(--line);
+  background-color: rgba(236, 231, 217, 0.92);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.image-bay__code {
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.image-bay__source {
+  font-size: 0.6rem;
+  color: var(--ink);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.image-bay__desc {
+  font-size: 0.6rem;
+  color: var(--ink-soft);
+  line-height: 1.45;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-width: 18rem;
+}
+
+.image-bay__note {
+  border-top: 1px solid var(--line-soft);
+  padding-top: 0.25rem;
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ---- Focus visibility -------------------------------------------------- */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--folder-color);
+  outline-offset: 2px;
+}
+
+.panel-scroll::-webkit-scrollbar,
+.app__main--scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.panel-scroll::-webkit-scrollbar-thumb,
+.app__main--scroll::-webkit-scrollbar-thumb {
+  background: var(--line-soft);
+}
+
+/* ---- Reserved right region (wide screens) -----------------------------
+   On desktop the search panel + counts card live in a fixed right strip.
+   Content stages keep clear of it so nothing is ever occluded, and the
+   folder drawer sits centered in the area to the LEFT of that strip. */
+@media (min-width: 1200px) {
+  .leaf-stage {
+    padding: 1.4rem 18.5rem 0.4rem 11rem;
+  }
+  /* In spread mode the wordmark is hidden; give the spread a comfortable
+     left margin so it sits centred between the left edge and the right cards. */
+  .leaf-stage--spread {
+    padding-left: 5rem;
+  }
+  .drawer-stage {
+    padding: 4.2rem 18.5rem 2.2rem 3.5rem;
+  }
+  .toc-shell {
+    padding-right: 5.8rem;
+  }
+  .toc {
+    width: min(72rem, calc(100vw - 25rem));
+  }
+}

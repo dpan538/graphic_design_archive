@@ -1,0 +1,11 @@
+axis_id,axis_name,axis_type,required_for_launch,required_for_record,supports_multiple,api_filter,controlled_source,notes
+AX001,macro_region,geography,yes,yes,yes,yes,regions; geographies,"Top-level geographic frame. Must never be the only geographic value when a country, territory, or city is known."
+AX002,country_or_context,geography,yes,when_known,yes,yes,geographies,"Supports countries, territories, historical jurisdictions, and context areas where modern borders are not sufficient."
+AX003,city_or_place,geography,yes,when_known,yes,yes,geographies; source text,"Used for production, publication, circulation, institution location, and event location."
+AX004,date_start/date_end/date_text,date,yes,yes,no,yes,source text; normalized date rules,Every record must preserve source date text and normalized start/end where possible.
+AX005,date_basis,date,yes,yes,yes,yes,object_date; publication_date; event_date; capture_date; digitization_date,"Prevents object date, publication date, and archive capture date from being collapsed."
+AX006,historical_node,history,yes,yes,yes,yes,historical_nodes,"Records may be node_pending during review, but publication should expose the pending state."
+AX007,movement_or_formation,history,yes,when_supported,yes,yes,movements; regional_movements,"Includes movements, schools, publishing cultures, state formations, technical regimes, and counterpublic formations."
+AX008,medium_technology_format,media,yes,yes,yes,yes,media_technologies,"Separates object type, production technology, circulation format, and preservation/capture format when possible."
+AX009,language_script,language,yes,when_known,yes,yes,source text; language/script fields,"Required for CJK, Hangul, Arabic, Hebrew, Devanagari, Bengali, Latin, Cyrillic, and multilingual records."
+AX010,source_rights_provenance,source,yes,yes,yes,yes,sources; citations; rights_reviews,"Every publishable record needs source URL, access date, citation, rights state, and display policy."

@@ -1,0 +1,19 @@
+triage_id,probable_failed_target,likely_failure_mode,recommended_action,best_replacement_or_next_move
+SRTRIAGE001,Bauhaus-Archiv collection page without stable object anchor,browser recheck / exact-link uncertainty,browser-only verification,verify whether a stable object or collection slug exists; otherwise keep MoMA/Met/Harvard as primary
+SRTRIAGE002,Poster Museum virtual-museum objects,browser recheck,browser-only verification,use Poster Museum collection-level page now; promote exact virtual-museum item only after manual browser pass [97]
+SRTRIAGE003,Polish Poster School essay/history pages,replacement recommendation,replace,use PMW collection-level plus MNW/MoMA search-path object routes
+SRTRIAGE004,IBM corporate-history overview pages,page-level locator uncertainty,replace,use Smithsonian object records or record-search routes for Rand materials [98]
+SRTRIAGE005,IBM logo-history page without object granularity,search-path-only,fallback stub,keep as contextual stub only
+SRTRIAGE006,TGP authority-only or oral-history references,replacement recommendation,replace,use LOC portfolios/posters and Mia/MoMA print records [99]
+SRTRIAGE007,BRP testimonios pages mentioning BRP but not functioning as source records,replacement recommendation,replace,use BND photo and poster records instead [100]
+SRTRIAGE008,BRP thematic pages without specific object anchors,search-path-only,fallback stub,"keep Memoria Chilena thematic page as movement stub, not primary object record [29]"
+SRTRIAGE009,WoDeCo essay pages or museum references without exact artifact record,exact-link uncertainty,replace,use NDL proceedings + authority + bibliography stack [101]
+SRTRIAGE010,WoDeCo 1960 pamphlet/pages on Japanese museum sites,browser recheck required,browser-only verification,"manual browser pass for exact pamphlet/poster item, especially around Hosoya/Kamekura-related pages [39]"
+SRTRIAGE011,Shanghai Sketch secondary scholarship pages,replacement recommendation,replace,"use Internet Archive issue-level records first, scholarship second [102]"
+SRTRIAGE012,Commercial or dealer yuefenpai pages,rights risk / replacement recommendation,replace,"prefer British Museum, HKU, Fukuoka Asian Art Museum, DDB objects [103]"
+SRTRIAGE013,Broad Minjung exhibition essays,page-level uncertainty,replace,use MMCA archive item pages and KDF poster records [104]
+SRTRIAGE014,KDF search hits for 5월 광주 / 봉선화 posters,search-path-only,browser-only verification,keep search-path stub until object page is manually captured [53]
+SRTRIAGE015,Roots objects that timed out,browser recheck required,browser-only verification,keep known exact URLs as stubs; verify with manual browser for Pahang Road in Mandarin and Malacca De He Fang logo pages [105]
+SRTRIAGE016,NID Archives homepage with no item-level capture in current pass,browser recheck required,fallback stub until manual pass,"use NID History, Alpavirama, annual reports, and Young Designers in the meantime [106]"
+SRTRIAGE017,Iranian design pages that are only essays or retail books,replacement recommendation,replace,use Cooper Hewitt exact records plus Poster House bibliography records [107]
+SRTRIAGE018,Gran Fury mentions in essays without object-level record,replacement recommendation,replace,use PAD/D archive sections and archival object references first; keep essays as context only [108]

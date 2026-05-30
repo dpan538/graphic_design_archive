@@ -1,0 +1,275 @@
+{
+  "meta": {
+    "_links": {
+      "collection_page": {
+        "href": "https://collections.vam.ac.uk/item/O1026163/"
+      },
+      "self": {
+        "href": "https://api.vam.ac.uk/v2/object/O1026163"
+      }
+    },
+    "images": null,
+    "see_also": null,
+    "version": "2.1"
+  },
+  "record": {
+    "accessionNumber": "24146",
+    "accessionNumberNum": "24146",
+    "accessionNumberPrefix": "",
+    "accessionYear": null,
+    "artistMakerOrganisations": [
+      {
+        "association": {
+          "id": "x38773",
+          "text": "commissioned and published"
+        },
+        "name": {
+          "id": "A7579",
+          "text": "Arundel Society"
+        },
+        "note": ""
+      },
+      {
+        "association": {
+          "id": "x30811",
+          "text": "printer"
+        },
+        "name": {
+          "id": "A9575",
+          "text": "Storch and Kramer"
+        },
+        "note": ""
+      },
+      {
+        "association": {
+          "id": "",
+          "text": ""
+        },
+        "name": {
+          "id": "",
+          "text": ""
+        },
+        "note": ""
+      }
+    ],
+    "artistMakerPeople": [],
+    "artistMakerPerson": [
+      {
+        "association": {
+          "id": "AAT25103",
+          "text": "artist"
+        },
+        "name": {
+          "id": "A7573",
+          "text": "Angelico, Fra"
+        },
+        "note": ""
+      },
+      {
+        "association": {
+          "id": "AAT25189",
+          "text": "copyist"
+        },
+        "name": {
+          "id": "A15980",
+          "text": "Kaiser, Edward"
+        },
+        "note": "Copy after Fra Angelico"
+      },
+      {
+        "association": {
+          "id": "x30811",
+          "text": "printer"
+        },
+        "name": {
+          "id": "A8457",
+          "text": "Gruner, Ludwig Wilhelm Heinrich"
+        },
+        "note": ""
+      },
+      {
+        "association": {
+          "id": "",
+          "text": ""
+        },
+        "name": {
+          "id": "",
+          "text": ""
+        },
+        "note": ""
+      }
+    ],
+    "aspects": [
+      "WHOLE"
+    ],
+    "assets": [],
+    "associatedEvents": [],
+    "associatedObjects": [
+      {
+        "association": "Prototype",
+        "object": {
+          "id": "O205953",
+          "text": "E.10-1995"
+        }
+      },
+      {
+        "association": "",
+        "object": {
+          "id": "",
+          "text": ""
+        }
+      }
+    ],
+    "associatedOrganisations": [],
+    "associatedPeople": [],
+    "associatedPerson": [],
+    "associatedPlaces": [],
+    "availableToBook": false,
+    "bibliographicReferences": [
+      {
+        "details": "",
+        "free": "Tanya Ledger,<u> A Study of the Arundel Society 1848-1897</u>. Unpublished thesis submitted for degree of Doctor of Philosophy, University of Oxford, 1978",
+        "reference": {
+          "id": "",
+          "text": ""
+        }
+      }
+    ],
+    "briefDescription": "Chromolithograph, copy after <i>Christ and Mary Magdalene in the Garden (Noli me tangere)</i>, Fra Angelico in the Museo di San Marco (Florence), from a watercolour by Edward Kaiser, published by Storch and Kramer under the direction of L. Gruner, Arundel Society chromolithograph, 1870",
+    "categories": [
+      {
+        "id": "THES253006",
+        "text": "Biblical Imagery"
+      },
+      {
+        "id": "THES48978",
+        "text": "Christianity"
+      },
+      {
+        "id": "THES253072",
+        "text": "Copies and Facsimilies"
+      }
+    ],
+    "collectionCode": {
+      "id": "THES48595",
+      "text": "PDP"
+    },
+    "contentConcepts": [],
+    "contentDescription": "",
+    "contentEvents": [],
+    "contentLiteraryRefs": [],
+    "contentOrganisations": [],
+    "contentOthers": [],
+    "contentPeople": [],
+    "contentPerson": [],
+    "contentPlaces": [],
+    "contentWarnings": [
+      {
+        "apprise": "",
+        "note": ""
+      }
+    ],
+    "copyNumber": "",
+    "creditLine": "",
+    "dimensions": [],
+    "dimensionsNote": "",
+    "galleryLabels": [],
+    "galleryLocations": [
+      {
+        "box": "",
+        "case": "DR",
+        "current": {
+          "id": "THES49658",
+          "text": "LVLD"
+        },
+        "free": "",
+        "shelf": "94"
+      }
+    ],
+    "historicalContext": "",
+    "imageResolution": "high",
+    "images": [],
+    "marksAndInscriptions": [],
+    "materials": [],
+    "materialsAndTechniques": "chromolithography",
+    "objectHistory": "Chromolithograph after the watercolour (Museum No. E.10-1995), copy made for the Arundel Society in 1870, published by Storch and Kramer under the direction of L. Gruner. ",
+    "objectType": "Chromolithograph",
+    "otherNumbers": [],
+    "partNumbers": [
+      "24146"
+    ],
+    "partTypes": [
+      [
+        {
+          "id": "x44031",
+          "text": "chromolithograph"
+        }
+      ]
+    ],
+    "physicalDescription": "",
+    "placesOfOrigin": [
+      {
+        "association": {
+          "id": "x30682",
+          "text": "published"
+        },
+        "note": "",
+        "place": {
+          "id": "x32019",
+          "text": "great britain"
+        }
+      },
+      {
+        "association": {
+          "id": "",
+          "text": ""
+        },
+        "note": "",
+        "place": {
+          "id": "",
+          "text": ""
+        }
+      }
+    ],
+    "production": "",
+    "productionDates": [
+      {
+        "association": {
+          "id": "x28654",
+          "text": "made"
+        },
+        "date": {
+          "earliest": "1870-01-01",
+          "latest": "1870-12-31",
+          "text": "1870"
+        },
+        "note": ""
+      }
+    ],
+    "productionType": {
+      "id": "",
+      "text": ""
+    },
+    "recordCreationDate": "2009-06-30",
+    "recordModificationDate": "2025-04-15",
+    "styles": [],
+    "summaryDescription": "",
+    "systemNumber": "O1026163",
+    "techniques": [
+      {
+        "id": "AAT53272",
+        "text": "chromolithography"
+      },
+      {
+        "id": "",
+        "text": ""
+      }
+    ],
+    "titles": [
+      {
+        "title": "Chromolithograph, copy after Christ and Mary Magdalene in the Garden (Noli me tangere), Fra Angelico in the Museo di San Marco (Florence)",
+        "type": "generic title"
+      }
+    ]
+  }
+}
