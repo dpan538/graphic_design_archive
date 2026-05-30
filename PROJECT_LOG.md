@@ -2045,3 +2045,44 @@ Intent:
 - Stop root-level documentation sprawl.
 - Exclude local build/cache/vendor files such as `frontend/node_modules/`,
   `frontend/.next/`, Python cache, and `.DS_Store`.
+
+Initial repository push:
+
+- Initialized local git repository on `main`.
+- Added remote `git@github.com:dpan538/graphic_design_archive.git`.
+- Pushed initial commit `4f1a10f` to GitHub.
+
+---
+
+## Surface Normalization and Physical Format Pass
+
+Implemented after repository initialization.
+
+Changes:
+
+- Added `scripts/normalize_public_surfaces.py`.
+- Grouped repeated source-generic records into compound sheets when the same
+  source/title appears three or more times.
+- Current normalization grouped 11 repeated Chinese Posters records into one
+  `sheet.compound.v0` surface:
+  `SURF-MX1970R055-GROUP`.
+- China / Hong Kong register now shows the compound group instead of eleven
+  repeated `Chineseposters.net` rows.
+- Added explicit frontend physical surface classes:
+  - normal sheet/register: A4 proportion
+  - card: A5 proportion
+  - fallback stub: A6 proportion
+  - appendix: A4 height, two-thirds A4 width
+- Added image coverage health metric to archive counts.
+
+Rule:
+
+- Image-ready coverage is counted as `IMG01 + IMG02 + IMG03`.
+- `IMG00` is a valid rights-aware visual placeholder, but it does not count as
+  healthy image coverage.
+- Healthy design-archive target is 90% image-ready coverage.
+
+Verification:
+
+- `npm run build` passed after the normalization/format pass.
+- Localhost was restarted on port 3000.

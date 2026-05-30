@@ -243,12 +243,20 @@ export interface GlobalCounts {
   cards: number;
   stubs: number;
   sources: number;
+  imageReadySurfaces: number;
+  imageCoveragePercent: number;
+  imageCoverageHealthy: boolean;
   imageDistribution: ImageDistribution;
 }
 
 export function getGlobalCounts(): GlobalCounts {
   const surfaces = getSurfaces();
   const mix = surfaceMix(surfaces);
+  const imageReadySurfaces = surfaces.filter((s) =>
+    ["IMG01", "IMG02", "IMG03"].includes(s.image.state),
+  ).length;
+  const imageCoveragePercent =
+    surfaces.length === 0 ? 0 : Math.round((imageReadySurfaces / surfaces.length) * 100);
   return {
     folders: getFolders().length,
     folderTypes: getFolderTypes().length,
@@ -257,6 +265,9 @@ export function getGlobalCounts(): GlobalCounts {
     cards: mix.card,
     stubs: mix.fallback_stub,
     sources: sourceCount(surfaces),
+    imageReadySurfaces,
+    imageCoveragePercent,
+    imageCoverageHealthy: imageCoveragePercent >= 90,
     imageDistribution: imageDistribution(surfaces),
   };
 }

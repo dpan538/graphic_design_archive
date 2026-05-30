@@ -17,8 +17,16 @@ export default function LeafFrame({
   activeFolderId?: string;
   ctx?: LeafCtx;
 }) {
+  const sizeClass =
+    leaf.type === "appendix"
+      ? "leaf--appendix"
+      : leaf.layoutId === "L06.card"
+        ? "leaf--card"
+        : leaf.layoutId === "L07.stub"
+          ? "leaf--stub"
+          : "leaf--sheet";
   return (
-    <div className={`leaf ${single ? "leaf--single" : ""}`}>
+    <div className={`leaf ${sizeClass} ${single ? "leaf--single" : ""}`}>
       <span className="folder-color-bar" aria-hidden />
       {renderLeafContent(leaf, activeFolderId, ctx)}
     </div>

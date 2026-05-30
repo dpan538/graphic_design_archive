@@ -270,11 +270,30 @@ body {
   overflow: hidden;
 }
 
-/* ISO A4 portrait proportion (210 : 297). */
+/* Physical surface sizes. Sheet/register pages use A4 portrait. Cards and
+   appendices intentionally differ so sparse records stop reading as full
+   evidence sheets. Appendix keeps A4 height but is two-thirds as wide. */
 .leaf--single {
   height: 100%;
-  aspect-ratio: 210 / 297;
   max-width: 100%;
+}
+
+.leaf--sheet.leaf--single {
+  aspect-ratio: 210 / 297;
+}
+
+.leaf--appendix.leaf--single {
+  aspect-ratio: 140 / 297;
+}
+
+.leaf--card.leaf--single {
+  height: 72%;
+  aspect-ratio: 148 / 210;
+}
+
+.leaf--stub.leaf--single {
+  height: 56%;
+  aspect-ratio: 105 / 148;
 }
 
 .leaf-spread {
@@ -289,12 +308,31 @@ body {
 }
 
 .leaf-spread .leaf {
-  /* Let each leaf use its A4 aspect-ratio; do not stretch to fill */
+  /* Let each leaf use its physical aspect-ratio; do not stretch to fill. */
   flex: 0 0 auto;
   height: 100%;
-  aspect-ratio: 210 / 297;
   min-width: 0;
   width: auto;
+}
+
+.leaf-spread .leaf--sheet {
+  aspect-ratio: 210 / 297;
+}
+
+.leaf-spread .leaf--appendix {
+  aspect-ratio: 140 / 297;
+}
+
+.leaf-spread .leaf--card {
+  height: 72%;
+  align-self: center;
+  aspect-ratio: 148 / 210;
+}
+
+.leaf-spread .leaf--stub {
+  height: 56%;
+  align-self: center;
+  aspect-ratio: 105 / 148;
 }
 
 .leaf-gutter {
@@ -338,6 +376,17 @@ body {
   padding: 1.4rem 1.5rem 1rem 2rem;
   font-size: 11.5px;
   line-height: 1.45;
+}
+
+.leaf--card .leaf__body,
+.leaf--stub .leaf__body {
+  padding: 1rem 1.05rem 0.75rem 1.45rem;
+  font-size: 10.5px;
+  line-height: 1.35;
+}
+
+.leaf--appendix .leaf__body {
+  padding-right: 1.15rem;
 }
 
 /* consistent header band: context (left) + accession number (right) */
