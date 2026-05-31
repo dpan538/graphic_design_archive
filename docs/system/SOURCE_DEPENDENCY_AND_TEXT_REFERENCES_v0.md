@@ -23,7 +23,9 @@ interpretation.
 | Art Institute of Chicago API | 45 | 35 | 0 | 0 | 9 | 1 | Museum object records for posters, prints, publications, dates, artist metadata, and IIIF image identifiers. |
 | V&A Collections API | 44 | 0 | 0 | 25 | 0 | 19 | Design-object and collection metadata for posters, prints, ephemera, makers, object types, and collection context. |
 | Princeton University Library Digital Collections / Figgy | 41 | 0 | 0 | 41 | 0 | 0 | University-library Figgy/IIIF source for posters, broadsides, banners, advertising print, scanned visual resources, and ephemera. |
+| Te Papa Collections Online | 32 | 0 | 0 | 32 | 0 | 0 | Aotearoa/New Zealand museum source for posters, protest graphics, music-publicity print, and public visual communication outside the dominant European/North American canon. |
 | Internet Archive / text and periodical collections | 30 | 29 | 0 | 0 | 1 | 0 | Scanned books, manuals, periodicals, OCR, item metadata, and bibliography/context evidence. |
+| NAIDOC Poster Gallery | 26 | 0 | 0 | 26 | 0 | 0 | Official Indigenous Australian poster-gallery source for annual NAIDOC poster item records. |
 | DigitalNZ | 21 | 0 | 0 | 0 | 21 | 0 | Aotearoa New Zealand aggregator for periodical, advertising, newspaper, and public visual communication records. |
 | The Met Open Access | 15 | 0 | 0 | 0 | 0 | 15 | Museum object records and public-domain/open-access comparison layer. |
 | Cleveland Museum Open Access API | 12 | 0 | 0 | 0 | 12 | 0 | Open-access museum object records with lower-risk image examples and object metadata. |

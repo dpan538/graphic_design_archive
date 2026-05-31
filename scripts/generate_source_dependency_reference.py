@@ -149,6 +149,14 @@ SOURCE_META = {
         "text_dependency": "Official NAIDOC/AIATSIS page descriptions, collection scope, cultural warning and context text.",
         "scripts": "run_noncanonical_exact_source_capture_1970_2000.py",
     },
+    "NAIDOC Poster Gallery": {
+        "source_id": "SRC136",
+        "role": "Official Indigenous Australian poster-gallery source for annual NAIDOC poster item records.",
+        "reference_fields": "Poster item URL, title/year, poster title field, artist field, image alt text, source-hosted poster image/PDF links.",
+        "rights_dependency": "NAIDOC item pages are treated as source-hosted IMG02 records with cultural/rights caution; no local image copy or reuse claim.",
+        "text_dependency": "Official item metadata, poster title, artist field, source page description/meta text, and image alt text when body copy is sparse.",
+        "scripts": "run_gap_noncanonical_image_text_capture_1930_2000.py",
+    },
     "Roots.sg / National Heritage Board Singapore": {
         "source_id": "SRC137",
         "role": "Singapore national heritage source for multilingual signs, commercial objects, and everyday public graphic systems.",
@@ -156,6 +164,14 @@ SOURCE_META = {
         "rights_dependency": "Roots.sg object images are treated as source-hosted IMG02; no local copy or open reuse claim is made.",
         "text_dependency": "Object title, collection context, local description, date/place and object-type metadata.",
         "scripts": "run_noncanonical_exact_source_capture_1970_2000.py",
+    },
+    "Te Papa Collections Online": {
+        "source_id": "SRC138",
+        "role": "Aotearoa/New Zealand museum source for posters, protest graphics, music-publicity print, and public visual communication outside the dominant European/North American canon.",
+        "reference_fields": "Object URL/id, title, created date, production/contributor metadata, object description, preview image URL, media rights fields.",
+        "rights_dependency": "Te Papa preview images are treated as restricted/source-hosted IMG02 evidence; no local image copy, and item-level source return remains mandatory.",
+        "text_dependency": "Object description fields, production metadata, title/date/place fields, and collection context exposed in the source page payload.",
+        "scripts": "run_gap_noncanonical_image_text_capture_1930_2000.py",
     },
 }
 

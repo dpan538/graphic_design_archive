@@ -2959,3 +2959,80 @@ Interpretation:
 - KDF and Wits should stay in the source queue, but they need either revised
   endpoints, browser-assisted verification, or a different access path before
   ingest.
+
+## 2026-05-31 — Gap Noncanonical Image/Text Capture
+
+Purpose:
+
+- Start filling the project’s real gap: non-mainstream, regional, Indigenous,
+  and counterpublic graphic design records with usable source-hosted images and
+  enough text to support future reading pages.
+- Avoid another broad keyword bulk pass. This round admits only records that
+  pass stricter image and text checks.
+
+Changes made:
+
+- Added `scripts/run_gap_noncanonical_image_text_capture_1930_2000.py`.
+- Added `data/capture_batch_gap_noncanonical_image_text_1930_2000_records.csv`.
+- Added `data/capture_batch_gap_noncanonical_image_text_1930_2000_source_summary.csv`.
+- Added raw source excerpts under
+  `data/capture_batch_gap_noncanonical_image_text_1930_2000_raw/`.
+- Added the batch to `scripts/rebuild_public_surfaces_from_records.py`.
+- Updated `scripts/generate_source_dependency_reference.py` and regenerated:
+  - `data/source_dependency_ledger.csv`
+  - `docs/system/SOURCE_DEPENDENCY_AND_TEXT_REFERENCES_v0.md`
+
+Capture policy:
+
+- Te Papa object records are accepted only when the page exposes a real
+  `media.tepapa.govt.nz/collection/.../preview` image and a source description
+  of at least 80 characters.
+- NAIDOC item pages use official poster-gallery pages and extract poster title,
+  artist, source-hosted image URL, and image alt text/body metadata.
+- All new images are `IMG02`: source-hosted display only, no local image copy,
+  no open-reuse claim.
+- Duplicate titles and repeated image URLs are rejected within this batch.
+
+Verified results:
+
+- New records captured: 58
+  - Te Papa Collections Online: 32
+  - NAIDOC Poster Gallery: 26
+- New image states:
+  - `IMG02`: 58
+- Batch quality checks:
+  - repeated image URLs: 0
+  - repeated titles: 0
+  - Te Papa decoration/placeholder images: 0
+  - descriptions under 80 characters: 0
+- Cumulative public payload after rebuild:
+  - public surfaces: 991
+  - sheets: 941
+  - cards: 50
+  - image-ready: 870 / 991
+  - image-ready coverage: 88%
+  - `IMG00`: 68
+  - `IMG01`: 37
+  - `IMG02`: 450
+  - `IMG03`: 383
+  - `IMG04`: 53
+- Period image coverage after rebuild:
+  - `<1930`: 282 / 302 image-ready, 93.4%
+  - `1930-1970`: 404 / 503 image-ready, 80.3%
+  - `1971-2000`: 178 / 178 image-ready, 100.0%
+  - `2001-2026`: 6 / 8 image-ready, 75.0%
+- Integrity audit:
+  - exact repeated image URLs: 0
+  - placeholder image URLs: 0
+  - short text sheets under 60 words: 0
+- Frontend build passed:
+  - static pages generated: 1057
+
+Interpretation:
+
+- The overall image-ready percentage improved modestly because the archive is
+  now large, but the new batch is high quality and specifically targets the
+  noncanonical gap.
+- The next data-side priority is not simply more records. It is reducing the
+  remaining `1930-1970` `IMG00/IMG04` pool through source-specific remediation
+  and adding more non-Western movement archives with real item pages.
