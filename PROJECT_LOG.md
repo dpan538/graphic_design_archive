@@ -2678,3 +2678,60 @@ Interpretation:
 - The official archive must keep source dependency and rate-limit failures in
   About/Methodology so users understand why some regions or sources remain
   link-only or delayed.
+
+---
+
+## GSU Later-Stage Raw Harvest
+
+User clarified that if a capture pass finds records from the next time bands,
+they should be retained rather than discarded, because the archive is intended
+to cover all stages through 2026.
+
+Changes made:
+
+- Added `scripts/harvest_gsu_contentdm_raw_records_1971_2026.py`.
+- Reused the GSU CONTENTdm raw harvest logic but wrote a separate official
+  output batch:
+  - `data/capture_batch_gsu_contentdm_image_ready_1971_2026_records.csv`
+  - `data/capture_batch_gsu_contentdm_image_ready_1971_2026_source_summary.csv`
+- Added the new batch to `scripts/rebuild_public_surfaces_from_records.py`.
+- Updated surface display numbering to prefer `date_end` over `date_start`
+  when generating the provisional display era, so long-range records such as
+  `1965-1990` are filed by their terminal year rather than visually treated as
+  1960s-only records.
+- Updated cumulative rebuild sorting to use terminal year first.
+
+Verified results:
+
+- New GSU late-stage records: 52
+  - 46 records ending in 1971-2000
+  - 6 records ending in 2001-2026
+  - all 52 are `IMG02`
+- Cumulative public payload:
+  - public surfaces: 779
+  - sheets: 729
+  - cards: 50
+  - image-ready: 660 / 779
+  - image-ready coverage: 84.72% (rounded script output: 85%)
+  - `IMG00`: 68
+  - `IMG01`: 37
+  - `IMG02`: 247
+  - `IMG03`: 376
+  - `IMG04`: 51
+- GSU total public surfaces: 85
+- Integrity audit:
+  - exact repeated image URLs: 0
+  - placeholder image URLs: 0
+  - short text sheets under 60 words: 0
+- Frontend build passed:
+  - static pages generated: 828
+
+Interpretation:
+
+- This pass improves image coverage and proves that the stage-aware retention
+  rule works.
+- It is still not enough for launch: the project remains roughly ten percentage
+  points below the 95% image-ready target.
+- The next substantial jump still requires additional high-yield image sources,
+  ideally CONTENTdm/IIIF/Omeka/Kramerius/local-government collections rather
+  than broad APIs currently subject to rate limits.

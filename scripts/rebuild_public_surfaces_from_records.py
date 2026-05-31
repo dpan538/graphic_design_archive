@@ -28,6 +28,7 @@ RECORD_FILES = [
     DATA / "capture_batch_wikimedia_commons_deep_image_ready_1830_1970_records.csv",
     DATA / "capture_batch_princeton_figgy_image_ready_1830_1970_records.csv",
     DATA / "capture_batch_gsu_contentdm_image_ready_1830_1970_records.csv",
+    DATA / "capture_batch_gsu_contentdm_image_ready_1971_2026_records.csv",
     DATA / "capture_batch_loc_deep_image_ready_1931_1970_records.csv",
 ]
 
@@ -93,6 +94,18 @@ def fill_enrichment_defaults(row: dict[str, str]) -> dict[str, str]:
     for field in mx.FIELDNAMES:
         row.setdefault(field, "")
     return row
+
+
+def row_sort_year(row: dict[str, str]) -> int:
+    """Sort long-range records by their terminal year.
+
+    The archive's capture phases treat a record that spans decades as belonging
+    to the phase where its end year lands. Keeping the same rule in the static
+    payload prevents ranges such as 1965-1990 from being visually filed with
+    the 1960s merely because their start year is early.
+    """
+    year = row.get("date_end") or row.get("date_start")
+    return int(year) if year and year.isdigit() else 9999
 
 
 def dedupe_rows(rows: list[dict[str, str]]) -> list[dict[str, str]]:
@@ -229,7 +242,7 @@ def main() -> None:
     for path in RECORD_FILES:
         rows.extend(read_rows(path))
     rows = dedupe_rows([fill_enrichment_defaults(row) for row in rows])
-    rows.sort(key=lambda r: (int(r["date_start"]) if r.get("date_start") else 9999, r.get("source_title", "")))
+    rows.sort(key=lambda r: (row_sort_year(r), r.get("source_title", "")))
 
     payload = mc.build_public_payload(rows)
     payload = enhance_payload(payload, rows)

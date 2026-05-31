@@ -1064,7 +1064,7 @@ def build_surface(row: dict[str, str], index: int) -> dict[str, Any]:
     image_state = row.get("image_presence_code") or "IMG00"
     has_frame = image_state != "IMG04"
     year_text = row.get("source_date_text") or "undated"
-    era = row.get("date_start") or first_year(year_text) or "undated"
+    era = row.get("date_end") or row.get("date_start") or first_year(year_text) or "undated"
     seq = f"STAGED-MC-{index:04d}"
     tier = "M" if surface_type == "sheet" else "S"
     region_id, region_label, region_refs = region_for(row)
