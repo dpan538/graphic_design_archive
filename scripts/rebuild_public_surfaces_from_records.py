@@ -29,6 +29,7 @@ RECORD_FILES = [
     DATA / "capture_batch_princeton_figgy_image_ready_1830_1970_records.csv",
     DATA / "capture_batch_gsu_contentdm_image_ready_1830_1970_records.csv",
     DATA / "capture_batch_gsu_contentdm_image_ready_1971_2026_records.csv",
+    DATA / "capture_batch_cooperhewitt_graphql_image_ready_1830_2026_records.csv",
     DATA / "capture_batch_loc_deep_image_ready_1931_1970_records.csv",
 ]
 

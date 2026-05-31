@@ -2735,3 +2735,68 @@ Interpretation:
 - The next substantial jump still requires additional high-yield image sources,
   ideally CONTENTdm/IIIF/Omeka/Kramerius/local-government collections rather
   than broad APIs currently subject to rate limits.
+
+---
+
+## Cooper Hewitt GraphQL Image-Ready Capture
+
+User asked to continue the next source expansion round, with special attention
+to image coverage, duplicate images, and source honesty.
+
+Changes made:
+
+- Added `scripts/run_cooperhewitt_graphql_image_ready_1830_2026.py`.
+- Added `data/capture_batch_cooperhewitt_graphql_image_ready_1830_2026_records.csv`.
+- Added `data/capture_batch_cooperhewitt_graphql_image_ready_1830_2026_source_summary.csv`.
+- Added the Cooper Hewitt batch to `scripts/rebuild_public_surfaces_from_records.py`.
+- The first probe showed that a naive `graphic design` query captured too many
+  non-graphic "Design for..." decorative/object sketches. The script was
+  tightened before publication:
+  - kept poster, packaging, label, brochure, advertising, and typography routes;
+  - removed over-broad book-cover/illustration routes;
+  - stopped using department name alone as relevance evidence;
+  - removed overly broad relevance triggers such as generic `lithograph`,
+    `print`, and `cover`;
+  - split Cooper Hewitt GraphQL requests by time ranges because the API returned
+    empty results for one very broad `1830-2026` poster query.
+
+Verified results:
+
+- Cooper Hewitt official records: 148
+- Cooper Hewitt public surfaces after normalization: 137
+- All Cooper Hewitt records are `IMG02` source-hosted image candidates.
+- Cooper Hewitt duplicate image URLs: 0
+- Cumulative public payload after rebuild:
+  - public surfaces: 916
+  - sheets: 866
+  - cards: 50
+  - image-ready: 797 / 916
+  - image-ready coverage: 87%
+  - `IMG00`: 68
+  - `IMG01`: 37
+  - `IMG02`: 384
+  - `IMG03`: 376
+  - `IMG04`: 51
+- Integrity audit:
+  - exact repeated image URLs: 0
+  - placeholder image URLs: 0
+  - short text sheets under 60 words: 0
+  - bookmarks: 30
+  - appendices: 35
+  - registration cards: 30
+- Frontend build passed:
+  - static pages generated: 966
+
+Interpretation:
+
+- This is a real improvement but still not launch-ready for the user's 95%+
+  visual-design threshold.
+- The project is now around 87% image-ready by the current static payload
+  metric. The remaining gap is mostly structural: `IMG00`, `IMG04`, and
+  thumbnail-only `IMG01` rows still need conversion or better source selection.
+- Cooper Hewitt is useful as a design-specific image source, but it must be
+  queried narrowly; broad design terms can produce decorative/object design
+  false positives.
+- The next capture round should prioritize additional design-specific or
+  protocol-stable sources with visible images and item-level rights evidence,
+  rather than broad keyword search alone.
