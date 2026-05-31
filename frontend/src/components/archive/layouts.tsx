@@ -43,6 +43,12 @@ function accessionOf(leaf: Leaf): { no: string; pg: string } {
       pg: `Index ${leaf.regPageNumber ?? 1} / ${leaf.regPageCount ?? 1}`,
     };
   }
+  if (leaf.type === "bookmark") {
+    return {
+      no: leaf.folder?.folderId ?? "",
+      pg: "Bookmark",
+    };
+  }
   return {
     no: leaf.surface?.provisionalDisplayNumber ?? "",
     pg: `p${String(leaf.surfacePageNumber ?? 1).padStart(2, "0")} / ${String(
@@ -164,13 +170,14 @@ function L01Main({ leaf, activeFolderId }: LayoutProps) {
 
 function L02Text({ leaf, activeFolderId }: LayoutProps) {
   const s = leaf.surface!;
+  const label = leaf.type === "text" ? "Text continuation" : "Text sheet";
   return (
     <Body>
       <LeafHead
         leaf={leaf}
         context={
           <>
-            <StatusChip kind={s.surfaceType} /> Text sheet · <ImgBadge state={s.image.state} />
+            <StatusChip kind={s.surfaceType} /> {label} · <ImgBadge state={s.image.state} />
           </>
         }
       />
@@ -440,6 +447,51 @@ function L08Appendix({ leaf }: LayoutProps) {
 }
 
 // ========================================================================
+// L10 — Folder bookmark / reading note.
+// ========================================================================
+
+function L10Bookmark({ leaf }: LayoutProps) {
+  const folder = leaf.folder!;
+  const ft = getFolderType(folder.type);
+  return (
+    <Body>
+      <LeafHead
+        leaf={leaf}
+        swatch={<TypeSwatch type={folder.type} />}
+        context={<>{ft?.label ?? folder.type} bookmark · reading note</>}
+      />
+      <header className="mt-3">
+        <p className="label-caps text-ink-soft">Filter view</p>
+        <h1 className="leaf__title leaf__title--sm mt-1">{folder.title}</h1>
+        <p className="leaf__sub mt-1.5">
+          {dateSpanLabel(folder.dateStart, folder.dateEnd)} · {folder.surfaceIds.length} surfaces
+        </p>
+      </header>
+      <div className="mt-4 flex-1 min-h-0">
+        <p className="col-justify" style={{ fontSize: "0.68rem", lineHeight: 1.55 }}>
+          {folder.scopeNote}
+        </p>
+        <dl className="deflist mt-4">
+          <dt>sorting</dt>
+          <dd>chronological by record date or reviewed date span</dd>
+          <dt>membership</dt>
+          <dd>filter view only; records are not owned by this folder</dd>
+          <dt>image policy</dt>
+          <dd>IMG00 reserves a source-return frame; IMG04 removes the image bay</dd>
+          <dt>reading</dt>
+          <dd>each sheet is followed by a text continuation leaf</dd>
+        </dl>
+      </div>
+      <div className="sheet-markers">
+        <span>L10.bookmark</span>
+        <span>{folder.folderId}</span>
+        <span>bookmark</span>
+      </div>
+    </Body>
+  );
+}
+
+// ========================================================================
 // L09 — Folder register / chronological index (clickable, multi-page).
 // ========================================================================
 
@@ -527,6 +579,7 @@ export function renderLeafContent(
   ctx?: LeafCtx,
 ) {
   if (leaf.type === "register") return <L09Register leaf={leaf} ctx={ctx} />;
+  if (leaf.type === "bookmark") return <L10Bookmark leaf={leaf} />;
   if (leaf.type === "appendix") return <L08Appendix leaf={leaf} />;
   const props: LayoutProps = { leaf, activeFolderId, ctx };
   switch (leaf.layoutId) {

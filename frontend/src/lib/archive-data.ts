@@ -50,16 +50,12 @@ export function getFolderType(type: string): FolderType | undefined {
   return mock.folderTypes.find((ft) => ft.type === type);
 }
 
-/**
- * Low-saturation archival inks, one per folder type. These replace the mock's
- * brighter hues for the museum/archive aesthetic. The mock colours remain in
- * the payload and are still surfaced (e.g. in the RIGHTS/CLASSIFICATION data).
- */
+/** Folder badge inks from the shared Archive Box palette. */
 export const FOLDER_INK: Record<FolderTypeKey, string> = {
-  region: "#2F5BEA",
-  theme: "#33302b",
-  medium: "#D94A38",
-  movement: "#E2C044",
+  region: "#1A00B9",
+  theme: "#B7CE4F",
+  medium: "#FF5E39",
+  movement: "#1A00B9",
 };
 
 export function getFolderInk(type: string): string {

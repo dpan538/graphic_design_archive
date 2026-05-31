@@ -47,17 +47,21 @@ export type SheetVariant = "img-right" | "img-left" | "img-top";
 
 /**
  * An image may only drive layout when it can actually be displayed: a
- * permitted state (IMG01 / IMG03) AND a real URL in the payload.
- * IMG00/IMG02 are still image-presence states: they reserve an image bay, but
- * render an empty rights/source frame instead of a bitmap. IMG04 is the only
- * no-image-frame state.
+ * permitted state (IMG01 / IMG02 / IMG03) AND a real URL in the payload.
+ * IMG02 remains source-hosted / viewer-oriented: it may render a remote
+ * source image, but it is never treated as locally owned or mirrored.
+ * IMG00 reserves an empty rights/source frame. IMG04 is the only no-image-frame
+ * state.
  */
 export function isRenderableImage(img?: {
   state?: string;
   url?: string | null;
 }): boolean {
   return (
-    (img?.state === "IMG01" || img?.state === "IMG03") && Boolean(img?.url)
+    (img?.state === "IMG01" ||
+      img?.state === "IMG02" ||
+      img?.state === "IMG03") &&
+    Boolean(img?.url)
   );
 }
 
@@ -74,7 +78,7 @@ export function selectLayout(s: Surface): LayoutId {
     return "L05.compound";
   }
 
-  if (s.image.state === "IMG00" || s.image.state === "IMG02") {
+  if (s.image.state === "IMG00") {
     return "L01.main";
   }
 

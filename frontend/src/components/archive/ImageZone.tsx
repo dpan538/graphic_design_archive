@@ -1,17 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { SurfaceImage } from "@/types/archive";
 import { isRenderableImage } from "@/lib/layout";
 
 /**
  * Image bay.
  *
- * Renderable (IMG01 / IMG03 with URL):
+ * Renderable (IMG01 / IMG02 / IMG03 with URL):
  *   – starts with default portrait ratio (3/4), resets to natural aspect ratio
  *     once the image loads so each image keeps its own proportions.
  *
- * Image-present but non-renderable (IMG00 / IMG02 / missing URL):
+ * Image-present but non-renderable (IMG00 / missing URL):
  *   – reserves the image bay and renders an empty rights/source frame.
  *
  * IMG04:
@@ -32,8 +32,16 @@ export default function ImageZone({
 }) {
   const [aspectRatio, setAspectRatio] = useState<string>("3 / 4");
   const [loaded, setLoaded] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const imageUrl = image.url ?? "";
 
-  if (!isRenderableImage(image)) {
+  useEffect(() => {
+    setAspectRatio("3 / 4");
+    setLoaded(false);
+    setFailed(false);
+  }, [imageUrl]);
+
+  if (!isRenderableImage(image) || failed) {
     if (image.state === "IMG04") {
       return null;
     }
@@ -65,9 +73,13 @@ export default function ImageZone({
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
+          key={image.url as string}
           src={image.url as string}
           alt={image.credit ?? "Source plate"}
           className="absolute inset-0 w-full h-full object-contain"
+          loading="lazy"
+          decoding="async"
+          referrerPolicy="no-referrer"
           style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.15s" }}
           onLoad={(e) => {
             const img = e.currentTarget;
@@ -75,6 +87,10 @@ export default function ImageZone({
               setAspectRatio(`${img.naturalWidth} / ${img.naturalHeight}`);
             }
             setLoaded(true);
+          }}
+          onError={() => {
+            setFailed(true);
+            setLoaded(false);
           }}
         />
         {!loaded && (

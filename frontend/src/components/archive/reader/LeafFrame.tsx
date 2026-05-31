@@ -18,7 +18,9 @@ export default function LeafFrame({
   ctx?: LeafCtx;
 }) {
   const sizeClass =
-    leaf.type === "appendix"
+    leaf.type === "bookmark"
+      ? "leaf--bookmark"
+      : leaf.type === "appendix"
       ? "leaf--appendix"
       : leaf.layoutId === "L06.card"
         ? "leaf--card"

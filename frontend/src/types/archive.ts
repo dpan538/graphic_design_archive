@@ -79,7 +79,7 @@ export interface SurfaceFolderRef {
 export interface SurfaceImage {
   state: ImageState;
   hasImageFrame: boolean;
-  /** Remote image URL. Only render an actual image when present (IMG01/03). */
+  /** Remote image URL. Only render an actual image when present (IMG01/02/03). */
   url: string | null;
   credit: string | null;
   licenseLabel: string | null;
@@ -134,6 +134,11 @@ export interface Surface {
   sourceDescription?: string;
   sourceNotes?: string;
   sourceSubjects?: string;
+  readingTextLength?: number;
+  historicalContextNote?: string;
+  classificationRationale?: string;
+  uncertaintyNote?: string;
+  citationBasis?: string;
   completenessScore: number;
   reviewGates: SurfaceReviewGates;
   image: SurfaceImage;

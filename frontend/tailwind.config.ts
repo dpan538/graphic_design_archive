@@ -3,8 +3,8 @@ import daisyui from "daisyui";
 
 /**
  * Archival theme. 1-bit / paper / document, restrained physical depth.
- * Mono-per-type inks are LOW-SATURATION archive colours (not the raw mock
- * hues). DaisyUI is kept only for input/button affordances.
+ * Shared palette tokens are kept here so Tailwind utilities, DaisyUI, and
+ * custom CSS resolve to the same named colours.
  */
 const config: Config = {
   content: [
@@ -15,8 +15,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        // Typewriter / monospace first, everywhere.
         mono: [
+          "var(--font-plex-mono)",
           "ui-monospace",
           "SFMono-Regular",
           "SF Mono",
@@ -26,27 +26,31 @@ const config: Config = {
           "Courier New",
           "monospace",
         ],
-        // A neutral grotesk for the few non-typewriter headings (Werk-like).
         sans: [
+          "var(--font-plex-sans)",
           "ui-sans-serif",
-          "Helvetica Neue",
-          "Helvetica",
-          "Arial",
           "system-ui",
           "sans-serif",
         ],
       },
       colors: {
-        paper: "#ECE7D9",
-        "paper-2": "#E3DCCB",
-        "paper-3": "#D8CFB9",
+        "dark-blue": "#1A00B9",
+        "portland-orange": "#FF5E39",
+        "white-chocolate": "#EFEAD3",
+        "june-bud": "#B7CE4F",
+        paper: "#F3EEDB",
+        "paper-2": "#EBE3CC",
+        "paper-3": "#DED3B8",
         ink: "#1A1714",
         "ink-soft": "#6E665A",
-        // Low-saturation archival inks, one per folder type.
-        region: "#3A4A6B",
-        theme: "#33302B",
-        medium: "#8A4B3B",
-        movement: "#8A7430",
+        "rail-red": "#FF5E39",
+        "instruction-cyan": "#18B7C8",
+        "signal-green": "#B7CE4F",
+        "aux-brown": "#332D28",
+        region: "#1A00B9",
+        theme: "#B7CE4F",
+        medium: "#FF5E39",
+        movement: "#1A00B9",
       },
       borderRadius: {
         none: "0",
@@ -68,21 +72,21 @@ const config: Config = {
       {
         archive: {
           primary: "#1A1714",
-          "primary-content": "#ECE7D9",
+          "primary-content": "#F3EEDB",
           secondary: "#6E665A",
-          "secondary-content": "#ECE7D9",
-          accent: "#3A4A6B",
-          "accent-content": "#ECE7D9",
+          "secondary-content": "#F3EEDB",
+          accent: "#FF5E39",
+          "accent-content": "#F3EEDB",
           neutral: "#1A1714",
-          "neutral-content": "#ECE7D9",
-          "base-100": "#ECE7D9",
-          "base-200": "#E3DCCB",
-          "base-300": "#D8CFB9",
+          "neutral-content": "#F3EEDB",
+          "base-100": "#F3EEDB",
+          "base-200": "#EBE3CC",
+          "base-300": "#DED3B8",
           "base-content": "#1A1714",
-          info: "#3A4A6B",
-          success: "#4A5D3A",
-          warning: "#8A7430",
-          error: "#8A3B2E",
+          info: "#18B7C8",
+          success: "#B7CE4F",
+          warning: "#18B7C8",
+          error: "#FF5E39",
           "--rounded-box": "1px",
           "--rounded-btn": "1px",
           "--rounded-badge": "1px",

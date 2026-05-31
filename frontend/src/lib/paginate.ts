@@ -27,7 +27,7 @@ import {
 export interface Leaf {
   /** Stable id for React keys and jump targets. */
   id: string;
-  type: "register" | "main" | "appendix";
+  type: "register" | "bookmark" | "main" | "text" | "appendix";
   folder?: Folder;
   surface?: Surface;
   layoutId?: LayoutId;
@@ -69,40 +69,89 @@ const APPENDIX_BUDGET = 14;
 const REGISTER_BUDGET = 17;
 const REGISTER_FIRST_RESERVE = 7;
 
-/** Greedily pack tables: first the main leaf, then appendix leaves. */
-function packTables(
-  tables: SurfaceTable[],
-  mainBudget: number,
-): { main: SurfaceTable[]; appendix: SurfaceTable[][] } {
+function packMainTables(tables: SurfaceTable[], mainBudget: number): SurfaceTable[] {
   const main: SurfaceTable[] = [];
   let used = 0;
-  let i = 0;
   // A zero budget means the layout's first leaf is text-only (no tables).
   if (mainBudget > 0) {
-    for (; i < tables.length; i++) {
+    for (let i = 0; i < tables.length; i++) {
       const w = tableWeight(tables[i]);
       if (main.length > 0 && used + w > mainBudget) break;
       main.push(tables[i]);
       used += w;
     }
   }
+  return main;
+}
 
+function packAppendixTables(tables: SurfaceTable[]): SurfaceTable[][] {
   const appendix: SurfaceTable[][] = [];
   let page: SurfaceTable[] = [];
   let pageUsed = 0;
-  for (; i < tables.length; i++) {
-    const w = tableWeight(tables[i]);
+  for (const table of tables) {
+    const w = tableWeight(table);
     if (page.length > 0 && pageUsed + w > APPENDIX_BUDGET) {
       appendix.push(page);
       page = [];
       pageUsed = 0;
     }
-    page.push(tables[i]);
+    page.push(table);
     pageUsed += w;
   }
   if (page.length > 0) appendix.push(page);
+  return appendix;
+}
 
-  return { main, appendix };
+function tableByKind(tables: SurfaceTable[], kind: string): SurfaceTable | undefined {
+  return tables.find((table) => table.kind === kind);
+}
+
+function readingLength(surface: Surface): number {
+  if (typeof surface.readingTextLength === "number") return surface.readingTextLength;
+  return [
+    surface.descriptionSummary,
+    surface.sourceDescription,
+    surface.sourceNotes,
+    surface.sourceSubjects,
+  ]
+    .filter(Boolean)
+    .join(" ").length;
+}
+
+function needsTextLeaf(surface: Surface, layoutId: LayoutId): boolean {
+  if (layoutId === "L02.text") return false;
+  if (surface.surfaceType !== "sheet") return false;
+  return true;
+}
+
+/**
+ * Appendix leaves are now exceptional evidence pages, not automatic overflow.
+ * The payload still carries all six tables for reproducibility; this function
+ * decides which tables deserve a separate physical continuation sheet.
+ */
+function appendixTablesFor(surface: Surface, tables: SurfaceTable[]): SurfaceTable[] {
+  if (surface.surfaceType !== "sheet") return [];
+
+  const selected: SurfaceTable[] = [];
+  const relations = tableByKind(tables, "RELATIONS");
+  const citations = tableByKind(tables, "CITATIONS");
+  const rights = tableByKind(tables, "RIGHTS");
+  const source = tableByKind(tables, "SOURCE");
+
+  if (surface.image.state === "IMG00" && rights) {
+    selected.push(rights);
+  }
+  if (relations && relations.rows.length > 4) {
+    selected.push(relations);
+  }
+  if (citations && citations.rows.length > 3) {
+    selected.push(citations);
+  }
+  if ((surface.compoundChildren?.length ?? 0) > 8 && source) {
+    selected.push(source);
+  }
+
+  return selected;
 }
 
 /** Build the leaf sequence for a single surface (no folder register). */
@@ -110,9 +159,11 @@ export function paginateSurface(surface: Surface): Leaf[] {
   const layoutId = selectLayout(surface);
   const variant = sheetVariant(surface);
   const tables = orderedTables(surface);
-  const { main, appendix } = packTables(tables, mainTableBudget(layoutId));
+  const main = packMainTables(tables, mainTableBudget(layoutId));
+  const textLeaf = needsTextLeaf(surface, layoutId);
+  const appendix = packAppendixTables(appendixTablesFor(surface, tables));
 
-  const pageCount = 1 + appendix.length;
+  const pageCount = 1 + (textLeaf ? 1 : 0) + appendix.length;
   const leaves: Leaf[] = [
     {
       id: `${surface.surfaceId}#p1`,
@@ -126,14 +177,29 @@ export function paginateSurface(surface: Surface): Leaf[] {
     },
   ];
 
+  let nextPageNumber = 2;
+  if (textLeaf) {
+    leaves.push({
+      id: `${surface.surfaceId}#text`,
+      type: "text",
+      surface,
+      layoutId: "L02.text",
+      variant,
+      tables: [],
+      surfacePageNumber: nextPageNumber,
+      surfacePageCount: pageCount,
+    });
+    nextPageNumber += 1;
+  }
+
   appendix.forEach((pageTables, idx) => {
     leaves.push({
-      id: `${surface.surfaceId}#p${idx + 2}`,
+      id: `${surface.surfaceId}#p${nextPageNumber + idx}`,
       type: "appendix",
       surface,
       layoutId: "L08.appendix",
       tables: pageTables,
-      surfacePageNumber: idx + 2,
+      surfacePageNumber: nextPageNumber + idx,
       surfacePageCount: pageCount,
     });
   });
@@ -179,6 +245,12 @@ export function paginateFolder(folder: Folder): Leaf[] {
     regPageNumber: idx + 1,
     regPageCount: regPages.length,
   }));
+
+  leaves.push({
+    id: `${folder.folderId}#bookmark`,
+    type: "bookmark",
+    folder,
+  });
 
   for (const surface of surfaces) {
     leaves.push(...paginateSurface(surface));

@@ -78,16 +78,20 @@ export function SourceTextBlock({ surface }: { surface: Surface }) {
   const desc = surface.sourceDescription?.trim();
   const rawNotes = surface.sourceNotes?.trim();
   const subjects = subjectsText(surface.sourceSubjects);
+  const context = surface.historicalContextNote?.trim();
+  const classification = surface.classificationRationale?.trim();
+  const uncertainty = surface.uncertaintyNote?.trim();
+  const citation = surface.citationBasis?.trim();
   // The lead paragraph already shows summary || desc; never repeat it here.
   const lead = summary || desc;
   const showDesc = desc && desc !== summary && desc !== lead;
   const notes = rawNotes && rawNotes !== lead && rawNotes !== desc ? rawNotes : "";
-  if (!showDesc && !notes && !subjects) return null;
+  if (!showDesc && !notes && !subjects && !context && !classification && !uncertainty && !citation) return null;
   return (
     <div>
       <div className="spec__label">
         <span className="k">Source text</span>
-        <span className="sub">as captured</span>
+        <span className="sub">captured + normalized notes</span>
       </div>
       {showDesc ? (
         <p className="col-justify" style={{ fontSize: "0.64rem", lineHeight: 1.5 }}>
@@ -105,6 +109,26 @@ export function SourceTextBlock({ surface }: { surface: Surface }) {
       {subjects ? (
         <p className="mt-1" style={{ fontSize: "0.6rem" }}>
           <span className="label-caps text-ink-soft">subjects</span> {subjects}
+        </p>
+      ) : null}
+      {context ? (
+        <p className="col-justify mt-2" style={{ fontSize: "0.6rem", lineHeight: 1.5 }}>
+          <span className="label-caps text-ink-soft">context</span> {context}
+        </p>
+      ) : null}
+      {classification ? (
+        <p className="col-justify mt-1 text-ink-soft" style={{ fontSize: "0.58rem", lineHeight: 1.45 }}>
+          <span className="label-caps">classification</span> {classification}
+        </p>
+      ) : null}
+      {uncertainty ? (
+        <p className="col-justify mt-1 text-ink-soft" style={{ fontSize: "0.58rem", lineHeight: 1.45 }}>
+          <span className="label-caps">uncertainty</span> {uncertainty}
+        </p>
+      ) : null}
+      {citation ? (
+        <p className="mt-1 break-words text-ink-soft" style={{ fontSize: "0.56rem", lineHeight: 1.4 }}>
+          <span className="label-caps">citation basis</span> {citation}
         </p>
       ) : null}
     </div>

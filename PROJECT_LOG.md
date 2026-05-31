@@ -2541,3 +2541,68 @@ Chinese Posters. The next productive image work should either upgrade these
 blockers item-by-item or add larger local/government/university protocol
 families with high image yield, especially CONTENTdm, IIIF manifests, Omeka S,
 Kramerius, and national/regional newspaper repositories.
+
+---
+
+## Public Surface Integrity Correction
+
+User review found that the visual archive was still too close to a flat table:
+
+- several pages appeared to reuse the same image while browsing;
+- `IMG` coverage was reported without checking placeholder images;
+- most sheet records had no visible text-continuation leaf in the reader;
+- the static payload did not explicitly expose bookmark, appendix, or
+  registration-card structures.
+
+Corrections made:
+
+- Added `scripts/audit_public_surface_integrity.py` as a release-facing local
+  audit. It checks exact repeated image URLs, placeholder image URLs, short
+  text sheets, image state counts, source distribution, and structural
+  collections.
+- Updated `scripts/normalize_public_surfaces.py` to reject placeholder image
+  URLs. Three Wellcome records using `https://wellcomecollection.org/placeholder.jpg`
+  were demoted from renderable `IMG02`/`IMG03` to `IMG00`.
+- Updated `scripts/rebuild_public_surfaces_from_records.py` to add explicit
+  structural collections to the payload:
+  - 30 folder bookmarks;
+  - 35 appendix candidates, limited to real rights/image-evidence continuation
+    cases rather than generic six-table overflow;
+  - 30 registration cards / folder membership ledgers.
+- Strengthened fallback enrichment text so no sheet currently falls below the
+  60-word audit floor.
+- Rebuilt all static public payload copies.
+
+Verified results:
+
+- public surfaces: 696
+- sheets: 646
+- cards: 50
+- image-ready: 577 / 696
+- image-ready coverage: 82.90%
+- image states:
+  - `IMG00`: 68
+  - `IMG01`: 37
+  - `IMG02`: 164
+  - `IMG03`: 376
+  - `IMG04`: 51
+- exact repeated image URLs: 0
+- placeholder image URLs: 0
+- short text sheets under 60 words: 0
+- structural payload collections:
+  - bookmarks: 30
+  - appendices: 35
+  - registration cards: 30
+
+Important interpretation:
+
+- The earlier 83.38% image-ready number was too generous because it counted
+  three placeholder images as displayable. The corrected image-ready rate is
+  82.90%.
+- A local Gallica sample check showed distinct IIIF URLs and distinct downloaded
+  image hashes for the user-reported adjacent records, so the repeated-image
+  symptom is likely a frontend image-state/cache reuse issue rather than an
+  exact payload URL duplicate. Frontend mitigation resets image load/error state
+  on URL change and keys the image element by URL.
+- The launch target remains 95%+ image-ready coverage, so the archive still
+  needs substantial source expansion and item-level upgrades before release.

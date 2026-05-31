@@ -84,6 +84,48 @@ def representative_image(items: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+PLACEHOLDER_IMAGE_PATTERNS = (
+    "placeholder",
+    "spacer.gif",
+    "no-image",
+    "no_image",
+    "missing-image",
+)
+
+
+def looks_like_placeholder(url: str) -> bool:
+    low = (url or "").lower()
+    return any(pattern in low for pattern in PLACEHOLDER_IMAGE_PATTERNS)
+
+
+def sanitize_placeholder_images(payload: dict[str, Any]) -> int:
+    changed = 0
+    for surface in payload.get("surfaces", []):
+        image = surface.get("image")
+        if not isinstance(image, dict):
+            continue
+        url = image.get("url") or ""
+        if not looks_like_placeholder(url):
+            continue
+        image["state"] = "IMG00"
+        image["url"] = None
+        image["hasImageFrame"] = True
+        image["displayMode"] = "rights_empty_frame"
+        image["expectation"] = "expected"
+        image["parserStatus"] = "placeholder_rejected"
+        image["licenseLabel"] = (
+            "Source returned a placeholder image. Display is withheld and the "
+            "record remains source-linked until item-level image evidence is reviewed."
+        )
+        rights = surface.get("rights")
+        if isinstance(rights, dict):
+            rights["displayPolicy"] = "rights_empty_frame"
+            rights["state"] = "source_link_only"
+            rights["label"] = "Placeholder image rejected; return to source."
+        changed += 1
+    return changed
+
+
 def make_group_surface(items: list[dict[str, Any]], group_index: int) -> dict[str, Any]:
     first = deepcopy(items[0])
     start, end, span = year_range(items)
@@ -171,6 +213,7 @@ def should_group(items: list[dict[str, Any]]) -> bool:
 
 def normalize_payload(payload: dict[str, Any]) -> dict[str, Any]:
     surfaces = payload.get("surfaces", [])
+    placeholder_images_rejected = sanitize_placeholder_images(payload)
     groups: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
     for surface in surfaces:
         key = (norm(surface.get("sourceName", "")), norm(surface.get("title", "")))
@@ -190,6 +233,11 @@ def normalize_payload(payload: dict[str, Any]) -> dict[str, Any]:
         remove_ids.update(item["surfaceId"] for item in items[1:])
 
     if not replacement:
+        if placeholder_images_rejected:
+            meta = payload.setdefault("meta", {})
+            meta["imageIntegrity"] = {
+                "placeholderImagesRejected": placeholder_images_rejected,
+            }
         return payload
 
     next_surfaces: list[dict[str, Any]] = []
@@ -222,6 +270,9 @@ def normalize_payload(payload: dict[str, Any]) -> dict[str, Any]:
     meta["normalization"] = {
         "duplicateGroupsApplied": group_index - 1,
         "rule": "same source + repeated/source-generic title, count >= 3",
+    }
+    meta["imageIntegrity"] = {
+        "placeholderImagesRejected": placeholder_images_rejected,
     }
     return payload
 

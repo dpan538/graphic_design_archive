@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 import ArchiveShell from "@/components/archive/shell/ArchiveShell";
-import FolderDrawer, {
-  type DrawerItem,
-} from "@/components/archive/drawer/FolderDrawer";
+import FolderTypeSpeedIndex, {
+  type FolderTypeSpeedItem,
+} from "@/components/archive/drawer/FolderTypeSpeedIndex";
 import {
   allFolderTypeParams,
   dateSpanLabel,
@@ -38,22 +38,27 @@ export default async function FolderTypePage({
   const folderType = getFolderType(type);
   if (!folderType) notFound();
 
-  const items: DrawerItem[] = getFoldersByType(folderType.type).map(
+  const items: FolderTypeSpeedItem[] = getFoldersByType(folderType.type).map(
     (folder) => {
       const surfaces = getSurfacesForFolder(folder);
       const mix = surfaceMix(surfaces);
       return {
         key: folder.folderId,
         type: folder.type,
-        ink: getFolderInk(folder.type),
-        tabLabel: folderType.label,
+        code: folder.title
+          .replace(/[^a-z0-9 ]/gi, " ")
+          .trim()
+          .split(/\s+/)
+          .slice(0, 2)
+          .map((part) => part.slice(0, 3))
+          .join("")
+          .slice(0, 6)
+          .toUpperCase(),
         title: folder.title,
         href: `/folders/${folder.type}/${folder.slug}`,
-        reveal: [
-          dateSpanLabel(folder.dateStart, folder.dateEnd),
-          folder.scopeNote,
-          `${surfaces.length} members · ${mix.sheet} sheet · ${mix.card} card · ${mix.fallback_stub} stub`,
-        ],
+        count: surfaces.length,
+        date: dateSpanLabel(folder.dateStart, folder.dateEnd),
+        mix: `${mix.sheet} sheet · ${mix.card} card · ${mix.fallback_stub} stub`,
       };
     },
   );
@@ -62,7 +67,7 @@ export default async function FolderTypePage({
     <ArchiveShell
       activeNav="folders"
       folderInk={getFolderInk(folderType.type)}
-      main={<FolderDrawer items={items} />}
+      main={<FolderTypeSpeedIndex folderType={folderType} items={items} />}
     />
   );
 }

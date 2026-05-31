@@ -60,19 +60,26 @@ def fallback_summary(row: dict[str, str]) -> str:
 
 def fill_enrichment_defaults(row: dict[str, str]) -> dict[str, str]:
     code = row.get("image_presence_code") or "IMG00"
+    title = row.get("source_title") or row.get("source_object_type") or row.get("source_medium") or "Untitled source record"
+    if not row.get("source_title"):
+        row["source_title"] = title
     row.setdefault("image_expectation", "not_expected" if code == "IMG04" else "expected")
     row.setdefault("parser_status", "ok" if row.get("source_record_url") else "legacy")
     row.setdefault("display_mode", row.get("image_frame_behavior", ""))
     row.setdefault("ocr_or_excerpt", row.get("source_description", ""))
     row.setdefault("source_description_raw", row.get("source_description", ""))
-    row.setdefault(
-        "historical_context_note",
-        "Cumulative 1931-1970 archive-box record retained for frontend and information-system verification.",
-    )
-    row.setdefault(
-        "classification_rationale",
-        "Provisional folder placement is derived from title, date, medium, subject, source, and provider context.",
-    )
+    if not row.get("historical_context_note"):
+        row["historical_context_note"] = (
+            "Cumulative 1830-1970 archive-box record retained as evidence of "
+            "graphic communication, print circulation, advertising, public "
+            "information, or visual culture in the period under review."
+        )
+    if not row.get("classification_rationale"):
+        row["classification_rationale"] = (
+            "Folder placement is provisional and derived from title, date, "
+            "medium, subject terms, source institution, geography, and provider "
+            "context. The folder is a filter view rather than an ownership claim."
+        )
     row.setdefault("uncertainty_note", "")
     row.setdefault(
         "citation_basis",
@@ -136,6 +143,85 @@ def enhance_payload(payload: dict, rows: list[dict[str, str]]) -> dict:
     return payload
 
 
+def table_rows(surface: dict, kind: str) -> int:
+    for table in surface.get("tables", []):
+        if table.get("kind") == kind:
+            return len(table.get("rows", []))
+    return 0
+
+
+def attach_structural_collections(payload: dict) -> dict:
+    """Expose non-sheet archive structures in the static payload.
+
+    The frontend can still paginate these virtually, but the data layer should
+    explicitly acknowledge bookmarks, appendix candidates, and filing/register
+    records so the archive does not collapse into a flat list of sheets.
+    """
+    folders = payload.get("folders", [])
+    surfaces = payload.get("surfaces", [])
+    by_surface = {surface.get("surfaceId"): surface for surface in surfaces}
+
+    payload["bookmarks"] = [
+        {
+            "bookmarkId": f"BMK-{folder.get('folderId')}",
+            "folderId": folder.get("folderId"),
+            "type": folder.get("type"),
+            "title": folder.get("title"),
+            "dateStart": folder.get("dateStart"),
+            "dateEnd": folder.get("dateEnd"),
+            "surfaceCount": len(folder.get("surfaceIds", [])),
+            "scopeNote": folder.get("scopeNote"),
+            "displayRule": "one bookmark reading-note leaf after folder register",
+        }
+        for folder in folders
+    ]
+
+    appendix_candidates = []
+    for surface in surfaces:
+        image = surface.get("image") if isinstance(surface.get("image"), dict) else {}
+        reasons: list[str] = []
+        if surface.get("surfaceType") == "sheet" and image.get("state") == "IMG00":
+            reasons.append("rights/image evidence continuation")
+        if table_rows(surface, "RELATIONS") > 4:
+            reasons.append("relations overflow")
+        if table_rows(surface, "CITATIONS") > 3:
+            reasons.append("citation overflow")
+        if reasons:
+            total_rows = sum(len(table.get("rows", [])) for table in surface.get("tables", []))
+            appendix_candidates.append(
+                {
+                    "appendixId": f"APP-{surface.get('surfaceId')}",
+                    "surfaceId": surface.get("surfaceId"),
+                    "title": surface.get("title"),
+                    "displayNumber": surface.get("provisionalDisplayNumber"),
+                    "reasons": reasons,
+                    "tableRows": total_rows,
+                }
+            )
+    payload["appendices"] = appendix_candidates
+
+    payload["registrationCards"] = [
+        {
+            "registrationId": f"REGCARD-{folder.get('folderId')}",
+            "folderId": folder.get("folderId"),
+            "type": folder.get("type"),
+            "title": folder.get("title"),
+            "memberPages": [
+                {
+                    "surfaceId": sid,
+                    "displayNumber": (by_surface.get(sid) or {}).get("provisionalDisplayNumber"),
+                    "title": (by_surface.get(sid) or {}).get("title"),
+                }
+                for sid in folder.get("surfaceIds", [])
+                if sid in by_surface
+            ],
+            "displayRule": "folder membership ledger; folder is a filter, not a container",
+        }
+        for folder in folders
+    ]
+    return payload
+
+
 def main() -> None:
     rows: list[dict[str, str]] = []
     for path in RECORD_FILES:
@@ -146,6 +232,7 @@ def main() -> None:
     payload = mc.build_public_payload(rows)
     payload = enhance_payload(payload, rows)
     payload = normalize_payload(payload)
+    payload = attach_structural_collections(payload)
 
     text = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
     for path in PAYLOAD_PATHS:
