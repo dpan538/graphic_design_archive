@@ -290,6 +290,14 @@ Template: `card.record.v0`
 
 Cards appear inside folder indexes and sometimes inside compound sheets.
 
+Card layout families must not be distributed evenly. Regular cards carry the
+main archive workload: neutral, square, rectangular, and color systems should
+account for roughly 92-94% of card placements. Special physical-proportion
+cards are rare accents with lower priority and a target placement share around
+6%, capped at 8% in any generated card set. Use a special card only when its
+physical reference adds function or archival meaning, not because a layout slot
+needs decoration.
+
 Required fields:
 
 - card ID;

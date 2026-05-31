@@ -1,4 +1,4 @@
-import type { Folder, FolderTypeKey, Surface, SurfaceFolderRef } from "@/types/archive";
+import type { Folder, FolderTypeKey, Surface, SurfaceFolderRef, SurfaceTable } from "@/types/archive";
 import {
   getFolder,
   getFolderInk,
@@ -7,20 +7,17 @@ import {
   sortChronologically,
 } from "@/lib/archive-data";
 
-type CardMode = "all" | "square" | "rectangle";
-type CardTone = "white" | "blue" | "orange" | "green" | "paper";
+type CardMode = "all" | "square" | "rectangle" | "color" | "special";
 
 interface CardBadge {
   type: FolderTypeKey;
   title: string;
 }
 
-interface CardShellProps {
+interface ArchiveCardProps {
   children: React.ReactNode;
   className: string;
-  tone: CardTone;
   badges: CardBadge[];
-  label: string;
 }
 
 function mustSurface(id: string): Surface {
@@ -35,10 +32,15 @@ function mustFolder(type: FolderTypeKey, slug: string): Folder {
   return folder;
 }
 
-function clip(text: string, max = 78): string {
-  if (!text) return "unrecorded";
-  if (text.length <= max) return text;
-  return `${text.slice(0, max - 1).trim()}…`;
+function clip(text: string | null | undefined, max = 86): string {
+  const value = text?.trim();
+  if (!value) return "unrecorded";
+  if (value.length <= max) return value;
+  return `${value.slice(0, max - 1).trim()}…`;
+}
+
+function cleanDate(text: string): string {
+  return text.replace("T00:00:00Z", "");
 }
 
 function spanLabel(start: number | null, end: number | null): string {
@@ -55,256 +57,503 @@ function badgesFromSurface(surface: Surface): CardBadge[] {
   }));
 }
 
+function table(surface: Surface, kind: SurfaceTable["kind"]): SurfaceTable | undefined {
+  return surface.tables.find((item) => item.kind === kind);
+}
+
+function rows(surface: Surface, kind: SurfaceTable["kind"], max = 4) {
+  return table(surface, kind)?.rows.slice(0, max) ?? [];
+}
+
+function folderSamples(folder: Folder, max = 5): Surface[] {
+  return sortChronologically(getSurfacesForFolder(folder)).slice(0, max);
+}
+
 function CardBadges({ badges }: { badges: CardBadge[] }) {
-  const visible = badges.slice(0, 3);
   return (
-    <div className="card-badges" aria-label={badges.map((b) => b.title).join(", ")}>
-      {visible.map((badge, index) => (
+    <div className="archive-card__badges" aria-label={badges.map((b) => b.title).join(", ")}>
+      {badges.slice(0, 3).map((badge) => (
         <span
           key={`${badge.type}-${badge.title}`}
-          className="card-badge"
+          className="archive-card__badge"
           title={`${badge.type}: ${badge.title}`}
-          style={{
-            backgroundColor: getFolderInk(badge.type),
-            zIndex: visible.length - index,
-          }}
+          style={{ backgroundColor: getFolderInk(badge.type) }}
         >
-          {badge.type.slice(0, 1).toUpperCase()}
+          <span className="sr-only">{badge.title}</span>
         </span>
       ))}
     </div>
   );
 }
 
-function CardShell({ children, className, tone, badges, label }: CardShellProps) {
+function ArchiveCard({ children, className, badges }: ArchiveCardProps) {
   return (
-    <article className={`asset-card ${className}`} data-tone={tone}>
+    <article className={`archive-card ${className}`}>
       <CardBadges badges={badges} />
-      <span className="asset-card__label">{label}</span>
       {children}
     </article>
   );
 }
 
-function MiniFolders({ folders }: { folders: SurfaceFolderRef[] }) {
+function ImageBay({ surface, quiet = false }: { surface: Surface; quiet?: boolean }) {
   return (
-    <p className="asset-card__folders">
-      {folders.slice(0, 3).map((folder) => `${folder.type}: ${folder.title}`).join(" / ")}
+    <figure className={`archive-card__image ${quiet ? "archive-card__image--quiet" : ""}`}>
+      {surface.image.url ? (
+        <img src={surface.image.url} alt="" />
+      ) : (
+        <div className="archive-card__empty-image">
+          <span>{surface.image.state}</span>
+        </div>
+      )}
+      <figcaption>{surface.image.url ? clip(surface.image.credit ?? surface.sourceName, 42) : surface.image.state}</figcaption>
+    </figure>
+  );
+}
+
+function MetaRows({ rows: rowItems }: { rows: Array<[string, string]> }) {
+  return (
+    <dl className="archive-card__meta">
+      {rowItems.map(([key, value]) => (
+        <div key={`${key}-${value}`}>
+          <dt>{key}</dt>
+          <dd>{clip(value, 58)}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
+function FolderLine({ folders }: { folders: SurfaceFolderRef[] }) {
+  return (
+    <p className="archive-card__folder-line">
+      {folders.slice(0, 3).map((folder) => folder.title).join(" / ")}
     </p>
   );
 }
 
-function ObjectMark({ surface }: { surface: Surface }) {
+function SpecimenSquare({ surface }: { surface: Surface }) {
   return (
-    <div className="object-mark" aria-label={surface.image.state}>
-      <span className="object-mark__bar" />
-      <span className="object-mark__dot object-mark__dot--a" />
-      <span className="object-mark__dot object-mark__dot--b" />
-      <span className="object-mark__dot object-mark__dot--c" />
-      <strong>{surface.image.state}</strong>
-    </div>
+    <ArchiveCard className="archive-card--a-specimen" badges={badgesFromSurface(surface)}>
+      <header>
+        <p>{surface.sourceRecordId}</p>
+        <h2>{surface.title}</h2>
+      </header>
+      <div className="archive-card__a-body">
+        <ImageBay surface={surface} quiet />
+        <p className="archive-card__body">{clip(surface.descriptionSummary, 136)}</p>
+      </div>
+      <MetaRows
+        rows={[
+          ["date", cleanDate(surface.dateText)],
+          ["place", surface.placeText],
+          ["medium", surface.medium],
+          ["source", surface.sourceName],
+        ]}
+      />
+    </ArchiveCard>
   );
 }
 
-function TypeCloud({ surface }: { surface: Surface }) {
-  const source = `${surface.title} ${surface.dateText} ${surface.sourceRecordId}`
-    .toUpperCase()
-    .replace(/[^A-Z0-9]/g, "");
-  const glyphs = Array.from({ length: 44 }, (_, i) => source[i % source.length] ?? "0");
+function ExhibitionLandscape({ surface }: { surface: Surface }) {
   return (
-    <div className="type-cloud" aria-hidden>
-      {glyphs.map((glyph, index) => (
-        <span
-          key={`${glyph}-${index}`}
-          style={
-            {
-              "--x": `${(index * 19) % 92}%`,
-              "--y": `${(index * 31) % 88}%`,
-              "--r": `${((index % 9) - 4) * 8}deg`,
-            } as React.CSSProperties
-          }
-        >
-          {glyph}
-        </span>
+    <ArchiveCard className="archive-card--a-exhibition" badges={badgesFromSurface(surface)}>
+      <aside>
+        <span>{cleanDate(surface.dateText)}</span>
+        <p>{surface.sourceRecordId}</p>
+      </aside>
+      <section>
+        <p>{surface.sourceRecordId}</p>
+        <h2>{surface.title}</h2>
+        <p className="archive-card__byline">{clip(surface.creator, 92)}</p>
+        <p className="archive-card__body">{clip(surface.descriptionSummary || surface.rights.label, 164)}</p>
+        <FolderLine folders={surface.folders} />
+      </section>
+      <ImageBay surface={surface} quiet />
+      <MetaRows
+        rows={[
+          ["medium", surface.medium],
+          ["source", surface.sourceName],
+          ["rights", surface.rights.displayPolicy],
+        ]}
+      />
+    </ArchiveCard>
+  );
+}
+
+function TypographyPortrait({ surface }: { surface: Surface }) {
+  return (
+    <ArchiveCard className="archive-card--a-reading" badges={badgesFromSurface(surface)}>
+      <header>
+        <p>{surface.sourceRecordId}</p>
+        <h2>{clip(surface.title, 78)}</h2>
+      </header>
+      <p className="archive-card__body">{clip(surface.classificationRationale, 150)}</p>
+      <MetaRows
+        rows={[
+          ["date", cleanDate(surface.dateText)],
+          ["creator", surface.creator],
+          ["source", surface.sourceName],
+          ["accessed", surface.accessDate],
+          ["reading", `${surface.readingTextLength ?? 0} chars`],
+        ]}
+      />
+      <ol>
+        {rows(surface, "CLASSIFICATION", 2).map(([key, value]) => (
+          <li key={key}>
+            <span>{key}</span>
+            {clip(value, 46)}
+          </li>
+        ))}
+      </ol>
+    </ArchiveCard>
+  );
+}
+
+function FolderIndexLandscape({ folder }: { folder: Folder }) {
+  const samples = folderSamples(folder, 5);
+
+  return (
+    <ArchiveCard
+      className="archive-card--a-folder"
+      badges={[{ type: folder.type, title: folder.title }]}
+    >
+      <header>
+        <p>{folder.type} folder</p>
+        <h2>{folder.title}</h2>
+        <span>{spanLabel(folder.dateStart, folder.dateEnd)}</span>
+      </header>
+      <strong>{folder.surfaceIds.length}</strong>
+      <p className="archive-card__body">{clip(folder.scopeNote, 150)}</p>
+      <ol>
+        {samples.map((surface) => (
+          <li key={surface.surfaceId}>
+            <span>{cleanDate(surface.dateText)}</span>
+            {clip(surface.title, 56)}
+          </li>
+        ))}
+      </ol>
+    </ArchiveCard>
+  );
+}
+
+function ColorRecordCard({ surface }: { surface: Surface }) {
+  return (
+    <ArchiveCard className="archive-card--color-record" badges={badgesFromSurface(surface)}>
+      <header>
+        <p>{surface.sourceRecordId}</p>
+        <h2>{surface.title}</h2>
+      </header>
+      <MetaRows
+        rows={[
+          ["date", cleanDate(surface.dateText)],
+          ["place", surface.placeText],
+          ["source", surface.sourceName],
+          ["image", surface.image.state],
+        ]}
+      />
+    </ArchiveCard>
+  );
+}
+
+function ColorImageCard({ surface }: { surface: Surface }) {
+  return (
+    <ArchiveCard className="archive-card--color-image" badges={badgesFromSurface(surface)}>
+      <section>
+        <p>{surface.sourceRecordId}</p>
+        <h2>{surface.title}</h2>
+        <p className="archive-card__body">{clip(surface.descriptionSummary || surface.rights.label, 126)}</p>
+      </section>
+      <ImageBay surface={surface} quiet />
+      <FolderLine folders={surface.folders} />
+    </ArchiveCard>
+  );
+}
+
+function ColorTypeCard({ surface }: { surface: Surface }) {
+  return (
+    <ArchiveCard className="archive-card--color-type" badges={badgesFromSurface(surface)}>
+      <p>{surface.sourceRecordId}</p>
+      <h2>{clip(surface.title, 82)}</h2>
+      <div className="archive-card__color-rule" aria-hidden />
+      <MetaRows
+        rows={[
+          ["creator", surface.creator],
+          ["medium", surface.medium],
+          ["source", surface.sourceName],
+        ]}
+      />
+    </ArchiveCard>
+  );
+}
+
+function ColorFolderCard({ folder }: { folder: Folder }) {
+  const samples = folderSamples(folder, 4);
+
+  return (
+    <ArchiveCard
+      className="archive-card--color-folder"
+      badges={[{ type: folder.type, title: folder.title }]}
+    >
+      <header>
+        <p>{folder.type} folder</p>
+        <h2>{folder.title}</h2>
+      </header>
+      <strong>{folder.surfaceIds.length}</strong>
+      <ol>
+        {samples.map((surface) => (
+          <li key={surface.surfaceId}>
+            <span>{cleanDate(surface.dateText)}</span>
+            {clip(surface.title, 50)}
+          </li>
+        ))}
+      </ol>
+    </ArchiveCard>
+  );
+}
+
+function BarcodeMark() {
+  return (
+    <div className="archive-card__barcode" aria-hidden>
+      {Array.from({ length: 18 }, (_, index) => (
+        <span key={index} />
       ))}
     </div>
   );
 }
 
-function folderSamples(folder: Folder, max = 4): Surface[] {
-  return sortChronologically(getSurfacesForFolder(folder)).slice(0, max);
-}
+function RightsGraphic({ surface }: { surface: Surface }) {
+  const policy = surface.rights.displayPolicy.replaceAll("_", " ");
+  const basis = clip(surface.rights.label.replace(`${surface.image.state}:`, ""), 42);
 
-function ObjectSquareCard({ surface }: { surface: Surface }) {
   return (
-    <CardShell
-      className="asset-card--square card-object-square"
-      tone="white"
-      badges={badgesFromSurface(surface)}
-      label="object / square"
-    >
-      <header>
-        <p>Object display</p>
-        <h2>{clip(surface.title, 52)}</h2>
-      </header>
-      <ObjectMark surface={surface} />
+    <div className="archive-card__rights-graphic" aria-label={surface.rights.label}>
+      <div className="archive-card__rights-panel">
+        <span>authorization check</span>
+        <strong>{surface.image.state}</strong>
+        <small>graphic surrogate required</small>
+      </div>
+      <div className="archive-card__rights-checklist" aria-hidden>
+        {[
+          ["source", surface.sourceRecordId],
+          ["image", "withheld"],
+          ["reuse", policy],
+          ["display", "metadata only"],
+        ].map(([key, value]) => (
+          <div key={key}>
+            <span>{key}</span>
+            <i />
+            <strong>{value}</strong>
+          </div>
+        ))}
+      </div>
       <dl>
-        <dt>date</dt>
-        <dd>{surface.dateText}</dd>
-        <dt>medium</dt>
-        <dd>{clip(surface.medium, 44)}</dd>
-        <dt>source</dt>
-        <dd>{clip(surface.sourceName, 34)}</dd>
+        <div>
+          <dt>policy</dt>
+          <dd>{policy}</dd>
+        </div>
+        <div>
+          <dt>basis</dt>
+          <dd>{basis}</dd>
+        </div>
       </dl>
-    </CardShell>
+    </div>
   );
 }
 
-function ObjectRectCard({ surface }: { surface: Surface }) {
+function SpecialStampCard({ surface }: { surface: Surface }) {
   return (
-    <CardShell
-      className="asset-card--rectangle card-object-rect"
-      tone="paper"
-      badges={badgesFromSurface(surface)}
-      label="object / rectangle"
-    >
-      <div className="card-object-rect__plate">
-        <ObjectMark surface={surface} />
-      </div>
-      <div className="card-object-rect__text">
-        <p>source object</p>
-        <h2>{surface.title}</h2>
-        <span>{surface.dateText}</span>
-        <MiniFolders folders={surface.folders} />
-      </div>
-    </CardShell>
+    <ArchiveCard className="archive-card--special-stamp" badges={badgesFromSurface(surface)}>
+      <header>
+        <p>{surface.sourceRecordId}</p>
+        <h2>{clip(surface.title, 58)}</h2>
+      </header>
+      <ImageBay surface={surface} quiet />
+      <p className="archive-card__body">{clip(surface.descriptionSummary, 128)}</p>
+      <MetaRows
+        rows={[
+          ["date", cleanDate(surface.dateText)],
+          ["source", surface.sourceName],
+          ["medium", surface.medium],
+          ["rights", surface.rights.displayPolicy],
+        ]}
+      />
+    </ArchiveCard>
   );
 }
 
-function PostcardSquare({ surface }: { surface: Surface }) {
+function SpecialAdmitCard({ surface }: { surface: Surface }) {
   return (
-    <CardShell
-      className="asset-card--square card-postcard-square"
-      tone="orange"
-      badges={badgesFromSurface(surface)}
-      label="postcard / square"
-    >
-      <div className="postcard-image-frame">
+    <ArchiveCard className="archive-card--special-admit" badges={badgesFromSurface(surface)}>
+      <section>
+        <p>{surface.sourceRecordId}</p>
+        <h2>{clip(surface.title, 64)}</h2>
+        <p className="archive-card__body">{clip(surface.descriptionSummary || surface.rights.label, 118)}</p>
+      </section>
+      <strong>{cleanDate(surface.dateText)}</strong>
+      <div className="archive-card__ticket-stub">
+        <span>ADMIT</span>
+        <p>{surface.image.state}</p>
+      </div>
+      <MetaRows
+        rows={[
+          ["creator", surface.creator],
+          ["source", surface.sourceName],
+          ["rights", surface.rights.displayPolicy],
+        ]}
+      />
+    </ArchiveCard>
+  );
+}
+
+function SpecialPunchCard({ surface }: { surface: Surface }) {
+  return (
+    <ArchiveCard className="archive-card--special-punch" badges={badgesFromSurface(surface)}>
+      <RightsGraphic surface={surface} />
+      <div className="archive-card__ticket-date">
+        <span>{surface.dateStart ?? "date"}</span>
         <span>{surface.image.state}</span>
       </div>
-      <h2>{clip(surface.title, 54)}</h2>
-      <p>{clip(surface.creator, 56)}</p>
-      <footer>{surface.dateText}</footer>
-    </CardShell>
+      <h2>{clip(surface.title, 42)}</h2>
+      <FolderLine folders={surface.folders} />
+      <BarcodeMark />
+      <MetaRows
+        rows={[
+          ["source", surface.sourceName],
+          ["medium", surface.medium],
+        ]}
+      />
+    </ArchiveCard>
   );
 }
 
-function PostcardRect({ surface }: { surface: Surface }) {
-  return (
-    <CardShell
-      className="asset-card--rectangle card-postcard-rect"
-      tone="white"
-      badges={badgesFromSurface(surface)}
-      label="postcard / rectangle"
-    >
-      <div className="postcard-rect__title">
-        <h2>{clip(surface.title, 42)}</h2>
-        <p>{surface.dateText}</p>
-      </div>
-      <div className="postcard-rect__image" />
-      <div className="postcard-rect__meta">
-        <p>{clip(surface.creator, 64)}</p>
-        <span>{clip(surface.medium, 42)}</span>
-      </div>
-    </CardShell>
-  );
-}
-
-function TypeSquare({ surface }: { surface: Surface }) {
-  return (
-    <CardShell
-      className="asset-card--square card-type-square"
-      tone="green"
-      badges={badgesFromSurface(surface)}
-      label="type graphic / square"
-    >
-      <TypeCloud surface={surface} />
-      <div className="type-square__copy">
-        <h2>{clip(surface.title, 48)}</h2>
-        <p>{surface.dateText} / {surface.image.state}</p>
-      </div>
-    </CardShell>
-  );
-}
-
-function TypeRect({ surface }: { surface: Surface }) {
-  return (
-    <CardShell
-      className="asset-card--rectangle card-type-rect"
-      tone="blue"
-      badges={badgesFromSurface(surface)}
-      label="type graphic / rectangle"
-    >
-      <div className="type-rect__matrix" aria-hidden>
-        <span>GRAPHIC</span>
-        <span>DESIGN</span>
-        <span>LETTERING</span>
-        <span>TYPOGRAPHY</span>
-      </div>
-      <div className="type-rect__copy">
-        <h2>{clip(surface.title, 74)}</h2>
-        <p>{surface.creator}</p>
-        <strong>{surface.dateText.slice(0, 4)}</strong>
-      </div>
-    </CardShell>
-  );
-}
-
-function CollectionSquare({ folder }: { folder: Folder }) {
-  const samples = folderSamples(folder, 3);
-  return (
-    <CardShell
-      className="asset-card--square card-collection-square"
-      tone="blue"
-      badges={[{ type: folder.type, title: folder.title }]}
-      label="collection / square"
-    >
-      <h2>{folder.title}</h2>
-      <p>{spanLabel(folder.dateStart, folder.dateEnd)}</p>
-      <strong>{folder.surfaceIds.length}</strong>
-      <ol>
-        {samples.map((surface) => (
-          <li key={surface.surfaceId}>{clip(surface.title, 36)}</li>
-        ))}
-      </ol>
-    </CardShell>
-  );
-}
-
-function CollectionRect({ folder }: { folder: Folder }) {
+function SpecialChamferCard({ folder, surface }: { folder: Folder; surface: Surface }) {
   const samples = folderSamples(folder, 4);
+
   return (
-    <CardShell
-      className="asset-card--rectangle card-collection-rect"
-      tone="green"
-      badges={[{ type: folder.type, title: folder.title }]}
-      label="collection / rectangle"
+    <ArchiveCard
+      className="archive-card--special-chamfer"
+      badges={[{ type: folder.type, title: folder.title }, ...badgesFromSurface(surface).slice(0, 2)]}
     >
-      <div className="collection-rect__head">
+      <section className="archive-card__chamfer-left">
         <p>{folder.type} folder</p>
         <h2>{folder.title}</h2>
+        <div>
+          <strong>{folder.surfaceIds.length}</strong>
+          <span>{spanLabel(folder.dateStart, folder.dateEnd)}</span>
+        </div>
+      </section>
+      <section className="archive-card__chamfer-right">
+        <p>{surface.sourceRecordId}</p>
+        <h3>{clip(surface.title, 72)}</h3>
+        <MetaRows
+          rows={[
+            ["date", cleanDate(surface.dateText)],
+            ["source", surface.sourceName],
+            ["status", surface.rights.displayPolicy],
+          ]}
+        />
+      </section>
+      <ol>
+        {samples.map((item) => (
+          <li key={item.surfaceId}>
+            <span>{cleanDate(item.dateText)}</span>
+            {clip(item.title, 52)}
+          </li>
+        ))}
+      </ol>
+    </ArchiveCard>
+  );
+}
+
+function RightsReviewCard({ surface }: { surface: Surface }) {
+  return (
+    <ArchiveCard className="archive-card--rights-review" badges={badgesFromSurface(surface)}>
+      <header>
+        <p>{surface.sourceRecordId}</p>
+        <h2>{surface.title}</h2>
+      </header>
+      <ImageBay surface={surface} quiet />
+      <p className="archive-card__body">{clip(surface.rights.label, 152)}</p>
+      <MetaRows rows={rows(surface, "RIGHTS", 4)} />
+    </ArchiveCard>
+  );
+}
+
+function SourceWideCard({ surface }: { surface: Surface }) {
+  return (
+    <ArchiveCard className="archive-card--source-wide" badges={badgesFromSurface(surface)}>
+      <section>
+        <p>{surface.sourceRecordId}</p>
+        <h2>{surface.title}</h2>
+        <p className="archive-card__byline">{clip(surface.creator, 76)}</p>
+        <p className="archive-card__body">{clip(surface.descriptionSummary || surface.rights.label, 142)}</p>
+      </section>
+      <ImageBay surface={surface} quiet />
+      <MetaRows
+        rows={[
+          ["date", cleanDate(surface.dateText)],
+          ["source", surface.sourceName],
+          ["identifier", surface.sourceRecordId],
+          ["medium", surface.medium],
+          ["rights", surface.rights.displayPolicy],
+          ["accessed", surface.accessDate],
+        ]}
+      />
+    </ArchiveCard>
+  );
+}
+
+function PublicationCard({ surface }: { surface: Surface }) {
+  return (
+    <ArchiveCard className="archive-card--publication" badges={badgesFromSurface(surface)}>
+      <header>
+        <p>{surface.sourceRecordId}</p>
+        <h2>{surface.title}</h2>
+        <span>{cleanDate(surface.dateText)}</span>
+      </header>
+      <div className="archive-card__rule-graphic" aria-hidden>
+        <span />
+        <span />
+        <span />
+      </div>
+      <p className="archive-card__body">{clip(surface.descriptionSummary, 156)}</p>
+      <MetaRows
+        rows={[
+          ["creator", surface.creator],
+          ["medium", surface.medium],
+          ["source", surface.sourceName],
+          ["status", surface.rights.displayPolicy],
+        ]}
+      />
+    </ArchiveCard>
+  );
+}
+
+function FolderTimelineCard({ folder }: { folder: Folder }) {
+  const samples = folderSamples(folder, 6);
+
+  return (
+    <ArchiveCard
+      className="archive-card--folder-timeline"
+      badges={[{ type: folder.type, title: folder.title }]}
+    >
+      <header>
+        <p>{folder.type} folder</p>
+        <h2>{folder.title}</h2>
+      </header>
+      <div className="archive-card__folder-stat">
         <span>{spanLabel(folder.dateStart, folder.dateEnd)}</span>
+        <strong>{folder.surfaceIds.length}</strong>
       </div>
       <ol>
         {samples.map((surface) => (
           <li key={surface.surfaceId}>
-            <span>{surface.dateText}</span>
-            {clip(surface.title, 46)}
+            <span>{cleanDate(surface.dateText)}</span>
+            <p>{clip(surface.title, 68)}</p>
           </li>
         ))}
       </ol>
-      <strong>{folder.surfaceIds.length} surfaces</strong>
-    </CardShell>
+    </ArchiveCard>
   );
 }
 
@@ -316,23 +565,44 @@ export default function CardLab({ mode = "all" }: { mode?: CardMode }) {
   const graphicDesign = mustSurface("SURF-MX1970R027");
   const france = mustFolder("region", "france");
   const travel = mustFolder("theme", "travel-and-transport-poster-culture");
+  const typography = mustFolder("theme", "modern-typography-and-layout");
+  const showA = mode === "all" || mode === "square";
+  const showB = mode === "all" || mode === "rectangle";
+  const showC = mode === "all" || mode === "color";
+  const showSpecial = mode === "all" || mode === "special";
 
   return (
-    <main className="card-lab" data-mode={mode}>
-      {mode !== "rectangle" ? (
-        <section className="card-lab__set card-lab__set--square" aria-label="Square card layouts">
-          <ObjectSquareCard surface={specimen} />
-          <PostcardSquare surface={kiss} />
-          <TypeSquare surface={specimen} />
-          <CollectionSquare folder={france} />
+    <main className="card-lab card-lab--archive" data-mode={mode}>
+      {showA ? (
+        <section className="card-lab__set card-lab__set--archive" aria-label="Card layout family A">
+          <SpecimenSquare surface={specimen} />
+          <ExhibitionLandscape surface={kiss} />
+          <TypographyPortrait surface={specimen} />
+          <FolderIndexLandscape folder={france} />
         </section>
       ) : null}
-      {mode !== "square" ? (
-        <section className="card-lab__set card-lab__set--rectangle" aria-label="Rectangle card layouts">
-          <ObjectRectCard surface={ascot} />
-          <PostcardRect surface={dwan} />
-          <TypeRect surface={graphicDesign} />
-          <CollectionRect folder={travel} />
+      {showB ? (
+        <section className="card-lab__set card-lab__set--archive" aria-label="Card layout family B">
+          <RightsReviewCard surface={ascot} />
+          <SourceWideCard surface={dwan} />
+          <PublicationCard surface={graphicDesign} />
+          <FolderTimelineCard folder={travel} />
+        </section>
+      ) : null}
+      {showC ? (
+        <section className="card-lab__set card-lab__set--archive card-lab__set--color" aria-label="Card layout family C">
+          <ColorRecordCard surface={specimen} />
+          <ColorImageCard surface={kiss} />
+          <ColorTypeCard surface={graphicDesign} />
+          <ColorFolderCard folder={typography} />
+        </section>
+      ) : null}
+      {showSpecial ? (
+        <section className="card-lab__set card-lab__set--archive card-lab__set--special" aria-label="Special proportion card layouts">
+          <SpecialStampCard surface={specimen} />
+          <SpecialAdmitCard surface={kiss} />
+          <SpecialPunchCard surface={ascot} />
+          <SpecialChamferCard folder={travel} surface={graphicDesign} />
         </section>
       ) : null}
     </main>
