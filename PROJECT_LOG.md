@@ -2872,3 +2872,90 @@ Interpretation:
   as Palestinian Museum Digital Archive, African Activist Archive, SAHA/SAHO,
   Memoria Chilena/M68, NDL/Japan, and South Asia Open Archives with source-link
   and rights review first.
+
+---
+
+## Noncanonical Exact-Source Capture Pass
+
+User clarified that the largest gap is the project's core value: histories and
+visual systems outside mainstream Western museum canons need to be visible, but
+capturing them must remain careful and source-bound.
+
+Changes made:
+
+- Added `scripts/run_noncanonical_exact_source_capture_1970_2000.py`.
+- Added `data/capture_batch_noncanonical_exact_sources_1970_2000_records.csv`.
+- Added `data/capture_batch_noncanonical_exact_sources_1970_2000_source_summary.csv`.
+- Added raw exact-source page captures under
+  `data/capture_batch_noncanonical_exact_sources_1970_2000_raw/`.
+- Added the new batch to `scripts/rebuild_public_surfaces_from_records.py`.
+- Updated `scripts/generate_source_dependency_reference.py` with source
+  dependency metadata for:
+  - South African History Archive
+  - Biblioteca Nacional Digital de Chile / Memoria Chilena
+  - NAIDOC / AIATSIS
+  - Roots.sg / National Heritage Board Singapore
+
+Capture policy:
+
+- This pass uses preselected exact source pages rather than broad keyword
+  search.
+- Source-hosted images are admitted only as `IMG02`, with no local copy and no
+  open-reuse claim.
+- Error pages are rejected rather than stored as fallback records.
+- Theme/navigation images are filtered out so menu icons are not mistaken for
+  archive images.
+- Text/context records are retained as `IMG04` only when the source page is an
+  important collection or authority route.
+
+Verified results:
+
+- New exact-source records captured: 10
+- New image states:
+  - `IMG02`: 8
+  - `IMG04`: 2
+- Failed/rejected targets:
+  - Wits Historical Papers Medu portal: DNS resolution failed during capture.
+  - Korea Democracy Foundation exact URLs: returned 404/error pages.
+- New source families represented:
+  - South African History Archive: 3 Medu/anti-apartheid records
+  - Biblioteca Nacional Digital de Chile / Memoria Chilena: 3 Brigadas Ramona
+    Parra records
+  - Roots.sg / National Heritage Board Singapore: 2 Singapore signage records
+  - NAIDOC / AIATSIS: 2 Indigenous poster-history collection/context records
+- Cumulative public payload after rebuild:
+  - public surfaces: 933
+  - sheets: 883
+  - cards: 50
+  - image-ready: 812 / 933
+  - image-ready coverage: 87%
+  - `IMG00`: 68
+  - `IMG01`: 37
+  - `IMG02`: 392
+  - `IMG03`: 383
+  - `IMG04`: 53
+- Period image coverage after rebuild:
+  - `<1930`: 282 / 302 image-ready, 93.4%
+  - `1930-1970`: 388 / 487 image-ready, 79.7%
+  - `1971-2000`: 136 / 136 image-ready, 100.0%
+  - `2001-2026`: 6 / 8 image-ready, 75.0%
+- Integrity audit:
+  - exact repeated image URLs: 0
+  - placeholder image URLs: 0
+  - short text sheets under 60 words: 0
+- Frontend build passed:
+  - static pages generated: 999
+
+Interpretation:
+
+- This pass increases noncanonical visibility in the generated archive without
+  treating secondary web images as project-owned assets.
+- The exact-source approach is slower than API capture but much safer for
+  counterpublic/community archives because it preserves source return, rights
+  caution, and local context.
+- NAIDOC/AIATSIS currently need item-level poster extraction before they can
+  contribute healthy visual coverage; collection-level pages remain useful as
+  authority/context records.
+- KDF and Wits should stay in the source queue, but they need either revised
+  endpoints, browser-assisted verification, or a different access path before
+  ingest.

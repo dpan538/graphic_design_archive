@@ -125,6 +125,38 @@ SOURCE_META = {
         "text_dependency": "CONTENTdm description, publication/collection fields, subjects, curatorial area, and source format fields.",
         "scripts": "run_gsu_contentdm_image_ready_1830_1970.py",
     },
+    "South African History Archive": {
+        "source_id": "SRC132",
+        "role": "Community/political archive source for anti-apartheid, Medu, labor, and resistance poster histories.",
+        "reference_fields": "Exact page URL, title, date, subject, description, creator, format/access image notes, rights statement, preview image URL.",
+        "rights_dependency": "SAHA item pages warn that copyright may be held by postermakers or organisations; images remain source-hosted IMG02 with no local copy.",
+        "text_dependency": "SAHA item descriptions, subject fields, creator/date/format metadata, and collection context.",
+        "scripts": "run_noncanonical_exact_source_capture_1970_2000.py",
+    },
+    "Biblioteca Nacional Digital de Chile / Memoria Chilena": {
+        "source_id": "SRC134",
+        "role": "National-library and memory-archive source for Chilean political poster, mural, and movement print culture.",
+        "reference_fields": "Exact page URL, title, bibliographic description, source collection, date, thumbnail/source image URL.",
+        "rights_dependency": "BND/Memoria images are treated as source-hosted IMG02 unless an explicit open license is separately verified.",
+        "text_dependency": "Bibliographic description, collection notes, title/date/place fields, and local archive context.",
+        "scripts": "run_noncanonical_exact_source_capture_1970_2000.py",
+    },
+    "NAIDOC / AIATSIS": {
+        "source_id": "SRC136",
+        "role": "Indigenous Australian authority/context source for NAIDOC poster history and collection-level poster routes.",
+        "reference_fields": "Collection page URL, title, description, poster-history scope note, source text excerpt.",
+        "rights_dependency": "Collection pages are retained as IMG04 unless a reliable item-level source-hosted poster image is extracted and reviewed.",
+        "text_dependency": "Official NAIDOC/AIATSIS page descriptions, collection scope, cultural warning and context text.",
+        "scripts": "run_noncanonical_exact_source_capture_1970_2000.py",
+    },
+    "Roots.sg / National Heritage Board Singapore": {
+        "source_id": "SRC137",
+        "role": "Singapore national heritage source for multilingual signs, commercial objects, and everyday public graphic systems.",
+        "reference_fields": "Object URL, title, image URL, collection name, date range, object type and source description.",
+        "rights_dependency": "Roots.sg object images are treated as source-hosted IMG02; no local copy or open reuse claim is made.",
+        "text_dependency": "Object title, collection context, local description, date/place and object-type metadata.",
+        "scripts": "run_noncanonical_exact_source_capture_1970_2000.py",
+    },
 }
 
 

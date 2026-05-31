@@ -15,18 +15,23 @@ interpretation.
 | Source | Surfaces | IMG00 | IMG01 | IMG02 | IMG03 | IMG04 | Dependency |
 |---|---:|---:|---:|---:|---:|---:|---|
 | Gallica / BnF APIs | 239 | 0 | 0 | 15 | 224 | 0 | National-library SRU/IIIF source for French posters, advertising, typography, printing, periodicals, and public-domain visual documents. |
-| Wikimedia Commons | 104 | 0 | 0 | 0 | 104 | 0 | Open-license image supplement and discovery layer for poster/design-adjacent records; not treated as the original holding archive. |
-| Wellcome Collection Catalogue API | 89 | 0 | 0 | 82 | 7 | 0 | Public-health, exhibition, poster, print, and design-adjacent catalogue records with strong rights fields. |
+| Cooper Hewitt Collection GraphQL API | 137 | 0 | 0 | 137 | 0 | 0 | Requires manual review. |
+| Wikimedia Commons | 111 | 0 | 0 | 0 | 111 | 0 | Open-license image supplement and discovery layer for poster/design-adjacent records; not treated as the original holding archive. |
+| Wellcome Collection Catalogue API | 89 | 3 | 0 | 81 | 5 | 0 | Public-health, exhibition, poster, print, and design-adjacent catalogue records with strong rights fields. |
+| Georgia State University Library Digital Collections / CONTENTdm | 85 | 0 | 0 | 85 | 0 | 0 | Local/university CONTENTdm source for labor, civil-rights, theatre, newspaper, urban, and public print-culture records. |
 | Library of Congress loc.gov API | 50 | 0 | 37 | 0 | 0 | 13 | Prints, posters, WPA/FSA material, trade cards, pamphlets, catalog records, and rights advisories. |
-| V&A Collections API | 46 | 0 | 0 | 27 | 0 | 19 | Design-object and collection metadata for posters, prints, ephemera, makers, object types, and collection context. |
 | Art Institute of Chicago API | 45 | 35 | 0 | 0 | 9 | 1 | Museum object records for posters, prints, publications, dates, artist metadata, and IIIF image identifiers. |
+| V&A Collections API | 44 | 0 | 0 | 25 | 0 | 19 | Design-object and collection metadata for posters, prints, ephemera, makers, object types, and collection context. |
 | Princeton University Library Digital Collections / Figgy | 41 | 0 | 0 | 41 | 0 | 0 | University-library Figgy/IIIF source for posters, broadsides, banners, advertising print, scanned visual resources, and ephemera. |
 | Internet Archive / text and periodical collections | 30 | 29 | 0 | 0 | 1 | 0 | Scanned books, manuals, periodicals, OCR, item metadata, and bibliography/context evidence. |
 | DigitalNZ | 21 | 0 | 0 | 0 | 21 | 0 | Aotearoa New Zealand aggregator for periodical, advertising, newspaper, and public visual communication records. |
 | The Met Open Access | 15 | 0 | 0 | 0 | 0 | 15 | Museum object records and public-domain/open-access comparison layer. |
 | Cleveland Museum Open Access API | 12 | 0 | 0 | 0 | 12 | 0 | Open-access museum object records with lower-risk image examples and object metadata. |
+| Biblioteca Nacional Digital de Chile / Memoria Chilena | 3 | 0 | 0 | 3 | 0 | 0 | National-library and memory-archive source for Chilean political poster, mural, and movement print culture. |
 | Getty Research Portal | 3 | 0 | 0 | 0 | 0 | 3 | Bibliographic and digitized design-history support records. |
-| Georgia State University Library Digital Collections / CONTENTdm | 2 | 0 | 0 | 2 | 0 | 0 | Local/university CONTENTdm source for labor, civil-rights, theatre, newspaper, urban, and public print-culture records. |
+| South African History Archive | 3 | 0 | 0 | 3 | 0 | 0 | Community/political archive source for anti-apartheid, Medu, labor, and resistance poster histories. |
+| NAIDOC / AIATSIS | 2 | 0 | 0 | 0 | 0 | 2 | Indigenous Australian authority/context source for NAIDOC poster history and collection-level poster routes. |
+| Roots.sg / National Heritage Board Singapore | 2 | 0 | 0 | 2 | 0 | 0 | Singapore national heritage source for multilingual signs, commercial objects, and everyday public graphic systems. |
 | Chinese Posters | 1 | 1 | 0 | 0 | 0 | 0 | Specialist poster-history source for Chinese political and campaign graphics. |
 
 ## Text Dependency Rule
