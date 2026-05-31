@@ -2800,3 +2800,75 @@ Interpretation:
 - The next capture round should prioritize additional design-specific or
   protocol-stable sources with visible images and item-level rights evidence,
   rather than broad keyword search alone.
+
+---
+
+## Noncanonical Movement Visibility Pass
+
+User emphasized that the project's core value is not simply filling a Western
+museum/archive index, but making non-mainstream, non-Western, counterpublic,
+and regional graphic formations visible.
+
+Changes made:
+
+- Added `scripts/run_noncanonical_movement_commons_capture_1930_2000.py`.
+- Added `data/capture_batch_noncanonical_movement_commons_1930_2000_records.csv`.
+- Added `data/capture_batch_noncanonical_movement_commons_1930_2000_source_summary.csv`.
+- Added the new batch to `scripts/rebuild_public_surfaces_from_records.py`.
+- Updated `scripts/run_midcentury_capture_1930_1970.py` so public surfaces can
+  receive conservative movement/formation folders.
+- Added regional movement authority rows:
+  - `RM090` OSPAAAL and Tricontinental solidarity graphics.
+  - `RM091` Palestinian liberation and solidarity poster culture.
+
+Capture policy:
+
+- This pass is intentionally small and conservative.
+- Wikimedia Commons is treated only as a rights-aware image/display layer, not
+  as the final historical authority.
+- A record must have explicit movement/formation term evidence, a date in
+  `1930-2000`, an open-license image, and a real source URL.
+- False-positive filters reject later photographs, PDFs/DJVUs/SVGs, and broad
+  query drift.
+
+Verified results:
+
+- New records captured: 7
+- New image states: 7 `IMG03`
+- New/activated movement folders after rebuild:
+  - Bauhaus / New Typography first-ingest network
+  - Brigadas Ramona Parra first-ingest scope
+  - Gran Fury and ACT UP activist graphics
+  - Japanese postwar design institution network
+  - Medu Art Ensemble and anti-apartheid poster movement
+  - OSPAAAL and Tricontinental solidarity graphics
+  - Palestinian liberation and solidarity poster culture
+  - Taller de Grafica Popular first-ingest scope
+- Surfaces with movement IDs after rebuild: 30
+- Cumulative public payload after rebuild:
+  - public surfaces: 923
+  - sheets: 873
+  - cards: 50
+  - image-ready: 804 / 923
+  - image-ready coverage: 87%
+  - `IMG00`: 68
+  - `IMG01`: 37
+  - `IMG02`: 384
+  - `IMG03`: 383
+  - `IMG04`: 51
+- Integrity audit:
+  - exact repeated image URLs: 0
+  - placeholder image URLs: 0
+  - short text sheets under 60 words: 0
+
+Interpretation:
+
+- This pass does not solve the global-balance gap by quantity, but it changes
+  the structure: movement folders now exist in the generated public interface.
+- The project still needs primary or community archive sources for these
+  formations. Commons images are a temporary visibility layer, not the final
+  archival base.
+- The next careful expansion should target primary/noncanonical sources such
+  as Palestinian Museum Digital Archive, African Activist Archive, SAHA/SAHO,
+  Memoria Chilena/M68, NDL/Japan, and South Asia Open Archives with source-link
+  and rights review first.

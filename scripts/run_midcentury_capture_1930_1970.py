@@ -949,6 +949,11 @@ def region_for(row: dict[str, str]) -> tuple[str, str, dict[str, list[str]]]:
         ("Netherlands", ["netherlands", "dutch"], {"regionIds": ["REG001"], "geoIds": ["GEO009"]}),
         ("Japan", ["japan", "japanese"], {"regionIds": ["REG005", "REG007"], "geoIds": ["GEO035"]}),
         ("Mexico", ["mexico", "mexican"], {"regionIds": ["REG004"], "geoIds": []}),
+        ("Cuba / transnational", ["cuba", "cuban", "ospaaal", "tricontinental"], {"regionIds": ["REG004"], "geoIds": []}),
+        ("Palestine / transnational", ["palestine", "palestinian", "intifada"], {"regionIds": ["REG013"], "geoIds": []}),
+        ("South Africa / Botswana", ["south africa", "south african", "botswana", "medu", "anti-apartheid", "apartheid"], {"regionIds": ["REG014"], "geoIds": []}),
+        ("Australia / Indigenous", ["australia", "australian", "aboriginal", "naidoc", "indigenous"], {"regionIds": ["REG015"], "geoIds": []}),
+        ("Latin America", ["latin america", "latin american"], {"regionIds": ["REG004"], "geoIds": []}),
         ("Poland", ["poland", "polish", "warsaw"], {"regionIds": ["REG002"], "geoIds": []}),
         ("Switzerland", ["switzerland", "swiss", "zurich", "basel"], {"regionIds": ["REG001"], "geoIds": []}),
         ("India", ["india", "indian", "ahmedabad"], {"regionIds": ["REG012"], "geoIds": []}),
@@ -1007,6 +1012,124 @@ def theme_for(row: dict[str, str]) -> tuple[str, str]:
         if any(term in blob for term in terms):
             return folder_id("theme", label), label
     return folder_id("theme", "Midcentury modern graphic communication"), "Midcentury modern graphic communication"
+
+
+MOVEMENT_RULES = [
+    {
+        "id": "RM075",
+        "label": "Bauhaus / New Typography first-ingest network",
+        "terms": ["bauhaus", "new typography", "neue typographie", "herbert bayer", "jan tschichold", "detmold wald"],
+    },
+    {
+        "id": "RM076",
+        "label": "Polish Poster School first-ingest scope",
+        "terms": ["polish poster", "polska szkola plakatu", "polska szkoła plakatu", "warsaw poster", "plakat polski"],
+    },
+    {
+        "id": "RM078",
+        "label": "Taller de Grafica Popular first-ingest scope",
+        "terms": ["taller de grafica popular", "taller de gráfica popular", "leopoldo méndez", "leopoldo mendez", "tgp mexico", "corrido de diego rivera"],
+    },
+    {
+        "id": "RM079",
+        "label": "Brigadas Ramona Parra first-ingest scope",
+        "terms": ["brigada ramona parra", "brigadas ramona parra", "ramona parra", "chilean mural", "chile mural"],
+    },
+    {
+        "id": "RM080",
+        "label": "Japanese postwar design institution network",
+        "terms": ["world design conference", "wodeco", "nippon design center", "japan advertising artists club", "japanese poster", "japanese graphic design"],
+    },
+    {
+        "id": "RM081",
+        "label": "Shanghai Manhua and yuefenpai commercial print",
+        "terms": ["shanghai manhua", "shanghai sketch", "上海漫畫", "上海漫画", "月份牌", "yuefenpai", "calendar poster shanghai"],
+    },
+    {
+        "id": "RM082",
+        "label": "Minjung and democratization poster culture",
+        "terms": ["minjung", "민중미술", "democratization poster", "gwangju", "광주", "korean democratization"],
+    },
+    {
+        "id": "RM083",
+        "label": "Singapore multilingual poster and logotype systems",
+        "terms": ["singapore campaign", "singapore poster", "housing and development board", "national library board singapore", "newspapersg"],
+    },
+    {
+        "id": "RM084",
+        "label": "NID development-communication and modern design formation",
+        "terms": ["national institute of design", "nid ahmedabad", "eames india", "development communication", "ahmedabad design"],
+    },
+    {
+        "id": "RM085",
+        "label": "Iranian modern poster and graphic-design formation",
+        "terms": ["morteza momayyez", "iranian poster", "iranian graphic", "tehran poster", "persian poster"],
+    },
+    {
+        "id": "RM086",
+        "label": "Medu Art Ensemble and anti-apartheid poster movement",
+        "terms": ["medu art ensemble", "culture and resistance", "anti-apartheid", "apartheid", "thami mnyele", "anc poster"],
+    },
+    {
+        "id": "RM087",
+        "label": "Aboriginal land-rights and NAIDOC poster cultures",
+        "terms": ["naidoc", "aboriginal land rights", "indigenous poster", "australia indigenous"],
+    },
+    {
+        "id": "RM088",
+        "label": "Gran Fury and ACT UP activist graphics",
+        "terms": ["gran fury", "act up", "aids activist", "silence = death", "queer counterpublic"],
+    },
+    {
+        "id": "RM089",
+        "label": "Early web, CSS, and homepage/interface formation",
+        "terms": ["geocities", "css1", "info.cern.ch", "world wide web", "early web"],
+    },
+    {
+        "id": "RM090",
+        "label": "OSPAAAL and Tricontinental solidarity graphics",
+        "terms": ["ospaaal", "tricontinental", "solidarity with", "chetricontinental"],
+    },
+    {
+        "id": "RM091",
+        "label": "Palestinian liberation and solidarity poster culture",
+        "terms": ["palestinian poster", "palestinian women", "palestinian communist", "palestine poster", "intifada"],
+    },
+]
+
+
+def movement_for(row: dict[str, str]) -> tuple[list[str], list[dict[str, str]]]:
+    """Return high-confidence movement folders only.
+
+    Movement membership is intentionally conservative: a row must contain a
+    direct movement/formation name, a named institution/collective, or a
+    distinctive source phrase. Broad visual resemblance is not enough.
+    """
+    blob = " ".join(
+        [
+            row.get("source_title", ""),
+            row.get("source_creator", ""),
+            row.get("source_place_text", ""),
+            row.get("source_object_type", ""),
+            row.get("source_medium", ""),
+            row.get("source_collection", ""),
+            row.get("source_description", ""),
+            row.get("source_notes", ""),
+            row.get("source_subjects", ""),
+            row.get("historical_context_note", ""),
+            row.get("classification_rationale", ""),
+        ]
+    ).lower()
+    ids: list[str] = []
+    refs: list[dict[str, str]] = []
+    for rule in MOVEMENT_RULES:
+        if not any(term in blob for term in rule["terms"]):
+            continue
+        if rule["id"] in ids:
+            continue
+        ids.append(rule["id"])
+        refs.append({"folderId": folder_id("movement", rule["label"]), "type": "movement", "title": rule["label"]})
+    return ids, refs
 
 
 def surface_score(row: dict[str, str]) -> int:
@@ -1070,11 +1193,13 @@ def build_surface(row: dict[str, str], index: int) -> dict[str, Any]:
     region_id, region_label, region_refs = region_for(row)
     medium_id, medium_label = medium_for(row)
     theme_id, theme_label = theme_for(row)
+    movement_ids, movement_folders = movement_for(row)
     folders = [
         {"folderId": region_id, "type": "region", "title": region_label},
         {"folderId": theme_id, "type": "theme", "title": theme_label},
         {"folderId": medium_id, "type": "medium", "title": medium_label},
     ]
+    folders.extend(movement_folders)
     rights_reviewed = row.get("rights_review_required") == "false" or image_state == "IMG03"
     date_known = bool(row.get("date_start") or row.get("source_date_text"))
     classification_known = region_label != "Unresolved region" or bool(medium_label)
@@ -1087,7 +1212,7 @@ def build_surface(row: dict[str, str], index: int) -> dict[str, Any]:
         "provisionalDisplayNumber": f"GD / {era} / {seq} / {tier}-p01",
         "seqLabel": seq,
         "historicalNodeIds": ["HN009", "HN010", "HN011", "HN014"],
-        "movementIds": [],
+        "movementIds": movement_ids,
         "title": row.get("source_title") or f"Untitled midcentury graphic design record {index}",
         "creator": row.get("source_creator") or "Unknown",
         "dateText": year_text,
@@ -1169,6 +1294,7 @@ def build_surface(row: dict[str, str], index: int) -> dict[str, Any]:
                     ("Region folder", region_label),
                     ("Theme folder", theme_label),
                     ("Medium folder", medium_label),
+                    ("Movement refs", "; ".join(movement_ids) or "NONE"),
                     ("Historical node refs", "HN009; HN010; HN011; HN014"),
                     ("Reading text length", str(reading_text_len(row))),
                     ("Classification basis", "Midcentury 1930-1970 capture rule"),
@@ -1180,6 +1306,7 @@ def build_surface(row: dict[str, str], index: int) -> dict[str, Any]:
                     ("held_by", row.get("source_name", "")),
                     ("classified_as", medium_label),
                     ("associated_with", theme_label),
+                    ("movement_or_formation", "; ".join(movement_ids) or "NONE"),
                 ],
             ),
             table(
@@ -1195,8 +1322,8 @@ def build_surface(row: dict[str, str], index: int) -> dict[str, Any]:
     # Current frontend types do not require authorityRefs, but folder generation uses them.
     surface["_authorityRefs"] = {
         "historicalNodeIds": ["HN009", "HN010", "HN011", "HN014"],
-        "movementIds": [],
-        "regionalMovementIds": [],
+        "movementIds": movement_ids,
+        "regionalMovementIds": movement_ids,
         "regionIds": region_refs.get("regionIds", []),
         "geoIds": region_refs.get("geoIds", []),
         "mediaIds": [],
