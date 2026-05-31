@@ -2606,3 +2606,75 @@ Important interpretation:
   on URL change and keys the image element by URL.
 - The launch target remains 95%+ image-ready coverage, so the archive still
   needs substantial source expansion and item-level upgrades before release.
+
+---
+
+## GSU CONTENTdm Raw Harvest and API Limit Check
+
+User clarified that later-stage records should be retained when discovered,
+because the archive will ultimately cover all time bands. This round therefore
+keeps the capture logic moving toward stage-aware retention rather than
+discarding non-current-period evidence by default.
+
+Changes made:
+
+- Added `scripts/harvest_gsu_contentdm_raw_records.py`.
+- Converted already captured Georgia State University Library CONTENTdm raw
+  records into a controlled official batch instead of leaving them as unused
+  raw files.
+- Applied per-collection caps so serial issue sources such as `The Machinist`,
+  `Great Speckled Bird`, `Georgia Education Journal`, and `Signal` do not flood
+  the archive as visually repetitive independent sheets.
+- Fixed GSU date parsing so long ranges such as `1938-1951` or `1963-1965` are
+  handled as complete ranges rather than incorrectly reading only the first
+  in-period year.
+- Added `scripts/run_loc_deep_image_ready_1931_1970.py` and
+  `scripts/run_wikimedia_commons_deep_image_ready_1830_1970.py` as reproducible
+  next-source capture attempts.
+- Registered both deep-capture CSVs in
+  `scripts/rebuild_public_surfaces_from_records.py` so future successful runs
+  will flow into the static payload automatically.
+
+Verified results:
+
+- GSU official records increased from 2 to 33.
+- All 33 GSU records are `IMG02` source-hosted image records.
+- Public payload after rebuild:
+  - public surfaces: 727
+  - sheets: 677
+  - cards: 50
+  - image-ready: 608 / 727
+  - image-ready coverage: 83.63% (rounded script output: 84%)
+  - `IMG00`: 68
+  - `IMG01`: 37
+  - `IMG02`: 195
+  - `IMG03`: 376
+  - `IMG04`: 51
+- Integrity audit:
+  - exact repeated image URLs: 0
+  - placeholder image URLs: 0
+  - short text sheets under 60 words: 0
+  - bookmarks: 30
+  - appendices: 35
+  - registration cards: 30
+
+Source-limit findings:
+
+- Library of Congress deep image pass was blocked by HTTP 429 rate limiting.
+- Smithsonian Open Access image pass was blocked by HTTP 429 rate limiting.
+- The first Commons deep pass produced no usable rows; the initial query shape
+  was too broad/ambiguous and returned noise such as non-design images. A
+  corrected category-based Commons script is retained, but this run still
+  produced zero official rows.
+
+Interpretation:
+
+- This round improves the payload but does not solve the 95%+ image target.
+- The most productive next capture family is likely not another broad LoC or
+  Commons pass. It should prioritize protocol families with predictable image
+  fields and less rate-limit friction: CONTENTdm collections, IIIF manifest
+  endpoints, Omeka S archives, Kramerius/OAI-PMH repositories, and local
+  university/government collections.
+- The official archive must keep source dependency and rate-limit failures in
+  About/Methodology so users understand why some regions or sources remain
+  link-only or delayed.

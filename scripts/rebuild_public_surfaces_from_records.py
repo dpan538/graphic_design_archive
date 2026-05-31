@@ -25,8 +25,10 @@ RECORD_FILES = [
     DATA / "capture_batch_smithsonian_oa_image_ready_1830_1970_records.csv",
     DATA / "capture_batch_digitalnz_image_ready_1830_1970_records.csv",
     DATA / "capture_batch_wikimedia_commons_image_ready_1830_1970_records.csv",
+    DATA / "capture_batch_wikimedia_commons_deep_image_ready_1830_1970_records.csv",
     DATA / "capture_batch_princeton_figgy_image_ready_1830_1970_records.csv",
     DATA / "capture_batch_gsu_contentdm_image_ready_1830_1970_records.csv",
+    DATA / "capture_batch_loc_deep_image_ready_1931_1970_records.csv",
 ]
 
 PAYLOAD_PATHS = [
