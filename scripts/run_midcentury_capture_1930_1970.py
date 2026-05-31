@@ -1078,7 +1078,7 @@ def build_surface(row: dict[str, str], index: int) -> dict[str, Any]:
     rights_reviewed = row.get("rights_review_required") == "false" or image_state == "IMG03"
     date_known = bool(row.get("date_start") or row.get("source_date_text"))
     classification_known = region_label != "Unresolved region" or bool(medium_label)
-    image_url = row.get("image_url_detected") if image_state in {"IMG01", "IMG03"} else None
+    image_url = row.get("image_url_detected") if image_state in {"IMG01", "IMG02", "IMG03"} else None
     surface = {
         "surfaceId": f"SURF-{capture_id}",
         "sourceRecordId": capture_id,

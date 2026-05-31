@@ -23,7 +23,7 @@ export default function ArchiveShell({
   hideWordmark = false,
 }: {
   main: React.ReactNode;
-  activeNav?: "index" | "folders" | "search";
+  activeNav?: "index" | "folders" | "search" | "about";
   cornerCard?: React.ReactNode;
   panel?: React.ReactNode;
   panelLabel?: string;
@@ -138,15 +138,48 @@ export default function ArchiveShell({
       )}
 
       <nav className="nav-icons" aria-label="Archive navigation">
-        <Link
-          href="/contents"
-          className="nav-icon"
-          data-active={activeNav === "index"}
-          aria-label="Index"
-        >
-          <IconIndex />
-          <span>Index</span>
-        </Link>
+        {activeNav === "about" ? (
+          <Link
+            href="/contents"
+            className="nav-icon"
+            data-active={false}
+            aria-label="Index"
+          >
+            <IconIndex />
+            <span>Index</span>
+          </Link>
+        ) : activeNav === "index" ? (
+          <Link
+            href="/about"
+            className="nav-icon"
+            data-active={false}
+            aria-label="About"
+          >
+            <IconAbout />
+            <span>About</span>
+          </Link>
+        ) : (
+          <div className="nav-icons__row">
+            <Link
+              href="/about"
+              className="nav-icon"
+              data-active={false}
+              aria-label="About"
+            >
+              <IconAbout />
+              <span>About</span>
+            </Link>
+            <Link
+              href="/contents"
+              className="nav-icon"
+              data-active={false}
+              aria-label="Index"
+            >
+              <IconIndex />
+              <span>Index</span>
+            </Link>
+          </div>
+        )}
         <Link
           href="/folders"
           className="nav-icon"
@@ -242,6 +275,16 @@ function IconSearch() {
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
       <circle cx="10.5" cy="10.5" r="6.5" />
       <line x1="15.5" y1="15.5" x2="21" y2="21" strokeWidth="2" />
+    </svg>
+  );
+}
+
+function IconAbout() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+      <circle cx="12" cy="12" r="9" />
+      <line x1="12" y1="10" x2="12" y2="17" />
+      <line x1="12" y1="6.5" x2="12" y2="8" strokeWidth="2.2" />
     </svg>
   );
 }

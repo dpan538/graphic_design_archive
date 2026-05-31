@@ -1,0 +1,195 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://figgy.princeton.edu/concern/scanned_resources/8cc9b71f-4b4b-4531-aea4-05ece60f5c2a/manifest",
+  "@type": "sc:Manifest",
+  "label": "Keep Cool and Keep Still",
+  "license": "http://rightsstatements.org/vocab/InC-EDU/1.0/",
+  "logo": "https://figgy.princeton.edu/pul_logo_icon.png",
+  "metadata": [
+    {
+      "label": "Abstract",
+      "value": [
+        "Advertising poster for the Interborough Rapid Transit Company of New York City, containing an illustration from The New York Evening Graphic about the Subway Sun posters. Includes illustration by C.R. Macauley of Father Knickerbocker on the subway standing in front of a Subway Sun poster"
+      ]
+    },
+    {
+      "label": "Extent",
+      "value": [
+        "1 poster; approximately 21×16 inches"
+      ]
+    },
+    {
+      "label": "Genre",
+      "value": [
+        "posters"
+      ]
+    },
+    {
+      "label": "Identifier",
+      "value": [
+        "ark:/88435/kd17cx64m"
+      ]
+    },
+    {
+      "label": "Part Of",
+      "value": [
+        {
+          "created_at": null,
+          "id": null,
+          "identifier": "http://arks.princeton.edu/ark:/88435/m039k489x",
+          "internal_resource": "ArkWithTitle",
+          "new_record": true,
+          "title": "Ivy Ledbetter Lee Papers, 1881-1989 (bulk 1915-1946)",
+          "updated_at": null
+        }
+      ]
+    },
+    {
+      "label": "Replaces",
+      "value": [
+        "http://pudl.princeton.edu/objects/d1742776-a3cf-4ef9-a329-fe5d96c130db"
+      ]
+    },
+    {
+      "label": "Title",
+      "value": [
+        "Keep Cool and Keep Still"
+      ]
+    },
+    {
+      "label": "Creator",
+      "value": [
+        "Interborough Rapid Transit Company"
+      ]
+    },
+    {
+      "label": "Date",
+      "value": [
+        "1925"
+      ]
+    },
+    {
+      "label": "Language",
+      "value": [
+        "eng"
+      ]
+    },
+    {
+      "label": "Subject",
+      "value": [
+        "Advertising"
+      ]
+    },
+    {
+      "label": "Location",
+      "value": [
+        "MC085. Box 137"
+      ]
+    },
+    {
+      "label": "Series",
+      "value": [
+        "The Subway Sun Number 19A"
+      ]
+    },
+    {
+      "label": "Rendered Holding Location",
+      "value": [
+        "Mudd Manuscript Library"
+      ]
+    },
+    {
+      "label": "Member Of Collections",
+      "value": [
+        "Interborough Rapid Transit Company Subway Posters"
+      ]
+    }
+  ],
+  "rendering": {
+    "@id": "http://arks.princeton.edu/ark:/88435/kd17cx64m",
+    "format": "text/html"
+  },
+  "seeAlso": {
+    "@id": "https://figgy.princeton.edu/catalog/8cc9b71f-4b4b-4531-aea4-05ece60f5c2a.jsonld",
+    "format": "application/ld+json"
+  },
+  "sequences": [
+    {
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/8cc9b71f-4b4b-4531-aea4-05ece60f5c2a/manifest/sequence/normal",
+      "@type": "sc:Sequence",
+      "canvases": [
+        {
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/8cc9b71f-4b4b-4531-aea4-05ece60f5c2a/manifest/canvas/db788d72-cce7-4425-aeee-1f3dfd5641a2",
+          "@type": "sc:Canvas",
+          "height": 5498,
+          "images": [
+            {
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/8cc9b71f-4b4b-4531-aea4-05ece60f5c2a/manifest/image/db788d72-cce7-4425-aeee-1f3dfd5641a2",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/8cc9b71f-4b4b-4531-aea4-05ece60f5c2a/manifest/canvas/db788d72-cce7-4425-aeee-1f3dfd5641a2",
+              "resource": {
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/c6%2F9f%2F91%2Fc69f91e2f8a64cf185d22e5654735ddd%2Fintermediate_file/full/1000,/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 5498,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/c6%2F9f%2F91%2Fc69f91e2f8a64cf185d22e5654735ddd%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 7200
+              }
+            }
+          ],
+          "label": "recto",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/db788d72-cce7-4425-aeee-1f3dfd5641a2/file/a28f0ba6-9699-4caa-81d8-905cd6b7cbc6",
+              "format": "image/tiff",
+              "label": "Download the original file"
+            }
+          ],
+          "thumbnail": {
+            "@id": "https://iiif-cloud.princeton.edu/iiif/2/c6%2F9f%2F91%2Fc69f91e2f8a64cf185d22e5654735ddd%2Fintermediate_file/full/!200,150/0/default.jpg",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id": "https://iiif-cloud.princeton.edu/iiif/2/c6%2F9f%2F91%2Fc69f91e2f8a64cf185d22e5654735ddd%2Fintermediate_file",
+              "profile": "http://iiif.io/api/image/2/level2.json"
+            }
+          },
+          "width": 7200
+        }
+      ],
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/catalog/8cc9b71f-4b4b-4531-aea4-05ece60f5c2a/pdf",
+          "format": "application/pdf",
+          "label": "Download as PDF"
+        }
+      ],
+      "viewingHint": "individuals"
+    }
+  ],
+  "structures": [
+    {
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/8cc9b71f-4b4b-4531-aea4-05ece60f5c2a/manifest/range/r5c2e973a-488d-4feb-84a1-ea6051033090",
+      "@type": "sc:Range",
+      "canvases": [
+        "https://figgy.princeton.edu/concern/scanned_resources/8cc9b71f-4b4b-4531-aea4-05ece60f5c2a/manifest/canvas/db788d72-cce7-4425-aeee-1f3dfd5641a2"
+      ],
+      "label": "Main Structure",
+      "ranges": [],
+      "viewingHint": "top"
+    }
+  ],
+  "thumbnail": {
+    "@id": "https://iiif-cloud.princeton.edu/iiif/2/c6%2F9f%2F91%2Fc69f91e2f8a64cf185d22e5654735ddd%2Fintermediate_file/full/!200,150/0/default.jpg",
+    "service": {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://iiif-cloud.princeton.edu/iiif/2/c6%2F9f%2F91%2Fc69f91e2f8a64cf185d22e5654735ddd%2Fintermediate_file",
+      "profile": "http://iiif.io/api/image/2/level2.json"
+    }
+  },
+  "viewingHint": "individuals"
+}

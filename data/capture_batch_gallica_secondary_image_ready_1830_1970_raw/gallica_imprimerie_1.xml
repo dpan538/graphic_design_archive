@@ -1,0 +1,2167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<srw:searchRetrieveResponse xmlns:ns6="http://gallica.bnf.fr/namespaces/gallica/" xmlns:diag="http://www.loc.gov/zing/srw/diagnostic/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:srw="http://www.loc.gov/zing/srw/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <srw:version>1.2</srw:version>
+    <srw:echoedSearchRetrieveRequest>
+        <srw:query>dc.title all "imprimerie" and dc.date &gt;= "1830" and dc.date &lt;= "1970"</srw:query>
+        <srw:version>1.2</srw:version>
+    </srw:echoedSearchRetrieveRequest>
+    <srw:numberOfRecords>685</srw:numberOfRecords>
+    <srw:extraResponseData>&lt;numberOfRecordsDecollapser&gt;2868&lt;/numberOfRecordsDecollapser&gt;</srw:extraResponseData>
+    <srw:records>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Huard, Charles-Lucien (1837-1899). Auteur du texte</dc:creator>
+                    <dc:date>1892</dc:date>
+                    <dc:description>Collection : Le livre pour tous ; 53</dc:description>
+                    <dc:description>Contient une table des matières</dc:description>
+                    <dc:format>30 p. : ill., couv. ill. ; in-16</dc:format>
+                    <dc:format>Nombre total de vues : 37</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k62222j</dc:identifier>
+                    <dc:identifier>NUMM-62222</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>L. Boulanger (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb33596652v</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, 8-Z-13055 (53)</dc:source>
+                    <dc:subject>Imprimerie</dc:subject>
+                    <dc:title>L' imprimerie / [signé L. Huard]</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>0</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k62222j.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k62222j</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k62222j.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k62222j.medres</medres>
+                <nqamoyen>86.01</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k62222j.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k62222j</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Malvezin, Théophile. Auteur du texte</dc:creator>
+                    <dc:date>1891</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : Aquit1</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>1 vol. (73 p.) ; 19 cm</dc:format>
+                    <dc:format>Nombre total de vues : 84</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k9614256v</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher> (Bordeaux)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb44414495h</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque municipale de Bordeaux, 2015-224799</dc:source>
+                    <dc:title>L'imprimerie : souvenirs de l'ancien Bordeaux / par Théophile Malvezin</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>1</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k9614256v.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k9614256v</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k9614256v.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k9614256v.medres</medres>
+                <nqamoyen>99.23</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k9614256v.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k9614256v</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:coverage>20 janvier 1923</dc:coverage>
+                    <dc:creator>Agence de presse Meurisse. Agence photographique (commanditaire)</dc:creator>
+                    <dc:date>1923</dc:date>
+                    <dc:description>Référence bibliographique : Meurisse, 3462 A</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : Pho20Meu</dc:description>
+                    <dc:description>Image de presse</dc:description>
+                    <dc:format>1 photogr. nég. sur verre ; 13 x 18 cm (sup.) ou moins</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b9023470t</dc:identifier>
+                    <dc:identifier>Numéro commercial : Meurisse 3462 A</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>diff. par l'Agence Meurisse (Paris)</dc:publisher>
+                    <dc:relation>Notice de recueil : http://catalogue.bnf.fr/ark:/12148/cb404994307</dc:relation>
+                    <dc:relation>Appartient à : [Recueil. Actualités 1922-06-25**1923-05-14. Agence Meurisse MEU 98603-6091 A]</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb415821555</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, EI-13 (2732)</dc:source>
+                    <dc:title>Imprimerie de l'"Oeuvre" saccagée par "les Camelots du Roy" : [photographie de presse] / Agence Meurisse</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>photographie</dc:type>
+                    <dc:type>photograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>2</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b9023470t.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b9023470t</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b9023470t.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b9023470t.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b9023470t.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b9023470t</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Jacob, Ch. (18..-18.. ; avocat). Auteur du texte</dc:creator>
+                    <dc:creator>Duboy, Hippolyte (18..-18..?). Auteur du texte</dc:creator>
+                    <dc:date>1851</dc:date>
+                    <dc:description>Contient une table des matières</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>In-18, 211 p.</dc:format>
+                    <dc:format>Nombre total de vues : 236</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k6306535q</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>Joubert (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb306387466</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Droit, économie, politique, F-33992</dc:source>
+                    <dc:title>Code-manuel de la presse, imprimerie, librairie, affichage et colportage, par Hipp. Duboy,... et Ch. Jacob,...</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>3</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k6306535q.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k6306535q</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k6306535q.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k6306535q.medres</medres>
+                <nqamoyen>99.96</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k6306535q.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k6306535q</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1868</dc:date>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>1 vol. : pl. ; in-4</dc:format>
+                    <dc:format>Nombre total de vues : 206</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k62097798</dc:identifier>
+                    <dc:identifier>NUMM-6209779</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>Labitte (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb334086571</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, V-14967</dc:source>
+                    <dc:title>Gravures sur bois tirées des Livres français du XVe siècle : sujets religieux, démons, êtres imaginaires, moeurs et costumes, imprimerie, grant danse macabre des hommes et des femmes, lettres ornées, écussons, chiffres, marques inédites</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>4</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k62097798.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k62097798</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k62097798.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k62097798.medres</medres>
+                <nqamoyen>99.67</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k62097798.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k62097798</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Roret, Nicolas-Edme (1797-1860). Auteur du texte</dc:creator>
+                    <dc:creator>Frey, Antoine (1780-18..). Auteur du texte</dc:creator>
+                    <dc:date>1835</dc:date>
+                    <dc:description>Collection : [Manuels Roret]</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>2 vol. in-18, pl.</dc:format>
+                    <dc:format>Nombre total de vues : 322</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k6332775h</dc:identifier>
+                    <dc:identifier>NUMM-6332775</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:relation>Notice d'ensemble : http://catalogue.bnf.fr/ark:/12148/cb31244519f</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb31244519f</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, V-27413</dc:source>
+                    <dc:title>Manuel nouveau de typographie, imprimerie,... par A. Frey. Partie 1</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>5</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k6332775h.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k6332775h</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k6332775h.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k6332775h.medres</medres>
+                <nqamoyen>99.06</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k6332775h.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k6332775h</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Anxionnat, Eugène. Auteur du texte</dc:creator>
+                    <dc:date>1908</dc:date>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>1 vol. (134 p.) ; 19 cm</dc:format>
+                    <dc:format>Nombre total de vues : 161</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k62900910</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher> (Gisors)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb31725233v</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, 8-Q-3657</dc:source>
+                    <dc:title>Quelques pages d'histoire locale. L'Imprimerie, la librairie et la presse à Gisors de 1779 à 1908 / par M. Eugène Anxionnat</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>6</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k62900910.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k62900910</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k62900910.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k62900910.medres</medres>
+                <nqamoyen>98.54</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k62900910.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k62900910</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Renouard, Jules (1798-1854). Auteur du texte</dc:creator>
+                    <dc:date>1851</dc:date>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>In-8° , 4 p.</dc:format>
+                    <dc:format>Nombre total de vues : 4</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k5488115f</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>impr. de W. Remquet (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb31199183h</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, Q-6658</dc:source>
+                    <dc:title>Progrès de la contrefaçon, dénonciation et protestation. Les éditeurs de l'"Histoire des peintres" à MM. les membres du Cercle de la librairie, etc. [Signé : Jules Renouard. 20 mai 1851.] - Cercle de la librairie, de l'imprimerie, de la papeterie, etc. [Signé : Pagnerre. 2 juin 1851.]</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>7</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k5488115f.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k5488115f</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k5488115f.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k5488115f.medres</medres>
+                <nqamoyen>96.67</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k5488115f.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k5488115f</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1881</dc:date>
+                    <dc:description>Contient une table des matières</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>1 vol. (91 p.-[7] p. de pl.) : ill. ; in-4</dc:format>
+                    <dc:format>Nombre total de vues : 144</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k6524538c</dc:identifier>
+                    <dc:identifier>NUMM-6524538</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>Cercle de la Librairie (Paris)</dc:publisher>
+                    <dc:relation>Notice d'ensemble : http://catalogue.bnf.fr/ark:/12148/cb33290850r</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb33290850r</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Philosophie, histoire, sciences de l'homme, 4-Z LE SENNE-2870</dc:source>
+                    <dc:subject>Cercle de la librairie (France)</dc:subject>
+                    <dc:title>Le Cercle de la librairie, de l'imprimerie, de la papeterie, du commerce de la musique et des estampes : notice historique et descriptive</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>8</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k6524538c.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k6524538c</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k6524538c.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k6524538c.medres</medres>
+                <nqamoyen>99.93</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k6524538c.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k6524538c</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1838-1839</dc:date>
+                    <dc:description>Variante(s) de titre : Journal spécial de la typographie</dc:description>
+                    <dc:description>Variante(s) de titre : Journal spécial de l'imprimerie, de la librairie, de la papeterie et de la fonderie en caractères</dc:description>
+                    <dc:description>Périodicité : Bi-mensuel</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>Nombre total de vues : 124</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb328023517/date</dc:identifier>
+                    <dc:identifier>ISSN 24272124</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.] (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb328023517</dc:relation>
+                    <dc:relation>A pour reproduction : Journal spécial de la typographie, imprimerie, gravure, fonderie, papeterie et librairie (Reproduction numérique) = ISSN 2400-457X (https://gallica.bnf.fr/ark:/12148/cb328023517/date)</dc:relation>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, V-15450</dc:source>
+                    <dc:title>Journal spécial de la typographie, imprimerie, gravure, fonderie, papeterie et librairie</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>9</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k6226730n.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb328023517/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k6226730n.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k6226730n.medres</medres>
+                <nqamoyen>99.96</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k6226730n.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k6226730n</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:contributor>Delalain, Jules (1810-1877). Directeur de publication</dc:contributor>
+                    <dc:creator>Cercle de la librairie (France). Auteur du texte</dc:creator>
+                    <dc:date>184.-1939</dc:date>
+                    <dc:description>Variante(s) de titre : Cercle de la librairie, de l'imprimerie, de la papeterie...</dc:description>
+                    <dc:description>Variante(s) de titre : Séance annuelle du... (Cercle de la librairie, de l'imprimerie, de la papeterie, etc.)</dc:description>
+                    <dc:description>Variante(s) de titre : Compte rendu de l'année..., assemblée générale du... (Cercle de la librairie, de l'imprimerie, de la papeterie...)</dc:description>
+                    <dc:description>Variante(s) de titre : Bulletin (Cercle de la librairie, de l'imprimerie, de la papeterie...)</dc:description>
+                    <dc:description>Variante(s) de titre : Assemblée générale annuelle... (Cercle de la librairie, de l'imprimerie, de la papeterie...)</dc:description>
+                    <dc:description>Variante(s) de titre : Compte rendu de l'assemblée générale (Cercle de la librairie)</dc:description>
+                    <dc:description>Variante(s) de titre : Assemblée générale... (Cercle de la librairie)</dc:description>
+                    <dc:description>Variante(s) de titre : Assemblée générale du... : compte rendu de l'année...</dc:description>
+                    <dc:description>Variante(s) de titre : Assemblée générale du... : compte rendu de l'année...</dc:description>
+                    <dc:description>Etat de collection : 1902-1926</dc:description>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb32738930t/date</dc:identifier>
+                    <dc:identifier>NUMP-13252</dc:identifier>
+                    <dc:identifier>ISSN 28251954</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.] (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb32738930t</dc:relation>
+                    <dc:relation>A pour reproduction : Assemblée générale du... (Cercle de la librairie, de l'imprimerie, de la papeterie. Reproduction numérique) = ISSN 2825-1938 (https://gallica.bnf.fr/ark:/12148/cb32738930t/date)</dc:relation>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, 4-Q-1261</dc:source>
+                    <dc:title>Assemblée générale du... (Cercle de la librairie, de l'imprimerie, de la papeterie...)</dc:title>
+                    <dc:title>Assemblée générale du... / Cercle de la librairie, de l'imprimerie, de la papeterie...</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>10</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k922221j.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb32738930t/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k922221j.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k922221j.medres</medres>
+                <nqamoyen>87.3</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k922221j.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k922221j</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>19??</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : PrnS001</dc:description>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b105662210</dc:identifier>
+                    <dc:identifier>IFN-10566221</dc:identifier>
+                    <dc:language>Sans contenu linguistique</dc:language>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb44934644f</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Archives départementales des Pyrénées-Atlantiques, 8FI445-6-00091</dc:source>
+                    <dc:subject>Magasins -- Pau (Pyrénées-Atlantiques) -- 20e siècle -- Cartes postales</dc:subject>
+                    <dc:subject>Imprimeries -- Pau (Pyrénées-Atlantiques) -- 20e siècle -- Cartes postales</dc:subject>
+                    <dc:title>Imprimerie Garet</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>11</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b105662210.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b105662210</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b105662210.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b105662210.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b105662210.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b105662210</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1900</dc:date>
+                    <dc:description>Numérisé par le partenaire</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : BNUStr003</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : BNUStras1</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : BNUStr000</dc:description>
+                    <dc:format>10,8 x 15,4 cm ; 10,1 x 14,5 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b10109520r</dc:identifier>
+                    <dc:identifier>IFN-10109520</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>s. n (S. l)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb419254288</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale et universitaire de Strasbourg, STRG.DF.6 (anc. NIM04086)</dc:source>
+                    <dc:subject>Strasbourg</dc:subject>
+                    <dc:subject>STRASBOURG, Imprimerie</dc:subject>
+                    <dc:title>Imprimerie G. Fischbach, Strasbourg...</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>12</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b10109520r.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b10109520r</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b10109520r.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b10109520r.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b10109520r.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b10109520r</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Imprimerie royale (France ; 1815-1848). Auteur du texte</dc:creator>
+                    <dc:date>1845</dc:date>
+                    <dc:description>[Spécimens typographiques. fondeurs. France. Imprimerie royale. 1845]</dc:description>
+                    <dc:format>202 f. : ill., fac-sim. ; in-fol</dc:format>
+                    <dc:format>Nombre total de vues : 442</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k1040497z</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>Imprimerie royale (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb393163327</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Arsenal, FOL-S-1469</dc:source>
+                    <dc:title>Spécimen typographique de l'Imprimerie royale</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>13</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k1040497z.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k1040497z</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k1040497z.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k1040497z.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k1040497z.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k1040497z</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Imprimerie royale (France ; 1815-1848). Auteur du texte</dc:creator>
+                    <dc:date>1842</dc:date>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>1 vol. (non paginé [48] ff.) ; in-fol.</dc:format>
+                    <dc:format>Nombre total de vues : 108</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k6537420j</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>Imprimerie royale (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb33908764f</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Philosophie, histoire, sciences de l'homme, FOL-Z LE SENNE-734</dc:source>
+                    <dc:title>Spécimen typographique de l'Imprimerie royale</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>14</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k6537420j.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k6537420j</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k6537420j.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k6537420j.medres</medres>
+                <nqamoyen>98.9</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k6537420j.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k6537420j</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1856</dc:date>
+                    <dc:description>Référence bibliographique : Lhéritier, 197</dc:description>
+                    <dc:format>36 p. ; 17 cm</dc:format>
+                    <dc:format>Nombre total de vues : 40</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b85302440</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>Charles Nolet (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb33537582h</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, BOITE FOL-OA-361 (20)</dc:source>
+                    <dc:title>Physiologie de l'Imprimerie : silhouettes typographiques...</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>15</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b85302440.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b85302440</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b85302440.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b85302440.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b85302440.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>btv1b85302440</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:contributor>Degeorge, Léon. Directeur de publication</dc:contributor>
+                    <dc:date>1876-1899</dc:date>
+                    <dc:description>Variante(s) de titre : Bulletin de l'imprimerie et de la librairie</dc:description>
+                    <dc:description>Périodicité : Mensuel ; hebdomadaire</dc:description>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb32720834s/date</dc:identifier>
+                    <dc:identifier>ISSN 19674392</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.] (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb32720834s</dc:relation>
+                    <dc:relation>A pour reproduction : Bulletin de l'imprimerie (Reproduction numérique) = ISSN 2711-6271 (https://gallica.bnf.fr/ark:/12148/cb32720834s/date)</dc:relation>
+                    <dc:source>Bibliothèque nationale de France, département Sciences et techniques, FOL-V-276</dc:source>
+                    <dc:title>Bulletin de l'imprimerie : revue mensuelle</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>16</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k11886910.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb32720834s/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k11886910.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k11886910.medres</medres>
+                <nqamoyen>87.03</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k11886910.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k11886910</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Verlaine, Paul (1844-1896). Auteur du texte</dc:creator>
+                    <dc:date>1890</dc:date>
+                    <dc:description>Poésie érotique française -- +* 1801......- 1900......+:XIXe siècle:</dc:description>
+                    <dc:format>[18] f. ; formats divers</dc:format>
+                    <dc:format>Nombre total de vues : 61</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b8610834c</dc:identifier>
+                    <dc:identifier>IFN-8610834</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[ Kistemaeckers] (Bruxelles)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb35072786g</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Réserve des livres rares, ENFER-1733</dc:source>
+                    <dc:title>[Femmes] : [épreuves d'imprimerie] / [Paul Verlaine]</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>17</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b8610834c.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b8610834c</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b8610834c.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b8610834c.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b8610834c.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>btv1b8610834c</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Pal (1855-1942). Illustrateur</dc:creator>
+                    <dc:creator>Imprimerie Paul Dupont. 3060</dc:creator>
+                    <dc:date>189.</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : MnS000</dc:description>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 Affiche : coul. ; 211,5 x 144,5 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bd6t5256974z</dc:identifier>
+                    <dc:identifier>NUMS-100256974</dc:identifier>
+                    <dc:language>Sans contenu linguistique</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Imprimerie Paul Dupont (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb45976832f</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Musée national du sport, 69.13.6</dc:source>
+                    <dc:subject>Cyclisme</dc:subject>
+                    <dc:subject>Bicyclettes</dc:subject>
+                    <dc:subject>Agence générale française des cycles Whitworth</dc:subject>
+                    <dc:title>[Whitworth cycles / PAL ; IMPRIMERIE, PAUL DUPONT]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>18</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bd6t5256974z.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bd6t5256974z</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bd6t5256974z.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bd6t5256974z.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bd6t5256974z.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>bd6t5256974z</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1840</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : BNUStr003</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : BNUStras1</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : BNUStr000</dc:description>
+                    <dc:format>10,5 x 14,5 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b10202743j</dc:identifier>
+                    <dc:identifier>IFN-10202743</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>Simon E (Strasbourg)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb41925438k</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale et universitaire de Strasbourg, NIM04087</dc:source>
+                    <dc:subject>Strasbourg</dc:subject>
+                    <dc:subject>STRASBOURG, Imprimerie</dc:subject>
+                    <dc:title>Imprimerie lithographique, Autographique, E. Simon Fils, Strasbourg</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>19</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b10202743j.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b10202743j</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b10202743j.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b10202743j.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b10202743j.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b10202743j</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Morin, Louis (1866-1942). Auteur du texte</dc:creator>
+                    <dc:date>1924</dc:date>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>In-fol., 128 p., frontisp., fig.</dc:format>
+                    <dc:format>Nombre total de vues : 149</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k1522253c</dc:identifier>
+                    <dc:identifier>NUMM-1522253</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>impr. de G. de Malherbe (Troyes ; Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb30982095k</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Réserve des livres rares, RES G-Q-55</dc:source>
+                    <dc:title>L'Imprimerie glorifiée, anthologie professionnelle / Louis Morin</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>20</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k1522253c.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k1522253c</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k1522253c.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k1522253c.medres</medres>
+                <nqamoyen>89.26</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k1522253c.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k1522253c</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Mỹ Thắng (Imprimerie-librairie). Auteur du texte</dc:creator>
+                    <dc:date>1933</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : FrVtm0</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>96 p. : ill., couv. ill.</dc:format>
+                    <dc:format>Nombre total de vues : 100</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k4236768z</dc:identifier>
+                    <dc:publisher> (Nam Ðịnh)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb35755461t</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, 8-INDOCH-1928</dc:source>
+                    <dc:title>Catalogue 1933-1934 / Imprimerie-librairie... Mỹ Thắng...</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>21</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k4236768z.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k4236768z</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k4236768z.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k4236768z.medres</medres>
+                <nqamoyen>80.15</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k4236768z.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k4236768z</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Blancard, Hippolyte (1843-1924). Photographe</dc:creator>
+                    <dc:date>1889</dc:date>
+                    <dc:format>1 photogr. pos. (tirage au platine) d'après un négatif sur verre au gélatinobromure d'argent ; 22,5 x 16 cm env.</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b11600532k</dc:identifier>
+                    <dc:identifier>Numéro commercial : Blancard 4148</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:relation>Notice de recueil : http://catalogue.bnf.fr/ark:/12148/cb405018312</dc:relation>
+                    <dc:relation>Appartient à : [Recueil. Photographies positives. Oeuvre de Hippolyte Blancard]</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb444476764</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, BOITE FOL A-EO-508 (12)</dc:source>
+                    <dc:subject>Constructions pour expositions</dc:subject>
+                    <dc:subject>Paris (France) -- Champ-de-Mars</dc:subject>
+                    <dc:subject>Exposition internationale (1889 ; Paris)</dc:subject>
+                    <dc:subject>Vues d'architecture -- 1870-1913</dc:subject>
+                    <dc:title>Pavillon de l'Imprimerie : [photographie] / [Hippolyte Blancard]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>photographie</dc:type>
+                    <dc:type>photograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>22</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b11600532k.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b11600532k</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b11600532k.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b11600532k.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b11600532k.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b11600532k</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Nouveau, Germain (1851-1920). Auteur du texte</dc:creator>
+                    <dc:date>1887</dc:date>
+                    <dc:description>[Valentines (français)]</dc:description>
+                    <dc:description>Ancien possesseur : Nouveau, Germain (1851-1920)</dc:description>
+                    <dc:description>Ancien possesseur : Larmandie, Léonce de (1851-1921)</dc:description>
+                    <dc:description>Ancien possesseur : Bergé, Pierre (1930-2017)</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>1 vol. (147 p.) ; 23 cm</dc:format>
+                    <dc:format>Nombre total de vues : 292</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k1511413z</dc:identifier>
+                    <dc:identifier>NUMM-1511413</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>s. n.</dc:publisher>
+                    <dc:relation>Notice d’oeuvre : http://catalogue.bnf.fr/ark:/12148/cb119684035</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb44497112j</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Réserve des livres rares, RES 8-NFY-668</dc:source>
+                    <dc:title>Valentines : [épreuves d'imprimerie] / Jean de Noves</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>23</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k1511413z.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k1511413z</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k1511413z.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k1511413z.medres</medres>
+                <nqamoyen>84.03</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k1511413z.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k1511413z</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Gallice, Emile. Illustrateur</dc:creator>
+                    <dc:creator>Imprimerie Delattre (Paris). 3060</dc:creator>
+                    <dc:date>1912</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : MnS000</dc:description>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 Affiche : coul. ; 153,5 x 222 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bd6t5256973k</dc:identifier>
+                    <dc:identifier>NUMS-100256973</dc:identifier>
+                    <dc:language>Sans contenu linguistique</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Imprimerie Delattre (Paris) (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb45976808k</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Musée national du sport, 67.5.5</dc:source>
+                    <dc:subject>Papke, Billy (1886-1936)</dc:subject>
+                    <dc:subject>Carpentier, Georges (1894-1975)</dc:subject>
+                    <dc:subject>Boxe</dc:subject>
+                    <dc:title>[Carpentier contre Papke / Emile Gallice ; Imprimerie Delattre]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>24</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bd6t5256973k.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bd6t5256973k</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bd6t5256973k.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bd6t5256973k.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bd6t5256973k.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>bd6t5256973k</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Misti (1865 -1922). Illustrateur</dc:creator>
+                    <dc:creator>Imprimerie R. Carvin. 3060</dc:creator>
+                    <dc:date>1890</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : MnS000</dc:description>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 Affiche : coul. ; 120,2 x 79,7 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bd6t52572954</dc:identifier>
+                    <dc:identifier>NUMS-100257295</dc:identifier>
+                    <dc:language>Sans contenu linguistique</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Imprimerie R. Carvin (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb459768820</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Musée national du sport, 80.1.1.1</dc:source>
+                    <dc:subject>Sport automobile</dc:subject>
+                    <dc:subject>Courses automobiles</dc:subject>
+                    <dc:subject>Sports -- Publics</dc:subject>
+                    <dc:title>[Qu'attendent-ils ? / Misti ; Imprimerie R. Carvin]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>25</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bd6t52572954.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bd6t52572954</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bd6t52572954.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bd6t52572954.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bd6t52572954.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>bd6t52572954</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Chéret, Jules (1836-1932). Illustrateur</dc:creator>
+                    <dc:creator>Imprimerie Jules Chéret. 3060</dc:creator>
+                    <dc:date>189.</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : MnS000</dc:description>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 Affiche : coul. ; 59,3 x 40,5 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bd6t5256604m</dc:identifier>
+                    <dc:identifier>NUMS-100256604</dc:identifier>
+                    <dc:language>Sans contenu linguistique</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Imprimerie Jules Chéret (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb459769510</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Musée national du sport, 2005.9.2</dc:source>
+                    <dc:subject>Cirque</dc:subject>
+                    <dc:subject>Acrobatie</dc:subject>
+                    <dc:title>[Les Frères Léopold / Jchéret ; Imprimerie Jules Chéret]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>26</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bd6t5256604m.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bd6t5256604m</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bd6t5256604m.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bd6t5256604m.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bd6t5256604m.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>bd6t5256604m</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Auzolle, Marcellin (1862-1942). Illustrateur</dc:creator>
+                    <dc:creator>Duranton. Lithographe</dc:creator>
+                    <dc:creator>Imprimerie Hérold (Paris). 3060</dc:creator>
+                    <dc:date>190.</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : MnS000</dc:description>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 Affiche : coul. ; 126,5 x 79 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bd6t52571453</dc:identifier>
+                    <dc:identifier>NUMS-100257145</dc:identifier>
+                    <dc:language>Sans contenu linguistique</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Imprimerie Hérold (Paris) (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb459767983</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Musée national du sport, 65.10.4</dc:source>
+                    <dc:subject>Cyclisme</dc:subject>
+                    <dc:subject>Bicyclettes</dc:subject>
+                    <dc:subject>Pneumatique Stella</dc:subject>
+                    <dc:title>[Pneumatique Stella / Marcellin, Auzolle ; Duranton ; Imprimerie Hérold]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>27</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bd6t52571453.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bd6t52571453</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bd6t52571453.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bd6t52571453.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bd6t52571453.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>bd6t52571453</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Misti (1865 -1922). Illustrateur</dc:creator>
+                    <dc:creator>Imprimerie R. Carvin. 3060</dc:creator>
+                    <dc:date>1890</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : MnS000</dc:description>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 Affiche : coul. ; 120 x 80 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bd6t5257296h</dc:identifier>
+                    <dc:identifier>NUMS-100257296</dc:identifier>
+                    <dc:language>Sans contenu linguistique</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Imprimerie R. Carvin (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb45976884p</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Musée national du sport, 80.1.1.3</dc:source>
+                    <dc:subject>Sport automobile</dc:subject>
+                    <dc:subject>Automobiles</dc:subject>
+                    <dc:subject>Cycles et automobiles Clément</dc:subject>
+                    <dc:title>[Voiture Clément-Panhard / Misti ; Imprimerie R. Carvin]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>28</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bd6t5257296h.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bd6t5257296h</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bd6t5257296h.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bd6t5257296h.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bd6t5257296h.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>bd6t5257296h</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Audin, Marius. Auteur du texte</dc:creator>
+                    <dc:date>1928-1929</dc:date>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>4 vol. (126 p., 249 fig. ; 105 p., 266 fig. ; 110 p., 242 fig. ; 13 p., [ca 340] fig.) : ill., fac-sim. ; 24 cm</dc:format>
+                    <dc:format>Nombre total de vues : 408</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bd6t54181709p</dc:identifier>
+                    <dc:identifier>NUMS-104181709</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>H. Jonquières (Paris)</dc:publisher>
+                    <dc:relation>Notice d'ensemble : http://catalogue.bnf.fr/ark:/12148/cb37461622g</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb37461622g</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, 8-Q-5578 (2)</dc:source>
+                    <dc:subject>Histoire de l'imprimerie</dc:subject>
+                    <dc:subject>Caractères d'imprimerie</dc:subject>
+                    <dc:subject>Livres -- Mise en page</dc:subject>
+                    <dc:title>Histoire de l'imprimerie par l'image. Tome II, La lettre d'imprimerie / Marius Audin</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>29</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bd6t54181709p.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bd6t54181709p</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bd6t54181709p.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bd6t54181709p.medres</medres>
+                <nqamoyen>81.22</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bd6t54181709p.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bd6t54181709p</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Monnoyer (Imprimerie Edmond ; Le Mans). Auteur du texte</dc:creator>
+                    <dc:date>1889</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : PaysLoir1</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>In-16, IV-192 p., fig., portrait</dc:format>
+                    <dc:format>Nombre total de vues : 224</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k6134871b</dc:identifier>
+                    <dc:identifier>NUMM-6134871</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb33925954c</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, 16-Q-693</dc:source>
+                    <dc:title>Spécimen des caractères de l'imprimerie Edmond Monnoyer</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>30</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k6134871b.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k6134871b</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k6134871b.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k6134871b.medres</medres>
+                <nqamoyen>91.68</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k6134871b.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k6134871b</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:contributor>Exposition internationale (1872 ; Londres). Éditeur scientifique</dc:contributor>
+                    <dc:creator>Masson, Georges (1839-1900). Auteur du texte</dc:creator>
+                    <dc:date>1873</dc:date>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>12 p. ; in-4</dc:format>
+                    <dc:format>Nombre total de vues : 20</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k54713022</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>Impr. nationale (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb30904179f</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, Q-1323</dc:source>
+                    <dc:title>Librairie et imprimerie / rapport de M. G. Masson,...</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>31</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k54713022.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k54713022</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k54713022.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k54713022.medres</medres>
+                <nqamoyen>96.73</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k54713022.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k54713022</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Dupont, Paul (1796-1879). Auteur du texte</dc:creator>
+                    <dc:date>1849</dc:date>
+                    <dc:description>Contient une table des matières</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>1 vol. (233 p.) ; 28 cm</dc:format>
+                    <dc:format>Nombre total de vues : 248</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k5475290j</dc:identifier>
+                    <dc:identifier>NUMM-5475290</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>impr. de P. Dupont (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb303814288</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, Q-1169</dc:source>
+                    <dc:subject>Histoire de l'imprimerie</dc:subject>
+                    <dc:subject>Gravure -- Histoire</dc:subject>
+                    <dc:title>Notice historique sur l'imprimerie / par Paul Dupont</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>32</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k5475290j.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k5475290j</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k5475290j.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k5475290j.medres</medres>
+                <nqamoyen>97.16</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k5475290j.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k5475290j</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1855</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : PaysLoir1</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>In-8 °. Pièce</dc:format>
+                    <dc:format>Nombre total de vues : 10</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k5788227q</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>Impr. de Cosnier et Lachèse (Angers)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb36428723t</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Philosophie, histoire, sciences de l'homme, 8-LN27-19060</dc:source>
+                    <dc:subject>Sommier</dc:subject>
+                    <dc:title>Nécrologie. Jean-Baptiste-Étienne Sommier, prote d'imprimerie</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>33</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k5788227q.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k5788227q</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k5788227q.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k5788227q.medres</medres>
+                <nqamoyen>99.98</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k5788227q.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k5788227q</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Alary, Jacques. Auteur du texte</dc:creator>
+                    <dc:date>1876</dc:date>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>In-8 °</dc:format>
+                    <dc:format>Nombre total de vues : 68</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k6465831p</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>Jousset (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb36500557d</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Philosophie, histoire, sciences de l'homme, 8-LN27-29585</dc:source>
+                    <dc:subject>Gutenberg (1394 ?-1468)</dc:subject>
+                    <dc:title>Gutenberg et l'imprimerie typographique / par Jacques Alary,...</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>34</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k6465831p.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k6465831p</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k6465831p.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k6465831p.medres</medres>
+                <nqamoyen>99.96</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k6465831p.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k6465831p</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Muller, Arnold (1860-1925). Auteur du texte</dc:creator>
+                    <dc:date>1891-1939</dc:date>
+                    <dc:description>Périodicité : Annuel</dc:description>
+                    <dc:description>Etat de collection : 1891 [I] jusqu'à la fin ; mq 1910, 1912, 1929, 1931, 1933</dc:description>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb32696177v/date</dc:identifier>
+                    <dc:identifier>NUMP-18616</dc:identifier>
+                    <dc:identifier>ISSN 26482614</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.] (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb32696177v</dc:relation>
+                    <dc:relation>A pour reproduction : Annuaire de l'imprimerie (Reproduction numérique) = ISSN 2669-6347 (https://gallica.bnf.fr/ark:/12148/cb32696177v/date )</dc:relation>
+                    <dc:source>Bibliothèque nationale de France, département Sciences et techniques, 8-V-22783</dc:source>
+                    <dc:title>Annuaire de l'imprimerie / par Arnold Muller, typographe</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>35</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k11862005.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb32696177v/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k11862005.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k11862005.medres</medres>
+                <nqamoyen>84.76</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k11862005.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k11862005</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1944-194.</dc:date>
+                    <dc:format>Nombre total de vues : 2</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb327891317/date</dc:identifier>
+                    <dc:identifier>ISSN 22679375</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher> (France)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb327891317</dc:relation>
+                    <dc:source>Bibliothèque nationale de France, département Réserve des livres rares, RES-G-1470 (177)</dc:source>
+                    <dc:title>L'Imprimerie au combat : organe de la Résistance</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>36</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k874056d.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb327891317/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k874056d.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k874056d.medres</medres>
+                <nqamoyen>87.49</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k874056d.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k874056d</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Dupont, Paul (1796-1879). Auteur du texte</dc:creator>
+                    <dc:date>1867</dc:date>
+                    <dc:description>Contient une table des matières</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>1 vol. (320 p.) : ill. ; in-4</dc:format>
+                    <dc:format>Nombre total de vues : 348</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k6325566h</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>Impr. et libr. administratives (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb30381433v</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, V-14212</dc:source>
+                    <dc:title>Une imprimerie en 1867 / par M. Paul Dupont,...</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>37</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k6325566h.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k6325566h</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k6325566h.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k6325566h.medres</medres>
+                <nqamoyen>99.96</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k6325566h.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k6325566h</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:contributor>Muller, Arnold (1860-1925). Éditeur scientifique</dc:contributor>
+                    <dc:date>1894-1937</dc:date>
+                    <dc:description>Périodicité : ; Mensuel</dc:description>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb32858539d/date</dc:identifier>
+                    <dc:identifier>NUMP-25607</dc:identifier>
+                    <dc:identifier>ISSN 20252404</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.] (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb32858539d</dc:relation>
+                    <dc:relation>A pour reproduction : Revue des industries du livre (Reproduction numérique) = ISSN 2968-4838 (https://gallica.bnf.fr/ark:/12148/cb32858539d/date)</dc:relation>
+                    <dc:source>Bibliothèque nationale de France, département Sciences et techniques, 4-V-4245</dc:source>
+                    <dc:subject>Livres -- Industrie et commerce -- France</dc:subject>
+                    <dc:title>Revue des industries du livre : imprimerie, librairie, papeterie</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>38</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k70503106.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb32858539d/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k70503106.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k70503106.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k70503106.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k70503106</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1912</dc:date>
+                    <dc:description>Ancien possesseur : Baly, André (1922-2003). Ancien possesseur</dc:description>
+                    <dc:description>Ancien possesseur : Baly, André (1922-2003)</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : BmLHav000</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : BmLHav001</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : BmLHav011</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : AXSEI000</dc:description>
+                    <dc:format>1 photographie : tirage albuminé contrecollé sur carton, noir et blanc ; carton : 21 x 27 cm; feuille : 17 x 12 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 2</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b106796879</dc:identifier>
+                    <dc:identifier>IFN-10679687</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>M. Bazile (Le Havre)</dc:publisher>
+                    <dc:relation>Notice de recueil : http://catalogue.bnf.fr/ark:/12148/cb457861284</dc:relation>
+                    <dc:relation>Appartient à : [Collection André Baly]</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb45930710k</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque municipale du Havre, PH BAL 900</dc:source>
+                    <dc:subject>Villes</dc:subject>
+                    <dc:subject>Le Havre (Seine-Maritime, France)</dc:subject>
+                    <dc:title>21 Quai Georges V [imprimerie Cloche Illustrée] : [photographie]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>photographie</dc:type>
+                    <dc:type>photograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>39</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b106796879.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b106796879</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b106796879.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b106796879.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b106796879.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b106796879</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Gallice, Emile. Illustrateur</dc:creator>
+                    <dc:creator>Imprimerie Delattre (Paris). 3060</dc:creator>
+                    <dc:date>1911</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : MnS000</dc:description>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 Affiche : coul. ; 63,3 x 84,4 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bd6t5257532v</dc:identifier>
+                    <dc:identifier>NUMS-100257532</dc:identifier>
+                    <dc:language>Sans contenu linguistique</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Imprimerie Delattre (Paris) (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb45976893n</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Musée national du sport, 80.40.2</dc:source>
+                    <dc:subject>Carpentier, Georges (1894-1975)</dc:subject>
+                    <dc:subject>Boxe</dc:subject>
+                    <dc:subject>Lewis, Harry (1886-1956)</dc:subject>
+                    <dc:title>[Carpentier contre Harry Lewis / Emile Gallice ; Imprimerie Delattre]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>40</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bd6t5257532v.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bd6t5257532v</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bd6t5257532v.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bd6t5257532v.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bd6t5257532v.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>bd6t5257532v</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Fleurac, Louis de (1876-1965). Dessinateur</dc:creator>
+                    <dc:creator>Imprimerie Joseph-Charles. 3060</dc:creator>
+                    <dc:date>1924</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : MnS000</dc:description>
+                    <dc:format>1 estampe : coul. ; 86,5 x 64,4 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bd6t52571919</dc:identifier>
+                    <dc:identifier>NUMS-100257191</dc:identifier>
+                    <dc:language>Sans contenu linguistique</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Imprimerie Joseph-Charles ()</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb459755075</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Musée national du sport, 86.40.2</dc:source>
+                    <dc:subject>Water-polo</dc:subject>
+                    <dc:subject>Plongeon</dc:subject>
+                    <dc:subject>Piscines</dc:subject>
+                    <dc:title>[Sports nautiques / Louis de Fleurac ; Imprimerie Joseph-Charles]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>41</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bd6t52571919.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bd6t52571919</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bd6t52571919.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bd6t52571919.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bd6t52571919.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>bd6t52571919</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Vincent, René (1879-1936). Illustrateur</dc:creator>
+                    <dc:creator>Imprimerie Dardelet et Cie. 3060</dc:creator>
+                    <dc:date>193.</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : MnS000</dc:description>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 Affiche : coul. ; 39,5 x 29,2 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bd6t5257185g</dc:identifier>
+                    <dc:identifier>NUMS-100257185</dc:identifier>
+                    <dc:language>Sans contenu linguistique</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Imprimerie Dardelet et Cie (Grenoble)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb45976878r</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Musée national du sport, 79.11.13</dc:source>
+                    <dc:subject>Sports</dc:subject>
+                    <dc:subject>Sportives</dc:subject>
+                    <dc:subject>Bagages</dc:subject>
+                    <dc:title>[Week-end / René Vincent ; Imprimerie Dardelet et Cie]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>42</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bd6t5257185g.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bd6t5257185g</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bd6t5257185g.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bd6t5257185g.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bd6t5257185g.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>bd6t5257185g</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Gallice, Emile. Illustrateur</dc:creator>
+                    <dc:creator>Imprimerie Delattre (Paris). 3060</dc:creator>
+                    <dc:date>1913</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : MnS000</dc:description>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 Affiche : coul. ; 162 x 233 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bd6t52569985</dc:identifier>
+                    <dc:identifier>NUMS-100256998</dc:identifier>
+                    <dc:language>Sans contenu linguistique</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Imprimerie Delattre (Paris) (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb459768046</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Musée national du sport, 67.5.1</dc:source>
+                    <dc:subject>Boxe</dc:subject>
+                    <dc:subject>Boxeurs</dc:subject>
+                    <dc:subject>Cirque de Paris (1906-1932)</dc:subject>
+                    <dc:title>[Hogan contre Jeff Smith / Emile Gallice ; Imprimerie Delattre]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>43</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bd6t52569985.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bd6t52569985</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bd6t52569985.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bd6t52569985.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bd6t52569985.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>bd6t52569985</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Delpit, Jules (1808-1891). Auteur du texte</dc:creator>
+                    <dc:date>1869</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : Aquit1</dc:description>
+                    <dc:description>Contient une table des matières</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>In-8° , 115 p., fig.</dc:format>
+                    <dc:format>Nombre total de vues : 130</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k5828956f</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>impr. de E. Forastié et fils (Bordeaux)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb303202643</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, 8-Q-105</dc:source>
+                    <dc:title>Origines de l'imprimerie en Guyenne, par Jules Delpit</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>44</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k5828956f.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k5828956f</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k5828956f.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k5828956f.medres</medres>
+                <nqamoyen>93.83</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k5828956f.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k5828956f</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Bernard, Auguste (1811-1868). Auteur du texte</dc:creator>
+                    <dc:date>1848</dc:date>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>In-32, 128 p., portr. de Gutenberg</dc:format>
+                    <dc:format>Nombre total de vues : 142</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k5488316j</dc:identifier>
+                    <dc:identifier>NUMM-5488316</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>Dumoulin (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb30090202g</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, Q-4638</dc:source>
+                    <dc:title>Notice historique sur l'Imprimerie nationale, par Aug. Bernard</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>45</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k5488316j.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k5488316j</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k5488316j.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k5488316j.medres</medres>
+                <nqamoyen>97.11</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k5488316j.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k5488316j</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Kugelmann, Joseph. Auteur du texte</dc:creator>
+                    <dc:date>1867</dc:date>
+                    <dc:description>Contient une table des matières</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>In-8° , 63 p.</dc:format>
+                    <dc:format>Nombre total de vues : 80</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k5485919x</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>impr. de Kugelmann (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb30698626j</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, Q-5387</dc:source>
+                    <dc:title>Histoire de l'imprimerie en Portugal, par Joseph Kugelmann</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>46</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k5485919x.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k5485919x</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k5485919x.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k5485919x.medres</medres>
+                <nqamoyen>97.61</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k5485919x.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k5485919x</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Dupont, Paul (1796-1879). Auteur du texte</dc:creator>
+                    <dc:date>1854</dc:date>
+                    <dc:description>Contient une table des matières</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>2 vol. (XVII-523, 612 p.) ; in-18</dc:format>
+                    <dc:format>Nombre total de vues : 556</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k58598300</dc:identifier>
+                    <dc:identifier>NUMM-5859830</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>les libraires (Paris)</dc:publisher>
+                    <dc:relation>Notice d'ensemble : http://catalogue.bnf.fr/ark:/12148/cb303814137</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb303814137</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Collections numérisées, 2008-58752</dc:source>
+                    <dc:subject>Histoire de l'imprimerie</dc:subject>
+                    <dc:title>Histoire de l'imprimerie. Tome 1 / par Paul Dupont,...</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>47</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k58598300.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k58598300</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k58598300.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k58598300.medres</medres>
+                <nqamoyen>99.98</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k58598300.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k58598300</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Morin, Louis (1866-1942). Auteur du texte</dc:creator>
+                    <dc:date>1912</dc:date>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>1 vol. (128 p.) : fig. ; in-16</dc:format>
+                    <dc:format>Nombre total de vues : 144</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k852216m</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher> (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb30982093w</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, 8-Q-4030</dc:source>
+                    <dc:title>L'imprimerie à Troyes pendant la Ligue / Louis Morin</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>48</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k852216m.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k852216m</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k852216m.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k852216m.medres</medres>
+                <nqamoyen>85.84</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k852216m.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k852216m</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Imprimerie de Quinhon̛ (Qui-Nhon̛). Auteur du texte</dc:creator>
+                    <dc:date>1934</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : FrVtm0</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>[2]-48-[12] p.</dc:format>
+                    <dc:format>Nombre total de vues : 66</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k42312641</dc:identifier>
+                    <dc:publisher> (Qui Nhón)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb35754095s</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, 8-INDOCH-2099</dc:source>
+                    <dc:title>Catalogue, mai 1934 / Imprimerie de Quinhon̛, Qui-Nhon̛, Annam</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>49</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k42312641.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k42312641</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k42312641.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k42312641.medres</medres>
+                <nqamoyen>79.66</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k42312641.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k42312641</uri>
+            </srw:extraRecordData>
+        </srw:record>
+    </srw:records>
+    <srw:nextRecordPosition>51</srw:nextRecordPosition>
+</srw:searchRetrieveResponse>

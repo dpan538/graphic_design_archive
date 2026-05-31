@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 import re
-from collections import defaultdict
+from collections import Counter, defaultdict
 from copy import deepcopy
 from pathlib import Path
 from typing import Any
@@ -53,6 +53,37 @@ def compound_child(surface: dict[str, Any]) -> dict[str, str]:
     }
 
 
+def representative_image(items: list[dict[str, Any]]) -> dict[str, Any]:
+    priority = {"IMG03": 0, "IMG02": 1, "IMG01": 2, "IMG00": 3, "IMG04": 4}
+    candidates = sorted(
+        (
+            item.get("image", {})
+            for item in items
+            if isinstance(item.get("image"), dict)
+        ),
+        key=lambda image: priority.get(image.get("state", "IMG00"), 9),
+    )
+    for image in candidates:
+        if image.get("state") in {"IMG01", "IMG02", "IMG03"} and image.get("url"):
+            return {
+                "state": image.get("state"),
+                "hasImageFrame": True,
+                "url": image.get("url"),
+                "credit": image.get("credit"),
+                "licenseLabel": (
+                    image.get("licenseLabel")
+                    or "Representative image selected from grouped source records."
+                ),
+            }
+    return {
+        "state": "IMG00",
+        "hasImageFrame": True,
+        "url": None,
+        "credit": None,
+        "licenseLabel": "Grouped source links; image display withheld until item-level review.",
+    }
+
+
 def make_group_surface(items: list[dict[str, Any]], group_index: int) -> dict[str, Any]:
     first = deepcopy(items[0])
     start, end, span = year_range(items)
@@ -93,13 +124,7 @@ def make_group_surface(items: list[dict[str, Any]], group_index: int) -> dict[st
         }
     )
 
-    first["image"] = {
-        "state": "IMG00",
-        "hasImageFrame": True,
-        "url": None,
-        "credit": None,
-        "licenseLabel": "Grouped source links; image display withheld until item-level review.",
-    }
+    first["image"] = representative_image(items)
 
     first["tables"] = [
         {
@@ -122,8 +147,9 @@ def make_group_surface(items: list[dict[str, Any]], group_index: int) -> dict[st
         {
             "kind": "RIGHTS",
             "rows": [
-                ["image state", "IMG00"],
-                ["policy", "source-link only until item-level review"],
+                ["image state", first["image"]["state"]],
+                ["member image states", "; ".join(f"{k}: {v}" for k, v in sorted(Counter((item.get("image") or {}).get("state", "IMG00") for item in items).items()))],
+                ["policy", "representative image from grouped records when rights state permits"],
             ],
         },
         {

@@ -1,0 +1,215 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://figgy.princeton.edu/concern/scanned_resources/0309e345-fa3e-467f-959e-ea6402e68d7b/manifest",
+  "@type": "sc:Manifest",
+  "description": "Medium: Screen prints",
+  "label": "VIII Juegos Panamericanos, San Juan de Puerto Rico.",
+  "license": "http://rightsstatements.org/vocab/NKC/1.0/",
+  "logo": "https://figgy.princeton.edu/pul_logo_icon.png",
+  "metadata": [
+    {
+      "label": "Extent",
+      "value": [
+        "1 item ; sheet 75.9 x 55.2 cm."
+      ]
+    },
+    {
+      "label": "Identifier",
+      "value": [
+        "<a href='http://arks.princeton.edu/ark:/88435/pg15bf02c' alt='Identifier'>http://arks.princeton.edu/ark:/88435/pg15bf02c</a>"
+      ]
+    },
+    {
+      "label": "Replaces",
+      "value": [
+        "pudl0033/2007/03910"
+      ]
+    },
+    {
+      "label": "Title",
+      "value": [
+        {
+          "@language": "zxx",
+          "@value": "VIII Juegos Panamericanos, San Juan de Puerto Rico."
+        }
+      ]
+    },
+    {
+      "label": "Content Type",
+      "value": [
+        "Visual material"
+      ]
+    },
+    {
+      "label": "Creator",
+      "value": [
+        "Homar, Lorenzo, 1913-2004"
+      ]
+    },
+    {
+      "label": "Date",
+      "value": [
+        "1979"
+      ]
+    },
+    {
+      "label": "Language",
+      "value": [
+        "No linguistic content; Not applicable"
+      ]
+    },
+    {
+      "label": "Publisher",
+      "value": [
+        "1979 (poster) ; 1975 (original design)."
+      ]
+    },
+    {
+      "label": "Subject",
+      "value": [
+        "Pan American Games—Posters"
+      ]
+    },
+    {
+      "label": "Call Number",
+      "value": [
+        "C South 05/Drawer 04/GC151/Full Folio/Posters 1-33 GA 2007.03910"
+      ]
+    },
+    {
+      "label": "Location",
+      "value": [
+        "Special Collections C South 05/Drawer 04/GC151/Full Folio/Posters 1-33 GA 2007.03910"
+      ]
+    },
+    {
+      "label": "Electronic Locations",
+      "value": [
+        {
+          "created_at": null,
+          "id": null,
+          "internal_resource": "LabeledURI",
+          "label": "Digital content",
+          "new_record": true,
+          "updated_at": null,
+          "uri": {
+            "@id": "https://catalog.princeton.edu/catalog/10648899#view"
+          }
+        },
+        {
+          "created_at": null,
+          "id": null,
+          "internal_resource": "LabeledURI",
+          "label": [
+            "http://arks.princeton.edu/ark:/88435/pg15bf02c",
+            "https://figgy.princeton.edu/concern/scanned_resources/0309e345-fa3e-467f-959e-ea6402e68d7b/manifest"
+          ],
+          "new_record": true,
+          "updated_at": null,
+          "uri": {
+            "@id": "iiif_manifest_paths"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Member Of Collections",
+      "value": [
+        "Treasures of the Graphic Arts Collection"
+      ]
+    }
+  ],
+  "rendering": {
+    "@id": "http://arks.princeton.edu/ark:/88435/pg15bf02c",
+    "format": "text/html"
+  },
+  "seeAlso": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/0309e345-fa3e-467f-959e-ea6402e68d7b.jsonld",
+      "format": "application/ld+json"
+    },
+    {
+      "@id": "https://catalog.princeton.edu/catalog/99106488993506421.marcxml",
+      "format": "text/xml"
+    }
+  ],
+  "sequences": [
+    {
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/0309e345-fa3e-467f-959e-ea6402e68d7b/manifest/sequence/normal",
+      "@type": "sc:Sequence",
+      "canvases": [
+        {
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/0309e345-fa3e-467f-959e-ea6402e68d7b/manifest/canvas/16784fc4-0000-44b0-96ab-be6512d1728b",
+          "@type": "sc:Canvas",
+          "height": 7200,
+          "images": [
+            {
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/0309e345-fa3e-467f-959e-ea6402e68d7b/manifest/image/16784fc4-0000-44b0-96ab-be6512d1728b",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/0309e345-fa3e-467f-959e-ea6402e68d7b/manifest/canvas/16784fc4-0000-44b0-96ab-be6512d1728b",
+              "resource": {
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/aa%2F74%2F0a%2Faa740a4dc0e24a39ba34174090d39103%2Fintermediate_file/full/1000,/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 7200,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/aa%2F74%2F0a%2Faa740a4dc0e24a39ba34174090d39103%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 5266
+              }
+            }
+          ],
+          "label": "recto",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/16784fc4-0000-44b0-96ab-be6512d1728b/file/598b1503-2151-476f-aa33-64e60fc09396",
+              "format": "image/tiff",
+              "label": "Download the original file"
+            }
+          ],
+          "thumbnail": {
+            "@id": "https://iiif-cloud.princeton.edu/iiif/2/aa%2F74%2F0a%2Faa740a4dc0e24a39ba34174090d39103%2Fintermediate_file/full/!200,150/0/default.jpg",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id": "https://iiif-cloud.princeton.edu/iiif/2/aa%2F74%2F0a%2Faa740a4dc0e24a39ba34174090d39103%2Fintermediate_file",
+              "profile": "http://iiif.io/api/image/2/level2.json"
+            }
+          },
+          "width": 5266
+        }
+      ],
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/catalog/0309e345-fa3e-467f-959e-ea6402e68d7b/pdf",
+          "format": "application/pdf",
+          "label": "Download as PDF"
+        }
+      ],
+      "viewingHint": "individuals"
+    }
+  ],
+  "structures": [
+    {
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/0309e345-fa3e-467f-959e-ea6402e68d7b/manifest/range/r14aa682f-7a67-4a7c-b1a7-6fe8413ad71d",
+      "@type": "sc:Range",
+      "canvases": [
+        "https://figgy.princeton.edu/concern/scanned_resources/0309e345-fa3e-467f-959e-ea6402e68d7b/manifest/canvas/16784fc4-0000-44b0-96ab-be6512d1728b"
+      ],
+      "label": "Main Structure",
+      "ranges": [],
+      "viewingHint": "top"
+    }
+  ],
+  "thumbnail": {
+    "@id": "https://iiif-cloud.princeton.edu/iiif/2/aa%2F74%2F0a%2Faa740a4dc0e24a39ba34174090d39103%2Fintermediate_file/full/!200,150/0/default.jpg",
+    "service": {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://iiif-cloud.princeton.edu/iiif/2/aa%2F74%2F0a%2Faa740a4dc0e24a39ba34174090d39103%2Fintermediate_file",
+      "profile": "http://iiif.io/api/image/2/level2.json"
+    }
+  },
+  "viewingHint": "individuals"
+}

@@ -1,0 +1,166 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://figgy.princeton.edu/concern/scanned_resources/944a07af-2a55-4f81-a5db-8834de87942d/manifest",
+  "@type": "sc:Manifest",
+  "description": "Number 107 of 250 copies signed by the illustrator.",
+  "label": "Charlotte's Web [poster].",
+  "license": "http://rightsstatements.org/vocab/CNE/1.0/",
+  "logo": "https://figgy.princeton.edu/pul_logo_icon.png",
+  "metadata": [
+    {
+      "label": "Extent",
+      "value": [
+        "Broadside : col ill. ; 59.5 x 57 cm."
+      ]
+    },
+    {
+      "label": "Identifier",
+      "value": [
+        "ark:/88435/dcr494w031s"
+      ]
+    },
+    {
+      "label": "Title",
+      "value": [
+        {
+          "@value": "Charlotte's Web [poster]."
+        }
+      ]
+    },
+    {
+      "label": "Type",
+      "value": [
+        "Posters"
+      ]
+    },
+    {
+      "label": "Content Type",
+      "value": [
+        "Visual material"
+      ]
+    },
+    {
+      "label": "Contributor",
+      "value": [
+        "Williams, Garth"
+      ]
+    },
+    {
+      "label": "Subject",
+      "value": [
+        "Posters"
+      ]
+    },
+    {
+      "label": "Call Number",
+      "value": [
+        "Print Cases / World Upside Down; Posters; Games; Maps; Charts / Box 19 1913"
+      ]
+    },
+    {
+      "label": "Location",
+      "value": [
+        "Special Collections Print Cases / World Upside Down; Posters; Games; Maps; Charts / Box 19 1913"
+      ]
+    },
+    {
+      "label": "Member Of Collections",
+      "value": [
+        "Cotsen Children's Library",
+        "Legacy Photography Bulk Migration",
+        "Lloyd E. Cotsen"
+      ]
+    }
+  ],
+  "rendering": {
+    "@id": "http://arks.princeton.edu/ark:/88435/dcr494w031s",
+    "format": "text/html"
+  },
+  "seeAlso": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/944a07af-2a55-4f81-a5db-8834de87942d.jsonld",
+      "format": "application/ld+json"
+    },
+    {
+      "@id": "https://catalog.princeton.edu/catalog/9947187953506421.marcxml",
+      "format": "text/xml"
+    }
+  ],
+  "sequences": [
+    {
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/944a07af-2a55-4f81-a5db-8834de87942d/manifest/sequence/normal",
+      "@type": "sc:Sequence",
+      "canvases": [
+        {
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/944a07af-2a55-4f81-a5db-8834de87942d/manifest/canvas/cc0c8b0f-d022-4882-8360-fc8ba2f4d0e6",
+          "@type": "sc:Canvas",
+          "height": 2048,
+          "images": [
+            {
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/944a07af-2a55-4f81-a5db-8834de87942d/manifest/image/cc0c8b0f-d022-4882-8360-fc8ba2f4d0e6",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/944a07af-2a55-4f81-a5db-8834de87942d/manifest/canvas/cc0c8b0f-d022-4882-8360-fc8ba2f4d0e6",
+              "resource": {
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/d2%2F35%2Fb3%2Fd235b36768c84f32a167dbd956d2d326%2Fintermediate_file/full/1000,/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2048,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/d2%2F35%2Fb3%2Fd235b36768c84f32a167dbd956d2d326%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1536
+              }
+            }
+          ],
+          "label": "1",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/cc0c8b0f-d022-4882-8360-fc8ba2f4d0e6/file/7378873d-1ca8-4a96-ba09-c28ca280c21b",
+              "format": "image/jpeg",
+              "label": "Download the original file"
+            }
+          ],
+          "thumbnail": {
+            "@id": "https://iiif-cloud.princeton.edu/iiif/2/d2%2F35%2Fb3%2Fd235b36768c84f32a167dbd956d2d326%2Fintermediate_file/full/!200,150/0/default.jpg",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id": "https://iiif-cloud.princeton.edu/iiif/2/d2%2F35%2Fb3%2Fd235b36768c84f32a167dbd956d2d326%2Fintermediate_file",
+              "profile": "http://iiif.io/api/image/2/level2.json"
+            }
+          },
+          "width": 1536
+        }
+      ],
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/catalog/944a07af-2a55-4f81-a5db-8834de87942d/pdf",
+          "format": "application/pdf",
+          "label": "Download as PDF"
+        }
+      ],
+      "viewingHint": "individuals"
+    }
+  ],
+  "structures": [
+    {
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/944a07af-2a55-4f81-a5db-8834de87942d/manifest/range/r0a939009-cb62-4549-b9f6-0460417cea8b",
+      "@type": "sc:Range",
+      "canvases": [],
+      "label": "Logical",
+      "ranges": [],
+      "viewingHint": "top"
+    }
+  ],
+  "thumbnail": {
+    "@id": "https://iiif-cloud.princeton.edu/iiif/2/d2%2F35%2Fb3%2Fd235b36768c84f32a167dbd956d2d326%2Fintermediate_file/full/!200,150/0/default.jpg",
+    "service": {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://iiif-cloud.princeton.edu/iiif/2/d2%2F35%2Fb3%2Fd235b36768c84f32a167dbd956d2d326%2Fintermediate_file",
+      "profile": "http://iiif.io/api/image/2/level2.json"
+    }
+  },
+  "viewingHint": "individuals"
+}

@@ -1,0 +1,4544 @@
+{
+  "pageSize": 50,
+  "results": [
+    {
+      "alternativeTitles": [],
+      "availabilities": [
+        {
+          "id": "closed-stores",
+          "label": "Closed stores",
+          "type": "Availability"
+        },
+        {
+          "id": "online",
+          "label": "Online",
+          "type": "Availability"
+        }
+      ],
+      "contributors": [
+        {
+          "agent": {
+            "id": "mt3r5nd4",
+            "identifiers": [
+              {
+                "identifierType": {
+                  "id": "lc-names",
+                  "label": "Library of Congress Name authority records",
+                  "type": "IdentifierType"
+                },
+                "type": "Identifier",
+                "value": "n79036887"
+              }
+            ],
+            "label": "Great Britain. Ministry of Health",
+            "type": "Organisation"
+          },
+          "primary": false,
+          "roles": [],
+          "type": "Contributor"
+        }
+      ],
+      "genres": [
+        {
+          "concepts": [
+            {
+              "id": "tbeys2vz",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "pamphlets"
+                }
+              ],
+              "label": "Pamphlets",
+              "type": "Genre"
+            }
+          ],
+          "label": "Pamphlets",
+          "type": "Genre"
+        }
+      ],
+      "id": "ufk45v5m",
+      "identifiers": [
+        {
+          "identifierType": {
+            "id": "sierra-system-number",
+            "label": "Sierra system number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b11077414"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-identifier",
+            "label": "Sierra identifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "1107741"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-system-number",
+            "label": "Sierra system number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b32174093"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-identifier",
+            "label": "Sierra identifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "3217409"
+        },
+        {
+          "identifierType": {
+            "id": "wellcome-digcode",
+            "label": "Wellcome digcode",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "diggovpub"
+        }
+      ],
+      "images": [],
+      "items": [
+        {
+          "id": "qscxmu4k",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "sierra-system-number",
+                "label": "Sierra system number",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "i1124771x"
+            },
+            {
+              "identifierType": {
+                "id": "sierra-identifier",
+                "label": "Sierra identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "1124771"
+            }
+          ],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "online-request",
+                    "label": "Online request",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "label": "Closed stores",
+              "locationType": {
+                "id": "closed-stores",
+                "label": "Closed stores",
+                "type": "LocationType"
+              },
+              "shelfmark": "WC320 1947G78i",
+              "type": "PhysicalLocation"
+            },
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "view-online",
+                    "label": "View online",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "license": {
+                "id": "pdm",
+                "label": "Public Domain Mark",
+                "type": "License",
+                "url": "https://creativecommons.org/share-your-work/public-domain/pdm/"
+              },
+              "locationType": {
+                "id": "iiif-presentation",
+                "label": "IIIF Presentation API",
+                "type": "LocationType"
+              },
+              "type": "DigitalLocation",
+              "url": "https://iiif.wellcomecollection.org/presentation/v2/b32174093"
+            }
+          ],
+          "type": "Item"
+        }
+      ],
+      "physicalDescription": "8 pages : illustrations (some colour) ; 29 cm + various pieces in pocket inside back cover.",
+      "production": [
+        {
+          "agents": [
+            {
+              "label": "Ministry of Health",
+              "type": "Agent"
+            }
+          ],
+          "dates": [
+            {
+              "label": "1947",
+              "type": "Period"
+            }
+          ],
+          "function": {
+            "label": "Publication",
+            "type": "Concept"
+          },
+          "label": "London : Ministry of Health, 1947.",
+          "places": [
+            {
+              "label": "London",
+              "type": "Place"
+            }
+          ],
+          "type": "ProductionEvent"
+        }
+      ],
+      "subjects": [
+        {
+          "concepts": [
+            {
+              "id": "qz9g56p2",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "diphtheria"
+                }
+              ],
+              "label": "Diphtheria",
+              "type": "Concept"
+            },
+            {
+              "id": "en7jgwrk",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "prevention & control"
+                }
+              ],
+              "label": "prevention & control",
+              "type": "Concept"
+            }
+          ],
+          "id": "dckwg32w",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "nlm-mesh",
+                "label": "Medical Subject Headings (MeSH) identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "D004165Q000517"
+            }
+          ],
+          "label": "Diphtheria",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "kr6and8v",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "nlm-mesh",
+                    "label": "Medical Subject Headings (MeSH) identifier",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "D007114"
+                }
+              ],
+              "label": "Immunization",
+              "type": "Concept"
+            }
+          ],
+          "id": "kr6and8v",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "nlm-mesh",
+                "label": "Medical Subject Headings (MeSH) identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "D007114"
+            }
+          ],
+          "label": "Immunization",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "w6r87ykw",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "nlm-mesh",
+                    "label": "Medical Subject Headings (MeSH) identifier",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "D006266"
+                }
+              ],
+              "label": "Health Education",
+              "type": "Concept"
+            }
+          ],
+          "id": "w6r87ykw",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "nlm-mesh",
+                "label": "Medical Subject Headings (MeSH) identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "D006266"
+            }
+          ],
+          "label": "Health Education",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "a4wyrvq2",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "nlm-mesh",
+                    "label": "Medical Subject Headings (MeSH) identifier",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "D000329"
+                }
+              ],
+              "label": "Advertising",
+              "type": "Concept"
+            }
+          ],
+          "id": "a4wyrvq2",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "nlm-mesh",
+                "label": "Medical Subject Headings (MeSH) identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "D000329"
+            }
+          ],
+          "label": "Advertising",
+          "type": "Subject"
+        }
+      ],
+      "thumbnail": {
+        "accessConditions": [],
+        "license": {
+          "id": "pdm",
+          "label": "Public Domain Mark",
+          "type": "License",
+          "url": "https://creativecommons.org/share-your-work/public-domain/pdm/"
+        },
+        "locationType": {
+          "id": "thumbnail-image",
+          "label": "Thumbnail image",
+          "type": "LocationType"
+        },
+        "type": "DigitalLocation",
+        "url": "https://iiif.wellcomecollection.org/thumbs/b32174093_0005.jp2/full/!200,200/0/default.jpg"
+      },
+      "title": "Immunisation against diphtheria : national and local publicity for 1947 / Ministry of Health.",
+      "type": "Work",
+      "workType": {
+        "id": "a",
+        "label": "Books",
+        "type": "Format"
+      }
+    },
+    {
+      "alternativeTitles": [],
+      "availabilities": [
+        {
+          "id": "closed-stores",
+          "label": "Closed stores",
+          "type": "Availability"
+        },
+        {
+          "id": "online",
+          "label": "Online",
+          "type": "Availability"
+        }
+      ],
+      "contributors": [],
+      "genres": [],
+      "id": "rejn8b4z",
+      "identifiers": [
+        {
+          "identifierType": {
+            "id": "calm-record-id",
+            "label": "Calm RecordIdentifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "9ba8eef1-b747-4d4a-bc22-1bc965f21c29"
+        },
+        {
+          "identifierType": {
+            "id": "calm-ref-no",
+            "label": "Calm RefNo",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "SAMWF/G/8/9"
+        },
+        {
+          "identifierType": {
+            "id": "calm-altref-no",
+            "label": "Calm AltRefNo",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "SA/MWF/G.9"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-system-number",
+            "label": "Sierra system number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b18537212"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-identifier",
+            "label": "Sierra identifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "1853721"
+        },
+        {
+          "identifierType": {
+            "id": "mets",
+            "label": "METS",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b18537212"
+        }
+      ],
+      "images": [],
+      "items": [
+        {
+          "id": "zqtphwgu",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "sierra-system-number",
+                "label": "Sierra system number",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "i20035457"
+            },
+            {
+              "identifierType": {
+                "id": "sierra-identifier",
+                "label": "Sierra identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "2003545"
+            }
+          ],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "online-request",
+                    "label": "Online request",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "label": "Closed stores",
+              "locationType": {
+                "id": "closed-stores",
+                "label": "Closed stores",
+                "type": "LocationType"
+              },
+              "type": "PhysicalLocation"
+            }
+          ],
+          "type": "Item"
+        },
+        {
+          "identifiers": [],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "view-online",
+                    "label": "View online",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open-with-advisory",
+                    "label": "Open with advisory",
+                    "type": "AccessStatus"
+                  },
+                  "terms": "Works in this archive created by or for the Medical Women's Federation are available under a CC-BY licence. Please be aware that works in this archive created by other organisations and individuals are not covered under this licence, and you should obtain any necessary permissions before copying or adapting any such works.",
+                  "type": "AccessCondition"
+                }
+              ],
+              "license": {
+                "id": "inc",
+                "label": "In copyright",
+                "type": "License",
+                "url": "http://rightsstatements.org/vocab/InC/1.0/"
+              },
+              "locationType": {
+                "id": "iiif-presentation",
+                "label": "IIIF Presentation API",
+                "type": "LocationType"
+              },
+              "type": "DigitalLocation",
+              "url": "https://iiif.wellcomecollection.org/presentation/v2/b18537212"
+            }
+          ],
+          "type": "Item"
+        }
+      ],
+      "physicalDescription": "1 file",
+      "production": [
+        {
+          "agents": [],
+          "dates": [
+            {
+              "label": "1949-1970",
+              "type": "Period"
+            }
+          ],
+          "label": "1949-1970",
+          "places": [],
+          "type": "ProductionEvent"
+        }
+      ],
+      "referenceNumber": "SA/MWF/G.9",
+      "subjects": [],
+      "title": "Public Health (posts, remuneration, etc.)",
+      "type": "Work",
+      "workType": {
+        "id": "h",
+        "label": "Archives and manuscripts",
+        "type": "Format"
+      }
+    },
+    {
+      "alternativeTitles": [],
+      "availabilities": [
+        {
+          "id": "closed-stores",
+          "label": "Closed stores",
+          "type": "Availability"
+        },
+        {
+          "id": "online",
+          "label": "Online",
+          "type": "Availability"
+        }
+      ],
+      "contributors": [],
+      "genres": [],
+      "id": "qpx2rj2e",
+      "identifiers": [
+        {
+          "identifierType": {
+            "id": "calm-record-id",
+            "label": "Calm RecordIdentifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "8a130559-2d59-4c17-a0f3-f8069f32e027"
+        },
+        {
+          "identifierType": {
+            "id": "calm-ref-no",
+            "label": "Calm RefNo",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "SAMWF/G/8/20"
+        },
+        {
+          "identifierType": {
+            "id": "calm-altref-no",
+            "label": "Calm AltRefNo",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "SA/MWF/G.20"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-system-number",
+            "label": "Sierra system number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b18857577"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-identifier",
+            "label": "Sierra identifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "1885757"
+        },
+        {
+          "identifierType": {
+            "id": "mets",
+            "label": "METS",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b18857577"
+        }
+      ],
+      "images": [],
+      "items": [
+        {
+          "id": "hkfqm48u",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "sierra-system-number",
+                "label": "Sierra system number",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "i20141427"
+            },
+            {
+              "identifierType": {
+                "id": "sierra-identifier",
+                "label": "Sierra identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "2014142"
+            }
+          ],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "online-request",
+                    "label": "Online request",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "label": "Closed stores",
+              "locationType": {
+                "id": "closed-stores",
+                "label": "Closed stores",
+                "type": "LocationType"
+              },
+              "type": "PhysicalLocation"
+            }
+          ],
+          "type": "Item"
+        },
+        {
+          "identifiers": [],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "view-online",
+                    "label": "View online",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open-with-advisory",
+                    "label": "Open with advisory",
+                    "type": "AccessStatus"
+                  },
+                  "terms": "Works in this archive created by or for the Medical Women's Federation are available under a CC-BY licence. Please be aware that works in this archive created by other organisations and individuals are not covered under this licence, and you should obtain any necessary permissions before copying or adapting any such works.",
+                  "type": "AccessCondition"
+                }
+              ],
+              "license": {
+                "id": "inc",
+                "label": "In copyright",
+                "type": "License",
+                "url": "http://rightsstatements.org/vocab/InC/1.0/"
+              },
+              "locationType": {
+                "id": "iiif-presentation",
+                "label": "IIIF Presentation API",
+                "type": "LocationType"
+              },
+              "type": "DigitalLocation",
+              "url": "https://iiif.wellcomecollection.org/presentation/v2/b18857577"
+            }
+          ],
+          "type": "Item"
+        }
+      ],
+      "physicalDescription": "1 file",
+      "production": [
+        {
+          "agents": [],
+          "dates": [
+            {
+              "label": "1960-1963",
+              "type": "Period"
+            }
+          ],
+          "label": "1960-1963",
+          "places": [],
+          "type": "ProductionEvent"
+        }
+      ],
+      "referenceNumber": "SA/MWF/G.20",
+      "subjects": [],
+      "title": "Local Government Reorganisation: Standing Committee on Public Health",
+      "type": "Work",
+      "workType": {
+        "id": "h",
+        "label": "Archives and manuscripts",
+        "type": "Format"
+      }
+    },
+    {
+      "alternativeTitles": [],
+      "availabilities": [
+        {
+          "id": "closed-stores",
+          "label": "Closed stores",
+          "type": "Availability"
+        },
+        {
+          "id": "online",
+          "label": "Online",
+          "type": "Availability"
+        }
+      ],
+      "contributors": [
+        {
+          "agent": {
+            "id": "mt3r5nd4",
+            "identifiers": [
+              {
+                "identifierType": {
+                  "id": "lc-names",
+                  "label": "Library of Congress Name authority records",
+                  "type": "IdentifierType"
+                },
+                "type": "Identifier",
+                "value": "n79036887"
+              }
+            ],
+            "label": "Great Britain. Ministry of Health",
+            "type": "Organisation"
+          },
+          "primary": false,
+          "roles": [],
+          "type": "Contributor"
+        }
+      ],
+      "description": "<p>Poster which was part of the 1937 public health campaign: \"Towards a better Britain, use your health services\" (logo in upper right corner). It shows a blond child in a  yellow dress about to take a step with her right foot.</p>",
+      "genres": [
+        {
+          "concepts": [
+            {
+              "id": "kpmugnt4",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "ephemera"
+                }
+              ],
+              "label": "Ephemera",
+              "type": "Genre"
+            }
+          ],
+          "label": "Ephemera",
+          "type": "Genre"
+        },
+        {
+          "concepts": [
+            {
+              "id": "tuvpy6ew",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "posters"
+                }
+              ],
+              "label": "Posters",
+              "type": "Genre"
+            }
+          ],
+          "label": "Posters",
+          "type": "Genre"
+        },
+        {
+          "concepts": [
+            {
+              "id": "ud9t48hh",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "broadsides"
+                }
+              ],
+              "label": "Broadside",
+              "type": "Genre"
+            }
+          ],
+          "label": "Broadsides",
+          "type": "Genre"
+        }
+      ],
+      "id": "yd9zxk5y",
+      "identifiers": [
+        {
+          "identifierType": {
+            "id": "sierra-system-number",
+            "label": "Sierra system number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b21244741"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-identifier",
+            "label": "Sierra identifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "2124474"
+        },
+        {
+          "identifierType": {
+            "id": "wellcome-digcode",
+            "label": "Wellcome digcode",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "digephemera"
+        }
+      ],
+      "images": [],
+      "items": [
+        {
+          "id": "se37hn9t",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "sierra-system-number",
+                "label": "Sierra system number",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "i15825875"
+            },
+            {
+              "identifierType": {
+                "id": "sierra-identifier",
+                "label": "Sierra identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "1582587"
+            }
+          ],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "online-request",
+                    "label": "Online request",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "label": "Closed stores",
+              "locationType": {
+                "id": "closed-stores",
+                "label": "Closed stores",
+                "type": "LocationType"
+              },
+              "shelfmark": "EPH++1",
+              "type": "PhysicalLocation"
+            }
+          ],
+          "type": "Item"
+        },
+        {
+          "id": "uf9qkv34",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "sierra-system-number",
+                "label": "Sierra system number",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "i18601406"
+            },
+            {
+              "identifierType": {
+                "id": "sierra-identifier",
+                "label": "Sierra identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "1860140"
+            }
+          ],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "not-requestable",
+                    "label": "Not requestable",
+                    "type": "AccessMethod"
+                  },
+                  "note": "Please request top item.",
+                  "type": "AccessCondition"
+                }
+              ],
+              "label": "Closed stores",
+              "locationType": {
+                "id": "closed-stores",
+                "label": "Closed stores",
+                "type": "LocationType"
+              },
+              "shelfmark": "EPH++1:6",
+              "type": "PhysicalLocation"
+            }
+          ],
+          "type": "Item"
+        },
+        {
+          "identifiers": [],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "view-online",
+                    "label": "View online",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "license": {
+                "id": "pdm",
+                "label": "Public Domain Mark",
+                "type": "License",
+                "url": "https://creativecommons.org/share-your-work/public-domain/pdm/"
+              },
+              "locationType": {
+                "id": "iiif-presentation",
+                "label": "IIIF Presentation API",
+                "type": "LocationType"
+              },
+              "type": "DigitalLocation",
+              "url": "https://iiif.wellcomecollection.org/presentation/v2/b21244741"
+            }
+          ],
+          "type": "Item"
+        }
+      ],
+      "physicalDescription": "1 broadside : colour illustrations ; 77 cm",
+      "production": [
+        {
+          "agents": [
+            {
+              "label": "Ministry of Health",
+              "type": "Agent"
+            }
+          ],
+          "dates": [
+            {
+              "label": "[1937?]",
+              "type": "Period"
+            }
+          ],
+          "function": {
+            "label": "Publication",
+            "type": "Concept"
+          },
+          "label": "[London.] : Ministry of Health, [1937?]",
+          "places": [
+            {
+              "label": "[London.]",
+              "type": "Place"
+            }
+          ],
+          "type": "ProductionEvent"
+        }
+      ],
+      "subjects": [
+        {
+          "concepts": [
+            {
+              "id": "efs4kv5d",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "nlm-mesh",
+                    "label": "Medical Subject Headings (MeSH) identifier",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "D002662"
+                }
+              ],
+              "label": "Child Health Services",
+              "type": "Concept"
+            }
+          ],
+          "id": "efs4kv5d",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "nlm-mesh",
+                "label": "Medical Subject Headings (MeSH) identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "D002662"
+            }
+          ],
+          "label": "Child Health Services",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "dhaqm7pa",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "nlm-mesh",
+                    "label": "Medical Subject Headings (MeSH) identifier",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "D008430"
+                }
+              ],
+              "label": "Maternal-Child Health Centers",
+              "type": "Concept"
+            }
+          ],
+          "id": "dhaqm7pa",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "nlm-mesh",
+                "label": "Medical Subject Headings (MeSH) identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "D008430"
+            }
+          ],
+          "label": "Maternal-Child Health Centers",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "uj4hz4ct",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "nlm-mesh",
+                    "label": "Medical Subject Headings (MeSH) identifier",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "D011634"
+                }
+              ],
+              "label": "Public Health",
+              "type": "Concept"
+            }
+          ],
+          "id": "uj4hz4ct",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "nlm-mesh",
+                "label": "Medical Subject Headings (MeSH) identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "D011634"
+            }
+          ],
+          "label": "Public Health",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "zk5reb4a",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "nlm-mesh",
+                    "label": "Medical Subject Headings (MeSH) identifier",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "D007229"
+                }
+              ],
+              "label": "Infant Welfare",
+              "type": "Concept"
+            }
+          ],
+          "id": "zk5reb4a",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "nlm-mesh",
+                "label": "Medical Subject Headings (MeSH) identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "D007229"
+            }
+          ],
+          "label": "Infant Welfare",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "sz3skgtm",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "nlm-mesh",
+                    "label": "Medical Subject Headings (MeSH) identifier",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "D008429"
+                }
+              ],
+              "label": "Maternal Welfare",
+              "type": "Concept"
+            }
+          ],
+          "id": "sz3skgtm",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "nlm-mesh",
+                "label": "Medical Subject Headings (MeSH) identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "D008429"
+            }
+          ],
+          "label": "Maternal Welfare",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "w6r87ykw",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "nlm-mesh",
+                    "label": "Medical Subject Headings (MeSH) identifier",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "D006266"
+                }
+              ],
+              "label": "Health Education",
+              "type": "Concept"
+            }
+          ],
+          "id": "w6r87ykw",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "nlm-mesh",
+                "label": "Medical Subject Headings (MeSH) identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "D006266"
+            }
+          ],
+          "label": "Health Education",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "pxyxndpm",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "lc-names",
+                    "label": "Library of Congress Name authority records",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "n83022692"
+                }
+              ],
+              "label": "Norfolk",
+              "type": "Place"
+            }
+          ],
+          "id": "pxyxndpm",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "lc-names",
+                "label": "Library of Congress Name authority records",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "n83022692"
+            }
+          ],
+          "label": "Norfolk",
+          "type": "Subject"
+        }
+      ],
+      "thumbnail": {
+        "accessConditions": [],
+        "license": {
+          "id": "pdm",
+          "label": "Public Domain Mark",
+          "type": "License",
+          "url": "https://creativecommons.org/share-your-work/public-domain/pdm/"
+        },
+        "locationType": {
+          "id": "thumbnail-image",
+          "label": "Thumbnail image",
+          "type": "LocationType"
+        },
+        "type": "DigitalLocation",
+        "url": "https://iiif.wellcomecollection.org/thumbs/B21244741.JP2/full/!200,200/0/default.jpg"
+      },
+      "title": "Let the toddler's first steps -lead to the welfare centre : get expert attention and advice before and after baby comes, advice on feeding -milk or special food, trained nurses who like children, do what the doctor tells you : Norfolk / Ministry of  Health.",
+      "type": "Work",
+      "workType": {
+        "id": "l",
+        "label": "Ephemera",
+        "type": "Format"
+      }
+    },
+    {
+      "alternativeTitles": [],
+      "availabilities": [
+        {
+          "id": "closed-stores",
+          "label": "Closed stores",
+          "type": "Availability"
+        },
+        {
+          "id": "online",
+          "label": "Online",
+          "type": "Availability"
+        }
+      ],
+      "contributors": [
+        {
+          "agent": {
+            "id": "kvxfe5xj",
+            "identifiers": [
+              {
+                "identifierType": {
+                  "id": "label-derived",
+                  "label": "Identifier derived from the label of the referent",
+                  "type": "IdentifierType"
+                },
+                "type": "Identifier",
+                "value": "b.s.a. cycles limited"
+              }
+            ],
+            "label": "B.S.A. Cycles Limited.",
+            "type": "Organisation"
+          },
+          "primary": true,
+          "roles": [],
+          "type": "Contributor"
+        },
+        {
+          "agent": {
+            "id": "bzb5vy3e",
+            "identifiers": [
+              {
+                "identifierType": {
+                  "id": "lc-names",
+                  "label": "Library of Congress Name authority records",
+                  "type": "IdentifierType"
+                },
+                "type": "Identifier",
+                "value": "n85375508"
+              }
+            ],
+            "label": "Central Council for Health Education (Great Britain)",
+            "type": "Organisation"
+          },
+          "primary": false,
+          "roles": [],
+          "type": "Contributor"
+        }
+      ],
+      "genres": [
+        {
+          "concepts": [
+            {
+              "id": "e7axm8rd",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "manufacturers' catalogues"
+                }
+              ],
+              "label": "Manufacturers' catalogues",
+              "type": "Genre"
+            }
+          ],
+          "label": "Manufacturers' catalogues",
+          "type": "Genre"
+        },
+        {
+          "concepts": [
+            {
+              "id": "tbeys2vz",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "pamphlets"
+                }
+              ],
+              "label": "Pamphlets",
+              "type": "Genre"
+            }
+          ],
+          "label": "Pamphlets",
+          "type": "Genre"
+        }
+      ],
+      "id": "bugtddqd",
+      "identifiers": [
+        {
+          "identifierType": {
+            "id": "sierra-system-number",
+            "label": "Sierra system number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b13145174"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-identifier",
+            "label": "Sierra identifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "1314517"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-system-number",
+            "label": "Sierra system number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b33447998"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-identifier",
+            "label": "Sierra identifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "3344799"
+        }
+      ],
+      "images": [],
+      "items": [
+        {
+          "id": "r4f73amc",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "sierra-system-number",
+                "label": "Sierra system number",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "i13404672"
+            },
+            {
+              "identifierType": {
+                "id": "sierra-identifier",
+                "label": "Sierra identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "1340467"
+            }
+          ],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "online-request",
+                    "label": "Online request",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "label": "Closed stores",
+              "locationType": {
+                "id": "closed-stores",
+                "label": "Closed stores",
+                "type": "LocationType"
+              },
+              "shelfmark": "QT255 1938B91g",
+              "type": "PhysicalLocation"
+            },
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "view-online",
+                    "label": "View online",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "license": {
+                "id": "pdm",
+                "label": "Public Domain Mark",
+                "type": "License",
+                "url": "https://creativecommons.org/share-your-work/public-domain/pdm/"
+              },
+              "locationType": {
+                "id": "iiif-presentation",
+                "label": "IIIF Presentation API",
+                "type": "LocationType"
+              },
+              "type": "DigitalLocation",
+              "url": "https://iiif.wellcomecollection.org/presentation/v2/b33447998"
+            }
+          ],
+          "type": "Item"
+        }
+      ],
+      "physicalDescription": "32 pages : illustrations (Some colour) ; 21 x 28 cm",
+      "production": [
+        {
+          "agents": [
+            {
+              "label": "B.S.A.",
+              "type": "Agent"
+            }
+          ],
+          "dates": [
+            {
+              "label": "[1938]",
+              "type": "Period"
+            }
+          ],
+          "function": {
+            "label": "Publication",
+            "type": "Concept"
+          },
+          "label": "[Birmingham] : B.S.A., [1938]",
+          "places": [
+            {
+              "label": "[Birmingham]",
+              "type": "Place"
+            }
+          ],
+          "type": "ProductionEvent"
+        }
+      ],
+      "subjects": [
+        {
+          "concepts": [
+            {
+              "id": "gqterfpq",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "nlm-mesh",
+                    "label": "Medical Subject Headings (MeSH) identifier",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "D001642"
+                }
+              ],
+              "label": "Bicycling",
+              "type": "Concept"
+            }
+          ],
+          "id": "gqterfpq",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "nlm-mesh",
+                "label": "Medical Subject Headings (MeSH) identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "D001642"
+            }
+          ],
+          "label": "Bicycling",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "ktc9v5da",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "nlm-mesh",
+                    "label": "Medical Subject Headings (MeSH) identifier",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "D010809"
+                }
+              ],
+              "label": "Physical Fitness",
+              "type": "Concept"
+            }
+          ],
+          "id": "ktc9v5da",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "nlm-mesh",
+                "label": "Medical Subject Headings (MeSH) identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "D010809"
+            }
+          ],
+          "label": "Physical Fitness",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "vzs4b8wm",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "nlm-mesh",
+                    "label": "Medical Subject Headings (MeSH) identifier",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "D006293"
+                }
+              ],
+              "label": "Health Promotion",
+              "type": "Concept"
+            }
+          ],
+          "id": "vzs4b8wm",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "nlm-mesh",
+                "label": "Medical Subject Headings (MeSH) identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "D006293"
+            }
+          ],
+          "label": "Health Promotion",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "gdatvehh",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "nlm-mesh",
+                    "label": "Medical Subject Headings (MeSH) identifier",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "D011998"
+                }
+              ],
+              "label": "Recreation",
+              "type": "Concept"
+            }
+          ],
+          "id": "gdatvehh",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "nlm-mesh",
+                "label": "Medical Subject Headings (MeSH) identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "D011998"
+            }
+          ],
+          "label": "Recreation",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "a4wyrvq2",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "nlm-mesh",
+                    "label": "Medical Subject Headings (MeSH) identifier",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "D000329"
+                }
+              ],
+              "label": "Advertising",
+              "type": "Concept"
+            }
+          ],
+          "id": "a4wyrvq2",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "nlm-mesh",
+                "label": "Medical Subject Headings (MeSH) identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "D000329"
+            }
+          ],
+          "label": "Advertising",
+          "type": "Subject"
+        }
+      ],
+      "thumbnail": {
+        "accessConditions": [],
+        "license": {
+          "id": "pdm",
+          "label": "Public Domain Mark",
+          "type": "License",
+          "url": "https://creativecommons.org/share-your-work/public-domain/pdm/"
+        },
+        "locationType": {
+          "id": "thumbnail-image",
+          "label": "Thumbnail image",
+          "type": "LocationType"
+        },
+        "type": "DigitalLocation",
+        "url": "https://iiif.wellcomecollection.org/thumbs/b33447998_0018.jp2/full/!200,200/0/default.jpg"
+      },
+      "title": "Get fit, keep fit / B.S.A.",
+      "type": "Work",
+      "workType": {
+        "id": "a",
+        "label": "Books",
+        "type": "Format"
+      }
+    },
+    {
+      "alternativeTitles": [
+        "Succeed in precautionary work to prevent schistosomiasis"
+      ],
+      "availabilities": [
+        {
+          "id": "closed-stores",
+          "label": "Closed stores",
+          "type": "Availability"
+        },
+        {
+          "id": "online",
+          "label": "Online",
+          "type": "Availability"
+        }
+      ],
+      "contributors": [],
+      "description": "<p>A set of four Chinese posters from a health education campaign undertaken in the early 1960s which sought to reduce the incidence of schistosomiasis among the rural populace. Each poster comprises three colour illustrations in roundels, together with descriptive text in Chinese</p>",
+      "edition": "33,000 [print run].",
+      "genres": [
+        {
+          "concepts": [
+            {
+              "id": "fmydsuw2",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "lithographs"
+                }
+              ],
+              "label": "Lithography",
+              "type": "Genre"
+            }
+          ],
+          "label": "Lithographs",
+          "type": "Genre"
+        },
+        {
+          "concepts": [
+            {
+              "id": "tuvpy6ew",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "posters"
+                }
+              ],
+              "label": "Posters",
+              "type": "Genre"
+            }
+          ],
+          "label": "Posters",
+          "type": "Genre"
+        }
+      ],
+      "id": "kymcnm6f",
+      "identifiers": [
+        {
+          "identifierType": {
+            "id": "sierra-system-number",
+            "label": "Sierra system number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b16749315"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-identifier",
+            "label": "Sierra identifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "1674931"
+        },
+        {
+          "identifierType": {
+            "id": "wellcome-digcode",
+            "label": "Wellcome digcode",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "digicon"
+        },
+        {
+          "identifierType": {
+            "id": "iconographic-number",
+            "label": "Iconographic number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "674931i"
+        }
+      ],
+      "images": [],
+      "items": [
+        {
+          "id": "h35eg8xy",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "sierra-system-number",
+                "label": "Sierra system number",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "i16106945"
+            },
+            {
+              "identifierType": {
+                "id": "sierra-identifier",
+                "label": "Sierra identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "1610694"
+            }
+          ],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "online-request",
+                    "label": "Online request",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "label": "Closed stores",
+              "locationType": {
+                "id": "closed-stores",
+                "label": "Closed stores",
+                "type": "LocationType"
+              },
+              "shelfmark": "674931i.1",
+              "type": "PhysicalLocation"
+            }
+          ],
+          "title": "No. 1",
+          "type": "Item"
+        },
+        {
+          "id": "abac8zcr",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "sierra-system-number",
+                "label": "Sierra system number",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "i16106957"
+            },
+            {
+              "identifierType": {
+                "id": "sierra-identifier",
+                "label": "Sierra identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "1610695"
+            }
+          ],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "online-request",
+                    "label": "Online request",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "label": "Closed stores",
+              "locationType": {
+                "id": "closed-stores",
+                "label": "Closed stores",
+                "type": "LocationType"
+              },
+              "shelfmark": "674931i.2",
+              "type": "PhysicalLocation"
+            }
+          ],
+          "title": "No. 2",
+          "type": "Item"
+        },
+        {
+          "id": "rwtrgfr3",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "sierra-system-number",
+                "label": "Sierra system number",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "i16106969"
+            },
+            {
+              "identifierType": {
+                "id": "sierra-identifier",
+                "label": "Sierra identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "1610696"
+            }
+          ],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "online-request",
+                    "label": "Online request",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "label": "Closed stores",
+              "locationType": {
+                "id": "closed-stores",
+                "label": "Closed stores",
+                "type": "LocationType"
+              },
+              "shelfmark": "674931i.3",
+              "type": "PhysicalLocation"
+            }
+          ],
+          "title": "No. 3",
+          "type": "Item"
+        },
+        {
+          "id": "ajm2ndjv",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "sierra-system-number",
+                "label": "Sierra system number",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "i16106970"
+            },
+            {
+              "identifierType": {
+                "id": "sierra-identifier",
+                "label": "Sierra identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "1610697"
+            }
+          ],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "online-request",
+                    "label": "Online request",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "label": "Closed stores",
+              "locationType": {
+                "id": "closed-stores",
+                "label": "Closed stores",
+                "type": "LocationType"
+              },
+              "shelfmark": "674931i.4",
+              "type": "PhysicalLocation"
+            }
+          ],
+          "title": "No. 4",
+          "type": "Item"
+        },
+        {
+          "identifiers": [],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "view-online",
+                    "label": "View online",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "license": {
+                "id": "inc",
+                "label": "In copyright",
+                "type": "License",
+                "url": "http://rightsstatements.org/vocab/InC/1.0/"
+              },
+              "locationType": {
+                "id": "iiif-presentation",
+                "label": "IIIF Presentation API",
+                "type": "LocationType"
+              },
+              "type": "DigitalLocation",
+              "url": "https://iiif.wellcomecollection.org/presentation/v2/b16749315"
+            }
+          ],
+          "type": "Item"
+        }
+      ],
+      "lettering": "Zuohao fanghu gongzuo yufang xuexichong bing. ...\n\nSheet headings in Chinese with transliterations in western script. Imprint details on sheet no. 4",
+      "physicalDescription": "4 prints : printed in colours ; sheets 77.2 x 27 cm",
+      "production": [
+        {
+          "agents": [],
+          "dates": [
+            {
+              "label": "1963-8",
+              "type": "Period"
+            }
+          ],
+          "label": "Tianjin : 1963-8.",
+          "places": [
+            {
+              "label": "Tianjin",
+              "type": "Place"
+            }
+          ],
+          "type": "ProductionEvent"
+        }
+      ],
+      "referenceNumber": "674931i",
+      "subjects": [
+        {
+          "concepts": [
+            {
+              "id": "mpdmzrue",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "lc-subjects",
+                    "label": "Library of Congress Subject Headings (LCSH)",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "sh85118147"
+                }
+              ],
+              "label": "Schistosomiasis",
+              "type": "Concept"
+            }
+          ],
+          "id": "mpdmzrue",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "lc-subjects",
+                "label": "Library of Congress Subject Headings (LCSH)",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "sh85118147"
+            }
+          ],
+          "label": "Schistosomiasis",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "caew98cx",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "lc-names",
+                    "label": "Library of Congress Name authority records",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "n79091151"
+                }
+              ],
+              "label": "China",
+              "type": "Place"
+            }
+          ],
+          "id": "caew98cx",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "lc-names",
+                "label": "Library of Congress Name authority records",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "n79091151"
+            }
+          ],
+          "label": "China",
+          "type": "Subject"
+        }
+      ],
+      "thumbnail": {
+        "accessConditions": [],
+        "license": {
+          "id": "inc",
+          "label": "In copyright",
+          "type": "License",
+          "url": "http://rightsstatements.org/vocab/InC/1.0/"
+        },
+        "locationType": {
+          "id": "thumbnail-image",
+          "label": "Thumbnail image",
+          "type": "LocationType"
+        },
+        "type": "DigitalLocation",
+        "url": "https://iiif.wellcomecollection.org/thumbs/B16749315_0001.JP2/full/!200,200/0/default.jpg"
+      },
+      "title": "Schistosomiasis: how it is transmitted and prevented. Colour lithographs, 1963.",
+      "type": "Work",
+      "workType": {
+        "id": "k",
+        "label": "Pictures",
+        "type": "Format"
+      }
+    },
+    {
+      "alternativeTitles": [],
+      "availabilities": [
+        {
+          "id": "closed-stores",
+          "label": "Closed stores",
+          "type": "Availability"
+        },
+        {
+          "id": "online",
+          "label": "Online",
+          "type": "Availability"
+        }
+      ],
+      "contributors": [
+        {
+          "agent": {
+            "id": "ughw25rf",
+            "identifiers": [
+              {
+                "identifierType": {
+                  "id": "label-derived",
+                  "label": "Identifier derived from the label of the referent",
+                  "type": "IdentifierType"
+                },
+                "type": "Identifier",
+                "value": "hulls"
+              }
+            ],
+            "label": "Hulls.",
+            "type": "Person"
+          },
+          "primary": true,
+          "roles": [],
+          "type": "Contributor"
+        }
+      ],
+      "genres": [
+        {
+          "concepts": [
+            {
+              "id": "tuvpy6ew",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "posters"
+                }
+              ],
+              "label": "Posters",
+              "type": "Genre"
+            }
+          ],
+          "label": "Posters",
+          "type": "Genre"
+        },
+        {
+          "concepts": [
+            {
+              "id": "fmydsuw2",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "lithographs"
+                }
+              ],
+              "label": "Lithography",
+              "type": "Genre"
+            }
+          ],
+          "label": "Lithographs",
+          "type": "Genre"
+        }
+      ],
+      "id": "kx4ecyev",
+      "identifiers": [
+        {
+          "identifierType": {
+            "id": "sierra-system-number",
+            "label": "Sierra system number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b11963621"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-identifier",
+            "label": "Sierra identifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "1196362"
+        },
+        {
+          "identifierType": {
+            "id": "wellcome-digcode",
+            "label": "Wellcome digcode",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "digicon"
+        },
+        {
+          "identifierType": {
+            "id": "iconographic-number",
+            "label": "Iconographic number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "38536i"
+        },
+        {
+          "identifierType": {
+            "id": "miro-image-number",
+            "label": "Miro image number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "L0026922"
+        }
+      ],
+      "images": [
+        {
+          "id": "kn3kemaa",
+          "type": "Image"
+        }
+      ],
+      "items": [
+        {
+          "id": "bmtttzy6",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "sierra-system-number",
+                "label": "Sierra system number",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "i12181432"
+            },
+            {
+              "identifierType": {
+                "id": "sierra-identifier",
+                "label": "Sierra identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "1218143"
+            }
+          ],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "online-request",
+                    "label": "Online request",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "label": "Closed stores",
+              "locationType": {
+                "id": "closed-stores",
+                "label": "Closed stores",
+                "type": "LocationType"
+              },
+              "type": "PhysicalLocation"
+            },
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "view-online",
+                    "label": "View online",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "license": {
+                "id": "inc",
+                "label": "In copyright",
+                "type": "License",
+                "url": "http://rightsstatements.org/vocab/InC/1.0/"
+              },
+              "locationType": {
+                "id": "iiif-presentation",
+                "label": "IIIF Presentation API",
+                "type": "LocationType"
+              },
+              "type": "DigitalLocation",
+              "url": "https://iiif.wellcomecollection.org/presentation/v2/b11963621"
+            }
+          ],
+          "type": "Item"
+        }
+      ],
+      "lettering": "Fresh air and exercise ; store up health for the winter ; Hulls\n\nBears reference no.: D.C 42",
+      "physicalDescription": "1 print : lithograph, printed in three shades of brown, green and yellow ; sheet 76 x 50.9 cm",
+      "production": [
+        {
+          "agents": [
+            {
+              "label": "Issued by the Central Council for Health Education",
+              "type": "Agent"
+            }
+          ],
+          "dates": [
+            {
+              "label": "[between 1940 and 1949?]",
+              "type": "Period"
+            }
+          ],
+          "label": "London, W.C.1. (Tavistock House, Tavistock Square) : Issued by the Central Council for Health Education, [between 1940 and 1949?]",
+          "places": [
+            {
+              "label": "London, W.C.1. (Tavistock House, Tavistock Square)",
+              "type": "Place"
+            }
+          ],
+          "type": "ProductionEvent"
+        }
+      ],
+      "referenceNumber": "38536i",
+      "subjects": [
+        {
+          "concepts": [
+            {
+              "id": "pgsh82ka",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "lc-subjects",
+                    "label": "Library of Congress Subject Headings (LCSH)",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "sh85047063"
+                }
+              ],
+              "label": "Family recreation",
+              "type": "Concept"
+            }
+          ],
+          "id": "pgsh82ka",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "lc-subjects",
+                "label": "Library of Congress Subject Headings (LCSH)",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "sh85047063"
+            }
+          ],
+          "label": "Family recreation",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "x3abfpd2",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "lc-subjects",
+                    "label": "Library of Congress Subject Headings (LCSH)",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "sh85096148"
+                }
+              ],
+              "label": "Outdoor recreation",
+              "type": "Concept"
+            }
+          ],
+          "id": "x3abfpd2",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "lc-subjects",
+                "label": "Library of Congress Subject Headings (LCSH)",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "sh85096148"
+            }
+          ],
+          "label": "Outdoor recreation",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "hf8jsskf",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "lc-subjects",
+                    "label": "Library of Congress Subject Headings (LCSH)",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "sh85046328"
+                }
+              ],
+              "label": "Exercise",
+              "type": "Concept"
+            }
+          ],
+          "id": "hf8jsskf",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "lc-subjects",
+                "label": "Library of Congress Subject Headings (LCSH)",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "sh85046328"
+            }
+          ],
+          "label": "Exercise",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "ynpcuv8z",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "lc-subjects",
+                    "label": "Library of Congress Subject Headings (LCSH)",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "sh85038796"
+                }
+              ],
+              "label": "Dogs",
+              "type": "Concept"
+            }
+          ],
+          "id": "ynpcuv8z",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "lc-subjects",
+                "label": "Library of Congress Subject Headings (LCSH)",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "sh85038796"
+            }
+          ],
+          "label": "Dogs",
+          "type": "Subject"
+        }
+      ],
+      "thumbnail": {
+        "accessConditions": [],
+        "license": {
+          "id": "inc",
+          "label": "In copyright",
+          "type": "License",
+          "url": "http://rightsstatements.org/vocab/InC/1.0/"
+        },
+        "locationType": {
+          "id": "thumbnail-image",
+          "label": "Thumbnail image",
+          "type": "LocationType"
+        },
+        "type": "DigitalLocation",
+        "url": "https://iiif.wellcomecollection.org/thumbs/B11963621.JP2/full/!200,200/0/default.jpg"
+      },
+      "title": "A man and wife and their two children and dog climbing up a grassy knoll as exercise in the fresh air. Colour lithograph by Hulls.",
+      "type": "Work",
+      "workType": {
+        "id": "k",
+        "label": "Pictures",
+        "type": "Format"
+      }
+    },
+    {
+      "alternativeTitles": [],
+      "availabilities": [
+        {
+          "id": "online",
+          "label": "Online",
+          "type": "Availability"
+        }
+      ],
+      "contributors": [],
+      "description": "Letters between the Central Council for Health Education and J B S Haldane regarding a reference in support of P A R Street's application for the post of Lecturer for the Central Council for Health Education. Contains two different testimonials for Street by Haldane, though they appear to relate to this post.",
+      "genres": [],
+      "id": "ukaaax3z",
+      "identifiers": [
+        {
+          "identifierType": {
+            "id": "calm-record-id",
+            "label": "Calm RecordIdentifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "4c4f3a0c-6249-4e8c-9fa6-eb38d9d131e2"
+        },
+        {
+          "identifierType": {
+            "id": "calm-ref-no",
+            "label": "Calm RefNo",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "HALDANE/3/5/2/2/95"
+        },
+        {
+          "identifierType": {
+            "id": "calm-altref-no",
+            "label": "Calm AltRefNo",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "HALDANE/3/5/2/2/95"
+        },
+        {
+          "identifierType": {
+            "id": "mets",
+            "label": "METS",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b19913151"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-system-number",
+            "label": "Sierra system number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b19913151"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-identifier",
+            "label": "Sierra identifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "1991315"
+        },
+        {
+          "identifierType": {
+            "id": "wellcome-digcode",
+            "label": "Wellcome digcode",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "diggenetics"
+        }
+      ],
+      "images": [],
+      "items": [
+        {
+          "identifiers": [],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "view-online",
+                    "label": "View online",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open-with-advisory",
+                    "label": "Open with advisory",
+                    "type": "AccessStatus"
+                  },
+                  "terms": "Works in this archive created by J.B.S. Haldane are available under a CC-BY-NC license. Please be aware that works in this archive created by other organisations and individuals are not covered under this license, and you should obtain any necessary permissions before copyright or adapting any such works.",
+                  "type": "AccessCondition"
+                }
+              ],
+              "license": {
+                "id": "inc",
+                "label": "In copyright",
+                "type": "License",
+                "url": "http://rightsstatements.org/vocab/InC/1.0/"
+              },
+              "locationType": {
+                "id": "iiif-presentation",
+                "label": "IIIF Presentation API",
+                "type": "LocationType"
+              },
+              "type": "DigitalLocation",
+              "url": "https://iiif.wellcomecollection.org/presentation/v2/b19913151"
+            }
+          ],
+          "type": "Item"
+        }
+      ],
+      "physicalDescription": "4 letters 4 sides.",
+      "production": [
+        {
+          "agents": [],
+          "dates": [
+            {
+              "label": "Dec 1943",
+              "type": "Period"
+            }
+          ],
+          "label": "Dec 1943",
+          "places": [],
+          "type": "ProductionEvent"
+        }
+      ],
+      "referenceNumber": "HALDANE/3/5/2/2/95",
+      "subjects": [],
+      "title": "Letters between the Central Council for Health Education and J B S Haldane",
+      "type": "Work",
+      "workType": {
+        "id": "h",
+        "label": "Archives and manuscripts",
+        "type": "Format"
+      }
+    },
+    {
+      "alternativeTitles": [],
+      "availabilities": [
+        {
+          "id": "closed-stores",
+          "label": "Closed stores",
+          "type": "Availability"
+        },
+        {
+          "id": "online",
+          "label": "Online",
+          "type": "Availability"
+        }
+      ],
+      "contributors": [
+        {
+          "agent": {
+            "id": "esdg2typ",
+            "identifiers": [
+              {
+                "identifierType": {
+                  "id": "label-derived",
+                  "label": "Identifier derived from the label of the referent",
+                  "type": "IdentifierType"
+                },
+                "type": "Identifier",
+                "value": "jacobs, jake, active 1940"
+              }
+            ],
+            "label": "Jacobs, Jake, active 1940.",
+            "type": "Person"
+          },
+          "primary": true,
+          "roles": [],
+          "type": "Contributor"
+        },
+        {
+          "agent": {
+            "id": "bkqk8nee",
+            "identifiers": [
+              {
+                "identifierType": {
+                  "id": "label-derived",
+                  "label": "Identifier derived from the label of the referent",
+                  "type": "IdentifierType"
+                },
+                "type": "Identifier",
+                "value": "jacobs, joyce, active 1940"
+              }
+            ],
+            "label": "Jacobs, Joyce, active 1940",
+            "type": "Person"
+          },
+          "primary": false,
+          "roles": [
+            {
+              "label": "designer",
+              "type": "ContributionRole"
+            }
+          ],
+          "type": "Contributor"
+        }
+      ],
+      "genres": [
+        {
+          "concepts": [
+            {
+              "id": "tuvpy6ew",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "posters"
+                }
+              ],
+              "label": "Posters",
+              "type": "Genre"
+            }
+          ],
+          "label": "Posters",
+          "type": "Genre"
+        },
+        {
+          "concepts": [
+            {
+              "id": "fmydsuw2",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "lithographs"
+                }
+              ],
+              "label": "Lithography",
+              "type": "Genre"
+            }
+          ],
+          "label": "Lithographs",
+          "type": "Genre"
+        },
+        {
+          "concepts": [
+            {
+              "id": "g6kvzguy",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "offset photomechanical prints"
+                }
+              ],
+              "label": "Offset photomechanical prints",
+              "type": "Genre"
+            }
+          ],
+          "label": "Offset photomechanical prints",
+          "type": "Genre"
+        }
+      ],
+      "id": "zftnwty6",
+      "identifiers": [
+        {
+          "identifierType": {
+            "id": "sierra-system-number",
+            "label": "Sierra system number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b11963633"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-identifier",
+            "label": "Sierra identifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "1196363"
+        },
+        {
+          "identifierType": {
+            "id": "wellcome-digcode",
+            "label": "Wellcome digcode",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "digicon"
+        },
+        {
+          "identifierType": {
+            "id": "iconographic-number",
+            "label": "Iconographic number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "38537i"
+        }
+      ],
+      "images": [],
+      "items": [
+        {
+          "id": "q44n75yf",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "sierra-system-number",
+                "label": "Sierra system number",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "i12181444"
+            },
+            {
+              "identifierType": {
+                "id": "sierra-identifier",
+                "label": "Sierra identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "1218144"
+            }
+          ],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "online-request",
+                    "label": "Online request",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "label": "Closed stores",
+              "locationType": {
+                "id": "closed-stores",
+                "label": "Closed stores",
+                "type": "LocationType"
+              },
+              "type": "PhysicalLocation"
+            },
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "view-online",
+                    "label": "View online",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "license": {
+                "id": "inc",
+                "label": "In copyright",
+                "type": "License",
+                "url": "http://rightsstatements.org/vocab/InC/1.0/"
+              },
+              "locationType": {
+                "id": "iiif-presentation",
+                "label": "IIIF Presentation API",
+                "type": "LocationType"
+              },
+              "type": "DigitalLocation",
+              "url": "https://iiif.wellcomecollection.org/presentation/v2/b11963633"
+            }
+          ],
+          "type": "Item"
+        }
+      ],
+      "lettering": "Guard every fire. Jake & Joyce Jacobs",
+      "physicalDescription": "1 print : process print, printed in colours ; sheet 75.8 x 50.8 cm",
+      "production": [
+        {
+          "agents": [
+            {
+              "label": "Issued by the Central Council for Health Education",
+              "type": "Agent"
+            }
+          ],
+          "dates": [
+            {
+              "label": "[between 1940 and 1949?]",
+              "type": "Period"
+            }
+          ],
+          "label": "London W.C.1 (Tavistock House, Tavistock Square) : Issued by the Central Council for Health Education, [between 1940 and 1949?]",
+          "places": [
+            {
+              "label": "London W.C.1 (Tavistock House, Tavistock Square)",
+              "type": "Place"
+            }
+          ],
+          "type": "ProductionEvent"
+        }
+      ],
+      "referenceNumber": "38537i",
+      "subjects": [
+        {
+          "concepts": [
+            {
+              "id": "rycmdf2j",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "lc-subjects",
+                    "label": "Library of Congress Subject Headings (LCSH)",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "sh85041714"
+                }
+              ],
+              "label": "Electric heating",
+              "type": "Concept"
+            }
+          ],
+          "id": "rycmdf2j",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "lc-subjects",
+                "label": "Library of Congress Subject Headings (LCSH)",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "sh85041714"
+            }
+          ],
+          "label": "Electric heating",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "kzqsyyjh",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "lc-subjects",
+                    "label": "Library of Congress Subject Headings (LCSH)",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "sh85062578"
+                }
+              ],
+              "label": "Household appliances, Electric",
+              "type": "Concept"
+            }
+          ],
+          "id": "kzqsyyjh",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "lc-subjects",
+                "label": "Library of Congress Subject Headings (LCSH)",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "sh85062578"
+            }
+          ],
+          "label": "Household appliances, Electric",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "kwbrnmjf",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "children's accidents"
+                }
+              ],
+              "label": "Children's accidents",
+              "type": "Concept"
+            },
+            {
+              "id": "dayzystt",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "prevention"
+                }
+              ],
+              "label": "Prevention",
+              "type": "Concept"
+            }
+          ],
+          "id": "qbx8mtex",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "lc-subjects",
+                "label": "Library of Congress Subject Headings (LCSH)",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "sh85023578"
+            }
+          ],
+          "label": "Children's accidents - Prevention",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "ke3726nr",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "children"
+                }
+              ],
+              "label": "Children",
+              "type": "Concept"
+            },
+            {
+              "id": "bhumgfqh",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "books and reading"
+                }
+              ],
+              "label": "Books and reading",
+              "type": "Concept"
+            }
+          ],
+          "id": "n5s4u8ek",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "lc-subjects",
+                "label": "Library of Congress Subject Headings (LCSH)",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "sh85023424"
+            }
+          ],
+          "label": "Children - Books and reading",
+          "type": "Subject"
+        }
+      ],
+      "thumbnail": {
+        "accessConditions": [],
+        "license": {
+          "id": "inc",
+          "label": "In copyright",
+          "type": "License",
+          "url": "http://rightsstatements.org/vocab/InC/1.0/"
+        },
+        "locationType": {
+          "id": "thumbnail-image",
+          "label": "Thumbnail image",
+          "type": "LocationType"
+        },
+        "type": "DigitalLocation",
+        "url": "https://iiif.wellcomecollection.org/thumbs/B11963633.JP2/full/!200,200/0/default.jpg"
+      },
+      "title": "An electric fire protected by a guard, in front of which a little girl reads a picture book and a woman does some knitting. Colour process print after Jake and Joyce Jacobs.",
+      "type": "Work",
+      "workType": {
+        "id": "k",
+        "label": "Pictures",
+        "type": "Format"
+      }
+    },
+    {
+      "alternativeTitles": [],
+      "availabilities": [
+        {
+          "id": "online",
+          "label": "Online",
+          "type": "Availability"
+        }
+      ],
+      "contributors": [],
+      "description": "<p>Onwards to Victory, 1953. Fund-raising appeal film which attempts to build on the metaphor of science and technology's contribution to Britain's victory over Nazi Germany during World War II to persuade the public to give generously in support of the campaign to defeat the peacetime menace of cancer. Illustrated with newsreel footage of the London Blitz, the Battle of Britain, etc., fund-raising appeal posters and members of the public making donations to the British Empire Cancer Campaign in Trafalgar Square, under the watchful gaze of the lions. 1 segment.</p>",
+      "duration": 170,
+      "genres": [
+        {
+          "concepts": [
+            {
+              "id": "ybhn3ebz",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "encoded moving images"
+                }
+              ],
+              "label": "Encoded moving images",
+              "type": "Genre"
+            }
+          ],
+          "label": "Encoded moving images",
+          "type": "Genre"
+        }
+      ],
+      "id": "am4wbft7",
+      "identifiers": [
+        {
+          "identifierType": {
+            "id": "sierra-system-number",
+            "label": "Sierra system number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b17949993"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-identifier",
+            "label": "Sierra identifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "1794999"
+        },
+        {
+          "identifierType": {
+            "id": "wellcome-digcode",
+            "label": "Wellcome digcode",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "digfilm"
+        }
+      ],
+      "images": [],
+      "items": [
+        {
+          "identifiers": [],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "view-online",
+                    "label": "View online",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "licensed-resources",
+                    "label": "Licensed resources",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "locationType": {
+                "id": "online-resource",
+                "label": "Online resource",
+                "type": "LocationType"
+              },
+              "type": "DigitalLocation",
+              "url": "http://www.cancerresearchuk.org/home/"
+            },
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "view-online",
+                    "label": "View online",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "license": {
+                "id": "cc-by-nc-nd",
+                "label": "Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)",
+                "type": "License",
+                "url": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+              },
+              "locationType": {
+                "id": "iiif-presentation",
+                "label": "IIIF Presentation API",
+                "type": "LocationType"
+              },
+              "type": "DigitalLocation",
+              "url": "https://iiif.wellcomecollection.org/presentation/v2/b17949993"
+            }
+          ],
+          "title": "Cancer Research UK",
+          "type": "Item"
+        }
+      ],
+      "physicalDescription": "1 encoded moving image (02.50 min.) : silent, black and white",
+      "production": [
+        {
+          "agents": [],
+          "dates": [
+            {
+              "label": "1953",
+              "type": "Period"
+            }
+          ],
+          "function": {
+            "label": "Publication",
+            "type": "Concept"
+          },
+          "label": "1953.",
+          "places": [],
+          "type": "ProductionEvent"
+        }
+      ],
+      "subjects": [
+        {
+          "concepts": [
+            {
+              "id": "f7dmqak3",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "nlm-mesh",
+                    "label": "Medical Subject Headings (MeSH) identifier",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "D009369"
+                }
+              ],
+              "label": "Neoplasms",
+              "type": "Concept"
+            }
+          ],
+          "id": "f7dmqak3",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "nlm-mesh",
+                "label": "Medical Subject Headings (MeSH) identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "D009369"
+            }
+          ],
+          "label": "Neoplasms",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "w6r87ykw",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "nlm-mesh",
+                    "label": "Medical Subject Headings (MeSH) identifier",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "D006266"
+                }
+              ],
+              "label": "Health Education",
+              "type": "Concept"
+            }
+          ],
+          "id": "w6r87ykw",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "nlm-mesh",
+                "label": "Medical Subject Headings (MeSH) identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "D006266"
+            }
+          ],
+          "label": "Health Education",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "p3wesebe",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "lc-subjects",
+                    "label": "Library of Congress Subject Headings (LCSH)",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "sh93002019"
+                }
+              ],
+              "label": "Trafalgar Square (London, England)",
+              "type": "Place"
+            }
+          ],
+          "id": "p3wesebe",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "lc-subjects",
+                "label": "Library of Congress Subject Headings (LCSH)",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "sh93002019"
+            }
+          ],
+          "label": "Trafalgar Square (London, England)",
+          "type": "Subject"
+        }
+      ],
+      "title": "Onwards to victory.",
+      "type": "Work",
+      "workType": {
+        "id": "g",
+        "label": "Videos",
+        "type": "Format"
+      }
+    },
+    {
+      "alternativeTitles": [],
+      "availabilities": [
+        {
+          "id": "closed-stores",
+          "label": "Closed stores",
+          "type": "Availability"
+        },
+        {
+          "id": "online",
+          "label": "Online",
+          "type": "Availability"
+        }
+      ],
+      "contributors": [],
+      "description": "<p>Two folding posters (with the original paper band printed in red) that were used as part of a health education campaign when China was implementing basic health education in cities and the countryside. Trachoma was a big problem at the time in China due to poor hygiene standards</p>",
+      "edition": "10,001-20,000 [print run].",
+      "genres": [
+        {
+          "concepts": [
+            {
+              "id": "fmydsuw2",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "lithographs"
+                }
+              ],
+              "label": "Lithography",
+              "type": "Genre"
+            }
+          ],
+          "label": "Lithographs",
+          "type": "Genre"
+        },
+        {
+          "concepts": [
+            {
+              "id": "tuvpy6ew",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "label-derived",
+                    "label": "Identifier derived from the label of the referent",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "posters"
+                }
+              ],
+              "label": "Posters",
+              "type": "Genre"
+            }
+          ],
+          "label": "Posters",
+          "type": "Genre"
+        }
+      ],
+      "id": "hgak392y",
+      "identifiers": [
+        {
+          "identifierType": {
+            "id": "sierra-system-number",
+            "label": "Sierra system number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b1674536x"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-identifier",
+            "label": "Sierra identifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "1674536"
+        },
+        {
+          "identifierType": {
+            "id": "wellcome-digcode",
+            "label": "Wellcome digcode",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "digicon"
+        },
+        {
+          "identifierType": {
+            "id": "iconographic-number",
+            "label": "Iconographic number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "674536i"
+        }
+      ],
+      "images": [],
+      "items": [
+        {
+          "id": "u39et82s",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "sierra-system-number",
+                "label": "Sierra system number",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "i16102563"
+            },
+            {
+              "identifierType": {
+                "id": "sierra-identifier",
+                "label": "Sierra identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "1610256"
+            }
+          ],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "online-request",
+                    "label": "Online request",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "label": "Closed stores",
+              "locationType": {
+                "id": "closed-stores",
+                "label": "Closed stores",
+                "type": "LocationType"
+              },
+              "shelfmark": "674536i.1",
+              "type": "PhysicalLocation"
+            }
+          ],
+          "title": "1 of 2",
+          "type": "Item"
+        },
+        {
+          "id": "r3bs5pct",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "sierra-system-number",
+                "label": "Sierra system number",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "i16102575"
+            },
+            {
+              "identifierType": {
+                "id": "sierra-identifier",
+                "label": "Sierra identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "1610257"
+            }
+          ],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "online-request",
+                    "label": "Online request",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "label": "Closed stores",
+              "locationType": {
+                "id": "closed-stores",
+                "label": "Closed stores",
+                "type": "LocationType"
+              },
+              "shelfmark": "674536i.2",
+              "type": "PhysicalLocation"
+            }
+          ],
+          "title": "2 of 2",
+          "type": "Item"
+        },
+        {
+          "id": "jgrdfvc4",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "sierra-system-number",
+                "label": "Sierra system number",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "i16102642"
+            },
+            {
+              "identifierType": {
+                "id": "sierra-identifier",
+                "label": "Sierra identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "1610264"
+            }
+          ],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "online-request",
+                    "label": "Online request",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "label": "Closed stores",
+              "locationType": {
+                "id": "closed-stores",
+                "label": "Closed stores",
+                "type": "LocationType"
+              },
+              "shelfmark": "674536i.3",
+              "type": "PhysicalLocation"
+            }
+          ],
+          "title": "title-band",
+          "type": "Item"
+        },
+        {
+          "identifiers": [],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "view-online",
+                    "label": "View online",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "license": {
+                "id": "inc",
+                "label": "In copyright",
+                "type": "License",
+                "url": "http://rightsstatements.org/vocab/InC/1.0/"
+              },
+              "locationType": {
+                "id": "iiif-presentation",
+                "label": "IIIF Presentation API",
+                "type": "LocationType"
+              },
+              "type": "DigitalLocation",
+              "url": "https://iiif.wellcomecollection.org/presentation/v2/b1674536x"
+            }
+          ],
+          "type": "Item"
+        }
+      ],
+      "lettering": "Yufang shayan ...",
+      "physicalDescription": "2 prints : lithographs, printed in colours ; sheets 77.2 x 53 cm + paper band printed in red",
+      "production": [
+        {
+          "agents": [],
+          "dates": [
+            {
+              "label": "1958.11.1-1958.12.2",
+              "type": "Period"
+            }
+          ],
+          "label": "Shanghai : 1958.11.1-1958.12.2.",
+          "places": [
+            {
+              "label": "Shanghai",
+              "type": "Place"
+            }
+          ],
+          "type": "ProductionEvent"
+        }
+      ],
+      "referenceNumber": "674536i",
+      "subjects": [
+        {
+          "concepts": [
+            {
+              "id": "mzqqdq5n",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "lc-subjects",
+                    "label": "Library of Congress Subject Headings (LCSH)",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "sh85136427"
+                }
+              ],
+              "label": "Trachoma",
+              "type": "Concept"
+            }
+          ],
+          "id": "mzqqdq5n",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "lc-subjects",
+                "label": "Library of Congress Subject Headings (LCSH)",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "sh85136427"
+            }
+          ],
+          "label": "Trachoma",
+          "type": "Subject"
+        },
+        {
+          "concepts": [
+            {
+              "id": "caew98cx",
+              "identifiers": [
+                {
+                  "identifierType": {
+                    "id": "lc-names",
+                    "label": "Library of Congress Name authority records",
+                    "type": "IdentifierType"
+                  },
+                  "type": "Identifier",
+                  "value": "n79091151"
+                }
+              ],
+              "label": "China",
+              "type": "Place"
+            }
+          ],
+          "id": "caew98cx",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "lc-names",
+                "label": "Library of Congress Name authority records",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "n79091151"
+            }
+          ],
+          "label": "China",
+          "type": "Subject"
+        }
+      ],
+      "thumbnail": {
+        "accessConditions": [],
+        "license": {
+          "id": "inc",
+          "label": "In copyright",
+          "type": "License",
+          "url": "http://rightsstatements.org/vocab/InC/1.0/"
+        },
+        "locationType": {
+          "id": "thumbnail-image",
+          "label": "Thumbnail image",
+          "type": "LocationType"
+        },
+        "type": "DigitalLocation",
+        "url": "https://iiif.wellcomecollection.org/thumbs/B1674536X_0001.JP2/full/!200,200/0/default.jpg"
+      },
+      "title": "Trachoma: how it is transmitted and prevented. Colour lithographs, 1958.",
+      "type": "Work",
+      "workType": {
+        "id": "k",
+        "label": "Pictures",
+        "type": "Format"
+      }
+    },
+    {
+      "alternativeTitles": [],
+      "availabilities": [
+        {
+          "id": "closed-stores",
+          "label": "Closed stores",
+          "type": "Availability"
+        },
+        {
+          "id": "online",
+          "label": "Online",
+          "type": "Availability"
+        }
+      ],
+      "contributors": [],
+      "description": "Samples including:. Speakers' Notes, with 1965 postscript. [c.1965]. Clinic Handbook. 1967. Family Planning Miscellany. Jan 1967. The FPA Yesterday and Today' Press and Information Department paper. 30 Jun 1966. 'Some of the Questions which the FPA is often Asked'. 25 Nov 1966. 'Notes on Public Speaking' by Elizabeth Sydney. 'Old Woman who lived in a Shoe' [poster]. Ministry of Health Circular 15/67. 'Effective use of posters, leaflets and a new handbill' Press and Information Department paper. Aug 1967. 'Family Planning - An Assessment'. Carlton Lecture by Margaret Pyke [from Eugenics Review, July 1963). Feb 1963. 'Expected Population Growth' [International Committee for Planned Parenthood (IPPF) booklet]. 'Family Planning in the Developing Nations'. [IPPF booklet]. Annual Reports. 1965/66;1966/67. Family Planning. Jul 1967. 'Family Planning and the Nurse' by Theodore Fox [reprinted from Midwife and Health Visitor]. May 1965. FPA leaflets including. 'Sex in Married Life'. 'Growing Up'. 'Intra-uterine Devices'. FPA Reading List. Aug 1966.",
+      "genres": [],
+      "id": "g7ww3ujy",
+      "identifiers": [
+        {
+          "identifierType": {
+            "id": "calm-record-id",
+            "label": "Calm RecordIdentifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "ebab56fb-1260-43ab-80f1-6d4a656ba1f8"
+        },
+        {
+          "identifierType": {
+            "id": "calm-ref-no",
+            "label": "Calm RefNo",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "SAFPA/A/A19/31/45"
+        },
+        {
+          "identifierType": {
+            "id": "calm-altref-no",
+            "label": "Calm AltRefNo",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "SA/FPA/A19/45"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-system-number",
+            "label": "Sierra system number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b18936817"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-identifier",
+            "label": "Sierra identifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "1893681"
+        },
+        {
+          "identifierType": {
+            "id": "mets",
+            "label": "METS",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b18936817"
+        }
+      ],
+      "images": [],
+      "items": [
+        {
+          "id": "kvzshrhs",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "sierra-system-number",
+                "label": "Sierra system number",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "i21521384"
+            },
+            {
+              "identifierType": {
+                "id": "sierra-identifier",
+                "label": "Sierra identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "2152138"
+            }
+          ],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "online-request",
+                    "label": "Online request",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "label": "Closed stores",
+              "locationType": {
+                "id": "closed-stores",
+                "label": "Closed stores",
+                "type": "LocationType"
+              },
+              "type": "PhysicalLocation"
+            }
+          ],
+          "type": "Item"
+        },
+        {
+          "identifiers": [],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "view-online",
+                    "label": "View online",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open-with-advisory",
+                    "label": "Open with advisory",
+                    "type": "AccessStatus"
+                  },
+                  "terms": "Works in this archive created by or for the Family Planning Association are available under a CC-BY licence. Please be aware that works in this archive created by other organisations and individuals are not covered under this licence, and you should obtain any necessary permissions before copying or adapting any such works.",
+                  "type": "AccessCondition"
+                }
+              ],
+              "license": {
+                "id": "inc",
+                "label": "In copyright",
+                "type": "License",
+                "url": "http://rightsstatements.org/vocab/InC/1.0/"
+              },
+              "locationType": {
+                "id": "iiif-presentation",
+                "label": "IIIF Presentation API",
+                "type": "LocationType"
+              },
+              "type": "DigitalLocation",
+              "url": "https://iiif.wellcomecollection.org/presentation/v2/b18936817"
+            }
+          ],
+          "type": "Item"
+        }
+      ],
+      "physicalDescription": "1 file",
+      "production": [
+        {
+          "agents": [],
+          "dates": [
+            {
+              "label": "1967",
+              "type": "Period"
+            }
+          ],
+          "label": "1967",
+          "places": [],
+          "type": "ProductionEvent"
+        }
+      ],
+      "referenceNumber": "SA/FPA/A19/45",
+      "subjects": [],
+      "title": "Speakers' Folder",
+      "type": "Work",
+      "workType": {
+        "id": "h",
+        "label": "Archives and manuscripts",
+        "type": "Format"
+      }
+    },
+    {
+      "alternativeTitles": [],
+      "availabilities": [
+        {
+          "id": "online",
+          "label": "Online",
+          "type": "Availability"
+        },
+        {
+          "id": "closed-stores",
+          "label": "Closed stores",
+          "type": "Availability"
+        }
+      ],
+      "contributors": [],
+      "description": "Includes:\n<ul><li>Extracts from journals/newspapers etc.</li>\n<li>Health Education Council posters</li>\n<li>Press releases from Virgin Healthcare Foundation, London International Group Plc., The Futures Group, Independent Broacasting Authority</li>\n<li>1998 Contraceptive Social Marketing Statistics</li></ul>",
+      "genres": [],
+      "id": "y9wvcfmt",
+      "identifiers": [
+        {
+          "identifierType": {
+            "id": "calm-record-id",
+            "label": "Calm RecordIdentifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "12e1eb42-c22e-48f7-8a07-339e1849b399"
+        },
+        {
+          "identifierType": {
+            "id": "calm-ref-no",
+            "label": "Calm RefNo",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "SAFPA/C/E/16/4/2"
+        },
+        {
+          "identifierType": {
+            "id": "calm-altref-no",
+            "label": "Calm AltRefNo",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "SA/FPA/C/E/16/4/2"
+        },
+        {
+          "identifierType": {
+            "id": "mets",
+            "label": "METS",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b29447574"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-system-number",
+            "label": "Sierra system number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b29447574"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-identifier",
+            "label": "Sierra identifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "2944757"
+        }
+      ],
+      "images": [],
+      "items": [
+        {
+          "identifiers": [],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "view-online",
+                    "label": "View online",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open-with-advisory",
+                    "label": "Open with advisory",
+                    "type": "AccessStatus"
+                  },
+                  "terms": "Works in this archive created by or for the Family Planning Association are available under a CC-BY licence. Please be aware that works in this archive created by other organisations and individuals are not covered under this licence, and you should obtain any necessary permissions before copying or adapting any such works.",
+                  "type": "AccessCondition"
+                }
+              ],
+              "license": {
+                "id": "inc",
+                "label": "In copyright",
+                "type": "License",
+                "url": "http://rightsstatements.org/vocab/InC/1.0/"
+              },
+              "locationType": {
+                "id": "iiif-presentation",
+                "label": "IIIF Presentation API",
+                "type": "LocationType"
+              },
+              "type": "DigitalLocation",
+              "url": "https://iiif.wellcomecollection.org/presentation/v2/b29447574"
+            }
+          ],
+          "type": "Item"
+        },
+        {
+          "id": "hhtcsc9k",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "sierra-system-number",
+                "label": "Sierra system number",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "i21335710"
+            },
+            {
+              "identifierType": {
+                "id": "sierra-identifier",
+                "label": "Sierra identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "2133571"
+            }
+          ],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "online-request",
+                    "label": "Online request",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "label": "Closed stores",
+              "locationType": {
+                "id": "closed-stores",
+                "label": "Closed stores",
+                "type": "LocationType"
+              },
+              "type": "PhysicalLocation"
+            }
+          ],
+          "type": "Item"
+        }
+      ],
+      "physicalDescription": "1 file",
+      "production": [
+        {
+          "agents": [],
+          "dates": [
+            {
+              "label": "1964 - 2003",
+              "type": "Period"
+            }
+          ],
+          "label": "1964 - 2003",
+          "places": [],
+          "type": "ProductionEvent"
+        }
+      ],
+      "referenceNumber": "SA/FPA/C/E/16/4/2",
+      "subjects": [],
+      "title": "Services and products - marketing",
+      "type": "Work",
+      "workType": {
+        "id": "h",
+        "label": "Archives and manuscripts",
+        "type": "Format"
+      }
+    },
+    {
+      "alternativeTitles": [],
+      "availabilities": [
+        {
+          "id": "closed-stores",
+          "label": "Closed stores",
+          "type": "Availability"
+        },
+        {
+          "id": "online",
+          "label": "Online",
+          "type": "Availability"
+        }
+      ],
+      "contributors": [],
+      "description": "/325 US Department of health, Education and Welfare, \"The comprehensive cummunity mental health centers program\", [n.d., post-1963]<br>/326 Unna, K, \"Studies on the toxicity and pharmacology of nicotinic acid\", Journal of Pharmacology and Experimental Therapeutics, Vol 65 no 1, 1939<br>/327 Uyldert, I, \"Investigations on the mammary gland and lactation process in rats\", Acta Brevia Neerlandica, Vol 13 no 1-3, 1943<br>/328 van der Hoop, J \"Bewusstseinstypen\", SArchives of Neurology and Psychiatry, Vol 40 no 2, 1938<br>/329 Venables, P, and Wing, J, \"Level of arousal and the subclassification of schizophrenia\", Archives of General Psychiatry, Aug 1962<br>/330 Vickers, G, \"The promotion of psychiatric research\", British Journal of Psychiatry, Vol 114, 1968<br>/331 Vogel, E, and Bell, N, \"The emotionally disturbed child as a family scapegoat\", Psychoanalysis and the Psychoanalytical Review, Vol 47 no 2, Summer 1960<br>/332 von Braunmuehl, A, \"Das \"Azoman\" bei der Krampfbehandlung der Schizophrenie\", Psychiatrisch-Neurologische Wochenschrift, no 45, 1938<br>/333 von Braunmuehl, A, \"Die kombinierte Schock-Krampfbehandlung der Schizophrenie am Beispiel der \"Blockmethode\", Zeitschrift fuer die gesamte Neurologie und Psychiatrie, Vol 164 no 1, 1938<br>/334 von Braunmuehl, A, \"Über die Insulinschockbehandlung der Schizophrenie\", Psychiatrisch-Neurologische Wochenschrift, Vol 39 no 15, 1937<br>/335 von Hueber, E, and Lehr, D, \"Wirkung von Magnesium...\", Archiv fuer Experimentelle Pathologie und Pharmacologie, Vol 189 no 1, 1938<br>/336 Vorster-Oettli, O, \"Ein Vergleich zwischen amerikanischen und schweizerischen 'sitten und Gebrauchen\" zu Handen des Geburtshelfers\", Praxis, 30 Oct 1952[Wansbrough, S, \"The future of industrial therapy\", Lancet, 15 May ?; destroyed]",
+      "genres": [],
+      "id": "grndcubz",
+      "identifiers": [
+        {
+          "identifierType": {
+            "id": "calm-record-id",
+            "label": "Calm RecordIdentifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "758a34c6-722a-464b-9c51-4c2837add481"
+        },
+        {
+          "identifierType": {
+            "id": "calm-ref-no",
+            "label": "Calm RefNo",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "PPRKF/F/325"
+        },
+        {
+          "identifierType": {
+            "id": "calm-altref-no",
+            "label": "Calm AltRefNo",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "PP/RKF/F.325-336"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-system-number",
+            "label": "Sierra system number",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b1938239x"
+        },
+        {
+          "identifierType": {
+            "id": "sierra-identifier",
+            "label": "Sierra identifier",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "1938239"
+        },
+        {
+          "identifierType": {
+            "id": "wellcome-digcode",
+            "label": "Wellcome digcode",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "digasylum"
+        },
+        {
+          "identifierType": {
+            "id": "mets",
+            "label": "METS",
+            "type": "IdentifierType"
+          },
+          "type": "Identifier",
+          "value": "b1938239x"
+        }
+      ],
+      "images": [],
+      "items": [
+        {
+          "id": "f86rbe4b",
+          "identifiers": [
+            {
+              "identifierType": {
+                "id": "sierra-system-number",
+                "label": "Sierra system number",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "i20791562"
+            },
+            {
+              "identifierType": {
+                "id": "sierra-identifier",
+                "label": "Sierra identifier",
+                "type": "IdentifierType"
+              },
+              "type": "Identifier",
+              "value": "2079156"
+            }
+          ],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "online-request",
+                    "label": "Online request",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open",
+                    "label": "Open",
+                    "type": "AccessStatus"
+                  },
+                  "type": "AccessCondition"
+                }
+              ],
+              "label": "Closed stores",
+              "locationType": {
+                "id": "closed-stores",
+                "label": "Closed stores",
+                "type": "LocationType"
+              },
+              "type": "PhysicalLocation"
+            }
+          ],
+          "type": "Item"
+        },
+        {
+          "identifiers": [],
+          "locations": [
+            {
+              "accessConditions": [
+                {
+                  "method": {
+                    "id": "view-online",
+                    "label": "View online",
+                    "type": "AccessMethod"
+                  },
+                  "status": {
+                    "id": "open-with-advisory",
+                    "label": "Open with advisory",
+                    "type": "AccessStatus"
+                  },
+                  "terms": "Works in this archive created by Rudolph Karl Freudenberg are available under a CC-BY-NC licence. Please be aware that works in this archive created by other organisations and individuals are not covered under this licence, and you should obtain any necessary permissions before copying or adapting any such works.",
+                  "type": "AccessCondition"
+                }
+              ],
+              "license": {
+                "id": "inc",
+                "label": "In copyright",
+                "type": "License",
+                "url": "http://rightsstatements.org/vocab/InC/1.0/"
+              },
+              "locationType": {
+                "id": "iiif-presentation",
+                "label": "IIIF Presentation API",
+                "type": "LocationType"
+              },
+              "type": "DigitalLocation",
+              "url": "https://iiif.wellcomecollection.org/presentation/v2/b1938239x"
+            }
+          ],
+          "type": "Item"
+        }
+      ],
+      "physicalDescription": "1 file",
+      "production": [
+        {
+          "agents": [],
+          "dates": [
+            {
+              "label": "1937-1968",
+              "type": "Period"
+            }
+          ],
+          "label": "1937-1968",
+          "places": [],
+          "type": "ProductionEvent"
+        }
+      ],
+      "referenceNumber": "PP/RKF/F.325-336",
+      "subjects": [],
+      "title": "Offprints and papers by others",
+      "type": "Work",
+      "workType": {
+        "id": "h",
+        "label": "Archives and manuscripts",
+        "type": "Format"
+      }
+    }
+  ],
+  "totalPages": 1,
+  "totalResults": 14,
+  "type": "ResultList"
+}

@@ -1,0 +1,189 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://figgy.princeton.edu/concern/scanned_resources/b589a240-bdfa-4f0b-b496-f4ed214552c9/manifest",
+  "@type": "sc:Manifest",
+  "description": "Consists of 1 poster depicting a giant spider bearing the hammer and sickle over the map of Africa.",
+  "label": "Halte a l'impérialisme communiste!",
+  "license": "http://rightsstatements.org/vocab/CNE/1.0/",
+  "logo": "https://figgy.princeton.edu/pul_logo_icon.png",
+  "metadata": [
+    {
+      "label": "Alternative",
+      "value": [
+        "\"Nous tournerons l'Europe par l'Afrique\""
+      ]
+    },
+    {
+      "label": "Extent",
+      "value": [
+        "1 poster : color ; 57 x 72 cm"
+      ]
+    },
+    {
+      "label": "Identifier",
+      "value": [
+        "ark:/88435/dc2514nz44k"
+      ]
+    },
+    {
+      "label": "Title",
+      "value": [
+        {
+          "@language": "fr",
+          "@value": "Halte a l'impérialisme communiste!"
+        }
+      ]
+    },
+    {
+      "label": "Type",
+      "value": [
+        "Posters"
+      ]
+    },
+    {
+      "label": "Content Type",
+      "value": [
+        "Visual material"
+      ]
+    },
+    {
+      "label": "Date",
+      "value": [
+        "1950"
+      ]
+    },
+    {
+      "label": "Language",
+      "value": [
+        "French"
+      ]
+    },
+    {
+      "label": "Publisher",
+      "value": [
+        "[Paris] : [publisher not identified], [1950?]"
+      ]
+    },
+    {
+      "label": "Subject",
+      "value": [
+        "Propaganda, Anti-communist—France—History—20th century—Pictorial works"
+      ]
+    },
+    {
+      "label": "Call Number",
+      "value": [
+        "D-Middle 72, drawer 4, 98300"
+      ]
+    },
+    {
+      "label": "Location",
+      "value": [
+        "Special Collections D-Middle 72, drawer 4, 98300"
+      ]
+    },
+    {
+      "label": "Embargo Date",
+      "value": [
+        ""
+      ]
+    },
+    {
+      "label": "Member Of Collections",
+      "value": [
+        "Monsters and Machines"
+      ]
+    }
+  ],
+  "rendering": {
+    "@id": "http://arks.princeton.edu/ark:/88435/dc2514nz44k",
+    "format": "text/html"
+  },
+  "seeAlso": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/b589a240-bdfa-4f0b-b496-f4ed214552c9.jsonld",
+      "format": "application/ld+json"
+    },
+    {
+      "@id": "https://catalog.princeton.edu/catalog/99125445429306421.marcxml",
+      "format": "text/xml"
+    }
+  ],
+  "sequences": [
+    {
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/b589a240-bdfa-4f0b-b496-f4ed214552c9/manifest/sequence/normal",
+      "@type": "sc:Sequence",
+      "canvases": [
+        {
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/b589a240-bdfa-4f0b-b496-f4ed214552c9/manifest/canvas/19faacc1-be3b-49e2-aaaf-b0c289111296",
+          "@type": "sc:Canvas",
+          "height": 12429,
+          "images": [
+            {
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/b589a240-bdfa-4f0b-b496-f4ed214552c9/manifest/image/19faacc1-be3b-49e2-aaaf-b0c289111296",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/b589a240-bdfa-4f0b-b496-f4ed214552c9/manifest/canvas/19faacc1-be3b-49e2-aaaf-b0c289111296",
+              "resource": {
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/cf%2Faf%2F19%2Fcfaf196811bf4a629e9d5950529b3875%2Fintermediate_file/full/1000,/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 12429,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/cf%2Faf%2F19%2Fcfaf196811bf4a629e9d5950529b3875%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 10129
+              }
+            }
+          ],
+          "label": "1",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/19faacc1-be3b-49e2-aaaf-b0c289111296/file/56d46c04-2dae-45f9-9e0c-5480ec115c88",
+              "format": "image/tiff",
+              "label": "Download the original file"
+            }
+          ],
+          "thumbnail": {
+            "@id": "https://iiif-cloud.princeton.edu/iiif/2/cf%2Faf%2F19%2Fcfaf196811bf4a629e9d5950529b3875%2Fintermediate_file/full/!200,150/0/default.jpg",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id": "https://iiif-cloud.princeton.edu/iiif/2/cf%2Faf%2F19%2Fcfaf196811bf4a629e9d5950529b3875%2Fintermediate_file",
+              "profile": "http://iiif.io/api/image/2/level2.json"
+            }
+          },
+          "width": 10129
+        }
+      ],
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/catalog/b589a240-bdfa-4f0b-b496-f4ed214552c9/pdf",
+          "format": "application/pdf",
+          "label": "Download as PDF"
+        }
+      ],
+      "viewingHint": "individuals"
+    }
+  ],
+  "structures": [
+    {
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/b589a240-bdfa-4f0b-b496-f4ed214552c9/manifest/range/r590f7a1b-d80d-432a-923d-5581fa1da9fe",
+      "@type": "sc:Range",
+      "canvases": [],
+      "label": "Logical",
+      "ranges": [],
+      "viewingHint": "top"
+    }
+  ],
+  "thumbnail": {
+    "@id": "https://iiif-cloud.princeton.edu/iiif/2/cf%2Faf%2F19%2Fcfaf196811bf4a629e9d5950529b3875%2Fintermediate_file/full/!200,150/0/default.jpg",
+    "service": {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://iiif-cloud.princeton.edu/iiif/2/cf%2Faf%2F19%2Fcfaf196811bf4a629e9d5950529b3875%2Fintermediate_file",
+      "profile": "http://iiif.io/api/image/2/level2.json"
+    }
+  },
+  "viewingHint": "individuals"
+}

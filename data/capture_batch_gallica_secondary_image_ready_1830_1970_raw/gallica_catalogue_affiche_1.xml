@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<srw:searchRetrieveResponse xmlns:ns6="http://gallica.bnf.fr/namespaces/gallica/" xmlns:diag="http://www.loc.gov/zing/srw/diagnostic/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:srw="http://www.loc.gov/zing/srw/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <srw:version>1.2</srw:version>
+    <srw:echoedSearchRetrieveRequest>
+        <srw:query>dc.title all "catalogue" and dc.description all "Affiche" and dc.date &gt;= "1830" and dc.date &lt;= "1970"</srw:query>
+        <srw:version>1.2</srw:version>
+    </srw:echoedSearchRetrieveRequest>
+    <srw:numberOfRecords>9</srw:numberOfRecords>
+    <srw:extraResponseData>&lt;numberOfRecordsDecollapser&gt;10&lt;/numberOfRecordsDecollapser&gt;</srw:extraResponseData>
+    <srw:records>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1890</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : lithogr. en coul. ; 49 x 65 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b532717987</dc:identifier>
+                    <dc:identifier>IFN-53271798</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Imp. Monrocq (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb47328254s</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, ENT KB-1 (17)-FT 6</dc:source>
+                    <dc:subject>Édition</dc:subject>
+                    <dc:title>Bibliothèque utile, 114 volumes... Catalogue... Félix Alcan éditeur : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>0</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b532717987.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b532717987</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b532717987.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b532717987.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b532717987.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b532717987</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1895-1910</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : lithogr. en coul. sur papier végétal ; 255 x 61 cm (4 f.)</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53019439d</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>[impr. Chaix, Paris] ([Paris])</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb421362743</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, ENT DN-1 (CHAIX/13)-ROUL</dc:source>
+                    <dc:subject>Orfèvrerie -- Publicité</dc:subject>
+                    <dc:subject>Bijoux -- Publicité</dc:subject>
+                    <dc:subject>Bijouterie, horlogerie, etc.</dc:subject>
+                    <dc:title>Bijoux Fix. Pour faire votre choix, consultez le catalogue chez les bijoutiers... : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>1</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53019439d.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53019439d</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53019439d.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53019439d.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53019439d.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53019439d</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1900</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : lithographie en coul. ; 90 x 126 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53159044k</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>J.E. Goossens &amp; Cie, Bruxelles - Paris, 38 rue de Rivoli, (Bruxelles)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb45272298j</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, ROUL-ENT DP-149</dc:source>
+                    <dc:subject>Alimentation</dc:subject>
+                    <dc:subject>Magasins</dc:subject>
+                    <dc:title>E. Fouquet. 138 rue de Rivoli, Paris... Café, chocolat Fouquet. Marchandises de 1er choix. Cette localité est desservie le lundi. Envoi franco du catalogue sur demande ... : [affiche]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>2</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53159044k.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53159044k</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53159044k.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53159044k.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53159044k.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53159044k</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1885</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : lithogr. en coul. ; 130 x 95 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b9016234x</dc:identifier>
+                    <dc:identifier>IFN-9016234</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>[Emile Levy ] ([Paris])</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb39839192j</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, ENT DN-1 (LEVY, Emile /8)-ROUL</dc:source>
+                    <dc:subject>Livres et lecture -- Publicité</dc:subject>
+                    <dc:subject>Édition</dc:subject>
+                    <dc:title>Ed. Monnier, éditeur, 16 rue des Vosges, Paris.[...] Les Premières Illustrées, 4me année. Texte par Raoul Toché (Frimousse), illustrations par nos meilleurs artistes [...] Catalogue... : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>3</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b9016234x.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b9016234x</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b9016234x.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b9016234x.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b9016234x.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b9016234x</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1890</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : lithographie, coul. ; 106 x 76 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 2</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b525107992</dc:identifier>
+                    <dc:identifier>IFN-52510799</dc:identifier>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Imp. &amp; dessins Emile Levy (Paris)</dc:publisher>
+                    <dc:relation>Notice d'ensemble : http://catalogue.bnf.fr/ark:/12148/cb40284864w</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb40284864w</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, ENT DN-1 (LEVY, Emile /17)-FT 6</dc:source>
+                    <dc:subject>Boissons alcoolisées</dc:subject>
+                    <dc:subject>Distillation -- Appareils et matériel</dc:subject>
+                    <dc:subject>Boissons -- Appareils et matériel</dc:subject>
+                    <dc:title>Alambics pour cognacs, eaux de vie de vins, cidres... Appareils de distillation, Matériel de laboratoires Deroy fils Aîné constructeur. Rue du Théâtre, 73, 75, 77, Paris.Catalogue illustré &amp; petit manuel... : [affiche] / [Non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>4</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b525107992.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b525107992</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b525107992.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b525107992.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b525107992.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b525107992</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:contributor>Cain, Julien (1887-1974). Préfacier</dc:contributor>
+                    <dc:contributor>Bibliothèque nationale (France). Éditeur scientifique</dc:contributor>
+                    <dc:creator>Vallery-Radot, Jean (1890-1971). Auteur du texte</dc:creator>
+                    <dc:creator>Adhémar, Jean (1908-1987). Auteur du texte</dc:creator>
+                    <dc:creator>Perussaux, Charles (1920-1995). Auteur du texte</dc:creator>
+                    <dc:creator>Armingeat, Jacqueline. Auteur du texte</dc:creator>
+                    <dc:creator>Rophé, Pierre. Auteur du texte</dc:creator>
+                    <dc:date>1953</dc:date>
+                    <dc:description>[Exposition. Paris, Bibliothèque nationale. 1953]</dc:description>
+                    <dc:description>Comprend : L'affiche et la technique publicitaire / par Pierre Rophé ; L'affiche et le peintre / par Jean Vallery-Radot</dc:description>
+                    <dc:description>Contient une table des matières</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:description>Catalogues d'exposition</dc:description>
+                    <dc:format>1 vol. (39 p.) : pl., couv. ill. ; in-8</dc:format>
+                    <dc:format>Nombre total de vues : 50</dc:format>
+                    <dc:format>application/epub+zip 3.0 accessible</dc:format>
+                    <dc:format>Format adaptable de type XML DTBook, 2005-3</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k65339090</dc:identifier>
+                    <dc:identifier>NUMM-6533909</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>Syndicat national des éditeurs publicitaires (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb32583280x</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Recherche bibliographique, 2012-353030</dc:source>
+                    <dc:subject>Affiches -- France -- Histoire</dc:subject>
+                    <dc:title>Cinq siècles d'affiches illustrées françaises : exposition... Bibliothèque nationale, juillet-septembre 1953 / [catalogue par Jean Adhémar, Charles Pérussaux et Jacqueline Amingeat ; préface par Julien Cain]</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>5</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile>/ark:/12148/bpt6k65339090.epub</epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k65339090.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k65339090</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k65339090.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k65339090.medres</medres>
+                <nqamoyen>99.96</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k65339090.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k65339090</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>[1915]</dc:date>
+                    <dc:description>[Wesserling (Alsace). Usine Gros, Roman &amp; Co, du 10 au 24 oct. 1915]</dc:description>
+                    <dc:description>Affiche du Salon qui accompagne le catalogue à consulter dans le fonds d'affiches</dc:description>
+                    <dc:description>Fonds Guerre 14-18</dc:description>
+                    <dc:format>1 livre</dc:format>
+                    <dc:format>1 vol. (16 p.), couv. ill., 30 cm</dc:format>
+                    <dc:format>application/xhtml+xml</dc:format>
+                    <dc:identifier>https://numelyo.bm-lyon.fr/f_view/BML:BML_00GOO0100137001104678102</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>Impr. Paul Ehkirch et Cie (Saint Amarin) </dc:publisher>
+                    <dc:relation>vignette : https://numelyo.bm-lyon.fr/BML:BML_00GOO0100137001104678102/thumbnail_JPG00000001.jpg</dc:relation>
+                    <dc:rights>Licence Ouverte-Open Licence</dc:rights>
+                    <dc:source>Bibliothèque municipale de Lyon, 27900</dc:source>
+                    <dc:subject>Guerre mondiale (1914-1918) -- Catalogues de vente -- France</dc:subject>
+                    <dc:subject>Guerre mondiale (1914-1918) -- Art et guerre -- France</dc:subject>
+                    <dc:subject>Guerre mondiale (1914-1918) -- Expositions</dc:subject>
+                    <dc:title>Salon d&amp;#039;automne de la 66e division : Catalogue 1915</dc:title>
+                    <dc:type>texte imprimé</dc:type>
+                    <dc:type>text</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>6</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://numelyo.bm-lyon.fr/BML:BML_00GOO0100137001104678102/highres_JPG00000001.jpg</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://numelyo.bm-lyon.fr/f_view/BML:BML_00GOO0100137001104678102</link>
+                <lowres>https://numelyo.bm-lyon.fr/BML:BML_00GOO0100137001104678102/lowres_JPG00000001.jpg</lowres>
+                <medres>https://numelyo.bm-lyon.fr/BML:BML_00GOO0100137001104678102/medres_JPG00000001.jpg</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>numelyo</provenance>
+                <thumbnail>https://numelyo.bm-lyon.fr/BML:BML_00GOO0100137001104678102/thumbnail_JPG00000001.jpg</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>oai:numelyo.bm-lyon.fr:BML:BML_00GOO0100137001104678102</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Bazar du voyage</dc:creator>
+                    <dc:creator>W. Walcker</dc:creator>
+                    <dc:date>1879</dc:date>
+                    <dc:description>Bazar du voyage : 42 rue Rochechouart, Paris, W. Walcker fabricant. Commercialisait aussi en 1876 des tables inclinées pour malades alités (une affiche existe). La « salle d’asile », à l’origine privée, a précédé l’école maternelle, créée officiellement en 1881.</dc:description>
+                    <dc:format>1 vol. (8 pl.) : ill. en coul. ; 30 x 44 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:identifier>https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0002008890</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>imp. Monrocq</dc:publisher>
+                    <dc:relation>vignette : https://bibliotheques-specialisees.paris.fr/in/rest/Thumb/image?id=p::usmarcdef_0002008890&amp;mat=CatalogCommercial</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Ville de Paris / Bibl. Forney, CC 3117"1879"Plano</dc:source>
+                    <dc:subject>Bazar du voyage</dc:subject>
+                    <dc:subject>W. Walcker</dc:subject>
+                    <dc:subject>Écoles -- Meubles -- France -- 1870-1914</dc:subject>
+                    <dc:subject>Catalogues commerciaux</dc:subject>
+                    <dc:title>Album du mobilier scolaire du matériel et des fournitures nécessaires pour les salles d'asile, avril 1879, supplément au recueil de plans-modèles pour la construction de maisons d'écoles par C. Pompée architecte : [catalogue commercial]</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte imprimé</dc:type>
+                    <dc:type>text</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>7</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://bibliotheques-specialisees.paris.fr/in/rest/Thumb/image?id=p::usmarcdef_0002008890&amp;amp;mat=CatalogCommercial</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0002008890</link>
+                <lowres>https://bibliotheques-specialisees.paris.fr/in/rest/Thumb/image?id=p::usmarcdef_0002008890&amp;amp;mat=CatalogCommercial</lowres>
+                <medres>https://bibliotheques-specialisees.paris.fr/in/rest/Thumb/image?id=p::usmarcdef_0002008890&amp;amp;mat=CatalogCommercial</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Bibliothèques spécialisées de la Ville de Paris</provenance>
+                <thumbnail>https://bibliotheques-specialisees.paris.fr/in/rest/Thumb/image?id=p::usmarcdef_0002008890&amp;amp;mat=CatalogCommercial</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0002008890</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Comité mondial des femmes contre la guerre et le fascisme</dc:creator>
+                    <dc:date>1939</dc:date>
+                    <dc:description>Texte extrait de l'affiche: " Elle vous dira le martyre grandissant des femmes, des enfants, des fils de son pays dont les poitrines nues protègent la troisième frontière de la France, protègent la vie des enfants de France!... Grande Salle de la Mutualité"</dc:description>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:identifier>https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000937677</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>Impr. de la Maison des syndicats</dc:publisher>
+                    <dc:relation>vignette : https://bibliotheques-specialisees.paris.fr/in/rest/Thumb/image?id=p::usmarcdef_0000937677&amp;mat=Poster</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Ville de Paris / BMD, AFF 66a</dc:source>
+                    <dc:subject>Nelken Mansberger, Margarita (1894-1968)</dc:subject>
+                    <dc:subject>Comité mondial des femmes contre la guerre et le fascisme</dc:subject>
+                    <dc:subject>Pacifisme</dc:subject>
+                    <dc:subject>Espagne -- 1936-1939 (Guerre civile)</dc:subject>
+                    <dc:subject>Affiches</dc:subject>
+                    <dc:title>Margarita Nelken député aux Cortes, dont les deux enfants sont sur le front de Catalogne vient d'Espagne vous parler... mercredi 25 janvier [1939] : aux femmes et aux mères parisiennes : [Affiche]</dc:title>
+                    <dc:type>image</dc:type>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>still image</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>8</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://bibliotheques-specialisees.paris.fr/in/rest/Thumb/image?id=p::usmarcdef_0000937677&amp;amp;mat=Poster</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://bibliotheques-specialisees.paris.fr/ark:/73873/pf0000937677</link>
+                <lowres>https://bibliotheques-specialisees.paris.fr/in/rest/Thumb/image?id=p::usmarcdef_0000937677&amp;amp;mat=Poster</lowres>
+                <medres>https://bibliotheques-specialisees.paris.fr/in/rest/Thumb/image?id=p::usmarcdef_0000937677&amp;amp;mat=Poster</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Bibliothèques spécialisées de la Ville de Paris</provenance>
+                <thumbnail>https://bibliotheques-specialisees.paris.fr/in/rest/Thumb/image?id=p::usmarcdef_0000937677&amp;amp;mat=Poster</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>oai:bibliotheques-specialisees.paris.fr:ark:/73873/pf0000937677</uri>
+            </srw:extraRecordData>
+        </srw:record>
+    </srw:records>
+    <srw:nextRecordPosition>51</srw:nextRecordPosition>
+</srw:searchRetrieveResponse>

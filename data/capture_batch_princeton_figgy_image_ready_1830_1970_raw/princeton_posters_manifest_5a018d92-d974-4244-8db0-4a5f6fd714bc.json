@@ -1,0 +1,196 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://figgy.princeton.edu/concern/scanned_resources/5a018d92-d974-4244-8db0-4a5f6fd714bc/manifest",
+  "@type": "sc:Manifest",
+  "description": "Consists of 1 poster.",
+  "label": "[Anti-Nazi propaganda poster depicting Hitler as a snake charmer playing a tune for snakes in top hats, which are rising out of a basket labeled \"Fascisti Repubblicani\"] / [United States Office of War Information].",
+  "license": "http://rightsstatements.org/vocab/CNE/1.0/",
+  "logo": "https://figgy.princeton.edu/pul_logo_icon.png",
+  "metadata": [
+    {
+      "label": "Alternative",
+      "value": [
+        "Fascisti Repubblicani"
+      ]
+    },
+    {
+      "label": "Extent",
+      "value": [
+        "1 poster : color ; 36 x 51 cm"
+      ]
+    },
+    {
+      "label": "Identifier",
+      "value": [
+        "ark:/88435/dc1831cz03f"
+      ]
+    },
+    {
+      "label": "Title",
+      "value": [
+        {
+          "@language": "it",
+          "@value": "[Anti-Nazi propaganda poster depicting Hitler as a snake charmer playing a tune for snakes in top hats, which are rising out of a basket labeled \"Fascisti Repubblicani\"] / [United States Office of War Information]."
+        }
+      ]
+    },
+    {
+      "label": "Type",
+      "value": [
+        "Posters",
+        "Caricatures"
+      ]
+    },
+    {
+      "label": "Content Type",
+      "value": [
+        "Visual material"
+      ]
+    },
+    {
+      "label": "Creator",
+      "value": [
+        "United States. Office of War Information"
+      ]
+    },
+    {
+      "label": "Date",
+      "value": [
+        "1943-1945"
+      ]
+    },
+    {
+      "label": "Language",
+      "value": [
+        "Italian"
+      ]
+    },
+    {
+      "label": "Publisher",
+      "value": [
+        "[London] : [United States Office of War Information], [1943-1945]"
+      ]
+    },
+    {
+      "label": "Subject",
+      "value": [
+        "Hitler, Adolf 1889-1945—Caricatures and cartoons"
+      ]
+    },
+    {
+      "label": "Call Number",
+      "value": [
+        "UB277.I8 U55 1943"
+      ]
+    },
+    {
+      "label": "Location",
+      "value": [
+        "Special Collections UB277.I8 U55 1943"
+      ]
+    },
+    {
+      "label": "Embargo Date",
+      "value": [
+        ""
+      ]
+    },
+    {
+      "label": "Member Of Collections",
+      "value": [
+        "Monsters and Machines"
+      ]
+    }
+  ],
+  "rendering": {
+    "@id": "http://arks.princeton.edu/ark:/88435/dc1831cz03f",
+    "format": "text/html"
+  },
+  "seeAlso": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/5a018d92-d974-4244-8db0-4a5f6fd714bc.jsonld",
+      "format": "application/ld+json"
+    },
+    {
+      "@id": "https://catalog.princeton.edu/catalog/99126855051506421.marcxml",
+      "format": "text/xml"
+    }
+  ],
+  "sequences": [
+    {
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/5a018d92-d974-4244-8db0-4a5f6fd714bc/manifest/sequence/normal",
+      "@type": "sc:Sequence",
+      "canvases": [
+        {
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/5a018d92-d974-4244-8db0-4a5f6fd714bc/manifest/canvas/eaabadb4-9f38-4ed0-a515-d3290fcde489",
+          "@type": "sc:Canvas",
+          "height": 8213,
+          "images": [
+            {
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/5a018d92-d974-4244-8db0-4a5f6fd714bc/manifest/image/eaabadb4-9f38-4ed0-a515-d3290fcde489",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/5a018d92-d974-4244-8db0-4a5f6fd714bc/manifest/canvas/eaabadb4-9f38-4ed0-a515-d3290fcde489",
+              "resource": {
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/a3%2Fe8%2Fc0%2Fa3e8c0a622434e23af1d27cc3881622a%2Fintermediate_file/full/1000,/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 8213,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/a3%2Fe8%2Fc0%2Fa3e8c0a622434e23af1d27cc3881622a%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 11550
+              }
+            }
+          ],
+          "label": "1",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/eaabadb4-9f38-4ed0-a515-d3290fcde489/file/91cdba32-33ba-4613-8d06-f6bb4bc7a803",
+              "format": "image/tiff",
+              "label": "Download the original file"
+            }
+          ],
+          "thumbnail": {
+            "@id": "https://iiif-cloud.princeton.edu/iiif/2/a3%2Fe8%2Fc0%2Fa3e8c0a622434e23af1d27cc3881622a%2Fintermediate_file/full/!200,150/0/default.jpg",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id": "https://iiif-cloud.princeton.edu/iiif/2/a3%2Fe8%2Fc0%2Fa3e8c0a622434e23af1d27cc3881622a%2Fintermediate_file",
+              "profile": "http://iiif.io/api/image/2/level2.json"
+            }
+          },
+          "width": 11550
+        }
+      ],
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/catalog/5a018d92-d974-4244-8db0-4a5f6fd714bc/pdf",
+          "format": "application/pdf",
+          "label": "Download as PDF"
+        }
+      ],
+      "viewingHint": "individuals"
+    }
+  ],
+  "structures": [
+    {
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/5a018d92-d974-4244-8db0-4a5f6fd714bc/manifest/range/r6dc6c636-0b3a-44e7-ab95-5622e623cb43",
+      "@type": "sc:Range",
+      "canvases": [],
+      "label": "Logical",
+      "ranges": [],
+      "viewingHint": "top"
+    }
+  ],
+  "thumbnail": {
+    "@id": "https://iiif-cloud.princeton.edu/iiif/2/a3%2Fe8%2Fc0%2Fa3e8c0a622434e23af1d27cc3881622a%2Fintermediate_file/full/!200,150/0/default.jpg",
+    "service": {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://iiif-cloud.princeton.edu/iiif/2/a3%2Fe8%2Fc0%2Fa3e8c0a622434e23af1d27cc3881622a%2Fintermediate_file",
+      "profile": "http://iiif.io/api/image/2/level2.json"
+    }
+  },
+  "viewingHint": "individuals"
+}

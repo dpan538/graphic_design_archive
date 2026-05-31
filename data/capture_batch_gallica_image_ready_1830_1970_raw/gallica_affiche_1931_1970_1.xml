@@ -1,0 +1,2127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<srw:searchRetrieveResponse xmlns:ns6="http://gallica.bnf.fr/namespaces/gallica/" xmlns:diag="http://www.loc.gov/zing/srw/diagnostic/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:srw="http://www.loc.gov/zing/srw/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <srw:version>1.2</srw:version>
+    <srw:echoedSearchRetrieveRequest>
+        <srw:query>dc.description all "Affiche" and dc.date &gt;= "1931" and dc.date &lt;= "1970"</srw:query>
+        <srw:version>1.2</srw:version>
+    </srw:echoedSearchRetrieveRequest>
+    <srw:numberOfRecords>2505</srw:numberOfRecords>
+    <srw:extraResponseData>&lt;numberOfRecordsDecollapser&gt;2587&lt;/numberOfRecordsDecollapser&gt;</srw:extraResponseData>
+    <srw:records>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1954</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie en couleur ; 0,49 x 0,32 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145665f</dc:identifier>
+                    <dc:identifier>IFN-53145665</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>Mercure éditeur (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb422376362</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-130</dc:source>
+                    <dc:title>La nuit des Centraux. Palais de Chaillot, vendredi 7 mai 1954... avec les ballets de l'Opéra... Bal... : [affiche] / lithographie de C.D.</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>0</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145665f.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145665f</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145665f.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145665f.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145665f.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145665f</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Chaine, Joé. Graveur présumé</dc:creator>
+                    <dc:date>1932</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : gravure sur bois en bleu et blanc ; 0,39 x 0,28 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145729z</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42219108h</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-59</dc:source>
+                    <dc:title>Art et Action. Laboratoire de théâtre. Les Essais de Montaigne. [Adaptation de Eduard Autant]. Théâtre Universitaire... : [affiche] / bois gravé par [Joé Chaine]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>1</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145729z.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145729z</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145729z.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145729z.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145729z.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145729z</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1939</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : gravure sur bois en bleu, noir, vert ; 0,53 x 0,32 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531457361</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb422149640</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-61</dc:source>
+                    <dc:title>Art et Action invité par la nature à des spectacles inédits et gratuits, va commencer sa saison d'études. Comme chaque année, la saison prochaine comportera 6 manifestations : 2 reprises: les Saintes heures de Jeanne d'Arc de Ch. Péguy et le Partage du midi de P. Claudel. 2 pièces classiques : Robinson Crusoé de Daniel de Foe et la Tentation de Saint-Antoine de Flaubert. 2 pièces modernes : l'Empereur de Chine de Ribémont-Dessaignes et l'Assurance contre le suicide d'Ivan Goll. Cette dernière représentation-ci réalisera 2 oeuvres; la Dictature de la raison, parabole scénique en 4 nuits, évoquée des Nuits blanches de Dostoievsky. Lavatory de Closson... : [affiche] / [non signé] ; bois gravé, non signé</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>2</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531457361.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531457361</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531457361.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531457361.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531457361.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531457361</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Chaine, Joé. Graveur présumé</dc:creator>
+                    <dc:date>1939</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : gravure sur bois en noir et blanc ; 0,40 x 0,27 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145730b</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42219139s</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-60</dc:source>
+                    <dc:title>La tentation de St. Antoine, de G. Flaubert. Théâtre du Livre... Art et Action : [affiche] / bois gravé par [Joé Chaine]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>3</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145730b.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145730b</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145730b.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145730b.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145730b.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145730b</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1938</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : rotogravure ; 0,62 x 0,43 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145598n</dc:identifier>
+                    <dc:identifier>IFN-53145598</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>O. Boute (Bruxelles)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42237649d</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-129</dc:source>
+                    <dc:title>Clotilde et Alexandre Sakharoff. Théâtre de Chaillot. Unique gala. Orchestre des concerts Pasdeloup sous la direction de J.- E. Szyfer, de l'Opéra ... vendredi 19 mai [1938] : [affiche] / [non signé] ; rotogravure non signée</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>4</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145598n.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145598n</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145598n.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145598n.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145598n.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145598n</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Madrazo, Titio-Livio (1899-1979). Lithographe</dc:creator>
+                    <dc:date>1933</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie ; 1,100 x 0,75 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53167906v</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Imp. E.I.R.P (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42267342s</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-203</dc:source>
+                    <dc:title>Théâtre des Champs-Élysées, lundi 18 juin [1934]... Mila Cirul : [affiche] / lithographie de T-L Madrazo</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>5</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53167906v.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53167906v</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53167906v.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53167906v.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53167906v.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53167906v</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1940</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie ; 0,665 x 0,465 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531790535</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>Imp. S. (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42293027q</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-560</dc:source>
+                    <dc:title>Théâtre National de l'Opéra. Vendredi 20 décembre 1940... Grand gala organisé par Paris-soir, au bénéfice du Secours National d'hiver et des enfants victimes de l'exode avec le concours de toutes les vedettes... : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>6</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531790535.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531790535</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531790535.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531790535.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531790535.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531790535</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1964</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie ; 0,550 x 0,540 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531790463</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb422936637</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-569</dc:source>
+                    <dc:title>75e Bal de l'X, à l'Opéra, 26 novembre 1964... : [affiche] / [non signé]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>7</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531790463.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531790463</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531790463.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531790463.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531790463.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531790463</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Touchagues, Louis (1893-1974). Lithographe</dc:creator>
+                    <dc:date>1950</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie ; 0,500 x 0,320 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531790518</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>Imp. S. (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42293048p</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-564</dc:source>
+                    <dc:title>Bal de l'X, le 11 mai 1950, à l'Opéra sous la présidence de Monsieur Vincent Auriol : [affiche] / lithographie de Louis Touchagues</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>8</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531790518.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531790518</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531790518.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531790518.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531790518.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531790518</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1957</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie ; 0,400 x 0,300 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53179049f</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42293061w</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-566</dc:source>
+                    <dc:title>68e Bal de l'X, 9 mai 1957à lOpéra... : [affiche] / [non signé]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>9</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53179049f.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53179049f</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53179049f.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53179049f.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53179049f.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53179049f</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1963</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie ; 0,500 x 0,310 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53179047j</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>imp. S. (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb422936459</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-568</dc:source>
+                    <dc:title>74e Bal de l'X, à l'Opéra, 14 novembre 63... : [affiche] / lithographie de Gîre</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>10</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53179047j.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53179047j</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53179047j.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53179047j.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53179047j.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53179047j</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1966</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie ; 0,600 x 0,390 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53179045n</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42293055z</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-570</dc:source>
+                    <dc:title>Bal de l'X, le 1er décembre [1966] à l'Opéra... : [affiche] / [non signé]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>11</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53179045n.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53179045n</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53179045n.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53179045n.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53179045n.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53179045n</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Fouqueray, Charles (1869-1956). Lithographe</dc:creator>
+                    <dc:date>1936</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie ; 1,600 x 1,100 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53179054m</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>Imp. l'Atlantique (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42293018r</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-559</dc:source>
+                    <dc:title>Théâtre National de l'Opéra. 18 février 1936. Gala de la marine... : [affiche] / lithographie de Charles Fouqueray</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>12</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53179054m.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53179054m</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53179054m.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53179054m.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53179054m.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53179054m</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Arnoux, Guy (1886-1951). Lithographe</dc:creator>
+                    <dc:date>1935</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie ; 0,580 x 0,390 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531790552</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>Imp. Publicité Novia (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42293015q</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-558</dc:source>
+                    <dc:title>Théâtre National de l'Opéra. Gala de la marine, le 14 février 1935... : [affiche] / lithographie de Guy Arnoux</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>13</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531790552.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531790552</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531790552.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531790552.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531790552.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531790552</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1961</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie ; 0,620 x 0,400 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531790480</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42293627c</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-567</dc:source>
+                    <dc:title>72e Bal de l'X, à l'Opéra, 30 novembre 1961... : [affiche] / lithographie de M.-L. Lorin</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>14</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531790480.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531790480</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531790480.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531790480.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531790480.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531790480</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1936</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 impression photomécanique (affiche) : couleur ; 40 x 60 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 2</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b52512726h</dc:identifier>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb458619502</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Arts du spectacle, 4-AFF-63011</dc:source>
+                    <dc:subject>Tarzan and his mate (film)</dc:subject>
+                    <dc:subject>Cinéma</dc:subject>
+                    <dc:title>Olympia cinéma, Cannes [programme] : Tarzan et sa compagne : [affiche-texte]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>15</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b52512726h.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b52512726h</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b52512726h.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b52512726h.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b52512726h.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b52512726h</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Cocteau, Jean (1889-1963). Lithographe</dc:creator>
+                    <dc:date>1939</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie ; 155 x 88 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53212757m</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>imp. S. (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42335744n</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1371</dc:source>
+                    <dc:subject>Expositions</dc:subject>
+                    <dc:title>Musée des Arts décoratifs, Palais du Louvre, 107 rue de Rivoli. Exposition Ballets russes de Diaghilew, organisée par Serge Lifar. Exposition prolongée jusq'au 1er juillet 1939 pour la grande saison de Paris... : [affiche] / lithographie de Jean Cocteau</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>16</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53212757m.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53212757m</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53212757m.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53212757m.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53212757m.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53212757m</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1937</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithogr. en coul. ; 101 x 63 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53212753t</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Erasmusdruck (Berlin)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42334904q</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1367</dc:source>
+                    <dc:title>Semaine artistique allemande à Paris. 3-12 septembre 1937 : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>17</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53212753t.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53212753t</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53212753t.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53212753t.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53212753t.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53212753t</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1937</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithogr. en coul. ; 101 x 63 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b532127548</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Erasmusdruck (Berlin)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb423350541</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1368</dc:source>
+                    <dc:title>Semaine artistique allemande à Paris. 3-12 septembre 1937 : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>18</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b532127548.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b532127548</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b532127548.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b532127548.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b532127548.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b532127548</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Picasso, Pablo (1881-1973). Lithographe</dc:creator>
+                    <dc:date>1939</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie ; 99 x 62 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b532127565</dc:identifier>
+                    <dc:identifier>IFN-53212756</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>imp. Watelet-Arbelot (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb423357121</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1370</dc:source>
+                    <dc:subject>Expositions</dc:subject>
+                    <dc:title>Musée des Arts décoratifs, Palais du Louvre. Pavillon de Marsan, 107 rue de Rivoli. Exposition Ballets russes de Diaghilew, organisée par Serge Lifar mars1939-mai 1939 : [affiche] / lithographie de Pablo Picasso</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>19</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b532127565.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b532127565</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b532127565.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b532127565.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b532127565.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b532127565</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1961</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie en coul. ; 66 x 48 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53212755q</dc:identifier>
+                    <dc:identifier>IFN-53212755</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>imp. Mourlot (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42335072z</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1369</dc:source>
+                    <dc:title>La danse dans l'art, de l'impressionnisme à nos jours. Galerie André Weil, 26 Avenue Matignon, Paris VIII, 15 juin-22 juillet 1961 : [affiche] / [non signé]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>20</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53212755q.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53212755q</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53212755q.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53212755q.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53212755q.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53212755q</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1947</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : lithogr. en noir. ; 86 x 61 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53221593p</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Impr. A.W. Henningsens ([Kobenhavn])</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42431059z</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1466</dc:source>
+                    <dc:title>Den Internationale Ballet-konkurrence. Kobenhavn. Staerekassen 1-5 Juni : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>21</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53221593p.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53221593p</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53221593p.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53221593p.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53221593p.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53221593p</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1934</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : affiche en coul. avec inscriptions japonaises ; 54 x 37.5 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53221611v</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42433331w</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1484</dc:source>
+                    <dc:title>[Représentation du groupe d'enfants de Ishii Ukiyasu à Tokyo, salle municipale le 23 novembre] : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>22</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53221611v.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53221611v</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53221611v.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53221611v.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53221611v.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53221611v</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1934</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : affiche en coul. avec inscriptions japonaises ; 62 x 39.5 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53221602w</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb424312136</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1475</dc:source>
+                    <dc:title>[Représentation de Haroué Azuma. 26 mars au théâtre kabouki à Osaka] : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>23</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53221602w.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53221602w</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53221602w.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53221602w.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53221602w.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53221602w</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Pécoud, André (1880-1951). Illustrateur</dc:creator>
+                    <dc:date>1941</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : lithographie en coul. ; 55 x 80 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b532054430</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Affiches Gaillard (Paris. Amiens)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb45793594h</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, ENT DO-1 (PECOUD, André)-FT 6</dc:source>
+                    <dc:subject>Littérature pour la jeunesse</dc:subject>
+                    <dc:subject>Édition</dc:subject>
+                    <dc:subject>Éducation et enseignement</dc:subject>
+                    <dc:title>Semaine du livre français, demandez les livres "Hachette" pour les enfants : [affiche] / A. Pécoud</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>24</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b532054430.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b532054430</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b532054430.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b532054430.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b532054430.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b532054430</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1953</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : lithogr. en coul. ; 102 x 66 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53221595k</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Seix y Barral Hnos ([Barcelona])</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb424310965</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1468</dc:source>
+                    <dc:title>Festival mundial de danzas y cantos folkloricos. Pamplona-Biarritz. Espana - Francia del 9 al 15 de julio 1953 : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>25</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53221595k.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53221595k</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53221595k.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53221595k.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53221595k.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53221595k</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1934</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : affiche en coul. avec inscriptions japonaises ; 77 x 53 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b532216057</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42433291g</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1478</dc:source>
+                    <dc:title>[9ème représentation de groupes folkloriques au théâtre Nippon-Seinenkan à Tokyo, les 10, 11, 12 avril] : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>26</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b532216057.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b532216057</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b532216057.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b532216057.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b532216057.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b532216057</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1934</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : affiche en coul. avec inscriptions japonaises et photogr. de Kaïtani ; 77 x 52 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b532216129</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42433337z</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1485</dc:source>
+                    <dc:title>[Troupe de Madame Kaïtani au théâtre kabouki à Tokyo. 28-29 novembre] : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>27</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b532216129.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b532216129</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b532216129.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b532216129.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b532216129.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b532216129</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1934</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : affiche en coul. avec inscriptions japonaises ; 77 x 53 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53221606p</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42433295v</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1479</dc:source>
+                    <dc:title>[Représentations de groupes folkloriques au théâtre Nippon-Seinenkan à Tokyo, du 13 au 15 avril] : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>28</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53221606p.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53221606p</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53221606p.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53221606p.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53221606p.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53221606p</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1934</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : affiche en coul. avec inscriptions japonaises ; 65 x 25 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 2</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b532216091</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb424333160</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1482</dc:source>
+                    <dc:title>[Danses et chants traditionnels. 2 octobre 1934, au théâtre Nippon-Seinenkan à Tokyo] : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>29</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b532216091.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b532216091</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b532216091.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b532216091.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b532216091.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b532216091</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1934</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : affiche en coul. avec inscriptions japonaises ; 75 x 51 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b532216074</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42433298w</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1480</dc:source>
+                    <dc:title>[Représentations de groupes folkloriques au théâtre Nippon-Seinenkan à Tokyo, du 13 au 15 avril] : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>30</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b532216074.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b532216074</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b532216074.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b532216074.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b532216074.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b532216074</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1936</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : affiche en coul. avec inscriptions japonaises ; 77 x 52.5 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b532216146</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42433346x</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1487</dc:source>
+                    <dc:title>[14 novembre, 12ème rerpésentation du groupe de Nadeshiko, salle de Zinju à Tokyo] : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>31</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b532216146.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b532216146</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b532216146.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b532216146.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b532216146.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b532216146</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1934</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : affiche en coul. avec inscriptions japonaises ; 76 x 51 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53221604s</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb424332846</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1477</dc:source>
+                    <dc:title>[9ème représentation de groupes folkloriques. 5, 6, 7 avril au théâtre Nippon-Seinenkan à Tokyo] : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>32</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53221604s.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53221604s</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53221604s.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53221604s.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53221604s.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53221604s</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Pécoud, André (1880-1951). Illustrateur</dc:creator>
+                    <dc:date>1952</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : lithographie, coul. ; 80 x 60 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b9008249q</dc:identifier>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>[s.n.] (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb40281223x</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, ENT DO-1 (PECOUD,André)-FT6</dc:source>
+                    <dc:subject>Médecine préventive</dc:subject>
+                    <dc:subject>Santé</dc:subject>
+                    <dc:title>Sécurité Sociale. Air pur - Lumière. Joie et santé de l'enfance. : [affiche] / A. Pécoud</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>33</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b9008249q.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b9008249q</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b9008249q.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b9008249q.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b9008249q.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b9008249q</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1936</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : affiche en coul. avec texte en anglais et inscriptions japonaises ; 39 x 26.5 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53221613r</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42433339n</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1486</dc:source>
+                    <dc:title>Dance recital given by Masatoshishigyo. [1er novembre 1936, salle de coopérative de fil de soie à Tokyo] : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>34</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53221613r.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53221613r</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53221613r.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53221613r.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53221613r.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53221613r</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1935</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : lithographie, en coul. ; 100 x 70 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b532216235</dc:identifier>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Impr. I. Haeggstroms (Stockholm)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42433685n</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1497</dc:source>
+                    <dc:subject>Spectacles et divertissements divers</dc:subject>
+                    <dc:title>Tolfte Nordiska Bygdeungdomsstämman i Halmstad den 28 juni-1 juli 1935... : [affiche] / [Arleman]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>35</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b532216235.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b532216235</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b532216235.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b532216235.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b532216235.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b532216235</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1934</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : affiche en coul. avec inscriptions japonaises et photogr. d'Eïko Minami ; 63.5 x 47 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b532216163</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb424333536</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1489</dc:source>
+                    <dc:title>[Représentation de danse de Eïko Minami, 21 septembre, salle du bâtiment commémprant l'accès libre des navires étrangers au port de Yokohama] : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>36</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b532216163.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b532216163</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b532216163.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b532216163.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b532216163.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b532216163</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1933</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : lithographie, en coul. ; 110 x 80 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 2</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53221622q</dc:identifier>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Khozianskich (Varsovie)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42433682m</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1496</dc:source>
+                    <dc:subject>Spectacles et divertissements divers</dc:subject>
+                    <dc:title>Varsovie, juin 1933. 1er concours international de la danse individuelle... : [affiche] / [Nowicki Sandecka]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>37</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53221622q.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53221622q</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53221622q.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53221622q.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53221622q.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53221622q</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1936</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : affiche en coul. avec inscriptions japonaises ; 77 x 53 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53221603b</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Impr. A. Mondadori ([Verona])</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb424332788</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1476</dc:source>
+                    <dc:title>[Miudori Ishii au grand théâtre de Takarzuka, le 10 septembre] : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>38</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53221603b.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53221603b</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53221603b.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53221603b.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53221603b.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53221603b</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1934</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : affiche en coul. avec texte en anglais et inscriptions japonaises ; 77 x 35 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53221610d</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42433321k</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1483</dc:source>
+                    <dc:title>[Dance recital by S. Kawakami, [le 15 octobre au théâtre Nippon-Seinenkan à Tokyo] : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>39</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53221610d.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53221610d</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53221610d.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53221610d.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53221610d.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53221610d</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1936</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : affiche en coul. avec inscriptions japonaises ; 61.5 x 45 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53221615n</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42433349z</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1488</dc:source>
+                    <dc:title>Danses de Lidori Ishii, 18 july... 1936, à la salle de Miyamasuza [à Utsunomiya] : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>40</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53221615n.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53221615n</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53221615n.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53221615n.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53221615n.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53221615n</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1951</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : Reprod. photogr. d'une gravure anglaise du XVIIIe siècle ; 100 x 68 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53221601f</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42431191q</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1474</dc:source>
+                    <dc:title>Igor Strawinsky. The Rake's progress. La Biennale di Venezia. XIV festival internazionale di musica contemporanea. Prima esecuzione mondiale dell' opera diretta dall'autore e presentata dal complesso del teatro alla Scala di Milano, al teatro la Fenice di Venezia, 11 settembre 1951 : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>41</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53221601f.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53221601f</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53221601f.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53221601f.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53221601f.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53221601f</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1934</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : affiche en coul. avec inscriptions japonaises ; 70 x 53 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53221608k</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42433310x</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1481</dc:source>
+                    <dc:title>[Nouvelle chorégraphie de Yoshiaki Harada. 25 mai, salle municipale Hibiya à Tokyo] : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>42</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53221608k.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53221608k</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53221608k.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53221608k.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53221608k.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53221608k</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1936</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : lithographie, en couleur ; 100 x 66 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53221617j</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Impr. W. Fricke (Luxembourg)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42433364v</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-1490</dc:source>
+                    <dc:title>Grand Duché du Luxembourg. Procession dansante d'Echternach... Mardi de la Pentecôte, 2 juin 1936... : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>43</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53221617j.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53221617j</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53221617j.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53221617j.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53221617j.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53221617j</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Dransy (1883-1945). Illustrateur</dc:creator>
+                    <dc:date>1932</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : lithographie en coul. ; 157 x 116 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53221546z</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Imprimerie Publicité Etabl[issemen]ts Vercasson, 6 rue Martel. 2ème édition, Août 1932 (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb465086880</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, ENT DP-366-GRAND ROUL</dc:source>
+                    <dc:subject>Vin -- Industrie et commerce</dc:subject>
+                    <dc:subject>Boissons</dc:subject>
+                    <dc:title>Salambo. Vin aux fruits : [affiche] / Dransy</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>44</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53221546z.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53221546z</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53221546z.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53221546z.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53221546z.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53221546z</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Dransy (1883-1945). Illustrateur</dc:creator>
+                    <dc:creator>L'Ouest-Éclair (Périodique). Commanditaire du contenu</dc:creator>
+                    <dc:date>1931</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : lithographie, coul. ; 160 x 120 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53221548v</dc:identifier>
+                    <dc:identifier>IFN-53221548</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Imprimerie Publicité Etabl[issemen]ts Vercasson, 6 rue Martel. 3ème édition, Février 1931 (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb465087272</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, ENT DP-366-GRAND ROUL</dc:source>
+                    <dc:subject>Presse</dc:subject>
+                    <dc:title>L'Ouest-éclair, le grand régional républicain, 33ème année. Premier partout, le mieux informé. : [affiche] ([Variante de format et de date : 3ème édition, Février 1931]) / Dransy</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>45</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53221548v.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53221548v</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53221548v.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53221548v.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53221548v.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53221548v</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Dransy (1883-1945). Illustrateur</dc:creator>
+                    <dc:date>1931</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 impr. photoméc. : en coul. ; 126 x 89 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b532215264</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb46508527h</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, ENT DN-1 (DRANSY)-GRAND ROUL</dc:source>
+                    <dc:subject>Gitanes (cigarettes)</dc:subject>
+                    <dc:subject>Tabac</dc:subject>
+                    <dc:title>Cigarettes Gitanes, régie française : [affiche] ([Variante de tirage et de format]) / Dransy</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>46</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b532215264.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b532215264</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b532215264.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b532215264.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b532215264.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b532215264</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Dransy (1883-1945). Illustrateur</dc:creator>
+                    <dc:date>1931</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : lithographie, coul. ; 127 x 85 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b532215247</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb46508414w</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, ENT DP-364-ROUL</dc:source>
+                    <dc:subject>Pâtes alimentaires</dc:subject>
+                    <dc:subject>Lustucru. Usine (Grenoble)</dc:subject>
+                    <dc:subject>Alimentation</dc:subject>
+                    <dc:title>Le favori des ménagères. Les pâtes aux oeufs frais Per' Lustucru régalent et nourissent. A. Cartier-Millon, Grenoble : [affiche] / Dransy</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>47</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b532215247.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b532215247</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b532215247.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b532215247.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b532215247.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b532215247</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Dransy (1883-1945). Illustrateur</dc:creator>
+                    <dc:creator>L'Ouest-Éclair (Périodique). Commanditaire du contenu</dc:creator>
+                    <dc:date>1931</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : lithographie, coul. ; 120 x 80 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53221525p</dc:identifier>
+                    <dc:identifier>IFN-53221525</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb46508519w</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, ENT DP-364-ROUL</dc:source>
+                    <dc:subject>Presse</dc:subject>
+                    <dc:title>L'Ouest-Éclair, le grand régional républicain, 33 ème année. Premier partout, le mieux informé. : [affiche] ([Variante de format et de date : 4ème édition, Janvier 1931]) / Dransy</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>48</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53221525p.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53221525p</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53221525p.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53221525p.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53221525p.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53221525p</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Dransy (1883-1945). Illustrateur</dc:creator>
+                    <dc:date>1934</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : lithographie en coul. ; 160 x 116 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b532215281</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>Création Poyet Frères, 67 rue de la Victoire (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb465085772</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, ENT DN-1 (DRANSY)-GRAND ROUL</dc:source>
+                    <dc:subject>Vin -- Industrie et commerce</dc:subject>
+                    <dc:subject>Boissons</dc:subject>
+                    <dc:title>Nicolas fines bouteilles. Nectar, livreur : [affiche] ([Variante de tirage et format : 160 x 116 cm]) / d'après Dransy</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>49</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b532215281.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b532215281</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b532215281.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b532215281.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b532215281.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b532215281</uri>
+            </srw:extraRecordData>
+        </srw:record>
+    </srw:records>
+    <srw:nextRecordPosition>51</srw:nextRecordPosition>
+</srw:searchRetrieveResponse>

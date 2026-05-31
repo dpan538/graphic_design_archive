@@ -1,0 +1,2146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<srw:searchRetrieveResponse xmlns:ns6="http://gallica.bnf.fr/namespaces/gallica/" xmlns:diag="http://www.loc.gov/zing/srw/diagnostic/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:srw="http://www.loc.gov/zing/srw/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <srw:version>1.2</srw:version>
+    <srw:echoedSearchRetrieveRequest>
+        <srw:query>dc.description all "Affiche" and dc.date &gt;= "1830" and dc.date &lt;= "1930"</srw:query>
+        <srw:version>1.2</srw:version>
+    </srw:echoedSearchRetrieveRequest>
+    <srw:numberOfRecords>11374</srw:numberOfRecords>
+    <srw:extraResponseData>&lt;numberOfRecordsDecollapser&gt;13017&lt;/numberOfRecordsDecollapser&gt;</srw:extraResponseData>
+    <srw:records>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Ménétrier, Ferdinand-Léon (18..-19..?). Illustrateur</dc:creator>
+                    <dc:date>1880</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : lithographie, coul. ; 76 x 105 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b90090411</dc:identifier>
+                    <dc:identifier>IFN-9009041</dc:identifier>
+                    <dc:publisher>Bouillon Rivoire &amp; Cie Ed. (Paris])</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb40297713n</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, ENT DO-1 (MENETRIER, Ferdinand)-ROUL</dc:source>
+                    <dc:subject>Médecine préventive</dc:subject>
+                    <dc:subject>Santé</dc:subject>
+                    <dc:title>Plus de dos ronds. Breveté [...], 134 rue de Rivoli, 134, Bretelle américaine. : [affiche] / F. Ménétrier lith.</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>0</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b90090411.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b90090411</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b90090411.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b90090411.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b90090411.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b90090411</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Autant-Lara, Claude (1901-2000). Graveur</dc:creator>
+                    <dc:date>1923</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : gravure sur bois en noir et gris ; 0,48 x 0,37 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145569v</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42210170r</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-30 (a)</dc:source>
+                    <dc:title>Nous avons puisé dans l'oeuvre de Charles Péguy, les éléments d'un ouvrage scénique. Ainsi nous avons composé les Saintes heures de Jeanne d'Arc, symphonie orale en deux temps... Lundi 24 décembre 1923...Art et Action : [affiche] / bois gravé par Claude Autant-Lara</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>1</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145569v.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145569v</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145569v.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145569v.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145569v.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145569v</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Masereel, Frans (1889-1972). Graveur présumé</dc:creator>
+                    <dc:date>1922</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : bois gravé en noir et blanc ; 0,53 x 0,40 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145564m</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb422011985</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-25 (b)</dc:source>
+                    <dc:title>Liluli, de Romain Rolland sera représentée au studio d'Art et Action... le samedi 30 décembre 1922... (80ème séance). Chants d'Honegger... : [affiche] / bois gravé par [Franz Masereel]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>2</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145564m.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145564m</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145564m.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145564m.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145564m.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145564m</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Lara, Louise (1876-1952). Graveur</dc:creator>
+                    <dc:date>1924</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : gravure sur bois en noir et or ; 0,50 x 0,33 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145602m</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42204966g</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-32 (a)</dc:source>
+                    <dc:title>Tête d'or de Paul Claudel. Art et Action... : [affiche] / bois gravé par Edouard Autant</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>3</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145602m.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145602m</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145602m.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145602m.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145602m.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145602m</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Opéra national de Paris. Auteur du texte</dc:creator>
+                    <dc:date>1912</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 affiche ; 58,5 x 43 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b52506975z</dc:identifier>
+                    <dc:publisher>Théâtre national de l'Opéra (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb45056618c</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES TYPO OPERA-1912 (12-28)</dc:source>
+                    <dc:subject>Théâtre lyrique</dc:subject>
+                    <dc:title>[Théâtre] national de l'Opéra. Aujourd'hui samedi 28 décembre 1912, Les maîtres chanteurs de Nuremberg... de Richard Wagner, avec Yvonne Gall, M.r Franz, Delmas... et al.... orchestre dirigé par M. H. Rabaud... : [affiche typographique]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>4</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b52506975z.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b52506975z</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b52506975z.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b52506975z.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b52506975z.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b52506975z</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1863</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie en noir ; 0,64 x 0,49 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531455993</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>O. Legouix éditeur (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb422376660</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-131</dc:source>
+                    <dc:title>Théâtre des Champs-Élysées. Les trois Normandes. Opérette-bouffe en un acte.... Paroles de Pol Mercier, musique de Fédéric Barbier... : [affiche] / signature illsible</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>5</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531455993.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531455993</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531455993.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531455993.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531455993.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531455993</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Akakia-Viala (1903-1966). Graveur</dc:creator>
+                    <dc:date>1923</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : bois gravé ; 0,32 x 0,25 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531455652</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb422062692</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-27</dc:source>
+                    <dc:title>... Art et Action... en son studio, 66 rue Lepic à Paris... donnera le dimanche 18 février 1923... en 82ème séance, un prélude à la représentation des Noces de Wyspianski. Lecure des Noces, commentaire sur la réalisation scènique... : [affiche] / bois gravé par Akakia-Viala</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>6</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531455652.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531455652</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531455652.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531455652.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531455652.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531455652</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Akakia-Viala (1903-1966). Graveur</dc:creator>
+                    <dc:date>1925</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : gravure sur bois en noir et blanc ; 0,50 x 0,24 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145740r</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42208765j</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-37 (b)</dc:source>
+                    <dc:title>Art et Action. Le Pantoun' des pantoun' de René Ghil, en illustration animée : [affiche] / bois gravé par Akakia- Viala</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>7</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145740r.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145740r</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145740r.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145740r.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145740r.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145740r</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Sima, Joseph (1891-1971). Graveur</dc:creator>
+                    <dc:date>1930</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : gravure sur bois en rouge, noir et blanc ; 0,40 x 0,28 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145728h</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42209768t</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-57</dc:source>
+                    <dc:title>Sanatorium de Ribémont-Dessaignes à Art et Action. 3 actes. : [affiche] / bois gravé par Joseph Sima</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>8</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145728h.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145728h</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145728h.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145728h.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145728h.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145728h</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1928</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : gravure sur bois en vert et noir ; 0,33 x 0,50 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145712d</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb422153339</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-48</dc:source>
+                    <dc:title>L' Assaut à Art et Action. 4ème spectacle saison 1927-28. Le Jeu des masques, revue en spirale à travers le temps par Messieurs Eschyle, Racine, Montherlant... Fragment des Choéphores. Frangment de Andromaque. Les 11 devant la Porte dorée... Réouverture d'Art et Action... le 26 octobre 1928... : [affiche] / [non signé] ; bois gravé, non signé</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>9</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145712d.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145712d</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145712d.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145712d.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145712d.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145712d</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Autant-Lara, Claude (1901-2000). Graveur présumé</dc:creator>
+                    <dc:date>1922</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : gravure sur bois en noir et blanc ; 0,53 x 0,39 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145704w</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42200918n</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-24</dc:source>
+                    <dc:title>Art et Action présente... le vendredi 1er décembre [1922]... Panharmonie orphique, drame simultané de H.-M. Barzun... Terre poème dancing de R. Chomette... : [affiche] / bois gravé par [Claude Autant-Lara]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>10</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145704w.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145704w</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145704w.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145704w.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145704w.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145704w</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1919</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 affiche : [s.n.] ; H. : 58 x L. : 43 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 2</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b525044113</dc:identifier>
+                    <dc:publisher>[s.n.] (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb43838528k</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES TYPO OPERA-1919 (09-05)</dc:source>
+                    <dc:subject>Théâtre lyrique</dc:subject>
+                    <dc:title>Théâtre national de l'Opéra. Vendredi 5 septembre 1919, ... 1528e représentation, Faust, opéra en cinq actes de Jules Barbier et Michel Carré. Musique de Ch. Gounod : [affiche typographique]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>11</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b525044113.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b525044113</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b525044113.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b525044113.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b525044113.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b525044113</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1925</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : gravure sur bois en noir et blanc ; 0,44 x 0,28 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145733p</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42205182r</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-35</dc:source>
+                    <dc:title>Contrat social en 8 heures, De Foe et J.-J. Rousseau, par A. et A... Intérêt de réalisation : essai de synthèse moderne de différents auteurs ayant traité le même sujet. Robinson Crusoé... : [affiche] / [non signé] ; bois gravé, non signé</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>12</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145733p.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145733p</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145733p.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145733p.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145733p.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145733p</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Opéra national de Paris. Auteur du texte</dc:creator>
+                    <dc:date>1913</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 affiche ; 59 x 43,5 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b52506974h</dc:identifier>
+                    <dc:publisher>[Théâtre] national de l'Opéra (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb45056606c</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES TYPO OPERA-1913 (01-10)</dc:source>
+                    <dc:subject>Théâtre lyrique</dc:subject>
+                    <dc:title>[Théâtre] national de l'Opéra. Demain vendredi 10 janvier 1913, 234e représentation de Tannhäuser, opéra en 2 actes et 4 tableaux de Richard Wagner, traduction de [Charles] Nuitter, avec Mmes Kirsch, Caro-Lucas..., M. Altchevsky... et al., orchestre dirigé par M. H. Rabaud... : [affiche typographique]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>13</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b52506974h.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b52506974h</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b52506974h.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b52506974h.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b52506974h.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b52506974h</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1923</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. ; 0,56 x 0,39 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145566h</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42201972p</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-28</dc:source>
+                    <dc:title>Les noces Wesele, libre réalisation en trois phases du drame de Stanislas Wyspianski... Art et Action donnera sa 92e séance le dimanche 4 novembre 1923 en son studio... : [affiche] / [non signé] ; bois gravé non signé</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>14</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145566h.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145566h</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145566h.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145566h.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145566h.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145566h</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1925</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : gravure sur bois en noir, blanc et rouge ; 0,37 x 0,67 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531457344</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb422052047</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-36</dc:source>
+                    <dc:title>Robinson Crusoé. Contrat social en 8 tableaux dont 1 prologue et 1 épilogue de Daniel de Foe et J.-J. Rousseau... : [affiche] / [non signé] ; bois gravé, non signé</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>15</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531457344.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531457344</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531457344.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531457344.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531457344.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531457344</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Lara, Louise (1876-1952). Graveur</dc:creator>
+                    <dc:date>1924</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : gravure sur bois en noir et argent ; 0,50 x 0,33 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531456032</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb422050845</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-32 (b)</dc:source>
+                    <dc:title>Tête d'or de Paul Claudel. Art et Action... : [affiche] / bois gravé par Edouard Autant</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>16</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531456032.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531456032</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531456032.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531456032.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531456032.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531456032</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1921</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 affiche : [S.n.] ; H. : 58 x L. : 42 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 2</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b52504412j</dc:identifier>
+                    <dc:publisher>[s.n.] (Paris)</dc:publisher>
+                    <dc:relation>Hérodiade : opéra en 4 actes / mise en scène de Merle-Forest. - Paris : Opéra, 22-12-1921</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb43834883k</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES TYPO OPERA-1921 (12-24)</dc:source>
+                    <dc:subject>Théâtre lyrique</dc:subject>
+                    <dc:title>Théâtre national de l'Opéra. Samedi 24 décembre 1921... 1ère représentation à ce théâtre. Hérodiade, opéra en 4 actes et 7 tableaux de MM. Paul Milliet et H. Grémont. Musique de Massenet, décors de M.G. Mouveau : [affiche typographique]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>17</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b52504412j.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b52504412j</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b52504412j.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b52504412j.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b52504412j.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b52504412j</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1923</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. ; 0,65 x 0,45 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145567z</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42202060f</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-29</dc:source>
+                    <dc:title>Le dimanche 2 déc. 1923, Art et Action donnera sa 98ème séance... F. Divoire, la naissance du poème... Poème-dancing, terre de Chomette... Stéphane Mallarmé, un coup de dé jamais n'abolira le hazard... H.-M. Barzun, l'universel drame simultané Panharmonie orphique... : [affiche] / [non signé] ; bois gravé, non signé</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>18</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145567z.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145567z</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145567z.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145567z.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145567z.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145567z</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Loire, Léon (1821-1898). Lithographe</dc:creator>
+                    <dc:date>1856</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie ; 0,52 x 0,40 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531457327</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:publisher>Imp. Thierry (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb422235280</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-80</dc:source>
+                    <dc:title>Les pantins de Violette. Bouffes-Parisiens. Opérette-bouffe en un acte. Paroles de M. Léon Battu. Musique de Ad. Adam : [affiche] / lithographie de Léon Loire</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>19</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531457327.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531457327</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531457327.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531457327.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531457327.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531457327</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1924</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : gravure sur bois vert et noir ; 0,5 x 0,33 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145726m</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb422086282</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-34 (a)</dc:source>
+                    <dc:title>Art et Action. Hamlet de Jules Laforgue... : [affiche] / [non signé] ; bois gravé, non signé</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>20</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145726m.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145726m</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145726m.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145726m.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145726m.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145726m</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1925</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : gravure sur bois en noir et blanc ; 0,40 x 0,28 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531457416</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42208825k</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-38</dc:source>
+                    <dc:title>Art et Action. Un coup de dé jamais n'abolira le hasard, de S. Mallarmé. Le Pantoun' des pantoun' de R. Ghil... Le Larron de G. Apollinaire : [affiche] / [non signé] ; bois gravé, non signé</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>21</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531457416.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531457416</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531457416.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531457416.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531457416.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531457416</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Darjou, Henri-Alfred (1832-1874). Lithographe</dc:creator>
+                    <dc:date>1866</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie ; 0,65 x 0,50 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531456104</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>J. Hiélard éditeur (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42223954n</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-87</dc:source>
+                    <dc:title>Théâtre des Bouffes-Parisiens. Didon. Opéra-bouffe en deux actes et un prologue... Paroles de M. Ad. Belot. Musique de Blangini fils : [affiche] / lithographie de Henry-Alfred Darjou</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>22</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531456104.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531456104</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531456104.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531456104.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531456104.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531456104</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1889</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie en couleurs ; 0,60 x 0,42 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531456534</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:publisher>imp. E. Lévy (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42221198k</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-72</dc:source>
+                    <dc:title>Théâtre de Belleville. Dimanche 18 novembre [1888] et jours suivants, Avant l' Exposition 1889, revue de Mr Lemonnier, airs nouveaux de Mr Georges Rose... / [non signé]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>23</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531456534.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531456534</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531456534.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531456534.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531456534.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531456534</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Chaine, Joé. Graveur présumé</dc:creator>
+                    <dc:date>1929</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : gravure sur bois en blanc et bleu ; 0,45 x 0,28 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145719j</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb422172623</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-52</dc:source>
+                    <dc:title>Art et Action. Laboratoire de théâtre. Reconstruire Babel, drame philosophique en 2 actes et 2 parabases par Georges Polti : [affiche] / bois gravé par [Joé Chaine]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>24</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145719j.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145719j</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145719j.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145719j.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145719j.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145719j</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Chaine, Joé. Graveur présumé</dc:creator>
+                    <dc:date>1930</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : gravure sur bois en blanc et noir ; 0,40 x 0,28 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145604h</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42218892x</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-58</dc:source>
+                    <dc:title>Le second Faust de Goethe. Théâtre du Livre... Art et Action. [traduction de Gérard de Nerval] : [affiche] / bois gravé par [Joé Chaine]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>25</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145604h.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145604h</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145604h.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145604h.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145604h.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145604h</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Lebertre, Louis (18..-19.. ; dessinateur lithographe). Lithographe</dc:creator>
+                    <dc:creator>Autant-Lara, Claude (1901-2000). Graveur</dc:creator>
+                    <dc:date>1925</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : gravure sur bois ; 0,52 x 0,38 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531457433</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42266594b</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-40</dc:source>
+                    <dc:title>En trois actes, l'Empereur de Chine de Ribémont-Dessaigne : [affiche] / bois gravé par Louis Lebertre et Édouard Autant</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>26</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531457433.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531457433</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531457433.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531457433.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531457433.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531457433</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1834</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>estampe ; 27 x 19 cm (f.)</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b8438046c</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:relation>Jane Gray : drame historique en 3 actes et 5 tableaux / de M. Leblanc. - Paris : Théâtre du Temple, 04-09-1834</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb421114203</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, ESTAMPES SCENES JaneGray (1)</dc:source>
+                    <dc:subject>Scènes théâtrales -- 1800-1869</dc:subject>
+                    <dc:title>Théâtre dirigé par M. Dorsay ci-devant Mad.e Saqui Boulevard du Temple en face le jardin turc tous les jours, excepté le Dimanche, Jane Gray Drame historique en 3 actes et 5 tableaux de M. Leblanc, musique de M. Bellon, décors de M. Rascalon mise en scène de M. Dupuis : [estampe]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>27</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b8438046c.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b8438046c</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b8438046c.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b8438046c.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b8438046c.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b8438046c</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Opéra national de Paris. Auteur du texte</dc:creator>
+                    <dc:date>1922</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. ; 155 x 116 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53121573k</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[Théâtre national de l'Opéra] (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb44513574r</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES-45</dc:source>
+                    <dc:subject>Molière (1622-1673) -- Anniversaires</dc:subject>
+                    <dc:title>Théâtre national de l'Opéra, Bal Molière, mardi 28 fevrier 1922 : [affiche]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>28</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53121573k.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53121573k</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53121573k.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53121573k.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53121573k.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53121573k</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1876</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 dess. : crayon graphite ; 50 x 37 cm (f.)</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 2</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b8436802b</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:relation>La belle Hélène : opéra-bouffe en 3 actes / texte d'Henri Meilhac, Ludovic halévy. - Paris : Théâtre des Variétés, 30-09-1876</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb41287109p</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, ESTAMPES SCENES BelleHélène (4)</dc:source>
+                    <dc:subject>Scènes théâtrales -- 1870-1913</dc:subject>
+                    <dc:title>La Belle Hélène : [dessin]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>dessin</dc:type>
+                    <dc:type>drawing</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>29</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b8436802b.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b8436802b</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b8436802b.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b8436802b.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b8436802b.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b8436802b</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1923</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 affiche ; H. : 60 x L. : 42,5 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b52504108p</dc:identifier>
+                    <dc:publisher>[Société de Publicité Artistique, Industrielle et Commerciale] (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb437803686</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, AFFICHES TYPO OPERA-1823 (03-17)</dc:source>
+                    <dc:subject>Théâtre lyrique</dc:subject>
+                    <dc:title>Théâtre national de l'Opéra. Samedi 17 mars 1923. La Walkyrie, opéra en 3 actes de Richard Wagner : [affiche typographique]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>30</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b52504108p.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b52504108p</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b52504108p.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b52504108p.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b52504108p.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b52504108p</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1855</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 affiche ; H. : 61,5 x L. : 43 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b525041094</dc:identifier>
+                    <dc:publisher>[Typographie Morris et Comp., 64 rue Amelot] (Paris)</dc:publisher>
+                    <dc:relation>Les vêpres siciliennes : opéra en cinq actes / musique de Giuseppe Verdi. - Paris : Théâtre de l'Opéra-Le Peletier, 13-06-1855</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb43774207g</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES TYPO OPERA-1855 (06-13)</dc:source>
+                    <dc:subject>Théâtre lyrique</dc:subject>
+                    <dc:title>Théâtre impérial de l'Opéra. Aujourd'hui mercredi 13 juin 1855, première représentation. Les Vêpres siciliennes, opéra en 5 actes : [affiche typographique]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>31</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b525041094.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b525041094</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b525041094.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b525041094.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b525041094.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b525041094</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Idelson, Vera (1893-1977). Graveur présumé</dc:creator>
+                    <dc:date>1927</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : gravure sur bois en noir et blanc ; 0,55 x 0,37 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145614x</dc:identifier>
+                    <dc:identifier>IFN-53145614</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42219286k</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-43</dc:source>
+                    <dc:title>L' Assaut à Art et Action. L'angoisse des machines. Synthèse tragique en 3 temps, Rugger Vasari, 27, 29 , 30 avril... 31 avril... Mise en scène du studio l'Assaut : [affiche] / bois gravé par [Vera Idelson]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>32</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145614x.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145614x</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145614x.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145614x.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145614x.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145614x</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Chana Orloff (1888-1968). Graveur</dc:creator>
+                    <dc:date>1921</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : bois gravé ; 0,4 x 0,5 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145562q</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42190441g</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-21</dc:source>
+                    <dc:title>Art et Action...Le Partage du midi de Paul Claudel... : [affiche] / bois gravé par Orloff Chana</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>33</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145562q.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145562q</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145562q.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145562q.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145562q.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145562q</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Autant-Lara, Claude (1901-2000). Graveur</dc:creator>
+                    <dc:date>1927</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : gravure sur bois en bleu et brun ; 0,50 x 0,32 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145706s</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42217072v</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-45</dc:source>
+                    <dc:title>Art et Action clôturera son étude sur l'art dramatique russe en 1927 aux dates précisées aux invitations incluses. Assisté du groupe n. 4... Ruzzante ou le Retour de la guerre, parade traduite du Padouan (1529), par Alfred Mortier... Le vendredi 9, samedi 10 et dimanche 11 mars 1928, Gulliver au pays des géants... : [affiche] / bois gravé par Claude Autant-Lara</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>34</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145706s.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145706s</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145706s.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145706s.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145706s.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145706s</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Autant-Lara, Claude (1901-2000). Graveur présumé</dc:creator>
+                    <dc:date>19..</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : bois gravé sur papier bleu ; 0,53 x 0,395 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531457166</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42215557v</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-30 (b)</dc:source>
+                    <dc:title>Nous avons puisé dans l'oeuvre de Charles Péguy, les éléments d'un ouvrage scénique. Ainsi nous avons composé les Saintes heures de Jeanne d'Arc, symphonie orale en deux temps... Art et Action : [affiche] / bois gravé par [Claude Autant-Lara]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>35</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531457166.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531457166</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531457166.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531457166.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531457166.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531457166</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Opéra national de Paris. Auteur du texte</dc:creator>
+                    <dc:date>1919</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 affiche ; 59 x 43,5 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b52506976d</dc:identifier>
+                    <dc:publisher>Théâtre national Opéra (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb45056620x</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES TYPO OPERA-1919 (06-21)</dc:source>
+                    <dc:subject>Théâtre lyrique</dc:subject>
+                    <dc:title>Théâtre national Opéra, samedi 21 juin 1919..., Faust,... de Carré, musique de [Charles] Gounod, avec Germaine Lubin, Léon Laffitte, Marcel Journet... et al...., orchestre dirigé par M. Henri Busser... : [affiche typographique]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>36</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b52506976d.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b52506976d</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b52506976d.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b52506976d.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b52506976d.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b52506976d</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Houdin, Georges (affichiste). Lithographe</dc:creator>
+                    <dc:date>1889</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie en couleurs ; 1,24 x 0,89 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145661n</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:publisher>imp. Chaix (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42266636f</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-73</dc:source>
+                    <dc:title>Théâtre de Belleville. Dimanche 10 novembre [1889] et jours suivants, Paris centenaire, revue en 4 actes, 12 tableaux de MM. Lemonnier... / lithographie de Houdin</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>37</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145661n.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145661n</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145661n.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145661n.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145661n.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145661n</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1886</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie ; 0,78 x 0,55 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531457094</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>Choudens éditeur (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb422349992</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-114</dc:source>
+                    <dc:title>Joséphine vendue par ses soeurs. Opéra-bouffe en 3 actes. Poème de P. Ferrier et F. Carré. Musique de Victor Roger : [affiche] / lithographie de E. P.</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>38</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531457094.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531457094</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531457094.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531457094.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531457094.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531457094</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Lefèvre, Lucien (1850?-1... ; dessinateur). Lithographe</dc:creator>
+                    <dc:date>1891</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie tirage en sanguine ; 0,64 x 0,45 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145636n</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>A. Leduc éditeur (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42235705k</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-118</dc:source>
+                    <dc:title>Théâtre des Bouffes-Parisiens. Cercle funambulesque. Coeur brisé. Pantomime en un acte de M. Arbel. Musique de Georges Hüe : [affiche] / lithographie de Lucien Lefèvre</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>39</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145636n.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145636n</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145636n.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145636n.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145636n.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145636n</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Stop (1825-1899). Lithographe</dc:creator>
+                    <dc:date>1874</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie ; 0,65 x 0,50 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531456195</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n][s.n]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42225532q</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-95</dc:source>
+                    <dc:title>Bouffes-Parisiens. Bagatelle. Opéra-comique en un acte de H. Crémieux et E. Blum. Musique de J. Offenbach : [affiche] / lithographie de Stop</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>40</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531456195.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531456195</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531456195.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531456195.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531456195.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531456195</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Autant-Lara, Claude (1901-2000). Graveur</dc:creator>
+                    <dc:date>1928</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : gravure sur bois en jaune et noir ; 0,55 x 0,44 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531457149</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42216441f</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-50 (a)</dc:source>
+                    <dc:title>Une saison en enfer d'Arthur Rimbaud, présentée par Henri Strentz. Intérêt de réalisation : essai de dramaturgie par analyse spiritualiste du lyrisme... : [affiche] / bois gravé par Claude Autant-Lara</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>41</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531457149.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531457149</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531457149.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531457149.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531457149.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531457149</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1897</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : lithographie en couleur ; 0,78 x 0,63 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145672h</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:publisher>imp. Dupont (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb422207562</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-68</dc:source>
+                    <dc:title>Théâtre de l'Athénée-Comique. Le cabinet Piperlin. Opérette-bouffe en 3 actes. Paroles de Hippolyte Raymond et Paul Buriani. Musique d'Hervé. : [affiche] / [non signé] ; lithographie non signée</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>42</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145672h.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145672h</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145672h.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145672h.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145672h.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145672h</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Autant, Édouard (1872-1964). Graveur</dc:creator>
+                    <dc:date>1928</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : gravure sur bois ; 50 x 33 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531457077</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb422163059</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-47</dc:source>
+                    <dc:title>Gulliver, pays des nains et des géants. Au 1er acte, Gulliver est gardien de cimetière. Les géants ce sont les morts, les nains sont les vivants. L'homme doit vivre au delà de lui-même. Le public d'A. et A. dira comment et selon son désir, car à chaque représentation il donnera le thème du 2e acte qui sera improvisé en comédie spontanée moderne. Le 2e acte concluera cette proposition d'étude scénique par un hymne à la vie simultanéisé... [Comédie d'Edouard Autant d'après Jonathan Swift]. Art et Action... En avril, séance par le groupe l'Assaut. : [affiche] / bois gravé par Édouard Autant</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>43</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531457077.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531457077</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531457077.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531457077.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531457077.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531457077</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Porret, Henri Désiré (1800-1867). Graveur</dc:creator>
+                    <dc:date>1858</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. ; 0,89 x 0,62 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531456712</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:publisher>Typo. Morris (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb421820649</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-4</dc:source>
+                    <dc:title>Ambigu-Comique... Aujourd'hui samedi 8 mai 1858, représentations de M. Melingue. Deuxième représentation Benvenuto Cellini, drame en cinq actes et huit tableaux de M. Paul Meurice... Musique de M. Groot... : [affiche] / bois gravé par H. Porret ; d'après E. G.</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>44</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531456712.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531456712</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531456712.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531456712.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531456712.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531456712</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1924</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : gravure sur bois en noir et blanc ; 0,57 x 0,37 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145606d</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42208651k</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-34 (b)</dc:source>
+                    <dc:title>Art et Action. Hamlet de Jules Laforgue... : [affiche] / [non signé] ; bois gravé, non signé</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>45</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145606d.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145606d</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145606d.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145606d.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145606d.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145606d</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Masereel, Frans (1889-1972). Graveur présumé</dc:creator>
+                    <dc:date>1922</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : gravure sur bois en noir et blanc ; 0,53 x 0,40 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145705b</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42201036b</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-25 (a)</dc:source>
+                    <dc:title>Liluli, de Romain Rolland sera représentée au studio d'Art et Action... le samedi 30 décembre 1922... (80ème séance). Chants d'Honegger... : [affiche] / bois gravé par [Franz Masereel]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>46</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145705b.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145705b</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145705b.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145705b.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145705b.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145705b</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Autant, Édouard (1872-1964). Graveur présumé</dc:creator>
+                    <dc:date>1926</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : gravure sur bois ; 0,42 x 0,36 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531456121</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42217023n</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-41</dc:source>
+                    <dc:title>Le neveu de Rameau parade. Paroles de Diderot... Musique de Rameau... Art et Action : [affiche] / bois gravé par [Édouard Autant]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>47</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531456121.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531456121</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531456121.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531456121.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531456121.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531456121</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Chaine, Joé. Graveur présumé</dc:creator>
+                    <dc:date>1922</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 estampe : gravure sur bois en bleu et blanc ; 0,28 x 0,45 m</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53145711z</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>[s.n.][s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42215473t</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Bibliothèque-musée de l'opéra, AFFICHES ILLUSTREES-26</dc:source>
+                    <dc:title>Art et Action. Laboratoire de théâtre. Comédie spontanée moderne (3ème année). Recherche de scénario (thème donné par le public). Étude des relativités dans la comédie enchaînée avec ou sans trochet (sujet unique avec caractères différents traités par trois troupes successives)... : [affiche] / bois gravé par [Joé Chaine]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>48</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53145711z.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53145711z</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53145711z.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53145711z.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53145711z.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53145711z</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1928</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 affiche ; H. : 58,5 x L. : 42 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b52504077r</dc:identifier>
+                    <dc:publisher>[Société Fermière des Colonnes-Affiches] (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb437803190</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, AFFICHES TYPO OPERA-1828 (01-22)</dc:source>
+                    <dc:subject>Théâtre lyrique</dc:subject>
+                    <dc:title>Théâtre national de l'Opéra. Dimanche 22 janvier 1928. La Walkyrie, opéra en 3 actes de Richard Wagner : [affiche typographique]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>49</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b52504077r.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b52504077r</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b52504077r.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b52504077r.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b52504077r.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b52504077r</uri>
+            </srw:extraRecordData>
+        </srw:record>
+    </srw:records>
+    <srw:nextRecordPosition>51</srw:nextRecordPosition>
+</srw:searchRetrieveResponse>

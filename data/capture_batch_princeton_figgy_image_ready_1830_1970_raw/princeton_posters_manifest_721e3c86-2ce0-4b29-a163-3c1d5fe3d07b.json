@@ -1,0 +1,208 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://figgy.princeton.edu/concern/scanned_resources/721e3c86-2ce0-4b29-a163-3c1d5fe3d07b/manifest",
+  "@type": "sc:Manifest",
+  "description": "\"A show in Other Books and So, Herengracht 227, Amsterdam, 9.27 August 1977.\"",
+  "label": "Art is a prison : Horacio Zabala's project-book : [exhibition poster].",
+  "license": "http://rightsstatements.org/vocab/CNE/1.0/",
+  "logo": "https://figgy.princeton.edu/pul_logo_icon.png",
+  "metadata": [
+    {
+      "label": "Artist",
+      "value": [
+        "Zabala, Horacio, 1943-"
+      ]
+    },
+    {
+      "label": "Host Institution",
+      "value": [
+        "Other Books and So (Bookstore)"
+      ]
+    },
+    {
+      "label": "Extent",
+      "value": [
+        "1 poster : illustrations ; 53 x 29 cm"
+      ]
+    },
+    {
+      "label": "Identifier",
+      "value": [
+        "ark:/88435/dcxs55mq696"
+      ]
+    },
+    {
+      "label": "Title",
+      "value": [
+        {
+          "@language": "en",
+          "@value": "Art is a prison : Horacio Zabala's project-book : [exhibition poster]."
+        }
+      ]
+    },
+    {
+      "label": "Type",
+      "value": [
+        "Posters"
+      ]
+    },
+    {
+      "label": "Content Type",
+      "value": [
+        "Visual material"
+      ]
+    },
+    {
+      "label": "Provenance",
+      "value": [
+        "Princeton copy 1 Signed by the artist."
+      ]
+    },
+    {
+      "label": "Creator",
+      "value": [
+        "Zabala, Horacio, 1943-"
+      ]
+    },
+    {
+      "label": "Date",
+      "value": [
+        "1977"
+      ]
+    },
+    {
+      "label": "Language",
+      "value": [
+        "English"
+      ]
+    },
+    {
+      "label": "Publisher",
+      "value": [
+        "[Amsterdam, Netherlands] : [Other Books and So], [1977]"
+      ]
+    },
+    {
+      "label": "Subject",
+      "value": [
+        "Zabala, Horacio 1943-—Exhibitions"
+      ]
+    },
+    {
+      "label": "Call Number",
+      "value": [
+        "N6639.Z33 A4 1977"
+      ]
+    },
+    {
+      "label": "Location",
+      "value": [
+        "Marquand Library N6639.Z33 A4 1977"
+      ]
+    },
+    {
+      "label": "Embargo Date",
+      "value": [
+        ""
+      ]
+    },
+    {
+      "label": "Member Of Collections",
+      "value": [
+        "Curated Selections from Marquand Library",
+        "Ulises Carrion Exhibition 2024"
+      ]
+    }
+  ],
+  "rendering": {
+    "@id": "http://arks.princeton.edu/ark:/88435/dcxs55mq696",
+    "format": "text/html"
+  },
+  "seeAlso": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/721e3c86-2ce0-4b29-a163-3c1d5fe3d07b.jsonld",
+      "format": "application/ld+json"
+    },
+    {
+      "@id": "https://catalog.princeton.edu/catalog/99125419845506421.marcxml",
+      "format": "text/xml"
+    }
+  ],
+  "sequences": [
+    {
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/721e3c86-2ce0-4b29-a163-3c1d5fe3d07b/manifest/sequence/normal",
+      "@type": "sc:Sequence",
+      "canvases": [
+        {
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/721e3c86-2ce0-4b29-a163-3c1d5fe3d07b/manifest/canvas/fda4a4e2-453f-4c24-aa41-c3d81dc9816b",
+          "@type": "sc:Canvas",
+          "height": 11212,
+          "images": [
+            {
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/721e3c86-2ce0-4b29-a163-3c1d5fe3d07b/manifest/image/fda4a4e2-453f-4c24-aa41-c3d81dc9816b",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/721e3c86-2ce0-4b29-a163-3c1d5fe3d07b/manifest/canvas/fda4a4e2-453f-4c24-aa41-c3d81dc9816b",
+              "resource": {
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/28%2Fe0%2F73%2F28e073acd1074efaa96085c475d67f25%2Fintermediate_file/full/1000,/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 11212,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/28%2Fe0%2F73%2F28e073acd1074efaa96085c475d67f25%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 6251
+              }
+            }
+          ],
+          "label": "00000001",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/fda4a4e2-453f-4c24-aa41-c3d81dc9816b/file/9c29cf57-0a17-4496-8009-55eaf60771ec",
+              "format": "image/tiff",
+              "label": "Download the original file"
+            }
+          ],
+          "thumbnail": {
+            "@id": "https://iiif-cloud.princeton.edu/iiif/2/28%2Fe0%2F73%2F28e073acd1074efaa96085c475d67f25%2Fintermediate_file/full/!200,150/0/default.jpg",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id": "https://iiif-cloud.princeton.edu/iiif/2/28%2Fe0%2F73%2F28e073acd1074efaa96085c475d67f25%2Fintermediate_file",
+              "profile": "http://iiif.io/api/image/2/level2.json"
+            }
+          },
+          "width": 6251
+        }
+      ],
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/catalog/721e3c86-2ce0-4b29-a163-3c1d5fe3d07b/pdf",
+          "format": "application/pdf",
+          "label": "Download as PDF"
+        }
+      ],
+      "viewingHint": "individuals"
+    }
+  ],
+  "structures": [
+    {
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/721e3c86-2ce0-4b29-a163-3c1d5fe3d07b/manifest/range/r6f0eaaa4-9ac4-4473-b92f-ff1699187d06",
+      "@type": "sc:Range",
+      "canvases": [],
+      "label": "Logical",
+      "ranges": [],
+      "viewingHint": "top"
+    }
+  ],
+  "thumbnail": {
+    "@id": "https://iiif-cloud.princeton.edu/iiif/2/28%2Fe0%2F73%2F28e073acd1074efaa96085c475d67f25%2Fintermediate_file/full/!200,150/0/default.jpg",
+    "service": {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://iiif-cloud.princeton.edu/iiif/2/28%2Fe0%2F73%2F28e073acd1074efaa96085c475d67f25%2Fintermediate_file",
+      "profile": "http://iiif.io/api/image/2/level2.json"
+    }
+  },
+  "viewingHint": "individuals"
+}

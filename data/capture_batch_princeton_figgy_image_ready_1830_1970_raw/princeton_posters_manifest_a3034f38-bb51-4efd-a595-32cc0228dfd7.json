@@ -1,0 +1,98 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://figgy.princeton.edu/concern/scanned_resources/a3034f38-bb51-4efd-a595-32cc0228dfd7/manifest",
+  "@type": "sc:Collection",
+  "label": "Car Card, Poster Advertising and Printing",
+  "license": "http://rightsstatements.org/vocab/CNE/1.0/",
+  "manifests": [
+    {
+      "@context": "http://iiif.io/api/presentation/2/context.json",
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/56b1b997-75a4-4f96-a77d-7d27f5b34501/manifest?flatten=true",
+      "@type": "sc:Manifest",
+      "label": [
+        "Car_Card_Poster_Advertising_and_Printing"
+      ],
+      "thumbnail": {
+        "@id": "https://iiif-cloud.princeton.edu/iiif/2/09%2F0a%2F15%2F090a15f31bf545e393bb8a71f4974168%2Fintermediate_file/full/!200,150/0/default.jpg",
+        "service": {
+          "@context": "http://iiif.io/api/image/2/context.json",
+          "@id": "https://iiif-cloud.princeton.edu/iiif/2/09%2F0a%2F15%2F090a15f31bf545e393bb8a71f4974168%2Fintermediate_file",
+          "profile": "http://iiif.io/api/image/2/level2.json"
+        }
+      }
+    }
+  ],
+  "metadata": [
+    {
+      "label": "Date Created",
+      "value": [
+        "1941"
+      ]
+    },
+    {
+      "label": "Extent",
+      "value": [
+        "1 folder"
+      ]
+    },
+    {
+      "label": "Identifier",
+      "value": [
+        "ark:/88435/dcw6634f72b"
+      ]
+    },
+    {
+      "label": "Title",
+      "value": [
+        "Car Card, Poster Advertising and Printing"
+      ]
+    },
+    {
+      "label": "Language",
+      "value": [
+        "English"
+      ]
+    },
+    {
+      "label": "Publisher",
+      "value": [
+        "Fight for Freedom (Organization)"
+      ]
+    },
+    {
+      "label": "Container",
+      "value": [
+        "Box 55, Folder 2"
+      ]
+    },
+    {
+      "label": "Member Of Collections",
+      "value": [
+        "Fight for Freedom, Inc. Records (MC025)"
+      ]
+    }
+  ],
+  "rendering": {
+    "@id": "http://arks.princeton.edu/ark:/88435/dcw6634f72b",
+    "format": "text/html"
+  },
+  "seeAlso": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/a3034f38-bb51-4efd-a595-32cc0228dfd7.jsonld",
+      "format": "application/ld+json"
+    },
+    {
+      "@id": "https://findingaids.princeton.edu/catalog/MC025_c00960.xml",
+      "format": "text/xml"
+    }
+  ],
+  "thumbnail": {
+    "@id": "https://iiif-cloud.princeton.edu/iiif/2/09%2F0a%2F15%2F090a15f31bf545e393bb8a71f4974168%2Fintermediate_file/full/!200,150/0/default.jpg",
+    "service": {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://iiif-cloud.princeton.edu/iiif/2/09%2F0a%2F15%2F090a15f31bf545e393bb8a71f4974168%2Fintermediate_file",
+      "profile": "http://iiif.io/api/image/2/level2.json"
+    }
+  },
+  "viewingHint": "multi-part"
+}

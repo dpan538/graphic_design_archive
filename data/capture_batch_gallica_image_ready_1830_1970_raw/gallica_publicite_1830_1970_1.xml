@@ -1,0 +1,2097 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<srw:searchRetrieveResponse xmlns:ns6="http://gallica.bnf.fr/namespaces/gallica/" xmlns:diag="http://www.loc.gov/zing/srw/diagnostic/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:srw="http://www.loc.gov/zing/srw/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <srw:version>1.2</srw:version>
+    <srw:echoedSearchRetrieveRequest>
+        <srw:query>dc.title all "publicité" and dc.date &gt;= "1830" and dc.date &lt;= "1970"</srw:query>
+        <srw:version>1.2</srw:version>
+    </srw:echoedSearchRetrieveRequest>
+    <srw:numberOfRecords>447</srw:numberOfRecords>
+    <srw:extraResponseData>&lt;numberOfRecordsDecollapser&gt;4636&lt;/numberOfRecordsDecollapser&gt;</srw:extraResponseData>
+    <srw:records>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1903-1939</dc:date>
+                    <dc:description>Périodicité : Mensuel</dc:description>
+                    <dc:description>Etat de collection : 1903-1939</dc:description>
+                    <dc:format>Nombre total de vues : 266</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb344576240/date</dc:identifier>
+                    <dc:identifier>ISSN 11625112</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.] (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb344576240</dc:relation>
+                    <dc:relation>A pour reproduction : La Publicité (Paris. Reproduction numérique) = ISSN 2391-2863 (https://gallica.bnf.fr/ark:/12148/cb344576240/date)</dc:relation>
+                    <dc:source>Bibliothèque nationale de France, département Sciences et techniques, 4-V-6313</dc:source>
+                    <dc:title>La Publicité (Paris)</dc:title>
+                    <dc:title>La Publicité : journal technique des annonceurs</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>0</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k9818908x.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb344576240/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k9818908x.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k9818908x.medres</medres>
+                <nqamoyen>99.65</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k9818908x.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k9818908x</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:coverage>.. août 1925</dc:coverage>
+                    <dc:creator>Agence Rol. Agence photographique (commanditaire)</dc:creator>
+                    <dc:date>1925</dc:date>
+                    <dc:description>Référence bibliographique : Rol, 103451</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : Pho20Rol</dc:description>
+                    <dc:description>Image de presse</dc:description>
+                    <dc:format>1 photogr. nég. sur verre ; 13 x 18 cm (sup.)</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53152112d</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb45296068f</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, EI-13 (1249)</dc:source>
+                    <dc:subject>Absinthe (liqueur) -- Publicité -- Paris (France)</dc:subject>
+                    <dc:subject>Paris (France)</dc:subject>
+                    <dc:title>Publicité [la cressonnée, absinthe ?] : [photographie de presse] / [Agence Rol]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>photographie</dc:type>
+                    <dc:type>photograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>1</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53152112d.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53152112d</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53152112d.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53152112d.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53152112d.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53152112d</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Plas, Bernard de. Auteur du texte</dc:creator>
+                    <dc:creator>Verdier, Henri (1898-1982). Auteur du texte</dc:creator>
+                    <dc:date>1970</dc:date>
+                    <dc:description>Contient une table des matières</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>1 vol. (128 p.) ; 18 cm</dc:format>
+                    <dc:format>Nombre total de vues : 142</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k3362630s</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>Presses universitaires de France (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb35199566k</dc:relation>
+                    <dc:rights>conditions spécifiques d'utilisation - Projet de numérisation des indisponibles</dc:rights>
+                    <dc:rights>restricted use</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Sciences et techniques, 16-V-8821</dc:source>
+                    <dc:title>La Publicité , par Bernard de Plas et Henri Verdier. 10e édition mise à jour</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>2</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k3362630s.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k3362630s</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k3362630s.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k3362630s.medres</medres>
+                <nqamoyen>99.99</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k3362630s.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k3362630s</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1850</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : RCorse1</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>In-8 °. Pièce</dc:format>
+                    <dc:format>Nombre total de vues : 26</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k5676232w</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>Impr. de C. Fabiani (Bastia)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb363279129</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Philosophie, histoire, sciences de l'homme, 8-LB55-1410</dc:source>
+                    <dc:subject>France (1848-1852, 2e République)</dc:subject>
+                    <dc:title>La voix de Dieu et des hommes, ou adresses républicaines et philanthropiques aux souverains, à Napoléon-Louis, à la France et à ses grands citoyens. Ouvrage recommandé, pour sa publicité, au patriotisme de tous les journalistes bons républicains, français et étrangers</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>3</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k5676232w.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k5676232w</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k5676232w.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k5676232w.medres</medres>
+                <nqamoyen>99.98</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k5676232w.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k5676232w</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1968</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 est. : sérigr. ; 57 x 80 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b9018084r</dc:identifier>
+                    <dc:identifier>IFN-9018084</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:publisher>[s.n.] ([Paris])</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb39841976s</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, ENT QB-1 (1968 , 4)-FT 6</dc:source>
+                    <dc:subject>France -- 1968 (Journées de mai)</dc:subject>
+                    <dc:subject>Histoire</dc:subject>
+                    <dc:title>[Mai 1968]. Fer de lance de l'exploitation. La publicité, [août 1968]. Atelier populaire : [affiche] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>4</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b9018084r.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b9018084r</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b9018084r.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b9018084r.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b9018084r.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b9018084r</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1913-1914</dc:date>
+                    <dc:description>Périodicité : Hebdomadaire ; bihebdomadaire</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : BIPFPIG00</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : BIPFPIG59</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : Roubaix1</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : BIPFPIG59</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : NordPdeC1</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>Nombre total de vues : 121</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb327703542/date</dc:identifier>
+                    <dc:identifier>NUMP-4994</dc:identifier>
+                    <dc:identifier>ISSN 21275726</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.] (Roubaix)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb327703542</dc:relation>
+                    <dc:relation>A pour reproduction : L'Étoile du Nord (Roubaix. Reproduction numérique) = ISSN 2390-5514 (https://gallica.bnf.fr/ark:/12148/cb327703542/date)</dc:relation>
+                    <dc:relation>Première de couverture : 220603</dc:relation>
+                    <dc:source>Bibliothèque nationale de France, département Droit, économie, politique, JO-57259</dc:source>
+                    <dc:title>L'Étoile du Nord (Roubaix)</dc:title>
+                    <dc:title>L'Étoile du Nord : journal hebdomadaire d'informations, finance, publicité...</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>5</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k5679840f.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb327703542/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k5679840f.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k5679840f.medres</medres>
+                <nqamoyen>91.31</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k5679840f.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k5679840f</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1842</dc:date>
+                    <dc:format>In-fol.</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k141756k</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>imp. de P. Renouard (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb33235643w</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, V-6005</dc:source>
+                    <dc:title>Agence de Publicité-Dollingen</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>6</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k141756k.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k141756k</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k141756k.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k141756k.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k141756k.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k141756k</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1905-1909</dc:date>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>Nombre total de vues : 582</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb32846032x/date</dc:identifier>
+                    <dc:identifier>NUMP-4452</dc:identifier>
+                    <dc:identifier>ISSN 29686458</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.] (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb32846032x</dc:relation>
+                    <dc:relation>A pour reproduction : La Publicité moderne (Reproduction numérique) = ISSN 2968-6431 (https://gallica.bnf.fr/ark:/12148/cb32846032x/date)</dc:relation>
+                    <dc:source>Bibliothèque nationale de France, département Sciences et techniques, 4-V-6791</dc:source>
+                    <dc:title>La Publicité moderne : revue mensuelle</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>7</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k5566152s.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb32846032x/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k5566152s.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k5566152s.medres</medres>
+                <nqamoyen>96.52</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k5566152s.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k5566152s</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1846</dc:date>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>In-8 °. Pièce</dc:format>
+                    <dc:format>Nombre total de vues : 18</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k5651589m</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>Impr. de Schneider et Langrand (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb36322346r</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Philosophie, histoire, sciences de l'homme, 8-LB51-4127</dc:source>
+                    <dc:subject>France (1830-1848, Louis-Philippe)</dc:subject>
+                    <dc:title>De la publicité des débats parlementaires</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>8</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k5651589m.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k5651589m</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k5651589m.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k5651589m.medres</medres>
+                <nqamoyen>99.98</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k5651589m.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k5651589m</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1900</dc:date>
+                    <dc:description>Ancien possesseur : Bimbert, Augustin Albert (1875-19..). Ancien possesseur</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : BmLHav000</dc:description>
+                    <dc:format>1 plaque de verre : photographie négative ; 9 x 12 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b10587649w</dc:identifier>
+                    <dc:language>Sans contenu linguistique</dc:language>
+                    <dc:relation>Notice de recueil : http://catalogue.bnf.fr/ark:/12148/cb45786070n</dc:relation>
+                    <dc:relation>Appartient à : [Fonds Augustin Bimbert, scènes d'extérieur normandes, alpines et italiennes]</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb45889573z</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque municipale du Havre, Ph BIM 078</dc:source>
+                    <dc:title>[Croisement de routes et publicité murale]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>photographie</dc:type>
+                    <dc:type>photograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>9</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b10587649w.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b10587649w</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b10587649w.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b10587649w.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b10587649w.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b10587649w</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1920-1930</dc:date>
+                    <dc:description>Ancien possesseur : Bimbert, Augustin Albert (1875-19..). Ancien possesseur</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : BmLHav000</dc:description>
+                    <dc:format>1 plaque de verre : photographie négative ; 9 x 12 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b10587658v</dc:identifier>
+                    <dc:language>Sans contenu linguistique</dc:language>
+                    <dc:relation>Notice de recueil : http://catalogue.bnf.fr/ark:/12148/cb45786070n</dc:relation>
+                    <dc:relation>Appartient à : [Fonds Augustin Bimbert, scènes d'extérieur normandes, alpines et italiennes]</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb45889582x</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque municipale du Havre, Ph BIM 087</dc:source>
+                    <dc:title>[Croisement de routes et publicité murale]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>photographie</dc:type>
+                    <dc:type>photograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>10</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b10587658v.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b10587658v</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b10587658v.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b10587658v.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b10587658v.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b10587658v</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Arren, Jules (1876-1915). Auteur du texte</dc:creator>
+                    <dc:date>1914</dc:date>
+                    <dc:description>Contient une table des matières</dc:description>
+                    <dc:format>1 vol. (328 p.) : ill., couv. ill. en coul. ; 19 cm</dc:format>
+                    <dc:format>Nombre total de vues : 334</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k49964p</dc:identifier>
+                    <dc:identifier>NUMM-49964</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>A. Mame et fils (Tours)</dc:publisher>
+                    <dc:relation>Notice d'ensemble : http://catalogue.bnf.fr/ark:/12148/cb317340082</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb317340082</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Sciences et techniques, 8-V-37836</dc:source>
+                    <dc:subject>Publicité</dc:subject>
+                    <dc:title>Sa majesté la publicité / J. Arren</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>11</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k49964p.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k49964p</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k49964p.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k49964p.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k49964p.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k49964p</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Messan (sabotier). Auteur du texte</dc:creator>
+                    <dc:date>1848</dc:date>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>In-8° , 15 p.</dc:format>
+                    <dc:format>Nombre total de vues : 18</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k5612236n</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>impr. de Milliet-Bottier (Bourg)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb309339791</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Philosophie, histoire, sciences de l'homme, 8-LB53-1021</dc:source>
+                    <dc:title>Publicité politique d'un ouvrier [Messan, sabotier]</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>12</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k5612236n.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k5612236n</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k5612236n.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k5612236n.medres</medres>
+                <nqamoyen>99.98</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k5612236n.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k5612236n</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1886-19..</dc:date>
+                    <dc:description>Variante(s) de titre : L'Avenir commercial : journal d'annonces, fondé en 1886, spécial pour la vente, achat ou location des fonds de commerce</dc:description>
+                    <dc:description>Périodicité : Hebdomadaire</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>Nombre total de vues : 35268</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb327080223/date</dc:identifier>
+                    <dc:identifier>ISSN 24276219</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher> (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb327080223</dc:relation>
+                    <dc:source>Bibliothèque nationale de France, département Sciences et techniques, 8-V-25353</dc:source>
+                    <dc:title>L'Avenir commercial (Paris. 1886)</dc:title>
+                    <dc:title>L'Avenir commercial : journal spécial de publicité</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>13</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k5706805c.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb327080223/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k5706805c.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k5706805c.medres</medres>
+                <nqamoyen>92.45</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k5706805c.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k5706805c</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Gérin, Octave Jacques (1875-1937). Auteur du texte</dc:creator>
+                    <dc:date>1920</dc:date>
+                    <dc:description>Collection : Bibliothèque de L'Usine</dc:description>
+                    <dc:description>Collection : Bibliothèque de L'Usine</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>1 vol. (52 p.) : pl. ; in-8</dc:format>
+                    <dc:format>Nombre total de vues : 68</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k1179732h</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher> (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb32159326j</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Sciences et techniques, 8-V-17191</dc:source>
+                    <dc:title>La publicité industrielle / par Octave-Jacques Gérin,...</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>14</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k1179732h.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k1179732h</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k1179732h.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k1179732h.medres</medres>
+                <nqamoyen>89.05</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k1179732h.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k1179732h</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:coverage>.. janvier 1921</dc:coverage>
+                    <dc:creator>Agence Rol. Agence photographique (commanditaire)</dc:creator>
+                    <dc:date>1921</dc:date>
+                    <dc:description>Référence bibliographique : Rol, 63484</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : Pho20Rol</dc:description>
+                    <dc:description>Image de presse</dc:description>
+                    <dc:format>1 photogr. nég. sur verre ; 13 x 18 cm (sup.)</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53053559s</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb435253486</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, EI-13 (760)</dc:source>
+                    <dc:subject>Publicité</dc:subject>
+                    <dc:title>Publicité originale : [photographie de presse] / [Agence Rol]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>photographie</dc:type>
+                    <dc:type>photograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>15</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53053559s.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53053559s</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53053559s.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53053559s.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53053559s.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53053559s</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1874-1874</dc:date>
+                    <dc:description>Etat de collection : 1874</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>Nombre total de vues : 10</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb32845987f/date</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.] (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb32845987f</dc:relation>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, V-5621</dc:source>
+                    <dc:title>La Publicité attractive et amusante : journal gratuit</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>16</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k58428116.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb32845987f/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k58428116.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k58428116.medres</medres>
+                <nqamoyen>93.54</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k58428116.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k58428116</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1937-1939</dc:date>
+                    <dc:description>Etat de collection : Jusqu'à : août 1939 (n° 64)</dc:description>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb32842669z/date</dc:identifier>
+                    <dc:identifier>ISSN 24252115</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher> (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb32842669z</dc:relation>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, FOL-Q-432</dc:source>
+                    <dc:title>Presse publicité : hebdomadaire technique de toute la presse</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>17</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k1163485g.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb32842669z/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k1163485g.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k1163485g.medres</medres>
+                <nqamoyen>88.36</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k1163485g.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k1163485g</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1905-1907</dc:date>
+                    <dc:description>Variante(s) de titre : Le Collectionneur universel</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : Bourgogn1</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>Nombre total de vues : 582</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb327441091/date</dc:identifier>
+                    <dc:identifier>ISSN 24166723</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher> (Le Creusot)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb327441091</dc:relation>
+                    <dc:source>Bibliothèque nationale de France, département Sciences et techniques, 8-V-14797</dc:source>
+                    <dc:title>Le Collectionneur (Le Creusot)</dc:title>
+                    <dc:title>Le Collectionneur : bulletin mensuel de publicité, philatélie, cartophilie...</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>18</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k5678452z.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb327441091/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k5678452z.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k5678452z.medres</medres>
+                <nqamoyen>86.15</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k5678452z.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k5678452z</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1936</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : PrnS001</dc:description>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b10567810r</dc:identifier>
+                    <dc:identifier>IFN-10567810</dc:identifier>
+                    <dc:language>Sans contenu linguistique</dc:language>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb44951597f</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque patrimoniale de Pau, 220132</dc:source>
+                    <dc:subject>Pau (Pyrénées-Atlantiques) -- 20e siècle -- Plans</dc:subject>
+                    <dc:subject>Pau (Pyrénées-Atlantiques) -- Publicité -- 20e siècle</dc:subject>
+                    <dc:subject>Pyrénées-Atlantiques</dc:subject>
+                    <dc:title>Ville de Pau : Plan commercial et de publicité</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>19</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b10567810r.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b10567810r</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b10567810r.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b10567810r.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b10567810r.thumbnail</thumbnail>
+                <typedoc>cartes</typedoc>
+                <uri>btv1b10567810r</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Chambre de commerce internationale. Auteur du texte</dc:creator>
+                    <dc:date>1937</dc:date>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>1 vol. (8 p.) ; in-8°</dc:format>
+                    <dc:format>Nombre total de vues : 12</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k1421214q</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher> (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb333043185</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Sciences et techniques, 8-V-18464 (97)</dc:source>
+                    <dc:title>Code de pratiques loyales en matière de publicité</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>20</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k1421214q.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k1421214q</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k1421214q.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k1421214q.medres</medres>
+                <nqamoyen>89.16</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k1421214q.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k1421214q</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1874-1875</dc:date>
+                    <dc:description>Variante(s) de titre : La Publicité littéraire, artistique, scientifique et commerciale du Midi</dc:description>
+                    <dc:description>Variante(s) de titre : La Publicité littéraire, scientifique, commerciale et industrielle du Midi</dc:description>
+                    <dc:description>Périodicité : Hebdomadaire</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : BIPFPIG00</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : BIPFPIG34</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : 3M000</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : 3M019</dc:description>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb328459863/date</dc:identifier>
+                    <dc:identifier>NUMP-23747</dc:identifier>
+                    <dc:identifier>ISSN 21357129</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.] (Montpellier)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb328459863</dc:relation>
+                    <dc:relation>A pour reproduction : La Publicité artistique, commerciale et industrielle du Midi (Reproduction numérique) = ISSN 2592-0979 (https://memonum-mediatheques.montpellier3m.fr/ark:/12148/cb328459863/date)</dc:relation>
+                    <dc:relation>A pour reproduction : La Publicité artistique, commerciale et industrielle du Midi (Reproduction numérique) = ISSN 2592-0979 (https://gallica.bnf.fr/ark:/12148/cb328459863/date)</dc:relation>
+                    <dc:relation>Première de couverture : 359416</dc:relation>
+                    <dc:source>Montpellier Méditerranée Métropole - Médiathèque centrale Emile Zola, 497-13</dc:source>
+                    <dc:title>La Publicité artistique, commerciale et industrielle du Midi</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>21</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k1337762d.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb328459863/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k1337762d.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k1337762d.medres</medres>
+                <nqamoyen>99.01</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k1337762d.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k1337762d</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Crouzil, Lucien (1875-1947). Auteur du texte</dc:creator>
+                    <dc:date>1904</dc:date>
+                    <dc:description>Collection : Science et religion : études pour le temps présent ; 284</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : CentSev001</dc:description>
+                    <dc:description>Contient une table des matières</dc:description>
+                    <dc:format>1 vol. (62 p.) ; 18 cm</dc:format>
+                    <dc:format>Nombre total de vues : 70</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k91570m</dc:identifier>
+                    <dc:identifier>NUMM-91570</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>Bloud (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb356803237</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Philosophie, histoire, sciences de l'homme, 8-R 14946 (284)</dc:source>
+                    <dc:subject>Église catholique</dc:subject>
+                    <dc:title>La publicité du culte catholique... / par Lucien Crouzil,...</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>22</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k91570m.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k91570m</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k91570m.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k91570m.medres</medres>
+                <nqamoyen>90.33</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k91570m.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k91570m</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Fleurac, Louis de (1876-1965). Dessinateur du modèle</dc:creator>
+                    <dc:creator>Publicite Wall (Paris). 3060</dc:creator>
+                    <dc:date>1911</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : MnS000</dc:description>
+                    <dc:format>1 dessin : coul. ; 126,5 x 81,2 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bd6t52567114</dc:identifier>
+                    <dc:identifier>NUMS-100256711</dc:identifier>
+                    <dc:language>Sans contenu linguistique</dc:language>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb45975455r</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Musée national du sport, 73.25.1</dc:source>
+                    <dc:subject>Cross</dc:subject>
+                    <dc:subject>Athlétisme</dc:subject>
+                    <dc:title>[Cross-country / Louis de Fleurac ; Publicité Wall (Paris)]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>dessin</dc:type>
+                    <dc:type>drawing</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>23</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bd6t52567114.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bd6t52567114</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bd6t52567114.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bd6t52567114.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bd6t52567114.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>bd6t52567114</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Compagnie générale de travaux d'éclairage et de force (Paris). Producteur d'un fonds d'archives</dc:creator>
+                    <dc:date>1940</dc:date>
+                    <dc:description>Numérisation effectuée à partir d'un document original.</dc:description>
+                    <dc:format>1 cliché. - plaque de verre. - 90 x 120 mm</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53102383z</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:relation>Notice du catalogue : http://archivesetmanuscrits.bnf.fr/ark:/12148/cc95945b/ca59874621817554</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France. Département des arts du spectacle. 16-PLA-52</dc:source>
+                    <dc:title>Fonds Clémançon. II. Archives photographiques. Publicités. Page de publicité pour projections animées. Page de publicité pour projections animées</dc:title>
+                    <dc:type>still image</dc:type>
+                    <dc:type>image fixe</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>24</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53102383z.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53102383z</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53102383z.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53102383z.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53102383z.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53102383z</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Compagnie générale de travaux d'éclairage et de force (Paris). Producteur d'un fonds d'archives</dc:creator>
+                    <dc:date>1940</dc:date>
+                    <dc:description>Numérisation effectuée à partir d'un document original.</dc:description>
+                    <dc:format>1 cliché. - plaque de verre. - 180 x 240 mm</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53134903j</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:relation>Notice du catalogue : http://archivesetmanuscrits.bnf.fr/ark:/12148/cc95945b/ca59874621817555</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France. Département des arts du spectacle. 4-PLA-570</dc:source>
+                    <dc:title>Fonds Clémançon. II. Archives photographiques. Publicités. Page de publicité pour projections animées. Page de publicité pour projections animées</dc:title>
+                    <dc:type>still image</dc:type>
+                    <dc:type>image fixe</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>25</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53134903j.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53134903j</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53134903j.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53134903j.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53134903j.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53134903j</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1857-1857</dc:date>
+                    <dc:description>Périodicité : Hebdomadaire</dc:description>
+                    <dc:description>Etat de collection : 11 avr.-23 mai 1857 [I, n° 1-7]</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : BIPFPIG00</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : BIPFPIG13</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : PACA1</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>Nombre total de vues : 30</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb328188878/date</dc:identifier>
+                    <dc:identifier>NUMP-3782</dc:identifier>
+                    <dc:identifier>ISSN 21324492</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.] (Marseille)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb328188878</dc:relation>
+                    <dc:relation>A pour reproduction : Moniteur de publicité (Reproduction numérique) = ISSN 2390-7495 (https://gallica.bnf.fr/ark:/12148/cb328188878/date)</dc:relation>
+                    <dc:relation>Première de couverture : 199648</dc:relation>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, V-3723</dc:source>
+                    <dc:title>Moniteur de publicité : journal d'annonces indutrielles et immobilières</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>26</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k5496926n.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb328188878/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k5496926n.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k5496926n.medres</medres>
+                <nqamoyen>97.05</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k5496926n.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k5496926n</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1895-1896</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : Lorr1</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>1 vol. (pagination multiple 120-[31] p.) : ill. ; 16 cm</dc:format>
+                    <dc:format>Nombre total de vues : 169</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k96298664</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>Hachette et Cie</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb44439189c</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèques de Nancy, 2015-269432</dc:source>
+                    <dc:title>Publicité des guides Joanne. Nancy. Hôtels et établissements divers</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>27</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k96298664.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k96298664</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k96298664.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k96298664.medres</medres>
+                <nqamoyen>97.63</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k96298664.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k96298664</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1840-1841</dc:date>
+                    <dc:description>Variante(s) de titre : La Publicité : journal d'annonces judiciaires et diverses</dc:description>
+                    <dc:format>Nombre total de vues : 16</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb32845966g/date</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.] (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb32845966g</dc:relation>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, V-6008</dc:source>
+                    <dc:title>La Publicité (Paris. 1840)</dc:title>
+                    <dc:title>La Publicité : journal d'annonces judiciaires et avis divers</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>28</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k1417556.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb32845966g/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k1417556.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k1417556.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k1417556.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k1417556</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Cassagnac, Paul de (1842-1904). Auteur du texte</dc:creator>
+                    <dc:date>1893</dc:date>
+                    <dc:format>24 p. ; in-18</dc:format>
+                    <dc:format>Nombre total de vues : 26</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k73128s</dc:identifier>
+                    <dc:identifier>NUMM-73128</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>impr. de P. Dupont (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb30534634s</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Philosophie, histoire, sciences de l'homme, 8-Lb57-11124</dc:source>
+                    <dc:title>La publicité dans les journaux / [signé : Paul de Cassagnac]</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>29</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k73128s.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k73128s</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k73128s.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k73128s.medres</medres>
+                <nqamoyen>69.97</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k73128s.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k73128s</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1845-1845</dc:date>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>Nombre total de vues : 10</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb32781553q/date</dc:identifier>
+                    <dc:identifier>ISSN 24301809</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.] (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb32781553q</dc:relation>
+                    <dc:relation>A pour reproduction : La Gazette universelle (Paris. Reproduction numérique) = ISSN 2506-4444 (https://gallica.bnf.fr/ark:/12148/cb32781553q/date)</dc:relation>
+                    <dc:source>Bibliothèque nationale de France, département Littérature et art, V-3709</dc:source>
+                    <dc:title>La Gazette universelle (Paris)</dc:title>
+                    <dc:title>La Gazette universelle : chronique des intérêts positifs : publicité européenne, avis et renseignements divers : journal spécial de publicité immobilière / [directeur, Cohendet]</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>30</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k54880954.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb32781553q/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k54880954.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k54880954.medres</medres>
+                <nqamoyen>81.7</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k54880954.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k54880954</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Rodde, Victor (1791-1835). Auteur du texte</dc:creator>
+                    <dc:date>1833</dc:date>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>In-16, 30 p.</dc:format>
+                    <dc:format>Nombre total de vues : 34</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k5540080b</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>impr. de A. Auffray ((Paris,))</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb312321398</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Philosophie, histoire, sciences de l'homme, 8-LB51-1956</dc:source>
+                    <dc:title>Publicité des rues conquise sur la police. [Par V. Rodde.]</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>31</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k5540080b.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k5540080b</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k5540080b.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k5540080b.medres</medres>
+                <nqamoyen>99.98</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k5540080b.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k5540080b</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Mermet, Émile. Auteur du texte</dc:creator>
+                    <dc:date>1879</dc:date>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>1 vol. (468 p.) : fig. ; in-18</dc:format>
+                    <dc:format>Nombre total de vues : 483</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k920532n</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher> (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb30931715r</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Sciences et techniques, 8-V-2910</dc:source>
+                    <dc:title>La publicité en France : histoire et jurisprudence / par Émile Mermet,...</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>32</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k920532n.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k920532n</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k920532n.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k920532n.medres</medres>
+                <nqamoyen>88.66</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k920532n.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k920532n</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:coverage>.. janvier 1925</dc:coverage>
+                    <dc:creator>Agence Rol. Agence photographique (commanditaire)</dc:creator>
+                    <dc:date>1925</dc:date>
+                    <dc:description>Référence bibliographique : Rol, 98261</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : Pho20Rol</dc:description>
+                    <dc:description>Image de presse</dc:description>
+                    <dc:format>1 photogr. nég. sur verre ; 13 x 18 cm (sup.)</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b531436666</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb45197203g</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, EI-13 (1183)</dc:source>
+                    <dc:subject>Déguisements (costume) -- Allemagne</dc:subject>
+                    <dc:subject>Berlin (Allemagne)</dc:subject>
+                    <dc:title>Publicité théâtrale à Berlin (Rol) : [photographie de presse] / [Agence Rol]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>photographie</dc:type>
+                    <dc:type>photograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>33</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b531436666.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b531436666</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b531436666.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b531436666.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b531436666.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b531436666</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1890-1900</dc:date>
+                    <dc:description>Affiche</dc:description>
+                    <dc:format>1 dessin : aquarelle, coul. ; dimensions à revoir</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b90177717</dc:identifier>
+                    <dc:identifier>IFN-9017771</dc:identifier>
+                    <dc:publisher>[s.n.]</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb42136434d</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, ENT LI-1 (4)-FT 6</dc:source>
+                    <dc:subject>Grands magasins -- France -- Publicité</dc:subject>
+                    <dc:subject>Magasins</dc:subject>
+                    <dc:title>[Publicité pour un grand magasin ?] : [maquette d'affiche ? ] / [non identifié]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>dessin</dc:type>
+                    <dc:type>drawing</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>34</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b90177717.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b90177717</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b90177717.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b90177717.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b90177717.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b90177717</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Compagnie générale de travaux d'éclairage et de force (Paris). Producteur d'un fonds d'archives</dc:creator>
+                    <dc:date>1936</dc:date>
+                    <dc:description>Numérisation effectuée à partir d'un document original.</dc:description>
+                    <dc:format>1 cliché. - plaque de verre. - 180 x 240 mm</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53134859x</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:relation>Notice du catalogue : http://archivesetmanuscrits.bnf.fr/ark:/12148/cc95945b/ca59874621817552</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France. Département des arts du spectacle. 4-PLA-494</dc:source>
+                    <dc:title>Fonds Clémançon. II. Archives photographiques. Publicités. Page de publicité "Cinéac"</dc:title>
+                    <dc:type>still image</dc:type>
+                    <dc:type>image fixe</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>35</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53134859x.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53134859x</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53134859x.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53134859x.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53134859x.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53134859x</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1929</dc:date>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb328580182/date</dc:identifier>
+                    <dc:identifier>NUMP-21597</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.?] (Saïgon)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb328580182</dc:relation>
+                    <dc:source>Bibliothèque nationale de France, département Droit, économie, politique, JO-63656</dc:source>
+                    <dc:title>Revue de publicité commerciale. Quâng-Cáo-Thúóng Vu Tóng Biên</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>36</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k9599255z.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb328580182/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k9599255z.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k9599255z.medres</medres>
+                <nqamoyen>73.35</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k9599255z.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k9599255z</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:coverage>France – Bourgogne-Franche-Comté – Côte-d'Or</dc:coverage>
+                    <dc:creator>AVENIR PUBLICITÉ (Besançon, Doubs). Auteur du texte</dc:creator>
+                    <dc:date>1945</dc:date>
+                    <dc:description>Échelle(s) : [1:10 000 environ]</dc:description>
+                    <dc:format>1 flle ; 65 x 102 cm</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53260552g</dc:identifier>
+                    <dc:identifier>IFN-53260552</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>Impr. Réunies (Lyon)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb406848935</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Cartes et plans, GE B-6278</dc:source>
+                    <dc:subject>Plans de ville</dc:subject>
+                    <dc:subject>Dijon</dc:subject>
+                    <dc:title>Carte-plan murale de Dijon offerte... / par l'Avenir Publicité</dc:title>
+                    <dc:type>map</dc:type>
+                    <dc:type>carte</dc:type>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>37</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53260552g.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53260552g</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53260552g.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53260552g.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53260552g.thumbnail</thumbnail>
+                <typedoc>cartes</typedoc>
+                <uri>btv1b53260552g</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Pottier, Paul. Auteur du texte</dc:creator>
+                    <dc:date>1919</dc:date>
+                    <dc:description>Contient une table des matières</dc:description>
+                    <dc:format>1 vol. (VIII-152 p.) : fig., couv. ill. ; in-8</dc:format>
+                    <dc:format>Nombre total de vues : 164</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k499500</dc:identifier>
+                    <dc:identifier>NUMM-49950</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>Delagrave (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb31141162k</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Sciences et techniques, 8-V-40165</dc:source>
+                    <dc:title>Le secret de la fortune par la publicité / Paul Pottier</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>38</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k499500.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k499500</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k499500.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k499500.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k499500.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k499500</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Lortac (1884-1973). Auteur du texte</dc:creator>
+                    <dc:creator>Lacroix, Pierre (1912-1994). Auteur du texte</dc:creator>
+                    <dc:date>1950</dc:date>
+                    <dc:description>Collection : Les Beaux albums de la jeunesse joyeuse. Bibi Fricotin ; 18</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:description>Bandes dessinées</dc:description>
+                    <dc:format>1 vol. (48 p.) : ill. en coul. ; 28 cm</dc:format>
+                    <dc:format>Nombre total de vues : 48</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k9127945g</dc:identifier>
+                    <dc:identifier>NUMM-9127945</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>Société parisienne d'édition (Paris)</dc:publisher>
+                    <dc:relation>Notice d'ensemble : http://catalogue.bnf.fr/ark:/12148/cb47552203d</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb47552071b</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>La Cité Internationale de la bande dessinée et de l'image, FA-m-01431</dc:source>
+                    <dc:title>Bibi Fricotin, roi de la publicité / René Lortac, Pierre Lacroix</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>printed monograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>39</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k9127945g.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k9127945g</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k9127945g.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k9127945g.medres</medres>
+                <nqamoyen>62.45</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k9127945g.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k9127945g</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1899-1899</dc:date>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:description>Périodiques</dc:description>
+                    <dc:format>Nombre total de vues : 32</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb328460291/date</dc:identifier>
+                    <dc:identifier>NUMP-4536</dc:identifier>
+                    <dc:identifier>ISSN 29686407</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.] (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb328460291</dc:relation>
+                    <dc:relation>A pour reproduction : La Publicité médicale et pharmaceutique (Reproduction numérique) = ISSN 2968-6393 (https://gallica.bnf.fr/ark:/12148/cb328460291/date)</dc:relation>
+                    <dc:source>Bibliothèque nationale de France, département Sciences et techniques, FOL-T33-702</dc:source>
+                    <dc:subject>Sciences de la santé</dc:subject>
+                    <dc:title>La Publicité médicale et pharmaceutique : journal hebdomadaire de publicité contenant tous les renseignements utiles aux médecins et aux pharmaciens / directeur L. Vergoz</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>40</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k5570805z.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb328460291/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k5570805z.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k5570805z.medres</medres>
+                <nqamoyen>93.92</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k5570805z.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k5570805z</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>France. Auteur du texte</dc:creator>
+                    <dc:date>1957</dc:date>
+                    <dc:description>[Code]</dc:description>
+                    <dc:description>Contient une table des matières</dc:description>
+                    <dc:description>Avec mode texte</dc:description>
+                    <dc:format>In-8° (21 cm), 97 p. 200 fr.</dc:format>
+                    <dc:format>Nombre total de vues : 108</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/bpt6k65355683</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:language>français</dc:language>
+                    <dc:publisher>Impr. des Journaux officiels (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb339034067</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Droit, économie, politique, 8-FW-137 (1081,1957)</dc:source>
+                    <dc:title>Affichage et publicité . [Edition mise à jour au 16 avril 1957.]</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                    <dc:type>monographie imprimée</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>41</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k65355683.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/bpt6k65355683</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k65355683.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k65355683.medres</medres>
+                <nqamoyen>98.91</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k65355683.thumbnail</thumbnail>
+                <typedoc>monographies</typedoc>
+                <uri>bpt6k65355683</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Paris. Préfecture de police. Fonction indéterminée</dc:creator>
+                    <dc:date>1918</dc:date>
+                    <dc:description>Appartient à l’ensemble documentaire : Rtmgus1</dc:description>
+                    <dc:format>est. (affiche texte) : n. et b. ; 650x450 mm (f.)</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b10052975f</dc:identifier>
+                    <dc:publisher> (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb44195053v</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque municipale de Rouen, Est. g 125</dc:source>
+                    <dc:subject>Décrets, arrêtés, etc.</dc:subject>
+                    <dc:subject>Abris antiaériens</dc:subject>
+                    <dc:subject>Défense passive -- France -- 1900-1945</dc:subject>
+                    <dc:title>Ordonnance Relative à l'éclairage des Edicules servant à la publicité</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>estampe</dc:type>
+                    <dc:type>engraving</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>42</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b10052975f.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b10052975f</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b10052975f.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b10052975f.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b10052975f.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b10052975f</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1906-1906</dc:date>
+                    <dc:description>Périodicité : Hebdomadaire (parution le jeudi)</dc:description>
+                    <dc:description>Etat de collection : 1,n.1-2,1906(10-17 mai)</dc:description>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb32846035z/date</dc:identifier>
+                    <dc:identifier>ISSN 26800535</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.] (Paris)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb32846035z</dc:relation>
+                    <dc:source>Bibliothèque nationale de France, département Droit, économie, politique, JO-50096</dc:source>
+                    <dc:title>La Publicité nouvelle : journal hebdomadaire : industrie, commerce, arts / [gérant L. Dennery]</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>43</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k32816101.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb32846035z/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k32816101.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k32816101.medres</medres>
+                <nqamoyen>85.22</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k32816101.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k32816101</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:date>1928-1955</dc:date>
+                    <dc:description>Périodicité : Hebdomadaire ; Trois fois par semaine</dc:description>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/cb32771590q/date</dc:identifier>
+                    <dc:identifier>NUMP-18971</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>[s.n.] (Douala)</dc:publisher>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb32771590q</dc:relation>
+                    <dc:source>Bibliothèque nationale de France, département Droit, économie, politique, GR FOL-JO-1562</dc:source>
+                    <dc:title>L'Eveil du Cameroun (Douala)</dc:title>
+                    <dc:title>L'Eveil du Cameroun : journal bimensuel d'informations et de publicité</dc:title>
+                    <dc:type>text</dc:type>
+                    <dc:type>texte</dc:type>
+                    <dc:type>publication en série imprimée</dc:type>
+                    <dc:type>printed serial</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>44</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/bpt6k5082062x.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/cb32771590q/date</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/bpt6k5082062x.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/bpt6k5082062x.medres</medres>
+                <nqamoyen>79.39</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/bpt6k5082062x.thumbnail</thumbnail>
+                <typedoc>periodiques</typedoc>
+                <uri>bpt6k5082062x</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:creator>Agence de presse Meurisse. Agence photographique (commanditaire)</dc:creator>
+                    <dc:date>1923</dc:date>
+                    <dc:description>Référence bibliographique : Meurisse, 3740 A</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : Pho20Meu</dc:description>
+                    <dc:description>Image de presse</dc:description>
+                    <dc:format>1 photogr. nég. sur verre ; 13 x 18 cm (sup.) ou moins</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b9022590m</dc:identifier>
+                    <dc:identifier>Numéro commercial : Meurisse 3740 A</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>diff. par l'Agence Meurisse (Paris)</dc:publisher>
+                    <dc:relation>Notice de recueil : http://catalogue.bnf.fr/ark:/12148/cb404994307</dc:relation>
+                    <dc:relation>Appartient à : [Recueil. Actualités 1922-06-25**1923-05-14. Agence Meurisse MEU 98603-6091 A]</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb415822098</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, EI-13 (2733)</dc:source>
+                    <dc:title>Stade vélodrome Buffalo : panneaux de publicité : [photographie de presse] / Agence Meurisse</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>photographie</dc:type>
+                    <dc:type>photograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>45</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b9022590m.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b9022590m</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b9022590m.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b9022590m.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b9022590m.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b9022590m</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:coverage>07 juillet 1929</dc:coverage>
+                    <dc:creator>Agence de presse Meurisse. Agence photographique (commanditaire)</dc:creator>
+                    <dc:date>1929</dc:date>
+                    <dc:description>Référence bibliographique : Meurisse, 69058 A</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : Pho20Meu</dc:description>
+                    <dc:description>Image de presse</dc:description>
+                    <dc:format>1 photogr. nég. sur verre ; 13 x 18 cm (sup.) ou moins</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b9028917q</dc:identifier>
+                    <dc:identifier>Numéro commercial : Meurisse 69058 A</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:publisher>diff. par l'Agence Meurisse (Paris)</dc:publisher>
+                    <dc:relation>Notice de recueil : http://catalogue.bnf.fr/ark:/12148/cb40499440j</dc:relation>
+                    <dc:relation>Appartient à : [Recueil. Actualités 1929-03-22**1929-11-11. Agence Meurisse MEU 65085 A-71647 A]</dc:relation>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb41590179w</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, EI-13 (2855)</dc:source>
+                    <dc:title>Spa, les 24 Heures : publicité Repusseau : [photographie de presse] / Agence Meurisse</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>photographie</dc:type>
+                    <dc:type>photograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>46</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b9028917q.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b9028917q</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b9028917q.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b9028917q.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b9028917q.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b9028917q</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:coverage>.. juillet 1925</dc:coverage>
+                    <dc:creator>Agence Rol. Agence photographique (commanditaire)</dc:creator>
+                    <dc:date>1925</dc:date>
+                    <dc:description>Référence bibliographique : Rol, 102414</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : Pho20Rol</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : MnS000</dc:description>
+                    <dc:description>Image de presse</dc:description>
+                    <dc:format>1 photogr. nég. sur verre ; 18 x 13 cm (sup.)</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53150713f</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb45278781n</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, EI-13 (1236)</dc:source>
+                    <dc:subject>Éclairage décoratif -- Paris (France)</dc:subject>
+                    <dc:subject>Citroën (automobiles) -- Publicité</dc:subject>
+                    <dc:subject>Paris (France) -- Tour Eiffel</dc:subject>
+                    <dc:title>[La Tour Eiffel illuminée, publicité Citroën] : [photographie de presse] / [Agence Rol]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>photographie</dc:type>
+                    <dc:type>photograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>47</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53150713f.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53150713f</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53150713f.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53150713f.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53150713f.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53150713f</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:coverage>.. juillet 1925</dc:coverage>
+                    <dc:creator>Agence Rol. Agence photographique (commanditaire)</dc:creator>
+                    <dc:date>1925</dc:date>
+                    <dc:description>Référence bibliographique : Rol, 102416</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : Pho20Rol</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : MnS000</dc:description>
+                    <dc:description>Image de presse</dc:description>
+                    <dc:format>1 photogr. nég. sur verre ; 18 x 13 cm (sup.)</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53150715b</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb45278804g</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, EI-13 (1236)</dc:source>
+                    <dc:subject>Éclairage décoratif -- Paris (France)</dc:subject>
+                    <dc:subject>Citroën (automobiles) -- Publicité</dc:subject>
+                    <dc:subject>Paris (France) -- Tour Eiffel</dc:subject>
+                    <dc:title>[La Tour Eiffel illuminée, publicité Citroën] : [photographie de presse] / [Agence Rol]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>photographie</dc:type>
+                    <dc:type>photograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>48</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53150715b.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53150715b</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53150715b.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53150715b.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53150715b.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53150715b</uri>
+            </srw:extraRecordData>
+        </srw:record>
+        <srw:record>
+            <srw:recordSchema>http://www.openarchives.org/OAI/2.0/OAIdc.xsd</srw:recordSchema>
+            <srw:recordPacking>xml</srw:recordPacking>
+            <srw:recordData>
+                <oai_dc:dc>
+                    <dc:coverage>.. juillet 1925</dc:coverage>
+                    <dc:creator>Agence Rol. Agence photographique (commanditaire)</dc:creator>
+                    <dc:date>1925</dc:date>
+                    <dc:description>Référence bibliographique : Rol, 102415</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : Pho20Rol</dc:description>
+                    <dc:description>Appartient à l’ensemble documentaire : MnS000</dc:description>
+                    <dc:description>Image de presse</dc:description>
+                    <dc:format>1 photogr. nég. sur verre ; 18 x 13 cm (sup.)</dc:format>
+                    <dc:format>image/jpeg</dc:format>
+                    <dc:format>Nombre total de vues : 1</dc:format>
+                    <dc:identifier>https://gallica.bnf.fr/ark:/12148/btv1b53150714w</dc:identifier>
+                    <dc:language>fre</dc:language>
+                    <dc:relation>Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb45278801f</dc:relation>
+                    <dc:rights>domaine public</dc:rights>
+                    <dc:rights>public domain</dc:rights>
+                    <dc:source>Bibliothèque nationale de France, département Estampes et photographie, EI-13 (1236)</dc:source>
+                    <dc:subject>Éclairage décoratif -- Paris (France)</dc:subject>
+                    <dc:subject>Citroën (automobiles) -- Publicité</dc:subject>
+                    <dc:subject>Paris (France) -- Tour Eiffel</dc:subject>
+                    <dc:title>[La Tour Eiffel illuminée, publicité Citroën] : [photographie de presse] / [Agence Rol]</dc:title>
+                    <dc:type>image fixe</dc:type>
+                    <dc:type>image</dc:type>
+                    <dc:type>still image</dc:type>
+                    <dc:type>photographie</dc:type>
+                    <dc:type>photograph</dc:type>
+                </oai_dc:dc>
+            </srw:recordData>
+            <srw:recordIdentifier>ark</srw:recordIdentifier>
+            <srw:recordPosition>49</srw:recordPosition>
+            <srw:extraRecordData>
+                <epubFile></epubFile>
+                <highres>https://gallica.bnf.fr/ark:/12148/btv1b53150714w.highres</highres>
+                <infoSupModifiable></infoSupModifiable>
+                <link>https://gallica.bnf.fr/ark:/12148/btv1b53150714w</link>
+                <lowres>https://gallica.bnf.fr/ark:/12148/btv1b53150714w.lowres</lowres>
+                <medres>https://gallica.bnf.fr/ark:/12148/btv1b53150714w.medres</medres>
+                <nqamoyen>0.0</nqamoyen>
+                <provenance>Gallica</provenance>
+                <thumbnail>https://gallica.bnf.fr/ark:/12148/btv1b53150714w.thumbnail</thumbnail>
+                <typedoc>images</typedoc>
+                <uri>btv1b53150714w</uri>
+            </srw:extraRecordData>
+        </srw:record>
+    </srw:records>
+    <srw:nextRecordPosition>51</srw:nextRecordPosition>
+</srw:searchRetrieveResponse>

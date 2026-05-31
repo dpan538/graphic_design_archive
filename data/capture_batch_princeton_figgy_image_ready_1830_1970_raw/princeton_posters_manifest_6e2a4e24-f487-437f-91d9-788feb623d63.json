@@ -1,0 +1,191 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://figgy.princeton.edu/concern/scanned_resources/6e2a4e24-f487-437f-91d9-788feb623d63/manifest",
+  "@type": "sc:Manifest",
+  "description": "Number 245 of 300 copies signed by the artist.",
+  "label": "The Horn Book Magazine. About books for children... [poster].",
+  "license": "http://rightsstatements.org/vocab/CNE/1.0/",
+  "logo": "https://figgy.princeton.edu/pul_logo_icon.png",
+  "metadata": [
+    {
+      "label": "Author",
+      "value": [
+        "Sendak, Maurice"
+      ]
+    },
+    {
+      "label": "Extent",
+      "value": [
+        "Broadside : col. ill. ; 61 x 41.5 cm."
+      ]
+    },
+    {
+      "label": "Identifier",
+      "value": [
+        "ark:/88435/dc9019sg609"
+      ]
+    },
+    {
+      "label": "Title",
+      "value": [
+        {
+          "@language": "en",
+          "@value": "The Horn Book Magazine. About books for children... [poster]."
+        }
+      ]
+    },
+    {
+      "label": "Type",
+      "value": [
+        "Posters"
+      ]
+    },
+    {
+      "label": "Content Type",
+      "value": [
+        "Visual material"
+      ]
+    },
+    {
+      "label": "Creator",
+      "value": [
+        "Sendak, Maurice"
+      ]
+    },
+    {
+      "label": "Date",
+      "value": [
+        "1985"
+      ]
+    },
+    {
+      "label": "Language",
+      "value": [
+        "English"
+      ]
+    },
+    {
+      "label": "Publisher",
+      "value": [
+        "c1985."
+      ]
+    },
+    {
+      "label": "Subject",
+      "value": [
+        "Posters"
+      ]
+    },
+    {
+      "label": "Call Number",
+      "value": [
+        "Print Cases / Box 19 617"
+      ]
+    },
+    {
+      "label": "Location",
+      "value": [
+        "Special Collections Print Cases / Box 19 617"
+      ]
+    },
+    {
+      "label": "Member Of Collections",
+      "value": [
+        "Cotsen Children's Library",
+        "Legacy Photography Bulk Migration",
+        "Lloyd E. Cotsen"
+      ]
+    }
+  ],
+  "rendering": {
+    "@id": "http://arks.princeton.edu/ark:/88435/dc9019sg609",
+    "format": "text/html"
+  },
+  "seeAlso": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/6e2a4e24-f487-437f-91d9-788feb623d63.jsonld",
+      "format": "application/ld+json"
+    },
+    {
+      "@id": "https://catalog.princeton.edu/catalog/9947188173506421.marcxml",
+      "format": "text/xml"
+    }
+  ],
+  "sequences": [
+    {
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/6e2a4e24-f487-437f-91d9-788feb623d63/manifest/sequence/normal",
+      "@type": "sc:Sequence",
+      "canvases": [
+        {
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/6e2a4e24-f487-437f-91d9-788feb623d63/manifest/canvas/681c1adb-7966-4fb6-a05b-215751113727",
+          "@type": "sc:Canvas",
+          "height": 2048,
+          "images": [
+            {
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/6e2a4e24-f487-437f-91d9-788feb623d63/manifest/image/681c1adb-7966-4fb6-a05b-215751113727",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/6e2a4e24-f487-437f-91d9-788feb623d63/manifest/canvas/681c1adb-7966-4fb6-a05b-215751113727",
+              "resource": {
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/a6%2F13%2Fd4%2Fa613d4e958fc48f782494458f4444a14%2Fintermediate_file/full/1000,/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 2048,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/a6%2F13%2Fd4%2Fa613d4e958fc48f782494458f4444a14%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1536
+              }
+            }
+          ],
+          "label": "1",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/681c1adb-7966-4fb6-a05b-215751113727/file/3af6b2a0-e594-4a36-9beb-04e3190fac9e",
+              "format": "image/jpeg",
+              "label": "Download the original file"
+            }
+          ],
+          "thumbnail": {
+            "@id": "https://iiif-cloud.princeton.edu/iiif/2/a6%2F13%2Fd4%2Fa613d4e958fc48f782494458f4444a14%2Fintermediate_file/full/!200,150/0/default.jpg",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id": "https://iiif-cloud.princeton.edu/iiif/2/a6%2F13%2Fd4%2Fa613d4e958fc48f782494458f4444a14%2Fintermediate_file",
+              "profile": "http://iiif.io/api/image/2/level2.json"
+            }
+          },
+          "width": 1536
+        }
+      ],
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/catalog/6e2a4e24-f487-437f-91d9-788feb623d63/pdf",
+          "format": "application/pdf",
+          "label": "Download as PDF"
+        }
+      ],
+      "viewingHint": "individuals"
+    }
+  ],
+  "structures": [
+    {
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/6e2a4e24-f487-437f-91d9-788feb623d63/manifest/range/r4c84463e-a41d-4e8d-ab06-b215cf06d87a",
+      "@type": "sc:Range",
+      "canvases": [],
+      "label": "Logical",
+      "ranges": [],
+      "viewingHint": "top"
+    }
+  ],
+  "thumbnail": {
+    "@id": "https://iiif-cloud.princeton.edu/iiif/2/a6%2F13%2Fd4%2Fa613d4e958fc48f782494458f4444a14%2Fintermediate_file/full/!200,150/0/default.jpg",
+    "service": {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://iiif-cloud.princeton.edu/iiif/2/a6%2F13%2Fd4%2Fa613d4e958fc48f782494458f4444a14%2Fintermediate_file",
+      "profile": "http://iiif.io/api/image/2/level2.json"
+    }
+  },
+  "viewingHint": "individuals"
+}

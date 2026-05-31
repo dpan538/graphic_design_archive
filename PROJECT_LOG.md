@@ -2086,3 +2086,458 @@ Verification:
 
 - `npm run build` passed after the normalization/format pass.
 - Localhost was restarted on port 3000.
+
+---
+
+## Image-Ready Expansion Pass 1931-1970
+
+Implemented after the repository entered the GitHub-backed project state.
+
+Purpose:
+
+- Increase healthy design-archive image coverage by converting the public
+  surface set toward `IMG01` / `IMG02` / `IMG03`.
+- Treat `IMG02` correctly as source-hosted / IIIF display evidence rather than
+  as an empty rights frame.
+- Preserve concurrent data work by rebuilding the public payload from all
+  known CSV capture batches instead of overwriting from a single run.
+
+Changes:
+
+- Added `scripts/run_image_ready_expansion_1931_1970.py`.
+- Added `scripts/rebuild_public_surfaces_from_records.py`.
+- Updated the surface generator so `IMG02` records keep `image_url_detected`.
+- Updated the frontend layout rule so `IMG02` with a URL can render as a
+  source-hosted image, while still not implying local ownership or mirroring.
+- Rebuilt the cumulative static payload into:
+  - `generated/public_surfaces_v1.json`
+  - `frontend/src/data/public_surface_mock_v0.json`
+  - `frontend/public/data/public_surface_mock_v0.json`
+  - `data/public_surface_mock_v0.json`
+
+Capture result:
+
+- New image-ready batch:
+  - 78 rows
+  - `IMG02`: 74
+  - `IMG03`: 4
+- Source contribution:
+  - V&A Collections API: 13 `IMG02`
+  - Wellcome Collection Catalogue API: 61 `IMG02`, 4 `IMG03`
+- Library of Congress was rate-limited with HTTP 429 in this pass; this is
+  retained as a capture-state fact and should be retried slowly later.
+
+Cumulative public payload after rebuild:
+
+- 291 surfaces
+- 29 folders
+- Image states:
+  - `IMG00`: 65
+  - `IMG01`: 37
+  - `IMG02`: 109
+  - `IMG03`: 29
+  - `IMG04`: 51
+- Image-ready coverage: 175 / 291 = 60%.
+
+Pre-1931 audit after rebuild:
+
+- 60 early public surfaces remain in the cumulative payload.
+- Early image states:
+  - `IMG00`: 10
+  - `IMG01`: 13
+  - `IMG02`: 6
+  - `IMG03`: 21
+  - `IMG04`: 10
+- Early image-ready coverage: 40 / 60 = 67%.
+- The remaining early `IMG00` cluster is mostly AIC records with detected image
+  URLs but without captured open/public-domain evidence.
+- The remaining early `IMG04` cluster is mostly LOC/V&A rows where the first
+  automated capture did not expose usable image metadata.
+
+Verification:
+
+- `npm run build` passed after clearing a stale Next.js build cache and adding
+  `about` to the `ArchiveShell` active-nav type.
+- Static generation currently produces 332 pages, including `/about`, four
+  folder-type routes, 29 folder detail routes, and 291 surface routes.
+
+---
+
+## Gallica / IIIF Protocol Capture Pass 1830-1970
+
+Implemented as the first protocol-family expansion after the source review.
+
+Reason:
+
+- The project had many candidate sources in `source_expansion_matrix.csv`, but
+  live adapters were still concentrated around a small group of large museum
+  APIs and broad English keywords.
+- Gallica / BnF was selected because it is a low-friction national-library
+  source with SRU search, stable ARK identifiers, IIIF images, public-domain
+  rights signals, and strong coverage of posters, printed ephemera, advertising,
+  and visual-document records.
+
+Changes:
+
+- Added `scripts/run_gallica_image_ready_1830_1970.py`.
+- Added the Gallica batch to
+  `scripts/rebuild_public_surfaces_from_records.py`.
+- The adapter uses Gallica SRU XML records as metadata evidence and constructs
+  IIIF image/manifest URLs from ARK identifiers.
+- Records with `public domain` / `domaine public` rights are assigned `IMG03`;
+  records with IIIF image evidence but less explicit rights text are assigned
+  `IMG02`.
+
+Capture result:
+
+- New Gallica batch:
+  - 120 rows
+  - `IMG03`: 113
+  - `IMG02`: 7
+- Query groups:
+  - 1830-1930 affiche records: 40
+  - 1931-1970 affiche records: 50
+  - publicité records: 15
+  - arts graphiques records: 15
+
+Cumulative public payload after Gallica rebuild:
+
+- 411 surfaces
+- 29 folders
+- Image states:
+  - `IMG00`: 65
+  - `IMG01`: 37
+  - `IMG02`: 116
+  - `IMG03`: 142
+  - `IMG04`: 51
+- Image-ready coverage: 295 / 411 = 72%.
+
+Period audit after Gallica rebuild:
+
+- Pre-1931:
+  - 121 surfaces
+  - Image-ready coverage: 101 / 121 = 83%.
+- 1931-1970:
+  - 290 surfaces
+  - Image-ready coverage: 194 / 290 = 67%.
+
+Verification:
+
+- `npm run build` passed after the Gallica batch.
+- Static generation currently produces 452 pages, including 411 surface routes.
+- `http://localhost:3000/surfaces/SURF-GA1970R001` renders a Gallica `IMG03`
+  sheet with one visible image.
+
+---
+
+## Public Launch Image Coverage Gate
+
+Updated after project direction clarification.
+
+Decision:
+
+- For the first public launch, visual coverage is not an aspirational metric;
+  it is a release gate.
+- Minimum acceptable public-launch image-ready coverage: 95%.
+- Project target: 100%.
+- Image-ready means `IMG01 + IMG02 + IMG03`.
+- `IMG00` and `IMG04` remain valid archival states, but they are blockers for
+  public visual-surface launch unless they are demoted to non-primary support
+  material, replaced by image-ready sources, or explicitly kept outside the
+  public visual-surface denominator.
+
+Added:
+
+- `scripts/audit_image_release_gate.py`
+
+Current gate result:
+
+- Current cumulative public payload: 655 surfaces.
+- Current image-ready coverage: 539 / 655 = 82.29%.
+- Current blockers:
+  - `IMG00`: 65
+  - `IMG04`: 51
+- If no blockers are removed or demoted, reaching 95% would require roughly
+  1665 additional image-ready surfaces, which is structurally inefficient.
+
+Implication:
+
+- The launch path should prioritize converting, replacing, or demoting blockers
+  rather than only adding more image-ready records.
+- `IMG00` should be rare in the first public visual archive and reserved for
+  historically essential records whose absence must be visible.
+- `IMG04` should primarily be appendix/bookmark/context material, not a primary
+  visual sheet.
+
+---
+
+## DigitalNZ and Wikimedia Commons Image-Ready Expansion
+
+Added no-key image-ready source expansion batches after the 95% launch image
+coverage gate was defined.
+
+DigitalNZ:
+
+- Script: `scripts/run_digitalnz_image_ready_1830_1970.py`
+- Records: `data/capture_batch_digitalnz_image_ready_1830_1970_records.csv`
+- Result:
+  - 80 captured rows
+  - `IMG03`: 80
+- Source value:
+  - expands beyond museum-object APIs into newspaper, advertising, periodical,
+    and public visual culture records from Aotearoa New Zealand.
+
+Wikimedia Commons:
+
+- Script: `scripts/run_wikimedia_commons_image_ready_1830_1970.py`
+- Records: `data/capture_batch_wikimedia_commons_image_ready_1830_1970_records.csv`
+- Result after tightening search relevance:
+  - 104 captured rows
+  - `IMG03`: 104
+- Search strategy:
+  - Commons category-backed searches for 1930s, 1940s, 1950s, and 1960s posters,
+    advertising posters, travel posters, and Bauhaus/modernist poster routes.
+- Source policy:
+  - Commons is treated as an open-license image supplement and discovery layer,
+    not as a replacement for the original holding archive.
+  - Source links, license labels, and original credit metadata remain required.
+
+Secondary Gallica expansion:
+
+- Script: `scripts/run_gallica_secondary_image_ready_1830_1970.py`
+- Records: `data/capture_batch_gallica_secondary_image_ready_1830_1970_records.csv`
+- Result:
+  - 121 captured rows
+  - `IMG03`: 113
+  - `IMG02`: 8
+- Search strategy:
+  - SRU/IIIF routes for affiche publicitaire, réclame, typographie, imprimerie,
+    and catalogue + affiche records.
+- Source value:
+  - provides image-ready records with stronger national-library provenance than
+    broad web image aggregation and improves text/context availability for
+    typography and printing history.
+
+Normalizer update:
+
+- `scripts/normalize_public_surfaces.py` now lets compound grouped sheets inherit
+  a representative `IMG01`/`IMG02`/`IMG03` image from grouped source records
+  instead of forcing grouped records back to `IMG00`.
+- This prevents repeated source-generic titles from becoming visually empty
+  after deduplication.
+
+Cumulative payload after DigitalNZ + Commons + secondary Gallica:
+
+- Raw rows included in rebuild: 743
+- Public surfaces: 655
+- Public folders: 30
+- Image states:
+  - `IMG00`: 65
+  - `IMG01`: 37
+  - `IMG02`: 124
+  - `IMG03`: 378
+  - `IMG04`: 51
+- Image-ready coverage: 539 / 655 = 82.29%.
+
+Build verification:
+
+- `npm run build` passed.
+- Static generation now produces 697 pages, including 655 surface routes.
+
+Remaining implication:
+
+- Adding image-ready records improves the archive, but it will not efficiently
+  reach the 95% launch gate while all legacy `IMG00` and `IMG04` records remain
+  counted as primary visual surfaces.
+- Next remediation should combine source expansion with surface demotion:
+  convert or replace high-value blockers where possible, and move unresolved
+  `IMG00`/`IMG04` records into card, appendix, bibliography, or source-only
+  support surfaces outside the primary visual coverage denominator.
+
+---
+
+## Appendix and Text-Leaf Pagination Correction
+
+Issue confirmed:
+
+- The payload itself did not contain excessive appendix surfaces:
+  - 655 public surfaces
+  - 605 sheets
+  - 50 cards
+- The problem was the frontend pagination rule:
+  - every surface carried the six canonical tables;
+  - the pagination engine treated every table overflow as a physical appendix;
+  - estimated physical leaves before correction:
+    - main leaves: 655
+    - appendix leaves: 1992
+  - this made the interface read like table overflow rather than archival
+    reading material.
+
+Correction:
+
+- `frontend/src/lib/paginate.ts`
+  - added a distinct `text` leaf type;
+  - long image-bearing sheets now receive a `Text continuation` page when
+    captured/normalized source text is substantial;
+  - appendix leaves are no longer automatic table overflow;
+  - appendix pages are reserved for exceptional evidence:
+    - `IMG00` rights details;
+    - unusually long relation/citation evidence;
+    - large compound groups.
+- `frontend/src/components/archive/blocks.tsx`
+  - text pages now include:
+    - captured source text;
+    - subjects;
+    - historical context note;
+    - classification rationale;
+    - uncertainty note;
+    - citation basis.
+
+Estimated physical-leaf result after correction:
+
+- main leaves: 655
+- text continuation leaves: 186
+- appendix leaves: 36
+- appendix/surface ratio: 0.055
+- text/surface ratio: 0.284
+
+Verification:
+
+- `npm run build` passed after the pagination and text-page update.
+
+Methodological implication:
+
+- The complete six-table payload remains available for reproducibility.
+- The public reading surface is now curated:
+  - image sheets foreground visual evidence;
+  - text leaves carry readable research/context material;
+  - appendix leaves become rare source-evidence continuations rather than the
+    default destination for all unused table rows.
+
+---
+
+## Source Dependency and Text Reference Ledger
+
+Added a generated source-dependency layer so About-page claims and public text
+rules are tied to current payload evidence.
+
+Added:
+
+- `scripts/generate_source_dependency_reference.py`
+- `data/source_dependency_ledger.csv`
+- `docs/system/SOURCE_DEPENDENCY_AND_TEXT_REFERENCES_v0.md`
+
+Generated ledger basis:
+
+- Input: `generated/public_surfaces_v1.json`
+- Current public surfaces: 655
+- Current source families: 12
+
+The ledger records, per source:
+
+- surface count;
+- `IMG00`-`IMG04` distribution;
+- dependency role;
+- reference fields;
+- rights dependency;
+- text dependency;
+- capture scripts.
+
+About-page update:
+
+- `frontend/src/app/about/page.tsx` now reflects current source counts:
+  - Gallica / BnF APIs: 239
+  - Wikimedia Commons: 104
+  - Wellcome Collection Catalogue API: 89
+  - Library of Congress loc.gov API: 50
+  - V&A Collections API: 46
+  - Art Institute of Chicago API: 45
+  - Internet Archive / text and periodical collections: 30
+  - DigitalNZ: 21
+  - The Met Open Access: 15
+  - Cleveland Museum Open Access API: 12
+  - Getty Research Portal: 3
+  - Chinese Posters: 1
+- The About page now lists the generated ledger, source-dependency rulebook,
+  text-enrichment rules, surface pipeline, and rights strategy as explicit
+  references.
+- It also states the text dependency rules:
+  - source fields;
+  - raw capture;
+  - context/classification fields;
+  - OCR/excerpt limits;
+  - no substitute evidence from editor/AI wording.
+
+Verification:
+
+- `npm run build` passed after the About/source-dependency update.
+- `scripts/audit_image_release_gate.py` still fails as intended because current
+  image-ready coverage remains 82.29%, below the 95% launch gate.
+
+---
+
+## Local / University Image-Ready Source Expansion
+
+Added two protocol-family source adapters to improve image coverage beyond the
+large museum/API cluster:
+
+- `scripts/run_princeton_figgy_image_ready_1830_1970.py`
+- `scripts/run_gsu_contentdm_image_ready_1830_1970.py`
+
+Captured batches:
+
+- `data/capture_batch_princeton_figgy_image_ready_1830_1970_records.csv`
+  - 41 records
+  - 41 `IMG02`
+  - source: Princeton University Library Digital Collections / Figgy
+  - method: Blacklight JSON search + per-record IIIF manifest
+- `data/capture_batch_gsu_contentdm_image_ready_1830_1970_records.csv`
+  - 2 records
+  - 2 `IMG02`
+  - source: Georgia State University Library Digital Collections / CONTENTdm
+  - method: CONTENTdm search API + singleitem API + item-level local rights
+
+Why this matters:
+
+- Princeton confirms a reusable university-library `catalog.json` + IIIF
+  manifest pattern for posters, broadsides, advertising print, banners, and
+  scanned visual resources.
+- GSU confirms a reusable CONTENTdm pattern for local/university collections,
+  including labor, civil-rights, newspaper, theatre, and urban print culture.
+- Both sources are kept as `IMG02` unless item/manifest rights explicitly
+  support an open-image claim. This improves image presence without weakening
+  the rights model.
+
+Pipeline updates:
+
+- Added the two new records CSVs to
+  `scripts/rebuild_public_surfaces_from_records.py`.
+- Added source dependency metadata to
+  `scripts/generate_source_dependency_reference.py`.
+- Added source registry entries `SRC130` and `SRC131`.
+- Regenerated:
+  - `generated/public_surfaces_v1.json`
+  - `frontend/src/data/public_surface_mock_v0.json`
+  - `frontend/public/data/public_surface_mock_v0.json`
+  - `data/public_surface_mock_v0.json`
+  - `data/source_dependency_ledger.csv`
+  - `docs/system/SOURCE_DEPENDENCY_AND_TEXT_REFERENCES_v0.md`
+
+Current image gate after this expansion:
+
+- public surfaces: 698
+- image-ready: 582
+- image-ready coverage: 83.38%
+- image states:
+  - `IMG00`: 65
+  - `IMG01`: 37
+  - `IMG02`: 167
+  - `IMG03`: 378
+  - `IMG04`: 51
+
+Remaining blockers are still concentrated in legacy `IMG00`/`IMG04` records
+from Art Institute of Chicago, Internet Archive, V&A, Met, LoC, Getty, and
+Chinese Posters. The next productive image work should either upgrade these
+blockers item-by-item or add larger local/government/university protocol
+families with high image yield, especially CONTENTdm, IIIF manifests, Omeka S,
+Kramerius, and national/regional newspaper repositories.

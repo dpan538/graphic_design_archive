@@ -1,0 +1,196 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://figgy.princeton.edu/concern/scanned_resources/fca71f26-8c04-48ba-a8cd-50b14db04861/manifest",
+  "@type": "sc:Manifest",
+  "label": "Чита́йте общедоступный научный журнал Искра ...",
+  "license": "http://rightsstatements.org/vocab/CNE/1.0/",
+  "logo": "https://figgy.princeton.edu/pul_logo_icon.png",
+  "metadata": [
+    {
+      "label": "Abstract",
+      "value": [
+        "Advertising poster for Spark, the popular science magazine."
+      ]
+    },
+    {
+      "label": "Alternative",
+      "value": [
+        "Iskra",
+        "Искра"
+      ]
+    },
+    {
+      "label": "Extent",
+      "value": [
+        "1 poster : color lithograph ; 71 x 53 cm"
+      ]
+    },
+    {
+      "label": "Identifier",
+      "value": [
+        "ark:/88435/dcmw22vk77c"
+      ]
+    },
+    {
+      "label": "Title",
+      "value": [
+        {
+          "@language": "ru",
+          "@value": "Чита́йте общедоступный научный журнал Искра ..."
+        },
+        {
+          "@language": "ru-latn",
+          "@value": "Chitáyte obshchedostupnyĭ nauchnyĭ zhurnal Iskra ..."
+        }
+      ]
+    },
+    {
+      "label": "Type",
+      "value": [
+        "Posters",
+        "Advertisements"
+      ]
+    },
+    {
+      "label": "Content Type",
+      "value": [
+        "Visual material"
+      ]
+    },
+    {
+      "label": "Date",
+      "value": [
+        "1924"
+      ]
+    },
+    {
+      "label": "Language",
+      "value": [
+        "Russian"
+      ]
+    },
+    {
+      "label": "Publisher",
+      "value": [
+        "Moskva : Krasnaya Nov' pri Izdatelʹstvo",
+        "Москва : Красная новь при издательство, [1924]"
+      ]
+    },
+    {
+      "label": "Subject",
+      "value": [
+        "Iskra (Moscow, Russia : 1923)"
+      ]
+    },
+    {
+      "label": "Call Number",
+      "value": [
+        "A South 02/Drawer 09/GC091 GA 2005.01158"
+      ]
+    },
+    {
+      "label": "Location",
+      "value": [
+        "Special Collections A South 02/Drawer 09/GC091 GA 2005.01158"
+      ]
+    },
+    {
+      "label": "Member Of Collections",
+      "value": [
+        "Omega Project - #s Tracking",
+        "Treasures of the Graphic Arts Collection"
+      ]
+    }
+  ],
+  "rendering": {
+    "@id": "http://arks.princeton.edu/ark:/88435/dcmw22vk77c",
+    "format": "text/html"
+  },
+  "seeAlso": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/fca71f26-8c04-48ba-a8cd-50b14db04861.jsonld",
+      "format": "application/ld+json"
+    },
+    {
+      "@id": "https://catalog.princeton.edu/catalog/99106637103506421.marcxml",
+      "format": "text/xml"
+    }
+  ],
+  "sequences": [
+    {
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/fca71f26-8c04-48ba-a8cd-50b14db04861/manifest/sequence/normal",
+      "@type": "sc:Sequence",
+      "canvases": [
+        {
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/fca71f26-8c04-48ba-a8cd-50b14db04861/manifest/canvas/fae19c57-f173-4e47-81b1-f04f8f5908b2",
+          "@type": "sc:Canvas",
+          "height": 8844,
+          "images": [
+            {
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/fca71f26-8c04-48ba-a8cd-50b14db04861/manifest/image/fae19c57-f173-4e47-81b1-f04f8f5908b2",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/fca71f26-8c04-48ba-a8cd-50b14db04861/manifest/canvas/fae19c57-f173-4e47-81b1-f04f8f5908b2",
+              "resource": {
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/81%2Ff6%2F89%2F81f689f620dc41f3882260504872db6f%2Fintermediate_file/full/1000,/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 8844,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/81%2Ff6%2F89%2F81f689f620dc41f3882260504872db6f%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 6705
+              }
+            }
+          ],
+          "label": "1",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/fae19c57-f173-4e47-81b1-f04f8f5908b2/file/5b0eb4dc-c45a-4396-b5c6-d51f5b238af9",
+              "format": "image/tiff",
+              "label": "Download the original file"
+            }
+          ],
+          "thumbnail": {
+            "@id": "https://iiif-cloud.princeton.edu/iiif/2/81%2Ff6%2F89%2F81f689f620dc41f3882260504872db6f%2Fintermediate_file/full/!200,150/0/default.jpg",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id": "https://iiif-cloud.princeton.edu/iiif/2/81%2Ff6%2F89%2F81f689f620dc41f3882260504872db6f%2Fintermediate_file",
+              "profile": "http://iiif.io/api/image/2/level2.json"
+            }
+          },
+          "width": 6705
+        }
+      ],
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/catalog/fca71f26-8c04-48ba-a8cd-50b14db04861/pdf",
+          "format": "application/pdf",
+          "label": "Download as PDF"
+        }
+      ],
+      "viewingHint": "individuals"
+    }
+  ],
+  "structures": [
+    {
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/fca71f26-8c04-48ba-a8cd-50b14db04861/manifest/range/re2d0b4a3-7e8f-4500-bbcc-9c8246aa613b",
+      "@type": "sc:Range",
+      "canvases": [],
+      "label": "Logical",
+      "ranges": [],
+      "viewingHint": "top"
+    }
+  ],
+  "thumbnail": {
+    "@id": "https://iiif-cloud.princeton.edu/iiif/2/81%2Ff6%2F89%2F81f689f620dc41f3882260504872db6f%2Fintermediate_file/full/!200,150/0/default.jpg",
+    "service": {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://iiif-cloud.princeton.edu/iiif/2/81%2Ff6%2F89%2F81f689f620dc41f3882260504872db6f%2Fintermediate_file",
+      "profile": "http://iiif.io/api/image/2/level2.json"
+    }
+  },
+  "viewingHint": "individuals"
+}

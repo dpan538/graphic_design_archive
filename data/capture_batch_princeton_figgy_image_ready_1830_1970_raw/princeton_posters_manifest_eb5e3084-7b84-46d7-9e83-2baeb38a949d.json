@@ -1,0 +1,159 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://figgy.princeton.edu/concern/scanned_resources/eb5e3084-7b84-46d7-9e83-2baeb38a949d/manifest",
+  "@type": "sc:Manifest",
+  "description": "Poster announcing a series of video performances in December 1983. Single sheet printed in purple and red on recto only. This poster was distributed by Ulises Carrion's gallery Time Based Arts, listing performances by Fabienne de Quasa Riera, Jeffrey Shaw, Michal Shabtay, Flavio Pons, Ulises Carrion, Danniel Danniel, Claudio Goulart, Marieken Verheyen, and Lydia Schouten.",
+  "label": "Time Based Arts [poster]",
+  "license": "http://rightsstatements.org/vocab/CNE/1.0/",
+  "logo": "https://figgy.princeton.edu/pul_logo_icon.png",
+  "metadata": [
+    {
+      "label": "Extent",
+      "value": [
+        "1 poster."
+      ]
+    },
+    {
+      "label": "Identifier",
+      "value": [
+        "ark:/88435/dc2z10x2853"
+      ]
+    },
+    {
+      "label": "Title",
+      "value": [
+        {
+          "@language": "en",
+          "@value": "Time Based Arts [poster]"
+        }
+      ]
+    },
+    {
+      "label": "Content Type",
+      "value": [
+        "Book"
+      ]
+    },
+    {
+      "label": "Language",
+      "value": [
+        "English"
+      ]
+    },
+    {
+      "label": "Publisher",
+      "value": [
+        "Amsterdam 1983"
+      ]
+    },
+    {
+      "label": "Call Number",
+      "value": [
+        "Alma-9387q"
+      ]
+    },
+    {
+      "label": "Location",
+      "value": [
+        "Special Collections Alma-9387q"
+      ]
+    },
+    {
+      "label": "Member Of Collections",
+      "value": [
+        "Ulises Carrion Exhibition 2024"
+      ]
+    }
+  ],
+  "rendering": {
+    "@id": "http://arks.princeton.edu/ark:/88435/dc2z10x2853",
+    "format": "text/html"
+  },
+  "seeAlso": [
+    {
+      "@id": "https://figgy.princeton.edu/catalog/eb5e3084-7b84-46d7-9e83-2baeb38a949d.jsonld",
+      "format": "application/ld+json"
+    },
+    {
+      "@id": "https://catalog.princeton.edu/catalog/99125419242706421.marcxml",
+      "format": "text/xml"
+    }
+  ],
+  "sequences": [
+    {
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/eb5e3084-7b84-46d7-9e83-2baeb38a949d/manifest/sequence/normal",
+      "@type": "sc:Sequence",
+      "canvases": [
+        {
+          "@id": "https://figgy.princeton.edu/concern/scanned_resources/eb5e3084-7b84-46d7-9e83-2baeb38a949d/manifest/canvas/320872cd-6063-409a-9736-670359126f8b",
+          "@type": "sc:Canvas",
+          "height": 11035,
+          "images": [
+            {
+              "@id": "https://figgy.princeton.edu/concern/scanned_resources/eb5e3084-7b84-46d7-9e83-2baeb38a949d/manifest/image/320872cd-6063-409a-9736-670359126f8b",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "on": "https://figgy.princeton.edu/concern/scanned_resources/eb5e3084-7b84-46d7-9e83-2baeb38a949d/manifest/canvas/320872cd-6063-409a-9736-670359126f8b",
+              "resource": {
+                "@id": "https://iiif-cloud.princeton.edu/iiif/2/33%2F8f%2F89%2F338f89c2bdb04f83a0c6fa5202fcfe9f%2Fintermediate_file/full/1000,/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 11035,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif-cloud.princeton.edu/iiif/2/33%2F8f%2F89%2F338f89c2bdb04f83a0c6fa5202fcfe9f%2Fintermediate_file",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 7634
+              }
+            }
+          ],
+          "label": "00000001",
+          "rendering": [
+            {
+              "@id": "https://figgy.princeton.edu/downloads/320872cd-6063-409a-9736-670359126f8b/file/411acada-7f61-4d1f-b2f2-63a0f6fb474f",
+              "format": "image/tiff",
+              "label": "Download the original file"
+            }
+          ],
+          "thumbnail": {
+            "@id": "https://iiif-cloud.princeton.edu/iiif/2/33%2F8f%2F89%2F338f89c2bdb04f83a0c6fa5202fcfe9f%2Fintermediate_file/full/!200,150/0/default.jpg",
+            "service": {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id": "https://iiif-cloud.princeton.edu/iiif/2/33%2F8f%2F89%2F338f89c2bdb04f83a0c6fa5202fcfe9f%2Fintermediate_file",
+              "profile": "http://iiif.io/api/image/2/level2.json"
+            }
+          },
+          "width": 7634
+        }
+      ],
+      "rendering": [
+        {
+          "@id": "https://figgy.princeton.edu/catalog/eb5e3084-7b84-46d7-9e83-2baeb38a949d/pdf",
+          "format": "application/pdf",
+          "label": "Download as PDF"
+        }
+      ],
+      "viewingHint": "individuals"
+    }
+  ],
+  "structures": [
+    {
+      "@id": "https://figgy.princeton.edu/concern/scanned_resources/eb5e3084-7b84-46d7-9e83-2baeb38a949d/manifest/range/rdb6c8847-38d6-401a-a07c-510291c5bfef",
+      "@type": "sc:Range",
+      "canvases": [],
+      "label": "Logical",
+      "ranges": [],
+      "viewingHint": "top"
+    }
+  ],
+  "thumbnail": {
+    "@id": "https://iiif-cloud.princeton.edu/iiif/2/33%2F8f%2F89%2F338f89c2bdb04f83a0c6fa5202fcfe9f%2Fintermediate_file/full/!200,150/0/default.jpg",
+    "service": {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://iiif-cloud.princeton.edu/iiif/2/33%2F8f%2F89%2F338f89c2bdb04f83a0c6fa5202fcfe9f%2Fintermediate_file",
+      "profile": "http://iiif.io/api/image/2/level2.json"
+    }
+  },
+  "viewingHint": "individuals"
+}
