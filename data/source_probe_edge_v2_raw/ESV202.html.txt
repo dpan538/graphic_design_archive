@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hong Kong Film Archive | 香港電影資料館 | 香港电影资料馆</title>
+    <meta name="robots" content="noindex">
+    <noscript>
+        <meta http-equiv="refresh" content="0; url='./tc/web/hkfa/home.html'" />
+    </noscript>
+    <script>
+        const langs = ["tc", "sc", "en"];
+
+        function getCookie(name) {
+            function escape(s) { return s.replace(/([.*+?\^$(){}|\[\]\/\\])/g, '\\$1'); }
+            var match = document.cookie.match(RegExp('(?:^|;\\s*)' + escape(name) + '=([^;]*)'));
+            return match ? match[1] : null;
+        }
+        function getDefaultLanguage() {
+            var langMap = new Map([["zh", langs[0]], ["zh-TW", langs[0]], ["zh-HK", langs[0]], ["zh-CN", langs[1]], ["en", langs[2]]]);
+            var defaultLanguages = navigator.languages || [navigator.language];
+            for (var i = 0; i < defaultLanguages.length; i++) {
+                lang = langMap.get(defaultLanguages[i]);
+                if (lang)
+                    return lang;
+            }
+        }
+        var baseUrl;
+        var lang;
+        try {
+            baseUrl= window.location.pathname.substring(0, window.location.pathname.lastIndexOf("/"));
+            lang = getCookie("lang");
+            if (!lang) {
+                lang = getDefaultLanguage();
+            }
+        }
+        finally
+        {
+            if (langs.indexOf(lang) < 0) {
+                lang = langs[0];
+            }
+            window.location.href = baseUrl + "/" + lang + "/web/hkfa/home.html";;
+        }
+    </script>
+</head>
+<body>
+    <a href="en/web/hkfa/home.html" lang="en">English</a>
+    <a href="tc/web/hkfa/home.html" lang="zh-HK">䌓體版</a>
+    <a href="sc/web/hkfa/home.html" lang="zh-CN">简体版</a>
+</body>
+</html>

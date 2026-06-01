@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Situs Sedang Dalam Pengembangan</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Barlow';
+      background: url('https://jogjaheritagesociety.org/wp-content/uploads/2021/01/33-ivaa-documentation-1-sumber-dynartsudio-1536x1152.jpg') no-repeat center center/cover;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    body::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.78);
+      z-index: 0;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      width: 100%;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Header sticky (logo + judul) */
+    .header {
+      flex: 0 0 auto;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .logo img {
+      width: 180px;
+      height: auto;
+      margin-bottom: 15px;
+      border-radius: 12px;
+    }
+
+    h1 {
+      font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    /* Bagian konten yang bisa di-scroll */
+    .content {
+      flex: 1 1 auto;
+      overflow-y: auto;
+      padding: 10px 20px;
+      margin: 10px 0;
+      text-align: left;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeIn 1.5s ease;
+    }
+
+    p {
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+      line-height: 1.5;
+      margin-bottom: 8px;
+      color: #e0e0e0;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+      color: #ddd;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+    }
+
+    .footer {
+      flex: 0 0 auto;
+      font-size: clamp(0.75rem, 1vw, 0.9rem);
+      color: #aaa;
+      margin-top: 10px;
+      animation: fadeIn 1.6s ease;
+    }
+
+    /* Scrollbar halus */
+    .content::-webkit-scrollbar {
+      width: 6px;
+    }
+    .content::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.3);
+      border-radius: 3px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      .logo img { width: 130px; }
+      h1 { font-size: 1.8rem; }
+      p, ul { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <div class="logo">
+        <img src="LOGO IVAA-01.png" alt="Logo Perusahaan">
+      </div>
+      <h1>ReOpening! IVAA Contemporary Art Studies 2025</h1>
+    </div>
+
+    <div class="content">
+        <p>
+        Mulai 7 April 2025, Indonesian Visual Art Archive (IVAA) memulai proses #Rebooting sebagai langkah strategis menuju arah baru kelembagaan. Setelah melalui proses reflektif dan evaluatif, IVAA resmi menetapkan identitas baru sebagai Lembaga Kajian Seni Kontemporer (IVAA Contemporary Art Studies).
+        <br>
+        <br>
+        Sebagai bagian dari pembukaan kembali, Rumah IVAA akan kembali dibuka untuk publik mulai 7 Oktober 2025, dan siap menyambut seluruh Kawan IVAA dalam semangat kolaborasi dan pertukaran pengetahuan.
+        <br>
+        <br>
+        Transformasi ini menegaskan komitmen IVAA untuk memperkuat peran riset dan aktivasi arsip seni rupa kontemporer sebagai inti program kelembagaan. Dalam kerangka tersebut, IVAA Contemporary Art Studies meluncurkan program Grant Penelitian yang mendorong lahirnya pembacaan-pembacaan baru berbasis arsip IVAA. Program ini juga membuka peluang kerja sama dengan institusi akademik guna meningkatkan kredibilitas dan memperluas diseminasi hasil riset.
+        <br>
+        <br>
+        Selama lebih dari tiga dekade, IVAA telah menjadi salah satu pusat dokumentasi seni rupa kontemporer terdepan di Indonesia. Arsip yang dikelola IVAA menjadi sumber penting bagi peneliti, seniman, kurator, dan masyarakat luas dalam memahami dinamika seni kontemporer di Indonesia.
+      </p>
+
+      <p>Sebagai bagian dari proses kurasi ulang, IVAA menyaring topik-topik arsip dan pustaka yang paling sering diakses. Hasilnya, teridentifikasi delapan tema inti yang menjadi fokus utama pencarian dan penelitian arsip seni kontemporer:</p>
+      <ul>
+       <li> Perkembangan teori & diskursus seni kontemporer dalam praktik seni rupa Indonesia </li> 
+       <li> Seni kontemporer, perubahan sosial-politik, dan gerakan masyarakat sipil</li> 
+       <li> Medium & praktik seni kontemporer pasca-1990an (urban art, mural, street art, performance art, video art, new media)</li> 
+       <li> Modernisme & kontemporer Indonesia: sejarah, kontinuitas, diskontinuitas</li> 
+       <li> Peristiwa seni rupa (Biennale, Triennale, Festival)</li> 
+       <li> Skena/medan seni rupa Indonesia (fokus: Yogyakarta, Bali, Padang, Jakarta, Bandung)</li> 
+        <li> Gender, feminisme, perempuan</li> 
+        <li> Identitas, etnisitas, minoritas</li> 
+      </ul>
+
+    </div>
+
+    <div class="footer">© 2025 Indonesian Visual Art Archive. Semua Hak Dilindungi.</div>
+  </div>
+</body>
+</html>

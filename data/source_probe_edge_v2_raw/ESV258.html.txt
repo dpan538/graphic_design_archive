@@ -1,0 +1,167 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		
+<title>SAHA - South African History Archive - Home</title>
+<!-- <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" /> -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="SAHA-South African History Archive">
+<meta name="keywords" content="SAHA,South African,History,Archive,Activism,Apartheid,PAIA,HumanRights">
+<meta name="robots" content="index, follow, all" />
+<meta name="google-site-verification" content="7garjUlkgquLl0eKOe3q4h-0GoZFGmZAuiU2j68zxMo" />
+<meta http-equiv="pragma" content="no-cache" />
+
+		<link rel="stylesheet" href="/css/lightbox.css" />
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="/css/jquery.fancybox.css"  type="text/css">
+		<link rel="stylesheet" href="/css/saha.css"  type="text/css">
+		<link rel="stylesheet" href="/css/slick.css"  type="text/css">
+		<link rel="stylesheet" href="/css/slick-theme.css"  type="text/css">
+		<script language="javascript" src="/js/lightbox.js"></script>
+		<!--[if lte IE 6]>
+		<link href="/css/iestyle.css" rel="stylesheet" type="text/css">
+		<![endif]-->
+
+		<meta name="google-site-verification" content="ZNN6-RaBYRDiMN0WDFatV_gNiOBO3PsM6wh5QCj_GG8" />
+	</head>
+
+	<body>
+		<script language="javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script language="javascript" src="/js/jquery.fancybox.pack.js"></script>
+	<script language="javascript" src="/js/slick.min.js"></script>
+<script language="javascript" src="../js/validation.js"></script>
+	<div id="container">
+		<div id="header">
+
+			<div id="header_search">
+				<a href="search.php"><img src="images/search.png" alt="Search" /></a>
+			</div>
+
+			<div style="position: absolute; top:30px; left:130px; border: 0px solid green; height: 103px; width: 108px ;">
+				<a href="index.htm"><img src="/images/spacer.gif" width="108" height="103" /></a>
+			</div>
+
+
+			<div class="top_left_home_menu">
+				<a href="index.htm" class="top_left_menu_selected" >&nbsp;Home&nbsp;</a>
+			</div>
+			<div class="top_left_menu_spliter">
+				<img src="/images/menu-divide-1.gif" style="margin: 0px 0px 0px 10px;"/>
+			</div>
+
+			<div class="top_left_menu_div" style="width:86px">
+				<a href="about_saha.htm" style="margin: 0px 0px 0px 1px;" class="top_left_menu">&nbsp;About SAHA&nbsp;</a>
+			</div>
+
+			<div class="top_left_menu_spliter">
+				<img src="/images/menu-divide-1.gif" class="top_left_menu_space"/>
+			</div>
+			<div class="top_left_menu_div">
+				<a href="/news.htm" class="top_left_menu" style="margin: 0px 0px 0px 1px;"/>&nbsp;News&nbsp;</a>
+		   </div>
+
+			<div id="top_left_menu">
+				<table class="toprightmenu_ul" cellpadding="0" cellspacing="0">
+					<tr>
+						<td id="menu_tab2_td" class="menu_tab_td">
+							<a class="menu_tab" href="collections.htm">COLLECTIONS</a>
+						</td>
+						<td id="menu_tab4_td" class="menu_tab_td">
+							<a class="menu_tab" href="projects.htm">PROJECTS</a>
+						</td>
+						<td id="menu_tab5_td" class="menu_tab_td">
+							<a class="menu_tab" href="publications.htm">PUBLICATIONS</a>
+						</td>
+						<td id="menu_tab3_td" class="menu_tab_td">
+							<a class="menu_tab" href="exhibitions.htm">EXHIBITIONS</a>
+						</td>
+						<td id="menu_tab1_td" class="menu_tab_td">
+							<a class="menu_tab" href="advocacy.htm">NETWORKS</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div id="below_header">
+
+		<div id="breadcrumbs" class="breadcrumbs"><a href="/index.php">Home</a></div>
+		</div>
+		<!-- ============================================= Table of contents begins  =================================== //-->
+		<table class="toc" cellpadding="0" cellspacing="0">
+			<tr>
+				<td valign="top">
+					<div id ="wl_image">
+					</div>
+				</td>
+
+				<td valign="top" id="wrapper_left">
+					<img src="/images/left_bar_2.gif" width="26" height="71">
+				</td>
+
+				<td valign="top">
+
+<div id="content">
+	<table cellpadding="0" cellspacing="0" class="maincontent" id="maincontenttable" style="margin: 0px 20px;"><tr><td id="contentcolumn_3" valign="top" colspan="2"><div id="cbl_978" prop="{ BlockClass:'CMSlider', Columnid:3, Position : 1 }"><div id="slider6a1d5539a7f6f" class="slickfader"><div><img src="/resources/images/HomePageImages/SlideshowSlides/Mandate1.jpg" alt=""></div><div><img src="/resources/images/HomePageImages/SlideshowSlides/Mandate2.jpg" alt=""></div><div><img src="/resources/images/HomePageImages/SlideshowSlides/Mandate3.jpg" alt=""></div><div><img src="/resources/images/HomePageImages/SlideshowSlides/Mandate4.jpg" alt=""></div><div><img src="/resources/images/HomePageImages/SlideshowSlides/Mandate5.jpg" alt=""></div></div></div><script>
+
+        $(document).ready(function() {
+            $('#content').prepend($('#slider6a1d5539a7f6f'));
+            $('#slider6a1d5539a7f6f').slick({fade:true, autoplay: true, adaptiveHeight: true, autoplaySpeed: 5000 });
+			});
+        </script></td></tr><tr><td valign="top" id="contentcolumn_1" style="width: 500px;"><div id="cbl_979" prop="{ BlockClass:'CMStandard', Columnid:1, Position : 1 }" class="CMStandard_container">&nbsp;</div><div id="cbl_838" prop="{ BlockClass:'CMNewsFeed', Columnid:1, Position : 2 }" class="CMNewsFeed"><div style="height: 21px; overflow: hidden"><img src="/images/home-news-dots.gif" style="margin: 15px 0px 0px 5px;" align="top" /></div><table id="news_table" cellpadding="0" cellspacing="0" border ="0" width="500px" height="300px"><tr><td><img src="/images/home-latest-news.gif" style="margin: 10px 0px 20px 0px;" /></td></tr><tr><td><div ><a href="news/2024/November/south_african_and_dutch_collaboration_to_celebrate_30_years_of_south_african_democracy.htm" id="news_title">South African and Dutch collaboration to Celebrate 30 Years of South African  Democracy</a><div  id="news_date">14 November 2024</div></td></tr><tr><td id="news_description" colspan="2"><div id ="news_padding" ></div></td></tr><tr><td id="news_details" colspan="2" valign="top""><div id ="news_padding" ><a href="news/2024/November/south_african_and_dutch_collaboration_to_celebrate_30_years_of_south_african_democracy.htm">&gt; read more</a></div></td></tr><tr><td><div ><a href="news/2024/August/reopening_of_saha_reading_room_and_archive.htm" id="news_title">REOPENING OF SAHA READING ROOM AND ARCHIVE</a><div  id="news_date">16 August 2024</div></td></tr><tr><td id="news_description" colspan="2"><div id ="news_padding" >We are happy to announce that the relocation and unpacking of SAHA's archival holdings has just been completed and we are now able to receive researchers again</div></td></tr><tr><td id="news_details" colspan="2" valign="top""><div id ="news_padding" ><a href="news/2024/August/reopening_of_saha_reading_room_and_archive.htm">&gt; read more</a></div></td></tr><tr><td><div ><a href="news/2022/April/re_launch_of_saha_at_wits_university.htm" id="news_title">(Re)launch of SAHA at Wits University</a><div  id="news_date">28 April 2022</div></td></tr><tr><td id="news_description" colspan="2"><div id ="news_padding" >On 6 April, the South African History Archive was officially relaunched at Wits university by its Vice-Chancellor Zeblon Vilakazi. </div></td></tr><tr><td id="news_details" colspan="2" valign="top""><div id ="news_padding" ><a href="news/2022/April/re_launch_of_saha_at_wits_university.htm">&gt; read more</a></div></td></tr><tr><td><div ><a href="news/2020/October/archives_to_liberation.htm" id="news_title">Archives to Liberation</a><div  id="news_date">15 October 2020</div></td></tr><tr><td id="news_description" colspan="2"><div id ="news_padding" >Resistance has been an unavoidable part of our lives as people of African heritage. So much so that it has become fashionable to remember our experience in terms of struggle. This collaborative project between SAHA and DTA is not that kind of project. </div></td></tr><tr><td id="news_details" colspan="2" valign="top""><div id ="news_padding" ><a href="news/2020/October/archives_to_liberation.htm">&gt; read more</a></div></td></tr><tr><td><div ><a href="news/2020/June/justice_for_ahmed_timol_and_other_apartheid_victims.htm" id="news_title">Press Statement by the South African Coalition for Transitional Justice</a><div  id="news_date">22 June 2020</div></td></tr><tr><td id="news_description" colspan="2"><div id ="news_padding" >The South African Coalition for Transitional Justice (SACTJ) notes with deep concern the decision by the National Prosecuting Authority (NPA) that it does not intend to pursue charges against two apartheid Security Branch police officers, Seth Sons and Ne</div></td></tr><tr><td id="news_details" colspan="2" valign="top""><div id ="news_padding" ><a href="news/2020/June/justice_for_ahmed_timol_and_other_apartheid_victims.htm">&gt; read more</a></div></td></tr><tr><td><div ><a href="news/2020/May/press_release_openness_prevails_in_victorious_judgment_in_sca_appeal.htm" id="news_title">Press Release: Openness prevails in victorious judgment in SCA appeal</a><div  id="news_date">30 May 2020</div></td></tr><tr><td id="news_description" colspan="2"><div id ="news_padding" >In a precedent setting judgment handed down by the Supreme Court of Appeal (SCA) on Friday 29 May 2020 the South African History Archive SAHA prevailed in a six year long battle for access to information.</div></td></tr><tr><td id="news_details" colspan="2" valign="top""><div id ="news_padding" ><a href="news/2020/May/press_release_openness_prevails_in_victorious_judgment_in_sca_appeal.htm">&gt; read more</a></div></td></tr><tr><td><div ><a href="news/2020/March/unpacking_the_declaration_of_a_national_disaster.htm" id="news_title">Unpacking the Declaration of a National Disaster</a><div  id="news_date">16 March 2020</div></td></tr><tr><td id="news_description" colspan="2"><div id ="news_padding" >Following the declaration of a national state of disaster by President Cyril Ramaphosa, we thought it prudent to help unpack the  Disaster Management Act No. 57 of 2002 which enabled the announcement made by the president.
+</div></td></tr><tr><td id="news_details" colspan="2" valign="top""><div id ="news_padding" ><a href="news/2020/March/unpacking_the_declaration_of_a_national_disaster.htm">&gt; read more</a></div></td></tr><tr><td><div ><a href="news/2020/February/the_south_african_history_archive_trust_v_the_south_african_reserve_bank_and_others.htm" id="news_title">SAHA at the Supreme Court of Appeal</a><div  id="news_date">25 February 2020</div></td></tr><tr><td id="news_description" colspan="2"><div id ="news_padding" >On March 3, 2020, SAHA and the SARB appear before a court of law once again. This time, to argue and appeal lodged by SAHA following the March 2018 ruling from the High Court.</div></td></tr><tr><td id="news_details" colspan="2" valign="top""><div id ="news_padding" ><a href="news/2020/February/the_south_african_history_archive_trust_v_the_south_african_reserve_bank_and_others.htm">&gt; read more</a></div></td></tr><tr><td><div ><a href="news/2020/January/dr_aggett_inquest_re_opened.htm" id="news_title">Dr. Aggett Inquest Re-opened</a><div  id="news_date">21 January 2020</div></td></tr><tr><td id="news_description" colspan="2"><div id ="news_padding" >The inquest into the death of Dr. Neil Aggett has been re-opened and commenced on 20 January, 2020. </div></td></tr><tr><td id="news_details" colspan="2" valign="top""><div id ="news_padding" ><a href="news/2020/January/dr_aggett_inquest_re_opened.htm">&gt; read more</a></div></td></tr><tr><td><div ><a href="news/2019/November/16_days_of_activism_2019.htm" id="news_title">16 Days of Activism 2019</a><div  id="news_date">29 November 2019</div></td></tr><tr><td id="news_description" colspan="2"><div id ="news_padding" >This brief write up was written by Andile (the Canadian Bar Association Intern) in commemoration of this year's International 16 Days of Activism Against Gender Based Violence. </div></td></tr><tr><td id="news_details" colspan="2" valign="top""><div id ="news_padding" ><a href="news/2019/November/16_days_of_activism_2019.htm">&gt; read more</a></div></td></tr></table></div></td><td id="contentcolumn_2"><div id="cbl_983" prop="{ BlockClass:'CMStandard', Columnid:2, Position : 1 }" class="CMStandard_container"><p><strong><span>SAHA&rsquo;s new address</span></strong></p>
+<p><span>The South African History Archive and reading room is located at the University of the Witwatersrand in Education Library, Wits Education Campus, St Andrews Road, Parktown, Johannesburg.</span></p>
+<p>Opening hours: By appointment only.</p>
+<p>Please contact Arianna Lissoni&nbsp;<a href="mailto:arianna@saha.org.za">arianna@saha.org.za</a> or Gabriele Mohale&nbsp;<a href="mailto:Gabriele.Mohale@wits.ac.za">Gabriele.Mohale@wits.ac.za</a> to book an appointment.</p>
+<p><span></span></p></div><div id="cbl_973" prop="{ BlockClass:'CMImageLink', Columnid:2, Position : 2 }" class="CMImageLink_container"><a href="http://www.saha.org.za/women/index.htm"><img src="/resources/images/HomePageImages/Women-home.png" alt="" /></a></div><div id="cbl_976" prop="{ BlockClass:'CMImageLink', Columnid:2, Position : 3 }" class="CMImageLink_container"><a href="http://www.saha.org.za/nonracialism"><img src="/resources/images/HomePageImages/SAHA_TUT_VE_homepage.jpg" alt="" /></a></div><div id="cbl_902" prop="{ BlockClass:'CMImageLink', Columnid:2, Position : 4 }" class="CMImageLink_container"><a href="http://www.saha.org.za/publications/riding_the_transitional_rollercoaster.htm"><img src="/resources/images/HomePageImages/SAHA_RTTR_WEB_homepage.jpg" alt="" /></a></div><div id="cbl_971" prop="{ BlockClass:'CMImageLink', Columnid:2, Position : 5 }" class="CMImageLink_container"><a href="/resources/docs/Publications/FOIP_pub/PAIA_Unpacked_for_Lawyers_and_Paralegals/PAIA_UNPACKED.pdf" target="_blank"><img src="/resources/images/HomePageImages/PAIA-Unpacked.png" alt="" /></a></div><div id="cbl_972" prop="{ BlockClass:'CMImageLink', Columnid:2, Position : 6 }" class="CMImageLink_container"><a href="https://www.saha.org.za/shiftyrecords/index.htm"><img src="/resources/images/HomePageImages/SHIFTYhome.png" alt="" /></a></div><div id="cbl_830" prop="{ BlockClass:'CMImageLink', Columnid:2, Position : 7 }" class="CMImageLink_container"><a href="https://www.saha.org.za/publications/battle_against_forgetting_human_rights_and_the_trc.htm" target="_blank"><img src="/resources/images/HomePageImages/tbaf-home.png" alt="" /></a></div><div id="cbl_898" prop="{ BlockClass:'CMImageLink', Columnid:2, Position : 8 }" class="CMImageLink_container"><a href="http://sabctrc.saha.org.za/"><img src="/resources/images/HomePageImages/trc-home.png" alt="" /></a></div></td></tr></table></div>
+
+
+			</td>	
+			
+			<td valign="top" id="wrapper_right"> 
+				<img src="/images/right_bar2.gif" width="25">
+			</td>
+			
+			<td valign="top">			
+				<div id="wr_image">
+				</div>
+			</td>
+		</tr>
+	</table>
+	<!-- ========================================= Table of contents ends =============================== //-->
+			<div id="footer">
+				
+			</div>
+			<div id="footer_link">
+				<table cellpadding="0" cellspacing="0" width="915px">
+					<tr>
+						<td>&copy; South African History Archive 2026</td>
+						<td align="right">	
+							<a href="about_saha/saha_staff.htm">Contact</a>  &nbsp;|&nbsp;  							
+							<a href="disclaimer.htm">Disclaimer</a>  &nbsp;|&nbsp;
+							<a href="privacy_policy.htm">Privacy Policy</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PP288R"
+				  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-PP288R');</script>
+<!-- End Google Tag Manager -->
+<script>
+	$(document).ready(function() {
+		$(".fancybox").fancybox({
+			type: 'iframe'
+		});
+	});
+</script>
+	</body>
+</html>

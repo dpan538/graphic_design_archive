@@ -3650,3 +3650,47 @@ Validation:
   `70.19%`. The launch target is not met because the source-hosted `IMG02`
   population is large and must be treated as rights-sensitive rather than
   open-image proof.
+
+## 2026-06-01 — Edge Source Probe v2
+
+Purpose:
+
+- Expand the source map toward the 200-source target with underrepresented,
+  local, community, university, professional, and government sources.
+- Move beyond the current large-institution API bias, especially across East
+  Asia, Southeast Asia, Latin America, Africa, and the Middle East.
+- Build a source-registry layer before promoting thin records into public
+  surfaces.
+
+Changes made:
+
+- Added `scripts/probe_edge_source_candidates_v2.py`.
+- Probed 64 source candidates and wrote
+  `data/source_probe_edge_v2.csv`.
+- Wrote redacted raw probe payloads under
+  `data/source_probe_edge_v2_raw/`.
+- Wrote `docs/capture/EDGE_SOURCE_PROBE_v2.md`.
+- Tightened protocol detection after catching an `EAD` false positive caused
+  by generic HTML text.
+
+Result:
+
+- 48 of 64 candidates were reachable during this run.
+- 37 candidates were marked P1 for adapter/source-registry follow-up.
+- P1 regional distribution: Southeast Asia 17, East Asia 8, Latin America 4,
+  Global 3, Africa 2, North America 1, Europe 1, Middle East 1.
+- Protocol hints among reachable pages: WordPress REST/RSS 16, JSON-LD 14,
+  PDF 7, RSS/Atom 6, IIIF 3, Next/static JS 1, ArchiveSpace/EAD 1.
+
+Policy notes:
+
+- This probe does not publish archive records or inflate surface counts.
+- Social platforms remain discovery-only and default to `IMG00`.
+- Independent/community/private sources default to `IMG02` source-hosted or
+  `IMG00` link-only until item-level rights and image endpoints are reviewed.
+- The next capture pass should prioritise P1 sources with repeatable protocols
+  first: WordPress, IIIF, JSON-LD, PDF/OCR, and stable institutional HTML.
+
+Validation:
+
+- `scripts/audit_secret_patterns.py` passed after the probe.
