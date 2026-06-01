@@ -1,4 +1,5 @@
 import type { Leaf } from "@/lib/paginate";
+import { appendixFrameClass, resolveAppendixLayout } from "@/lib/appendix-layout";
 import { renderLeafContent, type LeafCtx } from "../layouts";
 
 /**
@@ -21,7 +22,9 @@ export default function LeafFrame({
     leaf.type === "bookmark"
       ? "leaf--bookmark"
       : leaf.type === "appendix"
-      ? "leaf--appendix"
+      ? `leaf--appendix ${appendixFrameClass(
+          resolveAppendixLayout(leaf.surface, leaf.tables ?? [], leaf.appendixLayoutId),
+        )}`
       : leaf.layoutId === "L06.card"
         ? "leaf--card"
         : leaf.layoutId === "L07.stub"

@@ -105219,9 +105219,9 @@
     {
       "surfaceId": "SURF-MX1970R040",
       "sourceRecordId": "MX1970R040",
-      "surfaceType": "card",
-      "templateId": "card.sparse.v0",
-      "provisionalDisplayNumber": "GD / 1931 / STAGED-MC-0432 / S-p01",
+      "surfaceType": "sheet",
+      "templateId": "sheet.main.v0",
+      "provisionalDisplayNumber": "GD / 1931 / STAGED-MC-0432 / M-p01",
       "seqLabel": "STAGED-MC-0432",
       "historicalNodeIds": [
         "HN009",
@@ -105254,20 +105254,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/commercialartdes0000rayj",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -105286,7 +105285,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": null,
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -105371,11 +105370,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -118524,9 +118523,9 @@
     {
       "surfaceId": "SURF-MX1970R026",
       "sourceRecordId": "MX1970R026",
-      "surfaceType": "card",
-      "templateId": "card.sparse.v0",
-      "provisionalDisplayNumber": "GD / 1936 / STAGED-MC-0486 / S-p01",
+      "surfaceType": "sheet",
+      "templateId": "sheet.main.v0",
+      "provisionalDisplayNumber": "GD / 1936 / STAGED-MC-0486 / M-p01",
       "seqLabel": "STAGED-MC-0486",
       "historicalNodeIds": [
         "HN009",
@@ -118559,20 +118558,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/bwb_S0-EBS-482",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -118591,7 +118589,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": null,
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -118676,11 +118674,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -118777,7 +118775,7 @@
       "surfaceId": "SURF-MX1970R025",
       "sourceRecordId": "MX1970R025",
       "surfaceType": "sheet",
-      "templateId": "sheet.img00.v0",
+      "templateId": "sheet.main.v0",
       "provisionalDisplayNumber": "GD / 1936 / STAGED-MC-0487 / M-p01",
       "seqLabel": "STAGED-MC-0487",
       "historicalNodeIds": [
@@ -118811,20 +118809,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/graphicdesignlib0000frie",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -118843,7 +118840,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": "main",
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -118928,11 +118925,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -130323,9 +130320,9 @@
     {
       "surfaceId": "SURF-MX1970R044",
       "sourceRecordId": "MX1970R044",
-      "surfaceType": "card",
-      "templateId": "card.sparse.v0",
-      "provisionalDisplayNumber": "GD / 1939 / STAGED-MC-0540 / S-p01",
+      "surfaceType": "sheet",
+      "templateId": "sheet.main.v0",
+      "provisionalDisplayNumber": "GD / 1939 / STAGED-MC-0540 / M-p01",
       "seqLabel": "STAGED-MC-0540",
       "historicalNodeIds": [
         "HN009",
@@ -130358,20 +130355,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/commercialart0000cewa",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -130390,7 +130386,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": null,
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -130475,11 +130471,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -130576,7 +130572,7 @@
       "surfaceId": "SURF-MX1970R043",
       "sourceRecordId": "MX1970R043",
       "surfaceType": "sheet",
-      "templateId": "sheet.img00.v0",
+      "templateId": "sheet.main.v0",
       "provisionalDisplayNumber": "GD / 1939 / STAGED-MC-0541 / M-p01",
       "seqLabel": "STAGED-MC-0541",
       "historicalNodeIds": [
@@ -130610,20 +130606,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/commercialart0000wall",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -130642,7 +130637,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": "main",
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -130727,11 +130722,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -131330,7 +131325,7 @@
       "surfaceId": "SURF-MX1970R042",
       "sourceRecordId": "MX1970R042",
       "surfaceType": "sheet",
-      "templateId": "sheet.img00.v0",
+      "templateId": "sheet.main.v0",
       "provisionalDisplayNumber": "GD / 1939 / STAGED-MC-0544 / M-p01",
       "seqLabel": "STAGED-MC-0544",
       "historicalNodeIds": [
@@ -131364,20 +131359,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/in.ernet.dli.2015.166701",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -131396,7 +131390,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": "main",
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -131481,11 +131475,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -146892,9 +146886,9 @@
     {
       "surfaceId": "SURF-MX1970R045",
       "sourceRecordId": "MX1970R045",
-      "surfaceType": "card",
-      "templateId": "card.sparse.v0",
-      "provisionalDisplayNumber": "GD / 1941 / STAGED-MC-0610 / S-p01",
+      "surfaceType": "sheet",
+      "templateId": "sheet.main.v0",
+      "provisionalDisplayNumber": "GD / 1941 / STAGED-MC-0610 / M-p01",
       "seqLabel": "STAGED-MC-0610",
       "historicalNodeIds": [
         "HN009",
@@ -146927,20 +146921,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/bwb_S0-DHV-277",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -146959,7 +146952,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": null,
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -147044,11 +147037,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -166745,9 +166738,9 @@
     {
       "surfaceId": "SURF-MX1970R046",
       "sourceRecordId": "MX1970R046",
-      "surfaceType": "card",
-      "templateId": "card.sparse.v0",
-      "provisionalDisplayNumber": "GD / 1949 / STAGED-MC-0694 / S-p01",
+      "surfaceType": "sheet",
+      "templateId": "sheet.main.v0",
+      "provisionalDisplayNumber": "GD / 1949 / STAGED-MC-0694 / M-p01",
       "seqLabel": "STAGED-MC-0694",
       "historicalNodeIds": [
         "HN009",
@@ -166780,20 +166773,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/teachyourselfcom0000unse_h2p8",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -166812,7 +166804,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": null,
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -166897,11 +166889,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -175760,9 +175752,9 @@
     {
       "surfaceId": "SURF-MX1970R047",
       "sourceRecordId": "MX1970R047",
-      "surfaceType": "card",
-      "templateId": "card.sparse.v0",
-      "provisionalDisplayNumber": "GD / 1952 / STAGED-MC-0744 / S-p01",
+      "surfaceType": "sheet",
+      "templateId": "sheet.main.v0",
+      "provisionalDisplayNumber": "GD / 1952 / STAGED-MC-0744 / M-p01",
       "seqLabel": "STAGED-MC-0744",
       "historicalNodeIds": [
         "HN009",
@@ -175795,20 +175787,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/commercialarttec0000sral_y1y4",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -175827,7 +175818,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": null,
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -175912,11 +175903,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -176012,9 +176003,9 @@
     {
       "surfaceId": "SURF-MX1970R049",
       "sourceRecordId": "MX1970R049",
-      "surfaceType": "card",
-      "templateId": "card.sparse.v0",
-      "provisionalDisplayNumber": "GD / 1952 / STAGED-MC-0745 / S-p01",
+      "surfaceType": "sheet",
+      "templateId": "sheet.main.v0",
+      "provisionalDisplayNumber": "GD / 1952 / STAGED-MC-0745 / M-p01",
       "seqLabel": "STAGED-MC-0745",
       "historicalNodeIds": [
         "HN009",
@@ -176047,20 +176038,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/commercialarttec00maur",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -176079,7 +176069,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": null,
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -176164,11 +176154,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -177520,9 +177510,9 @@
     {
       "surfaceId": "SURF-MX1970R048",
       "sourceRecordId": "MX1970R048",
-      "surfaceType": "card",
-      "templateId": "card.sparse.v0",
-      "provisionalDisplayNumber": "GD / 1952 / STAGED-MC-0752 / S-p01",
+      "surfaceType": "sheet",
+      "templateId": "sheet.main.v0",
+      "provisionalDisplayNumber": "GD / 1952 / STAGED-MC-0752 / M-p01",
       "seqLabel": "STAGED-MC-0752",
       "historicalNodeIds": [
         "HN009",
@@ -177547,7 +177537,7 @@
       "sourceNotes": "Internet Archive metadata record.",
       "sourceSubjects": "",
       "readingTextLength": 33,
-      "completenessScore": 90,
+      "completenessScore": 95,
       "reviewGates": {
         "sourceUrl": true,
         "rightsReviewed": false,
@@ -177555,20 +177545,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/commercialarttec0000unse_n1z9",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -177587,7 +177576,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": null,
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -177672,11 +177661,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -177772,9 +177761,9 @@
     {
       "surfaceId": "SURF-MX1970R050",
       "sourceRecordId": "MX1970R050",
-      "surfaceType": "card",
-      "templateId": "card.sparse.v0",
-      "provisionalDisplayNumber": "GD / 1952 / STAGED-MC-0753 / S-p01",
+      "surfaceType": "sheet",
+      "templateId": "sheet.main.v0",
+      "provisionalDisplayNumber": "GD / 1952 / STAGED-MC-0753 / M-p01",
       "seqLabel": "STAGED-MC-0753",
       "historicalNodeIds": [
         "HN009",
@@ -177799,7 +177788,7 @@
       "sourceNotes": "Internet Archive metadata record.",
       "sourceSubjects": "",
       "readingTextLength": 33,
-      "completenessScore": 90,
+      "completenessScore": 95,
       "reviewGates": {
         "sourceUrl": true,
         "rightsReviewed": false,
@@ -177807,20 +177796,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/commercialarttec0000unse",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -177839,7 +177827,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": null,
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -177924,11 +177912,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -179782,9 +179770,9 @@
     {
       "surfaceId": "SURF-MX1970R027",
       "sourceRecordId": "MX1970R027",
-      "surfaceType": "card",
-      "templateId": "card.sparse.v0",
-      "provisionalDisplayNumber": "GD / 1954 / STAGED-MC-0766 / S-p01",
+      "surfaceType": "sheet",
+      "templateId": "sheet.main.v0",
+      "provisionalDisplayNumber": "GD / 1954 / STAGED-MC-0766 / M-p01",
       "seqLabel": "STAGED-MC-0766",
       "historicalNodeIds": [
         "HN009",
@@ -179817,20 +179805,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/graphicdesignwit0000jlew",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -179849,7 +179836,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": null,
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -179934,11 +179921,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -180536,9 +180523,9 @@
     {
       "surfaceId": "SURF-MX1970R028",
       "sourceRecordId": "MX1970R028",
-      "surfaceType": "card",
-      "templateId": "card.sparse.v0",
-      "provisionalDisplayNumber": "GD / 1954 / STAGED-MC-0774 / S-p01",
+      "surfaceType": "sheet",
+      "templateId": "sheet.main.v0",
+      "provisionalDisplayNumber": "GD / 1954 / STAGED-MC-0774 / M-p01",
       "seqLabel": "STAGED-MC-0774",
       "historicalNodeIds": [
         "HN009",
@@ -180571,20 +180558,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/bwb_Y0-BTJ-958",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -180603,7 +180589,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": null,
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -180688,11 +180674,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -184812,7 +184798,7 @@
       "surfaceId": "SURF-MX1970R030",
       "sourceRecordId": "MX1970R030",
       "surfaceType": "sheet",
-      "templateId": "sheet.img00.v0",
+      "templateId": "sheet.main.v0",
       "provisionalDisplayNumber": "GD / 1960 / STAGED-MC-0795 / M-p01",
       "seqLabel": "STAGED-MC-0795",
       "historicalNodeIds": [
@@ -184846,20 +184832,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/graphicdesigncre0000bara",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -184878,7 +184863,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": "main",
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -184963,11 +184948,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -186067,9 +186052,9 @@
     {
       "surfaceId": "SURF-MX1970R029",
       "sourceRecordId": "MX1970R029",
-      "surfaceType": "card",
-      "templateId": "card.sparse.v0",
-      "provisionalDisplayNumber": "GD / 1960 / STAGED-MC-0800 / S-p01",
+      "surfaceType": "sheet",
+      "templateId": "sheet.main.v0",
+      "provisionalDisplayNumber": "GD / 1960 / STAGED-MC-0800 / M-p01",
       "seqLabel": "STAGED-MC-0800",
       "historicalNodeIds": [
         "HN009",
@@ -186094,7 +186079,7 @@
       "sourceNotes": "Internet Archive metadata record.",
       "sourceSubjects": "",
       "readingTextLength": 33,
-      "completenessScore": 90,
+      "completenessScore": 95,
       "reviewGates": {
         "sourceUrl": true,
         "rightsReviewed": false,
@@ -186102,20 +186087,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/graphicdesigncre0000unse",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -186134,7 +186118,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": null,
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -186219,11 +186203,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -191591,7 +191575,7 @@
       "surfaceId": "SURF-MX1970R051",
       "sourceRecordId": "MX1970R051",
       "surfaceType": "sheet",
-      "templateId": "sheet.img00.v0",
+      "templateId": "sheet.main.v0",
       "provisionalDisplayNumber": "GD / 1962 / STAGED-MC-0810 / M-p01",
       "seqLabel": "STAGED-MC-0810",
       "historicalNodeIds": [
@@ -191625,20 +191609,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/drawfinec00erns",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -191657,7 +191640,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": "main",
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -191742,11 +191725,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -192344,9 +192327,9 @@
     {
       "surfaceId": "SURF-MX1970R052",
       "sourceRecordId": "MX1970R052",
-      "surfaceType": "card",
-      "templateId": "card.sparse.v0",
-      "provisionalDisplayNumber": "GD / 1963 / STAGED-MC-0813 / S-p01",
+      "surfaceType": "sheet",
+      "templateId": "sheet.main.v0",
+      "provisionalDisplayNumber": "GD / 1963 / STAGED-MC-0813 / M-p01",
       "seqLabel": "STAGED-MC-0813",
       "historicalNodeIds": [
         "HN009",
@@ -192379,20 +192362,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/commercialarttec0000sral",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -192411,7 +192393,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": null,
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -192496,11 +192478,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -193350,7 +193332,7 @@
       "surfaceId": "SURF-MX1970R053",
       "sourceRecordId": "MX1970R053",
       "surfaceType": "sheet",
-      "templateId": "sheet.img00.v0",
+      "templateId": "sheet.main.v0",
       "provisionalDisplayNumber": "GD / 1963 / STAGED-MC-0818 / M-p01",
       "seqLabel": "STAGED-MC-0818",
       "historicalNodeIds": [
@@ -193384,20 +193366,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/shscgcommercialart63albe",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -193416,7 +193397,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": "main",
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -193501,11 +193482,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -194857,7 +194838,7 @@
       "surfaceId": "SURF-MX1970R031",
       "sourceRecordId": "MX1970R031",
       "surfaceType": "sheet",
-      "templateId": "sheet.img00.v0",
+      "templateId": "sheet.main.v0",
       "provisionalDisplayNumber": "GD / 1964 / STAGED-MC-0822 / M-p01",
       "seqLabel": "STAGED-MC-0822",
       "historicalNodeIds": [
@@ -194891,20 +194872,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/graphicdesignvis0000flet",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -194923,7 +194903,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": "main",
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -195008,11 +194988,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -199627,9 +199607,9 @@
     {
       "surfaceId": "SURF-MX1970R054",
       "sourceRecordId": "MX1970R054",
-      "surfaceType": "card",
-      "templateId": "card.sparse.v0",
-      "provisionalDisplayNumber": "GD / 1966 / STAGED-MC-0834 / S-p01",
+      "surfaceType": "sheet",
+      "templateId": "sheet.main.v0",
+      "provisionalDisplayNumber": "GD / 1966 / STAGED-MC-0834 / M-p01",
       "seqLabel": "STAGED-MC-0834",
       "historicalNodeIds": [
         "HN009",
@@ -199662,20 +199642,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/fellsguidetocomm0000royp",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -199694,7 +199673,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": null,
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -199779,11 +199758,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -200632,9 +200611,9 @@
     {
       "surfaceId": "SURF-MX1970R034",
       "sourceRecordId": "MX1970R034",
-      "surfaceType": "card",
-      "templateId": "card.sparse.v0",
-      "provisionalDisplayNumber": "GD / 1967 / STAGED-MC-0838 / S-p01",
+      "surfaceType": "sheet",
+      "templateId": "sheet.main.v0",
+      "provisionalDisplayNumber": "GD / 1967 / STAGED-MC-0838 / M-p01",
       "seqLabel": "STAGED-MC-0838",
       "historicalNodeIds": [
         "HN009",
@@ -200667,20 +200646,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/alphabetsdesignt0000mary",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -200699,7 +200677,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": null,
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -200784,11 +200762,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -201638,7 +201616,7 @@
       "surfaceId": "SURF-MX1970R033",
       "sourceRecordId": "MX1970R033",
       "surfaceType": "sheet",
-      "templateId": "sheet.img00.v0",
+      "templateId": "sheet.main.v0",
       "provisionalDisplayNumber": "GD / 1967 / STAGED-MC-0842 / M-p01",
       "seqLabel": "STAGED-MC-0842",
       "historicalNodeIds": [
@@ -201672,20 +201650,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/funktionundihred0000stan",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -201704,7 +201681,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": "main",
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -201789,11 +201766,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -203654,7 +203631,7 @@
       "surfaceId": "SURF-MX1970R032",
       "sourceRecordId": "MX1970R032",
       "surfaceType": "sheet",
-      "templateId": "sheet.img00.v0",
+      "templateId": "sheet.main.v0",
       "provisionalDisplayNumber": "GD / 1967 / STAGED-MC-0850 / M-p01",
       "seqLabel": "STAGED-MC-0850",
       "historicalNodeIds": [
@@ -203688,20 +203665,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/graphic-design-1967",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -203720,7 +203696,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": "main",
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -203805,11 +203781,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -206173,7 +206149,7 @@
       "surfaceId": "SURF-MX1970R035",
       "sourceRecordId": "MX1970R035",
       "surfaceType": "sheet",
-      "templateId": "sheet.img00.v0",
+      "templateId": "sheet.main.v0",
       "provisionalDisplayNumber": "GD / 1968 / STAGED-MC-0856 / M-p01",
       "seqLabel": "STAGED-MC-0856",
       "historicalNodeIds": [
@@ -206207,20 +206183,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/graphicdesignrep0000croy_x9q8",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -206239,7 +206214,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": "main",
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -206324,11 +206299,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -211194,7 +211169,7 @@
       "surfaceId": "SURF-MX1970R039",
       "sourceRecordId": "MX1970R039",
       "surfaceType": "sheet",
-      "templateId": "sheet.img00.v0",
+      "templateId": "sheet.main.v0",
       "provisionalDisplayNumber": "GD / 1970 / STAGED-MC-0878 / M-p01",
       "seqLabel": "STAGED-MC-0878",
       "historicalNodeIds": [
@@ -211228,20 +211203,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/historyofdesignf0000fere_b7b5",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -211260,7 +211234,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": "main",
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -211345,11 +211319,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -211696,9 +211670,9 @@
     {
       "surfaceId": "SURF-MX1970R037",
       "sourceRecordId": "MX1970R037",
-      "surfaceType": "card",
-      "templateId": "card.sparse.v0",
-      "provisionalDisplayNumber": "GD / 1970 / STAGED-MC-0881 / S-p01",
+      "surfaceType": "sheet",
+      "templateId": "sheet.main.v0",
+      "provisionalDisplayNumber": "GD / 1970 / STAGED-MC-0881 / M-p01",
       "seqLabel": "STAGED-MC-0881",
       "historicalNodeIds": [
         "HN009",
@@ -211731,20 +211705,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/micro_IA41153118_0683",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -211763,7 +211736,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": null,
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -211848,11 +211821,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -211949,7 +211922,7 @@
       "surfaceId": "SURF-MX1970R036",
       "sourceRecordId": "MX1970R036",
       "surfaceType": "sheet",
-      "templateId": "sheet.img00.v0",
+      "templateId": "sheet.main.v0",
       "provisionalDisplayNumber": "GD / 1970 / STAGED-MC-0882 / M-p01",
       "seqLabel": "STAGED-MC-0882",
       "historicalNodeIds": [
@@ -211983,20 +211956,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/graphicdesigncan0000soci",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -212015,7 +211987,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": "main",
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -212100,11 +212072,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -213205,7 +213177,7 @@
       "surfaceId": "SURF-MX1970R038",
       "sourceRecordId": "MX1970R038",
       "surfaceType": "sheet",
-      "templateId": "sheet.img00.v0",
+      "templateId": "sheet.main.v0",
       "provisionalDisplayNumber": "GD / 1970 / STAGED-MC-0889 / M-p01",
       "seqLabel": "STAGED-MC-0889",
       "historicalNodeIds": [
@@ -213239,20 +213211,19 @@
         "classificationKnown": true
       },
       "image": {
-        "state": "IMG00",
+        "state": "IMG02",
         "hasImageFrame": true,
-        "url": null,
-        "credit": null,
-        "licenseLabel": "Use IA as source/citation first; do not assume scans are reusable without item licence review.",
+        "url": "https://archive.org/services/img/layoutgraphicdes0000ball_x0b8",
+        "credit": "Internet Archive / text and periodical collections",
+        "licenseLabel": "Source-hosted Internet Archive image candidate; retain source return and rights review.",
         "expectation": "expected",
         "parserStatus": "ok",
-        "displayMode": "empty_rights_frame",
-        "placeholderText": "Use IA as source/citation first; do not assume scans are reusable without item licence review."
+        "displayMode": "source_viewer_frame"
       },
       "rights": {
-        "state": "rights_review_required",
-        "displayPolicy": "empty_rights_frame",
-        "label": "IMG00: Internet Archive item is valuable for discovery/text, but item-level image reuse is mixed or unclear."
+        "state": "source_viewer_candidate",
+        "displayPolicy": "source_viewer_frame",
+        "label": "IMG02: Internet Archive services/img exposes a source-hosted thumbnail or cover. Use source-linked display only; do not store a local copy, and keep item-level rights visible."
       },
       "folders": [
         {
@@ -213271,7 +213242,7 @@
           "title": "Publication design"
         }
       ],
-      "layoutHint": "main",
+      "layoutHint": "plate",
       "tables": [
         {
           "kind": "SOURCE",
@@ -213356,11 +213327,11 @@
           "rows": [
             [
               "Image state",
-              "IMG00"
+              "IMG02"
             ],
             [
               "Display policy",
-              "empty_rights_frame"
+              "source_viewer_frame"
             ],
             [
               "Rights basis",
@@ -253148,22 +253119,739 @@
   ],
   "appendices": [
     {
+      "appendixId": "APP-SURF-ER1830R001-GROUP",
+      "surfaceId": "SURF-ER1830R001-GROUP",
+      "title": "Trade card grouped records, 1830-1922",
+      "displayNumber": "GD / 1830 / STAGED-MC-0002 / M-p01",
+      "layoutId": "AX02.citation",
+      "reasons": [
+        "source/citation register"
+      ],
+      "tableRows": 11
+    },
+    {
+      "appendixId": "APP-SURF-GAX1970R010",
+      "surfaceId": "SURF-GAX1970R010",
+      "title": "(25 Juin) République Française [...] Pouvoir exécutif Soldats, Le salut de la Patrie vous réclame ! [...]",
+      "displayNumber": "GD / 1848 / STAGED-MC-0018 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R040",
+      "surfaceId": "SURF-CHW2026R040",
+      "title": "El Dorado; Eldorado; Scenic Panel from 'Eldorado'",
+      "displayNumber": "GD / 1947 / STAGED-MC-0681 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+      "surfaceId": "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+      "title": "Arundel Society chromolithograph copy series",
+      "displayNumber": "GD / 1864 / STAGED-MC-C001 / L-p01",
+      "layoutId": "AX02.citation",
+      "reasons": [
+        "source/citation register"
+      ],
+      "tableRows": 25
+    },
+    {
+      "appendixId": "APP-SURF-DNZ1970R002-GROUP",
+      "surfaceId": "SURF-DNZ1970R002-GROUP",
+      "title": "Untitled Illustration (Otago Witness, 13 December 1879) grouped records, 1879",
+      "displayNumber": "GD / 1879 / STAGED-MC-0086 / M-p01",
+      "layoutId": "AX02.citation",
+      "reasons": [
+        "source/citation register"
+      ],
+      "tableRows": 11
+    },
+    {
+      "appendixId": "APP-SURF-DNZ1970R009-GROUP",
+      "surfaceId": "SURF-DNZ1970R009-GROUP",
+      "title": "Untitled Illustration (Otago Witness, 20 December 1879) grouped records, 1879",
+      "displayNumber": "GD / 1879 / STAGED-MC-0093 / M-p01",
+      "layoutId": "AX02.citation",
+      "reasons": [
+        "source/citation register"
+      ],
+      "tableRows": 11
+    },
+    {
+      "appendixId": "APP-SURF-ER1830R018",
+      "surfaceId": "SURF-ER1830R018",
+      "title": "[Pearsall Photography Studio trade card]",
+      "displayNumber": "GD / 1880 / STAGED-MC-0103 / M-p01",
+      "layoutId": "AX06.typed-index",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-ER1830R021",
+      "surfaceId": "SURF-ER1830R021",
+      "title": "[Winter outing with people riding in horse-drawn sleighs across a snow covered landscape toward a church in the distance]",
+      "displayNumber": "GD / 1880 / STAGED-MC-0106 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-ER1830R023",
+      "surfaceId": "SURF-ER1830R023",
+      "title": "[Winter scene with horse team hauling logs on a sledge past a windmill, with snow covered landscape, under a full moon]",
+      "displayNumber": "GD / 1880 / STAGED-MC-0108 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-ER1830R025",
+      "surfaceId": "SURF-ER1830R025",
+      "title": "Cadbury's almanack for 2,000 years - a literary & useful curiosity",
+      "displayNumber": "GD / 1885 / STAGED-MC-0114 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAX1970R066",
+      "surfaceId": "SURF-GAX1970R066",
+      "title": "Cartes patriotiques : [esquisse pour l'affiche publicitaire d'un jeu boulangiste] : [jeu de cartes, dessin] / Dufour inv.",
+      "displayNumber": "GD / 1889 / STAGED-MC-0127 / M-p01",
+      "layoutId": "AX06.typed-index",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAX1970R070",
+      "surfaceId": "SURF-GAX1970R070",
+      "title": "Alambics pour cognacs, eaux de vie de vins, cidres... Appareils de distillation, Matériel de laboratoires Deroy fils Aîné constructeur. Rue du Théâtre, 73, 75, 77, Paris.Catalogue illustré & petit manuel... : [affiche] / [Non identifié]",
+      "displayNumber": "GD / 1890 / STAGED-MC-0134 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-ER1830R030",
+      "surfaceId": "SURF-ER1830R030",
+      "title": "Cats can, but Bon Ami can not scratch for it lacks grit",
+      "displayNumber": "GD / 1890 / STAGED-MC-0136 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-COMPOUND-HUNTLEY-PALMERS-TRADE-CARDS",
+      "surfaceId": "SURF-COMPOUND-HUNTLEY-PALMERS-TRADE-CARDS",
+      "title": "Huntley & Palmers trade-card series",
+      "displayNumber": "GD / 1890 / STAGED-MC-C002 / L-p01",
+      "layoutId": "AX02.citation",
+      "reasons": [
+        "source/citation register"
+      ],
+      "tableRows": 25
+    },
+    {
+      "appendixId": "APP-SURF-DNZ1970R015-GROUP",
+      "surfaceId": "SURF-DNZ1970R015-GROUP",
+      "title": "Untitled Illustration (Otago Witness, 20 April 1893) grouped records, 1893",
+      "displayNumber": "GD / 1893 / STAGED-MC-0167 / M-p01",
+      "layoutId": "AX02.citation",
+      "reasons": [
+        "source/citation register"
+      ],
+      "tableRows": 11
+    },
+    {
+      "appendixId": "APP-SURF-COM1970R007",
+      "surfaceId": "SURF-COM1970R007",
+      "title": "Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897.jpg",
+      "displayNumber": "GD / 1897 / STAGED-MC-0182 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-COM1970R009",
+      "surfaceId": "SURF-COM1970R009",
+      "title": "Poster calendar by L. Prang & Co. (2015646912).jpg",
+      "displayNumber": "GD / 1897 / STAGED-MC-0188 / M-p01",
+      "layoutId": "AX06.typed-index",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-ER1830R059",
+      "surfaceId": "SURF-ER1830R059",
+      "title": "Sculptress",
+      "displayNumber": "GD / 1897 / STAGED-MC-0190 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAX1970R087",
+      "surfaceId": "SURF-GAX1970R087",
+      "title": "Réclame de MM. Fossorier : [estampe] / H. Bellery-Desfontaines",
+      "displayNumber": "GD / 1898 / STAGED-MC-0193 / M-p01",
+      "layoutId": "AX06.typed-index",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R053",
+      "surfaceId": "SURF-CHW2026R053",
+      "title": "Album: A. P. W. Finest Satin Tissue 1500",
+      "displayNumber": "GD / 1954 / STAGED-MC-0762 / M-p01",
+      "layoutId": "AX04.context",
+      "reasons": [
+        "protocol/context packet"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R054",
+      "surfaceId": "SURF-CHW2026R054",
+      "title": "Album: Pickwick Beer",
+      "displayNumber": "GD / 1954 / STAGED-MC-0763 / M-p01",
+      "layoutId": "AX06.typed-index",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GA1970R022",
+      "surfaceId": "SURF-GA1970R022",
+      "title": "[Croisement de routes et publicité murale]",
+      "displayNumber": "GD / 1900 / STAGED-MC-0207 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R041-GROUP",
+      "surfaceId": "SURF-CHW2026R041-GROUP",
+      "title": "Handkerchief grouped records, 1900-1950",
+      "displayNumber": "GD / 1950 / STAGED-MC-0712 / M-p01",
+      "layoutId": "AX02.citation",
+      "reasons": [
+        "source/citation register"
+      ],
+      "tableRows": 11
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R094",
+      "surfaceId": "SURF-CHW2026R094",
+      "title": ". . . . AND National Bohemian Advertisement Proof",
+      "displayNumber": "GD / 1985 / STAGED-MC-0985 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R095",
+      "surfaceId": "SURF-CHW2026R095",
+      "title": "Academy for Educational Development",
+      "displayNumber": "GD / 1985 / STAGED-MC-0986 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R096",
+      "surfaceId": "SURF-CHW2026R096",
+      "title": "Art Directors Club of Chicago (ADCC) 27th Annual Exhibition of Advertising Art",
+      "displayNumber": "GD / 1985 / STAGED-MC-0987 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R098",
+      "surfaceId": "SURF-CHW2026R098",
+      "title": "Europa Carton Aktiengesellschaft",
+      "displayNumber": "GD / 1985 / STAGED-MC-0989 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R099",
+      "surfaceId": "SURF-CHW2026R099",
+      "title": "Europa Carton Aktiengesellschaft",
+      "displayNumber": "GD / 1985 / STAGED-MC-0990 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R100",
+      "surfaceId": "SURF-CHW2026R100",
+      "title": "Graphic Identity Samples, Noreen and Wilshire",
+      "displayNumber": "GD / 1985 / STAGED-MC-0991 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R101",
+      "surfaceId": "SURF-CHW2026R101",
+      "title": "Joslyn Art Museum",
+      "displayNumber": "GD / 1985 / STAGED-MC-0992 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R102",
+      "surfaceId": "SURF-CHW2026R102",
+      "title": "Joslyn Art Museum",
+      "displayNumber": "GD / 1985 / STAGED-MC-0993 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R103",
+      "surfaceId": "SURF-CHW2026R103",
+      "title": "Ski at Mont Gabriel, Piedmont near St. Saveur, Province Quebec, Canada",
+      "displayNumber": "GD / 1985 / STAGED-MC-0996 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-DNZ1970R020-GROUP",
+      "surfaceId": "SURF-DNZ1970R020-GROUP",
+      "title": "Untitled Illustration (Observer, 11 October 1902) grouped records, 1902",
+      "displayNumber": "GD / 1902 / STAGED-MC-0209 / M-p01",
+      "layoutId": "AX02.citation",
+      "reasons": [
+        "source/citation register"
+      ],
+      "tableRows": 11
+    },
+    {
+      "appendixId": "APP-SURF-DNZ1970R023-GROUP",
+      "surfaceId": "SURF-DNZ1970R023-GROUP",
+      "title": "Untitled Illustration (Observer, 20 September 1902) grouped records, 1902",
+      "displayNumber": "GD / 1902 / STAGED-MC-0212 / M-p01",
+      "layoutId": "AX02.citation",
+      "reasons": [
+        "source/citation register"
+      ],
+      "tableRows": 11
+    },
+    {
+      "appendixId": "APP-SURF-DNZ1970R026-GROUP",
+      "surfaceId": "SURF-DNZ1970R026-GROUP",
+      "title": "Untitled Illustration (Observer, 27 September 1902) grouped records, 1902",
+      "displayNumber": "GD / 1902 / STAGED-MC-0215 / M-p01",
+      "layoutId": "AX02.citation",
+      "reasons": [
+        "source/citation register"
+      ],
+      "tableRows": 11
+    },
+    {
+      "appendixId": "APP-SURF-DNZ1970R031-GROUP",
+      "surfaceId": "SURF-DNZ1970R031-GROUP",
+      "title": "Untitled Illustration grouped records, 1903-1905",
+      "displayNumber": "GD / 1903 / STAGED-MC-0221 / M-p01",
+      "layoutId": "AX02.citation",
+      "reasons": [
+        "source/citation register"
+      ],
+      "tableRows": 11
+    },
+    {
+      "appendixId": "APP-SURF-DNZ1970R060-GROUP",
+      "surfaceId": "SURF-DNZ1970R060-GROUP",
+      "title": "Untitled Illustration (Otago Witness, 02 September 1903) grouped records, 1903",
+      "displayNumber": "GD / 1903 / STAGED-MC-0250 / M-p01",
+      "layoutId": "AX02.citation",
+      "reasons": [
+        "source/citation register"
+      ],
+      "tableRows": 11
+    },
+    {
+      "appendixId": "APP-SURF-DNZ1970R077-GROUP",
+      "surfaceId": "SURF-DNZ1970R077-GROUP",
+      "title": "Untitled Illustration (Wanganui Chronicle, 17 June 1911) grouped records, 1911",
+      "displayNumber": "GD / 1911 / STAGED-MC-0275 / M-p01",
+      "layoutId": "AX02.citation",
+      "reasons": [
+        "source/citation register"
+      ],
+      "tableRows": 11
+    },
+    {
+      "appendixId": "APP-SURF-GAX1970R094-GROUP",
+      "surfaceId": "SURF-GAX1970R094-GROUP",
+      "title": "Paris, église de la rue Réaumur [de nombreuses affiches publicitaires sur les murs du bâtiment] : [photographie de presse] / [Agence Rol] grouped records, 1912",
+      "displayNumber": "GD / 1912 / STAGED-MC-0281 / M-p01",
+      "layoutId": "AX02.citation",
+      "reasons": [
+        "source/citation register"
+      ],
+      "tableRows": 11
+    },
+    {
+      "appendixId": "APP-SURF-COM1970R017",
+      "surfaceId": "SURF-COM1970R017",
+      "title": "At the R.A. by the Underground.jpg",
+      "displayNumber": "GD / 1913 / STAGED-MC-0286 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
       "appendixId": "APP-SURF-ER1830R065",
       "surfaceId": "SURF-ER1830R065",
       "title": "To the Amputees—Join the Workforce",
       "displayNumber": "GD / 1918 / STAGED-MC-0309 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
       ],
       "tableRows": 36
     },
     {
+      "appendixId": "APP-SURF-ER1830R070",
+      "surfaceId": "SURF-ER1830R070",
+      "title": "A cobbler who doesn't wear shoes. This hole in the wall is a typical cobbler's shop at Skoplje, Serbia. His own shoeless feet wouldn't be considered a very good advertisement for his trade in America. But he has all the trade that he can take care of as leather is mighty scarce. He didn't mind because the American Red Cross brought several thousand pairs of shoes into the Balkans for distribution to the needy. He says, he realizes the soles will wear out sometime and that means more trade for him",
+      "displayNumber": "GD / 1919 / STAGED-MC-0310 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-COM1970R023",
+      "surfaceId": "SURF-COM1970R023",
+      "title": "Ludwig Hohlwein - Motoring in Germany, 1920s.jpg",
+      "displayNumber": "GD / 1920 / STAGED-MC-0318 / M-p01",
+      "layoutId": "AX06.typed-index",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GA1970R034",
+      "surfaceId": "SURF-GA1970R034",
+      "title": "[Croisement de routes et publicité murale]",
+      "displayNumber": "GD / 1930 / STAGED-MC-0415 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU2026R001",
+      "surfaceId": "SURF-GSU2026R001",
+      "title": "Inventory of unscanned negatives in the Lane Brothers photographic collection, Corporate bodies series (number 5 of 6",
+      "displayNumber": "GD / 1976 / STAGED-MC-0926 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R015",
+      "surfaceId": "SURF-CHW2026R015",
+      "title": "Well Done! 11 World Records, Villiers",
+      "displayNumber": "GD / 1933 / STAGED-MC-0452 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R018",
+      "surfaceId": "SURF-CHW2026R018",
+      "title": "The Ghost that isn't Returning",
+      "displayNumber": "GD / 1935 / STAGED-MC-0476 / M-p01",
+      "layoutId": "AX06.typed-index",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAX1970R107",
+      "surfaceId": "SURF-GAX1970R107",
+      "title": "Typographie [imprimerie Charaire à Sceaux] : [photographie de presse] / [Agence Rol]",
+      "displayNumber": "GD / 1926 / STAGED-MC-0370 / M-p01",
+      "layoutId": "AX06.typed-index",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R107",
+      "surfaceId": "SURF-CHW2026R107",
+      "title": "Donald Deskey Archive",
+      "displayNumber": "GD / 1989 / STAGED-MC-1016 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R017",
+      "surfaceId": "SURF-CHW2026R017",
+      "title": "Rhodiafil",
+      "displayNumber": "GD / 1935 / STAGED-MC-0475 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R020",
+      "surfaceId": "SURF-CHW2026R020",
+      "title": "Bourjois Parfumeur Paris",
+      "displayNumber": "GD / 1938 / STAGED-MC-0521 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R021",
+      "surfaceId": "SURF-CHW2026R021",
+      "title": "Jetzt auch mottenecht durch Eulan",
+      "displayNumber": "GD / 1938 / STAGED-MC-0524 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R022",
+      "surfaceId": "SURF-CHW2026R022",
+      "title": "Rheuma-Heil, Reine Wolle (Rheuma-Heil, Pure Wool)",
+      "displayNumber": "GD / 1938 / STAGED-MC-0527 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R023",
+      "surfaceId": "SURF-CHW2026R023",
+      "title": "Sporting-Stepper",
+      "displayNumber": "GD / 1938 / STAGED-MC-0529 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-COM1970R027",
+      "surfaceId": "SURF-COM1970R027",
+      "title": "1930s Japan Travel Poster - 10.jpg",
+      "displayNumber": "GD / 1930 / STAGED-MC-0384 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-COM1970R028",
+      "surfaceId": "SURF-COM1970R028",
+      "title": "Affiche souvenir des frères Ruellan.jpeg",
+      "displayNumber": "GD / 1930 / STAGED-MC-0385 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R002",
+      "surfaceId": "SURF-CHW2026R002",
+      "title": "Detmold Wald (Detmold Forest)",
+      "displayNumber": "GD / 1930 / STAGED-MC-0387 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-COM1970R031",
+      "surfaceId": "SURF-COM1970R031",
+      "title": "Flickr - …trialsanderrors - Marseille, travel poster for PLM, ca. 1930.jpg",
+      "displayNumber": "GD / 1930 / STAGED-MC-0389 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-COM1970R036",
+      "surfaceId": "SURF-COM1970R036",
+      "title": "Ludwig Hohlwein - Stay young playing Golf in Germany.jpg",
+      "displayNumber": "GD / 1930 / STAGED-MC-0395 / M-p01",
+      "layoutId": "AX06.typed-index",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R005",
+      "surfaceId": "SURF-CHW2026R005",
+      "title": "Section Allemande (German Section), Exposition de la Société des Artistes Décorateurs (Exhibition of the Society of Decorative Arts), Grand Palais",
+      "displayNumber": "GD / 1930 / STAGED-MC-0405 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R006",
+      "surfaceId": "SURF-CHW2026R006",
+      "title": "Section Allemande [German Section]",
+      "displayNumber": "GD / 1930 / STAGED-MC-0406 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-COM1970R042",
+      "surfaceId": "SURF-COM1970R042",
+      "title": "Social Security Poster of an Old Man - DPLA - e8f4291760f8c9b9789ef6a46f14e5b5.gif",
+      "displayNumber": "GD / 1930 / STAGED-MC-0408 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R008",
+      "surfaceId": "SURF-CHW2026R008",
+      "title": "Study for a Poster, Obey The Road Signs",
+      "displayNumber": "GD / 1930 / STAGED-MC-0409 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R013",
+      "surfaceId": "SURF-CHW2026R013",
+      "title": "Four Male Heads in Ancient Roman Style",
+      "displayNumber": "GD / 1932 / STAGED-MC-0440 / M-p01",
+      "layoutId": "AX04.context",
+      "reasons": [
+        "protocol/context packet"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R028-GROUP",
+      "surfaceId": "SURF-CHW2026R028-GROUP",
+      "title": "Study for Imperial Airways Advertisement grouped records, 1930-1940",
+      "displayNumber": "GD / 1940 / STAGED-MC-0588 / M-p01",
+      "layoutId": "AX02.citation",
+      "reasons": [
+        "source/citation register"
+      ],
+      "tableRows": 11
+    },
+    {
       "appendixId": "APP-SURF-MC1930R001",
       "surfaceId": "SURF-MC1930R001",
       "title": "Come Out at Easter",
       "displayNumber": "GD / 1931 / STAGED-MC-0419 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-COM1970R049",
+      "surfaceId": "SURF-COM1970R049",
+      "title": "Hermann Keimel - Münchner Plakatkunst, 1931.jpg",
+      "displayNumber": "GD / 1931 / STAGED-MC-0424 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
       ],
       "tableRows": 36
     },
@@ -253172,6 +253860,7 @@
       "surfaceId": "SURF-MC1930R003",
       "title": "No. 2 Spring",
       "displayNumber": "GD / 1931 / STAGED-MC-0430 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
       ],
@@ -253182,28 +253871,119 @@
       "surfaceId": "SURF-MC1930R006",
       "title": "By the Rushy - Fringed Bank",
       "displayNumber": "GD / 1932 / STAGED-MC-0437 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
       ],
       "tableRows": 36
     },
     {
-      "appendixId": "APP-SURF-MX1970R025",
-      "surfaceId": "SURF-MX1970R025",
-      "title": "Graphic design; a library of old and new masters in the graphic arts",
-      "displayNumber": "GD / 1936 / STAGED-MC-0487 / M-p01",
+      "appendixId": "APP-SURF-IR1970R004",
+      "surfaceId": "SURF-IR1970R004",
+      "title": "Tuberculosis patients lying on their beds in a crowded tuberculosis hospital; advertising a tombola in aid of tuberculosis sufferers in L'Hérault, France. Colour lithograph, ca. 1933.",
+      "displayNumber": "GD / 1933 / STAGED-MC-0450 / M-p01",
+      "layoutId": "AX04.context",
       "reasons": [
-        "rights/image evidence continuation"
+        "protocol/context packet"
       ],
       "tableRows": 36
     },
     {
-      "appendixId": "APP-SURF-MX1970R043",
-      "surfaceId": "SURF-MX1970R043",
-      "title": "Commercial art",
-      "displayNumber": "GD / 1939 / STAGED-MC-0541 / M-p01",
+      "appendixId": "APP-SURF-COM1970R051",
+      "surfaceId": "SURF-COM1970R051",
+      "title": "CH-NB Poster Collection SNL POL 381.jpg",
+      "displayNumber": "GD / 1934 / STAGED-MC-0454 / M-p01",
+      "layoutId": "AX05.statement",
       "reasons": [
-        "rights/image evidence continuation"
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-IR1970R006",
+      "surfaceId": "SURF-IR1970R006",
+      "title": "In the battle against tuberculosis, a portrait of Calmette, as the saviour of children through his BCG vaccine, invites the purchase of fund-raising stamps. Colour lithograph after H. Cheffer, 1934.",
+      "displayNumber": "GD / 1934 / STAGED-MC-0456 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-IR1970R008",
+      "surfaceId": "SURF-IR1970R008",
+      "title": "A nurse with children as part of a campaign against tuberculosis. Colour lithograph after H. Cheffer, 1935.",
+      "displayNumber": "GD / 1935 / STAGED-MC-0469 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-MC1930R008",
+      "surfaceId": "SURF-MC1930R008",
+      "title": "[Poster designs for WPA, Army, Air Force, Fitzsimmons General Hospital Reconditioning Service]",
+      "displayNumber": "GD / 1935 / STAGED-MC-0480 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU1970R005",
+      "surfaceId": "SURF-GSU1970R005",
+      "title": "Index card file for plants or locals in Washington, D.C., 1936",
+      "displayNumber": "GD / 1936 / STAGED-MC-0488 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-MC1930R009",
+      "surfaceId": "SURF-MC1930R009",
+      "title": "Poster",
+      "displayNumber": "GD / 1936 / STAGED-MC-0492 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-COM1970R054",
+      "surfaceId": "SURF-COM1970R054",
+      "title": "Rur.jpg",
+      "displayNumber": "GD / 1936 / STAGED-MC-0494 / M-p01",
+      "layoutId": "AX06.typed-index",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-MC1930R023",
+      "surfaceId": "SURF-MC1930R023",
+      "title": "[WPA poster design on blue background showing the head and hands of a woman holding flowers and wheat above a blank banner]",
+      "displayNumber": "GD / 1936 / STAGED-MC-0508 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAX1970R113",
+      "surfaceId": "SURF-GAX1970R113",
+      "title": "Assemblée générale du... (Cercle de la librairie, de l'imprimerie, de la papeterie...)",
+      "displayNumber": "GD / 1939 / STAGED-MC-0539 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
       ],
       "tableRows": 36
     },
@@ -253212,8 +253992,141 @@
       "surfaceId": "SURF-MX1970R042",
       "title": "How To Draw Comics And Commercial Art",
       "displayNumber": "GD / 1939 / STAGED-MC-0544 / M-p01",
+      "layoutId": "AX04.context",
       "reasons": [
-        "rights/image evidence continuation"
+        "protocol/context packet"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU2026R003",
+      "surfaceId": "SURF-GSU2026R003",
+      "title": "Biographical information, 1939-1981; undated",
+      "displayNumber": "GD / 1981 / STAGED-MC-0958 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R001",
+      "surfaceId": "SURF-GAPIT2026R001",
+      "title": "'You are helping by carrying your shopping' poster",
+      "displayNumber": "GD / 1940 / STAGED-MC-0554 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-IR1970R013",
+      "surfaceId": "SURF-IR1970R013",
+      "title": "A finger-wound being attacked by germs represented by German soldiers in World War II. Colour lithograph after P. Mendoza, 1940.",
+      "displayNumber": "GD / 1940 / STAGED-MC-0557 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-COM1970R075",
+      "surfaceId": "SURF-COM1970R075",
+      "title": "OCIAA-Como-Un-Solo-Hombre-Poster.jpg",
+      "displayNumber": "GD / 1940 / STAGED-MC-0571 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-MX1970R009",
+      "surfaceId": "SURF-MX1970R009",
+      "title": "Syphilis: ten people, one of whom is diagnosed as having syphilis. Colour lithograph after D. Fellnagel, 1940.",
+      "displayNumber": "GD / 1940 / STAGED-MC-0596 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-IR1970R017",
+      "surfaceId": "SURF-IR1970R017",
+      "title": "An electric fire protected by a guard, in front of which a little girl reads a picture book and a woman does some knitting. Colour process print after Jake and Joyce Jacobs.",
+      "displayNumber": "GD / 1949 / STAGED-MC-0691 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-MX1970R011",
+      "surfaceId": "SURF-MX1970R011",
+      "title": "A healthy-looking man with a tourniquet having a blood test, as apparent health can conceal syphilis. Colour lithograph by L. Karsakov, 1941.",
+      "displayNumber": "GD / 1941 / STAGED-MC-0603 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R010",
+      "surfaceId": "SURF-GAPIT2026R010",
+      "title": "Poster, 'The bombing in daylight'",
+      "displayNumber": "GD / 1941 / STAGED-MC-0613 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-MC1930R041",
+      "surfaceId": "SURF-MC1930R041",
+      "title": "[WPA  posters for American Guide Week and Hoosier Folklore]",
+      "displayNumber": "GD / 1941 / STAGED-MC-0616 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-IR1970R022",
+      "surfaceId": "SURF-IR1970R022",
+      "title": "A healthy boy, protected from tuberculosis by fresh air and exercise. Colour lithograph by André Wilquin, 1942.",
+      "displayNumber": "GD / 1942 / STAGED-MC-0617 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU1970R011",
+      "surfaceId": "SURF-GSU1970R011",
+      "title": "Machinists' Monthly Journal, 1942-03",
+      "displayNumber": "GD / 1942 / STAGED-MC-0622 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R012",
+      "surfaceId": "SURF-GAPIT2026R012",
+      "title": "Poster, 'The life-line is firm'",
+      "displayNumber": "GD / 1942 / STAGED-MC-0624 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
       ],
       "tableRows": 36
     },
@@ -253222,6 +254135,7 @@
       "surfaceId": "SURF-MC1930R042",
       "title": "The Time for Vengeance is Approaching",
       "displayNumber": "GD / 1942 / STAGED-MC-0626 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
       ],
@@ -253232,6 +254146,7 @@
       "surfaceId": "SURF-MC1930R043",
       "title": "The Wedding Present",
       "displayNumber": "GD / 1942 / STAGED-MC-0627 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
       ],
@@ -253242,8 +254157,20 @@
       "surfaceId": "SURF-MC1930R046",
       "title": "Thunderous Blow",
       "displayNumber": "GD / 1942 / STAGED-MC-0630 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-COM1970R090",
+      "surfaceId": "SURF-COM1970R090",
+      "title": "CH-NB Poster Collection SNL POL 371.jpg",
+      "displayNumber": "GD / 1943 / STAGED-MC-0636 / M-p01",
+      "layoutId": "AX06.typed-index",
+      "reasons": [
+        "source verification dossier"
       ],
       "tableRows": 36
     },
@@ -253252,6 +254179,7 @@
       "surfaceId": "SURF-MC1930R047",
       "title": "A Belorussian Landscape",
       "displayNumber": "GD / 1944 / STAGED-MC-0642 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
       ],
@@ -253262,8 +254190,31 @@
       "surfaceId": "SURF-MC1930R048",
       "title": "An Attempt Using Unfit Means",
       "displayNumber": "GD / 1944 / STAGED-MC-0643 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R014",
+      "surfaceId": "SURF-GAPIT2026R014",
+      "title": "Poster, 'Come on - New Zealand!'",
+      "displayNumber": "GD / 1944 / STAGED-MC-0646 / M-p01",
+      "layoutId": "AX04.context",
+      "reasons": [
+        "protocol/context packet"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R016",
+      "surfaceId": "SURF-GAPIT2026R016",
+      "title": "Poster, 'Salute the Airman'",
+      "displayNumber": "GD / 1944 / STAGED-MC-0648 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
       ],
       "tableRows": 36
     },
@@ -253272,6 +254223,7 @@
       "surfaceId": "SURF-MC1930R050",
       "title": "The Hour Approaches",
       "displayNumber": "GD / 1944 / STAGED-MC-0651 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
       ],
@@ -253282,6 +254234,7 @@
       "surfaceId": "SURF-MC1930R051",
       "title": "The Search for Human Resources in Germany",
       "displayNumber": "GD / 1944 / STAGED-MC-0653 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
       ],
@@ -253292,6 +254245,7 @@
       "surfaceId": "SURF-MC1930R052",
       "title": "Untitled",
       "displayNumber": "GD / 1944 / STAGED-MC-0654 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
       ],
@@ -253302,6 +254256,7 @@
       "surfaceId": "SURF-MC1930R053",
       "title": "You Reap What You Sow",
       "displayNumber": "GD / 1944 / STAGED-MC-0655 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
       ],
@@ -253312,8 +254267,53 @@
       "surfaceId": "SURF-MC1930R057",
       "title": "Untitled (Composition for a Peace Poster)",
       "displayNumber": "GD / 1955 / STAGED-MC-0779 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-IR1970R029",
+      "surfaceId": "SURF-IR1970R029",
+      "title": "A young man and young woman who appear to be healthy, but may have latent tuberculosis; representing the need of a checkup for detection of tuberculosis. Colour lithograph by S. Hansen, ca. 1946.",
+      "displayNumber": "GD / 1946 / STAGED-MC-0674 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU1970R015",
+      "surfaceId": "SURF-GSU1970R015",
+      "title": "Anti-CIO political poster from Eastman, Georgia, circa 1946.",
+      "displayNumber": "GD / 1946 / STAGED-MC-0676 / M-p01",
+      "layoutId": "AX04.context",
+      "reasons": [
+        "protocol/context packet"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-IR1970R030",
+      "surfaceId": "SURF-IR1970R030",
+      "title": "A radiograph of the chest; representing the need for early detection of pulmonary tuberculosis. Colour lithograph by G.C. Schulz, ca. 1947.",
+      "displayNumber": "GD / 1947 / STAGED-MC-0677 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-COM1970R095",
+      "surfaceId": "SURF-COM1970R095",
+      "title": "Air Algerie Caravelle Poster (19291817259).jpg",
+      "displayNumber": "GD / 1950 / STAGED-MC-0700 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
       ],
       "tableRows": 36
     },
@@ -253322,18 +254322,64 @@
       "surfaceId": "SURF-MX1970R055-GROUP",
       "title": "Chinese Posters grouped records, 1950-1955",
       "displayNumber": "GD / 1950 / STAGED-MC-0702 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
       ],
       "tableRows": 11
     },
     {
+      "appendixId": "APP-SURF-GSU1970R017",
+      "surfaceId": "SURF-GSU1970R017",
+      "title": "Man and poster encouraging union members to vote at a CIO Constitutional Convention, Chicago, Illinois, November 1950.",
+      "displayNumber": "GD / 1950 / STAGED-MC-0720 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-COM1970R102",
+      "surfaceId": "SURF-COM1970R102",
+      "title": "TWA Italy Poster (18857334053).jpg",
+      "displayNumber": "GD / 1950 / STAGED-MC-0733 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
       "appendixId": "APP-SURF-IR1970R044",
       "surfaceId": "SURF-IR1970R044",
       "title": "Thoracoplasty and apicolysis for pulmonary tuberculosis.",
       "displayNumber": "GD / 1950 / STAGED-MC-0734 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-IR1970R039",
+      "surfaceId": "SURF-IR1970R039",
+      "title": "Li'l Abner (American cartoon hero) telling his girl friend Daisy Mae that he is about to have a chest x-ray for tuberculosis. Colour lithograph after Al Capp, 195-.",
+      "displayNumber": "GD / 1959 / STAGED-MC-0790 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R089",
+      "surfaceId": "SURF-CHW2026R089",
+      "title": "Greassed Nude",
+      "displayNumber": "GD / 1981 / STAGED-MC-0960 / M-p01",
+      "layoutId": "AX06.typed-index",
+      "reasons": [
+        "source verification dossier"
       ],
       "tableRows": 36
     },
@@ -253342,6 +254388,7 @@
       "surfaceId": "SURF-MC1930R062",
       "title": "1952 Exhibition Poster",
       "displayNumber": "GD / 1952 / STAGED-MC-0743 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
       ],
@@ -253352,8 +254399,20 @@
       "surfaceId": "SURF-MC1930R063",
       "title": "Exhibition Villauris",
       "displayNumber": "GD / 1952 / STAGED-MC-0746 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU1970R020",
+      "surfaceId": "SURF-GSU1970R020",
+      "title": "Machinists' Monthly Journal, 1952-08",
+      "displayNumber": "GD / 1952 / STAGED-MC-0748 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
       ],
       "tableRows": 36
     },
@@ -253362,6 +254421,7 @@
       "surfaceId": "SURF-MC1930R064",
       "title": "Dada 1916-1923",
       "displayNumber": "GD / 1953 / STAGED-MC-0755 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
       ],
@@ -253372,18 +254432,97 @@
       "surfaceId": "SURF-IR1970R047",
       "title": "Onwards to victory.",
       "displayNumber": "GD / 1953 / STAGED-MC-0757 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
       ],
       "tableRows": 36
     },
     {
-      "appendixId": "APP-SURF-MX1970R030",
-      "surfaceId": "SURF-MX1970R030",
-      "title": "Graphic design : a creative approach",
-      "displayNumber": "GD / 1960 / STAGED-MC-0795 / M-p01",
+      "appendixId": "APP-SURF-IR1970R048",
+      "surfaceId": "SURF-IR1970R048",
+      "title": "A stamp showing Einar Holbøll; representing the need for contributions to help the tuberculous. Colour lithograph after R. Serres, 1954.",
+      "displayNumber": "GD / 1954 / STAGED-MC-0760 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
-        "rights/image evidence continuation"
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-NCM2026R001",
+      "surfaceId": "SURF-NCM2026R001",
+      "title": "Corrido de Diego Rivera.tif",
+      "displayNumber": "GD / 1956 / STAGED-MC-0780 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R077",
+      "surfaceId": "SURF-CHW2026R077",
+      "title": "Air Canada - Atlantic Provinces",
+      "displayNumber": "GD / 1980 / STAGED-MC-0942 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R079",
+      "surfaceId": "SURF-CHW2026R079",
+      "title": "Air Canada - Québec City",
+      "displayNumber": "GD / 1980 / STAGED-MC-0944 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R080",
+      "surfaceId": "SURF-CHW2026R080",
+      "title": "Air Canada - Toronto",
+      "displayNumber": "GD / 1980 / STAGED-MC-0945 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R084",
+      "surfaceId": "SURF-CHW2026R084",
+      "title": "Everglades National Park",
+      "displayNumber": "GD / 1980 / STAGED-MC-0949 / M-p01",
+      "layoutId": "AX04.context",
+      "reasons": [
+        "protocol/context packet"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R138",
+      "surfaceId": "SURF-CHW2026R138",
+      "title": "Life Size",
+      "displayNumber": "GD / 1995 / STAGED-MC-1065 / M-p01",
+      "layoutId": "AX04.context",
+      "reasons": [
+        "protocol/context packet"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU1970R023",
+      "surfaceId": "SURF-GSU1970R023",
+      "title": "The Machinist, 1961-03-09",
+      "displayNumber": "GD / 1961 / STAGED-MC-0806 / M-p01",
+      "layoutId": "AX06.typed-index",
+      "reasons": [
+        "source verification dossier"
       ],
       "tableRows": 36
     },
@@ -253392,28 +254531,20 @@
       "surfaceId": "SURF-IR1970R060",
       "title": "Answer to emergency.",
       "displayNumber": "GD / 1962 / STAGED-MC-0808 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
       ],
       "tableRows": 36
     },
     {
-      "appendixId": "APP-SURF-MX1970R051",
-      "surfaceId": "SURF-MX1970R051",
-      "title": "Drawing the line, fine and commercial art",
-      "displayNumber": "GD / 1962 / STAGED-MC-0810 / M-p01",
+      "appendixId": "APP-SURF-GSU1970R026",
+      "surfaceId": "SURF-GSU1970R026",
+      "title": "Dean Girardot scrapbook 1 (J.P. Stevens and Co. campaign), 1963-1965",
+      "displayNumber": "GD / 1965 / STAGED-MC-0827 / M-p01",
+      "layoutId": "AX05.statement",
       "reasons": [
-        "rights/image evidence continuation"
-      ],
-      "tableRows": 36
-    },
-    {
-      "appendixId": "APP-SURF-MX1970R053",
-      "surfaceId": "SURF-MX1970R053",
-      "title": "Senior high school curriculum guide, Commercial art 12, 22, 32",
-      "displayNumber": "GD / 1963 / STAGED-MC-0818 / M-p01",
-      "reasons": [
-        "rights/image evidence continuation"
+        "source verification dossier"
       ],
       "tableRows": 36
     },
@@ -253422,28 +254553,75 @@
       "surfaceId": "SURF-MX1970R031",
       "title": "Graphic design: visual comparisons",
       "displayNumber": "GD / 1964 / STAGED-MC-0822 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
-        "rights/image evidence continuation"
+        "rights/image display evidence continuation"
       ],
       "tableRows": 36
     },
     {
-      "appendixId": "APP-SURF-MX1970R033",
-      "surfaceId": "SURF-MX1970R033",
-      "title": "Funktion und ihre Darstellung in der Werbegrafik ; die Sichtbarmachung unsichbarer Vorgänge. : Visual presentation of invisible processes ; how to illustrate invisible processes in graphic design. La fonction et sa représentation dans le dessin publicitaire ; concrétisation des processus invisibles",
-      "displayNumber": "GD / 1967 / STAGED-MC-0842 / M-p01",
+      "appendixId": "APP-SURF-CHW2026R086",
+      "surfaceId": "SURF-CHW2026R086",
+      "title": "Perception",
+      "displayNumber": "GD / 1980 / STAGED-MC-0953 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
-        "rights/image evidence continuation"
+        "rights/image display evidence continuation"
       ],
       "tableRows": 36
     },
     {
-      "appendixId": "APP-SURF-MX1970R032",
-      "surfaceId": "SURF-MX1970R032",
-      "title": "graphic design, issue n°28, 1967 – ‘Franco Grignani and his experimental graphics’ by Katzumie Masaru",
-      "displayNumber": "GD / 1967 / STAGED-MC-0850 / M-p01",
+      "appendixId": "APP-SURF-CHW2026R097",
+      "surfaceId": "SURF-CHW2026R097",
+      "title": "Citibank NA Open Ark",
+      "displayNumber": "GD / 1985 / STAGED-MC-0988 / M-p01",
+      "layoutId": "AX04.context",
       "reasons": [
-        "rights/image evidence continuation"
+        "protocol/context packet"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-NCM2026R002",
+      "surfaceId": "SURF-NCM2026R002",
+      "title": "Inside outside.jpg",
+      "displayNumber": "GD / 1967 / STAGED-MC-0844 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-IR1970R066",
+      "surfaceId": "SURF-IR1970R066",
+      "title": "Speakers' Folder",
+      "displayNumber": "GD / 1967 / STAGED-MC-0849 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU2026R007",
+      "surfaceId": "SURF-GSU2026R007",
+      "title": "News articles (New York Times, New Yorker), 1967-1971",
+      "displayNumber": "GD / 1971 / STAGED-MC-0907 / M-p01",
+      "layoutId": "AX04.context",
+      "reasons": [
+        "protocol/context packet"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU2026R006",
+      "surfaceId": "SURF-GSU2026R006",
+      "title": "Equal Employment Opportunity Commission",
+      "displayNumber": "GD / 1973 / STAGED-MC-0914 / M-p01",
+      "layoutId": "AX06.typed-index",
+      "reasons": [
+        "source verification dossier"
       ],
       "tableRows": 36
     },
@@ -253452,18 +254630,64 @@
       "surfaceId": "SURF-MC1930R089",
       "title": "50 Years Bauhaus Exhibition Poster",
       "displayNumber": "GD / 1968 / STAGED-MC-0851 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
         "rights/image evidence continuation"
       ],
       "tableRows": 36
     },
     {
-      "appendixId": "APP-SURF-MX1970R035",
-      "surfaceId": "SURF-MX1970R035",
-      "title": "Graphic design and reproduction techniques",
-      "displayNumber": "GD / 1968 / STAGED-MC-0856 / M-p01",
+      "appendixId": "APP-SURF-GSU1970R028",
+      "surfaceId": "SURF-GSU1970R028",
+      "title": "Georgia State College Signal, 1968-10-10",
+      "displayNumber": "GD / 1968 / STAGED-MC-0855 / M-p01",
+      "layoutId": "AX04.context",
       "reasons": [
-        "rights/image evidence continuation"
+        "protocol/context packet"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU1970R029",
+      "surfaceId": "SURF-GSU1970R029",
+      "title": "Great Speckled Bird v. 1 no. 4 (April 26, 1968)",
+      "displayNumber": "GD / 1968 / STAGED-MC-0857 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R106",
+      "surfaceId": "SURF-CHW2026R106",
+      "title": "Tall Ships are Coming! Ho",
+      "displayNumber": "GD / 1988 / STAGED-MC-1014 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-IR1970R071",
+      "surfaceId": "SURF-IR1970R071",
+      "title": "General Birth Control information leaflets",
+      "displayNumber": "GD / 1969 / STAGED-MC-0866 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU1970R031",
+      "surfaceId": "SURF-GSU1970R031",
+      "title": "Great Speckled Bird v. 2 no. 23 (August 18, 1969)",
+      "displayNumber": "GD / 1969 / STAGED-MC-0868 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
       ],
       "tableRows": 36
     },
@@ -253472,8 +254696,9 @@
       "surfaceId": "SURF-MX1970R039",
       "title": "A history of design from the Victorian era to the present; a survey of the modern style in architecture, interior design, industrial design, graphic design, and photography",
       "displayNumber": "GD / 1970 / STAGED-MC-0878 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
-        "rights/image evidence continuation"
+        "rights/image display evidence continuation"
       ],
       "tableRows": 36
     },
@@ -253482,18 +254707,834 @@
       "surfaceId": "SURF-MX1970R036",
       "title": "Graphic design Canada; Graphisme canadien. --",
       "displayNumber": "GD / 1970 / STAGED-MC-0882 / M-p01",
+      "layoutId": "AX05.statement",
       "reasons": [
-        "rights/image evidence continuation"
+        "source verification dossier"
       ],
       "tableRows": 36
     },
     {
-      "appendixId": "APP-SURF-MX1970R038",
-      "surfaceId": "SURF-MX1970R038",
-      "title": "Layout and graphic design",
-      "displayNumber": "GD / 1970 / STAGED-MC-0889 / M-p01",
+      "appendixId": "APP-SURF-GSU1970R033",
+      "surfaceId": "SURF-GSU1970R033",
+      "title": "Great Speckled Bird v. 3 no. 18 (May 4, 1970)",
+      "displayNumber": "GD / 1970 / STAGED-MC-0884 / M-p01",
+      "layoutId": "AX01.rights",
       "reasons": [
-        "rights/image evidence continuation"
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R062",
+      "surfaceId": "SURF-CHW2026R062",
+      "title": "Here and Now; L'Initiation",
+      "displayNumber": "GD / 1970 / STAGED-MC-0885 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-NXS2026R001",
+      "surfaceId": "SURF-NXS2026R001",
+      "title": "Murales Brigada Ramona Parra [fotografía] Armindo Cardoso.",
+      "displayNumber": "GD / 1970 / STAGED-MC-0891 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R064",
+      "surfaceId": "SURF-CHW2026R064",
+      "title": "Old Master Drawings",
+      "displayNumber": "GD / 1970 / STAGED-MC-0892 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R066",
+      "surfaceId": "SURF-CHW2026R066",
+      "title": "People's Flag Show",
+      "displayNumber": "GD / 1970 / STAGED-MC-0894 / M-p01",
+      "layoutId": "AX04.context",
+      "reasons": [
+        "protocol/context packet"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-MC1930R094",
+      "surfaceId": "SURF-MC1930R094",
+      "title": "There flows from Latin America",
+      "displayNumber": "GD / 1970 / STAGED-MC-0903 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-MX1970R014",
+      "surfaceId": "SURF-MX1970R014",
+      "title": "Tobacco: chemicals contained in its smoke and their effects on human health, especially the heart. Colour lithograph, 197- (?).",
+      "displayNumber": "GD / 1970 / STAGED-MC-0904 / M-p01",
+      "layoutId": "AX06.typed-index",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU2026R009",
+      "surfaceId": "SURF-GSU2026R009",
+      "title": "Workshop Session B, undated",
+      "displayNumber": "GD / 1979 / STAGED-MC-0941 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R088",
+      "surfaceId": "SURF-CHW2026R088",
+      "title": "Celebrate 10: Designers Row",
+      "displayNumber": "GD / 1981 / STAGED-MC-0959 / M-p01",
+      "layoutId": "AX04.context",
+      "reasons": [
+        "protocol/context packet"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R092",
+      "surfaceId": "SURF-CHW2026R092",
+      "title": "The Yale Symphony",
+      "displayNumber": "GD / 1981 / STAGED-MC-0968 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R118",
+      "surfaceId": "SURF-CHW2026R118",
+      "title": "Power Strike",
+      "displayNumber": "GD / 1990 / STAGED-MC-1035 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R120",
+      "surfaceId": "SURF-CHW2026R120",
+      "title": "Remember Vietnam",
+      "displayNumber": "GD / 1990 / STAGED-MC-1037 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R130",
+      "surfaceId": "SURF-CHW2026R130",
+      "title": "Poster for Lethal Art: Pyramids and Forest",
+      "displayNumber": "GD / 1994 / STAGED-MC-1056 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R131",
+      "surfaceId": "SURF-CHW2026R131",
+      "title": "Poster for Lethal Art: Radiation Zone",
+      "displayNumber": "GD / 1994 / STAGED-MC-1057 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-CHW2026R141",
+      "surfaceId": "SURF-CHW2026R141",
+      "title": "Nike 180 AIR",
+      "displayNumber": "GD / 1995 / STAGED-MC-1069 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU2026R010",
+      "surfaceId": "SURF-GSU2026R010",
+      "title": "Executive Board Memoranda, 1971-1972",
+      "displayNumber": "GD / 1972 / STAGED-MC-0910 / M-p01",
+      "layoutId": "AX04.context",
+      "reasons": [
+        "protocol/context packet"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-NXS2026R009",
+      "surfaceId": "SURF-NXS2026R009",
+      "title": "NAIDOC Poster Gallery",
+      "displayNumber": "GD / 2026 / STAGED-MC-1091 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-NXS2026R010",
+      "surfaceId": "SURF-NXS2026R010",
+      "title": "Welcome to the Australian Institute of Aboriginal and Torres Strait Islander Studies NAIDOC Week posters",
+      "displayNumber": "GD / 2026 / STAGED-MC-1092 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-NCM2026R003",
+      "surfaceId": "SURF-NCM2026R003",
+      "title": "Chile Unidad Popular.jpg",
+      "displayNumber": "GD / 1973 / STAGED-MC-0913 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R017",
+      "surfaceId": "SURF-GAPIT2026R017",
+      "title": "NAIDOC 1974 Poster",
+      "displayNumber": "GD / 1974 / STAGED-MC-0918 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU2026R016",
+      "surfaceId": "SURF-GSU2026R016",
+      "title": "Career Counseling, undated",
+      "displayNumber": "GD / 1975 / STAGED-MC-0920 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU2026R018",
+      "surfaceId": "SURF-GSU2026R018",
+      "title": "Georgia Association for Women Lawyers scrapbook, 1970s-2000s",
+      "displayNumber": "GD / 2000 / STAGED-MC-1083 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R018",
+      "surfaceId": "SURF-GAPIT2026R018",
+      "title": "NAIDOC 1976 Poster",
+      "displayNumber": "GD / 1976 / STAGED-MC-0928 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R019",
+      "surfaceId": "SURF-GAPIT2026R019",
+      "title": "NAIDOC 1977 Poster",
+      "displayNumber": "GD / 1977 / STAGED-MC-0931 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R020",
+      "surfaceId": "SURF-GAPIT2026R020",
+      "title": "NAIDOC 1978 Poster",
+      "displayNumber": "GD / 1978 / STAGED-MC-0933 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU2026R024",
+      "surfaceId": "SURF-GSU2026R024",
+      "title": "Eastern Region Public Relations Program Facility Manual, 1979",
+      "displayNumber": "GD / 1979 / STAGED-MC-0934 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R021",
+      "surfaceId": "SURF-GAPIT2026R021",
+      "title": "NAIDOC 1979 Poster",
+      "displayNumber": "GD / 1979 / STAGED-MC-0936 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU2026R025",
+      "surfaceId": "SURF-GSU2026R025",
+      "title": "Otto Kleiman and Anne Cox Chambers presenting Georgia Governor Busbee with a Bio-Energy '80, World Congress poster, Atlanta, Georgia, November 27, 1979.",
+      "displayNumber": "GD / 1979 / STAGED-MC-0937 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R022",
+      "surfaceId": "SURF-GAPIT2026R022",
+      "title": "NAIDOC 1980 Poster",
+      "displayNumber": "GD / 1980 / STAGED-MC-0952 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R024",
+      "surfaceId": "SURF-GAPIT2026R024",
+      "title": "Poster, 'Stop French N Tests'",
+      "displayNumber": "GD / 1980 / STAGED-MC-0955 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R025",
+      "surfaceId": "SURF-GAPIT2026R025",
+      "title": "Trident missile poster",
+      "displayNumber": "GD / 1980 / STAGED-MC-0957 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-NXS2026R008",
+      "surfaceId": "SURF-NXS2026R008",
+      "title": "Contra la dictadura ... pintaremos hasta el cielo!! [estampa] :",
+      "displayNumber": "GD / 1989 / STAGED-MC-1015 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R026",
+      "surfaceId": "SURF-GAPIT2026R026",
+      "title": "NAIDOC 1981 Poster",
+      "displayNumber": "GD / 1981 / STAGED-MC-0961 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R028",
+      "surfaceId": "SURF-GAPIT2026R028",
+      "title": "NAIDOC 1982 Poster",
+      "displayNumber": "GD / 1982 / STAGED-MC-0970 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-NXS2026R004",
+      "surfaceId": "SURF-NXS2026R004",
+      "title": "NOW YOU HAVE TOUCHED THE WOMEN YOU HAVE STRUCK A ROCK:YOU HAVE DISLODGED A BOULDER;YOU WILL BE CRUSHED.",
+      "displayNumber": "GD / 1982 / STAGED-MC-0971 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-NCM2026R004",
+      "surfaceId": "SURF-NCM2026R004",
+      "title": "Thami Mnyele culture and resistance poster.jpg",
+      "displayNumber": "GD / 1982 / STAGED-MC-0972 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU2026R029",
+      "surfaceId": "SURF-GSU2026R029",
+      "title": "A. Philip Randolph Institute, correspondence and printed materials, 1982-1983",
+      "displayNumber": "GD / 1983 / STAGED-MC-0974 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU2026R030",
+      "surfaceId": "SURF-GSU2026R030",
+      "title": "ACTWU, Deep South Region, 1982-1988",
+      "displayNumber": "GD / 1988 / STAGED-MC-1010 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R030",
+      "surfaceId": "SURF-GAPIT2026R030",
+      "title": "'International Women's Day for Nuclear Disarmament' poster",
+      "displayNumber": "GD / 1983 / STAGED-MC-0973 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-NXS2026R005",
+      "surfaceId": "SURF-NXS2026R005",
+      "title": "DECEMBER 16 : HEROES-DAY",
+      "displayNumber": "GD / 1983 / STAGED-MC-0975 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-NXS2026R006",
+      "surfaceId": "SURF-NXS2026R006",
+      "title": "Memoria Chilena Mural de la Brigada Ramona Parra",
+      "displayNumber": "GD / 1983 / STAGED-MC-0977 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R029",
+      "surfaceId": "SURF-GAPIT2026R029",
+      "title": "NAIDOC 1983 Poster",
+      "displayNumber": "GD / 1983 / STAGED-MC-0978 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R032",
+      "surfaceId": "SURF-GAPIT2026R032",
+      "title": "Poster, 'Protest and Survive'",
+      "displayNumber": "GD / 1983 / STAGED-MC-0980 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R033",
+      "surfaceId": "SURF-GAPIT2026R033",
+      "title": "NAIDOC 1984 Poster",
+      "displayNumber": "GD / 1984 / STAGED-MC-0983 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU2026R035",
+      "surfaceId": "SURF-GSU2026R035",
+      "title": "Urban League, National Conference, Cleveland, Ohio",
+      "displayNumber": "GD / 1985 / STAGED-MC-0999 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R034",
+      "surfaceId": "SURF-GAPIT2026R034",
+      "title": "NAIDOC 1985 Poster",
+      "displayNumber": "GD / 1985 / STAGED-MC-0994 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R036",
+      "surfaceId": "SURF-GAPIT2026R036",
+      "title": "Poster, 'Herbs Aotearoa Dread Beat & Blood'",
+      "displayNumber": "GD / 1985 / STAGED-MC-0995 / M-p01",
+      "layoutId": "AX04.context",
+      "reasons": [
+        "protocol/context packet"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU2026R036",
+      "surfaceId": "SURF-GSU2026R036",
+      "title": "The Machinist, 1985-02",
+      "displayNumber": "GD / 1985 / STAGED-MC-0998 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R037",
+      "surfaceId": "SURF-GAPIT2026R037",
+      "title": "NAIDOC 1986 Poster",
+      "displayNumber": "GD / 1986 / STAGED-MC-1000 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU2026R038",
+      "surfaceId": "SURF-GSU2026R038",
+      "title": "Unitarian Universalist Lesbian and Gay Community Newsletters, 1986",
+      "displayNumber": "GD / 1986 / STAGED-MC-1003 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-NXS2026R007",
+      "surfaceId": "SURF-NXS2026R007",
+      "title": "WOMEN ARISE: ORGANISE, UNITE FOR PEOPLE'S POWER!",
+      "displayNumber": "GD / 1986 / STAGED-MC-1004 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R039",
+      "surfaceId": "SURF-GAPIT2026R039",
+      "title": "NAIDOC 1987 Poster",
+      "displayNumber": "GD / 1987 / STAGED-MC-1005 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-NCM2026R005",
+      "surfaceId": "SURF-NCM2026R005",
+      "title": "Palestinian Communist Party - Final version.jpg",
+      "displayNumber": "GD / 1987 / STAGED-MC-1006 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-NCM2026R006",
+      "surfaceId": "SURF-NCM2026R006",
+      "title": "Palestinian Women on the Frontline of the Initfada.jpg",
+      "displayNumber": "GD / 1987 / STAGED-MC-1007 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU2026R039",
+      "surfaceId": "SURF-GSU2026R039",
+      "title": "HIV prescription medication, flyers, newspaper clippings, and information, 1987-1989",
+      "displayNumber": "GD / 1989 / STAGED-MC-1017 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R040",
+      "surfaceId": "SURF-GAPIT2026R040",
+      "title": "NAIDOC 1988 Poster",
+      "displayNumber": "GD / 1988 / STAGED-MC-1011 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R042",
+      "surfaceId": "SURF-GAPIT2026R042",
+      "title": "NAIDOC 1989 Poster",
+      "displayNumber": "GD / 1989 / STAGED-MC-1018 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-NCM2026R007",
+      "surfaceId": "SURF-NCM2026R007",
+      "title": "A Flower Is A Flower Is The Flag.jpg",
+      "displayNumber": "GD / 1990 / STAGED-MC-1022 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R044",
+      "surfaceId": "SURF-GAPIT2026R044",
+      "title": "NAIDOC 1990 Poster",
+      "displayNumber": "GD / 1990 / STAGED-MC-1032 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R045",
+      "surfaceId": "SURF-GAPIT2026R045",
+      "title": "Poster, 'Independence and Peace'",
+      "displayNumber": "GD / 1990 / STAGED-MC-1034 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R046",
+      "surfaceId": "SURF-GAPIT2026R046",
+      "title": "NAIDOC 1991 Poster",
+      "displayNumber": "GD / 1991 / STAGED-MC-1042 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R049",
+      "surfaceId": "SURF-GAPIT2026R049",
+      "title": "NAIDOC 1992 Poster",
+      "displayNumber": "GD / 1992 / STAGED-MC-1044 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R050",
+      "surfaceId": "SURF-GAPIT2026R050",
+      "title": "Poster, 'Hiroshima Day'",
+      "displayNumber": "GD / 1992 / STAGED-MC-1045 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R051",
+      "surfaceId": "SURF-GAPIT2026R051",
+      "title": "NAIDOC 1993 Poster",
+      "displayNumber": "GD / 1993 / STAGED-MC-1047 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R052",
+      "surfaceId": "SURF-GAPIT2026R052",
+      "title": "NAIDOC 1994 Poster",
+      "displayNumber": "GD / 1994 / STAGED-MC-1050 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R053",
+      "surfaceId": "SURF-GAPIT2026R053",
+      "title": "NAIDOC 1995 Poster",
+      "displayNumber": "GD / 1995 / STAGED-MC-1068 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R054",
+      "surfaceId": "SURF-GAPIT2026R054",
+      "title": "NAIDOC 1996 Poster",
+      "displayNumber": "GD / 1996 / STAGED-MC-1077 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R055",
+      "surfaceId": "SURF-GAPIT2026R055",
+      "title": "NAIDOC 1997 Poster",
+      "displayNumber": "GD / 1997 / STAGED-MC-1078 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R056",
+      "surfaceId": "SURF-GAPIT2026R056",
+      "title": "NAIDOC 1998 Poster",
+      "displayNumber": "GD / 1998 / STAGED-MC-1079 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU2026R046",
+      "surfaceId": "SURF-GSU2026R046",
+      "title": "\"Mixtitlan,\" by Philip Boehm, silent auction catalog for an \"Opening Night Fiesta,\"at 7 Stages Theatre, Atlanta, Georgia, May 7, 1999. (14 pages)",
+      "displayNumber": "GD / 1999 / STAGED-MC-1080 / M-p01",
+      "layoutId": "AX05.statement",
+      "reasons": [
+        "source verification dossier"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R057",
+      "surfaceId": "SURF-GAPIT2026R057",
+      "title": "NAIDOC 1999 Poster",
+      "displayNumber": "GD / 1999 / STAGED-MC-1081 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GAPIT2026R058",
+      "surfaceId": "SURF-GAPIT2026R058",
+      "title": "NAIDOC 2000 Poster",
+      "displayNumber": "GD / 2000 / STAGED-MC-1084 / M-p01",
+      "layoutId": "AX03.relations",
+      "reasons": [
+        "relations/classification appendix"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU2026R047",
+      "surfaceId": "SURF-GSU2026R047",
+      "title": "Georgia State University Signal, 2002-10-15",
+      "displayNumber": "GD / 2002 / STAGED-MC-1085 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU2026R049",
+      "surfaceId": "SURF-GSU2026R049",
+      "title": "IAM Journal, 2008, Summer",
+      "displayNumber": "GD / 2008 / STAGED-MC-1087 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
+      ],
+      "tableRows": 36
+    },
+    {
+      "appendixId": "APP-SURF-GSU2026R052",
+      "surfaceId": "SURF-GSU2026R052",
+      "title": "The Signal, 2013-10-08",
+      "displayNumber": "GD / 2013 / STAGED-MC-1090 / M-p01",
+      "layoutId": "AX01.rights",
+      "reasons": [
+        "rights/image display evidence continuation"
       ],
       "tableRows": 36
     }
@@ -257248,7 +259289,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R040",
-          "displayNumber": "GD / 1931 / STAGED-MC-0432 / S-p01",
+          "displayNumber": "GD / 1931 / STAGED-MC-0432 / M-p01",
           "title": "commercial art and design"
         },
         {
@@ -257323,7 +259364,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R026",
-          "displayNumber": "GD / 1936 / STAGED-MC-0486 / S-p01",
+          "displayNumber": "GD / 1936 / STAGED-MC-0486 / M-p01",
           "title": "Graphic Design"
         },
         {
@@ -257433,7 +259474,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R044",
-          "displayNumber": "GD / 1939 / STAGED-MC-0540 / S-p01",
+          "displayNumber": "GD / 1939 / STAGED-MC-0540 / M-p01",
           "title": "Commercial Art"
         },
         {
@@ -257573,7 +259614,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R045",
-          "displayNumber": "GD / 1941 / STAGED-MC-0610 / S-p01",
+          "displayNumber": "GD / 1941 / STAGED-MC-0610 / M-p01",
           "title": "Cartooning and Commercial Art"
         },
         {
@@ -257713,7 +259754,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R046",
-          "displayNumber": "GD / 1949 / STAGED-MC-0694 / S-p01",
+          "displayNumber": "GD / 1949 / STAGED-MC-0694 / M-p01",
           "title": "TEACH YOURSELF COMMERCIAL ART."
         },
         {
@@ -257788,12 +259829,12 @@
         },
         {
           "surfaceId": "SURF-MX1970R047",
-          "displayNumber": "GD / 1952 / STAGED-MC-0744 / S-p01",
+          "displayNumber": "GD / 1952 / STAGED-MC-0744 / M-p01",
           "title": "Commercial Art Techniques"
         },
         {
           "surfaceId": "SURF-MX1970R049",
-          "displayNumber": "GD / 1952 / STAGED-MC-0745 / S-p01",
+          "displayNumber": "GD / 1952 / STAGED-MC-0745 / M-p01",
           "title": "Commercial art techniques : a practical self-instruction course and reference handbook. Over 500 illus. of methods and procedures"
         },
         {
@@ -257808,12 +259849,12 @@
         },
         {
           "surfaceId": "SURF-MX1970R048",
-          "displayNumber": "GD / 1952 / STAGED-MC-0752 / S-p01",
+          "displayNumber": "GD / 1952 / STAGED-MC-0752 / M-p01",
           "title": "commercial art techniques"
         },
         {
           "surfaceId": "SURF-MX1970R050",
-          "displayNumber": "GD / 1952 / STAGED-MC-0753 / S-p01",
+          "displayNumber": "GD / 1952 / STAGED-MC-0753 / M-p01",
           "title": "commercial art techniques"
         },
         {
@@ -257823,7 +259864,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R027",
-          "displayNumber": "GD / 1954 / STAGED-MC-0766 / S-p01",
+          "displayNumber": "GD / 1954 / STAGED-MC-0766 / M-p01",
           "title": "Graphic Design with special reference to Lettering, Typography and Illustration"
         },
         {
@@ -257833,7 +259874,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R028",
-          "displayNumber": "GD / 1954 / STAGED-MC-0774 / S-p01",
+          "displayNumber": "GD / 1954 / STAGED-MC-0774 / M-p01",
           "title": "graphic design"
         },
         {
@@ -257873,7 +259914,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R029",
-          "displayNumber": "GD / 1960 / STAGED-MC-0800 / S-p01",
+          "displayNumber": "GD / 1960 / STAGED-MC-0800 / M-p01",
           "title": "graphic design : a creative approach"
         },
         {
@@ -257943,7 +259984,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R052",
-          "displayNumber": "GD / 1963 / STAGED-MC-0813 / S-p01",
+          "displayNumber": "GD / 1963 / STAGED-MC-0813 / M-p01",
           "title": "Commercial art techniques;: A practical self-instruction course and reference handbook"
         },
         {
@@ -258063,7 +260104,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R054",
-          "displayNumber": "GD / 1966 / STAGED-MC-0834 / S-p01",
+          "displayNumber": "GD / 1966 / STAGED-MC-0834 / M-p01",
           "title": "Fell's Guide to commercial art,"
         },
         {
@@ -258078,7 +260119,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R034",
-          "displayNumber": "GD / 1967 / STAGED-MC-0838 / S-p01",
+          "displayNumber": "GD / 1967 / STAGED-MC-0838 / M-p01",
           "title": "Alphabets and design: a text for beginning students in graphic design"
         },
         {
@@ -258218,7 +260259,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R037",
-          "displayNumber": "GD / 1970 / STAGED-MC-0881 / S-p01",
+          "displayNumber": "GD / 1970 / STAGED-MC-0881 / M-p01",
           "title": "Graphic Design for the Computer Age; Visual Communication for all Media."
         },
         {
@@ -260446,7 +262487,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R040",
-          "displayNumber": "GD / 1931 / STAGED-MC-0432 / S-p01",
+          "displayNumber": "GD / 1931 / STAGED-MC-0432 / M-p01",
           "title": "commercial art and design"
         },
         {
@@ -260721,7 +262762,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R044",
-          "displayNumber": "GD / 1939 / STAGED-MC-0540 / S-p01",
+          "displayNumber": "GD / 1939 / STAGED-MC-0540 / M-p01",
           "title": "Commercial Art"
         },
         {
@@ -260831,7 +262872,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R045",
-          "displayNumber": "GD / 1941 / STAGED-MC-0610 / S-p01",
+          "displayNumber": "GD / 1941 / STAGED-MC-0610 / M-p01",
           "title": "Cartooning and Commercial Art"
         },
         {
@@ -260951,7 +262992,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R046",
-          "displayNumber": "GD / 1949 / STAGED-MC-0694 / S-p01",
+          "displayNumber": "GD / 1949 / STAGED-MC-0694 / M-p01",
           "title": "TEACH YOURSELF COMMERCIAL ART."
         },
         {
@@ -261026,12 +263067,12 @@
         },
         {
           "surfaceId": "SURF-MX1970R047",
-          "displayNumber": "GD / 1952 / STAGED-MC-0744 / S-p01",
+          "displayNumber": "GD / 1952 / STAGED-MC-0744 / M-p01",
           "title": "Commercial Art Techniques"
         },
         {
           "surfaceId": "SURF-MX1970R049",
-          "displayNumber": "GD / 1952 / STAGED-MC-0745 / S-p01",
+          "displayNumber": "GD / 1952 / STAGED-MC-0745 / M-p01",
           "title": "Commercial art techniques : a practical self-instruction course and reference handbook. Over 500 illus. of methods and procedures"
         },
         {
@@ -261056,12 +263097,12 @@
         },
         {
           "surfaceId": "SURF-MX1970R048",
-          "displayNumber": "GD / 1952 / STAGED-MC-0752 / S-p01",
+          "displayNumber": "GD / 1952 / STAGED-MC-0752 / M-p01",
           "title": "commercial art techniques"
         },
         {
           "surfaceId": "SURF-MX1970R050",
-          "displayNumber": "GD / 1952 / STAGED-MC-0753 / S-p01",
+          "displayNumber": "GD / 1952 / STAGED-MC-0753 / M-p01",
           "title": "commercial art techniques"
         },
         {
@@ -261186,7 +263227,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R052",
-          "displayNumber": "GD / 1963 / STAGED-MC-0813 / S-p01",
+          "displayNumber": "GD / 1963 / STAGED-MC-0813 / M-p01",
           "title": "Commercial art techniques;: A practical self-instruction course and reference handbook"
         },
         {
@@ -261251,7 +263292,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R054",
-          "displayNumber": "GD / 1966 / STAGED-MC-0834 / S-p01",
+          "displayNumber": "GD / 1966 / STAGED-MC-0834 / M-p01",
           "title": "Fell's Guide to commercial art,"
         },
         {
@@ -261830,7 +263871,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R026",
-          "displayNumber": "GD / 1936 / STAGED-MC-0486 / S-p01",
+          "displayNumber": "GD / 1936 / STAGED-MC-0486 / M-p01",
           "title": "Graphic Design"
         },
         {
@@ -261890,17 +263931,17 @@
         },
         {
           "surfaceId": "SURF-MX1970R027",
-          "displayNumber": "GD / 1954 / STAGED-MC-0766 / S-p01",
+          "displayNumber": "GD / 1954 / STAGED-MC-0766 / M-p01",
           "title": "Graphic Design with special reference to Lettering, Typography and Illustration"
         },
         {
           "surfaceId": "SURF-MX1970R028",
-          "displayNumber": "GD / 1954 / STAGED-MC-0774 / S-p01",
+          "displayNumber": "GD / 1954 / STAGED-MC-0774 / M-p01",
           "title": "graphic design"
         },
         {
           "surfaceId": "SURF-MX1970R029",
-          "displayNumber": "GD / 1960 / STAGED-MC-0800 / S-p01",
+          "displayNumber": "GD / 1960 / STAGED-MC-0800 / M-p01",
           "title": "graphic design : a creative approach"
         },
         {
@@ -261925,7 +263966,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R034",
-          "displayNumber": "GD / 1967 / STAGED-MC-0838 / S-p01",
+          "displayNumber": "GD / 1967 / STAGED-MC-0838 / M-p01",
           "title": "Alphabets and design: a text for beginning students in graphic design"
         },
         {
@@ -261960,7 +264001,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R037",
-          "displayNumber": "GD / 1970 / STAGED-MC-0881 / S-p01",
+          "displayNumber": "GD / 1970 / STAGED-MC-0881 / M-p01",
           "title": "Graphic Design for the Computer Age; Visual Communication for all Media."
         },
         {
@@ -268469,7 +270510,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R040",
-          "displayNumber": "GD / 1931 / STAGED-MC-0432 / S-p01",
+          "displayNumber": "GD / 1931 / STAGED-MC-0432 / M-p01",
           "title": "commercial art and design"
         },
         {
@@ -268479,7 +270520,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R026",
-          "displayNumber": "GD / 1936 / STAGED-MC-0486 / S-p01",
+          "displayNumber": "GD / 1936 / STAGED-MC-0486 / M-p01",
           "title": "Graphic Design"
         },
         {
@@ -268494,7 +270535,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R044",
-          "displayNumber": "GD / 1939 / STAGED-MC-0540 / S-p01",
+          "displayNumber": "GD / 1939 / STAGED-MC-0540 / M-p01",
           "title": "Commercial Art"
         },
         {
@@ -268509,7 +270550,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R045",
-          "displayNumber": "GD / 1941 / STAGED-MC-0610 / S-p01",
+          "displayNumber": "GD / 1941 / STAGED-MC-0610 / M-p01",
           "title": "Cartooning and Commercial Art"
         },
         {
@@ -268519,37 +270560,37 @@
         },
         {
           "surfaceId": "SURF-MX1970R046",
-          "displayNumber": "GD / 1949 / STAGED-MC-0694 / S-p01",
+          "displayNumber": "GD / 1949 / STAGED-MC-0694 / M-p01",
           "title": "TEACH YOURSELF COMMERCIAL ART."
         },
         {
           "surfaceId": "SURF-MX1970R047",
-          "displayNumber": "GD / 1952 / STAGED-MC-0744 / S-p01",
+          "displayNumber": "GD / 1952 / STAGED-MC-0744 / M-p01",
           "title": "Commercial Art Techniques"
         },
         {
           "surfaceId": "SURF-MX1970R049",
-          "displayNumber": "GD / 1952 / STAGED-MC-0745 / S-p01",
+          "displayNumber": "GD / 1952 / STAGED-MC-0745 / M-p01",
           "title": "Commercial art techniques : a practical self-instruction course and reference handbook. Over 500 illus. of methods and procedures"
         },
         {
           "surfaceId": "SURF-MX1970R048",
-          "displayNumber": "GD / 1952 / STAGED-MC-0752 / S-p01",
+          "displayNumber": "GD / 1952 / STAGED-MC-0752 / M-p01",
           "title": "commercial art techniques"
         },
         {
           "surfaceId": "SURF-MX1970R050",
-          "displayNumber": "GD / 1952 / STAGED-MC-0753 / S-p01",
+          "displayNumber": "GD / 1952 / STAGED-MC-0753 / M-p01",
           "title": "commercial art techniques"
         },
         {
           "surfaceId": "SURF-MX1970R027",
-          "displayNumber": "GD / 1954 / STAGED-MC-0766 / S-p01",
+          "displayNumber": "GD / 1954 / STAGED-MC-0766 / M-p01",
           "title": "Graphic Design with special reference to Lettering, Typography and Illustration"
         },
         {
           "surfaceId": "SURF-MX1970R028",
-          "displayNumber": "GD / 1954 / STAGED-MC-0774 / S-p01",
+          "displayNumber": "GD / 1954 / STAGED-MC-0774 / M-p01",
           "title": "graphic design"
         },
         {
@@ -268559,7 +270600,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R029",
-          "displayNumber": "GD / 1960 / STAGED-MC-0800 / S-p01",
+          "displayNumber": "GD / 1960 / STAGED-MC-0800 / M-p01",
           "title": "graphic design : a creative approach"
         },
         {
@@ -268569,7 +270610,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R052",
-          "displayNumber": "GD / 1963 / STAGED-MC-0813 / S-p01",
+          "displayNumber": "GD / 1963 / STAGED-MC-0813 / M-p01",
           "title": "Commercial art techniques;: A practical self-instruction course and reference handbook"
         },
         {
@@ -268594,12 +270635,12 @@
         },
         {
           "surfaceId": "SURF-MX1970R054",
-          "displayNumber": "GD / 1966 / STAGED-MC-0834 / S-p01",
+          "displayNumber": "GD / 1966 / STAGED-MC-0834 / M-p01",
           "title": "Fell's Guide to commercial art,"
         },
         {
           "surfaceId": "SURF-MX1970R034",
-          "displayNumber": "GD / 1967 / STAGED-MC-0838 / S-p01",
+          "displayNumber": "GD / 1967 / STAGED-MC-0838 / M-p01",
           "title": "Alphabets and design: a text for beginning students in graphic design"
         },
         {
@@ -268624,7 +270665,7 @@
         },
         {
           "surfaceId": "SURF-MX1970R037",
-          "displayNumber": "GD / 1970 / STAGED-MC-0881 / S-p01",
+          "displayNumber": "GD / 1970 / STAGED-MC-0881 / M-p01",
           "title": "Graphic Design for the Computer Age; Visual Communication for all Media."
         },
         {

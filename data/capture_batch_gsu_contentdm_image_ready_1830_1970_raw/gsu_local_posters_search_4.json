@@ -1,0 +1,3430 @@
+{
+  "browseAllDefaultSortField": "title",
+  "facetFields": {
+    "creato": "Creator",
+    "date": "Date",
+    "format": "Format",
+    "subjec": "Subject",
+    "type": "Type"
+  },
+  "facets": {
+    "creato": [
+      {
+        "count": 174,
+        "title": "atlanta symphony orchestra"
+      },
+      {
+        "count": 126,
+        "title": "7 stages theatre (atlanta, ga.)"
+      },
+      {
+        "count": 113,
+        "title": "creative loafing inc."
+      },
+      {
+        "count": 32,
+        "title": "lane brothers commercial photographers (atlanta, ga.)"
+      },
+      {
+        "count": 21,
+        "title": "atlanta journal-constitution"
+      },
+      {
+        "count": 20,
+        "title": "georgia perimeter college"
+      },
+      {
+        "count": 13,
+        "title": "georgia state university. library. special collections and archives"
+      },
+      {
+        "count": 11,
+        "title": "harris, joel chandler, 1848-1908"
+      },
+      {
+        "count": 8,
+        "title": "coffin, tom"
+      },
+      {
+        "count": 7,
+        "title": "revolutionary communist party, usa"
+      },
+      {
+        "count": 6,
+        "title": "dekalb college"
+      }
+    ],
+    "date": [
+      {
+        "count": 9,
+        "title": "1920-1976"
+      },
+      {
+        "count": 8,
+        "title": "1977"
+      },
+      {
+        "count": 6,
+        "title": "2017"
+      },
+      {
+        "count": 5,
+        "title": "1968-10-01"
+      },
+      {
+        "count": 5,
+        "title": "1976"
+      },
+      {
+        "count": 4,
+        "title": "1978"
+      },
+      {
+        "count": 4,
+        "title": "1988"
+      },
+      {
+        "count": 4,
+        "title": "1994"
+      },
+      {
+        "count": 3,
+        "title": "1956-10-08"
+      },
+      {
+        "count": 3,
+        "title": "1967-08-15"
+      },
+      {
+        "count": 3,
+        "title": "1967-09-03"
+      }
+    ],
+    "format": [
+      {
+        "count": 332,
+        "title": "application/pdf"
+      },
+      {
+        "count": 201,
+        "title": "image/jpeg"
+      },
+      {
+        "count": 200,
+        "title": "image/jp2"
+      },
+      {
+        "count": 187,
+        "title": "poster"
+      },
+      {
+        "count": 144,
+        "title": "posters"
+      },
+      {
+        "count": 120,
+        "title": "newspapers"
+      },
+      {
+        "count": 45,
+        "title": "black-and-white negatives"
+      },
+      {
+        "count": 36,
+        "title": "periodical"
+      },
+      {
+        "count": 27,
+        "title": "fiction"
+      },
+      {
+        "count": 27,
+        "title": "non-fiction"
+      },
+      {
+        "count": 27,
+        "title": "poetry"
+      }
+    ],
+    "subjec": [
+      {
+        "count": 275,
+        "title": "music"
+      },
+      {
+        "count": 197,
+        "title": "concerts"
+      },
+      {
+        "count": 177,
+        "title": "atlanta symphony orchestra"
+      },
+      {
+        "count": 124,
+        "title": "7 stages theatre (atlanta, ga.)"
+      },
+      {
+        "count": 121,
+        "title": "theater"
+      },
+      {
+        "count": 72,
+        "title": "drama"
+      },
+      {
+        "count": 70,
+        "title": "air traffic controllers' strike (united states : 1981)"
+      },
+      {
+        "count": 67,
+        "title": "air traffic controllers -- labor unions"
+      },
+      {
+        "count": 67,
+        "title": "strikes and lockouts -- air traffic control"
+      },
+      {
+        "count": 64,
+        "title": "art"
+      },
+      {
+        "count": 61,
+        "title": "books"
+      }
+    ],
+    "type": [
+      {
+        "count": 402,
+        "title": "image"
+      },
+      {
+        "count": 255,
+        "title": "text"
+      },
+      {
+        "count": 187,
+        "title": "stillimage"
+      },
+      {
+        "count": 9,
+        "title": "sound"
+      },
+      {
+        "count": 5,
+        "title": "movingimage"
+      },
+      {
+        "count": 1,
+        "title": "text image"
+      }
+    ]
+  },
+  "fields": {
+    "direction": "desc",
+    "order": "nosort",
+    "queries": [
+      {
+        "connector": "all",
+        "field": "all",
+        "mode": "all",
+        "searchTerm": "poster"
+      }
+    ]
+  },
+  "filters": {
+    "collections": [
+      {
+        "alias": "SevenStages",
+        "name": "7 Stages",
+        "selected": true
+      },
+      {
+        "alias": "AFLCIO",
+        "name": "AFL-CIO Southeast Division Civil Rights Department Records",
+        "selected": true
+      },
+      {
+        "alias": "arwg",
+        "name": "Archives for Research on Women",
+        "selected": true
+      },
+      {
+        "alias": "atlanta",
+        "name": "Atlanta Area Photographers Collection",
+        "selected": true
+      },
+      {
+        "alias": "schange",
+        "name": "Atlanta Civic & Neighborhood History",
+        "selected": true
+      },
+      {
+        "alias": "afpl",
+        "name": "Atlanta-Fulton Public Library Collection",
+        "selected": true
+      },
+      {
+        "alias": "StreetArt",
+        "name": "Atlanta Hip Hop Archives",
+        "selected": true
+      },
+      {
+        "alias": "ajc",
+        "name": "Atlanta Journal-Constitution Photographs",
+        "selected": true
+      },
+      {
+        "alias": "aso",
+        "name": "Atlanta Symphony Orchestra Records",
+        "selected": true
+      },
+      {
+        "alias": "bigjoy",
+        "name": "Big Joy Digital Collection",
+        "selected": true
+      },
+      {
+        "alias": "broadcast",
+        "name": "Broadcasting Collections",
+        "selected": true
+      },
+      {
+        "alias": "CLATL",
+        "name": "Creative Loafing",
+        "selected": true
+      },
+      {
+        "alias": "coles",
+        "name": "Donna Novak Coles Georgia Women's Movement Archives",
+        "selected": true
+      },
+      {
+        "alias": "eastern",
+        "name": "Eastern Air Lines Collections",
+        "selected": true
+      },
+      {
+        "alias": "fivepoints",
+        "name": "Five Points",
+        "selected": true
+      },
+      {
+        "alias": "gsv",
+        "name": "Gay Spirit Visions Records",
+        "selected": true
+      },
+      {
+        "alias": "gawl",
+        "name": "Georgia Association for Women Lawyers Records",
+        "selected": true
+      },
+      {
+        "alias": "gae",
+        "name": "Georgia Association of Educators Collection",
+        "selected": true
+      },
+      {
+        "alias": "ggdp",
+        "name": "Georgia Government Documentation Project",
+        "selected": true
+      },
+      {
+        "alias": "gpc",
+        "name": "Georgia Perimeter College Collection",
+        "selected": true
+      },
+      {
+        "alias": "university",
+        "name": "Georgia State University Archives",
+        "selected": true
+      },
+      {
+        "alias": "catalogs",
+        "name": "Georgia State University Catalogs",
+        "selected": true
+      },
+      {
+        "alias": "signal",
+        "name": "Georgia State University Signal",
+        "selected": true
+      },
+      {
+        "alias": "yearbooks",
+        "name": "Georgia State University Yearbooks",
+        "selected": true
+      },
+      {
+        "alias": "GSB",
+        "name": "Great Speckled Bird",
+        "selected": true
+      },
+      {
+        "alias": "guidebook",
+        "name": "Historic Atlanta Guidebook Images",
+        "selected": true
+      },
+      {
+        "alias": "IAM",
+        "name": "IAM Archives",
+        "selected": true
+      },
+      {
+        "alias": "music",
+        "name": "Johnny Mercer Collections",
+        "selected": true
+      },
+      {
+        "alias": "lane",
+        "name": "Lane Brothers Photographs",
+        "selected": true
+      },
+      {
+        "alias": "lgbtq",
+        "name": "LGBTQ Collection",
+        "selected": true
+      },
+      {
+        "alias": "draper",
+        "name": "Lucy Hargrett Draper Collections on Women's Rights, Advocacy and the Law",
+        "selected": true
+      },
+      {
+        "alias": "mhross",
+        "name": "M. H. Ross Papers",
+        "selected": true
+      },
+      {
+        "alias": "printed",
+        "name": "Manuscripts and Printed Material",
+        "selected": true
+      },
+      {
+        "alias": "marta",
+        "name": "Metropolitan Atlanta Rapid Transit Authority (MARTA) Collection",
+        "selected": true
+      },
+      {
+        "alias": "popmusic",
+        "name": "Music Collections",
+        "selected": true
+      },
+      {
+        "alias": "ndwu",
+        "name": "National Domestic Workers Union (U.S.) Records",
+        "selected": true
+      },
+      {
+        "alias": "PlanATL",
+        "name": "Planning Atlanta - A New City in the Making, 1930s-1990s",
+        "selected": true
+      },
+      {
+        "alias": "popcul",
+        "name": "Popular Culture Collections",
+        "selected": true
+      },
+      {
+        "alias": "PATCO",
+        "name": "Professional Air Traffic Controllers Organization (PATCO)",
+        "selected": true
+      },
+      {
+        "alias": "relglifeoh",
+        "name": "Religious Life Stories Project",
+        "selected": true
+      },
+      {
+        "alias": "researchATL",
+        "name": "Research Atlanta, Inc. Reports",
+        "selected": true
+      },
+      {
+        "alias": "labor",
+        "name": "Southern Labor Archives",
+        "selected": true
+      },
+      {
+        "alias": "sonurse",
+        "name": "Southern Nursing Collection",
+        "selected": true
+      },
+      {
+        "alias": "SKennedy",
+        "name": "Stetson Kennedy Papers",
+        "selected": true
+      },
+      {
+        "alias": "oneal",
+        "name": "Tracy O'Neal Photographs",
+        "selected": true
+      },
+      {
+        "alias": "ugwa",
+        "name": "United Garment Workers of America Records",
+        "selected": true
+      },
+      {
+        "alias": "uprising",
+        "name": "The Uprising of '34 Collection",
+        "selected": true
+      },
+      {
+        "alias": "usery",
+        "name": "W.J. Usery, Jr., Papers",
+        "selected": true
+      },
+      {
+        "alias": "marches",
+        "name": "Women's Marches 2017 Collection",
+        "selected": true
+      },
+      {
+        "alias": "wpamaps",
+        "name": "Works Progress Administration of Georgia Atlanta Maps",
+        "selected": true
+      }
+    ]
+  },
+  "gridViewEnabled": false,
+  "items": [
+    {
+      "cdmalt": null,
+      "collectionAlias": "lane",
+      "filetype": "pdf",
+      "index": null,
+      "itemId": "11552",
+      "itemLink": "/singleitem/collection/lane/id/11552",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Inventory of unscanned negatives in the Lane Brothers photographic collection, Things series (number 2 of 2)"
+        },
+        {
+          "field": "identi",
+          "value": "LBT_inventory2"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Lane Brothers Photographs"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/lane/id/11552/thumbnail",
+      "title": "Inventory of unscanned negatives in the Lane Brothers photographic collection, Things series (number 2 of 2)"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "103194",
+      "itemLink": "/compoundobject/collection/IAM/id/103194",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Aero Mechanic, 1942-10-15"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_DL0751_AeroMechanic_1942-10-15"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/103194/thumbnail",
+      "title": "Aero Mechanic, 1942-10-15"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "PATCO",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "132668",
+      "itemLink": "/compoundobject/collection/PATCO/id/132668",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "PATCO Safety Committee, Correspondence, News Clippings, 1975-1976 [2 of 2]"
+        },
+        {
+          "field": "identi",
+          "value": "PATCO_06_51_05"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Professional Air Traffic Controllers Organization (PATCO)"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/PATCO/id/132668/thumbnail",
+      "title": "PATCO Safety Committee, Correspondence, News Clippings, 1975-1976 [2 of 2]"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "29195",
+      "itemLink": "/compoundobject/collection/signal/id/29195",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Signal, 1991-10-15"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1991-10-15"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/29195/thumbnail",
+      "title": "Signal, 1991-10-15"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "15381",
+      "itemLink": "/compoundobject/collection/arwg/id/15381",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "NCHLA Newsletter, 1986-04"
+        },
+        {
+          "field": "identi",
+          "value": "W046_04_01_NCHLAN1986-04"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/15381/thumbnail",
+      "title": "NCHLA Newsletter, 1986-04"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "73962",
+      "itemLink": "/compoundobject/collection/IAM/id/73962",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Machinist, 1961-03-09"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_MN_1961-03-09"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/73962/thumbnail",
+      "title": "The Machinist, 1961-03-09"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "16269",
+      "itemLink": "/compoundobject/collection/arwg/id/16269",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "NCHLA Newsletter, 1985-06"
+        },
+        {
+          "field": "identi",
+          "value": "W046_04_01_NCHLAN1985-06"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/16269/thumbnail",
+      "title": "NCHLA Newsletter, 1985-06"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "15503",
+      "itemLink": "/compoundobject/collection/arwg/id/15503",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "NCHLA Newsletter, 1988-05"
+        },
+        {
+          "field": "identi",
+          "value": "W046_04_01_NCHLAN1988-05"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/15503/thumbnail",
+      "title": "NCHLA Newsletter, 1988-05"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "mhross",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "5915",
+      "itemLink": "/compoundobject/collection/mhross/id/5915",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Mine, Mill, and Smelter Workers, Southern Conference on Human Welfare), Tennessee and Alabama, 1942-1943"
+        },
+        {
+          "field": "identi",
+          "value": "L2001-05_006_10"
+        },
+        {
+          "field": "descri",
+          "value": "Myron Howard \"Mike\" Ross was born November 9, 1919 in New York City. He dropped out of school when he was seventeen and moved to Texas, where he worked on a farm. From 1936 until 1939, Ross worked in a bakery in North Carolina. In the summer of 1938, he attended the Southern School for Workers in Asheville, North Carolina. During the fall of 1938, Ross would attend the first Southern Conference on Human Welfare in Birmingham, Alabama. He would attend this conference again in 1940 in Chattanooga, Tennessee.\n\nFrom 1939 to 1940, Ross worked for the United Mine Workers Non-Partisan League in North Carolina, working under John L. Lewis. He was hired as a union organizer by the United Mine Workers of America, and sent to Saltville, Virginia and Rockwood, Tennessee. In 1940, Ross ran for a seat on city council on the People's Platform in Charlotte, North Carolina. During this time, he also married Anne \"Buddie\" West of Kennesaw, Georgia.\n\nFrom 1941 until 1945, Ross served as an infantryman for the United States Army. He sustained injuries near the Battle of the Bulge in the winter of 1944.\n\nFrom 1945 until 1949, Ross worked for the International Union of Mine, Mill and Smelter Workers, then part of the Congress of Industrial Organizations (CIO), as a union organizer. He was sent to Macon, Georgia, Savannah, Georgia and to Winston-Salem, North Carolina, where he worked with the United Furniture Workers Union. He began handling arbitration for the unions.\n\nIn 1948, Ross ran for United States Congress on the Progressive Party ticket in North Carolina. He also served as the secretary for the North Carolina Progressive Party.\n\nRoss attended the University of North Carolina law school from 1949 to 1952. He graduated with honors but was denied the bar on the grounds of \"character.\" From 1952 until 1955, he worked for the Mine, Mill and Smelter Workers as a union organizer, first in New Mexico (potash mines) and then in Arizona (copper mines).\n\nFrom 1955 to 1957, Ross attended the Columbia University School of Public Health. He worked for the United Mine Workers of America Welfare and Retirement Fund from 1957 to 1958, where he represented the union in expenditure of health care for mining workers. By 1958, Ross began plans for what would become the Fairmont Clinic, a prepaid group practice in Fairmont, West Virginia, which had the mission of providing high quality medical care for miners and their families. From 1958 until 1978, Ross served as administrator of the Fairmont Clinic.\n\nAs a result of this work, Ross began researching coal mining, especially coal mining lifestyle, heritage and history of coal mining and disasters. He would interview over one hundred miners (coal miners). Eventually, Ross began writing a manuscript about the history of coal mining.\n\nWorking for the Rural Practice Program of the University of North Carolina from 1980 until 1987, Ross taught in the medical school. M. H. Ross died on January 31, 1987 in Chapel Hill, North Carolina."
+        },
+        {
+          "field": "cdmcoll",
+          "value": "M. H. Ross Papers"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/mhross/id/5915/thumbnail",
+      "title": "Mine, Mill, and Smelter Workers, Southern Conference on Human Welfare), Tennessee and Alabama, 1942-1943"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "lane",
+      "filetype": "pdf",
+      "index": null,
+      "itemId": "11520",
+      "itemLink": "/singleitem/collection/lane/id/11520",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Inventory of unscanned negatives in the Lane Brothers photographic collection, Corporate bodies series (number 5 of 6"
+        },
+        {
+          "field": "identi",
+          "value": "LBCB_inventory5"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Lane Brothers Photographs"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/lane/id/11520/thumbnail",
+      "title": "Inventory of unscanned negatives in the Lane Brothers photographic collection, Corporate bodies series (number 5 of 6"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "gpc",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "12291",
+      "itemLink": "/compoundobject/collection/gpc/id/12291",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The DeKalb Collegian, 1993-05-05"
+        },
+        {
+          "field": "identi",
+          "value": "GPC_Collegian_1993-05-05"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia Perimeter College Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/gpc/id/12291/thumbnail",
+      "title": "The DeKalb Collegian, 1993-05-05"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "29996",
+      "itemLink": "/compoundobject/collection/arwg/id/29996",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Career Counseling, undated"
+        },
+        {
+          "field": "identi",
+          "value": "W211_01_003_005"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/29996/thumbnail",
+      "title": "Career Counseling, undated"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "eastern",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "53419",
+      "itemLink": "/compoundobject/collection/eastern/id/53419",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "News clippings re: Eastern Airlines [folder 11 of 11], 1981"
+        },
+        {
+          "field": "identi",
+          "value": "L1986-27_14_01"
+        },
+        {
+          "field": "descri",
+          "value": "Carolyn Lee Wills graduated from Georgia State University, where she studied journalism, history and speech. She also participated in many extra-curricular activities including Panhellenic Council, Delta Zeta Sorority, and yearbook. Before she began her work at Eastern Airlines, she traveled extensively throughout Europe, Asia, North and South America, Jamaica, the Bahamas, and Bermuda.; In 1965, Wills joined Eastern Airlines as a Representative of Women's Activities. In this role, she interpreted the company's program to women by working in the fields of fashion, radio, television, public relations, and promotions. In 1971, Wills became made Regional Manager of Public Relations. Eastern Airlines closed its Atlanta offices in November 1973, but found it difficult to cover their public relations needs in Atlanta from their headquarters in Miami. Four months after closing, Wills was re-hired by Eastern to manage the Southern Division covering Atlanta to Tokyo. While employed by Eastern Airlines, Wills served on many boards including American Women in Radio and Television, Georgia State University Alumni Association, and was a national representative of Delta Zeta Sorority. In 1966, she married attorney Charles H. Wills. The earliest incarnation of Eastern Airlines was Pitcairn Aviation, founded in 1927, which was the U.S. Postal Service contractor flying from New York to Atlanta. In 1930, the carrier was sold to North American Aviation owner Clement Keys and was renamed Eastern Air Transport. It soon added passenger routes and adopted the name Eastern Air Lines. Throughout the pre-World War II era, Eastern dominated passenger travel and air transport along the Atlantic coast, including the introduction of one-day service from New York to Miami in 1932. Famed pilot Eddie Rickenbacker bought the company in 1938 and was closely identified with it until his 1963 retirement. During the air travel boom of the 1950s and 1960s, Eastern Airlines grew into one of the \"\"Big Four\"\" United States carriers, enhancing its status as the lead air travel carrier on domestic east coast flights with the introduction of air shuttle service in 1961. Shuttle service was created as an alternative to bus routes and included hourly flights from Atlanta to Washington D.C., New York, and Boston. During this time, Eastern Airlines also expanded international service to Mexico, Bermuda, Puerto Rico, and Canada. Under the leadership of former astronaut Frank Borman (hired as an advisor in 1969, he became Chief Executive Officer in 1975), Eastern Airlines enjoyed continued successes in the industry until the enactment of the Airline Deregulation Act of 1978.; Beginning with Eastern's early U.S. Postal Service government contract, the company had relied upon the regulated and protective policies governing the airline industry. Without government protection, Eastern's profits began to make a downward turn that eventually culminated in the selling of the company to Texas Air International, headed by Frank Lorenzo. Following deregulation, Lorenzo was able to purchase multiple airlines including Continental, Frontier, New York Air, and Eastern. To cut costs in the midst of declining profits, Lorenzo asked Eastern's union employees to take massive pay cuts in wages and benefits. Union workers refused to accept Lorenzo's demands and opted to go on strike. By claiming bankruptcy in 1989, Lorenzo was able to hire non-union workers to fill the jobs of striking employees. Lorenzo took his demands a step further when he asked the machinists' union to take a pay cut, which resulted in another strike that dealt the final blow to any hope that Eastern Airlines would recover lost profits. In 1991, Eastern Airlines was permanently grounded. Eastern's main hubs in Atlanta and Miami were taken over by various competitors and its concourses in New York and Newark were demolished."
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Eastern Air Lines Collections"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/eastern/id/53419/thumbnail",
+      "title": "News clippings re: Eastern Airlines [folder 11 of 11], 1981"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "12531",
+      "itemLink": "/compoundobject/collection/arwg/id/12531",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Human Life International: Special Report No. 57, circa 1989"
+        },
+        {
+          "field": "identi",
+          "value": "W046_02_06_HLIntRep57"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/12531/thumbnail",
+      "title": "Human Life International: Special Report No. 57, circa 1989"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "31158",
+      "itemLink": "/compoundobject/collection/signal/id/31158",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Signal, 1991-10-22"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1991-10-22"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/31158/thumbnail",
+      "title": "Signal, 1991-10-22"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "11800",
+      "itemLink": "/compoundobject/collection/arwg/id/11800",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "HLI Reports, 1990-04"
+        },
+        {
+          "field": "identi",
+          "value": "W046_02_05_HLIR1990-04"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/11800/thumbnail",
+      "title": "HLI Reports, 1990-04"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "103792",
+      "itemLink": "/compoundobject/collection/IAM/id/103792",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Compass, 2010-11"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_LL0700_Compass_2010-11"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/103792/thumbnail",
+      "title": "Compass, 2010-11"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "GSB",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "4724",
+      "itemLink": "/compoundobject/collection/GSB/id/4724",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Great Speckled Bird v. 5 no. 26 (July 3, 1972)"
+        },
+        {
+          "field": "identi",
+          "value": ""
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Great Speckled Bird"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/GSB/id/4724/thumbnail",
+      "title": "Great Speckled Bird v. 5 no. 26 (July 3, 1972)"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "GSB",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "10114",
+      "itemLink": "/compoundobject/collection/GSB/id/10114",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Great Speckled Bird v. 1 no. 4 (April 26, 1968)"
+        },
+        {
+          "field": "identi",
+          "value": ""
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Great Speckled Bird"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/GSB/id/10114/thumbnail",
+      "title": "Great Speckled Bird v. 1 no. 4 (April 26, 1968)"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "16283",
+      "itemLink": "/compoundobject/collection/arwg/id/16283",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "NCHLA Newsletter, 1985-02"
+        },
+        {
+          "field": "identi",
+          "value": "W046_04_01_NCHLAN1985-02"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/16283/thumbnail",
+      "title": "NCHLA Newsletter, 1985-02"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "18604",
+      "itemLink": "/compoundobject/collection/signal/id/18604",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Georgia State University Signal, 1984-04-24"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1984-04-24"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/18604/thumbnail",
+      "title": "The Georgia State University Signal, 1984-04-24"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "PATCO",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "127291",
+      "itemLink": "/compoundobject/collection/PATCO/id/127291",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Executive Board Memoranda, 1971-1972"
+        },
+        {
+          "field": "identi",
+          "value": "PATCO_06_47_07"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Professional Air Traffic Controllers Organization (PATCO)"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/PATCO/id/127291/thumbnail",
+      "title": "Executive Board Memoranda, 1971-1972"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "popmusic",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "10760",
+      "itemLink": "/compoundobject/collection/popmusic/id/10760",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Poster: Mar y Sol; Easter in the Caribbean with Music and Friends, The First International Puerto<br>Rican Pop Festival, April 1-3, 1972"
+        },
+        {
+          "field": "identi",
+          "value": "M207_02_OS1_003"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Music Collections"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/popmusic/id/10760/thumbnail",
+      "title": "Poster: Mar y Sol; Easter in the Caribbean with Music and Friends, The First International Puerto<br>Rican Pop Festival, April 1-3, 1972"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "16140",
+      "itemLink": "/compoundobject/collection/arwg/id/16140",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "NCHLA Newsletter, 1986-10"
+        },
+        {
+          "field": "identi",
+          "value": "W046_04_01_NCHLAN1986-10"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/16140/thumbnail",
+      "title": "NCHLA Newsletter, 1986-10"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "29775",
+      "itemLink": "/compoundobject/collection/signal/id/29775",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Georgia State University Signal, 1993-04-27"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1993-04-27"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/29775/thumbnail",
+      "title": "The Georgia State University Signal, 1993-04-27"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "48851",
+      "itemLink": "/compoundobject/collection/signal/id/48851",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Signal, 2015-04-14"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS2015-04-14"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/48851/thumbnail",
+      "title": "The Signal, 2015-04-14"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "marta",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "5280",
+      "itemLink": "/compoundobject/collection/marta/id/5280",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Transit Times, 1993-02"
+        },
+        {
+          "field": "identi",
+          "value": "marta_TransitTimes_1993-02"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Metropolitan Atlanta Rapid Transit Authority (MARTA) Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/marta/id/5280/thumbnail",
+      "title": "Transit Times, 1993-02"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "SKennedy",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "9730",
+      "itemLink": "/compoundobject/collection/SKennedy/id/9730",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Periodicals, assorted, 1938-1951"
+        },
+        {
+          "field": "identi",
+          "value": "L1979-37_1523_121"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Stetson Kennedy Papers"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/SKennedy/id/9730/thumbnail",
+      "title": "Periodicals, assorted, 1938-1951"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "labor",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "18366",
+      "itemLink": "/compoundobject/collection/labor/id/18366",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Revolution RCP Monthly"
+        },
+        {
+          "field": "identi",
+          "value": "L2022-05_01_40"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Southern Labor Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/labor/id/18366/thumbnail",
+      "title": "Revolution RCP Monthly"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "15519",
+      "itemLink": "/compoundobject/collection/arwg/id/15519",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "NCHLA Newsletter, 1984-11"
+        },
+        {
+          "field": "identi",
+          "value": "W046_04_01_NCHLAN1984-11"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/15519/thumbnail",
+      "title": "NCHLA Newsletter, 1984-11"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "2659",
+      "itemLink": "/compoundobject/collection/signal/id/2659",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Georgia State Signal, 1960-05-13"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1960-05-13"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/2659/thumbnail",
+      "title": "Georgia State Signal, 1960-05-13"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "CLATL",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "7094",
+      "itemLink": "/compoundobject/collection/CLATL/id/7094",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Creative Loafing, 1975-07-12"
+        },
+        {
+          "field": "identi",
+          "value": "Y017_CLATL_1975-07-12"
+        },
+        {
+          "field": "descri",
+          "value": "Creative Loafing was started in 1972 by Deborah and Elton (Chick) Eason and expanded to other cities in the 1980s and 1990s under Creative Loafing Inc. It went through various ownerships starting in 2009, before being purchased by Ben Eason, son of the founders, bringing the publication back to the family as Creative Loafing, LLC, in 2017. Creative Loafing Inc. was once the nation's second largest publisher of alternative weeklies."
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Creative Loafing"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/CLATL/id/7094/thumbnail",
+      "title": "Creative Loafing, 1975-07-12"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "gae",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "17667",
+      "itemLink": "/compoundobject/collection/gae/id/17667",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Georgia Education Journal, 1932-04"
+        },
+        {
+          "field": "identi",
+          "value": "L2015-34_GAEJournal_1932-04"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia Association of Educators Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/gae/id/17667/thumbnail",
+      "title": "Georgia Education Journal, 1932-04"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "gae",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "8258",
+      "itemLink": "/compoundobject/collection/gae/id/8258",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Georgia Education Journal, 1952-04"
+        },
+        {
+          "field": "identi",
+          "value": "L2015-34_GAEJournal_1952-04"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia Association of Educators Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/gae/id/8258/thumbnail",
+      "title": "Georgia Education Journal, 1952-04"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "ajc",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "12490",
+      "itemLink": "/singleitem/collection/ajc/id/12490",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Walter Botts with the famous Uncle Sam poster he posed for, 1971"
+        },
+        {
+          "field": "identi",
+          "value": "AJCP099-054a"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Atlanta Journal-Constitution Photographs"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/ajc/id/12490/thumbnail",
+      "title": "Walter Botts with the famous Uncle Sam poster he posed for, 1971"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "PATCO",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "121742",
+      "itemLink": "/compoundobject/collection/PATCO/id/121742",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Eastern Region Public Relations Program Facility Manual, 1979"
+        },
+        {
+          "field": "identi",
+          "value": "PATCO_06_31_05"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Professional Air Traffic Controllers Organization (PATCO)"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/PATCO/id/121742/thumbnail",
+      "title": "Eastern Region Public Relations Program Facility Manual, 1979"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "gae",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "14225",
+      "itemLink": "/compoundobject/collection/gae/id/14225",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Georgia Education Journal, 1931-04"
+        },
+        {
+          "field": "identi",
+          "value": "L2015-34_GAEJournal_1931-04"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia Association of Educators Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/gae/id/14225/thumbnail",
+      "title": "Georgia Education Journal, 1931-04"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "eastern",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "61658",
+      "itemLink": "/compoundobject/collection/eastern/id/61658",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "REPArtee, 2009, winter"
+        },
+        {
+          "field": "identi",
+          "value": "L2017-10x_Repartee_2009winter"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Eastern Air Lines Collections"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/eastern/id/61658/thumbnail",
+      "title": "REPArtee, 2009, winter"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "gpc",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "10396",
+      "itemLink": "/compoundobject/collection/gpc/id/10396",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Open Door, 1976-05-07"
+        },
+        {
+          "field": "identi",
+          "value": "GPC_OpenDoor_1976-05-07"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia Perimeter College Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/gpc/id/10396/thumbnail",
+      "title": "Open Door, 1976-05-07"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "gae",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "11352",
+      "itemLink": "/compoundobject/collection/gae/id/11352",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Georgia Education Journal, 1964-05"
+        },
+        {
+          "field": "identi",
+          "value": "L2015-34_GAEJournal_1964-05"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia Association of Educators Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/gae/id/11352/thumbnail",
+      "title": "Georgia Education Journal, 1964-05"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "PATCO",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "175903",
+      "itemLink": "/compoundobject/collection/PATCO/id/175903",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Eastern Region Public Relations Program Facility Manual, 1979"
+        },
+        {
+          "field": "identi",
+          "value": "PATCO_11_18_10"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Professional Air Traffic Controllers Organization (PATCO)"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/PATCO/id/175903/thumbnail",
+      "title": "Eastern Region Public Relations Program Facility Manual, 1979"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "GSB",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "2143",
+      "itemLink": "/compoundobject/collection/GSB/id/2143",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Great Speckled Bird v. 4 [3] no. 29 (July 20, 1970)"
+        },
+        {
+          "field": "identi",
+          "value": ""
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Great Speckled Bird"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/GSB/id/2143/thumbnail",
+      "title": "Great Speckled Bird v. 4 [3] no. 29 (July 20, 1970)"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "gae",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "18473",
+      "itemLink": "/compoundobject/collection/gae/id/18473",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Georgia Education Journal, 1932-02"
+        },
+        {
+          "field": "identi",
+          "value": "L2015-34_GAEJournal_1932-02"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia Association of Educators Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/gae/id/18473/thumbnail",
+      "title": "Georgia Education Journal, 1932-02"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "74727",
+      "itemLink": "/compoundobject/collection/IAM/id/74727",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Machinist, 1961-03-23"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_MN_1961-03-23"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/74727/thumbnail",
+      "title": "The Machinist, 1961-03-23"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "mhross",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "20589",
+      "itemLink": "/compoundobject/collection/mhross/id/20589",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Ross correspondence, ca 1940s"
+        },
+        {
+          "field": "identi",
+          "value": "L2001-05_023_11"
+        },
+        {
+          "field": "descri",
+          "value": "Myron Howard \"Mike\" Ross was born November 9, 1919 in New York City. He dropped out of school when he was seventeen and moved to Texas, where he worked on a farm. From 1936 until 1939, Ross worked in a bakery in North Carolina. In the summer of 1938, he attended the Southern School for Workers in Asheville, North Carolina. During the fall of 1938, Ross would attend the first Southern Conference on Human Welfare in Birmingham, Alabama. He would attend this conference again in 1940 in Chattanooga, Tennessee.\n\nFrom 1939 to 1940, Ross worked for the United Mine Workers Non-Partisan League in North Carolina, working under John L. Lewis. He was hired as a union organizer by the United Mine Workers of America, and sent to Saltville, Virginia and Rockwood, Tennessee. In 1940, Ross ran for a seat on city council on the People's Platform in Charlotte, North Carolina. During this time, he also married Anne \"Buddie\" West of Kennesaw, Georgia.\n\nFrom 1941 until 1945, Ross served as an infantryman for the United States Army. He sustained injuries near the Battle of the Bulge in the winter of 1944.\n\nFrom 1945 until 1949, Ross worked for the International Union of Mine, Mill and Smelter Workers, then part of the Congress of Industrial Organizations (CIO), as a union organizer. He was sent to Macon, Georgia, Savannah, Georgia and to Winston-Salem, North Carolina, where he worked with the United Furniture Workers Union. He began handling arbitration for the unions.\n\nIn 1948, Ross ran for United States Congress on the Progressive Party ticket in North Carolina. He also served as the secretary for the North Carolina Progressive Party.\n\nRoss attended the University of North Carolina law school from 1949 to 1952. He graduated with honors but was denied the bar on the grounds of \"character.\" From 1952 until 1955, he worked for the Mine, Mill and Smelter Workers as a union organizer, first in New Mexico (potash mines) and then in Arizona (copper mines).\n\nFrom 1955 to 1957, Ross attended the Columbia University School of Public Health. He worked for the United Mine Workers of America Welfare and Retirement Fund from 1957 to 1958, where he represented the union in expenditure of health care for mining workers. By 1958, Ross began plans for what would become the Fairmont Clinic, a prepaid group practice in Fairmont, West Virginia, which had the mission of providing high quality medical care for miners and their families. From 1958 until 1978, Ross served as administrator of the Fairmont Clinic.\n\nAs a result of this work, Ross began researching coal mining, especially coal mining lifestyle, heritage and history of coal mining and disasters. He would interview over one hundred miners (coal miners). Eventually, Ross began writing a manuscript about the history of coal mining.\n\nWorking for the Rural Practice Program of the University of North Carolina from 1980 until 1987, Ross taught in the medical school. M. H. Ross died on January 31, 1987 in Chapel Hill, North Carolina."
+        },
+        {
+          "field": "cdmcoll",
+          "value": "M. H. Ross Papers"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/mhross/id/20589/thumbnail",
+      "title": "Ross correspondence, ca 1940s"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "30196",
+      "itemLink": "/compoundobject/collection/arwg/id/30196",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Workshop Session B, undated"
+        },
+        {
+          "field": "identi",
+          "value": "W211_01_003_006"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/30196/thumbnail",
+      "title": "Workshop Session B, undated"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "32508",
+      "itemLink": "/compoundobject/collection/signal/id/32508",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Signal, 1994-05-03"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1994-05-03"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/32508/thumbnail",
+      "title": "Signal, 1994-05-03"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "gawl",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "639",
+      "itemLink": "/compoundobject/collection/gawl/id/639",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Georgia Association for Women Lawyers scrapbook, 1970s-2000s"
+        },
+        {
+          "field": "identi",
+          "value": "W151_sb07"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia Association for Women Lawyers Records"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/gawl/id/639/thumbnail",
+      "title": "Georgia Association for Women Lawyers scrapbook, 1970s-2000s"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "gpc",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "14852",
+      "itemLink": "/compoundobject/collection/gpc/id/14852",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Collegian, 1999-04-28"
+        },
+        {
+          "field": "identi",
+          "value": "GPC_Collegian_1999-04-28"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia Perimeter College Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/gpc/id/14852/thumbnail",
+      "title": "The Collegian, 1999-04-28"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "13516",
+      "itemLink": "/compoundobject/collection/arwg/id/13516",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "MCCL Newsletter, 1984-08"
+        },
+        {
+          "field": "identi",
+          "value": "W046_03_09_MCCLN1984-08"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/13516/thumbnail",
+      "title": "MCCL Newsletter, 1984-08"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "30237",
+      "itemLink": "/compoundobject/collection/signal/id/30237",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Signal, 1992-08-11"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1992-08-11"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/30237/thumbnail",
+      "title": "Signal, 1992-08-11"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "popmusic",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "9506",
+      "itemLink": "/compoundobject/collection/popmusic/id/9506",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Poster: Vega Baja; Thanksgiving in Puerto Rico with Music and Friends, 1972"
+        },
+        {
+          "field": "identi",
+          "value": "M207_02_OS1_004"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Music Collections"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/popmusic/id/9506/thumbnail",
+      "title": "Poster: Vega Baja; Thanksgiving in Puerto Rico with Music and Friends, 1972"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "13932",
+      "itemLink": "/compoundobject/collection/arwg/id/13932",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "March for Life, 1983-09"
+        },
+        {
+          "field": "identi",
+          "value": "W046_03_08_ML1983-09"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/13932/thumbnail",
+      "title": "March for Life, 1983-09"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "gae",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "17969",
+      "itemLink": "/compoundobject/collection/gae/id/17969",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Georgia Education Journal, 1932-03"
+        },
+        {
+          "field": "identi",
+          "value": "L2015-34_GAEJournal_1932-03"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia Association of Educators Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/gae/id/17969/thumbnail",
+      "title": "Georgia Education Journal, 1932-03"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "eastern",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "5685",
+      "itemLink": "/compoundobject/collection/eastern/id/5685",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "TWU Express, 1989-06-30"
+        },
+        {
+          "field": "identi",
+          "value": "L2000-09_03_05_TWUE1989-06-30"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Eastern Air Lines Collections"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/eastern/id/5685/thumbnail",
+      "title": "TWU Express, 1989-06-30"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "mhross",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "12210",
+      "itemLink": "/compoundobject/collection/mhross/id/12210",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Daily Tarheel: African-Americans, segregation in North Carolina, 1951-1952, undated"
+        },
+        {
+          "field": "identi",
+          "value": "L2001-05_016_07"
+        },
+        {
+          "field": "descri",
+          "value": "Myron Howard \"Mike\" Ross was born November 9, 1919 in New York City. He dropped out of school when he was seventeen and moved to Texas, where he worked on a farm. From 1936 until 1939, Ross worked in a bakery in North Carolina. In the summer of 1938, he attended the Southern School for Workers in Asheville, North Carolina. During the fall of 1938, Ross would attend the first Southern Conference on Human Welfare in Birmingham, Alabama. He would attend this conference again in 1940 in Chattanooga, Tennessee.\n\nFrom 1939 to 1940, Ross worked for the United Mine Workers Non-Partisan League in North Carolina, working under John L. Lewis. He was hired as a union organizer by the United Mine Workers of America, and sent to Saltville, Virginia and Rockwood, Tennessee. In 1940, Ross ran for a seat on city council on the People's Platform in Charlotte, North Carolina. During this time, he also married Anne \"Buddie\" West of Kennesaw, Georgia.\n\nFrom 1941 until 1945, Ross served as an infantryman for the United States Army. He sustained injuries near the Battle of the Bulge in the winter of 1944.\n\nFrom 1945 until 1949, Ross worked for the International Union of Mine, Mill and Smelter Workers, then part of the Congress of Industrial Organizations (CIO), as a union organizer. He was sent to Macon, Georgia, Savannah, Georgia and to Winston-Salem, North Carolina, where he worked with the United Furniture Workers Union. He began handling arbitration for the unions.\n\nIn 1948, Ross ran for United States Congress on the Progressive Party ticket in North Carolina. He also served as the secretary for the North Carolina Progressive Party.\n\nRoss attended the University of North Carolina law school from 1949 to 1952. He graduated with honors but was denied the bar on the grounds of \"character.\" From 1952 until 1955, he worked for the Mine, Mill and Smelter Workers as a union organizer, first in New Mexico (potash mines) and then in Arizona (copper mines).\n\nFrom 1955 to 1957, Ross attended the Columbia University School of Public Health. He worked for the United Mine Workers of America Welfare and Retirement Fund from 1957 to 1958, where he represented the union in expenditure of health care for mining workers. By 1958, Ross began plans for what would become the Fairmont Clinic, a prepaid group practice in Fairmont, West Virginia, which had the mission of providing high quality medical care for miners and their families. From 1958 until 1978, Ross served as administrator of the Fairmont Clinic.\n\nAs a result of this work, Ross began researching coal mining, especially coal mining lifestyle, heritage and history of coal mining and disasters. He would interview over one hundred miners (coal miners). Eventually, Ross began writing a manuscript about the history of coal mining.\n\nWorking for the Rural Practice Program of the University of North Carolina from 1980 until 1987, Ross taught in the medical school. M. H. Ross died on January 31, 1987 in Chapel Hill, North Carolina."
+        },
+        {
+          "field": "cdmcoll",
+          "value": "M. H. Ross Papers"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/mhross/id/12210/thumbnail",
+      "title": "The Daily Tarheel: African-Americans, segregation in North Carolina, 1951-1952, undated"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "2622",
+      "itemLink": "/compoundobject/collection/signal/id/2622",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Georgia State Signal, 1960-02-02"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1960-02-02"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/2622/thumbnail",
+      "title": "Georgia State Signal, 1960-02-02"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "14539",
+      "itemLink": "/compoundobject/collection/arwg/id/14539",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "MCCL Newsletter, 1985-07/1985-08"
+        },
+        {
+          "field": "identi",
+          "value": "W046_03_09_MCCLN1985-07"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/14539/thumbnail",
+      "title": "MCCL Newsletter, 1985-07/1985-08"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "81359",
+      "itemLink": "/compoundobject/collection/IAM/id/81359",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Machinist, 1967-01-19"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_MN_1967-01-19"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/81359/thumbnail",
+      "title": "The Machinist, 1967-01-19"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "16848",
+      "itemLink": "/compoundobject/collection/arwg/id/16848",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "People Concerned for the Unborn Child Newsletter, 1981-12"
+        },
+        {
+          "field": "identi",
+          "value": "W046_05_01_PCUC1981-12"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/16848/thumbnail",
+      "title": "People Concerned for the Unborn Child Newsletter, 1981-12"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "AFLCIO",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "137824",
+      "itemLink": "/compoundobject/collection/AFLCIO/id/137824",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Posters and Calendar of Atlanta Black History"
+        },
+        {
+          "field": "identi",
+          "value": "L1989-17_08_oversized_001"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "AFL-CIO Southeast Division Civil Rights Department Records"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/AFLCIO/id/137824/thumbnail",
+      "title": "Posters and Calendar of Atlanta Black History"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "yearbooks",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "10916",
+      "itemLink": "/compoundobject/collection/yearbooks/id/10916",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Rampway, 1986"
+        },
+        {
+          "field": "identi",
+          "value": "GSUYB1986"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Yearbooks"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/yearbooks/id/10916/thumbnail",
+      "title": "Rampway, 1986"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "14957",
+      "itemLink": "/compoundobject/collection/arwg/id/14957",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "MCCL Newsletter, 1987-06"
+        },
+        {
+          "field": "identi",
+          "value": "W046_03_10_MCCLN1987-06"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/14957/thumbnail",
+      "title": "MCCL Newsletter, 1987-06"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "GSB",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "1903",
+      "itemLink": "/compoundobject/collection/GSB/id/1903",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Great Speckled Bird v. 3 no. 18 (May 4, 1970)"
+        },
+        {
+          "field": "identi",
+          "value": ""
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Great Speckled Bird"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/GSB/id/1903/thumbnail",
+      "title": "Great Speckled Bird v. 3 no. 18 (May 4, 1970)"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "gpc",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "11892",
+      "itemLink": "/compoundobject/collection/gpc/id/11892",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Focus, 1977-03-03"
+        },
+        {
+          "field": "identi",
+          "value": "GPC_Focus_1977-03-03"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia Perimeter College Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/gpc/id/11892/thumbnail",
+      "title": "Focus, 1977-03-03"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "popcul",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "1731",
+      "itemLink": "/compoundobject/collection/popcul/id/1731",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "\"Mixtitlan,\" by Philip Boehm, silent auction catalog for an \"Opening Night Fiesta,\"at 7 Stages Theatre, Atlanta, Georgia, May 7, 1999. (14 pages)"
+        },
+        {
+          "field": "identi",
+          "value": "M219-Programs-1999-05-07"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Popular Culture Collections"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/popcul/id/1731/thumbnail",
+      "title": "\"Mixtitlan,\" by Philip Boehm, silent auction catalog for an \"Opening Night Fiesta,\"at 7 Stages Theatre, Atlanta, Georgia, May 7, 1999. (14 pages)"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "lane",
+      "filetype": "pdf",
+      "index": null,
+      "itemId": "11526",
+      "itemLink": "/singleitem/collection/lane/id/11526",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Inventory of unscanned negatives in the Lane Brothers photographic collection, Corporate bodies series (number 2 of 6)"
+        },
+        {
+          "field": "identi",
+          "value": "LBCB_inventory2"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Lane Brothers Photographs"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/lane/id/11526/thumbnail",
+      "title": "Inventory of unscanned negatives in the Lane Brothers photographic collection, Corporate bodies series (number 2 of 6)"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "14216",
+      "itemLink": "/compoundobject/collection/signal/id/14216",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Georgia State University Signal, 1980-02-26"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1980-02-26"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/14216/thumbnail",
+      "title": "The Georgia State University Signal, 1980-02-26"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "marta",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "5001",
+      "itemLink": "/compoundobject/collection/marta/id/5001",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Transit Times, 1995-04"
+        },
+        {
+          "field": "identi",
+          "value": "marta_TransitTimes_1995-04"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Metropolitan Atlanta Rapid Transit Authority (MARTA) Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/marta/id/5001/thumbnail",
+      "title": "Transit Times, 1995-04"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "10378",
+      "itemLink": "/compoundobject/collection/signal/id/10378",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Georgia State College Signal, 1968-10-10"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1968-10-10"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/10378/thumbnail",
+      "title": "Georgia State College Signal, 1968-10-10"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "16712",
+      "itemLink": "/compoundobject/collection/arwg/id/16712",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Respect Life Report, 1984-05"
+        },
+        {
+          "field": "identi",
+          "value": "W046_05_05_RLR1984-05"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/16712/thumbnail",
+      "title": "Respect Life Report, 1984-05"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "14",
+      "itemLink": "/singleitem/collection/arwg/id/14",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Some men break more than their girlfriends' hearts. A bad relationship can hurt more than your feelings, 1987"
+        },
+        {
+          "field": "identi",
+          "value": "W2011-36_4_1"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/14/thumbnail",
+      "title": "Some men break more than their girlfriends' hearts. A bad relationship can hurt more than your feelings, 1987"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "74125",
+      "itemLink": "/compoundobject/collection/IAM/id/74125",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Machinist, 1960-11-17"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_MN_1960-11-17"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/74125/thumbnail",
+      "title": "The Machinist, 1960-11-17"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "music",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "1936",
+      "itemLink": "/compoundobject/collection/music/id/1936",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Chesterfield Music Shop scripts"
+        },
+        {
+          "field": "identi",
+          "value": "M002_A3"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Johnny Mercer Collections"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/music/id/1936/thumbnail",
+      "title": "Chesterfield Music Shop scripts"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "gae",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "9238",
+      "itemLink": "/compoundobject/collection/gae/id/9238",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Georgia Education Journal, 1960-04"
+        },
+        {
+          "field": "identi",
+          "value": "L2015-34_GAEJournal_1960-04"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia Association of Educators Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/gae/id/9238/thumbnail",
+      "title": "Georgia Education Journal, 1960-04"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "30931",
+      "itemLink": "/compoundobject/collection/signal/id/30931",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Signal, 1992-05-19"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1992-05-19"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/30931/thumbnail",
+      "title": "Signal, 1992-05-19"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "10582",
+      "itemLink": "/compoundobject/collection/signal/id/10582",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Georgia State College Signal, 1968-10-03"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1968-10-03"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/10582/thumbnail",
+      "title": "Georgia State College Signal, 1968-10-03"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "74521",
+      "itemLink": "/compoundobject/collection/IAM/id/74521",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Machinist, 1962-03-29"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_MN_1962-03-29"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/74521/thumbnail",
+      "title": "The Machinist, 1962-03-29"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "21529",
+      "itemLink": "/compoundobject/collection/signal/id/21529",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Georgia State University Signal, 1985-10-08"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1985-10-08"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/21529/thumbnail",
+      "title": "The Georgia State University Signal, 1985-10-08"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "82205",
+      "itemLink": "/compoundobject/collection/IAM/id/82205",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Machinist, 1969-09-25"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_MN_1969-09-25"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/82205/thumbnail",
+      "title": "The Machinist, 1969-09-25"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "ajc",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "2520",
+      "itemLink": "/singleitem/collection/ajc/id/2520",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Otto Kleiman and Anne Cox Chambers presenting Georgia Governor Busbee with a Bio-Energy '80,  World Congress poster, Atlanta, Georgia, November 27, 1979."
+        },
+        {
+          "field": "identi",
+          "value": "AJCN030-022a"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Atlanta Journal-Constitution Photographs"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/ajc/id/2520/thumbnail",
+      "title": "Otto Kleiman and Anne Cox Chambers presenting Georgia Governor Busbee with a Bio-Energy '80,  World Congress poster, Atlanta, Georgia, November 27, 1979."
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "gae",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "15772",
+      "itemLink": "/compoundobject/collection/gae/id/15772",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Georgia Education Journal, 1967-10"
+        },
+        {
+          "field": "identi",
+          "value": "L2015-34_GAEJournal_1967-10"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia Association of Educators Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/gae/id/15772/thumbnail",
+      "title": "Georgia Education Journal, 1967-10"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "lane",
+      "filetype": "pdf",
+      "index": null,
+      "itemId": "11551",
+      "itemLink": "/singleitem/collection/lane/id/11551",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Inventory of unscanned negatives in the Lane Brothers photographic collection, Corporate bodies series (number 3 of 6)"
+        },
+        {
+          "field": "identi",
+          "value": "LBCB_inventory3"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Lane Brothers Photographs"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/lane/id/11551/thumbnail",
+      "title": "Inventory of unscanned negatives in the Lane Brothers photographic collection, Corporate bodies series (number 3 of 6)"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "lane",
+      "filetype": "pdf",
+      "index": null,
+      "itemId": "11555",
+      "itemLink": "/singleitem/collection/lane/id/11555",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Inventory of unscanned negatives in the Lane Brothers photographic collection, Corporate bodies series (number 4 of 6)"
+        },
+        {
+          "field": "identi",
+          "value": "LBCB_inventory4"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Lane Brothers Photographs"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/lane/id/11555/thumbnail",
+      "title": "Inventory of unscanned negatives in the Lane Brothers photographic collection, Corporate bodies series (number 4 of 6)"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "19040",
+      "itemLink": "/compoundobject/collection/signal/id/19040",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Georgia State University Signal, 1985-04-30"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1985-04-30"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/19040/thumbnail",
+      "title": "The Georgia State University Signal, 1985-04-30"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "14630",
+      "itemLink": "/compoundobject/collection/arwg/id/14630",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Life Support, 1990, summer"
+        },
+        {
+          "field": "identi",
+          "value": "W046_03_07_LSupport1990summer"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/14630/thumbnail",
+      "title": "Life Support, 1990, summer"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "11560",
+      "itemLink": "/compoundobject/collection/arwg/id/11560",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Human Life International: Special Report No. 56, circa 1989"
+        },
+        {
+          "field": "identi",
+          "value": "W046_02_06_HLIntRep56"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/11560/thumbnail",
+      "title": "Human Life International: Special Report No. 56, circa 1989"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "20777",
+      "itemLink": "/compoundobject/collection/signal/id/20777",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Georgia State University Signal, 1985-11-12"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1985-11-12"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/20777/thumbnail",
+      "title": "The Georgia State University Signal, 1985-11-12"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "20967",
+      "itemLink": "/compoundobject/collection/signal/id/20967",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Georgia State University Signal, 1987-02-10"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1987-02-10"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/20967/thumbnail",
+      "title": "The Georgia State University Signal, 1987-02-10"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "gae",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "8103",
+      "itemLink": "/compoundobject/collection/gae/id/8103",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Georgia Education Journal, 1959-11"
+        },
+        {
+          "field": "identi",
+          "value": "L2015-34_GAEJournal_1959-11"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia Association of Educators Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/gae/id/8103/thumbnail",
+      "title": "Georgia Education Journal, 1959-11"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "32683",
+      "itemLink": "/compoundobject/collection/signal/id/32683",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Signal, 1992-08-04"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1992-08-04"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/32683/thumbnail",
+      "title": "Signal, 1992-08-04"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "labor",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "4462",
+      "itemLink": "/compoundobject/collection/labor/id/4462",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Dean Girardot scrapbook 1 (J.P. Stevens and Co. campaign), 1963-1965"
+        },
+        {
+          "field": "identi",
+          "value": "L2012-40_sb1"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Southern Labor Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/labor/id/4462/thumbnail",
+      "title": "Dean Girardot scrapbook 1 (J.P. Stevens and Co. campaign), 1963-1965"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "AFLCIO",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "44399",
+      "itemLink": "/compoundobject/collection/AFLCIO/id/44399",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "A. Philip Randolph Institute, correspondence and printed materials, 1982-1983"
+        },
+        {
+          "field": "identi",
+          "value": "L1986-01_2123_003"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "AFL-CIO Southeast Division Civil Rights Department Records"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/AFLCIO/id/44399/thumbnail",
+      "title": "A. Philip Randolph Institute, correspondence and printed materials, 1982-1983"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "15409",
+      "itemLink": "/compoundobject/collection/signal/id/15409",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Georgia State University Signal, 1980-10-14"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1980-10-14"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/15409/thumbnail",
+      "title": "The Georgia State University Signal, 1980-10-14"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "gae",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "6963",
+      "itemLink": "/compoundobject/collection/gae/id/6963",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Georgia Education Journal, 1955-10"
+        },
+        {
+          "field": "identi",
+          "value": "L2015-34_GAEJournal_1955-10"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia Association of Educators Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/gae/id/6963/thumbnail",
+      "title": "Georgia Education Journal, 1955-10"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "gae",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "8692",
+      "itemLink": "/compoundobject/collection/gae/id/8692",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Georgia Education Journal, 1960-01"
+        },
+        {
+          "field": "identi",
+          "value": "L2015-34_GAEJournal_1960-01"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia Association of Educators Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/gae/id/8692/thumbnail",
+      "title": "Georgia Education Journal, 1960-01"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "AFLCIO",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "133877",
+      "itemLink": "/compoundobject/collection/AFLCIO/id/133877",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "A. Phillip Randolph Institute, 1988-1989"
+        },
+        {
+          "field": "identi",
+          "value": "L1989-17_08_0020_003"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "AFL-CIO Southeast Division Civil Rights Department Records"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/AFLCIO/id/133877/thumbnail",
+      "title": "A. Phillip Randolph Institute, 1988-1989"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "gae",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "19446",
+      "itemLink": "/compoundobject/collection/gae/id/19446",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Georgia Education Journal, 1942-05"
+        },
+        {
+          "field": "identi",
+          "value": "L2015-34_GAEJournal_1942-05"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia Association of Educators Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/gae/id/19446/thumbnail",
+      "title": "Georgia Education Journal, 1942-05"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "mhross",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "18679",
+      "itemLink": "/compoundobject/collection/mhross/id/18679",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Southwest - general [Mexico maps and tourist information and Gulf of Mexico industry], 1972-1974, undated"
+        },
+        {
+          "field": "identi",
+          "value": "L2001-05_025_08"
+        },
+        {
+          "field": "descri",
+          "value": "Myron Howard \"Mike\" Ross was born November 9, 1919 in New York City. He dropped out of school when he was seventeen and moved to Texas, where he worked on a farm. From 1936 until 1939, Ross worked in a bakery in North Carolina. In the summer of 1938, he attended the Southern School for Workers in Asheville, North Carolina. During the fall of 1938, Ross would attend the first Southern Conference on Human Welfare in Birmingham, Alabama. He would attend this conference again in 1940 in Chattanooga, Tennessee.\n\nFrom 1939 to 1940, Ross worked for the United Mine Workers Non-Partisan League in North Carolina, working under John L. Lewis. He was hired as a union organizer by the United Mine Workers of America, and sent to Saltville, Virginia and Rockwood, Tennessee. In 1940, Ross ran for a seat on city council on the People's Platform in Charlotte, North Carolina. During this time, he also married Anne \"Buddie\" West of Kennesaw, Georgia.\n\nFrom 1941 until 1945, Ross served as an infantryman for the United States Army. He sustained injuries near the Battle of the Bulge in the winter of 1944.\n\nFrom 1945 until 1949, Ross worked for the International Union of Mine, Mill and Smelter Workers, then part of the Congress of Industrial Organizations (CIO), as a union organizer. He was sent to Macon, Georgia, Savannah, Georgia and to Winston-Salem, North Carolina, where he worked with the United Furniture Workers Union. He began handling arbitration for the unions.\n\nIn 1948, Ross ran for United States Congress on the Progressive Party ticket in North Carolina. He also served as the secretary for the North Carolina Progressive Party.\n\nRoss attended the University of North Carolina law school from 1949 to 1952. He graduated with honors but was denied the bar on the grounds of \"character.\" From 1952 until 1955, he worked for the Mine, Mill and Smelter Workers as a union organizer, first in New Mexico (potash mines) and then in Arizona (copper mines).\n\nFrom 1955 to 1957, Ross attended the Columbia University School of Public Health. He worked for the United Mine Workers of America Welfare and Retirement Fund from 1957 to 1958, where he represented the union in expenditure of health care for mining workers. By 1958, Ross began plans for what would become the Fairmont Clinic, a prepaid group practice in Fairmont, West Virginia, which had the mission of providing high quality medical care for miners and their families. From 1958 until 1978, Ross served as administrator of the Fairmont Clinic.\n\nAs a result of this work, Ross began researching coal mining, especially coal mining lifestyle, heritage and history of coal mining and disasters. He would interview over one hundred miners (coal miners). Eventually, Ross began writing a manuscript about the history of coal mining.\n\nWorking for the Rural Practice Program of the University of North Carolina from 1980 until 1987, Ross taught in the medical school. M. H. Ross died on January 31, 1987 in Chapel Hill, North Carolina."
+        },
+        {
+          "field": "cdmcoll",
+          "value": "M. H. Ross Papers"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/mhross/id/18679/thumbnail",
+      "title": "Southwest - general [Mexico maps and tourist information and Gulf of Mexico industry], 1972-1974, undated"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "33274",
+      "itemLink": "/compoundobject/collection/signal/id/33274",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Signal, 1992-02-25"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1992-02-25"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/33274/thumbnail",
+      "title": "Signal, 1992-02-25"
+    }
+  ],
+  "searchResultsDefaultSortField": "nosort",
+  "sortFields": [
+    {
+      "ad": "asc",
+      "name": "Relevance",
+      "order": "nosort"
+    },
+    {
+      "ad": "asc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "desc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "asc",
+      "name": "Identifier",
+      "order": "identi"
+    },
+    {
+      "ad": "desc",
+      "name": "Identifier",
+      "order": "identi"
+    },
+    {
+      "ad": "asc",
+      "name": "Description",
+      "order": "descri"
+    },
+    {
+      "ad": "desc",
+      "name": "Description",
+      "order": "descri"
+    }
+  ],
+  "totalResults": 2499
+}

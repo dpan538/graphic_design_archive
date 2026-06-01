@@ -1,7 +1,7 @@
 /**
  * Layout template system.
  *
- * Nine reusable page layouts. Data is read from the static payload and dropped
+ * Core reusable page layouts. Data is read from the static payload and dropped
  * into fixed slots — missing data leaves a reserved empty slot. The selection
  * function is deterministic so the same payload always produces the same
  * layout (reproducible, build-time / SSG friendly).
@@ -13,7 +13,6 @@
  *  L05 sheet.compound  — several weak records as one intellectual unit
  *  L06 card.sparse     — sparse card with promotion/review status
  *  L07 stub.fallback   — deliberate "not ingested" stub
- *  L08 appendix.tables — continuation/appendix: overflow tables only
  *  L09 register.index  — folder register / chronological index sheet
  */
 
@@ -27,7 +26,6 @@ export type LayoutId =
   | "L05.compound"
   | "L06.card"
   | "L07.stub"
-  | "L08.appendix"
   | "L09.register";
 
 export const LAYOUT_LABEL: Record<LayoutId, string> = {
@@ -38,7 +36,6 @@ export const LAYOUT_LABEL: Record<LayoutId, string> = {
   "L05.compound": "Compound",
   "L06.card": "Sparse card",
   "L07.stub": "Fallback stub",
-  "L08.appendix": "Appendix",
   "L09.register": "Register",
 };
 

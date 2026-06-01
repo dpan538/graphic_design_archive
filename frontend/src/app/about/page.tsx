@@ -337,21 +337,23 @@ function AboutPageMain() {
           <p className="label-caps text-ink-soft">00 / project statement</p>
           <h1>Modern Graphic Design History</h1>
           <p>
-            is a rights-aware archive index, source-navigation system, and
-            design research prototype for modern graphic design history from
-            roughly 1830 to 1970.
+            is a rights-aware archive index, source-navigation system, and a
+            learning/research prototype for building a fuller modern graphic
+            design archive library in the AI era.
           </p>
           <p>
-            It does not replace original archives or claim one universal design
-            history. It organizes distributed evidence so that records, gaps,
-            rights decisions, and source limits remain visible beside the
-            historical interface.
+            It does not replace original archives, scrape away their authority,
+            or claim one universal design history. It organizes distributed
+            evidence so that students, researchers, designers, and AI-assisted
+            study systems can inspect records, gaps, rights decisions, and
+            source limits together.
           </p>
           <p className="about-hero__note">
             Current status: a static research prototype generated from source
-            captures, not a final publication dataset. Each public surface
-            should remain traceable to a source record and an item-level rights
-            note.
+            captures, not a final publication dataset. The goal is a more
+            complete, citation-first archive library for learning and research:
+            each public surface should remain traceable to a source record and
+            an item-level rights note.
           </p>
         </header>
 
@@ -367,19 +369,26 @@ function AboutPageMain() {
             </p>
             <div className="about-source-table">
               <div className="about-source-table__head">source</div>
-              <div className="about-source-table__head">coverage</div>
-              <div className="about-source-table__head">license / rights</div>
+              <div className="about-source-table__head">route</div>
               <div className="about-source-table__head">records</div>
               {currentSources.map((source) => (
-                <div key={source.name} className="about-source-row contents">
-                  <div className="about-source-id">
+                <details key={source.name} className="about-source-item">
+                  <summary className="about-source-summary">
                     <strong>{source.name}</strong>
                     <span>{source.route}</span>
+                    <span className="about-source-count">{source.count}</span>
+                  </summary>
+                  <div className="about-source-detail">
+                    <div>
+                      <strong>Coverage</strong>
+                      <p>{source.role}</p>
+                    </div>
+                    <div>
+                      <strong>License / rights</strong>
+                      <p>{source.rights}</p>
+                    </div>
                   </div>
-                  <p>{source.role}</p>
-                  <p>{source.rights}</p>
-                  <span className="about-source-count">{source.count}</span>
-                </div>
+                </details>
               ))}
             </div>
             <h3>Source dependency references</h3>
@@ -596,13 +605,14 @@ function AboutPageMain() {
         <section id="license" className="about-section about-hover-panel">
           <div className="about-section__num">08</div>
           <div>
-            <p className="label-caps text-ink-soft">license area</p>
-            <h2>What may be reused, and what may not</h2>
+            <p className="label-caps text-ink-soft">rights notice</p>
+            <h2>No blanket reuse license is granted here</h2>
             <p>
-              The project needs separate license decisions for interface code,
+              This notice describes license status for a learning and research
+              prototype; it is not a permission grant. Interface code,
               project-authored writing, normalized index metadata, third-party
-              source records, and images. A source being public or searchable
-              does not make its image or metadata freely reusable.
+              source records, and images each require separate rights review.
+              Original source terms remain authoritative.
             </p>
             <div className="license-grid">
               {licensePolicy.map((item) => (

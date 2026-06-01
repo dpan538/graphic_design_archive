@@ -113,18 +113,34 @@ def row_sort_year(row: dict[str, str]) -> int:
 
 
 def dedupe_rows(rows: list[dict[str, str]]) -> list[dict[str, str]]:
-    seen: set[tuple[str, str]] = set()
-    out: list[dict[str, str]] = []
+    best: dict[tuple[str, str], dict[str, str]] = {}
+
+    def score(row: dict[str, str]) -> tuple[int, int, int, int]:
+        image_rank = {
+            "IMG03": 5,
+            "IMG02": 4,
+            "IMG01": 3,
+            "IMG04": 2,
+            "IMG00": 1,
+        }.get(row.get("image_presence_code") or "IMG00", 0)
+        text_rank = max(
+            len(row.get("editorial_summary") or ""),
+            len(row.get("source_description") or ""),
+            len(row.get("ocr_or_excerpt") or ""),
+        )
+        parsed_rank = 1 if row.get("parser_status") == "ok" else 0
+        rights_rank = 1 if row.get("rights_review_required") == "true" else 0
+        return image_rank, text_rank, parsed_rank, rights_rank
+
     for row in rows:
         key = (
             row.get("source_name", ""),
             row.get("source_identifier") or row.get("source_record_url") or row.get("source_title", ""),
         )
-        if key in seen:
-            continue
-        seen.add(key)
-        out.append(row)
-    return out
+        current = best.get(key)
+        if current is None or score(row) > score(current):
+            best[key] = row
+    return list(best.values())
 
 
 def enhance_payload(payload: dict, rows: list[dict[str, str]]) -> dict:
@@ -169,6 +185,106 @@ def table_rows(surface: dict, kind: str) -> int:
     return 0
 
 
+def table_map(surface: dict) -> dict[str, dict]:
+    return {
+        table.get("kind", ""): table
+        for table in surface.get("tables", [])
+        if isinstance(table, dict)
+    }
+
+
+def table_row_value(surface: dict, kind: str, label_terms: tuple[str, ...]) -> str:
+    terms = tuple(term.lower() for term in label_terms)
+    for label, value in table_map(surface).get(kind, {}).get("rows", []):
+        if any(term in str(label).lower() for term in terms):
+            return str(value)
+    return ""
+
+
+def reading_length(surface: dict) -> int:
+    return len(
+        " ".join(
+            str(surface.get(key) or "")
+            for key in (
+                "descriptionSummary",
+                "sourceDescription",
+                "historicalContextNote",
+                "sourceNotes",
+                "sourceSubjects",
+            )
+        ).strip()
+    )
+
+
+def stable_hash(value: str) -> int:
+    h = 2166136261
+    for char in value:
+        h ^= ord(char)
+        h = (h * 16777619) & 0xFFFFFFFF
+    return h
+
+
+def appendix_rule(surface: dict) -> tuple[str | None, list[str]]:
+    """Return the production AX layout and reasons for one appendix packet.
+
+    The rule mirrors `frontend/src/lib/paginate.ts`: a surface gets at most one
+    appendix packet, selected by evidence priority rather than generic table
+    overflow. Text leaves stay reading/image-only; evidence ledgers move here.
+    """
+    if surface.get("surfaceType") != "sheet":
+        return None, []
+
+    tables = table_map(surface)
+    image = surface.get("image") if isinstance(surface.get("image"), dict) else {}
+    image_state = image.get("state")
+    folders = surface.get("folders") if isinstance(surface.get("folders"), list) else []
+    child_count = len(surface.get("compoundChildren") or [])
+    total_rows = sum(len(table.get("rows", [])) for table in tables.values())
+    source_links = table_row_value(surface, "CITATIONS", ("source links", "source urls", "source url"))
+    multi_source_list = source_links.count("http://") + source_links.count("https://") >= 2
+    protocol_text = " ".join(
+        str(surface.get(key) or "")
+        for key in (
+            "historicalContextNote",
+            "classificationRationale",
+            "citationBasis",
+        )
+    )
+    rights = surface.get("rights") if isinstance(surface.get("rights"), dict) else {}
+    protocol_text = f"{protocol_text} {rights.get('label', '')}"
+    surface_hash = stable_hash(surface.get("surfaceId", ""))
+    protocol_low = protocol_text.lower()
+    explicit_protocol_note = any(
+        term in protocol_low
+        for term in ("manual review", "protocol-sensitive", "source-only", "source only", "suppress", "sensitive")
+    )
+    source_policy_context = image_state == "IMG02" and reading_length(surface) >= 1500 and surface_hash % 4 == 0
+    display_policy = rights.get("displayPolicy") or rights.get("display_policy") or ""
+    review_gates = surface.get("reviewGates") if isinstance(surface.get("reviewGates"), dict) else {}
+    rights_reviewed = bool(review_gates.get("rightsReviewed"))
+    non_blank_rights_evidence = (
+        image_state in {"IMG01", "IMG02", "IMG03"}
+        and (display_policy != "open_image_frame" or not rights_reviewed)
+        and reading_length(surface) >= 900
+        and surface_hash % 6 == 0
+    )
+
+    if image_state == "IMG00":
+        return "AX01.rights", ["rights/image evidence continuation"]
+    if multi_source_list or child_count >= 3:
+        return "AX02.citation", ["source/citation register"]
+    if table_rows(surface, "RELATIONS") > 4 or len(folders) >= 4 or child_count > 0:
+        return "AX03.relations", ["relations/classification appendix"]
+    if non_blank_rights_evidence:
+        return "AX01.rights", ["rights/image display evidence continuation"]
+    if explicit_protocol_note or source_policy_context:
+        return "AX04.context", ["protocol/context packet"]
+    if total_rows >= 30 and reading_length(surface) >= 900 and surface_hash % 5 == 0:
+        layout = "AX06.typed-index" if surface_hash % 3 == 0 else "AX05.statement"
+        return layout, ["source verification dossier"]
+    return None, []
+
+
 def attach_structural_collections(payload: dict) -> dict:
     """Expose non-sheet archive structures in the static payload.
 
@@ -197,14 +313,7 @@ def attach_structural_collections(payload: dict) -> dict:
 
     appendix_candidates = []
     for surface in surfaces:
-        image = surface.get("image") if isinstance(surface.get("image"), dict) else {}
-        reasons: list[str] = []
-        if surface.get("surfaceType") == "sheet" and image.get("state") == "IMG00":
-            reasons.append("rights/image evidence continuation")
-        if table_rows(surface, "RELATIONS") > 4:
-            reasons.append("relations overflow")
-        if table_rows(surface, "CITATIONS") > 3:
-            reasons.append("citation overflow")
+        layout_id, reasons = appendix_rule(surface)
         if reasons:
             total_rows = sum(len(table.get("rows", [])) for table in surface.get("tables", []))
             appendix_candidates.append(
@@ -213,6 +322,7 @@ def attach_structural_collections(payload: dict) -> dict:
                     "surfaceId": surface.get("surfaceId"),
                     "title": surface.get("title"),
                     "displayNumber": surface.get("provisionalDisplayNumber"),
+                    "layoutId": layout_id,
                     "reasons": reasons,
                     "tableRows": total_rows,
                 }

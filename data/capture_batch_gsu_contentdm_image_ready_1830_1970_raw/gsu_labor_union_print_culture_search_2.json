@@ -1,0 +1,1396 @@
+{
+  "browseAllDefaultSortField": "title",
+  "facetFields": {
+    "creato": "Creator",
+    "date": "Date",
+    "format": "Format",
+    "subjec": "Subject",
+    "type": "Type"
+  },
+  "facets": {
+    "creato": [
+      {
+        "count": 8,
+        "title": "creative loafing inc."
+      },
+      {
+        "count": 8,
+        "title": "georgia state university. library. special collections and archives"
+      },
+      {
+        "count": 6,
+        "title": "revolutionary communist party, usa"
+      },
+      {
+        "count": 3,
+        "title": "afl-cio. civil rights department"
+      },
+      {
+        "count": 3,
+        "title": "mississippi state afl-cio"
+      },
+      {
+        "count": 2,
+        "title": "boags modern arts (charleston, s.c.)"
+      },
+      {
+        "count": 2,
+        "title": "dyches, hayne"
+      },
+      {
+        "count": 2,
+        "title": "international association of machinists and aerospace workers"
+      },
+      {
+        "count": 2,
+        "title": "southern regional council"
+      },
+      {
+        "count": 2,
+        "title": "suitts, steve"
+      },
+      {
+        "count": 1,
+        "title": "atlanta journal-constitution"
+      }
+    ],
+    "date": [
+      {
+        "count": 8,
+        "title": "1920-1976"
+      },
+      {
+        "count": 3,
+        "title": "1976"
+      },
+      {
+        "count": 2,
+        "title": "1960-04-26"
+      },
+      {
+        "count": 2,
+        "title": "1974"
+      },
+      {
+        "count": 2,
+        "title": "1977"
+      },
+      {
+        "count": 2,
+        "title": "1978"
+      },
+      {
+        "count": 1,
+        "title": "1908-01"
+      },
+      {
+        "count": 1,
+        "title": "1950-11"
+      },
+      {
+        "count": 1,
+        "title": "1954-05"
+      },
+      {
+        "count": 1,
+        "title": "1962-09-11"
+      },
+      {
+        "count": 1,
+        "title": "1966"
+      }
+    ],
+    "format": [
+      {
+        "count": 53,
+        "title": "application/pdf"
+      },
+      {
+        "count": 11,
+        "title": "image/jp2"
+      },
+      {
+        "count": 10,
+        "title": "periodical"
+      },
+      {
+        "count": 9,
+        "title": "newspapers"
+      },
+      {
+        "count": 8,
+        "title": "finding aids"
+      },
+      {
+        "count": 8,
+        "title": "photographic prints"
+      },
+      {
+        "count": 8,
+        "title": "video/mp4"
+      },
+      {
+        "count": 5,
+        "title": "files (document groupings)"
+      },
+      {
+        "count": 4,
+        "title": "documents"
+      },
+      {
+        "count": 4,
+        "title": "oral histories (document genres)"
+      },
+      {
+        "count": 3,
+        "title": "correspondence"
+      }
+    ],
+    "subjec": [
+      {
+        "count": 21,
+        "title": "labor unions"
+      },
+      {
+        "count": 14,
+        "title": "strikes and lockouts"
+      },
+      {
+        "count": 10,
+        "title": "capitalism"
+      },
+      {
+        "count": 10,
+        "title": "communism"
+      },
+      {
+        "count": 8,
+        "title": "labor unions -- organizing"
+      },
+      {
+        "count": 8,
+        "title": "lane brothers commercial photographers"
+      },
+      {
+        "count": 8,
+        "title": "photographers"
+      },
+      {
+        "count": 7,
+        "title": "air traffic controllers' strike (united states : 1981)"
+      },
+      {
+        "count": 7,
+        "title": "imperialism"
+      },
+      {
+        "count": 7,
+        "title": "music"
+      },
+      {
+        "count": 7,
+        "title": "politics"
+      }
+    ],
+    "type": [
+      {
+        "count": 37,
+        "title": "text"
+      },
+      {
+        "count": 27,
+        "title": "stillimage"
+      },
+      {
+        "count": 11,
+        "title": "image"
+      },
+      {
+        "count": 6,
+        "title": "sound"
+      },
+      {
+        "count": 3,
+        "title": "movingimage"
+      }
+    ]
+  },
+  "fields": {
+    "direction": "desc",
+    "order": "nosort",
+    "queries": [
+      {
+        "connector": "all",
+        "field": "all",
+        "mode": "all",
+        "searchTerm": "union poster"
+      }
+    ]
+  },
+  "filters": {
+    "collections": [
+      {
+        "alias": "SevenStages",
+        "name": "7 Stages",
+        "selected": true
+      },
+      {
+        "alias": "AFLCIO",
+        "name": "AFL-CIO Southeast Division Civil Rights Department Records",
+        "selected": true
+      },
+      {
+        "alias": "arwg",
+        "name": "Archives for Research on Women",
+        "selected": true
+      },
+      {
+        "alias": "atlanta",
+        "name": "Atlanta Area Photographers Collection",
+        "selected": true
+      },
+      {
+        "alias": "schange",
+        "name": "Atlanta Civic & Neighborhood History",
+        "selected": true
+      },
+      {
+        "alias": "afpl",
+        "name": "Atlanta-Fulton Public Library Collection",
+        "selected": true
+      },
+      {
+        "alias": "StreetArt",
+        "name": "Atlanta Hip Hop Archives",
+        "selected": true
+      },
+      {
+        "alias": "ajc",
+        "name": "Atlanta Journal-Constitution Photographs",
+        "selected": true
+      },
+      {
+        "alias": "aso",
+        "name": "Atlanta Symphony Orchestra Records",
+        "selected": true
+      },
+      {
+        "alias": "bigjoy",
+        "name": "Big Joy Digital Collection",
+        "selected": true
+      },
+      {
+        "alias": "broadcast",
+        "name": "Broadcasting Collections",
+        "selected": true
+      },
+      {
+        "alias": "CLATL",
+        "name": "Creative Loafing",
+        "selected": true
+      },
+      {
+        "alias": "coles",
+        "name": "Donna Novak Coles Georgia Women's Movement Archives",
+        "selected": true
+      },
+      {
+        "alias": "eastern",
+        "name": "Eastern Air Lines Collections",
+        "selected": true
+      },
+      {
+        "alias": "fivepoints",
+        "name": "Five Points",
+        "selected": true
+      },
+      {
+        "alias": "gsv",
+        "name": "Gay Spirit Visions Records",
+        "selected": true
+      },
+      {
+        "alias": "gawl",
+        "name": "Georgia Association for Women Lawyers Records",
+        "selected": true
+      },
+      {
+        "alias": "gae",
+        "name": "Georgia Association of Educators Collection",
+        "selected": true
+      },
+      {
+        "alias": "ggdp",
+        "name": "Georgia Government Documentation Project",
+        "selected": true
+      },
+      {
+        "alias": "gpc",
+        "name": "Georgia Perimeter College Collection",
+        "selected": true
+      },
+      {
+        "alias": "university",
+        "name": "Georgia State University Archives",
+        "selected": true
+      },
+      {
+        "alias": "catalogs",
+        "name": "Georgia State University Catalogs",
+        "selected": true
+      },
+      {
+        "alias": "signal",
+        "name": "Georgia State University Signal",
+        "selected": true
+      },
+      {
+        "alias": "yearbooks",
+        "name": "Georgia State University Yearbooks",
+        "selected": true
+      },
+      {
+        "alias": "GSB",
+        "name": "Great Speckled Bird",
+        "selected": true
+      },
+      {
+        "alias": "guidebook",
+        "name": "Historic Atlanta Guidebook Images",
+        "selected": true
+      },
+      {
+        "alias": "IAM",
+        "name": "IAM Archives",
+        "selected": true
+      },
+      {
+        "alias": "music",
+        "name": "Johnny Mercer Collections",
+        "selected": true
+      },
+      {
+        "alias": "lane",
+        "name": "Lane Brothers Photographs",
+        "selected": true
+      },
+      {
+        "alias": "lgbtq",
+        "name": "LGBTQ Collection",
+        "selected": true
+      },
+      {
+        "alias": "draper",
+        "name": "Lucy Hargrett Draper Collections on Women's Rights, Advocacy and the Law",
+        "selected": true
+      },
+      {
+        "alias": "mhross",
+        "name": "M. H. Ross Papers",
+        "selected": true
+      },
+      {
+        "alias": "printed",
+        "name": "Manuscripts and Printed Material",
+        "selected": true
+      },
+      {
+        "alias": "marta",
+        "name": "Metropolitan Atlanta Rapid Transit Authority (MARTA) Collection",
+        "selected": true
+      },
+      {
+        "alias": "popmusic",
+        "name": "Music Collections",
+        "selected": true
+      },
+      {
+        "alias": "ndwu",
+        "name": "National Domestic Workers Union (U.S.) Records",
+        "selected": true
+      },
+      {
+        "alias": "PlanATL",
+        "name": "Planning Atlanta - A New City in the Making, 1930s-1990s",
+        "selected": true
+      },
+      {
+        "alias": "popcul",
+        "name": "Popular Culture Collections",
+        "selected": true
+      },
+      {
+        "alias": "PATCO",
+        "name": "Professional Air Traffic Controllers Organization (PATCO)",
+        "selected": true
+      },
+      {
+        "alias": "relglifeoh",
+        "name": "Religious Life Stories Project",
+        "selected": true
+      },
+      {
+        "alias": "researchATL",
+        "name": "Research Atlanta, Inc. Reports",
+        "selected": true
+      },
+      {
+        "alias": "labor",
+        "name": "Southern Labor Archives",
+        "selected": true
+      },
+      {
+        "alias": "sonurse",
+        "name": "Southern Nursing Collection",
+        "selected": true
+      },
+      {
+        "alias": "SKennedy",
+        "name": "Stetson Kennedy Papers",
+        "selected": true
+      },
+      {
+        "alias": "oneal",
+        "name": "Tracy O'Neal Photographs",
+        "selected": true
+      },
+      {
+        "alias": "ugwa",
+        "name": "United Garment Workers of America Records",
+        "selected": true
+      },
+      {
+        "alias": "uprising",
+        "name": "The Uprising of '34 Collection",
+        "selected": true
+      },
+      {
+        "alias": "usery",
+        "name": "W.J. Usery, Jr., Papers",
+        "selected": true
+      },
+      {
+        "alias": "marches",
+        "name": "Women's Marches 2017 Collection",
+        "selected": true
+      },
+      {
+        "alias": "wpamaps",
+        "name": "Works Progress Administration of Georgia Atlanta Maps",
+        "selected": true
+      }
+    ]
+  },
+  "gridViewEnabled": false,
+  "items": [
+    {
+      "cdmalt": null,
+      "collectionAlias": "AFLCIO",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "71636",
+      "itemLink": "/compoundobject/collection/AFLCIO/id/71636",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Urban League, National Conference, Cleveland, Ohio"
+        },
+        {
+          "field": "identi",
+          "value": "L1988-22_08_2558_002"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "AFL-CIO Southeast Division Civil Rights Department Records"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/AFLCIO/id/71636/thumbnail",
+      "title": "Urban League, National Conference, Cleveland, Ohio"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "mhross",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "33161",
+      "itemLink": "/compoundobject/collection/mhross/id/33161",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "News Coverage of the Final Report of the President's Commission on Coal, March 1980"
+        },
+        {
+          "field": "identi",
+          "value": "L2001-05_035_01"
+        },
+        {
+          "field": "descri",
+          "value": "Myron Howard \"Mike\" Ross was born November 9, 1919 in New York City. He dropped out of school when he was seventeen and moved to Texas, where he worked on a farm. From 1936 until 1939, Ross worked in a bakery in North Carolina. In the summer of 1938, he attended the Southern School for Workers in Asheville, North Carolina. During the fall of 1938, Ross would attend the first Southern Conference on Human Welfare in Birmingham, Alabama. He would attend this conference again in 1940 in Chattanooga, Tennessee.\n\nFrom 1939 to 1940, Ross worked for the United Mine Workers Non-Partisan League in North Carolina, working under John L. Lewis. He was hired as a union organizer by the United Mine Workers of America, and sent to Saltville, Virginia and Rockwood, Tennessee. In 1940, Ross ran for a seat on city council on the People's Platform in Charlotte, North Carolina. During this time, he also married Anne \"Buddie\" West of Kennesaw, Georgia.\n\nFrom 1941 until 1945, Ross served as an infantryman for the United States Army. He sustained injuries near the Battle of the Bulge in the winter of 1944.\n\nFrom 1945 until 1949, Ross worked for the International Union of Mine, Mill and Smelter Workers, then part of the Congress of Industrial Organizations (CIO), as a union organizer. He was sent to Macon, Georgia, Savannah, Georgia and to Winston-Salem, North Carolina, where he worked with the United Furniture Workers Union. He began handling arbitration for the unions.\n\nIn 1948, Ross ran for United States Congress on the Progressive Party ticket in North Carolina. He also served as the secretary for the North Carolina Progressive Party.\n\nRoss attended the University of North Carolina law school from 1949 to 1952. He graduated with honors but was denied the bar on the grounds of \"character.\" From 1952 until 1955, he worked for the Mine, Mill and Smelter Workers as a union organizer, first in New Mexico (potash mines) and then in Arizona (copper mines).\n\nFrom 1955 to 1957, Ross attended the Columbia University School of Public Health. He worked for the United Mine Workers of America Welfare and Retirement Fund from 1957 to 1958, where he represented the union in expenditure of health care for mining workers. By 1958, Ross began plans for what would become the Fairmont Clinic, a prepaid group practice in Fairmont, West Virginia, which had the mission of providing high quality medical care for miners and their families. From 1958 until 1978, Ross served as administrator of the Fairmont Clinic.\n\nAs a result of this work, Ross began researching coal mining, especially coal mining lifestyle, heritage and history of coal mining and disasters. He would interview over one hundred miners (coal miners). Eventually, Ross began writing a manuscript about the history of coal mining.\n\nWorking for the Rural Practice Program of the University of North Carolina from 1980 until 1987, Ross taught in the medical school. M. H. Ross died on January 31, 1987 in Chapel Hill, North Carolina."
+        },
+        {
+          "field": "cdmcoll",
+          "value": "M. H. Ross Papers"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/mhross/id/33161/thumbnail",
+      "title": "News Coverage of the Final Report of the President's Commission on Coal, March 1980"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "83672",
+      "itemLink": "/compoundobject/collection/IAM/id/83672",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Machinist, 1969-09-18"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_MN_1969-09-18"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/83672/thumbnail",
+      "title": "The Machinist, 1969-09-18"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "27831",
+      "itemLink": "/compoundobject/collection/signal/id/27831",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Georgia State University Signal, 1990-11-13"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1990-11-13"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/27831/thumbnail",
+      "title": "The Georgia State University Signal, 1990-11-13"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "120391",
+      "itemLink": "/compoundobject/collection/IAM/id/120391",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The IAM District 190 Sparkplug, 2009-06/2009-07"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_DL0190_Sparkplug_2009-06"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/120391/thumbnail",
+      "title": "The IAM District 190 Sparkplug, 2009-06/2009-07"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "56294",
+      "itemLink": "/compoundobject/collection/IAM/id/56294",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Machinists' Monthly Journal, 1929-12"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_MMJ_1929-12"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/56294/thumbnail",
+      "title": "Machinists' Monthly Journal, 1929-12"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "26542",
+      "itemLink": "/compoundobject/collection/signal/id/26542",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Georgia State University Signal, 1991-01-08"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1991-01-08"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/26542/thumbnail",
+      "title": "The Georgia State University Signal, 1991-01-08"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "74353",
+      "itemLink": "/compoundobject/collection/IAM/id/74353",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Machinist, 1962-07-05"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_MN_1962-07-05"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/74353/thumbnail",
+      "title": "The Machinist, 1962-07-05"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "labor",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "3896",
+      "itemLink": "/singleitem/collection/labor/id/3896",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Man and poster encouraging union members to vote at a CIO Constitutional Convention, Chicago, Illinois, November 1950."
+        },
+        {
+          "field": "identi",
+          "value": "L1984-70_598"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Southern Labor Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/labor/id/3896/thumbnail",
+      "title": "Man and poster encouraging union members to vote at a CIO Constitutional Convention, Chicago, Illinois, November 1950."
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "AFLCIO",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "62846",
+      "itemLink": "/compoundobject/collection/AFLCIO/id/62846",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Mississippi AFL-CIO"
+        },
+        {
+          "field": "identi",
+          "value": "L1988-22_01_2555_018"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "AFL-CIO Southeast Division Civil Rights Department Records"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/AFLCIO/id/62846/thumbnail",
+      "title": "Mississippi AFL-CIO"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "ugwa",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "42156",
+      "itemLink": "/compoundobject/collection/ugwa/id/42156",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Index card file for plants or locals in Washington, D.C., 1936"
+        },
+        {
+          "field": "identi",
+          "value": "L1992-17_390_WashingtonDC"
+        },
+        {
+          "field": "descri",
+          "value": "The United Garment Workers of America (UGWA) was founded in New York City in 1891 and affiliated themselves with the American Federation of Labor (AFL). They first used strikes and later promotion of the union label as ways to win gains in working conditions and wages with their employers. In 1914, a group of dissatisfied members broke away from the UGWA to form the Amalgamated Clothing Workers of America (ACWA). After the break, the UGWA's numbers were much smaller, but they managed to retain membership levels until the 1950s when they began a slow decline. In the early days of the union, the UGWA had no full-time officers. Charles Reichers became the first General President at the Convention in Baltimore in 1895; he served until 1897. Following Reichers in the office of General President were B. A. Larger (1897-1904), T. A. Rickert (1904-41), Joseph P. McCurdy (1941-75), Howard Collins (1975-1977), William O'Donnell (1977-87), and Earl Carroll (1987-91). David Johnson succeeded Carroll in 1991. In 1994, the UGWA became a part of the United Food and Commercial Workers (UFCW). A year later, the UFCW also took in the United Textile Workers of America (UTWA). The UGWA and UTWA combined in 2000 to form the UFCW Textile and Garment Council."
+        },
+        {
+          "field": "cdmcoll",
+          "value": "United Garment Workers of America Records"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/ugwa/id/42156/thumbnail",
+      "title": "Index card file for plants or locals in Washington, D.C., 1936"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "26612",
+      "itemLink": "/compoundobject/collection/signal/id/26612",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Georgia State University Signal, 1990-11-20"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1990-11-20"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/26612/thumbnail",
+      "title": "The Georgia State University Signal, 1990-11-20"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "46397",
+      "itemLink": "/compoundobject/collection/IAM/id/46397",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Machinists' Monthly Journal, 1936-01"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_MMJ_1936-01"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/46397/thumbnail",
+      "title": "Machinists' Monthly Journal, 1936-01"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "81359",
+      "itemLink": "/compoundobject/collection/IAM/id/81359",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Machinist, 1967-01-19"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_MN_1967-01-19"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/81359/thumbnail",
+      "title": "The Machinist, 1967-01-19"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "77746",
+      "itemLink": "/compoundobject/collection/IAM/id/77746",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Machinist, 1985-02"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_MN_1985-02"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/77746/thumbnail",
+      "title": "The Machinist, 1985-02"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "labor",
+      "filetype": "url",
+      "index": null,
+      "itemId": "18039",
+      "itemLink": "/singleitem/collection/labor/id/18039",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Convention of the Mississippi Labor Council on April 26th, 1960: Speakers Bruton and McMahon"
+        },
+        {
+          "field": "identi",
+          "value": "L1986-26_AV0015"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Southern Labor Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/labor/id/18039/thumbnail",
+      "title": "Convention of the Mississippi Labor Council on April 26th, 1960: Speakers Bruton and McMahon"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "5178",
+      "itemLink": "/compoundobject/collection/arwg/id/5178",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "American Association of University Women scrapbook 3, 1965-1975 1990"
+        },
+        {
+          "field": "identi",
+          "value": "W142_sb03"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/5178/thumbnail",
+      "title": "American Association of University Women scrapbook 3, 1965-1975 1990"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "SKennedy",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "8297",
+      "itemLink": "/compoundobject/collection/SKennedy/id/8297",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Worker's Defense League, 1942-1945"
+        },
+        {
+          "field": "identi",
+          "value": "L1979-37_1520_95"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Stetson Kennedy Papers"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/SKennedy/id/8297/thumbnail",
+      "title": "Worker's Defense League, 1942-1945"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "83230",
+      "itemLink": "/compoundobject/collection/IAM/id/83230",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Machinist, 1967-02-16"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_MN_1967-02-16"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/83230/thumbnail",
+      "title": "The Machinist, 1967-02-16"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "81893",
+      "itemLink": "/compoundobject/collection/IAM/id/81893",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Machinist, 1968-05-23"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_MN_1968-05-23"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/81893/thumbnail",
+      "title": "The Machinist, 1968-05-23"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "309",
+      "itemLink": "/singleitem/collection/IAM/id/309",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Solidarity Forever poster, 1970s"
+        },
+        {
+          "field": "identi",
+          "value": "L1987-18IAM_155"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/309/thumbnail",
+      "title": "Solidarity Forever poster, 1970s"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "75188",
+      "itemLink": "/compoundobject/collection/IAM/id/75188",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Machinist, 1962-10-18"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_MN_1962-10-18"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/75188/thumbnail",
+      "title": "The Machinist, 1962-10-18"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "112288",
+      "itemLink": "/compoundobject/collection/IAM/id/112288",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Aero Mechanic, 1970-09-07"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_DL0751_AeroMechanic_1970-09-07"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/112288/thumbnail",
+      "title": "Aero Mechanic, 1970-09-07"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "labor",
+      "filetype": "url",
+      "index": null,
+      "itemId": "18047",
+      "itemLink": "/singleitem/collection/labor/id/18047",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Ex. Board Meeting, Finch"
+        },
+        {
+          "field": "identi",
+          "value": "L1986-26_AV0120"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Southern Labor Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/labor/id/18047/thumbnail",
+      "title": "Ex. Board Meeting, Finch"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "81404",
+      "itemLink": "/compoundobject/collection/IAM/id/81404",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Machinist, 1966-05-12"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_MN_1966-05-12"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/81404/thumbnail",
+      "title": "The Machinist, 1966-05-12"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "20547",
+      "itemLink": "/compoundobject/collection/IAM/id/20547",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Machinists' Monthly Journal, 1952-08"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_MMJ_1952-08"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/20547/thumbnail",
+      "title": "Machinists' Monthly Journal, 1952-08"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "AFLCIO",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "68951",
+      "itemLink": "/compoundobject/collection/AFLCIO/id/68951",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Georgia State AFL-CIO"
+        },
+        {
+          "field": "identi",
+          "value": "L1988-22_01_2555_014"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "AFL-CIO Southeast Division Civil Rights Department Records"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/AFLCIO/id/68951/thumbnail",
+      "title": "Georgia State AFL-CIO"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "113115",
+      "itemLink": "/compoundobject/collection/IAM/id/113115",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The 751 Aero Mechanic, 1975-09-04"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_DL0751_AeroMechanic_1975-09-04"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/113115/thumbnail",
+      "title": "The 751 Aero Mechanic, 1975-09-04"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "85082",
+      "itemLink": "/compoundobject/collection/IAM/id/85082",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "IAM Journal, 2008, Summer"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_IAMJ_2008summer"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/85082/thumbnail",
+      "title": "IAM Journal, 2008, Summer"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "24614",
+      "itemLink": "/compoundobject/collection/IAM/id/24614",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Machinists' Monthly Journal, 1942-03"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_MMJ_1942-03"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/24614/thumbnail",
+      "title": "Machinists' Monthly Journal, 1942-03"
+    }
+  ],
+  "searchResultsDefaultSortField": "nosort",
+  "sortFields": [
+    {
+      "ad": "asc",
+      "name": "Relevance",
+      "order": "nosort"
+    },
+    {
+      "ad": "asc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "desc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "asc",
+      "name": "Identifier",
+      "order": "identi"
+    },
+    {
+      "ad": "desc",
+      "name": "Identifier",
+      "order": "identi"
+    },
+    {
+      "ad": "asc",
+      "name": "Description",
+      "order": "descri"
+    },
+    {
+      "ad": "desc",
+      "name": "Description",
+      "order": "descri"
+    }
+  ],
+  "totalResults": 497
+}

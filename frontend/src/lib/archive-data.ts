@@ -81,6 +81,36 @@ export function getFoldersByType(type: FolderTypeKey): Folder[] {
     .sort((a, b) => a.title.localeCompare(b.title));
 }
 
+export function regionGroupLabel(folder: Folder): string {
+  if (folder.type !== "region") return "";
+  const key = folder.slug;
+  if (["united-states"].includes(key)) return "North America";
+  if (["latin-america", "mexico", "cuba-transnational"].includes(key)) {
+    return "Latin America / Caribbean";
+  }
+  if (
+    [
+      "belgium",
+      "france",
+      "germany",
+      "italy",
+      "netherlands",
+      "poland",
+      "russia",
+      "switzerland",
+      "united-kingdom",
+    ].includes(key)
+  ) {
+    return "Europe";
+  }
+  if (["china-hong-kong", "japan"].includes(key)) return "East Asia";
+  if (["india", "palestine-transnational"].includes(key)) return "West / South Asia";
+  if (["south-africa-botswana"].includes(key)) return "Africa";
+  if (["australia-indigenous"].includes(key)) return "Oceania / Indigenous";
+  if (["unresolved-region"].includes(key)) return "Unresolved / Transregional";
+  return "Other regions";
+}
+
 export function getFolder(
   type: string,
   slug: string,

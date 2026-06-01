@@ -5,6 +5,7 @@ import type { FolderType, FolderTypeKey } from "@/types/archive";
 export interface FolderTypeSpeedItem {
   key: string;
   type: FolderTypeKey;
+  groupLabel?: string;
   code: string;
   title: string;
   href: string;
@@ -21,6 +22,17 @@ export default function FolderTypeSpeedIndex({
   items: FolderTypeSpeedItem[];
 }) {
   const tabOffsets = [0, 50, 0, 33, 66, 0, 25, 50, 75, 0, 20, 40, 60, 80];
+  const groups =
+    folderType.type === "region"
+      ? items.reduce<{ label: string; items: FolderTypeSpeedItem[] }[]>((acc, item) => {
+          const label = item.groupLabel ?? "Other regions";
+          const existing = acc.find((group) => group.label === label);
+          if (existing) existing.items.push(item);
+          else acc.push({ label, items: [item] });
+          return acc;
+        }, [])
+      : [{ label: "", items }];
+  let stackIndex = 0;
 
   return (
     <div className="folder-type-stage">
@@ -31,29 +43,37 @@ export default function FolderTypeSpeedIndex({
       >
         {items.length > 0 ? (
           <div className="folder-type-stack__cuts">
-            {items.map((item, index) => (
-              <Link
-                key={item.key}
-                href={item.href}
-                className="folder-cut"
-                style={
-                  {
-                    "--tab-left": `${tabOffsets[index % tabOffsets.length]}%`,
-                    "--stack-index": index + 1,
-                  } as CSSProperties
-                }
-              >
-                <span className="folder-cut__tab">
-                  <strong>{item.title}</strong>
-                  <span>{item.code}</span>
-                </span>
+            {groups.map((group) => (
+              <div className="folder-cut-group" key={group.label || folderType.type}>
+                {group.label ? <p className="folder-cut-group__label">{group.label}</p> : null}
+                {group.items.map((item) => {
+                  const index = stackIndex++;
+                  return (
+                    <Link
+                      key={item.key}
+                      href={item.href}
+                      className="folder-cut"
+                      style={
+                        {
+                          "--tab-left": `${tabOffsets[index % tabOffsets.length]}%`,
+                          "--stack-index": index + 1,
+                        } as CSSProperties
+                      }
+                    >
+                      <span className="folder-cut__tab">
+                        <strong>{item.title}</strong>
+                        <span>{item.code}</span>
+                      </span>
 
-                <span className="folder-cut__rail">
-                  <span>{item.date}</span>
-                  <strong>{String(item.count).padStart(3, "0")}</strong>
-                  <span>{item.mix}</span>
-                </span>
-              </Link>
+                      <span className="folder-cut__rail">
+                        <span>{item.date}</span>
+                        <strong>{String(item.count).padStart(3, "0")}</strong>
+                        <span>{item.mix}</span>
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
             ))}
           </div>
         ) : (

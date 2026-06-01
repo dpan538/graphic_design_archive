@@ -15,6 +15,8 @@ import {
   TitleBlock,
   UncertaintyBlock,
 } from "./blocks";
+import { AppendixLayout } from "./appendix/AppendixLab";
+import { resolveAppendixLayout } from "@/lib/appendix-layout";
 
 /**
  * Reusable A4 layouts. Each fills the slot contract from the payload and fits
@@ -171,6 +173,13 @@ function L01Main({ leaf, activeFolderId }: LayoutProps) {
 function L02Text({ leaf, activeFolderId }: LayoutProps) {
   const s = leaf.surface!;
   const label = leaf.type === "text" ? "Text continuation" : "Text sheet";
+  const showImage = isRenderableImage(s.image);
+  const textStack = (
+    <div className="flex-1 min-w-0 flex flex-col gap-3 overflow-hidden">
+      <ScopeBlock surface={s} />
+      <SourceTextBlock surface={s} />
+    </div>
+  );
   return (
     <Body>
       <LeafHead
@@ -182,15 +191,21 @@ function L02Text({ leaf, activeFolderId }: LayoutProps) {
         }
       />
       <TitleBlock surface={s} />
-      <div className="mt-3 flex flex-col gap-3">
-        <ScopeBlock surface={s} />
-        <SourceTextBlock surface={s} />
-      </div>
-      <div className="grid grid-cols-3 gap-6 mt-4 pt-3 border-t border-line-soft">
-        <RightsBlock surface={s} />
-        <SourceBlock surface={s} />
-        <MembershipsBlock surface={s} activeFolderId={activeFolderId} />
-      </div>
+      {showImage ? (
+        <div className="flex gap-6 flex-1 min-h-0 mt-3 overflow-hidden">
+          <div className="w-[34%] shrink-0">
+            <ImageZone
+              image={s.image}
+              className="w-full"
+              description={s.descriptionSummary || s.sourceDescription}
+              sourceName={s.sourceName}
+            />
+          </div>
+          {textStack}
+        </div>
+      ) : (
+        <div className="mt-3 flex-1 min-h-0 overflow-hidden">{textStack}</div>
+      )}
       <div className="flex-1" />
       <SheetMarkers leaf={leaf} />
     </Body>
@@ -428,21 +443,16 @@ function L07Stub({ leaf, activeFolderId }: LayoutProps) {
 }
 
 // ========================================================================
-// L08 — Appendix / continuation (overflow tables only).
+// Appendix evidence sheets (AX01-AX06).
 // ========================================================================
 
-function L08Appendix({ leaf }: LayoutProps) {
+function AppendixLeaf({ leaf }: LayoutProps) {
   const s = leaf.surface!;
   return (
-    <Body>
-      <LeafHead leaf={leaf} context={<>Appendix · continuation</>} />
-      <h2 className="leaf__title leaf__title--sm mt-3">{s.title}</h2>
-      <p className="leaf__sub mt-1">Continuation of {s.provisionalDisplayNumber}</p>
-      <div className="flex-1 min-h-0 mt-3 overflow-hidden">
-        <SpecTables tables={leaf.tables ?? []} columns={1} />
-      </div>
-      <SheetMarkers leaf={leaf} />
-    </Body>
+    <AppendixLayout
+      layoutId={resolveAppendixLayout(s, leaf.tables ?? [], leaf.appendixLayoutId)}
+      surface={s}
+    />
   );
 }
 
@@ -580,7 +590,7 @@ export function renderLeafContent(
 ) {
   if (leaf.type === "register") return <L09Register leaf={leaf} ctx={ctx} />;
   if (leaf.type === "bookmark") return <L10Bookmark leaf={leaf} />;
-  if (leaf.type === "appendix") return <L08Appendix leaf={leaf} />;
+  if (leaf.type === "appendix") return <AppendixLeaf leaf={leaf} />;
   const props: LayoutProps = { leaf, activeFolderId, ctx };
   switch (leaf.layoutId) {
     case "L02.text":

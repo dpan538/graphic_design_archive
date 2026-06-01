@@ -1,0 +1,965 @@
+{
+  "browseAllDefaultSortField": "title",
+  "facetFields": {
+    "creato": "Creator",
+    "date": "Date",
+    "format": "Format",
+    "subjec": "Subject",
+    "type": "Type"
+  },
+  "facets": {
+    "creato": [
+      {
+        "count": 174,
+        "title": "atlanta symphony orchestra"
+      },
+      {
+        "count": 126,
+        "title": "7 stages theatre (atlanta, ga.)"
+      },
+      {
+        "count": 113,
+        "title": "creative loafing inc."
+      },
+      {
+        "count": 32,
+        "title": "lane brothers commercial photographers (atlanta, ga.)"
+      },
+      {
+        "count": 21,
+        "title": "atlanta journal-constitution"
+      },
+      {
+        "count": 20,
+        "title": "georgia perimeter college"
+      },
+      {
+        "count": 13,
+        "title": "georgia state university. library. special collections and archives"
+      },
+      {
+        "count": 11,
+        "title": "harris, joel chandler, 1848-1908"
+      },
+      {
+        "count": 8,
+        "title": "coffin, tom"
+      },
+      {
+        "count": 7,
+        "title": "revolutionary communist party, usa"
+      },
+      {
+        "count": 6,
+        "title": "dekalb college"
+      }
+    ],
+    "date": [
+      {
+        "count": 9,
+        "title": "1920-1976"
+      },
+      {
+        "count": 8,
+        "title": "1977"
+      },
+      {
+        "count": 6,
+        "title": "2017"
+      },
+      {
+        "count": 5,
+        "title": "1968-10-01"
+      },
+      {
+        "count": 5,
+        "title": "1976"
+      },
+      {
+        "count": 4,
+        "title": "1978"
+      },
+      {
+        "count": 4,
+        "title": "1988"
+      },
+      {
+        "count": 4,
+        "title": "1994"
+      },
+      {
+        "count": 3,
+        "title": "1956-10-08"
+      },
+      {
+        "count": 3,
+        "title": "1967-08-15"
+      },
+      {
+        "count": 3,
+        "title": "1967-09-03"
+      }
+    ],
+    "format": [
+      {
+        "count": 332,
+        "title": "application/pdf"
+      },
+      {
+        "count": 201,
+        "title": "image/jpeg"
+      },
+      {
+        "count": 200,
+        "title": "image/jp2"
+      },
+      {
+        "count": 187,
+        "title": "poster"
+      },
+      {
+        "count": 144,
+        "title": "posters"
+      },
+      {
+        "count": 120,
+        "title": "newspapers"
+      },
+      {
+        "count": 45,
+        "title": "black-and-white negatives"
+      },
+      {
+        "count": 36,
+        "title": "periodical"
+      },
+      {
+        "count": 27,
+        "title": "fiction"
+      },
+      {
+        "count": 27,
+        "title": "non-fiction"
+      },
+      {
+        "count": 27,
+        "title": "poetry"
+      }
+    ],
+    "subjec": [
+      {
+        "count": 275,
+        "title": "music"
+      },
+      {
+        "count": 197,
+        "title": "concerts"
+      },
+      {
+        "count": 177,
+        "title": "atlanta symphony orchestra"
+      },
+      {
+        "count": 124,
+        "title": "7 stages theatre (atlanta, ga.)"
+      },
+      {
+        "count": 121,
+        "title": "theater"
+      },
+      {
+        "count": 72,
+        "title": "drama"
+      },
+      {
+        "count": 70,
+        "title": "air traffic controllers' strike (united states : 1981)"
+      },
+      {
+        "count": 67,
+        "title": "air traffic controllers -- labor unions"
+      },
+      {
+        "count": 67,
+        "title": "strikes and lockouts -- air traffic control"
+      },
+      {
+        "count": 64,
+        "title": "art"
+      },
+      {
+        "count": 61,
+        "title": "books"
+      }
+    ],
+    "type": [
+      {
+        "count": 402,
+        "title": "image"
+      },
+      {
+        "count": 255,
+        "title": "text"
+      },
+      {
+        "count": 187,
+        "title": "stillimage"
+      },
+      {
+        "count": 9,
+        "title": "sound"
+      },
+      {
+        "count": 5,
+        "title": "movingimage"
+      },
+      {
+        "count": 1,
+        "title": "text image"
+      }
+    ]
+  },
+  "fields": {
+    "direction": "desc",
+    "order": "nosort",
+    "queries": [
+      {
+        "connector": "all",
+        "field": "all",
+        "mode": "all",
+        "searchTerm": "poster"
+      }
+    ]
+  },
+  "filters": {
+    "collections": [
+      {
+        "alias": "SevenStages",
+        "name": "7 Stages",
+        "selected": true
+      },
+      {
+        "alias": "AFLCIO",
+        "name": "AFL-CIO Southeast Division Civil Rights Department Records",
+        "selected": true
+      },
+      {
+        "alias": "arwg",
+        "name": "Archives for Research on Women",
+        "selected": true
+      },
+      {
+        "alias": "atlanta",
+        "name": "Atlanta Area Photographers Collection",
+        "selected": true
+      },
+      {
+        "alias": "schange",
+        "name": "Atlanta Civic & Neighborhood History",
+        "selected": true
+      },
+      {
+        "alias": "afpl",
+        "name": "Atlanta-Fulton Public Library Collection",
+        "selected": true
+      },
+      {
+        "alias": "StreetArt",
+        "name": "Atlanta Hip Hop Archives",
+        "selected": true
+      },
+      {
+        "alias": "ajc",
+        "name": "Atlanta Journal-Constitution Photographs",
+        "selected": true
+      },
+      {
+        "alias": "aso",
+        "name": "Atlanta Symphony Orchestra Records",
+        "selected": true
+      },
+      {
+        "alias": "bigjoy",
+        "name": "Big Joy Digital Collection",
+        "selected": true
+      },
+      {
+        "alias": "broadcast",
+        "name": "Broadcasting Collections",
+        "selected": true
+      },
+      {
+        "alias": "CLATL",
+        "name": "Creative Loafing",
+        "selected": true
+      },
+      {
+        "alias": "coles",
+        "name": "Donna Novak Coles Georgia Women's Movement Archives",
+        "selected": true
+      },
+      {
+        "alias": "eastern",
+        "name": "Eastern Air Lines Collections",
+        "selected": true
+      },
+      {
+        "alias": "fivepoints",
+        "name": "Five Points",
+        "selected": true
+      },
+      {
+        "alias": "gsv",
+        "name": "Gay Spirit Visions Records",
+        "selected": true
+      },
+      {
+        "alias": "gawl",
+        "name": "Georgia Association for Women Lawyers Records",
+        "selected": true
+      },
+      {
+        "alias": "gae",
+        "name": "Georgia Association of Educators Collection",
+        "selected": true
+      },
+      {
+        "alias": "ggdp",
+        "name": "Georgia Government Documentation Project",
+        "selected": true
+      },
+      {
+        "alias": "gpc",
+        "name": "Georgia Perimeter College Collection",
+        "selected": true
+      },
+      {
+        "alias": "university",
+        "name": "Georgia State University Archives",
+        "selected": true
+      },
+      {
+        "alias": "catalogs",
+        "name": "Georgia State University Catalogs",
+        "selected": true
+      },
+      {
+        "alias": "signal",
+        "name": "Georgia State University Signal",
+        "selected": true
+      },
+      {
+        "alias": "yearbooks",
+        "name": "Georgia State University Yearbooks",
+        "selected": true
+      },
+      {
+        "alias": "GSB",
+        "name": "Great Speckled Bird",
+        "selected": true
+      },
+      {
+        "alias": "guidebook",
+        "name": "Historic Atlanta Guidebook Images",
+        "selected": true
+      },
+      {
+        "alias": "IAM",
+        "name": "IAM Archives",
+        "selected": true
+      },
+      {
+        "alias": "music",
+        "name": "Johnny Mercer Collections",
+        "selected": true
+      },
+      {
+        "alias": "lane",
+        "name": "Lane Brothers Photographs",
+        "selected": true
+      },
+      {
+        "alias": "lgbtq",
+        "name": "LGBTQ Collection",
+        "selected": true
+      },
+      {
+        "alias": "draper",
+        "name": "Lucy Hargrett Draper Collections on Women's Rights, Advocacy and the Law",
+        "selected": true
+      },
+      {
+        "alias": "mhross",
+        "name": "M. H. Ross Papers",
+        "selected": true
+      },
+      {
+        "alias": "printed",
+        "name": "Manuscripts and Printed Material",
+        "selected": true
+      },
+      {
+        "alias": "marta",
+        "name": "Metropolitan Atlanta Rapid Transit Authority (MARTA) Collection",
+        "selected": true
+      },
+      {
+        "alias": "popmusic",
+        "name": "Music Collections",
+        "selected": true
+      },
+      {
+        "alias": "ndwu",
+        "name": "National Domestic Workers Union (U.S.) Records",
+        "selected": true
+      },
+      {
+        "alias": "PlanATL",
+        "name": "Planning Atlanta - A New City in the Making, 1930s-1990s",
+        "selected": true
+      },
+      {
+        "alias": "popcul",
+        "name": "Popular Culture Collections",
+        "selected": true
+      },
+      {
+        "alias": "PATCO",
+        "name": "Professional Air Traffic Controllers Organization (PATCO)",
+        "selected": true
+      },
+      {
+        "alias": "relglifeoh",
+        "name": "Religious Life Stories Project",
+        "selected": true
+      },
+      {
+        "alias": "researchATL",
+        "name": "Research Atlanta, Inc. Reports",
+        "selected": true
+      },
+      {
+        "alias": "labor",
+        "name": "Southern Labor Archives",
+        "selected": true
+      },
+      {
+        "alias": "sonurse",
+        "name": "Southern Nursing Collection",
+        "selected": true
+      },
+      {
+        "alias": "SKennedy",
+        "name": "Stetson Kennedy Papers",
+        "selected": true
+      },
+      {
+        "alias": "oneal",
+        "name": "Tracy O'Neal Photographs",
+        "selected": true
+      },
+      {
+        "alias": "ugwa",
+        "name": "United Garment Workers of America Records",
+        "selected": true
+      },
+      {
+        "alias": "uprising",
+        "name": "The Uprising of '34 Collection",
+        "selected": true
+      },
+      {
+        "alias": "usery",
+        "name": "W.J. Usery, Jr., Papers",
+        "selected": true
+      },
+      {
+        "alias": "marches",
+        "name": "Women's Marches 2017 Collection",
+        "selected": true
+      },
+      {
+        "alias": "wpamaps",
+        "name": "Works Progress Administration of Georgia Atlanta Maps",
+        "selected": true
+      }
+    ]
+  },
+  "gridViewEnabled": false,
+  "items": [
+    {
+      "cdmalt": null,
+      "collectionAlias": "lane",
+      "filetype": "pdf",
+      "index": null,
+      "itemId": "11552",
+      "itemLink": "/singleitem/collection/lane/id/11552",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Inventory of unscanned negatives in the Lane Brothers photographic collection, Things series (number 2 of 2)"
+        },
+        {
+          "field": "identi",
+          "value": "LBT_inventory2"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Lane Brothers Photographs"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/lane/id/11552/thumbnail",
+      "title": "Inventory of unscanned negatives in the Lane Brothers photographic collection, Things series (number 2 of 2)"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "103194",
+      "itemLink": "/compoundobject/collection/IAM/id/103194",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Aero Mechanic, 1942-10-15"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_DL0751_AeroMechanic_1942-10-15"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/103194/thumbnail",
+      "title": "Aero Mechanic, 1942-10-15"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "PATCO",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "132668",
+      "itemLink": "/compoundobject/collection/PATCO/id/132668",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "PATCO Safety Committee, Correspondence, News Clippings, 1975-1976 [2 of 2]"
+        },
+        {
+          "field": "identi",
+          "value": "PATCO_06_51_05"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Professional Air Traffic Controllers Organization (PATCO)"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/PATCO/id/132668/thumbnail",
+      "title": "PATCO Safety Committee, Correspondence, News Clippings, 1975-1976 [2 of 2]"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "29195",
+      "itemLink": "/compoundobject/collection/signal/id/29195",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Signal, 1991-10-15"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1991-10-15"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/29195/thumbnail",
+      "title": "Signal, 1991-10-15"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "15381",
+      "itemLink": "/compoundobject/collection/arwg/id/15381",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "NCHLA Newsletter, 1986-04"
+        },
+        {
+          "field": "identi",
+          "value": "W046_04_01_NCHLAN1986-04"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/15381/thumbnail",
+      "title": "NCHLA Newsletter, 1986-04"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "IAM",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "73962",
+      "itemLink": "/compoundobject/collection/IAM/id/73962",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Machinist, 1961-03-09"
+        },
+        {
+          "field": "identi",
+          "value": "IAM_MN_1961-03-09"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "IAM Archives"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/IAM/id/73962/thumbnail",
+      "title": "The Machinist, 1961-03-09"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "16269",
+      "itemLink": "/compoundobject/collection/arwg/id/16269",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "NCHLA Newsletter, 1985-06"
+        },
+        {
+          "field": "identi",
+          "value": "W046_04_01_NCHLAN1985-06"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/16269/thumbnail",
+      "title": "NCHLA Newsletter, 1985-06"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "15503",
+      "itemLink": "/compoundobject/collection/arwg/id/15503",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "NCHLA Newsletter, 1988-05"
+        },
+        {
+          "field": "identi",
+          "value": "W046_04_01_NCHLAN1988-05"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/15503/thumbnail",
+      "title": "NCHLA Newsletter, 1988-05"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "mhross",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "5915",
+      "itemLink": "/compoundobject/collection/mhross/id/5915",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Mine, Mill, and Smelter Workers, Southern Conference on Human Welfare), Tennessee and Alabama, 1942-1943"
+        },
+        {
+          "field": "identi",
+          "value": "L2001-05_006_10"
+        },
+        {
+          "field": "descri",
+          "value": "Myron Howard \"Mike\" Ross was born November 9, 1919 in New York City. He dropped out of school when he was seventeen and moved to Texas, where he worked on a farm. From 1936 until 1939, Ross worked in a bakery in North Carolina. In the summer of 1938, he attended the Southern School for Workers in Asheville, North Carolina. During the fall of 1938, Ross would attend the first Southern Conference on Human Welfare in Birmingham, Alabama. He would attend this conference again in 1940 in Chattanooga, Tennessee.\n\nFrom 1939 to 1940, Ross worked for the United Mine Workers Non-Partisan League in North Carolina, working under John L. Lewis. He was hired as a union organizer by the United Mine Workers of America, and sent to Saltville, Virginia and Rockwood, Tennessee. In 1940, Ross ran for a seat on city council on the People's Platform in Charlotte, North Carolina. During this time, he also married Anne \"Buddie\" West of Kennesaw, Georgia.\n\nFrom 1941 until 1945, Ross served as an infantryman for the United States Army. He sustained injuries near the Battle of the Bulge in the winter of 1944.\n\nFrom 1945 until 1949, Ross worked for the International Union of Mine, Mill and Smelter Workers, then part of the Congress of Industrial Organizations (CIO), as a union organizer. He was sent to Macon, Georgia, Savannah, Georgia and to Winston-Salem, North Carolina, where he worked with the United Furniture Workers Union. He began handling arbitration for the unions.\n\nIn 1948, Ross ran for United States Congress on the Progressive Party ticket in North Carolina. He also served as the secretary for the North Carolina Progressive Party.\n\nRoss attended the University of North Carolina law school from 1949 to 1952. He graduated with honors but was denied the bar on the grounds of \"character.\" From 1952 until 1955, he worked for the Mine, Mill and Smelter Workers as a union organizer, first in New Mexico (potash mines) and then in Arizona (copper mines).\n\nFrom 1955 to 1957, Ross attended the Columbia University School of Public Health. He worked for the United Mine Workers of America Welfare and Retirement Fund from 1957 to 1958, where he represented the union in expenditure of health care for mining workers. By 1958, Ross began plans for what would become the Fairmont Clinic, a prepaid group practice in Fairmont, West Virginia, which had the mission of providing high quality medical care for miners and their families. From 1958 until 1978, Ross served as administrator of the Fairmont Clinic.\n\nAs a result of this work, Ross began researching coal mining, especially coal mining lifestyle, heritage and history of coal mining and disasters. He would interview over one hundred miners (coal miners). Eventually, Ross began writing a manuscript about the history of coal mining.\n\nWorking for the Rural Practice Program of the University of North Carolina from 1980 until 1987, Ross taught in the medical school. M. H. Ross died on January 31, 1987 in Chapel Hill, North Carolina."
+        },
+        {
+          "field": "cdmcoll",
+          "value": "M. H. Ross Papers"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/mhross/id/5915/thumbnail",
+      "title": "Mine, Mill, and Smelter Workers, Southern Conference on Human Welfare), Tennessee and Alabama, 1942-1943"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "lane",
+      "filetype": "pdf",
+      "index": null,
+      "itemId": "11520",
+      "itemLink": "/singleitem/collection/lane/id/11520",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Inventory of unscanned negatives in the Lane Brothers photographic collection, Corporate bodies series (number 5 of 6"
+        },
+        {
+          "field": "identi",
+          "value": "LBCB_inventory5"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Lane Brothers Photographs"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/lane/id/11520/thumbnail",
+      "title": "Inventory of unscanned negatives in the Lane Brothers photographic collection, Corporate bodies series (number 5 of 6"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "gpc",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "12291",
+      "itemLink": "/compoundobject/collection/gpc/id/12291",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The DeKalb Collegian, 1993-05-05"
+        },
+        {
+          "field": "identi",
+          "value": "GPC_Collegian_1993-05-05"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia Perimeter College Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/gpc/id/12291/thumbnail",
+      "title": "The DeKalb Collegian, 1993-05-05"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "29996",
+      "itemLink": "/compoundobject/collection/arwg/id/29996",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Career Counseling, undated"
+        },
+        {
+          "field": "identi",
+          "value": "W211_01_003_005"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/29996/thumbnail",
+      "title": "Career Counseling, undated"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "eastern",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "53419",
+      "itemLink": "/compoundobject/collection/eastern/id/53419",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "News clippings re: Eastern Airlines [folder 11 of 11], 1981"
+        },
+        {
+          "field": "identi",
+          "value": "L1986-27_14_01"
+        },
+        {
+          "field": "descri",
+          "value": "Carolyn Lee Wills graduated from Georgia State University, where she studied journalism, history and speech. She also participated in many extra-curricular activities including Panhellenic Council, Delta Zeta Sorority, and yearbook. Before she began her work at Eastern Airlines, she traveled extensively throughout Europe, Asia, North and South America, Jamaica, the Bahamas, and Bermuda.; In 1965, Wills joined Eastern Airlines as a Representative of Women's Activities. In this role, she interpreted the company's program to women by working in the fields of fashion, radio, television, public relations, and promotions. In 1971, Wills became made Regional Manager of Public Relations. Eastern Airlines closed its Atlanta offices in November 1973, but found it difficult to cover their public relations needs in Atlanta from their headquarters in Miami. Four months after closing, Wills was re-hired by Eastern to manage the Southern Division covering Atlanta to Tokyo. While employed by Eastern Airlines, Wills served on many boards including American Women in Radio and Television, Georgia State University Alumni Association, and was a national representative of Delta Zeta Sorority. In 1966, she married attorney Charles H. Wills. The earliest incarnation of Eastern Airlines was Pitcairn Aviation, founded in 1927, which was the U.S. Postal Service contractor flying from New York to Atlanta. In 1930, the carrier was sold to North American Aviation owner Clement Keys and was renamed Eastern Air Transport. It soon added passenger routes and adopted the name Eastern Air Lines. Throughout the pre-World War II era, Eastern dominated passenger travel and air transport along the Atlantic coast, including the introduction of one-day service from New York to Miami in 1932. Famed pilot Eddie Rickenbacker bought the company in 1938 and was closely identified with it until his 1963 retirement. During the air travel boom of the 1950s and 1960s, Eastern Airlines grew into one of the \"\"Big Four\"\" United States carriers, enhancing its status as the lead air travel carrier on domestic east coast flights with the introduction of air shuttle service in 1961. Shuttle service was created as an alternative to bus routes and included hourly flights from Atlanta to Washington D.C., New York, and Boston. During this time, Eastern Airlines also expanded international service to Mexico, Bermuda, Puerto Rico, and Canada. Under the leadership of former astronaut Frank Borman (hired as an advisor in 1969, he became Chief Executive Officer in 1975), Eastern Airlines enjoyed continued successes in the industry until the enactment of the Airline Deregulation Act of 1978.; Beginning with Eastern's early U.S. Postal Service government contract, the company had relied upon the regulated and protective policies governing the airline industry. Without government protection, Eastern's profits began to make a downward turn that eventually culminated in the selling of the company to Texas Air International, headed by Frank Lorenzo. Following deregulation, Lorenzo was able to purchase multiple airlines including Continental, Frontier, New York Air, and Eastern. To cut costs in the midst of declining profits, Lorenzo asked Eastern's union employees to take massive pay cuts in wages and benefits. Union workers refused to accept Lorenzo's demands and opted to go on strike. By claiming bankruptcy in 1989, Lorenzo was able to hire non-union workers to fill the jobs of striking employees. Lorenzo took his demands a step further when he asked the machinists' union to take a pay cut, which resulted in another strike that dealt the final blow to any hope that Eastern Airlines would recover lost profits. In 1991, Eastern Airlines was permanently grounded. Eastern's main hubs in Atlanta and Miami were taken over by various competitors and its concourses in New York and Newark were demolished."
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Eastern Air Lines Collections"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/eastern/id/53419/thumbnail",
+      "title": "News clippings re: Eastern Airlines [folder 11 of 11], 1981"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "arwg",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "12531",
+      "itemLink": "/compoundobject/collection/arwg/id/12531",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Human Life International: Special Report No. 57, circa 1989"
+        },
+        {
+          "field": "identi",
+          "value": "W046_02_06_HLIntRep57"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Archives for Research on Women"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/arwg/id/12531/thumbnail",
+      "title": "Human Life International: Special Report No. 57, circa 1989"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "signal",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "31158",
+      "itemLink": "/compoundobject/collection/signal/id/31158",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Signal, 1991-10-22"
+        },
+        {
+          "field": "identi",
+          "value": "GSUS1991-10-22"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Georgia State University Signal"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/signal/id/31158/thumbnail",
+      "title": "Signal, 1991-10-22"
+    }
+  ],
+  "searchResultsDefaultSortField": "nosort",
+  "sortFields": [
+    {
+      "ad": "asc",
+      "name": "Relevance",
+      "order": "nosort"
+    },
+    {
+      "ad": "asc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "desc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "asc",
+      "name": "Identifier",
+      "order": "identi"
+    },
+    {
+      "ad": "desc",
+      "name": "Identifier",
+      "order": "identi"
+    },
+    {
+      "ad": "asc",
+      "name": "Description",
+      "order": "descri"
+    },
+    {
+      "ad": "desc",
+      "name": "Description",
+      "order": "descri"
+    }
+  ],
+  "totalResults": 2499
+}

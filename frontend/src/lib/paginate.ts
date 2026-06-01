@@ -4,7 +4,7 @@
  * Because the viewport never scrolls, content is packed into fixed-capacity
  * leaves at build time. Each leaf is a single physical (A4) page; the reader
  * shows one leaf (single) or two adjacent leaves (facing spread). Overflow
- * tables flow onto appendix leaves (L08). A folder always opens on one or more
+ * tables may create appendix leaves (AX01-AX06). A folder always opens on one or more
  * register/index leaves (L09). Pagination is deterministic.
  */
 
@@ -23,6 +23,9 @@ import {
   groupByDecade,
   sortChronologically,
 } from "./archive-data";
+import {
+  type AppendixLayoutId,
+} from "./appendix-layout";
 
 export interface Leaf {
   /** Stable id for React keys and jump targets. */
@@ -31,6 +34,7 @@ export interface Leaf {
   folder?: Folder;
   surface?: Surface;
   layoutId?: LayoutId;
+  appendixLayoutId?: AppendixLayoutId;
   variant?: SheetVariant;
   /** Tables rendered on this leaf (subset of the surface's tables). */
   tables?: SurfaceTable[];
@@ -64,7 +68,6 @@ function mainTableBudget(layoutId: LayoutId): number {
   }
 }
 
-const APPENDIX_BUDGET = 14;
 /** Row budget for a register/index leaf (the first page reserves title space). */
 const REGISTER_BUDGET = 17;
 const REGISTER_FIRST_RESERVE = 7;
@@ -84,22 +87,9 @@ function packMainTables(tables: SurfaceTable[], mainBudget: number): SurfaceTabl
   return main;
 }
 
-function packAppendixTables(tables: SurfaceTable[]): SurfaceTable[][] {
-  const appendix: SurfaceTable[][] = [];
-  let page: SurfaceTable[] = [];
-  let pageUsed = 0;
-  for (const table of tables) {
-    const w = tableWeight(table);
-    if (page.length > 0 && pageUsed + w > APPENDIX_BUDGET) {
-      appendix.push(page);
-      page = [];
-      pageUsed = 0;
-    }
-    page.push(table);
-    pageUsed += w;
-  }
-  if (page.length > 0) appendix.push(page);
-  return appendix;
+interface AppendixPacket {
+  layoutId: AppendixLayoutId;
+  tables: SurfaceTable[];
 }
 
 function tableByKind(tables: SurfaceTable[], kind: string): SurfaceTable | undefined {
@@ -118,6 +108,15 @@ function readingLength(surface: Surface): number {
     .join(" ").length;
 }
 
+function stableHash(value: string): number {
+  let hash = 2166136261;
+  for (const char of value) {
+    hash ^= char.charCodeAt(0);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
+}
+
 function needsTextLeaf(surface: Surface, layoutId: LayoutId): boolean {
   if (layoutId === "L02.text") return false;
   if (surface.surfaceType !== "sheet") return false;
@@ -125,33 +124,93 @@ function needsTextLeaf(surface: Surface, layoutId: LayoutId): boolean {
 }
 
 /**
- * Appendix leaves are now exceptional evidence pages, not automatic overflow.
- * The payload still carries all six tables for reproducibility; this function
- * decides which tables deserve a separate physical continuation sheet.
+ * Appendix leaves carry evidence ledgers that should not turn the text page
+ * back into a specification sheet. One surface gets at most one appendix packet;
+ * the packet type follows AX01-AX06 priorities.
  */
-function appendixTablesFor(surface: Surface, tables: SurfaceTable[]): SurfaceTable[] {
-  if (surface.surfaceType !== "sheet") return [];
+function appendixPacketFor(surface: Surface, tables: SurfaceTable[]): AppendixPacket | null {
+  if (surface.surfaceType !== "sheet") return null;
 
-  const selected: SurfaceTable[] = [];
   const relations = tableByKind(tables, "RELATIONS");
   const citations = tableByKind(tables, "CITATIONS");
   const rights = tableByKind(tables, "RIGHTS");
   const source = tableByKind(tables, "SOURCE");
+  const normalized = tableByKind(tables, "NORMALIZED");
+  const classification = tableByKind(tables, "CLASSIFICATION");
+  const imageState = surface.image.state;
+  const totalRows = tables.reduce((total, table) => total + table.rows.length, 0);
+  const folderCount = surface.folders.length;
+  const childCount = surface.compoundChildren?.length ?? 0;
+  const sourceTextLength = readingLength(surface);
+  const sourceLinks = citations?.rows.find(([label]) => /source links?|source urls?/i.test(label))?.[1] ?? "";
+  const multiSourceList = (sourceLinks.match(/https?:\/\//g) ?? []).length >= 2;
+  const hash = stableHash(surface.surfaceId);
+  const explicitProtocolNote =
+    /manual review|protocol-sensitive|source[- ]?only|suppress|sensitive/i.test(
+      [
+        surface.uncertaintyNote,
+        surface.historicalContextNote,
+        surface.classificationRationale,
+        surface.rights.label,
+        surface.citationBasis,
+      ]
+        .filter(Boolean)
+        .join(" "),
+    );
+  const sourcePolicyContext = imageState === "IMG02" && sourceTextLength >= 1500 && hash % 4 === 0;
+  const displayPolicy = surface.rights.displayPolicy;
+  const nonBlankRightsEvidence =
+    (imageState === "IMG01" || imageState === "IMG02" || imageState === "IMG03") &&
+    (displayPolicy !== "open_image_frame" || !surface.reviewGates.rightsReviewed) &&
+    sourceTextLength >= 900 &&
+    hash % 6 === 0;
 
-  if (surface.image.state === "IMG00" && rights) {
-    selected.push(rights);
-  }
-  if (relations && relations.rows.length > 4) {
-    selected.push(relations);
-  }
-  if (citations && citations.rows.length > 3) {
-    selected.push(citations);
-  }
-  if ((surface.compoundChildren?.length ?? 0) > 8 && source) {
-    selected.push(source);
+  if (imageState === "IMG00") {
+    return {
+      layoutId: "AX01.rights",
+      tables: [rights, source, citations].filter((table): table is SurfaceTable => Boolean(table)),
+    };
   }
 
-  return selected;
+  if (multiSourceList || childCount >= 3) {
+    return {
+      layoutId: "AX02.citation",
+      tables: [citations, source].filter((table): table is SurfaceTable => Boolean(table)),
+    };
+  }
+
+  if ((relations && relations.rows.length > 4) || folderCount >= 4 || childCount > 0) {
+    return {
+      layoutId: "AX03.relations",
+      tables: [classification, relations].filter((table): table is SurfaceTable => Boolean(table)),
+    };
+  }
+
+  if (nonBlankRightsEvidence) {
+    return {
+      layoutId: "AX01.rights",
+      tables: [rights, source, citations].filter((table): table is SurfaceTable => Boolean(table)),
+    };
+  }
+
+  if (explicitProtocolNote || sourcePolicyContext) {
+    return {
+      layoutId: "AX04.context",
+      tables: [rights, source, classification].filter((table): table is SurfaceTable => Boolean(table)),
+    };
+  }
+
+  if (totalRows >= 30 && sourceTextLength >= 900 && hash % 5 === 0) {
+    const dossierTables = [source, normalized, rights, citations, classification].filter(
+      (table): table is SurfaceTable => Boolean(table),
+    );
+    return {
+      layoutId: hash % 3 === 0 ? "AX06.typed-index" : "AX05.statement",
+      tables: dossierTables.length ? dossierTables : tables,
+    };
+  }
+
+  return null;
 }
 
 /** Build the leaf sequence for a single surface (no folder register). */
@@ -161,7 +220,15 @@ export function paginateSurface(surface: Surface): Leaf[] {
   const tables = orderedTables(surface);
   const main = packMainTables(tables, mainTableBudget(layoutId));
   const textLeaf = needsTextLeaf(surface, layoutId);
-  const appendix = packAppendixTables(appendixTablesFor(surface, tables));
+  const appendixPacket = appendixPacketFor(surface, tables);
+  const appendix = appendixPacket
+    ? [
+        {
+          layoutId: appendixPacket.layoutId,
+          tables: appendixPacket.tables,
+        },
+      ]
+    : [];
 
   const pageCount = 1 + (textLeaf ? 1 : 0) + appendix.length;
   const leaves: Leaf[] = [
@@ -192,13 +259,13 @@ export function paginateSurface(surface: Surface): Leaf[] {
     nextPageNumber += 1;
   }
 
-  appendix.forEach((pageTables, idx) => {
+  appendix.forEach((page, idx) => {
     leaves.push({
       id: `${surface.surfaceId}#p${nextPageNumber + idx}`,
       type: "appendix",
       surface,
-      layoutId: "L08.appendix",
-      tables: pageTables,
+      appendixLayoutId: page.layoutId,
+      tables: page.tables,
       surfacePageNumber: nextPageNumber + idx,
       surfacePageCount: pageCount,
     });
@@ -236,6 +303,7 @@ export function paginateFolder(folder: Folder): Leaf[] {
   const surfaces = sortChronologically(getSurfacesForFolder(folder));
   const groups = groupByDecade(surfaces);
   const regPages = packRegister(groups);
+  let previousAppendixSignature: string | null = null;
 
   const leaves: Leaf[] = regPages.map((regGroups, idx) => ({
     id: `${folder.folderId}#register-${idx + 1}`,
@@ -253,7 +321,29 @@ export function paginateFolder(folder: Folder): Leaf[] {
   });
 
   for (const surface of surfaces) {
-    leaves.push(...paginateSurface(surface));
+    const surfaceLeaves = paginateSurface(surface);
+    const appendixLeaf = surfaceLeaves.find((leaf) => leaf.type === "appendix");
+    const appendixSignature =
+      appendixLeaf?.appendixLayoutId === "AX01.rights"
+        ? [
+            appendixLeaf.appendixLayoutId,
+            surface.sourceName,
+            surface.image.state,
+            surface.rights.displayPolicy,
+          ].join("|")
+        : null;
+
+    if (appendixSignature && appendixSignature === previousAppendixSignature) {
+      const filtered = surfaceLeaves.filter((leaf) => leaf.type !== "appendix");
+      filtered.forEach((leaf, index) => {
+        if (leaf.surfacePageNumber != null) leaf.surfacePageNumber = index + 1;
+        if (leaf.surfacePageCount != null) leaf.surfacePageCount = filtered.length;
+      });
+      leaves.push(...filtered);
+    } else {
+      leaves.push(...surfaceLeaves);
+    }
+    previousAppendixSignature = appendixSignature;
   }
   return leaves;
 }

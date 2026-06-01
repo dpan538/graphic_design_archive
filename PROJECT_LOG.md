@@ -3036,3 +3036,125 @@ Interpretation:
 - The next data-side priority is not simply more records. It is reducing the
   remaining `1930-1970` `IMG00/IMG04` pool through source-specific remediation
   and adding more non-Western movement archives with real item pages.
+
+## 2026-06-01 — Appendix Dispatch and Region Grouping Adjustment
+
+Purpose:
+
+- Prevent appendix pages from becoming repeated placeholder inserts, especially
+  consecutive `AX01` pages for same-source `IMG00` records.
+- Make the six appendix layouts participate in the production reader without
+  turning every sheet into a table-overflow appendix.
+- Add a macro-region reading layer to the region folder entrance so users are
+  not forced to parse a flat list of small geopolitical folders.
+
+Changes made:
+
+- Updated `frontend/src/lib/paginate.ts`:
+  - each surface may still receive one appendix packet according to AX01-AX06
+    evidence rules;
+  - folder readers suppress consecutive duplicate `AX01.rights` appendices
+    when source, image state, and display policy are the same;
+  - removed generic table-overflow appendix packing from the reading path.
+- Updated `frontend/src/components/archive/appendix/AppendixLab.tsx` so AX01
+  includes more record-specific evidence: display number, title, source URL,
+  source identifier, access date, policy fields, and raw payload reference.
+- Updated `frontend/src/lib/archive-data.ts`,
+  `frontend/src/app/folders/[type]/page.tsx`, and
+  `frontend/src/components/archive/drawer/FolderTypeSpeedIndex.tsx` so region
+  folders display under macro groups such as North America, Europe, East Asia,
+  West / South Asia, Africa, Oceania / Indigenous, Latin America / Caribbean,
+  and Unresolved / Transregional.
+- Rebuilt public payloads after the appendix rule update:
+  - appendices exposed in payload: 195
+  - `AX01.rights`: 35
+  - `AX02.citation`: 15
+  - `AX03.relations`: 63
+  - `AX04.context`: 22
+  - `AX05.statement`: 40
+  - `AX06.typed-index`: 20
+
+Verification:
+
+- `npm run build` passed.
+- Local dev server restarted and `http://localhost:3000/folders/region/russia`
+  returned `200 OK`.
+
+Interpretation:
+
+- The payload still records all AX01 candidates for auditability, but folder
+  reading now avoids a visible run of repeated same-source rights placeholders.
+- The remaining content problem is not primarily layout. Some `IMG00` records
+  need source remediation or replacement with image-ready alternate sources so
+  rights appendices remain exceptional rather than a common reading experience.
+
+## 2026-06-01 — AX01 State-Aware Rights Evidence and IA IMG00 Remediation
+
+Purpose:
+
+- Correct the mistaken assumption that `AX01.rights` only represents `IMG00`.
+- Convert eligible metadata-only records into source-hosted image states where
+  the source provides a stable image endpoint without requiring local copying.
+- Keep genuinely rights-sensitive records as `IMG00` rather than inflating image
+  coverage with uncleared images.
+
+Changes made:
+
+- Updated `frontend/src/components/archive/appendix/AppendixLab.tsx`:
+  - AX01 now renders the actual `surface.image.state` (`IMG00`, `IMG01`,
+    `IMG02`, or `IMG03`) instead of hardcoded `IMG00`;
+  - non-IMG00 AX01 pages now say “image display evidence recorded” and explain
+    that no image is reproduced on the appendix page;
+  - AX01 evidence rows now include image state and rights basis.
+- Updated `frontend/src/lib/paginate.ts` and
+  `scripts/rebuild_public_surfaces_from_records.py`:
+  - AX01 remains mandatory for `IMG00`;
+  - selected `IMG01/IMG02/IMG03` records with unresolved display/review evidence
+    can now receive AX01 after source/citation and relation appendices have
+    priority.
+- Added `scripts/remediate_img00_source_hosted_images.py`:
+  - upgraded 29 Internet Archive records from `IMG00` to `IMG02`;
+  - uses `https://archive.org/services/img/{identifier}` as a source-hosted
+    display endpoint;
+  - keeps `local_copy_permitted=false` and `rights_review_required=true`.
+- Rebuilt all static public payloads.
+
+Current image state after rebuild:
+
+- total surfaces: 991
+- `IMG00`: 39
+- `IMG01`: 37
+- `IMG02`: 479
+- `IMG03`: 383
+- `IMG04`: 53
+- image-ready: 899 / 991
+- image-ready coverage: 91%
+
+Period image coverage after rebuild:
+
+- `1830-1930`: 316 / 336 image-ready, 94.0%
+- `1931-1970`: 399 / 469 image-ready, 85.1%
+- `1971-2000`: 178 / 178 image-ready, 100.0%
+- `2001-2026`: 6 / 8 image-ready, 75.0%
+
+Remaining IMG00 by source:
+
+- Art Institute of Chicago API: 35
+- Wellcome Collection Catalogue API: 3
+- Chinese Posters: 1
+
+Rights interpretation:
+
+- AIC samples expose `image_id` but return `is_public_domain=false`; these
+  remain `IMG00` unless the project later adopts a source-viewer-only policy
+  for AIC non-public-domain images.
+- Wellcome samples with placeholder image URLs remain `IMG00`; the IIIF
+  manifests return placeholder canvases rather than real visual evidence.
+- Chinese Posters remains high-value but rights-sensitive; it should be treated
+  as source-return evidence until explicit image reuse policy is verified.
+
+Verification:
+
+- `npm run build` passed after clearing stale `.next` cache.
+- Local dev server restarted and
+  `http://localhost:3000/folders/region/russia` returned `200 OK`.
