@@ -3694,3 +3694,49 @@ Policy notes:
 Validation:
 
 - `scripts/audit_secret_patterns.py` passed after the probe.
+
+## 2026-06-01 — Edge WordPress Source Capture 1970-2026
+
+Purpose:
+
+- Convert the edge-source probe into a small number of actual capture records
+  without lowering the archive threshold.
+- Prefer public WordPress REST endpoints because they expose repeatable
+  metadata, source URLs, source text, and source-hosted image references.
+- Expand post-1970 source breadth through Southeast Asian, Indonesian,
+  Cambodian, regional film, independent, and design-history sources.
+
+Changes made:
+
+- Added `scripts/run_edge_wordpress_source_capture_1970_2026.py`.
+- Wrote `data/capture_batch_edge_wordpress_1970_2026_records.csv`.
+- Wrote `data/capture_batch_edge_wordpress_1970_2026_source_summary.csv`.
+- Wrote raw payloads under
+  `data/capture_batch_edge_wordpress_1970_2026_raw/`.
+- Wrote `docs/capture/EDGE_WORDPRESS_CAPTURE_1970_2026.md`.
+- Added this records CSV to the cumulative public-surface rebuild input list.
+
+Result:
+
+- Captured 40 source-context records from 5 sources.
+- Source counts: Desain Grafis Indonesia 10, Asian Film Archive 8, Bophana
+  Audiovisual Resource Center 8, Design Reviewed 8, Another Graphic 6.
+- Image states: `IMG02=39`, `IMG04=1`.
+- 38 records include at least 160 characters of source text.
+- No duplicate source URLs or duplicate detected image URLs were found inside
+  this batch.
+
+Quality notes:
+
+- This is not a final publication batch. These records should pass through the
+  surface taxonomy gate: many should become source-context sheets, text pages,
+  cards, or grouped appendices rather than automatic main sheets.
+- Administrative pages, terms/privacy pages, tender/application notices,
+  reopening notices, and other non-archive announcements are filtered out by
+  the capture script.
+- Images remain source-hosted and rights-sensitive; no record is promoted to
+  `IMG03` in this pass.
+
+Validation:
+
+- `scripts/audit_secret_patterns.py` passed after the capture.

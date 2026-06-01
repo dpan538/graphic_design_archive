@@ -1,0 +1,557 @@
+{
+  "attachment": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/media"
+        }
+      ]
+    },
+    "description": "",
+    "has_archive": false,
+    "hierarchical": false,
+    "icon": "dashicons-admin-media",
+    "name": "メディア",
+    "rest_base": "media",
+    "rest_namespace": "wp/v2",
+    "slug": "attachment",
+    "taxonomies": [],
+    "template": [],
+    "template_lock": false
+  },
+  "feedback": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/feedback"
+        }
+      ]
+    },
+    "description": "",
+    "has_archive": false,
+    "hierarchical": false,
+    "icon": "dashicons-feedback",
+    "name": "Form Responses",
+    "rest_base": "feedback",
+    "rest_namespace": "wp/v2",
+    "slug": "feedback",
+    "taxonomies": [],
+    "template": [],
+    "template_lock": false
+  },
+  "jetpack_form": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/jetpack-forms"
+        }
+      ]
+    },
+    "description": "",
+    "has_archive": false,
+    "hierarchical": false,
+    "icon": null,
+    "name": "Forms",
+    "rest_base": "jetpack-forms",
+    "rest_namespace": "wp/v2",
+    "slug": "jetpack_form",
+    "taxonomies": [],
+    "template": [
+      [
+        "jetpack/contact-form"
+      ]
+    ],
+    "template_lock": false
+  },
+  "jp_act_log_event": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/activity-log-events"
+        }
+      ]
+    },
+    "description": "",
+    "has_archive": false,
+    "hierarchical": false,
+    "icon": null,
+    "name": "Activity Log Events",
+    "rest_base": "activity-log-events",
+    "rest_namespace": "wp/v2",
+    "slug": "jp_act_log_event",
+    "taxonomies": [],
+    "template": [],
+    "template_lock": false
+  },
+  "jp_pay_order": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/jp_pay_order"
+        }
+      ]
+    },
+    "description": "シンプルペイメントの注文",
+    "has_archive": false,
+    "hierarchical": false,
+    "icon": null,
+    "name": "表示順",
+    "rest_base": "jp_pay_order",
+    "rest_namespace": "wp/v2",
+    "slug": "jp_pay_order",
+    "taxonomies": [],
+    "template": [],
+    "template_lock": false
+  },
+  "jp_pay_product": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/jp_pay_product"
+        }
+      ]
+    },
+    "description": "シンプルペイメントの商品",
+    "has_archive": false,
+    "hierarchical": false,
+    "icon": null,
+    "name": "商品",
+    "rest_base": "jp_pay_product",
+    "rest_namespace": "wp/v2",
+    "slug": "jp_pay_product",
+    "taxonomies": [],
+    "template": [],
+    "template_lock": false
+  },
+  "jp_search_overlay": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/jetpack-search-overlay"
+        }
+      ]
+    },
+    "description": "",
+    "has_archive": false,
+    "hierarchical": false,
+    "icon": null,
+    "name": "Search overlay template",
+    "rest_base": "jetpack-search-overlay",
+    "rest_namespace": "wp/v2",
+    "slug": "jp_search_overlay",
+    "taxonomies": [],
+    "template": [],
+    "template_lock": false
+  },
+  "nav_menu_item": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/menu-items"
+        }
+      ]
+    },
+    "description": "",
+    "has_archive": false,
+    "hierarchical": false,
+    "icon": null,
+    "name": "ナビゲーションメニューの項目",
+    "rest_base": "menu-items",
+    "rest_namespace": "wp/v2",
+    "slug": "nav_menu_item",
+    "taxonomies": [
+      "nav_menu"
+    ],
+    "template": [],
+    "template_lock": false
+  },
+  "page": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/pages"
+        }
+      ]
+    },
+    "description": "",
+    "has_archive": false,
+    "hierarchical": true,
+    "icon": "dashicons-admin-page",
+    "name": "固定ページ",
+    "rest_base": "pages",
+    "rest_namespace": "wp/v2",
+    "slug": "page",
+    "taxonomies": [],
+    "template": [],
+    "template_lock": false
+  },
+  "post": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/posts"
+        }
+      ]
+    },
+    "description": "",
+    "has_archive": false,
+    "hierarchical": false,
+    "icon": "dashicons-admin-post",
+    "name": "投稿",
+    "rest_base": "posts",
+    "rest_namespace": "wp/v2",
+    "slug": "post",
+    "taxonomies": [
+      "category",
+      "post_tag"
+    ],
+    "template": [],
+    "template_lock": false
+  },
+  "wp_block": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/blocks"
+        }
+      ]
+    },
+    "description": "",
+    "has_archive": false,
+    "hierarchical": false,
+    "icon": null,
+    "name": "パターン",
+    "rest_base": "blocks",
+    "rest_namespace": "wp/v2",
+    "slug": "wp_block",
+    "taxonomies": [
+      "wp_pattern_category"
+    ],
+    "template": [],
+    "template_lock": false
+  },
+  "wp_font_face": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/font-families/(?P<font_family_id>[\\d]+)/font-faces"
+        }
+      ]
+    },
+    "description": "",
+    "has_archive": false,
+    "hierarchical": false,
+    "icon": null,
+    "name": "フォントフェイス",
+    "rest_base": "font-families/(?P<font_family_id>[\\d]+)/font-faces",
+    "rest_namespace": "wp/v2",
+    "slug": "wp_font_face",
+    "taxonomies": [],
+    "template": [],
+    "template_lock": false
+  },
+  "wp_font_family": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/font-families"
+        }
+      ]
+    },
+    "description": "",
+    "has_archive": false,
+    "hierarchical": false,
+    "icon": null,
+    "name": "フォントファミリー",
+    "rest_base": "font-families",
+    "rest_namespace": "wp/v2",
+    "slug": "wp_font_family",
+    "taxonomies": [],
+    "template": [],
+    "template_lock": false
+  },
+  "wp_global_styles": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/global-styles"
+        }
+      ]
+    },
+    "description": "テーマに含めるグローバルスタイル",
+    "has_archive": false,
+    "hierarchical": false,
+    "icon": null,
+    "name": "グローバルスタイル",
+    "rest_base": "global-styles",
+    "rest_namespace": "wp/v2",
+    "slug": "wp_global_styles",
+    "taxonomies": [],
+    "template": [],
+    "template_lock": false
+  },
+  "wp_navigation": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/navigation"
+        }
+      ]
+    },
+    "description": "サイトにナビゲーションメニューを挿入できます。",
+    "has_archive": false,
+    "hierarchical": false,
+    "icon": null,
+    "name": "ナビゲーションメニュー",
+    "rest_base": "navigation",
+    "rest_namespace": "wp/v2",
+    "slug": "wp_navigation",
+    "taxonomies": [],
+    "template": [],
+    "template_lock": false
+  },
+  "wp_template": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/templates"
+        }
+      ]
+    },
+    "description": "テーマに含めるテンプレート。",
+    "has_archive": false,
+    "hierarchical": false,
+    "icon": null,
+    "name": "テンプレート",
+    "rest_base": "templates",
+    "rest_namespace": "wp/v2",
+    "slug": "wp_template",
+    "taxonomies": [],
+    "template": [],
+    "template_lock": false
+  },
+  "wp_template_part": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/template-parts"
+        }
+      ]
+    },
+    "description": "テンプレートに含めるテンプレートパーツ。",
+    "has_archive": false,
+    "hierarchical": false,
+    "icon": null,
+    "name": "テンプレートパーツ",
+    "rest_base": "template-parts",
+    "rest_namespace": "wp/v2",
+    "slug": "wp_template_part",
+    "taxonomies": [],
+    "template": [],
+    "template_lock": false
+  }
+}

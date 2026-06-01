@@ -1,0 +1,48 @@
+[
+  {
+    "_links": {
+      "about": [
+        {
+          "href": "https://designsingapore.org/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://designsingapore.org/wp-json/wp/v2/categories"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "self": [
+        {
+          "href": "https://designsingapore.org/wp-json/wp/v2/categories/1",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://designsingapore.org/wp-json/wp/v2/posts?categories=1"
+        }
+      ]
+    },
+    "acf": [],
+    "count": 1,
+    "description": "",
+    "id": 1,
+    "link": "https://designsingapore.org/category/uncategorized/",
+    "meta": [],
+    "name": "Uncategorized",
+    "parent": 0,
+    "slug": "uncategorized",
+    "taxonomy": "category"
+  }
+]
