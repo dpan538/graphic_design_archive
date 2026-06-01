@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- No-cache headers -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0">
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="cache-control" content="no-cache, no-store, must-revalidate">
+    <meta name="expires" content="0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz@16..144&family=SN+Pro&display=swap" rel="stylesheet">
+<style>
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #F5F3EC;
+    /*background: #5f5f5f;
+    background: #8D8C88;
+    background: #c9d4ff;
+    background: #000;*/
+    height: 100vh;
+       transition: all ease 0.5s;
+  }
+
+  .cont {
+    height: 100vh;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .domain {
+    font-family: "Montagu Slab", serif;
+    /*font-size: clamp(3rem, 12vw, 18rem);*/
+    font-size: clamp(48px, 10vw, 260px);
+    line-height: 1;
+    font-weight: 400;
+    /* color: #000000; */
+    color: #254183;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    width: 95vw;
+    /* background: red; */
+    white-space: nowrap;
+    transition: text-shadow 0.5s ease, color 0.5s ease;
+    text-shadow:
+  10px -10px 25px rgb(143 64 248 / 50%),
+  -10px 10px 25px rgb(39 200 255 / 50%);
+
+  }
+  .domain:hover {
+    text-shadow: 10px -10px 25px rgb(143 64 248 / 90%),
+  -10px 10px 25px rgb(39 200 255 / 90%);
+
+  }
+  .details {
+    font-family: "SN Pro", sans-serif;
+      font-optical-sizing: auto;
+    font-size: clamp(14px, 3vw, 18px);
+    font-weight: 400;
+    color: #8D8C88;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .adbutcont {
+    margin: 5px auto;
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .adbutton {
+    font-family: "SN Pro", sans-serif;
+    border-radius: 10px;
+    font-size: clamp(12px, 2vw, 16px);
+    padding: 0.6rem 1rem 0.6rem 1.2rem;
+    color: #000 !important;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border: 1px solid #5f5f5f;
+    text-decoration: none;
+    box-sizing: border-box;
+    letter-spacing: .2rem;
+    font-weight: bold;
+  }
+  .adbutton:hover {
+    transition-duration: 0.3s;
+    box-shadow: 10px -10px 25px 0 rgb(143 64 248 / 50%), -10px 10px 25px 0 rgb(39 200 255 / 50%);
+    border: 1px solid #345499;
+
+  }
+  .adbutton::after {
+    content: '';
+    position: absolute;
+    width: 450px;
+    height: 400px;
+    background-image: linear-gradient(255deg, #27d86c, #26caf8 50%, #c625d0 100%);
+    top: -100px;
+    left: -100px;
+    z-index: -1;
+    transition: all ease 0.5s;
+  }
+
+  #temu {
+    margin: 12px auto;
+    border: 1px solid #c95b00;
+    border-radius: 4px;
+    display: block;
+  }
+
+  #temu a img {
+    padding: 0;
+    margin: 0 5px 0 0;
+  }
+  #temu a {
+    background: #f36d0e;
+    width: 240px;
+    height: 37px;
+    display: flex;
+    color: #FFF;
+    font-family: "SN Pro", sans-serif;
+    font-size: 0.9rem;
+      line-height: 1.06rem;
+    text-decoration: none;
+    text-align: left;
+    padding-top: 2px;
+  }
+</style>
+  </head>
+<body><div class="cont">
+  <p id="domain" class="domain">m68.mx</p>
+    <p class="details">Available Domain leasing / purchase<br>Dominio disponible en compra / alquiler</p>
+  <p class="adbutcont"><a href="https://broker.mx/beta/comprar.php?dom=m68.mx" target="_blank" class="adbutton">INFO</a></p>
+  <div id="ad" style="display: none">
+    <div id="temu"><a href="https://temu.com/s/vMflJdk8Nc1vqh" target="_blank"><img src="temu.jpg" alt="Regalo de TEMU para ti">Mira este regalo que TEMU tiene solo hoy para ti</a></div>
+  </div>
+</div>
+  <script>
+(function () {
+  const MIN_FONT_SIZE = 24;   // px
+  const MAX_FONT_SIZE = 260;  // px
+  const WIDTH_PERCENT = 85;   // % of viewport
+
+  function fitText(element) {
+    if (!element) return;
+
+    const maxWidth = window.innerWidth * (WIDTH_PERCENT / 100);
+
+    // Reset styles before measuring
+    element.style.fontSize = MAX_FONT_SIZE + 'px';
+    element.style.whiteSpace = 'nowrap';
+    element.style.overflowWrap = 'normal';
+    element.style.wordWrap = 'normal';
+
+    const textWidth = element.scrollWidth;
+
+    if (textWidth <= maxWidth) return;
+
+    const scale = maxWidth / textWidth;
+    const newSize = Math.max(
+      MIN_FONT_SIZE,
+      Math.floor(MAX_FONT_SIZE * scale)
+    );
+
+    element.style.fontSize = newSize + 'px';
+
+    if (newSize === MIN_FONT_SIZE) {
+      element.style.whiteSpace = 'normal';
+      element.style.overflowWrap = 'break-word';
+      element.style.wordWrap = 'break-word';
+    }
+  }
+
+  const el = document.getElementById('domain');
+
+  // Run after fonts load
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(() => fitText(el));
+  } else {
+    fitText(el);
+  }
+
+  // Throttled resize
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => fitText(el), 150);
+  });
+  //////////////////// button hover effect /////////////////////
+  const link = document.querySelector('.adbutton');
+  const domain = document.getElementById('domain');
+
+  if (!link || !domain) return;
+
+  // Store original text-shadow
+  const originalShadow = getComputedStyle(domain).textShadow;
+
+  link.addEventListener('mouseenter', () => {
+    domain.style.textShadow = 'none';
+  });
+
+  link.addEventListener('mouseleave', () => {
+    domain.style.textShadow = originalShadow;
+  });
+})();
+</script>
+
+
+<script>
+window.onload = function() {
+    // 1. Obtener los datos de resolución
+    const datosVisita = {
+        ancho: window.screen.width,
+        alto: window.screen.height,
+        ancho_ventana: window.innerWidth,
+        alto_ventana: window.innerHeight,
+    ratio: window.devicePixelRatio,
+        url_origen: window.location.href,
+    extra: 'MTgwLjIzMy4xMjUuMTgyfDIwMjYwNTMxMjExNTU3fG02OC5teHxtNjgubXgvfDB8bW9kZXJuZ2RoaXN0b3J5LzAuMSBzb3VyY2UtY2FuZGlkYXRlLXByb2JlfHsiQ29ubmVjdGlvbiI6ImNsb3NlIiwiQWNjZXB0IjoidGV4dFwvaHRtbCxhcHBsaWNhdGlvblwveGh0bWwreG1sLGFwcGxpY2F0aW9uXC94bWwsYXBwbGljYXRpb25cL2pzb247cT0wLjksKlwvKjtxPTAuNiIsIlVzZXItQWdlbnQiOiJNb2Rlcm5HREhpc3RvcnlcLzAuMSBzb3VyY2UtY2FuZGlkYXRlLXByb2JlIiwiSG9zdCI6Im02OC5teCIsIkFjY2VwdC1FbmNvZGluZyI6ImlkZW50aXR5In18eyJpc19ib3QiOmZhbHNlLCJpc19hbGxvd2VkIjp0cnVlLCJib3RfdHlwZSI6Imh1bWFuIiwiY29uZmlkZW5jZSI6MTAwLCJyZWFzb25zIjpbXX18MjAyNjA1MzEyMTE1NTc='
+    };
+  /*
+  if(window.screen.width == 2000 && window.screen.height == 2000){
+    // 1. Crear el elemento script
+    const ampscript = document.createElement('script');
+    ampscript.src = "https://cdn.amplitude.com/script/223d85824e4b1069ffd903209c604d24.js";
+    ampscript.async = true;
+
+    // 2. Definir qué hacer cuando el script termine de cargar
+    ampscript.onload = function() {
+      amplitude.init('223d85824e4b1069ffd903209c604d24', {
+        defaultTracking: false, // Rastrea automáticamente sesiones, clics y páginas vistas
+      });
+      let popo = 'w:2000x2000';
+      amplitude.track(popo);
+      amplitude.setUserId('m68.mx-180.233.125.182');
+    };
+    // 3. Insertar el script en el documento para que empiece a descargar
+    document.body.appendChild(ampscript);
+  }
+  */
+
+/////////////////////////////MEDIR CON AMPLITUDE DIRECTAMENTE EN JS///////////////////////////////////////////////////////////////////////
+  /*
+    // 1. Crear el elemento script
+    const ampscript = document.createElement('script');
+    ampscript.src = "https://cdn.amplitude.com/script/223d85824e4b1069ffd903209c604d24.js";
+    ampscript.async = true;
+
+    // 2. Definir qué hacer cuando el script termine de cargar
+    ampscript.onload = function() {
+      amplitude.init('223d85824e4b1069ffd903209c604d24', {
+        defaultTracking: false, // Rastrea automáticamente sesiones, clics y páginas vistas
+      });
+      let popo = 'w:'+window.screen.width;
+      amplitude.track(popo);
+      amplitude.setUserId('m68.mx-180.233.125.182');
+    };
+    // 3. Insertar el script en el documento para que empiece a descargar
+    document.body.appendChild(ampscript);
+  */
+///////////////////////////////////////////////////////////////////////////////////////////////////
+    // 2. Enviar los datos a regvis.php mediante POST
+    fetch('./regvis.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datosVisita)
+    })
+    .then(response => response.text())
+    .then(data => {
+        //console.log('OK');
+    })
+    .catch((error) => {
+        console.error('Error al registrar:', error);
+    });
+};
+</script>
+  <!--
+  <script src="https://cdn.amplitude.com/script/223d85824e4b1069ffd903209c604d24.js"></script>
+  -->
+  <script>
+    /*
+    amplitude.init('223d85824e4b1069ffd903209c604d24', {
+      defaultTracking: false, // Rastrea automáticamente sesiones, clics y páginas vistas
+    });
+    amplitude.track('Boton Clickeado');
+    amplitude.setUserId('m68.mx-180.233.125.182');
+    */
+    // Para limpiar el ID al cerrar sesión
+    //amplitude.reset();
+  /*
+  window.amplitude.init('223d85824e4b1069ffd903209c604d24', {"fetchRemoteConfig":true,"autocapture":{"attribution":true,"fileDownloads":true,"formInteractions":true,"pageViews":true,"sessions":true,"elementInteractions":true,"networkTracking":true,"webVitals":true,"frustrationInteractions":true}});
+    *//*
+    amplitude.init('223d85824e4b1069ffd903209c604d24', {
+  //defaultTracking: true, // Rastrea automáticamente sesiones, clics y páginas vistas
+});
+*/
+  /*
+    amplitude.track('Compra Finalizada3', {
+  monto: 25.99,
+  moneda: 'USD',
+  items: 3
+});
+  */
+  </script>
+
+<noscript><img src="noscript.php?noca=MTgwLjIzMy4xMjUuMTgyfDIwMjYwNTMxMjExNTU3fG02OC5teHxtNjgubXgvfDB8bW9kZXJuZ2RoaXN0b3J5LzAuMSBzb3VyY2UtY2FuZGlkYXRlLXByb2JlfHsiQ29ubmVjdGlvbiI6ImNsb3NlIiwiQWNjZXB0IjoidGV4dFwvaHRtbCxhcHBsaWNhdGlvblwveGh0bWwreG1sLGFwcGxpY2F0aW9uXC94bWwsYXBwbGljYXRpb25cL2pzb247cT0wLjksKlwvKjtxPTAuNiIsIlVzZXItQWdlbnQiOiJNb2Rlcm5HREhpc3RvcnlcLzAuMSBzb3VyY2UtY2FuZGlkYXRlLXByb2JlIiwiSG9zdCI6Im02OC5teCIsIkFjY2VwdC1FbmNvZGluZyI6ImlkZW50aXR5In18eyJpc19ib3QiOmZhbHNlLCJpc19hbGxvd2VkIjp0cnVlLCJib3RfdHlwZSI6Imh1bWFuIiwiY29uZmlkZW5jZSI6MTAwLCJyZWFzb25zIjpbXX18MjAyNjA1MzEyMTE1NTc=" alt="noscript" style="display:none;"></noscript></body></html>

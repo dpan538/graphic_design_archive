@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="et">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MR9XJ56');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=700" />
+    <meta name="MobileOptimized" content="700">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="dg_network" content="PUBLIC" />
+    <meta http-equiv="cleartype" content="on">
+    <title>DIGAR</title>
+    <link href="/arhiiv/assets/digar_ico-a25a09ff95a518360f1999aaae150e72.png" rel="apple-touch-icon" type="image/png" />
+    <link href="/arhiiv/assets/application-ea94b848bd558ce27f3fa3f56f5667e3.css" media="all" rel="stylesheet" type="text/css" />
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="cX8NoAxReRmjR2G/X+3UIU8D5FhUJIgKn7jLOWMy2rM=" name="csrf-token" />
+    <script src="/arhiiv/assets/baselibs-8333e9fef4d4780084abbcc3cb1aad1a.js" type="text/javascript"></script>
+
+</head>
+<body class="default-body box ">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MR9XJ56"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <header id="header" class="site-header box">
+    <div class="site box">
+
+            <a href="/arhiiv/et" class="site-logo">
+            <img alt="Esilehele" src="/arhiiv/assets/digar_logo-d9d54d727238cefaeb880e201882ab7b.png" />
+</a>
+      <nav class="nav main-nav box" id="main-nav">
+  <ul class="box">
+    <li class=""><a href="/arhiiv/et/raamatud">Raamatud</a></li>
+    <li class=""><a href="/arhiiv/et/perioodika">Ajakirjad kuni 2016</a></li>
+    <li class=""><a href="/arhiiv/et/pildimaterjal">Pildimaterjal</a></li>
+    <li class=""><a href="/arhiiv/et/kollektsioonid">Kollektsioonid</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </header>
+
+  <!-- Front page welcome header -->
+<div class="site">
+  <div class="intro-box">
+
+    <!--<h1 class="box"><img alt="Digar" src="/arhiiv/assets/digar_logo_red-8f55ac6cdbddc046efa428ea0c2f7fa1.png" /> <span>RAHVUSRAAMATUKOGU<br/> DIGIARHIIV</span></h1>-->
+    <h1 class="box">
+
+            <img alt="Digar" src="/arhiiv/assets/digar_logo-d9d54d727238cefaeb880e201882ab7b.png" />
+
+    </h1>
+
+    <!--<em>Tere! Kuidas saame abiks olla?</em>-->
+
+            <div class="intro-comment"> <a href="http://dea.digar.ee/cgi-bin/dea?l=et" target="_blank" class="link-orange"> Ajakirjad 2017- | Ajalehed 1821-<br>vaata DIGARi Eesti artiklite portaalis</a></div><br>
+  <strong>UUS KOLLEKTSIOON</strong><br> <a href="https://www.digar.ee/arhiiv/nlib-digar:864127"><i>Pisitr&uuml;kised</i></a>
+
+    <!--<div class="intro-comment"><a href="http://learningapps.org/view1462526" target="_blank"> Lahenda ristsõna</a></div>-->
+  </div>
+</div>
+
+<!-- Search panel -->
+
+  <div class="search-box">
+  <div class="site">
+    <form accept-charset="UTF-8" action="/arhiiv/et/search/simple" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+    <input id="search_source" name="search[source]" type="hidden" value="" />
+
+    <!-- simple search container -->
+    <div id="simple_search" >
+      <div class="box">
+        <fieldset class="box search-box-filter-includes">
+          <label>
+            <input name="search[available]" type="hidden" value="0" /><input class="visuallyhidden" id="search_available" name="search[available]" type="checkbox" value="1" />
+            <img alt="Availability-locked" src="/arhiiv/assets/icons/availability-locked-4bb68ff6c01713f9b90c2568f1b3f70c.png" />
+            Otsi ainult kättesaadavaid teoseid
+
+          </label>
+          <label><input name="search[content]" type="hidden" value="0" /><input class="visuallyhidden" id="search_content" name="search[content]" type="checkbox" value="1" /><img alt="Availability-all" src="/arhiiv/assets/icons/availability-all-821ad164449f20b72ff9c78a6fea036b.png" /> Otsi ka sisust</label>
+        </fieldset>
+        <a href="#detail_search" class="btn-search-detail btn-search-mode" data-container="simple_search">Detailsem otsing</a>
+      </div>
+
+      <fieldset class="box search-box-inputs">
+        <label for="searchboxinput" class="search-box-inputs-label lang_et">Otsi</label>
+        <div class="search-box-inputs-box box">
+          <div class="search-box-inputs-select-box">
+            <label class="search-box-inputs-select" id="source_label" data-select="source_list" data-target="search_source" title="Kõikjalt">Kõikjalt</label>
+            <div class="tip-box tip-box-invert search-source-menu" id="source_list">
+              <div class="tip-box-c">
+                <ul class="link-list" id="search_simple_source">
+                  <li><a href="javascript:void(0)" data-value="">Kõikjalt</a></li>
+                  <li><a href="javascript:void(0)" data-value="title">Pealkirjast</a></li>
+                  <li><a href="javascript:void(0)" data-value="author">Autorit</a></li>
+                  <li><a href="javascript:void(0)" data-value="kw">Märksõna</a></li>
+                  <li><a href="javascript:void(0)" data-value="isn">ISN</a></li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <input class="search-box-inputs-input" id="search_text" name="search[text]" size="30" type="text" />
+          <button class="search-box-inputs-submit"><img alt="Search" src="/arhiiv/assets/icons/search-e82c1fe2cf1736775b756c9faf1f420e.png" /></button>
+        </div>
+      </fieldset>
+
+      <fieldset class="box search-box-filter-scope">
+        <label class="checked"><input checked="checked" class="visuallyhidden" id="search_scope_" name="search[scope]" type="radio" value="" />Kogu sisu</label>
+        <label class=""><input class="visuallyhidden" id="search_scope_books" name="search[scope]" type="radio" value="books" />Raamatud</label>
+        <label class=""><input class="visuallyhidden" id="search_scope_periodicals" name="search[scope]" type="radio" value="periodicals" />Perioodika</label>
+        <label class=""><input class="visuallyhidden" id="search_scope_graphics" name="search[scope]" type="radio" value="graphics" />Pildimaterjal</label>
+        <label class=""><input class="visuallyhidden" id="search_scope_textbooks" name="search[scope]" type="radio" value="textbooks" />Kollektsioonid</label>
+      </fieldset>
+    </div>
+</form>
+    <!-- detailed search container -->
+    <form accept-charset="UTF-8" action="/arhiiv/et/search/detailed" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+    <div class="box" id="detail_search" style=display:none; >
+      <a href="#simple_search" class="btn-search-detail btn-search-mode" data-container="detail_search">Lihtotsing</a><br/>
+      <h2 class="box-title">Detailsem otsing</h2>
+
+      <fieldset class="box form-columns">
+        <p class="inputs-box"><label class="label" for="detail-search-">Pealkiri</label><span class="input-box">
+          <input class="input" id="search_title" name="search[title]" size="30" type="text" /></span>
+        </p>
+        <p class="inputs-box">
+          <label class="label" for="detail-search-">Autor</label>
+          <span class="input-box">
+            <input class="input" id="search_author" name="search[author]" size="30" type="text" />
+          </span>
+        </p>
+        <p class="inputs-box"><label class="label" for="detail-search-">Kirjastaja</label><span class="input-box"><input class="input" id="search_publisher" name="search[publisher]" size="30" type="text" /></span></p>
+        <p class="inputs-box"><label class="label" for="detail-search-">Ilmumisaeg</label><span class="input-box"><input type="text" id="search_date_from" name="search[date_from]" value='' class="input input-date" placeholder="aaaa-kk-pp"> <span class="input-sep">-</span> <input type="text" id="search_date_to" name="search[date_to]" value='' class="input input-date" placeholder="aaaa-kk-pp"></span></p>
+        <p class="inputs-box"><label class="label" for="detail-search-">Laad</label><span class="input-box">
+          <select class="input" id="search_object_type" name="search[object_type]"><option value="">Kõik</option><option value="17">ajakiri</option>
+<option value="3">ajaleht</option>
+<option value="4">artikkel</option>
+<option value="16">foto</option>
+<option value="2">graafika</option>
+<option value="6">helisalvestis</option>
+<option value="9">illustratsioonid</option>
+<option value="7">jätkväljaanne</option>
+<option value="15">kaart</option>
+<option value="11">käsikiri</option>
+<option value="18">muu</option>
+<option value="10">noot</option>
+<option value="12">pisitrükis</option>
+<option value="8">plakat</option>
+<option value="14">postkaart</option>
+<option value="1">raamat</option>
+<option value="13">standard</option>
+<option value="21">videosalvestis</option></select></span>
+        </p>
+        <p class="inputs-box"><label class="label" for="detail-search-">Keel</label><span class="input-box">
+         <select class="input" id="search_language" name="search[language]"><option value="">Kõik</option><option value="et">eesti</option>
+<option value="la">ladina</option>
+<option value="en">inglise</option>
+<option value="hu">ungari</option>
+<option value="el">kreeka</option>
+<option value="lv">läti</option>
+<option value="sv">rootsi</option>
+<option value="hy">armeenia</option>
+<option value="it">itaalia</option>
+<option value="de">saksa</option>
+<option value="ru">vene</option>
+<option value="fr">prantsuse</option>
+<option value="nl">hollandi</option>
+<option value="ve"> vepsa </option>
+<option value="lt">leedu</option>
+<option value="zh">hiina</option>
+<option value="ja">jaapani</option>
+<option value="he">heebrea</option>
+<option value="yi">jidiš</option>
+<option value="ro">rumeenia</option>
+<option value="da">taani</option>
+<option value="is">islandi</option>
+<option value="hr">horvaadi</option>
+<option value="cs">tšehhi</option>
+<option value="vv">valgevene</option>
+<option value="ab">abhaasi</option>
+<option value="sq">albaania</option>
+<option value="ar">araabia</option>
+<option value="az"> aserbaidžaani </option>
+<option value="bg"> bulgaaria </option>
+<option value="eo"> esperanto </option>
+<option value="fi"> soome </option>
+<option value="ka"> gruusia </option>
+<option value="hi"> hindi </option>
+<option value="id"> indoneesia </option>
+<option value="ga"> iiri</option>
+<option value="kk"> kasahhi </option>
+<option value="ky"> kirgiisi </option>
+<option value="ko"> korea </option>
+<option value="ku"> kurdi </option>
+<option value="mk"> makedoonia </option>
+<option value="mo"> moldaavia </option>
+<option value="mn"> mongoolia </option>
+<option value="ne"> nepaali </option>
+<option value="no"> norra </option>
+<option value="fa"> pärsia </option>
+<option value="pl"> poola </option>
+<option value="pt"> portugali </option>
+<option value="rm"> retoromaani </option>
+<option value="sk"> slovaki </option>
+<option value="sl"> sloveeni </option>
+<option value="es"> hispaania </option>
+<option value="tg"> tadžiki </option>
+<option value="tt"> tatari </option>
+<option value="th"> tai </option>
+<option value="bo"> tiibeti </option>
+<option value="tr"> türgi </option>
+<option value="tk"> türkmeeni </option>
+<option value="uk"> ukraina </option>
+<option value="ur"> urdu </option>
+<option value="uz"> usbeki </option>
+<option value="bz"> bosnia </option>
+<option value="hr"> horvaadi </option>
+<option value="ty"> tahiti </option>
+<option value="ud"> udmurdi </option>
+<option value="vd"> vadja </option></select></span>
+        </p>
+        <p class="inputs-box"><label class="label" for="detail-search-">ISN</label><span class="input-box"><input class="input" id="search_identifiers" name="search[identifiers]" size="30" type="text" /></span></p>
+        <p class="inputs-box"><label class="label" for="detail-search-">Failitüüp</label><span class="input-box">
+          <select class="input" id="search_file_ext" name="search[file_ext]"><option value="">Kõik</option><option value="jpg">jpg</option>
+<option value="tiff">tiff</option>
+<option value="epub">epub</option>
+<option value="mobi">mobi</option>
+<option value="pdf">pdf</option>
+<option value="wav">wav</option>
+<option value="txt">txt</option></select>
+           </span>
+         </p>
+          <p class="inputs-box">
+           <label class="label">Märksõnad</label><span class="input-box"><input class="input" id="search_keywords" name="search[keywords]" rows="3" size="30" type="text" /></span>
+         </p>
+          <p class="inputs-box">
+           <label class="label">Tekst</label><span class="input-box"><input class="input" id="search_content_text" name="search[content_text]" rows="3" size="30" type="text" /></span>
+         </p>
+         <p class="inputs-box">
+           <label class="label">Kõikjalt (Pealkiri, Autor, Märksõna, ISN)</label><span class="input-box"><input class="input" id="search_everywhere" name="search[everywhere]" rows="3" size="30" type="text" /></span>
+         </p>
+         <p class="inputs-box">
+           <span class="input-box box">
+            <label class="inlined-inputs"><input name="search[available]" type="hidden" value="0" /><input id="search_available_detailed" name="search[available]" type="checkbox" value="1" /> Otsi ainult kättesaadavaid teoseid</label>
+           </span>
+         </p>
+         <div class="input-sep">&nbsp;</div>
+         <p>
+          <button href="#" class="btn btn-action">Otsi</button>
+        </p>
+      </div>
+    </fieldset>
+   </div>
+
+</form>  </div>
+</div>
+
+
+<!-- Book shelf lists -->
+
+  <div class="site">
+
+    <span class="btn-list-more">
+        <a href="/arhiiv/et/nimekirjad/20" style="float:right; display: block; z-index: 10000000000">Vaata veel</a>
+    </span>
+
+
+    <h2 class="section-title">Raamatukoguhoidja soovitab</h2>
+
+
+  <div class="shelf box shelf-slider">
+    <ul class="box slides">
+
+
+
+<li class="shelf-item">
+  <div class="shelf-cover-box">
+    <figure class="shelf-cover">
+
+        <a href="/arhiiv/et/perioodika/29349" itemscope itemtype="http://schema.org/Book">
+
+        <span class="item-cover-image">
+
+
+          <img alt="Jaanipäev : Noor-Eesti suvealbum ; 1938-06" data-di="2" data-path="/arhiiv/covers/9/4/3/29349/full.jpg" itemprop="image" src="/arhiiv/assets/thumbdef/shelf_empty-0dd7b3d914ab0ca1d1ba007da1745a76.png" />
+        </span>
+
+        </a>
+    </figure>
+  </div>
+  <span class="shelf-details">
+
+    <a href="/arhiiv/et/perioodika/29349" itemscope itemtype="http://schema.org/Book">
+      <span class="shelf-title" itemprop="name">Jaanipäev : Noor-Eesti suvealbum ; 1938-06</span>
+    </a>
+
+    <span class="shelf-author" itemprop="author"></span>
+
+  </span>
+</li>
+
+
+<li class="shelf-item">
+  <div class="shelf-cover-box">
+    <figure class="shelf-cover">
+
+        <a href="/arhiiv/et/raamatud/165988" itemscope itemtype="http://schema.org/Book">
+
+        <span class="item-cover-image">
+
+
+          <img alt="Mustikas : maitsev ja kasulik " data-di="2" data-path="/arhiiv/covers/8/8/9/165988/full.jpg" itemprop="image" src="/arhiiv/assets/thumbdef/shelf_empty-0dd7b3d914ab0ca1d1ba007da1745a76.png" />
+        </span>
+
+        </a>
+    </figure>
+  </div>
+  <span class="shelf-details">
+
+    <a href="/arhiiv/et/raamatud/165988" itemscope itemtype="http://schema.org/Book">
+      <span class="shelf-title" itemprop="name">Mustikas : maitsev ja kasulik </span>
+    </a>
+
+    <span class="shelf-author" itemprop="author">Marge Starast, Angelica Udeküll, Purk (osaühing)</span>
+
+  </span>
+</li>
+
+
+<li class="shelf-item">
+  <div class="shelf-cover-box">
+    <figure class="shelf-cover">
+
+        <a href="/arhiiv/et/raamatud/79993" itemscope itemtype="http://schema.org/Book">
+
+        <span class="item-cover-image">
+
+
+          <img alt="Eesti Põllumajandusmuuseumi leivajutud = Bread stories by the Estonian Agricultural Museum " data-di="2" data-path="/arhiiv/covers/3/9/9/79993/full.jpg" itemprop="image" src="/arhiiv/assets/thumbdef/shelf_empty-0dd7b3d914ab0ca1d1ba007da1745a76.png" />
+        </span>
+
+        </a>
+    </figure>
+  </div>
+  <span class="shelf-details">
+
+    <a href="/arhiiv/et/raamatud/79993" itemscope itemtype="http://schema.org/Book">
+      <span class="shelf-title" itemprop="name">Eesti Põllumajandusmuuseumi leivajutud = Bread stories by the Estonian...</span>
+    </a>
+
+    <span class="shelf-author" itemprop="author"></span>
+
+  </span>
+</li>
+
+
+<li class="shelf-item">
+  <div class="shelf-cover-box">
+    <figure class="shelf-cover">
+
+        <a href="/arhiiv/et/raamatud/165338" itemscope itemtype="http://schema.org/Book">
+
+        <span class="item-cover-image">
+
+
+          <img alt="Vanadest eesti rahvakommetest " data-di="2" data-path="/arhiiv/covers/8/3/3/165338/full.jpg" itemprop="image" src="/arhiiv/assets/thumbdef/shelf_empty-0dd7b3d914ab0ca1d1ba007da1745a76.png" />
+        </span>
+
+        </a>
+    </figure>
+  </div>
+  <span class="shelf-details">
+
+    <a href="/arhiiv/et/raamatud/165338" itemscope itemtype="http://schema.org/Book">
+      <span class="shelf-title" itemprop="name">Vanadest eesti rahvakommetest </span>
+    </a>
+
+    <span class="shelf-author" itemprop="author"></span>
+
+  </span>
+</li>
+
+
+<li class="shelf-item">
+  <div class="shelf-cover-box">
+    <figure class="shelf-cover">
+
+        <a href="/arhiiv/et/raamatud/130508" itemscope itemtype="http://schema.org/Book">
+
+        <span class="item-cover-image">
+
+
+          <img alt="Igal kandil omad kombed : kihnlaste, setode, suitide ja liivlaste pühad ja tähtpäevad " data-di="1" data-path="/arhiiv/covers/8/0/5/130508/full.jpg" itemprop="image" src="/arhiiv/assets/thumbdef/shelf_empty-0dd7b3d914ab0ca1d1ba007da1745a76.png" />
+        </span>
+
+        </a>
+    </figure>
+  </div>
+  <span class="shelf-details">
+
+    <a href="/arhiiv/et/raamatud/130508" itemscope itemtype="http://schema.org/Book">
+      <span class="shelf-title" itemprop="name">Igal kandil omad kombed : kihnlaste, setode, suitide ja liivlaste püha...</span>
+    </a>
+
+    <span class="shelf-author" itemprop="author"></span>
+
+  </span>
+</li>
+
+
+<li class="shelf-item">
+  <div class="shelf-cover-box">
+    <figure class="shelf-cover">
+
+        <a href="/arhiiv/et/raamatud/71397" itemscope itemtype="http://schema.org/Book">
+
+        <span class="item-cover-image">
+
+
+          <img alt="Vali mahemarjad ja -puuviljad : hea sinule, hea loodusele " data-di="1" data-path="/arhiiv/covers/7/9/3/71397/full.jpg" itemprop="image" src="/arhiiv/assets/thumbdef/shelf_empty-0dd7b3d914ab0ca1d1ba007da1745a76.png" />
+        </span>
+
+        </a>
+    </figure>
+  </div>
+  <span class="shelf-details">
+
+    <a href="/arhiiv/et/raamatud/71397" itemscope itemtype="http://schema.org/Book">
+      <span class="shelf-title" itemprop="name">Vali mahemarjad ja -puuviljad : hea sinule, hea loodusele </span>
+    </a>
+
+    <span class="shelf-author" itemprop="author">Merit Mikk, Airi Vetemaa, Sander Silm, Elen Peetsmann, Angelica Udeküll</span>
+
+  </span>
+</li>
+
+
+<li class="shelf-item">
+  <div class="shelf-cover-box">
+    <figure class="shelf-cover">
+
+        <a href="/arhiiv/et/raamatud/251226" itemscope itemtype="http://schema.org/Book">
+
+        <span class="item-cover-image">
+
+
+          <img alt="Estonian customs and traditions " data-di="1" data-path="/arhiiv/covers/6/2/2/251226/full.jpg" itemprop="image" src="/arhiiv/assets/thumbdef/shelf_empty-0dd7b3d914ab0ca1d1ba007da1745a76.png" />
+        </span>
+
+        </a>
+    </figure>
+  </div>
+  <span class="shelf-details">
+
+    <a href="/arhiiv/et/raamatud/251226" itemscope itemtype="http://schema.org/Book">
+      <span class="shelf-title" itemprop="name">Estonian customs and traditions </span>
+    </a>
+
+    <span class="shelf-author" itemprop="author"></span>
+
+  </span>
+</li>
+
+
+<li class="shelf-item">
+  <div class="shelf-cover-box">
+    <figure class="shelf-cover">
+
+        <a href="/arhiiv/et/raamatud/235814" itemscope itemtype="http://schema.org/Book">
+
+        <span class="item-cover-image">
+
+
+          <img alt="Rahvakalendri tähtpäevi. Tavandeid : lugemismaterjal kooli perekonnaõpetuse ja kodukultuuri kursuse juurde " data-di="1" data-path="/arhiiv/covers/4/1/8/235814/full.jpg" itemprop="image" src="/arhiiv/assets/thumbdef/shelf_empty-0dd7b3d914ab0ca1d1ba007da1745a76.png" />
+        </span>
+
+        </a>
+    </figure>
+  </div>
+  <span class="shelf-details">
+
+    <a href="/arhiiv/et/raamatud/235814" itemscope itemtype="http://schema.org/Book">
+      <span class="shelf-title" itemprop="name">Rahvakalendri tähtpäevi. Tavandeid : lugemismaterjal kooli perekonnaõp...</span>
+    </a>
+
+    <span class="shelf-author" itemprop="author">Eesti Õppekirjanduse Keskus</span>
+
+  </span>
+</li>
+
+
+<li class="shelf-item">
+  <div class="shelf-cover-box">
+    <figure class="shelf-cover">
+
+        <a href="/arhiiv/et/raamatud/100703" itemscope itemtype="http://schema.org/Book">
+
+        <span class="item-cover-image">
+
+
+          <img alt="Virumaa kalendripärimus " data-di="1" data-path="/arhiiv/covers/3/0/7/100703/full.jpg" itemprop="image" src="/arhiiv/assets/thumbdef/shelf_empty-0dd7b3d914ab0ca1d1ba007da1745a76.png" />
+        </span>
+
+        </a>
+    </figure>
+  </div>
+  <span class="shelf-details">
+
+    <a href="/arhiiv/et/raamatud/100703" itemscope itemtype="http://schema.org/Book">
+      <span class="shelf-title" itemprop="name">Virumaa kalendripärimus </span>
+    </a>
+
+    <span class="shelf-author" itemprop="author">Mall Hiiemäe</span>
+
+  </span>
+</li>
+
+
+<li class="shelf-item">
+  <div class="shelf-cover-box">
+    <figure class="shelf-cover">
+
+        <a href="/arhiiv/et/raamatud/125851" itemscope itemtype="http://schema.org/Book">
+
+        <span class="item-cover-image">
+
+            <i class="icon-locked"></i>
+
+          <img alt="Luule kalender " data-di="1" data-path="/arhiiv/covers/1/5/8/125851/full.jpg" itemprop="image" src="/arhiiv/assets/thumbdef/shelf_empty-0dd7b3d914ab0ca1d1ba007da1745a76.png" />
+        </span>
+
+        </a>
+    </figure>
+  </div>
+  <span class="shelf-details">
+
+    <a href="/arhiiv/et/raamatud/125851" itemscope itemtype="http://schema.org/Book">
+      <span class="shelf-title" itemprop="name">Luule kalender </span>
+    </a>
+
+    <span class="shelf-author" itemprop="author"></span>
+
+  </span>
+</li>
+
+
+<li class="shelf-item">
+  <div class="shelf-cover-box">
+    <figure class="shelf-cover">
+
+        <a href="/arhiiv/et/raamatud/220502" itemscope itemtype="http://schema.org/Book">
+
+        <span class="item-cover-image">
+
+
+          <img alt="Suvelilled : [ülevaade] " data-di="1" data-path="/arhiiv/covers/2/0/5/220502/full.jpg" itemprop="image" src="/arhiiv/assets/thumbdef/shelf_empty-0dd7b3d914ab0ca1d1ba007da1745a76.png" />
+        </span>
+
+        </a>
+    </figure>
+  </div>
+  <span class="shelf-details">
+
+    <a href="/arhiiv/et/raamatud/220502" itemscope itemtype="http://schema.org/Book">
+      <span class="shelf-title" itemprop="name">Suvelilled : [ülevaade] </span>
+    </a>
+
+    <span class="shelf-author" itemprop="author">Ain Raitviir</span>
+
+  </span>
+</li>
+
+
+<li class="shelf-item">
+  <div class="shelf-cover-box">
+    <figure class="shelf-cover">
+
+        <a href="/arhiiv/et/raamatud/194304" itemscope itemtype="http://schema.org/Book">
+
+        <span class="item-cover-image">
+
+
+          <img alt="Põhja-Eesti toidu raamat : tarvilikke teadmisi ja retsepte " data-di="1" data-path="/arhiiv/covers/4/0/3/194304/full.jpg" itemprop="image" src="/arhiiv/assets/thumbdef/shelf_empty-0dd7b3d914ab0ca1d1ba007da1745a76.png" />
+        </span>
+
+        </a>
+    </figure>
+  </div>
+  <span class="shelf-details">
+
+    <a href="/arhiiv/et/raamatud/194304" itemscope itemtype="http://schema.org/Book">
+      <span class="shelf-title" itemprop="name">Põhja-Eesti toidu raamat : tarvilikke teadmisi ja retsepte </span>
+    </a>
+
+    <span class="shelf-author" itemprop="author"></span>
+
+  </span>
+</li>
+
+    </ul>
+  </div>
+
+
+
+  </div>
+
+
+
+
+  <aside class="sidebar" id="sidebar">
+
+    <nav class="nav sidebar-nav" id="sidebar-nav">
+      <ul class="box">
+        <li id="sidebar-toggle">
+          <i></i><i></i><i></i>
+        </li>
+        <li class="sidebar-nav-link sidebar-nav-user"><a href="/arhiiv/et/kasutaja/nlib?return_url=/arhiiv/" id="menu_login">Logi sisse</a></li>
+        <li  class="sidebar-nav-link"><a href="/arhiiv/en">ENG</a></li>
+        <li  class="sidebar-nav-link"><a href="/arhiiv/ru">РУС</a></li>
+      </ul>
+    </nav>
+
+    <div id="sidebar_content">
+
+<div id="login_panel">
+
+  <div class="block box">
+    <br/>
+    <a href="/arhiiv/et/kasutaja/nlib?return_url=/arhiiv/" class="btn btn-submit">Logi sisse <strong>Rahvusraamatukogus</strong></a>
+  </div>
+  <br><div class="side-link-txt"> <a href="http://dea.digar.ee/" target="_blank" class="link-orange">Ajakirjad 2017-<br>Ajalehed 1821-<br>vaata DIGARi Eesti artiklite portaalis</a></div><br>
+</div>
+
+
+
+
+
+    </div>
+  </aside>
+
+  <footer id="footer" class="site-footer">
+    <div class="site box">
+      <div class="footer-contact">
+        Eesti Rahvusraamatukogu
+        <br />
+        Tõnismägi 2, 15189 Tallinn
+        <br />
+        Infotelefon: 630 7100
+        <br /><script type="text/javascript">eval(decodeURIComponent('%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%27%3c%61%20%68%72%65%66%3d%5c%22%6d%61%69%6c%74%6f%3a%69%6e%66%6f%40%72%61%72%61%2e%65%65%5c%22%3e%69%6e%66%6f%40%72%61%72%61%2e%65%65%3c%5c%2f%61%3e%27%29%3b'))</script></div>
+
+            <a href="/arhiiv/et/" class="site-logo footer-item">
+            <img alt="Esilehele" src="/arhiiv/assets/digar_logo-d9d54d727238cefaeb880e201882ab7b.png" />
+</a>
+      <nav class="nav footer-nav footer-item">
+        <ul>
+          <li><a href="/arhiiv/et/raamatud">Raamatud</a></li>
+          <li><a href="/arhiiv/et/perioodika">Ajakirjad kuni 2016</a></li>
+          <li><a href="/arhiiv/et/pildimaterjal">Pildimaterjal</a></li>
+          <li><a href="/arhiiv/et/kollektsioonid">Kollektsioonid</a></li>
+        </ul>
+      </nav>
+      <nav class="nav footer-nav footer-item">
+        <ul>
+    <li><a href="/arhiiv/et/info/digarist">Mis on Digar?</a></li>
+          <li><a href="http://data.digar.ee/" target="_blank">Avaandmed</a></li>
+          <li><a href="/arhiiv/et/info/tagasiside">Tagasiside</a></li>
+          <li><a href="http://kirjastaja.digar.ee/" target="_blank">Kirjastajaportaal</a></li>
+</ul>
+      </nav>
+    </div>
+      <img alt="Blank" src="/arhiiv/assets/blank-f17cf5244ff9a79164364885aa1dd4b1.gif" style="width:100%; max-width:700px; height:1px; " />
+  </footer>
+
+  <div id="dialogs"></div>
+<script src="/arhiiv/assets/application-f6dc1bea11588d24a89a631690978907.js" type="text/javascript"></script>
+
+
+</body>
+</html>

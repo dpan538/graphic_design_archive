@@ -1,0 +1,730 @@
+
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Atatürk Kitaplığı</title>
+  <meta name="description" content="İBB Taksim Atatürk Kitaplığı web sitesi" />
+  <link href="/Content/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="/Content/assets/css/style.css?v=1.06.2026 01:16:19" rel="stylesheet">
+  <link href="/Content/assets/css/style-mq.css?v=1.06.2026 01:16:19" rel="stylesheet">
+    <link href="/Content/assets/css/simple-line-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+
+  <link rel="canonical" href="https://ataturkkitapligi.ibb.gov.tr/tr/Anasayfa" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="og:site_name" content="İBB Atatürk Kitaplığı" />
+
+
+    <script type="application/ld+json">
+    {
+      "@context" : "https://schema.org",
+      "@type" : "WebSite",
+      "name" : "İBB Atatürk Kitaplığı",
+      "url" : "https://ataturkkitapligi.ibb.gov.tr"
+    }
+  </script>
+
+
+    <script src="/Content/assets/js/jquery-3.6.0.min.js"></script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H0HM72YQH0"></script>
+  <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-H0HM72YQH0'); </script>
+</head>
+<body>
+
+<div class="container-fluid" style="background-color: #e5e5e5;">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xl-7 col-lg-7 col-md-9 col-sm-9 col-xs-9 col-9 navUstLogo">
+                <div class="navUstLogolar">
+        <a href="https://ibb.istanbul" target="_blank"><img src="/Content/assets/images/logo_ibb_h40.svg" class="navUstLogolarIBB" alt="İstanbul B&#252;y&#252;kşehir Belediyesi K&#252;t&#252;phane ve M&#252;zeler M&#252;d&#252;rl&#252;ğ&#252;" /></a>
+        <img src="/Content/assets/images/logo_kutuphane_ve_muzeler_sube_mudurlugu_h40.svg" class="navUstLogolarMudurluk" alt="İstanbul B&#252;y&#252;kşehir Belediyesi K&#252;t&#252;phane ve M&#252;zeler M&#252;d&#252;rl&#252;ğ&#252;" />
+        <img src="/Content/assets/images/logo_ibb_kutuphane_h40.svg" class="navUstLogolarKutuphane" alt="İBB Kütüphane" /></div>
+            </div>
+            <div class="col-xl-5 col-lg-5 col-md-3 col-sm-3 col-xs-3 col-3 text-end navUstLogo">
+                <div class="navUstDiller"><a href="/tr/Anasayfa" class="dilNav">TR</a> &nbsp;<span style="color: #999999;">|</span>&nbsp; <a href="/en/Anasayfa" class="dilNav">EN</a></div>
+        <div class="navUstKutuphaneMuze">
+        <a href="/tr/Kitaplik/Kutuphanelerimiz" class="navKutuphaneMuze">K&#252;t&#252;phanelerimiz</a>
+        &nbsp; <span style="color: #999999;">|</span> &nbsp;
+        <a href="/tr/Kitaplik/Muzelerimiz" class="navKutuphaneMuze">M&#252;zelerimiz</a>
+        </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="sticky-top">
+
+<div class="container-fluid" style="background-color: #ffffff;">
+
+  <div class="container navUstKurumsal">
+
+    <div class="row">
+      <div class="col-6 text-start">
+        <a href="/tr/Anasayfa"><img src="/Content/assets/images/logo_ataturk_kitapligi.svg" class="img-fluid" style="width: 285px; padding: 25px 0px 25px 0px;" alt="İBB Atatürk Kitaplığı logo" /></a>
+      </div>
+      <div class="col-6 text-end">
+
+        <div class="row">
+          <div class="col-9">
+
+            <div class="aramaKutuSite">
+              <div class="aramaMetinSite">
+                                <form class="search_field_siteici" id="search-post" method="post" action="/tr/Kitaplik/Arama">
+                                    <input type="hidden" id="search_page" name="page" value="1">
+                                    <input type="text" class="input" name="search" placeholder="Site i&#231;i arama" value="">
+                                    <i onclick="main.searchPost(1)" class="fas fa-search"> &nbsp;</i>
+                                </form>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-3">
+            <a href="/tr/Kitaplik/Kutuphanelerimiz/IPA-Istanbul-Kitapligi" class="navKutuphaneMuze"><img src="/Content/assets/images/logo_ipa_istanbul_kitapligi_tr_sb.svg" alt="İPA İstanbul Kitaplığı" style="max-width: 125%; padding: 25px 0px 25px 0px;" /></a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="container navUstKurumsalMQ">
+
+    <div class="row">
+      <div class="col-8 text-start">
+        <a href="/tr/Anasayfa"><img src="/Content/assets/images/logo_ataturk_kitapligi.svg" class="img-fluid" style="width: 285px; padding: 25px 0px 25px 0px;" alt="İBB Atatürk Kitaplığı logo" /></a>
+      </div>
+      <div class="col-4">
+        <a href="/tr/Kitaplik/Kutuphanelerimiz/IPA-Istanbul-Kitapligi" class="navKutuphaneMuze"><img src="/Content/assets/images/logo_ipa_istanbul_kitapligi_tr_sb.svg" alt="İPA İstanbul Kent Araştırmaları Kitaplığı" style="max-width: 125%; padding: 20px 25px 25px 0px;" /></a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="container-fluid" style="background-color: #000000;">
+  <div class="container" style="background-color: #000000;">
+
+    <div class="row">
+      <div class="col">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div>
+  <!--<a class="navbar-brand" href="#">Navbar</a>-->
+    <div style="display: flex;">
+      <div style="float: left;">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Menüyü aç">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="aramaKutuSiteMQ">
+        <div class="aramaMetinSiteMQ">
+                <form class="search_field_siteici" id="search-post" method="post" action="/tr/Kitaplik/Arama">
+                    <input type="hidden" id="search_page" name="page" value="1">
+          <input type="text" class="input" name="search" placeholder="Site i&#231;i arama">
+          <i class="fas fa-search"></i>
+        </form>
+        </div>
+      </div>
+      <div class="uyelikMQ"><a class="nav-link" href="https://katalog.ibb.gov.tr/yordam/?p=2&dil=0&devam=#girisFormKapsayan" target="_blank" style="color: #ff5f00;"><i class="fas fa-user"></i></a></div>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownH" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hakkında</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+<li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Hakkinda/Kitaplik-Hakkinda/100">Kitaplık Hakkında</a></li>
+<li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Hakkinda/Mimari-ve-Tarihce/101">Mimari ve Tarihçe</a></li>
+<li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Hakkinda/Misyon-ve-Vizyon/102">Misyon ve Vizyon</a></li>
+<li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Hakkinda/Kutuphane-Yonergesi/104">Kütüphane Yönergesi</a></li>
+<li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Hakkinda/Dijitallestirme-ve-Acik-Erisim-Politikasi/105">Dijitalleştirme ve Açık Erişim Politikası</a></li>
+<li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Hakkinda/Projeler/106">Projeler</a></li>
+<li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Hakkinda/Faaliyet-Raporu/107">Faaliyet Raporu</a></li>
+<li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Hakkinda/Kutuphane-Birimleri/108">Kütüphane Birimleri</a><ul class="dropdown-menu" aria-labelledby="navbarDropdown108">
+<li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Kutuphane-Birimleri/Odunc-Verme-Birimi/111">Ödünç Verme Birimi</a></li>
+<li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Kutuphane-Birimleri/Sureli-Yayinlar-Birimi/113">Süreli Yayınlar Birimi</a></li>
+<li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Kutuphane-Birimleri/Nadir-Eserler-Birimi/114">Nadir Eserler Birimi</a></li>
+<li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Kutuphane-Birimleri/Restorasyon-Birimi/115">Restorasyon Birimi</a></li>
+<li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Kutuphane-Birimleri/Dijitallestirme-Birimi/116">Dijitalleştirme Birimi</a></li>
+<li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Kutuphane-Birimleri/Depo-Birimi/112">Depo Birimi</a></li>
+<li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Kutuphane-Birimleri/Kataloglama-Birimi/117">Kataloglama Birimi</a></li>
+<li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Kutuphane-Birimleri/Etkinlik-Birimi/110">Etkinlik Birimi</a></li>
+<li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Kutuphane-Birimleri/Yayin-Birimi/109">Yayın Birimi</a></li>
+<li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Kutuphane-Birimleri/Muzeler-Birimi/120">Müzeler Birimi</a></li>
+<li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Kutuphane-Birimleri/Kutuphaneler-Birimi/119">Kütüphaneler Birimi</a></li>
+<li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Kutuphane-Birimleri/Bagis-Birimi/118">Bağış Birimi</a></li>
+</ul>
+</li>
+</ul>
+
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownK" role="button" data-bs-toggle="dropdown" aria-expanded="false">Koleksiyonlar</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownK">
+            <li class="dropdown-submenu"><a class="dropdown-item" href="https://katalog.ibb.gov.tr/yordam/?p=1&amp;dil=0&amp;q=&amp;fq[]=kunyeAnaTurKN_str%3A%220100%22" target="_blank">Kitap Koleksiyonu</a></li>
+            <li class="dropdown-submenu"><a class="dropdown-item" href="https://katalog.ibb.gov.tr/yordam/?p=1&amp;dil=0&amp;q=&amp;fq[]=kunyeKoleksiyonKN_str%3A%22K104%22" target="_blank">S&#252;reli Yayın Koleksiyonu</a></li>
+            <li class="dropdown-submenu"><a class="dropdown-item" href="/tr/Kitaplik/Koleksiyonlar">Dijital Koleksiyon</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="/tr/Kitaplik/Yayinlar">Yayınlar</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tr/Kitaplik/Kullanici-Hizmetleri">Hizmetler</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tr/Kitaplik/Etkinlikler">Etkinlikler</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tr/Kitaplik/Sergiler">Sergiler</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tr/Kitaplik/Haber-Duyuru">Duyurular</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tr/Kitaplik/Bagis">Bağış</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tr/Kitaplik/Iletisim">İletişim</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://katalog.ibb.gov.tr/yordam/?p=2&dil=0&devam=#girisFormKapsayan" target="_blank" style="color: #ff5f00;">&#220;yelik / Rezervasyon</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      </div>
+    </div>
+
+    </div>
+</div>
+
+</div>
+
+
+
+
+<div id="alinlikAnasayfa">
+
+<div class="aramaKutuAnasayfa">
+  <form name="KatalogForm" method="post" target="_blank" accept-charset="utf-8">
+    <div>
+      <input type="text" id="q" name="q" class="aramaKutuMetin" placeholder="Kataloğumuzda arama yapın" />
+    </div>
+    <div style="font-size: 14px; color: #ffffff; text-align: left; padding: 0px 10px 0px 10px;"><label style="cursor: pointer;"><input type="checkbox" id="tm" name="tm" value="1" class="double" /> &nbsp; Sadece dijital kaynaklarda ara</label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label style="cursor: pointer;"><input type="checkbox" id="tip" name="tip" value="1" class="double" /> &nbsp; Detaylı ara</label></div>
+    <div style="font-size: 14px; color: #ffffff; text-align: left; padding: 10px 10px 0px 10px; margin-top: 10px; border-top: solid 1px #ffffff; text-align: center;"><a href="https://sayisalarsiv.ibb.gov.tr/yordambt/yordam.php?aTumu=" target="_blank" style="color: #8feaff;">Sayısal arşivimizdeki eserleri incelemek i&#231;in tıklayın</a></div>
+  </form>
+</div>
+
+<style>
+  .double {
+    zoom: 1.2;
+    transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+  }
+</style>
+
+
+
+
+<script>
+
+  $(document).ready(function () {
+
+    var preventSubmit = function(event) {
+        if(event.keyCode == 13) {
+      event.preventDefault();
+
+      if ($("#q").val().length > 2) {
+
+        var actionClause = "";
+
+
+        if (document.getElementById("tm").checked == true && document.getElementById("tip").checked == true) {
+          actionClause = "https://katalog.ibb.gov.tr/yordam/?p=1&dil=0&tip=gelismis&alan=tum_txt&tm=1&q=tum_txt:(" + $("#q").val() + ")";
+        }
+        else if (document.getElementById("tm").checked == true && document.getElementById("tip").checked == false) {
+          actionClause = "https://katalog.ibb.gov.tr/yordam/?p=1&dil=0&alan=tum_txt&tm=1&q=" + $("#q").val() + "";
+        }
+        else if (document.getElementById("tm").checked == false && document.getElementById("tip").checked == true) {
+          actionClause = "https://katalog.ibb.gov.tr/yordam/?p=1&dil=0&tip=gelismis&alan=tum_txt&tm=&q=tum_txt:(" + $("#q").val() + ")";
+        }
+        else if (document.getElementById("tm").checked == false && document.getElementById("tip").checked == false) {
+          actionClause = "https://katalog.ibb.gov.tr/yordam/?p=1&dil=0&alan=tum_txt&tm=&q=" + $("#q").val() + "";
+        }
+
+
+        document.KatalogForm.action = actionClause;
+        document.KatalogForm.submit();
+
+      }
+      else {
+        alert("Arama i&#231;in l&#252;tfen en az 3 karakter girin.")
+      }
+        }
+    }
+    $("#q").keypress(preventSubmit);
+
+});
+</script>
+
+</div>
+
+
+
+
+<div class="container-fluid" style="background-color: #ffffff; margin-top: 50px;">
+
+    <div class="container">
+
+        <div class="row g-5">
+
+                <div class="col-lg-8 col-md-7 col-sm-12">
+
+          <div class="row" style="padding-bottom: 15px;">
+            <div class="col-7"><h2>Etkinlik / Sergi</h2></div>
+            <div class="col-5 text-end"><a href="/tr/Kitaplik/Etkinlikler" class="ufalt">T&#252;m etkinlikler <i class="fa-solid fa-circle-chevron-right" style="font-size: 22px; vertical-align: baseline;"></i></a></div>
+          </div>
+
+
+    <div id="carouselExampleControls507661dd-503f-4eac-a5ad-60138573da72" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <a href="https://open.spotify.com/show/1jzC7n6liHNlteNpVK4Dcr?si=fd969aa4dcb54bf6" ><img src="/Content/sliders/1281/podcast_site_slider.png" class="d-block w-100 sliderAnasayfa" alt="podcast" onerror="this.src=&#39;/Content/images/gorsel_hazirlaniyor.jpg&#39;"></a>
+                </div>
+                <div class="carousel-item ">
+                    <a href="https://ataturkkitapligi.ibb.gov.tr/tr/Kitaplik/Yayinlar"  target=&quot;_blank&quot;><img src="/Content/sliders/1279/yayınlar site slider.png" class="d-block w-100 sliderAnasayfa" alt="yayınlar" onerror="this.src=&#39;/Content/images/gorsel_hazirlaniyor.jpg&#39;"></a>
+                </div>
+                <div class="carousel-item ">
+                    <a href="https://paylas.istanbulsenin.istanbul/kobilservice?sID=6f8722b1-f696-450e-869c-352bbabcb7b4&amp;categoryId=152" ><img src="/Content/sliders/1300/kayıt.jpeg" class="d-block w-100 sliderAnasayfa" onerror="this.src=&#39;/Content/images/gorsel_hazirlaniyor.jpg&#39;"></a>
+                </div>
+                <div class="carousel-item ">
+                    <a href="https://ataturkkitapligi.ibb.gov.tr/tr/Kitaplik/Yayinlar/Sehremaneti-Mecmuasi-Sayilar"  target=&quot;_blank&quot;><img src="/Content/sliders/1280/sehremaneti_slider.png" class="d-block w-100 sliderAnasayfa" alt="sehremaneti" onerror="this.src=&#39;/Content/images/gorsel_hazirlaniyor.jpg&#39;"></a>
+                </div>
+        </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls507661dd-503f-4eac-a5ad-60138573da72" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">&#214;nceki</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls507661dd-503f-4eac-a5ad-60138573da72" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Sonraki</span>
+    </button>
+</div>
+
+                </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12">
+
+        <div class="row" style="padding-bottom: 15px;">
+          <div class="col-7"><h2>Haber Duyuru</h2></div>
+          <div class="col-5 text-end"><a href="/tr/Kitaplik/Haber-Duyuru" class="ufalt">T&#252;m haberler <i class="fa-solid fa-circle-chevron-right" style="font-size: 22px; vertical-align: baseline;"></i></a></div>
+        </div>
+
+                <div class="duyuruAnasayfa">
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Rezervasyon-Sistemimiz-Yenilenmistir/1299">Rezervasyon Sistemimiz Yenilenmiştir</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/15-Temmuz-Demokrasi-ve-Mill-Birlik-Gunu-Kutuphane-ve-Muzeler-Calisma-Programi/1291">15 Temmuz Demokrasi ve Mill&#238; Birlik G&#252;n&#252; K&#252;t&#252;phane ve M&#252;zeler &#199;alışma Programı</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/30-Agustos-2024-gunu-tum-muzelerimiz-ve-listede-adi-bulunan-kutuphanelerimiz-hizmet-verecektir/279">30 Ağustos 2024 g&#252;n&#252; t&#252;m m&#252;zelerimiz ve listede adı bulunan k&#252;t&#252;phanelerimiz hizmet verecektir</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Sehremaneti-Mecmuasinin-18-sayisi-okurla-bulustu/273">Şehremaneti Mecmuası&#39;nın 18. sayısı okurla buluştu</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/23-Nisan-Ulusal-Egemenlik-ve-Cocuk-Bayrami-Kutuphane-ve-Muzeler-Calisma-Programi/1296">23 Nisan Ulusal Egemenlik ve &#199;ocuk Bayramı K&#252;t&#252;phane ve M&#252;zeler &#199;alışma Programı</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/IBB-Kutuphane-ve-Muzeler-Ramazan-Bayrami-Calisma-Programi/1295">İBB K&#252;t&#252;phane ve M&#252;zeler Ramazan Bayramı &#199;alışma Programı</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Istanbulun-Sesleri/274">İstanbul’un Sesleri</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Habitat-Kutuphane-Rezervasyon-Sistemi/269">Habitat K&#252;t&#252;phane Rezervasyon Sistemi</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Sehremaneti-Mecmuasinin-15-sayisi-okurla-bulustu/268">Şehremaneti Mecmuası&#39;nın 15. sayısı okurla buluştu</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Sevgi-Soysal-Kutuphanesi-Rezervasyon-Sistemi/267">Sevgi Soysal K&#252;t&#252;phanesi Rezervasyon Sistemi</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Istanbul-Arastirmalari-Misafir-Arastirmaci-Programina-kabul-edilen-arastirmacilarla-ilk-toplanti-yapildi/266">İstanbul Araştırmaları Misafir Araştırmacı Programına kabul edilen araştırmacılarla ilk toplantı yapıldı</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/IBB-Kutuphane-Z-Raporu/263">İBB K&#252;t&#252;phane Z Raporu</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/IBB-Kutuphanede-Bu-Ay/264">İBB K&#252;t&#252;phanede Bu Ay</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Ataturk-Kitapliginda-ulusal-ve-uluslararasi-yayincilik-deneyimleri-uzerine-soylesi/262">Atat&#252;rk Kitaplığı&#39;nda ulusal ve uluslararası yayıncılık deneyimleri &#252;zerine s&#246;yleşi</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Kitap-Kulubu-kasim-ayindan-itibaren-40-kutuphanede/261">Kitap Kul&#252;b&#252; kasım ayından itibaren 40 k&#252;t&#252;phanede!</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/IBB-kutuphanelerinde-ekim-ayi-Soylesiler-ve-atolyeler-Istanbulun-her-noktasinda/259">İBB k&#252;t&#252;phanelerinde ekim ayı: S&#246;yleşiler ve at&#246;lyeler İstanbul&#39;un her noktasında</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/IBB-Kutuphane-ve-Muzeler-Mudurlugu-bir-ayda-dort-yayini-okurla-bulusturdu/253">İBB K&#252;t&#252;phane ve M&#252;zeler M&#252;d&#252;rl&#252;ğ&#252; bir ayda d&#246;rt yayını okurla buluşturdu</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/IBB-kutuphaneleri-artan-kitap-ve-uye-sayisiyla-Istanbulun-hizmetinde/255">İBB k&#252;t&#252;phaneleri artan kitap ve &#252;ye sayısıyla İstanbul’un hizmetinde</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Sehremaneti-Mecmuasinin-13-sayisi-okuyucuyla-bulustu/249">Şehremaneti Mecmuası&#39;nın 13. sayısı okuyucuyla buluştu</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Baska-turlu-nasil-guzellesir-aksamustleri-TEB-Oyun-Bulusmalari-Ataturk-Kitapligindaydi/257">“Başka t&#252;rl&#252; nasıl g&#252;zelleşir akşam&#252;stleri?&quot; TEB Oyun Buluşmaları, Atat&#252;rk Kitaplığı’ndaydı</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Sehremaneti-Mecmuasinin-12-sayisi-yayinda/247">Şehremaneti Mecmuası&#39;nın 12. sayısı yayında!</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Uluslararasi-Sark-El-Yazmalari-Konferansi-Istanbulda-gerceklestirildi/246">Uluslararası Şark El Yazmaları Konferansı İstanbul’da ger&#231;ekleştirildi</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/DUYURU--Afife-Batur-Kutuphanesinde-rezervasyon-donemi/245">DUYURU | Afife Batur K&#252;t&#252;phanesi&#39;nde rezervasyon d&#246;nemi</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Istanbula-yeni-bir-nefes-olmak-icin-hazir-Besiktas-ve-Kadikoy-Iskele-Kutuphaneleri-sizi-bekliyor/254">İstanbul’a yeni bir nefes olmak i&#231;in hazır: Beşiktaş ve Kadık&#246;y İskele K&#252;t&#252;phaneleri sizi bekliyor</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Kurban-Bayrami-calisma-programi/244">Kurban Bayramı &#231;alışma programı</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Sehremaneti-Mecmuasinin-10-sayisi-yayinda/243">Şehremaneti Mecmuası&#39;nın 10. sayısı yayında!</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Sanat-Tarihi-Ogrenci-Sempozyumu-sona-erdi/258">Sanat Tarihi &#214;ğrenci Sempozyumu sona erdi</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Hatayda-dayanisma-Gezici-Kutuphane-binlerce-cocuga-ulasti/251">Hatay’da dayanışma: Gezici K&#252;t&#252;phane, binlerce &#231;ocuğa ulaştı</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Ramazan-Bayrami-Calisma-Plani/242">Ramazan Bayramı &#199;alışma Planı</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Sehremaneti-Mecmuasinin-6-sayisi-tipkibasimi-ve-cevriyazisiyla-yayinlandi/240">Şehremaneti Mecmuası&#39;nın 6. sayısı tıpkıbasımı ve &#231;evriyazısıyla yayınlandı</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Sehremaneti-Mecmuasinin-7-sayisi-okuyucuyla-bulustu/241">Şehremaneti Mecmuası&#39;nın 7. sayısı okuyucuyla buluştu</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Sehremaneti-Mecmuasinin-5-sayisi-okuyucuyla-bulustu/237">Şehremaneti Mecmuası’nın 5. sayısı okuyucuyla buluştu</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Istanbul-Buyuksehir-Belediyesinden-bir-yilda-22-kutuphane/235">İstanbul B&#252;y&#252;kşehir Belediyesi’nden bir yılda 22 k&#252;t&#252;phane</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/IBB-yaninda-Beslenme-destegi-setleri-IBB-kutuphanelerinde/236">İBB yanında: Beslenme desteği setleri İBB k&#252;t&#252;phanelerinde</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/IBB-Miras-isbirligiyle-duzenlenen-Melamet-Semzpoyumu-IPAdaydi/256">İBB Miras işbirliğiyle d&#252;zenlenen Melamet Semzpoyumu İPA’daydı</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/IBB-bellegine-sahip-cikiyor-Sehremaneti-Mecmuasi/227">İBB, belleğine sahip &#231;ıkıyor: Şehremaneti Mecmuası</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Tarihi-Moda-Iskelesi-yepyeni-bir-gorunumle-hizmete-hazir/228">Tarihi Moda İskelesi yepyeni bir g&#246;r&#252;n&#252;mle hizmete hazır</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Hasan-Huseyin-Korkmazgil-Kutuphanesi-hizmette-Bu-sehrin-cocuklarini-esitleyecegiz/229">Hasan H&#252;seyin Korkmazgil K&#252;t&#252;phanesi hizmette: Bu şehrin &#231;ocuklarını eşitleyeceğiz</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Hasan-Izzettin-Dinamo-Kutuphanesi-Pendikte-hizmete-sunuldu/230">Hasan İzzettin Dinamo K&#252;t&#252;phanesi Pendik&#39;te hizmete sunuldu</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Taksime-yeni-kutuphane-Sevgi-Soysalin-ismi-burada-yasayacak/231">Taksim&#39;e yeni k&#252;t&#252;phane: Sevgi Soysal&#39;ın ismi burada yaşayacak</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Fransa-Baskonsolosundan-Molire-sergisine-ziyaret/232">Fransa Başkonsolosundan Moli&#232;re sergisine ziyaret</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Arnavutkoy-ikinci-kutuphanesine-kavustu-Cemil-Meric-Kutuphanesi-Bogazkoyde/233">Arnavutk&#246;y ikinci k&#252;t&#252;phanesine kavuştu: Cemil Meri&#231; K&#252;t&#252;phanesi, Boğazk&#246;y&#39;de</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Firuzkoyde-Sabahattin-Eyuboglu-Kutuphanesi-hizmete-sunuldu/234">Fir&#252;zk&#246;y&#39;de Sabahattin Ey&#252;boğlu K&#252;t&#252;phanesi hizmete sunuldu</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/IBBden-Sultanbeyliye-ikinci-kutuphane-Kemal-Tahir-Kutuphanesi-hizmete-sunuldu/221">İBB&#39;den Sultanbeyli&#39;ye ikinci k&#252;t&#252;phane: Kemal Tahir K&#252;t&#252;phanesi hizmete sunuldu</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/150-Gunde-150-Proje-diyen-IBBden-Esenyurta-kutuphane-Gulten-Akinin-ismi-verildi/1">“150 G&#252;nde 150 Proje” diyen İBB’den Esenyurt’a k&#252;t&#252;phane: G&#252;lten Akın’ın ismi verildi</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Otopark-alanindan-kutuphaneye-Attil-Ilhan-Kucukcekmecede/2">Otopark alanından k&#252;t&#252;phaneye: Attil&#226; İlhan, K&#252;&#231;&#252;k&#231;ekmece’de</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Yasar-Kemalin-ismi-Sarigazide-yasayacak/3">Yaşar Kemal’in ismi Sarıgazi’de yaşayacak</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Yayinevleri-Taksimde-bulustu-Ataturk-Kitapligindan-bir-ay-suren-Acik-Hava-Kitap-Senligi/4">Yayınevleri Taksim’de buluştu: Atat&#252;rk Kitaplığı’ndan bir ay s&#252;ren A&#231;ık Hava Kitap Şenliği</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/150-Gunde-150-Proje-Sabahattin-Eyuboglu-Kutuphanesi-acildi/5">150 G&#252;nde 150 Proje: Sabahattin Ey&#252;boğlu K&#252;t&#252;phanesi a&#231;ıldı</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Tercih-donemi-icin-danismanlik-hizmeti-basliyor/6">Tercih d&#246;nemi i&#231;in danışmanlık hizmeti başlıyor</a></p>
+                        <hr class="ayracDuyuru" />
+                        <p><a href="/tr/Kitaplik/Haber-Duyuru/Ataturk-Kitapligi-yaz-donemi-calisma-saatleri/7">Atat&#252;rk Kitaplığı yaz d&#246;nemi &#231;alışma saatleri</a></p>
+                        <hr class="ayracDuyuru" />
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<br />
+<br />
+
+
+<div class="container-fluid" style="background-color: #e7f0ef;">
+
+    <div class="container">
+
+        <br />
+
+    <div class="row" style="padding-bottom: 15px;">
+      <div class="col-7"><h2>Yayınlarımız</h2></div>
+      <div class="col-5 text-end"><a href="/tr/Kitaplik/Yayinlar" class="ufalt">T&#252;m yayınlar <i class="fa-solid fa-circle-chevron-right" style="font-size: 22px; vertical-align: baseline;"></i></a></div>
+    </div>
+
+        <div class="row g-5">
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12">
+          <div style="background-color: #f4f4f4; border: solid 1px #e0e0e0; text-align: center;">
+            <img src="/Content/publications/1170/WhatsApp Image 2025-05-14 at 11.43.56.jpeg" class="img-fluid" alt="Şehremaneti Mecmuası 30" onerror="this.src='/Content/assets/images/gorsel_hazirlaniyor.jpg'" />
+            <div style="display: flex; padding: 7px 10px 7px 10px; line-height: 1.5rem; height: 85px; align-content: center; justify-content: center; align-items: center;">
+              <h4><a href="/tr/Kitaplik/Yayinlar/Sehremaneti-Mecmuasi-30/1170" class="">Şehremaneti Mecmuası 30</a></h4>
+            </div>
+          </div>
+                </div>
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12">
+          <div style="background-color: #f4f4f4; border: solid 1px #e0e0e0; text-align: center;">
+            <img src="/Content/publications/1163/İPA_Misafir_Arastirmaci_Program_kitapkapak5.jpg" class="img-fluid" alt="İmar Hakkı Transferi: Yenilik&#231;i Bir Ara&#231;" onerror="this.src='/Content/assets/images/gorsel_hazirlaniyor.jpg'" />
+            <div style="display: flex; padding: 7px 10px 7px 10px; line-height: 1.5rem; height: 85px; align-content: center; justify-content: center; align-items: center;">
+              <h4><a href="/tr/Kitaplik/Yayinlar/Imar-Hakki-Transferi-Yenilikci-Bir-Arac/1163" class="">İmar Hakkı Transferi: Yenilik&#231;i Bir Ara&#231;</a></h4>
+            </div>
+          </div>
+                </div>
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12">
+          <div style="background-color: #f4f4f4; border: solid 1px #e0e0e0; text-align: center;">
+            <img src="/Content/publications/1162/İPA_Misafir_Arastirmaci_Program_kitapkapak.jpg" class="img-fluid" alt="Adil İstanbul İ&#231;in Arsa Değeri Vergisi: Kentsel Rantı Kamuya D&#246;nd&#252;r&#252;rken Kentin Gelişimine Y&#246;n Vermek" onerror="this.src='/Content/assets/images/gorsel_hazirlaniyor.jpg'" />
+            <div style="display: flex; padding: 7px 10px 7px 10px; line-height: 1.5rem; height: 85px; align-content: center; justify-content: center; align-items: center;">
+              <h4><a href="/tr/Kitaplik/Yayinlar/Adil-Istanbul-Icin-Arsa-Degeri-Vergisi-Kentsel-Ranti-Kamuya-Dondururken-Kentin-Gelisimine-Yon-Vermek/1162" class="">Adil İstanbul İ&#231;in Arsa Değeri Vergisi: Kentsel Rantı Kamuya D&#246;nd&#252;r&#252;rken Kentin Gelişimine Y&#246;n Vermek</a></h4>
+            </div>
+          </div>
+                </div>
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12">
+          <div style="background-color: #f4f4f4; border: solid 1px #e0e0e0; text-align: center;">
+            <img src="/Content/publications/1161/İPA_Misafir_Arastirmaci_Program_kitapkapak4.jpg" class="img-fluid" alt="İklim Duyarlı Bitkisel Peyzaj Tasarım Yaklaşımı: İstanbul &#220;zerine D&#252;ş&#252;nmek" onerror="this.src='/Content/assets/images/gorsel_hazirlaniyor.jpg'" />
+            <div style="display: flex; padding: 7px 10px 7px 10px; line-height: 1.5rem; height: 85px; align-content: center; justify-content: center; align-items: center;">
+              <h4><a href="/tr/Kitaplik/Yayinlar/Iklim-Duyarli-Bitkisel-Peyzaj-Tasarim-Yaklasimi-Istanbul-Uzerine-Dusunmek/1161" class="">İklim Duyarlı Bitkisel Peyzaj Tasarım Yaklaşımı: İstanbul &#220;zerine D&#252;ş&#252;nmek</a></h4>
+            </div>
+          </div>
+                </div>
+        </div>
+
+        <br />
+        <br />
+
+    </div>
+
+</div>
+
+
+<br />
+<br />
+<br />
+<br />
+
+
+<div class="container-fluid" style="background-image: url(/Content/home/anasayfa_bant_koleksiyonlar.jpg);">
+
+    <div class="container">
+
+        <div class="row g-5">
+
+            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div style="text-align: center; font-family: Montserrat; font-size: 40px; line-height: 44px; font-weight: 300; color: #ffffff; padding: 30px; margin: 20px 50px 50px 50px; background-color: rgba(60,70,80,0.8); ">
+                    <h3>Dijital Koleksiyonlar</h3>
+                    <div style="font-size: 15px; color: #ffffff;">Sekiz ana grup altında gruplanan 43 dijital koleksiyonumuzda 200 binden fazla eser bulunmaktadır.</div>
+                    <div style="font-size: 15px; color: #ffffff;"><h3><a href="/tr/Kitaplik/Koleksiyonlar" class="navKutuphaneMuze" style="color: #ffffff;">Koleksiyonlarımızı incele <i class="fa-solid fa-circle-chevron-right" style="font-size: 22px; vertical-align: baseline;"></i></a></h3></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<br />
+<br />
+
+
+<div class="container-fluid" style="background-color: #ffffff;">
+
+    <div class="container">
+
+        <div class="row g-5" style="padding-bottom: 15px;">
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <a href="/tr/Kitaplik/Kutuphanelerimiz" class="navKutuphaneMuze">
+                    <div style="background-color: #0a4492; border: solid 1px #e0e0e0; padding: 20px ; text-align: center;">
+                        <img src="/Content/assets/images/ikon_book.png" alt="Kitap ikonu" />
+                        <div style="font-family: Montserrat; font-size: 27px; line-height: 44px; font-weight: 300; color: #ffffff; padding-bottom: 20px;">K&#220;T&#220;PHANELERİMİZ</div>
+                        <div style="font-size: 15px; color: #ffffff; font-weight: 500;">K&#252;t&#252;phanelerimizi incele <i class="fa-solid fa-circle-chevron-right" style="font-size: 19px; vertical-align: baseline;"></i></div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <a href="/tr/Kitaplik/Muzelerimiz" class="navKutuphaneMuze">
+                    <div style="background-color: #0a4492; border: solid 1px #e0e0e0; padding: 20px; text-align: center;">
+                        <img src="/Content/assets/images/ikon_museum.png" alt="Müze ikonu" />
+                        <div style="font-family: Montserrat; font-size: 27px; line-height: 44px; font-weight: 300; color: #ffffff; padding-bottom: 20px;">M&#220;ZELERİMİZ</div>
+                        <div style="font-size: 15px; color: #ffffff; font-weight: 500;">M&#252;zelerimizi incele <i class="fa-solid fa-circle-chevron-right" style="font-size: 19px; vertical-align: baseline;"></i></div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+  .imgResponsive img {
+  width: 100%;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+    <div class="container-fluid" style="background-color: #e0e0e0; padding: 20px; margin-top: 150px;">
+
+        <div class="container">
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3" style="padding-bottom: 15px;">
+                <div class="col">
+                    <div><b>İBB ATAT&#220;RK KİTAPLIĞI</b></div>
+                    <div>
+                        Miralay Şefik Bey Sok. No: 6<br />
+                        Taksim, Beyoğlu - İstanbul<br />
+                        Telefon:  0212 249 95 65<br />
+                        0212 249 09 45<br />
+                        <a href="mailto:kutuphanemuzeler@ibb.gov.tr" target="_blank">kutuphanemuzeler@ibb.gov.tr</a><br />
+                        <div style="float: left; margin-top: 10px;">
+                            <div style="width: 240px; font-weight: 600; line-height: 16px;"><a href="/tr/Kitaplik/Kullanici-Hizmetleri/Kutuphane-Calisma-Saatleri/20">Hizmet saatlerimiz i&#231;in tıklayın.</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" style="border-left: solid 2px #bbbbbb; padding-left: 20px;">
+                    <div><b>KULLANIM</b></div>
+                    <div>
+                        <a href="/tr/Kitaplik/Kullanici-Hizmetleri">Kullanıcı Hizmetleri</a><br />
+                        <a href="/tr/Kitaplik/Kullanici-Hizmetleri/Sikca-Sorulan-Sorular">Sık&#231;a Sorulan Sorular</a><br />
+                        <a href="/tr/Kitaplik/Erisilebilirlik">Erişilebilirlik</a><br />
+                        <a href="/tr/Kitaplik/KVKK-Aydinlatma-Metni">KVKK Aydınlatma Metni</a><br />
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="text-align: right; color: #7c7c7c;">
+                        <a class="sosyalMedyaIkon" href="https://www.youtube.com/@ibbkutuphane8749" target="_blank"><i class="fa-brands fa-youtube fa-2x" style="padding-left: 15px;"></i></a>
+                        <a class="sosyalMedyaIkon" href="https://open.spotify.com/show/1jzC7n6liHNlteNpVK4Dcr?si=be73d72d22ac45ba&nd=1" target="_blank"><i class="fa-brands fa-spotify fa-2x" style="padding-left: 15px;"></i></a>
+                        <a class="sosyalMedyaIkon" href="https://x.com/ibbkutuphane_" target="_blank"><i class="fa-brands fa-x-twitter fa-2x" style="padding-left: 15px;"></i></a>
+                        <a class="sosyalMedyaIkon" href="https://www.facebook.com/%C4%B0BB-Atat%C3%BCrk-Kitapl%C4%B1%C4%9F%C4%B1-193011691336662" target="_blank"><i class="fa-brands fa-facebook fa-2x" style="padding-left: 15px;"></i></a>
+                        <a class="sosyalMedyaIkon" href="https://www.instagram.com/ibbkutuphane" target="_blank"><i class="fa-brands fa-instagram fa-2x" style="padding-left: 15px;"></i></a>
+                    </div>
+
+                    <br />
+                    <br />
+
+                    <div style="float: right;">
+                        <div style="font-family: Roboto; font-size: 13px;"><label for="txtEmail">B&#252;ltenimize kayıt olun.</label></div>
+                        <div style="font-family: Roboto; font-size: 15px; background-color: #333333; padding: 5px 10px; width: fit-content; margin: 5px 0px 5px 0px;">
+                            <input type="text" id="email-subscription" placeholder="E-mail" style="font-family: Roboto; font-size: 17px; background-color: #333333; color: #e0e0e0; border: none; width: 230px;" />
+                            <i class="fa-solid fa-circle-chevron-right" onclick="main.emailSubscrib.complate()" style="font-size: 19px; vertical-align: baseline; margin-left: -30px; color: #ffffff;"></i>
+                        </div>
+                        <div style="font-family: Roboto; font-size: 13px;">
+                            <input class="form-check-input" style="margin-right:5px; margin-bottom: 15px; float: left;" type="checkbox" onchange="main.emailSubscrib.GDPR.change(this)" id="email-subscription-kvkk-approved" />
+                            <label for="email-subscription-kvkk-approved" style="display: contents;"><span style="color: #0050b2; text-decoration: underline; cursor: pointer;">Verilerimin işlenmesi ile ilgili konuları anladım, a&#231;ık rıza veriyorum.</span></label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="container-fluid" style="background-color: #000000;">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col text-center copyright">© 2026 İBB Atat&#252;rk Kitaplığı. Her hakkı saklıdır.</div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="modal fade" id="kvkk-email-subscrib-modal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">İstanbul B&#252;y&#252;kşehir Belediye Başkanlığı İletişim Aydınlatma Metni</h5>
+                    <button type="button" onclick="main.emailSubscrib.GDPR.modelToggle(false)" class="close" data-dismiss="modal" aria-label="Close" style="border:0;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="kvkk-email-subscrib-modal-body"></div>
+                <div class="modal-footer">
+                    <button onclick="main.emailSubscrib.GDPR.modelToggle(true)" type="button" class="btn btn-primary">Onaylıyorum</button>
+                    <button onclick="main.emailSubscrib.GDPR.modelToggle(false)" type="button" class="btn btn-danger" data-dismiss="modal">Onay vermiyorum</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="email-subscrib-consent-modal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">A&#231;ık Rıza Beyan Metni</h5>
+                    <button type="button" onclick="main.emailSubscrib.conset.modelToggle(false)" class="close" data-dismiss="modal" aria-label="Close" style="border:0;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="email-subscrib-consent-modal-body"></div>
+                <div class="modal-footer">
+                    <button onclick="main.emailSubscrib.conset.modelToggle(true)" type="button" class="btn btn-primary">Onaylıyorum</button>
+                    <button onclick="cmain.emailSubscrib.conset.modelToggle(false)" type="button" class="btn btn-danger" data-dismiss="modal">Onay vermiyorum</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="alertModalLabel">Uyarı</h5>
+                    <button type="button" onclick="$('#alertModal').modal('toggle')" class="close" data-dismiss="modal" aria-label="Close" style="border:0;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button id="alertModalOK" type="button" class="btn btn-secondary" data-dismiss="modal">Tamam</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Content/assets/js/bootstrap.bundle.js"></script>
+
+
+
+
+<script src="https://kit.fontawesome.com/b697a09497.js" crossorigin="anonymous"></script>
+
+    <script src="/Content/assets/js/main.js"></script>
+    <script>
+        main.variable.cultur = 'tr';
+    </script>
+
+
+
+</body>
+</html>

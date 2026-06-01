@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Verifying your browser</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+            background-color: #404E61;
+            color: #676767;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 24px;
+        }
+
+        #content {
+            background: #fff;
+            padding: 48px;
+            width: 100%;
+            max-width: 480px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 20px;
+            line-height: 24px;
+            color: #404E61;
+            margin-bottom: 12px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 24px;
+            border: 4px solid #dfdfdf;
+            border-top-color: #404E61;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .countdown {
+            font-size: 32px;
+            font-weight: bold;
+            color: #404E61;
+            margin: 12px 0;
+        }
+
+        .status {
+            color: #676767;
+            font-size: 14px;
+        }
+        .error {
+            color: #A91919;
+        }
+
+        noscript #noscript-box {
+            display: block;
+        }
+        #noscript-box {
+            border-left: 4px solid #A91919;
+            text-align: left;
+            padding-left: 12px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 6px;
+            font-size: 12px;
+            color: rgba(255,255,255,.5);
+        }
+        footer a {
+            color: rgba(255,255,255,.7);
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #fff;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+            #content {
+                padding: 24px;
+            }
+        }
+    </style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XJSV46VXNB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XJSV46VXNB');
+</script></head>
+<body>
+    <div id="content" role="main">
+        <noscript>
+            <div id="noscript-box">
+                <h1>JavaScript required</h1>
+                <p class="error">Please enable JavaScript in your browser to access this site.</p>
+            </div>
+        </noscript>
+        <div id="challenge" style="display:none;">
+            <div class="spinner" id="spinner"></div>
+            <h1>Verifying your browser…</h1>
+            <div class="countdown" id="countdown"></div>
+            <p class="status" id="status">This is an automatic process. Please wait.</p>
+        </div>
+    </div>
+    <footer>
+        <span>Powered by <a href="https://omeka.org/s">Omeka S</a></span>
+    </footer>
+    <script>
+    (function() {
+        var token = "0.11431800 1780276523_78a4cad23f9441c6ad3094b8042de16b3df2ba847de344bfec43f8f8535ed747";
+        var delay = 5;
+        var cookieLifetime = 2592000;
+        var redirectUrl = "\/";
+        var isHttps = true;
+        var testHeadless = true;
+
+        var box = document.getElementById('challenge');
+        var countdownEl = document.getElementById('countdown');
+        var statusEl = document.getElementById('status');
+        var spinnerEl = document.getElementById('spinner');
+
+        box.style.display = '';
+
+        if (testHeadless) {
+            var isBot = false;
+            if (navigator.webdriver === true) isBot = true;
+            if (!navigator.languages || navigator.languages.length === 0) isBot = true;
+            if (window._phantom || window.callPhantom) isBot = true;
+            if (window.__selenium_unwrapped || window.__webdriver_evaluate || window.__driver_evaluate) isBot = true;
+            if (/HeadlessChrome/.test(navigator.userAgent)) isBot = true;
+            var isMobile = /Mobi|Android/i.test(navigator.userAgent);
+            if (!isMobile) {
+                if (navigator.plugins && navigator.plugins.length === 0) isBot = true;
+                if (navigator.connection && navigator.connection.rtt === 0) isBot = true;
+            }
+            if (isBot) {
+                spinnerEl.style.display = 'none';
+                countdownEl.textContent = '';
+                statusEl.className = 'status error';
+                statusEl.textContent = "Automated browser detected. Access denied.";
+                return;
+            }
+        }
+
+        var remaining = delay;
+        countdownEl.textContent = remaining;
+        var interval = setInterval(function() {
+            remaining--;
+            if (remaining > 0) {
+                countdownEl.textContent = remaining;
+            } else {
+                clearInterval(interval);
+                countdownEl.textContent = '';
+                spinnerEl.style.display = 'none';
+                var cookie = 'omeka_bot_challenge=' + token
+                    + '; path=/; max-age=' + cookieLifetime
+                    + '; samesite=Lax';
+                if (isHttps) cookie += '; secure';
+                document.cookie = cookie;
+                statusEl.textContent = "Verified. Redirecting\u2026";
+                window.location.href = redirectUrl;
+            }
+        }, 1000);
+    })();
+    </script>
+</body>
+</html>

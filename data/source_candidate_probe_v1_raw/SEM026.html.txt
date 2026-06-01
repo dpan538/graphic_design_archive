@@ -1,0 +1,1485 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="si">
+<head><title>
+  Digitalna knjižnica Slovenije - dLib.si
+</title>
+    <!--<link rel="shortcut icon" href="/favicon.ico" />-->
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="robots" content="noarchive" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="twitter:card" content="summary" /><meta name="twitter:site" content="@knjiznicanuk" /><meta name="twitter:title" content="dLib.Si - Digitalna knjižnica Slovenije" /><meta name="twitter:description" content="Digitalna knjižnica Slovenije – dLib.si" /><meta name="twitter:image" content="http://www.dlib.si/images/logos/dlib_just_logo.png" /><link rel="stylesheet" href="/Content/font-awesome-4.6.3/css/font-awesome.min.css" /><link href="/Content/css/bootstrap.css" rel="stylesheet" type="text/css" /><link href="/Content/css/dlib.css" rel="stylesheet" type="text/css" /><link href="/Content/css/master.css" rel="stylesheet" type="text/css" /><link href="/Content/css/dlib.mobile.css" rel="stylesheet" type="text/css" media="(max-width: 768px)" /><link href="/Content/css/dlib.tablet.css" rel="stylesheet" type="text/css" media="(min-width: 768px) and (max-width: 979px)" />
+
+    <style>
+
+</style>
+
+
+     <link rel="stylesheet" href="/Content/css/smoothness.css" />
+
+        <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+
+<link rel="stylesheet" type="text/css" href="/Content/css/cookieconsent.min.css" />
+<script src="https://www.dlib.si/Content/scripts/cookieconsent.min.js" type="text/javascript"></script>
+
+
+<script type='text/javascript'  src="/Scripts/jquery-2.1.4.min.js"></script>
+
+    <!--<script type='text/javascript'  src="/Scripts/cookies.js"></script>-->
+    <!--
+    <script src="/Content/scripts/jquery.idle.min.js"></script>
+<script>
+    jQuery(document).idle({
+        onIdle: function () {
+            jQuery('.screen-saver').fadeIn('slow');
+        },
+        onActive: function () {
+            jQuery('.screen-saver').fadeOut('slow');
+        },
+        events: 'keydown mousedown touchstart scroll',
+        idle: 900000
+
+    });
+</script>
+-->
+     <script type="text/javascript">
+         /*
+         function includeHTML() {
+             var z, i, elmnt, file, xhttp;
+
+             z = document.getElementsByTagName("*");
+             for (i = 0; i < z.length; i++) {
+                 elmnt = z[i];
+
+                 file = elmnt.getAttribute("w3-include-html");
+                 if (file) {
+
+                     xhttp = new XMLHttpRequest();
+                     xhttp.onreadystatechange = function () {
+                         if (this.readyState == 4) {
+                             if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                             if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+
+                             elmnt.removeAttribute("w3-include-html");
+                             includeHTML();
+                         }
+                     }
+                     xhttp.open("GET", file, true);
+                     xhttp.send();
+
+                     return;
+                 }
+             }
+         }
+         */
+</script>
+
+    <script type="text/javascript">
+        jQuery.curCSS = jQuery.css;
+        </script>
+   <script src="/Scripts/dLib.dropdown.js" type="text/javascript"></script>
+
+      <script src="/Content/Scripts/jquery-1.11.4.js" type="text/javascript"></script>
+
+   <script type='text/javascript' src="/Scripts/jquery.cookies.js"></script>
+    <script type='text/javascript'  src="/Scripts/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+   <script type="text/javascript">
+       setInterval(function () { $.ajax({ url: "https://www.dlib.si/Ping.aspx" }); }, 360000);
+    </script>
+
+
+ <link href="Content/css/carousel.css" rel="stylesheet" />
+    <link href="Content/css/default.css" rel="stylesheet" />
+  <script src="js/owl.carousel.min.js"></script>
+    <!--<script src="/Content/scripts/masonry.pkgd.min.js"></script>-->
+    <script src="/Content/scripts/imagesloaded.min.js"></script>
+
+
+    <script type='text/javascript'>
+        /*
+        $(window).load(function () {
+            if (true) {
+                var $container2 = $('#cards2');
+
+                $container2.imagesLoaded(function () {
+                    $container2.masonry({
+                        itemSelector: '.box2',
+                        gutter: 20,
+                        columnWidth: 200,
+                        fitWidth: true,
+                        isAnimated: true
+                    });
+                });
+
+
+                var $container = $('#cards');
+
+                $container.imagesLoaded(function () {
+                    $container.masonry({
+                        itemSelector: '.box',
+                        gutter: 20,
+                        columnWidth: 200,
+                        fitWidth: true,
+                        isAnimated: true
+                    });
+                });
+
+
+
+            }
+
+        });
+        */
+
+    </script>
+<script type="text/javascript">
+    /*
+    var pageNo = 3, pageSize = 16;
+    $(window).scroll(function () {
+        if ($(window).scrollTop() == $(document).height() - $(window).height() && !($('#imgLoad').is(':visible'))) {
+            loadMore();
+        }
+    });
+
+    function loadMore() {
+        $('#imgLoad').show();
+        if (pageNo > 10) {
+            $('#imgLoad').hide();
+            return;
+        }
+        $.ajax({
+            type: "POST",
+            url: "cards.aspx/GetData",
+            data: JSON.stringify({ pageNo: pageNo + 1, pageSize: pageSize }),
+            dataType: "json",
+            contentType: "application/json",
+            complete: function (response) {
+                $('#imgLoad').hide();
+            },
+            success: function (response) {
+
+                if (response.d.length > 0) {
+                    var ctrls = [];
+
+                    for (var i = 0; i < response.d.length; i++) {
+
+                        var ft = '';
+                        $.map(response.d[i].Summary, function (e, i) {
+                            ft += '<i class="fa fa-file-' + i.toLowerCase() + '-o"></i> ' + e + ' ';
+                        });
+
+                        var ap = response.d[i].AccessPublic;
+                        if(ap !="0") ft += "<i class=\"fa fa-unlock-alt\" aria-hidden=\"true\"></i> " + ap + ' ';
+                        var ar = response.d[i].AccessRestricted;
+                        if (ar != "0") ft += "<i class=\"fa fa-lock\" aria-hidden=\"true\"></i> " + ar + ' ';
+
+                        //console.log(ft);
+
+                        ctrls.push(
+                            '<div class="box2"> <a href="' +
+                            response.d[i].Url +
+                            '"><div><img src="' +
+                            response.d[i].Thumb +
+                            '" alt="naslovnica" /><span class="text_content">' +
+                            response.d[i].Description +
+                            '</span><div></div></div><h4>' + response.d[i].Title + '</h4></a><div>' +
+
+                            ft +
+
+                            '</div></div>');
+
+                    }
+                    var $container = $('#cards2');
+                    var $newElems = $(ctrls.join(''));
+
+                    $container.append($newElems);
+                    $newElems.css({ opacity: 0 });
+                    $newElems.imagesLoaded(function () {
+                        // show elems now they're ready
+                        $newElems.css({ opacity: 1 });
+                        $container.masonry('appended', $newElems, true);
+                    });
+                    pageNo++;
+                }
+            }
+        });
+    }
+    */
+
+    </script>
+
+
+
+
+
+    <script type="text/javascript">
+
+        $(function () {
+            $("#searchString").autocomplete({
+                source: "/search.aspx",
+                minLength: 3,
+                select: function (event, ui) {
+
+                    $("#searchString").val(ui.item.value);
+                    submitSearch();
+                    //return false;
+                }
+            });
+            //TextBoxSearch1
+            $("#TextBoxSearch1").autocomplete({
+                source: "/search.aspx",
+                minLength: 3,
+                select: function (event, ui) {
+
+                    $("#TextBoxSearch1").val(ui.item.value);
+
+                    //return false;
+                }
+            });
+            $("#TextBoxSearch2").autocomplete({
+                source: "/search.aspx",
+                minLength: 3,
+                select: function (event, ui) {
+
+                    $("#TextBoxSearch2").val(ui.item.value);
+
+                    //return false;
+                }
+            });
+
+            $("#TextBoxSearch3").autocomplete({
+                source: "/search.aspx",
+                minLength: 3,
+                select: function (event, ui) {
+
+                    $("#TextBoxSearch3").val(ui.item.value);
+
+                    //return false;
+                }
+            });
+
+            $("#TextBoxSearch4").autocomplete({
+                source: "/search.aspx",
+                minLength: 3,
+                select: function (event, ui) {
+
+                    $("#TextBoxSearch4").val(ui.item.value);
+
+                    //return false;
+                }
+            });
+        });
+
+
+</script>
+    <script type="text/javascript">
+        // Submit the search
+        function submitSearch() {
+
+            if ($('#searchString').val().length > 2) {
+                var fts = "off";
+                if ($('#fts').is(':checked')) fts = "on";
+                var eua = "on";
+                //if ($('#EuAPI').is(':checked')) eua = "on";
+
+                var url = "/results/?EuAPI=" + eua + "&fts=" + fts + "&q=" + $('#searchString').val();
+                //var fLocation = $('[name="flocation"]').val();
+                var fLocation = $('[name="flocation"]').filter(function () { return this.checked }).val();
+                if (fLocation !== undefined && fLocation.length > 0) {
+          url += '&flocation=' + fLocation;
+                }
+
+
+                //$(location).attr('href', url);
+                //alert(url);
+                location.href = url;
+                //alert("/results/?fts=" + fts + "&q=" + $('#searchString').val());
+            }
+        }
+
+        function submitAdvancedSearch() {
+
+
+            var q = "";
+            if($('#TextBoxSearch1').val().length > 2)   {
+                q = $('#DropDownListField1').val() + "="+$('#TextBoxSearch1').val();
+            }
+
+            if ($('#TextBoxSearch2').val().length > 2) {
+                if (q.length < 1) {
+                    q = $('#DropDownListField2').val() + "=" + $('#TextBoxSearch2').val();
+                }
+                else
+                    q += "@" + $('#DropDownListOper1').val() + "@" + $('#DropDownListField2').val() + "=" + $('#TextBoxSearch2').val();
+            }
+
+            if ($('#TextBoxSearch3').val().length > 2) {
+                if (q.length < 1) {
+                    q = $('#DropDownListField3').val() + "=" + $('#TextBoxSearch3').val();
+                }
+                else
+                    q += "@" + $('#DropDownListOper2').val() + "@" + $('#DropDownListField3').val() + "=" + $('#TextBoxSearch3').val();
+            }
+
+            if ($('#TextBoxSearch4').val().length > 2) {
+                if (q.length < 1) {
+                    q = $('#DropDownListField4').val() + "=" + $('#TextBoxSearch4').val();
+                }
+                else
+                    q += "@" + $('#DropDownListOper3').val() + "@" + $('#DropDownListField4').val() + "=" + $('#TextBoxSearch4').val();
+            }
+            var fts = "off";
+            var url = "/results/?query='" + encodeURIComponent(q) + "'";
+                //$(location).attr('href', url);
+            //alert(url);
+            var fLocation = $('[name="flocation"]').filter(function () { return this.checked }).val();
+            if (fLocation !== undefined && fLocation.length > 0) {
+                url += '&flocation=' + fLocation;
+            }
+
+
+            if (q.length > 2)
+                location.href = url;
+            else return;
+                //alert("/results/?fts=" + fts + "&q=" + $('#searchString').val());
+
+        }
+        // Enter to submit search
+        $(document).ready(function () {
+            $('#searchString').keydown(function (e) {
+                if (e.keyCode == 13) {
+                    e.preventDefault();
+                    submitSearch();
+                }
+            });
+            // Search Bar & Toggle
+            $('#toggle-search').on('click', function () {
+                $('#searchBar').toggle('display: inline-block');
+                $('#toggle-search').toggle();
+                $('#toggle-search-down').toggle();
+            });
+            $('#toggle-search-down').on('click', function () {
+                $('#searchBar').toggle('display: inline-block');
+                $('#toggle-search').toggle();
+                $('#toggle-search-down').toggle();
+            });
+        });
+
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#BtnMenu').bind('click', function () {
+                $('#Menu').toggleClass('active');
+                $('.overlay').toggleClass('active');
+                $('.footer').toggle();
+
+
+            });
+
+            $('.overlay').bind('click', function () {
+                $('.overlay').removeClass('active');
+                $('#Menu').toggleClass('active');
+                $('.footer').toggle();
+
+            });
+
+
+        });
+
+        $(function () {
+            $('.cBtnMenu').bind('click', function () {
+                $('#Menu').toggleClass('active');
+                $('.overlay').toggleClass('active');
+                $('.footer').toggle();
+            });
+            $('.overlay').bind('click', function () {
+                $('.overlay').removeClass('active');
+                $('#Menu').removeClass('active');
+                $('.footer').display('true');
+
+            });
+
+
+        });
+
+    </script>
+
+
+        <script id="bsJs" type="text/javascript">
+        $(document).ready(function() {
+            $('#fts').tooltip();
+            $('#tooltip1').tooltip();
+            $('#toggle-search').tooltip();
+        });
+
+
+
+
+        </script>
+
+<!--<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />  -->
+<script>NS_CSM_td=276819218;NS_CSM_pd=275116667;NS_CSM_u="/clm10";NS_CSM_col="AAAAAAV4ZavdEl/n/PFYa2zDUSoVbZRRdb+ntGrTRfDG81N37+JbCRc9FQf3EdRgd+LU7KtmtgYDDGZGnz68HmYdzTfX";</script><script type="text/javascript">function sendTimingInfoInit(){setTimeout(sendTimingInfo,0)}function sendTimingInfo(){var wp=window.performance;if(wp){var c1,c2,t;c1=wp.timing;if(c1){var cm={};cm.ns=c1.navigationStart;if((t=c1.unloadEventStart)>0)cm.us=t;if((t=c1.unloadEventEnd)>0)cm.ue=t;if((t=c1.redirectStart)>0)cm.rs=t;if((t=c1.redirectEnd)>0)cm.re=t;cm.fs=c1.fetchStart;cm.dls=c1.domainLookupStart;cm.dle=c1.domainLookupEnd;cm.cs=c1.connectStart;cm.ce=c1.connectEnd;if((t=c1.secureConnectionStart)>0)cm.scs=t;cm.rqs=c1.requestStart;cm.rss=c1.responseStart;cm.rse=c1.responseEnd;cm.dl=c1.domLoading;cm.di=c1.domInteractive;cm.dcls=c1.domContentLoadedEventStart;cm.dcle=c1.domContentLoadedEventEnd;cm.dc=c1.domComplete;if((t=c1.loadEventStart)>0)cm.ls=t;if((t=c1.loadEventEnd)>0)cm.le=t;cm.tid=NS_CSM_td;cm.pid=NS_CSM_pd;cm.ac=NS_CSM_col;var xhttp=new XMLHttpRequest();if(xhttp){var JSON=JSON||{};JSON.stringify=JSON.stringify||function(ob){var t=typeof(ob);if(t!="object"||ob===null){if(t=="string")ob='"'+ob+'"';return String(ob);}else{var n,v,json=[],arr=(ob&&ob.constructor==Array);for(n in ob){v=ob[n];t=typeof(v);if(t=="string")v='"'+v+'"';else if(t=="object"&&v!==null)v=JSON.stringify(v);json.push((arr?"":'"'+n+'":')+String(v));}return(arr?"[":"{")+String(json)+(arr?"]":"}");}};xhttp.open("POST",NS_CSM_u,true);xhttp.send(JSON.stringify(cm));}}}}if(window.addEventListener)window.addEventListener("load",sendTimingInfoInit,false);else if(window.attachEvent)window.attachEvent("onload",sendTimingInfoInit);else window.onload=sendTimingInfoInit;</script></head>
+<body>
+    <a href="top"></a>
+
+    <form method="post" action="./" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+
+<script src="/ScriptResource.axd?d=uHIkleVeDJf4xS50Krz-yJPNYGUvdMrPfapzVzHs3gI6n9IhT_0yGNFnApQ3siT36vuehi3wuSAONGdfeITAGQ1Z4Ye9RiyUSFZ_4DQAUOheL_aJn4ANwuGOUApYmz2fn2MLZT8WCT-LI5v-rDDuzB8gmrPn0KQ53x87SqhCfEQ1&amp;t=5c0e0825" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="g+QCLp4oLN8hXDGkG4tAytAC8d2QepwcrO5ZKskiwApMhK/VruxjpKvPWboi3fJUDDM8gQgccSYYUXLCE5KtcEfzLofj5qGTN0npLrfERqTUgmmLJtoDpUG9E3JiAsNWmffpsDrlRXcC7U/igunIvgPlnU8jur8P2sr14HhxAWFBgo+6LA2o/m2OGEdDTeVyYQgbThen+7xeJKXiyYJUAk2MxauaMhGTh/44oYKEsmg7nsd70LmXr7RvVuaDbU8SBo1xVxvvxiNAh2+1vT4LjVANKffX4zO8+d17u9fo+7DxQsngifIewuLaGFgN/MH1gdku/RTteOpF7ckBPH/sIvZ+P2PRRsEhgv8MH25YSogPEw4mDyuIFJhoVJA40elUiZZ47L6qL5BZZY0DV0J+lvy2OPaSh0OENbpeeIVbvJxLQLuc/NrQNR742sj7lfJX0FGhBDVcL8WFmoQqiVybKWypZW4dmUbaaNrPDsC0r1x5pxvLNImcXrH4eFtR++5pvGnJgxky5lwc5BUWMajXZGvr5r9vGpkJzqC4KgiiWxoohxfpNztex3PFr+qUA1wXze7MNmoPT8z+ugKSYsUB5olL73bcU3uTb+OVDOAS9qmb3sG7E7rw06JIv5lrGQxozx7RnE2OTmDLX0PqsEowyoFC1sB4GIBPDGSmGlB0dfjYJyNxDrILvcYBlkY1t6XgPoejIh+4yrAi72U8GkvysKyMxAzfRxOS3k/ACfE7mAtaSP0HZ+RVUfTh1ea56CHGkS+iOvE+GUnsmzvrrNgmZHrRCGOZEwNMqAQ5HV97O3Omv5B+6cdKaEPn+IptreM5q0sa9xTogZ1JQsL721CeXp/JmLmJWXkw/4VTttk/s3LMp5+9FNRnjSqbQE+rgqLxzxtg9D4qAeyZ8iXeGIHKyAPHdJksIkIKQruQ4xesWXRrochCfz8lEHNUlD/BDcyNmdBdR3/EBfQw8g0JbldRgv21P0Wmu4NEVQhdnSb28vV+sGwZu+mAFTm6tEZqtyBIq8DTvTDhMjTyYU5vGFIgutBRpuzhWwKrqQBDGMGV+FCg8h/XEo1tRBMJ60WH7vLcF+GO5zJPDEMOYzA5ibrFjnfCvs1UQ71uIuJ1paSgZ1KvPMW6Oz5vqX4OmoL3RZwMpqNzGSM7QLtYxRjHwyZTZfo+aAI/dpo36lDTkthHiIAA6EmP/SXr8VCMG6mPvEklOJA5iqSYVi03lO93zG9c9FJP/ooOqKpWCOmxQ6JvKuo=" />
+
+
+       <nav class="navbar navbar-default">
+
+       <input type="hidden" name="ctl00$kwHiddenField" id="kwHiddenField" />
+     <input type="hidden" name="ctl00$ftsHiddenField" id="ftsHiddenField" />
+     <input type="hidden" name="ctl00$EuropeanaHiddenField" id="EuropeanaHiddenField" />
+
+
+
+          <div class="container">
+        <div class="row">
+
+
+
+
+            <div class="column col-lg-2 col-md-3 col-sm-3 col-xs-12" id="Brand">
+
+
+                <a href="/" id="href_logo" class="logo">
+
+                    <img alt="logo" id="dlib_logo" src="/images/logos/dlib_logo_170px.png">
+                </a>
+
+
+            </div>
+            <div class="column col-lg-8 col-md-6 col-sm-6 col-xs-12">
+                <style>
+            #locationButton {
+
+                            border:0;
+                            min-width: 30px;
+                            height: 34px;
+                            padding:0 !important;
+                            border-radius: 4px !important;
+            }
+                        #locationButton div {
+                            max-width:200px;
+                            overflow:hidden;
+                            text-overflow:ellipsis;
+                            display:block;
+                            float:right;
+                            margin-top:5px;
+                            padding-right:5px;
+                        }
+
+            #locationContainer {
+              position:absolute;
+              top:35px;
+              min-height:175px;
+              width:745px;
+              background: rgb(243, 243, 243);
+              border: 1px solid rgb(227, 81, 45);
+              z-index:9999;
+              display:none;
+              border-radius:5px;
+            }
+            #locationContainer select {
+              width:630px;
+              margin:15px 30px;
+              display:block;
+              border: 1px solid rgb(227, 81, 45);
+              background:white;
+              border-radius:5px;
+              padding:7px;
+            }
+                        #searchString {
+                            float:right;
+                            width:598px;
+                        }
+
+                        .pasica {
+                            border-radius:unset;
+                        }
+
+                </style>
+
+                <div class="form-inline zamik-forme" id="Search">
+                    <div class="form-group">
+                        <div class="input-group" style="margin-left:30px;">
+                            <button style=""
+                                onclick="toggleLocationMenu();return false;"
+                                data-toggle="tooltip" data-placement="bottom" data-original-title="Izberi knjižnico"
+                                id="locationButton"><img src="/Content/img/ikona.svg" width="33" /> <div></div></button>
+                            <div id="locationContainer">
+                                <!-- Tukaj je dropdown -->
+                                <div id="ssLocationContainer"><div class='tree-container'><ul>
+                    <li class='leaf'>
+                        <input type="checkbox" value=""  name="flocation" >
+                        Digitalna knjižnica Slovenije
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Narodna in univerzitetna knjižnica"  name="flocation" >
+                        Narodna in univerzitetna knjižnica
+                    </li><li class='branch'>Splošne knjižnice<ul><li class='branch'>Celjsko območje<ul>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Osrednja knjižnica Celje|Knjižnica Laško"  name="flocation" >
+                        Vse knjižnice območja
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Osrednja knjižnica Celje"  name="flocation" >
+                        Osrednja knjižnica Celje
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Laško"  name="flocation" >
+                        Knjižnica Laško
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Osrednja knjižnica Mozirje"  name="flocation" >
+                        Osrednja knjižnica Mozirje
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Šentjur"  name="flocation" >
+                        Knjižnica Šentjur
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Šmarje"  name="flocation" >
+                        Knjižnica Šmarje
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Velenje"  name="flocation" >
+                        Knjižnica Velenje
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Medobčinska splošna knjižnica Žalec"  name="flocation" >
+                        Medobčinska splošna knjižnica Žalec
+                    </li></ul><li class='branch'>Dolenjsko območje<ul>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Mirana Jarca Novo mesto"  name="flocation" >
+                        Knjižnica Mirana Jarca Novo mesto
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Brežice"  name="flocation" >
+                        Knjižnica Brežice
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Kočevje"  name="flocation" >
+                        Knjižnica Kočevje
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Valvasorjeva knjižnica Krško"  name="flocation" >
+                        Valvasorjeva knjižnica Krško
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Miklova hiša, Ribnica"  name="flocation" >
+                        Knjižnica Miklova hiša, Ribnica
+                    </li></ul><li class='branch'>Gorenjsko območje<ul>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Mestna knjižnica Kranj"  name="flocation" >
+                        Mestna knjižnica Kranj
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Občinska knjižnica Jesenice"  name="flocation" >
+                        Občinska knjižnica Jesenice
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica A. T. Linharta, Radovljica "  name="flocation" >
+                        Knjižnica A. T. Linharta, Radovljica
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Ivana Tavčarja, Škofja Loka"  name="flocation" >
+                        Knjižnica Ivana Tavčarja, Škofja Loka
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica dr. Toneta Pretnarja, Tržič"  name="flocation" >
+                        Knjižnica dr. Toneta Pretnarja, Tržič
+                    </li></ul><li class='branch'>Goriško območje<ul>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Goriška knjižnica Franceta Bevka Nova Gorica"  name="flocation" >
+                        Goriška knjižnica Franceta Bevka Nova Gorica
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Lavričeva knjižnica, Ajdovščina"  name="flocation" >
+                        Lavričeva knjižnica, Ajdovščina
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Mestna knjižnica in čitalnica Idrija"  name="flocation" >
+                        Mestna knjižnica in čitalnica Idrija
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Cirila Kosmača Tolmin"  name="flocation" >
+                        Knjižnica Cirila Kosmača Tolmin
+                    </li></ul><li class='branch'>Koroško območje<ul>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Koroška osrednja knjižnica dr. Franca Sušnika Ravne na Koroškem"  name="flocation" >
+                        Koroška osrednja knjižnica dr. Franca Sušnika Ravne na Koroškem
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Radlje ob Dravi"  name="flocation" >
+                        Knjižnica Radlje ob Dravi
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Ksaverja Meška, Slovenj Gradec"  name="flocation" >
+                        Knjižnica Ksaverja Meška, Slovenj Gradec
+                    </li></ul><li class='branch'>Obalno-kraško območje<ul>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Osrednja knjižnica Srečka Vilharja Koper"  name="flocation" >
+                        Osrednja knjižnica Srečka Vilharja Koper
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Makse Samsa, Ilirska Bistrica"  name="flocation" >
+                        Knjižnica Makse Samsa, Ilirska Bistrica
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Mestna knjižnica Izola - Biblioteca civica di Isola->Matična knjižnica Izola"  name="flocation" >
+                        Mestna knjižnica Izola - Biblioteca civica di Isola->Matična knjižnica Izola
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Mestna knjižnica Piran"  name="flocation" >
+                        Mestna knjižnica Piran
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Kosovelova knjižnica Sežana"  name="flocation" >
+                        Kosovelova knjižnica Sežana
+                    </li></ul><li class='branch'>Osrednjeslovensko območje<ul>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Mestna knjižnica Ljubljana"  name="flocation" >
+                        Mestna knjižnica Ljubljana
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Jožeta Udoviča, Cerknica"  name="flocation" >
+                        Knjižnica Jožeta Udoviča, Cerknica
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Domžale"  name="flocation" >
+                        Knjižnica Domžale
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Grosuplje"  name="flocation" >
+                        Knjižnica Grosuplje
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Franceta Balantiča Kamnik"  name="flocation" >
+                        Knjižnica Franceta Balantiča Kamnik
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Litija"  name="flocation" >
+                        Knjižnica Litija
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Logatec"  name="flocation" >
+                        Knjižnica Logatec
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Medvode"  name="flocation" >
+                        Knjižnica Medvode
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Cankarjeva knjižnica Vrhnika"  name="flocation" >
+                        Cankarjeva knjižnica Vrhnika
+                    </li></ul><li class='branch'>Pomursko območje<ul>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Pokrajinska in študijska knjižnica Murska Sobota"  name="flocation" >
+                        Pokrajinska in študijska knjižnica Murska Sobota
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Javni zavod Knjižnica Gornja Radgona"  name="flocation" >
+                        Javni zavod Knjižnica Gornja Radgona
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Splošna knjižnica Ljutomer"  name="flocation" >
+                        Splošna knjižnica Ljutomer
+                    </li></ul><li class='branch'>Spodnjedravsko območje<ul>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Ivana Potrča Ptuj"  name="flocation" >
+                        Knjižnica Ivana Potrča Ptuj
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Franca Ksavra Meška Ormož"  name="flocation" >
+                        Knjižnica Franca Ksavra Meška Ormož
+                    </li></ul><li class='branch'>Štajersko območje<ul>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Mariborska knjižnica"  name="flocation" >
+                        Mariborska knjižnica
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Lenart"  name="flocation" >
+                        Knjižnica Lenart
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Josipa Vošnjaka Slovenska Bistrica"  name="flocation" >
+                        Knjižnica Josipa Vošnjaka Slovenska Bistrica
+                    </li></ul></ul><li class='branch'>Druge knjižnice<ul>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Bayerische StaatsBibliotek"  name="flocation" >
+                        Bayerische StaatsBibliotek
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Centralna pravosodna knjižnica"  name="flocation" >
+                        Centralna pravosodna knjižnica
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Centralna tehniška knjižnica Univerze v Ljubljani"  name="flocation" >
+                        Centralna tehniška knjižnica Univerze v Ljubljani
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Knjižnica Dušana Černeta Trst"  name="flocation" >
+                        Knjižnica Dušana Černeta Trst
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Kraljeva knjižnica, Danska nacionalna knjižnica in univerzitetna knjižnica v Kopenhagnu"  name="flocation" >
+                        Kraljeva knjižnica, Danska nacionalna knjižnica in univerzitetna knjižnica v Kopenhagnu
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Narodna in študijska knjižnica"  name="flocation" >
+                        Narodna in študijska knjižnica
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Österreichische Nationalbibliothek"  name="flocation" >
+                        Österreichische Nationalbibliothek
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Semeniška knjižnica"  name="flocation" >
+                        Semeniška knjižnica
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Slovenska študijska knjižnica Celovec"  name="flocation" >
+                        Slovenska študijska knjižnica Celovec
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Škrabčeva knjižnica"  name="flocation" >
+                        Škrabčeva knjižnica
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Univerzitetna knjižnica Maribor"  name="flocation" >
+                        Univerzitetna knjižnica Maribor
+                    </li></ul><li class='branch'>Arhivi in muzeji<ul>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Arhiv Republike Slovenije"  name="flocation" >
+                        Arhiv Republike Slovenije
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Goriški muzej"  name="flocation" >
+                        Goriški muzej
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Loški muzej Škofja Loka"  name="flocation" >
+                        Loški muzej Škofja Loka
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Muzej in galerije mesta Ljubljana"  name="flocation" >
+                        Muzej in galerije mesta Ljubljana
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Muzej Miklova hiša"  name="flocation" >
+                        Muzej Miklova hiša
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Muzej novejše zgodovine Celje"  name="flocation" >
+                        Muzej novejše zgodovine Celje
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Narodni muzej Slovenije"  name="flocation" >
+                        Narodni muzej Slovenije
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Pokrajinski arhiv Maribor"  name="flocation" >
+                        Pokrajinski arhiv Maribor
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Pokrajinski muzej Kočevje"  name="flocation" >
+                        Pokrajinski muzej Kočevje
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Prirodoslovni muzej Slovenije"  name="flocation" >
+                        Prirodoslovni muzej Slovenije
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Slovenian Museum and Archives - Slovenski muzej in arhiv"  name="flocation" >
+                        Slovenian Museum and Archives - Slovenski muzej in arhiv
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Slovenski etnografski muzej"  name="flocation" >
+                        Slovenski etnografski muzej
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Slovenski šolski muzej"  name="flocation" >
+                        Slovenski šolski muzej
+                    </li>
+                    <li class='leaf'>
+                        <input type="checkbox" value="Škofijski arhiv Koper"  name="flocation" >
+                        Škofijski arhiv Koper
+                    </li></ul></ul></div></div>
+                            </div>
+
+                            <!-- -- ---------------------------------------->
+
+                            <style>
+
+    .tree-container {
+        margin:20px;
+    }
+
+    .tree-container ul {
+        list-style-type: disclosure-closed;
+        padding-left: 15px;
+        display:none;
+    }
+    .tree-container > ul:first-child {
+        display:block;
+    }
+    .tree-container li.leaf {
+        list-style:none;
+        margin-left:-15px;
+    }
+
+</style>
+                            <script type="text/javascript">
+                                var toggleLocationMenu = function () {
+                                    $('#locationContainer').toggle();
+                                    if(false)$('.btn.search.lupa').attr('disabled', function (index, attr) {
+                                        return attr == 'disabled' ? null : 'disabled';
+                                    });
+
+
+                                }
+
+                                $(function () {
+                                    $('.tree-container li.branch input').on('click', function (e) {
+                                        $(this).parent().find('input').prop('checked', this.checked);
+
+                                        e.stopPropagation();
+                                    });
+                                    $('.tree-container li.branch').on('click', function (e) {
+                                        $(this).children('ul').toggle();
+                                        e.stopPropagation();
+                                    });
+
+                                    $('.tree-container li.leaf').on('click', function (e) {
+                                        e.stopPropagation();
+                                    });
+                                    $('.tree-container li.leaf input').on('click', function (e) {
+                                        //$('#locationButton div').text(this.value);
+                                        $('#searchString').width(606 - $("#locationButton").width());
+                                        //$('#locationContainer').toggle();
+                                        $('#searchString').focus();
+                                    });
+
+
+                                    $('a#filter-location').on('click', function () {
+                                        var selection = Array.prototype.slice.call($('.tree-container li.leaf input:checked').map(function () { return encodeURIComponent(this.value) }));
+                                        location.href = location.href + '&flocation=' + selection.join('|');
+                                    });
+
+                                    $('#searchString').width(606 - $("#locationButton").width());
+
+                                });
+
+                            </script>
+
+                            <!--
+
+                            <input type="hidden" name="flocation" value="">
+                            -->
+
+                            <!-- -- ---------------------------------------->
+
+                            <input name="ctl00$searchString" type="text" id="searchString" class="form-control forma-input pasica" placeholder="" autofocus="" />
+                             <span class="input-group-addon pasica">
+                                 <i id='toggle-search' class="fa fa-caret-down" aria-label="napredno iskanje" data-toggle="tooltip" data-placement="bottom" data-original-title="napredno iskanje"></i>
+                                 <i id='toggle-search-down' class="fa fa-caret-up" style="display:none;"></i>
+                             </span>
+                            <span class="input-group-addon pasica">
+
+
+                                <input type="checkbox"  aria-label="išči po celotnem besedilu"
+                                    data-toggle="tooltip" data-placement="bottom" data-original-title="išči po celotnem besedilu" id="fts">
+                            </span>
+
+                        </div>
+                        <a class="btn search lupa" onclick="submitSearch()" onkeypress="submitSearch()">
+                            <i class="fa fa-search mal-levo" data-toggle="tooltip" data-placement="right" data-original-title="Najdi na dLib.si!" id="tooltip1"></i>
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+             <div class="column col-lg-2 col-md-3 col-sm-3 col-xs-12" id="MenuButton">
+                <a id="BtnMenu" class="btn meni"><i class="fa fa-bars" aria-hidden="true"></i> Meni</a>
+
+                 <div id="lang">
+            <a id="SloLang" class="aspNetDisabled" class="a-pasiv">SLO</a> |
+            <a id="EngLang" class="a-rdec" href="/?&amp;language=eng" href="javascript:__doPostBack(&#39;ctl00$EngLang&#39;,&#39;&#39;)">ENG</a>
+                </div>
+
+
+        </div>
+
+        </div>
+        <div style='display:none;z-index:100;' id='searchBar' class="row">
+
+                <div class="column col-lg-12 col-md-4 col-sm-4 col-xs-12">
+
+                                        <div class="column2 col-lg-7 col-md-5 col-sm-5 col-xs-12">
+                                            <input type="text" id="TextBoxSearch1" class="form-control forma-input pasica ui-autocomplete-input t1" />
+                                        </div>
+                                        <div class="column2 col-lg-3 col-md-5 col-sm-5 col-xs-12">
+                                            <select name="ctl00$DropDownListField1" id="DropDownListField1" class="form-control forma-input pasica ui-autocomplete-input dd1">
+  <option value="contributor">avtor</option>
+  <option value="fts">celotno besedilo</option>
+  <option value="keywords">ključne besede</option>
+  <option value="date">leto</option>
+  <option value="title">naslov</option>
+  <option selected="selected" value="srel">vir</option>
+  <option value="publisher">založnik</option>
+  <option value="col">zbirka</option>
+
+</select>
+                                        </div>
+                                        <div class="column2 col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                            <select name="ctl00$DropDownListOper1" id="DropDownListOper1" class="form-control forma-input pasica1 ui-autocomplete-input">
+  <option selected="selected" value="AND">IN</option>
+  <option value="OR">ALI</option>
+  <option value="NOT">NE</option>
+
+</select>
+                                        </div>
+
+
+                </div>
+                <div  class="column2 col-lg-12 col-md-4 col-sm-4 col-xs-12">
+
+                        <div class="column2 col-lg-7 col-md-5 col-sm-5 col-xs-12"><input name="ctl00$TextBoxSearch2" type="text" id="TextBoxSearch2" class="form-control forma-input pasica ui-autocomplete-input t1" /></div>
+                                    <div class="column2 col-lg-3 col-md-5 col-sm-5 col-xs-12">
+                        <select name="ctl00$DropDownListField2" id="DropDownListField2" class="form-control forma-input pasica ui-autocomplete-input dd1">
+  <option value="contributor">avtor</option>
+  <option selected="selected" value="fts">celotno besedilo</option>
+  <option value="keywords">ključne besede</option>
+  <option value="date">leto</option>
+  <option value="title">naslov</option>
+  <option value="srel">vir</option>
+  <option value="publisher">založnik</option>
+  <option value="col">zbirka</option>
+
+</select>
+                                </div>
+                                <div class="column2 col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                    <select name="ctl00$DropDownListOper2" id="DropDownListOper2" class="form-control forma-input pasica1 ui-autocomplete-input">
+  <option selected="selected" value="AND">IN</option>
+  <option value="OR">ALI</option>
+  <option value="NOT">NE</option>
+
+</select>
+                                </div>
+                </div>
+                <div  class="column2 col-lg-12 col-md-4 col-sm-4 col-xs-12">
+            <div class="column2 col-lg-7 col-md-5 col-sm-5 col-xs-12"><input name="ctl00$TextBoxSearch3" type="text" id="TextBoxSearch3" class="form-control forma-input pasica ui-autocomplete-input t1" /></div>
+            <div class="column2 col-lg-3 col-md-5 col-sm-5 col-xs-12">
+                        <select name="ctl00$DropDownListField3" id="DropDownListField3" class="form-control forma-input pasica ui-autocomplete-input dd1">
+  <option value="contributor">avtor</option>
+  <option value="fts">celotno besedilo</option>
+  <option value="keywords">ključne besede</option>
+  <option selected="selected" value="date">leto</option>
+  <option value="title">naslov</option>
+  <option value="srel">vir</option>
+  <option value="publisher">založnik</option>
+  <option value="col">zbirka</option>
+
+</select>
+                        </div>
+                    <div  class="column2 col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                        <select name="ctl00$DropDownListOper3" id="DropDownListOper3" class="form-control forma-input pasica1 ui-autocomplete-input">
+  <option selected="selected" value="AND">IN</option>
+  <option value="OR">ALI</option>
+  <option value="NOT">NE</option>
+
+</select>
+                    </div>
+                 </div>
+                <div class="column2 col-lg-12 col-md-4 col-sm-4 col-xs-12">
+
+                    <div class="column2 col-lg-7 col-md-5 col-sm-5 col-xs-12"><input name="ctl00$TextBoxSearch4" type="text" id="TextBoxSearch4" class="form-control forma-input pasica ui-autocomplete-input t1" /></div>
+                    <div class="column2 col-lg-3 col-md-5 col-sm-5 col-xs-12">
+                    <select name="ctl00$DropDownListField4" id="DropDownListField4" class="form-control forma-input pasica ui-autocomplete-input dd1">
+  <option value="contributor">avtor</option>
+  <option value="fts">celotno besedilo</option>
+  <option selected="selected" value="keywords">ključne besede</option>
+  <option value="date">leto</option>
+  <option value="title">naslov</option>
+  <option value="srel">vir</option>
+  <option value="publisher">založnik</option>
+  <option value="col">zbirka</option>
+
+</select>
+                    </div>
+                    <div class="column2 col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                        <select name="ctl00$DropDownListOper4" id="DropDownListOper4" class="form-control forma-input pasica1 ui-autocomplete-input">
+  <option selected="selected" value="AND">IN</option>
+  <option value="OR">ALI</option>
+  <option value="NOT">NE</option>
+
+</select>
+                    </div>
+                </div>
+                 <div class="column2 col-lg-12 col-md-4 col-sm-4 col-xs-12">
+                    <div class="column2 col-lg-7 col-md-5 col-sm-5 col-xs-12">
+          <a class="btn search lupa-dolga" onclick="submitAdvancedSearch()" onkeypress="submitSearch()">
+                        <i class="fa fa-search" data-toggle="tooltip" data-placement="right" data-original-title="Najdi na dLib.si!"></i>
+          </a>
+                    </div>
+        </div>
+
+        </div>
+        <div id="Menu" class="row" style="overflow:scroll">
+                <div id="DlibMenu" class="wrap">
+
+              <hr class="hr-menu">
+              <a class="menu" href="/advancedsearch.aspx">NAPREDNO ISKANJE</a>
+                   <div>
+               <hr class="hr-menu" />
+               <br>
+
+              <a class="menu" href="/About.aspx">O nas</a>
+                  <a class="menu" href="/Partners.aspx">Sodelovanje</a>
+                  <a class="menu" href="/Help.aspx">Pogoji uporabe</a>
+                <!--<a class="menu" href="/Statistics.aspx">dLib statistike</a>-->
+                  <a class="menu" href="/Locations.aspx">Seznam partnerjev</a>
+                  <a class="menu" href="/News.aspx">Novice</a>
+              <a class="menu" href="/Exhibitions.aspx">Virtualne razstave</a>
+              <a class="menu" href="mailto:dlib@nuk.uni-lj.si">Pišite nam</a></br></br>
+
+               <b>Moj dLib.si</b><br /><br />
+                    <div id="UpdatePanelLogin">
+
+
+
+        <label for="Login_UsernameTextBox">Epošta</label>: <input name="ctl00$Login$UsernameTextBox" type="text" id="Login_UsernameTextBox" class="form-control" />
+        <br/>
+        Geslo: <input name="ctl00$Login$PasswordTextBox" type="password" id="Login_PasswordTextBox" class="form-control" /><br />
+        <div onclick="doLogin('login')" class="btn btn-default">Prijava</div>
+
+        <div><a class="login" href="/register">Registriraj se!</a> <a class= "login" href="/forgottenpsw">Pozabljeno geslo</a></div>
+
+
+
+
+<script type="text/javascript">
+    function doLogin(type) {
+        __doPostBack('ctl00$UpdatePanelLogin', type);
+    }
+</script>
+<script type="text/javascript">
+
+    // Enter to submit login
+    $(document).ready(function () {
+        $('#Login_PasswordTextBox').keydown(function (e) {
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                doLogin('login');
+            }
+        });
+    });
+
+    </script>
+
+</div>
+                    </div>
+                  </div>
+            <!--
+
+            -->
+        </div>
+        <div class="overlay"></div>
+
+      </div>
+
+
+    </nav>
+
+    <div>
+
+
+    <div id="Body_myCarousel" class="carousel slide" data-ride="carousel" data-interval="7000">
+      <!-- Indicators -->
+      <!--
+        <ol class="carousel-indicators" >
+
+          <li data-target="#Body_myCarousel" data-slide-to="0" class="active"></li>
+
+          <li data-target="#Body_myCarousel" data-slide-to="1" class=""></li>
+
+          <li data-target="#Body_myCarousel" data-slide-to="2" class=""></li>
+
+          <li data-target="#Body_myCarousel" data-slide-to="3" class=""></li>
+
+
+      </ol>
+        -->
+      <div class="carousel-inner" role="listbox">
+
+         <div class="item active">
+             <div class="slide" style="background-image:url(./images/Slider_Modroslava_Kveder.jpg)"></div>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Od rokopisa do besede: Skupaj odkrivamo in razkrivamo pisma Zofke Kveder</h1>
+              <div style="text-align: center;"><span style="font-size: 14px; font-family: sans-serif;">Ob 100-letnici smrti Zofke Kveder smo pripravili zbirko <a href="https://www.dlib.si/results/?query=%27col=Pisma%20in%20korespondenca%20Zofke%20Kveder%27&amp;desc=URN:NBN:SI:col-QEGBGUOR&amp;pageSize=25" class="a-rdec" target="_blank">Pisma in korespondenca Zofke Kveder</a>, v kateri smo digitalizirali in objavili pisateljičina pisma, ki pa trenutno še niso na voljo v strojno berljivi obliki. Vabimo vas, da se nam pridružite v prostovoljskem projektu, v katerem bomo skupaj uredili vrstice, da bodo berljive, iskalne in dostopne vsakomur.</span></div><div style="text-align: center;"><span style="font-size: 14px; font-family: sans-serif;"><br></span></div>
+              <p><a class="btn btn-lg btn-primary" href="https://dlib.si/static/zofka-kveder/zofka-kveder.html" role="button">Več o projektu</a></p>
+            </div>
+          </div>
+        </div>
+
+         <div class="item">
+             <div class="slide" style="background-image:url(./images/Slider_Cankar_na_maturi26.jpg)"></div>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Cankar na maturi</h1>
+              <div style="text-align: center;">Z mislijo na prihajajočo maturo, smo pripavili učni vir, kjer smo na enem mestu zbrali elektronsko obliko romana Na klancu, historične objave in študije o Cankarjevem življenju in delu ter digitalnega asistenta Vida, ki vam bo odgovaril na vsa vprašanja o Cankarju. Vabljeni k raziskovanju učnega vira!</div><div style="text-align: center;"><br></div>
+              <p><a class="btn btn-lg btn-primary" href="https://dlib.si/static/cankar-na-maturi/cankar-na-maturi.html" role="button">Učni vir Na klancu</a></p>
+            </div>
+          </div>
+        </div>
+
+         <div class="item">
+             <div class="slide" style="background-image:url(./images/Slider_SK.jpg)"></div>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Od rokopisa do besede: Skupaj odkrivamo in razkrivamo Kosovela</h1>
+              <div style="text-align: center;">Ob 100-letnici Kosovelove smrti smo s pomočjo umetne inteligence ter več kot 100 prostovoljk in prostovoljcev transkribirali celotno zbirko digitaliziranih Kosovelovih rokopisov. Ti so tako postali berljivi, iskalni in dostopni.</div><div style="text-align: center;"><br></div>
+              <p><a class="btn btn-lg btn-primary" href="https://www.dlib.si/static/kosovel/kosovel.html" role="button">Več o projektu</a></p>
+            </div>
+          </div>
+        </div>
+
+         <div class="item">
+             <div class="slide" style="background-image:url(./images/Slider_20let_dlib.jpg)"></div>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>29. novembra dLib praznuje rojstni dan - 20 let</h1>
+              <div style="text-align: center;">Portal dLib.si odpira vrata v bogato zakladnico znanja in kulture. V dveh desetletjih je postal nepogrešljiv sopotnik pri učenju, raziskovanju in odkrivanju preteklosti. Vsebine na portalu so tu za vse – za študij, raziskovanje pa tudi za prosti čas. Naprej stopamo v koraku z razvojem novih tehnologij in napovedujemo: poti do znanja bodo še zanimivejše!</div><div style="text-align: center;"><br></div>
+              <p><a class="btn btn-lg btn-primary" href="https://dlib.si/static/20-let-dliba/20-let-dliba.html" role="button">Ogled videa</a></p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <a class="left carousel-control" href="#Body_myCarousel" role="button" data-slide="prev">
+
+          <span><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></span>
+        <span class="sr-only">Previous</span>
+      </a>
+
+
+
+        <a class="right carousel-control" href="#Body_myCarousel" role="button" data-slide="next">
+        <!--<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+         <span> <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
+
+    <div id="Body_exposed" class="ikone exposed-container">
+        <div class="container">
+            <div class="exposed row">
+                <div class="column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+
+                    <a href="http://www.dlib.si/sh/08DD4FB0"><i class="fa fa-book" aria-hidden="true"></i><strong>Knjige </strong></a>
+                </div>
+                <div class="column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                    <a href="/Publications.aspx"><i class="fa fa-newspaper-o" aria-hidden="true"></i><strong>Periodika</strong></a>
+                </div>
+                <div class="column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                    <a href="/manuscripts.aspx"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><strong>Rokopisi</strong></a>
+                </div>
+                <div class="column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                    <a href="/results/?query='source%3d3d+predmeti%40OR%40source%3dartoteka%40OR%40source%3dalbumi%40OR%40source%3dfotografije%40OR%40source%3dplakati%40OR%40source%3drazglednice%40OR%40source%3dfilmi%40OR%40source%3dvedute'&sortDir=ASC&sort=date"><i class="fa fa-picture-o" aria-hidden="true"></i><strong>&nbsp;&nbsp;Slike</strong></a>
+                </div>
+                <div class="column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                    <a href="/results/?query='source%3dnotno+gradivo%40OR%40source%3dkoncertni+sporedi%40OR%40source%3dzvočni+posnetki'&sortDir=ASC&sort=date"><i class="fa fa-music" aria-hidden="true"></i><strong>Glasba</strong></a>
+                </div>
+                <div class="column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                    <a href="/results/?query='source%3dzemljevidi'&sortDir=ASC&sort=date"><i class="fa fa-map-o" aria-hidden="true"></i><strong>Zemljevidi</strong></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- nove zbirke -->
+
+    <div id="Body_collectionsCats" class="exposed-container">
+
+
+
+        <div id="cards">
+
+
+
+                  <div class="box column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                   <a href="/Collections.aspx?cid=4"><div class="blog-entry"><div class="blog-img"><img src="/static/zbirke/zbirka_4_slo.jpg" alt="Naslov"/></div></div> </a>
+                  </div>
+
+
+                  <div class="box column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                   <a href="/Collections.aspx?cid=3"><div class="blog-entry"><div class="blog-img"><img src="/static/zbirke/zbirka_3_slo.jpg" alt="Naslov"/></div></div> </a>
+                  </div>
+
+
+                  <div class="box column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                   <a href="/Collections.aspx?cid=1"><div class="blog-entry"><div class="blog-img"><img src="/static/zbirke/zbirka_1_slo.jpg" alt="Naslov"/></div></div> </a>
+                  </div>
+
+
+                  <div class="box column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                   <a href="/Collections.aspx?cid=5"><div class="blog-entry"><div class="blog-img"><img src="/static/zbirke/zbirka_5_slo.jpg" alt="Naslov"/></div></div> </a>
+                  </div>
+
+
+                  <div class="box column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                   <a href="/Collections.aspx?cid=12"><div class="blog-entry"><div class="blog-img"><img src="/static/zbirke/zbirka_12_slo.jpg" alt="Naslov"/></div></div> </a>
+                  </div>
+
+
+                  <div class="box column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                   <a href="/Collections.aspx?cid=8"><div class="blog-entry"><div class="blog-img"><img src="/static/zbirke/zbirka_8_slo.jpg" alt="Naslov"/></div></div> </a>
+                  </div>
+
+
+                  <div class="box column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                   <a href="/Collections.aspx?cid=11"><div class="blog-entry"><div class="blog-img"><img src="/static/zbirke/zbirka_11_slo.jpg" alt="Naslov"/></div></div> </a>
+                  </div>
+
+
+                  <div class="box column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                   <a href="/Collections.aspx?cid=10"><div class="blog-entry"><div class="blog-img"><img src="/static/zbirke/zbirka_10_slo.jpg" alt="Naslov"/></div></div> </a>
+                  </div>
+
+
+                  <div class="box column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                   <a href="/Collections.aspx?cid=6"><div class="blog-entry"><div class="blog-img"><img src="/static/zbirke/zbirka_6_slo.jpg" alt="Naslov"/></div></div> </a>
+                  </div>
+
+
+                  <div class="box column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                   <a href="/Collections.aspx?cid=2"><div class="blog-entry"><div class="blog-img"><img src="/static/zbirke/zbirka_2_slo.jpg" alt="Naslov"/></div></div> </a>
+                  </div>
+
+
+                  <div class="box column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                   <a href="/Collections.aspx?cid=9"><div class="blog-entry"><div class="blog-img"><img src="/static/zbirke/zbirka_9_slo.jpg" alt="Naslov"/></div></div> </a>
+                  </div>
+
+
+                  <div class="box column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                   <a href="/Collections.aspx?cid=7"><div class="blog-entry"><div class="blog-img"><img src="/static/zbirke/zbirka_7_slo.jpg" alt="Naslov"/></div></div> </a>
+                  </div>
+
+
+     </div>
+
+    </div>
+
+    <!-- nove zbirke -->
+
+    <!-- samo za OOK-je -->
+    <!--
+
+     -->
+    <!-- samo za OOK-je -->
+
+     <div id="Body_news" class="news">
+        <div class="container">
+            <div>
+
+                <div class="news_left">
+                    <div class="header6">Na današnji dan</div>
+                    <div>
+
+                        <div><a href="details/URN:NBN:SI:doc-3FN8VMRH"><img src="/streamdb/URN%3aNBN%3aSI%3adoc-3FN8VMRH" alt="Na današnji dan" class="card_img"/></a></div>
+                        <div class="rowfp"><div class="Naslov2">Ameriška domovina<br /><span style="font-size:13px; font-style: italic;">American home</span></div><div class="Jezik">Jezik: angleški<br />slovenski</div><div class="Vir">Vir: <a href="/results/?&query=%27rele%253d%253ca%2bhref%253d%2522%252fresults%252f%253f%2526query%253d%252527rele%2525253dAmeri%252525c5%252525a1ka%25252bdomovina%252527%2522%253eAmeri%25c5%25a1ka%2bdomovina%253c%252fa%253e%27"><a href="/results/?&query=%27rele%253dAmeri%25c5%25a1ka%2bdomovina%27">Ameriška domovina</a></a></div><div class="Leto">Leto: 01.06.1970</div><div class="Številčenje">Številčenje: letnik 68, <a href="/results/?&query=%27rele%253dAmeri%25c5%25a1ka%2bdomovina%40AND%40date%3d01.06.1970%40AND%40issue%3d107%27">številka 107</a></div>
+                        </div>
+                        <a href="/Todays.aspx" class="news_a  btn btn-lg btn-primary">Več</a>
+                    </div>
+                </div>
+            </div>
+
+           <div>
+                <div class="news_left">
+                    <div class="header6">Novo na dlib.si</div>
+                    <div>
+
+                        <div><a href="details/URN:NBN:SI:snd-RMK0DI5H"><img src="/streamdb/URN%3aNBN%3aSI%3asnd-RMK0DI5H" alt="Zadnje objavljeno" class="card_img" /></a></div>
+                        <div class="rowfp"><div class="Naslov2">Le korajžno</div><div class="Avtorji">Avtorji: <a href="/results/?query='contributor=Logar%2c+Engelbert'">Logar, Engelbert (aranžer, skladatelj, dirigent, zborovodja)</a><br /><a href="/results/?query='contributor=Oktet+Suha'">Oktet Suha (izvajalec)</a></div><div class="Vir">Vir: <a href="/results/?&query=%27rele%253d%253ca%2bhref%253d%2522%252fresults%252f%253f%2526query%253d%252527rele%2525253dzvo%252525c4%2525258dni%25252bposnetki%252527%2522%253ezvo%25c4%258dni%2bposnetki%253c%252fa%253e%27"><a href="/results/?&query=%27rele%253dzvo%25c4%258dni%2bposnetki%27">zvočni posnetki</a></a></div><div class="Jezik">Jezik: slovenski</div><div class="Leto">Leto: 2025</div>
+                        </div>
+                        <a href="/New.aspx" class="news_a btn btn-lg btn-primary">Več</a>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    <div class="exposed-container">
+        <div id="cards2">
+          <div class="box3 column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+              <div class="Title2">NA DANAŠNJI DAN</div>
+              <a href="details/URN:NBN:SI:doc-3FN8VMRH"><img src="/streamdb/URN%3aNBN%3aSI%3adoc-3FN8VMRH" alt="Na današnji dan" class="card_img"/></a>
+              <div class="more">  <a href="/Todays.aspx" class="news_a  btn btn-lg btn-primary">Več</a></div>
+          </div>
+          <div class="box4 column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+              <div class="Naslov2">Ameriška domovina<br /><span style="font-size:13px; font-style: italic;">American home</span></div><div class="Jezik">Jezik: angleški<br />slovenski</div><div class="Vir">Vir: <a href="/results/?&query=%27rele%253d%253ca%2bhref%253d%2522%252fresults%252f%253f%2526query%253d%252527rele%2525253dAmeri%252525c5%252525a1ka%25252bdomovina%252527%2522%253eAmeri%25c5%25a1ka%2bdomovina%253c%252fa%253e%27"><a href="/results/?&query=%27rele%253dAmeri%25c5%25a1ka%2bdomovina%27">Ameriška domovina</a></a></div><div class="Leto">Leto: 01.06.1970</div><div class="Številčenje">Številčenje: letnik 68, <a href="/results/?&query=%27rele%253dAmeri%25c5%25a1ka%2bdomovina%40AND%40date%3d01.06.1970%40AND%40issue%3d107%27">številka 107</a></div>
+
+
+            </div>
+          <div class="box3 column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+              <div class="Title2">NOVO NA DLIB.SI</div>
+             <a href="details/URN:NBN:SI:snd-RMK0DI5H"><img src="/streamdb/URN%3aNBN%3aSI%3asnd-RMK0DI5H" alt="Zadnje objavljeno" class="card_img" /></a>
+              <div class="more">     <a href="/New.aspx" class="news_a  btn btn-lg btn-primary">Več</a></div>
+          </div>
+          <div class="box4 column col-lg-2 col-md-2 col-sm-4 col-xs-6">
+              <div class="Naslov2">Le korajžno</div><div class="Avtorji">Avtorji: <a href="/results/?query='contributor=Logar%2c+Engelbert'">Logar, Engelbert (aranžer, skladatelj, dirigent, zborovodja)</a><br /><a href="/results/?query='contributor=Oktet+Suha'">Oktet Suha (izvajalec)</a></div><div class="Vir">Vir: <a href="/results/?&query=%27rele%253d%253ca%2bhref%253d%2522%252fresults%252f%253f%2526query%253d%252527rele%2525253dzvo%252525c4%2525258dni%25252bposnetki%252527%2522%253ezvo%25c4%258dni%2bposnetki%253c%252fa%253e%27"><a href="/results/?&query=%27rele%253dzvo%25c4%258dni%2bposnetki%27">zvočni posnetki</a></a></div><div class="Jezik">Jezik: slovenski</div><div class="Leto">Leto: 2025</div>
+
+
+            </div>
+        </div>
+     </div>
+    -->
+    <!--
+    <div id="Body_collections">
+    <h4 class="header4">Tematske zbirke</h4>
+    <div id="cards" class="transitions-enabled clearfix">
+
+
+     </div>
+    <h4 class="header4">Publikacije</h4>
+    <div id="cards2" class="transitions-enabled infinite-scroll clearfix">
+
+
+
+
+   </div>
+   </div>
+
+
+   <div id="Body_imgLoad">
+       <img src="/images/6RMhx.gif" alt="load" />
+   </div>
+    -->
+
+
+
+     <script src="/js/wow.min.js"></script>
+    <script src="/js/swiper.min.js"></script>
+    <script src="/js/jquery.countTo.js"></script>
+    <script src="/js/jquery.inview.min.js"></script>
+    <script src="/js/jquery.nav.js"></script>
+  <script src="/js/custom.js"></script>
+
+    </div>
+
+
+
+                <div class="footer">
+    <div class="container">
+
+            <div  class="column col-lg-11 col-md-11 col-sm-11 col-xs-11"  visible="true" style="min-height: 0;  text-align:center">
+                    Vse pravice pridržane © <a href="http://www.nuk.uni-lj.si" target="_blank">2026 Narodna in univerzitetna knjižnica, Turjaška 1, 1000 Ljubljana</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="//www.facebook.com/NarodnaUniverzitetnaKnjiznica/" target="_blank"><i class="fa fa-facebook fa-lg"></i></a> &nbsp;&nbsp;&nbsp;
+                <a href="//twitter.com/knjiznicanuk" target="_blank"><i class="fa fa-twitter fa-lg"></i></a> &nbsp;&nbsp;&nbsp;
+                <a href="//www.instagram.com/knjiznicanuk/" target="_blank"><i class="fa fa-instagram fa-lg"></i></a> &nbsp;&nbsp;&nbsp;
+                <a href="mailto:dlib@nuk.uni-lj.si"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a>
+
+            </div>
+                <div class="column col-lg-1 col-md-1 col-sm-1 col-xs-1" style="text-align:right">
+
+            <i class="fa fa-chevron-up fa-2x" onclick="window.scrollTo(0,0)" onkeypress="window.scrollTo(0,0)" style="cursor:pointer"></i>
+
+            </div>
+
+
+            </div>
+        </div>
+    <input type="hidden" name="as_sfid" value="AAAAAAUPoOCQbZZ-t72O1N2X4tCZnyx5l3TW-E8bZCHFVyRPBO_OETUmlXrrqnK6gTaLqdQdUw0vrczwhfijasR20HwAsJXcsPe12gGWGXrKtbA2eDJ_GHP6IG4Tjq1r0Sa4Zu3wdpGzdBBtvVQ0yNnwH4WSynX8-8CWrS4JuZVzpNT-AQ==" /><input type="hidden" name="as_fid" value="fd4b6c9fc614b6bc3d73e2a4a5a5befd91598719" /></form>
+
+
+<!--<script>(function (d) { var s = d.createElement("script"); s.setAttribute("data-account", "7ytlmMbKCS"); s.setAttribute("src", "https://cdn.userway.org/widget.js"); (d.body || d.head).appendChild(s); })(document)</script><noscript>Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a></noscript>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-90549833-1', 'auto');
+    ga('send', 'pageview');
+
+</script>-->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YLT1FEQZ3R"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-YLT1FEQZ3R');
+</script>
+
+    <!-- Piwik -->
+<script type="text/javascript">
+    (function (window, document, dataLayerName, id) {
+        window[dataLayerName] = window[dataLayerName] || [], window[dataLayerName].push({ start: (new Date).getTime(), event: "stg.start" }); var scripts = document.getElementsByTagName('script')[0], tags = document.createElement('script');
+        function stgCreateCookie(a, b, c) { var d = ""; if (c) { var e = new Date; e.setTime(e.getTime() + 24 * c * 60 * 60 * 1e3), d = "; expires=" + e.toUTCString(); f = "; SameSite=Strict" } document.cookie = a + "=" + b + d + f + "; path=/" }
+        var isStgDebug = (window.location.href.match("stg_debug") || document.cookie.match("stg_debug")) && !window.location.href.match("stg_disable_debug"); stgCreateCookie("stg_debug", isStgDebug ? 1 : "", isStgDebug ? 14 : -1);
+        var qP = []; dataLayerName !== "dataLayer" && qP.push("data_layer_name=" + dataLayerName), isStgDebug && qP.push("stg_debug"); var qPString = qP.length > 0 ? ("?" + qP.join("&")) : "";
+        tags.async = !0, tags.src = "https://dlib.containers.piwik.pro/" + id + ".js" + qPString, scripts.parentNode.insertBefore(tags, scripts);
+        !function (a, n, i) { a[n] = a[n] || {}; for (var c = 0; c < i.length; c++)!function (i) { a[n][i] = a[n][i] || {}, a[n][i].api = a[n][i].api || function () { var a = [].slice.call(arguments, 0); "string" == typeof a[0] && window[dataLayerName].push({ event: n + "." + i + ":" + a[0], parameters: [].slice.call(arguments, 1) }) } }(i[c]) }(window, "ppms", ["tm", "cm"]);
+    })(window, document, 'dataLayer', '35566e07-61e4-4938-b133-3693808d4d28');
+</script>
+<!-- End Piwik Code -->
+
+
+<script>
+    //includeHTML();
+
+window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+        "palette": {
+            "popup": {
+                "background": "rgba(0,0,0,0.75)"
+            },
+            "button": {
+                "background": "transparent",
+                "text": "#ffffff",
+                "border": "#ffffff"
+            }
+        },
+        "position": "top",
+        "static": true,
+        "content": {
+            "message": "Piškotke uporabljamo izključno za zagotavljanje boljše uporabniške izkušnje.",
+            "dismiss": "Razumem",
+            "link": "",
+            "href":""
+        }
+    })});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['?$','$?'], ['\\(','\\)']]}});
+
+</script>
+
+
+</body>
+</html>

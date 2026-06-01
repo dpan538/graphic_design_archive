@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="es" class="av-preloader-active av-preloader-enabled">
+
+<head>
+    <meta name="google-site-verification" content="1P5ssu9DNYEpdw0bA86Rp_UYZ0ujrum03ZL4_opz4ks" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Biblioteca Nacional de la República Argentina, fundada en 1810 por Mariano Moreno.">
+    <meta name="author" content="Biblioteca Nacional Mariano Moreno">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:site" content="@BNMMArgentina">
+    <meta property="twitter:description" content="Biblioteca Nacional de la República Argentina, fundada en 1810 por Mariano Moreno.">
+    <meta property="twitter:image" content="https://www.bn.gov.ar/web/home/home.jpg">
+    <meta property="fb:app_id" content="1323118657783336">
+        <meta property="og:image" content="https://www.bn.gov.ar/web/home/home.jpg">
+    <meta property="og:url" content="https://www.bn.gov.ar">
+    <meta property="og:site_name" content="Biblioteca Nacional Mariano Moreno">
+    <meta property="og:description" content="Biblioteca Nacional de la República Argentina, fundada en 1810 por Mariano Moreno.">
+        <link rel="manifest" href="https://www.bn.gov.ar/manifest.json">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.bn.gov.ar/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.bn.gov.ar/favicon-32x32.png ">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.bn.gov.ar/favicon-16x16.png">
+<link rel="manifest" href="https://www.bn.gov.ar/site.webmanifest">
+<link rel="mask-icon" href="https://www.bn.gov.ar/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+    <title>
+                Inicio - Biblioteca Nacional
+            </title>
+
+                <link rel="stylesheet" href="/css/all.css?id=788ebdb17292f8c6b857">
+
+    <style>
+        .box {
+            cursor: pointer;
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .box:hover .overbox {
+            opacity: 1;
+        }
+
+        .box .overbox {
+            background-color: rgba(0, 107, 255, .39);
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #fff;
+            z-index: 100;
+            -webkit-transition: all 300ms ease-out;
+            -moz-transition: all 300ms ease-out;
+            -o-transition: all 300ms ease-out;
+            -ms-transition: all 300ms ease-out;
+            transition: all 300ms ease-out;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            padding: 10px 10px 80px;
+        }
+
+        .box:hover .title, .box:focus .title {
+            opacity: 1;
+            transform: translateY(0);
+            -webkit-transform: translateY(0);
+        }
+
+        .box .title {
+            font-size: 1.2em;
+            text-transform: uppercase;
+            opacity: 0;
+            transition-delay: .1s;
+            transition-duration: .2s;
+        }
+
+        .box .overtext {
+            -webkit-transition: all 300ms ease-out;
+            -moz-transition: all 300ms ease-out;
+            -o-transition: all 300ms ease-out;
+            -ms-transition: all 300ms ease-out;
+            transition: all 300ms ease-out;
+            transform: translateY(40px);
+            -webkit-transform: translateY(40px);
+        }
+
+        .box:hover .tagline, .box:focus .tagline {
+            opacity: 1;
+            transform: translateX(0);
+            -webkit-transform: translateX(0);
+        }
+
+        .box .tagline {
+            font-size: 15px;
+            opacity: 0;
+            transition-delay: .2s;
+            transition-duration: .2s;
+        }
+
+        .box .overtext {
+            -webkit-transition: all 300ms ease-out;
+            -moz-transition: all 300ms ease-out;
+            -o-transition: all 300ms ease-out;
+            -ms-transition: all 300ms ease-out;
+            transition: all 300ms ease-out;
+            transform: translateY(40px);
+            -webkit-transform: translateY(40px);
+        }
+
+        .jumbotron .jumbotron_bar {
+            bottom: 0;
+        }
+
+        .jumbotron .jumbotron_body {
+            padding: 0;
+        }
+
+        /********************************/
+        /*       Fade Bs-carousel       */
+        /********************************/
+        .fade-carousel {
+            position: relative;
+        }
+
+        .fade-carousel .carousel-inner .item {
+            height: 500px;
+        }
+
+        .fade-carousel .carousel-indicators {
+            top: 477px !important;
+        }
+
+        .fade-carousel .carousel-indicators > li {
+            margin: 0 2px;
+            background-color: #0695d6;
+            border-color: #0e88bf;
+            opacity: .7;
+        }
+
+        .fade-carousel .carousel-indicators > li.active {
+            width: 10px;
+            height: 10px;
+            opacity: 1;
+        }
+
+        .carousel-inner {
+            max-height: 500px !important;
+        }
+
+        .sr-left {
+            display: block;
+            position: absolute;
+            top: 47%;
+            left: 5%;
+            font-size: 20px;
+            padding: 2px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .sr-left:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .sr-right {
+            display: block;
+            position: absolute;
+            top: 47%;
+            right: 5%;
+            font-size: 20px;
+            padding: 2px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .sr-right:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        /********************************/
+        /*          Hero Headers        */
+        /********************************/
+        .subtit {
+            color: #767676;
+            text-shadow: none !important;
+        }
+
+        .tag {
+            color: #f5f5f5;
+            border: 1px solid #0684bd;
+            background-color: #0695d6;
+            padding: 1px 3px;
+            width: 110%;
+            margin-left: -20px;
+            margin-top: 5px;
+            font-size: 12px;
+            display: block;
+        }
+
+        .tit {
+            color: #2d2d2d;
+            font-weight: bold;
+            font-size: 22px;;
+            text-shadow: none !important;
+        }
+
+        .hero {
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            width: 400px !important;
+            border: 1px solid #ccc;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            z-index: 3;
+            color: #666;
+            background-color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+            -webkit-transform: translate3d(-50%, -50%, 0);
+            -moz-transform: translate3d(-50%, -50%, 0);
+            -ms-transform: translate3d(-50%, -50%, 0);
+            -o-transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%, -50%, 0);
+        }
+
+        .hero h1 {
+            font-size: 6em;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+        }
+
+        .fade-carousel .carousel-inner .item .hero {
+            opacity: 0;
+            -webkit-transition: 2s all ease-in-out .1s;
+            -moz-transition: 2s all ease-in-out .1s;
+            -ms-transition: 2s all ease-in-out .1s;
+            -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
+        }
+
+        .fade-carousel .carousel-inner .item.active .hero {
+            opacity: 1;
+            -webkit-transition: 2s all ease-in-out .1s;
+            -moz-transition: 2s all ease-in-out .1s;
+            -ms-transition: 2s all ease-in-out .1s;
+            -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
+        }
+
+        /********************************/
+        /*            Overlay           */
+        /********************************/
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+            background-color: #080d15;
+            opacity: .7;
+            display: none;
+        }
+
+        /********************************/
+        /*          Custom Buttons      */
+        /********************************/
+        .btn.btn-lg {
+            padding: 10px 40px;
+        }
+
+        .btn.btn-hero,
+        .btn.btn-hero:hover,
+        .btn.btn-hero:focus {
+            color: #f5f5f5;
+            background-color: #01ABB3;
+            border-color: #029198;
+            outline: none;
+            margin: 20px auto;
+        }
+
+        /********************************/
+        /*       Slides backgrounds     */
+        /********************************/
+        .fade-carousel .slides .slide-1,
+        .fade-carousel .slides .slide-2,
+        .fade-carousel .slides .slide-3,
+        .fade-carousel .slides .slide-4,
+        .fade-carousel .slides .slide-5,
+        .fade-carousel .slides .slide-6,
+        .fade-carousel .slides .slide-7,
+        .fade-carousel .slides .slide-8 {
+            height: 500px;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        /********************************/
+        /*          Media Queries       */
+        /********************************/
+        @media (max-width: 1368px) {
+            .fade-carousel .carousel-inner .item {
+                height: 400px;
+            }
+
+            .fade-carousel .slides .slide-1,
+            .fade-carousel .slides .slide-2,
+            .fade-carousel .slides .slide-3,
+            .fade-carousel .slides .slide-4,
+            .fade-carousel .slides .slide-5,
+            .fade-carousel .slides .slide-6,
+            .fade-carousel .slides .slide-7,
+            .fade-carousel .slides .slide-8 {
+                height: 400px;
+                background-size: cover;
+                background-position: center center;
+            }
+
+            .carousel-inner {
+                max-height: 400px !important;
+            }
+        }
+
+        @media  screen and (min-width: 980px) {
+            .hero {
+                width: 980px;
+            }
+        }
+
+        @media  screen and (max-width: 640px) {
+            .hero h1 {
+                font-size: 4em;
+            }
+
+            .fade-carousel .carousel-indicators {
+                top: 233px !important;
+            }
+
+            .fade-carousel .carousel-inner .item {
+                height: 256px;
+            }
+
+            .fade-carousel .slides .slide-1,
+            .fade-carousel .slides .slide-2,
+            .fade-carousel .slides .slide-3,
+            .fade-carousel .slides .slide-4,
+            .fade-carousel .slides .slide-5,
+            .fade-carousel .slides .slide-6,
+            .fade-carousel .slides .slide-7,
+            .fade-carousel .slides .slide-8 {
+                height: 256px;
+            }
+
+            .carousel-inner {
+                max-height: 256px !important;
+            }
+
+            .hero {
+                width: 100% !important;
+                position: relative;
+                top: 0;
+                left: 0;
+                margin: auto;
+                padding: 0;
+                transform: none;
+            }
+        }
+
+        .container-full .row section {
+            padding: 0 !important;
+        }
+
+        .jumbotron .jumbotron_body a:not(.btn):not(.panel):hover {
+            opacity: inherit !important;
+        }
+
+
+    </style>
+
+    <style>
+        h2 a {
+            color: #444;
+            font-weight: 600;
+        }
+
+        #searchSelect {
+            max-width: 100px;
+            font-size: 14px;
+            padding: 4px;
+        }
+
+        .img-services {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <div class="av-siteloader-wrap av-transition-enabled av-transition-with-logo">
+    <div class="av-siteloader-inner">
+        <div class="av-siteloader-cell">
+            <span class="fa fa-spinner fa-spin fa-4x" style="color:#0695d6"></span>
+        </div>
+    </div>
+</div>            <div class=" main-container">
+                        <header>
+    <!-- Mobile Navbar -->
+    <nav class="navbar navbar-top navbar-default" id="nav-top">
+        <div class="container">
+            <div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#second-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="https://www.bn.gov.ar" class="navbar-brand d-flex" style="padding:0px 15px; align-items: center;">
+                        <img style="max-height: 62px!important; max-width: 550px; height: auto !important; padding-left: 15px;" class="img-responsive logo-bn hidden-xs hidden-sm" alt="Biblioteca Nacional" title="Biblioteca Nacional"
+                            src="https://www.bn.gov.ar/web/header_bnmm-1.png">
+                        <img style="height:62px!important" class="img-responsive logo-bn hidden-md hidden-lg hidden-xl" alt="Biblioteca Nacional" title="Biblioteca Nacional"
+                            src="https://www.bn.gov.ar/web/logo-bn.svg">
+                    </a>
+
+
+
+
+
+                </div>
+
+                <div class="collapse navbar-collapse" id="main-navbar-collapse">
+                                        <ul class="nav navbar-nav navbar-right">
+    <li>
+        <a href="https://www.bn.gov.ar/contacto" title="Contacto">
+            <span class="fa fa-envelope"></span>
+        </a>
+    </li>
+    <li>
+        <a href="https://www.bn.gov.ar/como-llego" title="Cómo llegar">
+            <span class="fa fa-map-marker"></span>
+        </a>
+    </li>
+    <li>
+        <a href="https://www.bn.gov.ar/horarios" title="Horarios">
+            <span class="fa fa-clock-o fa-fw"></span>
+        </a>
+    </li>
+    <li class="aleph"></li>
+    <li>
+        <a class="recorrido-virtual" href="https://www.bn.gov.ar/recorrido/recorridonuevo.html" target="_blank"
+            rel="noopener" title="Tour virtual">
+            <span class="icon-degrees"></span>
+        </a>
+    </li>
+    <li>
+        <a href="https://www.bn.gov.ar/micrositios/multimedia/radio" title="Radio">
+            <span class="fa fa-headphones"></span>
+        </a>
+    </li>
+    <li class="aleph"></li>
+    <li>
+    <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/BNMMArgentina/" title="Facebook">
+        <span class="fa fa-facebook"></span>
+    </a>
+</li>
+<li>
+    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/BNMMArgentina" title="Twitter">
+        <span class="fa fa-twitter"></span>
+    </a>
+</li>
+<li>
+    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/biblioteca_nacional_argentina/" title="Instagram">
+        <span class="fa fa-instagram"></span>
+    </a>
+</li>
+<li>
+    <a rel="noopener noreferrer" href="https://www.youtube.com/user/bibnal" title="YouTube">
+        <span class="fa fa-youtube-play"></span>
+    </a>
+</li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.bn.gov.ar/audiovisuales/podcasts" title="Spotify">
+            <span class="fa fa-spotify"></span>
+        </a>
+    </li>
+
+    </ul>
+<style>
+    #nav-top {
+        z-index: 10;
+    }
+
+    .has-notification:after {
+        position: absolute;
+        right: 5px;
+        top: 18px;
+        content: '';
+        padding: 5px;
+        border-radius: 999px;
+        background: #ef4d3d;
+    }
+
+    .notifications-arrow {
+        background: #f1ebeb;
+        width: 14px;
+        position: absolute;
+        height: 10px;
+        top: -4px;
+        right: 41px;
+        transform: rotate(45deg);
+    }
+
+    .notifications-menu {
+        position: absolute;
+        z-index: 10000000000;
+        top: 60px;
+        right: -25px;
+        background: #f1ebeb;
+        color: #0695d6;
+        width: 400px;
+        /* border-radius: 10px; */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        transition: transform, width, height;
+        -webkit-transition-duration: 0.25s;
+        -moz-transition-duration: 0.25s;
+        -ms-transition-duration: 0.25s;
+        -o-transition-duration: 0.25s;
+        transition-duration: 0.25s;
+    }
+
+    .notifications-message {
+        font-weight: bold;
+        background: white;
+        font-size: 16px;
+        border-left: #0695d6 solid 5px;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 2px;
+        line-height: 1.5;
+    }
+
+    :not(.notifications-button),
+    .notifications-button:not(span),
+    .notifications-button:not(i) {}
+</style>
+
+                </div>
+
+                <div class="hidden-lg hidden-md">
+                    <div class="collapse navbar-collapse" id="second-navbar-collapse">
+                        <ul class="nav navbar-nav navbar-left">
+
+                            <li class="dropdown ">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Información General <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li><a href="https://www.bn.gov.ar/biblioteca/acerca">Acerca de la BNMM</a></li>
+        <li><a href="https://www.bn.gov.ar/biblioteca/condiciones">Condiciones de ingreso</a></li>
+
+        <li><a href="https://www.bn.gov.ar/biblioteca/salas">Salas</a></li>
+
+
+
+
+
+        <li><a href="https://www.bn.gov.ar/biblioteca/ismn">Agencia ISMN</a></li>
+
+        <li><a href="https://campusvirtual.bn.gob.ar" title="Campus Virtual">Campus virtual</a></li>
+    </ul>
+</li>
+
+<li> <a href="https://catalogo.bn.gov.ar" title="Catálogo de la Biblioteca Nacional Mariano Moreno">Catálogo</a> </li>
+
+<li> <a href="https://www.bn.gov.ar/culturalia" class="" title="Culturalia">Culturalia</a>
+</li>
+
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Colecciones<span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li> <a href="https://catalogo.bn.gov.ar/F/?func=find-m" title="Objetos digitales en el catálogo">Objetos digitales en el catálogo</a> </li>
+        <li><a href="https://www.bn.gov.ar/editorial" title="Ediciones de la BNMM">Ediciones de la BNMM</a></li>
+        <li><a href="//exposiciones.bn.gov.ar" title="Muestras digitales">Exposiciones digitales</a></li>
+        <li><a href="https://www.bn.gov.ar/colecciones-digitales/cooperacion-institucional" title="Cooperación institucional">Cooperación institucional</a></li>
+        <li><a href="https://www.bn.gov.ar/micrositios/multimedia" title="Producciones audiovisuales">Producciones audiovisuales</a></li>
+    </ul>
+</li>
+
+<li><a href="https://www.bn.gov.ar/bibliografia-nacional-argentina" title="Bibliografía Nacional">Bibliografía Nacional</a>
+</li>
+<li><a href="https://www.bn.gov.ar/editorial">Editorial</a></li>
+<li><a href="https://www.bn.gov.ar/escuela" class="">Escuela</a></li>
+<li><a href="https://www.bn.gov.ar/transparencia" class="">Transparencia</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <!-- Desktop Navbar -->
+    <nav class="navbar navbar-top navbar-default navbar-inverse hidden-xs hidden-sm">
+        <div class="container">
+            <div>
+                <div class="navbar-header">
+                    <button id="button-second-menu" type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#second-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+                <div class="collapse navbar-collapse m-auto">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="https://www.bn.gov.ar" class="home-icon"><span class="fa fa-home" style="font-size: 24px;"></span></a></li>
+                        <li class="dropdown ">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Información General <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li><a href="https://www.bn.gov.ar/biblioteca/acerca">Acerca de la BNMM</a></li>
+        <li><a href="https://www.bn.gov.ar/biblioteca/condiciones">Condiciones de ingreso</a></li>
+
+        <li><a href="https://www.bn.gov.ar/biblioteca/salas">Salas</a></li>
+
+
+
+
+
+        <li><a href="https://www.bn.gov.ar/biblioteca/ismn">Agencia ISMN</a></li>
+
+        <li><a href="https://campusvirtual.bn.gob.ar" title="Campus Virtual">Campus virtual</a></li>
+    </ul>
+</li>
+
+<li> <a href="https://catalogo.bn.gov.ar" title="Catálogo de la Biblioteca Nacional Mariano Moreno">Catálogo</a> </li>
+
+<li> <a href="https://www.bn.gov.ar/culturalia" class="" title="Culturalia">Culturalia</a>
+</li>
+
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Colecciones<span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li> <a href="https://catalogo.bn.gov.ar/F/?func=find-m" title="Objetos digitales en el catálogo">Objetos digitales en el catálogo</a> </li>
+        <li><a href="https://www.bn.gov.ar/editorial" title="Ediciones de la BNMM">Ediciones de la BNMM</a></li>
+        <li><a href="//exposiciones.bn.gov.ar" title="Muestras digitales">Exposiciones digitales</a></li>
+        <li><a href="https://www.bn.gov.ar/colecciones-digitales/cooperacion-institucional" title="Cooperación institucional">Cooperación institucional</a></li>
+        <li><a href="https://www.bn.gov.ar/micrositios/multimedia" title="Producciones audiovisuales">Producciones audiovisuales</a></li>
+    </ul>
+</li>
+
+<li><a href="https://www.bn.gov.ar/bibliografia-nacional-argentina" title="Bibliografía Nacional">Bibliografía Nacional</a>
+</li>
+<li><a href="https://www.bn.gov.ar/editorial">Editorial</a></li>
+<li><a href="https://www.bn.gov.ar/escuela" class="">Escuela</a></li>
+<li><a href="https://www.bn.gov.ar/transparencia" class="">Transparencia</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>                            <section class="jumbotron">
+        <div class="jumbotron_body" >
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="search-div">
+                        <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000"
+                             id="bs-carousel">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item slides active">
+                                    <a href="https://www.bn.gov.ar/noticias/31-de-mayo-de-1852-nace-francisco-p-moreno">
+                                        <div class="slide-1"
+                                             style="background-image: url('https://www.bn.gov.ar/images/original/1780098256.jpg');"></div>
+                                    </a>
+                                    <div class="jumbotron_bar">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h5>31 de mayo de 1852: nace Francisco P. Moreno  </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item slides">
+                                    <a href="https://www.bn.gov.ar/noticias/talleres-para-chicos-y-chicas">
+                                        <div class="slide-1"
+                                             style="background-image: url('https://www.bn.gov.ar/images/original/1776347927.jpg');"></div>
+                                    </a>
+                                    <div class="jumbotron_bar">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h5>Talleres para chicos y chicas </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item slides">
+                                    <a href="https://www.bn.gov.ar/agenda-cultural/tecnocracia-monitor-triunfo">
+                                        <div class="slide-2"
+                                             style="background-image: url('https://www.bn.gov.ar/images/original/1779377030.jpg');"></div>
+                                    </a>
+                                    <div class="jumbotron_bar">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h5>Tecnocracia, monitor, triunfo </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item slides">
+                                    <a href="https://www.bn.gov.ar/agenda-cultural/ciclopes-la-manzana-en-el-gusano">
+                                        <div class="slide-2"
+                                             style="background-image: url('https://www.bn.gov.ar/images/original/1779111390.jpg');"></div>
+                                    </a>
+                                    <div class="jumbotron_bar">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h5>Cíclopes: La manzana en el gusano </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a data-target="#bs-carousel" class="carousel-control-prev" href="#" role="button"
+                                   data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-left"><i class="icon glyphicon glyphicon-chevron-left"
+                                                             aria-hidden="true"></i></span>
+                                </a>
+                                <a data-target="#bs-carousel" class="carousel-control-next" href="#" role="button"
+                                   data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-right"><i class="icon glyphicon glyphicon-chevron-right"
+                                                              aria-hidden="true"></i></span>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+            <main id="content" class="container">
+                    <div class="row">
+        <div class="col-md-9">
+            <div class="text-center btn-propuestas" style="position:relative">
+                <form id="search-form" class="form-inline" action="https://www.bn.gov.ar/search" method="GET">
+                    <div>
+                        <div class="form-group" id="edit-basic">
+                            <div class="input-group input-group-lg">
+                                <input placeholder="Buscar..."
+                                       class="form-control form-text" title="Buscar..."
+                                       type="text" id="edit-keys" name="query" value="" size="80"
+                                       maxlength="255">
+                                <span class="input-group-btn">
+                                                <select name="type" class="btn btn-primary" id="searchSelect"
+                                                        title="Seleccionar donde buscar">
+                                                    <option value="catalogo" selected="">Catálogo</option>
+                                                    <option value="web" >Web</option>
+                                                </select>
+                                                <button type="submit" class="btn btn-primary">
+                                                    <span class="icon glyphicon glyphicon-search"
+                                                          aria-hidden="true"></span>
+                                                </button>
+                                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div style="position: relative;display: grid;grid-template-columns: 1fr auto;align-items: center;">
+                <h5 class="text-gray">
+                    AGENDA
+                </h5>
+                <a class="" href="https://www.bn.gov.ar/agenda-cultural" target="_blank">VER MÁS</a>
+            </div>
+            <hr class="m-y-1">
+            <div class="row panels-row">
+                                                        <div class="col-xs-12 col-sm-6  col-md-4">
+    <a href="https://www.bn.gov.ar/agenda-cultural/tecnocracia-monitor-triunfo"
+       class="small-height panel panel-default d-flex direction-column ">
+        <div class="panel-heading" style="background-image:url(https://www.bn.gov.ar/images/large/1779377030.jpg);"></div>
+        <header class="panel-body flex-grow">
+                            <span class="label bg-events">BN | Eventos</span>
+                        <h3>Tecnocracia, monitor, triunfo</h3>
+                    </header>
+            </a>
+</div>
+                                                        <div class="col-xs-12 col-sm-6  col-md-4">
+    <a href="https://www.bn.gov.ar/agenda-cultural/ciclopes-la-manzana-en-el-gusano"
+       class="small-height panel panel-default d-flex direction-column ">
+        <div class="panel-heading" style="background-image:url(https://www.bn.gov.ar/images/large/1779111390.jpg);"></div>
+        <header class="panel-body flex-grow">
+                            <span class="label bg-events">BN | Ciclos</span>
+                        <h3>Cíclopes: La manzana en el gusano</h3>
+                    </header>
+            </a>
+</div>
+                                                        <div class="col-xs-12 col-sm-6  col-md-4">
+    <a href="https://www.bn.gov.ar/agenda-cultural/y-wladfa-colonizacion-galesa-en-argentina"
+       class="small-height panel panel-default d-flex direction-column ">
+        <div class="panel-heading" style="background-image:url(https://www.bn.gov.ar/images/large/1778696018.jpg);"></div>
+        <header class="panel-body flex-grow">
+                            <span class="label bg-events">BN | Exposiciones</span>
+                        <h3>Y Wladfa. Colonización galesa en Argentina</h3>
+                    </header>
+            </a>
+</div>
+                                                                        </div>
+
+            <!-- Novedades -->
+            <div style="position: relative;display: grid;grid-template-columns: 1fr auto;align-items: center;">
+                <h5 class="text-gray">
+                    NOTICIAS
+                </h5>
+                <a class="" href="https://www.bn.gov.ar/noticias" target="_blank">VER MÁS</a>
+            </div>
+            <hr class="m-y-1">
+
+            <div class="row panels-row">
+                                                        <div class="col-xs-12 col-sm-6 col-md-4">
+    <a class="panel small-height panel-default panel-md" href="https://www.bn.gov.ar/noticias/31-de-mayo-de-1852-nace-francisco-p-moreno">
+        <div class="panel-heading"
+             style="background-image: url(https://www.bn.gov.ar/images/large/1780098256.jpg);"></div>
+        <div class="panel-body">
+                        <h3 class="newsflash-title  noticiashome">
+                31 de mayo de 1852: nace Francisco P. Moreno
+            </h3>
+        </div>
+    </a>
+</div>
+                                                        <div class="col-xs-12 col-sm-6 col-md-4">
+    <a class="panel small-height panel-default panel-md" href="https://www.bn.gov.ar/noticias/talleres-para-chicos-y-chicas">
+        <div class="panel-heading"
+             style="background-image: url(https://www.bn.gov.ar/images/large/1776347927.jpg);"></div>
+        <div class="panel-body">
+                        <h3 class="newsflash-title  noticiashome">
+                Talleres para chicos y chicas
+            </h3>
+        </div>
+    </a>
+</div>
+                                                        <div class="col-xs-12 col-sm-6 col-md-4">
+    <a class="panel small-height panel-default panel-md" href="https://www.bn.gov.ar/noticias/convocatoria-ii-encuentro-sobre-servicios-de-referencia-y-acceso-a-la-informacion">
+        <div class="panel-heading"
+             style="background-image: url(https://www.bn.gov.ar/images/large/1778079082.jpg);"></div>
+        <div class="panel-body">
+                        <h3 class="newsflash-title  noticiashome">
+                Convocatoria <em>II Encuentro sobre Servicios de Referencia y Acceso a la Información</em>
+            </h3>
+        </div>
+    </a>
+</div>
+                                                                        </div>
+            <!-- Fin Novedades -->
+
+            <!-- <div style="position: relative;display: grid;grid-template-columns: 1fr auto;align-items: center;">
+                <h5 class="text-gray">
+                    MUESTRAS DIGITALES
+                </h5>
+            </div>
+            <hr class="m-y-1">
+
+            <div class="row panels-row">
+                                                        <div class="col-xs-12 col-sm-6 col-md-4">
+    <a class="panel small-height panel-default panel-md" href="https://exposiciones.bn.gov.ar/a-todo-patoruzu/">
+        <div class="panel-heading"
+             style="background-image: url(https://exposiciones.bn.gov.ar/wp-content/uploads/2019/03/x1536677728.jpg.pagespeed.ic_.6XlZckRRFM.jpg);"></div>
+        <div class="panel-body">
+                        <h3 class="newsflash-title  noticiashome">
+                A todo Patoruzú
+            </h3>
+        </div>
+    </a>
+</div>
+                                                        <div class="col-xs-12 col-sm-6 col-md-4">
+    <a class="panel small-height panel-default panel-md" href="https://exposiciones.bn.gov.ar/expo2/">
+        <div class="panel-heading"
+             style="background-image: url(https://exposiciones.bn.gov.ar/wp-content/uploads/2019/08/1556125423.jpg);"></div>
+        <div class="panel-body">
+                        <h3 class="newsflash-title  noticiashome">
+                La experiencia cubana
+            </h3>
+        </div>
+    </a>
+</div>
+                                                        <div class="col-xs-12 col-sm-6 col-md-4">
+    <a class="panel small-height panel-default panel-md" href="https://exposiciones.bn.gov.ar/emancipadxs/">
+        <div class="panel-heading"
+             style="background-image: url(https://exposiciones.bn.gov.ar/emancipadxs/wp-content/uploads/2020/01/fondo-emancipadxs.jpg);"></div>
+        <div class="panel-body">
+                        <h3 class="newsflash-title  noticiashome">
+                Emancipadxs
+            </h3>
+        </div>
+    </a>
+</div>
+                            </div> -->
+
+            <!-- Publicaciones digitales -->
+
+            <!-- <div style="position: relative;display: grid;grid-template-columns: 1fr auto;align-items: center;">
+                <h5 class="text-gray">
+                    COLECCIONES DIGITALES
+                </h5>
+                <a class="" href="https://catalogo.bn.gov.ar/F/?func=find-m" target="_blank">VER MÁS</a>
+            </div>
+            <hr class="m-y-1">
+
+            <div class="row panels-row m-b-4">
+                                    <div class="col-xs-12 col-sm-6  col-md-4">
+    <a href="https://catalogo.bn.gov.ar/F/?func=direct&amp;doc_number=001315450&amp;local_base=GENER"
+       class="small-height panel panel-default d-flex direction-column">
+        <div class="panel-heading"
+             style="background-image:url(https://www.bn.gov.ar/images/large/1699036290683365.jpg);"></div>
+        <header class="panel-body flex-grow">
+            <span class="label bg-events">Archivos</span>
+            <h3>Folleto &quot;Cómo se preparan los periódicos de empresa&quot;, elaborado por la Comisión de Prensa del Partido Comunista Argentino (1959)</h3>
+        </header>
+    </a>
+</div>
+                                    <div class="col-xs-12 col-sm-6  col-md-4">
+    <a href="https://catalogo.bn.gov.ar/F/?func=direct&amp;doc_number=000285148&amp;local_base=GENER"
+       class="small-height panel panel-default d-flex direction-column">
+        <div class="panel-heading"
+             style="background-image:url(https://www.bn.gov.ar/images/large/1705417384446680.jpg);"></div>
+        <header class="panel-body flex-grow">
+            <span class="label bg-events">Manuscritos</span>
+            <h3>Campagne et souvenirs d&#039; Espagne (1823)</h3>
+        </header>
+    </a>
+</div>
+                                    <div class="col-xs-12 col-sm-6  col-md-4">
+    <a href="https://catalogo.bn.gov.ar/F/?func=direct&amp;doc_number=000617958&amp;local_base=GENER"
+       class="small-height panel panel-default d-flex direction-column">
+        <div class="panel-heading"
+             style="background-image:url(https://www.bn.gov.ar/images/large/1698954617358786.jpg);"></div>
+        <header class="panel-body flex-grow">
+            <span class="label bg-events">Mapas</span>
+            <h3>Mapa de la República Argentina preparado para el Consejo Nacional de Educación por el Instituto Geográfico Militar (1934)</h3>
+        </header>
+    </a>
+</div>
+                                    <div class="col-xs-12 col-sm-6  col-md-4">
+    <a href="https://catalogo.bn.gov.ar/F/?func=direct&amp;doc_number=001467997&amp;local_base=GENER"
+       class="small-height panel panel-default d-flex direction-column">
+        <div class="panel-heading"
+             style="background-image:url(https://www.bn.gov.ar/images/large/1698954488706088.jpg);"></div>
+        <header class="panel-body flex-grow">
+            <span class="label bg-events">Archivos</span>
+            <h3>Fotografía de obreros de FIAT Córdoba en conflicto durante la ocupación de la fábrica (enero de 1971)</h3>
+        </header>
+    </a>
+</div>
+                                    <div class="col-xs-12 col-sm-6  col-md-4">
+    <a href="https://catalogo.bn.gov.ar/F/?func=direct&amp;doc_number=000010475&amp;local_base=GENER"
+       class="small-height panel panel-default d-flex direction-column">
+        <div class="panel-heading"
+             style="background-image:url(https://www.bn.gov.ar/images/large/1705417323156390.jpg);"></div>
+        <header class="panel-body flex-grow">
+            <span class="label bg-events">Incunables</span>
+            <h3>Fragmento de la Biblia de Gutenberg</h3>
+        </header>
+    </a>
+</div>
+                                    <div class="col-xs-12 col-sm-6  col-md-4">
+    <a href="https://catalogo.bn.gov.ar/F/?func=direct&amp;doc_number=001351334&amp;local_base=GENER"
+       class="small-height panel panel-default d-flex direction-column">
+        <div class="panel-heading"
+             style="background-image:url(https://www.bn.gov.ar/images/large/1698954774968371.jpg);"></div>
+        <header class="panel-body flex-grow">
+            <span class="label bg-events">Fotografías</span>
+            <h3>Dardo Cúneo, de chico, en el Jardín Zoológico de Buenos Aires (c. 1920)</h3>
+        </header>
+    </a>
+</div>
+                            </div> -->
+
+            <!-- Fin Publicaciones digitales -->
+
+
+        </div>
+        <!-- Sidebar -->
+        <div class="col-md-3">
+            <div class="panel">
+                <div class="panel-body">
+                    <section class="content-format" style="padding-top:32px; padding-bottom: 0px">
+                        <div class="row panels-row services  ">
+                                                                    <style>
+    .service-home {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 400 !important;
+        font-size: 30px;
+        background-size: cover;
+        border-radius: 7px;
+    }
+
+
+    /*.overlay {*/
+    /*    opacity: 0.3;*/
+    /*}*/
+
+    .d-block {
+        display: block;
+    }
+
+    .relative {
+        position: relative;
+    }
+
+    .panel-heading h4.service-home-title {
+        font-weight: 400;
+        color: white;
+        z-index: 1000;
+        font-size: 20px;
+        letter-spacing: 0.5px;
+        text-align: center;
+    }
+    .xs-height{
+        min-height: 100px !important;
+    }
+    .b-r-7{
+        border-radius: 7px;
+    }
+</style>
+
+<div class="col-xs-12 col-sm-6 col-md-12">
+    <a class="panel  xs-height panel-default panel-md b-r-7" href="https://www.bn.gov.ar/biblioteca/servicios"
+    target="_self">
+        <div class="panel-heading service-home relative xs-height service_button_back_1">
+
+            <h4 class="service-home-title">
+                Servicios
+            </h4>
+        </div>
+    </a>
+</div>
+                                                                    <style>
+    .service-home {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 400 !important;
+        font-size: 30px;
+        background-size: cover;
+        border-radius: 7px;
+    }
+
+
+    /*.overlay {*/
+    /*    opacity: 0.3;*/
+    /*}*/
+
+    .d-block {
+        display: block;
+    }
+
+    .relative {
+        position: relative;
+    }
+
+    .panel-heading h4.service-home-title {
+        font-weight: 400;
+        color: white;
+        z-index: 1000;
+        font-size: 20px;
+        letter-spacing: 0.5px;
+        text-align: center;
+    }
+    .xs-height{
+        min-height: 100px !important;
+    }
+    .b-r-7{
+        border-radius: 7px;
+    }
+</style>
+
+<div class="col-xs-12 col-sm-6 col-md-12">
+    <a class="panel  xs-height panel-default panel-md b-r-7" href="https://www.bn.gov.ar/bibliografia-nacional-argentina"
+    target="_self">
+        <div class="panel-heading service-home relative xs-height service_button_back_2">
+
+            <h4 class="service-home-title">
+                Bibliografía Nacional Argentina
+            </h4>
+        </div>
+    </a>
+</div>
+                                                                    <style>
+    .service-home {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 400 !important;
+        font-size: 30px;
+        background-size: cover;
+        border-radius: 7px;
+    }
+
+
+    /*.overlay {*/
+    /*    opacity: 0.3;*/
+    /*}*/
+
+    .d-block {
+        display: block;
+    }
+
+    .relative {
+        position: relative;
+    }
+
+    .panel-heading h4.service-home-title {
+        font-weight: 400;
+        color: white;
+        z-index: 1000;
+        font-size: 20px;
+        letter-spacing: 0.5px;
+        text-align: center;
+    }
+    .xs-height{
+        min-height: 100px !important;
+    }
+    .b-r-7{
+        border-radius: 7px;
+    }
+</style>
+
+<div class="col-xs-12 col-sm-6 col-md-12">
+    <a class="panel  xs-height panel-default panel-md b-r-7" href="https://www.bn.gov.ar/bibliotecaspublicas"
+    target="_self">
+        <div class="panel-heading service-home relative xs-height service_button_back_3">
+
+            <h4 class="service-home-title">
+                Sistema Nacional<br>de Bibliotecas Públicas
+            </h4>
+        </div>
+    </a>
+</div>
+                                                                    <style>
+    .service-home {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 400 !important;
+        font-size: 30px;
+        background-size: cover;
+        border-radius: 7px;
+    }
+
+
+    /*.overlay {*/
+    /*    opacity: 0.3;*/
+    /*}*/
+
+    .d-block {
+        display: block;
+    }
+
+    .relative {
+        position: relative;
+    }
+
+    .panel-heading h4.service-home-title {
+        font-weight: 400;
+        color: white;
+        z-index: 1000;
+        font-size: 20px;
+        letter-spacing: 0.5px;
+        text-align: center;
+    }
+    .xs-height{
+        min-height: 100px !important;
+    }
+    .b-r-7{
+        border-radius: 7px;
+    }
+</style>
+
+<div class="col-xs-12 col-sm-6 col-md-12">
+    <a class="panel  xs-height panel-default panel-md b-r-7" href="https://www.bn.gov.ar/biblioteca/bibliotecarios"
+    target="_self">
+        <div class="panel-heading service-home relative xs-height service_button_back_4">
+
+            <h4 class="service-home-title">
+                Recursos para<br>bibliotecarios
+            </h4>
+        </div>
+    </a>
+</div>
+                                                                    <style>
+    .service-home {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 400 !important;
+        font-size: 30px;
+        background-size: cover;
+        border-radius: 7px;
+    }
+
+
+    /*.overlay {*/
+    /*    opacity: 0.3;*/
+    /*}*/
+
+    .d-block {
+        display: block;
+    }
+
+    .relative {
+        position: relative;
+    }
+
+    .panel-heading h4.service-home-title {
+        font-weight: 400;
+        color: white;
+        z-index: 1000;
+        font-size: 20px;
+        letter-spacing: 0.5px;
+        text-align: center;
+    }
+    .xs-height{
+        min-height: 100px !important;
+    }
+    .b-r-7{
+        border-radius: 7px;
+    }
+</style>
+
+<div class="col-xs-12 col-sm-6 col-md-12">
+    <a class="panel  xs-height panel-default panel-md b-r-7" href="https://www.bn.gov.ar/donaciones"
+    target="_self">
+        <div class="panel-heading service-home relative xs-height service_button_back_5">
+
+            <h4 class="service-home-title">
+                Donaciones
+            </h4>
+        </div>
+    </a>
+</div>
+                                                                    <style>
+    .service-home {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 400 !important;
+        font-size: 30px;
+        background-size: cover;
+        border-radius: 7px;
+    }
+
+
+    /*.overlay {*/
+    /*    opacity: 0.3;*/
+    /*}*/
+
+    .d-block {
+        display: block;
+    }
+
+    .relative {
+        position: relative;
+    }
+
+    .panel-heading h4.service-home-title {
+        font-weight: 400;
+        color: white;
+        z-index: 1000;
+        font-size: 20px;
+        letter-spacing: 0.5px;
+        text-align: center;
+    }
+    .xs-height{
+        min-height: 100px !important;
+    }
+    .b-r-7{
+        border-radius: 7px;
+    }
+</style>
+
+<div class="col-xs-12 col-sm-6 col-md-12">
+    <a class="panel  xs-height panel-default panel-md b-r-7" href="https://www.bn.gov.ar/culturalia/visitas-guiadas/inscripcion"
+    target="_self">
+        <div class="panel-heading service-home relative xs-height service_button_back_6">
+
+            <h4 class="service-home-title">
+                Visitas<br>guiadas
+            </h4>
+        </div>
+    </a>
+</div>
+                                                                    <style>
+    .service-home {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 400 !important;
+        font-size: 30px;
+        background-size: cover;
+        border-radius: 7px;
+    }
+
+
+    /*.overlay {*/
+    /*    opacity: 0.3;*/
+    /*}*/
+
+    .d-block {
+        display: block;
+    }
+
+    .relative {
+        position: relative;
+    }
+
+    .panel-heading h4.service-home-title {
+        font-weight: 400;
+        color: white;
+        z-index: 1000;
+        font-size: 20px;
+        letter-spacing: 0.5px;
+        text-align: center;
+    }
+    .xs-height{
+        min-height: 100px !important;
+    }
+    .b-r-7{
+        border-radius: 7px;
+    }
+</style>
+
+<div class="col-xs-12 col-sm-6 col-md-12">
+    <a class="panel  xs-height panel-default panel-md b-r-7" href="https://www.bn.gov.ar/preguntas-frecuentes"
+    target="_self">
+        <div class="panel-heading service-home relative xs-height service_button_back_7">
+
+            <h4 class="service-home-title">
+                Preguntas frecuentes
+            </h4>
+        </div>
+    </a>
+</div>
+                                                        </div>
+
+
+
+                        <div class="calendar">
+
+                                                        <div class="clearfix"></div>
+
+
+                            <div id="date-popover" class="popover top"
+                                 style="cursor: pointer; display: block; margin-left: 33%; margin-top: -50px; width: 175px;">
+                                <div class="arrow"></div>
+                                <h3 class="popover-title" style="display: none;"></h3>
+
+                                <div id="date-popover-content" class="popovser-content"></div>
+                            </div>
+
+
+
+
+                        </div>
+
+                        <!-- <h4 class="m-t-3 margin-bottom text-gray text-uppercase">Info General</h4>
+                        <hr>
+                        <ul class="list-group">
+                            <li class="list-group-item"><a href="https://www.bn.gov.ar/biblioteca/salas">Sala de Lectura y
+                                    Colecciones</a></li>
+                            <li class="list-group-item"><a href="https://www.bn.gov.ar/biblioteca/servicios">Servicios</a></li>
+                            <li class="list-group-item"><a href="https://www.bn.gov.ar/acerca-del-sitio">Acerca de la BNMM</a></li>
+                        </ul> -->
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- Fin Sidebar -->
+    </div>
+
+    <!-- Hoy en la BN -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Fin Hoy en la BN -->
+
+            </main> <!-- /container -->
+                        <footer class="main-footer bg-gray">
+    <div class="container">
+        <div class="row">
+
+            <div class="col col-sm-6 col-md-3">
+                <div class="d-flex justify-center">
+                    <img class="" style="height:66px; aspect-ratio: 1; float: left;"
+                        src="https://www.bn.gov.ar/web/Web_Logo_BN_2024.png"
+                        title="Logo Biblioteca Nacional"
+                        alt="Logo Biblioteca Nacional" />
+
+                    <img style="height:66px; aspect-ratio: 1; margin-left:15px;" class="image-responsive"
+                        alt="Ministerio de Capital Humano"
+                        title="Ministerio de Capital Humano"
+                        src="https://www.bn.gov.ar/web/Web_Logo_CapitalHumano_2024_C.png" />
+                </div>
+                <div class="d-flex justify-center">
+                    <ul class="nav navbar-nav" style="margin-bottom:1em;">
+                        <li>
+    <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/BNMMArgentina/" title="Facebook">
+        <span class="fa fa-facebook"></span>
+    </a>
+</li>
+<li>
+    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/BNMMArgentina" title="Twitter">
+        <span class="fa fa-twitter"></span>
+    </a>
+</li>
+<li>
+    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/biblioteca_nacional_argentina/" title="Instagram">
+        <span class="fa fa-instagram"></span>
+    </a>
+</li>
+<li>
+    <a rel="noopener noreferrer" href="https://www.youtube.com/user/bibnal" title="YouTube">
+        <span class="fa fa-youtube-play"></span>
+    </a>
+</li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.bn.gov.ar/audiovisuales/podcasts" title="Spotify">
+            <span class="fa fa-spotify"></span>
+        </a>
+    </li>
+
+                                            </ul>
+                </div>
+                <ul>
+                    <li>
+                        <a href="https://www.bn.gov.ar/contacto" title="Contacto">
+                            <span class="fa fa-envelope fa-fw"></span> Contacto
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.bn.gov.ar/como-llego" title="Contacto">
+                            <span class="fa fa-map-marker fa-fw"></span> Cómo llegar
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.bn.gov.ar/horarios" title="Horarios">
+                            <span class="fa fa-clock-o fa-fw"></span> Horarios
+                        </a>
+                    </li>
+                </ul>
+
+                <p class="text-muted small" style="line-height:22px;">
+                    Biblioteca Nacional Mariano Moreno de la República Argentina<br />
+                    <a href="https://www.bn.gov.ar/como-llego">Agüero 2502</a><br />
+                    Ciudad Autónoma de Buenos Aires<br />
+                    CP 1425EID<br />
+                    <a href="mailto:consultas@bn.gob.ar">consultas@bn.gob.ar</a><br />
+                    <a class="hidden-md hidden-lg" href="tel:+541148086000">(5411) 4808-6000</a>
+                    <span class="hidden-xs hidden-sm">(5411) 4808-6000</span>
+                </p>
+            </div>
+
+            <div class="col col-sm-6 col-md-3">
+                <h2 class="h3 section-title m-b-1 text-center">Información general</h2>
+                <ul>
+                    <li><a href="https://www.bn.gov.ar/biblioteca/acerca" title="Acerca de la BNMM">Acerca de la BNMM</a></li>
+                    <li><a href="https://www.bn.gov.ar/biblioteca/salas" title="Salas de lectura y colecciones">Salas de lectura y colecciones</a></li>
+                    <li><a href="https://www.bn.gov.ar/biblioteca/ismn" title="Agencia ISMN">Agencia ISMN</a></li>
+                    <li><a href="https://campusvirtual.bn.gob.ar" title="Campus Virtual">Campus virtual</a></li>
+
+
+
+
+
+
+
+
+
+
+
+                </ul>
+
+
+
+            </div>
+
+            <div class="col col-sm-6 col-md-3">
+                <h2 class="h3 section-title m-b-1 text-center">Culturalia</h2>
+                <ul>
+                    <li><a href="https://www.bn.gov.ar/culturalia/centros" title="Centros de Estudios">Centros de Estudios</a></li>
+                    <li><a href="https://www.bn.gov.ar/agenda-cultural?categoria=muestras" title="Exposiciones">Exposiciones</a></li>
+                    <li><a href="https://www.bn.gov.ar/agenda-cultural" title="Agenda Cultural">Agenda Cultural</a></li>
+                    <li><a href="https://www.bn.gob.ar/talleres/" title="Talleres">Talleres</a></li>
+                    <li><a href="https://www.bn.gov.ar/culturalia/investigaciones" title="Investigaciones">Investigaciones</a></li>
+                    <li><a href="https://www.bn.gov.ar/culturalia/museo" title="Museo del libro y de la lengua">Museo del libro y de la lengua</a></li>
+                </ul>
+
+                <!-- <h2 class="h3 section-title m-b-1">Colecciones digitales</h2>
+                <ul>
+                    <li><a href="https://catalogo.bn.gov.ar/F/?func=find-m" title="Objetos digitales en el catálogo">Objetos digitales en el catálogo</a></li>
+                    <li><a href="https://www.bn.gov.ar/colecciones-digitales/publicaciones" title="Publicaciones y multimedia de la BNMM">Publicaciones y multimedia de la BNMM</a></li>
+                    <li><a href="//exposiciones.bn.gob.ar" title="Muestras digitales">Muestras digitales</a></li>
+                    <li><a href="https://www.bn.gov.ar/colecciones-digitales/cooperacion-institucional" title="Acuerdos internacionales">Acuerdos internacionales</a> </li>
+                </ul> -->
+
+
+            </div>
+
+            <div class="col col-sm-6 col-md-3 ">
+                <h2 class="h3 section-title m-b-1 text-center">Más secciones</h2>
+                <ul>
+                    <li><a href="https://www.bn.gov.ar/bibliografia-nacional-argentina" title="Bibliografía Nacional">Bibliografía Nacional</a> </li>
+                    <li> <a href="https://catalogo.bn.gov.ar" title="Catálogo de la Biblioteca Nacional Mariano Moreno">Catálogo</a> </li>
+
+
+
+
+                    <li><a href="https://www.bn.gov.ar/editorial" title="Ediciones de la BNMM">Editorial</a></li>
+                    <li><a href="https://www.bn.gov.ar/escuela" title="Escuela">Escuela</a></li>
+
+
+                </ul>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12">
+
+
+            </div>
+        </div>
+    </div>
+</footer>                                                <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-88620704-2', 'auto');
+    ga('send', 'pageview');
+</script>
+
+    <script src="https://www.bn.gov.ar/assets/js/jquery.min.js"></script>
+    <script src="https://www.bn.gov.ar/js/all.js" defer></script>
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                s1.async=true;
+                s1.src='https://embed.tawk.to/5e90809035bcbb0c9aafc0dd/default';
+                s1.charset='UTF-8';
+                s1.setAttribute('crossorigin','*');
+                s0.parentNode.insertBefore(s1,s0);
+            })();
+    </script>
+<!--End of Tawk.to Script-->
+
+    <script>
+        if ("") {
+            $('.fa-soundcloud').addClass('text-danger');
+        } else {
+            $('.fa-soundcloud').removeClass('text-danger');
+        }
+    </script>
+
+<script>
+    $('body').not('.notifications-button, ' +
+        '.notifications-button:not(span), ' +
+        '.notifications-button>span:not(i), ' +
+        '.notifications-menu, ' +
+        '.notifications-message' +
+        '').on('click', function() {
+        $('.notifications-menu').hide('fast');
+    });
+    $('.notifications-button').on('click', function(event) {
+        event.stopPropagation();
+        if ($('.notifications-menu').is(':hidden'))
+            $('.notifications-menu').show('fast');
+        else $('.notifications-menu').hide('fast');
+    });
+</script>
+
+    <script>
+        if ("") {
+            $('.fa-soundcloud').addClass('text-danger');
+        } else {
+            $('.fa-soundcloud').removeClass('text-danger');
+        }
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('*[' + 'style' + '*="http://webbn2.test"]').attr('style', function (i, src) {
+                return src.replace('http://webbn2.test', 'https://www.bn.gov.ar');
+            });
+            $(`img[src*='http://webbn2.test']`).attr('src', function (i, src) {
+                return src.replace('http://webbn2.test', 'https://www.bn.gov.ar/images/large');
+            });
+        });
+
+
+        $(document).ready(function () {
+            $("#date-popover").popover({html: true, trigger: "manual"});
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+
+            var filterDate = $('#filter-date').val();
+            var feriados = [{"date":"2017-05-25","classname":"feriado","title":"D\u00eda de la Revoluci\u00f3n de Mayo"},{"date":"2017-06-17","classname":"feriado","title":"Paso a la Inmortalidad del General Miguel Mart\u00edn de G\u00fcemes"},{"date":"2017-06-20","classname":"feriado","title":"Paso a la Inmortalidad del General Manuel Belgrano"},{"date":"2017-07-09","classname":"feriado","title":"D\u00eda de la Independencia"},{"date":"2017-08-21","classname":"feriado","title":"Paso a la Inmortalidad del General San Mart\u00edn"},{"date":"2017-10-16","classname":"feriado","title":"D\u00eda del Respeto a la Diversidad Cultural"},{"date":"2017-11-20","classname":"feriado","title":"D\u00eda de la Soberan\u00eda Nacional"},{"date":"2017-12-08","classname":"feriado","title":" Inmaculada Concepci\u00f3n de Mar\u00eda"},{"date":"2017-12-25","classname":"feriado","title":"Navidad"},{"date":"2017-06-27","classname":"feriado","title":"D\u00eda del Trabajador del Estado"},{"date":"2017-08-13","classname":"feriado","title":"Elecciones PASO"},{"date":"2017-10-22","classname":"feriado","title":"Feriado por Elecciones Generales"},{"date":"2017-09-11","classname":"feriado","title":"D\u00eda Nacional del Bibliotecario"},{"date":"2017-08-22","classname":"feriado","title":"Martes 22 de agosto: el servicio al usuario se ver\u00e1 reducido"},{"date":"2018-02-12","classname":"feriado","title":"Carnaval"},{"date":"2018-03-24","classname":"feriado","title":"D\u00eda Nacional de la Memoria por la Verdad y la Justicia"},{"date":"2018-04-02","classname":"feriado","title":"D\u00eda del Veterano y de los Ca\u00eddos en la Guerra de Malvinas"},{"date":"2018-03-29","classname":"feriado","title":"Jueves Santo"},{"date":"2018-03-30","classname":"feriado","title":"Viernes Santo"},{"date":"2018-04-01","classname":"feriado","title":"Pascua"},{"date":"2018-03-31","classname":"feriado","title":"S\u00e1bado Santo"},{"date":"2018-04-30","classname":"feriado","title":"D\u00eda no laborable"},{"date":"2018-05-01","classname":"feriado","title":"D\u00eda del Trabajador"},{"date":"2018-05-25","classname":"feriado","title":"D\u00eda de la Revoluci\u00f3n de Mayo"},{"date":"2018-06-17","classname":"feriado","title":"Paso a la Inmortalidad del General Mart\u00edn Miguel de G\u00fcemes"},{"date":"2018-06-20","classname":"feriado","title":"Paso a la Inmortalidad del General Manuel Belgrano"},{"date":"2018-07-09","classname":"feriado","title":"D\u00eda de la Independencia"},{"date":"2018-08-20","classname":"feriado","title":"Paso a la Inmortalidad del General Jos\u00e9 de San Mart\u00edn"},{"date":"2018-10-15","classname":"feriado","title":"D\u00eda del Respeto a la Diversidad Cultural"},{"date":"2018-11-19","classname":"feriado","title":"D\u00eda de la Soberan\u00eda Nacional"},{"date":"2018-02-13","classname":"feriado","title":"Carnaval"},{"date":"2018-12-08","classname":"feriado","title":"Inmaculada Concepci\u00f3n de Mar\u00eda"},{"date":"2018-12-24","classname":"feriado","title":"D\u00eda no laborable"},{"date":"2018-12-25","classname":"feriado","title":"Navidad"},{"date":"2018-12-31","classname":"feriado","title":"D\u00eda no laborable"},{"date":"2018-06-27","classname":"feriado","title":"D\u00eda del Trabajador del Estado"},{"date":"2018-09-14","classname":"feriado","title":"D\u00eda Nacional del Bibliotecario"},{"date":"2018-11-30","classname":"feriado","title":"Cumbre G 20 en la Ciudad de Buenos Aires"},{"date":"2019-03-04","classname":"feriado","title":"Carnaval"},{"date":"2019-03-24","classname":"feriado","title":"D\u00eda Nacional de la Memoria por la Verdad y la Justicia"},{"date":"2019-04-02","classname":"feriado","title":"D\u00eda del Veterano y de los Ca\u00eddos en la Guerra de Malvinas"},{"date":"2019-04-18","classname":"feriado","title":"Jueves Santo"},{"date":"2019-04-19","classname":"feriado","title":"Viernes Santo"},{"date":"2019-04-20","classname":"feriado","title":"S\u00e1bado Santo"},{"date":"2019-04-21","classname":"feriado","title":"Pascua"},{"date":"2019-05-01","classname":"feriado","title":"D\u00eda del Trabajador"},{"date":"2019-05-25","classname":"feriado","title":"D\u00eda de la Revoluci\u00f3n de Mayo"},{"date":"2019-06-20","classname":"feriado","title":"Paso a la Inmortalidad del General Manuel Belgrano"},{"date":"2019-07-09","classname":"feriado","title":"D\u00eda de la Independencia"},{"date":"2019-08-17","classname":"feriado","title":"Paso a la Inmortalidad del General San Mart\u00edn"},{"date":"2019-10-14","classname":"feriado","title":"D\u00eda del Respeto a la Diversidad Cultural"},{"date":"2019-11-18","classname":"feriado","title":"D\u00eda de la Soberan\u00eda Nacional"},{"date":"2019-12-08","classname":"feriado","title":"Inmaculada Concepci\u00f3n de Mar\u00eda"},{"date":"2019-12-25","classname":"feriado","title":"Navidad"},{"date":"2019-12-24","classname":"feriado","title":"D\u00eda no laborable"},{"date":"2019-12-31","classname":"feriado","title":"D\u00eda no laborable"},{"date":"2019-06-27","classname":"feriado","title":"D\u00eda del Trabajador del Estado"},{"date":"2019-06-17","classname":"feriado","title":"Paso a la Inmortalidad del General Mart\u00edn Miguel de G\u00fcemes"},{"date":"2019-07-08","classname":"feriado","title":"D\u00eda no laborable"},{"date":"2019-08-19","classname":"feriado","title":"D\u00eda no laborable"},{"date":"2019-10-12","classname":"feriado","title":"D\u00eda del Respeto a la Diversidad Cultural"},{"date":"2019-09-13","classname":"feriado","title":"D\u00eda del Bibliotecario"},{"date":"2020-02-24","classname":"feriado","title":"Carnaval"},{"date":"2020-03-24","classname":"feriado","title":"D\u00eda Nacional de la Memoria por la Verdad y la Justicia"},{"date":"2020-03-23","classname":"feriado","title":"D\u00eda no laborable"},{"date":"2022-08-15","classname":"feriado","title":"Paso a la Inmortalidad del General San Mart\u00edn"},{"date":"2020-11-20","classname":"feriado","title":"D\u00eda de la Soberan\u00eda Nacional"},{"date":"2020-12-08","classname":"feriado","title":"Inmaculada Concepci\u00f3n de Mar\u00eda"},{"date":"2021-03-24","classname":"feriado","title":"D\u00eda Nacional de la Memoria por la Verdad y la Justicia"},{"date":"2021-04-01","classname":"feriado","title":"Jueves Santo"},{"date":"2021-04-02","classname":"feriado","title":"Viernes Santo y D\u00eda del Veterano y de los Ca\u00eddos en la Guerra de Malvinas"},{"date":"2021-04-03","classname":"feriado","title":"S\u00e1bado Santo"},{"date":"2021-04-04","classname":"feriado","title":"Pascua"},{"date":"2021-05-01","classname":"feriado","title":"D\u00eda del Trabajador"},{"date":"2021-05-24","classname":"feriado","title":"D\u00eda no laborable"},{"date":"2021-05-25","classname":"feriado","title":"D\u00eda de la Revoluci\u00f3n de Mayo"},{"date":"2021-08-16","classname":"feriado","title":"Paso a la Inmortalidad del General Jos\u00e9 de San Mart\u00edn"},{"date":"2021-06-20","classname":"feriado","title":"Paso a la Inmortalidad del General Manuel Belgrano"},{"date":"2021-06-21","classname":"feriado","title":"Paso a la Inmortalidad del General Mart\u00edn Miguel de G\u00fcemes"},{"date":"2021-07-09","classname":"feriado","title":"D\u00eda de la Independencia"},{"date":"2021-06-27","classname":"feriado","title":"D\u00eda del Trabajador del Estado"},{"date":"2021-09-13","classname":"feriado","title":"D\u00eda Nacional del Bibliotecario"},{"date":"2022-10-10","classname":"feriado","title":" D\u00eda del Respeto a la Diversidad Cultural"},{"date":"2021-11-20","classname":"feriado","title":"D\u00eda de la Soberan\u00eda Nacional"},{"date":"2021-11-22","classname":"feriado","title":"D\u00eda no laborable"},{"date":"2021-12-08","classname":"feriado","title":"Inmaculada Concepci\u00f3n de Mar\u00eda"},{"date":"2021-12-25","classname":"feriado","title":"Navidad"},{"date":"2022-02-28","classname":"feriado","title":"Carnaval"},{"date":"2022-03-24","classname":"feriado","title":"D\u00eda Nacional de la Memoria por la Verdad y la Justicia"},{"date":"2022-04-02","classname":"feriado","title":"D\u00eda del Veterano y de los Ca\u00eddos en la Guerra de Malvinas."},{"date":"2022-04-14","classname":"feriado","title":"Jueves Santo"},{"date":"2022-04-15","classname":"feriado","title":"Viernes Santo "},{"date":"2022-04-16","classname":"feriado","title":"S\u00e1bado Santo"},{"date":"2022-04-17","classname":"feriado","title":"Pascua"},{"date":"2022-05-01","classname":"feriado","title":"D\u00eda del Trabajador"},{"date":"2022-05-18","classname":"feriado","title":"Censo Nacional"},{"date":"2022-05-25","classname":"feriado","title":"D\u00eda de la Revoluci\u00f3n de Mayo"},{"date":"2022-06-17","classname":"feriado","title":"Paso a la Inmortalidad del General Mart\u00edn Miguel de G\u00fcemes"},{"date":"2022-06-20","classname":"feriado","title":"Paso a la Inmortalidad del General Manuel Belgrano"},{"date":"2022-07-09","classname":"feriado","title":"D\u00eda de la Independencia"},{"date":"2023-06-27","classname":"feriado","title":"D\u00eda del Trabajador del Estado"},{"date":"2022-09-12","classname":"feriado","title":"D\u00eda Nacional del Bibliotecario"},{"date":"2022-12-09","classname":"feriado","title":"Feriado con fines tur\u00edsticos"},{"date":"2022-12-08","classname":"feriado","title":"Inmaculada Concepci\u00f3n de Mar\u00eda"},{"date":"2023-03-24","classname":"feriado","title":"D\u00eda Nacional de la Memoria por la Verdad y la Justicia"},{"date":"2023-04-02","classname":"feriado","title":"D\u00eda del Veterano y de los Ca\u00eddos en la Guerra de Malvinas"},{"date":"2023-05-25","classname":"feriado","title":"D\u00eda de la Revoluci\u00f3n de Mayo"},{"date":"2023-05-26","classname":"feriado","title":"D\u00eda no laborable "},{"date":"2023-06-19","classname":"feriado","title":"D\u00eda no laborable"},{"date":"2023-07-09","classname":"feriado","title":"D\u00eda de la Independencia"},{"date":"2023-08-21","classname":"feriado","title":"Paso a la Inmortalidad del General Jos\u00e9 de San Mart\u00edn"},{"date":"2023-10-16","classname":"feriado","title":"D\u00eda del Respeto a la Diversidad Cultural "},{"date":"2023-10-13","classname":"feriado","title":"D\u00eda no laborable"},{"date":"2023-11-20","classname":"feriado","title":"D\u00eda de la Soberan\u00eda Nacional"},{"date":"2024-02-12","classname":"feriado","title":"Carnaval"},{"date":"2024-03-24","classname":"feriado","title":"D\u00eda Nacional de la Memoria por la Verdad y la Justicia"},{"date":"2024-05-01","classname":"feriado","title":"D\u00eda del Trabajador"},{"date":"2024-05-25","classname":"feriado","title":"D\u00eda de la Revoluci\u00f3n de Mayo"},{"date":"2024-06-20","classname":"feriado","title":"Paso a la Inmortalidad del General Manuel Belgrano"},{"date":"2024-07-09","classname":"feriado","title":"D\u00eda de la Independencia"},{"date":"2024-06-17","classname":"feriado","title":"Paso a la Inmortalidad del General Mart\u00edn Miguel de G\u00fcemes"},{"date":"2024-08-17","classname":"feriado","title":"Paso a la Inmortalidad del General Jos\u00e9 de San Mart\u00edn"},{"date":"2024-11-18","classname":"feriado","title":"D\u00eda de la Soberan\u00eda Nacional"},{"date":"2024-06-21","classname":"feriado","title":"D\u00eda no laborable"},{"date":"2024-10-11","classname":"feriado","title":"D\u00eda no laborable"},{"date":"2024-09-16","classname":"feriado","title":"D\u00eda no laborable "},{"date":"2025-03-03","classname":"feriado","title":" Carnaval"},{"date":"2025-03-24","classname":"feriado","title":" D\u00eda Nacional de la Memoria por la Verdad y la Justicia"},{"date":"2025-04-02","classname":"feriado","title":" D\u00eda del Veterano y de los Ca\u00eddos en la Guerra de Malvinas"},{"date":"2025-05-25","classname":"feriado","title":" D\u00eda de la Revoluci\u00f3n de Mayo"},{"date":"2025-06-16","classname":"feriado","title":" Paso a la Inmortalidad del General Mart\u00edn Miguel de G\u00fcemes"},{"date":"2025-06-20","classname":"feriado","title":" Paso a la Inmortalidad del General Manuel Belgrano"}];
+            var myData = [];
+            if (filterDate != '')
+                myData = [{
+                    "date": filterDate,
+                    "badge": false,
+                    "title": "Día seleccionado"
+                }];
+            if (feriados.length > 0) {
+                feriados.forEach(function (feriado, index) {
+                    myData.push(feriado);
+                });
+            }
+
+            $("#my-calendar").zabuto_calendar({
+                 month:5,                 action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                data: myData,
+                language: "es",
+                today: false,
+                weekstartson: 0,
+            });
+        });
+
+        function myDateFunction(id, fromModal) {
+            $("#date-popover").hide();
+            if (fromModal) {
+                $("#" + id + "_modal").modal("hide");
+            }
+            var date = $("#" + id).data("date");
+            document.location.href = 'https://www.bn.gov.ar/agenda-cultural?fecha=' + date;
+
+            return true;
+        }
+
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+
+            document.location.href = 'https://www.bn.gov.ar/agenda-cultural?mes=' + to.month + '/' + to.year;
+        }
+    </script>
+                        <a href="#top" title="Ir arriba" id="scroll-top-link" aria-hidden="true" style="display:none"
+   data-av_iconfont="entypo-fontello" class="avia_pop_class">
+    <span class="avia_hidden_link_text"><span class="fa fa-caret-up"></span></span></a>        </div>
+        <script>
+    var announcement = true;
+    $(window).scroll(function () {
+        if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+            $('div.live').fadeOut("slow");
+        } else {
+            var $element;
+            if (announcement) {
+                $element = $('div.live:not(#slideUp)');
+            } else {
+                $element = $('div.live:not(#announcement)');
+            }
+            $element.fadeIn("slow");
+        }
+    });
+    $('a[data-dismiss="alert"]').on('click', function (event) {
+        event.preventDefault();
+        $(this).parent().fadeOut("slow");
+        $(this).parent().remove();
+        $.ajax('https://www.bn.gov.ar/directo/visto');
+    });
+    $('#announcement').click(function (event) {
+        $(this).slideUp(300);
+        $('#slideUp').fadeIn();
+        announcement = false;
+    });
+    $('#slideUp').click(function (event) {
+        $(this).fadeOut();
+        $('#announcement').slideDown(300);
+        announcement = true;
+    });
+
+    $('#message-link').click(function (event) {
+        event.preventDefault();
+        $('#message-modal').modal('show');
+    })
+</script>
+
+</body>
+
+</html>

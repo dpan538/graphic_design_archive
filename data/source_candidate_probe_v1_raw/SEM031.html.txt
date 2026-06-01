@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TBNN2MD');</script>
+  <!-- End Google Tag Manager -->
+  <title>Pagrindinis | epaveldas.lt</title>
+  <base href="/">
+  <meta charset="utf-8" />
+  <meta property="og:url"
+        content="https://www.epaveldas.lt/" />
+  <meta property="og:type"
+        content="website" />
+  <meta property="og:title"
+        content="ePaveldas" />
+  <meta property="og:description"
+        content="Atraskite Lietuvos kultūros paveldo objektus" />
+  <meta property="og:image"
+        content="https://www.epaveldas.lt/assets/img/fb-meta-img.jpg" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async
+          src=https://www.googletagmanager.com/gtag/js?id=UA-2409678-9></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-2409678-9');
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async
+          src="https://www.googletagmanager.com/gtag/js?id=G-QVGVZXJP3M"></script>
+  <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-QVGVZXJP3M'); </script>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1" />
+  <link rel="icon"
+        type="image/x-icon"
+        href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap"
+        rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet" />
+  <script>
+    if (global === undefined) {
+      var global = window;
+    }
+  </script>
+  <script>
+    __Zone_disable_IntersectionObserver = true;
+  </script>
+
+
+
+</head>
+
+<body style="margin: 0; padding: 0;">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBNN2MD"
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <app-root>
+    <div style="
+          /* background-color: var(--colorPrimary); */
+          background: linear-gradient(25deg, var(--colorPrimary), var(--colorPrimary--light));
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        ">
+      <img style="width: min(100vw - 120px, 320px); margin: 0 auto;"
+           src="./assets/img/epaveldas-logo.svg"
+           alt="ePaveldas logo" />
+      <div style="
+            display: none;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid white;
+            opacity: 0.75;
+            width: 100%;
+            max-width: max(300px, 50vw);
+          "></div>
+      <p style="
+            display: none;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+            font-size: 1.25em;
+          ">
+        Kraunamas puslapis...
+      </p>
+
+      <div class="lds-ellipsis"
+           style="margin-top: 10vh;">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </app-root>
+<script src="runtime.9a867dd3ea3f357475b5.js" defer></script><script src="polyfills.a9413deed6dcc61fea3c.js" defer></script><script src="styles.4669118ef11caa7da231.js" defer></script><script src="scripts.16f2311720092f0ec47b.js" defer></script><script src="main.0bc259d5057bdc8941c6.js" defer></script></body>
+<div id="fb-root"></div>
+<script async
+        defer
+        crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0&appId=2168980756642623&autoLogAppEvents=1"
+        nonce="kIv1ohCC"></script>
+<script type="application/l10n">
+    {
+        "default_locale": "lt",
+        "locales": {
+          "en-US":{"previous":{"title":"Previous Page"},"previous_label":{"textContent":"Previous"},"next":{"title":"Next Page"},"next_label":{"textContent":"Next"},"page":{"title":"Page"},"of_pages":{"textContent":"of {{pagesCount}}"},"page_of_pages":{"textContent":"({{pageNumber}} of {{pagesCount}})"},"zoom_out":{"title":"Zoom Out"},"zoom_out_label":{"textContent":"Zoom Out"},"zoom_in":{"title":"Zoom In"},"zoom_in_label":{"textContent":"Zoom In"},"zoom":{"title":"Zoom"},"presentation_mode":{"title":"Switch to Presentation Mode"},"presentation_mode_label":{"textContent":"Presentation Mode"},"open_file":{"title":"Open File"},"open_file_label":{"textContent":"Open"},"print":{"title":"Print"},"print_label":{"textContent":"Print"},"download":{"title":"Download"},"download_label":{"textContent":"Download"},"bookmark":{"title":"Current view (copy or open in new window)"},"bookmark_label":{"textContent":"Current View"},"tools":{"title":"Tools"},"tools_label":{"textContent":"Tools"},"first_page":{"title":"Go to First Page","label":"Go to First Page"},"first_page_label":{"textContent":"Go to First Page"},"last_page":{"title":"Go to Last Page","label":"Go to Last Page"},"last_page_label":{"textContent":"Go to Last Page"},"page_rotate_cw":{"title":"Rotate Clockwise","label":"Rotate Clockwise"},"page_rotate_cw_label":{"textContent":"Rotate Clockwise"},"page_rotate_ccw":{"title":"Rotate Counterclockwise","label":"Rotate Counterclockwise"},"page_rotate_ccw_label":{"textContent":"Rotate Counterclockwise"},"cursor_text_select_tool":{"title":"Enable Text Selection Tool"},"cursor_text_select_tool_label":{"textContent":"Text Selection Tool"},"cursor_hand_tool":{"title":"Enable Hand Tool"},"cursor_hand_tool_label":{"textContent":"Hand Tool"},"scroll_vertical":{"title":"Use Vertical Scrolling"},"scroll_vertical_label":{"textContent":"Vertical Scrolling"},"scroll_horizontal":{"title":"Use Horizontal Scrolling"},"scroll_horizontal_label":{"textContent":"Horizontal Scrolling"},"scroll_wrapped":{"title":"Use Wrapped Scrolling"},"scroll_wrapped_label":{"textContent":"Wrapped Scrolling"},"spread_none":{"title":"Do not join page spreads"},"spread_none_label":{"textContent":"No Spreads"},"spread_odd":{"title":"Join page spreads starting with odd-numbered pages"},"spread_odd_label":{"textContent":"Odd Spreads"},"spread_even":{"title":"Join page spreads starting with even-numbered pages"},"spread_even_label":{"textContent":"Even Spreads"},"document_properties":{"title":"Document Properties…"},"document_properties_label":{"textContent":"Document Properties…"},"document_properties_file_name":{"textContent":"File name:"},"document_properties_file_size":{"textContent":"File size:"},"document_properties_kb":{"textContent":"{{size_kb}} KB ({{size_b}} bytes)"},"document_properties_mb":{"textContent":"{{size_mb}} MB ({{size_b}} bytes)"},"document_properties_title":{"textContent":"Title:"},"document_properties_author":{"textContent":"Author:"},"document_properties_subject":{"textContent":"Subject:"},"document_properties_keywords":{"textContent":"Keywords:"},"document_properties_creation_date":{"textContent":"Creation Date:"},"document_properties_modification_date":{"textContent":"Modification Date:"},"document_properties_date_string":{"textContent":"{{date}}, {{time}}"},"document_properties_creator":{"textContent":"Creator:"},"document_properties_producer":{"textContent":"PDF Producer:"},"document_properties_version":{"textContent":"PDF Version:"},"document_properties_page_count":{"textContent":"Page Count:"},"document_properties_page_size":{"textContent":"Page Size:"},"document_properties_page_size_unit_inches":{"textContent":"in"},"document_properties_page_size_unit_millimeters":{"textContent":"mm"},"document_properties_page_size_orientation_portrait":{"textContent":"portrait"},"document_properties_page_size_orientation_landscape":{"textContent":"landscape"},"document_properties_page_size_name_a3":{"textContent":"A3"},"document_properties_page_size_name_a4":{"textContent":"A4"},"document_properties_page_size_name_letter":{"textContent":"Letter"},"document_properties_page_size_name_legal":{"textContent":"Legal"},"document_properties_page_size_dimension_string":{"textContent":"{{width}} × {{height}} {{unit}} ({{orientation}})"},"document_properties_page_size_dimension_name_string":{"textContent":"{{width}} × {{height}} {{unit}} ({{name}}, {{orientation}})"},"document_properties_linearized":{"textContent":"Fast Web View:"},"document_properties_linearized_yes":{"textContent":"Yes"},"document_properties_linearized_no":{"textContent":"No"},"document_properties_close":{"textContent":"Close"},"print_progress_message":{"textContent":"Preparing document for printing…"},"print_progress_percent":{"textContent":"{{progress}}%"},"print_progress_close":{"textContent":"Cancel"},"toggle_sidebar":{"title":"Toggle Sidebar"},"toggle_sidebar_notification2":{"title":"Toggle Sidebar (document contains outline/attachments/layers)"},"toggle_sidebar_label":{"textContent":"Toggle Sidebar"},"document_outline":{"title":"Show Document Outline (double-click to expand/collapse all items)"},"document_outline_label":{"textContent":"Document Outline"},"attachments":{"title":"Show Attachments"},"attachments_label":{"textContent":"Attachments"},"layers":{"title":"Show Layers (double-click to reset all layers to the default state)"},"layers_label":{"textContent":"Layers"},"thumbs":{"title":"Show Thumbnails"},"thumbs_label":{"textContent":"Thumbnails"},"findbar":{"title":"Find in Document"},"findbar_label":{"textContent":"Find"},"additional_layers":{"textContent":"Additional Layers"},"page_canvas":{"textContent":"Page {{page}}"},"thumb_page_title":{"textContent":"Page {{page}}"},"thumb_page_canvas":{"textContent":"Thumbnail of Page {{page}}"},"find_input":{"title":"Find","placeholder":"Find in document…"},"find_previous":{"title":"Find the previous occurrence of the phrase"},"find_previous_label":{"textContent":"Previous"},"find_next":{"title":"Find the next occurrence of the phrase"},"find_next_label":{"textContent":"Next"},"find_highlight":{"textContent":"Highlight all"},"find_match_case_label":{"textContent":"Match case"},"find_entire_word_label":{"textContent":"Whole words"},"find_reached_top":{"textContent":"Reached top of document, continued from bottom"},"find_reached_bottom":{"textContent":"Reached end of document, continued from top"},"find_match_count":{"textContent":"{[ plural(total) ]}"},"find_match_count[one]":{"textContent":"{{current}} of {{total}} match"},"find_match_count[two]":{"textContent":"{{current}} of {{total}} matches"},"find_match_count[few]":{"textContent":"{{current}} of {{total}} matches"},"find_match_count[many]":{"textContent":"{{current}} of {{total}} matches"},"find_match_count[other]":{"textContent":"{{current}} of {{total}} matches"},"find_match_count_limit":{"textContent":"{[ plural(limit) ]}"},"find_match_count_limit[zero]":{"textContent":"More than {{limit}} matches"},"find_match_count_limit[one]":{"textContent":"More than {{limit}} match"},"find_match_count_limit[two]":{"textContent":"More than {{limit}} matches"},"find_match_count_limit[few]":{"textContent":"More than {{limit}} matches"},"find_match_count_limit[many]":{"textContent":"More than {{limit}} matches"},"find_match_count_limit[other]":{"textContent":"More than {{limit}} matches"},"find_not_found":{"textContent":"Phrase not found"},"error_more_info":{"textContent":"More Information"},"error_less_info":{"textContent":"Less Information"},"error_close":{"textContent":"Close"},"error_version_info":{"textContent":"PDF.js v{{version}} (build: {{build}})"},"error_message":{"textContent":"Message: {{message}}"},"error_stack":{"textContent":"Stack: {{stack}}"},"error_file":{"textContent":"File: {{file}}"},"error_line":{"textContent":"Line: {{line}}"},"rendering_error":{"textContent":"An error occurred while rendering the page."},"page_scale_width":{"textContent":"Page Width"},"page_scale_fit":{"textContent":"Page Fit"},"page_scale_auto":{"textContent":"Automatic Zoom"},"page_scale_actual":{"textContent":"Actual Size"},"page_scale_percent":{"textContent":"{{scale}}%"},"loading_error_indicator":{"textContent":"Error"},"loading_error":{"textContent":"An error occurred while loading the PDF."},"invalid_file_error":{"textContent":"Invalid or corrupted PDF file."},"missing_file_error":{"textContent":"Missing PDF file."},"unexpected_response_error":{"textContent":"Unexpected server response."},"annotation_date_string":{"textContent":"{{date}}, {{time}}"},"text_annotation_type":{"alt":"[{{type}} Annotation]"},"password_label":{"textContent":"Enter the password to open this PDF file."},"password_invalid":{"textContent":"Invalid password. Please try again."},"password_ok":{"textContent":"OK"},"password_cancel":{"textContent":"Cancel"},"printing_not_supported":{"textContent":"Warning: Printing is not fully supported by this browser."},"printing_not_ready":{"textContent":"Warning: The PDF is not fully loaded for printing."},"web_fonts_disabled":{"textContent":"Web fonts are disabled: unable to use embedded PDF fonts."},"find_ignore_accents":{"textContent":"Ignore accents and diacritics"},"find_input_line_by_line":{"textContent":"Multiple search terms. Each line is a search term."},"find_multiple_texts_label":{"textContent":"multiple search terms"},"find_individual_words_label":{"textContent":"separated by word boundaries"},"find_fuzzy":{"textContent":"Fuzzy search"}},
+          "lt": {
+            "previous": { "title": "Ankstesnis puslapis" },
+            "previous_label": { "textContent": "Ankstesnis" },
+            "next": { "title": "Kitas puslapis" },
+            "next_label": { "textContent": "Kitas" },
+            "page": { "title": "Puslapis" },
+            "of_pages": { "textContent": "iš {{pagesCount}}" },
+            "page_of_pages": { "textContent": "({{pageNumber}} iš {{pagesCount}})" },
+            "zoom_out": { "title": "Sumažinti" },
+            "zoom_out_label": { "textContent": "Sumažinti" },
+            "zoom_in": { "title": "Padidinti" },
+            "zoom_in_label": { "textContent": "Padidinti" },
+            "zoom": { "title": "Mastelis" },
+            "presentation_mode": { "title": "Pereiti į pateikties veikseną" },
+            "presentation_mode_label": { "textContent": "Pateikties veiksena" },
+            "open_file": { "title": "Atverti failą" },
+            "open_file_label": { "textContent": "Atverti" },
+            "print": { "title": "Spausdinti" },
+            "print_label": { "textContent": "Spausdinti" },
+            "download": { "title": "Parsiųsti" },
+            "download_label": { "textContent": "Parsiųsti" },
+            "bookmark": { "title": "Esamojo rodinio saitas (kopijavimui ar atvėrimui kitame lange)" },
+            "bookmark_label": { "textContent": "Esamasis rodinys" },
+            "tools": { "title": "Priemonės" },
+            "tools_label": { "textContent": "Priemonės" },
+            "first_page": { "title": "Eiti į pirmą puslapį", "label": "Eiti į pirmą puslapį" },
+            "first_page_label": { "textContent": "Eiti į pirmą puslapį" },
+            "last_page": { "title": "Eiti į paskutinį puslapį", "label": "Eiti į paskutinį puslapį" },
+            "last_page_label": { "textContent": "Eiti į paskutinį puslapį" },
+            "page_rotate_cw": { "title": "Pasukti pagal laikrodžio rodyklę", "label": "Pasukti pagal laikrodžio rodyklę" },
+            "page_rotate_cw_label": { "textContent": "Pasukti pagal laikrodžio rodyklę" },
+            "page_rotate_ccw": { "title": "Pasukti prieš laikrodžio rodyklę", "label": "Pasukti prieš laikrodžio rodyklę" },
+            "page_rotate_ccw_label": { "textContent": "Pasukti prieš laikrodžio rodyklę" },
+            "cursor_text_select_tool": { "title": "Įjungti teksto žymėjimo įrankį" },
+            "cursor_text_select_tool_label": { "textContent": "Teksto žymėjimo įrankis" },
+            "cursor_hand_tool": { "title": "Įjungti vilkimo įrankį" },
+            "cursor_hand_tool_label": { "textContent": "Vilkimo įrankis" },
+            "scroll_vertical": { "title": "Naudoti vertikalų slinkimą" },
+            "scroll_vertical_label": { "textContent": "Vertikalus slinkimas" },
+            "scroll_horizontal": { "title": "Naudoti horizontalų slinkimą" },
+            "scroll_horizontal_label": { "textContent": "Horizontalus slinkimas" },
+            "scroll_wrapped": { "title": "Naudoti išklotą slinkimą" },
+            "scroll_wrapped_label": { "textContent": "Išklotas slinkimas" },
+            "spread_none": { "title": "Nesujungti puslapių sklaidų" },
+            "spread_none_label": { "textContent": "Be sklaidų" },
+            "spread_odd": { "title": "Sujungti puslapių sklaidas pradedant nelyginiais puslapiais" },
+            "spread_odd_label": { "textContent": "Nelyginės sklaidos" },
+            "spread_even": { "title": "Sujungti puslapių sklaidas pradedant lyginiais puslapiais" },
+            "spread_even_label": { "textContent": "Lyginės sklaidos" },
+            "document_properties": { "title": "Dokumento savybės…" },
+            "document_properties_label": { "textContent": "Dokumento savybės…" },
+            "document_properties_file_name": { "textContent": "Failo vardas:" },
+            "document_properties_file_size": { "textContent": "Failo dydis:" },
+            "document_properties_kb": { "textContent": "{{size_kb}} KB ({{size_b}} B)" },
+            "document_properties_mb": { "textContent": "{{size_mb}} MB ({{size_b}} B)" },
+            "document_properties_title": { "textContent": "Antraštė:" },
+            "document_properties_author": { "textContent": "Autorius:" },
+            "document_properties_subject": { "textContent": "Tema:" },
+            "document_properties_keywords": { "textContent": "Reikšminiai žodžiai:" },
+            "document_properties_creation_date": { "textContent": "Sukūrimo data:" },
+            "document_properties_modification_date": { "textContent": "Modifikavimo data:" },
+            "document_properties_date_string": { "textContent": "{{date}}, {{time}}" },
+            "document_properties_creator": { "textContent": "Kūrėjas:" },
+            "document_properties_producer": { "textContent": "PDF generatorius:" },
+            "document_properties_version": { "textContent": "PDF versija:" },
+            "document_properties_page_count": { "textContent": "Puslapių skaičius:" },
+            "document_properties_page_size": { "textContent": "Puslapio dydis:" },
+            "document_properties_page_size_unit_inches": { "textContent": "in" },
+            "document_properties_page_size_unit_millimeters": { "textContent": "mm" },
+            "document_properties_page_size_orientation_portrait": { "textContent": "stačias" },
+            "document_properties_page_size_orientation_landscape": { "textContent": "gulsčias" },
+            "document_properties_page_size_name_a3": { "textContent": "A3" },
+            "document_properties_page_size_name_a4": { "textContent": "A4" },
+            "document_properties_page_size_name_letter": { "textContent": "Laiškas" },
+            "document_properties_page_size_name_legal": { "textContent": "Dokumentas" },
+            "document_properties_page_size_dimension_string": {
+              "textContent": "{{width}} × {{height}} {{unit}} ({{orientation}})"
+            },
+            "document_properties_page_size_dimension_name_string": {
+              "textContent": "{{width}} × {{height}} {{unit}} ({{name}}, {{orientation}})"
+            },
+            "document_properties_linearized": { "textContent": "Spartus žiniatinklio rodinys:" },
+            "document_properties_linearized_yes": { "textContent": "Taip" },
+            "document_properties_linearized_no": { "textContent": "Ne" },
+            "document_properties_close": { "textContent": "Užverti" },
+            "print_progress_message": { "textContent": "Dokumentas ruošiamas spausdinimui…" },
+            "print_progress_percent": { "textContent": "{{progress}}%" },
+            "print_progress_close": { "textContent": "Atsisakyti" },
+            "toggle_sidebar": { "title": "Rodyti / slėpti šoninį polangį" },
+            "toggle_sidebar_notification": { "title": "Parankinė (dokumentas turi struktūrą / priedų)" },
+            "toggle_sidebar_label": { "textContent": "Šoninis polangis" },
+            "document_outline": {
+              "title": "Rodyti dokumento struktūrą (spustelėkite dukart norėdami išplėsti/suskleisti visus elementus)"
+            },
+            "document_outline_label": { "textContent": "Dokumento struktūra" },
+            "attachments": { "title": "Rodyti priedus" },
+            "attachments_label": { "textContent": "Priedai" },
+            "thumbs": { "title": "Rodyti puslapių miniatiūras" },
+            "thumbs_label": { "textContent": "Miniatiūros" },
+            "findbar": { "title": "Ieškoti dokumente" },
+            "findbar_label": { "textContent": "Rasti" },
+            "page_canvas": { "textContent": "{{page}} puslapis" },
+            "thumb_page_title": { "textContent": "{{page}} puslapis" },
+            "thumb_page_canvas": { "textContent": "{{page}} puslapio miniatiūra" },
+            "find_input": { "title": "Rasti", "placeholder": "Rasti dokumente…" },
+            "find_previous": { "title": "Ieškoti ankstesnio frazės egzemplioriaus" },
+            "find_previous_label": { "textContent": "Ankstesnis" },
+            "find_next": { "title": "Ieškoti tolesnio frazės egzemplioriaus" },
+            "find_next_label": { "textContent": "Tolesnis" },
+            "find_highlight": { "textContent": "Viską paryškinti" },
+            "find_match_case_label": { "textContent": "Skirti didžiąsias ir mažąsias raides" },
+            "find_entire_word_label": { "textContent": "Ištisi žodžiai" },
+            "find_reached_top": { "textContent": "Pasiekus dokumento pradžią, paieška pratęsta nuo pabaigos" },
+            "find_reached_bottom": { "textContent": "Pasiekus dokumento pabaigą, paieška pratęsta nuo pradžios" },
+            "find_match_count": { "textContent": "{[ plural(total) ]}" },
+            "find_match_count[one]": { "textContent": "{{current}} iš {{total}} atitikmens" },
+            "find_match_count[two]": { "textContent": "{{current}} iš {{total}} atitikmenų" },
+            "find_match_count[few]": { "textContent": "{{current}} iš {{total}} atitikmenų" },
+            "find_match_count[many]": { "textContent": "{{current}} iš {{total}} atitikmenų" },
+            "find_match_count[other]": { "textContent": "{{current}} iš {{total}} atitikmens" },
+            "find_match_count_limit": { "textContent": "{[ plural(limit) ]}" },
+            "find_match_count_limit[zero]": { "textContent": "Daugiau nei {{limit}} atitikmenų" },
+            "find_match_count_limit[one]": { "textContent": "Daugiau nei {{limit}} atitikmuo" },
+            "find_match_count_limit[two]": { "textContent": "Daugiau nei {{limit}} atitikmenys" },
+            "find_match_count_limit[few]": { "textContent": "Daugiau nei {{limit}} atitikmenys" },
+            "find_match_count_limit[many]": { "textContent": "Daugiau nei {{limit}} atitikmenų" },
+            "find_match_count_limit[other]": { "textContent": "Daugiau nei {{limit}} atitikmuo" },
+            "find_not_found": { "textContent": "Ieškoma frazė nerasta" },
+            "error_more_info": { "textContent": "Išsamiau" },
+            "error_less_info": { "textContent": "Glausčiau" },
+            "error_close": { "textContent": "Užverti" },
+            "error_version_info": { "textContent": "PDF.js v. {{version}} (darinys: {{build}})" },
+            "error_message": { "textContent": "Pranešimas: {{message}}" },
+            "error_stack": { "textContent": "Dėklas: {{stack}}" },
+            "error_file": { "textContent": "Failas: {{file}}" },
+            "error_line": { "textContent": "Eilutė: {{line}}" },
+            "rendering_error": { "textContent": "Atvaizduojant puslapį įvyko klaida." },
+            "page_scale_width": { "textContent": "Priderinti prie lapo pločio" },
+            "page_scale_fit": { "textContent": "Pritaikyti prie lapo dydžio" },
+            "page_scale_auto": { "textContent": "Automatinis mastelis" },
+            "page_scale_actual": { "textContent": "Tikras dydis" },
+            "page_scale_percent": { "textContent": "{{scale}}%" },
+            "loading_error_indicator": { "textContent": "Klaida" },
+            "loading_error": { "textContent": "Įkeliant PDF failą įvyko klaida." },
+            "invalid_file_error": { "textContent": "Tai nėra PDF failas arba jis yra sugadintas." },
+            "missing_file_error": { "textContent": "PDF failas nerastas." },
+            "unexpected_response_error": { "textContent": "Netikėtas serverio atsakas." },
+            "annotation_date_string": { "textContent": "{{date}}, {{time}}" },
+            "text_annotation_type": { "alt": "[„{{type}}“ tipo anotacija]" },
+            "password_label": { "textContent": "Įveskite slaptažodį šiam PDF failui atverti." },
+            "password_invalid": { "textContent": "Slaptažodis neteisingas. Bandykite dar kartą." },
+            "password_ok": { "textContent": "Gerai" },
+            "password_cancel": { "textContent": "Atsisakyti" },
+            "printing_not_supported": { "textContent": "Dėmesio! Spausdinimas šioje naršyklėje nėra pilnai realizuotas." },
+            "printing_not_ready": { "textContent": "Dėmesio! PDF failas dar nėra pilnai įkeltas spausdinimui." },
+            "web_fonts_disabled": { "textContent": "Saityno šriftai išjungti – PDF faile esančių šriftų naudoti negalima." },
+            "find_ignore_accents": { "textContent": "Ignoruoti spec. simbolius" },
+            "find_input_line_by_line": { "textContent": "Atskiros paieškos atskiriamos eilutėmis" },
+            "find_multiple_texts_label": { "textContent": "Keletas paieškos terminų" },
+            "find_individual_words_label": { "textContent": "Ieškoti atskirų žodžių" },
+            "find_fuzzy": { "textContent": "Apytiksliai" }
+          }
+        }
+      }
+  </script>
+
+</html>

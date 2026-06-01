@@ -1,0 +1,1834 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+        <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        <meta http-equiv="Last-Modified" content="Fri, 03 Jun 2016 01:16:49 GMT" />
+        <meta http-equiv="Pragma" content="no-cache, no-store, private, must-revalidate, proxy-revalidate, post-check=0, pre-check=0, max-age=0" />
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, private, must-revalidate, proxy-revalidate, post-check=0, pre-check=0, max-age=0" />
+        <meta http-equiv="Expires" content="Fri, 03 Jun 2016 01:16:49 GMT" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name= "format-detection" content ="telephone=no" />
+
+        <title>National Library of India</title>
+        <link rel="shortcut icon" href="https://nationallibrary.gov.in/favicon.ico" type="image/x-icon" />
+        <meta name="description" content="National Library, Govt. of India" />
+
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">-->
+        <link rel="stylesheet" href="https://nationallibrary.gov.in/assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://nationallibrary.gov.in/assets/css/hover.css">
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+        <link rel="stylesheet" href="https://nationallibrary.gov.in/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://nationallibrary.gov.in/assets/css/custome-style.css">
+
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.29.5/css/theme.default.min.css" integrity="sha384-hjXHnNUDEJD/y5Lf1GYkvSnB6rIOnfS+eUWA0oQv9a4gxmyWCbXW8GOVn3UwkKV6" crossorigin="anonymous">-->
+        <link href="https://nationallibrary.gov.in/assets/css/table_sorter.css" rel="stylesheet" type="text/css"/>
+        <link href="https://nationallibrary.gov.in/assets/css/style.css" rel="stylesheet" type="text/css" />
+        <link href="https://nationallibrary.gov.in/assets/css/menu.css" rel="stylesheet" type="text/css" />
+
+<!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="https://nationallibrary.gov.in/assets/js/jquery-3.3.1.min.js"><\/script>')</script>-->
+        <script src="https://nationallibrary.gov.in/assets/js/jquery-3.3.1.min.js"></script>
+        <!--EXTRA-->
+        <script>base_url = 'https://nationallibrary.gov.in/';</script>
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+        <script src="https://nationallibrary.gov.in/assets/js/bootstrap.min.js"></script>
+        <link href="https://nationallibrary.gov.in/assets/css/tooltip.css" rel="stylesheet" type="text/css" media="screen"/>
+        <script src="https://nationallibrary.gov.in/assets/js/tooltip.js" type="text/javascript"></script>
+        <script src="https://nationallibrary.gov.in/assets/js/jquery.form.js" type="text/javascript"></script>
+        <script src="https://nationallibrary.gov.in/assets/js/jquery.print.js" type="text/javascript"></script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.29.5/js/jquery.tablesorter.min.js" integrity="sha384-hCuW11qVGtDNxfwpKIBnfZclwRLaMrmnn5IQ0HtYwRZaESSeUOJpQmFQg0q3PlkQ" crossorigin="anonymous"></script>     <script src="https://nationallibrary.gov.in/assets/js/jquery.form.js" type="text/javascript"></script>-->
+        <script src="https://nationallibrary.gov.in/assets/js/jquery.tablesorter.js" type="text/javascript"></script>
+        <link href="https://nationallibrary.gov.in/assets/ionicon/ionicons.min.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                //$.ajaxSetup({cache: false});
+                $('#site_search_form').find("input[type=search]").click(function () {
+                    $('#site_search_form').find("input[type=search]").css({"width": "200px"});
+                });
+                //$('.tablesorter').stackedRows({altRowStyle: true});
+            });
+            function divOpen(refID, updateDIV, URL) {
+                var divId = "#" + updateDIV;
+                $(divId + " img.x").css({"display": "none"});
+                $(divId + " .divPopupContent").html("<img src='https://nationallibrary.gov.in/assets/images/ajax-loader.gif' alt='Please wait...' />Please wait...");
+                $.get(URL, {'option': refID}, function (data) {
+                    $(divId + " .divPopupContent").html(data);
+                });
+                $(divId).css({"display": "block"});
+                $(divId + " img.x").css({"display": "block"});
+            }
+            function popupDivOpen(refID, updateDIV, URL) {
+                $("#trans_div").remove();
+                $("body").prepend("<div id=\"trans_div\" style=\"height:" + ($(document).height() - 40) + "px;\"></div>");
+                if (updateDIV === "")
+                    $("#divPopup").remove();
+                var divId = "#" + updateDIV;
+                if (updateDIV === "")
+                    divId = "#divPopup";
+                ////$(divId).html("Loading....");
+                if (updateDIV === "") {
+                    var pDiv = "<div id=\"divPopup\" style=\"display:block;\"><div class=\"divPopupContent\"></div></div>";
+                    $("body").prepend(pDiv);
+                }
+                $(divId + " img.x").css({"display": "none"});
+                $(divId + " .divPopupContent").removeClass("divPopup");
+                $(divId + " .divPopupContent").addClass("center").html("<img src='https://nationallibrary.gov.in/assets/images/reload4.gif'/>");
+                $(divId).css({"display": "block"});
+                $.get(URL, {'option': refID}, function (data) {
+                    if (updateDIV !== "") {
+                        $(divId + " .divPopupContent").html("").removeClass("center").addClass("divPopup");
+                        $(divId + " img.x").css({"display": "block"});
+                        $(divId).css({"display": "block"});
+                        $(divId + " .divPopupContent").html(data);
+                    } else {
+                        $(divId + " .divPopupContent").html("").removeClass("center").addClass("divPopup");
+                        //document.body.append(data.substr(1, data.length - 2));
+                        $(divId + " .divPopupContent").html(data).removeClass("divPopup"); //for Log in
+                    }
+                });
+                $("#trans_div").css({"display": "block"});
+            }
+            function closeDiv() {
+                $("#divDelete").css({"display": "none"});
+                //$("#divDelete").remove();
+                $("#trans_div").css({"display": "none"});
+                $("#divPopup").css({"display": "none"});
+                //window.history.back();
+            }
+            $(document).on('click', '.x', function () {
+                $("#trans_div").css({"display": "none"});
+                $("#divPopup .divPopupContent").html("");
+                $("#divPopup").css({"display": "none"});
+                //window.location.reload();
+            });
+        </script>
+        <style type="text/css" media="screen, projection">
+            /*html, body{height:100%;padding:0px;margin:0px;}*/
+                    </style>
+    </head>
+    <body> <!--  oncontextmenu="return false;"-->
+        <div id="divPopup">
+            <img src="https://nationallibrary.gov.in/assets/images/close.png" alt="Close" class="x" title="Close"/>
+            <div class="divPopupContent"></div>
+        </div>
+                <div id="trans_div"></div>
+        <!--HEADER & TOP MENU-->
+<div class="col-sm-12 nav_menu_top">
+    <div class="row top_tool">
+        <!--        <div class="col-sm-8" align="center">
+                    &nbsp;
+                </div>-->
+        <div class="col-sm-12" style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+
+
+                <span>
+                                            English
+
+                    &nbsp;|&nbsp;
+
+                                            <a href="https://nationallibrary.gov.in/home/site_language/hindi">हिंदी</a>
+
+                    &nbsp;|&nbsp;
+
+                                            <a href="https://nationallibrary.gov.in/home/site_language/bengali">বাংলা</a>
+                                    </span>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="https://www.facebook.com/nationallibrary.goi/" target="_blank" rel="nofollow noopener noreferrer">
+                    <img src="https://nationallibrary.gov.in/assets/images/t_facebook.png" style="width: 30px; height: 30px; margin: 0 5px;" />
+                </a>
+
+                <a href="https://x.com/NationalLib_GoI" target="_blank" rel="nofollow noopener noreferrer">
+                    <img src="https://nationallibrary.gov.in/assets/images/t_twitter.png" style="width: 30px; height: 30px; margin: 0 5px;" />
+                </a>
+
+                <a href="https://www.youtube.com/@nationallibraryofindia" target="_blank" rel="nofollow noopener noreferrer">
+                    <img src="https://nationallibrary.gov.in/assets/images/t_youtube.png" style="width: 30px; height: 30px; margin: 0 5px;" />
+                </a>
+
+                <a href="https://www.instagram.com/nationallibrary.goi/" target="_blank" rel="nofollow noopener noreferrer">
+                    <img src="https://nationallibrary.gov.in/assets/images/t_instagram.png" style="width: 30px; height: 30px; margin: 0 5px;" />
+                </a>
+            </div>
+
+            <div>
+                <a href="https://nationallibrary.gov.in/home/screen_reader_access" style="margin-left: 20px;">Screen Reader Access</a>
+            </div>
+        </div>
+
+
+
+        <!--        <div class="col-sm-2" align="center">
+
+                </div>-->
+    </div>
+    <div class="row nav_top hidden-xs" id="nav_top">
+        <div class="col-sm-2 logo_cont" align="center">
+            <div class="header_logo" onclick="window.location = 'https://nationallibrary.gov.in/';"><img
+                    src="https://nationallibrary.gov.in/assets/images/logo.png" alt="" style="width:40px;height: 65px;"></div>
+            <div class="header_site_name" onclick="window.location = 'https://nationallibrary.gov.in/';"
+                style="color:red;margin-left:2px">
+                NATIONAL LIBRARY OF INDIA
+                <div class="clear"></div>
+                <span class="header_site_slogan" onclick="window.location = 'https://nationallibrary.gov.in/';"
+                    style="color:red"> Ministry of Culture <br>Government of India</span>
+            </div>
+            <!--<a href="https://nationallibrary.gov.in/"><img src="https://nationallibrary.gov.in/assets/images/logo.png" alt="" width="108%"></a>-->
+        </div>
+        <div class="col-md-7 col-sm-12 nav_cont">
+            <div class="row">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="https://nationallibrary.gov.in/" title="Home">Home</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="About Us">About
+                                    Us<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <!--<li><a href="https://flic.kr/s/aHBqjzJX1B" target="_blank" rel="nofollow noopener noreferrer">New Arrivals</a></li>-->
+                                    <li><a href="https://nationallibrary.gov.in/home/useful_information"
+                                            title="Useful Information">Useful Information</a></li>
+                                    <li><a href="https://nationallibrary.gov.in/home/who_is" title="Exhibitions">Who's
+                                            Who</a></li>
+                                    <li><a href="https://nationallibrary.gov.in/home/divisions"
+                                            title="Divisions">Divisions</a></li>
+                                    <li><a href="https://nationallibrary.gov.in/home/history" title="History">History</a>
+                                    </li>
+                                    <li><a href="https://nationallibrary.gov.in/home/preservation_activities"
+                                            title="Preservation">Preservation</a></li>
+                                    <li><a href="https://nationallibrary.gov.in/home/modernisation_programme"
+                                            title="Modernisation">Modernisation</a></li>
+                                    <li><a href="https://nationallibrary.gov.in/home/administrative_activities"
+                                            title="Administration">Administration</a></li>
+                                    <li><a href="https://nationallibrary.gov.in/home/more_about_national_library"
+                                            title="More About National Library">More About National Library</a></li>
+                                    <li><a href="https://nationallibrary.gov.in/home/exhibitions"
+                                            title="Exhibitions">Exhibitions</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+                                    title="Resources">Resources<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="https://nationallibrary.gov.in/home/services" title="Services">Services</a>
+                                    </li>
+                                    <!--                                    <li class="dropdown-submenu">
+                                        <a class="bt_ml_menu" href="#"title="Services">Journals <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="https://nationallibrary.gov.in/files/contents/newspaper.pdf" target="_blank">Journals & Newspapers Under DB Act</a></li>
+                                            <li><a href="https://nationallibrary.gov.in/files/contents/journals.pdf"target="_blank">Online Journals</a></li>
+                                        </ul>
+                                    </li>-->
+                                    <li><a href="https://nationallibrary.gov.in/home/open_educational_resources"
+                                            title="Collection">Open Educational Resources</a></li>
+                                    <li><a href="https://nationallibrary.gov.in/home/children_educational_eresources"
+                                            title="Collection">Children Educational E-resources</a></li>
+                                    <li><a href="https://nationallibrary.gov.in/files/contents/newspaper.pdf"
+                                            target="_blank">Journals & Newspapers Under DB Act</a></li>
+                                    <li><a href="https://nationallibrary.gov.in/files/contents/eresource2.pdf"
+                                            target="_blank">Online Collections</a></li>
+                                    <!--<li><a href="https://nationallibrary.gov.in/files/contents/journals.pdf"target="_blank">Online Journals</a></li>-->
+                                    <li><a href="https://nationallibrary.gov.in/files/contents/online_journals_2022.pdf"
+                                            target="_blank">Online Journals</a></li>
+                                    <li><a href="https://nationallibrary.gov.in/files/contents/list_of_foreign_print_journals_2018.pdf"
+                                            target="_blank">Foreign Journals</a></li>
+                                    <li><a href="https://nationallibrary.gov.in/home/collection"
+                                            title="Collection">Collection</a></li>
+                                    <li><a href="https://nationallibrary.gov.in/home/collection_development"
+                                            title="Collection Development">Collection Development</a></li>
+                                    <li><a href="https://nationallibrary.gov.in/home/collection_organisation"
+                                            title="Collection Organisation">Collection Organisation</a></li>
+                                    <li><a href="https://nationallibrary.gov.in/home/english_foreign_languages"
+                                            title="English & Foreign Languages">English & Foreign Languages</a></li>
+                                    <li><a href="https://nationallibrary.gov.in/home/rare_other_collections"
+                                            title="Rare & Other Collections">Rare & Other Collections</a></li>
+                                    <li><a href="https://nationallibrary.gov.in/home/publications"
+                                            title="Publications">Publications</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+                                    title="Catalogue">Catalogue<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <!--<li><a href="https://nationallibrary.gov.in/files/contents/how_to_access_books.pdf"" target="_blank">How to Access Books</a></li>-->
+                                    <li><a href="http://nationallibraryopac.nvli.in" target="_blank"
+                                            rel="nofollow noopener noreferrer">Library Catalogue</a></li>
+                                    <!--<li><a href="https://nationallibrary.gov.in/home/digital_books">Digitized Books</a></li>-->
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Publishers">Digital
+                                    Collection<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="https://indianculture.gov.in/MoCorganization/national-library"
+                                            target="_blank" rel="nofollow noopener noreferrer">Digitized Documents of
+                                            National Library</a></li>
+                                    <!--<li><a href="https://nationallibrary.gov.in/home/e-Resource">Electronic Resources</a></li>-->
+                                    <!-- <li><a href="https://nationallibrary.gov.in/home/E_Resources" title="History">Electronic
+                                            Resources</a></li> -->
+
+
+                                    <!--<li><a href="https://nationallibrary.gov.in/home/for_publisher"title="For Publishers">For Publishers</a></li>-->
+                                </ul>
+                            </li>
+                            <!-- <li><a target="_blank" href="https://nationallibrary.gov.in/museum" title="Login">Museum</a></li> -->
+                            <!-- <li><a href="https://nationallibrary.gov.in/home/contact_us" title="Contact">Contact Us</a></li> -->
+                             <li><a href="https://nationallibrary.knimbus.com/" title="Contact">Remote Access</a></li>
+                            <li><a href="https://shebox.wcd.gov.in/" title="Contact">Women and Child Devlopment</a></li>
+
+                        </ul>
+                    </div>
+                </nav>
+                <script>
+                    $(document).ready(function() {
+                        $('.dropdown-submenu a.bt_ml_menu').on("click", function(e) {
+                            $(this).next('ul').toggle();
+                            e.stopPropagation();
+                            e.preventDefault();
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+                    <div class="col-md-1 reg pull-right">
+                <a href="https://nationallibrary.gov.in/account/register" title="Register">Register</a>
+            </div>
+            <!-- <div class="col-md-1 pull-right log_cont">
+                <a href="https://nationallibrary.gov.in/account/login"title="Login">Admin Login</a>
+                <span><i class="fa fa-user" aria-hidden="true"></i></span>
+            </div>-->
+            </div>
+    <div class="row mob_menu ">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <ul>
+                    <li><a href="https://nationallibrary.gov.in/">Home</a></li>
+                    <li><a href="https://nationallibrary.gov.in/account/login" title="Login">Login</a></li>
+                    <li><a href="https://nationallibrary.gov.in/account/register" title="Register">Register</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="About Us">About Us<span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <!--<li><a href="https://flic.kr/s/aHBqjzJX1B" target="_blank" rel="nofollow noopener noreferrer">New Arrivals</a></li>-->
+                            <li><a href="https://nationallibrary.gov.in/home/about_us"
+                                    title="More About National Library">More About National Library</a></li>
+                            <li><a href="https://nationallibrary.gov.in/home/who_is" title="Exhibitions">Who's Who</a></li>
+                            <li><a href="https://nationallibrary.gov.in/home/divisions" title="Divisions">Divisions</a></li>
+                            <li><a href="https://nationallibrary.gov.in/home/history" title="History">History</a></li>
+                            <li><a href="https://nationallibrary.gov.in/home/preservation_activities"
+                                    title="Preservation">Preservation</a></li>
+                            <li><a href="https://nationallibrary.gov.in/home/modernisation_programme"
+                                    title="Modernisation">Modernisation</a></li>
+                            <li><a href="https://nationallibrary.gov.in/home/administrative_activities"
+                                    title="Administration">Administration</a></li>
+                            <li><a href="https://nationallibrary.gov.in/home/exhibitions"
+                                    title="Exhibitions">Exhibitions</a></li>
+                            <li><a href="https://nationallibrary.gov.in/home/useful_information"
+                                    title="Useful Information">Useful Information</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Resources">Resources<span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://nationallibrary.gov.in/home/services" title="Services">Services</a></li>
+                            <li><a href="https://nationallibrary.gov.in/home/open_educational_resources"
+                                    title="Collection">Open Educational Resources</a></li>
+                            <li><a href="https://nationallibrary.gov.in/home/children_educational_eresources"
+                                    title="Collection">Children Educational E-resources</a></li>
+                            <li><a href="https://nationallibrary.gov.in/files/contents/newspaper.pdf"
+                                    target="_blank">Journals & Newspapers Under DB Act</a></li>
+                            <li><a href="https://nationallibrary.gov.in/files/contents/eresource2.pdf"
+                                    target="_blank">Online Collections</a></li>
+                            <li><a href="https://nationallibrary.gov.in/files/contents/journals.pdf" target="_blank">Online
+                                    Journals</a></li>
+                            <li><a href="https://nationallibrary.gov.in/files/contents/list_of_foreign_ print_ journals_2018.pdf"
+                                    target="_blank">Foreign Journals</a></li>
+                            <li><a href="https://nationallibrary.gov.in/home/collection" title="Collection">Collection</a>
+                            </li>
+                            <li><a href="https://nationallibrary.gov.in/home/collection_development"
+                                    title="Collection Development">Collection Development</a></li>
+                            <li><a href="https://nationallibrary.gov.in/home/collection_organisation"
+                                    title="Collection Organisation">Collection Organisation</a></li>
+                            <li><a href="https://nationallibrary.gov.in/home/english_foreign_languages"
+                                    title="English & Foreign Languages">English & Foreign Languages</a></li>
+                            <li><a href="https://nationallibrary.gov.in/home/rare_other_collections"
+                                    title="Rare & Other Collections">Rare & Other Collections</a></li>
+                            <li><a href="https://nationallibrary.gov.in/home/publications"
+                                    title="Publications">Publications</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Catalogue">Catalogue<span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <!--<li><a href="https://nationallibrary.gov.in/files/contents/how_to_access_books.pdf"" target="_blank">How to Access Books</a></li>-->
+                            <li><a href="https://nationallibraryopac.nvli.in" target="_blank"
+                                    rel="nofollow noopener noreferrer">Library Catalogue</a></li>
+                            <!--<li><a href="https://nationallibrary.gov.in/home/digital_books">Digitized Books</a></li>-->
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Publishers">Digital
+                            Collection<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://indianculture.gov.in/MoCorganization/national-library" target="_blank"
+                                    rel="nofollow noopener noreferrer">Digitized Documents of National Library</a></li>
+                            <!--<li><a href="https://nationallibrary.gov.in/home/e-Resource">Electronic Resources</a></li>-->
+                            <li><a href="https://nationallibrary.gov.in/home/E_Resources" title="History">Electronic
+                                    Resources</a></li>
+
+                            <!--<li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"title="Publishers">Publishers<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://nationallibrary.gov.in/home/for_publisher"title="For Publishers">For Publishers</a></li>-->
+                        </ul>
+                    </li>
+                    <li><a href="https://nationallibrary.gov.in/home/contact_us" title="Contact">Contact Us</a></li>
+                </ul>
+
+
+            </div>
+        </div>
+
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    </div>
+    <div class="col-xs-12 logo_mob">
+        <div class="col-xs-6 pull-right">
+            <div class="header_logo" onclick="window.location = 'https://nationallibrary.gov.in/';"><img
+                    src="https://nationallibrary.gov.in/assets/images/logo_fin.png" alt=""></div>
+            <div class="header_site_name" onclick="window.location = 'https://nationallibrary.gov.in/';"
+                style="color:red;margin-left:5px">
+                NATIONAL LIBRARY
+                <div class="clear"></div>
+                <span class="header_site_slogan" onclick="window.location = 'https://nationallibrary.gov.in/';"
+                    style="color:red"> Ministry of Culture <br>Government of India</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+</div>
+<!--HEADER & TOP MENU END--><!--SLIDER-->
+<div class="col-sm-12 banner_cont">
+    <div class="row">
+        <!-- Carousel================================================== -->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <!--<li data-target="#myCarousel" data-slide-to="3"></li>-->
+            </ol>
+            <div class="carousel-inner" role="listbox">
+<!--                <div class="item active">
+                    <img class="first-slide" src="https://nationallibrary.gov.in/files/slider/banner1.png" alt="First slide" width="100%">
+                    <div class="container">
+                        <div class="carousel-caption "></div>
+                    </div>
+                </div>-->
+<!--                <div class="item active">
+                    <img class="second-slide" src="https://nationallibrary.gov.in/files/slider/banner6.jpg" alt="Second slide" width="100%">
+                    <div class="container">
+                        <div class="carousel-caption "></div>
+                    </div>
+                </div>-->
+
+                <div class="item active">
+                    <img class="second-slide" src="https://nationallibrary.gov.in/files/slider/banner10.jpg" alt="Second slide" width="100%">
+                    <div class="container">
+                        <div class="carousel-caption "></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="third-slide" src="https://nationallibrary.gov.in/files/slider/banner11.jpg" alt="Third slide" width="100%">
+                    <div class="container">
+                        <div class="carousel-caption "></div>
+                    </div></div>
+        <div class="item">
+                    <img class="third-slide" src="https://nationallibrary.gov.in/files/slider/banner14.jpeg" alt="Third slide" width="100%">
+                    <div class="container">
+                        <div class="carousel-caption "></div>
+                    </div></div>
+
+          <div class="item">
+                    <img class="third-slide" src="https://nationallibrary.gov.in/files/slider/banner8.jpg" alt="Third slide" width="100%">
+                    <div class="container">
+                        <div class="carousel-caption "></div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img class="third-slide" src="https://nationallibrary.gov.in/files/slider/banner12.jpg" alt="Third slide" width="100%">
+                    <div class="container">
+                        <div class="carousel-caption "></div>
+                    </div>
+                </div>
+        <div class="item">
+                    <img class="third-slide" src="https://nationallibrary.gov.in/files/slider/banner13.jpg" alt="Third slide" width="100%">
+                    <div class="container">
+                        <div class="carousel-caption "></div>
+                    </div>
+                </div>
+<div class="item">
+                    <img class="third-slide" src="https://nationallibrary.gov.in/files/slider/banner6.JPG" alt="Third slide" width="100%">
+                    <div class="container">
+                        <div class="carousel-caption "></div>
+                    </div>
+
+                </div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <!-- /.carousel -->
+ <!-- SEPARATE BANNER BELOW SLIDER -->
+        <!-- <div class="separate-banner" style=" text-align: center;">
+            <img src="https://nationallibrary.gov.in/files/slider/aug_2025.png" alt="Separate Banner" style="max-width:100%; height:auto;">
+        </div> -->
+        <!-- END SEPARATE BANNER -->
+    </div>
+
+</div>
+<!--SLIDER END-->
+<div class="col-sm-12 mid_about">
+    <div class="container">
+        <div class="col-md-4 col-xs-12 abt_left abt_line_new">
+            <!-- <a href="https://www.indiaculture.gov.in/shri-gajendra-singh-shekhawat" class="ext_lnk"><img src="https://nationallibrary.gov.in/files/contents/Gajendra_Singh_Shekhawat_13062024.jpg" /></a>
+            <p><b>Shri Gajendra Singh Shekhawat</b></p>
+            <p>Hon'ble Minister of Culture</p>-->
+            <p></p>
+            <!--<hr width="30%">-->
+            <!-- <a href="https://indianculture.gov.in/" target="_blank" rel="nofollow noopener noreferrer"><img src="https://nationallibrary.gov.in/files/contents/logo_f1.png" style="width:260px;height:210px;padding: 0px;"/></a> -->
+            <a href="https://www.indiaculture.gov.in/shri-gajendra-singh-shekhawat"><img
+                    src="https://nationallibrary.gov.in/files/contents/Gajendra_Singh_Shekhawat_photo.jpg"
+                    height="190px" /></a>
+            <h4 style="margin-top: 10px;">Shri Gajendra Singh Shekhawat</h4>
+            <p>Hon'ble Minister of Culture</p>
+
+            <a
+                href="https://www.indiaculture.gov.in/sites/default/files/About_Minister/Rao_Inderjit_Singh_02072024.pdf"><img
+                    src="https://nationallibrary.gov.in/files/contents/rao_inderjit_singh.png" style="margin-top: 10px;"
+                    height="190px" /></a>
+            <h4 style="padding-top: 10px;">Shri Rao Inderjit Singh</h4>
+            <p>Hon'ble Minister of State for Culture</p>
+
+            <a href="https://nationallibrary.gov.in/home/director"><img
+                    src="https://nationallibrary.gov.in/files/contents/aps_update.png" style="margin-top: 10px;"
+                    height="190px" width="146px" /></a>
+            <h4 style="padding-top: 10px;">Prof. (Dr.) Ajay Pratap Singh</h4>
+            <p>Director General</p>
+            <!--<a href="https://amritmahotsav.nic.in/" target="_blank" rel="nofollow noopener noreferrer"><img src="https://nationallibrary.gov.in/files/contents/azadi_logo.png" style="width:350px;height:200px;padding: 0px;"/></a>-->
+        </div>
+        <div class="col-md-7 col-xs-12 abt_right">
+
+            <h3>National Library of India</h3><br>
+            <p style="text-align:justify;">
+                The National Library of India, foremost among the libraries in India, is one of the four designated
+                libraries entitled to receive under the Delivery of Books and Newspapers (Public Libraries) Act, 1954 a
+                copy of every publication published anywhere in the country. The library is a permanent depository of
+                all reading and printed materials produced in India, or written by any foreigner, wherever published and
+                in whatever language.
+            </p>
+            <p style="text-align:justify;">
+                The origin of the National Library of India is traced to the former Calcutta Public Library, established
+                in the first half of the 19th century. The Calcutta Public Library was established largely at the
+                initiative of Mr. J. H. Stoqueler, the Editor of the Englishman.
+
+            </p>
+            <a href="https://nationallibrary.gov.in/home/brief" title="Brief Information">more &raquo;</a>
+
+        </div>
+        <div class="col-md-7 col-xs-12 abt_right" style="padding-top: 189px;">
+
+            <h3>Director General's Message </h3><br>
+            <p style="text-align:justify;">
+                The National Library of India offers its vast treasure of books, magazines and journals published across
+                the country and the world to researchers/scholars as well as lay readers. Publications from across the
+                world are housed in it and are preserved and restored for the use of the readers of today and tomorrow.
+                Although the Covid-19 pandemic has affected the entire society, the The National Library continues with
+                its services with the pandemic protocol in place for the welfare of our readers.
+            </p>
+            <p style="text-align:justify;">
+                In view of the current constraints on mobility, The National Library has introduced an online
+                registration process. Any Citizens beyond 18 years of age can become a member of the Library by
+                submitting the'Registration Form' from anywhere within the country on The National Library website.
+                Citizens may also reach out to The National Library through Facebook Page,Twitter,YouTube and Instagram.
+
+            </p>
+            <!--<p>(i) Researchers, Childrens and Young Adults </p>
+            <p>(ii) A Blog </p>-->
+            <a href="https://nationallibrary.gov.in/home/director" title="Brief Information">more &raquo;</a>
+            <!--<div class="row">
+                    <div class="col-sm-4">
+                        <a href="#"><img src="images/google_play.png" alt="google" width="100%"></a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="#"><img src="images/appstore.png" alt="google" width="100%"></a>
+                    </div>
+                </div>-->
+            <!-- <p class="google_text"><a href="https://nationallibrary.gov.in/home/director">Click Here</a> to see message from Director</p>-->
+
+        </div>
+    </div>
+</div>
+<hr>
+<!-- <div class="col-sm-12 mid_about">
+    <div class="container">
+         <div class="col-md col-xs-12">
+           <a href="https://www.indiaculture.gov.in/shri-gajendra-singh-shekhawat" ><img src="https://nationallibrary.gov.in/files/contents/Gajendra_Singh_Shekhawat_photo.jpg" height="300px" /></a>
+           <a href="https://www.indiaculture.gov.in/shri-gajendra-singh-shekhawat"><img src="Gajendra_Singh_Shekhawat_photo.jpg" height="300px"/></a>
+            <h1>Shri Gajendra Singh Shekhawat</h1>
+            <h3>Hon'ble Minister of Culture</p>
+            <p></p>
+        </div>
+    </div>
+</div> -->
+<div class="col-sm-12 ">
+    <div class="container">
+        <div class="row reg_vide">
+            <div class="col-md-6 col-xs-12">
+                <div class="row">
+                    <a href="https://nationallibrary.gov.in/files/contents/Newsletter_2021.pdf" target="_blank"><img
+                            src="https://nationallibrary.gov.in/assets/images/newsletter front_page.jpg" alt="lieb"
+                            width="100%" class="hvr-float-shadow"></a>
+                    <!--<iframe width="580" height="400" src="https://www.youtube.com/embed/d3JQGrZsOMk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+                    <!--<li><a href="https://nationallibrary.gov.in/files/contents/newsletter_january_to_december_2016.pdf" target="_blank"><img src="https://nationallibrary.gov.in/assets/images/lieb.png" alt="lieb" width="100%" class="hvr-float-shadow"></a></li>-->
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12 col-md-offset-0 news_text">
+                <h1>News</h1>
+                <marquee behavior="scroll" direction="up" onmouseover="this.stop();" onmouseout="this.start();"
+                    scrollamount="3" height="270" style="margin-top: 15px;">
+                    <ul>
+                        <!--                        <li><a href="#">January-December 2016</a></li>
+                                                <li><a href="#">January-December 2015</a></li>
+                                                <li><a href="#">July-December 2014</a></li>
+                                                <li><a href="#">Jan-Jun 2012</a></li>
+                                                <li><a href="#">Jul-Dec 2011</a></li>
+                                                <li><a href="#">Jan-Jun 2011</a></li>-->
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/OGNjOTVlNmUxOWM4MjFhZTNiZTY1NjY0MTA0ZjQxODJkMWUxNjE3ZjY3NGI5ZTM5M2U4MTZjMWJlZGQ5MGViYzFiMWE2M2FiNjYxNWNhNWFiN2E4OTYwZGQyMjM3MGUzODFjN2Q2ZjBlMDMwNTVkZGQzODgyMDhiNjY0M2I5MmV4S1dHcXBiMTgrbC9Hc3F5dmxNVXMzdzM4U0I3alJVVnZ6ZWtnbjQ1bVp4SHE2bHh5NG82bnNTVGFvY3hJTnlVT3VqKy9FazRyWEFrdW1XZ3VzcitkUT09"
+                                    target="_blank">EMPANELMENT OF BOOK SUPPLIERS VENDORS 2026 FINALIZED <img
+                                        src="https://nationallibrary.gov.in/assets/images/new.gif" alt="Images" width="30"
+                                        height="14" border="0"></a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/OGI4NmYyMWFkYzQwYTZlNmJmNTZmNDFjZTc4ZDc0YmU3NDk4MDY4Nzc1YzhjMDU4MDJhYzhjOGYzOWE2MzE2MzRmOGIwYzYzYzQ1NGZkZWYyY2E2NzE1ZmY4MDQ3MWRlZGQ2ZjVhMzlkMzBlMTgzMWFlNzkyNzk0MTcxZTM0YTVhUUhmcmlMS0VZL3RQaTJyTzh0dUVFZTVpNGdIME9vWjUvVnNhZG0zaU11TUFsQWpaNXhlMWFOdjhEbFc2SUlL"
+                                    target="_blank">Request for submitting proposal of E Books for procurement at National Library 2026 <img
+                                        src="https://nationallibrary.gov.in/assets/images/new.gif" alt="Images" width="30"
+                                        height="14" border="0"></a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/Mjc2N2ZiNDliMGFiZWVjMjBmYjdkM2ExY2I0Yzc5NjkyZjVhM2QwNDA5ODczNGM2MzliNjc0ZjQ0ZWQ3MjI1NzU2NDc5ZTM2ODA0MDI4NjAyZGVhNGQyNzBmNjUzNTkzNGEzMjVjYjJmODIwNGIxNTEwYWJkYTFmNTM1MDE0ZDcwc2s1ZXRPN00xZXlzcURvYWhHMTQrc1pSYWxiWE5naExRRjVISjVGaGlORGllVVFhWjNpYmJFRHBIRUgvblF2bGtSQ2hSNWh3REpILytsY0J5U3VSZz09"
+                                    target="_blank">National Library Kolkata invites Indian publishers to email catalogues by 12 February 2026 for City Hub and Coffee with Book Catalogues must include ISBN titles in English Hindi and Bangla Books will be purchased at 23 (percentage) discount based on committee recommendation with details submitted in Excel and PDF <img
+                                        src="https://nationallibrary.gov.in/assets/images/new.gif" alt="Images" width="30"
+                                        height="14" border="0"></a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/MDBlMDM5NDcwMjJlY2RmNGJhYTNhY2ZmMzhlYjE4MjhhMzVhYTllMDhlMzQ3OThmYzY0N2I0N2Q2MGI2NWU0MmU1ZDFkMTkwZjRhZmFhNmEyMWY5NDIwY2I5NTRjZjAzOWI2YjgyNGYzNjJhZDY0OTFhMmRkMTVkMzA1NDgxNGJDbGtjb3RKOWRLMERhNmxoMVVxdDJWTTdPc0psMU1Ubi9SdlJPSFpEWmU0NlJ3YVZ3VTh2OGpzcG94MVpWZ1IxWUp5V3pxakdsOVBBcVBPSG5aVXlBQT09"
+                                    target="_blank">This is to inform all readers that the OPAC (Online Public Access Catalogue) will remain unavailable from 13 December 2025 to 16 December 2025 due to technical maintenance. Inconvenience is regretted <img
+                                        src="https://nationallibrary.gov.in/assets/images/new.gif" alt="Images" width="30"
+                                        height="14" border="0"></a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/ZTliY2I1MGFmYjViZDQxYjQxNzkwNDEwN2Y5NDQ4NTU2MTI1ODU0NGI0NDFiYWZiNDc3N2E3YzdmY2IxMThiMTRiYjc5YjU2ZTE1ZTFmNTI3MzA1YzRmOTBhNzE5ZjczZWM2Yzg0NzYxZjliZTVlNDU2NTI3YTQ0Y2E3YjRjZmZQQnR3UEtUVk42SjgwTVY4OXdxNlhNOGxPUEhudEFkL2UyRGNpQTV3aVlKKytNallyOUNTUXU1akg2aWRYVklt"
+                                    target="_blank">Filling up the post of Director General, National Library, Kolkata, a subordinate organization under the Ministry of Culture on deputation (including short term contract) basis reg. <img
+                                        src="https://nationallibrary.gov.in/assets/images/new.gif" alt="Images" width="30"
+                                        height="14" border="0"></a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/OTc1ZTUwYWVkOTAwNmIwZTFjOWJjMTNhZjg0NmQ4NThjYTYxNTZjNWY2OTU3YjQyZDU4MTIyNjRjMDc0OWJhMmU2ZTUwMWJiZTkzNjBlZDhmMmQwZTVhZjQxMzJmMmQ1NTRlY2Q5MmU1MTFhYzFlNTkwMDQzOTZmMTA3NDhlNDlRd3JFQXBUR3lscU43dXlQMmIxR0FmOURyeTcxd1ZsMU1VenVqSVRIK1lkdU4wNCt3a3VWZTBsR1NwRm1Zakovb1J3WFpuTU5vNTN6SjZTcEZzd2Z6K2hGVTlVeUNUQTNOcjVrS3ZydnhEZS96US9lNmFvSFlDekVMbERTZ2lSQmhoNG4rWUhzQ3ZWMmZrZU9hU01BemVmd3dsNEpkeTBERVdoNXpUdFNrZms9"
+                                    target="_blank">Corrigendum reg date extended for receipt of application for Engagement of Consultant Administrative Officer at National Library,Kolkata <img
+                                        src="https://nationallibrary.gov.in/assets/images/new.gif" alt="Images" width="30"
+                                        height="14" border="0"></a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/YmY1N2NhMDMyOTViNmRjYmJkOTk1ZWU4NGI5ZTAxMTcxNWVhOWNlMzE5ODNjYzg2MGJlOGI3NTQ2ZTUyMGE2MWZiNjI3ZjJjNDgwOTVlMDIzNjhiYTQ0MzIzNzY1YjhhOTZkYjc0MjA3NWYwNThlZGU3MmNhN2ZjZDhhNzg1MDBXSnRwMjdQV3pOd1RNbmtmVlJZTXNCcGhBelVGRjV6Ui8xNWdidnpEWUE2RjJ4SldKMFZJWEFKUTl5Y05BdG1UeUE0NkE2NmRSL1hVVEs3TU9SaDgzQXpnNXJSUXIvZ0N3a2JYeUkrT09oVT0="
+                                    target="_blank">National Library, Kolkata invites applications from retired Central Govt. officers (below 63 years) for contractual engagement as Consultant (Administrative Officer level). The role involves administrative, accounts, legal, RTI, and procurement work. Tenure is one year, extendable, with remuneration as per DoE guidelines. <img
+                                        src="https://nationallibrary.gov.in/assets/images/new.gif" alt="Images" width="30"
+                                        height="14" border="0"></a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/YWJjYjBiMzE0ODUzN2U0NjM3Nzc1ODFiODc2YjY4YjI4N2MxMWY3YmIzYTExYmYxNzJjOTA3NzM1MWMyOTRlMjVjMzQ1ZWM2ZDRjMzkyZmNiZDliMjY2MzU1ZWRkODE3ZjAxMWFlYjBlZmNkMjkyYWE1YTk0OTM4NzQwOGNiNGFHek0xdzk4MXg3L3pMNmV6U0piR0dBejFhUjBxUGlXVlNFR1JPaWZmNEM1ejZjaXpjcUlRV0ltS3FCaVNmUDF3Y0N6cHpoUHVORS94VGJ3UDE3clNOWFFtZGFxTXNsSWxkbzlrU3VtL1kvVjBpSVBuUVAxenlwbEtXZDFSTkxCZw=="
+                                    target="_blank">List of applicants waiting for appointment on compassionate grounds in the National Library</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/NGNiZDg2ZTI5Y2E1ODFhNzc4M2I5NDc5NWY0YjQwNDk0MzNlODUzZGYwNWNlYTc4ZmZjMTg5MDdlZjQxMjUyMTU2NTc4NmQ5YjNiZTcyNWJlYmY1MzhlNjc5NjQ4ZmUzZGZkNTVmM2RhNGI0YjY5MzIzNDY1MWI2MTc1MjNkYzBOT0hNU0JNVmE5THdXeTN0cXlBRVNTM0l1bWlSRytRZm5KbklGeE56d3J2V09pdnVOZEZySDA4MnBCLzJiV0FHR2NrR1JtUXJrRnR4S1J5b2locTBCQT09"
+                                    target="_blank">LTC ADVANCE FORMAT</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/OGZmNjZiNzM1ODQwZDM2ZGQ1NzI0MzA1OGNjMTNhMjgxZTg3NWI3ZTZmNGUzZTdhNjNhNjgxYTA4NzdkYWI3ZWU4NDk4OGNlMzUwM2U1YTI1NjA5ZGI3NmFiYTllOGY3YzBjYjFkNDNhMzJjYmI2YWI0ZTk4ZDVhZDdhMjIyZmVrWnpwUHZZMGtHWW13RElUMjFFMmxSWERodlBaOG5jczZGc0d2c3NvYUdyMFY1NDVBTjVIZzJtWTRpNXJSalZLUzZZSjhZUU5ybHp4TXJjNXJMNXhOMXBmV2kyL21Sbk9LdFRBbXhrMElCST0="
+                                    target="_blank">CEA revised pro-forma RPR-48 word format</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/OGY5MjhlZTQ3ZDM3YmZmMGFhMDc4M2YyNDg5MWQxN2FjODcwYTAxNjU1ODIzMGQxMGM0YTQwNThlNWJiMjRmOTNkZjJhNmJkMWYzZDlhOWY4Yjk4MTRkMDQ0YzM3MzI5Mzc2YmVjZTliNjJmMmNmMmYyN2FhYjQ2ZDIwZTk3MTFlME5ISkhpZVozUjRMdUpjZGRZWmZOcFl0b0RieXBmYWNrL3VxTjBjTitFbTV4N2twV08wdEl0cGtkQ3o1SGpXcERsbzlUckF0Nys1eGZaS2E1NUl1UT09"
+                                    target="_blank">LTC FINAL CLAIM WORD FORMAT</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/NzUzOTEzNmExNzA0NjdiYThlYzVhMmU1NzkwZGYzN2M3OWJjZDUwN2ZhNTNhNWYzNDUzMTBmMzFlMjZjY2IzYjEwY2RlZjk1MzViOGY2ZDI2ZTZjMWY0OWFmYmUyYzRmZTBjNGViZmE5YWM3ZjdjNTFmODNjNWJlZDZkNjJhMzBMU0cxTDVhdExtcS95ZTlrSk9RbmhWYlcwVU96RWsvSmVnNGx4dEU3MnBQNmlKNHliV05XdFRlTnF1VkYzbmlj"
+                                    target="_blank">TA ADVANCE FORM</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/YTc2NzU4MzdjNjBhYTc4OWM4Y2FkYjU3MTg0YzZlNzRiOTYxNGM5ZTcxZDYzOGY4ZDA2NDY1YmE3YjcyYzRmZmUxMzU2NTJiMDJkZmFiODE4ZWM1MWRiZTRmZTM5YTc2NDI3ZjY3ZmJlZTdmMmEyMzg3M2NjYTAyNjExODQwZWYyWkpFd2xpNzlDR3VWbHdTU2wrcnFNSzVSRDJZRDN4TjE4WXRzSGsrSlhRVDQ5MnlZZ3FHRms5eVJmbUhOQUdsTEUySnVDSmFFS0FmZHFzbVdCYTVrZz09"
+                                    target="_blank">TA bill for Tour word format</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/YWJhM2FhM2ZmMjJiNjQ2Y2NkYjQ2NDkxNzNjMmJkY2MyNmJmOWY1ODFjMzA2MzY1ZDU5NjAwZWE3N2ZlODk1ZDIwY2ZlZGNjYWQxMmZlYWNjZWIwYjIyZjE4OTViZTcwNjU3YzkwNWE0NGM0ZTNkMjNmZTFhN2Y5NWM3MzNhMDN5NFhNeVJ5QllpOVMwRjQwZzNPKzd2Y1hUUSt3RWRyRnZ2Zk9XaGxrdkpPYVF3UDBoU3FpMG10RjlHVndVQ0pX"
+                                    target="_blank">The National Library, invited bids for the empanelment vide no. ACQ/BO/ENST/ADV/11 dated 20.12.2024. Against the same the following Book Suppliers / Vendors have been selected for empanelment for the procurement of foreign print books in the English languag</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/MDBkZTA2ODQzZjFlNTkzODJkMzY3MzJiNjBjNDg2ZjYwN2YzOGZkMDE0NjA0ZjNhZjc5MjgzZWE0NWE1ZWYyODNiMWFkMjVlMGQ1MTIxY2JjNDRmOGMxZmJlMzk3ZmM4YzI1OGFhYTYxYjc2YzkwMTIwYzU1ZDVmNjA0MjE4NjBKb3RTYVgyVG11Y254azFCRkR5TnZWM3ZUM1hSeG5rL0dFZ1p1Ry9ucXZ0ZWJ6eGdxb0c0TkhUaDhPaFpKNkZH"
+                                    target="_blank">Request for submitting proposal of e-Books for procurement at National Library</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/MjIyZjQxODM0MGYxYjMxMjdkMjBiY2NhOGJlMGM1NWIyMDNiNGMwMmNmY2FiMmM2Y2MxYzQ0MDI1OGY1YTBhOTJkYWQwYjBjOTM0Mzc0ZWEwMGJmOGU1MDEzMWRkNmVjMTEzNDc2MDlkNzNjODUzYmMwMDk2M2RlNzdjMTg2YWFBeklBaHZuU3pZMUkyV3JKY3FwdndWd2xFMS93WUMrUkI2WUFTZFNkUzc5MC9ocXAxMzZDN1Ezd3dPcHhvZVBN"
+                                    target="_blank">Request for submitting proposals for Renewal of e-Journals & e-Database and new proposal for procurement at National Library</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/YWUyNDUwOWZhZGUwZmRiNDI4MGVjOTljYmFmOGVhMDMzMWJhOTg3Y2M0NzU0NTQzZjk4ZTI1Y2Q4MDEzNDgwMzgwMjg0ZGQwMjZhZWM4OTlhNzI0OWY3MTYyZmI1MzA4ZTcyZjE2NDQ1ZDRiNTUyZjZkOTYxMmNlM2JhNTYwZjNRZnJLMmNZa0JITkpNZmVlVEZRY093UkNMNU83WllzVVRnUFliVzZJNWROM2RTYkJ4SmxQQjhrMmxEZlJFaGhjVVZrdnQzbnJtK3lJOGRkUmJ0cDZLZz09"
+                                    target="_blank">Young Professional Graduates from Library & Information Science as LIS Interns 2024-2025</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/MzRkNzYzMGU5OGE2ZTdhMDc3ZjE3NGY1YmQ4MGY5ZjU2ZDA5OGQ3NWRiMmVhYmYwMWU3ZmFmYThlNGMzZGQxYWQwMTlhNjc4ZTc0ZGQ5MjhmZjBkYWRjZDFkN2QxMWNlNjM3YTViMmQxNmYxM2YxNzY2YWU4NzQyZDYyZGNlZGMwZWZqcVZZSUdKMndYSEx3T2s2TUhxczZkWHlBTVB4SXBIM0FPV1ZiendRYUs2QURBSzFSd2hjKyt6MlRsalNF"
+                                    target="_blank">Notification of Collaboration Committee <img
+                                        src="https://nationallibrary.gov.in/assets/images/new.gif" alt="Images" width="30"
+                                        height="14" border="0"></a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/ZDE3YWQ3MzY2ZjZlYjViNWVjMTIyMWNiZGY2NDM1NTk5YjgwMGY4ZDcyZjE1Njk1ZmU4NDViNzg0MmY5M2YyNTgwN2ZkNTgyM2FhNWZiM2E2NGUzYjk2NTVkNjhkNmRhYmYwYTZmZWZjMTRkODI5YjE4MTUxZTI2OTc1OGQxMmR2VU9uamFYSjVWeml4K0xSNmR4Y0o5QWVBY0xsMUMxM0U5Q3VUanpIdWUwbkVpUmZpQ1FXcUt2K2FiOGJTRnJhem8ybm94bXg3QTNNek1WTEpkOXlQUT09"
+                                    target="_blank">Inspection Committee for assessing the Performance of M/s Rejendra Nath Das Security Agency in Maintenance of Garden works at National Library <img
+                                        src="https://nationallibrary.gov.in/assets/images/new.gif" alt="Images" width="30"
+                                        height="14" border="0"></a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/NmY1ZDBhZjBhMTNlYzg5OWNjNzdiOGJmN2Q4OWQ0NWIyNGNiNTcyNDdjNDE5MWRhMTBjMzIwYTk0NGU5YzdjMTU0ZDgwZGE5ZTJiZTNiYTk5MjI3ZmYxYzA0ZjcyNTJmYzQ4NzY5OTRmZTQwNmU4Y2M3NWQ1OGQzOTQ1NmM0ODJDY2ZwYnZpelc1STVzVCs0dGRjUFY5VEhCQy80MnZnV1REUjlLNDV5enZJSHlSbTZGZ3FtdGtkUko3S0xnMm50enpkOHNlQ0pmNGlQUWMwekMzMjNQd0hGczVrbVJESkNrQ3hBK1hRUHFaSldxTWNkaDhUUXZ5WTJ4K0Q4NTdHVA=="
+                                    target="_blank">List of applicants waiting for appointment on compassionate grounds in the National Library</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/ZTlmZmVjY2IxNTIwMWRlNWM5MjAxMzRiMjVlZDgyZDZmYjFiMGEyNjYzNDg3OWZkOWM5NTBjMGFjNzE0OWJkNzViMGI3MjM0OTNlMDYzZWIyY2MyMzAyYjY1YTdlZDEyZDUyMzYwY2MyZjNmNjg1YTgwMTIxMmQxZmM0ODY4N2RlbWdCNmdBZlFGdFYvNWF6a1Q2VDZvbDBXVVJKWE1ndEFCTWZ1SUFiR3VTdisybU5iQUtSRXJJdUZoOGcxRjlZNDVzRWw1eXFtaDhCTWc0bEg4RFhQZz09"
+                                    target="_blank">International Womens Day Celebration</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/M2YwNDNlMGQzODcyMGNlYzM1N2VmMGJhYjY4NDJlMTQzMzFmZTc3MWQwNDRjYjczNmE4NmZhYjQ1NTExODdlNGRhYTdiNDhlOWVhOTk5Mjc5OGZmZDA3YWVmMmFjNGI4MzBmZGE0YTQ4YTI0MTk4MmMxOWI0NWEzODk4OTgyMjBDaEZEK05VL0FYQlpmOGppMUs1Q1l4TXlHNk9xbFI0U2QxbyszWjlrY2FVZ2t0N3J6Y2MwRlJFQTRVM2NKT1lTOUJ1N2lFWXh4RnJ5OWQ4QWgvR1NxWUY5UnhhV0E1T0dGc0xFdVJCOG1qMD0="
+                                    target="_blank">Filling up of the post of Assistant Library and Information Officer (Laboratory) in National Library, Kolkata by deputation (including Short Term contract) basis.</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/NjhiYmIxOTVmYjM1MDM4ZjZhYTMyNzZhYmNhOGE0MmI1ZDNhMmI0ZWY3YzNhZmE0MTNhZDQzOGZmMDdhZjNiNTMzNTU0OWI2N2M3OGIyMDhiNzJjOWMzNGQzMGY3ODQ2NjQwOTc1Njg3ZjE1MzRiZDEzYTgyN2E5MGE3OGZlN2Y0U0pobXU2TmhsNzYzMnNxWi9SN2tHRCswc3NpV3ZwNmRzZEs5djFWZzdVPQ=="
+                                    target="_blank">Revised notice regarding Request for submitting proposal of e-Books for procurement at National Library.</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/ODEwYzhjY2VhM2E2ZmMzOWU5ZmU4ZTcxN2ViZTIxMDFjMjg4MTg5MzMxYThmZDQ2ZTFmMWE0MGFmOGFkMjRlNmM4MDhlMzY0NTllNzg5Y2E4MDdkZTQ5NTI2OWFjZDVlZDIwM2Y3ZGE4Nzg0MzIxYzczMWJhOTIzYmVhZTRkYzdja3RuOUJNb0F3NS9zcklIV0NrUDhzZnpNWVkzSTcxTk9ERHMyR2pJbEpBPQ=="
+                                    target="_blank">Revised notice regarding Request for submitting proposals for Renewal of e-Journals and e-Database.</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/YjYzNTYzZTZkMGM5ZmVkMDMwMDEwMzkzY2E2OGEwYWM1ZmE2NmQ1MTMzZjNiMzBmNzkwMzMyODZiMGZhZTkwY2RmZDlmNzBhMDhlNGQ4OWRmYzk4YjQ2NWFhODhkZGVmMDc2MzViZmEwZDU4ZDBhYzIzZmZjZmI2ZWM0NTRhNDhOS1ZKT0JrVTBrREI2YjVsbW5Zb3hSNmFTV0NWK0hqZllGWm5QbU9RYW1JR281Tjc0UldndEwxUXBqNzNpL2xF"
+                                    target="_blank">Request for submitting proposal of e-Books for procurement at National Library.</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/OGYxMjhiMGUyMDYxMjFmNDJiOGEzMWJjOWQzYWJhOWY4ZGIwMDc4YzA4YmY5MDMyZDQ0Y2Y0MDc3MjA2Zjg1MTZjMmE1OTFkZmE4ZmUzYWQ2MGRkMGQ1ZjZhOTQ3ZTk1YjM4NzI1NTg1NDg0ODNiNzgzY2QyZjc5M2EyMGQ0MTVadC9iSHFKcHY1RTVNb1NXZGYyQ3hQMytyQzJJTHd0R3BnWXNSbkQrMnlCSUMvOEloQjM2UEE3dE1pckZET0JH"
+                                    target="_blank">Request for submitting proposals for Renewal of e-Journals and e-Database.</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/NTY2MzNhMGQ5ZjY5OTBjZjg5M2VmZmM3Y2VkNzE4MzE1ZmYzYjQ5ZWYwNTgyMTc5ZTlhZTE2ZTkyOTBlOWNlZmViYjhjYWUzMzM4YTg2ODM4MGRmYTkyMjIwNmYwMThlZTkyODliMWQxM2YzMWQ2NGE1YjMwOWEwMjljY2ZiYzVZdk9UWHc3T3p5VVBFcGF1b1ZsYk45N1V5YzNWUFJuY1VYRW1rd1VKSSt1TXdsTUJUU1NzOWVMdjR6VnhzWi8wNVZHa1pwWkwzMW1GNk02dUxaOXBydz09"
+                                    target="_blank">The National Library of India Observes National Youth Day on 12th Jan 2024</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/OGEyZTJmNDc2N2UzNWFjOGNkOGZiMmQzMDRjZmMwN2VhZWI4MmY3NTM1ZTE3M2Y5NjU2ZmJiMDkyZDkxZjhkZDFjNzdjMTczNzVlZTUwZTk4NTZiN2I1NDlkNTJkMWQ3ZThmY2UwZjYxZmY4MjQwNmE3MWFjOGQ0ZmI2MjYzN2FLZ3lkM2tmZzlWN3EwVFc5NWViUEN5blc4cWNXMUh0MmZKZ0hFUk9YbnpSVGl4ZFlITXRGMkd0RVRYSXZEc0Jn"
+                                    target="_blank">LIS Internship Result</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/OWIyMWI3ZDUwNzg0YjFjZjNlNTllYmJiOTljODdkMGUwMjdiZGI3NDgzYjYzNjVhNDFkNDU0NzNhNGQ5NmFiYTAyZGFmMDM5M2Y1NTQ1MDEyOTcxOTg2Yzk2MmJjMmI5M2JjZTAyMzYzNjg4ZGRiOGJiMWI4MmVkOTdmOGQ3M2NEWDJoUGN4c3c5RXVIT0hHbzBSQ1g0MDZUZDRWUHoyeER1NE9OcXRBN1pZWnVhazFXczB4ZjAwU25YbngwQTdw"
+                                    target="_blank">Revised format of Medical Reimbursement Claims forms for CGHS Beneficiary</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/NTU1ODM3MDY0ODgzYzZiYTc0ZGU4ZjhkYTRmMzNjNjI1NTE0MTZlZTI4MTAxMzA0NzM3NDAyYTliNDMyM2FmNjY3NTg1ZjIyNzRhOTQwZjUxYzNjNzM4N2VlOTFiOGI2M2Y2MTczODkxYjlmMzYxM2IwNDYzZDU5MWQ3MWJkNjZta2ZhcmVEUkRVd3JjYmpWQlV0K0h5ZzgvN2pXcWlwV0RHNjhMbEFlNWpQV1JZWGVEcWRXb1d6bmgwWWdZbnQ5"
+                                    target="_blank">Revised format of Medical Reimbursement Claims forms for CS MA Beneficiary</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/ZDc5ZmIwNWNhYmVlYzEyZDIyODU2NjEzNDgwZDUyYWY1MzdmOTFjYWVjZmY1MDkxMWU5MmM2NTQ2MTgwYjJkZTBmODNkNmRmOTMzYTI5YzUyNjNjMjQ3MmNkODdkN2Q1M2I3YjgyMmExYjExYTFmOWYzMTEyNDA1Mzk5NTM3M2FtU1djMFJ6MlVsbkcwZ291Tnc2TmhtTlFDc3VNUFpTWDhvUTlJRzdMT09Ca1RNbVdsU2pyMDFyUVN0MDA3SUdESW5LNkpUVFBJYmxpYWJ4WDFzVmdwZz09"
+                                    target="_blank">Result and Schedule for Interview for the LIS Internship Examination 2023-24</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/MTM3MDc3NWYyMjMyMTUwNTc0MjU0YjVmZmQ2ODI2YzMzYzdmZDY0NjA1NjM0NGRkMmFkYTIyZGQ4NWYzMzliNzcwM2YwYTA1M2FkODE5MjhhZDQ2Yjk3YWE1NmQzMzNlN2M3OTIzNjRmMzJhYTQzODZlZDk2MzZkYzYwMWVjNmMvdm9mRERsUTgxZzRJNVBvcGYxTG9hZWhhN25VU3lLckZldWtFTGN4RmdjPQ=="
+                                    target="_blank">Information regarding Readers Service.</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/MGNkYzRlNmM3NjI5MWQwZWJjNTlmMjE2ZTg4ZjEzNTAwMGFkY2FmYTE4MTQ4NWI4MGQ1ZjZmNjNmYmQ0YTA2NjQzMjk2NzhmNzZiYjM4YTZmMjFmOWZjMjZhZDE2MjYwMDZmMGFmZTBjZDExOGQxMjk4NGU0ODAyYTQ2YTRkZjgzNEdsREVmZHJkOEJzK3NSSzV0TER6ZjJLWUtIeFQ5UWczb3kwalFCMDhmWUR5MFdEN2Zmc1BNeDNRMVFEaWxnNFYrY3VsNVRib3dGR052aXZrYklhSmNPdjVUcmxzekZRdXJySXozMmEvQT0="
+                                    target="_blank">Schedule of LIS Internship Exam 2023-24</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/OTBlNmFmYzc2OTg0M2ViYTFjZTg5NWZjNjM4YTY5Mjk2MTM4YzAzZTZmYjlkZTQyN2MwYmMxMDcyNjZiNDk2MWIyNDUwNDNiMGQzMzgxNmQ3NzI4NTY0ZmIwMjYyMGMwMTNiNGRkY2YyYzVhYWQ1YmM3NGRlNGJiMGJhYzA2MGY4N2p1MGZEcXMzN2NzdHFNbzUwcjFOZThqcHRUVEVONkZQN01teml6MUlhcCtYdEh2MHQxNHptNCszdSthb0NEMldBc3NsdWg3VmVaRjh0OG1ZOGkvZz09"
+                                    target="_blank">In-house training program</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/MGE4YzEzNjYzYzNhNDc2OGM5YTcyNTk4MjcyNjcyMWQ1YTBmN2M3YTU1ZjllYjM5MzM0Zjk4NjljNThjMDY5M2M2MTYxMmZlOTA0OGI2ZjQ1ODE1MmYzYzBhYjQyYTI2NzA5MzYzZWJhNWE4ZWJkZmEzM2FjZDJkODY0ZDU1NDlteFIxOUZMN0hEcHd6c1VnMlNOdzZPaUg4L3FQUGRQNlNWbEIvVGdVR3NuYjdXM1JHT0lIT3d1cE5reGZyWmY0"
+                                    target="_blank">Implementation of subsidiary Instructions to Central Government Account</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/Y2E5MTU5ZDNjMjgzNzI5NDdiZTQwNjQ1MjA0ZDExM2FkYzZhNGE3YjIzNDAxOWNlY2Y4MzczMTFkNjJjNmFhMDFkYWVjZjY1MWE3ZjI5MDdmNTA2ZTMzZTIyODIxZmM0MDlmYmY1MWY2NTY5ZGE4YTQ1OTM1NmJlMDNhYTU4MzRkSXFZMTBnV21vSlp5MkdtaDZ6cWQ3eHFjSVNxcU1zeVJMRHhvYkRpd2N1RmJnZ0lmN01hSG9zMENjSkhiKytuRWZ4YWFuV1NDR0xOY3o0MXZLQkpDQT09"
+                                    target="_blank">Awareness to prevent and Redress Sexual Harassment against Women at workplace.</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/OTQ0ZmI3ZDU5NzFiYmU1YTY1MzQ1MmRmMzM0MTQxODE3NTcxNGM1YmQyNTVkNmE4YjM4MmM0N2Q4NGYyZjUyYWFmMjMzOWE4Y2ZjNTYxNTJhMzNkZDg1MGY5NzFkOWU3MzE3Yjg2Mjc5NGEzNjRhMjMxZGI1MTczZjRmMDI3ZDBpRC9vTmUvcWFaejc3bjZERGZyZDNPWTJ5cFVJdkM3czk3VnoxM1VRME90NlI0OHJQV1lxMXdFN1BSdnMxMk1ud21ybmovV1M1UlI2Rlp0NmtKcVIyQT09"
+                                    target="_blank">Young Professional Graduates from Library and Information Science as LIS - 2023-24 Interns</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/YzgzZWZhNjNlYTI1MDRiNmVlMmFjMDEyNGYxNmQ5OGVjZmEyODY0MzY0YmFmNjE5NGRhNzBlNDIxNDA1OGQ4NjlhMzRkNmZkYTM4OTBhYTczOGJkMzQwYzYzYmNiZTA3YzE5NTMyMzMwZmY4NjBhMDkxOTRlMzVmNjI2MWY3YmZpUGI1b0JXdEtyYmpXZC9BUnduYzFURm1Bc2xMak1ZUlVGVXBwZDd1di9xTkk0c2Jrb3lZektmcE5uR3h3MkZkQkNreDBOSVFoU2JyU044ZDFrSWQ3dz09"
+                                    target="_blank">Interview of Candidates for Internship</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/MDcwMjk2MjQ0OGExZmNmYTZmZjcxNmUxNmJjZTYyYWE2Nzg1YzQ5MmE1YWNhZDdiOThlYTUyMjFlYzQ3MjYzNGIyYWIzNGY1M2Y1YjgwZTUwZjhmYWJhZmEwNWM4YjU2YjE5NDkwMGIzY2EwMzhiODU2NjlhMzQxMDUzY2U1ODh3ZXdWc01kOVJrbTAzMWFYMVY0SkdrazBGVjA1MTVUVHhHSWFrS2RiTWM3TWlZbUJvaWMzSFo4NTI1Sm5odzZzVzVOeTZYRVZGVnIrK2VLS3NtRnRtQT09"
+                                    target="_blank">Exhibition on Women Freedom Fighters of India</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/NGI3ZTZiOWIyMzI5OTMyMjRjOTE5MzA5ZmQzMGY5ZTQ3Yzk5MjZlZWNlYWU0NmRhZDJmNGI3N2ZkMmJhNGM0M2MzZTljNTdlY2JlNjQzNmI0Yzk0OGJkNjhiNzBhMjc2MjUyNDdjMzU1NzU4OGI4ZjViZDg1MjhlZDAyM2ZhYmNCellKUkpDR3p0cG1xYTNuQ29jQTVMSk9WUUtEeitkdHZibk5pZ1RSeXZnPQ=="
+                                    target="_blank">Request for submitting proposal of eBooks for procurement at National Library.</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/NTg2ZDBiMzk1ZDljMDNlM2U3ZTYwMDk1OTM4NjFlYjFjYTY1MzhkMTUwYmNjNDdmZGY4OWY1YzgyYWQzMDZhMWViOWE1ZTE4ZGEzZTljMWU5YjFlYzhkYWRlMzNlZmQxZGEzMDc3Y2E1NTZmZDZjMzMzMjIyMjUwOGJjZjViY2ZUN29rUkhxSzJiYm5TUnFmUld4azRRdUVMNDR6Z05VT0VPdG9qbmgvd3p2NVVFUXpXZVBXTTdGRW5WMnZLbGJTTkE1Skt6Qk9MdE5uMmFTTTF2MXJGdz09"
+                                    target="_blank">Request for submitting proposal for renewal of e-Journals & e-Database and new proposal for procurement at National Library.</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/NTc1MjY3YWE5YjU3ZWIyZThiMDdkODlkNGFkMTZhNzIzZDM5MTQ2OGFjNjkzNmMxYzc5YmY1NDY1MGVmODYyMzdhODlkZGIxZGUyYjBhN2JhOGU1Y2U5OWUzMjVjZmQ3YWJiODY3ZGExNjY1YzY3NzlkMTRhYWM3Mzk2ZjhhZmZQaWJEbGhLKzFGS2NLZ0ZESlVVamoxSklGeGYrYnIvQ21aNVpQUkVlWk1sMnFpUEVVbDVxUjJ4cFN0L3diZkRFRTZiTlZvYWRqNHE0cGxMZS9UODIxQT09"
+                                    target="_blank">Biometric Attendance from 01.11.2022 <img
+                                        src="https://nationallibrary.gov.in/assets/images/new.gif" alt="Images" width="30"
+                                        height="14" border="0"></a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/ODMyNzA3ZTA4YjgwNDEwNWMxYWE2NDE5MmFhNWRjNGMxYmFlMTM5MmRhMmEwOTY0NDBlYTJmMjRlYzk1MjJhY2Q5ZmEzMGQ0MmExOGMwOWExODliODk2MzY4MTJkMjNkY2FkOWU2MDJmNmJkYTE4ZjAwNTBhNTZkMzJkZTQwNTVaVSsvR2lUdUdkSC9GMmlsTXU1OVltVk15Z2xiaFZBRUZiSE9aL3Z0ZHNFVmRaVTNVQ2xzbVppVk5VcFBYclhpQThqL2xmd1BFRktlVC8xQzRtUmg5Zz09"
+                                    target="_blank">National Library is organizing a Book Exhibition and a Cultural Program on Vibhajan Vibhishika on 14th August, 2022.</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/MzFmMzdiMWUyMWJhZjAzNDQ2NGRiZGFiYTczNzBhN2MwN2M1MTA2NGJlMzQ0Y2JkOTAyM2Q4NDFkOTI1MmYxMTdmZjg2NDhmNzk0NDZjYTQ3MDViMDZmOTM1Y2M4ZjRjNzllMWMxMDQyYjlkNDQzYTg4NzNkNTZmNzI3OTExZGEvcy9iSVdnanB5NXh5dCtjbXZ1K0RYeGJkSm9xKzdiY3ExdlJ5UHQ4ZDVlM21RbzZHTTgrcDJYbVllRFJ0aU9CTEdma09xTEltTjJobzNEOWIrWlRkQT09"
+                                    target="_blank">Reconstitution of the Advisory Committee for Collection Development of Print and E-Resources</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/YjBkOTFhOTQwMWQ1NTk1MjBiMzNiMGI2ZGFhNzUxNTdmYzQzYzFkNDM5OWQ1NjNjYjdiNzk2OTAyODIxYTQzN2Y4MzE2ZTljMWE2ZTA2ZTRmNGU2NmI3Yzg5MmNiNDQ3N2VmZmIyZjc0MDUwNmIwMzljODhjYzU1YTRiMGJlOWQ1eDVVeFJRdERNWlhCbEhqakJNRDVuQ2UyVk9NRVc3Q1J0K3FaU0NlaEJuN3ZBUENJMWFOS09zWmRJYVVCREVD"
+                                    target="_blank">Advertisement for the post of Director General at National Library, Kolkata</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/ZDRiMmM1YThkYmVjYWJhMjAzMWViOTgyZWEyYTM5YTA1YWQzYmQzNzg3NjViMjllZjA2NzcwMzJmNDM5NGVkNTFlMGYyNTdlOTk1YjIzM2MzYTYwNzQ4NDM3YTZlYmU0OTNlMWJiNTQ5YjQ1YmQxZjMyYTBiYWE5YWU1MTllYTA5ek1mUElHQkJ6RitlU1kyTXNIRllNT2ttNlZuUXpFUGFHQWRkYk1XMjRSZ3VkMnhFbUx6bUp4M1J5UFREQm5G"
+                                    target="_blank">Notice regarding readers service</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/ZWQzNzI4MDg1YTRmM2Q1ZDZlNDAzMmE3NGE1NDhkZGYwZTRiNjYwMzY4NTFmZDI0YWIyMjg2MzY5NDUyYjVmNjExNDFlMmU4ZmFlODljYzY3YWRmYzE1MjBlN2I5OWYwMDE5YmQyMjI3ZWUyYTc0OTRmMmYxZTE1OWY0MzMwNDFaUDVQeVh5OW1KMmlQYy84SzVkaEc3Q1RpTnpsTGcwQ3hBdUdqaDVhVEZoRW83cFZPOVJaWllKNy84U0VTZ2ViU1BqNFFlbXVHZ0RtTTVSaGpzRHpsNGNXd2tUVEJVUVRRRFFhNm95cHdOaz0="
+                                    target="_blank">Digitised book available under the rare books catagory through https://indianculture.gov.in/</a></li>
+                                                    <li><a href="https://nationallibrary.gov.in/home/download/OWUxZTk4ODYzOWQxMzA1NmRlYTFiNTQyZmMyMDVlYWQyZjVlMTZkOTRlMmM1NDVlZTY3MzUwZmQzZTljZDk3MzY5ZWRkMDljM2NjN2M0ODEwY2EzYjExMGMxOTZiNDRhN2VkOTZhNjVmNTdkOTJlZTc5OTYzNzFjNWUzNzVjNDFVaE9GRDk1Tk01dHAyalR0SjhxdE9BVmwyVnZvTXNsQ1FMTVE0SGdDNDBaMHNTMEJVM0NENTBhSk54QkQzNTRWWjFwSENLQnRhditxWVlMb1V1K2Rudz09"
+                                    target="_blank">Open Educational Resources is now available through the National Library website.</a></li>
+                                            </ul>
+                </marquee>
+                <!--                <div id="carousel" class="carousel carousel-fade" data-ride="carousel" style="display: none;">
+                                    <div class="carousel-inner">
+                                        <div class="active item">
+                                            <ul>
+                                                <li><a href="#">Chemical Engg faculty wins Univ. of Oxford Vice-Chancellor's Innovation Award</a></li>
+                                                <li><a href="#">Indo-German Research Center on Intelligent Transportation Systems</a></li>
+                                                <li><a href="#">IITKgp introduces programs interfacing Medicine, Science and Engineering</a></li>
+                                                <li><a href="#">CONVOCATION 2018</a></li>
+                                                <li><a href="#">Chemical Engg faculty wins Univ. of Oxford Vice-Chancellor's Innovation Award</a></li>
+                                                <li><a href="#">Indo-German Research Center on Intelligent Transportation Systems</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="item">
+                                            <ul>
+                                                <li><a href="#">Chemical Engg faculty wins Univ. of Oxford Vice-Chancellor's Innovation Award</a></li>
+                                                <li><a href="#">Indo-German Research Center on Intelligent Transportation Systems</a></li>
+                                                <li><a href="#">IITKgp introduces programs interfacing Medicine, Science and Engineering</a></li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="item">
+                                            <ul>
+                                                <li><a href="#">Chemical Engg faculty wins Univ. of Oxford Vice-Chancellor's Innovation Award</a></li>
+                                                <li><a href="#">Indo-German Research Center on Intelligent Transportation Systems</a></li>
+                                                <li><a href="#">IITKgp introduces programs interfacing Medicine, Science and Engineering</a></li>
+                                                <li><a href="#">CONVOCATION 2018</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>-->
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-12">
+    <div class="container">
+        <div class="row reg_vide">
+            <div class="col-md-6 col-sm-12 col-md-offset-0 news_text ">
+                <h1>EVENTS UPDATE</h1>
+                <marquee behavior="scroll" direction="up" onmouseover="this.stop();" onmouseout="this.start();"
+                    scrollamount="3" height="270" style="margin-top: 15px;">
+                    <ul>
+                        <!--<div id="carousel" class="carousel carousel-fade" data-ride="carousel">
+                    <div class="carousel-inner">-->
+                                                    <li><b>Notice:</b>                                 <a href="https://nationallibrary.gov.in/home/download/NDE3YzNmMjU1MGNmNGE4NmFlMzk4ZTY4ZDQ0MDliOTAxZWJjZWQ1NDJjYjhkOTYxYTU2NDVhMjNhZjc4YzU4NjEyYjg2ZmZjZDUxOTI3M2Q4ODBiNzdiN2NkNWRhYmYxODBiNDJkY2VjOGJkODY1NzM1ZWY4NWE2ODViM2NjMjd6SzFhc3RUNUF5cjlzNjF5cGRBSTRoRGQwelJhYVlHV3VWN0JRdHN3NkFWSXprdWpWQVJDWTcyaUZ4aXNlSS9C"
+                                    target="_blank">National Library Kolkata closed Jan 23 2026 for Basant Panchami except select reading rooms open 9am to 6pm <img
+                                        src="https://nationallibrary.gov.in/assets/images/new.gif" alt="Images" width="30"
+                                        height="14" border="0"></a>
+                                                        <li><b>Notice:</b>                                 <a href="https://nationallibrary.gov.in/home/download/OGU2Y2YwYTNlZTEwYTdlNTY4ZGI3ZmRkZjcxNmI4ZWQ4MTExNDYwZGNkZTYwMjI2OTdjNTFkZWVmM2JhYjNhODMzNjhhYmY5NTRjODdjZTkyZjAyYmI2YTc3ODlkNGExOGFjNzc0N2JhMmZiNDVlNzRkMTlhMTAyNGEyMDZiYWZlQWtHWEhkRnM5bkp4UjJQRVcxbHJ1ZjFHNGZaemNlWmtSNytSN1hpTTVoeVk5NHlzRklDZHVLb1JQUkd3V2Vh"
+                                    target="_blank">National Library Kolkata will be entirely closed on January 26 2026 due to Republic Day <img
+                                        src="https://nationallibrary.gov.in/assets/images/new.gif" alt="Images" width="30"
+                                        height="14" border="0"></a>
+                                                        <li><b>Notice:</b>                                 <a href="https://nationallibrary.gov.in/home/download/NzNhY2Y3YjM5MzViMGNlZDIyMjA4OTNjZjQ0Y2MzYThhNWQxMzZkNDc3NDAzNWU1ZGUzOTZiMGQ5YWY3ZTIzMTA0NWZhMTI3ZDIwZmU0OTMwZmYzNDU3MzNmODE0MTQ2MmJlM2VjYzE5NGRiMTk0YTNkMjNiNjEyMmE1OTM5ZTBYMzIzQVpFOFhZVnVpRW9jUWh2U3RaZGpSbHhDUGhFTDh5WEEyV3pveXc0aENJeTMyVFNHZmlka0hUNkN3VVpzT1lMM0dkcTJraEtYQzQySFV0anZQUT09"
+                                    target="_blank">Training Calendar of E-Resources subscribed by National Library <img
+                                        src="https://nationallibrary.gov.in/assets/images/new.gif" alt="Images" width="30"
+                                        height="14" border="0"></a>
+                                                        <li><b>Notice:</b>                                 <a href="https://nationallibrary.gov.in/home/download/OWM2N2RjZTNhNmMxYjA4ZjlkZjQ0ZTI0MDIxMDFlNzRmZGI3MzdiNjc3MzI2YTAyYmQzYWI0MzAxODNkN2JlZWM2NmJlY2ZhNzkyNjBlZDMzOGVjOWI1MWFjNDk3NzI2OWU1NzM4YTI5MzNlNzIwNjEyOWJmOGEzNzE1NDU2NjVINC9mbFlkK3M4TWNjeHZyVWJSWlNqMDZVVm9pNGRobUpJbDE0QkRQUCtTaWIvWUpaT0diWlhYRnFKRFBwdGpm"
+                                    target="_blank">Exhibition on Vibhajan Vibhishika</a>
+                                                        <!--                        <div class="active item">
+                                                    <ul>
+                                                        <li><a href="#">Chemical Engg faculty wins Univ. of Oxford Vice-Chancellor's Innovation Award</a></li>
+                                                        <li><a href="#">Indo-German Research Center on Intelligent Transportation Systems</a></li>
+                                                        <li><a href="#">IITKgp introduces programs interfacing Medicine, Science and Engineering</a></li>
+                                                        <li><a href="#">CONVOCATION 2018</a></li>
+                                                        <li><a href="#">Chemical Engg faculty wins Univ. of Oxford Vice-Chancellor's Innovation Award</a></li>
+                                                        <li><a href="#">Indo-German Research Center on Intelligent Transportation Systems</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="item">
+                                                    <ul>
+                                                        <li><a href="#">Chemical Engg faculty wins Univ. of Oxford Vice-Chancellor's Innovation Award</a></li>
+                                                        <li><a href="#">Indo-German Research Center on Intelligent Transportation Systems</a></li>
+                                                        <li><a href="#">IITKgp introduces programs interfacing Medicine, Science and Engineering</a></li>
+
+                                                    </ul>
+                                                </div>
+                                                <div class="item">
+                                                    <ul>
+                                                        <li><a href="#">Chemical Engg faculty wins Univ. of Oxford Vice-Chancellor's Innovation Award</a></li>
+                                                        <li><a href="#">Indo-German Research Center on Intelligent Transportation Systems</a></li>
+                                                        <li><a href="#">IITKgp introduces programs interfacing Medicine, Science and Engineering</a></li>
+                                                        <li><a href="#">CONVOCATION 2018</a></li>
+
+                                                    </ul>
+                                                </div>-->
+                            <!--</div>
+                </div>-->
+                    </ul>
+                </marquee>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="row">
+
+                    <!--<a href="https://nationallibrary.gov.in/files/contents/newsletter_january_to_december" target="_blank"><img src="https://nationallibrary.gov.in/assets/images/yoga.jpeg" alt="lieb" width="100%" class="hvr-float-shadow"></a>-->
+
+                    <!-- <a href="https://nationallibrary.gov.in/files/contents/E.pdf" target="_blank"> -->
+                        <a href="https://nationallibrary.knimbus.com/" target="_blank">
+                        <img
+                            src="https://nationallibrary.gov.in/assets/images/eresource_pic3.jpg" alt="lieb" width="100%"
+                            class="hvr-float-shadow"></a>
+                    <!--<a href="https://forms.gle/M8d4Mj81PxtBSBmE6" target=_blank"><img src="https://nationallibrary.gov.in/assets/images/swtpkh.jpg" alt="lieb" width="100%" class="hvr-float-shadow"></a>-->
+                    <!--<img src="https://nationallibrary.gov.in/assets/images/lieb2.png" alt="lieb" width="100%" class="hvr-float-shadow">
+
+                    <link rel="stylesheet" href="https://nationallibrary.gov.in/assets/date/jquery.datetimepicker.min.css">
+                    <script src="https://nationallibrary.gov.in/assets/date/jquery.datetimepicker.min.js"></script>
+                    <div style="position:absolute;right:2px;top:0px;" id="cal_show"></div>
+                    <script>$('#cal_show').datetimepicker({baseCls: "perfect-datetimepicker",date: new Date()});</script>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="col-sm-12 mid_about">
+    <div class="container">
+        <div class="col-md-4 col-xs-12 abt_left"> -->
+
+<!-- <img src="https://nationallibrary.gov.in/files/contents/aps.jpg" width="35%"></a>
+            <p><b>Prof. Ajay Pratap Singh</b></p>
+
+            <p>Director General</p>
+
+            <br> -->
+
+<!--<img src="https://nationallibrary.gov.in/files/contents/kkk.jpg" width="35%"></a>
+            <p><b>Dr.K.K.Kochukoshy</b></p>
+            <p>Officer On Special Duty</p>-->
+
+<!--<hr width="30%">-->
+</div>
+<!--<div class="col-sm-12 google">
+    <div class="container">
+        <div class="col-sm-12">
+            <div class="col-md-4 col-xs-12 col-xs-12 abt_left">
+                <h2>Officer On Special Duty </h2>
+
+                <div class="col-sm-4 dir">
+                    <div class="row">
+                        <img src="https://nationallibrary.gov.in/files/contents/kkk.jpg" width="100%">
+                    </div>
+                </div>
+            </div>-->
+<!-- <div class="col-md-6 col-sm-12 col-xs-12 ggle_txt">
+            <h1>Director General's Desk </h1>
+            <p style="text-align:justify;">
+                The National Library of India offers its vast treasure of books, magazines and journals published across
+                the country and the world to researchers/scholars as well as lay readers. Publications from across the
+                world are housed in it and are preserved and restored for the use of the readers of today and tomorrow.
+                Although the Covid-19 pandemic has affected the entire society, the The National Library continues with
+                its services with the pandemic protocol in place for the welfare of our readers.
+            </p> -->
+<!-- <p style="text-align:justify;">
+                In view of the current constraints on mobility, The National Library has introduced an online
+                registration process. Any Citizens beyond 18 years of age can become a member of the Library by
+                submitting the'Registration Form' from anywhere within the country on The National Library website.
+                Citizens may also reach out to The National Library through Facebook Page,Twitter,YouTube and Instagram.
+
+            </p> -->
+<!--<p>(i) Researchers, Childrens and Young Adults </p>
+            <p>(ii) A Blog </p>-->
+<!-- <a href="https://nationallibrary.gov.in/home/director" title="Brief Information">more &raquo;</a> -->
+<!--<div class="row">
+                    <div class="col-sm-4">
+                        <a href="#"><img src="images/google_play.png" alt="google" width="100%"></a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="#"><img src="images/appstore.png" alt="google" width="100%"></a>
+                    </div>
+                </div>-->
+<!-- <p class="google_text"><a href="https://nationallibrary.gov.in/home/director">Click Here</a> to see message from Director</p>-->
+</div>
+<div class="col-sm-12">
+    <div class="container">
+        <div class="col-md-11 col-xs-12 col-md-offset-0 jeevansathi">
+            <div class="col-md-6 col-xs-12">
+                <div class="col-md-6 col-sm-12 gal">
+
+                    <div class="row">
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/Y6.JPG" alt="gal1"
+                            onclick="openModal();currentSlide(1)" width="100%" class="hvr-sink gal_img">
+                    </div>
+                    <h1>Smriti weds Jyoti</h1>
+                </div>
+                <div class="col-md-6 col-sm-12 gal">
+                    <div class="row">
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/Y5.JPG" alt="gal1"
+                            onclick="openModal();currentSlide(2)" width="100%" class="hvr-sink gal_img">
+                    </div>
+                    <h1>Smriti weds Jyoti</h1>
+                </div>
+                <div class="col-md-6 col-sm-12 gal">
+                    <div class="row">
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/Y7.JPG" alt="gal1"
+                            onclick="openModal();currentSlide(3)" width="100%" class="hvr-sink gal_img">
+                    </div>
+                    <h1>Smriti weds Jyoti</h1>
+                </div>
+                <div class="col-md-6 col-sm-12 gal">
+                    <div class="row">
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/Y9.JPG" alt="gal1"
+                            onclick="openModal();currentSlide(4)" width="100%" class="hvr-sink gal_img">
+                    </div>
+                    <h1>Smriti weds Jyoti</h1><br>
+                    <p style="text-align:right;">
+                        <a href="https://www.flickr.com/photos/197098043@N05/albums" target="_blank"
+                            rel="nofollow noopener noreferrer"><b>More....</b></a>
+                </div>
+            </div>
+
+
+            <!--lightbox-->
+            <div id="myModal" class="modal">
+                <span class="close cursor" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/Y6.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/Y5.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/Y7.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/Y9.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/Y1.jpg" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/Y2.jpg" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/Y3.jpg" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/Y4.jpg" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/p7.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/p8.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/p10.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/p11.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/p4.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/p12.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/p13.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/p14.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/p15.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/p16.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/p17.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/p18.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/p19.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/p20.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/p21.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/p22.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/en1.jpeg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/en2.jpeg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/en3.jpeg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/en4.jpeg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/en5.jpeg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/en6.jpeg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/en7.jpeg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/en8.jpeg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/en9.jpeg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/en10.jpeg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/en11.jpeg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/en12.jpeg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/en13.jpeg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/en14.jpeg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/ebsb1.JPG" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/ebsb2.JPG" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/ebsb3.JPG" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/ebsb4.JPG" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/ebsb5.JPG" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/ebsb6.JPG" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/ebsb7.JPG" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/ebsb8.JPG" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/ebsb9.JPG" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/ebsb10.JPG" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/ebsb11.JPG" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/ebsb12.JPG" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/g1.jpg" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/g2.jpg" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/g3.jpg" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/g4.jpg" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/s1.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/s2.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/s3.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/s4.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/one.jpg" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/four.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/ten.jpg" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/twelve.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/eleven.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/thrteen.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/two.jpg" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/three.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/four.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/five.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/six.JPG" class="slideImg" alt=""
+                            style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/seven.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/eight.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/nine.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/u1_1.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/u1_2.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/u1_3.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/u1_4.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/u1_5.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/u1_6.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/u1_7.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/u1_8.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/u1_9.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/u1_10.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/u1_11.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/u1_12.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/u1_13.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/u1_14.jpg" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+
+
+
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/lieb.png" class="slideImg"
+                            alt="Nation Library" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/lieb2.png" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/gate.png" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext"></div>
+                        <img src="https://nationallibrary.gov.in/files/contents/gallery_photo/gal4.png" class="slideImg"
+                            alt="" style="width:100%">
+                    </div>
+
+                    <!-- Next/previous controls -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                    <!-- Caption text -->
+                    <div class="caption-container">
+                        <p id="caption"></p>
+                    </div>
+
+
+                </div>
+            </div>
+            <script>
+                // Open the Modal
+                function openModal() {
+                    document.getElementById('myModal').style.display = "block";
+                }
+
+                // Close the Modal
+                function closeModal() {
+                    document.getElementById('myModal').style.display = "none";
+                }
+
+                var slideIndex = 1;
+                showSlides(slideIndex);
+
+                // Next/previous controls
+                function plusSlides(n) {
+                    showSlides(slideIndex += n);
+                }
+
+                // Thumbnail image controls
+                function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                }
+
+                function showSlides(n) {
+                    var i;
+                    var slides = document.getElementsByClassName("mySlides");
+                    var dots = document.getElementsByClassName("slideImg");
+                    var captionText = document.getElementById("caption");
+                    if (n > slides.length) {
+                        slideIndex = 1;
+                    }
+                    if (n < 1) {
+                        slideIndex = slides.length;
+                    }
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex - 1].style.display = "block";
+                    dots[slideIndex - 1].className += " active";
+                    captionText.innerHTML = dots[slideIndex - 1].alt;
+                }
+            </script>
+
+            <!--lightbox-->
+            <div class="col-md-4 col-xs-12 col-md-offset-1 jvn_left">
+                <h1>Our Gallery</h1>
+                <p style="text-align:justify;">
+                    We have a visual art gallery between art, people and communities.The gallery seeking for a clear
+                    mission to the aspiration of the gallery founder.
+                </p>
+                <p style="text-align:justify;">
+                    Beginning of 2019, Our Gallery is stepping on its new page of journey.
+                </p>
+            </div>
+
+            <!--                    <div class="row jev_gal">
+
+                                </div>-->
+
+        </div>
+    </div>
+</div>
+<!-- Social Media Section -->
+
+
+
+<style type="text/css">
+    .ext_lnk {
+        padding: 0 10px;
+        display: block;
+        float: left;
+    }
+
+    .ext_lnk img {
+        width: 160px;
+        height: 100px;
+    }
+
+    .social-wrapper {
+        margin-top: 20px;
+    }
+
+    .social-box {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        padding: 10px;
+        height: 520px;
+    }
+
+    .fb-container,
+    .insta-container,
+    .twitter-container {
+        height: 100%;
+    }
+
+    @media (max-width: 767px) {
+        .social-box {
+            height: auto;
+        }
+    }
+</style>
+<div class="col-sm-12 tender" style="background: #fff; border-top:#eba600 60px solid; padding: 1em 0;">
+    <div class="container">
+        <div class="col-sm-12">
+            <!--<marquee>-->
+            <a href="https://www.india.gov.in" class="ext_lnk"><img
+                    src="https://nationallibrary.gov.in/files/contents/govt.png" style="width:200px;" /></a>
+            <a href="https://www.gem.gov.in" class="ext_lnk"><img
+                    src="https://nationallibrary.gov.in/files/contents/gem.jpg" /></a>
+            <a href="https://amritmahotsav.nic.in/" class="ext_lnk"><img
+                    src="https://nationallibrary.gov.in/files/contents/azadi_logo.png"
+                    style="width:240px;height:120px;padding: 15px;" /></a>
+            <!--<a href="https://indianculture.gov.in/" class="ext_lnk"><img src="https://nationallibrary.gov.in/files/contents/indianculture_logo.jpg" style="width:260px;height:100px;padding: 15px;"/></a>-->
+            <a href="https://www.incredibleindia.org/content/incredibleindia/en.html" class="ext_lnk"><img
+                    src="https://nationallibrary.gov.in/files/contents/incredible.png" style="height:110px;" /></a>
+            <!--<a href="https://swachhbharatmission.gov.in/sbmcms/index.htm" class="ext_lnk"><img src="https://nationallibrary.gov.in/files/contents/swachh.png"  style="height:130px;"/></a>-->
+            <a href="http://nkn.gov.in//content/incredibleindia/en.html" class="ext_lnk"><img
+                    src="https://nationallibrary.gov.in/files/contents/nkn.png" style="height:130px;" /></a>
+            <!--<a href="https://www.nic.in/content/incredibleindia/en.html" class="ext_lnk" style="background: #ccc;margin-top:20px;"><img src="https://nationallibrary.gov.in/files/contents/nic.png" style="width:150px;height:80px;padding: 20px 0;"/></a>-->
+            <!--</marquee>-->
+            <!--            <h1>EVENT UPDATE</h1>
+            <div class="row">
+                                                <div class="col-md-4 col-xs-12 ten_text">
+                                    <h1>Enlistment of Vendors</h1>
+                                    <p> Invitation of Applications for Enlistment of Vendors for Supply of Foreign print Journals and News Papers.</p>
+                                    <p><a href="#">Read ..</a></p>
+                                </div>
+                                <div class="col-md-4 col-xs-12 ten_text">
+                                    <h1>Expression of Interest</h1>
+                                    <p>Invitation for Expression of Interest (EOI).</p>
+                                    <p><a href="#">Read ..</a></p>
+                                </div>
+                                <div class="col-md-4 col-xs-12 ten_text">
+                                    <h1>Annual Maintenance Charge</h1>
+                                    <p>AMC of Desktop Computers, Printers, Network and other IT peripherals for a period of one year.</p>
+                                    <p><a href="#">Read ..</a></p>
+                                </div>
+            </div>-->
+        </div>
+
+
+    </div>
+
+</div><!--FOOTER-->
+<div class="col-sm-12 footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-xs-6 foot_menu">
+                <ul>
+                    <li><a href="https://nationallibrary.gov.in/">Home</a></li>
+                    <li><a href="https://nationallibrary.gov.in/home/more_about_national_library">About Us</a></li>
+                    <li><a href="http://nationallibraryopac.nvli.in" target="_blank" rel="nofollow noopener noreferrer">Library Catalogue</a></li>
+                    <li><a href="https://nationallibrary.gov.in/home/digital_books">Digitized Books</a></li>
+                    <li><a href="https://nationallibrary.gov.in/files/contents/rti1.pdf" target="_blank">RTI</a></li>
+                    <li><a href="https://nationallibrary.gov.in/home/recruitment_rules">Recruitment Rules &<br> Vacancy Position</a></li>
+                    <li><a href="https://nationallibrary.gov.in/home/order_circular">Order/Circular</a></li>
+                    <li><a href="https://nationallibrary.gov.in/home/anual_report">Anual Report</a></li>
+                </ul><br><br><br><br><br><br>
+                <li>
+                    <a href="https://www.facebook.com/nationallibrary.goi/" target="_blank" rel="nofollow noopener noreferrer">
+                        <img src="https://nationallibrary.gov.in/assets/images/facebook.png" />
+                    </a>
+                    <a href="https://x.com/NationalLib_GoI" target="_blank" rel="nofollow noopener noreferrer">
+                        <img src="https://nationallibrary.gov.in/assets/images/twitter.png" />
+                    </a>
+                    <a href="https://www.youtube.com/@nationallibraryofindia" target="_blank" rel="nofollow noopener noreferrer">
+                        <img src="https://nationallibrary.gov.in/assets/images/youtube.png" />
+                    </a>
+                    <a href="https://www.instagram.com/nationallibrary.goi/" target="_blank" rel="nofollow noopener noreferrer">
+                        <img src="https://nationallibrary.gov.in/assets/images/instagram.png" />
+                    </a>
+                </li>
+            </div>
+
+            <div class="col-md-3 col-xs-6 foot_menu">
+                <ul>
+                    <li><a href="https://nationallibrary.gov.in/home/tender">Tenders</a></li>
+                    <li><a href="https://nationallibrary.gov.in/home/for_publisher">For Publishers</a></li>
+                    <li><a href="https://nationallibrarykolkata.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">National Library Blog</a></li>
+                    <li><a href="https://nationallibrary.gov.in/home/contact_us" title="Contact">Contact Us</a></li>
+                    <!-- <li><a target="_blank" href="https://nationallibrary.gov.in/museum" title="museum">Museum</a></li> -->
+                    <li><a href="https://nationallibrary.gov.in/account/login" title="Login">Admin Login</a></li>
+                    <li>
+                        <a href="https://ndl.iitkgp.ac.in/" target="_blank" rel="nofollow noopener noreferrer">
+                            <img src="https://nationallibrary.gov.in/assets/images/ndl.png" />
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a href="https://www.indiaculture.nic.in/download-sangam-app" target="_blank" rel="nofollow noopener noreferrer">
+                            <img src="https://nationallibrary.gov.in/assets/images/sangam.jpg" /> Sangam App
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
+
+            <!-- ======== FEEDBACK FORM (Footer) ======== -->
+            <div class="col-md-5 col-xs-12 foot_menu pull-right">
+                <h1>Feedback to Us</h1>
+                <div class="col-md-12 padd_none">
+                    <div class="row">
+                        <form name="feedback_footer_form" id="feedback_footer_form" method="post"
+                            action="https://nationallibrary.gov.in/home/feedback?redirect=YzRhMzI3NmI5ZWJhMmQwNWQyYjk2MDA5OTY0MjZlZGFiZWE3MjVmMGUxYTM0MTM2MDVhNzVkZGJlOWJlMWQxNDUzZWIzZDQ5MmMzYmFjYTE5OTBmYmRlY2U3NjM0NjQyZTI5MjJkZjZhNWVlOGYzZTc0MDZjNTFlNjdmNGY5MDcyOHArQWRWZy9WY3VuU2FaVW51S21nUWdxbGNWTVFqdTJOMmcrWWpmMHFMcFlCQXRqdjRhdlVuYVlRcUxtTVNFdUJJRTN4TXU1bGFyNU1zaDNaejF4UT09"
+                            style="padding:0;margin:0" autocomplete="off">
+
+
+<input type="hidden" name="csrf_name" value="70b93e32db6f881f21015186277c0ce5" />
+
+<input type="hidden" name="subject" value="Website Feedback (Footer Form)" />
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control foot_text" name="name" id="footer_feedback_form_name"
+                                       required placeholder="Name" value="">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control foot_text" name="email" id="footer_feedback_form_email"
+                                       required placeholder="yourname@company.com" value="">
+                            </div>
+
+                            <div class="col-md-12 foot_textarea">
+                                <textarea class="form-control" name="comment" id="footer_feedback_form_message"
+                                          rows="2" required placeholder="Message"></textarea>
+                            </div>
+
+                            <!-- Captcha -->
+                            <div class="col-md-7">
+                                <div class="footer_captcha" style="margin-top:3px;float:left;">
+                                    <span id="footer_captcha_img"
+                                          style="display:inline-block;min-width:230px;min-height:40px;border:1px solid #e5e5e5;background:#fff;"></span>
+                                </div>
+                                <div style="margin-left:5px;margin-top:10px;float:left;background:#fff;border-radius:15px;padding:4px;">
+                                    <img src="https://nationallibrary.gov.in/assets/images/reload.png" alt="Reload the code"
+                                         title="Reload the code" width="20" height="20" id="reloadFooterCaptcha"
+                                         style="cursor:pointer;" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <input type="text" class="form-control foot_text" name="captcha" id="footer_feedback_form_captcha"
+                                       required placeholder="Image Code" value="" maxlength="32" autocomplete="off">
+                            </div>
+
+                            <div class="col-md-12 foot_textarea">
+                                <input type="hidden" name="submit_type" value="AJAX SUBMIT" />
+                                <button type="submit" class="btn btn-info" id="feedback_footer_submit" style="float:left;">Submit</button>
+                                <div id="ajax_wait_footer_feedback" style="float:left;margin-left:6px;margin-top:6px;color:#aaa;display:none;"></div>
+                                <div class="footer_feedback_msg" style="padding:5px 0 0 110px;"></div>
+                                <div style="clear: both;"></div>
+                            </div>
+                        </form>
+
+                        <!-- ===== JS: captcha loader + AJAX submit ===== -->
+                        <script>
+                            (function($) {
+                                function setSpinner(on) {
+                                    var $btn = $('#feedback_footer_submit');
+                                    if (on) {
+                                        $btn.prop('disabled', true);
+                                        $("#ajax_wait_footer_feedback").html(
+                                            "<img src='https://nationallibrary.gov.in/assets/images/ajax-loader.gif' alt='Please wait...' style='float:left;'>" +
+                                            "<span style='float:left; margin: 4px 0 0 3px;'>Please wait...</span>"
+                                        ).show();
+                                    } else {
+                                        $btn.prop('disabled', false);
+                                        $("#ajax_wait_footer_feedback").hide().empty();
+                                    }
+                                }
+
+                                function showMsg(msg, ok) {
+                                    var $b = $(".footer_feedback_msg");
+                                    $b.removeClass("err_msg conf_msg");
+                                    $b.addClass(ok ? "conf_msg" : "err_msg").text(msg || '');
+                                }
+
+                                function loadFooterCaptcha() {
+                                    $.ajax({
+                                        url: "https://nationallibrary.gov.in/home/get_captcha",
+                                        type: "GET",
+                                        dataType: "json",
+                                        cache: false
+                                    }).done(function(html) {
+                                        $('#footer_captcha_img').html(html);
+                                    }).fail(function() {
+                                        $('#footer_captcha_img').text('Captcha unavailable, click refresh.');
+                                    });
+                                }
+
+                                $('#reloadFooterCaptcha').on('click', loadFooterCaptcha);
+                                loadFooterCaptcha(); // initial
+
+                                $('#feedback_footer_form').on('submit', function(e) {
+                                    e.preventDefault();
+                                    showMsg('', true);
+                                    setSpinner(true);
+                                    var $form = $(this);
+
+                                    $.ajax({
+                                        url: $form.attr('action'),
+                                        type: 'POST',
+                                        dataType: 'json',
+                                        data: $form.serialize()
+                                    }).done(function(res) {
+                                        if (res && +res.is_success === 1) {
+                                            showMsg(res.conf_msg || 'Thanks for your feedback!', true);
+                                            $form.find('input[type="text"], input[type="email"], textarea').val('');
+                                        } else {
+                                            showMsg((res && res.err_msg) ? res.err_msg : 'Submission failed. Please try again.', false);
+                                        }
+                                    }).fail(function() {
+                                        showMsg('Session expired or network error. Please try again.', false);
+                                    }).always(function() {
+                                        setSpinner(false);
+                                        loadFooterCaptcha();
+                                    });
+                                });
+                            })(jQuery);
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <!-- ======== /FEEDBACK FORM ======== -->
+
+            <div class="col-md-12 col-xs-12 col-sm-12 share_links">
+                <div class="col-sm-3">
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row disclaimer">
+            <div class="col-md-12">
+                <span>COPYRIGHT & DISCLAIMER: </span>
+                No Part of this site can be copied or reproduced in any form, excepting for personal information,
+                without the written permission of the Director General of the National Library, India, Kolkata (Calcutta).
+                While all efforts have been made to make this website as authentic as possible, The National Library
+                authority do not own any responsibility to anybody for any loss or damage, owing to the use of any
+                information caused by any shortcoming, defect or inaccuracy in the information from this web site.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-12 copyright">
+    <div class="container">
+        <div class="hit_counter" style="float:left;">
+            <!-- Visitor statistics are tracked via Google Analytics (GA4). -->
+        </div>
+        &copy; 2018 &dash; 2026, Developed by <span>National Library</span> [Hosted By NIC]
+        <br><span style="line-height: 5%;font-size: 80%;">Page rendered in 0.0384 seconds.</span> Last Updated on: Nov 24,2025
+    </div>
+</div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
+
+<script>
+    $('.carousel').carousel();
+</script>
+<script>
+    window.onscroll = function() {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+<!-- ===================== -->
+<!-- Google Analytics 4 GA4 -->
+<!-- Replace G-ZDKRW19ZQ7 with your real Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZDKRW19ZQ7"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZDKRW19ZQ7');
+</script>
+<!-- ===================== -->
+
+</body>
+</html>

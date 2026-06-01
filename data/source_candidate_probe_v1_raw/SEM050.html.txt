@@ -1,0 +1,410 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01+RDFa 1.1//EN" "http://www.w3.org/MarkUp/DTD/html401-rdfa11-1.dtd">
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--begin-box:tr_meta_viewport_responsive::2192:Permite activar la función responsive de este sitio. Además llama a los fonts de Google.--><!--loc('* Código HTML libre dentro de la página.')--><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--
+<link href='channels-512_css_visor.css'>
+<link href='channels-512_css_bnd_theme.css'>
+<link href='channels-515_css_galeria.css'>
+-->
+<!--end-box--><!--begin-box:w3_tr_EncabezadoHTML::2191:Encabezado de página HTML, invisible.--><!--loc('* Encabezado w3 full, requerido en todas las páginas HTML de su sitio ')--><title>Biblioteca Nacional Digital de Chile</title><style type="text/css">
+      @import "boxes-2191_style.css";
+    </style><style type="text/css">/* channels-512_css_bnd_theme.css */
+#slider_portada .format-jpg a {
+padding: 0;
+}
+
+#recuadros_articulo_6286 .figure > a {
+padding: 8px 0;
+}
+
+@media (max-width:600px) {
+.menu-valores-horizontal.nav-pills > li {
+display: block;
+}
+}
+
+.stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: auto;
+  content: "";
+  background-color: rgba(0,0,0,0);
+}
+
+.articulo iframe[title="vimeo-player"] {
+width: 100% !important;
+}
+
+.fecha-dia-mes-anio .dia {
+  line-height: 1;
+
+}
+.fecha-dia-mes-anio .anio {
+  font-size: 0.7em;
+  display: block;
+}
+.fecha-dia-mes-anio .mes {
+  display: block;
+}
+
+#article_i__ar_noticia_galeria_1 li .titulo,
+#article_i__ar_noticia_galeria_1 li .caption,
+#article_i__ar_noticia_galeria_1 li .fuente {
+  width: auto !important;
+}
+
+#article_i__ar_noticia_galeria_1 li .titulo {
+  padding-top: 1em;
+font-weight: bold;
+}
+
+#article_i__ar_noticia_galeria_1 li a > img {
+width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 100%
+  }
+}
+
+#article_i__pa_Presentacion_cuerpo_1 span.format-pdf {
+  display: block;
+}
+
+#acerca_BND_faqs {
+  margin-bottom: 30px;
+}
+
+#acerca_BND_faqs .indice {
+  margin-bottom: 30px;
+}
+
+#acerca_BND_faqs span.format-pdf,
+#acerca_BND_faqs span.format-pdf {
+  display: block;
+  padding-left: 50px;
+}
+
+#acerca_BND_faqs .format-pdf img {
+  display: none !important;
+}
+
+#acerca_BND_faqs div>h2 {
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  #pc_especiales .thumbnail .imagen-especial img {
+    margin: 0 auto;
+    width: 100%
+  }
+  #pc_especiales.recuadros-cerrados .thumbnail {
+    height: auto;
+    min-height: 360px;
+  }
+  #pc_especiales .thumbnail .imagen-especial {
+    max-height: 175px;
+    overflow: hidden;
+  }
+}
+.menu-principal-portada ul li.especiales span.icono {
+  background-position: center -360px;
+}
+.menu-principal-desplegado ul.principal li.especiales span.icono {
+  background-position: center -180px;
+}
+.ntg-streched-link .recuadro {
+  position: relative
+}
+.ntg-streched-link .recuadro a::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: auto;
+  content: "";
+  background-color: rgba(0, 0, 0, 0);
+}
+.menu-principal-portada ul li span.icono {
+  background-image: url("//www.bibliotecanacionaldigital.gob.cl/bnd/612/channels-512_sprite_menu_portada.png")
+}
+.menu-principal-desplegado ul.principal li span.icono {
+  background-image: url("//www.bibliotecanacionaldigital.gob.cl/bnd/612/channels-512_sprite_menu_desplegable.png")
+}
+#recurso_descripcion .abstract {
+  width: auto !important;
+}
+body,
+html {
+  height: 100%;
+}
+#recurso_descripcion .abstract p {
+  font-size: 100%;
+  margin: 0;
+}
+#recurso_descripcion .linea-abstract {
+  margin-top: 0;
+}
+.formulario ul {
+  list-style: none;
+}
+.formulario .alert {
+  padding: 5px 15px;
+  margin-left: 5px;
+}
+.container-noticias {
+  background-color: #f8f8f8;
+  padding-bottom: 40px;
+}
+.galeria-recursos ul li {
+  text-align: center;
+}
+.galeria-recursos ul li a {
+  padding: 0 !important;
+}
+
+.btn-survey {
+  position: absolute;
+  right: 0;
+  top: 230px;
+  width: 40px;
+  -ms-transform: rotate(-90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-90deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(-90deg);
+}
+
+#main {
+  position: relative
+}
+
+.sin-mime .format-pdf,
+.sin-mime .format-doc,
+.sin-mime .format-ppt {
+  background: none;
+}
+
+.degrade-blanco {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 40px 0 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .7) 20%, #fff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0)
+}
+
+.resultados_eidox .thumbnail .coleccion.filtrar {
+  position: relative;
+}
+.thumbnail .coleccion.filtrar span.pvid-666613 {}
+.thumbnail .coleccion.filtrar span.pvid-666613:before,
+.thumbnail .coleccion.filtrar span.pvid-1068505:before {
+  content: "";
+  height: 20px;
+  width: 25px;
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  margin: -2px 5px 0 0;
+  background: url("//www.bibliotecanacionaldigital.gob.cl/bnd/612/channels-512_bg_filtro_mch.png") 0 0 no-repeat;
+}
+.thumbnail .coleccion.filtrar span.pvid-1068505:before {
+  background-image: url("//www.bibliotecanacionaldigital.gob.cl/bnd/612/channels-512_bg_filtro_chpn.png")
+}
+hr.transparente {
+  border-color: transparent;
+}
+.link-enrecurso .thumbnail {}
+.link-enrecurso a::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 201;
+  pointer-events: auto;
+  content: "";
+  background-color: rgba(0, 0, 0, 0);
+}
+.recuadro.link-enrecurso .titulo {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  justify-content: center;
+}
+
+.articulo.noticia .fuente:before {
+    content: "Fuente: ";
+    font-style: italic;
+}
+
+.articulo.noticia .format-jpg .titulo {
+  margin-bottom: 0.5em;
+  font-weight: 300;
+  padding-bottom: 0.2em;
+  border-bottom: 2px solid #989898 !important;
+}
+
+#myModal .modal-header .close {
+  margin-top: -1rem;
+  font-size: 5rem;
+}
+
+#myModal .modal-header {
+  padding-bottom: 5px;
+}
+
+#myModal .modal-body .btn {
+  border-radius: 10px;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 1rem;
+}
+
+#myModal .modal-footer .btn{
+  border-radius: 10px;
+}
+</style><meta name="keywords" content=""><meta name="description" content="Biblioteca Nacional Digital de Chile (BNd) es la plataforma que reúne todos los servicios y colecciones digitales de la Biblioteca Nacional de Chile, permitiendo la consulta remota de sus contenidos, el depósito de obras de creación, la asistencia y orientación de profesionales especializados, el acceso a diversos portales de contenidos, así como la visita virtual a sus emblemáticos salones, entre otros servicios."><meta name="generator" content="Newtenberg Engine CMS - http://www.newtenberg.com/"><meta name="Newtenberg-Server" content="https://engine.bibliotecanacionaldigital.gob.cl"><meta name="Content-Encoding" content="UTF-8"><link rel="Top" type="text/html" href="https://www.bibliotecanacionaldigital.gob.cl/bnd"><link rel="shortcut icon" href="boxes-2191_favicon.jpg"><script type="text/javascript"><!--
+
+var __cid = '512';
+var __iid = '612';
+
+--></script><script type="text/javascript" src="channels-512_js_main.html"></script><script type="text/javascript" src="channels-512_js_cookies.js"></script><script type="text/javascript" src="channels-512_js_jquery_v3_6_0.js"></script><script type="text/javascript" src="channels-512_js_migrate_v3_3_2.js"></script><!--end-box--><!--begin-box:tr_Facebook_meta::4029:Etiquetas de Metadatos para Facebook.--><!--loc('Genera metadata para Facebook®')--><meta prefix="og: http://ogp.me/ns#" property="og:title" content="BND - Biblioteca Nacional Digital Biblioteca Nacional Digital de Chile"><meta prefix="og: http://ogp.me/ns#" property="og:description" content="Biblioteca Nacional Digital de Chile (BNd) es la plataforma que reúne todos los servicios y colecciones digitales de la Biblioteca Nacional de Chile, permitiendo la consulta remota de sus contenidos, el depósito de obras de creación, la asistencia y orientación de profesionales especializados, el acceso a diversos portales de contenidos, así como la visita virtual a sus emblemáticos salones, entre otros servicios."><meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="BND: Biblioteca Nacional Digital de Chile"><meta prefix="og: http://ogp.me/ns#" property="og:type" content="website"><meta prefix="og: http://ogp.me/ns#" property="og:locale" content="es_LA"><meta prefix="og: http://ogp.me/ns#" property="og:url" content="https://www.bibliotecanacionaldigital.gob.cl/bnd/612/w3-channel.html"><meta prefix="og: http://ogp.me/ns#" property="og:image" content="channels-512_imagen_portada.png"><!--end-box--><!--begin-box:tr_Twitter_meta::4030:Etiquetas de Metadatos para Twitter--><!--Etiquetas META summary card de Twitter--><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@BNChile"><meta name="twitter:title" content="BND - Biblioteca Nacional Digital - Biblioteca Nacional Digital de Chile"><meta name="twitter:description" content="Biblioteca Nacional Digital de Chile (BNd) es la plataforma que reúne todos los servicios y colecciones digitales de la Biblioteca Nacional de Chile, permitiendo la consulta remota de sus contenidos, el depósito de obras de creación, la asistencia y orientación de profesionales especializados, el acceso a diversos portales de contenidos, así como la visita virtual a sus emblemáticos salones, entre otros servicios."><meta name="twitter:image" content="channels-512_imagen_portada.png"><meta name="twitter:image:width" content="200"><meta name="twitter:image:height" content="200"><meta name="twitter:image" content="channels-512_imagen_valor.png"><meta name="twitter:image:width" content="55"><meta name="twitter:image:height" content="50"><!--end-box--><!--begin-box:tr_Google_Analytics::4237:Código para registrar las visitas.--><!--loc('* Código JavaScript para la página.')--><script type="text/javascript" src="boxes-4237_js_file.js"></script><!--end-box--></head><body class="portada"><div class="container-fluid" id="header_home"><!--begin-box-container:po_header_CC::2199:Agrupa navegación y logo de BND de la portada--><!--loc('Caja contenedora')--><div class="row"><div class="col-sm-12"><!--pos=1--><!--begin-box:po_header_logo::2196:Muestra el logo de BND--><!--loc('* Código HTML libre dentro de la página.')--><div class="logo-portada">
+  <a href="w3-channel.html"><span class="sr-only">Biblioteca Nacional Digital de Chile</span></a>
+</div><!--end-box--></div></div><div class="row"><div class="col-xs-6"><!--pos=2--><!--begin-box:po_header_menu_acerca::2197:Contiene el menú acerca de BND. Sólo actúa en la portada.--><!--loc('* Código HTML libre dentro de la página.')--><div class="dropdown menu-acerca-portada">
+  <button class="btn btn-link dropdown-toggle po-btn-acerca" type="button" id="menu_acerca_portada" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Acerca de <span class="hidden-xs">BND</span>
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="menu_acerca_portada">
+    <li><a href="w3-propertyvalue-174086.html">Quiénes somos</a></li>
+    <li><a href="w3-propertyvalue-174087.html">Preservación Digital</a></li>
+    <li><a href="w3-propertyvalue-174088.html">Biblioteca Nacional en el Mundo</a></li>
+    <li><a href="w3-propertyvalue-174089.html">Fuentes de información</a></li>
+    <li><a href="w3-propertyvalue-736777.html">Depósito electrónico</a></li>
+    <li><a href="w3-propertyvalue-761831.html">Preguntas frecuentes</a></li>
+    <li><a href="w3-propertyvalue-761832.html">Puntos de acceso remoto</a></li>
+  </ul>
+</div>
+<!--end-box--></div><div class="col-xs-6"><!--pos=3--><!--begin-box:po_header_menu_compartir::2198:Contiene el menú ver BND en twitter y facebook. Sólo actúa en la portada.--><!--loc('* Código HTML libre dentro de la página.')--><div class="dropdown pull-right menu-siganos-portada">
+  <button class="btn btn-link dropdown-toggle" type="button" id="menu_siganos_portada" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <span class="sr-only">Compartir</span><span class="fa fa-share-alt-square fa-3x"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="menu_siganos_portada">
+    <li>
+      <a href="http://facebook.com/pages/Memoria-Chilena/128759210496506"><span class="fa fa-facebook"></span> Facebook</a>
+    </li>
+    <li>
+      <a href="http://twitter.com/MemoriaChilena">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16" style="width: 12px; height: 12px">
+        <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+      </svg> X
+      </a>
+    </li>
+  </ul>
+</div>
+<!--end-box--></div></div><!--pos=4--><!--begin-box:po_header_buscador::2221:- - --><!--loc('* Código HTML libre dentro de la página.')--><div class="buscador-transversal container margen-arriba-md margen-abajo-md">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+    <fieldset>
+      <legend title="buscador" class="sr-only">Buscador general</legend>
+        <label for="keywords" class="hidden">Buscar</label>
+        <label for="boton_busqueda" class="hidden">Botón de búsqueda</label>
+      <div class="input-group input-group-lg">
+        <input class="form-control" id="keywords" type="text" name="keywords" value="" placeholder="Buscar en el sitio">
+          <span class="input-group-btn">
+                   <button id="boton_busqueda"  type="button"  class="btn btn-default" name="boton_buscador"
+                     onclick="javascript:return doSearch('w3-search.html',512)">
+                       <span class="sr-only">buscar</span>
+          </button>
+          </span>
+      </div>
+    </fieldset>
+  <script type="text/javascript" src="channels-515_js_buscar.js">
+  </script>
+</div>
+    </div>
+  </div>
+<!--end-box--><!--pos=5--><!--begin-box:po_header_menu_principal::2200:- - --><!--loc('* Código HTML libre dentro de la página.')--><div class="menu-principal-portada">
+  <ul class="">
+    <li class="descubre"><a href="https://descubre.bibliotecanacional.gob.cl"><span class="icono"></span> Descubre</a></li>
+    <li class="fondos-colecciones"><a href="w3-propertyname-672.html"><span class="icono"></span> Fondos y colecciones</a></li>
+    <li class="bibliotecas-tematicas"><a href="w3-propertyvalue-761276.html"><span class="icono"></span> Bibliotecas temáticas</a></li>
+    <li class="bibliotecas-territoriales"><a href="w3-propertyvalue-761275.html"><span class="icono"></span> Bibliotecas territoriales</a></li>
+    <li class="especiales"><a href="w3-propertyname-740.html"><span class="icono"></span> Especiales</a></li>
+    <li class="memoria-chilena"><a href="https://www.memoriachilena.gob.cl/602/w3-channel.html"><span class="icono"></span> Memoria Chilena</a></li>
+    <li class="chile-ninios"><a href="https://www.chileparaninos.gob.cl/"><span class="icono"></span> Chile para niños</a></li>
+    <li class="archivo-web"><a href="/bnd/646/w3-propertyvalue-1249796.html"><span class="icono"></span> Archivo de la Web Chilena</a></li>
+    <li class="mapas-patrimoniales"><a href="w3-propertyname-699.html"><span class="icono"></span> Mapas patrimoniales</a></li>
+    <li class="bibliotecario-linea"><a href="w3-propertyname-587.html"><span class="icono"></span>Canales de Contacto y Bibliotecario en línea</a></li>
+  </ul>
+</div>
+<!--end-box--><!--end-box--></div><div id="main"><div class="container"><!--begin-box-container:po_destacados_CC_DY::4662:Dinamiza la Contenedora de los destacados de portada.--><!--loc('Caja dinámica')--><script type="text/javascript"><!--
+        $(document).ready(function(){$('#i__po_destacados_CC_DY_1').html(' cargando... ');$('#i__po_destacados_CC_DY_1').load('../showbox.php?validity=120&bid=4662&_query_string=cid%3D512%26code%3Dw3%253Achannel%26iid%3D612%26language%3Des_CL&service=newtenberg-engine3-bn&fault_policy=message', function(responseText, textStatus, XMLHttpRequest){ntg_add_class(this);
+/*
+$("img",$(this)).each(function(idx, im){
+console.log("N="+idx);
+console.log("href="+$(im).closest("a").attr("href"));
+    var _base = $(im).closest("a").prop("href");
+console.log("base="+_base);
+console.log("src="+$(im).attr("src"));
+  var _class = $(im).closest("a").next("div.media-body").children("h3.titulo").attr("class").split(/ /).filter(c => c.match(/^cid-/))[0];
+  var _iid = _class.replace(/^cid-5(\d+)$/,'6$1');
+console.log("_iid="+_iid);
+    var url = new URL($(im).attr("src"),_base);
+  console.log("test url="+url);
+//$(im).attr("src",url);
+})*/})});
+      --></script><div id="i__po_destacados_CC_DY_1" class=""></div><!--end-box--></div><div class="container"><div class="row"><div class="col-md-12"><div class="fondo-blanco"><!--begin-box:po_noticias:recuadros recuadros-noticias col-md-10 col-md-offset-1 col-sm-12 margen-abajo-sm:2203:Muestra las noticias de BND. Transformar en Caja Engine definitiva (no pandora). En regla de estilo van:
+recuadros col-sm-8 col-sm-offset-2 recuadros-noticias margen-abajo-lg--><!--loc('* Recuadros de artículos')--><div id="recuadros_articulo_2203" class="recuadros recuadros-noticias col-md-10 col-md-offset-1 col-sm-12 margen-abajo-sm"><h2 class="ntg-titulo-caja">Noticias</h2><div class="recuadro"><div class="fecha pull-left fecha-dia-mes-anio cid-509 pnid-570 iso8601-20260511T0000000400">11 de mayo de 2026</div><h3 class="titulo aid-671527 cid-509"><a href="w3-article-671527.html">Partituras del compositor chileno Domingo Santa Cruz llegan a la Biblioteca Nacional Digital </a></h3><p class="abstract aid-671527 cid-509">Manuscritos e impresos del compositor chileno, Premio Nacional de Artes Musicales, ya están disponibles en el Archivo de Música de la BNd.</p></div><div class="recuadro"><div class="fecha pull-left fecha-dia-mes-anio cid-509 pnid-570 iso8601-20260506T0000000400">06 de mayo de 2026</div><h3 class="titulo aid-671526 cid-509"><a href="w3-article-671526.html">La Dirección General de Informaciones y Cultura (DIC) y la promoción estatal de la cultura y el turismo</a></h3><p class="abstract aid-671526 cid-509">Un nuevo minisitio revisa las políticas culturales, turísticas y radiales de este organismo estatal de la década de 1940. Incluye la digitalización de las revistas Antártica y Cartel.</p></div><div class="recuadro"><div class="fecha pull-left fecha-dia-mes-anio cid-509 pnid-570 iso8601-20260415T0000000400">15 de abril de 2026</div><h3 class="titulo aid-671344 cid-509"><a href="w3-article-671344.html">Vicente Ruiz, Ana María Ziebold y Cristián Opaso se suman al Archivo Fotográfico y Audiovisual de la BNd</a></h3><p class="abstract aid-671344 cid-509">Además de estas incorporaciones, el Archivo Audiovisual suma una nueva colección infantil, que incluye la donación digital de la animación "Kikirikú, volando en la historia", una serie educativa que acerca hitos y personajes de la cultura chilena a niñas y niños.</p></div></div><!--end-box--><!--begin-box:po_vermas_noticias:col-md-4 col-md-offset-4 col-sm-12 margen-abajo-md:4821:Muestra acceso a portadilla de Noticias.--><!--loc('* acceso a Valor de Clasificando ')--><!--uniqueid=i__po_vermas_noticias_1--><!--class=col-md-4 col-md-offset-4 col-sm-12 margen-abajo-md--><div class="col-md-4 col-md-offset-4 col-sm-12 margen-abajo-md" id="btn_bnd_noticias"><a href="w3-propertyvalue-158126.html" title="Ir a Noticias" class=" pvid-158126 cid-502">Ver archivo de Noticias</a></div><!--end-box--></div></div></div></div></div><!--begin-box-container:tr_footer::2204:Muestra el colofón del sitio. Caja transversal.--><!--loc('Caja contenedora')--><!--pos=1--><!--begin-box-container:BND2_tr_Footer_CC::2274:Muestra el footer en todas las páginas.--><!--loc('Caja contenedora')--><!--pos=1--><!--begin-box-container:BND2_tr_menu_footer::2332:Muestra el menú ubicado sobre el footer y que tiene el acceso al Acerca, Mapa del sitio, etc.--><!--loc('Caja contenedora')--><div class="menu-footer text-center"><ul class="list-inline"><li class="acercade-before"><!--pos=1--><!--begin-box:BND2_tr_footer_acerca_sitio::4737:Acceso al formulario de contacto desde el footer.--><!--loc('* acceso al Articulo ')--><a href="w3-article-180111.html" class=" aid-180111 cid-512">Biblioteca Nacional Digital</a><!--end-box--></li><li><a href="w3-contents.html">Mapa del sitio</a></li><li><!--pos=2--><!--begin-box:BND2_tr_footer_boletin::6290:Acceso al formulario para suscribirse al boletín desde el footer.--><!--loc('* Código HTML libre dentro de la página.')--><a class="ntgBootstrap role_button" href="w3-article-661493.html">Boletín</a><!--end-box--></li><li><!--pos=3--><!--begin-box:BND2_tr_footer_contacto::4698:Acceso al formulario de contacto desde el footer.--><!--loc('* Código HTML libre dentro de la página.')--><a class="ntgBootstrap role_button" href="w3-propertyname-587.html">Contacto</a><!--end-box--></li></ul></div><!--end-box--><!--pos=2--><!--begin-box:BND2_tr_Footer_Logos::4699:Muestra los losgos del footer en todas las páginas.--><!--loc('* Código HTML libre dentro de la página.')--><div id="footer" class="panel-footer">
+  <div class="logo-dibam">
+    <a href="http://www.cultura.gob.cl/ministerio/" class="url-dibam"><span class="sr-only">Ministerio de las Culturas, las Artes y el Patrimonio</span></a>
+  </div>
+  <div class="logo-biblioteca-nacional"><a href="http://www.bibliotecanacional.cl/"><span class="sr-only">Biblioteca Nacional de Chile</span></a></div>
+  <p class="copyright-footer">Biblioteca Nacional de Chile. Algunos derechos reservados.</p>
+</div><!--end-box--><!--end-box--><!--end-box--><!--begin-box-container:BND_js_transversales_CC_solo_bnd::4666:Caja contenedora de JS transverssales del portal BND--><!--loc('Caja contenedora')--><!--pos=1--><!--pos=2--><!--begin-box:BND_js_bootstrap::2265:Carga el Js que perite usar todos los plugines de Bootstrap.--><!--loc('* Código JavaScript para la página.')--><script type="text/javascript" src="boxes-2265_js_file.js"></script><!--end-box--><!--pos=3--><!--begin-box:BND_colecciones_js_boot_engine::2266:Carga el JS que intermedia entre Bootstrap y el Engine. Contiened addclass, wrapp all y otras funcionalidades a medida para las representaciones Engone.--><!--loc('* Código JavaScript para la página.')--><script type="text/javascript" src="boxes-2266_js_file.js"></script><!--end-box--><!--pos=4--><!--begin-box:BND_tr_btn_subir::2576:Muestra el botón que permite subir al tope de la página. Aparece cuando el alto de la página excede el de la pantalla.--><!--loc('* Código HTML libre dentro de la página.')--><div id='top' class="hidden-xs">
+  <a href="#navbar_navbar_default" title="ir al tope de la página" class="btn btn-link btn-subir affix" ><span class="fa fa-chevron-circle-up fa-3x"></span><span class="sr-only">Subir</span></a>
+</div>
+
+<script type='text/javascript'>
+//<![CDATA[
+
+// Botón para Ir Arriba
+jQuery(document).ready(function() {
+  jQuery("#top").hide();
+  jQuery(window).scroll(function () {
+     if (jQuery(this).scrollTop() > 200) {
+         jQuery('#top').fadeIn();
+     } else {
+         jQuery('#top').fadeOut();
+     }
+  });
+  jQuery('#top a').click(function () {
+    jQuery('body,html').animate({
+       scrollTop: 0
+    }, 800);
+    return false;
+  });
+});
+
+
+//]]>
+</script><!--end-box--><!--pos=5--><!--begin-box:BND_js_formatear_fecha::2330:Carga el JS que reformatea los tag que por omisión entrega el Engine--><!--loc('* Código JavaScript para la página.')--><script type="text/javascript" src="boxes-2330_js_file.js"></script><!--end-box--><!--pos=6--><!--begin-box:js_ventana_nueva_anchor:facebook twitter:4236:Javascript que permite abrir links en ventana nueva.--><!--loc('* Incluye script para personalizar comportamiento de links')--><script type="text/javascript"><!--
+$(document).ready(function(){$('a.facebook,a.twitter').click(function(){window.open(this.href,'_blank','resizable=1,menubar=1,location=1,status=1,scrollbars=1,toolbar=1,width=,height=');return false});});
+--></script><!--end-box--><!--pos=7--><!--begin-box:js_ventana_nueva_contenedor:menu-compartir-transversal nueva-ventana:4235:Javascript que permite abrir links en ventana nueva.--><!--loc('* Incluye script para personalizar comportamiento de links')--><script type="text/javascript"><!--
+$(document).ready(function(){$('.menu-compartir-transversal a:not([class]),.nueva-ventana a:not([class])').click(function(){window.open(this.href,'_blank','resizable=1,menubar=1,location=1,status=1,scrollbars=1,toolbar=1,width=,height=');return false});});
+--></script><!--end-box--><!--pos=8--><!--begin-box:js_val_email::6163:Inicializa initTerritorioMap ( OBSMAP ) .Muestra un mapa con UTs clasificadas en el valor de la portadilla--><!--loc('* Código JavaScript para la página.')--><script type="text/javascript" src="boxes-6163_js_file.js"></script><!--end-box--><!--pos=9--><!--pos=10--><!--pos=11--><!--pos=12--><!--pos=13--><!--end-box--></body></html>

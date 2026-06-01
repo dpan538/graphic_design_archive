@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+        body {
+            font-family: "Arial";
+        }
+    </style>
+    <script type="text/javascript">
+    window.awsWafCookieDomainList = [];
+    window.gokuProps = {
+"key":"AQIDAHjcYu/GjX+QlghicBgQ/7bFaQZ+m5FKCMDnO+vTbNg96AG8mMM7ifWZoB9fRLXX//r8AAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMqJlPmd/q1OWqgU47AgEQgDsDEioIqTsRh9g0ndRJhjghGgYIkZOfsBFiio+jT352D+2k9VfUj3HAQ3h+g+MDvanLozSS3kQxW3W60g==",
+          "iv":"D57ZZwHpCAAAA+wa",
+          "context":"qluVFu8ZIxMByAkhcOB9BqMl/G/rtplvMu3ESdldsOh19VaKk5nDGtDf34sCW32sSbaOYWQ2l9nvoHkECWGHSku4tGW4tuI+jEdu4P3/EZODr7wYttIP86d4099dUooRWTsq1y7YFIZAHxbBFoaoa37RFt9s+P86uGO9rC/6Fq+Cv2CReJ0yiqGzbWFpW1V3POW4ck8h7u860/mcOLBHMwGoOSgveVA+F5D/HrQ3+tBK3uJDpw2jX7g8qr2mODBe5Y9flO4S++BkQO8tZtMBPX7RiYbJ298ugIzg3jzKigjWxJDKliCksC3B+xv6HfdvoYgjSfPxR+dhe6176QbR6UaFbrh9KSI7x8tudcWhC1paTtAQl+13lvgWklwllF6QeB7vRpJJxrXjUKBMWKJQDrHW8XgB5lIlcxaroty8rHsoWvHQjPwLXP+lA0w3SSOG4V/sfoE9bUhSeyKI9eEdrzjlkkbvR8hYMJCQ0vPDrELHPXS5Lbyv7W6UVMQenM1ZWNHFktGxO8F809GvqvYf01i5Aw+gVv224bVYFDjIAxzgp8Dm3A=="
+};
+    </script>
+    <script src="https://90ed93586226.35ee0361.ap-southeast-2.token.awswaf.com/90ed93586226/a4ea99df68dc/d46d131ab81b/challenge.js"></script>
+</head>
+<body>
+    <div id="challenge-container"></div>
+    <script type="text/javascript">
+        AwsWafIntegration.saveReferrer();
+        AwsWafIntegration.checkForceRefresh().then((forceRefresh) => {
+            if (forceRefresh) {
+                AwsWafIntegration.forceRefreshToken().then(() => {
+                    window.location.reload(true);
+                });
+            } else {
+                AwsWafIntegration.getToken().then(() => {
+                    window.location.reload(true);
+                });
+            }
+        });
+    </script>
+    <noscript>
+        <h1>JavaScript is disabled</h1>
+        In order to continue, we need to verify that you're not a robot.
+        This requires JavaScript. Enable JavaScript and then reload the page.
+    </noscript>
+</body>
+</html>

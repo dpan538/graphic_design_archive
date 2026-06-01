@@ -3201,7 +3201,80 @@ Next capture rule:
 
 - Treat `source_candidate_registry_v1.csv` as the source planning universe.
 - The public interface should count only sources with published surfaces.
-- The About/methodology page can cite the 254-source registry as a verified /
+- The About/methodology page can cite the 253-source registry as a verified /
   under-verification source universe.
 - New crawls should be selected by protocol family and underrepresented region:
   Kramerius, OAI-PMH, IIIF, CONTENTdm, Omeka, DSpace, and local HTML archives.
+
+## 2026-06-01 — Edge Source Probe and Item Capture Queue
+
+Purpose:
+
+- Begin execution of the expanded source strategy without inflating public
+  surface counts.
+- Verify source reachability and protocol clues before writing item-level
+  crawlers.
+- Avoid another broad museum-keyword pass by turning source evidence into a
+  concrete adapter queue.
+
+Changes made:
+
+- Added `scripts/probe_source_candidate_registry_v1.py`.
+- Generated `data/source_candidate_probe_v1.csv`.
+- Stored source-level raw probe evidence in
+  `data/source_candidate_probe_v1_raw/`.
+- Added `docs/capture/SOURCE_CANDIDATE_PROBE_v1.md`.
+- Added `scripts/generate_item_capture_queue_v1.py`.
+- Generated `data/item_capture_queue_v1.csv`.
+- Added `docs/capture/ITEM_CAPTURE_QUEUE_v1.md`.
+
+Probe results:
+
+- 60 edge/community/university/government/library candidates were probed.
+- 51 returned a reachable source page.
+- 6 returned HTTP errors.
+- 3 failed at probe level.
+- 27 are promoted as `P1_adapter_candidate`.
+- 16 are promoted as `P2_html_source_candidate`.
+
+Next item-level queue:
+
+- 39 source rows queued.
+- 27 Q1 adapter/protocol rows.
+- 12 Q2 HTML/text rows.
+
+Adapter mix in the queue:
+
+- `html_text_source_adapter`: 12
+- `html_jsonld_adapter`: 8
+- `iiif_manifest_adapter`: 6
+- `pdf_text_or_link_adapter`: 6
+- `dspace_oai_or_rest_adapter`: 3
+- `kramerius_adapter`: 2
+- `omeka_api_adapter`: 1
+- `html_source_probe_then_manual_rules`: 1
+
+Regional mix in the queue:
+
+- Latin America: 9
+- East Asia: 8
+- Eastern Europe: 8
+- Africa: 5
+- South Asia: 3
+- Middle East and North Africa: 2
+- Southeast Asia: 2
+- Oceania and Pacific: 2
+
+Important correction:
+
+- Initial protocol detection over-counted `ArchiveSpace/EAD` because a broad
+  string match could detect ordinary HTML `head` text. The detector was
+  tightened and the probe was rerun before writing the final queue.
+
+Execution rule:
+
+- Run one adapter family at a time.
+- Each item-level capture must write raw source payloads, rights/source
+  evidence, text excerpts or context, and failure rows.
+- Sources that fail automation remain in the registry as link-only/manual-review
+  sources rather than disappearing from the archive map.
