@@ -1,0 +1,1820 @@
+[
+  {
+    "_embedded": {
+      "author": [
+        {
+          "code": "rest_user_invalid_id",
+          "data": {
+            "status": 404
+          },
+          "message": "Invalid user ID."
+        }
+      ],
+      "wp:term": [
+        [],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/540"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=540"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=540"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=540"
+                }
+              ]
+            },
+            "id": 540,
+            "link": "https://search.malaysiadesignarchive.org/tag/fahmi-reza/",
+            "name": "Fahmi Reza",
+            "slug": "fahmi-reza",
+            "taxonomy": "post_tag"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/item_type"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type/15"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?item_type=15"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 15,
+            "link": "https://search.malaysiadesignarchive.org/item_type/poster/",
+            "name": "Poster",
+            "slug": "poster",
+            "taxonomy": "item_type"
+          }
+        ]
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/types/item"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/users/16"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17877/revisions/17879",
+          "id": 17879
+        }
+      ],
+      "self": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17877"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 1,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17877/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/media?parent=17877"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories?post=17877",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags?post=17877",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type?post=17877",
+          "taxonomy": "item_type"
+        }
+      ]
+    },
+    "acf": [],
+    "author": 16,
+    "categories": [],
+    "content": {
+      "protected": false,
+      "rendered": "<p>People Power Poster Series</p>\n"
+    },
+    "date": "2022-04-26T17:12:17",
+    "date_gmt": "2022-04-26T09:12:17",
+    "format": "standard",
+    "guid": {
+      "rendered": "https://search.malaysiadesignarchive.org/?post_type=item&#038;p=17877"
+    },
+    "id": 17877,
+    "item_type": [
+      15
+    ],
+    "link": "https://search.malaysiadesignarchive.org/item/a-force-more-powerful/",
+    "menu_order": 0,
+    "meta": [],
+    "modified": "2022-04-26T17:12:45",
+    "modified_gmt": "2022-04-26T09:12:45",
+    "slug": "a-force-more-powerful",
+    "status": "publish",
+    "tags": [
+      540
+    ],
+    "template": "",
+    "title": {
+      "rendered": "A Force More Powerful"
+    },
+    "type": "item"
+  },
+  {
+    "_embedded": {
+      "author": [
+        {
+          "code": "rest_user_invalid_id",
+          "data": {
+            "status": 404
+          },
+          "message": "Invalid user ID."
+        }
+      ],
+      "wp:term": [
+        [],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/540"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=540"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=540"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=540"
+                }
+              ]
+            },
+            "id": 540,
+            "link": "https://search.malaysiadesignarchive.org/tag/fahmi-reza/",
+            "name": "Fahmi Reza",
+            "slug": "fahmi-reza",
+            "taxonomy": "post_tag"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/item_type"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type/15"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?item_type=15"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 15,
+            "link": "https://search.malaysiadesignarchive.org/item_type/poster/",
+            "name": "Poster",
+            "slug": "poster",
+            "taxonomy": "item_type"
+          }
+        ]
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/types/item"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/users/16"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17873/revisions/17880",
+          "id": 17880
+        }
+      ],
+      "self": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17873"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 3,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17873/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/media?parent=17873"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories?post=17873",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags?post=17873",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type?post=17873",
+          "taxonomy": "item_type"
+        }
+      ]
+    },
+    "acf": [],
+    "author": 16,
+    "categories": [],
+    "content": {
+      "protected": false,
+      "rendered": "<p>People Power Poster Series</p>\n"
+    },
+    "date": "2022-04-26T17:10:58",
+    "date_gmt": "2022-04-26T09:10:58",
+    "format": "standard",
+    "guid": {
+      "rendered": "https://search.malaysiadesignarchive.org/?post_type=item&#038;p=17873"
+    },
+    "id": 17873,
+    "item_type": [
+      15
+    ],
+    "link": "https://search.malaysiadesignarchive.org/item/bringing-down-a-dictator/",
+    "menu_order": 0,
+    "meta": [],
+    "modified": "2022-04-26T17:12:34",
+    "modified_gmt": "2022-04-26T09:12:34",
+    "slug": "bringing-down-a-dictator",
+    "status": "publish",
+    "tags": [
+      540
+    ],
+    "template": "",
+    "title": {
+      "rendered": "Bringing Down A Dictator"
+    },
+    "type": "item"
+  },
+  {
+    "_embedded": {
+      "author": [
+        {
+          "code": "rest_user_invalid_id",
+          "data": {
+            "status": 404
+          },
+          "message": "Invalid user ID."
+        }
+      ],
+      "wp:term": [
+        [],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/540"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=540"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=540"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=540"
+                }
+              ]
+            },
+            "id": 540,
+            "link": "https://search.malaysiadesignarchive.org/tag/fahmi-reza/",
+            "name": "Fahmi Reza",
+            "slug": "fahmi-reza",
+            "taxonomy": "post_tag"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/573"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=573"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=573"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=573"
+                }
+              ]
+            },
+            "id": 573,
+            "link": "https://search.malaysiadesignarchive.org/tag/student-power/",
+            "name": "Student Power",
+            "slug": "student-power",
+            "taxonomy": "post_tag"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/item_type"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type/15"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?item_type=15"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 15,
+            "link": "https://search.malaysiadesignarchive.org/item_type/poster/",
+            "name": "Poster",
+            "slug": "poster",
+            "taxonomy": "item_type"
+          }
+        ]
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/types/item"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/users/16"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17868/revisions/17872",
+          "id": 17872
+        }
+      ],
+      "self": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17868"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17868/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/media?parent=17868"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories?post=17868",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags?post=17868",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type?post=17868",
+          "taxonomy": "item_type"
+        }
+      ]
+    },
+    "acf": [],
+    "author": 16,
+    "categories": [],
+    "content": {
+      "protected": false,
+      "rendered": "<p>Student Power Poster Series</p>\n"
+    },
+    "date": "2022-04-26T17:09:54",
+    "date_gmt": "2022-04-26T09:09:54",
+    "format": "standard",
+    "guid": {
+      "rendered": "https://search.malaysiadesignarchive.org/?post_type=item&#038;p=17868"
+    },
+    "id": 17868,
+    "item_type": [
+      15
+    ],
+    "link": "https://search.malaysiadesignarchive.org/item/kuasa-kepada-rakyat/",
+    "menu_order": 0,
+    "meta": [],
+    "modified": "2022-04-26T17:09:54",
+    "modified_gmt": "2022-04-26T09:09:54",
+    "slug": "kuasa-kepada-rakyat",
+    "status": "publish",
+    "tags": [
+      540,
+      573
+    ],
+    "template": "",
+    "title": {
+      "rendered": "Kuasa Kepada Rakyat"
+    },
+    "type": "item"
+  },
+  {
+    "_embedded": {
+      "author": [
+        {
+          "code": "rest_user_invalid_id",
+          "data": {
+            "status": 404
+          },
+          "message": "Invalid user ID."
+        }
+      ],
+      "wp:term": [
+        [],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/540"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=540"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=540"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=540"
+                }
+              ]
+            },
+            "id": 540,
+            "link": "https://search.malaysiadesignarchive.org/tag/fahmi-reza/",
+            "name": "Fahmi Reza",
+            "slug": "fahmi-reza",
+            "taxonomy": "post_tag"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/573"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=573"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=573"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=573"
+                }
+              ]
+            },
+            "id": 573,
+            "link": "https://search.malaysiadesignarchive.org/tag/student-power/",
+            "name": "Student Power",
+            "slug": "student-power",
+            "taxonomy": "post_tag"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/item_type"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type/15"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?item_type=15"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 15,
+            "link": "https://search.malaysiadesignarchive.org/item_type/poster/",
+            "name": "Poster",
+            "slug": "poster",
+            "taxonomy": "item_type"
+          }
+        ]
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/types/item"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/users/16"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17864/revisions/17867",
+          "id": 17867
+        }
+      ],
+      "self": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17864"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17864/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/media?parent=17864"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories?post=17864",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags?post=17864",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type?post=17864",
+          "taxonomy": "item_type"
+        }
+      ]
+    },
+    "acf": [],
+    "author": 16,
+    "categories": [],
+    "content": {
+      "protected": false,
+      "rendered": "<p>Student Power Poster Series</p>\n"
+    },
+    "date": "2022-04-26T17:08:11",
+    "date_gmt": "2022-04-26T09:08:11",
+    "format": "standard",
+    "guid": {
+      "rendered": "https://search.malaysiadesignarchive.org/?post_type=item&#038;p=17864"
+    },
+    "id": 17864,
+    "item_type": [
+      15
+    ],
+    "link": "https://search.malaysiadesignarchive.org/item/buruh-bersatu-tak-bisa-dikalahkan/",
+    "menu_order": 0,
+    "meta": [],
+    "modified": "2022-04-26T17:08:11",
+    "modified_gmt": "2022-04-26T09:08:11",
+    "slug": "buruh-bersatu-tak-bisa-dikalahkan",
+    "status": "publish",
+    "tags": [
+      540,
+      573
+    ],
+    "template": "",
+    "title": {
+      "rendered": "Buruh Bersatu Tak Bisa Dikalahkan!"
+    },
+    "type": "item"
+  },
+  {
+    "_embedded": {
+      "author": [
+        {
+          "code": "rest_user_invalid_id",
+          "data": {
+            "status": 404
+          },
+          "message": "Invalid user ID."
+        }
+      ],
+      "wp:term": [
+        [],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/540"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=540"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=540"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=540"
+                }
+              ]
+            },
+            "id": 540,
+            "link": "https://search.malaysiadesignarchive.org/tag/fahmi-reza/",
+            "name": "Fahmi Reza",
+            "slug": "fahmi-reza",
+            "taxonomy": "post_tag"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/573"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=573"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=573"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=573"
+                }
+              ]
+            },
+            "id": 573,
+            "link": "https://search.malaysiadesignarchive.org/tag/student-power/",
+            "name": "Student Power",
+            "slug": "student-power",
+            "taxonomy": "post_tag"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/item_type"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type/15"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?item_type=15"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 15,
+            "link": "https://search.malaysiadesignarchive.org/item_type/poster/",
+            "name": "Poster",
+            "slug": "poster",
+            "taxonomy": "item_type"
+          }
+        ]
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/types/item"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/users/16"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17860/revisions/17863",
+          "id": 17863
+        }
+      ],
+      "self": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17860"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17860/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/media?parent=17860"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories?post=17860",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags?post=17860",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type?post=17860",
+          "taxonomy": "item_type"
+        }
+      ]
+    },
+    "acf": [],
+    "author": 16,
+    "categories": [],
+    "content": {
+      "protected": false,
+      "rendered": "<p>Student Power Poster Series</p>\n"
+    },
+    "date": "2022-04-26T17:05:41",
+    "date_gmt": "2022-04-26T09:05:41",
+    "format": "standard",
+    "guid": {
+      "rendered": "https://search.malaysiadesignarchive.org/?post_type=item&#038;p=17860"
+    },
+    "id": 17860,
+    "item_type": [
+      15
+    ],
+    "link": "https://search.malaysiadesignarchive.org/item/silhouette-of-a-person-holding-a-sign-against-a-blue-background/",
+    "menu_order": 0,
+    "meta": [],
+    "modified": "2022-04-26T17:05:41",
+    "modified_gmt": "2022-04-26T09:05:41",
+    "slug": "silhouette-of-a-person-holding-a-sign-against-a-blue-background",
+    "status": "publish",
+    "tags": [
+      540,
+      573
+    ],
+    "template": "",
+    "title": {
+      "rendered": "Silhouette of A Person Holding A Sign Against A Blue Background"
+    },
+    "type": "item"
+  },
+  {
+    "_embedded": {
+      "author": [
+        {
+          "code": "rest_user_invalid_id",
+          "data": {
+            "status": 404
+          },
+          "message": "Invalid user ID."
+        }
+      ],
+      "wp:term": [
+        [],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/540"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=540"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=540"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=540"
+                }
+              ]
+            },
+            "id": 540,
+            "link": "https://search.malaysiadesignarchive.org/tag/fahmi-reza/",
+            "name": "Fahmi Reza",
+            "slug": "fahmi-reza",
+            "taxonomy": "post_tag"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/573"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=573"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=573"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=573"
+                }
+              ]
+            },
+            "id": 573,
+            "link": "https://search.malaysiadesignarchive.org/tag/student-power/",
+            "name": "Student Power",
+            "slug": "student-power",
+            "taxonomy": "post_tag"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/item_type"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type/15"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?item_type=15"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 15,
+            "link": "https://search.malaysiadesignarchive.org/item_type/poster/",
+            "name": "Poster",
+            "slug": "poster",
+            "taxonomy": "item_type"
+          }
+        ]
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/types/item"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/users/16"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17856/revisions/17859",
+          "id": 17859
+        }
+      ],
+      "self": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17856"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17856/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/media?parent=17856"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories?post=17856",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags?post=17856",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type?post=17856",
+          "taxonomy": "item_type"
+        }
+      ]
+    },
+    "acf": [],
+    "author": 16,
+    "categories": [],
+    "content": {
+      "protected": false,
+      "rendered": "<p>Student Power Poster Series</p>\n"
+    },
+    "date": "2022-04-26T17:04:00",
+    "date_gmt": "2022-04-26T09:04:00",
+    "format": "standard",
+    "guid": {
+      "rendered": "https://search.malaysiadesignarchive.org/?post_type=item&#038;p=17856"
+    },
+    "id": 17856,
+    "item_type": [
+      15
+    ],
+    "link": "https://search.malaysiadesignarchive.org/item/in-solidarity-with-uk-students/",
+    "menu_order": 0,
+    "meta": [],
+    "modified": "2022-04-26T17:04:00",
+    "modified_gmt": "2022-04-26T09:04:00",
+    "slug": "in-solidarity-with-uk-students",
+    "status": "publish",
+    "tags": [
+      540,
+      573
+    ],
+    "template": "",
+    "title": {
+      "rendered": "In Solidarity With UK Students"
+    },
+    "type": "item"
+  },
+  {
+    "_embedded": {
+      "author": [
+        {
+          "code": "rest_user_invalid_id",
+          "data": {
+            "status": 404
+          },
+          "message": "Invalid user ID."
+        }
+      ],
+      "wp:term": [
+        [],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/540"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=540"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=540"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=540"
+                }
+              ]
+            },
+            "id": 540,
+            "link": "https://search.malaysiadesignarchive.org/tag/fahmi-reza/",
+            "name": "Fahmi Reza",
+            "slug": "fahmi-reza",
+            "taxonomy": "post_tag"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/573"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=573"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=573"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=573"
+                }
+              ]
+            },
+            "id": 573,
+            "link": "https://search.malaysiadesignarchive.org/tag/student-power/",
+            "name": "Student Power",
+            "slug": "student-power",
+            "taxonomy": "post_tag"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/item_type"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type/15"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?item_type=15"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 15,
+            "link": "https://search.malaysiadesignarchive.org/item_type/poster/",
+            "name": "Poster",
+            "slug": "poster",
+            "taxonomy": "item_type"
+          }
+        ]
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/types/item"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/users/16"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17853/revisions/17855",
+          "id": 17855
+        }
+      ],
+      "self": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17853"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 1,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17853/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/media?parent=17853"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories?post=17853",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags?post=17853",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type?post=17853",
+          "taxonomy": "item_type"
+        }
+      ]
+    },
+    "acf": [],
+    "author": 16,
+    "categories": [],
+    "content": {
+      "protected": false,
+      "rendered": "<p>Student Power Poster Series</p>\n"
+    },
+    "date": "2022-04-26T17:02:42",
+    "date_gmt": "2022-04-26T09:02:42",
+    "format": "standard",
+    "guid": {
+      "rendered": "https://search.malaysiadesignarchive.org/?post_type=item&#038;p=17853"
+    },
+    "id": 17853,
+    "item_type": [
+      15
+    ],
+    "link": "https://search.malaysiadesignarchive.org/item/mahasiswa-bangkitlah-dari-tidurmu/",
+    "menu_order": 0,
+    "meta": [],
+    "modified": "2022-04-26T17:02:42",
+    "modified_gmt": "2022-04-26T09:02:42",
+    "slug": "mahasiswa-bangkitlah-dari-tidurmu",
+    "status": "publish",
+    "tags": [
+      540,
+      573
+    ],
+    "template": "",
+    "title": {
+      "rendered": "Mahasiswa Bangkitlah Dari Tidurmu"
+    },
+    "type": "item"
+  },
+  {
+    "_embedded": {
+      "author": [
+        {
+          "code": "rest_user_invalid_id",
+          "data": {
+            "status": 404
+          },
+          "message": "Invalid user ID."
+        }
+      ],
+      "wp:term": [
+        [],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/540"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=540"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=540"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=540"
+                }
+              ]
+            },
+            "id": 540,
+            "link": "https://search.malaysiadesignarchive.org/tag/fahmi-reza/",
+            "name": "Fahmi Reza",
+            "slug": "fahmi-reza",
+            "taxonomy": "post_tag"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/573"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=573"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=573"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=573"
+                }
+              ]
+            },
+            "id": 573,
+            "link": "https://search.malaysiadesignarchive.org/tag/student-power/",
+            "name": "Student Power",
+            "slug": "student-power",
+            "taxonomy": "post_tag"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/item_type"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type/15"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?item_type=15"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 15,
+            "link": "https://search.malaysiadesignarchive.org/item_type/poster/",
+            "name": "Poster",
+            "slug": "poster",
+            "taxonomy": "item_type"
+          }
+        ]
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/types/item"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/users/16"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17849/revisions/17852",
+          "id": 17852
+        }
+      ],
+      "self": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17849"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/17849/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/media?parent=17849"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories?post=17849",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags?post=17849",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type?post=17849",
+          "taxonomy": "item_type"
+        }
+      ]
+    },
+    "acf": [],
+    "author": 16,
+    "categories": [],
+    "content": {
+      "protected": false,
+      "rendered": "<p>Student Power Poster Series</p>\n"
+    },
+    "date": "2022-04-26T17:01:18",
+    "date_gmt": "2022-04-26T09:01:18",
+    "format": "standard",
+    "guid": {
+      "rendered": "https://search.malaysiadesignarchive.org/?post_type=item&#038;p=17849"
+    },
+    "id": 17849,
+    "item_type": [
+      15
+    ],
+    "link": "https://search.malaysiadesignarchive.org/item/ayu-bersama-kita-cipta-sejarah-baru-kebangkitan-mahasiswa/",
+    "menu_order": 0,
+    "meta": [],
+    "modified": "2022-04-26T17:01:18",
+    "modified_gmt": "2022-04-26T09:01:18",
+    "slug": "ayu-bersama-kita-cipta-sejarah-baru-kebangkitan-mahasiswa",
+    "status": "publish",
+    "tags": [
+      540,
+      573
+    ],
+    "template": "",
+    "title": {
+      "rendered": "Ayu Bersama Kita Cipta Sejarah Baru Kebangkitan Mahasiswa"
+    },
+    "type": "item"
+  }
+]

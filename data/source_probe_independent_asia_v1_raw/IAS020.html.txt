@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+        body {
+            font-family: "Arial";
+        }
+    </style>
+    <script type="text/javascript">
+    window.awsWafCookieDomainList = [];
+    window.gokuProps = {
+"key":"AQIDAHjcYu/GjX+QlghicBgQ/7bFaQZ+m5FKCMDnO+vTbNg96AG8mMM7ifWZoB9fRLXX//r8AAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMqJlPmd/q1OWqgU47AgEQgDsDEioIqTsRh9g0ndRJhjghGgYIkZOfsBFiio+jT352D+2k9VfUj3HAQ3h+g+MDvanLozSS3kQxW3W60g==",
+          "iv":"D57ZQQHtoAAABO5o",
+          "context":"mYXMCoatf7r9blFv82+25CNECfoSNFPXYk2L3ES8pnwbCGAVD6kn/FTXHeVP5xfKVPJEGuo2F/ltGW+3/I+DMkUOKyQqJF0WW0UoWgzKGjD+19iRVVbch5PnMWv/olKRkM+RXMOHAp0glFKZk5z8swPnVKUs9OvIXnc8MK64KMWONDjgn++KCgoyyaSFIFMUTVUhCu6ScXBYSO7OSOE/B/KWts40dGdMrvOrN3RVRls4BjZSvGiqZsM4nQRI8hUwq/0a8++4H9IGnijprJsC9iy3eDXWdLfQO6PiL3pgwXVgiVaicTboizVciKxK58A4oVG5awA7J5SwIoB1AoyGwB+x7270x3UqzXOvLppdAtVG27zOQDTir/tLELGwLQM003nc82LBvfcU5gitzjqipklVSo753B/USVK2kXBZ1V0cqjZyL9zt971BDFNaM/1fM9oL9vMvRsjdHlGMDyJc81MoIx9wY8lGzkM1APVsiGgBRrc7TtOac1NCPYPRIYiT8TOkavqwksSvkAWBszOip/9VCjdP2qnfPNJi4i03oo/pb0E8Ug=="
+};
+    </script>
+    <script src="https://90ed93586226.35ee0361.ap-southeast-2.token.awswaf.com/90ed93586226/a4ea99df68dc/d46d131ab81b/challenge.js"></script>
+</head>
+<body>
+    <div id="challenge-container"></div>
+    <script type="text/javascript">
+        AwsWafIntegration.saveReferrer();
+        AwsWafIntegration.checkForceRefresh().then((forceRefresh) => {
+            if (forceRefresh) {
+                AwsWafIntegration.forceRefreshToken().then(() => {
+                    window.location.reload(true);
+                });
+            } else {
+                AwsWafIntegration.getToken().then(() => {
+                    window.location.reload(true);
+                });
+            }
+        });
+    </script>
+    <noscript>
+        <h1>JavaScript is disabled</h1>
+        In order to continue, we need to verify that you're not a robot.
+        This requires JavaScript. Enable JavaScript and then reload the page.
+    </noscript>
+</body>
+</html>

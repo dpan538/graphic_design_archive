@@ -36,6 +36,7 @@ RECORD_FILES = [
     DATA / "capture_batch_late_period_coverage_1970_2026_records.csv",
     DATA / "capture_batch_protocol_item_1970_2026_records.csv",
     DATA / "capture_batch_source_breadth_1970_2026_records.csv",
+    DATA / "capture_batch_independent_asia_1990_2026_records.csv",
     DATA / "capture_batch_loc_deep_image_ready_1931_1970_records.csv",
 ]
 

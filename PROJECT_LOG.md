@@ -3584,3 +3584,69 @@ Validation:
 - Source-visible image coverage is 90.46%; weighted publication coverage is
   70.41%, still far below the 95% launch target because many source-hosted
   images remain `IMG02` rather than verified-open `IMG03`.
+
+## 2026-06-01 — Independent + Asia Source Probe and Capture
+
+Purpose:
+
+- Expand the source map beyond large museum APIs and Western institutional
+  sources.
+- Treat post-1990 independent design sites as a contemporary context/link
+  layer, not as open-image evidence.
+- Begin a more careful East Asia and Southeast Asia source strategy covering
+  local, community, university, government, and independent archives from
+  pre-WWII contexts to the present.
+
+Changes made:
+
+- Added `scripts/probe_independent_asia_sources_v1.py`.
+- Probed 30 independent, East Asian, and Southeast Asian source candidates.
+- Wrote `data/source_probe_independent_asia_v1.csv`.
+- Wrote raw probe payloads under
+  `data/source_probe_independent_asia_v1_raw/`.
+- Wrote `docs/capture/INDEPENDENT_ASIA_SOURCE_PROBE_v1.md`.
+- Added `scripts/run_independent_asia_capture_1990_2026.py`.
+- Captured a small low-risk batch from Malaysia Design Archive and Another
+  Graphic via public WordPress REST endpoints.
+- Corrected Malaysia Design Archive image detection by following
+  `wp:attachment` media links; this reduced false `IMG04` records in the batch.
+- Wrote `data/capture_batch_independent_asia_1990_2026_records.csv`.
+- Wrote `data/capture_batch_independent_asia_1990_2026_source_summary.csv`.
+- Wrote raw payloads under
+  `data/capture_batch_independent_asia_1990_2026_raw/`.
+- Wrote `docs/capture/INDEPENDENT_ASIA_CAPTURE_1990_2026.md`.
+- Added the new records CSV to the cumulative static payload rebuild script.
+
+Source policy:
+
+- Pinterest, Instagram, Behance, Are.na, and similar platforms may be used only
+  as discovery channels for original source sites.
+- Independent/community design sites default to `IMG02` source-hosted display
+  or `IMG00/IMG04` when image rights or media endpoints are not clear.
+- No independent-site image is promoted to `IMG03` without explicit item-level
+  open licensing.
+
+Result:
+
+- Source probe: 30 candidates, 22 reachable, 19 P1 next-capture candidates.
+- Capture batch: 22 promoted records from 2 sources.
+- Batch image states after attachment fix: `IMG02=20`, `IMG04=2`.
+- New public sources added in this update: Malaysia Design Archive and Another
+  Graphic.
+
+Validation:
+
+- Rebuilt static public surfaces with this batch included.
+- 1265 input rows after dedupe.
+- 1164 public surfaces.
+- Distinct public sources: 35.
+- Image states: `IMG00=40`, `IMG01=37`, `IMG02=616`, `IMG03=400`,
+  `IMG04=71`.
+- Period source-visible image coverage: pre-1930 `94.0%`, 1931-1970 `85.2%`,
+  1971-2000 `98.2%`, 2001-2026 `87.1%`.
+- `scripts/audit_public_surface_integrity.py` passed with no exact repeated
+  image URLs and no placeholder image URLs.
+- Source-visible coverage remains `90.46%`; weighted publication coverage is
+  `70.19%`. The launch target is not met because the source-hosted `IMG02`
+  population is large and must be treated as rights-sensitive rather than
+  open-image proof.

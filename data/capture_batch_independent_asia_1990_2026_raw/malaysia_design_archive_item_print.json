@@ -1,0 +1,2148 @@
+[
+  {
+    "_embedded": {
+      "author": [
+        {
+          "code": "rest_user_invalid_id",
+          "data": {
+            "status": 404
+          },
+          "message": "Invalid user ID."
+        }
+      ],
+      "wp:term": [
+        [],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/829"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=829"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=829"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=829"
+                }
+              ]
+            },
+            "id": 829,
+            "link": "https://search.malaysiadesignarchive.org/tag/womens-march-malaysia-2025/",
+            "name": "Women's March Malaysia 2025",
+            "slug": "womens-march-malaysia-2025",
+            "taxonomy": "post_tag"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/item_type"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type/336"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?item_type=336"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 336,
+            "link": "https://search.malaysiadesignarchive.org/item_type/placard/",
+            "name": "Placard",
+            "slug": "placard",
+            "taxonomy": "item_type"
+          }
+        ]
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/types/item"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/users/25"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/27081/revisions/27085",
+          "id": 27085
+        }
+      ],
+      "self": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/27081"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/27081/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/media?parent=27081"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories?post=27081",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags?post=27081",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type?post=27081",
+          "taxonomy": "item_type"
+        }
+      ]
+    },
+    "acf": [],
+    "author": 25,
+    "categories": [],
+    "content": {
+      "protected": false,
+      "rendered": "<p><span data-sheets-root=\"1\">A placard includes a visual image written with texts: “Education is Power&#8221;, &#8220;Resistance Never Futile&#8221; and &#8220;Read Banned Books&#8221;. Slices of watermelon symbolise the colours of the Palestinian flag (red, black, white, and green), representing Palestinian resistance against the Israeli occupation, particularly significant during the 1993 ban on the Palestinian flag. The black and white checkered keffiyeh print is also a symbol of the resilience of Palestinians. Three individuals depicted wearing keffiyehs are shown holding books in the visual imagery in sync with the message of reading banned books. </span></p>\n"
+    },
+    "date": "2025-09-23T14:29:43",
+    "date_gmt": "2025-09-23T06:29:43",
+    "format": "standard",
+    "guid": {
+      "rendered": "https://search.malaysiadesignarchive.org/?post_type=item&#038;p=27081"
+    },
+    "id": 27081,
+    "item_type": [
+      336
+    ],
+    "link": "https://search.malaysiadesignarchive.org/item/education-is-power/",
+    "menu_order": 0,
+    "meta": [],
+    "modified": "2025-09-23T14:29:43",
+    "modified_gmt": "2025-09-23T06:29:43",
+    "slug": "education-is-power",
+    "status": "publish",
+    "tags": [
+      829
+    ],
+    "template": "",
+    "title": {
+      "rendered": "Education is Power"
+    },
+    "type": "item"
+  },
+  {
+    "_embedded": {
+      "author": [
+        {
+          "code": "rest_user_invalid_id",
+          "data": {
+            "status": 404
+          },
+          "message": "Invalid user ID."
+        }
+      ],
+      "wp:term": [
+        [],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/829"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=829"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=829"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=829"
+                }
+              ]
+            },
+            "id": 829,
+            "link": "https://search.malaysiadesignarchive.org/tag/womens-march-malaysia-2025/",
+            "name": "Women's March Malaysia 2025",
+            "slug": "womens-march-malaysia-2025",
+            "taxonomy": "post_tag"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/item_type"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type/336"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?item_type=336"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 336,
+            "link": "https://search.malaysiadesignarchive.org/item_type/placard/",
+            "name": "Placard",
+            "slug": "placard",
+            "taxonomy": "item_type"
+          }
+        ]
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/types/item"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/users/25"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/26514/revisions/26520",
+          "id": 26520
+        }
+      ],
+      "self": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/26514"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 4,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/26514/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/media?parent=26514"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories?post=26514",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags?post=26514",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type?post=26514",
+          "taxonomy": "item_type"
+        }
+      ]
+    },
+    "acf": [],
+    "author": 25,
+    "categories": [],
+    "content": {
+      "protected": false,
+      "rendered": "<p>A placard with text: &#8220;We were told these chains were jewelry &#8211; Now we&#8217;re melting them into weapons&#8221;. A printed image that shows an individual breaking the chain is on the left and additional strokes are used to illustrate longer hair. There is a text directly written on the image: &#8220;If you want submission, try capitalism not women!&#8221; Other words like &#8220;chains&#8221;, &#8220;jewelry&#8221; and &#8220;weapons&#8221; are decorated with colours and symbols.</p>\n"
+    },
+    "date": "2025-08-06T13:13:34",
+    "date_gmt": "2025-08-06T05:13:34",
+    "format": "standard",
+    "guid": {
+      "rendered": "https://search.malaysiadesignarchive.org/?post_type=item&#038;p=26514"
+    },
+    "id": 26514,
+    "item_type": [
+      336
+    ],
+    "link": "https://search.malaysiadesignarchive.org/item/we-were-told-these-chains-were-jewelry-now-were-melting-them-into-weapons/",
+    "menu_order": 0,
+    "meta": [],
+    "modified": "2025-08-06T13:15:03",
+    "modified_gmt": "2025-08-06T05:15:03",
+    "slug": "we-were-told-these-chains-were-jewelry-now-were-melting-them-into-weapons",
+    "status": "publish",
+    "tags": [
+      829
+    ],
+    "template": "",
+    "title": {
+      "rendered": "We were told these chains were jewelry, now we&#8217;re melting them into weapons"
+    },
+    "type": "item"
+  },
+  {
+    "_embedded": {
+      "author": [
+        {
+          "code": "rest_user_invalid_id",
+          "data": {
+            "status": 404
+          },
+          "message": "Invalid user ID."
+        }
+      ],
+      "wp:term": [
+        [],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/829"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=829"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=829"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=829"
+                }
+              ]
+            },
+            "id": 829,
+            "link": "https://search.malaysiadesignarchive.org/tag/womens-march-malaysia-2025/",
+            "name": "Women's March Malaysia 2025",
+            "slug": "womens-march-malaysia-2025",
+            "taxonomy": "post_tag"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/item_type"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type/336"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?item_type=336"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 336,
+            "link": "https://search.malaysiadesignarchive.org/item_type/placard/",
+            "name": "Placard",
+            "slug": "placard",
+            "taxonomy": "item_type"
+          }
+        ]
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/types/item"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/users/25"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/26474/revisions/26477",
+          "id": 26477
+        }
+      ],
+      "self": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/26474"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/26474/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/media?parent=26474"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories?post=26474",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags?post=26474",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type?post=26474",
+          "taxonomy": "item_type"
+        }
+      ]
+    },
+    "acf": [],
+    "author": 25,
+    "categories": [],
+    "content": {
+      "protected": false,
+      "rendered": "<p>A placard with text: &#8220;Trying to Silence the LGBTQ+ Community? Good Luck Babe!&#8221;. The lower side of placard was filled with lipsick print. The text: &#8220;Free Palestine&#8221; is written at the back.</p>\n"
+    },
+    "date": "2025-08-06T11:15:39",
+    "date_gmt": "2025-08-06T03:15:39",
+    "format": "standard",
+    "guid": {
+      "rendered": "https://search.malaysiadesignarchive.org/?post_type=item&#038;p=26474"
+    },
+    "id": 26474,
+    "item_type": [
+      336
+    ],
+    "link": "https://search.malaysiadesignarchive.org/item/trying-to-silence-the-lgbtq-community-good-luck-babe/",
+    "menu_order": 0,
+    "meta": [],
+    "modified": "2025-08-06T11:15:39",
+    "modified_gmt": "2025-08-06T03:15:39",
+    "slug": "trying-to-silence-the-lgbtq-community-good-luck-babe",
+    "status": "publish",
+    "tags": [
+      829
+    ],
+    "template": "",
+    "title": {
+      "rendered": "Trying to Silence the LGBTQ+ Community? Good Luck Babe!"
+    },
+    "type": "item"
+  },
+  {
+    "_embedded": {
+      "author": [
+        {
+          "code": "rest_user_invalid_id",
+          "data": {
+            "status": 404
+          },
+          "message": "Invalid user ID."
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories/60"
+                }
+              ],
+              "up": [
+                {
+                  "embeddable": true,
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories/3"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?categories=60"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?categories=60"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?categories=60"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 60,
+            "link": "https://search.malaysiadesignarchive.org/category/visual-art/sketches/",
+            "name": "Sketches",
+            "slug": "sketches",
+            "taxonomy": "category"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/259"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=259"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=259"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=259"
+                }
+              ]
+            },
+            "id": 259,
+            "link": "https://search.malaysiadesignarchive.org/tag/migration/",
+            "name": "migration",
+            "slug": "migration",
+            "taxonomy": "post_tag"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/255"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=255"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=255"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=255"
+                }
+              ]
+            },
+            "id": 255,
+            "link": "https://search.malaysiadesignarchive.org/tag/pulau-bidong/",
+            "name": "Pulau Bidong",
+            "slug": "pulau-bidong",
+            "taxonomy": "post_tag"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/258"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=258"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=258"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=258"
+                }
+              ]
+            },
+            "id": 258,
+            "link": "https://search.malaysiadesignarchive.org/tag/refugees/",
+            "name": "refugees",
+            "slug": "refugees",
+            "taxonomy": "post_tag"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/item_type"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type/45"
+                }
+              ],
+              "up": [
+                {
+                  "embeddable": true,
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type/44"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?item_type=45"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 45,
+            "link": "https://search.malaysiadesignarchive.org/item_type/architecture/sketch-architecture/",
+            "name": "Sketch",
+            "slug": "sketch-architecture",
+            "taxonomy": "item_type"
+          }
+        ]
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/types/item"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/users/23"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/25528/revisions/25531",
+          "id": 25531
+        }
+      ],
+      "self": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/25528"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 3,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/25528/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/media?parent=25528"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories?post=25528",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags?post=25528",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type?post=25528",
+          "taxonomy": "item_type"
+        }
+      ]
+    },
+    "acf": [],
+    "author": 23,
+    "categories": [
+      60
+    ],
+    "content": {
+      "protected": false,
+      "rendered": "<p>Original sketch ballpen on regular paper. Reproduced by silkscreen printing on acid-free paper.</p>\n"
+    },
+    "date": "2025-03-06T09:45:27",
+    "date_gmt": "2025-03-06T01:45:27",
+    "format": "standard",
+    "guid": {
+      "rendered": "https://search.malaysiadesignarchive.org/?post_type=item&#038;p=25528"
+    },
+    "id": 25528,
+    "item_type": [
+      45
+    ],
+    "link": "https://search.malaysiadesignarchive.org/item/bich-silkscreen-edition/",
+    "menu_order": 0,
+    "meta": [],
+    "modified": "2025-03-06T09:45:27",
+    "modified_gmt": "2025-03-06T01:45:27",
+    "slug": "bich-silkscreen-edition",
+    "status": "publish",
+    "tags": [
+      259,
+      255,
+      258
+    ],
+    "template": "",
+    "title": {
+      "rendered": "BÍCH &#8211; silkscreen edition"
+    },
+    "type": "item"
+  },
+  {
+    "_embedded": {
+      "author": [
+        {
+          "code": "rest_user_invalid_id",
+          "data": {
+            "status": 404
+          },
+          "message": "Invalid user ID."
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories/43"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?categories=43"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?categories=43"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?categories=43"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 43,
+            "link": "https://search.malaysiadesignarchive.org/category/architecture/",
+            "name": "Architecture",
+            "slug": "architecture",
+            "taxonomy": "category"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/224"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=224"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=224"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=224"
+                }
+              ]
+            },
+            "id": 224,
+            "link": "https://search.malaysiadesignarchive.org/tag/architecture/",
+            "name": "architecture",
+            "slug": "architecture",
+            "taxonomy": "post_tag"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/738"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=738"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=738"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=738"
+                }
+              ]
+            },
+            "id": 738,
+            "link": "https://search.malaysiadesignarchive.org/tag/construction/",
+            "name": "construction",
+            "slug": "construction",
+            "taxonomy": "post_tag"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/747"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=747"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=747"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=747"
+                }
+              ]
+            },
+            "id": 747,
+            "link": "https://search.malaysiadesignarchive.org/tag/construction-site/",
+            "name": "construction site",
+            "slug": "construction-site",
+            "taxonomy": "post_tag"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/item_type"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type/40"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?item_type=40"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 40,
+            "link": "https://search.malaysiadesignarchive.org/item_type/photograph/",
+            "name": "Photograph",
+            "slug": "photograph",
+            "taxonomy": "item_type"
+          }
+        ]
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/types/item"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/users/16"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/24395/revisions/24921",
+          "id": 24921
+        }
+      ],
+      "self": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/24395"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 4,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/24395/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/media?parent=24395"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories?post=24395",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags?post=24395",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type?post=24395",
+          "taxonomy": "item_type"
+        }
+      ]
+    },
+    "acf": [],
+    "author": 16,
+    "categories": [
+      43
+    ],
+    "content": {
+      "protected": false,
+      "rendered": "<p>This photograph print belongs to a group of photographs created during the construction of Malaysia Pavillion for the 1970 World Exposition in Osaka, Japan. It was taken in November 1969.</p>\n<p>This photograph was captioned &#8220;<span data-sheets-root=\"1\">Tower at Mitsui Pavilion&#8221;.</span></p>\n"
+    },
+    "date": "2024-08-08T11:11:05",
+    "date_gmt": "2024-08-08T03:11:05",
+    "format": "standard",
+    "guid": {
+      "rendered": "https://search.malaysiadesignarchive.org/?post_type=item&#038;p=24395"
+    },
+    "id": 24395,
+    "item_type": [
+      40
+    ],
+    "link": "https://search.malaysiadesignarchive.org/item/1970-world-exposition-untitled-056/",
+    "menu_order": 0,
+    "meta": [],
+    "modified": "2024-08-29T12:12:05",
+    "modified_gmt": "2024-08-29T04:12:05",
+    "slug": "1970-world-exposition-untitled-056",
+    "status": "publish",
+    "tags": [
+      224,
+      738,
+      747
+    ],
+    "template": "",
+    "title": {
+      "rendered": "1970 World Exposition &#8211; Untitled 056"
+    },
+    "type": "item"
+  },
+  {
+    "_embedded": {
+      "author": [
+        {
+          "code": "rest_user_invalid_id",
+          "data": {
+            "status": 404
+          },
+          "message": "Invalid user ID."
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories/43"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?categories=43"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?categories=43"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?categories=43"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 43,
+            "link": "https://search.malaysiadesignarchive.org/category/architecture/",
+            "name": "Architecture",
+            "slug": "architecture",
+            "taxonomy": "category"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/224"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=224"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=224"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=224"
+                }
+              ]
+            },
+            "id": 224,
+            "link": "https://search.malaysiadesignarchive.org/tag/architecture/",
+            "name": "architecture",
+            "slug": "architecture",
+            "taxonomy": "post_tag"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/738"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=738"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=738"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=738"
+                }
+              ]
+            },
+            "id": 738,
+            "link": "https://search.malaysiadesignarchive.org/tag/construction/",
+            "name": "construction",
+            "slug": "construction",
+            "taxonomy": "post_tag"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/item_type"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type/40"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?item_type=40"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 40,
+            "link": "https://search.malaysiadesignarchive.org/item_type/photograph/",
+            "name": "Photograph",
+            "slug": "photograph",
+            "taxonomy": "item_type"
+          }
+        ]
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/types/item"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/users/16"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/24391/revisions/24919",
+          "id": 24919
+        }
+      ],
+      "self": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/24391"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 5,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/24391/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/media?parent=24391"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories?post=24391",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags?post=24391",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type?post=24391",
+          "taxonomy": "item_type"
+        }
+      ]
+    },
+    "acf": [],
+    "author": 16,
+    "categories": [
+      43
+    ],
+    "content": {
+      "protected": false,
+      "rendered": "<p>This photograph print belongs to a group of photographs created during the construction of Malaysia Pavillion for the 1970 World Exposition in Osaka, Japan. It was taken in November 1969.</p>\n<p>This photograph was captioned <span data-sheets-root=\"1\">&#8220;Quebec Canada&#8221;.</span></p>\n"
+    },
+    "date": "2024-08-08T11:01:16",
+    "date_gmt": "2024-08-08T03:01:16",
+    "format": "standard",
+    "guid": {
+      "rendered": "https://search.malaysiadesignarchive.org/?post_type=item&#038;p=24391"
+    },
+    "id": 24391,
+    "item_type": [
+      40
+    ],
+    "link": "https://search.malaysiadesignarchive.org/item/1970-world-exposition-untitled-055/",
+    "menu_order": 0,
+    "meta": [],
+    "modified": "2024-08-29T12:10:31",
+    "modified_gmt": "2024-08-29T04:10:31",
+    "slug": "1970-world-exposition-untitled-055",
+    "status": "publish",
+    "tags": [
+      224,
+      738
+    ],
+    "template": "",
+    "title": {
+      "rendered": "1970 World Exposition &#8211; Untitled 055"
+    },
+    "type": "item"
+  },
+  {
+    "_embedded": {
+      "author": [
+        {
+          "code": "rest_user_invalid_id",
+          "data": {
+            "status": 404
+          },
+          "message": "Invalid user ID."
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories/43"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?categories=43"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?categories=43"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?categories=43"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 43,
+            "link": "https://search.malaysiadesignarchive.org/category/architecture/",
+            "name": "Architecture",
+            "slug": "architecture",
+            "taxonomy": "category"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/224"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=224"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=224"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=224"
+                }
+              ]
+            },
+            "id": 224,
+            "link": "https://search.malaysiadesignarchive.org/tag/architecture/",
+            "name": "architecture",
+            "slug": "architecture",
+            "taxonomy": "post_tag"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/738"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=738"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=738"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=738"
+                }
+              ]
+            },
+            "id": 738,
+            "link": "https://search.malaysiadesignarchive.org/tag/construction/",
+            "name": "construction",
+            "slug": "construction",
+            "taxonomy": "post_tag"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/item_type"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type/40"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?item_type=40"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 40,
+            "link": "https://search.malaysiadesignarchive.org/item_type/photograph/",
+            "name": "Photograph",
+            "slug": "photograph",
+            "taxonomy": "item_type"
+          }
+        ]
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/types/item"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/users/16"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/24387/revisions/24917",
+          "id": 24917
+        }
+      ],
+      "self": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/24387"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 5,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/24387/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/media?parent=24387"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories?post=24387",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags?post=24387",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type?post=24387",
+          "taxonomy": "item_type"
+        }
+      ]
+    },
+    "acf": [],
+    "author": 16,
+    "categories": [
+      43
+    ],
+    "content": {
+      "protected": false,
+      "rendered": "<p>This photograph print belongs to a group of photographs created during the construction of Malaysia Pavillion for the 1970 World Exposition in Osaka, Japan. It was taken in November 1969.</p>\n<p>This photograph was captioned <span data-sheets-root=\"1\">&#8220;Mitsui Group&#8221;.</span></p>\n"
+    },
+    "date": "2024-08-08T10:57:33",
+    "date_gmt": "2024-08-08T02:57:33",
+    "format": "standard",
+    "guid": {
+      "rendered": "https://search.malaysiadesignarchive.org/?post_type=item&#038;p=24387"
+    },
+    "id": 24387,
+    "item_type": [
+      40
+    ],
+    "link": "https://search.malaysiadesignarchive.org/item/1970-world-exposition-untitled-054/",
+    "menu_order": 0,
+    "meta": [],
+    "modified": "2024-08-29T12:09:17",
+    "modified_gmt": "2024-08-29T04:09:17",
+    "slug": "1970-world-exposition-untitled-054",
+    "status": "publish",
+    "tags": [
+      224,
+      738
+    ],
+    "template": "",
+    "title": {
+      "rendered": "1970 World Exposition &#8211; Untitled 054"
+    },
+    "type": "item"
+  },
+  {
+    "_embedded": {
+      "author": [
+        {
+          "code": "rest_user_invalid_id",
+          "data": {
+            "status": 404
+          },
+          "message": "Invalid user ID."
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories/43"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?categories=43"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?categories=43"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?categories=43"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 43,
+            "link": "https://search.malaysiadesignarchive.org/category/architecture/",
+            "name": "Architecture",
+            "slug": "architecture",
+            "taxonomy": "category"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/224"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=224"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=224"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=224"
+                }
+              ]
+            },
+            "id": 224,
+            "link": "https://search.malaysiadesignarchive.org/tag/architecture/",
+            "name": "architecture",
+            "slug": "architecture",
+            "taxonomy": "post_tag"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/738"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=738"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=738"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=738"
+                }
+              ]
+            },
+            "id": 738,
+            "link": "https://search.malaysiadesignarchive.org/tag/construction/",
+            "name": "construction",
+            "slug": "construction",
+            "taxonomy": "post_tag"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags/747"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/posts?tags=747"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/collections?tags=747"
+                },
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?tags=747"
+                }
+              ]
+            },
+            "id": 747,
+            "link": "https://search.malaysiadesignarchive.org/tag/construction-site/",
+            "name": "construction site",
+            "slug": "construction-site",
+            "taxonomy": "post_tag"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/taxonomies/item_type"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type/40"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item?item_type=40"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 40,
+            "link": "https://search.malaysiadesignarchive.org/item_type/photograph/",
+            "name": "Photograph",
+            "slug": "photograph",
+            "taxonomy": "item_type"
+          }
+        ]
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/types/item"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/users/16"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/24383/revisions/24915",
+          "id": 24915
+        }
+      ],
+      "self": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/24383"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 6,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item/24383/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/media?parent=24383"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/categories?post=24383",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/tags?post=24383",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://search.malaysiadesignarchive.org/wp-json/wp/v2/item_type?post=24383",
+          "taxonomy": "item_type"
+        }
+      ]
+    },
+    "acf": [],
+    "author": 16,
+    "categories": [
+      43
+    ],
+    "content": {
+      "protected": false,
+      "rendered": "<p>This photograph print belongs to a group of photographs created during the construction of Malaysia Pavillion for the 1970 World Exposition in Osaka, Japan. It was taken in November 1969.</p>\n<p>This photograph was captioned <span data-sheets-root=\"1\">&#8220;Matsushita Pavilion&#8221;.</span></p>\n"
+    },
+    "date": "2024-08-08T10:51:06",
+    "date_gmt": "2024-08-08T02:51:06",
+    "format": "standard",
+    "guid": {
+      "rendered": "https://search.malaysiadesignarchive.org/?post_type=item&#038;p=24383"
+    },
+    "id": 24383,
+    "item_type": [
+      40
+    ],
+    "link": "https://search.malaysiadesignarchive.org/item/1970-world-exposition-untitled-053/",
+    "menu_order": 0,
+    "meta": [],
+    "modified": "2024-08-29T12:07:57",
+    "modified_gmt": "2024-08-29T04:07:57",
+    "slug": "1970-world-exposition-untitled-053",
+    "status": "publish",
+    "tags": [
+      224,
+      738,
+      747
+    ],
+    "template": "",
+    "title": {
+      "rendered": "1970 World Exposition &#8211; Untitled 053"
+    },
+    "type": "item"
+  }
+]
