@@ -1,0 +1,611 @@
+{
+  "browseAllDefaultSortField": "title",
+  "facetFields": {
+    "covera": "Coverage",
+    "creato": "Author/Photographer",
+    "date": "Date",
+    "publis": "Transcript"
+  },
+  "facets": {
+    "covera": [
+      {
+        "count": 7,
+        "title": "1981 1982 1983 1984 1985 1986 1987 1988 1989 1990"
+      },
+      {
+        "count": 4,
+        "title": "1971 1972 1973 1974 1975 1976 1977 1978 1979 1980"
+      },
+      {
+        "count": 3,
+        "title": "1990 1991 1992 1993 1994 1995 1996 1997 1998 1999"
+      },
+      {
+        "count": 1,
+        "title": "1960 1961 1962 1963 1964 1965 1966 1967 1968 1969"
+      }
+    ],
+    "creato": [
+      {
+        "count": 4,
+        "title": "brockman gallery."
+      },
+      {
+        "count": 2,
+        "title": "brockman gallery productions."
+      },
+      {
+        "count": 2,
+        "title": "unknown"
+      },
+      {
+        "count": 1,
+        "title": "city of los angeles."
+      },
+      {
+        "count": 1,
+        "title": "gay and lesbian historical society of northern california."
+      },
+      {
+        "count": 1,
+        "title": "hughes broullon, marvis."
+      },
+      {
+        "count": 1,
+        "title": "lesbianas unidas of gay and lesbian latinos unidos."
+      },
+      {
+        "count": 1,
+        "title": "otero, lydia r."
+      },
+      {
+        "count": 1,
+        "title": "united farm workers."
+      },
+      {
+        "count": 1,
+        "title": "west hollywood cares."
+      }
+    ],
+    "date": [
+      {
+        "count": 2,
+        "title": "1976"
+      },
+      {
+        "count": 2,
+        "title": "1986"
+      },
+      {
+        "count": 1,
+        "title": "196u"
+      },
+      {
+        "count": 1,
+        "title": "1970"
+      },
+      {
+        "count": 1,
+        "title": "1972"
+      },
+      {
+        "count": 1,
+        "title": "1977"
+      },
+      {
+        "count": 1,
+        "title": "1980"
+      },
+      {
+        "count": 1,
+        "title": "1981"
+      },
+      {
+        "count": 1,
+        "title": "1982"
+      },
+      {
+        "count": 1,
+        "title": "1983"
+      },
+      {
+        "count": 1,
+        "title": "1986-09-19"
+      }
+    ],
+    "publis": [
+      {
+        "count": 1,
+        "title": "\"homage to john outterbridge\" blanket series mural by alonzo davis( c/ watts towers arts center west wall support public art design: mike nakayama for a public art poster or calendar and artist newsletter send $10 to p.o. box 43608 los angeles, ca 90043"
+      },
+      {
+        "count": 1,
+        "title": "african heritage festival chico state college art gallery 3-30-70 to 4-17-70 art music speakers dram dance hours: 10 a.m. - 4 p.m. monday - friday printed with asb funds"
+      },
+      {
+        "count": 1,
+        "title": "also: greeting cards leather crafts ceramic ware jewelry art reproductions objedts 'd arts books - \"black artist on art\" lewis/waddy \"images of dignity\" charles white \"17 black artists\" elton fax \"my point of view\" bernie casey \"sugarfields\" barbara mahone"
+      },
+      {
+        "count": 1,
+        "title": "americas 2001. printing courtesy of united farm workers. claudia, rafael escamilla r. lapiz sobre carton/pencil on illust. board. 39\" x 40\""
+      },
+      {
+        "count": 1,
+        "title": "angela poster by david bradford 23\" x 38\" high quality reproduction from the origional drawing angela poster price......................$2.00 california sales tax....... .10 shipping & insurance....... 1.20 $3.30 order form i am enclosing $ for angela post"
+      },
+      {
+        "count": 1,
+        "title": "ante la ofensiva patronal. pueblo a defender el registro legal del sindicato de constureras. \"19 de septiembre\""
+      },
+      {
+        "count": 1,
+        "title": "art from the black community an invitational exhibition in conjunction with the laguna beach art association annual membership show 307 cliff drive laguna beach, california september 3rd to september 29th opening cocktail reception for the artists sunday,"
+      },
+      {
+        "count": 1,
+        "title": "art spaces: greater crenshaw area & beyond art spaces is a publication for commercial galleries that sell art in the crenshaw area and beyond. art spaces came about by a group of concerned galleries who are working collectively to promote, exhibit and sell"
+      },
+      {
+        "count": 1,
+        "title": "bgp an office for creatie thinking african arts/annual craftsman exhibition/berkeley jazz festival graphics/brockman gallery film festival/fine art exhibition/grants from national endowment for the arts/graphic design/jazz & creative music concerts l.a. st"
+      },
+      {
+        "count": 1,
+        "title": "bgp an office for creatie tinking african arts/annual craftsman exhibition/berkeley jazz festival graphics/brockman gallery film festival/fine art exhibition/grants from national endowment for the arts/graphic design/jazz & creative music concerts l.a. str"
+      },
+      {
+        "count": 1,
+        "title": "brockman callery 4334 degnan boulevard los angeles burton * stinson * martin march 4-31 . reception 7-9, sat., march 4 at brockman gallery, 4334 degnan blvd., los angeles . gallery hours 1-6 p.m., wed. thru sat. or appointment. photo by gusmano"
+      }
+    ]
+  },
+  "fields": {
+    "direction": "asc",
+    "order": "title",
+    "queries": [
+      {
+        "connector": "all",
+        "field": "all",
+        "mode": "all",
+        "searchTerm": "poster"
+      }
+    ]
+  },
+  "filters": {
+    "collections": [
+      {
+        "alias": "archives",
+        "name": "Archives",
+        "selected": true
+      },
+      {
+        "alias": "autograph",
+        "name": "Autograph Collection",
+        "selected": false
+      },
+      {
+        "alias": "bookplates",
+        "name": "Bookplate Collection",
+        "selected": false
+      },
+      {
+        "alias": "dwp",
+        "name": "DWP Photo Collection",
+        "selected": false
+      },
+      {
+        "alias": "elpueblo",
+        "name": "El Pueblo Monument Photo Collection",
+        "selected": false
+      },
+      {
+        "alias": "fashion",
+        "name": "Fashion Plate Collection",
+        "selected": false
+      },
+      {
+        "alias": "fcl",
+        "name": "Fruit Crate Label Collection",
+        "selected": false
+      },
+      {
+        "alias": "periodicals",
+        "name": "Historical Periodicals",
+        "selected": false
+      },
+      {
+        "alias": "laplarchive",
+        "name": "Los Angeles Public Library Institutional Archive",
+        "selected": false
+      },
+      {
+        "alias": "photos",
+        "name": "Los Angeles Public Library Photo Collection",
+        "selected": false
+      },
+      {
+        "alias": "maps",
+        "name": "Map Collection",
+        "selected": false
+      },
+      {
+        "alias": "menus",
+        "name": "Menu Collection",
+        "selected": false
+      },
+      {
+        "alias": "movie",
+        "name": "Movie Poster Collection",
+        "selected": false
+      },
+      {
+        "alias": "travel",
+        "name": "Travel Poster Collection",
+        "selected": false
+      },
+      {
+        "alias": "turnabout",
+        "name": "Yale Puppeteers & Turnabout Theatre Collection",
+        "selected": false
+      },
+      {
+        "alias": "COVID-19",
+        "name": "COVID-19 Community Archive",
+        "selected": false
+      },
+      {
+        "alias": "p16703coll2",
+        "name": "Karl Hubenthal Cartoon Collection",
+        "selected": false
+      },
+      {
+        "alias": "p16703coll3",
+        "name": "Los Angeles Scrapbook and Photo Album Collection",
+        "selected": false
+      }
+    ]
+  },
+  "gridViewEnabled": false,
+  "items": [
+    {
+      "cdmalt": null,
+      "collectionAlias": "archives",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "1436",
+      "itemLink": "/compoundobject/collection/archives/id/1436",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Art Spaces Greater Crenshaw & Beyond"
+        },
+        {
+          "field": "date",
+          "value": "1985"
+        },
+        {
+          "field": "descri",
+          "value": "1 sheet ; 22 x 10 cm (open 22 x 28 cm)"
+        },
+        {
+          "field": "collea",
+          "value": "Brockman Gallery Archive"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/archives/id/1436/thumbnail",
+      "title": "Art Spaces Greater Crenshaw & Beyond"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "archives",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "1029",
+      "itemLink": "/compoundobject/collection/archives/id/1029",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Eleven From California"
+        },
+        {
+          "field": "date",
+          "value": "1972"
+        },
+        {
+          "field": "descri",
+          "value": "6 pages ; 21 x 31 cm"
+        },
+        {
+          "field": "collea",
+          "value": "Brockman Gallery Archive"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/archives/id/1029/thumbnail",
+      "title": "Eleven From California"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "archives",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "825",
+      "itemLink": "/compoundobject/collection/archives/id/825",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Brockman Gallery Film Festival"
+        },
+        {
+          "field": "date",
+          "value": "1975"
+        },
+        {
+          "field": "descri",
+          "value": "1 sheet ; 22 x 14 cm"
+        },
+        {
+          "field": "collea",
+          "value": "Brockman Gallery Archive"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/archives/id/825/thumbnail",
+      "title": "Brockman Gallery Film Festival"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "archives",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "727",
+      "itemLink": "/compoundobject/collection/archives/id/727",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Warm greetings from Alonzo/Dale Davis"
+        },
+        {
+          "field": "date",
+          "value": "197u"
+        },
+        {
+          "field": "descri",
+          "value": "8 pages ; 19 x 14 cm"
+        },
+        {
+          "field": "collea",
+          "value": "Brockman Gallery Archive"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/archives/id/727/thumbnail",
+      "title": "Warm greetings from Alonzo/Dale Davis"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "archives",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "1025",
+      "itemLink": "/compoundobject/collection/archives/id/1025",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Jacob Lawrence \"\"Recent works on paper\"\""
+        },
+        {
+          "field": "date",
+          "value": "1981"
+        },
+        {
+          "field": "descri",
+          "value": "1 postcard, 3 sheets ; 11 x 16 cm, 28 x 22 cm"
+        },
+        {
+          "field": "collea",
+          "value": "Brockman Gallery Archive"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/archives/id/1025/thumbnail",
+      "title": "Jacob Lawrence \"\"Recent works on paper\"\""
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "archives",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "764",
+      "itemLink": "/compoundobject/collection/archives/id/764",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Brockman Gallery - Featuring Black Artists 1972 portfolio"
+        },
+        {
+          "field": "date",
+          "value": "1972"
+        },
+        {
+          "field": "descri",
+          "value": "1 folder, 8 leaves ; 22 x 15 cm"
+        },
+        {
+          "field": "collea",
+          "value": "Brockman Gallery Archive"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/archives/id/764/thumbnail",
+      "title": "Brockman Gallery - Featuring Black Artists 1972 portfolio"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "archives",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "1395",
+      "itemLink": "/compoundobject/collection/archives/id/1395",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "9th Annual Berkeley Jazz Festival"
+        },
+        {
+          "field": "date",
+          "value": "1975"
+        },
+        {
+          "field": "descri",
+          "value": "9 pages ; 28 x 22 cm"
+        },
+        {
+          "field": "collea",
+          "value": "Brockman Gallery Archive"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/archives/id/1395/thumbnail",
+      "title": "9th Annual Berkeley Jazz Festival"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "archives",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "579",
+      "itemLink": "/singleitem/collection/archives/id/579",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "African Heritage Festival"
+        },
+        {
+          "field": "date",
+          "value": "1970"
+        },
+        {
+          "field": "descri",
+          "value": "1 sheet ; 27 x 43 cm"
+        },
+        {
+          "field": "collea",
+          "value": "Brockman Gallery Archive"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/archives/id/579/thumbnail",
+      "title": "African Heritage Festival"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "archives",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "16",
+      "itemLink": "/singleitem/collection/archives/id/16",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Americas 2001 UFW poster"
+        },
+        {
+          "field": "date",
+          "value": ""
+        },
+        {
+          "field": "descri",
+          "value": "1 sheet ; 99 cm x 102 cm"
+        },
+        {
+          "field": "collea",
+          "value": "Lydia R. Otero Archive"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/archives/id/16/thumbnail",
+      "title": "Americas 2001 UFW poster"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "archives",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "578",
+      "itemLink": "/singleitem/collection/archives/id/578",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Art from the Black community"
+        },
+        {
+          "field": "date",
+          "value": ""
+        },
+        {
+          "field": "descri",
+          "value": "1 sheet ; 40 x 28 cm"
+        },
+        {
+          "field": "collea",
+          "value": "Brockman Gallery Archive"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/archives/id/578/thumbnail",
+      "title": "Art from the Black community"
+    }
+  ],
+  "searchResultsDefaultSortField": "title",
+  "sortFields": [
+    {
+      "ad": "asc",
+      "name": "Relevance",
+      "order": "nosort"
+    },
+    {
+      "ad": "asc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "desc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "asc",
+      "name": "Date",
+      "order": "date"
+    },
+    {
+      "ad": "desc",
+      "name": "Date",
+      "order": "date"
+    },
+    {
+      "ad": "asc",
+      "name": "Physical Description",
+      "order": "descri"
+    },
+    {
+      "ad": "desc",
+      "name": "Physical Description",
+      "order": "descri"
+    },
+    {
+      "ad": "asc",
+      "name": "Sub-Collection Name",
+      "order": "collea"
+    },
+    {
+      "ad": "desc",
+      "name": "Sub-Collection Name",
+      "order": "collea"
+    }
+  ],
+  "totalResults": 30
+}

@@ -1,0 +1,595 @@
+{
+  "browseAllDefaultSortField": "identi",
+  "facetFields": {
+    "audien": "Library",
+    "colour": "Colour",
+    "covera": "Decade",
+    "datec": "Recently Added",
+    "source": "Collection Name"
+  },
+  "facets": {
+    "audien": [
+      {
+        "count": 249,
+        "title": "central city library"
+      },
+      {
+        "count": 11,
+        "title": "manukau library"
+      },
+      {
+        "count": 10,
+        "title": "takapuna library"
+      },
+      {
+        "count": 8,
+        "title": "auckland libraries - online only"
+      }
+    ],
+    "colour": [
+      {
+        "count": 263,
+        "title": "black and white"
+      },
+      {
+        "count": 15,
+        "title": "colour"
+      }
+    ],
+    "covera": [
+      {
+        "count": 115,
+        "title": "1900-1909"
+      },
+      {
+        "count": 28,
+        "title": "1910-1919"
+      },
+      {
+        "count": 27,
+        "title": "1960-1969"
+      },
+      {
+        "count": 21,
+        "title": "1950-1959"
+      },
+      {
+        "count": 20,
+        "title": "1980-1989"
+      },
+      {
+        "count": 20,
+        "title": "1990-1999"
+      },
+      {
+        "count": 14,
+        "title": "1970-1979"
+      },
+      {
+        "count": 12,
+        "title": "1920-1929"
+      },
+      {
+        "count": 8,
+        "title": "1890-1899"
+      },
+      {
+        "count": 7,
+        "title": "1940-1949"
+      },
+      {
+        "count": 7,
+        "title": "2010-2019"
+      }
+    ],
+    "datec": [
+      {
+        "count": 1,
+        "title": "2026-03"
+      },
+      {
+        "count": 1,
+        "title": "2026-04"
+      }
+    ],
+    "source": [
+      {
+        "count": 103,
+        "title": "nz graphic collection"
+      },
+      {
+        "count": 36,
+        "title": "auckland weekly news"
+      },
+      {
+        "count": 18,
+        "title": "civic theatre documentation"
+      },
+      {
+        "count": 16,
+        "title": "accession 580"
+      },
+      {
+        "count": 16,
+        "title": "brotherston collection"
+      },
+      {
+        "count": 13,
+        "title": "1990 project"
+      },
+      {
+        "count": 8,
+        "title": "footprints collection"
+      },
+      {
+        "count": 8,
+        "title": "mcgehan collection"
+      },
+      {
+        "count": 7,
+        "title": "te hapua collection"
+      },
+      {
+        "count": 4,
+        "title": "courier collection"
+      },
+      {
+        "count": 4,
+        "title": "paul titchener collection"
+      }
+    ]
+  },
+  "fields": {
+    "direction": "asc",
+    "order": "identi",
+    "queries": [
+      {
+        "connector": "all",
+        "field": "all",
+        "mode": "all",
+        "searchTerm": "poster"
+      }
+    ]
+  },
+  "filters": {
+    "collections": [
+      {
+        "alias": "photos",
+        "name": "Photographs",
+        "selected": true
+      },
+      {
+        "alias": "maps",
+        "name": "Heritage Maps",
+        "selected": false
+      },
+      {
+        "alias": "manuscripts",
+        "name": "Manuscripts",
+        "selected": false
+      },
+      {
+        "alias": "rarebooks",
+        "name": "Rare Books",
+        "selected": false
+      },
+      {
+        "alias": "journals",
+        "name": "Journals",
+        "selected": false
+      },
+      {
+        "alias": "ephemera",
+        "name": "Ephemera",
+        "selected": false
+      },
+      {
+        "alias": "akldpeople",
+        "name": "Auckland People and Events",
+        "selected": false
+      },
+      {
+        "alias": "indexcards",
+        "name": "Index Cards",
+        "selected": false
+      },
+      {
+        "alias": "oralhistory",
+        "name": "Oral History",
+        "selected": false
+      },
+      {
+        "alias": "iwidex",
+        "name": "Iwidex",
+        "selected": false
+      },
+      {
+        "alias": "manukau",
+        "name": "Manukau's Journey",
+        "selected": false
+      },
+      {
+        "alias": "photographers",
+        "name": "Photographers",
+        "selected": false
+      },
+      {
+        "alias": "streets",
+        "name": "Streets and Parks",
+        "selected": false
+      },
+      {
+        "alias": "cemeteries",
+        "name": "Cemetery Records",
+        "selected": false
+      },
+      {
+        "alias": "passengers",
+        "name": "Passengers and Vessels",
+        "selected": false
+      },
+      {
+        "alias": "acm",
+        "name": "Militia, Volunteers & Armed Constabulary",
+        "selected": false
+      },
+      {
+        "alias": "electoral",
+        "name": "1881 Electoral Rolls",
+        "selected": false
+      },
+      {
+        "alias": "csr",
+        "name": "Chelsea Sugar Refinery",
+        "selected": false
+      },
+      {
+        "alias": "localhistory",
+        "name": "Local History",
+        "selected": false
+      }
+    ]
+  },
+  "gridViewEnabled": false,
+  "items": [
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "94265",
+      "itemLink": "/singleitem/collection/photos/id/94265",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Washing machine repair shop, Dominion Road, 2013"
+        },
+        {
+          "field": "covera",
+          "value": "2010-2019"
+        },
+        {
+          "field": "source",
+          "value": "Dominion Road Stories Collection"
+        },
+        {
+          "field": "identi",
+          "value": "1212-46"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/94265/thumbnail",
+      "title": "Washing machine repair shop, Dominion Road, 2013"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "317250",
+      "itemLink": "/singleitem/collection/photos/id/317250",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Bank window, Parnell, 1978"
+        },
+        {
+          "field": "covera",
+          "value": "1970-1979"
+        },
+        {
+          "field": "source",
+          "value": "Susanna Burton Parnell Collection"
+        },
+        {
+          "field": "identi",
+          "value": "1213P-001-42A"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/317250/thumbnail",
+      "title": "Bank window, Parnell, 1978"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "316993",
+      "itemLink": "/singleitem/collection/photos/id/316993",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Gig poster and sign, Parnell, 1978"
+        },
+        {
+          "field": "covera",
+          "value": "1970-1979"
+        },
+        {
+          "field": "source",
+          "value": "Susanna Burton Parnell Collection"
+        },
+        {
+          "field": "identi",
+          "value": "1213P-018-24"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/316993/thumbnail",
+      "title": "Gig poster and sign, Parnell, 1978"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "64746",
+      "itemLink": "/singleitem/collection/photos/id/64746",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Civic Theatre, Queen Street, Auckland Central, 2016"
+        },
+        {
+          "field": "covera",
+          "value": "2010-2019"
+        },
+        {
+          "field": "source",
+          "value": "Matt Elliott Collection"
+        },
+        {
+          "field": "identi",
+          "value": "1385-0108"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/64746/thumbnail",
+      "title": "Civic Theatre, Queen Street, Auckland Central, 2016"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "64456",
+      "itemLink": "/singleitem/collection/photos/id/64456",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Civic Theatre, Queen Street, Auckland Central, 2015"
+        },
+        {
+          "field": "covera",
+          "value": "2010-2019"
+        },
+        {
+          "field": "source",
+          "value": "Matt Elliott Collection"
+        },
+        {
+          "field": "identi",
+          "value": "1385-0109"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/64456/thumbnail",
+      "title": "Civic Theatre, Queen Street, Auckland Central, 2015"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "122365",
+      "itemLink": "/singleitem/collection/photos/id/122365",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Sky Tower, Auckland Central, 2009"
+        },
+        {
+          "field": "covera",
+          "value": "2000-2009"
+        },
+        {
+          "field": "source",
+          "value": "Brian Cairns Collection"
+        },
+        {
+          "field": "identi",
+          "value": "1477-1045"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/122365/thumbnail",
+      "title": "Sky Tower, Auckland Central, 2009"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "319835",
+      "itemLink": "/singleitem/collection/photos/id/319835",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Gaiety Theatre, Kaikohe"
+        },
+        {
+          "field": "covera",
+          "value": "1930-1939"
+        },
+        {
+          "field": "source",
+          "value": "Northern News Collection"
+        },
+        {
+          "field": "identi",
+          "value": "1531-059"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/319835/thumbnail",
+      "title": "Gaiety Theatre, Kaikohe"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "393014",
+      "itemLink": "/singleitem/collection/photos/id/393014",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Kiribati numbers poster, Warkworth, 2018"
+        },
+        {
+          "field": "covera",
+          "value": "2010-2019"
+        },
+        {
+          "field": "source",
+          "value": "Accession 1538"
+        },
+        {
+          "field": "identi",
+          "value": "1538-004"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/393014/thumbnail",
+      "title": "Kiribati numbers poster, Warkworth, 2018"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "392941",
+      "itemLink": "/singleitem/collection/photos/id/392941",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Kiribati colours poster, Warkworth, 2018"
+        },
+        {
+          "field": "covera",
+          "value": "2010-2019"
+        },
+        {
+          "field": "source",
+          "value": "Accession 1538"
+        },
+        {
+          "field": "identi",
+          "value": "1538-005"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/392941/thumbnail",
+      "title": "Kiribati colours poster, Warkworth, 2018"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "392942",
+      "itemLink": "/singleitem/collection/photos/id/392942",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Kiribati alphabet poster, Warkworth, 2018"
+        },
+        {
+          "field": "covera",
+          "value": "2010-2019"
+        },
+        {
+          "field": "source",
+          "value": "Accession 1538"
+        },
+        {
+          "field": "identi",
+          "value": "1538-006"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/392942/thumbnail",
+      "title": "Kiribati alphabet poster, Warkworth, 2018"
+    }
+  ],
+  "searchResultsDefaultSortField": "identi",
+  "sortFields": [
+    {
+      "ad": "asc",
+      "name": "Relevance",
+      "order": "nosort"
+    },
+    {
+      "ad": "asc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "desc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "asc",
+      "name": "Decade",
+      "order": "covera"
+    },
+    {
+      "ad": "desc",
+      "name": "Decade",
+      "order": "covera"
+    },
+    {
+      "ad": "asc",
+      "name": "Collection Name",
+      "order": "source"
+    },
+    {
+      "ad": "desc",
+      "name": "Collection Name",
+      "order": "source"
+    },
+    {
+      "ad": "asc",
+      "name": "Record ID",
+      "order": "identi"
+    },
+    {
+      "ad": "desc",
+      "name": "Record ID",
+      "order": "identi"
+    }
+  ],
+  "totalResults": 278
+}

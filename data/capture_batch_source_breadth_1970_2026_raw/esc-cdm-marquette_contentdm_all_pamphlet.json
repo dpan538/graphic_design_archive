@@ -1,0 +1,615 @@
+{
+  "browseAllDefaultSortField": "date",
+  "facetFields": {
+    "creato": "Creator",
+    "date": "Date",
+    "subjec": "Subject"
+  },
+  "facets": {
+    "creato": [
+      {
+        "count": 125,
+        "title": "students of marquette university"
+      },
+      {
+        "count": 10,
+        "title": "marquette university"
+      }
+    ],
+    "date": [
+      {
+        "count": 4,
+        "title": "1953"
+      },
+      {
+        "count": 4,
+        "title": "1955-10-28"
+      },
+      {
+        "count": 4,
+        "title": "1956-10-19"
+      },
+      {
+        "count": 2,
+        "title": "1940-03-14"
+      },
+      {
+        "count": 2,
+        "title": "1990-10-06"
+      },
+      {
+        "count": 1,
+        "title": "1906"
+      },
+      {
+        "count": 1,
+        "title": "1920"
+      },
+      {
+        "count": 1,
+        "title": "1920-10-22"
+      },
+      {
+        "count": 1,
+        "title": "1922-01-06"
+      },
+      {
+        "count": 1,
+        "title": "1922-02-10"
+      },
+      {
+        "count": 1,
+        "title": "1922-03-03"
+      }
+    ],
+    "subjec": [
+      {
+        "count": 122,
+        "title": "marquette university -- newspapers ; marquette university -- students -- periodicals ; college student newspapers and periodicals -- wisconsin -- milwaukee"
+      },
+      {
+        "count": 21,
+        "title": "marquette university - periodicals marquette university - students - yearbooks college yearbooks"
+      },
+      {
+        "count": 17,
+        "title": "architecture -- wisconsin -- milwaukee"
+      },
+      {
+        "count": 17,
+        "title": "college campuses -- wisconsin -- milwaukee"
+      },
+      {
+        "count": 17,
+        "title": "marquette university -- buildings"
+      },
+      {
+        "count": 17,
+        "title": "universities and colleges -- wisconsin -- milwaukee"
+      },
+      {
+        "count": 16,
+        "title": "college buildings -- wisconsin -- milwaukee"
+      },
+      {
+        "count": 8,
+        "title": "alumni"
+      },
+      {
+        "count": 8,
+        "title": "homecoming"
+      },
+      {
+        "count": 7,
+        "title": "students unions -- wisconsin -- milwaukee"
+      },
+      {
+        "count": 4,
+        "title": "brooks memorial union, marquette university"
+      }
+    ]
+  },
+  "fields": {
+    "direction": "asc",
+    "order": "date",
+    "queries": [
+      {
+        "connector": "all",
+        "field": "all",
+        "mode": "all",
+        "searchTerm": "pamphlet"
+      }
+    ]
+  },
+  "filters": {
+    "collections": [
+      {
+        "alias": "p16280coll1",
+        "name": "Marquette University History Online",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll11",
+        "name": "Tolkien Fandom Oral History Collection",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll16",
+        "name": "James Wright Foley Digital Collection",
+        "selected": true
+      },
+      {
+        "alias": "p4007coll4",
+        "name": "Bureau of Catholic Indian Missions",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll10",
+        "name": "Tolkien Fanzines",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll12",
+        "name": "Peter Roller Oral History Interviews",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll9",
+        "name": "Catholic Native America Collections Online",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll3",
+        "name": "Marquette Tribune",
+        "selected": true
+      },
+      {
+        "alias": "p4007hilltop",
+        "name": "Hilltop Yearbooks, 1915-1996",
+        "selected": true
+      },
+      {
+        "alias": "p128701coll3",
+        "name": "Holy Rosary Mission - Red Cloud Indian School",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll8",
+        "name": "Naval Reserve Officers Training Corps (NROTC) Porthole",
+        "selected": true
+      },
+      {
+        "alias": "p4007coll12",
+        "name": "St. Francis Mission",
+        "selected": true
+      },
+      {
+        "alias": "p128701coll6",
+        "name": "Marquette University Campus Buildings",
+        "selected": true
+      },
+      {
+        "alias": "p15072coll2",
+        "name": "The Indian Sentinel, 1902-1962",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll14",
+        "name": "The Howard Fuller Collection",
+        "selected": true
+      },
+      {
+        "alias": "p128701coll5",
+        "name": "Marquette University Intercollegiate Athletic Hall of Fame",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll2",
+        "name": "African American Catholics of the United States",
+        "selected": true
+      },
+      {
+        "alias": "p4007coll14",
+        "name": "Women in Blue and Gold",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll4",
+        "name": "The Gesu Collection",
+        "selected": true
+      },
+      {
+        "alias": "p128701coll1",
+        "name": "Ralph Metcalfe, The Olympic Years, 1932-1936",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll5",
+        "name": "Edwin A. Shanke Collection",
+        "selected": true
+      },
+      {
+        "alias": "p4007coll22",
+        "name": "Service at Marquette",
+        "selected": true
+      },
+      {
+        "alias": "p4007coll11",
+        "name": "Tommy G. Thompson",
+        "selected": true
+      },
+      {
+        "alias": "p15072coll1",
+        "name": "Clement J. Zablocki - Photographs of Wisconsin's 'Mr. Democrat'",
+        "selected": true
+      },
+      {
+        "alias": "p4007coll16",
+        "name": "Alfred Hamy's Jesuit Portrait Gallery",
+        "selected": true
+      },
+      {
+        "alias": "p15072coll3",
+        "name": "I'll Tell You A Story - Memories of Pre-Holocaust Europe",
+        "selected": true
+      },
+      {
+        "alias": "p128701coll4",
+        "name": "In the Spotlight",
+        "selected": true
+      },
+      {
+        "alias": "p128701coll2",
+        "name": "Postcards from Manhattan - The Portrait Photography of Carl Van Vechten",
+        "selected": true
+      },
+      {
+        "alias": "p128701coll0",
+        "name": "Senator Joe McCarthy - Audio Excerpts, 1950-1954",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll13",
+        "name": "Dorothy Day Photographs",
+        "selected": true
+      },
+      {
+        "alias": "p4007coll18",
+        "name": "Marquette University Histories",
+        "selected": true
+      }
+    ]
+  },
+  "gridViewEnabled": false,
+  "items": [
+    {
+      "cdmalt": null,
+      "collectionAlias": "p15072coll2",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "2121",
+      "itemLink": "/compoundobject/collection/p15072coll2/id/2121",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Indian Sentinel, 1920 - 1922; vol. 02, no. 04"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "date",
+          "value": "1920"
+        },
+        {
+          "field": "cdmcoll",
+          "value": "The Indian Sentinel, 1902-1962"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/p15072coll2/id/2121/thumbnail",
+      "title": "The Indian Sentinel, 1920 - 1922; vol. 02, no. 04"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "p15072coll2",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "7703",
+      "itemLink": "/compoundobject/collection/p15072coll2/id/7703",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Indian Sentinel, 1945; vol. 25, no. 07"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "date",
+          "value": "1945"
+        },
+        {
+          "field": "cdmcoll",
+          "value": "The Indian Sentinel, 1902-1962"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/p15072coll2/id/7703/thumbnail",
+      "title": "The Indian Sentinel, 1945; vol. 25, no. 07"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "p15072coll2",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "5222",
+      "itemLink": "/compoundobject/collection/p15072coll2/id/5222",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Indian Sentinel, 1932; vol. 12, no. 04"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "date",
+          "value": "1932"
+        },
+        {
+          "field": "cdmcoll",
+          "value": "The Indian Sentinel, 1902-1962"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/p15072coll2/id/5222/thumbnail",
+      "title": "The Indian Sentinel, 1932; vol. 12, no. 04"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "p128701coll6",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "440",
+      "itemLink": "/compoundobject/collection/p128701coll6/id/440",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Gimbel Art Dinner and Dedication of the Marquette University Murals, 1954"
+        },
+        {
+          "field": "descri",
+          "value": "This pamphlet was designed for the Gimbel Art Dinner and Dedication of the Murals in the Brooks Memorial Union on January 22, 1954. The pamphlet tells the story of how the mural project was started and contains a detailed description from the each artist of the composition of the artwork."
+        },
+        {
+          "field": "date",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Marquette University Campus Buildings"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/p128701coll6/id/440/thumbnail",
+      "title": "The Gimbel Art Dinner and Dedication of the Marquette University Murals, 1954"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "p15072coll2",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "6590",
+      "itemLink": "/compoundobject/collection/p15072coll2/id/6590",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Indian Sentinel, 1940; vol. 20, no. 06"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "date",
+          "value": "1940"
+        },
+        {
+          "field": "cdmcoll",
+          "value": "The Indian Sentinel, 1902-1962"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/p15072coll2/id/6590/thumbnail",
+      "title": "The Indian Sentinel, 1940; vol. 20, no. 06"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "p15072coll2",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "2174",
+      "itemLink": "/compoundobject/collection/p15072coll2/id/2174",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Indian Sentinel, 1920 - 1922; vol. 02, no. 05"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "date",
+          "value": "1921"
+        },
+        {
+          "field": "cdmcoll",
+          "value": "The Indian Sentinel, 1902-1962"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/p15072coll2/id/2174/thumbnail",
+      "title": "The Indian Sentinel, 1920 - 1922; vol. 02, no. 05"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "p15072coll2",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "5063",
+      "itemLink": "/compoundobject/collection/p15072coll2/id/5063",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Indian Sentinel, 1931 - 1932; vol. 12, no. 01"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "date",
+          "value": "1931 - 1932"
+        },
+        {
+          "field": "cdmcoll",
+          "value": "The Indian Sentinel, 1902-1962"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/p15072coll2/id/5063/thumbnail",
+      "title": "The Indian Sentinel, 1931 - 1932; vol. 12, no. 01"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "p15072coll2",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "5116",
+      "itemLink": "/compoundobject/collection/p15072coll2/id/5116",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Indian Sentinel, 1932; vol. 12, no. 02"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "date",
+          "value": "1932"
+        },
+        {
+          "field": "cdmcoll",
+          "value": "The Indian Sentinel, 1902-1962"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/p15072coll2/id/5116/thumbnail",
+      "title": "The Indian Sentinel, 1932; vol. 12, no. 02"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "p16280coll10",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "510",
+      "itemLink": "/compoundobject/collection/p16280coll10/id/510",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "I Palantir, Issue 4, August 1966"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "date",
+          "value": "1966-08"
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Tolkien Fanzines"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/p16280coll10/id/510/thumbnail",
+      "title": "I Palantir, Issue 4, August 1966"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "p15072coll2",
+      "filetype": "cpd",
+      "index": null,
+      "itemId": "9152",
+      "itemLink": "/compoundobject/collection/p15072coll2/id/9152",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "The Indian Sentinel, 1952; vol. 32, no. 09"
+        },
+        {
+          "field": "descri",
+          "value": ""
+        },
+        {
+          "field": "date",
+          "value": "1952"
+        },
+        {
+          "field": "cdmcoll",
+          "value": "The Indian Sentinel, 1902-1962"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/p15072coll2/id/9152/thumbnail",
+      "title": "The Indian Sentinel, 1952; vol. 32, no. 09"
+    }
+  ],
+  "searchResultsDefaultSortField": "date",
+  "sortFields": [
+    {
+      "ad": "asc",
+      "name": "Relevance",
+      "order": "nosort"
+    },
+    {
+      "ad": "asc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "desc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "asc",
+      "name": "Description",
+      "order": "descri"
+    },
+    {
+      "ad": "desc",
+      "name": "Description",
+      "order": "descri"
+    },
+    {
+      "ad": "asc",
+      "name": "Date",
+      "order": "date"
+    },
+    {
+      "ad": "desc",
+      "name": "Date",
+      "order": "date"
+    }
+  ],
+  "totalResults": 204
+}

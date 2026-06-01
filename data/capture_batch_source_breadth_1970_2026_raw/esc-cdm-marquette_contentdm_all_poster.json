@@ -1,0 +1,643 @@
+{
+  "browseAllDefaultSortField": "date",
+  "facetFields": {
+    "creato": "Creator",
+    "date": "Date",
+    "subjec": "Subject"
+  },
+  "facets": {
+    "creato": [
+      {
+        "count": 141,
+        "title": "students of marquette university"
+      },
+      {
+        "count": 47,
+        "title": "marquette university"
+      },
+      {
+        "count": 2,
+        "title": "marquette hilltop photography"
+      },
+      {
+        "count": 1,
+        "title": "felion, joe"
+      },
+      {
+        "count": 1,
+        "title": "grimaldi, m."
+      },
+      {
+        "count": 1,
+        "title": "murdoch"
+      },
+      {
+        "count": 1,
+        "title": "richard c. finke"
+      },
+      {
+        "count": 1,
+        "title": "shanke, edwin a."
+      },
+      {
+        "count": 1,
+        "title": "strzok, james"
+      }
+    ],
+    "date": [
+      {
+        "count": 4,
+        "title": "1927"
+      },
+      {
+        "count": 4,
+        "title": "1934"
+      },
+      {
+        "count": 3,
+        "title": "1923"
+      },
+      {
+        "count": 2,
+        "title": "1922"
+      },
+      {
+        "count": 2,
+        "title": "1924"
+      },
+      {
+        "count": 2,
+        "title": "1925"
+      },
+      {
+        "count": 2,
+        "title": "1926"
+      },
+      {
+        "count": 2,
+        "title": "1926-09-30"
+      },
+      {
+        "count": 2,
+        "title": "1928"
+      },
+      {
+        "count": 2,
+        "title": "1930-12-18"
+      },
+      {
+        "count": 2,
+        "title": "1932"
+      }
+    ],
+    "subjec": [
+      {
+        "count": 127,
+        "title": "marquette university -- newspapers ; marquette university -- students -- periodicals ; college student newspapers and periodicals -- wisconsin -- milwaukee"
+      },
+      {
+        "count": 31,
+        "title": "students"
+      },
+      {
+        "count": 25,
+        "title": "males"
+      },
+      {
+        "count": 20,
+        "title": "marquette university - periodicals marquette university - students - yearbooks college yearbooks"
+      },
+      {
+        "count": 17,
+        "title": "marquette tribune"
+      },
+      {
+        "count": 14,
+        "title": "females"
+      },
+      {
+        "count": 14,
+        "title": "marquette university newspapers ; marquette university students periodicals ; college student newspapers and periodicals wisconsin milwaukee"
+      },
+      {
+        "count": 10,
+        "title": "athletes"
+      },
+      {
+        "count": 9,
+        "title": "football"
+      },
+      {
+        "count": 7,
+        "title": "marquette university -- football"
+      },
+      {
+        "count": 6,
+        "title": "frank murray"
+      }
+    ]
+  },
+  "fields": {
+    "direction": "asc",
+    "order": "date",
+    "queries": [
+      {
+        "connector": "all",
+        "field": "all",
+        "mode": "all",
+        "searchTerm": "poster"
+      }
+    ]
+  },
+  "filters": {
+    "collections": [
+      {
+        "alias": "p16280coll1",
+        "name": "Marquette University History Online",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll11",
+        "name": "Tolkien Fandom Oral History Collection",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll16",
+        "name": "James Wright Foley Digital Collection",
+        "selected": true
+      },
+      {
+        "alias": "p4007coll4",
+        "name": "Bureau of Catholic Indian Missions",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll10",
+        "name": "Tolkien Fanzines",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll12",
+        "name": "Peter Roller Oral History Interviews",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll9",
+        "name": "Catholic Native America Collections Online",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll3",
+        "name": "Marquette Tribune",
+        "selected": true
+      },
+      {
+        "alias": "p4007hilltop",
+        "name": "Hilltop Yearbooks, 1915-1996",
+        "selected": true
+      },
+      {
+        "alias": "p128701coll3",
+        "name": "Holy Rosary Mission - Red Cloud Indian School",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll8",
+        "name": "Naval Reserve Officers Training Corps (NROTC) Porthole",
+        "selected": true
+      },
+      {
+        "alias": "p4007coll12",
+        "name": "St. Francis Mission",
+        "selected": true
+      },
+      {
+        "alias": "p128701coll6",
+        "name": "Marquette University Campus Buildings",
+        "selected": true
+      },
+      {
+        "alias": "p15072coll2",
+        "name": "The Indian Sentinel, 1902-1962",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll14",
+        "name": "The Howard Fuller Collection",
+        "selected": true
+      },
+      {
+        "alias": "p128701coll5",
+        "name": "Marquette University Intercollegiate Athletic Hall of Fame",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll2",
+        "name": "African American Catholics of the United States",
+        "selected": true
+      },
+      {
+        "alias": "p4007coll14",
+        "name": "Women in Blue and Gold",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll4",
+        "name": "The Gesu Collection",
+        "selected": true
+      },
+      {
+        "alias": "p128701coll1",
+        "name": "Ralph Metcalfe, The Olympic Years, 1932-1936",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll5",
+        "name": "Edwin A. Shanke Collection",
+        "selected": true
+      },
+      {
+        "alias": "p4007coll22",
+        "name": "Service at Marquette",
+        "selected": true
+      },
+      {
+        "alias": "p4007coll11",
+        "name": "Tommy G. Thompson",
+        "selected": true
+      },
+      {
+        "alias": "p15072coll1",
+        "name": "Clement J. Zablocki - Photographs of Wisconsin's 'Mr. Democrat'",
+        "selected": true
+      },
+      {
+        "alias": "p4007coll16",
+        "name": "Alfred Hamy's Jesuit Portrait Gallery",
+        "selected": true
+      },
+      {
+        "alias": "p15072coll3",
+        "name": "I'll Tell You A Story - Memories of Pre-Holocaust Europe",
+        "selected": true
+      },
+      {
+        "alias": "p128701coll4",
+        "name": "In the Spotlight",
+        "selected": true
+      },
+      {
+        "alias": "p128701coll2",
+        "name": "Postcards from Manhattan - The Portrait Photography of Carl Van Vechten",
+        "selected": true
+      },
+      {
+        "alias": "p128701coll0",
+        "name": "Senator Joe McCarthy - Audio Excerpts, 1950-1954",
+        "selected": true
+      },
+      {
+        "alias": "p16280coll13",
+        "name": "Dorothy Day Photographs",
+        "selected": true
+      },
+      {
+        "alias": "p4007coll18",
+        "name": "Marquette University Histories",
+        "selected": true
+      }
+    ]
+  },
+  "gridViewEnabled": false,
+  "items": [
+    {
+      "cdmalt": null,
+      "collectionAlias": "p16280coll1",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "14020",
+      "itemLink": "/singleitem/collection/p16280coll1/id/14020",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Composite poster of Tribune editors alongside one of their covers, 1968-1972"
+        },
+        {
+          "field": "descri",
+          "value": "Composite poster of Tribune editors alongside one of their covers, 1968-1972. Original returned to College of Communication, December 2015."
+        },
+        {
+          "field": "date",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Marquette University History Online"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/p16280coll1/id/14020/thumbnail",
+      "title": "Composite poster of Tribune editors alongside one of their covers, 1968-1972"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "p16280coll1",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "14018",
+      "itemLink": "/singleitem/collection/p16280coll1/id/14018",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Composite poster of Tribune editors alongside one of their covers, 1962-1965"
+        },
+        {
+          "field": "descri",
+          "value": "Composite poster of Tribune editors alongside one of their covers, 1962-1965. Original returned to College of Communication, December 2015."
+        },
+        {
+          "field": "date",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Marquette University History Online"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/p16280coll1/id/14018/thumbnail",
+      "title": "Composite poster of Tribune editors alongside one of their covers, 1962-1965"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "p16280coll1",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "14021",
+      "itemLink": "/singleitem/collection/p16280coll1/id/14021",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Composite poster of Tribune editors alongside one of their covers, 1972-1976"
+        },
+        {
+          "field": "descri",
+          "value": "Composite poster of Tribune editors alongside one of their covers, 1972-1976. Original returned to College of Communication, December 2015."
+        },
+        {
+          "field": "date",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Marquette University History Online"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/p16280coll1/id/14021/thumbnail",
+      "title": "Composite poster of Tribune editors alongside one of their covers, 1972-1976"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "p16280coll1",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "14019",
+      "itemLink": "/singleitem/collection/p16280coll1/id/14019",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Composite poster of Tribune editors alongside one of their covers, 1964-1968"
+        },
+        {
+          "field": "descri",
+          "value": "Composite poster of Tribune editors alongside one of their covers, 1964-1968. Original returned to College of Communication, December 2015."
+        },
+        {
+          "field": "date",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Marquette University History Online"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/p16280coll1/id/14019/thumbnail",
+      "title": "Composite poster of Tribune editors alongside one of their covers, 1964-1968"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "p16280coll1",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "14025",
+      "itemLink": "/singleitem/collection/p16280coll1/id/14025",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Composite poster of Tribune editors alongside one of their covers, 1992-1998"
+        },
+        {
+          "field": "descri",
+          "value": "Composite poster of Tribune editors alongside one of their covers, 1992-1998. Original returned to College of Communication, December 2015."
+        },
+        {
+          "field": "date",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Marquette University History Online"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/p16280coll1/id/14025/thumbnail",
+      "title": "Composite poster of Tribune editors alongside one of their covers, 1992-1998"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "p16280coll1",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "14016",
+      "itemLink": "/singleitem/collection/p16280coll1/id/14016",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Composite poster of Tribune editors alongside one of their covers, 1956-1960"
+        },
+        {
+          "field": "descri",
+          "value": "Composite poster of Tribune editors alongside one of their covers, 1956-1960. Original returned to College of Communication, December 2015."
+        },
+        {
+          "field": "date",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Marquette University History Online"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/p16280coll1/id/14016/thumbnail",
+      "title": "Composite poster of Tribune editors alongside one of their covers, 1956-1960"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "p16280coll1",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "14017",
+      "itemLink": "/singleitem/collection/p16280coll1/id/14017",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Composite poster of Tribune editors alongside one of their covers, 1959-1962"
+        },
+        {
+          "field": "descri",
+          "value": "Composite poster of Tribune editors alongside one of their covers, 1959-1962. Original returned to College of Communication, December 2015."
+        },
+        {
+          "field": "date",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Marquette University History Online"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/p16280coll1/id/14017/thumbnail",
+      "title": "Composite poster of Tribune editors alongside one of their covers, 1959-1962"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "p16280coll1",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "14026",
+      "itemLink": "/singleitem/collection/p16280coll1/id/14026",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Composite poster of Tribune editors alongside one of their covers, 1998-2005"
+        },
+        {
+          "field": "descri",
+          "value": "Composite poster of Tribune editors alongside one of their covers, 1998-2005. Original returned to College of Communication, December 2015."
+        },
+        {
+          "field": "date",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Marquette University History Online"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/p16280coll1/id/14026/thumbnail",
+      "title": "Composite poster of Tribune editors alongside one of their covers, 1998-2005"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "p16280coll1",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "14022",
+      "itemLink": "/singleitem/collection/p16280coll1/id/14022",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Composite poster of Tribune editors alongside one of their covers, 1976-1979"
+        },
+        {
+          "field": "descri",
+          "value": "Composite poster of Tribune editors alongside one of their covers, 1976-1979. Original returned to College of Communication, December 2015."
+        },
+        {
+          "field": "date",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Marquette University History Online"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/p16280coll1/id/14022/thumbnail",
+      "title": "Composite poster of Tribune editors alongside one of their covers, 1976-1979"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "p16280coll1",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "14023",
+      "itemLink": "/singleitem/collection/p16280coll1/id/14023",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Composite poster of Tribune editors alongside one of their covers, 1979-1987"
+        },
+        {
+          "field": "descri",
+          "value": "Composite poster of Tribune editors alongside one of their covers, 1979-1987. Original returned to College of Communication, December 2015."
+        },
+        {
+          "field": "date",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Marquette University History Online"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/p16280coll1/id/14023/thumbnail",
+      "title": "Composite poster of Tribune editors alongside one of their covers, 1979-1987"
+    }
+  ],
+  "searchResultsDefaultSortField": "date",
+  "sortFields": [
+    {
+      "ad": "asc",
+      "name": "Relevance",
+      "order": "nosort"
+    },
+    {
+      "ad": "asc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "desc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "asc",
+      "name": "Description",
+      "order": "descri"
+    },
+    {
+      "ad": "desc",
+      "name": "Description",
+      "order": "descri"
+    },
+    {
+      "ad": "asc",
+      "name": "Date",
+      "order": "date"
+    },
+    {
+      "ad": "desc",
+      "name": "Date",
+      "order": "date"
+    }
+  ],
+  "totalResults": 278
+}

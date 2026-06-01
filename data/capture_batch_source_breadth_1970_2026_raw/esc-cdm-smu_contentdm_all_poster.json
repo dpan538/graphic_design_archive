@@ -1,0 +1,1074 @@
+{
+  "browseAllDefaultSortField": "title",
+  "facetFields": {
+    "date": "Date",
+    "datea": "Date-Created",
+    "publis": "Publisher",
+    "source": "Source",
+    "type": "Type"
+  },
+  "facets": {
+    "date": [
+      {
+        "count": 125,
+        "title": "april"
+      },
+      {
+        "count": 121,
+        "title": "october"
+      },
+      {
+        "count": 112,
+        "title": "march"
+      },
+      {
+        "count": 105,
+        "title": "february"
+      },
+      {
+        "count": 81,
+        "title": "september"
+      },
+      {
+        "count": 79,
+        "title": "november"
+      },
+      {
+        "count": 51,
+        "title": "january"
+      },
+      {
+        "count": 48,
+        "title": "ca"
+      },
+      {
+        "count": 42,
+        "title": "august"
+      },
+      {
+        "count": 32,
+        "title": "december"
+      },
+      {
+        "count": 27,
+        "title": "may"
+      }
+    ],
+    "datea": [
+      {
+        "count": 17,
+        "title": "1970"
+      },
+      {
+        "count": 12,
+        "title": "1976"
+      },
+      {
+        "count": 9,
+        "title": "ca. 1936"
+      },
+      {
+        "count": 8,
+        "title": "1951"
+      },
+      {
+        "count": 7,
+        "title": "1972"
+      },
+      {
+        "count": 7,
+        "title": "1975"
+      },
+      {
+        "count": 5,
+        "title": "1960"
+      },
+      {
+        "count": 5,
+        "title": "1965"
+      },
+      {
+        "count": 4,
+        "title": "1920-1929"
+      },
+      {
+        "count": 4,
+        "title": "1936"
+      },
+      {
+        "count": 4,
+        "title": "1940"
+      }
+    ],
+    "publis": [
+      {
+        "count": 955,
+        "title": "degolyer library"
+      },
+      {
+        "count": 30,
+        "title": "hamon arts library"
+      },
+      {
+        "count": 19,
+        "title": "g. william jones film and video collection"
+      },
+      {
+        "count": 11,
+        "title": "fondren library"
+      },
+      {
+        "count": 5,
+        "title": "smu archives"
+      },
+      {
+        "count": 4,
+        "title": "smu libraries"
+      },
+      {
+        "count": 3,
+        "title": "bywaters special collections"
+      },
+      {
+        "count": 2,
+        "title": "bridwell library"
+      },
+      {
+        "count": 2,
+        "title": "fort burgwin library (smu-in-taos)"
+      },
+      {
+        "count": 1,
+        "title": "g. william jones film and video collection hamon arts library"
+      }
+    ],
+    "source": [
+      {
+        "count": 325,
+        "title": "8 pages"
+      },
+      {
+        "count": 94,
+        "title": "12 pages"
+      },
+      {
+        "count": 88,
+        "title": "4 pages"
+      },
+      {
+        "count": 72,
+        "title": "6 pages"
+      },
+      {
+        "count": 60,
+        "title": "10 pages"
+      },
+      {
+        "count": 29,
+        "title": "1 online resource (1 text file): pdf/a"
+      },
+      {
+        "count": 27,
+        "title": "16 pages"
+      },
+      {
+        "count": 14,
+        "title": "11 pages"
+      },
+      {
+        "count": 10,
+        "title": "14 pages"
+      },
+      {
+        "count": 8,
+        "title": "15 pages"
+      },
+      {
+        "count": 6,
+        "title": "19 pages"
+      }
+    ],
+    "type": [
+      {
+        "count": 136,
+        "title": "image"
+      },
+      {
+        "count": 69,
+        "title": "text"
+      },
+      {
+        "count": 21,
+        "title": "video"
+      }
+    ]
+  },
+  "fields": {
+    "direction": "asc",
+    "order": "title",
+    "queries": [
+      {
+        "connector": "all",
+        "field": "all",
+        "mode": "all",
+        "searchTerm": "poster"
+      }
+    ]
+  },
+  "filters": {
+    "collections": [
+      {
+        "alias": "apnd",
+        "name": "Aerial Photos of the Northern Part of Dallas, Texas",
+        "selected": true
+      },
+      {
+        "alias": "aaf",
+        "name": "African American Film Materials",
+        "selected": true
+      },
+      {
+        "alias": "outler",
+        "name": "Albert Cook Outler Papers at Bridwell Library",
+        "selected": true
+      },
+      {
+        "alias": "ald",
+        "name": "Albrecht Dürer Prints at Bridwell Library",
+        "selected": true
+      },
+      {
+        "alias": "alv",
+        "name": "Alvin Colt Design Drawings and Photographs for Neiman Marcus Fortnights",
+        "selected": true
+      },
+      {
+        "alias": "han",
+        "name": "Andy Hanson Photographs",
+        "selected": true
+      },
+      {
+        "alias": "wsw",
+        "name": "Archives of Women of the Southwest",
+        "selected": true
+      },
+      {
+        "alias": "lav",
+        "name": "Collection of Antiquities at Bridwell Library",
+        "selected": true
+      },
+      {
+        "alias": "bml",
+        "name": "Banks McLaurin, Jr. Stereograph Collection",
+        "selected": true
+      },
+      {
+        "alias": "bel",
+        "name": "Belo Records, 1827-2000s",
+        "selected": true
+      },
+      {
+        "alias": "other",
+        "name": "British Methodist Documents and Images at Bridwell Library",
+        "selected": true
+      },
+      {
+        "alias": "byw",
+        "name": "Bywaters Special Collections - Texas Artists Archives",
+        "selected": true
+      },
+      {
+        "alias": "bur",
+        "name": "Cantonment Burgwin Postings",
+        "selected": true
+      },
+      {
+        "alias": "civ",
+        "name": "Civil War - Photographs, Manuscripts, and Imprints",
+        "selected": true
+      },
+      {
+        "alias": "cooke",
+        "name": "Cooke and Clarke Family Documents and Images at Bridwell Library",
+        "selected": true
+      },
+      {
+        "alias": "dmp",
+        "name": "Dallas Historic Aerial Photographs, 1930 Fairchild Survey",
+        "selected": true
+      },
+      {
+        "alias": "agr",
+        "name": "Dallas Aerial Photographs, 1945 USDA Survey",
+        "selected": true
+      },
+      {
+        "alias": "dlc",
+        "name": "DeGolyer Library Cookbook Collection",
+        "selected": true
+      },
+      {
+        "alias": "dgl",
+        "name": "DeGolyer Library - Photographs, Manuscripts, and Imprints",
+        "selected": true
+      },
+      {
+        "alias": "dlm",
+        "name": "DeGolyer Library Map Collection",
+        "selected": true
+      },
+      {
+        "alias": "bud",
+        "name": "Doris A. and Lawrence H. Budner Collection on Theodore Roosevelt",
+        "selected": true
+      },
+      {
+        "alias": "ned",
+        "name": "Edward C. Fritz Papers, 1950s-2008",
+        "selected": true
+      },
+      {
+        "alias": "bowen",
+        "name": "Elias and Abigail Bowen Family Papers",
+        "selected": true
+      },
+      {
+        "alias": "pwl",
+        "name": "Elmer and Diane Powell Collection on Mexico and the Mexican Revolution",
+        "selected": true
+      },
+      {
+        "alias": "mbc",
+        "name": "Elmer T. Clark Portraits of Methodist Bishops at Bridwell Library",
+        "selected": true
+      },
+      {
+        "alias": "ewh",
+        "name": "Esther Webb Houseman Art Work and Papers",
+        "selected": true
+      },
+      {
+        "alias": "eaa",
+        "name": "Europe, Asia, and Australia - Photographs, Manuscripts, and Imprints",
+        "selected": true
+      },
+      {
+        "alias": "brinc",
+        "name": "Fifteenth-Century Printed Books at Bridwell Library",
+        "selected": true
+      },
+      {
+        "alias": "ffp",
+        "name": "Fowler Family Papers",
+        "selected": true
+      },
+      {
+        "alias": "wlrd",
+        "name": "Frances E. Willard Documents and Images at Bridwell Library",
+        "selected": true
+      },
+      {
+        "alias": "fjd",
+        "name": "Frank J. Davis World War II Photographs",
+        "selected": true
+      },
+      {
+        "alias": "jon",
+        "name": "G. William Jones Film & Video Collection",
+        "selected": true
+      },
+      {
+        "alias": "gcp",
+        "name": "George Albert Converse Papers and Photographs, 1861-1897",
+        "selected": true
+      },
+      {
+        "alias": "gcd",
+        "name": "George W. Cook Dallas-Texas Image Collection",
+        "selected": true
+      },
+      {
+        "alias": "white",
+        "name": "George Whitefield Documents and Images at Bridwell Library",
+        "selected": true
+      },
+      {
+        "alias": "moore",
+        "name": "Henry Moore’s Unpublished Manuscript at Bridwell Library",
+        "selected": true
+      },
+      {
+        "alias": "prd",
+        "name": "Hervey A. Priddy Collection of American Presidential and Political Memorabilia",
+        "selected": true
+      },
+      {
+        "alias": "hnb",
+        "name": "Historic Newspapers at Bridwell Library",
+        "selected": true
+      },
+      {
+        "alias": "hor",
+        "name": "Horton Foote Photographs and Manuscripts",
+        "selected": true
+      },
+      {
+        "alias": "itk",
+        "name": "Isabel T. Kelly Ethnographic Archive",
+        "selected": true
+      },
+      {
+        "alias": "wlg",
+        "name": "Jack and Beverly Wilgus History of Photography Collection",
+        "selected": true
+      },
+      {
+        "alias": "kil",
+        "name": "Jack Kilby Photographs and Manuscripts",
+        "selected": true
+      },
+      {
+        "alias": "jnh",
+        "name": "Jake and Nancy Hamon Papers",
+        "selected": true
+      },
+      {
+        "alias": "jcp",
+        "name": "JCPenney Collection",
+        "selected": true
+      },
+      {
+        "alias": "jej",
+        "name": "J. Erik Jonsson Papers",
+        "selected": true
+      },
+      {
+        "alias": "jlt",
+        "name": "J.L. Turner Sr. Papers",
+        "selected": true
+      },
+      {
+        "alias": "jcc",
+        "name": "John C. Cox, Jr. World War II Papers",
+        "selected": true
+      },
+      {
+        "alias": "emory",
+        "name": "John Emory's 1820 Journal at Bridwell Library",
+        "selected": true
+      },
+      {
+        "alias": "tow",
+        "name": "John G. Tower Digital Media Collection",
+        "selected": true
+      },
+      {
+        "alias": "jhv",
+        "name": "John Heyl Vincent Documents and Images at Bridwell Library",
+        "selected": true
+      },
+      {
+        "alias": "jmm",
+        "name": "John Miller Morris Real Photographic Postcards and Photographs of Texas",
+        "selected": true
+      },
+      {
+        "alias": "jwl",
+        "name": "Collection of Wesleyana at Bridwell Library",
+        "selected": true
+      },
+      {
+        "alias": "kdr",
+        "name": "Kenneth D. Roseman Collection",
+        "selected": true
+      },
+      {
+        "alias": "lantern",
+        "name": "Lantern slides produced by the Methodist Episcopal Church, South",
+        "selected": true
+      },
+      {
+        "alias": "lat",
+        "name": "Latin America and the Caribbean - Photographs, Manuscripts, and Imprints",
+        "selected": true
+      },
+      {
+        "alias": "jtx",
+        "name": "Lawrence T. Jones III Texas Photographs",
+        "selected": true
+      },
+      {
+        "alias": "olan",
+        "name": "Levi A. Olan Sermons and Images at Bridwell Library",
+        "selected": true
+      },
+      {
+        "alias": "mrp",
+        "name": "Mary McCord-Edyth Renshaw Collection on the Performing Arts",
+        "selected": true
+      },
+      {
+        "alias": "mcs",
+        "name": "Melvin C. Shaffer World War II Photographs",
+        "selected": true
+      },
+      {
+        "alias": "UKMeth",
+        "name": "Methodism in the United Kingdom and Ireland",
+        "selected": true
+      },
+      {
+        "alias": "mex",
+        "name": "Mexico - Photographs, Manuscripts, and Imprints",
+        "selected": true
+      },
+      {
+        "alias": "mav",
+        "name": "Miscellaneous Aerial Views of Dallas, 1930s-1940s",
+        "selected": true
+      },
+      {
+        "alias": "ngc",
+        "name": "Ninde Gamewell - Views Taken in China 1909-1911",
+        "selected": true
+      },
+      {
+        "alias": "nam",
+        "name": "North America - Photographs, Manuscripts, and Imprints",
+        "selected": true
+      },
+      {
+        "alias": "med",
+        "name": "Octavio Medellin Art Work and Papers",
+        "selected": true
+      },
+      {
+        "alias": "doz",
+        "name": "Otis Dozier Sketchbooks",
+        "selected": true
+      },
+      {
+        "alias": "perkins",
+        "name": "Perkins School of Theology Documents and Images at Bridwell Library",
+        "selected": true
+      },
+      {
+        "alias": "ptr",
+        "name": "Potter Art Iron Studios Collection",
+        "selected": true
+      },
+      {
+        "alias": "rwy",
+        "name": "Railroads - Photographs, Manuscripts, and Imprints",
+        "selected": true
+      },
+      {
+        "alias": "rjch",
+        "name": "Rees-Jones Collection Highlights",
+        "selected": true
+      },
+      {
+        "alias": "stn",
+        "name": "Richard Steinheimer Photograph Collection",
+        "selected": true
+      },
+      {
+        "alias": "ryr",
+        "name": "Robert Yarnall Richie Photograph Collection",
+        "selected": true
+      },
+      {
+        "alias": "rdoh",
+        "name": "Ronald L. Davis Oral History Collection",
+        "selected": true
+      },
+      {
+        "alias": "rbc",
+        "name": "Rosa Bonheur Correspondence",
+        "selected": true
+      },
+      {
+        "alias": "tbn",
+        "name": "Rowe-Barr Collection of Texas Currency",
+        "selected": true
+      },
+      {
+        "alias": "rlm",
+        "name": "Ruth and Lyle Sellers Medical Collection",
+        "selected": true
+      },
+      {
+        "alias": "hunt",
+        "name": "Selina Hastings, Countess of Huntingdon, Letters and Images at Bridwell Library",
+        "selected": true
+      },
+      {
+        "alias": "vsp",
+        "name": "Sir Ellice Victor Elias Sassoon Papers and Photographs",
+        "selected": true
+      },
+      {
+        "alias": "sit",
+        "name": "SMU in Taos Research Publications",
+        "selected": true
+      },
+      {
+        "alias": "dnc",
+        "name": "SMU Meadows School of the Arts, Division of Dance Concert Programs and Materials",
+        "selected": true
+      },
+      {
+        "alias": "ohdh",
+        "name": "SMU Oral History Projects",
+        "selected": true
+      },
+      {
+        "alias": "vas",
+        "name": "SMU Video Archive Series",
+        "selected": true
+      },
+      {
+        "alias": "bim",
+        "name": "SMU Campus Memories",
+        "selected": true
+      },
+      {
+        "alias": "smucc",
+        "name": "SMU Course Catalogs",
+        "selected": true
+      },
+      {
+        "alias": "smup",
+        "name": "SMU Publications and Media Collection",
+        "selected": true
+      },
+      {
+        "alias": "rtd",
+        "name": "SMU Rotunda Yearbooks",
+        "selected": true
+      },
+      {
+        "alias": "stud",
+        "name": "SMU Student Newspapers",
+        "selected": true
+      },
+      {
+        "alias": "smp",
+        "name": "Stanley Marcus Papers",
+        "selected": true
+      },
+      {
+        "alias": "ssm",
+        "name": "Sulphur Springs Collection of Pre-Nickelodeon Films",
+        "selected": true
+      },
+      {
+        "alias": "tar",
+        "name": "Texas Artists - Paintings, Sculpture, and Works on Paper",
+        "selected": true
+      },
+      {
+        "alias": "tir",
+        "name": "Texas Instruments Records",
+        "selected": true
+      },
+      {
+        "alias": "tex",
+        "name": "Texas - Photographs, Manuscripts, and Imprints",
+        "selected": true
+      },
+      {
+        "alias": "bridhist",
+        "name": "The History of Bridwell Library",
+        "selected": true
+      },
+      {
+        "alias": "das",
+        "name": "The Record, Dallas Archeological Society",
+        "selected": true
+      },
+      {
+        "alias": "tcb",
+        "name": "The Triple Crown at Bridwell Library",
+        "selected": true
+      },
+      {
+        "alias": "haws",
+        "name": "Thomas Haweis Documents and Images at Bridwell Library",
+        "selected": true
+      },
+      {
+        "alias": "ttb",
+        "name": "Tyler, Texas Black Film Collection",
+        "selected": true
+      },
+      {
+        "alias": "hgp",
+        "name": "U.S. Government Publications from World War II",
+        "selected": true
+      },
+      {
+        "alias": "wes",
+        "name": "U.S. West - Photographs, Manuscripts, and Imprints",
+        "selected": true
+      },
+      {
+        "alias": "voc",
+        "name": "Voices of Change Recordings and Materials",
+        "selected": true
+      },
+      {
+        "alias": "wfaa",
+        "name": "WFAA Newsfilm Collection, ca. 1960-1978",
+        "selected": true
+      },
+      {
+        "alias": "wrl",
+        "name": "White Rock Lake Aerial Photographs, 1927 Fairchild Survey",
+        "selected": true
+      },
+      {
+        "alias": "muse",
+        "name": "William E. Muse Lantern Slides",
+        "selected": true
+      },
+      {
+        "alias": "hal",
+        "name": "William Halsey Locomotive Drawing Collection",
+        "selected": true
+      }
+    ]
+  },
+  "gridViewEnabled": false,
+  "items": [
+    {
+      "cdmalt": null,
+      "collectionAlias": "bur",
+      "filetype": "pdf",
+      "index": null,
+      "itemId": "631",
+      "itemLink": "/singleitem/collection/bur/id/631",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "/ Whitelock"
+        },
+        {
+          "field": "creato",
+          "value": ""
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Cantonment Burgwin Postings"
+        },
+        {
+          "field": "date",
+          "value": "June 21, 1850"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/bur/id/631/thumbnail",
+      "title": "/ Whitelock"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "bim",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "328",
+      "itemLink": "/singleitem/collection/bim/id/328",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "1983 aerial poster of campus from the northeast"
+        },
+        {
+          "field": "creato",
+          "value": "Southern Methodist University. Publications"
+        },
+        {
+          "field": "cdmcoll",
+          "value": "SMU Campus Memories"
+        },
+        {
+          "field": "date",
+          "value": ""
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/bim/id/328/thumbnail",
+      "title": "1983 aerial poster of campus from the northeast"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "bim",
+      "filetype": "pdf",
+      "index": null,
+      "itemId": "917",
+      "itemLink": "/singleitem/collection/bim/id/917",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "1994 Literary Festival. An Annual Celebration of the Written Word"
+        },
+        {
+          "field": "creato",
+          "value": "Southern Methodist University"
+        },
+        {
+          "field": "cdmcoll",
+          "value": "SMU Campus Memories"
+        },
+        {
+          "field": "date",
+          "value": ""
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/bim/id/917/thumbnail",
+      "title": "1994 Literary Festival. An Annual Celebration of the Written Word"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "bim",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "733",
+      "itemLink": "/singleitem/collection/bim/id/733",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "1994 Literary Festival. An Annual Celebration of the Written Word."
+        },
+        {
+          "field": "creato",
+          "value": "Southern Methodist University"
+        },
+        {
+          "field": "cdmcoll",
+          "value": "SMU Campus Memories"
+        },
+        {
+          "field": "date",
+          "value": ""
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/bim/id/733/thumbnail",
+      "title": "1994 Literary Festival. An Annual Celebration of the Written Word."
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "bim",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "730",
+      "itemLink": "/singleitem/collection/bim/id/730",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "1995 Literary Festival"
+        },
+        {
+          "field": "creato",
+          "value": "Southern Methodist University"
+        },
+        {
+          "field": "cdmcoll",
+          "value": "SMU Campus Memories"
+        },
+        {
+          "field": "date",
+          "value": ""
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/bim/id/730/thumbnail",
+      "title": "1995 Literary Festival"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "bim",
+      "filetype": "pdf",
+      "index": null,
+      "itemId": "930",
+      "itemLink": "/singleitem/collection/bim/id/930",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "1995 Literary Festival. An Annual Celebration of the Written Word"
+        },
+        {
+          "field": "creato",
+          "value": "Southern Methodist University"
+        },
+        {
+          "field": "cdmcoll",
+          "value": "SMU Campus Memories"
+        },
+        {
+          "field": "date",
+          "value": ""
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/bim/id/930/thumbnail",
+      "title": "1995 Literary Festival. An Annual Celebration of the Written Word"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "prd",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "20",
+      "itemLink": "/singleitem/collection/prd/id/20",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "['A Time for Greatness' Campaign Poster]"
+        },
+        {
+          "field": "creato",
+          "value": "Unknown"
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Hervey A. Priddy Collection of American Presidential and Political Memorabilia"
+        },
+        {
+          "field": "date",
+          "value": "1960"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/prd/id/20/thumbnail",
+      "title": "['A Time for Greatness' Campaign Poster]"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "prd",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "18",
+      "itemLink": "/singleitem/collection/prd/id/18",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "['Beat High Prices' Campaign Poster]"
+        },
+        {
+          "field": "creato",
+          "value": "Unknown"
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Hervey A. Priddy Collection of American Presidential and Political Memorabilia"
+        },
+        {
+          "field": "date",
+          "value": "1948"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/prd/id/18/thumbnail",
+      "title": "['Beat High Prices' Campaign Poster]"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "prd",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "25",
+      "itemLink": "/singleitem/collection/prd/id/25",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "['He'll Beat Carter' Campaign Poster]"
+        },
+        {
+          "field": "creato",
+          "value": "Unknown"
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Hervey A. Priddy Collection of American Presidential and Political Memorabilia"
+        },
+        {
+          "field": "date",
+          "value": "1980"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/prd/id/25/thumbnail",
+      "title": "['He'll Beat Carter' Campaign Poster]"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "prd",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "21",
+      "itemLink": "/singleitem/collection/prd/id/21",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "['Leadership for the 60's' Campaign Poster]"
+        },
+        {
+          "field": "creato",
+          "value": "Unknown"
+        },
+        {
+          "field": "cdmcoll",
+          "value": "Hervey A. Priddy Collection of American Presidential and Political Memorabilia"
+        },
+        {
+          "field": "date",
+          "value": "1960"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/prd/id/21/thumbnail",
+      "title": "['Leadership for the 60's' Campaign Poster]"
+    }
+  ],
+  "searchResultsDefaultSortField": "title",
+  "sortFields": [
+    {
+      "ad": "asc",
+      "name": "Relevance",
+      "order": "nosort"
+    },
+    {
+      "ad": "asc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "desc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "asc",
+      "name": "Creator",
+      "order": "creato"
+    },
+    {
+      "ad": "desc",
+      "name": "Creator",
+      "order": "creato"
+    },
+    {
+      "ad": "asc",
+      "name": "Date",
+      "order": "date"
+    },
+    {
+      "ad": "desc",
+      "name": "Date",
+      "order": "date"
+    }
+  ],
+  "totalResults": 1023
+}

@@ -3278,3 +3278,309 @@ Execution rule:
   evidence, text excerpts or context, and failure rows.
 - Sources that fail automation remain in the registry as link-only/manual-review
   sources rather than disappearing from the archive map.
+
+## 2026-06-01 — Public Surface Gate Recalculation
+
+Purpose:
+
+- Tighten the distinction between a full main sheet, a support packet, a card,
+  and a bookmark-level fragment.
+- Prevent thin metadata rows from reading as full archive sheets.
+- Prepare the data layer for duplicate/enrichment clustering, where weaker rows
+  can support stronger canonical records instead of appearing as repeated pages.
+
+Changes made:
+
+- Updated `scripts/run_midcentury_capture_1930_1970.py` with a true 0-100
+  completeness score.
+- Raised the full main-sheet threshold from the earlier permissive `60` to
+  `75`.
+- Added `surfaceDisposition`, `publicationRole`, `sourceReadingTextLength`,
+  `contextTextLength`, and `publicationGate` fields to generated surfaces.
+- Updated methodology rules in:
+  - `docs/methodology/ARCHIVE_PRODUCTION_RULEBOOK_v0.md`
+  - `docs/methodology/SURFACE_TAXONOMY_RULEBOOK_v0.md`
+  - `docs/methodology/SURFACE_GENERATION_PIPELINE_v0.md`
+- Added recalculation report:
+  `docs/capture/PUBLIC_SURFACE_GATE_RECALC_2026_06_01.md`.
+
+Recalculation result:
+
+- 1092 input rows after dedupe.
+- 991 public surfaces.
+- 44 folder views.
+- 899 image-ready surfaces (`IMG01`/`IMG02`/`IMG03`), or 91%.
+- 237 top-level appendix candidates.
+
+Disposition counts:
+
+- `main_sheet`: 849
+- `support_packet_appendix_text`: 125
+- `merge_candidate_support_packet`: 14
+- `thin_visual_support_packet`: 1
+- compound / missing explicit disposition: 2
+
+Rule note:
+
+- Support packets may still use existing sheet templates until the frontend has
+  a dedicated support-packet renderer. The data layer now marks them separately
+  so they do not have to be treated as full main sheets.
+
+## 2026-06-01 — Surface Group Candidate Audit
+
+Purpose:
+
+- Establish grouping logic before the next broad coverage pass.
+- Give loose leaves, support packets, cards, appendices, and bookmark-level
+  fragments a responsible parent-candidate system.
+- Avoid treating repeated thin source rows as independent main sheets when
+  they should support a stronger canonical record or source register.
+
+Files added:
+
+- `scripts/generate_surface_group_candidates_v1.py`
+- `data/surface_group_candidates_v1.csv`
+- `data/surface_group_memberships_v1.csv`
+- `docs/capture/SURFACE_GROUPING_AUDIT_v1.md`
+
+Audit result:
+
+- 231 candidate groups.
+- 1588 candidate memberships.
+- Group types include `same_title_within_source`, `same_series_stem`,
+  `same_source_collection`, and `folder_cell_decade`.
+- Recommended actions include canonical main records with source registers,
+  canonical main records with support children, support-packet clusters,
+  compound-main candidates, and review-only groups.
+
+Important constraint:
+
+- These groups are not final merged records. They are a capture and review
+  scaffold. The next coverage passes should attach new records to these
+  candidates when evidence is strong, and create new groups only when a record
+  cannot responsibly attach.
+
+Next use:
+
+- The 1970-2026 capture pass should use group-level gaps (`needs_image`,
+  `needs_text`, `needs_rights`, `multi_region_review`) to decide what to search
+  next.
+- Coverage remains the priority until the region/theme/medium/movement map is
+  structurally complete; fine enrichment can follow once the category skeleton
+  is stable.
+
+## 2026-06-01 — Late Period Coverage Capture 1970-2026
+
+Purpose:
+
+- Start the 1970-2026 coverage pass after establishing group candidates.
+- Add late-period visual/design records without changing the frozen record
+  schema.
+- Prefer source-hosted image evidence and text/discourse support records over
+  local image copying.
+
+Files added:
+
+- `scripts/run_late_period_coverage_capture_1970_2026.py`
+- `data/capture_batch_late_period_coverage_1970_2026_records.csv`
+- `data/capture_batch_late_period_coverage_1970_2026_source_summary.csv`
+- `data/capture_batch_late_period_coverage_1970_2026_raw/`
+- `docs/capture/LATE_PERIOD_COVERAGE_CAPTURE_2026_06_01.md`
+
+Capture result:
+
+- 104 new late-period records.
+- Sources:
+  - Internet Archive / text and periodical collections: 46
+  - Te Papa Collections Online: 24
+  - NAIDOC Poster Gallery: 23
+  - Wikimedia Commons: 11
+- Image states:
+  - `IMG02`: 92
+  - `IMG03`: 11
+  - `IMG00`: 1
+- Period split:
+  - 1970-2000: 24
+  - 2001-2026: 80
+
+Payload result:
+
+- Rebuilt public surfaces with the late-period batch included.
+- 1196 input rows after dedupe.
+- 1095 public surfaces.
+- 45 folder views.
+- 1002 image-ready surfaces, or 92%.
+- Regenerated group candidates: 257 groups and 1773 memberships.
+
+Important note:
+
+- Late-period coverage is now high by renderable image state, but most new
+  image records are `IMG02` source-hosted display records. This is not the same
+  as open reuse. Source return and rights evidence remain mandatory.
+- The global 95% launch gate is still blocked mostly by earlier/midcentury
+  `IMG00`/`IMG04` records, especially AIC, V&A, Met, LoC, Getty, and Wellcome.
+
+## 2026-06-01 — Image Coverage Metric Recalibration
+
+Purpose:
+
+- Correct the over-optimistic interpretation of image coverage.
+- Stop treating `IMG02` source-hosted display records as equivalent to
+  publication-grade image coverage.
+
+Changes made:
+
+- Updated `scripts/audit_image_release_gate.py` to report:
+  - source-visible coverage
+  - verified open coverage
+  - weighted publication coverage
+- Added report:
+  `docs/capture/IMAGE_COVERAGE_METRICS_RECALIBRATION_2026_06_01.md`.
+
+Current recalibrated result:
+
+- Source-visible coverage: 91.51%.
+- Verified open coverage: 35.98%.
+- Weighted publication coverage: 71.4%.
+- Weighted/publication-grade launch gate remains 95%.
+
+Rule note:
+
+- `IMG02` remains a valid rights-aware display state, but it is no longer
+  treated as a full image-coverage success.
+- Future capture should continue broad source/category coverage while also
+  prioritizing explicit rights evidence that can move records toward `IMG03`.
+
+## 2026-06-01 — Full-Coverage Source Probe and 1970-2026 Queue
+
+Purpose:
+
+- Continue full coverage work without turning every source page into a weak
+  public sheet.
+- Probe underrepresented non-European/non-US community, university, government,
+  municipal, and library sources before item-level capture.
+
+Probe result:
+
+- 111 source candidates probed.
+- 82 reachable `ok` sources.
+- 45 `P1_adapter_candidate` rows.
+- 27 `P2_html_source_candidate` rows.
+- Region mix includes Latin America, East Asia, Eastern Europe, Africa,
+  Southeast Asia, Oceania/Pacific, South Asia, and Middle East/North Africa.
+
+Queue result:
+
+- Regenerated `data/item_capture_queue_v1.csv`.
+- 65 item-level queue rows for the 1970-2026 coverage pass.
+- Q1 rows: 45.
+- Q2 rows: 20.
+- Adapter mix includes IIIF, DSpace/OAI, Kramerius, Omeka, CONTENTdm, JSON-LD,
+  PDF/text, and HTML text sources.
+
+Important rule:
+
+- The queue is not public archive content. It is the next capture map.
+- Failed or HTTP-error sources stay in the source registry as source
+  territories; they are not deleted just because automation is difficult.
+
+## 2026-06-01 — Protocol Item Capture 1970-2026
+
+Purpose:
+
+- Start converting the 1970-2026 queue into item-level records from
+  underrepresented protocol sources.
+- Avoid promoting source-level hopes or weak keyword matches into public
+  sheets.
+
+Changes made:
+
+- Added `scripts/run_protocol_item_capture_1970_2026.py`.
+- Captured Q1 DSpace/OAI and Omeka sources first.
+- Wrote `data/capture_batch_protocol_item_1970_2026_records.csv`.
+- Wrote `data/capture_batch_protocol_item_1970_2026_source_summary.csv`.
+- Wrote raw API payloads under
+  `data/capture_batch_protocol_item_1970_2026_raw/`.
+- Wrote `docs/capture/PROTOCOL_ITEM_CAPTURE_1970_2026.md`.
+
+Result:
+
+- 8 promoted item-level records.
+- 6 sources attempted.
+- Promoted source families include University of Ghana Digital Collections,
+  National Repository of Nigeria, and University of Cape Town Digital
+  Collections.
+- Repeated newspaper/magazine issue records are grouped before publication so
+  they do not render as many thin sheets.
+
+Validation:
+
+- Rebuilt static public surfaces with the protocol batch included.
+- 1204 input rows after dedupe.
+- 1103 public surfaces.
+- Image states: `IMG00=40`, `IMG01=37`, `IMG02=573`, `IMG03=394`,
+  `IMG04=59`.
+- `scripts/audit_public_surface_integrity.py` passed with no exact repeated
+  image URLs and no placeholder image URLs.
+- Weighted publication coverage is 71.0%; this pass improves source diversity
+  and reading context, not release-grade image coverage.
+
+## 2026-06-01 — Source Breadth Capture 1970-2026
+
+Purpose:
+
+- Increase distinct source coverage beyond the dominant museum/API sources.
+- Prioritize underrepresented municipal, national-library, community, and
+  university sources without promoting generic landing pages as archive sheets.
+- Improve the source mix for Aotearoa New Zealand, Japan, and Argentina.
+
+Changes made:
+
+- Added `scripts/run_source_breadth_capture_1970_2026.py`.
+- Captured Auckland Libraries Heritage Collections via CONTENTdm item records.
+- Captured Los Angeles Public Library Tessa via CONTENTdm item records.
+- Captured University of Washington Digital Collections via CONTENTdm item
+  records.
+- Captured SMU Libraries, University of Miami Libraries, and Temple University
+  Libraries via the same CONTENTdm family adapter.
+- Probed additional CONTENTdm-family local/university sources, keeping
+  no-record or timeout outcomes in the source summary instead of promoting them
+  as thin public sheets.
+- Captured limited AHIRA and CeDInCI WordPress source-context records only when
+  title/body evidence mentions magazines, posters, design, advertising, or
+  political print culture.
+- Captured NDL Search / National Diet Library SRU bibliographic records for
+  Japanese advertising/poster/design publication evidence.
+- Wrote `data/capture_batch_source_breadth_1970_2026_records.csv`.
+- Wrote `data/capture_batch_source_breadth_1970_2026_source_summary.csv`.
+- Wrote raw payloads under
+  `data/capture_batch_source_breadth_1970_2026_raw/`.
+- Wrote `docs/capture/SOURCE_BREADTH_CAPTURE_1970_2026.md`.
+- Added the new records CSV to the cumulative static payload rebuild script.
+
+Result:
+
+- 39 promoted records.
+- 9 additional public sources.
+- Image states in this batch: `IMG02=23`, `IMG03=6`, `IMG04=10`.
+- Auckland CONTENTdm now prefers image-bearing records first and limits
+  text-only folder records to avoid a source becoming only a register.
+- New promoted sources in this update: Auckland Libraries, LAPL Tessa,
+  University of Washington, University of Miami Libraries, SMU Libraries,
+  Temple University Libraries, AHIRA, CeDInCI, and NDL Search.
+
+Validation:
+
+- Rebuilt static public surfaces with this batch included.
+- 1243 input rows after dedupe.
+- 1142 public surfaces.
+- Distinct public sources: 33.
+- Image states: `IMG00=40`, `IMG01=37`, `IMG02=596`, `IMG03=400`,
+  `IMG04=69`.
+- Period source-visible image coverage: pre-1930 `94.9%`, 1931-1970 `86.0%`,
+  1971-2000 `95.6%`, 2001-2026 `88.8%`.
+- `scripts/audit_public_surface_integrity.py` passed with no exact repeated
+  image URLs and no placeholder image URLs.
+- Source-visible image coverage is 90.46%; weighted publication coverage is
+  70.41%, still far below the 95% launch target because many source-hosted
+  images remain `IMG02` rather than verified-open `IMG03`.

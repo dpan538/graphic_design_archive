@@ -1,0 +1,1291 @@
+{
+  "browseAllDefaultSortField": "title",
+  "facetFields": {
+    "creato": "Photographer",
+    "source": "Repository Collection",
+    "subjea": "Subjects (LCTGM)"
+  },
+  "facets": {
+    "creato": [
+      {
+        "count": 8,
+        "title": "forde photographers"
+      },
+      {
+        "count": 5,
+        "title": "ogawa, elmer"
+      },
+      {
+        "count": 3,
+        "title": "richards studio"
+      },
+      {
+        "count": 1,
+        "title": "apeda"
+      },
+      {
+        "count": 1,
+        "title": "baker, gil"
+      },
+      {
+        "count": 1,
+        "title": "carver, bob"
+      },
+      {
+        "count": 1,
+        "title": "cunningham, donald"
+      },
+      {
+        "count": 1,
+        "title": "lowell studio"
+      },
+      {
+        "count": 1,
+        "title": "mclaughlin, alain"
+      },
+      {
+        "count": 1,
+        "title": "richards"
+      },
+      {
+        "count": 1,
+        "title": "scheffer, theophilus"
+      }
+    ],
+    "source": [
+      {
+        "count": 13,
+        "title": "tomas ybarra frausto photograph collection. ph coll 437"
+      },
+      {
+        "count": 5,
+        "title": "american lung association of washington photograph collection. ph coll 670"
+      },
+      {
+        "count": 5,
+        "title": "eddie sato comic strip and camp harmony drawings. ph coll 1653"
+      },
+      {
+        "count": 5,
+        "title": "elmer ogawa collection. ph coll 178"
+      },
+      {
+        "count": 5,
+        "title": "howard clifford photographs. ph coll 1178"
+      },
+      {
+        "count": 5,
+        "title": "king broadcasting company photograph collection. ph coll 1315"
+      },
+      {
+        "count": 5,
+        "title": "richard v. correll prints and papers accession no. 5855-001, box 12/4"
+      },
+      {
+        "count": 4,
+        "title": "fisher (howard) editorial cartoons. ph coll 1603"
+      },
+      {
+        "count": 3,
+        "title": "warren g. magnuson photograph collection. ph coll 638"
+      },
+      {
+        "count": 2,
+        "title": "japanese american citizens league photograph collection. ph coll 732"
+      },
+      {
+        "count": 2,
+        "title": "richard v. correll prints and papers accession no. 5855-001, box 7"
+      }
+    ],
+    "subjea": [
+      {
+        "count": 12,
+        "title": "entertainers -- washington (state) -- mcneil island prisons -- washington (state) -- mcneil island"
+      },
+      {
+        "count": 1,
+        "title": "activists -- washington (state) -- seattle political posters"
+      },
+      {
+        "count": 1,
+        "title": "beauty contestants -- washington (state) -- seattle women -- washington (state) -- seattle posters"
+      },
+      {
+        "count": 1,
+        "title": "boxers==washington (state) -- seattle"
+      },
+      {
+        "count": 1,
+        "title": "children -- washington (state); christmas seals"
+      },
+      {
+        "count": 1,
+        "title": "christmas seals girls -- washington (state); seals (animals) -- washington (state); advertising -- washington (state)"
+      },
+      {
+        "count": 1,
+        "title": "exhibitions -- washington (state) -- seattle legislators -- united states architectural models exhibition posters"
+      },
+      {
+        "count": 1,
+        "title": "female impersonators -- washington (state) -- seattle promotional materials"
+      },
+      {
+        "count": 1,
+        "title": "festivals -- washington (state) -- seattle beauty contestants -- washington (state) -- seattle women -- washington (state) -- seattle posters"
+      },
+      {
+        "count": 1,
+        "title": "legislators -- united states girls typewriters"
+      },
+      {
+        "count": 1,
+        "title": "legislators -- united states political campaigns"
+      }
+    ]
+  },
+  "fields": {
+    "direction": "asc",
+    "order": "title",
+    "queries": [
+      {
+        "connector": "all",
+        "field": "all",
+        "mode": "all",
+        "searchTerm": "poster"
+      }
+    ]
+  },
+  "filters": {
+    "collections": [
+      {
+        "alias": "alaskawcanada",
+        "name": "Alaska, Western Canada and United States",
+        "selected": false
+      },
+      {
+        "alias": "ayp",
+        "name": "Alaska Yukon Pacific Exposition Photographs",
+        "selected": false
+      },
+      {
+        "alias": "loc",
+        "name": "American Indians of the Pacific Northwest -- Image Portion",
+        "selected": false
+      },
+      {
+        "alias": "lctext",
+        "name": "American Indians of the Pacific Northwest -- Textual Portion",
+        "selected": false
+      },
+      {
+        "alias": "neareast",
+        "name": "Ancient Near East Photograph Collection",
+        "selected": false
+      },
+      {
+        "alias": "ac",
+        "name": "Architecture of the Pacific Northwest",
+        "selected": false
+      },
+      {
+        "alias": "p16786coll17",
+        "name": "Asian Architecture Collection - Photographs by Patricia Young",
+        "selected": false
+      },
+      {
+        "alias": "barnes",
+        "name": "Barnes (Albert H.) Photographs of Western Washington, 1895-1920",
+        "selected": false
+      },
+      {
+        "alias": "imlsblackhs",
+        "name": "Black Heritage Society (KCS)",
+        "selected": false
+      },
+      {
+        "alias": "boydBraas",
+        "name": "Boyd and Braas Photographs of Seattle and Washington State",
+        "selected": false
+      },
+      {
+        "alias": "bcmedia",
+        "name": "Broadcast Media Collection",
+        "selected": false
+      },
+      {
+        "alias": "p16786coll1",
+        "name": "Brumfield (William Craft) Russian Architecture Digital Collection",
+        "selected": false
+      },
+      {
+        "alias": "eurasia",
+        "name": "Central Eurasia Image Database",
+        "selected": false
+      },
+      {
+        "alias": "iww",
+        "name": "Centralia Tragedy and the Industrial Workers of the World Collection, 1912-1932",
+        "selected": false
+      },
+      {
+        "alias": "chandless",
+        "name": "Chandless (Robert Henry) Photographs of China, 1898-1908",
+        "selected": false
+      },
+      {
+        "alias": "chernobyl",
+        "name": "Chernobyl, the Destroyed Russian Nuclear Reactor",
+        "selected": false
+      },
+      {
+        "alias": "buildings",
+        "name": "Cities and Buildings Database",
+        "selected": false
+      },
+      {
+        "alias": "civilwar",
+        "name": "Civil War Letters",
+        "selected": false
+      },
+      {
+        "alias": "civilworks",
+        "name": "Civil Works Administration Photographs of King County, 1933-1934",
+        "selected": false
+      },
+      {
+        "alias": "cchs",
+        "name": "North Olympic History Center (CMP)",
+        "selected": false
+      },
+      {
+        "alias": "CMPindiv",
+        "name": "Community Museum Individual Contributors (CMP)",
+        "selected": false
+      },
+      {
+        "alias": "cobb",
+        "name": "Cobb (John N.) Photographs of the Fishing Industry, 1897-1917",
+        "selected": false
+      },
+      {
+        "alias": "curtis",
+        "name": "Curtis (Asahel) Photo Company Photographs",
+        "selected": false
+      },
+      {
+        "alias": "p16786coll7",
+        "name": "Darrington Historical Society's SR 530 Landslide Collection",
+        "selected": false
+      },
+      {
+        "alias": "dearmassar",
+        "name": "Dearborn & Massar Photographs of Pacific Northwest Architecture",
+        "selected": false
+      },
+      {
+        "alias": "dp",
+        "name": "Decorated and Decorative Paper Collection",
+        "selected": false
+      },
+      {
+        "alias": "desmo",
+        "name": "Des Moines Historical Society Museum (KCS)",
+        "selected": false
+      },
+      {
+        "alias": "donaldson",
+        "name": "Donaldson (Lauren R) Collection of South Pacific Radiological Surveys, 1946-1964",
+        "selected": false
+      },
+      {
+        "alias": "advert",
+        "name": "Early Advertising of the West, 1867-1918",
+        "selected": false
+      },
+      {
+        "alias": "imlseastside",
+        "name": "Eastside Heritage Center (KCS)",
+        "selected": false
+      },
+      {
+        "alias": "ethnomusic",
+        "name": "Ethnomusicology Musical Instrument Collection",
+        "selected": false
+      },
+      {
+        "alias": "pnwlabor",
+        "name": "Everett Massacre of 1916 Collection",
+        "selected": false
+      },
+      {
+        "alias": "costumehist",
+        "name": "Fashion Plate Collection",
+        "selected": false
+      },
+      {
+        "alias": "fera",
+        "name": "Federal Emergency Relief Administration (FERA) Photographs of King County, 1933-",
+        "selected": false
+      },
+      {
+        "alias": "ftm",
+        "name": "Forks Timber Museum (CMP)",
+        "selected": false
+      },
+      {
+        "alias": "fishimages",
+        "name": "Freshwater and Marine Image Bank",
+        "selected": false
+      },
+      {
+        "alias": "epic",
+        "name": "Glaciers and Landforms Photograph Collection",
+        "selected": false
+      },
+      {
+        "alias": "gar",
+        "name": "Grand Army of the Republic Civil War Portraits",
+        "selected": false
+      },
+      {
+        "alias": "grandcoulee",
+        "name": "Grand Coulee Dam Construction, 1933-1942",
+        "selected": false
+      },
+      {
+        "alias": "harriman",
+        "name": "Harriman Alaska Expedition of 1899",
+        "selected": false
+      },
+      {
+        "alias": "hegg",
+        "name": "Hegg (Eric A.) Photographs of Alaska and the Klondike, 1897-1901",
+        "selected": false
+      },
+      {
+        "alias": "hester",
+        "name": "Hester (Wilhelm) Photographs",
+        "selected": false
+      },
+      {
+        "alias": "historicalbookarts",
+        "name": "Historical Book Arts Collection",
+        "selected": false
+      },
+      {
+        "alias": "childrens",
+        "name": "Historical Children's Literature Collection",
+        "selected": false
+      },
+      {
+        "alias": "indocc",
+        "name": "Industries and Occupations Photographs",
+        "selected": false
+      },
+      {
+        "alias": "ic",
+        "name": "International Collections",
+        "selected": false
+      },
+      {
+        "alias": "jackson",
+        "name": "Jackson (Henry M.) Collection",
+        "selected": false
+      },
+      {
+        "alias": "katims",
+        "name": "Katims (Milton) Audio Collection",
+        "selected": false
+      },
+      {
+        "alias": "kiehl",
+        "name": "Kiehl (H. Ambrose) Photograph Collection",
+        "selected": false
+      },
+      {
+        "alias": "kccollects",
+        "name": "King County Collects Heritage Collection",
+        "selected": false
+      },
+      {
+        "alias": "clarkkinsey",
+        "name": "Kinsey Brothers Photographs of the Lumber Industry, 1890-1945",
+        "selected": false
+      },
+      {
+        "alias": "p16786coll5",
+        "name": "Korean Graphic Novel Cover Art",
+        "selected": false
+      },
+      {
+        "alias": "korean",
+        "name": "Korean Literary Collection",
+        "selected": false
+      },
+      {
+        "alias": "landreau",
+        "name": "Landreau Collection on Turkish Carpet Weaving and Village Life",
+        "selected": false
+      },
+      {
+        "alias": "laroche",
+        "name": "La Roche (Frank) Photographs, 1888-1910",
+        "selected": false
+      },
+      {
+        "alias": "lee",
+        "name": "Lee (James Patrick) Photographs of Seattle, 1904-1940",
+        "selected": false
+      },
+      {
+        "alias": "ll",
+        "name": "Lindsley (Lawrence Denny) Photographs of Washington State, 1875-1971",
+        "selected": false
+      },
+      {
+        "alias": "mcrc",
+        "name": "Makah Cultural Collection (CMP)",
+        "selected": false
+      },
+      {
+        "alias": "imlsmvhs",
+        "name": "Maple Valley Historical Society (KCS)",
+        "selected": false
+      },
+      {
+        "alias": "mckenneyhall",
+        "name": "McKenney and Hall Indian Tribes of North America",
+        "selected": false
+      },
+      {
+        "alias": "mhm",
+        "name": "Medieval and Historical Manuscripts",
+        "selected": false
+      },
+      {
+        "alias": "meed",
+        "name": "Meed (William E.) Photographs of the Yukon Territory, 1898-1907",
+        "selected": false
+      },
+      {
+        "alias": "menus",
+        "name": "Menus Collection",
+        "selected": false
+      },
+      {
+        "alias": "hupy",
+        "name": "Modern Photographers Collection",
+        "selected": false
+      },
+      {
+        "alias": "p16786coll8",
+        "name": "Morell (Karen L.) Africa, Trinidad, and New Orleans Multimedia Collection",
+        "selected": false
+      },
+      {
+        "alias": "mshchem",
+        "name": "Mount St. Helens Post-Eruption Chemistry Database",
+        "selected": false
+      },
+      {
+        "alias": "mtsthelens",
+        "name": "Mount St. Helens Succession Collection",
+        "selected": false
+      },
+      {
+        "alias": "mtn",
+        "name": "Mountaineers Photograph Album Collection",
+        "selected": false
+      },
+      {
+        "alias": "filmarch",
+        "name": "Moving Image Collection",
+        "selected": false
+      },
+      {
+        "alias": "imlsmohai",
+        "name": "Museum of History and Industry",
+        "selected": false
+      },
+      {
+        "alias": "mm",
+        "name": "Music Library Digital Scores Collection",
+        "selected": false
+      },
+      {
+        "alias": "napoleon",
+        "name": "Napoleonic Period Collection of Political Caricatures",
+        "selected": false
+      },
+      {
+        "alias": "nmai",
+        "name": "National Museum of the American Indian (CMP)",
+        "selected": false
+      },
+      {
+        "alias": "nps",
+        "name": "National Park Service (CMP)",
+        "selected": false
+      },
+      {
+        "alias": "iraqdiaries",
+        "name": "NewBook Digital Texts Project",
+        "selected": false
+      },
+      {
+        "alias": "nap",
+        "name": "Nikkei Newspapers Digital Archive (日系新聞)",
+        "selected": false
+      },
+      {
+        "alias": "19thcenturyactors",
+        "name": "Nineteenth (19th) Century Actors and Theater Photographs",
+        "selected": false
+      },
+      {
+        "alias": "nol",
+        "name": "North Olympic Library System (CMP)",
+        "selected": false
+      },
+      {
+        "alias": "reports",
+        "name": "Northwest Historical Annual Reports Collection",
+        "selected": false
+      },
+      {
+        "alias": "imlsrailway",
+        "name": "Northwest Railway Museum (KCS)",
+        "selected": false
+      },
+      {
+        "alias": "nowell",
+        "name": "Nowell (Frank H.) Photographs of Alaska, 1901-1909",
+        "selected": false
+      },
+      {
+        "alias": "ohc",
+        "name": "Oral History Collection",
+        "selected": false
+      },
+      {
+        "alias": "pcarch",
+        "name": "Pacific Coast Architecture",
+        "selected": false
+      },
+      {
+        "alias": "pacfish",
+        "name": "Pacific Fisherman Journal, 1911-1913",
+        "selected": false
+      },
+      {
+        "alias": "pioneerlife",
+        "name": "Pacific Northwest Historical Documents Collection",
+        "selected": false
+      },
+      {
+        "alias": "pnwhm",
+        "name": "Pacific Northwest Historical Monographs",
+        "selected": false
+      },
+      {
+        "alias": "p16786coll16",
+        "name": "Pacific Northwest Political Marches and Rallies",
+        "selected": false
+      },
+      {
+        "alias": "sm",
+        "name": "Pacific Northwest Sheet Music Collection",
+        "selected": false
+      },
+      {
+        "alias": "ptec",
+        "name": "Pamphlet and Textual Documents Collection",
+        "selected": false
+      },
+      {
+        "alias": "panoram",
+        "name": "Panoramic Photographs Collection",
+        "selected": false
+      },
+      {
+        "alias": "payne",
+        "name": "Payne (Blanche) Regional Costume Photograph and Drawing Collection",
+        "selected": false
+      },
+      {
+        "alias": "peiser",
+        "name": "Peiser (Theodore E.) Photographs of Washington State, 1864-1910",
+        "selected": false
+      },
+      {
+        "alias": "pwb",
+        "name": "People Without Borders (CMP)",
+        "selected": false
+      },
+      {
+        "alias": "pickett",
+        "name": "Pickett (Lee) Photographs of Washington State, 1909-1936",
+        "selected": false
+      },
+      {
+        "alias": "plants",
+        "name": "Plants of Western Washington Collection",
+        "selected": false
+      },
+      {
+        "alias": "ptleader",
+        "name": "Port Townsend Leader",
+        "selected": false
+      },
+      {
+        "alias": "portraits",
+        "name": "Portraits Collection",
+        "selected": false
+      },
+      {
+        "alias": "norris",
+        "name": "Prior and Norris Vaudeville Troupe Photographs and Ephemera, 1886-1915",
+        "selected": false
+      },
+      {
+        "alias": "prosch_washington",
+        "name": "Prosch Albums, 1851-1906",
+        "selected": false
+      },
+      {
+        "alias": "psc",
+        "name": "Puget Sound Chemist Collection",
+        "selected": false
+      },
+      {
+        "alias": "imlsmaritime",
+        "name": "Puget Sound Maritime Historical Society (KCS)",
+        "selected": false
+      },
+      {
+        "alias": "glacier",
+        "name": "Rainier National Park Mountain-Glacier Wonderland Photograph Album",
+        "selected": false
+      },
+      {
+        "alias": "imlsrvhs",
+        "name": "Rainier Valley Historical Society (KCS)",
+        "selected": false
+      },
+      {
+        "alias": "imlsrenton",
+        "name": "Renton Historical Museum (KCS)",
+        "selected": false
+      },
+      {
+        "alias": "salmon",
+        "name": "Salmon in the Pacific Northwest and Alaska Collection, 1890-1961",
+        "selected": false
+      },
+      {
+        "alias": "sarvant",
+        "name": "Sarvant (Henry M.) Photographs of Washington State and the Yukon, 1892-1912",
+        "selected": false
+      },
+      {
+        "alias": "sayre",
+        "name": "Sayre (J. Willis) Collection of Theatrical Photographs",
+        "selected": false
+      },
+      {
+        "alias": "seattle",
+        "name": "Seattle Photographs",
+        "selected": false
+      },
+      {
+        "alias": "ww-swps",
+        "name": "Seattle Power and Water Supply Collection",
+        "selected": false
+      },
+      {
+        "alias": "p16786coll3",
+        "name": "Sephardic Studies Collection of the University of Washington",
+        "selected": false
+      },
+      {
+        "alias": "imlsshoreline",
+        "name": "Shoreline Historical Museum (KCS)",
+        "selected": false
+      },
+      {
+        "alias": "skinner",
+        "name": "Skinner (G. William) Map Collection",
+        "selected": false
+      },
+      {
+        "alias": "social",
+        "name": "Society and Culture Collection",
+        "selected": true
+      },
+      {
+        "alias": "saohc",
+        "name": "South Asian Oral History Project",
+        "selected": false
+      },
+      {
+        "alias": "stereo",
+        "name": "Stereocard Collection",
+        "selected": false
+      },
+      {
+        "alias": "archps",
+        "name": "Student Papers on the Architecture of Puget Sound, 1959-1970s",
+        "selected": false
+      },
+      {
+        "alias": "tacomacomm",
+        "name": "Tacoma Community History Project",
+        "selected": false
+      },
+      {
+        "alias": "farquharson",
+        "name": "Tacoma Narrows Bridge Collection",
+        "selected": false
+      },
+      {
+        "alias": "tacoma",
+        "name": "Tacoma Then and Again",
+        "selected": false
+      },
+      {
+        "alias": "tahirler",
+        "name": "Tahirler Project",
+        "selected": false
+      },
+      {
+        "alias": "ThaiIndex",
+        "name": "Thai Journal Index",
+        "selected": false
+      },
+      {
+        "alias": "mohai-thompson",
+        "name": "Thompson (J. W.) Collection, Museum of History and Industry",
+        "selected": false
+      },
+      {
+        "alias": "thwaites",
+        "name": "Thwaites (John E.) Photographs of Alaska, 1905-1920",
+        "selected": false
+      },
+      {
+        "alias": "todd",
+        "name": "Todd (Calvin F.) Photographs of Seattle, 1905-1930",
+        "selected": false
+      },
+      {
+        "alias": "tollcan",
+        "name": "Tollman and Canaris Photographs of the Salmon Industry in Washington State, 1893",
+        "selected": false
+      },
+      {
+        "alias": "transportation",
+        "name": "Transportation Photographs",
+        "selected": false
+      },
+      {
+        "alias": "p16786coll14",
+        "name": "UW Bothell Cascadia Library Art Tour",
+        "selected": false
+      },
+      {
+        "alias": "p16786coll20",
+        "name": "CCUWBee Native Bee Collection",
+        "selected": false
+      },
+      {
+        "alias": "uwb4",
+        "name": "UW Bothell Community Voices Collection",
+        "selected": false
+      },
+      {
+        "alias": "p16786coll19",
+        "name": "UW Bothell Diversity Center Archive",
+        "selected": false
+      },
+      {
+        "alias": "p16786coll12",
+        "name": "UW Bothell Feminist Community Archive of Washington",
+        "selected": false
+      },
+      {
+        "alias": "p16786coll15",
+        "name": "UW Bothell Washington Prison History Project Archive",
+        "selected": false
+      },
+      {
+        "alias": "uwb2",
+        "name": "UW Bothell Wetlands Collection",
+        "selected": false
+      },
+      {
+        "alias": "uwcampus",
+        "name": "UW Campus Photographs",
+        "selected": false
+      },
+      {
+        "alias": "uwib",
+        "name": "UW Image Bank",
+        "selected": false
+      },
+      {
+        "alias": "libart",
+        "name": "UW Libraries Art Collection",
+        "selected": false
+      },
+      {
+        "alias": "daily",
+        "name": "UW Student Newspapers Archive",
+        "selected": false
+      },
+      {
+        "alias": "p16786coll18",
+        "name": "UW Tacoma Oral History, Founding Stories",
+        "selected": false
+      },
+      {
+        "alias": "uwdocs",
+        "name": "UW Yearbooks and Documents",
+        "selected": false
+      },
+      {
+        "alias": "ua",
+        "name": "Urban Archives",
+        "selected": false
+      },
+      {
+        "alias": "vanolinda",
+        "name": "Van Olinda (Oliver S.) Photographs of Puget Sound, 1880s-1930s",
+        "selected": false
+      },
+      {
+        "alias": "protests",
+        "name": "Vietnam War Era Ephemera Collection",
+        "selected": false
+      },
+      {
+        "alias": "waite",
+        "name": "Waite (Alvin H.) Photographs of Tacoma and Washington State, 1892-1907",
+        "selected": false
+      },
+      {
+        "alias": "posters",
+        "name": "War Poster Collection",
+        "selected": false
+      },
+      {
+        "alias": "warner",
+        "name": "Warner (Arthur Churchill) Photographs of Washington State and Alaska, 1884-1945",
+        "selected": false
+      },
+      {
+        "alias": "jhp",
+        "name": "Washington State Jewish Archives",
+        "selected": false
+      },
+      {
+        "alias": "wastate",
+        "name": "Washington State Localities Photographs",
+        "selected": false
+      },
+      {
+        "alias": "watson",
+        "name": "Watson (Dwight) Photographs of Washington State, 1933-1943",
+        "selected": false
+      },
+      {
+        "alias": "ww-text",
+        "name": "Western Waters Texts",
+        "selected": false
+      },
+      {
+        "alias": "imlswrvm",
+        "name": "White River Valley Museum (KCS)",
+        "selected": false
+      },
+      {
+        "alias": "imlswingluke",
+        "name": "Wing Luke Asian Museum (KCS)",
+        "selected": false
+      },
+      {
+        "alias": "wwr",
+        "name": "Women Who Rock Oral History Collection",
+        "selected": false
+      },
+      {
+        "alias": "maps",
+        "name": "World and Regional Maps, 16th to 19th Centuries",
+        "selected": false
+      },
+      {
+        "alias": "wto",
+        "name": "WTO Seattle Collection",
+        "selected": false
+      },
+      {
+        "alias": "antartica",
+        "name": "Antarctica",
+        "selected": false
+      },
+      {
+        "alias": "becker",
+        "name": "Becker (Elizabeth) Democratic Kampuchea Collection; Cambodia under the Khmer Rou",
+        "selected": false
+      },
+      {
+        "alias": "dia",
+        "name": "Denny Islamic Art Photographs",
+        "selected": false
+      },
+      {
+        "alias": "elchichon",
+        "name": "El Chichon",
+        "selected": false
+      },
+      {
+        "alias": "hawaiianvolcanoes",
+        "name": "Hawaiian Volcanoes",
+        "selected": false
+      },
+      {
+        "alias": "greekdancing",
+        "name": "Hunt (Yvonne) Greek Folk Dance Collection",
+        "selected": false
+      },
+      {
+        "alias": "uwtjls",
+        "name": "Tacoma Japanese Language School Project",
+        "selected": false
+      },
+      {
+        "alias": "p16786coll2",
+        "name": "Test Collection",
+        "selected": false
+      },
+      {
+        "alias": "test2",
+        "name": "Test Collection 2",
+        "selected": false
+      },
+      {
+        "alias": "p16786coll6",
+        "name": "URLs",
+        "selected": false
+      },
+      {
+        "alias": "test3",
+        "name": "test3",
+        "selected": false
+      }
+    ]
+  },
+  "gridViewEnabled": true,
+  "items": [
+    {
+      "cdmalt": null,
+      "collectionAlias": "social",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "10695",
+      "itemLink": "/singleitem/collection/social/id/10695",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "11th Annual Festival of Nationalities poster, approximately 1970"
+        },
+        {
+          "field": "order",
+          "value": "SOC11595"
+        },
+        {
+          "field": "source",
+          "value": "Richard V. Correll Prints and Papers Accession No. 5855-001, Box 12/4"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/social/id/10695/thumbnail",
+      "title": "11th Annual Festival of Nationalities poster, approximately 1970"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "social",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "1303",
+      "itemLink": "/singleitem/collection/social/id/1303",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "\"Dances that Differ\" poster featuring one picture of Cleo Stafford as a man and four pictures of him as a woman, probably between 1946 and 1956"
+        },
+        {
+          "field": "order",
+          "value": "SOC1299"
+        },
+        {
+          "field": "source",
+          "value": "Don Paulson and Skippy LaRue photograph collection. PH Coll 673. Box 2/5."
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/social/id/1303/thumbnail",
+      "title": "\"Dances that Differ\" poster featuring one picture of Cleo Stafford as a man and four pictures of him as a woman, probably between 1946 and 1956"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "social",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "10697",
+      "itemLink": "/singleitem/collection/social/id/10697",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "\"I Want Your Social Security Dollars for U.S. Military\" poster, approximately 1983"
+        },
+        {
+          "field": "order",
+          "value": "SOC11597"
+        },
+        {
+          "field": "source",
+          "value": "Richard V. Correll Prints and Papers Accession No. 5855-001, Box 12/4"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/social/id/10697/thumbnail",
+      "title": "\"I Want Your Social Security Dollars for U.S. Military\" poster, approximately 1983"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "social",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "10698",
+      "itemLink": "/singleitem/collection/social/id/10698",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "\"No Wars for Big Oil\" poster, 1979"
+        },
+        {
+          "field": "order",
+          "value": "SOC11598"
+        },
+        {
+          "field": "source",
+          "value": "Richard V. Correll Prints and Papers Accession No. 5855-001, Box 12/4"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/social/id/10698/thumbnail",
+      "title": "\"No Wars for Big Oil\" poster, 1979"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "social",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "10686",
+      "itemLink": "/singleitem/collection/social/id/10686",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "\"Vote for Life...Yes on Prop. 12\" poster, 1982"
+        },
+        {
+          "field": "order",
+          "value": "SOC11585"
+        },
+        {
+          "field": "source",
+          "value": "Richard V. Correll Prints and Papers Accession No. 5855-001, Box 4/3"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/social/id/10686/thumbnail",
+      "title": "\"Vote for Life...Yes on Prop. 12\" poster, 1982"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "social",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "17285",
+      "itemLink": "/singleitem/collection/social/id/17285",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "African-American woman looking at \"New Look for the Urban League\" poster, Seattle Urban League 36th Annual Meeting, 1965"
+        },
+        {
+          "field": "order",
+          "value": "SOC18126"
+        },
+        {
+          "field": "source",
+          "value": "Seattle Urban League Photograph and Film Collection. PH Coll 625"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/social/id/17285/thumbnail",
+      "title": "African-American woman looking at \"New Look for the Urban League\" poster, Seattle Urban League 36th Annual Meeting, 1965"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "social",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "10696",
+      "itemLink": "/singleitem/collection/social/id/10696",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "American Indian International Tribunal benefit poster, 1982"
+        },
+        {
+          "field": "order",
+          "value": "SOC11596"
+        },
+        {
+          "field": "source",
+          "value": "Richard V. Correll Prints and Papers Accession No. 5855-001, Box 12/4"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/social/id/10696/thumbnail",
+      "title": "American Indian International Tribunal benefit poster, 1982"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "social",
+      "filetype": "jp2",
+      "index": null,
+      "itemId": "11010",
+      "itemLink": "/singleitem/collection/social/id/11010",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Anti B-1 Bomber Poster, approximately 1960s-1970s"
+        },
+        {
+          "field": "order",
+          "value": "SOC11845"
+        },
+        {
+          "field": "source",
+          "value": "Communist Party of the United States of America (Wash.) Photograph Collection. PH Coll 814"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/social/id/11010/thumbnail",
+      "title": "Anti B-1 Bomber Poster, approximately 1960s-1970s"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "social",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "762",
+      "itemLink": "/singleitem/collection/social/id/762",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Armistice day parade, Puyallup, November 11, 1918"
+        },
+        {
+          "field": "order",
+          "value": "SOC0772"
+        },
+        {
+          "field": "source",
+          "value": "Victor B. Scheffer Photograph Collection.  PH Coll 445"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/social/id/762/thumbnail",
+      "title": "Armistice day parade, Puyallup, November 11, 1918"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "social",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "4480",
+      "itemLink": "/singleitem/collection/social/id/4480",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Boxer at a gym posing for upcoming bout, February 11, 1957"
+        },
+        {
+          "field": "order",
+          "value": "SOC5771"
+        },
+        {
+          "field": "source",
+          "value": "Elmer Ogawa Collection. PH Coll 178"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/social/id/4480/thumbnail",
+      "title": "Boxer at a gym posing for upcoming bout, February 11, 1957"
+    }
+  ],
+  "searchResultsDefaultSortField": "title",
+  "sortFields": [
+    {
+      "ad": "asc",
+      "name": "Relevance",
+      "order": "nosort"
+    },
+    {
+      "ad": "asc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "desc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "asc",
+      "name": "Order Number",
+      "order": "order"
+    },
+    {
+      "ad": "desc",
+      "name": "Order Number",
+      "order": "order"
+    },
+    {
+      "ad": "asc",
+      "name": "Repository Collection",
+      "order": "source"
+    },
+    {
+      "ad": "desc",
+      "name": "Repository Collection",
+      "order": "source"
+    },
+    {
+      "ad": "asc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "desc",
+      "name": "Title",
+      "order": "title"
+    }
+  ],
+  "totalResults": 72
+}

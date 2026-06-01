@@ -1,0 +1,197 @@
+{
+  "browseAllDefaultSortField": "identi",
+  "facetFields": {},
+  "facets": {},
+  "fields": {
+    "direction": "asc",
+    "order": "identi",
+    "queries": [
+      {
+        "connector": "all",
+        "field": "all",
+        "mode": "all",
+        "searchTerm": "Pacific poster"
+      }
+    ]
+  },
+  "filters": {
+    "collections": [
+      {
+        "alias": "photos",
+        "name": "Photographs",
+        "selected": true
+      },
+      {
+        "alias": "maps",
+        "name": "Heritage Maps",
+        "selected": false
+      },
+      {
+        "alias": "manuscripts",
+        "name": "Manuscripts",
+        "selected": false
+      },
+      {
+        "alias": "rarebooks",
+        "name": "Rare Books",
+        "selected": false
+      },
+      {
+        "alias": "journals",
+        "name": "Journals",
+        "selected": false
+      },
+      {
+        "alias": "ephemera",
+        "name": "Ephemera",
+        "selected": false
+      },
+      {
+        "alias": "akldpeople",
+        "name": "Auckland People and Events",
+        "selected": false
+      },
+      {
+        "alias": "indexcards",
+        "name": "Index Cards",
+        "selected": false
+      },
+      {
+        "alias": "oralhistory",
+        "name": "Oral History",
+        "selected": false
+      },
+      {
+        "alias": "iwidex",
+        "name": "Iwidex",
+        "selected": false
+      },
+      {
+        "alias": "manukau",
+        "name": "Manukau's Journey",
+        "selected": false
+      },
+      {
+        "alias": "photographers",
+        "name": "Photographers",
+        "selected": false
+      },
+      {
+        "alias": "streets",
+        "name": "Streets and Parks",
+        "selected": false
+      },
+      {
+        "alias": "cemeteries",
+        "name": "Cemetery Records",
+        "selected": false
+      },
+      {
+        "alias": "passengers",
+        "name": "Passengers and Vessels",
+        "selected": false
+      },
+      {
+        "alias": "acm",
+        "name": "Militia, Volunteers & Armed Constabulary",
+        "selected": false
+      },
+      {
+        "alias": "electoral",
+        "name": "1881 Electoral Rolls",
+        "selected": false
+      },
+      {
+        "alias": "csr",
+        "name": "Chelsea Sugar Refinery",
+        "selected": false
+      },
+      {
+        "alias": "localhistory",
+        "name": "Local History",
+        "selected": false
+      }
+    ]
+  },
+  "gridViewEnabled": false,
+  "items": [
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "38017",
+      "itemLink": "/singleitem/collection/photos/id/38017",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Health policy launch, Papakura, 1993"
+        },
+        {
+          "field": "covera",
+          "value": "1990-1999"
+        },
+        {
+          "field": "source",
+          "value": "Footprints Collection"
+        },
+        {
+          "field": "identi",
+          "value": "Footprints 03410"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/38017/thumbnail",
+      "title": "Health policy launch, Papakura, 1993"
+    }
+  ],
+  "searchResultsDefaultSortField": "identi",
+  "sortFields": [
+    {
+      "ad": "asc",
+      "name": "Relevance",
+      "order": "nosort"
+    },
+    {
+      "ad": "asc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "desc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "asc",
+      "name": "Decade",
+      "order": "covera"
+    },
+    {
+      "ad": "desc",
+      "name": "Decade",
+      "order": "covera"
+    },
+    {
+      "ad": "asc",
+      "name": "Collection Name",
+      "order": "source"
+    },
+    {
+      "ad": "desc",
+      "name": "Collection Name",
+      "order": "source"
+    },
+    {
+      "ad": "asc",
+      "name": "Record ID",
+      "order": "identi"
+    },
+    {
+      "ad": "desc",
+      "name": "Record ID",
+      "order": "identi"
+    }
+  ],
+  "totalResults": 1
+}

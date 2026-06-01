@@ -33,6 +33,9 @@ RECORD_FILES = [
     DATA / "capture_batch_noncanonical_movement_commons_1930_2000_records.csv",
     DATA / "capture_batch_noncanonical_exact_sources_1970_2000_records.csv",
     DATA / "capture_batch_gap_noncanonical_image_text_1930_2000_records.csv",
+    DATA / "capture_batch_late_period_coverage_1970_2026_records.csv",
+    DATA / "capture_batch_protocol_item_1970_2026_records.csv",
+    DATA / "capture_batch_source_breadth_1970_2026_records.csv",
     DATA / "capture_batch_loc_deep_image_ready_1931_1970_records.csv",
 ]
 

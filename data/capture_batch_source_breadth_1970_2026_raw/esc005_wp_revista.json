@@ -1,0 +1,2573 @@
+[
+  {
+    "_embedded": {
+      "author": [
+        {
+          "_links": {
+            "collection": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/users"
+              }
+            ],
+            "self": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/users/2"
+              }
+            ]
+          },
+          "avatar_urls": {
+            "24": "https://secure.gravatar.com/avatar/4fb8a021f719f03146873787e7b1290a?s=24&d=mm&r=g",
+            "48": "https://secure.gravatar.com/avatar/4fb8a021f719f03146873787e7b1290a?s=48&d=mm&r=g",
+            "96": "https://secure.gravatar.com/avatar/4fb8a021f719f03146873787e7b1290a?s=96&d=mm&r=g"
+          },
+          "description": "",
+          "id": 2,
+          "link": "https://cedinci.org/author/cedinci/",
+          "name": "Noticias Cedinci",
+          "slug": "cedinci",
+          "url": ""
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "_links": {
+            "about": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/types/attachment"
+              }
+            ],
+            "author": [
+              {
+                "embeddable": true,
+                "href": "https://cedinci.org/wp-json/wp/v2/users/1"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/media"
+              }
+            ],
+            "replies": [
+              {
+                "embeddable": true,
+                "href": "https://cedinci.org/wp-json/wp/v2/comments?post=6854"
+              }
+            ],
+            "self": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/media/6854"
+              }
+            ]
+          },
+          "alt_text": "",
+          "author": 1,
+          "caption": {
+            "rendered": ""
+          },
+          "date": "2026-05-27T14:05:48",
+          "featured_media": 0,
+          "id": 6854,
+          "link": "https://cedinci.org/muestra-jpg/",
+          "media_details": {
+            "file": "2026/05/muestra.jpg.jpeg",
+            "filesize": 476172,
+            "height": 1280,
+            "image_meta": {
+              "aperture": "0",
+              "camera": "",
+              "caption": "",
+              "copyright": "",
+              "created_timestamp": "0",
+              "credit": "",
+              "focal_length": "0",
+              "iso": "0",
+              "keywords": [],
+              "orientation": "1",
+              "shutter_speed": "0",
+              "title": ""
+            },
+            "sizes": {
+              "full": {
+                "file": "muestra.jpg.jpeg",
+                "height": 1280,
+                "mime_type": "image/jpeg",
+                "source_url": "https://cedinci.org/wp-content/uploads/2026/05/muestra.jpg.jpeg",
+                "width": 1024
+              },
+              "large": {
+                "file": "muestra.jpg-819x1024.jpeg",
+                "filesize": 116533,
+                "height": 1024,
+                "mime_type": "image/jpeg",
+                "source_url": "https://cedinci.org/wp-content/uploads/2026/05/muestra.jpg-819x1024.jpeg",
+                "width": 819
+              },
+              "medium": {
+                "file": "muestra.jpg-240x300.jpeg",
+                "filesize": 14015,
+                "height": 300,
+                "mime_type": "image/jpeg",
+                "source_url": "https://cedinci.org/wp-content/uploads/2026/05/muestra.jpg-240x300.jpeg",
+                "width": 240
+              },
+              "medium_large": {
+                "file": "muestra.jpg-768x960.jpeg",
+                "filesize": 102671,
+                "height": 960,
+                "mime_type": "image/jpeg",
+                "source_url": "https://cedinci.org/wp-content/uploads/2026/05/muestra.jpg-768x960.jpeg",
+                "width": 768
+              },
+              "post-thumbnail": {
+                "file": "muestra.jpg-168x210.jpeg",
+                "filesize": 8156,
+                "height": 210,
+                "mime_type": "image/jpeg",
+                "source_url": "https://cedinci.org/wp-content/uploads/2026/05/muestra.jpg-168x210.jpeg",
+                "width": 168
+              },
+              "roseta-featured": {
+                "file": "muestra.jpg-484x210.jpeg",
+                "filesize": 11462,
+                "height": 210,
+                "mime_type": "image/jpeg",
+                "source_url": "https://cedinci.org/wp-content/uploads/2026/05/muestra.jpg-484x210.jpeg",
+                "width": 484
+              },
+              "roseta-featured-half": {
+                "file": "muestra.jpg-800x210.jpeg",
+                "filesize": 17867,
+                "height": 210,
+                "mime_type": "image/jpeg",
+                "source_url": "https://cedinci.org/wp-content/uploads/2026/05/muestra.jpg-800x210.jpeg",
+                "width": 800
+              },
+              "roseta-featured-lp": {
+                "file": "muestra.jpg-640x315.jpeg",
+                "filesize": 21950,
+                "height": 315,
+                "mime_type": "image/jpeg",
+                "source_url": "https://cedinci.org/wp-content/uploads/2026/05/muestra.jpg-640x315.jpeg",
+                "width": 640
+              },
+              "roseta-featured-third": {
+                "file": "muestra.jpg-512x210.jpeg",
+                "filesize": 12328,
+                "height": 210,
+                "mime_type": "image/jpeg",
+                "source_url": "https://cedinci.org/wp-content/uploads/2026/05/muestra.jpg-512x210.jpeg",
+                "width": 512
+              },
+              "roseta-lpbox-1": {
+                "file": "muestra.jpg-640x350.jpeg",
+                "filesize": 33426,
+                "height": 350,
+                "mime_type": "image/jpeg",
+                "source_url": "https://cedinci.org/wp-content/uploads/2026/05/muestra.jpg-640x350.jpeg",
+                "width": 640
+              },
+              "roseta-lpbox-2": {
+                "file": "muestra.jpg-480x400.jpeg",
+                "filesize": 30592,
+                "height": 400,
+                "mime_type": "image/jpeg",
+                "source_url": "https://cedinci.org/wp-content/uploads/2026/05/muestra.jpg-480x400.jpeg",
+                "width": 480
+              },
+              "thumbnail": {
+                "file": "muestra.jpg-150x150.jpeg",
+                "filesize": 6076,
+                "height": 150,
+                "mime_type": "image/jpeg",
+                "source_url": "https://cedinci.org/wp-content/uploads/2026/05/muestra.jpg-150x150.jpeg",
+                "width": 150
+              }
+            },
+            "width": 1024
+          },
+          "media_type": "image",
+          "mime_type": "image/jpeg",
+          "slug": "muestra-jpg",
+          "source_url": "https://cedinci.org/wp-content/uploads/2026/05/muestra.jpg.jpeg",
+          "title": {
+            "rendered": "muestra.jpg"
+          },
+          "type": "attachment"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/1"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=1"
+                }
+              ]
+            },
+            "id": 1,
+            "link": "https://cedinci.org/category/sin-categoria/",
+            "name": "Sin categoría",
+            "slug": "sin-categoria",
+            "taxonomy": "category"
+          }
+        ],
+        [],
+        []
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/users/2"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/posts"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/posts/6852/revisions/6855",
+          "id": 6855
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/comments?post=6852"
+        }
+      ],
+      "self": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/posts/6852"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 1,
+          "href": "https://cedinci.org/wp-json/wp/v2/posts/6852/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/media?parent=6852"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/media/6854"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/categories?post=6852",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/tags?post=6852",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/table_tags?post=6852",
+          "taxonomy": "table_tags"
+        }
+      ]
+    },
+    "author": 2,
+    "categories": [
+      1
+    ],
+    "comment_status": "open",
+    "content": {
+      "protected": false,
+      "rendered": "\n<p class=\"has-text-align-right\">… <em>que febril la mirada</em>.</p>\n\n\n\n<p class=\"has-text-align-right\">Alfredo Le Pera, “Volver”</p>\n\n\n\n<p class=\"has-text-align-right\"></p>\n\n\n\n<p></p>\n\n\n\n<p>El medio siglo que nos distancia del golpe de estado de 1976 y los 60 años del golpe de 1966 no atenúan la mirada febril sobre aquellas coyunturas. Coyunturas políticas, momentos en que los cambios en las relaciones de fuerzassociales afectaban el conjunto de la ecuación política. Coyunturas en las que el estado de excepción operaba de modo cambiante, interrumpido o creciente hasta que golpe militar instauró la forma dictatorial en el Estado. La presente muestra nos introduce en todo ello a partir de una serie de documentos que fueron publicados, en los pasos previos a las asonadas militares, por las izquierdas argentinas. Desde la izquierda tradicional se editaba <strong>Nuestra Palabra</strong>, la prensa del Partido Comunista Argentino (PCA), y el vocero socialista<strong> La Vanguardia</strong> mientras que la nueva izquierda se configuraba en <strong>Socialismo de Vanguardia</strong>, de un desprendimiento de la izquierda socialista, <strong>La Verdad</strong>, órgano del trotskista e indoamericanista Partido Revolucionario de los Trabajadores (PRT), y <strong>No Transar</strong>, de los maoístas de Vanguardia Comunista (VC). El peronismo, proscripto desde el golpe de Estado de 1955, ingresa por una serie de folletos y panfletos de los sectores combativos que asociaron sus ideas, ideólogos y militantes al lenguaje irradiado por la Revolución cubana.</p>\n\n\n\n<p>El desafío de los sesenta fue el desempate de la confrontación social. En 1966 la cúpula eclesiástica, la sindical y la empresarial acompañaron el golpe de Estado del general Onganía mientras que Perón llamó a “desensillar hasta que aclare”. En las revistas culturales de la muestra se denuncia la barbarie de ese golpe, tanto la publicación existencialista <strong>El Escarabajo de Oro </strong>y<strong> La Rosa Blindada</strong> -queexaltaron el nexo comprometido o el revolucionario entre política y cultura latinoamericanas- como <strong>Cristianismo y Revolución &#8211;</strong>ligada al Movimiento de Sacerdotes por el Tercer Mundo y al peronismo combativo de la CGT de los Argentinos.</p>\n\n\n\n<p>Las Fuerzas Armadas en el poder ampliaron la trama de instrumentos legales de excepción y sumaron prácticas clandestinas de secuestro y tortura para reprimir primero a las protestas sociales iniciadas en 1969 con el Cordobazo y luego al creciente accionar de Montoneros y del Ejército Revolucionario del Pueblo (ERP), las principales organizaciones armadas argentinas. Sin embargo, en 1973 los militares debieron conceder las primeras elecciones democráticas en las que Perón y su movimiento pudieron participar y triunfaron. Ya en el poder, Perón y María Estela Martínez, conocida como “Isabel”, sellaron alianza con los dirigentes sindicales tradicionales de la CGT, estabilizaron el Pacto Social propiciado por el ministro José Ber Gelbard y ampliaron el poder político del ministro ultraderechista José López Rega. Varios documentos de la muestra recuperan el rechazo de Montoneros y otras izquierdas armadas al gobierno por no concretar las promesas populares y socialistas. Es el caso de diarios de circulación masiva y legal como <strong>Noticias</strong> y <strong>El Mundo</strong> y de las revistas <strong>El Descamisado</strong>, <strong>El peronista lucha por la liberación </strong>y <strong>Militancia peronista para la liberación</strong>, todos clausurados en los primeros meses de 1974. También exponemos las denuncias previas al rol “contrarrevolucionario” del líder justicialista formuladas por <strong>El Combatiente</strong>, órgano clandestino del PRT,y por <strong>Estrella Roja</strong>, prensa del ERP.</p>\n\n\n\n<p>Perón fallecía en julio de 1974, poco antes había realizado cambios en el ordenamiento legal que constituyeron nuevas formas de estado de excepción. La adopción estatal de la figura del enemigo interno, el denominado “subversivo”, coincidió con la irrupción de la Alianza Anticomunista Argentina (AAA), responsable de amenazas y asesinatos reivindicados desde la revista <strong>El Caudillo</strong>. Revistas de agrupamientos culturales de izquierda como <strong>Crisis</strong> y <strong>Los Libros </strong>persistieron, otras como <strong>Nuevo Hombre </strong>lo intentaron pero fueron clausuradas y alguna, como <strong>Somos</strong>, página del Frente de Liberación Homosexual, dejaron de circular.</p>\n\n\n\n<p>Desde fines de 1974 las izquierdas apoyaron las luchas obreras en medio de la intervención estatal a sindicatos clasistas y universidades y la persistencia del apoyo a Isabel de sectores relevantes del Partido Justicialista. Algunas corrientes de la nueva izquierda priorizaron esas luchas y tomaron distancia de las organizaciones armadas, mientras el Partido Comunista buscó la “convergencia cívico-militar” como salida ante la crisis. A fines de 1975 las crónicas y las controversias entre <strong>El Combatiente, Estrella Roja</strong> y <strong>Evita Montonera</strong> en torno a la devastadora derrota de los copamientos del cuartel de Monte Chingolo y el de Formosa, además del sangriento exterminio de la guerrilla rural en Tucumán, anticipaban el ocaso de las organizaciones armadas argentinas.</p>\n\n\n\n<p>En marzo de 1976 se producía un nuevo golpe militar. La Junta Militar encabezada por el general Videla y apoyada por la cúpula empresarial y eclesiástica, por la gran prensa y por los Estados Unidos obtuvo rápidamente un amplio reconocimiento internacional, que incluyó a la Unión Soviética.</p>\n\n\n\n<p>La instauración del terrorismo de Estado y su secuela de secuestros, torturas y desapariciones, la pasividad y la colaboración no lo fueron todo. La resistencia se articuló en torno de huelgas y boicots espontáneos, redes clandestinas de información, revistas culturales de resistencia molecular y organismos de derechos humanos en los que se destacaron las Madres de Plaza de Mayo y sus vínculos con las comunidades del exilio. Aún hoy el rol de las izquierdas en aquella coyuntura y la reversión progresiva del terrorismo estatal argentino atrae febriles miradas.</p>\n\n\n\n<p>La muestra “Coyuntura y excepción”, curada por Adrián Celentano, se inaugura el viernes 27 de marzo. Podrá verse hasta el viernes 3 de julio en la sede central del CeDInCI: Rodríguez Peña 356, CABA, de lunes a viernes de 9 a 19 hs.</p>\n\n\n\n\n\n<figure class=\"wp-block-image\"><img loading=\"lazy\" decoding=\"async\" width=\"1024\" height=\"1280\" src=\"https://cedinci.org/wp-content/uploads/2026/05/muestra.jpg.jpeg\" alt=\"\" class=\"wp-image-6854\" srcset=\"https://cedinci.org/wp-content/uploads/2026/05/muestra.jpg.jpeg 1024w, https://cedinci.org/wp-content/uploads/2026/05/muestra.jpg-240x300.jpeg 240w, https://cedinci.org/wp-content/uploads/2026/05/muestra.jpg-819x1024.jpeg 819w, https://cedinci.org/wp-content/uploads/2026/05/muestra.jpg-768x960.jpeg 768w, https://cedinci.org/wp-content/uploads/2026/05/muestra.jpg-168x210.jpeg 168w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /></figure>\n"
+    },
+    "date": "2026-05-27T14:11:51",
+    "date_gmt": "2026-05-27T17:11:51",
+    "excerpt": {
+      "protected": false,
+      "rendered": "<p>… que febril la mirada. Alfredo Le Pera, “Volver” El medio siglo que nos distancia del golpe de estado de 1976 y los 60 años del golpe de 1966 no atenúan la mirada &hellip;</p>\n"
+    },
+    "featured_media": 6854,
+    "format": "standard",
+    "guid": {
+      "rendered": "https://cedinci.org/?p=6852"
+    },
+    "id": 6852,
+    "link": "https://cedinci.org/2026/05/27/muestra-en-el-cedinci-coyuntura-y-excepcion-las-izquierdas-ante-los-golpes-de-estado-de-1966-y-1976/",
+    "meta": {
+      "footnotes": ""
+    },
+    "modified": "2026-05-27T14:18:52",
+    "modified_gmt": "2026-05-27T17:18:52",
+    "ping_status": "open",
+    "slug": "muestra-en-el-cedinci-coyuntura-y-excepcion-las-izquierdas-ante-los-golpes-de-estado-de-1966-y-1976",
+    "status": "publish",
+    "sticky": false,
+    "table_tags": [],
+    "tags": [],
+    "template": "",
+    "title": {
+      "rendered": "MUESTRA EN EL CEDINCI: &#8220;Coyuntura y excepcion. Las izquierdas ante los golpes de Estado de 1966 y 1976&#8221;"
+    },
+    "type": "post"
+  },
+  {
+    "_embedded": {
+      "author": [
+        {
+          "_links": {
+            "collection": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/users"
+              }
+            ],
+            "self": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/users/2"
+              }
+            ]
+          },
+          "avatar_urls": {
+            "24": "https://secure.gravatar.com/avatar/4fb8a021f719f03146873787e7b1290a?s=24&d=mm&r=g",
+            "48": "https://secure.gravatar.com/avatar/4fb8a021f719f03146873787e7b1290a?s=48&d=mm&r=g",
+            "96": "https://secure.gravatar.com/avatar/4fb8a021f719f03146873787e7b1290a?s=96&d=mm&r=g"
+          },
+          "description": "",
+          "id": 2,
+          "link": "https://cedinci.org/author/cedinci/",
+          "name": "Noticias Cedinci",
+          "slug": "cedinci",
+          "url": ""
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "_links": {
+            "about": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/types/attachment"
+              }
+            ],
+            "author": [
+              {
+                "embeddable": true,
+                "href": "https://cedinci.org/wp-json/wp/v2/users/2"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/media"
+              }
+            ],
+            "replies": [
+              {
+                "embeddable": true,
+                "href": "https://cedinci.org/wp-json/wp/v2/comments?post=6353"
+              }
+            ],
+            "self": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/media/6353"
+              }
+            ]
+          },
+          "alt_text": "",
+          "author": 2,
+          "caption": {
+            "rendered": ""
+          },
+          "date": "2025-04-23T09:21:35",
+          "featured_media": 0,
+          "id": 6353,
+          "link": "https://cedinci.org/2025/04/23/alerta-el-antifascismo-en-argentina-1924-1945-sus-grupos-manifiestos-publicaciones-y-graficas/fondo-antifas/",
+          "media_details": {
+            "file": "2025/04/Fondo-antifas.png",
+            "filesize": 4489,
+            "height": 628,
+            "image_meta": {
+              "aperture": "0",
+              "camera": "",
+              "caption": "",
+              "copyright": "",
+              "created_timestamp": "0",
+              "credit": "",
+              "focal_length": "0",
+              "iso": "0",
+              "keywords": [],
+              "orientation": "0",
+              "shutter_speed": "0",
+              "title": ""
+            },
+            "sizes": {
+              "full": {
+                "file": "Fondo-antifas.png",
+                "height": 628,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas.png",
+                "width": 1200
+              },
+              "large": {
+                "file": "Fondo-antifas-1024x536.png",
+                "filesize": 3462,
+                "height": 536,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-1024x536.png",
+                "width": 1024
+              },
+              "medium": {
+                "file": "Fondo-antifas-300x157.png",
+                "filesize": 623,
+                "height": 157,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-300x157.png",
+                "width": 300
+              },
+              "medium_large": {
+                "file": "Fondo-antifas-768x402.png",
+                "filesize": 2171,
+                "height": 402,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-768x402.png",
+                "width": 768
+              },
+              "post-thumbnail": {
+                "file": "Fondo-antifas-401x210.png",
+                "filesize": 848,
+                "height": 210,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-401x210.png",
+                "width": 401
+              },
+              "roseta-featured": {
+                "file": "Fondo-antifas-484x210.png",
+                "filesize": 949,
+                "height": 210,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-484x210.png",
+                "width": 484
+              },
+              "roseta-featured-half": {
+                "file": "Fondo-antifas-800x210.png",
+                "filesize": 1213,
+                "height": 210,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-800x210.png",
+                "width": 800
+              },
+              "roseta-featured-lp": {
+                "file": "Fondo-antifas-640x315.png",
+                "filesize": 1568,
+                "height": 315,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-640x315.png",
+                "width": 640
+              },
+              "roseta-featured-third": {
+                "file": "Fondo-antifas-512x210.png",
+                "filesize": 977,
+                "height": 210,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-512x210.png",
+                "width": 512
+              },
+              "roseta-lpbox-1": {
+                "file": "Fondo-antifas-640x350.png",
+                "filesize": 1730,
+                "height": 350,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-640x350.png",
+                "width": 640
+              },
+              "roseta-lpbox-2": {
+                "file": "Fondo-antifas-480x400.png",
+                "filesize": 1661,
+                "height": 400,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-480x400.png",
+                "width": 480
+              },
+              "thumbnail": {
+                "file": "Fondo-antifas-150x150.png",
+                "filesize": 489,
+                "height": 150,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-150x150.png",
+                "width": 150
+              }
+            },
+            "width": 1200
+          },
+          "media_type": "image",
+          "mime_type": "image/png",
+          "slug": "fondo-antifas",
+          "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas.png",
+          "title": {
+            "rendered": "Fondo-antifas"
+          },
+          "type": "attachment"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/11"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=11"
+                }
+              ]
+            },
+            "id": 11,
+            "link": "https://cedinci.org/category/americalee/",
+            "name": "AméricaLEE",
+            "slug": "americalee",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/13"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=13"
+                }
+              ]
+            },
+            "id": 13,
+            "link": "https://cedinci.org/category/ediciones-del-cedinci/",
+            "name": "Ediciones del CeDInCI",
+            "slug": "ediciones-del-cedinci",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/35"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=35"
+                }
+              ]
+            },
+            "id": 35,
+            "link": "https://cedinci.org/category/el-cedinci-en-noticias/",
+            "name": "El CeDInCI en noticias",
+            "slug": "el-cedinci-en-noticias",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/44"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=44"
+                }
+              ]
+            },
+            "id": 44,
+            "link": "https://cedinci.org/category/recursos-digitales/",
+            "name": "Recursos digitales",
+            "slug": "recursos-digitales",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/46"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=46"
+                }
+              ]
+            },
+            "id": 46,
+            "link": "https://cedinci.org/category/revistas/",
+            "name": "Revistas",
+            "slug": "revistas",
+            "taxonomy": "category"
+          }
+        ],
+        [],
+        []
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/users/2"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/posts"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/posts/6396/revisions/6584",
+          "id": 6584
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/comments?post=6396"
+        }
+      ],
+      "self": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/posts/6396"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 179,
+          "href": "https://cedinci.org/wp-json/wp/v2/posts/6396/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/media?parent=6396"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/media/6353"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/categories?post=6396",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/tags?post=6396",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/table_tags?post=6396",
+          "taxonomy": "table_tags"
+        }
+      ]
+    },
+    "author": 2,
+    "categories": [
+      11,
+      13,
+      35,
+      44,
+      46
+    ],
+    "comment_status": "closed",
+    "content": {
+      "protected": false,
+      "rendered": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"6396\" class=\"elementor elementor-6396\">\n\t\t\t\t\t\t\t\t\t<section class=\"elementor-section elementor-top-section elementor-element elementor-element-7421e7da elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"7421e7da\" data-element_type=\"section\">\n\t\t\t\t\t\t<div class=\"elementor-container elementor-column-gap-default\">\n\t\t\t\t\t<div class=\"elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3d65d9bf\" data-id=\"3d65d9bf\" data-element_type=\"column\">\n\t\t\t<div class=\"elementor-widget-wrap elementor-element-populated\">\n\t\t\t\t\t\t\t\t<div class=\"elementor-element elementor-element-129ce343 elementor-widget elementor-widget-text-editor\" data-id=\"129ce343\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t\t\t<p></p>\n<h4 style=\"text-align: center;\"><strong>AméricaLee, el portal de revistas latinoamericanas del CeDInCI se relanza ahora con enlaces a otros portales, mapa de geolocalización, línea de tiempo, búsqueda avanzada y más y mejores utilidades y recursos.</strong></h4>\n<p></p>\n<p></p>\n<p> </p>\n<p style=\"text-align: left;\"><strong>AméricaLee</strong> cumple una década y lo celebra con un nuevo sitio, renovado y moderno. Su nombre es un homenaje a un proyecto editorial de cultura anarquista de mediados del siglo XX, vinculado a los nombres de América Scarfó y  Domingo Landolfi, que había nacido del mandato del primer compañero de América, Severino Di Giovanni, quien le decía en tono imperativo cuando era apenas una jovencita: “América, lée”, “América instrúyete”. Para nosotros, <strong>AméricaLee</strong> es “América leyendo”, es el continente en estado de lectura.</p>\n<p><a href=\"https://americalee.cedinci.org/s/americalee/page/bienvenides\" target=\"_blank\" rel=\"noopener\"><img loading=\"lazy\" decoding=\"async\" src=\"https://cedinci.org/wp-content/uploads/2025/07/AL_placa01_front-gacetilla2.jpg\" alt=\"\" width=\"900\" height=\"785\" /></a></p>\n<p></p>\n<p></p>\n<p>Cuando en 2015 iniciamos el proyecto de <strong>AméricaLee</strong> como un portal digital de acceso libre a las más diversas colecciones de publicaciones históricas, decíamos: “America Latina es un continente de revistas”. Diez años después, relanzamos este espacio de lectura, de encuentro con la cultura, de redes latinoamericanas, que repone en cierta forma la voluntad emancipatoria mediante el acceso a las novedades culturales de una época en nuestro continente. Es un sitio en movimiento, que crece día a día ofreciendo acceso a cada vez más revistas y periódicos.</p>\n<p>El nuevo portal, bajo la dirección de Horacio Tarcus y la coordinación de Karina Jannello, trae nuevas funcionalidades:</p>\n<ul>\n<li>Hasta ayer un portal, hoy <strong>AméricaLee </strong>se transforma en un <em>portal de portales</em>. Esto quiere decir que ofrece ahora, no sólo las colecciones de revistas y periódicos disponibles en el CeDInCI, sino además, acceso a otras hemerotecas digitales localizadas en las más diversas latitudes.<img loading=\"lazy\" decoding=\"async\" class=\"size-medium wp-image-6430 alignright\" src=\"https://cedinci.org/wp-content/uploads/2025/07/NOSOTROS-180x300.png\" alt=\"\" width=\"180\" height=\"300\" srcset=\"https://cedinci.org/wp-content/uploads/2025/07/NOSOTROS-180x300.png 180w, https://cedinci.org/wp-content/uploads/2025/07/NOSOTROS-126x210.png 126w, https://cedinci.org/wp-content/uploads/2025/07/NOSOTROS.png 374w\" sizes=\"(max-width: 180px) 100vw, 180px\" /><br />Esta novedad es el resultado de un intercambio colaborativo con sitios amigos como Anáforas de Montevideo o el Instituto Iberoamericano de Berlín (IAI). Con enlaces directos a estos y otros sitios, sumamos títulos indispensables para la identidad del mapa revisteril latinoamericano. Desde <strong>AméricaLee</strong> hoy se puede acceder a publicaciones emblemáticas de la cultura uruguaya como <a href=\"https://americalee.cedinci.org/s/americalee/item/3830\"><strong>Clima</strong></a>, <a href=\"https://americalee.cedinci.org/s/americalee/item/3839\"><strong>Alfar</strong></a> o <strong><a href=\"https://americalee.cedinci.org/s/americalee/item/3842\" target=\"_blank\" rel=\"noopener\">Marcha</a></strong>, digitalizadas por Anáforas, o la revista argentina <a href=\"https://americalee.cedinci.org/s/americalee/item/5914\"><strong>Nosotros</strong></a>, disponible en el sitio del IAI de Berlín. <strong>AméricaLee</strong> agrega además sus ya tradicionales fichas hemerográficas exhaustivas, estudios e índices. El objetivo es favorecer el acceso en un mismo sitio al acervo, hasta hoy disperso y fragmentado, de<span style=\"font-family: Roboto, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;\"> la constelación de publicaciones latinoamericanas</span>. Esta es una faceta aún en desarrollo, que iremos alimentando cotidianamente.\n<p><img loading=\"lazy\" decoding=\"async\" class=\"alignleft wp-image-6408 size-thumbnail\" src=\"https://cedinci.org/wp-content/uploads/2025/07/AL_placa02_mapa-gacetilla-150x150.jpg\" alt=\"\" width=\"150\" height=\"150\" /></p>\n</li>\n<li>Un <em>mapa de geolocalización</em> en el que se visualizan las ciudades en las que nacieron y se desplegaron las distintas publicaciones brinda una representación espacial de la cultura revisteril latinoamericana a través de sus “ciudades letradas”.\n<p><img loading=\"lazy\" decoding=\"async\" class=\"alignright wp-image-6409 size-thumbnail\" src=\"https://cedinci.org/wp-content/uploads/2025/07/AmericaLee_linea-gacetilla-150x150.jpeg\" alt=\"\" width=\"150\" height=\"150\" /></p>\n</li>\n<li>La <em>línea de tiempo</em> organiza cronológicamente las colecciones y permite lecturas sincrónicas y diacrónicas.</li>\n<li>La <i>Interfaz de</i> <em>Búsqueda avanzada</em> permite combinar datos como título, temas, nombres y décadas.\n<p><img loading=\"lazy\" decoding=\"async\" class=\"alignleft\" src=\"https://cedinci.org/wp-content/uploads/2025/07/Colecciones-gacetilla2-150x150.jpg\" alt=\"\" width=\"150\" height=\"150\" /></p>\n</li>\n<li>Las fichas hemerográficas exhaustivas agregaron “recursos relacionados”, esto es, acceso a materiales de archivo vinculados a esa publicación (correspondencia, afiches, etc.), entrevistas a sus editores, notas y estudios de contexto.</li>\n<li>La <em>E</em><em>structuración de datos</em> en estándares <em>dublin core</em> favorece la recuperación de información y permite una navegación extendida.</li>\n<li>La interfaz de <em>Estudios sobre revistas </em>fue actualizada según la producción de la investigación en el campo.</li>\n<li>La visualización de los objetos digitales también ha cambiado, adoptando un lector de PDFs con más opciones.</li>\n<li>El sitio ofrece también un <a href=\"https://www.youtube.com/watch?v=cgqZBYSCOqE\"><em>Tutorial de uso</em></a> en la interfaz principal y una ventana de &#8220;Preguntas frecuentes&#8221;.</li>\n</ul>\n<p><img loading=\"lazy\" decoding=\"async\" class=\"size-medium wp-image-6410 alignright\" src=\"https://cedinci.org/wp-content/uploads/2025/07/NUESTRA-CAUSA-207x300.png\" alt=\"\" width=\"207\" height=\"300\" srcset=\"https://cedinci.org/wp-content/uploads/2025/07/NUESTRA-CAUSA-207x300.png 207w, https://cedinci.org/wp-content/uploads/2025/07/NUESTRA-CAUSA-145x210.png 145w, https://cedinci.org/wp-content/uploads/2025/07/NUESTRA-CAUSA.png 464w\" sizes=\"(max-width: 207px) 100vw, 207px\" /></p>\n<p> </p>\n<p>Por último, para celebrar los 10 años de <strong>AméricaLee</strong>, se incorporaron cuatro publicaciones argentinas inhallables hasta hoy: los periódicos antifascistas <a href=\"https://americalee.cedinci.org/s/americalee/item/288\"><strong>Argentina Libre</strong></a>, <a href=\"https://americalee.cedinci.org/s/americalee/item/289\"><strong>Antinazi</strong></a> y <a href=\"https://americalee.cedinci.org/s/americalee/item/3474\"><strong>Ética</strong></a> (1940-1948) y la revista feminista <a href=\"https://americalee.cedinci.org/s/americalee/item/5819\"><strong>Nuestra Causa</strong> (1919-1923)</a>, fundada por Alicia Moreau de Justo. </p>\n<p><strong>AméricaLee</strong> promueve además la difusión de la cultura latinoamericana con <strong><i>políticas de acceso abierto y gratuito</i></strong> bajo licencias <a href=\"https://creativecommons.org.ar/licencias/\"><em>Creative Commons</em></a>  de atribución no comercial, compartir igual.</p>\n<p> </p>\n<p><img loading=\"lazy\" decoding=\"async\" class=\" wp-image-570 alignleft\" src=\"https://cedinci.org/wp-content/uploads/2019/06/logo-mecenazgo-300x195.png\" alt=\"\" width=\"92\" height=\"60\" srcset=\"https://cedinci.org/wp-content/uploads/2019/06/logo-mecenazgo-300x195.png 300w, https://cedinci.org/wp-content/uploads/2019/06/logo-mecenazgo-324x210.png 324w, https://cedinci.org/wp-content/uploads/2019/06/logo-mecenazgo.png 333w\" sizes=\"(max-width: 92px) 100vw, 92px\" />El relanzamiento de <strong>AméricaLee</strong> fue posible gracias al <a href=\"https://buenosaires.gob.ar/cultura/impulso-cultural/mecenazgo\">Programa Mecenazgo de la Ciudad Autónoma de Buenos Aires</a> y al auspicio de la Fundación Banco Itaú, que confiaron una vez más en el CeDInCI.</p>\n<p> </p>\n<p style=\"text-align: left;\">Les invitamos a navegar el portal y esperamos que lo disfruten!</p>\n<p style=\"text-align: right;\">17 de Julio, 2025.</p>\n<p style=\"text-align: right;\"> </p>\n<p></p>\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t</section>\n\t\t\t\t\t\t\t</div>\n\t\t"
+    },
+    "date": "2025-07-18T15:43:12",
+    "date_gmt": "2025-07-18T18:43:12",
+    "excerpt": {
+      "protected": false,
+      "rendered": "<p>AméricaLee, el portal de revistas latinoamericanas del CeDInCI se relanza ahora con enlaces a otros portales, mapa de geolocalización, línea de tiempo, búsqueda avanzada y más y mejores utilidades y recursos.   AméricaLee cumple &hellip;</p>\n"
+    },
+    "featured_media": 6353,
+    "format": "standard",
+    "guid": {
+      "rendered": "https://cedinci.org/?p=6396"
+    },
+    "id": 6396,
+    "link": "https://cedinci.org/2025/07/18/relanzamos-americalee-con-nuevas-funcionalidades-y-mas-revistas/",
+    "meta": {
+      "footnotes": ""
+    },
+    "modified": "2025-07-19T19:20:29",
+    "modified_gmt": "2025-07-19T22:20:29",
+    "ping_status": "closed",
+    "slug": "relanzamos-americalee-con-nuevas-funcionalidades-y-mas-revistas",
+    "status": "publish",
+    "sticky": false,
+    "table_tags": [],
+    "tags": [],
+    "template": "",
+    "title": {
+      "rendered": "¡Relanzamos AméricaLee con nuevas funcionalidades y más revistas!"
+    },
+    "type": "post"
+  },
+  {
+    "_embedded": {
+      "author": [
+        {
+          "_links": {
+            "collection": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/users"
+              }
+            ],
+            "self": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/users/2"
+              }
+            ]
+          },
+          "avatar_urls": {
+            "24": "https://secure.gravatar.com/avatar/4fb8a021f719f03146873787e7b1290a?s=24&d=mm&r=g",
+            "48": "https://secure.gravatar.com/avatar/4fb8a021f719f03146873787e7b1290a?s=48&d=mm&r=g",
+            "96": "https://secure.gravatar.com/avatar/4fb8a021f719f03146873787e7b1290a?s=96&d=mm&r=g"
+          },
+          "description": "",
+          "id": 2,
+          "link": "https://cedinci.org/author/cedinci/",
+          "name": "Noticias Cedinci",
+          "slug": "cedinci",
+          "url": ""
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "_links": {
+            "about": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/types/attachment"
+              }
+            ],
+            "author": [
+              {
+                "embeddable": true,
+                "href": "https://cedinci.org/wp-json/wp/v2/users/2"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/media"
+              }
+            ],
+            "replies": [
+              {
+                "embeddable": true,
+                "href": "https://cedinci.org/wp-json/wp/v2/comments?post=6353"
+              }
+            ],
+            "self": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/media/6353"
+              }
+            ]
+          },
+          "alt_text": "",
+          "author": 2,
+          "caption": {
+            "rendered": ""
+          },
+          "date": "2025-04-23T09:21:35",
+          "featured_media": 0,
+          "id": 6353,
+          "link": "https://cedinci.org/2025/04/23/alerta-el-antifascismo-en-argentina-1924-1945-sus-grupos-manifiestos-publicaciones-y-graficas/fondo-antifas/",
+          "media_details": {
+            "file": "2025/04/Fondo-antifas.png",
+            "filesize": 4489,
+            "height": 628,
+            "image_meta": {
+              "aperture": "0",
+              "camera": "",
+              "caption": "",
+              "copyright": "",
+              "created_timestamp": "0",
+              "credit": "",
+              "focal_length": "0",
+              "iso": "0",
+              "keywords": [],
+              "orientation": "0",
+              "shutter_speed": "0",
+              "title": ""
+            },
+            "sizes": {
+              "full": {
+                "file": "Fondo-antifas.png",
+                "height": 628,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas.png",
+                "width": 1200
+              },
+              "large": {
+                "file": "Fondo-antifas-1024x536.png",
+                "filesize": 3462,
+                "height": 536,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-1024x536.png",
+                "width": 1024
+              },
+              "medium": {
+                "file": "Fondo-antifas-300x157.png",
+                "filesize": 623,
+                "height": 157,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-300x157.png",
+                "width": 300
+              },
+              "medium_large": {
+                "file": "Fondo-antifas-768x402.png",
+                "filesize": 2171,
+                "height": 402,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-768x402.png",
+                "width": 768
+              },
+              "post-thumbnail": {
+                "file": "Fondo-antifas-401x210.png",
+                "filesize": 848,
+                "height": 210,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-401x210.png",
+                "width": 401
+              },
+              "roseta-featured": {
+                "file": "Fondo-antifas-484x210.png",
+                "filesize": 949,
+                "height": 210,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-484x210.png",
+                "width": 484
+              },
+              "roseta-featured-half": {
+                "file": "Fondo-antifas-800x210.png",
+                "filesize": 1213,
+                "height": 210,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-800x210.png",
+                "width": 800
+              },
+              "roseta-featured-lp": {
+                "file": "Fondo-antifas-640x315.png",
+                "filesize": 1568,
+                "height": 315,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-640x315.png",
+                "width": 640
+              },
+              "roseta-featured-third": {
+                "file": "Fondo-antifas-512x210.png",
+                "filesize": 977,
+                "height": 210,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-512x210.png",
+                "width": 512
+              },
+              "roseta-lpbox-1": {
+                "file": "Fondo-antifas-640x350.png",
+                "filesize": 1730,
+                "height": 350,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-640x350.png",
+                "width": 640
+              },
+              "roseta-lpbox-2": {
+                "file": "Fondo-antifas-480x400.png",
+                "filesize": 1661,
+                "height": 400,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-480x400.png",
+                "width": 480
+              },
+              "thumbnail": {
+                "file": "Fondo-antifas-150x150.png",
+                "filesize": 489,
+                "height": 150,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas-150x150.png",
+                "width": 150
+              }
+            },
+            "width": 1200
+          },
+          "media_type": "image",
+          "mime_type": "image/png",
+          "slug": "fondo-antifas",
+          "source_url": "https://cedinci.org/wp-content/uploads/2025/04/Fondo-antifas.png",
+          "title": {
+            "rendered": "Fondo-antifas"
+          },
+          "type": "attachment"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/37"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=37"
+                }
+              ]
+            },
+            "id": 37,
+            "link": "https://cedinci.org/category/boletin-de-noticias/",
+            "name": "Boletín de Noticias",
+            "slug": "boletin-de-noticias",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/54"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=54"
+                }
+              ]
+            },
+            "id": 54,
+            "link": "https://cedinci.org/category/cedinci/",
+            "name": "cedinci",
+            "slug": "cedinci",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/35"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=35"
+                }
+              ]
+            },
+            "id": 35,
+            "link": "https://cedinci.org/category/el-cedinci-en-noticias/",
+            "name": "El CeDInCI en noticias",
+            "slug": "el-cedinci-en-noticias",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/43"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=43"
+                }
+              ]
+            },
+            "id": 43,
+            "link": "https://cedinci.org/category/exhibiciones/",
+            "name": "Exhibiciones",
+            "slug": "exhibiciones",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/36"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=36"
+                }
+              ]
+            },
+            "id": 36,
+            "link": "https://cedinci.org/category/proximas-actividades/",
+            "name": "Próximas Actividades",
+            "slug": "proximas-actividades",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/46"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=46"
+                }
+              ]
+            },
+            "id": 46,
+            "link": "https://cedinci.org/category/revistas/",
+            "name": "Revistas",
+            "slug": "revistas",
+            "taxonomy": "category"
+          }
+        ],
+        [],
+        []
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/users/2"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/posts"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/posts/6351/revisions/6365",
+          "id": 6365
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/comments?post=6351"
+        }
+      ],
+      "self": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/posts/6351"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 11,
+          "href": "https://cedinci.org/wp-json/wp/v2/posts/6351/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/media?parent=6351"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/media/6353"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/categories?post=6351",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/tags?post=6351",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/table_tags?post=6351",
+          "taxonomy": "table_tags"
+        }
+      ]
+    },
+    "author": 2,
+    "categories": [
+      37,
+      54,
+      35,
+      43,
+      36,
+      46
+    ],
+    "comment_status": "closed",
+    "content": {
+      "protected": false,
+      "rendered": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"6351\" class=\"elementor elementor-6351\">\n\t\t\t\t\t\t\t\t\t<section class=\"elementor-section elementor-top-section elementor-element elementor-element-105642ab elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"105642ab\" data-element_type=\"section\">\n\t\t\t\t\t\t<div class=\"elementor-container elementor-column-gap-default\">\n\t\t\t\t\t<div class=\"elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7fee78b6\" data-id=\"7fee78b6\" data-element_type=\"column\">\n\t\t\t<div class=\"elementor-widget-wrap elementor-element-populated\">\n\t\t\t\t\t\t\t\t<div class=\"elementor-element elementor-element-78fa4e87 elementor-widget elementor-widget-text-editor\" data-id=\"78fa4e87\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t\t\t<p></p>\n<p>El miércoles 23 de abril a las 19 hs. se inaugura la muestra <strong><em>ALERTA! El antifascismo en Argentina 1924-1945. Sus grupos, manifiestos, publicaciones y gráficas</em></strong> con materiales del acervo del CeDInCI.</p>\n<p></p>\n<p>Desde mediados de los años ’20 grupos de intelectuales anarquistas, socialistas, comunistas y trotskistas impulsaron incipientes redes y publicaron manifiestos, artículos, afiches, folletos y libros para señalar <img loading=\"lazy\" decoding=\"async\" class=\"alignright wp-image-6356\" src=\"https://cedinci.org/wp-content/uploads/2025/04/Alerta-Flyer-819x1024.png\" alt=\"\" width=\"400\" height=\"500\" srcset=\"https://cedinci.org/wp-content/uploads/2025/04/Alerta-Flyer-819x1024.png 819w, https://cedinci.org/wp-content/uploads/2025/04/Alerta-Flyer-240x300.png 240w, https://cedinci.org/wp-content/uploads/2025/04/Alerta-Flyer-768x960.png 768w, https://cedinci.org/wp-content/uploads/2025/04/Alerta-Flyer-1229x1536.png 1229w, https://cedinci.org/wp-content/uploads/2025/04/Alerta-Flyer-1638x2048.png 1638w, https://cedinci.org/wp-content/uploads/2025/04/Alerta-Flyer-168x210.png 168w\" sizes=\"(max-width: 400px) 100vw, 400px\" /> la amenaza fascista y desenmascarar a sus adherentes locales. Los intelectuales antifascistas se ligaron sobre todo a sus pares de la revista parisina Monde. Definieron un programa centrado en la defensa de la ciencia y la cultura ilustrada frente al racismo y el irracionalismo, la preservación de las libertades democráticas frente a las dictaduras y el autoritarismo, y la denuncia del guerrerismo imperialista. Llevaron y trajeron la propaganda antifascista de las comunidades italiana, española, francesa y alemana. A su vez, promovieron la acogida en nuestro país de los antifascistas expulsados por los gobiernos europeos como el artista plástico alemán Clement Moreau y el filósofo italiano Rodolfo Mondolfo.</p>\n<p></p>\n<p>Gallo negro, gallo rojo. Para ridiculizar la figura del dictador y representar la masacre fascista europea, los libros y folletos editados por Imán, Alerta y Actualidad y revistas culturales como Contra-Fascismo, Nervio, Claridad, Unidad, Antinazi y Nueva Gaceta contaron con ilustraciones, grabados y viñetas de Moreau y los de los argentinos Tristán y Kantor. Con el arte de Pompeyo Audivert, Antonio Berni, Demetrio Urruchúa, Cecilia Marcovich y Víctor Rebuffo, entre otros, se montaron muestras colectivas de grabados, pinturas y esculturas que renovaron la gráfica y la iconografía de izquierdas. Allí la potencia obrera y popular confluye tanto con el activismo antifascista como con el compromiso del artista. La prensa antifascista circuló en peñas, librerías, bibliotecas, sindicatos y aulas universitarias. Las revistas orales en los clubes y en los barrios, los actos públicos en las plazas, la red de mujeres antifascistas y los congresos estudiantiles ofrecieron nuevas plataformas para la circulación de estos impresos.</p>\n<p></p>\n<p>La muestra, con entrada libre y gratuita se presenta en la Sala Clément Moreau del CeDInCI, en Rodríguez Peña 356, Ciudad Autónoma de Buenos Aires y podrá visitarse hasta el 25 de julio 2025.</p>\n<p></p>\n<p><strong>Curaduría: Emiliano Álvarez / Texto: Adrián Celentano.</strong><br /><strong>Inauguración: miércoles 23 de abril, 19 hs. </strong><br /><strong>Se puede visitar hasta el 25 de julio.</strong><br /><strong>Sala Clément Moreau, CeDInCI</strong><br /><strong>Rodríguez Peña 356, CABA</strong></p>\n<p></p>\n<p></p>\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t</section>\n\t\t\t\t\t\t\t</div>\n\t\t"
+    },
+    "date": "2025-04-23T09:35:20",
+    "date_gmt": "2025-04-23T12:35:20",
+    "excerpt": {
+      "protected": false,
+      "rendered": "<p>El miércoles 23 de abril a las 19 hs. se inaugura la muestra ALERTA! El antifascismo en Argentina 1924-1945. Sus grupos, manifiestos, publicaciones y gráficas con materiales del acervo del CeDInCI. Desde mediados &hellip;</p>\n"
+    },
+    "featured_media": 6353,
+    "format": "standard",
+    "guid": {
+      "rendered": "https://cedinci.org/?p=6351"
+    },
+    "id": 6351,
+    "link": "https://cedinci.org/2025/04/23/alerta-el-antifascismo-en-argentina-1924-1945-sus-grupos-manifiestos-publicaciones-y-graficas/",
+    "meta": {
+      "footnotes": ""
+    },
+    "modified": "2025-04-23T09:36:32",
+    "modified_gmt": "2025-04-23T12:36:32",
+    "ping_status": "closed",
+    "slug": "alerta-el-antifascismo-en-argentina-1924-1945-sus-grupos-manifiestos-publicaciones-y-graficas",
+    "status": "publish",
+    "sticky": false,
+    "table_tags": [],
+    "tags": [],
+    "template": "",
+    "title": {
+      "rendered": "ALERTA! El antifascismo en Argentina 1924-1945. Sus grupos, manifiestos, publicaciones y gráficas"
+    },
+    "type": "post"
+  },
+  {
+    "_embedded": {
+      "author": [
+        {
+          "_links": {
+            "collection": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/users"
+              }
+            ],
+            "self": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/users/2"
+              }
+            ]
+          },
+          "avatar_urls": {
+            "24": "https://secure.gravatar.com/avatar/4fb8a021f719f03146873787e7b1290a?s=24&d=mm&r=g",
+            "48": "https://secure.gravatar.com/avatar/4fb8a021f719f03146873787e7b1290a?s=48&d=mm&r=g",
+            "96": "https://secure.gravatar.com/avatar/4fb8a021f719f03146873787e7b1290a?s=96&d=mm&r=g"
+          },
+          "description": "",
+          "id": 2,
+          "link": "https://cedinci.org/author/cedinci/",
+          "name": "Noticias Cedinci",
+          "slug": "cedinci",
+          "url": ""
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "_links": {
+            "about": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/types/attachment"
+              }
+            ],
+            "author": [
+              {
+                "embeddable": true,
+                "href": "https://cedinci.org/wp-json/wp/v2/users/2"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/media"
+              }
+            ],
+            "replies": [
+              {
+                "embeddable": true,
+                "href": "https://cedinci.org/wp-json/wp/v2/comments?post=5916"
+              }
+            ],
+            "self": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/media/5916"
+              }
+            ]
+          },
+          "alt_text": "",
+          "author": 2,
+          "caption": {
+            "rendered": ""
+          },
+          "date": "2024-10-06T10:03:51",
+          "featured_media": 0,
+          "id": 5916,
+          "link": "https://cedinci.org/reglamento-general-de-consulta-2024/destacada/",
+          "media_details": {
+            "file": "2024/10/destacada.png",
+            "filesize": 4478,
+            "height": 628,
+            "image_meta": {
+              "aperture": "0",
+              "camera": "",
+              "caption": "",
+              "copyright": "",
+              "created_timestamp": "0",
+              "credit": "",
+              "focal_length": "0",
+              "iso": "0",
+              "keywords": [],
+              "orientation": "0",
+              "shutter_speed": "0",
+              "title": ""
+            },
+            "sizes": {
+              "full": {
+                "file": "destacada.png",
+                "height": 628,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2024/10/destacada.png",
+                "width": 1200
+              },
+              "large": {
+                "file": "destacada-1024x536.png",
+                "filesize": 3463,
+                "height": 536,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2024/10/destacada-1024x536.png",
+                "width": 1024
+              },
+              "medium": {
+                "file": "destacada-300x157.png",
+                "filesize": 623,
+                "height": 157,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2024/10/destacada-300x157.png",
+                "width": 300
+              },
+              "medium_large": {
+                "file": "destacada-768x402.png",
+                "filesize": 2171,
+                "height": 402,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2024/10/destacada-768x402.png",
+                "width": 768
+              },
+              "post-thumbnail": {
+                "file": "destacada-401x210.png",
+                "filesize": 848,
+                "height": 210,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2024/10/destacada-401x210.png",
+                "width": 401
+              },
+              "roseta-featured": {
+                "file": "destacada-484x210.png",
+                "filesize": 950,
+                "height": 210,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2024/10/destacada-484x210.png",
+                "width": 484
+              },
+              "roseta-featured-half": {
+                "file": "destacada-800x210.png",
+                "filesize": 1214,
+                "height": 210,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2024/10/destacada-800x210.png",
+                "width": 800
+              },
+              "roseta-featured-lp": {
+                "file": "destacada-640x315.png",
+                "filesize": 1568,
+                "height": 315,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2024/10/destacada-640x315.png",
+                "width": 640
+              },
+              "roseta-featured-third": {
+                "file": "destacada-512x210.png",
+                "filesize": 977,
+                "height": 210,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2024/10/destacada-512x210.png",
+                "width": 512
+              },
+              "roseta-lpbox-1": {
+                "file": "destacada-640x350.png",
+                "filesize": 1730,
+                "height": 350,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2024/10/destacada-640x350.png",
+                "width": 640
+              },
+              "roseta-lpbox-2": {
+                "file": "destacada-480x400.png",
+                "filesize": 1661,
+                "height": 400,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2024/10/destacada-480x400.png",
+                "width": 480
+              },
+              "thumbnail": {
+                "file": "destacada-150x150.png",
+                "filesize": 489,
+                "height": 150,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2024/10/destacada-150x150.png",
+                "width": 150
+              }
+            },
+            "width": 1200
+          },
+          "media_type": "image",
+          "mime_type": "image/png",
+          "slug": "destacada",
+          "source_url": "https://cedinci.org/wp-content/uploads/2024/10/destacada.png",
+          "title": {
+            "rendered": "destacada"
+          },
+          "type": "attachment"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/37"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=37"
+                }
+              ]
+            },
+            "id": 37,
+            "link": "https://cedinci.org/category/boletin-de-noticias/",
+            "name": "Boletín de Noticias",
+            "slug": "boletin-de-noticias",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/54"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=54"
+                }
+              ]
+            },
+            "id": 54,
+            "link": "https://cedinci.org/category/cedinci/",
+            "name": "cedinci",
+            "slug": "cedinci",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/59"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=59"
+                }
+              ]
+            },
+            "id": 59,
+            "link": "https://cedinci.org/category/conicet/",
+            "name": "CONICET",
+            "slug": "conicet",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/35"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=35"
+                }
+              ]
+            },
+            "id": 35,
+            "link": "https://cedinci.org/category/el-cedinci-en-noticias/",
+            "name": "El CeDInCI en noticias",
+            "slug": "el-cedinci-en-noticias",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/15"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=15"
+                }
+              ]
+            },
+            "id": 15,
+            "link": "https://cedinci.org/category/eventos/",
+            "name": "Eventos",
+            "slug": "eventos",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/12"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=12"
+                }
+              ]
+            },
+            "id": 12,
+            "link": "https://cedinci.org/category/posgrado/",
+            "name": "Posgrado",
+            "slug": "posgrado",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/63"
+                }
+              ],
+              "up": [
+                {
+                  "embeddable": true,
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/12"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=63"
+                }
+              ]
+            },
+            "id": 63,
+            "link": "https://cedinci.org/category/posgrado/porgrado_noticias/",
+            "name": "Posgrado - Noticias",
+            "slug": "porgrado_noticias",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/64"
+                }
+              ],
+              "up": [
+                {
+                  "embeddable": true,
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/12"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=64"
+                }
+              ]
+            },
+            "id": 64,
+            "link": "https://cedinci.org/category/posgrado/posgrado_seminarios/",
+            "name": "Posgrado - Seminarios",
+            "slug": "posgrado_seminarios",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/36"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=36"
+                }
+              ]
+            },
+            "id": 36,
+            "link": "https://cedinci.org/category/proximas-actividades/",
+            "name": "Próximas Actividades",
+            "slug": "proximas-actividades",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/62"
+                }
+              ],
+              "up": [
+                {
+                  "embeddable": true,
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/12"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=62"
+                }
+              ]
+            },
+            "id": 62,
+            "link": "https://cedinci.org/category/posgrado/seminarios/",
+            "name": "Seminarios",
+            "slug": "seminarios",
+            "taxonomy": "category"
+          }
+        ],
+        [],
+        []
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/users/2"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/posts"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/posts/6268/revisions/6344",
+          "id": 6344
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/comments?post=6268"
+        }
+      ],
+      "self": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/posts/6268"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 42,
+          "href": "https://cedinci.org/wp-json/wp/v2/posts/6268/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/media?parent=6268"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/media/5916"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/categories?post=6268",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/tags?post=6268",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/table_tags?post=6268",
+          "taxonomy": "table_tags"
+        }
+      ]
+    },
+    "author": 2,
+    "categories": [
+      37,
+      54,
+      59,
+      35,
+      15,
+      12,
+      63,
+      64,
+      36,
+      62
+    ],
+    "comment_status": "closed",
+    "content": {
+      "protected": false,
+      "rendered": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"6268\" class=\"elementor elementor-6268\">\n\t\t\t\t\t\t\t\t\t<section class=\"elementor-section elementor-top-section elementor-element elementor-element-3875d59b elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"3875d59b\" data-element_type=\"section\">\n\t\t\t\t\t\t<div class=\"elementor-container elementor-column-gap-default\">\n\t\t\t\t\t<div class=\"elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1d72250b\" data-id=\"1d72250b\" data-element_type=\"column\">\n\t\t\t<div class=\"elementor-widget-wrap elementor-element-populated\">\n\t\t\t\t\t\t\t\t<div class=\"elementor-element elementor-element-7ca22193 elementor-widget elementor-widget-text-editor\" data-id=\"7ca22193\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t\t\t<p></p>\n<p>Seminario &#8220;<strong>Historia intelectual:</strong> <strong>Debates teóricos, problemas metodológicos y perspectivas críticas</strong>&#8220;</p>\n<p></p>\n<p>En el mes de mayo se dictará de modo virtual uno de los ya tradicionales seminarios del Programa de Historia Intelectual del CeDInCI. Este año se enfocará en la teoría y metodología de la Historia intelectual. De modalidad intensiva, los encuentros están programados para los días martes y jueves. Cada uno estará a cargo de un/a integrante del equipo de investigación del CeDInCI especializado/a en la temática. La coordinación está a cargo de la doctora Mariana Canavese.</p>\n<p><img loading=\"lazy\" decoding=\"async\" class=\"alignleft\" src=\"https://cedinci.org/wp-content/uploads/2025/04/SeminarioCeDInCI2025-300x300.jpeg\" alt=\"\" width=\"300\" height=\"300\" /></p>\n<p></p>\n<p> </p>\n<p><strong>Presentación</strong><br />La historia intelectual se erigió sobre las críticas a las perspectivas tradicionales de historia de las ideas. Entre sus formulaciones, una serie de estudios se ha ocupado en las últimas décadas de atender a la articulación entre textos y contextos, a las condiciones de producción de las ideas así como a las de su circulación y recepción. Sin dejar de considerar los modos en que la historia intelectual se diferencia de otras aproximaciones, se trata de un campo de estudios abierto y continuamente enlazado con otros espacios y saberes: la hermenéutica, la historia de los intelectuales, la historia cultural, política y social, los estudios del libro y la edición, la sociología de la cultura, los estudios de género, la crítica literaria, la historia conceptual, la filosofía política.</p>\n<p></p>\n<p>Esta historia intelectual en sentido amplio tiene hoy en América Latina un ámbito de estudios vital y en desarrollo, en centros de investigación y revistas especializadas desde donde se piensan y debaten cuestiones de método y prácticas específicas. Este seminario propone una aproximación a las contribuciones teóricas y metodológicas que comparten y tensan el área, y da lugar a un espacio en el que se articulan las preguntas, las reflexiones y las propuestas de la historia intelectual en relación con la práctica concreta de investigación. El curso parte de las contribuciones interdisciplinarias del equipo de investigación del CeDInCI (UNSAM-CONICET), un grupo de especialistas en el área que hace más de quince años lleva adelante diversos proyectos de investigación acreditados e inscriptos en este campo de estudios.</p>\n<p></p>\n<p>El seminario ofrece un recorrido por las más significativas problemáticas de la historia intelectual a través de la reflexión crítica en torno a sus características medulares, sus principales aspectos teóricos y metodológicos, su historia y su actualidad, sus potencialidades y límites.</p>\n<p></p>\n<p></p>\n<p><strong>Equipo docente: </strong>Mariana Canavese, Adrián Celentano, Lucas Domínguez Rubio, Laura Fernández Cordero, Sandra Jaramillo Restrepo, Ezequiel Saferstein, Horacio Tarcus.</p>\n<p></p>\n<p><strong>Curso de posgrado intensivo (24 horas) </strong><br />Modalidad virtual <br />Martes y jueves de mayo, 17 a 19 h (horarios de Argentina, GMT-3) <br /><strong>Comienza</strong>: 6 de mayo de 2025 <br /><strong>Finaliza</strong>: 29 de mayo de 2025<br />Organiza el <strong>Programa de Historia Intelectual del CeDInCI</strong> <br /><strong>Coordinación académica</strong>: Mariana Canavese</p>\n<p>Consultas a &lt;academica@cedinci.org&gt;</p>\n<p></p>\n<p><a href=\"https://cedinci.org/wp-content/uploads/2025/04/Seminario-Historia-Intelectual-CeDInCI-2025-Programa.docx\">Programa aquí</a></p>\n<p><a href=\"https://cedinci.org/wp-content/uploads/2024/03/REGLAMENTO_POSGRADO-2024.pdf\" target=\"_blank\" rel=\"noopener\">Reglamento aquí</a></p>\n<p></p>\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t</section>\n\t\t\t\t<section class=\"elementor-section elementor-top-section elementor-element elementor-element-a97e314 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"a97e314\" data-element_type=\"section\">\n\t\t\t\t\t\t<div class=\"elementor-container elementor-column-gap-default\">\n\t\t\t\t\t<div class=\"elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4d1df2e\" data-id=\"4d1df2e\" data-element_type=\"column\">\n\t\t\t<div class=\"elementor-widget-wrap elementor-element-populated\">\n\t\t\t\t\t\t\t\t<div class=\"elementor-element elementor-element-8952896 elementor-widget elementor-widget-heading\" data-id=\"8952896\" data-element_type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t<h3 class=\"elementor-heading-title elementor-size-default\">Formulario de inscripción</h3>\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-812a7dc elementor-align-center elementor-widget elementor-widget-button\" data-id=\"812a7dc\" data-element_type=\"widget\" data-widget_type=\"button.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t<div class=\"elementor-button-wrapper\">\n\t\t\t<a href=\"https://docs.google.com/forms/d/e/1FAIpQLSeBeUepb9Ti-2Wf0SwZBH1r0SD-o3d9hZNq_xdV8SRK5IycIA/viewform?usp=sharing\" class=\"elementor-button-link elementor-button elementor-size-lg\" role=\"button\">\n\t\t\t\t\t\t<span class=\"elementor-button-content-wrapper\">\n\t\t\t\t\t\t<span class=\"elementor-button-text\">Formulario</span>\n\t\t</span>\n\t\t\t\t\t</a>\n\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t</section>\n\t\t\t\t<section class=\"elementor-section elementor-top-section elementor-element elementor-element-cf77598 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"cf77598\" data-element_type=\"section\">\n\t\t\t\t\t\t<div class=\"elementor-container elementor-column-gap-default\">\n\t\t\t\t\t<div class=\"elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8f0df73\" data-id=\"8f0df73\" data-element_type=\"column\">\n\t\t\t<div class=\"elementor-widget-wrap elementor-element-populated\">\n\t\t\t\t\t\t\t\t<div class=\"elementor-element elementor-element-ecc9c85 elementor-widget elementor-widget-heading\" data-id=\"ecc9c85\" data-element_type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t<h3 class=\"elementor-heading-title elementor-size-default\">Links de pago</h3>\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t</section>\n\t\t\t\t<section class=\"elementor-section elementor-top-section elementor-element elementor-element-b350ae8 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"b350ae8\" data-element_type=\"section\">\n\t\t\t\t\t\t<div class=\"elementor-container elementor-column-gap-default\">\n\t\t\t\t\t<div class=\"elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-8d31b48\" data-id=\"8d31b48\" data-element_type=\"column\">\n\t\t\t<div class=\"elementor-widget-wrap elementor-element-populated\">\n\t\t\t\t\t\t\t\t<div class=\"elementor-element elementor-element-5ea766a elementor-widget elementor-widget-heading\" data-id=\"5ea766a\" data-element_type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t<h4 class=\"elementor-heading-title elementor-size-default\">Residentes en Argentina</h4>\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-cd45b95 elementor-align-center elementor-widget elementor-widget-button\" data-id=\"cd45b95\" data-element_type=\"widget\" data-widget_type=\"button.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t<div class=\"elementor-button-wrapper\">\n\t\t\t<a href=\"https://mpago.la/1Xb7Qmf\" class=\"elementor-button-link elementor-button elementor-size-lg\" role=\"button\">\n\t\t\t\t\t\t<span class=\"elementor-button-content-wrapper\">\n\t\t\t\t\t\t<span class=\"elementor-button-text\">$ar 100.000</span>\n\t\t</span>\n\t\t\t\t\t</a>\n\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t</div>\n\t\t\t\t<div class=\"elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-54f0240\" data-id=\"54f0240\" data-element_type=\"column\">\n\t\t\t<div class=\"elementor-widget-wrap elementor-element-populated\">\n\t\t\t\t\t\t\t\t<div class=\"elementor-element elementor-element-12832c8 elementor-widget elementor-widget-heading\" data-id=\"12832c8\" data-element_type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t<h4 class=\"elementor-heading-title elementor-size-default\">Latinoamericanos</h4>\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-5825bfb elementor-align-center elementor-widget elementor-widget-button\" data-id=\"5825bfb\" data-element_type=\"widget\" data-widget_type=\"button.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t<div class=\"elementor-button-wrapper\">\n\t\t\t<a href=\"https://www.paypal.com/ncp/payment/JHMNZNPNK56H2\" class=\"elementor-button-link elementor-button elementor-size-lg\" role=\"button\">\n\t\t\t\t\t\t<span class=\"elementor-button-content-wrapper\">\n\t\t\t\t\t\t<span class=\"elementor-button-text\">us$ 130</span>\n\t\t</span>\n\t\t\t\t\t</a>\n\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t</div>\n\t\t\t\t<div class=\"elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-8b95ab8\" data-id=\"8b95ab8\" data-element_type=\"column\">\n\t\t\t<div class=\"elementor-widget-wrap elementor-element-populated\">\n\t\t\t\t\t\t\t\t<div class=\"elementor-element elementor-element-10ff540 elementor-widget elementor-widget-heading\" data-id=\"10ff540\" data-element_type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t<h4 class=\"elementor-heading-title elementor-size-default\">Resto del mundo</h4>\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-59b73a0 elementor-align-center elementor-widget elementor-widget-button\" data-id=\"59b73a0\" data-element_type=\"widget\" data-widget_type=\"button.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t<div class=\"elementor-button-wrapper\">\n\t\t\t<a href=\"https://www.paypal.com/ncp/payment/YYXR4TZSK6JLG\" class=\"elementor-button-link elementor-button elementor-size-lg\" role=\"button\">\n\t\t\t\t\t\t<span class=\"elementor-button-content-wrapper\">\n\t\t\t\t\t\t<span class=\"elementor-button-text\">us$ 150</span>\n\t\t</span>\n\t\t\t\t\t</a>\n\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t</section>\n\t\t\t\t\t\t\t</div>\n\t\t"
+    },
+    "date": "2025-04-08T11:07:41",
+    "date_gmt": "2025-04-08T14:07:41",
+    "excerpt": {
+      "protected": false,
+      "rendered": "<p>Seminario &#8220;Historia intelectual: Debates teóricos, problemas metodológicos y perspectivas críticas&#8220; En el mes de mayo se dictará de modo virtual uno de los ya tradicionales seminarios del Programa de Historia Intelectual del CeDInCI. &hellip;</p>\n"
+    },
+    "featured_media": 5916,
+    "format": "standard",
+    "guid": {
+      "rendered": "https://cedinci.org/?p=6268"
+    },
+    "id": 6268,
+    "link": "https://cedinci.org/2025/04/08/seminario-de-posgrado-historia-intelectual-debates-teoricos-problemas-metodologicos-y-perspectivas-criticas/",
+    "meta": {
+      "footnotes": ""
+    },
+    "modified": "2025-04-14T12:56:59",
+    "modified_gmt": "2025-04-14T15:56:59",
+    "ping_status": "closed",
+    "slug": "seminario-de-posgrado-historia-intelectual-debates-teoricos-problemas-metodologicos-y-perspectivas-criticas",
+    "status": "publish",
+    "sticky": false,
+    "table_tags": [],
+    "tags": [],
+    "template": "",
+    "title": {
+      "rendered": "SEMINARIO DE POSGRADO &#8220;Historia Intelectual: Debates teóricos, problemas metodológicos y perspectivas críticas&#8221;"
+    },
+    "type": "post"
+  },
+  {
+    "_embedded": {
+      "author": [
+        {
+          "_links": {
+            "collection": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/users"
+              }
+            ],
+            "self": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/users/2"
+              }
+            ]
+          },
+          "avatar_urls": {
+            "24": "https://secure.gravatar.com/avatar/4fb8a021f719f03146873787e7b1290a?s=24&d=mm&r=g",
+            "48": "https://secure.gravatar.com/avatar/4fb8a021f719f03146873787e7b1290a?s=48&d=mm&r=g",
+            "96": "https://secure.gravatar.com/avatar/4fb8a021f719f03146873787e7b1290a?s=96&d=mm&r=g"
+          },
+          "description": "",
+          "id": 2,
+          "link": "https://cedinci.org/author/cedinci/",
+          "name": "Noticias Cedinci",
+          "slug": "cedinci",
+          "url": ""
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "_links": {
+            "about": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/types/attachment"
+              }
+            ],
+            "author": [
+              {
+                "embeddable": true,
+                "href": "https://cedinci.org/wp-json/wp/v2/users/2"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/media"
+              }
+            ],
+            "replies": [
+              {
+                "embeddable": true,
+                "href": "https://cedinci.org/wp-json/wp/v2/comments?post=6247"
+              }
+            ],
+            "self": [
+              {
+                "href": "https://cedinci.org/wp-json/wp/v2/media/6247"
+              }
+            ]
+          },
+          "alt_text": "",
+          "author": 2,
+          "caption": {
+            "rendered": ""
+          },
+          "date": "2025-03-07T17:44:01",
+          "featured_media": 0,
+          "id": 6247,
+          "link": "https://cedinci.org/2025/03/07/conferencia-gino-germani-y-los-primeros-pasos-de-la-fundacion-ford-en-america-latina-por-patrick-iber/fondopatrickiber/",
+          "media_details": {
+            "file": "2025/03/fondoPatrickIber.png",
+            "filesize": 5223,
+            "height": 628,
+            "image_meta": {
+              "aperture": "0",
+              "camera": "",
+              "caption": "",
+              "copyright": "",
+              "created_timestamp": "0",
+              "credit": "",
+              "focal_length": "0",
+              "iso": "0",
+              "keywords": [],
+              "orientation": "0",
+              "shutter_speed": "0",
+              "title": ""
+            },
+            "sizes": {
+              "full": {
+                "file": "fondoPatrickIber.png",
+                "height": 628,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/03/fondoPatrickIber.png",
+                "width": 1200
+              },
+              "large": {
+                "file": "fondoPatrickIber-1024x536.png",
+                "filesize": 3463,
+                "height": 536,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/03/fondoPatrickIber-1024x536.png",
+                "width": 1024
+              },
+              "medium": {
+                "file": "fondoPatrickIber-300x157.png",
+                "filesize": 624,
+                "height": 157,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/03/fondoPatrickIber-300x157.png",
+                "width": 300
+              },
+              "medium_large": {
+                "file": "fondoPatrickIber-768x402.png",
+                "filesize": 2172,
+                "height": 402,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/03/fondoPatrickIber-768x402.png",
+                "width": 768
+              },
+              "post-thumbnail": {
+                "file": "fondoPatrickIber-401x210.png",
+                "filesize": 849,
+                "height": 210,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/03/fondoPatrickIber-401x210.png",
+                "width": 401
+              },
+              "roseta-featured": {
+                "file": "fondoPatrickIber-484x210.png",
+                "filesize": 950,
+                "height": 210,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/03/fondoPatrickIber-484x210.png",
+                "width": 484
+              },
+              "roseta-featured-half": {
+                "file": "fondoPatrickIber-800x210.png",
+                "filesize": 1214,
+                "height": 210,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/03/fondoPatrickIber-800x210.png",
+                "width": 800
+              },
+              "roseta-featured-lp": {
+                "file": "fondoPatrickIber-640x315.png",
+                "filesize": 1568,
+                "height": 315,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/03/fondoPatrickIber-640x315.png",
+                "width": 640
+              },
+              "roseta-featured-third": {
+                "file": "fondoPatrickIber-512x210.png",
+                "filesize": 978,
+                "height": 210,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/03/fondoPatrickIber-512x210.png",
+                "width": 512
+              },
+              "roseta-lpbox-1": {
+                "file": "fondoPatrickIber-640x350.png",
+                "filesize": 1730,
+                "height": 350,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/03/fondoPatrickIber-640x350.png",
+                "width": 640
+              },
+              "roseta-lpbox-2": {
+                "file": "fondoPatrickIber-480x400.png",
+                "filesize": 1662,
+                "height": 400,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/03/fondoPatrickIber-480x400.png",
+                "width": 480
+              },
+              "thumbnail": {
+                "file": "fondoPatrickIber-150x150.png",
+                "filesize": 489,
+                "height": 150,
+                "mime_type": "image/png",
+                "source_url": "https://cedinci.org/wp-content/uploads/2025/03/fondoPatrickIber-150x150.png",
+                "width": 150
+              }
+            },
+            "width": 1200
+          },
+          "media_type": "image",
+          "mime_type": "image/png",
+          "slug": "fondopatrickiber",
+          "source_url": "https://cedinci.org/wp-content/uploads/2025/03/fondoPatrickIber.png",
+          "title": {
+            "rendered": "fondoPatrickIber"
+          },
+          "type": "attachment"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/35"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=35"
+                }
+              ]
+            },
+            "id": 35,
+            "link": "https://cedinci.org/category/el-cedinci-en-noticias/",
+            "name": "El CeDInCI en noticias",
+            "slug": "el-cedinci-en-noticias",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/15"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=15"
+                }
+              ]
+            },
+            "id": 15,
+            "link": "https://cedinci.org/category/eventos/",
+            "name": "Eventos",
+            "slug": "eventos",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/61"
+                }
+              ],
+              "up": [
+                {
+                  "embeddable": true,
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/12"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=61"
+                }
+              ]
+            },
+            "id": 61,
+            "link": "https://cedinci.org/category/posgrado/noticias/",
+            "name": "Noticias",
+            "slug": "noticias",
+            "taxonomy": "category"
+          },
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/categories/36"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://cedinci.org/wp-json/wp/v2/posts?categories=36"
+                }
+              ]
+            },
+            "id": 36,
+            "link": "https://cedinci.org/category/proximas-actividades/",
+            "name": "Próximas Actividades",
+            "slug": "proximas-actividades",
+            "taxonomy": "category"
+          }
+        ],
+        [],
+        []
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/users/2"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/posts"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/posts/6245/revisions/6266",
+          "id": 6266
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/comments?post=6245"
+        }
+      ],
+      "self": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/posts/6245"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 19,
+          "href": "https://cedinci.org/wp-json/wp/v2/posts/6245/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://cedinci.org/wp-json/wp/v2/media?parent=6245"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/media/6247"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/categories?post=6245",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/tags?post=6245",
+          "taxonomy": "post_tag"
+        },
+        {
+          "embeddable": true,
+          "href": "https://cedinci.org/wp-json/wp/v2/table_tags?post=6245",
+          "taxonomy": "table_tags"
+        }
+      ]
+    },
+    "author": 2,
+    "categories": [
+      35,
+      15,
+      61,
+      36
+    ],
+    "comment_status": "closed",
+    "content": {
+      "protected": false,
+      "rendered": "\t\t<div data-elementor-type=\"wp-post\" data-elementor-id=\"6245\" class=\"elementor elementor-6245\">\n\t\t\t\t\t\t\t\t\t<section class=\"elementor-section elementor-top-section elementor-element elementor-element-583e0dfb elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"583e0dfb\" data-element_type=\"section\">\n\t\t\t\t\t\t<div class=\"elementor-container elementor-column-gap-default\">\n\t\t\t\t\t<div class=\"elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-de1f4e1\" data-id=\"de1f4e1\" data-element_type=\"column\">\n\t\t\t<div class=\"elementor-widget-wrap elementor-element-populated\">\n\t\t\t\t\t\t\t\t<div class=\"elementor-element elementor-element-78c7ec05 elementor-widget elementor-widget-text-editor\" data-id=\"78c7ec05\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t\t\t<p></p>\n<p>El próximo jueves 13 de marzo a las 18 hs el CeDInCI arranca los eventos del año con la conferencia </p>\n<p></p>\n<p>&#8220;<strong>Gino Germani y los primeros pasos de la Fundación Ford en América Latina</strong>&#8221;  </p>\n<p></p>\n<p>por Patrick Iber. </p>\n<p>La charla abordará uno de los ejes de su próximo libro, pronto a lanzarse.</p>\n<p>Patrick Iber es historiador y profesor de la Universidad de Wisconsin, autor de <strong>Neither Peace nor Freedom: The Cultural Cold War in Latin America </strong>(Harvard UP, Cambridge, 2015) y co-editor de la revista <strong>Dissent</strong>. Ha colaborado en diferentes revistas con artículos de intervención como <strong>Nueva Sociedad</strong>, <strong>Jacobin</strong>, <strong>Rebelión</strong> y <strong>Sin permiso</strong>, entre otras.</p>\n<p>Les esperamos!</p>\n<p>También transmitiremos por <a href=\"https://www.youtube.com/watch?v=Cpw_w4-rpes\">nuestro canal YouTube</a></p>\n<p><img loading=\"lazy\" decoding=\"async\" class=\"aligncenter wp-image-6248 size-large\" src=\"https://cedinci.org/wp-content/uploads/2025/03/PATRICK-IBER_marzo2025-724x1024.png\" alt=\"\" width=\"724\" height=\"1024\" srcset=\"https://cedinci.org/wp-content/uploads/2025/03/PATRICK-IBER_marzo2025-724x1024.png 724w, https://cedinci.org/wp-content/uploads/2025/03/PATRICK-IBER_marzo2025-212x300.png 212w, https://cedinci.org/wp-content/uploads/2025/03/PATRICK-IBER_marzo2025-768x1086.png 768w, https://cedinci.org/wp-content/uploads/2025/03/PATRICK-IBER_marzo2025-1086x1536.png 1086w, https://cedinci.org/wp-content/uploads/2025/03/PATRICK-IBER_marzo2025-148x210.png 148w, https://cedinci.org/wp-content/uploads/2025/03/PATRICK-IBER_marzo2025.png 1414w\" sizes=\"(max-width: 724px) 100vw, 724px\" /></p>\n<p></p>\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t</section>\n\t\t\t\t\t\t\t</div>\n\t\t"
+    },
+    "date": "2025-03-07T17:54:12",
+    "date_gmt": "2025-03-07T20:54:12",
+    "excerpt": {
+      "protected": false,
+      "rendered": "<p>El próximo jueves 13 de marzo a las 18 hs el CeDInCI arranca los eventos del año con la conferencia  &#8220;Gino Germani y los primeros pasos de la Fundación Ford en América Latina&#8221;   &hellip;</p>\n"
+    },
+    "featured_media": 6247,
+    "format": "standard",
+    "guid": {
+      "rendered": "https://cedinci.org/?p=6245"
+    },
+    "id": 6245,
+    "link": "https://cedinci.org/2025/03/07/conferencia-gino-germani-y-los-primeros-pasos-de-la-fundacion-ford-en-america-latina-por-patrick-iber/",
+    "meta": {
+      "footnotes": ""
+    },
+    "modified": "2025-03-13T16:55:14",
+    "modified_gmt": "2025-03-13T19:55:14",
+    "ping_status": "closed",
+    "slug": "conferencia-gino-germani-y-los-primeros-pasos-de-la-fundacion-ford-en-america-latina-por-patrick-iber",
+    "status": "publish",
+    "sticky": false,
+    "table_tags": [],
+    "tags": [],
+    "template": "",
+    "title": {
+      "rendered": "Conferencia &#8220;Gino Germani y los primeros pasos de la Fundación Ford en América Latina&#8221; por Patrick Iber"
+    },
+    "type": "post"
+  }
+]

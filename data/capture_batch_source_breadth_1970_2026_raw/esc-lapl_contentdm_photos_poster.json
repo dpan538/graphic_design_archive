@@ -1,0 +1,662 @@
+{
+  "browseAllDefaultSortField": "title",
+  "facetFields": {
+    "creato": "Photographer",
+    "date": "Date",
+    "format": "Format",
+    "order": "Order Number",
+    "subjec": "Subject"
+  },
+  "facets": {
+    "creato": [
+      {
+        "count": 81,
+        "title": "Curtis, Rolland J."
+      },
+      {
+        "count": 24,
+        "title": "verzi, john."
+      },
+      {
+        "count": 17,
+        "title": "schultheis, herman."
+      },
+      {
+        "count": 10,
+        "title": "brich, george."
+      },
+      {
+        "count": 10,
+        "title": "leonard, gary."
+      },
+      {
+        "count": 5,
+        "title": "dean, gordon."
+      },
+      {
+        "count": 5,
+        "title": "martin, bob."
+      },
+      {
+        "count": 3,
+        "title": "hankey, roy."
+      },
+      {
+        "count": 3,
+        "title": "morris, ralph."
+      },
+      {
+        "count": 3,
+        "title": "reagh, william."
+      },
+      {
+        "count": 2,
+        "title": "goldwater, jeff."
+      }
+    ],
+    "date": [
+      {
+        "count": 27,
+        "title": "1964"
+      },
+      {
+        "count": 24,
+        "title": "1965"
+      },
+      {
+        "count": 17,
+        "title": "1963"
+      },
+      {
+        "count": 16,
+        "title": "1962"
+      },
+      {
+        "count": 16,
+        "title": "circa 1969"
+      },
+      {
+        "count": 15,
+        "title": "1967"
+      },
+      {
+        "count": 14,
+        "title": "1960"
+      },
+      {
+        "count": 13,
+        "title": "1957"
+      },
+      {
+        "count": 13,
+        "title": "1959"
+      },
+      {
+        "count": 12,
+        "title": "1961"
+      },
+      {
+        "count": 12,
+        "title": "circa 1965"
+      }
+    ],
+    "format": [
+      {
+        "count": 264,
+        "title": "photographic prints"
+      },
+      {
+        "count": 77,
+        "title": "photographic safety negatives"
+      },
+      {
+        "count": 27,
+        "title": "photographic color slides"
+      },
+      {
+        "count": 2,
+        "title": "postcards"
+      }
+    ],
+    "order": [
+      {
+        "count": 1,
+        "title": "00000654"
+      },
+      {
+        "count": 1,
+        "title": "00001383"
+      },
+      {
+        "count": 1,
+        "title": "00001503"
+      },
+      {
+        "count": 1,
+        "title": "00003337"
+      },
+      {
+        "count": 1,
+        "title": "00005094"
+      },
+      {
+        "count": 1,
+        "title": "00007986"
+      },
+      {
+        "count": 1,
+        "title": "00007992"
+      },
+      {
+        "count": 1,
+        "title": "00009070"
+      },
+      {
+        "count": 1,
+        "title": "00013297"
+      },
+      {
+        "count": 1,
+        "title": "00014410"
+      },
+      {
+        "count": 1,
+        "title": "00014586"
+      }
+    ],
+    "subjec": [
+      {
+        "count": 112,
+        "title": "valley times collection photographs."
+      },
+      {
+        "count": 84,
+        "title": "portrait photographs"
+      },
+      {
+        "count": 73,
+        "title": "los angeles (calif.)."
+      },
+      {
+        "count": 71,
+        "title": "men."
+      },
+      {
+        "count": 64,
+        "title": "group portraits"
+      },
+      {
+        "count": 62,
+        "title": "posters -- california -- los angeles."
+      },
+      {
+        "count": 59,
+        "title": "african american men."
+      },
+      {
+        "count": 49,
+        "title": "women."
+      },
+      {
+        "count": 48,
+        "title": "herald-examiner collection photographs."
+      },
+      {
+        "count": 44,
+        "title": "political posters."
+      },
+      {
+        "count": 39,
+        "title": "women -- california -- los angeles."
+      }
+    ]
+  },
+  "fields": {
+    "direction": "desc",
+    "order": "nosort",
+    "queries": [
+      {
+        "connector": "all",
+        "field": "all",
+        "mode": "all",
+        "searchTerm": "poster"
+      }
+    ]
+  },
+  "filters": {
+    "collections": [
+      {
+        "alias": "archives",
+        "name": "Archives",
+        "selected": false
+      },
+      {
+        "alias": "autograph",
+        "name": "Autograph Collection",
+        "selected": false
+      },
+      {
+        "alias": "bookplates",
+        "name": "Bookplate Collection",
+        "selected": false
+      },
+      {
+        "alias": "dwp",
+        "name": "DWP Photo Collection",
+        "selected": false
+      },
+      {
+        "alias": "elpueblo",
+        "name": "El Pueblo Monument Photo Collection",
+        "selected": false
+      },
+      {
+        "alias": "fashion",
+        "name": "Fashion Plate Collection",
+        "selected": false
+      },
+      {
+        "alias": "fcl",
+        "name": "Fruit Crate Label Collection",
+        "selected": false
+      },
+      {
+        "alias": "periodicals",
+        "name": "Historical Periodicals",
+        "selected": false
+      },
+      {
+        "alias": "laplarchive",
+        "name": "Los Angeles Public Library Institutional Archive",
+        "selected": false
+      },
+      {
+        "alias": "photos",
+        "name": "Los Angeles Public Library Photo Collection",
+        "selected": true
+      },
+      {
+        "alias": "maps",
+        "name": "Map Collection",
+        "selected": false
+      },
+      {
+        "alias": "menus",
+        "name": "Menu Collection",
+        "selected": false
+      },
+      {
+        "alias": "movie",
+        "name": "Movie Poster Collection",
+        "selected": false
+      },
+      {
+        "alias": "travel",
+        "name": "Travel Poster Collection",
+        "selected": false
+      },
+      {
+        "alias": "turnabout",
+        "name": "Yale Puppeteers & Turnabout Theatre Collection",
+        "selected": false
+      },
+      {
+        "alias": "COVID-19",
+        "name": "COVID-19 Community Archive",
+        "selected": false
+      },
+      {
+        "alias": "p16703coll2",
+        "name": "Karl Hubenthal Cartoon Collection",
+        "selected": false
+      },
+      {
+        "alias": "p16703coll3",
+        "name": "Los Angeles Scrapbook and Photo Album Collection",
+        "selected": false
+      }
+    ]
+  },
+  "gridViewEnabled": false,
+  "items": [
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "128834",
+      "itemLink": "/singleitem/collection/photos/id/128834",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Poster, slogan winners"
+        },
+        {
+          "field": "order",
+          "value": "00155811"
+        },
+        {
+          "field": "date",
+          "value": "1960"
+        },
+        {
+          "field": "collea",
+          "value": "Valley Times Photo Collection;"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/128834/thumbnail",
+      "title": "Poster, slogan winners"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "16334",
+      "itemLink": "/singleitem/collection/photos/id/16334",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Treasury releases special Bataan poster"
+        },
+        {
+          "field": "order",
+          "value": "00045463"
+        },
+        {
+          "field": "date",
+          "value": "1943"
+        },
+        {
+          "field": "collea",
+          "value": "Los Angeles Herald Examiner Photo Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/16334/thumbnail",
+      "title": "Treasury releases special Bataan poster"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "16036",
+      "itemLink": "/singleitem/collection/photos/id/16036",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Wicks wins first prize for poster design"
+        },
+        {
+          "field": "order",
+          "value": "00045423"
+        },
+        {
+          "field": "date",
+          "value": "1942"
+        },
+        {
+          "field": "collea",
+          "value": "Los Angeles Herald Examiner Photo Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/16036/thumbnail",
+      "title": "Wicks wins first prize for poster design"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "16101",
+      "itemLink": "/singleitem/collection/photos/id/16101",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "War bond poster by Ren Wicks"
+        },
+        {
+          "field": "order",
+          "value": "00045460"
+        },
+        {
+          "field": "date",
+          "value": "1942"
+        },
+        {
+          "field": "collea",
+          "value": "Los Angeles Herald Examiner Photo Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/16101/thumbnail",
+      "title": "War bond poster by Ren Wicks"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "108111",
+      "itemLink": "/singleitem/collection/photos/id/108111",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Yellowstone Gateway Opening poster"
+        },
+        {
+          "field": "order",
+          "value": "00062858"
+        },
+        {
+          "field": "date",
+          "value": "1924"
+        },
+        {
+          "field": "collea",
+          "value": "Security Pacific National Bank Photo Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/108111/thumbnail",
+      "title": "Yellowstone Gateway Opening poster"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "39797",
+      "itemLink": "/singleitem/collection/photos/id/39797",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Tijuana bullfight poster"
+        },
+        {
+          "field": "order",
+          "value": "00101105"
+        },
+        {
+          "field": "date",
+          "value": "Circa 1939"
+        },
+        {
+          "field": "collea",
+          "value": "Los Angeles Photographers Photo Collection;"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/39797/thumbnail",
+      "title": "Tijuana bullfight poster"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "34042",
+      "itemLink": "/singleitem/collection/photos/id/34042",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Walt Disney presenting a poster"
+        },
+        {
+          "field": "order",
+          "value": "00106383"
+        },
+        {
+          "field": "date",
+          "value": "1948"
+        },
+        {
+          "field": "collea",
+          "value": "Los Angeles Herald Examiner Photo Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/34042/thumbnail",
+      "title": "Walt Disney presenting a poster"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "73026",
+      "itemLink": "/singleitem/collection/photos/id/73026",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Students win poster contest"
+        },
+        {
+          "field": "order",
+          "value": "00145192"
+        },
+        {
+          "field": "date",
+          "value": "1957"
+        },
+        {
+          "field": "collea",
+          "value": "Valley Times Photo Collection;"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/73026/thumbnail",
+      "title": "Students win poster contest"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "43294",
+      "itemLink": "/singleitem/collection/photos/id/43294",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Valley Science Fair poster outshines others"
+        },
+        {
+          "field": "order",
+          "value": "00086194"
+        },
+        {
+          "field": "date",
+          "value": "1960"
+        },
+        {
+          "field": "collea",
+          "value": "Valley Times Photo Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/43294/thumbnail",
+      "title": "Valley Science Fair poster outshines others"
+    },
+    {
+      "cdmalt": null,
+      "collectionAlias": "photos",
+      "filetype": "jpg",
+      "index": null,
+      "itemId": "16612",
+      "itemLink": "/singleitem/collection/photos/id/16612",
+      "metadataFields": [
+        {
+          "field": "title",
+          "value": "Three dimensional war bond poster"
+        },
+        {
+          "field": "order",
+          "value": "00045473"
+        },
+        {
+          "field": "date",
+          "value": "1945"
+        },
+        {
+          "field": "collea",
+          "value": "Los Angeles Herald Examiner Photo Collection"
+        }
+      ],
+      "thumbnailEnabled": true,
+      "thumbnailUri": "/api/singleitem/collection/photos/id/16612/thumbnail",
+      "title": "Three dimensional war bond poster"
+    }
+  ],
+  "searchResultsDefaultSortField": "nosort",
+  "sortFields": [
+    {
+      "ad": "asc",
+      "name": "Relevance",
+      "order": "nosort"
+    },
+    {
+      "ad": "asc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "desc",
+      "name": "Title",
+      "order": "title"
+    },
+    {
+      "ad": "asc",
+      "name": "Order Number",
+      "order": "order"
+    },
+    {
+      "ad": "desc",
+      "name": "Order Number",
+      "order": "order"
+    },
+    {
+      "ad": "asc",
+      "name": "Date",
+      "order": "date"
+    },
+    {
+      "ad": "desc",
+      "name": "Date",
+      "order": "date"
+    },
+    {
+      "ad": "asc",
+      "name": "Sub-Collection Name",
+      "order": "collea"
+    },
+    {
+      "ad": "desc",
+      "name": "Sub-Collection Name",
+      "order": "collea"
+    }
+  ],
+  "totalResults": 383
+}
