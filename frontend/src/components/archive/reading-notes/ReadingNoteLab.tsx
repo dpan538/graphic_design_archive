@@ -63,6 +63,11 @@ function folderSpan(folder: Folder): string {
   return dateSpanLabel(folder.dateStart, folder.dateEnd);
 }
 
+function compactFolderId(folder: Folder): string {
+  const slugHead = folder.slug.split("-").slice(0, 2).join("-");
+  return `${folder.type.toUpperCase()}/${slugHead}`;
+}
+
 function NoteBadges({ ctx }: { ctx: ReadingNoteContext }) {
   const types = new Set<FolderTypeKey>([ctx.folder.type]);
   for (const surface of ctx.samples) {
@@ -81,7 +86,7 @@ function MicroFooter({ ctx }: { ctx: ReadingNoteContext }) {
   return (
     <footer className="reading-note__footer">
       <span>{ctx.layoutId}</span>
-      <span>{ctx.folder.folderId}</span>
+      <span>{compactFolderId(ctx.folder)}</span>
       <span>READING NOTE</span>
     </footer>
   );
@@ -92,7 +97,7 @@ function SampleRows({ surfaces, max = 5 }: { surfaces: Surface[]; max?: number }
     <ol className="reading-note__rows">
       {surfaces.slice(0, max).map((surface) => (
         <li key={surface.surfaceId}>
-          <span>{surface.dateText}</span>
+          <span>{clip(surface.dateText, 14)}</span>
           <strong>{clip(surface.title, 58)}</strong>
           <em>{clip(surface.sourceName, 30)}</em>
         </li>

@@ -7337,7 +7337,7 @@ body:has(.reading-note-lab) {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.62fr);
   gap: 1rem 2rem;
-  width: min(72rem, calc(100vw - 4rem));
+  width: min(86rem, calc(100vw - 4rem));
   margin: 0 auto 2rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid rgba(239, 234, 211, 0.46);
@@ -7390,7 +7390,7 @@ body:has(.reading-note-lab) {
   grid-template-columns: minmax(25rem, 1.1fr) minmax(18rem, 0.78fr) minmax(10rem, 0.42fr) minmax(18rem, 0.76fr);
   gap: 1.25rem;
   align-items: center;
-  width: min(72rem, calc(100vw - 4rem));
+  width: min(86rem, calc(100vw - 4rem));
   margin: 0 auto;
 }
 
@@ -7495,8 +7495,10 @@ body:has(.reading-note-lab) {
 }
 
 .reading-note__rows li span {
+  min-width: 0;
   color: rgba(25, 21, 15, 0.62);
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .reading-note__rows li strong {
@@ -7644,9 +7646,19 @@ body:has(.reading-note-lab) {
 }
 
 .reading-note--pair-strip .reading-note__rows li {
-  grid-template-columns: 2.5rem minmax(0, 1fr);
+  grid-template-columns: 2.8rem minmax(0, 1fr);
   gap: 0.08rem 0.35rem;
   font-size: 0.47rem;
+}
+
+.reading-note--pair-strip .reading-note__footer {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.18rem 0.35rem;
+  font-size: 0.43rem;
+}
+
+.reading-note--pair-strip .reading-note__footer span:last-child {
+  grid-column: 1 / -1;
 }
 
 .reading-note--pair-strip .reading-note__scope {
