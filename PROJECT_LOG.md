@@ -3158,3 +3158,50 @@ Verification:
 - `npm run build` passed after clearing stale `.next` cache.
 - Local dev server restarted and
   `http://localhost:3000/folders/region/russia` returned `200 OK`.
+
+## 2026-06-01 — Source Candidate Registry v1
+
+Purpose:
+
+- Separate the current public payload source count from the broader research
+  source universe.
+- Make community, university, government, municipal, and regional sources
+  explicit before the next crawler wave.
+- Move the project away from a narrow “large museum API” source model.
+
+Changes made:
+
+- Added `scripts/generate_source_candidate_registry_v1.py`.
+- Generated `data/source_candidate_registry_v1.csv`.
+- Generated `docs/capture/SOURCE_CANDIDATE_REGISTRY_v1.md`.
+
+Current source registry state:
+
+- 253 candidate sources total.
+- 21 sources already active in the current public payload.
+- 118 inherited from the earlier source expansion matrix.
+- 114 newly added edge/community/local candidates.
+- 154 rows are explicitly marked as community, university, government, or
+  municipal sources.
+
+Regional source candidate distribution:
+
+- Western/Central Europe: 30
+- North America: 28
+- Latin America: 28
+- East Asia: 27
+- Eastern Europe: 23
+- Southeast Asia: 23
+- Africa: 20
+- South Asia: 16
+- Middle East and North Africa: 16
+- Oceania and Pacific: 14
+
+Next capture rule:
+
+- Treat `source_candidate_registry_v1.csv` as the source planning universe.
+- The public interface should count only sources with published surfaces.
+- The About/methodology page can cite the 254-source registry as a verified /
+  under-verification source universe.
+- New crawls should be selected by protocol family and underrepresented region:
+  Kramerius, OAI-PMH, IIIF, CONTENTdm, Omeka, DSpace, and local HTML archives.
