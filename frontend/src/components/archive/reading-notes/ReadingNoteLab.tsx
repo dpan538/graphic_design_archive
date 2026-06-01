@@ -68,6 +68,10 @@ function compactFolderId(folder: Folder): string {
   return `${folder.type.toUpperCase()}/${slugHead}`;
 }
 
+function compactLayoutId(layoutId: ReadingNoteLayoutId): string {
+  return layoutId.slice(0, 4);
+}
+
 function NoteBadges({ ctx }: { ctx: ReadingNoteContext }) {
   const types = new Set<FolderTypeKey>([ctx.folder.type]);
   for (const surface of ctx.samples) {
@@ -85,7 +89,7 @@ function NoteBadges({ ctx }: { ctx: ReadingNoteContext }) {
 function MicroFooter({ ctx }: { ctx: ReadingNoteContext }) {
   return (
     <footer className="reading-note__footer">
-      <span>{ctx.layoutId}</span>
+      <span>{compactLayoutId(ctx.layoutId)}</span>
       <span>{compactFolderId(ctx.folder)}</span>
       <span>READING NOTE</span>
     </footer>
@@ -232,11 +236,11 @@ function RN04Ledger({ ctx }: { ctx: ReadingNoteContext }) {
         <span>DATE</span>
         <span>TITLE</span>
         <span>SOURCE</span>
-        {ctx.samples.slice(0, 5).map((surface) => (
+        {ctx.samples.slice(0, 4).map((surface) => (
           <div key={surface.surfaceId} className="reading-note__ledger-row">
-            <b>{surface.dateText}</b>
-            <strong>{clip(surface.title, 44)}</strong>
-            <em>{clip(surface.sourceName, 24)}</em>
+            <b>{clip(surface.dateText, 12)}</b>
+            <strong>{clip(surface.title, 32)}</strong>
+            <em>{clip(surface.sourceName, 18)}</em>
           </div>
         ))}
       </div>
