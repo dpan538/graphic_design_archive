@@ -1132,43 +1132,149 @@ def movement_for(row: dict[str, str]) -> tuple[list[str], list[dict[str, str]]]:
     return ids, refs
 
 
-def surface_score(row: dict[str, str]) -> int:
-    score = 20
-    for field, points in [
-        ("source_title", 10),
-        ("source_record_url", 10),
-        ("source_date_text", 10),
-        ("date_start", 8),
-        ("source_medium", 8),
-        ("source_place_text", 8),
-        ("source_object_type", 8),
-        ("source_creator", 6),
-        ("source_collection", 5),
-        ("source_rights_text", 5),
-        ("source_description", 10),
-        ("source_notes", 6),
-        ("source_subjects", 4),
-    ]:
-        if row.get(field):
-            score += points
-    if row.get("image_presence_code") in {"IMG01", "IMG02", "IMG03"}:
-        score += 5
-    return min(score, 95)
+MAIN_SHEET_THRESHOLD = 75
+SUPPORT_PACKET_THRESHOLD = 55
+MERGE_CANDIDATE_THRESHOLD = 40
+CARD_THRESHOLD = 20
+MAIN_SHEET_MIN_SOURCE_TEXT = 80
+
+
+def source_reading_text_len(row: dict[str, str]) -> int:
+    return len(
+        " ".join(
+            [
+                row.get("source_description", ""),
+                row.get("source_notes", ""),
+                row.get("ocr_or_excerpt", ""),
+            ]
+        ).strip()
+    )
+
+
+def context_text_len(row: dict[str, str]) -> int:
+    return len(
+        " ".join(
+            [
+                row.get("editorial_summary", ""),
+                row.get("historical_context_note", ""),
+            ]
+        ).strip()
+    )
 
 
 def reading_text_len(row: dict[str, str]) -> int:
-    return len(" ".join([row.get("source_description", ""), row.get("source_notes", ""), row.get("source_subjects", "")]).strip())
+    return source_reading_text_len(row)
+
+
+def surface_score(row: dict[str, str]) -> int:
+    """Score publication readiness as a true 0-100 gate.
+
+    Earlier versions started every record at 20 points, which made bookmark-
+    level records impossible and promoted thin metadata rows into sheets. This
+    score gives most weight to source/citation integrity, rights/image evidence,
+    and grounded source text.
+    """
+    score = 0
+
+    # Source identity and provenance: 20
+    if row.get("source_title"):
+        score += 5
+    if row.get("source_identifier") or row.get("capture_id"):
+        score += 4
+    if row.get("source_record_url"):
+        score += 5
+    if row.get("source_name") or row.get("source_id"):
+        score += 3
+    if row.get("raw_json_path") and row.get("access_date"):
+        score += 3
+
+    # Historical filing evidence: 20
+    if row.get("date_start") or row.get("date_end"):
+        score += 4
+    if row.get("source_date_text"):
+        score += 3
+    if row.get("source_place_text"):
+        score += 4
+    if row.get("source_object_type") or row.get("source_medium"):
+        score += 4
+    if row.get("source_subjects"):
+        score += 5
+
+    # Rights and image evidence: 20
+    img = row.get("image_presence_code") or ""
+    if img:
+        score += 3
+    if img in {"IMG01", "IMG02", "IMG03"}:
+        score += 7
+    if row.get("rights_basis") or row.get("source_rights_text"):
+        score += 5
+    if row.get("image_state_review_note") or row.get("image_state_evaluation"):
+        score += 5
+
+    # Grounded source reading material: 30
+    text_len = source_reading_text_len(row)
+    if text_len >= 500:
+        score += 30
+    elif text_len >= 250:
+        score += 24
+    elif text_len >= 180:
+        score += 18
+    elif text_len >= 80:
+        score += 12
+    elif text_len >= 40:
+        score += 6
+    elif text_len > 0:
+        score += 3
+
+    # Context and relation support: 10
+    context_len = context_text_len(row)
+    if context_len >= 180:
+        score += 5
+    elif context_len >= 80:
+        score += 3
+    if row.get("source_creator"):
+        score += 2
+    if row.get("source_collection"):
+        score += 1
+    if row.get("classification_rationale"):
+        score += 2
+
+    return min(score, 100)
+
+
+def surface_disposition(row: dict[str, str], score: int) -> str:
+    img = row.get("image_presence_code", "IMG00")
+    source_text_len = source_reading_text_len(row)
+    if score >= MAIN_SHEET_THRESHOLD and source_text_len >= MAIN_SHEET_MIN_SOURCE_TEXT:
+        return "main_sheet"
+    if score >= MAIN_SHEET_THRESHOLD and img in {"IMG01", "IMG02", "IMG03"}:
+        return "thin_visual_support_packet"
+    if score >= SUPPORT_PACKET_THRESHOLD:
+        return "support_packet_appendix_text"
+    if score >= MERGE_CANDIDATE_THRESHOLD:
+        return "merge_candidate_support_packet"
+    if score >= CARD_THRESHOLD:
+        return "card"
+    return "bookmark_candidate"
 
 
 def surface_type_and_template(row: dict[str, str], score: int) -> tuple[str, str, str | None]:
     img = row.get("image_presence_code", "IMG00")
-    text_len = reading_text_len(row)
-    if score < 45:
-        return "fallback_stub", "stub.fallback.v0", None
-    if text_len < 80 and img in {"IMG00", "IMG04"}:
-        return "card", "card.sparse.v0", None
-    if score < 60:
-        return "card", "card.sparse.v0", None
+    disposition = surface_disposition(row, score)
+
+    if disposition == "bookmark_candidate":
+        return "fallback_stub", "stub.fallback.v0", "bookmark_candidate"
+    if disposition == "card":
+        return "card", "card.sparse.v0", "card"
+    if disposition == "merge_candidate_support_packet":
+        return "card", "card.sparse.v0", "merge_candidate"
+    if disposition in {"support_packet_appendix_text", "thin_visual_support_packet"}:
+        if img == "IMG04":
+            return "sheet", "sheet.text.v0", "support_packet"
+        if img == "IMG00":
+            return "sheet", "sheet.img00.v0", "support_packet"
+        return "sheet", "sheet.main.v0", "support_packet"
+
     if img == "IMG04":
         return "sheet", "sheet.text.v0", "text"
     if img == "IMG00":
@@ -1183,6 +1289,7 @@ def table(kind: str, rows: list[tuple[str, str]]) -> dict[str, Any]:
 def build_surface(row: dict[str, str], index: int) -> dict[str, Any]:
     capture_id = row["capture_id"]
     score = surface_score(row)
+    disposition = surface_disposition(row, score)
     surface_type, template_id, layout_hint = surface_type_and_template(row, score)
     image_state = row.get("image_presence_code") or "IMG00"
     has_frame = image_state != "IMG04"
@@ -1229,7 +1336,18 @@ def build_surface(row: dict[str, str], index: int) -> dict[str, Any]:
         "sourceNotes": row.get("source_notes") or "",
         "sourceSubjects": row.get("source_subjects") or "",
         "readingTextLength": reading_text_len(row),
+        "sourceReadingTextLength": source_reading_text_len(row),
+        "contextTextLength": context_text_len(row),
         "completenessScore": score,
+        "surfaceDisposition": disposition,
+        "publicationRole": disposition,
+        "publicationGate": {
+            "mainSheetThreshold": MAIN_SHEET_THRESHOLD,
+            "supportPacketThreshold": SUPPORT_PACKET_THRESHOLD,
+            "mergeCandidateThreshold": MERGE_CANDIDATE_THRESHOLD,
+            "cardThreshold": CARD_THRESHOLD,
+            "mainSheetMinSourceText": MAIN_SHEET_MIN_SOURCE_TEXT,
+        },
         "reviewGates": {
             "sourceUrl": bool(row.get("source_record_url")),
             "rightsReviewed": rights_reviewed,
@@ -1261,6 +1379,7 @@ def build_surface(row: dict[str, str], index: int) -> dict[str, Any]:
                     ("Source creator", row.get("source_creator", "")),
                     ("Source date", row.get("source_date_text", "")),
                     ("Source place", row.get("source_place_text", "")),
+                    ("Source collection", row.get("source_collection", "")),
                     ("Source description", row.get("source_description", "")),
                     ("Source notes", row.get("source_notes", "")),
                     ("Source URL", row.get("source_record_url", "")),

@@ -68,7 +68,7 @@ capture batch
 | Raw capture -> capture row | Payload is preserved and at least one candidate resource can be parsed. | No stored payload, no source context, parser detached from raw evidence. |
 | Capture row -> source record draft | Stable landing page or item URL, provider/source identifier or reliable local key, recognizable label, raw pointer. | Search snippet only, unstable locator, unresolved duplicate, navigation shell. |
 | Source record draft -> source record | Source review confirms object/resource, citation is complete, rights disposition exists, provenance is traceable. | Rights unknown, source ambiguity unresolved, provider attribution missing, citation insufficient. |
-| Source record -> main sheet | Completeness score >= 60 and all gates pass. | Essential identity/source/rights gates fail. |
+| Source record -> main sheet | Completeness score >= 75, source-reading gate passes, and all essential gates pass. | Essential identity/source/rights gates fail, or the record is only metadata/table evidence. |
 | Candidate/draft -> card | Enough identity/date/source exists for folder placement, but main sheet threshold is not met. | Too little evidence to cite or sort. |
 | Candidate/draft -> fallback stub | Historically relevant, citable, but cannot support card or sheet. | No resolvable source/citation and no defensible label. |
 | Candidate/draft -> proposed cell | Repeated evidence reveals a framework gap and existing cells would distort the material. | Based on one vague record or duplicates an existing cell. |
@@ -131,8 +131,8 @@ A main sheet requires:
 - IMG state;
 - at least one folder assignment or proposed/unassigned state;
 - citation seed or full citation.
-- enough captured reading material to make the page readable as an archive
-  record, not only as a table.
+- enough captured source-reading material to make the page readable as an
+  archive record, not only as a table.
 
 Recommended score:
 
@@ -182,10 +182,20 @@ of these rules.
 
 Surface outcome:
 
-- `60-100`: main sheet if all gates pass.
-- `45-59`: card by default; may become compound sheet with related items.
-- `25-44`: fallback stub.
-- `<25`: unassigned research item or internal-only capture row.
+- `75-100`: main sheet if source-reading evidence and all gates pass.
+- `55-74`: support packet: appendix + text-page treatment, not a full main
+  sheet. These records may later upgrade after description, rights, relation,
+  or source evidence improves.
+- `40-54`: merge candidate / support packet. Prefer attaching to a stronger
+  main sheet, compound group, source dossier, or folder-level text packet
+  instead of making it stand alone.
+- `20-39`: card.
+- `<20`: bookmark candidate or internal-only capture row.
+
+The threshold is intentionally stricter than the first visual-verification
+pass. A strong image does not by itself make a main sheet. Thin visual records
+can remain visible as support packets, but their research value must be carried
+by text pages, appendices, group context, or source-return evidence.
 
 ## Compound Sheets
 

@@ -1,0 +1,5864 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event:'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+      j=d.createElement(s),
+      dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WNLJX84Q');
+  </script>
+  <!-- End Google Tag Manager -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <!-- rel=dynamic-content indicates an element that is replaced with the contents produced by the specified href.
+   dyn-cs:* URIs are resolved using the values within the 'wp_dynamicContentSpots_85' theme module. -->
+  <link rel="stylesheet" href="/contenthandler/!ut/p/digest!TQmtu-0vGTQvPHURf0bFlQ/sp/mashup:ra:collection?soffset=0&amp;eoffset=18&amp;themeID=ZJ_086423G0313SC06QD0S50410V0&amp;locale=pt-BR&amp;locale=pt&amp;mime-type=text%2Fcss&amp;lm=1779336110000&amp;entry=wp_toolbar_common__0.0%3Ahead_css&amp;entry=wp_dialog_css__0.0%3Ahead_css&amp;entry=wp_toolbar_logo__0.0%3Ahead_css&amp;entry=wp_theme_portal_edit_85__0.0%3Ahead_css&amp;entry=wp_theme_portal_85__0.0%3Ahead_css&amp;entry=wp_portlet_css__0.0%3Ahead_css&amp;entry=wp_toolbar_common_actionbar__0.0%3Ahead_css&amp;entry=wp_simple_contextmenu_css__0.0%3Ahead_css&amp;entry=wp_toolbar_actionbar__0.0%3Ahead_css&amp;entry=wp_ic4_wai_resources__0.0%3Ahead_css&amp;entry=wp_toolbar_sitepreview__0.0%3Ahead_css&amp;entry=wp_gridlayout__0.0%3Ahead_css&amp;entry=wp_toolbar_moremenu__0.0%3Ahead_css&amp;entry=wp_status_bar__0.0%3Ahead_css&amp;entry=wp_toolbar_projectmenu__0.0%3Ahead_css&amp;entry=wp_analytics_aggregator__0.0%3Ahead_css&amp;entry=wp_oob_sample_styles__0.0%3Ahead_css" type="text/css"/><link rel="alternate" id="head_css_deferred" href="/contenthandler/!ut/p/digest!TQmtu-0vGTQvPHURf0bFlQ/sp/mashup:ra:collection?soffset=0&amp;eoffset=8&amp;themeID=ZJ_086423G0313SC06QD0S50410V0&amp;locale=pt-BR&amp;locale=pt&amp;mime-type=text%2Fcss&amp;lm=1779336110000&amp;entry=wp_contextmenu_css__0.0%3Ahead_css&amp;entry=wp_federated_documents_picker__0.0%3Ahead_css&amp;entry=wp_analytics_tags__0.0%3Ahead_css&amp;entry=wp_toolbar_gridlayout_inlineedit__0.0%3Ahead_css&amp;entry=wp_dnd_css__0.0%3Ahead_css&amp;entry=wcm_inplaceEdit__0.0%3Ahead_css&amp;entry=wp_content_targeting_cam__0.0%3Ahead_css&amp;deferred=true"/><script type="text/javascript">var djConfig={"baseUrl":"/portal_dojo/v1.9/dojo/","locale":"pt_BR","isDebug":false,"debugAtAllCosts":false,"parseOnLoad":false,"afterOnLoad":false,"has":{"dojo-bidi":true},"modulePaths":{"com":"/themeModules/js/com","ibm":"/themeModules/js/ibm","pagebuilder":"/themeModules/modules/pagebuilder/js","portalclient":"/themeModules/modules/portalclient/js","asa":"/themeModules/modules/asa/js","contentmapping":"/themeModules/modules/contentmapping/js","federation":"/themeModules/modules/federation/js"}};djConfig.locale=djConfig.locale.replace(/_/g, "-").replace(/iw/, "he").toLowerCase();(function(){if (typeof(wpModules) == 'undefined') wpModules = {}; if (typeof(wpModules.state) == 'undefined') wpModules.state = {}; if (typeof(wpModules.state.page) == 'undefined') wpModules.state.page = {};wpModules.state.page._initial=[{"nsuri":"http://www.ibm.com/xmlns/prod/websphere/portal/publicparams","name":"selection","value":["Z6_086423G039SRC06U81S0H51SG6"]},{"nsuri":"http://www.ibm.com/xmlns/prod/websphere/portal/publicparams","name":"labelMappings","value":["Z6_000000000000000000000000A0","Z6_086423G039SRC06U81S0H51SG6","Z6_086423G039SRC06U81S0H51SG6","Z6_000000000000000000000000A0"]},{"nsuri":"http://www.ibm.com/xmlns/prod/websphere/portal/publicparams","name":"expansions","value":["Z6_000000000000000000000000A0"]}];wpModules.state.page.selectionPath=['Z6_000000000000000000000000A0','Z6_086423G039SRC06U81S0H51SG6'];wpModules.state.page.supportsEditMode=true;wpModules.state.page.supportsToolbar=true;wpModules.state.page.path='';wpModules.state.page.protectedPath='/usuario';wpModules.state.page.publicPath='';})();</script><script type="text/javascript" src="/contenthandler/!ut/p/digest!TQmtu-0vGTQvPHURf0bFlQ/mashup/ra:collection?themeID=ZJ_086423G0313SC06QD0S50410V0&amp;locale=pt-BR&amp;locale=pt&amp;mime-type=text%2Fjavascript&amp;lm=1779336110000&amp;entry=wp_client_main__0.0%3Ahead_js&amp;entry=wp_client_ext__0.0%3Ahead_js&amp;entry=wp_client_logging__0.0%3Ahead_js&amp;entry=wp_client_tracing__0.0%3Ahead_js&amp;entry=wp_modules__0.0%3Ahead_js&amp;entry=wp_photon_dom__0.0%3Ahead_js&amp;entry=wp_toolbar_common__0.0%3Ahead_js&amp;entry=wp_dialog_util__0.0%3Ahead_js&amp;entry=wp_dialog_draggable__0.0%3Ahead_js&amp;entry=wp_dialog_main__0.0%3Ahead_js&amp;entry=wp_a11y__0.0%3Ahead_js&amp;entry=wp_state_page__0.0%3Ahead_js&amp;entry=wp_theme_portal_85__0.0%3Ahead_js&amp;entry=wp_theme_utils__0.0%3Ahead_js&amp;entry=wp_toolbar_viewframe_validator__0.0%3Ahead_js&amp;entry=wp_analytics_aggregator__0.0%3Ahead_js"></script><link rel="alternate" id="head_js_deferred" href="/contenthandler/!ut/p/digest!cHjRKn-eUv59BtO81BV89w/mashup/ra:collection?themeID=ZJ_086423G0313SC06QD0S50410V0&amp;locale=pt-BR&amp;locale=pt&amp;mime-type=text%2Fjavascript&amp;lm=1738690798000&amp;entry=dojo_19__0.0%3Ahead_js&amp;entry=dojo_app_19__0.0%3Ahead_js&amp;entry=dojo_fx_19__0.0%3Ahead_js&amp;entry=dojo_dom_19__0.0%3Ahead_js&amp;entry=dojo_dnd_basic_19__0.0%3Ahead_js&amp;entry=dojo_data_19__0.0%3Ahead_js&amp;entry=dojo_selector_lite_19__0.0%3Ahead_js&amp;entry=dijit_19__0.0%3Ahead_js&amp;entry=dojo_dnd_ext_19__0.0%3Ahead_js&amp;entry=dijit_layout_basic_19__0.0%3Ahead_js&amp;entry=dojox_layout_basic_19__0.0%3Ahead_js&amp;entry=dijit_menu_19__0.0%3Ahead_js&amp;entry=dojo_fmt_19__0.0%3Ahead_js&amp;entry=dijit_tree_19__0.0%3Ahead_js&amp;entry=wp_dnd_namespace__0.0%3Ahead_js&amp;entry=wp_dnd_source__0.0%3Ahead_js&amp;entry=dijit_layout_ext_19__0.0%3Ahead_js&amp;entry=dijit_form_19__0.0%3Ahead_js&amp;entry=wp_client_selector__0.0%3Ahead_js&amp;entry=wp_client_dnd__0.0%3Ahead_js&amp;entry=wp_contextmenu_js__0.0%3Ahead_js&amp;entry=wp_dnd_target__0.0%3Ahead_js&amp;entry=wp_dnd_util__0.0%3Ahead_js&amp;entry=wcm_inplaceEdit__0.0%3Ahead_js&amp;deferred=true"/><link title="assigned" href="/contenthandler/!ut/p/digest!cHjRKn-eUv59BtO81BV89w/war/SPTheme/themes/html/SPTheme/css/orange/orange.css" rel="stylesheet" type="text/css" /><link id="hvNq.yossY8" rel="alternate" href="https://www.arquivoestado.sp.gov.br/apesp/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziDSzMTIyM3Q2MLYODnA3MQi0Mgw08TA2D3c30wyEKcABHA_0oovTjVhCF3_hw_ShCSgpyQyMM0hUVAS6FbAo!/"><script type="text/javascript">(function() {
+  var element = document.getElementById("hvNq.yossY8");
+  if (element) {
+    wpModules.theme.WindowUtils.baseURL.resolve(element.href);
+  }
+}());</script><style id="layout-wstate-styles"></style><base href="https://www.arquivoestado.sp.gov.br/apesp/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziDSzMTIyM3Q2MLYODnA3MQi0Mgw08TA2D3c30wyEKcABHA_0oovTjVhCF3_hw_ShCSgpyQyMM0hUVAS6FbAo!/">
+<title>Arquivo Público do Estado</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content='Arquivo Público do Estado' />
+  <meta property="og:url" content="www.sggd.sp.gov.br" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:description" content="CMS - Sistema de Gestão de Conteúdo do estado de São Paulo" />
+  <meta property="og:image" content="https://sggd.sp.gov.br/statics/img/logo-meta.png" />
+
+
+<link id="com.ibm.lotus.NavStateUrl" rel="alternate" href="/apesp/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziDSzMTIyM3Q2MLYODnA3MQi0Mgw08TA2D3c30wyEKcABHA_0oovTjVhCF3_hw_ShCSgpyQyMM0hUVAS6FbAo!/dz/d5/L2dJQSEvUUt3QS80TmxFL1o2XzA4NjQyM0cwMzlTUkMwNlU4MVMwSDUxU0c2/" />
+
+
+<link href="/statics/src/favicon.ico" keepNavigationalState="false" lateBinding="false" protected="false" rel="shortcut icon" type="image/x-icon">
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="/statics/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/statics/css/custom.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="/statics/src/core.css" rel="stylesheet">
+  <link href="/statics/fontawesome/css/all.min.css" rel="stylesheet" />
+  <link href="/statics/fontawesome-6.4.2/css/all.min.css" rel="stylesheet">
+  <link href="/statics/favicon/favicon-16x16.png" rel="icon" type="image/png">
+  <link href="https://fonts.cdnfonts.com/css/rawline" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/statics/slick/slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="/statics/slick/slick/slick-theme.css">
+
+  <!-- Script -->
+  <script src="/statics/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+   <!-- Slick -->
+   <script type="text/javascript" src="/statics/js/jquery-migrate-3.4.1.min.js"></script>
+   <script type="text/javascript" src="/statics/slick/slick/slick.min.js"></script>
+
+   <!-- Acessibilidade -->
+   <link rel="stylesheet" type="text/css" href="/statics/css/acessibilidade.css">
+
+   <!-- Plugin JQuery-->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+
+    <script src="/statics/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+
+    <script src="/statics/js/custom.js" type="text/javascript"></script>
+    <script src="/statics/js/agenda.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <!-- V1.2-->
+<script>
+$( document ).ready(function() {
+  $("head").append(document.getElementById('analytics'));
+});
+</script>
+
+<style>
+
+.tooltipContextMenu,
+.wpToolbarLogo .wpLogoTooltip {
+  display: none;
+}
+
+.wpthemeControlBody, .wpthemeOverflowAuto, .wpthemeClear {
+  overflow:hidden;
+}
+
+.wpthemeInner, .wpthemeSecondaryNav {
+    margin: 0 auto;
+  width: 100%;
+}
+
+.wptheme1Col .wpthemeCol {
+    width: 100%;
+}
+
+.wpthemeCol {
+    margin: 0px;
+}
+
+.wpthemeControl{
+  margin: 0px;
+}
+
+.wpthemeLayoutContainers{
+  padding: 0px
+}
+</style></head>
+
+<body cz-shortcut-listen="true">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNLJX84Q"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="analytics">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QYS8YQNS11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QYS8YQNS11');
+</script>
+
+</div>
+  <!-- site toolbar -->
+  <!--VLibras-->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <div id="barra-gov">
+    <div class="gov-mobile">
+      <img src="/statics/img/logo-gov-branco.png" alt="SP.Gov.br" class="img-fluid">
+    </div>
+    <div class="container">
+      <div class="row align-items-center justify-content-between px-4">
+        <div class="col-md col-lg-auto">
+
+<span data-href="/apesp" id="stHomeLink" class="stDisplayNone" ></span>
+
+<style>
+#linkLogo:hover{
+background-image: none !important;
+}
+.navbar .nav-item.dropdown i {
+  color: #ef4a00;
+  transition: 0.3s;
+}
+
+.navbar .nav-item.show > a{
+  border-bottom: 3px solid #ef4a00;
+}
+</style>
+
+
+<a id="linkLogo">
+<img src="/wcm/connect/ec8aaec6-6f21-42de-b05e-3d581c57f689/C%C3%B3pia+de+logo_site_Arquivo+P%C3%BAblico+%28250+x+50+px%29.png?MOD=AJPERES&amp;ContentCache=none&amp;CACHE=none&amp;CACHEID=ROOTWORKSPACE-ec8aaec6-6f21-42de-b05e-3d581c57f689-pIEoKsJ" alt="" width="250" height="60" />
+</a>
+
+
+
+
+
+<script>
+let linkHomeA = document.querySelector("#stHomeLink");
+let tagALogo = document.querySelector("#linkLogo");
+tagALogo.setAttribute('href', linkHomeA.attributes["data-href"].nodeValue);
+</script></div>
+        <div class="col-auto">
+          <img class="govbr" src="/statics/img/logo-gov.png" alt="sp.gov.br">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+     <nav class="navbar navbar-expand-xl navbar-light" aria-label="Portal Application" role="navigation" tabindex="-1">
+      <div class="container">
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+      aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+
+
+              <li class="nav-item dropdown">
+                         <a class="nav-link dropdown-toggle" href="#" id="Institucional" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">Institucional<i class="fas fa-chevron-down"></i>
+                             </a>
+                        <ul class="dropdown-menu" aria-labelledby="Institucional">
+
+                             <li class="dropdown-item">
+                             <a href="/apesp/institucional/sobre">
+                      <span lang="pt-BR" dir="ltr">
+                                  Sobre o APESP
+                        </span>
+                              </a>
+                             </li>
+
+                             <li class="dropdown-item">
+                             <a href="/apesp/institucional/organograma">
+                      <span lang="pt-BR" dir="ltr">
+                                  Organograma
+                        </span>
+                              </a>
+                             </li>
+
+                             <li class="dropdown-item">
+                             <a href="/apesp/institucional/diretoria_arquivo">
+                      <span lang="pt-BR" dir="ltr">
+                                  Diretoria do Arquivo Público do Estado
+                        </span>
+                              </a>
+                             </li>
+
+                             <li class="dropdown-item">
+                             <a href="/apesp/institucional/legislacao">
+                      <span lang="pt-BR" dir="ltr">
+                                  Legislação
+                        </span>
+                              </a>
+                             </li>
+
+                             <li class="dropdown-item">
+                             <a href="/apesp/institucional/horario-endereco-telefone">
+                      <span lang="pt-BR" dir="ltr">
+                                  Horário de Atendimento, Endereço e Telefone
+                        </span>
+                              </a>
+                             </li>
+
+                             <li class="dropdown-item">
+                             <a href="/apesp/institucional/cartadeservicos">
+                      <span lang="pt-BR" dir="ltr">
+                                  Carta de Serviços
+                        </span>
+                              </a>
+                             </li>
+
+                 </ul>
+
+              <li class="nav-item dropdown">
+                         <a class="nav-link dropdown-toggle" href="#" id="Canais de Comunicação" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">Canais de Comunicação<i class="fas fa-chevron-down"></i>
+                             </a>
+                        <ul class="dropdown-menu" aria-labelledby="Canais de Comunicação">
+
+                             <li class="dropdown-item">
+                             <a href="/apesp/canais_comunicacao/fale-conosco">
+                      <span lang="pt-BR" dir="ltr">
+                                  Fale Conosco
+                        </span>
+                              </a>
+                             </li>
+
+                             <li class="dropdown-item">
+                             <a href="https://www.ouvidoria.sp.gov.br/Portal/Default.aspx">
+                      <span lang="pt-BR" dir="ltr">
+                                  Ouvidoria
+                        </span>
+                              </a>
+                             </li>
+
+                             <li class="dropdown-item">
+                             <a href="/apesp/canais_comunicacao/privacidade-e-protecao-de-dados-lgpd">
+                      <span lang="pt-BR" dir="ltr">
+                                  Privacidade e Proteção de Dados - LGPD
+                        </span>
+                              </a>
+                             </li>
+
+                             <li class="dropdown-item">
+                             <a href="/apesp/canais_comunicacao/perguntas-frequentes-faq">
+                      <span lang="pt-BR" dir="ltr">
+                                  Perguntas Frequentes - FAQ
+                        </span>
+                              </a>
+                             </li>
+
+                 </ul>
+
+              <li class="nav-item dropdown">
+                         <a class="nav-link dropdown-toggle" href="#" id="Transparência" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">Transparência<i class="fas fa-chevron-down"></i>
+                             </a>
+                        <ul class="dropdown-menu" aria-labelledby="Transparência">
+
+                       <li class="dropdown-item dropdown">
+                            <a class="dropdown-toggle" id="Servidores Públicos3-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <span lang="pt-BR" dir="ltr">
+                                  Servidores Públicos<i class="fas fa-chevron-right"></i>
+                              </span>
+                                    </a>
+
+
+                           <ul class="dropdown-menu" aria-labelledby="Servidores Públicos3-1">
+
+                                <li class="dropdown-item">
+                                  <a href="https://www.transparencia.sp.gov.br/Home/Servidor">
+                                      <span lang="pt-BR" dir="ltr">
+                                Remuneração Mensal
+                                  </span>
+                                 </a>
+                          </li>
+
+                                <li class="dropdown-item">
+                                  <a href="https://www.transparencia.sp.gov.br/Home/Diarias">
+                                      <span lang="pt-BR" dir="ltr">
+                                Diárias e Passagens Aéreas
+                                  </span>
+                                 </a>
+                          </li>
+
+                    </ul>
+                    </li>
+
+                             <li class="dropdown-item">
+                             <a href="/apesp/transparencia/programas-e-acoes">
+                      <span lang="pt-BR" dir="ltr">
+                                  Programas e Ações
+                        </span>
+                              </a>
+                             </li>
+
+                       <li class="dropdown-item dropdown">
+                            <a class="dropdown-toggle" id="Participação Social3-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <span lang="pt-BR" dir="ltr">
+                                  Participação Social<i class="fas fa-chevron-right"></i>
+                              </span>
+                                    </a>
+
+
+                           <ul class="dropdown-menu" aria-labelledby="Participação Social3-1">
+
+                                <li class="dropdown-item">
+                                  <a href="/apesp/transparencia/participacao-social/audi%C3%AAncias%20e%20consultas%20p%C3%BAblicas">
+                                      <span lang="pt-BR" dir="ltr">
+                                Audiências e Consultas Públicas
+                                  </span>
+                                 </a>
+                          </li>
+
+                                <li class="dropdown-item">
+                                  <a href="/apesp/transparencia/participacao-social/conselhos%20e%20%C3%B3rg%C3%A3os%20colegiados">
+                                      <span lang="pt-BR" dir="ltr">
+                                Conselhos e Órgãos Colegiados
+                                  </span>
+                                 </a>
+                          </li>
+
+                                <li class="dropdown-item">
+                                  <a href="/apesp/transparencia/participacao-social/avalia%C3%A7%C3%A3o%20dos%20servi%C3%A7os%20p%C3%BAblicos">
+                                      <span lang="pt-BR" dir="ltr">
+                                Avaliação dos Serviços Públicos
+                                  </span>
+                                 </a>
+                          </li>
+
+                    </ul>
+                    </li>
+
+                       <li class="dropdown-item dropdown">
+                            <a class="dropdown-toggle" id="Contratos e Compras Públicas3-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <span lang="pt-BR" dir="ltr">
+                                  Contratos e Compras Públicas<i class="fas fa-chevron-right"></i>
+                              </span>
+                                    </a>
+
+
+                           <ul class="dropdown-menu" aria-labelledby="Contratos e Compras Públicas3-1">
+
+                                <li class="dropdown-item">
+                                  <a href="/apesp/transparencia/contratos-e-compras-publicas/sistemas%20de%20cadastros%20de%20contratos%20e%20compras%20p%C3%BAblicas">
+                                      <span lang="pt-BR" dir="ltr">
+                                Sistemas de Cadastros de Contratos e Compras Públicas
+                                  </span>
+                                 </a>
+                          </li>
+
+                                <li class="dropdown-item">
+                                  <a href="https://www.transparencia.sp.gov.br/Home/DespContratos">
+                                      <span lang="pt-BR" dir="ltr">
+                                Painel da Transparência de Despesas com Contratos
+                                  </span>
+                                 </a>
+                          </li>
+
+                    </ul>
+                    </li>
+
+                             <li class="dropdown-item">
+                             <a href="/apesp/transparencia/convenios-repasses-e-transferencias-de-recursos">
+                      <span lang="pt-BR" dir="ltr">
+                                  Convênios, repasses e transferências de recursos
+                        </span>
+                              </a>
+                             </li>
+
+                       <li class="dropdown-item dropdown">
+                            <a class="dropdown-toggle" id="Receitas e Despesas3-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <span lang="pt-BR" dir="ltr">
+                                  Receitas e Despesas<i class="fas fa-chevron-right"></i>
+                              </span>
+                                    </a>
+
+
+                           <ul class="dropdown-menu" aria-labelledby="Receitas e Despesas3-1">
+
+                                <li class="dropdown-item">
+                                  <a href="https://www.transparencia.sp.gov.br/Home/Demonstra">
+                                      <span lang="pt-BR" dir="ltr">
+                                Receitas
+                                  </span>
+                                 </a>
+                          </li>
+
+                                <li class="dropdown-item">
+                                  <a href="https://www.transparencia.sp.gov.br/Home/Investimentos">
+                                      <span lang="pt-BR" dir="ltr">
+                                Despesas
+                                  </span>
+                                 </a>
+                          </li>
+
+                    </ul>
+                    </li>
+
+                             <li class="dropdown-item">
+                             <a href="https://www.transparencia.sp.gov.br/Home/EmendasParlamentares">
+                      <span lang="pt-BR" dir="ltr">
+                                  Emendas Parlamentares
+                        </span>
+                              </a>
+                             </li>
+
+                             <li class="dropdown-item">
+                             <a href="/apesp/transparencia/obras-publicas">
+                      <span lang="pt-BR" dir="ltr">
+                                  Obras Públicas
+                        </span>
+                              </a>
+                             </li>
+
+                             <li class="dropdown-item">
+                             <a href="/apesp/transparencia/informacoes-classificadas-e-desclassificadas">
+                      <span lang="pt-BR" dir="ltr">
+                                  Informações Classificadas e Desclassificadas
+                        </span>
+                              </a>
+                             </li>
+
+                 </ul>
+
+              <li class="nav-item dropdown">
+                <a href="/apesp/servicos" class="nav-link">
+
+
+                                <span lang="pt-BR" dir="ltr">Serviços</span>
+                            </a>
+
+
+
+                        </li>
+
+              <li class="nav-item dropdown">
+                <a href="/apesp/publicacoes" class="nav-link">
+
+
+                                <span lang="pt-BR" dir="ltr">Publicações</span>
+                            </a>
+
+
+
+                        </li>
+
+              <li class="nav-item dropdown">
+                <a href="/apesp/eventos" class="nav-link">
+
+
+                                <span lang="pt-BR" dir="ltr">Eventos</span>
+                            </a>
+
+
+
+                        </li>
+
+              <li class="nav-item dropdown">
+                <a href="/apesp/not%C3%ADcias" class="nav-link">
+
+
+                                <span lang="pt-BR" dir="ltr">Notícias</span>
+                            </a>
+
+
+
+                        </li>
+
+
+             </ul>
+            </div>
+           </div>
+        </nav>
+        <div class="wpthemeClear"></div>
+  <script>
+
+    let linkLi = document.createElement("li");
+    linkLi.classList.add("nav-item");
+    let tagA = document.createElement("a");
+    tagA.classList.add("nav-link");
+    tagA.classList.add("dropdown");
+    let linkHome = document.querySelector("#stHomeLink");
+    tagA.setAttribute('href', linkHome.attributes["data-href"].nodeValue);
+    tagA.textContent = 'Início';
+    linkLi.appendChild(tagA);
+    let lista = document.querySelector("ul.navbar-nav.mr-auto");
+
+    if (!(lista === null)) {
+        lista.prepend(linkLi);
+    }
+
+
+
+    function extrairPartesDominio(url) {
+      if (!url || typeof url !== 'string') return [];
+      let dominio = url.toLowerCase()
+        .replace(/^https?:\/\//, '')
+        .replace(/^www\./i, '');
+      const indiceCorte = dominio.search(/[/?&#:]/);
+      if (indiceCorte !== -1) {
+        dominio = dominio.substring(0, indiceCorte);
+      }
+      dominio = dominio.replace(/\.sp\.gov\.br$/i, '');
+      return dominio
+        .trim()
+        .split('.')
+        .filter(part => part.length > 0);
+    }
+
+ function temPalavraEmComum(array1 = [], array2 = []) {
+  const PALAVRAS_CHAVE = new Set(['Poupatempo'].map(s => s.toLowerCase()));
+
+  return [...array1, ...array2].some(item => {
+    if (typeof item !== 'string') return false;
+    return PALAVRAS_CHAVE.has(item.trim().toLowerCase());
+  });
+}
+
+function initExternalLinkHandler() {
+  const links = document.querySelectorAll('ul.navbar-nav.mr-auto a[href]');
+
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+
+      if (!href || href.startsWith('#') || href.startsWith('javascript:')) {
+        return;
+      }
+
+      const currentDomain = window.location.hostname;
+      const tempLink = document.createElement('a');
+      tempLink.href = href;
+      const linkDomain = tempLink.hostname;
+
+      const currentDomainParts = extrairPartesDominio(currentDomain);
+       const linkDomainParts = extrairPartesDominio(linkDomain);
+
+          if (temPalavraEmComum(currentDomainParts, linkDomainParts)) {
+            link.target = '_self';
+            return;
+          }
+
+      if (linkDomain && linkDomain !== currentDomain) {
+        e.preventDefault();
+        window.open(href, '_blank', 'noopener,noreferrer');
+      }
+    });
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initExternalLinkHandler);
+} else {
+  initExternalLinkHandler();
+}
+</script>
+
+<script>
+    const config = [
+    {
+      url: "https://poupatempo.sp.gov.br/",
+      label: "poupatempo"
+    },
+    {
+      url: "https://www.procon.sp.gov.br/",
+      label: "procon"
+    }
+  ];
+
+  function atualizarLinkLogo() {
+    const urlAtual = window.location.host;
+    const termo = config.find(item => urlAtual.toLowerCase().includes(item.label.toLowerCase()));
+
+    const linkLogo = document.getElementById("linkLogo");
+    if (linkLogo && termo) {
+      linkLogo.href = termo.url;
+    }
+  }
+
+  function redirecionar() {
+
+    const urlAtual = window.location.href;
+    if (!urlAtual.toLowerCase().includes('admin')) {
+      const pathname = window.location.pathname;
+      if (pathname === '/poupatempo' || pathname === '/poupatempo/') {
+        window.location.replace('https://poupatempo.sp.gov.br/');
+      }
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    atualizarLinkLogo();
+    redirecionar();
+  });
+
+</script><div class="container">
+    <section id="warning-alert-cms">
+      <div class="row">
+        <div class="col-md-12 mx-auto">
+          <div
+          class="alert alert-warning alert-dismissible fade show d-flex justify-content-between py-3"
+          role="alert"
+          >
+          <i class="fa-solid fa-triangle-exclamation p-3 fa-2x"></i>
+          <div class="col-md-11 p-2">
+            Para garantir <strong>rastreabilidade e segurança</strong> nas
+            integrações via <strong>iframe</strong>, solicitamos o envio da
+            <strong>relação de URLs utilizadas.</strong> Com base nessas
+            informações, realizaremos o cadastramento em
+            <strong>whitelist</strong>, assegurando a continuidade dos
+            redirecionamentos. Pedimos, por gentileza, o
+            <strong>envio até 22/05.</strong> A ausência dessas informações
+            poderá acarretar <strong>bloqueios preventivos</strong> de
+            acesso. Contamos com a colaboração de todos.
+            <strong>Equipe CMS.</strong>
+          </div>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+          </div>
+        </div>
+          </div>
+    </section>
+  </div>
+
+  <div id="modalCustomWarning" class="modal-warning-cms">
+    <div class="modal-content">
+      <button class="close btn-close-modal-warning-cms">&times;</button>
+
+      <img src="/statics/img/warnings/e-mail-novos-grupos.png" alt="Imagem novos grupos" class="modal-img">
+    </div>
+  </div>
+  <div class="wpthemeMainContent" role="main" tabindex="-1" aria-label="HCL Digital Experience">
+    <main role="main">
+
+<div class="asa.page asa-hidden" id="asa.page">
+  <span class="asa.page.id">Z6_086423G039SRC06U81S0H51SG6</span>
+
+
+
+</div>
+
+<div class="wpthemeClear"></div>
+
+<div class="wpthemeInner">
+  <div id="wpthemeStatusBarContainer" class="wpthemeStatusBarContainer">
+
+
+    <noscript>
+      <div class="wpthemeMessage" role="alert" wairole="alert">
+        <img class="wpthemeMsgIcon wpthemeMsgIconError" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Error" />
+        <span class="wpthemeAltText">Error:</span>
+        <div class="wpthemeMessageBody">Javascript está desativado neste navegador. Esta página requer Javascript. Modifique as configurações do seu navegador para permitir que o Javascript seja executado. Consulte a documentação do navegador para as instruções específicas.</div>
+      </div>
+    </noscript>
+
+  </div>
+</div>
+<!-- required - do not remove -->
+      <div style="display:none" id="portletState">{}</div><div id="layoutContainers" class="wpthemeLayoutContainers wpthemeLayoutContainersHidden">
+        <div class="wpthemeInner">
+          <div class="hiddenWidgetsDiv">
+  <!-- widgets in this container are hidden in the UI by default -->
+  <div class='component-container ibmDndRow wpthemeRow hiddenWidgetsContainer wpthemeCol12of12 wpthemeFull id-Z7_086423G039SRC06U81S0H51SG3' name='ibmHiddenWidgets' ><div class='component-control id-Z7_086423G039SRC06U81S0H51SO4' ><span id="Z7_086423G039SRC06U81S0H51SO4"></span><section class="ibmPortalControl wpthemeControl wpthemeHidden a11yRegionTarget" role="region">
+
+
+
+  <div class="asa.portlet asa-hidden" id="asa.portlet.Z7_086423G039SRC06U81S0H51SO4">
+    <span class="asa.portlet.id">Z7_086423G039SRC06U81S0H51SO4</span>
+
+
+
+  </div>
+
+<!-- start header markup -->
+  <header class="wpthemeControlHeader" role="banner" aria-label="Skin header">
+    <div class="wpthemeInner">
+      <h2>
+        <img class="dndHandle" draggable="true" ondragstart="wpModules.dnd.util.portletDragStart(event, this, this.parentNode, 30, 0);"
+        ondragend="wpModules.dnd.util.portletDragEnd(event);"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""/>
+        <!-- lm-dynamic-title node marks location for dynamic title support -->
+         <span class="lm-dynamic-title asa.portlet.title a11yRegionLabel"><span lang="pt-BR" dir="ltr">Visualizador do Conteúdo da Web</span></span>
+      </h2>
+      <a aria-haspopup="true" aria-label="Exibir menu de conteúdo" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus contextMenuInSkinIcon" style="display:none" tabindex="0">
+        <span title="Exibir menu de conteúdo"><img aria-label="Exibir menu de conteúdo" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Menu de ação do componente</span>
+        <!-- start CAM template -->
+        <span class="wpthemeMenu" data-positioning-handler="horizontallyCenteredBelow">
+          <div class="wpthemeMenuBorder">
+            <!-- define the menu item template inside the "ul" element.  only "css-class", "description", and "title" are handled by the theme's sample javascript. -->
+            <ul class="wpthemeMenuDropDown wpthemeTemplateMenu" role="menu">
+              <li class="${css-class}" role="menuitem" tabindex="-1"><span
+                class="wpthemeMenuText">${title}</span></li>
+            </ul>
+            <div class="verticalMenuPointer pointer"></div>
+          </div> <!-- Template for loading -->
+          <div class="wpthemeMenuLoading wpthemeTemplateLoading">${loading}</div>
+          <!-- Template for submenu -->
+          <div class="wpthemeAnchorSubmenu wpthemeTemplateSubmenu">
+            <div class="wpthemeMenuBorder wpthemeMenuSubmenu">
+              <ul id="${submenu-id}" class="wpthemeMenuDropDown"
+                role="menu">
+                <li role="menuitem" tabindex="-1"></li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <!-- end CAM template -->
+      </a>
+      <a aria-haspopup="true" aria-label="Display portlet menu" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus" tabindex="0"
+                onclick="if (typeof wptheme != 'undefined') wptheme.contextMenu.init({ 'node': this, menuId: 'skinAction', jsonQuery: {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}, params: {'alignment':'right'}});"
+        onkeydown="javascript:if (typeof i$ != 'undefined' &amp;&amp; typeof wptheme != 'undefined') {if (event.keyCode ==13 || event.keyCode ==32 || event.keyCode==38 || event.keyCode ==40) {wptheme.contextMenu.init(this, 'skinAction', {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}); return false;}}">
+        <span title="Exibir menu do portlet"><img aria-label="Exibir menu do portlet" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Ações</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="wpthemeControlBody wpthemeOverflowAuto wpthemeClear"> <!-- lm:control dynamic spot injects markup of layout control -->
+  <!-- asa.overlay marks the node that the AsaOverlayWidget will be placed in -->
+    <div class="wpthemeASARelPosition">
+      <div class="analytics.overlay" ></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/PA_WCMLRingPortJSR286/js/error.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/PA_WCMLRingPortJSR286/styles/error.css" />
+
+<script type="text/javascript">
+  ns_Z7_086423G039SRC06U81S0H51SO4_myFormErrorHdl = new FormErrorHdl('ns_Z7_086423G039SRC06U81S0H51SO4_', '');
+</script>
+
+
+
+
+
+
+
+
+
+<div class="lrpError lrpErrorLtr">
+    <div class="lrpErrorBox" style="width: auto;">
+      <div class="lrpErrorContent" style="overflow: auto;">
+        <img class="lrpIcon" src="/PA_WCMLRingPortJSR286/images/iconWarningLarge.gif" alt="Aviso"
+          title="Aviso" />
+
+        <div class="lrpErrorForm">
+          <h1 class="lrpHeading">
+            Aviso
+          </h1>
+          <p>
+
+
+
+                Configuração inválida localizada. Entre em contato com o administrador.
+
+
+
+
+
+          </p>
+          <form method="" action="">
+            <div class="lrpBtnContainer">
+               <span>
+
+
+                  &nbsp;
+
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div><div class="wpthemeClear"></div>
+  </div>
+</section>
+</div><div class='component-control id-Z7_086423G0317OD063GUKTRGJ1M4' ><span id="Z7_086423G0317OD063GUKTRGJ1M4"></span><section class="ibmPortalControl wpthemeControl wpthemeHidden a11yRegionTarget" role="region">
+
+
+
+  <div class="asa.portlet asa-hidden" id="asa.portlet.Z7_086423G0317OD063GUKTRGJ1M4">
+    <span class="asa.portlet.id">Z7_086423G0317OD063GUKTRGJ1M4</span>
+
+
+
+  </div>
+
+<!-- start header markup -->
+  <header class="wpthemeControlHeader" role="banner" aria-label="Skin header">
+    <div class="wpthemeInner">
+      <h2>
+        <img class="dndHandle" draggable="true" ondragstart="wpModules.dnd.util.portletDragStart(event, this, this.parentNode, 30, 0);"
+        ondragend="wpModules.dnd.util.portletDragEnd(event);"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""/>
+        <!-- lm-dynamic-title node marks location for dynamic title support -->
+         <span class="lm-dynamic-title asa.portlet.title a11yRegionLabel"><span lang="pt-BR" dir="ltr">Visualizador do Conteúdo da Web</span></span>
+      </h2>
+      <a aria-haspopup="true" aria-label="Exibir menu de conteúdo" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus contextMenuInSkinIcon" style="display:none" tabindex="0">
+        <span title="Exibir menu de conteúdo"><img aria-label="Exibir menu de conteúdo" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Menu de ação do componente</span>
+        <!-- start CAM template -->
+        <span class="wpthemeMenu" data-positioning-handler="horizontallyCenteredBelow">
+          <div class="wpthemeMenuBorder">
+            <!-- define the menu item template inside the "ul" element.  only "css-class", "description", and "title" are handled by the theme's sample javascript. -->
+            <ul class="wpthemeMenuDropDown wpthemeTemplateMenu" role="menu">
+              <li class="${css-class}" role="menuitem" tabindex="-1"><span
+                class="wpthemeMenuText">${title}</span></li>
+            </ul>
+            <div class="verticalMenuPointer pointer"></div>
+          </div> <!-- Template for loading -->
+          <div class="wpthemeMenuLoading wpthemeTemplateLoading">${loading}</div>
+          <!-- Template for submenu -->
+          <div class="wpthemeAnchorSubmenu wpthemeTemplateSubmenu">
+            <div class="wpthemeMenuBorder wpthemeMenuSubmenu">
+              <ul id="${submenu-id}" class="wpthemeMenuDropDown"
+                role="menu">
+                <li role="menuitem" tabindex="-1"></li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <!-- end CAM template -->
+      </a>
+      <a aria-haspopup="true" aria-label="Display portlet menu" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus" tabindex="0"
+                onclick="if (typeof wptheme != 'undefined') wptheme.contextMenu.init({ 'node': this, menuId: 'skinAction', jsonQuery: {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}, params: {'alignment':'right'}});"
+        onkeydown="javascript:if (typeof i$ != 'undefined' &amp;&amp; typeof wptheme != 'undefined') {if (event.keyCode ==13 || event.keyCode ==32 || event.keyCode==38 || event.keyCode ==40) {wptheme.contextMenu.init(this, 'skinAction', {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}); return false;}}">
+        <span title="Exibir menu do portlet"><img aria-label="Exibir menu do portlet" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Ações</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="wpthemeControlBody wpthemeOverflowAuto wpthemeClear"> <!-- lm:control dynamic spot injects markup of layout control -->
+  <!-- asa.overlay marks the node that the AsaOverlayWidget will be placed in -->
+    <div class="wpthemeASARelPosition">
+      <div class="analytics.overlay" ></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/PA_WCMLRingPortJSR286/js/error.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/PA_WCMLRingPortJSR286/styles/error.css" />
+
+<script type="text/javascript">
+  ns_Z7_086423G0317OD063GUKTRGJ1M4_myFormErrorHdl = new FormErrorHdl('ns_Z7_086423G0317OD063GUKTRGJ1M4_', '');
+</script>
+
+
+
+
+
+
+
+
+
+<div class="lrpError lrpErrorLtr">
+    <div class="lrpErrorBox" style="width: auto;">
+      <div class="lrpErrorContent" style="overflow: auto;">
+        <img class="lrpIcon" src="/PA_WCMLRingPortJSR286/images/iconWarningLarge.gif" alt="Aviso"
+          title="Aviso" />
+
+        <div class="lrpErrorForm">
+          <h1 class="lrpHeading">
+            Aviso
+          </h1>
+          <p>
+
+
+
+                Configuração inválida localizada. Entre em contato com o administrador.
+
+
+
+
+
+          </p>
+          <form method="" action="">
+            <div class="lrpBtnContainer">
+               <span>
+
+
+                  &nbsp;
+
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div><div class="wpthemeClear"></div>
+  </div>
+</section>
+</div><div class='component-control id-Z7_086423G039SRC06U81S0H51S84' ><span id="Z7_086423G039SRC06U81S0H51S84"></span><section class="ibmPortalControl wpthemeControl wpthemeHidden a11yRegionTarget" role="region">
+
+
+
+  <div class="asa.portlet asa-hidden" id="asa.portlet.Z7_086423G039SRC06U81S0H51S84">
+    <span class="asa.portlet.id">Z7_086423G039SRC06U81S0H51S84</span>
+
+
+
+  </div>
+
+<!-- start header markup -->
+  <header class="wpthemeControlHeader" role="banner" aria-label="Skin header">
+    <div class="wpthemeInner">
+      <h2>
+        <img class="dndHandle" draggable="true" ondragstart="wpModules.dnd.util.portletDragStart(event, this, this.parentNode, 30, 0);"
+        ondragend="wpModules.dnd.util.portletDragEnd(event);"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""/>
+        <!-- lm-dynamic-title node marks location for dynamic title support -->
+         <span class="lm-dynamic-title asa.portlet.title a11yRegionLabel"><span lang="pt-BR" dir="ltr">Visualizador do Conteúdo da Web</span></span>
+      </h2>
+      <a aria-haspopup="true" aria-label="Exibir menu de conteúdo" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus contextMenuInSkinIcon" style="display:none" tabindex="0">
+        <span title="Exibir menu de conteúdo"><img aria-label="Exibir menu de conteúdo" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Menu de ação do componente</span>
+        <!-- start CAM template -->
+        <span class="wpthemeMenu" data-positioning-handler="horizontallyCenteredBelow">
+          <div class="wpthemeMenuBorder">
+            <!-- define the menu item template inside the "ul" element.  only "css-class", "description", and "title" are handled by the theme's sample javascript. -->
+            <ul class="wpthemeMenuDropDown wpthemeTemplateMenu" role="menu">
+              <li class="${css-class}" role="menuitem" tabindex="-1"><span
+                class="wpthemeMenuText">${title}</span></li>
+            </ul>
+            <div class="verticalMenuPointer pointer"></div>
+          </div> <!-- Template for loading -->
+          <div class="wpthemeMenuLoading wpthemeTemplateLoading">${loading}</div>
+          <!-- Template for submenu -->
+          <div class="wpthemeAnchorSubmenu wpthemeTemplateSubmenu">
+            <div class="wpthemeMenuBorder wpthemeMenuSubmenu">
+              <ul id="${submenu-id}" class="wpthemeMenuDropDown"
+                role="menu">
+                <li role="menuitem" tabindex="-1"></li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <!-- end CAM template -->
+      </a>
+      <a aria-haspopup="true" aria-label="Display portlet menu" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus" tabindex="0"
+                onclick="if (typeof wptheme != 'undefined') wptheme.contextMenu.init({ 'node': this, menuId: 'skinAction', jsonQuery: {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}, params: {'alignment':'right'}});"
+        onkeydown="javascript:if (typeof i$ != 'undefined' &amp;&amp; typeof wptheme != 'undefined') {if (event.keyCode ==13 || event.keyCode ==32 || event.keyCode==38 || event.keyCode ==40) {wptheme.contextMenu.init(this, 'skinAction', {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}); return false;}}">
+        <span title="Exibir menu do portlet"><img aria-label="Exibir menu do portlet" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Ações</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="wpthemeControlBody wpthemeOverflowAuto wpthemeClear"> <!-- lm:control dynamic spot injects markup of layout control -->
+  <!-- asa.overlay marks the node that the AsaOverlayWidget will be placed in -->
+    <div class="wpthemeASARelPosition">
+      <div class="analytics.overlay" ></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/PA_WCMLRingPortJSR286/js/error.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/PA_WCMLRingPortJSR286/styles/error.css" />
+
+<script type="text/javascript">
+  ns_Z7_086423G039SRC06U81S0H51S84_myFormErrorHdl = new FormErrorHdl('ns_Z7_086423G039SRC06U81S0H51S84_', '');
+</script>
+
+
+
+
+
+
+
+
+
+<div class="lrpError lrpErrorLtr">
+    <div class="lrpErrorBox" style="width: auto;">
+      <div class="lrpErrorContent" style="overflow: auto;">
+        <img class="lrpIcon" src="/PA_WCMLRingPortJSR286/images/iconWarningLarge.gif" alt="Aviso"
+          title="Aviso" />
+
+        <div class="lrpErrorForm">
+          <h1 class="lrpHeading">
+            Aviso
+          </h1>
+          <p>
+
+
+
+                Configuração inválida localizada. Entre em contato com o administrador.
+
+
+
+
+
+          </p>
+          <form method="" action="">
+            <div class="lrpBtnContainer">
+               <span>
+
+
+                  &nbsp;
+
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div><div class="wpthemeClear"></div>
+  </div>
+</section>
+</div><div class='component-control id-Z7_MH1A1C404HDID06NOIRTCI0QL4' ><span id="Z7_MH1A1C404HDID06NOIRTCI0QL4"></span><section class="ibmPortalControl wpthemeControl wpthemeHidden a11yRegionTarget" role="region">
+
+
+
+  <div class="asa.portlet asa-hidden" id="asa.portlet.Z7_MH1A1C404HDID06NOIRTCI0QL4">
+    <span class="asa.portlet.id">Z7_MH1A1C404HDID06NOIRTCI0QL4</span>
+
+
+
+  </div>
+
+<!-- start header markup -->
+  <header class="wpthemeControlHeader" role="banner" aria-label="Skin header">
+    <div class="wpthemeInner">
+      <h2>
+        <img class="dndHandle" draggable="true" ondragstart="wpModules.dnd.util.portletDragStart(event, this, this.parentNode, 30, 0);"
+        ondragend="wpModules.dnd.util.portletDragEnd(event);"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""/>
+        <!-- lm-dynamic-title node marks location for dynamic title support -->
+         <span class="lm-dynamic-title asa.portlet.title a11yRegionLabel"><span lang="pt-BR" dir="ltr">Visualizador do Conteúdo da Web</span></span>
+      </h2>
+      <a aria-haspopup="true" aria-label="Exibir menu de conteúdo" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus contextMenuInSkinIcon" style="display:none" tabindex="0">
+        <span title="Exibir menu de conteúdo"><img aria-label="Exibir menu de conteúdo" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Menu de ação do componente</span>
+        <!-- start CAM template -->
+        <span class="wpthemeMenu" data-positioning-handler="horizontallyCenteredBelow">
+          <div class="wpthemeMenuBorder">
+            <!-- define the menu item template inside the "ul" element.  only "css-class", "description", and "title" are handled by the theme's sample javascript. -->
+            <ul class="wpthemeMenuDropDown wpthemeTemplateMenu" role="menu">
+              <li class="${css-class}" role="menuitem" tabindex="-1"><span
+                class="wpthemeMenuText">${title}</span></li>
+            </ul>
+            <div class="verticalMenuPointer pointer"></div>
+          </div> <!-- Template for loading -->
+          <div class="wpthemeMenuLoading wpthemeTemplateLoading">${loading}</div>
+          <!-- Template for submenu -->
+          <div class="wpthemeAnchorSubmenu wpthemeTemplateSubmenu">
+            <div class="wpthemeMenuBorder wpthemeMenuSubmenu">
+              <ul id="${submenu-id}" class="wpthemeMenuDropDown"
+                role="menu">
+                <li role="menuitem" tabindex="-1"></li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <!-- end CAM template -->
+      </a>
+      <a aria-haspopup="true" aria-label="Display portlet menu" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus" tabindex="0"
+                onclick="if (typeof wptheme != 'undefined') wptheme.contextMenu.init({ 'node': this, menuId: 'skinAction', jsonQuery: {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}, params: {'alignment':'right'}});"
+        onkeydown="javascript:if (typeof i$ != 'undefined' &amp;&amp; typeof wptheme != 'undefined') {if (event.keyCode ==13 || event.keyCode ==32 || event.keyCode==38 || event.keyCode ==40) {wptheme.contextMenu.init(this, 'skinAction', {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}); return false;}}">
+        <span title="Exibir menu do portlet"><img aria-label="Exibir menu do portlet" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Ações</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="wpthemeControlBody wpthemeOverflowAuto wpthemeClear"> <!-- lm:control dynamic spot injects markup of layout control -->
+  <!-- asa.overlay marks the node that the AsaOverlayWidget will be placed in -->
+    <div class="wpthemeASARelPosition">
+      <div class="analytics.overlay" ></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  .esp-01{
+    margin-left: 10px;
+  }
+
+</style>
+
+
+
+<main role="main">
+  <div class="container">
+    <!-- Banner -->
+    <section id="banner-rotativo">
+      <!-- Banner -->
+      <div class="carouselHome">
+        <div>
+
+
+
+            <div>
+                <a href=''>
+                  <img src='/dx/api/dam/v1/collections/fa95acfa-3573-47d3-b935-f8f91d7ea972/items/58e8f232-e403-4d96-a2bb-8e50b900239b/renditions/4d863aa7-d398-4924-8ac5-58a10521b2f2?binary=true' class="d-none d-md-block w-100 img-fluid" alt="Imagem do banner">
+                  <img src='/dx/api/dam/v1/collections/fa95acfa-3573-47d3-b935-f8f91d7ea972/items/58e8f232-e403-4d96-a2bb-8e50b900239b/renditions/4d863aa7-d398-4924-8ac5-58a10521b2f2?binary=true' class="d-block d-md-none w-100 img-fluid" alt="Imagem do banner">
+                </a>
+            </div>
+
+
+
+
+
+
+
+        </div>
+      </div>
+    </section>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="wpthemeClear"></div>
+  </div>
+</section>
+</div><div class='component-control id-Z7_086423G039EOD063GUOKIOBUG0' ><span id="Z7_086423G039EOD063GUOKIOBUG0"></span><section class="ibmPortalControl wpthemeControl wpthemeHidden a11yRegionTarget" role="region">
+
+
+
+  <div class="asa.portlet asa-hidden" id="asa.portlet.Z7_086423G039EOD063GUOKIOBUG0">
+    <span class="asa.portlet.id">Z7_086423G039EOD063GUOKIOBUG0</span>
+
+
+
+  </div>
+
+<!-- start header markup -->
+  <header class="wpthemeControlHeader" role="banner" aria-label="Skin header">
+    <div class="wpthemeInner">
+      <h2>
+        <img class="dndHandle" draggable="true" ondragstart="wpModules.dnd.util.portletDragStart(event, this, this.parentNode, 30, 0);"
+        ondragend="wpModules.dnd.util.portletDragEnd(event);"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""/>
+        <!-- lm-dynamic-title node marks location for dynamic title support -->
+         <span class="lm-dynamic-title asa.portlet.title a11yRegionLabel"><span lang="pt-BR" dir="ltr">Visualizador do Conteúdo da Web</span></span>
+      </h2>
+      <a aria-haspopup="true" aria-label="Exibir menu de conteúdo" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus contextMenuInSkinIcon" style="display:none" tabindex="0">
+        <span title="Exibir menu de conteúdo"><img aria-label="Exibir menu de conteúdo" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Menu de ação do componente</span>
+        <!-- start CAM template -->
+        <span class="wpthemeMenu" data-positioning-handler="horizontallyCenteredBelow">
+          <div class="wpthemeMenuBorder">
+            <!-- define the menu item template inside the "ul" element.  only "css-class", "description", and "title" are handled by the theme's sample javascript. -->
+            <ul class="wpthemeMenuDropDown wpthemeTemplateMenu" role="menu">
+              <li class="${css-class}" role="menuitem" tabindex="-1"><span
+                class="wpthemeMenuText">${title}</span></li>
+            </ul>
+            <div class="verticalMenuPointer pointer"></div>
+          </div> <!-- Template for loading -->
+          <div class="wpthemeMenuLoading wpthemeTemplateLoading">${loading}</div>
+          <!-- Template for submenu -->
+          <div class="wpthemeAnchorSubmenu wpthemeTemplateSubmenu">
+            <div class="wpthemeMenuBorder wpthemeMenuSubmenu">
+              <ul id="${submenu-id}" class="wpthemeMenuDropDown"
+                role="menu">
+                <li role="menuitem" tabindex="-1"></li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <!-- end CAM template -->
+      </a>
+      <a aria-haspopup="true" aria-label="Display portlet menu" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus" tabindex="0"
+                onclick="if (typeof wptheme != 'undefined') wptheme.contextMenu.init({ 'node': this, menuId: 'skinAction', jsonQuery: {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}, params: {'alignment':'right'}});"
+        onkeydown="javascript:if (typeof i$ != 'undefined' &amp;&amp; typeof wptheme != 'undefined') {if (event.keyCode ==13 || event.keyCode ==32 || event.keyCode==38 || event.keyCode ==40) {wptheme.contextMenu.init(this, 'skinAction', {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}); return false;}}">
+        <span title="Exibir menu do portlet"><img aria-label="Exibir menu do portlet" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Ações</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="wpthemeControlBody wpthemeOverflowAuto wpthemeClear"> <!-- lm:control dynamic spot injects markup of layout control -->
+  <!-- asa.overlay marks the node that the AsaOverlayWidget will be placed in -->
+    <div class="wpthemeASARelPosition">
+      <div class="analytics.overlay" ></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<main role="main" class="my-4">
+
+  <a href=''>
+    <div id="hero-banner2" class="videoBG no-content">
+
+
+      <!-- Método utilizando vídeos do Youtube -->
+      <div class="video-foreground">
+        <iframe autoplay muted playsinline loop src='https://admin.cms.sp.gov.br/dx/api/dam/v1/collections/c26ec310-3bc4-478f-9ba8-1d263735b6c4/items/b501317e-07b7-4c9d-a5f4-2af54761efd6/renditions/a30f8e21-914b-4b1e-84ca-a380dba05a87?binary=true'
+          frameborder="0" allowfullscreen></iframe>
+      </div>
+
+    </div>
+  </a>
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="wpthemeClear"></div>
+  </div>
+</section>
+</div><div class='component-control id-Z7_MH1A1C404PUHD06R0U7AOGJK56' ><span id="Z7_MH1A1C404PUHD06R0U7AOGJK56"></span><section class="ibmPortalControl wpthemeControl wpthemeHidden a11yRegionTarget" role="region">
+
+
+
+  <div class="asa.portlet asa-hidden" id="asa.portlet.Z7_MH1A1C404PUHD06R0U7AOGJK56">
+    <span class="asa.portlet.id">Z7_MH1A1C404PUHD06R0U7AOGJK56</span>
+
+
+
+  </div>
+
+<!-- start header markup -->
+  <header class="wpthemeControlHeader" role="banner" aria-label="Skin header">
+    <div class="wpthemeInner">
+      <h2>
+        <img class="dndHandle" draggable="true" ondragstart="wpModules.dnd.util.portletDragStart(event, this, this.parentNode, 30, 0);"
+        ondragend="wpModules.dnd.util.portletDragEnd(event);"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""/>
+        <!-- lm-dynamic-title node marks location for dynamic title support -->
+         <span class="lm-dynamic-title asa.portlet.title a11yRegionLabel"><span lang="pt-BR" dir="ltr">Visualizador do Conteúdo da Web</span></span>
+      </h2>
+      <a aria-haspopup="true" aria-label="Exibir menu de conteúdo" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus contextMenuInSkinIcon" style="display:none" tabindex="0">
+        <span title="Exibir menu de conteúdo"><img aria-label="Exibir menu de conteúdo" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Menu de ação do componente</span>
+        <!-- start CAM template -->
+        <span class="wpthemeMenu" data-positioning-handler="horizontallyCenteredBelow">
+          <div class="wpthemeMenuBorder">
+            <!-- define the menu item template inside the "ul" element.  only "css-class", "description", and "title" are handled by the theme's sample javascript. -->
+            <ul class="wpthemeMenuDropDown wpthemeTemplateMenu" role="menu">
+              <li class="${css-class}" role="menuitem" tabindex="-1"><span
+                class="wpthemeMenuText">${title}</span></li>
+            </ul>
+            <div class="verticalMenuPointer pointer"></div>
+          </div> <!-- Template for loading -->
+          <div class="wpthemeMenuLoading wpthemeTemplateLoading">${loading}</div>
+          <!-- Template for submenu -->
+          <div class="wpthemeAnchorSubmenu wpthemeTemplateSubmenu">
+            <div class="wpthemeMenuBorder wpthemeMenuSubmenu">
+              <ul id="${submenu-id}" class="wpthemeMenuDropDown"
+                role="menu">
+                <li role="menuitem" tabindex="-1"></li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <!-- end CAM template -->
+      </a>
+      <a aria-haspopup="true" aria-label="Display portlet menu" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus" tabindex="0"
+                onclick="if (typeof wptheme != 'undefined') wptheme.contextMenu.init({ 'node': this, menuId: 'skinAction', jsonQuery: {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}, params: {'alignment':'right'}});"
+        onkeydown="javascript:if (typeof i$ != 'undefined' &amp;&amp; typeof wptheme != 'undefined') {if (event.keyCode ==13 || event.keyCode ==32 || event.keyCode==38 || event.keyCode ==40) {wptheme.contextMenu.init(this, 'skinAction', {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}); return false;}}">
+        <span title="Exibir menu do portlet"><img aria-label="Exibir menu do portlet" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Ações</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="wpthemeControlBody wpthemeOverflowAuto wpthemeClear"> <!-- lm:control dynamic spot injects markup of layout control -->
+  <!-- asa.overlay marks the node that the AsaOverlayWidget will be placed in -->
+    <div class="wpthemeASARelPosition">
+      <div class="analytics.overlay" ></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- MAP Desenvolvido -->
+
+
+
+
+
+
+
+
+
+<style>
+    .bordaHover {
+        border-left: 4px solid
+    }
+
+    .exbirMaisPerguntas i {
+        transform: rotate(180deg);
+        transition: 0.3s;
+    }
+
+    .cardOculto {
+        display: none !important;
+    }
+
+    .cardParaOcultar {
+        display: flex !important;
+    }
+
+    .cardsServicoseb0a2e76-0c74-4d61-983b-b5968ba3e664 .btn-outline-danger:hover {
+        border-color: ##ef5507;
+    }
+
+    .corDetalhesHover {
+        text-decoration-color: ##ef5507 !important;
+    }
+
+    .corDetalhesTitulo {
+        border-color: ##ef5507 !important;
+    }
+
+    .corDosIcones {
+        color: # !important;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section id="categoria-servicos" style="background-color:#fff" class="iamspe">
+
+
+
+                <div class="container">
+                    <!-- Card com Icone -->
+
+                    <!-- Titulo -->
+
+                    <h3 class="tit-area corDetalhesTitulo">
+                        Serviços</h3>
+
+
+                    <div class="row">
+
+                            <div class="col-lg-12 mx-auto">
+                                <div class='cardsServicoseb0a2e76-0c74-4d61-983b-b5968ba3e664
+                                  row justify-content-center mx-auto'>
+
+
+
+                                    <!-- Caminho dos conteudos para o Cards com Icone -->
+
+
+
+                                    <!-- Menu dos cards com Icone -->
+                                    <!-- MN (Cards com icone) -->
+
+
+
+<!-- Cards -->
+<!-- link interno -->
+<div class="col-md-auto col-6 text-center">
+    <div class="card card-body d-flex flex-column justify-content-center align-items-center">
+
+        <!-- link interno -->
+        <a href='/apesp/servicos/cidadao'
+            class="stretched-link corDetalhesHover">
+            <i class='fa-solid fa-people-group corDosIcones'></i>
+            <span>Cidadão</span>
+        </a>
+
+
+
+
+
+
+    </div>
+</div>
+
+<!-- MN (Cards com icone) -->
+
+
+
+<!-- Cards -->
+<!-- link interno -->
+<div class="col-md-auto col-6 text-center">
+    <div class="card card-body d-flex flex-column justify-content-center align-items-center">
+
+        <!-- link interno -->
+        <a href='/apesp/servicos/servidores%20estaduais'
+            class="stretched-link corDetalhesHover">
+            <i class='fa-solid fa-address-card corDosIcones'></i>
+            <span>Servidor Estadual</span>
+        </a>
+
+
+
+
+
+
+    </div>
+</div>
+
+<!-- MN (Cards com icone) -->
+
+
+
+<!-- Cards -->
+<!-- link interno -->
+<div class="col-md-auto col-6 text-center">
+    <div class="card card-body d-flex flex-column justify-content-center align-items-center">
+
+        <!-- link interno -->
+        <a href='/apesp/servicos/municipios'
+            class="stretched-link corDetalhesHover">
+            <i class='fa-solid fa-city corDosIcones'></i>
+            <span>Administração Municipal</span>
+        </a>
+
+
+
+
+
+
+    </div>
+</div>
+
+
+                                </div>
+                            </div>
+
+                    </div>
+
+                    <!-- Cards com Imagem -->
+
+                <script>
+                    function cardsMostraCarsOcultaCards(id){
+  let btnIcon = document.querySelector(`#btnCards_${id}`);
+  let cardsOcultos = document.querySelectorAll(`.cardsServicos${id} .cardOculto`);
+  if(cardsOcultos.length > 0){
+    btnIcon.classList.add("exbirMaisPerguntas");
+    cardsOcultos.forEach((elemento) => {
+    elemento.classList.add("cardParaOcultar");
+    elemento.classList.remove("cardOculto");
+   })
+  }else{
+    btnIcon.classList.remove("exbirMaisPerguntas");
+    let cardsParaOcultar = document.querySelectorAll(`.cardsServicos${id} .cardParaOcultar`);
+    cardsParaOcultar.forEach((elemento) => {
+    elemento.classList.remove("cardParaOcultar");
+    elemento.classList.add("cardOculto");
+   })
+  }
+
+}
+
+function ajustarDesktopCards(id){
+  let larguraTela = document.body.clientWidth;
+
+  if(larguraTela >= 992){
+         let cardsServico = document.querySelectorAll(`.cardsServicos${id} .col-md-auto`);
+         if(cardsServico.length > 4 && cardsServico.length < 8){
+           for(let i = 4; i < cardsServico.length; i++){
+           let btnIcon = document.querySelector(`#btnCards_${id}`);
+           btnIcon.classList.remove("d-none");
+           cardsServico[i].classList.add("cardOculto");
+          }
+       }
+    }else{
+         let cardsServico = document.querySelectorAll(`.cardsServicos${id} .card`);
+         let btnIcon = document.querySelector(`#btnCards_${id}`);
+         if(cardsServico.length > 2 && cardsServico.length < 4){
+           for(let i = 2; i < cardsServico.length; i++){
+           btnIcon.classList.remove("d-none");
+           cardsServico[i].classList.add("cardOculto");
+          }
+       }else if(cardsServico.length > 4 && cardsServico.length < 6){
+         for(let i = 4; i < cardsServico.length; i++){
+           btnIcon.classList.remove("d-none");
+           cardsServico[i].classList.add("cardOculto");
+          }
+       }else if(cardsServico.length > 6 && cardsServico.length < 8){
+                for(let i = 6; i < cardsServico.length; i++){
+                btnIcon.classList.remove("d-none");
+                cardsServico[i].classList.add("cardOculto");
+           }
+       }else{
+         return;
+       }
+
+  }
+}
+
+                    ajustarDesktopCards('eb0a2e76-0c74-4d61-983b-b5968ba3e664')
+                </script>
+                <script>
+function bannerVideo(src, id){
+  let videoBanner = document.getElementById(`videoBanner${id}`);
+  videoBanner.setAttribute('src', src);
+}
+
+function fecharModal(id){
+  let videoBanner = document.getElementById(`videoBanner${id}`);
+  videoBanner.setAttribute('src', '');
+}
+</script>
+
+
+
+        </section>
+
+
+
+
+<script>
+    function cardsMostraCarsOcultaCards(id){
+  let btnIcon = document.querySelector(`#btnCards_${id}`);
+  let cardsOcultos = document.querySelectorAll(`.cardsServicos${id} .cardOculto`);
+  if(cardsOcultos.length > 0){
+    btnIcon.classList.add("exbirMaisPerguntas");
+    cardsOcultos.forEach((elemento) => {
+    elemento.classList.add("cardParaOcultar");
+    elemento.classList.remove("cardOculto");
+   })
+  }else{
+    btnIcon.classList.remove("exbirMaisPerguntas");
+    let cardsParaOcultar = document.querySelectorAll(`.cardsServicos${id} .cardParaOcultar`);
+    cardsParaOcultar.forEach((elemento) => {
+    elemento.classList.remove("cardParaOcultar");
+    elemento.classList.add("cardOculto");
+   })
+  }
+
+}
+
+function ajustarDesktopCards(id){
+  let larguraTela = document.body.clientWidth;
+
+  if(larguraTela >= 992){
+         let cardsServico = document.querySelectorAll(`.cardsServicos${id} .col-md-auto`);
+         if(cardsServico.length > 4 && cardsServico.length < 8){
+           for(let i = 4; i < cardsServico.length; i++){
+           let btnIcon = document.querySelector(`#btnCards_${id}`);
+           btnIcon.classList.remove("d-none");
+           cardsServico[i].classList.add("cardOculto");
+          }
+       }
+    }else{
+         let cardsServico = document.querySelectorAll(`.cardsServicos${id} .card`);
+         let btnIcon = document.querySelector(`#btnCards_${id}`);
+         if(cardsServico.length > 2 && cardsServico.length < 4){
+           for(let i = 2; i < cardsServico.length; i++){
+           btnIcon.classList.remove("d-none");
+           cardsServico[i].classList.add("cardOculto");
+          }
+       }else if(cardsServico.length > 4 && cardsServico.length < 6){
+         for(let i = 4; i < cardsServico.length; i++){
+           btnIcon.classList.remove("d-none");
+           cardsServico[i].classList.add("cardOculto");
+          }
+       }else if(cardsServico.length > 6 && cardsServico.length < 8){
+                for(let i = 6; i < cardsServico.length; i++){
+                btnIcon.classList.remove("d-none");
+                cardsServico[i].classList.add("cardOculto");
+           }
+       }else{
+         return;
+       }
+
+  }
+}
+
+    ajustarDesktopCards('eb0a2e76-0c74-4d61-983b-b5968ba3e664')
+
+</script>
+<script>
+function bannerVideo(src, id){
+  let videoBanner = document.getElementById(`videoBanner${id}`);
+  videoBanner.setAttribute('src', src);
+}
+
+function fecharModal(id){
+  let videoBanner = document.getElementById(`videoBanner${id}`);
+  videoBanner.setAttribute('src', '');
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="wpthemeClear"></div>
+  </div>
+</section>
+</div><div class='component-control id-Z7_086423G03H7OD06J0F7TLA2I92' ><span id="Z7_086423G03H7OD06J0F7TLA2I92"></span><section class="ibmPortalControl wpthemeControl wpthemeHidden a11yRegionTarget" role="region">
+
+
+
+  <div class="asa.portlet asa-hidden" id="asa.portlet.Z7_086423G03H7OD06J0F7TLA2I92">
+    <span class="asa.portlet.id">Z7_086423G03H7OD06J0F7TLA2I92</span>
+
+
+
+  </div>
+
+<!-- start header markup -->
+  <header class="wpthemeControlHeader" role="banner" aria-label="Skin header">
+    <div class="wpthemeInner">
+      <h2>
+        <img class="dndHandle" draggable="true" ondragstart="wpModules.dnd.util.portletDragStart(event, this, this.parentNode, 30, 0);"
+        ondragend="wpModules.dnd.util.portletDragEnd(event);"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""/>
+        <!-- lm-dynamic-title node marks location for dynamic title support -->
+         <span class="lm-dynamic-title asa.portlet.title a11yRegionLabel"><span lang="pt-BR" dir="ltr">Visualizador do Conteúdo da Web</span></span>
+      </h2>
+      <a aria-haspopup="true" aria-label="Exibir menu de conteúdo" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus contextMenuInSkinIcon" style="display:none" tabindex="0">
+        <span title="Exibir menu de conteúdo"><img aria-label="Exibir menu de conteúdo" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Menu de ação do componente</span>
+        <!-- start CAM template -->
+        <span class="wpthemeMenu" data-positioning-handler="horizontallyCenteredBelow">
+          <div class="wpthemeMenuBorder">
+            <!-- define the menu item template inside the "ul" element.  only "css-class", "description", and "title" are handled by the theme's sample javascript. -->
+            <ul class="wpthemeMenuDropDown wpthemeTemplateMenu" role="menu">
+              <li class="${css-class}" role="menuitem" tabindex="-1"><span
+                class="wpthemeMenuText">${title}</span></li>
+            </ul>
+            <div class="verticalMenuPointer pointer"></div>
+          </div> <!-- Template for loading -->
+          <div class="wpthemeMenuLoading wpthemeTemplateLoading">${loading}</div>
+          <!-- Template for submenu -->
+          <div class="wpthemeAnchorSubmenu wpthemeTemplateSubmenu">
+            <div class="wpthemeMenuBorder wpthemeMenuSubmenu">
+              <ul id="${submenu-id}" class="wpthemeMenuDropDown"
+                role="menu">
+                <li role="menuitem" tabindex="-1"></li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <!-- end CAM template -->
+      </a>
+      <a aria-haspopup="true" aria-label="Display portlet menu" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus" tabindex="0"
+                onclick="if (typeof wptheme != 'undefined') wptheme.contextMenu.init({ 'node': this, menuId: 'skinAction', jsonQuery: {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}, params: {'alignment':'right'}});"
+        onkeydown="javascript:if (typeof i$ != 'undefined' &amp;&amp; typeof wptheme != 'undefined') {if (event.keyCode ==13 || event.keyCode ==32 || event.keyCode==38 || event.keyCode ==40) {wptheme.contextMenu.init(this, 'skinAction', {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}); return false;}}">
+        <span title="Exibir menu do portlet"><img aria-label="Exibir menu do portlet" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Ações</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="wpthemeControlBody wpthemeOverflowAuto wpthemeClear"> <!-- lm:control dynamic spot injects markup of layout control -->
+  <!-- asa.overlay marks the node that the AsaOverlayWidget will be placed in -->
+    <div class="wpthemeASARelPosition">
+      <div class="analytics.overlay" ></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+.sectionAcessoRapido27dec120-94c7-4b75-888d-1e19cb718f8b{
+background-color: #Branco !important;
+padding: 30px 0px;
+}
+
+.sectionAcessoRapido27dec120-94c7-4b75-888d-1e19cb718f8b .tit-area{
+   border-color: ##ef5507 !important;
+}
+
+.sectionAcessoRapido27dec120-94c7-4b75-888d-1e19cb718f8b .btnModal{
+   border-color: ##ef5507 !important;
+}
+
+.sectionAcessoRapido27dec120-94c7-4b75-888d-1e19cb718f8b .btnModal:hover{
+   background: ##ef5507 !important;
+}
+
+.acessoRapido27dec120-94c7-4b75-888d-1e19cb718f8b #acesso-rapido .card:hover .card-body span {
+  color: ##ef5507;
+}
+
+.acessoRapido27dec120-94c7-4b75-888d-1e19cb718f8b .carousel-acesso .slick-dots li.slick-active button::before, .banner-dinamico .slick-dots li.slick-active button::before {
+  color: ##ef5507 !important;
+  opacity: 0.75;
+
+}
+
+.acessoRapido27dec120-94c7-4b75-888d-1e19cb718f8b .slick-dots .slick-active button::before{
+ color: ##ef5507 !important;
+}
+
+.acessoRapido27dec120-94c7-4b75-888d-1e19cb718f8b .card .card-logo i{
+   color: ##ef5507 !important;
+}
+
+.acessoRapido27dec120-94c7-4b75-888d-1e19cb718f8b .card .card-img i{
+   color: ##ef5507 !important;
+   font-size: 48px;
+}
+
+.acessoRapido27dec120-94c7-4b75-888d-1e19cb718f8b .card a{
+color: ##ef5507 !important;
+}
+
+
+.acessoRapido27dec120-94c7-4b75-888d-1e19cb718f8b .carousel-cards2 .card .circle{
+border-color: ##ef5507 !important;
+}
+
+
+.acessoRapido27dec120-94c7-4b75-888d-1e19cb718f8b .carousel-cards .card a i{
+ color: ##ef5507 !important;
+}
+
+.card-dimension a i{
+float: none !important;
+}
+.card-dimension a:hover{
+background: none !important;
+}
+</style>
+
+
+
+<div id='27dec120-94c7-4b75-888d-1e19cb718f8b'>
+
+</div>
+
+
+
+    <section id='IDAcessoRapido27dec120-94c7-4b75-888d-1e19cb718f8b' class='sectionAcessoRapido27dec120-94c7-4b75-888d-1e19cb718f8b'>
+
+
+
+
+
+        <div class='container acessoRapido27dec120-94c7-4b75-888d-1e19cb718f8b'>
+        <section id="acesso-rapido">
+
+
+        <h3 id='Acesso Rapido - Carrossel' class="tit-area" style='border-color: ##ef5507;'>Acesso Rápido</h3>
+
+
+
+
+
+<div class="carousel-acesso">
+
+
+
+
+<!-- carrossel cards acesso rapido -->
+<div>
+  <div class="card">
+
+
+
+
+
+
+<a href='https://recad.sp.gov.br/' target="_blank">
+
+
+
+
+
+
+
+      <div class="card-img">
+
+ <img src='/dx/api/dam/v1/collections/69554714-6d70-4cbf-b03a-9d41e9ca6e78/items/9ac0dcad-be1e-4a40-a33c-72353aa12d31/renditions/f035ae7c-cf99-44fa-a87a-0ffa719e4ad9?binary=true'>
+
+      </div>
+      <div class="card-body">
+<h5 class="card-title">RECADASTRAMENTO DIGITAL</h5>
+
+
+
+<span>➔</span>
+
+
+
+
+
+      </div>
+
+</a>
+
+
+
+
+  </div>
+</div>
+
+
+<!-- carrossel cards acesso rapido -->
+<div>
+  <div class="card">
+
+
+
+
+
+
+<a href='https://sou.sp.gov.br/sou.sp' target="_blank">
+
+
+
+
+
+
+
+      <div class="card-img">
+
+ <img src='/dx/api/dam/v1/collections/69554714-6d70-4cbf-b03a-9d41e9ca6e78/items/b44c32d9-2104-4547-b55f-d5ea384c38e5/renditions/2a30862c-eafa-4310-972b-e8fb653c321e?binary=true'>
+
+      </div>
+      <div class="card-body">
+<h5 class="card-title">SOU.SP.GOV.BR</h5>
+
+
+
+<span>➔</span>
+
+
+
+
+
+      </div>
+
+</a>
+
+
+
+
+  </div>
+</div>
+
+
+<!-- carrossel cards acesso rapido -->
+<div>
+  <div class="card">
+
+
+
+
+
+
+<a href='https://ciptea.sp.gov.br/' target="_blank">
+
+
+
+
+
+
+
+      <div class="card-img">
+
+ <img src='/dx/api/dam/v1/collections/69554714-6d70-4cbf-b03a-9d41e9ca6e78/items/03c66758-c7a3-40a7-b374-abf9c54e0099/renditions/fb60b5e5-b20a-4e1c-ab32-fc1774e2ef44?binary=true'>
+
+      </div>
+      <div class="card-body">
+<h5 class="card-title">CIPTEA</h5>
+
+
+
+<span>➔</span>
+
+
+
+
+
+      </div>
+
+</a>
+
+
+
+
+  </div>
+</div>
+
+
+<!-- carrossel cards acesso rapido -->
+<div>
+  <div class="card">
+
+
+
+
+
+
+<a href='https://compras.sp.gov.br/seja-bem-vindo-ao-novo-portal-de-compras-do-governo-do-estado-de-sao-paulo/' target="_blank">
+
+
+
+
+
+
+
+      <div class="card-img">
+
+ <img src='/dx/api/dam/v1/collections/69554714-6d70-4cbf-b03a-9d41e9ca6e78/items/d437a400-b714-4078-a594-5a6d59263274/renditions/09f80e32-ff7f-444d-9c33-e4e8f3a214e7?binary=true'>
+
+      </div>
+      <div class="card-body">
+<h5 class="card-title">COMPRAS.SP</h5>
+
+
+
+<span>➔</span>
+
+
+
+
+
+      </div>
+
+</a>
+
+
+
+
+  </div>
+</div>
+
+
+<!-- carrossel cards acesso rapido -->
+<div>
+  <div class="card">
+
+
+
+
+
+
+<a href='https://www.poupatempo.sp.gov.br/' target="_blank">
+
+
+
+
+
+
+
+      <div class="card-img">
+
+ <img src='/dx/api/dam/v1/collections/69554714-6d70-4cbf-b03a-9d41e9ca6e78/items/2ca503e9-fb7f-4e43-8eb5-ebaeb2db66b4/renditions/7173e454-c5a6-4d61-83ab-ee2c7dd8b0d3?binary=true'>
+
+      </div>
+      <div class="card-body">
+<h5 class="card-title">POUPATEMPO</h5>
+
+
+
+<span>➔</span>
+
+
+
+
+
+      </div>
+
+</a>
+
+
+
+
+  </div>
+</div>
+
+
+<!-- carrossel cards acesso rapido -->
+<div>
+  <div class="card">
+
+
+
+
+
+
+<a href='https://integrador.sp.gov.br/wps/portal/integrador/home' target="_blank">
+
+
+
+
+
+
+
+      <div class="card-img">
+
+ <img src='/dx/api/dam/v1/collections/69554714-6d70-4cbf-b03a-9d41e9ca6e78/items/0c390bb0-70ec-4788-9b46-5832404aa588/renditions/2162f30f-c1b7-4c14-8383-f4edabeb4ff0?binary=true'>
+
+      </div>
+      <div class="card-body">
+<h5 class="card-title">INTEGRADOR DE APIS</h5>
+
+
+
+<span>➔</span>
+
+
+
+
+
+      </div>
+
+</a>
+
+
+
+
+  </div>
+</div>
+
+
+<!-- carrossel cards acesso rapido -->
+<div>
+  <div class="card">
+
+
+
+
+
+
+<a href='https://minhaarea.sp.gov.br/plataformasp' target="_blank">
+
+
+
+
+
+
+
+      <div class="card-img">
+
+ <img src='/dx/api/dam/v1/collections/69554714-6d70-4cbf-b03a-9d41e9ca6e78/items/323d5192-02ba-45fc-aede-0fa2e58dd8f2/renditions/5ea81e10-a209-4dee-a316-a18b03e4f961?binary=true'>
+
+      </div>
+      <div class="card-body">
+<h5 class="card-title">SEI</h5>
+
+
+
+<span>➔</span>
+
+
+
+
+
+      </div>
+
+</a>
+
+
+
+
+  </div>
+</div>
+
+</div>
+
+
+        </section>
+        </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="wpthemeClear"></div>
+  </div>
+</section>
+</div><div class='component-control id-Z7_086423G03HTOD06JGCMGJFIPR7' ><span id="Z7_086423G03HTOD06JGCMGJFIPR7"></span><section class="ibmPortalControl wpthemeControl wpthemeHidden a11yRegionTarget" role="region">
+
+
+
+  <div class="asa.portlet asa-hidden" id="asa.portlet.Z7_086423G03HTOD06JGCMGJFIPR7">
+    <span class="asa.portlet.id">Z7_086423G03HTOD06JGCMGJFIPR7</span>
+
+
+
+  </div>
+
+<!-- start header markup -->
+  <header class="wpthemeControlHeader" role="banner" aria-label="Skin header">
+    <div class="wpthemeInner">
+      <h2>
+        <img class="dndHandle" draggable="true" ondragstart="wpModules.dnd.util.portletDragStart(event, this, this.parentNode, 30, 0);"
+        ondragend="wpModules.dnd.util.portletDragEnd(event);"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""/>
+        <!-- lm-dynamic-title node marks location for dynamic title support -->
+         <span class="lm-dynamic-title asa.portlet.title a11yRegionLabel"><span lang="pt-BR" dir="ltr">Visualizador do Conteúdo da Web</span></span>
+      </h2>
+      <a aria-haspopup="true" aria-label="Exibir menu de conteúdo" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus contextMenuInSkinIcon" style="display:none" tabindex="0">
+        <span title="Exibir menu de conteúdo"><img aria-label="Exibir menu de conteúdo" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Menu de ação do componente</span>
+        <!-- start CAM template -->
+        <span class="wpthemeMenu" data-positioning-handler="horizontallyCenteredBelow">
+          <div class="wpthemeMenuBorder">
+            <!-- define the menu item template inside the "ul" element.  only "css-class", "description", and "title" are handled by the theme's sample javascript. -->
+            <ul class="wpthemeMenuDropDown wpthemeTemplateMenu" role="menu">
+              <li class="${css-class}" role="menuitem" tabindex="-1"><span
+                class="wpthemeMenuText">${title}</span></li>
+            </ul>
+            <div class="verticalMenuPointer pointer"></div>
+          </div> <!-- Template for loading -->
+          <div class="wpthemeMenuLoading wpthemeTemplateLoading">${loading}</div>
+          <!-- Template for submenu -->
+          <div class="wpthemeAnchorSubmenu wpthemeTemplateSubmenu">
+            <div class="wpthemeMenuBorder wpthemeMenuSubmenu">
+              <ul id="${submenu-id}" class="wpthemeMenuDropDown"
+                role="menu">
+                <li role="menuitem" tabindex="-1"></li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <!-- end CAM template -->
+      </a>
+      <a aria-haspopup="true" aria-label="Display portlet menu" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus" tabindex="0"
+                onclick="if (typeof wptheme != 'undefined') wptheme.contextMenu.init({ 'node': this, menuId: 'skinAction', jsonQuery: {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}, params: {'alignment':'right'}});"
+        onkeydown="javascript:if (typeof i$ != 'undefined' &amp;&amp; typeof wptheme != 'undefined') {if (event.keyCode ==13 || event.keyCode ==32 || event.keyCode==38 || event.keyCode ==40) {wptheme.contextMenu.init(this, 'skinAction', {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}); return false;}}">
+        <span title="Exibir menu do portlet"><img aria-label="Exibir menu do portlet" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Ações</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="wpthemeControlBody wpthemeOverflowAuto wpthemeClear"> <!-- lm:control dynamic spot injects markup of layout control -->
+  <!-- asa.overlay marks the node that the AsaOverlayWidget will be placed in -->
+    <div class="wpthemeASARelPosition">
+      <div class="analytics.overlay" ></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+  <section id="destaques-customizados" class="componente">
+    <h3 class="tit-area">Últimas Notícias</h3>
+    <div class="row">
+      <!-- Notícia principal -->
+      <div class="col-lg-6 col-md-12 mb-4">
+        <div class="destaque destaque-custom">  <a href='/apesp/not%C3%ADcias/noticia-a_nova_area_apesp-2025'> <img src='/wcm/connect/9d5e76a7-7247-47b6-a05a-95c20981284e/img_1010.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-9d5e76a7-7247-47b6-a05a-95c20981284e-pIIQaje' alt="Imagem Notícia" class="img-fluid w-100">
+          <div class="titulo-noticia-mult mt-2">
+            <p>Francisco Zorzenon, do Instituto Biológico, faz palestra no APESP sobre &ldquo;Principais pragas em acervos históricos&rdquo;</p>
+            <small>12/06/2025</small> </div>
+          </a>
+
+
+
+           </div>
+      </div>
+
+      <!-- Notícias secundárias -->
+      <div class="col-lg-6 divPaiOrdemDivs">
+
+        <!--Noticia 1-->
+        <div class="noticia noticias-secundarias cardParaOrdenar" ordem=''>  <a href='/apesp/not%C3%ADcias/christiane+taubira'>
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <p id="news-title"> Arquivo Público de SP recebe a escritora e ex-ministra da Justiça da França, Christiane Taubira </p>
+              <small> 12/08/2025 </small> </div>
+            <div class="col-md-4"> <img src='/wcm/connect/37f6feb7-94da-4f5f-8864-cc26cd2d5b10/capa0.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-37f6feb7-94da-4f5f-8864-cc26cd2d5b10-pIIQaje' alt="Imagem Notícia" class="img-fluid"> </div>
+          </div>
+          </a>
+
+
+
+           </div>
+        <!--Noticia 1-->
+
+        <!--Noticia 2-->
+        <div class="noticia noticias-secundarias cardParaOrdenar" ordem=''>  <a href='/apesp/not%C3%ADcias/capacitacao'>
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <p id="news-title"> A nova área do APESP: Serviço de Ingresso e Logística </p>
+              <small> 21/07/2025 </small> </div>
+            <div class="col-md-4"> <img src='/wcm/connect/11db6124-0d77-45b9-a85f-0688ed834bcc/recolhimento_%282%292.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-11db6124-0d77-45b9-a85f-0688ed834bcc-pIIQaje' alt="Imagem Notícia" class="img-fluid"> </div>
+          </div>
+          </a>
+
+
+
+           </div>
+        <!--Noticia 2-->
+
+        <!--Noticia 3-->
+        <div class="noticia noticias-secundarias cardParaOrdenar" ordem=''>  <a href='/apesp/not%C3%ADcias/luiz+gama'>
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <p id="news-title"> Arquivo Público participa da inauguração de mostra sobre Washington Luís no TCE </p>
+              <small> 03/07/2025 </small> </div>
+            <div class="col-md-4"> <img src='/wcm/connect/0a21f75c-49b8-48f8-81df-6c22521c1455/img_6388_%281%29.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-0a21f75c-49b8-48f8-81df-6c22521c1455-pIIQaje' alt="Imagem Notícia" class="img-fluid"> </div>
+          </div>
+          </a>
+
+
+
+           </div>
+        <!--Noticia 3-->
+
+      </div>
+    </div>
+
+    <!-- Botão -->
+
+
+    <div class="btn-noticias text-right">  <a href='/apesp/not%C3%ADcias' class="btn btn-outline-secondary rounded-pill"> Mais notícias <i class="fa-solid fa-chevron-right ml-2"></i> </a>
+
+       </div>
+     </section>
+</div>
+
+
+
+
+
+
+<script>
+function ordenacao(a,b){
+  return a.attributes["ordem"].nodeValue - b.attributes["ordem"].nodeValue;
+}
+
+const divs = Array.from(document.querySelectorAll('.cardParaOrdenar'));
+
+const divsOrdenadas = divs.sort(ordenacao);
+const divPai = document.querySelector(".divPaiOrdemDivs");
+divsOrdenadas.forEach((div) => {
+   divPai.appendChild(div);
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="wpthemeClear"></div>
+  </div>
+</section>
+</div></div><div style="clear:both"></div>
+</div>
+<!-- this layout has one main container -->
+<div class="wptheme1Col">
+  <div class='component-container ibmDndColumn wpthemeCol12of12 wpthemeFull wpthemePrimary id-Z7_086423G039SRC06U81S0H51SG7' name='ibmMainContainer' ><div class='component-control id-Z7_MH1A1C404H4ID06FIDAKJDIM87' ><span id="Z7_MH1A1C404H4ID06FIDAKJDIM87"></span><section class="ibmPortalControl wpthemeControl wpthemeHidden a11yRegionTarget" role="region">
+
+
+
+  <div class="asa.portlet asa-hidden" id="asa.portlet.Z7_MH1A1C404H4ID06FIDAKJDIM87">
+    <span class="asa.portlet.id">Z7_MH1A1C404H4ID06FIDAKJDIM87</span>
+
+
+
+  </div>
+
+<!-- start header markup -->
+  <header class="wpthemeControlHeader" role="banner" aria-label="Skin header">
+    <div class="wpthemeInner">
+      <h2>
+        <img class="dndHandle" draggable="true" ondragstart="wpModules.dnd.util.portletDragStart(event, this, this.parentNode, 30, 0);"
+        ondragend="wpModules.dnd.util.portletDragEnd(event);"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""/>
+        <!-- lm-dynamic-title node marks location for dynamic title support -->
+         <span class="lm-dynamic-title asa.portlet.title a11yRegionLabel"><span lang="pt-BR" dir="ltr">Visualizador do Conteúdo da Web</span></span>
+      </h2>
+      <a aria-haspopup="true" aria-label="Exibir menu de conteúdo" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus contextMenuInSkinIcon" style="display:none" tabindex="0">
+        <span title="Exibir menu de conteúdo"><img aria-label="Exibir menu de conteúdo" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Menu de ação do componente</span>
+        <!-- start CAM template -->
+        <span class="wpthemeMenu" data-positioning-handler="horizontallyCenteredBelow">
+          <div class="wpthemeMenuBorder">
+            <!-- define the menu item template inside the "ul" element.  only "css-class", "description", and "title" are handled by the theme's sample javascript. -->
+            <ul class="wpthemeMenuDropDown wpthemeTemplateMenu" role="menu">
+              <li class="${css-class}" role="menuitem" tabindex="-1"><span
+                class="wpthemeMenuText">${title}</span></li>
+            </ul>
+            <div class="verticalMenuPointer pointer"></div>
+          </div> <!-- Template for loading -->
+          <div class="wpthemeMenuLoading wpthemeTemplateLoading">${loading}</div>
+          <!-- Template for submenu -->
+          <div class="wpthemeAnchorSubmenu wpthemeTemplateSubmenu">
+            <div class="wpthemeMenuBorder wpthemeMenuSubmenu">
+              <ul id="${submenu-id}" class="wpthemeMenuDropDown"
+                role="menu">
+                <li role="menuitem" tabindex="-1"></li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <!-- end CAM template -->
+      </a>
+      <a aria-haspopup="true" aria-label="Display portlet menu" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus" tabindex="0"
+                onclick="if (typeof wptheme != 'undefined') wptheme.contextMenu.init({ 'node': this, menuId: 'skinAction', jsonQuery: {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}, params: {'alignment':'right'}});"
+        onkeydown="javascript:if (typeof i$ != 'undefined' &amp;&amp; typeof wptheme != 'undefined') {if (event.keyCode ==13 || event.keyCode ==32 || event.keyCode==38 || event.keyCode ==40) {wptheme.contextMenu.init(this, 'skinAction', {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}); return false;}}">
+        <span title="Exibir menu do portlet"><img aria-label="Exibir menu do portlet" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Ações</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="wpthemeControlBody wpthemeOverflowAuto wpthemeClear"> <!-- lm:control dynamic spot injects markup of layout control -->
+  <!-- asa.overlay marks the node that the AsaOverlayWidget will be placed in -->
+    <div class="wpthemeASARelPosition">
+      <div class="analytics.overlay" ></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <link href="/statics/dsc/main.css" rel="stylesheet">
+<style>
+
+  /* ============================================================
+  EDIT MODE
+  ============================================================ */
+  .flex-center, .header-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+</style>
+<style>
+
+ table.layoutRow.ibmDndRow.component-container  tbody tr td{border-bottom:0}
+ table.layoutColumn.layoutNode tbody tr td{border-bottom:0}
+
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510  .error.text-danger.hide{display:none;}
+
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510  .alert{
+    border: var( --border-none) !important;
+    font-family: var(--font-family-primary) !important;
+    font-size: var(--font-size-base) !important;
+    min-height: 58px;
+    max-width: 1152px;
+}
+
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert .text-body{ margin-bottom: var(--spacing-0) !important;}
+
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .text-body b{
+    font-weight: var(--font-weight-semibold) !important;
+    color: var(--color-black) !important;
+}
+
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert .text-body span{
+    font-weight: var(--font-weight-normal) !important;
+    color: var(--color-black) !important;
+    word-break: break-word;
+}
+
+
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert .text-body span .link-aviso{
+    font-weight: var(--font-weight-semibold) !important;
+    text-decoration: underline !important;
+}
+
+
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 a.link-edit-aviso{
+  --focus-offset: var(--spacing-1) !important;
+  color: var(--color-info) !important;
+}
+
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert i.fa-2x { font-size: var(--font-size-2xl) !important;}
+
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert .close{
+    color: var(--color-gray-900) !important;
+    padding: var(--spacing-3) var(--spacing-5) !important;
+    z-index: var(--z-modal) !important;
+    opacity: 1;
+}
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert .close .heading-2{
+    color: var(--color-gray-900) !important;
+}
+
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert .close:not(:disabled):not(.disabled):focus,
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert .close:not(:disabled):not(.disabled):hover{
+   color: var(--color-gray-900) !important;
+   opacity: 1 !important;
+}
+
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert.alert-warning{ background-color: var(--color-warning-light) !important;}
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert.alert-warning span a.link-aviso{ color: var(--color-warning-dark) !important;}
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert.alert-warning i.fa-triangle-exclamation{ color: var(--color-warning-dark) !important;}
+
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert.alert-danger{ background-color: var(--color-error-light) !important;}
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert.alert-danger span a.link-aviso{ color: var(--color-error) !important;}
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert.alert-danger i.fa-circle-xmark{ color: var(--color-error) !important;}
+
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert.alert-info { background-color: var(--color-info-light) !important;}
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert.alert-info span a.link-aviso{ color: var( --color-info) !important;}
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert.alert-info i.fa-circle-info{ color: var( --color-info) !important;}
+
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert.alert-success{ background-color: var(--color-success-light) !important;}
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert.alert-success span a.link-aviso{ color: var(--color-success) !important;}
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert.alert-success i.fa-circle-check{ color: var(--color-success) !important;}
+
+/* Fora do main.css */
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert-dismissible i { margin-top: var(--spacing-2) !important;}
+
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert-dismissible i.fa-triangle-exclamation { margin-top: var(--spacing-2) !important;}
+
+.texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .wcm-default-inplace-editable > .wcm-inplace-content-region{}
+
+.contrast .texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 b,
+.contrast .texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 a{
+  background-color: transparent !important;
+}
+@media only screen and (max-width: 767px){
+   .mobile{
+      display: flex;
+      flex-direction: column;
+      padding-left: 12px !important;
+   }
+    .mobile b{
+      margin-bottom: var(--spacing-1);
+   }
+    .mobile span{
+      display: flex;
+      flex-direction: column;
+   }
+
+   .link-aviso{
+     margin-top: 8px;
+   }
+}
+
+</style>
+
+<style>
+ .aviso-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+}
+
+.aviso-conteudo {
+  display: flex;
+  align-items: flex-start;
+  flex: 1;
+  gap: 0px;
+}
+
+.aviso-titulo {
+  white-space: nowrap;
+  position: relative;
+  top: 8px;
+  color: black;
+  font-weight: 600;
+}
+
+.aviso-corpo {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+  .aviso-texto {
+    flex: 1;
+  }
+
+  .aviso-actions-831f3625-1e80-4d15-bf3a-3f2cec7df510 {
+    display: flex;
+    justify-content: end;
+    padding: 12px 0;
+  }
+
+  .aviso-actions-831f3625-1e80-4d15-bf3a-3f2cec7df510 input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+
+
+
+      accent-color: #155BCB;
+
+
+  }
+
+  .aviso-checkbox {
+    height: fit-content;
+    display: flex;
+    gap: 8px;
+    position: relative;
+    top: 0px;
+  }
+
+  .label-checkbox {
+    position: relative;
+    top: 1px;
+  }
+
+  @media (max-width: 1315px) {
+  .aviso-conteudo {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .aviso-titulo {
+    white-space: normal;
+    margin-bottom: 0;
+    padding-bottom: 8px;
+  }
+
+  .aviso-corpo {
+    flex-direction: column;
+  }
+
+  .aviso-texto {
+    width: 100%;
+    padding: 0 0 14px 0 !important;
+  }
+
+  .aviso-actions-831f3625-1e80-4d15-bf3a-3f2cec7df510 {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0;
+    padding-bottom: 12px;
+  }
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+ const idDivAlert = `#texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert`;
+
+ const idIconAlert = `#texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert i`;
+
+const linkAlert = document.querySelector(
+  "#texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 .alert .link a"
+);
+
+if (linkAlert) {
+  linkAlert.setAttribute("target", "_blank");
+  linkAlert.setAttribute("rel", "noopener noreferrer");
+  linkAlert.setAttribute("class", "link-aviso");
+}
+
+ const divAlert = document.querySelector(idDivAlert);
+
+ const iconAlert = document.querySelector(idIconAlert);
+
+function changeTypeAlert() {
+
+  const tipoAviso = `Informação`;
+
+  if (!divAlert) return;
+
+  divAlert.classList.remove("alert-success", "alert-info", "alert-warning", "alert-danger");
+
+  if (iconAlert) {
+    iconAlert.classList.remove(
+      "fa-triangle-exclamation",
+      "fa-circle-info",
+      "fa-circle-check",
+      "fa-circle-xmark"
+    );
+  }
+
+  let classeTipoAlert = "alert-warning"; // padrão
+  let icone = "fa-triangle-exclamation"; // padrão
+
+  switch (tipoAviso) {
+    case "Sucesso":
+      classeTipoAlert = "alert-success";
+      icone = "fa-circle-check";
+      break;
+
+    case "Informação":
+      classeTipoAlert = "alert-info";
+      icone = "fa-circle-info";
+      break;
+
+    case "Atenção":
+      classeTipoAlert = "alert-warning";
+      icone = "fa-triangle-exclamation";
+      break;
+
+    case "Erro":
+      classeTipoAlert = "alert-danger";
+      icone = "fa-circle-xmark";
+      break;
+  }
+
+  divAlert.classList.add(
+    "alert",
+    classeTipoAlert,
+    "alert-dismissible",
+    "fade",
+    "show",
+    "d-flex",
+    "align-center",
+    "py-2"
+  );
+
+  if (iconAlert) {
+    iconAlert.classList.add(
+     "fa-solid",
+      icone,
+      "mb-2",
+      "fa-2x"
+   );
+  }
+}
+
+  changeTypeAlert();
+
+
+});
+</script>
+
+<script>
+document.addEventListener("click", function (event) {
+    const el = event.target;
+
+    // Verifica se clicou em um <a>
+    if (el.tagName === "A" && el.id && el.id.startsWith("link831f3625-1e80-4d15-bf3a-3f2cec7df510")) {
+        const currentDomain = window.location.hostname;
+        const linkUrl = new URL(el.href);
+
+        // Se o domínio for diferente, abre em nova aba
+        if (linkUrl.hostname !== currentDomain) {
+            event.preventDefault(); // impede o comportamento padrão
+            window.open(el.href, "_blank");
+        }
+        // se for o mesmo domínio, deixa fluir normalmente
+    }
+});
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const id = "831f3625-1e80-4d15-bf3a-3f2cec7df510";
+        const checkbox = document.getElementById(`checkbox-aviso${id}`);
+
+        if (checkbox) {
+            checkbox.addEventListener('change', function () {
+                if (this.checked) {
+                    localStorage.setItem(`aviso-fechado-${id}`, 'true');
+                } else {
+                    localStorage.removeItem(`aviso-fechado-${id}`);
+                }
+
+            });
+        }
+
+        const avisoFechado = localStorage.getItem(`aviso-fechado-${id}`);
+        if (avisoFechado === 'true') {
+            const elemento = document.getElementById(`texto-aviso${id}`);
+
+            if (elemento) {
+                elemento.style.display = 'none';
+            }
+        }
+    });
+</script>
+
+
+
+
+<section id="texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510"
+  class="texto-aviso831f3625-1e80-4d15-bf3a-3f2cec7df510 section">
+
+  <div class="container">
+
+
+    <div class="row">
+      <div class="col-md-12 mx-auto">
+        <div
+          class="alert alert-warning alert-dismissible fade show d-flex align-center py-2 mb-4 "
+          role="alert">
+          <div class="aviso-header">
+          <i class="fa-solid fa-triangle-exclamation mt-3 mb-2 fa-2x" style="position: relative; top: 2px;"></i>
+
+          <div class="aviso-conteudo">
+            <b class="aviso-titulo">
+              Novo site.&nbsp;
+            </b>
+
+            <div class="d-flex flex-wrap aviso-corpo">
+
+
+          </div>
+  </div>
+</div>
+          <button id="btn-fechar-warning831f3625-1e80-4d15-bf3a-3f2cec7df510" type="button"
+            class="position-absolute t-0 r-0 z-index-2 close" data-dismiss="alert" aria-label="Close">
+            <span class="heading-2" aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div id="texto-error831f3625-1e80-4d15-bf3a-3f2cec7df510" class="error text-danger hide">
+          O máximo permitido é de 255 caracteres.
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="wpthemeClear"></div>
+  </div>
+</section>
+</div><div class='component-control id-Z7_MH1A1C40495ID06FI09D121000' ><span id="Z7_MH1A1C40495ID06FI09D121000"></span><section class="ibmPortalControl wpthemeControl wpthemeHidden a11yRegionTarget" role="region">
+
+
+
+  <div class="asa.portlet asa-hidden" id="asa.portlet.Z7_MH1A1C40495ID06FI09D121000">
+    <span class="asa.portlet.id">Z7_MH1A1C40495ID06FI09D121000</span>
+
+
+
+  </div>
+
+<!-- start header markup -->
+  <header class="wpthemeControlHeader" role="banner" aria-label="Skin header">
+    <div class="wpthemeInner">
+      <h2>
+        <img class="dndHandle" draggable="true" ondragstart="wpModules.dnd.util.portletDragStart(event, this, this.parentNode, 30, 0);"
+        ondragend="wpModules.dnd.util.portletDragEnd(event);"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""/>
+        <!-- lm-dynamic-title node marks location for dynamic title support -->
+         <span class="lm-dynamic-title asa.portlet.title a11yRegionLabel"><span lang="pt-BR" dir="ltr">Visualizador do Conteúdo da Web</span></span>
+      </h2>
+      <a aria-haspopup="true" aria-label="Exibir menu de conteúdo" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus contextMenuInSkinIcon" style="display:none" tabindex="0">
+        <span title="Exibir menu de conteúdo"><img aria-label="Exibir menu de conteúdo" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Menu de ação do componente</span>
+        <!-- start CAM template -->
+        <span class="wpthemeMenu" data-positioning-handler="horizontallyCenteredBelow">
+          <div class="wpthemeMenuBorder">
+            <!-- define the menu item template inside the "ul" element.  only "css-class", "description", and "title" are handled by the theme's sample javascript. -->
+            <ul class="wpthemeMenuDropDown wpthemeTemplateMenu" role="menu">
+              <li class="${css-class}" role="menuitem" tabindex="-1"><span
+                class="wpthemeMenuText">${title}</span></li>
+            </ul>
+            <div class="verticalMenuPointer pointer"></div>
+          </div> <!-- Template for loading -->
+          <div class="wpthemeMenuLoading wpthemeTemplateLoading">${loading}</div>
+          <!-- Template for submenu -->
+          <div class="wpthemeAnchorSubmenu wpthemeTemplateSubmenu">
+            <div class="wpthemeMenuBorder wpthemeMenuSubmenu">
+              <ul id="${submenu-id}" class="wpthemeMenuDropDown"
+                role="menu">
+                <li role="menuitem" tabindex="-1"></li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <!-- end CAM template -->
+      </a>
+      <a aria-haspopup="true" aria-label="Display portlet menu" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus" tabindex="0"
+                onclick="if (typeof wptheme != 'undefined') wptheme.contextMenu.init({ 'node': this, menuId: 'skinAction', jsonQuery: {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}, params: {'alignment':'right'}});"
+        onkeydown="javascript:if (typeof i$ != 'undefined' &amp;&amp; typeof wptheme != 'undefined') {if (event.keyCode ==13 || event.keyCode ==32 || event.keyCode==38 || event.keyCode ==40) {wptheme.contextMenu.init(this, 'skinAction', {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}); return false;}}">
+        <span title="Exibir menu do portlet"><img aria-label="Exibir menu do portlet" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Ações</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="wpthemeControlBody wpthemeOverflowAuto wpthemeClear"> <!-- lm:control dynamic spot injects markup of layout control -->
+  <!-- asa.overlay marks the node that the AsaOverlayWidget will be placed in -->
+    <div class="wpthemeASARelPosition">
+      <div class="analytics.overlay" ></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="painel-destaque" class='painelImagens3325b516-f060-4af4-8c1c-e8f865802aaf' style='background-color: #FFFFFF'>
+
+
+     <div class="container">
+        <h1 class="tit-area" style='border-color: # !important;'>Destaques do Arquivo</h1>
+
+        <div class="row">
+
+
+
+
+
+
+
+
+<!-- INICIO TAMANHO PEQUENO -->
+
+
+<!-- INICIO TAMANHO PEQUENO > USAR TEXTO -->
+
+
+
+<!-- INICIO TAMANHO PEQUENO > USAR TEXTO > LINK INTERNO -->
+<div class="col-lg-4">
+            <div class="painel-item painel-2" style="background: url('/dx/api/dam/v1/collections/cbec430b-14cb-4fdc-a10a-76369558f99d/items/7c39fe72-46e0-422b-990f-dbfc75d5d3c6/renditions/a09baa7d-3e44-4586-bd95-449d995fa8a6?binary=true') no-repeat center;">
+
+              <a href='https://revista.arquivoestado.sp.gov.br/secoes/novidades/memoria-do-mundo-luiz-gama-no-arquivo/'>
+
+                <div class="overlay"></div>
+
+                <div class="painel-title">
+                  <div class="row align-items-center">
+                    <div class="col">
+                      <h3>
+                        <strong>Registro no Memória Mundo: Luiz Gama no Arquivo</strong>
+                      </h3>
+                    </div>
+
+                    <div class="col-auto">
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                  </div>
+                </div>
+
+              </a>
+
+            </div>
+          </div>
+<!-- FIM TAMANHO PEQUENO > USAR TEXTO > LINK INTERNO -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- FIM TAMANHO PEQUENO > USAR TEXTO -->
+
+
+
+
+
+
+<!-- FIM TAMANHO PEQUENO -->
+
+
+<!--MEDIO-->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- INICIO TAMANHO PEQUENO -->
+
+
+<!-- INICIO TAMANHO PEQUENO > USAR TEXTO -->
+
+
+
+<!-- INICIO TAMANHO PEQUENO > USAR TEXTO > LINK INTERNO -->
+<div class="col-lg-4">
+            <div class="painel-item painel-2" style="background: url('/dx/api/dam/v1/collections/cbec430b-14cb-4fdc-a10a-76369558f99d/items/c1436aa3-db9d-4a03-a1c7-3ee744420071/renditions/05f29681-7e1f-4fb9-8faa-9fcb3f2846bb?binary=true') no-repeat center;">
+
+              <a href='https://revista.arquivoestado.sp.gov.br/secoes/mundo/arquivo-sp-ep-02-ferrovias-paulistas/'>
+
+                <div class="overlay"></div>
+
+                <div class="painel-title">
+                  <div class="row align-items-center">
+                    <div class="col">
+                      <h3>
+                        <strong>ARQUIVO SP: Ferrovias Paulistas</strong>
+                      </h3>
+                    </div>
+
+                    <div class="col-auto">
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                  </div>
+                </div>
+
+              </a>
+
+            </div>
+          </div>
+<!-- FIM TAMANHO PEQUENO > USAR TEXTO > LINK INTERNO -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- FIM TAMANHO PEQUENO > USAR TEXTO -->
+
+
+
+
+
+
+<!-- FIM TAMANHO PEQUENO -->
+
+
+<!--MEDIO-->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- INICIO TAMANHO PEQUENO -->
+
+
+<!-- INICIO TAMANHO PEQUENO > USAR TEXTO -->
+
+
+
+<!-- INICIO TAMANHO PEQUENO > USAR TEXTO > LINK INTERNO -->
+<div class="col-lg-4">
+            <div class="painel-item painel-2" style="background: url('/dx/api/dam/v1/collections/cbec430b-14cb-4fdc-a10a-76369558f99d/items/8080fe2d-61f3-48ed-82d8-e32ad45b089d/renditions/579b1914-0b11-4d6b-a3bc-990963ba8082?binary=true') no-repeat center;">
+
+              <a href='https://revista.arquivoestado.sp.gov.br/secoes/mundo/arquivo-sp-serie-de-episodios-sobre-a-historia-de-sao-paulo/'>
+
+                <div class="overlay"></div>
+
+                <div class="painel-title">
+                  <div class="row align-items-center">
+                    <div class="col">
+                      <h3>
+                        <strong>Arquivo SP: Série de episódios sobre a história de São Paulo</strong>
+                      </h3>
+                    </div>
+
+                    <div class="col-auto">
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                  </div>
+                </div>
+
+              </a>
+
+            </div>
+          </div>
+<!-- FIM TAMANHO PEQUENO > USAR TEXTO > LINK INTERNO -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- FIM TAMANHO PEQUENO > USAR TEXTO -->
+
+
+
+
+
+
+<!-- FIM TAMANHO PEQUENO -->
+
+
+<!--MEDIO-->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- INICIO TAMANHO PEQUENO -->
+
+
+<!-- INICIO TAMANHO PEQUENO > USAR TEXTO -->
+
+
+
+<!-- INICIO TAMANHO PEQUENO > USAR TEXTO > LINK INTERNO -->
+<div class="col-lg-4">
+            <div class="painel-item painel-2" style="background: url('/dx/api/dam/v1/collections/cbec430b-14cb-4fdc-a10a-76369558f99d/items/e8214fc9-64ac-4e10-83f4-0f592de2834d/renditions/e013a4ba-04ef-4043-a35f-52685830e08e?binary=true') no-repeat center;">
+
+              <a href='https://revista.arquivoestado.sp.gov.br/ojs/revista_do_arquivo/issue/view/18'>
+
+                <div class="overlay"></div>
+
+                <div class="painel-title">
+                  <div class="row align-items-center">
+                    <div class="col">
+                      <h3>
+                        <strong>Revista do Arquivo n. 17: 40 anos do SAESP</strong>
+                      </h3>
+                    </div>
+
+                    <div class="col-auto">
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                  </div>
+                </div>
+
+              </a>
+
+            </div>
+          </div>
+<!-- FIM TAMANHO PEQUENO > USAR TEXTO > LINK INTERNO -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- FIM TAMANHO PEQUENO > USAR TEXTO -->
+
+
+
+
+
+
+<!-- FIM TAMANHO PEQUENO -->
+
+
+<!--MEDIO-->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- INICIO TAMANHO PEQUENO -->
+
+
+<!-- INICIO TAMANHO PEQUENO > USAR TEXTO -->
+
+
+
+<!-- INICIO TAMANHO PEQUENO > USAR TEXTO > LINK INTERNO -->
+<div class="col-lg-4">
+            <div class="painel-item painel-2" style="background: url('/dx/api/dam/v1/collections/cbec430b-14cb-4fdc-a10a-76369558f99d/items/e229a601-295f-4684-b9fe-0258110ede61/renditions/6782c171-f57e-4dc8-9de0-08381ca1f524?binary=true') no-repeat center;">
+
+              <a href='https://revista.arquivoestado.sp.gov.br/secoes/escola-do-arquivo/escola-do-arquivo-a-construcao-do-projeto/'>
+
+                <div class="overlay"></div>
+
+                <div class="painel-title">
+                  <div class="row align-items-center">
+                    <div class="col">
+                      <h3>
+                        <strong>Escola do Arquivo: A construção do projeto</strong>
+                      </h3>
+                    </div>
+
+                    <div class="col-auto">
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                  </div>
+                </div>
+
+              </a>
+
+            </div>
+          </div>
+<!-- FIM TAMANHO PEQUENO > USAR TEXTO > LINK INTERNO -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- FIM TAMANHO PEQUENO > USAR TEXTO -->
+
+
+
+
+
+
+<!-- FIM TAMANHO PEQUENO -->
+
+
+<!--MEDIO-->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- INICIO TAMANHO PEQUENO -->
+
+
+<!-- INICIO TAMANHO PEQUENO > USAR TEXTO -->
+
+
+
+<!-- INICIO TAMANHO PEQUENO > USAR TEXTO > LINK INTERNO -->
+<div class="col-lg-4">
+            <div class="painel-item painel-2" style="background: url('/dx/api/dam/v1/collections/6f2b844e-434b-4e18-9422-c6483b8516c1/items/f848f948-48de-45e3-829a-b6dbc841148e/renditions/341d3c3b-98f9-45b3-98b9-382199661530?binary=true') no-repeat center;">
+
+              <a href='https://www.arquivoestado.sp.gov.br/apesp/segunda_conferencia_nacional_arquivos'>
+
+                <div class="overlay"></div>
+
+                <div class="painel-title">
+                  <div class="row align-items-center">
+                    <div class="col">
+                      <h3>
+                        <strong>Etapa Paulista para a 2&ordf; Conferência Nacional de Arquivos</strong>
+                      </h3>
+                    </div>
+
+                    <div class="col-auto">
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                  </div>
+                </div>
+
+              </a>
+
+            </div>
+          </div>
+<!-- FIM TAMANHO PEQUENO > USAR TEXTO > LINK INTERNO -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- FIM TAMANHO PEQUENO > USAR TEXTO -->
+
+
+
+
+
+
+<!-- FIM TAMANHO PEQUENO -->
+
+
+<!--MEDIO-->
+
+
+
+
+
+
+        </div>
+        <!-- Se não tiver texto não tem botão -->
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="wpthemeClear"></div>
+  </div>
+</section>
+</div><div class='component-control id-Z7_MH1A1C40495ID06FI09D1210I3' ><span id="Z7_MH1A1C40495ID06FI09D1210I3"></span><section class="ibmPortalControl wpthemeControl wpthemeHidden a11yRegionTarget" role="region">
+
+
+
+  <div class="asa.portlet asa-hidden" id="asa.portlet.Z7_MH1A1C40495ID06FI09D1210I3">
+    <span class="asa.portlet.id">Z7_MH1A1C40495ID06FI09D1210I3</span>
+
+
+
+  </div>
+
+<!-- start header markup -->
+  <header class="wpthemeControlHeader" role="banner" aria-label="Skin header">
+    <div class="wpthemeInner">
+      <h2>
+        <img class="dndHandle" draggable="true" ondragstart="wpModules.dnd.util.portletDragStart(event, this, this.parentNode, 30, 0);"
+        ondragend="wpModules.dnd.util.portletDragEnd(event);"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""/>
+        <!-- lm-dynamic-title node marks location for dynamic title support -->
+         <span class="lm-dynamic-title asa.portlet.title a11yRegionLabel"><span lang="pt-BR" dir="ltr">Visualizador do Conteúdo da Web</span></span>
+      </h2>
+      <a aria-haspopup="true" aria-label="Exibir menu de conteúdo" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus contextMenuInSkinIcon" style="display:none" tabindex="0">
+        <span title="Exibir menu de conteúdo"><img aria-label="Exibir menu de conteúdo" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Menu de ação do componente</span>
+        <!-- start CAM template -->
+        <span class="wpthemeMenu" data-positioning-handler="horizontallyCenteredBelow">
+          <div class="wpthemeMenuBorder">
+            <!-- define the menu item template inside the "ul" element.  only "css-class", "description", and "title" are handled by the theme's sample javascript. -->
+            <ul class="wpthemeMenuDropDown wpthemeTemplateMenu" role="menu">
+              <li class="${css-class}" role="menuitem" tabindex="-1"><span
+                class="wpthemeMenuText">${title}</span></li>
+            </ul>
+            <div class="verticalMenuPointer pointer"></div>
+          </div> <!-- Template for loading -->
+          <div class="wpthemeMenuLoading wpthemeTemplateLoading">${loading}</div>
+          <!-- Template for submenu -->
+          <div class="wpthemeAnchorSubmenu wpthemeTemplateSubmenu">
+            <div class="wpthemeMenuBorder wpthemeMenuSubmenu">
+              <ul id="${submenu-id}" class="wpthemeMenuDropDown"
+                role="menu">
+                <li role="menuitem" tabindex="-1"></li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <!-- end CAM template -->
+      </a>
+      <a aria-haspopup="true" aria-label="Display portlet menu" role="button" href="javascript:;" class="wpthemeIcon wpthemeMenuFocus" tabindex="0"
+                onclick="if (typeof wptheme != 'undefined') wptheme.contextMenu.init({ 'node': this, menuId: 'skinAction', jsonQuery: {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}, params: {'alignment':'right'}});"
+        onkeydown="javascript:if (typeof i$ != 'undefined' &amp;&amp; typeof wptheme != 'undefined') {if (event.keyCode ==13 || event.keyCode ==32 || event.keyCode==38 || event.keyCode ==40) {wptheme.contextMenu.init(this, 'skinAction', {'navID':ibmCfg.portalConfig.currentPageOID,'windowID':wptheme.getWindowIDFromSkin(this)}); return false;}}">
+        <span title="Exibir menu do portlet"><img aria-label="Exibir menu do portlet" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></span>
+        <span class="wpthemeAltText">Ações</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="wpthemeControlBody wpthemeOverflowAuto wpthemeClear"> <!-- lm:control dynamic spot injects markup of layout control -->
+  <!-- asa.overlay marks the node that the AsaOverlayWidget will be placed in -->
+    <div class="wpthemeASARelPosition">
+      <div class="analytics.overlay" ></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- MAP -->
+
+
+
+
+
+
+
+<style>
+  .galeriaDeCards9d0b6e3d-123c-4335-a238-1d734f7dede4 article .overlay-perfil {
+    border-color: # !important;
+  }
+ .corTituloModal{
+border-color: #;
+}
+
+</style>
+<!-- Cores de Fundo -->
+
+<section id="GaleriaCards" style="background-color:#fff"class="py-5">
+
+
+    <div class='container galeriaDeCards9d0b6e3d-123c-4335-a238-1d734f7dede4'>
+      <section id='preview-cards'>
+        <h1 class="tit-area corTituloModal">Carta de Serviços do Arquivo</h1>
+        <p></p>
+        <div class="row">
+
+
+
+
+          <!-- MN Galeria de Cards -->
+
+
+<div class="col-lg-3 col-md-6 col-12">
+    <article>
+
+
+
+        <a href='https://www.arquivoestado.sp.gov.br/apesp/institucional/sobre'>
+            <img src='/dx/api/dam/v1/collections/b8d33114-81f8-41b6-8028-eaebc446147f/items/2464f51d-6d30-4d34-9d34-60db4fe505d9/renditions/2797256a-8339-4102-98d6-80c66b433ca6?binary=true'
+                alt="Foto genérica" class="img-fluid">
+            <div class="overlay-perfil ">
+                <p>
+                    Conhecer o Arquivo
+                    <small></small>
+                </p>
+            </div>
+        </a>
+    </article>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos3e2ec2c1-d3da-4d3e-b3cb-0e6fb89806dd'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href=''
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '3e2ec2c1-d3da-4d3e-b3cb-0e6fb89806dd');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos876c4f5e-1169-4583-af1e-3e8816ea4ec5'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/servicos/cidadao/agendar%20visita%20presencial'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '876c4f5e-1169-4583-af1e-3e8816ea4ec5');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos1dddc172-e833-413d-88fa-64eb9b1c13b3'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/servicos/cidadao/certidao'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '1dddc172-e833-413d-88fa-64eb9b1c13b3');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos38a28c54-6bfa-437e-972b-a6844c797575'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/servicos/cidadao/consulta-acervo'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '38a28c54-6bfa-437e-972b-a6844c797575');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextose275ec50-9a1d-4e00-aa9d-83163ff60dab'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href=''
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', 'e275ec50-9a1d-4e00-aa9d-83163ff60dab');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos141a6171-3404-4110-9083-3fd3e89ba3ad'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/escoladoarquivo'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '141a6171-3404-4110-9083-3fd3e89ba3ad');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos6a4e2a77-d7cf-4a69-904e-429bec50c220'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://revista.arquivoestado.sp.gov.br/'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '6a4e2a77-d7cf-4a69-904e-429bec50c220');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos2fe5ebdc-6627-4079-b954-3eda56ba343b'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/publicacoes'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '2fe5ebdc-6627-4079-b954-3eda56ba343b');
+</script>
+
+
+<!-- MN Galeria de Cards -->
+
+
+<div class="col-lg-3 col-md-6 col-12">
+    <article>
+
+
+
+        <a href='https://www.arquivoestado.sp.gov.br/apesp/servicos/cidadao/agendar%20visita%20presencial'>
+            <img src='/dx/api/dam/v1/collections/b8d33114-81f8-41b6-8028-eaebc446147f/items/a0a26777-e161-4967-b243-f74535ac39a0/renditions/a702673a-0b5f-42e1-b073-7ce2fabef6ac?binary=true'
+                alt="Foto genérica" class="img-fluid">
+            <div class="overlay-perfil ">
+                <p>
+                    Agendar Visita
+                    <small></small>
+                </p>
+            </div>
+        </a>
+    </article>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos3e2ec2c1-d3da-4d3e-b3cb-0e6fb89806dd'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href=''
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '3e2ec2c1-d3da-4d3e-b3cb-0e6fb89806dd');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos876c4f5e-1169-4583-af1e-3e8816ea4ec5'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/servicos/cidadao/agendar%20visita%20presencial'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '876c4f5e-1169-4583-af1e-3e8816ea4ec5');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos1dddc172-e833-413d-88fa-64eb9b1c13b3'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/servicos/cidadao/certidao'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '1dddc172-e833-413d-88fa-64eb9b1c13b3');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos38a28c54-6bfa-437e-972b-a6844c797575'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/servicos/cidadao/consulta-acervo'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '38a28c54-6bfa-437e-972b-a6844c797575');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextose275ec50-9a1d-4e00-aa9d-83163ff60dab'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href=''
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', 'e275ec50-9a1d-4e00-aa9d-83163ff60dab');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos141a6171-3404-4110-9083-3fd3e89ba3ad'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/escoladoarquivo'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '141a6171-3404-4110-9083-3fd3e89ba3ad');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos6a4e2a77-d7cf-4a69-904e-429bec50c220'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://revista.arquivoestado.sp.gov.br/'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '6a4e2a77-d7cf-4a69-904e-429bec50c220');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos2fe5ebdc-6627-4079-b954-3eda56ba343b'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/publicacoes'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '2fe5ebdc-6627-4079-b954-3eda56ba343b');
+</script>
+
+
+<!-- MN Galeria de Cards -->
+
+
+<div class="col-lg-3 col-md-6 col-12">
+    <article>
+
+
+
+        <a href='https://www.arquivoestado.sp.gov.br/apesp/servicos/cidadao/certidao'>
+            <img src='/dx/api/dam/v1/collections/b8d33114-81f8-41b6-8028-eaebc446147f/items/6cf72660-094e-4206-91fd-8795c8ef2592/renditions/8e90405e-b34e-4d6f-9775-d4bca118535d?binary=true'
+                alt="Foto genérica" class="img-fluid">
+            <div class="overlay-perfil ">
+                <p>
+                    Solicitar Certidões
+                    <small></small>
+                </p>
+            </div>
+        </a>
+    </article>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos3e2ec2c1-d3da-4d3e-b3cb-0e6fb89806dd'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href=''
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '3e2ec2c1-d3da-4d3e-b3cb-0e6fb89806dd');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos876c4f5e-1169-4583-af1e-3e8816ea4ec5'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/servicos/cidadao/agendar%20visita%20presencial'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '876c4f5e-1169-4583-af1e-3e8816ea4ec5');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos1dddc172-e833-413d-88fa-64eb9b1c13b3'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/servicos/cidadao/certidao'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '1dddc172-e833-413d-88fa-64eb9b1c13b3');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos38a28c54-6bfa-437e-972b-a6844c797575'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/servicos/cidadao/consulta-acervo'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '38a28c54-6bfa-437e-972b-a6844c797575');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextose275ec50-9a1d-4e00-aa9d-83163ff60dab'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href=''
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', 'e275ec50-9a1d-4e00-aa9d-83163ff60dab');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos141a6171-3404-4110-9083-3fd3e89ba3ad'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/escoladoarquivo'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '141a6171-3404-4110-9083-3fd3e89ba3ad');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos6a4e2a77-d7cf-4a69-904e-429bec50c220'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://revista.arquivoestado.sp.gov.br/'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '6a4e2a77-d7cf-4a69-904e-429bec50c220');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos2fe5ebdc-6627-4079-b954-3eda56ba343b'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/publicacoes'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '2fe5ebdc-6627-4079-b954-3eda56ba343b');
+</script>
+
+
+<!-- MN Galeria de Cards -->
+
+
+<div class="col-lg-3 col-md-6 col-12">
+    <article>
+
+
+
+        <a href='https://www.arquivoestado.sp.gov.br/apesp/servicos/cidadao/consulta-acervo'>
+            <img src='/dx/api/dam/v1/collections/b8d33114-81f8-41b6-8028-eaebc446147f/items/d4bccb35-c318-471a-9658-3b5b1475cd4a/renditions/1ca52e48-b7c0-488c-b3fc-d0803ff3f1c6?binary=true'
+                alt="Foto genérica" class="img-fluid">
+            <div class="overlay-perfil ">
+                <p>
+                    Consultar o Acervo
+                    <small></small>
+                </p>
+            </div>
+        </a>
+    </article>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos3e2ec2c1-d3da-4d3e-b3cb-0e6fb89806dd'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href=''
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '3e2ec2c1-d3da-4d3e-b3cb-0e6fb89806dd');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos876c4f5e-1169-4583-af1e-3e8816ea4ec5'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/servicos/cidadao/agendar%20visita%20presencial'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '876c4f5e-1169-4583-af1e-3e8816ea4ec5');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos1dddc172-e833-413d-88fa-64eb9b1c13b3'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/servicos/cidadao/certidao'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '1dddc172-e833-413d-88fa-64eb9b1c13b3');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos38a28c54-6bfa-437e-972b-a6844c797575'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/servicos/cidadao/consulta-acervo'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '38a28c54-6bfa-437e-972b-a6844c797575');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextose275ec50-9a1d-4e00-aa9d-83163ff60dab'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href=''
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', 'e275ec50-9a1d-4e00-aa9d-83163ff60dab');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos141a6171-3404-4110-9083-3fd3e89ba3ad'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/escoladoarquivo'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '141a6171-3404-4110-9083-3fd3e89ba3ad');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos6a4e2a77-d7cf-4a69-904e-429bec50c220'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://revista.arquivoestado.sp.gov.br/'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '6a4e2a77-d7cf-4a69-904e-429bec50c220');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos2fe5ebdc-6627-4079-b954-3eda56ba343b'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/publicacoes'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '2fe5ebdc-6627-4079-b954-3eda56ba343b');
+</script>
+
+
+<!-- MN Galeria de Cards -->
+
+
+<div class="col-lg-3 col-md-6 col-12">
+    <article>
+
+
+
+        <a href='https://web.arquivoestado.sp.gov.br/web/acervo/solicitacao_certidoes/imigracao'>
+            <img src='/dx/api/dam/v1/collections/b8d33114-81f8-41b6-8028-eaebc446147f/items/0bb59439-2509-4f74-86b1-f0ab23af4f03/renditions/e1fb85a3-e860-4a91-a7fd-a151fc7e3f5c?binary=true'
+                alt="Foto genérica" class="img-fluid">
+            <div class="overlay-perfil ">
+                <p>
+                    Pesquisar sobre Imigração
+                    <small></small>
+                </p>
+            </div>
+        </a>
+    </article>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos3e2ec2c1-d3da-4d3e-b3cb-0e6fb89806dd'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href=''
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '3e2ec2c1-d3da-4d3e-b3cb-0e6fb89806dd');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos876c4f5e-1169-4583-af1e-3e8816ea4ec5'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/servicos/cidadao/agendar%20visita%20presencial'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '876c4f5e-1169-4583-af1e-3e8816ea4ec5');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos1dddc172-e833-413d-88fa-64eb9b1c13b3'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/servicos/cidadao/certidao'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '1dddc172-e833-413d-88fa-64eb9b1c13b3');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextos38a28c54-6bfa-437e-972b-a6844c797575'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <!-- Botão 1 -->
+
+
+
+                <a href='https://www.arquivoestado.sp.gov.br/apesp/servicos/cidadao/consulta-acervo'
+                    class="btn btn-outline-danger rounded-pill">
+                    Saiba mais
+                </a>
+
+
+
+
+
+
+
+
+                <!-- Botão 2 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function ocultarModalFooter(opcao1,opcao2, idFooter){
+    if(opcao1 === 'Não' && opcao2 === 'Não'){
+       document.querySelector(`#modalTextos${idFooter} .modal-footer`).classList.add("d-none");
+    }
+}
+
+ocultarModalFooter('Sim','Não', '38a28c54-6bfa-437e-972b-a6844c797575');
+</script><!-- MN Modal Galeria de Cards -->
+<div class="modal fade modal-conteudos" id='modalTextose275ec50-9a1d-4e00-aa9d-83163ff60dab'
+    tabindex="-1" aria-labelledby="modalTextosLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="tit-area corTituloModal"></h5>

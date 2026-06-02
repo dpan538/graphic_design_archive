@@ -195,6 +195,38 @@
     "template": [],
     "template_lock": false
   },
+  "jp_product_search": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://tokyotypedirectorsclub.org/wp-json/wp/v2/jetpack-product-search-template"
+        }
+      ]
+    },
+    "description": "",
+    "has_archive": false,
+    "hierarchical": false,
+    "icon": null,
+    "name": "Product search template",
+    "rest_base": "jetpack-product-search-template",
+    "rest_namespace": "wp/v2",
+    "slug": "jp_product_search",
+    "taxonomies": [],
+    "template": [],
+    "template_lock": false
+  },
   "jp_search_overlay": {
     "_links": {
       "collection": [

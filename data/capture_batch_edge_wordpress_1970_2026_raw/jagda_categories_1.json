@@ -1,0 +1,42 @@
+[
+  {
+    "_links": {
+      "about": [
+        {
+          "href": "https://www.jagda.or.jp/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://www.jagda.or.jp/wp-json/wp/v2/categories"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "self": [
+        {
+          "href": "https://www.jagda.or.jp/wp-json/wp/v2/categories/1"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://www.jagda.or.jp/wp-json/wp/v2/posts?categories=1"
+        }
+      ]
+    },
+    "count": 0,
+    "description": "",
+    "id": 1,
+    "link": "https://www.jagda.or.jp/category/%e6%9c%aa%e5%88%86%e9%a1%9e/",
+    "meta": [],
+    "name": "未分類",
+    "parent": 0,
+    "slug": "%e6%9c%aa%e5%88%86%e9%a1%9e",
+    "taxonomy": "category"
+  }
+]

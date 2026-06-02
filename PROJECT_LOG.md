@@ -2,6 +2,30 @@
 
 This log records project decisions, implementation steps, and collaboration boundaries. It should be updated after every meaningful change so that future work, including database implementation and frontend handoff, remains traceable.
 
+## 2026-06-01
+
+### Text Page Preview Failure Logged and Capture Constraint Added
+
+During text page asset design, the review process failed because screenshot
+generation was not stabilized before layout iteration continued. Temporary file
+paths, static HTML extraction, Quick Look rendering, and ad hoc browser capture
+were mixed together, producing stale or incomplete screenshots and preventing a
+trustworthy design review.
+
+Corrective action:
+
+- added `frontend/scripts/capture-text-pages.js`;
+- added `npm run preview:text-pages` for an isolated `127.0.0.1:3037` preview;
+- added `npm run capture:text-pages` for manifest-based group screenshots;
+- added `docs/frontend/ASSET_PREVIEW_CAPTURE_CONSTRAINTS.md`;
+- added `docs/frontend/TEXT_PAGE_PREVIEW_FAILURE_REPORT_2026_06_01.md`.
+
+New project constraint:
+
+- future asset work may not be presented as visually complete unless a fresh
+  canonical capture has been generated after the latest change and the manifest
+  passes overflow, ratio, image, group, and selector checks.
+
 ## 2026-05-29
 
 ### Project Definition Settled
@@ -3740,3 +3764,517 @@ Quality notes:
 Validation:
 
 - `scripts/audit_secret_patterns.py` passed after the capture.
+
+## 2026-06-01 — Deep Research Integration Review: Source, Linkage, Image, Surface, Contemporary Noise
+
+Purpose:
+
+- Read the five newly added Deep Research reports in `reports/deep-research`.
+- Integrate their implications into a single project-facing review before further
+  capture expansion.
+
+Reviewed reports:
+
+- `Rights-Aware Source Discovery for a Distributed Graphic Design History Archive Index.docx`
+- `Provenance-First Record Linkage for a Graphic Design History Archive.docx`
+- `Rights-Aware Visual Evidence Standard for a Graphic Design Archive Index.docx`
+- `Publication-Surface Logic for a Graphic Design History Archive.docx`
+- `Inclusion and Noise Filtering for Contemporary Graphic Design Archive Capture.docx`
+
+Changes made:
+
+- Added `docs/research-reviews/DEEP_RESEARCH_2026_06_01_INTEGRATION_REVIEW_v0.md`.
+
+Result:
+
+- Confirmed that the next capture phase should expand source breadth and protocol
+  coverage before blindly adding more public sheets.
+- Confirmed that duplicate/overlapping source records should be preserved and
+  grouped as composite records, dossiers, or explicit relations rather than
+  silently deduplicated.
+- Confirmed that image health must be measured in separate layers: source-visible,
+  publication-grade, open-image, rights-labeled, and unclear image state.
+- Confirmed that weak records should route to text pages, appendices, slips,
+  cards, bookmarks, or grouped dossiers rather than thin main sheets.
+- Confirmed that contemporary capture needs source-type gates and noise filters
+  so social/discovery platforms remain leads unless provenance is established.
+
+Next action:
+
+- Build a broader source prospect registry with source family, protocol, region,
+  language/script, rights posture, image path, and text path.
+- Add period-split and source-breadth metrics before the next major capture pass.
+- Update grouping and appendix generation so repeated AX01 pages are not created
+  without record-specific evidence differences.
+
+## 2026-06-01 — Deep Research Remediation Plan
+
+Purpose:
+
+- Convert the five Deep Research findings into a durable, step-by-step
+  remediation plan so the project does not lose the thread after context
+  compaction or parallel work.
+
+Changes made:
+
+- Added `docs/methodology/DEEP_RESEARCH_REMEDIATION_PLAN_2026_06_01.md`.
+
+Plan locked:
+
+1. Build `source_prospect_registry_v2` before the next broad capture pass.
+2. Add layered image/source metrics by period and source family.
+3. Generate linkage/group candidates before public-surface promotion.
+4. Recalculate surface assignment so weak rows become text pages, appendices,
+   cards, slips, bookmarks, or grouped dossiers rather than thin main sheets.
+5. Add appendix inheritance and repetition suppression, especially for AX01.
+6. Add contemporary source-type gates and noise filters.
+
+Next implementation task:
+
+- Create `scripts/generate_source_prospect_registry_v2.py`,
+  `data/source_prospect_registry_v2.csv`, and
+  `docs/capture/SOURCE_PROSPECT_REGISTRY_v2.md`.
+
+## 2026-06-01 — Source Prospect Registry v2
+
+Purpose:
+
+- Execute the first remediation task from
+  `docs/methodology/DEEP_RESEARCH_REMEDIATION_PLAN_2026_06_01.md`.
+- Consolidate the source universe before more broad capture so future crawls
+  can be selected by region, protocol, source family, language/script, and
+  rights posture.
+
+Changes made:
+
+- Added `scripts/generate_source_prospect_registry_v2.py`.
+- Generated `data/source_prospect_registry_v2.csv`.
+- Added `docs/capture/SOURCE_PROSPECT_REGISTRY_v2.md`.
+
+Inputs merged:
+
+- `data/source_candidate_registry_v1.csv`
+- `data/source_candidate_probe_v1.csv`
+- `data/source_probe_edge_v2.csv`
+- `data/source_probe_independent_asia_v1.csv`
+- `data/source_dependency_ledger.csv`
+- all `data/capture_batch_*_source_summary.csv` files
+
+Result:
+
+- 298 source prospects.
+- 129 `P1_next_adapter_or_probe` candidates.
+- 103 P1 candidates outside Western Europe / North America.
+- 161 local/community/university/government/municipal candidates.
+- 0 duplicate source names after same-name/source-summary merging.
+
+Validation:
+
+- Required registry fields are populated except for 16 source URLs inherited
+  from capture summary rows that need source-registry backfill.
+- `scripts/audit_secret_patterns.py` passed.
+
+Next action:
+
+- Implement layered image/source metrics by period and source family before
+  running another capture batch.
+
+## 2026-06-01 — Remediation Execution: Metrics, Linkage, Gates, Appendix
+
+Purpose:
+
+- Execute the Deep Research remediation plan in data/methodology layers before
+  another broad capture pass.
+- Correct misleading image coverage, repeated records, thin main sheets, and
+  repetitive appendix behavior.
+
+Changes made:
+
+- Added `scripts/audit_layered_image_source_metrics_v1.py`.
+- Generated `data/layered_image_source_metrics_v1.csv`.
+- Generated `data/duplicate_image_url_warnings_v1.csv`.
+- Added `docs/capture/LAYERED_IMAGE_SOURCE_METRICS_v1.md`.
+- Added `scripts/generate_source_record_linkage_candidates_v1.py`.
+- Generated `data/source_record_linkage_candidates_v1.csv`.
+- Generated `data/source_record_linkage_memberships_v1.csv`.
+- Added `docs/capture/SOURCE_RECORD_LINKAGE_CANDIDATES_v1.md`.
+- Added `scripts/audit_surface_assignment_gates_v1.py`.
+- Generated `data/surface_assignment_gate_audit_v1.csv`.
+- Added `docs/capture/SURFACE_ASSIGNMENT_GATE_AUDIT_v1.md`.
+- Added `scripts/audit_appendix_generation_rules_v1.py`.
+- Generated `data/appendix_generation_rule_audit_v1.csv`.
+- Added `docs/capture/APPENDIX_GENERATION_RULE_AUDIT_v1.md`.
+- Updated `docs/methodology/SURFACE_TAXONOMY_RULEBOOK_v0.md`,
+  `docs/methodology/SURFACE_GENERATION_PIPELINE_v0.md`, and
+  `docs/methodology/DEEP_RESEARCH_REMEDIATION_PLAN_2026_06_01.md`
+  to use the hierarchy:
+  `main sheet -> subsheet -> appendix/text sheet -> card/slip -> bookmark`.
+
+Key results:
+
+- Capture records audited: 1,378.
+- Source-visible image coverage: 92.02%.
+- Publication-grade candidate coverage: 84.40%.
+- Open-image candidate coverage: 9.36%.
+- Duplicate image URL groups: 33.
+- Source-record linkage groups: 321.
+- Linkage memberships: 1,076.
+- Confirmed same-entity groups: 87.
+- Series/campaign groups: 85.
+- Repeated-image review groups: 33.
+- Revised surface gate audit now identifies:
+  - 974 `main_sheet_candidate` rows;
+  - 188 `subsheet_visual` rows;
+  - 55 `appendix_or_text_sheet` rows;
+  - 45 `dedupe_child_record` rows;
+  - 31 `subsheet_text_or_appendix_review` rows;
+  - 26 `text_sheet_candidate` rows;
+  - 24 `subsheet_group_child` rows;
+  - 16 `subsheet_or_group_anchor_review` rows;
+  - 16 `img00_rights_sheet_candidate` rows;
+  - 3 `duplicate_image_review_packet` rows.
+- Appendix audit now emits 633 evidence packets with no placeholder-like AX
+  packets:
+  - AX06: 246;
+  - AX05: 122;
+  - AX02: 105;
+  - AX01: 88;
+  - AX04: 51;
+  - AX03: 21.
+
+Interpretation:
+
+- Previous "image coverage" was too blunt. The archive has strong
+  source-visible coverage, but open-image coverage remains low and must not be
+  reported as a launch-quality visual archive metric.
+- Many former main sheets should become subsheets. Subsheet is now the explicit
+  home for strong-but-thin visual records.
+- Duplicate and same-source records should be grouped or inherited, not shown as
+  unrelated standalone sheets.
+- AX01 is no longer an automatic per-record page; it is emitted only when
+  rights/display evidence is materially needed, and it can support IMG00/01/02/03.
+
+Validation:
+
+- `scripts/audit_secret_patterns.py` passed after these generated reports.
+
+Next action:
+
+- Add contemporary source/noise filtering before the next 1990-2026 independent
+  and local-source capture pass.
+
+## 2026-06-01 — Text Page Group 04 Design Correction
+
+Purpose:
+
+- Correct the fourth text-page group after review showed three layouts were
+  borrowing asset languages that belong to tickets, bookmarks, cards, or
+  specimen sheets rather than A4 text pages.
+
+Failure recorded:
+
+- The previous experimental text-page pass treated overflow as the primary
+  problem, but the deeper issue was design-system mismatch.
+- A tabbed/register page, a full-page background-image overprint, and an
+  unconditional four-image wall repeated earlier asset directions and weakened
+  the text-page reading hierarchy.
+
+Changes made:
+
+- Kept the accepted perforated-register and waiting-plate directions.
+- Replaced the tabbed/register study with a marginal-essay text page.
+- Replaced the background-image overprint with a bounded cutline-plate page.
+- Replaced the unconditional four-image wall with a source-dossier page that
+  only renders a multi-image wall when the same surface has at least three
+  distinct renderable images.
+- Removed Group 02 page 02 from the text-page preview set; Group 02 now keeps
+  only the accepted first, third, and fourth layouts.
+- Added text-page-specific constraints to
+  `docs/frontend/ASSET_PREVIEW_CAPTURE_CONSTRAINTS.md`.
+
+Validation:
+
+- `npm run build` passed.
+- `npm run capture:text-pages` passed and produced a manifest with no overflow,
+  broken-image, missing-group, empty-group, or ratio issues:
+  `/private/tmp/mgd-text-page-captures/20260601T142922Z/manifest.json`.
+
+Constraint added:
+
+- Text pages must not borrow functional border/edge language from bookmarks,
+  cards, slips, tickets, or appendices.
+- Text pages must not use source images as full-page background textures.
+- Multi-image walls are allowed only when the same surface has at least three
+  distinct renderable image URLs; otherwise the layout must fall back to a
+  single evidence plate plus text/citation structure.
+
+## 2026-06-01 — Remediation Execution: Contemporary Filter And Date-Range Guard
+
+Purpose:
+
+- Prevent contemporary/local-source expansion from ingesting generic design
+  pages as public archive records.
+- Prevent capture-phase ranges such as `1970-2026` from appearing as object,
+  movement, or sheet chronology.
+
+Changes made:
+
+- Added `scripts/contemporary_noise_filter.py`.
+- Added `scripts/audit_contemporary_noise_filter_v1.py`.
+- Generated `data/contemporary_noise_filter_audit_v1.csv`.
+- Added `docs/capture/CONTEMPORARY_NOISE_FILTER_AUDIT_v1.md`.
+- Integrated the shared filter into:
+  - `scripts/run_late_period_coverage_capture_1970_2026.py`;
+  - `scripts/run_source_breadth_capture_1970_2026.py`;
+  - `scripts/run_independent_asia_capture_1990_2026.py`;
+  - `scripts/run_edge_wordpress_source_capture_1970_2026.py`.
+- Added `scripts/audit_public_date_range_leaks_v1.py`.
+- Generated `data/public_date_range_leak_audit_v1.csv`.
+- Added `docs/capture/PUBLIC_DATE_RANGE_LEAK_AUDIT_v1.md`.
+- Updated `scripts/rebuild_public_surfaces_from_records.py` so broad
+  source/capture ranges are treated as source scope, not object dates.
+- Updated protocol and noncanonical capture scripts so future records do not
+  write capture-phase date ranges into public notes or ongoing collection-level
+  source records.
+
+Key results:
+
+- Existing contemporary-adjacent rows audited: 281.
+- Noise decisions:
+  - 243 `include_candidate`;
+  - 16 `downgrade_candidate`;
+  - 22 `review_lead`;
+  - 0 `discovery_only`;
+  - 0 `exclude_noise`.
+- Public payload rebuilt from records:
+  - 1,305 source rows after dedupe;
+  - 1,204 surfaces;
+  - 45 folders;
+  - image states: 40 IMG00, 37 IMG01, 655 IMG02, 400 IMG03, 72 IMG04;
+  - image-ready layer: 1,092 / 1,204 (91%).
+- Public date-range leak audit now reports 0 issues for visible public fields.
+- Manual verification found 0 visible `1970-2026` / `1930-1970` phase labels
+  in sheet title/date/context fields after rebuild.
+
+Constraint added:
+
+- Capture-phase bands may exist in file names, raw payload paths, and internal
+  reports, but not in public object chronology. Collection-level records with
+  ongoing ranges must resolve to source scope, bookmark/source dossier, or
+  grouped support material unless item-level dates are captured.
+
+Follow-up fix:
+
+- Expanded the public date-range leak audit to include folder `scopeNote`,
+  visible table rows, and broad movement-folder date ranges.
+- Updated the public payload rebuild step so folder notes describe folder
+  function rather than capture stage.
+- Movement folders with member spans above 35 years now expose the broad span
+  only as `memberDateStart/memberDateEnd` with
+  `chronologyStatus=member_date_span_not_movement_duration`; public
+  `dateStart/dateEnd` are cleared so the UI does not read the member span as a
+  movement duration.
+- Rebuilt the public payload and reran the expanded audit: 0 public date-range
+  leak issues.
+
+## 2026-06-02 — Failure Record: Text Page Group Baseline Drift
+
+Failure:
+
+- The requested operation was to delete `TP13` and `TP15`, then show only
+  `TP12`, `TP14`, and `TP16` as Group 04.
+- The implementation path treated a membership/filtering request as if it were
+  an opportunity to revise the group presentation, causing the accepted
+  baseline to appear changed.
+- This made screenshot review unreliable because the user could no longer
+  compare the remaining accepted layouts against the prior accepted state.
+
+Constraint:
+
+- Layout deletion/filtering requests are membership-only unless the user
+  explicitly asks for redesign.
+- Do not change kept layout component code, CSS, assigned surfaces, card/page
+  scale, or screenshot framing while carrying out deletion/filtering.
+- Preserve and compare against the last accepted screenshot baseline by layout
+  ID, rendered page class, dimensions, and capture manifest.
+- If the instruction names layout IDs, repeat those IDs internally and execute
+  that exact set; do not remap to a new composition.
+
+Corrected state:
+
+- Group 04 contains only `TP12.perforated-field`, `TP14.waiting-plate`, and
+  `TP16.source-dossier`.
+- The accepted corrected capture preserved the original five-up scale and
+  passed manifest checks with no overflow, broken image, missing group, empty
+  group, or ratio issues:
+  `/private/tmp/mgd-text-page-captures/20260601T160157Z/manifest.json`.
+
+## 2026-06-02 — Main Sheet Group 01 Frozen
+
+Decision:
+
+- The first main-sheet group is accepted and frozen as four distinct layout
+  directions:
+  - `MS01.protocol-ledger`
+  - `MS02.evidence-dossier`
+  - `MS03.split-bulletin`
+  - `MS04.grid-register`
+- `MS02` and `MS03` are the preferred main-sheet voice. They should appear
+  materially more often than `MS01` and `MS04`.
+
+Distribution:
+
+- Default ratio: `MS01 : MS02 : MS03 : MS04 = 2 : 3.5 : 3.5 : 1`.
+- Normalized target: `20% / 35% / 35% / 10%`.
+
+Implementation notes:
+
+- Added `frontend/src/lib/main-sheet-layout.ts` as the reusable layout registry
+  and weight source.
+- Added `frontend/src/components/archive/main-sheets/MAIN_SHEET_RULES.md` to
+  document the frozen set, use cases, and hard constraints.
+- The accepted capture for this group passed the headless preview audit with no
+  overflow or broken images:
+  `/private/tmp/mgd-main-sheet-captures/20260602T010700Z/main-sheets-group-01.png`.
+
+Constraint:
+
+- Do not collapse the four frozen directions into one generic main-sheet
+  template. Future main-sheet work may extend the set, but it must preserve the
+  accepted layout IDs and their distribution unless explicitly revised.
+
+## 2026-06-02 — Postwar DigitalNZ Capture Repair
+
+Action:
+
+- Added `scripts/run_digitalnz_postwar_image_ready_1945_2026.py` as a
+  postwar-first regional image-ready capture batch for Aotearoa New Zealand and
+  Pacific-connected visual communication records.
+- Repaired `scripts/run_digitalnz_image_ready_1830_1970.py` so DigitalNZ uses
+  the active `text` query parameter instead of ignored `search_text`.
+- Repaired object-date parsing so `syndication_date`, `updated_at`, and
+  record/upload dates do not become public object dates. When `display_date`
+  exists, it is treated as the preferred object-date source.
+
+Result:
+
+- First broken run produced 0 records because the inactive query parameter
+  returned default noise.
+- After query repair, the batch produced 130 records, but inspection revealed
+  pre-1945 records misfiled by record synchronization dates.
+- After date repair, the final batch produced 117 records:
+  - `IMG03`: 53
+  - `IMG02`: 64
+  - `IMG00/IMG01/IMG04`: 0
+- The final batch has no pre-1945 rows, no object-date spans above 40 years,
+  and no duplicate image URLs. Duplicate titles remain where they represent
+  series/event views and should be handled by grouping rather than deletion.
+
+Constraint:
+
+- Source API record/update/syndication dates must never be used as object
+  history dates unless the source explicitly identifies them as creation,
+  publication, or object dates.
+- For DigitalNZ-style aggregators, public object dating must prefer
+  `display_date`; fallback date fields require inspection because they may be
+  repository timestamps.
+- Partial/non-commercial visual records may enter as `IMG02` only with
+  source-return display policy, no local copy, and rights review required.
+
+## 2026-06-02 — Edge RSS/HTML Source Probe
+
+Action:
+
+- Added `scripts/run_edge_rss_html_source_capture_1970_2026.py` for
+  post-1970 independent/professional/community design sources that expose feeds
+  but not clean object APIs.
+- The adapter fetches RSS/Atom items, then visits item pages for
+  `og:image`/description metadata. It writes source-context rows only:
+  source-hosted images, no local copy, rights review required.
+- Raw HTML/XML writes are passed through the same secret-pattern redaction
+  guard used for edge WordPress captures.
+
+Result:
+
+- Captured 8 `IMG02` source-context records from Another Graphic.
+- JAGDA and Tokyo TDC feed endpoints were reachable but did not yield included
+  rows under the current design-term/date/noise filters.
+- Fonts In Use, People's Graphic Design Archive, M+ Magazine, BiblioAsia, and
+  Design Reviewed feed endpoints failed or were unavailable through the tested
+  feed URLs.
+
+Constraint:
+
+- Generic RSS probing is useful for source feasibility but should not be
+  treated as sufficient coverage for independent design archives.
+- JAGDA, Tokyo TDC, Fonts In Use, M+, PGDA, and BiblioAsia need source-specific
+  adapters or manually seeded item routes before they can be counted as serious
+  coverage.
+
+## 2026-06-02 — Source Coverage Rate v1
+
+Action:
+
+- Added `scripts/audit_source_coverage_rate_v1.py` to measure source breadth
+  separately from image readiness.
+- The metric distinguishes candidate/prospect sources from active captured
+  sources. Candidate sources do not count as coverage until at least one record
+  enters a capture batch.
+- The v1 formula uses region-weighted source points, then applies a
+  time-coverage multiplier:
+  `source_coverage_rate_v1 = source_pool_rate × time_weighted_balance_rate`.
+- A stricter diagnostic also multiplies by regional distribution balance, but
+  this is not the main rate because `source_pool_rate` already includes region
+  weights.
+
+Current result:
+
+- Candidate/prospect sources: 298
+- Active captured sources: 39
+- Weighted active source points: 30.75 / 200.00
+- Source pool rate: 15.38%
+- Time-weighted balance rate: 33.00%
+- Source coverage rate v1: 5.07%
+- Strict distribution-adjusted diagnostic: 0.72%
+
+Constraint:
+
+- Do not use raw candidate source count as a public coverage claim.
+- Source coverage reporting must include at least:
+  active source count, candidate source count, region-weighted source rate,
+  time-weighted balance, and strict regional distribution diagnostic.
+- Region/source mapping gaps are themselves coverage failures. A record filed
+  under an East Asian region folder does not prove East Asian source coverage
+  unless the source itself is regionally mapped and active.
+
+## 2026-06-02 — Period Source + Image Capture Priority v1
+
+Action:
+
+- Added `scripts/audit_period_source_image_priority_v1.py` to combine
+  per-period source breadth and weighted image coverage into a ranked next
+  capture plan.
+- The period source metric counts active sources inside each period and sums
+  their region weights. It does not count candidate sources.
+- The priority formula is:
+  `period_weight × (0.55 × source_gap + 0.45 × image_gap)`.
+
+Current ranked result:
+
+- `1930_1970`: priority `0.2185`; source coverage `20.64%`; weighted image
+  coverage `55.36%`.
+- `1970_2000`: priority `0.1482`; source coverage `21.10%`; weighted image
+  coverage `61.43%`.
+- `2000_2026`: priority `0.1344`; source coverage `36.80%`; weighted image
+  coverage `54.91%`.
+- `pre_1930`: priority `0.0804`; source coverage `21.33%`; weighted image
+  coverage `73.17%`.
+
+Decision:
+
+- Next broad capture should prioritize `1930_1970`.
+- `1970_2000` needs source breadth before more records from existing sources.
+- `2000_2026` needs image quality and source-specific adapters for independent
+  or local post-digital sources.
+- `pre_1930` should pause broad capture and only receive targeted non-West or
+  local-source work plus duplicate-image review.

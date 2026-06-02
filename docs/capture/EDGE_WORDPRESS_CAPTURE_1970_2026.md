@@ -14,20 +14,21 @@ This batch promotes a conservative set of records from P1/P2 edge-source candida
 
 ## Summary
 
-- Captured records: 40
-- Sources attempted: 12
-- Sources with records: 5
-- Image states: {'IMG02': 39, 'IMG04': 1}
-- Records with >=160 characters of source text: 38
-- Regions/places represented: {'Singapore / Southeast Asia': 8, 'Cambodia': 8, 'Indonesia': 10, 'post-1990 international': 6, 'United Kingdom / global': 8}
+- Captured records: 35
+- Sources attempted: 17
+- Sources with records: 6
+- Image states: {'IMG02': 34, 'IMG04': 1}
+- Records with >=160 characters of source text: 33
+- Regions/places represented: {'Singapore / Southeast Asia': 8, 'Cambodia': 1, 'Indonesia': 4, 'post-1990 international': 6, 'United Kingdom / global': 8, 'United States / global': 8}
 
 ## Source Counts
 
 - Another Graphic: 6
 - Asian Film Archive: 8
-- Bophana Audiovisual Resource Center: 8
-- Desain Grafis Indonesia: 10
+- Bophana Audiovisual Resource Center: 1
+- Desain Grafis Indonesia: 4
 - Design Reviewed: 8
+- Letterform Archive: 8
 
 ## Attempt Summary
 
@@ -43,3 +44,8 @@ This batch promotes a conservative set of records from P1/P2 edge-source candida
 - People's Graphic Design Archive (global/community): no_records_promoted; records 0; duplicates 0; failures 5; rest bases `posts`
 - Design Reviewed (United Kingdom / global): captured; records 8; duplicates 0; failures 0; rest bases `posts`
 - Arquivo Nacional Brasil (Brazil): no_records_promoted; records 0; duplicates 0; failures 5; rest bases `posts`
+- JAGDA (Japan): no_records_promoted; records 0; duplicates 0; failures 0; rest bases `posts`
+- Fonts In Use (global): no_records_promoted; records 0; duplicates 0; failures 5; rest bases `posts`
+- Letterform Archive (United States / global): captured; records 8; duplicates 0; failures 0; rest bases `posts`
+- Thaipography Archive (Thailand): no_records_promoted; records 0; duplicates 0; failures 5; rest bases `posts`
+- M+ Magazine (Hong Kong): no_records_promoted; records 0; duplicates 0; failures 5; rest bases `posts`

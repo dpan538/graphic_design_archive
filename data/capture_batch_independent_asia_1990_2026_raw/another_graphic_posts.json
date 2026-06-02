@@ -74,6 +74,408 @@
                 "href": "https://anothergraphic.org/wp-json/wp/v2/media"
               }
             ],
+            "replies": [
+              {
+                "embeddable": true,
+                "href": "https://anothergraphic.org/wp-json/wp/v2/comments?post=17466"
+              }
+            ],
+            "self": [
+              {
+                "href": "https://anothergraphic.org/wp-json/wp/v2/media/17466",
+                "targetHints": {
+                  "allow": [
+                    "GET"
+                  ]
+                }
+              }
+            ]
+          },
+          "acf": [],
+          "alt_text": "Poster work by Elena Byalaya (United States) — curated on Another Graphic",
+          "author": 2,
+          "caption": {
+            "rendered": ""
+          },
+          "date": "2026-05-31T21:27:02",
+          "featured_media": 0,
+          "id": 17466,
+          "link": "https://anothergraphic.org/elena-byalaya/",
+          "media_details": {
+            "file": "2026/05/Elena-Byalaya-AnotherGraphic-AG-graphic-design-inspiration.jpg",
+            "filesize": 183761,
+            "height": 1000,
+            "image_meta": {
+              "alt": "",
+              "aperture": "0",
+              "camera": "",
+              "caption": "",
+              "copyright": "",
+              "created_timestamp": "0",
+              "credit": "",
+              "focal_length": "0",
+              "iso": "0",
+              "keywords": [],
+              "orientation": "0",
+              "shutter_speed": "0",
+              "title": ""
+            },
+            "sizes": {
+              "full": {
+                "file": "Elena-Byalaya-AnotherGraphic-AG-graphic-design-inspiration.jpg",
+                "height": 1000,
+                "mime_type": "image/jpeg",
+                "source_url": "https://anothergraphic.org/wp-content/uploads/2026/05/Elena-Byalaya-AnotherGraphic-AG-graphic-design-inspiration.jpg",
+                "width": 1000
+              },
+              "medium": {
+                "file": "Elena-Byalaya-AnotherGraphic-AG-graphic-design-inspiration-500x500.jpg",
+                "filesize": 46404,
+                "height": 500,
+                "mime_type": "image/jpeg",
+                "source_url": "https://anothergraphic.org/wp-content/uploads/2026/05/Elena-Byalaya-AnotherGraphic-AG-graphic-design-inspiration-500x500.jpg",
+                "width": 500
+              },
+              "thumbnail": {
+                "file": "Elena-Byalaya-AnotherGraphic-AG-graphic-design-inspiration-150x150.jpg",
+                "filesize": 6958,
+                "height": 150,
+                "mime_type": "image/jpeg",
+                "source_url": "https://anothergraphic.org/wp-content/uploads/2026/05/Elena-Byalaya-AnotherGraphic-AG-graphic-design-inspiration-150x150.jpg",
+                "width": 150
+              },
+              "woocommerce_gallery_thumbnail": {
+                "file": "Elena-Byalaya-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
+                "filesize": 3524,
+                "height": 100,
+                "mime_type": "image/jpeg",
+                "source_url": "https://anothergraphic.org/wp-content/uploads/2026/05/Elena-Byalaya-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
+                "width": 100
+              }
+            },
+            "width": 1000
+          },
+          "media_type": "image",
+          "mime_type": "image/jpeg",
+          "slug": "elena-byalaya",
+          "source_url": "https://anothergraphic.org/wp-content/uploads/2026/05/Elena-Byalaya-AnotherGraphic-AG-graphic-design-inspiration.jpg",
+          "title": {
+            "rendered": "Elena Byalaya"
+          },
+          "type": "attachment"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://anothergraphic.org/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://anothergraphic.org/wp-json/wp/v2/categories"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://anothergraphic.org/wp-json/wp/v2/categories/30",
+                  "targetHints": {
+                    "allow": [
+                      "GET"
+                    ]
+                  }
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://anothergraphic.org/wp-json/wp/v2/posts?categories=30"
+                }
+              ]
+            },
+            "acf": [],
+            "id": 30,
+            "link": "https://anothergraphic.org/category/poster/",
+            "name": "Poster",
+            "slug": "poster",
+            "taxonomy": "category"
+          }
+        ],
+        [
+          {
+            "_links": {
+              "about": [
+                {
+                  "href": "https://anothergraphic.org/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "https://anothergraphic.org/wp-json/wp/v2/tags"
+                }
+              ],
+              "curies": [
+                {
+                  "href": "https://api.w.org/{rel}",
+                  "name": "wp",
+                  "templated": true
+                }
+              ],
+              "self": [
+                {
+                  "href": "https://anothergraphic.org/wp-json/wp/v2/tags/149",
+                  "targetHints": {
+                    "allow": [
+                      "GET"
+                    ]
+                  }
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "https://anothergraphic.org/wp-json/wp/v2/posts?tags=149"
+                }
+              ]
+            },
+            "id": 149,
+            "link": "https://anothergraphic.org/tag/united-states/",
+            "name": "United States",
+            "slug": "united-states",
+            "taxonomy": "post_tag"
+          }
+        ]
+      ]
+    },
+    "_links": {
+      "about": [
+        {
+          "href": "https://anothergraphic.org/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://anothergraphic.org/wp-json/wp/v2/users/2"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://anothergraphic.org/wp-json/wp/v2/posts"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "predecessor-version": [
+        {
+          "href": "https://anothergraphic.org/wp-json/wp/v2/posts/17467/revisions/17468",
+          "id": 17468
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://anothergraphic.org/wp-json/wp/v2/comments?post=17467"
+        }
+      ],
+      "self": [
+        {
+          "href": "https://anothergraphic.org/wp-json/wp/v2/posts/17467",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "version-history": [
+        {
+          "count": 1,
+          "href": "https://anothergraphic.org/wp-json/wp/v2/posts/17467/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://anothergraphic.org/wp-json/wp/v2/media?parent=17467"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://anothergraphic.org/wp-json/wp/v2/media/17466"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "https://anothergraphic.org/wp-json/wp/v2/categories?post=17467",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "https://anothergraphic.org/wp-json/wp/v2/tags?post=17467",
+          "taxonomy": "post_tag"
+        }
+      ]
+    },
+    "acf": {
+      "colors": [
+        {
+          "color": "#000000"
+        },
+        {
+          "color": "#D31A68"
+        }
+      ],
+      "instagram": "e_udler",
+      "together_with": "",
+      "website": "elenabyalaya.com",
+      "year": 2026
+    },
+    "author": 2,
+    "categories": [
+      30
+    ],
+    "class_list": [
+      "post-17467",
+      "post",
+      "type-post",
+      "status-publish",
+      "format-standard",
+      "has-post-thumbnail",
+      "hentry",
+      "category-poster",
+      "tag-united-states"
+    ],
+    "comment_status": "closed",
+    "content": {
+      "protected": false,
+      "rendered": ""
+    },
+    "date": "2026-06-01T16:30:00",
+    "date_gmt": "2026-06-01T14:30:00",
+    "excerpt": {
+      "protected": false,
+      "rendered": ""
+    },
+    "featured_media": 17466,
+    "format": "standard",
+    "guid": {
+      "rendered": "https://anothergraphic.org/?p=17467"
+    },
+    "id": 17467,
+    "link": "https://anothergraphic.org/elena-byalaya/",
+    "meta": {
+      "_acf_changed": false,
+      "footnotes": ""
+    },
+    "modified": "2026-05-31T21:31:52",
+    "modified_gmt": "2026-05-31T19:31:52",
+    "ping_status": "closed",
+    "share_on_mastodon": {
+      "error": "",
+      "url": "https://mastodon.social/@anothergraphicdotorg/116675328967646459"
+    },
+    "slug": "elena-byalaya",
+    "status": "publish",
+    "sticky": false,
+    "tags": [
+      149
+    ],
+    "template": "",
+    "title": {
+      "rendered": "Elena Byalaya"
+    },
+    "type": "post"
+  },
+  {
+    "_embedded": {
+      "author": [
+        {
+          "_links": {
+            "collection": [
+              {
+                "href": "https://anothergraphic.org/wp-json/wp/v2/users"
+              }
+            ],
+            "self": [
+              {
+                "href": "https://anothergraphic.org/wp-json/wp/v2/users/2",
+                "targetHints": {
+                  "allow": [
+                    "GET"
+                  ]
+                }
+              }
+            ]
+          },
+          "acf": [],
+          "description": "",
+          "id": 2,
+          "is_super_admin": true,
+          "link": "https://anothergraphic.org/author/mathieu/",
+          "name": "Mathieu",
+          "slug": "mathieu",
+          "url": "http://anothergraphic.org",
+          "woocommerce_meta": {
+            "activity_panel_inbox_last_read": "",
+            "activity_panel_reviews_last_read": "",
+            "android_app_banner_dismissed": "",
+            "categories_report_columns": "",
+            "coming_soon_banner_dismissed": "",
+            "coupons_report_columns": "",
+            "customers_report_columns": "",
+            "dashboard_chart_interval": "",
+            "dashboard_chart_type": "",
+            "dashboard_leaderboard_rows": "",
+            "dashboard_sections": "",
+            "homepage_layout": "",
+            "homepage_stats": "",
+            "launch_your_store_tour_hidden": "yes",
+            "order_attribution_install_banner_dismissed": "",
+            "orders_report_columns": "",
+            "products_report_columns": "",
+            "revenue_report_columns": "",
+            "scheduled_updates_promotion_notice_dismissed": "",
+            "task_list_tracked_started_tasks": "",
+            "taxes_report_columns": "",
+            "variable_product_tour_shown": "",
+            "variations_report_columns": ""
+          }
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "_links": {
+            "about": [
+              {
+                "href": "https://anothergraphic.org/wp-json/wp/v2/types/attachment"
+              }
+            ],
+            "author": [
+              {
+                "embeddable": true,
+                "href": "https://anothergraphic.org/wp-json/wp/v2/users/2"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://anothergraphic.org/wp-json/wp/v2/media"
+              }
+            ],
             "curies": [
               {
                 "href": "https://api.w.org/{rel}",
@@ -118,7 +520,7 @@
           "link": "https://anothergraphic.org/nilamani/nilamani-anothergraphic-ag-graphic-design-inspiration/",
           "media_details": {
             "file": "2026/05/Nilamani-AnotherGraphic-AG-graphic-design-inspiration-1.jpg",
-            "filesize": 258348,
+            "filesize": 243101,
             "height": 1000,
             "image_meta": {
               "alt": "",
@@ -169,7 +571,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Nilamani-AnotherGraphic-AG-graphic-design-inspiration-1-100x100.jpg",
-                "filesize": 4221,
+                "filesize": 3394,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/05/Nilamani-AnotherGraphic-AG-graphic-design-inspiration-1-100x100.jpg",
@@ -528,9 +930,10 @@
           "link": "https://anothergraphic.org/darius-ou/",
           "media_details": {
             "file": "2026/05/Darius-Ou-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 146544,
+            "filesize": 142474,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -570,7 +973,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Darius-Ou-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 1575,
+                "filesize": 1514,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/05/Darius-Ou-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -929,9 +1332,10 @@
           "link": "https://anothergraphic.org/juhyeok-kim/",
           "media_details": {
             "file": "2026/05/Juhyeok-Kim-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 200674,
+            "filesize": 189669,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -971,7 +1375,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Juhyeok-Kim-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 3046,
+                "filesize": 2986,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/05/Juhyeok-Kim-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -1330,9 +1734,10 @@
           "link": "https://anothergraphic.org/studio-vacarme/",
           "media_details": {
             "file": "2026/05/Studio-Vacarme-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 129552,
+            "filesize": 118532,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -1372,7 +1777,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Studio-Vacarme-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 2781,
+                "filesize": 2702,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/05/Studio-Vacarme-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -1731,9 +2136,10 @@
           "link": "https://anothergraphic.org/floki-sigurjonsson/",
           "media_details": {
             "file": "2026/05/Fl-ki-Sigurj-nsson-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 181509,
+            "filesize": 177304,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -1773,7 +2179,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Fl-ki-Sigurj-nsson-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 2832,
+                "filesize": 2761,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/05/Fl-ki-Sigurj-nsson-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -2132,9 +2538,10 @@
           "link": "https://anothergraphic.org/hans-frauchiger/",
           "media_details": {
             "file": "2026/05/Hans-Frauchiger-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 206220,
+            "filesize": 190823,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -2174,7 +2581,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Hans-Frauchiger-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 3162,
+                "filesize": 3104,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/05/Hans-Frauchiger-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -2533,9 +2940,10 @@
           "link": "https://anothergraphic.org/joao-queiros/",
           "media_details": {
             "file": "2026/04/Joa-o-Queiro-s-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 253027,
+            "filesize": 232349,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -2575,7 +2983,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Joa-o-Queiro-s-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 3889,
+                "filesize": 3793,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/04/Joa-o-Queiro-s-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -2934,9 +3342,10 @@
           "link": "https://anothergraphic.org/luana-lloyd-2/",
           "media_details": {
             "file": "2026/04/Luana-Lloyd-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 131847,
+            "filesize": 124135,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -2976,7 +3385,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Luana-Lloyd-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 2948,
+                "filesize": 2889,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/04/Luana-Lloyd-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -3335,9 +3744,10 @@
           "link": "https://anothergraphic.org/scott-vander-zee-3/",
           "media_details": {
             "file": "2026/04/Scott-Vander-Zee-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 164006,
+            "filesize": 148468,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -3377,7 +3787,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Scott-Vander-Zee-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 2914,
+                "filesize": 2857,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/04/Scott-Vander-Zee-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -3736,9 +4146,10 @@
           "link": "https://anothergraphic.org/all-all-all/",
           "media_details": {
             "file": "2026/04/All-all-all-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 67810,
+            "filesize": 57211,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -3778,7 +4189,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "All-all-all-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 1771,
+                "filesize": 1704,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/04/All-all-all-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -4137,9 +4548,10 @@
           "link": "https://anothergraphic.org/anh-duc-le/",
           "media_details": {
             "file": "2026/04/Anh-c-L-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 101743,
+            "filesize": 96490,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -4179,7 +4591,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Anh-c-L-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 1898,
+                "filesize": 1837,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/04/Anh-c-L-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -4538,9 +4950,10 @@
           "link": "https://anothergraphic.org/atio-studio/",
           "media_details": {
             "file": "2026/04/Atio-Studio-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 121402,
+            "filesize": 112347,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -4580,7 +4993,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Atio-Studio-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 1884,
+                "filesize": 1827,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/04/Atio-Studio-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -4939,9 +5352,10 @@
           "link": "https://anothergraphic.org/futur-neue-6/",
           "media_details": {
             "file": "2026/04/Futur-Neue-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 136790,
+            "filesize": 124362,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -4981,7 +5395,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Futur-Neue-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 3050,
+                "filesize": 2986,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/04/Futur-Neue-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -5340,9 +5754,10 @@
           "link": "https://anothergraphic.org/studio-principal/",
           "media_details": {
             "file": "2026/04/Studio-Principal-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 152666,
+            "filesize": 145534,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -5382,7 +5797,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Studio-Principal-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 2953,
+                "filesize": 2898,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/04/Studio-Principal-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -5741,9 +6156,10 @@
           "link": "https://anothergraphic.org/droom-iris/",
           "media_details": {
             "file": "2026/04/Droom-iris-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 177206,
+            "filesize": 168327,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -5783,7 +6199,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Droom-iris-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 2783,
+                "filesize": 2716,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/04/Droom-iris-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -6157,9 +6573,10 @@
           "link": "https://anothergraphic.org/faye-and-gina/faye-and-gina-anothergraphic-ag-graphic-design-inspiration/",
           "media_details": {
             "file": "2026/04/Faye-and-Gina-AnotherGraphic-AG-graphic-design-inspiration.png",
-            "filesize": 699526,
+            "filesize": 306290,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -6207,7 +6624,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Faye-and-Gina-AnotherGraphic-AG-graphic-design-inspiration-100x100.png",
-                "filesize": 11466,
+                "filesize": 5388,
                 "height": 100,
                 "mime_type": "image/png",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/04/Faye-and-Gina-AnotherGraphic-AG-graphic-design-inspiration-100x100.png",
@@ -6566,9 +6983,10 @@
           "link": "https://anothergraphic.org/by-unveil/",
           "media_details": {
             "file": "2026/04/By-Unveil-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 148161,
+            "filesize": 140756,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -6608,7 +7026,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "By-Unveil-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 3532,
+                "filesize": 3461,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/04/By-Unveil-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -6967,9 +7385,10 @@
           "link": "https://anothergraphic.org/forth-back-2/",
           "media_details": {
             "file": "2026/04/Forth-Back-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 97564,
+            "filesize": 89768,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -7009,7 +7428,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Forth-Back-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 1936,
+                "filesize": 1881,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/04/Forth-Back-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -7368,9 +7787,10 @@
           "link": "https://anothergraphic.org/minha-kim/",
           "media_details": {
             "file": "2026/04/Minha-Kim-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 137354,
+            "filesize": 130064,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -7410,7 +7830,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Minha-Kim-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 2789,
+                "filesize": 2727,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/04/Minha-Kim-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -7769,9 +8189,10 @@
           "link": "https://anothergraphic.org/appear-offline-2/",
           "media_details": {
             "file": "2026/04/Appear-Offline-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 207006,
+            "filesize": 201519,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -7811,7 +8232,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Appear-Offline-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 3902,
+                "filesize": 3844,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/04/Appear-Offline-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -8170,9 +8591,10 @@
           "link": "https://anothergraphic.org/a2-sw-hk/",
           "media_details": {
             "file": "2026/04/A2-SW-HK-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 108276,
+            "filesize": 100984,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -8212,7 +8634,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "A2-SW-HK-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 1958,
+                "filesize": 1895,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/04/A2-SW-HK-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -8571,9 +8993,10 @@
           "link": "https://anothergraphic.org/studio-thinktank/",
           "media_details": {
             "file": "2026/04/Studio-Thinktank-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 102592,
+            "filesize": 94302,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -8613,7 +9036,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Studio-Thinktank-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 2323,
+                "filesize": 2263,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/04/Studio-Thinktank-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -8972,9 +9395,10 @@
           "link": "https://anothergraphic.org/baillat-studio-3/",
           "media_details": {
             "file": "2026/04/Baillat-Studio-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 129218,
+            "filesize": 119741,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -9014,7 +9438,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Baillat-Studio-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 3129,
+                "filesize": 3070,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/04/Baillat-Studio-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -9373,9 +9797,10 @@
           "link": "https://anothergraphic.org/the-space-between/",
           "media_details": {
             "file": "2026/03/The-Space-Between-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 119056,
+            "filesize": 112886,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -9415,7 +9840,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "The-Space-Between-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 3069,
+                "filesize": 3000,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/03/The-Space-Between-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -9774,9 +10199,10 @@
           "link": "https://anothergraphic.org/laura-hilbert/",
           "media_details": {
             "file": "2026/03/Laura-Hilbert-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 222150,
+            "filesize": 209970,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -9816,7 +10242,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Laura-Hilbert-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 3570,
+                "filesize": 3514,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/03/Laura-Hilbert-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -10175,9 +10601,10 @@
           "link": "https://anothergraphic.org/kellen-renstrom-2/",
           "media_details": {
             "file": "2026/03/Kellen-Renstrom-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 251849,
+            "filesize": 238713,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -10217,7 +10644,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Kellen-Renstrom-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 3422,
+                "filesize": 3365,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/03/Kellen-Renstrom-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -10576,9 +11003,10 @@
           "link": "https://anothergraphic.org/hesign/",
           "media_details": {
             "file": "2026/03/Hesign-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 187171,
+            "filesize": 165260,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -10618,7 +11046,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Hesign-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 3875,
+                "filesize": 3806,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/03/Hesign-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -10977,9 +11405,10 @@
           "link": "https://anothergraphic.org/alphabetic-order/",
           "media_details": {
             "file": "2026/03/Alphabetic-Order-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 192389,
+            "filesize": 179756,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -11019,7 +11448,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Alphabetic-Order-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 3363,
+                "filesize": 3300,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/03/Alphabetic-Order-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -11378,9 +11807,10 @@
           "link": "https://anothergraphic.org/experimental-jetset-3/",
           "media_details": {
             "file": "2026/03/Experimental-Jetset-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 246909,
+            "filesize": 232160,
             "height": 1000,
             "image_meta": {
+              "alt": "",
               "aperture": "0",
               "camera": "",
               "caption": "",
@@ -11420,7 +11850,7 @@
               },
               "woocommerce_gallery_thumbnail": {
                 "file": "Experimental-Jetset-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 3284,
+                "filesize": 3230,
                 "height": 100,
                 "mime_type": "image/jpeg",
                 "source_url": "https://anothergraphic.org/wp-content/uploads/2026/03/Experimental-Jetset-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
@@ -11672,407 +12102,6 @@
     "template": "",
     "title": {
       "rendered": "Experimental Jetset"
-    },
-    "type": "post"
-  },
-  {
-    "_embedded": {
-      "author": [
-        {
-          "_links": {
-            "collection": [
-              {
-                "href": "https://anothergraphic.org/wp-json/wp/v2/users"
-              }
-            ],
-            "self": [
-              {
-                "href": "https://anothergraphic.org/wp-json/wp/v2/users/2",
-                "targetHints": {
-                  "allow": [
-                    "GET"
-                  ]
-                }
-              }
-            ]
-          },
-          "acf": [],
-          "description": "",
-          "id": 2,
-          "is_super_admin": true,
-          "link": "https://anothergraphic.org/author/mathieu/",
-          "name": "Mathieu",
-          "slug": "mathieu",
-          "url": "http://anothergraphic.org",
-          "woocommerce_meta": {
-            "activity_panel_inbox_last_read": "",
-            "activity_panel_reviews_last_read": "",
-            "android_app_banner_dismissed": "",
-            "categories_report_columns": "",
-            "coming_soon_banner_dismissed": "",
-            "coupons_report_columns": "",
-            "customers_report_columns": "",
-            "dashboard_chart_interval": "",
-            "dashboard_chart_type": "",
-            "dashboard_leaderboard_rows": "",
-            "dashboard_sections": "",
-            "homepage_layout": "",
-            "homepage_stats": "",
-            "launch_your_store_tour_hidden": "yes",
-            "order_attribution_install_banner_dismissed": "",
-            "orders_report_columns": "",
-            "products_report_columns": "",
-            "revenue_report_columns": "",
-            "scheduled_updates_promotion_notice_dismissed": "",
-            "task_list_tracked_started_tasks": "",
-            "taxes_report_columns": "",
-            "variable_product_tour_shown": "",
-            "variations_report_columns": ""
-          }
-        }
-      ],
-      "wp:featuredmedia": [
-        {
-          "_links": {
-            "about": [
-              {
-                "href": "https://anothergraphic.org/wp-json/wp/v2/types/attachment"
-              }
-            ],
-            "author": [
-              {
-                "embeddable": true,
-                "href": "https://anothergraphic.org/wp-json/wp/v2/users/2"
-              }
-            ],
-            "collection": [
-              {
-                "href": "https://anothergraphic.org/wp-json/wp/v2/media"
-              }
-            ],
-            "replies": [
-              {
-                "embeddable": true,
-                "href": "https://anothergraphic.org/wp-json/wp/v2/comments?post=17259"
-              }
-            ],
-            "self": [
-              {
-                "href": "https://anothergraphic.org/wp-json/wp/v2/media/17259",
-                "targetHints": {
-                  "allow": [
-                    "GET"
-                  ]
-                }
-              }
-            ]
-          },
-          "acf": [],
-          "alt_text": "Printed matter work by Pràctica (Spain) — curated on Another Graphic",
-          "author": 2,
-          "caption": {
-            "rendered": ""
-          },
-          "date": "2026-03-24T16:01:54",
-          "featured_media": 0,
-          "id": 17259,
-          "link": "https://anothergraphic.org/practica/",
-          "media_details": {
-            "file": "2026/03/Pr-ctica-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-            "filesize": 176643,
-            "height": 1000,
-            "image_meta": {
-              "aperture": "0",
-              "camera": "",
-              "caption": "",
-              "copyright": "",
-              "created_timestamp": "0",
-              "credit": "",
-              "focal_length": "0",
-              "iso": "0",
-              "keywords": [],
-              "orientation": "0",
-              "shutter_speed": "0",
-              "title": ""
-            },
-            "sizes": {
-              "full": {
-                "file": "Pr-ctica-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-                "height": 1000,
-                "mime_type": "image/jpeg",
-                "source_url": "https://anothergraphic.org/wp-content/uploads/2026/03/Pr-ctica-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-                "width": 1000
-              },
-              "medium": {
-                "file": "Pr-ctica-AnotherGraphic-AG-graphic-design-inspiration-500x500.jpg",
-                "filesize": 28899,
-                "height": 500,
-                "mime_type": "image/jpeg",
-                "source_url": "https://anothergraphic.org/wp-content/uploads/2026/03/Pr-ctica-AnotherGraphic-AG-graphic-design-inspiration-500x500.jpg",
-                "width": 500
-              },
-              "thumbnail": {
-                "file": "Pr-ctica-AnotherGraphic-AG-graphic-design-inspiration-150x150.jpg",
-                "filesize": 4770,
-                "height": 150,
-                "mime_type": "image/jpeg",
-                "source_url": "https://anothergraphic.org/wp-content/uploads/2026/03/Pr-ctica-AnotherGraphic-AG-graphic-design-inspiration-150x150.jpg",
-                "width": 150
-              },
-              "woocommerce_gallery_thumbnail": {
-                "file": "Pr-ctica-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "filesize": 2686,
-                "height": 100,
-                "mime_type": "image/jpeg",
-                "source_url": "https://anothergraphic.org/wp-content/uploads/2026/03/Pr-ctica-AnotherGraphic-AG-graphic-design-inspiration-100x100.jpg",
-                "width": 100
-              }
-            },
-            "width": 1000
-          },
-          "media_type": "image",
-          "mime_type": "image/jpeg",
-          "slug": "practica",
-          "source_url": "https://anothergraphic.org/wp-content/uploads/2026/03/Pr-ctica-AnotherGraphic-AG-graphic-design-inspiration.jpg",
-          "title": {
-            "rendered": "Pràctica"
-          },
-          "type": "attachment"
-        }
-      ],
-      "wp:term": [
-        [
-          {
-            "_links": {
-              "about": [
-                {
-                  "href": "https://anothergraphic.org/wp-json/wp/v2/taxonomies/category"
-                }
-              ],
-              "collection": [
-                {
-                  "href": "https://anothergraphic.org/wp-json/wp/v2/categories"
-                }
-              ],
-              "curies": [
-                {
-                  "href": "https://api.w.org/{rel}",
-                  "name": "wp",
-                  "templated": true
-                }
-              ],
-              "self": [
-                {
-                  "href": "https://anothergraphic.org/wp-json/wp/v2/categories/40",
-                  "targetHints": {
-                    "allow": [
-                      "GET"
-                    ]
-                  }
-                }
-              ],
-              "wp:post_type": [
-                {
-                  "href": "https://anothergraphic.org/wp-json/wp/v2/posts?categories=40"
-                }
-              ]
-            },
-            "acf": [],
-            "id": 40,
-            "link": "https://anothergraphic.org/category/identity/",
-            "name": "Identity",
-            "slug": "identity",
-            "taxonomy": "category"
-          }
-        ],
-        [
-          {
-            "_links": {
-              "about": [
-                {
-                  "href": "https://anothergraphic.org/wp-json/wp/v2/taxonomies/post_tag"
-                }
-              ],
-              "collection": [
-                {
-                  "href": "https://anothergraphic.org/wp-json/wp/v2/tags"
-                }
-              ],
-              "curies": [
-                {
-                  "href": "https://api.w.org/{rel}",
-                  "name": "wp",
-                  "templated": true
-                }
-              ],
-              "self": [
-                {
-                  "href": "https://anothergraphic.org/wp-json/wp/v2/tags/48",
-                  "targetHints": {
-                    "allow": [
-                      "GET"
-                    ]
-                  }
-                }
-              ],
-              "wp:post_type": [
-                {
-                  "href": "https://anothergraphic.org/wp-json/wp/v2/posts?tags=48"
-                }
-              ]
-            },
-            "id": 48,
-            "link": "https://anothergraphic.org/tag/spain/",
-            "name": "Spain",
-            "slug": "spain",
-            "taxonomy": "post_tag"
-          }
-        ]
-      ]
-    },
-    "_links": {
-      "about": [
-        {
-          "href": "https://anothergraphic.org/wp-json/wp/v2/types/post"
-        }
-      ],
-      "author": [
-        {
-          "embeddable": true,
-          "href": "https://anothergraphic.org/wp-json/wp/v2/users/2"
-        }
-      ],
-      "collection": [
-        {
-          "href": "https://anothergraphic.org/wp-json/wp/v2/posts"
-        }
-      ],
-      "curies": [
-        {
-          "href": "https://api.w.org/{rel}",
-          "name": "wp",
-          "templated": true
-        }
-      ],
-      "predecessor-version": [
-        {
-          "href": "https://anothergraphic.org/wp-json/wp/v2/posts/17260/revisions/17283",
-          "id": 17283
-        }
-      ],
-      "replies": [
-        {
-          "embeddable": true,
-          "href": "https://anothergraphic.org/wp-json/wp/v2/comments?post=17260"
-        }
-      ],
-      "self": [
-        {
-          "href": "https://anothergraphic.org/wp-json/wp/v2/posts/17260",
-          "targetHints": {
-            "allow": [
-              "GET"
-            ]
-          }
-        }
-      ],
-      "version-history": [
-        {
-          "count": 2,
-          "href": "https://anothergraphic.org/wp-json/wp/v2/posts/17260/revisions"
-        }
-      ],
-      "wp:attachment": [
-        {
-          "href": "https://anothergraphic.org/wp-json/wp/v2/media?parent=17260"
-        }
-      ],
-      "wp:featuredmedia": [
-        {
-          "embeddable": true,
-          "href": "https://anothergraphic.org/wp-json/wp/v2/media/17259"
-        }
-      ],
-      "wp:term": [
-        {
-          "embeddable": true,
-          "href": "https://anothergraphic.org/wp-json/wp/v2/categories?post=17260",
-          "taxonomy": "category"
-        },
-        {
-          "embeddable": true,
-          "href": "https://anothergraphic.org/wp-json/wp/v2/tags?post=17260",
-          "taxonomy": "post_tag"
-        }
-      ]
-    },
-    "acf": {
-      "colors": [
-        {
-          "color": "#050606"
-        },
-        {
-          "color": "#04CDA4"
-        }
-      ],
-      "instagram": "practica.design",
-      "together_with": "",
-      "website": "practica.design",
-      "year": 2023
-    },
-    "author": 2,
-    "categories": [
-      40
-    ],
-    "class_list": [
-      "post-17260",
-      "post",
-      "type-post",
-      "status-publish",
-      "format-standard",
-      "has-post-thumbnail",
-      "hentry",
-      "category-identity",
-      "tag-spain"
-    ],
-    "comment_status": "closed",
-    "content": {
-      "protected": false,
-      "rendered": ""
-    },
-    "date": "2026-03-26T16:30:00",
-    "date_gmt": "2026-03-26T15:30:00",
-    "excerpt": {
-      "protected": false,
-      "rendered": ""
-    },
-    "featured_media": 17259,
-    "format": "standard",
-    "guid": {
-      "rendered": "https://anothergraphic.org/?p=17260"
-    },
-    "id": 17260,
-    "link": "https://anothergraphic.org/practica/",
-    "meta": {
-      "_acf_changed": false,
-      "footnotes": ""
-    },
-    "modified": "2026-03-28T01:55:26",
-    "modified_gmt": "2026-03-28T00:55:26",
-    "ping_status": "open",
-    "share_on_mastodon": {
-      "error": "",
-      "url": "https://mastodon.social/@anothergraphicdotorg/116296187992004617"
-    },
-    "slug": "practica",
-    "status": "publish",
-    "sticky": false,
-    "tags": [
-      48
-    ],
-    "template": "",
-    "title": {
-      "rendered": "Pràctica"
     },
     "type": "post"
   }

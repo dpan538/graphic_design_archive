@@ -2,15 +2,15 @@
 
 This pass increases distinct source coverage with small, item-level or source-context batches from municipal, national-library, community, and university sources. It is intentionally conservative: failed probes and generic landing-page evidence remain in the summary instead of becoming public sheets.
 
-- Captured records: 39
-- Distinct sources captured: 9
+- Captured records: 36
+- Distinct sources captured: 7
 - Access date: 2026-06-01
 
 ## Image States
 
-- IMG02: 23
+- IMG02: 22
 - IMG03: 6
-- IMG04: 10
+- IMG04: 8
 
 ## Sources
 
@@ -20,8 +20,6 @@ This pass increases distinct source coverage with small, item-level or source-co
 - Los Angeles Public Library Tessa / CONTENTdm: 5
 - University of Miami Libraries Digital Collections / CONTENTdm: 5
 - SMU Libraries Digital Collections / CONTENTdm: 3
-- CeDInCI Archivo: 2
-- AHIRA Archivo Historico de Revistas Argentinas: 1
 - Temple University Libraries Digital Collections / CONTENTdm: 1
 
 ## Regions
@@ -31,7 +29,6 @@ This pass increases distinct source coverage with small, item-level or source-co
 - United States / transnational: 6
 - United States / Mexico / transnational: 5
 - United States / Caribbean / Latin America: 5
-- Argentina: 3
 - United States / Texas / Latin America: 3
 - United States / Philadelphia: 1
 

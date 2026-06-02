@@ -1712,7 +1712,7 @@
             }
 
             $("#my-calendar").zabuto_calendar({
-                 month:5,                 action: function () {
+                 month:6,                 action: function () {
                     return myDateFunction(this.id, false);
                 },
                 action_nav: function () {

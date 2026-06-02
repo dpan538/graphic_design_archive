@@ -17,6 +17,11 @@ import {
 } from "./blocks";
 import { AppendixLayout } from "./appendix/AppendixLab";
 import { resolveAppendixLayout } from "@/lib/appendix-layout";
+import { ArchiveCardSurface } from "./cards/CardLab";
+import { ArchiveBookmarkSurface, FolderBookmarkLayout } from "./bookmarks/BookmarkLab";
+import { ReadingNoteLayout } from "./reading-notes/ReadingNoteLab";
+import { ArchiveSlipSurface } from "./slips/SlipLab";
+import { ArchiveTextPageSurface } from "./text-pages/TextPageLab";
 
 /**
  * Reusable A4 layouts. Each fills the slot contract from the payload and fits
@@ -49,6 +54,12 @@ function accessionOf(leaf: Leaf): { no: string; pg: string } {
     return {
       no: leaf.folder?.folderId ?? "",
       pg: "Bookmark",
+    };
+  }
+  if (leaf.type === "reading_note") {
+    return {
+      no: leaf.folder?.folderId ?? "",
+      pg: "Reading note",
     };
   }
   return {
@@ -212,6 +223,11 @@ function L02Text({ leaf, activeFolderId }: LayoutProps) {
   );
 }
 
+function TextPageLeaf({ leaf }: LayoutProps) {
+  const s = leaf.surface!;
+  return <ArchiveTextPageSurface surface={s} layoutId={leaf.textPageLayoutId} />;
+}
+
 // ========================================================================
 // L03 — Plate dominant (only for renderable images), image in a 3:4 bay.
 // ========================================================================
@@ -353,42 +369,17 @@ function L05Compound({ leaf, activeFolderId }: LayoutProps) {
 
 function L06Card({ leaf, activeFolderId }: LayoutProps) {
   const s = leaf.surface!;
-  const reason = s.tables
-    .find((t) => t.kind === "NORMALIZED")
-    ?.rows.find(([l]) => /reason/i.test(l));
+  return <ArchiveCardSurface surface={s} layoutId={leaf.cardLayoutId} />;
+}
+
+function SlipLeaf({ leaf }: LayoutProps) {
+  const s = leaf.surface!;
   return (
-    <Body>
-      <LeafHead
-        leaf={leaf}
-        context={
-          <>
-            <StatusChip kind={s.surfaceType} /> Sparse card · <ImgBadge state={s.image.state} />
-          </>
-        }
-      />
-      <TitleBlock surface={s} size="md" />
-      <div className="mt-2" style={{ fontSize: "0.66rem" }}>
-        <span className="label-caps text-ink-soft">promotion status</span>{" "}
-        {s.rights.label}
-        {reason ? (
-          <span className="text-ink-soft"> · reason: {reason[1]}</span>
-        ) : null}
-        <span className="text-ink-soft">
-          {" "}· completeness {s.completenessScore} (45–59 → card)
-        </span>
-      </div>
-      <div className="flex gap-6 flex-1 min-h-0 mt-3 overflow-hidden">
-        <div className="flex-1 min-w-0 overflow-hidden">
-          <SpecTables tables={leaf.tables ?? []} columns={1} />
-        </div>
-        <div className="w-[36%] shrink-0 flex flex-col gap-3">
-          <RightsBlock surface={s} />
-          <SourceBlock surface={s} />
-          <MembershipsBlock surface={s} activeFolderId={activeFolderId} />
-        </div>
-      </div>
-      <SheetMarkers leaf={leaf} />
-    </Body>
+    <ArchiveSlipSurface
+      surface={s}
+      layoutId={leaf.slipLayoutId}
+      cardLayoutId={leaf.cardLayoutId}
+    />
   );
 }
 
@@ -457,47 +448,26 @@ function AppendixLeaf({ leaf }: LayoutProps) {
 }
 
 // ========================================================================
-// L10 — Folder bookmark / reading note.
+// L10 — Folder bookmark.
 // ========================================================================
 
 function L10Bookmark({ leaf }: LayoutProps) {
-  const folder = leaf.folder!;
-  const ft = getFolderType(folder.type);
+  if (leaf.surface) return <ArchiveBookmarkSurface surface={leaf.surface} />;
+  if (leaf.folder) return <FolderBookmarkLayout folder={leaf.folder} />;
+  return null;
+}
+
+// ========================================================================
+// RN — Folder reading note.
+// ========================================================================
+
+function FolderReadingNote({ leaf }: LayoutProps) {
+  if (!leaf.folder) return null;
   return (
-    <Body>
-      <LeafHead
-        leaf={leaf}
-        swatch={<TypeSwatch type={folder.type} />}
-        context={<>{ft?.label ?? folder.type} bookmark · reading note</>}
-      />
-      <header className="mt-3">
-        <p className="label-caps text-ink-soft">Filter view</p>
-        <h1 className="leaf__title leaf__title--sm mt-1">{folder.title}</h1>
-        <p className="leaf__sub mt-1.5">
-          {dateSpanLabel(folder.dateStart, folder.dateEnd)} · {folder.surfaceIds.length} surfaces
-        </p>
-      </header>
-      <div className="mt-4 flex-1 min-h-0">
-        <p className="col-justify" style={{ fontSize: "0.68rem", lineHeight: 1.55 }}>
-          {folder.scopeNote}
-        </p>
-        <dl className="deflist mt-4">
-          <dt>sorting</dt>
-          <dd>chronological by record date or reviewed date span</dd>
-          <dt>membership</dt>
-          <dd>filter view only; records are not owned by this folder</dd>
-          <dt>image policy</dt>
-          <dd>IMG00 reserves a source-return frame; IMG04 removes the image bay</dd>
-          <dt>reading</dt>
-          <dd>each sheet is followed by a text continuation leaf</dd>
-        </dl>
-      </div>
-      <div className="sheet-markers">
-        <span>L10.bookmark</span>
-        <span>{folder.folderId}</span>
-        <span>bookmark</span>
-      </div>
-    </Body>
+    <ReadingNoteLayout
+      folder={leaf.folder}
+      layoutId={leaf.readingNoteLayoutId}
+    />
   );
 }
 
@@ -590,6 +560,9 @@ export function renderLeafContent(
 ) {
   if (leaf.type === "register") return <L09Register leaf={leaf} ctx={ctx} />;
   if (leaf.type === "bookmark") return <L10Bookmark leaf={leaf} />;
+  if (leaf.type === "reading_note") return <FolderReadingNote leaf={leaf} />;
+  if (leaf.type === "text") return <TextPageLeaf leaf={leaf} />;
+  if (leaf.type === "slip") return <SlipLeaf leaf={leaf} />;
   if (leaf.type === "appendix") return <AppendixLeaf leaf={leaf} />;
   const props: LayoutProps = { leaf, activeFolderId, ctx };
   switch (leaf.layoutId) {

@@ -55,7 +55,7 @@ export const FOLDER_INK: Record<FolderTypeKey, string> = {
   region: "#1A00B9",
   theme: "#B7CE4F",
   medium: "#FF5E39",
-  movement: "#1A00B9",
+  movement: "#332D28",
 };
 
 export function getFolderInk(type: string): string {

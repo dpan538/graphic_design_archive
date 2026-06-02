@@ -1,0 +1,1604 @@
+{
+  "_embedded": {
+    "facets": [
+      {
+        "_embedded": {
+          "values": [
+            {
+              "_links": {
+                "search": {
+                  "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/search/objects?query=pamphlet&f.author=West%20Africa%20magazine,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 20,
+              "label": "West Africa magazine",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/search/objects?query=pamphlet&f.author=Edited%20by%20Abiodun%20Ojugbele,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 10,
+              "label": "Edited by Abiodun Ojugbele",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/search/objects?query=pamphlet&f.author=West%20Africa%20Magazine,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 4,
+              "label": "West Africa Magazine",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/search/objects?query=pamphlet&f.author=National%20Library%20of%20Nigeria,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 3,
+              "label": "National Library of Nigeria",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/search/objects?query=pamphlet&f.author=Abubakar%20Muhammad%20Bande,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 2,
+              "label": "Abubakar Muhammad Bande",
+              "type": "discover"
+            }
+          ]
+        },
+        "_links": {
+          "next": {
+            "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/facets/author?query=pamphlet&page=1&size=5"
+          },
+          "self": {
+            "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/facets/author?query=pamphlet&size=5"
+          }
+        },
+        "facetLimit": 5,
+        "facetType": "text",
+        "maxValue": "ZIGE, Izonbarakumo",
+        "minValue": "006 Daily Trust Wednesday, January 6, 2021",
+        "name": "author",
+        "page": {
+          "number": 0,
+          "size": 5
+        }
+      },
+      {
+        "_embedded": {
+          "values": [
+            {
+              "_links": {
+                "search": {
+                  "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/search/objects?query=pamphlet&f.subject=Finance,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 2,
+              "label": "Finance",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/search/objects?query=pamphlet&f.subject=85th%20birthday%20of%20Nnamdi%20Azikiwe,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 1,
+              "label": "85th birthday of Nnamdi Azikiwe",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/search/objects?query=pamphlet&f.subject=ballot,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 1,
+              "label": "ballot",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/search/objects?query=pamphlet&f.subject=biography,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 1,
+              "label": "biography",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/search/objects?query=pamphlet&f.subject=Chinwe%20Veronica%20Anunobi,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 1,
+              "label": "Chinwe Veronica Anunobi",
+              "type": "discover"
+            }
+          ]
+        },
+        "_links": {
+          "next": {
+            "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/facets/subject?query=pamphlet&page=1&size=5"
+          },
+          "self": {
+            "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/facets/subject?query=pamphlet&size=5"
+          }
+        },
+        "facetLimit": 5,
+        "facetType": "hierarchical",
+        "name": "subject",
+        "page": {
+          "number": 0,
+          "size": 5
+        }
+      },
+      {
+        "_embedded": {
+          "values": [
+            {
+              "_links": {
+                "search": {
+                  "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/search/objects?query=pamphlet&f.dateIssued=%5B370%20TO%20739%5D,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 1,
+              "label": "370 - 739",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/search/objects?query=pamphlet&f.dateIssued=%5B1850%20TO%202026%5D,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 122,
+              "label": "1850 - 2026",
+              "type": "discover"
+            }
+          ]
+        },
+        "_links": {
+          "self": {
+            "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/facets/dateIssued?query=pamphlet&size=5"
+          }
+        },
+        "facetLimit": 5,
+        "facetType": "date",
+        "maxValue": "2026-05-25",
+        "minValue": "0202-12-01",
+        "name": "dateIssued",
+        "page": {
+          "number": 0,
+          "size": 5
+        }
+      },
+      {
+        "_embedded": {
+          "values": [
+            {
+              "_links": {
+                "search": {
+                  "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/search/objects?query=pamphlet&f.has_content_in_original_bundle=true,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 123,
+              "label": "true",
+              "type": "discover"
+            }
+          ]
+        },
+        "_links": {
+          "self": {
+            "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/facets/has_content_in_original_bundle?query=pamphlet&size=2"
+          }
+        },
+        "facetLimit": 2,
+        "facetType": "standard",
+        "name": "has_content_in_original_bundle",
+        "page": {
+          "number": 0,
+          "size": 2
+        }
+      },
+      {
+        "_embedded": {
+          "values": []
+        },
+        "_links": {
+          "self": {
+            "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/facets/entityType?query=pamphlet"
+          }
+        },
+        "facetLimit": 5,
+        "facetType": "text",
+        "name": "entityType"
+      }
+    ],
+    "searchResult": {
+      "_embedded": {
+        "objects": [
+          {
+            "_embedded": {
+              "indexableObject": {
+                "_links": {
+                  "accessStatus": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/53a3a879-c6ea-4907-b2e6-ef9545f26f04/accessStatus"
+                  },
+                  "bundles": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/53a3a879-c6ea-4907-b2e6-ef9545f26f04/bundles"
+                  },
+                  "identifiers": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/53a3a879-c6ea-4907-b2e6-ef9545f26f04/identifiers"
+                  },
+                  "mappedCollections": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/53a3a879-c6ea-4907-b2e6-ef9545f26f04/mappedCollections"
+                  },
+                  "owningCollection": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/53a3a879-c6ea-4907-b2e6-ef9545f26f04/owningCollection"
+                  },
+                  "relationships": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/53a3a879-c6ea-4907-b2e6-ef9545f26f04/relationships"
+                  },
+                  "self": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/53a3a879-c6ea-4907-b2e6-ef9545f26f04"
+                  },
+                  "templateItemOf": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/53a3a879-c6ea-4907-b2e6-ef9545f26f04/templateItemOf"
+                  },
+                  "thumbnail": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/53a3a879-c6ea-4907-b2e6-ef9545f26f04/thumbnail"
+                  },
+                  "version": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/53a3a879-c6ea-4907-b2e6-ef9545f26f04/version"
+                  }
+                },
+                "discoverable": true,
+                "entityType": null,
+                "handle": "20.500.14186/478",
+                "id": "53a3a879-c6ea-4907-b2e6-ef9545f26f04",
+                "inArchive": true,
+                "lastModified": "2023-04-03T13:31:41.763+00:00",
+                "metadata": {
+                  "dc.contributor.author": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Ministry of information eastern Nigeria."
+                    }
+                  ],
+                  "dc.date.accessioned": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2023-01-24T10:00:32Z"
+                    }
+                  ],
+                  "dc.date.available": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2023-01-24T10:00:32Z"
+                    }
+                  ],
+                  "dc.date.issued": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "1963"
+                    }
+                  ],
+                  "dc.description": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Report of the director of audit on the accounts of the Eastern Nigeria Information Service for the year ended 1st April 1962-31st March, 1963"
+                    }
+                  ],
+                  "dc.description.abstract": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Report of the director of audit on the accounts of the Eastern Nigeria Information Service for the year ended 31st March, 1963\n\nEastern Nigeria Information Service  Balance sheet as at 31st March 1963 \n\nAudit Certificate\n\nEastern Nigeria Information Service outlook, offset and advert trading account for the year ended 31st March, 1963\n\nEastern Nigeria Information Service profit and loss accounts for the year ended 31st March, 1963"
+                    }
+                  ],
+                  "dc.identifier.uri": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "https://nigeriareposit.nln.gov.ng/handle/20.500.14186/478"
+                    }
+                  ],
+                  "dc.language.iso": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "en"
+                    }
+                  ],
+                  "dc.publisher": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Enugu: The Government  Printer. 1963"
+                    }
+                  ],
+                  "dc.title": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Eastern Nigeria information service corporation accounts 1st April 1962-31st March 1963"
+                    }
+                  ],
+                  "dc.title.alternative": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "including certificate and report of the director of audit eastern Nigeria."
+                    }
+                  ],
+                  "dc.type": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Book"
+                    }
+                  ]
+                },
+                "name": "Eastern Nigeria information service corporation accounts 1st April 1962-31st March 1963",
+                "type": "item",
+                "uuid": "53a3a879-c6ea-4907-b2e6-ef9545f26f04",
+                "withdrawn": false
+              }
+            },
+            "_links": {
+              "indexableObject": {
+                "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/53a3a879-c6ea-4907-b2e6-ef9545f26f04"
+              }
+            },
+            "hitHighlights": null,
+            "type": "discover"
+          },
+          {
+            "_embedded": {
+              "indexableObject": {
+                "_links": {
+                  "accessStatus": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/6b670851-189b-48be-9ba5-cf49f98daf9b/accessStatus"
+                  },
+                  "bundles": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/6b670851-189b-48be-9ba5-cf49f98daf9b/bundles"
+                  },
+                  "identifiers": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/6b670851-189b-48be-9ba5-cf49f98daf9b/identifiers"
+                  },
+                  "mappedCollections": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/6b670851-189b-48be-9ba5-cf49f98daf9b/mappedCollections"
+                  },
+                  "owningCollection": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/6b670851-189b-48be-9ba5-cf49f98daf9b/owningCollection"
+                  },
+                  "relationships": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/6b670851-189b-48be-9ba5-cf49f98daf9b/relationships"
+                  },
+                  "self": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/6b670851-189b-48be-9ba5-cf49f98daf9b"
+                  },
+                  "templateItemOf": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/6b670851-189b-48be-9ba5-cf49f98daf9b/templateItemOf"
+                  },
+                  "thumbnail": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/6b670851-189b-48be-9ba5-cf49f98daf9b/thumbnail"
+                  },
+                  "version": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/6b670851-189b-48be-9ba5-cf49f98daf9b/version"
+                  }
+                },
+                "discoverable": true,
+                "entityType": null,
+                "handle": "20.500.14186/1280",
+                "id": "6b670851-189b-48be-9ba5-cf49f98daf9b",
+                "inArchive": true,
+                "lastModified": "2024-02-25T03:00:41.900+00:00",
+                "metadata": {
+                  "dc.contributor.author": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "MINISTRY of information eastern Nigeria"
+                    }
+                  ],
+                  "dc.date.accessioned": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2024-02-24T18:06:17Z"
+                    }
+                  ],
+                  "dc.date.available": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2024-02-24T18:06:17Z"
+                    }
+                  ],
+                  "dc.date.issued": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "1965"
+                    }
+                  ],
+                  "dc.description": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "This is the eastern Nigeria information service corporation accounts 1st April 1962-31st March 1963:\nincluding certificate and report of the director of audit eastern Nigeria: official document No. 21 of 1965"
+                    }
+                  ],
+                  "dc.identifier.uri": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "https://nigeriareposit.nln.gov.ng/handle/20.500.14186/1280"
+                    }
+                  ],
+                  "dc.language.iso": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "en"
+                    }
+                  ],
+                  "dc.publisher": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Enugu: The Government Printer,"
+                    }
+                  ],
+                  "dc.title": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Eastern Nigeria information service corporation accounts 1st April 1962-31st March 1963:"
+                    }
+                  ],
+                  "dc.title.alternative": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "including certificate and report of the director of audit eastern Nigeria:"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 1,
+                      "value": "official document No. 21 of 1965"
+                    }
+                  ],
+                  "dc.type": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Article"
+                    }
+                  ]
+                },
+                "name": "Eastern Nigeria information service corporation accounts 1st April 1962-31st March 1963:",
+                "type": "item",
+                "uuid": "6b670851-189b-48be-9ba5-cf49f98daf9b",
+                "withdrawn": false
+              }
+            },
+            "_links": {
+              "indexableObject": {
+                "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/6b670851-189b-48be-9ba5-cf49f98daf9b"
+              }
+            },
+            "hitHighlights": null,
+            "type": "discover"
+          },
+          {
+            "_embedded": {
+              "indexableObject": {
+                "_links": {
+                  "accessStatus": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/b0b24e2a-7704-4a5b-8c1f-b019099f0ff1/accessStatus"
+                  },
+                  "bundles": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/b0b24e2a-7704-4a5b-8c1f-b019099f0ff1/bundles"
+                  },
+                  "identifiers": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/b0b24e2a-7704-4a5b-8c1f-b019099f0ff1/identifiers"
+                  },
+                  "mappedCollections": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/b0b24e2a-7704-4a5b-8c1f-b019099f0ff1/mappedCollections"
+                  },
+                  "owningCollection": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/b0b24e2a-7704-4a5b-8c1f-b019099f0ff1/owningCollection"
+                  },
+                  "relationships": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/b0b24e2a-7704-4a5b-8c1f-b019099f0ff1/relationships"
+                  },
+                  "self": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/b0b24e2a-7704-4a5b-8c1f-b019099f0ff1"
+                  },
+                  "templateItemOf": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/b0b24e2a-7704-4a5b-8c1f-b019099f0ff1/templateItemOf"
+                  },
+                  "thumbnail": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/b0b24e2a-7704-4a5b-8c1f-b019099f0ff1/thumbnail"
+                  },
+                  "version": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/b0b24e2a-7704-4a5b-8c1f-b019099f0ff1/version"
+                  }
+                },
+                "discoverable": true,
+                "entityType": null,
+                "handle": "20.500.14186/1279",
+                "id": "b0b24e2a-7704-4a5b-8c1f-b019099f0ff1",
+                "inArchive": true,
+                "lastModified": "2024-02-25T03:00:54.049+00:00",
+                "metadata": {
+                  "dc.contributor.author": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "The director of audit eastern Nigeria"
+                    }
+                  ],
+                  "dc.date.accessioned": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2024-02-24T18:03:25Z"
+                    }
+                  ],
+                  "dc.date.available": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2024-02-24T18:03:25Z"
+                    }
+                  ],
+                  "dc.date.issued": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "1964"
+                    }
+                  ],
+                  "dc.description": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Report of the director of audit on the accounts of the eastern Nigeria information service for the year ended 31st March, 1962; eastern Nigeria information service corporation balance sheet as at the 31st March, 1962; Audit certificate; Eastern Nigeria Information service corporation trading account of “outlook ” including advert for the year ended 31st March, 1962; Trading account of pamphlet for the year ended 31st March, 1962; Trading account for photo for the year ended 31st March 1962; Eastern Nigeria information service corporation general profit and loss account for the year ended 31st March, 1962;"
+                    }
+                  ],
+                  "dc.identifier.uri": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "https://nigeriareposit.nln.gov.ng/handle/20.500.14186/1279"
+                    }
+                  ],
+                  "dc.language.iso": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "en"
+                    }
+                  ],
+                  "dc.publisher": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Enugu:The Government Printer"
+                    }
+                  ],
+                  "dc.title": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Report of the eastern Nigeria information service corporation accounts 1st April 1961 — 31st March 1962"
+                    }
+                  ],
+                  "dc.type": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Article"
+                    }
+                  ]
+                },
+                "name": "Report of the eastern Nigeria information service corporation accounts 1st April 1961 — 31st March 1962",
+                "type": "item",
+                "uuid": "b0b24e2a-7704-4a5b-8c1f-b019099f0ff1",
+                "withdrawn": false
+              }
+            },
+            "_links": {
+              "indexableObject": {
+                "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/b0b24e2a-7704-4a5b-8c1f-b019099f0ff1"
+              }
+            },
+            "hitHighlights": null,
+            "type": "discover"
+          },
+          {
+            "_embedded": {
+              "indexableObject": {
+                "_links": {
+                  "accessStatus": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/58f6bea3-e7a9-407e-957c-aad646426320/accessStatus"
+                  },
+                  "bundles": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/58f6bea3-e7a9-407e-957c-aad646426320/bundles"
+                  },
+                  "identifiers": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/58f6bea3-e7a9-407e-957c-aad646426320/identifiers"
+                  },
+                  "mappedCollections": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/58f6bea3-e7a9-407e-957c-aad646426320/mappedCollections"
+                  },
+                  "owningCollection": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/58f6bea3-e7a9-407e-957c-aad646426320/owningCollection"
+                  },
+                  "relationships": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/58f6bea3-e7a9-407e-957c-aad646426320/relationships"
+                  },
+                  "self": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/58f6bea3-e7a9-407e-957c-aad646426320"
+                  },
+                  "templateItemOf": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/58f6bea3-e7a9-407e-957c-aad646426320/templateItemOf"
+                  },
+                  "thumbnail": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/58f6bea3-e7a9-407e-957c-aad646426320/thumbnail"
+                  },
+                  "version": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/58f6bea3-e7a9-407e-957c-aad646426320/version"
+                  }
+                },
+                "discoverable": true,
+                "entityType": null,
+                "handle": "20.500.14186/456",
+                "id": "58f6bea3-e7a9-407e-957c-aad646426320",
+                "inArchive": true,
+                "lastModified": "2023-04-03T13:31:49.514+00:00",
+                "metadata": {
+                  "dc.contributor.author": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "The DIRECTOR OF AUDIT eastern Nigeria"
+                    }
+                  ],
+                  "dc.date.accessioned": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2023-01-13T09:59:34Z"
+                    }
+                  ],
+                  "dc.date.available": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2023-01-13T09:59:34Z"
+                    }
+                  ],
+                  "dc.date.issued": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "1964"
+                    }
+                  ],
+                  "dc.description": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "A report of the Eastern Nigeria information service corporation accounts  1st April 1961 — 31st March 1962 by the director of audit Eastern Nigeria"
+                    }
+                  ],
+                  "dc.description.abstract": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Report of the director of audit on the accounts of the eastern Nigeria information service for the year ended 31st March, 1962; Eastern Nigeria Information service corporation Balance sheet as at the 31st March, 1962; Eastern Nigeria Information service corporation trading account of \"outlook\" including advert for the year ended 31st March, 1962; Eastern Nigeria Information service corporation general profit and loss account for the year ended 31st March, 1962"
+                    }
+                  ],
+                  "dc.identifier.uri": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "https://nigeriareposit.nln.gov.ng/handle/20.500.14186/456"
+                    }
+                  ],
+                  "dc.language.iso": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "en"
+                    }
+                  ],
+                  "dc.publisher": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Enugu: The Government Printer"
+                    }
+                  ],
+                  "dc.title": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Eastern Nigeria information service corporation accounts 1st April 1961 - 31st March 1962:"
+                    }
+                  ],
+                  "dc.title.alternative": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "including certificate and report of the director of audit eastern Nigeria."
+                    }
+                  ],
+                  "dc.type": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Book"
+                    }
+                  ]
+                },
+                "name": "Eastern Nigeria information service corporation accounts 1st April 1961 - 31st March 1962:",
+                "type": "item",
+                "uuid": "58f6bea3-e7a9-407e-957c-aad646426320",
+                "withdrawn": false
+              }
+            },
+            "_links": {
+              "indexableObject": {
+                "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/58f6bea3-e7a9-407e-957c-aad646426320"
+              }
+            },
+            "hitHighlights": null,
+            "type": "discover"
+          },
+          {
+            "_embedded": {
+              "indexableObject": {
+                "_links": {
+                  "accessStatus": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/cb8ab1ee-a4f5-4e9f-a8fe-3dc8984ea12c/accessStatus"
+                  },
+                  "bundles": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/cb8ab1ee-a4f5-4e9f-a8fe-3dc8984ea12c/bundles"
+                  },
+                  "identifiers": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/cb8ab1ee-a4f5-4e9f-a8fe-3dc8984ea12c/identifiers"
+                  },
+                  "mappedCollections": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/cb8ab1ee-a4f5-4e9f-a8fe-3dc8984ea12c/mappedCollections"
+                  },
+                  "owningCollection": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/cb8ab1ee-a4f5-4e9f-a8fe-3dc8984ea12c/owningCollection"
+                  },
+                  "relationships": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/cb8ab1ee-a4f5-4e9f-a8fe-3dc8984ea12c/relationships"
+                  },
+                  "self": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/cb8ab1ee-a4f5-4e9f-a8fe-3dc8984ea12c"
+                  },
+                  "templateItemOf": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/cb8ab1ee-a4f5-4e9f-a8fe-3dc8984ea12c/templateItemOf"
+                  },
+                  "thumbnail": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/cb8ab1ee-a4f5-4e9f-a8fe-3dc8984ea12c/thumbnail"
+                  },
+                  "version": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/cb8ab1ee-a4f5-4e9f-a8fe-3dc8984ea12c/version"
+                  }
+                },
+                "discoverable": true,
+                "entityType": null,
+                "handle": "20.500.14186/1559",
+                "id": "cb8ab1ee-a4f5-4e9f-a8fe-3dc8984ea12c",
+                "inArchive": true,
+                "lastModified": "2024-07-27T03:01:38.523+00:00",
+                "metadata": {
+                  "dc.contributor.author": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "FALOLA, Toyin"
+                    }
+                  ],
+                  "dc.date.accessioned": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2024-07-26T17:04:33Z"
+                    }
+                  ],
+                  "dc.date.available": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2024-07-26T17:04:33Z"
+                    }
+                  ],
+                  "dc.date.issued": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "1991"
+                    }
+                  ],
+                  "dc.description": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "The book is specially written to fully cover the requirements of the new history of Nigeria curriculum for senior secondary year two. The text is well researched with emphasis on the important events in the period, notably the jihad, military warfare, missionary activities, new commercial developments and British conquest. The book is written in a language which the students will find very easy to understand."
+                    }
+                  ],
+                  "dc.description.abstract": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "■ The Sokoto caliphate; \n■ Borno under the Shehus; \n■ Central Nigeria in the nineteenth century; \n■ Yorubaland in the nineteenth century; \n■ Bini in the nineteenth century; \n■ The Niger Delta states in the nineteenth century; Igboland in the nineteenth century; \n■ Nigerian-European relations: explorers and missionaries;  ■ New commercial developments; \n■ The British conquest of Nigeria."
+                    }
+                  ],
+                  "dc.identifier.isbn": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "978 139 677 6"
+                    }
+                  ],
+                  "dc.identifier.uri": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "https://nigeriareposit.nln.gov.ng/handle/20.500.14186/1559"
+                    }
+                  ],
+                  "dc.language.iso": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "en"
+                    }
+                  ],
+                  "dc.publisher": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Ibadan: Longman Nigeria Plc"
+                    }
+                  ],
+                  "dc.title": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "History of Nigeria 2:"
+                    }
+                  ],
+                  "dc.title.alternative": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Nigeria in the nineteenth century."
+                    }
+                  ],
+                  "dc.type": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Book"
+                    }
+                  ]
+                },
+                "name": "History of Nigeria 2:",
+                "type": "item",
+                "uuid": "cb8ab1ee-a4f5-4e9f-a8fe-3dc8984ea12c",
+                "withdrawn": false
+              }
+            },
+            "_links": {
+              "indexableObject": {
+                "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/cb8ab1ee-a4f5-4e9f-a8fe-3dc8984ea12c"
+              }
+            },
+            "hitHighlights": null,
+            "type": "discover"
+          },
+          {
+            "_embedded": {
+              "indexableObject": {
+                "_links": {
+                  "accessStatus": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/167bffc6-b873-4314-9872-776041cca963/accessStatus"
+                  },
+                  "bundles": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/167bffc6-b873-4314-9872-776041cca963/bundles"
+                  },
+                  "identifiers": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/167bffc6-b873-4314-9872-776041cca963/identifiers"
+                  },
+                  "mappedCollections": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/167bffc6-b873-4314-9872-776041cca963/mappedCollections"
+                  },
+                  "owningCollection": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/167bffc6-b873-4314-9872-776041cca963/owningCollection"
+                  },
+                  "relationships": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/167bffc6-b873-4314-9872-776041cca963/relationships"
+                  },
+                  "self": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/167bffc6-b873-4314-9872-776041cca963"
+                  },
+                  "templateItemOf": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/167bffc6-b873-4314-9872-776041cca963/templateItemOf"
+                  },
+                  "thumbnail": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/167bffc6-b873-4314-9872-776041cca963/thumbnail"
+                  },
+                  "version": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/167bffc6-b873-4314-9872-776041cca963/version"
+                  }
+                },
+                "discoverable": true,
+                "entityType": null,
+                "handle": "20.500.14186/880",
+                "id": "167bffc6-b873-4314-9872-776041cca963",
+                "inArchive": true,
+                "lastModified": "2023-08-28T03:00:25.114+00:00",
+                "metadata": {
+                  "dc.contributor.author": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "NIGERIAN Youth Congress"
+                    }
+                  ],
+                  "dc.date.accessioned": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2023-08-27T22:26:36Z"
+                    }
+                  ],
+                  "dc.date.available": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2023-08-27T22:26:36Z"
+                    }
+                  ],
+                  "dc.date.issued": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "1962"
+                    }
+                  ],
+                  "dc.description": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "The Crisis and the People.’ Ever since the beginning of the crisis, hundreds of thousands of people have been yearning for a fuller statement of its views on it by NYC than has yet appeared. That fuller statement is now put before the reader. It is the application to a concrete Nigerian situation of the analytical tools and concepts first clearly fashioned by Marx and Engles and later developed by Lenin and others."
+                    }
+                  ],
+                  "dc.description.abstract": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Introduction; The basis of Nigerian politics; The essence of the crisis;  Result of the crisis; Lessons from the crisis; Constitution; The way forward; A united front now."
+                    }
+                  ],
+                  "dc.identifier.uri": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "https://nigeriareposit.nln.gov.ng/handle/20.500.14186/880"
+                    }
+                  ],
+                  "dc.language.iso": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "en"
+                    }
+                  ],
+                  "dc.publisher": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Patrice Lumumba Institute of Political Sciene and Trade Unionism"
+                    }
+                  ],
+                  "dc.title": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "The crisis and the people"
+                    }
+                  ],
+                  "dc.title.alternative": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Being a commentary on the action group crisis of May 1962."
+                    }
+                  ],
+                  "dc.type": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Book"
+                    }
+                  ]
+                },
+                "name": "The crisis and the people",
+                "type": "item",
+                "uuid": "167bffc6-b873-4314-9872-776041cca963",
+                "withdrawn": false
+              }
+            },
+            "_links": {
+              "indexableObject": {
+                "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/167bffc6-b873-4314-9872-776041cca963"
+              }
+            },
+            "hitHighlights": null,
+            "type": "discover"
+          },
+          {
+            "_embedded": {
+              "indexableObject": {
+                "_links": {
+                  "accessStatus": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/95d6d757-e46f-4846-be54-6060ca6df9a6/accessStatus"
+                  },
+                  "bundles": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/95d6d757-e46f-4846-be54-6060ca6df9a6/bundles"
+                  },
+                  "identifiers": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/95d6d757-e46f-4846-be54-6060ca6df9a6/identifiers"
+                  },
+                  "mappedCollections": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/95d6d757-e46f-4846-be54-6060ca6df9a6/mappedCollections"
+                  },
+                  "owningCollection": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/95d6d757-e46f-4846-be54-6060ca6df9a6/owningCollection"
+                  },
+                  "relationships": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/95d6d757-e46f-4846-be54-6060ca6df9a6/relationships"
+                  },
+                  "self": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/95d6d757-e46f-4846-be54-6060ca6df9a6"
+                  },
+                  "templateItemOf": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/95d6d757-e46f-4846-be54-6060ca6df9a6/templateItemOf"
+                  },
+                  "thumbnail": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/95d6d757-e46f-4846-be54-6060ca6df9a6/thumbnail"
+                  },
+                  "version": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/95d6d757-e46f-4846-be54-6060ca6df9a6/version"
+                  }
+                },
+                "discoverable": true,
+                "entityType": null,
+                "handle": "20.500.14186/954",
+                "id": "95d6d757-e46f-4846-be54-6060ca6df9a6",
+                "inArchive": true,
+                "lastModified": "2023-11-23T03:00:25.560+00:00",
+                "metadata": {
+                  "dc.contributor.author": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "FALOLA, Toyin"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 1,
+                      "value": "Abdullahi Mahadi"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 2,
+                      "value": "Martin Uhomoibhi"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 3,
+                      "value": "Ukachukwu Anyanwu"
+                    }
+                  ],
+                  "dc.date.accessioned": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2023-11-22T12:08:29Z"
+                    }
+                  ],
+                  "dc.date.available": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2023-11-22T12:08:29Z"
+                    }
+                  ],
+                  "dc.date.issued": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "1991"
+                    }
+                  ],
+                  "dc.description": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "The Sokoto caliphate was an outcome of a political revolution which started in the first decade of the nineteenth century. This impor￾tant development was as a result of the conditions which obtained in Hausaland in the eighteenth century. During this period, especial￾ly in the second half of the century, Hausaland, particularly the Rima basin or western part of Hausaland, was undergoing dynamic changes which were characterised by latent or open competition, conflicts and tensions. These conflicts were within the ranks of the ruling classes. They included: \n(a) dynastic conflicts between the various classes for example, bet￾ween the masu sarauta (rulers) and the talakawa (commoners);\n(b) between Islam and traditional religions;\n(c) between malaman fada (court literati) and malaman kirgi (piou literati); and\n(d) between some states of Hausaland."
+                    }
+                  ],
+                  "dc.description.abstract": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "The Sokoto caliphate 1; Borno under the Shehus 23; Central Nigeria in the nineteenth century 47; Yorubaland in the nineteenth century 69; Bini in the nineteenth century 92; The Niger Delta states in the nineteenth century 107; Igboland in the nineteenth century 128; Nigerian-European relations: explorers and missionaries 150; New commercial developments 162; The British conquest of Nigeria 187."
+                    }
+                  ],
+                  "dc.identifier.isbn": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "978 139 6776"
+                    }
+                  ],
+                  "dc.identifier.uri": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "https://nigeriareposit.nln.gov.ng/handle/20.500.14186/954"
+                    }
+                  ],
+                  "dc.language.iso": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "en"
+                    }
+                  ],
+                  "dc.publisher": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Ikeja, Lagos State ( 52 Oba Akran Avenue P.M.B. 21036): Longman Nigeria Pic,"
+                    }
+                  ],
+                  "dc.title": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "History of Nigeria 2:"
+                    }
+                  ],
+                  "dc.title.alternative": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Nigeria in the nineteenth century"
+                    }
+                  ],
+                  "dc.type": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Book"
+                    }
+                  ]
+                },
+                "name": "History of Nigeria 2:",
+                "type": "item",
+                "uuid": "95d6d757-e46f-4846-be54-6060ca6df9a6",
+                "withdrawn": false
+              }
+            },
+            "_links": {
+              "indexableObject": {
+                "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/95d6d757-e46f-4846-be54-6060ca6df9a6"
+              }
+            },
+            "hitHighlights": null,
+            "type": "discover"
+          },
+          {
+            "_embedded": {
+              "indexableObject": {
+                "_links": {
+                  "accessStatus": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/8ffb8b7a-3cce-4c05-ae85-d03ff930bd29/accessStatus"
+                  },
+                  "bundles": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/8ffb8b7a-3cce-4c05-ae85-d03ff930bd29/bundles"
+                  },
+                  "identifiers": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/8ffb8b7a-3cce-4c05-ae85-d03ff930bd29/identifiers"
+                  },
+                  "mappedCollections": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/8ffb8b7a-3cce-4c05-ae85-d03ff930bd29/mappedCollections"
+                  },
+                  "owningCollection": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/8ffb8b7a-3cce-4c05-ae85-d03ff930bd29/owningCollection"
+                  },
+                  "relationships": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/8ffb8b7a-3cce-4c05-ae85-d03ff930bd29/relationships"
+                  },
+                  "self": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/8ffb8b7a-3cce-4c05-ae85-d03ff930bd29"
+                  },
+                  "templateItemOf": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/8ffb8b7a-3cce-4c05-ae85-d03ff930bd29/templateItemOf"
+                  },
+                  "thumbnail": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/8ffb8b7a-3cce-4c05-ae85-d03ff930bd29/thumbnail"
+                  },
+                  "version": {
+                    "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/8ffb8b7a-3cce-4c05-ae85-d03ff930bd29/version"
+                  }
+                },
+                "discoverable": true,
+                "entityType": null,
+                "handle": "20.500.14186/706",
+                "id": "8ffb8b7a-3cce-4c05-ae85-d03ff930bd29",
+                "inArchive": true,
+                "lastModified": "2023-06-06T10:59:45.285+00:00",
+                "metadata": {
+                  "dc.contributor.author": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "National Library of Nigeria"
+                    }
+                  ],
+                  "dc.date.accessioned": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2023-06-05T14:31:02Z"
+                    }
+                  ],
+                  "dc.date.available": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2023-06-05T14:31:02Z"
+                    }
+                  ],
+                  "dc.date.issued": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2015"
+                    }
+                  ],
+                  "dc.description.abstract": [
+                    {
+                      "authority": null,
+                      "confidence": 0,
+                      "language": null,
+                      "place": 0,
+                      "value": "The National Bibliography of Nigeria (NBN) 2015 edition is the list of all catalogued information resource materials in books, serials, pamphlets, Audiovisuals, etc. formats received under the Legal Deposit provision of the\nNational Library of Nigeria Act, 29 of 1970. This edition contains Nine Hundred & Sixty-two (962) entries.\nAs implied, the additional entries in the current 2015 edition vol.1 no. 6, include resource materials not captured in the annual accumulation of the NBN of previous years.\nAll entries in this edition cover resource materials published in Nigeria about Nigeria by Nigerians and Nigerians in Diaspora."
+                    }
+                  ],
+                  "dc.identifier.uri": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "https://nigeriareposit.nln.gov.ng/handle/20.500.14186/706"
+                    }
+                  ],
+                  "dc.language.iso": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "en"
+                    }
+                  ],
+                  "dc.publisher": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "National Bibliography of Nigeria"
+                    }
+                  ],
+                  "dc.title": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "National Bibliography of Nigeria 2015"
+                    }
+                  ],
+                  "dc.type": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Article"
+                    }
+                  ]
+                },
+                "name": "National Bibliography of Nigeria 2015",
+                "type": "item",
+                "uuid": "8ffb8b7a-3cce-4c05-ae85-d03ff930bd29",
+                "withdrawn": false
+              }
+            },
+            "_links": {
+              "indexableObject": {
+                "href": "https://nigeriareposit.nln.gov.ng/server/api/core/items/8ffb8b7a-3cce-4c05-ae85-d03ff930bd29"
+              }
+            },
+            "hitHighlights": {
+              "dc.description.abstract": [
+                "The National Bibliography of Nigeria (NBN) 2015 edition is the list of all catalogued information resource materials in books, serials, <em>pamphlets</em>, Audiovisuals, etc. formats received under the Legal Deposit provision of the\nNational Library"
+              ]
+            },
+            "type": "discover"
+          }
+        ]
+      },
+      "_links": {
+        "last": {
+          "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/search/objects?query=pamphlet&page=15&size=8"
+        },
+        "next": {
+          "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/search/objects?query=pamphlet&page=1&size=8"
+        },
+        "self": {
+          "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/search/objects?query=pamphlet&size=8"
+        }
+      },
+      "page": {
+        "number": 0,
+        "size": 8,
+        "totalElements": 123,
+        "totalPages": 16
+      }
+    }
+  },
+  "_links": {
+    "self": {
+      "href": "https://nigeriareposit.nln.gov.ng/server/api/discover/search/objects?query=pamphlet"
+    }
+  },
+  "appliedFilters": null,
+  "configuration": null,
+  "id": null,
+  "query": "pamphlet",
+  "scope": null,
+  "sort": null,
+  "type": "discover"
+}

@@ -27,6 +27,7 @@ USER_AGENT = "ModernGDHistory/0.1 digitalnz-image-ready"
 YEAR_START = 1830
 YEAR_END = 1970
 MAX_ROWS = 160
+CAPTURE_PREFIX = "DNZ1970R"
 
 FIELDNAMES = mx.FIELDNAMES
 
@@ -69,7 +70,7 @@ def fetch_json(url: str) -> dict[str, Any]:
 
 def search_url(query: str, *, page: int = 1, per_page: int = 100) -> str:
     params = [
-        ("search_text", query),
+        ("text", query),
         ("per_page", str(per_page)),
         ("page", str(page)),
         ("and[category][]", "Images"),
@@ -78,13 +79,19 @@ def search_url(query: str, *, page: int = 1, per_page: int = 100) -> str:
 
 
 def first_year(value: str) -> int | None:
-    match = re.search(r"(?<!\d)(18[3-9]\d|19[0-6]\d|1970)(?!\d)", value)
+    match = re.search(r"(?<!\d)(18[3-9]\d|19\d{2}|20[0-2]\d|2026)(?!\d)", value)
     return int(match.group(1)) if match else None
 
 
 def date_fields(item: dict[str, Any]) -> tuple[str, str, str]:
     values: list[str] = []
-    for key in ("display_date", "date", "published_date", "syndication_date"):
+    display_value = item.get("display_date")
+    if isinstance(display_value, list):
+        values.extend(clean(v, max_chars=120) for v in display_value)
+    elif display_value:
+        values.append(clean(display_value, max_chars=120))
+    fallback_keys = () if values else ("date", "published_date")
+    for key in fallback_keys:
         value = item.get(key)
         if isinstance(value, list):
             values.extend(clean(v, max_chars=120) for v in value)
@@ -109,9 +116,21 @@ def in_scope(date_start: str, date_end: str, date_text: str) -> bool:
 def is_open_enough(item: dict[str, Any]) -> bool:
     rights = clean(item.get("rights")).lower()
     usage = {clean(v).lower() for v in item.get("usage", []) if clean(v)}
-    if "no known copyright restrictions" in rights:
+    if "no known copyright" in rights:
         return True
     return {"share", "modify", "use commercially"}.issubset(usage)
+
+
+def is_source_viewer_candidate(item: dict[str, Any]) -> bool:
+    rights = clean(item.get("rights")).lower()
+    usage = {clean(v).lower() for v in item.get("usage", []) if clean(v)}
+    if "all rights reserved" in rights:
+        return False
+    if "private study" in rights and "infringe copyright" in rights:
+        return False
+    if "copyright or other restrictions may apply" in rights:
+        return False
+    return "share" in usage or "creative commons" in rights or "attribution" in rights or "some rights reserved" in rights
 
 
 def is_graphic_relevant(item: dict[str, Any]) -> bool:
@@ -135,7 +154,7 @@ def image_url(item: dict[str, Any]) -> str:
 
 
 def row_from_item(item: dict[str, Any], direction_id: str, direction_name: str, api_url: str) -> dict[str, str] | None:
-    if not image_url(item) or not is_open_enough(item) or not is_graphic_relevant(item):
+    if not image_url(item) or not is_graphic_relevant(item):
         return None
     date_start, date_end, date_text = date_fields(item)
     if not in_scope(date_start, date_end, date_text):
@@ -155,16 +174,30 @@ def row_from_item(item: dict[str, Any], direction_id: str, direction_name: str, 
         max_chars=700,
     )
     medium = clean("; ".join([clean(item.get("format")), clean(item.get("dc_type")), clean(item.get("dnz_type"))]))
-    rights = mc.image_fields(
-        "IMG03",
-        "DigitalNZ record exposes an image URL with no-known-copyright-restrictions or full share/modify/commercial usage signals.",
-        image_url=image_url(item),
-        viewer=source_url or clean(item.get("source_url")) or image_url(item),
-        confidence="high",
-        rights_review_required=True,
-        local_copy_permitted=False,
-        note="Open image candidate; retain DigitalNZ and partner source links.",
-    )
+    if is_open_enough(item):
+        rights = mc.image_fields(
+            "IMG03",
+            "DigitalNZ record exposes an image URL with no-known-copyright or full share/modify/commercial usage signals.",
+            image_url=image_url(item),
+            viewer=source_url or clean(item.get("source_url")) or image_url(item),
+            confidence="high",
+            rights_review_required=True,
+            local_copy_permitted=False,
+            note="Open image candidate; retain DigitalNZ and partner source links.",
+        )
+    elif is_source_viewer_candidate(item):
+        rights = mc.image_fields(
+            "IMG02",
+            "DigitalNZ record exposes source-hosted visual evidence under partial or non-commercial reuse signals; display should remain source-return oriented.",
+            image_url=image_url(item),
+            viewer=source_url or clean(item.get("source_url")) or image_url(item),
+            confidence="medium",
+            rights_review_required=True,
+            local_copy_permitted=False,
+            note="Source-hosted image candidate; no local copy and cite DigitalNZ plus partner terms.",
+        )
+    else:
+        return None
     row = {
         "capture_id": "",
         "direction_id": direction_id,
@@ -275,7 +308,7 @@ def main() -> None:
 
     rows.sort(key=lambda r: (int(r["date_start"]) if r.get("date_start") else 9999, r.get("source_title", "")))
     for index, row in enumerate(rows, start=1):
-        row["capture_id"] = f"DNZ1970R{index:03d}"
+        row["capture_id"] = f"{CAPTURE_PREFIX}{index:03d}"
 
     with RECORDS_CSV.open("w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=FIELDNAMES)

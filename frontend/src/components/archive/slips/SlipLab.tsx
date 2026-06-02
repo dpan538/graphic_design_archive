@@ -1,5 +1,10 @@
 import type { FolderTypeKey, Surface, SurfaceTable, TableRow } from "@/types/archive";
 import { getFolderInk, getSurface } from "@/lib/archive-data";
+import {
+  type SourceSlipLayoutId,
+  selectSourceSlipLayout,
+} from "@/lib/slip-layout";
+import type { ArchiveCardLayoutId } from "@/lib/card-asset-layout";
 
 interface SlipProps {
   surface: Surface;
@@ -170,6 +175,23 @@ function NarrowReturnSlip({ surface }: SlipProps) {
       </footer>
     </article>
   );
+}
+
+export function ArchiveSlipSurface({
+  surface,
+  layoutId,
+  cardLayoutId,
+}: {
+  surface: Surface;
+  layoutId?: SourceSlipLayoutId;
+  cardLayoutId?: ArchiveCardLayoutId;
+}) {
+  const resolved =
+    layoutId ??
+    selectSourceSlipLayout(surface, cardLayoutId ?? "CARD02.typography-portrait");
+  if (resolved === "SLIP01.square") return <SourceSquareSlip surface={surface} />;
+  if (resolved === "SLIP02.portrait") return <CitationPortraitSlip surface={surface} />;
+  return <NarrowReturnSlip surface={surface} />;
 }
 
 export default function SlipLab() {

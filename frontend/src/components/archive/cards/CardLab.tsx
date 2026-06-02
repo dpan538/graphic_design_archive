@@ -6,6 +6,11 @@ import {
   getSurfacesForFolder,
   sortChronologically,
 } from "@/lib/archive-data";
+import { isRenderableImage } from "@/lib/layout";
+import {
+  type ArchiveCardLayoutId,
+  selectArchiveCardLayout,
+} from "@/lib/card-asset-layout";
 
 type CardMode = "all" | "square" | "rectangle" | "color" | "special";
 
@@ -96,16 +101,17 @@ function ArchiveCard({ children, className, badges }: ArchiveCardProps) {
 }
 
 function ImageBay({ surface, quiet = false }: { surface: Surface; quiet?: boolean }) {
+  const canRender = isRenderableImage(surface.image);
   return (
     <figure className={`archive-card__image ${quiet ? "archive-card__image--quiet" : ""}`}>
-      {surface.image.url ? (
-        <img src={surface.image.url} alt="" />
+      {canRender ? (
+        <img src={surface.image.url ?? undefined} alt="" />
       ) : (
         <div className="archive-card__empty-image">
           <span>{surface.image.state}</span>
         </div>
       )}
-      <figcaption>{surface.image.url ? clip(surface.image.credit ?? surface.sourceName, 42) : surface.image.state}</figcaption>
+      <figcaption>{canRender ? clip(surface.image.credit ?? surface.sourceName, 42) : surface.image.state}</figcaption>
     </figure>
   );
 }
@@ -555,6 +561,19 @@ function FolderTimelineCard({ folder }: { folder: Folder }) {
       </ol>
     </ArchiveCard>
   );
+}
+
+export function ArchiveCardSurface({
+  surface,
+  layoutId,
+}: {
+  surface: Surface;
+  layoutId?: ArchiveCardLayoutId;
+}) {
+  const resolved = layoutId ?? selectArchiveCardLayout(surface);
+  if (resolved === "CARD01.specimen-square") return <SpecimenSquare surface={surface} />;
+  if (resolved === "CARD02.typography-portrait") return <TypographyPortrait surface={surface} />;
+  return <RightsReviewCard surface={surface} />;
 }
 
 export default function CardLab({ mode = "all" }: { mode?: CardMode }) {

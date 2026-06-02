@@ -1,0 +1,113 @@
+{
+  "attachment": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://www.jagda.or.jp/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://www.jagda.or.jp/wp-json/wp/v2/media"
+        }
+      ]
+    },
+    "description": "",
+    "hierarchical": false,
+    "name": "メディア",
+    "rest_base": "media",
+    "slug": "attachment",
+    "taxonomies": []
+  },
+  "page": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://www.jagda.or.jp/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://www.jagda.or.jp/wp-json/wp/v2/pages"
+        }
+      ]
+    },
+    "description": "",
+    "hierarchical": true,
+    "name": "固定ページ",
+    "rest_base": "pages",
+    "slug": "page",
+    "taxonomies": []
+  },
+  "post": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://www.jagda.or.jp/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://www.jagda.or.jp/wp-json/wp/v2/posts"
+        }
+      ]
+    },
+    "description": "",
+    "hierarchical": false,
+    "name": "投稿",
+    "rest_base": "posts",
+    "slug": "post",
+    "taxonomies": [
+      "category",
+      "post_tag"
+    ]
+  },
+  "wp_block": {
+    "_links": {
+      "collection": [
+        {
+          "href": "https://www.jagda.or.jp/wp-json/wp/v2/types"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "wp:items": [
+        {
+          "href": "https://www.jagda.or.jp/wp-json/wp/v2/blocks"
+        }
+      ]
+    },
+    "description": "",
+    "hierarchical": false,
+    "name": "ブロック",
+    "rest_base": "blocks",
+    "slug": "wp_block",
+    "taxonomies": []
+  }
+}

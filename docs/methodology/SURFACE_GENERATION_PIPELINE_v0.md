@@ -79,7 +79,7 @@ elif record_state == fallback_stub:
   surface_type = stub.fallback
 elif essential_gates_fail:
   surface_type = stub.fallback or item.unassigned
-elif completeness_score >= 60:
+elif qualifies_as_research_unit and completeness_score >= 80 and source_reading_text_length >= 160:
   if is_compound:
     surface_type = sheet.compound
   elif img_state == IMG04:
@@ -88,13 +88,36 @@ elif completeness_score >= 60:
     surface_type = sheet.img00
   else:
     surface_type = sheet.main
-elif completeness_score >= 45:
+elif completeness_score >= 75:
+  surface_type = sheet.subsheet
+elif completeness_score >= 55:
+  surface_type = appendix.or_text_sheet
+elif completeness_score >= 40:
+  surface_type = card.with_slip_or_parent_attachment
+elif completeness_score >= 20:
   surface_type = card.record
-elif completeness_score >= 25:
-  surface_type = stub.fallback
 else:
-  surface_type = item.unassigned
+  surface_type = bookmark.candidate or item.unassigned
 ```
+
+Hierarchy rule:
+
+```text
+main sheet
+  -> subsheet
+    -> appendix
+    -> text sheet
+    -> card
+      -> slip
+    -> bookmark
+```
+
+`main sheet` is the highest public research unit, not the default renderer.
+Many records that previously became main sheets should become `subsheet`
+records. A subsheet may still have its own appendix, text sheet, card, slip, or
+bookmark children. Appendix is mainly tabular/evidence material; text sheet is
+reading-led image/text material; card is compact visual/title material; slip is
+card-bound text supplement; bookmark is the fallback pointer.
 
 ## Surface Payload Shape
 

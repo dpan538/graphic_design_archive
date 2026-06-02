@@ -1,0 +1,2152 @@
+{
+  "_embedded": {
+    "facets": [
+      {
+        "_embedded": {
+          "values": [
+            {
+              "_links": {
+                "search": {
+                  "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%2520campaign&f.author=et%20al.,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 222,
+              "label": "et al.",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%2520campaign&f.author=Fortnightly%20Organ%20of%20the%20Legon%20Society%20on%20National%20Affairs,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 31,
+              "label": "Fortnightly Organ of the Legon Society on National Affairs",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%2520campaign&f.author=Daily%20Graphic,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 26,
+              "label": "Daily Graphic",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%2520campaign&f.author=ECOWAS,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 22,
+              "label": "ECOWAS",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%2520campaign&f.author=Nonvignon,%20J.,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 20,
+              "label": "Nonvignon, J.",
+              "type": "discover"
+            }
+          ]
+        },
+        "_links": {
+          "next": {
+            "href": "https://ugspace.ug.edu.gh/server/api/discover/facets/author?query=public%20campaign&page=1&size=5"
+          },
+          "self": {
+            "href": "https://ugspace.ug.edu.gh/server/api/discover/facets/author?query=public%20campaign&size=5"
+          }
+        },
+        "facetLimit": 5,
+        "facetType": "text",
+        "maxValue": "Zychowski, K.E.",
+        "minValue": ". Abu-Naim Bohigu, J.",
+        "name": "author",
+        "openByDefault": true,
+        "page": {
+          "number": 0,
+          "size": 5
+        }
+      },
+      {
+        "_embedded": {
+          "values": [
+            {
+              "_links": {
+                "search": {
+                  "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%2520campaign&f.subject=Ghana,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 669,
+              "label": "Ghana",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%2520campaign&f.subject=Africa,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 71,
+              "label": "Africa",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%2520campaign&f.subject=Malaria,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 43,
+              "label": "Malaria",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%2520campaign&f.subject=COVID-19,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 40,
+              "label": "COVID-19",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%2520campaign&f.subject=Legon,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 36,
+              "label": "Legon",
+              "type": "discover"
+            }
+          ]
+        },
+        "_links": {
+          "next": {
+            "href": "https://ugspace.ug.edu.gh/server/api/discover/facets/subject?query=public%20campaign&page=1&size=5"
+          },
+          "self": {
+            "href": "https://ugspace.ug.edu.gh/server/api/discover/facets/subject?query=public%20campaign&size=5"
+          }
+        },
+        "facetLimit": 5,
+        "facetType": "hierarchical",
+        "name": "subject",
+        "openByDefault": false,
+        "page": {
+          "number": 0,
+          "size": 5
+        }
+      },
+      {
+        "_embedded": {
+          "values": [
+            {
+              "_links": {
+                "search": {
+                  "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%2520campaign&f.dateIssued=%5B1800%20TO%201979%5D,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 106,
+              "label": "1800 - 1979",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%2520campaign&f.dateIssued=%5B1980%20TO%202026%5D,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 2278,
+              "label": "1980 - 2026",
+              "type": "discover"
+            }
+          ]
+        },
+        "_links": {
+          "self": {
+            "href": "https://ugspace.ug.edu.gh/server/api/discover/facets/dateIssued?query=public%20campaign&size=5"
+          }
+        },
+        "facetLimit": 5,
+        "facetType": "date",
+        "maxValue": "June 2015",
+        "minValue": "0201-12",
+        "name": "dateIssued",
+        "openByDefault": false,
+        "page": {
+          "number": 0,
+          "size": 5
+        }
+      },
+      {
+        "_embedded": {
+          "values": [
+            {
+              "_links": {
+                "search": {
+                  "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%2520campaign&f.has_content_in_original_bundle=true,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 2332,
+              "label": "true",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%2520campaign&f.has_content_in_original_bundle=false,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 53,
+              "label": "false",
+              "type": "discover"
+            }
+          ]
+        },
+        "_links": {
+          "self": {
+            "href": "https://ugspace.ug.edu.gh/server/api/discover/facets/has_content_in_original_bundle?query=public%20campaign&size=2"
+          }
+        },
+        "facetLimit": 2,
+        "facetType": "standard",
+        "name": "has_content_in_original_bundle",
+        "openByDefault": false,
+        "page": {
+          "number": 0,
+          "size": 2
+        }
+      },
+      {
+        "_embedded": {
+          "values": []
+        },
+        "_links": {
+          "self": {
+            "href": "https://ugspace.ug.edu.gh/server/api/discover/facets/entityType?query=public%20campaign"
+          }
+        },
+        "facetLimit": 5,
+        "facetType": "text",
+        "name": "entityType",
+        "openByDefault": false
+      },
+      {
+        "_embedded": {
+          "values": [
+            {
+              "_links": {
+                "search": {
+                  "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%2520campaign&f.access_status=open.access,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 2302,
+              "label": "open.access",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%2520campaign&f.access_status=metadata.only,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 53,
+              "label": "metadata.only",
+              "type": "discover"
+            },
+            {
+              "_links": {
+                "search": {
+                  "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%2520campaign&f.access_status=embargo,equals"
+                }
+              },
+              "authorityKey": null,
+              "count": 30,
+              "label": "embargo",
+              "type": "discover"
+            }
+          ]
+        },
+        "_links": {
+          "self": {
+            "href": "https://ugspace.ug.edu.gh/server/api/discover/facets/access_status?query=public%20campaign&size=10"
+          }
+        },
+        "facetLimit": 10,
+        "facetType": "text",
+        "name": "access_status",
+        "openByDefault": false,
+        "page": {
+          "number": 0,
+          "size": 10
+        }
+      }
+    ],
+    "searchResult": {
+      "_embedded": {
+        "objects": [
+          {
+            "_embedded": {
+              "indexableObject": {
+                "_links": {
+                  "accessStatus": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/7a7deda0-1b30-493c-a91b-f0178c9f4105/accessStatus"
+                  },
+                  "bundles": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/7a7deda0-1b30-493c-a91b-f0178c9f4105/bundles"
+                  },
+                  "identifiers": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/7a7deda0-1b30-493c-a91b-f0178c9f4105/identifiers"
+                  },
+                  "mappedCollections": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/7a7deda0-1b30-493c-a91b-f0178c9f4105/mappedCollections"
+                  },
+                  "owningCollection": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/7a7deda0-1b30-493c-a91b-f0178c9f4105/owningCollection"
+                  },
+                  "relationships": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/7a7deda0-1b30-493c-a91b-f0178c9f4105/relationships"
+                  },
+                  "self": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/7a7deda0-1b30-493c-a91b-f0178c9f4105"
+                  },
+                  "submitter": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/7a7deda0-1b30-493c-a91b-f0178c9f4105/submitter"
+                  },
+                  "templateItemOf": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/7a7deda0-1b30-493c-a91b-f0178c9f4105/templateItemOf"
+                  },
+                  "thumbnail": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/7a7deda0-1b30-493c-a91b-f0178c9f4105/thumbnail"
+                  },
+                  "version": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/7a7deda0-1b30-493c-a91b-f0178c9f4105/version"
+                  }
+                },
+                "discoverable": true,
+                "entityType": null,
+                "handle": "123456789/21796",
+                "id": "7a7deda0-1b30-493c-a91b-f0178c9f4105",
+                "inArchive": true,
+                "lastModified": "2017-10-13T17:54:02.028Z",
+                "metadata": {
+                  "dc.contributor.advisor": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Tietaah, G."
+                    }
+                  ],
+                  "dc.contributor.author": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Gyasi, A.A."
+                    }
+                  ],
+                  "dc.contributor.other": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "University of Ghana, College of Education, School of Information and Communication Studies, Department of Communication Studies"
+                    }
+                  ],
+                  "dc.date.accessioned": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2017-03-24T12:21:43Z"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 1,
+                      "value": "2017-10-13T17:54:01Z"
+                    }
+                  ],
+                  "dc.date.available": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2017-03-24T12:21:43Z"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 1,
+                      "value": "2017-10-13T17:54:01Z"
+                    }
+                  ],
+                  "dc.date.issued": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2016-05"
+                    }
+                  ],
+                  "dc.description": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Thesis (MA) - University of Ghana,2016"
+                    }
+                  ],
+                  "dc.description.abstract": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "The National Sanitation Day (NSD) Campaign was launched by the Ministry of Local Government and Rural Development (MLGRD) to resolve poor sanitation issues in Ghana. The campaign included a communication objective to encourage behaviour change towards good sanitation practice. The study was designed to gauge public attitude and response to the NSD campaign by surveying residents of Madina, a demographically heterogeneous community in Accra.\r\nThe Multistage cluster sampling procedure was used to select 200 respondents for the study. The research design and questionnaire constructs were driven by the Theory of Reasoned Action (TRA) and the Theory of Planned Behaviour (TPB) in the study. The key findings were that all respondents were aware and had some knowledge of the Campaign. Also, their major sources of receiving information on the campaign included television, radio and information vans. On the contrary, newspapers, family and friends were the least sources of getting information on the campaign. The campaign was found to have caused a behaviour change among majority of the residents towards proper sanitation practice.\r\nOther findings were that respondents’ demographics such as age and level of education did not have much influence on their preferred means of getting information and the medium through which they first heard of the campaign.\r\nBased on these findings, it is recommended that the MLGRD intensifies the campaign by employing other communication activities and also enforcing laws for all citizens’ participation in the sanitation exercise."
+                    }
+                  ],
+                  "dc.format.extent": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "viii, 84p; ill"
+                    }
+                  ],
+                  "dc.identifier.uri": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "http://197.255.68.203/handle/123456789/21796"
+                    }
+                  ],
+                  "dc.language.iso": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "en"
+                    }
+                  ],
+                  "dc.publisher": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "University of Ghana"
+                    }
+                  ],
+                  "dc.rights.holder": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "University of Ghana"
+                    }
+                  ],
+                  "dc.subject": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Public"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 1,
+                      "value": "National Sanitation"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 2,
+                      "value": "Campaign"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 3,
+                      "value": "Madina Residents"
+                    }
+                  ],
+                  "dc.title": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Public Response to the National Sanitation Day Campaign: A Survey of Madina Residents"
+                    }
+                  ],
+                  "dc.type": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Thesis"
+                    }
+                  ]
+                },
+                "name": "Public Response to the National Sanitation Day Campaign: A Survey of Madina Residents",
+                "type": "item",
+                "uuid": "7a7deda0-1b30-493c-a91b-f0178c9f4105",
+                "withdrawn": false
+              }
+            },
+            "_links": {
+              "indexableObject": {
+                "href": "https://ugspace.ug.edu.gh/server/api/core/items/7a7deda0-1b30-493c-a91b-f0178c9f4105"
+              }
+            },
+            "hitHighlights": {
+              "dc.description.abstract": [
+                "The study was designed to gauge <em>public</em> attitude and response to the NSD <em>campaign</em> by surveying residents of Madina, a demographically heterogeneous community in Accra.\r\nThe Multistage cluster sampling procedure was used to select 200 respondents for the study. ",
+                "The key findings were that all respondents were aware and had some knowledge of the <em>Campaign</em>. Also, their major sources of receiving information on the <em>campaign</em> included television, radio and information vans. On the contrary, newspapers, family and friends were the least sources of getting information on the <em>campaign</em>. "
+              ],
+              "dc.title": [
+                "<em>Public</em> Response to the National Sanitation Day <em>Campaign</em>: A Survey of Madina Residents"
+              ]
+            },
+            "type": "discover"
+          },
+          {
+            "_embedded": {
+              "indexableObject": {
+                "_links": {
+                  "accessStatus": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/67d3895b-fb0b-4833-af3e-988ec7dd15ce/accessStatus"
+                  },
+                  "bundles": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/67d3895b-fb0b-4833-af3e-988ec7dd15ce/bundles"
+                  },
+                  "identifiers": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/67d3895b-fb0b-4833-af3e-988ec7dd15ce/identifiers"
+                  },
+                  "mappedCollections": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/67d3895b-fb0b-4833-af3e-988ec7dd15ce/mappedCollections"
+                  },
+                  "owningCollection": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/67d3895b-fb0b-4833-af3e-988ec7dd15ce/owningCollection"
+                  },
+                  "relationships": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/67d3895b-fb0b-4833-af3e-988ec7dd15ce/relationships"
+                  },
+                  "self": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/67d3895b-fb0b-4833-af3e-988ec7dd15ce"
+                  },
+                  "submitter": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/67d3895b-fb0b-4833-af3e-988ec7dd15ce/submitter"
+                  },
+                  "templateItemOf": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/67d3895b-fb0b-4833-af3e-988ec7dd15ce/templateItemOf"
+                  },
+                  "thumbnail": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/67d3895b-fb0b-4833-af3e-988ec7dd15ce/thumbnail"
+                  },
+                  "version": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/67d3895b-fb0b-4833-af3e-988ec7dd15ce/version"
+                  }
+                },
+                "discoverable": true,
+                "entityType": null,
+                "handle": "123456789/34427",
+                "id": "67d3895b-fb0b-4833-af3e-988ec7dd15ce",
+                "inArchive": true,
+                "lastModified": "2020-06-23T13:04:25.438Z",
+                "metadata": {
+                  "dc.contributor.author": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "",
+                      "place": 0,
+                      "value": "Public Affairs"
+                    }
+                  ],
+                  "dc.date.accessioned": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "",
+                      "place": 0,
+                      "value": "2020-01-17T11:41:52Z"
+                    }
+                  ],
+                  "dc.date.available": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "",
+                      "place": 0,
+                      "value": "2020-01-17T11:41:52Z"
+                    }
+                  ],
+                  "dc.date.issued": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "",
+                      "place": 0,
+                      "value": "2020-01-10"
+                    }
+                  ],
+                  "dc.description": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Newsfile"
+                    }
+                  ],
+                  "dc.identifier.uri": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "",
+                      "place": 0,
+                      "value": "http://ugspace.ug.edu.gh/handle/123456789/34427"
+                    }
+                  ],
+                  "dc.language.iso": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "en"
+                    }
+                  ],
+                  "dc.subject": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "GUSA Games"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 1,
+                      "value": "20 Campaign"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 2,
+                      "value": "Vice-Chancellor"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 3,
+                      "value": "Ghana Reinsurance Company Limited"
+                    }
+                  ],
+                  "dc.title": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "UG Newsfile No. 16 - 2020"
+                    }
+                  ],
+                  "dc.type": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Article"
+                    }
+                  ]
+                },
+                "name": "UG Newsfile No. 16 - 2020",
+                "type": "item",
+                "uuid": "67d3895b-fb0b-4833-af3e-988ec7dd15ce",
+                "withdrawn": false
+              }
+            },
+            "_links": {
+              "indexableObject": {
+                "href": "https://ugspace.ug.edu.gh/server/api/core/items/67d3895b-fb0b-4833-af3e-988ec7dd15ce"
+              }
+            },
+            "hitHighlights": null,
+            "type": "discover"
+          },
+          {
+            "_embedded": {
+              "indexableObject": {
+                "_links": {
+                  "accessStatus": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/efd0adfd-27dc-4b6b-9051-2660bacc7e23/accessStatus"
+                  },
+                  "bundles": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/efd0adfd-27dc-4b6b-9051-2660bacc7e23/bundles"
+                  },
+                  "identifiers": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/efd0adfd-27dc-4b6b-9051-2660bacc7e23/identifiers"
+                  },
+                  "mappedCollections": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/efd0adfd-27dc-4b6b-9051-2660bacc7e23/mappedCollections"
+                  },
+                  "owningCollection": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/efd0adfd-27dc-4b6b-9051-2660bacc7e23/owningCollection"
+                  },
+                  "relationships": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/efd0adfd-27dc-4b6b-9051-2660bacc7e23/relationships"
+                  },
+                  "self": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/efd0adfd-27dc-4b6b-9051-2660bacc7e23"
+                  },
+                  "submitter": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/efd0adfd-27dc-4b6b-9051-2660bacc7e23/submitter"
+                  },
+                  "templateItemOf": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/efd0adfd-27dc-4b6b-9051-2660bacc7e23/templateItemOf"
+                  },
+                  "thumbnail": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/efd0adfd-27dc-4b6b-9051-2660bacc7e23/thumbnail"
+                  },
+                  "version": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/efd0adfd-27dc-4b6b-9051-2660bacc7e23/version"
+                  }
+                },
+                "discoverable": true,
+                "entityType": null,
+                "handle": "123456789/21749",
+                "id": "efd0adfd-27dc-4b6b-9051-2660bacc7e23",
+                "inArchive": true,
+                "lastModified": "2017-10-13T17:54:16.639Z",
+                "metadata": {
+                  "dc.contributor.advisor": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Gadzekpo, A."
+                    }
+                  ],
+                  "dc.contributor.author": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Jibril, A."
+                    }
+                  ],
+                  "dc.contributor.other": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "University of Ghana, College of Education, School of Information and Communication Studies, Department of Communication Studies"
+                    }
+                  ],
+                  "dc.date.accessioned": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2017-03-22T10:56:09Z"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 1,
+                      "value": "2017-10-13T17:54:16Z"
+                    }
+                  ],
+                  "dc.date.available": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2017-03-22T10:56:09Z"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 1,
+                      "value": "2017-10-13T17:54:16Z"
+                    }
+                  ],
+                  "dc.date.issued": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2015-10"
+                    }
+                  ],
+                  "dc.description": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Thesis (MA) - University of Ghana, 2015"
+                    }
+                  ],
+                  "dc.description.abstract": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "In this study, attempt has been made to determine the coverage of Bring Back Our Girls (BBOG) campaign in Nigeria by online newspapers. Seventy-one editions of Daily Trust, the Punch, Sahara Reporters and Vanguard newspapers from April 2014-October 2014 were content analysed. The study examined how much coverage BBOG campaigns received in the sampled online newspapers, the nature of reporting BBOG campaigns and the dominant sources of stories and themes in the framing of stories on the campaign in the newspapers studied.\r\nMaking use of qualitative and quantitative content analysis and secondary sources of data, the study found that the newspapers provided mostly favourable coverage of the campaign with a total of 59 (83.1%) out of 71 total stories. The study also found that the campaigners and their sympathisers were the dominant sources of stories during the study period.\r\nThe study adopted framing theory as a theoretical basis of the study. The study concluded that the newspapers made concerted efforts to cover the campaign positively, unlike what usually obtains in Western media framing of social movements where status quo biases are often maintained. The study also found that the newspapers focused more on straight news than other story types in reporting the campaigns."
+                    }
+                  ],
+                  "dc.format.extent": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "ix, 70p; ill"
+                    }
+                  ],
+                  "dc.identifier.uri": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "http://197.255.68.203/handle/123456789/21749"
+                    }
+                  ],
+                  "dc.language.iso": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "en"
+                    }
+                  ],
+                  "dc.publisher": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "University of Ghana"
+                    }
+                  ],
+                  "dc.rights.holder": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "University of Ghana"
+                    }
+                  ],
+                  "dc.subject": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Newspaper Coverage"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 1,
+                      "value": "Bring Back Our Girls"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 2,
+                      "value": "Campaign in Nigeria"
+                    }
+                  ],
+                  "dc.title": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Online Newspaper Coverage of the “Bring Back Our Girls” Campaign in Nigeria"
+                    }
+                  ],
+                  "dc.type": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Thesis"
+                    }
+                  ]
+                },
+                "name": "Online Newspaper Coverage of the “Bring Back Our Girls” Campaign in Nigeria",
+                "type": "item",
+                "uuid": "efd0adfd-27dc-4b6b-9051-2660bacc7e23",
+                "withdrawn": false
+              }
+            },
+            "_links": {
+              "indexableObject": {
+                "href": "https://ugspace.ug.edu.gh/server/api/core/items/efd0adfd-27dc-4b6b-9051-2660bacc7e23"
+              }
+            },
+            "hitHighlights": null,
+            "type": "discover"
+          },
+          {
+            "_embedded": {
+              "indexableObject": {
+                "_links": {
+                  "accessStatus": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/04fa998d-f4fe-4902-97fc-f26b9816538e/accessStatus"
+                  },
+                  "bundles": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/04fa998d-f4fe-4902-97fc-f26b9816538e/bundles"
+                  },
+                  "identifiers": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/04fa998d-f4fe-4902-97fc-f26b9816538e/identifiers"
+                  },
+                  "mappedCollections": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/04fa998d-f4fe-4902-97fc-f26b9816538e/mappedCollections"
+                  },
+                  "owningCollection": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/04fa998d-f4fe-4902-97fc-f26b9816538e/owningCollection"
+                  },
+                  "relationships": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/04fa998d-f4fe-4902-97fc-f26b9816538e/relationships"
+                  },
+                  "self": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/04fa998d-f4fe-4902-97fc-f26b9816538e"
+                  },
+                  "submitter": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/04fa998d-f4fe-4902-97fc-f26b9816538e/submitter"
+                  },
+                  "templateItemOf": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/04fa998d-f4fe-4902-97fc-f26b9816538e/templateItemOf"
+                  },
+                  "thumbnail": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/04fa998d-f4fe-4902-97fc-f26b9816538e/thumbnail"
+                  },
+                  "version": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/04fa998d-f4fe-4902-97fc-f26b9816538e/version"
+                  }
+                },
+                "discoverable": true,
+                "entityType": null,
+                "handle": "123456789/21933",
+                "id": "04fa998d-f4fe-4902-97fc-f26b9816538e",
+                "inArchive": true,
+                "lastModified": "2022-10-20T13:47:06.763Z",
+                "metadata": {
+                  "dc.contributor.advisor": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Tietaah, G."
+                    }
+                  ],
+                  "dc.contributor.author": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Tetteh, E."
+                    }
+                  ],
+                  "dc.contributor.other": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "University of Ghana, College of Education, School of Information and Communication Studies, Department of Communication Studies"
+                    }
+                  ],
+                  "dc.date.accessioned": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2017-04-06T11:41:59Z"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 1,
+                      "value": "2017-10-13T17:53:35Z"
+                    }
+                  ],
+                  "dc.date.available": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2017-04-06T11:41:59Z"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 1,
+                      "value": "2017-10-13T17:53:35Z"
+                    }
+                  ],
+                  "dc.date.issued": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2004-09"
+                    }
+                  ],
+                  "dc.description": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Thesis (MA) - University of Ghana, 2004"
+                    }
+                  ],
+                  "dc.description.abstract": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "This work sought to find out whether social marketing works as an HIV/AIDS\r\ncommunication tool. Theories in social marketing were therefore used to assess the\r\nimpact of the Stop AIDS, Love Life campaign. Previous campaigns in some third world\r\ncountries also provided examples of the use of social marketing principles in HIV/AIDS\r\ncampaigns. The Stop AIDS, Love Life campaign was compared to these campaigns to\r\nidentify similarities and differences and to assess the impact of the Ghanaian experience.\r\nThe case study methodology was used.\r\nAnalyses of data showed that like the other social marketing campaigns, the Stop AIDS,\r\nLove Life campaign used development, implementation, and evaluation techniques in\r\nsocial marketing for relative successes and failures. Condom usage in Ghana, for\r\ninstance, increased by 200% a year after the inception of the campaign although the\r\ncampaign failed to get young adults to abstain and delay sex.\r\nDiscussions of the findings proved that the campaign was successful in creating\r\nawareness about HIV/AIDS through television, radio and posters. However, participatory\r\ncommunication channels were less used and less popular and this led to failure to meet\r\nsome campaign objectives. Recommendations were made for the use of more\r\nparticipatory communication channels synonymous with traditional African systems and\r\nthe need for the avoidance of situations where Western communication policies were\r\nimplemented in Africa without taking cognizance of the needs of the people and their\r\npeculiar situation."
+                    }
+                  ],
+                  "dc.format.extent": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "vii, 93; ill"
+                    }
+                  ],
+                  "dc.identifier.uri": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "http://197.255.68.203/handle/123456789/21933"
+                    }
+                  ],
+                  "dc.language.iso": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "en"
+                    }
+                  ],
+                  "dc.publisher": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "University of Ghana"
+                    }
+                  ],
+                  "dc.rights.holder": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "University of Ghana,"
+                    }
+                  ],
+                  "dc.subject": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Marketing"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 1,
+                      "value": "Communication"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 2,
+                      "value": "Campaign"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 3,
+                      "value": "Ghana"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 4,
+                      "value": "Foundation"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 5,
+                      "value": "Social"
+                    }
+                  ],
+                  "dc.title": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Social Marketing as an Hiv/Aids Communication Tool: A Case Study of the Stop Aids, Love L ife Campaign by the Ghana Social Marketing Foundation (Gsmf)"
+                    }
+                  ],
+                  "dc.type": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Thesis"
+                    }
+                  ]
+                },
+                "name": "Social Marketing as an Hiv/Aids Communication Tool: A Case Study of the Stop Aids, Love L ife Campaign by the Ghana Social Marketing Foundation (Gsmf)",
+                "type": "item",
+                "uuid": "04fa998d-f4fe-4902-97fc-f26b9816538e",
+                "withdrawn": false
+              }
+            },
+            "_links": {
+              "indexableObject": {
+                "href": "https://ugspace.ug.edu.gh/server/api/core/items/04fa998d-f4fe-4902-97fc-f26b9816538e"
+              }
+            },
+            "hitHighlights": null,
+            "type": "discover"
+          },
+          {
+            "_embedded": {
+              "indexableObject": {
+                "_links": {
+                  "accessStatus": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/bcdbc2d6-3f8c-4353-8142-268450a2c193/accessStatus"
+                  },
+                  "bundles": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/bcdbc2d6-3f8c-4353-8142-268450a2c193/bundles"
+                  },
+                  "identifiers": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/bcdbc2d6-3f8c-4353-8142-268450a2c193/identifiers"
+                  },
+                  "mappedCollections": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/bcdbc2d6-3f8c-4353-8142-268450a2c193/mappedCollections"
+                  },
+                  "owningCollection": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/bcdbc2d6-3f8c-4353-8142-268450a2c193/owningCollection"
+                  },
+                  "relationships": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/bcdbc2d6-3f8c-4353-8142-268450a2c193/relationships"
+                  },
+                  "self": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/bcdbc2d6-3f8c-4353-8142-268450a2c193"
+                  },
+                  "submitter": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/bcdbc2d6-3f8c-4353-8142-268450a2c193/submitter"
+                  },
+                  "templateItemOf": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/bcdbc2d6-3f8c-4353-8142-268450a2c193/templateItemOf"
+                  },
+                  "thumbnail": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/bcdbc2d6-3f8c-4353-8142-268450a2c193/thumbnail"
+                  },
+                  "version": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/bcdbc2d6-3f8c-4353-8142-268450a2c193/version"
+                  }
+                },
+                "discoverable": true,
+                "entityType": null,
+                "handle": "123456789/27491",
+                "id": "bcdbc2d6-3f8c-4353-8142-268450a2c193",
+                "inArchive": true,
+                "lastModified": "2022-10-25T16:28:04.711Z",
+                "metadata": {
+                  "dc.contributor.author": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Aidoo, G.S."
+                    }
+                  ],
+                  "dc.date.accessioned": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2019-02-13T10:57:27Z"
+                    }
+                  ],
+                  "dc.date.available": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2019-02-13T10:57:27Z"
+                    }
+                  ],
+                  "dc.date.issued": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2018-07"
+                    }
+                  ],
+                  "dc.description": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Thesis (MPhil) - University of Ghana"
+                    }
+                  ],
+                  "dc.description.abstract": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Political Parties across the world have in recent time’s integrated social media as part of their campaign strategy to woo voters online. This is because social media has proven to be an effective medium for electoral communication given its several features like photo sharing, status update, tags, post sharing, likes, live videos, video sharing among others. Most importantly, social media facilitates access to political information and its networked structure enables users to create interest groups, interact with each other and engage in political debates. This study explores the various ways social media is revolutionizing political campaigns in Ghana using the 2016 election campaigns as a case study. It argues that the extensive integration of social media tools particularly Facebook in the 2016 electoral campaigns has introduced newer forms of campaigns in Ghana. Although social media was used extensively in the 2016 election campaigns in Ghana, it did not replace the traditional media rather it augmented the parties’ efforts to reach many voters."
+                    }
+                  ],
+                  "dc.identifier.uri": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "http://ugspace.ug.edu.gh/handle/123456789/27491"
+                    }
+                  ],
+                  "dc.language.iso": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "en"
+                    }
+                  ],
+                  "dc.publisher": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "University of Ghana"
+                    }
+                  ],
+                  "dc.subject": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Ghana’s 2016"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 1,
+                      "value": "Presidential"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 2,
+                      "value": "Electoral"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 3,
+                      "value": "Age of Social Media"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 4,
+                      "value": "Campaigns"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 5,
+                      "value": "Political Parties"
+                    }
+                  ],
+                  "dc.title": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Ghana’s 2016 Presidential Election: A Study of Electoral Campaigns in the Age of Social Media."
+                    }
+                  ],
+                  "dc.type": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Thesis"
+                    }
+                  ]
+                },
+                "name": "Ghana’s 2016 Presidential Election: A Study of Electoral Campaigns in the Age of Social Media.",
+                "type": "item",
+                "uuid": "bcdbc2d6-3f8c-4353-8142-268450a2c193",
+                "withdrawn": false
+              }
+            },
+            "_links": {
+              "indexableObject": {
+                "href": "https://ugspace.ug.edu.gh/server/api/core/items/bcdbc2d6-3f8c-4353-8142-268450a2c193"
+              }
+            },
+            "hitHighlights": null,
+            "type": "discover"
+          },
+          {
+            "_embedded": {
+              "indexableObject": {
+                "_links": {
+                  "accessStatus": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/f51137fa-c250-4683-9b1b-71719fb016fc/accessStatus"
+                  },
+                  "bundles": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/f51137fa-c250-4683-9b1b-71719fb016fc/bundles"
+                  },
+                  "identifiers": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/f51137fa-c250-4683-9b1b-71719fb016fc/identifiers"
+                  },
+                  "mappedCollections": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/f51137fa-c250-4683-9b1b-71719fb016fc/mappedCollections"
+                  },
+                  "owningCollection": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/f51137fa-c250-4683-9b1b-71719fb016fc/owningCollection"
+                  },
+                  "relationships": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/f51137fa-c250-4683-9b1b-71719fb016fc/relationships"
+                  },
+                  "self": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/f51137fa-c250-4683-9b1b-71719fb016fc"
+                  },
+                  "submitter": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/f51137fa-c250-4683-9b1b-71719fb016fc/submitter"
+                  },
+                  "templateItemOf": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/f51137fa-c250-4683-9b1b-71719fb016fc/templateItemOf"
+                  },
+                  "thumbnail": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/f51137fa-c250-4683-9b1b-71719fb016fc/thumbnail"
+                  },
+                  "version": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/f51137fa-c250-4683-9b1b-71719fb016fc/version"
+                  }
+                },
+                "discoverable": true,
+                "entityType": null,
+                "handle": "123456789/23663",
+                "id": "f51137fa-c250-4683-9b1b-71719fb016fc",
+                "inArchive": true,
+                "lastModified": "2018-07-17T15:14:34.883Z",
+                "metadata": {
+                  "dc.contributor.author": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Arthur, L.H."
+                    }
+                  ],
+                  "dc.date.accessioned": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2018-07-17T15:14:31Z"
+                    }
+                  ],
+                  "dc.date.available": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2018-07-17T15:14:31Z"
+                    }
+                  ],
+                  "dc.date.issued": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2012-03"
+                    }
+                  ],
+                  "dc.description": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Thesis (MA)"
+                    }
+                  ],
+                  "dc.description.abstract": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "The rationale for this project is to design a public health communication strategy for campaign on sickle cell anemia in Ghana. This project has been necessitated by the alarming rate at which the condition is occurring. It is generally estimated that 2% of children born in Ghana each year have a form of the sickle cell disease. This proportion is more than that of HIV/AIDS in the country (Ohene-Frimpong, 2011).\r\nIn recent times, due to technological advancement, it is possible to determine the sickle cell status of infants whilst still at a foetal stage, for parents to decide on what to do before the child is born. Despite this, Kootey-Ahulu (2011), a renowned physician consultant has stated that the best way of getting a generation free of the disease is to avoid intermarriage between two people with the disease or a trait of it.\r\nThe purpose of this study is to have an in-depth knowledge of public health campaign methods for awareness creation through a literature review. The information gathered would then be used as a guide to design a communication strategy to create awareness among Ghanaians who are between 25-40 years on sickle cell anemia. Some of the areas that would be looked into include the following: how to plan and execute effective health communication strategy, knowledge on sickle cell anemia disease, what has been done to educate and create awareness on it as well as its successes or otherwise. Ultimately, this study would result in a project that would device mediums appropriate for use in educating and creating awareness on sickle cell anemia disease in Ghana. It is expected that when implemented, the impact would result in a raise from 21% to 65% in the knowledge level among the target audience, within a year. \r\na. Study Goals\r\nThree specific goals would be emphasized in this study:\r\ni) To gain an in-depth understanding of the use of public health campaign for awareness creation and education in general through interviews with experts.\r\nii) To gain insight on the knowledge level among Ghanaians between the ages of 25-40 on the sickle cell disease by conducting a baseline survey.\r\nData gathered from the interviews and baseline surveys would then be used as a guide to assist in the design of an effective communication strategy. The information elicited would help in clearly defining who the target audience should be and what appropriate mediums and messages to use in order to raise the awareness level from 21% to about 65% within a year.\r\nb. Assignments to Be Undertaken\r\ni) A detailed literature review on:\r\n(a) Public health communication campaign methods\r\n(b) Public health communication campaign on sickle cell anemia.\r\nii) Conduct in-depth interviews with a communication expert, sickle cell condition advocate and\r\na medical specialist in sickle cell disease.\r\niii) Conduct a survey of unmarried people within the ages of 25 to 40 years.\r\niv) Annotate at least 10 articles with bibliographic citations. \r\nInformation gathered from these three assignments would be used in the formative research to aid in drawing up an effective communication strategy. The knowledge gained would help outline work that has already been done in the area to be studied and its successes or otherwise in order to make an informed decision on an appropriate strategy to adopt."
+                    }
+                  ],
+                  "dc.identifier.uri": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "http://ugspace.ug.edu.gh/handle/123456789/23663"
+                    }
+                  ],
+                  "dc.language.iso": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "en"
+                    }
+                  ],
+                  "dc.publisher": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "University of Ghana"
+                    }
+                  ],
+                  "dc.subject": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Communication Strategy"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 1,
+                      "value": "Sickle Cell Anaemia"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 2,
+                      "value": "Ghana"
+                    }
+                  ],
+                  "dc.title": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Communication Strategy On Sickle Cell Anaemia In Ghana"
+                    }
+                  ],
+                  "dc.type": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Thesis"
+                    }
+                  ]
+                },
+                "name": "Communication Strategy On Sickle Cell Anaemia In Ghana",
+                "type": "item",
+                "uuid": "f51137fa-c250-4683-9b1b-71719fb016fc",
+                "withdrawn": false
+              }
+            },
+            "_links": {
+              "indexableObject": {
+                "href": "https://ugspace.ug.edu.gh/server/api/core/items/f51137fa-c250-4683-9b1b-71719fb016fc"
+              }
+            },
+            "hitHighlights": {
+              "dc.description.abstract": [
+                "The rationale for this project is to design a <em>public</em> health communication strategy for <em>campaign</em> on sickle cell anemia in Ghana. This project has been necessitated by the alarming rate at which the condition is occurring. ",
+                "The information elicited would help in clearly defining who the target audience should be and what appropriate mediums and messages to use in order to raise the awareness level from 21% to about 65% within a year.\r\nb. Assignments to Be Undertaken\r\ni) A detailed literature review on:\r\n(a) <em>Public</em> health communication <em>campaign</em> methods\r\n(b) <em>Public</em> health communication <em>campaign</em> on sickle cell anemia.\r\nii) Conduct in-depth interviews with a communication expert, sickle cell condition advocate and\r\na medical specialist in sickle cell disease.\r\n"
+              ]
+            },
+            "type": "discover"
+          },
+          {
+            "_embedded": {
+              "indexableObject": {
+                "_links": {
+                  "accessStatus": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/11b0aea6-0e31-4b22-a33e-26fddc5f281e/accessStatus"
+                  },
+                  "bundles": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/11b0aea6-0e31-4b22-a33e-26fddc5f281e/bundles"
+                  },
+                  "identifiers": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/11b0aea6-0e31-4b22-a33e-26fddc5f281e/identifiers"
+                  },
+                  "mappedCollections": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/11b0aea6-0e31-4b22-a33e-26fddc5f281e/mappedCollections"
+                  },
+                  "owningCollection": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/11b0aea6-0e31-4b22-a33e-26fddc5f281e/owningCollection"
+                  },
+                  "relationships": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/11b0aea6-0e31-4b22-a33e-26fddc5f281e/relationships"
+                  },
+                  "self": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/11b0aea6-0e31-4b22-a33e-26fddc5f281e"
+                  },
+                  "submitter": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/11b0aea6-0e31-4b22-a33e-26fddc5f281e/submitter"
+                  },
+                  "templateItemOf": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/11b0aea6-0e31-4b22-a33e-26fddc5f281e/templateItemOf"
+                  },
+                  "thumbnail": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/11b0aea6-0e31-4b22-a33e-26fddc5f281e/thumbnail"
+                  },
+                  "version": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/11b0aea6-0e31-4b22-a33e-26fddc5f281e/version"
+                  }
+                },
+                "discoverable": true,
+                "entityType": null,
+                "handle": "123456789/40013",
+                "id": "11b0aea6-0e31-4b22-a33e-26fddc5f281e",
+                "inArchive": true,
+                "lastModified": "2023-10-02T16:00:15.146Z",
+                "metadata": {
+                  "dc.contributor.author": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Dako-Gyeke, P."
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 1,
+                      "value": "Chandi, G.M."
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 2,
+                      "value": "Peprah, N.Y."
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 3,
+                      "value": "Gittelman, D."
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 4,
+                      "value": "et al"
+                    }
+                  ],
+                  "dc.date.accessioned": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2023-09-14T11:10:18Z"
+                    }
+                  ],
+                  "dc.date.available": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2023-09-14T11:10:18Z"
+                    }
+                  ],
+                  "dc.date.issued": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2023"
+                    }
+                  ],
+                  "dc.description": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Research Article"
+                    }
+                  ],
+                  "dc.description.abstract": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Introduction: In Ghana, the National Malaria Elimination Programme (NMEP)\r\ndistributes long-lasting insecticide net (LLIN) to households for free through the\r\nperiodic point mass distribution (PMD) campaign and continuous distribution to\r\npopulations most vulnerable to malaria. It is known that the existence of e􀀀ective\r\nand functional community-based groups could influence positive behaviours\r\nregarding health interventions promoted through health campaigns. However,\r\nthere is no evidence of functional community-based groups that aim to improve\r\nthe e􀀀ectiveness of LLIN distribution campaigns by transitioning into primary\r\nhealthcare delivery. This study aimed to explore the opportunities and barriers\r\nto the pilot implementation of co-created community health advocacy teams\r\n(CHATs) to improve the e􀀀ectiveness of LLIN distribution through both campaigns\r\nand continuous channels in Ghana.\r\nMethods: A qualitative research approach was used among 43 CHAT members\r\nacross six communities in the Eastern and Volta regions of Ghana. The CHAT\r\nconstitutes significant community actors whose roles are centred on key elements\r\nof community/social mobilisation and capacity building, all nested in social\r\nand behaviour change communication (SBCC) strategies. The CHATs were pilot\r\nimplemented in all study communities for 4 months after which we identified\r\nopportunities and barriers during implementation. CHAT members participated in\r\nsix focus group discussions which were audio recorded, transcribed verbatim, and\r\nanalysed thematically using the NVivo 13.\r\nResults: CHATs were instrumental in sensitising community members through\r\nSBCC strategies. Moreover, there were changes in the behaviour of community members who were receptive towards and participated in CHAT activities.\r\nCommunity members were accurately informed about malaria (e.g., causes\r\nand preventive measures). However, the CHAT experienced barriers during\r\nimplementation, including a lack of financial support to aid in transportation,\r\norganisation of meetings, and outreach activities. Additionally, the level of\r\nparticipation by CHAT members in activities and the medium of communication\r\namong members were key areas of concern.\r\nConclusion: The CHATs would be instrumental in promoting LLINs’ use during and\r\nafter PMD campaigns through community outreaches. It is therefore necessary\r\nto provide resources to support their operations and a good network to address\r\ncommunication barriers. Finally, continuous capacity strengthening of CHAT\r\nmembers by the NMCP is important."
+                    }
+                  ],
+                  "dc.identifier.uri": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "http://ugspace.ug.edu.gh:8080/handle/123456789/40013"
+                    }
+                  ],
+                  "dc.language.iso": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "en"
+                    }
+                  ],
+                  "dc.publisher": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Frontiers in Public Health"
+                    }
+                  ],
+                  "dc.subject": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "community health advocacy team"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 1,
+                      "value": "implementation research"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 2,
+                      "value": "intervention"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 3,
+                      "value": "long-lasting insecticide net"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 4,
+                      "value": "malaria"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 5,
+                      "value": "Ghana"
+                    }
+                  ],
+                  "dc.title": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Pilot implementation of community health advocacy teams to improve the e􀀀ectiveness of long-lasting insecticide net distribution through both campaigns and continuous channels in Ghana: a qualitative study of opportunities and barriers to implementation"
+                    }
+                  ],
+                  "dc.type": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Article"
+                    }
+                  ]
+                },
+                "name": "Pilot implementation of community health advocacy teams to improve the e􀀀ectiveness of long-lasting insecticide net distribution through both campaigns and continuous channels in Ghana: a qualitative study of opportunities and barriers to implementation",
+                "type": "item",
+                "uuid": "11b0aea6-0e31-4b22-a33e-26fddc5f281e",
+                "withdrawn": false
+              }
+            },
+            "_links": {
+              "indexableObject": {
+                "href": "https://ugspace.ug.edu.gh/server/api/core/items/11b0aea6-0e31-4b22-a33e-26fddc5f281e"
+              }
+            },
+            "hitHighlights": null,
+            "type": "discover"
+          },
+          {
+            "_embedded": {
+              "indexableObject": {
+                "_links": {
+                  "accessStatus": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/a9c30933-672e-4870-b245-3f55278b2f10/accessStatus"
+                  },
+                  "bundles": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/a9c30933-672e-4870-b245-3f55278b2f10/bundles"
+                  },
+                  "identifiers": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/a9c30933-672e-4870-b245-3f55278b2f10/identifiers"
+                  },
+                  "mappedCollections": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/a9c30933-672e-4870-b245-3f55278b2f10/mappedCollections"
+                  },
+                  "owningCollection": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/a9c30933-672e-4870-b245-3f55278b2f10/owningCollection"
+                  },
+                  "relationships": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/a9c30933-672e-4870-b245-3f55278b2f10/relationships"
+                  },
+                  "self": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/a9c30933-672e-4870-b245-3f55278b2f10"
+                  },
+                  "submitter": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/a9c30933-672e-4870-b245-3f55278b2f10/submitter"
+                  },
+                  "templateItemOf": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/a9c30933-672e-4870-b245-3f55278b2f10/templateItemOf"
+                  },
+                  "thumbnail": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/a9c30933-672e-4870-b245-3f55278b2f10/thumbnail"
+                  },
+                  "version": {
+                    "href": "https://ugspace.ug.edu.gh/server/api/core/items/a9c30933-672e-4870-b245-3f55278b2f10/version"
+                  }
+                },
+                "discoverable": true,
+                "entityType": null,
+                "handle": "123456789/35546",
+                "id": "a9c30933-672e-4870-b245-3f55278b2f10",
+                "inArchive": true,
+                "lastModified": "2020-07-10T11:42:46.386Z",
+                "metadata": {
+                  "dc.contributor.author": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "Aryeetey, R."
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 1,
+                      "value": "Lasisi, O."
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 2,
+                      "value": "Hromi-Fiedler, A."
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 3,
+                      "value": "Carroll, G."
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 4,
+                      "value": "Perez-Escamilla, R."
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 5,
+                      "value": "Harding, K."
+                    }
+                  ],
+                  "dc.date.accessioned": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2020-07-10T11:42:43Z"
+                    }
+                  ],
+                  "dc.date.available": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2020-07-10T11:42:43Z"
+                    }
+                  ],
+                  "dc.date.issued": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "2020-03-16"
+                    }
+                  ],
+                  "dc.description": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Research Article"
+                    }
+                  ],
+                  "dc.description.abstract": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Breastfeed4Ghana was a social media-based campaign implemented to address identified gaps in the protection, promotion,\r\nand support of breastfeeding in Ghana. This paper describes the process of campaign materials development and\r\ntesting to ensure their cultural and content appropriateness. The 60 campaign materials, each consisting of an image and\r\ntext message, underwent a process of creation, testing, revision, and finalization. Existing research evidence and infant and\r\nyoung child feeding communication tools that were culturally relevant for Ghana were used to develop the materials. All\r\nmaterials were tested and finalized through an iterative process that incorporated input from six focus group discussions\r\n(FGDs) with mothers, and content and technical experts. The materials were revised to ensure scientific accuracy, understandability,\r\nand cultural appropriateness of the messages, as well as alignment of the messages with the images. Finalized\r\nmaterials were reviewed and approved by the Ghana Food and Drugs Authority. Analysis for this paper involved summarizing\r\nand categorizing the types and sources of input as well as the research team’s responses to the input received. The 60\r\ncampaign materials received a total of 132 inputs. Most inputs came from FGDs (78.4%); and most inputs were on the\r\ncampaign material images. The evidence-informed process of materials creation, use of multiple input sources, and a\r\nbroad-based iterative process allowed the creation of 60 evidence-based and culturally appropriate materials for a\r\nbreastfeeding social media campaign in Ghana. This paper could serve as a guide for other social media campaign efforts\r\nlooking to develop culturally appropriate materials."
+                    }
+                  ],
+                  "dc.description.sponsorship": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "International Society for Research in Human Milk and\r\nLactation through Yale University (PI. Kassandra Harding),\r\nsubaward number GR101839 (CON-80001098)."
+                    }
+                  ],
+                  "dc.identifier.citation": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Aryeetey, R., Lasisi, O., Hromi-Fiedler, A., Carroll, G., Pérez-Escamilla, R., & Harding, K. (2020). Design and testing of communication materials for a breastfeeding social media marketing campaign: Breastfeed4Ghana. DIGITAL HEALTH. https://doi.org/10.1177/2055207620909291"
+                    }
+                  ],
+                  "dc.identifier.other": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "https://doi.org/10.1177/2055207620909291"
+                    }
+                  ],
+                  "dc.identifier.uri": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "http://ugspace.ug.edu.gh/handle/123456789/35546"
+                    }
+                  ],
+                  "dc.language.iso": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "en"
+                    }
+                  ],
+                  "dc.publisher": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Digital Health"
+                    }
+                  ],
+                  "dc.relation.ispartofseries": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": null,
+                      "place": 0,
+                      "value": "6;1-12"
+                    }
+                  ],
+                  "dc.subject": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Social media"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 1,
+                      "value": "breastfeeding"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 2,
+                      "value": "promotion"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 3,
+                      "value": "Ghana"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 4,
+                      "value": "messages"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 5,
+                      "value": "mothers"
+                    },
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 6,
+                      "value": "FGDs"
+                    }
+                  ],
+                  "dc.title": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Design and testing of communication materials for a breastfeeding social media marketing campaign: Breastfeed4Ghana"
+                    }
+                  ],
+                  "dc.type": [
+                    {
+                      "authority": null,
+                      "confidence": -1,
+                      "language": "en_US",
+                      "place": 0,
+                      "value": "Article"
+                    }
+                  ]
+                },
+                "name": "Design and testing of communication materials for a breastfeeding social media marketing campaign: Breastfeed4Ghana",
+                "type": "item",
+                "uuid": "a9c30933-672e-4870-b245-3f55278b2f10",
+                "withdrawn": false
+              }
+            },
+            "_links": {
+              "indexableObject": {
+                "href": "https://ugspace.ug.edu.gh/server/api/core/items/a9c30933-672e-4870-b245-3f55278b2f10"
+              }
+            },
+            "hitHighlights": null,
+            "type": "discover"
+          }
+        ]
+      },
+      "_links": {
+        "last": {
+          "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%20campaign&page=298&size=8"
+        },
+        "next": {
+          "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%20campaign&page=1&size=8"
+        },
+        "self": {
+          "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%20campaign&size=8"
+        }
+      },
+      "page": {
+        "number": 0,
+        "size": 8,
+        "totalElements": 2385,
+        "totalPages": 299
+      }
+    }
+  },
+  "_links": {
+    "self": {
+      "href": "https://ugspace.ug.edu.gh/server/api/discover/search/objects?query=public%2520campaign"
+    }
+  },
+  "appliedFilters": null,
+  "configuration": null,
+  "id": null,
+  "query": "public campaign",
+  "scope": null,
+  "sort": null,
+  "type": "discover"
+}

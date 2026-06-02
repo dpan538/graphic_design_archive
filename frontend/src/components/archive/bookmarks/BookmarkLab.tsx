@@ -177,6 +177,14 @@ function FolderRegisterBookmark({ folder }: { folder: Folder }) {
   );
 }
 
+export function FolderBookmarkLayout({ folder }: { folder: Folder }) {
+  return <FolderRegisterBookmark folder={folder} />;
+}
+
+export function ArchiveBookmarkSurface({ surface }: { surface: Surface }) {
+  return <TallIndexBookmark surface={surface} />;
+}
+
 function ReviewBookmark({ surface }: { surface: Surface }) {
   return (
     <BookmarkShell

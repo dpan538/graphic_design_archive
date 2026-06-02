@@ -13,14 +13,14 @@ This capture introduces a small number of post-1990 independent and Southeast As
 
 ## Summary
 
-- Captured records: 22
+- Captured records: 17
 - Sources: 2
-- Image states: {'IMG02': 20, 'IMG04': 2}
+- Image states: {'IMG02': 16, 'IMG04': 1}
 
 ## Source Counts
 
-- Another Graphic: 8
-- Malaysia Design Archive: 14
+- Another Graphic: 6
+- Malaysia Design Archive: 11
 
 ## Source Probe Results
 

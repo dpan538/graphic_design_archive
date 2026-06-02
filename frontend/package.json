@@ -7,6 +7,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "preview:main-sheets": "next dev --hostname 127.0.0.1 --port 3038",
+    "capture:main-sheets": "node scripts/capture-main-sheets.js",
+    "preview:sub-sheets": "next dev --hostname 127.0.0.1 --port 3039",
+    "capture:sub-sheets": "node scripts/capture-sub-sheets.js",
+    "preview:text-pages": "next dev --hostname 127.0.0.1 --port 3037",
+    "capture:text-pages": "node scripts/capture-text-pages.js",
     "lint": "next lint"
   },
   "dependencies": {

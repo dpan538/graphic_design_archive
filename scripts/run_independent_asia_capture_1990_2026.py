@@ -22,6 +22,7 @@ from typing import Any
 
 import run_midcentury_capture_1930_1970 as mc
 import run_midcentury_expansion_capture_1931_1970 as mx
+from contemporary_noise_filter import evaluate_record
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -392,6 +393,19 @@ def assign_ids(rows: list[dict[str, str]]) -> None:
         row["capture_id"] = f"IAC1990R{index:03d}"
 
 
+def apply_noise_filter(rows: list[dict[str, str]]) -> tuple[list[dict[str, str]], Counter[str]]:
+    decisions: Counter[str] = Counter()
+    kept: list[dict[str, str]] = []
+    for row in rows:
+        decision = evaluate_record(row)
+        decisions[decision.decision] += 1
+        row["noise_filter_decision"] = decision.decision
+        row["noise_filter_reason"] = decision.reason
+        if decision.decision in {"include_candidate", "downgrade_candidate"}:
+            kept.append(row)
+    return kept, decisions
+
+
 def write_csv(path: Path, rows: list[dict[str, str]], fieldnames: list[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as f:
@@ -444,11 +458,16 @@ def main() -> None:
         captured, summary = capture(seen)
         rows.extend(captured)
         summaries.append(summary)
+    rows, noise_decisions = apply_noise_filter(rows)
     assign_ids(rows)
     write_csv(RECORDS_CSV, rows, FIELDNAMES)
     write_csv(SUMMARY_CSV, summaries, ["source_name", "status", "captured_records", "failure_count"])
     write_report(rows, summaries)
-    print(f"captured={len(rows)} sources={len({row['source_name'] for row in rows})} image_states={dict(Counter(row['image_presence_code'] for row in rows))}")
+    print(
+        f"captured={len(rows)} sources={len({row['source_name'] for row in rows})} "
+        f"image_states={dict(Counter(row['image_presence_code'] for row in rows))} "
+        f"noise_filter={dict(noise_decisions)}"
+    )
     print(f"wrote {RECORDS_CSV.relative_to(ROOT)}")
     print(f"wrote {SUMMARY_CSV.relative_to(ROOT)}")
     print(f"wrote {REPORT.relative_to(ROOT)}")

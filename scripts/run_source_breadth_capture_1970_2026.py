@@ -23,6 +23,7 @@ from typing import Any
 
 import run_midcentury_capture_1930_1970 as mc
 import run_midcentury_expansion_capture_1931_1970 as mx
+from contemporary_noise_filter import evaluate_record
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -66,6 +67,19 @@ GRAPHIC_TERMS = (
 def clean(value: Any, *, max_chars: int = 900) -> str:
     text = html.unescape(re.sub(r"\s+", " ", str(value or "")).strip())
     return text[:max_chars]
+
+
+def apply_noise_filter(rows: list[dict[str, str]]) -> tuple[list[dict[str, str]], Counter[str]]:
+    decisions: Counter[str] = Counter()
+    kept: list[dict[str, str]] = []
+    for row in rows:
+        decision = evaluate_record(row)
+        decisions[decision.decision] += 1
+        row["noise_filter_decision"] = decision.decision
+        row["noise_filter_reason"] = decision.reason
+        if decision.decision in {"include_candidate", "downgrade_candidate"}:
+            kept.append(row)
+    return kept, decisions
 
 
 def strip_tags(value: str, *, max_chars: int = 900) -> str:
@@ -586,14 +600,27 @@ def assign_ids(rows: list[dict[str, str]]) -> None:
 
 
 def write_outputs(rows: list[dict[str, str]], summaries: list[dict[str, str]]) -> None:
+    output_rows: list[dict[str, str]] = []
+    for row in rows:
+        clean_row = dict(row)
+        noise_decision = clean_row.pop("noise_filter_decision", "")
+        noise_reason = clean_row.pop("noise_filter_reason", "")
+        if noise_decision or noise_reason:
+            note = clean_row.get("uncertainty_note", "")
+            clean_row["uncertainty_note"] = clean(
+                " | ".join(part for part in [note, f"Noise filter: {noise_decision} {noise_reason}".strip()] if part),
+                max_chars=900,
+            )
+        output_rows.append({field: clean_row.get(field, "") for field in FIELDNAMES})
+
     with RECORDS_CSV.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=FIELDNAMES, lineterminator="\n")
         writer.writeheader()
-        writer.writerows(rows)
+        writer.writerows(output_rows)
 
     summary_fields = ["source_name", "status", "captured_records", "failure_count", "image_states", "notes"]
     image_by_source: dict[str, Counter[str]] = {}
-    for row in rows:
+    for row in output_rows:
         image_by_source.setdefault(row["source_name"], Counter())[row["image_presence_code"]] += 1
     for summary in summaries:
         images = image_by_source.get(summary["source_name"], Counter())
@@ -604,9 +631,9 @@ def write_outputs(rows: list[dict[str, str]], summaries: list[dict[str, str]]) -
         writer.writeheader()
         writer.writerows(summaries)
 
-    image_counts = Counter(row["image_presence_code"] for row in rows)
-    source_counts = Counter(row["source_name"] for row in rows)
-    region_counts = Counter(row["source_place_text"] for row in rows)
+    image_counts = Counter(row["image_presence_code"] for row in output_rows)
+    source_counts = Counter(row["source_name"] for row in output_rows)
+    region_counts = Counter(row["source_place_text"] for row in output_rows)
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     lines = [
         "# Source Breadth Capture 1970-2026",
@@ -752,10 +779,12 @@ def main() -> None:
         all_rows.extend(rows)
         summaries.append(summary)
         time.sleep(0.5)
+    all_rows, noise_decisions = apply_noise_filter(all_rows)
     assign_ids(all_rows)
     write_outputs(all_rows, summaries)
     print(f"captured={len(all_rows)} sources={len(set(row['source_name'] for row in all_rows))}")
     print("image_states=" + json.dumps(dict(Counter(row["image_presence_code"] for row in all_rows)), sort_keys=True))
+    print("noise_filter=" + json.dumps(dict(noise_decisions), sort_keys=True))
 
 
 if __name__ == "__main__":

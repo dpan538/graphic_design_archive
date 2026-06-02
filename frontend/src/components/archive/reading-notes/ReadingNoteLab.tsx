@@ -1,7 +1,9 @@
 import type { Folder, FolderTypeKey, Surface } from "@/types/archive";
 import {
+  FOLDER_TYPE_ORDER,
   dateSpanLabel,
   getFolder,
+  getFolderById,
   getFolderInk,
   getFolderType,
   getSurfacesForFolder,
@@ -31,6 +33,13 @@ interface ReadingNoteContext {
   color: string;
 }
 
+const RECORD_RULES = {
+  RN01: { max: 3, title: 54, source: 54 },
+  RN02: { leftMax: 3, rightMax: 4, title: 38, source: 42 },
+  RN03: { max: 1, title: 48, source: 42 },
+  RN04: { max: 3, title: 48, source: 56 },
+} as const;
+
 function mustFolder(type: FolderTypeKey, slug: string): Folder {
   const folder = getFolder(type, slug);
   if (!folder) throw new Error(`Missing reading-note test folder: ${type}/${slug}`);
@@ -44,6 +53,26 @@ function clip(text: string | null | undefined, max = 96): string {
   return `${value.slice(0, max - 1).trim()}...`;
 }
 
+function clean(text: string | null | undefined): string {
+  return text?.replace(/\s+/g, " ").trim() || "unrecorded";
+}
+
+function strictFittedSamples(
+  surfaces: Surface[],
+  max: number,
+  limits: { title: number; source: number },
+): Surface[] {
+  return surfaces
+    .filter(
+      (surface) =>
+        clean(surface.title).length <= limits.title &&
+        clean(surface.sourceName).length <= limits.source &&
+        !/\.(jpe?g|png|gif|tif|tiff|webp)$/i.test(clean(surface.title)) &&
+        !/^\[/.test(clean(surface.title)),
+    )
+    .slice(0, max);
+}
+
 function noteContext(folder: Folder, layoutId?: ReadingNoteLayoutId): ReadingNoteContext {
   const surfaces = sortChronologically(getSurfacesForFolder(folder));
   const resolved = layoutId ?? selectReadingNoteLayout(folder);
@@ -52,7 +81,7 @@ function noteContext(folder: Folder, layoutId?: ReadingNoteLayoutId): ReadingNot
     folderLabel: getFolderType(folder.type)?.label ?? folder.type,
     layoutId: resolved,
     surfaces,
-    samples: surfaces.slice(0, 8),
+    samples: surfaces.slice(0, 10),
     imageCounts: imageDistribution(surfaces),
     sourceTotal: sourceCount(surfaces),
     color: getFolderInk(folder.type),
@@ -64,8 +93,9 @@ function folderSpan(folder: Folder): string {
 }
 
 function compactFolderId(folder: Folder): string {
-  const slugHead = folder.slug.split("-").slice(0, 2).join("-");
-  return `${folder.type.toUpperCase()}/${slugHead}`;
+  const typeHead = folder.type.slice(0, 3).toUpperCase();
+  const slugHead = folder.slug.split("-")[0]?.slice(0, 4).toUpperCase() ?? "FOLD";
+  return `${typeHead}/${slugHead}`;
 }
 
 function compactLayoutId(layoutId: ReadingNoteLayoutId): string {
@@ -74,13 +104,18 @@ function compactLayoutId(layoutId: ReadingNoteLayoutId): string {
 
 function NoteBadges({ ctx }: { ctx: ReadingNoteContext }) {
   const types = new Set<FolderTypeKey>([ctx.folder.type]);
+  for (const folderId of ctx.folder.relatedFolderIds) {
+    const related = getFolderById(folderId);
+    if (related) types.add(related.type);
+  }
   for (const surface of ctx.samples) {
     for (const ref of surface.folders) types.add(ref.type);
   }
+  const orderedTypes = FOLDER_TYPE_ORDER.filter((type) => types.has(type));
   return (
     <div className="reading-note__badges" aria-label={`${ctx.folder.title} folder colors`}>
-      {[...types].slice(0, 4).map((type) => (
-        <span key={type} style={{ backgroundColor: getFolderInk(type) }} />
+      {orderedTypes.map((type) => (
+        <span key={type} title={type} style={{ backgroundColor: getFolderInk(type) }} />
       ))}
     </div>
   );
@@ -96,17 +131,84 @@ function MicroFooter({ ctx }: { ctx: ReadingNoteContext }) {
   );
 }
 
-function SampleRows({ surfaces, max = 5 }: { surfaces: Surface[]; max?: number }) {
+function SampleRows({
+  surfaces,
+  max = 5,
+  dateMax = 14,
+  titleMax = 58,
+  sourceMax = 30,
+}: {
+  surfaces: Surface[];
+  max?: number;
+  dateMax?: number;
+  titleMax?: number;
+  sourceMax?: number;
+}) {
   return (
     <ol className="reading-note__rows">
       {surfaces.slice(0, max).map((surface) => (
         <li key={surface.surfaceId}>
-          <span>{clip(surface.dateText, 14)}</span>
-          <strong>{clip(surface.title, 58)}</strong>
-          <em>{clip(surface.sourceName, 30)}</em>
+          <span>{clip(surface.dateText, dateMax)}</span>
+          <strong>{clip(surface.title, titleMax)}</strong>
+          <em>{clip(surface.sourceName, sourceMax)}</em>
         </li>
       ))}
     </ol>
+  );
+}
+
+function OpenRecordRows({ surfaces, max = 4 }: { surfaces: Surface[]; max?: number }) {
+  const records = strictFittedSamples(surfaces, max, {
+    title: RECORD_RULES.RN01.title,
+    source: RECORD_RULES.RN01.source,
+  });
+  return (
+    <ol className="reading-note__open-records">
+      {records.map((surface) => (
+        <li key={surface.surfaceId}>
+          <span>{clean(surface.dateText)}</span>
+          <strong>{clean(surface.title)}</strong>
+          <em>{clean(surface.sourceName)}</em>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+function StripRecordRows({ surfaces, max = 4 }: { surfaces: Surface[]; max?: number }) {
+  const records = strictFittedSamples(surfaces, max, {
+    title: RECORD_RULES.RN02.title,
+    source: RECORD_RULES.RN02.source,
+  });
+  return (
+    <ol className="reading-note__strip-records">
+      {records.map((surface) => (
+        <li key={surface.surfaceId}>
+          <span>{clean(surface.dateText)}</span>
+          <b>{surface.surfaceId.replace("SURF-", "")}</b>
+          <strong>{clean(surface.title)}</strong>
+          <em>{clean(surface.sourceName)}</em>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+function LedgerRows({ surfaces, max = 4 }: { surfaces: Surface[]; max?: number }) {
+  const records = strictFittedSamples(surfaces, max, {
+    title: RECORD_RULES.RN04.title,
+    source: RECORD_RULES.RN04.source,
+  });
+  return (
+    <>
+      {records.map((surface) => (
+        <div key={surface.surfaceId} className="reading-note__ledger-row">
+          <b>{clean(surface.dateText)}</b>
+          <strong>{clean(surface.title)}</strong>
+          <em>{clean(surface.sourceName)}</em>
+        </div>
+      ))}
+    </>
   );
 }
 
@@ -151,7 +253,7 @@ function RN01Stacked({ ctx }: { ctx: ReadingNoteContext }) {
           <p>IMG00 keeps the image bay empty and returns attention to source evidence.</p>
           <p>IMG04 removes the image bay and sends table overflow to appendix leaves.</p>
         </div>
-        <SampleRows surfaces={ctx.samples} max={4} />
+        <OpenRecordRows surfaces={ctx.surfaces} max={RECORD_RULES.RN01.max} />
         <MicroFooter ctx={ctx} />
       </section>
     </article>
@@ -159,25 +261,40 @@ function RN01Stacked({ ctx }: { ctx: ReadingNoteContext }) {
 }
 
 function RN02PairStrip({ ctx }: { ctx: ReadingNoteContext }) {
-  const leftSamples = ctx.samples.slice(0, 4);
-  const rightSamples = ctx.samples.slice(4, 8);
+  const leftSamples = ctx.surfaces.slice(0, 18);
+  const rightSamples = ctx.surfaces.slice(8, 34);
   return (
     <article className="reading-note reading-note--pair-strip" style={{ ["--note-color" as string]: ctx.color }}>
       <section className="reading-note__strip reading-note__strip--left">
         <NoteBadges ctx={ctx} />
-        <p className="reading-note__kicker">SCHEDULE</p>
+        <p className="reading-note__kicker">THEME FOLDER</p>
         <h2>{ctx.folder.title}</h2>
+        <p className="reading-note__strip-note">{clean(ctx.folder.scopeNote)}</p>
         <FactGrid ctx={ctx} />
-        <SampleRows surfaces={leftSamples} max={4} />
+        <StripRecordRows surfaces={leftSamples} max={RECORD_RULES.RN02.leftMax} />
       </section>
       <section className="reading-note__strip reading-note__strip--right">
-        <p className="reading-note__kicker">EXPLORE</p>
+        <p className="reading-note__kicker">SOURCE EVIDENCE</p>
+        <h2>Chronological sample</h2>
         <div className="reading-note__split-rule">
-          <span>source</span>
-          <span>note</span>
+          <span>date</span>
+          <span>record</span>
         </div>
-        <SampleRows surfaces={rightSamples.length > 0 ? rightSamples : leftSamples} max={4} />
-        <p className="reading-note__scope">{clip(ctx.folder.scopeNote, 120)}</p>
+        <StripRecordRows surfaces={rightSamples.length > 0 ? rightSamples : leftSamples} max={RECORD_RULES.RN02.rightMax} />
+        <dl className="reading-note__strip-mini">
+          <div>
+            <dt>image policy</dt>
+            <dd>IMG00 empty; IMG04 appendix only</dd>
+          </div>
+          <div>
+            <dt>sort order</dt>
+            <dd>chronological by reviewed date span</dd>
+          </div>
+          <div>
+            <dt>source count</dt>
+            <dd>{ctx.sourceTotal} sources / {ctx.folder.surfaceIds.length} records</dd>
+          </div>
+        </dl>
         <MicroFooter ctx={ctx} />
       </section>
     </article>
@@ -185,7 +302,10 @@ function RN02PairStrip({ ctx }: { ctx: ReadingNoteContext }) {
 }
 
 function RN03SparseStrip({ ctx }: { ctx: ReadingNoteContext }) {
-  const sample = ctx.samples[0];
+  const sample = strictFittedSamples(ctx.surfaces, RECORD_RULES.RN03.max, {
+    title: RECORD_RULES.RN03.title,
+    source: RECORD_RULES.RN03.source,
+  })[0] ?? ctx.samples[0];
   return (
     <article className="reading-note reading-note--sparse-strip" style={{ ["--note-color" as string]: ctx.color }}>
       <NoteBadges ctx={ctx} />
@@ -197,7 +317,7 @@ function RN03SparseStrip({ ctx }: { ctx: ReadingNoteContext }) {
         <span>R</span><span>E</span><span>A</span><span>D</span>
       </div>
       <h2>{ctx.folder.title}</h2>
-      <p>{clip(sample?.title ?? ctx.folder.scopeNote, 76)}</p>
+      <p>{clean(sample?.title ?? ctx.folder.scopeNote)}</p>
       <div className="reading-note__spaced-word" aria-label="source">
         <span>S</span><span>O</span><span>U</span><span>R</span><span>C</span><span>E</span>
       </div>
@@ -236,13 +356,7 @@ function RN04Ledger({ ctx }: { ctx: ReadingNoteContext }) {
         <span>DATE</span>
         <span>TITLE</span>
         <span>SOURCE</span>
-        {ctx.samples.slice(0, 4).map((surface) => (
-          <div key={surface.surfaceId} className="reading-note__ledger-row">
-            <b>{clip(surface.dateText, 12)}</b>
-            <strong>{clip(surface.title, 32)}</strong>
-            <em>{clip(surface.sourceName, 18)}</em>
-          </div>
-        ))}
+        <LedgerRows surfaces={ctx.surfaces} max={RECORD_RULES.RN04.max} />
       </div>
       <MicroFooter ctx={ctx} />
     </article>
@@ -261,7 +375,7 @@ export default function ReadingNoteLab() {
   const notes: Array<[ReadingNoteLayoutId, Folder]> = [
     ["RN01.stack", mustFolder("region", "united-kingdom")],
     ["RN02.pair-strip", mustFolder("theme", "travel-and-transport-poster-culture")],
-    ["RN03.sparse-strip", mustFolder("region", "india")],
+    ["RN03.sparse-strip", mustFolder("region", "belgium")],
     ["RN04.ledger", mustFolder("medium", "publication-design")],
   ];
   return (
@@ -279,9 +393,11 @@ export default function ReadingNoteLab() {
         </dl>
       </header>
       <section className="reading-note-lab__grid" aria-label="Reading note layouts">
-        {notes.map(([layoutId, folder]) => (
-          <ReadingNoteLayout key={layoutId} folder={folder} layoutId={layoutId} />
-        ))}
+        <div className="reading-note-lab__row reading-note-lab__row--all">
+          {notes.map(([layoutId, folder]) => (
+            <ReadingNoteLayout key={layoutId} folder={folder} layoutId={layoutId} />
+          ))}
+        </div>
       </section>
     </main>
   );

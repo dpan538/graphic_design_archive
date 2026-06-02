@@ -1,0 +1,848 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="uk" version="XHTML+RDFa 1.0" dir="ltr"
+  xmlns:fb="http://www.facebook.com/2008/fbml"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="alternate" type="application/rss+xml" title="Національна бібліотека України імені В. І. Вернадського RSS" href="http://www.nbuv.gov.ua/rss.xml" />
+<meta name="Generator" content="Національна бібліотека імені В. І. Вернадського" />
+  <title>Національна бібліотека України імені В. І. Вернадського</title>
+  <style type="text/css" media="all">
+@import url("http://www.nbuv.gov.ua/modules/system/system.base.css?tfpkiz");
+@import url("http://www.nbuv.gov.ua/modules/system/system.messages.css?tfpkiz");
+@import url("http://www.nbuv.gov.ua/modules/system/system.theme.css?tfpkiz");
+</style>
+<style type="text/css" media="all">
+@import url("http://www.nbuv.gov.ua/sites/all/modules/scroll_to_top/scroll_to_top.css?tfpkiz");
+@import url("http://www.nbuv.gov.ua/modules/book/book.css?tfpkiz");
+@import url("http://www.nbuv.gov.ua/sites/all/modules/calendar/css/calendar_multiday.css?tfpkiz");
+@import url("http://www.nbuv.gov.ua/modules/comment/comment.css?tfpkiz");
+@import url("http://www.nbuv.gov.ua/sites/all/modules/date/date_api/date.css?tfpkiz");
+@import url("http://www.nbuv.gov.ua/sites/all/modules/date/date_popup/themes/datepicker.1.7.css?tfpkiz");
+@import url("http://www.nbuv.gov.ua/sites/all/modules/date/date_repeat_field/date_repeat_field.css?tfpkiz");
+@import url("http://www.nbuv.gov.ua/modules/field/theme/field.css?tfpkiz");
+@import url("http://www.nbuv.gov.ua/sites/all/modules/menu_attach_block/menu_attach_block.css?tfpkiz");
+@import url("http://www.nbuv.gov.ua/modules/node/node.css?tfpkiz");
+@import url("http://www.nbuv.gov.ua/modules/search/search.css?tfpkiz");
+@import url("http://www.nbuv.gov.ua/modules/user_resev/user.css?tfpkiz");
+@import url("http://www.nbuv.gov.ua/sites/all/modules/youtube/css/youtube.css?tfpkiz");
+@import url("http://www.nbuv.gov.ua/sites/all/modules/views/css/views.css?tfpkiz");
+@import url("http://www.nbuv.gov.ua/sites/all/modules/ckeditor/css/ckeditor.css?tfpkiz");
+</style>
+<style type="text/css" media="all">
+@import url("http://www.nbuv.gov.ua/sites/all/modules/cctags/cctags.css?tfpkiz");
+@import url("http://www.nbuv.gov.ua/sites/all/modules/ctools/css/ctools.css?tfpkiz");
+@import url("http://www.nbuv.gov.ua/sites/all/modules/lightbox2/css/lightbox.css?tfpkiz");
+@import url("http://www.nbuv.gov.ua/sites/all/modules/megamenu/megamenu.css?tfpkiz");
+@import url("http://www.nbuv.gov.ua/sites/all/modules/megamenu/megamenu-skins.css?tfpkiz");
+</style>
+<style type="text/css" media="all">
+<!--/*--><![CDATA[/*><!--*/
+#back-top{right:40px;}#back-top span#button{background-color:#DDB58C;}#back-top span#button:hover{opacity:1;filter:alpha(opacity = 1);background-color:#CC9966;}
+
+/*]]>*/-->
+</style>
+<style type="text/css" media="all">
+@import url("http://www.nbuv.gov.ua/sites/all/themes/nbuv/css/template.css?tfpkiz");
+</style>
+  <script type="text/javascript" src="http://www.nbuv.gov.ua/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/misc/drupal.js?tfpkiz"></script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/misc/jquery.cookie.js?v=1.0"></script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/misc/jquery.form.js?v=2.52"></script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/misc/ajax.js?v=7.55-dev"></script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/sites/all/modules/menu_attach_block/menu_attach_block.js?tfpkiz"></script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/sites/default/files/languages/uk_PM8G1JJmEFpsgP1fJ6n4dD9JOIQbsLDTrRmY6oCLgGQ.js?tfpkiz"></script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/sites/all/themes/nbuv/js/jquery-ui-1.8.18.custom.min.js?tfpkiz"></script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/sites/all/themes/nbuv/js/jquery.tabs.setup.js?tfpkiz"></script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/sites/all/themes/nbuv/js/jquery.jcarousel.min.js?tfpkiz"></script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/sites/all/themes/nbuv/js/click-carousel.min.js?tfpkiz"></script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/sites/all/themes/nbuv/js/flashembed.min.js?tfpkiz"></script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/sites/all/modules/iframe/iframe.js?tfpkiz"></script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/sites/all/modules/megamenu/megamenu.js?tfpkiz"></script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/sites/all/modules/scroll_to_top/scroll_to_top.js?tfpkiz"></script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/sites/all/modules/views/js/base.js?tfpkiz"></script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/misc/progress.js?v=7.55-dev"></script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/sites/all/modules/views/js/ajax_view.js?tfpkiz"></script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/sites/all/modules/google_analytics/googleanalytics.js?tfpkiz"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-38749943-1"]);_gaq.push(["_setDomainName", ".nbuv.gov.ua"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/sites/all/themes/nbuv/js/flexcroll.js?tfpkiz"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"nbuv","theme_token":"w0sXU_jf4vpGYioHhVgWNA9Qs_RtrDaPVfwfB2ZCUfU","js":{"sites\/all\/modules\/lightbox2\/js\/auto_image_handling.js":1,"sites\/all\/modules\/lightbox2\/js\/lightbox.js":1,"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/menu_attach_block\/menu_attach_block.js":1,"public:\/\/languages\/uk_PM8G1JJmEFpsgP1fJ6n4dD9JOIQbsLDTrRmY6oCLgGQ.js":1,"sites\/all\/themes\/nbuv\/js\/jquery-ui-1.8.18.custom.min.js":1,"sites\/all\/themes\/nbuv\/js\/jquery.tabs.setup.js":1,"sites\/all\/themes\/nbuv\/js\/jquery.jcarousel.min.js":1,"sites\/all\/themes\/nbuv\/js\/click-carousel.min.js":1,"sites\/all\/themes\/nbuv\/js\/flashembed.min.js":1,"sites\/all\/modules\/iframe\/iframe.js":1,"sites\/all\/modules\/megamenu\/megamenu.js":1,"sites\/all\/modules\/scroll_to_top\/scroll_to_top.js":1,"sites\/all\/modules\/views\/js\/base.js":1,"misc\/progress.js":1,"sites\/all\/modules\/views\/js\/ajax_view.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/themes\/nbuv\/js\/flexcroll.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/scroll_to_top\/scroll_to_top.css":1,"modules\/book\/book.css":1,"sites\/all\/modules\/calendar\/css\/calendar_multiday.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/menu_attach_block\/menu_attach_block.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user_resev\/user.css":1,"sites\/all\/modules\/youtube\/css\/youtube.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/cctags\/cctags.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/lightbox2\/css\/lightbox.css":1,"sites\/all\/modules\/megamenu\/megamenu.css":1,"sites\/all\/modules\/megamenu\/megamenu-skins.css":1,"0":1,"sites\/all\/themes\/nbuv\/system.menus.css":1,"sites\/all\/themes\/nbuv\/css\/template.css":1}},"lightbox2":{"rtl":"0","file_path":"\/(\\w\\w\/)public:\/","default_image":"\/sites\/all\/modules\/lightbox2\/images\/brokenimage.jpg","border_size":8,"font_color":"000","box_color":"fff","top_position":"","overlay_opacity":"0.8","overlay_color":"000","disable_close_click":1,"resize_sequence":0,"resize_speed":400,"fade_in_speed":400,"slide_down_speed":600,"use_alt_layout":0,"disable_resize":0,"disable_zoom":0,"force_show_nav":0,"show_caption":1,"loop_items":1,"node_link_text":"","node_link_target":0,"image_count":"\u0417\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u043d\u044f !current \u0437 !total","video_count":"\u0412\u0456\u0434\u0435\u043e !current \u0437 !total","page_count":"\u0421\u0442\u043e\u0440\u0456\u043d\u043a\u0430 !current \u0437 !total","lite_press_x_close":"press \u003Ca href=\u0022#\u0022 onclick=\u0022hideLightbox(); return FALSE;\u0022\u003E\u003Ckbd\u003Ex\u003C\/kbd\u003E\u003C\/a\u003E to close","download_link_text":"","enable_login":false,"enable_contact":false,"keys_close":"c x 27","keys_previous":"p 37","keys_next":"n 39","keys_zoom":"z","keys_play_pause":"32","display_image_size":"original","image_node_sizes":"(\\.thumbnail)","trigger_lightbox_classes":"img.thumbnail, img.image-thumbnail","trigger_lightbox_group_classes":"","trigger_slideshow_classes":"","trigger_lightframe_classes":"","trigger_lightframe_group_classes":"","custom_class_handler":0,"custom_trigger_classes":"","disable_for_gallery_lists":1,"disable_for_acidfree_gallery_lists":true,"enable_acidfree_videos":true,"slideshow_interval":5000,"slideshow_automatic_start":true,"slideshow_automatic_exit":true,"show_play_pause":true,"pause_on_next_click":false,"pause_on_previous_click":true,"loop_slides":false,"iframe_width":600,"iframe_height":400,"iframe_border":1,"enable_video":0},"megamenu":{"timeout":"500","sizewait":"250","hoverwait":"400"},"scroll_to_top":{"label":"\u0432\u0433\u043e\u0440\u0443"},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:8b98613dfd0abf92ef358e113459f02d":{"view_name":"rotator_show","view_display_id":"block","view_args":"","view_path":"node","view_base_path":null,"view_dom_id":"8b98613dfd0abf92ef358e113459f02d","pager_element":0}}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip","trackDomainMode":"1"},"urlIsAjaxTrusted":{"\/":true}});
+//--><!]]>
+</script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5T3RXE6KJ4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5T3RXE6KJ4');
+  </script>
+</head>
+
+<body id="top">
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Перейти до основного матеріалу</a>
+  </div>
+
+    ﻿<div class="wrapper row1">
+  <div id="header" class="clear">
+    <div class="freewifi">
+
+  <div class="fl_left">
+      <a href="/" style="text-decoration: none"><h1>Національна бібліотека України</h1>
+      <p>імені В. І. Вернадського</p></a>
+      <div id="headline"></div>
+  </div>
+    <style>
+           .scale {
+            z-index: 999999;
+            width: 75px; /* Ширина картинки */
+            transition: 1s; /* Час эфекта */
+           }
+           .scale:hover {
+            transform-origin: top; /* Збільшення масштабу від верхнього прив'язки */
+            transform: scale(3); /* Значення масштабу для збільшення */
+           }
+        </style>
+    <div><a href="https://www.ifla.org/members/" target="_blank"><img src="/sites/all/themes/nbuv/images/Member2026.png" alt="IFLA Member" title="IFLA Member" border="0" style="right:300px;" class="scale" /></a>
+    </div>
+    <div class="fl_right">
+        <div class="region region-toplink">
+    <div id="block-gtranslate-gtranslate" class="block block-gtranslate">
+
+
+  <div class="content">
+    <script type="text/javascript">
+/* <![CDATA[ */
+eval(unescape("eval%28function%28p%2Ca%2Cc%2Ck%2Ce%2Cr%29%7Be%3Dfunction%28c%29%7Breturn%28c%3Ca%3F%27%27%3Ae%28parseInt%28c/a%29%29%29+%28%28c%3Dc%25a%29%3E35%3FString.fromCharCode%28c+29%29%3Ac.toString%2836%29%29%7D%3Bif%28%21%27%27.replace%28/%5E/%2CString%29%29%7Bwhile%28c--%29r%5Be%28c%29%5D%3Dk%5Bc%5D%7C%7Ce%28c%29%3Bk%3D%5Bfunction%28e%29%7Breturn%20r%5Be%5D%7D%5D%3Be%3Dfunction%28%29%7Breturn%27%5C%5Cw+%27%7D%3Bc%3D1%7D%3Bwhile%28c--%29if%28k%5Bc%5D%29p%3Dp.replace%28new%20RegExp%28%27%5C%5Cb%27+e%28c%29+%27%5C%5Cb%27%2C%27g%27%29%2Ck%5Bc%5D%29%3Breturn%20p%7D%28%276%207%28a%2Cb%29%7Bn%7B4%282.9%29%7B3%20c%3D2.9%28%22o%22%29%3Bc.p%28b%2Cf%2Cf%29%3Ba.q%28c%29%7Dg%7B3%20c%3D2.r%28%29%3Ba.s%28%5C%27t%5C%27+b%2Cc%29%7D%7Du%28e%29%7B%7D%7D6%20h%28a%29%7B4%28a.8%29a%3Da.8%3B4%28a%3D%3D%5C%27%5C%27%29v%3B3%20b%3Da.w%28%5C%27%7C%5C%27%29%5B1%5D%3B3%20c%3B3%20d%3D2.x%28%5C%27y%5C%27%29%3Bz%283%20i%3D0%3Bi%3Cd.5%3Bi++%294%28d%5Bi%5D.A%3D%3D%5C%27B-C-D%5C%27%29c%3Dd%5Bi%5D%3B4%282.j%28%5C%27k%5C%27%29%3D%3DE%7C%7C2.j%28%5C%27k%5C%27%29.l.5%3D%3D0%7C%7Cc.5%3D%3D0%7C%7Cc.l.5%3D%3D0%29%7BF%286%28%29%7Bh%28a%29%7D%2CG%29%7Dg%7Bc.8%3Db%3B7%28c%2C%5C%27m%5C%27%29%3B7%28c%2C%5C%27m%5C%27%29%7D%7D%27%2C43%2C43%2C%27%7C%7Cdocument%7Cvar%7Cif%7Clength%7Cfunction%7CGTranslateFireEvent%7Cvalue%7CcreateEvent%7C%7C%7C%7C%7C%7Ctrue%7Celse%7CdoGTranslate%7C%7CgetElementById%7Cgoogle_translate_element2%7CinnerHTML%7Cchange%7Ctry%7CHTMLEvents%7CinitEvent%7CdispatchEvent%7CcreateEventObject%7CfireEvent%7Con%7Ccatch%7Creturn%7Csplit%7CgetElementsByTagName%7Cselect%7Cfor%7CclassName%7Cgoog%7Cte%7Ccombo%7Cnull%7CsetTimeout%7C500%27.split%28%27%7C%27%29%2C0%2C%7B%7D%29%29"))
+/* ]]> */
+</script><style type="text/css">
+<!--
+#goog-gt-tt {display:none !important;}
+
+.goog-te-banner-frame {display:none !important;}
+
+.goog-te-menu-value:hover {text-decoration:none !important;}
+
+body {top:0 !important;}
+
+#google_translate_element2 {display:none!important;}
+-->
+</style><div id="google_translate_element2"></div>
+<script type="text/javascript">function googleTranslateElementInit2() {new google.translate.TranslateElement({pageLanguage: 'uk', autoDisplay: false}, 'google_translate_element2');}</script>
+<script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script><select onchange="doGTranslate(this);"><option value="">Оберіть мову</option><option value="uk|uk" style="font-weight:bold;background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -528px;padding-left:18px;">Ukrainian</option><option value="uk|ar" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -16px;padding-left:18px;">Arabic</option><option value="uk|hy" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -832px;padding-left:18px;">Armenian</option><option value="uk|az" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -848px;padding-left:18px;">Azerbaijani</option><option value="uk|be" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -768px;padding-left:18px;">Belarusian</option><option value="uk|bg" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -32px;padding-left:18px;">Bulgarian</option><option value="uk|zh-CN" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -48px;padding-left:18px;">Chinese (Simplified)</option><option value="uk|zh-TW" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -64px;padding-left:18px;">Chinese (Traditional)</option><option value="uk|cs" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -96px;padding-left:18px;">Czech</option><option value="uk|da" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -112px;padding-left:18px;">Danish</option><option value="uk|nl" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -128px;padding-left:18px;">Dutch</option><option value="uk|en" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -0px;padding-left:18px;">English</option><option value="uk|et" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -576px;padding-left:18px;">Estonian</option><option value="uk|fi" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -144px;padding-left:18px;">Finnish</option><option value="uk|fr" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -160px;padding-left:18px;">French</option><option value="uk|ka" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -880px;padding-left:18px;">Georgian</option><option value="uk|de" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -176px;padding-left:18px;">German</option><option value="uk|el" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -192px;padding-left:18px;">Greek</option><option value="uk|iw" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -416px;padding-left:18px;">Hebrew</option><option value="uk|hi" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -208px;padding-left:18px;">Hindi</option><option value="uk|hu" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -608px;padding-left:18px;">Hungarian</option><option value="uk|is" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -784px;padding-left:18px;">Icelandic</option><option value="uk|ga" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -736px;padding-left:18px;">Irish</option><option value="uk|it" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -224px;padding-left:18px;">Italian</option><option value="uk|ja" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -240px;padding-left:18px;">Japanese</option><option value="uk|ko" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -256px;padding-left:18px;">Korean</option><option value="uk|lv" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -448px;padding-left:18px;">Latvian</option><option value="uk|lt" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -464px;padding-left:18px;">Lithuanian</option><option value="uk|no" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -272px;padding-left:18px;">Norwegian</option><option value="uk|fa" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -672px;padding-left:18px;">Persian</option><option value="uk|pl" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -288px;padding-left:18px;">Polish</option><option value="uk|pt" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -304px;padding-left:18px;">Portuguese</option><option value="uk|ro" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -320px;padding-left:18px;">Romanian</option><option value="uk|ru" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -336px;padding-left:18px;">Russian</option><option value="uk|sr" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -480px;padding-left:18px;">Serbian</option><option value="uk|sk" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -496px;padding-left:18px;">Slovak</option><option value="uk|sl" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -512px;padding-left:18px;">Slovenian</option><option value="uk|es" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -352px;padding-left:18px;">Spanish</option><option value="uk|sw" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -720px;padding-left:18px;">Swahili</option><option value="uk|sv" style="background:url('/sites/all/modules/gtranslate/gtranslate-files/16l.png') no-repeat scroll 0 -368px;padding-left:18px;">Swedish</option></select>  </div>
+</div>
+<div id="block-system-user-menu" class="block block-system block-menu">
+
+
+  <div class="content">
+    <ul class="menu"><li class="first leaf"><a href="/node/18">Зворотний зв&#039;язок</a></li>
+<li class="leaf"><a href="/sitemap">Мапа сайту</a></li>
+<li class="last leaf"><a href="/user/login">Вхід</a></li>
+</ul>  </div>
+</div>
+<div id="block-search-form" class="block block-search">
+
+
+  <div class="content">
+    <form action="/" method="post" id="search-block-form" accept-charset="UTF-8"><div>
+
+
+<div class="container-inline">
+      <h2 class="element-invisible">Пошукова форма</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Пошук </label>
+ <input title="Введіть слова для пошуку." placeholder="Пошуковий запит..." type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Пошук" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-RGWeChlA6EkDKmAUkaXBlyDnHYJEjWMc8VOsEM3QrAA" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+</div>
+  </div>
+          </div>
+    </div>
+</div>
+</div>
+
+
+
+
+<!-- ####################################################################################################### -->
+<div class="wrapper row2">
+  <div class="rnd">
+    <div id="topnav">
+
+    <ul class="menu_main"><li><a href="/" class="active">Про бібліотеку</a><ul class="menu_main"><li><a href="/node/4445">Історичні відомості</a></li>
+<li><a href="/node/136">Контакти</a></li>
+<li><a href="/node/2">Статут НБУВ</a></li>
+<li><a href="/node/6137">Стратегія НБУВ</a></li>
+<li><a href="/node/491">Керівництво</a></li>
+<li><a href="/node/19">Структура</a></li>
+<li><a href="/node/126">Наукова діяльність</a></li>
+<li><a href="/scientific_publishing">Науково-видавнича діяльність</a></li>
+<li><a href="/partners">Співробітництво</a><ul class="menu_main"><li><a href="/node/502">Книгообмін</a></li>
+<li><a href="/node/505">Громадські організації</a></li>
+<li><a href="/gifts">Дарувальники НБУВ</a></li>
+</ul></li>
+<li><a href="http://www.irbis-nbuv.gov.ua/cgi-bin/EIR/elib.exe?C21COM=F&amp;I21DBN=SUBJECT&amp;P21DBN=ENBUV">Співробітники</a></li>
+<li><a href="/node/4228">Вибори генерального директора</a></li>
+</ul></li>
+<li><a href="#" class="nolink">Новини</a><ul class="menu_main"><li><a href="/taxonomy/term/10">Анонси</a></li>
+<li><a href="/taxonomy/term/12">Оголошення</a></li>
+<li><a href="/taxonomy/term/11">Події</a></li>
+<li><a href="/conf_archive">Конференції</a></li>
+<li><a href="/calendar-field-eventdate/month">Календар подій</a></li>
+</ul></li>
+<li><a href="/" title="" class="active">Читачам</a><ul class="menu_main"><li><a href="http://www.nbuv.gov.ua/sites/default/files/basicpage_files/202406_basicpage_files_mat/instrukciya_z_ohoroni_praci_povitryana_trivoga_275-23_0.pdf" target="_blank">Дії за сигналом &quot;ПОВІТРЯНА ТРИВОГА!&quot;</a></li>
+<li><a href="/node/729">Умови запису</a></li>
+<li><a href="/node/389">Правила користування</a></li>
+<li><a href="/node/376">Фонди</a></li>
+<li><a href="/node/633">Читальні зали</a></li>
+<li><a href="/node/121">Послуги</a><ul class="menu_main"><li><a href="/node/121">Основні</a></li>
+<li><a href="/node/123">Онлайн</a></li>
+<li><a href="/node/122">Платні</a></li>
+</ul></li>
+<li><a href="/node/550">Запитай бібліотекаря</a><ul class="menu_main"><li><a href="/node/133">Запитання і відповіді</a></li>
+<li><a href="/node/550">Віртуальна довідка</a></li>
+<li><a href="/node/404">Запитайте у бібліографа</a></li>
+<li><a href="/node/673" title="Положення про довідково-бібліографічне обслуговування у Національній бібліотеці України імені В. І. Вернадського">Положення про довідково-бібліографічне обслуговування</a></li>
+</ul></li>
+<li><a href="/node/136">Адреса</a></li>
+<li><a href="/node/663">Режим роботи</a></li>
+</ul></li>
+<li><a href="/node/1539">Ресурси</a><ul class="menu_main"><li><a href="/e-resources/">Електронні ресурси</a></li>
+<li><a href="/node/1539" target="_blank">Наукові ресурси</a></li>
+<li><a href="/node/592">Інформаційно-аналітичні ресурси</a></li>
+<li><a href="/node/1540">Історико-культурні ресурси</a></li>
+<li><a href="/node/566">Бібліографічні ресурси</a></li>
+<li><a href="/node/134">Спеціалізовані е-бібліотеки</a></li>
+<li><a href="/exhibitions">Електронні виставки</a></li>
+<li><a href="http://www.nbuv.gov.ua/webnavigator">Інтернет-ресурси</a></li>
+<li><a href="/data_base/">Бази даних</a></li>
+</ul></li>
+<li><a href="#" class="nolink">Бібліотекарям</a><ul class="menu_main"><li><a href="/node/660">Інформаційно-бібліотечна рада НАНУ</a><ul class="menu_main"><li><a href="/node/661" title="Склад Інформаційно-бібліотечної ради НАН України">Склад</a></li>
+<li><a href="/node/665" title="Нормативні документи, що регламентують інформаційно-бібліотечну діяльність">Нормативні документи</a></li>
+<li><a href="/node/511" title="Видання Інформаційно-бібліотечної ради НАН України">Видання</a></li>
+<li><a href="/node/1089" title="Методичні матеріали для підвищення кваліфікації працівників бібліотек">Методичні матеріали</a></li>
+<li><a href="/taxonomy/term/252" title="Новини Інформаційно-бібліотечної ради Національної академії наук України">Новини Ради</a></li>
+</ul></li>
+<li><a href="/node/567">Бібліотекознавчі ресурси</a></li>
+<li><a href="/methods">Е-науково-методична служба</a></li>
+<li><a href="/node/2155">Інститут бібліотекознавства</a></li>
+<li><a href="/node/769">Бібліотеки та бібліотечні мережі</a></li>
+<li><a href="/node/655">Професійне навчання</a></li>
+<li><a href="/node/502">Книгообмін</a></li>
+</ul></li>
+</ul>    </div>
+  </div>
+</div>
+
+
+
+<!-- ####################################################################################################### -->
+<div class="need-hide">
+<div id="slide" class="wrapper">
+
+  <div id="featured_slide" class="clear">
+
+    <div class="overlay_left"></div>
+    <div id="featured_content">
+      <div class="featured_box" id="fc1"><img src="/sites/all/themes/nbuv/images/demo/slider/1.gif" alt="" />
+        <div class="floater">
+          <h2>Найбільша бібліотека України</h2>
+      Головний науково-інформаційний центр держави...
+      <p class="readmore"><a href="/node/125">Детальніше &raquo;</a></strong></p>
+      <hr/><a href="http://nbuviap.gov.ua/" target="_blank">Центр дослідження соціальних комунікацій</a></strong><hr/>
+
+
+        </div>
+      </div>
+      <div class="featured_box" id="fc2"><img src="/sites/all/themes/nbuv/images/demo/slider/2.gif" alt="" />
+        <div class="floater">
+          <h2><a href="node/126">Наукова діяльність</a></h2>
+      <hr/>
+      <h3><a href="http://irbis-nbuv.gov.ua/everlib" target="_blank"><strong>Наукові видання НБУВ</strong></a></h3>
+      <p><a href="/aspirantura">Аспірантура, докторантура</strong></a><br/>
+       <a href="node/626">Наукові журнали та періодичні видання</strong><br/>
+       <a href="node/498">Науково-дослідні підрозділи</strong></a>
+      </p>
+
+        </div>
+      </div>
+      <div class="featured_box" id="fc3"><img src="/sites/all/themes/nbuv/images/demo/slider/3.gif" alt="" />
+        <div class="floater">
+          <h2><a href="node/376">Фонди Бібліотеки</a></h2>
+          <p>В основу фонду НБУВ покладено великі книжкові зібрання...</p>
+          <hr/>
+      <a href="http://irbis-nbuv.gov.ua/cgi-bin/irbis_ir/cgiirbis_64.exe?C21COM=F&I21DBN=NAV&P21DBN=ELIB" target="_blank">Цифрова бібліотека НБУВ</strong></a>
+      </p>
+      <p>Оцифровані видання історико-культурних фондів НБУВ</p>
+        </div>
+      </div>
+
+      <div class="featured_box" id="fc4"><img src="/sites/all/themes/nbuv/images/demo/slider/4.gif" alt="" />
+        <div class="floater">
+          <h2>Конференції НБУВ</h2>
+          <p><hr /><a href="/conf_archive">Календар подій, архів конференцій</strong></a><hr /><a href="http://conference.nbuv.gov.ua/">Онлайнова реєстрація на заходи, доступ до доповідей, тез, презентацій та інших матеріалів конференцій</strong></a></p>
+        </div>
+      </div>
+      <div class="featured_box" id="fc5"><img src="/sites/all/themes/nbuv/images/demo/slider/5.gif" alt="" />
+        <div class="floater">
+          <h2><a href="/gifts">Дари НБУВ</a></h2>
+          <p>Документи на різних носіях інформації, передані Бібліотеці на безоплатній основі.<hr /></p>
+            <h2><a href="/node/499">Нові ресурси та надходження</a></h2>
+        </div>
+      </div>
+    </div>
+    <ul id="featured_tabs">
+      <li><a href="#fc1">Національний інформаційний центр</a></li>
+      <li><a href="#fc2">Наукова і видавнича діяльність</a></li>
+      <li><a href="#fc3">Фонди і колекції</a></li>
+      <li><a href="#fc4">Конференції НБУВ</a></li>
+      <li class="last"><a href="#fc5">Дари та Нові надходження</a></li>
+    </ul>
+
+<div></div>
+<div class="overlay_right"></div>
+
+  </div>
+</div>
+
+</div>
+
+<div class="wrapper row3">
+
+
+  <div class="rnd">
+    <div style="padding:8pt; 8pt; 0 0;">
+        </div>
+   <div id="container" class="clear">
+
+
+
+ <div id="homepage" class="clear">
+    <div class="clear">
+
+
+
+<!--
+ <table align="left"><tbody><tr>
+<td colspan="2"><div style="text-align:center;font-size:9pt;color:#551f2c;">До 100-річчя Національної академії наук України та Національної бібліотеки України імені В.&nbsp;І.&nbsp;Вернадського</div></td>
+
+<td rowspan="2">
+<div style="text-align:justify;font-size:9pt;color:#551f2c;">«Без “високої”, так би сказати, чи “чистої” науки ні освіта,  ні школа, ні популярна література, ні, навіть, публіцистика не можуть держатись на відповідній висоті — се той фундамент, той рівень, по котрому рівняється все. <a href="http://irbis-nbuv.gov.ua/ulib/item/REF0000356"><strong>Україна повинна мати академію наук</strong></a> і через неї забезпечити можність зайнятись чистою наукою людям, які виявляють до того потрібний хист і енергію, <a href="http://irbis-nbuv.gov.ua/ulib/item/REF0003249"><strong>сотворити національну, чи пак народну, бібліотеку, гідну великої держави</strong></a>, національні архіви й музеї...»</div><div style="text-align:right;font-size:9pt; font-style: italic;color:#551f2c;padding:10pt;"><a href="http://irbis-nbuv.gov.ua/ulib/item/REF0000137">Грушевський М. С.</a> <a href="http://irbis-nbuv.gov.ua/ulib/item/0001269"><strong>На порозі Нової України</strong></a>: гадки і мрії  (1918)</div>
+</td>
+</tr>
+<tr>
+
+<td style="padding:5pt;" valign="center"><a href="http://irbis-nbuv.gov.ua/ulib/item/REF0000356"><img src="http://irbis-nbuv.gov.ua/ua/images/nanu.png" style="border: 1px solid #ccc; padding: 2px; background: white;" title="Національна академія наук України" align="right" height="50"></a></td>
+<td style="padding:5pt;" valign="center"><a href="http://irbis-nbuv.gov.ua/ulib/item/REF0003249"><img src="http://irbis-nbuv.gov.ua/ua/images/nbuv.png" style="border: 1px solid #ccc; padding: 2px; background: white;" title="Національна бібліотека України імені В. І. Вернадського" align="left" height="50"></a></td>
+</tr>
+
+
+</tr></tbody></table>
+
+-->
+<div class="need-hide"><center>
+<table style="border-style: none !important;">
+<tr><td colspan="6"  style="border-style: none !important; background-color: #FFF !important;">
+<script>
+  (function() {
+    var cx = '012955353415694750662:u_sy7jo2b5w';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</td></tr></table></center>
+
+
+ <div id="left_column">
+
+
+          <h2>Каталоги</h2>
+          <div class="imgholder"><a href="node/554" title="Каталоги"><img src="/sites/all/themes/nbuv/images/demo/cat.gif" alt="Каталоги" /></a></div>
+
+<h2>Тематичний навігатор</h2>
+                <div class="imgholder"><a target="_blank" href="http://www.irbis-nbuv.gov.ua/cgi-bin/irbis_nbuv/cgiirbis_64.exe?I21DBN=RUBS&P21DBN=RUBS&S21STN=1&S21REF=10&S21FMT=brief_rub&S21SRW=ind&S21SRD=UP&C21COM=S&S21CNR=100&S21P01=0&S21P02=0&S21P03=ROZ=&S21COLORTERMS=0&S21STR=!" title="Тематичний навігатор"><img src="/sites/all/themes/nbuv/images/demo/sub_tree.png" alt="Тематичний навігатор" /></a></div>
+<h2>Нові ресурси та надходження</h2>
+                <div class="imgholder"><a href="/node/499" title="Нові ресурси та надходження"><img src="/sites/all/themes/nbuv/images/demo/eshow.gif" alt="Нові ресурси та надходження" /></a></div>
+
+<h2>Електронні ресурси</h2>
+                <div class="imgholder"><a href="/e-resources/" title="Електронні ресурси"><img src="/sites/all/themes/nbuv/images/demo/e_resource.gif" alt="Електронні ресурси" /></a></div>
+
+
+<h2>Електронна бібліотека «Україніка»</h2>
+                <div class="imgholder"><a target="_blank" href="http://irbis-nbuv.gov.ua/cgi-bin/ua/elib.exe?C21COM=F&I21DBN=NAV&P21DBN=UKRLIB" title="Електронна бібліотека 'Україніка'"><img src="/sites/all/themes/nbuv/images/demo/ulib.png" alt="Електронна бібліотека 'Україніка'" /></a>
+          <a href="/ukrainica"><strong>Україніка в датах &raquo;</strong></a>
+          </div>
+
+<h2>Цифрові колекції</h2>
+                <div class="imgholder"><a target="_blank" href="http://irbis-nbuv.gov.ua/cgi-bin/irbis_ir/cgiirbis_64.exe?C21COM=F&I21DBN=NAV&P21DBN=ELIB" title="Цифрові колекції"><img src="/sites/all/themes/nbuv/images/demo/eсollection.gif" alt="Цифрові колекції" /></a></div>
+
+<h2>Інтернет-навігатор</h2>
+                <div class="imgholder"><a target="_blank" href="http://www.irbis-nbuv.gov.ua/cgi-bin/irbis64r_81/cgiirbis_64.exe?C21COM=F&I21DBN=WEBL&P21DBN=WEBL" title="Інтернет-навігатор"><img src="/sites/all/themes/nbuv/images/demo/internet.gif" alt="Інтернет-навігатор" /></a></div>
+
+<h2>Бази даних</h2>
+                <div class="imgholder"><a href="/data_base" title="Бази даних"><img src="/sites/all/themes/nbuv/images/demo/data_base.gif" alt="Бази даних" /></a></div>
+
+<h2>Науково-дослідна діяльність</h2>
+                <div class="imgholder"><a href="/node/126" title="Науково-дослідна діяльність"><img src="/sites/all/themes/nbuv/images/demo/research.gif" alt="Науково-дослідна діяльність" /></a></div>
+
+
+
+ <h2>Національна академія наук</h2>
+                <div class="imgholder"><a href="/node/2112" title="Національна академія наук України"><img src="/sites/all/themes/nbuv/images/demo/nasua.gif" alt="Національна академія наук України" /></a></div>
+
+</div>
+
+</div>
+        <div id="latestnews">
+
+
+     <center>
+
+  <!--    <iframe marginheight="0" marginwidth="0" scrolling="no" src="http://irbis-nbuv.gov.ua/cgi-bin/ua/elib.exe?C21COM=S&I21DBN=NBUV&P21DBN=UKRLIB&S21FMT=zndt&S21ALL=%3C.%3ERA=COUNT%3C.%3E" title="" type="text/html" frameborder="0" height="90" width="380"></iframe><hr/> -->
+
+     <a href="http://www.nbuv.gov.ua/rss.xml" title="Підписатись на стрічку новин"><img src="/sites/all/themes/nbuv/images/demo/rss.png" alt="Підписатись на стрічку новин" height="26"  /></a>&nbsp;<a href="/taxonomy/term/10+11+12"><strong>Новини &raquo;</strong></a>&nbsp;&nbsp;<a href="http://www.irbis-nbuv.gov.ua/new-books" title="Нові надходження" target="_blank"><img src="/sites/all/themes/nbuv/images/demo/new_book.png" alt="Нові надходження" height="26"  /></a>&nbsp;<a href="http://www.irbis-nbuv.gov.ua/new-books" target="_blank"><strong>Нові надходження&raquo;</strong></a>
+     <hr/>
+
+
+
+     <div class="view view-top-event view-id-top_event view-display-id-block view-dom-id-70335731417ece0b7fbcb92a5b584354">
+
+
+
+      <div class="view-content">
+      <table class="views-table cols-0" >
+       <tbody>
+          <tr >
+                  <td class="views-field views-field-field-eventdate" >
+            <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2026-06-03T00:00:00+03:00">3-06-2026</span>          </td>
+                  <td class="views-field views-field-field-main-dop-img-art views-align-center" >
+            <a href="/node/6996"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202512_articles_main_foto/chishko.jpg?itok=ye3ecIYM" width="40" height="40" alt="" /></a>          </td>
+                  <td class="views-field views-field-title" >
+            <a href="/node/6996">ХХІІ Біографічні читання «Біографічне знання у суспільному, інтелектуальному  і духовному просторі сучасної України»<p><small></small></p></a>          </td>
+              </tr>
+          <tr >
+                  <td class="views-field views-field-field-eventdate" >
+            <span class="date-display-start" property="dc:date" datatype="xsd:dateTime" content="2026-10-06T00:00:00+03:00">6-10-2026</span> до <span class="date-display-end" property="dc:date" datatype="xsd:dateTime" content="2026-10-08T00:00:00+03:00">8-10-2026</span>          </td>
+                  <td class="views-field views-field-field-main-dop-img-art views-align-center" >
+            <a href="/node/7178"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202605_articles_main_foto/konferenciya_00.png?itok=RlZYjkaP" width="40" height="40" alt="" /></a>          </td>
+                  <td class="views-field views-field-title" >
+            <a href="/node/7178">Міжнародна наукова конференція  «Бібліотека. Наука. Комунікація. Інновації та розвиток  на шляху до майбутнього»<p><small><span class="file"><img class="file-icon" alt="PDF icon" title="application/pdf" src="/modules/file/icons/application-pdf.png" /> <a href="http://www.nbuv.gov.ua/sites/default/files/all_files/202605_artilces_field_dopmat_files/01_konferenc_nbuv_2026_og_zahodu.pdf" type="application/pdf; length=311912" title="01_konferenc_nbuv_2026_og_zahodu.pdf"> Заходи Міжнародної наукової конференції Бібліотека. Наука. Комунікація. 2026</a></span>, <span class="file"><img class="file-icon" alt="PDF icon" title="application/pdf" src="/modules/file/icons/application-pdf.png" /> <a href="http://www.nbuv.gov.ua/sites/default/files/all_files/202605_artilces_field_dopmat_files/02_informac_prospekt_konference_nbuv_2026.pdf" type="application/pdf; length=240509" title="02_informac_prospekt_konference_nbuv_2026.pdf"> Інформаційний проспект по Конференції НБУВ</a></span>, <span class="file"><img class="file-icon" alt="PDF icon" title="application/pdf" src="/modules/file/icons/application-pdf.png" /> <a href="http://www.nbuv.gov.ua/sites/default/files/all_files/202605_artilces_field_dopmat_files/03_vimogi_tez_konferenc_nbuv_2026.pdf" type="application/pdf; length=545040" title="03_vimogi_tez_konferenc_nbuv_2026.pdf">Вимоги до оформлення тез конференції</a></span></small></p></a>          </td>
+              </tr>
+          <tr >
+                  <td class="views-field views-field-field-eventdate" >
+            <span class="date-display-start" property="dc:date" datatype="xsd:dateTime" content="2026-10-08T00:00:00+03:00">8-10-2026</span> до <span class="date-display-end" property="dc:date" datatype="xsd:dateTime" content="2026-10-10T00:00:00+03:00">10-10-2026</span>          </td>
+                  <td class="views-field views-field-field-main-dop-img-art views-align-center" >
+            <a href="/node/7148"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202605_articles_main_foto/konf_katovice.png?itok=AyexBPyy" width="40" height="40" alt="" /></a>          </td>
+                  <td class="views-field views-field-title" >
+            <a href="/node/7148">НБУВ стала комунікаційним партнером польсько-української міжнародної конференції «Вікімедіа та дослідження»<p><small></small></p></a>          </td>
+              </tr>
+      </tbody>
+</table>
+    </div>
+
+
+
+
+
+
+</div>
+
+
+       <div class="region region-front-letset-news">
+    <div id="block-views-ukr-day-block-1" class="block block-views">
+
+
+  <div class="content">
+    <div class="view view-ukr-day view-id-ukr_day view-display-id-block_1 view-dom-id-0150305c34942d750b7d25e18c46a8b4">
+            <div class="view-header">
+      <div  style="padding:4pt;"><a href="/ukrainica?field_month_value=6"><strong>Україніка в датах &raquo;</strong></a></div>
+    </div>
+
+
+
+      <div class="view-content">
+      <table class="views-table cols-0" >
+        <caption>ЧЕРВЕНЬ</caption>
+      <tbody>
+          <tr >
+                  <td class="views-field views-field-field-event-ukr views-align-left" >
+            <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2018-06-01T00:00:00+03:00">1</span>          </td>
+                  <td class="views-field views-field-field-event-ukr-1 views-align-left" >
+            <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2018-06-01T00:00:00+03:00">2018</span>          </td>
+                  <td class="views-field views-field-field-image views-align-left" >
+            <div class="field field-name-field-image field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/201805_ukr_main_foto/den_zahystu_ditey1.jpg?itok=O2sg_mxG" width="40" height="40" alt="Міжнародний день захисту дітей" title="фото з сайту http://suspol.vntu.edu.ua" /></div></div></div>          </td>
+                  <td class="views-field views-field-title views-align-left" >
+            <a href="/node/4109">Міжнародний день захисту дітей</a>          </td>
+              </tr>
+      </tbody>
+</table>
+    </div>
+
+
+
+
+
+
+</div>  </div>
+</div>
+<div id="block-views-front-rcent-news-block" class="block block-views">
+
+
+  <div class="content">
+    <div class="view view-front-rcent-news view-id-front_rcent_news view-display-id-block view-dom-id-8fa0081170953c0cd5aab228406edd71">
+
+
+
+      <div class="view-content">
+        <h3><a href="/taxonomy/term/47" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Конференції</a></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+
+  <div>        <span class="width 50pxheight 50px"><div class="field field-name-field-main-dop-img-art field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/node/7178"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202605_articles_main_foto/konferenciya_00.png?itok=RlZYjkaP" width="40" height="40" alt="" /></a></div></div></div></span>  </div>
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/node/7178"><p>Міжнародна наукова конференція  «Бібліотека. Наука. Комунікація. Інновації та розвиток  на шляху до майбутнього»</p></a></span>  </div>
+  <div class="views-field views-field-field-eventdate">        <div class="field-content"><span class="date-display-start" property="dc:date" datatype="xsd:dateTime" content="2026-10-06T00:00:00+03:00">6-10-2026</span> до <span class="date-display-end" property="dc:date" datatype="xsd:dateTime" content="2026-10-08T00:00:00+03:00">8-10-2026</span></div>  </div>
+  <div>        <div><p class="rtecenter">Шановні колеги!</p>
+<p class="rtejustify">Національна бібліотека України імені В. І. Вернадського запрошує Вас взяти участь у роботі Міжнародної наукової конференції «Бібліотека. Наука. Комунікація. Інновації та розвиток на шляху до майбутнього», що відбудеться у м. Києві 6–8 жовтня 2026 р.</p></div>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even views-row-last">
+
+  <div>        <span class="width 50pxheight 50px"><div class="field field-name-field-main-dop-img-art field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/node/7177"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202605_articles_main_foto/uchasniki00.png?itok=tkjil6Aw" width="40" height="40" alt="" /></a></div></div></div></span>  </div>
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/node/7177"><p>Міжнародна наукова конференція з проблем історичної пам´яті, подолання травм та виховання культури спротиву </p></a></span>  </div>
+  <div class="views-field views-field-field-eventdate">        <div class="field-content"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2026-05-25T00:00:00+03:00">25-05-2026</span></div>  </div>
+  <div>        <div><p class="rtejustify">25 травня 2026 року відбулась І Міжнародна міждисциплінарна наукова конференція із серії «ОСВІТА – ПАМ’ЯТЬ – ІДЕНТИЧНІСТЬ» – «Пам’ять, травма, культура опору в сучасній сімейній та методологічній практиці» («Pamięć, trauma, kultura oporu we współczesnej rodzinie i praktyce metodologicznej»). Її ініціатором виступила Поморська вища школа в Старогарді Гданському (Польща), співорганізаторами – Київський столичний університет імені Бориса Грінченка та Інститут біографічних досліджень Національної бібліотеки України імені В. І. Вернадського. Конференція проходила у змішаному онлайн/офлайн форматі.</p></div>  </div>  </div>
+  <h3><a href="/taxonomy/term/62" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Семінари</a></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+
+  <div>        <span class="width 50pxheight 50px"><div class="field field-name-field-main-dop-img-art field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/node/7176"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202605_articles_main_foto/00.png?itok=1dxxwy_X" width="40" height="40" alt="" /></a></div></div></div></span>  </div>
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/node/7176"><p>Новації в  бібліотечній практиці на основі  штучного інтелекту</p></a></span>  </div>
+  <div class="views-field views-field-field-eventdate">        <div class="field-content"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2026-05-26T00:00:00+03:00">26-05-2026</span></div>  </div>
+  <div>        <div><p class="rtejustify">26 травня 2026 року у рамках підвищення кваліфікації бібліотекарів відбувся тематичний науково-методичний семінар «Новації в бібліотечній практиці на основі штучного інтелекту», організований відділом науково-методичної роботи Інституту бібліотекознавства Національної бібліотеки України імені В. І. Вернадського.</p></div>  </div>  </div>
+  <h3><a href="/taxonomy/term/878" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Важливо</a></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+
+  <div>        <span class="width 50pxheight 50px"><div class="field field-name-field-main-dop-img-art field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/node/7175"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202605_articles_main_foto/kolektivne_panno_00.png?itok=ozLKuNwK" width="40" height="40" alt="" /></a></div></div></div></span>  </div>
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/node/7175"><p>І барвами вишита пам’ять роду …</p></a></span>  </div>
+  <div class="views-field views-field-field-eventdate">        <div class="field-content"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2026-05-27T00:00:00+03:00">27-05-2026</span></div>  </div>
+  <div>        <div><p class="rtejustify">Наш колектив великий і дружний – це й працівники з Голосіївського проспекту, і з вулиці Володимирської. Як ми шануємо свято й вишиванку, переконайтесь, переглянувши ці світлини.</p></div>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+
+  <div>        <span class="width 50pxheight 50px"><div class="field field-name-field-main-dop-img-art field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/node/7173"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202605_articles_main_foto/vid_ukr_pen_00.jpg?itok=CQO_jx0M" width="40" height="40" alt="" /></a></div></div></div></span>  </div>
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/node/7173"><p>Незламність бібліотек завдяки підтримці небайдужих</p></a></span>  </div>
+  <div class="views-field views-field-field-eventdate">        <div class="field-content"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2026-05-27T00:00:00+03:00">27-05-2026</span></div>  </div>
+  <div>        <div><p class="rtejustify">Днями в Національній бібліотеці України імені В.І.Вернадського відбулася зустріч генерального директора НБУВ Любові Дубровіної з представниками громадської організації Український ПЕН (частина Міжнародного ПЕН-клубу), який уже протягом чотирьох років реалізовує безстрокову програму «Незламні бібліотеки». Вона спрямована на  підтримку українських бібліотек, які постраждали внаслідок війни росії проти України. Відколи триває повномасштабна війна, зруйновано або частково пошкоджено понад 700 бібліотек.</p></div>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd views-row-last">
+
+  <div>        <span class="width 50pxheight 50px"><div class="field field-name-field-main-dop-img-art field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/node/7170"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202605_articles_main_foto/u_fondi_prezidentiv_00.jpg?itok=o-cRoF6z" width="40" height="40" alt="" /></a></div></div></div></span>  </div>
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/node/7170"><p>Візит до Бібліотеки народного депутата України Миколи Княжицького</p></a></span>  </div>
+  <div class="views-field views-field-field-eventdate">        <div class="field-content"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2026-05-25T00:00:00+03:00">25-05-2026</span></div>  </div>
+  <div>        <div><p class="rtejustify">25 травня до Національної бібліотеки України імені В. І. Вернадського завітав народний депутат України, голова підкомітету з питань культурної політики Комітету Верховної Ради України з питань гуманітарної та інформаційної політики Микола Княжицький.</p></div>  </div>  </div>
+  <h3><a href="/taxonomy/term/354" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">міжнародне співробітництво</a></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+
+  <div>        <span class="width 50pxheight 50px"><div class="field field-name-field-main-dop-img-art field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/node/7174"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202605_articles_main_foto/zobrazhennya_00_0.jpg?itok=kfKQX43R" width="40" height="40" alt="" /></a></div></div></div></span>  </div>
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/node/7174"><p>Підписано Меморандум про співпрацю між Національною бібліотекою України імені В.І. Вернадського та Кенійською національною бібліотечною службою (KNLS)</p></a></span>  </div>
+  <div class="views-field views-field-field-eventdate">        <div class="field-content"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2026-05-25T00:00:00+03:00">25-05-2026</span></div>  </div>
+  <div>        <div><p class="rtejustify">25 травня 2026 року дві важливі події об’єднали бібліотечну спільноту двох країн – України та Кенії. Цього дня було підписано Меморандум про співпрацю між Національною бібліотекою України імені В.І. Вернадського та Кенійською національною бібліотечною службою (KNLS). І початком реалізації цього меморандуму стало відкриття Української книжкової полиці в Кенії.</p></div>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+
+  <div>        <span class="width 50pxheight 50px"><div class="field field-name-field-main-dop-img-art field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/node/7171"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202605_articles_main_foto/100.jpg?itok=_m-V2xPN" width="40" height="40" alt="" /></a></div></div></div></span>  </div>
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/node/7171"><p>Проблематика українських бібліотек на головному конгресі німецькомовного бібліотечного світу </p></a></span>  </div>
+  <div class="views-field views-field-field-eventdate">        <div class="field-content"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2026-05-26T00:00:00+03:00">26-05-2026</span></div>  </div>
+  <div>        <div><p class="rtejustify">19-22 травня 2026 року в Берліні пройшов 114-й німецький бібліотечний конгрес BiblioCon 2026, в якому за підтримки CENL узяла участь заступниця генерального директора НБУВ Юлія Половинчак.  </p></div>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd views-row-last">
+
+  <div>        <span class="width 50pxheight 50px"><div class="field field-name-field-main-dop-img-art field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/node/7169"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202605_articles_main_foto/zobrazhennya_00.jpg?itok=657f2S0-" width="40" height="40" alt="" /></a></div></div></div></span>  </div>
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/node/7169"><p>Науковці НБУВ на Міжнародному науковому заході у Кракові </p></a></span>  </div>
+  <div class="views-field views-field-field-eventdate">        <div class="field-content"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2026-05-25T00:00:00+03:00">25-05-2026</span></div>  </div>
+  <div>        <div><p class="rtejustify">Науковці Національної бібліотеки України імені В.І. Вернадського (Ю. Половинчак, заступник генерального директора з наукової роботи НБУВ, керівник Національної юридичної бібліотеки, доктор наук із соціальних комунікацій; М. Закіров, завідувач відділу політологічного аналізу СІАЗ НБУВ, доктор політичних наук; С. Закірова, завідувач відділу обслуговування інформаційними ресурсами НЮБ НБУВ, кандидат історичних наук) взяли участь у роботі міжнародного Тематичного Саміту з фізичних наук та інженерії, соціальних та гуманітарних наук, а також енергетики, що відбувся 19-20 травня 2026 року в місті Краків, Польща.</p></div>  </div>  </div>
+  <h3><a href="/taxonomy/term/698" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Режим роботи</a></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+
+  <div>        <span class="width 50pxheight 50px"><div class="field field-name-field-main-dop-img-art field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/node/7172"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202605_articles_main_foto/02.jpg?itok=FMChgzDw" width="40" height="40" alt="" /></a></div></div></div></span>  </div>
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/node/7172"><p>До уваги читачів і користувачів! </p></a></span>  </div>
+  <div class="views-field views-field-field-eventdate">        <div class="field-content"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2026-05-29T00:00:00+03:00">29-05-2026</span></div>  </div>
+  <div>        <div><p paraeid="{ccd91887-7efb-491d-840e-d3d07cadf683}{3}" paraid="858823888">Нагадуємо, що останній робочий день місяця в НБУВ є санітарним днем, тож 29 травня, у п’ятницю, Бібліотека для відвідувачів не працює. </p>
+<p class="rtecenter" paraeid="{ccd91887-7efb-491d-840e-d3d07cadf683}{3}" paraid="858823888">Санітарний день! </p></div>  </div>  </div>
+  <h3><a href="/taxonomy/term/171" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Ювілеї</a></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+
+  <div>        <span class="width 50pxheight 50px"><div class="field field-name-field-main-dop-img-art field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/node/7166"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202605_articles_main_foto/00_36.jpg?itok=OoNpEqgJ" width="40" height="40" alt="" /></a></div></div></div></span>  </div>
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/node/7166"><p>Симон Петлюра в боротьбі за державність України  До 100-річчя з дня смерті</p></a></span>  </div>
+  <div class="views-field views-field-field-eventdate">        <div class="field-content"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2026-05-25T00:00:00+03:00">25-05-2026</span></div>  </div>
+  <div>        <div><p class="rtejustify">25 травня 2026 року виповнюється сто років з дня трагічної загибелі Симона Петлюри — одного з найвизначніших державних, військових і політичних діячів української історії ХХ століття, незмінного Головного Отамана військ Української Народної Республіки.</p></div>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even views-row-last">
+
+  <div>        <span class="width 50pxheight 50px"><div class="field field-name-field-main-dop-img-art field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/node/7161"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202605_articles_main_foto/petlyura_00.jpg?itok=gWteJHTD" width="40" height="40" alt="" /></a></div></div></div></span>  </div>
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/node/7161"><p>Симон Петлюра. Архітектор української державності </p></a></span>  </div>
+  <div class="views-field views-field-field-eventdate">        <div class="field-content"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2026-05-22T00:00:00+03:00">22-05-2026</span></div>  </div>
+  <div>        <div><p class="rtejustify">22 травня 1879 року народився Симон Петлюра — один з найвизначніших діячів української історії ХХ століття, Головний Отаман військ Української Народної Республіки, політик, публіцист, літератор, редактор, людина великої внутрішньої сили й виняткової історичної місії. А 25 травня 2026 року минає сто років від дня його трагічної загибелі.</p></div>  </div>  </div>
+  <h3><a href="/taxonomy/term/67" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Книжкові виставки</a></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+
+  <div>        <span class="width 50pxheight 50px"><div class="field field-name-field-main-dop-img-art field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/node/7163"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202605_articles_main_foto/001.jpg?itok=ZMHOocBw" width="40" height="40" alt="" /></a></div></div></div></span>  </div>
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/node/7163"><p> Публіцистичний світ Симона Петлюри (1879–1926): літературна спадщина Головного Отамана Військ УНР</p></a></span>  </div>
+  <div class="views-field views-field-field-eventdate">        <div class="field-content"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2026-05-23T00:00:00+03:00">23-05-2026</span></div>  </div>
+  <div>        <div><p>За фондами відділу зарубіжної україніки Інституту книгознавства НБУВ.</p></div>  </div>  </div>
+  <h3><a href="/taxonomy/term/902" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Виставки</a></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+
+  <div>        <span class="width 50pxheight 50px"><div class="field field-name-field-main-dop-img-art field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/node/7162"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202605_articles_main_foto/vistavka_00.jpg?itok=G-E1QtO5" width="40" height="40" alt="" /></a></div></div></div></span>  </div>
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/node/7162"><p>Перспективи пам’яток архітектури</p></a></span>  </div>
+  <div class="views-field views-field-field-eventdate">        <div class="field-content"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2026-05-21T00:00:00+03:00">21-05-2026</span></div>  </div>
+  <div>        <div><p class="rtejustify">У Національній бібліотеці України імені В. І. Вернадського з 21 травня розгорнуто виставку студентських  робіт «Перспектива  пам’ятки архітектури».</p>
+<p class="rtejustify">Оригінальні рішення заявленої теми представлено курсовими студентів першого курсу та конкурсними роботами  студентів другого курсу Київського національного університету будівництва і архітектури.</p></div>  </div>  </div>
+  <h3><a href="/taxonomy/term/572" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Привітання</a></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+
+  <div>        <span class="width 50pxheight 50px"><div class="field field-name-field-main-dop-img-art field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/node/7158"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202605_articles_main_foto/content_vishivanka.png?itok=11_tMkd5" width="40" height="40" alt="" /></a></div></div></div></span>  </div>
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/node/7158"><p>Неформальне свято, яке стало народним</p></a></span>  </div>
+  <div class="views-field views-field-field-eventdate">        <div class="field-content"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2026-05-21T00:00:00+03:00">21-05-2026</span></div>  </div>
+  <div>        <div><p class="rtejustify">Третій четвер травня — цей день визначили не президенти чи депутати, а чернівецькі студенти 20 років тому. Ініціатива за два десятиліття набула в Україні та й цілому світі статусу колоритного традиційного свята. А власне вишиванка стала однією з ознак ментальної ідентичності. Занурення в культурні коди й символи відкрило нам таємниці узорів, якими передавалися з покоління в покоління системи оберегів.</p></div>  </div>  </div>
+  <h3><a href="/taxonomy/term/426" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Подяки</a></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+
+  <div>        <span class="width 50pxheight 50px"><div class="field field-name-field-main-dop-img-art field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/node/7157"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202605_articles_main_foto/podyaka_00.png?itok=-l4Vo-aa" width="40" height="40" alt="" /></a></div></div></div></span>  </div>
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/node/7157"><p>Подяка за співпрацю</p></a></span>  </div>
+  <div class="views-field views-field-field-eventdate">        <div class="field-content"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2026-05-20T00:00:00+03:00">20-05-2026</span></div>  </div>
+  <div>        <div><p class="rtejustify">Факультет права та міжнародних відносин Київського столичного університету імені Бориса Грінченка відзначає 10-річчя своєї діяльності. З цієї нагоди колектив факультету висловлює щиру вдячність Національній бібліотеці України імені В. І. Вернадського за багаторічну співпрацю, підтримку та надійне партнерство.</p></div>  </div>  </div>
+  <h3><a href="/taxonomy/term/47" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Конференції</a></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+
+  <div>        <span class="width 50pxheight 50px"><div class="field field-name-field-main-dop-img-art field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/node/7148"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202605_articles_main_foto/konf_katovice.png?itok=AyexBPyy" width="40" height="40" alt="" /></a></div></div></div></span>  </div>
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/node/7148"><p>НБУВ стала комунікаційним партнером польсько-української міжнародної конференції «Вікімедіа та дослідження»</p></a></span>  </div>
+  <div class="views-field views-field-field-eventdate">        <div class="field-content"><span class="date-display-start" property="dc:date" datatype="xsd:dateTime" content="2026-10-08T00:00:00+03:00">8-10-2026</span> до <span class="date-display-end" property="dc:date" datatype="xsd:dateTime" content="2026-10-10T00:00:00+03:00">10-10-2026</span></div>  </div>
+  <div>        <div><p class="rtejustify">9-10 жовтня 2026 року в змішаному форматі планується проведення наукової вікімедійної конференції «Open Knowledge: Wikimedia &amp; Research in the CEE Region», одним з комунікаційних партнерів якої стала Наукова бібліотека України імені В.І. Вернадського. Конференція присвячена питанням створення умов для співпраці представників академічної спільноти Центральної та Східної Європи в рамках роботи з відкритими знаннями за допомогою ресурсів Вікімедіа: від обміну кращими практиками та стандартами даних до дослідницької та проєктної співпраці. Організаторами є «Вікімедіа Польща» спільно з «Вікімедіа Україна» та Сілезьким університетом у Катовіце, за підтримки CEE Hub.</p></div>  </div>  </div>
+  <h3><a href="/taxonomy/term/374" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Біографічні читання</a></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+
+  <div>        <span class="width 50pxheight 50px"><div class="field field-name-field-main-dop-img-art field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/node/6996"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202512_articles_main_foto/chishko.jpg?itok=ye3ecIYM" width="40" height="40" alt="" /></a></div></div></div></span>  </div>
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/node/6996"><p>ХХІІ Біографічні читання «Біографічне знання у суспільному, інтелектуальному  і духовному просторі сучасної України»</p></a></span>  </div>
+  <div class="views-field views-field-field-eventdate">        <div class="field-content"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2026-06-03T00:00:00+03:00">3-06-2026</span></div>  </div>
+  <div>        <div><p class="rtecenter">Шановні колеги!</p>
+<p class="rtejustify">Інститут біографічних досліджень Національної бібліотеки України імені В. І. Вернадського запрошує до участі в роботі ХХІІ Біографічних читань, які відбудуться 3 червня 2026 року. </p>
+<p class="rtejustify">До участі в Читаннях запрошуються вчені наукових установ, закладів вищої освіти та спеціалісти бібліотек, архівів, музеїв, видавництв, інформаційних центрів.</p></div>  </div>  </div>
+  <h3><a href="/taxonomy/term/878" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Важливо</a></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+
+  <div>        <span class="width 50pxheight 50px"><div class="field field-name-field-main-dop-img-art field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/node/5930"><img typeof="foaf:Image" src="http://www.nbuv.gov.ua/sites/default/files/styles/small/public/all_images/202206_articles_main_foto/hvilina_movchannya_._1.jpg?itok=BUWDWeh8" width="40" height="40" alt="" /></a></div></div></div></span>  </div>
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/node/5930"><p>Загальнонаціональна  хвилина  мовчання</p></a></span>  </div>
+  <div class="views-field views-field-field-eventdate">        <div class="field-content"><span class="date-display-start" property="dc:date" datatype="xsd:dateTime" content="2022-06-27T00:00:00+03:00">27-06-2022</span> до <span class="date-display-end" property="dc:date" datatype="xsd:dateTime" content="2026-12-31T00:00:00+02:00">31-12-2026</span></div>  </div>
+  <div>        <div><p class="rtejustify">Щодня о 9.00 вся країна завмирає у скорботній хвилині мовчання за загиблими внаслідок збройної агресії Російської Федерації проти України.</p>
+<p class="rtecenter">Вклоняймося їм, згадуємо! Світла і вічна пам’ять!</p></div>  </div>  </div>
+    </div>
+
+
+
+
+
+
+</div>  </div>
+</div>
+  </div>
+
+
+<hr/><center><a href="/node/663"><strong>Режим роботи Бібліотеки &raquo;</strong></center></a>
+
+ </div>
+
+
+
+
+
+
+<div id="right_column">
+
+
+
+<div class="need-hide">
+
+<div class="holder">
+
+<!--
+<div class="apply"><a href="/node/4228" title="Вибори генерального директора"><img src="/sites/default/files/questionnaire.jpg" alt="Вибори генерального директора" /> <strong>Вибори генерального директора</strong></a></div>
+ -->
+
+ <div class="apply"><a href="node/4660" title="Наукова діяльність НБУВ (2014-2018)"><img src="/sites/all/themes/nbuv/images/nbuv_2014_2018.png" alt="Наукова діяльність НБУВ (2014-2018)" /> <strong>НБУВ (2014-2018)<br>наукова діяльність</strong></a></div>
+ <h2>Наукові видання НБУВ</h2>
+  <div class="apply"><a target="_blank" href="http://irbis-nbuv.gov.ua/everlib" title="Електронний архів публікацій НБУВ"><img src="/sites/all/themes/nbuv/images/eVerLib_logo.png" alt="Електронний архів публікацій НБУВ" /> <strong>Репозитарій<br>НБУВ</strong></a></div>
+
+<h2>е-Архів Михайла Грушевського</h2>
+<div class="apply"><a target="_blank" href="http://hrushevsky.nbuv.gov.ua/" title="До 150-річчя з дня народження Михайла Грушевського"><img src="/sites/all/themes/nbuv/images/demo/hrushevsky.jpg" alt="До 150-річчя з дня народження Михала Грушевського" /> <strong>М. С. Грушевський</strong></a></div>
+  </div>
+
+
+<div class="holder">
+
+<h2>Інформаційні послуги</h2>
+<div class="apply"><a href="node/550" title="Запитай бібліотекаря"><img src="/sites/all/themes/nbuv/images/demo/ask.gif" alt="Запитай бібліотекаря" /> <strong>Запитай бібліотекаря</strong></a></div>
+
+<div class="apply"><a href="node/299" title="Міжбібліотечний абонемент * Електронна доставка документів"><img src="/sites/all/themes/nbuv/images/demo/mba.gif" alt="Міжбібліотечний абонемент * Електронна доставка документів" /> <strong>МБА<br>ЕДД</strong></a></div>
+
+
+
+</div>
+
+<div class="holder">
+
+<h2>Інформаційні ресурси</h2>
+
+             <div class="apply"><a href="http://www.irbis-nbuv.gov.ua/cgi-bin/irbis64r_81/cgiirbis_64.exe?C21COM=S&I21DBN=VFEIR&P21DBN=VFEIR&S21FMT=fullwebr&S21ALL=%28%3C%2E%3ETPD%3D%D0%BD%D0%B0%D1%86%D1%96%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%20%D0%B4%D0%BE%D0%BF%D0%BE%D0%B2%D1%96%D0%B4%D1%8C%3C%2E%3E%29&Z21ID=&S21SRW=GOD&S21SRD=DOWN&S21STN=1&S21REF=10&S21CNR=20" title="Національні доповіді" target="_blank"><img src="/sites/all/themes/nbuv/images/demo/nac_dop.jpg" alt="Національні доповіді" /> <strong>Національні доповіді</strong></a></div>
+
+      <div class="apply"><a href="node/1539" title="Наукові ресурси"><img src="/sites/all/themes/nbuv/images/demo/science.jpg" alt="Наукові ресурси" /> <strong>Наукові ресурси</strong></a></div>
+
+      <div class="apply"><a href="node/1540" title="Історико-культурні ресурси"><img src="/sites/all/themes/nbuv/images/demo/fond_res.gif" alt="Історико-культурні ресурси" /> <strong>Історико-культурні ресурси</strong></a></div>
+
+      <div class="apply"><a href="node/134" title="Спеціалізовані бібліотеки"><img src="/sites/all/themes/nbuv/images/demo/lib.gif" alt="Спеціалізовані бібліотеки" /> <strong>Спеціалізовані e-бібліотеки</strong></a></div>
+
+      <div class="apply"><a href="node/566" title="Бібліографічні ресурси"><img src="/sites/all/themes/nbuv/images/demo/ref_lib.gif" alt="Бібліографічні ресурси" /> <strong>Бібліографічні ресурси</strong></a></div>
+
+      <div class="apply"><a href="node/2164" title="Біографічні ресурси"><img src="/sites/all/themes/nbuv/images/demo/biogr.gif" alt="Біографічні ресурси" /> <strong>Біографічні ресурси</strong></a></div>
+
+<div class="apply"><a href="node/626" title="Біографічні ресурси"><img src="/sites/all/themes/nbuv/images/demo/journal.gif" alt="Наукові періодичні видання НБУВ" /> <strong>Наукові періодичні видання НБУВ</strong></a></div>
+     </div>
+
+<div style="font-size:9pt;font-family:arial;color:#3B5998;border-width:0px; !important;"><table  cellpadding="0" style="border-width:0px;!important;"><tr style="border-width:0px;!important;"><td style="border-width:0px;!important;"><a href="http://nbuviap.gov.ua/" title="Центр дослідження соціальних комунікацій"><img width="50" src="http://www.nbuv.gov.ua/sites/default/files/scrc.jpg" alt="Центр дослідження соціальних комунікацій" /></a></td><td style="border-width:0px;!important;"><a href="http://nbuviap.gov.ua/" title="Прес-служба НБУВ" style="font-size:10;font-family:arial;color:#3B5998;text-decoration: none;" target="_blank"><center><strong>Центр дослідження соціальних комунікацій</strong></center></a></td></tr></table>
+
+<table  cellpadding="0" style="border-width:0px;!important;"><tr style="border-width:0px;!important;"><td style="border-width:0px;!important;"><a href="http://nbuviap.gov.ua/bpnu/index.php" title="Бібліометрика української науки"  target="_blank"><img width="50" src="http://www.nbuv.gov.ua/sites/default/files/styles/article-style/public/bun_ua1.jpg" alt="Бібліометрика української науки" /></a></td><td style="border-width:0px;!important;"><a href="http://nbuviap.gov.ua/bpnu/index.php" title="Бібліометрика української науки" style="font-size:10;font-family:arial;color:#3B5998;text-decoration: none;" target="_blank"><center><strong>Бібліометрика української науки</strong></center></a></td></tr></table>
+
+ </div>
+
+  </div>
+
+  </div>
+
+  </div>
+
+<!--
+
+     <a href="/partners"><strong>Партнери НБУВ &raquo;</strong></a>
+    -->  <hr/>
+  <div style="float:left;">
+
+  </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+<!-- ####################################################################################################### -->
+
+<div class="wrapper row4">
+  <div class="rnd">
+    <div id="footer" class="clear">
+      <!-- ####################################################################################################### -->
+      <div class="fl_left clear">
+        <div class="fl_left center">
+    <a href="/"><div><img src="/sites/all/themes/nbuv/images/nbuv_logo.png" alt="Logo" /></div></a>
+    <img src="/sites/all/themes/nbuv/images/demo/worldmap.gif" alt="Карта" /><br />
+          <a href="https://www.google.com/maps/place/%D0%9D%D0%B0%D1%86%D1%96%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0+%D0%B1%D1%96%D0%B1%D0%BB%D1%96%D0%BE%D1%82%D0%B5%D0%BA%D0%B0+%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B8+%D1%96%D0%BC%D0%B5%D0%BD%D1%96+%D0%92.+%D0%86.+%D0%92%D0%B5%D1%80%D0%BD%D0%B0%D0%B4%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE/@50.40425,30.520786,16z/data=!4m5!3m4!1s0x0:0x49b05be4301c9d63!8m2!3d50.4042378!4d30.5188112?hl=uk" target="_blank">Знайти нас на Google Maps &raquo;</a>
+
+
+
+      </div>
+
+
+        <address>
+            <h3>Контактна інформація Бібліотеки</h3>
+            <div class="home_16">Україна, 03039, м. Київ, Голосіївський пр., 3</div>
+      <div class="home_16"><a href="http://nbuv.gov.ua/node/136#20">Корпус по вул. Володимирській</a></div>
+      <hr><strong>Для читачів / користувачів:</strong>
+      <div class="phone_16">Тел: +38 (044) 524-81-37</div>
+      <div class="mail_16"> <a href="mailto:service@nbuv.gov.ua">service@nbuv.gov.ua</a><!--img src="/sites/default/files/mail/service_mail.png"--></div>
+      <div class="information_16">Кожен останній робочий день місяця - санітарний</div>
+      <div class="information_16"><a href="/node/18">Зворотний зв'язок</a></div>
+            <hr><strong>Приймальня директора (для офіційних звернень):</strong>
+      <div class="mail_16"> <a href="mailto:library@nbuv.gov.ua">library@nbuv.gov.ua</a><!--img src="/sites/default/files/mail/library_mail.png"--></div>
+      <div class="phone_16">Тел: +38 (044) 525-81-04</div>
+      <div class="print_16">Тел./факс: +38 (044) 525-56-02 (канцелярія)</div>
+      <hr><strong>Пресслужба</strong><br>
+      <div class="mail_16"> <a href="mailto:presa@nbuv.gov.ua">presa@nbuv.gov.ua</a><!--img src="/sites/default/files/mail/presa_mail.png"--></div>
+      <div class="phone_16">Тел: +38 (044) 525-40-74</div>
+            <hr>
+      <div class="mail_16"><a style="float:left;" href="http://www.nbuv.gov.ua/node/793" title="Відділ програмно-технологічного забезпечення комп'ютерних мереж">Технічна підтримка</a>: <a href="mailto:support@nbuv.gov.ua">support@nbuv.gov.ua</a><!--img height="16"  src="/sites/default/files/mail/support_mail.png"--></br></div>
+    </address>
+      </div>
+ <div class="fl_right">
+
+
+    <div id="social" class="clear">
+          <h3>Ми в соціальних мережах</h3>
+          <ul>
+            <li><a style="background-position:-142px 0;" href="https://www.facebook.com/pages/%D0%9D%D0%B0%D1%86%D1%96%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0-%D0%B1%D1%96%D0%B1%D0%BB%D1%96%D0%BE%D1%82%D0%B5%D0%BA%D0%B0-%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B8-%D1%96%D0%BC%D0%B5%D0%BD%D1%96-%D0%92-%D0%86-%D0%92%D0%B5%D1%80%D0%BD%D0%B0%D0%B4%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE/712692775441557" title="Facebook">Facebook</a></li>
+            <li><a style="background-position:-212px 0;" href="#" title="Flickr">Flickr</a></li>
+            <li><a style="background-position:-282px 0;" href="#" title="RSS">RSS</a></li>
+      <li><a style="background-position:0 0;" href="#" title="Twitter">Twitter</a></li>
+            <li><a style="background-position:-72px 0;" href="#" title="LinkedIn">LinkedIn</a></li>
+          </ul>
+        </div>
+
+
+        <div id="newsletter"  class="need-hide">
+          <ul>
+            <li><a href="/procurement/">&raquo; Державні закупівлі</a></li>
+      <hr>
+      <li><a style="color:#55ab23;font-weight:bold;" href="https://next.privat24.ua/payments/form/%7B%22token%22:%22e95819f32c1546d6b5175477ef614286xezxmpg0%22%7D"><img width="30" src="http://nbuv.gov.ua/sites/all/themes/nbuv/images/demo/pb.png" alt="Оплата послуг та благодійні внески" />&nbsp; Оплата послуг та благодійні внески</a></li>
+    </ul>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>
+<table   style="border-width:0px;!important;"><tr style="border-width:0px;!important;"><td style="border-width:0px;!important;" align="right"><a href="http://www.nbuv.gov.ua/node/1742" title="Центр дослідження соціальних комунікацій"><img width="30" src="http://nbuv.gov.ua/sites/all/themes/nbuv/images/demo/fb.png" alt="Прес-служба НБУВ" /></a></td><td style="border-width:0px;!important;" >&nbsp;<a href="http://www.nbuv.gov.ua/node/1742" title="Прес-служба НБУВ" style="font-size:9pt;font-family:arial;color:#3B5998;text-decoration: none;"><strong>Пресслужба НБУВ</strong></a></td></tr>
+    <tr style="border-width:0px;!important;"><td style="border-width:0px;!important;" align="right"><br /><a href="https://www.youtube.com/@nbuv" title="Канал НБУВ в YouTube"><img width="30" src="http://nbuv.gov.ua/sites/all/themes/nbuv/images/demo/YouTube.png" alt="YouTube" /></a></td><td style="border-width:0px;!important;" >&nbsp;<a href="https://www.youtube.com/@nbuv" title="Канал НБУВ в YouTube" style="font-size:9pt;font-family:arial;color:#3B5998;text-decoration: none;"><strong>Канал НБУВ в YouTube</strong></a></td></tr>
+</table></p>
+
+      <form action="#" method="post" style="display: none;>
+            <fieldset>
+              <legend>Підписатись на розсилку новин:</legend>
+              <input type="text" value="Enter Email Here&hellip;" onfocus="this.value=(this.value=='Enter Email Here&hellip;')? '' : this.value ;" />
+              <input type="text" id="subscribe" value="Submit" />
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <!-- ####################################################################################################### -->
+    </div>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper">
+  <div id="copyright" class="clear">
+    <p class="fl_left">
+                Всі права захищено &copy;
+    2013 - 2026  Національна бібліотека України імені В. І. Вернадського    <br/>
+  Працює на <a href="http://drupal.org/" title="Drupal - Open Source CMS | drupal.org" target="_blank">Drupal</a>&nbsp;|&nbsp;За підтримки <a href="http://www.os-templates.com/" title="Free Website Templates" target="_blank">OS Templates</a>
+  </p>
+  </div>
+</div>  <script type="text/javascript" src="http://www.nbuv.gov.ua/sites/all/modules/lightbox2/js/auto_image_handling.js?tfpkiz"></script>
+<script type="text/javascript" src="http://www.nbuv.gov.ua/sites/all/modules/lightbox2/js/lightbox.js?1780285177"></script>
+
+</body>
+
+</html>

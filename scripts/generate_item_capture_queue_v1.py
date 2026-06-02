@@ -151,7 +151,7 @@ def select_queue_rows() -> list[dict[str, str]]:
                 "queue_priority": queue_priority(row),
                 "capture_phase": ADAPTER_PHASE.get(row["adapter_hint"], "protocol:manual_html"),
                 "target_record_count": record_target(row),
-                "target_period": "1931-1970 first; keep later records if discovered",
+                "target_period": "1970-2026 coverage pass; keep earlier records only when they complete an existing group",
                 "first_query_terms": QUERY_TERMS_BY_REGION.get(row["macro_region"], "poster; graphic design; typography; print culture"),
                 "image_policy": row["recommended_image_policy"],
                 "text_policy": row["recommended_text_policy"],

@@ -22,6 +22,7 @@ from typing import Any
 
 import run_midcentury_capture_1930_1970 as mc
 import run_midcentury_expansion_capture_1931_1970 as mx
+from contemporary_noise_filter import evaluate_record
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -234,6 +235,71 @@ SOURCES: tuple[SourceConfig, ...] = (
         8,
         "Brazil",
         "Brazilian national archive context; stable source registry before item promotion.",
+    ),
+    SourceConfig(
+        "ESV260",
+        "JAGDA",
+        "East Asia",
+        "Japan",
+        "https://www.jagda.or.jp",
+        "EW13",
+        "jagda_postwar_contemporary_graphic_design_context_1970_2026",
+        ("poster", "typography", "exhibition", "identity", "graphic design"),
+        8,
+        "Japan",
+        "Japanese professional graphic design organization; source-hosted images and text only.",
+    ),
+    SourceConfig(
+        "ESV261",
+        "Fonts In Use",
+        "Global",
+        "global",
+        "https://fontsinuse.com",
+        "EW14",
+        "fonts_in_use_typographic_evidence_1970_2026",
+        ("poster", "identity", "magazine", "signage", "publication"),
+        8,
+        "global",
+        "Typographic use archive; evidence is contextual and source-hosted, not ownership evidence for underlying works.",
+    ),
+    SourceConfig(
+        "ESV262",
+        "Letterform Archive",
+        "North America",
+        "United States / global",
+        "https://letterformarchive.org",
+        "EW15",
+        "letterform_archive_typography_collection_context_1970_2026",
+        ("poster", "typography", "identity", "publication", "archive"),
+        8,
+        "United States / global",
+        "Typography and graphic design archive; source-hosted images only unless item-level rights state is explicit.",
+    ),
+    SourceConfig(
+        "ESV263",
+        "Thaipography Archive",
+        "Southeast Asia",
+        "Thailand",
+        "https://thaipography-archive.com",
+        "EW16",
+        "thaipography_archive_thai_typography_context_1990_2026",
+        ("typography", "poster", "lettering", "publication", "identity"),
+        8,
+        "Thailand",
+        "Thai typography/design archive; useful for Southeast Asian contemporary graphic design context.",
+    ),
+    SourceConfig(
+        "ESV264",
+        "M+ Magazine",
+        "East Asia",
+        "Hong Kong",
+        "https://www.mplus.org.hk",
+        "EW17",
+        "mplus_hong_kong_visual_culture_context_1970_2026",
+        ("graphic design", "poster", "typography", "identity", "publication"),
+        8,
+        "Hong Kong",
+        "Museum publication/source-context records for Hong Kong and East Asian visual culture; images remain source-hosted.",
     ),
 )
 
@@ -575,6 +641,19 @@ def assign_ids(rows: list[dict[str, str]]) -> None:
         row["capture_id"] = f"EW1970R{index:03d}"
 
 
+def apply_noise_filter(rows: list[dict[str, str]]) -> tuple[list[dict[str, str]], Counter[str]]:
+    decisions: Counter[str] = Counter()
+    kept: list[dict[str, str]] = []
+    for row in rows:
+        decision = evaluate_record(row)
+        decisions[decision.decision] += 1
+        row["noise_filter_decision"] = decision.decision
+        row["noise_filter_reason"] = decision.reason
+        if decision.decision in {"include_candidate", "downgrade_candidate"}:
+            kept.append(row)
+    return kept, decisions
+
+
 def write_csv(path: Path, rows: list[dict[str, str]], fieldnames: list[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as f:
@@ -639,6 +718,7 @@ def main() -> None:
         captured, summary = capture_source(source, seen)
         rows.extend(captured)
         summaries.append(summary)
+    rows, noise_decisions = apply_noise_filter(rows)
     assign_ids(rows)
     write_csv(RECORDS_CSV, rows, FIELDNAMES)
     write_csv(
@@ -649,7 +729,8 @@ def main() -> None:
     write_report(rows, summaries)
     print(
         f"captured={len(rows)} sources={len({row['source_name'] for row in rows})} "
-        f"image_states={dict(Counter(row['image_presence_code'] for row in rows))}"
+        f"image_states={dict(Counter(row['image_presence_code'] for row in rows))} "
+        f"noise_filter={dict(noise_decisions)}"
     )
     print(f"wrote {RECORDS_CSV.relative_to(ROOT)}")
     print(f"wrote {SUMMARY_CSV.relative_to(ROOT)}")

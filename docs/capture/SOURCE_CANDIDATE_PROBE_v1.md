@@ -3,46 +3,47 @@
 Source-level probe for edge/community/university/government candidates. This does not create public surfaces; it decides which source families deserve item-level adapters next.
 
 - Access date: 2026-06-01
-- Selected candidates: 60
-- Probe rows written: 60
+- Selected candidates: 111
+- Probe rows written: 111
 
 ## Probe Status
 
-- ok: 51
-- http_error: 6
-- failed: 3
+- ok: 82
+- failed: 20
+- http_error: 9
 
 ## Next Capture Priority
 
-- P1_adapter_candidate: 27
-- P2_html_source_candidate: 16
-- P3_manual_source_candidate: 8
-- hold_http_error: 6
-- hold_probe_failed: 3
+- P1_adapter_candidate: 45
+- P2_html_source_candidate: 27
+- hold_probe_failed: 20
+- P3_manual_source_candidate: 10
+- hold_http_error: 9
 
 ## Region Mix
 
-- Eastern Europe: 14
-- Latin America: 11
-- East Asia: 8
-- Africa: 6
-- Middle East and North Africa: 6
-- Southeast Asia: 5
-- Oceania and Pacific: 4
-- South Asia: 4
+- Eastern Europe: 19
+- Latin America: 17
+- East Asia: 16
+- Africa: 13
+- Southeast Asia: 13
+- Middle East and North Africa: 11
+- Oceania and Pacific: 10
+- South Asia: 10
 - Latin America and the Caribbean: 2
 
 ## Adapter Hints
 
-- html_text_source_adapter: 20
-- manual_review_or_alternate_endpoint: 9
-- html_jsonld_adapter: 8
-- iiif_manifest_adapter: 8
-- pdf_text_or_link_adapter: 6
+- manual_review_or_alternate_endpoint: 29
+- html_text_source_adapter: 25
+- html_jsonld_adapter: 15
+- html_source_probe_then_manual_rules: 12
+- pdf_text_or_link_adapter: 11
+- iiif_manifest_adapter: 9
+- dspace_oai_or_rest_adapter: 5
 - kramerius_adapter: 3
-- dspace_oai_or_rest_adapter: 3
-- html_source_probe_then_manual_rules: 2
 - omeka_api_adapter: 1
+- contentdm_source_adapter: 1
 
 ## P1 Adapter Candidates
 
