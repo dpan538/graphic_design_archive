@@ -1,16 +1,24 @@
 .DS_Store
 **/.DS_Store
 
+# Environment / credentials
+.env
+.env.*
+frontend/.env*
+
 # Python cache
 __pycache__/
 *.py[cod]
+.venv/
+venv/
 
 # Node / Next
+node_modules/
 frontend/node_modules/
+.next/
 frontend/.next/
 frontend/.next.bak*/
 frontend/out/
-frontend/.env*
 frontend/.asset-a11y-check/
 .model-cache/
 
@@ -18,6 +26,15 @@ frontend/.asset-a11y-check/
 .idea/
 .vscode/
 *.swp
+
+# Local browser/session/cache/download folders
+.browser/
+browser-cache/
+session/
+sessions/
+cookies/
+downloads/
+local-downloads/
 
 # Temporary files
 *.tmp
