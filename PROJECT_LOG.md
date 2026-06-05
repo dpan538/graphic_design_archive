@@ -5564,23 +5564,34 @@ Next practical direction:
 - Continue non-mainstream regional expansion, but prefer capture routes that
   produce image-bearing object records over source-profile-only pages.
 
-## 2026-06-05 — 500 non-mainstream successful source registry batch
+## 2026-06-05 — 500 non-mainstream pre-surface source registry batch
 
-Completed the requested source expansion as a successful-source registry batch:
-500 newly successful source records, distributed across undercovered and
-non-mainstream regions. This batch intentionally does not add the sources to
-public surfaces yet, because adding 500 homepage/source-profile pages would
-inflate `IMG04` and weaken the image-based archive. The records are archived as
-source-success metadata for the next item/image capture pass.
+Correction: this batch should not be counted as 500 successful archive sources.
+It records 500 newly reachable official source sites, distributed across
+undercovered and non-mainstream regions, but they have not yet gone through
+item-level capture, public-surface rebuild, or `IMG01`/`IMG02`/`IMG03`
+image-bearing validation. These rows are therefore pre-surface source leads for
+the next item/image capture pass.
 
-Step 1 - source-success crawler:
+Project source-success definition reaffirmed:
+
+- A source counts as successful for release/source coverage only after it has
+  produced item/source records, been rebuilt into archive surfaces, and yielded
+  usable image-bearing evidence (`IMG01`, `IMG02`, or `IMG03`) with the relevant
+  rights/review fields.
+- Reachable official source homepages are useful leads, but they are not enough
+  to count as successful archive sources.
+- The 500-row registry below is retained as capture queue material, not as
+  release-ready source coverage.
+
+Step 1 - pre-surface source crawler:
 
 - Added `scripts/run_nonmainstream_source_success_registry_2026_v1.py`.
 - The script queries Wikidata for official websites of museums, libraries,
   archives, art museums/galleries, and cultural centers in undercovered
   countries/regions.
-- The script probes official source URLs and counts only successful source
-  responses as source successes.
+- The script probes official source URLs and records successful source
+  responses as pre-surface capture leads.
 - The final run used chunked Wikidata queries, single-country retries for
   timeout-prone countries, macro/country-balanced candidate selection, and macro
   caps to avoid overfitting one region.
@@ -5589,16 +5600,16 @@ Step 1 - source-success crawler:
 - Generated `data/nonmainstream_source_success_region_breakdown_2026_v1.csv`.
 - Generated `docs/capture/NONMAINSTREAM_SOURCE_SUCCESS_REGISTRY_2026_v1.md`.
 
-Source-success metrics:
+Pre-surface source-lead metrics:
 
 - Candidate official source sites after existing-source dedupe and balanced
   sampling: 2600.
-- Successful new source sites available from the crawl: 1071.
-- Successful new source sites selected and archived: 500.
+- Reachable new source sites available from the crawl: 1071.
+- Pre-surface source sites selected and archived: 500.
 - Runtime: 913.8 seconds.
-- These are successful sources, not merely detected candidates.
+- These are reachable source leads, not release-counted successful sources.
 
-Macro-region distribution for the 500 successful sources:
+Macro-region distribution for the 500 pre-surface source leads:
 
 - Africa: 71.
 - Latin America / Caribbean: 71.
@@ -5629,22 +5640,22 @@ Protocol/source-route hints:
 
 Coverage impact:
 
-- Updated `scripts/audit_source_coverage_rate_v1.py` so successful source
-  registry rows count toward source coverage without entering public-surface
-  image metrics.
-- Updated `scripts/audit_image_release_gate.py` so release active source count
-  includes successful source registry rows.
-- Active source count is now 707.
-- Successful source registry count: 500.
-- Weighted active source points: 699.50.
-- Weighted source pool rate: 34.98%.
-- Region weighted balance rate: 33.01%.
-- Time weighted balance rate: 28.10%.
-- Source coverage rate v1: 9.83%.
-- Strict distribution-adjusted source coverage rate: 3.24%.
-- Release active source coverage is now 35.35% against the 2000-source target.
-- Sources still needed for the 80% release source gate: 893.
-- Sources still needed for the full 2000-source target: 1293.
+- Corrected `scripts/audit_source_coverage_rate_v1.py` so pre-surface registry
+  rows do not count toward active source coverage until item-level
+  image-bearing surfaces are built.
+- Corrected `scripts/audit_image_release_gate.py` so release active source count
+  does not include pre-surface registry rows.
+- Active source count remains 236.
+- Pre-surface source registry count: 500.
+- Weighted active source points: 130.25.
+- Weighted source pool rate: 6.51%.
+- Region weighted balance rate: 4.96%.
+- Time weighted balance rate: 10.95%.
+- Source coverage rate v1: 0.71%.
+- Strict distribution-adjusted source coverage rate: 0.04%.
+- Release active source coverage remains 11.80% against the 2000-source target.
+- Sources still needed for the 80% release source gate: 1364.
+- Sources still needed for the full 2000-source target: 1764.
 
 Image and sheet impact:
 
@@ -5666,24 +5677,26 @@ Boundary:
 - No image binaries were downloaded.
 - No screenshots, thumbnails, cookies, credentials, or raw HTML/source payloads
   were saved.
-- Source success did not upgrade `IMG01` or `IMG03`.
+- Reachable source status did not upgrade `IMG01` or `IMG03`.
 - No source priority, protocol signal, platform signal, Wikidata signal, or
   metadata heuristic is treated as rights clearance.
-- The batch improves source count/source coverage only. The next useful step is
-  to convert P0/P1 rows into item-level, image-bearing capture with explicit
+- The batch improves the next-capture queue only. It does not improve active
+  source coverage, image coverage, open-image rate, or sheet counts until P0/P1
+  rows are converted into item-level, image-bearing surfaces with explicit
   rights review.
 
 Verification:
 
-- `python3 -m py_compile` passed for the new source-success crawler and updated
+- `python3 -m py_compile` passed for the new source crawler and updated
   source/release audit scripts.
 - `python3 scripts/audit_source_coverage_rate_v1.py` passed and wrote updated
-  source coverage metrics.
+  source coverage metrics under the corrected pre-surface/non-counted registry
+  policy.
 - `python3 scripts/audit_image_release_gate.py` still fails by design because
   image and source release gates remain below final thresholds.
 - `python3 scripts/audit_img_state_contract.py` passed.
 - `python3 scripts/audit_layered_image_source_metrics_v1.py` passed; image
-  metrics did not change because the 500 source successes are not public image
+  metrics did not change because the 500 pre-surface leads are not public image
   records.
 - `python3 scripts/audit_public_surface_sheet_counts_v1.py` passed; sheet counts
   did not change.

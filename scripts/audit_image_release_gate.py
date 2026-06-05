@@ -10,7 +10,7 @@ from urllib.parse import urlsplit, urlunsplit
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 PAYLOAD = ROOT / "generated" / "public_surfaces_v1.json"
-SOURCE_SUCCESS_REGISTRY = DATA / "nonmainstream_source_success_registry_2026_v1.csv"
+PRE_SURFACE_SOURCE_REGISTRY = DATA / "nonmainstream_source_success_registry_2026_v1.csv"
 IMAGE_READY = {"IMG01", "IMG02", "IMG03"}
 BLOCKING_STATES = {"IMG00", "IMG04"}
 MIN_SOURCE_VISIBLE_COVERAGE = 95
@@ -73,15 +73,18 @@ def capture_source_count() -> int:
                 source_name = clean(row.get("source_name"))
                 if source_name:
                     sources.add(source_name)
-    if SOURCE_SUCCESS_REGISTRY.exists():
-        with SOURCE_SUCCESS_REGISTRY.open(newline="", encoding="utf-8") as handle:
-            for row in csv.DictReader(handle):
-                if clean(row.get("source_success_status")) != "success":
-                    continue
-                source_name = clean(row.get("source_name"))
-                if source_name:
-                    sources.add(source_name)
     return len(sources)
+
+
+def pre_surface_source_registry_count() -> int:
+    if not PRE_SURFACE_SOURCE_REGISTRY.exists():
+        return 0
+    with PRE_SURFACE_SOURCE_REGISTRY.open(newline="", encoding="utf-8") as handle:
+        return sum(
+            1
+            for row in csv.DictReader(handle)
+            if clean(row.get("source_success_status")) == "success"
+        )
 
 
 def pct(numerator: float, denominator: float) -> float:
@@ -144,6 +147,7 @@ def main() -> None:
     object_img04_coverage = pct(object_img04_count, object_total)
 
     active_source_count = capture_source_count()
+    pre_surface_count = pre_surface_source_registry_count()
     release_source_coverage = pct(active_source_count, RELEASE_SOURCE_TARGET)
     sources_needed_for_target = max(0, RELEASE_SOURCE_TARGET - active_source_count)
     sources_needed_for_minimum = max(
@@ -202,6 +206,7 @@ def main() -> None:
     print(f"maximum_img04_gate={'pending' if MAX_IMG04_COVERAGE is None else str(MAX_IMG04_COVERAGE) + '% object-level'}")
     print(f"release_source_target={RELEASE_SOURCE_TARGET}")
     print(f"release_active_source_count={active_source_count}")
+    print(f"pre_surface_source_registry_count={pre_surface_count}")
     print(f"release_source_coverage={release_source_coverage}%")
     print(f"minimum_release_source_coverage={MIN_RELEASE_SOURCE_COVERAGE}%")
     print(f"release_sources_needed_for_80pct={sources_needed_for_minimum}")

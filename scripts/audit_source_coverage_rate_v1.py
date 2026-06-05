@@ -20,7 +20,7 @@ DATA = ROOT / "data"
 DOCS = ROOT / "docs" / "capture"
 
 REGISTRY = DATA / "source_prospect_registry_v2.csv"
-SOURCE_SUCCESS_REGISTRY = DATA / "nonmainstream_source_success_registry_2026_v1.csv"
+PRE_SURFACE_SOURCE_REGISTRY = DATA / "nonmainstream_source_success_registry_2026_v1.csv"
 OUTPUT = DATA / "source_coverage_rate_v1.csv"
 REGION_OUTPUT = DATA / "source_coverage_region_breakdown_v1.csv"
 PERIOD_OUTPUT = DATA / "source_coverage_period_breakdown_v1.csv"
@@ -163,21 +163,12 @@ def capture_rows() -> list[dict[str, str]]:
     return rows
 
 
-def source_success_rows() -> list[dict[str, str]]:
-    rows: list[dict[str, str]] = []
-    for row in read_csv(SOURCE_SUCCESS_REGISTRY):
-        if clean(row.get("source_success_status")) != "success":
-            continue
-        rows.append(
-            {
-                "source_name": clean(row.get("source_name")),
-                "date_start": clean(row.get("period_start")) or "1900",
-                "date_end": clean(row.get("period_end")) or "2026",
-                "_capture_file": SOURCE_SUCCESS_REGISTRY.name,
-                "_source_success_region": clean(row.get("macro_region")),
-            }
-        )
-    return rows
+def pre_surface_source_registry_count() -> int:
+    return sum(
+        1
+        for row in read_csv(PRE_SURFACE_SOURCE_REGISTRY)
+        if clean(row.get("source_success_status")) == "success"
+    )
 
 
 def registry_rows() -> list[dict[str, str]]:
@@ -213,19 +204,11 @@ def pct(value: float) -> str:
 
 def main() -> None:
     DOCS.mkdir(parents=True, exist_ok=True)
-    source_success = source_success_rows()
-    rows = capture_rows() + source_success
+    pre_surface_count = pre_surface_source_registry_count()
+    rows = capture_rows()
     registry = registry_by_source_name()
     active_sources = sorted({clean(row.get("source_name")) for row in rows if clean(row.get("source_name"))})
-    source_success_region = {
-        clean(row.get("source_name")): clean(row.get("_source_success_region"))
-        for row in source_success
-        if clean(row.get("source_name")) and clean(row.get("_source_success_region"))
-    }
-    active_region = {
-        source: source_success_region.get(source) or canonical_region(source, registry)
-        for source in active_sources
-    }
+    active_region = {source: canonical_region(source, registry) for source in active_sources}
 
     candidate_by_region: Counter[str] = Counter()
     for row in registry_rows():
@@ -313,9 +296,9 @@ def main() -> None:
             "notes": "Candidate/prospect sources in source_prospect_registry_v2; not counted as active coverage.",
         },
         {
-            "metric": "source_success_registry_count",
-            "value": str(len(source_success)),
-            "notes": "Successful source-level registry rows counted for source coverage but not public-surface image metrics.",
+            "metric": "pre_surface_source_registry_count",
+            "value": str(pre_surface_count),
+            "notes": "Official source sites verified as reachable, but not counted as active source coverage until item-level image-bearing surfaces are built.",
         },
         {
             "metric": "weighted_active_source_points",

@@ -1,14 +1,14 @@
-# Non-mainstream Source Success Registry 2026 v1
+# Non-mainstream Pre-surface Source Registry 2026 v1
 
 Access date: 2026-06-05
 
-This batch records 500 newly successful official source sites from undercovered regions. It is source-success archival metadata, not public-surface/image ingestion.
+This batch records 500 newly reachable official source sites from undercovered regions. It is a pre-surface source registry for later item/image capture, not public-surface ingestion and not release-success source coverage.
 
 ## Top Metrics
 
 - Candidate official source sites after dedupe: 2600
 - Successful new source sites available: 1071
-- Successful new source sites selected: 500
+- Pre-surface source sites selected: 500
 - Runtime seconds: 913.8
 
 ## Macro-region Distribution
@@ -41,6 +41,6 @@ This batch records 500 newly successful official source sites from undercovered 
 ## Boundary
 
 - No image binaries, thumbnails, screenshots, cookies, credentials, or raw HTML/source payloads were saved.
-- Source success does not upgrade `IMG01` or `IMG03`.
-- Rows are not added to generated public surfaces in this pass, so this source-count expansion does not inflate `IMG04` public pages.
+- Reachable source status does not upgrade `IMG01` or `IMG03`.
+- Rows are not added to generated public surfaces in this pass, so they do not count as archive-success sources yet and do not inflate `IMG04` public pages.
 - `next_item_capture_priority` is internal triage for future item-level image-bearing capture.
