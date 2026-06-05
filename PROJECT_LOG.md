@@ -4707,3 +4707,52 @@ Follow-up tightening:
   categories for visual, ToS, Wayback/IPFS, and similar-open-image hints.
 - `source_terms_allow_thumbnail=true` is ignored unless paired with a reviewed
   source policy. `manual_review` remains a review-needed state, not approval.
+
+## 2026-06-05 — Global edge discovery registry v1
+
+Converted a broad set of proposed global archive-discovery strategies into a
+conservative candidate-source registry rather than a crawler that immediately
+downloads images or mints publication records.
+
+Generated:
+
+- `scripts/generate_global_edge_discovery_registry_v1.py`
+- `data/global_edge_discovery_candidates_v1.csv`
+- `data/global_edge_discovery_metrics_v1.csv`
+- `docs/capture/GLOBAL_EDGE_DISCOVERY_STRATEGY_v1.md`
+
+Test calculation:
+
+- 81 candidate sources were normalized.
+- 79/81 candidates, or 97.5%, sit outside the dominant United States and
+  Western European source pattern.
+- Macro-region distribution: Asia 26, Global 19, Latin America 10, Africa 8,
+  Middle East and North Africa 8, Europe 5, Oceania 4, North America 1.
+- Priority distribution: P1 46, P2 25, P3 9, P4 1.
+- Period support: 1830-1930 has 56 candidate source routes; 1931-1970 has 66;
+  1971-2000 has 69; 2001-2026 has 70.
+
+Implementation constraints:
+
+- OAI-PMH, IIIF, museum/library APIs, HTML metadata, WordPress, CollectiveAccess,
+  newspaper/OCR, and manual source-registry paths are adapter families, not
+  rights clearance.
+- Social platforms, portfolio platforms, Pinterest boards, Reddit threads, and
+  repost networks are discovery leads only. They must not write images, infer
+  open licenses, or mint final object sheets without source review.
+- Proxy/geobypass and authenticated database scraping remain outside production
+  automation. They may be documented as manual or institutionally authorized
+  research routes, but not embedded as automatic capture behavior.
+- Impact-score ideas may rank review priority. They cannot decide scholarly
+  inclusion, source authority, or image state.
+- LLM ToS parsing, visual copyright detection, similar-image search, and
+  Archive.org/IPFS hints remain review signals only. They cannot upgrade
+  `IMG00` to `IMG01` or `IMG03`.
+
+Next route:
+
+- Promote reviewed P1 candidates into `source_prospect_registry_v2` and adapter
+  queues only after source terms, access route, field provenance, and citation
+  expectations are clear.
+- Prioritize non-US/non-Western-European source families with deterministic
+  metadata routes before exploratory platform crawling.
