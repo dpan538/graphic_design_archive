@@ -5563,3 +5563,133 @@ Next practical direction:
   item pages and rights text.
 - Continue non-mainstream regional expansion, but prefer capture routes that
   produce image-bearing object records over source-profile-only pages.
+
+## 2026-06-05 — 500 non-mainstream successful source registry batch
+
+Completed the requested source expansion as a successful-source registry batch:
+500 newly successful source records, distributed across undercovered and
+non-mainstream regions. This batch intentionally does not add the sources to
+public surfaces yet, because adding 500 homepage/source-profile pages would
+inflate `IMG04` and weaken the image-based archive. The records are archived as
+source-success metadata for the next item/image capture pass.
+
+Step 1 - source-success crawler:
+
+- Added `scripts/run_nonmainstream_source_success_registry_2026_v1.py`.
+- The script queries Wikidata for official websites of museums, libraries,
+  archives, art museums/galleries, and cultural centers in undercovered
+  countries/regions.
+- The script probes official source URLs and counts only successful source
+  responses as source successes.
+- The final run used chunked Wikidata queries, single-country retries for
+  timeout-prone countries, macro/country-balanced candidate selection, and macro
+  caps to avoid overfitting one region.
+- Generated `data/nonmainstream_source_success_registry_2026_v1.csv`.
+- Generated `data/nonmainstream_source_success_summary_2026_v1.csv`.
+- Generated `data/nonmainstream_source_success_region_breakdown_2026_v1.csv`.
+- Generated `docs/capture/NONMAINSTREAM_SOURCE_SUCCESS_REGISTRY_2026_v1.md`.
+
+Source-success metrics:
+
+- Candidate official source sites after existing-source dedupe and balanced
+  sampling: 2600.
+- Successful new source sites available from the crawl: 1071.
+- Successful new source sites selected and archived: 500.
+- Runtime: 913.8 seconds.
+- These are successful sources, not merely detected candidates.
+
+Macro-region distribution for the 500 successful sources:
+
+- Africa: 71.
+- Latin America / Caribbean: 71.
+- MENA: 71.
+- Southeast Asia: 71.
+- Eastern Europe / Caucasus: 70.
+- South Asia: 66.
+- Central Asia: 55.
+- East Asia: 17.
+- Oceania / Indigenous: 8.
+
+Source class distribution:
+
+- Museum: 281.
+- Library: 136.
+- Cultural center: 36.
+- Archives: 29.
+- Art gallery: 18.
+
+Protocol/source-route hints:
+
+- 31 rows are `P0 item/image adapter` priorities.
+- 270 rows are `P1 item/source adapter` priorities.
+- 124 rows are `P1 manual item capture` priorities.
+- 75 rows are `P2 source enrichment` priorities.
+- Protocol hints include IIIF, DSpace, RSS/Atom, JSON-LD, WordPress REST, PDF,
+  and static app signals. These are adapter hints only and do not clear rights.
+
+Coverage impact:
+
+- Updated `scripts/audit_source_coverage_rate_v1.py` so successful source
+  registry rows count toward source coverage without entering public-surface
+  image metrics.
+- Updated `scripts/audit_image_release_gate.py` so release active source count
+  includes successful source registry rows.
+- Active source count is now 707.
+- Successful source registry count: 500.
+- Weighted active source points: 699.50.
+- Weighted source pool rate: 34.98%.
+- Region weighted balance rate: 33.01%.
+- Time weighted balance rate: 28.10%.
+- Source coverage rate v1: 9.83%.
+- Strict distribution-adjusted source coverage rate: 3.24%.
+- Release active source coverage is now 35.35% against the 2000-source target.
+- Sources still needed for the 80% release source gate: 893.
+- Sources still needed for the full 2000-source target: 1293.
+
+Image and sheet impact:
+
+- Public surface count remains 1565.
+- No generated public surfaces were added in this batch.
+- Public `IMG04` count remains 258 surfaces / 251 objects.
+- Public object-level `IMG04` coverage remains 16.16%.
+- Object source-visible coverage remains 81.20%.
+- Object verified-open coverage remains 30.97%.
+- Object weighted publication-grade image coverage remains 54.90%.
+- Main sheets remain 1325.
+- Sub sheets remain 226.
+- Text sheets remain 242.
+- Main sheets with more than 2 sub sheets remain 121.
+- Main sheets with more than 5 text sheets remain 1.
+
+Boundary:
+
+- No image binaries were downloaded.
+- No screenshots, thumbnails, cookies, credentials, or raw HTML/source payloads
+  were saved.
+- Source success did not upgrade `IMG01` or `IMG03`.
+- No source priority, protocol signal, platform signal, Wikidata signal, or
+  metadata heuristic is treated as rights clearance.
+- The batch improves source count/source coverage only. The next useful step is
+  to convert P0/P1 rows into item-level, image-bearing capture with explicit
+  rights review.
+
+Verification:
+
+- `python3 -m py_compile` passed for the new source-success crawler and updated
+  source/release audit scripts.
+- `python3 scripts/audit_source_coverage_rate_v1.py` passed and wrote updated
+  source coverage metrics.
+- `python3 scripts/audit_image_release_gate.py` still fails by design because
+  image and source release gates remain below final thresholds.
+- `python3 scripts/audit_img_state_contract.py` passed.
+- `python3 scripts/audit_layered_image_source_metrics_v1.py` passed; image
+  metrics did not change because the 500 source successes are not public image
+  records.
+- `python3 scripts/audit_public_surface_sheet_counts_v1.py` passed; sheet counts
+  did not change.
+- `git diff --check` passed.
+- Strict credential-shape scan found no real credential assignment,
+  bearer/cookie/session payload, API key assignment, local user path, private
+  key block, OpenAI-style key, AWS-style key, or `.env` reference in the
+  intended commit-bound files. Remaining broad hits are historical log lines
+  that spell out safety scan terms.
