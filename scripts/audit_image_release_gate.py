@@ -17,6 +17,7 @@ MIN_VERIFIED_OPEN_COVERAGE = 85
 MIN_WEIGHTED_PUBLICATION_COVERAGE = 95
 MIN_RELEASE_SOURCE_COVERAGE = 80
 RELEASE_SOURCE_TARGET = 2000
+MAX_IMG04_COVERAGE: float | None = None
 TARGET_COVERAGE = 100
 
 # Renderability is not the same as publication-grade image coverage.
@@ -128,6 +129,10 @@ def main() -> None:
     object_source_visible_coverage = pct(object_ready, object_total)
     object_verified_open_coverage = pct(object_verified_open, object_total)
     object_weighted_publication_coverage = pct(object_weighted_ready, object_total)
+    surface_img04_count = counts.get("IMG04", 0)
+    surface_img04_coverage = pct(surface_img04_count, total)
+    object_img04_count = object_counts.get("IMG04", 0)
+    object_img04_coverage = pct(object_img04_count, object_total)
 
     active_source_count = capture_source_count()
     release_source_coverage = pct(active_source_count, RELEASE_SOURCE_TARGET)
@@ -178,9 +183,14 @@ def main() -> None:
     print(f"object_verified_open_coverage={object_verified_open_coverage}%")
     print(f"object_weighted_publication_image_score={round(object_weighted_ready, 2)}")
     print(f"object_weighted_publication_coverage={object_weighted_publication_coverage}%")
+    print(f"surface_img04_count={surface_img04_count}")
+    print(f"surface_img04_coverage={surface_img04_coverage}%")
+    print(f"object_img04_count={object_img04_count}")
+    print(f"object_img04_coverage={object_img04_coverage}%")
     print(f"minimum_source_visible_gate={MIN_SOURCE_VISIBLE_COVERAGE}% object-level")
     print(f"minimum_verified_open_gate={MIN_VERIFIED_OPEN_COVERAGE}% object-level")
     print(f"minimum_weighted_publication_gate={MIN_WEIGHTED_PUBLICATION_COVERAGE}% object-level")
+    print(f"maximum_img04_gate={'pending' if MAX_IMG04_COVERAGE is None else str(MAX_IMG04_COVERAGE) + '% object-level'}")
     print(f"release_source_target={RELEASE_SOURCE_TARGET}")
     print(f"release_active_source_count={active_source_count}")
     print(f"release_source_coverage={release_source_coverage}%")
@@ -197,6 +207,8 @@ def main() -> None:
         "weighted_publication_object_gate": object_weighted_publication_coverage >= MIN_WEIGHTED_PUBLICATION_COVERAGE,
         "release_source_coverage_gate": release_source_coverage >= MIN_RELEASE_SOURCE_COVERAGE,
     }
+    if MAX_IMG04_COVERAGE is not None:
+        gates["img04_object_gate"] = object_img04_coverage <= MAX_IMG04_COVERAGE
     print(f"release_gates={gates}")
 
     if total:

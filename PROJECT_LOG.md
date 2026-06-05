@@ -5506,3 +5506,60 @@ Verification:
   `.env` reference in the intended commit-bound files.
 - Pre-existing raw capture leftovers from other worktrees/windows remain
   unrelated and must not be staged.
+
+## 2026-06-05 — Image-based release direction clarified
+
+Decision update after reviewing the source-profile expansion:
+
+- The project remains an image-based archive, not only a source directory.
+- Source count must continue rising toward the final 2000-source release target,
+  but future expansion needs to balance source coverage with usable image
+  evidence.
+- `IMG01` and `IMG03` rights upgrades should be actively pursued when there is
+  authoritative item-level rights evidence. The ban is only on automatic
+  upgrades from heuristics, LLM inference, source priority, platform signals,
+  protocol hints, TOS text alone, or impact score.
+- Open-image/verified-open rate should improve where evidence supports it, but
+  without inflating the archive through unreviewed or locally copied images.
+- `IMG04` remains valid for genuine no-image/text/context/source-profile pages,
+  but its share now counts as an online-release risk because too many `IMG04`
+  records weaken the image-based archive experience.
+- Updated `scripts/audit_image_release_gate.py` to report both surface-level and
+  object-level `IMG04` counts and coverage. The hard `IMG04` maximum threshold
+  is not set yet and is currently reported as pending.
+
+Current interpretation of the last source-profile pass:
+
+- The 127 new source-profile pages helped source count and non-mainstream
+  regional system visibility.
+- They did not improve image coverage, open-image rate, verified-open rate, or
+  publication-grade image coverage.
+- Similar pure `IMG04` expansion should not be repeated as the main strategy
+  unless it is paired with item-level capture, source-hosted image evidence, or
+  rights-reviewable `IMG01`/`IMG03` opportunities.
+
+Sheet-structure note:
+
+- Current sheet statistics are not yet satisfactory.
+- Main sheets should normally have meaningful sub sheets. The current low
+  parent/sub depth may mean classification and grouping are still too weak, or
+  it may become clearer only after source and surface volume increase.
+- Text sheet count is also lower than the desired future structure. The working
+  expectation is that a mature main sheet may carry roughly two text pages and a
+  mature sub sheet may carry roughly one text page.
+- This text/sub-sheet expectation is recorded now but should become a later
+  consolidation and release-readiness audit after the source and surface pool is
+  larger.
+
+Next practical direction:
+
+- Keep increasing source count and source coverage, but prioritize sources that
+  can produce item-level records with source-hosted image routes, IIIF/viewer
+  evidence, or explicit open rights.
+- Review high-volume `IMG02` sources for authoritative rights evidence before
+  upgrading to `IMG03`.
+- Review conservative `IMG00`/`IMG04` rows where source-hosted visual evidence
+  exists but was not yet promoted, especially when the source gives stable
+  item pages and rights text.
+- Continue non-mainstream regional expansion, but prefer capture routes that
+  produce image-bearing object records over source-profile-only pages.
