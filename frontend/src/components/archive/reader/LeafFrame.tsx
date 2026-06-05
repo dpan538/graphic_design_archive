@@ -8,16 +8,21 @@ import {
   selectReadingNoteLayout,
 } from "@/lib/reading-note-layout";
 import { sourceSlipFrameClass } from "@/lib/slip-layout";
+import { subSheetFrameClass } from "@/lib/sub-sheet-layout";
 import {
   selectTextPageLayout,
   textPageFrameClass,
 } from "@/lib/text-page-layout";
+import {
+  layoutContractDataAttrs,
+  layoutContractForLeaf,
+} from "@/lib/layout-contracts";
 import { renderLeafContent, type LeafCtx } from "../layouts";
 
 /**
- * Physical frame around one leaf. The only fixed chrome drawn here is the
- * folder-colour bar on the left edge; the accession number now lives in the
- * leaf header band (see LeafHead) so it never overlaps the content.
+ * Physical frame around one leaf. Folder colour now belongs to local labels,
+ * tabs, badges, and navigation context; the printable leaf itself must not
+ * carry a legacy left-edge colour rail.
  */
 export default function LeafFrame({
   leaf,
@@ -30,6 +35,7 @@ export default function LeafFrame({
   activeFolderId?: string;
   ctx?: LeafCtx;
 }) {
+  const contract = layoutContractForLeaf(leaf);
   const sizeClass =
     leaf.type === "bookmark"
       ? "leaf--bookmark"
@@ -43,6 +49,8 @@ export default function LeafFrame({
             leaf.textPageLayoutId ??
               (leaf.surface ? selectTextPageLayout(leaf.surface) : "TP06.spread-cover"),
           )
+      : leaf.type === "subsheet"
+        ? `leaf--sub-sheet ${subSheetFrameClass(leaf.subSheetLayoutId ?? "SS01.schedule-index")}`
       : leaf.type === "slip"
         ? `leaf--slip ${sourceSlipFrameClass(leaf.slipLayoutId ?? "SLIP02.portrait")}`
       : leaf.type === "appendix"
@@ -55,8 +63,13 @@ export default function LeafFrame({
           ? "leaf--stub"
           : "leaf--sheet";
   return (
-    <div className={`leaf ${sizeClass} ${single ? "leaf--single" : ""}`}>
-      <span className="folder-color-bar" aria-hidden />
+    <div
+      className={`leaf ${sizeClass} ${single ? "leaf--single" : ""}`}
+      data-leaf-type={leaf.type}
+      data-layout-id={leaf.layoutId}
+      data-image-state={leaf.surface?.image.state}
+      {...layoutContractDataAttrs(contract)}
+    >
       {renderLeafContent(leaf, activeFolderId, ctx)}
     </div>
   );

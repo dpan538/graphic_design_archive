@@ -34,7 +34,7 @@ interface ReadingNoteContext {
 }
 
 const RECORD_RULES = {
-  RN01: { max: 3, title: 54, source: 54 },
+  RN01: { max: 2, title: 54, source: 54 },
   RN02: { leftMax: 3, rightMax: 4, title: 38, source: 42 },
   RN03: { max: 1, title: 48, source: 42 },
   RN04: { max: 3, title: 48, source: 56 },
@@ -241,7 +241,7 @@ function RN01Stacked({ ctx }: { ctx: ReadingNoteContext }) {
         </div>
         <p className="reading-note__kicker">{ctx.folderLabel} / filter view</p>
         <h2>{ctx.folder.title}</h2>
-        <p className="reading-note__scope">{clip(ctx.folder.scopeNote, 168)}</p>
+        <p className="reading-note__scope">{clip(ctx.folder.scopeNote, 76)}</p>
         <FactGrid ctx={ctx} />
       </section>
       <section className="reading-note__card reading-note__card--protocol">
@@ -251,9 +251,8 @@ function RN01Stacked({ ctx }: { ctx: ReadingNoteContext }) {
         </header>
         <div className="reading-note__rule-row">
           <p>IMG00 keeps the image bay empty and returns attention to source evidence.</p>
-          <p>IMG04 removes the image bay and sends table overflow to appendix leaves.</p>
+          <p>IMG04 is a text-only signal. It removes the image bay and routes dense evidence to appendix leaves.</p>
         </div>
-        <OpenRecordRows surfaces={ctx.surfaces} max={RECORD_RULES.RN01.max} />
         <MicroFooter ctx={ctx} />
       </section>
     </article>

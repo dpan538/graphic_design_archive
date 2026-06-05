@@ -1,4 +1,4 @@
-import type { Surface, SurfaceImage } from "@/types/archive";
+import type { Surface } from "@/types/archive";
 import { type Leaf } from "@/lib/paginate";
 import { isRenderableImage } from "@/lib/layout";
 import { dateSpanLabel, getFolderType } from "@/lib/archive-data";
@@ -22,6 +22,10 @@ import { ArchiveBookmarkSurface, FolderBookmarkLayout } from "./bookmarks/Bookma
 import { ReadingNoteLayout } from "./reading-notes/ReadingNoteLab";
 import { ArchiveSlipSurface } from "./slips/SlipLab";
 import { ArchiveTextPageSurface } from "./text-pages/TextPageLab";
+import { ArchiveMainSheetSurface } from "./main-sheets/MainSheetLab";
+import { selectMainSheetLayout } from "@/lib/main-sheet-layout";
+import { ArchiveSubSheetSurface } from "./sub-sheets/SubSheetLab";
+import { selectSubSheetLayout } from "@/lib/sub-sheet-layout";
 
 /**
  * Reusable A4 layouts. Each fills the slot contract from the payload and fits
@@ -60,6 +64,14 @@ function accessionOf(leaf: Leaf): { no: string; pg: string } {
     return {
       no: leaf.folder?.folderId ?? "",
       pg: "Reading note",
+    };
+  }
+  if (leaf.type === "subsheet") {
+    return {
+      no: leaf.surface?.provisionalDisplayNumber ?? "",
+      pg: `sub ${String(leaf.surfacePageNumber ?? 1).padStart(2, "0")} / ${String(
+        leaf.surfacePageCount ?? 1,
+      ).padStart(2, "0")}`,
     };
   }
   return {
@@ -105,13 +117,6 @@ function SheetMarkers({ leaf }: { leaf: Leaf }) {
   );
 }
 
-function imagesOf(surface: Surface): SurfaceImage[] {
-  const list: SurfaceImage[] = [];
-  if (surface.image) list.push(surface.image);
-  if (surface.images) list.push(...surface.images);
-  return list;
-}
-
 function Body({ children }: { children: React.ReactNode }) {
   return <div className="leaf__body">{children}</div>;
 }
@@ -122,6 +127,9 @@ function Body({ children }: { children: React.ReactNode }) {
 
 function L01Main({ leaf, activeFolderId }: LayoutProps) {
   const s = leaf.surface!;
+  if (leaf.mainSheetLayoutId) {
+    return <ArchiveMainSheetSurface id={leaf.mainSheetLayoutId} surface={s} />;
+  }
   const left = (leaf.variant ?? "img-right") === "img-left";
 
   const context = (
@@ -228,44 +236,27 @@ function TextPageLeaf({ leaf }: LayoutProps) {
   return <ArchiveTextPageSurface surface={s} layoutId={leaf.textPageLayoutId} />;
 }
 
+function SubSheetLeaf({ leaf }: LayoutProps) {
+  const s = leaf.surface!;
+  return (
+    <ArchiveSubSheetSurface
+      id={leaf.subSheetLayoutId ?? selectSubSheetLayout(s)}
+      surface={s}
+    />
+  );
+}
+
 // ========================================================================
 // L03 — Plate dominant (only for renderable images), image in a 3:4 bay.
 // ========================================================================
 
-function L03Plate({ leaf, activeFolderId }: LayoutProps) {
+function L03Plate({ leaf }: LayoutProps) {
   const s = leaf.surface!;
   return (
-    <Body>
-      <LeafHead
-        leaf={leaf}
-        context={
-          <>
-            <StatusChip kind={s.surfaceType} /> Plate · <ImgBadge state={s.image.state} />
-          </>
-        }
-      />
-      <div className="flex gap-6 flex-1 min-h-0 mt-3 overflow-hidden">
-        <div className="w-[46%] shrink-0 min-h-0 flex items-start overflow-hidden">
-          <ImageZone
-            image={s.image}
-            className="w-full"
-            description={s.descriptionSummary || s.sourceDescription}
-            sourceName={s.sourceName}
-          />
-        </div>
-        <div className="flex-1 min-w-0 flex flex-col gap-2 overflow-hidden">
-          <TitleBlock surface={s} size="md" />
-          <ScopeBlock surface={s} />
-          <div className="flex-1 min-h-0 overflow-hidden">
-            <SpecTables tables={leaf.tables ?? []} columns={1} />
-          </div>
-          <RightsBlock surface={s} />
-          <SourceBlock surface={s} />
-          <MembershipsBlock surface={s} activeFolderId={activeFolderId} />
-        </div>
-      </div>
-      <SheetMarkers leaf={leaf} />
-    </Body>
+    <ArchiveMainSheetSurface
+      id={leaf.mainSheetLayoutId ?? selectMainSheetLayout(s)}
+      surface={s}
+    />
   );
 }
 
@@ -273,40 +264,13 @@ function L03Plate({ leaf, activeFolderId }: LayoutProps) {
 // L04 — Dual plate (two renderable photos on one page).
 // ========================================================================
 
-function L04Dual({ leaf, activeFolderId }: LayoutProps) {
+function L04Dual({ leaf }: LayoutProps) {
   const s = leaf.surface!;
-  const imgs = imagesOf(s)
-    .filter((im) => isRenderableImage(im))
-    .slice(0, 2);
   return (
-    <Body>
-      <LeafHead
-        leaf={leaf}
-        context={
-          <>
-            <StatusChip kind={s.surfaceType} /> Dual plate · <ImgBadge state={s.image.state} />
-          </>
-        }
-      />
-      <TitleBlock surface={s} size="md" />
-      <div className="flex gap-6 mt-3" style={{ maxHeight: "50%" }}>
-        {imgs.map((img, i) => (
-          <div key={i} className="flex-1 min-w-0">
-            <ImageZone image={img} className="w-full" sourceName={s.sourceName} />
-          </div>
-        ))}
-      </div>
-      <div className="mt-3"><ScopeBlock surface={s} /></div>
-      <div className="flex-1 min-h-0 mt-2 overflow-hidden">
-        <SpecTables tables={leaf.tables ?? []} columns={2} />
-      </div>
-      <div className="grid grid-cols-3 gap-6 mt-2 pt-2 border-t border-line-soft">
-        <RightsBlock surface={s} />
-        <SourceBlock surface={s} />
-        <MembershipsBlock surface={s} activeFolderId={activeFolderId} />
-      </div>
-      <SheetMarkers leaf={leaf} />
-    </Body>
+    <ArchiveMainSheetSurface
+      id={leaf.mainSheetLayoutId ?? selectMainSheetLayout(s)}
+      surface={s}
+    />
   );
 }
 
@@ -562,12 +526,13 @@ export function renderLeafContent(
   if (leaf.type === "bookmark") return <L10Bookmark leaf={leaf} />;
   if (leaf.type === "reading_note") return <FolderReadingNote leaf={leaf} />;
   if (leaf.type === "text") return <TextPageLeaf leaf={leaf} />;
+  if (leaf.type === "subsheet") return <SubSheetLeaf leaf={leaf} />;
   if (leaf.type === "slip") return <SlipLeaf leaf={leaf} />;
   if (leaf.type === "appendix") return <AppendixLeaf leaf={leaf} />;
   const props: LayoutProps = { leaf, activeFolderId, ctx };
   switch (leaf.layoutId) {
     case "L02.text":
-      return <L02Text {...props} />;
+      return <TextPageLeaf {...props} />;
     case "L03.plate":
       return <L03Plate {...props} />;
     case "L04.dual":

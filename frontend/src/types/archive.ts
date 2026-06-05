@@ -107,7 +107,14 @@ export interface SurfaceTable {
 }
 
 /** Optional hint that lets the generator pin a specific layout. */
-export type LayoutHint = "main" | "text" | "plate" | "dual" | "compound";
+export type LayoutHint =
+  | "main"
+  | "text"
+  | "plate"
+  | "dual"
+  | "compound"
+  | "support_packet"
+  | "merge_candidate";
 
 export interface Surface {
   surfaceId: string;
@@ -140,6 +147,9 @@ export interface Surface {
   uncertaintyNote?: string;
   citationBasis?: string;
   completenessScore: number;
+  surfaceDisposition?: string;
+  publicationRole?: string;
+  publicationGate?: Record<string, unknown>;
   reviewGates: SurfaceReviewGates;
   image: SurfaceImage;
   /** Optional additional image bays (used by the dual-plate / compound layouts). */
@@ -168,4 +178,115 @@ export interface PublicSurfaceMock {
   folderTypes: FolderType[];
   folders: Folder[];
   surfaces: Surface[];
+  researchDossiers?: ResearchDossier[];
+  appendices?: ResearchAppendix[];
+  readingNotes?: ReadingNoteRecord[];
+  bookmarks?: ResearchBookmark[];
+  registrationCards?: RegistrationCard[];
+}
+
+export type DossierPageType =
+  | "main_sheet"
+  | "subsheet"
+  | "text_page"
+  | "appendix"
+  | "card"
+  | "slip"
+  | "bookmark"
+  | "child_source_record";
+
+export interface DossierPageRef {
+  pageId: string;
+  pageType: DossierPageType;
+  surfaceId: string;
+  displayNumber?: string;
+  title?: string;
+  imageState?: ImageState;
+  layoutId?: string | null;
+  exportable: boolean;
+  rightsState?: string;
+  sourceName?: string;
+  sourceUrl?: string;
+  appendixReasons?: string[];
+}
+
+export interface ResearchDossier {
+  dossierId: string;
+  anchorSurfaceId: string;
+  anchorType: "main_sheet" | "subsheet" | "card";
+  sourceScope:
+    | "single_anchor_record"
+    | "compound_or_series_cluster"
+    | "support_packet"
+    | "card_record"
+    | (string & {});
+  title: string;
+  dateStart: number | null;
+  dateEnd: number | null;
+  folderIds: string[];
+  pageCount: number;
+  pageSequence: DossierPageRef[];
+  exportPolicy: {
+    selectablePages: boolean;
+    pdfAllowed: boolean;
+    stampEveryPage: boolean;
+    includeRightsPage: boolean;
+    localImageCopyAllowed: boolean;
+  };
+  groupingBasis: string;
+}
+
+export interface ResearchAppendix {
+  appendixId: string;
+  surfaceId: string;
+  title: string;
+  displayNumber: string;
+  layoutId: string;
+  reasons: string[];
+  tableRows: number;
+}
+
+export interface ReadingNoteRecord {
+  readingNoteId: string;
+  noteScope: "folder" | "surface" | (string & {});
+  folderId?: string;
+  surfaceId?: string;
+  type?: FolderTypeKey;
+  title: string;
+  displayNumber?: string;
+  dateStart: number | null;
+  dateEnd: number | null;
+  surfaceCount?: number;
+  sourceName?: string;
+  sourceUrl?: string;
+  imageState?: ImageState;
+  readingLength?: number;
+  scopeNote: string;
+  displayRule: string;
+}
+
+export interface ResearchBookmark {
+  bookmarkId: string;
+  surfaceId?: string;
+  folderId?: string;
+  type?: FolderTypeKey;
+  title: string;
+  dateStart?: number | null;
+  dateEnd?: number | null;
+  imageState?: ImageState;
+  reason?: string;
+  displayRule: string;
+}
+
+export interface RegistrationCard {
+  registrationId: string;
+  folderId: string;
+  type: FolderTypeKey;
+  title: string;
+  memberPages: {
+    surfaceId: string;
+    displayNumber?: string;
+    title?: string;
+  }[];
+  displayRule: string;
 }

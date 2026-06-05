@@ -63,8 +63,16 @@ export function selectTextPageLayout(surface: Surface): TextPageLayoutId {
   const imageCount = renderableImageCount(surface);
   const hasImage = imageCount > 0;
   const hash = stableHash(surface.surfaceId);
+  const textOnlyImageState = surface.image.state === "IMG04";
 
   if (imageCount >= 3) return "TP16.source-dossier";
+
+  if (textOnlyImageState) {
+    if (length >= 1200) return "TP09.spread-body";
+    if (length >= 760) return "TP08.spread-quote";
+    if (length >= 420) return "TP06.spread-cover";
+    return "TP12.perforated-field";
+  }
 
   // Horizontal text pages are intentionally rare and only for dense reading
   // leaves. They should not become the default continuation surface.

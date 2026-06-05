@@ -41,6 +41,11 @@ export default function Reader({
   );
   const [mode, setMode] = useState<"single" | "spread">("single");
   const [narrow, setNarrow] = useState(false);
+  const [visualCheck, setVisualCheck] = useState<{
+    ok: boolean;
+    count: number;
+    sample: string;
+  }>({ ok: true, count: 0, sample: "visual/a11y ok" });
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 900px)");
@@ -80,6 +85,143 @@ export default function Reader({
   const visible = spread
     ? [leaves[index], leaves[index + 1]].filter(Boolean)
     : [leaves[index]];
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      const rootFontSize =
+        Number.parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+      const fallbackLimits = {
+        body: 0.72 * rootFontSize,
+        metadata: 0.62 * rootFontSize,
+        micro: 0.56 * rootFontSize,
+      };
+      const limitsForLeaf = (leaf: Element) => {
+        const numberAttr = (name: string, fallback: number) => {
+          const value = Number.parseFloat(leaf.getAttribute(name) ?? "");
+          return Number.isFinite(value) ? value * rootFontSize : fallback;
+        };
+        return {
+          body: numberAttr("data-min-body-rem", fallbackLimits.body),
+          metadata: numberAttr("data-min-metadata-rem", fallbackLimits.metadata),
+          micro: numberAttr("data-min-micro-rem", fallbackLimits.micro),
+        };
+      };
+      const visibleElement = (el: Element) => {
+        const rect = el.getBoundingClientRect();
+        const style = getComputedStyle(el);
+        return (
+          rect.width > 0 &&
+          rect.height > 0 &&
+          style.visibility !== "hidden" &&
+          style.display !== "none" &&
+          Number(style.opacity) !== 0
+        );
+      };
+      const intersects = (a: DOMRect, b: DOMRect) =>
+        a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
+      const textOf = (el: Element) => (el.textContent || "").replace(/\s+/g, " ").trim();
+      const roleFor = (el: Element): keyof typeof fallbackLimits | null => {
+        const tag = el.tagName;
+        const className = String((el as HTMLElement).className || "");
+        if (
+          /label|kicker|meta|footer|badge|code|state|accession|marker|caption|context|source|rights|row|ledger/i.test(
+            className,
+          )
+        ) {
+          return "micro";
+        }
+        if (["TD", "TH", "DT", "FIGCAPTION", "A", "BUTTON", "SUMMARY"].includes(tag)) {
+          return "metadata";
+        }
+        if (["P", "LI", "BLOCKQUOTE", "DD"].includes(tag)) return "body";
+        return null;
+      };
+
+      const errors: string[] = [];
+      const leafs = Array.from(document.querySelectorAll(".leaf")).filter(visibleElement);
+      for (const leaf of leafs) {
+        const leafRect = leaf.getBoundingClientRect();
+        const limits = limitsForLeaf(leaf);
+        const overflowPolicy = leaf.getAttribute("data-overflow-policy") ?? "none";
+        const level = leaf.getAttribute("data-level") ?? "unknown";
+        const clippedContainers = Array.from(
+          leaf.querySelectorAll(
+            ".reading-note__card, .main-sheet, .appendix-sheet, .sub-sheet, .text-page, .archive-card, .source-slip",
+          ),
+        ).filter(visibleElement);
+        for (const el of clippedContainers) {
+          const style = getComputedStyle(el);
+          if (
+            style.overflow !== "visible" &&
+            ((el as HTMLElement).scrollHeight > (el as HTMLElement).clientHeight + 2 ||
+              (el as HTMLElement).scrollWidth > (el as HTMLElement).clientWidth + 2)
+          ) {
+            errors.push(`overflow contract failed (${level}/${overflowPolicy}): ${el.className}`);
+          }
+        }
+        const textNodes = Array.from(
+          leaf.querySelectorAll("p, h1, h2, h3, h4, li, dt, dd, th, td, span, strong, em, a, figcaption"),
+        ).filter((el) => visibleElement(el) && textOf(el));
+
+        for (const el of textNodes) {
+          const rect = el.getBoundingClientRect();
+          const style = getComputedStyle(el);
+          const label = textOf(el).slice(0, 56);
+          if (
+            rect.left < leafRect.left - 1 ||
+            rect.right > leafRect.right + 1 ||
+            rect.top < leafRect.top - 1 ||
+            rect.bottom > leafRect.bottom + 1
+          ) {
+            errors.push(`text overflow: ${label}`);
+          }
+
+          const role = roleFor(el);
+          const size = Number.parseFloat(style.fontSize);
+          if (role && Number.isFinite(size) && size + 0.01 < limits[role]) {
+            errors.push(`font below ${role} min: ${label}`);
+          }
+
+          if (
+            /[\u3040-\u30ff\u3400-\u9fff]/.test(label) &&
+            (style.wordBreak === "break-all" ||
+              style.writingMode !== "horizontal-tb" ||
+              (rect.width < 42 && label.length > 3))
+          ) {
+            errors.push(`CJK broken: ${label}`);
+          }
+        }
+
+        if (
+          leaf.getAttribute("data-image-state") === "IMG04" ||
+          leaf.getAttribute("data-level") === "IMG04"
+        ) {
+          const img04Frame = Array.from(
+            leaf.querySelectorAll(".image-bay, .main-sheet-plate, .main-sheet-plate__frame, .main-sheet-plate__empty, img"),
+          ).find(visibleElement);
+          if (img04Frame) errors.push(`${level} image frame contract failed`);
+        }
+      }
+
+      const pageTurn = document.querySelector(".page-turn");
+      if (pageTurn && visibleElement(pageTurn)) {
+        const navRect = pageTurn.getBoundingClientRect();
+        for (const leaf of leafs) {
+          if (intersects(navRect, leaf.getBoundingClientRect())) {
+            errors.push("page navigation overlaps leaf");
+            break;
+          }
+        }
+      }
+
+      setVisualCheck({
+        ok: errors.length === 0,
+        count: errors.length,
+        sample: errors[0] ?? "visual/a11y ok",
+      });
+    }, 160);
+    return () => window.clearTimeout(timer);
+  }, [index, spread, visible.length]);
 
   const atStart = index <= 0;
   const atEnd = index >= leaves.length - 1;
@@ -152,6 +294,13 @@ export default function Reader({
         >
           ›
         </button>
+      </div>
+      <div
+        className={`visual-check ${visualCheck.ok ? "visual-check--ok" : "visual-check--fail"}`}
+        title={visualCheck.sample}
+        aria-live="polite"
+      >
+        <span>{visualCheck.ok ? "VIS OK" : `VIS ${visualCheck.count}`}</span>
       </div>
     </div>
   );

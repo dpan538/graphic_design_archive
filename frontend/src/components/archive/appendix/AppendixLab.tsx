@@ -45,6 +45,12 @@ function shortUrl(url: string): string {
   return url.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/$/, "");
 }
 
+function breakKind(value: string): "anywhere" | "normal" {
+  return /https?:\/\/|www\.|[A-Z]{2,}\d{2,}|^[A-Z0-9_.:/-]{8,}$/i.test(value)
+    ? "anywhere"
+    : "normal";
+}
+
 function citationLinks(surface: Surface): string[] {
   const sourceLinks = rowValue(surface, "CITATIONS", /source url|source links/i);
   return sourceLinks
@@ -90,7 +96,7 @@ function MiniRows({ items, max = 6 }: { items: TableRow[]; max?: number }) {
       {items.slice(0, max).map(([key, value]) => (
         <div key={`${key}-${value}`}>
           <dt>{key}</dt>
-          <dd>{clip(value, 72)}</dd>
+          <dd data-break={breakKind(value)}>{clip(value, 72)}</dd>
         </div>
       ))}
     </dl>
@@ -209,8 +215,14 @@ export function SourceCitationAppendix({ surface }: { surface: Surface }) {
 }
 
 export function RelationsAppendix({ surface }: { surface: Surface }) {
-  const classification = rows(surface, "CLASSIFICATION", 6);
-  const relations = rows(surface, "RELATIONS", 5);
+  const classification = rows(surface, "CLASSIFICATION", 4).map(([key, value]) => [
+    clip(key, 34),
+    clip(value, 58),
+  ] as TableRow);
+  const relations = rows(surface, "RELATIONS", 3).map(([key, value]) => [
+    clip(key, 34),
+    clip(value, 58),
+  ] as TableRow);
 
   return (
     <AppendixShell
@@ -235,11 +247,11 @@ export function RelationsAppendix({ surface }: { surface: Surface }) {
         </div>
       </section>
       <ol className="appendix-folder-index">
-        {surface.folders.map((folder, index) => (
+        {surface.folders.slice(0, 4).map((folder, index) => (
           <li key={folder.folderId}>
             <span>{String(index + 1).padStart(2, "0")}</span>
             <p>{folder.type}</p>
-            <strong>{folder.title}</strong>
+            <strong>{clip(folder.title, 46)}</strong>
           </li>
         ))}
       </ol>

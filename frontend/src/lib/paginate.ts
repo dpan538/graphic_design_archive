@@ -28,7 +28,10 @@ import {
   fallbackAppendixLayout,
   selectAppendixLayout,
 } from "./appendix-layout";
-import { type ReadingNoteLayoutId } from "./reading-note-layout";
+import {
+  type ReadingNoteLayoutId,
+  selectReadingNoteLayout,
+} from "./reading-note-layout";
 import {
   type ArchiveCardLayoutId,
   selectArchiveCardLayout,
@@ -41,14 +44,24 @@ import {
   selectTextPageLayout,
   type TextPageLayoutId,
 } from "./text-page-layout";
+import {
+  selectMainSheetLayout,
+  type MainSheetLayoutId,
+} from "./main-sheet-layout";
+import {
+  selectSubSheetLayout,
+  type SubSheetLayoutId,
+} from "./sub-sheet-layout";
 
 export interface Leaf {
   /** Stable id for React keys and jump targets. */
   id: string;
-  type: "register" | "bookmark" | "reading_note" | "main" | "text" | "appendix" | "slip";
+  type: "register" | "bookmark" | "reading_note" | "main" | "subsheet" | "text" | "appendix" | "slip";
   folder?: Folder;
   surface?: Surface;
   layoutId?: LayoutId;
+  mainSheetLayoutId?: MainSheetLayoutId;
+  subSheetLayoutId?: SubSheetLayoutId;
   appendixLayoutId?: AppendixLayoutId;
   readingNoteLayoutId?: ReadingNoteLayoutId;
   textPageLayoutId?: TextPageLayoutId;
@@ -64,6 +77,10 @@ export interface Leaf {
   regGroups?: ChronologyGroup[];
   regPageNumber?: number;
   regPageCount?: number;
+}
+
+function isTextOnlyImageState(surface: Surface): boolean {
+  return surface.image.state === "IMG04";
 }
 
 /** Table row-unit budget for the FIRST (layout) leaf of a surface. */
@@ -127,6 +144,29 @@ function readingLength(surface: Surface): number {
     .join(" ").length;
 }
 
+function cardSupportLength(surface: Surface): number {
+  return [
+    surface.descriptionSummary,
+    surface.sourceDescription,
+    surface.sourceNotes,
+    surface.citationBasis,
+  ]
+    .filter(Boolean)
+    .join(" ").length;
+}
+
+function needsSlipLeaf(surface: Surface): boolean {
+  if (surface.surfaceType !== "card") return false;
+  const sourceRows =
+    surface.tables.find((table) => table.kind === "SOURCE")?.rows.length ?? 0;
+  const citationRows =
+    surface.tables.find((table) => table.kind === "CITATIONS")?.rows.length ?? 0;
+  const rightsRows =
+    surface.tables.find((table) => table.kind === "RIGHTS")?.rows.length ?? 0;
+  const evidenceRows = sourceRows + citationRows + rightsRows;
+  return cardSupportLength(surface) >= 320 && evidenceRows <= 10;
+}
+
 function stableHash(value: string): number {
   let hash = 2166136261;
   for (const char of value) {
@@ -140,6 +180,20 @@ function needsTextLeaf(surface: Surface, layoutId: LayoutId): boolean {
   if (layoutId === "L02.text") return false;
   if (surface.surfaceType !== "sheet") return false;
   return true;
+}
+
+function shouldRenderAsSubSheet(surface: Surface): boolean {
+  if (surface.surfaceType !== "sheet") return false;
+  return (
+    surface.publicationRole === "support_packet_appendix_text" ||
+    surface.publicationRole === "merge_candidate_support_packet" ||
+    surface.publicationRole === "thin_visual_support_packet" ||
+    surface.surfaceDisposition === "support_packet_appendix_text" ||
+    surface.surfaceDisposition === "merge_candidate_support_packet" ||
+    surface.surfaceDisposition === "thin_visual_support_packet" ||
+    surface.layoutHint === "support_packet" ||
+    surface.layoutHint === "merge_candidate"
+  );
 }
 
 function isTextCapableSheet(surface: Surface): boolean {
@@ -242,8 +296,7 @@ function appendixPacketFor(surface: Surface, tables: SurfaceTable[]): AppendixPa
 export function paginateSurface(surface: Surface): Leaf[] {
   if (surface.surfaceType === "card") {
     const cardLayoutId = selectArchiveCardLayout(surface);
-    const slipLayoutId = selectSourceSlipLayout(surface, cardLayoutId);
-    return [
+    const leaves: Leaf[] = [
       {
         id: `${surface.surfaceId}#card`,
         type: "main",
@@ -252,9 +305,12 @@ export function paginateSurface(surface: Surface): Leaf[] {
         cardLayoutId,
         tables: orderedTables(surface),
         surfacePageNumber: 1,
-        surfacePageCount: 2,
+        surfacePageCount: needsSlipLeaf(surface) ? 2 : 1,
       },
-      {
+    ];
+    if (needsSlipLeaf(surface)) {
+      const slipLayoutId = selectSourceSlipLayout(surface, cardLayoutId);
+      leaves.push({
         id: `${surface.surfaceId}#slip`,
         type: "slip",
         surface,
@@ -262,8 +318,9 @@ export function paginateSurface(surface: Surface): Leaf[] {
         cardLayoutId,
         surfacePageNumber: 2,
         surfacePageCount: 2,
-      },
-    ];
+      });
+    }
+    return leaves;
   }
 
   const layoutId = selectLayout(surface);
@@ -282,12 +339,24 @@ export function paginateSurface(surface: Surface): Leaf[] {
     : [];
 
   const pageCount = 1 + (textLeaf ? 1 : 0) + appendix.length;
+  const firstLeafIsText = layoutId === "L02.text" || isTextOnlyImageState(surface);
+  const firstLeafIsSubSheet = !firstLeafIsText && shouldRenderAsSubSheet(surface);
   const leaves: Leaf[] = [
     {
       id: `${surface.surfaceId}#p1`,
-      type: "main",
+      type: firstLeafIsText ? "text" : firstLeafIsSubSheet ? "subsheet" : "main",
       surface,
       layoutId,
+      mainSheetLayoutId:
+        !firstLeafIsText &&
+        !firstLeafIsSubSheet &&
+        (layoutId === "L01.main" || layoutId === "L03.plate" || layoutId === "L04.dual")
+          ? selectMainSheetLayout(surface)
+          : undefined,
+      subSheetLayoutId: firstLeafIsSubSheet
+        ? selectSubSheetLayout(surface)
+        : undefined,
+      textPageLayoutId: firstLeafIsText ? selectTextPageLayout(surface) : undefined,
       variant,
       tables: main,
       surfacePageNumber: 1,
@@ -327,13 +396,33 @@ export function paginateSurface(surface: Surface): Leaf[] {
 }
 
 /** Chunk decade groups into register pages by a row budget (groups kept whole). */
+function registerSurfaceWeight(surface: Surface): number {
+  let weight = 1;
+  const date = surface.dateText || "";
+  const title = surface.title || "";
+  if (date.length >= 18) weight += 1;
+  if (title.length >= 54) weight += 1;
+  if (/[\u3040-\u30ff\u3400-\u9fff]/.test(title) && title.length >= 18) weight += 1;
+  return Math.min(weight, 3);
+}
+
+function registerGroupWeight(group: ChronologyGroup): number {
+  return (
+    1 +
+    group.surfaces.reduce(
+      (total, surface) => total + registerSurfaceWeight(surface),
+      0,
+    )
+  );
+}
+
 function packRegister(groups: ChronologyGroup[]): ChronologyGroup[][] {
   const pages: ChronologyGroup[][] = [];
   let page: ChronologyGroup[] = [];
   // First page also carries the folder title + scope; reserve room for it.
   let used = REGISTER_FIRST_RESERVE;
   for (const g of groups) {
-    const w = g.surfaces.length + 1; // header + rows
+    const w = registerGroupWeight(g);
     if (page.length > 0 && used + w > REGISTER_BUDGET) {
       pages.push(page);
       page = [];
@@ -357,7 +446,9 @@ export function paginateFolder(folder: Folder): Leaf[] {
   const regPages = packRegister(groups);
   let previousAppendixSignature: string | null = null;
   let previousAppendixLayoutId: AppendixLayoutId | null = null;
-  const attachmentPlan = folderTextAttachments(folder, surfaces);
+  let previousMainSheetLayoutId: MainSheetLayoutId | null = null;
+  let previousSubSheetLayoutId: SubSheetLayoutId | null = null;
+  const attachmentPlan = folderBookmarkAttachments(folder, surfaces);
 
   const leaves: Leaf[] = regPages.map((regGroups, idx) => ({
     id: `${folder.folderId}#register-${idx + 1}`,
@@ -367,9 +458,36 @@ export function paginateFolder(folder: Folder): Leaf[] {
     regPageNumber: idx + 1,
     regPageCount: regPages.length,
   }));
+  leaves.push({
+    id: `${folder.folderId}#reading-note`,
+    type: "reading_note",
+    folder,
+    readingNoteLayoutId: selectReadingNoteLayout(folder),
+  });
 
   for (const surface of surfaces) {
     let surfaceLeaves = paginateSurface(surface);
+    const mainLeaf = surfaceLeaves.find((leaf) => leaf.type === "main");
+    if (
+      mainLeaf &&
+      (mainLeaf.layoutId === "L01.main" ||
+        mainLeaf.layoutId === "L03.plate" ||
+        mainLeaf.layoutId === "L04.dual")
+    ) {
+      mainLeaf.mainSheetLayoutId = selectMainSheetLayout(
+        surface,
+        previousMainSheetLayoutId,
+      );
+      previousMainSheetLayoutId = mainLeaf.mainSheetLayoutId;
+    }
+    const subSheetLeaf = surfaceLeaves.find((leaf) => leaf.type === "subsheet");
+    if (subSheetLeaf) {
+      subSheetLeaf.subSheetLayoutId = selectSubSheetLayout(
+        surface,
+        previousSubSheetLayoutId,
+      );
+      previousSubSheetLayoutId = subSheetLeaf.subSheetLayoutId;
+    }
     const attachmentType = attachmentPlan.get(surface.surfaceId);
     if (attachmentType) {
       surfaceLeaves = attachTextCompanion(surfaceLeaves, surface, folder, attachmentType);
@@ -409,37 +527,23 @@ export function paginateFolder(folder: Folder): Leaf[] {
   return leaves;
 }
 
-function folderTextAttachments(
+function folderBookmarkAttachments(
   folder: Folder,
   surfaces: Surface[],
-): Map<string, "bookmark" | "reading_note"> {
+): Map<string, "bookmark"> {
   const candidates = surfaces.filter((surface) => {
-    if (!isTextCapableSheet(surface)) return false;
-    const appendixPacket = appendixPacketFor(surface, orderedTables(surface));
-    return !appendixPacket;
+    if (surface.surfaceType === "fallback_stub") return true;
+    if (surface.completenessScore >= 20) return false;
+    if (surface.surfaceType === "card") return false;
+    const layoutId = selectLayout(surface);
+    return layoutId === "L07.stub" || surface.image.state === "IMG04";
   });
-  const attachments = new Map<string, "bookmark" | "reading_note">();
+  const attachments = new Map<string, "bookmark">();
   if (candidates.length === 0) return attachments;
 
   const hash = stableHash(folder.folderId);
-  const readingCandidates = candidates.filter(
-    (surface) => readingLength(surface) >= 900 || surface.sourceDescription || surface.sourceNotes,
-  );
-  const readingTarget =
-    readingCandidates.length > 0
-      ? readingCandidates[hash % readingCandidates.length]
-      : null;
-  if (readingTarget) attachments.set(readingTarget.surfaceId, "reading_note");
-
-  if (candidates.length >= 6) {
-    const bookmarkCandidates = candidates.filter(
-      (surface) => surface.surfaceId !== readingTarget?.surfaceId,
-    );
-    if (bookmarkCandidates.length > 0) {
-      const bookmarkTarget = bookmarkCandidates[(hash >>> 3) % bookmarkCandidates.length];
-      attachments.set(bookmarkTarget.surfaceId, "bookmark");
-    }
-  }
+  const bookmarkTarget = candidates[hash % candidates.length];
+  attachments.set(bookmarkTarget.surfaceId, "bookmark");
 
   return attachments;
 }
@@ -457,7 +561,9 @@ function attachTextCompanion(
   const anchorIndex =
     attachAfterIndex >= 0
       ? attachAfterIndex
-      : surfaceLeaves.findIndex((leaf) => leaf.type === "main" && leaf.layoutId === "L02.text");
+      : surfaceLeaves.findIndex(
+          (leaf) => leaf.type === "text" || (leaf.type === "main" && leaf.layoutId === "L02.text"),
+        );
   if (anchorIndex < 0) return surfaceLeaves;
 
   const attachmentLeaf: Leaf =
@@ -513,7 +619,11 @@ function resolvedAppendixLayout(
 export function surfaceLeafIndex(leaves: Leaf[]): Map<string, number> {
   const map = new Map<string, number>();
   leaves.forEach((leaf, i) => {
-    if (leaf.type === "main" && leaf.surface && !map.has(leaf.surface.surfaceId)) {
+    if (
+      (leaf.type === "main" || leaf.type === "subsheet" || leaf.type === "text") &&
+      leaf.surface &&
+      !map.has(leaf.surface.surfaceId)
+    ) {
       map.set(leaf.surface.surfaceId, i);
     }
   });
@@ -538,7 +648,7 @@ export function folderJumpTargets(leaves: Leaf[]): JumpTarget[] {
         sublabel: "Folder contents",
       });
     }
-    if (leaf.type === "main" && leaf.surface) {
+    if ((leaf.type === "main" || leaf.type === "subsheet" || leaf.type === "text") && leaf.surface) {
       targets.push({
         leafIndex: index,
         label: leaf.surface.title,
