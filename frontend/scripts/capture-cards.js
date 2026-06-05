@@ -2,13 +2,10 @@ const fs = require("fs");
 const path = require("path");
 const puppeteer = require("puppeteer-core");
 
-const DEFAULT_URL = "http://127.0.0.1:3039/sub-sheets";
-const DEFAULT_OUT_DIR = "/private/tmp/mgd-sub-sheet-captures";
+const DEFAULT_URL = "http://127.0.0.1:3036/cards/dense";
+const DEFAULT_OUT_DIR = "/private/tmp/mgd-card-captures";
 const CHROME_PATH = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
-const GROUP_SELECTORS = {
-  group01: '[data-sub-sheet-group="group-01"]',
-  group02: '[data-sub-sheet-group="group-02"]',
-};
+const GROUP_SELECTOR = '[data-card-group="dense"]';
 
 function timestamp() {
   return new Date().toISOString().replace(/[-:]/g, "").replace(/\..+$/, "Z");
@@ -30,16 +27,14 @@ async function waitForImages(page) {
   });
 }
 
-async function auditPage(page, selector, expectedCount = 4) {
-  return page.evaluate((selector, expectedCount) => {
+async function auditPage(page) {
+  return page.evaluate((selector) => {
     const issues = [];
     const group = document.querySelector(selector);
-    if (!group) return { ok: false, issues: ["Missing sub sheet group"], pages: [] };
+    if (!group) return { ok: false, issues: ["Missing dense card group"], cards: [] };
 
-    const pages = Array.from(group.querySelectorAll(".sub-sheet")).map((node, index) => {
+    const cards = Array.from(group.querySelectorAll(".archive-card")).map((node, index) => {
       const rect = node.getBoundingClientRect();
-      const expectedRatio = 210 / 297;
-      const actualRatio = rect.width / rect.height;
       const overflowX = node.scrollWidth - node.clientWidth;
       const overflowY = node.scrollHeight - node.clientHeight;
       const images = Array.from(node.querySelectorAll("img")).map((img) => ({
@@ -50,13 +45,9 @@ async function auditPage(page, selector, expectedCount = 4) {
       }));
       return {
         index,
-        layout: node.getAttribute("data-sub-sheet"),
         className: node.className,
         width: Math.round(rect.width),
         height: Math.round(rect.height),
-        actualRatio: Number(actualRatio.toFixed(4)),
-        expectedRatio: Number(expectedRatio.toFixed(4)),
-        ratioDelta: Number(Math.abs(actualRatio - expectedRatio).toFixed(4)),
         overflowX,
         overflowY,
         imageCount: images.length,
@@ -64,21 +55,18 @@ async function auditPage(page, selector, expectedCount = 4) {
       };
     });
 
-    if (pages.length !== expectedCount) issues.push(`Expected ${expectedCount} sub sheets, found ${pages.length}`);
-    for (const item of pages) {
+    if (cards.length !== 6) issues.push(`Expected 6 rendered card articles, found ${cards.length}`);
+    for (const item of cards) {
       if (item.overflowX > 2 || item.overflowY > 2) {
-        issues.push(`${item.layout} overflows ${item.overflowX}x${item.overflowY}`);
-      }
-      if (item.ratioDelta > 0.015) {
-        issues.push(`${item.layout} ratio ${item.actualRatio}, expected ${item.expectedRatio}`);
+        issues.push(`${item.className} overflows ${item.overflowX}x${item.overflowY}`);
       }
       if (item.brokenImages.length > 0) {
-        issues.push(`${item.layout} has broken image`);
+        issues.push(`${item.className} has broken image`);
       }
     }
 
-    return { ok: issues.length === 0, issues, pages };
-  }, selector, expectedCount);
+    return { ok: issues.length === 0, issues, cards };
+  }, GROUP_SELECTOR);
 }
 
 async function main() {
@@ -91,7 +79,7 @@ async function main() {
   const browser = await puppeteer.launch({
     executablePath: CHROME_PATH,
     headless: "new",
-    userDataDir: path.join("/private/tmp", `mgd-sub-sheet-preview-${runId}`),
+    userDataDir: path.join("/private/tmp", `mgd-card-preview-${runId}`),
     args: [
       "--no-first-run",
       "--no-default-browser-check",
@@ -103,23 +91,12 @@ async function main() {
 
   try {
     const page = await browser.newPage();
-    await page.setViewport({ width: 2500, height: 1600, deviceScaleFactor: 2 });
+    await page.setViewport({ width: 1760, height: 1180, deviceScaleFactor: 2 });
     await page.goto(url, { waitUntil: "networkidle0", timeout: 60000 });
-    await page.waitForSelector(".sub-sheet", { timeout: 30000 });
+    await page.waitForSelector(GROUP_SELECTOR, { timeout: 30000 });
     await waitForImages(page);
 
-    const audits = {};
-    for (const [key, selector] of Object.entries(GROUP_SELECTORS)) {
-      const exists = await page.$(selector);
-      if (exists) audits[key] = await auditPage(page, selector);
-    }
-    const audit = {
-      ok: Object.values(audits).every((entry) => entry.ok),
-      issues: Object.entries(audits).flatMap(([key, entry]) =>
-        entry.issues.map((issue) => `${key}: ${issue}`),
-      ),
-      groups: audits,
-    };
+    const audit = await auditPage(page);
     const manifest = {
       runId,
       url,
@@ -128,17 +105,12 @@ async function main() {
       captures: {},
     };
 
-    for (const [key, selector] of Object.entries(GROUP_SELECTORS)) {
-      const group = await page.$(selector);
-      if (group) {
-        const suffix = key.replace("group", "group-");
-        const groupPath = path.join(runDir, `sub-sheets-${suffix}.png`);
-        await group.screenshot({ path: groupPath });
-        manifest.captures[key] = groupPath;
-      }
-    }
+    const group = await page.$(GROUP_SELECTOR);
+    const groupPath = path.join(runDir, "cards-dense-group.png");
+    await group.screenshot({ path: groupPath });
+    manifest.captures.group = groupPath;
 
-    const fullPath = path.join(runDir, "sub-sheets-full.png");
+    const fullPath = path.join(runDir, "cards-dense-full.png");
     await page.screenshot({ path: fullPath, fullPage: true });
     manifest.captures.full = fullPath;
 

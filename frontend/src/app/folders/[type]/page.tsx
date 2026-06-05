@@ -11,7 +11,7 @@ import {
   getFolderType,
   getSurfacesForFolder,
   isFolderTypeKey,
-  regionGroupLabel,
+  regionGroup,
   surfaceMix,
 } from "@/lib/archive-data";
 
@@ -46,7 +46,8 @@ export default async function FolderTypePage({
       return {
         key: folder.folderId,
         type: folder.type,
-        groupLabel: folder.type === "region" ? regionGroupLabel(folder) : undefined,
+        macroLabel: folder.type === "region" ? regionGroup(folder).continent : undefined,
+        groupLabel: folder.type === "region" ? regionGroup(folder).subregion : undefined,
         code: folder.title
           .replace(/[^a-z0-9 ]/gi, " ")
           .trim()

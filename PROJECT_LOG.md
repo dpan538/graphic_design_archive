@@ -4278,6 +4278,389 @@ Decision:
   or local post-digital sources.
 - `pre_1930` should pause broad capture and only receive targeted non-West or
   local-source work plus duplicate-image review.
+
+## 2026-06-02 — Source Coverage Gap Capture 1931-2026
+
+Action:
+
+- Pushed the current `main` snapshot to GitHub before new capture work.
+- Added `scripts/run_source_coverage_gap_capture_1931_2026.py`.
+- Added the new batch to `scripts/rebuild_public_surfaces_from_records.py`.
+- Added source-region overrides for NDL, UCT, Pretoria, Stellenbosch, Wits,
+  AUB, and the National Repository of Nigeria so coverage metrics do not file
+  these sources as unmapped.
+
+Capture result:
+
+- Captured records: 25
+- Distinct captured sources in this batch: 6
+- Image states: `IMG02: 6`, `IMG04: 19`
+- Period distribution: `1931_1970: 1`, `1971_2000: 2`, `2001_2026: 22`
+- Sources: University of Cape Town Digital Collections, University of Pretoria
+  Research Repository, Stellenbosch University Scholar, Wits University
+  WiredSpace, American University of Beirut ScholarWorks, National Repository
+  of Nigeria.
+
+Post-rebuild metrics:
+
+- Public surfaces: 1356
+- Source-visible image readiness: 90.56%
+- Weighted publication image score: 61.54%
+- Active captured sources: 43
+- Source coverage rate v1: 6.70%
+- Strict distribution-adjusted diagnostic: 1.17%
+- Updated period priority:
+  `1930_1970` remains highest priority at `0.2148`; `1970_2000` is `0.1448`;
+  `2000_2026` is `0.1213`; `pre_1930` is `0.0804`.
+
+Constraint:
+
+- Do not promote broad search-bounded records as dated records unless an
+  item-level date exists. NDL SRU returned many 1931-1970 search-bounded hits,
+  but several records lacked publishable item dates, so they stayed in summary
+  rather than becoming public leaves.
+- DSpace records from regional universities and repositories are usually
+  text/context evidence. They should render as text sheets, appendix evidence,
+  or grouped supporting leaves, not as thin main sheets.
+- Adding non-mainstream sources may lower image coverage in the short term.
+  That decrease is acceptable when it reflects honest text/source coverage
+  rather than inflated IMG states.
+
+## 2026-06-02 — Edge Source Registry Context + South Asia Probe
+
+Action:
+
+- Added `scripts/run_edge_source_registry_context_capture_1931_2026.py`.
+- Added `scripts/probe_south_asia_sources_v1.py`.
+- Promoted reachable edge-source probes into source-registry context records
+  rather than object-level sheets.
+- Added the source-registry context batch to
+  `scripts/rebuild_public_surfaces_from_records.py`.
+- Added a hard disposition guard in `scripts/run_midcentury_capture_1930_1970.py`
+  so `source registry/context record` rows cannot become `main_sheet`.
+
+Capture result:
+
+- Edge source-registry context records: 61
+- Distinct sources in the batch: 61
+- Image states: `IMG02: 24`, `IMG04: 37`
+- Regional spread: Africa 2, East Asia 20, Eastern Europe 2, Latin America 4,
+  Middle East 2, South Asia 6, Southeast Asia 25.
+- South Asia probe: 9 P1/P2 sources probed, 6 reachable.
+- South Asia active source entries added: India Design Council, Madan Puraskar
+  Pustakalaya, NID, National Digital Library of India, National Library of
+  India, Roja Muthiah Research Library.
+- South Asia sources still needing fallback/manual strategy: South Asia Open
+  Archives returned 403; Tasveer Ghar reset the connection; Panjab Digital
+  Library SSL handshake timed out.
+
+Post-rebuild metrics:
+
+- Public surfaces: 1417
+- New source-registry surfaces: 61
+- New source-registry publication role: all `support_packet_appendix_text`
+- Source-visible image readiness: 88.29%
+- Weighted publication image score: 59.78%
+- Active captured sources: 104
+- Source coverage rate v1: 22.59%
+- South Asia region balance: 59.55% after previously being 0%.
+
+Constraint:
+
+- Source-context records are evidence for source breadth and future adapter
+  planning. They should render as source dossiers, support packets, reading
+  notes, cards, or bookmarks, not as canonical main sheets.
+- Broad source-scope dates such as `modern-present` or `pre-WWII-present` must
+  not become public object dates.
+- IMG02 on a source-context record means source-hosted or metadata-discovered
+  image evidence only. It is not an open-image claim and local copying remains
+  false by default.
+- Raw probe/capture files must be redacted for token-like strings before git
+  staging. This pass scanned new raw/source files for common API key and token
+  patterns and found no matches.
+
+## 2026-06-03 — Asset Grammar + Readability Gate
+
+Action:
+
+- Added `docs/frontend/ASSET_GRAMMAR_AND_A11Y_CONTRACT_v0.md`.
+- Added the frontend `asset:a11y-check` script and generated-report ignore
+  rule.
+- Added global asset readability constraints to `frontend/src/app/globals.css`:
+  body text `>= 0.72rem`, metadata `>= 0.62rem`, micro labels `>= 0.56rem`,
+  with shorter line-length rules for cards, slips, bookmarks, and prose pages.
+- Updated asset preview constraints so screenshot review now includes the
+  readability/accessibility gate.
+
+Verification:
+
+- `npm run build` passed.
+- `BASE_URL=http://127.0.0.1:3001 npm run asset:a11y-check` checked 21
+  page/viewport states and returned `0 failed`, `0 warnings`, `0 errors`.
+
+Constraint:
+
+- Required archive evidence must remain legible even when a page uses dense
+  ledger/specimen references. Text below `0.56rem` is decorative only and must
+  be hidden from the accessibility tree or marked `data-decorative`.
+- Asset DOM/keyboard reading order must preserve:
+  title -> date/creator -> source -> image state -> summary -> metadata ->
+  citation/action.
+- Generated raw files and captured HTML must continue to be scanned/redacted
+  before staging so token-like strings are not pushed into GitHub.
+
+## 2026-06-03 — Text Enrichment Pass v1
+
+Action:
+
+- Updated `scripts/rebuild_public_surfaces_from_records.py` so public reading
+  text is no longer generated from capture-log wording.
+- Replaced repeated boilerplate such as `is indexed from`, `enters the
+  archive`, `captured item metadata`, and duplicate `Folder placement` language
+  with source-linked reading prose.
+- Added sentence-boundary trimming, evidence-list cleanup, source-family
+  context notes, and deterministic wording variants so sheets do not all read
+  like the same registration form.
+- Rebuilt all public static payloads:
+  `generated/public_surfaces_v1.json`,
+  `frontend/src/data/public_surface_mock_v0.json`,
+  `frontend/public/data/public_surface_mock_v0.json`, and
+  `data/public_surface_mock_v0.json`.
+
+Post-rebuild metrics:
+
+- Public surfaces: 1417
+- Folders: 48
+- Appendices exposed in payload: 578
+- Bookmarks exposed in payload: 48
+- `is indexed from`: 0
+- `enters the archive`: 0
+- duplicate `Folder placement`: 0
+- old sparse-prose phrase: 0
+- Reading text length: median 2355 chars; average 2412.2 chars; 8 surfaces
+  under 1500 chars, mostly compound/grouped support records.
+- Image states unchanged: `IMG00: 41`, `IMG01: 37`, `IMG02: 733`,
+  `IMG03: 481`, `IMG04: 125`.
+
+Verification:
+
+- `npm run build` passed after regenerating the static payload.
+
+Constraint:
+
+- Text enrichment must remain source-derived or field-derived. It can clarify
+  what a record contributes and how to read it, but it must not invent
+  design-historical claims not supported by source metadata, cited prose,
+  OCR/excerpt text, or an explicit project methodology note.
+- Sparse source records should state that the source does not provide extended
+  descriptive prose rather than pretending to offer a complete interpretation.
+- Grouped sheets are allowed to stay shorter when their function is to keep
+  duplicate or weak item records together; they should be upgraded only after
+  source-specific long-form evidence is captured.
+
+## 2026-06-03 — Research Dossier Export Contract v0
+
+Action:
+
+- Added `researchDossiers` to the generated public payload.
+- Added TypeScript interfaces and data helpers for research dossiers.
+- Added `docs/system/RESEARCH_DOSSIER_EXPORT_MODEL_v0.md`.
+- Rebuilt the static payload and verified the frontend build.
+
+Decision:
+
+- The archive is not a flat sheet browser. A research unit is a dossier:
+  `main_sheet` -> `subsheet` -> `text_page` -> `appendix` -> `card` / `slip`
+  -> `bookmark`.
+- Folder views remain filters over records/dossiers. They do not own or clone
+  dossier pages.
+- PDF export should read dossier `pageSequence`, not the flat folder page
+  sequence. Exported pages must carry archive marks, source links, image state,
+  and rights/citation notes.
+
+Generated data:
+
+- `researchDossiers`: 1417
+- `compound_or_series_cluster`: 21
+- largest dossier: 33 pages
+- anchor types: `main_sheet: 1179`, `subsheet: 224`, `card: 14`
+
+Constraint:
+
+- Do not infer dossier grouping from same folder, same country, same movement,
+  date proximity, or visual resemblance alone.
+- Multi-page research dossiers need linkage evidence: same source identifier,
+  accession/call number, issue, campaign, publication series, object set,
+  production pattern, manifestation relation, or explicit source relation.
+- The current contract is conservative. Most records remain single-anchor
+  dossiers until a linkage/grouping pass promotes them into larger research
+  packets.
+
+## 2026-06-03 — Reading Note / Bookmark Count Correction
+
+Issue:
+
+- The public payload exposed 48 `bookmarks` for 48 folders. This was a data
+  contract error: folder-level reading notes had been serialized as bookmarks.
+- This made the archive appear to have one fallback bookmark per folder, even
+  though bookmarks should be rare fallback leaves, not normal folder notes.
+
+Action:
+
+- Changed `attach_structural_collections()` so each folder emits a
+  `readingNotes` record instead of a bookmark record.
+- Kept `bookmarks` as a separate collection for true low-information fallback
+  leaves only. The current payload has no true bookmark candidates.
+- Added surface-level reading-note candidates for long main-sheet records, so
+  reading notes are not limited to folder-level notes.
+- Added TypeScript support for `readingNotes` and archive-data helpers for
+  reading-note lookup.
+- Updated `scripts/audit_public_surface_integrity.py` to flag suspicious
+  bookmark counts when bookmarks look folder-like, and to warn when reading
+  notes are folder-only.
+- Rebuilt all public static payloads and verified the frontend build.
+
+Post-rebuild metrics:
+
+- Folders: 48
+- Reading notes: 119
+  - Folder reading notes: 48
+  - Surface reading notes: 71
+- Bookmarks: 0
+- Appendices: 578
+- Research dossiers: 1417
+- `npm run build` passed.
+
+Constraint:
+
+- Reading notes are interpretive/register leaves. They may appear once per
+  folder and may also attach to long main-sheet/dossier records.
+- `readingNotes == folders` should be treated as a coverage smell, because it
+  means no long sheet or dossier has received a reading note.
+- Bookmarks are sparse fallback leaves for very weak fragments, method markers,
+  or tiny research hints. They must never be generated one-per-folder.
+- A future payload with `bookmarks >= folders` should be treated as a likely
+  taxonomy error unless there is a specific documented exception.
+
+## 2026-06-03 — Local WebLLM / RAG Feasibility v0
+
+Action:
+
+- Added `docs/system/LOCAL_WEBLLM_RAG_FEASIBILITY_v0.md`.
+- Reviewed three browser-local/lightweight options for archive assistant use:
+  MLC WebLLM, Transformers.js, and Wllama.
+- Added sub-1B Qwen candidates to the horizontal generation-model comparison,
+  including Qwen2.5-0.5B-Instruct and Qwen3.5-0.8B.
+
+Decision:
+
+- The archive assistant should be a local retrieval assistant, not a general
+  chatbot.
+- Recommended v0 stack: Transformers.js for local embeddings/retrieval,
+  static build-time RAG chunks, and Qwen3.5-0.8B as the first multimodal
+  local-generation target.
+- Because the archive is visual, the first assistant prototype should be
+  multimodal rather than text-only.
+
+Follow-up decision:
+
+- Qwen3.5-0.8B is no longer a candidate among several small models; it is the
+  fixed first-version model.
+- Text-only Qwen 0.5B/0.6B models and Wllama are not fallback generation paths
+  for v0.
+- Keyword/facet search remains a normal non-AI search interface, not an LLM
+  fallback answer mode.
+- The remaining implementation risk is runtime packaging and local browser
+  execution, not model selection.
+
+Constraint:
+
+- The assistant may answer only from supplied archive chunks, methodology
+  documents, source metadata, rights notes, and dossier structure.
+- No remote LLM API calls.
+- No live remote page fetching during a user query.
+- No AI-generated content may become historical evidence.
+- Model assets must be handled as documented local/static assets with cache and
+  checksum policy, not accidentally committed as opaque project clutter.
+
+Runtime probe:
+
+- Added `frontend/scripts/probe-qwen35-rag-policy.js` and
+  `frontend/scripts/probe-qwen35-runtime.mjs`.
+- Installed `@huggingface/transformers` in the frontend workspace for the local
+  runtime probe.
+- The raw `Qwen/Qwen3.5-0.8B` Hugging Face repository failed as a direct
+  Transformers.js runtime target because the expected quantized ONNX files were
+  not present there.
+- The project should keep `Qwen/Qwen3.5-0.8B` as the model identity but use
+  `onnx-community/Qwen3.5-0.8B-ONNX` as the browser/ONNX runtime artifact.
+- The first ONNX artifact load exposed a Node external-data path issue. The
+  probe now passes external data explicitly and loads
+  `Qwen3_5ForConditionalGeneration` successfully.
+- Successful local probe: import 198 ms, model load 7911 ms after runtime files
+  were cached locally.
+- Image-policy probe currently permits only 481 `IMG03/open_image_frame`
+  records to pass image pixels into the local multimodal model. IMG00, IMG01,
+  IMG02, and IMG04 are withheld from model-image context under the conservative
+  v0 rule.
+- Added `.model-cache/` to `.gitignore` so downloaded model files stay local.
+
+Generation probe:
+
+- Added `frontend/scripts/probe-qwen35-generation.mjs`.
+- The model generated a constrained answer from a supplied archive surface
+  context, but generation remains slow in the local Node/CPU probe:
+  cached load 3852 ms, evidence answer 48475 ms.
+- The first no-evidence test showed a serious guardrail issue: prompt
+  instructions alone did not prevent hallucination.
+- The probe was corrected to enforce a retrieval gate before model invocation.
+  If no cited chunk is available, the assistant returns an archive-limited
+  refusal and does not call the model.
+- This confirms the implementation rule: Qwen3.5-0.8B is a lazy synthesis layer
+  after retrieval, not an instant search replacement and not a source of
+  independent historical claims.
+
+Search-assistant timing probe:
+
+- User target: reduce perceived assistant latency from roughly 48 seconds to
+  about 10-15 seconds.
+- Compression attempt 1 shortened the record context from long archive prose to
+  a compact record slip. Timing improved but answers were truncated or useless:
+  one search answer returned only `Source:`.
+- Compression attempt 2 switched to the tokenizer chat template and decoded
+  only newly generated tokens. This removed prompt echoing and reduced hidden
+  reasoning leakage, but timing was still around 17-20 seconds for short
+  answers.
+- Compression attempt 3 used a micro-answer contract. It reached the target
+  range for one search pass, but the text was still prone to truncation when
+  `max_new_tokens` was too low.
+- Final hybrid probe reached the target envelope:
+  - cached load: 4107 ms;
+  - record micro-note: 11846 ms;
+  - search micro-note: 13968 ms;
+  - no-evidence refusal: 0 ms because the retrieval gate blocks model
+    invocation.
+
+Failure log:
+
+- A model-only answer is not reliable enough for archive facts.
+- Prompt-only refusal is unsafe; it hallucinated when no context was supplied.
+- Over-compressing generation creates incomplete prose.
+- The model should not be responsible for full search result text, source
+  links, dates, or verification instructions.
+
+Implementation constraint:
+
+- Ordinary search must remain deterministic and DB-backed.
+- Search results may include a local Qwen micro-note only as an optional reading
+  angle after the DB has already returned exact records and citations.
+- The UI must hide or retry incomplete micro-notes; it must never replace the
+  deterministic title/date/source rows with generated text.
+- Qwen output must not write back to the database, alter records, fetch remote
+  pages, or read source images unless the image state explicitly permits local
+  model context.
+- A generated micro-note is interface assistance, not archive evidence.
+
 ## 2026-06-05 — Rights-first crawler decision engine
 
 Added a conservative rights-first crawler policy after reviewing proposed

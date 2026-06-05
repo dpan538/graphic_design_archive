@@ -12,7 +12,7 @@ import {
   selectArchiveCardLayout,
 } from "@/lib/card-asset-layout";
 
-type CardMode = "all" | "square" | "rectangle" | "color" | "special";
+type CardMode = "all" | "square" | "rectangle" | "color" | "special" | "dense";
 
 interface CardBadge {
   type: FolderTypeKey;
@@ -74,10 +74,20 @@ function folderSamples(folder: Folder, max = 5): Surface[] {
   return sortChronologically(getSurfacesForFolder(folder)).slice(0, max);
 }
 
+function evidenceRows(surface: Surface, max = 7) {
+  return surface.tables.flatMap((item) =>
+    item.rows.map(([key, value]) => ({
+      kind: item.kind,
+      key,
+      value,
+    })),
+  ).slice(0, max);
+}
+
 function CardBadges({ badges }: { badges: CardBadge[] }) {
   return (
     <div className="archive-card__badges" aria-label={badges.map((b) => b.title).join(", ")}>
-      {badges.slice(0, 3).map((badge) => (
+      {badges.slice(0, 4).map((badge) => (
         <span
           key={`${badge.type}-${badge.title}`}
           className="archive-card__badge"
@@ -471,6 +481,168 @@ function SpecialChamferCard({ folder, surface }: { folder: Folder; surface: Surf
   );
 }
 
+function DenseWorkOrderCard({ surface }: { surface: Surface }) {
+  return (
+    <ArchiveCard className="archive-card--dense-work-order" badges={badgesFromSurface(surface)}>
+      <header>
+        <div>
+          <span>record receipt</span>
+          <strong>{surface.sourceRecordId}</strong>
+        </div>
+        <div>
+          <span>date</span>
+          <strong>{cleanDate(surface.dateText)}</strong>
+        </div>
+        <div>
+          <span>pieces</span>
+          <strong>{surface.tables.length}</strong>
+        </div>
+      </header>
+      <section className="archive-card__dense-address">
+        <p>name</p>
+        <strong>{clip(surface.title, 52)}</strong>
+        <p>source</p>
+        <strong>{clip(surface.sourceName, 44)}</strong>
+      </section>
+      <div className="archive-card__dense-week">
+        {["region", "theme", "medium", "rights", "source", "cite", "note"].map((label) => (
+          <span key={label}>{label}</span>
+        ))}
+      </div>
+      <section className="archive-card__dense-description">
+        <p>description</p>
+        <strong>{clip(surface.descriptionSummary || surface.classificationRationale, 180)}</strong>
+      </section>
+      <MetaRows
+        rows={[
+          ["creator", surface.creator],
+          ["medium", surface.medium],
+          ["rights", surface.rights.displayPolicy],
+          ["accessed", surface.accessDate],
+        ]}
+      />
+    </ArchiveCard>
+  );
+}
+
+function DenseTicketPairCard({ surfaces }: { surfaces: [Surface, Surface] }) {
+  return (
+    <div className="archive-card__dense-ticket-stack" aria-label="paired compact source tickets">
+      {surfaces.map((surface, index) => (
+        <ArchiveCard
+          key={surface.surfaceId}
+          className="archive-card--dense-ticket"
+          badges={badgesFromSurface(surface)}
+        >
+          <header>
+            <span>FIG.{String(index + 5).padStart(3, "0")}</span>
+            <strong>{clip(surface.title, 42)}</strong>
+            <span>{cleanDate(surface.dateText)}</span>
+          </header>
+          <div className="archive-card__dense-burst" aria-hidden>
+            <i />
+            <b>{surface.image.state}</b>
+          </div>
+          <section>
+            <p>{clip(surface.sourceName, 34)}</p>
+            <p>{clip(surface.creator, 36)}</p>
+            <p>{clip(surface.medium, 42)}</p>
+          </section>
+        </ArchiveCard>
+      ))}
+    </div>
+  );
+}
+
+function DenseTravelLabelCard({ folder, surface }: { folder: Folder; surface: Surface }) {
+  const samples = folderSamples(folder, 4);
+
+  return (
+    <ArchiveCard
+      className="archive-card--dense-travel-label"
+      badges={[{ type: folder.type, title: folder.title }, ...badgesFromSurface(surface).slice(0, 3)]}
+    >
+      <header>
+        <span>archive transit / source slip</span>
+        <h2>{folder.title}</h2>
+        <strong>{spanLabel(folder.dateStart, folder.dateEnd)}</strong>
+      </header>
+      <div className="archive-card__dense-label-grid">
+        <span>origin</span>
+        <strong>{clip(surface.sourceName, 32)}</strong>
+        <span>record</span>
+        <strong>{surface.sourceRecordId}</strong>
+        <span>routing</span>
+        <strong>{surface.image.state} / {surface.rights.displayPolicy}</strong>
+      </div>
+      <ol>
+        {samples.map((item) => (
+          <li key={item.surfaceId}>
+            <span>{cleanDate(item.dateText)}</span>
+            <strong>{clip(item.title, 48)}</strong>
+          </li>
+        ))}
+      </ol>
+      <BarcodeMark />
+    </ArchiveCard>
+  );
+}
+
+function DenseIdentityCard({ surface }: { surface: Surface }) {
+  const sourceRows = rows(surface, "SOURCE", 4);
+
+  return (
+    <ArchiveCard className="archive-card--dense-identity" badges={badgesFromSurface(surface)}>
+      <header>
+        <h2>{clip(surface.title, 44)}</h2>
+        <p>{clip(surface.medium, 52)}</p>
+      </header>
+      <section>
+        <p>{clip(surface.descriptionSummary, 160)}</p>
+      </section>
+      <MetaRows
+        rows={[
+          ["date", cleanDate(surface.dateText)],
+          ["creator", surface.creator],
+          ["source", surface.sourceName],
+        ]}
+      />
+      <ol>
+        {sourceRows.map(([key, value]) => (
+          <li key={key}>
+            <span>{key}</span>
+            {clip(value, 38)}
+          </li>
+        ))}
+      </ol>
+    </ArchiveCard>
+  );
+}
+
+function DenseQuoteBadgeCard({ surface }: { surface: Surface }) {
+  const quote = surface.descriptionSummary || surface.classificationRationale || surface.title;
+
+  return (
+    <ArchiveCard className="archive-card--dense-quote-badge" badges={badgesFromSurface(surface)}>
+      <p>{surface.sourceRecordId}</p>
+      <h2>{clip(quote, 118)}</h2>
+      <section>
+        <strong>{cleanDate(surface.dateText)}</strong>
+        <span>{clip(surface.title, 62)}</span>
+      </section>
+      <div className="archive-card__quote-fields">
+        {evidenceRows(surface, 6).map((row) => (
+          <div key={`${row.kind}-${row.key}`}>
+            <span>{row.kind}</span>
+            <strong>{row.key}</strong>
+            <p>{clip(row.value, 70)}</p>
+          </div>
+        ))}
+      </div>
+    </ArchiveCard>
+  );
+}
+
 function RightsReviewCard({ surface }: { surface: Surface }) {
   return (
     <ArchiveCard className="archive-card--rights-review" badges={badgesFromSurface(surface)}>
@@ -573,6 +745,8 @@ export function ArchiveCardSurface({
   const resolved = layoutId ?? selectArchiveCardLayout(surface);
   if (resolved === "CARD01.specimen-square") return <SpecimenSquare surface={surface} />;
   if (resolved === "CARD02.typography-portrait") return <TypographyPortrait surface={surface} />;
+  if (resolved === "CARD04.source-wide") return <SourceWideCard surface={surface} />;
+  if (resolved === "CARD05.publication") return <PublicationCard surface={surface} />;
   return <RightsReviewCard surface={surface} />;
 }
 
@@ -582,6 +756,11 @@ export default function CardLab({ mode = "all" }: { mode?: CardMode }) {
   const kiss = mustSurface("SURF-MC1930R056");
   const dwan = mustSurface("SURF-MC1930R077");
   const graphicDesign = mustSurface("SURF-MX1970R027");
+  const costume = mustSurface("SURF-MC1930R007");
+  const danza = mustSurface("SURF-MC1930R071");
+  const jewishMuseum = mustSurface("SURF-MC1930R072");
+  const johnWilliams = mustSurface("SURF-SI1970R001");
+  const trident = mustSurface("SURF-GAPIT2026R025");
   const france = mustFolder("region", "france");
   const travel = mustFolder("theme", "travel-and-transport-poster-culture");
   const typography = mustFolder("theme", "modern-typography-and-layout");
@@ -589,6 +768,7 @@ export default function CardLab({ mode = "all" }: { mode?: CardMode }) {
   const showB = mode === "all" || mode === "rectangle";
   const showC = mode === "all" || mode === "color";
   const showSpecial = mode === "all" || mode === "special";
+  const showDense = mode === "all" || mode === "dense";
 
   return (
     <main className="card-lab card-lab--archive" data-mode={mode}>
@@ -622,6 +802,19 @@ export default function CardLab({ mode = "all" }: { mode?: CardMode }) {
           <SpecialAdmitCard surface={kiss} />
           <SpecialPunchCard surface={ascot} />
           <SpecialChamferCard folder={travel} surface={graphicDesign} />
+        </section>
+      ) : null}
+      {showDense ? (
+        <section
+          className="card-lab__set card-lab__set--archive card-lab__set--dense"
+          aria-label="High capacity card layouts"
+          data-card-group="dense"
+        >
+          <DenseWorkOrderCard surface={costume} />
+          <DenseTicketPairCard surfaces={[danza, jewishMuseum]} />
+          <DenseTravelLabelCard folder={travel} surface={ascot} />
+          <DenseIdentityCard surface={johnWilliams} />
+          <DenseQuoteBadgeCard surface={trident} />
         </section>
       ) : null}
     </main>

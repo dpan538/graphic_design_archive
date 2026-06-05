@@ -1,0 +1,73 @@
+{
+  "generatedAt": "2026-06-03T05:19:55.033Z",
+  "baseModelTarget": "Qwen/Qwen3.5-0.8B",
+  "runtimeModelTarget": "onnx-community/Qwen3.5-0.8B-ONNX",
+  "result": "generation_probe_ok",
+  "tests": [
+    {
+      "testId": "evidence_answer",
+      "question": "Give a reading angle in eight words or fewer.",
+      "promptLength": 961,
+      "answer": "The trade card describes a 19th-century paper-w",
+      "deterministicAnswer": "Trade Card for The Liverpool Cloth Establishment is indexed as card, trade; Trade Card; Printed; card, trade; Trade Card; Printed. Date: ca 1825; 1840s. Source: Smithsonian Open Access https://www.si.edu/object/edanmdm:nmah_316270",
+      "decoded": "The trade card describes a 19th-century paper-w",
+      "inputTokenCount": 269,
+      "outputTokenCount": 281,
+      "generatedTokenCount": 12
+    },
+    {
+      "testId": "search_assist_answer",
+      "question": "Give a reading angle in eight words or fewer.",
+      "promptLength": 958,
+      "answer": "The trade card is a printed paper object from the 1",
+      "deterministicAnswer": "Top archive matches: Trade Card for The Liverpool Cloth Establishment (ca 1825; 1840s, Smithsonian Open Access); Washington Hotel Trade Card (ca 1850; 1850s, Smithsonian Open Access); Trade card for the \"Great Negro Mart\" in Memphis, Tennessee (1859-1860; 1850s; 1860s, Smithsonian Open Access). Open a surface to verify the source link.",
+      "decoded": "The trade card is a printed paper object from the 1",
+      "inputTokenCount": 300,
+      "outputTokenCount": 312,
+      "generatedTokenCount": 12
+    },
+    {
+      "testId": "no_evidence_refusal",
+      "question": "Who designed the Tokyo 1964 Olympic pictograms and what was the full design process?",
+      "retrievalGateHasEvidence": false,
+      "modelCalled": false,
+      "promptLength": 0,
+      "answer": "The archive does not currently contain enough cited evidence to answer this question. Try searching for a surface, folder, or source record related to Tokyo 1964 before asking for synthesis.",
+      "decoded": "",
+      "inputTokenCount": 0,
+      "outputTokenCount": 0
+    }
+  ],
+  "timingsMs": {
+    "load": 4107,
+    "evidenceGeneration": 11846,
+    "searchGeneration": 13968,
+    "refusalGeneration": 0,
+    "total": 30102
+  },
+  "summary": {
+    "result": "generation_probe_ok",
+    "contextSurface": "SURF-SI1970R002",
+    "loadMs": 4107,
+    "evidenceGenerationMs": 11846,
+    "searchGenerationMs": 13968,
+    "refusalGenerationMs": 0,
+    "out": "/Users/jarlgiovanni/Desktop/modern_GD_history/generated/qwen35_generation_probe_v0.json"
+  },
+  "contextSurface": {
+    "surfaceId": "SURF-SI1970R002",
+    "title": "Trade Card for The Liverpool Cloth Establishment",
+    "sourceName": "Smithsonian Open Access",
+    "sourceUrl": "https://www.si.edu/object/edanmdm:nmah_316270",
+    "imageState": "IMG03",
+    "completenessScore": 100,
+    "contextLength": 650
+  },
+  "primer": {
+    "out": "/Users/jarlgiovanni/Desktop/modern_GD_history/generated/archive_assistant_primer_v0.json",
+    "surfaceCount": 1417,
+    "folderCount": 48,
+    "readingNoteCount": 119,
+    "bookmarkCount": 0
+  }
+}

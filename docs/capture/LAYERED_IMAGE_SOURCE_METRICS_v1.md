@@ -6,40 +6,43 @@ Scope: capture records, not final public surfaces. These metrics measure the raw
 
 ## Overall
 
-- Capture records: 1524
-- Source-visible coverage: 92.98%
-- Publication-grade candidate coverage: 86.09%
-- Weighted publication image rate: 61.27% (933.80 weighted points)
-- Open-image candidate coverage: 10.70%
+- Capture records: 1610
+- Source-visible coverage: 89.88%
+- Publication-grade candidate coverage: 83.35%
+- Weighted publication image rate: 59.02% (950.30 weighted points)
+- Open-image candidate coverage: 10.12%
 - Rights-labeled coverage: 100.00%
-- Unclear image-state rate: 0.26%
-- Duplicate image URL record rate: 4.53%
+- Unclear image-state rate: 0.25%
+- Duplicate image URL record rate: 4.29%
 
 ## Period Bands
 
-- 1930_1970: records=523, source-visible=92.16%, publication-grade=79.54%, weighted=55.36%, open=13.77%, duplicate-url=3.25%
+- 1930_1970: records=528, source-visible=92.05%, publication-grade=79.55%, weighted=55.26%, open=13.64%, duplicate-url=3.22%
 - pre_1930: records=467, source-visible=92.72%, publication-grade=85.44%, weighted=73.17%, open=12.42%, duplicate-url=8.35%
-- 1970_2000: records=279, source-visible=98.92%, publication-grade=98.92%, weighted=61.43%, open=6.45%, duplicate-url=0.00%
-- 2000_2026: records=227, source-visible=93.83%, publication-grade=93.39%, weighted=54.91%, open=6.61%, duplicate-url=4.41%
-- undated_or_unparsed: records=28, source-visible=46.43%, publication-grade=32.14%, weighted=23.21%, open=0.00%, duplicate-url=10.71%
+- 1970_2000: records=291, source-visible=96.56%, publication-grade=96.56%, weighted=59.85%, open=6.19%, duplicate-url=0.00%
+- 2000_2026: records=250, source-visible=86.80%, publication-grade=86.40%, weighted=50.74%, open=6.00%, duplicate-url=4.00%
+- undated_or_unparsed: records=74, source-visible=40.54%, publication-grade=35.14%, weighted=21.42%, open=0.00%, duplicate-url=4.05%
 
 ## Lowest Weighted Publication Periods
 
-- undated_or_unparsed: weighted=23.21% (6.50 weighted points / 28 records)
-- 2000_2026: weighted=54.91% (124.65 weighted points / 227 records)
-- 1930_1970: weighted=55.36% (289.55 weighted points / 523 records)
-- 1970_2000: weighted=61.43% (171.40 weighted points / 279 records)
+- undated_or_unparsed: weighted=21.42% (15.85 weighted points / 74 records)
+- 2000_2026: weighted=50.74% (126.85 weighted points / 250 records)
+- 1930_1970: weighted=55.26% (291.75 weighted points / 528 records)
+- 1970_2000: weighted=59.85% (174.15 weighted points / 291 records)
 
 ## Source Families
 
-- unmapped_source_family: records=587, source-visible=96.42%, publication-grade=88.42%, weighted=64.57%, open=0.00%
-- independent_design_archive_or_publication: records=298, source-visible=77.18%, publication-grade=77.18%, weighted=60.77%, open=52.35%
-- government_or_public_cultural_database: records=197, source-visible=100.00%, publication-grade=100.00%, weighted=78.63%, open=0.00%
-- general_archive_or_collection: records=162, source-visible=97.53%, publication-grade=68.52%, weighted=46.76%, open=0.00%
-- university_repository_or_special_collection: records=146, source-visible=95.89%, publication-grade=95.89%, weighted=52.98%, open=0.00%
-- library_or_national_library: records=100, source-visible=94.00%, publication-grade=94.00%, weighted=54.15%, open=7.00%
-- community_activist_diaspora_archive: records=23, source-visible=91.30%, publication-grade=91.30%, weighted=50.22%, open=0.00%
-- poster_film_festival_design_archive: records=11, source-visible=100.00%, publication-grade=0.00%, weighted=0.00%, open=0.00%
+- unmapped_source_family: records=615, source-visible=92.85%, publication-grade=85.20%, weighted=62.07%, open=0.00%
+- independent_design_archive_or_publication: records=304, source-visible=76.64%, publication-grade=76.64%, weighted=60.12%, open=51.32%
+- government_or_public_cultural_database: records=206, source-visible=97.57%, publication-grade=97.57%, weighted=76.26%, open=0.00%
+- general_archive_or_collection: records=172, source-visible=95.35%, publication-grade=68.02%, weighted=45.96%, open=0.00%
+- university_repository_or_special_collection: records=158, source-visible=92.41%, publication-grade=92.41%, weighted=51.04%, open=0.00%
+- library_or_national_library: records=109, source-visible=88.99%, publication-grade=88.99%, weighted=51.19%, open=6.42%
+- community_activist_diaspora_archive: records=30, source-visible=76.67%, publication-grade=76.67%, weighted=42.17%, open=0.00%
+- poster_film_festival_design_archive: records=13, source-visible=92.31%, publication-grade=7.69%, weighted=4.23%, open=0.00%
+- aggregator_or_discovery_router: records=1, source-visible=0.00%, publication-grade=0.00%, weighted=0.00%, open=0.00%
+- municipal_or_state_archive: records=1, source-visible=0.00%, publication-grade=0.00%, weighted=0.00%, open=0.00%
+- newspaper_magazine_ocr_portal: records=1, source-visible=0.00%, publication-grade=0.00%, weighted=0.00%, open=0.00%
 
 ## Duplicate Image URL Warnings
 

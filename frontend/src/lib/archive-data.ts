@@ -13,6 +13,8 @@ import type {
   FolderTypeKey,
   ImageState,
   PublicSurfaceMock,
+  ReadingNoteRecord,
+  ResearchDossier,
   Surface,
   SurfaceKind,
 } from "@/types/archive";
@@ -81,12 +83,24 @@ export function getFoldersByType(type: FolderTypeKey): Folder[] {
     .sort((a, b) => a.title.localeCompare(b.title));
 }
 
-export function regionGroupLabel(folder: Folder): string {
-  if (folder.type !== "region") return "";
+export interface RegionGroup {
+  continent: string;
+  subregion: string;
+}
+
+export function regionGroup(folder: Folder): RegionGroup {
+  if (folder.type !== "region") {
+    return { continent: "", subregion: "" };
+  }
   const key = folder.slug;
-  if (["united-states"].includes(key)) return "North America";
-  if (["latin-america", "mexico", "cuba-transnational"].includes(key)) {
-    return "Latin America / Caribbean";
+  if (["united-states"].includes(key)) {
+    return { continent: "Americas", subregion: "North America" };
+  }
+  if (["mexico", "cuba-transnational"].includes(key)) {
+    return { continent: "Americas", subregion: "Caribbean / Mesoamerica" };
+  }
+  if (["latin-america", "brazil"].includes(key)) {
+    return { continent: "Americas", subregion: "South America / Latin America" };
   }
   if (
     [
@@ -95,20 +109,40 @@ export function regionGroupLabel(folder: Folder): string {
       "germany",
       "italy",
       "netherlands",
-      "poland",
-      "russia",
       "switzerland",
       "united-kingdom",
     ].includes(key)
   ) {
-    return "Europe";
+    return { continent: "Europe", subregion: "Western / Central Europe" };
   }
-  if (["china-hong-kong", "japan"].includes(key)) return "East Asia";
-  if (["india", "palestine-transnational"].includes(key)) return "West / South Asia";
-  if (["south-africa-botswana"].includes(key)) return "Africa";
-  if (["australia-indigenous"].includes(key)) return "Oceania / Indigenous";
-  if (["unresolved-region"].includes(key)) return "Unresolved / Transregional";
-  return "Other regions";
+  if (["poland", "russia"].includes(key)) {
+    return { continent: "Europe", subregion: "Eastern Europe / Eurasia" };
+  }
+  if (["china-hong-kong", "japan"].includes(key)) {
+    return { continent: "Asia", subregion: "East Asia" };
+  }
+  if (["india"].includes(key)) {
+    return { continent: "Asia", subregion: "South Asia" };
+  }
+  if (["palestine-transnational"].includes(key)) {
+    return { continent: "Asia", subregion: "West Asia / Transnational" };
+  }
+  if (["south-africa-botswana"].includes(key)) {
+    return { continent: "Africa", subregion: "Southern Africa" };
+  }
+  if (["australia-indigenous"].includes(key)) {
+    return { continent: "Oceania", subregion: "Australia / Indigenous" };
+  }
+  if (["unresolved-region"].includes(key)) {
+    return { continent: "Unresolved", subregion: "Transregional / Needs filing" };
+  }
+  return { continent: "Other", subregion: "Other regions" };
+}
+
+export function regionGroupLabel(folder: Folder): string {
+  const group = regionGroup(folder);
+  if (!group.continent) return "";
+  return `${group.continent} / ${group.subregion}`;
 }
 
 export function getFolder(
@@ -134,6 +168,34 @@ export function getSurfaces(): Surface[] {
 
 export function getSurface(id: string): Surface | undefined {
   return mock.surfaces.find((s) => s.surfaceId === id);
+}
+
+export function getResearchDossiers(): ResearchDossier[] {
+  return mock.researchDossiers ?? [];
+}
+
+export function getResearchDossier(id: string): ResearchDossier | undefined {
+  return getResearchDossiers().find((dossier) => dossier.dossierId === id);
+}
+
+export function getResearchDossierForSurface(surfaceId: string): ResearchDossier | undefined {
+  return getResearchDossiers().find(
+    (dossier) =>
+      dossier.anchorSurfaceId === surfaceId ||
+      dossier.pageSequence.some((page) => page.surfaceId === surfaceId),
+  );
+}
+
+export function getResearchDossiersForFolder(folderId: string): ResearchDossier[] {
+  return getResearchDossiers().filter((dossier) => dossier.folderIds.includes(folderId));
+}
+
+export function getReadingNotes(): ReadingNoteRecord[] {
+  return mock.readingNotes ?? [];
+}
+
+export function getReadingNoteForFolder(folderId: string): ReadingNoteRecord | undefined {
+  return getReadingNotes().find((note) => note.folderId === folderId);
 }
 
 /** Surfaces that belong to a folder, resolved from the folder's surfaceIds. */

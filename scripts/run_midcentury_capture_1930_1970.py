@@ -1245,6 +1245,22 @@ def surface_score(row: dict[str, str]) -> int:
 def surface_disposition(row: dict[str, str], score: int) -> str:
     img = row.get("image_presence_code", "IMG00")
     source_text_len = source_reading_text_len(row)
+    source_blob = " ".join(
+        [
+            row.get("source_object_type", ""),
+            row.get("source_medium", ""),
+            row.get("direction_name", ""),
+            row.get("classification_rationale", ""),
+        ]
+    ).lower()
+    if "source registry/context record" in source_blob or "source-registry" in source_blob:
+        if score >= SUPPORT_PACKET_THRESHOLD:
+            return "support_packet_appendix_text"
+        if score >= MERGE_CANDIDATE_THRESHOLD:
+            return "merge_candidate_support_packet"
+        if score >= CARD_THRESHOLD:
+            return "card"
+        return "bookmark_candidate"
     if score >= MAIN_SHEET_THRESHOLD and source_text_len >= MAIN_SHEET_MIN_SOURCE_TEXT:
         return "main_sheet"
     if score >= MAIN_SHEET_THRESHOLD and img in {"IMG01", "IMG02", "IMG03"}:

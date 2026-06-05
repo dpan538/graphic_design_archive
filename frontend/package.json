@@ -13,9 +13,13 @@
     "capture:sub-sheets": "node scripts/capture-sub-sheets.js",
     "preview:text-pages": "next dev --hostname 127.0.0.1 --port 3037",
     "capture:text-pages": "node scripts/capture-text-pages.js",
+    "preview:cards": "next dev --hostname 127.0.0.1 --port 3036",
+    "capture:cards": "node scripts/capture-cards.js",
+    "asset:a11y-check": "node scripts/asset-a11y-check.js",
     "lint": "next lint"
   },
   "dependencies": {
+    "@huggingface/transformers": "^4.2.0",
     "next": "^15.5.18",
     "react": "19.0.0",
     "react-dom": "19.0.0"

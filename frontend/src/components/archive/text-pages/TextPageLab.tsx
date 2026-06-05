@@ -567,7 +567,7 @@ function TP08SpreadQuote({ surface, id }: TextPageProps) {
 }
 
 function TP09SpreadBody({ surface, id }: TextPageProps) {
-  const blocks = archiveBlocks(surface, 8, 170);
+  const blocks = archiveBlocks(surface, 5, 130);
   const titleParts = textPageTitle(surface).split(/\s+/).filter(Boolean);
   const contents = [
     ["01", "source record", surface.sourceName, blocks[0]],
@@ -576,6 +576,7 @@ function TP09SpreadBody({ surface, id }: TextPageProps) {
     ["04", "citation basis", displayId(surface), blocks[3]],
     ["05", "archive note", displayDate(surface), blocks[4]],
   ];
+  const visibleContents = contents.slice(0, 4);
   return (
     <article className="text-page text-page--v-spread-body text-page--v-index-leaf">
       <div className="text-page__contents-leaf">
@@ -590,7 +591,7 @@ function TP09SpreadBody({ surface, id }: TextPageProps) {
         </div>
         <div className="text-page__contents-grid">
           <div className="text-page__contents-index">
-            {contents.map(([number, label, meta, body]) => (
+            {visibleContents.map(([number, label, meta, body]) => (
               <section key={number}>
                 <span>{number}</span>
                 <h3>{label}</h3>
@@ -600,14 +601,11 @@ function TP09SpreadBody({ surface, id }: TextPageProps) {
             ))}
           </div>
           <div className="text-page__contents-manifest">
-            {titleParts.slice(0, 12).map((part, index) => (
+            {titleParts.slice(0, 9).map((part, index) => (
               <span key={`${part}-${index}`}>{part}</span>
             ))}
           </div>
         </div>
-        <p className="text-page__contents-statement">
-          {blocks[6] || blocks[2] || surface.citationBasis}
-        </p>
       </div>
       <footer className="text-page__footer-line">
         <span>{surface.sourceName}</span>

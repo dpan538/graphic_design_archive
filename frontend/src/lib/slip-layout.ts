@@ -29,6 +29,8 @@ export function selectSourceSlipLayout(
   cardLayoutId: ArchiveCardLayoutId,
 ): SourceSlipLayoutId {
   if (cardLayoutId === "CARD01.specimen-square") return "SLIP01.square";
+  if (cardLayoutId === "CARD04.source-wide") return "SLIP01.square";
+  if (cardLayoutId === "CARD05.publication") return "SLIP02.portrait";
   if (surface.image.state === "IMG00" || sourceTextLength(surface) >= 320) {
     return "SLIP03.narrow";
   }

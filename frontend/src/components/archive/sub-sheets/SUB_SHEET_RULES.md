@@ -15,20 +15,25 @@ main-sheet group for top-level object authority.
 
 ## Group 01 Directions
 
+Status: frozen. Placement ratio is `SS01:SS02:SS03:SS04 = 1.2:0.5:0.55:1.1`.
+
 ### SS01 `schedule-index`
 
-- Direction: dense typographic index.
+- Direction: source scroll index, using a vertical axis, compact evidence image,
+  and restrained badge/seal logic inspired by Japanese/Chinese graphic sheets.
 - Use: source-context records, periodical records, and text-heavy objects where
   metadata can read as an ordered register.
-- Constraint: the numbered stack is the structure. Avoid turning this into a
-  generic text page or appendix list.
+- Constraint: the title, metadata, evidence image, and description must each
+  occupy a distinct area. Do not allow numbered fields or the footer to overlap
+  body text.
 
 ### SS02 `redline-cv`
 
-- Direction: construction-grid dossier.
+- Direction: ink seal dossier with dark blue rules and a square source/image
+  seal.
 - Use: records with strong source image evidence and clear classification rows.
-- Constraint: the red rules are structural. They must not repeat the main-sheet
-  grid-register composition or become decorative.
+- Constraint: do not use a red grid system. This layout must remain visibly
+  separate from the main-sheet grid-register language.
 
 ### SS03 `day-column`
 
@@ -45,6 +50,53 @@ main-sheet group for top-level object authority.
   fields.
 - Constraint: keep the image small and the field rows compact. This is not a
   card, slip, or reading note.
+
+## Group 02 Directions
+
+Status: frozen. Placement ratio is `SS05:SS06:SS07:SS08 = 1:3:4:3`.
+Group-level placement should favor Group 02 over Group 01: use
+`Group 02:Group 01 = 1:0.85` when selecting between the two frozen groups.
+This means Group 02 is the primary sub-sheet set, while Group 01 remains an
+active but slightly less frequent companion set.
+
+Group 02 must deliberately avoid Group 01's register/seal/day-column/dossier
+language. It borrows from menus, invoices, stationery, and CV systems rather
+than from the first main-sheet group.
+
+### SS05 `layered-menu`
+
+- Direction: layered paper/menu stack with side slips, central source menu, and
+  compact circular evidence.
+- Use: source-heavy records where many short fields can be scanned as a
+  service/menu list.
+- Constraint: side layers are structural information rails, not decoration. Do
+  not let them become a fallback for clipped or unreadable data.
+
+### SS06 `punched-letter`
+
+- Direction: punched stationery letter with left binding marks, address logic,
+  and restrained quotation/table information.
+- Use: single-object records where archive metadata can read as a formal
+  correspondence or quotation.
+- Constraint: keep large quiet areas but preserve enough source rows to justify
+  the sheet's hierarchy.
+
+### SS07 `invoice-ledger`
+
+- Direction: sparse invoice ledger with payment/source blocks and a precise
+  line-item register.
+- Use: grouped records, compound records, and source batches that need a
+  transactional reading structure.
+- Constraint: use real project metadata as line items; never fake prices or
+  financial totals.
+
+### SS08 `cv-sections`
+
+- Direction: CV section sheet with thick section rules, a small evidence image,
+  and grouped source/folder/record fields.
+- Use: records with compact but varied metadata fields.
+- Constraint: this layout can be typographically assertive, but it must remain
+  a sub sheet rather than a card or visual poster.
 
 ## Hard Constraints
 

@@ -14,20 +14,20 @@ Source gap is weighted slightly higher because adding another record from the sa
 
 ## Ranked Periods
 
-- 1930_1970: priority=0.2185, source=20.64%, image=55.36%, active_sources=21, records=523
+- 1930_1970: priority=0.2006, source=30.00%, image=55.26%, active_sources=26, records=528
   Action: Highest priority: add new active sources and prefer IMG03/strong IMG02 records before adding more thin sheets.
-- 1970_2000: priority=0.1482, source=21.10%, image=61.43%, active_sources=15, records=279
-  Action: Add source breadth first: local/community/university/government adapters before more records from existing sources.
-- 2000_2026: priority=0.1344, source=36.80%, image=54.91%, active_sources=20, records=227
+- 2000_2026: priority=0.1179, source=52.40%, image=50.74%, active_sources=25, records=250
+  Action: Improve image quality: upgrade IMG02/IMG00/IMG04 through source-specific image adapters and rights review.
+- 1970_2000: priority=0.1141, source=47.30%, image=59.85%, active_sources=26, records=291
   Action: Improve image quality: upgrade IMG02/IMG00/IMG04 through source-specific image adapters and rights review.
 - pre_1930: priority=0.0804, source=21.33%, image=73.17%, active_sources=10, records=467
   Action: Hold broad capture; add targeted non-West/local source diversity and dedupe repeated early image evidence.
 
 ## Current Table
 
-- 1930_1970: source_points=14.45/70.00, source_gap=79.36%, image_gap=41.73%, IMG03=153, IMG02=263, IMG00=42, IMG04=41
-- 1970_2000: source_points=10.55/50.00, source_gap=78.90%, image_gap=35.34%, IMG03=56, IMG02=220, IMG00=1, IMG04=2
-- 2000_2026: source_points=18.40/50.00, source_gap=63.20%, image_gap=42.20%, IMG03=23, IMG02=189, IMG00=1, IMG04=14
+- 1930_1970: source_points=21.00/70.00, source_gap=70.00%, image_gap=41.83%, IMG03=153, IMG02=267, IMG00=42, IMG04=42
+- 2000_2026: source_points=26.20/50.00, source_gap=47.60%, image_gap=46.59%, IMG03=23, IMG02=193, IMG00=1, IMG04=33
+- 1970_2000: source_points=23.65/50.00, source_gap=52.70%, image_gap=37.00%, IMG03=56, IMG02=225, IMG00=1, IMG04=9
 - pre_1930: source_points=6.40/30.00, source_gap=78.67%, image_gap=22.98%, IMG03=333, IMG02=66, IMG00=15, IMG04=34
 
 ## Interpretation

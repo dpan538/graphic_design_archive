@@ -5,6 +5,7 @@ import type { FolderType, FolderTypeKey } from "@/types/archive";
 export interface FolderTypeSpeedItem {
   key: string;
   type: FolderTypeKey;
+  macroLabel?: string;
   groupLabel?: string;
   code: string;
   title: string;
@@ -22,16 +23,24 @@ export default function FolderTypeSpeedIndex({
   items: FolderTypeSpeedItem[];
 }) {
   const tabOffsets = [0, 50, 0, 33, 66, 0, 25, 50, 75, 0, 20, 40, 60, 80];
-  const groups =
+  const macroGroups =
     folderType.type === "region"
-      ? items.reduce<{ label: string; items: FolderTypeSpeedItem[] }[]>((acc, item) => {
-          const label = item.groupLabel ?? "Other regions";
-          const existing = acc.find((group) => group.label === label);
+      ? items.reduce<
+          { label: string; groups: { label: string; items: FolderTypeSpeedItem[] }[] }[]
+        >((acc, item) => {
+          const macro = item.macroLabel ?? "Other";
+          const groupLabel = item.groupLabel ?? "Other regions";
+          let macroGroup = acc.find((group) => group.label === macro);
+          if (!macroGroup) {
+            macroGroup = { label: macro, groups: [] };
+            acc.push(macroGroup);
+          }
+          const existing = macroGroup.groups.find((group) => group.label === groupLabel);
           if (existing) existing.items.push(item);
-          else acc.push({ label, items: [item] });
+          else macroGroup.groups.push({ label: groupLabel, items: [item] });
           return acc;
         }, [])
-      : [{ label: "", items }];
+      : [{ label: "", groups: [{ label: "", items }] }];
   let stackIndex = 0;
 
   return (
@@ -43,37 +52,42 @@ export default function FolderTypeSpeedIndex({
       >
         {items.length > 0 ? (
           <div className="folder-type-stack__cuts">
-            {groups.map((group) => (
-              <div className="folder-cut-group" key={group.label || folderType.type}>
-                {group.label ? <p className="folder-cut-group__label">{group.label}</p> : null}
-                {group.items.map((item) => {
-                  const index = stackIndex++;
-                  return (
-                    <Link
-                      key={item.key}
-                      href={item.href}
-                      className="folder-cut"
-                      style={
-                        {
-                          "--tab-left": `${tabOffsets[index % tabOffsets.length]}%`,
-                          "--stack-index": index + 1,
-                        } as CSSProperties
-                      }
-                    >
-                      <span className="folder-cut__tab">
-                        <strong>{item.title}</strong>
-                        <span>{item.code}</span>
-                      </span>
+            {macroGroups.map((macroGroup) => (
+              <section className="folder-cut-macro" key={macroGroup.label || folderType.type}>
+                {macroGroup.label ? <h2 className="folder-cut-macro__label">{macroGroup.label}</h2> : null}
+                {macroGroup.groups.map((group) => (
+                  <div className="folder-cut-group" key={`${macroGroup.label}-${group.label}`}>
+                    {group.label ? <p className="folder-cut-group__label">{group.label}</p> : null}
+                    {group.items.map((item) => {
+                      const index = stackIndex++;
+                      return (
+                        <Link
+                          key={item.key}
+                          href={item.href}
+                          className="folder-cut"
+                          style={
+                            {
+                              "--tab-left": `${tabOffsets[index % tabOffsets.length]}%`,
+                              "--stack-index": index + 1,
+                            } as CSSProperties
+                          }
+                        >
+                          <span className="folder-cut__tab">
+                            <strong>{item.title}</strong>
+                            <span>{item.code}</span>
+                          </span>
 
-                      <span className="folder-cut__rail">
-                        <span>{item.date}</span>
-                        <strong>{String(item.count).padStart(3, "0")}</strong>
-                        <span>{item.mix}</span>
-                      </span>
-                    </Link>
-                  );
-                })}
-              </div>
+                          <span className="folder-cut__rail">
+                            <span>{item.date}</span>
+                            <strong>{String(item.count).padStart(3, "0")}</strong>
+                            <span>{item.mix}</span>
+                          </span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                ))}
+              </section>
             ))}
           </div>
         ) : (

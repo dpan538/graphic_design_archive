@@ -107,8 +107,23 @@ def audit(path: Path) -> tuple[list[str], list[str]]:
         warnings.append(f"{len(short_text)} sheet surfaces have fewer than 60 text words.")
     if no_source_url:
         warnings.append(f"{len(no_source_url)} surfaces are missing sourceUrl.")
-    if not data.get("bookmarks"):
-        warnings.append("No top-level bookmarks collection is present in the payload.")
+    reading_notes = data.get("readingNotes") or []
+    bookmarks = data.get("bookmarks") or []
+    folders = data.get("folders") or []
+    folder_note_count = sum(1 for note in reading_notes if note.get("noteScope") == "folder")
+    surface_note_count = sum(1 for note in reading_notes if note.get("noteScope") == "surface")
+    if len(reading_notes) <= len(folders):
+        warnings.append(
+            f"Reading-note coverage is folder-only or below folder count; found {len(reading_notes)} readingNotes for {len(folders)} folders."
+        )
+    if folder_note_count != len(folders):
+        warnings.append(
+            f"Folder reading-note count should match folder count; found {folder_note_count} folder readingNotes for {len(folders)} folders."
+        )
+    if folders and len(bookmarks) >= len(folders):
+        warnings.append(
+            f"Bookmark count is suspiciously folder-like; found {len(bookmarks)} bookmarks for {len(folders)} folders."
+        )
     if not data.get("appendices"):
         warnings.append("No top-level appendices collection is present in the payload.")
 
@@ -119,6 +134,10 @@ def audit(path: Path) -> tuple[list[str], list[str]]:
     lines.append(f"renderable_image_surfaces: {len(renderable)} / {len(surfaces)}")
     lines.append(f"cards: {len(cards)}")
     lines.append(f"sheets: {len(sheets)}")
+    lines.append(f"reading_notes: {len(reading_notes)}")
+    lines.append(f"folder_reading_notes: {folder_note_count}")
+    lines.append(f"surface_reading_notes: {surface_note_count}")
+    lines.append(f"bookmarks: {len(bookmarks)}")
     lines.append(f"short_text_sheets_lt60_words: {len(short_text)}")
     lines.append(f"exact_repeated_image_urls: {len(repeated_urls)}")
     lines.append(f"placeholder_image_urls: {len(placeholder_surfaces)}")

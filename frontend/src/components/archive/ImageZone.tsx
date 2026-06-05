@@ -8,8 +8,7 @@ import { isRenderableImage } from "@/lib/layout";
  * Image bay.
  *
  * Renderable (IMG01 / IMG02 / IMG03 with URL):
- *   – starts with default portrait ratio (3/4), resets to natural aspect ratio
- *     once the image loads so each image keeps its own proportions.
+ *   – always renders inside the archive's fixed portrait plate ratio (3:4).
  *
  * Image-present but non-renderable (IMG00 / missing URL):
  *   – reserves the image bay and renders an empty rights/source frame.
@@ -30,13 +29,11 @@ export default function ImageZone({
   sourceName?: string;
   className?: string;
 }) {
-  const [aspectRatio, setAspectRatio] = useState<string>("3 / 4");
   const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
   const imageUrl = image.url ?? "";
 
   useEffect(() => {
-    setAspectRatio("3 / 4");
     setLoaded(false);
     setFailed(false);
   }, [imageUrl]);
@@ -69,7 +66,7 @@ export default function ImageZone({
     <figure className={`flex flex-col items-start ${className}`}>
       <div
         className="relative overflow-hidden w-full"
-        style={{ aspectRatio, transition: "aspect-ratio 0.1s" }}
+        style={{ aspectRatio: "3 / 4" }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -81,13 +78,7 @@ export default function ImageZone({
           decoding="async"
           referrerPolicy="no-referrer"
           style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.15s" }}
-          onLoad={(e) => {
-            const img = e.currentTarget;
-            if (img.naturalWidth && img.naturalHeight) {
-              setAspectRatio(`${img.naturalWidth} / ${img.naturalHeight}`);
-            }
-            setLoaded(true);
-          }}
+          onLoad={() => setLoaded(true)}
           onError={() => {
             setFailed(true);
             setLoaded(false);

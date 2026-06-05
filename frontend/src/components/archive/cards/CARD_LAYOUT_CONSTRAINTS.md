@@ -6,7 +6,9 @@ view while preserving a controlled physical-print reference.
 
 ## Shared Rules
 
-- Badge: 1 to 3 pure-color folder dots only; no visible text inside badges.
+- Badge: 1 to 4 pure-color folder dots only; no visible text inside badges.
+  Count reflects actual folder types present on the record, including movement
+  when available.
 - Source: use real `Surface` or `Folder` fields from the archive payload.
 - Overflow: no scrolling inside a card; truncate long fields deliberately.
 - Typography: no viewport-scaled type; preserve the mono/sans hierarchy.
@@ -16,7 +18,7 @@ view while preserving a controlled physical-print reference.
 
 ## Family Priority And Placement Probability
 
-Card families are not sampled evenly. Families A, B, and C are regular card
+Card families are not sampled evenly. Families A, B, C, and E are regular card
 systems; Family D is an exceptional physical-format system.
 
 | Family | Priority | Target placement weight | Use |
@@ -25,6 +27,7 @@ systems; Family D is an exceptional physical-format system.
 | B Approved Neutral Cards | P1 | 0.38 | Default high-information archive cards. |
 | C Color Archive Cards | P2 | 0.24 | Secondary regular cards when color helps grouping or contrast. |
 | D Special Physical Proportions | P4 | 0.06 | Rare emphasis cards only. |
+| E High Capacity Card + Slip | P1 | 0.34 | Appendix-level card companions when a slip is present. |
 
 Family D must remain visibly rarer than every regular card family:
 
@@ -172,3 +175,53 @@ Family D must remain visibly rarer than every regular card family:
 - Limits: samples <= 4; representative title <= 72 chars.
 - Do not: use for pure decoration; both folder and surface contexts are
   required.
+
+## Family E: High Capacity Card + Slip Companions
+
+Family E is used when a card appears with a source/citation slip. These cards
+sit near appendix hierarchy but carry less total evidence than appendix pages.
+They should therefore be denser than earlier small cards while still staying
+portable.
+
+### E1 `archive-card--dense-work-order`
+- Ratio: landscape work-order card, 31rem x 17rem.
+- Purpose: receipt/form style record summary with clear routing fields.
+- Required content: source record id, date, table count, title, source, weekday
+  or category strip, description, creator, medium, rights, access date.
+- Limits: description <= 180 chars; metadata <= 4 rows.
+- Do not: leave the middle empty; every row should hold archive information.
+
+### E2 `archive-card--dense-ticket`
+- Ratio: paired compact label tickets, each 18rem x 8.1rem.
+- Purpose: two related source slips shown as a paired card.
+- Required content: figure number, title, date, image state/status mark, source,
+  creator, medium.
+- Limits: exactly 2 records per paired stack; no decorative duplicates.
+- Do not: use fake event copy; all fields must come from two real surfaces.
+
+### E3 `archive-card--dense-travel-label`
+- Ratio: landscape source label, 31rem x 14rem.
+- Purpose: folder-attached transit card that previews a folder and one anchor
+  surface.
+- Required content: folder title/span, source, record id, image/routing status,
+  4 chronological samples, barcode-like source mark.
+- Limits: samples <= 4; sample title <= 48 chars.
+- Do not: use a real QR code unless the project has a real destination URL.
+
+### E4 `archive-card--dense-identity`
+- Ratio: compact identity card, 18rem x 14rem.
+- Purpose: business-card-like source identity for trade cards or similar small
+  printed objects.
+- Required content: title, medium, description, date, creator, source, 4 source
+  rows.
+- Limits: description <= 160 chars; source rows <= 4.
+- Do not: rely on a large photograph; the text grid carries the record.
+
+### E5 `archive-card--dense-quote-badge`
+- Ratio: tall quote/badge card, 23rem x 32.15rem.
+- Purpose: high-density title/quote card where real folder badges interrupt the
+  quote field as colored evidence marks.
+- Required content: source record id, quote/body from real description or
+  classification rationale, date, title, 6 evidence rows.
+- Limits: quote <= 168 chars; evidence rows <= 6; badge count <= 4.
+- Do not: create extra decorative dots beyond the actual folder badges.

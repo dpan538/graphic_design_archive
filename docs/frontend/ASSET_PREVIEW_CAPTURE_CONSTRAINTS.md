@@ -13,7 +13,8 @@ Every asset design review must use a stable preview loop:
 2. Run the relevant build or preview server.
 3. Capture the asset through the project screenshot script.
 4. Inspect the generated screenshot paths and manifest.
-5. Only then report the design state to the user.
+5. Run the accessibility/readability gate.
+6. Only then report the design state to the user.
 
 For text pages the current commands are:
 
@@ -24,6 +25,13 @@ npm run capture:text-pages
 
 The preview server uses `127.0.0.1:3037` so it does not collide with the
 main project browsing session.
+
+For public archive surfaces, run the minimum readability/accessibility gate
+against the active local app:
+
+```bash
+npm run asset:a11y-check
+```
 
 ## Hard Rules
 
