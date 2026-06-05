@@ -16,15 +16,15 @@ The main rate uses region-weighted source points first, then applies time covera
 
 ## Current Result
 
-- active_source_count: 104 (Distinct source_name values with at least one captured record.)
+- active_source_count: 109 (Distinct source_name values with at least one captured record.)
 - candidate_source_count: 298 (Candidate/prospect sources in source_prospect_registry_v2; not counted as active coverage.)
-- weighted_active_source_points: 103.85 (Sum of active source region weights. Non-West/local regions carry higher weights.)
+- weighted_active_source_points: 104.85 (Sum of active source region weights. Non-West/local regions carry higher weights.)
 - weighted_source_target: 200.00 (Initial launch target requested as roughly 200 sources, expressed as weighted source points.)
-- source_pool_rate: 51.92 (weighted_active_source_points / weighted_source_target.)
+- source_pool_rate: 52.42 (weighted_active_source_points / weighted_source_target.)
 - region_weighted_balance_rate: 35.85 (Weighted average of per-region active-source coverage against regional source targets.)
-- time_weighted_balance_rate: 43.50 (Weighted average of active-source coverage across period bands.)
-- source_coverage_rate_v1: 22.59 (source_pool_rate * time_weighted_balance_rate. The source pool itself is already region-weighted.)
-- strict_distribution_adjusted_source_coverage_rate: 8.10 (source_pool_rate * region_weighted_balance_rate * time_weighted_balance_rate; diagnostic only.)
+- time_weighted_balance_rate: 46.00 (Weighted average of active-source coverage across period bands.)
+- source_coverage_rate_v1: 24.12 (source_pool_rate * time_weighted_balance_rate. The source pool itself is already region-weighted.)
+- strict_distribution_adjusted_source_coverage_rate: 8.64 (source_pool_rate * region_weighted_balance_rate * time_weighted_balance_rate; diagnostic only.)
 
 ## Weakest Regions
 
@@ -42,14 +42,14 @@ The main rate uses region-weighted source points first, then applies time covera
 - pre_1930: active_sources=10, target≈30, records=467, balance=33.33%
 - 1930_1970: active_sources=26, target≈70, records=528, balance=37.14%
 - 1970_2000: active_sources=26, target≈50, records=291, balance=52.00%
-- 2000_2026: active_sources=25, target≈50, records=250, balance=50.00%
+- 2000_2026: active_sources=30, target≈50, records=271, balance=60.00%
 
 ## Weakest Periods
 
 - pre_1930: 33.33%
 - 1930_1970: 37.14%
-- 2000_2026: 50.00%
 - 1970_2000: 52.00%
+- 2000_2026: 60.00%
 
 ## Interpretation
 

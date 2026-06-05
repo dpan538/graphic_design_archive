@@ -1,11 +1,11 @@
 group_type,group_value,records_total,source_visible_count,source_visible_rate,publication_grade_count,publication_grade_rate,weighted_publication_score,weighted_publication_rate,open_image_count,open_image_rate,rights_labeled_count,rights_labeled_rate,unclear_image_state_count,unclear_image_state_rate,anchor_image_available_count,anchor_image_available_rate,duplicate_image_url_records,duplicate_image_url_rate,img00_count,img01_count,img02_count,img03_count,img04_count
-all_capture_records,all,1610,1447,89.88,1342,83.35,950.30,59.02,163,10.12,1610,100.00,4,0.25,1341,83.29,69,4.29,59,47,776,566,162
+all_capture_records,all,1631,1462,89.64,1357,83.20,958.55,58.77,163,9.99,1631,100.00,4,0.25,1356,83.14,71,4.35,59,47,791,566,168
 period_band,1930_1970,528,486,92.05,420,79.55,291.75,55.26,72,13.64,528,100.00,1,0.19,420,79.55,17,3.22,42,24,267,153,42
 period_band,pre_1930,467,433,92.72,399,85.44,341.70,73.17,58,12.42,467,100.00,0,0.00,398,85.22,39,8.35,15,19,66,333,34
 period_band,1970_2000,291,281,96.56,281,96.56,174.15,59.85,18,6.19,291,100.00,3,1.03,281,96.56,0,0.00,1,0,225,56,9
-period_band,2000_2026,250,217,86.80,216,86.40,126.85,50.74,15,6.00,250,100.00,0,0.00,216,86.40,10,4.00,1,0,193,23,33
+period_band,2000_2026,271,232,85.61,231,85.24,135.10,49.85,15,5.54,271,100.00,0,0.00,231,85.24,12,4.43,1,0,208,23,39
 period_band,undated_or_unparsed,74,30,40.54,26,35.14,15.85,21.42,0,0.00,74,100.00,0,0.00,26,35.14,3,4.05,0,4,25,1,44
-source_family,unmapped_source_family,615,571,92.85,524,85.20,381.75,62.07,0,0.00,615,100.00,0,0.00,524,85.20,12,1.95,0,47,297,227,44
+source_family,unmapped_source_family,636,586,92.14,539,84.75,390.00,61.32,0,0.00,636,100.00,0,0.00,539,84.75,14,2.20,0,47,312,227,50
 source_family,independent_design_archive_or_publication,304,233,76.64,233,76.64,182.75,60.12,156,51.32,304,100.00,0,0.00,233,76.64,22,7.24,0,0,77,156,71
 source_family,government_or_public_cultural_database,206,201,97.57,201,97.57,157.10,76.26,0,0.00,206,100.00,0,0.00,201,97.57,0,0.00,0,0,68,133,5
 source_family,general_archive_or_collection,172,164,95.35,117,68.02,79.05,45.96,0,0.00,172,100.00,0,0.00,116,67.44,32,18.60,48,0,75,42,7
@@ -16,7 +16,7 @@ source_family,poster_film_festival_design_archive,13,12,92.31,1,7.69,0.55,4.23,0
 source_family,aggregator_or_discovery_router,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_family,municipal_or_state_archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_family,newspaper_magazine_ocr_portal,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
-region_group,unmapped_region,615,571,92.85,524,85.20,381.75,62.07,0,0.00,615,100.00,0,0.00,524,85.20,12,1.95,0,47,297,227,44
+region_group,unmapped_region,636,586,92.14,539,84.75,390.00,61.32,0,0.00,636,100.00,0,0.00,539,84.75,14,2.20,0,47,312,227,50
 region_group,active payload / needs registry mapping,402,337,83.83,337,83.83,244.50,60.82,144,35.82,402,100.00,0,0.00,337,83.83,18,4.48,0,0,168,169,65
 region_group,Oceania and Pacific,253,252,99.60,252,99.60,185.15,73.18,0,0.00,253,100.00,0,0.00,252,99.60,0,0.00,1,0,119,133,0
 region_group,Western/Central Europe,89,89,100.00,89,100.00,51.40,57.75,7,7.87,89,100.00,0,0.00,89,100.00,3,3.37,0,0,82,7,0
@@ -60,10 +60,15 @@ source_name,University of Cape Town Digital Collections,8,8,100.00,8,100.00,4.40
 source_name,NDL Search / National Diet Library,6,0,0.00,0,0.00,0.00,0.00,0,0.00,6,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,6
 source_name,University of Washington Digital Collections / CONTENTdm,6,6,100.00,6,100.00,3.65,60.83,0,0.00,6,100.00,0,0.00,6,100.00,0,0.00,0,0,5,1,0
 source_name,Los Angeles Public Library Tessa / CONTENTdm,5,5,100.00,5,100.00,2.75,55.00,0,0.00,5,100.00,0,0.00,5,100.00,0,0.00,0,0,5,0,0
+source_name,Malaysian Design Archive,5,0,0.00,0,0.00,0.00,0.00,0,0.00,5,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,5
 source_name,National Repository of Nigeria,5,0,0.00,0,0.00,0.00,0.00,0,0.00,5,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,5
 source_name,University of Miami Libraries Digital Collections / CONTENTdm,5,5,100.00,5,100.00,2.75,55.00,0,0.00,5,100.00,4,80.00,5,100.00,0,0.00,0,0,5,0,0
+source_name,African Digital Heritage,4,4,100.00,4,100.00,2.20,55.00,0,0.00,4,100.00,0,0.00,4,100.00,0,0.00,0,0,4,0,0
 source_name,American University of Beirut ScholarWorks,4,0,0.00,0,0.00,0.00,0.00,0,0.00,4,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,4
+source_name,Barjeel Art Foundation,4,4,100.00,4,100.00,2.20,55.00,0,0.00,4,100.00,0,0.00,4,100.00,2,50.00,0,0,4,0,0
 source_name,Desain Grafis Indonesia,4,4,100.00,4,100.00,2.20,55.00,0,0.00,4,100.00,0,0.00,4,100.00,0,0.00,0,0,4,0,0
+source_name,GALA Queer Archive,4,3,75.00,3,75.00,1.65,41.25,0,0.00,4,100.00,0,0.00,3,75.00,0,0.00,0,0,3,0,1
+source_name,Indian Memory Project,4,4,100.00,4,100.00,2.20,55.00,0,0.00,4,100.00,0,0.00,4,100.00,0,0.00,0,0,4,0,0
 source_name,Stellenbosch University Scholar,4,0,0.00,0,0.00,0.00,0.00,0,0.00,4,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,4
 source_name,University of Ghana Digital Collections,4,0,0.00,0,0.00,0.00,0.00,0,0.00,4,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,4
 source_name,University of Pretoria Research Repository,4,0,0.00,0,0.00,0.00,0.00,0,0.00,4,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,4

@@ -97,14 +97,24 @@ Do not commit secrets, credentials, private notes, browser sessions, cookies, AP
 
 ## License / Reuse
 
-License and reuse terms are not finalized. Code, data, documentation, and visual assets may require separate licensing decisions.
+This repository uses layered licensing because the project combines software,
+research data, documentation, frontend design, and third-party source references.
 
-If a license is later added, distinguish between:
+- Source code is licensed under the MIT License. See `LICENSE`.
+- The original frontend visual design, archive-box interface concept, layout
+  language, visual identity, design-specific assets, prototype trade dress, and
+  screenshots are not MIT-licensed. They are covered by the personal frontend
+  design license in `FRONTEND_DESIGN_LICENSE.md`.
+- Project data, generated records, candidate rows, reports, and documentation
+  are research-prototype materials unless a file says otherwise. They should not
+  be treated as final publication data or as rights clearance.
+- Third-party source records, catalogue descriptions, images, archive materials,
+  trademarks, and institution metadata remain governed by their original owners'
+  terms and rights.
 
-- Code license
-- Data license
-- Documentation license
-- Third-party source and image rights
+The MIT License does not grant permission to reuse third-party materials or the
+personal frontend visual design. When in doubt, use this repository as code and
+methodology reference, not as an asset library.
 
 ## Suggested Citation
 

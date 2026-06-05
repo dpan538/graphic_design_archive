@@ -45,6 +45,7 @@ RECORD_FILES = [
     DATA / "capture_batch_loc_deep_image_ready_1931_1970_records.csv",
     DATA / "capture_batch_source_coverage_gap_1931_2026_records.csv",
     DATA / "capture_batch_edge_source_registry_context_1931_2026_records.csv",
+    DATA / "capture_batch_nonmainstream_region_1990_2026_records.csv",
 ]
 
 PAYLOAD_PATHS = [

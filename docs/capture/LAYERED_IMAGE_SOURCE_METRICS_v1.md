@@ -6,33 +6,33 @@ Scope: capture records, not final public surfaces. These metrics measure the raw
 
 ## Overall
 
-- Capture records: 1610
-- Source-visible coverage: 89.88%
-- Publication-grade candidate coverage: 83.35%
-- Weighted publication image rate: 59.02% (950.30 weighted points)
-- Open-image candidate coverage: 10.12%
+- Capture records: 1631
+- Source-visible coverage: 89.64%
+- Publication-grade candidate coverage: 83.20%
+- Weighted publication image rate: 58.77% (958.55 weighted points)
+- Open-image candidate coverage: 9.99%
 - Rights-labeled coverage: 100.00%
 - Unclear image-state rate: 0.25%
-- Duplicate image URL record rate: 4.29%
+- Duplicate image URL record rate: 4.35%
 
 ## Period Bands
 
 - 1930_1970: records=528, source-visible=92.05%, publication-grade=79.55%, weighted=55.26%, open=13.64%, duplicate-url=3.22%
 - pre_1930: records=467, source-visible=92.72%, publication-grade=85.44%, weighted=73.17%, open=12.42%, duplicate-url=8.35%
 - 1970_2000: records=291, source-visible=96.56%, publication-grade=96.56%, weighted=59.85%, open=6.19%, duplicate-url=0.00%
-- 2000_2026: records=250, source-visible=86.80%, publication-grade=86.40%, weighted=50.74%, open=6.00%, duplicate-url=4.00%
+- 2000_2026: records=271, source-visible=85.61%, publication-grade=85.24%, weighted=49.85%, open=5.54%, duplicate-url=4.43%
 - undated_or_unparsed: records=74, source-visible=40.54%, publication-grade=35.14%, weighted=21.42%, open=0.00%, duplicate-url=4.05%
 
 ## Lowest Weighted Publication Periods
 
 - undated_or_unparsed: weighted=21.42% (15.85 weighted points / 74 records)
-- 2000_2026: weighted=50.74% (126.85 weighted points / 250 records)
+- 2000_2026: weighted=49.85% (135.10 weighted points / 271 records)
 - 1930_1970: weighted=55.26% (291.75 weighted points / 528 records)
 - 1970_2000: weighted=59.85% (174.15 weighted points / 291 records)
 
 ## Source Families
 
-- unmapped_source_family: records=615, source-visible=92.85%, publication-grade=85.20%, weighted=62.07%, open=0.00%
+- unmapped_source_family: records=636, source-visible=92.14%, publication-grade=84.75%, weighted=61.32%, open=0.00%
 - independent_design_archive_or_publication: records=304, source-visible=76.64%, publication-grade=76.64%, weighted=60.12%, open=51.32%
 - government_or_public_cultural_database: records=206, source-visible=97.57%, publication-grade=97.57%, weighted=76.26%, open=0.00%
 - general_archive_or_collection: records=172, source-visible=95.35%, publication-grade=68.02%, weighted=45.96%, open=0.00%

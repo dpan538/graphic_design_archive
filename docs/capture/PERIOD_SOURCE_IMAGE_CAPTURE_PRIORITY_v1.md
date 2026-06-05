@@ -16,7 +16,7 @@ Source gap is weighted slightly higher because adding another record from the sa
 
 - 1930_1970: priority=0.2006, source=30.00%, image=55.26%, active_sources=26, records=528
   Action: Highest priority: add new active sources and prefer IMG03/strong IMG02 records before adding more thin sheets.
-- 2000_2026: priority=0.1179, source=52.40%, image=50.74%, active_sources=25, records=250
+- 2000_2026: priority=0.1162, source=54.40%, image=49.85%, active_sources=30, records=271
   Action: Improve image quality: upgrade IMG02/IMG00/IMG04 through source-specific image adapters and rights review.
 - 1970_2000: priority=0.1141, source=47.30%, image=59.85%, active_sources=26, records=291
   Action: Improve image quality: upgrade IMG02/IMG00/IMG04 through source-specific image adapters and rights review.
@@ -26,7 +26,7 @@ Source gap is weighted slightly higher because adding another record from the sa
 ## Current Table
 
 - 1930_1970: source_points=21.00/70.00, source_gap=70.00%, image_gap=41.83%, IMG03=153, IMG02=267, IMG00=42, IMG04=42
-- 2000_2026: source_points=26.20/50.00, source_gap=47.60%, image_gap=46.59%, IMG03=23, IMG02=193, IMG00=1, IMG04=33
+- 2000_2026: source_points=27.20/50.00, source_gap=45.60%, image_gap=47.53%, IMG03=23, IMG02=208, IMG00=1, IMG04=39
 - 1970_2000: source_points=23.65/50.00, source_gap=52.70%, image_gap=37.00%, IMG03=56, IMG02=225, IMG00=1, IMG04=9
 - pre_1930: source_points=6.40/30.00, source_gap=78.67%, image_gap=22.98%, IMG03=333, IMG02=66, IMG00=15, IMG04=34
 

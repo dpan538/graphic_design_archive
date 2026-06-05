@@ -1,10 +1,10 @@
 metric,value,notes
-active_source_count,104,Distinct source_name values with at least one captured record.
+active_source_count,109,Distinct source_name values with at least one captured record.
 candidate_source_count,298,Candidate/prospect sources in source_prospect_registry_v2; not counted as active coverage.
-weighted_active_source_points,103.85,Sum of active source region weights. Non-West/local regions carry higher weights.
+weighted_active_source_points,104.85,Sum of active source region weights. Non-West/local regions carry higher weights.
 weighted_source_target,200.00,"Initial launch target requested as roughly 200 sources, expressed as weighted source points."
-source_pool_rate,51.92,weighted_active_source_points / weighted_source_target.
+source_pool_rate,52.42,weighted_active_source_points / weighted_source_target.
 region_weighted_balance_rate,35.85,Weighted average of per-region active-source coverage against regional source targets.
-time_weighted_balance_rate,43.50,Weighted average of active-source coverage across period bands.
-source_coverage_rate_v1,22.59,source_pool_rate * time_weighted_balance_rate. The source pool itself is already region-weighted.
-strict_distribution_adjusted_source_coverage_rate,8.10,source_pool_rate * region_weighted_balance_rate * time_weighted_balance_rate; diagnostic only.
+time_weighted_balance_rate,46.00,Weighted average of active-source coverage across period bands.
+source_coverage_rate_v1,24.12,source_pool_rate * time_weighted_balance_rate. The source pool itself is already region-weighted.
+strict_distribution_adjusted_source_coverage_rate,8.64,source_pool_rate * region_weighted_balance_rate * time_weighted_balance_rate; diagnostic only.

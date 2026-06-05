@@ -58,6 +58,11 @@ Files:
 - `capture_batch_001_cell_summary.csv`: cell-level collection summary after filtering capture batch 001.
 - `capture_batch_001_next_generation_queue.csv`: next-generation queue derived from empty existing cells, proposed new cells, and unassigned rows.
 - `capture_batch_001_raw/*.json`: raw API payloads preserved for reproducibility of capture batch 001.
+- `nonmainstream_region_capture_targets_1990_2026_v1.csv`: source-only target list for the 1990-2026 non-mainstream regional capture pass.
+- `capture_batch_nonmainstream_region_1990_2026_records.csv`: 21 source-linked candidate records from the non-mainstream regional capture pass.
+- `capture_batch_nonmainstream_region_1990_2026_source_summary.csv`: per-source result summary for the non-mainstream regional capture pass.
+- `nonmainstream_region_impact_ratings_1990_2026_v1.csv`: internal impact-factor triage for those 21 records.
+- `nonmainstream_region_capture_health_v1.csv`: coverage, health, IMG/source-visible, and impact-rating audit metrics for the non-mainstream regional capture pass.
 
 Status:
 
@@ -79,3 +84,8 @@ The source redundancy and source expansion CSVs are Deep Research outputs. They 
 The remediation source-record drafts show how fallback stubs can be promoted or replaced without losing uncertainty. Contextual candidates must remain visibly marked as contextual, and the two blocked rows remain fallback stubs until exact source evidence or a reviewed bibliographic anchor is available.
 
 The capture batch rows are production candidate rows in a staged archive workflow: raw capture, image-state evaluation, cell assignment, cell summary, next-generation queue, and later source-record generation after review.
+
+The non-mainstream regional capture rows are source-only records. They do not
+store downloaded image binaries or raw third-party payloads. `IMG02` indicates a
+source-hosted visual route; `IMG04` indicates a real no-image/text page. Impact
+ratings are internal triage and do not grant authority, inclusion, or rights.

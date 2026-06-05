@@ -5054,3 +5054,123 @@ Verification:
   `.env` reference was found in commit-bound files. The remaining hits are
   policy text or the substring `session` inside `possession`.
 - No v2 raw probe directory is present for this follow-up pass.
+
+## 2026-06-05 — README licensing and non-mainstream regional capture v1
+
+Completed the README licensing update and a source-only capture pass focused on
+underrepresented/non-mainstream 1990-2026 regional coverage.
+
+Step 1 - repository licensing:
+
+- Added `LICENSE` with the MIT License for source code.
+- Added `FRONTEND_DESIGN_LICENSE.md` to reserve the original frontend visual
+  design, archive-box interface concept, layout language, visual identity,
+  design-specific assets, prototype trade dress, and screenshots.
+- Updated `README.md` to explain the layered reuse boundary: MIT applies to
+  source code only; frontend visual design is under the personal frontend
+  design license; project data/docs remain research-prototype materials unless
+  stated otherwise; third-party source materials remain under their source
+  owners' rights and terms.
+
+Step 2 - source list and content capture:
+
+- Added `scripts/run_nonmainstream_region_content_capture_1990_2026.py`.
+- Targeted 10 sources: DesignSingapore Council, Malaysian Design Archive,
+  Grafis Nusantara, 29LT, Barjeel Art Foundation, African Digital Heritage,
+  GALA Queer Archive, Indian Memory Project, MAP Academy, and Diseño Nacional.
+- Generated `data/nonmainstream_region_capture_targets_1990_2026_v1.csv`.
+- Generated `data/capture_batch_nonmainstream_region_1990_2026_records.csv`
+  with 21 candidate records from 5 captured sources.
+- Generated `data/capture_batch_nonmainstream_region_1990_2026_source_summary.csv`.
+- Generated `data/nonmainstream_region_impact_ratings_1990_2026_v1.csv`.
+- Generated `docs/capture/NONMAINSTREAM_REGION_CAPTURE_1990_2026_v1.md`.
+
+Capture metrics:
+
+- Target source coverage: 5 of 10 sources.
+- Captured records: 21.
+- Source summary: Malaysian Design Archive 5, Barjeel Art Foundation 4,
+  African Digital Heritage 4, GALA Queer Archive 4, and Indian Memory Project 4.
+- Targeted sources with no promoted records this pass: DesignSingapore Council,
+  Grafis Nusantara, 29LT, MAP Academy, and Diseño Nacional.
+- MAP Academy produced 4 endpoint failures; the other zero-record sources were
+  reachable or non-promoted for this batch rather than treated as absent.
+- Macro-region captured-source distribution: Africa 2, Southeast Asia 1, MENA
+  1, and South Asia 1.
+- Image-state distribution: `IMG02` 15 and `IMG04` 6.
+- Impact-factor distribution: A 15 and B 6.
+
+Boundary:
+
+- This pass did not download image binaries.
+- This pass did not write raw third-party payloads.
+- `IMG02` rows point to source-hosted image routes only and still require
+  item-level rights review.
+- `IMG04` rows are real no-image/text records, not parser failures.
+- Impact ratings are internal triage only and do not decide public authority,
+  inclusion, authorship, or rights.
+
+Step 3 - database/public surface integration:
+
+- Updated `scripts/rebuild_public_surfaces_from_records.py` so the new
+  non-mainstream regional record CSV feeds the generated public-surface payloads.
+- Rebuilt generated public payloads after capture.
+- Rebuild output: 1,558 source rows, 1,438 public surfaces, 48 folders.
+- Rebuilt public-surface image states: `IMG00` 41, `IMG01` 37, `IMG02` 748,
+  `IMG03` 481, and `IMG04` 131.
+- Rebuilt source-visible image readiness: 1,266 of 1,438 surfaces, 88.04%.
+- Rebuilt weighted publication image score: 855.4 of 1,438, 59.49%.
+
+Step 4 - health and coverage checks:
+
+- Added `scripts/audit_nonmainstream_region_capture_health_v1.py`.
+- Generated `data/nonmainstream_region_capture_health_v1.csv`.
+- Generated `docs/capture/NONMAINSTREAM_REGION_CAPTURE_HEALTH_v1.md`.
+- Non-mainstream regional health metrics: target source coverage 50.00%,
+  record health 100.00%, IMG/source-visible rate 71.43%, rights-review required
+  rate 100.00%, impact ratings A 15 and B 6.
+- Ran `scripts/audit_source_coverage_rate_v1.py`: active source count 109,
+  candidate source count 298, source pool rate 52.42%, region weighted balance
+  rate 35.85%, time weighted balance rate 46.00%, source coverage rate v1
+  24.12%, and strict distribution-adjusted source coverage rate 8.64%.
+- Ran `scripts/audit_layered_image_source_metrics_v1.py`: 1,631 records,
+  source-visible rate 89.64%, publication-grade rate 83.20%, weighted
+  publication rate 58.77%, open image rate 9.99%, rights-labeled rate 100.00%,
+  and unclear image-state rate 0.25%.
+- Ran `scripts/audit_period_source_image_priority_v1.py`: highest priority
+  periods remain 1930-1970, 2000-2026, 1970-2000, and pre-1930 in that order.
+- Ran `scripts/audit_img_state_contract.py`: passed after rebuild.
+- Ran `scripts/audit_image_release_gate.py`: executed successfully but the
+  release gate remains unmet, as expected for the current prototype. Current
+  public-surface source-visible coverage is 88.04% and weighted publication
+  coverage is 59.49% against the 95% minimum launch gate.
+- Ran `scripts/audit_public_surface_integrity.py`: executed successfully with a
+  warning that 12 surfaces share 6 exact image URLs. This is a warning to review
+  duplicate source-hosted image references, not evidence of local image copying.
+
+Next capture directions:
+
+- Highest-value next automated pass: WordPress/RSS/JSON-LD source adapters for
+  reachable Southeast Asia, Africa, South Asia, MENA, and Latin America sources.
+- Highest-value manual/retry pass: MAP Academy endpoint review, then 403/401/429
+  rows from the v2 retry registry without bypassing source restrictions.
+- Highest-value rights/IMG pass: review `IMG02` source-hosted routes for item
+  rights evidence while keeping `IMG01`/`IMG03` upgrades behind authoritative
+  page-level terms only.
+- Data cleanup to consider later: normalize the Malaysia/Malaysian Design
+  Archive source label across older and newer batches.
+
+Verification:
+
+- `python3 -m py_compile` passed for the new capture/audit scripts, the public
+  surface rebuild script, and the relevant health/coverage/image audit scripts.
+- `git diff --check` passed.
+- `npm run build` passed in `frontend/`, generating 1,514 static pages.
+- Safety scans were run against the intended commit-bound files for credential
+  and local-path patterns. The broad keyword scan found expected policy words,
+  historical log text, and public content titles such as "Secret" or "Session".
+  The stricter credential-shape scan found no real credentials, bearer values,
+  cookie/session assignments, API key assignments, local user paths, or env-file
+  references in the intended commit-bound files.
+- Pre-existing raw capture leftovers from other worktrees/windows remain
+  uncommitted and are not part of this batch.
