@@ -1,0 +1,63 @@
+metric,value,count,notes
+candidate_sources_from_wikidata,all,2600,New candidate official source sites after existing-source dedupe.
+successful_new_sources_available,all,1103,Official source URLs that returned successful source metadata.
+successful_new_sources_selected,all,500,Balanced non-mainstream source successes written to the registry.
+macro_region_distribution,Africa,99,Selected successful source registry rows.
+macro_region_distribution,Latin America / Caribbean,98,Selected successful source registry rows.
+macro_region_distribution,MENA,81,Selected successful source registry rows.
+macro_region_distribution,Southeast Asia,80,Selected successful source registry rows.
+macro_region_distribution,Eastern Europe / Caucasus,70,Selected successful source registry rows.
+macro_region_distribution,South Asia,41,Selected successful source registry rows.
+macro_region_distribution,Central Asia,20,Selected successful source registry rows.
+macro_region_distribution,East Asia,10,Selected successful source registry rows.
+macro_region_distribution,Oceania / Indigenous,1,Selected successful source registry rows.
+source_class_distribution,museum,270,Selected successful source registry rows.
+source_class_distribution,library,156,Selected successful source registry rows.
+source_class_distribution,cultural center,37,Selected successful source registry rows.
+source_class_distribution,archives,18,Selected successful source registry rows.
+source_class_distribution,art gallery,18,Selected successful source registry rows.
+source_class_distribution,art museum,1,Selected successful source registry rows.
+protocol_distribution,(none detected),156,Detected protocol hints only; not rights clearance.
+protocol_distribution,RSS/Atom;JSON-LD;WordPress REST,85,Detected protocol hints only; not rights clearance.
+protocol_distribution,RSS/Atom;WordPress REST,34,Detected protocol hints only; not rights clearance.
+protocol_distribution,RSS/Atom,25,Detected protocol hints only; not rights clearance.
+protocol_distribution,Static JS App,23,Detected protocol hints only; not rights clearance.
+protocol_distribution,RSS/Atom;PDF,21,Detected protocol hints only; not rights clearance.
+protocol_distribution,PDF,21,Detected protocol hints only; not rights clearance.
+protocol_distribution,JSON-LD,17,Detected protocol hints only; not rights clearance.
+protocol_distribution,RSS/Atom;JSON-LD;WordPress REST;PDF,13,Detected protocol hints only; not rights clearance.
+protocol_distribution,RSS/Atom;JSON-LD,9,Detected protocol hints only; not rights clearance.
+protocol_distribution,RSS/Atom;WordPress REST;Static JS App,8,Detected protocol hints only; not rights clearance.
+protocol_distribution,RSS/Atom;JSON-LD;WordPress REST;Static JS App;PDF,7,Detected protocol hints only; not rights clearance.
+protocol_distribution,IIIF,7,Detected protocol hints only; not rights clearance.
+protocol_distribution,WordPress REST,7,Detected protocol hints only; not rights clearance.
+protocol_distribution,JSON-LD;PDF,6,Detected protocol hints only; not rights clearance.
+protocol_distribution,RSS/Atom;JSON-LD;WordPress REST;Static JS App,6,Detected protocol hints only; not rights clearance.
+protocol_distribution,IIIF;Static JS App,5,Detected protocol hints only; not rights clearance.
+protocol_distribution,IIIF;PDF,5,Detected protocol hints only; not rights clearance.
+protocol_distribution,RSS/Atom;WordPress REST;PDF,5,Detected protocol hints only; not rights clearance.
+protocol_distribution,IIIF;RSS/Atom;Static JS App,4,Detected protocol hints only; not rights clearance.
+protocol_distribution,JSON-LD;WordPress REST,4,Detected protocol hints only; not rights clearance.
+protocol_distribution,RSS/Atom;JSON-LD;Static JS App,4,Detected protocol hints only; not rights clearance.
+protocol_distribution,Static JS App;PDF,3,Detected protocol hints only; not rights clearance.
+protocol_distribution,IIIF;RSS/Atom;JSON-LD;WordPress REST,3,Detected protocol hints only; not rights clearance.
+protocol_distribution,RSS/Atom;JSON-LD;PDF,3,Detected protocol hints only; not rights clearance.
+protocol_distribution,RSS/Atom;WordPress REST;Static JS App;PDF,2,Detected protocol hints only; not rights clearance.
+protocol_distribution,JSON-LD;Static JS App,2,Detected protocol hints only; not rights clearance.
+protocol_distribution,WordPress REST;Static JS App,2,Detected protocol hints only; not rights clearance.
+protocol_distribution,IIIF;JSON-LD,2,Detected protocol hints only; not rights clearance.
+protocol_distribution,DSpace;PDF,1,Detected protocol hints only; not rights clearance.
+protocol_distribution,JSON-LD;Static JS App;PDF,1,Detected protocol hints only; not rights clearance.
+protocol_distribution,DSpace;RSS/Atom;JSON-LD,1,Detected protocol hints only; not rights clearance.
+protocol_distribution,JSON-LD;WordPress REST;PDF,1,Detected protocol hints only; not rights clearance.
+protocol_distribution,RSS/Atom;Static JS App,1,Detected protocol hints only; not rights clearance.
+protocol_distribution,IIIF;JSON-LD;PDF,1,Detected protocol hints only; not rights clearance.
+protocol_distribution,IIIF;RSS/Atom,1,Detected protocol hints only; not rights clearance.
+protocol_distribution,JSON-LD;WordPress REST;Static JS App,1,Detected protocol hints only; not rights clearance.
+protocol_distribution,RSS/Atom;JSON-LD;Static JS App;PDF,1,Detected protocol hints only; not rights clearance.
+protocol_distribution,WordPress REST;PDF,1,Detected protocol hints only; not rights clearance.
+protocol_distribution,IIIF;RSS/Atom;JSON-LD;WordPress REST;PDF,1,Detected protocol hints only; not rights clearance.
+next_item_capture_priority,P1 item/source adapter,268,Internal triage for later item/image capture.
+next_item_capture_priority,P1 manual item capture,123,Internal triage for later item/image capture.
+next_item_capture_priority,P2 source enrichment,80,Internal triage for later item/image capture.
+next_item_capture_priority,P0 item/image adapter,29,Internal triage for later item/image capture.

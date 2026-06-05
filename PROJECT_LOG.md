@@ -5706,3 +5706,165 @@ Verification:
   key block, OpenAI-style key, AWS-style key, or `.env` reference in the
   intended commit-bound files. Remaining broad hits are historical log lines
   that spell out safety scan terms.
+
+## 2026-06-05 - Non-mainstream item/image capture expansion to 500+ successful records
+
+Goal:
+
+- Continue beyond pre-surface source discovery and produce at least 500 newly
+  captured, image-bearing source records before rebuilding public surfaces.
+- Use the previous non-mainstream registry work plus new source expansion, then
+  run item/image capture, rebuild surfaces, and recalculate source coverage,
+  image state coverage, and sheet counts.
+- Keep the archive rights-aware: no image binaries, no thumbnails, no
+  screenshots, no cookies/session data, and no raw source payloads were saved.
+
+Source-lead expansion:
+
+- Updated `scripts/run_nonmainstream_source_success_registry_2026_v1.py` so
+  later batches can write separate versioned outputs and, for larger fill
+  batches, accept `--target-count`.
+- Generated four additional pre-surface source registries:
+  - `v2`: 500 selected source leads from 1024 reachable successes.
+  - `v3`: 500 selected source leads from 1103 reachable successes.
+  - `v4`: 1000 selected source leads from 1065 reachable successes.
+  - `v5`: 1000 selected source leads from 1022 reachable successes.
+- Total pre-surface source registry rows now counted by audits: 3500.
+- The combined v1-v5 registry pool deduped to 2284 unique source leads for
+  item/image probing.
+
+Registry distribution:
+
+- v2 macro distribution: Africa 92, Latin America / Caribbean 91, MENA 90,
+  Southeast Asia 80, Eastern Europe / Caucasus 70, South Asia 44, Central Asia
+  22, East Asia 10, Oceania / Indigenous 1.
+- v3 macro distribution: Africa 99, Latin America / Caribbean 98, MENA 81,
+  Southeast Asia 80, Eastern Europe / Caucasus 70, South Asia 41, Central Asia
+  20, East Asia 10, Oceania / Indigenous 1.
+- v4 macro distribution: Eastern Europe / Caucasus 342, Latin America /
+  Caribbean 231, Africa 198, Southeast Asia 80, MENA 77, South Asia 41,
+  Central Asia 20, East Asia 10, Oceania / Indigenous 1.
+- v5 macro distribution: Latin America / Caribbean 796, Southeast Asia 83,
+  Africa 62, Central Asia 20, Eastern Europe / Caucasus 17, MENA 12, South
+  Asia 9, Oceania / Indigenous 1.
+- v5 is visibly Latin America-heavy because many MENA/Eastern Europe/South Asia
+  Wikidata retries timed out during that run. It was used as a fill batch to
+  reach clean image-bearing count, not as a balanced regional model.
+
+Item/image capture:
+
+- Added `scripts/run_nonmainstream_item_image_capture_2026_v1.py`.
+- The script reads all `nonmainstream_source_success_registry_2026_v*.csv`
+  files, probes official source pages, and writes archive records only when a
+  source-hosted image route is visible in page metadata or JSON-LD.
+- The first unfiltered pass found enough image routes but included too many
+  favicons/logos/repeated page images. The script was tightened to reject
+  favicon, icon, logo, tracker, sprite, and repeated image URL routes and to
+  avoid image URLs already present in existing capture records.
+- Final output: 587 clean image-bearing records across 581 source names.
+- Final item/image macro distribution: Latin America 297, Eastern Europe 99,
+  Africa 81, MENA 41, Southeast Asia 39, East Asia 14, Central Asia 8, South
+  Asia 7, Oceania 1.
+- Image states: 587 `IMG02`, 0 `IMG01`, 0 `IMG03`, 0 `IMG04`.
+- Image route basis: `og:image` 549, `jsonld:image` 32, `twitter:image` 3,
+  `link:image_src` 2, `twitter:image:src` 1.
+- No `IMG01` or `IMG03` rights upgrade was made. All new records remain
+  source-hosted `IMG02` pending item-level rights review.
+
+Surface rebuild:
+
+- Added `data/capture_batch_nonmainstream_item_image_2026_records.csv` to
+  `scripts/rebuild_public_surfaces_from_records.py`.
+- Rebuilt public surfaces and frontend mock payloads.
+- Final rebuilt rows: 2266.
+- Final public surfaces: 2146.
+- Folders: 49.
+- Surface image states: `IMG00` 43, `IMG01` 37, `IMG02` 1327, `IMG03` 481,
+  `IMG04` 258.
+- Source-visible image-ready surfaces: 1845/2146 (85.97%).
+- Weighted publication image score: 1173.85/2146 (54.70%).
+
+Final release-gate metrics:
+
+- Active source count: 813.
+- Release source target: 2000.
+- Release source coverage: 40.65%.
+- Sources still needed for 80% release source coverage: 787.
+- Sources still needed for full 2000-source target: 1187.
+- Object source-visible coverage: 86.54% against the 95% gate.
+- Object verified-open coverage: 22.64% against the 85% gate.
+- Object weighted publication-grade image coverage: 55.08% against the 95%
+  gate. Object grouping counts repeated photos/views by source object, not by
+  every surface row.
+- Object `IMG04` coverage: 11.44%. The project still needs an explicit maximum
+  `IMG04` release threshold.
+- Release gates still fail by design: source-visible, verified-open, weighted
+  publication-grade, and source-coverage gates remain below final targets.
+
+Sheet statistics:
+
+- Main sheets: 1903.
+- Sub sheets: 229.
+- Text sheets: 242.
+- Main sheets with more than 2 sub sheets: 121.
+- Main sheets with more than 5 text sheets: 1.
+- The new batch mostly added main-sheet candidates. Sub/text sheet growth is
+  still weak, which supports the earlier diagnosis that surface grouping and
+  sheet consolidation need a later normalization pass.
+
+Additional audit notes:
+
+- `audit_layered_image_source_metrics_v1.py`: records total 2345,
+  source-visible rate 87.38%, publication-grade candidate rate 82.90%,
+  weighted publication rate 54.64%, open-image rate 6.95%, duplicate image URL
+  rate 3.03%.
+- `audit_public_surface_integrity.py` still exits with warnings because 12
+  existing surfaces share 6 exact image URLs. After the final clean pass, the
+  remaining repeated examples are existing Another Graphic / Barjeel records,
+  not new non-mainstream item/image records.
+- `audit_period_source_image_priority_v1.py`: highest combined priority remains
+  `1930_1970` (0.2526), followed by `1970_2000` (0.1726), `2000_2026`
+  (0.1481), and `pre_1930` (0.0963).
+- `audit_nonmainstream_region_capture_health_v1.py`: target source coverage
+  50.00%, record health 100.00%, IMG rate 71.43%, impact ratings A:15, B:6.
+  This legacy health audit covers the earlier nonmainstream region batch, not
+  all v1-v5 source leads.
+- README/license check: `README.md` already documents the layered MIT software
+  license plus `FRONTEND_DESIGN_LICENSE.md`; `LICENSE` is MIT and the personal
+  frontend design license file is present.
+
+Boundary:
+
+- No image binaries were downloaded.
+- No raw HTML/source payloads, cookies, sessions, browser state, screenshots,
+  or local image files were saved.
+- No source priority, protocol signal, platform signal, Wikidata signal,
+  homepage metadata signal, or LLM/heuristic signal was used to upgrade
+  `IMG01` or `IMG03`.
+- `IMG02` records mean source-hosted visual routes only. They increase active
+  source count and source-visible coverage, but they do not solve verified-open
+  or publication-grade release gates.
+
+Verification:
+
+- `npm run build` passed in `frontend/`; Next generated 2223 static pages.
+- `python3 -m py_compile` passed for the modified/new capture, rebuild, and
+  audit scripts.
+- `git diff --check` passed after normalizing the surface-assignment audit CSV
+  line endings.
+- `python3 scripts/audit_source_coverage_rate_v1.py` passed with corrected
+  v1-v5 pre-surface registry diagnostics.
+- `python3 scripts/audit_image_release_gate.py` still exits non-zero by design
+  because release thresholds are not yet met.
+- `python3 scripts/audit_img_state_contract.py` passed.
+- `python3 scripts/audit_layered_image_source_metrics_v1.py` passed.
+- `python3 scripts/audit_public_surface_sheet_counts_v1.py` passed.
+- `python3 scripts/audit_period_source_image_priority_v1.py` passed.
+- `python3 scripts/audit_nonmainstream_region_capture_health_v1.py` passed.
+- `python3 scripts/audit_surface_assignment_gates_v1.py` passed.
+- `python3 scripts/audit_public_surface_integrity.py` still exits non-zero with
+  duplicate-image warnings: 12 existing surfaces share 6 exact image URLs.
+- Strict credential-shape scan over commit-bound files found no real credential
+  assignment, bearer/cookie/session payload, private key block, OpenAI-style key,
+  AWS-style key, or local user path. Remaining `/Users/` and `.env` hits are
+  historical safety-scan terms inside `PROJECT_LOG.md`.

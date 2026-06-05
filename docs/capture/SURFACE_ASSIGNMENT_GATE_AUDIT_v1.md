@@ -6,37 +6,37 @@ Scope: capture records, before any public payload rebuild. This audit applies th
 
 ## Summary
 
-- Capture rows audited: 1369
-- Rows requiring group/linkage review before standalone publication: 83
+- Capture rows audited: 2345
+- Rows requiring group/linkage review before standalone publication: 84
 
 ## Recommended Dispositions
 
-- `main_sheet_candidate`: 974
-- `subsheet_visual`: 186
+- `main_sheet_candidate`: 1711
+- `subsheet_visual`: 235
+- `text_sheet_candidate`: 206
 - `appendix_or_text_sheet`: 55
 - `dedupe_child_record`: 41
-- `subsheet_text_or_appendix_review`: 32
-- `text_sheet_candidate`: 23
-- `subsheet_group_child`: 22
+- `subsheet_text_or_appendix_review`: 38
+- `subsheet_group_child`: 23
 - `subsheet_or_group_anchor_review`: 17
 - `img00_rights_sheet_candidate`: 16
 - `duplicate_image_review_packet`: 3
 
 ## Period Breakdown
 
-- 1930_1970: main_sheet_candidate: 355; subsheet_visual: 44; subsheet_text_or_appendix_review: 25; appendix_or_text_sheet: 24; img00_rights_sheet_candidate: 14; subsheet_group_child: 13; dedupe_child_record: 8; subsheet_or_group_anchor_review: 8; text_sheet_candidate: 7; duplicate_image_review_packet: 3
-- 1970_2000: main_sheet_candidate: 195; subsheet_visual: 23; subsheet_or_group_anchor_review: 2; text_sheet_candidate: 2; img00_rights_sheet_candidate: 1
-- 2000_2026: main_sheet_candidate: 127; appendix_or_text_sheet: 7; subsheet_visual: 7; text_sheet_candidate: 6; subsheet_text_or_appendix_review: 2; subsheet_or_group_anchor_review: 1
+- 1930_1970: main_sheet_candidate: 378; subsheet_visual: 47; subsheet_text_or_appendix_review: 25; appendix_or_text_sheet: 24; img00_rights_sheet_candidate: 14; subsheet_group_child: 13; dedupe_child_record: 8; text_sheet_candidate: 8; subsheet_or_group_anchor_review: 8; duplicate_image_review_packet: 3
+- 1970_2000: main_sheet_candidate: 235; subsheet_visual: 44; text_sheet_candidate: 9; subsheet_or_group_anchor_review: 2; img00_rights_sheet_candidate: 1
+- 2000_2026: main_sheet_candidate: 784; text_sheet_candidate: 155; subsheet_visual: 32; appendix_or_text_sheet: 7; subsheet_text_or_appendix_review: 5; subsheet_or_group_anchor_review: 1; subsheet_group_child: 1
 - pre_1930: main_sheet_candidate: 297; subsheet_visual: 102; dedupe_child_record: 30; appendix_or_text_sheet: 11; subsheet_group_child: 9; subsheet_or_group_anchor_review: 6; text_sheet_candidate: 6; subsheet_text_or_appendix_review: 5; img00_rights_sheet_candidate: 1
-- undated_or_unparsed: appendix_or_text_sheet: 13; subsheet_visual: 10; dedupe_child_record: 3; text_sheet_candidate: 2
+- undated_or_unparsed: text_sheet_candidate: 28; main_sheet_candidate: 17; appendix_or_text_sheet: 13; subsheet_visual: 10; dedupe_child_record: 3; subsheet_text_or_appendix_review: 3
 
 ## Image-State Breakdown
 
 - IMG00: appendix_or_text_sheet: 18; img00_rights_sheet_candidate: 16; dedupe_child_record: 11; subsheet_text_or_appendix_review: 10; subsheet_or_group_anchor_review: 4
 - IMG01: main_sheet_candidate: 27; subsheet_visual: 14; dedupe_child_record: 4; subsheet_or_group_anchor_review: 2
-- IMG02: main_sheet_candidate: 564; subsheet_visual: 79; subsheet_group_child: 14; dedupe_child_record: 4; subsheet_or_group_anchor_review: 4; duplicate_image_review_packet: 1
-- IMG03: main_sheet_candidate: 383; subsheet_visual: 93; dedupe_child_record: 11; subsheet_or_group_anchor_review: 2; duplicate_image_review_packet: 2
-- IMG04: appendix_or_text_sheet: 37; text_sheet_candidate: 23; subsheet_text_or_appendix_review: 22; dedupe_child_record: 11; subsheet_group_child: 8; subsheet_or_group_anchor_review: 5
+- IMG02: main_sheet_candidate: 1248; subsheet_visual: 106; subsheet_group_child: 15; dedupe_child_record: 4; subsheet_or_group_anchor_review: 4; duplicate_image_review_packet: 1
+- IMG03: main_sheet_candidate: 436; subsheet_visual: 115; dedupe_child_record: 11; subsheet_or_group_anchor_review: 2; duplicate_image_review_packet: 2
+- IMG04: text_sheet_candidate: 206; appendix_or_text_sheet: 37; subsheet_text_or_appendix_review: 28; dedupe_child_record: 11; subsheet_group_child: 8; subsheet_or_group_anchor_review: 5
 
 ## Thin / Support Examples
 

@@ -10,7 +10,7 @@ from urllib.parse import urlsplit, urlunsplit
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 PAYLOAD = ROOT / "generated" / "public_surfaces_v1.json"
-PRE_SURFACE_SOURCE_REGISTRY = DATA / "nonmainstream_source_success_registry_2026_v1.csv"
+PRE_SURFACE_SOURCE_REGISTRY_GLOB = "nonmainstream_source_success_registry_2026_v*.csv"
 IMAGE_READY = {"IMG01", "IMG02", "IMG03"}
 BLOCKING_STATES = {"IMG00", "IMG04"}
 MIN_SOURCE_VISIBLE_COVERAGE = 95
@@ -77,14 +77,15 @@ def capture_source_count() -> int:
 
 
 def pre_surface_source_registry_count() -> int:
-    if not PRE_SURFACE_SOURCE_REGISTRY.exists():
-        return 0
-    with PRE_SURFACE_SOURCE_REGISTRY.open(newline="", encoding="utf-8") as handle:
-        return sum(
-            1
-            for row in csv.DictReader(handle)
-            if clean(row.get("source_success_status")) == "success"
-        )
+    total = 0
+    for path in sorted(DATA.glob(PRE_SURFACE_SOURCE_REGISTRY_GLOB)):
+        with path.open(newline="", encoding="utf-8") as handle:
+            total += sum(
+                1
+                for row in csv.DictReader(handle)
+                if clean(row.get("source_success_status")) == "success"
+            )
+    return total
 
 
 def pct(numerator: float, denominator: float) -> float:

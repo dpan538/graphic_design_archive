@@ -47,6 +47,7 @@ RECORD_FILES = [
     DATA / "capture_batch_edge_source_registry_context_1931_2026_records.csv",
     DATA / "capture_batch_nonmainstream_region_1990_2026_records.csv",
     DATA / "capture_batch_nonmainstream_source_profiles_1990_2026_records.csv",
+    DATA / "capture_batch_nonmainstream_item_image_2026_records.csv",
 ]
 
 PAYLOAD_PATHS = [

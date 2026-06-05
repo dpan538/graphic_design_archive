@@ -20,7 +20,7 @@ DATA = ROOT / "data"
 DOCS = ROOT / "docs" / "capture"
 
 REGISTRY = DATA / "source_prospect_registry_v2.csv"
-PRE_SURFACE_SOURCE_REGISTRY = DATA / "nonmainstream_source_success_registry_2026_v1.csv"
+PRE_SURFACE_SOURCE_REGISTRY_GLOB = "nonmainstream_source_success_registry_2026_v*.csv"
 OUTPUT = DATA / "source_coverage_rate_v1.csv"
 REGION_OUTPUT = DATA / "source_coverage_region_breakdown_v1.csv"
 PERIOD_OUTPUT = DATA / "source_coverage_period_breakdown_v1.csv"
@@ -166,7 +166,8 @@ def capture_rows() -> list[dict[str, str]]:
 def pre_surface_source_registry_count() -> int:
     return sum(
         1
-        for row in read_csv(PRE_SURFACE_SOURCE_REGISTRY)
+        for path in sorted(DATA.glob(PRE_SURFACE_SOURCE_REGISTRY_GLOB))
+        for row in read_csv(path)
         if clean(row.get("source_success_status")) == "success"
     )
 

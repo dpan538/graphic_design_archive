@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import csv
 import html
+import argparse
 import json
 import re
 import ssl
@@ -31,10 +32,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 DOCS = ROOT / "docs" / "capture"
 
-OUTPUT = DATA / "nonmainstream_source_success_registry_2026_v1.csv"
-SUMMARY = DATA / "nonmainstream_source_success_summary_2026_v1.csv"
-REGION_BREAKDOWN = DATA / "nonmainstream_source_success_region_breakdown_2026_v1.csv"
-REPORT = DOCS / "NONMAINSTREAM_SOURCE_SUCCESS_REGISTRY_2026_v1.md"
+DEFAULT_VERSION = "v1"
 
 ACCESS_DATE = "2026-06-05"
 TARGET_SUCCESS_COUNT = 500
@@ -261,6 +259,22 @@ def existing_source_keys() -> set[tuple[str, str]]:
                 if name or url:
                     keys.add((name, url))
     return keys
+
+
+def output_paths(version: str) -> tuple[Path, Path, Path, Path]:
+    return (
+        DATA / f"nonmainstream_source_success_registry_2026_{version}.csv",
+        DATA / f"nonmainstream_source_success_summary_2026_{version}.csv",
+        DATA / f"nonmainstream_source_success_region_breakdown_2026_{version}.csv",
+        DOCS / f"NONMAINSTREAM_SOURCE_SUCCESS_REGISTRY_2026_{version.upper()}.md",
+    )
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--version", default=DEFAULT_VERSION, help="Output version suffix, for example v1 or v2.")
+    parser.add_argument("--target-count", type=int, default=TARGET_SUCCESS_COUNT, help="Number of successful source leads to write.")
+    return parser.parse_args()
 
 
 def sparql_query(countries: list[tuple[str, str, str]]) -> str:
@@ -497,7 +511,7 @@ def probe(candidate: Candidate) -> dict[str, str] | None:
     }
 
 
-def select_balanced(rows: list[dict[str, str]]) -> list[dict[str, str]]:
+def select_balanced(rows: list[dict[str, str]], target_count: int) -> list[dict[str, str]]:
     by_macro: dict[str, list[dict[str, str]]] = defaultdict(list)
     for row in sorted(rows, key=lambda item: (item["macro_region"], item["country_or_region"], item["source_name"])):
         by_macro[row["macro_region"]].append(row)
@@ -506,10 +520,10 @@ def select_balanced(rows: list[dict[str, str]]) -> list[dict[str, str]]:
     seen: set[tuple[str, str]] = set()
     macro_selected: Counter[str] = Counter()
     macros = sorted(by_macro)
-    while len(selected) < TARGET_SUCCESS_COUNT and any(by_macro.values()):
+    while len(selected) < target_count and any(by_macro.values()):
         progress = False
         for macro in macros:
-            if len(selected) >= TARGET_SUCCESS_COUNT:
+            if len(selected) >= target_count:
                 break
             cap = MACRO_SELECTION_CAPS.get(macro)
             if cap is not None and macro_selected[macro] >= cap:
@@ -526,10 +540,10 @@ def select_balanced(rows: list[dict[str, str]]) -> list[dict[str, str]]:
                     break
         if not progress:
             break
-    if len(selected) < TARGET_SUCCESS_COUNT:
+    if len(selected) < target_count:
         for macro in macros:
             bucket = by_macro[macro]
-            while bucket and len(selected) < TARGET_SUCCESS_COUNT:
+            while bucket and len(selected) < target_count:
                 row = bucket.pop(0)
                 key = (row["source_name"].lower(), normalized_url(row["final_url"] or row["url"]))
                 if key in seen:
@@ -550,6 +564,8 @@ def write_csv(path: Path, rows: list[dict[str, str]], fields: list[str]) -> None
 
 
 def main() -> None:
+    args = parse_args()
+    output, summary, region_breakdown, report = output_paths(args.version)
     started = time.time()
     socket.setdefaulttimeout(PROBE_TIMEOUT)
     existing = existing_source_keys()
@@ -574,13 +590,13 @@ def main() -> None:
         if len(success_rows) >= PROBE_STOP_SUCCESS_COUNT:
             break
 
-    selected = select_balanced(success_rows)
-    if len(selected) < TARGET_SUCCESS_COUNT:
-        raise SystemExit(f"Only {len(selected)} successful new sources; target is {TARGET_SUCCESS_COUNT}.")
+    selected = select_balanced(success_rows, args.target_count)
+    if len(selected) < args.target_count:
+        raise SystemExit(f"Only {len(selected)} successful new sources; target is {args.target_count}.")
 
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    output.parent.mkdir(parents=True, exist_ok=True)
     DOCS.mkdir(parents=True, exist_ok=True)
-    write_csv(OUTPUT, selected, OUTPUT_FIELDS)
+    write_csv(output, selected, OUTPUT_FIELDS)
 
     region_country: Counter[tuple[str, str]] = Counter((row["macro_region"], row["country_or_region"]) for row in selected)
     macro_counts = Counter(row["macro_region"] for row in selected)
@@ -601,7 +617,7 @@ def main() -> None:
         summary_rows.append({"metric": "protocol_distribution", "value": protocol, "count": str(count), "notes": "Detected protocol hints only; not rights clearance."})
     for priority_value, count in priority_counts.most_common():
         summary_rows.append({"metric": "next_item_capture_priority", "value": priority_value, "count": str(count), "notes": "Internal triage for later item/image capture."})
-    write_csv(SUMMARY, summary_rows, SUMMARY_FIELDS)
+    write_csv(summary, summary_rows, SUMMARY_FIELDS)
 
     region_rows: list[dict[str, str]] = []
     for (macro, country), count in sorted(region_country.items(), key=lambda item: (item[0][0], item[0][1])):
@@ -615,14 +631,14 @@ def main() -> None:
                 "protocols": "; ".join(f"{key}:{value}" for key, value in Counter(row["detected_protocols"] or "(none detected)" for row in country_rows).most_common()),
             }
         )
-    write_csv(REGION_BREAKDOWN, region_rows, REGION_FIELDS)
+    write_csv(region_breakdown, region_rows, REGION_FIELDS)
 
     lines = [
         "# Non-mainstream Source Success Registry 2026 v1",
         "",
         f"Access date: {ACCESS_DATE}",
         "",
-        "This batch records 500 newly successful official source sites from undercovered regions. It is source-success archival metadata, not public-surface/image ingestion.",
+        f"This batch records {len(selected)} newly successful official source sites from undercovered regions. It is source-success archival metadata, not public-surface/image ingestion.",
         "",
         "## Top Metrics",
         "",
@@ -651,17 +667,17 @@ def main() -> None:
             "- `next_item_capture_priority` is internal triage for future item-level image-bearing capture.",
         ]
     )
-    REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    report.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
     print(f"candidate_sources={len(candidates)}")
     print(f"successful_new_sources_available={len(success_rows)}")
     print(f"successful_new_sources_selected={len(selected)}")
     print("macro_regions=" + ",".join(f"{key}:{value}" for key, value in macro_counts.most_common()))
     print("next_priorities=" + ",".join(f"{key}:{value}" for key, value in priority_counts.most_common()))
-    print(f"wrote {OUTPUT.relative_to(ROOT)}")
-    print(f"wrote {SUMMARY.relative_to(ROOT)}")
-    print(f"wrote {REGION_BREAKDOWN.relative_to(ROOT)}")
-    print(f"wrote {REPORT.relative_to(ROOT)}")
+    print(f"wrote {output.relative_to(ROOT)}")
+    print(f"wrote {summary.relative_to(ROOT)}")
+    print(f"wrote {region_breakdown.relative_to(ROOT)}")
+    print(f"wrote {report.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

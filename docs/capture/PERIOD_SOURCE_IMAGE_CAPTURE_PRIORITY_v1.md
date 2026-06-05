@@ -1,6 +1,6 @@
 # Period Source + Image Capture Priority v1
 
-Date: 2026-06-05
+Date: 2026-06-06
 
 Scope: active capture records grouped by project period bands. This report combines period-level source breadth and visual evidence health for next-capture planning.
 
@@ -16,9 +16,9 @@ Source gap is weighted slightly higher because adding another record from the sa
 
 - 1930_1970: priority=0.2526, source=3.00%, image=55.26%, active_sources=26, records=528
   Action: Highest priority: add new active sources and prefer IMG03/strong IMG02 records before adding more thin sheets.
-- 2000_2026: priority=0.1765, source=10.52%, image=49.85%, active_sources=157, records=398
-  Action: Highest priority: add new active sources and prefer IMG03/strong IMG02 records before adding more thin sheets.
 - 1970_2000: priority=0.1726, source=4.73%, image=59.85%, active_sources=26, records=291
+  Action: Highest priority: add new active sources and prefer IMG03/strong IMG02 records before adding more thin sheets.
+- 2000_2026: priority=0.1481, source=34.06%, image=46.49%, active_sources=734, records=985
   Action: Highest priority: add new active sources and prefer IMG03/strong IMG02 records before adding more thin sheets.
 - pre_1930: priority=0.0963, source=2.13%, image=73.17%, active_sources=10, records=467
   Action: Hold broad capture; add targeted non-West/local source diversity and dedupe repeated early image evidence.
@@ -26,8 +26,8 @@ Source gap is weighted slightly higher because adding another record from the sa
 ## Current Table
 
 - 1930_1970: source_points=21.00/700.00, source_gap=97.00%, image_gap=41.83%, IMG03=153, IMG02=267, IMG00=42, IMG04=42
-- 2000_2026: source_points=52.60/500.00, source_gap=89.48%, image_gap=47.53%, IMG03=23, IMG02=208, IMG00=1, IMG04=39
 - 1970_2000: source_points=23.65/500.00, source_gap=95.27%, image_gap=37.00%, IMG03=56, IMG02=225, IMG00=1, IMG04=9
+- 2000_2026: source_points=170.30/500.00, source_gap=65.94%, image_gap=51.06%, IMG03=23, IMG02=795, IMG00=1, IMG04=166
 - pre_1930: source_points=6.40/300.00, source_gap=97.87%, image_gap=22.98%, IMG03=333, IMG02=66, IMG00=15, IMG04=34
 
 ## Interpretation
