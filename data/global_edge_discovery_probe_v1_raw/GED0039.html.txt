@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+    <script src='/assets/jquery/js/jquery.min.js' type='text/javascript'></script>
+<link rel='stylesheet' href='/assets/bootstrap/css/bootstrap.css' type='text/css' media='all'/>
+<script src='/assets/bootstrap/js/bootstrap.js' type='text/javascript'></script>
+<link rel='stylesheet' href='/assets/bootstrap/css/bootstrap-theme.css' type='text/css' media='all'/>
+<script src='/assets/jquery/js/jquery-migrate-3.0.1.js' type='text/javascript'></script>
+<script src='/assets/jquery/circular-slider/circular-slider.js' type='text/javascript'></script>
+<link rel='stylesheet' href='/assets/jquery/circular-slider/circular-slider.css' type='text/css' media='all'/>
+<script src='/assets/jquery/js/threesixty.min.js' type='text/javascript'></script>
+<link rel='stylesheet' href='/assets/fontawesome/css/font-awesome.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='/themes/aia/assets/pawtucket/css/fonts.css' type='text/css' media='all'/>
+<script src='/assets/jquery/js/jquery.cookie.js' type='text/javascript'></script>
+<script src='/assets/jquery/js/jquery.cookiejar.js' type='text/javascript'></script>
+<script src='/assets/jquery/js/jquery.jscroll.js' type='text/javascript'></script>
+<script src='/assets/jquery/js/jquery.hscroll.js' type='text/javascript'></script>
+<script src='/assets/jquery/js/jquery.jscrollpane.min.js' type='text/javascript'></script>
+<link rel='stylesheet' href='/assets/jquery/js/jquery.jscrollpane.css' type='text/css' media='all'/>
+<script src='/assets/ca/js/ca.utils.js' type='text/javascript'></script>
+<script src='/assets/jquery/jquery-ui/jquery-ui.min.js' type='text/javascript'></script>
+<link rel='stylesheet' href='/assets/jquery/jquery-ui/jquery-ui.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='/assets/jquery/jquery-ui/jquery-ui.structure.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='/assets/jquery/jquery-ui/jquery-ui.theme.min.css' type='text/css' media='all'/>
+<script src='/assets/ca/js/ca.genericpanel.js' type='text/javascript'></script>
+<script src='/assets/videojs/video.js' type='text/javascript'></script>
+<link rel='stylesheet' href='/assets/videojs/video-js.css' type='text/css' media='all'/>
+<script src='/assets/mediaelement/mediaelement-and-player.min.js' type='text/javascript'></script>
+<link rel='stylesheet' href='/assets/mediaelement/mediaelementplayer.min.css' type='text/css' media='all'/>
+<script src='/assets/jquery/js/jquery.mousewheel.js' type='text/javascript'></script>
+<script src='/assets/chartist/dist/chartist.min.js' type='text/javascript'></script>
+<link rel='stylesheet' href='/assets/chartist/dist/chartist.min.css' type='text/css' media='all'/>
+<script src='/assets/jquery/js/jquery.jCarousel.js' type='text/javascript'></script>
+<link rel='stylesheet' href='/assets/jquery/js/jquery.jCarousel.css' type='text/css' media='all'/>
+<script src='/assets/timelinejs/js/timeline.js' type='text/javascript'></script>
+<link rel='stylesheet' href='/assets/timelinejs/css/timeline.css' type='text/css' media='all'/>
+<script src='/assets/timelinejs/js/timeline-embed.js' type='text/javascript'></script>
+<link rel='stylesheet' href='/themes/aia/assets/pawtucket/css/main.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='/themes/aia/assets/pawtucket/css/theme.css' type='text/css' media='all'/>
+
+  <title>AIA·FADU</title>
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/themes/aia/assets/pawtucket/graphics/favicon.ico"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/themes/aia/assets/pawtucket/graphics/favicon-32.png"/>
+  <link rel="shortcut icon" type="image/png" sizes="192x192" href="/themes/aia/assets/pawtucket/graphics/favicon-192.png"/>
+  <link rel="shortcut icon" type="image/png" sizes="512x512" href="/themes/aia/assets/pawtucket/graphics/favicon-512.png"/>
+  <link rel="apple-touch-icon" href="/themes/aia/assets/pawtucket/graphics/favicon-512.png"/>
+  <link rel="apple-touch-icon" sizes="512x512" href="/themes/aia/assets/pawtucket/graphics/favicon-512.png"/>
+
+  <script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery('#browse-menu').on('click mouseover mouseout mousemove mouseenter',function(e) { e.stopPropagation(); });
+      });
+  </script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsviews/1.0.11/jsviews.min.js"></script>
+<script src="//unpkg.com/jscroll/dist/jquery.jscroll.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+<link title="timeline-styles" rel="stylesheet"  href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+
+        <!-- 2 -->
+        <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+</head>
+<body class='front'>
+
+  <nav class="navbar navbar-default " role="navigation">
+    <div class="container menuBar">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle navbar-toggle-user" data-toggle="collapse" data-target="#user-navbar-toggle">
+          <span class="sr-only">User Options</span>
+          <span class="glyphicon glyphicon-user"></span>
+        </button>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-main-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+<a href='/index.php' class='navbar-brand'><img src='/themes/aia/assets/pawtucket/graphics/aia-logo.svg' /></a>      </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+      <!-- bs-user-navbar-collapse is the user menu that shows up in the toggle menu - hidden at larger size -->
+      <div class="collapse navbar-collapse" id="user-navbar-toggle">
+        <ul class="nav navbar-nav">
+          <li><a href='#' onclick='caMediaPanel.showPanel("/index.php/LoginReg/LoginForm"); return false;' >Login</a></li>
+<li><a href='#' onclick='caMediaPanel.showPanel("/index.php/LoginReg/RegisterForm"); return false;' >Register</a></li>        </ul>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-main-navbar-collapse-1">
+      <div class="navbar-wrapper" >  
+        <ul class="nav navbar-nav user-navbar" id="user-navbar">
+          <li class="dropdown" style="position:relative;">
+            <a href="#" class="dropdown-toggle icon" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></a>
+            <ul class="dropdown-menu"><?php// print join("\n", $va_user_links); ?></ul>
+          </li>
+        </ul>
+        <form class="navbar-form " role="search" action="/index.php/MultiSearch/Index">
+          <div class="formOutline">
+            <div class="form-group">
+              <input type="text" class="form-control" id="headerSearchInput" placeholder="BUSCAR" name="search" autocomplete="off" />
+            </div>
+            <button type="submit" class="btn-search" id="headerSearchButton"><span class="glyphicon glyphicon-search"></span></button>
+          </div>
+        </form>
+        <script type="text/javascript">
+          $(document).ready(function(){
+            $('#headerSearchButton').prop('disabled',true);
+            $('#headerSearchInput').on('keyup', function(){
+              $('#headerSearchButton').prop('disabled', this.value == "" ? true : false);     
+            })
+          });
+        </script>
+        <ul class="nav navbar-nav menuItems"><!-- Front -->
+        <li><a  href="/index.php/Browse/illustrations/view/grid">Ilustraciones</a></li>
+        <li><a  href="/index.php/Browse/illustrators/view/grid">IlustradorXs</a></li>  
+          <!--<li <?//php print ($this->request->getController() == "Ilustraciones") ? 'class="active"' : ''; ?>></li>
+          
+        <li <?//php print ($this->request->getController() == "IlustradorXs") ? 'class="active"' : ''; ?>><?//php print caNavLink($this->request, _t("Ilustradorxs"), "", "", "Ilustradorxs", "index"); ?></li>
+        <li <?//php print ($this->request->getController() == "Recursos") ? 'class="active"' : ''; ?>></li>  -->  
+          <li><a href='/index.php/About/about'>Acerca del archivo</a>          
+        
+        </li>        
+          <li><a href='/index.php/Contact/Form'>Contacto</a></li>
+        </ul>
+        </div><!-- /.navbar-wrapper -->
+      </div><!-- /.navbar-collapse -->
+      
+    </div><!-- end container -->
+    <div class="container menuBar footer-bar"><span>Archivo Histórico de Ilustración Argentina. Un Proyecto de Cátedra Roldán - FADU/UBA.</span></div>
+  </nav>
+  <div class="container"><div class="row"><div class="">
+    <div id="pageArea" class='front'>
+    
+
+<!-- Main hero / cover area ------------------------------------------------->
+<div class="portada_full-img">
+  <!-- Optional static img (kept commented) -->
+  <!-- <img src="/themes/aia/assets/pawtucket/graphics/portada-aia.jpg"> -->
+
+  <!-- Title / branding inside the hero -->
+  <div class="">
+    <span class="shadow_fx">BIENVENIDXS AL</span>
+    <h1 class="shadow_fx">ARCHIVO DE ILUSTRACIÓN ARGENTINA</h1>
+  </div>
+
+  <!-- Search form: posts to MultiSearch::Index via caNavUrl helper -->
+  <form id="frontpage_form" class="navbar-form" role="search"
+      action="/index.php/MultiSearch/Index">
+    <div class="formOutline">
+      <div class="form-group">
+        <!-- headerSearchInput: user-entered search query -->
+        <input type="text"
+             class="form-control"
+             id="headerSearchInput"
+             name="search"
+             placeholder="BUSCAR"
+             autocomplete="off" />
+      </div>
+
+      <!-- Submit button; enabled only when input has content -->
+      <button type="submit" class="btn-search" id="headerSearchButton">
+        <span class="glyphicon glyphicon-search"></span>
+      </button>
+    </div>
+  </form>
+
+  <!-- Small script to disable submit button when input is empty -->
+  <script type="text/javascript">
+    jQuery(document).ready(function () {
+      // Start with button disabled until user types
+      jQuery('#headerSearchButton').prop('disabled', true);
+
+      // Toggle disabled state on keyup
+      jQuery('#headerSearchInput').on('keyup', function () {
+        jQuery('#headerSearchButton').prop('disabled', this.value === "" ? true : false);
+      });
+    });
+  </script>
+
+  <!-- Hidden top links (kept but not shown by default) -->
+  <div class="SectionsLinkTop" style="display:none">
+    <a href="/Browse/entities/view/grid" title="Explora la galería de Ilustradores">ILUSTRADORXES</a>
+    <a href="/Browse/objects/view/grid" title="Explora la galería de Ilustraciones">ILUSTRACIONES</a>
+  </div>
+
+</div>
+
+<!-- Intro / exploration blocks --------------------------------------------->
+<div class="">
+  <div class="col-sBox">
+    <h2 class="aia_Tit">El Archivo de Ilustración Argentina</h2>
+    <span>
+      es un repositorio digital histórico. Abarca material ilustrado de diversos tipos y
+      formatos publicado en el país durante los siglos XIX y XX. Nuestro objetivo es crear
+      una herramienta para consulta y divulgación, dar a conocer el trabajo de lxs
+      ilustradorxs y poner en valor nuestra identidad visual.
+    </span>
+  </div> <!-- end .col-sBox -->
+
+  <div class="SectionsLink">
+    <h3>EXPLORAR</h3>
+    <div class="SectionsLinkwrapper">
+      <!-- Link to illustrations gallery -->
+      <a href="/index.php/Browse/illustrations/view/grid" title="Explora la galería de Ilustraciones">
+        <div class="boxIlus_ciones">
+          <div class="boxIlus_ciones"></div>
+        </div>
+        <h4>ILUSTRACIONES</h4>
+      </a>
+
+      <!-- Link to illustrators gallery -->
+      <a href="/index.php/Browse/illustrators/view/grid" title="Explora la galería de Ilustradores">
+        <div class="boxIlus_dores">
+          <div class="boxIlus_dores"></div>
+        </div>
+        <h4>ILUSTRADORXS</h4>
+      </a>
+    </div> <!-- end .SectionsLinkwrapper -->
+  </div>
+
+  <!-- Timeline heading -->
+  <div class="SectionsLink">
+    <h3>LINEA DE TIEMPO</h3>
+  </div>
+
+</div>
+
+
+
+<div id="bTimelineContainer">
+  <div id="timeline-embed"></div>
+</div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function () {
+    // Initialize timeline using createStoryJS with JSON from server
+    createStoryJS({
+      type: 'timeline',
+      width: '100%',
+      height: '100%',
+      source: '/index.php/Json_aia/frontpage_timeline_data',
+      embed_id: 'timeline-embed'
+    });
+  });
+</script>
+
+<!-- Randomized background images for hero and two gallery boxes ----------->
+<script type="text/javascript">
+  jQuery(document).ready(function () {
+    // Random hero background from a set of images
+    var bgArray = [
+      'portada-aia.jpg', 'portada-aia-1.jpg', 'portada-aia-2.jpg',
+      'portada-aia-3.jpg', 'portada-aia-4.jpg', 'portada-aia-5.jpg'
+    ];
+    var bg = bgArray[Math.floor(Math.random() * bgArray.length)];
+
+    var path = '/themes/aia/assets/pawtucket/graphics/';
+    var imglk = 'url(' + path + bg + ')';
+    // Apply to hero container
+    jQuery('.portada_full-img').css('background', imglk);
+
+    // Random image for "boxIlus_dores" (illustrators)
+    var bgArray1 = [
+      'ilustradorxs1.jpg', 'ilustradorxs2.jpg', 'ilustradorxs3.jpg',
+      'ilustradorxs4.jpg', 'ilustradorxs5.jpg', 'ilustradorxs6.jpg',
+      'ilustradorxs7.jpg', 'ilustradorxs8.jpg'
+    ];
+    var bg1 = bgArray1[Math.floor(Math.random() * bgArray1.length)];
+    var path1 = '/themes/aia/assets/pawtucket/graphics/ilustradxres/';
+    var imglk1 = 'url(' + path1 + bg1 + ')';
+    jQuery('.boxIlus_dores').css('background', imglk1);
+
+    // Random image for "boxIlus_ciones" (illustrations)
+    var bgArray2 = [
+      'ilustraciones1.jpg', 'ilustraciones2.jpg', 'ilustraciones3.jpg',
+      'ilustraciones4.jpg', 'ilustraciones5.jpg', 'ilustraciones6.jpg',
+      'ilustraciones7.jpg', 'ilustraciones8.jpg'
+    ];
+    var bg2 = bgArray2[Math.floor(Math.random() * bgArray2.length)];
+    var path2 = '/themes/aia/assets/pawtucket/graphics/ilustraciones/';
+    var imglk2 = 'url(' + path2 + bg2 + ')';
+    jQuery('.boxIlus_ciones').css('background', imglk2);
+  });
+</script>
+    <div style="clear:both; height:1px;"><!-- empty --></div>
+    </div><!-- end pageArea --></div><!-- end col --></div><!-- end row --></div><!-- end container -->
+    <footer id="footer">
+      <div class="footerWrapper">
+      <ul class="list-inline pull-right social">
+        <li><i class="fa fa-instagram "></i> <a href="https://www.instagram.com/archivoilusargentina/" target="_blank" title="Archivo Ilustración Argentina en Instagram">Archivo Ilustración Argentina</a></li>
+        <!-- <li><i class="fa fa-facebook-square"></i><a href="https://www.instagram.com/archivoilusargentina/" target="_blank" title="Cátedra Roldán en Facefook">Cátedra Roldán</a></li> -->
+        <li><i class="fa fa-instagram "></i> <a href="https://www.instagram.com/ilustracionroldan/" target="_blank" title="Cátedra Roldán en Instagram">Cátedra Roldán</a></li>
+      </ul>
+      <div class="footer-logo"><a href="https://www.facebook.com/ConsejoFederaldeCultura/?locale=es_LA"><img src='/themes/aia/assets/pawtucket/graphics/cultura.svg' /></a></div>
+      <div class="footer-logo"><a href="https://www.argentina.gob.ar/cultura/fna"><img src='/themes/aia/assets/pawtucket/graphics/fna.svg' /></a></div>
+      <div class="footer-logo"><a href="https://buenosaires.gob.ar/cultura/impulso-cultural/mecenazgo"><img src='/themes/aia/assets/pawtucket/graphics/mecenazgo.svg' /></a></div>    
+      <div class="footer-logo"><a href="https://faduilustracion.wordpress.com/"><img src='/themes/aia/assets/pawtucket/graphics/roldan.svg' /></a></div>
+      <div class="footer-logo"><a href="https://www.fadu.uba.ar/"><img src='/themes/aia/assets/pawtucket/graphics/fadu.svg' /></a></div>
+      <div class="footer-logo"><a href="https://www.hipotecario.com.ar/"><img src='/themes/aia/assets/pawtucket/graphics/hipotecario.svg' /></a></div>
+      <div class="footer-logo"><a href="https://barlosgalgos.com.ar/"><img src='/themes/aia/assets/pawtucket/graphics/galgos.svg' /></a></div>
+
+     </div>
+    </footer><!-- end footer -->
+  
+        <div id="caMediaPanel"> 
+      <div id="caMediaPanelContentArea">
+      
+      </div>
+    </div>
+    <script type="text/javascript">
+      /*
+        Set up the "caMediaPanel" panel that will be triggered by links in object detail
+        Note that the actual <div>'s implementing the panel are located here in views/pageFormat/pageFooter.php
+      */
+      var caMediaPanel;
+      jQuery(document).ready(function() {
+        if (caUI.initPanel) {
+          caMediaPanel = caUI.initPanel({ 
+            panelID: 'caMediaPanel',                    /* DOM ID of the <div> enclosing the panel */
+            panelContentID: 'caMediaPanelContentArea',    /* DOM ID of the content area <div> in the panel */
+            exposeBackgroundColor: '#FFFFFF',            /* color (in hex notation) of background masking out page content; include the leading '#' in the color spec */
+            exposeBackgroundOpacity: 0.7,              /* opacity of background color masking out page content; 1.0 is opaque */
+            panelTransitionSpeed: 400,                   /* time it takes the panel to fade in/out in milliseconds */
+            allowMobileSafariZooming: true,
+            mobileSafariViewportTagID: '_msafari_viewport',
+            closeButtonSelector: '.close'          /* anything with the CSS classname "close" will trigger the panel to close */
+          });
+        }
+      });
+      /*(function(e,d,b){var a=0;var f=null;var c={x:0,y:0};e("[data-toggle]").closest("li").on("mouseenter",function(g){if(f){f.removeClass("open")}d.clearTimeout(a);f=e(this);a=d.setTimeout(function(){f.addClass("open")},b)}).on("mousemove",function(g){if(Math.abs(c.x-g.ScreenX)>4||Math.abs(c.y-g.ScreenY)>4){c.x=g.ScreenX;c.y=g.ScreenY;return}if(f.hasClass("open")){return}d.clearTimeout(a);a=d.setTimeout(function(){f.addClass("open")},b)}).on("mouseleave",function(g){d.clearTimeout(a);f=e(this);a=d.setTimeout(function(){f.removeClass("open")},b)})})(jQuery,window,200);*/
+    </script>
+
+
+
+
+
+  </body>
+</html>

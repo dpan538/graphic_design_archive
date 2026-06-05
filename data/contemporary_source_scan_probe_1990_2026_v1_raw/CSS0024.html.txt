@@ -1,0 +1,1711 @@
+<!DOCTYPE HTML>
+<!--[if IE 9 ]> <html lang="ko" class="ie9"> <![endif]-->
+<html lang="ko">
+<head>
+<title>국립중앙도서관</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="facebook-domain-verification" content="s3lue5avs2v7u355snyftl2sdc7b6o">
+<link rel="shortcut icon" href="/resource/templete/nl/common/img/common/favicon.png">
+<link rel="apple-touch-icon" href="/resource/templete/nl/common/img/common/favicon.png">
+<meta name="keywords" content="국립중앙도서관">
+<meta name="description" content="국립중앙도서관에 오신 것을 환영합니다">
+<meta name="robots" content="INDEX,FOLLOW">
+<meta property="og:image" content="/resource/templete/nl/common/img/common/favicon.png">
+<meta property="og:url" content="/NL/">
+<meta property="og:description" content="국립중앙도서관에 오신 것을 환영합니다">
+<meta property="og:title" content="국립중앙도서관">
+<!--header-->
+<!-- header.jsp -->
+<script>
+  var isOldIe = false;
+</script>
+<!--[if lt IE 10]>
+    <script>
+      isOldIe = true;
+    </script>
+  <![endif]-->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65875867-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-65875867-3');
+</script> -->
+<!-- national library lib -->
+<link rel="stylesheet" type="text/css" href="/resource/templete/nl/common/css/pretendard.css">
+<link rel="stylesheet" type="text/css" href="/resource/common/css/slick.css" onload="this.media='all';">
+<link rel="stylesheet" type="text/css" href="/resource/common/css/jquery.scrollbar.css" onload="this.media='all';">
+<link rel="stylesheet" type="text/css" href="/resource/common/css/jquery.bxslider.min.css" onload="this.media='all';">
+<link rel="stylesheet" type="text/css" href="/resource/common/css/datepicker.css" onload="this.media='all';">
+<script src="/resource/common/js/jquery-1.12.3.min.js"></script>
+<script defer src="/resource/common/js/slick.js"></script>
+<script src="/resource/common/js/bootstrap-datepicker.js"></script>
+<script defer src="/resource/common/js/jquery.bxslider.min.js"></script>
+<script defer src="/resource/common/js/jquery.scrollbar.js"></script>
+<script defer src="/resource/common/js/jquery.outside.js"></script>
+<!-- //national library lib -->
+<!-- CMS COMMON lib -->
+<script src="/resource/common/jquery_plugin/common_functions.js"></script>
+<script defer src="/resource/common/jquery_plugin/validation/validator.js"></script>
+<script defer src="/resource/common/jquery_plugin/validation/accessability.js"></script>
+<script defer src="/resource/common/jquery_plugin/popWin.js"></script>
+<link href="/resource/common/css/loading-spiner.css" rel="stylesheet" type="text/css">
+<link href="/resource/common/jquery_plugin/validation/validator.css" rel="stylesheet" type="text/css">
+<!-- //CMS COMMON lib -->
+<link rel="stylesheet" type="text/css" href="/resource/templete/nl/common/common.css?v=2026060505">
+<link rel="stylesheet" type="text/css" href="/resource/templete/nl/common/css/common.css?v=2026060505">
+<link rel="stylesheet" type="text/css" href="/resource/templete/nl/common/css/layout.css?v=2026060505">
+<link rel="stylesheet" type="text/css" href="/resource/templete/nl/css/main.css?v=2026060505">
+<!-- national library script -->
+<script defer src="/resource/templete/nl/js/common.js?v=2026060505"></script>
+<link rel="stylesheet" type="text/css" href="/resource/search/css/detailSearch.css?v=2026060505">
+<script src="/resource/search/js/detailSearch.js?v=2026060505"></script>
+<link href="/resource/templete/nl/css/intro.css" rel="stylesheet" type="text/css" />
+<script defer src="/resource/templete/nl/js/intro.js"></script>
+</head>
+<body>
+  <script>
+$(document).ready(function() {
+  var vrKeyboard11 = new VRKeyboard(
+    '.intro_contents_wrap .total_srch_pop_input input',
+    '.intro_contents_wrap .btn-worldword',
+    '.intro_contents_wrap .keyboard-wrapper', {
+      position : {
+        top : '100%',
+        marginTop : '-25px'
+      }
+  });
+
+  /* var tmp2 = new Date().getDay();
+  var carText = "";
+  switch(tmp2){
+    case 1 : carText = "차량 5부제 : 오늘은 끝자리 1, 6 출입제한"; break;
+    case 2 : carText = "차량 5부제 : 오늘은 끝자리 2, 7 출입제한"; break;
+    case 3 : carText = "차량 5부제 : 오늘은 끝자리 3, 8 출입제한"; break;
+    case 4 : carText = "차량 5부제 : 오늘은 끝자리 4, 9 출입제한"; break;
+    case 5 : carText = "차량 5부제 : 오늘은 끝자리 5, 0 출입제한"; break;
+    default : carText = ""; break;
+  }
+  if(carText != ""){
+    $(".carText").text(carText);
+  } */
+});
+
+/* function goMainSearch(){
+  var f = document.forms["comSchForm"];
+  if($(".hmtab").hasClass("on")){
+    if(f.insiteschStr.value == ""){
+      alert('검색어를 입력하세요.');
+    }else{
+      f.kwd.value = f.insiteschStr.value;
+      f.submit();
+    }
+  }else{
+    if(f.kwd.value == ""){
+      alert('검색어를 입력하세요.');
+    }else{
+      f.submit();
+    }
+  }
+  return false;
+} */
+let kwdFlag = false;
+
+function goMainSearch(){
+  var f = document.forms["comSchForm"];
+  if($(".hmtab").hasClass("on")){
+    if(f.insiteschStr.value == ""){
+      alert('검색어를 입력하세요.');
+      $("input[name=insiteschStr]").focus();
+    }else{
+      f.kwd.value = f.insiteschStr.value;
+      f.submit();
+    }
+  }else{
+    if(f.kwd.value == ""){
+      alert('검색어를 입력하세요.');
+      $("input[name=kwd]").focus();
+    }else{
+      if(!kwdFlag){
+        fn_setKwdLog(f.kwd.value);
+        kwdFlag = true;
+      }
+      f.submit();
+    }
+  }
+  return false;
+}
+
+function fn_setKwdLog(logKwd) {
+  var dataValue =  ({"logKwd":logKwd});
+  $.ajax({
+    url : '/NL/search/search_kwd_log.ajax',
+    data : dataValue,
+    type: 'POST',
+    dataType : "json",
+    //async : false,
+    success: function(data) {
+      //console.log();
+    },
+    error : function(xhr) {
+      //alert(xhr.status);
+    }
+  });
+
+}
+</script>
+  <!-- skip -->
+  <div id="skip" class="skip">
+    <a href="#sojangBtn">본문 바로가기</a>
+  </div>
+  <div class="top_line_bnr">
+    <div class="top_link_wrap">
+      <div class="inner">
+        <div class="top_flag_wrap">
+          <!-- <div class="top_header_utils" style="margin-right:auto;margin-left:0;">
+            <ul>
+              <li><a href="https://nlcy.go.kr" target="_blank" title="새 창 열림" class="none_sub"><span>국립어린이청소년도서관</span></a></li>
+              <li><a href="https://sejong.nl.go.kr" target="_blank" title="새 창 열림" class="none_sub"><span>국립세종도서관</span></a></li>
+            </ul>
+          </div> -->
+          <div class="top_header_utils right">
+            <ul>
+              <li><a href="https://nlcy.go.kr" target="_blank" title="새 창 열림" class="none_sub"><span>국립어린이청소년도서관</span></a></li>
+              <li><a href="https://sejong.nl.go.kr" target="_blank" title="새 창 열림" class="none_sub"><span>국립세종도서관</span></a></li>
+              <li><a href="/EN/main/index.do" target="_blank" title="새 창 열림" class="none_sub"><span>English</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="intro_contents_wrap" class="intro_contents_wrap">
+    <div class="intro_visual">
+      <div class="inner">
+        <div class="intro_logo">
+          <!-- <a href="/NL" class="inn" title="국립중앙도서관 메인페이지로 이동"><img src="/resource/templete/nl/img/main/revise_logo_main_kr.png" alt="문화체육관광부 국립중앙도서관 로고"></a> -->
+          <a href="/NL" class="inn" title=“메인페이지로 이동”><img src="/resource/templete/nl/img/main/revise_logo_main.png" alt="문화체육관광부 국립중앙도서관 로고"></a>
+        </div>
+        <div class="typing_container">
+          <span class="typing_text_wrap"> <span id="typing_text" class="typing_text"></span><span class="typing_cursor">|</span>
+          </span> <span class="tagline" style="margin-right:15px;">을</span><span class="tagline mo_full"> 모으고, 담고, 잇다</span>
+        </div>
+        <div class="total_search_tabs">
+          <button id="sojangBtn" class="sjtab on" type="button">소장자료<span class="sr-only">선택됨</span></button>
+          <button class="hmtab" type="button">홈페이지</button>
+        </div>
+        <form name="comSchForm" id="comSchForm" action="/NL/contents/search.do" onsubmit="return goMainSearch();">
+          <fieldset class="total_srch_pop_intro_field">
+            <div class="total_srch_pop_intro_input">
+              <input  name="kwd" type="text" class="input-text" autocomplete="off" placeholder="검색어를 입력해 주세요" title="검색어 입력"/>
+              <input  name="insiteschStr" style="display:none;" onkeydown="if(event.keyCode == 13){ goMainSearch(); return false;}" type="text" autocomplete="off" class="input-text-homepage" placeholder="검색어를 입력해 주세요" title="검색어 입력" />
+              <a href="#" role="button" id="auto_arrow" class="btn_arrow" title="자동 완성 접기"><!-- [D]is_fold 클래스 추가시 아이콘 펼침 및 대체 텍스트 변경필요 -->
+                <span class="arrow_fold">자동 완성 열기</span>
+              </a>
+              <button class="btn_multi_lang btn-worldword" id="worldWordPC" type="button" title="다국어입력기 열기">
+                <span class="sr-only">다국어 입력기 열기</span>
+              </button>
+              <button class="btn_sch" type="submit">검색</button>
+              <!-- <button class="btn_detailSch" type="button" title="고급검색">고급<br>검색</button> -->
+              <!-- <button class="btn_detailSch3 btn_layer" type="button" data-layer="search_pop" onclick="$('.sch_pop_wrap .item_type').click();" data-focus="search_pop0" title="고급검색"></button> -->
+            </div>
+            <!-- 자동완성  -->
+            <div class="autocomplete_layer">
+              <div class="autocomplete_wrap">
+                <h3 class="ir_text">검색어 자동완성 목록</h3>
+                <ul class="result_list"></ul>
+                <div class="btn_wrap"><button type="button" class="autocomplete_close" onclick="akc_setCookie(0);">자동완성 끄기</button></div>
+              </div>
+            </div>
+            <!-- //자동완성  -->
+          </fieldset>
+        </form>
+        <!-- 가상키보드 wrapper -->
+        <div class="keyboard-wrapper"></div>
+        <!-- //가상키보드 wrapper -->
+        <p class="btn_advd_srch">
+          <a href="javascript:;" class="btn_layer" data-layer="search_pop" id="detailSearchBtnPC" onclick="$('.sch_pop_wrap .item_type').click();" data-focus="search_pop0">고급검색</a>
+        </p>
+      </div>
+    </div>
+    <div class="intro_contents">
+      <div class="inner">
+        <div class="intro_holiday_wrap">
+          <div class="left">
+                <img src="/resource/templete/nl/img/main/ic_home_time.svg" alt="">
+                <div class="date">06월  05일 (금)</div>
+                <div class="time">
+                  <span class="point">도서관 운영시간 09:00~18:00</span>
+                  <span class="txt">(야간 도서관 매주 수요일 18:00~21:00)</span>
+                  <!-- <span class="txt carText"></span> -->
+                </div>
+              </div>
+              <div class="right">
+                <div class="intro_holiday_tit">06월 휴관일</div>
+                <div class="intro_holiday_list">
+                  <div class="intro_holiday_item">03</div>
+                  <div class="intro_holiday_item">06</div>
+                  <div class="intro_holiday_item">08</div>
+                  <div class="intro_holiday_item">22</div>
+                  </div>
+              </div>
+            </div>
+        <div class="home_banner_pause">
+          <div class="home_banner_item">
+            <a href="/NL" class="inn">
+              <div class="img_wrap">
+                <img src="/resource/templete/nl/img/main/img_home_banner00.svg" style="width:80px;height:80px;" alt="문화체육관광부 국립중앙도서관">
+              </div>
+              <div class="txt_wrap">
+                <div class="banner_tit">대표 홈페이지</div>
+                <div class="banner_txt">
+                  바로가기 →
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="home_banner">
+          <div class="home_banner_item new">
+            <a href="https://www.nl.go.kr/kolisnet/index.do" class="inn" target="_blank" title="새 창 열림">
+              <div class="img_wrap">
+                <img src="/resource/templete/nl/img/main/img_home_banner02.png" alt="국가자료종합목록">
+              </div>
+            </a>
+              <div class="txt_wrap">
+                <div class="banner_tit">국가자료종합목록</div>
+              </div>
+          </div>
+          <div class="home_banner_item new">
+            <a href="https://www.data4library.kr/" class="inn" target="_blank" title="새 창 열림">
+              <div class="img_wrap">
+                <img src="/resource/templete/nl/img/main/img_home_banner05.png" alt="도서관 정보나루">
+              </div>
+            </a>
+            <div class="txt_wrap">
+              <div class="banner_tit">도서관 정보나루</div>
+            </div>
+          </div>
+          <div class="home_banner_item new">
+            <a href="https://www.nl.go.kr/oasis/" class="inn" target="_blank" title="새 창 열림" >
+              <div class="img_wrap">
+                <img src="/resource/templete/nl/img/main/img_home_banner09.png" alt="웹자원아카이브">
+              </div>
+            </a>
+              <div class="txt_wrap">
+                <div class="banner_tit">웹자원아카이브</div>
+              </div>
+          </div>
+          <div class="home_banner_item new">
+            <a href="https://onnaru.nl.go.kr/" class="inn" target="_blank" title="새 창 열림" >
+              <div class="img_wrap">
+                <img src="/resource/templete/nl/img/main/img_home_banner04.png" alt="온나루 통합검색">
+              </div>
+            </a>
+              <div class="txt_wrap">
+                <div class="banner_tit">온나루 통합검색</div>
+              </div>
+          </div>
+          <div class="home_banner_item new">
+            <a href="https://www.nl.go.kr/korcis/index.do" class="inn" target="_blank" title="새 창 열림" >
+              <div class="img_wrap">
+                <img src="/resource/templete/nl/img/main/img_home_banner10.png" alt="한국고문헌종합목록">
+              </div>
+            </a>
+              <div class="txt_wrap">
+                <div class="banner_tit">한국고문헌종합목록</div>
+              </div>
+          </div>
+          <div class="home_banner_item new">
+            <a href="https://lod.nl.go.kr/home/" class="inn" target="_blank" title="새 창 열림">
+              <div class="img_wrap">
+                <img src="/resource/templete/nl/img/main/img_home_banner11.png" alt="국가서지 LOD">
+              </div>
+            </a>
+              <div class="txt_wrap">
+                <div class="banner_tit">국가서지 LOD</div>
+              </div>
+          </div>
+          <div class="home_banner_item new">
+            <a href="https://www.oak.go.kr/main/main.do" class="inn" target="_blank" title="새 창 열림" >
+              <div class="img_wrap">
+                <img src="/resource/templete/nl/img/main/img_home_banner12.png" alt="국가리포지터리(OAK)">
+              </div>
+            </a>
+              <div class="txt_wrap">
+                <div class="banner_tit">국가리포지터리(OAK)</div>
+              </div>
+          </div>
+
+
+          <div class="home_banner_item new">
+            <a href="https://nl.go.kr/seoji" class="inn" target="_blank" title="새 창 열림">
+              <div class="img_wrap">
+                <img src="/resource/templete/nl/img/main/img_home_banner06.png" alt="ISBN·ISSN·납본시스템">
+              </div>
+            </a>
+              <div class="txt_wrap">
+                <div class="banner_tit">ISBN·ISSN·납본시스템</div>
+              </div>
+          </div>
+          <div class="home_banner_item new">
+            <a href="https://books.nl.go.kr/one/main/index.do" class="inn" target="_blank" title="새 창 열림">
+              <div class="img_wrap">
+                <img src="/resource/templete/nl/img/main/img_home_banner13.png" alt="책이음 서비스">
+              </div>
+            </a>
+              <div class="txt_wrap">
+                <div class="banner_tit">책이음 서비스</div>
+              </div>
+          </div>
+        </div>
+        <div class="custom_paging">
+          <div class="txt_paging">
+            <span class="current_slide">1</span>/<span class="total_slides">1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="layer_popup_wrap sch_pop_wrap ty_krds" data-layer="search_pop">
+    <div class="layer_popup close_edit_btn_modal">
+      <div class="popup_header">
+        <h1 class="popup_title">고급검색</h1>
+
+      </div>
+      <div class="popup_contents">
+        <div class="sch_ctgr_wrap">
+          <ul class="sch_ctgr_link">
+            <li class="sch_ctgr_item item_type active"><a href="#none" title="선택됨">유형별검색</a></li>
+            <li class="sch_ctgr_item item_author"><a href="#none">저자별검색</a></li>
+            <li class="sch_ctgr_item item_subject last"><a href="#none">주제별검색</a></li>
+          </ul>
+        </div>
+<form name="detailSearchForm">
+        <input type="hidden" name="detailSearch" value="true" />
+        <input type="hidden" name="category" value="" />
+        <input type="hidden" name="lnbTypeName" value="" />
+        <div class="ctgr_cont_wrap ctgr_cont_type" style="display:block;">
+          <div class="sch_ctgr_list">
+            <div class="sch_block_scroll">
+              <ul class="sch_list_wrap sch_block_wrap">
+                <li><a href="#none" class="sch_list_btn active" title="전체" data-d-ategory="">전체</a></li>
+                <li><a href="#none" class="sch_list_btn" title="도서" data-d-ategory="도서">도서</a></li>
+                <li><a href="#none" class="sch_list_btn" title="고문헌" data-d-ategory="고문헌">고문헌</a></li>
+                <li><a href="#none" class="sch_list_btn" title="학위논문" data-d-ategory="학위논문">학위논문</a></li>
+                <li><a href="#none" class="sch_list_btn" title="잡지/학술지" data-d-ategory="잡지/학술지">잡지/학술지</a></li>
+                <li><a href="#none" class="sch_list_btn" title="신문" data-d-ategory="신문">신문</a></li>
+                <li><a href="#none" class="sch_list_btn" title="기사" data-d-ategory="기사">기사</a></li>
+                <li><a href="#none" class="sch_list_btn multimedia" title="멀티미디어" data-d-ategory="멀티미디어">멀티미디어</a></li>
+                <li><a href="#none" class="sch_list_btn" title="장애인자료" data-d-ategory="장애인자료">장애인자료</a></li>
+                <li><a href="#none" class="sch_list_btn website" title="웹사이트" data-d-ategory="웹사이트">웹사이트</a></li>
+<li><a href="#none" class="sch_list_btn" title="해외기록물" data-d-ategory="해외기록물">해외기록물</a></li>
+                <li><a href="#none" class="sch_list_btn" title="외부연계자료" data-d-ategory="외부연계자료">외부연계자료</a></li>
+                <li><a href="#none" class="sch_list_btn" title="기타" data-d-ategory="기타">기타</a></li>
+                <!-- li class="last"></li-->
+              </ul>
+            </div>
+            <div class="sch_subList_wrap">
+              <ul class="sch_subList">
+                <li class="media"><a href="#none" class="sub_list_btn" title="오디오북, 기타 녹음자료">오디오북,기타 녹음자료</a></li>
+                <li class="media"><a href="#none" class="sub_list_btn" title="음악자료">음악자료</a></li>
+                <li class="media"><a href="#none" class="sub_list_btn" title="지도자료">지도자료</a></li>
+                <li class="media"><a href="#none" class="sub_list_btn" title="이미지/사진">이미지/사진</a></li>
+                <li class="media"><a href="#none" class="sub_list_btn" title="컴퓨터파일">컴퓨터파일</a></li>
+                <li class="media"><a href="#none" class="sub_list_btn" title="영상자료">영상자료</a></li>
+                <li class="media"><a href="#none" class="sub_list_btn" title="마이크로자료">마이크로자료</a></li>
+                <li class="media"><a href="#none" class="sub_list_btn" title="복합기록물">복합기록물</a></li>
+                <li class="media"><a href="#none" class="sub_list_btn" title="SNS">SNS</a></li>
+                <li class="media"><a href="#none" class="sub_list_btn" title="온라인게임">온라인게임</a></li>
+                <li class="media"><a href="#none" class="sub_list_btn" title="VR,AR,MR">VR,AR,MR</a></li>
+                <!--
+                <li class="disabled"><a href="#none" class="sub_list_btn" title="점자자료">점자자료</a></li>
+                <li class="disabled"><a href="#none" class="sub_list_btn" title="장애인대채자료">장애인대채자료</a></li>
+                 -->
+              </ul>
+            </div>
+          </div>
+          <div class="sch_tit_wrap">
+            <div class="sch_tit_left">  
+              <span class="pop_con_tit">선택된 자료구분</span>
+              <span class="txt_blue sch_tit">전체</span>
+              <span class="txt_blue sch_sub_tit">음악자료</span>
+            </div>
+            <!-- JUN 241230 툴팁 추가 -->
+            <!-- <div class="search_detail_tooltip">
+              <a href="#" aria-label="tip">?</a>
+              <span class="sch_tips">
+                <b>[검색안내]</b><b>예시</b>AND : A값 B값 둘다 포함 <br> OR : A값 혹은 B값 <br> NOT : A값 중 B를 포함하지 않은 값 <a href="#" aria-label="도움말 닫기">×</a>
+              </span>
+            </div> -->
+            <!-- ---------- -->
+            <!--
+            <button type="button" class="btn-worldword">
+              <span class="worldword-text">다국어입력기</span>
+            </button>
+             -->
+          </div>
+          <div class="sch_tbl_wrap">
+            <!-- 가상키보드 wrapper -->
+            <div class="keyboard-wrapper"></div>
+            <!-- //가상키보드 wrapper -->
+            <h3 class="ir_text">유형별검색, <span class="add_title_hidden">전체</span></h3>
+            <div class="sch_nomal_tbl">
+              <div class="tbl_group">
+                <span class="tbl_th input_select_wrap">
+                  <select name="f1" title="첫번째&nbsp;검색조건 선택">
+                    <option value="title">제목(부분일치)</option>
+                    <option value="titleRight">제목(전방일치)</option>
+                    <option value="titleFull">제목(완전일치)</option>
+                              <option value="author">저자</option>
+                              <option value="publisher">발행자</option>
+                              <option value="keyword">키워드</option>
+                  </select>
+                </span>
+                <span class="tbl_td">
+                  <span class="tbl_group">
+                    <span class="tbl_input tbl_btn_input">
+                      <input type="text" name="v1"  class="input_text" title="첫번째&nbsp;검색어 입력">
+                      <span class="btn-worldword-wrap">
+                        <button id="v1WorldWrapperBtn" type="button" class="btn-worldword" onclick="$('div.worldword-wrap').hide();" data-focus-next="lang01">
+                          <span class="worldword-text" title="다국어입력기">다국어입력기</span>
+                        </button>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span class="tbl_td col10 m_col20">
+                  <span class="tbl_select input_select_wrap">
+                    <select name="and1" title="첫번째 연산 조건 선택">
+                      <option value="and">AND</option>
+                                <option value="or">OR</option>
+                                <option value="not">NOT</option>
+                    </select>
+                  </span>
+                </span>
+              </div>
+              <div class="tbl_group">
+                <span class="tbl_th input_select_wrap">
+                  <select name="f2" title="두번째&nbsp;검색조건 선택">
+                    <option value="title">제목(부분일치)</option>
+                    <option value="titleRight">제목(전방일치)</option>
+                    <option value="titleFull">제목(완전일치)</option>
+                              <option value="author" selected>저자</option>
+                              <option value="publisher">발행자</option>
+                              <option value="keyword">키워드</option>
+                  </select>
+                </span>
+                <span class="tbl_td">
+                  <span class="tbl_group">
+                    <span class="tbl_input tbl_btn_input">
+                      <input type="text" name="v2"  class="input_text" title="두번째&nbsp;검색어 입력">
+                      <span class="btn-worldword-wrap">
+                        <button id="v2WorldWrapperBtn" type="button" class="btn-worldword" onclick="$('div.worldword-wrap').hide();" data-focus-next="lang01">
+                          <span class="worldword-text" title="다국어입력기">다국어입력기</span>
+                        </button>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span class="tbl_td col10 m_col20">
+                  <span class="tbl_select input_select_wrap">
+                    <select name="and2" title="두번째 연산 조건 선택">
+                      <option value="and">AND</option>
+                                <option value="or">OR</option>
+                                <option value="not">NOT</option>
+                    </select>
+                  </span>
+                </span>
+              </div>
+              <div class="tbl_group">
+                <span class="tbl_th input_select_wrap">
+                  <select name="f3" title="세번째&nbsp;검색조건 선택">
+                    <option value="title">제목(부분일치)</option>
+                    <option value="titleRight">제목(전방일치)</option>
+                    <option value="titleFull">제목(완전일치)</option>
+                              <option value="author">저자</option>
+                              <option value="publisher" selected>발행자</option>
+                              <option value="keyword">키워드</option>
+                  </select>
+                </span>
+                <span class="tbl_td">
+                  <span class="tbl_group">
+                    <span class="tbl_input tbl_btn_input">
+                      <input type="text" name="v3"  class="input_text" title="세번째&nbsp;검색어 입력">
+                      <span class="btn-worldword-wrap">
+                        <button id="v3WorldWrapperBtn" type="button" class="btn-worldword" onclick="$('div.worldword-wrap').hide();" data-focus-next="lang01">
+                          <span class="worldword-text" title="다국어입력기">다국어입력기</span>
+                        </button>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span class="tbl_td col10 m_col20">
+                  <span class="tbl_select input_select_wrap">
+                    <select name="and3" title="세번째 연산 조건 선택">
+                      <option value="and">AND</option>
+                                <option value="or">OR</option>
+                                <option value="not">NOT</option>
+                    </select>
+                  </span>
+                </span>
+              </div>
+              <div class="tbl_group" style="border-bottom: solid 1px #dfdfdf;">
+                <span class="tbl_th input_select_wrap">
+                  <select name="f4" title="네번째&nbsp;검색조건 선택">
+                    <option value="title">제목(부분일치)</option>
+                    <option value="titleRight">제목(전방일치)</option>
+                    <option value="titleFull">제목(완전일치)</option>
+                              <option value="author">저자</option>
+                              <option value="publisher">발행자</option>
+                              <option value="keyword" selected>키워드</option>
+                  </select>
+                </span>
+                <span class="tbl_td full">
+                  <span class="tbl_group">
+                    <span class="tbl_input tbl_btn_input">
+                      <input type="text" name="v4"  class="input_text" title="네번째&nbsp;검색어 입력">
+                      <span class="btn-worldword-wrap">
+                        <button id="v4WorldWrapperBtn" type="button" class="btn-worldword" onclick="$('div.worldword-wrap').hide();" data-focus-next="lang01">
+                          <span class="worldword-text" title="다국어입력기">다국어입력기</span>
+                        </button>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span class="tbl_th" style="padding: 5px 5px 5px 10px;">발행년</span>
+                <span class="tbl_td full">
+                  <span class="tbl_group line">
+                    <span class="tbl_input col32 m_col40">
+                          <input type="text" name="sYear" class="input_text" title="발행년 시작">
+                        </span>
+                        <span class="tbl_block_txt col15 m_col20">년 부터</span>
+                        <span class="tbl_input col32 m_col40">
+                          <input type="text" name="eYear" class="input_text" title="발행년 끝">
+                        </span>
+                      </span>
+                </span>
+              </div>
+            </div>
+            <div class="sch_add_tbl">
+              <div class="tbl_group" id="webSiteUrl" style="display:none">
+                <span class="tbl_th">URL</span>
+                <span class="tbl_td">
+                  <span class="tbl_group">
+                    <span class="tbl_input">
+                      <input type="text" name="siteUrl" class="input_text" title="URL &nbsp;검색어 입력">
+                    </span>
+                  </span>
+                </span>
+              </div>
+              <div class="tbl_group">
+                <span class="tbl_th">표준부호</span>
+                <span class="tbl_td">
+                  <span class="tbl_group">
+                    <span class="tbl_select input_select_wrap col25 m_col50">
+                      <select name="isbnOp" title="표준부호&nbsp;검색조건 선택">
+                        <option value="isbn">ISBN</option>
+                        <option value="issn">ISSN</option>
+                      </select>
+                    </span>
+                    <span class="tbl_input">
+                      <input type="text" name="isbnCode" class="input_text" title="표준부호&nbsp;검색어 입력">
+                    </span>
+                  </span>
+                </span>
+<!--               </div> -->
+<!--               <div class="tbl_group"> -->
+                <span class="tbl_th">분류기호</span>
+                <span class="tbl_td">
+                  <span class="tbl_group tbl_group_btn">
+                    <span class="tbl_select input_select_wrap col25 m_col50">
+                      <select name="gu2" title="분류기호&nbsp;검색조건 선택">
+                        <option value="kdc" selected="selected">한국십진분류표</option>
+                                  <option value="kdcp">한국십진분류표-박봉석편</option>
+                                  <option value="ddc">듀이십진분류표</option>
+                                  <option value="cec">조선총독부 신서부분분류표</option>
+                                  <option value="cwc">조선총독부 양서분류표</option>
+                                  <option value="coc">조선총독부 고서분류표</option>
+                                  <option value="gpo">정부문서분류번호</option>
+                      </select>
+                    </span>
+                    <span class="tbl_input_btn tbl_input_btn_m line_wrap" style="display:flex;">
+                      <!-- <div class="line_wrap"> -->
+                      <!-- <span class="tbl_input"> -->
+                        <input type="text" name="guCode2" class="input_text" title="분류기호&nbsp;검색어 입력">
+<button type="button" class="btn btn_layer" data-layer="classification_sch" onclick="popKdc4List();return false;">검색</button>
+                          <!-- </div> -->
+                    </span>
+                  </span>
+                </span>
+              </div>
+              <div class="tbl_group">
+                <span class="tbl_th">청구기호</span>
+                <span class="tbl_td">
+                  <span class="tbl_group tbl_block_group">
+                    <span class="tbl_input_btn tbl_txt_input_btn col25 m_col50 line_wrap" style="display:flex;">
+                    <!-- <span class="tbl_input tbl_txt_input_btn col25 m_col50"> -->
+<!-- <div class="line_wrap"> -->
+                        <input type="text" name="guCode3" class="input_text" title="별치" placeholder="별치">
+                        <button type="button" class="btn btn_layer" data-layer="call_Sign_sch" onclick="popMngList();">검색</button>
+                      <!-- </div> -->
+                    </span>
+                    <span class="tbl_input tbl_txt_input tbl_block_input col25 m_col50">
+<input type="text" name="guCode4" class="input_text" title="분류" placeholder="분류">
+                    </span>
+                    <span class="tbl_input tbl_txt_input tbl_block_input col25 m_col50">
+<input type="text"  name="guCode5" class="input_text" title="도서" placeholder = "도서">
+                    </span>
+                    <span class="tbl_input tbl_txt_input tbl_block_input col25 m_col50">
+<input type="text" name="guCode6" class="input_text" title="권책" placeholder = "권책">
+                    </span>
+                  </span>
+                </span>
+              </div>
+              <div class="tbl_group">
+                <span class="tbl_th">한국대학명</span>
+                <span class="tbl_td">
+                  <span class="tbl_group tbl_group_btn">
+                    <span class="tbl_input col20 m_col50">
+                      <input type="text"  name="guCode7" class="input_text" title="한국대학코드">
+                    </span>
+                    <span class="tbl_input_btn tbl_input_btn_m line_wrap" style="display:flex;">
+                      <!-- <div class="line_wrap"> -->
+                      <!-- <span class="tbl_input"> -->
+                        <input type="text"  name="gu7" class="input_text" title="한국대학명" />
+                        <button type="button" class="btn btn_layer" data-layer="kor_university_sch" onclick="popUniList();">
+검색</button>
+                      <!-- </div> -->
+                    </span>
+                  </span>
+                </span>
+                <span class="tbl_th">한국정부기관명</span>
+                <span class="tbl_td">
+                  <span class="tbl_group tbl_group_btn">
+                    <span class="tbl_input col20 m_col50">
+                      <input type="text" name="guCode8"  class="input_text" title="한국정부기관코드">
+                    </span>
+                    <span class="tbl_input_btn tbl_input_btn_m line_wrap" style="display:flex;">
+                      <!-- <div class="line_wrap"> -->
+                      <!-- <span class="tbl_input"> -->
+                        <input type="text" name="gu8"  class="input_text" title="한국정부기관명">
+                        <button type="button" class="btn btn_layer" data-layer="kor_agency_sch" onclick="popGovList();">
+검색</button>
+                      <!-- </div> -->
+                    </span>
+                  </span>
+                </span>
+              </div>
+              </div>
+            <div class="sch_add_tbl">
+              <div class="tbl_group">
+                <span class="tbl_th">본문언어</span>
+                <span class="tbl_td">
+                  <span class="tbl_group">
+                    <span class="tbl_select input_select_wrap col49 m_col100">
+                      <select name="gu12" title="본문언어">
+                        <option value="" selected="selected">전체</option>
+                                  <option value="kor">한국어</option>
+                                  <option value="eng">영어</option>
+                                  <option value="jpn">일본어</option>
+                                  <option value="chi">중국어</option>
+                                  <option value="ger">독일어</option>
+                                  <option value="fre">프랑스어</option>
+                                  <option value="ita">이탈리아어</option>
+                                  <option value="rus">러시아어</option>
+                                  <option value="spa">스페인어</option>
+                      </select>
+                    </span>
+<!--                     <span></span> -->
+                  </span>
+                </span>
+                <span class="tbl_th">원저자언어</span>
+                    <span class="tbl_td">
+                      <span class="tbl_group">
+                        <span class="tbl_select input_select_wrap col49 m_col100">
+                          <select name="gu20" title="원저자언어">
+                            <option value="" selected="selected">전체</option>
+                                      <option value="kor">한국어</option>
+                                      <option value="eng">영어</option>
+                                      <option value="jpn">일본어</option>
+                                      <option value="chi">중국어</option>
+                                      <option value="dut">독일어</option>
+                                      <option value="fre">프랑스어</option>
+                                      <option value="ita">이탈리아어</option>
+                                      <option value="rus">러시아어</option>
+                                      <option value="spa">스페인어</option>
+                          </select>
+                    </span>
+<!--                     <span></span> -->
+                  </span>
+                </span>
+                <span class="tbl_th">간행빈도</span>
+                <span class="tbl_td">
+                  <span class="tbl_group">
+                    <span class="tbl_select input_select_wrap col49 m_col100">
+                      <select name="gu14"  title="간행빈도">
+                        <option value=''>전체</option>
+                                  <option value='-'>부정기간</option>
+                                  <option value='a'>연간</option>
+                                  <option value='b'>격월간</option>
+                                  <option value='c'>주2회간</option>
+                                  <option value='d'>일간</option>
+                                  <option value='e'>격주간</option>
+                                  <option value='f'>반년간</option>
+                                  <option value='g'>격년간</option>
+                                  <option value='h'>3년1회간</option>
+                                  <option value='i'>주3회간</option>
+                                  <option value='j'>월3회간</option>
+                                  <option value='m'>월간</option>
+                                  <option value='q'>계간</option>
+                                  <option value='s'>반월간</option>
+                                  <option value='t'>연3회간</option>
+                                  <option value='u'>불명</option>
+                                  <option value='w'>주간</option>
+                                  <option value='z'>기타</option>
+                      </select>
+                    </span>
+<!--                     <span></span> -->
+                  </span>
+                  </span>
+              </div>
+              <div class="tbl_group">
+                <span class="tbl_th">판종유형/판종</span>
+                <span class="tbl_td">
+                  <span class="tbl_group">
+                    <span class="tbl_select input_select_wrap col20 m_col50">
+                      <select name="gu9" title="첫번째&nbsp;판종유형/판종&nbsp;검색조건 선택" onchange="getEditList(this);">
+                        <option value=''>적용안함</option>
+                                  <option value='A'>金屬活字本</option>
+                                  <option value='B'>木活字本</option>
+                                  <option value='C'>木版本</option>
+                                  <option value='D'>筆寫本</option>
+                                  <option value='E'>陶活字本</option>
+                                  <option value='F'>匏活字本</option>
+                                  <option value='G'>新鉛活字本</option>
+                                  <option value='H'>石版本</option>
+                                  <option value='I'>拓本</option>
+                                  <option value='J'>油印本</option>
+                                  <option value='K'>影印本</option>
+                                  <option value='L'>寫眞版本</option>
+                                  <option value='U'>未詳</option>
+                                  <option value='Z'>其他</option>
+                      </select>
+                    </span>
+                    <span class="tbl_select input_select_wrap col20 m_col50">
+                      <select id="gu10" name="gu10" title="두번째&nbsp;판종유형/판종&nbsp;검색조건 선택">
+                        <option value="">적용안함</option>
+                      </select>
+                    </span>
+<!--                     <span></span> -->
+                  </span>
+                </span>
+<!--                 <span class="tbl_th">자료 이용하는 곳</span> -->
+                <span class="tbl_th">자료이용</span>
+                <span class="tbl_td" style="border-bottom:0px">
+                  <span class="tbl_group">
+                    <span class="tbl_select input_select_wrap col25 m_col100">
+                      <select title="자료 이용하는 곳" name="gu16">
+                        <option value="">적용안함</option>
+                        <option value="124">2층 문학실</option>
+                        <option value="127">2층 문학실(근대문학)</option>
+                        <option value="234">3층 연속간행물실</option>
+                        <option value="132|134|174|233">3층 연속간행물실(서고자료대출반납)</option>
+                        <option value="004|006">3층 연속간행물실(서고자료대출반납)(보존)</option>
+                        <option value="101">4층 도서자료실(자료실내비치)</option>
+                        <option value="003|100|996|997|998">4층 도서자료실(서고자료대출반납)</option>
+                        <option value="154">4층 특수자료실</option>
+                        <option value="171">고문헌실</option>
+                        <option value="002">고문헌실(보존)</option>
+                        <option value="125">5층 북한자료센터</option>
+                        <option value="306">어린이청소년도서관(역삼동) 어린이자료실(1층)</option>
+                        <option value="309">어린이청소년도서관(역삼동) 희망창작실(2층)</option>
+                        <option value="301|303|304|305|308|313">어린이청소년도서관(역삼동) 연구자료실(서고자료, 3층)</option>
+                        <option value="307|310">어린이청소년도서관(역삼동) 연구자료실(개가자료, 3층)</option>
+                        <option value="302">어린이청소년도서관(역삼동) 연구자료실(멀티미디어, 3층)</option>
+                        <option value="395|396|397|398|399">어린이청소년도서관(역삼동) 연구자료실(3층, 본관보존)</option>
+                      </select>
+                    </span>
+                  </span>
+                </span>
+                <span class="tbl_th" style="background-color:white; border-bottom:0px"></span><span class="tbl_td" style="border-bottom:0px">
+                  <span class="tbl_group">
+
+
+                  </span>
+                </span>
+              </div>
+              <!-- <div class="tbl_group">
+                <span class="tbl_th">자료 이용하는 곳</span>
+                <span class="tbl_td">
+                  <span class="tbl_group">
+                    <span class="tbl_select input_select_wrap col25 m_col100">
+                      <select title="자료 이용하는 곳" name="gu16">
+                        <option value="">적용안함</option>
+                        <option value="124">2층 문학실</option>
+                        <option value="127">2층 문학실(근대문학)</option>
+                        <option value="234">3층 연속간행물실</option>
+                        <option value="132|134|174|233">3층 연속간행물실(서고자료대출반납)</option>
+                        <option value="004|006">3층 연속간행물실(서고자료대출반납)(보존)</option>
+                        <option value="101">4층 도서자료실(자료실내비치)</option>
+                        <option value="003|100|996|997|998">4층 도서자료실(서고자료대출반납)</option>
+                        <option value="154">4층 특수자료실</option>
+                        <option value="171">고문헌실</option>
+                        <option value="002">고문헌실(보존)</option>
+                        <option value="125">5층 북한자료센터</option>
+                        <option value="306">어린이청소년도서관(역삼동) 어린이자료실(1층)</option>
+                        <option value="309">어린이청소년도서관(역삼동) 희망창작실(2층)</option>
+                        <option value="301|303|304|305|308|313">어린이청소년도서관(역삼동) 연구자료실(서고자료, 3층)</option>
+                        <option value="307|310">어린이청소년도서관(역삼동) 연구자료실(개가자료, 3층)</option>
+                        <option value="302">어린이청소년도서관(역삼동) 연구자료실(멀티미디어, 3층)</option>
+                        <option value="395|396|397|398|399">어린이청소년도서관(역삼동) 연구자료실(3층, 본관보존)</option>
+                      </select>
+                    </span>
+
+                  </span>
+                </span>
+
+                <span class="tbl_th" style="background-color:white"></span><span class="tbl_td">
+                  <span class="tbl_group">
+
+
+                  </span>
+                </span> -->
+                <!--   </div> -->
+
+            </div>
+            <a href="#none" class="sch_more_btn mo_onry ">고급검색</a>
+          </div>
+          <div class="btn_wrap is_pair center">
+            <button type="button" class="btn btn_grey" onclick="goDetailClear()">입력 초기화</button>
+            <button type="button" class="btn" onclick="goDetailSearch();">검색</button>
+            <button type="button" class="btn btn_grey pc_onry_in btn_close">닫기</button>
+          </div>
+        </div>
+        </form>
+        <!-- 저자명 검색 -->
+        <div class="ctgr_cont_wrap ctgr_cont_author">
+          <p class="txt">· 국립중앙도서관 소장자료를 저자별로 검색할 수 있습니다.</p>
+          <p class="txt">· 전거데이터 기반 검색으로 다양한 형식으로 표현되는 저자의 자료를 검색할 수 있습니다.</p>
+          <div class="ctgr_cont_tab_wrap">
+            <a href="#one_author" class="active" title="선택됨">개인명으로 찾기</a>
+            <a href="#two_author" class="">단체명으로 찾기</a>
+          </div>
+          <div class="ctgr_cont_tab tab_one_author">
+            <div class="detail_search_wrap compatibility_01">
+              <h4 class=""><span class="compatibility_01_icon"></span>저자명 입력<a href="#" aria-label="tip">?</a>
+                <span class="sch_tips">
+                  <b>[검색안내]</b><b>예시</b>소설가 '박경리'의 자료 검색 시, '박금이'(박경리의 본명),'BaK, Gyeongri'(박경리의 로마자표기)등으로 검색해도, 소설가 '박경리'의 소장자료를 확인할 수 있습니다.<a href="#" aria-label="도움말 닫기">×</a>
+                </span>
+              </h4>
+              <div class="inner">
+                <form action="#" onsubmit="return goAuthorInfo('0','1');">
+                  <div class="input_text_wrap">
+                    <label for="acName">저자명을 입력해주세요.</label>
+                    <input type="text" id="acName" class="input_text" aria-label="저자명 입력">
+                  </div>
+                  <div class="search-btn-wrap">
+                    <button type="button" class="btn_search" onclick="goAuthorInfo('0','1');">
+                      <span class="sp search">검색하기</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <p class="next_step"></p>
+            <div id="acDataList" class="detail_search_list">
+              <!-- 저자 ajax -->
+            </div>
+          </div>
+          <div class="ctgr_cont_tab tab_two_author">
+            <div class="detail_search_wrap">
+              <h4 class="">단체명 입력<a href="#" aria-label="도움말">?</a>
+                <span class="sch_tips">
+                  <b>검색안내</b><b>예시</b>[문화체육관광부]의 자료 검색 시,[문화부], [문화체육부] 등으로 검색해도 [문화체육관광부]의 국립중앙도서관 소장자료를 확인할 수 있습니다.<a href="#" aria-label="도움말 닫기">×</a>
+                </span>
+              </h4>
+              <div class="inner">
+                <form action="#" onsubmit="return goAuthorInfo('1','1');">
+                  <div class="input_text_wrap">
+                    <label for="acOrgName">단체명을 입력해주세요.</label>
+                    <input name="acOrgName" type="text" id="acOrgName" class="input_text" aria-label="단체명 입력">
+                  </div>
+                  <div class="search-btn-wrap">
+                    <button type="button" class="btn_search" onclick="goAuthorInfo('1','1');">
+                      <span class="sp search">검색하기</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <p class="next_step"></p>
+            <div id="acOrgDataList" class="detail_search_list">
+              <!-- 단체전거 -->
+            </div>
+          </div>
+        </div>
+        <div class="ctgr_cont_wrap ctgr_cont_subject">
+          <!-- <p class="txt">· 국립중앙도서관 소장자료를 저자별로 검색할 수 있습니다.</p>
+          <p class="txt">· 전거데이터 기반 검색으로 다양한 형식으로 표현되는 저자의 자료를 검색할 수 있습니다.</p> -->
+          <div class="ctgr_cont_tab_after">
+            <div class="ctgr_cont_tab_wrap">
+              <div class="scroll_wid">
+                <a href="#01_subject" class="active" title="선택됨">KDC(한국십진분류)</a>
+                <a href="#02_subject" class="">DDC(듀이십진분류)</a>
+                <a href="#03_subject" class="">주제어</a>
+                </div>
+            </div>
+          </div>
+          <!-- KDC, DDC 분류 -->
+          <div class="ctgr_cont_tab tab_01_subject">
+  <div class="sch_select_menu mo_onry">
+    <div class="select_menu_wrap">
+      <p class="init">선택해주세요.</p>
+      <ul class="select_menu sel_menu01">
+      </ul>
+    </div>
+    <p class="next_arrow mo_onry"></p>
+    <div class="select_menu_wrap">
+      <p class="init">상위 분류를 선택해주세요.</p>
+      <ul class="select_menu sel_menu02">
+      </ul>
+    </div>
+    <p class="next_arrow mo_onry"></p>
+    <div class="select_menu_wrap">
+      <p class="init">상위 분류를 선택해주세요.</p>
+      <ul class="select_menu sel_menu03">
+      </ul>
+    </div>
+    <p class="next_arrow mo_onry"></p>
+    <div class="select_menu_wrap">
+      <p class="init">상위 분류를 선택해주세요.</p>
+      <ul class="select_menu sel_menu04">
+      </ul>
+    </div>
+    <div class="btn_wrap is_pair">
+      <button type="button" class="btn btn_grey reset_btn">입력 초기화</button>
+      <a href="#none" class="btn search_btn">검색</a>
+    </div>
+  </div>
+  <div class="sch_list_menu pc_onry">
+    <ul class="sch_depth sch_list_depth01">
+      <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=0&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B4%9D%EB%A5%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">총류</a>
+        <ul class="sch_depth sch_list_depth02">
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=00&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B4%9D%EB%A5%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">총류</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=000&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B4%9D%EB%A5%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">총류</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=001&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A7%80%EC%8B%9D%2C%ED%95%99%EB%AC%B8%EC%9D%BC%EB%B0%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">지식,학문일반</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=003&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%B4%EB%A1%A0+%EC%B2%B4%EA%B3%84+%EB%B0%8F+%EC%8B%9C%EC%8A%A4%ED%85%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">이론 체계 및 시스템</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=004&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%BB%B4%ED%93%A8%ED%84%B0+%EA%B3%BC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">컴퓨터 과학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=005&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%2C+%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%2C+%EB%8D%B0%EC%9D%B4%ED%84%B0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">프로그래밍, 프로그램, 데이터</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=007&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%97%B0%EA%B5%AC%EC%9D%BC%EB%B0%98+%EB%B0%8F+%EB%B0%A9%EB%B2%95%EB%A1%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">연구일반 및 방법론</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=01&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8F%84%EC%84%9C%ED%95%99%2C%EC%84%9C%EC%A7%80%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">도서학,서지학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=010&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8F%84%EC%84%9C%ED%95%99%2C%EC%84%9C%EC%A7%80%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">도서학,서지학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=011&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A0%80%EC%9E%91&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="selected">저작</a>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=012&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%EB%B3%B8%2C%ED%8C%90%EB%B3%B8%2C%EC%A0%9C%EB%B3%B8&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">사본,판본,제본</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=013&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B6%9C%ED%8C%90+%EB%B0%8F++%ED%8C%90%EB%A7%A4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">출판 및  판매</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=014&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B0%9C%EC%9D%B8%EC%84%9C%EC%A7%80+%EB%B0%8F+%EB%AA%A9%EB%A1%9D&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">개인서지 및 목록</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=015&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%AD%EA%B0%80%EB%B3%84+%EC%84%9C%EC%A7%80+%EB%B0%8F+%EB%AA%A9%EB%A1%9D&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">국가별 서지 및 목록</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=016&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A3%BC%EC%A0%9C%EB%B3%84+%EC%84%9C%EC%A7%80+%EB%B0%8F+%EB%AA%A9%EB%A1%9D&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">주제별 서지 및 목록</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=017&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%8A%B9%EC%88%98%EC%84%9C%EC%A7%80+%EB%B0%8F+%EB%AA%A9%EB%A1%9D&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">특수서지 및 목록</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=018&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%BC%EB%B0%98%EC%84%9C%EC%A7%80+%EB%B0%8F+%EB%AA%A9%EB%A1%9D&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">일반서지 및 목록</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=019&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9E%A5%EC%84%9C%EB%AA%A9%EB%A1%9D&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">장서목록</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=02&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%AC%B8%ED%97%8C%EC%A0%95%EB%B3%B4%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">문헌정보학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=020&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%AC%B8%ED%97%8C%EC%A0%95%EB%B3%B4%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">문헌정보학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=021&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8F%84%EC%84%9C%EA%B4%80+%ED%96%89%EC%A0%95+%EB%B0%8F+%EC%9E%AC%EC%A0%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">도서관 행정 및 재정</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=022&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8F%84%EC%84%9C%EA%B4%80%EA%B1%B4%EC%B6%95+%EB%B0%8F+%EC%84%A4%EB%B9%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">도서관건축 및 설비</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=023&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8F%84%EC%84%9C%EA%B4%80+%EA%B2%BD%EC%98%81%2C+%EA%B4%80%EB%A6%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">도서관 경영, 관리</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=024&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%88%98%EC%84%9C%2C+%EC%A0%95%EB%A6%AC+%EB%B0%8F+%EB%B3%B4%EA%B4%80&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">수서, 정리 및 보관</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=025&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8F%84%EC%84%9C%EA%B4%80+%EB%B4%89%EC%82%AC+%EB%B0%8F+%ED%99%9C%EB%8F%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">도서관 봉사 및 활동</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=026&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%BC%EB%B0%98%EB%8F%84%EC%84%9C%EA%B4%80&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">일반도서관</a></li>              
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=028&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B8%B0%EB%A1%9D%EA%B4%80%EB%A6%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">기록관리</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=029&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8F%85%EC%84%9C+%EB%B0%8F+%EC%A0%95%EB%B3%B4%EB%A7%A4%EC%B2%B4%EC%9D%98+%EC%9D%B4%EC%9A%A9&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">독서 및 정보매체의 이용</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=03&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B0%B1%EA%B3%BC%EC%82%AC%EC%A0%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">백과사전</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=030&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B0%B1%EA%B3%BC%EC%82%AC%EC%A0%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">백과사전</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=031&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%95%9C%EA%B5%AD%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">한국어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=032&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A4%91%EA%B5%AD%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">중국어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=033&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%BC%EB%B3%B8%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">일본어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=034&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%98%81%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">영어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=035&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8F%85%EC%9D%BC%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">독일어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=036&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%94%84%EB%9E%91%EC%8A%A4%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">프랑스어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=037&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%8A%A4%ED%8E%98%EC%9D%B8%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">스페인어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=038&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%B4%ED%83%88%EB%A6%AC%EC%95%84%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">이탈리아어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=039&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B8%B0%ED%83%80+%EC%A0%9C%EC%96%B8%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">기타 제언어</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=04&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B0%95%EC%97%B0%EC%A7%91%2C+%EC%88%98%ED%95%84%EC%A7%91%2C+%EC%97%B0%EC%84%A4%EB%AC%B8%EC%A7%91&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">강연집, 수필집, 연설문집</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=040&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B0%95%EC%97%B0%EC%A7%91%2C%EC%88%98%ED%95%84%EC%A7%91%2C%EC%97%B0%EC%84%A4%EB%AC%B8%EC%A7%91&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">강연집,수필집,연설문집</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=041&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%95%9C%EA%B5%AD%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">한국어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=042&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A4%91%EA%B5%AD%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">중국어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=043&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%BC%EB%B3%B8%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">일본어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=044&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%98%81%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">영어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=045&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8F%85%EC%9D%BC%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">독일어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=046&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%94%84%EB%9E%91%EC%8A%A4%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">프랑스어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=047&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%8A%A4%ED%8E%98%EC%9D%B8%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">스페인어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=048&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%B4%ED%83%88%EC%9D%B4%EC%95%84%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">이탈이아어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=049&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B8%B0%ED%83%80+%EC%A0%9C%EC%96%B8%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">기타 제언어</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=05&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%BC%EB%B0%98+%EC%97%B0%EC%86%8D%EA%B0%84%ED%96%89%EB%AC%BC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">일반 연속간행물</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=050&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%BC%EB%B0%98%EC%97%B0%EC%86%8D%EA%B0%84%ED%96%89%EB%AC%BC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">일반연속간행물</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=051&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%95%9C%EA%B5%AD%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">한국어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=052&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A4%91%EA%B5%AD%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">중국어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=053&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%BC%EB%B3%B8%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">일본어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=054&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%98%81%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">영어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=055&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8F%85%EC%9D%BC%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">독일어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=056&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%94%84%EB%9E%91%EC%8A%A4%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">프랑스어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=057&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%8A%A4%ED%8E%98%EC%9D%B8%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">스페인어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=058&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B8%B0%ED%83%80+%EC%A0%9C%EC%96%B8%EC%96%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">기타 제언어</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=059&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%97%B0%EA%B0%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">연감</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=06&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%BC%EB%B0%98%ED%95%99%ED%9A%8C%2C%EB%8B%A8%EC%B2%B4%2C%ED%98%91%ED%9A%8C%2C%EA%B8%B0%EA%B4%80%2C%EC%97%B0%EA%B5%AC%EA%B8%B0%EA%B4%80&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">일반학회,단체,협회,기관,연구기관</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=060&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%BC%EB%B0%98%ED%95%99%ED%9A%8C%2C%EB%8B%A8%EC%B2%B4%2C%ED%98%91%ED%9A%8C%2C%EA%B8%B0%EA%B4%80%2C%EC%97%B0%EA%B5%AC%EA%B8%B0%EA%B4%80&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">일반학회,단체,협회,기관,연구기관</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=061&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%95%84%EC%8B%9C%EC%95%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">아시아</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=062&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9C%A0%EB%9F%BD&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">유럽</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=063&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%95%84%ED%94%84%EB%A6%AC%EC%B9%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">아프리카</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=064&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B6%81%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">북아메리카</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=065&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%82%A8%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">남아메리카</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=066&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%98%A4%EC%84%B8%EC%95%84%EB%8B%88%EC%95%84%2C+%EC%96%91%EA%B7%B9%EC%A7%80%EB%B0%A9&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">오세아니아, 양극지방</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=067&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%BC%EB%B0%98%EC%A7%80%EC%97%AD&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">일반지역</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=069&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B0%95%EB%AC%BC%EA%B4%80%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">박물관학</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=07&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%8B%A0%EB%AC%B8%2C%EC%A0%80%EB%84%90%EB%A6%AC%EC%A6%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">신문,저널리즘</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=070&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%8B%A0%EB%AC%B8%2C%EC%A0%80%EB%84%90%EB%A6%AC%EC%A6%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">신문,저널리즘</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=071&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%95%84%EC%8B%9C%EC%95%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">아시아</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=072&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9C%A0%EB%9F%BD&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">유럽</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=073&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%95%84%ED%94%84%EB%A6%AC%EC%B9%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">아프리카</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=074&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B6%81%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">북아메리카</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=075&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%82%A8%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">남아메리카</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=076&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%98%A4%EC%84%B8%EC%95%84%EB%8B%88%EC%95%84%2C+%EC%96%91%EA%B7%B9%EC%A7%80%EB%B0%A9&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">오세아니아, 양극지방</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=077&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%BC%EB%B0%98%EC%A7%80%EC%97%AD&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">일반지역</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=078&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%8A%B9%EC%A0%95%EC%A3%BC%EC%A0%9C%EC%9D%98+%EC%8B%A0%EB%AC%B8&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">특정주제의 신문</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=08&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%BC%EB%B0%98%EC%A0%84%EC%A7%91%2C+%EC%B4%9D%EC%84%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">일반전집, 총서</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=080&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%BC%EB%B0%98%EC%A0%84%EC%A7%91%2C%EC%B4%9D%EC%84%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">일반전집,총서</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=081&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B0%9C%EC%9D%B8%EC%9D%98+%EC%9D%BC%EB%B0%98%EC%A0%84%EC%A7%91&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">개인의 일반전집</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=082&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C2%EC%9D%B8+%EC%9D%B4%EC%83%81%EC%9D%98+%EC%9D%BC%EB%B0%98%EC%A0%84%EC%A7%91%2C+%EC%B4%9D%EC%84%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">2인 이상의 일반전집, 총서</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=09&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%96%A5%ED%86%A0%EC%9E%90%EB%A3%8C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">향토자료</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=090&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%96%A5%ED%86%A0%EC%9E%90%EB%A3%8C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">향토자료</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=1&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B2%A0%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">철학</a>
+        <ul class="sch_depth sch_list_depth02">
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=10&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B2%A0%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">철학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=100&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B2%A0%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">철학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=101&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B2%A0%ED%95%99+%EB%B0%8F+%EC%9D%B4%EB%A1%A0%EC%9D%98+%ED%9A%A8%EC%9A%A9&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">철학 및 이론의 효용</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=102&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9E%A1%EC%A0%80&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">잡저</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=103&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%EC%A0%84%2C+%EC%9A%A9%EC%96%B4%EC%82%AC%EC%A0%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사전, 용어사전</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=104&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B0%95%EC%97%B0%EC%A7%91%2C+%EC%88%98%ED%95%84%EC%A7%91&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">강연집, 수필집</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=105&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%97%B0%EC%86%8D%EA%B0%84%ED%96%89%EB%AC%BC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">연속간행물</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=106&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8B%A8%EC%B2%B4%2C+%ED%98%91%ED%9A%8C%2C+%EA%B8%B0%EA%B4%80%2C+%EC%9D%98%ED%9A%8C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">단체, 협회, 기관, 의회</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=107&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A7%80%EB%8F%84%EB%B2%95%2C+%EC%97%B0%EA%B5%AC%EB%B2%95+%EB%B0%8F+%EA%B5%90%EC%9C%A1%2C+%EA%B5%90%EC%9C%A1%EC%9E%90%EB%A3%8C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">지도법, 연구법 및 교육, 교육자료</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=108&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B4%9D%EC%84%9C%2C%EC%A0%84%EC%A7%91%2C%EC%84%A0%EC%A7%91&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">총서,전집,선집</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=109&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B2%A0%ED%95%99%EC%82%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">철학사</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=11&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%98%95%EC%9D%B4%EC%83%81%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">형이상학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=110&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%98%95%EC%9D%B4%EC%83%81%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">형이상학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=111&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B0%A9%EB%B2%95%EB%A1%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">방법론</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=112&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A1%B4%EC%9E%AC%EB%A1%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">존재론</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=113&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9A%B0%EC%A3%BC%EB%A1%A0+%EB%B0%8F+%EC%9E%90%EC%97%B0%EC%B2%A0%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">우주론 및 자연철학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=114&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B3%B5%EA%B0%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">공간</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=115&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%B8%EC%8B%9D%EB%A1%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">인식론</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=116&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9A%B4%EB%8F%99%EA%B3%BC+%EB%B3%80%ED%99%94&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">운동과 변화</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=117&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%AC%EC%A1%B0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">구조</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=118&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%9E%98%EA%B3%BC+%EC%97%90%EB%84%88%EC%A7%80&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">힘과 에너지</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=119&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%AC%BC%EC%A7%88%EA%B3%BC+%EC%A7%88%EB%9F%89&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">물질과 질량</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=13&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B2%A0%ED%95%99%EC%9D%98+%EC%B2%B4%EA%B3%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">철학의 체계</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=130&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B2%A0%ED%95%99%EC%9D%98+%EC%B2%B4%EA%B3%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">철학의 체계</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=131&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B4%80%EB%85%90%EB%A1%A0%EB%B0%8F%EC%97%B0%EA%B4%80%EC%B2%A0%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">관념론및연관철학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=132&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B9%84%ED%8C%90%EC%B2%A0%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">비판철학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=133&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%95%A9%EB%A6%AC%EB%A1%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">합리론</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=134&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%B8%EB%AC%B8%EC%A3%BC%EC%9D%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">인문주의</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=135&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B2%BD%ED%97%98%EB%A1%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">경험론</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=136&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9E%90%EC%97%B0%EC%A3%BC%EC%9D%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">자연주의</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=137&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9C%A0%EB%AC%BC%EB%A1%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">유물론</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=138&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B3%BC%ED%95%99%EC%A3%BC%EC%9D%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">과학주의</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=139&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B8%B0%ED%83%80&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">기타</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=14&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B2%BD%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">경학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=140&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B2%BD%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">경학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=141&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%97%AD%EB%A5%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">역류</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=142&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%84%9C%EB%A5%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">서류</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=143&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%8B%9C%EB%A5%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">시류</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=144&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%98%88%EB%A5%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">예류</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=145&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%95%85%EB%A5%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">악류</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=146&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B6%98%EC%B6%94%EB%A5%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">춘추류</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=147&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%9A%A8%EA%B2%BD&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">효경</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=148&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%EC%84%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사서</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=15&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8F%99%EC%96%91%2C%EC%B2%A0%ED%95%99%2C%EC%82%AC%EC%83%81&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">동양,철학,사상</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=150&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8F%99%EC%96%91%2C%EC%B2%A0%ED%95%99%2C%EC%82%AC%EC%83%81&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">동양,철학,사상</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=151&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%95%9C%EA%B5%AD%EC%B2%A0%ED%95%99%2C%EC%82%AC%EC%83%81&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">한국철학,사상</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=152&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A4%91%EA%B5%AD%EC%B2%A0%ED%95%99%2C%EC%82%AC%EC%83%81&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">중국철학,사상</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=153&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%BC%EB%B3%B8%EC%B2%A0%ED%95%99%2C%EC%82%AC%EC%83%81&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">일본철학,사상</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=154&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8F%99%EB%82%A8%EC%95%84%EC%8B%9C%EC%95%84%EC%A0%9C%EA%B5%AD%EC%B2%A0%ED%95%99%2C%EC%82%AC%EC%83%81&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">동남아시아제국철학,사상</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=155&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%B8%EB%8F%84%EC%B2%A0%ED%95%99%2C%EC%82%AC%EC%83%81&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">인도철학,사상</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=156&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A4%91%EC%95%99%EC%95%84%EC%8B%9C%EC%95%84%EC%A0%9C%EA%B5%AD%ED%95%99%2C%EC%82%AC%EC%83%81&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">중앙아시아제국학,사상</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=157&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%8B%9C%EB%B2%A0%EB%A6%AC%EC%95%84%EC%B2%A0%ED%95%99%2C%EC%82%AC%EC%83%81&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">시베리아철학,사상</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=158&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%84%9C%EB%82%A8%EC%95%84%EC%8B%9C%EC%95%84%EC%A0%9C%EA%B5%AD%EC%B2%A0%ED%95%99%2C%EC%82%AC%EC%83%81&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">서남아시아제국철학,사상</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=159&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%95%84%EB%9E%8D%EC%A0%9C%EA%B5%AD%EC%B2%A0%ED%95%99%2C%EC%82%AC%EC%83%81&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">아랍제국철학,사상</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=16&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%84%9C%EC%96%91%EC%B2%A0%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">서양철학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=160&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%84%9C%EC%96%91%EC%B2%A0%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">서양철학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=162&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%AF%B8%EA%B5%AD%EC%B2%A0%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">미국철학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=163&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B6%81%EA%B5%AC%EC%B2%A0%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">북구철학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=164&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%98%81%EA%B5%AD%EC%B2%A0%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">영국철학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=165&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8F%85%EC%9D%BC%2C%EC%98%A4%EC%8A%A4%ED%8A%B8%EB%A6%AC%EC%95%84%EC%B2%A0%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">독일,오스트리아철학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=166&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%94%84%EB%9E%91%EC%8A%A4%2C%EB%84%A4%EB%8D%9C%EB%9E%80%EB%93%9C%EC%B2%A0%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">프랑스,네덜란드철학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=167&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%8A%A4%ED%8E%98%EC%9D%B8%EC%B2%A0%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">스페인철학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=168&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%B4%ED%83%88%EB%A6%AC%EC%95%84%EC%B2%A0%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">이탈리아철학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=169&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%9F%AC%EC%8B%9C%EC%95%84%EC%B2%A0%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">러시아철학</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=17&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%85%BC%EB%A6%AC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">논리학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=170&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%85%BC%EB%A6%AC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">논리학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=171&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%97%B0%EC%97%AD%EB%B2%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">연역법</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=172&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B7%80%EB%82%A9%EB%B2%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">귀납법</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=173&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B3%80%EC%A6%9D%EB%B2%95%EC%A0%81%EB%85%BC%EB%A6%AC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">변증법적논리학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=174&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B8%B0%ED%98%B8%2C%EC%88%98%EB%A6%AC%EB%85%BC%EB%A6%AC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">기호,수리논리학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=175&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%98%A4%EB%A5%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">오류</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=176&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%BC%EB%8B%A8%EB%85%BC%EB%B2%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">삼단논법</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=177&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B0%80%EC%84%A4%2C%EA%B0%80%EC%A0%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">가설,가정</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=178&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9C%A0%EC%B6%94&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">유추</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=179&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%85%BC%EC%A6%9D%2C%EC%84%A4%EB%93%9D&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">논증,설득</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=18&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%8B%AC%EB%A6%AC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">심리학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=180&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%8B%AC%EB%A6%AC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">심리학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=181&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%8B%AC%EB%A6%AC%ED%95%99%EA%B0%81%EB%A1%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">심리학각론</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=182&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B0%A8%EC%9D%B4%EC%8B%AC%EB%A6%AC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">차이심리학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=183&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B0%9C%EB%8B%AC%EC%8B%AC%EB%A6%AC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">발달심리학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=184&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%B4%EC%83%81%EC%8B%AC%EB%A6%AC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">이상심리학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=185&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%83%9D%EB%A6%AC%EC%8B%AC%EB%A6%AC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">생리심리학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=186&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9E%84%EC%83%81%EC%8B%AC%EB%A6%AC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">임상심리학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=187&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%8B%AC%EB%A0%B9%EC%97%B0%EA%B5%AC%EB%B0%8F%EB%B9%84%ED%95%99%2C%EC%B4%88%EC%8B%AC%EB%A6%AC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">심령연구및비학,초심리학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=188&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%83%81%EB%B2%95%2C%EC%9A%B4%EB%AA%85%ED%8C%90%EB%8B%A8&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">상법,운명판단</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=189&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%91%EC%9A%A9%EC%8B%AC%EB%A6%AC%ED%95%99%EC%9D%B4%EB%A1%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">응용심리학이론</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=19&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9C%A4%EB%A6%AC%ED%95%99%2C%EB%8F%84%EB%8D%95%EC%B2%A0%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">윤리학,도덕철학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=190&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9C%A4%EB%A6%AC%ED%95%99%2C%EB%8F%84%EB%8D%95%EC%B2%A0%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">윤리학,도덕철학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=191&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%BC%EB%B0%98%EC%9C%A4%EB%A6%AC%ED%95%99+%EA%B0%81%EB%A1%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">일반윤리학 각론</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=192&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B0%80%EC%A0%95%EC%9C%A4%EB%A6%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">가정윤리</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=193&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%AD%EA%B0%80%EB%B0%8F%EC%A0%95%EC%B9%98%EC%9C%A4%EB%A6%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">국가및정치윤리</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=194&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%ED%9A%8C%EC%9C%A4%EB%A6%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사회윤리</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=195&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A7%81%EC%97%85%EC%9C%A4%EB%A6%AC%EC%9D%B4%EB%A1%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">직업윤리이론</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=196&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%98%A4%EB%9D%BD%EB%B0%8F%EA%B2%BD%EA%B8%B0%EC%9C%A4%EB%A6%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">오락및경기윤리</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=197&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%84%B1%EC%9C%A4%EB%A6%AC+%EB%B0%8F+%EC%83%9D%EC%8B%9D%EC%9C%A4%EB%A6%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">성윤리 및 생식윤리</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=198&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%86%8C%EB%B9%84%EC%9C%A4%EB%A6%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">소비윤리</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=199&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8F%84%EB%8D%95%ED%9B%88%2C%EA%B5%90%ED%9B%88&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">도덕훈,교훈</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=2&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A2%85%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">종교</a>
+        <ul class="sch_depth sch_list_depth02">
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=20&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A2%85%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">종교</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=200&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A2%85%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">종교</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=201&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A2%85%EA%B5%90%EC%B2%A0%ED%95%99%EB%B0%8F%EC%A2%85%EA%B5%90%EC%82%AC%EC%83%81&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">종교철학및종교사상</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=202&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9E%A1%EC%A0%80&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">잡저</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=203&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%EC%A0%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사전</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=204&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9E%90%EC%97%B0%EC%A2%85%EA%B5%90%2C%EC%9E%90%EC%97%B0%EC%8B%A0%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">자연종교,자연신학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=205&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%97%B0%EC%86%8D%EA%B0%84%ED%96%89%EB%AC%BC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">연속간행물</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=206&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8B%A8%EC%B2%B4%2C%ED%98%91%ED%9A%8C%2C%EA%B8%B0%EA%B4%80%2C%ED%9A%8C%EC%9D%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">단체,협회,기관,회의</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=207&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A7%80%EB%8F%84%EB%B2%95%2C%EC%97%B0%EA%B5%AC%EB%B2%95%EB%B0%8F%EA%B5%90%EC%9C%A1%2C%EA%B5%90%EC%9C%A1%EC%9E%90%EB%A3%8C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">지도법,연구법및교육,교육자료</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=208&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B4%9D%EC%84%9C%2C%EC%A0%84%EC%A7%91%2C%EC%84%A0%EC%A7%91&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">총서,전집,선집</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=209&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A2%85%EA%B5%90%EC%82%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">종교사</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=21&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B9%84%EA%B5%90%EC%A2%85%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">비교종교</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=210&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B9%84%EA%B5%90%EC%A2%85%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">비교종교</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=211&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%90%EB%A6%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">교리</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=212&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A2%85%EA%B5%90%EC%B0%BD%EC%8B%9C%EC%9E%90%28%EA%B5%90%EC%A3%BC%29%EB%B0%8F+%EC%A0%9C%EC%9E%91&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">종교창시자(교주)및 제작</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=213&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B2%BD%EC%A0%84%2C%EC%84%B1%EC%A0%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">경전,성전</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=214&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A2%85%EA%B5%90%EC%8B%A0%EC%95%99%2C%EC%8B%A0%EC%95%99%EB%A1%9D%2C%EC%8B%A0%EC%95%99%28%EC%88%98%EB%8F%84%29%EC%83%9D%ED%99%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">종교신앙,신앙록,신앙(수도)생활</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=215&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%84%A0%EA%B5%90%2C%ED%8F%AC%EA%B5%90%2C%EC%A0%84%EB%8F%84%2C%EA%B5%90%EC%9C%A1%ED%99%9C%EB%8F%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">선교,포교,전도,교육활동</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=216&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A2%85%EB%8B%A8%2C%EA%B5%90%EB%8B%A8%28%EA%B5%90%EB%8B%B9%EB%A1%A0%29&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">종단,교단(교당론)</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=217&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%98%88%EB%B0%B0%ED%98%95%EC%8B%9D%2C%EC%9D%98%EC%8B%9D%2C%EC%9D%98%EB%A1%80&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">예배형식,의식,의례</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=218&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A2%85%ED%8C%8C%2C%EA%B5%90%ED%8C%8C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">종파,교파</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=219&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%8B%A0%ED%99%94%2C%EC%8B%A0%ED%99%94%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">신화,신화학</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=22&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B6%88%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">불교</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=220&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B6%88%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">불교</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=221&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B6%88%EA%B5%90%EA%B5%90%EB%A6%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">불교교리</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=222&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B6%80%EC%B2%98%2C+%EB%B3%B4%EC%82%B4%2C+%EB%B6%88%EC%A0%9C%EC%9E%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">부처, 보살, 불제자</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=223&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B2%BD%EC%A0%84%28%EB%B6%88%EC%A0%84%2C%EB%8C%80%EC%9E%A5%EA%B2%BD%29&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">경전(불전,대장경)</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=224&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B2%95%EC%96%B4%2C%EC%8B%A0%EC%95%99%EB%A1%9D%2C%EC%8B%A0%EC%95%99%EC%83%9D%ED%99%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">법어,신앙록,신앙생활</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=225&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%8F%AC%EA%B5%90%2C%EA%B5%90%EC%9C%A1%2C%EA%B5%90%ED%99%94%ED%99%9C%EB%8F%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">포교,교육,교화활동</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=226&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%EC%9B%90%EB%A1%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사원론</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=227&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B2%95%ED%9A%8C%2C%EC%9D%98%EC%8B%9D%2C%ED%96%89%EC%82%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">법회,의식,행사</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=228&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A2%85%ED%8C%8C%2C+%EA%B5%90%ED%8C%8C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">종파, 교파</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=229&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%9D%BC%EB%A7%88%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">라마교</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=23&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B8%B0%EB%8F%85%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">기독교</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=230&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B8%B0%EB%8F%85%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">기독교</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=231&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B8%B0%EB%8F%85%EA%B5%90%EC%8B%A0%ED%95%99%2C%EA%B5%90%EC%9D%98%ED%95%99%28%EC%A1%B0%EC%A7%81%EC%8B%A0%ED%95%99%29&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">기독교신학,교의학(조직신학)</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=232&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%98%88%EC%88%98%EA%B7%B8%EB%A6%AC%EC%8A%A4%EB%8F%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">예수그리스도</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=233&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%84%B1%EC%84%9C%28%EC%84%B1%EA%B2%BD%29&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">성서(성경)</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=234&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A2%85%EA%B5%90%EC%8B%A0%EC%95%99%2C+%EC%8B%A0%EC%95%99%EB%A1%9D%2C+%EC%8B%A0%EC%95%99%EC%83%9D%ED%99%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">종교신앙, 신앙록, 신앙생활</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=235&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A0%84%EB%8F%84%2C%EA%B5%90%EC%9C%A1%2C%EA%B5%90%ED%99%94%ED%99%9C%EB%8F%99%2C%EB%AA%A9%ED%9A%8C%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">전도,교육,교화활동,목회학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=236&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%90%ED%9A%8C%EB%A1%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">교회론</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=237&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%98%88%EB%B0%B0%2C%EC%9D%98%EC%8B%9D%2C%EC%84%B1%EB%A1%80&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">예배,의식,성례</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=238&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%90%ED%8C%8C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">교파</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=239&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9C%A0%ED%83%9C%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">유태교</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=24&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8F%84%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">도교</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=240&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8F%84%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">도교</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=241&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%90%EC%9D%98%2C%EC%8B%A0%EC%84%A0%EC%82%AC%EC%83%81&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">교의,신선사상</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=242&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%90%EC%A1%B0%2C%EA%B0%9C%EC%A1%B0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">교조,개조</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=243&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8F%84%EC%9E%A5&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">도장</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=244&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%8B%A0%EC%95%99%EB%A1%9D%2C%EC%8B%A0%EC%95%99%EC%83%9D%ED%99%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">신앙록,신앙생활</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=245&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%8F%AC%EA%B5%90%2C%EC%A0%84%EB%8F%84%2C%EA%B5%90%EC%9C%A1%2C%EA%B5%90%ED%99%94%ED%99%9C%EB%8F%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">포교,전도,교육,교화활동</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=246&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%EC%9B%90%EB%A1%A0%28%EB%8F%84%EA%B4%80%29&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사원론(도관)</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=247&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%96%89%EC%82%AC%2C%EB%B2%95%EC%88%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">행사,법술</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=248&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%90%ED%8C%8C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">교파</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=25&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B2%9C%EB%8F%84%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">천도교</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=250&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B2%9C%EB%8F%84%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">천도교</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=251&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%90%EB%A6%AC%2C+%EA%B5%90%EC%9D%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">교리, 교의</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=252&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B0%BD%EC%8B%9C%EC%9E%90%28%EA%B5%90%EC%A3%BC%29+%EB%B0%8F+%EC%A0%9C%EC%9E%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">창시자(교주) 및 제자</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=253&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B2%BD%EC%A0%84%2C+%EC%84%B1%EC%A0%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">경전, 성전</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=254&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%8B%A0%EC%95%99%EB%A1%9D%2C+%EC%8B%A0%EC%95%99%EC%83%9D%ED%99%9C%2C+%EC%88%98%EB%8F%84%EC%83%9D%ED%99%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">신앙록, 신앙생활, 수도생활</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=255&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%84%A0%EA%B5%90%2C+%ED%8F%AC%EA%B5%90%2C+%EC%A0%84%EB%8F%84%2C+%EA%B5%90%EC%9C%A1+%ED%99%9C%EB%8F%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">선교, 포교, 전도, 교육 활동</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=256&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A2%85%EB%8B%A8%2C+%EA%B5%90%EB%8B%A8&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">종단, 교단</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=257&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%98%88%EB%B0%B0%ED%98%95%EC%8B%9D%2C+%EC%9D%98%EC%8B%9D%2C+%EC%9D%98%EB%A1%80&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">예배형식, 의식, 의례</a></li>              
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=259&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8F%99%ED%95%99%EA%B5%90%EB%B6%84%ED%8C%8C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">동학교분파</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=259&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8B%A8%EA%B5%B0%EA%B5%90%2C+%EB%8C%80%EC%A2%85%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">단군교, 대종교</a></li>
+            </ul>
+          </li>          
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=27&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%9E%8C%EB%91%90%EA%B5%90%2C%EB%B8%8C%EB%9D%BC%EB%A7%8C%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">힌두교,브라만교</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=270&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%9E%8C%EB%91%90%EA%B5%90%2C%EB%B8%8C%EB%A6%AC%EB%A7%8C%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">힌두교,브리만교</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=271&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%90%EB%A6%AC%2C+%EA%B5%90%EC%9D%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">교리, 교의</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=272&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B0%BD%EC%8B%9C%EC%9E%90%28%EA%B5%90%EC%A3%BC%29+%EB%B0%8F+%EC%A0%9C%EC%9E%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">창시자(교주) 및 제자</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=273&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B2%BD%EC%A0%84%2C+%EC%84%B1%EC%A0%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">경전, 성전</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=274&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%8B%A0%EC%95%99%EB%A1%9D%2C+%EC%8B%A0%EC%95%99%EC%83%9D%ED%99%9C%2C+%EC%88%98%EB%8F%84%EC%83%9D%ED%99%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">신앙록, 신앙생활, 수도생활</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=275&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%84%A0%EA%B5%90%2C+%ED%8F%AC%EA%B5%90%2C+%EC%A0%84%EB%8F%84%2C+%EA%B5%90%EC%9C%A1+%ED%99%9C%EB%8F%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">선교, 포교, 전도, 교육 활동</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=276&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A2%85%EB%8B%A8%2C+%EA%B5%90%EB%8B%A8&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">종단, 교단</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=277&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%98%88%EB%B0%B0%ED%98%95%EC%8B%9D%2C+%EC%9D%98%EC%8B%9D%2C+%EC%9D%98%EB%A1%80&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">예배형식, 의식, 의례</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=278&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A2%85%EB%8B%A8%2C+%EA%B5%90%EB%8B%A8&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">종단, 교단</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=279&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9E%90%EC%9D%B4%EB%82%98%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">자이나교</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=28&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%B4%EC%8A%AC%EB%9E%8C%EA%B5%90%28%ED%9A%8C%EA%B5%90%29&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">이슬람교(회교)</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=280&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%B4%EC%8A%AC%EB%9E%8C%EA%B5%90%28%ED%9A%8C%EA%B5%90%29&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">이슬람교(회교)</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=281&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%90%EB%A6%AC%2C+%EA%B5%90%EC%9D%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">교리, 교의</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=282&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B0%BD%EC%8B%9C%EC%9E%90%28%EA%B5%90%EC%A3%BC%29+%EB%B0%8F+%EC%A0%9C%EC%9E%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">창시자(교주) 및 제자</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=283&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B2%BD%EC%A0%84%2C+%EC%84%B1%EC%A0%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">경전, 성전</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=284&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%8B%A0%EC%95%99%EB%A1%9D%2C+%EC%8B%A0%EC%95%99%EC%83%9D%ED%99%9C%2C+%EC%88%98%EB%8F%84%EC%83%9D%ED%99%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">신앙록, 신앙생활, 수도생활</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=285&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%84%A0%EA%B5%90%2C+%ED%8F%AC%EA%B5%90%2C+%EC%A0%84%EB%8F%84%2C+%EA%B5%90%EC%9C%A1+%ED%99%9C%EB%8F%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">선교, 포교, 전도, 교육 활동</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=286&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A2%85%EB%8B%A8%2C+%EA%B5%90%EB%8B%A8&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">종단, 교단</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=287&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%98%88%EB%B0%B0%ED%98%95%EC%8B%9D%2C+%EC%9D%98%EC%8B%9D%2C+%EC%9D%98%EB%A1%80&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">예배형식, 의식, 의례</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=288&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A2%85%EB%8B%A8%2C+%EA%B5%90%EB%8B%A8&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">종단, 교단</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=289&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A1%B0%EB%A1%9C%EC%95%84%EC%8A%A4%ED%84%B0%EA%B5%90%28%EC%9A%94%EA%B5%90%2C%EB%B0%B0%ED%99%94%EA%B5%90%29&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">조로아스터교(요교,배화교)</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=29;&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">기타제종교</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=290&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B8%B0%ED%83%80%EC%A0%9C%EC%A2%85%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">기타제종교</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=291&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%95%84%EC%8B%9C%EC%95%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">아시아</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=292&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9C%A0%EB%9F%BD&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">유럽</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=293&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%95%84%ED%94%84%EB%A6%AC%EC%B9%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">아프리카</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=294&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B6%81%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">북아메리카</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=295&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%82%A8%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">남아메리카</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=296&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%98%A4%EC%84%B8%EC%95%84%EB%8B%88%EC%95%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">오세아니아</a></li>              
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=299&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B8%B0%ED%83%80+%EB%8B%A4%EB%A5%B8+%EA%B8%B0%EC%9B%90%EC%9D%98+%EC%A2%85%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">기타 다른 기원의 종교</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=3&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%ED%9A%8C%EA%B3%BC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">사회과학</a>
+        <ul class="sch_depth sch_list_depth02">
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=30&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%ED%9A%8C%EA%B3%BC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사회과학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=300&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%ED%9A%8C%EA%B3%BC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사회과학</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=300.1&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B2%A0%ED%95%99%EB%B0%8F+%EC%9D%B4%EB%A1%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">철학및 이론</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=300.9&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%ED%9A%8C%EA%B3%BC%ED%95%99%EC%82%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사회과학사</a></li>
+                </ul>
+              </li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=301&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%ED%9A%8C%EC%82%AC%EC%83%81&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사회사상</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=302&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9E%A1%EC%A0%80&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">잡저</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=303&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%EC%A0%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사전</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=304&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B0%95%EC%97%B0%EC%A7%91%2C%EC%88%98%ED%95%84%EC%A7%91%2C%EC%97%B0%EC%84%A4%EB%AC%B8%EC%A7%91&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">강연집,수필집,연설문집</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=305&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%97%B0%EC%86%8D%EA%B0%84%ED%96%89%EB%AC%BC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">연속간행물</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=306&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%95%99%ED%9A%8C%2C%EB%8B%A8%EC%B2%B4%2C%ED%98%91%ED%9A%8C%2C%EA%B8%B0%EA%B4%80%2C%ED%9A%8C%EC%9D%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">학회,단체,협회,기관,회의</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=307&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A7%80%EB%8F%84%EB%B2%95%2C+%EC%97%B0%EA%B5%AC%EB%B2%95+%EB%B0%8F+%EA%B5%90%EC%9C%A1%2C+%EA%B5%90%EC%9C%A1%EC%9E%90%EB%A3%8C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">지도법, 연구법 및 교육, 교육자료</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=308&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B4%9D%EC%84%9C%2C%EC%A0%84%EC%A7%91%2C%EC%84%A0%EC%A7%91&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">총서,전집,선집</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=309&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%ED%9A%8C%C2%B7%EB%AC%B8%ED%99%94+%EC%82%AC%EC%A0%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사회·문화 사정</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=309.1&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%ED%9A%8C%EB%AC%B8%ED%99%94%EC%82%AC%EC%A0%95%EC%82%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사회문화사정사</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=31&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%86%B5%EA%B3%84%EC%9E%90%EB%A3%8C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">통계자료</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=310&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%86%B5%EA%B3%84%EC%9E%90%EB%A3%8C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">통계자료</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=311&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%95%84%EC%8B%9C%EC%95%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">아시아</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=312&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9C%A0%EB%9F%BD&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">유럽</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=313&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%95%84%ED%94%84%EB%A6%AC%EC%B9%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">아프리카</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=314&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B6%81%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">북아메리카</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=315&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%82%A8%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">남아메리카</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=316&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%98%A4%EC%84%B8%EC%95%84%EB%8B%88%EC%95%84%2C+%EC%96%91%EA%B7%B9%EC%A7%80%EB%B0%A9&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">오세아니아, 양극지방</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=317&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%BC%EB%B0%98%EC%A7%80%EC%97%AD&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">일반지역</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=319&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%B8%EA%B5%AC%ED%86%B5%EA%B3%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">인구통계</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=32&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B2%BD%EC%A0%9C%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">경제학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=320&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B2%BD%EC%A0%9C%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">경제학</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=320.1&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B2%BD%EC%A0%9C%ED%95%99%EC%84%A4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">경제학설</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=320.9&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B2%BD%EC%A0%9C%EC%82%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">경제사</a></li>
+                </ul>
+              </li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=321&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B2%BD%EC%A0%9C%EA%B0%81%EB%A1%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">경제각론</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=321.3&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9E%90%EC%9B%90%EB%A1%A0%2C+%EC%9E%90%EC%9B%90%EB%B3%B4%ED%98%B8&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">자원론, 자원보호</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=321.5&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%85%B8%EB%8F%99%EA%B2%BD%EC%A0%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">노동경제</a></li>
+                </ul>
+              </li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=322&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B2%BD%EC%A0%9C%EC%A0%95%EC%B1%85&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">경제정책</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=323&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%B0%EC%97%85%EA%B2%BD%EC%A0%9C+%EC%9D%BC%EB%B0%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">산업경제 일반</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=324&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B8%B0%EC%97%85%EA%B2%BD%EC%A0%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">기업경제</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=324.3&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A4%91%EC%86%8C%EA%B8%B0%EC%97%85&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">중소기업</a></li>
+                </ul>
+              </li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=325&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B2%BD%EC%98%81&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">경영</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=325.1&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B2%BD%EC%98%81%EC%A0%95%EC%B1%85&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">경영정책</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=325.2&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A1%B0%EC%A7%81%EA%B4%80%EB%A6%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">조직관리</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=325.3&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%B8%EC%82%AC%EA%B4%80%EB%A6%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">인사관리</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=325.5&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%A7%88%EC%BC%80%ED%8C%85%EA%B4%80%EB%A6%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">마케팅관리</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=325.6&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%83%9D%EC%82%B0%EA%B4%80%EB%A6%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">생산관리</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=325.7&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B4%91%EA%B3%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">광고</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=325.8&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9E%AC%EB%AC%B4%EA%B4%80%EB%A6%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">재무관리</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=325.9&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%9A%8C%EA%B3%84%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">회계학</a></li>
+                </ul>
+              </li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=326&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%83%81%EC%97%85%2C%EA%B5%90%ED%86%B5%2C%ED%86%B5%EC%8B%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">상업,교통,통신</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=326.1&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%83%81%EC%97%85%28%EB%AC%B4%EC%97%AD%29&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">상업(무역)</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=326.2&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%AD%EC%A0%9C%EB%AC%B4%EC%97%AD&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">국제무역</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=326.3&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%90%ED%86%B5&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">교통</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=326.7&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B0%A9%EC%86%A1&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">방송</a></li>
+                </ul>
+              </li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=327&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B8%88%EC%9C%B5&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">금융</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=327.8&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%88%AC%EC%9E%90%EA%B8%88%EC%9C%B5&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">투자금융</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=327.9&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%AD%EC%A0%9C%EA%B8%88%EC%9C%B5&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">국제금융</a></li>
+                </ul>
+              </li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=328&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B3%B4%ED%97%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">보험</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=329&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9E%AC%EC%A0%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">재정</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=329.4&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A1%B0%EC%84%B8&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">조세</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=329.9&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A7%80%EB%B0%A9%EC%9E%AC%EC%A0%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">지방재정</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=33&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%ED%9A%8C%ED%95%99%2C%EC%82%AC%ED%9A%8C%EB%AC%B8%EC%A0%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사회학,사회문제</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=330&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%ED%9A%8C%ED%95%99%2C%EC%82%AC%ED%9A%8C%EB%AC%B8%EC%A0%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사회학,사회문제</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=331&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%ED%9A%8C%ED%95%99%2C+%EC%82%AC%ED%9A%8C%EB%AC%B8%EC%A0%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사회학, 사회문제</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=331.5&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%AC%B8%ED%99%94%2C+%EB%AC%B8%ED%99%94%EA%B3%BC%EC%A0%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">문화, 문화과정</a></li>
+                </ul>
+              </li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=332&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%ED%9A%8C%EC%A1%B0%EC%A7%81%EB%B0%8F%EC%A0%9C%EB%8F%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사회조직및제도</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=334&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%ED%9A%8C%EB%AC%B8%EC%A0%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사회문제</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=335&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%83%9D%ED%99%9C%EB%AC%B8%EC%A0%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">생활문제</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=337&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%97%AC%EC%84%B1%EB%AC%B8%EC%A0%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">여성문제</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=338&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%ED%9A%8C%EB%B3%B5%EC%A7%80&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사회복지</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=338.1&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%ED%9A%8C%EC%82%AC%EC%97%85&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사회사업</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=338.3&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9E%A5%EC%95%A0%EC%9D%B8%EB%B3%B5%EC%A7%80&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">장애인복지</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=338.5&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%95%84%EB%8F%99%C2%B7%EC%B2%AD%EC%86%8C%EB%85%84+%EB%B3%B5%EC%A7%80&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">아동·청소년 복지</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=338.6&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%85%B8%EC%9D%B8%EB%B3%B5%EC%A7%80%EC%82%AC%EC%97%85&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">노인복지사업</a></li>
+                </ul>
+              </li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=339&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%ED%9A%8C%EB%8B%A8%EC%B2%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사회단체</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=34&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A0%95%EC%B9%98%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">정치학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=340&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A0%95%EC%B9%98%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">정치학</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=340.9&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A0%95%EC%B9%98%EC%82%AC+%EB%B0%8F+%EC%A0%95%EC%B9%98%EC%82%AC%EC%A0%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">정치사 및 정치사정</a></li>
+                </ul>
+              </li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=341&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%AD%EA%B0%80%ED%98%95%ED%83%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">국가형태</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=342&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%AD%EA%B0%80%EC%99%80%EA%B0%9C%EC%9D%B8%EB%B0%8F%EC%A7%91%EB%8B%A8&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">국가와개인및집단</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=344&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%84%A0%EA%B1%B0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">선거</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=345&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9E%85%EB%B2%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">입법</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=346&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A0%95%EB%8B%B9&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">정당</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=349&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%99%B8%EA%B5%90%2C%EA%B5%AD%EC%A0%9C%EA%B4%80%EA%B3%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">외교,국제관계</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=349.1&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B0%81%EA%B5%AD+%EC%99%B8%EA%B5%90&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">각국 외교</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=35&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%96%89%EC%A0%95%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">행정학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=350&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%96%89%EC%A0%95%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">행정학</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=350.1&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%96%89%EC%A0%95%EA%B4%80%EB%A6%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">행정관리</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=350.3&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%B8%EC%82%AC%ED%96%89%EC%A0%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">인사행정</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=350.7&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B2%BD%EC%B0%B0%ED%96%89%EC%A0%95%28%EC%B9%98%EC%95%88%ED%96%89%EC%A0%95%29&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">경찰행정(치안행정)</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=350.8&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%86%8C%EB%B0%A9%EB%B0%A9%EC%9E%AC%ED%96%89%EC%A0%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">소방방재행정</a></li>
+                </ul>
+              </li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=351&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%95%84%EC%8B%9C%EC%95%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">아시아</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=352&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9C%A0%EB%9F%BD&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">유럽</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=353&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%95%84%ED%94%84%EB%A6%AC%EC%B9%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">아프리카</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=354&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B6%81%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">북아메리카</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=355&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%82%A8%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">남아메리카</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=356&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%98%A4%EC%84%B8%EC%95%84%EB%8B%88%EC%95%84%2C+%EC%96%91%EA%B7%B9%EC%A7%80%EB%B0%A9&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">오세아니아, 양극지방</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=357&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%BC%EB%B0%98%EC%A7%80%EC%97%AD&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">일반지역</a>            
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=359.1&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%95%9C%EA%B5%AD+%EC%A7%80%EB%B0%A9%EC%9E%90%EC%B9%98+%EB%B0%8F+%ED%96%89%EC%A0%95+%EC%9D%BC%EB%B0%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">한국 지방자치 및 행정 일반</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=36&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B2%95%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">법학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=360&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B2%95%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">법학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=361&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%AD%EC%A0%9C%EB%B2%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">국제법</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=362&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%97%8C%EB%B2%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">헌법</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=363&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%96%89%EC%A0%95%EB%B2%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">행정법</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=364&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%98%95%EB%B2%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">형법</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=365&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%AF%BC%EB%B2%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">민법</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=365.9&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%AC%B4%ED%98%95%EC%9E%AC%EC%82%B0%EA%B6%8C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">무형재산권</a></li>
+                </ul>
+              </li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=366&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%83%81%EB%B2%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">상법</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=367&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%EB%B2%95%EC%A0%9C%EB%8F%84%EB%B0%8F%EC%86%8C%EC%86%A1%EB%B2%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사법제도및소송법</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=368&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B8%B0%ED%83%80%EC%A0%9C%EB%B2%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">기타제법</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=368.1&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%ED%9A%8C%EB%B2%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사회법</a></li>
+                </ul>
+              </li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=369&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B0%81%EA%B5%AD+%EB%B2%95+%EB%B0%8F+%EC%98%88%EA%B7%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">각국 법 및 예규</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=37&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%90%EC%9C%A1%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">교육학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=370&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%90%EC%9C%A1%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">교육학</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=370.1&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%90%EC%9C%A1%EC%B2%A0%ED%95%99+%EB%B0%8F+%EC%9D%B4%EB%A1%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">교육철학 및 이론</a></li>
+                </ul>
+              </li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=371&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%90%EC%9C%A1%EC%A0%95%EC%B1%85%EB%B0%8F%ED%96%89%EC%A0%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">교육정책및행정</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=371.3&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%BC%EB%B0%98+%EA%B5%90%EC%9C%A1%ED%96%89%EC%A0%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">일반 교육행정</a></li>
+                </ul>
+              </li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=372&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%95%99%EA%B5%90+%ED%96%89%EC%A0%95+%EB%B0%8F+%EA%B2%BD%EC%98%81%2C+%EB%B3%B4%EA%B1%B4+%EB%B0%8F+%EA%B5%90%EC%9C%A1+%EC%A7%80%EB%8F%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">학교 행정 및 경영, 보건 및 교육 지도</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=373&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%95%99%EC%8A%B5%EC%A7%80%EB%8F%84%2C%EA%B5%90%EC%9C%A1%EB%B0%A9%EB%B2%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">학습지도,교육방법</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=374&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%90%EC%9C%A1%EA%B3%BC%EC%A0%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">교육과정</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=375&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9C%A0%EC%95%84%EB%B0%8F%EC%B4%88%EB%93%B1%EA%B5%90%EC%9C%A1&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">유아및초등교육</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=375.1&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9C%A0%EC%95%84%EA%B5%90%EC%9C%A1%2C+%EC%B7%A8%ED%95%99+%EC%A0%84+%EA%B5%90%EC%9C%A1&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">유아교육, 취학 전 교육</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=375.2&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B4%88%EB%93%B1%EA%B5%90%EC%9C%A1&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">초등교육</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=375.4&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B4%88%EB%93%B1%EA%B5%90%EC%9C%A1%EA%B3%BC%EC%A0%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">초등교육과정</a></li>
+                </ul>
+              </li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=376&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A4%91%EB%93%B1%EA%B5%90%EC%9C%A1&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">중등교육</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=376.4&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A4%91%EB%93%B1%EA%B5%90%EC%9C%A1%EA%B3%BC%EC%A0%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">중등교육과정</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=376.5&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A4%91%ED%95%99%EA%B5%90%EA%B5%90%EC%9C%A1&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">중학교교육</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=376.6&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90%EA%B5%90%EC%9C%A1&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">고등학교교육</a></li>
+                </ul>
+              </li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=377&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8C%80%ED%95%99%2C%EC%A0%84%EB%AC%B8%2C%EA%B3%A0%EB%93%B1%EA%B5%90%EC%9C%A1&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">대학,전문,고등교육</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=378&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%8F%89%EC%83%9D%EA%B5%90%EC%9C%A1&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">평생교육</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=379&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%8A%B9%EC%88%98%EA%B5%90%EC%9C%A1&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">특수교육</a>
+                <ul class="sch_depth sch_list_depth04">
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=376.4&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A4%91%EB%93%B1%EA%B5%90%EC%9C%A1%EA%B3%BC%EC%A0%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">중등교육과정</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=376.5&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A4%91%ED%95%99%EA%B5%90%EA%B5%90%EC%9C%A1&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">중학교교육</a></li>
+                  <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=379.1&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9E%A5%EC%95%A0%EC%9D%B8%EA%B5%90%EC%9C%A1&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">장애인교육</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=38&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%92%8D%EC%8A%B5%2C+%EC%98%88%EC%A0%88%2C+%EB%AF%BC%EC%86%8D%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">풍습, 예절, 민속학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=380&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%92%8D%EC%8A%B5%2C+%EC%98%88%EC%A0%88%2C+%EB%AF%BC%EC%86%8D%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">풍습, 예절, 민속학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=381&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%98%EC%8B%9D%EC%A3%BC%EC%9D%98%ED%92%8D%EC%8A%B5&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">의식주의풍습</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=382&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%97%B0%EB%A0%B9%EB%B3%84%2C+%EC%84%B1%EB%B3%84%2C+%EC%8B%A0%EB%B6%84%EB%B3%84+%EC%82%AC%ED%9A%8C%EA%B3%84%EC%B8%B5%EC%9D%98+%ED%92%8D%EC%8A%B5&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">연령별, 성별, 신분별 사회계층의 풍습</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=383&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%ED%9A%8C%EC%83%9D%ED%99%9C%EC%9D%98%ED%92%8D%EC%8A%B5&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사회생활의풍습</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=384&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B4%80%ED%98%BC%EC%83%81%EC%A0%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">관혼상제</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=385&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%98%88%EC%A0%88&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">예절</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=386&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B6%95%EC%A0%9C%2C%EC%84%B8%EC%8B%9C%ED%92%8D%EC%86%8D&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">축제,세시풍속</a></li>              
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=388&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%AF%BC%EC%86%8D%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">민속학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=389&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%AC%B8%ED%99%94%EC%9D%B8%EB%A5%98%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">문화인류학</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=39&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%AD%EB%B0%A9%2C%EA%B5%B0%EC%82%AC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">국방,군사학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=390&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%AD%EB%B0%A9%2C%EA%B5%B0%EC%82%AC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">국방,군사학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=391&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%B0%EC%82%AC%ED%96%89%EC%A0%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">군사행정</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=392&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A0%84%EB%9E%B5%2C%EC%A0%84%EC%88%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">전략,전술</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=393&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%B0%EC%82%AC%EA%B5%90%EC%9C%A1+%EB%B0%8F+%ED%9B%88%EB%A0%A8&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">군사교육 및 훈련</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=394&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%B0%EC%82%AC%EC%8B%9C%EC%84%A4+%EB%B0%8F+%EC%9E%A5%EB%B9%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">군사시설 및 장비</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=395&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%B0%ED%8A%B9%EC%88%98%EA%B8%B0%EC%88%A0%EA%B7%BC%EB%AC%B4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">군특수기술근무</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=396&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9C%A1%EA%B5%B0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">육군</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=397&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%95%B4%EA%B5%B0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">해군</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=398&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B3%B5%EA%B5%B0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">공군</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=399&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B3%A0%EB%8C%80%EB%B3%91%EB%B2%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">고대병법</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=4&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9E%90%EC%97%B0%EA%B3%BC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">자연과학</a>
+        <ul class="sch_depth sch_list_depth02">
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=40&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9E%90%EC%97%B0%EA%B3%BC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">자연과학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=400&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9E%90%EC%97%B0%EA%B3%BC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">자연과학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=401&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B2%A0%ED%95%99+%EB%B0%8F+%EC%9D%B4%EB%A1%A0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">철학 및 이론</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=402&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9E%A1%EC%A0%80%28%ED%8E%B8%EB%9E%8C%2C%EC%A0%9C%ED%91%9C%2C%EC%84%9C%EC%A7%80%2C%EC%9D%B8%EB%AA%85%EB%A1%9D%29&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">잡저(편람,제표,서지,인명록)</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=403&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%AC%EC%A0%84%2C+%EB%B0%B1%EA%B3%BC%EC%82%AC%EC%A0%84&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">사전, 백과사전</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=404&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B0%95%EC%97%B0%EC%A7%91%2C%EC%88%98%ED%95%84%EC%A7%91%2C%EC%97%B0%EC%84%A4%EB%AC%B8%EC%A7%91&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">강연집,수필집,연설문집</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=405&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%97%B0%EC%86%8D%EA%B0%84%ED%96%89%EB%AC%BC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">연속간행물</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=406&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%95%99%ED%9A%8C%2C%EB%8B%A8%EC%B2%B4%2C%EA%B8%B0%EA%B4%80%2C%ED%9A%8C%EC%9D%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">학회,단체,기관,회의</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=407&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A7%80%EB%8F%84%EB%B2%95%2C%EC%97%B0%EA%B5%AC%EB%B2%95%EB%B0%8F%EA%B5%90%EC%9C%A1%2C%EA%B5%90%EC%9C%A1%EC%9E%90%EB%A3%8C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">지도법,연구법및교육,교육자료</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=408&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A0%84%EC%A7%91%2C%EC%B4%9D%EC%84%9C&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">전집,총서</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=409&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B3%BC%ED%95%99%EC%82%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">과학사</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=41&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%88%98%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">수학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=410&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%88%98%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">수학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=411&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%B0%EC%88%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">산수</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=412&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%8C%80%EC%88%98%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">대수학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=413&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%86%B5%EA%B3%84%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">통계학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=414&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%95%B4%EC%84%9D%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">해석학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=415&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B8%B0%ED%95%98%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">기하학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=416&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9C%84%EC%83%81%EC%88%98%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">위상수학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=417&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%82%BC%EA%B0%81%EB%B2%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">삼각법</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=418&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%95%B4%EC%84%9D%EA%B8%B0%ED%95%98%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">해석기하학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=419&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B8%B0%ED%83%80+%EC%82%B0%EB%B2%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">기타 산법</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=42&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%AC%BC%EB%A6%AC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">물리학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=420&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%AC%BC%EB%A6%AC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">물리학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=421&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B3%A0%EC%B2%B4%EC%97%AD%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">고체역학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=422&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9C%A0%EC%B2%B4%EC%97%AD%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">유체역학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=423&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B8%B0%EC%B2%B4%EC%97%AD%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">기체역학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=424&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%8C%ED%96%A5%ED%95%99%2C%EC%A7%84%EB%8F%99%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">음향학,진동학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=425&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B4%91%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">광학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=426&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%97%B4%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">열학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=427&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A0%84%EA%B8%B0%ED%95%99%EB%B0%8F%EC%A0%84%EC%9E%90%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">전기학및전자학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=428&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9E%90%EA%B8%B0&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">자기</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=429&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%98%84%EB%8C%80%EB%AC%BC%EB%A6%AC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">현대물리학</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=43&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%99%94%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">화학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=430&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%99%94%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">화학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=431&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%B4%EB%A1%A0%ED%99%94%ED%95%99%EA%B3%BC%EB%AC%BC%EB%A6%AC%ED%99%94%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">이론화학과물리화학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=432&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%99%94%ED%95%99%EC%8B%A4%ED%97%98%EC%8B%A4%2C%EA%B8%B0%EA%B8%B0%2C%EC%8B%9C%EC%84%A4&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">화학실험실,기기,시설</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=433&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%B6%84%EC%84%9D%ED%99%94%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">분석화학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=434&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%95%A9%EC%84%B1%ED%99%94%ED%95%99+%EC%9D%BC%EB%B0%98&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">합성화학 일반</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=435&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EB%AC%B4%EA%B8%B0%ED%99%94%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">무기화학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=436&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B8%88%EC%86%8D%EC%9B%90%EC%86%8C%EC%99%80%EA%B7%B8%ED%99%94%ED%95%A9%EB%AC%BC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">금속원소와그화합물</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=437&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9C%A0%EA%B8%B0%ED%99%94%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">유기화학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=438&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B3%A0%EB%A6%AC%ED%98%95%ED%99%94%ED%95%A9%EB%AC%BC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">고리형화합물</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=439&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B3%A0%EB%B6%84%EC%9E%90%ED%99%94%ED%95%A9%EB%AC%BC%EA%B3%BC%EA%B8%B0%ED%83%80%EC%9C%A0%EA%B8%B0%EB%AC%BC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">고분자화합물과기타유기물</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=44&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B2%9C%EB%AC%B8%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">천문학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=440&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B2%9C%EB%AC%B8%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">천문학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=441&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%B4%EB%A1%A0%EC%B2%9C%EB%AC%B8%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">이론천문학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=442&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%8B%A4%EC%A7%80%EC%B2%9C%EB%AC%B8%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">실지천문학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=443&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B8%B0%EC%88%A0%EC%B2%9C%EB%AC%B8%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">기술천문학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=445&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A7%80%EA%B5%AC&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">지구</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=446&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%B8%A1%EC%A7%80%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">측지학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=447&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%95%AD%ED%95%B4%EC%B2%9C%EB%AC%B8%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">항해천문학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=448&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%97%AD%EB%B2%95%2C%EC%B8%A1%EC%8B%9C%EB%B2%95&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">역법,측시법</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=449&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B0%81%EA%B5%AD%EC%9D%98+%EC%97%AD&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">각국의 역</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=45&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A7%80%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">지학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=450&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A7%80%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">지학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=451&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A7%80%EA%B5%AC%EB%AC%BC%EB%A6%AC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">지구물리학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=452&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A7%80%ED%98%95%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">지형학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=453&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B8%B0%EC%83%81%ED%95%99%2C%EA%B8%B0%ED%9B%84%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">기상학,기후학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=454&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%ED%95%B4%EC%96%91%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">해양학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=455&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B5%AC%EC%A1%B0%EC%A7%80%EC%A7%88%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">구조지질학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=456&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%A7%80%EC%82%AC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">지사학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=457&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B3%A0%EC%83%9D%EB%AC%BC%ED%95%99%28%ED%99%94%EC%84%9D%ED%95%99%29&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">고생물학(화석학)</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=458&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%9D%91%EC%9A%A9%EC%A7%80%EC%A7%88%ED%95%99%EC%9D%BC%EB%B0%98%EB%B0%8F%EA%B4%91%EC%83%81%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">응용지질학일반및광상학</a></li>
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=459&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EC%95%94%EC%84%9D%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30">암석학</a></li>
+            </ul>
+          </li>
+          <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=46&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B4%91%EB%AC%BC%ED%95%99&amp;sort=iregdate&amp;desc=desc&amp;pageSize=30" class="">광물학</a>
+            <ul class="sch_depth sch_list_depth03">
+              <li><a href="/NL/contents/search.do?detailSearch=true&amp;gu2=kdc&amp;guCode2=460&infoTxt=%EC%A3%BC%EC%A0%9C%EC%96%B4%7C%EA%B4%91%EB%AC%BC

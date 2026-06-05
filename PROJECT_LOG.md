@@ -4756,3 +4756,92 @@ Next route:
   expectations are clear.
 - Prioritize non-US/non-Western-European source families with deterministic
   metadata routes before exploratory platform crawling.
+
+## 2026-06-05 — Source candidate probe v1 and contemporary scan
+
+Ran the first rights-safe source-level probe over the global edge discovery
+registry, then generated and probed a separate 1990-2026 contemporary /
+independent-source candidate set. This round is source discovery and adapter
+planning only; it does not mint publication records, store source images, or
+upgrade any image state from heuristic evidence.
+
+Generated:
+
+- `scripts/probe_global_edge_discovery_candidates_v1.py`
+- `scripts/generate_contemporary_source_scan_1990_2026_v1.py`
+- `data/global_edge_discovery_probe_v1.csv`
+- `data/global_edge_discovery_probe_metrics_v1.csv`
+- `docs/capture/GLOBAL_EDGE_DISCOVERY_PROBE_v1.md`
+- `data/contemporary_source_scan_candidates_1990_2026_v1.csv`
+- `data/contemporary_source_scan_probe_1990_2026_v1.csv`
+- `data/contemporary_source_scan_metrics_1990_2026_v1.csv`
+- `docs/capture/CONTEMPORARY_SOURCE_SCAN_1990_2026_v1.md`
+
+Global edge probe test calculation:
+
+- 81 candidate sources were probed at source/page level.
+- Probe status: 60 `ok`, 11 `failed`, 10 `http_error`.
+- Review priority: 24 `P1 adapter build`, 20 `P1 text/source enrichment`, 21
+  `P2 retry/manual verification`, 11 `P2 discovery lead queue`, and 5 `P2
+  manual source review`.
+- Detected protocol families: IIIF 18, RSS/Atom 15, Static JS App 14, JSON-LD
+  13, WordPress REST 11, PDF 5, GraphQL 4, ArchiveSpace/EAD 3, OAI-PMH 1, and
+  Kramerius 1.
+
+Contemporary 1990-2026 scan test calculation:
+
+- 65 contemporary, platform, independent, regional, and edge-source candidates
+  were generated and probed.
+- Probe status: 50 `ok`, 11 `failed`, 4 `http_error`.
+- Macro-region distribution: Global 13, East Asia 12, Southeast Asia 10, Latin
+  America 8, South Asia 5, MENA 5, Africa 5, Oceania 3, Eastern Europe 2,
+  Europe 1, North America 1.
+- Review priority: 22 `P1 adapter build`, 18 `P1 text/source enrichment`, 15
+  `P2 retry/manual verification`, 8 `P2 discovery lead queue`, and 2 `P2
+  manual source review`.
+- Detected protocol families: Static JS App 17, JSON-LD 15, RSS/Atom 14,
+  WordPress REST 14, IIIF 13, PDF 5, GraphQL 3, ArchiveSpace/EAD 2, and
+  OAI-PMH 1.
+
+Important failure correction:
+
+- The first contemporary probe run was invalid because `raw_dir` was treated as
+  a relative path while the script tried to compute a workspace-relative report
+  path. That made the run look like an all-source failure even though the issue
+  was script-local path handling.
+- The probe script now resolves input, output, metrics, report, and raw
+  evidence directories against the workspace root before writing files.
+- The corrected contemporary probe was rerun with external network access and
+  produced the valid metrics above.
+
+Constraints preserved:
+
+- Probe output stores page/source text evidence and headers only. It does not
+  download image binaries.
+- Detected IIIF, JSON-LD, WordPress, RSS, GraphQL, static app markers, PDFs, or
+  platform traces are adapter hints, not rights clearance.
+- `IMG03` remains available only when authoritative item-level source metadata
+  provides open/reusable evidence. Discovery, visual similarity, ToS parsing,
+  social platform metadata, and LLM notes cannot upgrade an item to `IMG01` or
+  `IMG03`.
+- Behance, Pinterest, Cargo, Tumblr, Are.na, social media references, and
+  repost networks remain discovery queues unless they resolve to a reviewed
+  original source record.
+- Impact or source-priority scoring remains an internal triage signal only. It
+  cannot decide scholarly authority, public inclusion, authorship, or rights.
+
+Next route:
+
+- Build protocol-family adapters before single-site crawlers: WordPress/REST,
+  JSON-LD, RSS/Atom, IIIF, OAI-PMH, PDF text/link extraction, and cautious
+  static/headless metadata probing.
+- Promote P1 contemporary candidates first where source text, source terms, and
+  stable records are available: Another Graphic, Design Reviewed, Letterform
+  Archive Blog, Fonts In Use, JAGDA, Tokyo TDC, Tokyo ADC, Ginza Graphic
+  Gallery, ddd Gallery, Korea Design DB, NLB/BiblioAsia, Roots.sg, Malaysian
+  Design Archive, Grafis Nusantara, Arabic Design Archive, Arab Image
+  Foundation, African Activist Archive, SAHA, Fundación IDA, Diseño Nacional,
+  Gráfica Latina, and La Patria.
+- Retry or replace sources with DNS, SSL, 403, 429, or timeout failures through
+  alternate endpoints or manual source-registry records rather than treating
+  them as absent.

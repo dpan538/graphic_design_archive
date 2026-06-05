@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="fr">
+<head>
+            <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="msapplication-TileColor" content="#00aba9"/>
+        <meta name="theme-color" content="#ffffff"/>
+        <meta name="description" content="ISIDORE est un moteur de recherche permettant l&#039;accès aux données numériques des sciences humaines et sociales (SHS)."/>
+        <meta name="google-site-verification" content="-cFZQSx7nSHHTc7nmlcSRZVnjRH0y7QwT-1bxKOmaLo" />
+                <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@isidore___" />
+        <meta name="twitter:creator" content="@isidore___" />
+        <meta name="twitter:title" content="ISIDORE | isidore.science" />
+        <meta name="twitter:description" content="Votre assistant de recherche en Sciences Humaines et Sociales" />
+        <meta name="twitter:image" content="https://isidore.science/apple-touch-icon.png" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+    <link rel="search" type="application/opensearchdescription+xml" title="ISIDORE" href="/opensearch"/>
+    <link rel="manifest" href="/site.webmanifest"/>
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
+
+    <title>
+        ISIDORE : Votre assistant de recherche en SHS | isidore.science
+    </title>
+            <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/css/slick-1.8.1.css"/>
+        <link rel="stylesheet" href="/build/app.8239f60d.css">
+    
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+    window.addEventListener("load", function(){
+
+        // find cookie by name
+        function getCookie(name) {
+            let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return match ? decodeURIComponent(match[2]) : null;
+        }
+
+        // remove cookieconsent cookie when user deny or dismiss so that popup re-appear
+        const status = getCookie("cookieconsent_status")
+        if(status === "deny" || status === "dismiss"){
+            const cookieName = 'cookieconsent_status='+status +"; "
+            const expireDate = "expires=Thu, 01 Jan 1970 00:00:00 UTC;"
+            document.[REDACTED_SECRET_SIGNAL] + expireDate
+        }
+
+        window.cookieconsent.initialise({
+            palette: {
+                popup: {
+                    "background": "#575856",
+                    "text": "#ffffff"
+                },
+                button: {
+                    "background": "#1894d9",
+                    "text": "#ffffff"
+                }
+            },
+            position: "top",
+            static: true,
+            compliance: {
+                'info': '<div class="cc-compliance">' +
+                    '<a aria-label="allow cookie message" role="button" tabindex="0" class="cc-btn cc-allow"> Autoriser</a>' +
+                    '<a aria-label="deny cookie message" href="https://www.huma-num.fr/" role="button" tabindex="0" class="cc-btn cc-deny">Refuser</a>' +
+                    '</div>',
+            },
+            content: {
+                message: "Veuillez accepter les conditions d&#039;utilisation et les cookies d&#039;ISIDORE pour poursuivre votre navigation",
+                link: "En savoir plus",
+                href: "/cgu",
+            }
+        })});
+</script>
+</head>
+<body role="document" class="not-connected ">
+    <div id="page-homepage">
+        <nav id="navbar" class="navbar flex-column">
+            <div class="container flex-nowrap">
+                    <span class="navbar-brand">&nbsp;</span>
+                <div class="flex-grow-1 px-2 px-sm-4">
+                                    </div>
+
+                <div class="navbar-nav float-none float-md-right mx-0" style="min-width:70px">
+                                            <link rel="stylesheet" href="/css/intro-2.9.3.min.css">
+                        <script src="/js/intro-2.9.3.min.js"></script>
+                        <div class="d-none d-sm-inline nav-item navbar-info" data-toggle="popover"><a href="javascript:void(0)" class="introjs-btn icon-rounded"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Calque_1"
+   x="0px"
+   y="0px"
+   width="10.414"
+   height="15.854"
+   viewBox="1.542 0.46 11.413999 19.853999"
+   enable-background="new 1.542 0.46 160.044 37.081"
+   xml:space="preserve"
+   sodipodi:docname="isidore.svg"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"><metadata
+     id="metadata13"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs11" /><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1228"
+     inkscape:window-height="835"
+     id="namedview9"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="13.46668"
+     inkscape:cx="-10.419979"
+     inkscape:cy="12.387807"
+     inkscape:window-x="530"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Calque_1" /><g
+     id="g6"
+     transform="translate(-57.882996,-8.0364096)"><g
+       id="g4"><path
+         d="m 69.362,28.397 h -8.463 c -0.823,0 -1.474,-0.652 -1.474,-1.475 0,-0.821 0.651,-1.473 1.474,-1.473 h 2.636 v -7.086 h -2.247 c -0.822,0 -1.501,-0.652 -1.501,-1.476 0,-0.822 0.68,-1.475 1.501,-1.475 h 3.843 c 0.873,0 1.596,0.726 1.596,1.597 v 8.441 h 2.636 c 0.823,0 1.476,0.651 1.476,1.474 -0.001,0.822 -0.654,1.473 -1.477,1.473 z M 65.036,13.428 c -1.355,0 -2.442,-1.089 -2.442,-2.443 0,-1.354 1.088,-2.442 2.442,-2.442 1.354,0 2.441,1.09 2.441,2.442 0,1.354 -1.088,2.443 -2.441,2.443 z"
+         id="path2"
+         inkscape:connector-curvature="0"
+         style="fill:#1894d9" /></g></g></svg></a></div>
+                                        <div class="nav-item navbar-lang ml-0 mr-3 ml-sm-4 mr-sm-3" data-toggle="popover" data-html-content=".navbar-lang-content"><a href="#" class="icon-rounded">fr </a></div>
+                    <div class="nav-item navbar-menu" data-toggle="popover" data-html-content=".navbar-menu-content" style="position:relative;">
+                                                    <div data-step="3" data-intro="Pour accéder à votre espace personnel et à votre assistant de recherche, connectez-vous!" class="menu-bar">
+                                <span class="line"></span>
+                                <span class="line"></span>
+                                <span class="line"></span>
+                            </div>
+                                                                    </div>
+                                        <div class="navbar-lang-content hide">
+    <ul class="list-group">
+                    <li class="list-group-item text-left"><a href="/lang/fr" class="font-bold size-regular color-darkblue">Français (fr)</a></li>
+                    <li class="list-group-item text-left"><a href="/lang/en" class="font-regular size-regular color-darkblue">English (en)</a></li>
+                    <li class="list-group-item text-left"><a href="/lang/es" class="font-regular size-regular color-darkblue">Español (es)</a></li>
+            </ul>
+</div>                                        <div class="navbar-menu-content hide dropdown-menu">
+
+    <li class="dropdown-item color-darkblue font-regular size-regular mt-3 mb-3">
+        <div class="row">
+            <div class="col-4 offset-1 color-darkblue">Thème</div>
+            <div class="col-2">
+                <button class="isibtn isitheme" data-id="white" data-toggle="tooltip"
+                        title="Clair"><span
+                            class="theme-white  active "></span></button>
+            </div>
+            <div class="col-2">
+                <button class="isibtn isitheme" data-id="dark" data-toggle="tooltip"
+                        title="Sombre"><span
+                            class="theme-dark "></span></button>
+            </div>
+        </div>
+    </li>
+    <div class="divider"></div>
+                                        <a href="/lemon/connect" class="dropdown-item color-darkblue font-regular size-regular mt-3 mb-3">
+                                            <i class="isicon isicon-sign-in-outline mr-3"></i>
+                                        Se connecter
+
+                                    </a>
+                                            <div class="divider"></div>
+                                                <a href="/lemon/connect?referer=/u/library" data-toggle="tooltip"
+                   data-placement="left" title="Se connecter pour avoir accès à  « Mes bibliothèques »"
+                   class="dropdown-item color-lightgrey font-regular size-regular mt-3 mb-3"><i
+                            class="isicon isicon-bookmark-outline mr-3"></i> Mes bibliothèques</a>
+                                                            <a href="/u/history" class="dropdown-item color-darkblue font-regular size-regular mt-3 mb-3">
+                                            <i class="isicon isicon-my-history-outline mr-3"></i>
+                                        Mon historique
+
+                                    </a>
+                                                            <a href="/lemon/connect?referer=/u/search" data-toggle="tooltip"
+                   data-placement="left" title="Se connecter pour avoir accès à  « Mes requêtes »"
+                   class="dropdown-item color-lightgrey font-regular size-regular mt-3 mb-3"><i
+                            class="isicon isicon-my-queries mr-3"></i> Mes requêtes</a>
+                                                            <a href="/lemon/connect?referer=/u/author" data-toggle="tooltip"
+                   data-placement="left" title="Se connecter pour avoir accès à  « Mes auteurs »"
+                   class="dropdown-item color-lightgrey font-regular size-regular mt-3 mb-3"><i
+                            class="isicon isicon-my-authors mr-3"></i> Mes auteurs</a>
+                                                            <a href="/lemon/connect?referer=/u/alerts" data-toggle="tooltip"
+                   data-placement="left" title="Se connecter pour avoir accès à  « Mes alertes »"
+                   class="dropdown-item color-lightgrey font-regular size-regular mt-3 mb-3"><i
+                            class="isicon isicon-my-alerts mr-3"></i> Mes alertes</a>
+                        </div>
+
+                </div>
+            </div>
+                    </nav>
+
+        <div id="container">
+            
+    <div class="container" role="main">
+        <div class="row justify-content-center">
+            <div class="col-8 col-md-4 text-center mt-5">
+                                    <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="logo-isidore" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   viewBox="1.542 0.46 160.044 37.081" enable-background="new 1.542 0.46 160.044 37.081"
+   xml:space="preserve">
+<g>
+  <g>
+    <path fill="#28ADE1" d="M33.916,2.749c-7.04,0-13.221,4.451-15.649,10.682c-0.473-1.281-4.57-11.438-16.491-12.97
+      c0,0-2.47,11.301,8.635,18.54c-11.104,7.239-8.635,18.542-8.635,18.542c11.414-1.466,15.658-10.839,16.405-12.759
+      c2.365,6.343,8.606,10.901,15.733,10.901c9.082,0,16.467-7.382,16.467-16.472C50.381,10.134,42.996,2.749,33.916,2.749z
+       M33.916,29.174c-5.492,0-9.958-4.468-9.958-9.959c0-5.49,4.468-9.958,9.958-9.958s9.965,4.468,9.965,9.958
+      C43.88,24.706,39.408,29.174,33.916,29.174z"/>
+  </g>
+  <path class="svg-blue" fill="#010101" d="M33.926,15.462c-2.075,0-3.753,1.689-3.753,3.758c0,2.069,1.679,3.757,3.753,3.757
+    c2.068,0,3.752-1.688,3.752-3.757C37.678,17.15,35.995,15.462,33.926,15.462z"/>
+</g>
+<g>
+  <g>
+    <path class="svg-black" fill="#010101" d="M69.362,28.397h-8.463c-0.823,0-1.474-0.652-1.474-1.475c0-0.821,0.651-1.473,1.474-1.473h2.636v-7.086
+      h-2.247c-0.822,0-1.501-0.652-1.501-1.476c0-0.822,0.68-1.475,1.501-1.475h3.843c0.873,0,1.596,0.726,1.596,1.597v8.441h2.636
+      c0.823,0,1.476,0.651,1.476,1.474C70.838,27.746,70.185,28.397,69.362,28.397z M65.036,13.428c-1.355,0-2.442-1.089-2.442-2.443
+      c0-1.354,1.088-2.442,2.442-2.442s2.441,1.09,2.441,2.442C67.477,12.339,66.389,13.428,65.036,13.428z"/>
+    <path class="svg-black" fill="#010101" d="M79.134,28.518c-2.321,0-4.715-0.846-5.755-1.935c-0.338-0.339-0.484-0.75-0.484-1.091
+      c0-0.651,0.484-1.354,1.258-1.354c1.164,0,1.33,1.912,5.295,1.912c1.5,0,2.903-0.435,2.903-1.474c0-0.364-0.242-0.823-0.653-0.992
+      c-0.315-0.12-0.799-0.241-1.523-0.36c-3.58-0.606-5.005-1.019-5.756-1.693c-0.75-0.651-1.04-1.377-1.04-2.296
+      c0-1.402,1.04-3.942,5.733-3.942c0.967,0,3.625,0.218,4.739,1.33c0.291,0.289,0.435,0.604,0.435,1.015
+      c0,0.775-0.484,1.233-1.208,1.233c-0.968,0-1.112-1.207-3.966-1.207c-1.33,0-2.66,0.434-2.66,1.402
+      c0,0.337,0.218,0.555,0.315,0.651c0.579,0.579,4.859,0.822,6.527,1.523c0.461,0.195,0.825,0.411,1.163,0.773
+      c0.605,0.628,0.968,1.475,0.968,2.469C85.425,27.623,82.45,28.518,79.134,28.518z"/>
+    <path class="svg-black" fill="#010101" d="M98.024,28.397H89.56c-0.822,0-1.475-0.652-1.475-1.475c0-0.821,0.653-1.473,1.475-1.473h2.638v-7.086
+      h-2.25c-0.823,0-1.499-0.652-1.499-1.476c0-0.822,0.676-1.475,1.499-1.475h3.844c0.87,0,1.597,0.726,1.597,1.597v8.441h2.636
+      c0.821,0,1.477,0.651,1.477,1.474C99.501,27.746,98.846,28.397,98.024,28.397z M93.696,13.428c-1.354,0-2.441-1.089-2.441-2.443
+      c0-1.354,1.089-2.442,2.441-2.442c1.354,0,2.44,1.09,2.44,2.442C96.137,12.339,95.051,13.428,93.696,13.428z"/>
+    <path class="svg-black" fill="#010101" d="M111.109,12.508c0-0.871,0.726-1.596,1.597-1.596c0.872,0,1.595,0.725,1.595,1.596v14.318
+      c0,0.895-0.578,1.597-1.523,1.597c-1.207,0-1.499-1.112-1.499-1.474c-0.822,0.845-2.225,1.572-3.919,1.572
+      c-3.698,0-6.288-2.952-6.288-6.627c0-3.725,2.564-6.628,6.288-6.628c1.574,0,2.927,0.679,3.748,1.501L111.109,12.508
+      L111.109,12.508z M107.676,17.95c-2.178,0-3.41,1.718-3.41,3.942c0,2.225,1.232,3.942,3.41,3.942c2.174,0,3.434-1.766,3.434-3.942
+      C111.109,19.716,109.853,17.95,107.676,17.95z"/>
+    <path class="svg-black" fill="#010101" d="M124.896,28.518c-3.653,0-6.601-2.952-6.601-6.6c0-3.677,2.95-6.628,6.601-6.628
+      c3.675,0,6.628,2.951,6.628,6.628C131.522,25.567,128.571,28.518,124.896,28.518z M124.896,17.973
+      c-2.175,0-3.409,1.766-3.409,3.944c0,2.175,1.234,3.918,3.409,3.918c2.176,0,3.436-1.741,3.436-3.918
+      C128.329,19.74,127.072,17.973,124.896,17.973z"/>
+    <path class="svg-black" fill="#010101" d="M145.285,19.618c-1.09,0-1.187-1.645-3.362-1.645c-2.056,0-3.217,1.885-3.217,3.652v5.177
+      c0,0.895-0.698,1.595-1.595,1.595c-0.871,0-1.596-0.7-1.596-1.595v-9.82c0-0.873,0.725-1.597,1.596-1.597
+      c0.681,0,1.502,0.557,1.502,1.306c0.65-0.724,1.983-1.4,3.65-1.4c1.525,0,4.45,0.99,4.45,2.902
+      C146.711,19.039,146.131,19.618,145.285,19.618z"/>
+    <path class="svg-black" fill="#010101" d="M161.586,21.722c0,0.7-0.606,1.401-1.452,1.401h-7.908c0,1.329,1.163,2.853,3.289,2.853
+      c1.572,0,2.174-0.7,2.709-1.159c0.193-0.17,0.577-0.391,0.989-0.391c0.752,0,1.355,0.534,1.355,1.379
+      c0,0.362-0.12,0.652-0.337,0.92c-0.969,1.088-2.589,1.789-4.644,1.789c-3.821,0-6.53-2.878-6.53-6.602
+      c0-3.843,2.733-6.626,6.433-6.626c3.482,0,6.096,2.78,6.096,6.384V21.722L161.586,21.722z M158.516,20.61
+      c0-1.329-1.186-2.805-2.999-2.805c-2.057,0-3.24,1.477-3.24,2.805H158.516z"/>
+  </g>
+</g>
+</svg>
+
+                    <div class="text-center color-darkgrey size-large font-semibold mt-4">Votre assistant de recherche
+                        <br/> en Sciences Humaines et Sociales</div>
+                            </div>
+        </div>
+
+        <div class="row justify-content-center mb-4">
+                        <div class="col-10 col-md-8  mt-5">
+                
+<form data-step="1" data-intro="Recherchez dans plusieurs millions de documents SHS venant du monde entier !" id="form_search" class="position-relative" method="get" action="/s">
+            <div class="input-group position-relative ">
+        <div data-step="2" data-intro="Vous pouvez définir d’autres périmètres de recherche : dans les documents, les collections, les référentiels d&#039;ISIDORE" data-position="top" class="input-group-prepend" style="z-index: 1;">
+            <button id="q-space" class="btn input-button dropdown-toggle size-small" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="d-sm-none">D</span>
+                <span class="d-none d-sm-inline">Documents</span>
+            </button>
+            <div class="dropdown-menu">
+                                    <a class="dropdown-item font-regular size-small color-darkgrey" href="#" data-value="document"  data-placeholder="Rechercher dans les 7 910 911 documents de ISIDORE..." >Documents</a>
+                                    <a class="dropdown-item font-regular size-small color-darkgrey" href="#" data-value="source"  data-placeholder="Rechercher dans les 13 229 sources de ISIDORE..." >Sources</a>
+                                    <a class="dropdown-item font-regular size-small color-darkgrey" href="#" data-value="subject"  data-placeholder="Rechercher dans les 945 496 sujets de ISIDORE..." >Sujets</a>
+                            </div>
+        </div>
+
+        
+        <input id="q" autocomplete="off" name="q" type="text" class="typeahead form-control size-small" placeholder=" Rechercher dans les 7 910 911 documents de ISIDORE... " required="required"  />
+                    <div class="input-group-append" style="margin-left:-2px;">
+                <div class="input-group-text">
+                    <span class="vertical-divider"></span>
+                    <button class="isibtn" type="submit"><i class="isicon isicon-search color-darkblue"></i></button>
+                </div>
+            </div>
+            </div>
+    <div id="q-autocomplete" class="hide p-2 position-absolute" ></div>
+</form>                <div id="advanced_search"
+                     class="text-right mt-1">
+                    <a href="/as"
+                       class="color-darkblue size-regular font-italic mr-1">Recherche avancée</a></div>
+            </div>
+        </div>
+
+                    <div class="row justify-content-center">
+                <div class="col-8 text-center mb-4">
+                                            <div class="p-2 mt-3">
+    <div class="font-regular size-regular mt-1">
+                    <h3 class="color-darkblue font-bold size-large">
+                <p>🔴 Information importante !</p>
+
+            </h3>
+            <ul class="mt-1 list-unstyled text-left">
+                <p>En raison de <a href="https://humanum.hypotheses.org/17134">l'arrêt complet des services de l'IR* Huma-Num du 15 juin 20h CEST (18h GMT) au 16 juin 2026 dans l'après-midi</a>, le portail isidore.science, les API, isidore suggestions pour hypotheses.org et le serveur MCP seront inaccessibles à ces dates là. Pour suivre l'actualité de cet arrêt, <a href="https://humanum.hypotheses.org/17134">rendez-vous sur notre carnet de recherche</a>.</p>
+
+            </ul>
+            </div>
+</div>                                    </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-8 col-md-4 text-center">
+                    <button class="btn btn-primary-outline introjs-btn"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Calque_1"
+   x="0px"
+   y="0px"
+   width="10.414"
+   height="15.854"
+   viewBox="1.542 0.46 11.413999 19.853999"
+   enable-background="new 1.542 0.46 160.044 37.081"
+   xml:space="preserve"
+   sodipodi:docname="isidore.svg"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"><metadata
+     id="metadata13"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs11" /><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1228"
+     inkscape:window-height="835"
+     id="namedview9"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="13.46668"
+     inkscape:cx="-10.419979"
+     inkscape:cy="12.387807"
+     inkscape:window-x="530"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Calque_1" /><g
+     id="g6"
+     transform="translate(-57.882996,-8.0364096)"><g
+       id="g4"><path
+         d="m 69.362,28.397 h -8.463 c -0.823,0 -1.474,-0.652 -1.474,-1.475 0,-0.821 0.651,-1.473 1.474,-1.473 h 2.636 v -7.086 h -2.247 c -0.822,0 -1.501,-0.652 -1.501,-1.476 0,-0.822 0.68,-1.475 1.501,-1.475 h 3.843 c 0.873,0 1.596,0.726 1.596,1.597 v 8.441 h 2.636 c 0.823,0 1.476,0.651 1.476,1.474 -0.001,0.822 -0.654,1.473 -1.477,1.473 z M 65.036,13.428 c -1.355,0 -2.442,-1.089 -2.442,-2.443 0,-1.354 1.088,-2.442 2.442,-2.442 1.354,0 2.441,1.09 2.441,2.442 0,1.354 -1.088,2.443 -2.441,2.443 z"
+         id="path2"
+         inkscape:connector-curvature="0"
+         style="fill:#1894d9" /></g></g></svg>
+                        <span>démonstration</span>
+                    </button>
+                </div>
+            </div>
+        
+            </div>
+
+
+                                    <nav id="footer" class="footer text-center  fixed-bottom ">
+                <div class="container-fluid">
+                    <div class="row mx-auto">
+                        <div class="col">
+                            <span class="navbar-text text-center color-darkgrey size-regular font-regular">
+                                <a href="/vocabularies" class="color-darkgrey size-regular font-regular">Référentiels</a> |
+                                <a href="/api" class="color-darkgrey size-regular font-regular">API</a> |
+                                <a href="/about" class="color-darkgrey size-regular font-regular">À propos</a> |
+                                <a href="/legal" class="color-darkgrey size-regular font-regular">Mentions légales</a> |
+                                <a href="/cgu" class="color-darkgrey size-regular font-regular">CGU</a> |
+                                <a href="/personal-data" class="color-darkgrey size-regular font-regular">Données personnelles</a> |
+                                <a href="/cookies" class="color-darkgrey size-regular font-regular">Cookies</a> |
+                                <a href="mailto:isidore@huma-num.fr" class="color-darkgrey size-regular font-regular">Contact</a> |
+                                <a href="/releases" class="color-darkgrey size-regular font-regular">Mises à jour</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            
+        </div>
+    </div>
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/slick-1.8.1.min.js"></script>
+    <script src="/build/runtime.da4fc13b.js"></script><script src="/build/app.f6766d90.js"></script>
+
+    <!-- Matomo -->
+    <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+            var u="https://analyseweb.huma-num.fr/";
+            _paq.push(['setTrackerUrl', u+'matomo.php']);
+            _paq.push(['setSiteId', '133']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+</body>
+</html>

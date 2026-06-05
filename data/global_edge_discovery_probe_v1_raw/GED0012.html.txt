@@ -1,0 +1,1470 @@
+<!--tempalte=20823 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="/template_resource/20235/css/reset.css?v=12233" type="text/css" rel="stylesheet" />
+<link href="/template_resource/20235/css/vivify.min.css" type="text/css" rel="stylesheet" />
+<link href="/template_resource/20235/css/animate.min.css" type="text/css" rel="stylesheet" />
+<link href="/template_resource/20235/css/swiper.min.css" type="text/css" rel="stylesheet" />
+<script src="/template_resource/20235/js/jquery.js" type="text/javaScript"></script>
+<link rel="shortcut icon" href="/template_resource/20186/img/favicon.ico" type="image/x-icon" />
+
+<script type="text/javaScript">    var searchapiBaseUrl = '/search-api/elasticsearch'; var yjBaseUrl = ''</script>
+
+
+
+    <link href="/template_resource/20823/swiper-bundle.min.css" type="text/css" rel="stylesheet" />
+    <link href="/template_resource/20823/index.main.css?v=e231212ww" type="text/css" rel="stylesheet" />
+    <script type="">
+        $(function () {
+            function is_iPad() {
+                var ua = navigator.userAgent.toLowerCase(); if (ua.match(/iPad/i) == "ipad") { return true; } else { return false; }
+            }
+            if (is_iPad) {
+                $('.common-header .common-header-row1,.index-swiper-box-1').css({
+                    'padding': '0 40px',
+                    'box-sizing': 'border-box'
+                })
+                $('.index-search').css({
+                    'padding': '10px 40px 0 40px',
+                    'box-sizing': 'border-box'
+                })
+                $('.index-search ul li.input-bar').css({
+                    'width': '750px'
+                })
+                $('.swiper-container-1').css({
+                    'height': 'auto'
+                })
+            }
+        })
+    </script>
+    <title>首页</title>
+ 
+<script type="text/javascript"> var count_data = [4,0,0];</script></head>
+
+<body>
+    <!-- 头部 | start -->
+<!--标准-->
+<script>
+  $(document).ready(function(){
+  $(".top-dlzc-title").click(function(){
+    $(".top-dlzc").slideToggle(300);
+});
+});
+  $(document).ready(function(){
+  $(".dlzc-gco").click(function(){
+    $(this).css({"color":"#333"});
+  $(".dlzc-dzo").css({"color":"#3398cc"});
+  $(".dzymho").hide();
+  $(".gcmlo").show();
+});
+  $(".dlzc-dzo").click(function(){
+  $(this).css({"color":"#333"});
+  $(".dlzc-gco").css({"color":"#3398cc"});
+  $(".dzymho").show();
+  $(".gcmlo").hide();
+}); 
+  $('.closeo').click(function() {
+      $(".top-dlzc").slideToggle(300);
+});
+});
+</script>
+<!--节庆-->
+<!--<script>
+  $(document).ready(function(){
+  $(".top-dlzc-title").click(function(){
+    $(".top-dlzc").slideToggle(300);
+});
+});
+  $(document).ready(function(){
+  $(".dlzc-gco").click(function(){
+    $(this).css({"color":"#333"});
+  $(".dlzc-dzo").css({"color":"#c3272a"});
+  $(".dzymho").hide();
+  $(".gcmlo").show();
+});
+  $(".dlzc-dzo").click(function(){
+  $(this).css({"color":"#333"});
+  $(".dlzc-gco").css({"color":"#c3272a"});
+  $(".dzymho").show();
+  $(".gcmlo").hide();
+}); 
+  $('.closeo').click(function() {
+      $(".top-dlzc").slideToggle(300);
+});
+});
+</script>-->
+<!--标准-->
+<style>
+  .top-dlzc{color: #666; display: none; width: 360px; height: auto; border: 1px solid #53939C; border-radius: 20px; background: #F1F1F1; position: absolute; z-index: 9999; right: 12%; top: 70px;}
+  .dlzc-title{position: relative; padding: 0 20px; line-height: 56px; font-size: 16px; font-weight: 500; color: #333;}
+  .closeo{display: block; position: absolute; width: 19px; height: 19px; top: 23px; right: 30px; background: url(/template_resource/21998/img/close.png) 0 0 no-repeat; background-size: 100% auto; cursor: pointer;}
+</style>
+<!--节庆-->
+<!--<style>
+  .top-dlzc{color: #666; display: none; width: 360px; height: auto; border: 1px solid #c3272a; border-radius: 20px; background: #fbf8f5; position: absolute; z-index: 9999; right: 12%; top: 70px;}
+  .dlzc-title{position: relative; padding: 0 20px; line-height: 56px; font-size: 16px; font-weight: 500; color: #333;}
+  .closeo{display: block; position: absolute; width: 19px; height: 19px; top: 23px; right: 30px; background: url(/template_resource/20771/img/close-red.png) 0 0 no-repeat; background-size: 100% auto; cursor: pointer;}
+</style>-->
+<div class="common-header">
+  <div class="top-dlzc">
+                <ul>
+                    <li class="dlzc-title">
+            <!--标准-->
+                        <span class="dlzc-dzo" style="cursor: pointer;">馆藏目录</span>　<span style="color: #666">丨</span>　<span class="dlzc-gco" style="color: #3398cc; cursor: pointer;">读者云门户</span>
+            <a href="javascript:void(0)" class="closeo"></a>
+            <!--节庆-->
+            <!--<span class="dlzc-dzo" style="cursor: pointer;">馆藏目录</span>　<span style="color: #666">丨</span>　<span class="dlzc-gco" style="color: #c3272a; cursor: pointer;">读者云门户</span>
+            <a href="javascript:void(0)" class="closeo"></a>-->
+                    </li>
+                    <li class="table dzymho" style="margin: 0 20px; color: #666;">
+                        <p style="font-size: 14px; line-height: 1.8; text-align: justify;">
+                            联机公共目录查询系统提供国家图书馆馆藏目录查询，您可以通过系统实现馆藏目录检索、进行预约、外借和续借等操作。
+                        </p>
+                        <p style="padding: 20px 10px 10px; text-align: right; font-size: 14px;">
+              <!--标准-->
+                            <a style="color: #1395a7;" href="http://opac.nlc.cn/F/?func=file&file_name=login-session" target="_blank">[登录]</a>
+              <!--节庆-->
+              <!--<a style="color: #c3272a;" href="http://opac.nlc.cn/F/?func=file&file_name=login-session" target="_blank">[登录]</a>-->
+                        </p>
+                    </li>
+          <li class="table gcmlo" style="display: none; margin: 0 20px; color: #666;">
+            <p style="font-size: 14px; line-height: 1.8; text-align: justify;">
+                            读者云门户提供国家图书馆来源于自建、商购以及与地方图书馆联合建设和合作建设的数字资源在线阅读（播放）服务，内容涵盖图书、古籍、论文、期刊、音视频等。
+                        </p>
+                        <p style="padding: 20px 10px 10px; text-align: right; font-size: 14px;">
+              <!--标准-->
+                            <a style="color: #1395a7;" href="https://sso1.nlc.cn/sso/jsp/mylib-login.jsp?appId=90037&paramUrl=http%3A%2F%2Fread.nlc.cn%2Fuser%2Findex" target="_blank">[登录]</a>
+              <!--节庆-->
+              <!--<a style="color: #c3272a;" href="https://sso1.nlc.cn/sso/jsp/mylib-login.jsp?appId=90037&paramUrl=http%3A%2F%2Fread.nlc.cn%2Fuser%2Findex" target="_blank">[登录]</a>-->
+                        </p>
+                    </li>
+                </ul>
+            </div>
+    <ul class="common-header-row1 wrap-1280">
+        <li class="logo-bar">
+            <a href="/web/index.shtml"><img src="/template_resource/21998/img/logo.png?v=1234" alt="中国国家图书馆·中国国家数字图书馆" /></a>
+        </li>
+        <li class="link-bar" style="position: relative;">
+      <a class="top-dlzc-title">登录</a> <span>|</span>
+            <a id="toolbarSwitch" href="javascript:void(0) ">无障碍</a> <span>|</span>
+            <a class="js-lang" href="/enweb/">
+                <!--<NLC_CHANNEL id="1225" FIELD="name" AUTOLINK="FALSE" />-->
+        English
+            </a>
+            <!--i></i-->
+        </li>
+    </ul>
+    <div class="main-nav-out">
+        <ul class="main-nav wrap-1280">
+            <li> <a href="/web/index.shtml" class="parents-bar">首页</a> </li>
+            <li>
+                <a href="###" class="parents-bar">
+                    资讯信息
+                </a>
+                <ul class="new-sub-nav new-sub-nav0 view-transition">
+                    <li class="dl-list">
+                        
+                            <dl>
+
+                                <dd>
+                                    <a href="https://www.nlc.cn/web/dsb_zx/gtxw/index.shtml">
+                                        国图新闻
+                                    </a>
+                                </dd>
+
+
+                            </dl>
+                        
+                        
+                            <dl>
+                                <a href="https://www.nlc.cn/web/dsb_zx/zxgg/index.shtml">
+                                    <dd>
+                                        最新公告
+                                    </dd>
+                                </a>
+                            </dl>
+                        
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="###" class="parents-bar">
+                    读者指南
+                </a>
+                <ul class="new-sub-nav new-sub-nav1 view-transition">
+                    <li class="menu-lists">
+                        <p class="rline">
+                            <!-- 馆区服务 --><span> <b></b> <a href="https://www.nlc.cn/web/dzzn/dsb_kgsj/index.shtml">
+                  馆区服务
+                </a> </span>
+                            <span> <b></b> <a href="https://www.nlc.cn/web/dzzn/dsb_zkxz/index.shtml">
+                  办证须知
+                </a> </span> <span> <b></b> <a href="https://www.nlc.cn/web/dzzn/guotuziyuan/index.shtml">
+                  馆藏一览
+                </a> </span>
+                        </p>
+                        <p class="rline"> <span> <b></b> <a href="https://www.nlc.cn/web/dzzn/tushiguotu/index.shtml">
+                  图示国图
+                </a> </span>
+                             <i> <a href="https://www.nlc.cn/web/dzzn/tushiguotu/dsb_tsgt/index.shtml">
+                                交通线路
+                            </a> </i> 
+ <i> <a href="https://www.nlc.cn/web/dzzn/tushiguotu/guanqubuju/index.shtml">
+                                馆区布局
+                            </a> </i> 
+ <span> <b></b> <a href="https://www.nlc.cn/web/dzzn/guotufuwu/index.shtml">
+                  服务简介
+                </a> </span>
+                            
+                        </p>
+                        <p class="rline"> <span> <b></b> <a href="https://www.nlc.cn/web/dzzn/dsb_rgxz/index.shtml">
+                  入馆须知
+                </a> </span>
+                             <i> <a href="https://www.nlc.cn/web/dzzn/dsb_rgxz/dsb_dzxz/index.shtml">
+                                入馆须知
+                            </a> </i> 
+ <i> <a href="https://www.nlc.cn/web/dzzn/dsb_rgxz/dsb_etxz/index.shtml">
+                                少年儿童馆入馆须知
+                            </a> </i> 
+ <i> <a href="https://www.nlc.cn/web/dzzn/dsb_rgxz/dsb_wcnrxz/index.shtml">
+                                未成年人参观须知
+                            </a> </i> 
+ <i> <a href="https://www.nlc.cn/web/dzzn/dsb_rgxz/dsb_wmdzgy/index.shtml">
+                                文明读者公约
+                            </a> </i> 
+
+                        </p>
+                        <p> <span> <b></b> <a href="https://www.nlc.cn/web/dzzn/ds_bjyxz/index.shtml">
+                  借阅须知
+                </a> </span>
+                            <span> <b></b> <a href="https://www.nlc.cn/web/dzzn/gtcy/index.shtml">
+                  国图餐饮
+                </a> </span>
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="###" class="parents-bar">
+                    资源服务
+                </a>
+                <ul class="new-sub-nav new-sub-nav2 view-transition">
+                    <li class="menu-lists">
+                        <p class="rline"> <span> <b></b> <a href="###">
+                  数字资源
+                </a> </span> <i class="addStyle">
+                             <a style="width:100%" href="http://read.nlc.cn/user/category">
+                                特色资源
+                            </a> 
+ <a style="width:100%" href="http://read.nlc.cn/outRes/outResList?type=全部">
+                                外购资源
+                            </a> 
+ <a style="width:100%" href="http://opac.nlc.cn/">
+                                馆藏目录
+                            </a> 
+ <a style="width:100%" href="http://dportal.nlc.cn:8332/zylb/zylb.htm">
+                                查找更多数字资源
+                            </a> 
+
+                        </i>
+                            <span> <b></b> <a href="###">
+                资源推荐
+              </a> </span>
+                             <i> <a href="https://www.nlc.cn/web/ziyuanfuwu/ziyuantuijian/new_wjjdsd/index.shtml">
+                                文津经典诵读
+                            </a> </i> 
+ <i> <a href="https://www.nlc.cn/web/ziyuanfuwu/ziyuantuijian/mzyk/index.shtml">
+                                每周一库
+                            </a> </i> 
+ <i> <a href="https://www.nlc.cn/web/ziyuanfuwu/ziyuantuijian/sktj/index.shtml">
+                                书刊推介
+                            </a> </i> 
+ <i> <a href="http://wenjin.nlc.cn/wjtsj/index">
+                                文津图书
+                            </a> </i> 
+ <i> <a href="https://www.nlc.cn/web/ziyuanfuwu/ziyuantuijian/xzzt/index.shtml">
+                                展览·专题
+                            </a> </i> 
+ <i> <a href="https://www.nlc.cn/web/ziyuanfuwu/ziyuantuijian/sjksx/index.shtml">
+                                数据库上新
+                            </a> </i> 
+ <i> <a href="https://www.nlc.cn/web/ziyuanfuwu/ziyuantuijian/gkktj/index.shtml">
+                                公开课推荐
+                            </a> </i> 
+
+                        </p>
+                        <p class="rline">
+                            <span> <b></b> <a href="###">
+                    知识服务
+                  </a> </span>
+                             <i> <a href="https://guji.nlc.cn/">
+                                中华古籍智慧化服务平台
+                            </a> </i> 
+ <i> <a href="https://ianswer.yilinkin.com/">
+                                智能问答
+                            </a> </i> 
+ <i> <a href="https://www.nlc.cn/web/ziyuanfuwu/zhishifuwu/wszxt_95087/index.shtml">
+                                党建资源特色专题库
+                            </a> </i> 
+ <i> <a href="http://mg.nlc.cn/">
+                                民国时期地方文献知识库
+                            </a> </i> 
+ <i> <a href="https://v.nlc.cn">
+                                影音视听知识服务平台
+                            </a> </i> 
+ <i> <a href="http://shj.nlc.cn/">
+                                《山海经》知识库
+                            </a> </i> 
+
+                            <span> <b></b> <a href="###">
+                        特殊群体服务
+                      </a> </span> <i class="addStyle">
+                             <a style="width:100%" href="http://www.cdlvi.cn/">
+                                中国盲人数字图书馆
+                            </a> 
+ <a style="width:100%" href="http://dlpwd.nlc.cn/">
+                                中国残疾人数字图书馆
+                            </a> 
+ <a style="width:100%" href="https://www.nlc.cn/web/teshuquntifuwu/gaxy/index.shtml">
+                                国家图书馆数字共享空间“关爱夕阳”老年课堂
+                            </a> 
+
+                        </i>
+                        </p>
+                        <p> <span> <b></b> <a href="###">
+                  专题资源
+                </a> </span>
+                             <i> <a href="https://www.nlc.cn/web/ziyuanfuwu/zhuantiziyuan/stfwkj/index.shtml">
+                                视听服务中心
+                            </a> </i> 
+ <i> <a href="http://open.nlc.cn/onlineedu/client/index.htm">
+                                国图公开课
+                            </a> </i> 
+ <i> <a href="https://memory.nlc.cn/">
+                                中国记忆
+                            </a> </i> 
+ <i> <a href="http://ouroots.nlc.cn/">
+                                中华寻根网
+                            </a> </i> 
+ <i> <a href="http://govinfo.nlc.cn/">
+                                政府公开信息整合服务平台
+                            </a> </i> 
+ <i> <a href="http://csc.nlc.cn:4237/home/hwzgx/index.jsp">
+                                海外中国问题研究资料中心
+                            </a> </i> 
+ <i> <a href="https://www.nlc.cn/web/ziyuanfuwu/zhuantiziyuan/gjzzywgzfcbw/index.shtml">
+                                国际组织与外国政府出版物网络资源整合平台
+                            </a> </i> 
+ <i> <a href="http://www.sriladlib.com/">
+                                丝绸之路数字图书馆
+                            </a> </i> 
+ <i> <a href="https://chn-las.nlc.cn/">
+                                中阿电子图书馆
+                            </a> </i> 
+ <i> <a href="https://wdss.nlc.cn/#/">
+                                国家外文文献共享平台
+                            </a> </i> 
+ <i> <a href="https://goodbook.nlc.cn/">
+                                全国馆社共荐优质书目
+                            </a> </i> 
+
+
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="###" class="parents-bar">
+                    业界服务
+                </a>
+                <ul class="new-sub-nav new-sub-nav3 view-transition">
+                    <li class="menu-lists">
+                        <p class="rline"> <span> <b></b> <a href="###">
+                  图书馆界
+                </a> </span>
+                             <i> <a href="https://www.nlc.cn/web/yejiefuwu/newtsgj/newswzx/index.shtml">
+                                全国图书馆文献缩微复制中心
+                            </a> </i> 
+ <i> <a href="http://olcc.nlc.cn/">
+                                全国图书馆联合编目中心
+                            </a> </i> 
+ <i> <a href="https://www.nlc.cn/web/yejiefuwu/newtsgj/newissn/index.shtml">
+                                ISSN中国国家中心
+                            </a> </i> 
+ <i> <a href="https://www.nlc.cn/web/yejiefuwu/newtsgj/bshkygzz/index.shtml">
+                                国家图书馆博士后科研工作站
+                            </a> </i> 
+ <i> <a href="https://www.nlc.cn/web/yejiefuwu/newtsgj/newgjgx/index.shtml">
+                                中文文献资源共建共享合作会议
+                            </a> </i> 
+ <i> <a href="http://keyan.nlc.cn/web/index.aspx">
+                                国家图书馆科研支撑平台
+                            </a> </i> 
+ <i> <a href="http://clc.nlc.cn/">
+                                《中图法》编委会
+                            </a> </i> 
+ <i> <a href="https://www.nlc.cn/web/yejiefuwu/newtsgj/tbw/index.shtml">
+                                全国图书馆标准化技术委员会
+                            </a> </i> 
+ <i> <a href="https://www.nlc.cn/web/chubanwu/">
+                                出版物国际交换与捐赠
+                            </a> </i> 
+ <i> <a href="https://www.nlc.cn/web/yejiefuwu/newtsgj/NLCNetInfoResourcePreservationProtection/index.html">
+                                国家图书馆互联网信息资源保存与保护
+                            </a> </i> 
+
+                        </p>
+                        <p class="rline"> <span> <b></b> <a href="###">
+                            IFLA与国图
+                          </a> </span>
+                             <i> <a href="https://www.nlc.cn/web/yejiefuwu/iflaygt/gjtlzwyyzx/index.shtml">
+                                国际图联中文语言中心
+                            </a> </i> 
+ <i> <a href="https://www.nlc.cn/web/yejiefuwu/iflaygt/gjtlbcbhzxzgzx/index.shtml">
+                                国际图联保存保护中心中国中心
+                            </a> </i> 
+
+                        </p>
+                        <p>
+
+
+                            <span> <b></b> <a href="###">
+                  国图期刊
+                </a> </span>
+                             <i> <a href="http://www.jlis.cn/jtlsc/ch/index.aspx">
+                                中国图书馆学报
+                            </a> </i> 
+ <i> <a href="https://www.nlc.cn/web/yejiefuwu/gtqk/wenxian/index.shtml">
+                                文献
+                            </a> </i> 
+ <i> <a href="http://gtxk.nlc.cn/ch/index.aspx">
+                                国家图书馆学刊
+                            </a> </i> 
+ <i> <a href="https://www.nlc.cn/web/yejiefuwu/gtqk/wjls/index.shtml">
+                                文津流觞
+                            </a> </i> 
+
+                        </p>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="http://law.nlc.cn" class="parents-bar">
+                    法律馆
+                </a>
+                <!-- <ul class="new-sub-nav new-sub-nav4 view-transition" style="background:rgba(237, 243, 244, 0.98)">
+                    <NLC_CHANNELS ID="111504" STARTPOS="0" NUM="4">
+                        <li>
+                            <a href="<NLC_CHANNEL FIELD='_RECURL'></NLC_CHANNEL>">
+                                <NLC_CHANNEL FIELD="name" AUTOLINK="FALSE"></NLC_CHANNEL>
+                            </a>
+                        </li>
+                    </NLC_CHANNELS>
+                </ul> -->
+            </li>
+            <li>
+                <a href="http://kids.nlc.cn/" class="parents-bar">
+                    少儿馆
+                </a>
+            </li>
+
+
+            <li>
+                <a href="###" class="parents-bar">
+                    重点项目
+                </a>
+                <ul class="new-sub-nav new-sub-nav5 view-transition" style="background:rgba(237, 243, 244, 0.98)">
+                    
+                        <li>
+                            <a href="http://www.nlc.cn/pcab/">
+                                中华古籍保护计划
+                            </a>
+                        </li>
+                    
+
+                        <li>
+                            <a href="http://mgwxbh.nlc.cn/">
+                                革命文献与民国时期文献保护计划
+                            </a>
+                        </li>
+                    
+
+                        <li>
+                            <a href="https://www.nlc.cn/web/zdxm/bbjd/index.shtml">
+                                中华传统文化百部经典
+                            </a>
+                        </li>
+                    
+
+                        <li>
+                            <a href="https://www.nlc.cn/web/shouye/zhongdianxiangmu/quanguozhihuitushuguantixi/index.shtml">
+                                全国智慧图书馆体系
+                            </a>
+                        </li>
+                    
+
+                        <li>
+                            <a href="http://www.ndlib.cn/">
+                                数字图书馆推广工程
+                            </a>
+                        </li>
+                    
+
+                        <li>
+                            <a href="https://www.nlc.cn/web/zdxm/newstgc/index.shtml">
+                                国家数字图书馆工程
+                            </a>
+                        </li>
+                    
+
+                </ul>
+            </li>
+            <!-- <li> <a href="###" class="parents-bar">
+          <NLC_CHANNEL id="6918" FIELD="name" AUTOLINK="FALSE" />
+        </a>
+        <ul class="new-sub-nav new-sub-nav6 view-transition" style="background:rgba(237, 243, 244, 0.98)">
+          <NLC_CHANNELS ID="6918" STARTPOS="0" NUM="8">
+            <li> <a href="<NLC_CHANNEL FIELD='_RECURL'></NLC_CHANNEL>">
+                <NLC_CHANNEL FIELD="name" AUTOLINK="FALSE"></NLC_CHANNEL>
+              </a> </li>
+          </NLC_CHANNELS>
+        </ul>
+      </li> -->
+            <li>
+                 <a class="parents-bar" href="https://www.nlc.cn/web/gtjjh/index.shtml">
+                    国家图书馆基金会
+                 </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $('#toolbarSwitch').click(function(){
+            getCountFn([4,50008,0])
+        })
+    })
+</script>
+<!-- 头部 | end -->
+
+
+    <!-- 检索 | start -->
+    <div class="index-search wrap-1280">
+        <ul>
+            <li class="select-bar js-select">
+                <p class="view-transition">
+                    <a data-id="50018" data-href="http://find.nlc.cn/search/doSearch"><i></i>
+                        文津搜索
+                    </a>
+                    <a data-id="50019" data-href="http://opac.nlc.cn/F/"><i></i>
+                        馆藏目录
+                    </a>
+                    <a data-id="50020" data-href="http://read.nlc.cn/advanceSearch/allRes"><i></i>
+                        特色资源
+                    </a>
+                    <a data-id="50017" data-href="https://www.nlc.cn/web/ziyuansousuo/zhanneijiansuo/index.shtml"><i></i>
+                        站内搜索
+                    </a>
+                </p>
+                <span data-id="50018" data-href="http://find.nlc.cn/search/doSearch">
+                    文津搜索<i class="view-transition"></i>
+                </span>
+            </li>
+            <li class="input-bar"> <input class="js-search-val" type="text" placeholder="请输入您要检索信息" /> </li>
+            <li class="btn-bar"> <button class="js-check-btn">检索</button> </li>
+        </ul>
+    </div>
+    <div class="js-search-tips">
+        <p>请先输入您要搜索的关键词</p>
+        <span class="js-search-tips-close">知道了</span>
+    </div>
+    <!-- 检索 | end -->
+    <!-- 轮播 | start -->
+    <div class="index-swiper-box-1 wrap-1280">
+        <div class="swiper-container swiper-container-1">
+            <div class="swiper-wrapper">
+                
+                    <div class="swiper-slide js-content">
+                        <a href="https://www.nlc.cn/web/ziyuanfuwu/ziyuantuijian/xzzt/2026/423/site423gzczddzg/gzczddzg.html" title="跟着长征读懂中国">
+                            <img src="/upload/img/2026-05-09/4f9e1203.jpg" />
+                        </a>
+                    </div>
+                
+
+                    <div class="swiper-slide js-content">
+                        <a href="https://www.nlc.cn/web/ziyuanfuwu/ziyuantuijian/xzzt/2026/423/site423/" title="2026年读书日 全民阅读的图书馆力量">
+                            <img src="/upload/img/2026-04-22/eb05708b.jpg" />
+                        </a>
+                    </div>
+                
+
+                    <div class="swiper-slide js-content">
+                        <a href="https://goodbook.nlc.cn/" title="全国馆社共荐优质书目项目">
+                            <img src="/upload/img/2026-04-10/b8130f2f.png" />
+                        </a>
+                    </div>
+                
+
+                    <div class="swiper-slide js-content">
+                        <a href="https://wdss.nlc.cn/#/" title="外典搜索">
+                            <img src="/upload/img/2026-04-01/8a59d2f1.png" />
+                        </a>
+                    </div>
+                
+
+                    <div class="swiper-slide js-content">
+                        <a href="https://guji.nlc.cn/" title="中华古籍智慧化服务平台">
+                            <img src="/upload/img/2025-04-23/e79eb9b6.jpg" />
+                        </a>
+                    </div>
+                
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="sub-links">
+            <ul>
+                <li> <a href="https://www.nlc.cn/web/dzzn/dsb_kgsj/index.shtml"> <img src="/template_resource/20823/img/icon-sublink1.png?v=1" alt="入馆须知" />
+                        <p>
+                            入馆须知
+                        </p>
+                    </a> </li>
+                <li> <a href="https://www.nlc.cn/web/shouye/zuixinhuodong/index.shtml"> <img src="/template_resource/20823/img/icon-sublink5.png?v=1" alt="最新活动" />
+                        <p>
+                            最新活动
+                        </p>
+                    </a> </li>
+                <li> <a href="https://www.nlc.cn/web/dsb_zx/zxgg/index.shtml"> <img src="/template_resource/20823/img/icon-sublink2.png?v=1" alt="最新公告" />
+                        <p>
+                            最新公告
+                        </p>
+                    </a> </li>
+                <li> <a href="https://ianswer.yilinkin.com/"> <img src="/template_resource/20823/img/nav_bottom04.png?v=1" alt="智能问答" />
+                        <p>
+                            智能问答
+                        </p>
+                    </a> </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 轮播 | end -->
+    <!-- 特色资源 | start -->
+    <div class="index-resouce-bar JS-show-right-bar">
+        <h2 class="common-title common-title-1"> 数字资源
+            <!-- <img class="img-2" src="/template_resource/10002/img/resouce-title.png" alt="" /> -->
+        </h2>
+        <ul class="wrap-1280 resouce-list">
+            <li> <i></i>
+                <dl>
+                    <a href="http://read.nlc.cn/thematDataSearch/toGujizt">
+                        <dt> <img src="/template_resource/20823/img/icon-1.png" alt="古籍特藏" /> </dt>
+                        <dd>
+                            <h5>
+                                古籍特藏
+                            </h5>
+                            <p>该库可提供综合性数字化古籍特藏文献，包括本馆建设的古籍特藏、外馆文献资源，以及古籍全文检索分析系统。</p>
+                        </dd>
+                    </a>
+                </dl>
+            </li>
+      <li> <i></i>
+                <dl>
+                    <a href="http://read.nlc.cn/yuewen/index">
+                        <dt> <img src="/template_resource/20823/img/icon-10.png" alt="当代图书" /> </dt>
+                        <dd>
+                            <h5>
+                                当代图书
+                            </h5>
+                            <p>本栏目下有10万余册电子图书，多为近现代图书资源，内容包括文学小说、哲学历史，人物传记、古籍经典、科普科幻、亲子童书、人生励志、经济管理、休闲娱乐等方面。国内众多权威出版社、出版机构的出版图书，并同步更新热门影视图书。</p>
+                        </dd>
+                    </a>
+                </dl>
+            </li>
+      <li> <i></i>
+                <dl>
+                    <a href="http://read.nlc.cn/specialResourse/minguoIndex">
+                        <dt> <img src="/template_resource/20823/img/icon-7.png" alt="近代图书" /> </dt>
+                        <dd>
+                            <h5>
+                                近代图书
+                            </h5>
+                            <p>该库为读者提供民国时期文献在线资源服务，包含民国图书、民国期刊，民国报纸和民国法律资源，可在线阅读。</p>
+                        </dd>
+                    </a>
+                </dl>
+            </li>
+            <li> <i></i>
+                <dl>
+                    <a href="http://open.nlc.cn/onlineedu/client/index.htm">
+                        <dt> <img src="/template_resource/20823/img/icon-3.png?v=123213" alt="国图公开课" /> </dt>
+                        <dd>
+                            <h5>
+                                国图公开课
+                            </h5>
+                            <p>该平台依托国家图书馆的馆藏海量资源，设立了专题课程和读书推荐等栏目，面向公众推送多样化学习资源。</p>
+                        </dd>
+                    </a>
+                </dl>
+            </li>
+      <li> <i></i>
+                <dl>
+                    <a href="http://read.nlc.cn/specialResourse/yinshipinIndex">
+                        <dt> <img src="/template_resource/20823/img/icon-6.png" alt="馆藏音视频" /> </dt>
+                        <dd>
+                            <h5>
+                                馆藏音视频
+                            </h5>
+                            <p>包含国家图书馆特色系列讲座，以及馆藏音频、视频等数字资源读物，面向公众提供公益视听服务。</p>
+                        </dd>
+                    </a>
+                </dl>
+            </li>
+            <li> <i></i>
+                <dl>
+                    <a href="http://wenjin.nlc.cn/wjtsj/index">
+                        <dt> <img src="/template_resource/20823/img/icon-4.png" alt="文津图书" /> </dt>
+                        <dd>
+                            <h5>
+                                文津图书
+                            </h5>
+                            <p>集中展示国家图书馆主办并联合全国图书馆界共同参与的文津图书相关内容。</p>
+                        </dd>
+                    </a>
+                </dl>
+            </li>
+            <li> <i></i>
+                <dl>
+                    <a href="https://www.yongledadian.com.cn/">
+                        <dt> <img src="/template_resource/20823/img/icon-5.png" alt="永乐大典" /> </dt>
+                        <dd>
+                            <h5>
+                                永乐大典
+                            </h5>
+                            <P>该库是《永乐大典》系统性保护研究整理工程的组成部分，第一辑收录国家图书馆藏《永乐大典》四十册、七十五卷的内容。</P>
+
+                        </dd>
+                    </a>
+                </dl>
+            </li>
+            <li> <i></i>
+                <dl>
+                    <a href="https://guji.nlc.cn/">
+                        <dt> <img src="/template_resource/20823/img/icon-8.png" alt="中华古籍智慧化服务平台" /> </dt>
+                        <dd>
+                            <h5 style="text-align: center;">
+                                中华古籍智慧化服务平台
+                            </h5>
+                            <p>该平台是全国智慧图书馆体系建设重要成果，致力于为社会公众提供开放共享、全面多元的古籍资源和科技赋能、便捷高效的知识服务。</p>
+                        </dd>
+                    </a>
+                </dl>
+            </li>
+            <li> <i></i>
+                <dl>
+                    <a href="/web/ziyuanfuwu/ziyuantuijian/new_wjjdsd/index.shtml">
+                        <dt> <img src="/template_resource/20823/img/icon-9.png" alt="文津经典诵读" /> </dt>
+                        <dd>
+                            <h5>
+                                文津经典诵读
+                            </h5>
+                            <p>每日为读者介绍一首古代诗词，配以朗诵音频、诗词译文、全文、馆藏版本等内容。</p>
+
+                        </dd>
+                    </a>
+                </dl>
+            </li>
+            <li> <i></i>
+                <dl>
+                    <a href="http://read.nlc.cn/gyyd/index">
+                        <dt> <img src="/template_resource/20823/img/icon-2.png" alt="征集资源" /> </dt>
+                        <dd>
+                            <h5>
+                                征集资源
+                            </h5>
+                            <p>该库汇集精选面向出版单位征集的电子图书等资源，以人文社科及科普类为主，用户登录后可在线阅读。</p>
+                        </dd>
+                    </a>
+                </dl>
+            </li>
+      
+        </ul>
+        <div class="wrap-1280 resouce-list-btm">
+            <dl class="view-transition">
+                <a href="http://read.nlc.cn/outRes/outResList?type=%E7%94%B5%E5%AD%90%E5%9B%BE%E4%B9%A6">
+                    <dt> <img src="/template_resource/20823/img/icon-btm-1.png" alt="电子图书" width="29" class="org" /> <img src="/template_resource/20823/img/icon-btm-1.gif" alt="电子图书" width="40" class="anim" style="display: none;" /> <span></span> </dt>
+                    <dd>
+                        电子图书
+                    </dd>
+                </a>
+            </dl>
+            <dl class="view-transition">
+                <a href="http://read.nlc.cn/outRes/outResList?type=%E7%94%B5%E5%AD%90%E6%9C%9F%E5%88%8A">
+                    <dt> <img src="/template_resource/20823/img/icon-btm-2.png" alt="电子期刊" width="30" class="org" /> <img src="/template_resource/20823/img/icon-btm-2.gif" alt="电子期刊" width="32" class="anim" style="display: none;" /> <span></span> </dt>
+                    <dd>
+                        电子期刊
+                    </dd>
+                </a>
+            </dl>
+            <dl class="view-transition">
+                <a href="http://read.nlc.cn/outRes/outResList?type=%E7%94%B5%E5%AD%90%E8%AE%BA%E6%96%87">
+                    <dt> <img src="/template_resource/20823/img/icon-btm-3.png" alt="电子论文" width="27" class="org" /> <img src="/template_resource/20823/img/icon-btm-3.gif" alt="电子论文" width="40" class="anim" style="display: none;" /> <span></span> </dt>
+                    <dd>
+                        电子论文
+                    </dd>
+                </a>
+            </dl>
+            <dl class="view-transition">
+                <a href="http://read.nlc.cn/outRes/outResList?type=%E7%94%B5%E5%AD%90%E6%8A%A5%E7%BA%B8">
+                    <dt> <img src="/template_resource/20823/img/icon-btm-4.png" alt="电子报纸" width="30" class="org" /> <img src="/template_resource/20823/img/icon-btm-4.gif" alt="电子报纸" width="36" class="anim" style="display: none;" /> <span></span> </dt>
+                    <dd>
+                        电子报纸
+                    </dd>
+                </a>
+            </dl>
+            <dl class="view-transition">
+                <a href="http://read.nlc.cn/outRes/outResList?type=音视频">
+                    <dt> <img src="/template_resource/20823/img/icon-btm-5.png" alt=" 音视频" width="27" class="org" /> <img src="/template_resource/20823/img/icon-btm-5.gif" alt="音视频" width="34" class="anim" style="display: none;" /> <span></span> </dt>
+                    <dd>
+                        音视频
+                    </dd>
+                </a>
+            </dl>
+            <dl class="view-transition">
+                <a href="http://read.nlc.cn/outRes/outResList?type=%E6%A0%87%E5%87%86%E4%B8%93%E5%88%A9">
+                    <dt> <img src="/template_resource/20823/img/icon-btm-6.png" alt="标准专利" width="34" class="org" /> <img src="/template_resource/20823/img/icon-btm-6.gif" alt="标准专利" width="40" class="anim" style="display: none;" /> <span></span> </dt>
+                    <dd>
+                        标准专利
+                    </dd>
+                </a>
+            </dl>
+            <dl class="view-transition">
+                <a href="http://read.nlc.cn/outRes/outResList?type=%E5%B7%A5%E5%85%B7%E4%B9%A6">
+                    <dt> <img src="/template_resource/20823/img/icon-btm-7.png" alt="工具书" width="34" class="org" /> <img src="/template_resource/20823/img/icon-btm-7.gif" alt="工具书" width="38" class="anim" style="display: none;" /> <span></span> </dt>
+                    <dd>
+                        工具书
+                    </dd>
+                </a>
+            </dl>
+            <dl class="view-transition">
+                <a href="http://read.nlc.cn/outRes/outResList?type=%E5%B0%91%E5%84%BF%E8%B5%84%E6%BA%90">
+                    <dt> <img src="/template_resource/20823/img/icon-btm-8.png" alt="少儿资源" width="28" class="org" /> <img src="/template_resource/20823/img/icon-btm-8.gif" alt="少儿资源" width="50" class="anim" style="display: none;" /> <span></span> </dt>
+                    <dd>
+                        少儿资源
+                    </dd>
+                </a>
+            </dl>
+        </div>
+        <div class="index-commom-reaadMore"> <a href="http://read.nlc.cn/user/index"> 查找更多 </a> </div>
+    </div>
+    <!-- 特色资源 | end -->
+    <!-- 专题频道 | start -->
+    <div class="">
+        <h2 class="common-title"> 专题频道
+            <!-- <img src="/template_resource/20823/img/icon-title.png" /> -->
+        </h2>
+        <div class="wrap-1280" style="overflow: hidden;">
+            <div class="wrap">
+                <div class="pic pic1">
+                    <p class="pic_num pic_num_1"></p>
+                    <div class="pic-cover">
+                        <a href="http://www.nlc.cn/pcab/">
+                            <img src="/template_resource/20823/img/focus/t4.jpg" alt="">
+                            <span>中国古籍保护网</span>
+                        </img></a>
+                    </div>
+                </div>
+                <div class="pic pic2">
+                    <p class="pic_num pic_num_2"></p>
+                    <div class="pic-cover">
+                        <a href="http://mgwxbh.nlc.cn">
+                            <img src="/template_resource/20823/img/focus/t5.jpg" alt="">
+                            <span>革命文献与民国时期文献保护网</span>
+                        </img></a>
+                    </div>
+                </div>
+                <div class="pic pic3">
+                    <p class="pic_num pic_num_3"></p>
+                    <div class="pic-cover">
+                        <a href="http://www.nlc.cn/nmcb/">
+                            <img src="/template_resource/20823/img/focus/t2.jpg" alt="">
+                            <span>国家典籍博物馆</span>
+                        </img></a>
+                    </div>
+                </div>
+                <div class="pic pic4">
+                    <p class="pic_num pic_num_4"></p>
+                    <div class="pic-cover">
+                        <a href="https://www.nlc.cn/web/zdxm/bbjd/index.shtml">
+                            <img src="/template_resource/20823/img/focus/t1.jpg" alt="">
+                            <span>中华传统文化百部经典</span>
+                        </img></a>
+                    </div>
+                </div>
+                <div class="pic pic5 on">
+                    <p class="pic_num pic_num_5"></p>
+                    <div class="pic-cover">
+                        <a href="http://law.nlc.cn/#/">
+                            <img src="/template_resource/20823/img/focus/t3.jpg" alt="">
+                            <span>国家图书馆法律馆</span>
+                        </img></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 专题频道 | end  -->
+    <!-- 活动展览 | start -->
+    <div class="index-common-bg ">
+        <h2 class="common-title"> 活动展览
+            <!-- <img src="/template_resource/20823/img/icon-title.png" /> -->
+        </h2>
+        <div class="activities wrap-1280">
+            <ul>
+                <li class="on">
+                    <a href="https://www.nlc.cn/web/shouye/zuixinhuodong/pxyg/index.shtml">
+                        <img src="/template_resource/20823/img/focus/p1.jpg" alt="">
+                        <h5>
+                            培训
+                        </h5>
+                    </img></a>
+                </li>
+                <li>
+                    <a href="https://www.nlc.cn/web/shouye/zuixinhuodong/jzyg/index.shtml">
+                        <img src="/template_resource/20823/img/focus/p2.jpg" alt="">
+                        <h5>
+                            讲座
+                        </h5>
+                    </img></a>
+                </li>
+                <li>
+                    <a href="https://www.nlc.cn/web/shouye/zuixinhuodong/zlyg/index.shtml">
+                        <img src="/template_resource/20823/img/focus/p3.jpeg" alt="">
+                        <h5>
+                            展览
+                        </h5>
+                    </img></a>
+                </li>
+                <li>
+                    <a href="https://www.nlc.cn/web/ziyuanfuwu/ziyuantuijian/xzzt/index.shtml">
+                        <img src="/template_resource/20823/img/focus/p4.png" alt="">
+                        <h5>
+                            专题
+                        </h5>
+                    </img></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 活动展览 | end -->
+    <script src="/template_resource/20823/swiper-8.3.js" type="text/javaScript"></script>
+    <script src="/template_resource/20823/index.main.js?v=2322" type="text/javaScript"></script>
+    <!--侧边栏 -->
+    <script src="/template_resource/21997/index.main.js?v=240109" type="text/javaScript">
+</script>
+<script src="/template_resource/21997/jq.base64.js" type="text/javaScript"></script>
+<link href="/template_resource/21997/index.main.css?v=1.1121" type="text/css" rel="stylesheet" />
+<!--标准-->
+<script>
+  $(document).ready(function(){
+  $(".dlzc-gc").click(function(){
+    $(this).css({"color":"#333"});
+  $(".dlzc-dz").css({"color":"#3398cc"});
+  $(".dzymh").hide();
+  $(".gcml").show();
+});
+  $(".dlzc-dz").click(function(){
+  $(this).css({"color":"#333"});
+  $(".dlzc-gc").css({"color":"#3398cc"});
+  $(".dzymh").show();
+  $(".gcml").hide();
+}); 
+  $('.closex').click(function() {
+      $(".zcdlx").fadeOut();
+});
+});
+</script>
+<style>
+  .tableo{margin: 0 20px; color: #666;}
+  .closex{display: block; position: absolute; width: 19px; height: 19px; top: 23px; right: 30px; background: url(/template_resource/21997/img/close.png) 0 0 no-repeat; background-size: 100% auto; cursor: pointer;}
+</style>
+<!--节庆-->
+<!--<script>
+  $(document).ready(function(){
+  $(".dlzc-gc").click(function(){
+    $(this).css({"color":"#333"});
+  $(".dlzc-dz").css({"color":"#c3272a"});
+  $(".dzymh").hide();
+  $(".gcml").show();
+});
+  $(".dlzc-dz").click(function(){
+  $(this).css({"color":"#333"});
+  $(".dlzc-gc").css({"color":"#c3272a"});
+  $(".dzymh").show();
+  $(".gcml").hide();
+}); 
+  $('.closex').click(function() {
+      $(".zcdlx").fadeOut();
+});
+});
+</script>
+<style>
+  .tableo{margin: 0 20px; color: #666;}
+  .closex{display: block; position: absolute; width: 19px; height: 19px; top: 23px; right: 30px; background: url(/template_resource/20771/img/close-red.png) 0 0 no-repeat; background-size: 100% auto; cursor: pointer;}
+</style>-->
+
+<div class="right-fixed-menu ">
+    <ul>
+        <li>
+            <img src="/template_resource/21997/img/licon-01.png" data-src="/template_resource/21997/img/licon-1.png" alt="开放时间">
+            <div class="kgTime js-tc" style="display: none ;">
+                <ul>
+                    <li class="title">
+                        <span> </span>
+                        <a href="javascript:void(0)" class="close"></a>
+                    </li>
+                    <li class="table">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                                <td align="right" valign="top" width="90">
+                                    开放区域：
+                                </td>
+                                <td align="left" valign="top">
+                                    总馆南区、总馆北区、少年儿童馆(海淀区中关村南大街33号)、古籍馆(西城区文津街7号)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" valign="top" width="90">
+                                    开放时间：
+                                </td>
+                                <td align="left" valign="top">
+                                    总馆南区(含国家典籍博物馆): 周二至周日9:00-17:00,周一闭馆（注：科技查新中心/科学技术咨询室、社会科学咨询室周二至周五开馆时间开放）
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" valign="top" width="90"> 
+                                    
+                                </td>
+                                <td align="left" valign="top">
+                                    总馆北区：夏季（3月1日-10月31日）：周二至周日9:00-21:00；冬季（11月1日-2月28日）：周二至周日9:00-20:00
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" valign="top" width="90"> 
+                                    
+                                </td>
+                                <td align="left" valign="top">
+                                    少年儿童馆：周二至周日9:00-17:00,周一闭馆
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" valign="top" width="90"> 
+                                    
+                                </td>
+                                <td align="left" valign="top">
+                                    古 籍 馆：自2024年4月2日（周二）起闭馆
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" valign="top" width="90">
+                                    咨询电话:
+                                </td>
+                                <td align="left" valign="top">
+                                    4006006988、010-88545426
+                                </td>
+                            </tr>
+<tr>
+                                <td align="right" valign="top" width="90">
+                                    总馆馆区<br>出入口<br>开放时间:
+                                </br></br></td>
+                                <td align="left" valign="top">
+                                    北门：24 小时开放<br>
+                                    东中门：每日 6:30—23:00<br>
+                                    南门：每日 6:30—23:00
+                                </br></br></td>
+                            </tr>
+                        </table>
+                    </li>
+
+                </ul>
+            </div>
+        </img></li>
+        <li>
+
+            <img src="/template_resource/21997/img/licon-02.png" data-src="/template_resource/21997/img/licon-2.png" alt="读者云门户">
+            <div class="kgTime js-tc zcdlx" style="display: none;">
+                <ul>
+                    <li class="title">
+            <!--标准-->
+                       <span class="dlzc-dz">馆藏目录</span>　丨　<span class="dlzc-gc" style="color: #3398cc">读者云门户</span>
+                        <a href="javascript:void(0)" class="closex"></a>
+            <!--节庆-->
+             <!--<span class="dlzc-dz">馆藏目录</span>　丨　<span class="dlzc-gc" style="color: #c3272a">读者云门户</span>
+                        <a href="javascript:void(0)" class="closex"></a>-->
+                    </li>
+                    <li class="table dzymh">
+                       <p style="font-size: 14px; line-height: 1.8; text-align: justify;">
+                            联机公共目录查询系统提供国家图书馆馆藏目录查询，您可以通过系统实现馆藏目录检索、进行预约、外借和续借等操作。
+                        </p>
+                        <p style="padding: 20px 10px 10px; text-align: right; font-size: 14px;">
+                            <a style="color: #1395a7;" href="http://opac.nlc.cn/F/?func=file&file_name=login-session" target="_blank">[登录]</a>
+                        </p> 
+                    </li>
+          <li class="tableo gcml" style="display: none;">
+            <p style="font-size: 14px; line-height: 1.8; text-align: justify;">
+                            读者云门户提供国家图书馆来源于自建、商购以及与地方图书馆联合建设和合作建设的数字资源在线阅读（播放）服务，内容涵盖图书、古籍、论文、期刊、音视频等。
+                        </p>
+                        <p style="padding: 20px 10px 10px; text-align: right; font-size: 14px;">
+                            <a style="color: #1395a7;" href="https://sso1.nlc.cn/sso/jsp/mylib-login.jsp?appId=90037&paramUrl=http%3A%2F%2Fread.nlc.cn%2Fuser%2Findex" target="_blank">[登录]</a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+        </img></li>
+        <li>
+
+            <img src="/template_resource/21997/img/licon-04.png" data-src="/template_resource/21997/img/licon-4.png" alt="网上咨询平台">
+            <div class="kgTime js-tc" style="display: none ;">
+                <ul>
+                    <li class="title">
+                        <span>智能问答</span>
+                        <a href="javascript:void(0)" class="close"></a>
+                    </li>
+                    <li class="table">
+                        <p style="padding: 0 0 10px 0;font-size: 14px;
+    line-height: 1.8;
+    text-align: justify;">
+
+                            您可以通过智能问答（<a style="color: #1395a7;" href="https://ianswer.yilinkin.com/" target="_blank">https://ianswer.yilinkin.com/</a>）进行线上咨询，也可拨打呼叫中心电话<span style="color: #1395a7;">（4006006988、010-88545426）</span>或者发送邮件<span style="color: #1395a7;">（webmaster@nlc.cn）</span>联系我们。
+
+                            <!-- 您可以拨打呼叫中心电话
+                            <span style="color: #1395a7;">（4006006988/010-88545426）</span>或者通过发送邮件
+                            <span style="color: #1395a7;">（webmaster@nlc.cn）</span>进行咨询。 -->
+                        </p>
+                        <!-- <p>
+                                <a href="http://202.96.31.16:8080/webchat/userinfo.jsp?chatID=7S9sbMEqT8&workgroup=%E5%92%A8%E8%AF%A2%E9%83%A8%40workgroup.202.96.31.16" target="_blank">[查看详情]</a>
+                            </p> -->
+                    </li>
+                </ul>
+            </div>
+        </img></li>
+        <li>
+            <img src="/template_resource/21997/img/licon-03.png" data-src="/template_resource/21997/img/licon-3.png" alt="意见建议">
+            <div class="kgTime kgTime1 js-tc" style="display: none ;">
+                <ul>
+                    <li class="title">
+                        <span>意见建议</span>
+                        <a href="javascript:void(0)" class="close"></a>
+                    </li>
+                    <li class="table">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                                <td align="right" valign="top" width="90">
+                                    姓 名：
+                                </td>
+                                <td align="left" valign="top">
+                                    <input class="js-name" type="text">
+                                </input></td>
+                            </tr>
+                            <tr>
+                                <td align="right" valign="top" width="90">
+                                    邮 编：
+                                </td>
+                                <td align="left" valign="top">
+                                    <input class="js-post-code" type="text">
+                                </input></td>
+                            </tr>
+                            <tr>
+                                <td align="right" valign="top" width="90">
+                                    电 话：
+                                </td>
+                                <td align="left" valign="top">
+                                    <input class="js-tel" type="text">
+                                </input></td>
+                            </tr>
+                            <tr>
+                                <td align="right" valign="top" width="90">
+                                    手 机：
+                                </td>
+                                <td align="left" valign="top">
+                                    <input class="js-phone" type="text">
+                                </input></td>
+                            </tr>
+                            <tr>
+                                <td align="right" valign="top" width="90">
+                                    * E-mail：
+                                </td>
+                                <td align="left" valign="top">
+                                    <input class="js-email" type="text">
+                                    <p class="error-msg" style="display:none;"></p>
+                                </input></td>
+                            </tr>
+                            <tr>
+                                <td align="right" valign="top" width="90">
+                                    工 作 单 位：
+                                </td>
+                                <td align="left" valign="top">
+                                    <input class="js-work" type="text">
+                                </input></td>
+                            </tr>
+                            <tr>
+                                <td align="right" valign="top" width="90">
+                                    通 信 地 址：
+                                </td>
+                                <td align="left" valign="top">
+                                    <input class="js-adress" type="text">
+                                </input></td>
+                            </tr>
+                            <tr>
+                                <td align="right" valign="top" width="90">
+                                    * 意见或建议：
+                                </td>
+                                <td align="left" valign="top">
+                                    <textarea class="js-option"></textarea>
+                                    <p class="error-msg" style="display:none;"></p>
+                                </td>
+                            </tr>
+                        </table>
+                        <p class="btns JS-submit-btn-box">
+                            <a href="###" class="JS-reset-btn">重填</a>
+                            <button class="JS-submit-btn">提交</button>
+
+                        </p>
+                        <p class="error-msg" style="display:none;"></p>
+                        <p class="tips">注：请认真填写以上内容，以便我们及时给您反馈。</p>
+                    </li>
+                    <li class="result-bar-success" id="r-success">
+                        <i class="success"></i>
+                        <span>
+                            读者您好，您的宝贵意见和建议已收到。国家图书馆将不断提升服务能力与服务水平，感谢您的支持。
+                        </span>
+                    </li>
+                    <li class="result-bar-success result-bar-fault" id="r-fault">
+                        <i class="fault"></i>
+                        <span>
+                            读者您好，您的宝贵意见和建议未提交成功，请您稍后再试，感谢您的支持。
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </img></li>
+
+        <!-- <li>
+                <img src="/template_resource/21997/img/licon-05.png" data-src="/template_resource/21997/img/licon-5.png" alt="">
+            </li> -->
+        <li class="js-gotop">
+            <img src="/template_resource/21997/img/licon-06.png" data-src="/template_resource/21997/img/licon-6.png" alt="返回顶部">
+        </img></li>
+    </ul>
+</div>
+
+    <!-- 底部 | start -->
+<div class="common-footer">
+  <ul class="common-footer-row1 wrap-1280">
+    <li class="li1">
+      <h5>关于国图</h5>
+      
+        <p> <a href="https://www.nlc.cn/web/dsb_footer/gygt/gld/index.shtml">
+            馆领导
+          </a> </p>
+      
+
+        <p> <a href="https://www.nlc.cn/web/dsb_footer/gygt/jgsz/index.shtml">
+            机构设置
+          </a> </p>
+      
+
+        <p> <a href="https://www.nlc.cn/web/dsb_footer/gygt/lsyg/index.shtml">
+            国图概况
+          </a> </p>
+      
+
+        <p> <a href="https://www.nlc.cn/web/dsb_footer/gygt/guoneiwaijiaoliu/index.shtml">
+            国内外交流
+          </a> </p>
+      
+
+        <p> <a href="https://www.nlc.cn/web/dsb_footer/gygt/xxgk/index.shtml">
+            信息公开
+          </a> </p>
+      
+
+        <p> <a href="https://www.nlc.cn/web/dsb_footer/gygt/fwgf/index.shtml">
+            服务规范
+          </a> </p>
+      
+
+        <p> <a href="https://www.nlc.cn/web/dsb_footer/gygt/guanshuqiye/index.shtml">
+            馆属企业
+          </a> </p>
+      
+
+    </li>
+    <li class="li2">
+      <h5>支持我们</h5>
+      
+        <p> <a href="https://www.nlc.cn/web/dsb_footer/dsb_zcwm/dsb_cbwjs/index.shtml">
+            出版物交存
+          </a> </p>
+      
+
+        <p> <a href="https://www.nlc.cn/web/dsb_footer/dsb_zcwm/wenxianjuanzeng/index.shtml">
+            文献捐赠
+          </a> </p>
+      
+
+        <p> <a href="https://www.nlc.cn/web/dsb_footer/dsb_zcwm/dsb_wxjz/index.shtml">
+            征集启事
+          </a> </p>
+      
+
+      
+    </li>
+    <li class="li3">
+      <h5>联系我们</h5>
+      <div class="about-block">
+        <p class="about"> <a href="https://www.nlc.cn/web/dzzn/tushiguotu/dsb_tsgt/index.shtml"> -国家图书馆总馆   国家典籍博物馆- </a></p>
+        <p>地址：北京市海淀区中关村南大街33号</p>
+        <p>邮编：100081</p>
+        <p>服务咨询电话：4006006988、（+86 10）88545426</p>
+        <p>E-mail：webmaster@nlc.cn</p>
+      </div>
+      <div>
+        <p class="about"> <a href="https://www.nlc.cn/web/dzzn/tushiguotu/dsb_tsgt/index.shtml"> -国家图书馆古籍馆- </a></p>
+        <p>地址：北京市西城区文津街7号 国家图书馆古籍馆</p>
+        <p>邮编：100034</p>
+        <p>电话：（+86 10）88003091</p>
+      </div>
+    </li>
+    <li class="li4">
+      <h5>相关链接</h5>
+      
+        <p> <a href="https://www.mct.gov.cn/">
+            中华人民共和国文化和旅游部
+          </a> </p>
+      
+
+        <p> <a href="https://www.ccdy.cn/">
+            中国文化传媒网
+          </a> </p>
+      
+
+        <p> <a href="https://www.lsc.org.cn/">
+            中国图书馆学会
+          </a> </p>
+      
+
+        <p> <a href="https://www.culturedc.cn/web2.1/index.html">
+            国家公共文化云
+          </a> </p>
+      
+
+        <p> <a href="http://www.nlcpress.com/">
+            国家图书馆出版社
+          </a> </p>
+      
+
+        <p> <a href="http://www.chinaabp.cn/">
+            中国古籍保护协会
+          </a> </p>
+      
+
+    </li>
+    <li class="li5">
+      
+        <dl>
+          <dt class=""> <img src="/template_resource/10008/img/icon-wb.png" class="noCode" alt="国家图书馆官方微博二维码"> <img src="/template_resource/10008/img/icon-wb-code.png?v=123" class="code" alt="国家图书馆官方微博二维码"> </img></img></dt>
+          <dd>
+            微博
+          </dd>
+        </dl>
+      
+      
+        <dl>
+          <dt> <img src="/template_resource/10008/img/icon-wx.png" class="noCode" alt="国家图书馆官方微信二维码"> <img src="/template_resource/10008/img/icon-wx-code.png?v=123" class="code" alt="国家图书馆官方微信二维码"> </img></img></dt>
+          <dd>
+            微信
+          </dd>
+        </dl>
+      
+      
+        <dl>
+          <dt> <img src="/template_resource/10008/img/icon-dy.png" class="noCode" alt="国家图书馆官方抖音二维码"> <img src="/template_resource/10008/img/icon-dy-code.png?v=123" class="code " alt="国家图书馆官方抖音二维码"> </img></img></dt>
+          <dd>
+            抖音
+          </dd>
+        </dl>
+      
+      
+        <dl>
+          <dt> <img src="/template_resource/10008/img/icon-gt.png?v=111" alt="掌上国图二维码"> <img src="/template_resource/10008/img/icon-gt-code.png?v=123" class="code" alt="掌上国图二维码"> </img></img></dt>
+          <dd>
+            掌上国图
+          </dd>
+        </dl>
+      
+    <!--<NLC_CHANNELS ID="50033" STARTPOS="4" NUM="1">
+        <dl>
+          <dt> <img src="/template_resource/10008/img/icon-bilibili.png" alt="国家图书馆官方B站二维码"> <img
+              src="/template_resource/10008/img/icon-bilibili-code.png" class="code" alt="国家图书馆官方B站二维码"> </dt>
+          <dd>
+            <NLC_CHANNEL FIELD="name"></NLC_CHANNEL>
+          </dd>
+        </dl>
+      </NLC_CHANNELS>
+    <NLC_CHANNELS ID="50033" STARTPOS="5" NUM="1">
+        <dl>
+          <dt> <img src="/template_resource/10008/img/icon-xhs.png" alt="国家图书馆官方小红书二维码"> <img
+              src="/template_resource/10008/img/icon-xhs-code.png" class="code" alt="国家图书馆官方小红书二维码"> </dt>
+          <dd>
+            <NLC_CHANNEL FIELD="name"></NLC_CHANNEL>
+          </dd>
+        </dl>
+      </NLC_CHANNELS>-->
+    </li>
+  </ul>
+  <ul class="common-footer-row2 wrap-1280">
+    <li> <a href="https://www.nlc.cn/web/dsb_footer/bqsm/index.shtml">
+        版权声明
+      </a> <span>|</span> <a href="https://www.nlc.cn/web/dsb_footer/zhandianditu/index.shtml">
+        站点地图
+      </a> <span>|</span> <a href="https://www.nlc.cn/web/dsb_footer/rczp/index.shtml">
+        人才招聘
+      </a> </li>
+    <li><img src="/template_resource/10008/img/icon-gwab.png" alt="京公网安备11010802043898" style="width: 18px; height: 20px; top: 60px; left: 316px;"><a href="https://beian.mps.gov.cn/#/query/webSearch?code=11010802043898" rel="noreferrer" target="_blank">京公网安备11010802043898</a> <span>|</span> <a target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index">京ICP备05014420号</a> <span>|</span> <a>电话：（+86 10）88545426</a><br><br><b>© 中国国家图书馆版权所有</b> </br></br></img></li> <a target="_blank" href="https://bszs.conac.cn/sitename?method=show&id=37DFB7402E4D3CF3E053022819ACB320"> <img src="/template_resource/10008/img/cion-mark.png" alt="全国党政机关事业单位互联网网站标识管理服务平台" /> </a>
+  </ul>
+</div>
+<!-- 整站置灰 -->
+<!-- <style type="text/css">
+  html,body{
+    filter: grayscale(100%);;
+    -webkit-filter: grayscale(100%);;
+  }
+</style> -->
+<!-- 整站置灰 -->
+<!-- 底部 | end -->
+
+
+<script src="/template_resource/20235/js/swiper.min.js" type="text/javaScript"></script>
+<script src="/template_resource/20235/js/common.js?v=912" type="text/javaScript"></script>
+<script src="/template_resource/10012/js/esdToolsInit.js" type="text/javaScript"></script>
+<script src="/staticResource/js/count.min.js" type="text/javaScript"></script>
+<script type="text/javaScript">
+getCountFn(count_data)
+</script>
+
+
+
+
+<!--<link rel="stylesheet" href="/template_resource/20771/index.main.css?v=1.5"></link>
+<script type="text/javaScript" src="/template_resource/20771/index.main.js"></script>-->
+
+</body>
+
+</html>
+<!--tempalte=20823 -->

@@ -1,0 +1,2557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta property="og:type" content="article"/>
+<title>한국디자인진흥원</title>
+<meta property="og:title" content="한국디자인진흥원"/>
+<meta property="og:image" content="http://kidp.or.kr/images/kidp/common/KIDP_thumb.jpg"/>
+<meta property="og:description" content="한국디자인진흥원"/>
+<meta name="google-site-verification" content="hwUnWG3g30pTkzq6TVMsge8KTIxeULKdymZ0_irjbBg" />
+<meta name="naver-site-verification" content="8e44da899a2968cd1eadbb696ecc511da08953e4"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="X-UA-Compatible" content="IE=10" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="cache-control" content="no-cache" />
+<link rel="stylesheet" type="text/css" href="/cms/css/font.css" />
+<link rel="shortcut icon" href="/images/kidp/icon/dp.ico"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="/usr/css/20160907_3564132069791835.css" type="text/css" />
+<link rel="stylesheet" href="/usr/css/20170516_1607113236732968.css" type="text/css" />
+<link rel="stylesheet" href="/usr/css/20180928_1188407263150733.css" type="text/css" />
+<link rel="stylesheet" href="/usr/skin/banner/newKidpMainRe1/css/banner.css" type="text/css" />
+<link rel="stylesheet" href="/usr/skin/banner/newKidpMainRe2/css/banner.css" type="text/css" />
+<link rel="stylesheet" href="/usr/skin/banner/newKidpMainReD/css/banner.css" type="text/css" />
+<script type="text/javascript" src="/com/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/com/js/jquery.form.min.js"></script>
+<script type="text/javascript" src="/usr/js/banner.js" defer></script>
+<script type="text/javascript" src="/usr/skin/banner/newKidpMainRe1/js/banner.js" defer></script>
+<script type="text/javascript" src="/usr/skin/banner/newKidpMainRe2/js/banner.js" defer></script>
+<script type="text/javascript" src="/usr/skin/banner/newKidpMainReD/js/banner.js" defer></script>
+<script type="text/javascript" src="/usr/js/20170516_1607137956763215.js"></script>
+<script type="text/javascript" src="/usr/js/20160907_3564525067990313.js"></script>
+</head>
+<body>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBWNT1STW3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZBWNT1STW3');
+</script>
+
+
+<script type="text/javascript">
+$(function () {
+    /* top navigation bar */
+    var href = window.location.pathname.split('_')[0];
+    $("#gnb_sub > ul > li").each(function() {  
+        if (href == $(this).children("a").attr("href").split('_')[0]) {               
+      $(this).children("a").addClass("on");
+            return false;
+        }
+    });
+});
+function total_search(type){
+
+if(type == "d"){
+  if($("#m_keyword").val() != ""){
+    $("#keyword").val($("#m_keyword").val());
+  }
+}
+  if($("#keyword").val() == ""){
+    alert("검색어를 입력하세요.");
+    $("#keyword").focus();
+      
+  }else{  
+    $("#frmsearch").submit();
+  }  
+
+  return false;
+  
+}
+
+
+function login_kidp() {
+  var addUrl ="/skin/member/kidp/popup.html";
+  addUrl = addUrl + "?popupName=popupLogin";
+  var win =window.open(addUrl, "_blank", "resizable=no, status=no, scrollbars=yes, toolbar=no, menubar=no, width=560, height=307");
+
+        var timer = setInterval(function() {   
+          if(win.closed) {  
+              clearInterval(timer);  
+              window.location.reload(); 
+          }  
+      }, 1000); 
+  
+}
+
+function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1), sURLVariables = sPageURL.split('&'), sParameterName, i;
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] === sParam) {
+          return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+}
+//KIDP
+//구글어낼리틱스 추적코드
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-ZBWNT1STW3', 'auto');
+  ga('send', 'pageview');
+
+
+//kidp 메뉴 리뉴얼
+//50주년 {p:364}
+$(document).ready(function(){  
+  var mainitems = [
+  {p:336},
+  {p:480},
+  {p:636},
+  {p:865},
+  {p:1069}
+  ]
+  $(".main-item, #main-open, .main-menus, div.hr-main").mouseover(function(){
+     var id = $(this).attr("id");
+    $("#logo-box").css("background","#fff");
+    if(typeof id !== 'undefined'){
+      var index = parseInt(id.match(/\d+/));
+      if(!isNaN(index)){
+        var menu_width = $("#main-item"+index).find("a").width();
+        var w = menu_width+24;
+        var p = mainitems[index].p;
+        $("div.hr-main").css("width",w+"px");
+        $("div.hr-main").css("margin-left",p+"px");
+        $("div.hr-main").attr("id", index);
+      }
+      
+    }
+    $("div.hr-main").css("visibility","visible");
+    $("#sub-box").hide();
+    $("#main-open").show();
+    
+  }).mouseout(function(){
+    $("div.hr-main").css("visibility","hidden");
+    $("#logo-box").css("background","#fff");
+    $("#main-open").hide();
+    $("#sub-box").show();
+  })
+  var subitems = [
+    {p:0},
+    {p:170},
+    {p:340},
+    {p:576},
+    {p:780},
+    {p:1012}
+  ]
+  $(".sub-item, .sub-open, div.hr-sub").mouseover(function(){
+    var id = $(this).attr("id");
+    if(typeof id !== 'undefined'){
+      var index = parseInt(id.match(/\d+/));
+      if(!isNaN(index)){
+        var menu_width = $("#sub-item"+index).find("a").width();
+        var w = menu_width+24
+        var p = subitems[index].p;
+        $("div.hr-sub").css("width",w+"px");
+        $("div.hr-sub").css("margin-left",p+"px");
+        $("div.hr-sub").css("visibility","visible");
+        $("#sub-open"+index).show();
+        $("div.hr-sub").attr("id", index);
+      }
+    }
+  }).mouseout(function(){
+    $("div.hr-sub").css("visibility","hidden");
+    $(".sub-open").hide();
+  })
+  var menuno = getUrlParameter("menuno");
+  var $menudom = $(".lnb_sub a."+menuno);
+  $menudom.closest("ul.sub").prev().addClass("on").trigger("click");
+  $menudom.addClass("on"); 
+  
+  var retUrl = $(location).attr('href').split("/?")[1];
+  if(menuno !=1183){
+    var temphref = $("#login_link").attr("href");
+    $("#login_link").attr("href",temphref+"&retUrl="+escape(retUrl));
+  }
+});
+function getUrlParameter(sParam){
+    var sPageURL = window.location.search.substring(1), sURLVariables = sPageURL.split('&'), sParameterName, i;
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] === sParam) {
+          return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+}
+
+</script>
+<style type="text/css">
+/*컨텐츠 영역 시작 높이 재조정*/
+#container_sub{
+  margin-top:155px !important;
+}
+/*lnb 타이틀*/
+.lnb_sub h2{
+  text-align:center !important;
+  padding-left:0px !important;
+}
+
+.container{
+  margin-top:157px;
+}
+#menu-cont{
+  width:100%;
+  background:#fff;
+  position:absolute;
+  top:40px;
+  z-index:9999;
+}
+#menu-box{
+  width:1200px;
+  margin:0 auto;
+  background:#fff !important;
+}
+#logo-box{
+  padding-left:25px;
+}
+#main-box, #main-open, #sub-box, .sub-open{
+  width:1200px;
+}
+#main-box, #main-box tr, #main-box td, #sub-box, #sub-box tr, #sub-box td{
+  border-collapse:collapse;
+  border-bottom:1px solid #e6e6e6;
+}
+#main-box td:not(:first-child){
+  padding:40px 0px 40px 0px;
+  text-align:left;
+}
+.main-item a{
+  font-size:17px;
+  color:#de2717;
+  font-weight:bold;
+  text-decoration:none;
+}
+#slogan_title{
+  font-size:21px;
+  font-weight:bold;
+  padding:20px;
+  line-height:120%;
+}
+#slogan_content{
+  font-size:15px;
+  color:#777;
+  padding:0px 20px 20px 20px;
+}
+#main-open{
+  display:none;
+  margin-bottom: 7px;
+}
+#sub-box td{
+  text-align:center;
+  padding:20px 0px 20px 0px;
+}
+#sub-box span{
+  float:right;
+}
+.sub-item a{
+  font-size:16px;
+  color:#666;
+  font-weight:bold;
+  text-decoration:none;
+  
+}
+.sub-item a:hover{
+  color:#de2717;
+}
+.sub-dot{
+  color:#666;
+}
+.sub-title{
+  height:auto;
+  background:#de2717;
+  color:#fff;
+  font-size:20px;
+  font-weight:bold;
+  vertical-align:top;
+  padding:40px 0px 40px 30px;
+}
+.sub-menu{
+  padding:20px 0px 20px 0px;
+}
+.sub-line{
+  width:50px;
+  background:#fff;
+  height:2px;
+  margin-top:15px;
+}
+.sub-menus a{
+  text-decoration:none;
+  width:30%;
+  background:#f4f4f4;
+  float:left;
+  margin:8px 0px 8px 15px;
+  font-size:14px;
+  color:#de2717;
+  font-weight:bold;
+  height:45px;
+  line-height:45px;
+  padding-left:10px;
+  background-image:url("/images/newmenu/kidp_sub_flow.png");
+  background-repeat:no-repeat;
+  background-position:right 10px center;
+}
+.sub-open{
+  display:none;
+}
+div.hr-main {
+  height: 6px;
+    background: #de2717;
+    position:absolute;
+  margin:0;
+  margin-top:-6px;
+  transition: .2s ease-in-out;
+  visibility:hidden;
+}
+div.hr-sub {
+  height: 2px;
+    background: #de2717;
+    position:absolute;
+  margin:0;
+  margin-top:-2px;
+  transition: .2s ease-in-out;
+  visibility:hidden;
+}
+div.hr-sub:after {
+    content:'';
+    position: absolute;
+    border-style: solid;
+    border-width: 0;
+    border-color: #FFFFFF transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    top: -5px;
+    left: 46%;
+}
+div.hr-sub:before {
+    content:'';
+    position: absolute;
+    border-style: solid;
+    border-width: 0 6px 6px;
+    border-color: #de2717 transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    top: -6px;
+    left: 46%;
+}
+.main-menus{
+  vertical-align:top;
+}
+.main-menus ul{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.main-menus li:first-child{
+  padding-top: 20px;
+}
+.main-menus li{
+  padding-bottom: 10px;
+}
+.main-menus a{
+  font-size:14px;
+  color:#666;
+  text-decoration:none;
+}
+.main-menus a:hover{
+  color:#de2717;
+}
+/*
+#main-item4{
+  text-align:center !important;
+}
+#main-item4 a{
+  color:#de2717;
+  font-size:17px;  
+  font-weight:bold;
+}
+*/
+</style>
+<div id="skipNavi">
+<h1>컨텐츠 바로기기</h1>
+
+<ul>
+  <li><a href="#header">본문으로 바로가기</a></li>
+  <li><a href="#container">주메뉴로 바로가기</a></li>
+  <li><a href="#footer">하단 홈페이지정보 바로가기</a></li>
+</ul>
+</div>
+
+<div id="wrap">
+<div id="header">
+<div class="topmanu">
+
+<div class="menu">
+<ul>
+  <li><a href="?menuno=1183&act=login_kidp" id="login_link">로그인</a></li>
+    <!-- 작업 대기 -->
+    <!--<li><a href="?menuno=1510" id="login_link">로그인</a></li>-->
+    <li><a href="https://designdb.com/?menuno=702&act=join_agree">회원가입</a></li>
+  <li><a class="language" href="https://eng.kidp.or.kr" target="_blank">ENG</a></li>
+  <!-- <li><a class="language" href="http://www.kidpchina.cn" target="_blank">CHN</a></li>   -->
+</ul>
+
+<fieldset>
+<form action="/?menuno=1045" id="frmsearch" method="post" name="frmsearch"><input name="cond2" type="hidden" value="all" /> <input name="siteno" type="hidden" value="16" />
+ <input name="type" type="hidden" value="16" />
+ <label for="searchQuery"><img alt="search" src="/images/kidp/common/all_search.gif" /></label> <input class="write" id="keyword" name="keyword" onkeydown="if(event.keyCode==13){total_search(); return false;}" title="검색어 입력" type="text" value="" /> <input onclick="total_search(); return false;" src="/images/kidp/common/search.gif" type="image" /> </form>
+</fieldset>
+</div>
+</div>
+<!--topmanu--></div>
+<!--header-->
+<div id="menu-cont">
+<div id="menu-box">
+  <table id="main-box">
+    <colgroup>
+      <!-- <col width="25%"/>
+      <col width="17%"/> -->
+      <col width="29%"/>
+      <col width="12%"/>
+      <col width="13%"/>
+      <col width="19%"/>
+      <col width="17%"/>
+      <col width="10%"/>
+    </colgroup>
+    <tr>
+      <td id="logo-box"><a href="/?menuno=773"><img src="/images/newmenu/kidp_logo_2021.png" id="menu-logo" alt="KIDP 한국디자인진흥원 로고"/></a></td>
+      <td class="main-item" id="main-item0"><a href="javascript:void(0)">기관정보</a></td>
+      <td class="main-item" id="main-item1"><a href="javascript:void(0)">사업정보</a></td>
+      <td class="main-item" id="main-item2"><a href="javascript:void(0)">디자인의 사회적가치</a></td>
+      <td class="main-item" id="main-item3"><a href="javascript:void(0)">KIDP 고객센터</a></td>
+      <td class="main-item" id="main-item4"><a href="javascript:void(0)">정보공개</a></td>
+    </tr>
+  </table>
+  <div class="hr-main"></div>
+  <table id="main-open">
+    <colgroup>
+      <col width="25%"/>
+      <col width="17%"/>
+      <col width="12%"/>
+      <col width="13%"/>
+      <col width="19.5%"/>
+      <col width="15.5%"/>
+    </colgroup>
+    <tr>
+      <td>
+        <div id="slogan_title"><span style="color:#de2717">대한민국 디자인산업</span> 성장을 이끌어 갑니다.</div>
+        <div id="slogan_content">한국디자인진흥원은 국내유일의 국가주도 디자인산업 진흥을 위한 준정부기관입니다.</div>
+      </td>      
+      <td rowspan="2" class="main-menus" id="main-menu0">
+        <ul style="margin-left:50px;">
+          <li><a href="/?menuno=962">기관소개</a></li>
+          <li><a href="/?menuno=1019">기관홍보</a></li>
+          <li><a href="/?menuno=966">경영공시</a></li>
+          <li><a href="/?menuno=1031">네트워크</a></li>
+        </ul>
+      </td>
+      <td rowspan="2" class="main-menus" id="main-menu1">
+        <ul style="margin-left:-12px;">
+          <!--<li><a href="/?menuno=1201">사업종합안내</a></li>-->
+          <li><a href="/?menuno=1202">사업부 소식</a></li>
+          <li><a href="/?menuno=1016">대관/임대안내</a></li>
+          <li><a href="/?menuno=1012">입찰정보</a></li>
+          <li><a href="/?menuno=1010">채용정보</a></li>
+        </ul>
+      </td>
+      <td rowspan="2" class="main-menus" id="main-menu2">
+        <ul style="margin-left:2px;">
+          <li><a href="/?menuno=1004">추진체계</a></li>
+          <li><a href="/?menuno=1329">사회적책임 행동규범</a></li>
+          <li><a href="/?menuno=1405">안전보건경영방침</a></li>
+          <!--<li><a href="/?menuno=1444">부패방지지침</a></li>-->
+          <!--<li><a href="/?menuno=1281">전략과제 및 추진활동</a></li>-->
+          <li><a href="/?menuno=1414">윤리경영</a></li>
+          <li><a href="/?menuno=1351">인권경영</a></li>
+          <li><a href="/?menuno=1430">안전보건 인증현황</a></li>
+          <!--<li><a href="/?menuno=1463">ESG와 디자인씽킹</a></li>-->
+          <li><a href="/?menuno=1347&bbsno=106&siteno=16&act=view&ztag=rO0ABXQANzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iOTM0IiBza2luPSJraWRwX2Jic19nb3YiPjwvY2FsbD4%3D7">기부 안내</a></li>
+        </ul>
+      </td>
+      <td rowspan="2" class="main-menus" id="main-menu3">        
+        <ul style="margin-left:72px;">
+          <li><a href="/?menuno=1185">1:1문의</a></li>
+        <!--<li><a href="/?menuno=1023">고객서비스 헌장</a></li>
+          <li><a href="/?menuno=1025">핵심서비스 이행표준</a></li>
+          <li><a href="/?menuno=1026">고객대응서비스 이행표준</a></li>-->
+          <li><a href="https://www.clean.go.kr/menu.es?mid=a10207000000" target="_blank">공익신고</a></li>
+          <li><a href="/?menuno=1427&cates=100135&pop=1">민원 접수</a></li>
+        </ul>
+      </td>
+      <td rowspan="2" class="main-menus" id="main-menu4">        
+        <ul style="margin-left:42px;">
+          <li><a href="/?menuno=940" class="940">개요</a></li>
+          <li><a href="/?menuno=941" class="941">처리절차</a></li>
+          <li><a href="/?menuno=942" class="942">방법</a></li>
+          <li><a href="/?menuno=1462" class="1462">비공개대상정보</a></li>
+          <li><a href="/?menuno=943" class="943">불복구제</a></li>
+          <li><a href="/?menuno=944" class="944">수수료 안내</a></li>
+          <li><a href="/?menuno=945" class="945">서식/법령</a></li>
+          <li><a href="/?menuno=946" class="946">사업실명제</a></li>
+          <li><a href="/?menuno=937" class="937">사전정보공표</a></li>
+          <li><a href="/?menuno=938" class="938">공공데이터 개방</a></li>
+          <!--<li><a href="/?menuno=939" class="939">공공데이터 이용신청</a></li>
+          <li><a href="/?menuno=1461" class="1461">공공데이터 수요조사</a></li>-->
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:center;"><img src="/images/newmenu/design_center.png" alt="디자인센터"/></td>
+      <td></td>
+    </tr>
+  </table>
+  <table id="sub-box">
+      <tr>
+        <td class="sub-item" id="sub-item0"><a href="javascript:void(0)">인력양성 및 교육</a><span class="sub-dot"> •</span></td>
+        <td class="sub-item" id="sub-item1"><a href="javascript:void(0)">연구 및 정책개발</a><span class="sub-dot"> •</span></td>
+        <td class="sub-item" id="sub-item2"><a href="javascript:void(0)">문화확산 및 해외시장 진출</a><span class="sub-dot">•</span></td>
+        <td class="sub-item" id="sub-item3"><a href="javascript:void(0)">기업지원 및 창업육성</a><span class="sub-dot"> •</span></td>
+        <td class="sub-item" id="sub-item4"><a href="javascript:void(0)">서비스디자인 및 제조혁신</a><span class="sub-dot">•</span></td>
+        <td class="sub-item" id="sub-item5"><a href="javascript:void(0)">플랫폼구축 및 정보제공</a></td>
+      </tr>
+    </table>
+    <div class="hr-sub"></div>
+    <table class="sub-open" id="sub-open0">
+      <colgroup>
+        <col width="25%"/>
+        <col width="75%"/>
+      </colgroup>
+      <tr>
+        <td class="sub-title">인력양성 및 교육<div class="sub-line"></div></td>
+        <td class="sub-menu">
+          <div class="sub-menus"><a href="/?menuno=1207">해외인턴지원사업</a></div>
+          <div class="sub-menus"><a href="/?menuno=865">국가인적자원개발컨소시엄</a></div>
+          <div class="sub-menus"><a href="/?menuno=869">기타 교육 지원</a></div>
+          <div class="sub-menus"><a href="/?menuno=900">디자인문화콘텐츠ISC</a></div>
+          <!-- <div class="sub-menus"><a href="/?menuno=1334">디자인 주도 다학제 교육과정 지원사업</a></div> 230223신해수연구원 요청 숨김 -->
+        <!--  <div class="sub-menus"><a href="/?menuno=1478">신기술융합디자인 혁신인재양성사업</a></div> 230227신해수연구원 요청 생성 -->
+        <!-- <div class="sub-menus"><a href="/?menuno=1337">신기술분야융합디자인 전문인력양성사업</a></div>-->
+                <div class="sub-menus"><a href="/?menuno=1507">디지털융합디자인 전문인력양성사업</a></div> <!--  250526성지원연구원 요청 생성 -->
+          <div class="sub-menus"><a href="/?menuno=1371">세계일류 디자이너 양성 사업</a></div>
+          <div class="sub-menus"><a href="/?menuno=1443">청년연계 K디자인 파워업 사업</a></div>
+          <div class="sub-menus"><a href="/?menuno=1458">디자인산업 인적자원개발협의체(SC)</a></div>
+          <div class="sub-menus"><a href="/?menuno=1474">디자인그라운드(학습 플랫폼)</a></div>
+        </td>
+      </tr>
+    </table>
+    <table class="sub-open" id="sub-open1">
+      <colgroup>
+        <col width="25%"/>
+        <col width="75%"/>
+      </colgroup>
+      <tr>
+        <td class="sub-title">연구 및 정책개발<div class="sub-line"></div></td>
+        <td class="sub-menu">          
+          <div class="sub-menus"><a href="/?menuno=1340">미래 제품•서비스 선행연구</a></div>
+
+          <div class="sub-menus"><a href="/?menuno=891">디자인산업 통계조사</a></div>
+          <div class="sub-menus"><a href="/?menuno=894">정책연구사업</a></div>
+        <!-- <div class="sub-menus"><a href="/?menuno=1306">디자인 에필로그</a></div>-->    
+        </td>
+      </tr>
+    </table>
+    <table class="sub-open" id="sub-open2">
+      <colgroup>
+        <col width="25%"/>
+        <col width="75%"/>
+      </colgroup>
+      <tr>
+        <td class="sub-title">문화확산 및 해외시장 진출<div class="sub-line"></div></td>
+        <td class="sub-menu">
+          <div class="sub-menus"><a href="/?menuno=917">디자인코리아</a></div>
+          <div class="sub-menus"><a href="/?menuno=922">우수디자인(GD)상품 선정</a></div>
+          <div class="sub-menus"><a href="/?menuno=911">대한민국디자인전람회</a></div>          
+          <div class="sub-menus"><a href="/?menuno=925">대한민국디자인대상</a></div>
+          <div class="sub-menus"><a href="/?menuno=920">디자이너 명예의 전당</a></div>
+          <div class="sub-menus"><a href="/?menuno=1374">코리아+스웨덴 영 디자인 어워드</a></div>          
+          <div class="sub-menus"><a href="/?menuno=1393">디자인코리아뮤지엄 (DKmuseum)</a></div>          
+          <div class="sub-menus"><a href="/?menuno=930">글로벌생활명품 공모</a></div>
+          <div class="sub-menus"><a href="/?menuno=933">디자인권리보호</a></div>
+          <div class="sub-menus"><a href="/?menuno=850">KIDP CHINA</a></div>
+          <div class="sub-menus"><a href="/?menuno=843">디자인해외진출지원</a></div>
+          <div class="sub-menus"><a href="/?menuno=847">국제교류협력</a></div>  
+          <!-- <div class="sub-menus"><a href="/?menuno=1454">한글 창의산업 및 아이디어 공모전</a> --></div>        
+        </td>
+      </tr>
+    </table>
+    <table class="sub-open" id="sub-open3">
+      <colgroup>
+        <col width="25%"/>
+        <col width="75%"/>
+      </colgroup>
+      <tr>
+        <td class="sub-title">기업지원 및 창업육성<div class="sub-line"></div></td>
+        <td class="sub-menu">
+          <div class="sub-menus"><a href="/?menuno=824">디자인전문회사 신고등록</a></div>
+          <div class="sub-menus"><a href="/?menuno=1496">우수디자인전문기업 선정</a></div>  
+          <div class="sub-menus"><a href="/?menuno=1407">디자인전문기업육성 및 글로벌화</a></div>
+          <div class="sub-menus"><a href="/?menuno=1486">디자인금융지원사업</a></div>
+          <div class="sub-menus"><a href="/?menuno=811">수출지원기반활용사업</a></div>
+          <div class="sub-menus"><a href="/?menuno=1255">스타일산업 신생태계 구축</a></div>
+          <div class="sub-menus"><a href="/?menuno=1122">디자인-기술협업 전주기 지원</a></div>
+          <div class="sub-menus"><a href="/?menuno=821">디자인-기술협업 인력 지원</a></div>
+
+          <!--<div class="sub-menus"><a href="/?menuno=1197">Design Innovation Lab</a></div>-->
+          <!--<div class="sub-menus"><a href="/?menuno=1248">소상공인협업 활성화공동사업</a></div>-->
+
+  
+
+        
+        </td>
+      </tr>
+    </table>
+    <table class="sub-open" id="sub-open4">
+      <colgroup>
+        <col width="25%"/>
+        <col width="75%"/>
+      </colgroup>
+      <tr>
+        <td class="sub-title">서비스디자인 및 제조혁신<div class="sub-line"></div></td>
+        <td class="sub-menu">
+          <div class="sub-menus"><a href="/?menuno=897">서비스디자인 연구</a></div>
+          <div class="sub-menus"><a href="/?menuno=1130">공공서비스디자인</a></div>
+          <div class="sub-menus"><a href="/?menuno=1245">지속가능디자인지원</a></div>
+          <div class="sub-menus"><a href="/?menuno=1377">서비스·경험디자인 기사</a></div>
+          <div class="sub-menus"><a href="/?menuno=1502">문화선도산단 청년디자인리빙랩</a></div>
+          <div class="sub-menus"><a href="/?menuno=1448">안전서비스디자인</a></div>
+          <div class="sub-menus"><a href="/?menuno=1272">디자인주도 제조혁신센터</a></div>
+          <div class="sub-menus"><a href="/?menuno=888">지역디자인개발 사업</a></div>
+        </td>
+      </tr>
+    </table>
+    <table class="sub-open" id="sub-open5">
+      <colgroup>
+        <col width="25%"/>
+        <col width="75%"/>
+      </colgroup>
+      <tr>
+        <td class="sub-title">플랫폼구축 및 정보제공<div class="sub-line"></div></td>
+        <td class="sub-menu">
+          <div class="sub-menus"><a href="/?menuno=1236">디자인-온라인제조플랫폼서비스 사업</a></div>
+          <div class="sub-menus"><a href="/?menuno=885">프로세스 및 시스템개발</a></div>          
+          <div class="sub-menus"><a href="/?menuno=1383">인공지능학습용데이터 구축사업</a></div>
+          <div class="sub-menus"><a href="/?menuno=1399">DesignDB.com</a></div>
+        </td>
+      </tr>
+    </table>
+</div>
+</div>
+</div>
+<!--wrap-->
+<script type="text/javascript">
+var isMobile = false; //initiate as false
+// device detection
+if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
+    || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0,4))) { 
+    isMobile = true;
+}
+</script>
+</body>
+</html>
+
+<style>
+#email_reagree_content > * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 1em !important;
+}
+#email_reagree_content h2{
+  margin-top:0px;
+}
+.modalDialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);    
+    display:none;
+    -webkit-transition: opacity 100ms ease-in;
+    -moz-transition: opacity 100ms ease-in;
+    transition: opacity 100ms ease-in;
+    pointer-events: none;
+}
+.modalDialog.modalshow {
+    display:block;
+    pointer-events: auto;
+    z-index: 99999;  
+}
+.modalDialog > div {
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    margin: 10% auto;
+    padding: 25px 25px 33px 25px;
+    border-radius: 3px;
+    background: #fff;
+  font-size:14px;
+}
+#email_reagree_confirm_btn {  
+    background: #f03737;
+    color: #fff;
+  padding:6px 36px;
+    text-align: center;  
+  display:inline-block;
+  cursor:pointer;
+  margin-left:20px;
+}
+</style>
+<script type="text/javascript">
+/* 메인 슬라이드 스크립트 */
+$(document).ready(function() {
+  var obj = document.getElementById("subbg");    
+  obj.setAttribute("id", "")    ;
+  //console.log("obj.getAttribute("id"));
+  var swiper_main = new Swiper('.s1', {
+    pagination: '.pg1',
+    paginationClickable: true,
+    centeredSlides: true,
+    autoplay: 6000,
+    autoplayDisableOnInteraction: false,
+    nextButton: '.n1',
+    prevButton: '.p1',
+    loop: true  
+  });
+  $('.s1').on('mouseenter', function(e){
+    swiper_main.stopAutoplay();
+  })
+  $('.s1').on('mouseleave', function(e){
+    swiper_main.startAutoplay();
+  })
+
+  var swiper_sub = new Swiper('.s2', {
+    initialSlide: 0,
+    pagination: '.pg2',
+    slidesPerView: 3,
+    slidesPerGroup : 3,  //2020.07.15 김근영 연구원 요청으로 중간 배너 슬라이드 세개씩 움직이도록 변경
+    paginationClickable: true,
+    spaceBetween: 20,
+    centeredSlides: false,
+    autoplay: 4000,
+    autoplayDisableOnInteraction: false,
+    nextButton: '.n2',
+    prevButton: '.p2',
+    loop: true,
+    loopFillGroupWithBlank : true
+  });
+  $('.s2').on('mouseenter', function(e){
+    swiper_sub.stopAutoplay();
+  })
+  $('.s2').on('mouseleave', function(e){
+    swiper_sub.startAutoplay();
+  })
+         
+  var swiper_foot = new Swiper('.s3', {    
+    pagination: '.pg3',
+    paginationClickable: true,
+    centeredSlides: true,
+    autoplay: 6000,
+    autoplayDisableOnInteraction: false,
+    nextButton: '.n3',
+    prevButton: '.p3',
+    loop: true
+  });
+  $('.s3').on('mouseenter', function(e){
+    swiper_foot.stopAutoplay();
+  })
+  $('.s3').on('mouseleave', function(e){
+    swiper_foot.startAutoplay();
+  })
+  
+  var const_width = 1819;
+  var window_width = $(window).width();
+  var r_width =( window_width * 25 ) /  const_width
+  $(".s1_titleWrap").css("top", r_width+"%");
+  
+  $(window).resize(function(){
+    var temp_width = $(window).width();    
+    r_width =( temp_width * 25 ) /  const_width;
+    $(".s1_titleWrap").css("top", r_width+"%");
+  });
+  
+  $(window).scroll(function (event) {
+        var scroll = $(window).scrollTop();
+    if(scroll>1660){
+      $("#fiftieth_link").hide();
+    }else{
+      $("#fiftieth_link").show();
+    }
+  });
+  var email_agree_menuno = getUrlParameter("menuno");
+  var email_agree = getUrlParameter("email_re_agree");
+  if(email_agree_menuno =="773" && email_agree=="true" && "".length > 0){
+    $("#email_reagree_modal").addClass("modalshow");
+  }
+});
+function go_email_reagree(){
+  var usermailling = $("input[name='usermailling']:checked").prop("value");  
+  $.ajax({
+    url: "/emailReAgree",
+    type:"POST",      
+    cache: false,
+    dataType: "text", 
+    data : {"usermailling":usermailling},  
+    success: function(ret) {
+      if(ret=="success"){
+        alert("확인되었습니다.");
+        window.location.replace("/?menuno=773");
+      }
+    },
+    error: function(error){
+      alert("저장중 오류가 발생했습니다. 시스템 관리자(031-780-2124)에게 문의해주세요.");
+    }
+  });
+}
+function getUrlParameter(sParam){
+    var sPageURL = window.location.search.substring(1), sURLVariables = sPageURL.split('&'), sParameterName, i;
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] === sParam) {
+          return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+}
+// 2019.05.14 KIDP 메인 페이지 타이틀을 한국디자인진흥원으로 설정함.
+$(document).attr("title","한국디자인진흥원");
+
+/* 메인 비주얼 슬라이드 스크립트 끝*/
+
+</script>
+<!-- 팝업-->
+
+<script type="text/javascript">
+    
+  function getCookie(name) {
+    var matches = document.cookie.match(new RegExp("(?:^|; )" + name + "=([^;]*)"));
+    return matches ? matches[1] : null;
+  }
+
+  $(function(){
+    if ("true"=="" || getCookie("layerpopup_38") === "done"){
+      $("#skin1").hide();
+    } else {
+      $("#skin1").center1().show();
+    }
+    $("#layerclose1").bind("click",function(event){
+
+      if ($("#close1").is(":checked")){
+        /* var frm = $("form[name='layerpopup_default1']");
+        frm.submit(); */
+        // 2026.04.23 수정
+        var expDate = new Date();
+        expDate.setDate(expDate.getDate() + 1);
+        document.[REDACTED_SECRET_SIGNAL] expires=" + expDate.toUTCString() + "; path=/";
+        $.ajax({ 
+          type: 'post' 
+          , async: true 
+          , url: '/skin/layerpopup/default/layerpopup_cookie.html' 
+          , data: "menuno=773&layerpopupno=38"
+          , success: function(data) { 
+             $("#skin1").hide();
+          } 
+          , error: function(data, status, err) { 
+            alert('서버와의 통신이 실패했습니다.');
+            $("#skin1").hide();
+          }
+        
+        });
+        return;
+      }
+      
+      $("#skin1").hide();
+      
+    });
+  });
+  jQuery.fn.center1 = function () {
+    
+    this.css("position","absolute");
+    this.css("top","210px");
+    this.css("left","50px");
+    
+    /* if("2"=="1"){
+      this.css("top",Math.max(0,(($(window).height()-$(this).outerHeight())/2)+$(window).scrollTop())+1*330-495+"px");
+      //this.css("left",Math.max(0, (($(window).width()-$(this).outerWidth())/2)+$(window).scrollLeft()));
+      this.css("left",Math.max(0,(($(window).width()-$(this).outerWidth())/2)+$(window).scrollLeft())+1*-495+"px");
+    }else if("2"=="2"){
+      this.css("top",Math.max(0,(($(window).height()-$(this).outerHeight())/2)+$(window).scrollTop()));
+      this.css("left",Math.max(0,(($(window).width()-$(this).outerWidth())/2)+$(window).scrollLeft())+1*330-495+"px");
+    }else if("2"=="3"){
+      this.css("top",Math.max(0,(($(window).height()-$(this).outerHeight())/2)+$(window).scrollTop()));
+      this.css("left",Math.max(0,(($(window).width()-$(this).outerWidth())/2)+$(window).scrollLeft())+1* 330-660+"px");
+    }else{
+      this.css("top",Math.max(0,(($(window).height()-$(this).outerHeight())/2)+$(window).scrollTop())+1*30+"px");
+      this.css("left",Math.max(0,(($(window).width()-$(this).outerWidth())/2)+$(window).scrollLeft())+1*50-200+"px");
+    } */
+    return this;
+  }
+</script>
+  <!-- 레이어 팝업 -->
+  
+  <div id="skin1" style="width:550px;height:678px;background:#f1f0ef;z-index:999;display:none">
+    <div class="layer-pop">
+      <form name="layerpopup_default1" method="post" action="/skin/layerpopup/default/layerpopup_cookie.html">
+        <input type="hidden" name="menuno" value="773" />
+        <input type="hidden" name="layerpopupno" value="38" />
+        <div class="popup_img"  style="padding:5px 5px 0 5px;">
+            <img src="/usr/upload/layerpopup/20260601095136885_4799.0.jpg" width="540px" alt="팝업이미지">
+            </div>
+        <div style="margin:5px 0 0 10px;width:530px;overflow:hidden;">
+          <strong style="font-size:16px;line-height:18px;color:#333333;">KIDP 사칭 주의 안내</strong>
+          <p style="margin-top:5px;font-size:14px;line-height:18px;color:#666666;"></p>
+            <div class="layerpopup_footer" style="width:100%;height:25px;padding-top:6px;background:#000000;text-align:right;position:absolute;bottom:0;left:0;">
+          <!--오늘 하루 이 창을 열지 않음 시작-->
+          <span class="layerpopup_today"><input type="checkbox" id="close1" style="vertical-align:-2px;" /> <label for="close" style="color:#ffffff;">오늘 하루 이 창을 열지 않음</label></span>
+          <!--/오늘 하루 이 창을 열지 않음 끝-->
+          <span style="margin:0 10px;"><a href="javascript:void(0);" id="layerclose1"><img style="vertical-align:top;" src="/usr/skin/layerpopup/default/images/btn_popup_close.png" alt="닫기" border="0"/></a></span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+  <!-- 레이어 팝업 -->
+
+
+<script type="text/javascript">
+    
+  function getCookie(name) {
+    var matches = document.cookie.match(new RegExp("(?:^|; )" + name + "=([^;]*)"));
+    return matches ? matches[1] : null;
+  }
+
+  $(function(){
+    if ("true"=="" || getCookie("layerpopup_36") === "done"){
+      $("#skin2").hide();
+    } else {
+      $("#skin2").center2().show();
+    }
+    $("#layerclose2").bind("click",function(event){
+
+      if ($("#close2").is(":checked")){
+        /* var frm = $("form[name='layerpopup_default2']");
+        frm.submit(); */
+        // 2026.04.23 수정
+        var expDate = new Date();
+        expDate.setDate(expDate.getDate() + 1);
+        document.[REDACTED_SECRET_SIGNAL] expires=" + expDate.toUTCString() + "; path=/";
+        $.ajax({ 
+          type: 'post' 
+          , async: true 
+          , url: '/skin/layerpopup/default/layerpopup_cookie.html' 
+          , data: "menuno=773&layerpopupno=36"
+          , success: function(data) { 
+             $("#skin2").hide();
+          } 
+          , error: function(data, status, err) { 
+            alert('서버와의 통신이 실패했습니다.');
+            $("#skin2").hide();
+          }
+        
+        });
+        return;
+      }
+      
+      $("#skin2").hide();
+      
+    });
+  });
+  jQuery.fn.center2 = function () {
+    
+    this.css("position","absolute");
+    this.css("top","210px");
+    this.css("left","605px");
+    
+    /* if("2"=="1"){
+      this.css("top",Math.max(0,(($(window).height()-$(this).outerHeight())/2)+$(window).scrollTop())+2*330-495+"px");
+      //this.css("left",Math.max(0, (($(window).width()-$(this).outerWidth())/2)+$(window).scrollLeft()));
+      this.css("left",Math.max(0,(($(window).width()-$(this).outerWidth())/2)+$(window).scrollLeft())+2*-495+"px");
+    }else if("2"=="2"){
+      this.css("top",Math.max(0,(($(window).height()-$(this).outerHeight())/2)+$(window).scrollTop()));
+      this.css("left",Math.max(0,(($(window).width()-$(this).outerWidth())/2)+$(window).scrollLeft())+2*330-495+"px");
+    }else if("2"=="3"){
+      this.css("top",Math.max(0,(($(window).height()-$(this).outerHeight())/2)+$(window).scrollTop()));
+      this.css("left",Math.max(0,(($(window).width()-$(this).outerWidth())/2)+$(window).scrollLeft())+2* 330-660+"px");
+    }else{
+      this.css("top",Math.max(0,(($(window).height()-$(this).outerHeight())/2)+$(window).scrollTop())+2*30+"px");
+      this.css("left",Math.max(0,(($(window).width()-$(this).outerWidth())/2)+$(window).scrollLeft())+2*50-200+"px");
+    } */
+    return this;
+  }
+</script>
+  <!-- 레이어 팝업 -->
+  
+  <div id="skin2" style="width:420px;height:415px;background:#f1f0ef;z-index:999;display:none">
+    <div class="layer-pop">
+      <form name="layerpopup_default2" method="post" action="/skin/layerpopup/default/layerpopup_cookie.html">
+        <input type="hidden" name="menuno" value="773" />
+        <input type="hidden" name="layerpopupno" value="36" />
+        <div style="margin:5px 0 0 10px;width:400px;overflow:hidden;">
+          <strong style="font-size:16px;line-height:18px;color:#333333;"></strong>
+          <p style="margin-top:5px;font-size:14px;line-height:18px;color:#666666;"><html>
+<head>
+  <title></title>
+</head>
+<body><a href="https://youtube.com/shorts/HPN86x4zvYw?si=KqUJhp4zgpBhErUA" target="_blank"><img alt="정부출범1주년 세계6번째 수출 7천억 불 달성" src="/usr/upload/layerpopup/20260521112012328_7526.0.jpg"  width="400px"/></a></body>
+</html></p>
+            <div class="layerpopup_footer" style="width:100%;height:25px;padding-top:6px;background:#000000;text-align:right;position:absolute;bottom:0;left:0;">
+          <!--오늘 하루 이 창을 열지 않음 시작-->
+          <span class="layerpopup_today"><input type="checkbox" id="close2" style="vertical-align:-2px;" /> <label for="close" style="color:#ffffff;">오늘 하루 이 창을 열지 않음</label></span>
+          <!--/오늘 하루 이 창을 열지 않음 끝-->
+          <span style="margin:0 10px;"><a href="javascript:void(0);" id="layerclose2"><img style="vertical-align:top;" src="/usr/skin/layerpopup/default/images/btn_popup_close.png" alt="닫기" border="0"/></a></span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+  <!-- 레이어 팝업 -->
+
+<!-- 20191030 이미지 팝업 리사이징 -->
+<script type="text/javascript">
+var imgCommonPreview = new Image(); 
+
+function viewPic(filepath) { 
+  if(filepath == "") { 
+    alert('등록된 이미지가 없습니다.'); 
+    return; 
+  } 
+  imgCommonPreview.src = filepath; 
+  setTimeout("createPreviewWin(imgCommonPreview)", 100); 
+}
+
+function createPreviewWin(imgCommonPreview) { 
+  if(!imgCommonPreview.complete) { 
+    setTimeout("createPreviewWin(imgCommonPreview)", 100); 
+    return; 
+  } 
+  var scrollsize = 17; 
+  var swidth = screen.width - 10; 
+  var sheight = screen.height - 90; 
+  var wsize = imgCommonPreview.width 
+  var hsize = imgCommonPreview.height; 
+  if(wsize < 50) wsize = 50; // 가로 최소 크기 
+  if(wsize > swidth) wsize = swidth; // 가로 최대 크기 
+
+  if (imgCommonPreview.src == "http://www.kidp.or.kr/usr/upload/banner/20191206_popup.jpg"){
+    hsize = 737; // 세로 최소 크기 
+    if(hsize > sheight) hsize = sheight; // 세로 최대 크기 
+  } else{
+    if(hsize < 50) hsize = 50; // 세로 최소 크기 
+    if(hsize > sheight) hsize = sheight; // 세로 최대 크기 
+  }
+  // 세로가 최대크기를 초과한경우 세로스크롤바 자리 확보 
+  if((wsize < swidth-scrollsize) && hsize >= sheight) wsize += scrollsize; 
+  
+  // 가로가 최대크기를 초과한경우 가로스크롤바 자리 확보 
+  if((hsize < sheight-scrollsize) && wsize >= swidth) hsize += scrollsize; 
+  
+  // IE 6,7 전용 : 가로세로 크기가 보통일때 세로 스크롤바 자리 확보 
+  if((wsize < swidth-scrollsize) && hsize < sheight && (navigator.userAgent.indexOf("MSIE 6.0") > -1 || navigator.userAgent.indexOf("MSIE 7.0") > -1))wsize += scrollsize; 
+  
+  // 듀얼 모니터에서 팝업 가운데 정렬하기
+  var mtWidth = document.body.clientWidth; 
+  
+  // 현재 브라우저가 있는 모니터의 화면 폭 사이즈 
+  var mtHeight = document.body.clientHeight; 
+  
+  // 현재 브라우저가 있는 모니터의 화면 높이 사이즈
+  var scX = window.screenLeft; 
+  
+  // 현재 브라우저의 x 좌표(모니터 두 대를 합한 총 위치 기준) 
+  var scY = window.screenTop; // 현재 브라우저의 y 좌표(모니터 두 대를 합한 총 위치 기준) 
+  var popX = scX + (mtWidth - wsize) / 2 - 50; // 팝업 창을 띄울 x 위치 지정(모니터 두 대를 합한 총 위치 기준) 
+  var popY = scY + (mtHeight - hsize) / 2 - 50; // 팝업 창을 띄울 y 위치 지정(모니터 두 대를 합한 총 위치 기준) 
+  
+  // window.open('주소', '이름(공란가능)', '속성'); 
+  imageWin = window.open("", "", "top=" + popY + ",left=" + popX + ",width=" + wsize + ",height=" + hsize +",scrollbars=yes,resizable=yes,status=no"); 
+  imageWin.document.write("<html>");
+  imageWin.document.write("<title>2019 디자인 공공기관 주요사업 일정</title>");
+  imageWin.document.write("<body style='margin:0;cursor:pointer;' title='2019 디자인 공공기관 주요사업 일정'>"); 
+  imageWin.document.write("<img src='" + imgCommonPreview.src + "' style='cursor:pointer'>"); 
+  imageWin.document.write("</body></html>");
+} 
+</script>
+<!-- email reagree modal -->
+<div id="email_reagree_modal" class="modalDialog">
+  <div id="email_reagree_content">  
+   <h2>DESIGNDB 소식 수신동의 확인</h2>
+   <p>한국디자인진흥원은 정보통신망 이용촉진 및 정보보호에 관한 법률 제50조제8항 및 같은법 시행령 제62조의3에 따라 KIDP 및 디자인디비 뉴스레터의 수신 동의 여부를 정기적으로 확인하고 있습니다.</p>
+   <div>DESIGNDB 소식 : &nbsp;<input type="radio" class="rad" name="usermailling" value="Y" checked id="isOpenMailing1"><label for="isOpenMailing1"> 수신</label>&nbsp;&nbsp;<input type="radio" class="rad" name="usermailling" value="N" id="isOpenMailing2"><label for="isOpenMailing2"> 수신거부</label>
+   </div>
+   <div style="text-align:center;margin-top:20px;">
+    <div id="email_reagree_confirm_btn" onclick="go_email_reagree()">확 인</div>
+   </div>
+  </div>  
+</div>
+
+<span itemscope="" itemtype="http://schema.org/Organization">
+  <link itemprop="url" href="https://kidp.or.kr">
+  <a itemprop="sameAs" href="https://blog.naver.com/global_kidp"></a>
+  <a itemprop="sameAs" href="https://www.youtube.디자인 계약, 저작com/channel/UC2BSNlufWpJLdka9BfpuQkQ"></a>
+  <a itemprop="sameAs" href="https://www.facebook.com/kidpgo"></a>
+  <a itemprop="sameAs" href="https://twitter.com/designkidp"></a>
+ </span>
+<div id="subbg">
+<!-- 50주년 링크 -->
+<!-- <a href="https://www.designdb.com/?menuno=1423" target="_blank" style="position:fixed;top:43rem;right:16rem;z-index:999;" id="fiftieth_link"><img src="/var/fiftieth/img/bt_50th_link.png"/></a> -->
+
+<!--             20181001_ing             -->
+    <div class="container">
+      <!-- Swiper -->
+<div class="bannerbox">
+  <!--롤링배너-->
+  
+<div class="swiper-container s1">
+  <div class="swiper-wrapper">   
+       <div class="swiper-slide">
+        <img src="/usr/upload/banner/20260310105553537_3831.0.jpg" alt="null">
+           <div class="s1_titleWrap">
+          <div class="s1_title"><div class="b_text">GOOD DESIGN KOREA</div><br>
+<div class="s_text">대한민국 정부가 인증하는</div>
+<div class="s_textB">기업의 디자인 경쟁력</div></div>
+        </div>
+         </div>
+      <div class="swiper-slide">
+        <img src="/usr/upload/banner/20181109124128696_326.0.png" alt="null">
+           <div class="s1_titleWrap">
+          <div class="s1_title"><div class="b_text">DESIGN Driven Innovation</div><br>
+             <div class="s_text">디자인산업의 4차 산업혁명</div>
+             <div class="s_textB">미래를 준비하다</div></div>
+        </div>
+         </div>
+      <div class="swiper-slide">
+        <img src="/usr/upload/banner/20181109124128700_4709.0.png" alt="null">
+           <div class="s1_titleWrap">
+          <div class="s1_title"><div class="b_text">DESIGN Driven Innovation</div><br>
+             <div class="s_text">디자인 글로벌</div>
+             <div class="s_textB">신시장을 창출하다</div></div>
+        </div>
+         </div>
+      <div class="swiper-slide">
+        <img src="/usr/upload/banner/20181109124128686_1837.0.png" alt="null">
+           <div class="s1_titleWrap">
+          <div class="s1_title"><div class="b_text">DESIGN Driven Innovation</div><br>
+<div class="s_text">국민행복과 산업성장을 선도하는</div>
+<div class="s_textB">글로벌 디자인 혁신기관</div></div>
+        </div>
+         </div>
+      </div>
+     <div class="swiper-button-prev p1"></div>
+  <div class="swiper-button-next n1"></div>
+     <div class="swiper-pagination pg1"></div>
+</div>
+
+
+  <div class="sub_box">
+  <div class="maintitle">디자인 진흥원의 주요소식을 전달합니다</div><div class="swiper-pagination pg2"></div>
+  <div class="slider-sub">
+    <div class="swiper-container s2">      
+      <div class="swiper-wrapper">   
+         <!--롤링배너-->
+         
+<div class="swiper-slide">
+        
+        
+        
+        <!--<a href="javascript:clickBanner('26','2026 제61회 대한민국디자인전람회','https://award.kidp.or.kr/KoreaDesign/info.do', '_blank')" title="2026 제61회 대한민국디자인전람회">-->
+          <a href = "https://award.kidp.or.kr/KoreaDesign/info.do" title="2026 제61회 대한민국디자인전람회" target='_blank'>
+        <img class="map" usemap="#banner_item1"  src="/usr/upload/banner/20260506044431272_7832.0.jpg" alt="2026 제61회 대한민국디자인전람회"><div class="s2_title">2026 제61회 대한민국디자인전람회 </div></a>
+           <!---->
+
+        <!-- image map 사용 예제       
+        <a href="">
+          <img src="http://designfirm.kidp.or.kr/images/popup_20210508.jpg" alt="" usemap="#map1"/>
+        </a>    
+        
+        <map name="map1">
+          <area shape="rect" coords="67,254,217,292" href="https://" target="_blank" alt="">   
+          <area shape="rect" coords="236,255,386,291" href="https://" target="_blank" alt="">   
+        </map>-->
+
+
+
+         </div>
+      <div class="swiper-slide">
+        
+        
+        
+        <!--<a href="javascript:clickBanner('26','2026년 해외(독일 및 프랑스)전시 한국디자인관 참가기업 모집','https://kidp.or.kr/?menuno=1273&bbsno=19041&siteno=16&cates=&act=view&ztag=rO0ABXQAMzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNjIyIiBza2luPSJraWRwX2JicyI%2BPC9jYWxsPg%3D%3D', '_blank')" title="2026년 해외(독일 및 프랑스)전시 한국디자인관 참가기업 모집">-->
+          <a href = "https://kidp.or.kr/?menuno=1273&bbsno=19041&siteno=16&cates=&act=view&ztag=rO0ABXQAMzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNjIyIiBza2luPSJraWRwX2JicyI%2BPC9jYWxsPg%3D%3D" title="2026년 해외(독일 및 프랑스)전시 한국디자인관 참가기업 모집" target='_blank'>
+        <img class="map" usemap="#banner_item2"  src="/usr/upload/banner/20260527112259925_6285.0.png" alt="2026년 해외(독일 및 프랑스)전시 한국디자인관 참가기업 모집"><div class="s2_title">2026년 해외(독일 및 프랑스)전시 한국디자인관 참가기업 모집</div></a>
+           <!---->
+
+        <!-- image map 사용 예제       
+        <a href="">
+          <img src="http://designfirm.kidp.or.kr/images/popup_20210508.jpg" alt="" usemap="#map1"/>
+        </a>    
+        
+        <map name="map1">
+          <area shape="rect" coords="67,254,217,292" href="https://" target="_blank" alt="">   
+          <area shape="rect" coords="236,255,386,291" href="https://" target="_blank" alt="">   
+        </map>-->
+
+
+
+         </div>
+      <div class="swiper-slide">
+        
+        
+        
+        <!--<a href="javascript:clickBanner('26','2026 창원국가산단 청년디자인리빙랩 지역참여단(상시모집)','https://kidp.or.kr/?menuno=1503&bbsno=19066&siteno=16&act=view&ztag=rO0ABXQAMzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNjIyIiBza2luPSJraWRwX2JicyI%2BPC9jYWxsPg%3D%3D', '_blank')" title="2026 창원국가산단 청년디자인리빙랩 지역참여단(상시모집)">-->
+          <a href = "https://kidp.or.kr/?menuno=1503&bbsno=19066&siteno=16&act=view&ztag=rO0ABXQAMzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNjIyIiBza2luPSJraWRwX2JicyI%2BPC9jYWxsPg%3D%3D" title="2026 창원국가산단 청년디자인리빙랩 지역참여단(상시모집)" target='_blank'>
+        <img class="map" usemap="#banner_item3"  src="/usr/upload/banner/20260602081239457_162.0.jpg" alt="2026 창원국가산단 청년디자인리빙랩 지역참여단(상시모집)"><div class="s2_title"> 2026 창원국가산단 청년디자인리빙랩 지역참여단(상시모집)</div></a>
+           <!---->
+
+        <!-- image map 사용 예제       
+        <a href="">
+          <img src="http://designfirm.kidp.or.kr/images/popup_20210508.jpg" alt="" usemap="#map1"/>
+        </a>    
+        
+        <map name="map1">
+          <area shape="rect" coords="67,254,217,292" href="https://" target="_blank" alt="">   
+          <area shape="rect" coords="236,255,386,291" href="https://" target="_blank" alt="">   
+        </map>-->
+
+
+
+         </div>
+      <div class="swiper-slide">
+        
+        
+        
+        <!--<a href="javascript:clickBanner('26','GOOD DESIGN KOREA 정시 접수','https://award.kidp.or.kr/GoodDesign/info.do', '_blank')" title="GOOD DESIGN KOREA 정시 접수">-->
+          <a href = "https://award.kidp.or.kr/GoodDesign/info.do" title="GOOD DESIGN KOREA 정시 접수" target='_blank'>
+        <img class="map" usemap="#banner_item5"  src="/usr/upload/banner/20260601045428243_8274.0.jpg" alt="GOOD DESIGN KOREA 정시 접수"><div class="s2_title">GOOD DESIGN KOREA 정시 접수 </div></a>
+           <!---->
+
+        <!-- image map 사용 예제       
+        <a href="">
+          <img src="http://designfirm.kidp.or.kr/images/popup_20210508.jpg" alt="" usemap="#map1"/>
+        </a>    
+        
+        <map name="map1">
+          <area shape="rect" coords="67,254,217,292" href="https://" target="_blank" alt="">   
+          <area shape="rect" coords="236,255,386,291" href="https://" target="_blank" alt="">   
+        </map>-->
+
+
+
+         </div>
+      <div class="swiper-slide">
+        
+        
+        
+        <!--<a href="javascript:clickBanner('26','2026 청년 커리어 성장을 위한 취업역량강화교육','https://forms.gle/gyRHf7qP9CeP47AV6', '_blank')" title="2026 청년 커리어 성장을 위한 취업역량강화교육">-->
+          <a href = "https://forms.gle/gyRHf7qP9CeP47AV6" title="2026 청년 커리어 성장을 위한 취업역량강화교육" target='_blank'>
+        <img class="map" usemap="#banner_item6"  src="/usr/upload/banner/20260522051532901_3642.0.jpg" alt="2026 청년 커리어 성장을 위한 취업역량강화교육"><div class="s2_title"> 2026 청년 커리어 성장을 위한 취업역량강화교육</div></a>
+           <!---->
+
+        <!-- image map 사용 예제       
+        <a href="">
+          <img src="http://designfirm.kidp.or.kr/images/popup_20210508.jpg" alt="" usemap="#map1"/>
+        </a>    
+        
+        <map name="map1">
+          <area shape="rect" coords="67,254,217,292" href="https://" target="_blank" alt="">   
+          <area shape="rect" coords="236,255,386,291" href="https://" target="_blank" alt="">   
+        </map>-->
+
+
+
+         </div>
+      <div class="swiper-slide">
+        
+        
+        
+        <!--<a href="javascript:clickBanner('26','시흥시 중소기업 홍보영상물 제작지원사업','https://kidp.or.kr/?menuno=1273&bbsno=19021&siteno=16&act=view&ztag=rO0ABXQAMzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNjIyIiBza2luPSJraWRwX2JicyI%2BPC9jYWxsPg%3D%3D', '_blank')" title="시흥시 중소기업 홍보영상물 제작지원사업">-->
+          <a href = "https://kidp.or.kr/?menuno=1273&bbsno=19021&siteno=16&act=view&ztag=rO0ABXQAMzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNjIyIiBza2luPSJraWRwX2JicyI%2BPC9jYWxsPg%3D%3D" title="시흥시 중소기업 홍보영상물 제작지원사업" target='_blank'>
+        <img class="map" usemap="#banner_item8"  src="/usr/upload/banner/20260513084131812_8508.0.jpg" alt="시흥시 중소기업 홍보영상물 제작지원사업"><div class="s2_title">시흥시 중소기업 홍보영상물 제작지원사업</div></a>
+           <!---->
+
+        <!-- image map 사용 예제       
+        <a href="">
+          <img src="http://designfirm.kidp.or.kr/images/popup_20210508.jpg" alt="" usemap="#map1"/>
+        </a>    
+        
+        <map name="map1">
+          <area shape="rect" coords="67,254,217,292" href="https://" target="_blank" alt="">   
+          <area shape="rect" coords="236,255,386,291" href="https://" target="_blank" alt="">   
+        </map>-->
+
+
+
+         </div>
+      <div class="swiper-slide">
+        
+        
+        
+        <!--<a href="javascript:clickBanner('26','디자인코리아 2026 참가기업 & 디자이너 모집 공고','https://kidp.or.kr/?menuno=918&bbsno=18688&siteno=16&cates=100911&act=view&ztag=rO0ABXQAMzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNjIyIiBza2luPSJraWRwX2JicyI%2BPC9jYWxsPg%3D%3D', '_blank')" title="디자인코리아 2026 참가기업 & 디자이너 모집 공고">-->
+          <a href = "https://kidp.or.kr/?menuno=918&bbsno=18688&siteno=16&cates=100911&act=view&ztag=rO0ABXQAMzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNjIyIiBza2luPSJraWRwX2JicyI%2BPC9jYWxsPg%3D%3D" title="디자인코리아 2026 참가기업 & 디자이너 모집 공고" target='_blank'>
+        <img class="map" usemap="#banner_item9"  src="/usr/upload/banner/20260212012750090_8661.0.jpg" alt="디자인코리아 2026 참가기업 & 디자이너 모집 공고"><div class="s2_title">디자인코리아 2026 참가기업 & 디자이너 모집 공고
+</div></a>
+           <!---->
+
+        <!-- image map 사용 예제       
+        <a href="">
+          <img src="http://designfirm.kidp.or.kr/images/popup_20210508.jpg" alt="" usemap="#map1"/>
+        </a>    
+        
+        <map name="map1">
+          <area shape="rect" coords="67,254,217,292" href="https://" target="_blank" alt="">   
+          <area shape="rect" coords="236,255,386,291" href="https://" target="_blank" alt="">   
+        </map>-->
+
+
+
+         </div>
+      <div class="swiper-slide">
+        
+        
+        
+        <!--<a href="javascript:clickBanner('26','2026 해외인턴 지원사업 참여 기업 및 인턴디자이너 모집','https://intern.kidp.or.kr/', '_blank')" title="2026 해외인턴 지원사업 참여 기업 및 인턴디자이너 모집">-->
+          <a href = "https://intern.kidp.or.kr/" title="2026 해외인턴 지원사업 참여 기업 및 인턴디자이너 모집" target='_blank'>
+        <img class="map" usemap="#banner_item12"  src="/usr/upload/banner/20260422045756849_2124.0.jpg" alt="2026 해외인턴 지원사업 참여 기업 및 인턴디자이너 모집"><div class="s2_title">2026 해외인턴 지원사업 참여 기업 및 인턴디자이너 모집</div></a>
+           <!---->
+
+        <!-- image map 사용 예제       
+        <a href="">
+          <img src="http://designfirm.kidp.or.kr/images/popup_20210508.jpg" alt="" usemap="#map1"/>
+        </a>    
+        
+        <map name="map1">
+          <area shape="rect" coords="67,254,217,292" href="https://" target="_blank" alt="">   
+          <area shape="rect" coords="236,255,386,291" href="https://" target="_blank" alt="">   
+        </map>-->
+
+
+
+         </div>
+      <div class="swiper-slide">
+        
+        
+        
+        <!--<a href="javascript:clickBanner('26','국가인적자원개발컨소시엄사업 협약기업 모집','https://kidp.or.kr/?menuno=1202&bbsno=19008&siteno=16&cates=&act=view&ztag=rO0ABXQAMzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNjIyIiBza2luPSJraWRwX2JicyI%2BPC9jYWxsPg%3D%3D', '_blank')" title="국가인적자원개발컨소시엄사업 협약기업 모집">-->
+          <a href = "https://kidp.or.kr/?menuno=1202&bbsno=19008&siteno=16&cates=&act=view&ztag=rO0ABXQAMzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNjIyIiBza2luPSJraWRwX2JicyI%2BPC9jYWxsPg%3D%3D" title="국가인적자원개발컨소시엄사업 협약기업 모집" target='_blank'>
+        <img class="map" usemap="#banner_item13"  src="/usr/upload/banner/20220223011359748_3769.0.jpg" alt="국가인적자원개발컨소시엄사업 협약기업 모집"><div class="s2_title">국가인적자원개발컨소시엄사업 협약기업 모집
+</div></a>
+           <!---->
+
+        <!-- image map 사용 예제       
+        <a href="">
+          <img src="http://designfirm.kidp.or.kr/images/popup_20210508.jpg" alt="" usemap="#map1"/>
+        </a>    
+        
+        <map name="map1">
+          <area shape="rect" coords="67,254,217,292" href="https://" target="_blank" alt="">   
+          <area shape="rect" coords="236,255,386,291" href="https://" target="_blank" alt="">   
+        </map>-->
+
+
+
+         </div>
+      <div class="swiper-slide">
+        
+        
+        
+        <!--<a href="javascript:clickBanner('26','CMF HOW'S 온라인 아카이브','https://dkworks.designdb.com/', '_blank')" title="CMF HOW'S 온라인 아카이브">-->
+          <a href = "https://dkworks.designdb.com/" title="CMF HOW'S 온라인 아카이브" target='_blank'>
+        <img class="map" usemap="#banner_item14"  src="/usr/upload/banner/20241125021952685_9115.0.jpg" alt="CMF HOW'S 온라인 아카이브"><div class="s2_title">CMF HOW'S 온라인 아카이브 오픈</div></a>
+           <!---->
+
+        <!-- image map 사용 예제       
+        <a href="">
+          <img src="http://designfirm.kidp.or.kr/images/popup_20210508.jpg" alt="" usemap="#map1"/>
+        </a>    
+        
+        <map name="map1">
+          <area shape="rect" coords="67,254,217,292" href="https://" target="_blank" alt="">   
+          <area shape="rect" coords="236,255,386,291" href="https://" target="_blank" alt="">   
+        </map>-->
+
+
+
+         </div>
+      <div class="swiper-slide">
+        
+        
+        
+        <!--<a href="javascript:clickBanner('26','2025년 우수디자인전문기업','https://kidp.or.kr/?menuno=1496', '_blank')" title="2025년 우수디자인전문기업">-->
+          <a href = "https://kidp.or.kr/?menuno=1496" title="2025년 우수디자인전문기업" target='_blank'>
+        <img class="map" usemap="#banner_item15"  src="/usr/upload/banner/20251127043115399_3209.0.jpg" alt="2025년 우수디자인전문기업"><div class="s2_title">2025년 우수디자인전문기업</div></a>
+           <!---->
+
+        <!-- image map 사용 예제       
+        <a href="">
+          <img src="http://designfirm.kidp.or.kr/images/popup_20210508.jpg" alt="" usemap="#map1"/>
+        </a>    
+        
+        <map name="map1">
+          <area shape="rect" coords="67,254,217,292" href="https://" target="_blank" alt="">   
+          <area shape="rect" coords="236,255,386,291" href="https://" target="_blank" alt="">   
+        </map>-->
+
+
+
+         </div>
+      <div class="swiper-slide">
+        
+        
+        
+        <!--<a href="javascript:clickBanner('26','알토대 MBA(디자인경영 트랙) 입학 안내','https://docs.google.com/forms/d/e/1FAIpQLSe9TWsrE8gXFCLmEgVwIhXmPAqDlOB9aXNYyUKECVUmsBvk1A/viewform', '_blank')" title="알토대 MBA(디자인경영 트랙) 입학 안내">-->
+          <a href = "https://docs.google.com/forms/d/e/1FAIpQLSe9TWsrE8gXFCLmEgVwIhXmPAqDlOB9aXNYyUKECVUmsBvk1A/viewform" title="알토대 MBA(디자인경영 트랙) 입학 안내" target='_blank'>
+        <img class="map" usemap="#banner_item16"  src="/usr/upload/banner/20220915082527554_6425.0.png" alt="알토대 MBA(디자인경영 트랙) 입학 안내"><div class="s2_title">알토대 MBA(디자인경영 트랙) 입학 안내
+</div></a>
+           <!---->
+
+        <!-- image map 사용 예제       
+        <a href="">
+          <img src="http://designfirm.kidp.or.kr/images/popup_20210508.jpg" alt="" usemap="#map1"/>
+        </a>    
+        
+        <map name="map1">
+          <area shape="rect" coords="67,254,217,292" href="https://" target="_blank" alt="">   
+          <area shape="rect" coords="236,255,386,291" href="https://" target="_blank" alt="">   
+        </map>-->
+
+
+
+         </div>
+      <div class="swiper-slide">
+        
+        
+        
+        <!--<a href="javascript:clickBanner('26','나만의 디자인, 디자인공지증명으로 보호하세요.','http://drights.kidp.or.kr/sub/certification_01.asp', '_blank')" title="나만의 디자인, 디자인공지증명으로 보호하세요.">-->
+          <a href = "http://drights.kidp.or.kr/sub/certification_01.asp" title="나만의 디자인, 디자인공지증명으로 보호하세요." target='_blank'>
+        <img class="map" usemap="#banner_item18"  src="/usr/upload/banner/20260331092237473_3130.0.jpg" alt="나만의 디자인, 디자인공지증명으로 보호하세요."><div class="s2_title">나만의 디자인, 디자인공지증명으로 보호하세요.</div></a>
+           <!---->
+
+        <!-- image map 사용 예제       
+        <a href="">
+          <img src="http://designfirm.kidp.or.kr/images/popup_20210508.jpg" alt="" usemap="#map1"/>
+        </a>    
+        
+        <map name="map1">
+          <area shape="rect" coords="67,254,217,292" href="https://" target="_blank" alt="">   
+          <area shape="rect" coords="236,255,386,291" href="https://" target="_blank" alt="">   
+        </map>-->
+
+
+
+         </div>
+      <div class="swiper-slide">
+        
+        
+        
+        <!--<a href="javascript:clickBanner('26','2025 디자인산업통계 공표(2024년 기준)','https://kidp.or.kr/?menuno=893&bbsno=18751&siteno=16&act=view&ztag=rO0ABXQAMzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNjIyIiBza2luPSJraWRwX2JicyI%2BPC9jYWxsPg%3D%3D', '_blank')" title="2025 디자인산업통계 공표(2024년 기준)">-->
+          <a href = "https://kidp.or.kr/?menuno=893&bbsno=18751&siteno=16&act=view&ztag=rO0ABXQAMzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNjIyIiBza2luPSJraWRwX2JicyI%2BPC9jYWxsPg%3D%3D" title="2025 디자인산업통계 공표(2024년 기준)" target='_blank'>
+        <img class="map" usemap="#banner_item22"  src="/usr/upload/banner/20260305024509866_1275.0.jpg" alt="2025 디자인산업통계 공표(2024년 기준)"><div class="s2_title">2025 디자인산업통계 공표(2024년 기준)</div></a>
+           <!---->
+
+        <!-- image map 사용 예제       
+        <a href="">
+          <img src="http://designfirm.kidp.or.kr/images/popup_20210508.jpg" alt="" usemap="#map1"/>
+        </a>    
+        
+        <map name="map1">
+          <area shape="rect" coords="67,254,217,292" href="https://" target="_blank" alt="">   
+          <area shape="rect" coords="236,255,386,291" href="https://" target="_blank" alt="">   
+        </map>-->
+
+
+
+         </div>
+      <div class="swiper-slide">
+        
+        
+        
+        <!--<a href="javascript:clickBanner('26','DK스튜디오 시설예약','http://studio.kidp.or.kr/SmartStudio/view/main/main.jsp?link=section-top', '_blank')" title="DK스튜디오 시설예약">-->
+          <a href = "http://studio.kidp.or.kr/SmartStudio/view/main/main.jsp?link=section-top" title="DK스튜디오 시설예약" target='_blank'>
+        <img class="map" usemap="#banner_item23"  src="/usr/upload/banner/20250205034220540_7676.0.jpg" alt="DK스튜디오 시설예약"><div class="s2_title">디자인주도제조혁신센터 DK스튜디오 시설예약</div></a>
+           <!---->
+
+        <!-- image map 사용 예제       
+        <a href="">
+          <img src="http://designfirm.kidp.or.kr/images/popup_20210508.jpg" alt="" usemap="#map1"/>
+        </a>    
+        
+        <map name="map1">
+          <area shape="rect" coords="67,254,217,292" href="https://" target="_blank" alt="">   
+          <area shape="rect" coords="236,255,386,291" href="https://" target="_blank" alt="">   
+        </map>-->
+
+
+
+         </div>
+      <div class="swiper-slide">
+        
+        
+        
+        <!--<a href="javascript:clickBanner('26','ESG와 디자인씽킹','https://www.kidp.or.kr/?menuno=1463', '_blank')" title="ESG와 디자인씽킹">-->
+          <a href = "https://www.kidp.or.kr/?menuno=1463" title="ESG와 디자인씽킹" target='_blank'>
+        <img class="map" usemap="#banner_item27"  src="/usr/upload/banner/20220901045543678_7538.0.png" alt="ESG와 디자인씽킹"><div class="s2_title">ESG와 디자인씽킹<br/>사회﻿적 가치 비즈니스 모델 디자인씽킹</div>
+<div class="s2_subtitle"></div></a>
+           <!---->
+
+        <!-- image map 사용 예제       
+        <a href="">
+          <img src="http://designfirm.kidp.or.kr/images/popup_20210508.jpg" alt="" usemap="#map1"/>
+        </a>    
+        
+        <map name="map1">
+          <area shape="rect" coords="67,254,217,292" href="https://" target="_blank" alt="">   
+          <area shape="rect" coords="236,255,386,291" href="https://" target="_blank" alt="">   
+        </map>-->
+
+
+
+         </div>
+      <script>
+  var group = 3;
+  var slideCount = $(".slider-sub .swiper-slide").length;
+  if(slideCount%group!=0){
+    var lastDom = $(".slider-sub .swiper-slide:last");
+    var count = Math.ceil(slideCount/group)*group - slideCount;
+    var template = "<div class='swiper-slide'></div>";
+    var html = "";
+    for(var i=0;i<count;i++){
+      html+=template;
+    }
+    lastDom.after(html);
+  }
+</script>
+
+<style>
+img.map, map area{
+    outline: none;
+}
+</style>
+
+      </div>   
+    </div>
+    <div class="swiper-button-prev p2"></div>
+    <div class="swiper-button-next n2"></div>
+  </div>
+  </div>
+</div>  
+
+      <div class="Contents">
+        <div class="content01 mr">
+          <div class="contentL">
+            <div>
+              <ul>
+                <li>
+                  <dl>
+                    <dt><h5 class="conMain_tit">사진자료</h5></dt>
+                    <div class="hr"></div>
+                  </dl>
+                </li>
+                <li style="margin:50px 15px; font-size:13px;">KIDP 사업에 관련된<br>사진자료를 제공합니다
+                </li>
+                <!-- 20191031 수정-->
+                <li style="margin: 20px 15px 20px ;">
+                  <li style="margin: 20px 15px 20px 15px;">
+                  <a class="Circlebton_w material-symbols-outlined" href="/?menuno=1021" >chevron_right</a>
+
+                </li>
+              </ul>
+            </div>
+            
+            <!-- 사진자료 01 입력 -->
+            
+            <div>
+              <figure class="scaleNew">
+                <img src="https://kidp.or.kr/usr/upload/editor/email/202605291621067e88b6ac-6d0c-4f41-a4e7-3345ae9a2311.jpg" alt="KSYDA 홈커밍데이" />
+                <figcaption>
+                <div class="caption">
+                  <p>KSYDA 홈커밍데이</p>
+                  <a class="Circlebton00" href="https://first.kidp.or.kr/photo/PD_XXQX_Content.asp?category=800720&photoid=18071&cPage=1" target="_blank">사진자료보기</a>
+                </div>
+                </figcaption>
+              </figure>
+            </div>
+
+            
+            <!-- 사진자료 01 입력 끝 -->
+            
+            <div>
+              <ul>
+                <li>
+                  <dl>
+                    <dt><h5 class="conMain_tit">보도자료</h5></dt>
+                    <div class="hr"></div>
+                  </dl>
+                </li>
+                <li style="margin:50px 15px; font-size:13px;">KIDP의 각종 보도자료를<br>제공합니다
+                </li>
+                <!-- 20191031 수정-->
+                <li style="margin: 20px 15px 20px ;">
+                  <a class="Circlebton_w material-symbols-outlined" href="/?menuno=1019">chevron_right</a>
+
+                </li>
+              </ul>            
+            </div>
+            
+            <!-- 사진자료 02 입력 -->
+            <!--
+            <div>
+              <figure class="scaleNew">
+                <img src="https://www.kidp.or.kr/usr/upload/editor/email/2023111415592381becad0-8345-44a7-8b63-ac7fab04f9e3.jpg" alt="대구 디자인주도제조혁신센터 개소식" />
+                <figcaption>
+                <div class="caption">
+                  <p>대구 디자인주도제조<br/>혁신센터 개소식<br/></p>
+                  <a class="Circlebton00" href="http://first.kidp.or.kr/photo/PD_XXQX_Content.asp?category=800680&photoid=17572" target="_blank">사진자료보기</a>
+                </div>
+                </figcaption>
+              </figure>
+            </div>
+            -->  
+            <!-- 사업부 소식 입력 -->
+            <div>
+              <figure class="scaleNew">
+                <img src="https://www.kidp.or.kr/usr/upload/editor/email/202301031723073c67bd6d-300c-4bec-a0c5-da5a9b9572ac.jpg" alt="서비스·경험디자인기사 국가기술자격 검정" />
+                <figcaption>
+                <div class="caption">
+                  <p>서비스·경험디자인기사<br/> 국가기술자격 검정<br/></p>
+                  <a class="Circlebton00" href="https://www.kidp.or.kr/?menuno=1377" target="_blank">사업소식보기</a>
+                </div>
+                </figcaption>
+              </figure>
+            </div>
+
+            <!-- 사진자료 03 입력 -->  
+            <!--          
+            <div>
+              <figure class="scaleNew">
+                <img src="https://www.kidp.or.kr/usr/upload/editor/email/20250221092718659301f6-4f1a-4831-bde9-470f192b0892.jpg" alt="KIDP-IKEA Korea-스웨덴 MOU" />
+                <figcaption>
+                <div class="caption">
+                  <p>KIDP-IKEA <br/>Korea-스웨덴 MOU<br/></p>
+                  <a class="Circlebton00" href="http://first.kidp.or.kr/photo/PD_XXQX_Content.asp?category=800680&photoid=17562&cPage=1" target="_blank">사진자료보기</a>
+                </div>
+                </figcaption>
+              </figure>
+            </div>
+            -->  
+            <div>
+              <figure class="scaleNew">
+                <img src="https://www.kidp.or.kr/usr/upload/editor/email/202502211000599913f23e-9ca6-4bbc-8712-cef6c9d086a7.jpg" alt="2025 우수디자인전문기업 선정 결과 공지" />
+                <figcaption>
+                <div class="caption">
+                  <p>2025우수디자인전문기업<br/>선정 결과 공지<br/></p>
+                  <a class="Circlebton00" href="https://www.designdb.com/?menuno=780&bbsno=30222&siteno=15&act=view&ztag=rO0ABXQAOTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNTgxIiBza2luPSJwaG90b19iYnNfMjAxOSI%2BPC9jYWxsPg%3D%3D#gsc.tab=0" target="_blank">사업소식보기</a>
+                </div>
+                </figcaption>
+              </figure>
+            </div>
+            <!-- 사진자료 04 입력 -->  
+            <!-- <div>
+              <figure class="scaleNew">
+                <img src="https://www.kidp.or.kr/usr/upload/editor/email/20230103112658070cef13-fa28-467b-985d-e5535952d71f.jpg" alt="디자인코리아2022 개막식" />
+                <figcaption>
+                <div class="caption">
+                  <p>디자인코리아2022<br/> 개막식<br/></p>
+                  <a class="Circlebton00" href="http://first.kidp.or.kr/photo/PD_XXQX_Content.asp?category=800680&photoid=17535&cPage=4" target="_blank">사진자료보기</a>
+                </div>
+                </figcaption>
+              </figure>
+            </div>
+            -->  
+            <div>
+              <figure class="scaleNew">
+                <img src="https://kidp.or.kr/usr/upload/editor/email/20260127104758505d4b48-8138-4859-b59c-0eb11bcede2d.jpg" alt="디자인-온라인제조플랫폼서비스" />
+                <figcaption>
+                <div class="caption">
+                  <p>디자인-온라인제조플랫폼<br/>서비스<br/></p>
+                  <a class="Circlebton00" href="https://kidp.or.kr/?menuno=1236"  target="_blink">사업소식보기</a>
+                </div>
+                </figcaption>
+                <a href="#"></a>
+              </figure>
+            </div>
+            <!-- 사진자료 입력 끝 -->
+
+            <!-- 디자인 콘텐츠 입력 시작 -->
+                  
+            <div>
+              <figure class="scaleNew">
+                <img src="https://kidp.or.kr/usr/upload/editor/email/20260126152605e407016a-5605-4e76-9052-76c986315860.jpg" alt="2025 디자이너 등급별 노임단가 공표(2026년부터 적용)" />
+                <figcaption>
+                <div class="caption">
+                  <p>2025 디자이너 등급별 노임<br/>단가 공표(2026년부터 적용)<br/></p>
+                  <a class="Circlebton00" href="https://www.kidp.or.kr/?menuno=1202&bbsno=18652&siteno=16&act=view&ztag=rO0ABXQAMzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNjIyIiBza2luPSJraWRwX2JicyI%2BPC9jYWxsPg%3D%3D
+
+
+
+"  target="_blink">콘텐츠보기</a>
+                </div>
+                </figcaption>
+                <a href="#"></a>
+              </figure>
+            </div>
+
+<!--박소현선임요청 2023.0410 시작-->
+            <div>
+              <figure class="scaleNew">
+                <img src="https://www.kidp.or.kr/usr/upload/editor/email/2023041016454844bea97e-fbd6-4c14-9524-aa6204dac90c.jpg
+" alt="2025년 디자인 용역 표준계약서">
+                <figcaption>
+                <div class="caption">
+                  <p style="letter-spacing: -.05em;">
+2025년 디자인 용역<br>표준계약서
+<br></p>
+                  <a class="Circlebton00" href="https://www.designdb.com/?menuno=1204&bbsno=185&siteno=15&act=view&ztag=rO0ABXQAOTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iOTc2IiBza2luPSJwaG90b19iYnNfMjAxOSI%2BPC9jYWxsPg%3D%3D#gsc.tab=0" target="_blink">콘텐츠보기</a>
+                </div>
+                </figcaption>
+                <a href="#"></a>
+              </figure>            
+            </div>
+<!--박소현선임요청 2023.0410 끝-->  
+
+            <div>
+              <figure class="scaleNew">
+                <img src="https://kidp.or.kr/usr/upload/editor/email/2026012615312128adb95f-a224-41c3-a079-ab80bc75137b.jpg" alt="2025년 디자인문화콘텐츠ISC 반기별 이슈리포트 통합본" />
+                <figcaption>
+                <div class="caption">
+                  <p>2025년 디자인문화콘텐츠ISC<br>반기별 이슈리포트 통합본<br/></p>
+                  <a class="Circlebton00" href="https://www.designdb.com/?menuno=790&bbsno=31633&siteno=15&act=view&ztag=rO0ABXQAOTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNTkxIiBza2luPSJwaG90b19iYnNfMjAxOSI%2BPC9jYWxsPg%3D%3D#gsc.tab=0" target="_blink">콘텐츠보기</a>
+                </div>
+                </figcaption>
+                <a href="#"></a>
+              </figure>
+            </div>      
+
+            <!-- 디자인 콘텐츠 입력 끝 -->
+              
+            <!-- 영상자료 -->
+            
+            <div>
+              <ul>
+                <li>
+                  <dl>
+                    <dt><h5 class="conMain_tit">영상자료</h5></dt>
+                    <div class="hr"></div>
+                  </dl>
+                </li>
+                <li style="margin:50px 15px; font-size:13px;">KIDP의 각종 영상자료를<br>제공합니다
+                </li>
+                <!-- 20191031 수정-->
+                <li style="margin: 20px 15px 20px ;">
+                  <a class="Circlebton_w material-symbols-outlined" href="https://www.youtube.com/channel/UC2BSNlufWpJLdka9BfpuQkQ" target="_blink">chevron_right</a>
+                </li>
+              </ul>            
+            </div>  
+            <!-- 영상자료 01 입력 -->            
+            
+            <div>
+              <figure class="scaleNew">
+                <img src="https://kidp.or.kr/usr/upload/editor/email/2026012615473877f3b2e7-4cfe-49f3-86cb-be88cedb8a44.jpg" alt="일상의 커피잔에서 떠올린 보안카메라 디자인 | 구글 디자이너, 김문철 인터뷰 ②
+" />
+                <figcaption>
+                 <div class="playBtn">
+                  <img src="/newimages/play_btn.png">
+                </div>
+                <div class="caption">
+                  <p style="letter-spacing: 0em;">일상의 커피잔에서 떠올린 보안카메라 디자인 | 구글...
+<br/></p>
+                  <a class="Circlebton00" href="https://www.youtube.com/watch?v=aAQlwx7cyCY" target="_blank">영상보기</a>
+                </div>
+                </figcaption>
+                <a href="#"></a>
+              </figure>
+            </div>    
+            
+            <!-- 영상자료 02 입력 -->
+            
+            <div>
+              <figure class="scaleNew">
+                <img src="https://kidp.or.kr/usr/upload/editor/email/202601261547035b3fb140-63d3-4c5f-a7c0-883424dc04dc.jpg" alt="2025년 안전서비스디자인사업(산단 안전 인프라 구축 지원)" />
+                <figcaption>
+                 <div class="playBtn">
+                  <img src="/newimages/play_btn.png">
+                </div>
+                <div class="caption">
+                  <p style="letter-spacing: -0.08em">2025년 안전서비스디자인사업(산단 안전 인프라 구축 지원)<br/></p>
+                  <a class="Circlebton00" href="https://www.youtube.com/watch?v=-5D-_G8_-5M" target="_blank">영상보기</a>
+                </div>
+                </figcaption>
+                <a href="#"></a>
+              </figure>
+            </div>  
+            
+            
+            <!-- 영상자료 02 입력 끝 -->  
+            
+
+          </div>
+          <div class="contentC">
+            
+            <!-- 보도자료 입력 -->
+            
+            <div>
+              <figure class="scaleNew">
+                <img src="https://kidp.or.kr/usr/upload/editor/email/2026041615390230c244e9-50a8-461d-a1f1-5469de7d59fc.jpg"  alt="한국디자인진흥원, 프랑스 메종&오브제 한국디자인관 참가기업 모집" />
+                <figcaption>
+                <div class="caption">
+                  <p style="letter-spacing: -0.05em;">한국디자인진흥원, <br>프랑스 메종&오브제 한국디자...</p>
+                  <a class="Circlebton00" href="https://kidp.or.kr/?menuno=1202&bbsno=18962&siteno=16&cates=&act=view&ztag=rO0ABXQAMzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNjIyIiBza2luPSJraWRwX2JicyI%2BPC9jYWxsPg%3D%3D" target="_blank">보도자료보기</a>
+                </div>
+                </figcaption>
+              </figure>
+            </div>
+
+
+
+<!-- 20230103 2022년 전국디자인 진흥기관 주요 사업일정/ 2022 국제디자인캘린더 영역 임시 대체 시작 
+            <div>
+              <figure class="scaleNew">
+                <img src="https://www.kidp.or.kr/usr/upload/editor/email/2023010317225472d20d1e-cf29-4ca1-b79e-dd4c17996df9.jpg"  alt="디자인그라운드" />
+                <figcaption>
+                <div class="caption">
+                  <p>디자인그라운드<br>(학습 플랫폼)</p>
+                  <a class="Circlebton00" href="https://designground.designdb.com/" target="_blank">디자인그라운드</a>
+                </div>
+                </figcaption>
+                <a href="#"></a>
+              </figure>
+              
+              
+            </div>
+-->
+            <div style="background-color:#6e7db7;">
+              <ul style="color: #fff;
+    line-height: 22px;">
+                <li>
+                  <dl style="position: absolute;
+    top: 0px;
+    margin: 0px;
+    padding: 11px 15px;
+    display: block;
+    width: 80%;
+    height: 30%;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0);">
+                    <dt><h5 class="conMain_tit">세상의 디자인을 만나다.<br/>디자인DB</h5></dt>
+                    <div class="hr"></div>
+                  </dl>
+                </li>
+                <li style="margin:50px 15px -10px 15px; font-size:13px; "><br/>국내외디자인뉴스<br>보고서, 통계<br>디자인아카이브
+                </li>
+                <!-- 20191031 수정-->
+                <li style="margin: 20px 15px 20px 15px;">
+                  <a class="Circlebton_w material-symbols-outlined" href="https://designdb.com/?menuno=668" target="_blink">chevron_right</a>
+                  
+                </li>
+              </ul>              
+            </div>
+
+<!-- 20230103 2022년 전국디자인 진흥기관 주요 사업일정/ 2022 국제디자인캘린더 영역 임시 대체 끝 -->
+
+
+
+
+<!-- 임시
+            <div>
+              <figure class="scaleNew">
+                <img src="https://www.kidp.or.kr/usr/upload/editor/email/2022111810394403000ae9-0e4d-4043-a278-b2a2c70611bf.jpg"  alt="[디자인코리아2022]로지X디자인진흥원 인터뷰" />
+                <figcaption>
+                <div class="caption">
+                  <p>[디자인코리아2022]<br/>로지X디자인진흥원 인터뷰<br></p>
+                  <a class="Circlebton00" href="https://www.youtube.com/watch?v=DT5cAJCWd48" target="_blank">영상자료보기</a>
+                </div>
+                </figcaption>
+                <a href="#"></a>
+              </figure>
+              
+              
+            </div>
+ -->
+
+
+<!--20221129 수정 시작 -->
+
+
+
+
+<!-- 20221129 수정 끝-->
+
+<!--
+            <div>
+              <figure class="scaleNew">
+                <img src="/usr/upload/editor/email/20190624082557f724356f-7d02-4b89-b830-7d3e26ea1648.jpg" alt="한국-스웨덴이 선택한 한국 디자이너" />
+                <figcaption>
+                <div class="caption">
+                  <p>한국-스웨덴이 선택한<br>한국 디자이너<br/></p>
+                  <a class="Circlebton00" href="/?menuno=1019&bbsno=15098&siteno=16&act=view&ztag=rO0ABXQAMzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNjIyIiBza2luPSJraWRwX2JicyI%2BPC9jYWxsPg%3D%3D">보도자료보기</a>
+                </div>
+                </figcaption>
+                <a href="#"></a>
+              </figure>
+            </div>
+-->
+            
+            <!-- 보도자료 입력 끝-->
+            
+            
+
+<!--게시판을 생성할경우 addNoCateno addcateno와 addmenuno를 같은 순서대로 넣어줘야 한다. 무조건! 여러개가 생성될경우 ','로 구분한다 kidp 메인 사업부에서만 쓰이는 파라미터임 -->
+<form id="frmApply_9619853" name="frmApply" method="post" style="border: 0px">
+<input type="hidden" name="skintype" value="latestcont_kidp_new_1">
+<input type="hidden" name="tblname" value="zboardcommon333">
+<input type="hidden" name="datetype" value="yyyy.MM.dd">
+<input type="hidden" name="listcou" value="12">
+<input type="hidden" name="maxlength" value="40">
+<input type="hidden" name="maxContslength" value="105">
+<input type="hidden" name="latestcnt" value="">
+<input type="hidden" name="menuno2" value="">
+<input type="hidden" name="cate" value="">
+<input type="hidden" name="confirm" value="N">
+<input type="hidden" name="notCateYN" value="Y">
+<input type="hidden" name="NoSession" value="">
+<input type="hidden" name="NoConts" value="N">
+<input type="hidden" name="addNoCateno" value="848,851,819,1340,103464,1458,1459,1460,1461,1462,1463,1470,1774,1791">
+<input type="hidden" name="addCateno" value="1336,1337,846,849,102058,1341,1352,1353,1354,1355,1356,1357,1395,1397,101327,1465,1467,1469,1738,1739,1740,1742,1743,850,1745,100963,1762,1790,101658">
+<input type="hidden" name="addMenuno" value="1237,1238,1222,1227,1309,1242,1246,1249,1253,1256,1270,1273,1307,1032,1017,1335,1338,1341,1372,1375,1378,1384,1389,1390,1394,895,1408,1441,1464">
+
+</form>
+<script>
+$(function(){
+  
+  var options_9619853 = {
+      beforeSubmit : function(formData, jqForm, options){
+        $("#dimmed9619853").show();
+            $("#loadingbar9619853").show();
+        return true;
+      },// ajaxSubmit 전처리 함수
+      success      : function(item){
+        
+        
+        
+        
+        
+        var totalConts = "";
+        var conts = "";
+        var div_cnt = 1;
+        
+        var navi_cont = "<div><p class='navNum'><a class='PreNex' href='#none' onclick='paging(\"P\")'><</a>"
+        for (var i=0; i < item.list.length; i++) {
+          
+          var url = item.list[i].url;
+          //808일경우 사업부 소식 게시판에 직접 쓴거로 간주 1202로 메뉴번호 변경
+          url = url.replace("menuno=808&","menuno=1202&");
+          
+          var dateFlag = item.list[i].dateFlag;
+          var etc10 = item.list[i].etc10;
+          
+          if(i % 4 == 0){
+            conts = "<div id='lastest_"+div_cnt+"' style='display:none'>";
+            if(i == 0) conts = "<div id='lastest_"+div_cnt+"'>";
+            
+            conts += "<div class='newbizbox'><p class='date'>";  
+            var firstclass = "";
+            if(i==0) firstclass="class='pgactive'";
+            navi_cont += " <a href='#none' "+firstclass+" id='a_num_"+div_cnt+"' onclick='paging("+div_cnt+")'>"+div_cnt+"</a> "; 
+            
+            div_cnt++;
+          }else{
+            
+            conts = "<div class='newbizbox'><p class='date'>";  
+          }
+          
+          if(etc10 == "A"){
+            conts += "<span class='sBoxBlack'>설문조사</span>&nbsp;";
+          }else if(etc10 == "B"){
+            conts += "<span class='sBoxBlack'>모집공고</span>&nbsp;";
+          }else if(etc10 == "C"){
+            conts += "<span class='sBoxBlack'>입찰공고</span>&nbsp;";
+          }else if(etc10 == "D"){
+            conts += "<span class='sBoxBlack'>결과발표</span>&nbsp;";
+          }else if(etc10 == "E"){
+            conts += "<span class='sBoxBlack'>안내문</span>&nbsp;";
+          }else if(etc10 == "F"){
+            conts += "<span class='sBoxBlack'>채용공고</span>&nbsp;";
+          }
+
+          if(dateFlag == "Y"){
+            conts += "<span class='sBoxRed'>진행중</span>&nbsp;";
+          }else if(dateFlag == "N"){
+            conts += "<span class='sBoxRed'>종료</span>&nbsp;";
+          }else if(dateFlag == "will"){
+            conts += "<span class='sBoxRed'>진행예정</span>&nbsp;";
+          }
+          
+          conts += "<span>"+item.list[i].bbsdatereg+"</span></p>\
+          \n<a href='"+url+"'><p class='text_tit'>"+item.list[i].bbstitle+"</p>\
+          \n<p class='text_s'>"+item.list[i].bbsconts+"</p></a></div>";
+        
+          if(i != 0 && (i+1) % 4 == 0 || item.list.length == (i+1)){
+            conts += "</div>";
+          }
+          
+          totalConts +=conts;
+          
+          
+        }
+        
+        $("#ajaxHtml9619853").append(totalConts)
+        
+        
+        navi_cont += "<a class='PreNex' href='#none' onclick='paging(\"N\")'>></a></p></div>";
+        $("#ajaxHtml9619853").append(navi_cont)
+        
+        
+        $("#dimmed9619853").hide();
+            $("#loadingbar9619853").hide();
+      },
+      url       : '/latestboard/ajaxboard.html',
+      type         : 'post',
+      dataType     : 'json'
+  };
+  
+  $("#frmApply_9619853").ajaxSubmit(options_9619853);
+  
+});
+
+
+function paging(num){
+  var arr_id;
+  $("[id^='lastest_']").each(function(i, e){
+      if($(this).css("display") == "block"){
+        var id = $(this).attr("id");
+        arr_id = id.split("_");
+      }
+  });
+
+  
+  var length = $("[id^='lastest_']").length;
+  
+  if(num == "P"){
+    num = Number(arr_id[1])-1;
+  }else if(num == "N"){
+    num = Number(arr_id[1])+1;
+  }
+  
+  if(length >= num && num > 0){
+    $("[id^='lastest_']").hide();
+    $("#lastest_"+num).show();
+  }
+  if(num > 0 && num < 4){
+    $("a[id^='a_num']").removeClass("pgactive");
+    $("#a_num_"+num).addClass("pgactive");
+  }
+}
+</script>
+
+<div class="business" id="ajaxHtml9619853" style="width:380px; height:570px;">
+  <div id="dimmed9619853" style="position:absolute;left:0;top:0;right:0;bottom:0;opacity:0.2;filter:alpha(opacity=20);z-index:9999;display:none;"/>
+    <div id="loadingbar9619853" style="position: absolute;top: 10%;left: 3%;margin-left: 146px;margin-top: 204px;">
+     <img src="/cms/image/viewLoading.gif" width="50px" height="50px"/>
+    </div>
+  </div>
+  <ul>
+    <li><span class="alignL">사업부 소식</span></li>
+    <li><a class="Circlebton02 material-symbols-outlined" href="?menuno=1202">chevron_right</a></li>
+    <li style="margin:0px 15px; font-size:10pt; height:25px;">최신 진흥원 사업소식을 전달합니다</li>
+  </ul>
+
+</div></div>
+          
+          <!-- 오른쪽 퀵메뉴 -->
+          
+          <div class="contentR">
+            <div class="boxS_tit">
+              <ul>
+                <li><dl><dt><h5 class="conMain_tit">바로가기</h5></dt></dl></li>
+                <li style="margin:35px 0px; font-size:13px;">KIDP의 기관관련 정보</li>
+              </ul>
+            </div>
+            <div class="boxS"><a href="/?menuno=962">기관소개</a></div>
+            <div class="boxS"><a href="/?menuno=1185">1:1 문의</a></div>
+            <div class="boxS"><a href="/?menuno=964">조직구성</a></div>
+            <div class="boxS"><a href="/?menuno=1010">채용정보</a></div>
+            <div class="boxS"><a href="/?menuno=1016">대관·임대안내<br/>(성남·양산)</a></div>
+            <div class="boxS"><a href="/?menuno=1033">오시는길</a></div>  
+              
+            <div class="boxW_tit">
+              KIDP 사업안내            
+            </div>  
+            <div class="boxW">
+              <a href="/?menuno=1207">교육지원</a>
+            </div>  
+            <div class="boxW">
+              <a href="/?menuno=811">기업지원</a>
+            </div>  
+            <div class="boxW">
+              <a href="https://www.designdb.com/?menuno=700" target="_blank">공모·전시·행사</a>
+            </div>    
+            <div class="boxW_tit">
+              KIDP 지식정보
+            </div>  
+            <div class="boxW">
+              <a href="https://www.designdb.com/?menuno=788" target="_blank">통계자료</a>
+            </div>  
+            <div class="boxW">
+              <a href="https://www.designdb.com/?menuno=790" target="_blank">연구보고서</a>
+            </div>  
+            <div class="boxW">
+              <a href="https://www.designdb.com/?menuno=780" target="_blank">디자인네트워크</a>
+            </div>              
+          </div>          
+        </div>
+        
+        <!-- 오른쪽 퀵메뉴 끝 -->
+        
+        <!-- 하단 원형배너 -->
+        <div class="content02">
+          <div class="circleLink">
+            <div>
+              <a href="https://designfirm.kidp.or.kr/main/main.asp" target="_blank">디자인 전문회사<br/>신고 등록</a>
+              <a href="https://drights.kidp.or.kr" target="_blank">디자인<br/>권리보호</a>
+              <a href="https://www.designdb.com" target="_blank">디자인DB<br/>홈페이지</a>
+              <a href="/?menuno=865" target="_blank">실무디자이너<br/>교육지원</a>
+              <a href="https://kidp.or.kr/?menuno=1185">디자인진흥원<br/>민원센터</a >
+              <a href="/?menuno=1032">미래 디자인<br/>융합센터</a>  
+            </div>  
+          </div>
+        <!-- 하단 원형배너 끝 -->
+        
+        <!-- 내부입찰 -->
+
+<form id="frmApply_8609511" name="frmApply" method="post" style="border: 0px">
+<input type="hidden" name="skintype" value="latestcont_kidp_new_2">
+<input type="hidden" name="tblname" value="zboardcommon333">
+<input type="hidden" name="datetype" value="yyyy.MM.dd">
+<input type="hidden" name="listcou" value="2">
+<input type="hidden" name="maxlength" value="90">
+<input type="hidden" name="latestcnt" value="">
+<input type="hidden" name="menuno2" value="">
+<input type="hidden" name="cate" value="100202">
+<input type="hidden" name="confirm" value="N">
+<input type="hidden" name="notCateYN" value="">
+<input type="hidden" name="NoSession" value="">
+<input type="hidden" name="NoConts" value="N"> 
+</form>
+<script>
+$(function(){
+  
+  var options_8609511 = {
+      beforeSubmit : function(formData, jqForm, options){
+        $("#dimmed8609511").show();
+            $("#loadingbar8609511").show();
+        return true;
+      },// ajaxSubmit 전처리 함수
+      success      : function(item){
+        for (var i in item.list) {
+          
+          var url = item.list[i].url;
+          var etc10 = item.list[i].etc10;
+          var dateFlag = item.list[i].dateFlag;
+            
+          var conts = "<div><p class='date'>";
+          
+          if(etc10 == "A"){
+            conts += "<span class='sBoxBlack'>설문조사</span>&nbsp;";
+          }else if(etc10 == "B"){
+            conts += "<span class='sBoxBlack'>모집공고</span>&nbsp;";
+          }else if(etc10 == "C"){
+            conts += "<span class='sBoxBlack'>입찰공고</span>&nbsp;";
+          }else if(etc10 == "D"){
+            conts += "<span class='sBoxBlack'>결과발표</span>&nbsp;";
+          }else if(etc10 == "E"){
+            conts += "<span class='sBoxBlack'>안내문</span>&nbsp;";
+          }else if(etc10 == "F"){
+            conts += "<span class='sBoxBlack'>채용공고</span>&nbsp;";
+          }
+    
+          if(dateFlag == "Y"){
+            conts += "<span class='sBoxRed'>진행중</span>&nbsp;";
+          }else if(dateFlag == "N"){
+            conts += "<span class='sBoxRed'>종료</span>&nbsp;";
+          }else if(dateFlag == "will"){
+            conts += "<span class='sBoxRed'>진행예정</span>&nbsp;";
+          }
+
+          conts += "<span>"+item.list[i].bbsdatereg+"</span></p><a href='"+url+"'><p class='text_tit'>"+item.list[i].bbstitle+"\
+          \</p><p class='text_s'>"+item.list[i].bbsconts+"</p></a></div>";
+          
+        
+          $("#ajaxHtml8609511").append(conts)
+        }
+        
+        $("#dimmed8609511").hide();
+            $("#loadingbar8609511").hide();
+      },
+      url       : '/latestboard/ajaxboard.html',
+      type         : 'post',
+      dataType     : 'json'
+  };
+  
+  $("#frmApply_8609511").ajaxSubmit(options_8609511);
+  
+});
+</script>
+
+<div class="internalBid" id="ajaxHtml8609511">
+  <div id="dimmed8609511" style="position:absolute;left:0;top:0;right:0;bottom:0;opacity:0.2;filter:alpha(opacity=20);z-index:9999;display:none;"/>
+    <div id="loadingbar8609511" style="display:none; position: absolute;top:50%;left:50%;margin-left: -21px;margin-top: -21px;">
+     <img src="/cms/image/viewLoading.gif" width="50px" height="50px"/>
+    </div>
+  </div>
+  <ul>
+    <li><span class="alignL">내부입찰</span></li>
+    <li><a class="Circlebton03 material-symbols-outlined" href="?menuno=1012">chevron_right</a></li>
+  </ul>
+</div>
+
+
+<!-- 디비 입력후 카테고리 숫자를 변경해줘야한다. -->
+
+<!--외부입찰-->
+<form id="frmApply_4104174" name="frmApply" method="post" style="border: 0px">
+<input type="hidden" name="skintype" value="latestcont_kidp_new_2">
+<input type="hidden" name="tblname" value="zboardcommon333">
+<input type="hidden" name="datetype" value="yyyy.MM.dd">
+<input type="hidden" name="listcou" value="2">
+<input type="hidden" name="maxlength" value="90">
+<input type="hidden" name="latestcnt" value="">
+<input type="hidden" name="menuno2" value="">
+<input type="hidden" name="cate" value="100203">
+<input type="hidden" name="confirm" value="N">
+<input type="hidden" name="notCateYN" value="">
+<input type="hidden" name="NoSession" value="">
+<input type="hidden" name="NoConts" value="N"> 
+</form>
+<script>
+$(function(){
+  
+  var options_4104174 = {
+      beforeSubmit : function(formData, jqForm, options){
+        $("#dimmed4104174").show();
+            $("#loadingbar4104174").show();
+        return true;
+      },// ajaxSubmit 전처리 함수
+      success      : function(item){
+        for (var i in item.list) {
+          
+          var url = item.list[i].url;
+          var etc10 = item.list[i].etc10;
+          var dateFlag = item.list[i].dateFlag;
+            
+          var conts = "<div><p class='date'>";
+          
+          if(etc10 == "A"){
+            conts += "<span class='sBoxBlack'>설문조사</span>&nbsp;";
+          }else if(etc10 == "B"){
+            conts += "<span class='sBoxBlack'>모집공고</span>&nbsp;";
+          }else if(etc10 == "C"){
+            conts += "<span class='sBoxBlack'>입찰공고</span>&nbsp;";
+          }else if(etc10 == "D"){
+            conts += "<span class='sBoxBlack'>결과발표</span>&nbsp;";
+          }else if(etc10 == "E"){
+            conts += "<span class='sBoxBlack'>안내문</span>&nbsp;";
+          }else if(etc10 == "F"){
+            conts += "<span class='sBoxBlack'>채용공고</span>&nbsp;";
+          }
+    
+          if(dateFlag == "Y"){
+            conts += "<span class='sBoxRed'>진행중</span>&nbsp;";
+          }else if(dateFlag == "N"){
+            conts += "<span class='sBoxRed'>종료</span>&nbsp;";
+          }else if(dateFlag == "will"){
+            conts += "<span class='sBoxRed'>진행예정</span>&nbsp;";
+          }
+
+          conts += "<span>"+item.list[i].bbsdatereg+"</span></p><a href='"+url+"'><p class='text_tit'>"+item.list[i].bbstitle+"\
+          \</p><p class='text_s'>"+item.list[i].bbsconts+"</p></a></div>";
+          
+        
+          $("#ajaxHtml4104174").append(conts)
+        }
+        
+        $("#dimmed4104174").hide();
+            $("#loadingbar4104174").hide();
+      },
+      url       : '/latestboard/ajaxboard.html',
+      type         : 'post',
+      dataType     : 'json'
+  };
+  
+  $("#frmApply_4104174").ajaxSubmit(options_4104174);
+  
+});
+</script>
+
+<div class="externalBid" id="ajaxHtml4104174">
+  <div id="dimmed4104174" style="position:absolute;left:0;top:0;right:0;bottom:0;opacity:0.2;filter:alpha(opacity=20);z-index:9999;display:none;"/>
+    <div id="loadingbar4104174" style="display:none; position: absolute;top:50%;left:50%;margin-left: -21px;margin-top: -21px;">
+     <img src="/cms/image/viewLoading.gif" width="50px" height="50px"/>
+    </div>
+  </div>
+  <ul>
+    <li><span class="alignL">외부입찰</span></li>
+    <li><a class="Circlebton03 material-symbols-outlined" href="?menuno=1013">chevron_right</a></li>
+  </ul>
+</div>
+
+
+<!-- 디비 입력후 카테고리 숫자를 변경해줘야한다. -->
+
+</div>
+<!-- 정책브리핑 뉴스 위젯
+  <iframe width="1170" height="330" src="https://www.korea.kr/etc/news_widget.do?svrId=JFJ9OysUDGJ000" title="정책브리핑 뉴스 위젯" frameborder="0" allowfullscreen scrolling="no"></iframe>
+ -->
+        <div class="footerWrap">  
+          <!--  <div><img src = "/newimages/footer_img.png"/></div>  -->
+          
+          <!--하단 롤링 배너 -->
+          
+<div class="footBanner swiper-container s3">
+  <br><br>
+  <div class="swiper-wrapper">
+<div class="swiper-slide">
+      <!--<a href="#none" onclick="javascript:clickBanner('25','디자인DB','https://designdb.com', '_blank')">-->
+          <a href = "https://designdb.com" title="디자인DB" target='_blank'>
+          <img class="map" usemap="#banner_item1" src="/usr/upload/banner/20210401101206077_1765.0.png" alt="디자인DB">
+            </a>
+
+      <!--<a href="#none" onclick="javascript:clickBanner('25','산업통상부','https://www.motir.go.kr/', '_blank')">-->
+          <a href = "https://www.motir.go.kr/" title="산업통상부" target='_blank'>
+          <img class="map" usemap="#banner_item2" src="/usr/upload/banner/20251117021443238_1177.0.jpg" alt="산업통상부">
+            </a>
+
+      <!--<a href="#none" onclick="javascript:clickBanner('25','대한민국정부포털','http://www.korea.go.kr/', '_blank')">-->
+          <a href = "http://www.korea.go.kr/" title="대한민국정부포털" target='_blank'>
+          <img class="map" usemap="#banner_item3" src="/usr/upload/banner/20181109125116182_7395.0.jpg" alt="대한민국정부포털">
+            </a>
+
+      <!--<a href="#none" onclick="javascript:clickBanner('25','KIDP 사업평가위원 상시모집','http://www.designdb.com/?menuno=763&bbsno=160&siteno=15&act=view&ztag=rO0ABXQAOjxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNjE5IiBza2luPSJiYnNfbm90aWNlXzIwMTkiPjwvY2FsbD4%3D', '_blank')">-->
+          <a href = "http://www.designdb.com/?menuno=763&bbsno=160&siteno=15&act=view&ztag=rO0ABXQAOjxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNjE5IiBza2luPSJiYnNfbm90aWNlXzIwMTkiPjwvY2FsbD4%3D" title="KIDP 사업평가위원 상시모집" target='_blank'>
+          <img class="map" usemap="#banner_item6" src="/usr/upload/banner/20210401102018226_2194.0.png" alt="KIDP 사업평가위원 상시모집">
+            </a>
+
+      <!--<a href="#none" onclick="javascript:clickBanner('25','여성기업 일자리허브 플랫폼','https://www.iljarihub.or.kr/wesc/main/main.do', '_blank')">-->
+          <a href = "https://www.iljarihub.or.kr/wesc/main/main.do" title="여성기업 일자리허브 플랫폼" target='_blank'>
+          <img class="map" usemap="#banner_item7" src="/usr/upload/banner/20181109125116188_5603.0.jpg" alt="여성기업 일자리허브 플랫폼">
+            </a>
+
+      <!--<a href="#none" onclick="javascript:clickBanner('25','디자이너경력관리 센터','http://designcareer.kodfa.org/', '_blank')">-->
+          <a href = "http://designcareer.kodfa.org/" title="디자이너경력관리 센터" target='_blank'>
+          <img class="map" usemap="#banner_item8" src="/usr/upload/banner/20190520105758464_8051.0.jpg" alt="디자이너경력관리 센터">
+            </a>
+
+      <!--<a href="#none" onclick="javascript:clickBanner('25','e혁신 - 정부혁신 홈페이지','https://www.innovation.go.kr/ucms/main/main.do', '_blank')">-->
+          <a href = "https://www.innovation.go.kr/ucms/main/main.do" title="e혁신 - 정부혁신 홈페이지" target='_blank'>
+          <img class="map" usemap="#banner_item9" src="/usr/upload/banner/20230106045118256_2715.0.jpg" alt="e혁신 - 정부혁신 홈페이지">
+            </a>
+
+      <!--<a href="#none" onclick="javascript:clickBanner('25','디자인대가기준종합정보시스템','http://www.dsninfo.or.kr', '_blank')">-->
+          <a href = "http://www.dsninfo.or.kr" title="디자인대가기준종합정보시스템" target='_blank'>
+          <img class="map" usemap="#banner_item11" src="/usr/upload/banner/20200416082801963_7474.0.jpg" alt="디자인대가기준종합정보시스템">
+            </a>
+
+      </div>
+      <div class="swiper-slide">
+      <!--<a href="#none" onclick="javascript:clickBanner('25','디자인의 사회적가치','http://kidp.or.kr/?menuno=1004', '_blank')">-->
+          <a href = "http://kidp.or.kr/?menuno=1004" title="디자인의 사회적가치" target='_blank'>
+          <img class="map" usemap="#banner_item12" src="/usr/upload/banner/20201119034508673_1087.0.jpg" alt="디자인의 사회적가치">
+            </a>
+
+      <!--<a href="#none" onclick="javascript:clickBanner('25','KIDP YouTube','https://www.youtube.com/c/KoreaInstituteofDesignPromotion', '_blank')">-->
+          <a href = "https://www.youtube.com/c/KoreaInstituteofDesignPromotion" title="KIDP YouTube" target='_blank'>
+          <img class="map" usemap="#banner_item14" src="/usr/upload/banner/20181109125116180_5266.0.jpg" alt="KIDP YouTube">
+            </a>
+
+      <!--<a href="#none" onclick="javascript:clickBanner('25','TradeNavi','http://www.tradenavi.or.kr', '_blank')">-->
+          <a href = "http://www.tradenavi.or.kr" title="TradeNavi" target='_blank'>
+          <img class="map" usemap="#banner_item15" src="/usr/upload/banner/20181109125116185_1243.0.jpg" alt="TradeNavi">
+            </a>
+
+      <!--<a href="#none" onclick="javascript:clickBanner('25','여성인재데이터베이스 등록','https://www.eformsign.com/?s=2B7zLb', '_blank')">-->
+          <a href = "https://www.eformsign.com/?s=2B7zLb" title="여성인재데이터베이스 등록" target='_blank'>
+          <img class="map" usemap="#banner_item18" src="/usr/upload/banner/20250616100920272_1706.0.jpg" alt="여성인재데이터베이스 등록">
+            </a>
+
+      <!--<a href="#none" onclick="javascript:clickBanner('25','국민권익위원회가 운영하는 국민신문고','https://www.epeople.go.kr/index.jsp', '_blank')">-->
+          <a href = "https://www.epeople.go.kr/index.jsp" title="국민권익위원회가 운영하는 국민신문고" target='_blank'>
+          <img class="map" usemap="#banner_item19" src="/usr/upload/banner/20250620102454155_2930.0.jpg" alt="국민권익위원회가 운영하는 국민신문고">
+            </a>
+
+      <!--<a href="#none" onclick="javascript:clickBanner('25','디자인맵','https://www.designmap.or.kr/', '_blank')">-->
+          <a href = "https://www.designmap.or.kr/" title="디자인맵" target='_blank'>
+          <img class="map" usemap="#banner_item21" src="/usr/upload/banner/20250818101006319_9484.0.png" alt="디자인맵">
+            </a>
+
+      </div>
+  </div>
+  <div class="swiper-pagination pg3"></div>
+  <div class="swiper-button-prev p3"></div>
+  <div class="swiper-button-next n3"></div>                        
+</div>
+
+        </div>
+      </div>
+      
+    </div>
+
+
+<!--             20181001_ing             -->
+
+
+    </div><!--contents-->
+
+</div><!--container-->
+</div>
+
+
+
+<style>
+div.copy{
+    margin: 0 auto;
+    padding: 36px 0 36px 15px;
+    font-family: Roboto;
+    width: 1180px;
+    color: #969696;
+}
+div.copy span {
+    color: #ff0000;
+}
+.socialbox{
+    float:right;
+    overflow:hidden;
+}
+ul.social li {
+    float: left;
+    line-height: 0;
+    font-size: 0;
+}
+ul.social li a {
+    background: url(/images/kidp/common/kidp_sns.jpg) no-repeat 0 0;
+    display: inline-block;
+    font-size: 0;
+    height: 14px;
+    line-height: 0;
+    width: 28px;
+}
+ul.social li a.facebook {
+    background-position: 11px 0;
+}
+ul.social li a.twitter{
+    background-position: -16px 0;
+}
+ul.social li a.Youtube {
+    background-position: -43px 0;
+}
+ul.social li a.naverblog{
+    background-position: -71px 0;
+}
+</style>
+<div id="footer">
+    <div class="footer-wrap">
+        <div class="footer-m">
+            <ul>
+<!-- 20191114
+                <li><img src="/images/kidp/common/f_logo.gif" alit="KIDP 한국디자인진흥원" /></li>
+-->
+                <li><img src="/images/kidp/common/kidp_footer.png" alit="KIDP 한국디자인진흥원" /></li>
+                <li>
+                    <p>
+                    경기도 성남시 분당구 양현로 322(야탑동 344-1)<br />
+                    한국디자인진흥원<br />
+                    <strong>TEL 031-780-2114</strong>
+                    </p>
+                </li>
+                <li>
+                    <ul>
+                        <li><a href="/?menuno=962">KIDP소개</a></li>
+                        <li><a href="/?menuno=1034">오시는길</a></li>
+                        <li><a href="http://www.designdb.com/?menuno=1293" target="_blank" style="color:#ff0000; font-weight: 600;">개인정보처리방침</a></li>
+                        <li><a href="/?menuno=1038">영상정보처리기기운영방침</a></li>
+                        <li><a href="/?menuno=1039">이메일무단수집거부</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-U">
+            <h3><span style="line-height: 1.2;">KIDP 센터</span></h3>
+           <ul>
+    <li><a href="?menuno=1031" title="코리아디자인센터(KDC)" target="_blank">코리아디자인센터(KDC)</a></li>
+    <li><a href="?menuno=1032" title="미래디자인융합연구센터(양산)" target="_blank">미래디자인융합연구센터(양산)</a></li>
+    <li><a href="?menuno=1264" title="중국센터(베이징)" target="_blank">중국센터(베이징)</a></li>
+    <!--<li><a href="?menuno=1263" title="한국디자인이우비즈센터" target="_blank">한국디자인이우비즈센터</a></li>-->
+    <!--<li><a href="?menuno=1262" title="한국디자인순더비즈센터" target="_blank">한국디자인순더비즈센터</a></li>-->
+    <!--<li><a href="?menuno=1260" title="한베디자인센터" target="_blank">한베디자인센터</a></li>-->
+    <li><a href="?menuno=1272" title="디자인주도 제조혁신센터" target="_blank">디자인주도 제조혁신센터</a></li>
+    <!-- <li class="end"><a href="https://studio.kidp.or.kr/" title="DK스튜디오 시설예약" target="_blank">DK스튜디오 시설예약</a></li> 2023.03.02 윤성원수석님 요청-->
+    <!-- <li class="end"><a href="https://studio.kidp.or.kr/" title="제조혁신센터 시설예약" target="_blank">제조혁신센터 시설예약</a></li> 2024.08.28 김유진연구원님 요청-->  <!-- 2023.03.02 윤성원수석님 요청-->
+            </ul>
+        </div>
+
+        <div class="footer-U">
+      <h3><span style="line-height: 1.2;">사업별 사이트</span></h3>
+            <ul>             
+    <li><a href="https://eng.kidp.or.kr/" title="한국디자인진흥원(English)" target="_blank">한국디자인진흥원(English)</a></li>
+    <li><a href="https://www.designdb.com/" title="디자인DB" target="_blank">디자인DB</a></li>
+    <li><a href="https://designfirm.kidp.or.kr/" title="산업디자인 전문회사" target="_blank">산업디자인 전문회사</a></li>
+    <li><a href="https://drights.kidp.or.kr/10_Menu/main.asp" title="디자인 권리보호" target="_blank">디자인 권리보호</a></li>
+    <li><a href="https://job.kidp.or.kr/main.do" title="디자인-기술 협업 인력지원사업" target="_blank">디자인-기술 협업 인력지원사업</a></li>
+    <li><a href="https://intern.kidp.or.kr/" title="디자인 인턴십" target="_blank">디자인 인턴십</a></li>
+    <li><a href="https://intern.kidp.or.kr/kdmplus" title="코리아디자인멤버십 플러스(KDM+)" target="_blank">코리아디자인멤버십 플러스</a></li>
+    <li><a href="https://designground.designdb.com/" title="디자인그라운드 (학습 플랫폼)" target="_blank">디자인그라운드(학습 플랫폼)</a></li>
+    <li><a href="https://designq.kidp.or.kr/" title="서비스경험디자인기사" target="_blank">서비스경험디자인기사</a></li>
+  <!--  <li><a href="https://styletech.kidp.or.kr/" title="스타일테크" target="_blank">스타일테크 기업지원</a></li> -->
+    <li><a href="https://designkorea.kidp.or.kr" title="디자인 코리아" target="_blank">디자인 코리아</a></li>
+    <li><a href="https://award.kidp.or.kr/" title="DK Award(GD,전람회)" target="_blank">DK Award(GD,전람회)</a></li>
+    <li><a href="https://www.ksyda.com/kor/index.html" title="한 스웨덴 공모전" target="_blank">한 스웨덴 공모전</a></li>
+    <li><a href="https://dkworks.designdb.com" title="CMF HOW’S" target="_blank">CMF HOW’S</a></li>
+    <li class="end"><a href="https://nexd.designdb.com/web/main.do" title="디자인 상품화 비즈니스 플랫폼(NEX*D)" target="_blank">디자인 상품화 비즈니스 플랫폼</a></li>
+       </ul>
+        </div>
+        <div class="footer-U">
+            <h3><span style="line-height: 1.2;">유관기관</span></h3>
+            <ul>
+               <li><a href="https://www.motir.go.kr/" title="산업통상부" target="_blank">산업통상부</a></li>
+    <li><a href="http://www.gidp.kr" title="강원디자인진흥원" target="_blank">강원디자인진흥원</a></li>
+    <li><a href="http://www.gdc.or.kr" title="광주디자인진흥원" target="_blank">광주디자인진흥원</a></li>
+    <li><a href="http://www.dgdp.or.kr" title="대구경북디자인진흥원" target="_blank">대구경북디자인진흥원</a></li>
+    <li><a href="http://www.didp.or.kr/" title="대전디자인진흥원" target="_blank">대전디자인진흥원</a></li>
+    <li><a href="http://www.dcb.or.kr" title="부산디자인진흥원" target="_blank">부산디자인진흥원</a></li>
+    <li><a href="http://www.seouldesign.or.kr" title="서울디자인재단" target="_blank">서울디자인재단</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-copy">
+        <div class="copy">COPYRIGHT © <span>KIDP</span> ALL RIGHTS RESERVED.
+       <div class="socialbox">  
+    <ul class="social">
+      <li><a class="facebook" href="https://www.facebook.com/kidpgo" target="_blank">페이스북</a></li>
+      <li><a class="twitter" href="https://twitter.com/designkidp" target="_blank">트위터</a></li>
+      <li><a class="Youtube" href="https://www.youtube.com/channel/UC2BSNlufWpJLdka9BfpuQkQ" target="_blank">유투브</a></li>
+      <li><a class="naverblog" href="http://blog.naver.com/global_kidp" target="_blank">네이버블로그</a></li>
+        </ul>
+             </div>
+        </div>  
+    </div>  
+</div><!--footer-->
+
+</body>
+</html>
+

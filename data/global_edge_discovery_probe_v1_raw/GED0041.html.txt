@@ -1,0 +1,316 @@
+<!DOCTYPE html><html lang="en">
+
+<head>
+    <meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><title>CAS - Central Authentication Service Login</title>
+    
+        <link rel="stylesheet" type="text/css" href="/cas/webjars/normalize.css/8.0.1/normalize-112272e51c80ffe5bd01becd2ce7d656.css" /><link rel="stylesheet" type="text/css" href="/cas/webjars/bootstrap/5.3.8/css/bootstrap-grid.min-895b9494c7178ac12ad9c56d81305665.css" /><link rel="stylesheet" type="text/css" href="/cas/webjars/material-components-web/14.0.0/dist/material-components-web.min-9da9033e8d04504fe54b3dbb1298fd78.css" /><link rel="stylesheet" type="text/css" href="/cas/webjars/mdi__font/7.4.47/css/materialdesignicons.min-2c83c4bce691e18f82409f87b2bf84e4.css" /><link rel="stylesheet" type="text/css" href="/cas/webjars/datatables/2.3.2/css/dataTables.dataTables-86c98d6ce5aa289ccf4492ac3a785fad.css" /><link rel="stylesheet" type="text/css" href="/cas/css/cas-a90aca7e2afb259734284377211db332.css" /><link rel="stylesheet" type="text/css" href="/cas/css/custom-30e5850cfd287a67d80f833f21af241b.css" /><link rel="shortcut icon" href="/cas/favicon-c69d86935a3e44567bf37f4a722812c1.ico" /></head>
+
+<body class="login mdc-typography">
+    <script type="text/javascript" src="/cas/webjars/jquery/3.7.1/jquery.min-2c872dbe60f4ba70fb85356113d8b35e.js"></script>
+<script type="text/javascript" src="/cas/webjars/datatables/2.3.2/js/dataTables-8e31487c41abe2938c55b5dcde42a604.js"></script>
+<script type="text/javascript" src="/cas/webjars/clientjs/0.2.1/dist/client.min-5b6a46b3fb2ab9307d013def98fd7289.js"></script>
+
+<script type="text/javascript" src="/cas/webjars/material-components-web/14.0.0/dist/material-components-web.min-3c99031127092dd1984f2e3aa6aeed8b.js"></script>
+<script type="text/javascript" src="/cas/js/cas-cd46228f2a9b608731f0c9dacfb9758c.js"></script>
+<script type="text/javascript" src="/cas/js/material-b55ff53584b5e775934a54f8a5dd3ba8.js"></script>
+<script type="text/javascript" src="/cas/js/custom-63dd40a49197131d92472a1288f662f6.js"></script>
+<script>
+    if (typeof resourceLoadedSuccessfully === "function") {
+        resourceLoadedSuccessfully();
+    }
+    let trackGeoLocation = false;
+</script>
+
+<script>
+    /*<![CDATA[*/
+    let googleAnalyticsTrackingId = "UA-36516510-3";
+             
+    let script = document.createElement('script');
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsTrackingId}`;
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', googleAnalyticsTrackingId);
+    /*]]>*/
+</script>
+<div>
+
+    <style>
+        .bgimage {
+            background-image: url(\/cas\/images\/background-553db102696ee497e02b357414b118e6\.jpg);
+        }
+    </style>
+
+    <header id="app-bar" class="mdc-top-app-bar mdc-top-app-bar--fixed mdc-elevation--z4 shadow-sm"
+            role="banner">
+        <nav class="mdc-top-app-bar__row navbar navbar-dark bg-dark">
+            <div class="container-fluid container-fluid d-flex align-items-center justify-content-between">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    </section>
+                <section class="mdc-top-app-bar__section">
+                    <div class="cas-brand mx-auto">
+                        <h1 class="visually-hidden">CAS</h1>
+                        </div>
+                </section>
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                    <button id="cas-notifications-menu"
+                            class="mdc-icon-button mdc-top-app-bar__action-item cas-notification-toggle btn btn-outline-light"
+                            aria-label="Bookmark this page"
+                            data-bs-toggle="modal"
+                            data-bs-target="#cas-notification-dialog">
+                        <span class="mdi mdi-bell-alert fa fa-bell" aria-hidden="true"></span>
+                        <span class="visually-hidden">notifications</span>
+                        <i id="notifications-count" class="notifications-count count">2</i>
+                    </button>
+
+                    </section>
+            </div>
+        </nav>
+    </header>
+
+    <div id="logindrawer">
+        </div>
+
+    <script>let countMessages = 0;</script>
+    <div
+            class="mdc-dialog cas-notification-dialog modal"
+            id="cas-notification-dialog" role="alertdialog"
+            aria-modal="true" aria-labelledby="notif-dialog-title"
+            aria-describedby="notif-dialog-content">
+        <div class="mdc-dialog__container modal-dialog">
+            <div class="mdc-dialog__surface modal-content">
+                <div class="mdc-dialog__content modal-body" id="notif-dialog-content">
+                    <div id="cookiesSupportedDiv" class="cas-notification-message mdc-typography--body1" style="display: none">
+                        <h3 class="mdc-typography--headline6 mdi mdi-alert-circle fas fa-exclamation-circle">Cookies Disabled</h3>
+                        <p class="text-wrap small">Your browser does not support cookies. The browser's ability to store or read cookies is essential for single sign-on to work. Please consult your browser settings and ensure cookie support is turned on.</p>
+                    </div>
+
+                </div>
+                <footer class="mdc-dialog__actions modal-footer">
+                    <button type="button" class="mdc-button mdc-button--raised mdc-dialog__button btn btn-primary"
+                            data-mdc-dialog-action="accept"
+                            data-mdc-dialog-button-default
+                            data-bs-dismiss="modal">
+                        <span class="mdc-button__label">OK</span>
+                    </button>
+                </footer>
+            </div>
+        </div>
+        <div class="mdc-dialog__scrim"></div>
+    </div>
+
+    <script type="text/javascript">
+        function supportsCookies() {
+            try {
+                document.[REDACTED_SECRET_SIGNAL]';
+                const ret = document.cookie.indexOf('testcookie=') !== -1;
+                document.[REDACTED_SECRET_SIGNAL] expires=Thu, 01-Jan-1970 00:00:01 GMT';
+                return ret;
+            } catch (e) {
+                console.log(e);
+                return false;
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!supportsCookies()) {
+                countMessages++;
+                window.jQuery('#cookiesSupportedDiv').show();
+            }
+
+            if (countMessages === 0) {
+                window.jQuery('#notifications-count').remove();
+                window.jQuery('#cas-notifications-menu').remove();
+            } else {
+                window.jQuery('#notifications-count').text(`(${countMessages})`)
+            }
+        });
+    </script>
+</div>
+
+    <div class="mdc-drawer-scrim"></div>
+
+    <div class="fade-in mdc-drawer-app-content mdc-top-app-bar--fixed-adjust d-flex justify-content-center bgimage">
+        <main id="main-content" class="container-lg py-4" role="main">
+            <div id="content" class="d-flex justify-content-center">
+   <div class="d-flex justify-content-center flex-md-row flex-column mdc-card mdc-card-content card flex-grow-1">
+
+        <section id="loginForm"
+                 class="login-section login-form card-body">
+            <div class="d-flex flex-column justify-content-between m-auto">
+
+        <div>
+            </div>
+
+        <div class="form-wrapper">
+
+            <form method="post" id="fm1" action="login" onsubmit="loginFormSubmission();">
+                <div id="login-form-controls">
+                    <h2 class="text-center">
+                        <i class="mdi mdi-login fas fa-shield-alt" aria-hidden="true"></i>
+                        <span><a href="http://www.princeton.edu/"><img src="/cas/images/pu_signature.svg" alt="Princeton University"/></a><br>Central Authentication Service</span>
+                    </h2>
+
+                    <section class="cas-field form-group my-3" id="usernameSection">
+                        <label for="username"
+                               class="mdc-text-field mdc-text-field--outlined control-label w-100">
+                            <span class="mdc-notched-outline">
+                                <span class="mdc-notched-outline__leading"></span>
+                                <span class="mdc-notched-outline__notch">
+                                    <span class="mdc-floating-label"><span class="accesskey">N</span>etID:</span>
+                                </span>
+                                <span class="mdc-notched-outline__trailing"></span>
+                            </span>
+                            <input class="mdc-text-field__input form-control" id="username"
+                                   type="text"
+                                   accesskey="n"
+                                   autocapitalize="none"
+                                   spellcheck="false"
+                                   aria-describedby="usernameValidationMessage"
+                                   autocomplete="username" required name="username" value=""/></label>
+
+                        <div class="mdc-text-field-helper-line invalid-feedback">
+                            <div class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg"
+                                 aria-hidden="true">
+                                <span id="usernameValidationMessage">NetID is a required field.</span>
+                            </div>
+                        </div>
+
+                        <script type="text/javascript">
+                            /*<![CDATA[*/
+                            let username = "";
+                            let disabled = false;
+
+                            if (username != null && username !== "") {
+                                $("#username").val(username);
+                                if (disabled) {
+                                    $("#usernameSection").hide();
+                                }
+                            }
+                            /*]]>*/
+                        </script>
+                    </section>
+
+                    <section class="cas-field form-group my-3 mdc-input-group form-group" id="passwordSection">
+                        <div class="mdc-input-group-field mdc-input-group-field-append">
+                            <label for="password"
+                                   class="mdc-text-field caps-check mdc-text-field--outlined control-label mdc-text-field--with-trailing-icon control-label w-100">
+                                    <span class="mdc-notched-outline">
+                                        <span class="mdc-notched-outline__leading"></span>
+                                        <span class="mdc-notched-outline__notch">
+                                            <span class="mdc-floating-label"><span class="accesskey">P</span>assword:</span>
+                                        </span>
+                                        <span class="mdc-notched-outline__trailing"></span>
+                                    </span>
+                                <input class="mdc-text-field__input form-control pwd"
+                                       type="password"
+                                       id="password"
+                                       required
+                                       accesskey="p"
+                                       aria-describedby="passwordValidationMessage"
+                                       autocomplete="current-password" name="password" value=""/><button
+                                        class="reveal-password mdc-button mdc-button--unelevated mdc-input-group-append mdc-icon-button btn btn-primary"
+                                        type="button" title="Toggle password" aria-pressed="false">
+                                    <i class="mdi mdi-eye reveal-password-icon fas fa-eye" aria-hidden="true"></i>
+                                    <span class="sr-only">Show password</span>
+                                </button>
+                            </label>
+                            <div class="mdc-text-field-helper-line invalid-feedback">
+                                <div class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg"
+                                     aria-hidden="true">
+                                    <span id="passwordValidationMessage">Password is a required field.</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="mdc-text-field-helper-line invalid-feedback caps-warn">
+                            <div class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg text-danger">
+                                <span>CAPSLOCK key is turned on!</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="cas-field form-group my-3">
+                        </section>
+
+                    <section class="cas-field">
+                        <input type="hidden" name="execution" value="e1s1"/><input type="hidden" name="_eventId" value="submit"/><input type="hidden" name="geolocation"/><input type="hidden" name="deviceFingerprint"/><script type="text/javascript">
+                            let client = new ClientJS();
+                            let fingerprint = client.getFingerprint();
+                            $("[name=\"deviceFingerprint\"]").val(fingerprint);
+                        </script>
+                    </section>
+
+                    <p id="fieldsLegend"
+                       class="text-muted mb-3">* Indicates required fields</p>
+
+                    <button
+                class="mdc-button mdc-button--raised btn btn-primary btn-primary flex-shrink-0"
+                name="submitBtn"
+                id="submitBtn"
+                accesskey="l"
+                type="submit">
+            <i class="mdi fas mdi-login fa-shield-alt" aria-hidden="true"></i>
+            <span class="mdc-button__label">Login</span>
+        </button>
+
+        </div>
+            </form>
+
+            <hr class="my-4"/><div>
+                <div id="pmlinks" class="my-2">
+        <div class="mt-2">
+            <span class="mdi mdi-account-question" aria-hidden="true"></span>
+            <span><a href="http://oit.princeton.edu/passwords" id="helplink" alt="Change my Password or Get Help">Change my Password or Get Help</a></span>
+        </div>
+    </div>
+                </div>
+
+            <script type="text/javascript">
+                /*<![CDATA[*/
+                var i = "One moment please..."
+                var j = "Login"
+                    /*]]>*/
+                    $(window).on("pageshow", function () {
+                        $(":submit").prop("disabled", false);
+                        $(":submit").attr("value", j);
+                    });
+                $(document).ready(function () {
+                    $("#fm1").submit(function () {
+                        $(":submit").attr("disabled", true);
+                        $(":submit").attr("value", i);
+                        return true;
+                    });
+                });
+            </script>
+        </div>
+
+        <div>
+            <div id="sidebar">
+            <div class="sidebar-content">
+                <p id="securityNotice"><div class="disclaimer" aria-hidden="true"> By proceeding to access and use University computing and network resources through this sign-on, you agree to abide by applicable laws and University policies in your use of these resources. The University's right to access, preserve, and review information stored on or transmitted through these resources is described in the <a href="https://oit.princeton.edu/policies/access-accounts" id="aap" alt="Access to Accounts Policy" tabindex="-1">Access to Accounts Policy</a>. </div></p>
+            </div>
+        </div>
+        </div>
+    </div>
+        </section>
+        </div>
+</div>
+        </main>
+    </div>
+
+    <footer class="py-3 d-flex justify-content-center align-items-center cas-footer"
+        id="casFooter" role="contentinfo">
+    <span id="copyright" class="me-2 d-inline-block">&copy; 2026 The Trustees of <a href="http://www.princeton.edu/">Princeton University</a></span>
+    <span id="poweredBy" class="px-3 d-inline-block">
+        <span>Powered by</span>
+        <a href="https://github.com/apereo/cas">Apereo CAS</a>
+    </span>
+    </footer>
+
+</body>
+
+</html>
