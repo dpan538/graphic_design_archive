@@ -4920,3 +4920,137 @@ Safety scan:
 - The raw probe directory contained third-party page text with token-like,
   password, cookie, and session UI/config strings, so it was removed and is not
   part of the commit.
+
+## 2026-06-05 — Contemporary source follow-up v2 step 1: P1 protocol queue
+
+Started the v2 follow-up sequence by deriving a P1 protocol queue from the
+existing candidate/probe CSVs. This step reads only committed CSV metadata and
+does not fetch pages, read raw probe bodies, download images, or change
+rights/image states.
+
+Generated:
+
+- `scripts/generate_contemporary_source_followup_1990_2026_v2.py`
+- `data/contemporary_source_p1_protocol_queue_1990_2026_v2.csv`
+
+Step 1 metrics:
+
+- 97 P1 rows were queued for adapter or source-text follow-up.
+- Protocol lanes: WordPress REST / HTML 30, IIIF/source-viewer metadata 19,
+  Static JS/headless metadata 15, RSS/Atom source feed 13, Search
+  interface/manual source registry 8, JSON-LD page metadata 5, PDF text/link
+  extraction 2, HTML/manual source registry 2, CONTENTdm source metadata 1,
+  Kramerius / IIIF source metadata 1, and Omeka source metadata 1.
+- Regional spread: Global 24, East Asia 19, Africa 8, Southeast Asia 8, MENA 6,
+  South Asia 6, Latin America 6, Eastern Europe / Central Asia 6, Oceania /
+  Indigenous 5, Latin America / Caribbean 4, Oceania 2, Europe 1, North America
+  1, and Eastern Europe 1.
+
+Boundary:
+
+- This queue is an implementation queue for metadata/source-link adapters.
+- It explicitly carries `do_not_capture_images` style boundaries and keeps
+  `IMG01`/`IMG03` behind authoritative item-level rights evidence only.
+
+## 2026-06-05 — Contemporary source follow-up v2 step 2: regional priorities
+
+Completed the regional coverage priority table from the same v2 candidate/probe
+CSV inputs. This is a planning score for where to spend adapter and manual
+review effort; it is not a public coverage claim.
+
+Generated:
+
+- `data/contemporary_source_region_priorities_1990_2026_v2.csv`
+
+Step 2 metrics:
+
+- 14 macro-region rows were ranked.
+- Top priority rows by score: East Asia 104, Global 85, Southeast Asia 84,
+  Africa 81, South Asia 79, MENA 78, Latin America / Caribbean 66, and Latin
+  America 60.
+- East Asia has 27 candidates, 19 reachable rows, 6 `P1 adapter build`, 13 `P1
+  text/source enrichment`, and 8 retry/manual rows.
+- Southeast Asia, Africa, South Asia, and MENA remain high-value because they
+  combine underrepresented coverage, P0/P1 candidates, reachable text/protocol
+  rows, and failed-source endpoint work.
+- Global ranks high for reusable protocol adapter value, not because it should
+  dominate historical coverage or public narrative.
+
+Boundary:
+
+- Regional scores rank internal work. They do not decide inclusion, authorship,
+  authority, rights, or image state.
+
+## 2026-06-05 — Contemporary source follow-up v2 step 3: retry registry
+
+Completed the failed-source retry and alternate-endpoint registry. This table
+turns failed, HTTP-error, and `P2 retry/manual verification` probe rows into
+specific follow-up routes without treating temporary network/access failures as
+source absence.
+
+Generated:
+
+- `data/contemporary_source_retry_registry_1990_2026_v2.csv`
+
+Step 3 metrics:
+
+- 37 retry/manual verification rows were queued.
+- Failure families: DNS/domain 11, forbidden 403 9, SSL certificate 6,
+  connection reset 3, timeout 3, not found 404 3, auth required 401 1, and rate
+  limited 429 1.
+- Regional concentration: East Asia 8, Southeast Asia 6, South Asia 5, Latin
+  America / Caribbean 5, MENA 4, Global 4, Africa 3, and Latin America 2.
+
+Retry rules:
+
+- 403, 401, and 429 rows are manual source-registry or documented endpoint
+  review tasks. They must not be bypassed.
+- DNS/domain and 404 rows need canonical-domain, successor-page, source-root, or
+  institutional endpoint checks.
+- SSL and timeout rows need manual browser/canonical-domain confirmation before
+  another automated probe.
+- All retry rows keep the same image boundary: metadata, source links,
+  descriptions, and rights evidence only; no image binary capture.
+
+## 2026-06-05 — Contemporary source follow-up v2 step 4: adapter queue
+
+Completed the consolidated adapter queue and follow-up report. This combines the
+P1 protocol queue, region-priority logic, and retry/manual review routes into a
+single execution table for the next implementation phase.
+
+Generated:
+
+- `data/contemporary_source_adapter_queue_1990_2026_v2.csv`
+- `docs/capture/CONTEMPORARY_SOURCE_SCAN_FOLLOWUP_1990_2026_v2.md`
+
+Step 4 metrics:
+
+- 148 adapter queue rows were written.
+- Queue priority distribution: 52 `P1B_text_source_enrichment`, 45
+  `P1A_protocol_adapter`, 37 `P2_retry_or_alternate_endpoint`, 8
+  `P2_discovery_source_resolution`, and 6 `P2_manual_source_review`.
+- Queue status distribution: 97 `ready` rows and 51 `review_first` rows.
+- The follow-up report records the implementation order:
+  WordPress/RSS/JSON-LD source adapters first; IIIF/CONTENTdm/Kramerius/DSpace
+  metadata adapters second; headless/static metadata probes third; retry rows
+  through canonical endpoint checks or manual source-registry notes fourth.
+
+Boundary:
+
+- Every adapter queue row carries `do_not_capture_images=true`.
+- The queue is for source metadata, canonical links, descriptions, tags,
+  citations, and rights text. It is not an image mirror plan.
+- `IMG01` and `IMG03` remain gated by authoritative item-level rights evidence.
+
+Verification:
+
+- `python3 -m py_compile` passed for the follow-up generator, v2 scan generator,
+  and source probe script.
+- `git diff --check` passed.
+- Safety scan checked the follow-up generator, four new follow-up CSVs, the
+  follow-up report, and `PROJECT_LOG.md` for `API_KEY`, token, password, secret,
+  cookie, session, bearer, `/Users/`, and `.env` patterns.
+- No real secret, credential, cookie/session payload, local `/Users/` path, or
+  `.env` reference was found in commit-bound files. The remaining hits are
+  policy text or the substring `session` inside `possession`.
+- No v2 raw probe directory is present for this follow-up pass.
