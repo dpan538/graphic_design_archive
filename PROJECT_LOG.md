@@ -4278,3 +4278,49 @@ Decision:
   or local post-digital sources.
 - `pre_1930` should pause broad capture and only receive targeted non-West or
   local-source work plus duplicate-image review.
+## 2026-06-05 — Rights-first crawler decision engine
+
+Added a conservative rights-first crawler policy after reviewing proposed
+advanced crawler ideas for IIIF, JSON-LD, headless browser parsing, visual
+rights detection, ToS NLP parsing, decentralized provenance checks, and
+similar-open-image discovery.
+
+New project constraints:
+
+- crawler image state must be decided before any image pixel is stored;
+- only explicit item-level open rights evidence may upgrade a record to
+  `IMG03`;
+- IIIF manifests, source viewers, OpenGraph images, JSON-LD image objects, and
+  JavaScript-rendered image URLs are discovery/display-route evidence, not
+  automatic reuse permission;
+- visual copyright/CC-logo detection, LLM ToS summaries, IPFS/Wayback traces,
+  and pHash/CLIP similarity can create review signals or downgrade risk, but
+  cannot automatically upgrade an image to `IMG03`;
+- `IMG04` remains a no-image-frame state for text, authority, appendix,
+  bibliography, source, or context-led pages. Parser failure for a visual
+  object must stay diagnosable and should not masquerade as `IMG04`;
+- all raw capture payloads still need secret-pattern auditing before GitHub
+  push because third-party public HTML can contain token-like strings.
+
+Implemented:
+
+- `scripts/rights_decision_engine.py` as a pure Python decision helper for new
+  crawlers;
+- `docs/capture/RIGHTS_FIRST_CRAWLER_DECISION_ENGINE_v0.md` as the production
+  policy for using advanced crawler signals without violating rights logic;
+- `scripts/audit_img_state_contract.py` to separate data-layer IMG contract
+  problems from frontend template/CSS rendering problems.
+
+Follow-up tightening:
+
+- `scripts/source_policy_registry.py` now separates reviewed source-policy
+  evidence from broad domain allowlists. A crawler must not treat platform
+  names such as Wikimedia Commons, Flickr, Unsplash, Pinterest, or a museum
+  domain as automatic thumbnail permission.
+- `scripts/iiif_discovery.py` provides deterministic IIIF manifest discovery
+  for source-hosted display routes. A discovered manifest may support `IMG02`,
+  but it is not local reuse permission.
+- `scripts/discovery_signal_policy.py` defines non-upgrading discovery-signal
+  categories for visual, ToS, Wayback/IPFS, and similar-open-image hints.
+- `source_terms_allow_thumbnail=true` is ignored unless paired with a reviewed
+  source policy. `manual_review` remains a review-needed state, not approval.
