@@ -1,0 +1,107 @@
+metric,value,count
+total,rows,148
+probe_status,ok,111
+probe_status,failed,23
+probe_status,http_error,14
+macro_region,Global,33
+macro_region,East Asia,27
+macro_region,Southeast Asia,17
+macro_region,MENA,12
+macro_region,Africa,12
+macro_region,South Asia,11
+macro_region,Latin America / Caribbean,9
+macro_region,Latin America,8
+macro_region,Eastern Europe / Central Asia,6
+macro_region,Oceania / Indigenous,6
+macro_region,Oceania,3
+macro_region,Eastern Europe,2
+macro_region,Europe,1
+macro_region,North America,1
+subregion,Independent / media,11
+subregion,Transregional,9
+subregion,National / community archives,9
+subregion,Japan / Korea,8
+subregion,Independent web,7
+subregion,India / South Asia,7
+subregion,China / Taiwan / Hong Kong,7
+subregion,National library / archive,7
+subregion,Arab world / Middle East,7
+subregion,Africa / diaspora,7
+subregion,Japan,6
+subregion,Libraries / poster archives,6
+subregion,Australia / Aotearoa,6
+subregion,Southern Cone,5
+subregion,Platform discovery,4
+subregion,Korea,3
+subregion,Singapore,3
+subregion,Levant,3
+subregion,Pan-African,3
+subregion,Independent archive,2
+subregion,Taiwan,2
+subregion,Indonesia,2
+subregion,India,2
+subregion,Typography,1
+subregion,Community archive,1
+subregion,Hong Kong,1
+subregion,Malaysia,1
+subregion,ASEAN,1
+subregion,Vietnam,1
+subregion,Thailand,1
+subregion,Philippines,1
+subregion,Pakistan,1
+subregion,Diaspora,1
+subregion,Arab world,1
+subregion,Turkey,1
+subregion,Pan-African / diaspora,1
+subregion,Southern Africa,1
+subregion,Latin America,1
+subregion,Brazil,1
+subregion,Mexico,1
+subregion,Romania,1
+subregion,Bulgaria,1
+subregion,Australia,1
+subregion,Australia / Indigenous,1
+subregion,New Zealand,1
+adapter_hint,manual_review_or_alternate_endpoint,37
+adapter_hint,wordpress_rest_or_html_adapter,29
+adapter_hint,html_source_probe_then_manual_rules,20
+adapter_hint,iiif_manifest_adapter,18
+adapter_hint,html_jsonld_adapter,9
+adapter_hint,discovery_signal_only_no_item_image_ingest,8
+adapter_hint,headless_metadata_probe_only,7
+adapter_hint,rss_atom_source_adapter,5
+adapter_hint,aggregator_probe_then_source_return,3
+adapter_hint,static_js_or_html_probe,2
+adapter_hint,pdf_text_or_link_adapter,2
+adapter_hint,dspace_oai_or_rest_adapter,2
+adapter_hint,graphql_schema_probe_then_adapter,1
+adapter_hint,archive_search_probe,1
+adapter_hint,digitalnz_api_or_html_probe,1
+adapter_hint,omeka_api_adapter,1
+adapter_hint,kramerius_adapter,1
+adapter_hint,contentdm_source_adapter,1
+capture_priority_next,P1 text/source enrichment,52
+capture_priority_next,P1 adapter build,45
+capture_priority_next,P2 retry/manual verification,37
+capture_priority_next,P2 discovery lead queue,8
+capture_priority_next,P2 manual source review,6
+recommended_image_policy_next,IMG00 until source endpoint and item rights are verified,37
+recommended_image_policy_next,IMG00/IMG02 after item rights review; no automatic thumbnail upgrade,34
+recommended_image_policy_next,IMG00 until item rights and source terms are reviewed; IMG02 if source viewer exists,32
+recommended_image_policy_next,IMG02 source-hosted viewer candidate; IMG03 only with record-level open license,21
+recommended_image_policy_next,IMG04 text/source registry; no image frame unless item-level visual record is found,11
+recommended_image_policy_next,IMG00 discovery-only; resolve original source before public image display,8
+recommended_image_policy_next,IMG03 only if authoritative item license confirms; otherwise IMG02/IMG00,5
+detected_protocol,RSS/Atom,37
+detected_protocol,WordPress REST,35
+detected_protocol,JSON-LD,31
+detected_protocol,Static JS App,28
+detected_protocol,IIIF,25
+detected_protocol,PDF,11
+detected_protocol,GraphQL,3
+detected_protocol,ArchiveSpace/EAD,2
+detected_protocol,OAI-PMH,2
+detected_protocol,DSpace,2
+detected_protocol,Omeka,1
+detected_protocol,Kramerius,1
+detected_protocol,CONTENTdm,1

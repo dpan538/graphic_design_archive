@@ -4845,3 +4845,78 @@ Next route:
 - Retry or replace sources with DNS, SSL, 403, 429, or timeout failures through
   alternate endpoints or manual source-registry records rather than treating
   them as absent.
+
+## 2026-06-05 — Contemporary source scan v2
+
+Continued the rights-aware 1990-2026 source discovery pass by repairing and
+running the v2 candidate generator, then probing the expanded candidate set at
+source/page level only. This round generated source leads, protocol signals,
+adapter hints, and review priorities. It did not download image binaries, create
+public archive records, or upgrade rights/image state from heuristic evidence.
+
+Generated:
+
+- `scripts/generate_contemporary_source_scan_1990_2026_v2.py`
+- `data/contemporary_source_scan_candidates_1990_2026_v2.csv`
+- `data/contemporary_source_scan_probe_1990_2026_v2.csv`
+- `data/contemporary_source_scan_metrics_1990_2026_v2.csv`
+- `docs/capture/CONTEMPORARY_SOURCE_SCAN_1990_2026_v2.md`
+
+Generator and probe rules checked:
+
+- The v2 generator is source discovery only. It writes candidate source rows and
+  does not fetch pages, download images, or mint item records.
+- Priority and impact-like language remains internal triage only. It is not a
+  scholarly authority, source partnership, inclusion, authorship, or rights
+  decision.
+- `IMG01` and `IMG03` cannot be assigned by heuristics, LLM notes, ToS parsing,
+  social/platform signals, OpenGraph images, JSON-LD images, or IIIF/viewer
+  availability.
+- `IMG04` remains a true text/source-registry or no-image-frame state; it is not
+  a parser-failure fallback or an automatic upgrade from weak signals.
+
+V2 candidate registry:
+
+- 148 candidate sources after URL dedupe.
+- Candidate triage distribution: 68 `P0`, 63 `P1`, 15 `P2`, and 2 `P3`.
+- Macro-region distribution: Global 33, East Asia 27, Southeast Asia 17, MENA
+  12, Africa 12, South Asia 11, Latin America / Caribbean 9, Latin America 8,
+  Eastern Europe / Central Asia 6, Oceania / Indigenous 6, Oceania 3, Eastern
+  Europe 2, Europe 1, and North America 1.
+
+V2 source-only probe:
+
+- 148 candidate sources were probed with the existing source-level probe script.
+- Probe status: 111 `ok`, 23 `failed`, and 14 `http_error`.
+- Next capture priority: 52 `P1 text/source enrichment`, 45 `P1 adapter build`,
+  37 `P2 retry/manual verification`, 8 `P2 discovery lead queue`, and 6 `P2
+  manual source review`.
+- Detected protocol families: RSS/Atom 37, WordPress REST 35, JSON-LD 31,
+  Static JS App 28, IIIF 25, PDF 11, GraphQL 3, ArchiveSpace/EAD 2, OAI-PMH 2,
+  DSpace 2, Omeka 1, Kramerius 1, and CONTENTdm 1.
+
+Best next capture directions:
+
+- Build protocol-family adapters before single-source crawlers: WordPress/REST,
+  RSS/Atom, JSON-LD, IIIF/viewer metadata, static/headless metadata, and PDF
+  text/link extraction.
+- Prioritize reachable non-Western and underrepresented P1 rows where source
+  text and stable records are already visible: East Asia, Southeast Asia, MENA,
+  Africa, South Asia, Latin America, and Oceania/Indigenous sources.
+- Retry or replace failed DNS, SSL, 403, 404, 429, and timeout rows via
+  alternate endpoints or manual source-registry records rather than treating the
+  sources as absent.
+- Keep social/platform rows as discovery leads only until they resolve to
+  original, stable, rights-reviewed source records.
+
+Safety scan:
+
+- Scanned the generated v2 script, candidate CSV, probe CSV, metrics CSV, report,
+  and `PROJECT_LOG.md` for `API_KEY`, token, password, secret, cookie, session,
+  bearer, `/Users/`, and `.env` patterns.
+- No commit-bound file contains a real secret or local `/Users/` path from this
+  run. The hits in commit-bound files were policy/documentation words such as
+  `token` in historical log text or `image possession` notes.
+- The raw probe directory contained third-party page text with token-like,
+  password, cookie, and session UI/config strings, so it was removed and is not
+  part of the commit.
