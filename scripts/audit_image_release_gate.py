@@ -1,15 +1,22 @@
 from __future__ import annotations
 
+import csv
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
+from urllib.parse import urlsplit, urlunsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
+DATA = ROOT / "data"
 PAYLOAD = ROOT / "generated" / "public_surfaces_v1.json"
 IMAGE_READY = {"IMG01", "IMG02", "IMG03"}
 BLOCKING_STATES = {"IMG00", "IMG04"}
-MIN_LAUNCH_COVERAGE = 95
+MIN_SOURCE_VISIBLE_COVERAGE = 95
+MIN_VERIFIED_OPEN_COVERAGE = 85
+MIN_WEIGHTED_PUBLICATION_COVERAGE = 95
+MIN_RELEASE_SOURCE_COVERAGE = 80
+RELEASE_SOURCE_TARGET = 2000
 TARGET_COVERAGE = 100
 
 # Renderability is not the same as publication-grade image coverage.
@@ -25,25 +32,110 @@ PUBLICATION_WEIGHTS = {
 }
 
 
+def clean(value: object) -> str:
+    return str(value or "").strip()
+
+
+def normalize_url(value: str) -> str:
+    value = clean(value)
+    if not value:
+        return ""
+    parsed = urlsplit(value)
+    path = parsed.path.rstrip("/") or parsed.path
+    return urlunsplit((parsed.scheme.lower(), parsed.netloc.lower(), path, "", ""))
+
+
+def object_key(surface: dict) -> str:
+    """Group repeated photos/views of one source object as one gate unit."""
+    source_url = normalize_url(surface.get("sourceUrl", ""))
+    if source_url:
+        return f"url:{source_url}"
+    record_id = clean(surface.get("sourceRecordId"))
+    if record_id:
+        return f"record:{record_id}"
+    parts = [
+        clean(surface.get("sourceName")),
+        clean(surface.get("title")).lower(),
+        clean(surface.get("dateText")),
+    ]
+    return "fallback:" + "|".join(parts)
+
+
+def capture_source_count() -> int:
+    sources: set[str] = set()
+    for path in sorted(DATA.glob("capture_batch_*_records.csv")):
+        if "cell_assignments" in path.name:
+            continue
+        with path.open(newline="", encoding="utf-8") as handle:
+            for row in csv.DictReader(handle):
+                source_name = clean(row.get("source_name"))
+                if source_name:
+                    sources.add(source_name)
+    return len(sources)
+
+
+def pct(numerator: float, denominator: float) -> float:
+    if denominator <= 0:
+        return 0.0
+    return round((numerator / denominator) * 100, 2)
+
+
+def state_weight(surface: dict) -> float:
+    return PUBLICATION_WEIGHTS.get(surface.get("image", {}).get("state", "IMG00"), 0.0)
+
+
+def is_verified_open(surface: dict) -> bool:
+    return (
+        surface.get("image", {}).get("state") == "IMG03"
+        and surface.get("reviewGates", {}).get("rightsReviewed") is True
+    )
+
+
 def main() -> None:
     payload = json.loads(PAYLOAD.read_text(encoding="utf-8"))
     surfaces = payload.get("surfaces", [])
     counts = Counter(surface.get("image", {}).get("state", "IMG00") for surface in surfaces)
     ready = sum(counts[state] for state in IMAGE_READY)
-    verified_open = sum(
-        1
-        for surface in surfaces
-        if surface.get("image", {}).get("state") == "IMG03"
-        and surface.get("reviewGates", {}).get("rightsReviewed") is True
-    )
-    weighted_ready = sum(
-        PUBLICATION_WEIGHTS.get(surface.get("image", {}).get("state", "IMG00"), 0.0)
-        for surface in surfaces
-    )
+    verified_open = sum(1 for surface in surfaces if is_verified_open(surface))
+    weighted_ready = sum(state_weight(surface) for surface in surfaces)
     total = len(surfaces)
-    source_visible_coverage = round((ready / total) * 100, 2) if total else 0.0
-    verified_open_coverage = round((verified_open / total) * 100, 2) if total else 0.0
-    weighted_publication_coverage = round((weighted_ready / total) * 100, 2) if total else 0.0
+    source_visible_coverage = pct(ready, total)
+    verified_open_coverage = pct(verified_open, total)
+    weighted_publication_coverage = pct(weighted_ready, total)
+
+    object_groups: dict[str, list[dict]] = defaultdict(list)
+    for surface in surfaces:
+        object_groups[object_key(surface)].append(surface)
+    object_total = len(object_groups)
+    object_ready = sum(
+        1
+        for group in object_groups.values()
+        if any(surface.get("image", {}).get("state") in IMAGE_READY for surface in group)
+    )
+    object_verified_open = sum(
+        1
+        for group in object_groups.values()
+        if any(is_verified_open(surface) for surface in group)
+    )
+    object_weighted_ready = sum(max(state_weight(surface) for surface in group) for group in object_groups.values())
+    object_counts = Counter(
+        max(
+            (surface.get("image", {}).get("state", "IMG00") for surface in group),
+            key=lambda state: PUBLICATION_WEIGHTS.get(state, 0.0),
+        )
+        for group in object_groups.values()
+    )
+    object_source_visible_coverage = pct(object_ready, object_total)
+    object_verified_open_coverage = pct(object_verified_open, object_total)
+    object_weighted_publication_coverage = pct(object_weighted_ready, object_total)
+
+    active_source_count = capture_source_count()
+    release_source_coverage = pct(active_source_count, RELEASE_SOURCE_TARGET)
+    sources_needed_for_target = max(0, RELEASE_SOURCE_TARGET - active_source_count)
+    sources_needed_for_minimum = max(
+        0,
+        int((MIN_RELEASE_SOURCE_COVERAGE / 100) * RELEASE_SOURCE_TARGET) - active_source_count,
+    )
 
     blockers_by_source: dict[str, Counter[str]] = defaultdict(Counter)
     blockers_by_folder: dict[str, Counter[str]] = defaultdict(Counter)
@@ -79,18 +171,41 @@ def main() -> None:
     print(f"verified_open_coverage={verified_open_coverage}%")
     print(f"weighted_publication_image_score={round(weighted_ready, 2)}")
     print(f"weighted_publication_coverage={weighted_publication_coverage}%")
-    print(f"minimum_launch_gate={MIN_LAUNCH_COVERAGE}% weighted/publication-grade")
+    print(f"objects={object_total}")
+    print(f"object_source_visible_image_ready={object_ready}")
+    print(f"object_source_visible_coverage={object_source_visible_coverage}%")
+    print(f"object_verified_open_images={object_verified_open}")
+    print(f"object_verified_open_coverage={object_verified_open_coverage}%")
+    print(f"object_weighted_publication_image_score={round(object_weighted_ready, 2)}")
+    print(f"object_weighted_publication_coverage={object_weighted_publication_coverage}%")
+    print(f"minimum_source_visible_gate={MIN_SOURCE_VISIBLE_COVERAGE}% object-level")
+    print(f"minimum_verified_open_gate={MIN_VERIFIED_OPEN_COVERAGE}% object-level")
+    print(f"minimum_weighted_publication_gate={MIN_WEIGHTED_PUBLICATION_COVERAGE}% object-level")
+    print(f"release_source_target={RELEASE_SOURCE_TARGET}")
+    print(f"release_active_source_count={active_source_count}")
+    print(f"release_source_coverage={release_source_coverage}%")
+    print(f"minimum_release_source_coverage={MIN_RELEASE_SOURCE_COVERAGE}%")
+    print(f"release_sources_needed_for_80pct={sources_needed_for_minimum}")
+    print(f"release_sources_needed_for_target={sources_needed_for_target}")
     print(f"target={TARGET_COVERAGE}%")
-    print(f"state_counts={dict(sorted(counts.items()))}")
+    print(f"surface_state_counts={dict(sorted(counts.items()))}")
+    print(f"object_state_counts={dict(sorted(object_counts.items()))}")
     print(f"weights={PUBLICATION_WEIGHTS}")
+    gates = {
+        "source_visible_object_gate": object_source_visible_coverage >= MIN_SOURCE_VISIBLE_COVERAGE,
+        "verified_open_object_gate": object_verified_open_coverage >= MIN_VERIFIED_OPEN_COVERAGE,
+        "weighted_publication_object_gate": object_weighted_publication_coverage >= MIN_WEIGHTED_PUBLICATION_COVERAGE,
+        "release_source_coverage_gate": release_source_coverage >= MIN_RELEASE_SOURCE_COVERAGE,
+    }
+    print(f"release_gates={gates}")
 
     if total:
         # If we only add image-ready surfaces and keep current blockers public,
         # this is the volume required to mathematically reach the launch gate.
-        deficit_ready_only = max(0, int(((MIN_LAUNCH_COVERAGE / 100) * total - ready) / (1 - MIN_LAUNCH_COVERAGE / 100)) + 1)
-        weighted_deficit = max(0.0, (MIN_LAUNCH_COVERAGE / 100) * total - weighted_ready)
+        deficit_ready_only = max(0, int(((MIN_SOURCE_VISIBLE_COVERAGE / 100) * total - ready) / (1 - MIN_SOURCE_VISIBLE_COVERAGE / 100)) + 1)
+        weighted_deficit = max(0.0, (MIN_WEIGHTED_PUBLICATION_COVERAGE / 100) * object_total - object_weighted_ready)
         print(f"new_source_visible_needed_if_no_blockers_removed={deficit_ready_only}")
-        print(f"weighted_publication_points_needed={round(weighted_deficit, 2)}")
+        print(f"object_weighted_publication_points_needed={round(weighted_deficit, 2)}")
 
     print("\nblocking_sources:")
     for source, counter in sorted(blockers_by_source.items(), key=lambda item: -sum(item[1].values())):
@@ -112,7 +227,7 @@ def main() -> None:
     for surface_id, state, source, title in blocker_examples:
         print(f"- {surface_id} | {state} | {source} | {title}")
 
-    if weighted_publication_coverage < MIN_LAUNCH_COVERAGE:
+    if not all(gates.values()):
         raise SystemExit(1)
 
 

@@ -99,6 +99,8 @@ Do not commit secrets, credentials, private notes, browser sessions, cookies, AP
 
 This repository uses layered licensing because the project combines software,
 research data, documentation, frontend design, and third-party source references.
+GitHub may display the repository license as MIT because `LICENSE` covers the
+software code layer. That label must be read together with this section.
 
 - Source code is licensed under the MIT License. See `LICENSE`.
 - The original frontend visual design, archive-box interface concept, layout

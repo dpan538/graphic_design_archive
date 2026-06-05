@@ -25,7 +25,8 @@ REGION_OUTPUT = DATA / "source_coverage_region_breakdown_v1.csv"
 PERIOD_OUTPUT = DATA / "source_coverage_period_breakdown_v1.csv"
 REPORT = DOCS / "SOURCE_COVERAGE_RATE_v1.md"
 
-WEIGHTED_SOURCE_TARGET = 200.0
+WEIGHTED_SOURCE_TARGET = 2000.0
+MIN_RELEASE_SOURCE_COVERAGE_RATE = 80.0
 
 REGION_WEIGHTS = {
     "Africa": 1.35,
@@ -292,7 +293,17 @@ def main() -> None:
         {
             "metric": "weighted_source_target",
             "value": f"{WEIGHTED_SOURCE_TARGET:.2f}",
-            "notes": "Initial launch target requested as roughly 200 sources, expressed as weighted source points.",
+            "notes": "Final release source target requested as at least 2000 sources, expressed as weighted source points.",
+        },
+        {
+            "metric": "minimum_release_source_coverage_rate",
+            "value": f"{MIN_RELEASE_SOURCE_COVERAGE_RATE:.2f}",
+            "notes": "Release gate threshold for source coverage before publication readiness.",
+        },
+        {
+            "metric": "release_source_coverage_gate_passed",
+            "value": str((source_pool_rate * 100) >= MIN_RELEASE_SOURCE_COVERAGE_RATE).lower(),
+            "notes": "True only when source_pool_rate reaches the configured final release coverage threshold.",
         },
         {
             "metric": "source_pool_rate",
@@ -351,7 +362,7 @@ def main() -> None:
         "- `source_coverage_rate_v1 = source_pool_rate × time_weighted_balance_rate`",
         "- `strict_distribution_adjusted_source_coverage_rate = source_pool_rate × region_weighted_balance_rate × time_weighted_balance_rate`",
         "",
-        "The main rate uses region-weighted source points first, then applies time coverage. The stricter diagnostic additionally penalizes uneven regional distribution.",
+        "The main rate uses region-weighted source points first, then applies time coverage. The stricter diagnostic additionally penalizes uneven regional distribution. The current release source target is at least 2000 sources, with an 80% minimum source-coverage gate before final release.",
         "",
         "## Current Result",
         "",

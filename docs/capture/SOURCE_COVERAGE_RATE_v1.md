@@ -12,44 +12,46 @@ Scope: active captured sources, not candidate/prospect sources. This metric meas
 - `source_coverage_rate_v1 = source_pool_rate × time_weighted_balance_rate`
 - `strict_distribution_adjusted_source_coverage_rate = source_pool_rate × region_weighted_balance_rate × time_weighted_balance_rate`
 
-The main rate uses region-weighted source points first, then applies time coverage. The stricter diagnostic additionally penalizes uneven regional distribution.
+The main rate uses region-weighted source points first, then applies time coverage. The stricter diagnostic additionally penalizes uneven regional distribution. The current release source target is at least 2000 sources, with an 80% minimum source-coverage gate before final release.
 
 ## Current Result
 
-- active_source_count: 109 (Distinct source_name values with at least one captured record.)
+- active_source_count: 236 (Distinct source_name values with at least one captured record.)
 - candidate_source_count: 298 (Candidate/prospect sources in source_prospect_registry_v2; not counted as active coverage.)
-- weighted_active_source_points: 104.85 (Sum of active source region weights. Non-West/local regions carry higher weights.)
-- weighted_source_target: 200.00 (Initial launch target requested as roughly 200 sources, expressed as weighted source points.)
-- source_pool_rate: 52.42 (weighted_active_source_points / weighted_source_target.)
-- region_weighted_balance_rate: 35.85 (Weighted average of per-region active-source coverage against regional source targets.)
-- time_weighted_balance_rate: 46.00 (Weighted average of active-source coverage across period bands.)
-- source_coverage_rate_v1: 24.12 (source_pool_rate * time_weighted_balance_rate. The source pool itself is already region-weighted.)
-- strict_distribution_adjusted_source_coverage_rate: 8.64 (source_pool_rate * region_weighted_balance_rate * time_weighted_balance_rate; diagnostic only.)
+- weighted_active_source_points: 130.25 (Sum of active source region weights. Non-West/local regions carry higher weights.)
+- weighted_source_target: 2000.00 (Final release source target requested as at least 2000 sources, expressed as weighted source points.)
+- minimum_release_source_coverage_rate: 80.00 (Release gate threshold for source coverage before publication readiness.)
+- release_source_coverage_gate_passed: false (True only when source_pool_rate reaches the configured final release coverage threshold.)
+- source_pool_rate: 6.51 (weighted_active_source_points / weighted_source_target.)
+- region_weighted_balance_rate: 4.96 (Weighted average of per-region active-source coverage against regional source targets.)
+- time_weighted_balance_rate: 10.95 (Weighted average of active-source coverage across period bands.)
+- source_coverage_rate_v1: 0.71 (source_pool_rate * time_weighted_balance_rate. The source pool itself is already region-weighted.)
+- strict_distribution_adjusted_source_coverage_rate: 0.04 (source_pool_rate * region_weighted_balance_rate * time_weighted_balance_rate; diagnostic only.)
 
 ## Weakest Regions
 
-- Eastern Europe / Caucasus: active=0, candidate=2, target≈11, balance=0.00%
-- Latin America / Transregional: active=0, candidate=1, target≈11, balance=0.00%
-- Latin America and the Caribbean: active=0, candidate=3, target≈11, balance=0.00%
-- North America / Global digital: active=0, candidate=1, target≈11, balance=0.00%
-- Europe: active=1, candidate=2, target≈11, balance=9.93%
-- Global: active=1, candidate=3, target≈11, balance=9.93%
-- Mainland China: active=1, candidate=1, target≈11, balance=9.93%
-- Eastern Europe: active=2, candidate=21, target≈11, balance=19.85%
+- Eastern Europe / Caucasus: active=0, candidate=2, target≈101, balance=0.00%
+- Latin America / Transregional: active=0, candidate=1, target≈101, balance=0.00%
+- Latin America and the Caribbean: active=0, candidate=3, target≈101, balance=0.00%
+- North America / Global digital: active=0, candidate=1, target≈101, balance=0.00%
+- Europe: active=1, candidate=2, target≈101, balance=0.99%
+- Global: active=1, candidate=3, target≈101, balance=0.99%
+- Mainland China: active=1, candidate=1, target≈101, balance=0.99%
+- Eastern Europe: active=2, candidate=21, target≈101, balance=1.99%
 
 ## Period Balance
 
-- pre_1930: active_sources=10, target≈30, records=467, balance=33.33%
-- 1930_1970: active_sources=26, target≈70, records=528, balance=37.14%
-- 1970_2000: active_sources=26, target≈50, records=291, balance=52.00%
-- 2000_2026: active_sources=30, target≈50, records=271, balance=60.00%
+- pre_1930: active_sources=10, target≈300, records=467, balance=3.33%
+- 1930_1970: active_sources=26, target≈700, records=528, balance=3.71%
+- 1970_2000: active_sources=26, target≈500, records=291, balance=5.20%
+- 2000_2026: active_sources=157, target≈500, records=398, balance=31.40%
 
 ## Weakest Periods
 
-- pre_1930: 33.33%
-- 1930_1970: 37.14%
-- 1970_2000: 52.00%
-- 2000_2026: 60.00%
+- pre_1930: 3.33%
+- 1930_1970: 3.71%
+- 1970_2000: 5.20%
+- 2000_2026: 31.40%
 
 ## Interpretation
 

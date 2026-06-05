@@ -1,11 +1,11 @@
 group_type,group_value,records_total,source_visible_count,source_visible_rate,publication_grade_count,publication_grade_rate,weighted_publication_score,weighted_publication_rate,open_image_count,open_image_rate,rights_labeled_count,rights_labeled_rate,unclear_image_state_count,unclear_image_state_rate,anchor_image_available_count,anchor_image_available_rate,duplicate_image_url_records,duplicate_image_url_rate,img00_count,img01_count,img02_count,img03_count,img04_count
-all_capture_records,all,1631,1462,89.64,1357,83.20,958.55,58.77,163,9.99,1631,100.00,4,0.25,1356,83.14,71,4.35,59,47,791,566,168
+all_capture_records,all,1758,1462,83.16,1357,77.19,958.55,54.53,163,9.27,1758,100.00,4,0.23,1356,77.13,71,4.04,59,47,791,566,295
 period_band,1930_1970,528,486,92.05,420,79.55,291.75,55.26,72,13.64,528,100.00,1,0.19,420,79.55,17,3.22,42,24,267,153,42
 period_band,pre_1930,467,433,92.72,399,85.44,341.70,73.17,58,12.42,467,100.00,0,0.00,398,85.22,39,8.35,15,19,66,333,34
+period_band,2000_2026,398,232,58.29,231,58.04,135.10,33.94,15,3.77,398,100.00,0,0.00,231,58.04,12,3.02,1,0,208,23,166
 period_band,1970_2000,291,281,96.56,281,96.56,174.15,59.85,18,6.19,291,100.00,3,1.03,281,96.56,0,0.00,1,0,225,56,9
-period_band,2000_2026,271,232,85.61,231,85.24,135.10,49.85,15,5.54,271,100.00,0,0.00,231,85.24,12,4.43,1,0,208,23,39
 period_band,undated_or_unparsed,74,30,40.54,26,35.14,15.85,21.42,0,0.00,74,100.00,0,0.00,26,35.14,3,4.05,0,4,25,1,44
-source_family,unmapped_source_family,636,586,92.14,539,84.75,390.00,61.32,0,0.00,636,100.00,0,0.00,539,84.75,14,2.20,0,47,312,227,50
+source_family,unmapped_source_family,763,586,76.80,539,70.64,390.00,51.11,0,0.00,763,100.00,0,0.00,539,70.64,14,1.83,0,47,312,227,177
 source_family,independent_design_archive_or_publication,304,233,76.64,233,76.64,182.75,60.12,156,51.32,304,100.00,0,0.00,233,76.64,22,7.24,0,0,77,156,71
 source_family,government_or_public_cultural_database,206,201,97.57,201,97.57,157.10,76.26,0,0.00,206,100.00,0,0.00,201,97.57,0,0.00,0,0,68,133,5
 source_family,general_archive_or_collection,172,164,95.35,117,68.02,79.05,45.96,0,0.00,172,100.00,0,0.00,116,67.44,32,18.60,48,0,75,42,7
@@ -16,7 +16,7 @@ source_family,poster_film_festival_design_archive,13,12,92.31,1,7.69,0.55,4.23,0
 source_family,aggregator_or_discovery_router,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_family,municipal_or_state_archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_family,newspaper_magazine_ocr_portal,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
-region_group,unmapped_region,636,586,92.14,539,84.75,390.00,61.32,0,0.00,636,100.00,0,0.00,539,84.75,14,2.20,0,47,312,227,50
+region_group,unmapped_region,763,586,76.80,539,70.64,390.00,51.11,0,0.00,763,100.00,0,0.00,539,70.64,14,1.83,0,47,312,227,177
 region_group,active payload / needs registry mapping,402,337,83.83,337,83.83,244.50,60.82,144,35.82,402,100.00,0,0.00,337,83.83,18,4.48,0,0,168,169,65
 region_group,Oceania and Pacific,253,252,99.60,252,99.60,185.15,73.18,0,0.00,253,100.00,0,0.00,252,99.60,0,0.00,1,0,119,133,0
 region_group,Western/Central Europe,89,89,100.00,89,100.00,51.40,57.75,7,7.87,89,100.00,0,0.00,89,100.00,3,3.37,0,0,82,7,0
@@ -79,66 +79,193 @@ source_name,SMU Libraries Digital Collections / CONTENTdm,3,3,100.00,3,100.00,1.
 source_name,South African History Archive,3,3,100.00,3,100.00,1.65,55.00,0,0.00,3,100.00,0,0.00,3,100.00,0,0.00,0,0,3,0,0
 source_name,NAIDOC / AIATSIS,2,0,0.00,0,0.00,0.00,0.00,0,0.00,2,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,2
 source_name,Roots.sg / National Heritage Board Singapore,2,2,100.00,2,100.00,1.10,55.00,0,0.00,2,100.00,0,0.00,2,100.00,0,0.00,0,0,2,0,0
+source_name,Afghanistan Centre at Kabul University,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Afghanistan Digital Library,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,African Activist Archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Aga Khan Documentation Center Collections,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Alexander Turnbull Library,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,American University of Beirut Libraries,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Arab Image Foundation,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
+source_name,Archives Nationales de Tunisie,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Archives Nationales du Benin,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Archives Nationales du Cameroun,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Archives Nationales du Senegal,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Archivo General de Centro America,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Archivo General de Puerto Rico,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Archivo General de la Nacion Peru,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Archivo General de la Nacion Republica Dominicana,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Archivo General de la Nacion Uruguay,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Archivo General de la Nacion Venezuela,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Archivo Nacional de Asuncion,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Archivo Nacional de Chile,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Archivo Nacional de Costa Rica,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Archivo Nacional de Panama,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Arquivo Historico de Mocambique,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Arquivo Nacional Brasil,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
+source_name,Arquivo Nacional de Cabo Verde,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Ateneo Rizal Library Digital Archives,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Bag Factory Artists' Studios Archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Bahrain Authority for Culture and Antiquities,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,BiblioAsia,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
+source_name,Biblioteca Digital de Bogota,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Biblioteca Nacional Digital Brasil,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
+source_name,Biblioteca Nacional Jose Marti,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Biblioteca Nacional de Angola,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Biblioteca Nacional de Brasil,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Biblioteca Nacional de Colombia,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Biblioteca Nacional de Guatemala,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Biblioteca Nacional de Mocambique,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Biblioteca Nacional de Puerto Rico,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Biblioteca Nacional de Venezuela,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Biblioteca Nacional del Paraguay,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Bibliotheca Alexandrina Memory of Modern Egypt,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Bibliotheque Nationale d'Algerie,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Bibliotheque Nationale du Cameroun,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,BookSG / Print Heritage,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Bophana Audiovisual Resource Center,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,CCA Lagos Archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Casa de Rui Barbosa Acervo,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Center for Contemporary Graphic Art,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Centre de Documentation Saharienne,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Centro de la Imagen Mexico,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Citizens Archive of Pakistan,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Cook Islands Library and Museum,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Cultural Center of the Philippines,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
+source_name,Czech Design Archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,DDP Seoul,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Design Center Philippines,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Design in India / India Design Council references,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,DesignDB / KIDP,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
 source_name,DesignSingapore Council,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Digital Library Iverieli,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Digital Library of Lao Manuscripts,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Dogma Collection,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
 source_name,East Asian Graphics Archive,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
+source_name,Estonian Museum of Applied Art and Design,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Eswatini National Archives,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Fine Arts Department Thailand,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Fundacion IDA,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
+source_name,Ghana Library Authority,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Ginza Graphic Gallery,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,GoDown Arts Centre,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Grafis Nusantara,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Hong Kong Heritage Project,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Hong Kong Memory,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
 source_name,Indonesian Visual Art Archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Instituto Moreira Salles Acervos,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Iran Data Portal,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Iraq National Library and Archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,JAGDA,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
+source_name,Jakarta Arts Council Archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Jamaica Archives and Records Department,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Jordan National Library,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Kenya National Library Service,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Khastara Perpusnas Indonesia,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Korea Democracy Foundation Archives,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Korean Film Archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Kramerius Registry,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Kyoto ddd gallery,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Latvian Centre for Contemporary Art Archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Lebanese National Library,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Lesotho National Archives,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Liberation War Museum Bangladesh,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Lithuanian Design Forum,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Lithuanian Integral Museum Information System LIMIS,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,M+ Collections,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
+source_name,Macedonian Digital Library,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Madan Puraskar Pustakalaya,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Market Photo Workshop,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Mathaf Arab Museum of Modern Art,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Mediateca INAH,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Memoria Chilena,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Moldova National Library,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Mongolian National Library,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Moravian Gallery Brno Design Collection,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Museo Universitario Arte Contemporaneo MUAC,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Museo de Arte Contemporaneo de Monterrey MARCO,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Museo de Arte Moderno de Buenos Aires,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Museo de la Memoria y los Derechos Humanos,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Museu da Imagem e do Som Sao Paulo,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Museum Siam,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
+source_name,Myanmar Photo Archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,NID Archives and institutional publications,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Archives of Estonia,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Archives of India Abhilekh Patal,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Archives of Kazakhstan,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Archives of Malaysia,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Archives of Mauritius,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,National Archives of Singapore,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Archives of Tanzania,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Archives of The Gambia,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Archives of Trinidad and Tobago,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Archives of Zimbabwe,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,National Digital Library of India,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,National Gallery Singapore Collection,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
+source_name,National Library Service of Belize,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Library and Archives of Ethiopia,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,National Library and Archives of Iran,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
+source_name,National Library of Albania,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Library of Cape Verde,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,National Library of India,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Library of Jamaica,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,National Library of Korea,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
+source_name,National Library of Kosovo,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Library of Malaysia,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Library of Maldives,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Library of Montenegro,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Library of Myanmar,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Library of Nigeria,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Library of Tajikistan,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Library of The Bahamas,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Library of Trinidad and Tobago,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Library of Uzbekistan,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,National Library of Vietnam,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National Library of Vietnam Digital Library,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,National Library of the Philippines,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,National Taiwan Museum of Fine Arts,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,National and University Library Bosnia and Herzegovina,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,NewspaperSG,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Nippon Design Center,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
+source_name,Nsibidi Institute,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Nubuke Foundation,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Oman National Records and Archives Authority,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,PARADISEC,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Pakistan Chowk Community Centre,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Partition Museum Archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,People's Archive of Rural India,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Polish Digital Libraries Federation,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Printing Museum Tokyo,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
+source_name,Qatar National Library Digital Repository,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Roja Muthiah Research Library,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Romanian National Digital Library,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Roots.sg,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
+source_name,Rwanda Cultural Heritage Academy,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Sahapedia,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Samoa National Archives and Records Authority,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Sarmaya Arts Foundation,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Senal Memoria Colombia,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Seoul Design Foundation,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Shanghai Library,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Sharjah Art Foundation Archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Singapore Art Museum Archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Singapore Graphic Archives,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
+source_name,Slovak Design Museum,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,State Library Victoria Collections,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,State Library of Turkmenistan,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Sultan Qaboos University Library,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Taiwan Design Research Institute,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
 source_name,Temple University Libraries Digital Collections / CONTENTdm,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
 source_name,Thai Poster Archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Thaipography Archive,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
 source_name,Tokyo ADC,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Tokyo TDC,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
+source_name,UAE National Library and Archives,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,UP Vargas Museum Archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,UWC Robben Island Mayibuye Archives,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Ukrainian Institute of National Memory Archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Ukrainian Liberation Movement Archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Vasl Artists' Association Archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,VietGD,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
+source_name,Vietnam Fine Arts Museum,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Vietnam National Archives,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_name,Vietnam National Museum of History,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0

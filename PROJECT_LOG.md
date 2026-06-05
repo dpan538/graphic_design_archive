@@ -5332,3 +5332,177 @@ Verification:
   batch.
 - Pre-existing raw capture leftovers from other worktrees/windows remain
   unrelated and must not be staged.
+
+## 2026-06-05 — Release gate reset and non-mainstream source-profile pages
+
+Updated the release-gate definition and continued the low-coverage regional
+expansion by turning successful v3 source probes into source-profile pages. This
+round is deliberately source-visible metadata work, not image capture.
+
+Step 1 - release gate definition update:
+
+- Updated `scripts/audit_image_release_gate.py`.
+- Release gate now reports and hard-checks:
+  - object-level source-visible coverage minimum: 95%;
+  - object-level verified-open coverage minimum: 85%;
+  - object-level weighted publication-grade image coverage minimum: 95%;
+  - release source target: 2000 active sources;
+  - release source coverage minimum: 80%.
+- Weighted publication-grade image coverage is now object-level. Repeated
+  photos/views of the same object are grouped by normalized source URL when
+  possible, then by source record fallback. Each object contributes only the
+  best single image-state weight, so multi-photo modern projects cannot inflate
+  the score.
+- `IMG01` and `IMG03` remain review states only. The gate script does not
+  upgrade them from heuristics, LLM inference, terms-of-service text, platform
+  signals, protocol evidence, impact score, or source priority.
+
+Current release-gate result after the source-profile rebuild:
+
+- Public surfaces: 1565.
+- Object groups: 1553.
+- Object-level source-visible coverage: 81.20% against the 95% gate.
+- Object-level verified-open coverage: 30.97% against the 85% gate.
+- Object-level weighted publication-grade image coverage: 54.90% against the
+  95% gate.
+- Release active source count: 236 against the 2000 source target.
+- Simple release source coverage: 11.80%.
+- Sources still needed for the 80% minimum release source gate: 1364.
+- Sources still needed for the full 2000-source target: 1764.
+- All four release gates currently fail, as expected for the prototype.
+
+Step 2 - source coverage target reset:
+
+- Updated `scripts/audit_source_coverage_rate_v1.py` from the early 200-source
+  weighted target to the final 2000-source weighted target.
+- Active source count after this round: 236.
+- Weighted active source points: 130.25.
+- Weighted source pool rate: 6.51%.
+- Region weighted balance rate: 4.96%.
+- Time weighted balance rate: 10.95%.
+- Source coverage rate v1: 0.71%.
+- Strict distribution-adjusted source coverage rate: 0.04%.
+- Release source coverage gate passed: false.
+
+Step 3 - source-profile capture:
+
+- Added `scripts/run_nonmainstream_source_profile_capture_1990_2026_v1.py`.
+- Generated `data/capture_batch_nonmainstream_source_profiles_1990_2026_records.csv`.
+- Generated
+  `data/capture_batch_nonmainstream_source_profiles_1990_2026_source_summary.csv`.
+- Generated `data/nonmainstream_source_profile_impact_ratings_1990_2026_v1.csv`.
+- Generated `docs/capture/NONMAINSTREAM_SOURCE_PROFILE_CAPTURE_1990_2026_v1.md`.
+- Converted 127 successful v3 probe rows into 127 source-profile records.
+- Record health for this batch: 127/127 = 100.00%.
+- IMG/open or source-visible item image rate for this batch: 0/127 = 0.00%.
+- IMG04 source-profile text pages: 127.
+
+Macro-region distribution for the new source-profile pages:
+
+- Latin America / Caribbean: 34.
+- Africa: 29.
+- Eastern Europe / Caucasus: 18.
+- MENA: 14.
+- South Asia: 12.
+- Southeast Asia: 9.
+- Central Asia: 5.
+- Oceania / Indigenous: 5.
+- East Asia: 1.
+
+Protocol family distribution for the new source-profile pages:
+
+- HTML: 82.
+- HTML/catalog: 27.
+- catalog/HTML: 14.
+- HTML/database: 2.
+- HTML/data: 1.
+- OAI/HTML: 1.
+
+Internal impact-rating distribution for the new source-profile pages:
+
+- B: 73.
+- A: 51.
+- C: 3.
+
+Next capture priority distribution from the v3 probe rows used here:
+
+- P1 adapter build: 68.
+- P1 text/source enrichment: 51.
+- P2 manual source review: 8.
+
+Step 4 - public surface rebuild and sheet statistics:
+
+- Updated `scripts/rebuild_public_surfaces_from_records.py` so the new
+  source-profile record CSV feeds public-surface generation.
+- Rebuilt public payloads after source-profile capture.
+- Rebuild output: 1685 source rows, 1565 public surfaces, 49 folders.
+- Rebuilt public-surface image states: `IMG00` 41, `IMG01` 37, `IMG02` 748,
+  `IMG03` 481, and `IMG04` 258.
+- Added `scripts/audit_public_surface_sheet_counts_v1.py`.
+- Generated `data/public_surface_sheet_counts_v1.csv`.
+- Generated `data/public_surface_sheet_parent_breakdown_v1.csv`.
+- Generated `docs/capture/PUBLIC_SURFACE_SHEET_COUNTS_v1.md`.
+- Current main sheets: 1325.
+- Current sub sheets: 226.
+- Current text sheets: 242.
+- Inferred parent main sheets: 185.
+- Main sheets with more than 2 sub sheets: 121.
+- Main sheets with more than 5 text sheets: 1.
+
+Step 5 - README/license clarification:
+
+- Updated `README.md` to clarify that GitHub may display MIT because the
+  software code layer is MIT-licensed, but the frontend visual design remains
+  governed by `FRONTEND_DESIGN_LICENSE.md`.
+- `LICENSE` and `FRONTEND_DESIGN_LICENSE.md` remain the two explicit license
+  files for the code layer and personal frontend design layer.
+
+Boundary:
+
+- This round did not download image binaries.
+- This round did not capture screenshots, thumbnails, or source raw payloads.
+- All newly generated source-profile records are `IMG04` because they are real
+  source-level text/profile pages, not parser failures.
+- No source priority, impact score, protocol signal, platform signal, TOS text,
+  heuristic, or LLM output upgraded `IMG01` or `IMG03`.
+- Impact/source priority remains internal triage only.
+- The new pages help non-mainstream regions form a visible source system, but
+  they do not yet provide publication-grade images or item-level rights review.
+
+Best next capture directions:
+
+- First: use the 68 P1 adapter-build rows to create real item/source adapters
+  for WordPress REST, RSS/Atom, JSON-LD, PDF text/link, DSpace, CONTENTdm, IIIF,
+  and Kramerius-like endpoints where stable source metadata is available.
+- Second: use the 51 P1 text/source enrichment rows to add richer source
+  descriptions, collection scope, and source-link pages without changing image
+  states.
+- Third: prioritize Latin America / Caribbean, Africa, Eastern Europe /
+  Caucasus, MENA, and South Asia because this batch now has enough successful
+  source-profile pages to form visible regional clusters.
+- Fourth: repair Africa and Oceania / Indigenous failures from the v3 probe
+  with manual canonical-domain checks and browser confirmation before another
+  automated retry pass.
+- Fifth: work the image gate separately by reviewing existing high-volume
+  `IMG02` sources for authoritative item-level rights evidence, especially
+  Cooper Hewitt, GSU CONTENTdm, Wellcome, Internet Archive, Te Papa, DigitalNZ,
+  NAIDOC, Princeton Figgy, and V&A.
+
+Verification:
+
+- `python3 -m py_compile` passed for the updated/new release, source coverage,
+  sheet-count, source-profile capture, rebuild, and probe scripts.
+- `python3 scripts/audit_img_state_contract.py` passed.
+- `python3 scripts/audit_public_surface_integrity.py` still reports the known
+  warning that 12 surfaces share 6 exact image URLs. This is duplicate
+  source-hosted URL review work, not evidence of local image copying.
+- `python3 scripts/audit_image_release_gate.py` now fails by design because the
+  final release gates are stricter than the current prototype state.
+- `git diff --check` passed.
+- Broad safety scan found expected policy words and false positives in public
+  source text or URL slugs. A stricter credential-shape scan found no real
+  credential assignment, bearer/cookie/session payload, API key assignment,
+  local `/Users/` path, private key block, OpenAI-style key, AWS-style key, or
+  `.env` reference in the intended commit-bound files.
+- Pre-existing raw capture leftovers from other worktrees/windows remain
+  unrelated and must not be staged.
