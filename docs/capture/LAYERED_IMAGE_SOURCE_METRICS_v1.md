@@ -1,6 +1,6 @@
 # Layered Image and Source Metrics v1
 
-Date: 2026-06-02
+Date: 2026-06-05
 
 Scope: capture records, not final public surfaces. These metrics measure the raw/candidate corpus before grouping and surface assignment.
 

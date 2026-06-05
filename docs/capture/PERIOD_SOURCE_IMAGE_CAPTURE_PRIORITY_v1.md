@@ -1,6 +1,6 @@
 # Period Source + Image Capture Priority v1
 
-Date: 2026-06-02
+Date: 2026-06-05
 
 Scope: active capture records grouped by project period bands. This report combines period-level source breadth and visual evidence health for next-capture planning.
 
