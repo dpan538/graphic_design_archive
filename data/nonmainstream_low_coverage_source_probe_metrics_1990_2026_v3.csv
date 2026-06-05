@@ -1,0 +1,99 @@
+metric,value,count
+total,rows,228
+probe_status,ok,127
+probe_status,failed,90
+probe_status,http_error,11
+macro_region,Africa,65
+macro_region,Latin America / Caribbean,58
+macro_region,MENA,22
+macro_region,South Asia,22
+macro_region,Eastern Europe / Caucasus,21
+macro_region,Southeast Asia,17
+macro_region,Oceania / Indigenous,13
+macro_region,Central Asia,8
+macro_region,East Asia,2
+subregion,West Africa,26
+subregion,Caribbean,16
+subregion,Southern Africa,13
+subregion,Pacific,11
+subregion,Central America,10
+subregion,Gulf,10
+subregion,Andean,9
+subregion,East Africa,7
+subregion,Southern Cone,7
+subregion,India,7
+subregion,North Africa,6
+subregion,Brazil,6
+subregion,Mexico,6
+subregion,Central Africa,6
+subregion,Indian Ocean,6
+subregion,Pakistan,5
+subregion,Balkans,5
+subregion,Baltics,5
+subregion,Central Europe,5
+subregion,Levant,4
+subregion,Bangladesh,3
+subregion,Myanmar,3
+subregion,Caucasus,3
+subregion,Eastern Europe,3
+subregion,Caribbean / North South America,2
+subregion,Anatolia,2
+subregion,Nepal,2
+subregion,Vietnam,2
+subregion,Philippines,2
+subregion,Malaysia,2
+subregion,Singapore,2
+subregion,Uzbekistan,2
+subregion,Atlantic Africa,2
+subregion,Central America / Caribbean,2
+subregion,Afghanistan,2
+subregion,Mongolia,2
+subregion,Iran,1
+subregion,Levant diaspora,1
+subregion,Iraq,1
+subregion,Arabian Peninsula,1
+subregion,Bhutan,1
+subregion,Maldives,1
+subregion,Thailand,1
+subregion,Laos,1
+subregion,Cambodia,1
+subregion,Brunei,1
+subregion,Timor-Leste,1
+subregion,Kazakhstan,1
+subregion,Kyrgyzstan,1
+subregion,Tajikistan,1
+subregion,Turkmenistan,1
+subregion,Aotearoa/New Zealand,1
+subregion,Australia,1
+subregion,Korea,1
+subregion,Taiwan,1
+subregion,Islamic world,1
+subregion,India/Pakistan,1
+subregion,Indonesia,1
+adapter_hint,manual_review_or_alternate_endpoint,101
+adapter_hint,wordpress_rest_or_html_adapter,50
+adapter_hint,html_metadata_adapter,19
+adapter_hint,html_jsonld_adapter,13
+adapter_hint,headless_metadata_probe_only,11
+adapter_hint,bibliographic_adapter,10
+adapter_hint,iiif_manifest_adapter,9
+adapter_hint,rss_atom_source_adapter,5
+adapter_hint,pdf_text_or_link_adapter,4
+adapter_hint,dspace_oai_or_rest_adapter,3
+adapter_hint,manual_source_adapter,1
+adapter_hint,contentdm_source_adapter,1
+adapter_hint,aggregator_metadata_adapter,1
+capture_priority_next,P2 retry/manual verification,101
+capture_priority_next,P1 adapter build,68
+capture_priority_next,P1 text/source enrichment,51
+capture_priority_next,P2 manual source review,8
+recommended_image_policy_next,IMG03 only if authoritative item license confirms; otherwise IMG02/IMG00,127
+recommended_image_policy_next,IMG00 until source endpoint and item rights are verified,101
+detected_protocol,RSS/Atom,59
+detected_protocol,WordPress REST,55
+detected_protocol,JSON-LD,43
+detected_protocol,PDF,33
+detected_protocol,Static JS App,30
+detected_protocol,IIIF,10
+detected_protocol,DSpace,3
+detected_protocol,CONTENTdm,1

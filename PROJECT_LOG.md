@@ -5174,3 +5174,161 @@ Verification:
   references in the intended commit-bound files.
 - Pre-existing raw capture leftovers from other worktrees/windows remain
   uncommitted and are not part of this batch.
+
+## 2026-06-05 — Non-mainstream low-coverage source expansion v3
+
+Completed a long source-discovery/probe pass to expand underrepresented and
+non-mainstream regional source coverage. This round follows the corrected goal:
+add 200+ new sources on top of the existing 81-source global edge baseline, so
+the combined candidate pool reaches roughly 281-300+ sources.
+
+Step 1 - new source target generation:
+
+- Added `scripts/generate_nonmainstream_low_coverage_source_targets_1990_2026_v3.py`.
+- Generated `data/nonmainstream_low_coverage_source_candidates_1990_2026_v3.csv`.
+- Generated `data/nonmainstream_low_coverage_source_candidate_metrics_1990_2026_v3.csv`.
+- Generated `docs/capture/NONMAINSTREAM_LOW_COVERAGE_SOURCE_TARGETS_1990_2026_v3.md`.
+- The generator deduplicates candidate URL/name keys against the existing source
+  registry, global edge candidates, contemporary v1/v2 scan candidates,
+  non-mainstream v1 capture targets, source candidate registry, and source
+  prospect registry.
+- 69 existing source keys and 1 duplicate seed key were skipped.
+
+Candidate metrics:
+
+- New candidate sources: 228.
+- Existing global edge baseline: 81.
+- Baseline + new source-discovery pool: 309.
+- Macro-region distribution: Africa 65, Latin America / Caribbean 58, MENA 22,
+  South Asia 22, Eastern Europe / Caucasus 21, Southeast Asia 17, Oceania /
+  Indigenous 13, Central Asia 8, and East Asia 2.
+- Candidate source priority distribution: P1 135, P2 77, P0 16.
+- Internal impact-rating distribution: B 138, A 81, C 9.
+
+Boundary:
+
+- This generator is source discovery only.
+- It does not crawl sources, download images, write raw payloads, infer rights,
+  or promote image states.
+- Impact/source priority is internal triage only.
+
+Step 2 - source-only probe:
+
+- Ran `scripts/probe_global_edge_discovery_candidates_v1.py` against the 228
+  v3 candidates.
+- Generated `data/nonmainstream_low_coverage_source_probe_1990_2026_v3.csv`.
+- Generated `data/nonmainstream_low_coverage_source_probe_metrics_1990_2026_v3.csv`.
+- Generated `docs/capture/NONMAINSTREAM_LOW_COVERAGE_SOURCE_PROBE_1990_2026_v3.md`.
+- Raw probe text was written only as temporary runtime evidence and then deleted
+  because it is third-party page text with copyright, privacy, token-like
+  string, and repository-size risk. It is not committed.
+
+Probe metrics:
+
+- Probe rows: 228.
+- ok: 127.
+- failed: 90.
+- http_error: 11.
+- Success target: 127 of required 120, met.
+- Probe health / ok rate: 55.70%.
+- P1 actionable rows: 119.
+- Next capture priority distribution: P2 retry/manual verification 101, P1
+  adapter build 68, P1 text/source enrichment 51, and P2 manual source review 8.
+- Detected protocols: RSS/Atom 59, WordPress REST 55, JSON-LD 43, PDF 33,
+  Static JS App 30, IIIF 10, DSpace 3, and CONTENTdm 1.
+- Adapter hints: manual review or alternate endpoint 101, WordPress REST/HTML
+  50, HTML metadata 19, JSON-LD 13, headless metadata 11, bibliographic 10,
+  IIIF 9, RSS/Atom 5, PDF text/link 4, DSpace 3, and one each for manual source,
+  CONTENTdm, and aggregator metadata.
+
+Step 3 - health audit:
+
+- Added `scripts/audit_nonmainstream_low_coverage_source_probe_v3.py`.
+- Generated `data/nonmainstream_low_coverage_source_probe_health_1990_2026_v3.csv`.
+- Generated `data/nonmainstream_low_coverage_source_probe_region_breakdown_1990_2026_v3.csv`.
+- Generated `docs/capture/NONMAINSTREAM_LOW_COVERAGE_SOURCE_PROBE_HEALTH_1990_2026_v3.md`.
+
+Health audit metrics:
+
+- New-source target met: 228 / 220 = 103.64%.
+- Success target met: 127 / 120 = 105.83%.
+- P1 actionable rate: 119 / 228 = 52.19%.
+- Source-visible protocol candidates: 13 / 228 = 5.70%. This counts protocol
+  evidence such as IIIF, CONTENTdm, DSpace, or Kramerius only. It is not an image
+  permission claim.
+- IMG01/IMG03 automatic upgrades: 0.
+- Candidate priority among ok rows: P1 79, P2 37, P0 11.
+- Impact ratings among ok rows: B 73, A 51, C 3.
+
+Macro-region success:
+
+- Eastern Europe / Caucasus: 18 ok of 21, 85.71%.
+- MENA: 14 ok of 22, 63.64%.
+- Central Asia: 5 ok of 8, 62.50%.
+- Latin America / Caribbean: 34 ok of 58, 58.62%.
+- South Asia: 12 ok of 22, 54.55%.
+- Southeast Asia: 9 ok of 17, 52.94%.
+- East Asia: 1 ok of 2, 50.00%.
+- Africa: 29 ok of 65, 44.62%.
+- Oceania / Indigenous: 5 ok of 13, 38.46%.
+
+Failure families:
+
+- DNS/domain: 56.
+- SSL/certificate: 18.
+- Timeout: 13.
+- HTTP 403: 8.
+- HTTP 404: 2.
+- Other failure: 2.
+- HTTP 500: 1.
+- Network unreachable: 1.
+
+Best next capture directions:
+
+- First adapter pass: the 119 P1 actionable ok rows, especially WordPress
+  REST/RSS/JSON-LD/PDF rows with source text and stable institutional pages.
+- Highest-yield macro-region pass: Eastern Europe / Caucasus, MENA, Central
+  Asia, and Latin America / Caribbean because their ok rates were above 58%.
+- Highest-coverage repair pass: Africa and Oceania / Indigenous need manual
+  endpoint repair, canonical-domain checks, and SSL/browser confirmation before
+  another automated pass.
+- Highest source-visible protocol pass: IIIF/CONTENTdm/DSpace rows from
+  Biblioteca Digital de Bogota, Biblioteca Nacional Jose Marti, Digital Library
+  Iverieli, Polish Digital Libraries Federation, Moravian Gallery Brno, Estonian
+  Museum of Applied Art and Design, and related Eastern Europe/Latin America
+  rows.
+
+Step 4 - project-level checks:
+
+- Ran `scripts/audit_source_coverage_rate_v1.py`: source coverage rate v1 remains
+  24.12%, strict distribution-adjusted source coverage rate remains 8.64%.
+  This is expected because v3 expands the source candidate/probe pool, not the
+  ingested item-record database.
+- Ran `scripts/audit_layered_image_source_metrics_v1.py`: source-visible rate
+  remains 89.64%, weighted publication rate 58.77%, open image rate 9.99%, and
+  rights-labeled rate 100.00%.
+- Ran `scripts/audit_period_source_image_priority_v1.py`: highest priority
+  periods remain 1930-1970, 2000-2026, 1970-2000, and pre-1930.
+- Ran `scripts/audit_img_state_contract.py`: passed.
+- Ran `scripts/audit_image_release_gate.py`: executed and still fails the launch
+  gate as expected. Public-surface source-visible coverage remains 88.04% and
+  weighted publication coverage remains 59.49% against the 95% minimum launch
+  gate.
+- Ran `scripts/audit_public_surface_integrity.py`: executed and still warns that
+  12 surfaces share 6 exact image URLs.
+
+Verification:
+
+- `python3 -m py_compile` passed for the new v3 generator/audit scripts plus
+  the reused probe and project-level audit scripts.
+- `git diff --check` passed.
+- Safety scan covered the intended commit-bound files for credential and
+  local-path patterns. The only hits were older project-log policy lines that
+  spell out the scan terms (`API_KEY`, token, password, secret, cookie, session,
+  bearer, `/Users/`, and `.env`). No real credential, bearer value,
+  cookie/session assignment, API key assignment, local user path, or env-file
+  reference was found in the v3 commit-bound files.
+- The v3 raw probe directory was deleted before staging and is not part of this
+  batch.
+- Pre-existing raw capture leftovers from other worktrees/windows remain
+  unrelated and must not be staged.

@@ -63,6 +63,12 @@ Files:
 - `capture_batch_nonmainstream_region_1990_2026_source_summary.csv`: per-source result summary for the non-mainstream regional capture pass.
 - `nonmainstream_region_impact_ratings_1990_2026_v1.csv`: internal impact-factor triage for those 21 records.
 - `nonmainstream_region_capture_health_v1.csv`: coverage, health, IMG/source-visible, and impact-rating audit metrics for the non-mainstream regional capture pass.
+- `nonmainstream_low_coverage_source_candidates_1990_2026_v3.csv`: 228 new source-discovery targets for underrepresented/non-mainstream regions, deduplicated against existing source registries and scan candidates.
+- `nonmainstream_low_coverage_source_candidate_metrics_1990_2026_v3.csv`: candidate-source distribution metrics for the v3 low-coverage source-discovery pass.
+- `nonmainstream_low_coverage_source_probe_1990_2026_v3.csv`: source-only probe results for the 228 v3 low-coverage source candidates.
+- `nonmainstream_low_coverage_source_probe_metrics_1990_2026_v3.csv`: probe status, protocol, adapter, and next-priority metrics for the v3 low-coverage source probe.
+- `nonmainstream_low_coverage_source_probe_health_1990_2026_v3.csv`: goal, health, source-visible protocol, impact, and priority audit metrics for the v3 source probe.
+- `nonmainstream_low_coverage_source_probe_region_breakdown_1990_2026_v3.csv`: macro-region success/failure and impact/priority breakdown for the v3 source probe.
 
 Status:
 
@@ -89,3 +95,9 @@ The non-mainstream regional capture rows are source-only records. They do not
 store downloaded image binaries or raw third-party payloads. `IMG02` indicates a
 source-hosted visual route; `IMG04` indicates a real no-image/text page. Impact
 ratings are internal triage and do not grant authority, inclusion, or rights.
+
+The v3 low-coverage source probe expands the source candidate pool rather than
+the public item-record database. Its raw probe text is intentionally omitted from
+commit because raw third-party page text can carry copyright, privacy, token-like
+string, and repository-size risks. Probe success means a source URL was reachable
+for source-level metadata review, not that images or item rights are cleared.
