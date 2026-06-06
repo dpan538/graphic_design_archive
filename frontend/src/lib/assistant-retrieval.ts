@@ -17,7 +17,23 @@ export interface AssistantEvidence {
   hasEvidence: boolean;
   candidateCount: number;
   contextText: string;
+  candidates: AssistantCandidateEvidence[];
   fallbackAnswer?: string;
+}
+
+export interface AssistantCandidateEvidence {
+  surfaceId: string;
+  title: string;
+  dateText: string;
+  creator: string;
+  placeText: string;
+  objectType: string;
+  imageState: string;
+  sourceName: string;
+  sourceUrl: string;
+  score: number;
+  reasons: string[];
+  note: string;
 }
 
 interface DateWindow {
@@ -214,6 +230,27 @@ function superlativeQuestion(question: string) {
   return /\b(best|most|strongest|impressive|important|recommend|check)\b/i.test(question);
 }
 
+function toCandidateEvidence(
+  candidate: Candidate,
+  snippetLength: number,
+): AssistantCandidateEvidence {
+  const { surface, score, reasons } = candidate;
+  return {
+    surfaceId: surface.surfaceId,
+    title: surface.title,
+    dateText: surface.dateText || String(surface.dateStart || "unknown"),
+    creator: surface.creator || "unknown",
+    placeText: surface.placeText || "unknown",
+    objectType: surface.objectType || surface.medium || "unknown",
+    imageState: surface.image.state,
+    sourceName: surface.sourceName || "unknown",
+    sourceUrl: surface.sourceUrl || "",
+    score,
+    reasons,
+    note: snippet(surface, snippetLength),
+  };
+}
+
 export function buildAssistantEvidence(
   question: string,
   context?: AssistantRetrievalContext | null,
@@ -257,6 +294,7 @@ export function buildAssistantEvidence(
       hasEvidence: false,
       candidateCount: 0,
       contextText: "",
+      candidates: [],
       fallbackAnswer:
         "I do not have enough matching archive evidence in the current payload to answer that without inventing. Try a region, decade, title, creator, source, or medium from the archive index.",
     };
@@ -277,6 +315,9 @@ export function buildAssistantEvidence(
   return {
     hasEvidence: true,
     candidateCount: candidates.length,
+    candidates: selected.map((candidate) =>
+      toCandidateEvidence(candidate, snippetLength),
+    ),
     contextText: [
       "ARCHIVE_RETRIEVAL_CONTEXT",
       parseLine,

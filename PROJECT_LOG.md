@@ -6481,6 +6481,86 @@ Verification:
 - `npm run build` passed in `frontend/`; Next generated 7914/7914 static pages.
   The familiar slow static-page retry warnings appeared, but the build exited
   successfully.
+
+## 2026-06-06 - Assistant Instant Layer And Qwen Fast-Refine Correction
+
+Scope:
+
+- Corrected ordinary Assistant latency after product review. This was a
+  frontend assistant/runtime and documentation pass only: no source capture,
+  image download, rights upgrade, surface rebuild, or archive classification
+  change was performed.
+
+Diagnosis:
+
+- A normal Assistant question must not wait for model load or generation.
+  Calling Qwen should not mean blocking the user interface.
+- The prior correction reduced Qwen output length and forced WebGPU, but normal
+  Assistant still had a model-first path. That could keep answers above the
+  desired sub-5-second interaction target whenever the Qwen session was cold or
+  slow.
+- Project rule remains unchanged: `Qwen/Qwen3.5-0.8B` is the only model
+  identity and `onnx-community/Qwen3.5-0.8B-ONNX` is the only browser runtime
+  artifact. No Llama, hosted API, WebLLM catalog fallback, or alternate local
+  generation model is allowed.
+
+Correction:
+
+- Added `frontend/src/lib/assistant-instant.ts` as the ordinary Assistant
+  deterministic answer layer. It uses active page context, archive retrieval
+  candidates, image-state policy, source/rights metadata, and short scripted
+  response patterns.
+- Extended `frontend/src/lib/assistant-retrieval.ts` to return structured
+  candidate evidence so ordinary answers can cite real archive candidates
+  without asking the model to invent rows.
+- Changed `frontend/src/components/archive/shell/search.tsx` so normal
+  Assistant immediately renders the scripted answer, then starts/reuses Qwen in
+  the background for a bounded fast-refine pass. If Qwen returns quickly, it
+  replaces the same answer with a lightly polished version; if it misses the
+  budget, the scripted answer remains visible.
+- Kept Research as the explicit waiting path. Research still uses the same
+  Qwen3.5-0.8B session with broader retrieval and longer answer budget.
+- Added fast-refine controls to `frontend/src/lib/qwen35-adapter.ts`:
+  `fast`, `draft`, and a 36-token generation cap. Fast-refine is instructed to
+  improve phrasing only, use supplied archive context, and add no new facts.
+- Added `docs/system/ASSISTANT_RESPONSE_STRATEGY_v0.md` to document the product
+  rule: ordinary Assistant is script-first plus non-blocking Qwen fast-refine;
+  Research is the only path that waits for Qwen.
+
+Build reliability note:
+
+- The first production build after this change compiled and type-checked, but
+  failed during static export with `ENOSPC` at
+  `/folders/region/unresolved-region`. The cause was local disk exhaustion,
+  amplified by Next production webpack cache growth, not a TypeScript or
+  application error.
+- Updated `frontend/next.config.ts` to disable production webpack disk cache.
+  This reduced the completed `.next` directory to about 714 MB and allowed the
+  full static build to finish on the current machine.
+
+Verification:
+
+- `npm run build` passed in `frontend/`; Next generated 7914/7914 static pages.
+  The known slow static-page retry warnings appeared, but the build exited
+  successfully.
+- `git diff --check` passed.
+- Runtime scan over `frontend/src/lib`, `frontend/src/components`, and
+  `frontend/scripts` found no `Llama`, `WEBLLM`, `WebLLM`, or `Load WebLLM`
+  references.
+- Local dev smoke test used `http://127.0.0.1:3040/surfaces/SURF-GAX1970R001`.
+  A normal Assistant question rendered the scripted archive answer in 555 ms,
+  before any blocking model path, and the page text contained no Llama/WebLLM
+  labels.
+- A recommendation prompt on
+  `http://127.0.0.1:3040/folders/region/france` returned in 33 ms with
+  archive candidates and surface IDs, framed as current-archive navigation
+  rather than an invented external canon claim.
+- Commit-bound credential scan for `api_key`, `password`, `secret`, `cookie`,
+  `bearer`, `.env`, `/Users/`, and `token` found no real credentials. Hits were
+  false positives in `transformers.env`, tokenizer/max-token identifiers, and
+  historical PROJECT_LOG scan descriptions.
+- Existing raw capture modifications and untracked raw probe directories remain
+  unstaged and were not part of this frontend assistant pass.
 - Local verification used `http://127.0.0.1:3040/folders/region/france`.
 - Browser check confirmed Assistant renders `close ×`, `Send`, and `Research`
   controls; it no longer renders `Load WebLLM`, a reference lookup, or an

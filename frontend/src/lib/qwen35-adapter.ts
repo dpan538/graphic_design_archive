@@ -25,6 +25,8 @@ export interface QwenChatMessage {
 export interface QwenAskOptions {
   history?: QwenChatMessage[];
   research?: boolean;
+  fast?: boolean;
+  draft?: string;
   evidence?: string;
 }
 
@@ -100,6 +102,7 @@ const QWEN35_EXTERNAL_DATA = [
     data: "onnx/decoder_model_merged_q4.onnx_data",
   },
 ];
+const FAST_REFINE_MAX_NEW_TOKENS = 36;
 const ASSISTANT_MAX_NEW_TOKENS = 48;
 const RESEARCH_MAX_NEW_TOKENS = 180;
 
@@ -142,7 +145,9 @@ function sanitizeAnswer(answer: string) {
 }
 
 function systemMessage(options?: QwenAskOptions) {
-  const researchInstruction = options?.research
+  const researchInstruction = options?.fast
+    ? "Fast refine mode: lightly improve the supplied draft using only the provided archive context. Return the final answer only, one compact paragraph, no new facts."
+    : options?.research
     ? "Research mode: use a more developed structure with Evidence, Reading, and Next checks. Do not expose hidden reasoning."
     : "Assistant mode: answer in at most two compact sentences and no more than 45 words.";
   return {
@@ -172,8 +177,11 @@ function evidenceMessage(
     content: [
       `ACTIVE_CONTEXT\n${contextBlock(context)}`,
       `ARCHIVE_EVIDENCE\n${options?.evidence || "No retrieved archive evidence."}`,
+      options?.draft ? `DRAFT_ANSWER\n${options.draft}` : "",
       `QUESTION\n${prompt}`,
-    ].join("\n\n"),
+    ]
+      .filter(Boolean)
+      .join("\n\n"),
   };
 }
 
@@ -265,7 +273,9 @@ export async function createQwenAssistantSession(
           tokenizer,
           model,
           messages,
-          maxNewTokens: options?.research
+          maxNewTokens: options?.fast
+            ? FAST_REFINE_MAX_NEW_TOKENS
+            : options?.research
             ? RESEARCH_MAX_NEW_TOKENS
             : ASSISTANT_MAX_NEW_TOKENS,
         });

@@ -16,6 +16,7 @@ import {
   saveAssistantMessages,
   type StoredAssistantMessage,
 } from "@/lib/assistant-memory";
+import { buildInstantAssistantAnswer } from "@/lib/assistant-instant";
 import { buildAssistantEvidence } from "@/lib/assistant-retrieval";
 import {
   createQwenAssistantSession,
@@ -39,6 +40,14 @@ export interface AssistantContext {
 }
 
 type AssistantMessage = StoredAssistantMessage;
+const FAST_MODEL_PREPARE_BUDGET_MS = 3500;
+const FAST_MODEL_REFINE_BUDGET_MS = 4500;
+
+function timeout<T>(ms: number, value: T) {
+  return new Promise<T>((resolve) => {
+    window.setTimeout(() => resolve(value), ms);
+  });
+}
 
 /**
  * In-shell fuzzy search. Lives on the right (same width as the counts card),
@@ -100,6 +109,14 @@ export default function SearchBox({
   }, [isAssistant]);
 
   useEffect(() => {
+    if (!isAssistant || sessionRef.current || loadingRef.current) return;
+    const handle = window.setTimeout(() => {
+      void prepareQwen();
+    }, 250);
+    return () => window.clearTimeout(handle);
+  }, [isAssistant, prepareQwen]);
+
+  useEffect(() => {
     if (!isAssistant) return;
     setMessages(loadAssistantMessages(pageKey));
     setLoadedMemoryKey(pageKey);
@@ -110,15 +127,60 @@ export default function SearchBox({
     saveAssistantMessages(pageKey, messages);
   }, [isAssistant, loadedMemoryKey, messages, pageKey]);
 
+  const refineInstantAnswer = useCallback(
+    async ({
+      question,
+      draftAnswer,
+      messageId,
+      evidence,
+    }: {
+      question: string;
+      draftAnswer: string;
+      messageId: string;
+      evidence: ReturnType<typeof buildAssistantEvidence>;
+    }) => {
+      if (!isAssistant) return;
+
+      if (!sessionRef.current) {
+        await Promise.race([
+          prepareQwen().then(() => true),
+          timeout(FAST_MODEL_PREPARE_BUDGET_MS, false),
+        ]);
+      }
+
+      const session = sessionRef.current;
+      if (!session) return;
+
+      const refined = await Promise.race([
+        session.ask(question, assistantContext ?? undefined, {
+          fast: true,
+          evidence: evidence.contextText,
+          draft: draftAnswer,
+        }),
+        timeout(FAST_MODEL_REFINE_BUDGET_MS, ""),
+      ]);
+      const next = refined.trim();
+      if (!next || next === draftAnswer.trim()) return;
+
+      setMessages((current) =>
+        current.map((message) =>
+          message.id === messageId
+            ? {
+                ...message,
+                content: next,
+              }
+            : message,
+        ),
+      );
+    },
+    [assistantContext, isAssistant, prepareQwen],
+  );
+
   const askAssistant = async () => {
     const question = draft.trim();
     if (!question) return;
 
     const modeLabel = researchMode ? "research" : "send";
-    const history: QwenChatMessage[] = messages.map(({ role, content }) => ({
-      role,
-      content,
-    }));
     const evidence = buildAssistantEvidence(question, assistantContext, {
       research: researchMode,
     });
@@ -130,6 +192,32 @@ export default function SearchBox({
     };
     setMessages((current) => [...current, userMessage]);
     setDraft("");
+
+    if (!researchMode) {
+      const response = buildInstantAssistantAnswer({
+        question,
+        context: assistantContext,
+        evidence,
+      });
+      const assistantMessageId = `assistant-${Date.now()}`;
+      setMessages((current) => [
+        ...current,
+        {
+          id: assistantMessageId,
+          role: "assistant",
+          content: response,
+          mode: modeLabel,
+        },
+      ]);
+      void refineInstantAnswer({
+        question,
+        draftAnswer: response,
+        messageId: assistantMessageId,
+        evidence,
+      });
+      return;
+    }
+
     setPendingMode(modeLabel);
 
     if (!evidence.hasEvidence) {
@@ -145,6 +233,11 @@ export default function SearchBox({
       setPendingMode(null);
       return;
     }
+
+    const history: QwenChatMessage[] = messages.map(({ role, content }) => ({
+      role,
+      content,
+    }));
 
     if (!sessionRef.current) {
       await prepareQwen();
@@ -193,8 +286,8 @@ export default function SearchBox({
   };
 
   const assistantBusy = assistantModel.status === "loading";
-  const assistantReady = assistantModel.status !== "error";
-  const assistantUnavailable = assistantModel.status === "error";
+  const assistantReady = !researchMode || assistantModel.status !== "error";
+  const assistantUnavailable = researchMode && assistantModel.status === "error";
 
   if (isAssistant) {
     return (
@@ -268,9 +361,13 @@ export default function SearchBox({
             <button
               type="submit"
               className="btn-turn"
-              disabled={!assistantReady || draft.trim() === "" || assistantBusy}
+              disabled={
+                !assistantReady ||
+                draft.trim() === "" ||
+                (researchMode && assistantBusy)
+              }
             >
-              {assistantBusy && pendingMode ? "Working" : "Send"}
+              {researchMode && assistantBusy && pendingMode ? "Working" : "Send"}
             </button>
           </div>
         </form>
