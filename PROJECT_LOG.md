@@ -6024,3 +6024,192 @@ Verification:
   bearer/cookie/session payload, private key, API key, or local user path. Hits
   were false positives in public titles such as `Secreto de confesion`,
   `poster-session`, normal project boundary text, or historical log entries.
+
+## 2026-06-06 - Release-gate source expansion and sheet topology audit
+
+Goal:
+
+- Continue source expansion with at least 2000 new active sources.
+- Push source coverage above 90%.
+- Push object source-visible above 96%.
+- Keep object `IMG04` as low as possible while preserving real text/context
+  material.
+- Audit text-page and sub-sheet structure without performing a merge or
+  reclassification pass.
+- Confirm object years, rebuild public surfaces, run frontend build, and push to
+  `main` with a detailed description.
+
+Why this batch captured more than 2000 records:
+
+- Baseline object source-visible coverage was 3309/3595 (92.04%).
+- Adding exactly 2000 fully visible objects would only reach roughly 94.9%.
+- To exceed 96% without hiding or deleting existing `IMG00`/`IMG04` blockers,
+  the batch needed roughly 3555+ additional source-visible object records.
+- The release-gate capture target was therefore set to 4100 explicit-year
+  `IMG03` records to leave rebuild/dedupe margin while still satisfying the
+  user's 2000+ active-source requirement.
+
+Capture batch:
+
+- Added `scripts/run_commons_open_release_gate_expansion_2026_v1.py`.
+- Added `data/capture_batch_commons_open_release_gate_expansion_2026_records.csv`.
+- Added `data/capture_batch_commons_open_release_gate_expansion_2026_source_summary.csv`.
+- Added `docs/capture/COMMONS_OPEN_RELEASE_GATE_EXPANSION_2026_v1.md`.
+- The script uses Wikimedia Commons source pages as source-visible open records.
+  It stores source metadata, source links, rights evidence, and source-hosted
+  Commons image URLs only.
+- No image binaries, thumbnails, screenshots, raw API payloads, cookies,
+  sessions, browser state, or local image files were saved.
+- All records are `IMG03` only when Commons extmetadata exposes open-license
+  evidence. No heuristic, protocol, platform, priority, or LLM signal was used
+  for rights upgrade.
+- Records without explicit object-year evidence are excluded. Commons
+  modified/upload timestamps are not used as object dates.
+
+Release-gate expansion results:
+
+- Records captured: 4100.
+- Distinct active source labels: 4100.
+- Period distribution: 1970-2000 1862, 1930-1970 1387, pre-1930 573,
+  2000-2026 278.
+- Macro-region distribution: Global 3430, Southeast Asia 392, Middle East and
+  North Africa 85, Eastern Europe 57, Latin America 52, South Asia 38, Africa
+  33, East Asia 13.
+- Source-derived text length: minimum 108 characters, median 313 characters.
+- Top date values: 1979 (459), 1974 (288), 1971 (193), 1972 (165), 1975 (140),
+  1976 (137), 1973 (131), 1944 (109), 1970 (97), 1952 (87), 1935 (65), 1977
+  (62).
+- Explicit 2026 records in the new batch: 2. Manual spot check confirmed they
+  carry explicit 2026 object-date evidence rather than fallback/current-year
+  pollution.
+
+Surface rebuild:
+
+- Added the release-gate expansion records file to
+  `scripts/rebuild_public_surfaces_from_records.py`.
+- Rebuilt generated and frontend public-surface payloads.
+- Final rebuilt rows: 7836.
+- Public surfaces: 7716.
+- Folders: 50.
+- Surface image states: `IMG00` 43, `IMG01` 37, `IMG02` 1327, `IMG03` 6051,
+  `IMG04` 258.
+- Source-visible image-ready surfaces: 7415/7716 (96.10%).
+- Weighted publication image score: 6186.85/7716 (80.18%).
+
+Final release-gate metrics after rebuild:
+
+- Active source count: 6379.
+- New active source labels in this batch: 4100.
+- Release source target: 2000.
+- Release active-source coverage: 318.95%.
+- Source coverage rate v1: 100.00%, above the requested 90% target.
+- Source pool rate: 100.00%.
+- Time-weighted balance rate: 100.00%.
+- Region-weighted balance rate: 28.96%; still a structural diagnostic weakness
+  because the release-gate filler is mostly global Commons rather than
+  region-balanced local archive sources.
+- Object source-visible coverage: 96.28%, above the requested 96% target.
+- Object verified-open coverage: 78.64%, still below the final 85% release gate
+  but substantially higher than the previous round.
+- Object weighted publication-grade image coverage: 80.36%, still below the
+  final 95% release gate.
+- Object `IMG04` coverage: 3.16%, lower than the previous 6.76% and well under
+  the current round's pressure to keep `IMG04` low.
+
+Source-coverage period breakdown:
+
+- pre-1930: 1142 active sources, 1601 records, 100.00% balance.
+- 1930-1970: 1802 active sources, 2306 records, 100.00% balance.
+- 1970-2000: 1988 active sources, 2253 records, 100.00% balance.
+- 2000-2026: 1430 active sources, 1681 records, 100.00% balance.
+
+Sheet topology and text audit:
+
+- Added `scripts/audit_sheet_topology_text_ratio_v1.py`.
+- Added `data/sheet_topology_text_ratio_v1.csv`.
+- Added `data/sheet_topology_group_opportunities_v1.csv`.
+- Added `docs/capture/SHEET_TOPOLOGY_TEXT_RATIO_v1.md`.
+- Main sheets: 7462.
+- Sub sheets: 240.
+- Independent text-sheet surfaces: 242.
+- Independent text-sheet surface rate: 3.14%.
+- Sub/support surface rate: 3.29%.
+- Research dossiers: 7716.
+- Single-anchor dossiers: 7452.
+- Compound/group dossiers: 264.
+- Dossiers with any generated `text_page`: 7702.
+- Dossiers with two or more text pages: 0.
+- Dossiers with more than two total pages: 2008.
+- Average dossier pages: 2.28.
+- Average dossier text pages: 1.00.
+- Group candidates: 257.
+- Strong group candidates: 143 medium/high-confidence groups with at least
+  three members.
+- Interpretation: capture is now far ahead of sheet architecture. Most new
+  records become main-sheet surfaces. The export/dossier layer does add one text
+  page for nearly every dossier, but independent text sheets and multi-page
+  research packets are still scarce. The next structural task should be a
+  grouping/dossier normalization pass, not another raw capture-only pass.
+
+Additional audit notes:
+
+- `audit_layered_image_source_metrics_v1.py`: records total 7915,
+  source-visible rate 96.26%, publication-grade candidate rate 94.93%,
+  weighted publication rate 79.52%, open-image rate 72.43%, duplicate image URL
+  rate 0.90%.
+- `audit_period_source_image_priority_v1.py`: highest combined priority is now
+  `1930_1970` (0.1105), followed by `2000_2026` (0.0885), `1970_2000`
+  (0.0336), and `pre_1930` (0.0255).
+- `audit_surface_assignment_gates_v1.py` passed and wrote 7915 audit rows.
+- `audit_public_surface_integrity.py` still exits non-zero only for the existing
+  duplicate image URL warnings: 12 surfaces share 6 exact URLs from prior
+  Another Graphic / Barjeel records, not the new Commons release-gate batch.
+
+Verification:
+
+- `python3 -m py_compile` passed for the new/modified release-gate capture,
+  rebuild, source coverage, sheet-topology, and existing Commons capture
+  scripts.
+- `python3 scripts/audit_source_coverage_rate_v1.py` passed with
+  `source_coverage_rate_v1=100.00`.
+- `python3 scripts/audit_image_release_gate.py` now passes the object
+  source-visible and release-source gates, but still exits non-zero by design
+  because final verified-open and weighted-publication gates are below 85% and
+  95%.
+- `python3 scripts/audit_img_state_contract.py` passed.
+- `python3 scripts/audit_layered_image_source_metrics_v1.py` passed.
+- `python3 scripts/audit_public_surface_sheet_counts_v1.py` passed.
+- `python3 scripts/audit_period_source_image_priority_v1.py` passed.
+- `python3 scripts/audit_surface_assignment_gates_v1.py` passed.
+- `python3 scripts/audit_sheet_topology_text_ratio_v1.py` passed.
+- `python3 scripts/audit_public_surface_integrity.py` reports only the existing
+  duplicate URL warnings listed above.
+- `npm run build` passed in `frontend/`; Next generated 7794 static pages. The
+  first attempt failed with `ENOSPC` after a partial `.next` build consumed the
+  remaining disk space. The partial `frontend/.next` build output was removed,
+  freeing space, and the clean rerun completed. The successful build emitted
+  several Next static-generation retry messages for slow pages, but finished
+  successfully.
+- Final safety follow-up sanitized a Commons metadata string that contained a
+  source-side Windows user-profile file URL before it could remain in public
+  payloads. The cleanup is enforced in
+  `rebuild_public_surfaces_from_records.py` and the shared Commons capture
+  cleaning helper for future runs.
+- After the sanitization rebuild, targeted scans found no remaining Windows
+  user-profile file URL strings in the new release-gate CSV, generated payload,
+  frontend payload, or mirrored public JSON. A commit-bound strict
+  credential-shape scan reported `strict_hits 0`.
+- `python3 scripts/audit_secret_patterns.py` still exits non-zero only for
+  older uncommitted raw HTML probe files under
+  `data/contemporary_source_scan_probe_1990_2026_v1_raw/` and
+  `data/global_edge_discovery_probe_v1_raw/`; those files are outside this
+  round's staged set.
+- A final post-sanitization `npm run build` in `frontend/` passed again with
+  7794/7794 static pages generated. The same slow-page retry warnings appeared
+  during static generation, but the build exited successfully.
+- Push follow-up: GitHub rejected the first push attempt because the pretty
+  printed public-surface JSON exceeded the 100 MB per-file limit. The rebuild
+  writer now emits compact JSON with equivalent payload content, reducing each
+  mirrored public payload from about 107 MB to about 78 MB. A post-compact
+  rebuild kept the same surface and image-state metrics, and another
+  `npm run build` passed with 7794/7794 static pages generated.

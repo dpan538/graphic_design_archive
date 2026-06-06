@@ -50,6 +50,7 @@ RECORD_FILES = [
     DATA / "capture_batch_nonmainstream_item_image_2026_records.csv",
     DATA / "capture_batch_commons_open_global_south_image_2026_records.csv",
     DATA / "capture_batch_commons_open_period_balance_image_2026_records.csv",
+    DATA / "capture_batch_commons_open_release_gate_expansion_2026_records.csv",
 ]
 
 PAYLOAD_PATHS = [
@@ -135,6 +136,16 @@ def public_visible_text(value: object) -> object:
     if not isinstance(value, str):
         return value
     text = public_context_note(value)
+    text = re.sub(
+        r"file:/+(?:[A-Za-z]:)?/Users/[^\s\"'<>;,]+",
+        "[local file path removed]",
+        text,
+    )
+    text = re.sub(
+        r"(?:[A-Za-z]:)?/Users/[^\s\"'<>;,]+",
+        "[local file path removed]",
+        text,
+    )
     text = re.sub(
         r"\balready captured\b",
         "previously collected",
@@ -1225,7 +1236,7 @@ def main() -> None:
     payload = attach_structural_collections(payload)
     payload = build_research_dossiers(payload)
 
-    text = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
+    text = json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n"
     for path in PAYLOAD_PATHS:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")

@@ -6,33 +6,33 @@ Scope: capture records, not final public surfaces. These metrics measure the raw
 
 ## Overall
 
-- Capture records: 3815
-- Source-visible coverage: 92.24%
-- Publication-grade candidate coverage: 89.49%
-- Weighted publication image rate: 68.27% (2604.40 weighted points)
-- Open-image candidate coverage: 42.80%
+- Capture records: 7915
+- Source-visible coverage: 96.26%
+- Publication-grade candidate coverage: 94.93%
+- Weighted publication image rate: 79.52% (6294.40 weighted points)
+- Open-image candidate coverage: 72.43%
 - Rights-labeled coverage: 100.00%
-- Unclear image-state rate: 0.10%
-- Duplicate image URL record rate: 1.86%
+- Unclear image-state rate: 0.05%
+- Duplicate image URL record rate: 0.90%
 
 ## Period Bands
 
-- 2000_2026: records=1403, source-visible=88.17%, publication-grade=88.10%, weighted=59.45%, open=30.86%, duplicate-url=0.86%
-- pre_1930: records=1028, source-visible=96.69%, publication-grade=93.39%, weighted=82.35%, open=60.21%, duplicate-url=3.79%
-- 1930_1970: records=919, source-visible=95.43%, publication-grade=88.25%, weighted=70.04%, open=50.38%, duplicate-url=1.85%
-- 1970_2000: records=391, source-visible=97.44%, publication-grade=97.44%, weighted=67.56%, open=30.18%, duplicate-url=0.00%
+- 1930_1970: records=2306, source-visible=98.18%, publication-grade=95.32%, weighted=82.04%, open=80.23%, duplicate-url=0.74%
+- 1970_2000: records=2253, source-visible=99.56%, publication-grade=99.56%, weighted=86.11%, open=87.88%, duplicate-url=0.00%
+- 2000_2026: records=1681, source-visible=90.12%, publication-grade=90.07%, weighted=64.51%, open=42.30%, duplicate-url=0.71%
+- pre_1930: records=1601, source-visible=97.88%, publication-grade=95.75%, weighted=85.09%, open=74.45%, duplicate-url=2.44%
 - undated_or_unparsed: records=74, source-visible=40.54%, publication-grade=35.14%, weighted=21.42%, open=0.00%, duplicate-url=4.05%
 
 ## Lowest Weighted Publication Periods
 
 - undated_or_unparsed: weighted=21.42% (15.85 weighted points / 74 records)
-- 2000_2026: weighted=59.45% (834.15 weighted points / 1403 records)
-- 1970_2000: weighted=67.56% (264.15 weighted points / 391 records)
-- 1930_1970: weighted=70.04% (643.65 weighted points / 919 records)
+- 2000_2026: weighted=64.51% (1084.35 weighted points / 1681 records)
+- 1930_1970: weighted=82.04% (1891.95 weighted points / 2306 records)
+- pre_1930: weighted=85.09% (1362.30 weighted points / 1601 records)
 
 ## Source Families
 
-- unmapped_source_family: records=2816, source-visible=93.71%, publication-grade=92.05%, weighted=72.22%, open=52.20%
+- unmapped_source_family: records=6916, source-visible=97.44%, publication-grade=96.76%, weighted=82.76%, open=80.54%
 - independent_design_archive_or_publication: records=304, source-visible=76.64%, publication-grade=76.64%, weighted=60.12%, open=51.32%
 - government_or_public_cultural_database: records=207, source-visible=97.58%, publication-grade=97.58%, weighted=76.16%, open=0.00%
 - general_archive_or_collection: records=172, source-visible=95.35%, publication-grade=68.02%, weighted=45.96%, open=0.00%
