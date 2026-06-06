@@ -174,20 +174,58 @@ export function getResearchDossiers(): ResearchDossier[] {
   return mock.researchDossiers ?? [];
 }
 
+let researchDossierById: Map<string, ResearchDossier> | null = null;
+let researchDossierBySurfaceId: Map<string, ResearchDossier> | null = null;
+let researchDossiersByFolderId: Map<string, ResearchDossier[]> | null = null;
+
+function getResearchDossierMaps() {
+  if (
+    researchDossierById &&
+    researchDossierBySurfaceId &&
+    researchDossiersByFolderId
+  ) {
+    return {
+      byId: researchDossierById,
+      bySurfaceId: researchDossierBySurfaceId,
+      byFolderId: researchDossiersByFolderId,
+    };
+  }
+
+  researchDossierById = new Map();
+  researchDossierBySurfaceId = new Map();
+  researchDossiersByFolderId = new Map();
+  for (const dossier of getResearchDossiers()) {
+    researchDossierById.set(dossier.dossierId, dossier);
+    researchDossierBySurfaceId.set(dossier.anchorSurfaceId, dossier);
+    for (const page of dossier.pageSequence) {
+      if (!researchDossierBySurfaceId.has(page.surfaceId)) {
+        researchDossierBySurfaceId.set(page.surfaceId, dossier);
+      }
+    }
+    for (const folderId of dossier.folderIds) {
+      const dossiers = researchDossiersByFolderId.get(folderId) ?? [];
+      dossiers.push(dossier);
+      researchDossiersByFolderId.set(folderId, dossiers);
+    }
+  }
+
+  return {
+    byId: researchDossierById,
+    bySurfaceId: researchDossierBySurfaceId,
+    byFolderId: researchDossiersByFolderId,
+  };
+}
+
 export function getResearchDossier(id: string): ResearchDossier | undefined {
-  return getResearchDossiers().find((dossier) => dossier.dossierId === id);
+  return getResearchDossierMaps().byId.get(id);
 }
 
 export function getResearchDossierForSurface(surfaceId: string): ResearchDossier | undefined {
-  return getResearchDossiers().find(
-    (dossier) =>
-      dossier.anchorSurfaceId === surfaceId ||
-      dossier.pageSequence.some((page) => page.surfaceId === surfaceId),
-  );
+  return getResearchDossierMaps().bySurfaceId.get(surfaceId);
 }
 
 export function getResearchDossiersForFolder(folderId: string): ResearchDossier[] {
-  return getResearchDossiers().filter((dossier) => dossier.folderIds.includes(folderId));
+  return getResearchDossierMaps().byFolderId.get(folderId) ?? [];
 }
 
 export function getReadingNotes(): ReadingNoteRecord[] {

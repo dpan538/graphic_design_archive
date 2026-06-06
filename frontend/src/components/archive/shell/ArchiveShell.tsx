@@ -8,9 +8,8 @@ import SearchBox from "./search";
 /**
  * Fixed, non-scrolling viewport. No sidebar column and no top/bottom bar.
  * Navigation is a set of large floating icons (top-right): Index / Folders /
- * Search (+ Contents on the reader). Search expands in the corner-stack.
- * An optional panel (reader contents) slides in; clicking the main area or
- * pressing Backspace closes it. Left-edge swipe or Backspace goes back.
+ * Search. Search expands in the corner-stack. Reader-specific panels can sit
+ * on the left (packet structure) and right (research assistant).
  */
 export default function ArchiveShell({
   main,
@@ -18,6 +17,11 @@ export default function ArchiveShell({
   cornerCard,
   panel,
   panelLabel = "Contents",
+  leftPanel,
+  leftPanelLabel = "Content",
+  rightPanel,
+  rightPanelOpen = false,
+  onRightPanelOpenChange,
   folderInk = "#19150f",
   mainScroll = false,
   hideWordmark = false,
@@ -25,15 +29,22 @@ export default function ArchiveShell({
   main: React.ReactNode;
   activeNav?: "index" | "folders" | "search" | "about";
   cornerCard?: React.ReactNode;
+  /** Legacy right-side contextual panel. Prefer leftPanel/rightPanel. */
   panel?: React.ReactNode;
   panelLabel?: string;
+  leftPanel?: React.ReactNode;
+  leftPanelLabel?: string;
+  rightPanel?: React.ReactNode;
+  rightPanelOpen?: boolean;
+  onRightPanelOpenChange?: (open: boolean) => void;
   folderInk?: string;
   mainScroll?: boolean;
-  /** Hide the top-left wordmark (e.g. in spread mode where space is tight). */
+  /** Hide the top-left wordmark for dense reader variants. */
   hideWordmark?: boolean;
 }) {
   const router = useRouter();
   const [panelOpen, setPanelOpen] = useState(false);
+  const [leftPanelOpen, setLeftPanelOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchFrame, setSearchFrame] = useState<{
     top: number;
@@ -123,6 +134,8 @@ export default function ArchiveShell({
         className={`app__main ${mainScroll ? "app__main--scroll" : ""}`}
         onClick={() => {
           if (panelOpen) setPanelOpen(false);
+          if (leftPanelOpen) setLeftPanelOpen(false);
+          if (rightPanelOpen) onRightPanelOpenChange?.(false);
         }}
       >
         {main}
@@ -136,6 +149,19 @@ export default function ArchiveShell({
           </div>
         </Link>
       )}
+
+      {leftPanel ? (
+        <button
+          type="button"
+          className="nav-icon left-panel-trigger"
+          data-active={leftPanelOpen}
+          aria-label={leftPanelLabel}
+          onClick={() => setLeftPanelOpen((v) => !v)}
+        >
+          <IconTree />
+          <span>{leftPanelOpen ? "Close" : leftPanelLabel}</span>
+        </button>
+      ) : null}
 
       <nav className="nav-icons" aria-label="Archive navigation">
         {activeNav === "about" ? (
@@ -217,7 +243,7 @@ export default function ArchiveShell({
       {searchOpen ? (
         <div
           ref={searchPanelRef}
-          className={`search-stack ${panel ? "search-stack--reader" : ""}`}
+          className={`search-stack ${panel || leftPanel || rightPanel ? "search-stack--reader" : ""}`}
           style={
             searchFrame === null
               ? undefined
@@ -234,15 +260,27 @@ export default function ArchiveShell({
       {cornerCard ? (
         <div
           ref={countCardRef}
-          className={`corner-stack ${panel ? "corner-stack--reader" : ""}`}
+          className={`corner-stack ${panel || leftPanel || rightPanel ? "corner-stack--reader" : ""}`}
         >
           <div className="corner-card">{cornerCard}</div>
         </div>
       ) : null}
 
       {panel && panelOpen ? (
-        <aside className="panel-overlay" onClick={(e) => e.stopPropagation()}>
+        <aside className="panel-overlay panel-overlay--right" onClick={(e) => e.stopPropagation()}>
           {panel}
+        </aside>
+      ) : null}
+
+      {leftPanel && leftPanelOpen ? (
+        <aside className="panel-overlay panel-overlay--left" onClick={(e) => e.stopPropagation()}>
+          {leftPanel}
+        </aside>
+      ) : null}
+
+      {rightPanel && rightPanelOpen ? (
+        <aside className="panel-overlay panel-overlay--right" onClick={(e) => e.stopPropagation()}>
+          {rightPanel}
         </aside>
       ) : null}
     </div>
@@ -295,6 +333,18 @@ function IconContents() {
       <line x1="4" y1="6" x2="20" y2="6" />
       <line x1="4" y1="12" x2="20" y2="12" />
       <line x1="4" y1="18" x2="20" y2="18" />
+    </svg>
+  );
+}
+
+function IconTree() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+      <circle cx="6" cy="5" r="2" />
+      <circle cx="17" cy="12" r="2" />
+      <circle cx="17" cy="19" r="2" />
+      <path d="M8 5h3v14h4" />
+      <path d="M11 12h4" />
     </svg>
   );
 }

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import type { FolderTypeKey } from "@/types/archive";
+import type { FolderTypeKey, ResearchDossier } from "@/types/archive";
 import {
   surfaceLeafIndex,
   type JumpTarget,
@@ -19,6 +19,7 @@ interface ReaderProps {
   activeFolderId?: string;
   folderInk: string;
   folderType?: FolderTypeKey;
+  researchDossiers?: ResearchDossier[];
   contextTitle: string;
   contextSubtitle: string;
   backHref?: string;
@@ -31,6 +32,7 @@ export default function Reader({
   initialIndex = 0,
   activeFolderId,
   folderInk,
+  researchDossiers = [],
   contextTitle,
   contextSubtitle,
   backHref,
@@ -39,33 +41,18 @@ export default function Reader({
   const [index, setIndex] = useState(
     Math.min(Math.max(initialIndex, 0), leaves.length - 1),
   );
-  const [mode, setMode] = useState<"single" | "spread">("single");
-  const [narrow, setNarrow] = useState(false);
+  const [researchOpen, setResearchOpen] = useState(false);
   const [visualCheck, setVisualCheck] = useState<{
     ok: boolean;
     count: number;
     sample: string;
   }>({ ok: true, count: 0, sample: "visual/a11y ok" });
 
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 900px)");
-    const update = () => setNarrow(mq.matches);
-    update();
-    mq.addEventListener("change", update);
-    return () => mq.removeEventListener("change", update);
-  }, []);
-
-  const spread = mode === "spread" && !narrow;
-  const step = spread ? 2 : 1;
-
   const next = useCallback(
-    () => setIndex((i) => Math.min(i + step, leaves.length - 1)),
-    [step, leaves.length],
+    () => setIndex((i) => Math.min(i + 1, leaves.length - 1)),
+    [leaves.length],
   );
-  const prev = useCallback(
-    () => setIndex((i) => Math.max(i - step, 0)),
-    [step],
-  );
+  const prev = useCallback(() => setIndex((i) => Math.max(i - 1, 0)), []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -82,9 +69,22 @@ export default function Reader({
     [sIndex],
   );
 
-  const visible = spread
-    ? [leaves[index], leaves[index + 1]].filter(Boolean)
-    : [leaves[index]];
+  const visible = [leaves[index]].filter(Boolean);
+  const activeLeaf = visible[0];
+  const activeSurface = activeLeaf?.surface;
+  const dossierBySurfaceId = useMemo(() => {
+    const map = new Map<string, ResearchDossier>();
+    for (const dossier of researchDossiers) {
+      map.set(dossier.anchorSurfaceId, dossier);
+      for (const page of dossier.pageSequence) {
+        if (!map.has(page.surfaceId)) map.set(page.surfaceId, dossier);
+      }
+    }
+    return map;
+  }, [researchDossiers]);
+  const activeDossier = activeSurface
+    ? dossierBySurfaceId.get(activeSurface.surfaceId)
+    : undefined;
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -221,7 +221,7 @@ export default function Reader({
       });
     }, 160);
     return () => window.clearTimeout(timer);
-  }, [index, spread, visible.length]);
+  }, [index, visible.length]);
 
   const atStart = index <= 0;
   const atEnd = index >= leaves.length - 1;
@@ -236,40 +236,19 @@ export default function Reader({
 
   const main = (
     <div className="relative flex-1 min-h-0 flex flex-col">
-      <div className={`leaf-stage${spread ? " leaf-stage--spread" : ""}`}>
-        {spread ? (
-          <div className="leaf-spread">
-            {visible[0] ? (
-              <LeafFrame leaf={visible[0]} single={false} activeFolderId={activeFolderId} ctx={ctx} />
-            ) : null}
-            <div className="leaf-gutter" aria-hidden>
-              <span className="binder-ring" />
-              <span className="binder-ring" />
-              <span className="binder-ring" />
-              <span className="binder-ring" />
-            </div>
-            {visible[1] ? (
-              <LeafFrame leaf={visible[1]} single={false} activeFolderId={activeFolderId} ctx={ctx} />
-            ) : (
-              <div className="leaf flex-1" />
-            )}
-          </div>
-        ) : (
-          <LeafFrame leaf={visible[0]} single activeFolderId={activeFolderId} ctx={ctx} />
-        )}
+      <div className="leaf-stage">
+        <LeafFrame leaf={visible[0]} single activeFolderId={activeFolderId} ctx={ctx} />
       </div>
 
       <div className="page-turn">
-        {/* Single / Spread toggle */}
         <button
           type="button"
-          className="btn-turn"
-          onClick={() => setMode((m) => (m === "single" ? "spread" : "single"))}
-          disabled={narrow}
-          aria-label={mode === "single" ? "Switch to spread view" : "Switch to single view"}
-          title={mode === "single" ? "Spread" : "Single"}
+          className="btn-turn btn-turn--ai"
+          onClick={() => setResearchOpen((v) => !v)}
+          aria-label="Open AI research panel"
+          title="AI research"
         >
-          {mode === "single" ? <IconSingle /> : <IconSpread />}
+          AI
         </button>
         <div className="page-turn__sep" aria-hidden />
         <button
@@ -305,9 +284,9 @@ export default function Reader({
     </div>
   );
 
-  const panel = (
+  const packetPanel = (
     <>
-      <div className="p-4 border-b border-ink">
+      <div className="packet-panel__header">
         {backHref ? (
           <Link href={backHref} className="label-caps underline">
             ← {backLabel ?? "Back"}
@@ -324,27 +303,93 @@ export default function Reader({
           />
           {contextSubtitle}
         </div>
-        <div className="mt-3 flex items-center gap-1.5">
-          <span className="label-caps text-ink-soft mr-1">view</span>
-          <button
-            type="button"
-            onClick={() => setMode("single")}
-            className={`btn-turn px-2 py-1 ${mode === "single" ? "bg-ink text-paper" : ""}`}
-            disabled={narrow}
-          >
-            single
-          </button>
-          <button
-            type="button"
-            onClick={() => setMode("spread")}
-            className={`btn-turn px-2 py-1 ${mode === "spread" ? "bg-ink text-paper" : ""}`}
-            disabled={narrow}
-          >
-            spread
-          </button>
-        </div>
       </div>
-      <div className="panel-scroll">
+
+      <div className="panel-scroll packet-panel__scroll">
+        <section className="packet-summary">
+          <div className="label-caps text-ink-soft">Research packet anchor</div>
+          <h3>{activeDossier?.title ?? activeSurface?.title ?? "Register / index"}</h3>
+          <dl>
+            <div>
+              <dt>anchor</dt>
+              <dd>{activeDossier ? formatAnchorType(activeDossier.anchorType) : activeLeaf?.type ?? "folder"}</dd>
+            </div>
+            <div>
+              <dt>scope</dt>
+              <dd>{activeDossier ? formatScope(activeDossier.sourceScope) : "folder register"}</dd>
+            </div>
+            <div>
+              <dt>basis</dt>
+              <dd>{activeDossier?.groupingBasis ?? "chronological folder sequence"}</dd>
+            </div>
+            <div>
+              <dt>pages</dt>
+              <dd>{activeDossier?.pageCount ?? leaves.length}</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section className="packet-tree" aria-label="Research packet relationship tree">
+          <div className="packet-tree__root">
+            <span className="packet-tree__marker" aria-hidden />
+            <div>
+              <div className="packet-tree__title">
+                {activeDossier?.title ?? contextTitle}
+              </div>
+              <div className="packet-tree__meta">
+                {activeSurface?.dateText ?? contextSubtitle}
+              </div>
+            </div>
+          </div>
+
+          {activeDossier?.pageSequence.length ? (
+            <div className="packet-tree__branch">
+              {activeDossier.pageSequence.map((page) => {
+                const targetIndex = sIndex.get(page.surfaceId);
+                const isActive =
+                  page.surfaceId === activeSurface?.surfaceId &&
+                  activeLeaf &&
+                  dossierTypeMatchesLeaf(page.pageType, activeLeaf.type);
+
+                return (
+                  <button
+                    key={page.pageId}
+                    type="button"
+                    className="packet-tree__item"
+                    data-active={isActive}
+                    disabled={targetIndex === undefined}
+                    onClick={() => {
+                      if (targetIndex !== undefined) setIndex(targetIndex);
+                    }}
+                  >
+                    <span className="packet-tree__node" aria-hidden />
+                    <span className="packet-tree__body">
+                      <span className="packet-tree__kicker">
+                        {formatPageType(page.pageType)}
+                        {page.imageState ? ` / ${page.imageState}` : ""}
+                      </span>
+                      <span className="packet-tree__label">
+                        {page.title ?? page.displayNumber ?? page.pageId}
+                      </span>
+                      <span className="packet-tree__source">
+                        {page.sourceName ?? page.rightsState ?? "source pending"}
+                      </span>
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="packet-tree__empty">
+              {activeSurface
+                ? "Dossier grouping is pending; use the archive sequence below as the current page structure."
+                : "Folder register pages are not yet grouped into a packet sequence."}
+            </div>
+          )}
+        </section>
+
+        <section className="packet-sequence" aria-label="Archive page sequence">
+          <div className="label-caps text-ink-soft">Archive sequence</div>
         {jumpTargets.map((t, i) => (
           <button
             key={`${t.leafIndex}-${i}`}
@@ -359,6 +404,71 @@ export default function Reader({
             <div className="text-ink-soft text-[0.62rem]">{t.sublabel}</div>
           </button>
         ))}
+        </section>
+      </div>
+    </>
+  );
+
+  const researchPanel = (
+    <>
+      <div className="research-panel__header">
+        <div>
+          <div className="label-caps text-ink-soft">AI research</div>
+          <div className="font-bold text-lg leading-tight mt-1">
+            Research assistant
+          </div>
+        </div>
+        <button
+          type="button"
+          className="btn-turn research-panel__close"
+          onClick={() => setResearchOpen(false)}
+          aria-label="Close AI research panel"
+        >
+          X
+        </button>
+      </div>
+      <div className="panel-scroll research-panel__scroll">
+        <section className="research-current">
+          <div className="label-caps text-ink-soft">Current object</div>
+          <h3>{activeSurface?.title ?? contextTitle}</h3>
+          <dl>
+            <div>
+              <dt>date</dt>
+              <dd>{activeSurface?.dateText ?? "folder range"}</dd>
+            </div>
+            <div>
+              <dt>image</dt>
+              <dd>{activeSurface?.image.state ?? "register"}</dd>
+            </div>
+            <div>
+              <dt>rights</dt>
+              <dd>{activeSurface?.rights.label ?? "mixed source states"}</dd>
+            </div>
+            <div>
+              <dt>source</dt>
+              <dd>{activeSurface?.sourceName ?? contextSubtitle}</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section className="research-factors">
+          <div className="label-caps text-ink-soft">Packet factors</div>
+          <div className="research-factor-grid">
+            {PACKET_FACTORS.map((factor) => (
+              <span key={factor}>{factor}</span>
+            ))}
+          </div>
+        </section>
+
+        <section className="research-queue">
+          <div className="label-caps text-ink-soft">Next review queue</div>
+          <ul>
+            <li>Assess whether the anchor can support main-sheet status.</li>
+            <li>Check source depth before adding editorial text pages.</li>
+            <li>Review rights state before any IMG01/IMG03 upgrade.</li>
+            <li>Use relation density to decide sub/card/appendix grouping.</li>
+          </ul>
+        </section>
       </div>
     </>
   );
@@ -367,26 +477,43 @@ export default function Reader({
     <ArchiveShell
       main={main}
       folderInk={folderInk}
-      panel={panel}
-      panelLabel="Contents"
-      hideWordmark={spread}
+      leftPanel={packetPanel}
+      leftPanelLabel="Content"
+      rightPanel={researchPanel}
+      rightPanelOpen={researchOpen}
+      onRightPanelOpenChange={setResearchOpen}
     />
   );
 }
 
-function IconSingle() {
-  return (
-    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" width="14" height="14">
-      <rect x="5" y="3" width="10" height="14" />
-    </svg>
-  );
+const PACKET_FACTORS = [
+  "Impact",
+  "Source depth",
+  "Relation density",
+  "Period span",
+  "Rights state",
+  "Region scarcity",
+  "Editorial need",
+];
+
+function formatAnchorType(value: string) {
+  return value.replace(/_/g, " ");
 }
 
-function IconSpread() {
-  return (
-    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" width="14" height="14">
-      <rect x="1" y="3" width="8" height="14" />
-      <rect x="11" y="3" width="8" height="14" />
-    </svg>
-  );
+function formatScope(value: string) {
+  return value.replace(/_/g, " ");
+}
+
+function formatPageType(value: string) {
+  return value.replace(/_/g, " ");
+}
+
+function dossierTypeMatchesLeaf(pageType: string, leafType: string) {
+  if (pageType === "main_sheet") return leafType === "main";
+  if (pageType === "subsheet") return leafType === "subsheet";
+  if (pageType === "text_page") return leafType === "text";
+  if (pageType === "appendix") return leafType === "appendix";
+  if (pageType === "slip") return leafType === "slip";
+  if (pageType === "card") return leafType === "main" || leafType === "subsheet";
+  return false;
 }

@@ -6361,3 +6361,53 @@ Verification:
   older uncommitted raw HTML probe files under prior probe directories; those
   files are outside this round's staged set.
 - Commit-bound strict credential-shape scan reported `strict_hits 0`.
+
+## 2026-06-06 - Research Packet Anchor Frontend Strategy
+
+Scope:
+
+- Locked the next frontend direction before the larger classification/deep
+  research cycle: a `research packet anchor` is treated as a flexible folder,
+  not a fixed spread/book metaphor.
+- The packet structure is allowed to choose `main`, `sub`, `card`, `text`, and
+  `appendix` roles from impact, source depth, relation density, period span,
+  rights state, region scarcity, and editorial need.
+- No source capture, source probing, image download, image mirroring, rights
+  upgrade, `IMG01`/`IMG03` promotion, main/sub demotion, or generated
+  classification rewrite was performed in this round.
+
+Frontend implementation:
+
+- Disabled the reader spread-mode entry path. The reader now advances one page
+  at a time and no longer exposes a single/spread toggle.
+- Replaced the old bottom spread button with an `AI` button that opens the
+  right-side research assistant panel.
+- Moved reader content navigation out of the right-side nav stack and into a
+  left-side `Content` button.
+- Added a left slide-in packet/tree panel that shows the active packet anchor,
+  current structure basis, page count, pending dossier grouping state, and the
+  archive page sequence.
+- Dedicated the right slide-in panel to AI/research support: current object
+  summary, image/rights/source state, packet factors, and the next review
+  queue for editorial and classification work.
+- Kept the packet/dossier data hook optional in `Reader`. Direct dossier lookup
+  was not wired into static surface routes because it made large static builds
+  more fragile; a lightweight precomputed packet index should be the next
+  bridge before deep research classification is connected to the UI.
+- Added cached research-dossier lookup maps in `archive-data` so future packet
+  integrations can avoid repeated linear scans.
+
+Verification:
+
+- `npm run build` passed in `frontend/`; Next generated 7914/7914 static pages.
+  The build still emitted slow static-page retry warnings in this environment,
+  but exited successfully.
+- Local dev server verification used `http://127.0.0.1:3040`.
+- HTTP checks returned 200 for `/surfaces/SURF-GAX1970R001` and
+  `/folders/region/brazil`.
+- Headless Chrome check confirmed:
+  - the right `AI` panel opens and shows `Research assistant`;
+  - the left `Content` panel opens and shows the packet anchor block plus
+    archive sequence;
+  - no visible `spread` control text remains in the reader;
+  - the sample page reported `VIS OK`.
