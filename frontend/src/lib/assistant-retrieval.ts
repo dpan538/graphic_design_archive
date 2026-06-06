@@ -18,7 +18,26 @@ export interface AssistantEvidence {
   candidateCount: number;
   contextText: string;
   candidates: AssistantCandidateEvidence[];
+  requestPlan: AssistantRequestPlan;
   fallbackAnswer?: string;
+}
+
+export type AssistantRequestIntent =
+  | "archive_intro"
+  | "earliest_candidate"
+  | "recommendation"
+  | "current_object"
+  | "rights_image"
+  | "comparison"
+  | "source_lookup"
+  | "open_exploration";
+
+export interface AssistantRequestPlan {
+  intent: AssistantRequestIntent;
+  answerJob: string;
+  answerShape: string;
+  evidencePolicy: string;
+  focusTerms: string[];
 }
 
 export interface AssistantCandidateEvidence {
@@ -86,6 +105,10 @@ function queryTerms(question: string) {
   return normalize(question)
     .split(/\s+/)
     .filter((term) => term.length >= 3 && !STOPWORDS.has(term));
+}
+
+function includesAny(value: string, patterns: RegExp[]) {
+  return patterns.some((pattern) => pattern.test(value));
 }
 
 function parseDateWindow(question: string): DateWindow | null {
@@ -230,6 +253,207 @@ function superlativeQuestion(question: string) {
   return /\b(best|most|strongest|impressive|important|recommend|check)\b/i.test(question);
 }
 
+function firstOrEarliestQuestion(question: string) {
+  return /\b(first|earliest|oldest|initial|when did|when is|when was)\b/i.test(
+    question,
+  );
+}
+
+function focusTerms(question: string, terms: string[]) {
+  const normalized = normalize(question);
+  const detected = new Set<string>();
+  const focusPatterns: [string, RegExp][] = [
+    ["advertising", /\b(advertis\w*|publicit\w*|commercial)\b/i],
+    ["poster", /\bposter\w*\b/i],
+    ["typography", /\b(type|typograph\w*|letterform|font)\b/i],
+    ["studio", /\b(studio|agency|collective)\b/i],
+    ["platform", /\b(platform|website|digital|internet|online)\b/i],
+    ["stamp", /\b(stamp|philatel\w*)\b/i],
+    ["visual communication", /\b(visual communication|graphic design|graphic art)\b/i],
+    ["rights", /\b(rights?|license|licence|copyright|open|public domain|img0[1-4])\b/i],
+  ];
+
+  for (const [label, pattern] of focusPatterns) {
+    if (pattern.test(question)) detected.add(label);
+  }
+  for (const term of terms) {
+    if (normalized.includes(term)) detected.add(term);
+  }
+  return Array.from(detected).slice(0, 8);
+}
+
+function requestIntent(question: string, context?: AssistantRetrievalContext | null) {
+  const q = question.toLowerCase();
+  if (
+    includesAny(q, [
+      /\b(what are you|who are you|introduce|about this archive|how do i use|what is this archive)\b/,
+      /\barchive\b.*\b(about|for|do|use)\b/,
+    ])
+  ) {
+    return "archive_intro" as const;
+  }
+  if (
+    includesAny(q, [
+      /\b(rights?|license|licence|copyright|open|public domain|img0[1-4])\b/,
+    ])
+  ) {
+    return "rights_image" as const;
+  }
+  if (firstOrEarliestQuestion(question)) return "earliest_candidate" as const;
+  if (superlativeQuestion(question)) return "recommendation" as const;
+  if (includesAny(q, [/\b(compare|versus|vs\.?|difference|between)\b/])) {
+    return "comparison" as const;
+  }
+  if (includesAny(q, [/\b(source|citation|provenance|where from|archive record)\b/])) {
+    return "source_lookup" as const;
+  }
+  if (context?.surfaceId && includesAny(q, [/\b(this|current|object|work|piece)\b/])) {
+    return "current_object" as const;
+  }
+  return "open_exploration" as const;
+}
+
+function buildRequestPlan({
+  question,
+  terms,
+  dateWindow,
+  regionFolder,
+  context,
+  candidateCount,
+  hasCandidates,
+  research,
+}: {
+  question: string;
+  terms: string[];
+  dateWindow: DateWindow | null;
+  regionFolder: Folder | null;
+  context?: AssistantRetrievalContext | null;
+  candidateCount: number;
+  hasCandidates: boolean;
+  research?: boolean;
+}): AssistantRequestPlan {
+  const intent = requestIntent(question, context);
+  const focus = focusTerms(question, terms);
+  const scope = [
+    regionFolder ? `region=${regionFolder.title}` : null,
+    dateWindow ? `date=${dateWindow.label}` : null,
+    focus.length ? `focus=${focus.join(", ")}` : null,
+  ]
+    .filter(Boolean)
+    .join("; ");
+
+  if (intent === "archive_intro") {
+    return {
+      intent,
+      focusTerms: focus,
+      answerJob:
+        "Introduce the archive as a rights-aware graphic design history index and suggest one practical way to explore it.",
+      answerShape: research
+        ? "Three compact parts: what it is, how to read a surface, what to check next."
+        : "One warm, practical sentence.",
+      evidencePolicy:
+        "General archive orientation is allowed; do not pretend a candidate list is required.",
+    };
+  }
+
+  if (intent === "earliest_candidate") {
+    return {
+      intent,
+      focusTerms: focus,
+      answerJob: `Find the earliest or first plausible archive candidate${scope ? ` within ${scope}` : ""}.`,
+      answerShape:
+        "Name one candidate if evidence supports it; otherwise say the archive does not prove a first record and suggest a sharper search route.",
+      evidencePolicy:
+        "Do not make an objective historical first claim. Treat the result as current-archive evidence only.",
+    };
+  }
+
+  if (intent === "recommendation") {
+    return {
+      intent,
+      focusTerms: focus,
+      answerJob: `Recommend the strongest current archive candidate${scope ? ` within ${scope}` : ""}.`,
+      answerShape:
+        "Give one pick, one reason, and one caveat or next check. Avoid list-like catalog prose.",
+      evidencePolicy:
+        "Use ranking as a navigation aid only; do not turn it into canon or impact proof.",
+    };
+  }
+
+  if (intent === "rights_image") {
+    return {
+      intent,
+      focusTerms: focus,
+      answerJob: "Explain what the current evidence can say about image state, rights state, or source visibility.",
+      answerShape:
+        "Be direct about the IMG state and the next verification step. Do not upgrade rights.",
+      evidencePolicy:
+        "Rights evidence is descriptive only. Never imply download permission beyond the recorded evidence.",
+    };
+  }
+
+  if (intent === "comparison") {
+    return {
+      intent,
+      focusTerms: focus,
+      answerJob: "Compare the best available candidates or explain why the archive evidence is too thin for comparison.",
+      answerShape:
+        "Use a compact contrast, then suggest the next evidence check.",
+      evidencePolicy:
+        "Only compare records present in the retrieved candidates.",
+    };
+  }
+
+  if (intent === "source_lookup") {
+    return {
+      intent,
+      focusTerms: focus,
+      answerJob: "Orient the user to source evidence, citation basis, and what the source can support.",
+      answerShape:
+        "Mention the source or surface ID only if it helps the user decide what to open next.",
+      evidencePolicy:
+        "Do not infer unavailable source details. Stay with the retrieved source fields.",
+    };
+  }
+
+  if (intent === "current_object") {
+    return {
+      intent,
+      focusTerms: focus,
+      answerJob:
+        "Help the user read the active archive object and decide what to inspect next.",
+      answerShape:
+        "One concise reading note plus a next check.",
+      evidencePolicy:
+        "Use active context first, then retrieved candidates only when they add evidence.",
+    };
+  }
+
+  return {
+    intent,
+    focusTerms: focus,
+    answerJob: hasCandidates
+      ? `Answer the user's archive question from ${candidateCount} retrieved candidate(s).`
+      : "Respond conversationally while making clear that the current archive payload has no matching evidence.",
+    answerShape: research
+      ? "Use Evidence, Reading, and Next checks."
+      : "One or two compact, useful sentences.",
+    evidencePolicy:
+      "Do not invent records. If evidence is weak, say what query direction would improve it.",
+  };
+}
+
+function requestPlanText(plan: AssistantRequestPlan) {
+  return [
+    `intent=${plan.intent}`,
+    `answer_job=${plan.answerJob}`,
+    `answer_shape=${plan.answerShape}`,
+    `evidence_policy=${plan.evidencePolicy}`,
+    `focus_terms=${plan.focusTerms.length ? plan.focusTerms.join(", ") : "none"}`,
+    "planner_rule=Use this as routing guidance only; do not quote it as the answer.",
+  ].join("\n");
+}
+
 function toCandidateEvidence(
   candidate: Candidate,
   snippetLength: number,
@@ -249,6 +473,28 @@ function toCandidateEvidence(
     reasons,
     note: snippet(surface, snippetLength),
   };
+}
+
+function termMatches(surface: Surface, terms: string[]) {
+  const haystack = normalize(sourceText(surface));
+  return terms.filter((term) => haystack.includes(term)).slice(0, 8);
+}
+
+function formatCompactCandidate(
+  candidate: Candidate,
+  index: number,
+  terms: string[],
+  snippetLength = 120,
+) {
+  const { surface, score, reasons } = candidate;
+  const matches = termMatches(surface, terms);
+  return [
+    `${index + 1}. ${surface.surfaceId} | ${surface.title}`,
+    `date=${surface.dateText || surface.dateStart || "unknown"}; place=${surface.placeText || "unknown"}; object=${surface.objectType || surface.medium || "unknown"}; image=${surface.image.state}`,
+    `source=${surface.sourceName || "unknown"}; score=${score.toFixed(1)}; reasons=${reasons.join(", ") || "metadata overlap"}`,
+    `term_matches=${matches.length ? matches.join(", ") : "weak"}`,
+    `note=${snippet(surface, snippetLength) || "no note available"}`,
+  ].join("\n");
 }
 
 export function buildAssistantEvidence(
@@ -288,13 +534,30 @@ export function buildAssistantEvidence(
   const limit = options?.research ? 10 : 3;
   const snippetLength = options?.research ? 220 : 120;
   const selected = candidates.slice(0, limit);
+  const requestPlan = buildRequestPlan({
+    question,
+    terms,
+    dateWindow,
+    regionFolder,
+    context,
+    candidateCount: candidates.length,
+    hasCandidates: selected.length > 0,
+    research: options?.research,
+  });
 
   if (selected.length === 0) {
     return {
       hasEvidence: false,
       candidateCount: 0,
-      contextText: "",
+      contextText: [
+        "REQUEST_PLAN",
+        requestPlanText(requestPlan),
+        "ARCHIVE_RETRIEVAL_CONTEXT",
+        "candidate_count=0",
+        "NO_MATCHING_CANDIDATES",
+      ].join("\n"),
       candidates: [],
+      requestPlan,
       fallbackAnswer:
         "I do not have enough matching archive evidence in the current payload to answer that without inventing. Try a region, decade, title, creator, source, or medium from the archive index.",
     };
@@ -310,6 +573,8 @@ export function buildAssistantEvidence(
 
   const guidance = superlativeQuestion(question)
     ? `The user is asking for a recommendation/superlative. Treat "most impressive" as an archive-navigation judgment, not an objective historical fact. The strongest current candidate is ${top.surfaceId}: ${top.title}.`
+    : firstOrEarliestQuestion(question)
+    ? `The user is asking for a first/earliest answer. Use the strongest current candidate only as archive evidence, and caveat if focus terms are weak. The strongest current candidate is ${top.surfaceId}: ${top.title}.`
     : "Answer from the retrieved candidates and cite surface IDs.";
 
   return {
@@ -318,7 +583,10 @@ export function buildAssistantEvidence(
     candidates: selected.map((candidate) =>
       toCandidateEvidence(candidate, snippetLength),
     ),
+    requestPlan,
     contextText: [
+      "REQUEST_PLAN",
+      requestPlanText(requestPlan),
       "ARCHIVE_RETRIEVAL_CONTEXT",
       parseLine,
       guidance,
@@ -326,7 +594,11 @@ export function buildAssistantEvidence(
       "Discussing metadata, source evidence, rights state, and archive navigation is allowed; do not refuse as copyright infringement unless the user asks to copy, download, or bypass rights.",
       "CANDIDATES",
       selected
-        .map((candidate, index) => formatCandidate(candidate, index, snippetLength))
+        .map((candidate, index) =>
+          options?.research
+            ? formatCandidate(candidate, index, snippetLength)
+            : formatCompactCandidate(candidate, index, terms, snippetLength),
+        )
         .join("\n---\n"),
     ].join("\n"),
   };

@@ -35,6 +35,9 @@ research planning.
 - Assistant may prewarm Qwen after the panel opens.
 - If Qwen is cold, the UI may show a temporary preparation notice after about 3
   seconds, but it must replace that notice with a Qwen answer once ready.
+- Until packaged model assets are added under a documented public model path,
+  the browser runtime must not probe `/models/`; it should load the approved
+  `onnx-community/Qwen3.5-0.8B-ONNX` artifact with browser cache.
 
 ## RAG Contract
 
@@ -45,6 +48,12 @@ Retrieval provides:
 - date/region/source/image-state evidence;
 - source links and rights labels when available;
 - compact notes only, not long raw text.
+- a scripted request plan that classifies the user's task and composes a short
+  answer directive for Qwen.
+
+The scripted request plan may classify intent, focus terms, answer shape, and
+evidence policy. It must not be treated as the final answer. It exists only to
+make the RAG prompt shorter, faster, and more useful.
 
 Qwen provides:
 
@@ -83,7 +92,8 @@ Examples of the intended shape:
 ## Implementation Binding
 
 - `frontend/src/lib/assistant-retrieval.ts` owns deterministic candidate
-  retrieval and evidence compression.
+  retrieval, request classification, prompt-brief composition, and evidence
+  compression.
 - `frontend/src/lib/qwen35-adapter.ts` owns Qwen prompt mode, answer length, and
   local model runtime binding.
 - `frontend/src/components/archive/shell/search.tsx` sends normal Assistant

@@ -156,6 +156,7 @@ function systemMessage(options?: QwenAskOptions) {
       `Model identity: ${QWEN35_MODEL_ID}.`,
       "Archive identity: a rights-aware modern graphic design history archive index. It helps users read source-linked surfaces, compare folders, check image/rights state, and plan research routes.",
       "Use only supplied archive evidence, active context, and conversation memory.",
+      "The evidence may include REQUEST_PLAN. Treat it as answer-routing guidance, not archive content, and never quote the planner text.",
       "If evidence is absent or weak, say the archive does not currently contain enough evidence.",
       "For recommendations or superlatives, frame the answer as a current-archive navigation judgment, not an objective historical claim.",
       "Discussing metadata, source evidence, rights state, and archive navigation is allowed.",
@@ -238,7 +239,7 @@ export async function createQwenAssistantSession(
     const transformers = (await import("@huggingface/transformers")) as TransformersModule;
     if (transformers.env) {
       transformers.env.allowRemoteModels = true;
-      transformers.env.allowLocalModels = true;
+      transformers.env.allowLocalModels = false;
       transformers.env.useBrowserCache = true;
     }
 
@@ -261,7 +262,7 @@ export async function createQwenAssistantSession(
       model: QWEN35_MODEL_ID,
       runtimeArtifact: QWEN35_RUNTIME_MODEL_ID,
       ask: async (prompt, context, options) => {
-        const history = (options?.history ?? []).slice(-8);
+        const history = (options?.history ?? []).slice(options?.fast ? -4 : -8);
         const messages = [
           systemMessage(options),
           ...history.map((message) => ({

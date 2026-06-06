@@ -6482,6 +6482,79 @@ Verification:
   The familiar slow static-page retry warnings appeared, but the build exited
   successfully.
 
+## 2026-06-06 - Assistant RAG Prompt Composition Correction
+
+Scope:
+
+- Corrected the Assistant RAG behavior after review. This was a frontend
+  assistant/runtime and documentation pass only: no source capture, image
+  download, rights upgrade, surface rebuild, or classification/archive merge
+  was performed.
+
+Reason:
+
+- The Assistant should not be a deterministic search wrapper. Search returns
+  records; Assistant should use Qwen over retrieved archive evidence to give a
+  short, useful, human research response.
+- The word "script" in the Assistant plan means request classification and
+  prompt composition, not scripted final answers.
+- After the previous push, the dev server showed a
+  `/models/onnx-community/Qwen3.5-0.8B-ONNX/tokenizer_config.json` 404. The
+  project does not currently package model assets under `frontend/public/models`,
+  so local model probing was misleading and could slow or confuse cold-start
+  diagnosis.
+
+Correction:
+
+- Added scripted request planning inside `frontend/src/lib/assistant-retrieval.ts`.
+  It classifies user intent as archive intro, first/earliest, recommendation,
+  current object, rights/image, comparison, source lookup, or open exploration.
+- The retrieval script now emits a compact `REQUEST_PLAN` plus compressed
+  candidate evidence. The plan contains answer job, answer shape, focus terms,
+  and evidence policy, and explicitly says it must not be quoted as the answer.
+- Ordinary Assistant still calls Qwen fast mode for the final response. The
+  script only shortens and clarifies the RAG prompt so Qwen can answer more
+  usefully with less context.
+- Fast mode now passes a shorter conversation window to Qwen while preserving
+  same-page memory behavior.
+- Disabled Transformers.js local `/models/` probing by setting
+  `allowLocalModels=false`; the only allowed runtime artifact remains
+  `onnx-community/Qwen3.5-0.8B-ONNX` with browser cache.
+- Updated `docs/system/ASSISTANT_RESPONSE_STRATEGY_v0.md` to record the prompt
+  composition boundary: retrieval may classify and brief, but Qwen generates
+  the Assistant/Research answer.
+
+Guardrails:
+
+- `Qwen/Qwen3.5-0.8B` remains the only Assistant model identity.
+- No Llama, hosted LLM API, WebLLM catalog fallback, or alternate model path is
+  permitted.
+- Search remains deterministic and separate from Assistant.
+- Assistant/RAG prompt composition does not download images, create local image
+  mirrors, or upgrade IMG01/IMG03 rights state.
+
+Verification:
+
+- `npm run build` passed in `frontend/`; Next generated 7914/7914 static pages.
+  The familiar 60-second static-page retry warnings appeared, but the build
+  exited successfully.
+- `git diff --check` passed.
+- Runtime scan over `frontend/src/lib`, `frontend/src/components`, and
+  `frontend/scripts` found no `Llama`, `WEBLLM`, `WebLLM`, or `Load WebLLM`
+  references.
+- Scripted-answer scan found no `assistant-instant`,
+  `buildInstantAssistantAnswer`, `DRAFT_ANSWER`, or `FAST_REFINE` in
+  `frontend/src` or `docs/system`.
+- Commit-bound credential scan found no real API key, password, secret, bearer
+  value, cookie assignment, local user path, or env-file reference. Remaining
+  hits are historical project-log scan terms plus `transformers.env`,
+  tokenizer, and max-token identifiers.
+- Local dev server started at `http://localhost:3040`; route checks returned
+  HTTP 200 for `/folders/region/russia` and `/surfaces/SURF-GAX1970R001`.
+- Chrome smoke test on `http://127.0.0.1:3040/folders/region/russia` confirmed
+  the Assistant panel opens, the bottom navigation is not obscured, and the dev
+  server no longer logs a `/models/onnx-community/...` Qwen local-probe 404.
+
 ## 2026-06-06 - Assistant Instant Layer And Qwen Fast-Refine Correction
 
 Scope:
