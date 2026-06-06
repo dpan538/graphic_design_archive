@@ -16,6 +16,16 @@ export interface WebLLMContext {
   objectType?: string;
 }
 
+export interface WebLLMChatMessage {
+  role: "user" | "assistant";
+  content: string;
+}
+
+export interface WebLLMAskOptions {
+  history?: WebLLMChatMessage[];
+  research?: boolean;
+}
+
 interface WebLLMModule {
   CreateMLCEngine: (
     model: string,
@@ -40,11 +50,17 @@ interface WebLLMEngine {
 
 export interface WebLLMSession {
   model: string;
-  ask: (prompt: string, context?: WebLLMContext) => Promise<string>;
+  ask: (
+    prompt: string,
+    context?: WebLLMContext,
+    options?: WebLLMAskOptions,
+  ) => Promise<string>;
 }
 
 const WEBLLM_ESM_URL = "https://esm.run/@mlc-ai/web-llm";
 const DEFAULT_WEBLLM_MODEL = "Llama-3.2-1B-Instruct-q4f16_1-MLC";
+let cachedSession: Promise<WebLLMSession> | null = null;
+let cachedSessionReady = false;
 
 function contextBlock(context?: WebLLMContext) {
   if (!context) return "No active archive object context.";
@@ -62,40 +78,70 @@ function contextBlock(context?: WebLLMContext) {
 export async function createWebLLMSession(
   onProgress?: (message: string) => void,
 ): Promise<WebLLMSession> {
+  if (cachedSession) {
+    onProgress?.(cachedSessionReady ? "Ready" : "Preparing WebLLM");
+    return cachedSession;
+  }
+
   if (typeof navigator !== "undefined" && !("gpu" in navigator)) {
     throw new Error("WebGPU is not available in this browser.");
   }
 
-  const webllm = (await import(
-    /* webpackIgnore: true */ WEBLLM_ESM_URL
-  )) as WebLLMModule;
-  const engine = await webllm.CreateMLCEngine(DEFAULT_WEBLLM_MODEL, {
-    initProgressCallback: (report) => {
-      if (report.text) onProgress?.(report.text);
-      else if (typeof report.progress === "number") {
-        onProgress?.(`Loading ${(report.progress * 100).toFixed(0)}%`);
-      }
-    },
-  });
+  cachedSession = (async () => {
+    const webllm = (await import(
+      /* webpackIgnore: true */ WEBLLM_ESM_URL
+    )) as WebLLMModule;
+    const engine = await webllm.CreateMLCEngine(DEFAULT_WEBLLM_MODEL, {
+      initProgressCallback: (report) => {
+        if (report.text) onProgress?.(report.text);
+        else if (typeof report.progress === "number") {
+          onProgress?.(`Loading ${(report.progress * 100).toFixed(0)}%`);
+        }
+      },
+    });
 
-  return {
-    model: DEFAULT_WEBLLM_MODEL,
-    ask: async (prompt, context) => {
-      const response = await engine.chat.completions.create({
-        temperature: 0.2,
-        messages: [
-          {
-            role: "system",
-            content:
-              "You are a research assistant inside a rights-aware graphic design archive. Be concise, distinguish source evidence from interpretation, and do not claim image rights upgrades.",
-          },
-          {
-            role: "user",
-            content: `Archive context:\n${contextBlock(context)}\n\nQuestion:\n${prompt}`,
-          },
-        ],
-      });
-      return response.choices?.[0]?.message?.content?.trim() || "";
-    },
-  };
+    const session: WebLLMSession = {
+      model: DEFAULT_WEBLLM_MODEL,
+      ask: async (prompt, context, options) => {
+        const researchInstruction = options?.research
+          ? "Research mode is enabled: give a more developed answer with sections for Evidence, Interpretation, and Next checks. Do not expose private chain-of-thought."
+          : "Answer conversationally and keep the response compact.";
+        const history = (options?.history ?? []).slice(-8);
+        const response = await engine.chat.completions.create({
+          temperature: options?.research ? 0.25 : 0.2,
+          messages: [
+            {
+              role: "system",
+              content: [
+                "You are WebLLM running as the archive assistant inside a rights-aware graphic design archive.",
+                "Use only the supplied archive context and the user's question unless the user explicitly asks for broader interpretation.",
+                "Distinguish source evidence from interpretation, name uncertainty, and do not claim image rights upgrades.",
+                researchInstruction,
+              ].join(" "),
+            },
+            {
+              role: "user",
+              content: `Active archive context:\n${contextBlock(context)}`,
+            },
+            ...history,
+            {
+              role: "user",
+              content: prompt,
+            },
+          ],
+        });
+        return response.choices?.[0]?.message?.content?.trim() || "";
+      },
+    };
+    cachedSessionReady = true;
+    return session;
+  })();
+
+  try {
+    return await cachedSession;
+  } catch (error) {
+    cachedSession = null;
+    cachedSessionReady = false;
+    throw error;
+  }
 }

@@ -6450,3 +6450,40 @@ Appendix routing:
   for redesign, but they are no longer inserted into the primary reading flow.
 - Reason: the current long/narrow appendix designs interrupt body reading,
   compete with the main sheet, and create visible overflow/legibility issues.
+
+## 2026-06-06 - Assistant WebLLM Interaction Correction
+
+Scope:
+
+- Corrected the Assistant interaction after live review. This was a frontend
+  interaction pass only: no source capture, image download, rights upgrade,
+  surface rebuild, or classification/deep-research change was performed.
+
+Assistant changes:
+
+- Removed the visible `Load WebLLM` control. Assistant is treated as WebLLM;
+  the browser-side WebLLM session now prepares automatically when Assistant
+  opens.
+- Kept Search and Assistant in the same floating container, but removed the
+  reference-lookup/search input from Assistant mode. Search renders search;
+  Assistant renders a chat surface.
+- Replaced the single-answer prototype with a simple chat thread, message
+  input, `Send` action, and `Research` action.
+- `Research` uses the same local WebLLM session with a more developed,
+  sectioned response instruction for source evidence, interpretation, and next
+  checks. It still must not claim image-rights upgrades.
+- Cached the WebLLM session in the browser module so closing and reopening
+  Assistant does not intentionally restart the model setup. Failed
+  initializations clear the cache so a later retry can run.
+
+Verification:
+
+- `npm run build` passed in `frontend/`; Next generated 7914/7914 static pages.
+  The familiar slow static-page retry warnings appeared, but the build exited
+  successfully.
+- Local verification used `http://127.0.0.1:3040/folders/region/france`.
+- Browser check confirmed Assistant renders `close ×`, `Send`, and `Research`
+  controls; it no longer renders `Load WebLLM`, a reference lookup, or an
+  internal search input.
+- Browser check confirmed Search mode still renders the archive search input
+  and does not render WebLLM or `Research`.
