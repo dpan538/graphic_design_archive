@@ -61,6 +61,10 @@ export default function ArchiveShell({
   useEffect(() => {
     const openAssistant = (event: Event) => {
       const detail = (event as CustomEvent<AssistantContext>).detail ?? null;
+      if (searchOpen && searchMode === "assistant") {
+        setSearchOpen(false);
+        return;
+      }
       setAssistantContext(detail);
       setSearchMode("assistant");
       setSearchOpen(true);
@@ -69,7 +73,7 @@ export default function ArchiveShell({
     return () => {
       window.removeEventListener("archive:open-assistant", openAssistant);
     };
-  }, []);
+  }, [searchMode, searchOpen]);
 
   // Left-edge swipe → back. Backspace also goes back.
   useEffect(() => {
@@ -119,11 +123,16 @@ export default function ArchiveShell({
           window.getComputedStyle(document.documentElement).fontSize,
         ) || 16;
       const gap = rootSize * 2.5;
+      const pageTurnTop =
+        document.querySelector<HTMLElement>(".page-turn")?.getBoundingClientRect()
+          .top;
       const countTop =
         countCardRef.current?.getBoundingClientRect().top ??
+        pageTurnTop ??
         window.innerHeight - 18;
       const top = Math.round(icon.bottom + gap);
-      const maxHeight = Math.max(160, Math.round(countTop - gap - top));
+      const availableHeight = Math.round(countTop - gap - top);
+      const maxHeight = Math.max(72, availableHeight);
       setSearchFrame({ top, maxHeight });
     };
 
@@ -269,6 +278,7 @@ export default function ArchiveShell({
               : {
                   top: `${searchFrame.top}px`,
                   maxHeight: `${searchFrame.maxHeight}px`,
+                  height: `${searchFrame.maxHeight}px`,
                 }
           }
         >

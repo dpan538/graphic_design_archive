@@ -1760,6 +1760,7 @@ body {
 }
 
 .search-card {
+  height: 100%;
   min-height: 0;
 }
 
@@ -1775,64 +1776,33 @@ body {
   margin-bottom: 0.55rem;
 }
 
-.assistant-brief {
-  display: grid;
-  gap: 0.45rem;
-  margin-bottom: 0.55rem;
-  padding: 0.58rem 0.62rem;
-  border: 1px solid var(--line-soft);
-  background-color: var(--paper-2);
-}
-
-.assistant-brief__status {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-
-.assistant-brief__status span:last-child {
-  color: var(--ink-soft);
+.assistant-mode-toggle {
+  position: relative;
+  min-height: 1rem;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
   font-family: var(--font-plex-mono), var(--font-mono), monospace;
-  font-size: 0.52rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  text-align: left;
 }
 
-.assistant-brief h3 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 0.78rem;
-  font-weight: 700;
-  line-height: 1.18;
+.assistant-mode-toggle__hover {
+  display: none;
 }
 
-.assistant-brief dl {
-  display: grid;
-  gap: 0.28rem;
+.assistant-mode-toggle:hover .assistant-mode-toggle__idle,
+.assistant-mode-toggle:focus-visible .assistant-mode-toggle__idle {
+  display: none;
 }
 
-.assistant-brief dl div {
-  display: grid;
-  grid-template-columns: 3rem minmax(0, 1fr);
-  gap: 0.4rem;
-  font-size: 0.58rem;
-  line-height: 1.25;
+.assistant-mode-toggle:hover .assistant-mode-toggle__hover,
+.assistant-mode-toggle:focus-visible .assistant-mode-toggle__hover {
+  display: inline;
 }
 
-.assistant-brief dt {
-  color: var(--ink-soft);
-  font-family: var(--font-plex-mono), var(--font-mono), monospace;
-  font-size: 0.5rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.assistant-brief dd {
-  min-width: 0;
-  overflow-wrap: anywhere;
+.assistant-mode-toggle[data-active="true"] {
+  color: var(--rail-red);
 }
 
 .assistant-compose {
@@ -1842,7 +1812,7 @@ body {
 }
 
 .assistant-compose textarea {
-  min-height: 4.2rem;
+  min-height: 3.8rem;
   resize: vertical;
   border: 1.5px solid var(--line);
   background-color: var(--paper);
@@ -1870,23 +1840,15 @@ body {
 .assistant-thread {
   display: grid;
   align-content: start;
+  flex: 1;
   gap: 0.45rem;
-  min-height: 6rem;
+  min-height: 0;
   overflow-y: auto;
   border: 1px solid var(--line-soft);
   background-color: var(--paper);
   padding: 0.55rem;
   font-size: 0.66rem;
   line-height: 1.45;
-}
-
-.assistant-empty {
-  color: var(--ink-soft);
-  font-family: var(--font-plex-mono), var(--font-mono), monospace;
-  font-size: 0.58rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
 }
 
 .assistant-message {

@@ -54,6 +54,7 @@ export default function SearchBox({
   const [draft, setDraft] = useState("");
   const [messages, setMessages] = useState<AssistantMessage[]>([]);
   const [webllm, setWebllm] = useState<WebLLMState>({ status: "idle" });
+  const [researchMode, setResearchMode] = useState(false);
   const [pendingMode, setPendingMode] = useState<"send" | "research" | null>(null);
   const sessionRef = useRef<WebLLMSession | null>(null);
   const loadingRef = useRef(false);
@@ -64,10 +65,10 @@ export default function SearchBox({
   const prepareWebLLM = useCallback(async () => {
     if (!isAssistant || sessionRef.current || loadingRef.current) return;
     loadingRef.current = true;
-    setWebllm({ status: "loading", message: "Preparing WebLLM" });
+    setWebllm({ status: "loading", message: "Preparing" });
     try {
       const session = await createWebLLMSession((message) =>
-        setWebllm({ status: "loading", message }),
+        setWebllm({ status: "loading", message: message ? "Preparing" : "" }),
       );
       sessionRef.current = session;
       setWebllm({
@@ -81,7 +82,7 @@ export default function SearchBox({
         message:
           error instanceof Error
             ? error.message
-            : "WebLLM failed to initialize.",
+            : "Assistant failed to initialize.",
       });
     } finally {
       loadingRef.current = false;
@@ -92,7 +93,7 @@ export default function SearchBox({
     if (isAssistant) void prepareWebLLM();
   }, [isAssistant, prepareWebLLM]);
 
-  const askAssistant = async (research = false) => {
+  const askAssistant = async () => {
     const question = draft.trim();
     if (!question) return;
     if (!sessionRef.current) {
@@ -101,7 +102,7 @@ export default function SearchBox({
     const session = sessionRef.current;
     if (!session) return;
 
-    const modeLabel = research ? "research" : "send";
+    const modeLabel = researchMode ? "research" : "send";
     const history: WebLLMChatMessage[] = messages.map(({ role, content }) => ({
       role,
       content,
@@ -118,12 +119,12 @@ export default function SearchBox({
     setWebllm((state) => ({
       ...state,
       status: "loading",
-      message: research ? "Researching" : "Thinking",
+      message: researchMode ? "Researching" : "Thinking",
     }));
     try {
       const response = await session.ask(question, assistantContext ?? undefined, {
         history,
-        research,
+        research: researchMode,
       });
       setMessages((current) => [
         ...current,
@@ -148,13 +149,12 @@ export default function SearchBox({
 
   const handleAssistantSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    void askAssistant(false);
+    void askAssistant();
   };
 
   const assistantBusy = webllm.status === "loading";
   const assistantReady = webllm.status === "ready";
   const assistantUnavailable = webllm.status === "error";
-  const assistantStatus = webllm.message ?? (assistantReady ? "Ready" : "Preparing");
 
   if (isAssistant) {
     return (
@@ -163,7 +163,20 @@ export default function SearchBox({
         style={{ maxHeight: "inherit", overflow: "hidden" }}
       >
         <div className="search-card__head">
-          <span className="label-caps">Assistant</span>
+          <button
+            type="button"
+            className="assistant-mode-toggle label-caps"
+            data-active={researchMode}
+            aria-pressed={researchMode}
+            onClick={() => setResearchMode((value) => !value)}
+          >
+            <span className="assistant-mode-toggle__idle">
+              {researchMode ? "Research" : "Assistant"}
+            </span>
+            <span className="assistant-mode-toggle__hover">
+              {researchMode ? "Assistant" : "Research"}
+            </span>
+          </button>
           <button
             type="button"
             onClick={onClose}
@@ -174,50 +187,34 @@ export default function SearchBox({
           </button>
         </div>
 
-        <section className="assistant-brief" aria-label="Assistant context">
-          <div className="assistant-brief__status">
-            <span className="label-caps">WebLLM</span>
-            <span>{assistantStatus}</span>
-          </div>
-          <h3>{assistantContext?.title ?? "Archive research assistant"}</h3>
-          <dl>
-            <div>
-              <dt>Date</dt>
-              <dd>{assistantContext?.dateText ?? "Current folder"}</dd>
-            </div>
-            <div>
-              <dt>Image</dt>
-              <dd>{assistantContext?.imageState ?? "Mixed"}</dd>
-            </div>
-            <div>
-              <dt>Source</dt>
-              <dd>{assistantContext?.sourceName ?? "Archive index"}</dd>
-            </div>
-          </dl>
-        </section>
-
         <div className="assistant-thread panel-scroll" aria-live="polite">
-          {messages.length === 0 ? (
-            <div className="assistant-empty">
-              No messages yet.
-            </div>
-          ) : (
-            messages.map((message) => (
-              <div
-                key={message.id}
-                className={`assistant-message assistant-message--${message.role}`}
-              >
-                <div className="assistant-message__meta label-caps">
-                  {message.role === "user"
-                    ? message.mode === "research"
-                      ? "Research"
-                      : "You"
-                    : "WebLLM"}
-                </div>
-                <div>{message.content}</div>
+          {messages.map((message) => (
+            <div
+              key={message.id}
+              className={`assistant-message assistant-message--${message.role}`}
+            >
+              <div className="assistant-message__meta label-caps">
+                {message.role === "user"
+                  ? message.mode === "research"
+                    ? "Research"
+                    : "You"
+                  : "Assistant"}
               </div>
-            ))
-          )}
+              <div>{message.content}</div>
+            </div>
+          ))}
+          {assistantBusy && pendingMode ? (
+            <div className="assistant-message assistant-message--assistant">
+              <div className="assistant-message__meta label-caps">Assistant</div>
+              <div>{pendingMode === "research" ? "Researching..." : "Thinking..."}</div>
+            </div>
+          ) : null}
+          {assistantUnavailable ? (
+            <div className="assistant-message assistant-message--assistant">
+              <div className="assistant-message__meta label-caps">Assistant</div>
+              <div>Assistant unavailable.</div>
+            </div>
+          ) : null}
         </div>
 
         <form className="assistant-compose" onSubmit={handleAssistantSubmit}>
@@ -233,15 +230,7 @@ export default function SearchBox({
               className="btn-turn"
               disabled={!assistantReady || draft.trim() === "" || assistantBusy}
             >
-              Send
-            </button>
-            <button
-              type="button"
-              className="btn-turn"
-              onClick={() => void askAssistant(true)}
-              disabled={!assistantReady || draft.trim() === "" || assistantBusy}
-            >
-              {pendingMode === "research" ? "Researching" : "Research"}
+              {assistantBusy && pendingMode ? "Working" : "Send"}
             </button>
           </div>
         </form>

@@ -6487,3 +6487,47 @@ Verification:
   internal search input.
 - Browser check confirmed Search mode still renders the archive search input
   and does not render WebLLM or `Research`.
+
+## 2026-06-06 - Assistant Panel Simplification After Live Review
+
+Scope:
+
+- Follow-up frontend correction after live reader screenshots. No source
+  capture, image download, rights upgrade, surface rebuild, or classification
+  change was performed.
+
+Assistant panel changes:
+
+- Removed the Assistant context/status block entirely. The panel no longer
+  displays implementation identity, current object summary, date/image/source
+  rows, or readiness metadata.
+- Removed the separate `Research` button from the compose area.
+- Converted the top-left `ASSISTANT` title into the research-mode toggle:
+  hovering it reveals `RESEARCH`; clicking enables research mode; clicking
+  again returns to Assistant mode.
+- Assistant replies are labeled `Assistant`, not by the underlying local model
+  implementation.
+- The compose area now has one submit control only: `Send`.
+
+Layout containment:
+
+- Updated the floating Search/Assistant container to measure the bottom
+  page-turn control and use that as its lower boundary.
+- The panel now receives a fixed computed height and keeps conversation
+  overflow inside the assistant thread, preventing overlap with the bottom
+  navigation/page controls.
+
+Verification:
+
+- `npm run build` passed in `frontend/`; Next generated 7914/7914 static pages.
+  The known slow static-page retry warnings appeared, but the build exited
+  successfully.
+- Local verification used `http://127.0.0.1:3040/folders/region/france`.
+- Browser check confirmed the Assistant panel no longer renders the deleted
+  context/status block, WebLLM wording, date/image/source rows, or a separate
+  `Research` compose button.
+- Browser layout check confirmed the floating Assistant stack bottom stays
+  above the page-turn control.
+- Browser interaction check confirmed the top-left Assistant title toggles
+  research mode, and the bottom Assistant control closes the open panel when
+  clicked again.

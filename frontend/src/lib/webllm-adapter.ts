@@ -79,7 +79,7 @@ export async function createWebLLMSession(
   onProgress?: (message: string) => void,
 ): Promise<WebLLMSession> {
   if (cachedSession) {
-    onProgress?.(cachedSessionReady ? "Ready" : "Preparing WebLLM");
+    onProgress?.(cachedSessionReady ? "Ready" : "Preparing");
     return cachedSession;
   }
 
