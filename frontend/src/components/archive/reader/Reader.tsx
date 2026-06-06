@@ -88,6 +88,7 @@ export default function Reader({
     window.dispatchEvent(
       new CustomEvent("archive:open-assistant", {
         detail: {
+          surfaceId: activeSurface?.surfaceId,
           title: activeSurface?.title ?? contextTitle,
           dateText: activeSurface?.dateText ?? contextSubtitle,
           imageState: activeSurface?.image.state,

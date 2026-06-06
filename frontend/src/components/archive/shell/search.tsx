@@ -11,16 +11,24 @@ import {
 import Link from "next/link";
 import { fuzzySearchSurfaces } from "@/lib/archive-data";
 import {
-  createWebLLMSession,
-  type WebLLMChatMessage,
-  type WebLLMSession,
-  type WebLLMState,
-} from "@/lib/webllm-adapter";
+  assistantPageKey,
+  loadAssistantMessages,
+  saveAssistantMessages,
+  type StoredAssistantMessage,
+} from "@/lib/assistant-memory";
+import { buildAssistantEvidence } from "@/lib/assistant-retrieval";
+import {
+  createQwenAssistantSession,
+  type AssistantModelState,
+  type QwenAssistantSession,
+  type QwenChatMessage,
+} from "@/lib/qwen35-adapter";
 import { ImgBadge, StatusChip } from "../primitives";
 
 export type SearchMode = "search" | "assistant";
 
 export interface AssistantContext {
+  surfaceId?: string;
   title?: string;
   dateText?: string;
   imageState?: string;
@@ -30,12 +38,7 @@ export interface AssistantContext {
   objectType?: string;
 }
 
-interface AssistantMessage {
-  id: string;
-  role: "user" | "assistant";
-  content: string;
-  mode?: "send" | "research";
-}
+type AssistantMessage = StoredAssistantMessage;
 
 /**
  * In-shell fuzzy search. Lives on the right (same width as the counts card),
@@ -53,31 +56,38 @@ export default function SearchBox({
   const [query, setQuery] = useState("");
   const [draft, setDraft] = useState("");
   const [messages, setMessages] = useState<AssistantMessage[]>([]);
-  const [webllm, setWebllm] = useState<WebLLMState>({ status: "idle" });
+  const [assistantModel, setAssistantModel] = useState<AssistantModelState>({
+    status: "idle",
+  });
   const [researchMode, setResearchMode] = useState(false);
   const [pendingMode, setPendingMode] = useState<"send" | "research" | null>(null);
-  const sessionRef = useRef<WebLLMSession | null>(null);
+  const [loadedMemoryKey, setLoadedMemoryKey] = useState("");
+  const sessionRef = useRef<QwenAssistantSession | null>(null);
   const loadingRef = useRef(false);
   const results = useMemo(() => fuzzySearchSurfaces(query), [query]);
   const trimmed = query.trim();
   const isAssistant = mode === "assistant";
+  const pageKey = useMemo(
+    () => assistantPageKey(assistantContext),
+    [assistantContext],
+  );
 
-  const prepareWebLLM = useCallback(async () => {
+  const prepareQwen = useCallback(async () => {
     if (!isAssistant || sessionRef.current || loadingRef.current) return;
     loadingRef.current = true;
-    setWebllm({ status: "loading", message: "Preparing" });
+    setAssistantModel({ status: "loading", message: "Preparing" });
     try {
-      const session = await createWebLLMSession((message) =>
-        setWebllm({ status: "loading", message: message ? "Preparing" : "" }),
+      const session = await createQwenAssistantSession((message) =>
+        setAssistantModel({ status: "loading", message: message ? "Preparing" : "" }),
       );
       sessionRef.current = session;
-      setWebllm({
+      setAssistantModel({
         status: "ready",
         model: session.model,
         message: "Ready",
       });
     } catch (error) {
-      setWebllm({
+      setAssistantModel({
         status: "error",
         message:
           error instanceof Error
@@ -90,23 +100,28 @@ export default function SearchBox({
   }, [isAssistant]);
 
   useEffect(() => {
-    if (isAssistant) void prepareWebLLM();
-  }, [isAssistant, prepareWebLLM]);
+    if (!isAssistant) return;
+    setMessages(loadAssistantMessages(pageKey));
+    setLoadedMemoryKey(pageKey);
+  }, [isAssistant, pageKey]);
+
+  useEffect(() => {
+    if (!isAssistant || loadedMemoryKey !== pageKey) return;
+    saveAssistantMessages(pageKey, messages);
+  }, [isAssistant, loadedMemoryKey, messages, pageKey]);
 
   const askAssistant = async () => {
     const question = draft.trim();
     if (!question) return;
-    if (!sessionRef.current) {
-      await prepareWebLLM();
-    }
-    const session = sessionRef.current;
-    if (!session) return;
 
     const modeLabel = researchMode ? "research" : "send";
-    const history: WebLLMChatMessage[] = messages.map(({ role, content }) => ({
+    const history: QwenChatMessage[] = messages.map(({ role, content }) => ({
       role,
       content,
     }));
+    const evidence = buildAssistantEvidence(question, assistantContext, {
+      research: researchMode,
+    });
     const userMessage: AssistantMessage = {
       id: `user-${Date.now()}`,
       role: "user",
@@ -116,7 +131,31 @@ export default function SearchBox({
     setMessages((current) => [...current, userMessage]);
     setDraft("");
     setPendingMode(modeLabel);
-    setWebllm((state) => ({
+
+    if (!evidence.hasEvidence) {
+      setMessages((current) => [
+        ...current,
+        {
+          id: `assistant-${Date.now()}`,
+          role: "assistant",
+          content: evidence.fallbackAnswer ?? "No matching archive evidence.",
+          mode: modeLabel,
+        },
+      ]);
+      setPendingMode(null);
+      return;
+    }
+
+    if (!sessionRef.current) {
+      await prepareQwen();
+    }
+    const session = sessionRef.current;
+    if (!session) {
+      setPendingMode(null);
+      return;
+    }
+
+    setAssistantModel((state) => ({
       ...state,
       status: "loading",
       message: researchMode ? "Researching" : "Thinking",
@@ -125,6 +164,7 @@ export default function SearchBox({
       const response = await session.ask(question, assistantContext ?? undefined, {
         history,
         research: researchMode,
+        evidence: evidence.contextText,
       });
       setMessages((current) => [
         ...current,
@@ -135,9 +175,9 @@ export default function SearchBox({
           mode: modeLabel,
         },
       ]);
-      setWebllm((state) => ({ ...state, status: "ready", message: "Ready" }));
+      setAssistantModel((state) => ({ ...state, status: "ready", message: "Ready" }));
     } catch (error) {
-      setWebllm({
+      setAssistantModel({
         status: "error",
         model: session.model,
         message: error instanceof Error ? error.message : "Assistant request failed.",
@@ -152,9 +192,9 @@ export default function SearchBox({
     void askAssistant();
   };
 
-  const assistantBusy = webllm.status === "loading";
-  const assistantReady = webllm.status === "ready";
-  const assistantUnavailable = webllm.status === "error";
+  const assistantBusy = assistantModel.status === "loading";
+  const assistantReady = assistantModel.status !== "error";
+  const assistantUnavailable = assistantModel.status === "error";
 
   if (isAssistant) {
     return (

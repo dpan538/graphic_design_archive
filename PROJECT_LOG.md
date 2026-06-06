@@ -6531,3 +6531,83 @@ Verification:
 - Browser interaction check confirmed the top-left Assistant title toggles
   research mode, and the bottom Assistant control closes the open panel when
   clicked again.
+
+## 2026-06-06 - Assistant Model Correction: Qwen3.5-0.8B Only
+
+Scope:
+
+- Corrected the local assistant model/runtime path after review. This was a
+  frontend assistant integration pass only: no source capture, image download,
+  rights upgrade, surface rebuild, or classification/deep-research change was
+  performed.
+
+Reason:
+
+- The project log and feasibility note from 2026-06-03 fixed the first-version
+  assistant model as `Qwen/Qwen3.5-0.8B`, with
+  `onnx-community/Qwen3.5-0.8B-ONNX` as the local runtime artifact.
+- The previous frontend adapter incorrectly introduced a Llama/WebLLM runtime
+  example path. That contradicted the documented project rule and has been
+  removed from runtime code.
+
+Model/runtime rule:
+
+- `Qwen/Qwen3.5-0.8B` is the only assistant generation model.
+- `onnx-community/Qwen3.5-0.8B-ONNX` is the only frontend runtime artifact.
+- No Llama model, WebLLM fallback model, hosted LLM API, or alternate local
+  generation model is allowed in the assistant path.
+- Normal Assistant mode and Research mode use the same Qwen3.5-0.8B session.
+  Research mode only changes retrieval breadth and response structure; it is
+  not a separate model and must not silently fall back to another runtime.
+
+Implementation:
+
+- Replaced the WebLLM/Llama adapter with a Qwen3.5 adapter aligned to the
+  existing probes:
+  `frontend/scripts/probe-qwen35-runtime.mjs` and
+  `frontend/scripts/probe-qwen35-generation.mjs`.
+- Added a binding clarification to
+  `docs/system/LOCAL_WEBLLM_RAG_FEASIBILITY_v0.md` so the older model-family
+  comparison cannot be read as permission to use Llama or any fallback runtime.
+- Reused the already tested Transformers.js loading shape:
+  `Qwen3_5ForConditionalGeneration`, `AutoTokenizer`, q4 token/decoder
+  weights, fp16 vision encoder, and explicit ONNX external-data entries.
+- Kept the model lazy-loaded on first actual assistant question so opening the
+  panel does not immediately trigger a heavy local model load.
+
+Retrieval and memory guardrails:
+
+- Added a deterministic local archive-retrieval gate before model invocation.
+  If no candidate archive evidence is retrieved, the UI returns an
+  archive-limited answer without calling Qwen.
+- Added same-page assistant memory with a 3-minute TTL, stored in
+  `sessionStorage` and capped to the last 12 messages per page.
+- The memory store clears after more than 3 page switches. It is conversation
+  context only, not archive evidence, and it is not written back into the
+  project database.
+- The active `surfaceId` is now passed into the assistant open event so page
+  memory and retrieval can use a stable object key.
+
+Verification target:
+
+- Runtime source scan should show no Llama/WebLLM adapter references in
+  `frontend/src/lib`, `frontend/src/components`, or `frontend/scripts`.
+- Historical documentation may still mention Llama or WebLLM as comparison
+  background, but those names are not allowed in the current assistant runtime
+  path.
+
+Verification:
+
+- `npm run build` passed in `frontend/`; Next generated 7914/7914 static pages.
+  The familiar slow static-page retry warnings appeared, but the build exited
+  successfully.
+- `git diff --check` passed.
+- Runtime source scan over `frontend/src/lib`, `frontend/src/components`, and
+  `frontend/scripts` found no Llama/WebLLM adapter references.
+- Local browser smoke test used `http://127.0.0.1:3040/folders/region/france`.
+  Assistant rendered its chat textarea, did not overlap the bottom navigation,
+  did not show `WEBLLM`, `Llama`, or `Load WebLLM`, and did not trigger
+  Qwen/Hugging Face/ONNX model network requests before the user sends a
+  question.
+- Search still rendered as the separate search input in the same floating
+  container.

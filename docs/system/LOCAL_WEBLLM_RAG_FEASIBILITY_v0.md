@@ -83,6 +83,14 @@ Sources checked:
   long-lived immutable cache headers for model files served with the app.
   <https://developer.chrome.com/docs/ai/cache-models>
 
+Binding clarification after 2026-06-06 assistant correction:
+
+- The model-family comparison above is background research only. It does not
+  authorize a Llama, WebLLM catalog, Wllama, hosted API, or other fallback
+  runtime in the product assistant.
+- Product assistant generation is bound to `Qwen/Qwen3.5-0.8B` only, using
+  `onnx-community/Qwen3.5-0.8B-ONNX` as the runtime artifact.
+
 ## First Runtime Probe
 
 Date: 2026-06-03
