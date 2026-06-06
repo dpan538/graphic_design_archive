@@ -4,92 +4,90 @@ Date: 2026-06-06
 
 ## Product Rule
 
-The archive assistant has two response layers:
+Assistant is not Search.
 
-1. Instant Assistant
+Search returns matching archive records. Assistant uses local Qwen over a
+retrieved evidence brief to make the reading experience better: short guidance,
+recommendations, caveats, next checks, and conversational orientation.
+
+The archive assistant has two Qwen-backed modes:
+
+1. Assistant
 2. Research
 
-Instant Assistant must feel immediate. Target latency is under 5 seconds after
-the user sends a normal question. It must not block on Qwen, WebGPU, ONNX
-files, or any generation model. It answers first from:
+Assistant is the fast RAG mode. It should target a short answer, usually around
+80-120 characters when the question allows it. It may take longer on cold model
+load, but the answer itself must still come from Qwen, not from a scripted
+search-result template. Retrieval scripts prepare evidence; they do not pretend
+to be the assistant.
 
-- active surface context;
-- deterministic archive retrieval candidates;
-- image-state policy;
-- source and rights metadata;
-- short response scripts.
+Research is the longer RAG mode. It may use broader evidence and a more
+developed answer structure for relationship mapping, interpretation, and
+research planning.
 
-After the scripted answer is visible, the UI may ask Qwen3.5-0.8B for a very
-short fast-refine pass. That pass must be bounded by a small time budget. If it
-returns quickly, it may replace the same answer with a slightly better phrasing;
-if it misses the budget, it is ignored. The user should not wait for it.
+## Runtime Rule
 
-Qwen3.5-0.8B is still called from ordinary Assistant when possible, but only as
-a non-blocking fast-refine layer over the already visible scripted answer. The
-ordinary answer must never wait for model load or generation.
+- `Qwen/Qwen3.5-0.8B` is the only model identity.
+- `onnx-community/Qwen3.5-0.8B-ONNX` is the only frontend runtime artifact.
+- No Llama, hosted API, WebLLM catalog fallback, or alternate local generation
+  model is permitted.
+- Search must remain deterministic and usable without model load.
+- Assistant may prewarm Qwen after the panel opens.
+- If Qwen is cold, the UI may show a temporary preparation notice after about 3
+  seconds, but it must replace that notice with a Qwen answer once ready.
 
-Research is the only path that waits for Qwen3.5-0.8B. Research is for longer
-interpretive synthesis, relation mapping, or multi-record reading support. It
-may take longer and must remain visibly distinct from ordinary Assistant use.
+## RAG Contract
 
-Qwen may also be prewarmed in the background after Assistant opens. Prewarming
-is not a visible loading step and must not disable ordinary scripted answers.
+Retrieval provides:
+
+- active surface or folder context;
+- candidate records;
+- date/region/source/image-state evidence;
+- source links and rights labels when available;
+- compact notes only, not long raw text.
+
+Qwen provides:
+
+- a conversational answer;
+- a recommendation or caveat when useful;
+- a next reading move when the question is exploratory;
+- a short explanation of evidence limits when the archive does not support the
+  requested claim.
+
+Qwen must not:
+
+- invent titles, creators, dates, citations, or rights states;
+- answer by merely restating the active folder;
+- output engineering phrases such as `is indexed here`, `reading angle`, or
+  `current context`;
+- list many records unless the user asks for a list;
+- treat a current-archive ranking as an objective historical canon.
 
 ## Tone
 
-The assistant should sound like a concise archive research aide, not a generic
-chatbot. It should:
+The assistant should sound like a concise archive research aide:
 
-- start from the current archive record;
-- name uncertainty without apologizing too much;
-- avoid canon claims unless framed as current-archive navigation;
-- cite surface IDs, source names, and image states when available;
-- keep ordinary answers to one short paragraph;
-- avoid hallucinated external facts;
-- avoid saying copyright unless the user asks about copying, downloading,
-  reproducing, or rights.
+- direct;
+- human;
+- curious but not verbose;
+- grounded in the current archive evidence;
+- willing to say when evidence is weak;
+- useful even when the answer is provisional.
 
-## Scripted Ordinary Answers
+Examples of the intended shape:
 
-Current work:
-
-> This page is best read as a source-linked object record: title, date, image
-> state, and source are enough to orient the work. Use it as a starting point,
-> then open the source before making a stronger historical claim.
-
-Recommendation:
-
-> In the current archive, start with the highest-ranked candidate. This is an
-> archive-navigation pick based on date, region, image state, source visibility,
-> and graphic-design signals, not an objective canon.
-
-Rights/image:
-
-> Treat the image state as display evidence, not a permission shortcut. IMG03
-> can support open-image use; IMG01 and IMG02 stay source-linked unless a
-> stricter rights review upgrades them.
-
-Source:
-
-> Use the source name and source URL as the first citation layer. The archive
-> note can guide reading, but the source page remains the authority for object
-> metadata and rights evidence.
-
-Next check:
-
-> Compare the retrieved archive candidates first. That keeps the reading
-> grounded in source-visible records instead of drifting into general
-> design-history claims.
+- `Start with SURF-...; it is the strongest current archive candidate, but verify the source date before treating it as "first".`
+- `The archive does not show a strong 1970 Russia artwork candidate here; broaden to 1970s posters or Soviet visual communication.`
+- `This archive is a rights-aware graphic design index: use folders for routes, surfaces for source evidence, and Assistant for reading choices.`
 
 ## Implementation Binding
 
-- `frontend/src/lib/assistant-instant.ts` owns ordinary Assistant response
-  scripts and intent handling.
 - `frontend/src/lib/assistant-retrieval.ts` owns deterministic candidate
-  retrieval and structured evidence rows.
-- `frontend/src/lib/qwen35-adapter.ts` is used by Research and by the ordinary
-  fast-refine pass.
-- Ordinary Assistant must not wait for `createQwenAssistantSession`; it may
-  start or reuse the session only as a background refinement layer.
-- `Qwen/Qwen3.5-0.8B` is the only model identity. No Llama, hosted API,
-  WebLLM catalog fallback, or alternate local generation model is permitted.
+  retrieval and evidence compression.
+- `frontend/src/lib/qwen35-adapter.ts` owns Qwen prompt mode, answer length, and
+  local model runtime binding.
+- `frontend/src/components/archive/shell/search.tsx` sends normal Assistant
+  questions through Qwen fast mode and Research questions through Qwen research
+  mode.
+- No scripted ordinary-answer module should be used as the final Assistant
+  response layer.

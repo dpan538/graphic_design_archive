@@ -6561,6 +6561,72 @@ Verification:
   historical PROJECT_LOG scan descriptions.
 - Existing raw capture modifications and untracked raw probe directories remain
   unstaged and were not part of this frontend assistant pass.
+
+## 2026-06-06 - Assistant RAG Prompt Correction
+
+Scope:
+
+- Corrected the previous instant-assistant interpretation after product review.
+  This was a frontend assistant prompt/runtime and documentation pass only: no
+  source capture, image download, rights upgrade, surface rebuild, or archive
+  classification change was performed.
+
+Reason:
+
+- The project intent is not to turn Assistant into Search. Search should return
+  deterministic matching records; Assistant should improve reading and research
+  flow through local Qwen over a compact RAG evidence brief.
+- The prior script-first path made ordinary Assistant very fast, but it also
+  produced catalog-like replies such as folder restatements. That failed the
+  product goal: Assistant needs to be conversational, advisory, and useful for
+  archive orientation, recommendations, caveats, and research extension.
+
+Correction:
+
+- Removed the scripted ordinary-answer module from the runtime path. Retrieval
+  now prepares evidence only; Qwen fast mode is responsible for normal
+  Assistant answers.
+- Updated `frontend/src/components/archive/shell/search.tsx` so ordinary
+  Assistant calls the same local Qwen session used by Research. If Qwen is
+  cold, the UI shows a temporary preparation notice after about 3 seconds and
+  replaces it when the local model answer is ready.
+- Updated `frontend/src/lib/qwen35-adapter.ts` with a more human RAG prompt:
+  ordinary answers should be short, advisory, grounded in supplied evidence,
+  and avoid engineering/catalog phrases such as `is indexed here`,
+  `reading angle`, or `current context`.
+- Reduced the ordinary fast-answer cap to 56 new tokens so normal Assistant
+  remains a short-answer path rather than a long reasoning mode.
+- Replaced `docs/system/ASSISTANT_RESPONSE_STRATEGY_v0.md` so it now states:
+  Assistant is Qwen-backed fast RAG, Search is deterministic lookup, Research
+  is longer RAG, and no scripted ordinary-answer module should be used as the
+  final Assistant layer.
+
+Model/runtime rule:
+
+- `Qwen/Qwen3.5-0.8B` remains the only model identity.
+- `onnx-community/Qwen3.5-0.8B-ONNX` remains the only frontend runtime artifact.
+- No Llama, hosted API, WebLLM catalog fallback, or alternate local generation
+  model was introduced.
+
+Verification:
+
+- `npm run build` passed in `frontend/`; Next generated 7914/7914 static pages.
+  The known slow static-page retry warnings appeared, but the build exited
+  successfully.
+- `git diff --check` passed.
+- Runtime source scan over `frontend/src/lib`, `frontend/src/components`, and
+  `frontend/scripts` found no `Llama`, `WEBLLM`, `WebLLM`, or `Load WebLLM`
+  references.
+- Runtime source scan found no remaining `assistant-instant`,
+  `buildInstantAssistantAnswer`, `DRAFT_ANSWER`, or fast-refine draft path.
+- Commit-bound credential scan for `api_key`, `password`, `secret`, `cookie`,
+  `bearer`, `.env`, `/Users/`, and `token` found no real credentials. Hits were
+  false positives in `transformers.env`, tokenizer/max-token identifiers, and
+  historical PROJECT_LOG scan descriptions.
+- Local dev smoke test used `http://127.0.0.1:3040/folders/region/russia`.
+  A normal Assistant question no longer produced the old scripted
+  `is indexed here` / `Reading angle` / `Current context` response. On cold
+  model load, the UI showed a temporary local-Qwen preparation notice instead.
 - Local verification used `http://127.0.0.1:3040/folders/region/france`.
 - Browser check confirmed Assistant renders `close ×`, `Send`, and `Research`
   controls; it no longer renders `Load WebLLM`, a reference lookup, or an

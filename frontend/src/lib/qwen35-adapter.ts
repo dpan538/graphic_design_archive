@@ -26,7 +26,6 @@ export interface QwenAskOptions {
   history?: QwenChatMessage[];
   research?: boolean;
   fast?: boolean;
-  draft?: string;
   evidence?: string;
 }
 
@@ -102,7 +101,7 @@ const QWEN35_EXTERNAL_DATA = [
     data: "onnx/decoder_model_merged_q4.onnx_data",
   },
 ];
-const FAST_REFINE_MAX_NEW_TOKENS = 36;
+const ASSISTANT_FAST_MAX_NEW_TOKENS = 56;
 const ASSISTANT_MAX_NEW_TOKENS = 48;
 const RESEARCH_MAX_NEW_TOKENS = 180;
 
@@ -146,22 +145,25 @@ function sanitizeAnswer(answer: string) {
 
 function systemMessage(options?: QwenAskOptions) {
   const researchInstruction = options?.fast
-    ? "Fast refine mode: lightly improve the supplied draft using only the provided archive context. Return the final answer only, one compact paragraph, no new facts."
+    ? "Fast assistant mode: answer like a helpful archive research aide, not a search result. Give one compact human sentence or two very short sentences, around 80-120 characters when possible. Make a useful suggestion, comparison, caveat, or next reading move from the supplied evidence. For first, earliest, most, or recommend questions, choose one candidate from evidence and say why it is only a current-archive judgment. If the evidence only has a weak or mismatched object, say that and suggest a better query direction. Do not list many records. Do not repeat folder metadata. If the question asks generally about the archive, introduce the archive and suggest how to explore it."
     : options?.research
     ? "Research mode: use a more developed structure with Evidence, Reading, and Next checks. Do not expose hidden reasoning."
-    : "Assistant mode: answer in at most two compact sentences and no more than 45 words.";
+    : "Assistant mode: give a concise archive reading or recommendation in at most two compact sentences.";
   return {
     role: "system" as const,
     content: [
       "Archive Box local assistant.",
       `Model identity: ${QWEN35_MODEL_ID}.`,
+      "Archive identity: a rights-aware modern graphic design history archive index. It helps users read source-linked surfaces, compare folders, check image/rights state, and plan research routes.",
       "Use only supplied archive evidence, active context, and conversation memory.",
       "If evidence is absent or weak, say the archive does not currently contain enough evidence.",
       "For recommendations or superlatives, frame the answer as a current-archive navigation judgment, not an objective historical claim.",
       "Discussing metadata, source evidence, rights state, and archive navigation is allowed.",
       "Do not refuse as copyright infringement unless the user asks to copy, download, bypass rights, or reproduce protected content.",
       "Do not invent titles, artists, dates, or citations.",
-      "Cite surface IDs or source names when available.",
+      "Mention at most one surface ID or source name when it helps. Prefer advice over catalog prose.",
+      "Never answer by merely restating the active folder or current record.",
+      "Avoid phrases like 'is indexed here', 'reading angle', or 'current context'.",
       researchInstruction,
     ].join(" "),
   };
@@ -177,7 +179,6 @@ function evidenceMessage(
     content: [
       `ACTIVE_CONTEXT\n${contextBlock(context)}`,
       `ARCHIVE_EVIDENCE\n${options?.evidence || "No retrieved archive evidence."}`,
-      options?.draft ? `DRAFT_ANSWER\n${options.draft}` : "",
       `QUESTION\n${prompt}`,
     ]
       .filter(Boolean)
@@ -274,7 +275,7 @@ export async function createQwenAssistantSession(
           model,
           messages,
           maxNewTokens: options?.fast
-            ? FAST_REFINE_MAX_NEW_TOKENS
+            ? ASSISTANT_FAST_MAX_NEW_TOKENS
             : options?.research
             ? RESEARCH_MAX_NEW_TOKENS
             : ASSISTANT_MAX_NEW_TOKENS,

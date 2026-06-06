@@ -16,7 +16,6 @@ import {
   saveAssistantMessages,
   type StoredAssistantMessage,
 } from "@/lib/assistant-memory";
-import { buildInstantAssistantAnswer } from "@/lib/assistant-instant";
 import { buildAssistantEvidence } from "@/lib/assistant-retrieval";
 import {
   createQwenAssistantSession,
@@ -40,14 +39,7 @@ export interface AssistantContext {
 }
 
 type AssistantMessage = StoredAssistantMessage;
-const FAST_MODEL_PREPARE_BUDGET_MS = 3500;
-const FAST_MODEL_REFINE_BUDGET_MS = 4500;
-
-function timeout<T>(ms: number, value: T) {
-  return new Promise<T>((resolve) => {
-    window.setTimeout(() => resolve(value), ms);
-  });
-}
+const ASSISTANT_COLD_START_NOTICE_MS = 3000;
 
 /**
  * In-shell fuzzy search. Lives on the right (same width as the counts card),
@@ -72,6 +64,7 @@ export default function SearchBox({
   const [pendingMode, setPendingMode] = useState<"send" | "research" | null>(null);
   const [loadedMemoryKey, setLoadedMemoryKey] = useState("");
   const sessionRef = useRef<QwenAssistantSession | null>(null);
+  const sessionPromiseRef = useRef<Promise<QwenAssistantSession> | null>(null);
   const loadingRef = useRef(false);
   const results = useMemo(() => fuzzySearchSurfaces(query), [query]);
   const trimmed = query.trim();
@@ -82,29 +75,47 @@ export default function SearchBox({
   );
 
   const prepareQwen = useCallback(async () => {
-    if (!isAssistant || sessionRef.current || loadingRef.current) return;
-    loadingRef.current = true;
-    setAssistantModel({ status: "loading", message: "Preparing" });
+    if (!isAssistant) return null;
+    if (sessionRef.current) return sessionRef.current;
+
+    if (!sessionPromiseRef.current) {
+      loadingRef.current = true;
+      setAssistantModel({ status: "loading", message: "Preparing" });
+      sessionPromiseRef.current = createQwenAssistantSession((message) =>
+        setAssistantModel({
+          status: "loading",
+          message: message ? "Preparing" : "",
+        }),
+      )
+        .then((session) => {
+          sessionRef.current = session;
+          setAssistantModel({
+            status: "ready",
+            model: session.model,
+            message: "Ready",
+          });
+          return session;
+        })
+        .catch((error) => {
+          setAssistantModel({
+            status: "error",
+            message:
+              error instanceof Error
+                ? error.message
+                : "Assistant failed to initialize.",
+          });
+          throw error;
+        })
+        .finally(() => {
+          loadingRef.current = false;
+          sessionPromiseRef.current = null;
+        });
+    }
+
     try {
-      const session = await createQwenAssistantSession((message) =>
-        setAssistantModel({ status: "loading", message: message ? "Preparing" : "" }),
-      );
-      sessionRef.current = session;
-      setAssistantModel({
-        status: "ready",
-        model: session.model,
-        message: "Ready",
-      });
-    } catch (error) {
-      setAssistantModel({
-        status: "error",
-        message:
-          error instanceof Error
-            ? error.message
-            : "Assistant failed to initialize.",
-      });
-    } finally {
-      loadingRef.current = false;
+      return await sessionPromiseRef.current;
+    } catch {
+      return null;
     }
   }, [isAssistant]);
 
@@ -127,55 +138,6 @@ export default function SearchBox({
     saveAssistantMessages(pageKey, messages);
   }, [isAssistant, loadedMemoryKey, messages, pageKey]);
 
-  const refineInstantAnswer = useCallback(
-    async ({
-      question,
-      draftAnswer,
-      messageId,
-      evidence,
-    }: {
-      question: string;
-      draftAnswer: string;
-      messageId: string;
-      evidence: ReturnType<typeof buildAssistantEvidence>;
-    }) => {
-      if (!isAssistant) return;
-
-      if (!sessionRef.current) {
-        await Promise.race([
-          prepareQwen().then(() => true),
-          timeout(FAST_MODEL_PREPARE_BUDGET_MS, false),
-        ]);
-      }
-
-      const session = sessionRef.current;
-      if (!session) return;
-
-      const refined = await Promise.race([
-        session.ask(question, assistantContext ?? undefined, {
-          fast: true,
-          evidence: evidence.contextText,
-          draft: draftAnswer,
-        }),
-        timeout(FAST_MODEL_REFINE_BUDGET_MS, ""),
-      ]);
-      const next = refined.trim();
-      if (!next || next === draftAnswer.trim()) return;
-
-      setMessages((current) =>
-        current.map((message) =>
-          message.id === messageId
-            ? {
-                ...message,
-                content: next,
-              }
-            : message,
-        ),
-      );
-    },
-    [assistantContext, isAssistant, prepareQwen],
-  );
-
   const askAssistant = async () => {
     const question = draft.trim();
     if (!question) return;
@@ -193,28 +155,86 @@ export default function SearchBox({
     setMessages((current) => [...current, userMessage]);
     setDraft("");
 
+    const history: QwenChatMessage[] = messages.map(({ role, content }) => ({
+      role,
+      content,
+    }));
+
     if (!researchMode) {
-      const response = buildInstantAssistantAnswer({
-        question,
-        context: assistantContext,
-        evidence,
-      });
       const assistantMessageId = `assistant-${Date.now()}`;
-      setMessages((current) => [
-        ...current,
-        {
+      setPendingMode(modeLabel);
+      let noticeShown = false;
+      const noticeTimer = window.setTimeout(() => {
+        noticeShown = true;
+        setPendingMode(null);
+        setMessages((current) => [
+          ...current,
+          {
+            id: assistantMessageId,
+            role: "assistant",
+            content:
+              "Local Qwen is preparing. I’ll replace this with a short archive answer when the model is ready.",
+            mode: modeLabel,
+          },
+        ]);
+      }, ASSISTANT_COLD_START_NOTICE_MS);
+
+      const commitAssistantAnswer = (content: string) => {
+        const message: AssistantMessage = {
           id: assistantMessageId,
           role: "assistant",
-          content: response,
+          content,
           mode: modeLabel,
-        },
-      ]);
-      void refineInstantAnswer({
-        question,
-        draftAnswer: response,
-        messageId: assistantMessageId,
-        evidence,
-      });
+        };
+        setMessages((current) =>
+          current.some((item) => item.id === assistantMessageId)
+            ? current.map((item) =>
+                item.id === assistantMessageId ? message : item,
+              )
+            : [...current, message],
+        );
+      };
+
+      try {
+        const session = await prepareQwen();
+        window.clearTimeout(noticeTimer);
+        if (!session) {
+          commitAssistantAnswer(
+            "Local Qwen is unavailable in this browser, so I cannot give an assistant answer here.",
+          );
+          return;
+        }
+
+        setAssistantModel((state) => ({
+          ...state,
+          status: "loading",
+          message: "Thinking",
+        }));
+        const response = await session.ask(question, assistantContext ?? undefined, {
+          history,
+          fast: true,
+          evidence: evidence.contextText,
+        });
+        commitAssistantAnswer(
+          response ||
+            "I do not have enough archive context to answer that without guessing.",
+        );
+        setAssistantModel((state) => ({
+          ...state,
+          status: "ready",
+          message: "Ready",
+        }));
+      } catch (error) {
+        window.clearTimeout(noticeTimer);
+        commitAssistantAnswer(
+          error instanceof Error
+            ? `Local Qwen could not answer: ${error.message}`
+            : "Local Qwen could not answer this request.",
+        );
+      } finally {
+        window.clearTimeout(noticeTimer);
+        if (!noticeShown) setPendingMode(null);
+      }
       return;
     }
 
@@ -234,15 +254,7 @@ export default function SearchBox({
       return;
     }
 
-    const history: QwenChatMessage[] = messages.map(({ role, content }) => ({
-      role,
-      content,
-    }));
-
-    if (!sessionRef.current) {
-      await prepareQwen();
-    }
-    const session = sessionRef.current;
+    const session = await prepareQwen();
     if (!session) {
       setPendingMode(null);
       return;
