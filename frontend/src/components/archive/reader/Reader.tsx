@@ -41,7 +41,6 @@ export default function Reader({
   const [index, setIndex] = useState(
     Math.min(Math.max(initialIndex, 0), leaves.length - 1),
   );
-  const [researchOpen, setResearchOpen] = useState(false);
   const [visualCheck, setVisualCheck] = useState<{
     ok: boolean;
     count: number;
@@ -85,6 +84,21 @@ export default function Reader({
   const activeDossier = activeSurface
     ? dossierBySurfaceId.get(activeSurface.surfaceId)
     : undefined;
+  const openAssistant = useCallback(() => {
+    window.dispatchEvent(
+      new CustomEvent("archive:open-assistant", {
+        detail: {
+          title: activeSurface?.title ?? contextTitle,
+          dateText: activeSurface?.dateText ?? contextSubtitle,
+          imageState: activeSurface?.image.state,
+          rightsLabel: activeSurface?.rights.label,
+          sourceName: activeSurface?.sourceName,
+          creator: activeSurface?.creator,
+          objectType: activeSurface?.objectType,
+        },
+      }),
+    );
+  }, [activeSurface, contextSubtitle, contextTitle]);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -116,6 +130,20 @@ export default function Reader({
           style.display !== "none" &&
           Number(style.opacity) !== 0
         );
+      };
+      const scrollContainerFor = (el: Element) => {
+        const container = el.closest(
+          ".main-sheet, .sub-sheet, .archive-card, .source-slip, .appendix-sheet",
+        );
+        if (!container) return null;
+        const style = getComputedStyle(container);
+        const verticalScroll =
+          style.overflowY === "auto" || style.overflowY === "scroll";
+        return verticalScroll &&
+          (container as HTMLElement).scrollHeight >
+            (container as HTMLElement).clientHeight + 2
+          ? container
+          : null;
       };
       const intersects = (a: DOMRect, b: DOMRect) =>
         a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
@@ -151,8 +179,11 @@ export default function Reader({
         ).filter(visibleElement);
         for (const el of clippedContainers) {
           const style = getComputedStyle(el);
+          const verticalScroll =
+            style.overflowY === "auto" || style.overflowY === "scroll";
           if (
             style.overflow !== "visible" &&
+            !verticalScroll &&
             ((el as HTMLElement).scrollHeight > (el as HTMLElement).clientHeight + 2 ||
               (el as HTMLElement).scrollWidth > (el as HTMLElement).clientWidth + 2)
           ) {
@@ -167,11 +198,12 @@ export default function Reader({
           const rect = el.getBoundingClientRect();
           const style = getComputedStyle(el);
           const label = textOf(el).slice(0, 56);
+          const scrollContainer = scrollContainerFor(el);
           if (
             rect.left < leafRect.left - 1 ||
             rect.right > leafRect.right + 1 ||
-            rect.top < leafRect.top - 1 ||
-            rect.bottom > leafRect.bottom + 1
+            (!scrollContainer &&
+              (rect.top < leafRect.top - 1 || rect.bottom > leafRect.bottom + 1))
           ) {
             errors.push(`text overflow: ${label}`);
           }
@@ -243,12 +275,13 @@ export default function Reader({
       <div className="page-turn">
         <button
           type="button"
-          className="btn-turn btn-turn--ai"
-          onClick={() => setResearchOpen((v) => !v)}
-          aria-label="Open AI research panel"
-          title="AI research"
+          className="btn-turn btn-turn--assistant"
+          onClick={openAssistant}
+          aria-label="Open assistant"
+          title="Assistant"
         >
-          AI
+          <IconAssistant />
+          <span>Assistant</span>
         </button>
         <div className="page-turn__sep" aria-hidden />
         <button
@@ -276,7 +309,8 @@ export default function Reader({
       </div>
       <div
         className={`visual-check ${visualCheck.ok ? "visual-check--ok" : "visual-check--fail"}`}
-        title={visualCheck.sample}
+        data-release-note="remove-before-launch"
+        title={`Pre-release QA marker: ${visualCheck.sample}`}
         aria-live="polite"
       >
         <span>{visualCheck.ok ? "VIS OK" : `VIS ${visualCheck.count}`}</span>
@@ -409,92 +443,31 @@ export default function Reader({
     </>
   );
 
-  const researchPanel = (
-    <>
-      <div className="research-panel__header">
-        <div>
-          <div className="label-caps text-ink-soft">AI research</div>
-          <div className="font-bold text-lg leading-tight mt-1">
-            Research assistant
-          </div>
-        </div>
-        <button
-          type="button"
-          className="btn-turn research-panel__close"
-          onClick={() => setResearchOpen(false)}
-          aria-label="Close AI research panel"
-        >
-          X
-        </button>
-      </div>
-      <div className="panel-scroll research-panel__scroll">
-        <section className="research-current">
-          <div className="label-caps text-ink-soft">Current object</div>
-          <h3>{activeSurface?.title ?? contextTitle}</h3>
-          <dl>
-            <div>
-              <dt>date</dt>
-              <dd>{activeSurface?.dateText ?? "folder range"}</dd>
-            </div>
-            <div>
-              <dt>image</dt>
-              <dd>{activeSurface?.image.state ?? "register"}</dd>
-            </div>
-            <div>
-              <dt>rights</dt>
-              <dd>{activeSurface?.rights.label ?? "mixed source states"}</dd>
-            </div>
-            <div>
-              <dt>source</dt>
-              <dd>{activeSurface?.sourceName ?? contextSubtitle}</dd>
-            </div>
-          </dl>
-        </section>
-
-        <section className="research-factors">
-          <div className="label-caps text-ink-soft">Packet factors</div>
-          <div className="research-factor-grid">
-            {PACKET_FACTORS.map((factor) => (
-              <span key={factor}>{factor}</span>
-            ))}
-          </div>
-        </section>
-
-        <section className="research-queue">
-          <div className="label-caps text-ink-soft">Next review queue</div>
-          <ul>
-            <li>Assess whether the anchor can support main-sheet status.</li>
-            <li>Check source depth before adding editorial text pages.</li>
-            <li>Review rights state before any IMG01/IMG03 upgrade.</li>
-            <li>Use relation density to decide sub/card/appendix grouping.</li>
-          </ul>
-        </section>
-      </div>
-    </>
-  );
-
   return (
     <ArchiveShell
       main={main}
       folderInk={folderInk}
       leftPanel={packetPanel}
       leftPanelLabel="Content"
-      rightPanel={researchPanel}
-      rightPanelOpen={researchOpen}
-      onRightPanelOpenChange={setResearchOpen}
     />
   );
 }
 
-const PACKET_FACTORS = [
-  "Impact",
-  "Source depth",
-  "Relation density",
-  "Period span",
-  "Rights state",
-  "Region scarcity",
-  "Editorial need",
-];
+function IconAssistant() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden>
+      <path d="M12 3v3" />
+      <path d="M12 18v3" />
+      <path d="M3 12h3" />
+      <path d="M18 12h3" />
+      <path d="M7.8 7.8l2.1 2.1" />
+      <path d="M14.1 14.1l2.1 2.1" />
+      <path d="M16.2 7.8l-2.1 2.1" />
+      <path d="M9.9 14.1l-2.1 2.1" />
+      <circle cx="12" cy="12" r="2.6" />
+    </svg>
+  );
+}
 
 function formatAnchorType(value: string) {
   return value.replace(/_/g, " ");

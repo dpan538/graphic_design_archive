@@ -2,10 +2,10 @@
  * No-scroll pagination engine.
  *
  * Because the viewport never scrolls, content is packed into fixed-capacity
- * leaves at build time. Each leaf is a single physical (A4) page; the reader
- * shows one leaf (single) or two adjacent leaves (facing spread). Overflow
- * tables may create appendix leaves (AX01-AX06). A folder always opens on one or more
- * register/index leaves (L09). Pagination is deterministic.
+ * leaves at build time. Each leaf is a single physical (A4) page. Automatic
+ * appendix leaves are currently disabled while AX layouts are redesigned. A
+ * folder always opens on one or more register/index leaves (L09). Pagination
+ * is deterministic.
  */
 
 import type { Folder, Surface, SurfaceTable } from "@/types/archive";
@@ -202,12 +202,14 @@ function isTextCapableSheet(surface: Surface): boolean {
   return layoutId === "L02.text" || needsTextLeaf(surface, layoutId);
 }
 
+const AUTO_APPENDIX_PACKETS: boolean = false;
+
 /**
- * Appendix leaves carry evidence ledgers that should not turn the text page
- * back into a specification sheet. One surface gets at most one appendix packet;
- * the packet type follows AX01-AX06 priorities.
+ * Appendix leaves are temporarily disabled in the reader. AX studies remain in
+ * the lab, but the long evidence strips currently interrupt primary reading.
  */
 function appendixPacketFor(surface: Surface, tables: SurfaceTable[]): AppendixPacket | null {
+  if (!AUTO_APPENDIX_PACKETS) return null;
   if (surface.surfaceType !== "sheet") return null;
 
   const relations = tableByKind(tables, "RELATIONS");

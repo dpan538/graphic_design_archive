@@ -6411,3 +6411,42 @@ Verification:
     archive sequence;
   - no visible `spread` control text remains in the reader;
   - the sample page reported `VIS OK`.
+
+## 2026-06-06 - Reader Inspection Fixes After Packet Prototype
+
+Scope:
+
+- Follow-up frontend corrections from live reader inspection.
+- No source capture, image download, rights upgrade, or classification/deep
+  research change was performed.
+
+Reader shell changes:
+
+- Narrowed the left packet/content panel by about 30% on desktop.
+- Changed the bottom AI entry into a square icon + `Assistant` button.
+- Removed the separate right-side AI research panel from the reader flow.
+- Search and Assistant now reuse the same floating-window container, but the
+  entry point decides the render path: Search opens search-only UI; Assistant
+  opens assistant-only UI with current object context and a reference lookup.
+- Added an explicit WebLLM adapter path for Assistant. It attempts to load the
+  WebLLM runtime in-browser via WebGPU, then sends the current archive object
+  context into a local assistant prompt. The UI reports loading, ready, and
+  error states rather than presenting a fake chat surface.
+- Marked the bottom-left `VIS` reader badge as a pre-release QA marker that
+  must be removed before launch.
+
+Surface/layout containment:
+
+- Added an internal vertical-scroll fallback for main sheets, sub sheets, and
+  archive cards inside the single-page reader so overlong image/text cards do
+  not force the outer page frame to break.
+- Updated the reader visual check so deliberately scrollable internal cards do
+  not count as page overflow failures.
+
+Appendix routing:
+
+- Temporarily disabled automatic reader appendix packets. AX01 rights strips,
+  AX05 source statements, and AX06 typed-index pages remain in the appendix lab
+  for redesign, but they are no longer inserted into the primary reading flow.
+- Reason: the current long/narrow appendix designs interrupt body reading,
+  compete with the main sheet, and create visible overflow/legibility issues.

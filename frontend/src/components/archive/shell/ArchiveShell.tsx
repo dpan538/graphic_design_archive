@@ -3,13 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import SearchBox from "./search";
+import SearchBox, { type AssistantContext, type SearchMode } from "./search";
 
 /**
  * Fixed, non-scrolling viewport. No sidebar column and no top/bottom bar.
  * Navigation is a set of large floating icons (top-right): Index / Folders /
- * Search. Search expands in the corner-stack. Reader-specific panels can sit
- * on the left (packet structure) and right (research assistant).
+ * Search. Search expands in the corner-stack. Reader-specific structure can
+ * sit on the left; assistant mode shares the search window.
  */
 export default function ArchiveShell({
   main,
@@ -46,6 +46,9 @@ export default function ArchiveShell({
   const [panelOpen, setPanelOpen] = useState(false);
   const [leftPanelOpen, setLeftPanelOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [searchMode, setSearchMode] = useState<SearchMode>("search");
+  const [assistantContext, setAssistantContext] =
+    useState<AssistantContext | null>(null);
   const [searchFrame, setSearchFrame] = useState<{
     top: number;
     maxHeight: number;
@@ -54,6 +57,19 @@ export default function ArchiveShell({
   const searchButtonRef = useRef<HTMLButtonElement | null>(null);
   const searchPanelRef = useRef<HTMLDivElement | null>(null);
   const countCardRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const openAssistant = (event: Event) => {
+      const detail = (event as CustomEvent<AssistantContext>).detail ?? null;
+      setAssistantContext(detail);
+      setSearchMode("assistant");
+      setSearchOpen(true);
+    };
+    window.addEventListener("archive:open-assistant", openAssistant);
+    return () => {
+      window.removeEventListener("archive:open-assistant", openAssistant);
+    };
+  }, []);
 
   // Left-edge swipe → back. Backspace also goes back.
   useEffect(() => {
@@ -219,9 +235,12 @@ export default function ArchiveShell({
           ref={searchButtonRef}
           type="button"
           className="nav-icon"
-          data-active={searchOpen}
+          data-active={searchOpen && searchMode === "search"}
           aria-label="Search"
-          onClick={() => setSearchOpen((v) => !v)}
+          onClick={() => {
+            setSearchMode("search");
+            setSearchOpen((v) => (searchMode === "search" ? !v : true));
+          }}
         >
           <IconSearch />
           <span>Search</span>
@@ -253,7 +272,11 @@ export default function ArchiveShell({
                 }
           }
         >
-          <SearchBox onClose={() => setSearchOpen(false)} />
+          <SearchBox
+            mode={searchMode}
+            assistantContext={assistantContext}
+            onClose={() => setSearchOpen(false)}
+          />
         </div>
       ) : null}
 
