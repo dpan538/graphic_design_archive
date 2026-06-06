@@ -51,6 +51,7 @@ RECORD_FILES = [
     DATA / "capture_batch_commons_open_global_south_image_2026_records.csv",
     DATA / "capture_batch_commons_open_period_balance_image_2026_records.csv",
     DATA / "capture_batch_commons_open_release_gate_expansion_2026_records.csv",
+    DATA / "capture_batch_commons_open_contemporary_region_research_2026_records.csv",
 ]
 
 PAYLOAD_PATHS = [

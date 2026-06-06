@@ -4,26 +4,26 @@ Scope: generated public-surface payload and existing surface-group membership hi
 
 ## Summary
 
-- Public surfaces: 7716
-- Main sheets: 7462
+- Public surfaces: 7836
+- Main sheets: 7582
 - Sub sheets: 240
 - Text sheets: 242
-- Inferred parent main sheets: 185
-- Main sheets with more than 2 sub sheets: 121
-- Main sheets with more than 5 text sheets: 1
+- Inferred parent main sheets: 455
+- Main sheets with more than 2 sub sheets: 359
+- Main sheets with more than 5 text sheets: 5
 
 ## Template Distribution
 
 - card.sparse.v0: 14
 - sheet.compound.v0: 21
 - sheet.img00.v0: 36
-- sheet.main.v0: 7403
+- sheet.main.v0: 7523
 - sheet.text.v0: 242
 
 ## Publication Role Distribution
 
 - (blank): 2
-- main_sheet: 7462
+- main_sheet: 7582
 - merge_candidate_support_packet: 14
 - support_packet_appendix_text: 235
 - thin_visual_support_packet: 3

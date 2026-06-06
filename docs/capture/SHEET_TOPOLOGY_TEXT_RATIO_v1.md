@@ -4,23 +4,23 @@ Scope: assessment-only audit of public-surface structure, research dossier page 
 
 ## Summary
 
-- public_surfaces: 7716 (All generated public surfaces.)
-- main_sheets: 7462 (publicationRole=main_sheet.)
+- public_surfaces: 7836 (All generated public surfaces.)
+- main_sheets: 7582 (publicationRole=main_sheet.)
 - sub_or_support_surfaces: 254 (All surfaces not marked as main_sheet.)
 - independent_text_sheet_surfaces: 242 (templateId=sheet.text.v0.)
-- independent_text_sheet_surface_rate: 3.14 (Independent text-sheet surfaces / all surfaces.)
-- sub_or_support_surface_rate: 3.29 (Non-main surfaces / all surfaces.)
-- research_dossiers: 7716 (Generated dossier packets.)
-- single_anchor_dossiers: 7452 (Dossiers still built around one source anchor.)
+- independent_text_sheet_surface_rate: 3.09 (Independent text-sheet surfaces / all surfaces.)
+- sub_or_support_surface_rate: 3.24 (Non-main surfaces / all surfaces.)
+- research_dossiers: 7836 (Generated dossier packets.)
+- single_anchor_dossiers: 7572 (Dossiers still built around one source anchor.)
 - compound_or_group_dossiers: 264 (Dossiers with grouped children or non-single source scope.)
-- dossiers_with_any_text_page: 7702 (Dossier pageSequence contains at least one text_page.)
+- dossiers_with_any_text_page: 7822 (Dossier pageSequence contains at least one text_page.)
 - dossiers_with_two_or_more_text_pages: 0 (Closer to the desired main-sheet package shape.)
-- dossiers_with_more_than_two_pages: 2008 (Dossiers with meaningful packet depth beyond main + one text page.)
+- dossiers_with_more_than_two_pages: 2034 (Dossiers with meaningful packet depth beyond main + one text page.)
 - average_dossier_pages: 2.28 (Mean pages per research dossier.)
 - average_dossier_text_pages: 1.00 (Mean text_page entries per research dossier.)
-- group_candidates: 257 (Potential grouping/parent opportunities from surface_group_candidates_v1.csv.)
-- strong_group_candidates: 143 (Medium/high confidence groups with at least three members.)
-- group_candidate_member_total: 1773 (Total member_count across group candidates; diagnostic only and may overlap.)
+- group_candidates: 553 (Potential grouping/parent opportunities from surface_group_candidates_v1.csv.)
+- strong_group_candidates: 351 (Medium/high confidence groups with at least three members.)
+- group_candidate_member_total: 8132 (Total member_count across group candidates; diagnostic only and may overlap.)
 
 ## Interpretation
 
@@ -31,23 +31,23 @@ Scope: assessment-only audit of public-surface structure, research dossier page 
 
 ## Top Grouping Opportunities
 
-- GRP0160 · same_source_collection · members=47 · confidence=medium · parent=Assemblée générale du... (Cercle de la librairie, de l'imprimerie, de la papeterie...)
-- GRP0119 · same_series_stem · members=46 · confidence=medium · parent=NAIDOC 2020 poster
-- GRP0143 · same_source_collection · members=40 · confidence=medium · parent=Masayoshi Nakajo, Turn on the Light of Sagacity (for NAGOYA Design Center)
-- GRP0159 · same_source_collection · members=35 · confidence=medium · parent=Imprimerie de l'"Oeuvre" saccagée par "les Camelots du Roy" : [photographie de presse] / Agence Meurisse
-- GRP0016 · folder_cell_decade · members=34 · confidence=medium · parent=Imprimerie de l'"Oeuvre" saccagée par "les Camelots du Roy" : [photographie de presse] / Agence Meurisse
-- GRP0153 · same_source_collection · members=32 · confidence=medium · parent=Paris, Boulevards Sébastopol et Strasbourg [...] Arts, commerce et industrie [...] [placard d'annonces publicitaires pour différents commerces] : [affiche] / Belloguet, del.
-- GRP0204 · same_source_collection · members=32 · confidence=medium · parent=Poster, 'The World According to Ronald Reagan'
-- GRP0017 · folder_cell_decade · members=30 · confidence=medium · parent=Boutique : réclame originale : [photographie de presse] / Agence Mondial
-- GRP0142 · same_source_collection · members=30 · confidence=medium · parent=Attention
-- GRP0215 · same_source_collection · members=30 · confidence=medium · parent=A radiologist conducting a chest x-ray of a young man in order to detect early signs of tuberculosis. Colour lithograph after A. Wilquin, 1949.
-- GRP0020 · folder_cell_decade · members=26 · confidence=medium · parent=Paris, Boulevards Sébastopol et Strasbourg [...] Arts, commerce et industrie [...] [placard d'annonces publicitaires pour différents commerces] : [affiche] / Belloguet, del.
-- GRP0198 · same_source_collection · members=23 · confidence=medium · parent=For Earlier Matinees
-- GRP0217 · same_source_collection · members=23 · confidence=medium · parent=Sexually transmitted diseases are rife after plague, tuberculosis and yellow fever have been overcome. Colour lithograph after H. Devitt Welsh.
-- GRP0072 · folder_cell_decade · members=21 · confidence=medium · parent=WPA federal art regional exhibit, Montclair Museum Easel painting, graphic arts, poster display, index of design.
-- GRP0082 · folder_cell_decade · members=21 · confidence=medium · parent='You are helping by walking short distances' poster
-- GRP0155 · same_source_collection · members=21 · confidence=medium · parent=Théâtre des fixions : [estampe] ([1er état, avec le texte typographié]) / R, [Félicien Rops]
-- GRP0074 · folder_cell_decade · members=20 · confidence=medium · parent='Poor & Ignored' poster
-- GRP0216 · same_source_collection · members=20 · confidence=medium · parent=A portico and the cross of Godfrey of Bouillon; representing academia and tuberculosis, as the elements of the sanatorium for students in the Netherlands. Lithograph by N. Raemaekers, ca. 1951 (?).
-- GRP0040 · folder_cell_decade · members=19 · confidence=medium · parent=For Earlier Matinees
-- GRP0138 · same_source_collection · members=19 · confidence=medium · parent=Jetzt auch mottenecht durch Eulan
+- GRP0224 · folder_cell_decade · members=625 · confidence=medium · parent=ROM 1971 MiNr2981 pm B002.jpg
+- GRP0238 · folder_cell_decade · members=575 · confidence=medium · parent=The HERETICS (2009) film poster.jpg
+- GRP0253 · folder_cell_decade · members=320 · confidence=medium · parent=Earth in Flower-ISBN-9781934431290-COVER-REAR-2014.jpg
+- GRP0177 · folder_cell_decade · members=220 · confidence=medium · parent=American Flag. (Matamoros, Tamaulipas, Mexico), Vol. 1, No. 75, Ed. 1 Saturday, February 13, 1847 - DPLA - 829d781bea63aba95373f3512b20f317 (page 1).jpg
+- GRP0221 · folder_cell_decade · members=207 · confidence=medium · parent=ITA-AMG-SI 1943 Scott01N03 pm B002.jpg
+- GRP0220 · folder_cell_decade · members=161 · confidence=medium · parent=Tellurium-214886.jpg
+- GRP0262 · folder_cell_decade · members=156 · confidence=medium · parent=متحف الشرطة القومي - إكتشف الآثار المصرية - وزارة السياحة والآثار
+- GRP0223 · folder_cell_decade · members=136 · confidence=medium · parent=FIN 1963 MiNr0561Ix pm B002a.jpg
+- GRP0119 · folder_cell_decade · members=130 · confidence=medium · parent=.:: Home | Museo Histórico de Cera ::.
+- GRP0239 · folder_cell_decade · members=120 · confidence=medium · parent=Aki-Kaurismaki-1985.jpg
+- GRP0078 · folder_cell_decade · members=118 · confidence=medium · parent=Inicio - BiblioValle
+- GRP0198 · folder_cell_decade · members=111 · confidence=medium · parent=Inventory of unscanned negatives in the Lane Brothers photographic collection, Things series (number 2 of 2)
+- GRP0228 · folder_cell_decade · members=110 · confidence=medium · parent=The D&D Rules Cyclopedia
+- GRP0222 · folder_cell_decade · members=102 · confidence=medium · parent=League of Women Voters of Winston-Salem Bulletin (1952-1992) - DPLA - 88f3caa36b258036cc1ea55138f3190f (page 87).jpg
+- GRP0020 · folder_cell_decade · members=87 · confidence=medium · parent=Random Processes in the Brain- from experimental data to math and back-143.jpg
+- GRP0248 · folder_cell_decade · members=85 · confidence=medium · parent=Časopis Politički glasnik 22.jpg
+- GRP0240 · folder_cell_decade · members=81 · confidence=medium · parent=Poster for Lethal Art: The End of Hunger
+- GRP0234 · folder_cell_decade · members=80 · confidence=medium · parent=Haitian room, Taunton Inn, Taunton, Mass (71577).jpg
+- GRP0187 · folder_cell_decade · members=59 · confidence=medium · parent=HOME - NATIONAL CENTRE FOR ARTS & CALTURE
+- GRP0235 · folder_cell_decade · members=58 · confidence=medium · parent=Jacaré (1942) film poster.jpg

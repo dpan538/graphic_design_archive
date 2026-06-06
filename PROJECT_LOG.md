@@ -6213,3 +6213,151 @@ Verification:
   mirrored public payload from about 107 MB to about 78 MB. A post-compact
   rebuild kept the same surface and image-state metrics, and another
   `npm run build` passed with 7794/7794 static pages generated.
+
+## 2026-06-06 - Source coverage v2 and main-sheet research value audit
+
+Purpose:
+
+- Reframe the suspicious `source_coverage_rate_v1=100.00` result as a capped
+  pool/time-fill signal rather than a true release-health signal.
+- Add a stricter source coverage v2 metric that includes distribution,
+  period balance, source-visible rate, and main-sheet research quality.
+- Audit whether current main sheets have enough source text, impact/context,
+  image evidence, and grouping basis to remain standalone research anchors.
+- Run a bounded contemporary/non-mainstream Commons calibration capture after
+  the previous large Commons expansion showed diminishing returns.
+
+Capture:
+
+- Added `scripts/run_commons_open_contemporary_region_research_capture_2026_v1.py`.
+- Output records:
+  `data/capture_batch_commons_open_contemporary_region_research_2026_records.csv`.
+- Output summary:
+  `data/capture_batch_commons_open_contemporary_region_research_2026_source_summary.csv`.
+- Output report:
+  `docs/capture/COMMONS_OPEN_CONTEMPORARY_REGION_RESEARCH_CAPTURE_2026_v1.md`.
+- Records captured: 120.
+- Distinct active source names: 120.
+- Period distribution: `2000_2026` 83, `1970_2000` 28, `1930_1970` 9.
+- Macro-region distribution: Latin America 74, Middle East and North Africa 34,
+  Africa 10, South Asia 2.
+- Explicit 2026 rows: 0, so this round did not introduce current-year fallback
+  pollution.
+- Query failures: 20.
+- Boundary: metadata, source links, rights evidence, source-derived text, and
+  source-hosted image URLs only. No image binaries, thumbnails, screenshots,
+  raw API payloads, cookies, or browser sessions were saved.
+- Interpretation: Commons still works for small open-image calibration, but the
+  high-frequency region/object paths are now heavily exhausted by previous
+  batches. A serious 2000-2026 expansion needs non-Commons project/studio,
+  festival, independent archive, type-design, community, and design-platform
+  sources.
+
+Surface rebuild:
+
+- Added the contemporary region research CSV to
+  `scripts/rebuild_public_surfaces_from_records.py`.
+- Rebuilt generated and frontend public payloads.
+- Rebuilt rows: 7956.
+- Public surfaces: 7836.
+- Folders: 50.
+- Surface image states: `IMG00` 43, `IMG01` 37, `IMG02` 1327, `IMG03` 6171,
+  `IMG04` 258.
+- Source-visible image-ready surfaces: 7535/7836 (96.16%).
+- Weighted publication image score: 6294.85/7836 (80.33%).
+- Mirrored compact public payloads are about 79 MB each, still under the
+  repository host's 100 MB per-file hard limit.
+
+Source coverage v2:
+
+- Added `scripts/audit_source_coverage_rate_v2.py`.
+- Added `data/source_coverage_rate_v2.csv`.
+- Added `data/source_coverage_period_breakdown_v2.csv`.
+- Added `data/source_coverage_region_breakdown_v2.csv`.
+- Added `docs/capture/SOURCE_COVERAGE_RATE_v2.md`.
+- `source_pool_period_fill_rate`: 100.00. This is the old v1 capacity/time-fill
+  signal and should no longer be presented alone as true coverage health.
+- `strict_distribution_adjusted_source_coverage_rate`: 28.96.
+- `period_surface_balance_rate`: 81.92.
+- `period_quality_main_balance_rate`: 38.88.
+- `region_surface_balance_rate`: 12.50.
+- `region_quality_main_balance_rate`: 8.55.
+- `source_visible_surface_rate`: 96.16.
+- `research_quality_adjusted_source_coverage_rate_v2`: 3.20.
+- Interpretation: the archive has enough source volume to fill the old release
+  target, but it does not yet have healthy region distribution or enough
+  quality main-sheet research anchors.
+
+Main-sheet research value audit:
+
+- Added `scripts/audit_main_sheet_research_value_v1.py`.
+- Added `data/main_sheet_research_value_audit_v1.csv`.
+- Added `data/main_sheet_research_value_period_breakdown_v1.csv`.
+- Added `docs/capture/MAIN_SHEET_RESEARCH_VALUE_AUDIT_v1.md`.
+- Public surfaces audited: 7836.
+- Main sheets audited: 7582.
+- Recommended actions among main sheets:
+  - `keep_main`: 3142.
+  - `keep_main_add_editorial_text`: 66.
+  - `promote_text_or_appendix`: 189.
+  - `demote_to_sub`: 4176.
+  - `demote_to_card`: 9.
+- The audit separates source-derived text from generated/editorial context.
+  It uses impact as internal triage only; impact does not upgrade rights,
+  authorship, source authority, or `IMG01`/`IMG03`.
+- Interpretation: the main-sheet count is over-granted. Many image-bearing
+  records have enough metadata to be useful but not enough research structure
+  to stand alone. They should become subsheets/cards/support packets unless
+  grouped under a stronger parent or given reviewed editorial text pages.
+
+Sheet/topology after rebuild:
+
+- Main sheets: 7582.
+- Sub sheets: 240.
+- Independent text-sheet surfaces: 242.
+- Research dossiers: 7836.
+- Dossiers with any generated `text_page`: 7822.
+- Dossiers with two or more text pages: 0.
+- Average dossier pages: 2.28.
+- Group candidates: 553.
+- Strong group candidates: 351.
+- Main sheets with more than two sub sheets: 359.
+- Main sheets with more than five text sheets: 5.
+- Interpretation: the generated dossier layer gives most sheets one text page,
+  but independent text sheets and multi-text-page research packets remain far
+  too scarce.
+
+Other audit results:
+
+- `audit_image_release_gate.py`: object source-visible 96.34%; object
+  verified-open 78.96%; object weighted publication-grade 80.51%; object
+  `IMG04` 3.11%; active source count 6499. It still exits non-zero by design
+  because final verified-open and weighted-publication gates are below 85% and
+  95%.
+- `audit_layered_image_source_metrics_v1.py`: records total 8035,
+  source-visible rate 96.32%, publication-grade candidate rate 95.01%,
+  weighted publication rate 79.68%, open-image rate 72.84%, duplicate image URL
+  rate 0.88%.
+- `audit_period_source_image_priority_v1.py`: highest combined priority remains
+  `1930_1970` (0.1100), followed by `2000_2026` (0.0839), `1970_2000`
+  (0.0321), and `pre_1930` (0.0255).
+- `audit_surface_assignment_gates_v1.py`: wrote 8035 rows; dispositions include
+  `main_sheet_candidate` 7152, `subsheet_visual` 472, `text_sheet_candidate`
+  198, and `dedupe_child_record` 60.
+- `audit_public_surface_integrity.py` still exits non-zero only for the existing
+  duplicate URL warnings: 12 surfaces share 6 exact image URLs from prior
+  Another Graphic / Barjeel records.
+
+Verification:
+
+- `npm run build` passed in `frontend/`; Next generated 7914/7914 static pages.
+  The same slow-page retry warnings appeared during static generation, but the
+  build exited successfully.
+- `python3 -m py_compile` passed for the new/modified capture, audit, grouping,
+  linkage, coverage, and rebuild scripts.
+- `git diff --check` passed after normalizing generated group/linkage CSV
+  output to strip trailing field whitespace.
+- `python3 scripts/audit_secret_patterns.py` still exits non-zero only for
+  older uncommitted raw HTML probe files under prior probe directories; those
+  files are outside this round's staged set.
+- Commit-bound strict credential-shape scan reported `strict_hits 0`.

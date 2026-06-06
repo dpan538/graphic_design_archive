@@ -16,10 +16,10 @@ The main rate uses region-weighted source points first, then applies time covera
 
 ## Current Result
 
-- active_source_count: 6379 (Distinct source_name values with at least one captured record.)
+- active_source_count: 6499 (Distinct source_name values with at least one captured record.)
 - candidate_source_count: 298 (Candidate/prospect sources in source_prospect_registry_v2; not counted as active coverage.)
 - pre_surface_source_registry_count: 3500 (Official source sites verified as reachable, but not counted as active source coverage until item-level image-bearing surfaces are built.)
-- weighted_active_source_points: 6200.45 (Sum of active source region weights. Non-West/local regions carry higher weights.)
+- weighted_active_source_points: 6358.75 (Sum of active source region weights. Non-West/local regions carry higher weights.)
 - weighted_source_target: 2000.00 (Final release source target requested as at least 2000 sources, expressed as weighted source points.)
 - minimum_release_source_coverage_rate: 80.00 (Release gate threshold for source coverage before publication readiness.)
 - release_source_coverage_gate_passed: true (True only when source_pool_rate reaches the configured final release coverage threshold.)
@@ -43,9 +43,9 @@ The main rate uses region-weighted source points first, then applies time covera
 ## Period Balance
 
 - pre_1930: active_sources=1142, target≈300, records=1601, balance=100.00%
-- 1930_1970: active_sources=1802, target≈700, records=2306, balance=100.00%
-- 1970_2000: active_sources=1988, target≈500, records=2253, balance=100.00%
-- 2000_2026: active_sources=1430, target≈500, records=1681, balance=100.00%
+- 1930_1970: active_sources=1811, target≈700, records=2315, balance=100.00%
+- 1970_2000: active_sources=2016, target≈500, records=2281, balance=100.00%
+- 2000_2026: active_sources=1513, target≈500, records=1764, balance=100.00%
 
 ## Weakest Periods
 

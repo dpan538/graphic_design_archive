@@ -1,11 +1,11 @@
 group_type,group_value,records_total,source_visible_count,source_visible_rate,publication_grade_count,publication_grade_rate,weighted_publication_score,weighted_publication_rate,open_image_count,open_image_rate,rights_labeled_count,rights_labeled_rate,unclear_image_state_count,unclear_image_state_rate,anchor_image_available_count,anchor_image_available_rate,duplicate_image_url_records,duplicate_image_url_rate,img00_count,img01_count,img02_count,img03_count,img04_count
-all_capture_records,all,7915,7619,96.26,7514,94.93,6294.40,79.52,5733,72.43,7915,100.00,4,0.05,7513,94.92,71,0.90,59,47,1378,6136,295
-period_band,1930_1970,2306,2264,98.18,2198,95.32,1891.95,82.04,1850,80.23,2306,100.00,1,0.04,2198,95.32,17,0.74,42,24,267,1931,42
-period_band,1970_2000,2253,2243,99.56,2243,99.56,1939.95,86.11,1980,87.88,2253,100.00,3,0.13,2243,99.56,0,0.00,1,0,225,2018,9
-period_band,2000_2026,1681,1515,90.12,1514,90.07,1084.35,64.51,711,42.30,1681,100.00,0,0.00,1514,90.07,12,0.71,1,0,795,719,166
+all_capture_records,all,8035,7739,96.32,7634,95.01,6402.40,79.68,5853,72.84,8035,100.00,4,0.05,7633,95.00,71,0.88,59,47,1378,6256,295
+period_band,1930_1970,2315,2273,98.19,2207,95.33,1900.05,82.08,1859,80.30,2315,100.00,1,0.04,2207,95.33,17,0.73,42,24,267,1940,42
+period_band,1970_2000,2281,2271,99.56,2271,99.56,1965.15,86.15,2008,88.03,2281,100.00,3,0.13,2271,99.56,0,0.00,1,0,225,2046,9
+period_band,2000_2026,1764,1598,90.59,1597,90.53,1159.05,65.71,794,45.01,1764,100.00,0,0.00,1597,90.53,12,0.68,1,0,795,802,166
 period_band,pre_1930,1601,1567,97.88,1533,95.75,1362.30,85.09,1192,74.45,1601,100.00,0,0.00,1532,95.69,39,2.44,15,19,66,1467,34
 period_band,undated_or_unparsed,74,30,40.54,26,35.14,15.85,21.42,0,0.00,74,100.00,0,0.00,26,35.14,3,4.05,0,4,25,1,44
-source_family,unmapped_source_family,6916,6739,97.44,6692,96.76,5723.65,82.76,5570,80.54,6916,100.00,0,0.00,6692,96.76,14,0.20,0,47,895,5797,177
+source_family,unmapped_source_family,7036,6859,97.48,6812,96.82,5831.65,82.88,5690,80.87,7036,100.00,0,0.00,6812,96.82,14,0.20,0,47,895,5917,177
 source_family,independent_design_archive_or_publication,304,233,76.64,233,76.64,182.75,60.12,156,51.32,304,100.00,0,0.00,233,76.64,22,7.24,0,0,77,156,71
 source_family,government_or_public_cultural_database,207,202,97.58,202,97.58,157.65,76.16,0,0.00,207,100.00,0,0.00,202,97.58,0,0.00,0,0,69,133,5
 source_family,general_archive_or_collection,172,164,95.35,117,68.02,79.05,45.96,0,0.00,172,100.00,0,0.00,116,67.44,32,18.60,48,0,75,42,7
@@ -16,7 +16,7 @@ source_family,poster_film_festival_design_archive,13,12,92.31,1,7.69,0.55,4.23,0
 source_family,aggregator_or_discovery_router,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_family,municipal_or_state_archive,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
 source_family,newspaper_magazine_ocr_portal,1,0,0.00,0,0.00,0.00,0.00,0,0.00,1,100.00,0,0.00,0,0.00,0,0.00,0,0,0,0,1
-region_group,unmapped_region,6916,6739,97.44,6692,96.76,5723.65,82.76,5570,80.54,6916,100.00,0,0.00,6692,96.76,14,0.20,0,47,895,5797,177
+region_group,unmapped_region,7036,6859,97.48,6812,96.82,5831.65,82.88,5690,80.87,7036,100.00,0,0.00,6812,96.82,14,0.20,0,47,895,5917,177
 region_group,active payload / needs registry mapping,402,337,83.83,337,83.83,244.50,60.82,144,35.82,402,100.00,0,0.00,337,83.83,18,4.48,0,0,168,169,65
 region_group,Oceania and Pacific,253,252,99.60,252,99.60,185.15,73.18,0,0.00,253,100.00,0,0.00,252,99.60,0,0.00,1,0,119,133,0
 region_group,Western/Central Europe,89,89,100.00,89,100.00,51.40,57.75,7,7.87,89,100.00,0,0.00,89,100.00,3,3.37,0,0,82,7,0
@@ -861,16 +861,26 @@ source_name,Wikimedia Commons file source / 01-10-09GazaProtest WashDC-a.JPG / p
 source_name,"Wikimedia Commons file source / 02 - Reventlow, 'Ellen Olestjerne' EA 1903 Einband.jpg / page 80098729",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 09.Monky.Chicha.Peru.SFF.WDC.5July2015.jpg / page 81199502,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 0HINDS5-R1-E013.jpg / page 184331103,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 1. AUFF.jpg / page 54334764,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 10. AUFF.jpg / page 54334561,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 102 Squadron Whitley aircrew in France WWII IWM C 837.jpg / page 21784664,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 10K - La Década Robada (book cover).jpg / page 34070355,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 11. AUFF.jpg / page 54334560,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 11a.Monky.Chicha.Peru.SFF.WDC.5July2015.jpg / page 81199455,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 12. AUFF.jpg / page 54334562,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 13. AUFF.jpg / page 54334564,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 14-Cover Image.png / page 31306707,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 14. AUFF.jpg / page 54334565,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 15. AUFF.jpg / page 54334566,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / 150 Rio Ilha de Paquetá. Photo Postal Colombo (2) - 1-21915-0000-0000, Acervo do Museu Paulista da USP.jpg / page 89191251",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 154th Batt poster.jpg / page 131059052,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 158 rua do Lavradio. Bellodromo nacional. Grandes corridas de patins et vécolipèdes - affiche - non identifié - btv1b532215944.jpg / page 162344733,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / 158 rua do Lavradio. Bellodromo nacional. Grandes corridas de patins et vécolipèdes affiche, non identifié.jpg / page 148445180",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 16. AUFF.jpg / page 54334567,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 16ª Mostra de Cinema de Tiradentes (8394107179).jpg / page 55460604,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 16ª Mostra de Cinema de Tiradentes (8394231137).jpg / page 55460690,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 17. AUFF.jpg / page 54334766,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 18. AUFF.jpg / page 54334568,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 1870 10c EU de Colombia penCucuta Yv52.jpg / page 73637744,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 1870 Peru 5c Trencito stamps.jpg / page 136078920,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 1878 10c EU de Tolima Tolima Mi8y.jpg / page 74490066,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -878,6 +888,7 @@ source_name,Wikimedia Commons file source / 1888 2C Argentina yPlanes Mi52 Yv61.
 source_name,Wikimedia Commons file source / 1892issue 2pesos Argentina SanMartin Yv108 Mi97.jpg / page 58340677,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 1899 2half Antioquia unused YvLR3 Mi117.jpg / page 74264346,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 1899-1900 revenue stamp of Peru.jpg / page 19958697,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 19. AUFF.jpg / page 54355987,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 1901victoria2sh.jpg / page 36552287,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 1908 1Peso Argentina Yv147.jpg / page 58421639,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 1912-02-15 József Divéky Plakat Kunstgewerbemuseum der Stadt Zürich Fach-Ausstellung Die Tapete.jpg / page 170797889,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -981,8 +992,11 @@ source_name,Wikimedia Commons file source / 1976 Red & White VW Campmobile @ DC 
 source_name,Wikimedia Commons file source / 1976. XII Зимние Олимпийские игры. Фигурное катание.jpg / page 4578980,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / 1985 ""Takeover of U.S. Den of Espionage"" stamp of Iran.jpg / page 64271005",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / 2 cents U. S. Internal Revenue proprietary revenue stamp marked September 1868, from -Charles Calverley- MET DP-386-036 (cropped).jpg / page 92977312",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 2. AUFF.jpg / page 54335136,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 20 mule team poster.jpg / page 58185507,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 20. AUFF.jpg / page 54334767,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 2013-2 tract Hommage-soldat-inconnu 1942 p2 MRN-fonds-Phoebe.jpg / page 112441351,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 2016IIHFWCIII (1).JPG / page 47989441,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 2018-05-07 Asaduzzaman Noor unveils book cover Women in Bangladesh Liberation War Rediscovered in Madonna Series National Museum Dhaka (PID-0044353).jpg / page 176426347,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 2019-01-28 President Md Abdul Hamid unveils book cover 1971 Pratirodh Sangram Bijoy at Bangabhaban (PID-0040433).jpg / page 176419861,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 2019-02-25 K M Khalid unveils book cover Asamapta Atmajibani - Nanan Aloy Nanan Sware Amar Ekushey Book Fair Dhaka (PID-0039906).jpg / page 176418779,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -995,23 +1009,37 @@ source_name,Wikimedia Commons file source / 2023-06-18 Sheikh Hasina unveils boo
 source_name,Wikimedia Commons file source / 2023-07-27 Education Minister Dipu Moni unveils book cover Ekiye Cholche Bangladesh by Qazi Kholiquzzaman Ahmad at Foreign Academy Dhaka (PID-0014609).jpg / page 176860405,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / 2023-10-00 Sabia que o câncer de mama detectado em estágio inicial tem mais de 90% de chance de cura? Por isso, nós existimos. mama (Porto Alegre (Brasil)).jpg / page 138675619",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 20th anniversary of 1953 Iranian coup d'état.jpg / page 19306132,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 21. AUFF.jpg / page 54334769,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 22. AUFF.jpg / page 54334569,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / 22567 - Aspirina Y Cafeina, For Aspirin Tablets - The Bayer Company, Inc. - DPLA - 588419f32245abc69d7424cf8cd8aa30 (page 10).jpg / page 178481912",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 23. AUFF.jpg / page 54334571,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 24. AUFF.jpg / page 54334570,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 246th PSYOPS Co soldier illustrates a propaganda leaflet.jpg / page 148062324,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 246th PSYOPS Company soldier checks print of propaganda leaflet.jpg / page 148062363,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 246th Psy Opns Company soldiers and Vietnamese soldiers load leaflet bombs at Bien Hoa Air Base.jpg / page 148062685,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 25. AUFF.jpg / page 54334572,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 26. AUFF.jpg / page 54334574,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 27. AUFF.png / page 54334573,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 28 de Abril é Greve Geral - SindiSaúde-RS (2017).jpg / page 58182914,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / 3 1 0 17 12960 3 1 45940 Trial against Nazis Gregor Strasser, Wilhelm F. Stegmann, Fritz Weitzel, Edmund Heines Berlin May 1932 defendants bench in Criminal court Narodowe Archiwum...",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 3 cartazes bons juntos (7281462698).jpg / page 51718896,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 3. AUFF.jpg / page 54355671,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / 30a Sammlung Eybl Großbritannien. Alfred Leete (1882–1933) Britons (Kitchener) wants you (Briten Kitchener braucht Euch). 1914 (Nachdruck), 74 x 50 cm. (Slg.Nr. 552).jpg / page 43336500",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 30b Sammlung Eybl USA James Montgomery Flagg (1877-1960) I want you for U.S. Army. 1917. 101 x 76 cm. (Coll..Nr. 3116).jpg / page 43329225,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 3M Brand Plan Printing Equipment (42836335152).png / page 97719079,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 4. AUFF.jpg / page 54355735,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 5. AUFF.jpg / page 54334554,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 50 Years of Service Disabled American Veterans First Day of Issue Postage Stamp Cover.png / page 190510574,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 500 Czechoslovakan koruna 1993 Provisional Issue Obverse.jpg / page 77840168,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 501st Aviation Battalion door gunner on a UH-1D PSYWAR operation.jpg / page 146303464,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 51 Primas (Cousines) Fr.jpg / page 87292359,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 5759595-M 1.jpg / page 22653303,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 6. AUFF.jpg / page 54334555,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 6th Psyops Battalion leaflet drop from a C-47.jpg / page 148104532,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 7. AUFF.jpg / page 54334556,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 8. AUFF.jpg / page 54334558,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 80-188-CG Match Book Cover.jpg / page 19068600,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 9. AUFF.jpg / page 54334559,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / A & E Design.jpg / page 2815998,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / A Brief History of the Typewriter - NARA - 7280709 (page 1).jpg / page 73777583,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / A Brief History of the Typewriter - NARA - 7280709 (page 4).jpg / page 73777590,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -1054,10 +1082,12 @@ source_name,Wikimedia Commons file source / AKADAMA sweet wine poster.jpg / page
 source_name,Wikimedia Commons file source / AMALIA AGUILAR CON PEDRO INFANTE.jpg / page 27839625,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / AMS 2844-I NE - NARA - 55302668.jpg / page 80757125,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / ANA (VNA) 1871 Minute Book.001.jpg / page 131477531,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / ANC-gives-back-district-six-poster.jpg / page 2137445,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / AR EX 02 01.jpg / page 133637799,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / ARCS PSYWAR Propaganda Leaflet - Korea.jpg / page 29985625,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / AS HIS CAR IS BEING TESTED, A MOTORIST READS OVER A FREE BROCHURE ON EXHAUST EMISSIONS AT AN AUTO EMISSION INSPECTION... - NARA - 557900.jpg / page 17043566",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / AS HIS CAR IS BEING TESTED, A MOTORIST READS OVER A FREE BROCHURE ON EXHAUST EMISSIONS AT AN AUTO EMISSION INSPECTION... - NARA - 557900.tif / page 16832565",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / ASC Leiden - NSAG - van Es 9 - 021 - Two information posters are standing against a wall on the sand, with texts - From Kano, Nigeria to Jos, Nigeria - January 1962.tif / page 90909110",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / ASC Leiden - Rietveld Collection - Nigeria 1970 - 1973 - 01 - 092 Biafra stamps. ""Republic of Biafra. May 30. 4D"".jpg / page 81924563",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / AVIATION WEEK MAGAZINE COVER - MAY 28 1979 - NARA - 17473066.jpg / page 80119432,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Aaheaps.jpg / page 3803117,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -1070,6 +1100,7 @@ source_name,Wikimedia Commons file source / AcabaramSeOsOtariosAd1.jpg / page 43
 source_name,"Wikimedia Commons file source / Acatène Velleda - - L. Baylac, Biarritz '98. LCCN2008680366.jpg / page 66247650",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Achille Mauzan - Poster Calzado Pluma.jpg / page 160038962,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Achille Mauzan - Poster Habano Extra R. A.jpg / page 160038845,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Adana tourism week posters (33592695493).jpg / page 58444468,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Adapting and Writing Language Lessons Cover.jpg / page 45594847,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Adolfo Ruiz Cortines-TIME-1953.jpg / page 73567530,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Adventures of lucky pierre poster 01.jpg / page 18511422,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -1326,6 +1357,7 @@ source_name,"Wikimedia Commons file source / Anine Suruí, in Cacoal (Brazil), 2
 source_name,Wikimedia Commons file source / Anisul Huq unveils Poner Auguster Nepottho Kushilob book cover at National Press Club Dhaka 2023-08-01 (PID-0014495).jpg / page 176860571,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Anita Gordon-Radio Mirror cover January 1948.jpg / page 76895325,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Anita Page, Madge Evans, Joan Marsh.jpg / page 8710878",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / Ann Cooper ""Blue Thunder"" (1984 ABC press photo).jpg / page 149290564",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Anna Vissi First Cover 1974.jpg / page 164003304,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Ansell Clarke 1936 B&F.jpg / page 68268707,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Ante pavelić 1944.jpg / page 189228871,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -1424,6 +1456,7 @@ source_name,"Wikimedia Commons file source / Bay Freeway questions and answers, 
 source_name,"Wikimedia Commons file source / Bayna al-Juzur wa-al-mudd Book cover (al-Hilāl, 1924).jpg / page 140187682",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Bayna al-ʻIlm wa-al-adab book cover (Filasṭīn al-ʻIlmīyah, 1946).png / page 139748276",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Bazurto-champeta-wall.jpg / page 18366268,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Beach camp poster 2009.jpg / page 7438947,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Beatrix Schuba 1972 Ras al-Khaimah stamp 2.jpg / page 34584705,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Beatrix Schuba 1972 Ras al-Khaimah stamp.jpg / page 34584563,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Beauty and grandeur, the Yangtze gorges, travel poster, ca. 1930.jpg / page 11299631",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -1431,6 +1464,7 @@ source_name,Wikimedia Commons file source / Bebe Daniels - A Scena Muda.jpg / pa
 source_name,Wikimedia Commons file source / Before the silent window Book Cover 2026.png / page 191840482,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Ben Hur 1959 film Poster.jpg / page 186878133,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Ben hur 1959 poster DYK.jpg / page 32206223,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Bengali Beauty Poster V08.jpg / page 75201353,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Beppo Bässler - Aufbau und Abzeichen der NSDAP SA SS HJ PO NSBO DAF 1934 - 74-75 Werbung Sporthaus Sturm Leipzig. Matthias Müller. Sporthaus. Vasenol Körper-Puder (Nazi Party structure uni,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Berlanti (1944).jpg / page 140006922,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Bernard Shaw, Handbuch des Revolutionärs 1972.jpg / page 150324264",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -1443,6 +1477,7 @@ source_name,Wikimedia Commons file source / Beth Laemmle magazine cover (cropped
 source_name,Wikimedia Commons file source / Beth Laemmle magazine cover.jpg / page 138515557,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Beto Fernán - Anahí 1965.jpg / page 98813040,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Betty Roberts.jpg / page 70600612,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Beyoglu 5182.jpg / page 28299907,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Bhai Pratap, Commemmorative Brochure in Hindi. 8th Anniversary.jpg / page 52750550",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Bhai Pratap. Commemmorative Brochure in Sindhi. 8th Anniversary.jpg / page 52750551,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Bhangale Swapn Maharashtra @Bharat Naty Mandir 1st show on Republic Day, 1976.jpg / page 141817088",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -1572,14 +1607,20 @@ source_name,Wikimedia Commons file source / Carnival of Souls (1962 pressbook co
 source_name,Wikimedia Commons file source / Cartaz Hamburg Sud Santa Catharina Brasil.jpg / page 169191966,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Cartaz de propaganda do filme ""Morrendo de Medo"".jpg / page 111596186",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Cartel AMIA lhn.jpg / page 104314184,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Cartel Campaña 1REA1Ref 2023.png / page 129014907,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Cartel Distinto Amanecer con Andrea Palma.jpg / page 102395797,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Cartel Editatona Cineteca.jpg / page 52179770,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Cartel Editatón Ciudades bajacalifornianas en Wikipedia.png / page 114945058,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Cartel Editatón de Voz en Voz (2018).jpg / page 80975664,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Cartel Primer Editatón Antropológico.png / page 114886075,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Cartel completada a beneficio.png / page 89513466,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Cartel de La salvacion.jpg / page 32217782,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Cartel de la tertulia Wikipedia y educación.png / page 116101830,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Cartel del perro quiltro (mestizo) símbolo de protestas sociales en Chile.jpg / page 98697142,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Cartel luminoso celebrando la victoria argentina en la Copa Mundial de Fútbol 2022, Buenos Aires.jpg / page 190712395",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Cartel ¡Se Buscan!.jpg / page 163050272,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Carteles Ciclistas.jpg / page 150017300,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Carteles Feministas.jpg / page 150017298,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Cartell de la Fiesta del Aniversario de Cayaltí el gener de 2017 a Zaña.jpg / page 60051688,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Cartell de la Fiesta del Aniversario de Cayaltí el gener de 2017 a Zaña02.jpg / page 60051695,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / CartelparaEnlistarseAlServicioMilitarConEmilianoZapata.jpg / page 1400028,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -1589,6 +1630,7 @@ source_name,Wikimedia Commons file source / Casa Lucas-Madrid.jpg / page 8037819
 source_name,"Wikimedia Commons file source / Casa Museo Rafael Núñez, Cartagena, Colombia (24435968629).jpg / page 63454578",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Casa Museo Rafael Núñez, Cartagena, Colombia (24803639875).jpg / page 63454597",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Casey C. Jones - 78th District - Ohio House of Representatives 109th General Assembly - DPLA - 5586be78567b1fe89fca76f0a79cfcb8 (page 7) (cropped).jpg / page 140035622,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / Catherine Oxenberg ""Dynasty"" (1984 ABC press photo).jpg / page 165570901",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Centro civico Lima.jpg / page 15097001,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Cents-01-15cSC1E1-350001.jpg / page 3516877,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Chaetodon triangulum 1972 Indonesia stamp.jpg / page 34984486,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -1670,6 +1712,7 @@ source_name,"Wikimedia Commons file source / Commune de Paris, Comité Central, 
 source_name,"Wikimedia Commons file source / Company B, 8th PSYOP Battalion soldier illustrates a propaganda leaflet.jpg / page 148105482",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Comrade Bethune's Unselfish Spirit (crop).png / page 104783810,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Comtal 8000 1974.png / page 189612490,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Concierto de Caifanes en la Alcaldía Venustiano Carranza 06.jpg / page 175187941,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Condenced Contract Bridge by Coord Roosen - 01.jpg / page 94590613,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Congress to unite women May 1, 2, 3, '70 - Intermediate School, 333 W. 17 St., N.Y.C. LCCN2015650086.tif / page 66137039",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Constance Bennett CINEGRAF magazine.jpg / page 8703022,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -1758,6 +1801,10 @@ source_name,Wikimedia Commons file source / DVR3487 Plakat Klimawechsel im Verke
 source_name,Wikimedia Commons file source / DVR4855 Litfasssäule mit Hallo Partner Plakaten.jpg / page 94355965,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / DVR4915 Plakatmotiv Könner halten Abstand.jpg / page 94358458,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / DVR4916 Plakatmotiv Könner machen Pausen.jpg / page 94358459,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / Dack Rambo ""Paper Dolls"" (1984 ABC press photo) 01 (cropped).jpg / page 183801953",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / Dack Rambo ""Paper Dolls"" (1984 ABC press photo) 01.jpg / page 183640506",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / Dack Rambo ""Paper Dolls"" (1984 ABC press photo) 02.jpg / page 183640905",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / Dack Rambo ""Paper Dolls"" (1984 ABC press photo) 03.jpg / page 183640967",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Dale G. Schmidt - 66th District - Ohio House of Representatives 109th General Assembly - DPLA - 5586be78567b1fe89fca76f0a79cfcb8 (page 11) (cropped).jpg / page 139851506,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Danger - painted by W.D. Goldbeck. LCCN2011660515.jpg / page 67898335,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Das Kapital.JPG / page 391570,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -2017,6 +2064,7 @@ source_name,Wikimedia Commons file source / Fete humanite 2004 palestine 0458.jp
 source_name,"Wikimedia Commons file source / Fher Olvera signature, Billboard Open Letter 2016.png / page 72601764",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Fhrs ūṯāʾiq al-šām fī ʿhd mḥmd ʿlī al-kbīr book cover.jpg / page 116286843,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Figurine Open Office et brochure Wikipédia.jpg / page 17451998,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Fil-adam-afis.jpg / page 52501301,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Filasṭīn al-ʻArabīyah bayna al-intidāb wa-al-Ṣihyūnīyah book cover (1937).png / page 140112673,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Filatelia no Museu Histórico Nacional (2024-10-26).jpg / page 154552946,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / File-William Windom - Thurber playbill 2.jpg / page 15967687,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -2345,6 +2393,7 @@ source_name,"Wikimedia Commons file source / Heinrich Brinkmann, Stalin – Theo
 source_name,"Wikimedia Commons file source / Heinz Kahlau, Flugbrett fuer Engel 1974.jpg / page 8466799",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Heinz Ludwig Arnold, Deutsche Literatur im Exil 1933–1945 Band 2 1972.jpg / page 159295122",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Helen L. Atkinson (1907) Poster for the First Australian Exhibition of Women's Work.jpg / page 157952895,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / Helix, v.4, no.4, Aug. 15, 1968 - DPLA - ed4ee91948fc8a79b182fdeb295370d3 (page 13).jpg / page 135599334",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Helmut Fleischer, Sozialphilosophische Studien 1973.jpg / page 161404471",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Helmut Reichelt, Zur logischen Struktur des Kapitalbegriffs bei Karl Marx 1970.jpg / page 160054292",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Helmut Reinicke, Für Krahl 1973.jpg / page 155058618",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -2382,6 +2431,8 @@ source_name,Wikimedia Commons file source / Holy Year 1933–34 postage stamp.jp
 source_name,Wikimedia Commons file source / Honeymoon movie poster.png / page 88959029,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Hooglandse Kerk, Objectnr PV PV22627.jpg / page 159696069",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Horror of Frankenstein.png / page 154260848,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Hotel Caesars poster (cropped).jpg / page 154972185,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Hotel Caesars poster.jpg / page 105619000,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / HouseinGrove.jpg / page 4951038,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Howard A. Knight - 13th District - Ohio House of Representatives 109th General Assembly - DPLA - 5586be78567b1fe89fca76f0a79cfcb8 (page 7) (cropped).jpg / page 140036156,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Hrvatski socijalizam seitz.jpg / page 23131929,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -2389,6 +2440,7 @@ source_name,Wikimedia Commons file source / Hsaung film poster.jpg / page 109474
 source_name,Wikimedia Commons file source / Human rights iraqi stamp.png / page 105193088,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / I believe him LCCN2016648795.jpg / page 66140436,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / IAEAFinnishPostageStamp.JPG / page 37497766,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / IDM-2021-poster-challenge-1238.jpg / page 130015494,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / IN OUR TIME Book Cover - NARA - 192685.jpg / page 17194431,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / IN OUR TIME Book Cover - NARA - 192685.tif / page 16578217,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / INF3-140 War Effort We beat 'em before. we'll beat 'em again.jpg / page 19585468,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -2499,6 +2551,8 @@ source_name,Wikimedia Commons file source / ITA-LIY 1924 MiNr0054A pm B002.jpg /
 source_name,Wikimedia Commons file source / ITA-LV 1907 MiNrLV007 pm B002.jpg / page 63411893,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / ITA-TRI 1938 MiNr0258 mt B002.jpg / page 76802960,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / ITA-TRI-BMA 1950 MiNrTR15 pm B002a.jpg / page 76820380,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / ITC 09 Poster.jpg / page 14890625,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / ITC 2011 Poster.jpg / page 14890710,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Ibn 'Asakir stamp, Syria, 1974.jpg / page 97381625",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Ice-Hockey-Sapporo-1972.jpg / page 170891884,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Ida Ciric Cvetnik detinjstva 1975.jpg / page 185952109,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -2576,6 +2630,7 @@ source_name,Wikimedia Commons file source / Italy1874esteroovpt1cent.jpg / page 
 source_name,"Wikimedia Commons file source / Ivan Illich, Selbstbegrenzung 1975.jpg / page 160054294",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / IvanaElisabeth.jpg / page 28910835,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / JUSPAO Leaflet Depicting Le Loi.JPG / page 19134373,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / JaZZ is DeaD.jpg / page 169509705,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Jacaré (1942) film poster.jpg / page 45467051,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Jack P. Oliver - 3rd District - Ohio House of Representatives 109th General Assembly - DPLA - 5586be78567b1fe89fca76f0a79cfcb8 (page 10) (cropped).jpg / page 140045502,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Jacob Tanzer 1974 (cropped).jpg / page 116480605,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -2649,6 +2704,7 @@ source_name,Wikimedia Commons file source / JudgeMagazine8Apr1916.jpg / page 929
 source_name,Wikimedia Commons file source / JudgeMagazine9Aug1924.png / page 89625048,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / JudgeMagazineCover25Oct1919.jpg / page 93139599,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / JudiosenAmerica.jpg / page 10433214,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Jueves Wiki OA2020 WMMX.jpg / page 95970475,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Julia y el portal del Abismo.jpg / page 70861534,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Julius Klinger - Poster Zoologischer Garten Berlin.jpg / page 159918252,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Jurij Striedter, Russischer Formalismus 1971.jpg / page 161653321",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -2880,6 +2936,7 @@ source_name,"Wikimedia Commons file source / Lyrik der DDR, Uwe Berger, Günther
 source_name,Wikimedia Commons file source / Lápide do cemitério de Gongo Soco (1512184598).jpg / page 45311503,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / MERS health advisory poster.png / page 99246525,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / MHerakG.jpg / page 89262312,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / MKA-SuperHero.jpg / page 108532385,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / MRS. MAY WATKINS, DAUGHTER, BERTHA, CENTER, AND A PLAYMATE LOOK OVER A RELIGIOUS PAMPHLET JUST LEFT AT THEIR NEW... - NARA - 557364.jpg / page 16913912",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / MU AAJ 961 The criminal by Havelock Ellis - 0001.jpg / page 109281815,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / MU PD S 11 - Psychologie des kindes.jpg / page 182726697,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -2920,6 +2977,7 @@ source_name,"Wikimedia Commons file source / Maramunhã, uma lenda Manaus.jpg / 
 source_name,Wikimedia Commons file source / Marcela López Rey - Anahí 1965.jpg / page 98643451,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Maria Corda - Dec 1927 Cinelandia.jpg / page 134838002,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Mark 11 Mod 2 missile launcher aboard USS Chicago (CG-11), circa in 1970.png / page 24460004",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / Marshall Colt ""Lottery"" (1983 ABC press photo).jpg / page 186334149",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Martin Fierro1.jpg / page 2181726,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Martin Jay, The Dialectical Imagination 1973.jpg / page 156706711",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Martin Smith - Canto for Gipsy - book cover, 1972.jpg / page 85753731",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -2929,6 +2987,7 @@ source_name,Wikimedia Commons file source / Martirme 002.jpg / page 8830837,1,1,
 source_name,"Wikimedia Commons file source / Marty Cosens - Anahí, 1965 (cropped).jpg / page 137849583",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Marty Cosens - Anahí, 1965.jpg / page 94680157",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Maruzzella film poster.jpg / page 179763283,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Marxiststudycentre.JPG / page 841135,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Marília de Dirceu 1967 Brazil stamp.jpg / page 34879489,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Materialien zu Habermas’ „Erkenntnis und Interesse“ 1974.jpg / page 151038205,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Mathematical neuroscience.jpg / page 122351862,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -2978,6 +3037,8 @@ source_name,Wikimedia Commons file source / Mittagong Real Estate Leaflet.jpg / 
 source_name,Wikimedia Commons file source / Moataqal Huckstep Book cover - Mohamed Ali Eltaher 1950.jpg / page 57387535,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Moby Dick 1930 Poster.jpg / page 47104213,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Moisés Palacios.png / page 144666533,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Moleküler Biyoloji ve Genetik Bayramı.jpg / page 39435425,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / Molly Ringwald and Zach Galligan ""Surviving"" (1985 ABC press photo).jpg / page 149289789",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Montenegro 10 para.png / page 191857303,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Montenegro postage due mint 50 para.jpg / page 174424923,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Mordechai Levanon book cover.jpeg / page 99532124,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -2999,9 +3060,19 @@ source_name,Wikimedia Commons file source / Munchen 1972.jpg / page 4781118,1,1,
 source_name,Wikimedia Commons file source / Mundo boquense revista 1951.jpg / page 123345525,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Mundoargentino 2219 1953.jpg / page 110866050,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Mural Rene Funes Copiapo.JPG / page 20711910,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Mural de Wikipedia intervenido 2.jpg / page 106555140,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Mural de Wikipedia intervenido 3.jpg / page 106555141,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Mural de Wikipedia intervenido.jpg / page 106555139,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Murders in the Rue Morgue - Paris mysterier - sweden 1932.png / page 91759504,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / Muro con stickers, propas y esténciles en Aguascalientes 10.jpg / page 106555334",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Muro con stickers, propas y esténciles en Aguascalientes 2.jpg / page 106555322",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / Muro con stickers, propas y esténciles en Aguascalientes 3.jpg / page 106555323",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / Muro con stickers, propas y esténciles en Aguascalientes 4.jpg / page 106555325",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / Muro con stickers, propas y esténciles en Aguascalientes 5.jpg / page 106555326",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / Muro con stickers, propas y esténciles en Aguascalientes 7.jpg / page 106555328",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / Muro con stickers, propas y esténciles en Aguascalientes 8.jpg / page 106555329",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Muro con stickers, propas y esténciles en Aguascalientes 9.jpg / page 106555330",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / Muro con stickers, propas y esténciles en Aguascalientes.jpg / page 106555320",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Murray Bookchin, Kommunismus und Selbstbestimmung 1974.jpg / page 155888012",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Musen-To-Jikken c1924.jpg / page 12833669,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Museu Paulista (May 2018) 036.jpg / page 68865111,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -3028,7 +3099,28 @@ source_name,Wikimedia Commons file source / NAIA 1973 HOF-3.jpg / page 146124270
 source_name,Wikimedia Commons file source / NAIA 1973 HOF-Cover.jpg / page 13428798,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / NCC pamphlet shows names of islands in the vicinity of Lemieux Island (28138314719).jpg / page 109403539,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / NGH-Berichtsbände.jpg / page 22753433,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS 50th Anniversary Poster - Continental Divide National Scenic Trail (45684583621).jpg / page 159899288,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15378319034).jpg / page 160098551,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15378323344).jpg / page 160098435,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15380943043).jpg / page 160098675,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15813192328).jpg / page 160098541,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15813301510).jpg / page 160098716,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15813306240).jpg / page 160098654,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15813319000).jpg / page 160098411,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15814564529).jpg / page 160098705,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15814571819).jpg / page 160098594,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15814580579).jpg / page 160098423,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15814581419).jpg / page 160098396,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15814815877).jpg / page 160098758,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15814818137).jpg / page 160098725,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15814828327).jpg / page 160098586,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15814834147).jpg / page 160098512,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15974791596).jpg / page 160098640,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15974793966).jpg / page 160098605,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15974800206).jpg / page 160098529,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15998605111).jpg / page 160098564,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15998609551).jpg / page 160098502,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / NLCS Vintage Posters Unveiling! (15999882302).jpg / page 160098684,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / NRCS 90th Anniversary 1975 (54454657805).jpg / page 184618684,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Nabard Group leaflet (undated, circa 1980).png / page 126696611",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Nacionalizacion servicios.jpg / page 15365243,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -3089,6 +3181,7 @@ source_name,Wikimedia Commons file source / No a la reforma de la ley 30.jpg / p
 source_name,Wikimedia Commons file source / No al Punto Final (cropped).jpg / page 78733715,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / No al Punto Final.jpg / page 658285,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / No funds for death Vote funds for life. LCCN2017649467.tif / page 66142515,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / No murió, La mataron. Cartel en la marcha por la desaparición de Debahni Escobar.jpg / page 117309253",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Noam Chomsky, Aspekte der Syntax-Theorie 1973.jpg / page 151469813",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Nonnensteeg 1, Objectnr PV PV31187.1.jpg / page 160822759",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Norbert Weber, Privilegien durch Bildung 1973.jpg / page 152777237",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -3213,6 +3306,7 @@ source_name,"Wikimedia Commons file source / Packet, food product (AM 2015.4.18-
 source_name,Wikimedia Commons file source / Padauk Yake Wal Poster.jpg / page 117101606,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Pahit-Pahit Manis pamphlet (obverse).jpg / page 43425400,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / Pamela Bellwood ""Dynasty"" 1983 ABC publicity.jpeg / page 180846298",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Pamphlet for Sterilization.jpg / page 74999259,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Panda crossings leaflet back.png / page 148292144,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Panda crossings leaflet front.png / page 148292148,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -3369,6 +3463,7 @@ source_name,Wikimedia Commons file source / Poster - White Zombie 01 Crisco rest
 source_name,"Wikimedia Commons file source / Poster - Young in Heart, The 01.jpg / page 18565926",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Poster 1932 nº2.jpg / page 69689516,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Poster 1932 nº4.jpg / page 69689690,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Poster 3- Social Protection and Social Inclusion (10070591174).jpg / page 46107582,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Poster Alligator Palace.jpg / page 60658986,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Poster CAR.jpg / page 6721514,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Poster Editatón Exilio Español Chile.jpg / page 42839676,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -3387,12 +3482,14 @@ source_name,Wikimedia Commons file source / Poster Wikipedia 25 Conexión Junín
 source_name,Wikimedia Commons file source / Poster de Espejismo - Sala Armando Robles Godoy.jpg / page 177335808,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Poster de la base 19 de la Facultad de Derecho y Ciencias Políticas en gymkana 2022.jpg / page 127196927,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Poster de la consulta popular a expresidentes en México 2021.jpg / page 108074979,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Poster de la revista In Cosplay (2564899891).jpg / page 106855564,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Poster del III Taller de Astroingeniería (annlocal15005a-es-cl).tiff / page 170323791,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Poster del Sindicato de Trabajadores de la Universidad Nacional Mayor de San Marcos para extender su pliego de reclamos a la univerisdad.jpg / page 131526128,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Poster electoral Ortiz-Castillo 1938.jpg / page 782301,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Poster en favor de AMLO, revocación de mandato 2022.jpg / page 115516942",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Poster for Documentary The Mystery of Capital among the Indigenous Peoples of the Amazon.jpg / page 8062755,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Poster for Los Tres Berretines.jpg / page 33154129,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Poster for the Plant Based Treaty- Vegetarian activism in Parque del Carmen Puebla Mexico.jpg / page 115097535,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Poster for the Southern Astrophotography Conference 2010 (ann1088a).jpg / page 170800123,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Poster for the Southern Astrophotography Conference 2010 (ann1088a).tiff / page 170800100,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Poster for vaccination against smallpox.jpg / page 367819,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -3437,6 +3534,10 @@ source_name,Wikimedia Commons file source / Propaganda anti-Nazi mexicana.jpg / 
 source_name,Wikimedia Commons file source / Propaganda de 1928 - Jardim Europa.jpg / page 12835602,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Propaganda do Estado Novo (Brasil).jpg / page 14883447,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Propaganda poster - Yin Yu Tang House - Peabody Essex Museum - DSC06771.jpg / page 77300048,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Propas y stickers de protesta feminista en el centro de Aguascalientes 2.jpg / page 106156956,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Propas y stickers de protesta feminista en el centro de Aguascalientes 3.jpg / page 106156958,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Propas y stickers de protesta feminista en el centro de Aguascalientes 4.jpg / page 106156975,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Propas y stickers de protesta feminista en el centro de Aguascalientes.jpg / page 106156955,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Psycho (1960) theatrical poster (halftone version).jpg / page 85583474,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Psycho (1960) theatrical poster.jpg / page 85581957,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Psychological warfare leaflet by Colonel Lê Trí Tín, Province Chief of Quang Nam 01.jpg / page 132628065",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -3450,6 +3551,7 @@ source_name,Wikimedia Commons file source / Puerto Tranquilo 1.jpg / page 663604
 source_name,"Wikimedia Commons file source / Purple Foxes celebrate end of OIF, 50th anniversary 111110-M-NF414-386.jpg / page 39576192",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Putney Swope (1969 poster).jpg / page 89274929,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Putzmühle im Pöbeltal 002.JPG / page 25370103,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Póster NosotrasEscribimosWIkipedia.png / page 178401962,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Póster de la película Sr. Árbol (2024).jpg / page 186596543,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Pôster Urbano.jpg / page 40892186,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Qualitaetskontrolle-Bucheinband-Faksimile-Sloane-MS-1975-Charlotte-Kramer.png / page 192763998,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -3712,6 +3814,7 @@ source_name,Wikimedia Commons file source / Sello Peru Trece Gallo 1936.jpg / pa
 source_name,"Wikimedia Commons file source / Selo da Copa de 1950 Cr 1,20.jpg / page 22249957",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Selo da FEB de 2 cruzeiros.jpg / page 22271818,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Selo da Ponte Rio-Niterói 040.jpg / page 22255473,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Selvi Boylum Al Yazmalım poster.jpg / page 109717980,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Sepid-o-Siah magazine cover, Issue 701.jpg / page 142486519",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Serbian poster ""Sorry we didn't know it was invisible"".jpg / page 39804160",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Serbian poster celebrating victory over Bulgaria in the second Balkan war.jpg / page 80168227,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -3998,6 +4101,7 @@ source_name,Wikimedia Commons file source / Stamp of Ajman - 1969 - Colnect 6788
 source_name,Wikimedia Commons file source / Stamp of Ajman - 1969 - Colnect 781522 - Wolfgang Graf Berghe von Trips 1928-1961 Germany.jpeg / page 115674597,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Stamp of Ajman - 1969 - Colnect 819188 - Pierre Trentin 1944 Cycling France.jpeg / page 115675996,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Stamp of Ajman - 1970 - Colnect 497279 - Astronauts on the moon.jpeg / page 115681748,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Stamp of Ajman - 1970 - Colnect 878189 - Azteca Stadium.jpeg / page 115688229,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Stamp of Ajman - 1971 - Colnect 111244 - Stachus - Judo.jpeg / page 115689041,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Stamp of Ajman - 1971 - Colnect 265131 - Napoleon at the surrender on the ulm detail by Thévenin.jpeg / page 115689498,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Stamp of Ajman - 1971 - Colnect 432733 - Golden Pheasant Chrysolophus pictus.jpeg / page 115690708,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -4830,7 +4934,11 @@ source_name,Wikimedia Commons file source / Stamp of Nabha - 1942 - Colnect 5516
 source_name,Wikimedia Commons file source / Stamp of Nabha - 1942 - Colnect 551624 - King George VI.jpeg / page 115783562,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Stamp of Nabha - 1942 - Colnect 937769 - King George VI.jpeg / page 115783706,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Stamp of Nabha - 1943 - Colnect 937792 - King George VI.jpeg / page 115783880,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Stamp of Negri Sembilan - 1937 - Colnect 872678 - Arms of Territory Missing Period Variety.jpeg / page 115826546,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Stamp of Negri Sembilan - 1941 - Colnect 872676 - Arms of Territory.jpeg / page 115826659,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Stamp of Negri Sembilan - 1941 - Colnect 872677 - Arms of Territory.jpeg / page 115826673,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Stamp of Negri Sembilan - 1941 - Colnect 872679 - Arms of Territory Missing Period Variety.jpeg / page 115826684,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Stamp of Negri Sembilan - 1953 - Colnect 872680 - Arms of Territory.jpeg / page 115827028,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Stamp of Negri Sembilan - 1953 - Colnect 872681 - Arms of Territory.jpeg / page 115827045,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Stamp of Patiala - 1895 - Colnect 614850 - Queen Victoria.jpeg / page 115786133,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Stamp of Patiala - 1898 - Colnect 614849 - Queen Victoria.jpeg / page 115786204,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -5095,6 +5203,7 @@ source_name,Wikimedia Commons file source / Syeda Rizwana Hasan Unveiling Book C
 source_name,Wikimedia Commons file source / Sylvia Sidney CINEGRAF magazine.jpg / page 8696790,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Synvinklar på ortnamn SLS-454 1973 book cover fd2019-00022121.jpg / page 123182921,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Síndrome y Válvula - Salomón Hakim - Estampilla conmemorativa Colombia.jpg / page 21417009,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / THAMI Mnyele-anc violet hashe 84.jpg / page 15039040,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / THE LEFT AND THE RIGHT (Arch Dale book cover) (cropped).jpg / page 63447441,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / THE LEFT AND THE RIGHT (Arch Dale book cover).jpg / page 63447050,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / THE WOMEN'S WORK IN THE WAR PRODUCTION, 1914-1918 Q107032.jpg / page 63213501",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -5135,6 +5244,9 @@ source_name,Wikimedia Commons file source / Terence Stamp (colour).jpg / page 14
 source_name,Wikimedia Commons file source / Terence Stamp Allan Warren.jpg / page 10231603,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Terence Stamp in Tre passi nel delirio.jpg / page 69393002,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Teresa de Calcuta 05.jpg / page 7973434,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / Terry Farrell ""Paper Dolls"" (1984 ABC press photo) 01.jpg / page 183704482",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / Terry Farrell ""Paper Dolls"" (1984 ABC press photo) 02.jpg / page 183704483",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,"Wikimedia Commons file source / Terry Farrell ""Paper Dolls"" (1984 ABC press photo) 03.jpg / page 183704484",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Tesoriere 1926 lamina.jpg / page 65868900,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Tet Offensive 1968 cover page.jpg / page 84820088,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / That's Entertainment, Part II.png / page 156898323",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -5525,6 +5637,7 @@ source_name,"Wikimedia Commons file source / Váci út 81-85., Öntödei Vállal
 source_name,Wikimedia Commons file source / Värmlänningarna (1932) Poster.jpg / page 164308966,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Västnyländsk ordaccent SLS-451 1972 book cover fd2019-00022066.jpg / page 123182915,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Vörös János emléktábla (2016), Móricz Zsigmond Általános Iskola, 2017 Dunaújváros.jpg / page 66043494",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / WANTED Aureliano Guzman-Loera.png / page 151056078,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / WMO centenary postage stamps.jpg / page 152054838,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / WV banner Indonesian phrasebook - Indonesia Raya.jpg / page 104132805,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / WW2 Nazi Germany railway slave labour Deutsche Reichsbahn Polar Eisenbahn Ost Bahn Soviet POW prisoners uniforms telogreika budenovka Ukrainisch Lager camp gate Halt Wehrmacht guard etc Lo,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -5541,6 +5654,7 @@ source_name,Wikimedia Commons file source / Washington Review.jpg / page 1233102
 source_name,"Wikimedia Commons file source / Washington west quadrangle, District of Columbia-Maryland-Virginia LOC 96687608-3.jpg / page 70971591",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Washington west quadrangle, District of Columbia-Maryland-Virginia LOC 96687608-4.tif / page 70971615",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Washington-Virginia National Airport - Virginia Guide.jpg / page 26161688,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Water awareness poster on Woolworth building in Capetown in 2018.jpg / page 70998210,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / We Will Stand in Viet-Nam - DPLA - 5b468883e971aea2eefc0b825b82ef0e (page 1).gif / page 73757748,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / We Will Stand in Viet-Nam - DPLA - 5b468883e971aea2eefc0b825b82ef0e (page 14).gif / page 73757764,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / We Will Stand in Viet-Nam - DPLA - 5b468883e971aea2eefc0b825b82ef0e (page 4).gif / page 73757751,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -5563,7 +5677,11 @@ source_name,Wikimedia Commons file source / When the Kellys Rode film poster und
 source_name,Wikimedia Commons file source / When to Do House Cleaning Jobs - DPLA - 8f115f4c26ccc1ceccb10f2e1523ce00 (page 6).gif / page 73757770,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / When to Do House Cleaning Jobs - DPLA - 8f115f4c26ccc1ceccb10f2e1523ce00 (page 8).gif / page 73757772,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / White Right MEETING THE ENEMY.jpg / page 64775873,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Wiki For Human Rights New Mexico poster.png / page 117825608,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Wiki Lockdown.png / page 94184651,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / WikiEducación Abrir con propósito OA2020 WMMX.jpg / page 95970481,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / WikiLibCon25 banner bn version.png / page 151939221,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / WikiLibCon25 banner color version.png / page 151939222,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Wikipedia-pt Book.png / page 12531863,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / William Batchelder - 23rd District - Ohio House of Representatives 109th General Assembly - DPLA - 5586be78567b1fe89fca76f0a79cfcb8 (page 6) (cropped).jpg / page 140011193,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / William H. Mussey - 12th District - Ohio House of Representatives 109th General Assembly - DPLA - 5586be78567b1fe89fca76f0a79cfcb8 (page 10) (cropped).jpg / page 145000627,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -5597,6 +5715,7 @@ source_name,Wikimedia Commons file source / YoArgentinoTapa.jpg / page 70719223,
 source_name,Wikimedia Commons file source / Yofu Gonin Onna Chie crop.tif / page 80908948,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Young Lords Party - Health, Food, Housing, Education.jpg / page 103867301",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Your Lot in a Totalitarian State.jpg / page 163027477,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / Your Tin Makes Engine Parts For Army Lorries - Thank You Nigeria! Art.IWMPST8268.jpg / page 30874777,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Yugoslav army day celebration Bački Petrovac 1947.jpg / page 80286737,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / Yysegal.jpg / page 74266609,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / ZOA House stamp.jpg / page 14824456,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
@@ -6398,6 +6517,7 @@ source_name,Wikimedia Commons file source / हिमालयाची शि�
 source_name,"Wikimedia Commons file source / Ḥaqāʼiq wa-ʻibar book cover (Bayt al-Muqaddas, 1933).jpg / page 140679046",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Ṣawn al-manṭiq wa-al-kalām ʻan Fann al-manṭiq wa-al-kalām (Maktabat al-Khānjī, 1947) Book cover.jpg / page 141268829",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,"Wikimedia Commons file source / Ṣuwar min al-tārīkh al-ʻArabī Book Cover (Dār al-Maʻārif, 1946).png / page 140949525",1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
+source_name,Wikimedia Commons file source / 《美洲與西印度的歷史》.jpg / page 131772465,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Wikimedia Commons file source / 一定要解放台湾文革海报.jpg / page 128990058,1,1,100.00,1,100.00,0.90,90.00,1,100.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,0,1,0
 source_name,Women’s History Museum of Zambia,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0
 source_name,Xul Solar Museum,1,1,100.00,1,100.00,0.55,55.00,0,0.00,1,100.00,0,0.00,1,100.00,0,0.00,0,0,1,0,0

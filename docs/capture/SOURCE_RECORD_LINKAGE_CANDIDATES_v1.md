@@ -6,71 +6,71 @@ Scope: capture records before final surface assignment. This file proposes group
 
 ## Summary
 
-- Capture rows scanned: 1378
-- Linkage groups: 321
-- Linkage memberships: 1076
+- Capture rows scanned: 8035
+- Linkage groups: 488
+- Linkage memberships: 2566
 
 ## Linkage Types
 
-- `same_series_stem_collection`: 85
-- `same_title_within_source`: 81
-- `same_source_record_url`: 46
-- `same_source_identifier`: 41
-- `same_collection_medium_place_decade`: 35
-- `same_image_url`: 33
+- `same_collection_medium_place_decade`: 163
+- `same_series_stem_collection`: 96
+- `same_title_within_source`: 93
+- `same_source_record_url`: 55
+- `same_source_identifier`: 46
+- `same_image_url`: 35
 
 ## Relation Labels
 
-- `same_entity_confirmed`: 87
-- `same_work_series_or_campaign`: 85
-- `possibly_same_as`: 81
-- `related_but_not_same`: 35
-- `same_visual_item_different_capture`: 32
+- `related_but_not_same`: 163
+- `same_entity_confirmed`: 101
+- `same_work_series_or_campaign`: 96
+- `possibly_same_as`: 93
+- `same_visual_item_different_capture`: 34
 - `possible_placeholder_or_loader_reuse`: 1
 
 ## Recommended Actions
 
-- `support_packet_or_compound_sheet_candidate`: 122
-- `deduplicate_or_merge_source_records`: 87
-- `canonical_main_with_child_text_appendix`: 79
-- `review_duplicate_image_before_public_rebuild`: 33
+- `canonical_main_with_child_text_appendix`: 218
+- `support_packet_or_compound_sheet_candidate`: 134
+- `deduplicate_or_merge_source_records`: 101
+- `review_duplicate_image_before_public_rebuild`: 35
 
 ## Coverage Gaps
 
-- `coverage_ready`: 180
-- `needs_image`: 96
+- `coverage_ready`: 322
+- `needs_image`: 101
 - `needs_text`: 90
 - `needs_rights_evidence`: 62
-- `cross_period_review`: 12
-- `multi_place_review`: 2
+- `cross_period_review`: 28
+- `multi_place_review`: 6
 
 ## High-Value Review Groups
 
-- SRLG0036 | same_collection_medium_place_decade | 5 members | canonical_main_with_child_text_appendix | needs_image;needs_text;needs_rights_evidence | The Hour Approaches
-- SRLG0046 | same_collection_medium_place_decade | 4 members | canonical_main_with_child_text_appendix | needs_image;needs_text;needs_rights_evidence | No. 2 Spring
-- SRLG0045 | same_collection_medium_place_decade | 4 members | canonical_main_with_child_text_appendix | needs_image;needs_text;needs_rights_evidence | Keep These Off the U.S.A.
-- SRLG0110 | same_image_url | 2 members | review_duplicate_image_before_public_rebuild | needs_image;needs_text;needs_rights_evidence | 1952 Exhibition Poster
-- SRLG0111 | same_image_url | 2 members | review_duplicate_image_before_public_rebuild | needs_image;needs_text;needs_rights_evidence | An Attempt Using Unfit Means
-- SRLG0116 | same_image_url | 2 members | review_duplicate_image_before_public_rebuild | needs_image;needs_text;needs_rights_evidence | Untitled
-- SRLG0117 | same_image_url | 2 members | review_duplicate_image_before_public_rebuild | needs_image;needs_text;needs_rights_evidence | No. 2 Spring
-- SRLG0118 | same_series_stem_collection | 2 members | support_packet_or_compound_sheet_candidate | needs_image;needs_text;needs_rights_evidence | An Attempt Using Unfit Means
-- SRLG0120 | same_series_stem_collection | 2 members | support_packet_or_compound_sheet_candidate | needs_image;needs_text;needs_rights_evidence | 1952 Exhibition Poster
-- SRLG0178 | same_source_identifier | 2 members | deduplicate_or_merge_source_records | needs_image;needs_text;needs_rights_evidence | 1952 Exhibition Poster
-- SRLG0179 | same_source_identifier | 2 members | deduplicate_or_merge_source_records | needs_image;needs_text;needs_rights_evidence | An Attempt Using Unfit Means
-- SRLG0181 | same_source_identifier | 2 members | deduplicate_or_merge_source_records | needs_image;needs_text;needs_rights_evidence | Untitled
-- SRLG0189 | same_source_identifier | 2 members | deduplicate_or_merge_source_records | needs_image;needs_text;needs_rights_evidence | No. 2 Spring
-- SRLG0238 | same_source_record_url | 2 members | deduplicate_or_merge_source_records | needs_image;needs_text;needs_rights_evidence | 1952 Exhibition Poster
-- SRLG0239 | same_source_record_url | 2 members | deduplicate_or_merge_source_records | needs_image;needs_text;needs_rights_evidence | An Attempt Using Unfit Means
-- SRLG0241 | same_source_record_url | 2 members | deduplicate_or_merge_source_records | needs_image;needs_text;needs_rights_evidence | Untitled
-- SRLG0249 | same_source_record_url | 2 members | deduplicate_or_merge_source_records | needs_image;needs_text;needs_rights_evidence | No. 2 Spring
-- SRLG0262 | same_title_within_source | 2 members | support_packet_or_compound_sheet_candidate | needs_image;needs_text;needs_rights_evidence | 1952 Exhibition Poster
-- SRLG0263 | same_title_within_source | 2 members | support_packet_or_compound_sheet_candidate | needs_image;needs_text;needs_rights_evidence | An Attempt Using Unfit Means
-- SRLG0269 | same_title_within_source | 2 members | support_packet_or_compound_sheet_candidate | needs_image;needs_text;needs_rights_evidence | No. 2 Spring
-- SRLG0274 | same_title_within_source | 2 members | support_packet_or_compound_sheet_candidate | needs_image;needs_text;needs_rights_evidence | Untitled
-- SRLG0106 | same_image_url | 2 members | review_duplicate_image_before_public_rebuild | needs_image;needs_text;needs_rights_evidence | The Modern Poster
-- SRLG0109 | same_image_url | 2 members | review_duplicate_image_before_public_rebuild | needs_image;needs_text;needs_rights_evidence | Our One-Thousandth Blow
-- SRLG0112 | same_image_url | 2 members | review_duplicate_image_before_public_rebuild | needs_image;needs_text;needs_rights_evidence | This Is the Enemy
-- SRLG0113 | same_image_url | 2 members | review_duplicate_image_before_public_rebuild | needs_image;needs_text;needs_rights_evidence | Buy a Little Present for the Kaiser
+- SRLG0123 | same_collection_medium_place_decade | 5 members | canonical_main_with_child_text_appendix | needs_image;needs_text;needs_rights_evidence | The Hour Approaches
+- SRLG0153 | same_collection_medium_place_decade | 4 members | canonical_main_with_child_text_appendix | needs_image;needs_text;needs_rights_evidence | No. 2 Spring
+- SRLG0152 | same_collection_medium_place_decade | 4 members | canonical_main_with_child_text_appendix | needs_image;needs_text;needs_rights_evidence | Keep These Off the U.S.A.
+- SRLG0251 | same_image_url | 2 members | review_duplicate_image_before_public_rebuild | needs_image;needs_text;needs_rights_evidence | 1952 Exhibition Poster
+- SRLG0252 | same_image_url | 2 members | review_duplicate_image_before_public_rebuild | needs_image;needs_text;needs_rights_evidence | An Attempt Using Unfit Means
+- SRLG0257 | same_image_url | 2 members | review_duplicate_image_before_public_rebuild | needs_image;needs_text;needs_rights_evidence | Untitled
+- SRLG0258 | same_image_url | 2 members | review_duplicate_image_before_public_rebuild | needs_image;needs_text;needs_rights_evidence | No. 2 Spring
+- SRLG0260 | same_series_stem_collection | 2 members | support_packet_or_compound_sheet_candidate | needs_image;needs_text;needs_rights_evidence | An Attempt Using Unfit Means
+- SRLG0262 | same_series_stem_collection | 2 members | support_packet_or_compound_sheet_candidate | needs_image;needs_text;needs_rights_evidence | 1952 Exhibition Poster
+- SRLG0326 | same_source_identifier | 2 members | deduplicate_or_merge_source_records | needs_image;needs_text;needs_rights_evidence | 1952 Exhibition Poster
+- SRLG0327 | same_source_identifier | 2 members | deduplicate_or_merge_source_records | needs_image;needs_text;needs_rights_evidence | An Attempt Using Unfit Means
+- SRLG0329 | same_source_identifier | 2 members | deduplicate_or_merge_source_records | needs_image;needs_text;needs_rights_evidence | Untitled
+- SRLG0337 | same_source_identifier | 2 members | deduplicate_or_merge_source_records | needs_image;needs_text;needs_rights_evidence | No. 2 Spring
+- SRLG0397 | same_source_record_url | 2 members | deduplicate_or_merge_source_records | needs_image;needs_text;needs_rights_evidence | 1952 Exhibition Poster
+- SRLG0398 | same_source_record_url | 2 members | deduplicate_or_merge_source_records | needs_image;needs_text;needs_rights_evidence | An Attempt Using Unfit Means
+- SRLG0400 | same_source_record_url | 2 members | deduplicate_or_merge_source_records | needs_image;needs_text;needs_rights_evidence | Untitled
+- SRLG0408 | same_source_record_url | 2 members | deduplicate_or_merge_source_records | needs_image;needs_text;needs_rights_evidence | No. 2 Spring
+- SRLG0423 | same_title_within_source | 2 members | support_packet_or_compound_sheet_candidate | needs_image;needs_text;needs_rights_evidence | 1952 Exhibition Poster
+- SRLG0424 | same_title_within_source | 2 members | support_packet_or_compound_sheet_candidate | needs_image;needs_text;needs_rights_evidence | An Attempt Using Unfit Means
+- SRLG0430 | same_title_within_source | 2 members | support_packet_or_compound_sheet_candidate | needs_image;needs_text;needs_rights_evidence | No. 2 Spring
+- SRLG0435 | same_title_within_source | 2 members | support_packet_or_compound_sheet_candidate | needs_image;needs_text;needs_rights_evidence | Untitled
+- SRLG0247 | same_image_url | 2 members | review_duplicate_image_before_public_rebuild | needs_image;needs_text;needs_rights_evidence | The Modern Poster
+- SRLG0250 | same_image_url | 2 members | review_duplicate_image_before_public_rebuild | needs_image;needs_text;needs_rights_evidence | Our One-Thousandth Blow
+- SRLG0253 | same_image_url | 2 members | review_duplicate_image_before_public_rebuild | needs_image;needs_text;needs_rights_evidence | This Is the Enemy
+- SRLG0254 | same_image_url | 2 members | review_duplicate_image_before_public_rebuild | needs_image;needs_text;needs_rights_evidence | Buy a Little Present for the Kaiser
 
 ## Interpretation
 

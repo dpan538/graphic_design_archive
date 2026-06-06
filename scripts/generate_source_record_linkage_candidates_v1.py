@@ -350,9 +350,15 @@ def evidence_basis(linkage_type: str) -> str:
 
 def write_csv(path: Path, fields: list[str], rows: list[dict[str, str]]) -> None:
     with path.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fields)
+        writer = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
-        writer.writerows(rows)
+        writer.writerows(
+            {
+                field: clean(str(row.get(field, "")))
+                for field in fields
+            }
+            for row in rows
+        )
 
 
 def main() -> None:
