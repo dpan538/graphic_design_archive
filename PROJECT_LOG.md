@@ -5868,3 +5868,159 @@ Verification:
   assignment, bearer/cookie/session payload, private key block, OpenAI-style key,
   AWS-style key, or local user path. Remaining `/Users/` and `.env` hits are
   historical safety-scan terms inside `PROJECT_LOG.md`.
+
+## 2026-06-06 - Commons open source expansion, date repair, and source-coverage pass
+
+Goal:
+
+- Continue the non-mainstream/low-coverage source expansion and count success
+  only after item/image capture, surface rebuild, frontend build, and gate
+  audits.
+- Add at least 1000 successful active sources.
+- Raise object verified-open above 40%, source-visible above 90%, source
+  coverage above 65%, and keep object `IMG04` below 10%.
+- Audit text/sheet counts and document remaining grouping weaknesses.
+
+Capture batches:
+
+- Added `scripts/run_commons_open_global_south_image_capture_2026_v1.py`.
+- Added `scripts/run_commons_open_period_balance_image_capture_2026_v1.py`.
+- Added `data/capture_batch_commons_open_global_south_image_2026_records.csv`.
+- Added `data/capture_batch_commons_open_period_balance_image_2026_records.csv`.
+- Added matching source summaries and capture reports under `docs/capture/`.
+- Both batches store source metadata, source links, rights evidence, and
+  source-hosted Commons image URLs only. No image binaries, thumbnails,
+  screenshots, raw API payloads, cookies, sessions, or browser state were
+  saved.
+- All new records are `IMG03` only when Commons extmetadata exposes open-license
+  evidence. No heuristic, source-priority, platform, protocol, or LLM signal was
+  used for rights upgrade.
+
+Global South open-image batch:
+
+- API capture wrote 1400 initial Commons open-image records.
+- Date audit found a real bug: many records were incorrectly falling into 2026
+  because object-year extraction did not prioritize Commons `DateTimeOriginal`
+  and the earlier parser could use current/modified Commons timestamps or a
+  current-year fallback as object dates.
+- Fixed the parser so object dates come from explicit object-year evidence only:
+  `DateTimeOriginal`, object name, image description, title, and category text.
+  Commons modified/upload `DateTime` is not used as object date.
+- Records without explicit object-year evidence are excluded.
+- After repair: 1380 records retained, 20 dropped, 286 date fields corrected.
+- Remaining explicit 2026 records: 7.
+- Distinct file-source labels: 1376.
+- Macro-region distribution: Latin America 1333, East Asia 26, Middle East and
+  North Africa 14, Southeast Asia 4, Eastern Europe 2, Africa 1.
+- Period distribution: pre-1930 561, 1930-1970 324, 1970-2000 77, 2000-2026
+  418.
+
+Period-balance open-image batch:
+
+- Added after the date repair showed source coverage was still limited by
+  period balance rather than active source count.
+- Exact-year search targets 1970-2000 first and accepts global period-balanced
+  Commons records when a non-mainstream region cannot be inferred from page
+  metadata.
+- Captured 90 records across 90 distinct source labels.
+- Period distribution: 1930-1970 67, 1970-2000 23.
+- Macro-region distribution: Global 61, Southeast Asia 22, Middle East and
+  North Africa 2, Africa 2, Latin America 2, Eastern Europe 1.
+
+Surface rebuild:
+
+- Added both Commons capture record files to
+  `scripts/rebuild_public_surfaces_from_records.py`.
+- Rebuilt generated and frontend public-surface payloads.
+- Final rebuilt rows: 3736.
+- Public surfaces: 3616.
+- Folders: 49.
+- Surface image states: `IMG00` 43, `IMG01` 37, `IMG02` 1327, `IMG03` 1951,
+  `IMG04` 258.
+- Source-visible image-ready surfaces: 3315/3616 (91.68%).
+- Weighted publication image score: 2496.85/3616 (69.05%).
+
+Final release-gate metrics:
+
+- Active source count: 2279.
+- Release source target: 2000.
+- Release source coverage by active source count: 113.95%.
+- Source coverage rate v1: 67.05%, passing the requested 65% round target.
+- Source pool rate: 100.00%.
+- Region-weighted balance rate: 27.08%; this remains the main structural
+  weakness because the new open batch is heavily Latin America weighted.
+- Time-weighted balance rate: 67.05%.
+- Object source-visible coverage: 92.04%, passing the requested 90% round
+  target but still below the final 95% release gate.
+- Object verified-open coverage: 54.27%, passing the requested 40% round target
+  but still below the final 85% release gate.
+- Object weighted publication-grade image coverage: 69.36%, still below the
+  final 95% release gate. Object grouping counts repeated photos/views by source
+  object rather than every surface row.
+- Object `IMG04` coverage: 6.76%, passing the requested under-10% round target.
+
+Source-coverage period breakdown:
+
+- pre-1930: 569 active sources, 1028 records, 100.00% balance.
+- 1930-1970: 415 active sources, 919 records, 59.29% balance.
+- 1970-2000: 126 active sources, 391 records, 25.20% balance.
+- 2000-2026: 1152 active sources, 1403 records, 100.00% balance.
+- Next best source direction: targeted 1970-2000 open-image source pages,
+  especially Africa, South Asia, Southeast Asia, MENA, Oceania/Pacific, and
+  Eastern Europe. Latin America now needs consolidation more than volume.
+
+Sheet and text statistics:
+
+- Main sheets: 3371.
+- Sub sheets: 231.
+- Text sheets: 242.
+- Main sheets with more than 2 sub sheets: 121.
+- Main sheets with more than 5 text sheets: 1.
+- Text sheet count remains flat despite richer source text in new records. This
+  confirms that the current surface assignment layer is still producing mostly
+  main-sheet candidates; text/subsheet expansion will need a later grouping and
+  dossier-normalization pass rather than more raw capture alone.
+
+Additional audit notes:
+
+- `audit_layered_image_source_metrics_v1.py`: records total 3815,
+  source-visible rate 92.24%, publication-grade candidate rate 89.49%,
+  weighted publication rate 68.27%, open-image rate 42.80%, duplicate image URL
+  rate 1.86%.
+- `audit_img_state_contract.py` passed.
+- `audit_period_source_image_priority_v1.py`: highest combined priority remains
+  `1930_1970` (0.2067), followed by `1970_2000` (0.1580), `2000_2026`
+  (0.1098), and `pre_1930` (0.0590).
+- `audit_surface_assignment_gates_v1.py` passed and wrote 3815 audit rows.
+- `audit_public_surface_integrity.py` still exits non-zero only for existing
+  duplicate image URL warnings: 12 surfaces share 6 exact URLs from prior
+  Another Graphic / Barjeel records, not the new Commons batches.
+- README/license check: `README.md` already documents MIT for the software code
+  layer plus the personal frontend design license in
+  `FRONTEND_DESIGN_LICENSE.md`; no README change was needed this round.
+
+Verification:
+
+- `npm run build` passed in `frontend/`; Next generated 3693 static pages.
+- `python3 -m py_compile` passed for the new/modified capture, rebuild, audit,
+  and probe scripts.
+- `python3 scripts/audit_source_coverage_rate_v1.py` passed with
+  `source_coverage_rate_v1=67.05`.
+- `python3 scripts/audit_image_release_gate.py` still exits non-zero by design
+  because final release gates remain 95% source-visible, 85% verified-open, and
+  95% weighted publication-grade.
+- `python3 scripts/audit_img_state_contract.py` passed.
+- `python3 scripts/audit_layered_image_source_metrics_v1.py` passed.
+- `python3 scripts/audit_public_surface_sheet_counts_v1.py` passed.
+- `python3 scripts/audit_period_source_image_priority_v1.py` passed.
+- `python3 scripts/audit_surface_assignment_gates_v1.py` passed.
+- `python3 scripts/audit_public_surface_integrity.py` reports only the existing
+  duplicate URL warnings listed above.
+- `git diff --check` passed.
+- `python3 scripts/audit_secret_patterns.py` still reports token-shaped URL
+  parameters in older raw probe HTML files that are not part of this commit.
+- Commit-bound safety scan for `API_KEY`, token, password, secret, cookie,
+  session, bearer, `/Users/`, and `.env` found no real credential assignment,
+  bearer/cookie/session payload, private key, API key, or local user path. Hits
+  were false positives in public titles such as `Secreto de confesion`,
+  `poster-session`, normal project boundary text, or historical log entries.

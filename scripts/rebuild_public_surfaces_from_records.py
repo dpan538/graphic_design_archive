@@ -48,6 +48,8 @@ RECORD_FILES = [
     DATA / "capture_batch_nonmainstream_region_1990_2026_records.csv",
     DATA / "capture_batch_nonmainstream_source_profiles_1990_2026_records.csv",
     DATA / "capture_batch_nonmainstream_item_image_2026_records.csv",
+    DATA / "capture_batch_commons_open_global_south_image_2026_records.csv",
+    DATA / "capture_batch_commons_open_period_balance_image_2026_records.csv",
 ]
 
 PAYLOAD_PATHS = [

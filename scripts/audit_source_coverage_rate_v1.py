@@ -80,6 +80,13 @@ SOURCE_REGION_OVERRIDES = {
     "Wellcome Collection Catalogue API": "Western/Central Europe",
 }
 
+PLACE_REGION_ALIASES = {
+    "MENA": "Middle East and North Africa",
+    "Oceania": "Oceania and Pacific",
+    "Pacific": "Oceania and Pacific",
+    "Eastern Europe / Caucasus": "Eastern Europe / Caucasus",
+}
+
 UNMAPPED_REGION_LABELS = {
     "",
     "active payload / needs registry mapping",
@@ -180,12 +187,36 @@ def registry_by_source_name() -> dict[str, dict[str, str]]:
     return {clean(row.get("source_name")).lower(): row for row in registry_rows() if clean(row.get("source_name"))}
 
 
-def canonical_region(source_name: str, registry: dict[str, dict[str, str]]) -> str:
+def region_from_place_text(value: str | None) -> str:
+    place = clean(value)
+    if not place:
+        return ""
+    macro = clean(place.split("/")[0])
+    return PLACE_REGION_ALIASES.get(macro, macro)
+
+
+def source_place_regions(rows: list[dict[str, str]]) -> dict[str, str]:
+    by_source: dict[str, str] = {}
+    for row in rows:
+        source = clean(row.get("source_name"))
+        if not source or source in by_source:
+            continue
+        region = region_from_place_text(row.get("source_place_text"))
+        if region and region not in UNMAPPED_REGION_LABELS:
+            by_source[source] = region
+    return by_source
+
+
+def canonical_region(source_name: str, registry: dict[str, dict[str, str]], place_regions: dict[str, str] | None = None) -> str:
     if source_name in SOURCE_REGION_OVERRIDES:
         return SOURCE_REGION_OVERRIDES[source_name]
     row = registry.get(source_name.lower(), {})
     region = clean(row.get("region_group"))
     if region in UNMAPPED_REGION_LABELS:
+        if place_regions:
+            place_region = clean(place_regions.get(source_name))
+            if place_region and place_region not in UNMAPPED_REGION_LABELS:
+                return place_region
         country = clean(row.get("country_or_territory"))
         if country in {"China", "Hong Kong", "Japan", "Korea", "Taiwan"}:
             return "East Asia"
@@ -208,8 +239,9 @@ def main() -> None:
     pre_surface_count = pre_surface_source_registry_count()
     rows = capture_rows()
     registry = registry_by_source_name()
+    place_regions = source_place_regions(rows)
     active_sources = sorted({clean(row.get("source_name")) for row in rows if clean(row.get("source_name"))})
-    active_region = {source: canonical_region(source, registry) for source in active_sources}
+    active_region = {source: canonical_region(source, registry, place_regions) for source in active_sources}
 
     candidate_by_region: Counter[str] = Counter()
     for row in registry_rows():

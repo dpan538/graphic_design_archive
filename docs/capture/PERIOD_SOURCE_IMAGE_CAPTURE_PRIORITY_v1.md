@@ -14,21 +14,21 @@ Source gap is weighted slightly higher because adding another record from the sa
 
 ## Ranked Periods
 
-- 1930_1970: priority=0.2526, source=3.00%, image=55.26%, active_sources=26, records=528
-  Action: Highest priority: add new active sources and prefer IMG03/strong IMG02 records before adding more thin sheets.
-- 1970_2000: priority=0.1726, source=4.73%, image=59.85%, active_sources=26, records=291
-  Action: Highest priority: add new active sources and prefer IMG03/strong IMG02 records before adding more thin sheets.
-- 2000_2026: priority=0.1481, source=34.06%, image=46.49%, active_sources=734, records=985
-  Action: Highest priority: add new active sources and prefer IMG03/strong IMG02 records before adding more thin sheets.
-- pre_1930: priority=0.0963, source=2.13%, image=73.17%, active_sources=10, records=467
-  Action: Hold broad capture; add targeted non-West/local source diversity and dedupe repeated early image evidence.
+- 1930_1970: priority=0.2067, source=14.11%, image=70.04%, active_sources=415, records=919
+  Action: Add source breadth first: local/community/university/government adapters before more records from existing sources.
+- 1970_2000: priority=0.1580, source=8.73%, image=67.56%, active_sources=126, records=391
+  Action: Add source breadth first: local/community/university/government adapters before more records from existing sources.
+- 2000_2026: priority=0.1098, source=50.78%, image=59.45%, active_sources=1152, records=1403
+  Action: Improve image quality: upgrade IMG02/IMG00/IMG04 through source-specific image adapters and rights review.
+- pre_1930: priority=0.0590, source=39.40%, image=82.35%, active_sources=569, records=1028
+  Action: Target missing regional source families only; do not let prewar work displace postwar coverage.
 
 ## Current Table
 
-- 1930_1970: source_points=21.00/700.00, source_gap=97.00%, image_gap=41.83%, IMG03=153, IMG02=267, IMG00=42, IMG04=42
-- 1970_2000: source_points=23.65/500.00, source_gap=95.27%, image_gap=37.00%, IMG03=56, IMG02=225, IMG00=1, IMG04=9
-- 2000_2026: source_points=170.30/500.00, source_gap=65.94%, image_gap=51.06%, IMG03=23, IMG02=795, IMG00=1, IMG04=166
-- pre_1930: source_points=6.40/300.00, source_gap=97.87%, image_gap=22.98%, IMG03=333, IMG02=66, IMG00=15, IMG04=34
+- 1930_1970: source_points=98.80/700.00, source_gap=85.89%, image_gap=26.27%, IMG03=544, IMG02=267, IMG00=42, IMG04=42
+- 1970_2000: source_points=43.65/500.00, source_gap=91.27%, image_gap=28.88%, IMG03=156, IMG02=225, IMG00=1, IMG04=9
+- 2000_2026: source_points=253.90/500.00, source_gap=49.22%, image_gap=37.42%, IMG03=441, IMG02=795, IMG00=1, IMG04=166
+- pre_1930: source_points=118.20/300.00, source_gap=60.60%, image_gap=13.32%, IMG03=894, IMG02=66, IMG00=15, IMG04=34
 
 ## Interpretation
 
