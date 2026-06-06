@@ -51,7 +51,11 @@ interface QwenTokenizer {
   eos_token_id?: number;
   apply_chat_template: (
     messages: { role: "system" | "user" | "assistant"; content: string }[],
-    options: { tokenize: true; add_generation_prompt: true },
+    options: {
+      tokenize: true;
+      add_generation_prompt: true;
+      enable_thinking?: boolean;
+    },
   ) => Record<string, unknown> & {
     input_ids?: { dims?: number[] };
   };
@@ -96,9 +100,23 @@ const QWEN35_EXTERNAL_DATA = [
     data: "onnx/decoder_model_merged_q4.onnx_data",
   },
 ];
+const ASSISTANT_MAX_NEW_TOKENS = 48;
+const RESEARCH_MAX_NEW_TOKENS = 180;
 
 let cachedSession: Promise<QwenAssistantSession> | null = null;
 let cachedSessionReady = false;
+
+function assertInteractiveRuntime() {
+  if (
+    typeof navigator !== "undefined" &&
+    typeof window !== "undefined" &&
+    !("gpu" in navigator)
+  ) {
+    throw new Error(
+      "WebGPU is unavailable, so the local Qwen assistant is disabled to avoid CPU-only responses that take too long.",
+    );
+  }
+}
 
 function contextBlock(context?: QwenAssistantContext) {
   if (!context) return "No active archive object context.";
@@ -126,7 +144,7 @@ function sanitizeAnswer(answer: string) {
 function systemMessage(options?: QwenAskOptions) {
   const researchInstruction = options?.research
     ? "Research mode: use a more developed structure with Evidence, Reading, and Next checks. Do not expose hidden reasoning."
-    : "Assistant mode: answer compactly.";
+    : "Assistant mode: answer in at most two compact sentences and no more than 45 words.";
   return {
     role: "system" as const,
     content: [
@@ -173,6 +191,7 @@ async function runGeneration({
   const inputs = tokenizer.apply_chat_template(messages, {
     tokenize: true,
     add_generation_prompt: true,
+    enable_thinking: false,
   });
   const inputTokenCount = inputs.input_ids?.dims?.at(-1) ?? 0;
   const outputs = await model.generate({
@@ -205,6 +224,7 @@ export async function createQwenAssistantSession(
   }
 
   cachedSession = (async () => {
+    assertInteractiveRuntime();
     onProgress?.("Preparing");
     const transformers = (await import("@huggingface/transformers")) as TransformersModule;
     if (transformers.env) {
@@ -220,7 +240,7 @@ export async function createQwenAssistantSession(
       QWEN35_RUNTIME_MODEL_ID,
       {
         dtype: QWEN35_DTYPE,
-        device: "auto",
+        device: "webgpu",
         use_external_data_format: false,
         session_options: {
           externalData: QWEN35_EXTERNAL_DATA,
@@ -245,7 +265,9 @@ export async function createQwenAssistantSession(
           tokenizer,
           model,
           messages,
-          maxNewTokens: options?.research ? 320 : 150,
+          maxNewTokens: options?.research
+            ? RESEARCH_MAX_NEW_TOKENS
+            : ASSISTANT_MAX_NEW_TOKENS,
         });
       },
     };

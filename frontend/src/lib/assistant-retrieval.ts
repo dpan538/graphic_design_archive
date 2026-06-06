@@ -132,8 +132,8 @@ function sourceText(surface: Surface) {
     .trim();
 }
 
-function snippet(surface: Surface) {
-  return sourceText(surface).slice(0, 220);
+function snippet(surface: Surface, length = 220) {
+  return sourceText(surface).slice(0, length);
 }
 
 function imageScore(surface: Surface) {
@@ -198,7 +198,7 @@ function rankCandidate(
   return { surface, score, reasons };
 }
 
-function formatCandidate(candidate: Candidate, index: number) {
+function formatCandidate(candidate: Candidate, index: number, snippetLength = 220) {
   const { surface, score, reasons } = candidate;
   return [
     `${index + 1}. ${surface.surfaceId} | ${surface.title}`,
@@ -206,7 +206,7 @@ function formatCandidate(candidate: Candidate, index: number) {
     `   object=${surface.objectType || surface.medium || "unknown"}; image=${surface.image.state}; source=${surface.sourceName || "unknown"}`,
     `   source_url=${surface.sourceUrl || "none"}`,
     `   ranking_score=${score.toFixed(1)}; reasons=${reasons.join(", ") || "metadata overlap"}`,
-    `   note=${snippet(surface) || "no note available"}`,
+    `   note=${snippet(surface, snippetLength) || "no note available"}`,
   ].join("\n");
 }
 
@@ -248,7 +248,8 @@ export function buildAssistantEvidence(
       return (b.surface.completenessScore ?? 0) - (a.surface.completenessScore ?? 0);
     });
 
-  const limit = options?.research ? 12 : 6;
+  const limit = options?.research ? 10 : 3;
+  const snippetLength = options?.research ? 220 : 120;
   const selected = candidates.slice(0, limit);
 
   if (selected.length === 0) {
@@ -283,7 +284,9 @@ export function buildAssistantEvidence(
       "Do not mention records not present in these candidates.",
       "Discussing metadata, source evidence, rights state, and archive navigation is allowed; do not refuse as copyright infringement unless the user asks to copy, download, or bypass rights.",
       "CANDIDATES",
-      selected.map(formatCandidate).join("\n---\n"),
+      selected
+        .map((candidate, index) => formatCandidate(candidate, index, snippetLength))
+        .join("\n---\n"),
     ].join("\n"),
   };
 }

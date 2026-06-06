@@ -6611,3 +6611,49 @@ Verification:
   question.
 - Search still rendered as the separate search input in the same floating
   container.
+
+## 2026-06-06 - Assistant Latency Diagnosis And Micro-Mode Correction
+
+Scope:
+
+- Investigated regular Assistant responses taking longer than 30 seconds.
+- Frontend assistant runtime/configuration change only: no source capture,
+  image download, rights upgrade, surface rebuild, or classification change was
+  performed.
+
+Diagnosis:
+
+- The slow response is not caused by archive retrieval/search. The retrieval
+  helper is local metadata ranking over the static payload.
+- The project's earlier Qwen probe established the intended regular envelope:
+  compact record/search micro-notes around 11.8-14.0 seconds after cached load,
+  using compact slips and `max_new_tokens=12`.
+- The integrated frontend had drifted away from that envelope:
+  regular Assistant mode used `max_new_tokens=150`, selected 6 candidate
+  records, and sent longer candidate notes.
+- Transformers.js documentation and local package source also show that browser
+  execution defaults to CPU/WASM unless WebGPU is explicitly selected or made
+  available through the selected execution providers. Silent CPU/WASM behavior
+  is unacceptable for this interactive assistant because it looks like the app
+  is thinking while it is only running a slow local backend.
+- Local browser capability check on `http://127.0.0.1:3040` confirmed
+  `navigator.gpu=true`, secure context, 8 hardware threads, and 16 GB reported
+  device memory, so WebGPU is available in the test browser.
+
+Correction:
+
+- Regular Assistant mode now uses a micro-answer budget:
+  `max_new_tokens=48`, at most 3 retrieved candidates, and 120-character
+  candidate notes.
+- Research mode remains broader but was reduced to `max_new_tokens=180` and
+  at most 10 candidates.
+- The Qwen chat-template call now passes `enable_thinking=false` explicitly.
+- The assistant model load now requires WebGPU and passes `device="webgpu"` to
+  Transformers.js. If WebGPU is unavailable, the assistant fails fast instead
+  of silently falling back to a very slow CPU-only experience.
+
+Verification:
+
+- `npm run build` passed in `frontend/`; Next generated 7914/7914 static pages.
+  The familiar slow static-page retry warnings appeared, but the build exited
+  successfully.
