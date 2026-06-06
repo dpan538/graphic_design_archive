@@ -41,11 +41,6 @@ export default function Reader({
   const [index, setIndex] = useState(
     Math.min(Math.max(initialIndex, 0), leaves.length - 1),
   );
-  const [visualCheck, setVisualCheck] = useState<{
-    ok: boolean;
-    count: number;
-    sample: string;
-  }>({ ok: true, count: 0, sample: "visual/a11y ok" });
 
   const next = useCallback(
     () => setIndex((i) => Math.min(i + 1, leaves.length - 1)),
@@ -101,161 +96,6 @@ export default function Reader({
     );
   }, [activeSurface, contextSubtitle, contextTitle]);
 
-  useEffect(() => {
-    const timer = window.setTimeout(() => {
-      const rootFontSize =
-        Number.parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
-      const fallbackLimits = {
-        body: 0.72 * rootFontSize,
-        metadata: 0.62 * rootFontSize,
-        micro: 0.56 * rootFontSize,
-      };
-      const limitsForLeaf = (leaf: Element) => {
-        const numberAttr = (name: string, fallback: number) => {
-          const value = Number.parseFloat(leaf.getAttribute(name) ?? "");
-          return Number.isFinite(value) ? value * rootFontSize : fallback;
-        };
-        return {
-          body: numberAttr("data-min-body-rem", fallbackLimits.body),
-          metadata: numberAttr("data-min-metadata-rem", fallbackLimits.metadata),
-          micro: numberAttr("data-min-micro-rem", fallbackLimits.micro),
-        };
-      };
-      const visibleElement = (el: Element) => {
-        const rect = el.getBoundingClientRect();
-        const style = getComputedStyle(el);
-        return (
-          rect.width > 0 &&
-          rect.height > 0 &&
-          style.visibility !== "hidden" &&
-          style.display !== "none" &&
-          Number(style.opacity) !== 0
-        );
-      };
-      const scrollContainerFor = (el: Element) => {
-        const container = el.closest(
-          ".main-sheet, .sub-sheet, .archive-card, .source-slip, .appendix-sheet",
-        );
-        if (!container) return null;
-        const style = getComputedStyle(container);
-        const verticalScroll =
-          style.overflowY === "auto" || style.overflowY === "scroll";
-        return verticalScroll &&
-          (container as HTMLElement).scrollHeight >
-            (container as HTMLElement).clientHeight + 2
-          ? container
-          : null;
-      };
-      const intersects = (a: DOMRect, b: DOMRect) =>
-        a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
-      const textOf = (el: Element) => (el.textContent || "").replace(/\s+/g, " ").trim();
-      const roleFor = (el: Element): keyof typeof fallbackLimits | null => {
-        const tag = el.tagName;
-        const className = String((el as HTMLElement).className || "");
-        if (
-          /label|kicker|meta|footer|badge|code|state|accession|marker|caption|context|source|rights|row|ledger/i.test(
-            className,
-          )
-        ) {
-          return "micro";
-        }
-        if (["TD", "TH", "DT", "FIGCAPTION", "A", "BUTTON", "SUMMARY"].includes(tag)) {
-          return "metadata";
-        }
-        if (["P", "LI", "BLOCKQUOTE", "DD"].includes(tag)) return "body";
-        return null;
-      };
-
-      const errors: string[] = [];
-      const leafs = Array.from(document.querySelectorAll(".leaf")).filter(visibleElement);
-      for (const leaf of leafs) {
-        const leafRect = leaf.getBoundingClientRect();
-        const limits = limitsForLeaf(leaf);
-        const overflowPolicy = leaf.getAttribute("data-overflow-policy") ?? "none";
-        const level = leaf.getAttribute("data-level") ?? "unknown";
-        const clippedContainers = Array.from(
-          leaf.querySelectorAll(
-            ".reading-note__card, .main-sheet, .appendix-sheet, .sub-sheet, .text-page, .archive-card, .source-slip",
-          ),
-        ).filter(visibleElement);
-        for (const el of clippedContainers) {
-          const style = getComputedStyle(el);
-          const verticalScroll =
-            style.overflowY === "auto" || style.overflowY === "scroll";
-          if (
-            style.overflow !== "visible" &&
-            !verticalScroll &&
-            ((el as HTMLElement).scrollHeight > (el as HTMLElement).clientHeight + 2 ||
-              (el as HTMLElement).scrollWidth > (el as HTMLElement).clientWidth + 2)
-          ) {
-            errors.push(`overflow contract failed (${level}/${overflowPolicy}): ${el.className}`);
-          }
-        }
-        const textNodes = Array.from(
-          leaf.querySelectorAll("p, h1, h2, h3, h4, li, dt, dd, th, td, span, strong, em, a, figcaption"),
-        ).filter((el) => visibleElement(el) && textOf(el));
-
-        for (const el of textNodes) {
-          const rect = el.getBoundingClientRect();
-          const style = getComputedStyle(el);
-          const label = textOf(el).slice(0, 56);
-          const scrollContainer = scrollContainerFor(el);
-          if (
-            rect.left < leafRect.left - 1 ||
-            rect.right > leafRect.right + 1 ||
-            (!scrollContainer &&
-              (rect.top < leafRect.top - 1 || rect.bottom > leafRect.bottom + 1))
-          ) {
-            errors.push(`text overflow: ${label}`);
-          }
-
-          const role = roleFor(el);
-          const size = Number.parseFloat(style.fontSize);
-          if (role && Number.isFinite(size) && size + 0.01 < limits[role]) {
-            errors.push(`font below ${role} min: ${label}`);
-          }
-
-          if (
-            /[\u3040-\u30ff\u3400-\u9fff]/.test(label) &&
-            (style.wordBreak === "break-all" ||
-              style.writingMode !== "horizontal-tb" ||
-              (rect.width < 42 && label.length > 3))
-          ) {
-            errors.push(`CJK broken: ${label}`);
-          }
-        }
-
-        if (
-          leaf.getAttribute("data-image-state") === "IMG04" ||
-          leaf.getAttribute("data-level") === "IMG04"
-        ) {
-          const img04Frame = Array.from(
-            leaf.querySelectorAll(".image-bay, .main-sheet-plate, .main-sheet-plate__frame, .main-sheet-plate__empty, img"),
-          ).find(visibleElement);
-          if (img04Frame) errors.push(`${level} image frame contract failed`);
-        }
-      }
-
-      const pageTurn = document.querySelector(".page-turn");
-      if (pageTurn && visibleElement(pageTurn)) {
-        const navRect = pageTurn.getBoundingClientRect();
-        for (const leaf of leafs) {
-          if (intersects(navRect, leaf.getBoundingClientRect())) {
-            errors.push("page navigation overlaps leaf");
-            break;
-          }
-        }
-      }
-
-      setVisualCheck({
-        ok: errors.length === 0,
-        count: errors.length,
-        sample: errors[0] ?? "visual/a11y ok",
-      });
-    }, 160);
-    return () => window.clearTimeout(timer);
-  }, [index, visible.length]);
-
   const atStart = index <= 0;
   const atEnd = index >= leaves.length - 1;
 
@@ -266,6 +106,34 @@ export default function Reader({
     });
     return active;
   }, [jumpTargets, index]);
+  const mainSheetTargets = useMemo(() => {
+    return leaves
+      .map((leaf, leafIndex) => ({ leaf, leafIndex }))
+      .filter(({ leaf }) => leaf.type === "main" && leaf.surface)
+      .map(({ leaf, leafIndex }) => ({
+        leafIndex,
+        label: leaf.surface?.title ?? "Untitled main sheet",
+        sublabel: leaf.surface?.dateText ?? "",
+      }));
+  }, [leaves]);
+  const activeMainSheetIdx = useMemo(() => {
+    let active = 0;
+    mainSheetTargets.forEach((target, i) => {
+      if (target.leafIndex <= index) active = i;
+    });
+    return active;
+  }, [index, mainSheetTargets]);
+  const nearbyMainSheetTargets = useMemo(() => {
+    const start = Math.max(0, activeMainSheetIdx - 2);
+    const end = Math.min(mainSheetTargets.length, activeMainSheetIdx + 3);
+    return mainSheetTargets.slice(start, end).map((target, offset) => ({
+      target,
+      originalIndex: start + offset,
+    }));
+  }, [activeMainSheetIdx, mainSheetTargets]);
+  const showDossierTree =
+    activeDossier?.anchorType === "main_sheet" &&
+    activeDossier.pageSequence.length > 0;
 
   const main = (
     <div className="relative flex-1 min-h-0 flex flex-col">
@@ -278,11 +146,11 @@ export default function Reader({
           type="button"
           className="btn-turn btn-turn--assistant"
           onClick={openAssistant}
-          aria-label="Open assistant"
-          title="Assistant"
+          aria-label="Open research assistant"
+          title="Research"
         >
           <IconAssistant />
-          <span>Assistant</span>
+          <span>Research</span>
         </button>
         <div className="page-turn__sep" aria-hidden />
         <button
@@ -308,18 +176,10 @@ export default function Reader({
           ›
         </button>
       </div>
-      <div
-        className={`visual-check ${visualCheck.ok ? "visual-check--ok" : "visual-check--fail"}`}
-        data-release-note="remove-before-launch"
-        title={`Pre-release QA marker: ${visualCheck.sample}`}
-        aria-live="polite"
-      >
-        <span>{visualCheck.ok ? "VIS OK" : `VIS ${visualCheck.count}`}</span>
-      </div>
     </div>
   );
 
-  const packetPanel = (
+  const contextPanel = (
     <>
       <div className="packet-panel__header">
         {backHref ? (
@@ -342,7 +202,7 @@ export default function Reader({
 
       <div className="panel-scroll packet-panel__scroll">
         <section className="packet-summary">
-          <div className="label-caps text-ink-soft">Research packet anchor</div>
+          <div className="label-caps text-ink-soft">Background context</div>
           <h3>{activeDossier?.title ?? activeSurface?.title ?? "Register / index"}</h3>
           <dl>
             <div>
@@ -364,7 +224,43 @@ export default function Reader({
           </dl>
         </section>
 
-        <section className="packet-tree" aria-label="Research packet relationship tree">
+        <section className="packet-sequence" aria-label="Archive page sequence">
+          <div className="label-caps text-ink-soft">Archive sequence</div>
+          {jumpTargets.map((t, i) => (
+            <button
+              key={`${t.leafIndex}-${i}`}
+              type="button"
+              onClick={() => setIndex(t.leafIndex)}
+              className="idx-row"
+              data-active={i === activeTargetIdx}
+            >
+              <div className="flex items-center justify-between gap-2">
+                <span className="truncate font-medium">{t.label}</span>
+              </div>
+              <div className="text-ink-soft text-[0.62rem]">{t.sublabel}</div>
+            </button>
+          ))}
+        </section>
+      </div>
+    </>
+  );
+
+  const contentPanel = (
+    <>
+      <div className="packet-panel__header packet-panel__header--compact">
+        {backHref ? (
+          <Link href={backHref} className="label-caps underline">
+            ← {backLabel ?? "Back"}
+          </Link>
+        ) : null}
+        <div className="font-bold text-lg leading-tight mt-1.5">
+          {showDossierTree ? activeDossier?.title : "Nearby main sheets"}
+        </div>
+        <div className="label-caps text-ink-soft mt-1">Packet tree</div>
+      </div>
+
+      <div className="panel-scroll packet-panel__scroll">
+        <section className="packet-tree packet-tree--diagram" aria-label="Research packet relationship tree">
           <div className="packet-tree__root">
             <span className="packet-tree__marker" aria-hidden />
             <div>
@@ -372,14 +268,17 @@ export default function Reader({
                 {activeDossier?.title ?? contextTitle}
               </div>
               <div className="packet-tree__meta">
-                {activeSurface?.dateText ?? contextSubtitle}
+                {showDossierTree && activeDossier
+                  ? `${formatAnchorType(activeDossier.anchorType)} / ${activeDossier.pageCount} pages`
+                  : `${contextSubtitle} / previous and next main sheets`}
               </div>
             </div>
           </div>
 
-          {activeDossier?.pageSequence.length ? (
-            <div className="packet-tree__branch">
-              {activeDossier.pageSequence.map((page) => {
+          {showDossierTree && activeDossier ? (
+            <div className="packet-tree__canvas">
+              <span className="packet-tree__rail" aria-hidden />
+              {activeDossier.pageSequence.map((page, pageIndex) => {
                 const targetIndex = sIndex.get(page.surfaceId);
                 const isActive =
                   page.surfaceId === activeSurface?.surfaceId &&
@@ -390,24 +289,29 @@ export default function Reader({
                   <button
                     key={page.pageId}
                     type="button"
-                    className="packet-tree__item"
+                    className="packet-tree__item packet-tree__item--diagram"
                     data-active={isActive}
+                    data-node-type={page.pageType}
                     disabled={targetIndex === undefined}
                     onClick={() => {
                       if (targetIndex !== undefined) setIndex(targetIndex);
                     }}
+                    title={`${formatPageType(page.pageType)} / ${page.title ?? page.displayNumber ?? page.pageId}`}
                   >
                     <span className="packet-tree__node" aria-hidden />
                     <span className="packet-tree__body">
                       <span className="packet-tree__kicker">
-                        {formatPageType(page.pageType)}
-                        {page.imageState ? ` / ${page.imageState}` : ""}
+                        {String(pageIndex + 1).padStart(2, "0")} / {formatPageType(page.pageType)}
                       </span>
                       <span className="packet-tree__label">
                         {page.title ?? page.displayNumber ?? page.pageId}
                       </span>
                       <span className="packet-tree__source">
-                        {page.sourceName ?? page.rightsState ?? "source pending"}
+                        {page.imageState ?? "IMG--"} / {page.sourceName ?? page.rightsState ?? "source pending"}
+                      </span>
+                      <span className="packet-tree__hover">
+                        {pageRelationship(page.pageType)} · {page.rightsState ?? "rights pending"}
+                        {page.sourceUrl ? " · source-linked" : ""}
                       </span>
                     </span>
                   </button>
@@ -415,30 +319,36 @@ export default function Reader({
               })}
             </div>
           ) : (
-            <div className="packet-tree__empty">
-              {activeSurface
-                ? "Dossier grouping is pending; use the archive sequence below as the current page structure."
-                : "Folder register pages are not yet grouped into a packet sequence."}
+            <div className="packet-tree__canvas">
+              <span className="packet-tree__rail" aria-hidden />
+              {nearbyMainSheetTargets.map(({ target, originalIndex }) => (
+                <button
+                  key={`${target.leafIndex}-${originalIndex}`}
+                  type="button"
+                  className="packet-tree__item packet-tree__item--diagram"
+                  data-active={originalIndex === activeMainSheetIdx}
+                  data-node-type="main_sheet"
+                  onClick={() => setIndex(target.leafIndex)}
+                  title={`${target.label} / ${target.sublabel}`}
+                >
+                  <span className="packet-tree__node" aria-hidden />
+                  <span className="packet-tree__body">
+                    <span className="packet-tree__kicker">
+                      {String(originalIndex + 1).padStart(2, "0")} / main sheet
+                    </span>
+                    <span className="packet-tree__label">{target.label}</span>
+                    <span className="packet-tree__source">{target.sublabel}</span>
+                    <span className="packet-tree__hover">
+                      Main sheet navigation only. Open Context for full archive sequence.
+                    </span>
+                  </span>
+                </button>
+              ))}
+              <div className="packet-tree__empty">
+                Packet grouping is pending; this view only shows nearby main sheets.
+              </div>
             </div>
           )}
-        </section>
-
-        <section className="packet-sequence" aria-label="Archive page sequence">
-          <div className="label-caps text-ink-soft">Archive sequence</div>
-        {jumpTargets.map((t, i) => (
-          <button
-            key={`${t.leafIndex}-${i}`}
-            type="button"
-            onClick={() => setIndex(t.leafIndex)}
-            className="idx-row"
-            data-active={i === activeTargetIdx}
-          >
-            <div className="flex items-center justify-between gap-2">
-              <span className="truncate font-medium">{t.label}</span>
-            </div>
-            <div className="text-ink-soft text-[0.62rem]">{t.sublabel}</div>
-          </button>
-        ))}
         </section>
       </div>
     </>
@@ -448,8 +358,10 @@ export default function Reader({
     <ArchiveShell
       main={main}
       folderInk={folderInk}
-      leftPanel={packetPanel}
+      leftPanel={contentPanel}
       leftPanelLabel="Content"
+      leftPanelSecondary={contextPanel}
+      leftPanelSecondaryLabel="Context"
     />
   );
 }
@@ -480,6 +392,17 @@ function formatScope(value: string) {
 
 function formatPageType(value: string) {
   return value.replace(/_/g, " ");
+}
+
+function pageRelationship(value: string) {
+  if (value === "main_sheet") return "anchor page";
+  if (value === "subsheet") return "supporting sheet";
+  if (value === "text_page") return "editorial reading page";
+  if (value === "appendix") return "evidence appendix";
+  if (value === "card") return "card record";
+  if (value === "slip") return "source slip";
+  if (value === "bookmark") return "navigation bookmark";
+  return "packet node";
 }
 
 function dossierTypeMatchesLeaf(pageType: string, leafType: string) {

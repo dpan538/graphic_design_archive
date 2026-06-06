@@ -42,7 +42,7 @@ const config: Config = {
         "paper-2": "#EBE3CC",
         "paper-3": "#DED3B8",
         ink: "#1A1714",
-        "ink-soft": "#6E665A",
+        "ink-soft": "#3F372D",
         "rail-red": "#FF5E39",
         "instruction-cyan": "#18B7C8",
         "signal-green": "#B7CE4F",
@@ -73,7 +73,7 @@ const config: Config = {
         archive: {
           primary: "#1A1714",
           "primary-content": "#F3EEDB",
-          secondary: "#6E665A",
+          secondary: "#3F372D",
           "secondary-content": "#F3EEDB",
           accent: "#FF5E39",
           "accent-content": "#F3EEDB",

@@ -71,6 +71,13 @@ function saveStore() {
   }
 }
 
+function isTransientAssistantMessage(message: StoredAssistantMessage) {
+  if (message.role !== "assistant") return false;
+  return /^(Thinking|Thinking\.\.\.|Researching|Researching\.\.\.|Local Qwen is preparing\b.*|Assistant unavail(?:able)?\.?)$/i.test(
+    message.content.trim(),
+  );
+}
+
 function pruneExpired(referenceTime = now()) {
   const store = loadStore();
   for (const [key, page] of Object.entries(store.pages)) {
@@ -119,7 +126,14 @@ export function loadAssistantMessages(pageKey: string): StoredAssistantMessage[]
   store.lastPageKey = pageKey;
   saveStore();
 
-  return [...(store.pages[pageKey]?.messages ?? [])];
+  const messages = (store.pages[pageKey]?.messages ?? []).filter(
+    (message) => !isTransientAssistantMessage(message),
+  );
+  if (store.pages[pageKey] && messages.length !== store.pages[pageKey].messages.length) {
+    store.pages[pageKey].messages = messages;
+    saveStore();
+  }
+  return [...messages];
 }
 
 export function saveAssistantMessages(
@@ -130,7 +144,9 @@ export function saveAssistantMessages(
   pruneExpired();
   store.pages[pageKey] = {
     updatedAt: now(),
-    messages: messages.slice(-12),
+    messages: messages
+      .filter((message) => !isTransientAssistantMessage(message))
+      .slice(-12),
   };
   store.lastPageKey = pageKey;
   if (messages.length > 0) {

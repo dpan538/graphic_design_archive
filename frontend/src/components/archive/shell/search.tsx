@@ -19,6 +19,7 @@ import {
 import { buildAssistantEvidence } from "@/lib/assistant-retrieval";
 import {
   createQwenAssistantSession,
+  resetQwenAssistantSession,
   type AssistantModelState,
   type QwenAssistantSession,
   type QwenChatMessage,
@@ -119,6 +120,13 @@ export default function SearchBox({
     }
   }, [isAssistant]);
 
+  const clearQwenSession = useCallback(async () => {
+    sessionRef.current = null;
+    sessionPromiseRef.current = null;
+    loadingRef.current = false;
+    await resetQwenAssistantSession();
+  }, []);
+
   useEffect(() => {
     if (!isAssistant || sessionRef.current || loadingRef.current) return;
     const handle = window.setTimeout(() => {
@@ -140,7 +148,7 @@ export default function SearchBox({
 
   const askAssistant = async () => {
     const question = draft.trim();
-    if (!question) return;
+    if (!question || pendingMode) return;
 
     const modeLabel = researchMode ? "research" : "send";
     const evidence = buildAssistantEvidence(question, assistantContext, {
@@ -226,6 +234,11 @@ export default function SearchBox({
         }));
       } catch (error) {
         window.clearTimeout(noticeTimer);
+        void clearQwenSession();
+        setAssistantModel({
+          status: "idle",
+          message: "Ready to retry",
+        });
         commitAssistantAnswer(
           error instanceof Error
             ? `Local Qwen could not answer: ${error.message}`
@@ -256,6 +269,16 @@ export default function SearchBox({
 
     const session = await prepareQwen();
     if (!session) {
+      setMessages((current) => [
+        ...current,
+        {
+          id: `assistant-${Date.now()}`,
+          role: "assistant",
+          content:
+            "Local Qwen is not ready in this browser. Close heavy tabs, reload the page, then try Research again.",
+          mode: modeLabel,
+        },
+      ]);
       setPendingMode(null);
       return;
     }
@@ -282,10 +305,23 @@ export default function SearchBox({
       ]);
       setAssistantModel((state) => ({ ...state, status: "ready", message: "Ready" }));
     } catch (error) {
+      void clearQwenSession();
+      setMessages((current) => [
+        ...current,
+        {
+          id: `assistant-${Date.now()}`,
+          role: "assistant",
+          content:
+            error instanceof Error
+              ? `Research stopped: ${error.message}`
+              : "Research stopped because local Qwen failed.",
+          mode: modeLabel,
+        },
+      ]);
       setAssistantModel({
-        status: "error",
+        status: "idle",
         model: session.model,
-        message: error instanceof Error ? error.message : "Assistant request failed.",
+        message: "Ready to retry",
       });
     } finally {
       setPendingMode(null);
@@ -298,8 +334,7 @@ export default function SearchBox({
   };
 
   const assistantBusy = assistantModel.status === "loading";
-  const assistantReady = !researchMode || assistantModel.status !== "error";
-  const assistantUnavailable = researchMode && assistantModel.status === "error";
+  const assistantReady = assistantModel.status !== "loading";
 
   if (isAssistant) {
     return (
@@ -354,12 +389,6 @@ export default function SearchBox({
               <div>{pendingMode === "research" ? "Researching..." : "Thinking..."}</div>
             </div>
           ) : null}
-          {assistantUnavailable ? (
-            <div className="assistant-message assistant-message--assistant">
-              <div className="assistant-message__meta label-caps">Assistant</div>
-              <div>Assistant unavailable.</div>
-            </div>
-          ) : null}
         </div>
 
         <form className="assistant-compose" onSubmit={handleAssistantSubmit}>
@@ -367,7 +396,6 @@ export default function SearchBox({
             value={draft}
             onChange={(event) => setDraft(event.target.value)}
             placeholder="Ask about this work..."
-            disabled={assistantUnavailable}
           />
           <div className="assistant-actions">
             <button

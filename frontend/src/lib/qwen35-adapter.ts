@@ -40,7 +40,7 @@ interface TransformersModule {
   AutoTokenizer: {
     from_pretrained: (model: string) => Promise<QwenTokenizer>;
   };
-  Qwen3_5ForConditionalGeneration: {
+  Qwen3_5ForCausalLM?: {
     from_pretrained: (
       model: string,
       options?: Record<string, unknown>,
@@ -73,11 +73,14 @@ interface QwenModel {
     data?: ArrayLike<number | bigint> & { slice?: (start?: number, end?: number) => ArrayLike<number | bigint> };
     dims?: number[];
   }>;
+  dispose?: () => Promise<unknown>;
 }
 
 export interface QwenAssistantSession {
   model: string;
   runtimeArtifact: string;
+  runtimeMode: "causal-lm";
+  dispose: () => Promise<void>;
   ask: (
     prompt: string,
     context?: QwenAssistantContext,
@@ -88,22 +91,20 @@ export interface QwenAssistantSession {
 export const QWEN35_MODEL_ID = "Qwen/Qwen3.5-0.8B";
 export const QWEN35_RUNTIME_MODEL_ID = "onnx-community/Qwen3.5-0.8B-ONNX";
 
-const QWEN35_DTYPE = {
+const QWEN35_TEXT_DTYPE = {
   embed_tokens: "q4",
-  vision_encoder: "fp16",
   decoder_model_merged: "q4",
 };
-const QWEN35_EXTERNAL_DATA = [
+const QWEN35_TEXT_EXTERNAL_DATA = [
   { path: "embed_tokens_q4.onnx_data", data: "onnx/embed_tokens_q4.onnx_data" },
-  { path: "vision_encoder_fp16.onnx_data", data: "onnx/vision_encoder_fp16.onnx_data" },
   {
     path: "decoder_model_merged_q4.onnx_data",
     data: "onnx/decoder_model_merged_q4.onnx_data",
   },
 ];
-const ASSISTANT_FAST_MAX_NEW_TOKENS = 56;
+const ASSISTANT_FAST_MAX_NEW_TOKENS = 34;
 const ASSISTANT_MAX_NEW_TOKENS = 48;
-const RESEARCH_MAX_NEW_TOKENS = 180;
+const RESEARCH_MAX_NEW_TOKENS = 96;
 
 let cachedSession: Promise<QwenAssistantSession> | null = null;
 let cachedSessionReady = false;
@@ -135,17 +136,33 @@ function contextBlock(context?: QwenAssistantContext) {
 }
 
 function sanitizeAnswer(answer: string) {
-  return answer
+  const cleaned = answer
     .replace(/<think>[\s\S]*?<\/think>/gi, "")
     .replace(/<think>/gi, "")
     .replace(/<\/think>/gi, "")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
+  if (!cleaned) return "";
+  if (/[.!?。！？)]$/.test(cleaned)) return cleaned;
+  return `${cleaned}.`;
+}
+
+function qwenErrorMessage(error: unknown) {
+  const raw =
+    error instanceof Error
+      ? error.message
+      : typeof error === "string"
+      ? error
+      : "Qwen runtime error.";
+  if (/webgpu|onnxruntime|OrtRun|GPUBuffer|buffer|memory|device/i.test(raw)) {
+    return "Local Qwen hit a WebGPU memory error. I cleared the model session; reload the page or ask again after closing other heavy tabs.";
+  }
+  return raw;
 }
 
 function systemMessage(options?: QwenAskOptions) {
   const researchInstruction = options?.fast
-    ? "Fast assistant mode: answer like a helpful archive research aide, not a search result. Give one compact human sentence or two very short sentences, around 80-120 characters when possible. Make a useful suggestion, comparison, caveat, or next reading move from the supplied evidence. For first, earliest, most, or recommend questions, choose one candidate from evidence and say why it is only a current-archive judgment. If the evidence only has a weak or mismatched object, say that and suggest a better query direction. Do not list many records. Do not repeat folder metadata. If the question asks generally about the archive, introduce the archive and suggest how to explore it."
+    ? "Fast assistant mode: answer like a helpful archive research aide, not a search result. Give one complete sentence, normally under 28 words. Make a useful recommendation, caveat, comparison, or next reading move from the supplied candidate. For first, earliest, most, or recommend questions, choose one candidate from evidence and say it is only a current-archive lead. Do not list records. Do not repeat folder metadata. If evidence is weak, say the sharper search route."
     : options?.research
     ? "Research mode: use a more developed structure with Evidence, Reading, and Next checks. Do not expose hidden reasoning."
     : "Assistant mode: give a concise archive reading or recommendation in at most two compact sentences.";
@@ -204,6 +221,9 @@ async function runGeneration({
     enable_thinking: false,
   });
   const inputTokenCount = inputs.input_ids?.dims?.at(-1) ?? 0;
+  if (!inputs.input_ids || inputTokenCount <= 0) {
+    throw new Error("Qwen tokenizer returned no input tokens.");
+  }
   const outputs = await model.generate({
     ...inputs,
     max_new_tokens: maxNewTokens,
@@ -246,14 +266,20 @@ export async function createQwenAssistantSession(
     const tokenizer = await transformers.AutoTokenizer.from_pretrained(
       QWEN35_RUNTIME_MODEL_ID,
     );
-    const model = await transformers.Qwen3_5ForConditionalGeneration.from_pretrained(
+    const ModelClass = transformers.Qwen3_5ForCausalLM;
+    if (!ModelClass) {
+      throw new Error(
+        "Qwen text-only runtime is unavailable in this Transformers.js build.",
+      );
+    }
+    const model = await ModelClass.from_pretrained(
       QWEN35_RUNTIME_MODEL_ID,
       {
-        dtype: QWEN35_DTYPE,
+        dtype: QWEN35_TEXT_DTYPE,
         device: "webgpu",
         use_external_data_format: false,
         session_options: {
-          externalData: QWEN35_EXTERNAL_DATA,
+          externalData: QWEN35_TEXT_EXTERNAL_DATA,
         },
       },
     );
@@ -261,8 +287,14 @@ export async function createQwenAssistantSession(
     const session: QwenAssistantSession = {
       model: QWEN35_MODEL_ID,
       runtimeArtifact: QWEN35_RUNTIME_MODEL_ID,
+      runtimeMode: "causal-lm",
+      dispose: async () => {
+        await model.dispose?.();
+      },
       ask: async (prompt, context, options) => {
-        const history = (options?.history ?? []).slice(options?.fast ? -4 : -8);
+        const history = (options?.history ?? []).slice(
+          options?.research ? -4 : options?.fast ? -2 : -4,
+        );
         const messages = [
           systemMessage(options),
           ...history.map((message) => ({
@@ -271,16 +303,23 @@ export async function createQwenAssistantSession(
           })),
           evidenceMessage(prompt, context, options),
         ];
-        return runGeneration({
-          tokenizer,
-          model,
-          messages,
-          maxNewTokens: options?.fast
-            ? ASSISTANT_FAST_MAX_NEW_TOKENS
-            : options?.research
-            ? RESEARCH_MAX_NEW_TOKENS
-            : ASSISTANT_MAX_NEW_TOKENS,
-        });
+        try {
+          return await runGeneration({
+            tokenizer,
+            model,
+            messages,
+            maxNewTokens: options?.fast
+              ? ASSISTANT_FAST_MAX_NEW_TOKENS
+              : options?.research
+              ? RESEARCH_MAX_NEW_TOKENS
+              : ASSISTANT_MAX_NEW_TOKENS,
+          });
+        } catch (error) {
+          cachedSession = null;
+          cachedSessionReady = false;
+          await model.dispose?.();
+          throw new Error(qwenErrorMessage(error));
+        }
       },
     };
     cachedSessionReady = true;
@@ -293,5 +332,18 @@ export async function createQwenAssistantSession(
     cachedSession = null;
     cachedSessionReady = false;
     throw error;
+  }
+}
+
+export async function resetQwenAssistantSession() {
+  const sessionPromise = cachedSession;
+  cachedSession = null;
+  cachedSessionReady = false;
+  if (!sessionPromise) return;
+  try {
+    const session = await sessionPromise;
+    await session.dispose();
+  } catch {
+    // The session may already be in a failed WebGPU state.
   }
 }

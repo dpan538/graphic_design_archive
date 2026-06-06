@@ -19,6 +19,8 @@ export default function ArchiveShell({
   panelLabel = "Contents",
   leftPanel,
   leftPanelLabel = "Content",
+  leftPanelSecondary,
+  leftPanelSecondaryLabel = "Context",
   rightPanel,
   rightPanelOpen = false,
   onRightPanelOpenChange,
@@ -34,6 +36,8 @@ export default function ArchiveShell({
   panelLabel?: string;
   leftPanel?: React.ReactNode;
   leftPanelLabel?: string;
+  leftPanelSecondary?: React.ReactNode;
+  leftPanelSecondaryLabel?: string;
   rightPanel?: React.ReactNode;
   rightPanelOpen?: boolean;
   onRightPanelOpenChange?: (open: boolean) => void;
@@ -45,6 +49,7 @@ export default function ArchiveShell({
   const router = useRouter();
   const [panelOpen, setPanelOpen] = useState(false);
   const [leftPanelOpen, setLeftPanelOpen] = useState(false);
+  const [leftPanelMode, setLeftPanelMode] = useState<"primary" | "secondary">("primary");
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchMode, setSearchMode] = useState<SearchMode>("search");
   const [assistantContext, setAssistantContext] =
@@ -67,13 +72,16 @@ export default function ArchiveShell({
       }
       setAssistantContext(detail);
       setSearchMode("assistant");
+      setLeftPanelOpen(false);
+      setPanelOpen(false);
+      onRightPanelOpenChange?.(false);
       setSearchOpen(true);
     };
     window.addEventListener("archive:open-assistant", openAssistant);
     return () => {
       window.removeEventListener("archive:open-assistant", openAssistant);
     };
-  }, [searchMode, searchOpen]);
+  }, [onRightPanelOpenChange, searchMode, searchOpen]);
 
   // Left-edge swipe → back. Backspace also goes back.
   useEffect(() => {
@@ -176,16 +184,52 @@ export default function ArchiveShell({
       )}
 
       {leftPanel ? (
-        <button
-          type="button"
-          className="nav-icon left-panel-trigger"
-          data-active={leftPanelOpen}
-          aria-label={leftPanelLabel}
-          onClick={() => setLeftPanelOpen((v) => !v)}
-        >
-          <IconTree />
-          <span>{leftPanelOpen ? "Close" : leftPanelLabel}</span>
-        </button>
+        <div className="left-panel-triggers" aria-label="Left panel controls">
+          <button
+            type="button"
+            className="nav-icon left-panel-trigger"
+            data-active={leftPanelOpen && leftPanelMode === "primary"}
+            aria-label={leftPanelLabel}
+            onClick={() => {
+              if (leftPanelOpen && leftPanelMode === "primary") {
+                setLeftPanelOpen(false);
+                return;
+              }
+              setLeftPanelMode("primary");
+              setSearchOpen(false);
+              setPanelOpen(false);
+              setLeftPanelOpen(true);
+            }}
+          >
+            <IconTree />
+            <span>{leftPanelOpen && leftPanelMode === "primary" ? "Close" : leftPanelLabel}</span>
+          </button>
+          {leftPanelSecondary ? (
+            <button
+              type="button"
+              className="nav-icon left-panel-trigger"
+              data-active={leftPanelOpen && leftPanelMode === "secondary"}
+              aria-label={leftPanelSecondaryLabel}
+              onClick={() => {
+                if (leftPanelOpen && leftPanelMode === "secondary") {
+                  setLeftPanelOpen(false);
+                  return;
+                }
+                setLeftPanelMode("secondary");
+                setSearchOpen(false);
+                setPanelOpen(false);
+                setLeftPanelOpen(true);
+              }}
+            >
+              <IconContext />
+              <span>
+                {leftPanelOpen && leftPanelMode === "secondary"
+                  ? "Close"
+                  : leftPanelSecondaryLabel}
+              </span>
+            </button>
+          ) : null}
+        </div>
       ) : null}
 
       <nav className="nav-icons" aria-label="Archive navigation">
@@ -248,6 +292,8 @@ export default function ArchiveShell({
           aria-label="Search"
           onClick={() => {
             setSearchMode("search");
+            setLeftPanelOpen(false);
+            setPanelOpen(false);
             setSearchOpen((v) => (searchMode === "search" ? !v : true));
           }}
         >
@@ -260,7 +306,11 @@ export default function ArchiveShell({
             className="nav-icon"
             data-active={panelOpen}
             aria-label={panelLabel}
-            onClick={() => setPanelOpen((v) => !v)}
+            onClick={() => {
+              setSearchOpen(false);
+              setLeftPanelOpen(false);
+              setPanelOpen((v) => !v);
+            }}
           >
             <IconContents />
             <span>{panelOpen ? "Close" : panelLabel}</span>
@@ -307,7 +357,9 @@ export default function ArchiveShell({
 
       {leftPanel && leftPanelOpen ? (
         <aside className="panel-overlay panel-overlay--left" onClick={(e) => e.stopPropagation()}>
-          {leftPanel}
+          {leftPanelMode === "secondary" && leftPanelSecondary
+            ? leftPanelSecondary
+            : leftPanel}
         </aside>
       ) : null}
 
@@ -378,6 +430,19 @@ function IconTree() {
       <circle cx="17" cy="19" r="2" />
       <path d="M8 5h3v14h4" />
       <path d="M11 12h4" />
+    </svg>
+  );
+}
+
+function IconContext() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+      <rect x="5" y="4" width="14" height="16" />
+      <path d="M8 8h8" />
+      <path d="M8 12h8" />
+      <path d="M8 16h5" />
+      <circle cx="5" cy="4" r="1.6" fill="currentColor" stroke="none" />
+      <circle cx="19" cy="20" r="1.6" fill="currentColor" stroke="none" />
     </svg>
   );
 }

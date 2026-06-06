@@ -480,21 +480,50 @@ function termMatches(surface: Surface, terms: string[]) {
   return terms.filter((term) => haystack.includes(term)).slice(0, 8);
 }
 
-function formatCompactCandidate(
-  candidate: Candidate,
-  index: number,
-  terms: string[],
-  snippetLength = 120,
-) {
+function fastEvidenceText({
+  requestPlan,
+  candidate,
+  terms,
+  dateWindow,
+  regionFolder,
+  candidateCount,
+  question,
+}: {
+  requestPlan: AssistantRequestPlan;
+  candidate: Candidate;
+  terms: string[];
+  dateWindow: DateWindow | null;
+  regionFolder: Folder | null;
+  candidateCount: number;
+  question: string;
+}) {
   const { surface, score, reasons } = candidate;
   const matches = termMatches(surface, terms);
+  const firstRule = firstOrEarliestQuestion(question)
+    ? "If answering a first/earliest question, call this a current-archive lead, not a proven historical first."
+    : null;
+  const recommendRule = superlativeQuestion(question)
+    ? "If answering a recommendation/superlative, give one pick and one caveat."
+    : null;
   return [
-    `${index + 1}. ${surface.surfaceId} | ${surface.title}`,
-    `date=${surface.dateText || surface.dateStart || "unknown"}; place=${surface.placeText || "unknown"}; object=${surface.objectType || surface.medium || "unknown"}; image=${surface.image.state}`,
-    `source=${surface.sourceName || "unknown"}; score=${score.toFixed(1)}; reasons=${reasons.join(", ") || "metadata overlap"}`,
-    `term_matches=${matches.length ? matches.join(", ") : "weak"}`,
-    `note=${snippet(surface, snippetLength) || "no note available"}`,
-  ].join("\n");
+    `REQUEST_PLAN intent=${requestPlan.intent}; job=${requestPlan.answerJob}; shape=one complete concise assistant sentence.`,
+    `QUERY_SCOPE region=${regionFolder?.title ?? "none"}; date=${dateWindow?.label ?? "none"}; candidates=${candidateCount}.`,
+    firstRule,
+    recommendRule,
+    "TOP_ARCHIVE_LEAD",
+    `surface=${surface.surfaceId}`,
+    `title=${surface.title}`,
+    `date=${surface.dateText || surface.dateStart || "unknown"}`,
+    `place=${surface.placeText || "unknown"}`,
+    `object=${surface.objectType || surface.medium || "unknown"}`,
+    `image=${surface.image.state}`,
+    `source=${surface.sourceName || "unknown"}`,
+    `score=${score.toFixed(1)}; reasons=${reasons.join(", ") || "metadata overlap"}; term_matches=${matches.length ? matches.join(", ") : "weak"}`,
+    `note=${snippet(surface, 80) || "no note available"}`,
+    "Do not list alternatives. Do not invent beyond this lead.",
+  ]
+    .filter(Boolean)
+    .join("\n");
 }
 
 export function buildAssistantEvidence(
@@ -531,8 +560,8 @@ export function buildAssistantEvidence(
       return (b.surface.completenessScore ?? 0) - (a.surface.completenessScore ?? 0);
     });
 
-  const limit = options?.research ? 10 : 3;
-  const snippetLength = options?.research ? 220 : 120;
+  const limit = options?.research ? 10 : 1;
+  const snippetLength = options?.research ? 220 : 80;
   const selected = candidates.slice(0, limit);
   const requestPlan = buildRequestPlan({
     question,
@@ -584,22 +613,30 @@ export function buildAssistantEvidence(
       toCandidateEvidence(candidate, snippetLength),
     ),
     requestPlan,
-    contextText: [
-      "REQUEST_PLAN",
-      requestPlanText(requestPlan),
-      "ARCHIVE_RETRIEVAL_CONTEXT",
-      parseLine,
-      guidance,
-      "Do not mention records not present in these candidates.",
-      "Discussing metadata, source evidence, rights state, and archive navigation is allowed; do not refuse as copyright infringement unless the user asks to copy, download, or bypass rights.",
-      "CANDIDATES",
-      selected
-        .map((candidate, index) =>
-          options?.research
-            ? formatCandidate(candidate, index, snippetLength)
-            : formatCompactCandidate(candidate, index, terms, snippetLength),
-        )
-        .join("\n---\n"),
-    ].join("\n"),
+    contextText: options?.research
+      ? [
+          "REQUEST_PLAN",
+          requestPlanText(requestPlan),
+          "ARCHIVE_RETRIEVAL_CONTEXT",
+          parseLine,
+          guidance,
+          "Do not mention records not present in these candidates.",
+          "Discussing metadata, source evidence, rights state, and archive navigation is allowed; do not refuse as copyright infringement unless the user asks to copy, download, or bypass rights.",
+          "CANDIDATES",
+          selected
+            .map((candidate, index) =>
+              formatCandidate(candidate, index, snippetLength),
+            )
+            .join("\n---\n"),
+        ].join("\n")
+      : fastEvidenceText({
+          requestPlan,
+          candidate: selected[0],
+          terms,
+          dateWindow,
+          regionFolder,
+          candidateCount: candidates.length,
+          question,
+        }),
   };
 }

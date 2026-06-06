@@ -6876,3 +6876,89 @@ Verification:
 - `npm run build` passed in `frontend/`; Next generated 7914/7914 static pages.
   The familiar slow static-page retry warnings appeared, but the build exited
   successfully.
+
+## 2026-06-06 - Research Assistant WebGPU Stabilization And Panel Split
+
+Scope:
+
+- Follow-up frontend correction after live review of the Russia reader,
+  Assistant latency, and CONTENT/CONTEXT panel behavior.
+- This pass did not run source capture, did not download images, did not
+  rebuild archive data, did not change rights states, and did not perform any
+  IMG01/IMG03 upgrade.
+
+Qwen runtime correction:
+
+- The assistant runtime now requires the text-only
+  `Qwen3_5ForCausalLM` class from `@huggingface/transformers`.
+- Removed the frontend fallback path to
+  `Qwen3_5ForConditionalGeneration`, including the vision encoder dtype and
+  `vision_encoder_fp16.onnx_data` external-data entry.
+- `Qwen/Qwen3.5-0.8B` remains the only Assistant model identity, and
+  `onnx-community/Qwen3.5-0.8B-ONNX` remains the only browser runtime
+  artifact.
+- The WebGPU memory error seen during Research was treated as a runtime
+  session failure: the app now clears the cached Qwen session and asks the
+  user to reload or retry after closing heavy tabs.
+
+Assistant/RAG behavior:
+
+- Regular Assistant mode still calls local Qwen, but now sends a much smaller
+  fast evidence packet: one top archive lead, compact scope, and concise
+  routing instructions instead of multiple long candidate records.
+- Regular Assistant output is capped to 34 new tokens and instructed to return
+  one complete short advisory sentence.
+- Research mode keeps the broader evidence packet, but remains on the same
+  Qwen3.5-0.8B text-only session; it is not a separate model or fallback.
+- Same-page memory still lasts three minutes and clears after more than three
+  page switches. Transient `Thinking...`, `Researching...`, and old preparation
+  notices are filtered when loading or saving memory.
+
+Reader UI changes:
+
+- Split the left controls into `CONTENT` and `CONTEXT`, both using the same
+  left-panel container.
+- `CONTEXT` now owns the background context and full archive sequence that
+  previously overloaded the content panel.
+- `CONTENT` is now a compact relationship/navigation view only:
+  - when the active main sheet has a main-sheet dossier, it shows that main
+    sheet's internal packet nodes;
+  - otherwise it shows the current main sheet plus up to two previous and two
+    next main sheet names.
+- CONTENT nodes are clickable navigation buttons and expose extra relationship
+  details on hover/focus.
+- Opening CONTENT/CONTEXT now closes the right-side Search/Assistant panel;
+  opening Search/Assistant closes the left panel.
+- The bottom Assistant launcher was renamed to `RESEARCH` and the whole
+  bottom page-turn control was enlarged by about 10%.
+- Removed the left-bottom visual-monitor badge and disabled the Next dev
+  indicator overlay.
+- Added vertical scroll containment for single-page cards/slips/sheets so tall
+  image or text content can be inspected inside the card instead of being
+  clipped by the viewport.
+- Darkened global secondary ink and line colors to improve reading contrast.
+
+Verification:
+
+- `npm run build` passed in `frontend/`; Next generated 7914/7914 static pages.
+  The familiar slow static-page retry warnings appeared, but the build exited
+  successfully.
+- `git diff --check` passed.
+- Runtime scan over frontend source found no `Llama`, `WEBLLM`, `WebLLM`,
+  `LOAD WEBLLM`, `vision_encoder`, `Qwen3_5ForConditionalGeneration`,
+  `visual-check`, or `VIS OK` references.
+- Commit-bound safety scan found no real API key, password, secret, bearer
+  value, cookie assignment, local user path, or env-file reference. Remaining
+  broad-scan hits were expected false positives in `transformers.env` and
+  historical PROJECT_LOG scan descriptions.
+- Local dev server was started at
+  `http://127.0.0.1:3040/folders/region/russia?fresh=1`.
+- Browser smoke confirmed the Russia page renders after a fresh reload, the
+  old left-bottom monitor badge is gone, no Next issues overlay is visible,
+  CONTENT and CONTEXT appear as separate left controls, the right-bottom
+  launcher reads `RESEARCH`, and the Research panel stays above the page-turn
+  control.
+- Browser smoke confirmed CONTENT on the Russia register shows only nearby
+  main sheets, and CONTENT on the first Russia main sheet shows the same
+  nearby-main fallback because that surface does not yet have a main-sheet
+  dossier sequence.
