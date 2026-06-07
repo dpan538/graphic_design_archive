@@ -101,3 +101,32 @@ Examples of the intended shape:
   mode.
 - No scripted ordinary-answer module should be used as the final Assistant
   response layer.
+
+## LoRA / Fine-Tuning Position
+
+Do not introduce LoRA or fine-tuned browser adapters for the next product pass.
+The current failures are primarily RAG orchestration failures: overly broad or
+weak evidence, insufficient prompt contract, no stable quality fixtures, and
+missing latency decomposition.
+
+Before any fine-tuning is considered, the project must first collect a reviewed
+answer fixture set containing:
+
+- user question;
+- retrieved evidence packet;
+- model answer;
+- preferred answer;
+- failure label;
+- latency and token metrics.
+
+LoRA may be reconsidered only if prompt/RAG/few-shot controls still fail after
+that fixture set exists and the added model files, browser cache cost, WebGPU
+memory pressure, and reproducibility risks are measured. Any LoRA work belongs
+in a research branch first, not in the product Assistant path.
+
+## Development Timing Rule
+
+Assistant optimization should be measurement-first. Development builds may log
+per-question timings for retrieval, model preparation, tokenization,
+generation, total answer time, prompt size, and token counts. These logs are
+diagnostic only and must not become visible archive UI chrome.

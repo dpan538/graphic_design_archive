@@ -454,6 +454,40 @@ function requestPlanText(plan: AssistantRequestPlan) {
   ].join("\n");
 }
 
+function scopedNoEvidenceAnswer({
+  requestPlan,
+  dateWindow,
+  regionFolder,
+}: {
+  requestPlan: AssistantRequestPlan;
+  dateWindow: DateWindow | null;
+  regionFolder: Folder | null;
+}) {
+  const scope = [
+    regionFolder?.title,
+    dateWindow?.label,
+    requestPlan.focusTerms.length ? requestPlan.focusTerms.join(" / ") : null,
+  ]
+    .filter(Boolean)
+    .join(", ");
+  if (requestPlan.intent === "earliest_candidate") {
+    return scope
+      ? `I cannot prove a first record for ${scope} from the current archive evidence. Broaden the route by decade, medium, source family, or adjacent regional terms before treating anything as first.`
+      : "I cannot prove a first record from the current archive evidence. Try adding a region, decade, medium, source, or title before treating anything as first.";
+  }
+  if (requestPlan.intent === "recommendation") {
+    return scope
+      ? `I do not see a strong current-archive candidate for ${scope}. Broaden the filter or ask for a nearby decade, medium, or source family.`
+      : "I do not see a strong current-archive candidate for that yet. Add a region, decade, medium, source, or title and I can give a better pick.";
+  }
+  if (requestPlan.intent === "rights_image") {
+    return "I do not have enough matching archive evidence to read the rights or image state safely. Open a specific surface or source record first.";
+  }
+  return scope
+    ? `I do not have enough matching archive evidence for ${scope}. Try a broader region, decade, medium, source, or title.`
+    : "I do not have enough matching archive evidence to answer that without inventing. Try a region, decade, title, creator, source, or medium from the archive index.";
+}
+
 function toCandidateEvidence(
   candidate: Candidate,
   snippetLength: number,
@@ -535,6 +569,7 @@ export function buildAssistantEvidence(
   const dateWindow = parseDateWindow(question);
   const regionFolder = regionFoldersFromText(question, context)[0] ?? null;
   const activeSurface = context?.surfaceId ? getSurface(context.surfaceId) : undefined;
+  const scopedQuery = Boolean(dateWindow || regionFolder);
 
   let pool = getSurfaces();
   if (dateWindow) {
@@ -545,8 +580,9 @@ export function buildAssistantEvidence(
   }
 
   if (pool.length === 0) {
-    const fuzzy = fuzzySearchSurfaces(question).map((result) => result.surface);
-    pool = [...fuzzy];
+    pool = scopedQuery
+      ? []
+      : fuzzySearchSurfaces(question).map((result) => result.surface);
   }
   if (activeSurface && !pool.some((surface) => surface.surfaceId === activeSurface.surfaceId)) {
     pool.unshift(activeSurface);
@@ -587,8 +623,11 @@ export function buildAssistantEvidence(
       ].join("\n"),
       candidates: [],
       requestPlan,
-      fallbackAnswer:
-        "I do not have enough matching archive evidence in the current payload to answer that without inventing. Try a region, decade, title, creator, source, or medium from the archive index.",
+      fallbackAnswer: scopedNoEvidenceAnswer({
+        requestPlan,
+        dateWindow,
+        regionFolder,
+      }),
     };
   }
 

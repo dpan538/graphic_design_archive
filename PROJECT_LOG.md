@@ -6963,6 +6963,90 @@ Verification:
   nearby-main fallback because that surface does not yet have a main-sheet
   dossier sequence.
 
+## 2026-06-07 - Browser-Local Qwen RAG Research Branch Packet
+
+Scope:
+
+- Created an independent research repo/lab brief for the current Assistant
+  bottleneck:
+  browser-local Qwen3.5-0.8B over a large rights-aware archive dataset.
+- Created a Deep Research prompt for a separate research window to investigate
+  WebGPU/WebLLM/RAG optimization, evidence-packet compression, benchmark design,
+  and possible paper framing.
+- This pass did not change frontend runtime code, did not run source capture,
+  did not download images, did not rebuild surfaces, did not alter rights states,
+  and did not perform any IMG01/IMG03 upgrade.
+
+Research framing:
+
+- The bottleneck is defined as an end-to-end local RAG system problem rather
+  than raw model inference alone: retrieval, candidate filtering, topology
+  expansion, evidence compression, prompt planning, tokenization, WebGPU
+  runtime, generation, memory recovery, and UI latency must all be measured.
+- Product constraints remain fixed for now: `Qwen/Qwen3.5-0.8B` is the only
+  Assistant model identity, `onnx-community/Qwen3.5-0.8B-ONNX` is the only
+  browser runtime artifact, Search remains deterministic, and Assistant output
+  is not archive evidence.
+- Research-only comparisons may investigate WebLLM/MLC, ONNX Runtime WebGPU,
+  browser cache strategies, MiniRAG-style topology-aware retrieval, speculative
+  RAG ideas, and KV-cache compression literature, but none of those comparisons
+  authorize a product runtime/model change.
+
+Files:
+
+- `docs/system/WEBGPU_WEBLLM_RAG_RESEARCH_BRANCH_BRIEF_v0.md`
+- `prompts/DEEP_RESEARCH_WEBGPU_WEBLLM_RAG_OPTIMIZATION_PROMPT.md`
+
+## 2026-06-07 - Assistant RAG Timing And Humanized Fast Answers
+
+Scope:
+
+- Product Assistant optimization pass only.
+- No source capture, image download, surface rebuild, model switch, hosted
+  inference, LoRA integration, rights-state change, or IMG01/IMG03 upgrade was
+  performed.
+
+Changes:
+
+- Added per-question development timing for Assistant and Research in
+  `frontend/src/components/archive/shell/search.tsx`.
+- Timing logs now capture retrieval time, model preparation time, Qwen ask time,
+  total time, candidate count, evidence size, intent, status, prompt chars,
+  input tokens, generated tokens, tokenization time, generation time, and decode
+  time when Qwen returns successfully.
+- Development timing is stored on `window.__archiveAssistantTimings` and logged
+  with `[archive-assistant timing]`; it is not visible archive UI chrome.
+- Fast Assistant now blocks no-evidence questions before Qwen invocation, using
+  a scoped fallback route instead of asking the model to guess.
+- Explicit region/date scopes are now strict: if a query such as a specific
+  region plus exact year has no candidates, retrieval does not fall back to a
+  weak fuzzy match outside that scope.
+- Fast Qwen prompt gained compact style examples for first/earliest,
+  recommendation, and archive-orientation answers.
+- Fast generation cap increased from 34 to 44 new tokens to reduce incomplete
+  one-sentence answers while keeping the short-answer contract.
+- `docs/system/ASSISTANT_RESPONSE_STRATEGY_v0.md` now records that LoRA/fine
+  tuning is deferred until a reviewed answer fixture set and latency baseline
+  exist; current failures are treated as RAG orchestration and prompt-contract
+  issues first.
+
+Verification:
+
+- `npm run build` passed in `frontend/`; Next generated 7914/7914 static pages.
+  The existing static-page timeout retry warnings appeared, then the build
+  completed successfully.
+- `git diff --check` passed.
+- Local HTTP smoke:
+  - `http://127.0.0.1:3040/folders/region/russia?fresh=assistant-pass`
+    returned 200.
+  - `http://127.0.0.1:3040/surfaces/SURF-GAX1970R001?fresh=assistant-pass`
+    returned 200.
+- Commit-bound safety scan found no real API key, password, secret, bearer
+  value, cookie assignment, local user path, or env-file reference. Remaining
+  hits are expected false positives such as tokenizer/max-token identifiers,
+  token metrics, session wording, `transformers.env`, and historical log scan
+  terms.
+
 ## 2026-06-07 - Independent Qwen RAG Research Lab Branch
 
 Scope:
@@ -7020,3 +7104,40 @@ Result:
   WebGPU stability are measured.
 - Removing source/rights fields reduces prompt size but breaks the
   rights-aware archive contract, so it is kept only as a negative control.
+
+## 2026-06-07 - Standalone Research Repo Export Folder
+
+Scope:
+
+- Created `research-repo/browser-local-rag-lab/` as a standalone export folder
+  for the separate GitHub research repository `dpan538/browser-local-rag-lab`.
+- This folder is not an archive product runtime folder and is not intended to
+  be pushed as part of the archive product repository.
+- The archive project remains the fixture source and research scenario; the
+  exported package is for independent WebGPU / WebLLM / browser-local SLM RAG
+  research, scripts, benchmark reports, prompts, and reproducibility notes.
+- The standalone folder was initialized as its own Git repository and pushed to
+  `git@github.com:dpan538/browser-local-rag-lab.git` as first commit
+  `e236866` with message `research: scaffold browser-local rag lab`.
+
+Created in the export package:
+
+- standalone `README.md`;
+- `.gitignore`;
+- `package.json` with `benchmark`, `analyze`, and `serve` scripts;
+- `LICENSE`;
+- `PUSH_INSTRUCTIONS.md`;
+- `RESEARCH_REPO_BOUNDARY.md`;
+- `REPO_TAGS.md`;
+- `prompts/deep_research_archive_origin_rag.md`;
+- `prompts/deep_research_webgpu_runtime.md`;
+- copied fixture, benchmark scripts, browser lab, and reports from
+  `experiments/qwen_rag_lab/`.
+
+Boundary:
+
+- Do not add raw archive captures, raw HTML, cookies, sessions, browser cache,
+  model weights, local model cache, downloaded images, or private archive data
+  to this export package.
+- Runtime comparisons in the export package remain research-only and do not
+  authorize archive product Assistant runtime changes.

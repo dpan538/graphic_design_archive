@@ -27,6 +27,18 @@ export interface QwenAskOptions {
   research?: boolean;
   fast?: boolean;
   evidence?: string;
+  onTiming?: (timing: QwenGenerationTiming) => void;
+}
+
+export interface QwenGenerationTiming {
+  promptChars: number;
+  inputTokens: number;
+  generatedTokens: number;
+  maxNewTokens: number;
+  tokenizeMs: number;
+  generateMs: number;
+  decodeMs: number;
+  totalMs: number;
 }
 
 interface TransformersEnv {
@@ -102,12 +114,16 @@ const QWEN35_TEXT_EXTERNAL_DATA = [
     data: "onnx/decoder_model_merged_q4.onnx_data",
   },
 ];
-const ASSISTANT_FAST_MAX_NEW_TOKENS = 34;
+const ASSISTANT_FAST_MAX_NEW_TOKENS = 44;
 const ASSISTANT_MAX_NEW_TOKENS = 48;
 const RESEARCH_MAX_NEW_TOKENS = 96;
 
 let cachedSession: Promise<QwenAssistantSession> | null = null;
 let cachedSessionReady = false;
+
+function nowMs() {
+  return typeof performance !== "undefined" ? performance.now() : Date.now();
+}
 
 function assertInteractiveRuntime() {
   if (
@@ -162,10 +178,18 @@ function qwenErrorMessage(error: unknown) {
 
 function systemMessage(options?: QwenAskOptions) {
   const researchInstruction = options?.fast
-    ? "Fast assistant mode: answer like a helpful archive research aide, not a search result. Give one complete sentence, normally under 28 words. Make a useful recommendation, caveat, comparison, or next reading move from the supplied candidate. For first, earliest, most, or recommend questions, choose one candidate from evidence and say it is only a current-archive lead. Do not list records. Do not repeat folder metadata. If evidence is weak, say the sharper search route."
+    ? "Fast assistant mode: answer like a helpful archive research aide, not a search result. Give one complete sentence, normally under 32 words. Make a useful recommendation, caveat, comparison, or next reading move from the supplied candidate. For first, earliest, most, or recommend questions, choose one candidate from evidence and say it is only a current-archive lead. Do not list records. Do not repeat folder metadata. If evidence is weak, say the sharper search route."
     : options?.research
     ? "Research mode: use a more developed structure with Evidence, Reading, and Next checks. Do not expose hidden reasoning."
     : "Assistant mode: give a concise archive reading or recommendation in at most two compact sentences.";
+  const fastExamples = options?.fast
+    ? [
+        "Fast answer examples:",
+        "Q: when is the first advertising work in Russia? A: Start with the 1897 Kaplan school advertisement; it is the strongest Russia advertising lead here, but not proof of the historical first.",
+        "Q: what should I check in 1970s France? A: Start with the strongest dated France candidate here, then verify the source page before treating it as representative.",
+        "Q: what is this archive? A: Use it as a source map: surfaces show evidence, folders give routes, and rights states explain how far each image claim can go.",
+      ].join(" ")
+    : "";
   return {
     role: "system" as const,
     content: [
@@ -183,6 +207,7 @@ function systemMessage(options?: QwenAskOptions) {
       "Never answer by merely restating the active folder or current record.",
       "Avoid phrases like 'is indexed here', 'reading angle', or 'current context'.",
       researchInstruction,
+      fastExamples,
     ].join(" "),
   };
 }
@@ -215,21 +240,30 @@ async function runGeneration({
   messages: { role: "system" | "user" | "assistant"; content: string }[];
   maxNewTokens: number;
 }) {
+  const started = nowMs();
+  const promptChars = messages.reduce(
+    (total, message) => total + message.content.length,
+    0,
+  );
+  const tokenizeStarted = nowMs();
   const inputs = tokenizer.apply_chat_template(messages, {
     tokenize: true,
     add_generation_prompt: true,
     enable_thinking: false,
   });
+  const tokenizeMs = nowMs() - tokenizeStarted;
   const inputTokenCount = inputs.input_ids?.dims?.at(-1) ?? 0;
   if (!inputs.input_ids || inputTokenCount <= 0) {
     throw new Error("Qwen tokenizer returned no input tokens.");
   }
+  const generateStarted = nowMs();
   const outputs = await model.generate({
     ...inputs,
     max_new_tokens: maxNewTokens,
     do_sample: false,
     eos_token_id: tokenizer.eos_token_id,
   });
+  const generateMs = nowMs() - generateStarted;
   const outputTokenCount = outputs?.dims?.at(-1) ?? 0;
   const generatedTokenCount = Math.max(0, outputTokenCount - inputTokenCount);
   const generatedData = outputs.data?.slice
@@ -238,11 +272,26 @@ async function runGeneration({
   const generatedIds = generatedTokenCount
     ? Array.from(generatedData, Number)
     : [];
-  return sanitizeAnswer(
+  const decodeStarted = nowMs();
+  const answer = sanitizeAnswer(
     generatedIds.length
       ? tokenizer.decode(generatedIds, { skip_special_tokens: true }) || ""
       : "",
   );
+  const decodeMs = nowMs() - decodeStarted;
+  return {
+    answer,
+    timing: {
+      promptChars,
+      inputTokens: inputTokenCount,
+      generatedTokens: generatedTokenCount,
+      maxNewTokens,
+      tokenizeMs,
+      generateMs,
+      decodeMs,
+      totalMs: nowMs() - started,
+    },
+  };
 }
 
 export async function createQwenAssistantSession(
@@ -304,7 +353,7 @@ export async function createQwenAssistantSession(
           evidenceMessage(prompt, context, options),
         ];
         try {
-          return await runGeneration({
+          const result = await runGeneration({
             tokenizer,
             model,
             messages,
@@ -314,6 +363,8 @@ export async function createQwenAssistantSession(
               ? RESEARCH_MAX_NEW_TOKENS
               : ASSISTANT_MAX_NEW_TOKENS,
           });
+          options?.onTiming?.(result.timing);
+          return result.answer;
         } catch (error) {
           cachedSession = null;
           cachedSessionReady = false;
