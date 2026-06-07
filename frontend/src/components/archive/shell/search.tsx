@@ -21,6 +21,7 @@ import {
   createQwenAssistantSession,
   resetQwenAssistantSession,
   type AssistantModelState,
+  type QwenGenerationTiming,
   type QwenAssistantSession,
   type QwenChatMessage,
 } from "@/lib/qwen35-adapter";
@@ -41,6 +42,64 @@ export interface AssistantContext {
 
 type AssistantMessage = StoredAssistantMessage;
 const ASSISTANT_COLD_START_NOTICE_MS = 3000;
+
+interface AssistantTimingLog {
+  mode: "send" | "research";
+  status: "answered" | "no_evidence" | "unavailable" | "error";
+  intent: string;
+  candidateCount: number;
+  hasEvidence: boolean;
+  questionChars: number;
+  evidenceChars: number;
+  retrievalMs: number;
+  prepareMs?: number;
+  askMs?: number;
+  totalMs: number;
+  qwen?: QwenGenerationTiming;
+}
+
+function nowMs() {
+  return typeof performance !== "undefined" ? performance.now() : Date.now();
+}
+
+function shouldLogAssistantTiming() {
+  if (typeof window === "undefined") return false;
+  if (process.env.NODE_ENV !== "production") return true;
+  try {
+    return window.localStorage.getItem("archive-assistant-timing") === "1";
+  } catch {
+    return false;
+  }
+}
+
+function logAssistantTiming(timing: AssistantTimingLog) {
+  if (!shouldLogAssistantTiming()) return;
+  const rounded = {
+    ...timing,
+    retrievalMs: Math.round(timing.retrievalMs),
+    prepareMs:
+      timing.prepareMs === undefined ? undefined : Math.round(timing.prepareMs),
+    askMs: timing.askMs === undefined ? undefined : Math.round(timing.askMs),
+    totalMs: Math.round(timing.totalMs),
+    qwen: timing.qwen
+      ? {
+          ...timing.qwen,
+          tokenizeMs: Math.round(timing.qwen.tokenizeMs),
+          generateMs: Math.round(timing.qwen.generateMs),
+          decodeMs: Math.round(timing.qwen.decodeMs),
+          totalMs: Math.round(timing.qwen.totalMs),
+        }
+      : undefined,
+  };
+  const target = window as typeof window & {
+    __archiveAssistantTimings?: AssistantTimingLog[];
+  };
+  target.__archiveAssistantTimings = [
+    ...(target.__archiveAssistantTimings ?? []),
+    timing,
+  ].slice(-20);
+  console.info("[archive-assistant timing]", rounded);
+}
 
 /**
  * In-shell fuzzy search. Lives on the right (same width as the counts card),
@@ -150,10 +209,22 @@ export default function SearchBox({
     const question = draft.trim();
     if (!question || pendingMode) return;
 
-    const modeLabel = researchMode ? "research" : "send";
+    const modeLabel: "send" | "research" = researchMode ? "research" : "send";
+    const totalStarted = nowMs();
+    const retrievalStarted = nowMs();
     const evidence = buildAssistantEvidence(question, assistantContext, {
       research: researchMode,
     });
+    const retrievalMs = nowMs() - retrievalStarted;
+    const baseTiming = {
+      mode: modeLabel,
+      intent: evidence.requestPlan.intent,
+      candidateCount: evidence.candidateCount,
+      hasEvidence: evidence.hasEvidence,
+      questionChars: question.length,
+      evidenceChars: evidence.contextText.length,
+      retrievalMs,
+    };
     const userMessage: AssistantMessage = {
       id: `user-${Date.now()}`,
       role: "user",
@@ -170,6 +241,26 @@ export default function SearchBox({
 
     if (!researchMode) {
       const assistantMessageId = `assistant-${Date.now()}`;
+      if (!evidence.hasEvidence) {
+        setMessages((current) => [
+          ...current,
+          {
+            id: assistantMessageId,
+            role: "assistant",
+            content:
+              evidence.fallbackAnswer ??
+              "I do not have enough archive evidence to answer that without guessing.",
+            mode: modeLabel,
+          },
+        ]);
+        logAssistantTiming({
+          ...baseTiming,
+          status: "no_evidence",
+          totalMs: nowMs() - totalStarted,
+        });
+        return;
+      }
+
       setPendingMode(modeLabel);
       let noticeShown = false;
       const noticeTimer = window.setTimeout(() => {
@@ -204,12 +295,20 @@ export default function SearchBox({
       };
 
       try {
+        const prepareStarted = nowMs();
         const session = await prepareQwen();
+        const prepareMs = nowMs() - prepareStarted;
         window.clearTimeout(noticeTimer);
         if (!session) {
           commitAssistantAnswer(
             "Local Qwen is unavailable in this browser, so I cannot give an assistant answer here.",
           );
+          logAssistantTiming({
+            ...baseTiming,
+            status: "unavailable",
+            prepareMs,
+            totalMs: nowMs() - totalStarted,
+          });
           return;
         }
 
@@ -218,11 +317,17 @@ export default function SearchBox({
           status: "loading",
           message: "Thinking",
         }));
+        let qwenTiming: QwenGenerationTiming | undefined;
+        const askStarted = nowMs();
         const response = await session.ask(question, assistantContext ?? undefined, {
           history,
           fast: true,
           evidence: evidence.contextText,
+          onTiming: (timing) => {
+            qwenTiming = timing;
+          },
         });
+        const askMs = nowMs() - askStarted;
         commitAssistantAnswer(
           response ||
             "I do not have enough archive context to answer that without guessing.",
@@ -232,6 +337,14 @@ export default function SearchBox({
           status: "ready",
           message: "Ready",
         }));
+        logAssistantTiming({
+          ...baseTiming,
+          status: "answered",
+          prepareMs,
+          askMs,
+          totalMs: nowMs() - totalStarted,
+          qwen: qwenTiming,
+        });
       } catch (error) {
         window.clearTimeout(noticeTimer);
         void clearQwenSession();
@@ -244,6 +357,11 @@ export default function SearchBox({
             ? `Local Qwen could not answer: ${error.message}`
             : "Local Qwen could not answer this request.",
         );
+        logAssistantTiming({
+          ...baseTiming,
+          status: "error",
+          totalMs: nowMs() - totalStarted,
+        });
       } finally {
         window.clearTimeout(noticeTimer);
         if (!noticeShown) setPendingMode(null);
@@ -263,11 +381,18 @@ export default function SearchBox({
           mode: modeLabel,
         },
       ]);
+      logAssistantTiming({
+        ...baseTiming,
+        status: "no_evidence",
+        totalMs: nowMs() - totalStarted,
+      });
       setPendingMode(null);
       return;
     }
 
+    const prepareStarted = nowMs();
     const session = await prepareQwen();
+    const prepareMs = nowMs() - prepareStarted;
     if (!session) {
       setMessages((current) => [
         ...current,
@@ -279,6 +404,12 @@ export default function SearchBox({
           mode: modeLabel,
         },
       ]);
+      logAssistantTiming({
+        ...baseTiming,
+        status: "unavailable",
+        prepareMs,
+        totalMs: nowMs() - totalStarted,
+      });
       setPendingMode(null);
       return;
     }
@@ -289,11 +420,17 @@ export default function SearchBox({
       message: researchMode ? "Researching" : "Thinking",
     }));
     try {
+      let qwenTiming: QwenGenerationTiming | undefined;
+      const askStarted = nowMs();
       const response = await session.ask(question, assistantContext ?? undefined, {
         history,
         research: researchMode,
         evidence: evidence.contextText,
+        onTiming: (timing) => {
+          qwenTiming = timing;
+        },
       });
+      const askMs = nowMs() - askStarted;
       setMessages((current) => [
         ...current,
         {
@@ -304,6 +441,14 @@ export default function SearchBox({
         },
       ]);
       setAssistantModel((state) => ({ ...state, status: "ready", message: "Ready" }));
+      logAssistantTiming({
+        ...baseTiming,
+        status: "answered",
+        prepareMs,
+        askMs,
+        totalMs: nowMs() - totalStarted,
+        qwen: qwenTiming,
+      });
     } catch (error) {
       void clearQwenSession();
       setMessages((current) => [
@@ -322,6 +467,12 @@ export default function SearchBox({
         status: "idle",
         model: session.model,
         message: "Ready to retry",
+      });
+      logAssistantTiming({
+        ...baseTiming,
+        status: "error",
+        prepareMs,
+        totalMs: nowMs() - totalStarted,
       });
     } finally {
       setPendingMode(null);

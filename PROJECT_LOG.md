@@ -6962,3 +6962,84 @@ Verification:
   main sheets, and CONTENT on the first Russia main sheet shows the same
   nearby-main fallback because that surface does not yet have a main-sheet
   dossier sequence.
+
+## 2026-06-07 - Independent Qwen RAG Research Repo Boundary
+
+Scope:
+
+- Recorded the browser-local Qwen RAG work as an independent research repo/lab
+  direction, not an archive product branch.
+- Added a Deep Research prompt for the separate research workflow around
+  WebGPU/WebLLM/RAG optimization, evidence-packet compression, benchmark design,
+  and possible paper framing.
+- This archive repository keeps only boundary documentation and product-facing
+  decision context. It does not contain the independent research repo code,
+  benchmark outputs, model files, browser cache, or experiment fixture package.
+- This pass did not change source capture, did not download images, did not
+  rebuild surfaces, did not alter rights states, and did not perform any
+  IMG01/IMG03 upgrade.
+
+Boundary:
+
+- Research runtime comparisons such as WebLLM/MLC, ONNX Runtime WebGPU,
+  speculative RAG, MiniRAG-style retrieval, or KV-cache compression remain
+  research-only until a later archive product decision accepts them.
+- Archive product constraints remain fixed for now:
+  `Qwen/Qwen3.5-0.8B` is the only Assistant model identity,
+  `onnx-community/Qwen3.5-0.8B-ONNX` is the only browser runtime artifact,
+  Search remains deterministic, and Assistant output is not archive evidence.
+
+Files:
+
+- `docs/system/WEBGPU_WEBLLM_RAG_RESEARCH_BRANCH_BRIEF_v0.md`
+- `prompts/DEEP_RESEARCH_WEBGPU_WEBLLM_RAG_OPTIMIZATION_PROMPT.md`
+
+## 2026-06-07 - Assistant RAG Timing And Humanized Fast Answers
+
+Scope:
+
+- Product Assistant optimization pass only.
+- No source capture, image download, surface rebuild, model switch, hosted
+  inference, LoRA integration, rights-state change, or IMG01/IMG03 upgrade was
+  performed.
+
+Changes:
+
+- Added per-question development timing for Assistant and Research in
+  `frontend/src/components/archive/shell/search.tsx`.
+- Timing logs now capture retrieval time, model preparation time, Qwen ask time,
+  total time, candidate count, evidence size, intent, status, prompt chars,
+  input tokens, generated tokens, tokenization time, generation time, and decode
+  time when Qwen returns successfully.
+- Development timing is stored on `window.__archiveAssistantTimings` and logged
+  with `[archive-assistant timing]`; it is not visible archive UI chrome.
+- Fast Assistant now blocks no-evidence questions before Qwen invocation, using
+  a scoped fallback route instead of asking the model to guess.
+- Explicit region/date scopes are now strict: if a query such as a specific
+  region plus exact year has no candidates, retrieval does not fall back to a
+  weak fuzzy match outside that scope.
+- Fast Qwen prompt gained compact style examples for first/earliest,
+  recommendation, and archive-orientation answers.
+- Fast generation cap increased from 34 to 44 new tokens to reduce incomplete
+  one-sentence answers while keeping the short-answer contract.
+- `docs/system/ASSISTANT_RESPONSE_STRATEGY_v0.md` now records that LoRA/fine
+  tuning is deferred until a reviewed answer fixture set and latency baseline
+  exist; current failures are treated as RAG orchestration and prompt-contract
+  issues first.
+
+Verification:
+
+- `npm run build` passed in `frontend/`; Next generated 7914/7914 static pages.
+  The existing static-page timeout retry warnings appeared, then the build
+  completed successfully.
+- `git diff --check` passed.
+- Local HTTP smoke:
+  - `http://127.0.0.1:3040/folders/region/russia?fresh=assistant-pass`
+    returned 200.
+  - `http://127.0.0.1:3040/surfaces/SURF-GAX1970R001?fresh=assistant-pass`
+    returned 200.
+- Commit-bound safety scan found no real API key, password, secret, bearer
+  value, cookie assignment, local user path, or env-file reference. Remaining
+  hits are expected false positives such as tokenizer/max-token identifiers,
+  token metrics, session wording, `transformers.env`, and historical log scan
+  terms.
