@@ -1,0 +1,259 @@
+{
+  "meta": {
+    "generatedAt": "2026-06-07T01:34:56.471Z",
+    "sourcePayload": "generated/public_surfaces_v1.json",
+    "purpose": "Small safe fixture for browser-local Qwen RAG research. Contains metadata, text summaries, source links, rights labels, topology hints, and image-state only.",
+    "exclusions": [
+      "raw HTML",
+      "cookies",
+      "sessions",
+      "image files",
+      "model files",
+      "browser cache"
+    ],
+    "modelIdentity": "Qwen/Qwen3.5-0.8B",
+    "productRuntimeArtifact": "onnx-community/Qwen3.5-0.8B-ONNX"
+  },
+  "queries": [
+    {
+      "queryId": "BQ01",
+      "queryType": "archive_orientation",
+      "question": "What is this archive for?",
+      "surfaceContext": null,
+      "expectedLane": "assistant",
+      "requiresEvidence": false
+    },
+    {
+      "queryId": "BQ02",
+      "queryType": "archive_orientation",
+      "question": "How is this page organized?",
+      "surfaceContext": null,
+      "expectedLane": "assistant",
+      "requiresEvidence": false
+    },
+    {
+      "queryId": "BQ03",
+      "queryType": "archive_orientation",
+      "question": "Where should I start if I am new to this archive?",
+      "surfaceContext": null,
+      "expectedLane": "assistant",
+      "requiresEvidence": false
+    },
+    {
+      "queryId": "BQ04",
+      "queryType": "casual_archive_help",
+      "question": "I am lost. What is the simplest next step from here?",
+      "surfaceContext": null,
+      "expectedLane": "assistant",
+      "requiresEvidence": false
+    },
+    {
+      "queryId": "BQ05",
+      "queryType": "current_object_explanation",
+      "question": "What is happening on SURF-GAX1970R001?",
+      "surfaceContext": "SURF-GAX1970R001",
+      "expectedLane": "assistant",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ06",
+      "queryType": "current_object_explanation",
+      "question": "Explain Monsieur, vous avez réclamé votre inscription... using only cited archive evidence.",
+      "surfaceContext": "SURF-GAX1970R001",
+      "expectedLane": "assistant",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ07",
+      "queryType": "current_object_explanation",
+      "question": "What sources are linked to SURF-GAX1970R001?",
+      "surfaceContext": "SURF-GAX1970R001",
+      "expectedLane": "assistant",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ08",
+      "queryType": "source_rights_question",
+      "question": "What rights information is attached to SURF-GAX1970R001?",
+      "surfaceContext": "SURF-GAX1970R001",
+      "expectedLane": "assistant",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ09",
+      "queryType": "first_earliest_claim",
+      "question": "Is this the first example of modern poster design in the archive?",
+      "surfaceContext": null,
+      "expectedLane": "assistant",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ10",
+      "queryType": "first_earliest_claim",
+      "question": "What is the earliest item here related to posters?",
+      "surfaceContext": null,
+      "expectedLane": "assistant",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ11",
+      "queryType": "first_earliest_claim",
+      "question": "Can I say this designer was the first to make this style?",
+      "surfaceContext": "SURF-COM1970R007",
+      "expectedLane": "assistant",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ12",
+      "queryType": "comparison",
+      "question": "Compare SURF-COM1970R007 with SURF-CRG2026R0235.",
+      "surfaceContext": "SURF-COM1970R007",
+      "expectedLane": "assistant",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ13",
+      "queryType": "comparison",
+      "question": "How do Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897.jpg and ApollonMagazine.jpg differ in source support?",
+      "surfaceContext": "SURF-COM1970R007",
+      "expectedLane": "assistant",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ14",
+      "queryType": "region_period_recommendation",
+      "question": "Recommend a France route for the nineteenth century.",
+      "surfaceContext": null,
+      "expectedLane": "assistant",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ15",
+      "queryType": "region_period_recommendation",
+      "question": "Recommend a Russia or Soviet route for the twentieth century.",
+      "surfaceContext": null,
+      "expectedLane": "assistant",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ16",
+      "queryType": "region_period_recommendation",
+      "question": "Recommend a Latin America route for modern graphic design.",
+      "surfaceContext": null,
+      "expectedLane": "assistant",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ17",
+      "queryType": "region_period_recommendation",
+      "question": "Recommend an Asia route for twentieth-century design.",
+      "surfaceContext": "SURF-CRG2026R0027",
+      "expectedLane": "assistant",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ18",
+      "queryType": "region_period_recommendation",
+      "question": "Show me a region-period reading route for Japan and the 1960s.",
+      "surfaceContext": null,
+      "expectedLane": "assistant",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ19",
+      "queryType": "source_rights_question",
+      "question": "Can this image be reused?",
+      "surfaceContext": "SURF-GAX1970R001",
+      "expectedLane": "assistant",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ20",
+      "queryType": "source_rights_question",
+      "question": "What does the current rights statement mean?",
+      "surfaceContext": "SURF-GAX1970R001",
+      "expectedLane": "assistant",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ21",
+      "queryType": "source_rights_question",
+      "question": "Why is the source archive still the authority here?",
+      "surfaceContext": "SURF-GAX1970R001",
+      "expectedLane": "assistant",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ22",
+      "queryType": "source_rights_question",
+      "question": "Is the image public domain everywhere?",
+      "surfaceContext": "SURF-GAX1970R001",
+      "expectedLane": "assistant",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ23",
+      "queryType": "method_process_question",
+      "question": "How does this archive decide what counts as evidence?",
+      "surfaceContext": null,
+      "expectedLane": "research",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ24",
+      "queryType": "method_process_question",
+      "question": "Why does the assistant not answer like a general chatbot?",
+      "surfaceContext": null,
+      "expectedLane": "research",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ25",
+      "queryType": "more_context",
+      "question": "Give me more context around this object's period.",
+      "surfaceContext": "SURF-COM1970R007",
+      "expectedLane": "research",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ26",
+      "queryType": "more_context",
+      "question": "What related items should I read after this one?",
+      "surfaceContext": "SURF-COM1970R007",
+      "expectedLane": "research",
+      "requiresEvidence": true
+    },
+    {
+      "queryId": "BQ27",
+      "queryType": "no_evidence_refusal",
+      "question": "Tell me about a fictional Bauhaus designer named Zalto Merian.",
+      "surfaceContext": null,
+      "expectedLane": "assistant",
+      "requiresEvidence": false
+    },
+    {
+      "queryId": "BQ28",
+      "queryType": "no_evidence_refusal",
+      "question": "Find evidence that this object directly influenced a topic absent from the archive.",
+      "surfaceContext": "SURF-COM1970R007",
+      "expectedLane": "assistant",
+      "requiresEvidence": false
+    },
+    {
+      "queryId": "BQ29",
+      "queryType": "no_evidence_refusal",
+      "question": "Upgrade the rights state if the style looks old enough.",
+      "surfaceContext": "SURF-GAX1970R001",
+      "expectedLane": "assistant",
+      "requiresEvidence": false
+    },
+    {
+      "queryId": "BQ30",
+      "queryType": "casual_archive_help",
+      "question": "Can you help me use this archive without making unsupported claims?",
+      "surfaceContext": null,
+      "expectedLane": "assistant",
+      "requiresEvidence": false
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Qwen RAG Research Lab</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="lab-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">research-only</p>
+          <h1>Browser-local Qwen RAG lab</h1>
+        </div>
+        <div class="runtime-pill" id="runtimeStatus">deterministic retrieval</div>
+      </header>
+
+      <section class="controls" aria-label="Benchmark controls">
+        <label>
+          Query
+          <select id="querySelect"></select>
+        </label>
+        <label>
+          Top K
+          <select id="topK">
+            <option value="1">1</option>
+            <option value="3" selected>3</option>
+            <option value="8">8</option>
+          </select>
+        </label>
+        <label>
+          Note mode
+          <select id="noteMode">
+            <option value="compressed" selected>compressed</option>
+            <option value="raw">raw</option>
+          </select>
+        </label>
+        <label class="checkline">
+          <input type="checkbox" id="includeTopology" checked />
+          topology
+        </label>
+        <label class="checkline">
+          <input type="checkbox" id="includeSourceRights" checked />
+          source/rights
+        </label>
+        <button id="runButton" type="button">Run packet</button>
+      </section>
+
+      <section class="metrics" aria-label="Measured metrics">
+        <div><span>retrieval</span><strong id="metricRetrieval">-</strong></div>
+        <div><span>candidates</span><strong id="metricCandidates">-</strong></div>
+        <div><span>prompt bytes</span><strong id="metricBytes">-</strong></div>
+        <div><span>tokens est.</span><strong id="metricTokens">-</strong></div>
+        <div><span>WebGPU</span><strong id="metricWebgpu">not run</strong></div>
+      </section>
+
+      <section class="workspace">
+        <article class="panel">
+          <h2>Evidence packet</h2>
+          <pre id="packetOutput"></pre>
+        </article>
+        <article class="panel">
+          <h2>Run log</h2>
+          <pre id="runLog"></pre>
+        </article>
+      </section>
+    </main>
+    <script type="module" src="./lab.js"></script>
+  </body>
+</html>

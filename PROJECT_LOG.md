@@ -6962,3 +6962,61 @@ Verification:
   main sheets, and CONTENT on the first Russia main sheet shows the same
   nearby-main fallback because that surface does not yet have a main-sheet
   dossier sequence.
+
+## 2026-06-07 - Independent Qwen RAG Research Lab Branch
+
+Scope:
+
+- Created independent branch `codex/qwen-rag-research-lab` from `main` for a
+  paper-oriented browser-local Qwen RAG experiment.
+- This is a research lab only. It does not change product Assistant UI,
+  product runtime logic, source capture, archive ingestion, rights policy, or
+  image handling.
+- Product constraints remain unchanged: `Qwen/Qwen3.5-0.8B` is the core model
+  identity, `onnx-community/Qwen3.5-0.8B-ONNX` remains the product runtime
+  artifact, and any Transformers.js / ONNX Runtime WebGPU / WebLLM comparison
+  is labeled research-only.
+
+Created:
+
+- `experiments/qwen_rag_lab/README.md`
+- `experiments/qwen_rag_lab/scripts/build_fixture.mjs`
+- `experiments/qwen_rag_lab/scripts/run_benchmark.mjs`
+- `experiments/qwen_rag_lab/scripts/analyze_results.mjs`
+- `experiments/qwen_rag_lab/fixtures/archive_fixture_v0.json`
+- `experiments/qwen_rag_lab/fixtures/benchmark_queries_v0.json`
+- `experiments/qwen_rag_lab/browser_lab/index.html`
+- `experiments/qwen_rag_lab/browser_lab/lab.js`
+- `experiments/qwen_rag_lab/browser_lab/styles.css`
+- `experiments/qwen_rag_lab/reports/benchmark_baseline_v0.json`
+- `experiments/qwen_rag_lab/reports/benchmark_baseline_v0.csv`
+- `experiments/qwen_rag_lab/reports/BENCHMARK_REPORT_v0.md`
+- `experiments/qwen_rag_lab/reports/PAPER_FRAMING_MEMO_v0.md`
+- `experiments/qwen_rag_lab/reports/NEXT_EXPERIMENT_PLAN_v0.md`
+- `experiments/qwen_rag_lab/reports/QUALITY_REVIEW_TEMPLATE_v0.md`
+
+Initial benchmark:
+
+- Fixture generated from `generated/public_surfaces_v1.json`.
+- Fixture contains 53 safe records with metadata, compact text summaries,
+  source links, rights labels, topology hints, and image-state.
+- Benchmark query set contains 30 queries covering archive orientation, current
+  object explanation, first/earliest claims, region-period recommendations,
+  source/rights questions, comparison, no-evidence refusal, method/process
+  questions, more-context requests, and casual archive help.
+- Baseline generated 180 retrieval/evidence-packet ablation runs.
+- Qwen generation was not run in this scaffold benchmark; no model weights,
+  image files, browser cache, raw HTML, cookies, sessions, or secrets were
+  downloaded or committed.
+
+Result:
+
+- Top-1 compressed/source-rights packet averaged about 365 estimated prompt
+  tokens.
+- Top-3 compressed/source-rights packet averaged about 958 estimated prompt
+  tokens and is the current first Assistant baseline.
+- Top-8 compressed/source-rights packet averaged about 1369 estimated prompt
+  tokens and should remain a Research-mode candidate until browser TTFT and
+  WebGPU stability are measured.
+- Removing source/rights fields reduces prompt size but breaks the
+  rights-aware archive contract, so it is kept only as a negative control.
