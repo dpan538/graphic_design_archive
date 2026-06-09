@@ -1,8 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState, type CSSProperties } from "react";
 import Link from "next/link";
-import type { FolderTypeKey, ResearchDossier } from "@/types/archive";
+import type { FolderTypeKey, ResearchDossier, Surface } from "@/types/archive";
 import {
   surfaceLeafIndex,
   type JumpTarget,
@@ -41,6 +41,9 @@ export default function Reader({
   const [index, setIndex] = useState(
     Math.min(Math.max(initialIndex, 0), leaves.length - 1),
   );
+  const [contextOpen, setContextOpen] = useState(false);
+  const [contextView, setContextView] = useState<ContextView>("relation");
+  const [selectedContextId, setSelectedContextId] = useState("active");
 
   const next = useCallback(
     () => setIndex((i) => Math.min(i + 1, leaves.length - 1)),
@@ -79,6 +82,11 @@ export default function Reader({
   const activeDossier = activeSurface
     ? dossierBySurfaceId.get(activeSurface.surfaceId)
     : undefined;
+
+  useEffect(() => {
+    setSelectedContextId("active");
+  }, [activeSurface?.surfaceId, activeLeaf?.id]);
+
   const openAssistant = useCallback(() => {
     window.dispatchEvent(
       new CustomEvent("archive:open-assistant", {
@@ -106,37 +114,57 @@ export default function Reader({
     });
     return active;
   }, [jumpTargets, index]);
-  const mainSheetTargets = useMemo(() => {
-    return leaves
-      .map((leaf, leafIndex) => ({ leaf, leafIndex }))
-      .filter(({ leaf }) => leaf.type === "main" && leaf.surface)
-      .map(({ leaf, leafIndex }) => ({
-        leafIndex,
-        label: leaf.surface?.title ?? "Untitled main sheet",
-        sublabel: leaf.surface?.dateText ?? "",
-      }));
-  }, [leaves]);
-  const activeMainSheetIdx = useMemo(() => {
-    let active = 0;
-    mainSheetTargets.forEach((target, i) => {
-      if (target.leafIndex <= index) active = i;
-    });
-    return active;
-  }, [index, mainSheetTargets]);
-  const nearbyMainSheetTargets = useMemo(() => {
-    const start = Math.max(0, activeMainSheetIdx - 2);
-    const end = Math.min(mainSheetTargets.length, activeMainSheetIdx + 3);
-    return mainSheetTargets.slice(start, end).map((target, offset) => ({
-      target,
-      originalIndex: start + offset,
-    }));
-  }, [activeMainSheetIdx, mainSheetTargets]);
-  const showDossierTree =
-    activeDossier?.anchorType === "main_sheet" &&
-    activeDossier.pageSequence.length > 0;
+
+  const contextNodes = useMemo(
+    () =>
+      buildContextNodes({
+        activeSurface,
+        activeDossier,
+        activeLeaf,
+        activeTargetIdx,
+        contextTitle,
+        contextSubtitle,
+        jumpTargets,
+        leaves,
+        sIndex,
+      }),
+    [
+      activeDossier,
+      activeLeaf,
+      activeSurface,
+      activeTargetIdx,
+      contextSubtitle,
+      contextTitle,
+      jumpTargets,
+      leaves,
+      sIndex,
+    ],
+  );
+  const contextEdges = useMemo(() => buildContextEdges(contextNodes), [contextNodes]);
+  const selectedContextNode =
+    contextNodes.find((node) => node.id === selectedContextId) ?? contextNodes[0];
+
+  const focusIds = useMemo(() => {
+    const ids = new Set(["active", selectedContextNode?.id ?? "active"]);
+    for (const edge of contextEdges) {
+      if (edge.from === selectedContextNode?.id) ids.add(edge.to);
+      if (edge.to === selectedContextNode?.id) ids.add(edge.from);
+    }
+    return ids;
+  }, [contextEdges, selectedContextNode]);
+
+  const openContextNode = useCallback(
+    (node: ContextNode) => {
+      setSelectedContextId(node.id);
+      if (typeof node.leafIndex === "number") {
+        setIndex(node.leafIndex);
+      }
+    },
+    [],
+  );
 
   const main = (
-    <div className="relative flex-1 min-h-0 flex flex-col">
+    <div className={`relative flex-1 min-h-0 flex flex-col reader-main ${contextOpen ? "reader-main--context-open" : ""}`}>
       <div className="leaf-stage">
         <LeafFrame leaf={visible[0]} single activeFolderId={activeFolderId} ctx={ctx} />
       </div>
@@ -179,7 +207,7 @@ export default function Reader({
     </div>
   );
 
-  const contextPanel = (
+  const contentPanel = (
     <>
       <div className="packet-panel__header">
         {backHref ? (
@@ -245,113 +273,80 @@ export default function Reader({
     </>
   );
 
-  const contentPanel = (
-    <>
-      <div className="packet-panel__header packet-panel__header--compact">
-        {backHref ? (
-          <Link href={backHref} className="label-caps underline">
-            ← {backLabel ?? "Back"}
-          </Link>
-        ) : null}
-        <div className="font-bold text-lg leading-tight mt-1.5">
-          {showDossierTree ? activeDossier?.title : "Nearby main sheets"}
+  const contextOverlay = (
+    <section
+      className="reader-context-overlay"
+      data-view={contextView}
+      aria-label="Surface context relationship layer"
+    >
+      <div className="reader-context-head">
+        <div className="reader-context-eyebrow">Context / relation layer</div>
+        <h2>{contextView === "map" ? "Geographic map" : "Surface relation"}</h2>
+        <div className="reader-context-meta">
+          <span>Mode: {contextView}</span>
         </div>
-        <div className="label-caps text-ink-soft mt-1">Packet tree</div>
       </div>
 
-      <div className="panel-scroll packet-panel__scroll">
-        <section className="packet-tree packet-tree--diagram" aria-label="Research packet relationship tree">
-          <div className="packet-tree__root">
-            <span className="packet-tree__marker" aria-hidden />
-            <div>
-              <div className="packet-tree__title">
-                {activeDossier?.title ?? contextTitle}
-              </div>
-              <div className="packet-tree__meta">
-                {showDossierTree && activeDossier
-                  ? `${formatAnchorType(activeDossier.anchorType)} / ${activeDossier.pageCount} pages`
-                  : `${contextSubtitle} / previous and next main sheets`}
-              </div>
-            </div>
-          </div>
+      <button
+        type="button"
+        className="reader-context-tool reader-context-tool--close"
+        aria-label="Close context"
+        onClick={() => setContextOpen(false)}
+      >
+        <IconClose />
+      </button>
 
-          {showDossierTree && activeDossier ? (
-            <div className="packet-tree__canvas">
-              <span className="packet-tree__rail" aria-hidden />
-              {activeDossier.pageSequence.map((page, pageIndex) => {
-                const targetIndex = sIndex.get(page.surfaceId);
-                const isActive =
-                  page.surfaceId === activeSurface?.surfaceId &&
-                  activeLeaf &&
-                  dossierTypeMatchesLeaf(page.pageType, activeLeaf.type);
-
-                return (
-                  <button
-                    key={page.pageId}
-                    type="button"
-                    className="packet-tree__item packet-tree__item--diagram"
-                    data-active={isActive}
-                    data-node-type={page.pageType}
-                    disabled={targetIndex === undefined}
-                    onClick={() => {
-                      if (targetIndex !== undefined) setIndex(targetIndex);
-                    }}
-                    title={`${formatPageType(page.pageType)} / ${page.title ?? page.displayNumber ?? page.pageId}`}
-                  >
-                    <span className="packet-tree__node" aria-hidden />
-                    <span className="packet-tree__body">
-                      <span className="packet-tree__kicker">
-                        {String(pageIndex + 1).padStart(2, "0")} / {formatPageType(page.pageType)}
-                      </span>
-                      <span className="packet-tree__label">
-                        {page.title ?? page.displayNumber ?? page.pageId}
-                      </span>
-                      <span className="packet-tree__source">
-                        {page.imageState ?? "IMG--"} / {page.sourceName ?? page.rightsState ?? "source pending"}
-                      </span>
-                      <span className="packet-tree__hover">
-                        {pageRelationship(page.pageType)} · {page.rightsState ?? "rights pending"}
-                        {page.sourceUrl ? " · source-linked" : ""}
-                      </span>
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          ) : (
-            <div className="packet-tree__canvas">
-              <span className="packet-tree__rail" aria-hidden />
-              {nearbyMainSheetTargets.map(({ target, originalIndex }) => (
-                <button
-                  key={`${target.leafIndex}-${originalIndex}`}
-                  type="button"
-                  className="packet-tree__item packet-tree__item--diagram"
-                  data-active={originalIndex === activeMainSheetIdx}
-                  data-node-type="main_sheet"
-                  onClick={() => setIndex(target.leafIndex)}
-                  title={`${target.label} / ${target.sublabel}`}
-                >
-                  <span className="packet-tree__node" aria-hidden />
-                  <span className="packet-tree__body">
-                    <span className="packet-tree__kicker">
-                      {String(originalIndex + 1).padStart(2, "0")} / main sheet
-                    </span>
-                    <span className="packet-tree__label">{target.label}</span>
-                    <span className="packet-tree__source">{target.sublabel}</span>
-                    <span className="packet-tree__hover">
-                      Main sheet navigation only. Open Context for full archive sequence.
-                    </span>
-                  </span>
-                </button>
-              ))}
-              <div className="packet-tree__empty">
-                Packet grouping is pending; this view only shows nearby main sheets.
-              </div>
-            </div>
-          )}
-        </section>
+      <div className="reader-context-switch" aria-label="Context view">
+        <button
+          type="button"
+          className="reader-context-tool"
+          data-active={contextView === "map"}
+          aria-label="Map view"
+          onClick={() => setContextView("map")}
+        >
+          <IconMap />
+        </button>
+        <button
+          type="button"
+          className="reader-context-tool"
+          data-active={contextView === "relation"}
+          aria-label="Surface relation view"
+          onClick={() => setContextView("relation")}
+        >
+          <IconRelation />
+        </button>
       </div>
-    </>
+
+      <div className="reader-context-canvas">
+        {contextView === "map" ? (
+          <ContextMap
+            nodes={contextNodes}
+            edges={contextEdges}
+            selectedId={selectedContextNode?.id ?? "active"}
+            onPreview={(node) => setSelectedContextId(node.id)}
+            onSelect={openContextNode}
+          />
+        ) : (
+          <ContextRelation
+            nodes={contextNodes}
+            edges={contextEdges}
+            focusIds={focusIds}
+            selectedId={selectedContextNode?.id ?? "active"}
+            onSelect={openContextNode}
+            onPreview={(node) => setSelectedContextId(node.id)}
+          />
+        )}
+      </div>
+
+      <dl className="reader-context-readout" aria-live="polite">
+        <dt>node</dt>
+        <dd>{selectedContextNode ? `${selectedContextNode.kind}: ${selectedContextNode.title}` : "surface context"}</dd>
+        <dt>basis</dt>
+        <dd>{selectedContextNode?.meta ?? contextSubtitle}</dd>
+        <dt>evidence</dt>
+        <dd>{selectedContextNode?.evidence ?? "Select a context node to inspect relation evidence."}</dd>
+      </dl>
+    </section>
   );
 
   return (
@@ -360,9 +355,230 @@ export default function Reader({
       folderInk={folderInk}
       leftPanel={contentPanel}
       leftPanelLabel="Content"
-      leftPanelSecondary={contextPanel}
-      leftPanelSecondaryLabel="Context"
+      contextOverlay={contextOverlay}
+      contextOverlayOpen={contextOpen}
+      onContextOverlayOpenChange={setContextOpen}
+      contextOverlayLabel="Context"
     />
+  );
+}
+
+type ContextView = "relation" | "map";
+type ContextKind = "surface" | "source" | "rights" | "image" | "date" | "folder" | "page";
+type ContextRole = "active" | "core" | "support";
+type Point = [number, number];
+
+interface GeoPoint {
+  lat: number;
+  lon: number;
+}
+
+interface ContextNode {
+  id: string;
+  kind: ContextKind;
+  role: ContextRole;
+  label: string;
+  title: string;
+  meta: string;
+  evidence: string;
+  relation: Point;
+  geo?: GeoPoint;
+  geoInferred?: boolean;
+  mapLabel?: string;
+  leafIndex?: number;
+}
+
+interface ContextEdge {
+  from: string;
+  to: string;
+  type: "core" | "sequence" | "folder" | "page" | "support";
+}
+
+function ContextRelation({
+  nodes,
+  edges,
+  focusIds,
+  selectedId,
+  onPreview,
+  onSelect,
+}: {
+  nodes: ContextNode[];
+  edges: ContextEdge[];
+  focusIds: Set<string>;
+  selectedId: string;
+  onPreview: (node: ContextNode) => void;
+  onSelect: (node: ContextNode) => void;
+}) {
+  return (
+    <div className="reader-context-relation">
+      <svg className="reader-context-edges" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden>
+        {edges.map((edge) => {
+          const from = nodes.find((node) => node.id === edge.from);
+          const to = nodes.find((node) => node.id === edge.to);
+          if (!from || !to) return null;
+          const highlighted = edge.from === selectedId || edge.to === selectedId;
+          const dimmed = !highlighted && selectedId !== "active";
+          return (
+            <path
+              key={`${edge.from}-${edge.to}-${edge.type}`}
+              className={`reader-context-edge reader-context-edge--${edge.type} ${highlighted ? "is-highlighted" : ""} ${dimmed ? "is-dimmed" : ""}`}
+              d={relationPath(from.relation, to.relation)}
+            />
+          );
+        })}
+      </svg>
+      {nodes.map((node) => {
+        const focused = focusIds.has(node.id);
+        const selected = node.id === selectedId;
+        return (
+          <button
+            key={node.id}
+            type="button"
+            className={`reader-context-node reader-context-node--${node.role} reader-context-node--${node.kind} ${selected ? "is-selected" : ""} ${focused ? "is-focused" : "is-dimmed"}`}
+            style={pointStyle(node.relation)}
+            onMouseEnter={() => onPreview(node)}
+            onFocus={() => onPreview(node)}
+            onClick={() => onSelect(node)}
+          >
+            <span className="reader-context-node__kind">[{node.label}]</span>
+            <span className="reader-context-node__title">{node.title}</span>
+            <span className="reader-context-node__meta">{node.meta}</span>
+          </button>
+        );
+      })}
+      <div className="reader-context-field-note">Hover node for evidence</div>
+    </div>
+  );
+}
+
+function ContextMap({
+  nodes,
+  edges,
+  selectedId,
+  onPreview,
+  onSelect,
+}: {
+  nodes: ContextNode[];
+  edges: ContextEdge[];
+  selectedId: string;
+  onPreview: (node: ContextNode) => void;
+  onSelect: (node: ContextNode) => void;
+}) {
+  const geoNodes = nodes.filter((node) => node.geo);
+  const selectedNode = geoNodes.find((node) => node.id === selectedId) ?? geoNodes[0];
+  const detailPoint = selectedNode?.geo ? mercatorTilePoint(selectedNode.geo, DETAIL_MAP) : null;
+  return (
+    <div className="reader-context-map">
+      <div className="reader-context-map-pane reader-context-map-pane--detail">
+        <TileGrid config={DETAIL_MAP} className="reader-context-tile-grid--detail" />
+        {detailPoint ? (
+          <span
+            className="reader-context-map-dot reader-context-map-dot--active"
+            style={pointStyle(detailPoint)}
+            aria-hidden
+          />
+        ) : null}
+      </div>
+      <div className="reader-context-map-pane reader-context-map-pane--world">
+        <TileGrid config={WORLD_MAP} className="reader-context-tile-grid--world" />
+        <svg className="reader-context-map-edges" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden>
+          {edges.map((edge) => {
+            const from = geoNodes.find((node) => node.id === edge.from);
+            const to = geoNodes.find((node) => node.id === edge.to);
+            if (!from?.geo || !to?.geo) return null;
+            const a = worldPoint(from.geo);
+            const b = worldPoint(to.geo);
+            return (
+              <path
+                key={`${edge.from}-${edge.to}-${edge.type}`}
+                d={mapPath(a, b)}
+                className={edge.from === selectedId || edge.to === selectedId ? "is-highlighted" : ""}
+              />
+            );
+          })}
+        </svg>
+        {geoNodes.map((node) => {
+          const point = node.geo ? worldPoint(node.geo) : null;
+          if (!point) return null;
+          const active = node.id === selectedNode?.id;
+          return (
+            <button
+              key={node.id}
+              type="button"
+              className={`reader-context-map-pin ${active ? "is-active" : ""} ${node.geoInferred ? "is-inferred" : ""}`}
+              style={pointStyle(point)}
+              aria-label={`${node.title} location`}
+              data-label={node.mapLabel ?? node.title}
+              onMouseEnter={() => onPreview(node)}
+              onFocus={() => onPreview(node)}
+              onClick={() => onSelect(node)}
+            />
+          );
+        })}
+        <div className="reader-context-map-attribution">© OpenStreetMap contributors</div>
+      </div>
+      <div className="reader-context-map-note">
+        <span>Basis</span>
+        <span>exact, folder, or inferred regional coordinates</span>
+        <span>Read</span>
+        <span>blue marker is active; small rings are related locations</span>
+      </div>
+      <div className="reader-context-map-coordinate">
+        {selectedNode?.mapLabel ?? selectedNode?.title ?? "mapped surface"}
+        {selectedNode?.geo ? ` ${selectedNode.geo.lat.toFixed(5)}, ${selectedNode.geo.lon.toFixed(5)}` : ""}
+      </div>
+    </div>
+  );
+}
+
+function TileGrid({ config, className }: { config: TileConfig; className: string }) {
+  const tiles = [];
+  for (let row = 0; row < config.rows; row += 1) {
+    for (let col = 0; col < config.cols; col += 1) {
+      const x = config.startX + col;
+      const y = config.startY + row;
+      tiles.push(
+        <img
+          key={`${config.z}-${x}-${y}`}
+          src={`https://tile.openstreetmap.org/${config.z}/${x}/${y}.png`}
+          alt=""
+          loading="eager"
+          decoding="async"
+        />,
+      );
+    }
+  }
+  return <div className={`reader-context-tile-grid ${className}`}>{tiles}</div>;
+}
+
+function IconClose() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden>
+      <line x1="6" y1="6" x2="18" y2="18" />
+      <line x1="18" y1="6" x2="6" y2="18" />
+    </svg>
+  );
+}
+
+function IconMap() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden>
+      <path d="M4 6l5-2 6 2 5-2v16l-5 2-6-2-5 2z" />
+      <line x1="9" y1="4" x2="9" y2="20" />
+      <line x1="15" y1="6" x2="15" y2="22" />
+    </svg>
+  );
+}
+
+function IconRelation() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden>
+      <circle cx="6" cy="5" r="2" />
+      <circle cx="17" cy="12" r="2" />
+      <circle cx="17" cy="19" r="2" />
+      <path d="M8 5h3v14h4" />
+      <path d="M11 12h4" />
+    </svg>
   );
 }
 
@@ -390,27 +606,343 @@ function formatScope(value: string) {
   return value.replace(/_/g, " ");
 }
 
-function formatPageType(value: string) {
-  return value.replace(/_/g, " ");
+interface BuildContextNodesInput {
+  activeSurface?: Surface;
+  activeDossier?: ResearchDossier;
+  activeLeaf?: Leaf;
+  activeTargetIdx: number;
+  contextTitle: string;
+  contextSubtitle: string;
+  jumpTargets: JumpTarget[];
+  leaves: Leaf[];
+  sIndex: Map<string, number>;
 }
 
-function pageRelationship(value: string) {
-  if (value === "main_sheet") return "anchor page";
-  if (value === "subsheet") return "supporting sheet";
-  if (value === "text_page") return "editorial reading page";
-  if (value === "appendix") return "evidence appendix";
-  if (value === "card") return "card record";
-  if (value === "slip") return "source slip";
-  if (value === "bookmark") return "navigation bookmark";
-  return "packet node";
+function buildContextNodes({
+  activeSurface,
+  activeDossier,
+  activeLeaf,
+  activeTargetIdx,
+  contextTitle,
+  contextSubtitle,
+  jumpTargets,
+  leaves,
+  sIndex,
+}: BuildContextNodesInput): ContextNode[] {
+  const activeGeo = activeSurface ? geoContextForSurface(activeSurface) : undefined;
+  const nodes: ContextNode[] = [
+    {
+      id: "active",
+      kind: "surface",
+      role: "active",
+      label: "SURF",
+      title: activeSurface?.title ?? contextTitle,
+      meta: activeSurface?.dateText ?? contextSubtitle,
+      evidence: activeSurface
+        ? `Current ${activeLeaf?.type ?? "surface"} leaf. Relation mode joins source, rights, image state, folders, date, sequence and dossier context.${activeGeo?.inferred ? " Map position uses broader inferred geographic context." : ""}`
+        : "Current register leaf. Surface-level context appears once a surface leaf is active.",
+      relation: [28, 49],
+      geo: activeGeo?.point,
+      geoInferred: activeGeo?.inferred,
+      mapLabel: activeGeo?.label ?? contextTitle,
+      leafIndex: activeSurface ? sIndex.get(activeSurface.surfaceId) : undefined,
+    },
+  ];
+
+  if (activeSurface) {
+    nodes.push(
+      {
+        id: "source",
+        kind: "source",
+        role: "core",
+        label: "SRC",
+        title: "Source registry",
+        meta: activeSurface.sourceName || "source pending",
+        evidence: activeSurface.sourceUrl
+          ? `Source URL is available for ${activeSurface.sourceName}.`
+          : "Source registry exists, but a source URL is not available.",
+        relation: [43, 18],
+      },
+      {
+        id: "rights",
+        kind: "rights",
+        role: "core",
+        label: "RGT",
+        title: "Rights display state",
+        meta: activeSurface.rights.state || activeSurface.rights.displayPolicy,
+        evidence: activeSurface.rights.label || activeSurface.rights.displayPolicy,
+        relation: [43, 32],
+      },
+      {
+        id: "image",
+        kind: "image",
+        role: "core",
+        label: "IMG",
+        title: `${activeSurface.image.state} ${activeSurface.image.hasImageFrame ? "available" : "record"}`,
+        meta: activeSurface.image.licenseLabel ?? activeSurface.image.credit ?? "image evidence",
+        evidence: activeSurface.image.url
+          ? "Image URL is available; the reader can render an image frame."
+          : "No display image URL is currently available for this surface.",
+        relation: [43, 46],
+      },
+      {
+        id: "date",
+        kind: "date",
+        role: "core",
+        label: "DAT",
+        title: activeSurface.dateText || "undated",
+        meta: dateSpan(activeSurface),
+        evidence: "Date evidence anchors the surface in the archive chronology.",
+        relation: [43, 60],
+      },
+    );
+
+    const regionFolder = activeSurface.folders.find((folder) => folder.type === "region");
+    const supportFolder =
+      activeSurface.folders.find((folder) => folder.type !== "region") ??
+      activeSurface.folders[0];
+    if (regionFolder) {
+      const regionGeo = geoForText(regionFolder.title) ?? INFERRED_GLOBAL_GEO;
+      nodes.push({
+        id: "folder-region",
+        kind: "folder",
+        role: "core",
+        label: "FOL",
+        title: regionFolder.title,
+        meta: "region folder",
+        evidence: "Folder membership is resolved from the active surface record.",
+        relation: [43, 74],
+        geo: regionGeo.point,
+        geoInferred: regionGeo.inferred,
+        mapLabel: `${regionFolder.title} / folder`,
+      });
+    }
+    if (supportFolder && supportFolder.folderId !== regionFolder?.folderId) {
+      nodes.push({
+        id: "folder-support",
+        kind: "folder",
+        role: "support",
+        label: "FOL",
+        title: supportFolder.title,
+        meta: `${supportFolder.type} folder`,
+        evidence: "Secondary folder membership gives the surface a thematic or medium context.",
+        relation: [66, 74],
+      });
+    }
+  }
+
+  const previousTarget = jumpTargets[Math.max(0, activeTargetIdx - 1)];
+  const nextTarget = jumpTargets[Math.min(jumpTargets.length - 1, activeTargetIdx + 1)];
+  if (previousTarget && previousTarget.leafIndex !== jumpTargets[activeTargetIdx]?.leafIndex) {
+    nodes.push(sequenceNode("near-prev", "SEQ -1", "Previous", previousTarget, leaves, [28, 72]));
+  }
+  if (nextTarget && nextTarget.leafIndex !== jumpTargets[activeTargetIdx]?.leafIndex) {
+    nodes.push(sequenceNode("near-next", "SEQ +1", "Next", nextTarget, leaves, [28, 28]));
+  }
+
+  if (activeDossier?.pageSequence.length) {
+    const pagePositions: Point[] = [
+      [70, 24],
+      [78, 36],
+      [78, 48],
+    ];
+    activeDossier.pageSequence.slice(0, 3).forEach((page, pageIndex) => {
+      nodes.push({
+        id: `dossier-${pageIndex}`,
+        kind: "page",
+        role: "support",
+        label: `P${String(pageIndex + 1).padStart(2, "0")}`,
+        title: page.title ?? page.displayNumber ?? page.pageId,
+        meta: page.pageType.replace(/_/g, " "),
+        evidence: page.sourceName || page.rightsState || "Dossier page in the active research packet.",
+        relation: pagePositions[pageIndex],
+        leafIndex: sIndex.get(page.surfaceId),
+      });
+    });
+  }
+
+  return nodes;
 }
 
-function dossierTypeMatchesLeaf(pageType: string, leafType: string) {
-  if (pageType === "main_sheet") return leafType === "main";
-  if (pageType === "subsheet") return leafType === "subsheet";
-  if (pageType === "text_page") return leafType === "text";
-  if (pageType === "appendix") return leafType === "appendix";
-  if (pageType === "slip") return leafType === "slip";
-  if (pageType === "card") return leafType === "main" || leafType === "subsheet";
-  return false;
+function buildContextEdges(nodes: ContextNode[]): ContextEdge[] {
+  const ids = new Set(nodes.map((node) => node.id));
+  const edges: ContextEdge[] = [];
+  const push = (from: string, to: string, type: ContextEdge["type"]) => {
+    if (ids.has(from) && ids.has(to)) edges.push({ from, to, type });
+  };
+  push("active", "source", "core");
+  push("active", "rights", "core");
+  push("active", "image", "core");
+  push("active", "date", "core");
+  push("active", "folder-region", "folder");
+  push("folder-region", "folder-support", "support");
+  push("near-prev", "active", "sequence");
+  push("active", "near-next", "sequence");
+  push("active", "dossier-0", "page");
+  push("dossier-0", "dossier-1", "page");
+  push("dossier-1", "dossier-2", "page");
+  return edges;
+}
+
+function sequenceNode(
+  id: string,
+  label: string,
+  direction: string,
+  target: JumpTarget,
+  leaves: Leaf[],
+  relation: Point,
+): ContextNode {
+  const surface = leaves[target.leafIndex]?.surface;
+  const geo = surface ? geoContextForSurface(surface) : undefined;
+  return {
+    id,
+    kind: "surface",
+    role: "support",
+    label,
+    title: target.label,
+    meta: target.sublabel || direction,
+    evidence: `${direction} navigation target in the current archive sequence.`,
+    relation,
+    geo: geo?.point,
+    geoInferred: geo?.inferred,
+    mapLabel: geo?.label ?? target.label,
+    leafIndex: target.leafIndex,
+  };
+}
+
+function dateSpan(surface: Surface) {
+  if (surface.dateStart && surface.dateEnd && surface.dateStart !== surface.dateEnd) {
+    return `${surface.dateStart}-${surface.dateEnd}`;
+  }
+  return surface.dateText || String(surface.dateStart ?? surface.dateEnd ?? "date pending");
+}
+
+const PLACE_COORDS: Array<[RegExp, GeoPoint]> = [
+  [/munich|münchen/i, { lat: 48.1351, lon: 11.582 }],
+  [/ulm/i, { lat: 48.4011, lon: 9.9876 }],
+  [/zurich|zürich|switzerland|swiss/i, { lat: 47.3769, lon: 8.5417 }],
+  [/amsterdam|netherlands|dutch/i, { lat: 52.3676, lon: 4.9041 }],
+  [/tokyo|japan/i, { lat: 35.6762, lon: 139.6503 }],
+  [/mexico city|mexico/i, { lat: 19.4326, lon: -99.1332 }],
+  [/new york/i, { lat: 40.7128, lon: -74.006 }],
+  [/chicago/i, { lat: 41.8781, lon: -87.6298 }],
+  [/los angeles/i, { lat: 34.0522, lon: -118.2437 }],
+  [/london|united kingdom|britain|uk/i, { lat: 51.5074, lon: -0.1278 }],
+  [/paris|france/i, { lat: 48.8566, lon: 2.3522 }],
+  [/berlin|germany|europe/i, { lat: 51.1657, lon: 10.4515 }],
+  [/milan|italy/i, { lat: 45.4642, lon: 9.19 }],
+  [/moscow|russia/i, { lat: 55.7558, lon: 37.6173 }],
+  [/beijing|china/i, { lat: 39.9042, lon: 116.4074 }],
+  [/hong kong/i, { lat: 22.3193, lon: 114.1694 }],
+  [/seoul|korea/i, { lat: 37.5665, lon: 126.978 }],
+  [/sydney|australia/i, { lat: -33.8688, lon: 151.2093 }],
+  [/brazil|são paulo|sao paulo/i, { lat: -23.5558, lon: -46.6396 }],
+  [/south africa|johannesburg/i, { lat: -26.2041, lon: 28.0473 }],
+  [/india|delhi/i, { lat: 28.6139, lon: 77.209 }],
+];
+
+interface GeoResolution {
+  point: GeoPoint;
+  label: string;
+  inferred: boolean;
+}
+
+const INFERRED_GLOBAL_GEO: GeoResolution = {
+  point: { lat: 20, lon: 0 },
+  label: "Global / inferred context",
+  inferred: true,
+};
+
+function geoContextForSurface(surface: Surface): GeoResolution {
+  const exactText = [surface.placeText, surface.title, surface.creator]
+    .filter(Boolean)
+    .join(" / ");
+  const exact = geoForText(exactText);
+  if (exact) {
+    return {
+      point: exact.point,
+      label: mapLabelForSurface(surface, "active"),
+      inferred: exact.inferred,
+    };
+  }
+
+  const folderText = surface.folders.map((folder) => folder.title).join(" / ");
+  const folder = geoForText(folderText);
+  if (folder) {
+    return {
+      point: folder.point,
+      label: `${surface.folders.find((item) => item.type === "region")?.title ?? "regional context"} / inferred`,
+      inferred: true,
+    };
+  }
+
+  const source = geoForText(surface.sourceName);
+  if (source) {
+    return {
+      point: source.point,
+      label: `${surface.sourceName} / inferred`,
+      inferred: true,
+    };
+  }
+
+  return INFERRED_GLOBAL_GEO;
+}
+
+function geoForText(value: string): GeoResolution | undefined {
+  for (const [pattern, point] of PLACE_COORDS) {
+    if (pattern.test(value)) {
+      return { point, label: value, inferred: false };
+    }
+  }
+  return undefined;
+}
+
+function mapLabelForSurface(surface: Surface, suffix: string) {
+  const place = surface.placeText || surface.folders.find((folder) => folder.type === "region")?.title;
+  return `${place || surface.title} / ${suffix}`;
+}
+
+interface TileConfig {
+  z: number;
+  startX: number;
+  startY: number;
+  cols: number;
+  rows: number;
+}
+
+const DETAIL_MAP: TileConfig = { z: 11, startX: 1088, startY: 710, cols: 3, rows: 2 };
+const WORLD_MAP: TileConfig = { z: 2, startX: 0, startY: 1, cols: 4, rows: 2 };
+
+function pointStyle(point: Point): CSSProperties {
+  return {
+    left: `${point[0]}%`,
+    top: `${point[1]}%`,
+  };
+}
+
+function mercatorTilePoint(geo: GeoPoint, config: TileConfig): Point {
+  const n = 2 ** config.z;
+  const latRad = (geo.lat * Math.PI) / 180;
+  const xFloat = ((geo.lon + 180) / 360) * n;
+  const yFloat =
+    ((1 - Math.log(Math.tan(latRad) + 1 / Math.cos(latRad)) / Math.PI) / 2) * n;
+  return [
+    ((xFloat - config.startX) / config.cols) * 100,
+    ((yFloat - config.startY) / config.rows) * 100,
+  ];
+}
+
+function worldPoint(geo: GeoPoint): Point {
+  return mercatorTilePoint(geo, WORLD_MAP);
+}
+
+function relationPath(a: Point, b: Point) {
+  const mid = Math.max(a[0], b[0]) - 5;
+  return `M ${a[0]} ${a[1]} H ${mid} V ${b[1]} H ${b[0]}`;
+}
+
+function mapPath(a: Point, b: Point) {
+  const cx = (a[0] + b[0]) / 2;
+  const cy = (a[1] + b[1]) / 2 - 5;
+  return `M ${a[0]} ${a[1]} Q ${cx} ${cy} ${b[0]} ${b[1]}`;
 }

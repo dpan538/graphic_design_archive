@@ -21,6 +21,10 @@ export default function ArchiveShell({
   leftPanelLabel = "Content",
   leftPanelSecondary,
   leftPanelSecondaryLabel = "Context",
+  contextOverlay,
+  contextOverlayOpen = false,
+  onContextOverlayOpenChange,
+  contextOverlayLabel = "Context",
   rightPanel,
   rightPanelOpen = false,
   onRightPanelOpenChange,
@@ -38,6 +42,10 @@ export default function ArchiveShell({
   leftPanelLabel?: string;
   leftPanelSecondary?: React.ReactNode;
   leftPanelSecondaryLabel?: string;
+  contextOverlay?: React.ReactNode;
+  contextOverlayOpen?: boolean;
+  onContextOverlayOpenChange?: (open: boolean) => void;
+  contextOverlayLabel?: string;
   rightPanel?: React.ReactNode;
   rightPanelOpen?: boolean;
   onRightPanelOpenChange?: (open: boolean) => void;
@@ -74,6 +82,7 @@ export default function ArchiveShell({
       setSearchMode("assistant");
       setLeftPanelOpen(false);
       setPanelOpen(false);
+      onContextOverlayOpenChange?.(false);
       onRightPanelOpenChange?.(false);
       setSearchOpen(true);
     };
@@ -81,7 +90,7 @@ export default function ArchiveShell({
     return () => {
       window.removeEventListener("archive:open-assistant", openAssistant);
     };
-  }, [onRightPanelOpenChange, searchMode, searchOpen]);
+  }, [onContextOverlayOpenChange, onRightPanelOpenChange, searchMode, searchOpen]);
 
   // Left-edge swipe → back. Backspace also goes back.
   useEffect(() => {
@@ -168,6 +177,7 @@ export default function ArchiveShell({
         onClick={() => {
           if (panelOpen) setPanelOpen(false);
           if (leftPanelOpen) setLeftPanelOpen(false);
+          if (contextOverlayOpen) onContextOverlayOpenChange?.(false);
           if (rightPanelOpen) onRightPanelOpenChange?.(false);
         }}
       >
@@ -227,6 +237,24 @@ export default function ArchiveShell({
                   ? "Close"
                   : leftPanelSecondaryLabel}
               </span>
+            </button>
+          ) : null}
+          {contextOverlay ? (
+            <button
+              type="button"
+              className="nav-icon left-panel-trigger"
+              data-active={contextOverlayOpen}
+              aria-label={contextOverlayLabel}
+              onClick={() => {
+                setLeftPanelOpen(false);
+                setSearchOpen(false);
+                setPanelOpen(false);
+                onRightPanelOpenChange?.(false);
+                onContextOverlayOpenChange?.(!contextOverlayOpen);
+              }}
+            >
+              <IconContext />
+              <span>{contextOverlayOpen ? "Close" : contextOverlayLabel}</span>
             </button>
           ) : null}
         </div>
@@ -294,6 +322,7 @@ export default function ArchiveShell({
             setSearchMode("search");
             setLeftPanelOpen(false);
             setPanelOpen(false);
+            onContextOverlayOpenChange?.(false);
             setSearchOpen((v) => (searchMode === "search" ? !v : true));
           }}
         >
@@ -309,6 +338,7 @@ export default function ArchiveShell({
             onClick={() => {
               setSearchOpen(false);
               setLeftPanelOpen(false);
+              onContextOverlayOpenChange?.(false);
               setPanelOpen((v) => !v);
             }}
           >
@@ -353,6 +383,12 @@ export default function ArchiveShell({
         <aside className="panel-overlay panel-overlay--right" onClick={(e) => e.stopPropagation()}>
           {panel}
         </aside>
+      ) : null}
+
+      {contextOverlay && contextOverlayOpen ? (
+        <div className="reader-context-layer" onClick={(e) => e.stopPropagation()}>
+          {contextOverlay}
+        </div>
       ) : null}
 
       {leftPanel && leftPanelOpen ? (
