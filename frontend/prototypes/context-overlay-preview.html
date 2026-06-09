@@ -1,0 +1,1681 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Archive Context Overlay Prototype</title>
+  <style>
+    :root {
+      --ink: #19150f;
+      --ink-soft: #5f574c;
+      --paper: #f8f4e7;
+      --paper-2: #eee7d5;
+      --line: #19150f;
+      --line-soft: rgba(25, 21, 15, 0.22);
+      --rail-red: #d84032;
+      --folder-color: #1a00b9;
+      --map-accent: var(--folder-color);
+      --ctx-margin: clamp(10px, 1vw, 14px);
+      --ctx-tools: 3rem;
+      --ctx-gap: 8px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 28% 28%, rgba(25, 21, 15, 0.04), transparent 28rem),
+        linear-gradient(90deg, rgba(25, 21, 15, 0.035) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(25, 21, 15, 0.026) 1px, transparent 1px),
+        var(--paper-2);
+      background-size: auto, 28px 28px, 28px 28px, auto;
+      color: var(--ink);
+      font-family: var(--sans);
+    }
+
+    button {
+      color: inherit;
+      font: inherit;
+    }
+
+    .reader-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .wordmark {
+      position: absolute;
+      top: 1rem;
+      left: 1.1rem;
+      z-index: 5;
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .wordmark strong {
+      display: block;
+      margin-top: 3px;
+      font-family: var(--sans);
+      font-size: 14px;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .nav-icons {
+      position: absolute;
+      top: 1rem;
+      right: 1.1rem;
+      z-index: 5;
+      display: none;
+      gap: 9px;
+    }
+
+    .nav-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 1.5px solid var(--line);
+      background: var(--paper);
+      box-shadow: 0 2px 0 rgba(25, 21, 15, 0.3);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .context-shell {
+      position: fixed;
+      top: 50%;
+      left: var(--ctx-margin);
+      z-index: 31;
+      width: calc(100vw - var(--ctx-margin) * 2 - var(--ctx-tools) - var(--ctx-gap));
+      height: min(calc(100dvh - var(--ctx-margin) * 2), 62vw);
+      transform: translateY(-50%);
+    }
+
+    .context-shell.is-closed .context-overlay,
+    .context-shell.is-closed .context-tools {
+      display: none;
+    }
+
+    .reopen {
+      display: none;
+      width: 180px;
+      height: 54px;
+      border: 1.5px solid var(--line);
+      background: var(--paper);
+      box-shadow: 0 2px 0 rgba(25, 21, 15, 0.3);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .context-shell.is-closed .reopen {
+      display: block;
+    }
+
+    .context-overlay {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      border: 1.5px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(25, 21, 15, 0.05) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(25, 21, 15, 0.045) 1px, transparent 1px),
+        radial-gradient(circle at 65% 38%, rgba(26, 0, 185, 0.08), transparent 18rem),
+        var(--paper);
+      background-size: 18px 18px, 18px 18px, auto, auto;
+      box-shadow: 0 18px 38px rgba(25, 21, 15, 0.26);
+    }
+
+    .context-overlay::before {
+      content: "";
+      position: absolute;
+      inset: 15px;
+      border: 1px dashed rgba(25, 21, 15, 0.24);
+      pointer-events: none;
+    }
+
+    .context-head {
+      position: absolute;
+      top: 18px;
+      left: 20px;
+      z-index: 5;
+      display: grid;
+      gap: 5px;
+      max-width: 520px;
+    }
+
+    .eyebrow,
+    .mode-label,
+    .readout dt,
+    .axis-label,
+    .field-type,
+    .tooltip-kicker {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow {
+      color: var(--rail-red);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 3.1vw, 48px);
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+
+    .head-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      color: var(--ink-soft);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .head-meta span {
+      border: 1px solid var(--line-soft);
+      background: rgba(248, 244, 231, 0.8);
+      padding: 3px 5px;
+    }
+
+    .readout {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      z-index: 4;
+      width: min(370px, 34vw);
+      margin: 0;
+      display: grid;
+      grid-template-columns: 70px minmax(0, 1fr);
+      gap: 4px 9px;
+      border: 1.5px solid var(--line);
+      background: rgba(248, 244, 231, 0.84);
+      box-shadow: 0 2px 0 rgba(25, 21, 15, 0.24);
+      padding: 8px;
+      font-size: 13px;
+      line-height: 1.28;
+      transition:
+        border-color 160ms ease,
+        background-color 160ms ease,
+        box-shadow 160ms ease;
+    }
+
+    [data-view="relation"] .readout.is-live {
+      border-color: var(--folder-color);
+      background: rgba(255, 253, 243, 0.92);
+      box-shadow: 0 3px 0 rgba(25, 21, 15, 0.24);
+    }
+
+    .readout dt {
+      color: var(--ink-soft);
+    }
+
+    .readout dd {
+      margin: 0;
+      min-width: 0;
+    }
+
+    .context-map {
+      position: absolute;
+      inset: 0;
+    }
+
+    .geo-map {
+      position: absolute;
+      inset: 7.5% 4.5% 8% 4.5%;
+      z-index: 1;
+      display: none;
+      width: 91%;
+      height: 84.5%;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .geo-map .ocean {
+      fill: rgba(188, 206, 205, 0.24);
+      stroke: rgba(25, 21, 15, 0.32);
+      stroke-width: 0.22;
+    }
+
+    .geo-map .land {
+      fill: rgba(204, 198, 174, 0.55);
+      stroke: rgba(25, 21, 15, 0.58);
+      stroke-width: 0.34;
+    }
+
+    .geo-map .graticule {
+      fill: none;
+      stroke: rgba(25, 21, 15, 0.16);
+      stroke-width: 0.18;
+    }
+
+    .geo-map text {
+      fill: rgba(25, 21, 15, 0.56);
+      font-family: var(--mono);
+      font-size: 3.1px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+    }
+
+    [data-view="map"] .geo-map {
+      display: none;
+    }
+
+    .real-map {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: none;
+      pointer-events: none;
+    }
+
+    [data-view="map"] .real-map {
+      display: block;
+    }
+
+    .map-pane {
+      position: absolute;
+      left: 3.5%;
+      right: 3.5%;
+      overflow: hidden;
+      border: 1.5px solid var(--line);
+      background: rgba(248, 244, 231, 0.82);
+      box-shadow: inset 0 0 0 1px rgba(25, 21, 15, 0.08);
+    }
+
+    .map-pane--detail {
+      top: 15%;
+      height: 30%;
+    }
+
+    .map-pane--world {
+      top: 50.5%;
+      height: 35.5%;
+    }
+
+    .tile-grid {
+      position: absolute;
+      inset: 0;
+      display: grid;
+    }
+
+    .tile-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(1) sepia(0.18) brightness(1.08) contrast(0.82);
+      mix-blend-mode: multiply;
+      opacity: 0.52;
+    }
+
+    .tile-grid--detail {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    .tile-grid--world {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    .map-pane::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(248, 244, 231, 0.2), rgba(248, 244, 231, 0.2)),
+        linear-gradient(90deg, rgba(25, 21, 15, 0.055) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(25, 21, 15, 0.055) 1px, transparent 1px);
+      background-size: auto, 72px 72px, 72px 72px;
+      pointer-events: none;
+    }
+
+    .map-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .map-overlay path {
+      fill: none;
+      stroke: var(--map-accent);
+      stroke-width: 1.35;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0.48;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .map-dot {
+      position: absolute;
+      left: calc(var(--mx) * 1%);
+      top: calc(var(--my) * 1%);
+      z-index: 3;
+      display: block;
+      inline-size: 14px;
+      block-size: 14px;
+      aspect-ratio: 1 / 1;
+      transform: translate(-50%, -50%);
+      border: 2px solid var(--line);
+      border-radius: 50%;
+      background: var(--map-accent);
+      box-shadow: 0 0 0 2px rgba(248, 244, 231, 0.82);
+    }
+
+    .map-dot--active {
+      inline-size: 22px;
+      block-size: 22px;
+    }
+
+    .map-attribution {
+      position: absolute;
+      right: 3.8%;
+      bottom: 14%;
+      z-index: 4;
+      color: rgba(25, 21, 15, 0.5);
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .map-coordinate {
+      position: absolute;
+      right: 4.4%;
+      bottom: 4.4%;
+      z-index: 6;
+      color: rgba(25, 21, 15, 0.72);
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .map-note {
+      position: absolute;
+      left: 3.5%;
+      bottom: 4%;
+      z-index: 6;
+      display: none;
+      grid-template-columns: 72px minmax(0, 1fr);
+      width: min(440px, 38vw);
+      border: 1.5px solid var(--line);
+      background: rgba(248, 244, 231, 0.92);
+      box-shadow: 0 2px 0 rgba(25, 21, 15, 0.24);
+      color: var(--ink-soft);
+      font-size: 13px;
+      line-height: 1.25;
+    }
+
+    .map-note span {
+      padding: 6px 8px;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .map-note span:nth-child(odd) {
+      color: var(--ink);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .map-note span:nth-last-child(-n + 2) {
+      border-bottom: 0;
+    }
+
+    .edges {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .edges path {
+      fill: none;
+      stroke: rgba(25, 21, 15, 0.68);
+      stroke-width: 0.58;
+      opacity: 0.34;
+      vector-effect: non-scaling-stroke;
+    }
+
+    [data-view="relation"] .edges path {
+      stroke-width: 0.9;
+    }
+
+    [data-view="relation"] .edges path.edge-core {
+      opacity: 0.62;
+      stroke-width: 1.02;
+    }
+
+    [data-view="relation"] .edges path.edge-sequence,
+    [data-view="relation"] .edges path.edge-page,
+    [data-view="relation"] .edges path.edge-membership {
+      opacity: 0.28;
+    }
+
+    [data-view="relation"] .edges path.is-dimmed {
+      opacity: 0.08;
+    }
+
+    [data-view="relation"] .edges path.is-highlighted {
+      opacity: 0.78;
+      stroke-width: 1.35;
+      stroke: var(--folder-color);
+    }
+
+    [data-view="map"] .edges path {
+      stroke-dasharray: 3 3;
+      stroke-opacity: 0.46;
+      stroke-width: 0.95;
+      stroke: var(--map-accent);
+    }
+
+    .node {
+      position: absolute;
+      left: calc(var(--x) * 1%);
+      top: calc(var(--y) * 1%);
+      z-index: 3;
+      display: grid;
+      min-width: 124px;
+      max-width: 290px;
+      transform: translate(-50%, -50%);
+      border: 1.3px solid rgba(25, 21, 15, 0.58);
+      background: rgba(248, 244, 231, 0.78);
+      box-shadow: 0 1px 0 rgba(25, 21, 15, 0.16);
+      opacity: 0.62;
+      padding: 9px 10px 8px;
+      text-align: left;
+      transition:
+        left 420ms cubic-bezier(0.2, 0.9, 0.2, 1),
+        top 420ms cubic-bezier(0.2, 0.9, 0.2, 1),
+        opacity 180ms ease,
+        transform 180ms ease,
+        background-color 180ms ease;
+      cursor: pointer;
+    }
+
+    .node:hover,
+    .node:focus-visible,
+    .node.is-active,
+    .node.is-selected,
+    .node.is-related {
+      background: #fffdf3;
+      opacity: 1;
+      z-index: 6;
+    }
+
+    .node:hover,
+    .node:focus-visible,
+    .node.is-selected {
+      outline: 2px solid var(--folder-color);
+      outline-offset: 2px;
+      z-index: 7;
+      transform: translate(-50%, -50%) translateY(-2px);
+    }
+
+    .node.is-active {
+      z-index: 6;
+      min-width: 292px;
+      border-width: 2px;
+      border-color: var(--line);
+      box-shadow: 0 4px 0 rgba(25, 21, 15, 0.3);
+    }
+
+    .node.is-dimmed {
+      opacity: 0.18;
+    }
+
+    .node.is-muted {
+      opacity: 0.42;
+    }
+
+    .node.focus-core {
+      border-color: rgba(25, 21, 15, 0.74);
+      background: rgba(248, 244, 231, 0.9);
+      opacity: 0.86;
+    }
+
+    .node.focus-support {
+      background: rgba(248, 244, 231, 0.64);
+      opacity: 0.5;
+    }
+
+    .node.focus-support .node-title,
+    .node.focus-support .node-meta,
+    .node.focus-support .node-kind {
+      color: rgba(25, 21, 15, 0.58);
+    }
+
+    .node-kind {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--ink-soft);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .node-kind::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border: 1.4px solid var(--line);
+      background: var(--paper);
+    }
+
+    .node[data-kind="surface"] .node-kind::before,
+    .node[data-kind="folder"] .node-kind::before {
+      background: var(--folder-color);
+    }
+
+    .node[data-kind="source"] .node-kind::before {
+      border-radius: 999px;
+    }
+
+    .node[data-kind="image"] .node-kind::before {
+      width: 11px;
+      height: 4px;
+    }
+
+    .node[data-kind="rights"] .node-kind::before {
+      transform: rotate(45deg);
+    }
+
+    .node[data-kind="date"] .node-kind::before {
+      background:
+        linear-gradient(90deg, var(--line) 0 1px, transparent 1px),
+        var(--paper);
+      background-size: 3px 100%;
+    }
+
+    .geo-pin {
+      position: absolute;
+      left: calc(var(--x) * 1%);
+      top: calc(var(--y) * 1%);
+      z-index: 5;
+      display: none;
+      inline-size: 12px;
+      block-size: 12px;
+      aspect-ratio: 1 / 1;
+      min-inline-size: 12px;
+      min-block-size: 12px;
+      padding: 0;
+      appearance: none;
+      -webkit-appearance: none;
+      transform: translate(-50%, -50%);
+      border: 1.6px solid var(--map-accent);
+      border-radius: 50%;
+      background: var(--paper);
+      box-shadow: 0 0 0 1px rgba(248, 244, 231, 0.92);
+      cursor: pointer;
+    }
+
+    .geo-pin::after {
+      content: attr(data-map-label);
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: max-content;
+      max-width: 150px;
+      border: 1px solid var(--line-soft);
+      background: rgba(248, 244, 231, 0.94);
+      color: var(--ink);
+      padding: 3px 5px;
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      opacity: 0;
+      pointer-events: none;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .geo-pin.is-active {
+      inline-size: 20px;
+      block-size: 20px;
+      min-inline-size: 20px;
+      min-block-size: 20px;
+      border-color: var(--line);
+      background: var(--map-accent);
+    }
+
+    .geo-pin.is-active::after {
+      left: 24px;
+      border-color: var(--line);
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 11px;
+      box-shadow: 0 2px 0 rgba(25, 21, 15, 0.3);
+    }
+
+    .geo-pin:hover::after,
+    .geo-pin:focus-visible::after,
+    .geo-pin.is-active::after,
+    .geo-pin.is-selected::after {
+      opacity: 0.94;
+    }
+
+    .geo-pin.is-selected {
+      box-shadow:
+        0 0 0 2px rgba(248, 244, 231, 0.92),
+        0 0 0 4px rgba(26, 0, 185, 0.22);
+    }
+
+    [data-view="map"] .geo-pin {
+      display: block;
+    }
+
+    .node-title {
+      overflow: hidden;
+      margin-top: 5px;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.12;
+      text-overflow: ellipsis;
+    }
+
+    .node-meta {
+      margin-top: 4px;
+      overflow: hidden;
+      color: var(--ink-soft);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.22;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+    }
+
+    .node[data-kind="page"] {
+      min-width: 94px;
+      padding: 7px 8px;
+    }
+
+    .node[data-kind="page"] .node-title {
+      font-size: 12px;
+    }
+
+    .node[data-kind="page"] .node-meta {
+      display: none;
+    }
+
+    [data-density="quiet"] .node.optional {
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    [data-density="quiet"] .node.optional + path {
+      display: none;
+    }
+
+    .axis {
+      position: absolute;
+      z-index: 1;
+      display: none;
+      color: rgba(25, 21, 15, 0.56);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+
+    .axis-x {
+      left: 10%;
+      right: 10%;
+      bottom: 11%;
+      border-top: 1px solid rgba(25, 21, 15, 0.45);
+      padding-top: 5px;
+    }
+
+    .axis-y {
+      top: 16%;
+      bottom: 14%;
+      left: 8%;
+      border-left: 1px solid rgba(25, 21, 15, 0.45);
+      writing-mode: vertical-rl;
+      padding-left: 5px;
+    }
+
+    .field-type {
+      position: absolute;
+      z-index: 0;
+      color: rgba(25, 21, 15, 0.16);
+      pointer-events: none;
+    }
+
+    .field-type.a { top: 12%; right: 22%; }
+    .field-type.b { top: 42%; left: 11%; }
+    .field-type.c { right: 9%; bottom: 18%; }
+    .field-type.d { top: 77%; left: 43%; }
+
+    [data-view="relation"] .field-type.a,
+    [data-view="relation"] .field-type.b,
+    [data-view="relation"] .field-type.d {
+      display: none;
+    }
+
+    [data-view="map"] .field-type {
+      display: none;
+    }
+
+    .tooltip {
+      position: absolute;
+      z-index: 8;
+      left: var(--tip-x, 50%);
+      top: var(--tip-y, 50%);
+      width: min(430px, 36vw);
+      transform: translate(18px, -18px);
+      border: 1.5px solid var(--line);
+      background: rgba(248, 244, 231, 0.96);
+      box-shadow: 0 4px 0 rgba(25, 21, 15, 0.25);
+      padding: 12px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 120ms ease;
+    }
+
+    .tooltip.is-visible {
+      opacity: 1;
+    }
+
+    [data-view="relation"] .tooltip {
+      display: none;
+    }
+
+    .tooltip h2 {
+      margin: 4px 0 6px;
+      font-size: 18px;
+      line-height: 1.15;
+    }
+
+    .tooltip p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 15px;
+      line-height: 1.42;
+    }
+
+    .tooltip-kicker {
+      color: var(--rail-red);
+    }
+
+    .context-tools {
+      position: absolute;
+      left: calc(100% + var(--ctx-gap));
+      z-index: 9;
+      display: grid;
+      gap: 0.55rem;
+      width: var(--ctx-tools);
+    }
+
+    .context-tools--top {
+      top: 0;
+    }
+
+    .context-tools--bottom {
+      bottom: 0;
+    }
+
+    .tool {
+      position: relative;
+      width: var(--ctx-tools);
+      height: var(--ctx-tools);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid var(--line);
+      background-color: var(--paper);
+      box-shadow: 0 2px 0 rgba(46, 41, 37, 0.3);
+      cursor: pointer;
+    }
+
+    .tool svg {
+      width: 1.35rem;
+      height: 1.35rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.6;
+    }
+
+    .tool:hover,
+    .tool.is-active {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .tool::after {
+      content: attr(data-tip);
+      position: absolute;
+      top: 50%;
+      right: calc(100% + 8px);
+      width: max-content;
+      max-width: 180px;
+      transform: translateY(-50%);
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: 0 2px 0 rgba(25, 21, 15, 0.22);
+      padding: 5px 6px;
+      font-size: 11px;
+      line-height: 1.2;
+      opacity: 0;
+      pointer-events: none;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .tool:hover::after {
+      opacity: 1;
+    }
+
+    .mini-ledger {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      width: 218px;
+      border-top: 1px solid var(--line-soft);
+      border-left: 1px solid var(--line-soft);
+      background: rgba(248, 244, 231, 0.58);
+      color: rgba(25, 21, 15, 0.72);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.72;
+    }
+
+    [data-view="map"] .mini-ledger {
+      display: none;
+    }
+
+    [data-view="map"] .field-type.b {
+      top: 16%;
+      left: 8%;
+    }
+
+    [data-view="map"] .field-type.c {
+      right: 11%;
+      bottom: 15%;
+    }
+
+    [data-view="map"] .field-type.d {
+      display: none;
+    }
+
+    [data-view="map"] .node.is-map-hidden {
+      display: none;
+    }
+
+    [data-view="map"] .node {
+      display: none;
+    }
+
+    [data-view="map"] .readout {
+      display: none;
+    }
+
+    [data-view="map"] .map-note {
+      display: grid;
+    }
+
+    [data-view="relation"] .node.relation-hidden {
+      display: none;
+    }
+
+    .mini-ledger span {
+      min-width: 0;
+      border-right: 1px solid var(--line-soft);
+      border-bottom: 1px solid var(--line-soft);
+      padding: 5px;
+    }
+
+    @media (max-width: 900px) {
+      .context-shell {
+        top: var(--ctx-margin);
+        width: calc(100vw - var(--ctx-margin) * 2);
+        height: calc(100dvh - var(--ctx-margin) * 2 - 72px);
+        transform: none;
+      }
+
+      .context-tools {
+        top: auto;
+        left: 0;
+        right: auto;
+        bottom: -60px;
+        display: flex;
+        width: auto;
+      }
+
+      .tool {
+        width: var(--ctx-tools);
+        height: var(--ctx-tools);
+      }
+
+      .readout,
+      .tooltip {
+        width: min(350px, 80vw);
+      }
+
+      .mini-ledger {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="reader-bg" aria-hidden="true">
+    <div class="wordmark">
+      Archive Box
+      <strong>Modern Graphic Design History</strong>
+    </div>
+    <div class="nav-icons">
+      <div class="nav-icon">ABT</div>
+      <div class="nav-icon">IDX</div>
+      <div class="nav-icon">FOL</div>
+      <div class="nav-icon">SRC</div>
+    </div>
+  </div>
+
+  <main class="context-shell" data-view="relation" data-density="full">
+    <button class="reopen" type="button">Open context map</button>
+    <section class="context-overlay" aria-label="Context relationship visualization">
+      <div class="context-head">
+        <div class="eyebrow">CONTEXT / RELATION LAYER</div>
+        <h1 id="viewTitle">Surface relation</h1>
+        <div class="head-meta">
+          <span id="modeText">Mode: relation</span>
+          <span>Bounds: page-safe inset</span>
+          <span>Focus: active / evidence / support</span>
+        </div>
+      </div>
+
+      <div class="mini-ledger" aria-hidden="true">
+        <span>[SURF] active</span>
+        <span>[SRC] source</span>
+        <span>[IMG] image</span>
+        <span>[RGT] rights</span>
+        <span>[FOL] folder</span>
+        <span>[DAT] date</span>
+      </div>
+
+      <div class="field-type a">MODE : <span id="fieldMode">RELATION</span></div>
+      <div class="field-type b">ROOT X : 700 / ROOT Y : 1000</div>
+      <div class="field-type c">HOVER NODE FOR EVIDENCE</div>
+      <div class="field-type d">ASCII FIELD / LOW NOISE</div>
+      <div class="axis axis-x">date axis / 1830 ---------------- 1970 ---------------- 2026</div>
+      <div class="axis axis-y">evidence depth / source - rights - image - dossier</div>
+
+      <div class="context-map" id="map">
+        <svg class="geo-map" viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true">
+          <rect class="ocean" x="0.5" y="0.5" width="99" height="49" />
+          <path class="graticule" d="M0 10H100M0 20H100M0 30H100M0 40H100M10 0V50M20 0V50M30 0V50M40 0V50M50 0V50M60 0V50M70 0V50M80 0V50M90 0V50" />
+          <path class="land" d="M13 9L19 7L25 10L28 15L25 20L30 25L27 31L22 30L18 26L14 24L10 18L8 12Z" />
+          <path class="land" d="M25 26L31 29L35 35L34 42L30 48L26 45L24 38L22 31Z" />
+          <path class="land" d="M45 8L53 7L60 10L67 9L74 12L82 10L89 15L88 20L78 19L73 23L65 23L60 27L52 24L46 25L39 20L40 13Z" />
+          <path class="land" d="M50 22L56 24L58 30L56 39L52 45L47 39L45 30Z" />
+          <path class="land" d="M68 25L74 27L78 34L76 42L70 40L66 34Z" />
+          <path class="land" d="M82 31L89 34L93 41L89 45L82 43L78 37Z" />
+          <path class="land" d="M38 5L44 4L47 7L44 9L39 8Z" />
+          <text x="46" y="16">EUROPE</text>
+          <text x="62" y="18">ASIA</text>
+          <text x="47" y="33">AFRICA</text>
+          <text x="14" y="20">AMERICAS</text>
+          <text x="79" y="42">OCEANIA</text>
+        </svg>
+        <div class="real-map" aria-hidden="true">
+          <div class="map-pane map-pane--detail">
+            <div class="tile-grid tile-grid--detail" id="detailTiles"></div>
+            <span class="map-dot map-dot--active" id="detailActiveDot"></span>
+          </div>
+          <div class="map-pane map-pane--world">
+            <div class="tile-grid tile-grid--world" id="worldTiles"></div>
+            <svg class="map-overlay" id="worldOverlay" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
+            <div id="worldDots"></div>
+          </div>
+          <div class="map-attribution">© OpenStreetMap contributors</div>
+          <div class="map-note" aria-hidden="true">
+            <span>Basis</span>
+            <span>active surface plus related sheet coordinates</span>
+            <span>Read</span>
+            <span>blue marker is active; small rings are related locations</span>
+          </div>
+          <div class="map-coordinate">Munich / protected 48.13510, 11.58200</div>
+        </div>
+        <svg class="edges" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
+      </div>
+
+      <div class="tooltip" id="tooltip">
+        <div class="tooltip-kicker" id="tipKind">[SURF]</div>
+        <h2 id="tipTitle">Active surface</h2>
+        <p id="tipBody">Hover a node to inspect evidence.</p>
+      </div>
+
+      <dl class="readout" aria-live="polite">
+        <dt>node</dt>
+        <dd id="readNode">active surface</dd>
+        <dt>basis</dt>
+        <dd id="readBasis">source, rights, image state, folder, region, date</dd>
+        <dt>action</dt>
+        <dd id="readAction">click surface nodes to preview navigation target</dd>
+      </dl>
+    </section>
+
+    <div class="context-tools context-tools--top" aria-label="Close context">
+      <button class="tool" type="button" data-action="close" data-tip="close" aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <line x1="6" y1="6" x2="18" y2="18" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+        </svg>
+      </button>
+    </div>
+    <div class="context-tools context-tools--bottom" aria-label="Context view switch">
+      <button class="tool" type="button" data-view-button="map" data-tip="map view" aria-label="Map view">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 6l5-2 6 2 5-2v16l-5 2-6-2-5 2z" />
+          <line x1="9" y1="4" x2="9" y2="20" />
+          <line x1="15" y1="6" x2="15" y2="22" />
+        </svg>
+      </button>
+      <button class="tool is-active" type="button" data-view-button="relation" data-tip="surface relation" aria-label="Surface relation view">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="6" cy="5" r="2" />
+          <circle cx="17" cy="12" r="2" />
+          <circle cx="17" cy="19" r="2" />
+          <path d="M8 5h3v14h4" />
+          <path d="M11 12h4" />
+        </svg>
+      </button>
+    </div>
+  </main>
+
+  <script>
+    const nodes = [
+      {
+        id: "active",
+        kind: "surface",
+        label: "SURF",
+        title: "Olympic pictogram system",
+        meta: "Munich, 1972 / main sheet",
+        mapName: "Munich / active",
+        evidence: "Active surface. Relation mode joins source, rights, image state, folder, date and dossier pages. Map mode places it at Munich: 48.1351 N, 11.5820 E.",
+        relation: [22, 50],
+        mapLabel: [60, 69],
+        geo: { lat: 48.1351, lon: 11.5820 }
+      },
+      {
+        id: "source",
+        kind: "source",
+        label: "SRC",
+        title: "Source registry",
+        meta: "museum / collection",
+        evidence: "Source evidence is taken from surface.sourceName and sourceUrl. Hidden in geographic map mode unless a source location is known.",
+        relation: [44, 18]
+      },
+      {
+        id: "rights",
+        kind: "rights",
+        label: "RGT",
+        title: "Rights display state",
+        meta: "source viewer candidate",
+        evidence: "Rights evidence uses rights.state, rights.label and displayPolicy.",
+        relation: [44, 32]
+      },
+      {
+        id: "image",
+        kind: "image",
+        label: "IMG",
+        title: "IMG02 available",
+        meta: "remote image frame",
+        evidence: "Image evidence uses image.state, hasImageFrame, credit and licenseLabel.",
+        relation: [44, 46]
+      },
+      {
+        id: "date",
+        kind: "date",
+        label: "DAT",
+        title: "1972",
+        meta: "dateStart/dateEnd",
+        evidence: "Date evidence anchors the surface in the chronology rail.",
+        relation: [44, 60]
+      },
+      {
+        id: "folder-region",
+        kind: "folder",
+        label: "FOL",
+        title: "Germany / Europe",
+        meta: "region folder",
+        mapName: "Germany / folder",
+        evidence: "Folder evidence uses surface.folders and activeFolderId. In map mode this becomes a geographic region marker for Germany.",
+        relation: [44, 74],
+        mapLabel: [33, 74],
+        geo: { lat: 51.1657, lon: 10.4515 }
+      },
+      {
+        id: "folder-theme",
+        kind: "folder",
+        label: "FOL",
+        title: "Public information graphics",
+        meta: "theme folder",
+        evidence: "Theme folders remain relation evidence and are intentionally hidden in geographic map mode.",
+        relation: [67, 74],
+        optional: true
+      },
+      {
+        id: "dossier-main",
+        kind: "page",
+        label: "P01",
+        title: "main sheet",
+        meta: "dossier page",
+        evidence: "Dossier pageSequence page 01. Click should navigate to the surface leaf index.",
+        relation: [70, 24]
+      },
+      {
+        id: "dossier-text",
+        kind: "page",
+        label: "P02",
+        title: "text page",
+        meta: "dossier page",
+        evidence: "Dossier pageSequence page 02.",
+        relation: [78, 36]
+      },
+      {
+        id: "dossier-appendix",
+        kind: "page",
+        label: "P03",
+        title: "appendix",
+        meta: "evidence page",
+        evidence: "Appendix pages render as small square leaves on the dossier branch.",
+        relation: [78, 48]
+      },
+      {
+        id: "near-prev",
+        kind: "surface",
+        label: "SEQ -1",
+        title: "Ulm visual program",
+        meta: "Ulm, 1971 / previous",
+        mapName: "Ulm / previous",
+        evidence: "Nearby jumpTarget before active surface. Map mode places it at Ulm: 48.4011 N, 9.9876 E.",
+        relation: [22, 72],
+        mapLabel: [43, 63],
+        geo: { lat: 48.4011, lon: 9.9876 },
+        optional: true
+      },
+      {
+        id: "near-next",
+        kind: "surface",
+        label: "SEQ +1",
+        title: "Swiss transport poster index",
+        meta: "Zurich, 1973 / next",
+        mapName: "Zurich / next",
+        evidence: "Nearby jumpTarget after active surface. Map mode places it at Zurich: 47.3769 N, 8.5417 E.",
+        relation: [22, 28],
+        mapLabel: [65, 54],
+        geo: { lat: 47.3769, lon: 8.5417 },
+        optional: true
+      },
+      {
+        id: "region-peer",
+        kind: "surface",
+        label: "PEER",
+        title: "Amsterdam signage record",
+        meta: "Amsterdam / region peer",
+        mapName: "Amsterdam / peer",
+        evidence: "Associated sheet sharing the European public-information context. Map mode places it at Amsterdam: 52.3676 N, 4.9041 E.",
+        relation: [67, 62],
+        mapLabel: [27, 54],
+        geo: { lat: 52.3676, lon: 4.9041 },
+        relationHidden: true,
+        optional: true
+      },
+      {
+        id: "source-peer",
+        kind: "surface",
+        label: "PEER",
+        title: "Tokyo pictogram sheet",
+        meta: "Tokyo / source-adjacent",
+        mapName: "Tokyo / peer",
+        evidence: "Associated sheet from the same pictogram/signage evidence family. Map mode places it at Tokyo: 35.6762 N, 139.6503 E.",
+        relation: [67, 18],
+        mapLabel: [78, 61],
+        geo: { lat: 35.6762, lon: 139.6503 },
+        relationHidden: true,
+        optional: true
+      },
+      {
+        id: "mexico-peer",
+        kind: "surface",
+        label: "PEER",
+        title: "Mexico Olympic graphics",
+        meta: "Mexico City / related sheet",
+        mapName: "Mexico City / peer",
+        evidence: "Associated sheet used to show long-distance Olympic graphic-system lineage. Map mode places it at Mexico City: 19.4326 N, 99.1332 W.",
+        relation: [74, 82],
+        mapLabel: [19, 63],
+        geo: { lat: 19.4326, lon: -99.1332 },
+        relationHidden: true,
+        optional: true
+      }
+    ];
+
+    const relationEdges = [
+      ["active", "source", "source"],
+      ["active", "rights", "rights"],
+      ["active", "image", "image"],
+      ["active", "date", "date"],
+      ["active", "folder-region", "folder"],
+      ["folder-region", "folder-theme", "membership"],
+      ["active", "dossier-main", "page"],
+      ["dossier-main", "dossier-text", "page"],
+      ["dossier-text", "dossier-appendix", "page"],
+      ["near-prev", "active", "sequence"],
+      ["active", "near-next", "sequence"],
+      ["folder-region", "region-peer", "peer"],
+      ["source", "source-peer", "peer"],
+      ["folder-region", "mexico-peer", "peer"]
+    ];
+
+    const mapEdges = [
+      ["near-prev", "active", "sequence"],
+      ["active", "near-next", "sequence"],
+      ["active", "region-peer", "region peer"],
+      ["active", "source-peer", "pictogram family"],
+      ["active", "mexico-peer", "olympic system"],
+      ["folder-region", "active", "folder region"]
+    ];
+
+    const coreNodeIds = new Set(["source", "rights", "image", "date", "folder-region"]);
+    const supportNodeIds = new Set(["near-prev", "near-next", "folder-theme", "dossier-main", "dossier-text", "dossier-appendix"]);
+    const coreEdgeTypes = new Set(["source", "rights", "image", "date", "folder"]);
+
+    const shell = document.querySelector(".context-shell");
+    const mapEl = document.querySelector("#map");
+    const edgeSvg = document.querySelector(".edges");
+    const tooltip = document.querySelector("#tooltip");
+    const readNode = document.querySelector("#readNode");
+    const readBasis = document.querySelector("#readBasis");
+    const readAction = document.querySelector("#readAction");
+    const tipKind = document.querySelector("#tipKind");
+    const tipTitle = document.querySelector("#tipTitle");
+    const tipBody = document.querySelector("#tipBody");
+    const readout = document.querySelector(".readout");
+    const modeText = document.querySelector("#modeText");
+    const fieldMode = document.querySelector("#fieldMode");
+    const viewTitle = document.querySelector("#viewTitle");
+    let pinned = false;
+    let selectedId = null;
+
+    const detailMap = {
+      z: 11,
+      startX: 1088,
+      startY: 710,
+      cols: 3,
+      rows: 2
+    };
+
+    const worldMap = {
+      z: 2,
+      startX: 0,
+      startY: 1,
+      cols: 4,
+      rows: 2,
+      overlay: { left: 3.5, top: 50.5, width: 93, height: 35.5 }
+    };
+
+    function tileUrl(z, x, y) {
+      return `https://tile.openstreetmap.org/${z}/${x}/${y}.png`;
+    }
+
+    function buildTiles(containerId, config) {
+      const container = document.querySelector(containerId);
+      container.innerHTML = "";
+      for (let row = 0; row < config.rows; row += 1) {
+        for (let col = 0; col < config.cols; col += 1) {
+          const img = document.createElement("img");
+          img.alt = "";
+          img.decoding = "async";
+          img.loading = "eager";
+          img.src = tileUrl(config.z, config.startX + col, config.startY + row);
+          container.appendChild(img);
+        }
+      }
+    }
+
+    function mercatorTilePoint(geo, config) {
+      if (!geo) return null;
+      const n = 2 ** config.z;
+      const latRad = (geo.lat * Math.PI) / 180;
+      const xFloat = ((geo.lon + 180) / 360) * n;
+      const yFloat =
+        ((1 - Math.log(Math.tan(latRad) + 1 / Math.cos(latRad)) / Math.PI) / 2) * n;
+      return [
+        ((xFloat - config.startX) / config.cols) * 100,
+        ((yFloat - config.startY) / config.rows) * 100
+      ];
+    }
+
+    function setupRealMaps() {
+      buildTiles("#detailTiles", detailMap);
+      buildTiles("#worldTiles", worldMap);
+      const detailPoint = mercatorTilePoint(nodes[0].geo, detailMap);
+      const detailDot = document.querySelector("#detailActiveDot");
+      detailDot.style.setProperty("--mx", detailPoint[0]);
+      detailDot.style.setProperty("--my", detailPoint[1]);
+    }
+
+    function createNodes() {
+      for (const node of nodes) {
+        const button = document.createElement("button");
+        const focusClass =
+          node.id === "active"
+            ? "focus-active"
+            : coreNodeIds.has(node.id)
+              ? "focus-core"
+              : supportNodeIds.has(node.id)
+                ? "focus-support"
+                : "focus-peer";
+        button.type = "button";
+        button.className = `node ${focusClass} ${node.optional ? "optional" : ""} ${node.relationHidden ? "relation-hidden" : ""} ${node.id === "active" ? "is-active" : ""}`;
+        button.dataset.nodeId = node.id;
+        button.dataset.kind = node.kind;
+        button.innerHTML = `
+          <span class="node-kind">[${node.label}]</span>
+          <span class="node-title">${node.title}</span>
+          <span class="node-meta">${node.meta}</span>
+        `;
+        button.addEventListener("mouseenter", (event) => showEvidence(node, event));
+        button.addEventListener("focus", (event) => showEvidence(node, event));
+        button.addEventListener("mouseleave", handleEvidenceLeave);
+        button.addEventListener("click", (event) => {
+          setSelected(node.id);
+          showEvidence(node, event, true);
+          if (node.kind === "surface" || node.kind === "page") {
+            readAction.textContent = `navigation preview: ${node.label.toLowerCase()} / leaf target ready`;
+          }
+        });
+        mapEl.appendChild(button);
+      }
+    }
+
+    function createPins() {
+      for (const node of nodes.filter((item) => item.geo)) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = `geo-pin ${node.id === "active" ? "is-active" : ""}`;
+        button.dataset.pinId = node.id;
+        button.dataset.mapLabel = node.mapName || node.title;
+        button.setAttribute("aria-label", `${node.title} location`);
+        button.addEventListener("mouseenter", (event) => showEvidence(node, event));
+        button.addEventListener("focus", (event) => showEvidence(node, event));
+        button.addEventListener("mouseleave", handleEvidenceLeave);
+        button.addEventListener("click", (event) => {
+          setSelected(node.id);
+          showEvidence(node, event, true);
+          readAction.textContent = `location selected: ${node.meta}`;
+        });
+        mapEl.appendChild(button);
+      }
+    }
+
+    function setSelected(id) {
+      const activeNode = nodes.find((node) => node.id === id);
+      document.querySelectorAll(".node").forEach((el) => {
+        el.classList.toggle("is-selected", el.dataset.nodeId === id && id !== "active");
+      });
+      document.querySelectorAll(".geo-pin").forEach((el) => {
+        el.classList.toggle("is-selected", el.dataset.pinId === id && id !== "active");
+      });
+      selectedId = id === "active" ? null : id;
+      if (activeNode?.geo) {
+        document.querySelector(".map-coordinate").textContent =
+          `${activeNode.mapName || activeNode.title} ${activeNode.geo.lat.toFixed(5)}, ${activeNode.geo.lon.toFixed(5)}`;
+      }
+    }
+
+    function relationConnections(id) {
+      const connected = new Set(["active", id]);
+      for (const [from, to] of relationEdges) {
+        if (from === id) connected.add(to);
+        if (to === id) connected.add(from);
+      }
+      return connected;
+    }
+
+    function applyRelationFocus(id) {
+      if (shell.dataset.view !== "relation") return;
+      const connected = relationConnections(id);
+      document.querySelectorAll(".node").forEach((el) => {
+        if (el.classList.contains("relation-hidden")) return;
+        const isFocused = el.dataset.nodeId === id;
+        const isRelated = connected.has(el.dataset.nodeId);
+        el.classList.toggle("is-selected", isFocused && id !== "active");
+        el.classList.toggle("is-related", isRelated && !isFocused);
+        el.classList.toggle("is-dimmed", !isRelated && !isFocused);
+      });
+      document.querySelectorAll(".edges path").forEach((path) => {
+        const isDirect = path.dataset.from === id || path.dataset.to === id;
+        path.classList.toggle("is-highlighted", isDirect);
+        path.classList.toggle("is-dimmed", !isDirect);
+      });
+      readout.classList.add("is-live");
+    }
+
+    function clearRelationFocus() {
+      document.querySelectorAll(".node").forEach((el) => {
+        el.classList.remove("is-related", "is-dimmed");
+        if (!selectedId || el.dataset.nodeId !== selectedId) {
+          el.classList.remove("is-selected");
+        }
+      });
+      document.querySelectorAll(".edges path").forEach((path) => {
+        path.classList.remove("is-highlighted", "is-dimmed");
+      });
+      if (!selectedId) readout.classList.remove("is-live");
+    }
+
+    function handleEvidenceLeave() {
+      if (shell.dataset.view === "relation") {
+        if (selectedId) applyRelationFocus(selectedId);
+        else clearRelationFocus();
+        return;
+      }
+      if (!pinned) tooltip.classList.remove("is-visible");
+    }
+
+    function updateEvidenceText(node) {
+      tipKind.textContent = `[${node.label}] ${node.kind}`;
+      tipTitle.textContent = node.title;
+      tipBody.textContent = node.evidence;
+      readNode.textContent = `${node.kind}: ${node.title}`;
+      readBasis.textContent = node.meta;
+    }
+
+    function showEvidence(node, event, forcePin) {
+      const rect = event.currentTarget.getBoundingClientRect();
+      const host = document.querySelector(".context-overlay").getBoundingClientRect();
+      tooltip.style.setProperty("--tip-x", `${Math.min(rect.left - host.left + rect.width * 0.45, host.width - 470)}px`);
+      tooltip.style.setProperty("--tip-y", `${Math.max(rect.top - host.top, 86)}px`);
+      updateEvidenceText(node);
+      if (shell.dataset.view === "relation") {
+        applyRelationFocus(node.id);
+        tooltip.classList.remove("is-visible");
+        return;
+      }
+      if (forcePin || pinned) tooltip.classList.add("is-visible");
+      else tooltip.classList.add("is-visible");
+    }
+
+    function setView(view) {
+      shell.dataset.view = view;
+      selectedId = null;
+      tooltip.classList.remove("is-visible");
+      readout.classList.remove("is-live");
+      modeText.textContent = `Mode: ${view}`;
+      fieldMode.textContent = view.toUpperCase();
+      viewTitle.textContent = view === "map" ? "Geographic map" : "Surface relation";
+      document.querySelectorAll("[data-view-button]").forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.viewButton === view);
+      });
+
+      for (const node of nodes) {
+        const el = document.querySelector(`[data-node-id="${node.id}"]`);
+        const pos = view === "map" ? (node.mapLabel || projectGeo(node.geo)) : node.relation;
+        el.classList.toggle("is-map-hidden", view === "map" && !node.geo);
+        if (!pos) continue;
+        el.style.setProperty("--x", pos[0]);
+        el.style.setProperty("--y", pos[1]);
+      }
+      document.querySelectorAll(".geo-pin").forEach((pin) => {
+        const node = nodes.find((item) => item.id === pin.dataset.pinId);
+        const pos = projectGeo(node?.geo);
+        if (!pos) return;
+        pin.style.setProperty("--x", pos[0]);
+        pin.style.setProperty("--y", pos[1]);
+      });
+      drawEdges(view);
+      clearRelationFocus();
+      readAction.textContent =
+        view === "map"
+          ? "map view projects active and related sheet locations from lat/lon"
+          : "relation view keeps source, rights, image, dossier and sequence logic together";
+      readBasis.textContent =
+        view === "map"
+          ? "lat/lon: Munich, Ulm, Zurich, Amsterdam, Tokyo, Mexico City"
+          : "source, rights, image state, folder, region, date";
+    }
+
+    function drawEdges(view) {
+      edgeSvg.innerHTML = "";
+      const activeEdges = view === "map" ? mapEdges : relationEdges;
+      for (const [from, to, type] of activeEdges) {
+        const a = nodes.find((node) => node.id === from);
+        const b = nodes.find((node) => node.id === to);
+        if (view === "relation" && (a.relationHidden || b.relationHidden)) continue;
+        const ap = view === "map" ? projectGeo(a.geo) : a.relation;
+        const bp = view === "map" ? projectGeo(b.geo) : b.relation;
+        if (!ap || !bp) continue;
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.dataset.from = from;
+        path.dataset.to = to;
+        path.dataset.edgeType = type;
+        const edgeClass = coreEdgeTypes.has(type)
+          ? "edge-core"
+          : type === "sequence"
+            ? "edge-sequence"
+            : type === "page"
+              ? "edge-page"
+              : type === "membership"
+                ? "edge-membership"
+                : "edge-support";
+        path.classList.add(edgeClass);
+        const isOptional = a.optional || b.optional || type === "peer";
+        if (isOptional) {
+          path.setAttribute("stroke-dasharray", "3 3");
+          path.setAttribute("opacity", "0.52");
+        }
+        if (view === "relation") {
+          const mid = Math.max(ap[0], bp[0]) - 5;
+          path.setAttribute("d", `M ${ap[0]} ${ap[1]} H ${mid} V ${bp[1]} H ${bp[0]}`);
+        } else {
+          const cx = (ap[0] + bp[0]) / 2;
+          const cy = (ap[1] + bp[1]) / 2 - 5;
+          path.setAttribute("d", `M ${ap[0]} ${ap[1]} Q ${cx} ${cy} ${bp[0]} ${bp[1]}`);
+        }
+        edgeSvg.appendChild(path);
+      }
+    }
+
+    function projectGeo(geo) {
+      if (!geo) return null;
+      const point = mercatorTilePoint(geo, worldMap);
+      const x = worldMap.overlay.left + (point[0] / 100) * worldMap.overlay.width;
+      const y = worldMap.overlay.top + (point[1] / 100) * worldMap.overlay.height;
+      return [x, y];
+    }
+
+    setupRealMaps();
+    createNodes();
+    createPins();
+    const params = new URLSearchParams(window.location.search);
+    const initialView = params.get("view") === "map"
+      ? "map"
+      : "relation";
+    setView(initialView);
+    readNode.textContent = "surface: Olympic pictogram system";
+    const initialFocus = params.get("focus");
+    if (initialFocus) {
+      const focusNode = nodes.find((node) => node.id === initialFocus);
+      if (focusNode) {
+        updateEvidenceText(focusNode);
+        if (initialView === "relation") applyRelationFocus(focusNode.id);
+        else setSelected(focusNode.id);
+      }
+    }
+
+    document.querySelectorAll("[data-view-button]").forEach((button) => {
+      button.addEventListener("click", () => setView(button.dataset.viewButton));
+    });
+
+    document.querySelector('[data-action="close"]').addEventListener("click", () => {
+      shell.classList.add("is-closed");
+    });
+
+    document.querySelector(".reopen").addEventListener("click", () => {
+      shell.classList.remove("is-closed");
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") shell.classList.add("is-closed");
+      if (event.key === "1") setView("map");
+      if (event.key === "2") setView("relation");
+    });
+  </script>
+</body>
+</html>
