@@ -912,30 +912,6 @@
       opacity: 1;
     }
 
-    .mini-ledger {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      z-index: 5;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      width: 218px;
-      border-top: 1px solid var(--line-soft);
-      border-left: 1px solid var(--line-soft);
-      background: rgba(248, 244, 231, 0.58);
-      color: rgba(25, 21, 15, 0.72);
-      font-family: var(--mono);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      opacity: 0.72;
-    }
-
-    [data-view="map"] .mini-ledger {
-      display: none;
-    }
-
     [data-view="map"] .field-type.b {
       top: 16%;
       left: 8%;
@@ -970,13 +946,6 @@
       display: none;
     }
 
-    .mini-ledger span {
-      min-width: 0;
-      border-right: 1px solid var(--line-soft);
-      border-bottom: 1px solid var(--line-soft);
-      padding: 5px;
-    }
-
     @media (max-width: 900px) {
       .context-shell {
         top: var(--ctx-margin);
@@ -1004,9 +973,6 @@
         width: min(350px, 80vw);
       }
 
-      .mini-ledger {
-        display: none;
-      }
     }
   </style>
 </head>
@@ -1032,18 +998,7 @@
         <h1 id="viewTitle">Surface relation</h1>
         <div class="head-meta">
           <span id="modeText">Mode: relation</span>
-          <span>Bounds: page-safe inset</span>
-          <span>Focus: active / evidence / support</span>
         </div>
-      </div>
-
-      <div class="mini-ledger" aria-hidden="true">
-        <span>[SURF] active</span>
-        <span>[SRC] source</span>
-        <span>[IMG] image</span>
-        <span>[RGT] rights</span>
-        <span>[FOL] folder</span>
-        <span>[DAT] date</span>
       </div>
 
       <div class="field-type a">MODE : <span id="fieldMode">RELATION</span></div>
