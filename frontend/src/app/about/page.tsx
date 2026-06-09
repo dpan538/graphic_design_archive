@@ -362,14 +362,67 @@ const sourceDependencyReferences = [
 ];
 
 const designReferences = [
-  ["Archive Box / storage as argument", "The archive-box metaphor turns storage furniture into a method: folders, loose leaves, cards, ledgers, and source drawers make the project read as an inspectable filing system rather than as a gallery wall. The box implies retrieval, re-sorting, and unfinished custody."],
-  ["Four folder axes", "Region, theme, medium, and movement are deliberately parallel. They function like index dividers rather than historical containers, so one surface can move across several interpretive lenses without changing its evidence tables or rights state."],
-  ["Evidence columns", "The opening rail and repeated table logic establish six recurring categories: provenance, rights, image, text, coverage, and limits. This is the page's strongest borrowing from systematic information design: a column can be empty, but the category remains visible."],
+  ["Design position", "The interface is best described as a civic ephemera index: a research-library system shaped by disposable public-information objects. It borrows from mid-century railway, postal, ticketing, permit, and instructional print, but uses those sources as archival grammar rather than nostalgic surface decoration."],
+  ["Open research library", "The base layer stays bright because the project is a reading room, not a sealed collection vault. Canvas, paper, surface, line, and Brown Black keep long text, source links, rights notes, and search behavior legible before any expressive color appears."],
+  ["Japanese railway tickets", "The Japanese rail references in the research board, including Shonan Monorail Enoshima Line, Kawanishi-Noseguchi to Hirano extension material, Expo '70 rail tickets, and other commemorative passenger slips, inform the route-line diagrams, numbered gates, serial fields, pale ticket stock, yellow route bands, red overprints, and blue transit panels."],
+  ["JR station stamp language", "The JR 150th station-stamp references, including Taura Station, Karuizawa Station, Niigata Station, and Nishi-Oyama Station, contribute the idea of a small public system rendered in two or three spot colors: local pictorial icons, station names, rough print texture, and clear geographic indexing."],
+  ["Long Island Rail Road coupons", "The Long Island Rail Road World's Fair admission coupon reference supplies the coupon logic: cream stock, detachable panels, stamped red validation, dense rules, source-like serial numbers, and a layout where administrative proof is visually equal to destination."],
+  ["Sports and aviation ticket stock", "The Yankee Stadium boxing tickets, Ohio Express Aviation ticket, and related admission references inform the ledger structure: oversized numbers, fare/date fields, box rules, overprint stamps, receipt-like repetition, and the idea that a record can be both a public object and an accounting object."],
+  ["Postal stamp framing", "The road-safety stamp and contemporary stamp references supply perforated edges, small denomination fields, icon-first symbols, and compact framed scenes. In the interface this becomes badge, slip, and card behavior rather than literal stamp decoration."],
+  ["Instructional booklet color", "The KTG Know the Game booklet covers and similar instructional print references support the high-contrast ephemera palette: grass green, process orange, station sky, signal yellow, brown-black line art, and strong single-purpose color blocks that can sit beside text without becoming navigation state."],
+  ["Contemporary index cards", "The Crossreference cards, Trawelt tickets, ITYA stamp labels, and cyberspace-style terminal reference show how historical ephemera can be translated into contemporary modular UI: stacked cards, punched tabs, small command labels, ticket edges, and color-coded but still readable panels."],
+  ["Four index axes", "Region, theme, movement, and medium are the only primary classification colors. They are deliberately separated from the ephemera palette so frontend navigation state never becomes confused with paper-stock, proof, ticket, or asset coloration."],
+  ["Evidence columns", "The opening rail and repeated table logic establish six recurring categories: provenance, rights, image, text, coverage, and limits. A column can be empty, but the category remains visible; absence is part of the record rather than a layout failure."],
   ["Empty image frame", "The fixed image bay is a rights statement. IMG00 does not mean failure; it marks a visual object whose image evidence is expected but withheld, source-hosted, parser-incomplete, or rights-unclear. Absence is therefore rendered as evidence, not hidden as a broken asset."],
-  ["Manual typography", "IBM Plex Sans carries readable prose; IBM Plex Mono carries IDs, gates, counts, source names, and ledger labels. The distinction keeps authored explanation separate from audit fields and prevents the interface from pretending that normalized prose is raw evidence."],
-  ["Color and line system", "Orange marks status, numbering, and interaction; dark blue, green, orange, and brown distinguish folder axes; black rules hold the page together as a production sheet. Color is a coding layer, not atmosphere."],
-  ["Hover/focus underlines", "The hover behavior gently activates text without replacing it. At rest, source and output layers remain readable; interaction only brings attention forward, echoing the project rule that interpretation should supplement evidence, not overwrite it."],
-  ["Design reference field", "The visual programme sits near British Rail identity manuals, correspondence indexes, loose-leaf technical binders, Richard Hollis's public-information clarity, Bauhaus/HfG-Ulm systems thinking, and Swiss grid discipline. These are methodological references, not templates to reproduce."],
+  ["Typography as boundary", "IBM Plex Sans carries readable explanation; IBM Plex Mono carries IDs, gates, counts, source names, and ledger labels. The distinction keeps authored prose separate from audit fields and prevents normalized text from pretending to be raw evidence."],
+  ["Single Brown Black", "Brown Black replaces pure black everywhere. It reads like ticket ink on paper, softens the interface, and gives rules, text, icons, and shadows one shared material source."],
+  ["Color as operation", "Color is assigned by job: index colors identify folder axes, ephemera colors build cards and slips, and readable variants are used when small text needs contrast. The palette is therefore a protocol for use, not a general mood board."],
+];
+
+const paletteGroups = [
+  {
+    title: "Library base",
+    body: "Reading environment and the only black.",
+    colors: [
+      ["Canvas", "#FFFCF2"],
+      ["Paper", "#F7F2E2"],
+      ["Surface", "#EDE7D6"],
+      ["Line", "#CFC6AF"],
+      ["Brown Black", "#2E2925"],
+    ],
+  },
+  {
+    title: "Index axes",
+    body: "Navigation and classification only.",
+    colors: [
+      ["Region", "#1F5FD1"],
+      ["Theme", "#138B5E"],
+      ["Movement", "#7466D6"],
+      ["Medium", "#E83D3B"],
+    ],
+  },
+  {
+    title: "Ephemera stock",
+    body: "Ticket, stamp, railway, proof, and card material colors.",
+    colors: [
+      ["Ticket Cream", "#E9DDBB"],
+      ["Newsprint Grey", "#BFC2B8"],
+      ["Cardboard Tan", "#C79255"],
+      ["Ochre Stock", "#D7A94C"],
+      ["Signal Yellow", "#F3D64E"],
+      ["Process Orange", "#FF8A24"],
+      ["Grass Stock", "#78C98D"],
+      ["Olive Card", "#A9B15A"],
+      ["Harbor Teal", "#287F82"],
+      ["Grid Mint", "#9AD9C9"],
+      ["Station Sky", "#69B5D6"],
+      ["Railway Blue", "#2F74B7"],
+      ["Transit Indigo", "#3B4D9B"],
+      ["Register Pink", "#F239A6"],
+      ["Ledger Mauve", "#C59BC7"],
+      ["Copper Ink", "#B46A45"],
+    ],
+  },
 ];
 
 const citationFields = [
@@ -383,7 +436,7 @@ const licensePolicy = [
   {
     label: "Interface and writing",
     status: "Prototype copyright retained",
-    note: "The about-page text, visual system, Archive Box composition, and interface design are project-authored research outputs and are not automatically open licensed.",
+    note: "The about-page text, palette system, research-library composition, and printed-ephemera interface design are project-authored research outputs and are not automatically open licensed.",
   },
   {
     label: "Project code",
@@ -419,6 +472,34 @@ function Ledger({ rows }: { rows: string[][] }) {
         <div key={label} className="contents">
           <strong>{label}</strong>
           <span>{rest.join(" / ")}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function PaletteSwatches() {
+  return (
+    <div className="about-palette-grid">
+      {paletteGroups.map((group) => (
+        <div key={group.title} className="about-palette about-hover-panel">
+          <div className="about-palette__head">
+            <h3>{group.title}</h3>
+            <p>{group.body}</p>
+          </div>
+          <div className="about-palette__swatches">
+            {group.colors.map(([name, value]) => (
+              <div
+                key={name}
+                className="about-swatch"
+                style={{ ["--swatch" as string]: value }}
+              >
+                <span aria-hidden="true" />
+                <strong>{name}</strong>
+                <code>{value}</code>
+              </div>
+            ))}
+          </div>
         </div>
       ))}
     </div>
@@ -755,20 +836,33 @@ function AboutPageMain() {
             <p className="label-caps text-ink-soft">design research</p>
             <h2>Interface structure is part of the research method.</h2>
             <p>
-              The design research asks how a graphic-design history archive can
-              show evidence, absence, rights, and uncertainty without converting
-              them into a smooth museum narrative. The answer is not a style
-              quotation. It is a system of visible divisions: folders, columns,
-              ledgers, empty frames, source-return links, and numbered gates.
+              The design direction is a civic ephemera index: a contemporary
+              research-library interface built from the logic of public,
+              issued, numbered, stamped, routed, and discardable print. Its
+              closest design lineage is not a museum archive skin, but the
+              working modernism of railway tickets, station stamps, postal
+              stamps, admission coupons, index cards, proof sheets, and
+              instructional booklets.
             </p>
             <p>
-              The interface therefore treats layout as an epistemological
-              claim. A grid does not merely align material; it declares which
-              categories are comparable. A blank image bay does not merely save
-              space; it states that display permission has not been established.
-              A folder does not canonize a movement; it marks one filter view
-              among several.
+              The research board points to specific source families: Japanese
+              railway commemorative tickets and station-stamp graphics, Long
+              Island Rail Road World's Fair coupons, Yankee Stadium and aviation
+              ticket stock, road-safety postage stamps, KTG instructional
+              booklet covers, and contemporary card/ticket experiments such as
+              Crossreference, Trawelt, ITYA stamp labels, and cyberspace-style
+              command panels. The interface translates those references into
+              grid behavior, evidence columns, serial labels, route marks,
+              perforation cues, validation stamps, and paper-stock color.
             </p>
+            <p>
+              Color is treated as a working protocol. Base colors preserve
+              reading; four index colors identify folder axes; ephemera colors
+              build cards, slips, badges, and evidence surfaces. These layers
+              must remain distinct, because a classification color should never
+              be mistaken for paper stock, proof, ticket, or asset coloration.
+            </p>
+            <PaletteSwatches />
             <div className="about-reference-grid">
               {designReferences.map(([title, body]) => (
                 <div key={title} className="about-reference about-hover-panel">

@@ -63,10 +63,13 @@ model is clearer.
 
 ## Design-System Notes
 
-- Orange is Portland Orange only: `#ff5e39`.
-- The current asset palette also includes Dark Blue `#1a00b9`, White Chocolate
-  `#efead3`, and June Bud `#b7ce4f`.
-- Folder membership markers remain small pure-color dots.
+- The current frontend palette is an open-library / printed-ephemera system:
+  bright paper base, Brown Black ink, four index colors, and a separate
+  ephemera stock layer.
+- Folder membership markers remain small pure-color dots and must use index
+  colors only: Region, Theme, Medium, and Movement.
+- Card, ticket, stamp, proof, and slip treatments may use ephemera colors, but
+  those colors must not replace folder-axis semantics.
 - Layouts should stay clean, minimal, and information-bearing.
 - Decorative shape, color, or texture is never enough by itself; each asset must
   clarify archive content or project identity.

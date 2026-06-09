@@ -49,7 +49,7 @@ export default async function SurfaceReaderPage({
     surfaceId: surface.surfaceId,
   }));
 
-  const ink = activeFolder ? getFolderInk(activeFolder.type) : "#1a1714";
+  const ink = activeFolder ? getFolderInk(activeFolder.type) : "#2E2925";
   const subtitle = activeFolder
     ? `${getFolderType(activeFolder.type)?.label ?? activeFolder.type} · ${activeFolder.title}`
     : "Standalone surface";

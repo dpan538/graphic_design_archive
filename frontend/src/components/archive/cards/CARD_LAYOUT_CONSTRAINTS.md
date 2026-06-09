@@ -14,7 +14,9 @@ view while preserving a controlled physical-print reference.
 - Typography: no viewport-scaled type; preserve the mono/sans hierarchy.
 - Images: render a real source image only when `image.url` exists; otherwise
   show the rights-aware image state frame.
-- Color: orange means Portland Orange only (`#ff5e39`).
+- Color: use the shared open-library / printed-ephemera palette only. Index
+  colors belong to folder semantics; ephemera colors belong to card material,
+  ticket, stamp, slip, proof, and stock treatments.
 
 ## Family Priority And Placement Probability
 

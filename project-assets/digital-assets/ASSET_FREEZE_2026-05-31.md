@@ -44,8 +44,11 @@ data.
 
 ### Design System
 
-- Added the current asset colors to the frontend design system.
-- Kept one orange only: Portland Orange `#ff5e39`.
+- Replaced the earlier asset colors with the open-library / printed-ephemera
+  palette now used by the frontend.
+- Brown Black is the only black. Region, Theme, Medium, and Movement use index
+  colors; card, ticket, stamp, slip, proof, and stock treatments use ephemera
+  colors.
 - Preserved small, textless color dots as folder membership markers.
 
 ## Implementation Pointers

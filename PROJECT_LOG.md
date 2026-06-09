@@ -2,6 +2,66 @@
 
 This log records project decisions, implementation steps, and collaboration boundaries. It should be updated after every meaningful change so that future work, including database implementation and frontend handoff, remains traceable.
 
+## 2026-06-10
+
+### Civic Ephemera Index Color and Design System Landed
+
+Decision:
+
+- Reframe the frontend visual system as a civic ephemera index: a bright
+  research-library interface shaped by public-information print rather than a
+  dark archive room or decorative retro skin.
+- Treat the palette as an operational system with three separate roles:
+  reading base, four classification axes, and supporting printed-ephemera stock
+  colors.
+- Replace the former pure/near-black ink behavior with a single Brown Black so
+  text, rules, icon work, shadows, and ticket-like marks share one material
+  source.
+
+Design research basis:
+
+- Japanese railway and commemorative passenger tickets informed route bands,
+  numbered gates, serial fields, pale ticket stock, red overprints, and blue
+  transit panels.
+- JR station stamp references informed small public-system compositions with
+  local pictorial icons, place labels, spot-color constraints, and rough printed
+  texture.
+- Long Island Rail Road World's Fair coupons informed detachable coupon logic,
+  validation stamps, dense rules, and the idea that administrative proof can be
+  as visible as destination.
+- Yankee Stadium, aviation, postal, safety-stamp, KTG instructional booklet,
+  Crossreference, Trawelt, ITYA, and cyberspace-style references informed the
+  mix of oversized numbers, fare/date fields, punched tabs, command labels,
+  card stacks, ticket edges, and high-contrast ephemera colors.
+
+Implementation:
+
+- Added the final palette to global CSS and Tailwind tokens:
+  - base: Canvas, Paper, Surface, Line, Brown Black;
+  - index axes: Region, Theme, Movement, Medium;
+  - ephemera stock: ticket cream, newsprint grey, cardboard tan, ochre stock,
+    signal yellow, process orange, grass stock, olive card, harbor teal, grid
+    mint, station sky, railway blue, transit indigo, register pink, ledger mauve,
+    and copper ink.
+- Updated folder ink assignments so Theme uses Stamp Green, Movement uses
+  Diagram Violet, Medium uses Permit Red, and Region keeps railway blue.
+- Added readable index variants for small text and kept raw index colors for
+  navigation, labels, bars, and block accents.
+- Rewrote the About design-research section so it names the design position,
+  cites the visual source families, explains why color roles are separated, and
+  renders the palette directly on the page.
+- Updated handoff and asset documentation so future frontend work inherits the
+  civic ephemera index system instead of the older placeholder palette.
+
+Verification:
+
+- `npm run build` completed successfully after clearing the corrupted `.next`
+  output left by an earlier disk-space failure.
+- Old color tokens and old exact hex values were scanned and removed from the
+  targeted frontend/design-system files.
+- Contrast checks confirmed Brown Black on the reading base and readable index
+  variants meet normal-text AA thresholds.
+
 ## 2026-06-01
 
 ### Text Page Preview Failure Logged and Capture Constraint Added
@@ -1713,7 +1773,7 @@ Validation:
 - `npm run build` in `/frontend` passed and generated 169 static pages.
 - Restarted `localhost:3000`.
 - Browser inspection confirmed:
-  - folder type colors resolve to `#2F5BEA`, `#33302b`, `#D94A38`, and `#E2C044`;
+  - folder type colors resolve to the then-current legacy blue, black, red, and yellow folder inks;
   - search-icon to search-panel gap is approximately `2.5rem`;
   - search-panel to counts-card gap is approximately `2.5rem`;
   - the top folder tab retains visible clearance after the hover translation.

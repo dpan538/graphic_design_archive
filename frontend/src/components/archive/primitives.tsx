@@ -24,7 +24,7 @@ const KIND_LABEL: Record<SurfaceKind, string> = {
 export function StatusChip({ kind }: { kind: SurfaceKind }) {
   return (
     <span
-      className={`label-caps ${kind === "fallback_stub" ? "text-medium" : "text-ink-soft"}`}
+      className={`label-caps ${kind === "fallback_stub" ? "text-medium-readable" : "text-ink-soft"}`}
     >
       {KIND_LABEL[kind]}
     </span>

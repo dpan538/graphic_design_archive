@@ -52,16 +52,16 @@ export function getFolderType(type: string): FolderType | undefined {
   return mock.folderTypes.find((ft) => ft.type === type);
 }
 
-/** Folder badge inks from the shared Archive Box palette. */
+/** Folder badge inks from the shared open-library / ephemera palette. */
 export const FOLDER_INK: Record<FolderTypeKey, string> = {
-  region: "#1A00B9",
-  theme: "#B7CE4F",
-  medium: "#FF5E39",
-  movement: "#332D28",
+  region: "#1F5FD1",
+  theme: "#138B5E",
+  medium: "#E83D3B",
+  movement: "#7466D6",
 };
 
 export function getFolderInk(type: string): string {
-  return FOLDER_INK[type as FolderTypeKey] ?? "#1a1714";
+  return FOLDER_INK[type as FolderTypeKey] ?? "#2E2925";
 }
 
 /** Back-compat alias used by some components. */

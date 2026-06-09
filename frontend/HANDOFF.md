@@ -169,8 +169,8 @@ the `?q=` search param; the search itself is 100% client-side over bundled mock.
 ## 6. What Composer should polish next
 
 - **Visual detail:** refine the binder/punch-hole spacing on very small screens;
-  consider a subtle paper texture toggle; tune folder-tab color contrast for the
-  yellow Movement token (`#E2C044`) against the paper base for AA contrast.
+  keep the open-library base and printed-ephemera palette separated; verify that
+  folder tabs use the readable index variants when color appears as small text.
 - **Missing mock cases:** add example payloads for continuation/appendix pages,
   compound sheets, unassigned items, and proposed cells so those templates can
   be built and reviewed; add an IMG01 and an IMG03 example **with** a real

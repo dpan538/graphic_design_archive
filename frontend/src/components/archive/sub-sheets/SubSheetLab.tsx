@@ -75,7 +75,7 @@ function folderBadges(surface: Surface) {
     <span
       key={folder.folderId}
       className="sub-sheet-badge"
-      style={{ background: FOLDER_INK[folder.type as FolderTypeKey] ?? "#19150f" }}
+      style={{ background: FOLDER_INK[folder.type as FolderTypeKey] ?? "#2E2925" }}
       title={`${folder.type}: ${folder.title}`}
     />
   ));

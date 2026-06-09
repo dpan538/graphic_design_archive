@@ -24,7 +24,7 @@ export default function ArchiveShell({
   rightPanel,
   rightPanelOpen = false,
   onRightPanelOpenChange,
-  folderInk = "#19150f",
+  folderInk = "#2E2925",
   mainScroll = false,
   hideWordmark = false,
 }: {
