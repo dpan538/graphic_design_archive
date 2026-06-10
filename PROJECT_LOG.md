@@ -4,6 +4,146 @@ This log records project decisions, implementation steps, and collaboration boun
 
 ## 2026-06-10
 
+### Region Cleanup Application Layer and Non-mainstream Capture Guardrails
+
+Scope:
+
+- Completed the first confirmed cleanup layer before wider capture work.
+- The layer targets region/geography misfiling caused by generated surface
+  folder assignment, not by rewriting source evidence.
+- `research-repo/` remains read-only and was not edited, staged, or committed.
+
+Implementation:
+
+- Updated `scripts/run_midcentury_capture_1930_1970.py` so `region_for()` gives
+  explicit `source_place_text` country evidence priority before broader title,
+  subject, source-name, or source-note keyword fallback.
+- Verified the 64 `ready_for_batch_apply_after_sample_audit` geography cleanup
+  rows against the underlying capture records: 64 matched rows, 0 failures.
+- Rebuilt public surfaces after the rule change.
+- Added zero-result preservation guards to:
+  - `scripts/run_nonmainstream_item_image_capture_2026_v1.py`
+  - `scripts/run_nonmainstream_region_content_capture_1990_2026.py`
+
+Guardrail result:
+
+- The item/image capture rerun checked 2,284 pre-surface leads and returned 0
+  new image-bearing records in the current network/source state. Because an
+  existing non-empty canonical records CSV was present, the script preserved the
+  587 existing data rows and wrote only diagnostic zero-result files under
+  `data/capture_runs/`.
+- The region-content capture rerun checked 10 target sources and returned 0 new
+  records. Because an existing non-empty canonical records CSV was present, the
+  script preserved the 21 existing data rows and wrote only diagnostic
+  zero-result files under `data/capture_runs/`.
+- This prevents transient endpoint failures, source-side blocking, or selector
+  drift from replacing validated capture output with empty CSVs.
+
+Large-range capture state:
+
+- The non-mainstream v3 source profile capture remains the current productive
+  large-range lane: 127 converted OK sources from 228 candidates.
+- Source-profile macro-region distribution:
+  - Latin America / Caribbean: 34
+  - Africa: 29
+  - Eastern Europe / Caucasus: 18
+  - MENA: 14
+  - South Asia: 12
+  - Southeast Asia: 9
+  - Central Asia: 5
+  - Oceania / Indigenous: 5
+  - East Asia: 1
+- Source-profile protocol family distribution:
+  - HTML: 82
+  - HTML/catalog: 27
+  - catalog/HTML: 14
+  - HTML/database: 2
+  - HTML/data: 1
+  - OAI/HTML: 1
+- Source-profile impact-rating distribution:
+  - A: 51
+  - B: 73
+  - C: 3
+
+Rebuild output:
+
+- Public surfaces: 7,836.
+- Source rows scanned by rebuild: 7,956.
+- Public folders: 55.
+- Image states: IMG00 43, IMG01 37, IMG02 1,327, IMG03 6,171, IMG04 258.
+- Source-visible image-ready surfaces: 7,535 / 7,836 (96.16%).
+- Weighted publication image score: 6,294.85 / 7,836 (80.33%).
+
+Detection output:
+
+- Release snapshot:
+  - Active public sources: 6,499.
+  - Object source-visible rate: 96.34%.
+  - Object verified-open rate: 78.96%.
+  - Object IMG04 rate: 3.11%.
+- Source coverage v2:
+  - Source pool period fill rate: 100.00%.
+  - Strict distribution-adjusted source coverage rate: 28.96%.
+  - Period surface balance rate: 81.92%.
+  - Period quality main balance rate: 38.88%.
+  - Region surface balance rate: 9.39%.
+  - Region quality main balance rate: 7.20%.
+  - Research quality-adjusted source coverage rate v2: 2.69%.
+- Non-mainstream low-coverage probe health:
+  - New candidates: 228.
+  - Baseline plus new: 309.
+  - OK sources: 127.
+  - Probe health: 55.70%.
+  - Success target met: true.
+- Non-mainstream region capture health:
+  - Target source coverage: 50.00%.
+  - Record health: 100.00%.
+  - IMG rate: 71.43%.
+  - Impact ratings: A 15, B 6.
+- Public sheet counts:
+  - Main sheets: 7,582.
+  - Sub sheets: 240.
+  - Text sheets: 242.
+  - Main sheets with more than 2 sub sheets: 359.
+  - Main sheets with more than 5 text sheets: 5.
+- Surface assignment gates:
+  - Main-sheet candidates: 7,152.
+  - Subsheet visual: 472.
+  - Text-sheet candidates: 198.
+  - Group/review records: 105.
+
+Release-gate interpretation:
+
+- Source-visible is above the 95% object-level gate.
+- Object verified-open remains below the 85% gate.
+- Weighted publication image coverage remains below the future 95% object-level
+  gate.
+- IMG04 is low at 3.11% object-level, but blocking sources still need cleanup
+  because IMG04 is now part of release evaluation.
+- `audit_public_surface_integrity.py` still reports 6 exact repeated image URL
+  groups across 12 surfaces, so duplicate visual route review remains open.
+- The archive is still main-sheet heavy; future classification work should
+  improve main/sub/text packet structure instead of only adding records.
+
+Boundary:
+
+- No image binaries, screenshots, thumbnails, or third-party raw payloads were
+  downloaded in this pass.
+- No `IMG01` or `IMG03` rights upgrades were made.
+- Impact/source priority remains internal triage only.
+
+Next capture direction:
+
+- Continue large-range capture through lanes that can produce actual
+  source-visible records rather than only source profiles.
+- Prioritize low-coverage regions that can plausibly improve strict
+  distribution coverage: Africa beyond South Africa/Nigeria, MENA beyond
+  Palestine/UAE, Southeast Asia beyond Singapore/Malaysia/Indonesia, South Asia
+  beyond India/Pakistan/Bangladesh, Central Asia/Caucasus, and Pacific/Oceania
+  beyond Australia/Aotearoa.
+- Before another long run, add preflight health probes to item/image capture
+  targets and require a nonzero sample before replacing canonical outputs.
+
 ### Region and Geography Normalization Decision Table Added
 
 Reviewed:

@@ -928,6 +928,24 @@ def folder_id(folder_type: str, label: str) -> str:
 
 
 def region_for(row: dict[str, str]) -> tuple[str, str, dict[str, list[str]]]:
+    place_l = f" {re.sub(r'[^a-z0-9]+', ' ', row.get('source_place_text', '').lower()).strip()} "
+    place_tests = [
+        ("Argentina", "argentina", {"regionIds": ["REG004"], "geoIds": ["GEO031"]}),
+        ("Brazil", "brazil", {"regionIds": ["REG004"], "geoIds": ["GEO030"]}),
+        ("Mexico", "mexico", {"regionIds": ["REG004"], "geoIds": ["GEO027"]}),
+        ("Chile", "chile", {"regionIds": ["REG004"], "geoIds": ["GEO032"]}),
+        ("Egypt", "egypt", {"regionIds": ["REG013"], "geoIds": ["GEO056"]}),
+        ("Turkey", "turkey", {"regionIds": ["REG013"], "geoIds": ["GEO058"]}),
+        ("South Africa", "south africa", {"regionIds": ["REG014"], "geoIds": ["GEO062"]}),
+        ("Germany", "germany", {"regionIds": ["REG001"], "geoIds": ["GEO006"]}),
+        ("France", "france", {"regionIds": ["REG001"], "geoIds": ["GEO005"]}),
+        ("United Kingdom", "united kingdom", {"regionIds": ["REG001"], "geoIds": ["GEO003"]}),
+        ("United States", "united states", {"regionIds": ["REG003"], "geoIds": ["GEO025"]}),
+    ]
+    for label, term, refs in place_tests:
+        if f" {term} " in place_l:
+            return folder_id("region", label), label, refs
+
     blob = " ".join(
         [
             row.get("source_title", ""),

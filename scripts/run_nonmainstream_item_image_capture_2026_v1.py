@@ -28,6 +28,7 @@ import run_midcentury_expansion_capture_1931_1970 as mx
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 DOCS = ROOT / "docs" / "capture"
+CAPTURE_RUNS = DATA / "capture_runs"
 
 RECORDS_CSV = DATA / "capture_batch_nonmainstream_item_image_2026_records.csv"
 SUMMARY_CSV = DATA / "capture_batch_nonmainstream_item_image_2026_source_summary.csv"
@@ -125,6 +126,41 @@ def write_csv(path: Path, rows: list[dict[str, str]], fields: list[str]) -> None
         writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n", extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
+
+
+def data_row_count(path: Path) -> int:
+    if not path.exists():
+        return 0
+    with path.open(newline="", encoding="utf-8") as handle:
+        return sum(1 for _ in csv.DictReader(handle))
+
+
+def preserve_existing_on_zero_result(records: list[dict[str, str]], captured_count: int) -> bool:
+    if records or data_row_count(RECORDS_CSV) == 0:
+        return False
+    CAPTURE_RUNS.mkdir(parents=True, exist_ok=True)
+    zero_path = CAPTURE_RUNS / "nonmainstream_item_image_2026_zero_result_records.csv"
+    write_csv(zero_path, records, FIELDNAMES)
+    note_path = CAPTURE_RUNS / "nonmainstream_item_image_2026_zero_result_note.md"
+    note_path.write_text(
+        "\n".join(
+            [
+                "# Non-mainstream Item/Image Capture 2026 Zero Result",
+                "",
+                "The latest run produced no image-bearing records while an existing non-empty archive CSV is present.",
+                "The canonical records, summary, and report files were preserved to avoid replacing validated capture output with an empty run.",
+                "",
+                f"- Pre-dedup image-bearing responses: {captured_count}",
+                f"- Existing records preserved: {data_row_count(RECORDS_CSV)}",
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    print("zero_result_guard=preserved_existing_nonmainstream_item_image_capture")
+    print(f"wrote {zero_path.relative_to(ROOT)}")
+    print(f"wrote {note_path.relative_to(ROOT)}")
+    return True
 
 
 def existing_project_image_urls() -> set[str]:
@@ -392,6 +428,9 @@ def main() -> None:
         seen_images.add(image_url)
         unique_captured.append(row)
     records = [capture_record(row, index + 1) for index, row in enumerate(unique_captured)]
+    if preserve_existing_on_zero_result(records, len(captured)):
+        print(f"image_bearing_records={len(records)}")
+        return
     write_csv(RECORDS_CSV, records, FIELDNAMES)
 
     by_source = Counter(record["source_name"] for record in records)

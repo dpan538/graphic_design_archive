@@ -30,6 +30,7 @@ import run_midcentury_expansion_capture_1931_1970 as mx
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 DOCS = ROOT / "docs" / "capture"
+CAPTURE_RUNS = DATA / "capture_runs"
 
 TARGETS_CSV = DATA / "nonmainstream_region_capture_targets_1990_2026_v1.csv"
 RECORDS_CSV = DATA / "capture_batch_nonmainstream_region_1990_2026_records.csv"
@@ -534,6 +535,51 @@ def write_csv(path: Path, fieldnames: list[str], rows: list[dict[str, str]]) -> 
         writer.writerows({field: row.get(field, "") for field in fieldnames} for row in rows)
 
 
+def data_row_count(path: Path) -> int:
+    if not path.exists():
+        return 0
+    with path.open(newline="", encoding="utf-8") as handle:
+        return sum(1 for _ in csv.DictReader(handle))
+
+
+def preserve_existing_on_zero_result(
+    rows: list[dict[str, str]],
+    summaries: list[dict[str, str]],
+    impacts: list[dict[str, str]],
+) -> bool:
+    if rows or data_row_count(RECORDS_CSV) == 0:
+        return False
+    CAPTURE_RUNS.mkdir(parents=True, exist_ok=True)
+    zero_records = CAPTURE_RUNS / "nonmainstream_region_1990_2026_zero_result_records.csv"
+    zero_summary = CAPTURE_RUNS / "nonmainstream_region_1990_2026_zero_result_source_summary.csv"
+    zero_impact = CAPTURE_RUNS / "nonmainstream_region_1990_2026_zero_result_impact_ratings.csv"
+    write_csv(zero_records, FIELDNAMES, rows)
+    write_csv(zero_summary, SUMMARY_FIELDS, summaries)
+    write_csv(zero_impact, IMPACT_FIELDS, impacts)
+    note_path = CAPTURE_RUNS / "nonmainstream_region_1990_2026_zero_result_note.md"
+    note_path.write_text(
+        "\n".join(
+            [
+                "# Non-mainstream Region Capture 1990-2026 Zero Result",
+                "",
+                "The latest run produced no records while an existing non-empty archive CSV is present.",
+                "The canonical records, summary, impact, and report files were preserved to avoid replacing validated capture output with an empty run.",
+                "",
+                f"- Target sources checked: {len(TARGETS)}",
+                f"- Existing records preserved: {data_row_count(RECORDS_CSV)}",
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    print("zero_result_guard=preserved_existing_nonmainstream_region_capture")
+    print(f"wrote {zero_records.relative_to(ROOT)}")
+    print(f"wrote {zero_summary.relative_to(ROOT)}")
+    print(f"wrote {zero_impact.relative_to(ROOT)}")
+    print(f"wrote {note_path.relative_to(ROOT)}")
+    return True
+
+
 def write_targets() -> None:
     rows = [
         {
@@ -627,6 +673,11 @@ def main() -> None:
         impact = impact_by_url.get(row["source_record_url"])
         if impact:
             impact["capture_id"] = row["capture_id"]
+
+    if preserve_existing_on_zero_result(rows, summaries, impacts):
+        print(f"targets={len(TARGETS)}")
+        print(f"captured={len(rows)}")
+        return
 
     write_csv(RECORDS_CSV, FIELDNAMES, rows)
     write_csv(SUMMARY_CSV, SUMMARY_FIELDS, summaries)

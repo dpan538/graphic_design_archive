@@ -1,0 +1,29 @@
+metric,value,gate,notes
+public_surfaces,7836,,Generated public surfaces.
+archive_active_public_sources,6499,pass,Distinct public-surface source names; release target=2000.
+release_source_coverage_rate,324.95,pass,Minimum release source coverage=80%.
+surface_source_visible_rate,96.16,,Surface-level IMG01/IMG02/IMG03.
+surface_verified_open_rate,78.75,,Surface-level reviewed IMG03.
+object_count,7815,,Object-level grouping; repeated views/photos count once.
+object_source_visible_rate,96.34,pass,Minimum object source-visible=96%.
+object_verified_open_rate,78.96,fail,Minimum object verified-open=85%.
+object_weighted_publication_grade_rate,80.51,fail,Object-level max image weight per object; repeated photos are not double-counted.
+object_img04_rate,3.11,pass,Maximum object IMG04 target=10%.
+main_sheet_count,7582,,publicationRole=main_sheet.
+sub_or_support_surface_count,254,,All surfaces not marked as main_sheet.
+independent_text_sheet_count,242,,templateId=sheet.text.v0.
+dossier_text_page_count,7822,,text_page entries inside researchDossiers pageSequence.
+dossier_sub_card_appendix_count,2048,,sub_sheet/card/appendix entries inside researchDossiers pageSequence.
+year_2026_surface_rate,0.51,pass,Warning if more than 25% of public surfaces date to 2026.
+post_2026_or_error_count,0,pass,Future year date sanity check.
+undated_or_unparsed_count,748,,Missing/unparsed public surface dates.
+source_pool_period_fill_rate,100.00,,Imported from source coverage audit.
+strict_distribution_adjusted_source_coverage_rate,28.96,,Imported from source coverage audit.
+period_surface_balance_rate,81.92,,Imported from source coverage audit.
+region_surface_balance_rate,9.39,,Imported from source coverage audit.
+research_quality_adjusted_source_coverage_rate_v2,2.69,,Imported from source coverage audit.
+surface_image_state:IMG00,43,,Surface image state distribution.
+surface_image_state:IMG01,37,,Surface image state distribution.
+surface_image_state:IMG02,1327,,Surface image state distribution.
+surface_image_state:IMG03,6171,,Surface image state distribution.
+surface_image_state:IMG04,258,,Surface image state distribution.
