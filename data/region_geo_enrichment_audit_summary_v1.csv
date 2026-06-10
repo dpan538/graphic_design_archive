@@ -1,0 +1,8 @@
+metric,value,notes
+direct_conflict_parse_suggestions,342,Controlled-geography matches from high-signal conflict evidence.
+historical_split_suggestions,228,Date/term based historical split suggestions for conflict rows.
+pending_text_suggestions,803,Rule-based suggestions from pending or low-signal rows.
+unique_surfaces_with_enrichment_suggestions,1147,Unique surface IDs suggested by any local enrichment pass.
+original_conflict_review_rows,344,Rows in candidate table with geography_conflict_review.
+original_pending_rows,3900,Rows in candidate table with keep_pending.
+original_low_signal_rows,163,Rows in candidate table with review_low_signal_geo_candidates.

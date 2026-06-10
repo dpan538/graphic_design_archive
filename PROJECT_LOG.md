@@ -4,6 +4,176 @@ This log records project decisions, implementation steps, and collaboration boun
 
 ## 2026-06-10
 
+### Region and Geography Normalization Decision Table Added
+
+Reviewed:
+
+- `Region and Geography Normalization for modern_GD_history.docx`
+
+Conclusion:
+
+- The report is useful as a geography-normalization method and release-gate
+  cleanup guide, but it should not be applied directly because it did not
+  inspect the project CSVs when written.
+- Its strongest contribution is the separation between mapping gaps,
+  structural slash-label splits, sensitive historical/place contexts, and true
+  source gaps.
+- The live audit confirms that several suggestions already exist in controlled
+  geography rows, including Palestine historical/modern contexts, Indigenous
+  Australian contexts, Central Asia, Caucasus, and southern African solidarity
+  routes.
+
+Created:
+
+- `scripts/generate_region_geography_normalization_decisions_v1.py`
+- `data/region_geography_normalization_decisions_v1.csv`
+- `docs/capture/REGION_GEOGRAPHY_NORMALIZATION_DECISIONS_v1.md`
+
+Decision output:
+
+- 29 region/geography decision rows were generated.
+- 9 rows are high-confidence country mappings or country mappings with
+  historical/specificity review.
+- 10 rows require structural or sensitive split handling.
+- 1 row marks `Unresolved region` as an internal QA state rather than a public
+  geography.
+- 4 rows remain likely true source gaps after mapping cleanup: Southeast Asia,
+  Middle East and North Africa beyond Palestine, Africa beyond Southern Africa,
+  and Oceania/Pacific beyond Australia.
+
+Implementation boundary:
+
+- This pass is read-only. It does not rewrite records, surfaces, source files,
+  `regions.csv`, or `geographies.csv`.
+- The next safe step is a proposal-only normalization-candidate script that can
+  auto-map obvious country labels, queue slash-label splits, and keep sensitive
+  historical labels in review before any archive rebuild.
+
+### Region and Geography Candidate Queue Added
+
+Created:
+
+- `scripts/generate_region_geography_normalization_candidates_v1.py`
+- `data/region_geography_normalization_candidates_v1.csv`
+- `data/region_geography_normalization_candidate_summary_v1.csv`
+- `docs/capture/REGION_GEOGRAPHY_NORMALIZATION_CANDIDATES_v1.md`
+
+Candidate output:
+
+- 7,836 public surfaces were scanned.
+- 7,810 proposal-only candidate rows were generated.
+- 1,685 rows are existing high-confidence country mapping candidates.
+- 945 rows are taxonomy mapping candidates, led by the `Latin America`
+  display/rollup issue and the missing controlled `Uruguay` geography.
+- 586 `Unresolved region` rows have a single high-signal auto-map candidate
+  from `placeText` or `sourceSubjects`.
+- 40 `Unresolved region` rows need sensitive, multiple, or historical/context
+  review from high-signal evidence.
+- 163 `Unresolved region` rows have only low-signal geography hints from
+  title, source description, source notes, or source name and must not be
+  auto-applied.
+- 3,900 `Unresolved region` rows remain pending because the inspected fields do
+  not yet provide enough geography evidence.
+- 344 existing public region labels conflict with high-signal geography
+  evidence and need review before automated application. The largest conflict
+  group is currently `United States`, often where source evidence points to
+  Mexico or other specific places.
+
+Quality guardrail:
+
+- The candidate script was tightened so `sourceDescription`, `sourceNotes`,
+  `title`, and `sourceName` can support review, but do not trigger automatic
+  geography assignment by themselves. This prevents false auto-mapping from
+  incidental references such as collection locations, depicted artworks, or file
+  names.
+- The candidate script also detects existing region-label conflicts so current
+  public folder labels do not automatically override stronger record-level
+  geography evidence.
+- The candidate script also routes explicit composite place text such as
+  `Europe and USA` into multi-geography review instead of collapsing the record
+  to one country.
+
+Implementation boundary:
+
+- This pass is still read-only. It does not rewrite public surface JSON,
+  source records, `regions.csv`, or `geographies.csv`.
+- The safest application path is to sample the 586 high-signal unresolved
+  auto-map candidates first, then create a separate apply script with a dry-run
+  default.
+
+### Region and Geography Auto Candidate QA Sample Added
+
+Created:
+
+- `scripts/sample_region_geography_auto_candidates_v1.py`
+- `data/region_geography_normalization_auto_review_sample_v1.csv`
+- `docs/capture/REGION_GEOGRAPHY_NORMALIZATION_AUTO_REVIEW_SAMPLE_v1.md`
+
+Sample output:
+
+- 7,810 candidate rows were read.
+- 205 QA rows were generated.
+- 125 rows are stratified samples from the 586 high-signal unresolved auto-map
+  candidates.
+- 40 rows sample low-signal geography hints.
+- 40 rows sample sensitive, historical, or multi-geography review queues.
+
+Review rule:
+
+- Only `auto_map_from_unresolved` rows can become a dry-run application batch.
+- Low-signal, sensitive, historical, multi-geography, and existing-region
+  conflict rows must remain review-only until the evidence is checked.
+
+### Region and Geography Local Enrichment Audit Added
+
+Context:
+
+- The 3,900 remaining `Unresolved region` rows are not an acceptable final
+  state, but they also should not be force-bound to geographies from weak text
+  evidence.
+- The user supplied a reference workflow for direct conflict parsing, historical
+  split suggestions, NER-style text resurfacing, and audit aggregation.
+- The workflow was adapted to the project schema without adding external
+  dependencies. The project uses `data/geographies.csv` as the controlled
+  geography table and `evidence_snippet`/surface metadata fields as the audit
+  source.
+
+Created:
+
+- `scripts/parse_region_conflict_evidence_v1.py`
+- `scripts/suggest_region_conflict_historical_splits_v1.py`
+- `scripts/resurface_region_geo_text_suggestions_v1.py`
+- `scripts/audit_region_geo_enrichment_suggestions_v1.py`
+- `data/region_conflict_direct_parse_v1.csv`
+- `data/region_conflict_historical_split_suggestions_v1.csv`
+- `data/region_pending_geo_text_suggestions_v1.csv`
+- `data/region_geo_enrichment_audit_summary_v1.csv`
+- `docs/capture/REGION_GEO_ENRICHMENT_AUDIT_v1.md`
+
+Enrichment output:
+
+- 342 existing region-label conflicts received direct high-signal controlled
+  geography suggestions.
+- 228 historical split suggestions were generated for conflict rows, mostly
+  Mexico / United States military occupation context around Matamoros and 1846.
+- 803 pending or low-signal rows received rule-based geography resurfacing
+  suggestions.
+- 1,147 unique surfaces now have at least one local enrichment suggestion.
+
+Interpretation:
+
+- Direct conflict parse suggestions are the strongest local enrichment output
+  and can feed a review-first correction batch.
+- Historical split suggestions remain review-only until controlled historical
+  geography rows and public display rules are confirmed.
+- Pending text suggestions are useful for prioritizing review and source-family
+  repair, not for automatic application. Some low-signal cases may represent
+  colonial, depicted, publisher, or collection geography rather than object
+  geography.
+- A Wikidata or external lookup pass can be added later with caching,
+  rate-limits, and a dry-run-only output contract, but it was not run in this
+  local pass.
+
 ### Civic Ephemera Index Color and Design System Landed
 
 Decision:
@@ -7052,6 +7222,98 @@ Boundary:
 Files:
 
 - `docs/system/WEBGPU_WEBLLM_RAG_RESEARCH_BRANCH_BRIEF_v0.md`
+
+## 2026-06-10 - Region/Geography Enrichment Confidence Gate v1
+
+Scope:
+
+- Region/geography normalization audit only.
+- No source capture, image download, image-rights upgrade, public surface
+  rebuild, taxonomy rewrite, or automatic mapping application was performed.
+- The work converts local enrichment suggestions into reviewable confidence
+  tiers so the 3,900 pending geography records are no longer treated as one
+  opaque backlog.
+
+Inputs:
+
+- `data/region_geography_normalization_candidates_v1.csv`
+- `data/region_conflict_direct_parse_v1.csv`
+- `data/region_conflict_historical_split_suggestions_v1.csv`
+- `data/region_pending_geo_text_suggestions_v1.csv`
+
+Outputs:
+
+- `scripts/score_region_geo_enrichment_confidence_v1.py`
+- `scripts/wikidata_region_geo_factcheck_v1.py`
+- `scripts/build_region_geo_safe_apply_review_lists_v1.py`
+- `data/region_geo_enrichment_with_confidence_v1.csv`
+- `data/region_geo_auto_apply_ready_v1.csv`
+- `data/region_geo_wikidata_validation_v1.csv`
+- `data/region_geo_ready_for_auto_apply_v1.csv`
+- `data/region_geo_priority_manual_review_v1.csv`
+- `data/region_geo_requires_historical_split_review_v1.csv`
+- `docs/capture/REGION_GEO_SAFE_APPLY_REVIEW_LIST_v1.md`
+
+Results:
+
+- Scored enrichment suggestions: 1,373.
+- Suggestion sources:
+  - pending text resurfacing: 803
+  - direct conflict parse: 342
+  - historical split: 228
+- Confidence distribution:
+  - high: 88
+  - medium: 1,137
+  - low: 148
+- Safe queue distribution:
+  - ready for auto apply: 88
+  - priority manual review: 1,057
+  - historical split review: 228
+- Auto-apply label distribution:
+  - Brazil: 30
+  - Mexico: 28
+  - Argentina: 17
+  - Egypt: 7
+  - Chile: 3
+  - Germany: 1
+  - South Africa: 1
+  - Turkey: 1
+- Historical split review distribution:
+  - Mexico; United States military occupation context: 220
+  - France; wartime occupation/state-context review: 4
+  - Russia / USSR contexts; republic-specific review: 3
+  - Germany; East/West Germany review: 1
+
+Interpretation:
+
+- The 248 Mexico direct conflict parse suggestions remain valuable, but most
+  Matamoros / American Flag records fall in 1846 and are now blocked from
+  automatic application by the historical dispute gate.
+- Pending text resurfacing is useful for prioritizing review, especially the
+  large Indonesia, Caucasus, Azerbaijan, Georgia, and Singapore clusters, but it
+  remains review-only because topic geography, publisher geography, and source
+  geography can be mixed in those fields.
+- The Wikidata fact-check script is installed as an optional external evidence
+  layer with cache and query limits. It was run in default dry-run mode only:
+  909 medium-confidence candidates were enumerated, 0 network queries were
+  performed, and all external validation states remain `unchecked`.
+- The strict gate intentionally produces only 88 automatic candidates in this
+  pass. That is conservative, but safer than applying date-sensitive or
+  low-signal records into public region statistics.
+
+Verification:
+
+- `python3 -m py_compile` passed for the new confidence, Wikidata fact-check,
+  safe-list, and upstream region/geography enrichment scripts.
+- `git diff --check` passed for the updated log, new scripts, and generated
+  safe-list report.
+- The project-wide `scripts/audit_secret_patterns.py` still exits non-zero on
+  older raw HTML probe files with third-party URL key parameters. Those files
+  are unrelated to this region/geography pass and remain outside the safe
+  commit set.
+- A targeted credential/path scan over the new region/geography scripts, CSVs,
+  and report found no real API key, bearer value, password/secret assignment,
+  cookie assignment, local user path, or env-file reference.
 - `prompts/DEEP_RESEARCH_WEBGPU_WEBLLM_RAG_OPTIMIZATION_PROMPT.md`
 
 ## 2026-06-07 - Assistant RAG Timing And Humanized Fast Answers
@@ -7103,3 +7365,67 @@ Verification:
   hits are expected false positives such as tokenizer/max-token identifiers,
   token metrics, session wording, `transformers.env`, and historical log scan
   terms.
+
+## 2026-06-08 - Independent Research Repo Shared Results Log
+
+Scope:
+
+- Work on browser-local Qwen/WebGPU/WebLLM/RAG benchmarking continued in the
+  separate research repository, not in the archive product runtime.
+- The research repo advanced the Round 03 experiment line around 300-query
+  controlled-condition testing, contract validation, latency triage, and a
+  50-query performance pilot set for later optimization variants.
+- The research direction identified a useful hybrid-lane hypothesis:
+  deterministic or UI/rule-managed lanes such as refusal and source/rights
+  reporting should be measured separately from Qwen free generation, because
+  they may improve latency and reliability without claiming improved model
+  generation ability.
+
+Archive repository boundary:
+
+- No archive source capture, raw evidence ingestion, frontend Assistant UI
+  change, product runtime change, model swap, rights-state change, image
+  download, or surface rebuild was performed in this repository as part of that
+  research work.
+- Research outputs from 2026-06-08 are treated as shared results only. They may
+  inform later archive product decisions, but they do not modify archive product
+  constraints or implementation by themselves.
+- The archive repo should continue to record only boundary decisions and
+  product-facing implications from the research repo, not the research repo's
+  experimental code, benchmark artifacts, browser cache, or model files.
+
+Follow-up:
+
+- Continue Round 03 as a performance-and-usability optimization experiment
+  rather than opening Round 04 prematurely.
+- Produce a separate hybrid-lane report if the deterministic source/rights and
+  refusal-lane evidence remains strong after pilot testing.
+
+## 2026-06-09 - Research Repo Read-Only Separation Constraint
+
+Decision:
+
+- The browser-local Qwen/WebGPU/WebLLM/RAG research work now lives in a fully
+  separate research repository, with its own research branch and commit history.
+- The archive product repository and the research repository remain independent
+  working trees. They may share results, but they must not share write access
+  during normal task execution.
+
+Constraint:
+
+- Archive-product work may read research outputs, reports, benchmark summaries,
+  and explicitly exported fixtures from the research repo, but must not edit,
+  stage, commit, or push files inside that repo.
+- Research-repo work may read archive metadata/text/source/rights/image-state
+  exports that are explicitly shared for experiments, but must not alter archive
+  product runtime code, capture flows, Assistant UI, product constraints, or
+  source evidence.
+- Shared material should move as documented reports, small explicit exports, or
+  cited summaries. Do not cross-stage untracked files between repositories or
+  treat one repo's working tree as part of the other.
+- Any research finding proposed for the archive product requires a later product
+  decision record before implementation in this repository.
+
+Files:
+
+- `docs/system/WEBGPU_WEBLLM_RAG_RESEARCH_BRANCH_BRIEF_v0.md`

@@ -1,0 +1,10 @@
+metric,value,notes
+public_surfaces_scanned,7836,Read from generated/public_surfaces_v1.json.
+candidate_rows,7810,Proposal-only rows; no surface rewrite.
+candidate_actions,keep_pending:3900; auto_map:1390; map_to_REG004_and_review_exact_child_need:925; auto_map_from_unresolved:586; review_existing_region_conflict:344; review_low_signal_geo_candidates:163; map_then_review_constituent_country_when_named:118; split_with_protocol_review:95; split_and_add_country_if_needed:57; map_then_review_1949_1990_records:56; split_by_record_evidence:53; route_by_date_and_territorial_scope:26; review_inferred_sensitive_mapping:26; split_with_historical_review:25; add_country_geography_then_map:20; review_multiple_geo_candidates:18; split_place_and_context:8,Action distribution.
+candidate_status,manual_review:3900; auto_existing_mapping_candidate:1390; taxonomy_mapping_candidate:945; auto_candidate:586; geography_conflict_review:344; split_review:238; low_signal_geo_review:157; review_candidate:118; sensitive_or_historical_review:82; territory_context_review:20; multi_match_review:18; historical_period_review:6; context_split_review:3; protocol_sensitive:2; historical_or_political_review:1,Review status distribution.
+unresolved_auto_map_candidates,586,Unresolved rows with a single non-sensitive geography candidate.
+unresolved_review_candidates,44,"Unresolved rows with sensitive, multiple, or ambiguous high-signal geography evidence."
+unresolved_low_signal_geo_candidates,163,Unresolved rows with geography hints only in lower-signal fields such as title/source description/source name.
+unresolved_keep_pending,3900,Unresolved rows without enough geography evidence in the inspected fields.
+existing_region_conflict_candidates,344,Existing public region labels that disagree with high-signal geography fields.
