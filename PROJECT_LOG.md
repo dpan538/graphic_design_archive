@@ -7314,6 +7314,84 @@ Verification:
 - A targeted credential/path scan over the new region/geography scripts, CSVs,
   and report found no real API key, bearer value, password/secret assignment,
   cookie assignment, local user path, or env-file reference.
+
+## 2026-06-10 - Region/Geography Cleaning Plan And Next Capture Plan v1
+
+Scope:
+
+- Data cleaning optimization and next capture planning only.
+- No source probe, remote capture, image download, image rights upgrade,
+  taxonomy rewrite, public surface rewrite, or frontend build was performed.
+- `research-repo/` remains an independent research repository and is read-only
+  from the archive product workflow.
+
+Changes:
+
+- Added `scripts/build_region_geo_cleaning_plan_v1.py` to convert the scored
+  enrichment queues into a dry-run cleaning action plan and compressed manual
+  review clusters.
+- Added `scripts/generate_next_capture_plan_v1.py` to turn the cleaning
+  findings into a next-cycle capture plan with source strategy, rights
+  preference, text requirements, cleaning dependencies, and validation gates.
+
+Outputs:
+
+- `data/region_geo_cleaning_action_plan_v1.csv`
+- `data/region_geo_manual_review_clusters_v1.csv`
+- `data/next_capture_plan_v1.csv`
+- `docs/capture/REGION_GEO_CLEANING_PLAN_v1.md`
+- `docs/capture/NEXT_CAPTURE_AND_CLEANING_PLAN_v1.md`
+
+Results:
+
+- Region/geography cleaning action rows: 88.
+- Batch-ready after sample audit: 64.
+- Spot-check before apply: 24.
+- Manual review rows compressed into clusters: 64.
+- Largest manual clusters:
+  - Indonesia: 381
+  - Mexico historical/date-sensitive review: 220
+  - Caucasus: 64
+  - Azerbaijan: 39
+  - Georgia: 38
+  - Singapore: 31
+- Next capture plan rows: 8.
+- Planned next-cycle tracks:
+  - P0 region/geography safe apply review
+  - P0 Mexico / United States military occupation historical split policy
+  - P1 Southeast Asia modern/contemporary expansion
+  - P1 Caucasus/Central Asia repair
+  - P1 South Asia country-level expansion
+  - P1 MENA/Sub-Saharan Africa noncanonical expansion
+  - P2 Latin America cleanup and growth
+  - P2 classification deep-research inputs
+
+Interpretation:
+
+- The stricter cleaning layer found that 24 of the 88 high-confidence candidates
+  still need spot-checking because the title contains the current country or
+  another country label, or because the year is missing. These are not rejected;
+  they are moved out of direct batch-application until a human sample audit
+  confirms the correct geography basis.
+- The remaining 64 action rows are still dry-run patch candidates, not applied
+  mappings. They should be sampled by label/source family before any batch
+  relabel script is written.
+- The next capture cycle should begin after this first cleaning pass so new
+  source work inherits stricter region/geography and text-value rules.
+- Data cleaning and capture are now coupled: source discovery alone is not
+  enough; new success counts must still pass item/image capture, surface build,
+  archive incorporation, source-visible/source-coverage/IMG-rate metrics, and
+  text-value review.
+
+Verification:
+
+- `python3 -m py_compile` passed for the new cleaning-plan and next-capture
+  planning scripts.
+- `git diff --check` passed for the updated log, new scripts, CSVs, and
+  reports.
+- Targeted credential/path scan over the new cleaning/capture plan scripts,
+  CSVs, and reports found no real API key, bearer value, password/secret
+  assignment, cookie assignment, local user path, or env-file reference.
 - `prompts/DEEP_RESEARCH_WEBGPU_WEBLLM_RAG_OPTIMIZATION_PROMPT.md`
 
 ## 2026-06-07 - Assistant RAG Timing And Humanized Fast Answers
