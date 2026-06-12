@@ -1,7 +1,7 @@
 metric,value,notes
-public_surfaces,8636,All public surface records in generated/public_surfaces_v1.json.
-main_sheets,8379,Surfaces with publicationRole=main_sheet.
-sub_sheets,243,Sheet surfaces whose publicationRole is not main_sheet.
+public_surfaces,13680,All public surface records in generated/public_surfaces_v1.json.
+main_sheets,13419,Surfaces with publicationRole=main_sheet.
+sub_sheets,247,Sheet surfaces whose publicationRole is not main_sheet.
 text_sheets,242,Surfaces with templateId=sheet.text.v0.
 inferred_parent_main_sheets,455,Main-sheet parents inferred from surface_group_memberships_v1 parent_candidate rows.
 main_sheets_with_more_than_2_sub_sheets,359,Inferred group parents with more than two grouped child sheets. This includes grouped plate/main variants as sub-sheet depth for reporting.
@@ -9,10 +9,10 @@ main_sheets_with_more_than_5_text_sheets,5,Inferred group parents with more than
 template_count,card.sparse.v0:14,Public-surface template distribution.
 template_count,sheet.compound.v0:21,Public-surface template distribution.
 template_count,sheet.img00.v0:36,Public-surface template distribution.
-template_count,sheet.main.v0:8323,Public-surface template distribution.
+template_count,sheet.main.v0:13367,Public-surface template distribution.
 template_count,sheet.text.v0:242,Public-surface template distribution.
 publication_role_count,(blank):2,Public-surface publicationRole distribution.
-publication_role_count,main_sheet:8379,Public-surface publicationRole distribution.
+publication_role_count,main_sheet:13419,Public-surface publicationRole distribution.
 publication_role_count,merge_candidate_support_packet:14,Public-surface publicationRole distribution.
-publication_role_count,support_packet_appendix_text:238,Public-surface publicationRole distribution.
+publication_role_count,support_packet_appendix_text:242,Public-surface publicationRole distribution.
 publication_role_count,thin_visual_support_packet:3,Public-surface publicationRole distribution.

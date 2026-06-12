@@ -1,9 +1,9 @@
 metric,value,notes
 source_pool_period_fill_rate,100.00,"Former v1 source_coverage_rate; capacity/time fill only, capped at 100%."
 strict_distribution_adjusted_source_coverage_rate,28.96,v1 strict diagnostic retained as a first-class warning signal.
-period_surface_balance_rate,87.57,Surface count balance against v2 period targets; 2000-2026 target is intentionally higher.
-period_quality_main_balance_rate,38.88,Quality main-sheet balance against v2 period targets.
-region_surface_balance_rate,6.48,Surface count balance against v2 regional targets.
+period_surface_balance_rate,100.00,Surface count balance against v2 period targets; 2000-2026 target is intentionally higher.
+period_quality_main_balance_rate,39.05,Quality main-sheet balance against v2 period targets.
+region_surface_balance_rate,6.71,Surface count balance against v2 regional targets.
 region_quality_main_balance_rate,6.26,Quality main-sheet balance against v2 regional targets.
-source_visible_surface_rate,96.51,Surfaces with IMG01/IMG02/IMG03.
-research_quality_adjusted_source_coverage_rate_v2,2.35,source_pool_period_fill * period_quality_main_balance * region_quality_main_balance * source_visible_rate.
+source_visible_surface_rate,97.80,Surfaces with IMG01/IMG02/IMG03.
+research_quality_adjusted_source_coverage_rate_v2,2.39,source_pool_period_fill * period_quality_main_balance * region_quality_main_balance * source_visible_rate.

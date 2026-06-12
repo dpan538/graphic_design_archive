@@ -7363,6 +7363,156 @@ Files:
 
 - `docs/system/WEBGPU_WEBLLM_RAG_RESEARCH_BRANCH_BRIEF_v0.md`
 
+## 2026-06-12 - Commons Open Source Expansion And Gate Recheck
+
+Scope:
+
+- Continued the long-running source expansion track with a Commons-only,
+  rights-aware metadata capture round aimed at adding roughly 5000 open source
+  records before reassignment, cleaning, rebuild, and gate checks.
+- The capture remained source-discovery and source-evidence oriented. It saved
+  CSV metadata, source links, Commons page identifiers, source-hosted image URLs,
+  dates, region/macro-region labels, and rights evidence. It did not download
+  image binaries, screenshots, raw API payload dumps, cookies, or browser state.
+- IMG03 was assigned only from Wikimedia Commons open-license extmetadata. No
+  IMG01/IMG03 upgrade was made from heuristics, LLM judgment, terms-of-service
+  inference, or platform-level assumptions.
+
+New capture:
+
+- `run_commons_open_category_tree_image_capture_2026_v1.py` captured 4544
+  distinct active source records from Commons country/category trees. It did not
+  reach its standalone 5000-row target because the useful queue was exhausted
+  after macro, period, duplicate, object-type, and weak graphic-evidence filters.
+- Category-tree quality summary:
+  - 4544 records, 4544 distinct active source names.
+  - IMG03: 4544.
+  - 2026 count: 6, or 0.13 percent. No 2026 concentration bug was observed.
+  - Period distribution: 2000-2026 1700; 1930-1970 1200; 1970-2000 844;
+    pre-1930 800.
+  - Macro-region distribution: Africa 819; Latin America 800; MENA 650;
+    Southeast Asia 605; Eastern Europe 450; South Asia 338; Central Asia 320;
+    Oceania 307; East Asia 255.
+  - Largest country fills include Bolivia 300, Indonesia 300, Algeria 276,
+    Kazakhstan 274, India 261, Iran 227, Iraq 222, Brazil 152, Aotearoa New
+    Zealand 152, Philippines 142, Australia/Indigenous 105, Romania 102, China
+    100, Morocco 98, Turkey 96, South Africa 83, Korea 80, Azerbaijan 80, Kenya
+    73, Ukraine 72, Vietnam 71, Mexico 68, Pakistan 60, Poland 57, Cuba 57,
+    Malaysia 53, Uruguay 52, Serbia 51, Zimbabwe 50, Croatia 45, Peru 45,
+    Colombia 43, Tunisia 42, Palestine 41, Egypt 40, Hong Kong 40, Angola 38,
+    Taiwan 35, Venezuela 33, Tanzania 30, Jordan 30, Papua New Guinea 30,
+    Uzbekistan 28, Nigeria 27, and Lebanon 25.
+- `run_commons_open_region_balance_image_capture_2026_v3.py` was kept as a
+  smaller search-based supplement and captured 500 additional distinct active
+  source records after category-tree capture.
+- Region-balance v3 quality summary:
+  - 500 records, 500 distinct active source names.
+  - IMG03: 500.
+  - 2026 count: 3, or 0.60 percent. No 2026 concentration bug was observed.
+  - Period distribution: 2000-2026 354; 1930-1970 67; 1970-2000 44;
+    pre-1930 35.
+  - Macro-region distribution: Southeast Asia 315; Eastern Europe 79; MENA 30;
+    South Asia 30; East Asia 21; Africa 16; Latin America 6; Central Asia 3.
+- Combined new open-source metadata records for this round: 5044.
+
+Rebuild and release checks:
+
+- `rebuild_public_surfaces_from_records.py` completed:
+  - rows: 13800.
+  - public surfaces: 13680.
+  - folders: 97.
+  - image states: IMG00 43; IMG01 37; IMG02 1327; IMG03 12015; IMG04 258.
+  - source-visible image-ready surfaces: 13379/13680, or 97.8 percent.
+  - weighted publication image score: 11554.45/13680, or 84.46 percent.
+- `run_release_snapshot_v1.py`:
+  - public surfaces: 13680.
+  - active public sources: 12342.
+  - object source-visible rate: 97.91 percent, passing the 96 percent gate.
+  - object verified-open rate: 87.96 percent, passing the 85 percent gate.
+  - object IMG04 rate: 1.78 percent, passing the current under-10 percent gate.
+  - release source target: passing, with 12342 active sources against the 2000
+    minimum target.
+  - weighted publication-grade image coverage: 84.57 percent, still failing the
+    95 percent target and requiring about 1424.9 additional weighted points.
+  - 2026 surface rate: 0.39 percent, passing the year sanity check.
+- `audit_image_release_gate.py` confirmed the same gate shape: source-visible,
+  verified-open, IMG04, and source-count gates pass; weighted publication-grade
+  image coverage remains the release blocker.
+- `audit_source_coverage_rate_v2.py` remains a critical caution:
+  - source pool period fill rate: 100.00 percent.
+  - strict distribution-adjusted source coverage rate: 28.96 percent.
+  - region surface balance rate: 6.71 percent.
+  - region quality main balance rate: 6.26 percent.
+  - research quality adjusted source coverage rate v2: 2.39 percent.
+  This confirms that raw source quantity is now far ahead of region-quality
+  balance and research packet quality.
+
+Sheet and assignment state:
+
+- `audit_public_surface_sheet_counts_v1.py`:
+  - main sheets: 13419.
+  - sub sheets: 247.
+  - independent text sheets: 242.
+  - inferred parent main sheets: 455.
+  - main sheets with more than two sub sheets: 359.
+  - main sheets with more than five text sheets: 5.
+- `audit_surface_assignment_gates_v1.py` still classifies most records as
+  main-sheet candidates: main_sheet_candidate 12946; subsheet_visual 522;
+  text_sheet_candidate 198; dedupe_child_record 60; appendix_or_text_sheet 55;
+  subsheet_text_or_appendix_review 37; subsheet_group_child 22;
+  subsheet_or_group_anchor_review 18; img00_rights_sheet_candidate 16;
+  duplicate_image_review_packet 5; group_review 105.
+- `audit_main_sheet_research_value_v1.py` shows the current main/sub/text
+  topology is still structurally immature: demote_to_sub 9523; keep_main 3617;
+  promote_text_or_appendix 189; demote_to_card 58; keep_main_add_editorial_text
+  32. This is an audit signal only, not an automatic demotion action.
+
+Build and verification:
+
+- Python compile passed for:
+  - `scripts/run_commons_open_category_tree_image_capture_2026_v1.py`
+  - `scripts/run_commons_open_region_balance_image_capture_2026_v3.py`
+  - `scripts/rebuild_public_surfaces_from_records.py`
+- `git diff --check` passed.
+- `npm run build` at repository root is not defined.
+- `npm run build` inside `frontend/` compiled successfully, then failed during
+  static page generation with `ENOSPC: no space left on device, write` while
+  prerendering `/folders/region/unresolved-region` after generating
+  10353/13805 static pages. This is a static-export scale and disk-capacity
+  blocker, not a TypeScript compile failure. The frontend now needs a sandboxed
+  or partial-build validation mode before further large capture rounds.
+- The rebuilt surface JSON exports were generated locally, but each full export
+  is now about 136 MB. They are intentionally not included in the GitHub-bound
+  commit because they exceed GitHub's 100 MB blob limit and should be handled by
+  regeneration, sharding, compression, or an artifact strategy before the next
+  large public build.
+- Repository-wide secret scan still reports old raw-file URL parameter hits in
+  previously existing raw probe files. These are not from this round. The
+  commit-bound scan for this round must remain limited to staged files.
+- Commit-bound scan over the new scripts, generated CSV/JSON/Markdown reports,
+  audit outputs, and this log found no real API key, bearer value,
+  password/secret assignment, cookie/session assignment, private key block,
+  local user path, or environment-file payload. Broad hits were false positives
+  in policy/log wording or public source titles such as "Secret", "Secretary",
+  and "poster session".
+
+Next priorities:
+
+- Push weighted publication-grade coverage upward before another pure source
+  count push. Highest weighted-gap sources are Cooper Hewitt, Wellcome, LOC,
+  GSU CONTENTdm, Art Institute, Internet Archive, V&A, DigitalNZ, Gallica,
+  Te Papa, NAIDOC, Princeton, Met, and Wikimedia Commons residual duplicate or
+  weak cases.
+- Focus capture and source verification on 1930-1970 and 2000-2026, where
+  weighted image coverage remains the most visible release gap.
+- Continue region-quality balancing rather than only adding records. Africa,
+  Latin America, MENA, Central Asia, South Asia, Southeast Asia, Oceania, and
+  underrepresented East Asia need higher-quality anchors, not only more
+  individual source rows.
+- Treat main/sub/text restructuring as a separate information-architecture
+  cycle. The current evidence supports auditing and grouping work, but not a
+  blind automatic demotion of thousands of main sheets.
+
 ## 2026-06-12 - Region-Balanced Commons Capture v2 and Surface Gate Rebuild
 
 Scope:
