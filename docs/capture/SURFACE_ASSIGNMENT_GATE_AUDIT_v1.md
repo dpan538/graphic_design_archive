@@ -6,13 +6,13 @@ Scope: capture records, before any public payload rebuild. This audit applies th
 
 ## Summary
 
-- Capture rows audited: 8035
+- Capture rows audited: 8835
 - Rows requiring group/linkage review before standalone publication: 105
 
 ## Recommended Dispositions
 
-- `main_sheet_candidate`: 7152
-- `subsheet_visual`: 472
+- `main_sheet_candidate`: 7933
+- `subsheet_visual`: 491
 - `text_sheet_candidate`: 198
 - `dedupe_child_record`: 60
 - `appendix_or_text_sheet`: 55
@@ -24,10 +24,10 @@ Scope: capture records, before any public payload rebuild. This audit applies th
 
 ## Period Breakdown
 
-- 1930_1970: main_sheet_candidate: 2155; subsheet_visual: 57; subsheet_text_or_appendix_review: 25; appendix_or_text_sheet: 24; img00_rights_sheet_candidate: 14; subsheet_group_child: 13; dedupe_child_record: 8; text_sheet_candidate: 8; subsheet_or_group_anchor_review: 8; duplicate_image_review_packet: 3
-- 1970_2000: main_sheet_candidate: 2008; subsheet_visual: 261; text_sheet_candidate: 9; subsheet_or_group_anchor_review: 2; img00_rights_sheet_candidate: 1
-- 2000_2026: main_sheet_candidate: 1543; text_sheet_candidate: 147; subsheet_visual: 40; dedupe_child_record: 19; appendix_or_text_sheet: 7; subsheet_text_or_appendix_review: 4; subsheet_or_group_anchor_review: 2; duplicate_image_review_packet: 2
-- pre_1930: main_sheet_candidate: 1429; subsheet_visual: 104; dedupe_child_record: 30; appendix_or_text_sheet: 11; subsheet_group_child: 9; subsheet_or_group_anchor_review: 6; text_sheet_candidate: 6; subsheet_text_or_appendix_review: 5; img00_rights_sheet_candidate: 1
+- 1930_1970: main_sheet_candidate: 2282; subsheet_visual: 64; subsheet_text_or_appendix_review: 25; appendix_or_text_sheet: 24; img00_rights_sheet_candidate: 14; subsheet_group_child: 13; dedupe_child_record: 8; text_sheet_candidate: 8; subsheet_or_group_anchor_review: 8; duplicate_image_review_packet: 3
+- 1970_2000: main_sheet_candidate: 2133; subsheet_visual: 261; text_sheet_candidate: 9; subsheet_or_group_anchor_review: 2; img00_rights_sheet_candidate: 1
+- 2000_2026: main_sheet_candidate: 1982; text_sheet_candidate: 147; subsheet_visual: 52; dedupe_child_record: 19; appendix_or_text_sheet: 7; subsheet_text_or_appendix_review: 4; subsheet_or_group_anchor_review: 2; duplicate_image_review_packet: 2
+- pre_1930: main_sheet_candidate: 1519; subsheet_visual: 104; dedupe_child_record: 30; appendix_or_text_sheet: 11; subsheet_group_child: 9; subsheet_or_group_anchor_review: 6; text_sheet_candidate: 6; subsheet_text_or_appendix_review: 5; img00_rights_sheet_candidate: 1
 - undated_or_unparsed: text_sheet_candidate: 28; main_sheet_candidate: 17; appendix_or_text_sheet: 13; subsheet_visual: 10; dedupe_child_record: 3; subsheet_text_or_appendix_review: 3
 
 ## Image-State Breakdown
@@ -35,7 +35,7 @@ Scope: capture records, before any public payload rebuild. This audit applies th
 - IMG00: appendix_or_text_sheet: 18; img00_rights_sheet_candidate: 16; dedupe_child_record: 11; subsheet_text_or_appendix_review: 10; subsheet_or_group_anchor_review: 4
 - IMG01: main_sheet_candidate: 27; subsheet_visual: 14; dedupe_child_record: 4; subsheet_or_group_anchor_review: 2
 - IMG02: main_sheet_candidate: 1236; subsheet_visual: 107; dedupe_child_record: 15; subsheet_group_child: 14; subsheet_or_group_anchor_review: 3; duplicate_image_review_packet: 3
-- IMG03: main_sheet_candidate: 5889; subsheet_visual: 351; dedupe_child_record: 11; subsheet_or_group_anchor_review: 3; duplicate_image_review_packet: 2
+- IMG03: main_sheet_candidate: 6670; subsheet_visual: 370; dedupe_child_record: 11; subsheet_or_group_anchor_review: 3; duplicate_image_review_packet: 2
 - IMG04: text_sheet_candidate: 198; appendix_or_text_sheet: 37; subsheet_text_or_appendix_review: 27; dedupe_child_record: 19; subsheet_group_child: 8; subsheet_or_group_anchor_review: 6
 
 ## Thin / Support Examples

@@ -1,6 +1,6 @@
 # Period Source + Image Capture Priority v1
 
-Date: 2026-06-06
+Date: 2026-06-12
 
 Scope: active capture records grouped by project period bands. This report combines period-level source breadth and visual evidence health for next-capture planning.
 
@@ -14,21 +14,21 @@ Source gap is weighted slightly higher because adding another record from the sa
 
 ## Ranked Periods
 
-- 1930_1970: priority=0.1100, source=54.00%, image=82.04%, active_sources=1811, records=2315
+- 1930_1970: priority=0.1019, source=57.83%, image=82.51%, active_sources=1945, records=2449
   Action: Maintain; fill known region/theme gaps and improve grouping/text enrichment.
-- 2000_2026: priority=0.0839, source=65.22%, image=64.51%, active_sources=1513, records=1764
+- 2000_2026: priority=0.0519, source=83.26%, image=70.65%, active_sources=1964, records=2215
   Action: Maintain; fill known region/theme gaps and improve grouping/text enrichment.
-- 1970_2000: priority=0.0321, source=84.33%, image=86.11%, active_sources=2016, records=2281
+- 1970_2000: priority=0.0249, source=89.33%, image=86.35%, active_sources=2141, records=2406
   Action: Maintain; fill known region/theme gaps and improve grouping/text enrichment.
-- pre_1930: priority=0.0255, source=77.60%, image=85.09%, active_sources=1142, records=1601
+- pre_1930: priority=0.0204, source=83.53%, image=85.35%, active_sources=1231, records=1691
   Action: Target missing regional source families only; do not let prewar work displace postwar coverage.
 
 ## Current Table
 
-- 1930_1970: source_points=378.00/700.00, source_gap=46.00%, image_gap=13.64%, IMG03=1931, IMG02=267, IMG00=42, IMG04=42
-- 2000_2026: source_points=326.10/500.00, source_gap=34.78%, image_gap=32.09%, IMG03=719, IMG02=795, IMG00=1, IMG04=166
-- 1970_2000: source_points=421.65/500.00, source_gap=15.67%, image_gap=9.36%, IMG03=2018, IMG02=225, IMG00=1, IMG04=9
-- pre_1930: source_points=232.80/300.00, source_gap=22.40%, image_gap=10.43%, IMG03=1467, IMG02=66, IMG00=15, IMG04=34
+- 1930_1970: source_points=404.80/700.00, source_gap=42.17%, image_gap=13.15%, IMG03=2074, IMG02=267, IMG00=42, IMG04=42
+- 2000_2026: source_points=416.30/500.00, source_gap=16.74%, image_gap=25.63%, IMG03=1253, IMG02=795, IMG00=1, IMG04=166
+- 1970_2000: source_points=446.65/500.00, source_gap=10.67%, image_gap=9.11%, IMG03=2171, IMG02=225, IMG00=1, IMG04=9
+- pre_1930: source_points=250.60/300.00, source_gap=16.47%, image_gap=10.16%, IMG03=1557, IMG02=66, IMG00=15, IMG04=34
 
 ## Interpretation
 

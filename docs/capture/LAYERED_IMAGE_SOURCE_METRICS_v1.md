@@ -1,38 +1,38 @@
 # Layered Image and Source Metrics v1
 
-Date: 2026-06-10
+Date: 2026-06-12
 
 Scope: capture records, not final public surfaces. These metrics measure the raw/candidate corpus before grouping and surface assignment.
 
 ## Overall
 
-- Capture records: 8035
-- Source-visible coverage: 96.32%
-- Publication-grade candidate coverage: 95.01%
-- Weighted publication image rate: 79.68% (6402.40 weighted points)
-- Open-image candidate coverage: 72.84%
+- Capture records: 8835
+- Source-visible coverage: 96.65%
+- Publication-grade candidate coverage: 95.46%
+- Weighted publication image rate: 80.62% (7122.40 weighted points)
+- Open-image candidate coverage: 75.30%
 - Rights-labeled coverage: 100.00%
 - Unclear image-state rate: 0.05%
-- Duplicate image URL record rate: 0.88%
+- Duplicate image URL record rate: 0.80%
 
 ## Period Bands
 
-- 1930_1970: records=2315, source-visible=98.19%, publication-grade=95.33%, weighted=82.08%, open=80.30%, duplicate-url=0.73%
-- 1970_2000: records=2281, source-visible=99.56%, publication-grade=99.56%, weighted=86.15%, open=88.03%, duplicate-url=0.00%
-- 2000_2026: records=1764, source-visible=90.59%, publication-grade=90.53%, weighted=65.71%, open=45.01%, duplicate-url=0.68%
-- pre_1930: records=1601, source-visible=97.88%, publication-grade=95.75%, weighted=85.09%, open=74.45%, duplicate-url=2.44%
+- 1930_1970: records=2449, source-visible=98.29%, publication-grade=95.59%, weighted=82.51%, open=81.38%, duplicate-url=0.69%
+- 1970_2000: records=2406, source-visible=99.58%, publication-grade=99.58%, weighted=86.35%, open=88.65%, duplicate-url=0.00%
+- 2000_2026: records=2215, source-visible=92.51%, publication-grade=92.46%, weighted=70.65%, open=56.21%, duplicate-url=0.54%
+- pre_1930: records=1691, source-visible=97.99%, publication-grade=95.98%, weighted=85.35%, open=75.81%, duplicate-url=2.31%
 - undated_or_unparsed: records=74, source-visible=40.54%, publication-grade=35.14%, weighted=21.42%, open=0.00%, duplicate-url=4.05%
 
 ## Lowest Weighted Publication Periods
 
 - undated_or_unparsed: weighted=21.42% (15.85 weighted points / 74 records)
-- 2000_2026: weighted=65.71% (1159.05 weighted points / 1764 records)
-- 1930_1970: weighted=82.08% (1900.05 weighted points / 2315 records)
-- pre_1930: weighted=85.09% (1362.30 weighted points / 1601 records)
+- 2000_2026: weighted=70.65% (1564.95 weighted points / 2215 records)
+- 1930_1970: weighted=82.51% (2020.65 weighted points / 2449 records)
+- pre_1930: weighted=85.35% (1443.30 weighted points / 1691 records)
 
 ## Source Families
 
-- unmapped_source_family: records=7036, source-visible=97.48%, publication-grade=96.82%, weighted=82.88%, open=80.87%
+- unmapped_source_family: records=7836, source-visible=97.74%, publication-grade=97.14%, weighted=83.61%, open=82.82%
 - independent_design_archive_or_publication: records=304, source-visible=76.64%, publication-grade=76.64%, weighted=60.12%, open=51.32%
 - government_or_public_cultural_database: records=207, source-visible=97.58%, publication-grade=97.58%, weighted=76.16%, open=0.00%
 - general_archive_or_collection: records=172, source-visible=95.35%, publication-grade=68.02%, weighted=45.96%, open=0.00%

@@ -6,19 +6,19 @@ Scope: public surfaces plus main-sheet research-value diagnostics. v2 separates 
 
 - source_pool_period_fill_rate: 100.00 (Former v1 source_coverage_rate; capacity/time fill only, capped at 100%.)
 - strict_distribution_adjusted_source_coverage_rate: 28.96 (v1 strict diagnostic retained as a first-class warning signal.)
-- period_surface_balance_rate: 81.92 (Surface count balance against v2 period targets; 2000-2026 target is intentionally higher.)
+- period_surface_balance_rate: 87.57 (Surface count balance against v2 period targets; 2000-2026 target is intentionally higher.)
 - period_quality_main_balance_rate: 38.88 (Quality main-sheet balance against v2 period targets.)
-- region_surface_balance_rate: 9.39 (Surface count balance against v2 regional targets.)
-- region_quality_main_balance_rate: 7.20 (Quality main-sheet balance against v2 regional targets.)
-- source_visible_surface_rate: 96.16 (Surfaces with IMG01/IMG02/IMG03.)
-- research_quality_adjusted_source_coverage_rate_v2: 2.69 (source_pool_period_fill * period_quality_main_balance * region_quality_main_balance * source_visible_rate.)
+- region_surface_balance_rate: 6.48 (Surface count balance against v2 regional targets.)
+- region_quality_main_balance_rate: 6.26 (Quality main-sheet balance against v2 regional targets.)
+- source_visible_surface_rate: 96.51 (Surfaces with IMG01/IMG02/IMG03.)
+- research_quality_adjusted_source_coverage_rate_v2: 2.35 (source_pool_period_fill * period_quality_main_balance * region_quality_main_balance * source_visible_rate.)
 
 ## Period Targets
 
-- pre_1930: surfaces=1481, main=1433, quality_main=756, target=1700, surface_balance=87.12%, quality_balance=44.47%
-- 1930_1970: surfaces=2283, main=2181, quality_main=1017, target=2000, surface_balance=100.00%, quality_balance=50.85%
-- 1970_2000: surfaces=2270, main=2237, quality_main=857, target=2200, surface_balance=100.00%, quality_balance=38.95%
-- 2000_2026: surfaces=1054, main=1032, quality_main=552, target=2600, surface_balance=40.54%, quality_balance=21.23%
+- pre_1930: surfaces=1571, main=1523, quality_main=756, target=1700, surface_balance=92.41%, quality_balance=44.47%
+- 1930_1970: surfaces=2417, main=2315, quality_main=1017, target=2000, surface_balance=100.00%, quality_balance=50.85%
+- 1970_2000: surfaces=2395, main=2362, quality_main=857, target=2200, surface_balance=100.00%, quality_balance=38.95%
+- 2000_2026: surfaces=1505, main=1480, quality_main=552, target=2600, surface_balance=57.88%, quality_balance=21.23%
 - undated_or_unparsed: surfaces=748, main=699, quality_main=22, target=250, surface_balance=100.00%, quality_balance=8.80%
 
 ## Weakest Periods By Quality Main Balance
@@ -31,15 +31,15 @@ Scope: public surfaces plus main-sheet research-value diagnostics. v2 separates 
 ## Weakest Regions By Quality Main Balance
 
 - Africa: surfaces=0, quality_main=0, target=750, quality_balance=0.00%
+- Armenia: surfaces=10, quality_main=0, target=250, quality_balance=0.00%
+- Azerbaijan: surfaces=2, quality_main=0, target=250, quality_balance=0.00%
+- Bolivia: surfaces=10, quality_main=0, target=250, quality_balance=0.00%
+- Bulgaria: surfaces=16, quality_main=0, target=250, quality_balance=0.00%
 - Cuba: surfaces=6, quality_main=0, target=250, quality_balance=0.00%
 - East Asia: surfaces=0, quality_main=0, target=750, quality_balance=0.00%
 - Eastern Europe: surfaces=0, quality_main=0, target=650, quality_balance=0.00%
 - Eastern Europe / Caucasus: surfaces=0, quality_main=0, target=650, quality_balance=0.00%
-- Europe: surfaces=0, quality_main=0, target=550, quality_balance=0.00%
-- Global: surfaces=0, quality_main=0, target=400, quality_balance=0.00%
-- Global / web / transnational: surfaces=0, quality_main=0, target=400, quality_balance=0.00%
-- Latin America and the Caribbean: surfaces=0, quality_main=0, target=850, quality_balance=0.00%
-- Middle East and North Africa: surfaces=0, quality_main=0, target=750, quality_balance=0.00%
+- Ethiopia: surfaces=1, quality_main=0, target=250, quality_balance=0.00%
 
 ## Interpretation
 

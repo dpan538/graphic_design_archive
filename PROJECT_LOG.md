@@ -7363,6 +7363,139 @@ Files:
 
 - `docs/system/WEBGPU_WEBLLM_RAG_RESEARCH_BRANCH_BRIEF_v0.md`
 
+## 2026-06-12 - Region-Balanced Commons Capture v2 and Surface Gate Rebuild
+
+Scope:
+
+- Ran the next archive data round as a longer autonomous capture/repair/rebuild
+  cycle focused on non-mainstream and low-coverage region balance.
+- Added a region-balanced Wikimedia Commons open-image capture path for
+  source-visible IMG03 records and connected it to the public-surface rebuild
+  through the capture-run manifest.
+- Strengthened the public region fallback mapping used by the midcentury capture
+  utilities so explicit source-place strings such as Nigeria, Ghana, Iran,
+  Bangladesh, Indonesia, Kazakhstan, Uruguay, and Aotearoa New Zealand do not
+  collapse into unresolved regions during later rebuilds.
+
+Capture repair notes:
+
+- The first Python urllib Commons request failed inside the sandbox with DNS
+  resolution errors, while `curl -I` against Commons succeeded. The capture was
+  rerun with approved network escalation.
+- An early v2 pass was rejected as too noisy because the relevance filter could
+  self-confirm against project-assigned fields. The script was patched so
+  graphic-design relevance is checked only against source-derived evidence
+  fields such as source title, Commons description, source notes, and source
+  categories.
+- The final strict run saved 800 records and 799 distinct active source names.
+  All records are IMG03 open-image metadata records.
+- No image binaries, screenshots, raw API payload dumps, cookies, sessions, or
+  credential-bearing files were downloaded or saved.
+- No IMG01 or IMG03 rights upgrade was performed by heuristic, LLM inference,
+  terms-of-service language, or platform signal. IMG03 rows are backed by
+  Commons open-license metadata and preserved as source-discovery/item records.
+
+Final v2 capture distribution:
+
+- Periods: 2000-2026 = 451; 1930-1970 = 134; 1970-2000 = 125; pre-1930 = 90.
+- Macro-regions: Eastern Europe = 168; Middle East and North Africa = 150;
+  Southeast Asia = 144; Africa = 94; Central Asia = 80; East Asia = 80;
+  South Asia = 71; Latin America = 12; Oceania = 1.
+- Rejections: base filter = 8686; weak graphic evidence = 1339; duplicate =
+  908; distribution cap = 218; non-graphic object = 83.
+- Query failures: 76, mostly HTTP 429 rate limits from Commons. These were
+  logged as capture limits rather than converted into local raw payloads.
+- Source-derived text quality floor: minimum 113 characters; median 308
+  characters.
+
+Surface rebuild:
+
+- Rebuilt public surfaces from the manifest-extended source record set.
+- Public surfaces: 8636.
+- Folders: 96.
+- Surface image states: IMG00 = 43; IMG01 = 37; IMG02 = 1327; IMG03 = 6971;
+  IMG04 = 258.
+- Source-visible image-ready surfaces: 8335/8636 = 96.51%.
+- Weighted publication image score: 7014.85/8636 = 81.23%.
+
+Release and audit metrics:
+
+- Active public source names: 7298, above the 2000 release source target.
+- Release source coverage rate: 364.90%, above the minimum 80% target.
+- Object source-visible rate: 96.68%, passing the 96% gate.
+- Object verified-open rate: 80.92%, below the 85% gate.
+- Object weighted publication-grade image rate: 81.39%, below the 95% gate.
+  This object-level calculation counts repeated photos/views only once.
+- Object IMG04 rate: 2.82%, currently under the working 10% maximum.
+- 2026 surface rate: 0.51%; post-2026 or future-date error count: 0.
+- Strict distribution-adjusted source coverage rate remains 28.96%.
+- Region surface balance rate is 6.48%; region quality main balance is 6.26%.
+- Research-quality adjusted source coverage v2 is 2.35%, confirming that broad
+  source count is now ahead of region-quality and dossier-quality structure.
+
+Sheet and research-packet topology:
+
+- Main sheets: 8379.
+- Sub sheets: 243.
+- Independent text sheets: 242.
+- Inferred parent main sheets: 455.
+- Main sheets with more than two sub sheets: 359.
+- Main sheets with more than five text sheets: 5.
+- Assignment audit dispositions: main_sheet_candidate = 7933; subsheet_visual =
+  491; text_sheet_candidate = 198; dedupe_child_record = 60;
+  appendix_or_text_sheet = 55; group review = 105.
+- Main-sheet research value audit actions: demote_to_sub = 4960; keep_main =
+  3211; promote_text_or_appendix = 189; demote_to_card = 15;
+  keep_main_add_editorial_text = 4.
+- This confirms that the archive has enough object/source mass to continue
+  building, but many current main sheets are still object records rather than
+  fully formed research packets.
+
+Integrity and gate findings:
+
+- IMG state contract passed.
+- Public surface integrity found 6 exact repeated image URL groups affecting 12
+  surfaces. These are reviewable grouping/dedupe candidates, mostly from
+  Another Graphic and Barjeel, not a rebuild failure.
+- Image release gate fails only on verified-open and weighted publication-grade
+  targets. The biggest weighted blockers are Cooper Hewitt, Wellcome, Library of
+  Congress, Georgia State University Digital Collections, Art Institute of
+  Chicago, Internet Archive, V&A, DigitalNZ, Gallica, Te Papa, and NAIDOC.
+- Period priority now ranks 1930-1970 highest for next capture repair because it
+  has the largest source gap and still needs stronger image/open evidence.
+  2000-2026 also remains important because its weighted image coverage is only
+  70.65% despite good source count.
+
+Next recommended round:
+
+- Do not run a broad random Commons pass first. Target the verified-open and
+  weighted publication gaps by upgrading or replacing blocker source families
+  with explicit open-image evidence, especially Cooper Hewitt, Wellcome, LOC,
+  GSV/CONTENTdm, DigitalNZ, Te Papa, NAIDOC, Gallica, V&A, and Art Institute of
+  Chicago.
+- Continue low-coverage region work, but bias toward Latin America, Oceania, and
+  underfilled Africa/South Asia subsets because this v2 pass still skewed toward
+  Eastern Europe, MENA, and Southeast Asia after strict filtering.
+- Add a dedupe/grouping pass for repeated-image records and a research-packet
+  classification pass before any large main/sub demotion is applied.
+
+Files:
+
+- `scripts/run_commons_open_region_balance_image_capture_2026_v2.py`
+- `scripts/run_midcentury_capture_1930_1970.py`
+- `scripts/rebuild_public_surfaces_from_records.py`
+- `data/capture_batch_commons_open_region_balance_image_2026_v2_records.csv`
+- `data/capture_batch_commons_open_region_balance_image_2026_v2_source_summary.csv`
+- `data/commons_open_region_balance_image_2026_v2_quality.csv`
+- `data/capture_runs/capture_run_manifest_v1.csv`
+- `docs/capture/COMMONS_OPEN_REGION_BALANCE_IMAGE_CAPTURE_2026_v2.md`
+- `generated/public_surfaces_v1.json`
+- `data/public_surface_mock_v0.json`
+- `frontend/public/data/public_surface_mock_v0.json`
+- `frontend/src/data/public_surface_mock_v0.json`
+- Updated release, coverage, image, sheet topology, assignment, and integrity
+  audit outputs under `data/` and `docs/capture/`.
+
 ## 2026-06-10 - Region/Geography Enrichment Confidence Gate v1
 
 Scope:

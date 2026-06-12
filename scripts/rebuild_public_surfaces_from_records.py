@@ -61,12 +61,36 @@ PAYLOAD_PATHS = [
     DATA / "public_surface_mock_v0.json",
 ]
 
+CAPTURE_RUN_MANIFEST = DATA / "capture_runs" / "capture_run_manifest_v1.csv"
+
 
 def read_rows(path: Path) -> list[dict[str, str]]:
     if not path.exists():
         return []
     with path.open(encoding="utf-8", newline="") as f:
         return [dict(row) for row in csv.DictReader(f)]
+
+
+def rebuild_record_files() -> list[Path]:
+    """Return public-surface record inputs with optional manifest extensions.
+
+    The historical list above remains the source of truth for existing batches.
+    The manifest hook lets later capture runs opt into rebuild without editing
+    this script for every new records CSV.
+    """
+    files = list(RECORD_FILES)
+    seen = {path.resolve() for path in files}
+    for row in read_rows(CAPTURE_RUN_MANIFEST):
+        if row.get("included_in_public_rebuild") != "true":
+            continue
+        records_csv = row.get("records_csv", "")
+        if not records_csv:
+            continue
+        path = (ROOT / records_csv).resolve()
+        if path.exists() and path not in seen:
+            files.append(path)
+            seen.add(path)
+    return files
 
 
 def fallback_summary(row: dict[str, str]) -> str:
@@ -1224,7 +1248,7 @@ def build_research_dossiers(payload: dict) -> dict:
 
 def main() -> None:
     rows: list[dict[str, str]] = []
-    for path in RECORD_FILES:
+    for path in rebuild_record_files():
         rows.extend(read_rows(path))
     rows = dedupe_rows([normalize_public_date_fields(fill_enrichment_defaults(row)) for row in rows])
     rows.sort(key=lambda r: (row_sort_year(r), r.get("source_title", "")))
