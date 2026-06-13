@@ -13,12 +13,12 @@ PAYLOAD = ROOT / "generated" / "public_surfaces_v1.json"
 PRE_SURFACE_SOURCE_REGISTRY_GLOB = "nonmainstream_source_success_registry_2026_v*.csv"
 IMAGE_READY = {"IMG01", "IMG02", "IMG03"}
 BLOCKING_STATES = {"IMG00", "IMG04"}
-MIN_SOURCE_VISIBLE_COVERAGE = 95
-MIN_VERIFIED_OPEN_COVERAGE = 85
+MIN_SOURCE_VISIBLE_COVERAGE = 99
+MIN_VERIFIED_OPEN_COVERAGE = 95
 MIN_WEIGHTED_PUBLICATION_COVERAGE = 95
 MIN_RELEASE_SOURCE_COVERAGE = 80
-RELEASE_SOURCE_TARGET = 2000
-MAX_IMG04_COVERAGE: float | None = None
+RELEASE_SOURCE_TARGET = 20000
+MAX_IMG04_COVERAGE: float | None = 10
 TARGET_COVERAGE = 100
 
 # Renderability is not the same as publication-grade image coverage.
@@ -77,6 +77,10 @@ def capture_source_count() -> int:
                 if source_name:
                     sources.add(source_name)
     return len(sources)
+
+
+def public_payload_source_count(surfaces: list[dict]) -> int:
+    return len({clean(surface.get("sourceName")) for surface in surfaces if clean(surface.get("sourceName"))})
 
 
 def pre_surface_source_registry_count() -> int:
@@ -150,7 +154,8 @@ def main() -> None:
     object_img04_count = object_counts.get("IMG04", 0)
     object_img04_coverage = pct(object_img04_count, object_total)
 
-    active_source_count = capture_source_count()
+    active_source_count = public_payload_source_count(surfaces)
+    capture_distinct_source_count = capture_source_count()
     pre_surface_count = pre_surface_source_registry_count()
     release_source_coverage = pct(active_source_count, RELEASE_SOURCE_TARGET)
     sources_needed_for_target = max(0, RELEASE_SOURCE_TARGET - active_source_count)
@@ -210,6 +215,7 @@ def main() -> None:
     print(f"maximum_img04_gate={'pending' if MAX_IMG04_COVERAGE is None else str(MAX_IMG04_COVERAGE) + '% object-level'}")
     print(f"release_source_target={RELEASE_SOURCE_TARGET}")
     print(f"release_active_source_count={active_source_count}")
+    print(f"capture_distinct_source_count={capture_distinct_source_count}")
     print(f"pre_surface_source_registry_count={pre_surface_count}")
     print(f"release_source_coverage={release_source_coverage}%")
     print(f"minimum_release_source_coverage={MIN_RELEASE_SOURCE_COVERAGE}%")

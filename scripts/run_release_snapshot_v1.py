@@ -38,13 +38,15 @@ PERIOD = DATA / "release_snapshot_period_main_sheets_v1.csv"
 REGION = DATA / "release_snapshot_region_v1.csv"
 REPORT = DOCS / "RELEASE_SNAPSHOT_v1.md"
 
-RELEASE_SOURCE_TARGET = 2000
+RELEASE_SOURCE_TARGET = 20000
 MIN_RELEASE_SOURCE_COVERAGE = 80
-MIN_OBJECT_SOURCE_VISIBLE = 96
-MIN_OBJECT_VERIFIED_OPEN = 85
+MIN_OBJECT_SOURCE_VISIBLE = 99
+MIN_OBJECT_VERIFIED_OPEN = 95
 MIN_OBJECT_WEIGHTED_PUBLICATION = 95
 MAX_OBJECT_IMG04 = 10
 YEAR_2026_WARNING_RATE = 25
+MIN_STRICT_DISTRIBUTION_SOURCE_COVERAGE = 80
+MIN_RESEARCH_QUALITY_ADJUSTED_SOURCE_COVERAGE = 80
 
 SUMMARY_FIELDS = ["metric", "value", "gate", "notes"]
 PERIOD_FIELDS = ["period_band", "main_sheet_count", "surface_count", "source_visible_surface_count", "img04_surface_count"]
@@ -158,7 +160,18 @@ def build_rows() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[
     ):
         value = source_coverage.get(metric)
         if value:
-            summary_rows.append({"metric": metric, "value": value, "gate": "", "notes": "Imported from source coverage audit."})
+            metric_gate = ""
+            notes = "Imported from source coverage audit."
+            if metric == "source_pool_period_fill_rate":
+                metric_gate = gate(float(value) >= MIN_RELEASE_SOURCE_COVERAGE)
+                notes = f"Imported from source coverage audit; minimum release capacity fill={MIN_RELEASE_SOURCE_COVERAGE}%."
+            elif metric == "strict_distribution_adjusted_source_coverage_rate":
+                metric_gate = gate(float(value) >= MIN_STRICT_DISTRIBUTION_SOURCE_COVERAGE)
+                notes = f"Imported from source coverage audit; minimum strict distribution coverage={MIN_STRICT_DISTRIBUTION_SOURCE_COVERAGE}%."
+            elif metric == "research_quality_adjusted_source_coverage_rate_v2":
+                metric_gate = gate(float(value) >= MIN_RESEARCH_QUALITY_ADJUSTED_SOURCE_COVERAGE)
+                notes = f"Imported from source coverage audit; minimum research-quality adjusted coverage={MIN_RESEARCH_QUALITY_ADJUSTED_SOURCE_COVERAGE}%."
+            summary_rows.append({"metric": metric, "value": value, "gate": metric_gate, "notes": notes})
     for state, count in sorted(states.items()):
         summary_rows.append({"metric": f"surface_image_state:{state}", "value": str(count), "gate": "", "notes": "Surface image state distribution."})
 

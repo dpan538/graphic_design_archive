@@ -4,25 +4,28 @@ Scope: consolidated read-only release-health snapshot. Object-level image metric
 
 ## Gate Summary
 
-- archive_active_public_sources: 12342 · pass (Distinct public-surface source names; release target=2000.)
-- release_source_coverage_rate: 617.10 · pass (Minimum release source coverage=80%.)
-- object_source_visible_rate: 97.91 · pass (Minimum object source-visible=96%.)
-- object_verified_open_rate: 87.96 · pass (Minimum object verified-open=85%.)
+- archive_active_public_sources: 12342 · fail (Distinct public-surface source names; release target=20000.)
+- release_source_coverage_rate: 61.71 · fail (Minimum release source coverage=80%.)
+- object_source_visible_rate: 97.91 · fail (Minimum object source-visible=99%.)
+- object_verified_open_rate: 87.96 · fail (Minimum object verified-open=95%.)
 - object_weighted_publication_grade_rate: 93.36 · fail (Object-level max image weight per object; repeated photos are not double-counted.)
 - object_img04_rate: 1.78 · pass (Maximum object IMG04 target=10%.)
 - year_2026_surface_rate: 0.39 · pass (Warning if more than 25% of public surfaces date to 2026.)
 - post_2026_or_error_count: 0 · pass (Future year date sanity check.)
+- source_pool_period_fill_rate: 51.45 · fail (Imported from source coverage audit; minimum release capacity fill=80%.)
+- strict_distribution_adjusted_source_coverage_rate: 15.62 · fail (Imported from source coverage audit; minimum strict distribution coverage=80%.)
+- research_quality_adjusted_source_coverage_rate_v2: 1.44 · fail (Imported from source coverage audit; minimum research-quality adjusted coverage=80%.)
 
 ## Core Metrics
 
 - public_surfaces: 13680 (Generated public surfaces.)
-- archive_active_public_sources: 12342 (Distinct public-surface source names; release target=2000.)
-- release_source_coverage_rate: 617.10 (Minimum release source coverage=80%.)
+- archive_active_public_sources: 12342 (Distinct public-surface source names; release target=20000.)
+- release_source_coverage_rate: 61.71 (Minimum release source coverage=80%.)
 - surface_source_visible_rate: 97.80 (Surface-level IMG01/IMG02/IMG03.)
 - surface_verified_open_rate: 87.83 (Surface-level reviewed IMG03.)
 - object_count: 13659 (Object-level grouping; repeated views/photos count once.)
-- object_source_visible_rate: 97.91 (Minimum object source-visible=96%.)
-- object_verified_open_rate: 87.96 (Minimum object verified-open=85%.)
+- object_source_visible_rate: 97.91 (Minimum object source-visible=99%.)
+- object_verified_open_rate: 87.96 (Minimum object verified-open=95%.)
 - object_weighted_publication_grade_rate: 93.36 (Object-level max image weight per object; repeated photos are not double-counted.)
 - object_img04_rate: 1.78 (Maximum object IMG04 target=10%.)
 - main_sheet_count: 13419 (publicationRole=main_sheet.)
@@ -72,4 +75,11 @@ Scope: consolidated read-only release-health snapshot. Object-level image metric
 
 ## Failed Gates
 
+- archive_active_public_sources: 12342 (Distinct public-surface source names; release target=20000.)
+- release_source_coverage_rate: 61.71 (Minimum release source coverage=80%.)
+- object_source_visible_rate: 97.91 (Minimum object source-visible=99%.)
+- object_verified_open_rate: 87.96 (Minimum object verified-open=95%.)
 - object_weighted_publication_grade_rate: 93.36 (Object-level max image weight per object; repeated photos are not double-counted.)
+- source_pool_period_fill_rate: 51.45 (Imported from source coverage audit; minimum release capacity fill=80%.)
+- strict_distribution_adjusted_source_coverage_rate: 15.62 (Imported from source coverage audit; minimum strict distribution coverage=80%.)
+- research_quality_adjusted_source_coverage_rate_v2: 1.44 (Imported from source coverage audit; minimum research-quality adjusted coverage=80%.)

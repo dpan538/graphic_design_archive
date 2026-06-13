@@ -8136,3 +8136,94 @@ Next:
   data layer is migrated.
 - Next optimization step should formalize release-gate/source-count semantics
   and then prioritize rights/open-image repair before another large capture run.
+
+## 2026-06-13 - Release Gate Contract v2
+
+Scope:
+
+- Formalized the updated launch gate after the project target moved from the
+  earlier 2,000-source milestone to a 20,000 public-active-source launch target.
+- This pass changed gate thresholds and reports only. It did not capture new
+  sources, rebuild surfaces, download images, alter rights states, or edit
+  research-repo files.
+
+Gate contract:
+
+- Public active source target: 20,000.
+- Minimum public source coverage: 80%.
+- Object source-visible target: at least 99%.
+- Object verified-open target: at least 95%.
+- Object weighted publication-grade image target: at least 95%.
+- Object IMG04 cap: at most 10%.
+- Future date errors: 0.
+
+Source-count semantics:
+
+- `archive_active_public_sources` is now documented as the launch-facing source
+  count: distinct public `sourceName` values present in the generated public
+  payload after rebuild.
+- `capture_distinct_source_count`, source-prospect rows, and pre-surface source
+  registries remain diagnostics. They do not count as successful release
+  sources until item/source evidence becomes part of the public payload.
+- This resolves the earlier misleading 100%/617% style source coverage signal:
+  the old 2,000-source capacity target was obsolete.
+
+Changed files:
+
+- `scripts/audit_source_coverage_rate_v1.py`
+- `scripts/run_release_snapshot_v1.py`
+- `scripts/audit_image_release_gate.py`
+- `docs/capture/RELEASE_GATE_CONTRACT_v2.md`
+- Refreshed `data/source_coverage_rate_v1.csv`,
+  `data/source_coverage_period_breakdown_v1.csv`,
+  `data/source_coverage_region_breakdown_v1.csv`,
+  `data/source_coverage_rate_v2.csv`,
+  `docs/capture/SOURCE_COVERAGE_RATE_v1.md`,
+  `docs/capture/SOURCE_COVERAGE_RATE_v2.md`,
+  `data/release_snapshot_v1.csv`, and
+  `docs/capture/RELEASE_SNAPSHOT_v1.md`.
+
+Current baseline under v2 gate:
+
+- Public surfaces: 13,680.
+- Archive active public sources: 12,342 / 20,000 = 61.71%.
+- Capture distinct source count: 13,560.
+- Source pool period fill rate: 51.45%.
+- Strict distribution-adjusted source coverage: 15.62%.
+- Research-quality adjusted source coverage v2: 1.44%.
+- Object source-visible: 97.91%.
+- Object verified-open: 87.96%.
+- Object weighted publication-grade image rate: 93.36%.
+- Object IMG04: 1.78%.
+- Future-date errors: 0.
+
+Gate result:
+
+- Failing: public active source coverage, source pool period fill, strict
+  distribution-adjusted source coverage, research-quality adjusted source
+  coverage, object source-visible, object verified-open, and object weighted
+  publication-grade image rate.
+- Passing: object IMG04 cap and future-date sanity.
+
+Immediate priorities from the updated gate:
+
+- Add at least 3,658 public-payload-ready sources to reach the 80% source
+  minimum and about 7,658 to reach the full 20,000-source target.
+- Prioritize rights/open-image repair for top weighted-gap families:
+  Cooper Hewitt, Wellcome, Library of Congress, Georgia State CONTENTdm, Art
+  Institute of Chicago, Internet Archive, V&A, Te Papa, DigitalNZ, NAIDOC,
+  Princeton/Figgy, and The Met.
+- Continue regional normalization and research-packet grouping before relying
+  on source volume alone, because strict distribution and research-quality
+  adjusted coverage remain very low.
+
+Verification:
+
+- `python3 -m py_compile scripts/audit_source_coverage_rate_v1.py
+  scripts/audit_source_coverage_rate_v2.py scripts/run_release_snapshot_v1.py
+  scripts/audit_image_release_gate.py` passed.
+- `python3 scripts/audit_source_coverage_rate_v1.py`,
+  `python3 scripts/audit_source_coverage_rate_v2.py`, and
+  `python3 scripts/run_release_snapshot_v1.py` passed.
+- `python3 scripts/audit_image_release_gate.py` exited non-zero as expected
+  because the updated release gates are not yet met.

@@ -1,13 +1,13 @@
 metric,value,notes
-active_source_count,6499,Distinct source_name values with at least one captured record.
+active_source_count,13560,Distinct source_name values with at least one captured record.
 candidate_source_count,298,Candidate/prospect sources in source_prospect_registry_v2; not counted as active coverage.
 pre_surface_source_registry_count,3500,"Official source sites verified as reachable, but not counted as active source coverage until item-level image-bearing surfaces are built."
-weighted_active_source_points,6358.75,Sum of active source region weights. Non-West/local regions carry higher weights.
-weighted_source_target,2000.00,"Final release source target requested as at least 2000 sources, expressed as weighted source points."
+weighted_active_source_points,15195.25,Sum of active source region weights. Non-West/local regions carry higher weights.
+weighted_source_target,20000.00,"Final release source target requested as at least 20000 sources, expressed as weighted source points."
 minimum_release_source_coverage_rate,80.00,Release gate threshold for source coverage before publication readiness.
-release_source_coverage_gate_passed,true,True only when source_pool_rate reaches the configured final release coverage threshold.
-source_pool_rate,100.00,weighted_active_source_points / weighted_source_target.
-region_weighted_balance_rate,28.96,Weighted average of per-region active-source coverage against regional source targets.
-time_weighted_balance_rate,100.00,Weighted average of active-source coverage across period bands.
-source_coverage_rate_v1,100.00,source_pool_rate * time_weighted_balance_rate. The source pool itself is already region-weighted.
-strict_distribution_adjusted_source_coverage_rate,28.96,source_pool_rate * region_weighted_balance_rate * time_weighted_balance_rate; diagnostic only.
+release_source_coverage_gate_passed,false,True only when source_pool_rate reaches the configured final release coverage threshold.
+source_pool_rate,75.98,weighted_active_source_points / weighted_source_target.
+region_weighted_balance_rate,30.36,Weighted average of per-region active-source coverage against regional source targets.
+time_weighted_balance_rate,67.72,Weighted average of active-source coverage across period bands.
+source_coverage_rate_v1,51.45,source_pool_rate * time_weighted_balance_rate. The source pool itself is already region-weighted.
+strict_distribution_adjusted_source_coverage_rate,15.62,source_pool_rate * region_weighted_balance_rate * time_weighted_balance_rate; diagnostic only.
