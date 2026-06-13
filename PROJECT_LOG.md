@@ -9008,3 +9008,53 @@ Verification:
 - `python3 -m py_compile scripts/build_loc_manual_img03_rebuild_queue_v1.py`
   passed.
 - `python3 scripts/build_loc_manual_img03_rebuild_queue_v1.py` passed.
+
+## 2026-06-13 - LOC Manual IMG03 Apply Dry Run v1
+
+Scope:
+
+- Planned a controlled capture-record patch for the 20 LOC manual IMG03 rebuild
+  candidates.
+- This was a dry-run only. It did not write target capture CSVs, rebuild
+  surfaces, download images, or change archive metrics.
+
+Files:
+
+- `scripts/dry_run_loc_manual_img03_apply_v1.py`
+- `data/loc_manual_img03_apply_dry_run_v1.csv`
+- `data/loc_manual_img03_apply_dry_run_summary_v1.csv`
+- `docs/capture/LOC_MANUAL_IMG03_APPLY_DRY_RUN_v1.md`
+
+Results:
+
+- Planned rows: 20.
+- Ready for manual apply: 20.
+- Blocked/review-required rows: 0.
+- Automatic upgrades allowed: 0.
+- Target files:
+  - `data/capture_batch_midcentury_1930_1970_records.csv`: 13 rows.
+  - `data/capture_batch_early_region_1830_1930_records.csv`: 5 rows.
+  - `data/capture_batch_early_region_1830_1880_records.csv`: 2 rows.
+- Current image state for all planned rows: IMG01.
+
+Planned field changes for a future apply pass:
+
+- `image_presence_code`: IMG01 -> IMG03.
+- `image_frame_behavior`: `open_image_frame`.
+- `image_state_confidence`: `high`.
+- `source_rights_text` / `rights_basis`: LOC item rights/advisory text.
+- `image_url_detected`: LOC source-hosted image URL.
+- `iiif_or_viewer_available`: source record URL remains visible.
+
+Interpretation:
+
+- The dry-run confirms the LOC repair is technically ready for a controlled
+  apply/rebuild pass, but no archive state changed in this step.
+- Because generated public payloads and frontend data are already dirty in the
+  current worktree from other work, the real apply/rebuild should be isolated
+  in a clean rebuild step rather than mixed with unrelated payload changes.
+
+Verification:
+
+- `python3 -m py_compile scripts/dry_run_loc_manual_img03_apply_v1.py` passed.
+- `python3 scripts/dry_run_loc_manual_img03_apply_v1.py` passed.
