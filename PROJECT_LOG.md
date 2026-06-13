@@ -8673,3 +8673,51 @@ Verification:
 - `python3 -m py_compile scripts/audit_gsu_rights_repair_preflight_v1.py`
   passed.
 - `python3 scripts/audit_gsu_rights_repair_preflight_v1.py` passed.
+
+## 2026-06-13 - AIC Rights Repair Preflight v1
+
+Scope:
+
+- Continued P0 rights-repair execution review with Art Institute of Chicago API
+  candidates.
+- This pass used already captured local CSV/JSON only. It did not call AIC
+  APIs, fetch item pages, download images, mutate surfaces, or upgrade
+  IMG01/IMG03.
+
+Files:
+
+- `scripts/audit_aic_rights_repair_preflight_v1.py`
+- `data/aic_rights_repair_preflight_v1.csv`
+- `data/aic_rights_repair_summary_v1.csv`
+- `docs/capture/AIC_RIGHTS_REPAIR_PREFLIGHT_v1.md`
+
+Results:
+
+- AIC repair candidate rows: 36.
+- Local records found: 36.
+- Local raw AIC JSON records found: 27.
+- Candidate weighted-publication gap points represented: 36.00.
+- Automatic upgrades allowed: 0.
+- Original repair families: 35 `img00_source_visible_repair`,
+  1 `img04_text_state_review`.
+- Local image states: 35 IMG00, 1 legacy local IMG03.
+- Raw rights signals: 26 raw image identifiers with `is_public_domain=false`,
+  9 raw records missing, 1 raw record without image identifier.
+- Upgrade recommendation `no_upgrade`: 36 rows / 36.00 weighted points.
+
+Interpretation:
+
+- AIC is not an immediate verified-open repair family in this candidate set.
+  Most image-bearing candidates have local raw search metadata indicating
+  `is_public_domain=false`.
+- AIC image identifiers and IIIF URLs are not sufficient evidence for
+  publication-grade open display without item-level public-domain confirmation.
+- Future AIC work should use item API probes to confirm whether any records have
+  changed rights status, then rebuild only rows with explicit public-domain
+  evidence.
+
+Verification:
+
+- `python3 -m py_compile scripts/audit_aic_rights_repair_preflight_v1.py`
+  passed.
+- `python3 scripts/audit_aic_rights_repair_preflight_v1.py` passed.
