@@ -263,6 +263,41 @@ def img_fields(
     return fields
 
 
+def publication_grade_open_license(value: str) -> bool:
+    """Return True only for explicit item-level open/public-domain licenses."""
+    low = mc.text(value).lower()
+    if not low:
+        return False
+    restrictive = (
+        "by-nc",
+        "by-nd",
+        "noncommercial",
+        "non-commercial",
+        "no derivatives",
+        "no-derivatives",
+        "sampling",
+    )
+    if any(marker in low for marker in restrictive):
+        return False
+    public_domain_markers = (
+        "cc0",
+        "creativecommons.org/publicdomain",
+        "public domain mark",
+        "public-domain",
+        "public domain",
+        "rightsstatements.org/vocab/noc-oklr",
+    )
+    if any(marker in low for marker in public_domain_markers):
+        return True
+    if re.search(r"\bpdm\b", low):
+        return True
+    if "creativecommons.org/licenses/by/" in low or "creativecommons.org/licenses/by-sa/" in low:
+        return True
+    if re.search(r"\bcc[-\s]?by(?:[-\s]?sa)?\b", low):
+        return True
+    return False
+
+
 def save_raw(payloads: list[tuple[str, Any]]) -> dict[str, str]:
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     paths: dict[str, str] = {}
@@ -388,8 +423,7 @@ def rows_from_wellcome(plan: dict[str, Any]) -> tuple[list[dict[str, str]], list
                     manifest = url_value
                     break
             thumbnail = iiif_manifest_thumbnail(manifest)
-            license_lower = license_text.lower()
-            if manifest and any(open_token in license_lower for open_token in ["pdm", "cc-by", "cc0", "public-domain"]):
+            if manifest and publication_grade_open_license(license_text):
                 rights = img_fields(
                     "IMG03",
                     f"Wellcome location exposes open licence signal: {license_text}.",
@@ -504,7 +538,7 @@ def rows_from_internet_archive(plan: dict[str, Any]) -> tuple[list[dict[str, str
                 continue
             record_url = f"https://archive.org/details/{identifier}"
             license_url = mc.text(item.get("licenseurl"))
-            if any(token in license_url.lower() for token in ["creativecommons.org/publicdomain", "/by/", "cc0"]):
+            if publication_grade_open_license(license_url):
                 img_code = "IMG03"
                 basis = f"Internet Archive search result exposes explicit licence URL: {license_url}."
                 local_copy = False

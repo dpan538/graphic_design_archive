@@ -187,6 +187,7 @@ def row_from_raw(path: Path, detail: dict[str, Any]) -> dict[str, str] | None:
         "source_object_type": fields.get("type") or "CONTENTdm digital object",
         "source_medium": medium,
         "source_collection": collection_name,
+        **rights,
         "source_description": description,
         "source_notes": clean("; ".join([fields.get("identi", ""), fields.get("curato", ""), fields.get("digita", "")]), max_chars=900),
         "source_subjects": subjects,
@@ -194,7 +195,6 @@ def row_from_raw(path: Path, detail: dict[str, Any]) -> dict[str, str] | None:
         "rights_uri": "",
         "raw_json_path": str(path.relative_to(ROOT)),
         "access_date": ACCESS_DATE,
-        **rights,
     }
     row["image_expectation"] = "expected"
     row["parser_status"] = "ok"

@@ -8867,3 +8867,52 @@ Verification:
 - `python3 -m py_compile scripts/summarize_p0_rights_repair_preflight_v1.py`
   passed.
 - `python3 scripts/summarize_p0_rights_repair_preflight_v1.py` passed.
+
+## 2026-06-13 - Capture Rights Rule Hardening v1
+
+Scope:
+
+- Hardened future capture behavior before the next large source tranche.
+- This pass did not fetch records, download images, mutate surfaces, rebuild
+  public payloads, or upgrade IMG01/IMG03.
+
+Files:
+
+- `scripts/run_midcentury_expansion_capture_1931_1970.py`
+- `scripts/run_gsu_contentdm_image_ready_1830_1970.py`
+- `scripts/harvest_gsu_contentdm_raw_records.py`
+- `scripts/audit_capture_rights_rule_hardening_v1.py`
+- `data/capture_rights_rule_hardening_v1.csv`
+- `docs/capture/CAPTURE_RIGHTS_RULE_HARDENING_v1.md`
+
+Changes:
+
+- Replaced permissive Wellcome/Internet Archive license substring checks with
+  `publication_grade_open_license()`.
+- `cc-by-nc`, `cc-by-nd`, and `cc-by-nc-nd` are now blocked from
+  publication-grade open classification.
+- Explicit `CC BY`, `CC BY-SA`, `CC0`, public-domain, and `PDM` signals remain
+  accepted as item-level open/public-domain candidates.
+- Moved GSU CONTENTdm `**rights` expansion before the explicit
+  `source_rights_text` assignment so local rights statements are not overwritten
+  by image-display basis text.
+
+Audit:
+
+- `scripts/audit_capture_rights_rule_hardening_v1.py` ran 10 local checks with
+  0 failures.
+- The audit confirms restricted Creative Commons variants are blocked and GSU
+  local rights statements are preserved separately from display-basis fields.
+
+Interpretation:
+
+- This is a gate-preparation fix for future capture batches. It does not
+  retroactively repair existing Wellcome, IA, or GSU rows.
+- Existing affected rows remain in the rights repair/rebuild queue and should
+  be handled only after item-level evidence is captured.
+
+Verification:
+
+- `python3 -m py_compile scripts/audit_capture_rights_rule_hardening_v1.py scripts/run_midcentury_expansion_capture_1931_1970.py scripts/run_gsu_contentdm_image_ready_1830_1970.py scripts/harvest_gsu_contentdm_raw_records.py scripts/harvest_gsu_contentdm_raw_records_1971_2026.py`
+  passed.
+- `python3 scripts/audit_capture_rights_rule_hardening_v1.py` passed.

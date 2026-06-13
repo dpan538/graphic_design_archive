@@ -193,6 +193,7 @@ def row_from_item(item: dict[str, Any], detail: dict[str, Any], direction_id: st
         "source_object_type": fields.get("type") or "CONTENTdm digital object",
         "source_medium": medium,
         "source_collection": collection_name,
+        **rights,
         "source_description": description,
         "source_notes": clean("; ".join([fields.get("identi", ""), fields.get("curato", ""), fields.get("digita", "")]), max_chars=700),
         "source_subjects": subjects,
@@ -200,7 +201,6 @@ def row_from_item(item: dict[str, Any], detail: dict[str, Any], direction_id: st
         "rights_uri": "",
         "raw_json_path": raw_path,
         "access_date": ACCESS_DATE,
-        **rights,
     }
     row["image_expectation"] = "expected"
     row["parser_status"] = "ok"
