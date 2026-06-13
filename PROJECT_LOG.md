@@ -8764,3 +8764,53 @@ Verification:
 - `python3 -m py_compile scripts/audit_internet_archive_rights_repair_preflight_v1.py`
   passed.
 - `python3 scripts/audit_internet_archive_rights_repair_preflight_v1.py` passed.
+
+## 2026-06-13 - V&A Rights Repair Preflight v1
+
+Scope:
+
+- Continued P0 rights-repair execution review with V&A Collections API
+  candidates.
+- This pass used already captured local CSV records and local
+  `vam_object_*.json` object-detail payloads only. It did not call V&A APIs,
+  download images, mutate surfaces, or upgrade IMG01/IMG03.
+
+Files:
+
+- `scripts/audit_vam_rights_repair_preflight_v1.py`
+- `data/vam_rights_repair_preflight_v1.csv`
+- `data/vam_rights_repair_summary_v1.csv`
+- `docs/capture/VAM_RIGHTS_REPAIR_PREFLIGHT_v1.md`
+
+Results:
+
+- V&A repair candidate rows: 44.
+- Local object-detail raw records found: 44.
+- Candidate weighted-publication gap points represented: 30.25.
+- Automatic upgrades allowed: 0.
+- Original repair families: 25 `img02_open_rights_review`,
+  17 `img04_text_state_review`, 2 `img04_visual_record_search`.
+- Local image states: 25 IMG02, 19 IMG04.
+- Object image resolution metadata: 37 low-resolution, 7 high-resolution.
+- Object image signals: 25 with image copyright metadata, 19 with image
+  metadata but no open-rights statement.
+- Upgrade recommendation `no_upgrade`: 25 rows / 11.25 weighted points.
+- Upgrade recommendation `source_visible_repair_needed`: 19 rows / 19.00
+  weighted points.
+
+Interpretation:
+
+- V&A object-detail metadata improves source-visible triage but does not
+  provide bulk verified-open image evidence in this candidate set.
+- Rows with copyright metadata stay IMG02/IMG04 unless later item evidence
+  exposes explicit open/public-domain rights.
+- Rows with image metadata but no open-rights statement may support
+  source-visible repair, but not IMG03.
+- Compound IMG04 rows need member-level visual search rather than source-family
+  rights promotion.
+
+Verification:
+
+- `python3 -m py_compile scripts/audit_vam_rights_repair_preflight_v1.py`
+  passed.
+- `python3 scripts/audit_vam_rights_repair_preflight_v1.py` passed.

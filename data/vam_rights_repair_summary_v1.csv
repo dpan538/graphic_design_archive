@@ -1,0 +1,18 @@
+metric,value,notes
+vam_candidate_rows,44,V&A rows from image_rights_repair_candidates_v1.
+object_raw_records_found,44,Rows with local V&A object detail JSON.
+automatic_upgrade_allowed_rows,0,No automatic IMG03 upgrades are permitted by this preflight.
+candidate_weighted_gap_points,30.25,Weighted-publication gap points represented by these candidates.
+repair_family_img02_open_rights_review,25,Original repair family.
+repair_family_img04_text_state_review,17,Original repair family.
+repair_family_img04_visual_record_search,2,Original repair family.
+local_image_state_IMG02,25,Best matching local capture state.
+local_image_state_IMG04,19,Best matching local capture state.
+object_image_resolution_low,37,V&A object image resolution metadata.
+object_image_resolution_high,7,V&A object image resolution metadata.
+object_image_signal_object_image_copyright_metadata_present,25,Signal recovered from V&A object detail JSON.
+object_image_signal_object_image_metadata_without_open_rights,19,Signal recovered from V&A object detail JSON.
+rights_signal_blocked_by_object_image_copyright_metadata,25,Conservative rights-repair signal.
+rights_signal_no_source_visible_image_in_public_record,19,Conservative rights-repair signal.
+upgrade_recommendation_no_upgrade,25,11.25 weighted points.
+upgrade_recommendation_source_visible_repair_needed,19,19.00 weighted points.
