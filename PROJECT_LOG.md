@@ -8617,3 +8617,59 @@ Verification:
 - `python3 -m py_compile scripts/audit_loc_rights_repair_preflight_v1.py`
   passed.
 - `python3 scripts/audit_loc_rights_repair_preflight_v1.py` passed.
+
+## 2026-06-13 - GSU CONTENTdm Rights Repair Preflight v1
+
+Scope:
+
+- Continued P0 rights-repair execution review with Georgia State University
+  Library Digital Collections / CONTENTdm candidates.
+- This pass used already captured local CSV records plus local raw CONTENTdm
+  JSON only. It did not call CONTENTdm, fetch item pages, download images,
+  mutate surfaces, or upgrade IMG01/IMG03.
+
+Files:
+
+- `scripts/audit_gsu_rights_repair_preflight_v1.py`
+- `data/gsu_rights_repair_preflight_v1.csv`
+- `data/gsu_rights_repair_summary_v1.csv`
+- `docs/capture/GSU_RIGHTS_REPAIR_PREFLIGHT_v1.md`
+
+Results:
+
+- GSU repair candidate rows: 85.
+- Local records found: 85.
+- Local raw CONTENTdm JSON records found: 85.
+- Candidate weighted-publication gap points represented: 38.25.
+- Automatic upgrades allowed: 0.
+- Local image states: 85 IMG02.
+- Raw rights signals: 76 blocking/permission/copyright signals, 8 present but
+  unclassified rights statements, 1 raw open-rights signal.
+- Upgrade recommendation `no_upgrade`: 84 rows / 37.80 weighted points.
+- Upgrade recommendation `review_rebuild_alignment_no_automatic_upgrade`:
+  1 row / 0.45 weighted points.
+
+Important finding:
+
+- One candidate, `SURF-GSU2026R020` (`Revolution RCP Monthly`), has a local raw
+  CONTENTdm standardized rights URI of `https://creativecommons.org/publicdomain/zero/1.0/`.
+  It is not automatically upgraded; it requires manual item check and rebuild
+  alignment so the public record preserves the source rights evidence.
+- The existing GSU capture path appears to overwrite the source rights statement
+  with image-display basis text in the record CSV. A follow-up patch should
+  preserve the local rights text and image-display basis as separate evidence
+  fields.
+
+Interpretation:
+
+- GSU remains useful for regional/local print-culture coverage, but it is not a
+  bulk verified-open repair family under current evidence.
+- Later GSU capture should prioritize rights-field preservation and selective
+  CC0/open-rights rebuilding rather than assuming CONTENTdm source-hosted images
+  are publication-grade.
+
+Verification:
+
+- `python3 -m py_compile scripts/audit_gsu_rights_repair_preflight_v1.py`
+  passed.
+- `python3 scripts/audit_gsu_rights_repair_preflight_v1.py` passed.
