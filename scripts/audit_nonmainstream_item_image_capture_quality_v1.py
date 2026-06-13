@@ -514,16 +514,24 @@ def build_report(detail_rows: list[dict[str, Any]], summary_rows: list[dict[str,
     else:
         lines.append("- None.")
 
+    if geo_repairs.get("true", 0):
+        geography_interpretation = [
+            "- `source_place_text` carries country-level geography for this batch; the source-summary layer still has overbroad country buckets that should be repaired upstream before rebuild.",
+        ]
+    else:
+        geography_interpretation = [
+            "- Source-summary geography now matches the country-level `source_place_text` for this batch; the remaining blockers are design relevance, source authority, and object-level review.",
+        ]
+
     lines.extend(
         [
             "",
             "## Interpretation",
             "",
-            "- The batch has useful under-covered-region leads, but it is not safe to count all 587 records as successful active sources.",
+            f"- The batch has useful under-covered-region leads, but it is not safe to count all {len(detail_rows)} records as successful active sources.",
             "- `ready_for_item_review` records should enter a small item/surface review pass first; `manual_review_before_surface` records need geography and design-relevance confirmation.",
             "- `quarantine_not_counted` records should not be included in success totals or rebuild inputs without source replacement or manual repair.",
-            "- `source_place_text` carries country-level geography for this batch; the source-summary layer often collapses it into overbroad region buckets such as Caribbean or Caucasus.",
-            "- The next cleaning pass should repair source-summary geography upstream before using this batch to improve strict source coverage.",
+            *geography_interpretation,
             "",
             "## Output files",
             "",
@@ -537,15 +545,22 @@ def build_report(detail_rows: list[dict[str, Any]], summary_rows: list[dict[str,
     return "\n".join(lines) + "\n"
 
 
-def main() -> None:
-    records = read_csv(INPUT_RECORDS)
-    summaries = {
-        row.get("source_id", ""): row
-        for row in read_csv(INPUT_SUMMARY)
+def build_summary_lookup(summary_rows: list[dict[str, str]]) -> dict[tuple[str, str], dict[str, str]]:
+    return {
+        (row.get("source_id", ""), row.get("source_name", "")): row
+        for row in summary_rows
     }
 
+
+def main() -> None:
+    records = read_csv(INPUT_RECORDS)
+    summaries = build_summary_lookup(read_csv(INPUT_SUMMARY))
+
     detail_rows = [
-        classify_row(row, summaries.get(row.get("source_id", ""), {}))
+        classify_row(
+            row,
+            summaries.get((row.get("source_id", ""), row.get("source_name", "")), {}),
+        )
         for row in records
     ]
 

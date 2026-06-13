@@ -1,0 +1,9 @@
+metric_group,metric,value
+input,source_summary_sha256_before,6cee404a5dabd582d96fe77c35704215d32e26b3cc0e9b7d4a0e188351b0706a
+input,source_summary_sha256_after,6cee404a5dabd582d96fe77c35704215d32e26b3cc0e9b7d4a0e188351b0706a
+run,mode,dry_run_postcheck
+run,applied,false
+run,postcheck_clean,true
+count,summary_rows_checked,581
+count,duplicate_source_ids_in_records,91
+action,unchanged,581

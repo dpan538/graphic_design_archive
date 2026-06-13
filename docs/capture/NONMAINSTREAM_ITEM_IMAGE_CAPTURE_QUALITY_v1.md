@@ -52,13 +52,11 @@ Generated: 2026-06-13
 
 ## Geography repair needed
 
-- true: 424
-- false: 163
+- false: 587
 
 ## Main risk flags
 
 - missing_design_signal: 546
-- summary_geo_repair_needed: 424
 - low_surface_signal: 225
 - generic_non_design_source: 20
 - spam_or_seo_pollution: 12
@@ -98,21 +96,20 @@ Generated: 2026-06-13
 | NMIIC2026R0001 | Botswana Craft | generic_non_design_source; missing_design_signal; low_surface_signal |
 | NMIIC2026R0003 | Goodman Gallery | missing_design_signal; low_surface_signal |
 | NMIIC2026R0004 | Centre For Black And African Arts And Civilization | spam_or_seo_pollution; missing_design_signal |
-| NMIIC2026R0013 | Cafesjian Center for the Arts | summary_geo_repair_needed; missing_design_signal; low_surface_signal |
-| NMIIC2026R0043 | Museum of Religious Art Bishop Fray José Antonio de San Alberto | summary_geo_repair_needed; generic_non_design_source; missing_design_signal; low_surface_signal |
-| NMIIC2026R0047 | Biblioteca Pública Municipal German Guzmán Campos | summary_geo_repair_needed; missing_design_signal; low_surface_signal |
-| NMIIC2026R0049 | Biblioteca Pública Municipal Senderos del Saber | summary_geo_repair_needed; missing_design_signal; low_surface_signal |
-| NMIIC2026R0050 | Biblioteca Pública Municipal Prado Tolima | summary_geo_repair_needed; missing_design_signal; low_surface_signal |
-| NMIIC2026R0051 | Biblioteca Pública Municipal de Macanal | summary_geo_repair_needed; missing_design_signal; low_surface_signal |
-| NMIIC2026R0052 | Biblioteca Pública Municipal de Pelaya | summary_geo_repair_needed; missing_design_signal; low_surface_signal |
+| NMIIC2026R0013 | Cafesjian Center for the Arts | missing_design_signal; low_surface_signal |
+| NMIIC2026R0043 | Museum of Religious Art Bishop Fray José Antonio de San Alberto | generic_non_design_source; missing_design_signal; low_surface_signal |
+| NMIIC2026R0047 | Biblioteca Pública Municipal German Guzmán Campos | missing_design_signal; low_surface_signal |
+| NMIIC2026R0049 | Biblioteca Pública Municipal Senderos del Saber | missing_design_signal; low_surface_signal |
+| NMIIC2026R0050 | Biblioteca Pública Municipal Prado Tolima | missing_design_signal; low_surface_signal |
+| NMIIC2026R0051 | Biblioteca Pública Municipal de Macanal | missing_design_signal; low_surface_signal |
+| NMIIC2026R0052 | Biblioteca Pública Municipal de Pelaya | missing_design_signal; low_surface_signal |
 
 ## Interpretation
 
 - The batch has useful under-covered-region leads, but it is not safe to count all 587 records as successful active sources.
 - `ready_for_item_review` records should enter a small item/surface review pass first; `manual_review_before_surface` records need geography and design-relevance confirmation.
 - `quarantine_not_counted` records should not be included in success totals or rebuild inputs without source replacement or manual repair.
-- `source_place_text` carries country-level geography for this batch; the source-summary layer often collapses it into overbroad region buckets such as Caribbean or Caucasus.
-- The next cleaning pass should repair source-summary geography upstream before using this batch to improve strict source coverage.
+- Source-summary geography now matches the country-level `source_place_text` for this batch; the remaining blockers are design relevance, source authority, and object-level review.
 
 ## Output files
 

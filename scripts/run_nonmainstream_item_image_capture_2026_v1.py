@@ -404,6 +404,15 @@ def capture_record(row: dict[str, str], index: int) -> dict[str, str]:
     return {field: clean(base.get(field, "")) for field in FIELDNAMES}
 
 
+def split_source_place(source_place_text: str) -> tuple[str, str]:
+    parts = [part.strip() for part in clean(source_place_text).split(" / ") if part.strip()]
+    if not parts:
+        return "", ""
+    if len(parts) == 1:
+        return parts[0], ""
+    return parts[0], parts[-1]
+
+
 def main() -> None:
     socket.setdefaulttimeout(TIMEOUT)
     rows = registry_rows()
@@ -438,8 +447,8 @@ def main() -> None:
         {
             "source_id": next((record["source_id"] for record in records if record["source_name"] == source), ""),
             "source_name": source,
-            "macro_region": next((record["source_place_text"].split(" / ")[0] for record in records if record["source_name"] == source), ""),
-            "country_or_region": next((record["source_place_text"].split(" / ")[1] if " / " in record["source_place_text"] else "" for record in records if record["source_name"] == source), ""),
+            "macro_region": next((split_source_place(record["source_place_text"])[0] for record in records if record["source_name"] == source), ""),
+            "country_or_region": next((split_source_place(record["source_place_text"])[1] for record in records if record["source_name"] == source), ""),
             "captured_records": str(count),
             "image_states": "IMG02:" + str(count),
             "next_item_capture_priority": next((record["source_notes"] for record in records if record["source_name"] == source), ""),

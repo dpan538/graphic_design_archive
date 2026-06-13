@@ -1,6 +1,6 @@
 metric_group,metric,value
 input,records_sha256,22fcd9689e533eacdbc9f1ffd8a37ee09c4ae0ee6a0a27a45e2d0d78058638d7
-input,source_summary_sha256,802cd9d8f963ef820fda49598297fbf97d4e1fc2c2ee3d5381a3d15db5d6d64a
+input,source_summary_sha256,6cee404a5dabd582d96fe77c35704215d32e26b3cc0e9b7d4a0e188351b0706a
 count,records_audited,587
 count,ready_for_item_review,5
 count,manual_review_before_surface,345
@@ -17,19 +17,18 @@ macro_region,East Asia,14
 macro_region,Central Asia,8
 macro_region,South Asia,7
 macro_region,Oceania,1
-summary_macro_region,Latin America,292
-summary_macro_region,Eastern Europe,94
-summary_macro_region,Africa,88
-summary_macro_region,MENA,44
-summary_macro_region,Southeast Asia,37
-summary_macro_region,East Asia,11
+summary_macro_region,Latin America,295
+summary_macro_region,Eastern Europe,97
+summary_macro_region,Africa,81
+summary_macro_region,MENA,40
+summary_macro_region,Southeast Asia,39
+summary_macro_region,East Asia,13
 summary_macro_region,Central Asia,8
-summary_macro_region,South Asia,6
-summary_macro_region,(blank),5
-summary_macro_region,Oceania,2
+summary_macro_region,South Asia,7
+summary_macro_region,(blank),6
+summary_macro_region,Oceania,1
 geo_precision,country_from_source_place,587
-geo_repair_needed,true,424
-geo_repair_needed,false,163
+geo_repair_needed,false,587
 ready_macro_region,Latin America,4
 ready_macro_region,Southeast Asia,1
 authority_tier,museum,304
@@ -43,7 +42,6 @@ authority_tier,national_museum,12
 authority_tier,institute,6
 authority_tier,national_archive,2
 risk_flag,missing_design_signal,546
-risk_flag,summary_geo_repair_needed,424
 risk_flag,low_surface_signal,225
 risk_flag,generic_non_design_source,20
 risk_flag,spam_or_seo_pollution,12

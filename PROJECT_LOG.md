@@ -9268,3 +9268,100 @@ Verification:
 
 - `python3 -m py_compile scripts/audit_nonmainstream_item_image_capture_quality_v1.py` passed.
 - `python3 scripts/audit_nonmainstream_item_image_capture_quality_v1.py` passed.
+
+## 2026-06-13 - Non-mainstream Source-summary Geography Repair v1
+
+Scope:
+
+- Fixed the non-mainstream item/image capture generator so source summaries
+  derive geography from the first and last `source_place_text` segments.
+  Example: `Latin America / Caribbean / Argentina` now becomes
+  `Latin America / Argentina`, not `Latin America / Caribbean`.
+- Added a guarded source-summary repair/postcheck script for the existing
+  non-mainstream item/image capture batch.
+- Applied the repair to
+  `data/capture_batch_nonmainstream_item_image_2026_source_summary.csv`.
+- Re-ran the non-mainstream item/image capture quality audit after repair.
+- This pass did not fetch network data, download images, mutate capture
+  records, upgrade IMG01/IMG03, rebuild public surfaces, or touch frontend
+  payload mirrors.
+
+Root cause:
+
+- The earlier summary generator used the middle path segment as
+  `country_or_region`. That collapsed three-part paths into broad buckets such
+  as `Caribbean`, `Caucasus`, and `Indigenous`, which would have inflated
+  source coverage without adding country-level release evidence.
+- The capture-record layer already carried the country-level evidence in
+  `source_place_text`; the repair is therefore a deterministic local
+  normalization, not a new source claim.
+
+Repair result:
+
+- Source summary rows checked: 581.
+- Net source-summary rows changed versus the pre-repair tracked baseline: 393.
+- Repaired old buckets: Caribbean 295, Caucasus 97, Indigenous 1.
+- Main repaired target countries: Colombia 141, Argentina 79, Peru 22,
+  Uruguay 19, Bosnia and Herzegovina 15, Bulgaria 15, Serbia 15, Romania 12,
+  Armenia 10, Belarus 9, Chile 8, Bolivia 7, North Macedonia 6, Ukraine 5.
+- Duplicate source IDs in capture records: 91. The repair and audit now key
+  source summaries by `source_id` plus `source_name`, not source ID alone.
+- Source summary SHA-256 changed from
+  `802cd9d8f963ef820fda49598297fbf97d4e1fc2c2ee3d5381a3d15db5d6d64a`
+  to `6cee404a5dabd582d96fe77c35704215d32e26b3cc0e9b7d4a0e188351b0706a`.
+- Final repair postcheck: 581 unchanged rows, `postcheck_clean=true`.
+
+Post-repair quality audit:
+
+- Records audited: 587.
+- Ready for item review: 5.
+- Manual review before surface: 345.
+- Quarantine / not counted: 237.
+- Geography precision: 587 `country_from_source_place`.
+- Source-summary geography repair needed: 0.
+- Main remaining risk flags: missing design signal 546, low surface signal
+  225, generic non-design source 20, spam/SEO pollution 12, QID source name 4.
+
+Interpretation:
+
+- The geography-summary bug is fixed for this batch and for future runs of the
+  current generator.
+- These rows still remain IMG02 and do not become successful active sources
+  until item/surface review confirms object-level design relevance and a valid
+  source route.
+- The next large capture round should use stronger design-signal and authority
+  filters up front. Quarantine rows should stay out of success totals and
+  rebuild inputs unless a later manual/source replacement pass repairs them.
+- A full frontend/public-surface rebuild remains deferred; this was a data
+  cleaning layer intended to make the next long capture safer.
+
+Files:
+
+- `scripts/run_nonmainstream_item_image_capture_2026_v1.py`
+- `scripts/repair_nonmainstream_item_image_source_summary_geo_v1.py`
+- `scripts/audit_nonmainstream_item_image_capture_quality_v1.py`
+- `data/capture_batch_nonmainstream_item_image_2026_source_summary.csv`
+- `data/nonmainstream_item_image_source_summary_geo_repair_plan_v1.csv`
+- `data/nonmainstream_item_image_source_summary_geo_repair_summary_v1.csv`
+- `data/nonmainstream_item_image_capture_quality_v1.csv`
+- `data/nonmainstream_item_image_capture_quality_summary_v1.csv`
+- `data/nonmainstream_item_image_capture_ready_queue_v1.csv`
+- `data/nonmainstream_item_image_capture_manual_review_v1.csv`
+- `data/nonmainstream_item_image_capture_quarantine_v1.csv`
+- `docs/capture/NONMAINSTREAM_ITEM_IMAGE_SOURCE_SUMMARY_GEO_REPAIR_v1.md`
+- `docs/capture/NONMAINSTREAM_ITEM_IMAGE_CAPTURE_QUALITY_v1.md`
+- `data/backups/nonmainstream_item_image_source_summary_geo_repair_2026_06_13/MANIFEST.md`
+
+Verification:
+
+- `python3 -m py_compile scripts/run_nonmainstream_item_image_capture_2026_v1.py scripts/repair_nonmainstream_item_image_source_summary_geo_v1.py scripts/audit_nonmainstream_item_image_capture_quality_v1.py`
+  passed.
+- `python3 scripts/repair_nonmainstream_item_image_source_summary_geo_v1.py`
+  passed and reported `postcheck_clean=true`.
+- `python3 scripts/audit_nonmainstream_item_image_capture_quality_v1.py`
+  passed and reported `geo_repair_needed=false` for all 587 records.
+- `git diff --check` passed for all intended commit-bound files.
+- Broad safety scan for `API_KEY`, token, password, secret, cookie, session,
+  bearer, `/Users/`, and `.env` found no real credential or local-path payload
+  in this change. Hits were expected false positives: script variable names,
+  ordinary public URL text, and historical scan-language entries in this log.
