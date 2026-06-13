@@ -1,0 +1,8 @@
+source_name,candidate_rows,weighted_gap_points,automatic_upgrade_allowed_rows,no_upgrade_rows,no_upgrade_points,source_visible_repair_needed_rows,source_visible_repair_needed_points,item_rights_capture_required_rows,item_rights_capture_required_points,review_rebuild_alignment_no_automatic_upgrade_rows,review_rebuild_alignment_no_automatic_upgrade_points,review_only_no_automatic_upgrade_rows,review_only_no_automatic_upgrade_points,other_review_rows,other_review_points,primary_interpretation
+Cooper Hewitt Collection GraphQL API,137,61.65,0,133,59.85,0,0.00,0,0.00,0,0.00,4,1.80,0,0.00,Not a quick verified-open repair family; mostly copyright/restriction or credit-only local metadata.
+Wellcome Collection Catalogue API,84,39.45,0,81,36.45,3,3.00,0,0.00,0,0.00,0,0.00,0,0.00,Not a quick verified-open repair family; includes legacy CC-BY-NC/ND placeholder risks.
+Library of Congress loc.gov API,50,38.90,0,0,0.00,13,13.00,37,25.90,0,0.00,0,0.00,0,0.00,Best P0 deep-probe target; missing item image/rights capture is the main blocker.
+Georgia State University Library Digital Collections / CONTENTdm,85,38.25,0,84,37.80,0,0.00,0,0.00,1,0.45,0,0.00,0,0.00,Mostly blocked by raw copyright/permission rights; one CC0 row needs manual rebuild review.
+Art Institute of Chicago API,36,36.00,0,36,36.00,0,0.00,0,0.00,0,0.00,0,0.00,0,0.00,No current repair gain; raw search data mostly says is_public_domain=false.
+Internet Archive / text and periodical collections,75,33.75,0,75,33.75,0,0.00,0,0.00,0,0.00,0,0.00,0,0.00,Reading/source support source; current repair queue lacks explicit open item licenses.
+V&A Collections API,44,30.25,0,25,11.25,19,19.00,0,0.00,0,0.00,0,0.00,0,0.00,Useful for source-visible triage; object metadata does not provide bulk verified-open evidence.

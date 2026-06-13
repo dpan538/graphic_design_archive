@@ -8814,3 +8814,56 @@ Verification:
 - `python3 -m py_compile scripts/audit_vam_rights_repair_preflight_v1.py`
   passed.
 - `python3 scripts/audit_vam_rights_repair_preflight_v1.py` passed.
+
+## 2026-06-13 - P0 Rights Repair Preflight Rollup v1
+
+Scope:
+
+- Combined the seven P0 image-rights repair preflights into one advisory
+  rollup.
+- This pass used only local preflight CSV outputs and the existing rights
+  repair candidate queue. It did not call external APIs, download images,
+  mutate surfaces, or upgrade IMG01/IMG03.
+
+Files:
+
+- `scripts/summarize_p0_rights_repair_preflight_v1.py`
+- `data/p0_rights_repair_preflight_rollup_v1.csv`
+- `data/p0_rights_repair_preflight_recommendations_v1.csv`
+- `docs/capture/P0_RIGHTS_REPAIR_PREFLIGHT_ROLLUP_v1.md`
+
+Results:
+
+- P0 source families summarized: 7.
+- Candidate rows represented: 511.
+- Weighted-publication gap points represented: 278.25.
+- Automatic upgrades allowed: 0.
+- Recommendation totals:
+  - `no_upgrade`: 434 rows / 215.10 weighted points.
+  - `item_rights_capture_required`: 37 rows / 25.90 weighted points.
+  - `source_visible_repair_needed`: 35 rows / 35.00 weighted points.
+  - `review_only_no_automatic_upgrade`: 4 rows / 1.80 weighted points.
+  - `review_rebuild_alignment_no_automatic_upgrade`: 1 row / 0.45 weighted
+    points.
+
+Interpretation:
+
+- The P0 family preflight is a negative bulk-rights-upgrade result. Source
+  family reputation, source-hosted images, thumbnails, or platform metadata do
+  not justify IMG01/IMG03 upgrades.
+- LOC is the strongest next deep-probe path because its blockers are missing
+  item image/rights capture rather than explicit local copyright restrictions.
+- Cooper Hewitt, Wellcome, AIC, Internet Archive, V&A, and most GSU rows should
+  stay source-visible/context sources unless explicit item-level open evidence
+  is captured.
+- GSU needs a capture-logic patch before any rebuild so local rights statements
+  and image-display basis are preserved separately.
+- The next 5,000-source capture tranche should prioritize sources with explicit
+  public-domain/open-license item fields and low region coverage, rather than
+  trying to mine verified-open gains from these P0 source families.
+
+Verification:
+
+- `python3 -m py_compile scripts/summarize_p0_rights_repair_preflight_v1.py`
+  passed.
+- `python3 scripts/summarize_p0_rights_repair_preflight_v1.py` passed.
