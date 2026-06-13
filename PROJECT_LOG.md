@@ -7468,6 +7468,44 @@ Next capture strategy:
   credential values in commit-bound files. Remaining scan hits are regex policy
   text in the sanitizers and historical log wording.
 
+## 2026-06-13 - Project State Assessment and 12h Optimization Plan
+
+Scope:
+
+- Recorded the current project-state assessment and the expected order for the
+  next long optimization pass.
+- This is a planning/decision record only; no rights state, taxonomy, capture
+  payload, surface payload, or frontend runtime was changed by the assessment.
+
+Assessment:
+
+- Current active public sources: 12,342; launch target is 20,000 active public
+  sources, not merely raw capture rows.
+- Public surfaces: 13,680; capture records: 15,121.
+- Object source-visible is close to the new 99% target at 97.91%.
+- Object verified-open is the largest gate gap at 87.96% against the new 95%
+  target.
+- Object weighted publication-grade is 93.36% against the 95% target.
+- Object IMG04 remains controlled at 1.78%.
+- Strict distribution-adjusted source coverage remains weak at 28.96%, with
+  region quality-main balance at 6.47%.
+- Sheet topology remains structurally immature: 13,419 main sheets, 261
+  sub/support surfaces, 242 independent text sheets, and 351 strong grouping
+  candidates.
+
+Optimization expectations:
+
+- First fix public-surface payload size and sharding/build safety.
+- Then clarify release source-count semantics around active public sources.
+- Then repair verified-open and weighted-publication gaps in high-authority
+  source families before another broad capture push.
+- Then reduce unresolved/global-fallback geography and begin research-packet
+  restructuring from strong grouping candidates.
+
+File:
+
+- `docs/capture/PROJECT_STATE_ASSESSMENT_AND_12H_OPTIMIZATION_PLAN_2026_06_13.md`
+
 ## 2026-06-12 - Commons Open Source Expansion And Gate Recheck
 
 Scope:
