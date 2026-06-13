@@ -208,6 +208,11 @@ def clean(value: Any, *, max_chars: int = 900) -> str:
     text = re.sub(r"(?is)<(script|style).*?</\1>", " ", str(value or ""))
     text = re.sub(r"(?s)<[^>]+>", " ", text)
     text = html.unescape(re.sub(r"\s+", " ", text).strip())
+    text = re.sub(
+        r"(?i)(#|[?&])(?:id_token|access_token|refresh_token|auth_token|token|session|cookie|password|secret)=[^\s\"'<>;,]*",
+        "",
+        text,
+    )
     text = re.sub(r"file:/+(?:[A-Za-z]:)?/Users/[^\s\"'<>;,]+", "[local file path removed]", text)
     text = re.sub(r"(?:[A-Za-z]:)?/Users/[^\s\"'<>;,]+", "[local file path removed]", text)
     if len(text) <= max_chars:

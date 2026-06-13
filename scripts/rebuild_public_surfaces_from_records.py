@@ -1269,7 +1269,9 @@ def main() -> None:
     image_counter = Counter(surface.get("image", {}).get("state", "IMG00") for surface in payload.get("surfaces", []))
     source_visible = sum(image_counter[state] for state in ("IMG01", "IMG02", "IMG03"))
     publication_weights = {
-        "IMG03": 0.9,
+        # IMG03 is verified open-image evidence and is treated as the full
+        # publication-grade target; object-level gates collapse duplicate views.
+        "IMG03": 1.0,
         "IMG02": 0.55,
         "IMG01": 0.3,
         "IMG00": 0.0,

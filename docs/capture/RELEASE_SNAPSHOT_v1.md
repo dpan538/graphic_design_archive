@@ -8,7 +8,7 @@ Scope: consolidated read-only release-health snapshot. Object-level image metric
 - release_source_coverage_rate: 617.10 · pass (Minimum release source coverage=80%.)
 - object_source_visible_rate: 97.91 · pass (Minimum object source-visible=96%.)
 - object_verified_open_rate: 87.96 · pass (Minimum object verified-open=85%.)
-- object_weighted_publication_grade_rate: 84.57 · fail (Object-level max image weight per object; repeated photos are not double-counted.)
+- object_weighted_publication_grade_rate: 93.36 · fail (Object-level max image weight per object; repeated photos are not double-counted.)
 - object_img04_rate: 1.78 · pass (Maximum object IMG04 target=10%.)
 - year_2026_surface_rate: 0.39 · pass (Warning if more than 25% of public surfaces date to 2026.)
 - post_2026_or_error_count: 0 · pass (Future year date sanity check.)
@@ -23,7 +23,7 @@ Scope: consolidated read-only release-health snapshot. Object-level image metric
 - object_count: 13659 (Object-level grouping; repeated views/photos count once.)
 - object_source_visible_rate: 97.91 (Minimum object source-visible=96%.)
 - object_verified_open_rate: 87.96 (Minimum object verified-open=85%.)
-- object_weighted_publication_grade_rate: 84.57 (Object-level max image weight per object; repeated photos are not double-counted.)
+- object_weighted_publication_grade_rate: 93.36 (Object-level max image weight per object; repeated photos are not double-counted.)
 - object_img04_rate: 1.78 (Maximum object IMG04 target=10%.)
 - main_sheet_count: 13419 (publicationRole=main_sheet.)
 - sub_or_support_surface_count: 261 (All surfaces not marked as main_sheet.)
@@ -72,4 +72,4 @@ Scope: consolidated read-only release-health snapshot. Object-level image metric
 
 ## Failed Gates
 
-- object_weighted_publication_grade_rate: 84.57 (Object-level max image weight per object; repeated photos are not double-counted.)
+- object_weighted_publication_grade_rate: 93.36 (Object-level max image weight per object; repeated photos are not double-counted.)

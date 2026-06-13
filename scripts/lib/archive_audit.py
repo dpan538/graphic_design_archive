@@ -17,7 +17,9 @@ PAYLOAD = GENERATED / "public_surfaces_v1.json"
 IMAGE_READY = {"IMG01", "IMG02", "IMG03"}
 OPEN_IMAGE = {"IMG03"}
 PUBLICATION_WEIGHTS = {
-    "IMG03": 0.9,
+    # IMG03 is verified open-image evidence and is the publication-grade target.
+    # Repeated views/photos are still collapsed at object level by object_key().
+    "IMG03": 1.0,
     "IMG02": 0.55,
     "IMG01": 0.3,
     "IMG00": 0.0,

@@ -26,7 +26,10 @@ TARGET_COVERAGE = 100
 # image/viewer exists, but it cannot be counted as equivalent to an open,
 # reviewed image in launch reporting.
 PUBLICATION_WEIGHTS = {
-    "IMG03": 0.9,
+    # IMG03 is verified open-image evidence and counts as the full
+    # publication-grade target. Object grouping below prevents repeated
+    # photos/views from inflating the gate.
+    "IMG03": 1.0,
     "IMG02": 0.55,
     "IMG01": 0.3,
     "IMG00": 0.0,

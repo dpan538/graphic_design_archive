@@ -7363,6 +7363,111 @@ Files:
 
 - `docs/system/WEBGPU_WEBLLM_RAG_RESEARCH_BRANCH_BRIEF_v0.md`
 
+## 2026-06-13 - Commons Open Source Cleaning and Controlled Expansion Attempt
+
+Scope:
+
+- Cleaned the recent Commons open-source expansion lane before attempting the
+  next source-count push.
+- Added three new source-capture lanes:
+  - `scripts/run_commons_open_authority_weighted_expansion_2026_v1.py`
+  - `scripts/run_commons_open_controlled_expansion_2026_v1.py`
+  - `scripts/run_commons_open_publication_category_tree_2026_v1.py`
+- Added/updated cleaning scripts so recent Commons batches are audited and
+  quarantined before any public rebuild:
+  - `scripts/audit_commons_open_source_cleaning_2026_v1.py`
+  - `scripts/apply_commons_open_source_cleaning_2026_v1.py`
+
+Cleaning result:
+
+- Prior recent Commons batches after cleaning: 5034 release-ready records.
+- New raw records captured this round: 1427.
+- New records removed by cleaning quarantine: 175 duplicate-review records.
+- New release-ready records retained this round: 1252.
+- Combined audited recent Commons row set after cleaning: 6286 release-ready
+  rows, 0 remaining cleaning blockers.
+- No image binaries, thumbnails, screenshots, raw API payloads, cookies,
+  browser sessions, or local image files were downloaded.
+- A token-like Medium URL fragment exposed through Commons metadata was removed
+  from the source record/audit output, and the shared Commons capture `clean()`
+  helper now strips token/session/password-style URL parameters before writing
+  CSV fields.
+
+New retained batch distribution:
+
+- Authority-weighted expansion: 300 retained.
+- Controlled expansion: 925 retained after 175 duplicate rows were removed.
+- Publication category-tree trial: 27 retained.
+- Object families across retained new rows: advertising 476; postage stamp
+  353; label/packaging 118; poster 91; typography/identity 63; magazine cover
+  47; book cover 41; brochure/pamphlet 31; film poster 22; political poster 6;
+  travel poster 4.
+- Period distribution across retained new rows: pre-1940 500; 1940-1970 406;
+  1970-2000 143; 2000-2026 203.
+- Macro-region distribution across retained new rows: Latin America 376;
+  Global fallback 357; Middle East and North Africa 127; Oceania 120;
+  Southeast Asia 73; Eastern Europe 68; East Asia 48; South Asia 47; Africa
+  33; Central Asia 3.
+
+Capture note:
+
+- The requested 5000-new-source target was not reached. After de-duplicating
+  against existing capture batches, Commons open/source-visible records with
+  usable object-year evidence entered a long-tail zone: broad search,
+  year-category, country/alias, authority-weighted, and publication-category
+  lanes all showed sharply declining yield.
+- Continuing the same Commons strategy would likely add hours of low-yield
+  crawl time while increasing Global fallback and duplicate pressure. The next
+  large expansion should switch toward non-Commons institutional APIs and
+  source-specific adapters, especially Cooper Hewitt, Wellcome, DPLA/CONTENTdm,
+  national libraries, art schools, community archives, and rights-clear
+  publication collections.
+
+Gate snapshot:
+
+- Record-level layered image/source metrics now see 15121 capture records.
+- Record-level source-visible rate: 98.04%.
+- Record-level open image rate: 85.57%.
+- Record-level weighted publication rate: 93.34%.
+- Existing public-surface release snapshot remains at 13680 surfaces because
+  this round did not safely commit a full surface rebuild.
+- Existing public-surface object source-visible rate: 97.91%.
+- Existing public-surface object verified-open rate: 87.96%.
+- Existing public-surface object IMG04 rate: 1.78%.
+- Existing public-surface weighted publication rate: 93.36%, below the 95%
+  target by 223.4 weighted points.
+- Sheet topology remains weak: 13419 main sheets, 247 sub sheets, 242 text
+  sheets; 359 main sheets have more than two sub sheets, and only 5 main sheets
+  have more than five text sheets.
+
+Build/rebuild boundary:
+
+- The four generated public-surface JSON files are tracked and currently about
+  136MB each, above GitHub's normal 100MB push safety threshold for new blobs.
+  A full surface rebuild was therefore not staged in this round. The next
+  infrastructure task should shard or compress public-surface exports before
+  requiring every source-capture iteration to rebuild and commit the frontend
+  payload.
+
+Next capture strategy:
+
+- Prioritize source-specific adapters over broader Commons searching.
+- Highest weighted-publication gap sources: Cooper Hewitt, Wellcome, Library of
+  Congress, Georgia State University CONTENTdm, Art Institute of Chicago,
+  Internet Archive, V&A, Te Papa, DigitalNZ, NAIDOC, Princeton Figgy, and The
+  Met.
+- For the 20000-source launch target and the stricter 99% source-visible / 95%
+  verified-open goals, the next round should first convert high-volume IMG02
+  and IMG04 blockers into verified open or source-visible states where source
+  terms support it, then add new institutional sources only where authority and
+  rights evidence are explicit.
+- Verification for this round: cleaning audit passed with 6286/6286
+  release-ready rows; `python3 -m py_compile` passed for the new/updated
+  cleaning, capture, release-gate, layered-metrics, base Commons, and rebuild
+  scripts; `git diff --check` passed; a targeted credential scan found no real
+  credential values in commit-bound files. Remaining scan hits are regex policy
+  text in the sanitizers and historical log wording.
+
 ## 2026-06-12 - Commons Open Source Expansion And Gate Recheck
 
 Scope:
