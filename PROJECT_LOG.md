@@ -8404,3 +8404,58 @@ Verification:
 
 - `python3 -m py_compile scripts/generate_next_capture_plan_v1.py` passed.
 - `python3 scripts/generate_next_capture_plan_v1.py` passed.
+
+## 2026-06-13 - Image Rights Repair Preflight Batches v1
+
+Scope:
+
+- Started the P0 rights-repair execution layer by splitting the object-level
+  image repair queue into source-family batches.
+- This pass did not fetch remote records, did not download images, did not
+  mutate surfaces, and did not upgrade IMG01 or IMG03.
+
+Files:
+
+- `scripts/build_image_rights_repair_preflight_batches_v1.py`
+- `data/image_rights_repair_preflight_batches_v1.csv`
+- `docs/capture/IMAGE_RIGHTS_REPAIR_PREFLIGHT_BATCHES_v1.md`
+
+Results:
+
+- Total source-family repair batches: 802.
+- P0 batches: 7.
+- P1 batches: 5.
+- P2 batches: 790.
+- All 802 batches have `automatic_upgrade_allowed=false`.
+- Estimated P0 weighted-gap points: 278.25.
+- Estimated P0+P1 weighted-gap points: 382.45.
+- Current weighted-publication gap to the 95% gate is 223.40 points, so the P0
+  source families are sufficient in theory if item-level rights evidence
+  validates.
+
+P0 execution order:
+
+- Cooper Hewitt Collection GraphQL API: 137 candidates, 61.65 weighted points.
+- Wellcome Collection Catalogue API: 84 candidates, 39.45 weighted points.
+- Library of Congress loc.gov API: 50 candidates, 38.90 weighted points.
+- Georgia State University Library Digital Collections / CONTENTdm: 85
+  candidates, 38.25 weighted points.
+- Art Institute of Chicago API: 36 candidates, 36.00 weighted points.
+- Internet Archive / text and periodical collections: 75 candidates, 33.75
+  weighted points.
+- V&A Collections API: 44 candidates, 30.25 weighted points.
+
+Interpretation:
+
+- The fastest path toward the 95% weighted publication-grade gate is a focused
+  item-level rights/source-evidence pass over seven source families, not random
+  new capture.
+- Any later execution run must store metadata, source text, rights evidence,
+  and source links only; raw payloads must be redacted and audited before
+  commit.
+
+Verification:
+
+- `python3 -m py_compile scripts/build_image_rights_repair_preflight_batches_v1.py`
+  passed.
+- `python3 scripts/build_image_rights_repair_preflight_batches_v1.py` passed.
