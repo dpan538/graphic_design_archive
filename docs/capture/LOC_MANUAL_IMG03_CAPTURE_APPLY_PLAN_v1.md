@@ -4,11 +4,11 @@ This script layer converts the reviewed LOC manual IMG03 queue into a controlled
 
 ## Summary
 
-- mode: dry_run
+- mode: apply
 - planned rows: 20
 - ready for apply: 20
 - blocked rows: 0
-- capture rows written: 0
+- capture rows written: 20
 - public surfaces rebuilt: false
 
 ## Planned Capture Fields
@@ -29,7 +29,7 @@ This script layer converts the reviewed LOC manual IMG03 queue into a controlled
 
 ## Execution Note
 
-This run did not write target capture CSVs.
+This run wrote target capture CSVs.
 
 ## Output Files
 

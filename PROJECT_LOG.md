@@ -9110,3 +9110,73 @@ Verification:
 
 - `python3 -m py_compile scripts/apply_loc_manual_img03_records_v1.py` passed.
 - `python3 scripts/apply_loc_manual_img03_records_v1.py` passed.
+
+## 2026-06-13 - LOC Manual IMG03 Controlled Apply v1
+
+Scope:
+
+- Backed up the three capture-record CSVs touched by the LOC manual IMG03
+  repair queue.
+- Ran the guarded apply command:
+  `python3 scripts/apply_loc_manual_img03_records_v1.py --apply --confirm-item-rights-reviewed`.
+- Added and ran a post-apply contract audit.
+- This pass did not rebuild generated public surfaces, frontend payload
+  mirrors, or any visual frontend assets.
+
+Backup:
+
+- `data/backups/loc_manual_img03_apply_2026_06_13/MANIFEST.md`
+- `data/backups/loc_manual_img03_apply_2026_06_13/capture_batch_midcentury_1930_1970_records.before_loc_img03_apply.csv`
+- `data/backups/loc_manual_img03_apply_2026_06_13/capture_batch_early_region_1830_1930_records.before_loc_img03_apply.csv`
+- `data/backups/loc_manual_img03_apply_2026_06_13/capture_batch_early_region_1830_1880_records.before_loc_img03_apply.csv`
+
+Apply results:
+
+- Planned rows: 20.
+- Capture rows written: 20.
+- Blocked rows: 0.
+- Images downloaded: 0.
+- Public surfaces rebuilt: false.
+- Target files changed:
+  - `data/capture_batch_midcentury_1930_1970_records.csv`: 13 rows.
+  - `data/capture_batch_early_region_1830_1930_records.csv`: 5 rows.
+  - `data/capture_batch_early_region_1830_1880_records.csv`: 2 rows.
+
+Postcheck results:
+
+- Checked rows: 20.
+- Pass rows: 20.
+- Fail rows: 0.
+- Post-apply image state: 20 IMG03.
+
+Files:
+
+- `scripts/apply_loc_manual_img03_records_v1.py`
+- `scripts/audit_loc_manual_img03_apply_postcheck_v1.py`
+- `data/loc_manual_img03_capture_apply_plan_v1.csv`
+- `data/loc_manual_img03_capture_apply_summary_v1.csv`
+- `data/loc_manual_img03_apply_postcheck_v1.csv`
+- `data/loc_manual_img03_apply_postcheck_summary_v1.csv`
+- `docs/capture/LOC_MANUAL_IMG03_CAPTURE_APPLY_PLAN_v1.md`
+- `docs/capture/LOC_MANUAL_IMG03_APPLY_POSTCHECK_v1.md`
+
+Implementation note:
+
+- The apply script was updated to preserve the target CSV line terminator.
+  The first apply attempt revealed that rewriting CRLF capture files as LF
+  produced noisy whole-file diffs; the backup was used to restore the files
+  before reapplying with preserved line endings. Final target-file diff is the
+  expected 20 changed rows only.
+
+Interpretation:
+
+- The capture-record layer now contains the 20 LOC IMG03 repairs, based on
+  item-level LOC no-known-restrictions text plus source-hosted image URLs.
+- Public release metrics are not yet updated because surfaces were not rebuilt.
+- The next safe step is a small, isolated rebuild/audit pass rather than a full
+  frontend rebuild.
+
+Verification:
+
+- `python3 -m py_compile scripts/apply_loc_manual_img03_records_v1.py scripts/audit_loc_manual_img03_apply_postcheck_v1.py` passed.
+- `python3 scripts/audit_loc_manual_img03_apply_postcheck_v1.py` passed.

@@ -69,8 +69,10 @@ def read_records(path: Path) -> tuple[list[dict[str, str]], list[str]]:
 
 
 def write_records(path: Path, rows: list[dict[str, str]], fields: list[str]) -> None:
+    raw = path.read_bytes() if path.exists() else b""
+    line_terminator = "\r\n" if b"\r\n" in raw[:4096] else "\n"
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n", extrasaction="ignore")
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator=line_terminator, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
 
