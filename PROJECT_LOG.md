@@ -8227,3 +8227,61 @@ Verification:
   `python3 scripts/run_release_snapshot_v1.py` passed.
 - `python3 scripts/audit_image_release_gate.py` exited non-zero as expected
   because the updated release gates are not yet met.
+
+## 2026-06-13 - Image Rights Repair Queue v1
+
+Scope:
+
+- Built an object-level advisory queue for image-rights and weighted
+  publication repair under the updated release gate.
+- This pass did not change any surface image state, did not upgrade IMG01 or
+  IMG03, did not infer rights from heuristics/LLM/TOS/platform signals, did not
+  download image files, and did not edit research-repo files.
+
+Files:
+
+- `scripts/audit_image_rights_repair_queue_v1.py`
+- `data/image_rights_repair_summary_v1.csv`
+- `data/image_rights_repair_source_priorities_v1.csv`
+- `data/image_rights_repair_candidates_v1.csv`
+- `docs/capture/IMAGE_RIGHTS_REPAIR_QUEUE_v1.md`
+
+Results:
+
+- Object-level repair candidate objects: 1,644.
+- Source families represented in the queue: 802.
+- Weighted publication points needed for the 95% gate: 223.40.
+- Candidate IMG02 objects: 1,321.
+- Candidate IMG01 objects: 37.
+- Candidate IMG00 objects: 43.
+- Candidate IMG04 objects: 243.
+
+Top weighted-gap source priorities:
+
+- Cooper Hewitt Collection GraphQL API: 61.65 gap points, 137 IMG02 objects.
+- Wellcome Collection Catalogue API: 39.45 gap points, 81 IMG02 and 3 IMG00
+  objects.
+- Library of Congress loc.gov API: 38.90 gap points, 37 IMG01 and 13 IMG04
+  objects.
+- Georgia State University Library Digital Collections / CONTENTdm: 38.25 gap
+  points, 85 IMG02 objects.
+- Art Institute of Chicago API: 36.00 gap points, 35 IMG00 and 1 IMG04
+  objects.
+- Internet Archive / text and periodical collections: 33.75 gap points, 75
+  IMG02 objects.
+- V&A Collections API: 30.25 gap points, 25 IMG02 and 19 IMG04 objects.
+- Te Papa Collections Online, DigitalNZ, NAIDOC Poster Gallery, and Princeton
+  / Figgy are the next high-value IMG02 review families.
+
+Interpretation:
+
+- The fastest weighted-publication repair is not more random capture. It is a
+  targeted rights-evidence pass over high-volume IMG02 sources, plus source
+  visible repair for the AIC/LOC/Met/V&A blockers.
+- The queue remains conservative: every row has `automatic_upgrade_allowed=false`
+  and specifies the item-level evidence needed before a later upgrade.
+
+Verification:
+
+- `python3 -m py_compile scripts/audit_image_rights_repair_queue_v1.py` passed.
+- `python3 scripts/audit_image_rights_repair_queue_v1.py` passed.

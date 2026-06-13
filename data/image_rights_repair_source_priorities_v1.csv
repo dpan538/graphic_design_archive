@@ -1,0 +1,803 @@
+rank,source_name,candidate_objects,weighted_gap_points,source_visible_gap_objects,verified_open_gap_objects,img03_unreviewed_objects,img02_objects,img01_objects,img00_objects,img04_objects,top_required_action,example_surface_ids
+1,Cooper Hewitt Collection GraphQL API,137,61.65,0,137,0,137,0,0,0,img02_open_rights_review,SURF-CHW2026R001;SURF-CHW2026R002;SURF-CHW2026R003;SURF-CHW2026R004;SURF-CHW2026R005;SURF-CHW2026R006
+2,Wellcome Collection Catalogue API,84,39.45,3,84,0,81,0,3,0,img02_open_rights_review,SURF-IR1970R044;SURF-IR1970R047;SURF-IR1970R060;SURF-IR1970R001;SURF-IR1970R002;SURF-IR1970R004
+3,Library of Congress loc.gov API,50,38.90,13,50,0,0,37,0,13,img01_item_image_and_rights_review,SURF-ER1830R004;SURF-ER1830R008;SURF-ER1830R018;SURF-ER1830R024;SURF-ER1830R029;SURF-ER1830R062
+4,Georgia State University Library Digital Collections / CONTENTdm,85,38.25,0,85,0,85,0,0,0,img02_open_rights_review,SURF-GSU1970R001;SURF-GSU1970R002;SURF-GSU1970R003;SURF-GSU1970R004;SURF-GSU1970R005;SURF-GSU1970R006
+5,Art Institute of Chicago API,36,36.00,36,36,0,0,0,35,1,img00_source_visible_repair,SURF-ER1830R052;SURF-ER1830R064;SURF-ER1830R065;SURF-ER1830R066;SURF-ER1830R068;SURF-ER1830R069
+6,Internet Archive / text and periodical collections,75,33.75,0,75,0,75,0,0,0,img02_open_rights_review,SURF-LPC2026R030;SURF-LPC2026R031;SURF-LPC2026R033;SURF-LPC2026R034;SURF-LPC2026R035;SURF-LPC2026R041
+7,V&A Collections API,44,30.25,19,44,0,25,0,0,19,img02_open_rights_review,SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES;SURF-COMPOUND-HUNTLEY-PALMERS-TRADE-CARDS;SURF-MC1930R002;SURF-MC1930R005;SURF-MC1930R027;SURF-MC1930R028
+8,Te Papa Collections Online,56,25.75,1,56,0,55,0,1,0,img02_open_rights_review,SURF-LPC2026R008;SURF-GAPIT2026R001;SURF-GAPIT2026R002;SURF-GAPIT2026R003;SURF-GAPIT2026R004;SURF-GAPIT2026R005
+9,DigitalNZ,51,22.95,0,51,0,51,0,0,0,img02_open_rights_review,SURF-DNZPOSTR002;SURF-DNZPOSTR009;SURF-DNZPOSTR010;SURF-DNZPOSTR012;SURF-DNZPOSTR020;SURF-DNZPOSTR024
+10,NAIDOC Poster Gallery,49,22.05,0,49,0,49,0,0,0,img02_open_rights_review,SURF-GAPIT2026R017;SURF-GAPIT2026R018;SURF-GAPIT2026R019;SURF-GAPIT2026R020;SURF-GAPIT2026R021;SURF-GAPIT2026R022
+11,Princeton University Library Digital Collections / Figgy,41,18.45,0,41,0,41,0,0,0,img02_open_rights_review,SURF-PUL1970R001;SURF-PUL1970R002;SURF-PUL1970R003;SURF-PUL1970R004;SURF-PUL1970R005;SURF-PUL1970R006
+12,The Met Open Access,15,15.00,15,15,0,0,0,0,15,img04_text_state_review,SURF-MC1930R007;SURF-MC1930R055;SURF-MC1930R071;SURF-MC1930R072;SURF-MC1930R073;SURF-MC1930R074
+13,Another Graphic,15,6.75,0,15,0,15,0,0,0,img02_open_rights_review,SURF-ERS1970R001;SURF-ERS1970R002;SURF-ERS1970R003;SURF-ERS1970R004;SURF-ERS1970R005;SURF-ERS1970R007
+14,Gallica / BnF APIs,15,6.75,0,15,0,15,0,0,0,img02_open_rights_review,SURF-GA1970R016;SURF-GA1970R018;SURF-GA1970R023;SURF-GA1970R024;SURF-GA1970R027;SURF-GA1970R055
+15,Malaysia Design Archive,12,5.95,1,12,0,11,0,0,1,img02_open_rights_review,SURF-IAC1990R002;SURF-IAC1990R001;SURF-IAC1990R003;SURF-IAC1990R004;SURF-IAC1990R005;SURF-IAC1990R006
+16,Malaysian Design Archive,5,5.00,5,5,0,0,0,0,5,img04_text_state_review,SURF-NMR1990R0001;SURF-NMR1990R0002;SURF-NMR1990R0003;SURF-NMR1990R0004;SURF-NMR1990R0005
+17,National Repository of Nigeria,5,5.00,5,5,0,0,0,0,5,img04_text_state_review,SURF-PIC1970R0007;SURF-PIC1970R0008;SURF-SCG1931R0017;SURF-SCG1931R0018;SURF-SCG1931R0019
+18,Asian Film Archive,9,4.05,0,9,0,9,0,0,0,img02_open_rights_review,SURF-EW1970R001;SURF-EW1970R002;SURF-EW1970R003;SURF-EW1970R004;SURF-EW1970R005;SURF-EW1970R006
+19,American University of Beirut ScholarWorks,4,4.00,4,4,0,0,0,0,4,img04_text_state_review,SURF-SCG1931R0013;SURF-SCG1931R0014;SURF-SCG1931R0015;SURF-SCG1931R0016
+20,Stellenbosch University Scholar,4,4.00,4,4,0,0,0,0,4,img04_text_state_review,SURF-SCG1931R0005;SURF-SCG1931R0006;SURF-SCG1931R0007;SURF-SCG1931R0008
+21,University of Ghana Digital Collections,4,4.00,4,4,0,0,0,0,4,img04_text_state_review,SURF-PIC1970R0001;SURF-PIC1970R0002;SURF-PIC1970R0003;SURF-PIC1970R0004
+22,University of Pretoria Research Repository,4,4.00,4,4,0,0,0,0,4,img04_text_state_review,SURF-SCG1931R0001;SURF-SCG1931R0002;SURF-SCG1931R0003;SURF-SCG1931R0004
+23,Wits University WiredSpace,4,4.00,4,4,0,0,0,0,4,img04_text_state_review,SURF-SCG1931R0009;SURF-SCG1931R0010;SURF-SCG1931R0011;SURF-SCG1931R0012
+24,Design Reviewed,8,3.60,0,8,0,8,0,0,0,img02_open_rights_review,SURF-EW1970R020;SURF-EW1970R021;SURF-EW1970R022;SURF-EW1970R023;SURF-EW1970R024;SURF-EW1970R025
+25,Letterform Archive,8,3.60,0,8,0,8,0,0,0,img02_open_rights_review,SURF-EW1970R028;SURF-EW1970R029;SURF-EW1970R030;SURF-EW1970R031;SURF-EW1970R032;SURF-EW1970R033
+26,University of Cape Town Digital Collections,8,3.60,0,8,0,8,0,0,0,img02_open_rights_review,SURF-PIC1970R0005;SURF-PIC1970R0006;SURF-SCG1931R0020;SURF-SCG1931R0021;SURF-SCG1931R0022;SURF-SCG1931R0023
+27,Auckland Libraries Heritage Collections / CONTENTdm,5,3.35,2,5,0,3,0,0,2,img02_open_rights_review,SURF-SBC1970R0009;SURF-SBC1970R0010;SURF-SBC1970R0001;SURF-SBC1970R0007;SURF-SBC1970R0008
+28,GALA Queer Archive,4,2.35,1,4,0,3,0,0,1,img02_open_rights_review,SURF-NMR1990R0015;SURF-NMR1990R0014;SURF-NMR1990R0016;SURF-NMR1990R0017
+29,Los Angeles Public Library Tessa / CONTENTdm,5,2.25,0,5,0,5,0,0,0,img02_open_rights_review,SURF-SBC1970R0017;SURF-SBC1970R0018;SURF-SBC1970R0019;SURF-SBC1970R0020;SURF-SBC1970R0021
+30,University of Miami Libraries Digital Collections / CONTENTdm,5,2.25,0,5,0,5,0,0,0,img02_open_rights_review,SURF-SBC1970R0031;SURF-SBC1970R0032;SURF-SBC1970R0033;SURF-SBC1970R0034;SURF-SBC1970R0035
+31,University of Washington Digital Collections / CONTENTdm,5,2.25,0,5,0,5,0,0,0,img02_open_rights_review,SURF-SBC1970R0022;SURF-SBC1970R0023;SURF-SBC1970R0024;SURF-SBC1970R0025;SURF-SBC1970R0027
+32,NAIDOC / AIATSIS,2,2.00,2,2,0,0,0,0,2,img04_text_state_review,SURF-NXS2026R009;SURF-NXS2026R010
+33,African Digital Heritage,4,1.80,0,4,0,4,0,0,0,img02_open_rights_review,SURF-NMR1990R0010;SURF-NMR1990R0011;SURF-NMR1990R0012;SURF-NMR1990R0013
+34,Barjeel Art Foundation,4,1.80,0,4,0,4,0,0,0,img02_open_rights_review,SURF-NMR1990R0006;SURF-NMR1990R0007;SURF-NMR1990R0008;SURF-NMR1990R0009
+35,Desain Grafis Indonesia,4,1.80,0,4,0,4,0,0,0,img02_open_rights_review,SURF-EW1970R010;SURF-EW1970R011;SURF-EW1970R012;SURF-EW1970R013
+36,Indian Memory Project,4,1.80,0,4,0,4,0,0,0,img02_open_rights_review,SURF-NMR1990R0018;SURF-NMR1990R0019;SURF-NMR1990R0020;SURF-NMR1990R0021
+37,National Archives of Kazakhstan,2,1.45,1,2,0,1,0,0,1,img04_text_state_review,SURF-NMSP2026R0058;SURF-NMIIC2026R0147
+38,Biblioteca Nacional Digital de Chile / Memoria Chilena,3,1.35,0,3,0,3,0,0,0,img02_open_rights_review,SURF-NXS2026R001;SURF-NXS2026R006;SURF-NXS2026R008
+39,SMU Libraries Digital Collections / CONTENTdm,3,1.35,0,3,0,3,0,0,0,img02_open_rights_review,SURF-SBC1970R0028;SURF-SBC1970R0029;SURF-SBC1970R0030
+40,South African History Archive,3,1.35,0,3,0,3,0,0,0,img02_open_rights_review,SURF-NXS2026R004;SURF-NXS2026R005;SURF-NXS2026R007
+41,Afghanistan Centre at Kabul University,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0092
+42,Afghanistan Digital Library,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0091
+43,African Activist Archive,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R001
+44,Aga Khan Documentation Center Collections,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0107
+45,Alexander Turnbull Library,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0069
+46,American University of Beirut Libraries,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0041
+47,Archives Nationales de Tunisie,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0007
+48,Archives Nationales du Benin,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0072
+49,Archives Nationales du Cameroun,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0073
+50,Archives Nationales du Senegal,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0010
+51,Archivo General de Centro America,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0030
+52,Archivo General de Puerto Rico,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0088
+53,Archivo General de la Nacion Peru,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0021
+54,Archivo General de la Nacion Republica Dominicana,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0037
+55,Archivo General de la Nacion Venezuela,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0026
+56,Archivo Nacional de Asuncion,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0020
+57,Archivo Nacional de Chile,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0016
+58,Archivo Nacional de Costa Rica,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0031
+59,Archivo Nacional de Panama,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0032
+60,Arquivo Historico de Mocambique,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0076
+61,Arquivo Nacional de Cabo Verde,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0080
+62,Ateneo Rizal Library Digital Archives,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R037
+63,Bag Factory Artists' Studios Archive,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0106
+64,Bahrain Authority for Culture and Antiquities,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0045
+65,Biblioteca Digital de Bogota,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0023
+66,Biblioteca Nacional de Angola,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0075
+67,Biblioteca Nacional de Brasil,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0027
+68,Biblioteca Nacional de Colombia,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0022
+69,Biblioteca Nacional de Guatemala,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0029
+70,Biblioteca Nacional de Mocambique,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0077
+71,Biblioteca Nacional de Puerto Rico,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0087
+72,Biblioteca Nacional de Venezuela,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0025
+73,Biblioteca Nacional del Paraguay,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0019
+74,Bibliotheca Alexandrina Memory of Modern Egypt,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0048
+75,Bibliotheque Nationale du Cameroun,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0074
+76,BookSG / Print Heritage,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R039
+77,Bophana Audiovisual Resource Center,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-EW1970R009
+78,CCA Lagos Archive,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0101
+79,Casa de Cultură Liviu Rebreanu,1,1.00,1,1,0,0,0,1,0,img00_source_visible_repair,SURF-NMIIC2026R0214
+80,Casa de Rui Barbosa Acervo,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0082
+81,Center for Contemporary Graphic Art,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R003
+82,Centre de Documentation Saharienne,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0009
+83,Centro de la Imagen Mexico,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0085
+84,Chinese Posters,1,1.00,1,1,0,0,0,1,0,img00_source_visible_repair,SURF-MX1970R055-GROUP
+85,Citizens Archive of Pakistan,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0051
+86,Cook Islands Library and Museum,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0127
+87,Czech Design Archive,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0123
+88,DDP Seoul,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R004
+89,Design Center Philippines,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R041
+90,Design in India / India Design Council references,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R031
+91,DesignSingapore Council,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R042
+92,Digital Library Iverieli,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0062
+93,Digital Library of Lao Manuscripts,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R043
+94,Estonian Museum of Applied Art and Design,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0124
+95,Eswatini National Archives,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0013
+96,Fine Arts Department Thailand,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R045
+97,Getty Research Portal,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-MX1970R066
+98,Ghana Library Authority,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0002
+99,Ginza Graphic Gallery,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R007
+100,GoDown Arts Centre,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0104
+101,Grafis Nusantara,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R046
+102,Hong Kong Heritage Project,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R008
+103,Indonesian Visual Art Archive,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R047
+104,Instituto Moreira Salles Acervos,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0081
+105,Iran Data Portal,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0039
+106,Iraq National Library and Archive,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0043
+107,Jakarta Arts Council Archive,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0117
+108,Jamaica Archives and Records Department,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0034
+109,Jordan National Library,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0042
+110,Kenya National Library Service,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0004
+111,Khastara Perpusnas Indonesia,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R048
+112,Korea Democracy Foundation Archives,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0093
+113,Korean Film Archive,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R011
+114,Kramerius Registry,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R023
+115,Kyoto ddd gallery,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R012
+116,Latvian Centre for Contemporary Art Archive,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0125
+117,Lebanese National Library,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0040
+118,Lesotho National Archives,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0014
+119,Liberation War Museum Bangladesh,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0052
+120,Lithuanian Design Forum,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0126
+121,Lithuanian Integral Museum Information System LIMIS,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0095
+122,Macedonian Digital Library,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0065
+123,Madan Puraskar Pustakalaya,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R032
+124,Market Photo Workshop,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0105
+125,Mediateca INAH,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0028
+126,Memoria Chilena,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R028
+127,Moldova National Library,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0067
+128,Mongolian National Library,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0094
+129,Moravian Gallery Brno Design Collection,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0122
+130,Museo Universitario Arte Contemporaneo MUAC,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0086
+131,Museo de Arte Contemporaneo de Monterrey MARCO,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0084
+132,Museo de la Memoria y los Derechos Humanos,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0017
+133,Museu da Imagem e do Som Sao Paulo,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0083
+134,Myanmar Photo Archive,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0118
+135,NDL Search / National Diet Library,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-SBC1970R0014
+136,NID Archives and institutional publications,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R033
+137,National Archives of Estonia,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0099
+138,National Archives of India Abhilekh Patal,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0049
+139,National Archives of Malaysia,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0057
+140,National Archives of Mauritius,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0078
+141,National Archives of Singapore,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R050
+142,National Archives of Tanzania,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0005
+143,National Archives of The Gambia,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0011
+144,National Archives of Trinidad and Tobago,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0035
+145,National Archives of Zimbabwe,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0003
+146,National Digital Library of India,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R034
+147,National Library Service of Belize,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0090
+148,National Library and Archives of Ethiopia,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0006
+149,National Library of Albania,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0097
+150,National Library of India,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R035
+151,National Library of Jamaica,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0033
+152,National Library of Kosovo,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0098
+153,National Library of Malaysia,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0056
+154,National Library of Maldives,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0053
+155,National Library of Montenegro,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0063
+156,National Library of Myanmar,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0054
+157,National Library of Nigeria,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0001
+158,National Library of Tajikistan,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0060
+159,National Library of The Bahamas,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0089
+160,National Library of Trinidad and Tobago,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0036
+161,National Library of Uzbekistan,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0059
+162,National Library of Vietnam,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R052
+163,National Library of Vietnam Digital Library,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0055
+164,National Library of the Philippines,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R053
+165,National Taiwan Museum of Fine Arts,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R015
+166,National and University Library Bosnia and Herzegovina,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0064
+167,NewspaperSG,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R054
+168,Nsibidi Institute,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0102
+169,Nubuke Foundation,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0103
+170,Oman National Records and Archives Authority,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0047
+171,PARADISEC,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0071
+172,Pakistan Chowk Community Centre,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0114
+173,Partition Museum Archive,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0113
+174,People's Archive of Rural India,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0112
+175,Polish Digital Libraries Federation,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0096
+176,Qatar National Library Digital Repository,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0108
+177,Roja Muthiah Research Library,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R036
+178,Romanian National Digital Library,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0066
+179,Roots.sg,1,1.00,1,1,0,0,0,1,0,img00_source_visible_repair,SURF-ESR1931R055
+180,Rwanda Cultural Heritage Academy,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0012
+181,Sahapedia,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0111
+182,Samoa National Archives and Records Authority,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0100
+183,Sarmaya Arts Foundation,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0050
+184,Senal Memoria Colombia,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0024
+185,Seoul Design Foundation,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R018
+186,Shanghai Library,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R019
+187,Sharjah Art Foundation Archive,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0110
+188,Slovak Design Museum,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0121
+189,State Library Victoria Collections,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0070
+190,State Library of Turkmenistan,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0061
+191,Sultan Qaboos University Library,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0046
+192,Thai Poster Archive,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R057
+193,Tokyo ADC,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R021
+194,Toše Proeski Memorial,1,1.00,1,1,0,0,0,1,0,img00_source_visible_repair,SURF-NMIIC2026R0205
+195,UAE National Library and Archives,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0044
+196,UWC Robben Island Mayibuye Archives,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R002
+197,Ukrainian Institute of National Memory Archive,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0068
+198,Ukrainian Liberation Movement Archive,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R024
+199,Vasl Artists' Association Archive,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0115
+200,VietGD,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R059
+201,Vietnam Fine Arts Museum,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-NMSP2026R0119
+202,Vietnam National Archives,1,1.00,1,1,0,0,0,0,1,img04_text_state_review,SURF-ESR1931R060
+203,Roots.sg / National Heritage Board Singapore,2,0.90,0,2,0,2,0,0,0,img02_open_rights_review,SURF-NXS2026R002;SURF-NXS2026R003
+204,!Khwa ttu,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0122
+205,"""Alexandru and Aristia Aman"" County Library, Craiova",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0210
+206,"""Branko Ćopić"" National Library in Brod",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0009
+207,"""Dr. Ljubo Mihić"" National Library in Ljubinje",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0010
+208,"""Gheorghe Asachi"" County Library in Iași",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0204
+209,"""Octavian Goga"" Cluj County Library",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0212
+210,"""Vuk Karadžić"" National Library in Modriča",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0011
+211,101 Art Gallery,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0080
+212,11/07/95 Gallery,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0175
+213,4 - ti may - 1897,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0184
+214,"4 Library for adults, Ternopil",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0227
+215,8Q SAM,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0482
+216,AIDSSH,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0160
+217,ASTRA National Museum Complex,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0027
+218,Abderrahmane Benhamida library,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0102
+219,Acatushun museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0232
+220,Adam Mickiewicz Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0478
+221,Afriart Gallery,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0490
+222,Afronova,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0126
+223,Aishti Foundation,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0473
+224,Akbank Sanat,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0582
+225,Akenten Appiah-Menka University of Skills Training and Entrepreneurial Development,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0110
+226,Al Qarara Cultural Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0077
+227,Al-Maktaba Al-Shamela Al-Djazairiyya,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0096
+228,Al-Rawdha Al-Haidarya Library,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0579
+229,Albany Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0128
+230,Alexander Nevsky Cathedral,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0019
+231,Alianza Francesa Sucre,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0267
+232,Aliwal Arts Centre,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0087
+233,Alliance Française de Dhaka,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0375
+234,Alliance Française de Karachi,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0378
+235,Alliance française Stara Zagora,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0181
+236,Alsharekh Archive,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0357
+237,Alwaraq,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0580
+238,Amadeo León Collection,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0076
+239,Ameen Rihani Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0353
+240,American corner in Novi Sad,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0213
+241,Andrés Guacurarí Historical-Archaeological Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0231
+242,Angels and Muse,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0120
+243,Anglo-Boer War Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0127
+244,Anibal Bergallo Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0015
+245,Anibal Cambas Regional Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0016
+246,Ankara University School of Pharmacy Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0372
+247,Ann Bryant Art Gallery,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0123
+248,Apparte del Arte,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0278
+249,Arab Image Foundation,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R029
+250,Aram Khachaturian Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0161
+251,Archaeological Museum of Matrouh,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0403
+252,Archaeological Museum of North Macedonia,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0201
+253,Archaeological Museum of Đerdap,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0220
+254,"Archaeological museum, Plovdiv",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0185
+255,Archive of Vojvodina,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0228
+256,Archive of the Serbian Orthodox Church,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0217
+257,Archivo Histórico del Departamento del Atlántico,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0452
+258,Archivo Zitarrosa,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0341
+259,Argentina Data Portal,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0239
+260,Argentine Olympic Committee Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0237
+261,Armenian Center for Contemporary Experimental Art,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0163
+262,Arquivo Nacional Brasil,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R025
+263,Arruabarrena Palace Municipal Regional Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0018
+264,Art Museum in Piatra Neamț,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0207
+265,Art Plural Gallery,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0486
+266,Art55 gallery in Niš,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0218
+267,ArtScience Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0389
+268,Artemartis,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0111
+269,Asenovgrad history museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0431
+270,Atchugarry Museum of Contemporary Art,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0337
+271,August House,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0130
+272,Automobile museum in Belgrade,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0216
+273,Ayala Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0481
+274,Ayyam Gallery,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0476
+275,Aznavour Center,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0162
+276,Azret-Sultan,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0148
+277,Baan Kudichin Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0485
+278,Baku Museum of Miniature Books,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0168
+279,Bangkok Doll Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0401
+280,Bangkok National Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0484
+281,Bariloche Paleontological Association,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0020
+282,Bartolomeu Dias Museum Complex,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0134
+283,Bačka Palanka City Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0225
+284,Bee-Farming Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0233
+285,Beer Museum in Zrenjanin,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0221
+286,Beirut Art Center,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0361
+287,Beitou Hot Spring Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0419
+288,Belgrade City Library,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0054
+289,Belmond Andean Explorer,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0320
+290,Belogradchik Fortress,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0430
+291,Belogradchik History Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0195
+292,Beneficial Microbes Museum and Tourism Factory,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0152
+293,BiblioAsia,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R038
+294,Biblioteca - Mediateca del Centro Cultural del España en Guatemala,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0070
+295,Biblioteca Central y Centro de Documentación Perito Francisco P. Moreno,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0017
+296,Biblioteca Departamental Jorge Garcés Borrero,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0287
+297,Biblioteca Max Von Buch,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0238
+298,Biblioteca Nacional Digital Brasil,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R026
+299,Biblioteca Nuestros Hijos,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0338
+300,Biblioteca Pedagógica Eudoro Díaz,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0240
+301,Biblioteca Pedro Mir,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0312
+302,Biblioteca Pública Barrial Fernando Gómez Martinez,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0279
+303,Biblioteca Pública Municipal Domingo Sabio,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0504
+304,Biblioteca Pública Municipal Donaldo Ortiz Sierra,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0503
+305,Biblioteca Pública Municipal Dr. HermesDuarte Arias- Municipio de Vetas,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0502
+306,Biblioteca Pública Municipal Eduardo Cote Lamus,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0505
+307,Biblioteca Pública Municipal Eladio Segundo Sarmiento Garavito,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0506
+308,Biblioteca Pública Municipal Eulises Rivera,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0508
+309,Biblioteca Pública Municipal Ezequiel Oviedo Nieto,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0507
+310,Biblioteca Pública Municipal Fernando Díaz Herazo De Galeras,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0509
+311,Biblioteca Pública Municipal Fernando Enrique Mancilla Silva,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0510
+312,Biblioteca Pública Municipal Francisco Antonio Gómez García,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0511
+313,Biblioteca Pública Municipal Gabriel García Marquez,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0512
+314,Biblioteca Pública Municipal German Guzmán Campos,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0047
+315,Biblioteca Pública Municipal Gilma Castellanos,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0516
+316,Biblioteca Pública Municipal Gregorio Gutiérrez Gónzalez,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0519
+317,Biblioteca Pública Municipal Guillermo Salamanca Pacheco,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0514
+318,Biblioteca Pública Municipal Helcías Martán Góngora,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0513
+319,Biblioteca Pública Municipal José Concepción Machado Ruiz,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0518
+320,Biblioteca Pública Municipal José Francisco Rojas Guerra,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0517
+321,Biblioteca Pública Municipal José Félix Yela Mejía,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0515
+322,Biblioteca Pública Municipal José Gustavo Pava Peña,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0522
+323,Biblioteca Pública Municipal José Lorenzo Celedon Benjumea,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0520
+324,Biblioteca Pública Municipal Juan Crisostomo de Echavarria,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0521
+325,Biblioteca Pública Municipal Juan De Jesús Wilches,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0526
+326,Biblioteca Pública Municipal La Cacica María,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0525
+327,Biblioteca Pública Municipal Luis Carlos Loucurture Daza,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0529
+328,Biblioteca Pública Municipal Luis Eduardo Paéz Courvel,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0528
+329,Biblioteca Pública Municipal Luis José Barros Quintero,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0527
+330,Biblioteca Pública Municipal Luruaco,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0524
+331,Biblioteca Pública Municipal Madre Laura Montoya Upegui,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0523
+332,Biblioteca Pública Municipal Mamá Yeya,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0530
+333,Biblioteca Pública Municipal Miguel Ángel López Hernández,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0532
+334,Biblioteca Pública Municipal Milcíades Mariela Del Nilo,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0281
+335,Biblioteca Pública Municipal Monseñor José Joaquin Salcedo Guarin,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0533
+336,Biblioteca Pública Municipal Monseñor Juan José Díaz Plata,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0531
+337,Biblioteca Pública Municipal Pedro Medina Avendaño,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0534
+338,Biblioteca Pública Municipal Placido Hernández,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0537
+339,Biblioteca Pública Municipal Prado Tolima,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0050
+340,Biblioteca Pública Municipal Rafael Antonio Ariza Ariza,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0540
+341,Biblioteca Pública Municipal Salón Wilches,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0539
+342,Biblioteca Pública Municipal Samuel Coneo Ayola,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0536
+343,Biblioteca Pública Municipal San Cayetano,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0535
+344,Biblioteca Pública Municipal Santa Ana,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0538
+345,Biblioteca Pública Municipal Senderos del Saber,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0049
+346,Biblioteca Pública Municipal Tiberio Venegas Pinzón,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0542
+347,Biblioteca Pública Municipal Tulio Manuel Castro Gil,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0543
+348,Biblioteca Pública Municipal de Buesaco,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0541
+349,Biblioteca Pública Municipal de La Salina,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0545
+350,Biblioteca Pública Municipal de Macanal,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0051
+351,"Biblioteca Pública Municipal de Malambo ""Pedro Dionicio Narvaez Miranda""",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0053
+352,Biblioteca Pública Municipal de Manatí,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0546
+353,Biblioteca Pública Municipal de Mutatá,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0547
+354,Biblioteca Pública Municipal de Paz De Rio,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0544
+355,Biblioteca Pública Municipal de Pelaya,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0052
+356,Biblioteca Pública Municipal de Pisba Pilosísima,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0548
+357,Biblioteca Pública Municipal de Ponedera,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0056
+358,Biblioteca Pública Municipal de Restrepo,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0550
+359,Biblioteca Pública Municipal de Rio Iro,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0552
+360,Biblioteca Pública Municipal de Rio de Oro,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0059
+361,Biblioteca Pública Municipal de Riohacha Comuna 10,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0058
+362,Biblioteca Pública Municipal de Rondón,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0551
+363,Biblioteca Pública Municipal de Sabanas de San Ángel,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0060
+364,Biblioteca Pública Municipal de Samaca,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0549
+365,Biblioteca Pública Municipal de San Pelayo,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0061
+366,Biblioteca Pública Municipal de San Zenón,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0064
+367,Biblioteca Pública Municipal de Santa Lucia,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0553
+368,Biblioteca Pública Municipal de Santa Rosa del Sur,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0556
+369,Biblioteca Pública Municipal de Siachoque,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0555
+370,Biblioteca Pública Municipal de Soledad,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0554
+371,Biblioteca Pública Municipal de Susacón,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0557
+372,"Biblioteca Pública Municipal de Tiquisio ""La Luz del saber""",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0558
+373,Biblioteca Pública Municipal de Turbaco,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0063
+374,Biblioteca Pública Municipal de Une,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0560
+375,Biblioteca Pública Municipal de Uramita,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0559
+376,Biblioteca Pública Municipal de Utica,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0561
+377,Biblioteca Pública Municipal de Yumbo,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0282
+378,Biblioteca Pública Municipal del Municipio De Arjona,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0562
+379,Biblioteca Pública Municipal del Municipio De Matanza,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0563
+380,Biblioteca Pública Municipal del Municipio De Miranda,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0566
+381,Biblioteca Pública Municipal del Municipio De Morales,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0565
+382,Biblioteca Pública Municipal del Municipio De San Fernando,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0564
+383,Biblioteca Pública Municipal del Municipio De Santuario,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0062
+384,Biblioteca Pública Municipal del Municipio de Panqueba,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0567
+385,Biblioteca Pública Odilia Camacho Gómez,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0568
+386,Biblioteca Pública Popular Fronteriza,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0569
+387,Biblioteca Pública Rafaél Rangel Gómez,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0570
+388,Biblioteca Pública Ramiro Rivadeneira Chavez,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0571
+389,Biblioteca Pública Ricardo Quintero Nieto,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0283
+390,Biblioteca Pública Samuel Velásquez Botero,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0572
+391,Biblioteca Pública Seferino Cotrina,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0574
+392,Biblioteca Pública Walberto Ordoñez Hernandez,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0573
+393,Biblioteca Público Municipal José Armando Curbelo Pérez,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0068
+394,Biblioteca Rafael Meza Ayau,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0316
+395,Biblioteca del Centro Cultural de España en Lima,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0323
+396,Biblioteca del Centro Cultural de España en Montevideo,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0344
+397,Biblioteca popular Cachilo,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0242
+398,Biblioteca y Centro Multimedia. Facultad de Ciencias Veterinarias. Universidad de Buenos Aires,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0498
+399,Bibliotheca Alexandrina,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0108
+400,Bishop's Basilica of Philippopolis,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0196
+401,Black Church Archives and Library,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0209
+402,Blue Penny Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0410
+403,Bob Marley Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0317
+404,Bogotá Museum of Modern Art,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0289
+405,Bolivian Air Force Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0264
+406,Botswana Craft,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0001
+407,Bowen University Library,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0121
+408,Boyan Penev - 1949,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0190
+409,Boyana Church,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0193
+410,Branch State Archive of the Ukrainian Institute of National Memory,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0235
+411,Brașov County Museum of History,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0211
+412,Brokk'Art,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0099
+413,Brukenthal National Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0433
+414,Bucharest Metropolitan Library,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0208
+415,Budilnik - 1898,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0497
+416,Buenos Aires Museum of Modern Art,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0243
+417,"Building art gallery ""Nadežda Petrović""",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0229
+418,Building in Boška Đuričića 10 in Jagodina,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0224
+419,Bunun Cultural Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0417
+420,CAMPO Canteen,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0342
+421,CIDDAE,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0577
+422,Cabildo of Buenos Aires,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0434
+423,Cafesjian Center for the Arts,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0013
+424,Cairo International Airport Museum (Terminal 3),1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0404
+425,Cambodian Landmine Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0387
+426,Cape Coast Castle Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0414
+427,Cape Town Holocaust Centre,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0129
+428,Capital Art Center,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0422
+429,Carnacini House Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0021
+430,Casa Concha,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0321
+431,Casa Museo Fernando González Otraparte,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0286
+432,Casa Museo Isla Negra,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0270
+433,Casa Museo Memoria Campesina,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0285
+434,Casa Museo Mosquera,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0306
+435,Casa Museo Musical del Quindío,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0288
+436,Casa Museo Policarpa Salavarrieta,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0449
+437,Casa Museo Porfirio Barba Jacob,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0450
+438,Casa Museo Santafé Sociedad de Mejoras Públicas de Medellín,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0284
+439,Casa Museo de Historia del Cacao Herencia Chucuri,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0451
+440,Casa Museo de la Memoria de los Derechos Humanos de las Mujeres del Magdalena Medio,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0290
+441,Casa de Cultură Mangalia,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0219
+442,Casa de Cultură Marghita,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0215
+443,Casa de la Cultura Luis Roncancio,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0291
+444,Casa de la Literatura Peruana,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0327
+445,Casa de la Memoria de la Costa Pacífica Nariñense,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0292
+446,Casa del Arte,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0276
+447,Casal de Catalunya,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0499
+448,Castro Barros Historical Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0241
+449,Center for Culture Smederevo,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0223
+450,"Center for culture, tourism and sport Knić",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0230
+451,Central District Library named after Pavlo Tychyna (Kyiv),1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0236
+452,Central Public Library Cape Town,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0495
+453,Central Scientific Library of Kharkiv National University named after V. N. Karazin,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0234
+454,Centre For Black And African Arts And Civilization,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0004
+455,Centre algérien de la cinématographie,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0097
+456,Centre culturel Blaise Senghor,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0125
+457,Centro Colombo Americano de Pereira,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0294
+458,Centro Cultural Colombo Americano de Cali,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0296
+459,Centro Cultural Estacion Provincial,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0246
+460,Centro Cultural Inca Garcilaso,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0324
+461,Centro Cultural PUCP,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0578
+462,Centro Cultural de la Cooperación,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0500
+463,Centro Cultural profesor Bernardo Parra Leiva,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0272
+464,Centro Cultural y Biblioteca Pública Arturo y Roberto Restrepo,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0575
+465,Centro Nacional Recuperación Patrimonial MINSAL Unidad de Patrimonio,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0280
+466,Centro Nacional de Arte Contemporáneo Cerrillos,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0275
+467,Centro de Cultura Tradicional Curarrehue,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0274
+468,Centro de Historieta y Humor Gráfico Argentinos,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0042
+469,Chamo,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0189
+470,Chavin de Huantar Contemporary Army Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0326
+471,Cheng Ho Cultural Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0382
+472,Chestolyubie - 2010,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0191
+473,Chiayi Cultural and Creative Industries Park,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0151
+474,Chihsing Tan Katsuo Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0418
+475,Children's Cultural Center Majdan,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0226
+476,Children's Cultural Center Niš,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0222
+477,Chilean National Congress Library,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0273
+478,Chin Pao San,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0420
+479,Chinatown Heritage Centre,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0480
+480,Chini Gallery,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0421
+481,Chuan Cheng Art Center,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0423
+482,Church of Saint Peter,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0082
+483,Church of the Nativity of Christ in Arbanasi,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0194
+484,Cinemateca Uruguaya,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0576
+485,Cineteca Nacional de Chile,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0277
+486,Ciudad Cultural Konex,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0248
+487,Clock Tower Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0369
+488,Colección Arqueológica Marino Álzate Ospina,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0454
+489,Collegium Artisticum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0177
+490,Congregación de Hermanas Misioneras de María Inmaculada y Santa Catalina de Sena Madre Laura,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0293
+491,Contemporary Art Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0024
+492,Coptic Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0406
+493,Crocodile Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0407
+494,Cultural Center of Spain in El Salvador,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0318
+495,Cultural Center of the Philippines,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R040
+496,Cultural center Gradiška,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0178
+497,Cultural center Trebinje,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0179
+498,Cécile Fakhoury Gallery,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0103
+499,DaGuan Gallery,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0157
+500,"Dah Hsian Seetoo Library, National Chengchi University",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0493
+501,Darb 1718,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0104
+502,DesignDB / KIDP,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R005
+503,Dessert Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0385
+504,Dimcho Debelyanov - 1960,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0198
+505,Dimitar Dimov House Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0197
+506,Dogma Collection,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R044
+507,Dura Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0475
+508,East African Revival Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0143
+509,East Asian Graphics Archive,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R006
+510,Eden Hotel,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0244
+511,Emilio Azzarini Museum of Musical Instruments,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0250
+512,Entidad Museal Alban Cundinamarca,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0455
+513,Erdenesiin Khuree,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0146
+514,Ernesto de la Cárcova Museum of Reproductions and Comparative Sculpture,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0048
+515,Estación Hidrobiológica de Puerto Quequén,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0028
+516,Ethno Village Čardaci,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0180
+517,Ever Harvest Art Gallery,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0156
+518,Evergreen Maritime Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0424
+519,Falkland Islands Museum and National Trust,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0025
+520,Farhat Cultural Center,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0362
+521,Flood Archive,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0251
+522,Flowers Neighborhood Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0245
+523,Fondation Zinsou,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0400
+524,"Franciscan friary and church of St John the Baptist, Kraljeva Sutjeska",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0183
+525,Franschhoek Motor Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0133
+526,French Institute of Azerbaijan,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0169
+527,French Institute of DRC,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0101
+528,Fundacion IDA,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R027
+529,Fundación ArteSumapaz,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0346
+530,Fundación Casa Tres Patios,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0295
+531,Gacko National Library,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0014
+532,Galeria del Paseo,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0329
+533,Galerie Tanit,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0363
+534,Gallery 1957,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0489
+535,Gallery MOMO,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0002
+536,Gayer-Anderson Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0408
+537,Georgia State Silk Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0022
+538,Goodman Gallery,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0003
+539,Gradiška National Library,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0186
+540,Graeco-Roman Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0409
+541,Grand Palace,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0089
+542,Green Olive Arts,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0117
+543,Guillermo Piñeres Botanical Garden,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0453
+544,Heritage Museum Pljevlja,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0200
+545,Hindiyeh Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0354
+546,Historical Museum of Bosnia and Herzegovina,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0187
+547,Historical Political Museum of Chaco Peronism,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0436
+548,Historical Wax Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0435
+549,"Historical, Geographical and Natural Museum of Gobernador Virasoro",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0249
+550,Hong Kong Memory,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R009
+551,House of Crafts,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0172
+552,Hrodna State Historico-Archaeological Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0170
+553,Huguenot Memorial Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0132
+554,"IBB, Minsk",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0171
+555,Ilham Gallery,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0584
+556,Imbiah Lookout,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0088
+557,Ingeniero White Harbor Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0247
+558,Institut Français Singapour,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0395
+559,Institut français du Cameroun,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0491
+560,Institut français du Liban,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0367
+561,Institute for Protection of Cultural Monuments and National Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0202
+562,Iran Open Data,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0079
+563,Iraq Natural History Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0355
+564,Irma Stern Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0136
+565,JAGDA,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R010
+566,Jorge B. Vargas Museum and Filipiniana Research Center,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0386
+567,Juan Nepomuceno Madero Popular Library and Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0501
+568,Junín Historical Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0029
+569,Kiosko Galería,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0266
+570,Kom Ushim Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0107
+571,Kozara Museum in Prijedor,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0188
+572,Kuru Art Project,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0094
+573,KvirArhiv.org,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0192
+574,Kwa Geok Choo Law Library,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0586
+575,La Floresta Public Library,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0299
+576,La Sierra Artist Residency,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0297
+577,La Tertulia Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0065
+578,"La Trocha, la Casa de la Paz",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0314
+579,Laboratorio de Arqueología Universidad del Magdalena,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0075
+580,Landing Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0030
+581,Laureano Brizuela Art Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0031
+582,Leopold Sedar Senghor French Institute,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0141
+583,"Library ""Branko Radičević"" in Derventa",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0182
+584,Library and Central Archive of the National Congress,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0325
+585,Library of the Belarusian State University of Informatics and Radioelectronics,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0496
+586,Lopez Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0392
+587,Luxor Art Gallery,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0109
+588,M+ Collections,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R013
+589,MAG Visitor Centre,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0090
+590,MARTadero,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0265
+591,MUBI,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0463
+592,Madaripur Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0374
+593,MagnifiScience Centre,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0379
+594,Manial Palace and Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0411
+595,Mar del Plata Museum of the Sea,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0440
+596,Maru-a-Pula School Library,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0095
+597,Mashrabia Art Gallery,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0405
+598,Mathaf,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0477
+599,Medellín Museum of Modern Art,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0078
+600,Memorial Museum-Workshop of Zair Isakavič Azhur,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0173
+601,Mineral Museum Andres del Castillo,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0331
+602,Mint Museum of Toys,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0391
+603,Modzi Arts,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0492
+604,Mondoir gallery,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0085
+605,Mother Armenia Military Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0164
+606,Mummification Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0412
+607,Municipal Museum of Natural Sciences Pachamama,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0033
+608,"Museo ""El Templo del Fútbol""",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0252
+609,Museo Amano,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0328
+610,Museo Antropológico de la Orinoquía,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0456
+611,Museo Arqueológico Antonini,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0332
+612,Museo Arqueológico Guane,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0457
+613,Museo Arqueológico Josefina Ramos de Cox,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0072
+614,Museo Arqueológico Municipal de Mongua,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0458
+615,Museo Arqueológico Prehispánico de Caicedonia,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0459
+616,Museo Arqueológico de Galapa Muga,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0311
+617,Museo Arqueológico de Zipaquirá,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0300
+618,Museo Arqueológico y Paleontológico de Pubenza,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0460
+619,Museo Aéreo Fénix,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0303
+620,Museo Cao,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0334
+621,Museo Capilla del Claustro de San Agustín del Instituto Humboldt,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0298
+622,Museo Cartama,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0461
+623,Museo Comunitario Mulaló,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0304
+624,Museo Comunitario de Guainía,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0067
+625,Museo Criollo de los Corrales,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0439
+626,Museo De Los Asentamientos,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0032
+627,Museo Del Títere Tibi,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0034
+628,Museo Departamental de San José,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0345
+629,Museo El Castillo,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0073
+630,Museo Etnográfico Miguel Ángel Builes,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0301
+631,Museo Geominero del Uruguay,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0347
+632,Museo Hippie,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0035
+633,Museo Histórico De La Afip,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0441
+634,Museo Internacional de la Moneda MILM,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0302
+635,Museo Jaime Duque Grisales - Parque Jaime Duque,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0305
+636,Museo Medardo Pantoja,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0040
+637,Museo Mitre,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0438
+638,"Museo Nacional de Arte Moderno ""Carlos Mérida""",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0069
+639,Museo Nacional del Petróleo,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0038
+640,Museo Naval del Caribe,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0307
+641,Museo Nemqueteba Corporación Cultural de Cucunuba,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0308
+642,Museo Notarial Argentino,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0255
+643,Museo Palacio Dionisi,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0037
+644,Museo Participativo de Ciencias,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0253
+645,Museo Pedro de Osma,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0330
+646,Museo Policial,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0468
+647,Museo Pompeo Boggio,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0039
+648,Museo Provincial De Bellas Artes Dr. Juan Ramón Vidal,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0437
+649,Museo Provincial de Bellas Artes Franklin Rawson,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0036
+650,Museo Siderúrgico de Colombia,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0462
+651,Museo Subterráneo Monumental – Catedral de Sal de Zipaquirá,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0310
+652,Museo Torres García,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0464
+653,Museo de Arte Contemporáneo de Bahía Blanca,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0254
+654,Museo de Arte Precolombino Cusco,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0335
+655,Museo de Ciencia y Técnica,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0442
+656,Museo de Ciencias Naturales La Salle,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0066
+657,"Museo de Farmacobotánica ""Juan A. Domínguez""",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0041
+658,Museo de Historia Natural Dr. Carlos Torres de la LLosa,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0467
+659,Museo de Historia Natural Noel Kempff Mercado,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0269
+660,Museo de Sitio Pucllana,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0336
+661,Museo de Sitio UNC,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0257
+662,Museo de la cultura de Carabobo,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0352
+663,Museo del Galeón,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0390
+664,Museo ferroviario de Piriápolis,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0466
+665,Museu Nacional de Antropologia,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0399
+666,Museum Siam,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R049
+667,Museum and Library of the House of the Agreement of San Nicolás,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0444
+668,Museum of Apollonia,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0158
+669,Museum of Architecture and Design,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0256
+670,Museum of Art and Culture of Loei (MALOEI),1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0488
+671,Museum of Fine Arts Named after the Nevzorov Family,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0154
+672,Museum of History of Medicine in Armenia,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0167
+673,Museum of Illusions Kuala Lumpur,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0383
+674,Museum of Latin American Art of Buenos Aires,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0262
+675,Museum of Modern Art,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0358
+676,Museum of Paleontology Egidio Feruglio,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0261
+677,Museum of Religious Art Bishop Fray José Antonio de San Alberto,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0043
+678,Museum of Russian Art (collection of prof. A. Abrahamian),1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0166
+679,Museum of Skopje Old Bazaar,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0432
+680,Museum of the City of Rosario Wladimir Mikielievich,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0260
+681,"Museum of the Fidahin movement ""Zoravar Andranik""",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0165
+682,Museum of the Future,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0092
+683,Museum of the Macedonian Struggle,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0203
+684,Museum «Rescued Art Values»,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0428
+685,Muso Kunda Museum of Women,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0115
+686,Musée de la photographie de Madagascar,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0112
+687,Muzei Lidskogo brovara,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0174
+688,NUST Library,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0144
+689,National Archaeological Museum of Korçë,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0155
+690,National Archives of Uruguay,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0349
+691,National Gallery Singapore Collection,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R051
+692,National Library,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0373
+693,National Library José Martí,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0071
+694,National Library Service of Malawi,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0114
+695,National Library and Archives of Iran,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R030
+696,National Library of Algeria,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0098
+697,National Library of Cape Verde,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0100
+698,National Library of Jordan,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0351
+699,National Library of Korea,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R014
+700,National Library of Mauritius,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0116
+701,National Library of the Kyrgyz Republic,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0008
+702,National Memorial,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0402
+703,National Museum in Damascus,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0376
+704,National Museum of Costa Rica,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0309
+705,National Museum of Ethnography and Folklore,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0057
+706,National Museum of Mongolia,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0150
+707,National Museum of Qatar,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0487
+708,National Museum of Visual Arts,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0471
+709,National Museum-Institute of Architecture,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0425
+710,National Police Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0413
+711,Natural History Museum of Jamaica,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0319
+712,Natural History Museum of Zimbabwe,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0145
+713,Naum Knop Foundation,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0443
+714,Nazarbayev University Library,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0494
+715,Nepal National Library,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0581
+716,Niasviž District Historico-Homeland Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0429
+717,Nippon Design Center,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R016
+718,Nunya Library,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0012
+719,Olduvai Gorge Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0131
+720,Oman Open data portal,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0364
+721,Open Data Cambodia,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0381
+722,Open Data Nepal,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0377
+723,Orientalist Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0368
+724,Origami Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0343
+725,Otamendi Belgrano Palace,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0445
+726,Out Of The Circle,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0105
+727,Palace of Culture of the Minsk Tractor Works,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0176
+728,Palais de Glace,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0446
+729,Panama Canal Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0340
+730,Panama Museum of Contemporary Art,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0322
+731,People's Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0206
+732,Phuket Thai Hua Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0398
+733,Pinang Peranakan Mansion,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0479
+734,Pintô Art Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0397
+735,Pre-Columbian Gold Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0313
+736,Printing Museum Tokyo,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R017
+737,Provincial Museum of Natural Sciences Florentino Ameghino,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0258
+738,Public Law Library of Chișinău,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0199
+739,Pueblo de Luis Regional Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0045
+740,Pulpería Quilapán,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0259
+741,Q115931257,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0091
+742,Q122764551,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0007
+743,Q124454126,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0118
+744,Q74520147,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0135
+745,Red Dot Design Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0393
+746,Reflections at Bukit Chandu,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0483
+747,Royal Carriages museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0415
+748,Sachaqa Centro de Arte,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0333
+749,Sacred Defense Documentation and Research Center,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0360
+750,Sarmiento Historic Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0447
+751,Seedrioru,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0149
+752,Shahid Chamran Cultural and Sports Complex,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0356
+753,Sharon Synagogue,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0074
+754,Simik Photographic Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0046
+755,Singapore Graphic Archives,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R056
+756,Source library,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0119
+757,Southern Fuegian Railway,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0268
+758,Spanish Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0469
+759,Stèle de Kaba,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0093
+760,Sukuma Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0139
+761,Sultan Abdul Aziz Royal Gallery,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0384
+762,Sustainable Bolivia,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0271
+763,TEOR/ética Gallery,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0315
+764,Taiwan Design Research Institute,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R020
+765,Tamale Technical University Library,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0113
+766,Tan Sri Runme Shaw Library,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0585
+767,Tareq Rajab Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0350
+768,Tashkeel Dubai,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0083
+769,Tekera Resource Centre,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0137
+770,Temple Radicati Museum Library Foundation,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0339
+771,Temple University Libraries Digital Collections / CONTENTdm,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-SBC1970R0036
+772,Temple of the Tooth Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0380
+773,Thai Film Archive,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0587
+774,Thaipography Archive,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R058
+775,The Battle Box,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0394
+776,The Mind Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0086
+777,The Peace Memorial Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0416
+778,The Temple Institute,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0371
+779,Timoteo Navarro Museum of Art,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0044
+780,Tokyo TDC,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R022
+781,Treasury of National Jewels,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0474
+782,Uganda Islamic museum and Research centre,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0138
+783,Uganda Martyrs Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0140
+784,Umbral Centro Cultural,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0359
+785,University Art Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0055
+786,Vietnam National Museum of History,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-ESR1931R061
+787,Vilamajó House Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0348
+788,Villa Karo,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0106
+789,Waaw,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0124
+790,Women’s History Museum of Zambia,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0142
+791,Xul Solar Museum,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0448
+792,Yemen Data Project,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0583
+793,Zawyeh art gallery,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0366
+794,data.gov.my,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0081
+795,"museo en Tigre, Buenos Aires, Argentina",1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0263
+796,open.data.al,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0159
+797,المركز الثقافي أزرو,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0006
+798,بيت تراث الموصل,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0472
+799,دار العلم والعلماء,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0084
+800,دار النمر للفن والثقافة,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0365
+801,فضاء الذاكرة التاريخية للمقاومة والتحرير أمير الأطلس,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0005
+802,秘魯國家檔案館,1,0.45,0,1,0,1,0,0,0,img02_open_rights_review,SURF-NMIIC2026R0465

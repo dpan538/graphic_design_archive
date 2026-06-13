@@ -1,0 +1,12 @@
+metric,value,notes
+object_total,13659,Object-level groups; repeated views/photos count once.
+object_source_visible_rate,97.91,Objects with IMG01/IMG02/IMG03 evidence.
+object_verified_open_rate,87.96,Objects with reviewed IMG03 evidence.
+object_weighted_publication_rate,93.36,Object-level max image weight per object.
+object_weighted_gap_to_95_points,223.40,Weighted points needed for the 95% publication-grade gate.
+repair_candidate_objects,1644,"Objects with source-visible, verified-open, or weighted-publication gaps."
+source_priority_count,802,Source families represented in the repair queue.
+candidate_img02_objects,1321,Source-hosted visible objects needing open-rights review.
+candidate_img01_objects,37,Thumbnail-only objects needing item-level image/rights review.
+candidate_img00_objects,43,Expected-image blockers needing source-visible repair.
+candidate_img04_objects,243,Text/no-image objects needing text-state confirmation or visual record search.
