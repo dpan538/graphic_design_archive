@@ -8916,3 +8916,51 @@ Verification:
 - `python3 -m py_compile scripts/audit_capture_rights_rule_hardening_v1.py scripts/run_midcentury_expansion_capture_1931_1970.py scripts/run_gsu_contentdm_image_ready_1830_1970.py scripts/harvest_gsu_contentdm_raw_records.py scripts/harvest_gsu_contentdm_raw_records_1971_2026.py`
   passed.
 - `python3 scripts/audit_capture_rights_rule_hardening_v1.py` passed.
+
+## 2026-06-13 - LOC Rights Item Probe v1
+
+Scope:
+
+- Ran a source-only loc.gov item JSON probe against the 50 P0 Library of
+  Congress rights-repair candidates.
+- The probe extracted item-level rights/advisory text and source-hosted image
+  URL signals. It did not download images, save raw JSON, mutate surfaces,
+  rebuild public payloads, or upgrade IMG01/IMG03.
+
+Files:
+
+- `scripts/probe_loc_rights_item_metadata_v1.py`
+- `data/loc_rights_item_probe_v1.csv`
+- `data/loc_rights_item_probe_summary_v1.csv`
+- `docs/capture/LOC_RIGHTS_ITEM_PROBE_v1.md`
+
+Results:
+
+- Candidate rows probed: 50.
+- Rows with source-hosted LOC image URLs: 20.
+- Rows with item-level open-rights text: 21.
+- Manual IMG03 candidate rows: 20.
+- Manual IMG03 candidate weighted gap points represented: 14.00.
+- Rate-limited rows queued for later retry: 29.
+- Rows kept as IMG04/text until visual source is found: 1.
+- Automatic upgrades allowed: 0.
+
+Interpretation:
+
+- LOC is confirmed as a useful targeted repair path, but not a bulk automatic
+  rights-upgrade path.
+- The 20 `manual_img03_candidate_item_rights_visible` rows expose both
+  source-hosted image URLs and LOC item-level "No known restrictions on
+  publication" text. They can enter a human/rebuild review pass, but they were
+  not promoted in this round.
+- LOC returned HTTP 429 for 29 rows after the initial successful subset. The
+  script now treats 429 as `retry_later_rate_limited` instead of blocking the
+  run with long in-process backoff.
+- The candidate set is valuable for pre-1940 advertising/trade-card continuity
+  and 1930-1970 WPA/Federal Art poster coverage.
+
+Verification:
+
+- `python3 -m py_compile scripts/probe_loc_rights_item_metadata_v1.py` passed.
+- `python3 scripts/probe_loc_rights_item_metadata_v1.py` completed with network
+  permission and source-only output.
