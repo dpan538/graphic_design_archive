@@ -1,0 +1,13 @@
+metric,value,notes
+wellcome_candidate_rows,84,Wellcome rows from image_rights_repair_candidates_v1.
+local_records_found,84,Rows matched to existing local capture records.
+automatic_upgrade_allowed_rows,0,No automatic IMG03 upgrades are permitted by this preflight.
+candidate_weighted_gap_points,39.45,Weighted-publication gap points represented by these candidates.
+local_image_state_IMG02,82,Best matching local capture state.
+local_image_state_IMG03,2,Best matching local capture state.
+local_license_signal_no_open_license_text,82,Conservative local license text signal.
+local_license_signal_blocking_or_noncommercial_terms,2,Conservative local license text signal.
+rights_signal_source_hosted_viewer_no_open_license_signal,81,Conservative local metadata signal.
+rights_signal_placeholder_or_no_displayable_image_blocker,3,Conservative local metadata signal.
+upgrade_recommendation_no_upgrade,81,36.45 weighted points.
+upgrade_recommendation_source_visible_repair_needed,3,3.00 weighted points.

@@ -8506,3 +8506,63 @@ Verification:
 - `python3 -m py_compile scripts/audit_cooperhewitt_rights_repair_preflight_v1.py`
   passed.
 - `python3 scripts/audit_cooperhewitt_rights_repair_preflight_v1.py` passed.
+
+## 2026-06-13 - Wellcome Rights Repair Preflight v1
+
+Scope:
+
+- Continued P0 rights-repair execution review with Wellcome Collection
+  Catalogue API, the second-largest weighted-publication repair batch.
+- This pass used already captured local capture records only. It did not call
+  Wellcome APIs, fetch item pages, download images, mutate surfaces, or upgrade
+  IMG01/IMG03.
+
+Files:
+
+- `scripts/audit_wellcome_rights_repair_preflight_v1.py`
+- `data/wellcome_rights_repair_preflight_v1.csv`
+- `data/wellcome_rights_repair_summary_v1.csv`
+- `docs/capture/WELLCOME_RIGHTS_REPAIR_PREFLIGHT_v1.md`
+
+Results:
+
+- Wellcome repair candidate rows: 84.
+- Local Wellcome records found: 84.
+- Candidate weighted-publication gap points represented: 39.45.
+- Automatic upgrades allowed: 0.
+- Upgrade recommendation `no_upgrade`: 81 rows / 36.45 weighted points.
+- Upgrade recommendation `source_visible_repair_needed`: 3 rows / 3.00
+  weighted points.
+
+Rights and image signals:
+
+- Local image states: 82 IMG02, 2 legacy local IMG03.
+- License signals: 82 no open-license text, 2 blocking/non-commercial terms.
+- Rights signals: 81 source-hosted viewer records without open-license signal,
+  3 placeholder/no-displayable-image blockers.
+
+Important finding:
+
+- The two legacy local IMG03 rows carry `cc-by-nc` / `cc-by-nc-nd` license text
+  and placeholder image URLs. These are not verified-open publication evidence
+  under the current gate contract and should be treated as repair/downgrade
+  risks, not as IMG03 upgrade candidates.
+- The Wellcome preflight therefore tightens local license detection so a
+  generated phrase such as `open licence signal:` is not sufficient by itself;
+  the actual license id must be PDM, CC0, public domain, or a non-NC/ND CC BY
+  signal.
+
+Interpretation:
+
+- Wellcome is valuable for source-visible public-health graphics, but it is not
+  a quick verified-open repair path unless item-level license evidence is
+  rechecked and captured.
+- The next P0 rights families should continue with Library of Congress, GSU
+  CONTENTdm, AIC, Internet Archive, and V&A before the large 5,000-source
+  capture tranche.
+
+Verification:
+
+- `python3 -m py_compile scripts/audit_wellcome_rights_repair_preflight_v1.py`
+  passed.
+- `python3 scripts/audit_wellcome_rights_repair_preflight_v1.py` passed.
