@@ -9180,3 +9180,89 @@ Verification:
 
 - `python3 -m py_compile scripts/apply_loc_manual_img03_records_v1.py scripts/audit_loc_manual_img03_apply_postcheck_v1.py` passed.
 - `python3 scripts/audit_loc_manual_img03_apply_postcheck_v1.py` passed.
+
+## 2026-06-13 - Non-mainstream Item/Image Capture Quality Audit v1
+
+Scope:
+
+- Added an offline quality audit for the existing non-mainstream item/image
+  capture batch before any surface rebuild.
+- Recorded line-count and SHA-256 recovery anchors for the two audit input
+  CSVs under `data/backups/nonmainstream_item_image_quality_audit_2026_06_13/`.
+- Generated triage CSVs for ready, manual-review, and quarantine queues.
+- This pass did not fetch network data, download images, mutate capture
+  records, upgrade IMG01/IMG03, rebuild public surfaces, or touch frontend
+  payload mirrors.
+
+Backup:
+
+- `data/backups/nonmainstream_item_image_quality_audit_2026_06_13/MANIFEST.md`
+- The source CSVs were not mutated, so duplicate raw-like copies were not
+  committed. Recovery is anchored by Git history plus manifest hashes.
+
+Audit results:
+
+- Records audited: 587.
+- Ready for item review: 1.
+- Manual review before surface: 349.
+- Quarantine / not counted: 237.
+- Image state distribution in the input remains IMG02-only.
+
+Macro-region distribution:
+
+- Latin America: 292.
+- Eastern Europe: 94.
+- Africa: 88.
+- MENA: 44.
+- Southeast Asia: 37.
+- East Asia: 11.
+- Central Asia: 8.
+- South Asia: 6.
+- Blank macro-region: 5.
+- Oceania: 2.
+
+Risk findings:
+
+- Missing explicit design signal: 546.
+- Overbroad country/region label: 386.
+- Low surface signal: 225.
+- Generic non-design source: 20.
+- Spam/SEO pollution: 12.
+- Missing country/region: 5.
+- QID used as source name: 4.
+
+Interpretation:
+
+- The batch contains useful under-covered-region leads, but it is not safe to
+  count all 587 rows as successful active sources.
+- The biggest blockers are not IMG availability; they are weak graphic-design
+  relevance, overbroad geography labels such as Caribbean/Caucasus, and a
+  small number of polluted source pages.
+- The next large capture round should push geographic normalization and
+  source-authority/design-signal filtering upstream into discovery, otherwise
+  a 5,000-source expansion will inflate source count without improving release
+  gate quality.
+
+Files:
+
+- `scripts/audit_nonmainstream_item_image_capture_quality_v1.py`
+- `data/nonmainstream_item_image_capture_quality_v1.csv`
+- `data/nonmainstream_item_image_capture_quality_summary_v1.csv`
+- `data/nonmainstream_item_image_capture_ready_queue_v1.csv`
+- `data/nonmainstream_item_image_capture_manual_review_v1.csv`
+- `data/nonmainstream_item_image_capture_quarantine_v1.csv`
+- `docs/capture/NONMAINSTREAM_ITEM_IMAGE_CAPTURE_QUALITY_v1.md`
+
+Next action:
+
+- Use the manual-review queue to repair overbroad geography and identify
+  genuinely design-relevant institutions before any rebuild.
+- Quarantine rows should be excluded from success totals until replaced or
+  manually repaired.
+- Full frontend/public-surface rebuild remains deferred to a smaller isolated
+  pass because full rebuilds are currently too expensive for the workstation.
+
+Verification:
+
+- `python3 -m py_compile scripts/audit_nonmainstream_item_image_capture_quality_v1.py` passed.
+- `python3 scripts/audit_nonmainstream_item_image_capture_quality_v1.py` passed.
