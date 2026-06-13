@@ -14,7 +14,7 @@ import csv
 import hashlib
 import re
 import unicodedata
-from collections import Counter, defaultdict
+from collections import Counter
 from datetime import date
 from pathlib import Path
 from typing import Any, Iterable
@@ -141,6 +141,50 @@ OVERBROAD_COUNTRY_LABELS = {
 }
 
 
+def infer_geography(row: dict[str, str], summary: dict[str, str]) -> dict[str, Any]:
+    source_place = (row.get("source_place_text") or "").strip()
+    summary_macro = (summary.get("macro_region") or "").strip()
+    summary_country = (summary.get("country_or_region") or "").strip()
+    parts = [part.strip() for part in source_place.split("/") if part.strip()]
+    place_macro = parts[0] if parts else ""
+    place_country = parts[-1] if parts else ""
+
+    if place_country and place_country not in OVERBROAD_COUNTRY_LABELS:
+        inferred_macro = place_macro or summary_macro
+        inferred_country = place_country
+        precision = "country_from_source_place"
+    elif summary_country and summary_country not in OVERBROAD_COUNTRY_LABELS:
+        inferred_macro = summary_macro or place_macro
+        inferred_country = summary_country
+        precision = "country_from_summary"
+    elif summary_country or place_country:
+        inferred_macro = summary_macro or place_macro
+        inferred_country = summary_country or place_country
+        precision = "overbroad"
+    else:
+        inferred_macro = summary_macro or place_macro
+        inferred_country = ""
+        precision = "missing"
+
+    repair_needed = (
+        bool(inferred_country)
+        and bool(summary_country)
+        and inferred_country != summary_country
+    )
+    if inferred_macro and summary_macro and inferred_macro != summary_macro:
+        repair_needed = True
+
+    return {
+        "source_place_text": source_place,
+        "summary_macro_region": summary_macro,
+        "summary_country_or_region": summary_country,
+        "macro_region": inferred_macro,
+        "country_or_region": inferred_country,
+        "geo_precision": precision,
+        "geo_repair_needed": repair_needed,
+    }
+
+
 def read_csv(path: Path) -> list[dict[str, str]]:
     with path.open(newline="", encoding="utf-8") as handle:
         return list(csv.DictReader(handle))
@@ -237,8 +281,9 @@ def classify_row(row: dict[str, str], summary: dict[str, str]) -> dict[str, Any]
     authority_score, authority_tier, authority_hits = score_authority(text)
     spam_hits = contains_any(text, SPAM_TERMS)
     weak_hits = contains_any(text, GENERIC_WEAK_SOURCE_TERMS)
-    country_label = summary.get("country_or_region", "")
-    overbroad_geo = country_label in OVERBROAD_COUNTRY_LABELS
+    geo = infer_geography(row, summary)
+    country_label = geo["country_or_region"]
+    overbroad_geo = geo["geo_precision"] == "overbroad"
     q_source_name = bool(re.fullmatch(r"Q\d+", row.get("source_name", "").strip()))
     img_state = row.get("image_presence_code", "")
     image_url = row.get("image_url_detected", "")
@@ -264,6 +309,8 @@ def classify_row(row: dict[str, str], summary: dict[str, str]) -> dict[str, Any]
         risk_flags.append("overbroad_country_or_region")
     if not country_label:
         risk_flags.append("missing_country_or_region")
+    if geo["geo_repair_needed"]:
+        risk_flags.append("summary_geo_repair_needed")
     if weak_hits and design_score == 0:
         risk_flags.append("generic_non_design_source")
     if design_score == 0:
@@ -317,8 +364,13 @@ def classify_row(row: dict[str, str], summary: dict[str, str]) -> dict[str, Any]
         "source_identifier": row.get("source_identifier", ""),
         "source_record_url": row.get("source_record_url", ""),
         "source_title": row.get("source_title", ""),
-        "macro_region": summary.get("macro_region", ""),
+        "source_place_text": geo["source_place_text"],
+        "summary_macro_region": geo["summary_macro_region"],
+        "summary_country_or_region": geo["summary_country_or_region"],
+        "macro_region": geo["macro_region"],
         "country_or_region": country_label,
+        "geo_precision": geo["geo_precision"],
+        "geo_repair_needed": geo["geo_repair_needed"],
         "image_presence_code": img_state,
         "image_url_detected": image_url,
         "quality_score": quality_score,
@@ -357,6 +409,8 @@ def build_report(detail_rows: list[dict[str, Any]], summary_rows: list[dict[str,
             if flag:
                 risk_flags[flag] += 1
     authority = Counter(row["authority_tier"] for row in detail_rows)
+    geo_precision = Counter(row["geo_precision"] for row in detail_rows)
+    geo_repairs = Counter(str(row["geo_repair_needed"]).lower() for row in detail_rows)
     design_terms = Counter()
     for row in detail_rows:
         for term in str(row["design_signal_terms"]).split("; "):
@@ -406,6 +460,14 @@ def build_report(detail_rows: list[dict[str, Any]], summary_rows: list[dict[str,
         "## Authority tiers",
         "",
         *bullet_counts(authority),
+        "",
+        "## Geography precision",
+        "",
+        *bullet_counts(geo_precision),
+        "",
+        "## Geography repair needed",
+        "",
+        *bullet_counts(geo_repairs),
         "",
         "## Main risk flags",
         "",
@@ -460,7 +522,8 @@ def build_report(detail_rows: list[dict[str, Any]], summary_rows: list[dict[str,
             "- The batch has useful under-covered-region leads, but it is not safe to count all 587 records as successful active sources.",
             "- `ready_for_item_review` records should enter a small item/surface review pass first; `manual_review_before_surface` records need geography and design-relevance confirmation.",
             "- `quarantine_not_counted` records should not be included in success totals or rebuild inputs without source replacement or manual repair.",
-            "- Overbroad geography labels such as Caribbean or Caucasus need normalization before this batch can improve strict source coverage honestly.",
+            "- `source_place_text` carries country-level geography for this batch; the source-summary layer often collapses it into overbroad region buckets such as Caribbean or Caucasus.",
+            "- The next cleaning pass should repair source-summary geography upstream before using this batch to improve strict source coverage.",
             "",
             "## Output files",
             "",
@@ -493,8 +556,13 @@ def main() -> None:
         "source_identifier",
         "source_record_url",
         "source_title",
+        "source_place_text",
+        "summary_macro_region",
+        "summary_country_or_region",
         "macro_region",
         "country_or_region",
+        "geo_precision",
+        "geo_repair_needed",
         "image_presence_code",
         "image_url_detected",
         "quality_score",
@@ -539,6 +607,19 @@ def main() -> None:
     ]
     summary.extend(counter_rows("surface_readiness", Counter(row["surface_readiness"] for row in detail_rows)))
     summary.extend(counter_rows("macro_region", Counter(row["macro_region"] for row in detail_rows)))
+    summary.extend(
+        counter_rows(
+            "summary_macro_region",
+            Counter(row["summary_macro_region"] for row in detail_rows),
+        )
+    )
+    summary.extend(counter_rows("geo_precision", Counter(row["geo_precision"] for row in detail_rows)))
+    summary.extend(
+        counter_rows(
+            "geo_repair_needed",
+            Counter(str(row["geo_repair_needed"]).lower() for row in detail_rows),
+        )
+    )
     summary.extend(
         counter_rows(
             "ready_macro_region",

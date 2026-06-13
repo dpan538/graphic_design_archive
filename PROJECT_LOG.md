@@ -9203,32 +9203,30 @@ Backup:
 Audit results:
 
 - Records audited: 587.
-- Ready for item review: 1.
-- Manual review before surface: 349.
+- Ready for item review: 5.
+- Manual review before surface: 345.
 - Quarantine / not counted: 237.
 - Image state distribution in the input remains IMG02-only.
 
 Macro-region distribution:
 
-- Latin America: 292.
-- Eastern Europe: 94.
-- Africa: 88.
-- MENA: 44.
-- Southeast Asia: 37.
-- East Asia: 11.
+- Latin America: 297.
+- Eastern Europe: 99.
+- Africa: 81.
+- MENA: 41.
+- Southeast Asia: 39.
+- East Asia: 14.
 - Central Asia: 8.
-- South Asia: 6.
-- Blank macro-region: 5.
-- Oceania: 2.
+- South Asia: 7.
+- Oceania: 1.
 
 Risk findings:
 
 - Missing explicit design signal: 546.
-- Overbroad country/region label: 386.
+- Source-summary geography repair needed: 424.
 - Low surface signal: 225.
 - Generic non-design source: 20.
 - Spam/SEO pollution: 12.
-- Missing country/region: 5.
 - QID used as source name: 4.
 
 Interpretation:
@@ -9236,8 +9234,12 @@ Interpretation:
 - The batch contains useful under-covered-region leads, but it is not safe to
   count all 587 rows as successful active sources.
 - The biggest blockers are not IMG availability; they are weak graphic-design
-  relevance, overbroad geography labels such as Caribbean/Caucasus, and a
+  relevance, source-summary geography that collapses country-level
+  `source_place_text` into broad buckets such as Caribbean/Caucasus, and a
   small number of polluted source pages.
+- The audit now infers country-level geography from `source_place_text` for all
+  587 rows; 424 rows need the summary geography repaired upstream before they
+  can honestly improve strict source coverage.
 - The next large capture round should push geographic normalization and
   source-authority/design-signal filtering upstream into discovery, otherwise
   a 5,000-source expansion will inflate source count without improving release

@@ -12,25 +12,25 @@ Generated: 2026-06-13
 ## Results
 
 - Records audited: 587
-- manual_review_before_surface: 349
+- manual_review_before_surface: 345
 - quarantine_not_counted: 237
-- ready_for_item_review: 1
+- ready_for_item_review: 5
 
 ## Macro-region distribution
 
-- Latin America: 292
-- Eastern Europe: 94
-- Africa: 88
-- MENA: 44
-- Southeast Asia: 37
-- East Asia: 11
+- Latin America: 297
+- Eastern Europe: 99
+- Africa: 81
+- MENA: 41
+- Southeast Asia: 39
+- East Asia: 14
 - Central Asia: 8
-- South Asia: 6
-- (blank): 5
-- Oceania: 2
+- South Asia: 7
+- Oceania: 1
 
 ## Ready queue by macro-region
 
+- Latin America: 4
 - Southeast Asia: 1
 
 ## Authority tiers
@@ -46,14 +46,22 @@ Generated: 2026-06-13
 - institute: 6
 - national_archive: 2
 
+## Geography precision
+
+- country_from_source_place: 587
+
+## Geography repair needed
+
+- true: 424
+- false: 163
+
 ## Main risk flags
 
 - missing_design_signal: 546
-- overbroad_country_or_region: 386
+- summary_geo_repair_needed: 424
 - low_surface_signal: 225
 - generic_non_design_source: 20
 - spam_or_seo_pollution: 12
-- missing_country_or_region: 5
 - qid_as_source_name: 4
 
 ## Design signal terms
@@ -77,6 +85,10 @@ Generated: 2026-06-13
 
 | capture_id | source | region | score | design terms |
 | --- | --- | --- | ---: | --- |
+| NMIIC2026R0042 | Centro de Historieta y Humor Gráfico Argentinos | Latin America / Argentina | 15 | grafico; historieta; humor grafico |
+| NMIIC2026R0238 | Biblioteca Max Von Buch | Latin America / Argentina | 11 | catalog; logo |
+| NMIIC2026R0277 | Cineteca Nacional de Chile | Latin America / Chile | 10 | cartel |
+| NMIIC2026R0287 | Biblioteca Departamental Jorge Garcés Borrero | Latin America / Colombia | 15 | comic; grafica; grafico |
 | NMIIC2026R0396 | Asian Film Archive | Southeast Asia / Singapore | 11 | catalog; catalogue |
 
 ## Quarantine examples
@@ -86,20 +98,21 @@ Generated: 2026-06-13
 | NMIIC2026R0001 | Botswana Craft | generic_non_design_source; missing_design_signal; low_surface_signal |
 | NMIIC2026R0003 | Goodman Gallery | missing_design_signal; low_surface_signal |
 | NMIIC2026R0004 | Centre For Black And African Arts And Civilization | spam_or_seo_pollution; missing_design_signal |
-| NMIIC2026R0013 | Cafesjian Center for the Arts | overbroad_country_or_region; missing_design_signal; low_surface_signal |
-| NMIIC2026R0043 | Museum of Religious Art Bishop Fray José Antonio de San Alberto | overbroad_country_or_region; generic_non_design_source; missing_design_signal; low_surface_signal |
-| NMIIC2026R0047 | Biblioteca Pública Municipal German Guzmán Campos | overbroad_country_or_region; missing_design_signal; low_surface_signal |
-| NMIIC2026R0049 | Biblioteca Pública Municipal Senderos del Saber | missing_design_signal; low_surface_signal |
-| NMIIC2026R0050 | Biblioteca Pública Municipal Prado Tolima | overbroad_country_or_region; missing_design_signal; low_surface_signal |
-| NMIIC2026R0051 | Biblioteca Pública Municipal de Macanal | missing_design_signal; low_surface_signal |
-| NMIIC2026R0052 | Biblioteca Pública Municipal de Pelaya | overbroad_country_or_region; missing_design_signal; low_surface_signal |
+| NMIIC2026R0013 | Cafesjian Center for the Arts | summary_geo_repair_needed; missing_design_signal; low_surface_signal |
+| NMIIC2026R0043 | Museum of Religious Art Bishop Fray José Antonio de San Alberto | summary_geo_repair_needed; generic_non_design_source; missing_design_signal; low_surface_signal |
+| NMIIC2026R0047 | Biblioteca Pública Municipal German Guzmán Campos | summary_geo_repair_needed; missing_design_signal; low_surface_signal |
+| NMIIC2026R0049 | Biblioteca Pública Municipal Senderos del Saber | summary_geo_repair_needed; missing_design_signal; low_surface_signal |
+| NMIIC2026R0050 | Biblioteca Pública Municipal Prado Tolima | summary_geo_repair_needed; missing_design_signal; low_surface_signal |
+| NMIIC2026R0051 | Biblioteca Pública Municipal de Macanal | summary_geo_repair_needed; missing_design_signal; low_surface_signal |
+| NMIIC2026R0052 | Biblioteca Pública Municipal de Pelaya | summary_geo_repair_needed; missing_design_signal; low_surface_signal |
 
 ## Interpretation
 
 - The batch has useful under-covered-region leads, but it is not safe to count all 587 records as successful active sources.
 - `ready_for_item_review` records should enter a small item/surface review pass first; `manual_review_before_surface` records need geography and design-relevance confirmation.
 - `quarantine_not_counted` records should not be included in success totals or rebuild inputs without source replacement or manual repair.
-- Overbroad geography labels such as Caribbean or Caucasus need normalization before this batch can improve strict source coverage honestly.
+- `source_place_text` carries country-level geography for this batch; the source-summary layer often collapses it into overbroad region buckets such as Caribbean or Caucasus.
+- The next cleaning pass should repair source-summary geography upstream before using this batch to improve strict source coverage.
 
 ## Output files
 
