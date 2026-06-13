@@ -1,23 +1,19 @@
 # Region/Geography Cleaning Plan v1
 
 This plan is dry-run only. It prepares review and application queues without mutating archive data.
+Action queue source: `data/region_geo_auto_apply_hardened_v1.csv` (hardened auto-apply queue).
 
 ## Batch Action Queue
 
-- action rows: 88
-- ready_for_batch_apply_after_sample_audit: 64
-- spot_check_before_apply: 24
+- action rows: 8
+- ready_for_batch_apply_after_sample_audit: 8
 
 ### Auto-Candidate Labels
 
-- Brazil: 30
-- Mexico: 28
-- Argentina: 17
-- Egypt: 7
-- Chile: 3
-- Germany: 1
-- South Africa: 1
-- Turkey: 1
+- Argentina: 2
+- Brazil: 2
+- Chile: 2
+- Mexico: 2
 
 ## Manual Review Compression
 
@@ -54,7 +50,7 @@ This plan is dry-run only. It prepares review and application queues without mut
 
 ## Recommended Next Cleaning Order
 
-1. Spot-check the 88 action rows by label/source family before applying any mapping.
+1. Spot-check the 8 action rows by label/source family before applying any mapping.
 2. Review the 220 Mexico / United States military occupation rows as a historical-context policy decision, not a simple country relabel.
 3. Audit the large pending-text clusters for Indonesia, Caucasus, Azerbaijan, Georgia, and Singapore to separate source geography from topic geography.
 4. Convert confirmed cluster rules into a second, narrower auto-map pass only after review evidence is consistent.

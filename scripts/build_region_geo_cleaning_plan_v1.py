@@ -14,6 +14,7 @@ from lib.archive_audit import DATA, DOCS, ROOT, clean, read_csv, read_payload, w
 
 
 READY = DATA / "region_geo_ready_for_auto_apply_v1.csv"
+HARDENED_READY = DATA / "region_geo_auto_apply_hardened_v1.csv"
 MANUAL = DATA / "region_geo_priority_manual_review_v1.csv"
 HISTORICAL = DATA / "region_geo_requires_historical_split_review_v1.csv"
 
@@ -100,6 +101,12 @@ def source_family(value: str) -> str:
     return text[:48].replace(" ", "_")
 
 
+def action_queue_path() -> tuple:
+    if HARDENED_READY.exists():
+        return HARDENED_READY, "hardened auto-apply queue"
+    return READY, "original auto-apply queue"
+
+
 def high_signal_contains(surface: dict, label: str) -> bool:
     label_norm = norm(label)
     if not label_norm:
@@ -109,7 +116,8 @@ def high_signal_contains(surface: dict, label: str) -> bool:
 
 
 def build_action_rows() -> list[dict[str, str]]:
-    ready = read_csv(READY)
+    queue_path, _ = action_queue_path()
+    ready = read_csv(queue_path)
     surfaces = surface_index()
     countries = country_labels()
     family_counts: Counter[str] = Counter()
@@ -226,6 +234,7 @@ def build_cluster_rows() -> list[dict[str, str]]:
 
 
 def write_report(actions: list[dict[str, str]], clusters: list[dict[str, str]]) -> None:
+    queue_path, queue_label = action_queue_path()
     historical = read_csv(HISTORICAL)
     action_status = Counter(row["action_status"] for row in actions)
     action_labels = Counter(row["suggested_label"] for row in actions)
@@ -240,6 +249,7 @@ def write_report(actions: list[dict[str, str]], clusters: list[dict[str, str]]) 
         "# Region/Geography Cleaning Plan v1",
         "",
         "This plan is dry-run only. It prepares review and application queues without mutating archive data.",
+        f"Action queue source: `{queue_path.relative_to(ROOT)}` ({queue_label}).",
         "",
         "## Batch Action Queue",
         "",
@@ -267,7 +277,7 @@ def write_report(actions: list[dict[str, str]], clusters: list[dict[str, str]]) 
             "",
             "## Recommended Next Cleaning Order",
             "",
-            "1. Spot-check the 88 action rows by label/source family before applying any mapping.",
+            f"1. Spot-check the {len(actions)} action rows by label/source family before applying any mapping.",
             "2. Review the 220 Mexico / United States military occupation rows as a historical-context policy decision, not a simple country relabel.",
             "3. Audit the large pending-text clusters for Indonesia, Caucasus, Azerbaijan, Georgia, and Singapore to separate source geography from topic geography.",
             "4. Convert confirmed cluster rules into a second, narrower auto-map pass only after review evidence is consistent.",

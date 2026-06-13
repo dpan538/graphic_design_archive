@@ -8285,3 +8285,122 @@ Verification:
 
 - `python3 -m py_compile scripts/audit_image_rights_repair_queue_v1.py` passed.
 - `python3 scripts/audit_image_rights_repair_queue_v1.py` passed.
+
+## 2026-06-13 - Region/Geography Auto-Apply Hardening v1
+
+Scope:
+
+- Added a stricter audit layer in front of the existing region/geography
+  auto-apply queue.
+- This pass did not mutate archive regions/geographies, did not rebuild or
+  rewrite public surfaces, did not download images, and did not touch
+  `research-repo`.
+- The old ready queue is now treated as a weak pre-queue; later cleaning plans
+  prefer the hardened queue.
+
+Files:
+
+- `scripts/audit_region_geo_auto_apply_hardening_v1.py`
+- `scripts/build_region_geo_cleaning_plan_v1.py`
+- `data/region_geo_auto_apply_hardened_v1.csv`
+- `data/region_geo_auto_apply_quarantine_v1.csv`
+- `data/region_geo_auto_apply_hardening_summary_v1.csv`
+- `data/region_geo_cleaning_action_plan_v1.csv`
+- `data/region_geo_manual_review_clusters_v1.csv`
+- `docs/capture/REGION_GEO_AUTO_APPLY_HARDENING_v1.md`
+- `docs/capture/REGION_GEO_CLEANING_PLAN_v1.md`
+
+Results:
+
+- Existing ready rows reviewed: 88.
+- Hardened rows retained for sample-before-mutation review: 8.
+- Rows quarantined for manual review: 80.
+- Cleaning action plan rows after hardening: 8.
+- Manual review clusters retained: 64.
+
+Major hardening blockers:
+
+- Suggested country absent from title/source/source URL evidence: 70.
+- Current label present in title/source/source URL evidence: 38.
+- Stamp issuer conflicts with the suggested country label: 6.
+- Other country present in title/source/source URL evidence: 3.
+- `New Mexico` subnational ambiguity blocked from Mexico relabeling: 3.
+
+Largest manual-review geography clusters:
+
+- Indonesia: 381.
+- Mexico date-sensitive / military occupation context: 220.
+- Caucasus: 64.
+- Azerbaijan: 39.
+- Georgia: 38.
+- Singapore: 31.
+
+Interpretation:
+
+- The previous direct-parse ready queue was too permissive for automatic
+  application. Several rows showed topic/issuer/place ambiguity, especially
+  Commons-derived stamp and title patterns.
+- The safe next step is to spot-check the 8 hardened rows, keep the 80
+  quarantined rows out of batch mutation, and use the large manual clusters as
+  capture/normalization prompts rather than direct mapping evidence.
+
+Verification:
+
+- `python3 -m py_compile scripts/audit_region_geo_auto_apply_hardening_v1.py
+  scripts/build_region_geo_cleaning_plan_v1.py` passed.
+- `python3 scripts/audit_region_geo_auto_apply_hardening_v1.py` passed.
+- `python3 scripts/build_region_geo_cleaning_plan_v1.py` passed.
+
+## 2026-06-13 - Next Capture And Cleaning Plan v1 Refresh
+
+Scope:
+
+- Refreshed the next capture plan so it reflects the current 20,000-source
+  release target, 99% object source-visible target, 95% object verified-open
+  target, 95% weighted publication-grade target, and the hardened
+  region/geography cleaning queue.
+- This pass did not run network capture, did not mutate surfaces, did not
+  download images, and did not touch `research-repo`.
+
+Files:
+
+- `scripts/generate_next_capture_plan_v1.py`
+- `data/next_capture_plan_v1.csv`
+- `docs/capture/NEXT_CAPTURE_AND_CLEANING_PLAN_v1.md`
+
+Current gate read used by the plan:
+
+- Active public sources: 12,342.
+- Gap to 20,000 public active sources: 7,658.
+- Gap to the 80% source floor: 3,658.
+- Object source-visible: 97.91%.
+- Object verified-open: 87.96%.
+- Object weighted publication-grade: 93.36%.
+- Object IMG04: 1.78%.
+
+Planned sequence:
+
+- P0: spot-check the 8 hardened region/geography candidates before any mapping.
+- P0: decide the 220 Matamoros 1846 Mexico / United States historical-context
+  rows as policy, not simple country relabels.
+- P0: run rights repair before volume growth, especially Cooper Hewitt,
+  Wellcome, Library of Congress, GSU CONTENTdm, AIC, Internet Archive, V&A,
+  and Te Papa.
+- P0/P1: first 5,000 successful active sources after item/image capture,
+  surface build, and release metrics, weighted toward authority institutions,
+  art/design schools, contemporary studios/platforms, Southeast Asia, South
+  Asia, Caucasus/Central Asia, MENA/Africa, and pre-1940 continuity.
+- P2: run a second 5,000-source tranche only after tranche A is audited,
+  deduplicated, rebuilt, and measured.
+
+Interpretation:
+
+- The next capture round should not be a raw count chase. It should combine
+  source authority review, region/geography cleanup, rights repair, and
+  text-bearing sources so the added volume moves release gates rather than
+  inflating weak surfaces.
+
+Verification:
+
+- `python3 -m py_compile scripts/generate_next_capture_plan_v1.py` passed.
+- `python3 scripts/generate_next_capture_plan_v1.py` passed.
