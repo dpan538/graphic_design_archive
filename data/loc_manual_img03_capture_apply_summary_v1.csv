@@ -1,0 +1,12 @@
+metric,value,notes
+mode,dry_run,Script execution mode.
+planned_rows,20,Rows from the LOC manual IMG03 rebuild queue.
+ready_for_apply_rows,20,Rows eligible for --apply.
+already_applied_rows,0,Rows already matching planned IMG03 fields.
+blocked_rows,0,Rows that must not be applied automatically.
+capture_rows_written,0,Rows actually written in --apply mode.
+images_downloaded,0,This repair writes metadata only and never downloads image binaries.
+public_surfaces_rebuilt,false,A separate rebuild must follow any future apply pass.
+planned_target_file_data/capture_batch_midcentury_1930_1970_records.csv,13,Rows planned in this capture CSV.
+planned_target_file_data/capture_batch_early_region_1830_1930_records.csv,5,Rows planned in this capture CSV.
+planned_target_file_data/capture_batch_early_region_1830_1880_records.csv,2,Rows planned in this capture CSV.

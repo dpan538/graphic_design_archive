@@ -9058,3 +9058,55 @@ Verification:
 
 - `python3 -m py_compile scripts/dry_run_loc_manual_img03_apply_v1.py` passed.
 - `python3 scripts/dry_run_loc_manual_img03_apply_v1.py` passed.
+
+## 2026-06-13 - LOC Manual IMG03 Apply Script v1
+
+Scope:
+
+- Added a controlled apply script for the reviewed LOC manual IMG03 repair
+  queue.
+- Default execution remains dry-run and only writes a plan, summary, and
+  capture note.
+- Target capture CSV writes require both `--apply` and
+  `--confirm-item-rights-reviewed`.
+- This pass did not run `--apply`, rebuild surfaces, download images, save LOC
+  raw payloads, or change archive metrics.
+
+Files:
+
+- `scripts/apply_loc_manual_img03_records_v1.py`
+- `data/loc_manual_img03_capture_apply_plan_v1.csv`
+- `data/loc_manual_img03_capture_apply_summary_v1.csv`
+- `docs/capture/LOC_MANUAL_IMG03_CAPTURE_APPLY_PLAN_v1.md`
+
+Results:
+
+- Planned rows: 20.
+- Ready for apply: 20.
+- Blocked rows: 0.
+- Capture rows written: 0.
+- Public surfaces rebuilt: false.
+
+Planned field changes:
+
+- `image_presence_code`: `IMG03`.
+- `source_rights_text` / `rights_basis`: LOC item-level
+  no-known-restrictions advisory.
+- `image_url_detected`: LOC source-hosted image URL.
+- `image_frame_behavior`: `open_image_frame`.
+- `local_copy_permitted`: `false`.
+- `iiif_or_viewer_available`: LOC item/source record URL.
+
+Interpretation:
+
+- This adds the missing controlled execution layer between the reviewed LOC
+  evidence queue and the eventual capture-record mutation.
+- Because the current worktree still contains unrelated generated/frontend and
+  raw-capture changes, this step intentionally stopped at dry-run mode.
+- Future application should be isolated, followed by a public surface rebuild
+  and release gate snapshot.
+
+Verification:
+
+- `python3 -m py_compile scripts/apply_loc_manual_img03_records_v1.py` passed.
+- `python3 scripts/apply_loc_manual_img03_records_v1.py` passed.
