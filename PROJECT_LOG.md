@@ -8073,3 +8073,66 @@ Constraint:
 Files:
 
 - `docs/system/WEBGPU_WEBLLM_RAG_RESEARCH_BRANCH_BRIEF_v0.md`
+
+## 2026-06-13 - Public Surface Payload Sharding v1
+
+Scope:
+
+- Began the long release-gate optimization round from the 2026-06-13 project
+  state assessment.
+- This pass addressed build and audit safety only. It did not change public
+  source records, rights states, IMG01/IMG03 upgrade policy, source coverage,
+  frontend rendering behavior, or research-repo files.
+
+Findings:
+
+- Current canonical public payload remains
+  `generated/public_surfaces_v1.json`, size 135.98 MiB.
+- Payload size is concentrated in `surfaces` and `researchDossiers`:
+  `surfaces` has 13,680 rows and about 104.62 MiB; `researchDossiers` has
+  13,680 rows and about 23.24 MiB.
+- The size concentration confirms that later full rebuilds should avoid
+  treating the monolithic JSON import as the only frontend data primitive.
+
+Changes:
+
+- Added `scripts/shard_public_surface_payload_v1.py`.
+- The script creates deterministic sidecar shards for the canonical public
+  payload, plus manifest/index files for future lazy loading.
+- `scripts/rebuild_public_surfaces_from_records.py` now emits the sidecar shard
+  roots after writing the existing monolithic payload, while preserving all
+  legacy payload paths.
+- Added `.gitignore` entries for the generated shard directories so the archive
+  repository does not commit a second 140 MiB copy of data already represented
+  by the canonical payload.
+- Added `data/public_surface_payload_sharding_v1.csv` and
+  `docs/capture/PUBLIC_SURFACE_PAYLOAD_SHARDING_v1.md`.
+
+Shard result:
+
+- Output roots generated locally:
+  `generated/public_surfaces_v1_shards` and
+  `frontend/public/data/public_surface_shards_v1`.
+- Each output root contains 73 files.
+- Largest generated shard/section is 4.52 MiB.
+- `surfaces`: 13,680 rows across 28 shards.
+- `researchDossiers`: 13,680 rows across 28 shards.
+- `registrationCards`: 97 rows across 4 shards.
+- Manifest paths are relative to the shard root (`sections/...` and
+  `indexes/...`) so later frontend fetch logic can consume them without
+  repository-path coupling.
+
+Verification:
+
+- `python3 -m py_compile scripts/shard_public_surface_payload_v1.py
+  scripts/rebuild_public_surfaces_from_records.py` passed.
+- `python3 scripts/shard_public_surface_payload_v1.py` passed.
+- No image files, thumbnails, screenshots, raw third-party payloads, cookies, or
+  sessions were created.
+
+Next:
+
+- Keep the monolithic payload canonical for release audits until the frontend
+  data layer is migrated.
+- Next optimization step should formalize release-gate/source-count semantics
+  and then prioritize rights/open-image repair before another large capture run.

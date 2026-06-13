@@ -9,6 +9,7 @@ from pathlib import Path
 import run_midcentury_capture_1930_1970 as mc
 import run_midcentury_expansion_capture_1931_1970 as mx
 from normalize_public_surfaces import normalize_payload
+from shard_public_surface_payload_v1 import write_sharded_payload
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -59,6 +60,11 @@ PAYLOAD_PATHS = [
     ROOT / "frontend" / "src" / "data" / "public_surface_mock_v0.json",
     ROOT / "frontend" / "public" / "data" / "public_surface_mock_v0.json",
     DATA / "public_surface_mock_v0.json",
+]
+
+SHARD_OUTPUT_ROOTS = [
+    GENERATED / "public_surfaces_v1_shards",
+    ROOT / "frontend" / "public" / "data" / "public_surface_shards_v1",
 ]
 
 CAPTURE_RUN_MANIFEST = DATA / "capture_runs" / "capture_run_manifest_v1.csv"
@@ -1265,6 +1271,11 @@ def main() -> None:
     for path in PAYLOAD_PATHS:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
+    shard_manifests = write_sharded_payload(
+        payload,
+        output_roots=SHARD_OUTPUT_ROOTS,
+        source_payload=GENERATED / "public_surfaces_v1.json",
+    )
 
     image_counter = Counter(surface.get("image", {}).get("state", "IMG00") for surface in payload.get("surfaces", []))
     source_visible = sum(image_counter[state] for state in ("IMG01", "IMG02", "IMG03"))
@@ -1290,6 +1301,7 @@ def main() -> None:
     print(f"image_states={dict(sorted(image_counter.items()))}")
     print(f"source_visible_image_ready={source_visible}/{total} ({source_visible_coverage}%)")
     print(f"weighted_publication_image_score={round(weighted_ready, 2)}/{total} ({weighted_coverage}%)")
+    print(f"shard_roots={','.join(str(manifest.get('outputRoot')) for manifest in shard_manifests)}")
 
 
 if __name__ == "__main__":

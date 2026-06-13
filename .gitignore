@@ -39,3 +39,7 @@ local-downloads/
 # Temporary files
 *.tmp
 *.log
+
+# Generated public-surface sidecar shards
+generated/public_surfaces_v1_shards/
+frontend/public/data/public_surface_shards_v1/
