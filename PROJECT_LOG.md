@@ -8459,3 +8459,50 @@ Verification:
 - `python3 -m py_compile scripts/build_image_rights_repair_preflight_batches_v1.py`
   passed.
 - `python3 scripts/build_image_rights_repair_preflight_batches_v1.py` passed.
+
+## 2026-06-13 - Cooper Hewitt Rights Repair Preflight v1
+
+Scope:
+
+- Started P0 batch execution review with Cooper Hewitt because it had the
+  largest weighted-publication repair gap.
+- This pass used already captured local metadata only. It did not call GraphQL,
+  fetch item pages, download images, mutate surfaces, or upgrade IMG01/IMG03.
+
+Files:
+
+- `scripts/audit_cooperhewitt_rights_repair_preflight_v1.py`
+- `data/cooperhewitt_rights_repair_preflight_v1.csv`
+- `data/cooperhewitt_rights_repair_summary_v1.csv`
+- `docs/capture/COOPERHEWITT_RIGHTS_REPAIR_PREFLIGHT_v1.md`
+
+Results:
+
+- Cooper Hewitt repair candidate rows: 137.
+- Local Cooper Hewitt records found: 137.
+- Automatic upgrades allowed: 0.
+- Upgrade recommendation `no_upgrade`: 133.
+- Upgrade recommendation `review_only_no_automatic_upgrade`: 4.
+
+Rights signals:
+
+- Local legal credit only / no open evidence: 74.
+- Blocked by local copyright or restriction signal: 51.
+- No item-level open-rights evidence: 8.
+- Possible open text requiring item verification: 4.
+
+Interpretation:
+
+- Cooper Hewitt remains a strong source-visible IMG02 family, but the local
+  metadata does not support automatic verified-open promotion.
+- Rows with `cc0`-like hints but copyright/restriction context still remain
+  blocked unless a later item-page/source check provides explicit open evidence.
+- For weighted-publication repair, Cooper Hewitt should not be counted as
+  quick verified-open gain. The next P0 source families should be Wellcome,
+  Library of Congress, GSU CONTENTdm, AIC, Internet Archive, and V&A.
+
+Verification:
+
+- `python3 -m py_compile scripts/audit_cooperhewitt_rights_repair_preflight_v1.py`
+  passed.
+- `python3 scripts/audit_cooperhewitt_rights_repair_preflight_v1.py` passed.
