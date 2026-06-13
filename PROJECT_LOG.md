@@ -8566,3 +8566,54 @@ Verification:
 - `python3 -m py_compile scripts/audit_wellcome_rights_repair_preflight_v1.py`
   passed.
 - `python3 scripts/audit_wellcome_rights_repair_preflight_v1.py` passed.
+
+## 2026-06-13 - Library of Congress Rights Repair Preflight v1
+
+Scope:
+
+- Continued P0 rights-repair execution review with Library of Congress
+  `loc.gov` API candidates.
+- This pass used already captured local records only. It did not call
+  `loc.gov`, fetch item pages, download images, mutate surfaces, or upgrade
+  IMG01/IMG03.
+
+Files:
+
+- `scripts/audit_loc_rights_repair_preflight_v1.py`
+- `data/loc_rights_repair_preflight_v1.csv`
+- `data/loc_rights_repair_summary_v1.csv`
+- `docs/capture/LOC_RIGHTS_REPAIR_PREFLIGHT_v1.md`
+
+Results:
+
+- LOC repair candidate rows: 50.
+- Local LOC records found: 50.
+- Candidate weighted-publication gap points represented: 38.90.
+- Automatic upgrades allowed: 0.
+- Original repair families: 37 `img01_item_image_and_rights_review`,
+  13 `img04_text_state_review`.
+- Local image states: 37 IMG01, 13 IMG04.
+- Local rights signals: 49 without item rights-advisory text, 1 with
+  blocking/unresolved rights text.
+- Upgrade recommendation `item_rights_capture_required`: 37 rows / 25.90
+  weighted points.
+- Upgrade recommendation `source_visible_repair_needed`: 13 rows / 13.00
+  weighted points.
+
+Interpretation:
+
+- LOC is a stronger repair route than Cooper Hewitt and Wellcome because the
+  current blockers are missing item-page rights/image evidence, not an
+  institutional pattern that already fails the verified-open gate.
+- The 37 IMG01 rows should be deep-probed for item JSON/page rights advisory
+  and image derivative evidence before any rights-state decision.
+- The 13 IMG04 rows should also be deep-probed before they are accepted as
+  true text-only pages, because the earlier search-row capture may have missed
+  item-level images.
+- No LOC row can be upgraded by source-family reputation alone.
+
+Verification:
+
+- `python3 -m py_compile scripts/audit_loc_rights_repair_preflight_v1.py`
+  passed.
+- `python3 scripts/audit_loc_rights_repair_preflight_v1.py` passed.
