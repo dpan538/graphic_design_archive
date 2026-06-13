@@ -1,0 +1,11 @@
+metric,value,notes
+internet_archive_candidate_rows,75,Internet Archive rows from image_rights_repair_candidates_v1.
+local_records_found,75,Rows matched to existing local capture records.
+automatic_upgrade_allowed_rows,0,No automatic IMG03 upgrades are permitted by this preflight.
+candidate_weighted_gap_points,33.75,Weighted-publication gap points represented by these candidates.
+local_image_state_IMG02,75,Best matching local capture state.
+license_signal_no_explicit_license_url,74,Local license URL signal.
+license_signal_blocking_noncommercial_or_noderivatives_url,1,Local license URL signal.
+rights_signal_no_explicit_item_license_url,74,Conservative rights-repair signal.
+rights_signal_blocked_by_noncommercial_or_noderivatives_license,1,Conservative rights-repair signal.
+upgrade_recommendation_no_upgrade,75,33.75 weighted points.

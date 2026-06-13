@@ -8721,3 +8721,46 @@ Verification:
 - `python3 -m py_compile scripts/audit_aic_rights_repair_preflight_v1.py`
   passed.
 - `python3 scripts/audit_aic_rights_repair_preflight_v1.py` passed.
+
+## 2026-06-13 - Internet Archive Rights Repair Preflight v1
+
+Scope:
+
+- Continued P0 rights-repair execution review with Internet Archive text and
+  periodical collection candidates.
+- This pass used already captured local CSV metadata only. It did not call
+  archive.org, download files/images, mutate surfaces, or upgrade IMG01/IMG03.
+
+Files:
+
+- `scripts/audit_internet_archive_rights_repair_preflight_v1.py`
+- `data/internet_archive_rights_repair_preflight_v1.csv`
+- `data/internet_archive_rights_repair_summary_v1.csv`
+- `docs/capture/INTERNET_ARCHIVE_RIGHTS_REPAIR_PREFLIGHT_v1.md`
+
+Results:
+
+- Internet Archive repair candidate rows: 75.
+- Local records found: 75.
+- Candidate weighted-publication gap points represented: 33.75.
+- Automatic upgrades allowed: 0.
+- Local image states: 75 IMG02.
+- License signals: 74 with no explicit item license URL, 1 with a blocking
+  non-commercial/no-derivatives Creative Commons URL.
+- Upgrade recommendation `no_upgrade`: 75 rows / 33.75 weighted points.
+
+Interpretation:
+
+- Internet Archive is useful for reading/source support, especially for
+  periodicals, books, zines, and web/interface design texts, but the current
+  repair queue does not contain verified-open image evidence.
+- IA thumbnails or scans are not enough for publication-grade image display;
+  any later upgrade must preserve explicit item license evidence.
+- The one candidate with an explicit license URL uses BY-NC-ND and is therefore
+  blocked for the verified-open/publication-grade target.
+
+Verification:
+
+- `python3 -m py_compile scripts/audit_internet_archive_rights_repair_preflight_v1.py`
+  passed.
+- `python3 scripts/audit_internet_archive_rights_repair_preflight_v1.py` passed.
