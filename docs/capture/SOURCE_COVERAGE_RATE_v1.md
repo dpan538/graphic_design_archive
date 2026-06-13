@@ -1,6 +1,6 @@
 # Source Coverage Rate v1
 
-Date: 2026-06-13
+Date: 2026-06-14
 
 Scope: active captured sources, not candidate/prospect sources. This metric measures source breadth and distribution; it is separate from image coverage.
 
@@ -16,18 +16,18 @@ The main rate uses region-weighted source points first, then applies time covera
 
 ## Current Result
 
-- active_source_count: 13560 (Distinct source_name values with at least one captured record.)
+- active_source_count: 18312 (Distinct source_name values with at least one captured record.)
 - candidate_source_count: 298 (Candidate/prospect sources in source_prospect_registry_v2; not counted as active coverage.)
 - pre_surface_source_registry_count: 3500 (Official source sites verified as reachable, but not counted as active source coverage until item-level image-bearing surfaces are built.)
-- weighted_active_source_points: 15195.25 (Sum of active source region weights. Non-West/local regions carry higher weights.)
+- weighted_active_source_points: 21296.00 (Sum of active source region weights. Non-West/local regions carry higher weights.)
 - weighted_source_target: 20000.00 (Final release source target requested as at least 20000 sources, expressed as weighted source points.)
 - minimum_release_source_coverage_rate: 80.00 (Release gate threshold for source coverage before publication readiness.)
-- release_source_coverage_gate_passed: false (True only when source_pool_rate reaches the configured final release coverage threshold.)
-- source_pool_rate: 75.98 (weighted_active_source_points / weighted_source_target.)
-- region_weighted_balance_rate: 30.36 (Weighted average of per-region active-source coverage against regional source targets.)
-- time_weighted_balance_rate: 67.72 (Weighted average of active-source coverage across period bands.)
-- source_coverage_rate_v1: 51.45 (source_pool_rate * time_weighted_balance_rate. The source pool itself is already region-weighted.)
-- strict_distribution_adjusted_source_coverage_rate: 15.62 (source_pool_rate * region_weighted_balance_rate * time_weighted_balance_rate; diagnostic only.)
+- release_source_coverage_gate_passed: true (True only when source_pool_rate reaches the configured final release coverage threshold.)
+- source_pool_rate: 100.00 (weighted_active_source_points / weighted_source_target.)
+- region_weighted_balance_rate: 31.75 (Weighted average of per-region active-source coverage against regional source targets.)
+- time_weighted_balance_rate: 82.62 (Weighted average of active-source coverage across period bands.)
+- source_coverage_rate_v1: 82.62 (source_pool_rate * time_weighted_balance_rate. The source pool itself is already region-weighted.)
+- strict_distribution_adjusted_source_coverage_rate: 26.23 (source_pool_rate * region_weighted_balance_rate * time_weighted_balance_rate; diagnostic only.)
 
 ## Weakest Regions
 
@@ -42,17 +42,17 @@ The main rate uses region-weighted source points first, then applies time covera
 
 ## Period Balance
 
-- pre_1930: active_sources=2450, target≈3000, records=2910, balance=81.67%
-- 1930_1970: active_sources=3732, target≈7000, records=4236, balance=53.31%
-- 1970_2000: active_sources=3148, target≈5000, records=3437, balance=62.96%
-- 2000_2026: active_sources=4213, target≈5000, records=4464, balance=84.26%
+- pre_1930: active_sources=4074, target≈3000, records=4536, balance=100.00%
+- 1930_1970: active_sources=4826, target≈7000, records=5336, balance=68.94%
+- 1970_2000: active_sources=3699, target≈5000, records=3993, balance=73.98%
+- 2000_2026: active_sources=5696, target≈5000, records=5947, balance=100.00%
 
 ## Weakest Periods
 
-- 1930_1970: 53.31%
-- 1970_2000: 62.96%
-- pre_1930: 81.67%
-- 2000_2026: 84.26%
+- 1930_1970: 68.94%
+- 1970_2000: 73.98%
+- pre_1930: 100.00%
+- 2000_2026: 100.00%
 
 ## Interpretation
 

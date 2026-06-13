@@ -42,6 +42,18 @@ ACCESS_DATE = "2026-06-13"
 base.ACCESS_DATE = ACCESS_DATE
 base.REQUEST_DELAY_SECONDS = 0.08
 base.SEARCH_LIMIT = 50
+base.GRAPHIC_TERMS = tuple(
+    dict.fromkeys(
+        [
+            *base.GRAPHIC_TERMS,
+            "postage stamp",
+            "matchbox label",
+            "trade card",
+            "type specimen",
+            "letterhead",
+        ]
+    )
+)
 FIELDNAMES = base.FIELDNAMES
 
 TARGET_ROWS = 5000
@@ -360,9 +372,68 @@ def add_plan(
 def query_plan() -> list[tuple[str, str, str, str, str]]:
     plan: list[tuple[str, str, str, str, str]] = []
     seen: set[str] = set()
+    balanced_object_terms = (
+        "poster",
+        "advertisement",
+        "label",
+        "postage stamp",
+    )
+    fast_global_object_terms = (
+        "label",
+        "book cover",
+        "pamphlet",
+        "advertisement",
+        "trade card",
+        "type specimen",
+    )
 
-    # High-yield pass first: broad explicit-year object queries, with region
-    # inferred from title/category metadata through the expanded country list.
+    # Start with balanced country/object searches. The earlier global-year lane
+    # was safe but too sparse after the first 500 rows; rotating by object first
+    # keeps one productive country from monopolizing the run.
+    for object_term in balanced_object_terms:
+        for macro, country, aliases in COUNTRIES:
+            for alias in aliases[:2]:
+                add_plan(plan, seen, macro, country, object_term, f'"{alias}" "{object_term}"', "scarcity_object")
+
+    for object_term, category in PRE_1940_CATEGORIES:
+        add_plan(plan, seen, "_infer", "_infer", object_term, category, "pre1940_category")
+
+    # Late-run topoff lanes. Once the country/object seed pass and high-yield
+    # pre-1940 categories have run, these sources add clearer object evidence
+    # than the very sparse pre-1940 country/year fallback queue.
+    for year in range(2026, 1829, -1):
+        for object_term in fast_global_object_terms:
+            add_plan(plan, seen, "_infer", "_infer", object_term, f'"{year}" "{object_term}"', "high_yield_year_object")
+
+    for authority_term in AUTHORITY_CONTEXT_TERMS:
+        for macro, country, aliases in COUNTRIES:
+            for alias in aliases[:2]:
+                add_plan(plan, seen, macro, country, "poster", f'"{alias}" "{authority_term}"', "authority_context")
+
+    for year in range(2000, 2027):
+        for object_term in ("art school poster", "community poster", "design school poster", "university poster"):
+            add_plan(plan, seen, "_infer", "_infer", "poster", f'"{year}" "{object_term}"', "contemporary_authority")
+
+    for macro, country, aliases in COUNTRIES:
+        for alias in aliases[:2]:
+            for year in POST_1940_SEARCH_YEARS:
+                for object_term in ("poster", "film poster", "advertising poster", "book cover"):
+                    add_plan(plan, seen, macro, country, object_term, f'"{alias}" "{year}" "{object_term}"', "mid_late_country")
+
+    for year in PRE_1940_SEARCH_YEARS:
+        for object_term in ("poster", "advertisement", "trade card", "label", "book cover", "type specimen"):
+            add_plan(plan, seen, "_infer", "_infer", object_term, f'"{year}" "{object_term}"', "pre1940_global")
+
+    for macro, country, aliases in COUNTRIES:
+        for alias in aliases[:2]:
+            for year in PRE_1940_SEARCH_YEARS:
+                for object_term in ("poster", "advertisement", "trade card", "label", "book cover"):
+                    add_plan(plan, seen, macro, country, object_term, f'"{alias}" "{year}" "{object_term}"', "pre1940_country")
+
+    for macro, country, aliases in COUNTRIES:
+        for object_term, pattern in COUNTRY_CATEGORY_PATTERNS:
+            add_plan(plan, seen, macro, country, object_term, pattern.format(country=country), "country_category")
+
     for year in range(2026, 1829, -1):
         for object_term in (
             "poster",
@@ -382,37 +453,21 @@ def query_plan() -> list[tuple[str, str, str, str, str]]:
             "type specimen",
         ):
             add_plan(plan, seen, "_infer", "_infer", object_term, f'"{year}" "{object_term}"', "global_year_object")
-
-    for object_term, category in PRE_1940_CATEGORIES:
-        add_plan(plan, seen, "_infer", "_infer", object_term, category, "pre1940_category")
-
-    for macro, country, aliases in COUNTRIES:
-        for object_term, pattern in COUNTRY_CATEGORY_PATTERNS:
-            add_plan(plan, seen, macro, country, object_term, pattern.format(country=country), "country_category")
-        for alias in aliases[:2]:
-            for authority_term in AUTHORITY_CONTEXT_TERMS:
-                add_plan(plan, seen, macro, country, "poster", f'"{alias}" "{authority_term}"', "authority_context")
-            for object_term in OBJECT_TERMS:
-                add_plan(plan, seen, macro, country, object_term, f'"{alias}" "{object_term}"', "scarcity_object")
-            for year in PRE_1940_SEARCH_YEARS:
-                for object_term in ("poster", "advertisement", "trade card", "label", "book cover"):
-                    add_plan(plan, seen, macro, country, object_term, f'"{alias}" "{year}" "{object_term}"', "pre1940_country")
-            for year in POST_1940_SEARCH_YEARS:
-                for object_term in ("poster", "film poster", "advertising poster", "book cover"):
-                    add_plan(plan, seen, macro, country, object_term, f'"{alias}" "{year}" "{object_term}"', "mid_late_country")
-
-    for year in PRE_1940_SEARCH_YEARS:
-        for object_term in ("poster", "advertisement", "trade card", "label", "book cover", "type specimen"):
-            add_plan(plan, seen, "_infer", "_infer", object_term, f'"{year}" "{object_term}"', "pre1940_global")
-    for year in range(2000, 2027):
-        for object_term in ("art school poster", "community poster", "design school poster", "university poster"):
-            add_plan(plan, seen, "_infer", "_infer", "poster", f'"{year}" "{object_term}"', "contemporary_authority")
     return plan
 
 
-def completed_queries() -> set[str]:
+def completed_queries(max_rows_after: int) -> set[str]:
     completed: set[str] = set()
     for row in read_csv(STATE_CSV):
+        try:
+            rows_after = int(row.get("rows_after") or "0")
+        except ValueError:
+            rows_after = 0
+        # A previous interrupted run can leave query_state ahead of the
+        # checkpointed records CSV. Treat those rows as not completed so the
+        # query can be replayed and de-duplicated against the saved records.
+        if rows_after > max_rows_after:
+            continue
         if row.get("status") in {"completed", "empty"} and row.get("query"):
             completed.add(row["query"])
     return completed
@@ -630,9 +685,9 @@ def update_manifest(rows: list[dict[str, str]], by_source: Counter[str]) -> None
             "raw_dir": "",
             "raw_dir_exists": "false",
             "raw_commit_policy": "not_present",
-            "included_in_public_rebuild": "true" if rows else "false",
-            "stage": "item_image_capture" if rows else "empty_or_pending",
-            "notes": "Authority-weighted Commons open image capture; low-coverage countries, pre-1940, art/community/education contexts; no image binaries or raw payloads saved.",
+            "included_in_public_rebuild": "false",
+            "stage": "item_image_capture_pending_rebuild" if rows else "empty_or_pending",
+            "notes": "Authority-weighted Commons open image capture; low-coverage countries, pre-1940, art/community/education contexts; no image binaries or raw payloads saved. Pending final surface rebuild before release-gate counting.",
         }
     )
     write_csv(MANIFEST, manifest_rows, fields)
@@ -706,7 +761,7 @@ def main() -> None:
     macro_counts, country_counts, period_counts, object_counts, year_counts = reseed_counters(rows)
     failures: list[dict[str, str]] = []
     rejects: Counter[str] = Counter()
-    completed = completed_queries()
+    completed = completed_queries(len(rows))
     started = time.time()
     plan = query_plan()
 
@@ -787,6 +842,8 @@ def main() -> None:
             if not offset:
                 break
             pages_seen += 1
+        if len(rows) > before:
+            write_outputs(rows, failures, rejects)
         append_state(
             {
                 "query_index": str(index),

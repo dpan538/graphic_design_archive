@@ -9365,3 +9365,152 @@ Verification:
   bearer, `/Users/`, and `.env` found no real credential or local-path payload
   in this change. Hits were expected false positives: script variable names,
   ordinary public URL text, and historical scan-language entries in this log.
+
+## 2026-06-13 - Commons Open Authority-weighted 5k Source Batch Completion
+
+Scope:
+
+- Resumed the authority-weighted Commons open metadata capture from the
+  300-record checkpoint and completed the planned 5,000-source batch.
+- Added a narrow topoff runner after the general queue became sparse near the
+  target. The topoff uses whitelisted country/object Commons metadata queries
+  and the same duplicate, rights, year, object-family, and distribution gates as
+  the authority batch.
+- Attempted a controlled-expansion topoff lane, but stopped it after it added
+  only 10 records and showed low yield. The controlled script now supports a
+  temporary environment target for future small topoff attempts.
+- Deferred full frontend/public-surface rebuild. This round remains
+  item-image/source metadata capture plus cleaning audit; source records are
+  not counted as final public surfaces until a later isolated rebuild.
+
+Capture result:
+
+- Authority-weighted Commons records: 5,055.
+- Authority-weighted distinct source names: 5,021.
+- Authority-weighted distinct source identifiers: 5,055.
+- Image state distribution: IMG03 5,055; IMG00/IMG01/IMG02/IMG04 0.
+- 2026 records: 53, about 1.05% of the authority-weighted batch. The earlier
+  risk of recent-year overconcentration did not appear in this run.
+- Controlled topoff attempt: 935 total controlled records after the attempt,
+  with 10 added in this pass; not used as the main 5k threshold.
+
+Authority batch distribution:
+
+- Periods: pre_1940 1,927; 2000_2026 1,617; 1940_1970 898; 1970_2000 613.
+- Macro-regions: Eastern Europe 1,069; Africa 1,034; Latin America 842;
+  Middle East and North Africa 686; Southeast Asia 441; South Asia 416;
+  Oceania 204; East Asia 187; Central Asia 176.
+- Object families: postage_stamp 1,445; poster 1,403; label_packaging 889;
+  advertising_trade 807; book_cover 173; brochure_pamphlet 108; film_poster
+  97; typography_identity 64; political_poster 37; magazine_cover 27;
+  travel_poster 5.
+
+Cleaning and metrics:
+
+- Commons open-source cleaning audit: 11,051 recent Commons open records
+  audited; 11,039 release-ready; 6 weak-graphic review; 6 duplicate review.
+- Commons authority distribution in the cleaning audit: 6,564 Commons files with
+  extra source evidence; 2,276 institutional/education context; 2,156
+  structured catalog source links; 55 Commons-platform-only.
+- Layered image/source metrics across all capture records: 19,886 records;
+  source-visible 98.51%; publication-grade 98.08%; weighted publication 95.01%;
+  open image 89.03%; rights-labeled 100.00%; IMG04 count 295; duplicate image
+  URL record rate 0.37%.
+- Source coverage v1: active source count 18,312; candidate source count 298;
+  pre-surface success registry count 3,500; source pool 100.00%; time-weighted
+  source coverage 82.62%; strict distribution adjusted source coverage 26.23%.
+- Source coverage v2, still pre-rebuild: source-visible surface rate 97.80%;
+  period surface balance 100.00%; period quality-main balance 44.23%; region
+  quality-main balance 6.47%; research-quality adjusted source coverage 2.31%.
+
+Script hardening:
+
+- `run_commons_open_authority_weighted_expansion_2026_v1.py`
+  now ignores stale query-state rows whose `rows_after` exceeds the saved CSV
+  record count, writes after every query that adds rows, extends graphic terms
+  for postage stamps/matchbox labels/trade cards/type specimens/letterheads,
+  and moves higher-yield topoff lanes ahead of sparse pre-1940 fallback queues.
+- `run_commons_open_controlled_expansion_2026_v1.py` now accepts
+  `COMMONS_OPEN_CONTROLLED_TARGET_ROWS`, writes after productive queries, and
+  marks its manifest stage as pending rebuild.
+- Added `run_commons_open_authority_topoff_2026_v1.py` for slow, whitelisted,
+  checkpointed topoff runs near a target.
+
+Boundaries:
+
+- No image binaries, thumbnails, screenshots, raw API payload dumps, browser
+  sessions, cookies, or local image files were saved.
+- IMG03 remains Commons open-license extmetadata only; no IMG01/IMG03 rights
+  upgrade was made by heuristic, LLM, platform signal, or terms-of-service
+  inference.
+- Impact/source priority and topoff query order are internal triage only.
+- Full frontend/public-surface rebuild remains deferred to avoid workstation
+  instability; surface-level coverage numbers should be interpreted as
+  pre-rebuild diagnostics.
+
+Files:
+
+- `scripts/run_commons_open_authority_weighted_expansion_2026_v1.py`
+- `scripts/run_commons_open_controlled_expansion_2026_v1.py`
+- `scripts/run_commons_open_authority_topoff_2026_v1.py`
+- `data/capture_batch_commons_open_authority_weighted_expansion_2026_v1_records.csv`
+- `data/capture_batch_commons_open_authority_weighted_expansion_2026_v1_source_summary.csv`
+- `data/commons_open_authority_weighted_expansion_2026_v1_quality.csv`
+- `data/commons_open_authority_weighted_expansion_2026_v1_query_state.csv`
+- `data/capture_batch_commons_open_controlled_expansion_2026_v1_records.csv`
+- `data/capture_batch_commons_open_controlled_expansion_2026_v1_source_summary.csv`
+- `data/commons_open_controlled_expansion_2026_v1_quality.csv`
+- `data/commons_open_controlled_expansion_2026_v1_query_state.csv`
+- `data/commons_open_source_cleaning_audit_2026_v1.csv`
+- `data/commons_open_source_cleaning_summary_2026_v1.csv`
+- `data/layered_image_source_metrics_v1.csv`
+- `data/duplicate_image_url_warnings_v1.csv`
+- `data/source_coverage_rate_v1.csv`
+- `data/source_coverage_region_breakdown_v1.csv`
+- `data/source_coverage_period_breakdown_v1.csv`
+- `data/source_coverage_rate_v2.csv`
+- `data/source_coverage_period_breakdown_v2.csv`
+- `data/source_coverage_region_breakdown_v2.csv`
+- `data/capture_runs/capture_run_manifest_v1.csv`
+- `docs/capture/COMMONS_OPEN_AUTHORITY_WEIGHTED_EXPANSION_2026_v1.md`
+- `docs/capture/COMMONS_OPEN_CONTROLLED_EXPANSION_2026_v1.md`
+- `docs/capture/COMMONS_OPEN_AUTHORITY_TOPOFF_2026_v1.md`
+- `docs/capture/COMMONS_OPEN_SOURCE_CLEANING_AUDIT_2026_v1.md`
+- `docs/capture/LAYERED_IMAGE_SOURCE_METRICS_v1.md`
+- `docs/capture/SOURCE_COVERAGE_RATE_v1.md`
+- `docs/capture/SOURCE_COVERAGE_RATE_v2.md`
+- `data/backups/commons_open_authority_weighted_resume_2026_06_13/MANIFEST.md`
+- `data/backups/commons_open_controlled_topoff_2026_06_13/`
+
+Next action:
+
+- Run the next public-surface rebuild in an isolated/sandboxed pass rather than
+  during long source capture.
+- Use the cleaning audit's weak/duplicate review rows to quarantine or repair
+  the 12 flagged Commons records before release counting.
+- Improve strict distribution coverage: despite source volume, region-quality
+  balance remains weak. The next capture/assignment cycle should prioritize
+  underrepresented region-to-surface conversion, not only raw source count.
+- Revisit weighted publication-grade image coverage at the object level during
+  rebuild so multiple photos of one object collapse to one weighted object
+  contribution.
+
+Verification:
+
+- `python3 -m py_compile scripts/run_commons_open_authority_topoff_2026_v1.py scripts/run_commons_open_authority_weighted_expansion_2026_v1.py scripts/run_commons_open_controlled_expansion_2026_v1.py`
+  passed.
+- `python3 scripts/audit_commons_open_source_cleaning_2026_v1.py` passed.
+- `python3 scripts/audit_layered_image_source_metrics_v1.py` passed.
+- `python3 scripts/audit_source_coverage_rate_v1.py` passed.
+- `python3 scripts/audit_source_coverage_rate_v2.py` passed.
+- `git diff --check` passed.
+- `python3 scripts/audit_secret_patterns.py` still exits non-zero only for old
+  raw HTML URL-parameter hits outside this commit scope:
+  `data/contemporary_source_scan_probe_1990_2026_v1_raw/CSS0023.html.txt` and
+  `data/global_edge_discovery_probe_v1_raw/GED0005.html.txt`.
+- Commit-bound safety scan for `API_KEY`, token, password, secret, cookie,
+  session, bearer, `/Users/`, and `.env` found no real credential, bearer
+  value, cookie/session assignment, API key assignment, private key, local user
+  path, or env-file reference. Remaining broad hits are policy/log wording,
+  public source titles such as `Secret`/`Secretary`/`poster session`, and
+  source-description text from Commons metadata.

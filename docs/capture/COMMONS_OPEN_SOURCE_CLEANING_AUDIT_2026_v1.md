@@ -4,47 +4,52 @@ Scope: recent Commons open-source expansion batches only. This audit generates r
 
 ## Summary
 
-- Records audited: 6286
-- Release-ready records: 6286 (100.00% if total else 0)
-- Duplicate/review records: 0
-- Duplicate source keys inside new batches: 0
-- Duplicate image URLs inside new batches: 0
+- Records audited: 11051
+- Release-ready records: 11039 (99.89% if total else 0)
+- Duplicate/review records: 12
+- Duplicate source keys inside new batches: 6
+- Duplicate image URLs inside new batches: 3
 
 ## Status Distribution
 
-- release_ready: 6286
+- release_ready: 11039
+- review_weak_graphic_evidence: 6
+- quarantine_duplicate_review: 6
 
 ## Authority Distribution
 
-- commons_open_file_with_extra_source: 3675
-- structured_catalog_source_link: 1567
-- institutional_or_education_context: 1023
-- commons_platform_only: 21
+- commons_open_file_with_extra_source: 6564
+- institutional_or_education_context: 2276
+- structured_catalog_source_link: 2156
+- commons_platform_only: 55
 
 ## Object Family Distribution
 
-- postage_stamp: 4167
-- poster: 576
-- advertising: 478
-- film_poster: 403
-- book_cover: 229
-- label_packaging: 136
-- magazine_cover: 91
-- political_poster: 67
-- typography_identity: 66
-- travel_poster: 42
-- brochure_pamphlet: 31
+- postage_stamp: 5590
+- poster: 1971
+- advertising: 1258
+- label_packaging: 947
+- film_poster: 489
+- book_cover: 368
+- brochure_pamphlet: 108
+- political_poster: 101
+- magazine_cover: 97
+- typography_identity: 75
+- travel_poster: 47
 
 ## Period Distribution
 
-- 2000_2026: 2249
-- pre_1940: 1647
-- 1940_1970: 1359
-- 1970_2000: 1031
+- 2000_2026: 3732
+- pre_1940: 3509
+- 1940_1970: 2223
+- 1970_2000: 1587
 
 ## Top Review Reasons
 
-- platform_only_authority: 21
+- platform_only_authority: 55
+- weak_graphic_or_event_photo_signal: 6
+- duplicate_source_identifier_or_url: 6
+- duplicate_image_url: 6
 
 ## Boundary
 

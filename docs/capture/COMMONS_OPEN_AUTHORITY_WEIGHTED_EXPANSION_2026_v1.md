@@ -6,92 +6,92 @@ Scope: Commons open-license source pages prioritized for low-coverage regions, p
 
 ## Metrics
 
-- Records captured: 300
-- Distinct active source names: 276
-- Query failures: 13
+- Records captured: 5055
+- Distinct active source names: 5021
+- Query failures: 0
 - Target rows: 5000
-- Target met: false
+- Target met: true
 
 ## Period Distribution
 
-- 2000_2026: 136
-- pre_1940: 71
-- 1970_2000: 57
-- 1940_1970: 36
+- pre_1940: 1927
+- 2000_2026: 1617
+- 1940_1970: 898
+- 1970_2000: 613
 
 ## Macro-region Distribution
 
-- Middle East and North Africa: 68
-- Latin America: 65
-- Oceania: 48
-- Southeast Asia: 32
-- South Asia: 31
-- Africa: 22
-- Eastern Europe: 17
-- East Asia: 15
-- Central Asia: 2
+- Eastern Europe: 1069
+- Africa: 1034
+- Latin America: 842
+- Middle East and North Africa: 686
+- Southeast Asia: 441
+- South Asia: 416
+- Oceania: 204
+- East Asia: 187
+- Central Asia: 176
 
 ## Object Family Distribution
 
-- label_packaging: 78
-- typography_identity: 55
-- book_cover: 40
-- brochure_pamphlet: 31
-- advertising_trade: 30
-- magazine_cover: 21
-- poster: 18
-- film_poster: 12
-- postage_stamp: 9
-- political_poster: 5
-- travel_poster: 1
+- postage_stamp: 1445
+- poster: 1403
+- label_packaging: 889
+- advertising_trade: 807
+- book_cover: 173
+- brochure_pamphlet: 108
+- film_poster: 97
+- typography_identity: 64
+- political_poster: 37
+- magazine_cover: 27
+- travel_poster: 5
 
 ## Top Country Distribution
 
-- Middle East and North Africa / Turkey: 52
-- Oceania / Pacific / Aotearoa New Zealand: 40
-- South Asia / India: 24
-- Latin America / Mexico: 14
-- Southeast Asia / Indonesia: 14
-- Latin America / Caribbean / Uruguay: 12
-- East Asia / China: 11
-- Latin America / Caribbean / Venezuela: 11
-- Latin America / Caribbean / Peru: 9
-- Southeast Asia / Philippines: 9
-- Oceania / Pacific / Papua New Guinea: 8
-- Middle East and North Africa / Iran: 7
-- Latin America / Caribbean / Guatemala: 5
-- Middle East and North Africa / Palestine: 4
-- Latin America / Brazil: 4
-- Eastern Europe / Caucasus / Ukraine: 4
-- South Asia / Nepal: 4
-- Latin America / Caribbean / Dominican Republic: 3
-- Latin America / Caribbean / Puerto Rico: 3
-- Africa / Angola: 3
-- Southeast Asia / Malaysia: 3
-- Africa / Tanzania: 3
-- Africa / Namibia: 3
-- Africa / Nigeria: 3
-- Africa / Uganda: 3
-- Eastern Europe / Caucasus / Lithuania: 2
-- East Asia / Korea: 2
-- Eastern Europe / Caucasus / Romania: 2
-- Southeast Asia / Vietnam: 2
-- Eastern Europe / Caucasus / Bulgaria: 2
-- Africa / South Africa: 2
-- Eastern Europe / Caucasus / Croatia: 2
-- South Asia / Bangladesh: 2
-- Central Asia / Kazakhstan: 1
-- Middle East and North Africa / Egypt: 1
-- Southeast Asia / Cambodia: 1
-- East Asia / Taiwan: 1
-- Africa / Mozambique: 1
-- Latin America / Caribbean / Trinidad and Tobago: 1
-- Middle East and North Africa / Jordan: 1
+- South Asia / India: 320
+- Africa / Democratic Republic of the Congo: 164
+- Southeast Asia / Indonesia: 154
+- Eastern Europe / Caucasus / Azerbaijan: 142
+- Oceania / Pacific / Aotearoa New Zealand: 135
+- Eastern Europe / Caucasus / Serbia: 127
+- Africa / Nigeria: 127
+- Eastern Europe / Caucasus / Bosnia and Herzegovina: 122
+- East Asia / China: 122
+- Africa / Seychelles: 116
+- Eastern Europe / Caucasus / Armenia: 116
+- Middle East and North Africa / Lebanon: 102
+- Southeast Asia / Malaysia: 89
+- Latin America / Caribbean / Uruguay: 88
+- Africa / Madagascar: 85
+- Middle East and North Africa / Turkey: 81
+- Africa / Uganda: 79
+- Eastern Europe / Caucasus / Albania: 78
+- Southeast Asia / Philippines: 78
+- Africa / South Africa: 75
+- Eastern Europe / Caucasus / Ukraine: 74
+- Africa / Angola: 72
+- Latin America / Caribbean / Cuba: 72
+- Eastern Europe / Caucasus / Lithuania: 68
+- Central Asia / Kyrgyzstan: 64
+- Latin America / Caribbean / Mexico: 63
+- Middle East and North Africa / Palestine: 61
+- Middle East and North Africa / Egypt: 56
+- Latin America / Caribbean / Suriname: 52
+- Eastern Europe / Caucasus / Romania: 52
+- Eastern Europe / Caucasus / Latvia: 52
+- Latin America / Caribbean / Paraguay: 51
+- Eastern Europe / Caucasus / Moldova: 51
+- Middle East and North Africa / Morocco: 51
+- Latin America / Caribbean / Venezuela: 50
+- Africa / Ethiopia: 48
+- Latin America / Caribbean / El Salvador: 47
+- Central Asia / Kazakhstan: 47
+- Latin America / Caribbean / Trinidad and Tobago: 45
+- Eastern Europe / Caucasus / Georgia: 45
 
 ## Reject Reasons
 
-- base_filter: 16626
-- duplicate: 358
+- base_filter: 576
+- duplicate: 127
 
 ## Boundary
 

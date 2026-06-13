@@ -6,88 +6,88 @@ Scope: controlled Commons open-license source pages with explicit object-year ev
 
 ## Metrics
 
-- Records captured: 935
-- Target rows: 1325
+- Records captured: 1100
+- Target rows: 4700
 - Target met: no
-- Distinct active source names: 932
-- Query failures: 3
-- Runtime seconds: 160.9
+- Distinct active source names: 1008
+- Query failures: 22
+- Runtime seconds: 666.8
 - Minimum source-derived text length: 139
-- Median source-derived text length: 631
+- Median source-derived text length: 641
 
 ## Period Distribution
 
-- 1930_1970: 454
-- pre_1930: 330
-- 1970_2000: 82
-- 2000_2026: 69
+- 1930_1970: 532
+- pre_1930: 387
+- 1970_2000: 114
+- 2000_2026: 67
 
 ## Macro-region Distribution
 
+- Latin America: 388
 - Global: 357
-- Latin America: 309
-- Oceania: 69
-- Eastern Europe: 53
-- Middle East and North Africa: 44
-- Southeast Asia: 42
-- East Asia: 33
-- South Asia: 15
-- Africa: 12
+- Oceania: 96
+- Eastern Europe: 67
+- Southeast Asia: 60
+- Middle East and North Africa: 45
+- East Asia: 45
+- South Asia: 23
+- Africa: 18
 - Central Asia: 1
 
 ## Object-family Distribution
 
-- advertisement: 433
-- stamp: 321
-- poster: 53
-- label: 41
-- magazine cover: 27
+- advertisement: 532
+- stamp: 375
+- label: 55
+- poster: 55
+- magazine cover: 29
 - advertising poster: 20
 - trade card: 16
 - film poster: 10
 - type specimen: 8
-- book cover: 6
 
 ## Top Country/Region Buckets
 
 - Global / controlled expansion: 357
-- Latin America / Caribbean / Peru: 214
-- Oceania / Pacific / Australia / Indigenous: 43
-- Latin America / Caribbean / Argentina: 26
-- Oceania / Pacific / Aotearoa New Zealand: 25
-- Eastern Europe / Caucasus / Poland: 24
-- Latin America / Caribbean / Mexico: 19
-- Middle East and North Africa / Iran: 19
+- Latin America / Caribbean / Peru: 260
+- Oceania / Pacific / Aotearoa New Zealand: 49
+- Oceania / Pacific / Australia / Indigenous: 46
+- Latin America / Caribbean / Argentina: 41
+- Southeast Asia / Vietnam: 30
+- Latin America / Caribbean / Mexico: 25
+- Eastern Europe / Caucasus / Poland: 25
+- East Asia / Korea: 24
+- Middle East and North Africa / Iran: 21
+- Eastern Europe / Caucasus / Romania: 21
+- South Asia / India: 19
 - Latin America / Caribbean / Dominican Republic: 17
 - Middle East and North Africa / Syria: 17
-- Southeast Asia / Vietnam: 16
-- Southeast Asia / Indonesia: 13
+- Southeast Asia / Indonesia: 14
+- Latin America / Caribbean / Chile: 12
 - East Asia / China: 12
-- East Asia / Korea: 12
-- South Asia / India: 11
+- Latin America / Caribbean / Brazil: 11
 - Eastern Europe / Caucasus / Croatia: 9
-- Eastern Europe / Caucasus / Romania: 8
-- Latin America / Caribbean / Chile: 6
-- Latin America / Caribbean / Puerto Rico: 6
-- Latin America / Caribbean / Cuba: 5
-- Latin America / Caribbean / Brazil: 5
-- Southeast Asia / Philippines: 5
+- Southeast Asia / Philippines: 8
+- Africa / Egypt: 8
+- Latin America / Caribbean / Cuba: 6
+- Latin America / Caribbean / Puerto Rico: 5
 - Latin America / Caribbean / Colombia: 5
 - East Asia / Hong Kong: 5
-- Africa / South Africa: 4
 - East Asia / Taiwan: 4
 - Eastern Europe / Caucasus / Serbia: 4
 - Eastern Europe / Caucasus / Georgia: 3
-- Middle East and North Africa / Jordan: 3
+- Africa / South Africa: 3
 - Middle East and North Africa / Palestine: 3
 - Southeast Asia / Singapore: 3
-- Africa / Egypt: 3
 - South Asia / Bangladesh: 3
 - Southeast Asia / Thailand: 3
 - Africa / Morocco: 2
 - Eastern Europe / Caucasus / Bulgaria: 2
 - Africa / Ghana: 2
 - Latin America / Caribbean / Venezuela: 2
+- Africa / Angola: 2
+- Middle East and North Africa / Jordan: 2
 - Latin America / Caribbean / Bolivia: 2
 - Eastern Europe / Caucasus / Armenia: 1
 - Latin America / Caribbean / Uruguay: 1
@@ -99,13 +99,12 @@ Scope: controlled Commons open-license source pages with explicit object-year ev
 - Eastern Europe / Caucasus / Azerbaijan: 1
 - Eastern Europe / Caucasus / Ukraine: 1
 - Middle East and North Africa / Lebanon: 1
-- Middle East and North Africa / Turkey: 1
 
 ## Filter Diagnostics
 
-- base_filter: 847
-- country_cap: 556
-- duplicate: 87
+- country_cap: 169
+- duplicate: 51
+- base_filter: 29
 
 ## Boundary
 

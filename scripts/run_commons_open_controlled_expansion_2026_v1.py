@@ -17,6 +17,7 @@ public rebuild.
 from __future__ import annotations
 
 import csv
+import os
 import re
 import time
 from collections import Counter
@@ -42,7 +43,8 @@ MANIFEST = CAPTURE_RUNS / "capture_run_manifest_v1.csv"
 ACCESS_DATE = "2026-06-13"
 base.ACCESS_DATE = ACCESS_DATE
 FIELDNAMES = base.FIELDNAMES
-TARGET_ROWS = 4700
+BASE_TARGET_ROWS = 4700
+TARGET_ROWS = int(os.environ.get("COMMONS_OPEN_CONTROLLED_TARGET_ROWS", str(BASE_TARGET_ROWS)))
 SEARCH_LIMIT = 50
 MAX_SEARCH_PAGES = 16
 REQUEST_DELAY_SECONDS = 0.12
@@ -418,9 +420,9 @@ def update_manifest(rows: list[dict[str, str]], by_source: Counter[str]) -> None
             "raw_dir": "",
             "raw_dir_exists": "false",
             "raw_commit_policy": "not_present",
-            "included_in_public_rebuild": "true" if rows else "false",
-            "stage": "item_image_capture" if rows else "empty_or_pending",
-            "notes": "Controlled Commons open expansion; metadata/source links/source-hosted image URLs only; no image binaries or raw payloads saved.",
+            "included_in_public_rebuild": "false",
+            "stage": "item_image_capture_pending_rebuild" if rows else "empty_or_pending",
+            "notes": "Controlled Commons open expansion; metadata/source links/source-hosted image URLs only; no image binaries or raw payloads saved; public surface rebuild deferred until final release-gate check.",
         }
     )
     write_csv(MANIFEST, manifest_rows, fields)
@@ -633,6 +635,8 @@ def main() -> None:
                 "elapsed_seconds": f"{time.time() - started:.1f}",
             }
         )
+        if len(rows) > before:
+            write_outputs(rows, failures, rejects, started, final=False)
         if index % 10 == 0 or len(rows) > before or len(rows) >= TARGET_ROWS:
             print(
                 f"controlled_query_progress={index}/{len(plans)} rows={len(rows)} added={len(rows)-before} failures={len(failures)} rejects={sum(rejects.values())}",

@@ -1,37 +1,42 @@
 metric,value,count
-status,release_ready,6286
-object_family,postage_stamp,4167
-object_family,poster,576
-object_family,advertising,478
-object_family,film_poster,403
-object_family,book_cover,229
-object_family,label_packaging,136
-object_family,magazine_cover,91
-object_family,political_poster,67
-object_family,typography_identity,66
-object_family,travel_poster,42
-object_family,brochure_pamphlet,31
-authority_level,commons_open_file_with_extra_source,3675
-authority_level,structured_catalog_source_link,1567
-authority_level,institutional_or_education_context,1023
-authority_level,commons_platform_only,21
-period,2000_2026,2249
-period,pre_1940,1647
-period,1940_1970,1359
-period,1970_2000,1031
-macro_region,Latin America,1182
-macro_region,Southeast Asia,985
-macro_region,Africa,868
-macro_region,Middle East and North Africa,807
-macro_region,Eastern Europe,597
-macro_region,Oceania,427
-macro_region,South Asia,413
+status,release_ready,11039
+status,review_weak_graphic_evidence,6
+status,quarantine_duplicate_review,6
+object_family,postage_stamp,5590
+object_family,poster,1971
+object_family,advertising,1258
+object_family,label_packaging,947
+object_family,film_poster,489
+object_family,book_cover,368
+object_family,brochure_pamphlet,108
+object_family,political_poster,101
+object_family,magazine_cover,97
+object_family,typography_identity,75
+object_family,travel_poster,47
+authority_level,commons_open_file_with_extra_source,6564
+authority_level,institutional_or_education_context,2276
+authority_level,structured_catalog_source_link,2156
+authority_level,commons_platform_only,55
+period,2000_2026,3732
+period,pre_1940,3509
+period,1940_1970,2223
+period,1970_2000,1587
+macro_region,Latin America,1961
+macro_region,Africa,1881
+macro_region,Eastern Europe,1652
+macro_region,Middle East and North Africa,1426
+macro_region,Southeast Asia,1395
+macro_region,South Asia,798
+macro_region,Oceania,585
+macro_region,Central Asia,500
+macro_region,East Asia,496
 macro_region,Global,357
-macro_region,Central Asia,326
-macro_region,East Asia,324
+batch_file,capture_batch_commons_open_authority_weighted_expansion_2026_v1_records.csv,5055
 batch_file,capture_batch_commons_open_category_tree_image_2026_v1_records.csv,4537
-batch_file,capture_batch_commons_open_controlled_expansion_2026_v1_records.csv,925
+batch_file,capture_batch_commons_open_controlled_expansion_2026_v1_records.csv,935
 batch_file,capture_batch_commons_open_region_balance_image_2026_v3_records.csv,497
-batch_file,capture_batch_commons_open_authority_weighted_expansion_2026_v1_records.csv,300
 batch_file,capture_batch_commons_open_publication_category_tree_2026_v1_records.csv,27
-review_reason,platform_only_authority,21
+review_reason,platform_only_authority,55
+review_reason,weak_graphic_or_event_photo_signal,6
+review_reason,duplicate_source_identifier_or_url,6
+review_reason,duplicate_image_url,6
