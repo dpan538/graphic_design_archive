@@ -1,0 +1,8 @@
+metric,value,notes
+manual_rebuild_candidate_rows,20,Rows with LOC item-level rights text and source image URLs.
+manual_rebuild_candidate_weighted_gap_points,14.00,Weighted points represented by the queue; not applied automatically.
+automatic_upgrade_allowed_rows,0,Every row requires human/rebuild review before any state change.
+local_record_file_data/capture_batch_midcentury_1930_1970_records.csv,13,Where a future patch would need to be applied after review.
+local_record_file_data/capture_batch_early_region_1830_1930_records.csv,5,Where a future patch would need to be applied after review.
+local_record_file_data/capture_batch_early_region_1830_1880_records.csv,2,Where a future patch would need to be applied after review.
+local_image_state_IMG01,20,Current local image state before review.

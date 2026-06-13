@@ -8964,3 +8964,47 @@ Verification:
 - `python3 -m py_compile scripts/probe_loc_rights_item_metadata_v1.py` passed.
 - `python3 scripts/probe_loc_rights_item_metadata_v1.py` completed with network
   permission and source-only output.
+
+## 2026-06-13 - LOC Manual IMG03 Rebuild Queue v1
+
+Scope:
+
+- Built a manual rebuild queue from the LOC source-only item probe.
+- This queue isolates rows where LOC item JSON exposed both a source-hosted
+  image URL and item-level open/publication rights text.
+- This pass did not download images, save raw JSON, mutate capture records,
+  rebuild surfaces, or upgrade IMG01/IMG03.
+
+Files:
+
+- `scripts/build_loc_manual_img03_rebuild_queue_v1.py`
+- `data/loc_manual_img03_rebuild_queue_v1.csv`
+- `data/loc_manual_img03_rebuild_summary_v1.csv`
+- `docs/capture/LOC_MANUAL_IMG03_REBUILD_QUEUE_v1.md`
+
+Results:
+
+- Manual rebuild candidate rows: 20.
+- Weighted gap points represented: 14.00.
+- Automatic upgrades allowed: 0.
+- Current local image states: 20 IMG01.
+- Future patch targets:
+  - `data/capture_batch_midcentury_1930_1970_records.csv`: 13 rows.
+  - `data/capture_batch_early_region_1830_1930_records.csv`: 5 rows.
+  - `data/capture_batch_early_region_1830_1880_records.csv`: 2 rows.
+
+Interpretation:
+
+- These rows are plausible verified-open repair candidates because LOC item
+  metadata provides source-hosted image URLs plus "No known restrictions on
+  publication" text.
+- They still require a controlled capture-record patch and rebuild before they
+  can affect public surface metrics.
+- The 29 LOC rate-limited rows remain queued in the item probe as
+  `retry_later_rate_limited` and are not part of this rebuild queue.
+
+Verification:
+
+- `python3 -m py_compile scripts/build_loc_manual_img03_rebuild_queue_v1.py`
+  passed.
+- `python3 scripts/build_loc_manual_img03_rebuild_queue_v1.py` passed.
