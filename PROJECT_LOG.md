@@ -9514,3 +9514,138 @@ Verification:
   path, or env-file reference. Remaining broad hits are policy/log wording,
   public source titles such as `Secret`/`Secretary`/`poster session`, and
   source-description text from Commons metadata.
+
+## 2026-06-18
+
+### Temporal distribution anomaly audit and recent object-quality review
+
+Added a non-mutating audit layer to inspect the suspicious 2025-2026 counts,
+recent stamp/event overrepresentation, and the actual state of 2005-2025
+independent studio/project coverage.
+
+Scope and boundaries:
+
+- This round does not rewrite capture records, apply geography relinks, download
+  images, or rebuild frontend/public surfaces.
+- Uncertain object/source links are kept as review rows instead of blocking the
+  run. The audit produces queues for later cleaning rather than pretending every
+  row can be resolved automatically.
+- `research-repo/` remains out of scope.
+- Access-date/source-profile/span records are separated from object-year
+  evidence before temporal coverage is interpreted.
+
+Temporal audit:
+
+- Added `scripts/audit_temporal_distribution_anomalies_v1.py`.
+- Scanned 19,886 capture records.
+- Corrected the audit logic after an initial over-strict pass: `Accessed 2026`
+  inside citation text is no longer enough to remove an otherwise object-dated
+  row. A row is treated as access-year pollution only when the object date is
+  absent or the date fields themselves are driven by accessed/coverage-span
+  metadata.
+- 2025: 230 all records / 230 object-dated / 0 span-profile records.
+- 2026: 820 all records / 106 object-dated / 714 span-profile or access-year
+  records.
+- Main 2026 pollution causes: 587 source-page image-bearing records, 127 source
+  profile records, long spans ending in 2026, and coverage-target/access-year
+  metadata being counted as object dates.
+- 5-year temporal gap priorities after object-year correction:
+  - 2025-2026: 336 object records, share 0.454, severe gap.
+  - 1980-1984: 345, share 0.466, severe gap.
+  - 2000-2004: 372, share 0.503, severe gap.
+  - 1985-1989: 374, share 0.506, severe gap.
+  - 1955-1959: 385, share 0.520, severe gap.
+  - 1960-1964: 446, share 0.603, moderate gap.
+  - 1990-1994: 468, share 0.633, moderate gap.
+  - 1995-1999: 500, share 0.676, moderate gap.
+  - 2020-2024: 1,140, share 1.541, recent overfull review.
+
+Recent object-quality audit:
+
+- Added `scripts/audit_recent_design_object_quality_v1.py`.
+- Scanned 4,838 records dated 2005-2025.
+- Added safeguards after finding a feedback-contamination bug: generated audit
+  phrases such as `weak event-photo filtering` are excluded from object-quality
+  signals so prior machine notes do not trigger new event/photo flags.
+- Independent studio/project candidates:
+  - High-confidence studio work rows: 6.
+  - Unique high-confidence studio keys: 3.
+  - Manual-review studio rows: 38.
+  - Unique manual-review studio keys: 26.
+- Recent downranking queues:
+  - Post-2010 stamp/philatelic or commemorative review rows: 1,578.
+  - Event/photo/memory material card-only rows: 65.
+- Concentration risks:
+  - `commons.wikimedia.org`: 4,627 recent-scope rows; 1,642 stamp/event rows.
+  - `DigitalNZ`: 54 rows.
+  - `archive.org`: 46 rows.
+  - `Internet Archive / text and periodical collections`: 46 rows.
+
+Quality-adjusted recent-year findings:
+
+- 2010-2014 are heavily polluted by stamp/philatelic material:
+  - 2010 primary 100/186; stamp/event share 0.462.
+  - 2011 primary 126/377; stamp/event share 0.666.
+  - 2012 primary 114/273; stamp/event share 0.582.
+  - 2013 primary 169/516; stamp/event share 0.672.
+  - 2014 primary 154/414; stamp/event share 0.628.
+- 2015-2019 has a healthier primary share but weak independent studio depth:
+  - 2015 primary 138/192; 2016 primary 186/220; 2017 primary 158/253;
+    2018 primary 141/226; 2019 primary 132/190.
+- 2020-2025 should be reviewed for research value, not expanded by volume
+  alone:
+  - 2020 primary 153/249.
+  - 2021 primary 209/232.
+  - 2022 primary 217/233.
+  - 2023 primary 236/260.
+  - 2024 primary 152/166.
+  - 2025 primary 193/230.
+
+Interpretation:
+
+- The earlier high 2026 count was mostly a metrics bug: span/source-profile and
+  source-page records were counted as object years.
+- The project has enough raw source mass for late-stage work, but contemporary
+  research quality is not solved by raw count. Post-2010 stamps and
+  event/memory photos must be sampled, demoted to card/appendix, or excluded
+  from primary object-success metrics.
+- Independent studio/project coverage for 2005-2025 is currently thin and
+  should be expanded through authority/design-institution/art-school/community
+  sources, not by more broad Commons harvesting.
+- Next capture/cleaning priorities should focus on:
+  - 1980s posters, record sleeves, magazine covers, identity systems, and
+    political/cultural graphics.
+  - 2000-2004 studio/platform projects and early web visual communication.
+  - Late-1950s/early-1960s institutional posters, book covers, labels,
+    advertising, and design-school records.
+  - 1990s early web/platform graphics, studios, magazines, posters, and
+    cultural identity systems.
+  - 2015-2019 independent studios, design platforms, art schools, and community
+    archives with explicit object years and source-visible image evidence.
+
+Files:
+
+- `scripts/audit_temporal_distribution_anomalies_v1.py`
+- `scripts/audit_recent_design_object_quality_v1.py`
+- `data/temporal_distribution_year_counts_v1.csv`
+- `data/temporal_distribution_5yr_bins_v1.csv`
+- `data/temporal_distribution_10yr_bins_v1.csv`
+- `data/temporal_gap_priority_v1.csv`
+- `data/temporal_recent_anomaly_review_v1.csv`
+- `data/recent_design_object_quality_audit_2005_2025_v1.csv`
+- `data/recent_design_object_quality_summary_2005_2025_v1.csv`
+- `data/recent_design_object_quality_year_summary_2005_2025_v1.csv`
+- `data/independent_studio_work_audit_2005_2025_v1.csv`
+- `data/recent_stamp_event_reclassification_queue_v1.csv`
+- `data/recent_source_concentration_review_v1.csv`
+- `docs/capture/TEMPORAL_DISTRIBUTION_ANOMALY_AUDIT_v1.md`
+- `docs/capture/RECENT_DESIGN_OBJECT_QUALITY_AUDIT_2005_2025_v1.md`
+
+Verification:
+
+- `python3 -m py_compile scripts/audit_temporal_distribution_anomalies_v1.py`
+  passed.
+- `python3 -m py_compile scripts/audit_recent_design_object_quality_v1.py`
+  passed.
+- `python3 scripts/audit_temporal_distribution_anomalies_v1.py` passed.
+- `python3 scripts/audit_recent_design_object_quality_v1.py` passed.
