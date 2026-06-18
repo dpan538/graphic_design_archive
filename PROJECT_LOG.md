@@ -9717,3 +9717,91 @@ Verification:
 - `python3 -m py_compile scripts/generate_release_quality_action_plan_v1.py`
   passed.
 - `python3 scripts/generate_release_quality_action_plan_v1.py` passed.
+
+### Final-gap capture tooling and failed high-volume Commons attempt
+
+Added a stricter final-gap Commons capture script for the last information
+gathering phase:
+
+- `scripts/run_final_gap_open_source_capture_1955_2024_v1.py`
+
+Purpose:
+
+- Target the release-priority gaps identified in the action plan:
+  `1945-1949`, `1955-1964`, `1980-1989`, `1990-1999`, `2000-2004`, and
+  `2015-2019`.
+- Prefer non-mainstream / low-coverage regions and movements, including
+  Latin America, Africa, South Asia, Southeast Asia, Eastern Europe/Caucasus,
+  Palestine, Indigenous Australia, and related movement/community records.
+- Keep the capture rights-aware: metadata, source links, rights evidence, and
+  source-hosted image URLs only; no image binaries or raw image downloads.
+
+Safety and quality changes made during this round:
+
+- Added hard exclusions for post-2010 stamp/philatelic drift, event photos,
+  poster sessions, conference documentation, designer portraits, page images,
+  and other context-only images.
+- Added current-year guards so `2025-2026` records are not used as volume
+  padding.
+- Added object-level variant de-duplication so cropped/v1/v2/A01/A03 variants
+  of the same visual work do not count as separate objects.
+- Added region-evidence validation: a country/region can no longer be assigned
+  only because it appeared in the search query; it must also be visible in
+  title, source description, source metadata, categories, collection, or creator
+  evidence.
+- Added country, creator, collection, year, object-family, and period caps to
+  reduce repeated-source concentration.
+- Added query state and consecutive-failure protection so interrupted runs can
+  resume without reprocessing failed/empty queries.
+
+Run outcome:
+
+- Multiple smoke runs confirmed that the script can capture valid IMG03 Commons
+  metadata records when the query path is productive.
+- A 400-record intermediate run was intentionally discarded after review because
+  it exposed query-induced geography errors and event/photo leakage, including
+  non-Vietnam records returned by `Vietnamese poster` searches and conference
+  poster-session photographs.
+- After adding the stricter region-evidence gate, Commons returned sustained
+  `429`/connection failures from repeated testing. No final-gap Commons records
+  were merged in this round.
+- The failure is therefore a capture-source/rate-limit issue plus a useful
+  quality-gate discovery, not a permission upgrade or image-rights expansion.
+
+Related fallback runs:
+
+- `scripts/run_noncanonical_exact_source_capture_1970_2000.py` was run as a
+  high-confidence institution/source fallback. The network result was worse
+  than the previously committed batch because several exact pages returned
+  transient SSL/403 errors, so the regenerated records were not committed.
+- `scripts/run_source_coverage_gap_capture_1931_2026.py` was run and then
+  tightened after it exposed DSpace false positives such as medical conference
+  records, generic handbook records, and non-design repository hits. The script
+  relevance filter now excludes these false-positive patterns, but the
+  regenerated records were not committed because the run produced mostly IMG04
+  text/context records and lost the previous UCT IMG02 poster channel.
+
+Coverage snapshot after reverting unstable outputs:
+
+- `active_source_count`: 18,312.
+- `source_coverage_rate_v1`: 82.63% during the transient run, effectively
+  unchanged from the prior snapshot after unstable outputs were not staged.
+- `strict_distribution_adjusted_source_coverage_rate`: 26.24% during the
+  transient run, still low and still the main distribution problem.
+
+Next capture plan:
+
+- Let Commons cool down before a new high-volume run.
+- Use the stricter final-gap script, but start with manually verified productive
+  phrases/categories instead of broad Commons category assumptions.
+- Keep the source-gap DSpace script as a text/context tool only unless its
+  results pass image/object relevance review.
+- Do not count IMG04-heavy fallback runs as successful image-based archive
+  growth.
+
+Verification:
+
+- `python3 -m py_compile scripts/run_final_gap_open_source_capture_1955_2024_v1.py`
+  passed.
+- `python3 -m py_compile scripts/run_source_coverage_gap_capture_1931_2026.py`
+  passed after false-positive filter changes.

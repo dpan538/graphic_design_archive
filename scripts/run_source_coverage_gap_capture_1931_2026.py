@@ -73,6 +73,24 @@ TITLE_TERMS = (
     "広告",
 )
 
+EXCLUDE_TERMS = (
+    "cystitis",
+    "prostate",
+    "prostaat",
+    "androgen",
+    "androgeen",
+    "ewekan",
+    "oxygen therapy",
+    "surgical",
+    "student handbook",
+    "speech on multilingual education",
+    "necessary tool for educational transformation",
+    "structure models exhibition",
+    "daily trust newspaper",
+    "theory of culture",
+    "nigerbiblios",
+)
+
 
 DSpaceSource = dict[str, Any]
 
@@ -186,7 +204,9 @@ def in_scope(date_text: str) -> bool:
 
 def relevant(title: str, description: str, subjects: str = "", query: str = "") -> bool:
     title_l = title.lower()
-    blob = " ".join([title, description, subjects, query]).lower()
+    blob = " ".join([title, description, subjects]).lower()
+    if any(term in blob for term in EXCLUDE_TERMS):
+        return False
     if any(term in title_l for term in TITLE_TERMS):
         return True
     return any(term in blob for term in GRAPHIC_TERMS)
