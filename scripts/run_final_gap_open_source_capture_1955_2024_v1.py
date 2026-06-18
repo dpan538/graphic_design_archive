@@ -42,6 +42,9 @@ ACCESS_DATE = "2026-06-18"
 FIELDNAMES = base.FIELDNAMES
 
 TARGET_ROWS = int(os.environ.get("FINAL_GAP_TARGET_ROWS", "4200"))
+QUERY_MODE = os.environ.get("FINAL_GAP_QUERY_MODE", "broad").strip().lower()
+RESET_STATE = os.environ.get("FINAL_GAP_RESET_STATE", "").strip().lower() in {"1", "true", "yes"}
+RESET_RECORDS = os.environ.get("FINAL_GAP_RESET_RECORDS", "").strip().lower() in {"1", "true", "yes"}
 SEARCH_LIMIT = int(os.environ.get("FINAL_GAP_SEARCH_LIMIT", "50"))
 SEARCH_PAGES = int(os.environ.get("FINAL_GAP_SEARCH_PAGES", "2"))
 CATEGORY_PAGES = int(os.environ.get("FINAL_GAP_CATEGORY_PAGES", "5"))
@@ -180,6 +183,33 @@ PRIORITY_SEARCH_PHRASES = [
     ("Southeast Asia", "Vietnam", "poster", "Vietnamese poster"),
 ]
 
+HIGH_YIELD_PHRASES = [
+    ("Africa", "South Africa", "poster", "South African poster"),
+    ("Africa", "South Africa", "poster", "anti-apartheid poster"),
+    ("Eastern Europe / Caucasus", "Poland", "poster", "Polish poster"),
+    ("Eastern Europe / Caucasus", "Russia", "poster", "Soviet poster"),
+    ("Eastern Europe / Caucasus", "Czech Republic", "poster", "Czechoslovak poster"),
+    ("Eastern Europe / Caucasus", "Czech Republic", "poster", "Czech poster"),
+    ("Eastern Europe / Caucasus", "Hungary", "poster", "Hungarian poster"),
+    ("Eastern Europe / Caucasus", "Yugoslavia", "poster", "Yugoslav poster"),
+    ("Southeast Asia", "Indonesia", "poster", "Indonesian poster"),
+    ("Southeast Asia", "Vietnam", "poster", "Vietnamese poster"),
+    ("South Asia", "India", "film poster", "Bollywood poster"),
+    ("Middle East and North Africa", "Palestine", "poster", "Palestinian poster"),
+    ("Latin America / Caribbean", "Cuba", "poster", "Cuban poster"),
+    ("Latin America / Caribbean", "Cuba", "poster", "OSPAAAL poster"),
+    ("Latin America / Caribbean", "Mexico", "poster", "Mexican poster"),
+    ("Latin America / Caribbean", "Brazil", "poster", "Brazilian poster"),
+]
+
+PRODUCTIVE_SEED_PHRASES = [
+    ("Africa", "South Africa", "poster", "South African poster"),
+    ("Eastern Europe / Caucasus", "Poland", "poster", "Polish poster"),
+    ("Eastern Europe / Caucasus", "Russia", "poster", "Soviet poster"),
+    ("Southeast Asia", "Indonesia", "poster", "Indonesian poster"),
+    ("Southeast Asia", "Vietnam", "poster", "Vietnamese poster"),
+]
+
 PERIOD_CATEGORIES = [
     ("poster", "Category:1940s posters"),
     ("poster", "Category:1950s posters"),
@@ -282,6 +312,18 @@ WEAK_SOURCE_TERMS = (
 
 NON_OBJECT_TEXT_TERMS = (
     "poster designer",
+    "poster cutout",
+    "posters in",
+    "posters with portraits",
+    "row of posters",
+    "woman walks",
+    "last address",
+    "department store",
+    "posters praising labor",
+    "cutout of",
+    "schriftzug",
+    "fortepan",
+    "machine gun",
     "designer.jpg",
     "cableway",
     "constitution page",
@@ -509,6 +551,7 @@ def work_key(row: dict[str, str]) -> str:
     title = re.sub(r"\([^)]*(cropped|crop|bestanddeelnr|file|version|v[0-9]+)[^)]*\)", " ", title)
     title = re.sub(r"\b(cropped|crop|bestanddeelnr|file|version)\b", " ", title)
     title = re.sub(r"\b(v|version)\s*[0-9]+\b", " ", title)
+    title = re.sub(r"\b(black and white|black white|b w|bw|colour|color|colored|monochrome)\b", " ", title)
     title = re.sub(r"\b[a-z][0-9]{2,}\b", " ", title)
     title = re.sub(r"\b[0-9]{4,}\b", " ", title)
     title = re.sub(r"[^a-z0-9]+", " ", title).strip()
@@ -562,6 +605,63 @@ def append_state(row: dict[str, str]) -> None:
 def query_plan() -> list[tuple[str, str, str, str, str]]:
     plan: list[tuple[str, str, str, str, str]] = []
     seen: set[str] = set()
+    if QUERY_MODE == "productive_seed":
+        productive_years = [
+            1982,
+            1984,
+            1985,
+            1987,
+            1980,
+            1981,
+            1983,
+            1986,
+            1988,
+            1989,
+            1958,
+            1959,
+            1960,
+            1961,
+            1962,
+            1963,
+            1990,
+            1991,
+            1995,
+            2000,
+            2001,
+            2004,
+            2015,
+            2016,
+            2017,
+            2018,
+            2019,
+        ]
+        for macro, country, object_term, phrase in PRODUCTIVE_SEED_PHRASES:
+            add_plan(plan, seen, macro, country, object_term, phrase, "productive_seed_phrase")
+        for year in productive_years:
+            for macro, country, object_term, phrase in PRODUCTIVE_SEED_PHRASES:
+                add_plan(plan, seen, macro, country, object_term, f"{phrase} {year}", "productive_seed_phrase_year")
+        return plan
+
+    if QUERY_MODE == "high_yield":
+        high_yield_years = [
+            *range(1980, 1990),
+            *range(1955, 1965),
+            *range(1990, 2005),
+            *range(2015, 2020),
+            *range(1945, 1950),
+        ]
+        for macro, country, object_term, phrase in HIGH_YIELD_PHRASES:
+            add_plan(plan, seen, macro, country, object_term, phrase, "high_yield_phrase")
+        for year in high_yield_years:
+            for macro, country, object_term, phrase in HIGH_YIELD_PHRASES:
+                add_plan(plan, seen, macro, country, object_term, f"{phrase} {year}", "high_yield_phrase_year")
+        for year in high_yield_years:
+            for macro, country, object_term, phrase in HIGH_YIELD_PHRASES:
+                if object_term == "poster":
+                    add_plan(plan, seen, macro, country, "advertising poster", f"{phrase} advertising {year}", "high_yield_advertising_year")
+                    add_plan(plan, seen, macro, country, "film poster", f"{phrase} film {year}", "high_yield_film_year")
+        return plan
+
     countries = []
     seen_country: set[tuple[str, str]] = set()
     for macro, country, aliases in [*PRIORITY_COUNTRIES, *authority.COUNTRIES]:
@@ -722,6 +822,8 @@ def write_outputs(rows: list[dict[str, str]], failures: list[dict[str, str]], re
         "",
         "Scope: release-late metadata capture for underfilled temporal bands and contemporary studio/project evidence. The batch stores source metadata, source links, rights evidence, and source-hosted image URLs only.",
         "",
+        f"Query mode: `{QUERY_MODE}`",
+        "",
         "## Safety Rules",
         "",
         "- No image binaries, screenshots, cookies, sessions, or raw API payloads were saved.",
@@ -796,7 +898,13 @@ def main() -> None:
     DOCS.mkdir(parents=True, exist_ok=True)
     CAPTURE_RUNS.mkdir(parents=True, exist_ok=True)
 
+    if RESET_RECORDS:
+        for path in (RECORDS_CSV, SUMMARY_CSV, QUALITY_CSV, FAILURES_CSV, REPORT):
+            if path.exists():
+                path.unlink()
     rows = read_csv(RECORDS_CSV)
+    if RESET_STATE and STATE_CSV.exists():
+        STATE_CSV.unlink()
     failures: list[dict[str, str]] = []
     rejects: Counter[str] = Counter()
     seen_ids, seen_images = existing_keys(rows)
@@ -808,7 +916,7 @@ def main() -> None:
     consecutive_failures = 0
 
     print(
-        f"final_gap_start rows_existing={len(rows)} target={TARGET_ROWS} plans={len(plans)} completed={len(completed)}",
+        f"final_gap_start rows_existing={len(rows)} target={TARGET_ROWS} plans={len(plans)} completed={len(completed)} query_mode={QUERY_MODE}",
         flush=True,
     )
     for index, (macro, country, direction_name, object_term, query) in enumerate(plans, 1):

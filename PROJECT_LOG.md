@@ -9805,3 +9805,111 @@ Verification:
   passed.
 - `python3 -m py_compile scripts/run_source_coverage_gap_capture_1931_2026.py`
   passed after false-positive filter changes.
+
+### Final-gap productive-seed Commons capture after cooldown
+
+After roughly one hour of Commons cooldown, the final-gap capture was resumed
+with a much narrower seed strategy rather than another broad high-volume run.
+
+Script changes:
+
+- `scripts/run_final_gap_open_source_capture_1955_2024_v1.py` now supports
+  `FINAL_GAP_QUERY_MODE=high_yield` and `FINAL_GAP_QUERY_MODE=productive_seed`.
+- Added `FINAL_GAP_RESET_STATE=1` and `FINAL_GAP_RESET_RECORDS=1` so interrupted
+  probe state can be cleared without editing unrelated capture files.
+- Added stricter object-level cleanup for context/photo/memory leakage:
+  `Fortepan`, poster cutouts, `Schriftzug`, street/environment poster rows,
+  department-store poster surroundings, `Last Address` memorial material, and
+  black/white vs color variants of the same object.
+- Kept the prior hard rules: no image binary downloads, IMG03 only from explicit
+  Commons open-license extmetadata, no post-2010 stamp padding, no event-photo
+  or poster-session records, and no query-only region assignment.
+
+Run sequence:
+
+- A first broad recovery probe confirmed Commons had cooled down but was too
+  inefficient: 133 query-state rows produced only 9 in-memory pass candidates
+  before interruption, with 45 query failures and 1,945 rejects. It did not reach
+  checkpoint output and was not kept as a records batch.
+- A first `high_yield` run was also too wide: it reached only 8 in-memory
+  candidates by query 83/2,086 and was stopped.
+- A `productive_seed` run using only previously productive phrases was then run
+  with `FINAL_GAP_CHECKPOINT_EVERY=1` so every accepted record was written
+  immediately.
+- Two cleanup reruns were made after manual title/description review. The final
+  kept batch is intentionally smaller but cleaner.
+
+Final kept outputs:
+
+- `data/capture_batch_final_gap_open_source_1955_2024_v1_records.csv`
+- `data/capture_batch_final_gap_open_source_1955_2024_v1_source_summary.csv`
+- `data/final_gap_open_source_capture_1955_2024_v1_quality.csv`
+- `data/final_gap_open_source_capture_1955_2024_v1_query_state.csv`
+- `data/final_gap_open_source_capture_1955_2024_v1_failures.csv`
+- `docs/capture/FINAL_GAP_OPEN_SOURCE_CAPTURE_1955_2024_v1.md`
+
+Final metrics:
+
+- Records captured: 12.
+- Image state: 12 IMG03 / 0 IMG04.
+- Query failures: 53.
+- Distinct source collections: 11.
+- Distinct creators: 11.
+- Period distribution:
+  - `1945_1949_moderate_gap`: 2.
+  - `1955_1964_gap`: 5.
+  - `1980_1989_gap`: 5.
+- Region distribution:
+  - Eastern Europe / Caucasus / Russia: 4.
+  - Eastern Europe / Caucasus / Poland: 2.
+  - Southeast Asia / Indonesia: 4.
+  - Southeast Asia / Vietnam: 2.
+- Object family distribution: 11 poster, 1 film poster.
+- Top reject reasons:
+  - `base_parser_rejected`: 2,063.
+  - `outside_target_periods`: 898.
+  - `region_not_source_evidenced`: 438.
+  - `event_photo_or_memory_material`: 91.
+  - `weak_source_or_platform_noise`: 77.
+  - `non_object_text_or_context_image`: 10.
+
+Review notes:
+
+- The batch is not a meaningful volume increase against the 20,000-source
+  release target; it is a quality-controlled final-gap patch.
+- Commons search has very low marginal yield under the current strict object
+  and rights gates. Further volume should come from institution APIs and known
+  collection endpoints rather than broad Commons search phrases.
+- No image files, screenshots, cookies, sessions, or raw API payloads were saved.
+- No IMG01/IMG03 rights upgrades were made by heuristic, LLM, TOS, or platform
+  signal. IMG03 entries derive from explicit Commons extmetadata only.
+
+Light release snapshot after the capture, without a frontend or surface rebuild:
+
+- `public_surfaces`: 13,680.
+- `archive_active_public_sources`: 12,342.
+- `release_source_coverage_rate`: 61.71% against the 20,000-source release
+  target.
+- `object_source_visible_rate`: 97.91%.
+- `object_verified_open_rate`: 87.96%.
+- `object_weighted_publication_grade_rate`: 93.36%; repeated photos/views of
+  one object are counted once by object grouping.
+- `object_img04_rate`: 1.78%.
+- `source_pool_period_fill_rate`: 82.62%.
+- `strict_distribution_adjusted_source_coverage_rate`: 26.23%.
+- `research_quality_adjusted_source_coverage_rate_v2`: 2.31%.
+- Main/sub/text snapshot remains structurally weak: 13,419 main sheets, 261
+  sub/support surfaces, 242 independent text sheets, 13,666 dossier text pages,
+  and 3,247 dossier sub/card/appendix entries.
+
+Verification:
+
+- `python3 -m py_compile scripts/run_final_gap_open_source_capture_1955_2024_v1.py`
+  passed.
+- `python3 -m py_compile scripts/run_release_snapshot_v1.py` passed.
+- `python3 scripts/run_release_snapshot_v1.py` passed.
+- `git diff --check` passed.
+- Commit-bound safety scan found no real API key, bearer value, password/secret
+  assignment, cookie/session assignment, local user path, or env-file reference.
+  Remaining hits are expected policy text, environment-variable names, and
+  historical project-log scan terms.

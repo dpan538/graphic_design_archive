@@ -1,0 +1,33 @@
+metric,value,notes
+records_captured,12,New final-gap capture records.
+distinct_source_collections,11,Normalized source_collection count.
+distinct_creators,11,Normalized creator/artist count.
+query_failures,53,Network/API failures; rows continue after failure.
+period:1955_1964_gap,5,Target-period distribution.
+period:1980_1989_gap,5,Target-period distribution.
+period:1945_1949_moderate_gap,2,Target-period distribution.
+macro_region:Eastern Europe,6,Macro-region distribution.
+macro_region:Southeast Asia,6,Macro-region distribution.
+object_family:poster,11,Object family after quality gate.
+object_family:film_poster,1,Object family after quality gate.
+year:1945,2,Top captured years.
+year:1955,1,Top captured years.
+year:1957,1,Top captured years.
+year:1959,1,Top captured years.
+year:1960,1,Top captured years.
+year:1963,1,Top captured years.
+year:1982,1,Top captured years.
+year:1985,1,Top captured years.
+year:1986,1,Top captured years.
+year:1987,1,Top captured years.
+year:1989,1,Top captured years.
+reject:base_parser_rejected,2063,Rejected before output.
+reject:outside_target_periods,898,Rejected before output.
+reject:region_not_source_evidenced,438,Rejected before output.
+reject:event_photo_or_memory_material,91,Rejected before output.
+reject:weak_source_or_platform_noise,77,Rejected before output.
+reject:non_object_text_or_context_image,10,Rejected before output.
+reject:postage_or_philatelic_excluded,6,Rejected before output.
+reject:duplicate_existing_source_or_image,3,Rejected before output.
+reject:object_term_not_source_evidenced,1,Rejected before output.
+reject:duplicate_work_variant,1,Rejected before output.
