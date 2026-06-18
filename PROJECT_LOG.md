@@ -9649,3 +9649,71 @@ Verification:
   passed.
 - `python3 scripts/audit_temporal_distribution_anomalies_v1.py` passed.
 - `python3 scripts/audit_recent_design_object_quality_v1.py` passed.
+
+### Release-quality action plan from audit queues
+
+Added a non-mutating release-quality action plan that turns the temporal and
+recent-object audits into operational queues. This lets future cleaning and
+capture passes keep moving even when individual records cannot be perfectly
+linked immediately.
+
+Outputs:
+
+- `scripts/generate_release_quality_action_plan_v1.py`
+- `data/release_quality_action_plan_v1.csv`
+- `data/release_quality_primary_exclusion_candidates_v1.csv`
+- `data/release_quality_capture_targets_v1.csv`
+- `docs/capture/RELEASE_QUALITY_ACTION_PLAN_v1.md`
+
+Action rows:
+
+- Total action rows: 2,678.
+- Primary/object-year exclusion candidates: 2,357.
+- Capture target rows: 11.
+- P0 rows: 2,357.
+- P1 rows: 321.
+
+Action families:
+
+- `post_2010_stamp_or_philatelic_demote`: 1,578.
+- `temporal_span_profile_exclude`: 714.
+- `recent_research_value_review`: 321.
+- `event_photo_memory_card_only`: 65.
+
+Release-count rule:
+
+- P0 rows are release-count guards, not deletion instructions.
+- Post-2010 stamps and philatelic material should be excluded from primary
+  object success and retained only as card/appendix material when editorially
+  useful.
+- Event/photo/memory and poster-session records should be card-only support.
+- Source-profile, source-page, long-span, access-year, and coverage-target rows
+  should be excluded from object-year metrics until item-level dates are
+  resolved.
+
+Capture/cleaning plan:
+
+- `2025-2026` is now a current-year guard, not a volume target. The plan says
+  not to expand this bin by volume; only verified studio/project pages with
+  clear object years and research value should enter.
+- Priority capture targets:
+  - `1980-1984`: 1980s posters, record sleeves, magazine covers, identity
+    systems, political/cultural graphics.
+  - `2000-2004`: studio/platform projects, early web visual communication,
+    art-school/community posters.
+  - `1985-1989`: same 1980s object families, with low duplication.
+  - `1955-1959` and `1960-1964`: institutional posters, book covers, labels,
+    advertising, and design-school records.
+  - `1990-1994` and `1995-1999`: early web/platform graphics, studio projects,
+    posters, magazines, and cultural identity systems.
+  - `2015-2019`: independent studio/platform/art-school/community depth, but
+    only with explicit object years and source-visible image evidence.
+- Avoid patterns for the next capture round: access-year-only pages, source
+  profile spans, source-page hero images, event photos, poster-session
+  documentation, current-year padding, and more broad Commons stamp harvesting.
+
+Verification:
+
+- `python3 -m py_compile scripts/generate_release_quality_action_plan_v1.py`
+  passed.
+- `python3 scripts/generate_release_quality_action_plan_v1.py` passed.
