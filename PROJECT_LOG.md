@@ -10650,3 +10650,75 @@ Next recommended step:
 - Keep the 1,253 manual packet/card review rows out of automatic promotion.
 - Start a source-family authority audit focused on Commons over-concentration,
   Gallica all-main behavior, and institution-specific repeated-series patterns.
+
+### Prefreeze Packet Role Review Draft v1
+
+Scope:
+
+- Added the first packet-role review queue and conservative draft override file
+  derived from the packetization audit.
+- This pass is still advisory. It does not wire packet decisions into rebuild
+  scripts, does not mutate the official payload, does not download images, and
+  does not change rights or image states.
+- Draft override rows intentionally keep `source_file` blank. Applying the
+  draft requires a later audited join against the capture registry or candidate
+  payload source metadata.
+
+Implementation:
+
+- New script: `scripts/build_prefreeze_packet_role_review_v1.py`.
+- New outputs:
+  - `data/prefreeze_packet_role_review_queue_v1.csv`.
+  - `data/prefreeze_packet_role_override_draft_v1.csv`.
+  - `data/prefreeze_packet_role_review_summary_v1.csv`.
+  - `docs/capture/PREFREEZE_PACKET_ROLE_REVIEW_v1.md`.
+
+Review results:
+
+- Packet candidates scanned: 2,259.
+- Surface recommendations scanned: 16,175.
+- Packet role review queue rows: 9,725.
+- Conservative draft override rows: 2,452.
+- Packet-level lanes:
+  - manual packet or card review: 1,253 packets.
+  - sample before override: 632 packets.
+  - conservative draft override: 307 packets.
+  - packet reference only: 67 packets.
+- Surface-level lanes:
+  - manual packet or card review: 5,669 rows.
+  - conservative draft override: 2,458 rows.
+  - sample before override: 1,598 rows.
+- Review decisions:
+  - review only: 7,267.
+  - draft subsheet demote: 2,142.
+  - keep main anchor candidate: 161.
+  - keep card support: 103.
+  - draft card demote: 46.
+  - anchor manual review: 6.
+- Draft override role distribution:
+  - support packet appendix text: 2,142.
+  - main sheet: 161.
+  - card: 149.
+
+Interpretation:
+
+- The conservative draft confirms that only a small fraction of current
+  candidate surfaces should remain main anchors without further manual review.
+- The largest safe movement is not deletion; it is moving parallel main sheets
+  into packet member roles around selected anchors.
+- Manual packet/card review remains larger than the draft layer, which is
+  expected because weak Commons clusters, stamp/philatelic clusters,
+  event/session/context records, and broad folder-cell groupings should not be
+  auto-applied.
+- This gives the archive a clearer next-stage workflow: review packet anchors,
+  join source files, then apply a small audited override layer before another
+  candidate rebuild.
+
+Next recommended step:
+
+- Sample the 2,452 conservative draft override rows by source family, period,
+  and region before applying them.
+- Join draft rows to `source_file + capture_id` only after sample review.
+- Keep the 5,669 manual packet/card rows as editorial planning evidence.
+- Begin a source-family authority audit to reduce repeated-source overclaiming,
+  especially Commons and all-main institutional clusters.
