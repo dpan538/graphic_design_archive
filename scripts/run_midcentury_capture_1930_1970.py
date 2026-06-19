@@ -928,6 +928,24 @@ def folder_id(folder_type: str, label: str) -> str:
 
 
 def region_for(row: dict[str, str]) -> tuple[str, str, dict[str, list[str]]]:
+    explicit_region = (row.get("region_folder") or "").strip()
+    if explicit_region:
+        region_ids = [
+            part.strip()
+            for part in re.split(r"[;,|]", row.get("region_ids", "") or "")
+            if part.strip()
+        ]
+        geo_ids = [
+            part.strip()
+            for part in re.split(r"[;,|]", row.get("geo_ids", "") or "")
+            if part.strip()
+        ]
+        return (
+            folder_id("region", explicit_region),
+            explicit_region,
+            {"regionIds": region_ids, "geoIds": geo_ids},
+        )
+
     place_l = f" {re.sub(r'[^a-z0-9]+', ' ', row.get('source_place_text', '').lower()).strip()} "
     place_tests = [
         ("Argentina", "argentina", {"regionIds": ["REG004"], "geoIds": ["GEO031"]}),

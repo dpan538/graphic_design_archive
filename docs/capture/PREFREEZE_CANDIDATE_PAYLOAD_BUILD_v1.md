@@ -9,6 +9,7 @@ Scope: sandbox candidate build for source and gate evaluation. It does not overw
 - raw_input_rows: 19886 (Rows before P0 exclusion and dedupe.)
 - skipped_by_p0_exclusion: 3554 (Rows blocked by pre-freeze cleaning gate.)
 - rows_after_exclusion: 16332 (Rows eligible for global dedupe.)
+- geo_overrides_applied: 4808 (Audited pre-freeze geography repairs applied in memory.)
 - deduped_candidate_rows: 16289 (Rows passed to payload builder.)
 - dedupe_removed_rows: 43 (Duplicate rows removed before surface build.)
 - candidate_surfaces: 16175 (Surfaces generated in candidate payload.)

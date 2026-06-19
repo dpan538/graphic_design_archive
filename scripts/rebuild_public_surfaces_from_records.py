@@ -69,6 +69,7 @@ SHARD_OUTPUT_ROOTS = [
 
 CAPTURE_RUN_MANIFEST = DATA / "capture_runs" / "capture_run_manifest_v1.csv"
 PREFREEZE_REBUILD_EXCLUSION = DATA / "prefreeze_public_rebuild_exclusion_v1.csv"
+PREFREEZE_GEO_OVERRIDES = DATA / "prefreeze_geo_repair_overrides_v1.csv"
 
 
 def read_rows(path: Path) -> list[dict[str, str]]:
@@ -114,6 +115,49 @@ def prefreeze_exclusion_lookup() -> dict[str, set[str]]:
         if source_file and capture_id:
             lookup.setdefault(source_file, set()).add(capture_id)
     return lookup
+
+
+def prefreeze_geo_override_lookup(path: Path = PREFREEZE_GEO_OVERRIDES) -> dict[tuple[str, str], dict[str, str]]:
+    """Return auditable geography overrides keyed by source file and capture ID."""
+    lookup: dict[tuple[str, str], dict[str, str]] = {}
+    for row in read_rows(path):
+        source_file = Path(row.get("source_file", "")).name
+        capture_id = row.get("capture_id", "")
+        region_folder = row.get("region_folder", "")
+        if source_file and capture_id and region_folder:
+            lookup[(source_file, capture_id)] = row
+    return lookup
+
+
+def apply_prefreeze_geo_overrides(
+    rows: list[dict[str, str]],
+    overrides: dict[tuple[str, str], dict[str, str]] | None = None,
+) -> tuple[list[dict[str, str]], int]:
+    """Apply non-destructive geography repair decisions to in-memory rows."""
+    lookup = overrides if overrides is not None else prefreeze_geo_override_lookup()
+    if not lookup:
+        return rows, 0
+    applied = 0
+    repaired_rows: list[dict[str, str]] = []
+    globalish_place = re.compile(r"^(?:global|post-1990 international|transnational|global web)", re.I)
+    for row in rows:
+        source_file = Path(row.get("_source_file", "")).name
+        capture_id = row.get("capture_id", "")
+        override = lookup.get((source_file, capture_id))
+        if not override:
+            repaired_rows.append(row)
+            continue
+        repaired = dict(row)
+        repaired["region_folder"] = override.get("region_folder", "")
+        repaired["region_ids"] = override.get("region_ids", "")
+        repaired["geo_ids"] = override.get("geo_ids", "")
+        place = (repaired.get("source_place_text") or "").strip()
+        if not place or globalish_place.search(place):
+            repaired["source_place_text"] = override.get("source_place_text") or repaired["region_folder"]
+        repaired["geo_repair_basis"] = override.get("repair_basis", "")
+        repaired_rows.append(repaired)
+        applied += 1
+    return repaired_rows, applied
 
 
 def fallback_summary(row: dict[str, str]) -> str:
@@ -1280,7 +1324,10 @@ def main() -> None:
             before = len(input_rows)
             input_rows = [row for row in input_rows if row.get("capture_id", "") not in excluded_ids]
             skipped_by_exclusion += before - len(input_rows)
+        for row in input_rows:
+            row["_source_file"] = path.name
         rows.extend(input_rows)
+    rows, geo_overrides_applied = apply_prefreeze_geo_overrides(rows)
     rows = dedupe_rows([normalize_public_date_fields(fill_enrichment_defaults(row)) for row in rows])
     rows.sort(key=lambda r: (row_sort_year(r), r.get("source_title", "")))
 

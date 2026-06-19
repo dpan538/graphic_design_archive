@@ -5,38 +5,28 @@ Scope: non-mutating promotion blocker audit over the pre-freeze candidate payloa
 ## Summary
 
 - candidate_surfaces_scanned: 16175 (Candidate surfaces scanned for promotion blockers.)
-- promotion_blocker_rows: 7285 (Total blocker rows; a surface may have more than one blocker.)
-- geo_repair_rows: 4938 (Unresolved-region rows requiring geography repair.)
+- promotion_blocker_rows: 2463 (Total blocker rows; a surface may have more than one blocker.)
+- geo_repair_rows: 133 (Unresolved-region rows requiring geography repair.)
 - exclusion_delta_rows: 0 (New P0 source_file + capture_id suggestions not already in current exclusion table.)
 
 ## By Severity
 
-- P1: 7283
-- P0: 2
+- P1: 2463
 
 ## By Blocker Type
 
-- unresolved_region: 4938
-- event_photo_or_context_image: 2166
+- event_photo_or_context_image: 2149
 - source_visible_gap: 181
+- unresolved_region: 133
 
 ## Top Unresolved Geography Sources
 
-- Internet Archive / text and periodical collections: 61
-- Wellcome Collection Catalogue API: 54
-- Library of Congress loc.gov API: 38
-- Wikimedia Commons: 38
-- Georgia State University Library Digital Collections / CONTENTdm: 37
-- Another Graphic: 14
+- Wellcome Collection Catalogue API: 46
+- Wikimedia Commons: 34
+- Internet Archive / text and periodical collections: 19
+- Library of Congress loc.gov API: 17
 - The Met Open Access: 14
-- V&A Collections API: 8
-- Art Institute of Chicago API: 6
-- Smithsonian Open Access: 5
-- African Digital Heritage: 3
-- Barjeel Art Foundation: 3
-- Getty Research Portal: 3
-- National Repository of Nigeria: 2
-- Cleveland Museum Open Access API: 1
+- V&A Collections API: 3
 
 ## Exclusion Delta
 

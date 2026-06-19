@@ -1,0 +1,13 @@
+metric,value,notes
+queue_rows,218,Unresolved-region rows from candidate blocker audit.
+decision_rows,218,Rows with deterministic repair decisions.
+new_override_rows,88,Rows eligible for in-memory geography override from the current queue.
+existing_override_rows_preserved,4720,Previously audited overrides retained by source_file + capture_id.
+cumulative_override_rows,4808,Total override rows written for candidate/public rebuild.
+decision:insufficient_evidence,130,Decision type distribution.
+decision:auto_apply_candidate,83,Decision type distribution.
+decision:keep_global_context,4,Decision type distribution.
+decision:auto_specific_uncontrolled_candidate,1,Decision type distribution.
+confidence:low,130,Confidence distribution.
+confidence:medium,73,Confidence distribution.
+confidence:high,15,Confidence distribution.

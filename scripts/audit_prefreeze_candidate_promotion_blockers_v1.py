@@ -78,11 +78,11 @@ SUMMARY_FIELDS = ["metric", "value", "notes"]
 
 STAMP_TERMS = re.compile(r"\b(postage|postal|stamp|stamps|philatel|first day cover|souvenir sheet|commemorative issue)\b", re.I)
 EVENT_TERMS = re.compile(
-    r"\b(event photo|group photo|photo of|photograph of|opening reception|conference|symposium|seminar|workshop|talk|lecture|poster session)\b",
+    r"\b(event photo|group photo|photo of|photograph of|opening reception|conference|symposium|seminar|workshop|poster session)\b",
     re.I,
 )
 WEAK_CONTEXT_TERMS = re.compile(r"\b(hero image|source profile|profile page|designer portrait|self[- ]?photographed|own work)\b", re.I)
-DESIGN_TERMS = re.compile(r"\b(poster|typograph|graphic design|identity|logo|publication|book cover|magazine|exhibition|advertis|visual communication|zine)\b", re.I)
+DESIGN_TERMS = re.compile(r"\b(poster|typograph\w*|graphic design|identity|logo|publication|book cover|magazine|exhibition|advertis\w*|visual communication|zine)\b", re.I)
 
 
 def clean(value: object) -> str:

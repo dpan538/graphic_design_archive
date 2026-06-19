@@ -10316,3 +10316,94 @@ Interpretation:
     they are not item-level designed surfaces;
   - only then consider promoting the candidate payload toward the official
     release layer.
+
+### Prefreeze geography repair and cleaning review
+
+Executed the first deterministic geography repair layer and the follow-up
+source-visible/context-image review layer against the pre-freeze candidate
+payload. This was a candidate-only cleaning run: it did not overwrite the
+official `generated/public_surfaces_v1.json`, did not mirror data into the
+frontend, did not download images, and did not upgrade IMG01/IMG03 rights states
+by heuristic, LLM, TOS, platform, or source-priority signals.
+
+Implementation:
+
+- New script: `scripts/build_prefreeze_geo_repair_decisions_v1.py`.
+- New cumulative geography override file:
+  `data/prefreeze_geo_repair_overrides_v1.csv`.
+- `scripts/rebuild_public_surfaces_from_records.py` now supports an auditable
+  in-memory pre-freeze geography override layer keyed by
+  `source_file + capture_id`.
+- `scripts/build_prefreeze_candidate_payload_v1.py` now applies the same
+  override layer while building the ignored candidate payload.
+- `scripts/run_midcentury_capture_1930_1970.py` now honors explicit
+  `region_folder`, `region_ids`, and `geo_ids` before falling back to old
+  keyword inference.
+- New review script: `scripts/audit_prefreeze_cleaning_review_v1.py`.
+
+Geography repair results:
+
+- Initial unresolved-region queue before repair: 4,938 rows.
+- First deterministic pass produced 4,720 override rows.
+- Second incremental pass preserved those overrides and added 88 more.
+- Cumulative geography override rows: 4,808.
+- Remaining unresolved-region rows after candidate rebuild and blocker audit:
+  133.
+- Remaining unresolved rows are mostly low-evidence IA/Met/Wellcome/LOC items
+  or records that need item-level source recapture, not safe deterministic
+  geography binding.
+
+Candidate metrics after geography repair:
+
+- Candidate public surfaces: 16,175.
+- Candidate active public sources: 14,997.
+- Candidate object source-visible rate: 98.92%.
+- Candidate object verified-open rate: 95.29%.
+- Candidate weighted publication-grade rate: 97.26%.
+- Candidate object IMG04 rate: 0.82%.
+- Candidate strict distribution adjusted source coverage rate: 74.98%.
+- Exact repeated image URLs: 0.
+
+Remaining promotion blockers after rule correction:
+
+- Promotion blocker rows: 2,463.
+- P0 blocker rows: 0.
+- P1 blocker rows: 2,463.
+- Unresolved-region rows: 133.
+- Source-visible gap rows: 181.
+- Event/photo/context-image review rows: 2,149.
+- Exclusion delta rows: 0.
+
+Source-visible review:
+
+- New output: `data/prefreeze_source_visible_gap_review_v1.csv`.
+- IMG04/IMG00 source-visible review rows: 181.
+- Review classes:
+  - text-only item or collection: 96.
+  - image missing or parser gap: 41.
+  - source registry context page: 37.
+  - registry/archive landing page: 7.
+- Interpretation: the 181-row gap should be handled by recapture, card/support
+  demotion, or context-source treatment, not by deleting rows just to improve a
+  metric.
+
+Context-image review:
+
+- New output: `data/prefreeze_context_image_review_v1.csv`.
+- Context/event/photo review rows: 2,149.
+- Review classes:
+  - weak context/profile/own-work image: 1,899.
+  - philatelic or stamp-like: 208.
+  - event/photo language with design claim: 42.
+- The blocker audit was corrected so English `talk/lecture` no longer causes
+  broad false positives, and `advertisement` / `typography` stems count as
+  design evidence.
+
+Next recommended step:
+
+- Build a demotion gate for the 1,899 weak context/profile image rows and 208
+  philatelic/stamp-like rows, but keep it reviewable rather than destructive.
+- Keep the 42 event/photo rows with design evidence in manual review.
+- Recapture or demote the 181 IMG00/IMG04 source-visible gaps.
+- Defer official payload promotion until the context/stamp demotion pass and
+  source-visible recapture pass are both evaluated.

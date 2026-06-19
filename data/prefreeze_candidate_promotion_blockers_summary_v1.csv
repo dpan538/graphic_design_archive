@@ -1,30 +1,15 @@
 metric,value,notes
 candidate_surfaces_scanned,16175,Candidate surfaces scanned for promotion blockers.
-promotion_blocker_rows,7285,Total blocker rows; a surface may have more than one blocker.
-geo_repair_rows,4938,Unresolved-region rows requiring geography repair.
+promotion_blocker_rows,2463,Total blocker rows; a surface may have more than one blocker.
+geo_repair_rows,133,Unresolved-region rows requiring geography repair.
 exclusion_delta_rows,0,New P0 source_file + capture_id suggestions not already in current exclusion table.
-severity:P1,7283,Promotion blocker severity.
-severity:P0,2,Promotion blocker severity.
-blocker:unresolved_region,4938,Promotion blocker type.
-blocker:event_photo_or_context_image,2166,Promotion blocker type.
+severity:P1,2463,Promotion blocker severity.
+blocker:event_photo_or_context_image,2149,Promotion blocker type.
 blocker:source_visible_gap,181,Promotion blocker type.
-geo_source:Internet Archive / text and periodical collections,61,Top unresolved-region source names.
-geo_source:Wellcome Collection Catalogue API,54,Top unresolved-region source names.
-geo_source:Library of Congress loc.gov API,38,Top unresolved-region source names.
-geo_source:Wikimedia Commons,38,Top unresolved-region source names.
-geo_source:Georgia State University Library Digital Collections / CONTENTdm,37,Top unresolved-region source names.
+blocker:unresolved_region,133,Promotion blocker type.
+geo_source:Wellcome Collection Catalogue API,46,Top unresolved-region source names.
+geo_source:Wikimedia Commons,34,Top unresolved-region source names.
+geo_source:Internet Archive / text and periodical collections,19,Top unresolved-region source names.
+geo_source:Library of Congress loc.gov API,17,Top unresolved-region source names.
 geo_source:The Met Open Access,14,Top unresolved-region source names.
-geo_source:Another Graphic,14,Top unresolved-region source names.
-geo_source:V&A Collections API,8,Top unresolved-region source names.
-geo_source:Art Institute of Chicago API,6,Top unresolved-region source names.
-geo_source:Smithsonian Open Access,5,Top unresolved-region source names.
-geo_source:Getty Research Portal,3,Top unresolved-region source names.
-geo_source:Barjeel Art Foundation,3,Top unresolved-region source names.
-geo_source:African Digital Heritage,3,Top unresolved-region source names.
-geo_source:National Repository of Nigeria,2,Top unresolved-region source names.
-geo_source:Wikimedia Commons file source / Bosnia and Herzegovina postage stamp collection,1,Top unresolved-region source names.
-geo_source:Wikimedia Commons file source / DpedroI-brasil-full (cropped).jpg / page 1806878,1,Top unresolved-region source names.
-geo_source:Wikimedia Commons file source / DpedroI-brasil-full.jpg / page 2050174,1,Top unresolved-region source names.
-geo_source:Wikimedia Commons file source / DpedroI-brasil.png / page 2050058,1,Top unresolved-region source names.
-geo_source:Wikimedia Commons file source / Józef Sobolewski - Wykład wiary machometańskiej,1,Top unresolved-region source names.
-geo_source:Wikimedia Commons file source / Józef Sobolewski - Wykład wiary machometańskiej,1,Top unresolved-region source names.
+geo_source:V&A Collections API,3,Top unresolved-region source names.

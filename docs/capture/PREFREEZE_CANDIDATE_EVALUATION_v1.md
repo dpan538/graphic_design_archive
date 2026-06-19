@@ -25,15 +25,15 @@ Scope: candidate public-surface payload generated from all local capture records
 - candidate_object_weighted_publication_grade_rate: 97.26 (Object-level max image weight; repeated photos count once.)
 - candidate_object_img04_rate: 0.82 (Gate max=10%.)
 - candidate_period_surface_balance_rate: 100.00 (Average surface fill against period targets.)
-- candidate_region_surface_balance_rate: 85.83 (Average surface fill against regional targets.)
+- candidate_region_surface_balance_rate: 91.71 (Average surface fill against regional targets.)
 - candidate_strict_distribution_adjusted_source_coverage_rate: 74.98 (min(source coverage, period balance, region balance).)
 - candidate_2025_2026_surface_rate: 1.58 (High 2025/2026 share is suspicious and should be audited for date leakage.)
 - candidate_independent_studio_school_platform_2005_2025_count: 189 (Heuristic count for contemporary studios, schools, platforms, festivals, and collectives.)
 
 ## Sheet Structure
 
-- main_sheet_count: 15896 (publicationRole=main_sheet.)
-- sub_or_support_surface_count: 279 (All non-main public surfaces.)
+- main_sheet_count: 15897 (publicationRole=main_sheet.)
+- sub_or_support_surface_count: 278 (All non-main public surfaces.)
 - independent_text_sheet_count: 112 (templateId=sheet.text.v0.)
 - rich_text_surface_count_ge1200_chars: 16173 (Reading/support text >= 1200 chars.)
 - weak_text_main_sheet_count: 0 (Main sheets with weak source/generated text.)
@@ -75,18 +75,18 @@ Scope: candidate public-surface payload generated from all local capture records
 
 ## Weakest Regions By Surface Count
 
-- Global / transnational: surfaces=0, visible=0, open=0
-- North America: surfaces=343, visible=322, open=211
-- East Asia: surfaces=541, visible=523, open=510
-- Africa: surfaces=612, visible=592, open=582
-- Oceania and Pacific: surfaces=628, visible=624, open=479
-- Western and Central Europe: surfaces=766, visible=734, open=676
-- South Asia: surfaces=809, visible=804, open=800
-- Eastern Europe, Balkans, and Central/Eastern socialist contexts: surfaces=1334, visible=1325, open=1304
-- Southeast Asia: surfaces=1518, visible=1496, open=1468
-- Middle East and North Africa: surfaces=1601, visible=1597, open=1594
-- Latin America and the Caribbean: surfaces=3085, visible=3082, open=3074
-- Unresolved region: surfaces=4938, visible=4895, open=4708
+- Brunei: surfaces=1, visible=1, open=1
+- Puerto Rico: surfaces=1, visible=1, open=0
+- Vanuatu: surfaces=1, visible=1, open=1
+- Tonga: surfaces=2, visible=2, open=2
+- Kiribati: surfaces=3, visible=3, open=3
+- Togo: surfaces=3, visible=3, open=3
+- Mali: surfaces=4, visible=4, open=4
+- Oman: surfaces=4, visible=4, open=4
+- Rwanda: surfaces=5, visible=5, open=5
+- Samoa: surfaces=5, visible=5, open=5
+- Fiji: surfaces=6, visible=6, open=6
+- Timor-Leste: surfaces=6, visible=6, open=6
 
 ## Review Warnings
 
