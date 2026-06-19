@@ -1327,6 +1327,17 @@ def surface_score(row: dict[str, str]) -> int:
 
 
 def surface_disposition(row: dict[str, str], score: int) -> str:
+    override = (row.get("surface_disposition_override") or "").strip()
+    if override in {
+        "main_sheet",
+        "thin_visual_support_packet",
+        "support_packet_appendix_text",
+        "merge_candidate_support_packet",
+        "card",
+        "bookmark_candidate",
+    }:
+        return override
+
     img = row.get("image_presence_code", "IMG00")
     source_text_len = source_reading_text_len(row)
     source_blob = " ".join(

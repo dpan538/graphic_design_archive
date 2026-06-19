@@ -66,6 +66,7 @@ def candidate_rows() -> tuple[list[dict[str, str]], Counter[str], dict[str, int]
         rows.extend(input_rows)
 
     rows, geo_overrides_applied = rebuild.apply_prefreeze_geo_overrides(rows)
+    rows, role_overrides_applied = rebuild.apply_prefreeze_role_overrides(rows)
     normalized = [
         rebuild.normalize_public_date_fields(rebuild.fill_enrichment_defaults(dict(row)))
         for row in rows
@@ -78,6 +79,7 @@ def candidate_rows() -> tuple[list[dict[str, str]], Counter[str], dict[str, int]
         "skipped_by_p0_exclusion": skipped_by_exclusion,
         "rows_after_exclusion": len(rows),
         "geo_overrides_applied": geo_overrides_applied,
+        "role_overrides_applied": role_overrides_applied,
         "deduped_candidate_rows": len(deduped),
         "dedupe_removed_rows": len(rows) - len(deduped),
     }
@@ -151,6 +153,7 @@ def main() -> None:
         {"metric": "skipped_by_p0_exclusion", "value": str(counters["skipped_by_p0_exclusion"]), "notes": "Rows blocked by pre-freeze cleaning gate."},
         {"metric": "rows_after_exclusion", "value": str(counters["rows_after_exclusion"]), "notes": "Rows eligible for global dedupe."},
         {"metric": "geo_overrides_applied", "value": str(counters["geo_overrides_applied"]), "notes": "Audited pre-freeze geography repairs applied in memory."},
+        {"metric": "role_overrides_applied", "value": str(counters["role_overrides_applied"]), "notes": "Audited pre-freeze card/subsheet demotions applied in memory."},
         {"metric": "deduped_candidate_rows", "value": str(counters["deduped_candidate_rows"]), "notes": "Rows passed to payload builder."},
         {"metric": "dedupe_removed_rows", "value": str(counters["dedupe_removed_rows"]), "notes": "Duplicate rows removed before surface build."},
         {"metric": "candidate_surfaces", "value": str(len(surfaces)), "notes": "Surfaces generated in candidate payload."},

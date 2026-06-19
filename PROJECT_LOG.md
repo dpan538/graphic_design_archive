@@ -10407,3 +10407,147 @@ Next recommended step:
 - Recapture or demote the 181 IMG00/IMG04 source-visible gaps.
 - Defer official payload promotion until the context/stamp demotion pass and
   source-visible recapture pass are both evaluated.
+
+### Prefreeze Surface Role Override Layer and Main/Sub/Text Audit
+
+Scope:
+
+- Added the first reviewable surface-role cleanup layer for the pre-freeze
+  candidate payload.
+- The layer addresses weak context/profile images, stamp-like records, registry
+  context pages, and text-only source gaps by changing candidate presentation
+  role only.
+- No official payload was overwritten, no image files were downloaded, and no
+  IMG01/IMG03 rights or image-state upgrades were made.
+- `research-repo/` remained read-only and was not edited or staged.
+
+Implementation:
+
+- New script: `scripts/build_prefreeze_surface_role_overrides_v1.py`.
+- New role override outputs:
+  - `data/prefreeze_surface_role_override_decisions_v1.csv`.
+  - `data/prefreeze_surface_role_overrides_v1.csv`.
+  - `data/prefreeze_surface_role_override_summary_v1.csv`.
+  - `docs/capture/PREFREEZE_SURFACE_ROLE_OVERRIDES_v1.md`.
+- `scripts/rebuild_public_surfaces_from_records.py` now supports an auditable
+  pre-freeze surface role override layer keyed by `source_file + capture_id`.
+- `scripts/build_prefreeze_candidate_payload_v1.py` applies the same role
+  override layer and records `role_overrides_applied`.
+- `scripts/run_midcentury_capture_1930_1970.py` now preserves explicit
+  `surface_disposition_override` values when present.
+- New audit script: `scripts/audit_prefreeze_main_sub_text_structure_v1.py`.
+
+Role override results:
+
+- Role decision rows: 2,330.
+- Candidate role override rows: 2,247.
+- Applied card demotions: 1,943.
+- Applied support-appendix/subsheet demotions: 304.
+- Manual review only: 42 event/photo language rows with some design evidence.
+- Manual recapture/review: 41 image-missing or parser-gap rows.
+- Review classes:
+  - weak context/profile/own-work image: 1,899.
+  - philatelic or stamp-like: 208.
+  - text-only item or collection: 96.
+  - event/photo language: 42.
+  - image missing or parser gap: 41.
+  - source registry context page: 37.
+  - registry/archive landing page: 7.
+
+Candidate metrics after role override:
+
+- Candidate public surfaces: 16,175.
+- Candidate active public sources: 14,997.
+- Candidate release source coverage rate: 74.98% against the 20,000-source
+  final target.
+- Candidate object source-visible rate: 98.92%.
+- Candidate object verified-open rate: 95.29%.
+- Candidate weighted publication-grade rate: 97.26%.
+- Candidate object IMG04 rate: 0.82%.
+- Candidate strict distribution adjusted source coverage rate: 74.98%.
+- Candidate 2025/2026 surface rate: 1.58%.
+- Exact repeated image URLs: 0.
+
+Promotion and cleaning state after role override:
+
+- Promotion blocker rows: 2,463.
+- P0 blocker rows: 0.
+- P1 blocker rows: 2,463.
+- Unresolved-region rows: 133.
+- Source-visible gap rows: 181.
+- Event/photo/context-image review rows: 2,149.
+- Exclusion delta rows: 0.
+
+Main/sub/text structure audit:
+
+- New outputs:
+  - `data/prefreeze_main_sub_text_structure_summary_v1.csv`.
+  - `data/prefreeze_main_sub_text_structure_by_period_v1.csv`.
+  - `data/prefreeze_main_sheet_structure_review_v1.csv`.
+  - `docs/capture/PREFREEZE_MAIN_SUB_TEXT_STRUCTURE_v1.md`.
+- Candidate surfaces scanned: 16,175.
+- Candidate research dossiers: 16,175.
+- Publication-role distribution:
+  - main sheet: 13,737.
+  - card: 1,943.
+  - support packet appendix text: 489.
+  - thin visual support packet: 3.
+  - merge candidate support packet: 1.
+- Dossier anchor distribution:
+  - main sheet: 13,739.
+  - card: 1,944.
+  - subsheet: 492.
+- Dossier page distribution:
+  - text page: 14,231.
+  - main sheet: 13,739.
+  - appendix: 3,089.
+  - card: 1,944.
+  - subsheet: 492.
+  - child source record: 131.
+- Main sheets with explicit `compoundChildren`: 9.
+- Main sheets with more than two child records: 9.
+- Main sheets with more than five child records: 4.
+- Dossiers with more than two subsheet pages: 0.
+- Dossiers with more than five text pages: 0.
+- Main-sheet structure review rows: 13,728.
+
+Interpretation:
+
+- The role cleanup reduces obvious weak/context pages from main-sheet status, but
+  the archive still behaves mostly as one-source-per-main-sheet.
+- Current `compoundChildren` is the only explicit relation signal in the
+  candidate payload, so main/sub/card/text grouping is still underdeveloped.
+- This supports the user's concern: the next structural milestone should be a
+  relation-density and packet-building pass, not another blind source-volume
+  push.
+- Time-period distribution after role cleanup remains uneven: 1914-1945 and
+  1970-1989 are strong; 1990-1999 and 2000-2009 remain comparatively thin; the
+  2020-2026 region is now mostly cards after context demotion.
+
+Next recommended step:
+
+- Keep the candidate payload local/ignored and continue using it for pre-freeze
+  audits.
+- Build a deterministic packetization audit that groups nearby objects by
+  source family, creator/studio, country, movement/theme, and period span.
+- Treat grouped records as research packets first, then decide which anchors
+  become main sheets, which become subsheets, which become cards, and which need
+  editorial text pages.
+- Recapture or manually review the remaining 181 source-visible gaps and 133
+  unresolved-region rows before official payload promotion.
+
+Methodological note added after review:
+
+- New brief: `docs/capture/PREFREEZE_MAIN_SUB_PACKETIZATION_BRIEF_v1.md`.
+- The next round should make main-sheet status stricter. A main sheet should be
+  a research packet anchor: a representative work, project, institution,
+  movement, communication method, or design idea with enough source depth and
+  relation density to support expansion.
+- A single captured object should not become a main sheet by default. Thin
+  single-object records should usually become subsheets, cards, or appendices
+  unless impact, scarcity, or source depth justifies main-sheet promotion.
+- Research resources should be integrated as packet evidence: source family,
+  rights trail, text pages, appendices, cards, and related object clusters.
+- The next audit should produce main-promotion review, subsheet cluster
+  suggestions, card/support evidence suggestions, editorial text needs, and
+  packet confidence levels.
