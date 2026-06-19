@@ -10551,3 +10551,102 @@ Methodological note added after review:
 - The next audit should produce main-promotion review, subsheet cluster
   suggestions, card/support evidence suggestions, editorial text needs, and
   packet confidence levels.
+
+### Prefreeze Packetization Audit v1
+
+Scope:
+
+- Added a stricter advisory audit for main/sub/card/text packetization.
+- The audit treats main sheets as research packet anchors rather than default
+  object pages.
+- It only generates CSV recommendations and a report. It does not mutate the
+  official public payload, does not download images, and does not upgrade rights
+  or image states.
+
+Implementation:
+
+- New script: `scripts/audit_prefreeze_packetization_candidates_v1.py`.
+- New outputs:
+  - `data/prefreeze_packetization_candidates_v1.csv`.
+  - `data/prefreeze_packetization_surface_recommendations_v1.csv`.
+  - `data/prefreeze_packetization_summary_v1.csv`.
+  - `data/prefreeze_packetization_source_family_summary_v1.csv`.
+  - `docs/capture/PREFREEZE_PACKETIZATION_AUDIT_v1.md`.
+- The audit derives candidate packets from stricter relation keys:
+  - same source identifier.
+  - same normalized title inside source family.
+  - shared title/series stem.
+  - creator + region + medium + decade.
+  - collection + region + decade.
+  - folder cell + decade as weak planning evidence only.
+- The scoring model considers relation density, source depth, visible image
+  state, rights-reviewed state, region scarcity, design-language signal, and
+  weak-object signals such as stamps, event/photo/session records, natural
+  history images, and other context-only material.
+
+Packetization results:
+
+- Candidate surfaces scanned: 16,175.
+- Candidate packet rows: 2,259.
+- Surfaces with at least one packet relation: 10,785.
+- Surfaces without strict packet relation: 5,390.
+- Surface-level recommendations:
+  - subsheet or card review: 4,906.
+  - card or appendix candidate: 3,876.
+  - subsheet candidate: 3,735.
+  - existing card: 1,944.
+  - main sheet manual review: 668.
+  - main sheet anchor candidate: 502.
+  - existing appendix/subsheet support: 492.
+  - singleton main sheet review: 52.
+- Packet-level recommendations:
+  - manual packet or card review: 1,253.
+  - demote parallel mains to subsheet cluster: 511.
+  - promote one main anchor and demote members to subsheets: 428.
+  - packet review only: 46.
+  - hold as support or editorial review: 21.
+- Packet confidence distribution:
+  - high: 782.
+  - medium: 1,011.
+  - low: 466.
+
+Quality-control adjustment:
+
+- The first packetization pass correctly exposed relation clusters but still
+  treated too many weak Commons series as possible main-anchor packets.
+- The rule set was tightened so stamp/Colnect/philatelic, event/session,
+  natural-history, and similar context-only clusters route to
+  `manual_packet_or_card_review` rather than automatic main-anchor treatment.
+- All stamp-keyed packet actions in the second pass route to manual/card review.
+
+Source-family finding:
+
+- Wikimedia Commons remains structurally dominant: 15,063 candidate surfaces,
+  12,947 current main sheets, 9,950 packet-member surfaces, and 461 candidate
+  anchors after stricter filtering.
+- Gallica has 239 candidate surfaces, all currently main sheets, with 11
+  candidate anchors after packetization.
+- This confirms that source count alone is no longer the primary constraint.
+  The next bottleneck is source-family concentration, packet integration, and
+  main-sheet overclaiming.
+
+Interpretation:
+
+- A large part of the current archive should become packet members rather than
+  standalone main sheets.
+- High-confidence packet anchors should be sampled before becoming an applied
+  override layer.
+- Medium/low confidence packets should stay as planning evidence until reviewed.
+- Singleton records should not be automatically deleted or demoted; they need a
+  stricter main/sub/card decision based on source depth, impact, scarcity, and
+  editorial need.
+
+Next recommended step:
+
+- Sample the 502 `main_sheet_anchor_candidate` rows and the 511
+  `demote_parallel_mains_to_subsheet_cluster` packet rows.
+- Build a reviewed packet-role override layer only from sampled high-confidence
+  clusters.
+- Keep the 1,253 manual packet/card review rows out of automatic promotion.
+- Start a source-family authority audit focused on Commons over-concentration,
+  Gallica all-main behavior, and institution-specific repeated-series patterns.
