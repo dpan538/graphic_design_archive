@@ -10161,3 +10161,87 @@ Interpretation:
   and release audits after chunk validation.
 - The next safe step is a controlled global merge/finalization pass that uses
   the validated chunks as evidence, not a blind full rebuild.
+
+### Prefreeze candidate payload and full evaluation pass
+
+Built a candidate public-surface payload from the full local capture pool
+without overwriting the official payload or frontend mirrors.
+
+Run setup:
+
+- New script: `scripts/build_prefreeze_candidate_payload_v1.py`.
+- New script: `scripts/audit_prefreeze_candidate_payload_v1.py`.
+- Candidate payload: `generated/public_surfaces_prefreeze_candidate_v1.json`.
+- Inputs: all local `data/capture_batch_*_records.csv` files.
+- P0 pre-freeze rebuild exclusion table was active.
+- No images were downloaded.
+- IMG01/IMG03 were not upgraded by heuristic, LLM, TOS, platform signal, or
+  source-priority signal.
+
+Candidate build results:
+
+- Capture CSV inputs scanned: 44.
+- Raw input rows: 19,886.
+- Rows skipped by P0 exclusion: 3,549.
+- Rows after exclusion: 16,337.
+- Deduped candidate rows: 16,294.
+- Candidate public surfaces: 16,180.
+- Candidate active public sources: 14,997.
+- Candidate research dossiers: 16,180.
+
+Candidate release/gate results:
+
+- Candidate release source coverage rate: 74.98% against the 20,000-source
+  release target.
+- Candidate object source-visible rate: 98.92%; still below the new 99% target.
+- Candidate object verified-open rate: 95.29%; passes the 95% target.
+- Candidate weighted publication-grade rate: 97.26%; object-level grouping
+  counts repeated photos/views once.
+- Candidate object IMG04 rate: 0.82%; passes the 10% maximum target.
+- Candidate 2025-2026 surface rate: 1.59%; no longer showing the earlier
+  suspicious 2026-heavy failure pattern.
+- Candidate strict distribution adjusted source coverage rate: 74.98%.
+- Candidate period surface balance rate: 100.00%.
+- Candidate macro-region surface balance rate: 85.84% after mapping country
+  folder labels back to launch macro-regions.
+
+Candidate sheet/research-packet structure:
+
+- Main sheets: 15,901.
+- Sub/support surfaces: 279.
+- Independent text sheets: 112.
+- Research dossiers: 16,180.
+- Dossier text pages: 16,153.
+- Dossier sub/card/appendix/child-source pages: 3,639.
+- Dossiers with more than two support pages: 20.
+- Dossiers with more than five text pages: 0.
+
+Candidate warnings:
+
+- Integrity audit found 5 exact repeated image URLs across 10 surfaces, all in
+  Another Graphic rows. This reinforces the next cleaning rule: contemporary
+  studio/platform batches must be deduped by image URL and project family before
+  promotion.
+- Recent post-2010 stamp-like rows: 5.
+- Event/photo-like rows: 63; these should usually be card/support material, not
+  standalone design-object main sheets.
+- Unresolved region remains very high at 4,942 candidate surfaces. This is now
+  the largest cleaning problem before formal promotion.
+- `data/geographies.csv` still lacks enough country-level rows for several
+  discovered labels, so the candidate evaluator includes a conservative
+  reporting-only fallback map. The taxonomy table itself still needs a proper
+  controlled-geography update.
+
+Official-vs-candidate interpretation:
+
+- The official active public source count remains 12,342 because the official
+  `generated/public_surfaces_v1.json` was not overwritten.
+- The candidate layer reaches 14,997 active public sources, proving the
+  source-count plateau is caused by promotion/rebuild state rather than missing
+  capture.
+- The remaining release gap is roughly 5,003 active public sources if the final
+  target stays at 20,000.
+- The next round should prioritize data cleaning and controlled promotion over
+  broad raw capture: unresolved geography, duplicate contemporary platform rows,
+  event/photo reclassification, and the remaining 1.08 percentage-point gap in
+  object source visibility.

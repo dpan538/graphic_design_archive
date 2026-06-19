@@ -1,0 +1,49 @@
+payload: generated/public_surfaces_prefreeze_candidate_v1.json
+surfaces: 16180
+surface_type_counts: {'sheet': 16153, 'card': 27}
+image_state_counts: {'IMG03': 15406, 'IMG02': 574, 'IMG04': 140, 'IMG01': 19, 'IMG00': 41}
+renderable_image_surfaces: 15998 / 16180
+cards: 27
+sheets: 16153
+reading_notes: 623
+folder_reading_notes: 98
+surface_reading_notes: 525
+bookmarks: 0
+short_text_sheets_lt60_words: 0
+exact_repeated_image_urls: 5
+placeholder_image_urls: 0
+top_sources:
+   239  Gallica / BnF APIs
+   134  Wikimedia Commons
+    94  DigitalNZ
+    86  Wellcome Collection Catalogue API
+    79  Georgia State University Library Digital Collections / CONTENTdm
+    74  Internet Archive / text and periodical collections
+    56  Library of Congress loc.gov API
+    55  V&A Collections API
+    54  Te Papa Collections Online
+    46  NAIDOC Poster Gallery
+    45  Art Institute of Chicago API
+    41  Princeton University Library Digital Collections / Figgy
+    28  Wikimedia Commons file source / Petroxestes pera bivalve borings on limestone hardground (Turkey Track Layer, Waynesville Formation, Upper Ordovician; Caesar Creek Lake's emergency spillway, Warren County, Ohio, USA)...
+    20  Another Graphic
+    15  Cleveland Museum Open Access API
+repeated_url_examples:
+  2x https://anothergraphic.org/wp-content/uploads/2019/07/T-shirtByStudioStudio-AnotherGraphic-AG03-1024x1024.jpg
+    - GD / 2019 / STAGED-MC-15038 / M-p01 | IMG02 | T-Shirt
+    - GD / 2019 / STAGED-MC-15039 / M-p01 | IMG02 | T-Shirt
+  2x https://anothergraphic.org/wp-content/uploads/2019/07/ToteBagByStudioStudio-AnotherGraphic-AG-01-1024x1024.jpg
+    - GD / 2019 / STAGED-MC-15045 / M-p01 | IMG02 | Tote bag Original
+    - GD / 2019 / STAGED-MC-15046 / M-p01 | IMG02 | Tote bag Original
+  2x https://anothergraphic.org/wp-content/uploads/2020/05/ToteBagByBenChristensen-AnotherGraphic-AG-1024x1024.jpg
+    - GD / 2020 / STAGED-MC-15185 / M-p01 | IMG02 | Tote bag Design Challenge
+    - GD / 2020 / STAGED-MC-15186 / M-p01 | IMG02 | Tote bag Design Challenge
+  2x https://anothergraphic.org/wp-content/uploads/2025/03/CompletePublication-NewGlyphsNewWritings-AnotherGraphic-TypographyGraphicDesign_01-1024x1024.jpg
+    - GD / 2025 / STAGED-MC-16075 / M-p01 | IMG02 | Publication: New Glyphs, New Writings
+    - GD / 2025 / STAGED-MC-16076 / M-p01 | IMG02 | Publication: New Glyphs, New Writings
+  2x https://anothergraphic.org/wp-content/uploads/2026/05/Juhyeok-Kim-AnotherGraphic-AG-graphic-design-inspiration.jpg
+    - GD / 2026 / STAGED-MC-16179 / M-p01 | IMG02 | Juhyeok Kim
+    - GD / 2026 / STAGED-MC-16180 / M-p01 | IMG02 | Juhyeok Kim - Another Graphic
+
+warnings:
+  - 10 surfaces share 5 exact image URLs.
