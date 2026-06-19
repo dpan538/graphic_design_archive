@@ -10722,3 +10722,80 @@ Next recommended step:
 - Keep the 5,669 manual packet/card rows as editorial planning evidence.
 - Begin a source-family authority audit to reduce repeated-source overclaiming,
   especially Commons and all-main institutional clusters.
+
+### Prefreeze Packet Role Apply Readiness v1
+
+Scope:
+
+- Added a source-file join and confidence gate for the packet-role draft layer.
+- This pass is still pre-application. It does not mutate capture records, does
+  not rebuild the official payload, does not download images, and does not
+  change rights or image states.
+- The goal is to separate a small rebuild-testable queue from the much larger
+  packet/research-combination review queue.
+
+Implementation:
+
+- New script: `scripts/build_prefreeze_packet_role_apply_readiness_v1.py`.
+- New outputs:
+  - `data/prefreeze_packet_role_apply_ready_v1.csv`.
+  - `data/prefreeze_packet_role_hold_review_v1.csv`.
+  - `data/prefreeze_packet_role_sample_review_v1.csv`.
+  - `data/prefreeze_packet_role_source_join_summary_v1.csv`.
+  - `docs/capture/PREFREEZE_PACKET_ROLE_APPLY_READINESS_v1.md`.
+
+Readiness results:
+
+- Draft rows scanned: 2,452.
+- Source-file join status:
+  - unique capture id: 2,446.
+  - resolved duplicate capture id: 3.
+  - ambiguous capture id: 2.
+  - missing capture id: 1.
+- Apply-ready rows after the stricter confidence gate: 200.
+- Hold-review rows: 2,091.
+- Reference-only main-anchor rows: 161.
+- Deterministic sample-review queue rows: 2,270.
+- Apply-ready role distribution:
+  - support packet appendix text: 200.
+- Top hold reasons:
+  - Commons/Colnect or source-family sample review required: 1,253.
+  - unstable or unresolved region/transnational binding: 675.
+  - card-related visual/editorial sample review required: 149.
+  - historical/geography review periods: 10.
+  - non-unique source joins: 3.
+  - stamp/event/photo/context term review: 1.
+- Apply-ready source families:
+  - Gallica / BnF APIs: 106.
+  - DigitalNZ: 36.
+  - Princeton University Library Digital Collections / Figgy: 29.
+  - Wellcome Collection Catalogue API: 11.
+  - Georgia State University Library Digital Collections / CONTENTdm: 9.
+  - V&A Collections API: 5.
+  - Cleveland Museum Open Access API: 3.
+  - Art Institute of Chicago API: 1.
+
+Interpretation:
+
+- The first run showed that a naive "joinable and high confidence" rule would
+  have admitted 2,139 rows, including historical and Commons/geography-risk
+  clusters. The script was tightened before logging final outputs.
+- The current 200-row apply-ready file is deliberately small. It is suitable
+  for the next sandbox rebuild test, not for direct official publication.
+- Most packet combinations remain research material until source-family,
+  geography, and visual/editorial samples are reviewed. This is especially
+  important for Commons file-page clusters, transnational labels, historical
+  conflict periods, and card/support candidates.
+- The readiness layer gives the next rebuild a controlled entry point: apply a
+  200-row source-file-backed override slice, build in small chunks, then compare
+  main/sub/text counts and release-gate metrics before expanding.
+
+Next recommended step:
+
+- Sample the 200 apply-ready rows across source family, year, and packet type.
+- If the sample passes, create a separate applied override file from
+  `data/prefreeze_packet_role_apply_ready_v1.csv` only.
+- Run a small candidate rebuild chunk before attempting any broad packet-role
+  rewrite.
+- Keep the 2,091 hold-review rows for confidence cleanup, source-family
+  authority review, and later research packet design.
