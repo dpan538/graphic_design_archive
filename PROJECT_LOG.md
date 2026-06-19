@@ -10021,3 +10021,90 @@ Next execution order:
 No source records or surfaces were mutated by this audit. No image binaries were
 downloaded, no rights states were upgraded, and no research-repo files were
 included.
+
+### Active-source stagnation diagnosis and first pre-freeze cleaning gate
+
+The repeated `archive_active_public_sources = 12,342` figure was investigated
+because recent capture batches had been added after the last public payload
+generation. The result is not that capture failed; it is that the release
+snapshot counts only sources represented in `generated/public_surfaces_v1.json`.
+
+Confirmed cause:
+
+- `scripts/run_release_snapshot_v1.py` computes `archive_active_public_sources`
+  by deduplicating `sourceName` inside generated public surfaces.
+- `generated/public_surfaces_v1.json` was last modified on 2026-06-13, while
+  later capture records such as the final-gap and source-coverage batches were
+  created on 2026-06-18 and 2026-06-19.
+- Therefore recent capture rows are not reflected in release source count until
+  a controlled public-surface rebuild runs.
+
+Active-source stage audit:
+
+- `scripts/audit_active_source_success_v1.py` was run to separate source stages.
+- `archive_active_public_sources`: 12,342.
+- `captured_not_public_sources`: 5,983 after the small Commons quarantine below.
+- `pre_surface_only_sources`: 1,615.
+- This confirms that several thousand captured source keys are waiting outside
+  the public surface layer.
+
+Capture-run manifest audit:
+
+- `scripts/generate_capture_run_manifest_v1.py` regenerated the capture run
+  manifest with explicit rebuild inclusion fields.
+- Capture record files: 44.
+- Included in current public rebuild inputs: 35.
+- Not yet included in current public rebuild inputs: 9.
+- Important not-yet-included batches include:
+  - `commons_open_authority_weighted_expansion_2026_v1`: 5,049 records / 5,015
+    source keys after quarantine.
+  - `commons_open_category_tree_image_2026_v1`: 4,537 records / 4,537 source
+    keys.
+  - `commons_open_controlled_expansion_2026_v1`: 929 records / 929 source keys
+    after quarantine.
+  - `commons_open_region_balance_image_2026_v2`: 800 records / 799 source keys.
+  - `commons_open_region_balance_image_2026_v3`: 497 records / 497 source keys.
+  - `final_gap_open_source_1955_2024_v1`: 12 records / 12 source keys.
+- These batches explain why raw capture volume and release source count diverge.
+
+Executed first cleaning layer:
+
+- `scripts/audit_commons_open_source_cleaning_2026_v1.py` audited 11,051 recent
+  Commons rows.
+- 11,039 rows were release-ready under that conservative pass.
+- 12 rows were quarantined:
+  - 6 weak-graphic-evidence rows.
+  - 6 duplicate-review rows.
+- `scripts/apply_commons_open_source_cleaning_2026_v1.py` removed those 12 rows
+  from the two affected Commons capture CSVs and wrote
+  `data/commons_open_source_cleaning_quarantine_2026_v1.csv`.
+- No images were downloaded and no rights states were upgraded.
+
+New rebuild exclusion gate:
+
+- `scripts/build_prefreeze_public_rebuild_exclusion_v1.py` converts the P0
+  pre-freeze cleaning queue into a non-destructive rebuild exclusion table.
+- `data/prefreeze_public_rebuild_exclusion_v1.csv` contains 3,549 distinct
+  `source_file + capture_id` rows.
+- Affected capture files: 29.
+- Action distribution:
+  - `card_or_appendix_reclass_review`: 2,930.
+  - `date_or_span_reclass_review`: 579.
+  - `recent_stamp_event_reclassification`: 40.
+- `scripts/rebuild_public_surfaces_from_records.py` now reads this exclusion
+  table when present and skips matching rows before dedupe and surface
+  generation.
+- Current rebuild inputs match 1,311 of the exclusion rows. The remaining P0
+  exclusions belong mostly to capture batches that are not yet included in
+  rebuild inputs; this is intentional until their noise level is reviewed.
+
+Interpretation:
+
+- The source-count plateau is a pipeline-layer issue: capture succeeded, but
+  many later sources are either not included in rebuild inputs or are waiting
+  behind the new cleaning gate.
+- The next controlled rebuild should not blindly include all 9 missing batches.
+  It should first decide which not-yet-included batches are safe, then rebuild
+  with the pre-freeze exclusion table active.
+- Source count should rise only after this controlled rebuild, not immediately
+  after probe/capture.

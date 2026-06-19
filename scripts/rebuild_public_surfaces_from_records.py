@@ -68,6 +68,7 @@ SHARD_OUTPUT_ROOTS = [
 ]
 
 CAPTURE_RUN_MANIFEST = DATA / "capture_runs" / "capture_run_manifest_v1.csv"
+PREFREEZE_REBUILD_EXCLUSION = DATA / "prefreeze_public_rebuild_exclusion_v1.csv"
 
 
 def read_rows(path: Path) -> list[dict[str, str]]:
@@ -97,6 +98,22 @@ def rebuild_record_files() -> list[Path]:
             files.append(path)
             seen.add(path)
     return files
+
+
+def prefreeze_exclusion_lookup() -> dict[str, set[str]]:
+    """Return capture IDs that should not enter public rebuilds yet.
+
+    The exclusion file is generated from the non-mutating pre-freeze cleaning
+    queue. It keeps risky capture rows auditable in their original CSVs while
+    preventing them from being promoted into public main sheets during rebuild.
+    """
+    lookup: dict[str, set[str]] = {}
+    for row in read_rows(PREFREEZE_REBUILD_EXCLUSION):
+        source_file = Path(row.get("source_file", "")).name
+        capture_id = row.get("capture_id", "")
+        if source_file and capture_id:
+            lookup.setdefault(source_file, set()).add(capture_id)
+    return lookup
 
 
 def fallback_summary(row: dict[str, str]) -> str:
@@ -1254,8 +1271,16 @@ def build_research_dossiers(payload: dict) -> dict:
 
 def main() -> None:
     rows: list[dict[str, str]] = []
+    exclusions = prefreeze_exclusion_lookup()
+    skipped_by_exclusion = 0
     for path in rebuild_record_files():
-        rows.extend(read_rows(path))
+        input_rows = read_rows(path)
+        excluded_ids = exclusions.get(path.name, set())
+        if excluded_ids:
+            before = len(input_rows)
+            input_rows = [row for row in input_rows if row.get("capture_id", "") not in excluded_ids]
+            skipped_by_exclusion += before - len(input_rows)
+        rows.extend(input_rows)
     rows = dedupe_rows([normalize_public_date_fields(fill_enrichment_defaults(row)) for row in rows])
     rows.sort(key=lambda r: (row_sort_year(r), r.get("source_title", "")))
 
@@ -1296,6 +1321,7 @@ def main() -> None:
     source_visible_coverage = round(source_visible / total * 100, 2) if total else 0
     weighted_coverage = round(weighted_ready / total * 100, 2) if total else 0
     print(f"rows={len(rows)}")
+    print(f"prefreeze_excluded_rows={skipped_by_exclusion}")
     print(f"surfaces={total}")
     print(f"folders={len(payload.get('folders', []))}")
     print(f"image_states={dict(sorted(image_counter.items()))}")
