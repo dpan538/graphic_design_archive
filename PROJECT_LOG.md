@@ -10245,3 +10245,74 @@ Official-vs-candidate interpretation:
   broad raw capture: unresolved geography, duplicate contemporary platform rows,
   event/photo reclassification, and the remaining 1.08 percentage-point gap in
   object source visibility.
+
+### Candidate promotion blocker audit and duplicate-delta gate
+
+Executed the first small promotion-cleaning layer after the candidate payload
+evaluation.
+
+New audit layer:
+
+- New script: `scripts/audit_prefreeze_candidate_promotion_blockers_v1.py`.
+- Inputs: `generated/public_surfaces_prefreeze_candidate_v1.json`, all local
+  capture record CSVs, and the current pre-freeze rebuild exclusion table.
+- Outputs:
+  - `data/prefreeze_candidate_promotion_blockers_v1.csv`
+  - `data/prefreeze_candidate_geo_repair_queue_v1.csv`
+  - `data/prefreeze_candidate_exclusion_delta_v1.csv`
+  - `data/prefreeze_candidate_promotion_blockers_summary_v1.csv`
+  - `docs/capture/PREFREEZE_CANDIDATE_PROMOTION_BLOCKERS_v1.md`
+
+Important implementation fix:
+
+- The first blocker pass incorrectly normalized image URLs by dropping query
+  strings. Smithsonian image IDs live in `?id=...`, so that caused false
+  duplicate matches.
+- The script now preserves query strings for image-URL duplicate detection.
+- After the fix, the duplicate delta matched the integrity audit: only 5 exact
+  duplicate image URL variants remained, all from Another Graphic duplicate
+  visual/project rows.
+
+Gate update:
+
+- `scripts/build_prefreeze_public_rebuild_exclusion_v1.py` now merges
+  `data/prefreeze_candidate_exclusion_delta_v1.csv` when present.
+- The merged gate remains non-destructive: it skips matching
+  `source_file + capture_id` rows before future public-surface rebuilds, but
+  does not delete capture records or mutate rights states.
+- Exclusion rows increased from 3,549 to 3,554.
+- New action count: `duplicate_visual_variant_review`: 5.
+
+Post-cleaning candidate rebuild:
+
+- Candidate public surfaces: 16,175, down from 16,180.
+- Candidate active public sources: 14,997, unchanged.
+- Candidate object source-visible rate: 98.92%, still just below the 99% target.
+- Candidate object verified-open rate: 95.29%, still passing.
+- Candidate weighted publication-grade rate: 97.26%, still passing.
+- Candidate object IMG04 rate: 0.82%, still passing.
+- Candidate 2025-2026 surface rate: 1.58%, still not showing a 2026-heavy bug.
+- Candidate exact repeated image URLs: 0, down from 5.
+
+Remaining promotion blockers:
+
+- Promotion blocker rows: 7,285.
+- P0 blocker rows: 2, now review-only event/context flags; they are not merged
+  automatically because false positives can include actual designed
+  affiches/posters.
+- Unresolved-region repair rows: 4,938.
+- Source-visible gap rows: 181.
+- Event/photo/context-image review rows: 2,166.
+- Exclusion delta rows after the gate merge: 0.
+
+Interpretation:
+
+- The small duplicate-cleaning layer worked and did not reduce source coverage.
+- The next substantial step is not another broad source scrape; it is geography
+  repair and controlled reclassification:
+  - resolve the 4,938 unresolved-region rows;
+  - review the 181 IMG00/IMG04 source-visible gaps without rights upgrades;
+  - manually reclassify event/photo/context-image rows into card/support where
+    they are not item-level designed surfaces;
+  - only then consider promoting the candidate payload toward the official
+    release layer.

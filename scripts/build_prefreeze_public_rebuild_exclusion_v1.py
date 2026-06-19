@@ -19,6 +19,7 @@ DATA = ROOT / "data"
 DOCS = ROOT / "docs" / "capture"
 
 QUEUE = DATA / "prefreeze_data_cleaning_priority_queue_v1.csv"
+EXCLUSION_DELTA = DATA / "prefreeze_candidate_exclusion_delta_v1.csv"
 EXCLUSION = DATA / "prefreeze_public_rebuild_exclusion_v1.csv"
 SUMMARY = DATA / "prefreeze_public_rebuild_exclusion_summary_v1.csv"
 REPORT = DOCS / "PREFREEZE_PUBLIC_REBUILD_EXCLUSION_v1.md"
@@ -64,6 +65,8 @@ def build_rows() -> tuple[list[dict[str, str]], list[dict[str, str]]]:
     rows: list[dict[str, str]] = []
     seen: set[tuple[str, str]] = set()
     skipped_no_key = 0
+    delta_rows_added = 0
+    delta_rows_duplicate = 0
 
     for row in queue:
         if clean(row.get("priority")) != "P0":
@@ -93,6 +96,34 @@ def build_rows() -> tuple[list[dict[str, str]], list[dict[str, str]]]:
             }
         )
 
+    for row in read_csv(EXCLUSION_DELTA):
+        source_file = Path(clean(row.get("source_file"))).name
+        capture_id = clean(row.get("capture_id"))
+        if not source_file or not capture_id:
+            skipped_no_key += 1
+            continue
+        key = (source_file, capture_id)
+        if key in seen:
+            delta_rows_duplicate += 1
+            continue
+        seen.add(key)
+        delta_rows_added += 1
+        rows.append(
+            {
+                "source_file": source_file,
+                "capture_id": capture_id,
+                "priority": clean(row.get("priority")) or "P0",
+                "action_type": clean(row.get("action_type")) or "candidate_delta_review",
+                "risk_flags": clean(row.get("risk_flags")),
+                "year": clean(row.get("year")),
+                "region": clean(row.get("region")),
+                "image_state": clean(row.get("image_state")),
+                "title": clean(row.get("title"))[:260],
+                "source_name": clean(row.get("source_name"))[:260],
+                "recommendation": clean(row.get("recommendation")),
+            }
+        )
+
     by_action = Counter(row["action_type"] for row in rows)
     by_source_file = Counter(row["source_file"] for row in rows)
     summary_rows: list[dict[str, str]] = [
@@ -110,6 +141,16 @@ def build_rows() -> tuple[list[dict[str, str]], list[dict[str, str]]]:
             "metric": "source_files_with_exclusions",
             "value": str(len(by_source_file)),
             "notes": "Capture record files affected by the exclusion list.",
+        },
+        {
+            "metric": "candidate_delta_rows_added",
+            "value": str(delta_rows_added),
+            "notes": "Rows merged from prefreeze_candidate_exclusion_delta_v1.csv.",
+        },
+        {
+            "metric": "candidate_delta_rows_already_present",
+            "value": str(delta_rows_duplicate),
+            "notes": "Candidate delta rows already covered by the P0 queue.",
         },
     ]
     for action, count in by_action.most_common():
@@ -148,6 +189,7 @@ def write_report(rows: list[dict[str, str]], summary_rows: list[dict[str, str]])
             "- `scripts/rebuild_public_surfaces_from_records.py` reads this exclusion table when present.",
             "- A matching `source_file + capture_id` row is skipped before dedupe and surface generation.",
             "- The raw capture row remains available for audit, card/support review, or later manual reinstatement.",
+            "- Candidate duplicate-image deltas are merged only when `data/prefreeze_candidate_exclusion_delta_v1.csv` exists.",
         ]
     )
     REPORT.parent.mkdir(parents=True, exist_ok=True)

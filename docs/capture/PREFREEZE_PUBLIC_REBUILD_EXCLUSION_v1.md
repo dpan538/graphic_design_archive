@@ -4,15 +4,16 @@ Scope: non-destructive P0 exclusion table for future public-surface rebuilds. It
 
 ## Summary
 
-- p0_exclusion_rows: 3549 (Distinct source_file + capture_id rows excluded from future public-surface rebuilds.)
+- p0_exclusion_rows: 3554 (Distinct source_file + capture_id rows excluded from future public-surface rebuilds.)
 - skipped_p0_rows_without_rebuild_key: 0 (P0 queue rows without source_file or capture_id; not actionable for rebuild exclusion.)
-- source_files_with_exclusions: 29 (Capture record files affected by the exclusion list.)
+- source_files_with_exclusions: 30 (Capture record files affected by the exclusion list.)
 
 ## Action Counts
 
 - card_or_appendix_reclass_review: 2930
 - date_or_span_reclass_review: 579
 - recent_stamp_event_reclassification: 40
+- duplicate_visual_variant_review: 5
 
 ## Top Source Files
 
@@ -37,3 +38,4 @@ Scope: non-destructive P0 exclusion table for future public-surface rebuilds. It
 - `scripts/rebuild_public_surfaces_from_records.py` reads this exclusion table when present.
 - A matching `source_file + capture_id` row is skipped before dedupe and surface generation.
 - The raw capture row remains available for audit, card/support review, or later manual reinstatement.
+- Candidate duplicate-image deltas are merged only when `data/prefreeze_candidate_exclusion_delta_v1.csv` exists.
