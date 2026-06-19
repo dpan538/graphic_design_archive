@@ -10108,3 +10108,56 @@ Interpretation:
   with the pre-freeze exclusion table active.
 - Source count should rise only after this controlled rebuild, not immediately
   after probe/capture.
+
+### Chunked pre-freeze rebuild validation
+
+To avoid another large monolithic rebuild, a sandbox chunked rebuild validator
+was added and run.
+
+Run setup:
+
+- New script: `scripts/rebuild_public_surfaces_chunked_prefreeze_v1.py`.
+- Scope: `all-capture`.
+- Chunk size: 2,000 rows.
+- Output is metrics/report only. It does not overwrite
+  `generated/public_surfaces_v1.json`, frontend payloads, or sharded public
+  payloads.
+- P0 pre-freeze exclusion table was active.
+
+Run results:
+
+- Capture CSV inputs scanned: 44.
+- Raw input rows: 19,886.
+- P0 rows skipped by exclusion table: 3,549.
+- Deduped candidate rows after exclusion: 16,294.
+- Chunks executed: 9.
+- Chunks succeeded: 9.
+- Chunk errors: 0.
+- Chunk surface sum: 16,185.
+- Per-chunk source-name sum: 15,079.
+- Per-chunk source-visible surface sum: 16,004.
+- Per-chunk verified-open surface sum: 15,406.
+
+Chunk distribution:
+
+- chunk 0001: 2,000 rows -> 1,968 surfaces.
+- chunk 0002: 2,000 rows -> 1,950 surfaces.
+- chunk 0003: 2,000 rows -> 2,000 surfaces.
+- chunk 0004: 2,000 rows -> 1,992 surfaces.
+- chunk 0005: 2,000 rows -> 2,000 surfaces.
+- chunk 0006: 2,000 rows -> 1,997 surfaces.
+- chunk 0007: 2,000 rows -> 1,995 surfaces.
+- chunk 0008: 2,000 rows -> 1,989 surfaces.
+- chunk 0009: 294 rows -> 294 surfaces.
+
+Interpretation:
+
+- The full capture pool can be processed safely in chunks of 2,000 or fewer
+  with the pre-freeze exclusion table active.
+- The current official release snapshot should not change from this pass,
+  because no official payload or frontend file was overwritten.
+- The chunk surface/source sums are diagnostic only. A final official public
+  payload still needs global grouping, folder aggregation, object-level dedupe,
+  and release audits after chunk validation.
+- The next safe step is a controlled global merge/finalization pass that uses
+  the validated chunks as evidence, not a blind full rebuild.
