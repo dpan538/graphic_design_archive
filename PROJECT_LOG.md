@@ -9913,3 +9913,111 @@ Verification:
   assignment, cookie/session assignment, local user path, or env-file reference.
   Remaining hits are expected policy text, environment-variable names, and
   historical project-log scan terms.
+
+### Pre-freeze data cleaning and release-quality audit
+
+After the final-gap capture showed low marginal yield from broad Commons search,
+the next phase shifted from raw source growth to non-mutating data cleaning and
+release-quality evaluation. Source count is now treated as capacity context, not
+the defining archive-quality metric.
+
+Scripts run:
+
+- `scripts/audit_temporal_distribution_anomalies_v1.py`
+- `scripts/audit_recent_design_object_quality_v1.py`
+- `scripts/audit_source_coverage_rate_v2.py`
+- `scripts/run_release_snapshot_v1.py`
+- New consolidated script:
+  `scripts/audit_prefreeze_data_cleaning_v1.py`
+
+New pre-freeze audit outputs:
+
+- `data/prefreeze_data_cleaning_summary_v1.csv`
+- `data/prefreeze_data_cleaning_priority_queue_v1.csv`
+- `data/prefreeze_source_authority_concentration_v1.csv`
+- `data/prefreeze_region_period_gap_matrix_v1.csv`
+- `docs/capture/PREFREEZE_DATA_CLEANING_AUDIT_v1.md`
+
+Release-quality snapshot used by the audit:
+
+- Capture records scanned: 19,898.
+- Public surfaces: 13,680.
+- Active public sources: 12,342.
+- Object source-visible: 97.91%.
+- Object verified-open: 87.96%.
+- Object IMG04: 1.78%.
+- Strict distribution adjusted coverage: 26.23%.
+- Research-quality adjusted source coverage v2: 2.31%.
+
+Pre-freeze cleaning queue:
+
+- P0: 5,287 rows. These can materially distort release metrics if retained as
+  primary objects: access-year/span/profile rows, recent stamp drift,
+  event/memory material, context images, and source-page/profile records.
+- P1: 2,566 rows. These need duplicate, rights, or date review before final
+  surface rebuild.
+- P2: 2,670 rows. These are metadata cleanup and lower-priority normalization
+  tasks.
+
+Action distribution:
+
+- `card_or_appendix_reclass_review`: 2,930.
+- `metadata_cleanup_review`: 2,670.
+- `recent_stamp_event_reclassification`: 1,643.
+- `deduplicate_or_merge_review`: 1,141.
+- `manual_rights_or_date_review`: 1,089.
+- `date_or_span_reclass_review`: 1,050.
+
+Temporal and recent-object findings:
+
+- The temporal anomaly audit scanned 19,898 capture records and produced 1,050
+  recent-year review rows.
+- 2026 remains suspicious: 820 capture rows were present, and many are
+  access-year/span/profile records rather than true object-year records.
+- The weakest five-year bands remain late 1950s/early 1960s, 1980s, 1990s, and
+  2000-2004, while 2020-2024 and 2025-2026 need quality review rather than more
+  volume.
+- The recent-object audit found 1,578 post-2010 stamp-review rows, 65
+  event/memory card-only rows, and only 6 high-confidence independent-studio
+  rows for 2005-2025. This confirms that recent volume is not yet equivalent to
+  research-quality contemporary coverage.
+
+Source and region findings:
+
+- Commons dominates the capture pool: 17,697 scanned capture records come from
+  `commons.wikimedia.org`, with 2,582 post-2010 stamp/event-risk rows. Further
+  broad Commons capture should remain paused except for manually verified
+  collection gaps.
+- Institution APIs and known collection endpoints are better next capture
+  targets than broad search phrases.
+- The region-period matrix shows the largest structural blockers in unresolved
+  region groups and thin quality-main coverage for several region/period pairs.
+  Region normalization should run before any final surface rebuild.
+
+Script QA note:
+
+- The first pre-freeze classifier over-flagged some authority-weighted Commons
+  rows because internal `classification_rationale` text contained the phrase
+  "weak event-photo filtering". The script was corrected so risk matching uses
+  source-facing metadata fields only.
+- Event/memory matching was narrowed from broad words such as `opening`,
+  `launch`, and `memory` to event-specific phrases such as `opening ceremony`,
+  `exhibition opening`, `launch event`, `memorial`, `remembrance`, and
+  `tribute`. This reduced false positives and kept P0 focused on actual
+  release-risk rows.
+
+Next execution order:
+
+- First, process the P0 queue and downgrade or exclude stamp/event/context/span
+  records before they can be promoted into main sheets.
+- Second, process P1 duplicate/date/rights review, with special attention to
+  verified-open uplift toward the 95% release target.
+- Third, apply region normalization and unresolved-region cleanup before the
+  next surface rebuild.
+- Fourth, run a targeted rights/source-visible repair pass.
+- Fifth, only after the database is cleaner, run a limited surface rebuild and
+  reassess main/sub/text structure. Full frontend rebuild remains deferred.
+
+No source records or surfaces were mutated by this audit. No image binaries were
+downloaded, no rights states were upgraded, and no research-repo files were
+included.

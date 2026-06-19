@@ -4,7 +4,7 @@ Scope: capture records only. This audit separates object-dated records from sour
 
 ## Summary
 
-- Capture records scanned: 19886
+- Capture records scanned: 19898
 - Recent anomaly review rows: 1050
 - 2025 all/object/span: 230 / 230 / 0
 - 2026 all/object/span: 820 / 106 / 714
@@ -44,15 +44,15 @@ Scope: capture records only. This audit separates object-dated records from sour
 
 ## 5-Year Gap / Overfull Priorities
 
-- 1945-1949: object=545, share=0.737, priority=moderate_gap
-- 1955-1959: object=385, share=0.520, priority=severe_gap
-- 1960-1964: object=446, share=0.603, priority=moderate_gap
-- 1980-1984: object=345, share=0.466, priority=severe_gap
-- 1985-1989: object=374, share=0.506, priority=severe_gap
-- 1990-1994: object=468, share=0.633, priority=moderate_gap
-- 1995-1999: object=500, share=0.676, priority=moderate_gap
-- 2000-2004: object=372, share=0.503, priority=severe_gap
-- 2020-2024: object=1140, share=1.541, priority=recent_overfull_review
+- 1945-1949: object=547, share=0.739, priority=moderate_gap
+- 1955-1959: object=388, share=0.524, priority=severe_gap
+- 1960-1964: object=448, share=0.605, priority=moderate_gap
+- 1980-1984: object=346, share=0.467, priority=severe_gap
+- 1985-1989: object=378, share=0.511, priority=severe_gap
+- 1990-1994: object=468, share=0.632, priority=moderate_gap
+- 1995-1999: object=500, share=0.675, priority=moderate_gap
+- 2000-2004: object=372, share=0.502, priority=severe_gap
+- 2020-2024: object=1140, share=1.540, priority=recent_overfull_review
 - 2025-2026: object=336, share=0.454, priority=severe_gap
 
 ## Interpretation
