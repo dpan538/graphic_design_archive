@@ -11030,3 +11030,127 @@ Verification:
   env-file reference. Remaining hits are expected historical log scan terms,
   WebLLM token/session discussion text already present in the log, and the new
   script's `event photo|conference|session` risk-classification pattern.
+
+## 2026-06-20 - Main/Sub/Text Method Decision and Initial Review v1
+
+Scope:
+
+- Read the new deep research report, `Rights Aware Methodology for a Graphic
+  Design Archive.docx`, from the project folder as methodological input.
+- Converted its conclusions into a project-specific main/sub/text role method
+  decision document.
+- Extended the 320-row validation packet with an initial Codex method review,
+  a sandbox candidate pool, and an 80-row manual calibration queue.
+- This pass did not rebuild surfaces, did not apply overrides, did not generate
+  new surfaces, did not download images, and did not change rights or image
+  states.
+- The source `.docx` report was read but not staged; it remains an external
+  research input unless the project later decides to preserve it in Git.
+
+Method decision:
+
+- Main sheets remain provisional research-packet anchors, not proof of finished
+  dossier status.
+- Sub sheets are structural packet members, not lower-value works.
+- Text sheets must add contextual or methodological value and must not repeat
+  metadata as filler.
+- Cards carry reader-facing context without packet-anchor authority.
+- Appendix pages carry evidence/control material such as rights, source,
+  provenance, API, and index verification.
+- The research packet anchor score is a triage aid only. It is not an automatic
+  publisher, rights upgrader, image-state upgrader, or keep-main decision.
+
+New outputs:
+
+- `docs/capture/MAIN_SUB_TEXT_ROLE_METHOD_DECISION_v1.md`.
+- `scripts/review_main_sub_text_validation_packet_v1.py`.
+- `data/prefreeze_main_sub_text_initial_role_review_v1.csv`.
+- `data/prefreeze_main_sub_text_initial_role_review_summary_v1.csv`.
+- `data/prefreeze_main_sub_text_sandbox_candidate_pool_v1.csv`.
+- `data/prefreeze_main_sub_text_manual_calibration_queue_v1.csv`.
+- `docs/capture/MAIN_SUB_TEXT_INITIAL_ROLE_REVIEW_v1.md`.
+- `docs/capture/MAIN_SUB_TEXT_SANDBOX_GATE_v1.md`.
+- `docs/capture/MAIN_SUB_TEXT_MANUAL_CALIBRATION_QUEUE_v1.md`.
+
+Initial review results:
+
+- Validation rows reviewed: 320.
+- Sandbox candidate-pool rows: 11.
+- Manual calibration queue rows: 80.
+- Sandbox gate status: not ready for override, because manual calibration and
+  reviewer-agreement thresholds have not been measured.
+
+Recommended role distribution:
+
+- `card_context`: 120.
+- `manual_hold`: 71.
+- `main_needs_text`: 57.
+- `sub_under_packet`: 43.
+- `keep_main`: 28.
+- `exclude_or_deprioritize`: 1.
+
+Review result and confidence distribution:
+
+- `revise`: 177.
+- `pass`: 143.
+- `medium` confidence: 243.
+- `low` confidence: 60.
+- `high` confidence: 17.
+
+Blocker distribution:
+
+- `transnational_geography_manual`: 101.
+- `unresolved_region_or_theme_manual`: 45.
+- `large_cluster_parentage_review`: 20.
+- `stamp_or_commemorative_manual`: 16.
+- `weak_commons_only_manual`: 16.
+- `natural_history_geology_false_positive`: 1.
+
+Rule correction during review:
+
+- The first initial-review run treated ordinary source/API provider language as
+  appendix evidence and also missed philatelic titles using `Seebeck`, `Sc###`,
+  or `MiNr` notation.
+- The final script narrows appendix evidence to explicit control/evidence
+  terms such as rights evidence, source statement, typed/source index, API
+  verification, metadata verification, or provenance note.
+- The final script also catches philatelic notation and routes those records to
+  `card_context` plus `stamp_or_commemorative_manual`, not appendix candidates.
+
+Calibration queue:
+
+- The 80-row calibration queue covers 25% of the validation packet.
+- Role spread:
+  - `card_context`: 26.
+  - `sub_under_packet`: 17.
+  - `manual_hold`: 15.
+  - `main_needs_text`: 14.
+  - `keep_main`: 7.
+  - `exclude_or_deprioritize`: 1.
+- It intentionally includes large-cluster parentage, stamps, transnational
+  geography, unresolved region/theme rows, weak Commons-only rows, soft-anchor
+  rows, packet/member rows, and strong-anchor rows.
+
+Interpretation:
+
+- The deep research report strengthens the project method but does not justify
+  immediate large-scale role reassignment.
+- The current initial review is useful enough to guide calibration, but not
+  enough to apply overrides.
+- The 11-row sandbox candidate pool is a future candidate pool only. It is not
+  apply-ready until calibration passes.
+- The next safe step is to calibrate the 80-row queue and decide whether the
+  method reaches roughly 80% agreement with fail patterns at or below 10%.
+
+Verification:
+
+- `python3 -m py_compile
+  scripts/review_main_sub_text_validation_packet_v1.py` passed.
+- `git diff --check` passed for the commit-bound method decision and initial
+  review files.
+- Commit-bound safety scan for `API_KEY`, token, password, secret, cookie,
+  session, bearer, `/Users/`, and `.env` found no real credential, bearer
+  value, cookie/session assignment, API key assignment, local user path, or
+  env-file reference in the new method/review outputs. Remaining hits are
+  historical scan terms and existing WebLLM token/session discussion in
+  `PROJECT_LOG.md`.
