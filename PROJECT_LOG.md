@@ -10913,3 +10913,120 @@ Next recommended step:
   positives.
 - Convert only reviewed packet groups into an applied override layer, then run
   another candidate rebuild before touching official payload/front-end data.
+
+## 2026-06-20 - Main/Sub/Text Method Validation Packet v1
+
+Scope:
+
+- Built a methodology discussion draft and a non-mutating validation packet for
+  deciding how main sheets, sub sheets, text sheets, cards, and appendix pages
+  should work before any further rebuild or role application.
+- This pass did not rebuild surfaces, did not apply role overrides, did not
+  generate new surfaces, did not download images, and did not change rights or
+  image states.
+- `research-repo/` remains outside the archive workflow and was not touched.
+
+Method position:
+
+- A main sheet can act as a provisional research-packet anchor when it has
+  impact, source depth, relation density, period/region scarcity, rights value,
+  or clear editorial need.
+- A sub sheet is not a loss of historical importance; it is a structural role
+  under a stronger packet anchor.
+- A text sheet should add interpretive, contextual, or methodological value and
+  should not be created just to pad metadata.
+- Cards and appendix pages should carry lightweight context, provenance, rights
+  evidence, index, and supporting material without overclaiming packet-anchor
+  status.
+
+Validation packet outputs:
+
+- Discussion draft:
+  `docs/capture/PREFREEZE_MAIN_SUB_TEXT_METHOD_DISCUSSION_v1.md`.
+- Validation sample:
+  `data/prefreeze_main_sub_text_method_validation_packet_v1.csv`.
+- Validation summary:
+  `data/prefreeze_main_sub_text_method_validation_summary_v1.csv`.
+- Validation report:
+  `docs/capture/PREFREEZE_MAIN_SUB_TEXT_METHOD_VALIDATION_PACKET_v1.md`.
+- Decision log template:
+  `docs/capture/PREFREEZE_MAIN_SUB_TEXT_METHOD_DECISION_LOG_TEMPLATE_v1.md`.
+
+Validation packet size and marker distribution:
+
+- Total validation rows: 320.
+- `support_or_card_review`: 120.
+- `soft_anchor_review`: 80.
+- `packet_anchor_or_member_review`: 42.
+- `strong_soft_anchor`: 40.
+- `anchor_if_editorial_text_added`: 38. This lane only has 38 rows in the
+  source audit, so all were included.
+- Duplicate sampled surface IDs: 0.
+
+Validation packet period distribution:
+
+- `1914_1945`: 72.
+- `1946_1969`: 57.
+- `1970_1989`: 46.
+- `2020_2026`: 32.
+- `1850_1899`: 29.
+- `2010_2019`: 26.
+- `1990_1999`: 19.
+- `2000_2009`: 17.
+- `1900_1913`: 14.
+- `pre_1850`: 8.
+
+Validation packet source-family distribution:
+
+- Wikimedia Commons: 131.
+- Wellcome Collection: 26.
+- Internet Archive: 24.
+- Georgia State CONTENTdm: 18.
+- DigitalNZ: 17.
+- Gallica / BnF APIs: 17.
+- Library of Congress: 15.
+- Princeton Figgy: 12.
+- V&A Collections API: 11.
+- Other smaller source families: 49.
+
+Method risk flags in the sample:
+
+- `no_subsheet_relation`: 320.
+- `commons_file_source`: 131.
+- `transnational_region`: 101.
+- `large_cluster`: 55.
+- `unresolved_region_or_theme`: 45.
+- `stamp_or_philatelic`: 13.
+- `natural_history_geology`: 1.
+
+Interpretation:
+
+- The validation packet intentionally exposes the structural weakness that every
+  sampled row currently lacks explicit subsheet relation evidence.
+- The high Commons count confirms that the method must be careful with file
+  source records, event/photo drift, stamps, and geography overclaiming before
+  any automatic main-to-sub/card movement.
+- The 2020-2026 sample remains large enough to review whether recent records
+  are overrepresented or research-thin before future rebuild decisions.
+- The method should be discussed and reviewed from this packet before producing
+  any new applied override layer.
+
+Next recommended step:
+
+- Review the 320-row validation packet and fill the decision log template.
+- Decide which marker classes are accepted, which require stricter rules, and
+  which should remain manual-only.
+- Only after that decision should the project create a small, sandboxed role
+  override test and then run a limited candidate rebuild.
+
+Verification:
+
+- `python3 -m py_compile
+  scripts/build_prefreeze_main_sub_text_method_validation_packet_v1.py` passed.
+- `git diff --check` passed for the commit-bound method/validation files.
+- Commit-bound safety scan for `API_KEY`, token, password, secret, cookie,
+  session, bearer, `/Users/`, and `.env` found no real credential, bearer
+  value, cookie/session assignment, API key assignment, local user path, or
+  env-file reference. Remaining hits are expected historical log scan terms,
+  WebLLM token/session discussion text already present in the log, and the new
+  script's `event photo|conference|session` risk-classification pattern.

@@ -1,0 +1,55 @@
+metric,value,notes
+methodology_scope,non_mutating_validation,"No rebuild, no role override, no image download, no rights/image-state change."
+source_review_rows,13537,Rows available from prefreeze main-anchor strictness audit.
+validation_packet_rows,320,Rows sampled for methodology validation.
+sample_marker:support_or_card_review,120,Validation sample distribution by soft anchor marker.
+sample_marker:soft_anchor_review,80,Validation sample distribution by soft anchor marker.
+sample_marker:packet_anchor_or_member_review,42,Validation sample distribution by soft anchor marker.
+sample_marker:strong_soft_anchor,40,Validation sample distribution by soft anchor marker.
+sample_marker:anchor_if_editorial_text_added,38,Validation sample distribution by soft anchor marker.
+sample_period:1914_1945,72,Validation sample distribution by period.
+sample_period:1946_1969,57,Validation sample distribution by period.
+sample_period:1970_1989,46,Validation sample distribution by period.
+sample_period:2020_2026,32,Validation sample distribution by period.
+sample_period:1850_1899,29,Validation sample distribution by period.
+sample_period:2010_2019,26,Validation sample distribution by period.
+sample_period:1990_1999,19,Validation sample distribution by period.
+sample_period:2000_2009,17,Validation sample distribution by period.
+sample_period:1900_1913,14,Validation sample distribution by period.
+sample_period:pre_1850,8,Validation sample distribution by period.
+sample_source_family:Wikimedia Commons,131,Validation sample distribution by source family.
+sample_source_family:Wellcome Collection,26,Validation sample distribution by source family.
+sample_source_family:Internet Archive,24,Validation sample distribution by source family.
+sample_source_family:Georgia State CONTENTdm,18,Validation sample distribution by source family.
+sample_source_family:DigitalNZ,17,Validation sample distribution by source family.
+sample_source_family:Gallica / BnF APIs,17,Validation sample distribution by source family.
+sample_source_family:Library of Congress,15,Validation sample distribution by source family.
+sample_source_family:Princeton Figgy,12,Validation sample distribution by source family.
+sample_source_family:V&A Collections API,11,Validation sample distribution by source family.
+sample_source_family:Another Graphic,8,Validation sample distribution by source family.
+sample_source_family:Auckland Libraries Heritage Collections / CONTENTdm,7,Validation sample distribution by source family.
+sample_source_family:Malaysia Design Archive,7,Validation sample distribution by source family.
+sample_source_family:Smithsonian Open Access,6,Validation sample distribution by source family.
+sample_source_family:University of Miami Libraries Digital Collections / CONTENTdm,5,Validation sample distribution by source family.
+sample_source_family:Te Papa,4,Validation sample distribution by source family.
+sample_source_family:NAIDOC Poster Gallery,4,Validation sample distribution by source family.
+sample_source_family:Art Institute of Chicago API,3,Validation sample distribution by source family.
+sample_source_family:Cleveland Museum Open Access API,1,Validation sample distribution by source family.
+sample_source_family:Chinese Posters,1,Validation sample distribution by source family.
+sample_source_family:Los Angeles Public Library Tessa / CONTENTdm,1,Validation sample distribution by source family.
+sample_source_family:African Digital Heritage,1,Validation sample distribution by source family.
+sample_source_family:Asian Film Archive,1,Validation sample distribution by source family.
+sample_source_text_bucket:600_plus,114,Validation sample distribution by source text length.
+sample_source_text_bucket:250_599,110,Validation sample distribution by source text length.
+sample_source_text_bucket:80_249,96,Validation sample distribution by source text length.
+sample_cluster_bucket:single,153,Validation sample distribution by cluster size.
+sample_cluster_bucket:2_4,112,Validation sample distribution by cluster size.
+sample_cluster_bucket:5_9,35,Validation sample distribution by cluster size.
+sample_cluster_bucket:10_plus,20,Validation sample distribution by cluster size.
+sample_risk_flag:no_subsheet_relation,320,Risk flag to inspect during method validation.
+sample_risk_flag:commons_file_source,131,Risk flag to inspect during method validation.
+sample_risk_flag:transnational_region,101,Risk flag to inspect during method validation.
+sample_risk_flag:large_cluster,55,Risk flag to inspect during method validation.
+sample_risk_flag:unresolved_region_or_theme,45,Risk flag to inspect during method validation.
+sample_risk_flag:stamp_or_philatelic,13,Risk flag to inspect during method validation.
+sample_risk_flag:natural_history_geology,1,Risk flag to inspect during method validation.
