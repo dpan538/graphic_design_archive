@@ -10799,3 +10799,117 @@ Next recommended step:
   rewrite.
 - Keep the 2,091 hold-review rows for confidence cleanup, source-family
   authority review, and later research packet design.
+
+### Prefreeze Packet Role Applied Override Sandbox and Main Anchor Markers v1
+
+Scope:
+
+- Created a sandbox merged role override layer from the existing pre-freeze
+  role overrides plus the 200 packet apply-ready rows.
+- Rebuilt only the local candidate payload with this sandbox role layer. The
+  official `generated/public_surfaces_v1.json` and frontend mirrors were not
+  intentionally rebuilt or overwritten in this pass.
+- Added a non-mutating main-anchor strictness audit for main/sub/text archival
+  planning. Main-sheet status is treated as a soft research-packet anchor
+  marker, not as a final release gate or automatic demotion rule.
+
+Implementation:
+
+- New script: `scripts/build_prefreeze_packet_role_applied_overrides_v1.py`.
+- New script: `scripts/audit_prefreeze_main_anchor_strictness_v1.py`.
+- `scripts/rebuild_public_surfaces_from_records.py` now accepts
+  `PREFREEZE_ROLE_OVERRIDES_PATH` so candidate builds can explicitly point at a
+  sandbox role override file while the canonical pre-freeze role override file
+  remains unchanged.
+- New outputs:
+  - `data/prefreeze_surface_role_overrides_packet_applied_v1.csv`.
+  - `data/prefreeze_packet_role_applied_override_summary_v1.csv`.
+  - `docs/capture/PREFREEZE_PACKET_ROLE_APPLIED_OVERRIDES_v1.md`.
+  - `data/prefreeze_main_anchor_strictness_review_v1.csv`.
+  - `data/prefreeze_main_anchor_cluster_review_v1.csv`.
+  - `data/prefreeze_main_anchor_strictness_summary_v1.csv`.
+  - `docs/capture/PREFREEZE_MAIN_ANCHOR_STRICTNESS_v1.md`.
+
+Sandbox override results:
+
+- Base pre-freeze role override input rows: 2,247.
+- Packet apply-ready rows considered: 200.
+- Merged sandbox override rows: 2,445.
+- Collision or rejected rows: 0.
+- Merged role distribution:
+  - card: 1,943.
+  - support packet appendix text: 502.
+- Override source distribution:
+  - existing surface role override layer: 2,245.
+  - packet role apply-ready layer: 200.
+
+Candidate rebuild and release snapshot:
+
+- Candidate surfaces: 16,175.
+- Candidate active public sources: 14,997.
+- Candidate object source-visible rate: 98.92%.
+- Candidate object verified-open rate: 95.29%.
+- Candidate object weighted publication-grade rate: 97.26%.
+- Candidate object IMG04 rate: 0.82%.
+- Candidate strict distribution adjusted source coverage rate: 74.98%.
+- These metrics remained stable because this pass changed structure roles only,
+  not source count, image state, or rights state.
+
+Main/sub/text structure after the sandbox role layer:
+
+- Candidate main sheets: 13,537.
+- Candidate cards: 1,943.
+- Candidate support packet appendix text rows: 689.
+- Thin visual support packets: 3.
+- Main-sheet review rows: 13,528.
+- Main sheets with explicit `compoundChildren`: 9.
+- Main dossiers with more than two subsheet pages: 0.
+- Main dossiers with more than five text pages: 0.
+- Text pages generated in dossiers: 14,231.
+- Subsheet pages generated in dossiers: 692.
+- Appendix pages generated in dossiers: 3,089.
+
+Soft main-anchor marker audit:
+
+- Main sheets scanned: 13,537.
+- Region/theme/source/decade clusters with at least three main records: 68.
+- Main anchor review lanes:
+  - support or card review: 9,251.
+  - main anchor manual review: 3,809.
+  - keep main anchor candidate: 397.
+  - needs packet/subsheet assignment: 42.
+  - needs editorial text: 38.
+- The audit adds `research_packet_anchor_marker` values so main sheets can
+  function as provisional research packet anchors without pretending that the
+  packet structure is already final.
+- The rule set was corrected during this pass: a naive substring match treated
+  `stamp` inside French `estampe` as a philatelic risk. The final script uses
+  word-boundary matching so Gallica print/poster records are not misflagged by
+  that false positive.
+
+Interpretation:
+
+- The 200-row packet apply-ready layer moves a small, controlled set of records
+  toward sub/support packet roles and lowers the main-sheet review queue by the
+  expected amount without harming release-gate metrics.
+- The structural problem remains large: most current main sheets do not yet
+  have explicit sub-sheet relations, and dossiers are still mostly one-anchor
+  packets with one text page.
+- Main sheet should be treated as a provisional research-packet anchor class.
+  It can carry anchor intent before the full packet is assembled, but it should
+  not be read as proof that a surface already has enough text, relation density,
+  or editorial framing.
+- The next meaningful work is not more raw source count; it is source-family
+  authority cleanup, main-anchor sample review, and then a carefully applied
+  packet/sub/text assignment layer.
+
+Next recommended step:
+
+- Sample the 397 `keep_main_anchor_candidate` rows and 3,809
+  `main_anchor_manual_review` rows by source family, period, and region.
+- Review the 9,251 `support_or_card_review` rows in priority buckets,
+  especially Commons file-source clusters, unresolved/transnational geography,
+  event/photo/context records, stamps, and natural-history/geology false
+  positives.
+- Convert only reviewed packet groups into an applied override layer, then run
+  another candidate rebuild before touching official payload/front-end data.

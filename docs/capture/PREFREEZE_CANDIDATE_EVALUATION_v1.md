@@ -32,8 +32,8 @@ Scope: candidate public-surface payload generated from all local capture records
 
 ## Sheet Structure
 
-- main_sheet_count: 13737 (publicationRole=main_sheet.)
-- sub_or_support_surface_count: 2438 (All non-main public surfaces.)
+- main_sheet_count: 13537 (publicationRole=main_sheet.)
+- sub_or_support_surface_count: 2638 (All non-main public surfaces.)
 - independent_text_sheet_count: 94 (templateId=sheet.text.v0.)
 - rich_text_surface_count_ge1200_chars: 16173 (Reading/support text >= 1200 chars.)
 - weak_text_main_sheet_count: 0 (Main sheets with weak source/generated text.)
@@ -45,17 +45,17 @@ Scope: candidate public-surface payload generated from all local capture records
 
 ## Weakest 5-Year Buckets
 
-- 1835-1839: surfaces=27, main=25, open=26
-- 1855-1859: surfaces=39, main=35, open=38
-- 1840-1844: surfaces=67, main=62, open=66
+- 1835-1839: surfaces=27, main=24, open=26
+- 1855-1859: surfaces=39, main=30, open=38
+- 1840-1844: surfaces=67, main=58, open=66
 - undated_or_unparsed: surfaces=73, main=3, open=1
 - 1875-1879: surfaces=78, main=68, open=78
-- 1860-1864: surfaces=89, main=78, open=88
-- 1850-1854: surfaces=96, main=89, open=96
-- 1865-1869: surfaces=106, main=101, open=105
+- 1860-1864: surfaces=89, main=54, open=88
+- 1850-1854: surfaces=96, main=85, open=96
+- 1865-1869: surfaces=106, main=97, open=105
 - 1870-1874: surfaces=108, main=101, open=108
-- 1830-1834: surfaces=141, main=137, open=141
-- 1890-1894: surfaces=197, main=182, open=194
+- 1830-1834: surfaces=141, main=135, open=141
+- 1890-1894: surfaces=197, main=170, open=194
 - 1880-1884: surfaces=203, main=173, open=194
 
 ## Heaviest 5-Year Buckets

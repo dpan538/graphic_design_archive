@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 import re
 from collections import Counter
 from pathlib import Path
@@ -163,6 +164,9 @@ def apply_prefreeze_geo_overrides(
 
 def prefreeze_role_override_lookup(path: Path = PREFREEZE_ROLE_OVERRIDES) -> dict[tuple[str, str], dict[str, str]]:
     """Return auditable surface-role overrides keyed by source file and capture ID."""
+    env_path = os.environ.get("PREFREEZE_ROLE_OVERRIDES_PATH")
+    if env_path and path == PREFREEZE_ROLE_OVERRIDES:
+        path = (ROOT / env_path).resolve() if not Path(env_path).is_absolute() else Path(env_path)
     lookup: dict[tuple[str, str], dict[str, str]] = {}
     for row in read_rows(path):
         source_file = Path(row.get("source_file", "")).name
