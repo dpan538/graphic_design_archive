@@ -1,0 +1,7 @@
+layout_area,requirement,applies_to,notes
+left_content_panel,render_packet_tree,folder and surface routes,"Show cover main, normal mains, sub sheets, appendices, cards, and text counts; support hover/click navigation."
+folder_directory,show_reader_facing_packet_directory,folder routes,"Replace engineering folder register language with packet tree summary, counts, scope, source family, rights/image state, and unresolved flags."
+reading_note,curated_editorial_reading_note,"cover main, folder, medium/large packets","Explain what to study, reading path, core vs appendix/card evidence, global scope rationale, and uncertainty."
+text_page,pure_explanatory_text_page,cover/main/sub/appendix children,Text is expanded prose; node-level summaries still exist outside text pages.
+appendix,appendix_can_contain_text_and_cards,main and sub nodes,"Appendix is weaker evidence than sub, but can have its own text/card children."
+assistant_or_search,functional_search_navigation_helper,packet routes,"Does not require WebLLM; can use packet metadata, reading notes, and search to guide navigation."

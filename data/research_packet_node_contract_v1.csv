@@ -1,0 +1,7 @@
+node_type,parent_allowed,children_allowed,text_allowed,card_allowed,node_summary_required,relation_note_required,source_basis_required,frontend_display_role
+cover_main,packet_root,normal_main; appendix; text,yes,no_direct_card_except_index_thumbnail,yes,scope_rationale,yes,packet_first_page_and_tree_root
+normal_main,cover_main; packet_root_for_standalone,text; sub_sheet; appendix; card,yes,yes,yes,yes,yes,research_bearing_main_node
+sub_sheet,normal_main,text; appendix; card,yes,yes,yes,yes,yes,strong_relation_child_node
+appendix,normal_main; sub_sheet,text; card,yes,yes,yes,evidence_role,yes,supporting_evidence_node
+card,normal_main; sub_sheet; appendix,none,short_caption_only,not_applicable,short,optional,yes,leaf_visual_or_excerpt_unit
+text,cover_main; normal_main; sub_sheet; appendix,none,not_applicable,no,title_and_purpose,text_purpose,if source-specific,pure_editorial_or_explanatory_page

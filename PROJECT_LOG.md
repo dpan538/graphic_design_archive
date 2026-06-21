@@ -11798,6 +11798,122 @@ Safety:
   hits were historical safety-scan language in this log and public source-title
   words such as `Secret`.
 
+## 2026-06-21 - Research packet structure method v1
+
+Goal:
+
+- Convert the final-phase packet discussion into a non-mutating methodology and
+  audit contract before any main/sub/text rebuild.
+- Define `cover_main`, `normal_main`, `sub_sheet`, `text`, `appendix`, and
+  `card` as packet tree roles.
+- Treat reading notes as curated editorial material, not engineering status or
+  raw folder registers.
+- Mark medium and large packets as requiring an editorial reading-note page.
+- Keep normal main pages from being automatically demoted simply because a
+  cover main organizes a packet.
+
+Implementation:
+
+- Added `docs/methodology/RESEARCH_PACKET_STRUCTURE_METHOD_v1.md`.
+- Added `scripts/audit_research_packet_structure_requirements_v1.py`.
+- The script reads the existing prefreeze main/sub/text packet relation role
+  queue and cluster audit outputs.
+- It emits packet structure requirements, node contract rows, curated
+  reading-note requirements, frontend layout requirements, a summary CSV, and a
+  capture report.
+- It does not rebuild payloads, apply role overrides, write frontend mirrors,
+  download images, or change rights/image states.
+
+Outputs:
+
+- `data/research_packet_structure_requirements_v1.csv`
+- `data/research_packet_node_contract_v1.csv`
+- `data/research_packet_reading_note_requirements_v1.csv`
+- `data/research_packet_frontend_layout_contract_v1.csv`
+- `data/research_packet_structure_requirements_summary_v1.csv`
+- `docs/capture/RESEARCH_PACKET_STRUCTURE_REQUIREMENTS_v1.md`
+
+Results:
+
+- Packet requirement rows: 2,088.
+- Curated reading-note requirement rows: 2,088.
+- Node contract rows: 6.
+- Frontend layout contract rows: 6.
+- Packet scale distribution:
+  - `single_or_micro`: 886.
+  - `small`: 766.
+  - `medium`: 245.
+  - `large`: 191.
+- Cover main requirement distribution:
+  - `cover_main_optional`: 825.
+  - `cover_main_recommended`: 699.
+  - `cover_main_required`: 564.
+- Editorial page requirement distribution:
+  - `optional_editorial_page`: 1,099.
+  - `recommended_editorial_page`: 553.
+  - `mandatory_editorial_page`: 436.
+- Global scope policy distribution:
+  - `region_specific_or_not_global`: 1,907.
+  - `global_host_requires_scope_review`: 168.
+  - `global_scope_manual_review`: 9.
+  - `global_site_acceptable_with_relation_review`: 4.
+- Estimated minimum text pages across requirement rows: 6,508.
+
+Method commitments:
+
+- A cover main is the packet first page and curated entry point.
+- A normal main remains a research-bearing node; it is not automatically
+  downgraded when a cover main is introduced.
+- Every mature packet should expose at least one normal main or main group.
+- Each normal main should have at least one sub sheet unless explicitly marked
+  as a standalone object packet.
+- Each sub sheet should have at least one child text page, card, or appendix.
+- Appendix can sit below a normal main or sub sheet, and appendix can itself
+  carry text and cards.
+- Text pages are pure explanatory writing, but node-level summaries and
+  relation notes remain required on cover, normal main, sub, and appendix
+  nodes.
+- Medium and large packets require an editorial reading-note page. Small
+  packets may receive one when source text is thin or the packet needs
+  curatorial framing.
+- Global/transnational scope is valid when justified; it must not be forced
+  into a country folder without evidence.
+
+Interpretation:
+
+- The 6,508 estimated minimum text pages show that the final phase is an
+  editorial information-system problem, not a simple page-generation problem.
+  The next rebuild must be staged by packet scale and readiness.
+- Large global/transnational Commons clusters remain scope-review candidates,
+  not automatic country packets.
+- High-card, low-sub clusters such as some modern typography buckets should
+  not be promoted into mature research packets until anchor selection and
+  relation evidence improve.
+- Folder directory should become a reader-facing packet tree with counts,
+  scope, rights/image state, source family, confidence, and unresolved flags.
+- Reading note should become the curated guidance layer: what to study, where
+  to start, why the packet is shaped this way, what is core, what is appendix
+  evidence, and what remains uncertain.
+
+Safety:
+
+- No image files were downloaded.
+- No rights, source authority, authorship, or IMG01/IMG03 image-state upgrades
+  were made.
+- No source-family signal overrides macro/global scope review.
+- No packet role was applied by this audit.
+- The official payload, frontend mirrors, shards, and release build outputs
+  were not modified.
+- `python3 -m py_compile scripts/audit_research_packet_structure_requirements_v1.py`
+  passed.
+- `git diff --check` passed for this round's intended commit-bound files.
+- Commit-bound safety scan for `API_KEY`, token, password, secret, cookie,
+  session, bearer, `/Users/`, and `.env` found no real credential, bearer
+  value, cookie/session assignment, API key assignment, local user path, or
+  env-file reference in the new methodology doc, script, CSVs, or report.
+  Remaining broad-scan hits were historical safety-scan language already
+  present in this log.
+
 ## 2026-06-21 — Packet Relation Tiny Seed Resolution v1
 
 Goal:
