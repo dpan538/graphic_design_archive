@@ -11882,6 +11882,70 @@ Safety:
   env-file reference in this round's new script, CSVs, or report. Broad-scan
   hits were historical safety-scan language in this log only.
 
+## 2026-06-21 — Tiny Seed Resolution Method Correction
+
+Goal:
+
+- Correct the overly strict handling of contemporary global showcase sources
+  after review feedback.
+- Avoid treating all `Global / transnational` clusters as region errors.
+- Clarify that five-year bucket labels such as `2025-2029` are grouping keys,
+  not evidence that future years have been captured.
+
+Implementation:
+
+- Updated `scripts/audit_main_sub_text_packet_relation_tiny_seed_resolution_v1.py`.
+- Added `global_scope_policy` to distinguish:
+  - `global_site_acceptable_with_relation_review`.
+  - `global_host_requires_scope_review`.
+  - `region_specific_or_not_global`.
+  - `global_scope_manual_review`.
+- Added `actual_year_span` to seed-level output so current-period buckets can
+  be read against actual captured years.
+- Reclassified Another Graphic title rows from `profile_or_interview` to
+  `showcase_or_project_page`.
+- Replaced the earlier `hold_profile_directory_not_packet` decision for
+  Another Graphic with `needs_global_showcase_relation_review`.
+
+Updated Results:
+
+- Tiny seed clusters reviewed: 6.
+- Role rows inside seed clusters: 44.
+- Seeds currently ready for tiny sandbox after manual sign-off: 0.
+- Another Graphic 2025-2029 now reports:
+  - `actual_year_span`: `2026-2026`.
+  - `global_scope_policy`: `global_site_acceptable_with_relation_review`.
+  - `resolution_status`: `needs_global_showcase_relation_review`.
+- Seed-level global scope policy distribution:
+  - `global_host_requires_scope_review`: 3.
+  - `region_specific_or_not_global`: 2.
+  - `global_site_acceptable_with_relation_review`: 1.
+
+Interpretation:
+
+- Contemporary showcase platforms can validly remain global/transnational when
+  the platform itself is a cross-border design display context.
+- A global/transnational category is expected in a contemporary graphic design
+  archive. A total absence of global organizations, networks, platforms, or
+  cross-border design contexts would itself be a classification warning.
+- Global acceptance is not a role upgrade. It only removes the requirement for
+  forced country splitting; the source still needs explicit work/project
+  relation, anchor selection, and design-object evidence before any packet
+  role change.
+- Aggregator/host families such as Internet Archive still require scope review
+  because global may mean either real transnational organization or unresolved
+  metadata; they should not be forced into country assignment without evidence.
+- Five-year bucket labels remain useful for grouping, but current-period
+  review must use `actual_year_span` to avoid implying future coverage.
+
+Safety:
+
+- No image files were downloaded.
+- No rights, source authority, authorship, or IMG01/IMG03 image-state upgrades
+  were made.
+- No official payload, frontend mirror, shard, or release build output was
+  modified.
+
 ## 2026-06-21 — Packet Relation Source-Family Tuning v1
 
 Goal:

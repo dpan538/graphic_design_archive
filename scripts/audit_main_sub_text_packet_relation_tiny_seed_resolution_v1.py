@@ -36,6 +36,8 @@ RESOLUTION_FIELDS = [
     "region",
     "theme",
     "five_year_bucket",
+    "actual_year_span",
+    "global_scope_policy",
     "cluster_size",
     "packet_relation_lane",
     "packet_confidence",
@@ -54,6 +56,7 @@ RESOLUTION_FIELDS = [
     "book_or_software_rows",
     "event_or_exhibition_rows",
     "issue_or_serial_rows",
+    "showcase_or_project_rows",
     "resolution_status",
     "resolution_reason",
     "manual_requirements",
@@ -81,6 +84,7 @@ DETAIL_FIELDS = [
     "relation_density_score",
     "design_object_confidence_score",
     "record_kind_hint",
+    "global_scope_policy",
     "manual_note",
 ]
 
@@ -118,9 +122,31 @@ def split_semicolon(value: str) -> list[str]:
     return [part.strip() for part in text.split(";") if part.strip()]
 
 
+def global_scope_policy(source_family: str, region: str) -> str:
+    folded_family = clean(source_family).casefold()
+    folded_region = clean(region).casefold()
+    is_global = "transnational" in folded_region or folded_region.startswith("global") or folded_region.startswith("unresolved")
+    if not is_global:
+        return "region_specific_or_not_global"
+    if any(term in folded_family for term in ("another graphic", "letterform", "design reviewed", "naidoc", "desain", "gala")):
+        return "global_site_acceptable_with_relation_review"
+    if any(term in folded_family for term in ("internet archive", "wikimedia commons", "contentdm", "library", "gallica", "bnf")):
+        return "global_host_requires_scope_review"
+    return "global_scope_manual_review"
+
+
+def actual_year_span(rows: list[dict[str, str]]) -> str:
+    years = sorted({as_int(row.get("year")) for row in rows if as_int(row.get("year")) > 0})
+    if not years:
+        return ""
+    return f"{years[0]}-{years[-1]}"
+
+
 def record_kind(title: str) -> str:
     text = clean(title).casefold()
-    if any(term in text for term in ("interview", "profile", "about ", "biography")) or text.endswith(" - another graphic"):
+    if text.endswith(" - another graphic"):
+        return "showcase_or_project_page"
+    if any(term in text for term in ("interview", "profile", "about ", "biography")):
         return "profile_or_interview"
     if any(term in text for term in ("issue", "magazine", "zine", "maximum rocknroll", "future sex", "shadis")):
         return "issue_or_serial"
@@ -137,6 +163,8 @@ def manual_note(kind: str, row: dict[str, str]) -> str:
     blockers = split_semicolon(clean(row.get("relation_blockers")))
     if kind == "profile_or_interview":
         return "Keep as profile/card support unless a specific work/project relation is explicit."
+    if kind == "showcase_or_project_page":
+        return "Treat as a contemporary showcase/project page; global scope can be acceptable, but work/project relation still needs review."
     if kind == "book_or_software":
         return "Likely reference/publication support; do not packet as graphic-design object without stronger object evidence."
     if "weak_design_object_signal" in blockers:
@@ -166,12 +194,14 @@ def resolution_for(seed: dict[str, str], rows: list[dict[str, str]]) -> tuple[st
         and "weak_design_object_signal" in split_semicolon(clean(row.get("relation_blockers")))
     ]
 
-    if family == "Another Graphic" and kinds.get("profile_or_interview", 0) >= max(1, len(rows) // 2):
+    policy = global_scope_policy(family, seed.get("region", ""))
+
+    if family == "Another Graphic" and kinds.get("showcase_or_project_page", 0) >= max(1, len(rows) // 2):
         return (
-            "hold_profile_directory_not_packet",
-            "Rows look like designer/studio profile pages, not a proven work/project packet.",
-            "Need explicit project/work relation, creator-work grouping, and non-macro region before any role change.",
-            "Keep out of sandbox; use as card/profile support or wait for project-level records.",
+            "needs_global_showcase_relation_review",
+            "Rows look like contemporary showcase/project pages; global scope can be acceptable for this source family, but packet parentage is not yet proven.",
+            "Need explicit work/project relation, creator-work grouping, and a reviewed global-site rationale before any role change.",
+            "Keep as a global-site review seed; do not require country split, but do require relation evidence and anchor selection.",
         )
     if kinds.get("book_or_software", 0) >= 2:
         return (
@@ -180,19 +210,26 @@ def resolution_for(seed: dict[str, str], rows: list[dict[str, str]]) -> tuple[st
             "Need object-level graphic-design evidence and source-family split before packeting.",
             "Remove from tiny sandbox candidate list until cluster is split by object type.",
         )
+    if "macro_or_unresolved_region" in blockers and policy == "global_site_acceptable_with_relation_review" and eligible_members:
+        return (
+            "needs_global_site_relation_review",
+            "Cluster has global/transnational scope that can be acceptable for this source family, but relation evidence is still unresolved.",
+            "Need explicit global-site rationale plus one accepted anchor/member relation before tiny sandbox.",
+            "Run a global-site relation review instead of forcing country split.",
+        )
     if "macro_or_unresolved_region" in blockers and not eligible_members:
         return (
             "hold_macro_anchor_only_series",
             "Cluster has macro/global region and eligible anchors but no eligible member/sub rows.",
-            "Need region split plus one accepted anchor/member relation before tiny sandbox.",
-            "Do not sandbox; resolve region and relation shape first.",
+            "Need approved global/transnational rationale or region split plus one accepted anchor/member relation before tiny sandbox.",
+            "Do not sandbox; resolve scope and relation shape first.",
         )
     if "macro_or_unresolved_region" in blockers:
         return (
-            "needs_region_split_before_tiny_sandbox",
+            "needs_global_scope_review_before_tiny_sandbox",
             "Cluster has potentially useful anchor/member shape but region scope is macro/global.",
-            "Need country/region split or explicit transnational packet rationale before sandbox.",
-            "Run a region-scope review before any role override.",
+            "Need country/region split or approved global/transnational packet rationale before sandbox.",
+            "Run a global-scope review before any role override; do not force country assignment if the organization/platform is genuinely transnational.",
         )
     if "missing_anchor" in blockers:
         return (
@@ -261,6 +298,7 @@ def main() -> None:
                     "relation_density_score": clean(source.get("relation_density_score")),
                     "design_object_confidence_score": clean(source.get("design_object_confidence_score")),
                     "record_kind_hint": kind,
+                    "global_scope_policy": global_scope_policy(row.get("source_family", ""), row.get("region", "")),
                     "manual_note": manual_note(kind, row),
                 }
             )
@@ -279,9 +317,11 @@ def main() -> None:
         ]
         kinds = Counter(record_kind(row.get("title", "")) for row in rows)
         resolution_rows.append(
-            {
-                **{field: clean(seed.get(field)) for field in RESOLUTION_FIELDS if field in seed},
-                "role_rows": len(rows),
+                {
+                    **{field: clean(seed.get(field)) for field in RESOLUTION_FIELDS if field in seed},
+                    "actual_year_span": actual_year_span(rows),
+                    "global_scope_policy": global_scope_policy(seed.get("source_family", ""), seed.get("region", "")),
+                    "role_rows": len(rows),
                 "candidate_anchor_rows": sum(1 for row in rows if clean(row.get("proposed_relation_role")) == "candidate_packet_anchor"),
                 "eligible_anchor_rows": len(eligible_anchor_ids),
                 "eligible_member_rows": len(eligible_member_ids),
@@ -293,9 +333,10 @@ def main() -> None:
                 ),
                 "profile_or_interview_rows": kinds.get("profile_or_interview", 0),
                 "book_or_software_rows": kinds.get("book_or_software", 0),
-                "event_or_exhibition_rows": kinds.get("event_or_exhibition", 0),
-                "issue_or_serial_rows": kinds.get("issue_or_serial", 0),
-                "resolution_status": status,
+                    "event_or_exhibition_rows": kinds.get("event_or_exhibition", 0),
+                    "issue_or_serial_rows": kinds.get("issue_or_serial", 0),
+                    "showcase_or_project_rows": kinds.get("showcase_or_project_page", 0),
+                    "resolution_status": status,
                 "resolution_reason": reason,
                 "manual_requirements": requirements,
                 "next_action": next_action,
@@ -317,6 +358,8 @@ def main() -> None:
         summary_rows.append({"metric": f"resolution_status:{status}", "value": count, "notes": "Seed resolution status distribution."})
     for kind, count in Counter(clean(row.get("record_kind_hint")) for row in detail_rows).most_common():
         summary_rows.append({"metric": f"record_kind:{kind}", "value": count, "notes": "Record-kind hints inside seed clusters."})
+    for policy, count in Counter(clean(row.get("global_scope_policy")) for row in resolution_rows).most_common():
+        summary_rows.append({"metric": f"global_scope_policy:{policy}", "value": count, "notes": "Seed-level global scope policy distribution."})
 
     write_csv(OUT_RESOLUTION, resolution_rows, RESOLUTION_FIELDS)
     write_csv(OUT_DETAIL, detail_rows, DETAIL_FIELDS)
@@ -355,7 +398,7 @@ def write_report(summary: list[dict[str, Any]], resolutions: list[dict[str, Any]
     for row in resolutions:
         lines.append(
             f"- {row['cluster_key']}: status={row['resolution_status']}; reason={row['resolution_reason']}; "
-            f"next={row['next_action']}"
+            f"actual_year_span={row['actual_year_span']}; global_policy={row['global_scope_policy']}; next={row['next_action']}"
         )
     lines.extend(
         [
@@ -363,8 +406,12 @@ def write_report(summary: list[dict[str, Any]], resolutions: list[dict[str, Any]
             "## Method Note",
             "",
             "- A seed is not sandbox-ready just because it has eligible rows.",
-            "- Macro/global clusters need region-scope resolution before packet role changes.",
+            "- Global/transnational scope is a valid archive category, not a parser failure or a mandatory country-split queue.",
+            "- Macro/global clusters need scope review before packet role changes unless the source family has an explicit global-site policy.",
+            "- Contemporary showcase platforms and cross-border organizations can remain global/transnational when the source itself is a cross-border design display context, but they still need anchor/member relation evidence.",
+            "- Aggregator or host platforms need scope review because global may mean either real transnational organization or unresolved metadata; do not force country assignment without evidence.",
             "- Profile, interview, software/book, and support/reference records should not become packet members without explicit design-object evidence.",
+            "- Five-year buckets such as 2025-2029 are grouping keys only; use actual_year_span for current data coverage.",
             "- Anchor/member repair remains a manual review action, not an automatic upgrade.",
             "",
             "## Safety",
