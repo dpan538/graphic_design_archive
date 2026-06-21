@@ -1,0 +1,26 @@
+metric,value,notes
+scope,non_mutating_research_packet_readiness_layers,"No rebuild, role override, image download, rights/image-state change, or frontend mirror write."
+queue_rows,2088,Cluster-level readiness queue rows.
+action_rows,7,Layer action contract rows.
+safe_for_sandbox_packet_trial,113,Rows that may be used for sandbox packet-shape trials only.
+packet_layer:phase_0_scope_review,199,Readiness layer distribution.
+packet_layer:phase_1_anchor_selection,1274,Readiness layer distribution.
+packet_layer:phase_1_relation_evidence_review,394,Readiness layer distribution.
+packet_layer:phase_2_editorial_cover_first,107,Readiness layer distribution.
+packet_layer:phase_3_sandbox_packet_trial,6,Readiness layer distribution.
+packet_layer:phase_4_card_appendix_support,27,Readiness layer distribution.
+packet_layer:phase_5_method_review_hold,81,Readiness layer distribution.
+packet_scale:large,191,Packet scale distribution.
+packet_scale:medium,245,Packet scale distribution.
+packet_scale:single_or_micro,886,Packet scale distribution.
+packet_scale:small,766,Packet scale distribution.
+blocking_issue:card_heavy_without_sub_structure,27,Primary blocking issue distribution.
+blocking_issue:editorial_and_cover_required_before_packet_trial,107,Primary blocking issue distribution.
+blocking_issue:global_or_macro_scope_unresolved,199,Primary blocking issue distribution.
+blocking_issue:insufficient_packet_shape_confidence,81,Primary blocking issue distribution.
+blocking_issue:missing_or_unsettled_normal_main_anchor,1274,Primary blocking issue distribution.
+blocking_issue:none,6,Primary blocking issue distribution.
+blocking_issue:parentage_or_relation_confidence_not_ready,394,Primary blocking issue distribution.
+editorial:mandatory_editorial_page,436,Editorial page requirement distribution.
+editorial:optional_editorial_page,1099,Editorial page requirement distribution.
+editorial:recommended_editorial_page,553,Editorial page requirement distribution.

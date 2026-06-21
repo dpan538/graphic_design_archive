@@ -1,0 +1,8 @@
+packet_layer,cluster_count,safe_for_sandbox_count,recommended_action,expected_next_output,do_not_do
+phase_0_scope_review,199,0,Resolve global/transnational or macro-region scope before packet construction.,scope decision queue and allowed global packet list,Do not force country assignment or create cover main from unresolved host scope.
+phase_1_anchor_selection,1274,0,Choose or confirm normal main anchor candidates before sub/card attachment.,anchor selection review table,Do not demote all mains just because the packet needs a cover main.
+phase_1_relation_evidence_review,394,0,Strengthen parent/member evidence before any role application.,relation evidence review notes,"Do not use same source family, year, or region as sufficient parentage."
+phase_2_editorial_cover_first,107,107,Draft cover scope and editorial reading note before sandbox packet shaping.,cover/editorial draft queue,Do not run full rebuild; use sandbox packet trials only.
+phase_3_sandbox_packet_trial,6,6,Run a small sandbox packet-shape trial.,sandbox packet output for manual review,Do not write official payload until manual review passes.
+phase_4_card_appendix_support,27,0,Keep as card or appendix support until stronger anchor/sub relation exists.,support-evidence queue,Do not promote card-heavy pools into normal mains.
+phase_5_method_review_hold,81,0,Hold for later method review after high-confidence packets are resolved.,deferred review list,Do not spend rebuild budget here yet.

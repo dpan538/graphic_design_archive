@@ -11914,6 +11914,93 @@ Safety:
   Remaining broad-scan hits were historical safety-scan language already
   present in this log.
 
+## 2026-06-21 - Research packet readiness layers v1
+
+Goal:
+
+- Turn the research packet structure method into an ordered non-mutating work
+  queue before any packet rebuild.
+- Identify which clusters need scope review, anchor selection, relation
+  evidence review, editorial/cover drafting, sandbox packet trials, or
+  appendix/card support treatment.
+- Keep medium and large packet editorial work separate from official payload
+  generation.
+
+Implementation:
+
+- Added `scripts/audit_research_packet_readiness_layers_v1.py`.
+- The script reads:
+  - `data/research_packet_structure_requirements_v1.csv`
+  - `data/prefreeze_main_sub_text_packet_relation_role_queue_v1.csv`
+  - `data/prefreeze_main_sub_text_packet_relation_cluster_audit_v1.csv`
+- It writes:
+  - `data/research_packet_readiness_layer_queue_v1.csv`
+  - `data/research_packet_readiness_layer_actions_v1.csv`
+  - `data/research_packet_readiness_layer_summary_v1.csv`
+  - `docs/capture/RESEARCH_PACKET_READINESS_LAYER_v1.md`
+- It does not rebuild payloads, apply role overrides, write frontend mirrors,
+  download images, or change rights/image states.
+
+Results:
+
+- Queue rows: 2,088.
+- Action contract rows: 7.
+- Sandbox-only candidate rows: 113.
+- Readiness layer distribution:
+  - `phase_0_scope_review`: 199.
+  - `phase_1_anchor_selection`: 1,274.
+  - `phase_1_relation_evidence_review`: 394.
+  - `phase_2_editorial_cover_first`: 107.
+  - `phase_3_sandbox_packet_trial`: 6.
+  - `phase_4_card_appendix_support`: 27.
+  - `phase_5_method_review_hold`: 81.
+- Sandbox-only candidates by scale:
+  - `large`: 45.
+  - `medium`: 62.
+  - `small`: 6.
+- Primary blockers:
+  - `missing_or_unsettled_normal_main_anchor`: 1,274.
+  - `parentage_or_relation_confidence_not_ready`: 394.
+  - `global_or_macro_scope_unresolved`: 199.
+  - `editorial_and_cover_required_before_packet_trial`: 107.
+  - `insufficient_packet_shape_confidence`: 81.
+  - `card_heavy_without_sub_structure`: 27.
+  - `none`: 6.
+
+Interpretation:
+
+- The archive is not ready for a broad packet rebuild. The largest blocker is
+  normal-main anchor selection, not missing source volume.
+- The `phase_2_editorial_cover_first` rows are promising, but they still need
+  cover scope and curated reading-note drafts before a sandbox packet trial.
+- Only 6 clusters are ready for a direct sandbox packet-shape trial.
+- The 199 scope-review rows should be handled before packet construction,
+  especially global/transnational or macro buckets that could otherwise become
+  false country packets.
+- The 27 card/appendix support rows should not be promoted into normal mains
+  until stronger anchor/sub evidence appears.
+- This pass supports a staged final phase: scope -> anchor -> relation evidence
+  -> editorial/cover -> sandbox packet trial -> manual review -> rebuild.
+
+Safety:
+
+- No image files were downloaded.
+- No rights, source authority, authorship, or IMG01/IMG03 image-state upgrades
+  were made.
+- No packet role was applied by this audit.
+- Sandbox-ready means sandbox-only; it does not permit official payload writes.
+- The official payload, frontend mirrors, shards, and release build outputs
+  were not modified.
+- `python3 -m py_compile scripts/audit_research_packet_readiness_layers_v1.py`
+  passed.
+- `git diff --check` passed for this round's intended commit-bound files.
+- Commit-bound safety scan for `API_KEY`, token, password, secret, cookie,
+  session, bearer, `/Users/`, and `.env` found no real credential, bearer
+  value, cookie/session assignment, API key assignment, local user path, or
+  env-file reference in the new readiness script, CSVs, or report. Remaining
+  broad-scan hits were historical safety-scan language already present in this
+  log.
+
 ## 2026-06-21 — Packet Relation Tiny Seed Resolution v1
 
 Goal:
