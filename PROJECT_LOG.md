@@ -11245,3 +11245,61 @@ Verification:
   historical log scan terms, existing WebLLM token/session discussion, the
   second-pass `event photo|conference|session` risk-classification pattern, and
   ordinary text such as `undersecretary` in source-description excerpts.
+
+## 2026-06-21 — Main/Sub/Text Tiny Sandbox Card Preview v1
+
+Goal:
+
+- Test whether the second-pass calibrated `card_context` rows can move through
+  the real candidate build path as card/support surfaces without touching the
+  official release payload, frontend mirrors, rights states, or image files.
+
+Implementation:
+
+- Added `scripts/build_main_sub_text_sandbox_card_preview_v1.py`.
+- The script reads the 7 confirmed second-pass preview rows from
+  `data/prefreeze_main_sub_text_sandbox_candidate_confirmed_preview_v1.csv`,
+  resolves each `capture_id` back to its capture records CSV, merges them onto
+  the existing packet-applied role override layer, and writes an auditable
+  sandbox override file:
+  `data/prefreeze_main_sub_text_sandbox_card_preview_overrides_v1.csv`.
+- It sets `PREFREEZE_ROLE_OVERRIDES_PATH` only inside the process, runs the same
+  candidate build functions in memory, compares against the existing local
+  pre-freeze candidate payload, and writes only small CSV/Markdown audit
+  outputs. It does not write a preview JSON payload.
+
+Results:
+
+- Base override rows: 2,445.
+- Sandbox preview overrides added: 7.
+- Merged sandbox override rows: 2,452.
+- Rejected/collision rows: 0.
+- Preview card applications: 7 of 7.
+- Candidate surfaces: 16,175 -> 16,175 (delta 0).
+- Active public sources: 14,997 -> 14,997 (delta 0).
+- Main sheets: 13,537 -> 13,530 (delta -7).
+- Cards: 1,944 -> 1,951 (delta +7).
+- Object source-visible rate: 98.92% -> 98.92% (delta 0.00).
+- Object verified-open rate: 95.29% -> 95.29% (delta 0.00).
+- Object weighted publication-grade rate: 97.26% -> 97.26% (delta 0.00).
+- Object IMG04 rate: 0.82% -> 0.82% (delta 0.00).
+
+Interpretation:
+
+- The tiny sandbox supports the method direction: confirmed `card_context`
+  records can be demoted from main-sheet anchors to card/support surfaces
+  without reducing source count, object visibility, verified-open status, or
+  weighted publication-grade coverage.
+- This is still a preview layer, not an archive-wide rule and not a release
+  mutation. It validates the plumbing and a very small calibrated sample only.
+- The next method step should be a broader calibration queue, with explicit
+  human-readable reasons for why a record is a research anchor, sub-sheet,
+  card/context record, text page, appendix, or exclusion candidate.
+
+Safety:
+
+- No image files were downloaded.
+- IMG01/IMG03 were not upgraded by heuristic, LLM, TOS, platform, or
+  source-priority signals.
+- The official `generated/public_surfaces_v1.json` and frontend mirrors were
+  not edited by this preview.
