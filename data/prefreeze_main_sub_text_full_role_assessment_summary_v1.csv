@@ -1,0 +1,53 @@
+metric,value,notes
+scope,non_mutating_full_main_assessment,"No rebuild, no role override, no image download, no rights/image-state change."
+main_sheets_scanned,13537,All candidate publicationRole=main_sheet surfaces.
+calibration_sample_rows,500,Stratified sample for next method review.
+median_anchor_score,48,Median overall research anchor score.
+median_risk_pressure,8,Median risk pressure score.
+action:downgrade_to_card_candidate,5666,Recommended next action distribution.
+action:packet_anchor_review,3179,Recommended next action distribution.
+action:keep_main_anchor,1429,Recommended next action distribution.
+action:manual_review,1280,Recommended next action distribution.
+action:keep_main_add_text,1018,Recommended next action distribution.
+action:downgrade_to_sub_candidate,964,Recommended next action distribution.
+action:convert_to_text_or_appendix,1,Recommended next action distribution.
+risk_flag:commons_file_source,12947,Risk flag distribution across main sheets.
+risk_flag:stamp_or_philatelic:stamp,5598,Risk flag distribution across main sheets.
+risk_flag:stamp_or_philatelic:stamps,4619,Risk flag distribution across main sheets.
+risk_flag:stamp_or_philatelic:postage,3975,Risk flag distribution across main sheets.
+risk_flag:non_design_drift:specimen,157,Risk flag distribution across main sheets.
+risk_flag:weak_context:anniversary,74,Risk flag distribution across main sheets.
+risk_flag:stamp_or_philatelic:commemorative,64,Risk flag distribution across main sheets.
+risk_flag:non_design_drift:fossil,54,Risk flag distribution across main sheets.
+risk_flag:non_design_drift:bivalve,53,Risk flag distribution across main sheets.
+risk_flag:non_design_drift:limestone,53,Risk flag distribution across main sheets.
+risk_flag:non_design_drift:ordovician,53,Risk flag distribution across main sheets.
+risk_flag:non_design_drift:bird,39,Risk flag distribution across main sheets.
+risk_flag:stamp_or_philatelic:philatelic,35,Risk flag distribution across main sheets.
+risk_flag:weak_context:talk,29,Risk flag distribution across main sheets.
+risk_flag:weak_context:inauguration,19,Risk flag distribution across main sheets.
+risk_flag:source_register:inventory,12,Risk flag distribution across main sheets.
+risk_flag:non_design_drift:botanical,10,Risk flag distribution across main sheets.
+risk_flag:weak_context:conference,10,Risk flag distribution across main sheets.
+risk_flag:weak_context:profile,9,Risk flag distribution across main sheets.
+risk_flag:non_design_drift:wildlife,8,Risk flag distribution across main sheets.
+positive_flag:graphic,13090,Design-object positive signal distribution across main sheets.
+positive_flag:design,12972,Design-object positive signal distribution across main sheets.
+positive_flag:visual communication,12828,Design-object positive signal distribution across main sheets.
+positive_flag:poster,3486,Design-object positive signal distribution across main sheets.
+positive_flag:film poster,1416,Design-object positive signal distribution across main sheets.
+positive_flag:advertisement,1300,Design-object positive signal distribution across main sheets.
+positive_flag:advertising,1245,Design-object positive signal distribution across main sheets.
+positive_flag:packaging,849,Design-object positive signal distribution across main sheets.
+positive_flag:book cover,777,Design-object positive signal distribution across main sheets.
+positive_flag:magazine,596,Design-object positive signal distribution across main sheets.
+positive_flag:print,418,Design-object positive signal distribution across main sheets.
+positive_flag:catalogue,372,Design-object positive signal distribution across main sheets.
+positive_flag:typography,282,Design-object positive signal distribution across main sheets.
+positive_flag:exhibition,227,Design-object positive signal distribution across main sheets.
+positive_flag:publication,212,Design-object positive signal distribution across main sheets.
+positive_flag:campaign,153,Design-object positive signal distribution across main sheets.
+positive_flag:identity,80,Design-object positive signal distribution across main sheets.
+positive_flag:logo,69,Design-object positive signal distribution across main sheets.
+positive_flag:brand,56,Design-object positive signal distribution across main sheets.
+positive_flag:zine,20,Design-object positive signal distribution across main sheets.

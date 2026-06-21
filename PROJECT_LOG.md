@@ -11303,3 +11303,84 @@ Safety:
   source-priority signals.
 - The official `generated/public_surfaces_v1.json` and frontend mirrors were
   not edited by this preview.
+
+## 2026-06-21 — Full Main/Sub/Text Role Assessment v1
+
+Goal:
+
+- Move from a 7-row sandbox proof to a full, non-mutating assessment of every
+  candidate main sheet before any broader role override or rebuild.
+- Produce a reviewable risk map for deciding which surfaces may remain main
+  anchors, which need editorial text, which require packet relation design, and
+  which are likely sub/card/text/appendix candidates.
+
+Implementation:
+
+- Added `scripts/audit_main_sub_text_full_role_assessment_v1.py`.
+- The script reads only
+  `generated/public_surfaces_prefreeze_candidate_v1.json`, scores each
+  `publicationRole=main_sheet` surface, and writes audit outputs only.
+- It uses separate dimensions for source depth, relation density, text depth,
+  design-object confidence, risk pressure, region scarcity, period value, and
+  editorial need.
+- It generates a 500-row stratified calibration sample for the next method
+  review rather than writing or applying any role overrides.
+
+Outputs:
+
+- `data/prefreeze_main_sub_text_full_role_assessment_v1.csv`
+- `data/prefreeze_main_sub_text_full_role_assessment_summary_v1.csv`
+- `data/prefreeze_main_sub_text_full_role_action_by_period_v1.csv`
+- `data/prefreeze_main_sub_text_full_role_action_by_region_v1.csv`
+- `data/prefreeze_main_sub_text_full_role_calibration_sample_v1.csv`
+- `docs/capture/MAIN_SUB_TEXT_FULL_ROLE_ASSESSMENT_v1.md`
+
+Results:
+
+- Main sheets scanned: 13,537.
+- Calibration sample rows: 500.
+- Median research anchor score: 48.
+- Median risk pressure score: 8.
+- Recommended next-action distribution:
+  - `downgrade_to_card_candidate`: 5,666.
+  - `packet_anchor_review`: 3,179.
+  - `keep_main_anchor`: 1,429.
+  - `manual_review`: 1,280.
+  - `keep_main_add_text`: 1,018.
+  - `downgrade_to_sub_candidate`: 964.
+  - `convert_to_text_or_appendix`: 1.
+
+Period pressure:
+
+- `1930_1970`: 4,566 main sheets; 312 keep-main, 358 add-text,
+  1,155 packet-review, 340 sub-candidates, 2,030 card-candidates.
+- `pre_1930`: 3,866 main sheets; 670 keep-main, 346 add-text,
+  608 packet-review, 245 sub-candidates, 1,563 card-candidates.
+- `1970_2000`: 3,462 main sheets; 125 keep-main, 156 add-text,
+  1,073 packet-review, 308 sub-candidates, 1,645 card-candidates.
+- `2000_2026`: 1,640 main sheets; 322 keep-main, 158 add-text,
+  340 packet-review, 71 sub-candidates, 428 card-candidates.
+
+Interpretation:
+
+- The full assessment does not support immediate archive-wide demotion. It
+  supports a staged review model: first calibrate the 500-row sample, then test
+  a larger sandbox override only for high-confidence sub/card/text candidates.
+- `packet_anchor_review` is the largest backlog and should become the main
+  research-structure workstream: these records may be main anchors, sub sheets,
+  or siblings under a stronger packet anchor.
+- The card-candidate queue is heavily shaped by stamp/philatelic and Commons
+  file-source patterns. The final rule keeps stamp/philatelic records out of
+  `keep_main_anchor` and `keep_main_add_text` by default; they remain useful
+  evidence but should not automatically carry main-sheet authority.
+- The sample remains Commons-heavy because the underlying candidate archive is
+  Commons-heavy; this is a calibration risk to keep visible during review.
+
+Safety:
+
+- No image files were downloaded.
+- No rights, authorship, source authority, or IMG01/IMG03 image-state upgrades
+  were made.
+- Region scarcity and period value are internal triage signals only.
+- No official payload, frontend mirror, shard, or release build output was
+  modified by this assessment.
