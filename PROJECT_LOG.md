@@ -11798,6 +11798,90 @@ Safety:
   hits were historical safety-scan language in this log and public source-title
   words such as `Secret`.
 
+## 2026-06-21 — Packet Relation Tiny Seed Resolution v1
+
+Goal:
+
+- Continue the cautious packet-relation validation by reviewing the six
+  non-Commons tiny sandbox seeds from the source-family tuning audit.
+- Determine whether any seed can safely enter a tiny sandbox, or whether each
+  seed needs region, anchor, member, or object-evidence repair first.
+- Keep the pass non-mutating and preserve all rights/image-state boundaries.
+
+Implementation:
+
+- Added `scripts/audit_main_sub_text_packet_relation_tiny_seed_resolution_v1.py`.
+- The script reads the tiny sandbox seed queue, source-family role review, and
+  packet relation role queue.
+- It classifies seed role rows into record-kind hints such as
+  `poster_or_campaign_item`, `issue_or_serial`, `profile_or_interview`,
+  `event_or_exhibition`, and `book_or_software`.
+- It emits seed-level manual resolution decisions and role-detail evidence.
+
+Outputs:
+
+- `data/prefreeze_main_sub_text_packet_relation_tiny_seed_resolution_v1.csv`
+- `data/prefreeze_main_sub_text_packet_relation_tiny_seed_role_detail_v1.csv`
+- `data/prefreeze_main_sub_text_packet_relation_tiny_seed_resolution_summary_v1.csv`
+- `docs/capture/MAIN_SUB_TEXT_PACKET_RELATION_TINY_SEED_RESOLUTION_v1.md`
+
+Results:
+
+- Tiny seed clusters reviewed: 6.
+- Role rows inside seed clusters: 44.
+- Seeds currently ready for tiny sandbox after manual sign-off: 0.
+- Resolution status distribution:
+  - `hold_macro_anchor_only_series`: 1.
+  - `needs_anchor_selection_review`: 1.
+  - `hold_profile_directory_not_packet`: 1.
+  - `needs_region_split_before_tiny_sandbox`: 1.
+  - `hold_reference_publication_drift`: 1.
+  - `needs_member_evidence_review`: 1.
+- Record-kind hints inside the six seeds:
+  - `poster_or_campaign_item`: 12.
+  - `issue_or_serial`: 12.
+  - `profile_or_interview`: 8.
+  - `event_or_exhibition`: 7.
+  - `book_or_software`: 5.
+
+Interpretation:
+
+- No non-Commons seed should be moved into an actual sandbox yet.
+- Internet Archive 2015-2019 is a macro/global anchor-only issue series; it
+  needs region and anchor/member shape resolution before any role change.
+- Library of Congress 1935-1939 has eligible member/sub rows but no
+  blocker-free anchor; it needs explicit anchor-selection review.
+- Another Graphic 2025-2029 is a profile/directory cluster rather than a
+  proven work/project packet; it should stay out of sandbox and remain
+  card/profile support unless project-level records appear.
+- Internet Archive 2010-2014 has some anchor/member shape but is macro/global;
+  it needs region-scope review before a tiny sandbox.
+- Internet Archive 2020-2024 mixes reference/software/web-design books with
+  archive issues, creating design-object drift risk; it should be split by
+  object type before any packet logic.
+- Te Papa 1940-1944 has one candidate anchor but member rows are blocked by
+  weak design-object evidence; member evidence must be reviewed first.
+
+Safety:
+
+- No image files were downloaded.
+- No rights, source authority, authorship, or IMG01/IMG03 image-state upgrades
+  were made.
+- No source-family or seed signal may override macro/unresolved region review.
+- Profile, interview, software/book, event/context, and support/reference
+  records remain card/support candidates unless explicit design-object evidence
+  supports a stronger relation.
+- The official payload, frontend mirrors, shards, and release build outputs
+  were not modified.
+- `python3 -m py_compile scripts/audit_main_sub_text_packet_relation_tiny_seed_resolution_v1.py`
+  passed.
+- `git diff --check` passed for the commit-bound files.
+- Commit-bound safety scan for `API_KEY`, token, password, secret, cookie,
+  session, bearer, `/Users/`, and `.env` found no real credential, bearer
+  value, cookie/session assignment, API key assignment, local user path, or
+  env-file reference in this round's new script, CSVs, or report. Broad-scan
+  hits were historical safety-scan language in this log only.
+
 ## 2026-06-21 — Packet Relation Source-Family Tuning v1
 
 Goal:
