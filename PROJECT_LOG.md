@@ -11797,3 +11797,95 @@ Safety:
   env-file reference in this round's new script, CSVs, or report. Broad-scan
   hits were historical safety-scan language in this log and public source-title
   words such as `Secret`.
+
+## 2026-06-21 — Packet Relation Source-Family Tuning v1
+
+Goal:
+
+- Continue the cautious range-validation sequence after the non-Commons scope
+  audit found zero strict sandbox-ready clusters.
+- Explain why non-Commons source families are blocked before defining any
+  broader main/sub/text role logic.
+- Produce source-family-specific tuning signals as audit guidance only, not as
+  automatic role upgrades.
+
+Implementation:
+
+- Added
+  `scripts/audit_main_sub_text_packet_relation_source_family_tuning_v1.py`.
+- The script reads the source-family scope, cluster review, role review, and
+  underlying packet relation role queue files.
+- It emits a family tuning matrix, cluster blocker queue, audit-only rule
+  candidate list, tiny sandbox seed list, summary CSV, and capture report.
+- It does not rebuild payloads, apply overrides, write frontend mirrors,
+  download images, or change rights/image states.
+
+Outputs:
+
+- `data/prefreeze_main_sub_text_packet_relation_source_family_tuning_matrix_v1.csv`
+- `data/prefreeze_main_sub_text_packet_relation_source_family_cluster_blockers_v1.csv`
+- `data/prefreeze_main_sub_text_packet_relation_source_family_rule_candidates_v1.csv`
+- `data/prefreeze_main_sub_text_packet_relation_source_family_tiny_sandbox_seed_v1.csv`
+- `data/prefreeze_main_sub_text_packet_relation_source_family_tuning_summary_v1.csv`
+- `docs/capture/MAIN_SUB_TEXT_PACKET_RELATION_SOURCE_FAMILY_TUNING_v1.md`
+
+Results:
+
+- Source-family tuning matrix rows: 27.
+- Non-Commons cluster blocker rows: 303.
+- Audit-only source-family rule candidate rows: 27.
+- Future tiny sandbox seed rows after manual tuning: 6.
+- Strict-ready clusters created by this pass: 0.
+- Tuning status distribution:
+  - `improve_design_object_and_cluster_confidence`: 15 source families.
+  - `define_parentage_signal`: 5 source families.
+  - `tiny_seed_after_manual_resolution`: 4 source families.
+  - `manual_source_family_review`: 3 source families.
+- Dominant primary blockers:
+  - `lane_not_strong`: 23 source families.
+  - `missing_member_or_sub`: 2 source families.
+  - `missing_anchor`: 1 source family.
+  - `no_eligible_rows`: 1 source family.
+- Cluster-level manual resolution paths:
+  - `improve_relation_evidence_before_sandbox`: 255 clusters.
+  - `resolve_region_scope_before_packeting`: 46 clusters.
+  - `identify_blocker_free_anchor_candidate`: 1 cluster.
+  - `identify_blocker_free_member_or_sub_candidate`: 1 cluster.
+
+Interpretation:
+
+- The next actionable pool is small, not broad: Internet Archive, Te Papa,
+  Library of Congress, and Another Graphic have blocked eligible rows that
+  could support a tiny manual tuning pass after region/anchor/member issues are
+  resolved.
+- Gallica / BnF APIs, Georgia State CONTENTdm, DigitalNZ, NAIDOC Poster
+  Gallery, and Malaysia Design Archive need source-family parentage signals
+  defined first. These signals should remain audit-only until they improve
+  cluster confidence without creating false parentage.
+- Most non-Commons families are not blocked by lack of source count alone.
+  They are blocked because design-object evidence, cluster confidence, region
+  scope, or explicit parent/member relation evidence is insufficient.
+- This supports a cautious methodology: tune relation evidence first, rerun the
+  source-family scope audit, and only then run a tiny sandbox on strict-ready
+  clusters.
+
+Safety:
+
+- No image files were downloaded.
+- No rights, source authority, authorship, or IMG01/IMG03 image-state upgrades
+  were made.
+- Rule candidates are audit signals only.
+- No source-family signal may override macro/unresolved region review.
+- Event/photo/interview/profile/stamp/support records remain card/support
+  candidates unless design-object evidence is explicit.
+- The official payload, frontend mirrors, shards, and release build outputs
+  were not modified.
+- `python3 -m py_compile scripts/audit_main_sub_text_packet_relation_source_family_tuning_v1.py`
+  passed.
+- `git diff --check` passed for the commit-bound files.
+- Commit-bound safety scan for `API_KEY`, token, password, secret, cookie,
+  session, bearer, `/Users/`, and `.env` found no real credential, bearer
+  value, cookie/session assignment, API key assignment, local user path, or
+  env-file reference in this round's new script, CSVs, or report. Broad-scan
+  hits were historical safety-scan language in this log and public source-title
+  words such as `Secret`.

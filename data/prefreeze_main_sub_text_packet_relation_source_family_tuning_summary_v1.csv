@@ -1,0 +1,23 @@
+metric,value,notes
+scope,non_mutating_source_family_tuning_audit,"No rebuild, role override, payload write, image download, or rights/image-state change."
+source_family_rows,27,Source-family tuning matrix rows.
+cluster_blocker_rows,303,Non-Commons clusters with blocking dimensions.
+rule_candidate_rows,27,Audit-only source-family rule signal candidates.
+tiny_sandbox_seed_rows,6,Manual seed rows for a future tiny sandbox after tuning.
+strict_ready_clusters,0,Carried forward from scope v1; this pass does not create ready clusters.
+tuning_status:improve_design_object_and_cluster_confidence,15,Source-family tuning status distribution.
+tuning_status:define_parentage_signal,5,Source-family tuning status distribution.
+tuning_status:tiny_seed_after_manual_resolution,4,Source-family tuning status distribution.
+tuning_status:manual_source_family_review,3,Source-family tuning status distribution.
+primary_blocker:lane_not_strong,23,Dominant source-family blocking dimension.
+primary_blocker:missing_member_or_sub,2,Dominant source-family blocking dimension.
+primary_blocker:missing_anchor,1,Dominant source-family blocking dimension.
+primary_blocker:no_eligible_rows,1,Dominant source-family blocking dimension.
+resolution_path:improve_relation_evidence_before_sandbox,255,Cluster-level manual resolution path distribution.
+resolution_path:resolve_region_scope_before_packeting,46,Cluster-level manual resolution path distribution.
+resolution_path:identify_blocker_free_anchor_candidate,1,Cluster-level manual resolution path distribution.
+resolution_path:identify_blocker_free_member_or_sub_candidate,1,Cluster-level manual resolution path distribution.
+family_class:design_or_cultural_institution,13,Source-family class distribution.
+family_class:library_archive_or_aggregator,8,Source-family class distribution.
+family_class:museum_or_collection_api,5,Source-family class distribution.
+family_class:other_non_commons,1,Source-family class distribution.
