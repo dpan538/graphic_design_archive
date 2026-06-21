@@ -1,0 +1,31 @@
+metric,value,notes
+calibration_scope,codex_second_pass,Second-pass review enriched with candidate payload; still non-mutating.
+calibration_rows,80,Rows in the manual calibration queue.
+agreement_rows,79,Rows where second pass accepts the initial role.
+agreement_rate,98.75%,Accept-initial rows divided by calibration rows.
+fail_rows,0,Rows where second pass rejects the initial role outright.
+fail_rate,0.00%,Reject-initial rows divided by calibration rows.
+confirmed_candidate_preview_rows,7,Candidate-pool rows confirmed by second pass; not apply-ready.
+sandbox_gate_status,codex_calibrated_preview_only,No override is applied by this script.
+initial_recommended_role:card_context,26,Second-pass distribution by initial_recommended_role.
+initial_recommended_role:sub_under_packet,17,Second-pass distribution by initial_recommended_role.
+initial_recommended_role:manual_hold,15,Second-pass distribution by initial_recommended_role.
+initial_recommended_role:main_needs_text,14,Second-pass distribution by initial_recommended_role.
+initial_recommended_role:keep_main,7,Second-pass distribution by initial_recommended_role.
+initial_recommended_role:exclude_or_deprioritize,1,Second-pass distribution by initial_recommended_role.
+second_pass_role:card_context,27,Second-pass distribution by second_pass_role.
+second_pass_role:sub_under_packet,17,Second-pass distribution by second_pass_role.
+second_pass_role:manual_hold,15,Second-pass distribution by second_pass_role.
+second_pass_role:main_needs_text,14,Second-pass distribution by second_pass_role.
+second_pass_role:keep_main,7,Second-pass distribution by second_pass_role.
+second_pass_decision:accept_initial,79,Second-pass distribution by second_pass_decision.
+second_pass_decision:revise_initial,1,Second-pass distribution by second_pass_decision.
+second_pass_confidence:medium,56,Second-pass distribution by second_pass_confidence.
+second_pass_confidence:high,24,Second-pass distribution by second_pass_confidence.
+second_pass_fail_pattern:none,52,Second-pass distribution by second_pass_fail_pattern.
+second_pass_fail_pattern:parent_needs_named_anchor,17,Second-pass distribution by second_pass_fail_pattern.
+second_pass_fail_pattern:stamp_or_commemorative_context,10,Second-pass distribution by second_pass_fail_pattern.
+second_pass_fail_pattern:natural_history_topic_design_object_context,1,Second-pass distribution by second_pass_fail_pattern.
+second_pass_parent_status:not_required,63,Second-pass distribution by second_pass_parent_status.
+second_pass_parent_status:cluster_key_parent_needs_named_anchor,17,Second-pass distribution by second_pass_parent_status.
+confirmed_candidate_role:card_context,7,Confirmed preview role distribution.

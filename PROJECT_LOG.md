@@ -11154,3 +11154,94 @@ Verification:
   env-file reference in the new method/review outputs. Remaining hits are
   historical scan terms and existing WebLLM token/session discussion in
   `PROJECT_LOG.md`.
+
+## 2026-06-20 - Main/Sub/Text Calibration Second Pass v1
+
+Scope:
+
+- Ran a second-pass Codex calibration over the 80-row manual calibration queue.
+- Enriched each queue row with fields from
+  `generated/public_surfaces_prefreeze_candidate_v1.json`, including source
+  description, archive description, historical context note, classification
+  rationale, object type, medium, place text, source subjects, and source URL.
+- This pass did not apply overrides, did not rebuild surfaces, did not generate
+  new surfaces, did not download images, and did not change rights or image
+  states.
+
+New outputs:
+
+- `scripts/calibrate_main_sub_text_review_second_pass_v1.py`.
+- `data/prefreeze_main_sub_text_calibration_second_pass_v1.csv`.
+- `data/prefreeze_main_sub_text_calibration_second_pass_summary_v1.csv`.
+- `data/prefreeze_main_sub_text_sandbox_candidate_confirmed_preview_v1.csv`.
+- `docs/capture/MAIN_SUB_TEXT_CALIBRATION_SECOND_PASS_v1.md`.
+- `docs/capture/MAIN_SUB_TEXT_SANDBOX_GATE_SECOND_PASS_v1.md`.
+
+Second-pass metrics:
+
+- Calibration rows: 80.
+- Agreement rows: 79.
+- Agreement rate: 98.75%.
+- Fail rows: 0.
+- Fail rate: 0.00%.
+- Confirmed candidate preview rows: 7.
+- Sandbox gate status: `codex_calibrated_preview_only`.
+
+Second-pass role distribution:
+
+- `card_context`: 27.
+- `sub_under_packet`: 17.
+- `manual_hold`: 15.
+- `main_needs_text`: 14.
+- `keep_main`: 7.
+
+Second-pass patterns:
+
+- `none`: 52.
+- `parent_needs_named_anchor`: 17.
+- `stamp_or_commemorative_context`: 10.
+- `natural_history_topic_design_object_context`: 1.
+
+Calibration correction:
+
+- The first second-pass rule was too broad for false positives because it
+  treated `specimen`, radiology, and tuberculosis language as exclusion signals.
+- The final rule only treats natural-history/geology/fossil/mineral language as
+  false-positive risk, and if the same record also has poster/advertising/design
+  object evidence it becomes `card_context` rather than
+  `exclude_or_deprioritize`.
+- This corrected `Who's who in the zoo Illustrated natural history prepared by
+  the WPA Federal Writers Project` from exclusion/deprioritization to
+  `card_context`, preserving a real poster/advertising research path while
+  preventing it from becoming a main anchor.
+
+Confirmed preview candidates:
+
+- 7 rows were confirmed as `card_context` preview candidates only.
+- They are not apply-ready and are not role overrides.
+- Any future sandbox override should be limited to these preview rows unless a
+  new calibration pass expands the pool.
+
+Interpretation:
+
+- The method now clears the intended second-pass calibration threshold, but this
+  is still a Codex-calibrated preview rather than a human-approved structural
+  change.
+- The next possible action is a tiny sandbox override preview limited to the 7
+  confirmed candidate rows, followed by a candidate-only rebuild if explicitly
+  accepted.
+- Broad main demotion, rights/image-state changes, contested geography
+  normalization, and official payload/frontend rebuilds remain forbidden.
+
+Verification:
+
+- `python3 -m py_compile
+  scripts/calibrate_main_sub_text_review_second_pass_v1.py` passed.
+- `git diff --check` passed for the commit-bound second-pass calibration files.
+- Commit-bound safety scan for `API_KEY`, token, password, secret, cookie,
+  session, bearer, `/Users/`, and `.env` found no real credential, bearer
+  value, cookie/session assignment, API key assignment, local user path, or
+  env-file reference in the new second-pass outputs. Remaining hits are
+  historical log scan terms, existing WebLLM token/session discussion, the
+  second-pass `event photo|conference|session` risk-classification pattern, and
+  ordinary text such as `undersecretary` in source-description excerpts.
