@@ -11384,3 +11384,122 @@ Safety:
 - Region scarcity and period value are internal triage signals only.
 - No official payload, frontend mirror, shard, or release build output was
   modified by this assessment.
+
+## 2026-06-21 — Full Main/Sub/Text Calibration and Sandbox Preview v1
+
+Goal:
+
+- Calibrate the 500-row full-role assessment sample before any broader
+  main/sub/text restructuring.
+- Convert only the safest calibrated card/sub/text candidates into a
+  candidate-only sandbox preview, without mutating the official payload.
+- Validate whether the method can reduce over-broad main sheets while keeping
+  source, rights, object, and image-state metrics stable.
+
+Implementation:
+
+- Added `scripts/calibrate_main_sub_text_full_role_sample_v1.py`.
+- Added `scripts/build_main_sub_text_full_role_sandbox_preview_v1.py`.
+- The calibration script reads the existing 500-row full-role sample and writes
+  method-review outputs only.
+- The sandbox preview script reads the calibrated preview-only candidate list,
+  merges it with existing pre-freeze role overrides in memory, and runs a
+  candidate payload build without writing `generated/public_surfaces_v1.json`
+  or any frontend mirror.
+
+Outputs:
+
+- `data/prefreeze_main_sub_text_full_role_calibration_v1.csv`
+- `data/prefreeze_main_sub_text_full_role_calibration_summary_v1.csv`
+- `data/prefreeze_main_sub_text_full_role_sandbox_candidates_v1.csv`
+- `data/prefreeze_main_sub_text_full_role_sandbox_preview_overrides_v1.csv`
+- `data/prefreeze_main_sub_text_full_role_sandbox_preview_override_summary_v1.csv`
+- `data/prefreeze_main_sub_text_full_role_sandbox_preview_surface_delta_v1.csv`
+- `data/prefreeze_main_sub_text_full_role_sandbox_preview_metrics_v1.csv`
+- `docs/capture/MAIN_SUB_TEXT_FULL_ROLE_CALIBRATION_v1.md`
+- `docs/capture/MAIN_SUB_TEXT_FULL_ROLE_SANDBOX_PREVIEW_v1.md`
+
+Calibration results:
+
+- Calibration rows: 500.
+- Preview-only sandbox candidates: 135.
+- Calibration status distribution:
+  - `accepted_for_method`: 212.
+  - `accepted_for_preview`: 135.
+  - `revise_rule`: 108.
+  - `hold_for_manual`: 45.
+- Calibrated action distribution:
+  - `manual_review`: 188.
+  - `downgrade_to_card_candidate`: 126.
+  - `keep_main_anchor`: 88.
+  - `downgrade_to_sub_candidate`: 53.
+  - `packet_anchor_review`: 29.
+  - `keep_main_add_text`: 15.
+  - `convert_to_text_or_appendix`: 1.
+- Preview candidate role distribution:
+  - `card_context`: 126.
+  - `sub_under_packet`: 8.
+  - `text_or_appendix`: 1.
+- Source-family bias remains visible: 430 of 500 calibration rows are
+  Wikimedia Commons records. This reflects the current archive balance and is a
+  method risk to keep visible in later review.
+
+Sandbox preview results:
+
+- Candidate input rows: 135.
+- Existing base override rows: 2,445.
+- Sandbox preview overrides: 134.
+- Rejected rows: 1, because an existing override collision was detected and
+  the previous decision was not overwritten.
+- Preview-applied rows: 134.
+- Preview role distribution:
+  - `card_context`: 126.
+  - `sub_under_packet`: 8.
+- Preview disposition distribution:
+  - `card`: 126.
+  - `support_packet_appendix_text`: 8.
+
+Metric deltas:
+
+- Surfaces: 16,175 -> 16,175.
+- Active public sources: 14,997 -> 14,997.
+- Main sheets: 13,537 -> 13,403.
+- Cards: 1,944 -> 2,070.
+- Support packets: 692 -> 700.
+- Text templates: 94 -> 94.
+- Object source-visible rate: 98.92% -> 98.92%.
+- Object verified-open rate: 95.29% -> 95.29%.
+- Object weighted publication-grade rate: 97.26% -> 97.26%.
+- Object IMG04 rate: 0.82% -> 0.82%.
+
+Interpretation:
+
+- The method is strong enough for a staged sandbox path, not for immediate
+  archive-wide demotion.
+- The first safe movement is mostly card conversion for stamp/philatelic and
+  thin context evidence, plus a smaller support-packet movement.
+- Source, object, rights, and image-state metrics staying unchanged is the
+  expected result: the preview changes research role structure, not source
+  inclusion or rights state.
+- The next methodological work should focus on packet relation design:
+  deciding which packet-anchor candidates deserve main-sheet status, which
+  become sub sheets, and where text pages are required.
+
+Safety:
+
+- No image files were downloaded.
+- No rights, authorship, source authority, or IMG01/IMG03 image-state upgrades
+  were made.
+- Region scarcity, period value, and source-family pressure remain internal
+  triage signals only.
+- The official payload, frontend mirrors, shards, and release build outputs
+  were not modified.
+- `python3 -m py_compile` passed for both new scripts.
+- `git diff --check` passed for the commit-bound files.
+- Commit-bound safety scan for `API_KEY`, token, password, secret, cookie,
+  session, bearer, `/Users/`, and `.env` found no real credential, bearer
+  value, cookie/session assignment, API key assignment, local user path, or
+  env-file reference. Remaining broad-scan hits are expected false positives:
+  `os.environ` in the sandbox process wrapper, historical log scan terms,
+  source titles such as `Secrets`/`Secretary`, and public `poster-session`
+  wording already present in prior override evidence.
