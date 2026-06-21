@@ -11705,3 +11705,95 @@ Safety:
   `os.environ` in the sandbox process wrapper, historical safety-scan language
   in this log, and public source-title words such as `Secretary`,
   `Secrets`, and `poster-session`.
+
+## 2026-06-21 — Packet Relation Source-Family Scope v1
+
+Goal:
+
+- Start the next range-validation round more cautiously by testing whether the
+  packet-relation method can generalize beyond the Commons-heavy sandbox.
+- Audit non-Commons source families before any broader packet role preview.
+- Keep this pass non-mutating: no rebuild, no override application, no payload
+  writes, no image download, and no rights/image-state change.
+
+Implementation:
+
+- Added
+  `scripts/audit_main_sub_text_packet_relation_source_family_scope_v1.py`.
+- The script reads
+  `data/prefreeze_main_sub_text_packet_relation_role_queue_v1.csv` and
+  `data/prefreeze_main_sub_text_packet_relation_cluster_audit_v1.csv`.
+- It classifies non-Commons source families into
+  `library_archive_or_aggregator`, `museum_or_collection_api`,
+  `design_or_cultural_institution`, and `other_non_commons`.
+- It only marks a non-Commons cluster as strict sandbox-ready when the cluster
+  is non-macro, high-confidence, `strong_packet_candidate`, small enough for a
+  cautious preview, and has both a blocker-free anchor and a blocker-free
+  member/sub row.
+
+Outputs:
+
+- `data/prefreeze_main_sub_text_packet_relation_source_family_scope_v1.csv`
+- `data/prefreeze_main_sub_text_packet_relation_source_family_cluster_review_v1.csv`
+- `data/prefreeze_main_sub_text_packet_relation_source_family_role_review_v1.csv`
+- `data/prefreeze_main_sub_text_packet_relation_source_family_validation_sample_v1.csv`
+- `data/prefreeze_main_sub_text_packet_relation_source_family_scope_summary_v1.csv`
+- `docs/capture/MAIN_SUB_TEXT_PACKET_RELATION_SOURCE_FAMILY_SCOPE_v1.md`
+
+Results:
+
+- Non-Commons role rows: 442.
+- Non-Commons packet relation clusters reviewed: 303.
+- Non-Commons source families represented: 27.
+- Stratified validation sample rows: 260.
+- Eligible non-Commons rows: 25.
+- Strict non-Commons sandbox-ready clusters: 0.
+- Source-family scope status:
+  - `needs_more_relation_or_source_depth`: 23.
+  - `eligible_but_scope_blocked`: 4.
+- Cluster scope status:
+  - `method_review_only`: 297.
+  - `scope_candidate_but_blocked`: 6.
+- Source-family class distribution by role rows:
+  - `library_archive_or_aggregator`: 272.
+  - `museum_or_collection_api`: 85.
+  - `design_or_cultural_institution`: 83.
+  - `other_non_commons`: 2.
+- Largest non-Commons families in the review queue include Gallica / BnF APIs
+  (95), Georgia State CONTENTdm (63), Internet Archive (50), Te Papa (35),
+  Wellcome Collection (32), DigitalNZ (30), NAIDOC Poster Gallery (27), and
+  Library of Congress (22).
+
+Interpretation:
+
+- Do not run a non-Commons packet sandbox from this pass.
+- The prior sandbox only validates a Commons-heavy parent/member path; it does
+  not yet justify applying the same method to museum APIs, national libraries,
+  CONTENTdm collections, design archives, or cultural institutions.
+- The current non-Commons rows lack enough explicit non-macro parent/member
+  cluster shape. The next method step should tune source-family-specific
+  relation evidence for Gallica / BnF APIs, DigitalNZ, Te Papa, Wellcome
+  Collection, Library of Congress, NAIDOC Poster Gallery, V&A Collections API,
+  CONTENTdm families, and design archive sources.
+- Any source-family parentage heuristics should remain audit signals until
+  they can pass a stricter tiny sandbox; they must not become automatic
+  role-upgrade rules.
+
+Safety:
+
+- No image files were downloaded.
+- No rights, source authority, authorship, or IMG01/IMG03 image-state upgrades
+  were made.
+- Source-family class, source-family status, region, period, and cluster
+  signals remain internal method-validation signals only.
+- The official payload, frontend mirrors, shards, and release build outputs
+  were not modified.
+- `python3 -m py_compile scripts/audit_main_sub_text_packet_relation_source_family_scope_v1.py`
+  passed.
+- `git diff --check` passed for the commit-bound files.
+- Commit-bound safety scan for `API_KEY`, token, password, secret, cookie,
+  session, bearer, `/Users/`, and `.env` found no real credential, bearer
+  value, cookie/session assignment, API key assignment, local user path, or
+  env-file reference in this round's new script, CSVs, or report. Broad-scan
+  hits were historical safety-scan language in this log and public source-title
+  words such as `Secret`.

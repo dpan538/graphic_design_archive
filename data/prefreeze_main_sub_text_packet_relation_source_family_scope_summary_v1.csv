@@ -1,0 +1,43 @@
+metric,value,notes
+scope,non_mutating_non_commons_source_family_scope,"No rebuild, no role override, no image download, no rights/image-state change."
+non_commons_role_rows,442,Non-Commons rows in packet relation role queue.
+non_commons_cluster_rows,303,Non-Commons packet relation clusters reviewed.
+source_family_rows,27,Non-Commons source families represented.
+validation_sample_rows,260,Stratified sample for source-family scope review.
+strict_sandbox_ready_clusters,0,Clusters satisfying cautious non-Commons sandbox shape.
+eligible_non_commons_rows,25,Non-Commons rows currently marked eligible for next sandbox review.
+family_scope_status:needs_more_relation_or_source_depth,23,Source-family scope status distribution.
+family_scope_status:eligible_but_scope_blocked,4,Source-family scope status distribution.
+cluster_scope_status:method_review_only,297,Non-Commons cluster scope status distribution.
+cluster_scope_status:scope_candidate_but_blocked,6,Non-Commons cluster scope status distribution.
+role_source_family:Gallica / BnF APIs,95,Non-Commons role queue source-family distribution.
+role_source_family:Georgia State CONTENTdm,63,Non-Commons role queue source-family distribution.
+role_source_family:Internet Archive,50,Non-Commons role queue source-family distribution.
+role_source_family:Te Papa,35,Non-Commons role queue source-family distribution.
+role_source_family:Wellcome Collection,32,Non-Commons role queue source-family distribution.
+role_source_family:DigitalNZ,30,Non-Commons role queue source-family distribution.
+role_source_family:NAIDOC Poster Gallery,27,Non-Commons role queue source-family distribution.
+role_source_family:Library of Congress,22,Non-Commons role queue source-family distribution.
+role_source_family:Another Graphic,11,Non-Commons role queue source-family distribution.
+role_source_family:Malaysia Design Archive,9,Non-Commons role queue source-family distribution.
+role_source_family:Smithsonian,8,Non-Commons role queue source-family distribution.
+role_source_family:Letterform Archive,7,Non-Commons role queue source-family distribution.
+role_source_family:Asian Film Archive,7,Non-Commons role queue source-family distribution.
+role_source_family:Princeton Figgy,6,Non-Commons role queue source-family distribution.
+role_source_family:Design Reviewed,6,Non-Commons role queue source-family distribution.
+role_source_family:Los Angeles Public Library Tessa / CONTENTdm,5,Non-Commons role queue source-family distribution.
+role_source_family:Art Institute of Chicago API,5,Non-Commons role queue source-family distribution.
+role_source_family:Cleveland Museum Open Access API,5,Non-Commons role queue source-family distribution.
+role_source_family:Indian Memory Project,4,Non-Commons role queue source-family distribution.
+role_source_family:Barjeel Art Foundation,3,Non-Commons role queue source-family distribution.
+role_source_family:African Digital Heritage,3,Non-Commons role queue source-family distribution.
+role_source_family:Desain Grafis Indonesia,3,Non-Commons role queue source-family distribution.
+role_source_family:V&A Collections API,2,Non-Commons role queue source-family distribution.
+role_source_family:Chinese Posters,1,Non-Commons role queue source-family distribution.
+role_source_family:SMU Libraries Digital Collections / CONTENTdm,1,Non-Commons role queue source-family distribution.
+role_source_family:GALA Queer Archive,1,Non-Commons role queue source-family distribution.
+role_source_family:Auckland Libraries Heritage Collections / CONTENTdm,1,Non-Commons role queue source-family distribution.
+family_class:library_archive_or_aggregator,272,Non-Commons role queue source-family class distribution.
+family_class:museum_or_collection_api,85,Non-Commons role queue source-family class distribution.
+family_class:design_or_cultural_institution,83,Non-Commons role queue source-family class distribution.
+family_class:other_non_commons,2,Non-Commons role queue source-family class distribution.
