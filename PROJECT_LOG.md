@@ -11503,3 +11503,109 @@ Safety:
   `os.environ` in the sandbox process wrapper, historical log scan terms,
   source titles such as `Secrets`/`Secretary`, and public `poster-session`
   wording already present in prior override evidence.
+
+## 2026-06-21 — Packet Relation Method Audit v1
+
+Goal:
+
+- Continue main/sub/text methodology work without rebuilding the official
+  payload or applying new role overrides.
+- Move from full-role scoring into packet relation design: which current main
+  sheets can act as packet anchors, which should become sub sheets, which need
+  text scaffolding, and which are only card/context evidence.
+- Explicitly detect over-broad clusters so large Commons/global buckets are not
+  mistaken for coherent research packets.
+
+Implementation:
+
+- Added `scripts/audit_main_sub_text_packet_relation_method_v1.py`.
+- The script reads
+  `data/prefreeze_main_sub_text_full_role_assessment_v1.csv` only.
+- It writes cluster-level, row-level, and sample-level review outputs. It does
+  not rebuild surfaces, does not write generated payload JSON, and does not
+  touch frontend mirrors.
+
+Outputs:
+
+- `data/prefreeze_main_sub_text_packet_relation_cluster_audit_v1.csv`
+- `data/prefreeze_main_sub_text_packet_relation_role_queue_v1.csv`
+- `data/prefreeze_main_sub_text_packet_relation_validation_sample_v1.csv`
+- `data/prefreeze_main_sub_text_packet_relation_method_summary_v1.csv`
+- `docs/capture/MAIN_SUB_TEXT_PACKET_RELATION_METHOD_v1.md`
+
+Results:
+
+- Assessment rows read: 13,537.
+- Relation clusters audited: 2,579.
+- Relation role queue rows: 12,257.
+- Validation sample rows: 800.
+
+Cluster lane distribution:
+
+- `mixed_manual_relation_review`: 1,523.
+- `small_anchor_or_manual`: 426.
+- `card_context_cluster`: 258.
+- `strong_packet_candidate`: 161.
+- `packet_parentage_review`: 92.
+- `text_scaffold_needed`: 78.
+- `macro_cluster_needs_split`: 41.
+
+Proposed relation-role distribution:
+
+- `card_context_candidate`: 5,666.
+- `packet_member_review`: 3,094.
+- `provisional_main_anchor_needs_text`: 1,018.
+- `sub_under_packet_candidate`: 964.
+- `manual_relation_review`: 748.
+- `candidate_packet_anchor`: 681.
+- `anchor_or_sibling_review`: 85.
+- `text_or_appendix_candidate`: 1.
+
+Readiness distribution:
+
+- `support_only_review`: 5,667.
+- `method_review_only`: 4,604.
+- `eligible_for_next_sandbox_review`: 1,986.
+
+Text-page planning signals:
+
+- Minimum text pages 0: 6,414.
+- Minimum text pages 1: 1,898.
+- Minimum text pages 2: 3,049.
+- Minimum text pages 3: 896.
+- These are planning signals only. They are not release requirements and should
+  not trigger filler text generation.
+
+Interpretation:
+
+- The method now distinguishes coherent packet candidates from over-broad
+  classification buckets.
+- `macro_cluster_needs_split` is important: examples include very large
+  `Global / transnational + Modern typography and layout + Wikimedia Commons`
+  groups. These need narrower source series, creator, project, object-type, or
+  theme splits before any sandbox role application.
+- `eligible_for_next_sandbox_review` is not apply-ready. It means the row can
+  be considered in a later limited sandbox only after parent-selection rules
+  are accepted.
+- `card_context_candidate` remains large because the archive still contains
+  many stamp/philatelic, event/photo, source-file, and thin-context records.
+  This supports the earlier view that many current main sheets should preserve
+  evidence as cards rather than carry research-anchor authority.
+
+Safety:
+
+- No image files were downloaded.
+- No rights, source authority, authorship, or IMG01/IMG03 image-state upgrades
+  were made.
+- Region scarcity, source-family, period, and cluster signals are internal
+  triage signals only.
+- The official payload, frontend mirrors, shards, and release build outputs
+  were not modified.
+- `python3 -m py_compile scripts/audit_main_sub_text_packet_relation_method_v1.py`
+  passed.
+- `git diff --check` passed for the commit-bound files.
+- Commit-bound safety scan for `API_KEY`, token, password, secret, cookie,
+  session, bearer, `/Users/`, and `.env` found no real credential, bearer
+  value, cookie/session assignment, API key assignment, local user path, or
+  env-file reference. Broad-scan hits are historical safety-scan language in
+  this log and public source-title words such as `Secret`/`Secretary`.

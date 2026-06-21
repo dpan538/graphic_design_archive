@@ -1,0 +1,34 @@
+metric,value,notes
+scope,non_mutating_packet_relation_method_audit,"No rebuild, no role override, no image download, no rights/image-state change."
+assessment_rows_read,13537,Rows read from full-role main-sheet assessment.
+cluster_rows,2579,Unique relation clusters audited.
+role_queue_rows,12257,Rows with relation-role proposals for review.
+validation_sample_rows,800,Stratified sample for next packet relation review.
+cluster_lane:mixed_manual_relation_review,1523,Packet relation cluster lane distribution.
+cluster_lane:small_anchor_or_manual,426,Packet relation cluster lane distribution.
+cluster_lane:card_context_cluster,258,Packet relation cluster lane distribution.
+cluster_lane:strong_packet_candidate,161,Packet relation cluster lane distribution.
+cluster_lane:packet_parentage_review,92,Packet relation cluster lane distribution.
+cluster_lane:text_scaffold_needed,78,Packet relation cluster lane distribution.
+cluster_lane:macro_cluster_needs_split,41,Packet relation cluster lane distribution.
+queue_role:card_context_candidate,5666,Proposed relation role distribution.
+queue_role:packet_member_review,3094,Proposed relation role distribution.
+queue_role:provisional_main_anchor_needs_text,1018,Proposed relation role distribution.
+queue_role:sub_under_packet_candidate,964,Proposed relation role distribution.
+queue_role:manual_relation_review,748,Proposed relation role distribution.
+queue_role:candidate_packet_anchor,681,Proposed relation role distribution.
+queue_role:anchor_or_sibling_review,85,Proposed relation role distribution.
+queue_role:text_or_appendix_candidate,1,Proposed relation role distribution.
+queue_readiness:support_only_review,5667,Relation review readiness distribution.
+queue_readiness:method_review_only,4604,Relation review readiness distribution.
+queue_readiness:eligible_for_next_sandbox_review,1986,Relation review readiness distribution.
+minimum_text_pages:0,6414,Estimated minimum text page requirement.
+minimum_text_pages:2,3049,Estimated minimum text page requirement.
+minimum_text_pages:1,1898,Estimated minimum text page requirement.
+minimum_text_pages:3,896,Estimated minimum text page requirement.
+queue_source_action:downgrade_to_card_candidate,5666,Original full-role action represented in relation queue.
+queue_source_action:packet_anchor_review,3179,Original full-role action represented in relation queue.
+queue_source_action:keep_main_anchor,1429,Original full-role action represented in relation queue.
+queue_source_action:keep_main_add_text,1018,Original full-role action represented in relation queue.
+queue_source_action:downgrade_to_sub_candidate,964,Original full-role action represented in relation queue.
+queue_source_action:convert_to_text_or_appendix,1,Original full-role action represented in relation queue.
