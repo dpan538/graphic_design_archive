@@ -12001,6 +12001,93 @@ Safety:
   broad-scan hits were historical safety-scan language already present in this
   log.
 
+## 2026-06-21 - Research packet anchor selection v1
+
+Goal:
+
+- Drill into the largest rebuild blocker: `phase_1_anchor_selection`.
+- Create a non-mutating normal-main anchor review queue before any packet tree
+  rebuild.
+- Separate plausible anchor-review candidates from card-heavy support pools,
+  weak graphic-object risks, parentage blockers, and small standalone/sub
+  decisions.
+- Keep all candidate scores as triage signals only, not role applications.
+
+Implementation:
+
+- Added `scripts/audit_research_packet_anchor_selection_v1.py`.
+- The script reads:
+  - `data/research_packet_readiness_layer_queue_v1.csv`
+  - `data/prefreeze_main_sub_text_packet_relation_role_queue_v1.csv`
+  - `data/prefreeze_main_sub_text_packet_relation_cluster_audit_v1.csv`
+- It writes:
+  - `data/research_packet_anchor_selection_cluster_review_v1.csv`
+  - `data/research_packet_anchor_selection_candidate_review_v1.csv`
+  - `data/research_packet_anchor_selection_summary_v1.csv`
+  - `docs/capture/RESEARCH_PACKET_ANCHOR_SELECTION_v1.md`
+- It does not rebuild payloads, apply role overrides, write frontend mirrors,
+  download images, or change rights/image states.
+
+Results:
+
+- Phase 1 anchor-selection cluster review rows: 1,274.
+- Candidate review rows written: 2,600.
+- Clusters with a plausible candidate for manual anchor review: 414.
+- Anchor review lane distribution:
+  - `small_packet_standalone_or_sub_review`: 1,015.
+  - `card_heavy_support_pool`: 94.
+  - `weak_graphic_anchor_risk`: 71.
+  - `sub_rich_anchor_candidate_review`: 37.
+  - `defer_anchor_method_review`: 33.
+  - `manual_anchor_candidate_review`: 11.
+  - `parentage_before_anchor`: 8.
+  - `strong_packet_anchor_candidate_review`: 5.
+- Manual review priority distribution:
+  - `high`: 42.
+  - `medium`: 184.
+  - `low`: 1,048.
+- Packet scale distribution inside phase 1:
+  - `large`: 69.
+  - `medium`: 131.
+  - `small`: 455.
+  - `single_or_micro`: 619.
+
+Interpretation:
+
+- The anchor problem is mostly not a large-packet-only problem. Most unresolved
+  rows are small or single/micro cases that need a decision between standalone
+  normal main, sub under a nearby packet, appendix, or card support.
+- Only 42 clusters are high-priority manual anchor review candidates.
+- The script correctly keeps card-heavy clusters out of direct normal-main
+  promotion: 94 clusters are support pools and 71 clusters are weak
+  graphic-object risk lanes.
+- The 414 seedable rows are review seeds only. They do not imply automatic
+  `normal_main` assignment.
+- Next work should focus on the 42 high-priority lanes first, then the 184
+  medium-priority lanes, before touching the 1,048 low-priority small/micro
+  decisions.
+
+Safety:
+
+- No image files were downloaded.
+- No rights, source authority, authorship, or IMG01/IMG03 image-state upgrades
+  were made.
+- No packet role was applied by this audit.
+- Candidate ranking is triage only; it does not permit automatic normal-main,
+  sub, appendix, card, or text role assignment.
+- The official payload, frontend mirrors, shards, and release build outputs
+  were not modified.
+- `python3 -m py_compile scripts/audit_research_packet_anchor_selection_v1.py`
+  passed.
+- `git diff --check` passed for this round's intended commit-bound files.
+- Commit-bound safety scan for `API_KEY`, token, password, secret, cookie,
+  session, bearer, `/Users/`, and `.env` found no real credential, bearer
+  value, cookie/session assignment, API key assignment, local user path, or
+  env-file reference in the new anchor-selection script, CSVs, or report.
+  Remaining broad-scan hits were historical safety-scan language already
+  present in this log, the script's weak-object risk term `session`, and public
+  source-title text such as `Secret Portrait`.
+
 ## 2026-06-21 — Packet Relation Tiny Seed Resolution v1
 
 Goal:
