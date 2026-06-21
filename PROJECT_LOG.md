@@ -11609,3 +11609,99 @@ Safety:
   value, cookie/session assignment, API key assignment, local user path, or
   env-file reference. Broad-scan hits are historical safety-scan language in
   this log and public source-title words such as `Secret`/`Secretary`.
+
+## 2026-06-21 — Packet Relation Sandbox Preview v1
+
+Goal:
+
+- Test a narrow, explicit packet parent/member sandbox after the packet
+  relation method audit.
+- Use only blocker-free `eligible_for_next_sandbox_review` rows from coherent,
+  non-macro, high-confidence `strong_packet_candidate` clusters.
+- Keep selected packet anchors as main sheets and preview only member/sub rows
+  as `support_packet_appendix_text`.
+
+Implementation:
+
+- Added `scripts/build_main_sub_text_packet_relation_sandbox_preview_v1.py`.
+- The script reads
+  `data/prefreeze_main_sub_text_packet_relation_role_queue_v1.csv` and the
+  existing packet-applied base override file.
+- It selects explicit clusters with a top-ranked candidate packet anchor,
+  samples at most five blocker-free member/sub rows per cluster, writes a
+  merged sandbox override file, and runs the candidate build in memory.
+- It does not write generated payload JSON, mutate the official payload, or
+  touch frontend mirrors.
+
+Outputs:
+
+- `data/prefreeze_main_sub_text_packet_relation_sandbox_cluster_plan_v1.csv`
+- `data/prefreeze_main_sub_text_packet_relation_sandbox_member_candidates_v1.csv`
+- `data/prefreeze_main_sub_text_packet_relation_sandbox_preview_new_overrides_v1.csv`
+- `data/prefreeze_main_sub_text_packet_relation_sandbox_preview_overrides_v1.csv`
+- `data/prefreeze_main_sub_text_packet_relation_sandbox_preview_summary_v1.csv`
+- `data/prefreeze_main_sub_text_packet_relation_sandbox_preview_surface_delta_v1.csv`
+- `data/prefreeze_main_sub_text_packet_relation_sandbox_preview_metrics_v1.csv`
+- `docs/capture/MAIN_SUB_TEXT_PACKET_RELATION_SANDBOX_PREVIEW_v1.md`
+
+Results:
+
+- Eligible explicit clusters found: 83.
+- Selected clusters: 18.
+- Selected member/sub rows: 73.
+- New sandbox preview overrides: 73.
+- Preview-applied rows: 73.
+- Rejected or collision rows: 0.
+- Selected member roles:
+  - `packet_member_review`: 48.
+  - `sub_under_packet_candidate`: 25.
+- Selected cluster regions include Aotearoa New Zealand, Australia /
+  Indigenous, Azerbaijan, China / Hong Kong, Ethiopia, India, Indonesia, Iran,
+  Korean Peninsula, Latin America, Serbia, Syria, Uganda, United Kingdom,
+  United States, and Uruguay.
+
+Metric deltas:
+
+- Surfaces: 16,175 -> 16,175.
+- Active public sources: 14,997 -> 14,997.
+- Main sheets: 13,537 -> 13,464.
+- Support packets: 692 -> 765.
+- Cards: 1,944 -> 1,944.
+- Text templates: 94 -> 94.
+- Object source-visible rate: 98.92% -> 98.92%.
+- Object verified-open rate: 95.29% -> 95.29%.
+- Object weighted publication-grade rate: 97.26% -> 97.26%.
+- Object IMG04 rate: 0.82% -> 0.82%.
+
+Interpretation:
+
+- The narrow preview confirms that explicit parent/member clusters can move
+  selected member rows out of main-sheet status without changing source
+  inclusion, object counts, rights state, or image-state metrics.
+- Parent anchors are recorded in the cluster plan but are not role-overridden
+  in this pass.
+- The result is technically stable but not final: parent choices still require
+  visual/research review before any release-bound application.
+- All selected clusters are currently Wikimedia Commons clusters. This is a
+  useful Commons-heavy structure test, but the method still needs a separate
+  museum/API/design-institution source-family test before generalization.
+- Text-page counts remain planning signals. No text pages were generated.
+
+Safety:
+
+- No image files were downloaded.
+- No rights, source authority, authorship, or IMG01/IMG03 image-state upgrades
+  were made.
+- Region/source-family/period/cluster signals are internal triage signals only.
+- The official payload, frontend mirrors, shards, and release build outputs
+  were not modified.
+- `python3 -m py_compile scripts/build_main_sub_text_packet_relation_sandbox_preview_v1.py`
+  passed.
+- `git diff --check` passed for the commit-bound files.
+- Commit-bound safety scan for `API_KEY`, token, password, secret, cookie,
+  session, bearer, `/Users/`, and `.env` found no real credential, bearer
+  value, cookie/session assignment, API key assignment, local user path, or
+  env-file reference. Broad-scan hits were expected false positives:
+  `os.environ` in the sandbox process wrapper, historical safety-scan language
+  in this log, and public source-title words such as `Secretary`,
+  `Secrets`, and `poster-session`.
