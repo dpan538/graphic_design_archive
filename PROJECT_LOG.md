@@ -12088,6 +12088,98 @@ Safety:
   present in this log, the script's weak-object risk term `session`, and public
   source-title text such as `Secret Portrait`.
 
+## 2026-06-22 - High-priority anchor seed plan v1
+
+Goal:
+
+- Convert the 42 high-priority anchor-selection clusters into a smaller,
+  reviewable seed plan before any sandbox packet generation.
+- Separate clusters that can receive cover/editorial drafting from clusters
+  that first need anchor confirmation, card/support pruning, or graphic-object
+  scope review.
+- Prevent adjacent visual/object evidence, press photos, natural-history
+  objects, apparel/object records, and card-heavy pools from becoming packet
+  anchors by score alone.
+
+Implementation:
+
+- Added `scripts/audit_research_packet_high_priority_anchor_seed_v1.py`.
+- The script reads:
+  - `data/research_packet_anchor_selection_cluster_review_v1.csv`
+  - `data/research_packet_anchor_selection_candidate_review_v1.csv`
+- It writes:
+  - `data/research_packet_high_priority_anchor_seed_plan_v1.csv`
+  - `data/research_packet_high_priority_anchor_seed_candidates_v1.csv`
+  - `data/research_packet_high_priority_anchor_seed_summary_v1.csv`
+  - `docs/capture/RESEARCH_PACKET_HIGH_PRIORITY_ANCHOR_SEEDS_v1.md`
+- It does not rebuild payloads, apply role overrides, write frontend mirrors,
+  download images, or change rights/image states.
+
+Results:
+
+- High-priority seed rows: 42.
+- Candidate rows copied into the seed review packet: 210.
+- Clusters that may enter sandbox only after manual anchor confirmation: 16.
+- Seed lane distribution:
+  - `cover_editorial_seed_ready`: 4.
+  - `anchor_then_cover_seed`: 12.
+  - `anchor_confirmation_seed`: 11.
+  - `card_pressure_anchor_review`: 7.
+  - `graphic_object_scope_review`: 4.
+  - `manual_hold`: 4.
+- Source-family distribution:
+  - `Wikimedia Commons`: 34.
+  - `Te Papa`: 2.
+  - `NAIDOC Poster Gallery`: 2.
+  - `Another Graphic`: 1.
+  - `Georgia State CONTENTdm`: 1.
+  - `Library of Congress`: 1.
+  - `Malaysia Design Archive`: 1.
+
+Interpretation:
+
+- Only 4 high-priority clusters are clean enough for immediate cover-scope and
+  curated editorial reading-note drafting after manual anchor confirmation:
+  United States / New Deal civic poster programs / Library of Congress
+  1935-1939; Poland / modern typography / Commons 1935-1939; Aotearoa New
+  Zealand / World War public-information graphics / Te Papa 1980-1984; and
+  Aotearoa New Zealand / postwar exhibition and cultural posters / Te Papa
+  1985-1989.
+- 12 more clusters may move toward cover/editorial work after normal-main
+  anchor confirmation, but they still require manual review before any sandbox
+  packet shaping.
+- 7 clusters have too much card pressure for immediate packet seeding.
+- 4 clusters were moved into graphic-object scope review because the top
+  candidate title suggests adjacent visual/object evidence rather than a clear
+  graphic-design packet anchor. This includes cases such as Marianne North
+  botanical works, formal jacket/object records, model truck records, and
+  press-photo records.
+- This pass makes the first sandbox packet trial smaller and more defensible:
+  start with the 4 cover/editorial-ready rows, then the 12 anchor-then-cover
+  rows only after manual anchor confirmation.
+
+Safety:
+
+- No image files were downloaded.
+- No rights, source authority, authorship, or IMG01/IMG03 image-state upgrades
+  were made.
+- No packet role was applied by this audit.
+- `sandbox_allowed_after_review` means sandbox-only after manual confirmation;
+  it does not permit official payload writes.
+- Candidate ordering is triage only; it does not permit automatic normal-main,
+  sub, appendix, card, or text role assignment.
+- The official payload, frontend mirrors, shards, and release build outputs
+  were not modified.
+- `python3 -m py_compile scripts/audit_research_packet_high_priority_anchor_seed_v1.py`
+  passed.
+- `git diff --check` passed for this round's intended commit-bound files.
+- Commit-bound safety scan for `API_KEY`, token, password, secret, cookie,
+  session, bearer, `/Users/`, and `.env` found no real credential, bearer
+  value, cookie/session assignment, API key assignment, local user path, or
+  env-file reference in the new high-priority seed script, CSVs, or report.
+  Remaining broad-scan hits were historical safety-scan language already
+  present in this log and the script's weak-object risk term `session`.
+
 ## 2026-06-21 — Packet Relation Tiny Seed Resolution v1
 
 Goal:

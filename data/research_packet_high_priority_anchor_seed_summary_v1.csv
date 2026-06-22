@@ -1,0 +1,18 @@
+metric,value,notes
+scope,non_mutating_high_priority_anchor_seed_plan,"No rebuild, role override, image download, rights/image-state change, or frontend mirror write."
+high_priority_seed_rows,42,High-priority anchor-selection clusters.
+candidate_rows,210,Candidate rows copied into the seed review packet.
+sandbox_allowed_after_review,16,Clusters that may enter sandbox only after manual anchor confirmation.
+seed_lane:anchor_confirmation_seed,11,High-priority seed lane distribution.
+seed_lane:anchor_then_cover_seed,12,High-priority seed lane distribution.
+seed_lane:card_pressure_anchor_review,7,High-priority seed lane distribution.
+seed_lane:cover_editorial_seed_ready,4,High-priority seed lane distribution.
+seed_lane:graphic_object_scope_review,4,High-priority seed lane distribution.
+seed_lane:manual_hold,4,High-priority seed lane distribution.
+source_family:Another Graphic,1,High-priority seed source-family distribution.
+source_family:Georgia State CONTENTdm,1,High-priority seed source-family distribution.
+source_family:Library of Congress,1,High-priority seed source-family distribution.
+source_family:Malaysia Design Archive,1,High-priority seed source-family distribution.
+source_family:NAIDOC Poster Gallery,2,High-priority seed source-family distribution.
+source_family:Te Papa,2,High-priority seed source-family distribution.
+source_family:Wikimedia Commons,34,High-priority seed source-family distribution.
