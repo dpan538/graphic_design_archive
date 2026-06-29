@@ -11917,6 +11917,79 @@ Safety:
   raw HTML URL-parameter hits in older capture files; those files were not
   touched or staged by this round.
 
+## 2026-06-29 - Cover/Editorial Sandbox Review Fixups v1
+
+Goal:
+
+- Address human review findings in
+  `docs/capture/RESEARCH_PACKET_COVER_EDITORIAL_SANDBOX_v1.md`.
+- Fix normal-main relation semantics, working title alignment, card-pressure
+  visibility, year-span explanation, source-prefix interpretation, and safety
+  wording without applying official packet roles.
+
+Implementation:
+
+- Updated `scripts/build_research_packet_cover_editorial_sandbox_v1.py`.
+- Added read-only use of
+  `data/prefreeze_main_sub_text_packet_relation_role_queue_v1.csv` to expose
+  wider card-pressure rows in the sandbox.
+- Regenerated the four sandbox CSVs and capture report.
+
+Fixes:
+
+- Normal-main candidates now use the explicit sandbox relation
+  `normal_main_candidate`; original copied seed roles are preserved only in
+  source-basis notes.
+- `SURF-CCE2026R00403` and `SURF-LPC2026R018` no longer appear as
+  `sub_under_packet_candidate` at the normal-main level.
+- The Aotearoa New Zealand 1980-1984 working title now reads
+  `Nuclear disarmament and peace movement posters`.
+- The Aotearoa New Zealand 1985-1989 working title now reads
+  `Political protest and public-policy posters`.
+- Original seed themes remain visible in `seed_theme`, with a
+  `working_title_review_note` explaining why the sandbox wording changed.
+- The United States packet now explicitly explains that `1936-1938` is the
+  actual copied seed span inside the `1935-1939` five-year cluster bucket.
+- Surface-id prefixes are now described as internal capture-series prefixes,
+  not source-family evidence, so mixed prefixes such as `SURF-CCE2026` /
+  `SURF-CCT2026` and `SURF-GAPIT2026` / `SURF-LPC2026` are not misread as
+  source-family drift.
+- Poland's two wider card-pressure rows are now visible as
+  `card_pressure_review_candidate` tree rows:
+  - `SURF-CCT2026R01576`
+  - `SURF-CCT2026R01582`
+- Safety and exclusion language now says that no card role was applied, even
+  when card pressure was reported.
+
+Updated Results:
+
+- Cover/editorial sandbox packet rows: 4.
+- Sandbox tree rows: 26.
+- Sandbox text-outline rows: 16.
+- Card-pressure review rows: 2.
+- Manual cover/editorial review-ready packets: 4.
+- Official rebuild-ready packets: 0.
+
+Interpretation:
+
+- The sandbox is now clearer for human review: top rows are anchor candidates,
+  secondary rows are relation candidates, and card-pressure rows are support
+  review rows only.
+- The title changes are sandbox working-title adjustments, not upstream
+  taxonomy changes.
+- The packet remains blocked from official rebuild until manual review confirms
+  packet title, normal-main anchor, relation tree, text outlines, and support
+  evidence handling.
+
+Safety:
+
+- No images were downloaded.
+- No rights, source-authority, or image-state upgrades were made.
+- No official payload, frontend mirror, shard, or release build output was
+  modified.
+- No `cover_main`, `normal_main`, `sub_sheet`, `card`, `appendix`, or `text`
+  role was applied.
+
 ## 2026-06-21 - Research packet structure method v1
 
 Goal:

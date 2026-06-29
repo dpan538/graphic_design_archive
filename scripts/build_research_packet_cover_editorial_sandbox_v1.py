@@ -12,6 +12,7 @@ mirrors, download images, or change rights/image states.
 from __future__ import annotations
 
 import csv
+import re
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
@@ -23,6 +24,7 @@ DOCS = ROOT / "docs" / "capture"
 
 IN_PLAN = DATA / "research_packet_high_priority_anchor_seed_plan_v1.csv"
 IN_CANDIDATES = DATA / "research_packet_high_priority_anchor_seed_candidates_v1.csv"
+IN_ROLE_QUEUE = DATA / "prefreeze_main_sub_text_packet_relation_role_queue_v1.csv"
 
 OUT_SANDBOX = DATA / "research_packet_cover_editorial_sandbox_v1.csv"
 OUT_TREE = DATA / "research_packet_cover_editorial_tree_sandbox_v1.csv"
@@ -37,7 +39,12 @@ SANDBOX_FIELDS = [
     "cluster_key",
     "sandbox_lane",
     "review_status",
+    "seed_theme",
     "packet_cover_title_draft",
+    "working_title_review_note",
+    "cluster_bucket",
+    "actual_year_span",
+    "year_span_note",
     "cover_main_scope_summary",
     "normal_main_candidate_surface_id",
     "normal_main_candidate_title",
@@ -49,7 +56,10 @@ SANDBOX_FIELDS = [
     "sub_candidate_surface_ids_from_seed_rows",
     "sub_candidate_titles_from_seed_rows",
     "card_candidate_count_from_plan",
+    "card_pressure_candidate_surface_ids",
+    "card_pressure_candidate_titles",
     "card_candidate_note",
+    "source_prefix_note",
     "rights_image_state_summary",
     "curated_reading_note_outline",
     "editorial_page_outline",
@@ -97,6 +107,17 @@ TEXT_FIELDS = [
 
 SUMMARY_FIELDS = ["metric", "value", "notes"]
 
+TITLE_REVIEW_OVERRIDES = {
+    "Aotearoa New Zealand|World War and public-information graphics|Te Papa|1980-1984": (
+        "Nuclear disarmament and peace movement posters",
+        "Working title adjusted from seed theme 'World War and public-information graphics' because copied candidate titles point to Cold War anti-nuclear and peace movement posters rather than world-war-era material.",
+    ),
+    "Aotearoa New Zealand|Postwar exhibition and cultural posters|Te Papa|1985-1989": (
+        "Political protest and public-policy posters",
+        "Working title adjusted from seed theme 'Postwar exhibition and cultural posters' because copied candidate titles point to political protest, public-policy, and satire posters rather than exhibition or cultural-poster evidence.",
+    ),
+}
+
 
 def clean(value: object) -> str:
     if value is None:
@@ -138,11 +159,35 @@ def by_cluster(rows: list[dict[str, str]]) -> dict[str, list[dict[str, str]]]:
     return out
 
 
+def working_theme(row: dict[str, str]) -> str:
+    key = clean(row.get("cluster_key"))
+    override = TITLE_REVIEW_OVERRIDES.get(key)
+    if override:
+        return override[0]
+    return clean(row.get("theme"))
+
+
+def working_title_review_note(row: dict[str, str]) -> str:
+    key = clean(row.get("cluster_key"))
+    override = TITLE_REVIEW_OVERRIDES.get(key)
+    if override:
+        return override[1]
+    return "Working title follows the seed theme; manual review may still revise packet wording."
+
+
 def packet_title(row: dict[str, str]) -> str:
     region = clean(row.get("region"))
-    theme = clean(row.get("theme"))
+    theme = working_theme(row)
     span = clean(row.get("actual_year_span")) or clean(row.get("five_year_bucket"))
     return f"{region}: {theme}, {span}"
+
+
+def year_span_note(row: dict[str, str]) -> str:
+    bucket = clean(row.get("five_year_bucket"))
+    actual = clean(row.get("actual_year_span")) or bucket
+    if actual and bucket and actual != bucket:
+        return f"Title uses actual copied seed span {actual} inside five-year cluster bucket {bucket}."
+    return f"Title span and five-year cluster bucket both read as {actual or bucket}."
 
 
 def image_state_summary(candidates: list[dict[str, str]]) -> str:
@@ -155,16 +200,6 @@ def image_state_summary(candidates: list[dict[str, str]]) -> str:
     )
 
 
-def candidate_label(row: dict[str, str]) -> str:
-    rank = clean(row.get("candidate_rank"))
-    surface_id = clean(row.get("surface_id"))
-    title = clean(row.get("title"))
-    role = clean(row.get("proposed_relation_role"))
-    image_state = clean(row.get("image_state"))
-    score = clean(row.get("anchor_review_score"))
-    return f"rank {rank} {surface_id}: {title} ({role}; {image_state}; score {score})"
-
-
 def review_scope_policy(row: dict[str, str]) -> str:
     region = clean(row.get("region"))
     if region.casefold().startswith("global"):
@@ -172,12 +207,42 @@ def review_scope_policy(row: dict[str, str]) -> str:
     return "region_specific_or_not_global"
 
 
-def reading_note_outline(row: dict[str, str], normal: dict[str, str], candidate_count: int) -> str:
+def surface_prefix(surface_id: str) -> str:
+    return re.sub(r"R[0-9].*$", "", clean(surface_id))
+
+
+def source_prefix_note(plan: dict[str, str], candidates: list[dict[str, str]], card_pressure: list[dict[str, str]]) -> str:
+    rows = candidates + card_pressure
+    prefixes = sorted({surface_prefix(clean(row.get("surface_id"))) for row in rows if clean(row.get("surface_id"))})
+    source_families = sorted({clean(row.get("source_family")) for row in rows if clean(row.get("source_family"))})
+    plan_family = clean(plan.get("source_family"))
+    family_note = ", ".join(source_families) if source_families else plan_family
+    return (
+        f"Copied rows list source_family={family_note or plan_family}. "
+        f"Surface-id prefixes ({', '.join(prefixes)}) are internal capture-series prefixes, not source-family evidence."
+    )
+
+
+def card_pressure_label(row: dict[str, str]) -> str:
+    return f"{clean(row.get('surface_id'))}: {clean(row.get('title'))}"
+
+
+def reading_note_outline(
+    row: dict[str, str],
+    normal: dict[str, str],
+    candidate_count: int,
+    card_pressure: list[dict[str, str]],
+) -> str:
     title = packet_title(row)
     top_title = clean(normal.get("title")) or clean(row.get("top_candidate_title"))
+    pressure = (
+        f"; separately review {len(card_pressure)} wider card-pressure rows as support/card evidence only"
+        if card_pressure
+        else ""
+    )
     return (
         f"Frame {title} as a reader-facing packet draft; start with {top_title} as an anchor candidate; "
-        f"compare {candidate_count} copied seed candidates as possible member, sub, card, or appendix evidence; "
+        f"compare {candidate_count} copied seed rows as 1 normal-main candidate plus {max(candidate_count - 1, 0)} secondary relation candidates{pressure}; "
         "separate source-family grouping from proven campaign, series, project, or institutional relation; "
         "close with rights/image-state limits and unresolved relation questions."
     )
@@ -194,7 +259,11 @@ def editorial_outline(row: dict[str, str]) -> str:
     )
 
 
-def uncertainty_notes(row: dict[str, str], candidates: list[dict[str, str]]) -> str:
+def uncertainty_notes(
+    row: dict[str, str],
+    candidates: list[dict[str, str]],
+    card_pressure: list[dict[str, str]],
+) -> str:
     risks = sorted({clean(item.get("risk_flags")) for item in candidates if clean(item.get("risk_flags"))})
     card_count = as_int(row.get("card_candidate_count"))
     notes = [
@@ -206,6 +275,12 @@ def uncertainty_notes(row: dict[str, str], candidates: list[dict[str, str]]) -> 
         notes.append(
             f"Plan reports {card_count} card candidates in the wider cluster; copied seed rows do not exhaust card/support review."
         )
+    if card_pressure:
+        notes.append(
+            "Card-pressure rows located in the wider role queue: "
+            + "; ".join(card_pressure_label(item) for item in card_pressure)
+            + "."
+        )
     if risks:
         notes.append("Candidate risk flags to inspect: " + "; ".join(risks) + ".")
     return " ".join(notes)
@@ -216,7 +291,7 @@ def must_not_claim(row: dict[str, str]) -> str:
         "Do not claim that cover_main, normal_main, sub_sheet, card, appendix, or text roles have been applied. "
         "Do not claim final packet completeness, final rights clearance, source-authority upgrade, image-state upgrade, "
         "image download, or official payload/frontend rebuild. Do not claim a shared campaign, series, project, or "
-        "institutional relation unless manual review confirms it."
+        "institutional relation unless manual review confirms it. No card role was applied, even if card pressure was reported."
     )
 
 
@@ -232,6 +307,7 @@ def node_type_for_candidate(row: dict[str, str]) -> str:
 def make_sandbox_rows(
     plan_rows: list[dict[str, str]],
     candidates_by_key: dict[str, list[dict[str, str]]],
+    role_rows_by_key: dict[str, list[dict[str, str]]],
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
     ready_rows = [row for row in plan_rows if clean(row.get("seed_lane")) == READY_LANE]
     ready_rows.sort(key=lambda row: (-as_float(row.get("top_anchor_review_score")), clean(row.get("cluster_key"))))
@@ -265,27 +341,45 @@ def make_sandbox_rows(
             ]
         normal = candidates[0]
         secondary = candidates[1:]
+        card_pressure = [
+            item
+            for item in sorted(
+                role_rows_by_key.get(key, []),
+                key=lambda row: (-as_int(row.get("risk_pressure_score")), as_int(row.get("year")), clean(row.get("title"))),
+            )
+            if clean(item.get("proposed_relation_role")) == "card_context_candidate"
+        ]
         title = packet_title(plan)
         cover_node_id = f"{packet_id}::cover_main_sandbox"
         normal_node_id = f"{packet_id}::normal_main_candidate::{clean(normal.get('surface_id'))}"
         sub_ids = "; ".join(clean(item.get("surface_id")) for item in secondary)
         sub_titles = " | ".join(clean(item.get("title")) for item in secondary)
+        card_ids = "; ".join(clean(item.get("surface_id")) for item in card_pressure)
+        card_titles = " | ".join(clean(item.get("title")) for item in card_pressure)
         card_count = as_int(plan.get("card_candidate_count"))
-        card_note = (
-            f"{card_count} card candidates reported by the high-priority seed plan; inspect wider candidate queue before card assignment."
-            if card_count
-            else "No card pressure reported by the high-priority seed plan; keep all copied non-top rows provisional."
-        )
+        if card_pressure:
+            card_note = (
+                f"{card_count} card candidates reported by the high-priority seed plan and located in the wider role queue: "
+                f"{card_ids}. They are card-pressure review rows only; no card role was applied."
+            )
+        elif card_count:
+            card_note = (
+                f"{card_count} card candidates reported by the high-priority seed plan; inspect wider candidate queue before card assignment."
+            )
+        else:
+            card_note = "No card pressure reported by the high-priority seed plan; keep all copied non-top rows provisional."
         scope_summary = (
-            f"Medium sandbox packet draft for {clean(plan.get('region'))} / {clean(plan.get('theme'))} "
+            f"Medium sandbox packet draft for {clean(plan.get('region'))} / {working_theme(plan)} "
             f"using {clean(plan.get('source_family'))} seed records from "
-            f"{clean(plan.get('actual_year_span')) or clean(plan.get('five_year_bucket'))}. "
+            f"{clean(plan.get('actual_year_span')) or clean(plan.get('five_year_bucket'))} "
+            f"(cluster bucket {clean(plan.get('five_year_bucket'))}). "
             "The cover draft frames a review scope only; packet roles remain unapplied."
         )
-        reading_outline = reading_note_outline(plan, normal, len(candidates))
+        reading_outline = reading_note_outline(plan, normal, len(candidates), card_pressure)
         editorial = editorial_outline(plan)
-        uncertainty = uncertainty_notes(plan, candidates)
+        uncertainty = uncertainty_notes(plan, candidates, card_pressure)
         exclusions = must_not_claim(plan)
+        prefix_note = source_prefix_note(plan, candidates, card_pressure)
 
         sandbox_rows.append(
             {
@@ -293,7 +387,12 @@ def make_sandbox_rows(
                 "cluster_key": key,
                 "sandbox_lane": READY_LANE,
                 "review_status": "human_cover_editorial_review_ready",
+                "seed_theme": clean(plan.get("theme")),
                 "packet_cover_title_draft": title,
+                "working_title_review_note": working_title_review_note(plan),
+                "cluster_bucket": clean(plan.get("five_year_bucket")),
+                "actual_year_span": clean(plan.get("actual_year_span")),
+                "year_span_note": year_span_note(plan),
                 "cover_main_scope_summary": scope_summary,
                 "normal_main_candidate_surface_id": clean(normal.get("surface_id")),
                 "normal_main_candidate_title": clean(normal.get("title")),
@@ -305,7 +404,10 @@ def make_sandbox_rows(
                 "sub_candidate_surface_ids_from_seed_rows": sub_ids,
                 "sub_candidate_titles_from_seed_rows": sub_titles,
                 "card_candidate_count_from_plan": card_count,
+                "card_pressure_candidate_surface_ids": card_ids,
+                "card_pressure_candidate_titles": card_titles,
                 "card_candidate_note": card_note,
+                "source_prefix_note": prefix_note,
                 "rights_image_state_summary": image_state_summary(candidates),
                 "curated_reading_note_outline": reading_outline,
                 "editorial_page_outline": editorial,
@@ -333,7 +435,7 @@ def make_sandbox_rows(
                 "candidate_use": "sandbox_cover_editorial_review",
                 "node_summary": scope_summary,
                 "relation_to_parent": "root sandbox cover draft; no official role applied",
-                "source_basis": "High-priority anchor seed plan row.",
+                "source_basis": f"High-priority anchor seed plan row. {year_span_note(plan)} {prefix_note}",
                 "scope_policy": review_scope_policy(plan),
                 "confidence_status": "sandbox_only_needs_manual_review",
                 "manual_check": "Do not apply cover_main automatically.",
@@ -352,14 +454,17 @@ def make_sandbox_rows(
                 "year": clean(normal.get("year")),
                 "source_family": clean(normal.get("source_family")) or clean(plan.get("source_family")),
                 "image_state": clean(normal.get("image_state")),
-                "proposed_relation_role": clean(normal.get("proposed_relation_role")),
+                "proposed_relation_role": "normal_main_candidate",
                 "candidate_use": clean(normal.get("candidate_use")),
                 "node_summary": "Top anchor review candidate copied into the sandbox tree for manual normal-main review.",
                 "relation_to_parent": "candidate anchor below cover scope; relation not applied",
-                "source_basis": "High-priority seed candidate row.",
+                "source_basis": (
+                    "High-priority seed candidate row. Original seed proposed_relation_role="
+                    f"{clean(normal.get('proposed_relation_role'))}; sandbox tree relation is normal_main_candidate."
+                ),
                 "scope_policy": review_scope_policy(plan),
                 "confidence_status": "candidate_only",
-                "manual_check": "Confirm before any normal_main role assignment.",
+                "manual_check": "Confirm before any normal_main role assignment; do not reuse original member/sub role as the tree relation.",
             }
         )
         for item in secondary:
@@ -385,6 +490,31 @@ def make_sandbox_rows(
                     "scope_policy": review_scope_policy(plan),
                     "confidence_status": "candidate_only",
                     "manual_check": "Require explicit relation evidence before sub/card/appendix assignment.",
+                }
+            )
+        for item in card_pressure:
+            surface_id = clean(item.get("surface_id"))
+            tree_rows.append(
+                {
+                    "packet_id": packet_id,
+                    "cluster_key": key,
+                    "node_id": f"{packet_id}::card_pressure_review_candidate::{surface_id}",
+                    "parent_node_id": normal_node_id,
+                    "node_type": "card_pressure_review_candidate",
+                    "candidate_surface_id": surface_id,
+                    "candidate_rank": "",
+                    "node_title": clean(item.get("title")),
+                    "year": clean(item.get("year")),
+                    "source_family": clean(item.get("source_family")) or clean(plan.get("source_family")),
+                    "image_state": clean(item.get("image_state")),
+                    "proposed_relation_role": "card_pressure_review_candidate",
+                    "candidate_use": "wider_role_queue_card_pressure",
+                    "node_summary": "Wider role-queue card-pressure row exposed for human review.",
+                    "relation_to_parent": "support/card pressure under normal-main candidate; no card role applied",
+                    "source_basis": "Prefreeze relation role queue row, not a copied top seed candidate.",
+                    "scope_policy": review_scope_policy(plan),
+                    "confidence_status": "support_only_review",
+                    "manual_check": "Review as support/card evidence only; no card role was applied.",
                 }
             )
 
@@ -470,6 +600,11 @@ def summary_rows(
             "notes": "Card pressure reported by seed plan; copied seed rows do not apply card roles.",
         },
         {
+            "metric": "card_pressure_review_rows",
+            "value": node_counts.get("card_pressure_review_candidate", 0),
+            "notes": "Wider role-queue card-pressure rows exposed for human review; no card role applied.",
+        },
+        {
             "metric": "manual_review_ready_packets",
             "value": len(sandbox_rows),
             "notes": "Can enter human cover/editorial sandbox review.",
@@ -516,6 +651,7 @@ def report_text(summary: list[dict[str, Any]], sandbox_rows: list[dict[str, Any]
             f"- {row['packet_id']}: {row['packet_cover_title_draft']} | "
             f"normal-main candidate={row['normal_main_candidate_surface_id']} | "
             f"seed candidates={row['sub_card_candidate_count_from_seed_rows']} secondary rows | "
+            f"card-pressure rows={len([item for item in clean(row['card_pressure_candidate_surface_ids']).split('; ') if item])} | "
             f"official rebuild={row['official_rebuild_status']}"
         )
 
@@ -526,12 +662,18 @@ def report_text(summary: list[dict[str, Any]], sandbox_rows: list[dict[str, Any]
             [
                 f"- packet_id: {packet_id}",
                 f"- cluster_key: {row['cluster_key']}",
+                f"- seed_theme: {row['seed_theme']}",
+                f"- working_title_review_note: {row['working_title_review_note']}",
+                f"- year_span_note: {row['year_span_note']}",
                 f"- cover_main_scope_summary: {row['cover_main_scope_summary']}",
                 (
                     "- normal_main_candidate: "
                     f"{row['normal_main_candidate_surface_id']} | {row['normal_main_candidate_title']} | "
                     f"{row['normal_main_candidate_image_state']}"
                 ),
+                f"- source_prefix_note: {row['source_prefix_note']}",
+                f"- card_candidate_note: {row['card_candidate_note']}",
+                f"- card_pressure_candidates: {row['card_pressure_candidate_surface_ids'] or 'none'}",
                 f"- rights_image_state_summary: {row['rights_image_state_summary']}",
                 f"- curated_reading_note_outline: {row['curated_reading_note_outline']}",
                 f"- editorial_page_outline: {row['editorial_page_outline']}",
@@ -555,6 +697,7 @@ def report_text(summary: list[dict[str, Any]], sandbox_rows: list[dict[str, Any]
             "- Secondary candidates remain sub/card/appendix review candidates only.",
             "- Same source platform, year span, or broad region is not enough to prove sub-sheet relation.",
             "- Card pressure reported by the plan must be reviewed before any card assignment.",
+            "- Card-pressure rows are exposed as support-only review rows, not as applied card nodes.",
             "- Text rows are editorial outlines, not official packet text pages.",
         ]
     )
@@ -564,6 +707,7 @@ def report_text(summary: list[dict[str, Any]], sandbox_rows: list[dict[str, Any]
             "- No image files were downloaded.",
             "- No rights/source authority/IMG01/IMG03 upgrades were made.",
             "- No packet role, text page, sub sheet, card, or appendix was applied.",
+            "- No card role was applied, even if card pressure was reported.",
             "- No official payload, frontend mirror, shard, or release build output was modified.",
         ]
     )
@@ -573,7 +717,8 @@ def report_text(summary: list[dict[str, Any]], sandbox_rows: list[dict[str, Any]
 def main() -> None:
     plan_rows = read_csv(IN_PLAN)
     candidate_rows = read_csv(IN_CANDIDATES)
-    sandbox, tree, text = make_sandbox_rows(plan_rows, by_cluster(candidate_rows))
+    role_rows = read_csv(IN_ROLE_QUEUE)
+    sandbox, tree, text = make_sandbox_rows(plan_rows, by_cluster(candidate_rows), by_cluster(role_rows))
     summary = summary_rows(sandbox, tree, text)
 
     write_csv(OUT_SANDBOX, sandbox, SANDBOX_FIELDS)
