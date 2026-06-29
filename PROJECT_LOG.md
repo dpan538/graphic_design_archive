@@ -11798,6 +11798,125 @@ Safety:
   hits were historical safety-scan language in this log and public source-title
   words such as `Secret`.
 
+## 2026-06-29 - Cover/Editorial Packet Sandbox v1
+
+Goal:
+
+- Draft the first very small non-mutating packet sandbox for the four
+  `cover_editorial_seed_ready` clusters.
+- Keep the draft separate from official archive payloads, frontend mirrors,
+  image capture, rights/source-authority changes, and packet role assignment.
+- Produce human-review artifacts for cover title, cover scope, normal-main
+  candidate, sub/card candidate pressure, reading-note outline, editorial page
+  outline, relation uncertainty, and exclusion language.
+
+Implementation:
+
+- Added `scripts/build_research_packet_cover_editorial_sandbox_v1.py`.
+- The script reads:
+  - `data/research_packet_high_priority_anchor_seed_plan_v1.csv`
+  - `data/research_packet_high_priority_anchor_seed_candidates_v1.csv`
+- It filters only `cover_editorial_seed_ready` rows and writes sandbox-only
+  review files.
+- It copies existing image-state and relation-role candidate values from seed
+  inputs; it does not upgrade them or apply them.
+
+Outputs:
+
+- `data/research_packet_cover_editorial_sandbox_v1.csv`
+- `data/research_packet_cover_editorial_tree_sandbox_v1.csv`
+- `data/research_packet_cover_editorial_text_sandbox_v1.csv`
+- `data/research_packet_cover_editorial_sandbox_summary_v1.csv`
+- `docs/capture/RESEARCH_PACKET_COVER_EDITORIAL_SANDBOX_v1.md`
+
+Results:
+
+- Cover/editorial sandbox packet rows: 4.
+- Sandbox tree rows: 24.
+- Sandbox text-outline rows: 16.
+- Summary metric rows: 19.
+- Manual cover/editorial review-ready packets: 4.
+- Official rebuild-ready packets: 0.
+- Sandbox tree distribution:
+  - `cover_main_sandbox_draft`: 4.
+  - `normal_main_candidate`: 4.
+  - `sub_sheet_candidate`: 4.
+  - `packet_member_or_card_candidate`: 12.
+- Copied candidate image-state distribution:
+  - `IMG00`: 1.
+  - `IMG01`: 4.
+  - `IMG02`: 9.
+  - `IMG03`: 6.
+
+Four cover/editorial-ready seeds:
+
+- United States | New Deal and civic poster programs | Library of Congress |
+  1935-1939:
+  - Draft packet title:
+    `United States: New Deal and civic poster programs, 1936-1938`.
+  - Normal-main candidate:
+    `SURF-MC1930R017`.
+  - Secondary copied seed candidates: 4.
+  - Plan card candidate pressure: 0.
+  - Can enter human cover/editorial sandbox review, but not official rebuild.
+- Poland | Modern typography and layout | Wikimedia Commons | 1935-1939:
+  - Draft packet title:
+    `Poland: Modern typography and layout, 1935-1939`.
+  - Normal-main candidate:
+    `SURF-CCE2026R00403`.
+  - Secondary copied seed candidates: 4.
+  - Plan card candidate pressure: 2; wider card/support review is still
+    required before assignment.
+  - Can enter human cover/editorial sandbox review, but not official rebuild.
+- Aotearoa New Zealand | World War and public-information graphics | Te Papa |
+  1980-1984:
+  - Draft packet title:
+    `Aotearoa New Zealand: World War and public-information graphics,
+    1980-1984`.
+  - Normal-main candidate:
+    `SURF-GAPIT2026R025`.
+  - Secondary copied seed candidates: 4.
+  - Plan card candidate pressure: 0.
+  - Can enter human cover/editorial sandbox review, but not official rebuild.
+- Aotearoa New Zealand | Postwar exhibition and cultural posters | Te Papa |
+  1985-1989:
+  - Draft packet title:
+    `Aotearoa New Zealand: Postwar exhibition and cultural posters,
+    1985-1989`.
+  - Normal-main candidate:
+    `SURF-LPC2026R018`.
+  - Secondary copied seed candidates: 4.
+  - Plan card candidate pressure: 0.
+  - Can enter human cover/editorial sandbox review, but not official rebuild.
+
+Interpretation:
+
+- These four packets can now move to human cover/editorial review.
+- The review should confirm packet titles, confirm or reject the normal-main
+  candidate, then split secondary rows into sub/card/appendix evidence only
+  where explicit relation evidence supports it.
+- The generated reading-note and editorial-page rows are outlines only; they
+  are not official packet text pages.
+- No candidate has been applied as `cover_main`, `normal_main`, `sub_sheet`,
+  `card`, `appendix`, or `text`.
+- No official rebuild should run from this sandbox until manual review and a
+  future payload pass approve the roles.
+
+Safety:
+
+- No images were downloaded.
+- No rights, source-authority, or image-state upgrades were made.
+- No official payload, frontend mirror, shard, or release build output was
+  modified.
+- The script compiled successfully after directing bytecode cache output to a
+  temporary sandbox-writable path.
+- `git diff --check` passed.
+- This round's new script, sandbox CSVs, and capture report had no broad
+  sensitive-keyword hits and no strict credential-shape hits.
+- The existing repository-wide credential-shape audit still reports historical
+  raw HTML URL-parameter hits in older capture files; those files were not
+  touched or staged by this round.
+
 ## 2026-06-21 - Research packet structure method v1
 
 Goal:
