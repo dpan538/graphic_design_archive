@@ -57,6 +57,7 @@ export default function TraceExplorer() {
   const [auxiliary, setAuxiliary] = useState<AuxiliaryPayload | null>(null);
   const [graph, setGraph] = useState<TraceGraph | null>(null);
   const [reviewSelection, setReviewSelection] = useState<ReviewCatalogItem | null>(null);
+  const [drawerOpen, setDrawerOpen] = useState(true);
   const [query, setQuery] = useState("");
   const [regionMembers, setRegionMembers] = useState<string[]>([]);
   const [regionLabel, setRegionLabel] = useState("");
@@ -137,6 +138,7 @@ export default function TraceExplorer() {
     setRegionLabel("");
     setDecade("");
     setMedium("");
+    setDrawerOpen(true);
     await loadLayerData(next);
   }
 
@@ -157,6 +159,7 @@ export default function TraceExplorer() {
       const selected = shard[item.id];
       if (!selected) throw new Error("Object neighbourhood is not present in its declared shard");
       setGraph(selected);
+      setDrawerOpen(false);
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Object trace unavailable");
     } finally {
@@ -210,7 +213,11 @@ export default function TraceExplorer() {
   }
 
   return (
-    <main className={styles.page}>
+    <main
+      className={styles.page}
+      data-visual-fullscreen={view === "object" && Boolean(graph)}
+      data-drawer-open={view === "object" && drawerOpen}
+    >
       <header className={styles.header}>
         <div>
           <p className={styles.eyebrow}>TRACE / frozen candidate v48</p>
@@ -229,7 +236,7 @@ export default function TraceExplorer() {
 
       <div className={styles.viewTabs} aria-label="TRACE view">
         <button type="button" aria-pressed={view === "atlas"} onClick={() => setView("atlas")}>
-          Time / geography routes
+          Global atlas
         </button>
         <button
           type="button"
@@ -247,101 +254,152 @@ export default function TraceExplorer() {
         <AtlasView atlas={atlas} mobileDecade={mobileDecade} setMobileDecade={setMobileDecade} exploreCell={exploreCell} />
       ) : (
         <section className={styles.objectView} aria-label="Object TRACE explorer">
-          <div className={styles.filters}>
-            <label>
-              Layer
-              <select value={layer} onChange={(event) => void changeLayer(event.target.value as TraceLayer)}>
-                <option value="active">Active main objects</option>
-                <option value="auxiliary">Auxiliary photo / print branch</option>
-                <option value="review">Authority review / hold</option>
-              </select>
-            </label>
-            <label className={styles.searchField}>
-              Search this layer
-              <input
-                type="search"
-                value={query}
-                onFocus={() => void loadLayerData(layer)}
-                onChange={(event) => setQuery(event.target.value)}
-                placeholder="Title, ID, place, source or medium"
-              />
-            </label>
-            {layer === "active" ? (
-              <>
-                <label>
-                  Decade
-                  <select value={decade} onChange={(event) => setDecade(event.target.value ? Number(event.target.value) : "")}>
-                    <option value="">All decades</option>
-                    {atlas.decades.map((value) => <option key={value} value={value}>{value}s</option>)}
-                  </select>
-                </label>
-                <label>
-                  Medium branch
-                  <select value={medium} onChange={(event) => setMedium(event.target.value)}>
-                    <option value="">All media</option>
-                    {atlas.mediumGroups.map((item) => <option key={item.name} value={item.name}>{item.name}</option>)}
-                  </select>
-                </label>
-              </>
-            ) : null}
-          </div>
+          <div
+            className={styles.objectWorkspace}
+            data-drawer-open={drawerOpen}
+            data-has-visual={Boolean(graph)}
+          >
+            <button
+              type="button"
+              className={styles.drawerToggle}
+              aria-expanded={drawerOpen}
+              aria-controls="trace-object-drawer"
+              onClick={() => setDrawerOpen((value) => !value)}
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5h16M4 12h10M4 19h16" />
+                <path d={drawerOpen ? "m9 9-3 3 3 3" : "m6 9 3 3-3 3"} />
+              </svg>
+              <span>{drawerOpen ? "Collapse information" : "Open information"}</span>
+            </button>
 
-          <div className={styles.layerNote}>
-            {layer === "active" ? (
-              <span>{regionLabel ? `${regionLabel} · ` : ""}Active counts only. Select an object to load one evidence neighbourhood.</span>
-            ) : layer === "auxiliary" ? (
-              <span>11 source-documented, count-ineligible media adjuncts. No promotion and no influence inference.</span>
-            ) : (
-              <span>Authority-uncertain review records remain visible but are not mixed into active totals or graph edges.</span>
-            )}
-            {(regionLabel || decade !== "" || medium) && layer === "active" ? (
-              <button
-                type="button"
-                className={styles.clearButton}
-                onClick={() => {
-                  setRegionLabel(""); setRegionMembers([]); setDecade(""); setMedium("");
-                }}
-              >
-                Clear filters
-              </button>
-            ) : null}
-          </div>
+            <aside
+              id="trace-object-drawer"
+              className={styles.objectDrawer}
+              data-open={drawerOpen}
+              aria-hidden={!drawerOpen}
+              inert={!drawerOpen}
+              aria-label="TRACE object information and selection"
+            >
+              <div className={styles.drawerScroll}>
+                <div className={styles.filters}>
+                  <label>
+                    Layer
+                    <select value={layer} onChange={(event) => void changeLayer(event.target.value as TraceLayer)}>
+                      <option value="active">Active main objects</option>
+                      <option value="auxiliary">Auxiliary photo / print branch</option>
+                      <option value="review">Authority review / hold</option>
+                    </select>
+                  </label>
+                  <label className={styles.searchField}>
+                    Search this layer
+                    <input
+                      type="search"
+                      value={query}
+                      onFocus={() => void loadLayerData(layer)}
+                      onChange={(event) => setQuery(event.target.value)}
+                      placeholder="Title, ID, place, source or medium"
+                    />
+                  </label>
+                  {layer === "active" ? (
+                    <>
+                      <label>
+                        Decade
+                        <select value={decade} onChange={(event) => setDecade(event.target.value ? Number(event.target.value) : "")}>
+                          <option value="">All decades</option>
+                          {atlas.decades.map((value) => <option key={value} value={value}>{value}s</option>)}
+                        </select>
+                      </label>
+                      <label>
+                        Medium branch
+                        <select value={medium} onChange={(event) => setMedium(event.target.value)}>
+                          <option value="">All media</option>
+                          {atlas.mediumGroups.map((item) => <option key={item.name} value={item.name}>{item.name}</option>)}
+                        </select>
+                      </label>
+                    </>
+                  ) : null}
+                </div>
 
-          <div className={styles.objectLayout}>
-            <aside className={styles.results} aria-label={`${layer} TRACE results`}>
-              {loading ? <p>{loading}</p> : null}
-              {error ? <p className={styles.error}>{error}</p> : null}
-              {layer === "active" && !catalog ? <p>Focus the search field to load the compact active index.</p> : null}
-              {layer === "active" ? activeResults.map((item) => (
-                <button key={item.id} type="button" onClick={() => void selectActive(item)} aria-pressed={graph?.object.id === item.id}>
-                  <strong>{item.title}</strong>
-                  <span>{item.year} · {item.region}</span>
-                  <span>{item.mediumGroup} · {item.tier.replaceAll("_", " ")}</span>
-                </button>
-              )) : null}
-              {layer === "auxiliary" ? auxiliaryResults.map((item) => (
-                <button key={item.object.id} type="button" onClick={() => { setGraph(item); setReviewSelection(null); }} aria-pressed={graph?.object.id === item.object.id}>
-                  <strong>{item.object.title}</strong>
-                  <span>{item.object.year} · {item.object.region}</span>
-                  <span>{item.object.mediumGroup} · count ineligible</span>
-                </button>
-              )) : null}
-              {layer === "review" ? reviewResults.map((item) => (
-                <button key={item.id} type="button" onClick={() => { setReviewSelection(item); setGraph(null); }} aria-pressed={reviewSelection?.id === item.id}>
-                  <strong>{item.title}</strong>
-                  <span>{item.year ?? "undated"} · {item.region}</span>
-                  <span>{item.authorityState.replaceAll("_", " ")}</span>
-                </button>
-              )) : null}
+                <div className={styles.layerNote}>
+                  {layer === "active" ? (
+                    <span>{regionLabel ? `${regionLabel} · ` : ""}Active counts only. Select an object to load one evidence neighbourhood.</span>
+                  ) : layer === "auxiliary" ? (
+                    <span>11 source-documented, count-ineligible media adjuncts. No promotion and no influence inference.</span>
+                  ) : (
+                    <span>Authority-uncertain review records remain visible but are not mixed into active totals or graph edges.</span>
+                  )}
+                  {(regionLabel || decade !== "" || medium) && layer === "active" ? (
+                    <button
+                      type="button"
+                      className={styles.clearButton}
+                      onClick={() => {
+                        setRegionLabel(""); setRegionMembers([]); setDecade(""); setMedium("");
+                      }}
+                    >
+                      Clear filters
+                    </button>
+                  ) : null}
+                </div>
+
+                <div className={styles.results} role="region" aria-label={`${layer} TRACE results`}>
+                  {loading ? <p>{loading}</p> : null}
+                  {error ? <p className={styles.error}>{error}</p> : null}
+                  {layer === "active" && !catalog ? <p>Focus the search field to load the compact active index.</p> : null}
+                  {layer === "active" ? activeResults.map((item) => (
+                    <button key={item.id} type="button" onClick={() => void selectActive(item)} aria-pressed={graph?.object.id === item.id}>
+                      <strong>{item.title}</strong>
+                      <span>{item.year} · {item.region}</span>
+                      <span>{item.mediumGroup} · {item.tier.replaceAll("_", " ")}</span>
+                    </button>
+                  )) : null}
+                  {layer === "auxiliary" ? auxiliaryResults.map((item) => (
+                    <button
+                      key={item.object.id}
+                      type="button"
+                      onClick={() => {
+                        setGraph(item); setReviewSelection(null); setDrawerOpen(false);
+                      }}
+                      aria-pressed={graph?.object.id === item.object.id}
+                    >
+                      <strong>{item.object.title}</strong>
+                      <span>{item.object.year} · {item.object.region}</span>
+                      <span>{item.object.mediumGroup} · count ineligible</span>
+                    </button>
+                  )) : null}
+                  {layer === "review" ? reviewResults.map((item) => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => {
+                        setReviewSelection(item); setGraph(null); setDrawerOpen(true);
+                      }}
+                      aria-pressed={reviewSelection?.id === item.id}
+                    >
+                      <strong>{item.title}</strong>
+                      <span>{item.year ?? "undated"} · {item.region}</span>
+                      <span>{item.authorityState.replaceAll("_", " ")}</span>
+                    </button>
+                  )) : null}
+                </div>
+
+                {graph ? <ObjectInfoPanel graph={graph} /> : null}
+                {reviewSelection ? <ReviewRecord item={reviewSelection} /> : null}
+              </div>
             </aside>
 
             <div className={styles.graphArea}>
               {graph ? <LocalTrace graph={graph} /> : null}
-              {reviewSelection ? <ReviewRecord item={reviewSelection} /> : null}
+              {reviewSelection ? (
+                <div className={styles.emptyState}>
+                  <h2>Review record isolated</h2>
+                  <p>This authority-hold record remains in the information drawer and does not generate an active TRACE graph.</p>
+                </div>
+              ) : null}
               {!graph && !reviewSelection ? (
                 <div className={styles.emptyState}>
                   <h2>Select one record</h2>
-                  <p>The page loads only its direct, evidence-labelled neighbourhood. The full graph never enters the browser.</p>
+                  <p>Open the information drawer to search. The page loads only one direct, evidence-labelled neighbourhood.</p>
                 </div>
               ) : null}
             </div>
@@ -454,11 +512,17 @@ function AtlasView({
 }
 
 function LocalTrace({ graph }: { graph: TraceGraph }) {
-  const [diagramMode, setDiagramMode] = useState<"routes" | "tree">("routes");
-  useEffect(() => setDiagramMode("routes"), [graph.object.id]);
+  return (
+    <article className={styles.localTrace} aria-label={`TRACE visualizations for ${graph.object.title}`}>
+      <TraceDiagrams graph={graph} />
+    </article>
+  );
+}
+
+function ObjectInfoPanel({ graph }: { graph: TraceGraph }) {
   const nodeById = new Map(graph.nodes.map((node) => [node.id, node]));
   return (
-    <article className={styles.localTrace}>
+    <article className={styles.objectInfoPanel}>
       <header className={styles.rootNode} data-layer={graph.object.layer}>
         <p>{graph.object.layer === "auxiliary" ? "Auxiliary TRACE node / not counted" : "Active object root"}</p>
         <h2>{graph.object.title}</h2>
@@ -474,18 +538,8 @@ function LocalTrace({ graph }: { graph: TraceGraph }) {
       </header>
 
       <p className={styles.noInfluence}>
-        No documented <code>influenced_by</code> edge exists in the v48 freeze. The branches below are evidence and association routes, not influence claims.
+        No documented <code>influenced_by</code> edge exists in the v48 freeze. These are evidence and association routes, not influence claims.
       </p>
-
-      <div className={styles.diagramTabs} aria-label="Object trace diagram">
-        <button type="button" aria-pressed={diagramMode === "routes"} onClick={() => setDiagramMode("routes")}>
-          Route map
-        </button>
-        <button type="button" aria-pressed={diagramMode === "tree"} onClick={() => setDiagramMode("tree")}>
-          Rooted tree
-        </button>
-      </div>
-      <TraceDiagrams graph={graph} mode={diagramMode} />
 
       <details className={styles.tableFallback}>
         <summary>Text relation table ({graph.edges.length})</summary>

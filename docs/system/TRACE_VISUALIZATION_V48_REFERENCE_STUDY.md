@@ -4,80 +4,74 @@ Status: **accepted refinement on the isolated visualization branch**
 
 Date: 2026-08-01
 
+## Core decision: three questions, three diagrams
+
+The references are not combined into one overloaded network. They define three
+separate research readings of the selected object. A single compact mode button
+opens on hover, focus or click and presents one icon per reading:
+
+| Diagram | One research question | Included edge family | Explicit exclusions |
+| --- | --- | --- | --- |
+| Medium/context metro | In which media and documented contexts is the object situated? | `medium_context` | source, place, date and influence edges |
+| Time/geography map | When and where is the object recorded? | `time_place` plus frozen object year/region | source, medium, movement, diffusion and influence |
+| Source rooted tree | Which evidence sources and provenance routes document the object? | `source_provenance` | medium, place, date and influence edges |
+
+All three occupy the full TRACE research canvas. Selection, object metadata,
+layer controls and the exact relation table live in a left information drawer
+that can be opened or collapsed without resizing the meaning of the diagram.
+
 ## Reference 1: schematic transit routes
 
-The useful feature is not the transport theme itself. It is the way a small
-number of strongly differentiated trunks makes many discrete stops readable
-without requiring a physics layout.
-
-TRACE mapping:
+The useful grammar is a small number of deterministic trunks and discrete
+stations. It is applied only to medium and documented context:
 
 | Transit grammar | TRACE meaning |
 | --- | --- |
-| Interchange | selected object root |
-| Green P route | source and provenance evidence |
-| Blue T route | time and object-place evidence |
-| Red M route | medium and documented context |
-| Station | one evidence node with a return URL |
-| Station code | stable local index within the selected object view |
-| Route key | full node label, edge label, direction and review state |
+| Interchange | selected object |
+| Trunk | one actual `medium_context` relation label |
+| Station | one linked evidence node |
+| Station code | stable local index in this view |
 
-The lines are categorical organizers. They do not mean that one station caused
-or influenced the next station. All three routes meet only because they
-document the selected object.
+Parallel lines make relation types comparable without a physics layout. A line
+connects stations to the selected object; it never asserts that adjacent
+stations caused or influenced one another.
 
-This mode is preferred over a force graph because every station has a known
-lane, the layout is deterministic, and the diagram remains comparable between
-objects.
+## Reference 2: rooted source tree
 
-## Reference 2: rooted generative tree
-
-The useful feature is a single origin with progressively lighter branches.
-TRACE can use that hierarchy without treating line weight as evidence strength:
-
-1. the object is the root;
-2. relation families are first-order branch hubs; and
-3. actual evidence nodes are leaves.
-
-Line width indicates layout depth only. Leaf labels retain relation direction
-and actual edge vocabulary. The tree never manufactures intermediate people,
-places, movements or influence relations.
-
-The rooted tree is better than the route map when the research question is
-“what documents this one object?” The route map is better when comparing the
-balance of evidence families and scanning many stations.
+The root form is reserved for provenance. The selected object is the root,
+actual source/provenance relation labels are first-order branch hubs, and their
+documented evidence nodes are leaves. Line width indicates hierarchy only, not
+evidence strength. The tree does not manufacture intermediate people, places,
+movements or genealogical influence.
 
 ## Reference 3: time axis plus geography
 
-The described third reference was not attached. The frozen v48 schema was
-therefore audited before choosing a map form.
+The map uses a restrained Equal Earth world geometry. It highlights only a
+country outline that can be matched from the frozen normalized object region.
+The shared 1800–2030 axis marks the recorded object year.
 
-The database has normalized object `region` values but no publishable latitude,
-longitude, geometry or object-level geocode. A geographic basemap would require
-a new curated coordinate sidecar. Using museum location, creator nationality,
-search terms or guessed centroids would violate the freeze evidence boundary.
+Evidence boundary:
 
-The accepted v48 form is a chronogeographic route table:
+- a country fill is a normalized regional category, not an object coordinate;
+- non-country categories such as `Global / transnational` remain textual and
+  do not receive a guessed outline;
+- no museum location, creator nationality, search term or guessed centroid is
+  substituted;
+- map proximity never creates movement, diffusion or influence edges.
 
-- horizontal position is the real decade axis;
-- each horizontal rail is one frozen normalized object region;
-- a station exists only when active objects occur in that region and decade;
-- station area is log-scaled active-object count; and
-- selecting a station opens the exact region/decade object filter.
+The basemap is a derivative display aid from `world-atlas` / Natural Earth
+Admin 0 at 1:110m. `d3-geo` performs projection and SVG path generation, and
+`topojson-client` reads the topology. These packages do not modify the frozen
+database or introduce new object evidence.
 
-The rail is a categorical axis, not a claim of uninterrupted development,
-diffusion or influence. The exact count matrix remains available as a text/table
-fallback.
+## Fullscreen and responsive behavior
 
-## Conditions for a future geographic map
-
-A true map should be added only after a separately reviewed sidecar provides:
-
-- object-level coordinates or an explicit region geometry identifier;
-- coordinate provenance and precision;
-- a distinction between object place, circulation place and institution place;
-- review/hold state for ambiguous geometry; and
-- a rule forbidding map proximity from generating TRACE or influence edges.
-
-That sidecar would be a new candidate version or derivative evidence layer. It
-must not edit the frozen v48 database in place.
+- Desktop: one diagram fills the available viewport; the mode button is
+  centered above the canvas and global/object navigation remains reachable.
+- Information: the left drawer contains search, frozen-layer filters, object
+  facts, source links, the zero-influence notice and the exact relation table.
+- Mobile: the large SVG is replaced by a labelled evidence index and concise
+  geographic text. The drawer becomes a nearly full-width progressive panel.
+- Keyboard and no-graphic use: mode choices are radio-menu items, diagram nodes
+  are links, all states have text labels, and the drawer/table provides the
+  non-graphic route back to evidence.

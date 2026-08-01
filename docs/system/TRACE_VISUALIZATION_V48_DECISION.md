@@ -7,10 +7,16 @@ Decision date: 2026-08-01
 
 ## Decision
 
-Implement a hybrid TRACE reader:
+Implement a hybrid TRACE reader with an aggregate active-layer atlas and three
+strictly separated, object-local diagrams:
 
-1. a rooted, evidence-labelled local tree after an object is selected; and
-2. an aggregate time/geography atlas for the complete active layer.
+1. medium/context metro;
+2. time/geography map; and
+3. source/provenance rooted tree.
+
+The three object diagrams share one three-state mode control and a fullscreen
+canvas. Search, layer controls, object facts and relation evidence use a
+collapsible left drawer.
 
 Do not render the full TRACE database as one force-directed graph. The object
 page and source-return route remain the primary evidence surfaces; TRACE is a
@@ -45,8 +51,8 @@ They do not support a readable or responsible all-node browser graph.
 
 ### Object trace
 
-The selected object is the root. Its directly indexed evidence edges are
-grouped by role rather than spatially simulated:
+The selected object is the focus. Its directly indexed evidence edges are
+separated by research question rather than combined or spatially simulated:
 
 - source/provenance: `documented_by`, `created_by`,
   `part_of_collection`, `captured_from_provider` and equivalent source edges;
@@ -55,8 +61,10 @@ grouped by role rather than spatially simulated:
 - medium/context: `has_type`, `has_medium`,
   `has_material_or_technique`, and explicitly documented context relations.
 
-Every edge shows its actual label, review state and evidence status. Incoming
-and outgoing directions are visible in text. The root links to the existing
+The metro reads only medium/context, the map reads only time/geography, and the
+rooted tree reads only source/provenance. Every edge shows its actual label,
+review state and evidence status in the information drawer and mobile fallback.
+Incoming and outgoing directions are visible in text. The root links to the existing
 archive object route when that route is present in the current frontend
 payload; otherwise it returns to the official source record. Evidence nodes
 return to their recorded source URL.
@@ -122,8 +130,9 @@ candidate payload.
 - Search loads `catalog.json` after input/focus; selecting an object loads one
   neighbourhood shard.
 - Review and auxiliary files are separate lazy requests.
-- No graph library is added. The local tree uses semantic HTML and restrained
-  CSS connectors; the aggregate view uses a bounded HTML/SVG chart.
+- The metro and tree are deterministic SVG, not physics simulations. The map
+  dynamically loads `d3-geo`, `topojson-client` and `world-atlas` only when its
+  mode is selected.
 
 ## Visual language
 
@@ -164,7 +173,8 @@ The generator fails when any budget is exceeded:
 - desktop atlas: at most 360 visible matrix marks;
 - local view: direct evidence neighbourhood only, at most 80 rendered nodes
   before an explicit “show remaining” action;
-- no new runtime visualization dependency.
+- map dependencies are limited to the three audited projection/topology assets
+  above and are excluded from the initial TRACE load through dynamic import.
 
 ## Non-goals and risks
 
@@ -176,5 +186,6 @@ The generator fails when any budget is exceeded:
   return to their official source page until a separately audited frontend data
   sync adds an archive object route; the TRACE implementation must not silently
   create incomplete object pages.
-- Aggregate geography uses the frozen normalized object geography labels. It is
-  not a geocoded world map and must not substitute institution location.
+- Object-map geography uses the frozen normalized region and known country-name
+  aliases only. Country fill is not a coordinate claim and must not substitute
+  institution location.

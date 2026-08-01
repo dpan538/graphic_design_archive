@@ -20,13 +20,14 @@ Implementation date: 2026-08-01
 - The 4,425 authority-review records use a separate, explicitly selected
   review layer. They are source-linked and do not enter active aggregates or
   graph edges.
-- Evidence edges are grouped as source/provenance, time/place and
-  medium/context. The actual relation label, direction, status and evidence
-  URL remain visible.
-- The local object view now provides two equivalent evidence readings: a
-  metro-style route map with the object as interchange, and a rooted tree with
-  the object as root. Route colours encode evidence families only; line width
-  in the tree encodes depth only.
+- The local object view provides three non-overlapping readings behind one
+  icon-bearing mode button: medium/context metro, time/geography map, and
+  source/provenance rooted tree. No diagram borrows edge families from another.
+- Each diagram fills the available TRACE viewport. Search, layer controls,
+  object facts, source routes and the full relation table live in a collapsible
+  left information drawer.
+- The actual relation label, direction, status and evidence URL remain visible
+  in the drawer and mobile text fallback.
 - The global atlas now adds chronogeographic observation rails. Their x-axis is
   the recorded decade and each row is a frozen object-geography category. Only
   stations denote records; the rail itself does not assert diffusion,
@@ -79,7 +80,7 @@ Independent audit: **24/24 PASS**
 | Auxiliary payload | 29,034 B | 100,000 B |
 | Largest neighbourhood shard | 272,139 B | 600,000 B |
 | Neighbourhood shard p95 | 230,870 B | 250,000 B |
-| Runtime visualization packages added | 0 | 0 |
+| Runtime map packages added | 3 | dynamically loaded only in map mode |
 
 The full generated directory is about 100 MB uncompressed in the repository.
 Network delivery relies on normal HTTP compression and progressive requests;
@@ -102,7 +103,7 @@ cd frontend && npm run dev -- --hostname 127.0.0.1 --port 3047
 - TypeScript: **PASS** with no diagnostics.
 - Next production compilation and built-in type validation: **PASS**.
 - Next production `compile` mode after the final component change: **PASS** in
-  47 seconds; `/trace` is present in the route manifest and the shared first
+  34.4 seconds; `/trace` is present in the route manifest and the shared first
   load JavaScript is 103 kB. Compile mode deliberately does not claim static
   generation completion.
 - Full production static generation: **not completed**. The existing build
@@ -110,24 +111,30 @@ cd frontend && npm run dev -- --hostname 127.0.0.1 --port 3047
   generation timeout on pre-existing routes including `/about`, `/badges`,
   error pages and many `/surfaces/[id]` pages. The run was stopped at 1/8,761
   rather than reported as a successful build. No failure named `/trace`.
-- Local development route: `GET /trace` returned **HTTP 200**. Cold
-  compilation completed in 23.9 seconds; the first response completed in
-  52.283 seconds. After the final component change, recompilation completed in
-  798 ms and the verification response completed in 14.533 seconds.
+- Local development route: `GET /trace` returned **HTTP 200**. The current cold
+  route compilation completed in 6.5 seconds and the response in 21.675
+  seconds; later hot compilations completed between 1.692 and 5.1 seconds.
 - Served `atlas.json` and `neighborhoods/000.json` hashes matched their
   generated files byte-for-byte.
 - In-app browser desktop acceptance: **PASS**. The active atlas exposed the
   complete 1800–2020 decade structure; selecting the United States / 2020s
   station produced the expected 18-object filtered result, and selecting
   `SURF-CCR2026R0089` loaded five labelled evidence stations.
-- Metro route and rooted-tree modes: **PASS**. Both diagrams linked the same
-  five source, place, date, type and creator nodes and stated that the branches
-  are not historical influence claims.
+- Diagram separation: **PASS**. The metro exposes only medium/context edges,
+  the map exposes only recorded time/geography, and the rooted tree exposes
+  only source/provenance edges. For the verified object these resolve to two
+  metro stations, the 2022 / United States map state, and two source leaves.
+- Fullscreen and information drawer: **PASS**. Selecting an object closes the
+  drawer to reveal a 1280 x 720 fixed research canvas. The source SVG used
+  1,214 x 466 CSS pixels. The drawer remains keyboard reachable, can be
+  reopened without changing the selected mode, and becomes `inert` when
+  collapsed so off-canvas controls cannot receive focus.
 - Browser console: **PASS**, with zero warning or error entries and no visible
   Next development error overlay.
 - Responsive acceptance at 390 x 844: **PASS**. Full diagrams were removed from
-  the accessibility tree and replaced by the labelled evidence-station index;
-  the global atlas became a decade selector plus ranked regional list.
+  visual layout (`display:none`) and replaced by the labelled evidence-station
+  index. The mobile drawer measured 357 px and hides the bottom view navigation
+  while open so controls do not obscure drawer content.
 
 ## Accessibility and responsive implementation
 
@@ -135,7 +142,8 @@ cd frontend && npm run dev -- --hostname 127.0.0.1 --port 3047
   disclosure are used.
 - Relation direction, relation type, review status and evidence route are
   written in text; colour is not the sole signal.
-- The local visual branches have a full text relation table fallback.
+- The left drawer contains a full text relation table fallback; mobile also
+  replaces each large SVG with its view-specific evidence index.
 - The desktop atlas uses a compact schematic rail plus an exact HTML table
   disclosure. Mobile replaces both with a selected-decade ranked list and
   progressively enters an object trace.
@@ -158,18 +166,24 @@ session remains a deployment-stage check.
 - Medium groups are display-only filters and do not rewrite frozen media.
 - Region aggregation uses frozen normalized object geography. No institution
   location, search term or creator nationality is substituted.
-- The frozen data has no latitude/longitude or audited geometry. The
-  chronogeographic view therefore uses region rails rather than a basemap; a
-  literal map remains deferred until an independently auditable coordinate
-  sidecar exists.
+- The frozen data has no object latitude/longitude. The object map therefore
+  highlights only a normalized country outline and labels this as a regional
+  category, never as an object coordinate. Broad/transnational categories stay
+  textual and receive no guessed outline.
 - The current frontend object-route payload covers only 2,585 of 15,923 active
   roots. The other 13,338 deliberately return to official source pages until a
   separate, audited frontend data sync exists.
 - A production deployment still needs a successful full static build or a
   separately approved change to the legacy static-generation strategy.
-- The third reference image described as a time-axis map was not attached, so
-  its exact graphic grammar could not be compared. This does not block the
-  evidence-safe chronogeographic implementation.
+- `npm audit --omit=dev` reports seven existing production dependency findings
+  (six high, one moderate) in Next.js, Transformers and their transitive
+  packages. None names `d3-geo`, `topojson-client` or `world-atlas`; dependency
+  remediation remains a separate repository-wide release task.
+- The repository's `npm run lint` has no committed ESLint configuration and
+  opens Next's interactive setup prompt, so lint is **not an automated gate**
+  for this branch. TypeScript and Next compile mode are the source gates used.
+- The time/geography map is dynamically isolated from the initial TRACE bundle;
+  its Equal Earth geometry is a display sidecar, not a new frozen-data claim.
 
 No visualization file should be promoted to main until the full-build and
 deployment gate is resolved or explicitly accepted as a documented release
