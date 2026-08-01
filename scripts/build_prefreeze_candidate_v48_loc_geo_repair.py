@@ -21,9 +21,28 @@ def put(t,label,value):
   if r[0]==label:r[1]=value;return
  t['rows'].append([label,value])
 
+def apply_aic_source_viewer_routes(payload):
+ """Keep unstable AIC IIIF URLs as evidence, never as display images."""
+ targets={'AICTRACEV47R0001','AICTRACEV47R0002'}; repaired=[]
+ for surface in payload['surfaces']:
+  if surface.get('sourceRecordId') not in targets:continue
+  image=surface.get('image') or {}; evidence_url=image.get('url'); source_url=surface.get('sourceUrl')
+  if not source_url or not source_url.startswith('https://www.artic.edu/artworks/'):
+   raise SystemExit(f"unexpected AIC source route for {surface.get('surfaceId')}")
+  if not evidence_url or '/iiif/' not in evidence_url:
+   raise SystemExit(f"expected AIC IIIF evidence route for {surface.get('surfaceId')}")
+  image.update({'state':'IMG02','hasImageFrame':False,'url':None,'displayMode':'source_viewer_only','sourceViewerUrl':source_url,'evidenceImageUrl':evidence_url,'routeEvidence':'Direct AIC IIIF returned Cloudflare 403 during v47 validation; retain as evidence metadata only.'})
+  surface['image']=image
+  put(table(surface,'CITATIONS'),'Image evidence URL',evidence_url)
+  put(table(surface,'CITATIONS'),'Image display route',source_url)
+  repaired.append(surface['surfaceId'])
+ if len(repaired)!=2:raise SystemExit(f'expected 2 active AIC image route repairs, got {len(repaired)}')
+ return repaired
+
 def main():
  p=json.loads(PARENT.read_text(encoding='utf-8')); repairs=read(REPAIRS); by={x['surface_id']:x for x in repairs}; surf={x['surfaceId']:x for x in p['surfaces']}
  if len(repairs)!=18 or any(k not in surf for k in by):raise SystemExit('repair source mismatch')
+ aic_route_repairs=apply_aic_source_viewer_routes(p)
  nodes={};edges=[]
  for sid,r in by.items():
   s=surf[sid]; trace=s['trace']; tree=trace['treeId']; oid=trace['objectNodeId']; pid=ident('TRN-PLACE',r['country'])
@@ -38,7 +57,7 @@ def main():
  for f in p['folders']:
   if f.get('type')=='region' and f.get('folderId')!='FOL-REGION-UNITED-STATES':f['surfaceIds']=[x for x in f.get('surfaceIds',[]) if x not in by]
  p['folders']=[x for x in p['folders'] if not(x.get('type')=='region' and not x.get('surfaceIds'))]
- p['meta'].update({'generatedAt':'2026-08-01','status':'prefreeze_candidate_v48_loc_object_geography_repair','parentCandidateVersion':'v47','sourceCandidate':'generated/public_surfaces_prefreeze_candidate_v47.json','locObjectGeographyRepairsV48':len(repairs),'unresolvedRegionCount':0,'activeSurfaceCount':len(p['surfaces']),'acceptedObjectCount':len(p['surfaces']),'remainingToMinimumTarget':20000-len(p['surfaces'])})
+ p['meta'].update({'generatedAt':'2026-08-01','status':'prefreeze_candidate_v48_loc_object_geography_repair','parentCandidateVersion':'v47','sourceCandidate':'generated/public_surfaces_prefreeze_candidate_v47.json','locObjectGeographyRepairsV48':len(repairs),'aicSourceViewerOnlyRouteRepairsV48':len(aic_route_repairs),'unresolvedRegionCount':0,'activeSurfaceCount':len(p['surfaces']),'acceptedObjectCount':len(p['surfaces']),'remainingToMinimumTarget':20000-len(p['surfaces'])})
  p=rebuild.attach_structural_collections(p);p=rebuild.build_research_dossiers(p)
  OUT.write_text(json.dumps(p,ensure_ascii=False,separators=(',',':'))+'\n',encoding='utf-8')
  nf=['node_id','tree_id','node_type','label','canonical_key','region','source_url','evidence','evidence_status'];ef=['edge_id','tree_id','branch_id','subject_node_id','object_node_id','edge_label','evidence_url','evidence_text','evidence_field','confidence','review_state','prohibited_inference_check'];write(NODES,nf,list(nodes.values()));write(EDGES,ef,edges)
@@ -46,5 +65,5 @@ def main():
  for i,r in enumerate(repairs,1):audits.append({'sample_id':f'v48-loc-geo-{i:03d}','sample_lane':'v48_explicit_loc_item_place_repair','surface_id':r['surface_id'],'source_record_id':r['source_record_id'],'title':surf[r['surface_id']]['title'],'date_start':surf[r['surface_id']]['dateStart'],'region':r['normalized_place_text'],'source_name':'Library of Congress loc.gov API','authority_state':'resolved_origin','trace_state':'accepted','trace_tier':'source_verified','source_url_gate':'pass','title_gate':'pass','date_gate':'pass','region_gate':'pass','image_route_gate':'pass','authority_gate':'pass','trace_gate':'pass','influence_gate':'pass','six_tables_gate':'pass','audit_status':'pass','audit_note':r['evidence_text']})
  write(SAMPLE_OUT,fields,audits+old[:200-len(audits)])
  write(SUMMARY,['metric','value'],[{'metric':'active_objects','value':str(len(p['surfaces']))},{'metric':'explicit_LOC_object_geography_repairs','value':str(len(repairs))},{'metric':'unresolved_region_objects','value':'0'},{'metric':'remaining_to_20000','value':str(20000-len(p['surfaces']))}])
- print(json.dumps({'active':len(p['surfaces']),'repairs':len(repairs),'unresolved':sum(x.get('placeText')=='Unresolved region' for x in p['surfaces'])}))
+ print(json.dumps({'active':len(p['surfaces']),'repairs':len(repairs),'aic_source_viewer_only':len(aic_route_repairs),'unresolved':sum(x.get('placeText')=='Unresolved region' for x in p['surfaces'])}))
 if __name__=='__main__':main()

@@ -1,0 +1,56 @@
+gate,value,requirement,status,note
+payload_status,prefreeze_candidate_v48_loc_object_geography_repair,prefreeze_candidate_v48_loc_object_geography_repair,PASS,Versioned candidate status
+payload_parent_version,v47,v47,PASS,v48 derives from the isolated v47 candidate
+payload_official_release,false,false,PASS,Candidate is not the official release layer
+payload_active_count,15923,15923,PASS,Exact active candidate count
+payload_gap_to_20000,4077,4077,PASS,Quality gates are not relaxed to close the count gap
+payload_unique_surface_ids,15923,15923,PASS,No duplicate surface IDs
+payload_unique_source_record_ids,15923,15923,PASS,No duplicate source record IDs
+payload_unresolved_region_active,0,0,PASS,Object geography only
+payload_authority_uncertain_active,0,0,PASS,Authority hold does not leak into active layer
+payload_trace_unlinked_active,0,0,PASS,Every active object has accepted TRACE state
+payload_trace_missing_edge_ids,0,0,PASS,Accepted TRACE has indexed evidence edge IDs
+payload_influenced_by_labels,0,0,PASS,No inferred historical influence
+payload_filename_extension_titles,0,0,PASS,Display titles are not filenames
+parent_child_surface_set_delta,0,0,PASS,v48 does not add or remove active objects
+parent_child_core_record_changes,0,0,PASS,LOC geography and AIC display routing do not reclassify core records
+parent_child_place_changes,18,18,PASS,Only the explicit LOC item.place repairs change geography
+parent_child_place_change_scope,0,0,PASS,Every geography change is declared in the repair CSV
+loc_repair_rows,18,18,PASS,Declared object-level LOC repairs
+loc_repair_unique_surfaces,18,18,PASS,One repair per active object
+loc_repair_raw_files,18,18,PASS,One saved official LOC response per repair
+loc_repair_edges,18,18,PASS,One associated_with_place edge per repair
+loc_item_place_evidence_failures,0,0,PASS,"No repository, creator-nationality or search-term geography substitutions"
+loc_repair_scope_failures,0,0,PASS,Repair stays inside explicit LOC item.place evidence
+aic_active_source_viewer_objects,2,2,PASS,The two active AIC additions remain active
+aic_active_unstable_display_route_failures,0,0,PASS,Cloudflare-blocked IIIF URLs are evidence only
+trace_adjunct_count,11,11,PASS,Photography and printmaking auxiliary branch
+trace_adjunct_evidence_failures,0,0,PASS,"Auxiliary nodes retain source, medium, year and place"
+trace_adjunct_influence_edges,0,0,PASS,Auxiliary relations never become historical influence
+sample_rows,200,200,PASS,Saved 200-object audit
+sample_unique_ids,200,200,PASS,No duplicate sample rows
+sample_failures,0,0,PASS,All sampled objects pass
+sample_loc_repair_rows,18,18,PASS,All 18 LOC repairs are forced into the sample
+saved_search_gate_holds,0,0,PASS,Versioned saved search gate
+sqlite_integrity,ok,ok,PASS,Frozen query snapshot integrity
+sqlite_schema_version,prefreeze_candidate_v48_sqlite_v1,prefreeze_candidate_v48_sqlite_v1,PASS,SQLite version matches candidate
+sqlite_source_payload,generated/public_surfaces_prefreeze_candidate_v48.json,generated/public_surfaces_prefreeze_candidate_v48.json,PASS,SQLite points to the exact v48 payload
+sqlite_active_objects,15923,15923,PASS,SQLite active count
+sqlite_payload_id_delta,0,0,PASS,SQLite IDs are a subset of payload IDs
+sqlite_unresolved_region_active,0,0,PASS,Active unresolved geography
+sqlite_authority_uncertain_active,0,0,PASS,Authority hold isolation
+sqlite_authority_review_rows,4425,4425,PASS,Authority review layer remains visible and separate
+sqlite_authority_review_search_rows,4425,4425,PASS,Authority review layer remains searchable
+sqlite_trace_unlinked_active,0,0,PASS,Accepted active TRACE
+sqlite_active_without_indexed_edges,0,0,PASS,Every active object has indexed edge references
+sqlite_influence_edges,0,0,PASS,No inferred historical influence
+sqlite_orphan_edge_subjects,0,0,PASS,TRACE subject endpoints resolve
+sqlite_orphan_edge_objects,0,0,PASS,TRACE object endpoints resolve
+sqlite_broken_object_edge_refs,0,0,PASS,Object-edge junctions resolve
+sqlite_filename_extension_titles,0,0,PASS,No filenames exposed as display titles
+sqlite_active_search_documents,15923,15923,PASS,One active search document per object
+sqlite_active_search_mismatches,0,0,PASS,Search title and geography match objects
+sqlite_trace_adjunct_documents,11,11,PASS,Auxiliary TRACE stays count-isolated and searchable
+sqlite_trace_adjunct_active_leak,0,0,PASS,Auxiliary TRACE never enters active count
+sqlite_loc_repair_edges,18,18,PASS,LOC geography repair edges
+sqlite_aic_unstable_display_routes,0,0,PASS,AIC direct IIIF is absent from display fields
