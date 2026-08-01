@@ -102,8 +102,8 @@ Planned assets under `frontend/public/data/trace-v48/`:
   review layer is requested.
 - `auxiliary.json`: the 11 count-ineligible adjunct records and their explicit
   evidence relations.
-- `neighborhoods/00.json` … `neighborhoods/ff.json`: object-local nodes and
-  edges partitioned by a stable hash byte. The catalogue stores each object's
+- `neighborhoods/000.json` … `neighborhoods/23f.json`: object-local nodes and
+  edges partitioned into 576 stable hash buckets. The catalogue stores each object's
   shard key, so selecting one object fetches one shard rather than the graph.
 - `manifest.json`: byte sizes, SHA-256 values, counts and performance gates for
   every generated asset.

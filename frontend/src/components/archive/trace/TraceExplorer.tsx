@@ -1,0 +1,558 @@
+"use client";
+
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
+import styles from "./TraceExplorer.module.css";
+import type {
+  ActiveCatalogItem,
+  AtlasRegion,
+  AuxiliaryPayload,
+  CompactPayload,
+  RelationFamily,
+  ReviewCatalogItem,
+  TraceAtlas,
+  TraceEdge,
+  TraceGraph,
+  TraceLayer,
+  TraceNode,
+  TraceView,
+} from "./trace-types";
+
+const FAMILY_LABEL: Record<RelationFamily, string> = {
+  source_provenance: "Source and provenance",
+  time_place: "Time and place",
+  medium_context: "Medium and documented context",
+  historical_influence: "Historical influence",
+};
+
+const FAMILY_ORDER: RelationFamily[] = [
+  "source_provenance",
+  "time_place",
+  "medium_context",
+  "historical_influence",
+];
+
+function decodeCompact<T>(payload: CompactPayload): T[] {
+  return payload.items.map((values) => {
+    const result: Record<string, unknown> = {};
+    payload.schema.forEach((field, index) => {
+      const dictionary = payload.dictionaries[field];
+      const value = values[index];
+      result[field] = dictionary ? dictionary[Number(value)] : value;
+    });
+    return result as T;
+  });
+}
+
+async function getJson<T>(url: string): Promise<T> {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`TRACE asset unavailable (${response.status})`);
+  return response.json() as Promise<T>;
+}
+
+function contains(haystack: Array<string | number | null>, query: string) {
+  const normalized = query.trim().toLocaleLowerCase();
+  if (!normalized) return true;
+  return haystack.some((value) => String(value ?? "").toLocaleLowerCase().includes(normalized));
+}
+
+function externalProps(href: string) {
+  return href.startsWith("http")
+    ? { target: "_blank", rel: "noreferrer" }
+    : {};
+}
+
+export default function TraceExplorer() {
+  const [atlas, setAtlas] = useState<TraceAtlas | null>(null);
+  const [view, setView] = useState<TraceView>("atlas");
+  const [layer, setLayer] = useState<TraceLayer>("active");
+  const [catalog, setCatalog] = useState<ActiveCatalogItem[] | null>(null);
+  const [review, setReview] = useState<ReviewCatalogItem[] | null>(null);
+  const [auxiliary, setAuxiliary] = useState<AuxiliaryPayload | null>(null);
+  const [graph, setGraph] = useState<TraceGraph | null>(null);
+  const [reviewSelection, setReviewSelection] = useState<ReviewCatalogItem | null>(null);
+  const [query, setQuery] = useState("");
+  const [regionMembers, setRegionMembers] = useState<string[]>([]);
+  const [regionLabel, setRegionLabel] = useState("");
+  const [decade, setDecade] = useState<number | "">("");
+  const [medium, setMedium] = useState("");
+  const [mobileDecade, setMobileDecade] = useState<number | null>(null);
+  const [loading, setLoading] = useState("Loading frozen TRACE atlas…");
+  const [error, setError] = useState("");
+  const shardCache = useRef(new Map<string, Record<string, TraceGraph>>());
+  const deferredQuery = useDeferredValue(query);
+
+  useEffect(() => {
+    let active = true;
+    getJson<TraceAtlas>("/data/trace-v48/atlas.json")
+      .then((value) => {
+        if (!active) return;
+        setAtlas(value);
+        setMobileDecade(value.decades.at(-1) ?? null);
+        setLoading("");
+      })
+      .catch((cause: unknown) => {
+        if (!active) return;
+        setError(cause instanceof Error ? cause.message : "TRACE atlas unavailable");
+        setLoading("");
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  async function ensureActiveCatalog() {
+    if (catalog || !atlas) return catalog;
+    setLoading("Loading active object index…");
+    const payload = await getJson<CompactPayload>(atlas.assets.catalog);
+    const items = decodeCompact<ActiveCatalogItem>(payload);
+    setCatalog(items);
+    setLoading("");
+    return items;
+  }
+
+  async function ensureReviewCatalog() {
+    if (review || !atlas) return review;
+    setLoading("Loading isolated review index…");
+    const payload = await getJson<CompactPayload>(atlas.assets.review);
+    const items = decodeCompact<ReviewCatalogItem>(payload);
+    setReview(items);
+    setLoading("");
+    return items;
+  }
+
+  async function ensureAuxiliary() {
+    if (auxiliary || !atlas) return auxiliary;
+    setLoading("Loading auxiliary media branch…");
+    const payload = await getJson<AuxiliaryPayload>(atlas.assets.auxiliary);
+    setAuxiliary(payload);
+    setLoading("");
+    return payload;
+  }
+
+  async function loadLayerData(next: TraceLayer) {
+    setError("");
+    try {
+      if (next === "active") await ensureActiveCatalog();
+      if (next === "review") await ensureReviewCatalog();
+      if (next === "auxiliary") await ensureAuxiliary();
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : "Layer unavailable");
+      setLoading("");
+    }
+  }
+
+  async function changeLayer(next: TraceLayer) {
+    setLayer(next);
+    setGraph(null);
+    setReviewSelection(null);
+    setQuery("");
+    setRegionMembers([]);
+    setRegionLabel("");
+    setDecade("");
+    setMedium("");
+    await loadLayerData(next);
+  }
+
+  async function selectActive(item: ActiveCatalogItem) {
+    if (!atlas) return;
+    setReviewSelection(null);
+    setLoading(`Loading direct evidence for ${item.title}…`);
+    setError("");
+    try {
+      let shard = shardCache.current.get(item.shard);
+      if (!shard) {
+        const payload = await getJson<{ objects: Record<string, TraceGraph> }>(
+          `${atlas.assets.neighborhoodBase}${item.shard}.json`,
+        );
+        shard = payload.objects;
+        shardCache.current.set(item.shard, shard);
+      }
+      const selected = shard[item.id];
+      if (!selected) throw new Error("Object neighbourhood is not present in its declared shard");
+      setGraph(selected);
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : "Object trace unavailable");
+    } finally {
+      setLoading("");
+    }
+  }
+
+  function exploreCell(row: AtlasRegion, selectedDecade: number) {
+    setView("object");
+    void changeLayer("active").then(() => {
+      setRegionLabel(row.region);
+      setRegionMembers(row.members ?? [row.region]);
+      setDecade(selectedDecade);
+    });
+  }
+
+  const activeResults = useMemo(() => {
+    if (!catalog || layer !== "active") return [];
+    return catalog
+      .filter((item) =>
+        contains([item.id, item.title, item.year, item.region, item.source, item.mediumGroup], deferredQuery),
+      )
+      .filter((item) => !regionMembers.length || regionMembers.includes(item.region))
+      .filter((item) => decade === "" || Math.floor(item.year / 10) * 10 === decade)
+      .filter((item) => !medium || item.mediumGroup === medium)
+      .slice(0, 60);
+  }, [catalog, decade, deferredQuery, layer, medium, regionMembers]);
+
+  const reviewResults = useMemo(() => {
+    if (!review || layer !== "review") return [];
+    return review
+      .filter((item) => contains([item.id, item.surfaceId, item.title, item.year, item.region, item.source], deferredQuery))
+      .slice(0, 60);
+  }, [deferredQuery, layer, review]);
+
+  const auxiliaryResults = useMemo(() => {
+    if (!auxiliary || layer !== "auxiliary") return [];
+    return auxiliary.items.filter((item) =>
+      contains(
+        [item.object.id, item.object.title, item.object.year, item.object.region, item.object.medium, item.object.source],
+        deferredQuery,
+      ),
+    );
+  }, [auxiliary, deferredQuery, layer]);
+
+  if (loading && !atlas) {
+    return <main className={styles.loading}>{loading}</main>;
+  }
+  if (!atlas) {
+    return <main className={styles.loading}>{error || "TRACE atlas unavailable"}</main>;
+  }
+
+  return (
+    <main className={styles.page}>
+      <header className={styles.header}>
+        <div>
+          <p className={styles.eyebrow}>TRACE / frozen candidate v48</p>
+          <h1>Evidence routes, locally readable and globally aggregated</h1>
+          <p className={styles.intro}>
+            TRACE follows documented source, creator, collection, date, place and medium relations.
+            It does not infer historical influence from proximity or similarity.
+          </p>
+        </div>
+        <dl className={styles.counts} aria-label="Frozen TRACE counts">
+          <div><dt>Active</dt><dd>{atlas.counts.activeObjects.toLocaleString()}</dd></div>
+          <div><dt>Auxiliary</dt><dd>{atlas.counts.auxiliaryObjects}</dd></div>
+          <div><dt>Influence</dt><dd>{atlas.counts.influenceEdges}</dd></div>
+        </dl>
+      </header>
+
+      <div className={styles.viewTabs} aria-label="TRACE view">
+        <button type="button" aria-pressed={view === "atlas"} onClick={() => setView("atlas")}>
+          Time / geography atlas
+        </button>
+        <button
+          type="button"
+          aria-pressed={view === "object"}
+          onClick={() => {
+            setView("object");
+            void changeLayer(layer);
+          }}
+        >
+          Object trace
+        </button>
+      </div>
+
+      {view === "atlas" ? (
+        <AtlasView atlas={atlas} mobileDecade={mobileDecade} setMobileDecade={setMobileDecade} exploreCell={exploreCell} />
+      ) : (
+        <section className={styles.objectView} aria-label="Object TRACE explorer">
+          <div className={styles.filters}>
+            <label>
+              Layer
+              <select value={layer} onChange={(event) => void changeLayer(event.target.value as TraceLayer)}>
+                <option value="active">Active main objects</option>
+                <option value="auxiliary">Auxiliary photo / print branch</option>
+                <option value="review">Authority review / hold</option>
+              </select>
+            </label>
+            <label className={styles.searchField}>
+              Search this layer
+              <input
+                type="search"
+                value={query}
+                onFocus={() => void loadLayerData(layer)}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder="Title, ID, place, source or medium"
+              />
+            </label>
+            {layer === "active" ? (
+              <>
+                <label>
+                  Decade
+                  <select value={decade} onChange={(event) => setDecade(event.target.value ? Number(event.target.value) : "")}>
+                    <option value="">All decades</option>
+                    {atlas.decades.map((value) => <option key={value} value={value}>{value}s</option>)}
+                  </select>
+                </label>
+                <label>
+                  Medium branch
+                  <select value={medium} onChange={(event) => setMedium(event.target.value)}>
+                    <option value="">All media</option>
+                    {atlas.mediumGroups.map((item) => <option key={item.name} value={item.name}>{item.name}</option>)}
+                  </select>
+                </label>
+              </>
+            ) : null}
+          </div>
+
+          <div className={styles.layerNote}>
+            {layer === "active" ? (
+              <span>{regionLabel ? `${regionLabel} · ` : ""}Active counts only. Select an object to load one evidence neighbourhood.</span>
+            ) : layer === "auxiliary" ? (
+              <span>11 source-documented, count-ineligible media adjuncts. No promotion and no influence inference.</span>
+            ) : (
+              <span>Authority-uncertain review records remain visible but are not mixed into active totals or graph edges.</span>
+            )}
+            {(regionLabel || decade !== "" || medium) && layer === "active" ? (
+              <button
+                type="button"
+                className={styles.clearButton}
+                onClick={() => {
+                  setRegionLabel(""); setRegionMembers([]); setDecade(""); setMedium("");
+                }}
+              >
+                Clear filters
+              </button>
+            ) : null}
+          </div>
+
+          <div className={styles.objectLayout}>
+            <aside className={styles.results} aria-label={`${layer} TRACE results`}>
+              {loading ? <p>{loading}</p> : null}
+              {error ? <p className={styles.error}>{error}</p> : null}
+              {layer === "active" && !catalog ? <p>Focus the search field to load the compact active index.</p> : null}
+              {layer === "active" ? activeResults.map((item) => (
+                <button key={item.id} type="button" onClick={() => void selectActive(item)} aria-pressed={graph?.object.id === item.id}>
+                  <strong>{item.title}</strong>
+                  <span>{item.year} · {item.region}</span>
+                  <span>{item.mediumGroup} · {item.tier.replaceAll("_", " ")}</span>
+                </button>
+              )) : null}
+              {layer === "auxiliary" ? auxiliaryResults.map((item) => (
+                <button key={item.object.id} type="button" onClick={() => { setGraph(item); setReviewSelection(null); }} aria-pressed={graph?.object.id === item.object.id}>
+                  <strong>{item.object.title}</strong>
+                  <span>{item.object.year} · {item.object.region}</span>
+                  <span>{item.object.mediumGroup} · count ineligible</span>
+                </button>
+              )) : null}
+              {layer === "review" ? reviewResults.map((item) => (
+                <button key={item.id} type="button" onClick={() => { setReviewSelection(item); setGraph(null); }} aria-pressed={reviewSelection?.id === item.id}>
+                  <strong>{item.title}</strong>
+                  <span>{item.year ?? "undated"} · {item.region}</span>
+                  <span>{item.authorityState.replaceAll("_", " ")}</span>
+                </button>
+              )) : null}
+            </aside>
+
+            <div className={styles.graphArea}>
+              {graph ? <LocalTrace graph={graph} /> : null}
+              {reviewSelection ? <ReviewRecord item={reviewSelection} /> : null}
+              {!graph && !reviewSelection ? (
+                <div className={styles.emptyState}>
+                  <h2>Select one record</h2>
+                  <p>The page loads only its direct, evidence-labelled neighbourhood. The full graph never enters the browser.</p>
+                </div>
+              ) : null}
+            </div>
+          </div>
+        </section>
+      )}
+      <p className={styles.live} aria-live="polite">{loading || error}</p>
+    </main>
+  );
+}
+
+function AtlasView({
+  atlas,
+  mobileDecade,
+  setMobileDecade,
+  exploreCell,
+}: {
+  atlas: TraceAtlas;
+  mobileDecade: number | null;
+  setMobileDecade: (value: number) => void;
+  exploreCell: (row: AtlasRegion, decade: number) => void;
+}) {
+  const maximum = Math.max(...atlas.regionMatrix.flatMap((row) => row.counts));
+  const decadeIndex = mobileDecade === null ? -1 : atlas.decades.indexOf(mobileDecade);
+  return (
+    <section className={styles.atlas} aria-label="Active object time and geography atlas">
+      <div className={styles.atlasStatement}>
+        <h2>Active layer distribution</h2>
+        <p>
+          Counts use frozen object geography. Repository location, creator nationality and search terms are not substituted.
+        </p>
+      </div>
+      <div className={styles.matrixWrap}>
+        <table className={styles.matrix}>
+          <caption>Active objects by normalized region and decade. Select a count to inspect matching objects.</caption>
+          <thead><tr><th scope="col">Region</th>{atlas.decades.map((value) => <th key={value} scope="col">{String(value).slice(2)}s</th>)}<th scope="col">Total</th></tr></thead>
+          <tbody>
+            {atlas.regionMatrix.map((row) => (
+              <tr key={row.region}>
+                <th scope="row">{row.region}</th>
+                {row.counts.map((count, index) => (
+                  <td key={atlas.decades[index]}>
+                    {count ? (
+                      <button
+                        type="button"
+                        style={{
+                          ["--trace-intensity" as string]: `${Math.round(
+                            Math.max(8, (count / maximum) * 34),
+                          )}%`,
+                        }}
+                        aria-label={`${row.region}, ${atlas.decades[index]}s: ${count} objects`}
+                        onClick={() => exploreCell(row, atlas.decades[index])}
+                      >
+                        {count}
+                      </button>
+                    ) : <span aria-label={`${row.region}, ${atlas.decades[index]}s: 0 objects`}>—</span>}
+                  </td>
+                ))}
+                <td>{row.total.toLocaleString()}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className={styles.mobileAtlas}>
+        <label>
+          Decade
+          <select value={mobileDecade ?? ""} onChange={(event) => setMobileDecade(Number(event.target.value))}>
+            {atlas.decades.map((value) => <option key={value} value={value}>{value}s</option>)}
+          </select>
+        </label>
+        <ol>
+          {atlas.regionMatrix
+            .map((row) => ({ row, count: decadeIndex >= 0 ? row.counts[decadeIndex] : 0 }))
+            .filter((item) => item.count)
+            .sort((a, b) => b.count - a.count)
+            .map(({ row, count }) => (
+              <li key={row.region}>
+                <button type="button" onClick={() => mobileDecade !== null && exploreCell(row, mobileDecade)}>
+                  <span>{row.region}</span><strong>{count.toLocaleString()}</strong>
+                </button>
+              </li>
+            ))}
+        </ol>
+      </div>
+
+      <div className={styles.atlasLists}>
+        <section>
+          <h3>Evidence relation vocabulary</h3>
+          <ul>{atlas.relationTypes.slice(0, 18).map((item) => <li key={item.label}><span>{item.label.replaceAll("_", " ")}</span><strong>{item.count.toLocaleString()}</strong></li>)}</ul>
+        </section>
+        <section>
+          <h3>Source distribution</h3>
+          <ul>{atlas.topSources.slice(0, 12).map((item) => <li key={item.name}><span>{item.name}</span><strong>{item.count.toLocaleString()}</strong></li>)}</ul>
+        </section>
+        <section>
+          <h3>Medium display branches</h3>
+          <ul>{atlas.mediumGroups.map((item) => <li key={item.name}><span>{item.name}</span><strong>{item.count.toLocaleString()}</strong></li>)}</ul>
+          <p>Display filters only; they do not reclassify frozen objects.</p>
+        </section>
+      </div>
+    </section>
+  );
+}
+
+function LocalTrace({ graph }: { graph: TraceGraph }) {
+  const [showAll, setShowAll] = useState(false);
+  useEffect(() => setShowAll(false), [graph.object.id]);
+  const nodeById = new Map(graph.nodes.map((node) => [node.id, node]));
+  const visible = showAll ? graph.edges : graph.edges.slice(0, 80);
+  const grouped = new Map<RelationFamily, TraceEdge[]>();
+  for (const family of FAMILY_ORDER) grouped.set(family, []);
+  for (const edge of visible) grouped.get(edge.family)?.push(edge);
+  return (
+    <article className={styles.localTrace}>
+      <header className={styles.rootNode} data-layer={graph.object.layer}>
+        <p>{graph.object.layer === "auxiliary" ? "Auxiliary TRACE node / not counted" : "Active object root"}</p>
+        <h2>{graph.object.title}</h2>
+        <dl>
+          <div><dt>Date</dt><dd>{graph.object.year}</dd></div>
+          <div><dt>Place</dt><dd>{graph.object.region}</dd></div>
+          <div><dt>Medium</dt><dd>{graph.object.medium}</dd></div>
+          <div><dt>TRACE tier</dt><dd>{graph.object.traceTier.replaceAll("_", " ")}</dd></div>
+        </dl>
+        <a href={graph.object.href} {...externalProps(graph.object.href)}>
+          Open {graph.object.hrefKind === "object" ? "object page" : "official source page"}
+        </a>
+      </header>
+
+      <p className={styles.noInfluence}>
+        No documented <code>influenced_by</code> edge exists in the v48 freeze. The branches below are evidence and association routes, not influence claims.
+      </p>
+
+      <div className={styles.branches}>
+        {FAMILY_ORDER.filter((family) => family !== "historical_influence").map((family) => (
+          <section key={family} data-family={family}>
+            <h3>{FAMILY_LABEL[family]}</h3>
+            {grouped.get(family)?.length ? (
+              <ul>{grouped.get(family)?.map((edge) => <EdgeNode key={edge.id} edge={edge} rootId={graph.object.nodeId} nodeById={nodeById} />)}</ul>
+            ) : <p>No direct edge in this family.</p>}
+          </section>
+        ))}
+      </div>
+
+      {graph.edges.length > 80 ? (
+        <button type="button" className={styles.showButton} onClick={() => setShowAll((value) => !value)}>
+          {showAll ? "Show first 80 direct edges" : `Show all ${graph.edges.length} direct edges`}
+        </button>
+      ) : null}
+
+      <details className={styles.tableFallback}>
+        <summary>Text relation table ({graph.edges.length})</summary>
+        <table>
+          <thead><tr><th>Direction</th><th>Relation</th><th>Node</th><th>Status</th><th>Evidence</th></tr></thead>
+          <tbody>{graph.edges.map((edge) => {
+            const peer = peerNode(edge, graph.object.nodeId, nodeById);
+            return <tr key={edge.id}><td>{edge.direction}</td><td>{edge.label}</td><td><a href={peer?.href || edge.evidenceUrl} {...externalProps(peer?.href || edge.evidenceUrl)}>{peer?.label || "Evidence node"}</a></td><td>{edge.reviewState}</td><td><a href={edge.evidenceUrl} {...externalProps(edge.evidenceUrl)}>{edge.evidenceField || "Source evidence"}</a></td></tr>;
+          })}</tbody>
+        </table>
+      </details>
+    </article>
+  );
+}
+
+function peerNode(edge: TraceEdge, rootId: string, nodeById: Map<string, TraceNode>) {
+  if (edge.subject === rootId) return nodeById.get(edge.object);
+  if (edge.object === rootId) return nodeById.get(edge.subject);
+  return nodeById.get(edge.object) ?? nodeById.get(edge.subject);
+}
+
+function EdgeNode({ edge, rootId, nodeById }: { edge: TraceEdge; rootId: string; nodeById: Map<string, TraceNode> }) {
+  const peer = peerNode(edge, rootId, nodeById);
+  const href = peer?.href || edge.evidenceUrl;
+  return (
+    <li>
+      <span className={styles.edgeLabel}>{edge.direction} · {edge.label.replaceAll("_", " ")}</span>
+      <a href={href} {...externalProps(href)}>{peer?.label || "Evidence node"}</a>
+      <span>{peer?.type?.replaceAll("_", " ")} · {edge.reviewState.replaceAll("_", " ")} · {edge.confidence || "documented"}</span>
+      {edge.evidenceText ? <p>{edge.evidenceText}</p> : null}
+    </li>
+  );
+}
+
+function ReviewRecord({ item }: { item: ReviewCatalogItem }) {
+  return (
+    <article className={styles.reviewRecord}>
+      <p>Authority review / count isolated</p>
+      <h2>{item.title}</h2>
+      <dl>
+        <div><dt>Date</dt><dd>{item.year ?? "Undated"}</dd></div>
+        <div><dt>Region</dt><dd>{item.region}</dd></div>
+        <div><dt>Authority</dt><dd>{item.authorityState.replaceAll("_", " ")}</dd></div>
+        <div><dt>TRACE</dt><dd>{item.traceState.replaceAll("_", " ")}</dd></div>
+        <div><dt>Review route</dt><dd>{item.reviewRoute}</dd></div>
+        <div><dt>Count policy</dt><dd>{item.countPolicy}</dd></div>
+      </dl>
+      <a href={item.href} {...externalProps(item.href)}>Open source page</a>
+    </article>
+  );
+}

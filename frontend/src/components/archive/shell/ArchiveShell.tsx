@@ -33,7 +33,7 @@ export default function ArchiveShell({
   hideWordmark = false,
 }: {
   main: React.ReactNode;
-  activeNav?: "index" | "folders" | "search" | "about";
+  activeNav?: "index" | "folders" | "search" | "about" | "trace";
   cornerCard?: React.ReactNode;
   /** Legacy right-side contextual panel. Prefer leftPanel/rightPanel. */
   panel?: React.ReactNode;
@@ -311,6 +311,15 @@ export default function ArchiveShell({
         >
           <IconFolder />
           <span>Folders</span>
+        </Link>
+        <Link
+          href="/trace"
+          className="nav-icon"
+          data-active={activeNav === "trace"}
+          aria-label="TRACE evidence atlas"
+        >
+          <IconTree />
+          <span>TRACE</span>
         </Link>
         <button
           ref={searchButtonRef}
