@@ -1,0 +1,47 @@
+{
+  "version": "v46",
+  "scope": "active accepted TRACE only",
+  "semantics": {
+    "documented_lineage": "May be drawn as an evidence-return path.",
+    "geotime": "Shows object-place and object-year aggregation, not causality.",
+    "historical_influence": "May render only explicit influenced_by edges with direct evidence."
+  },
+  "views": {
+    "object_lineage": {
+      "mode": "on-demand",
+      "max_nodes": 200,
+      "source": "SQLite adjacency query"
+    },
+    "geo_time": {
+      "mode": "aggregate",
+      "file": "prefreeze_candidate_v46_trace_atlas_geo_decades.csv",
+      "rows": 1103
+    },
+    "source_geography": {
+      "mode": "aggregate",
+      "file": "prefreeze_candidate_v46_trace_atlas_source_geography.csv",
+      "rows": 896
+    }
+  },
+  "metrics": {
+    "candidate_version": "v46",
+    "active_objects": 15921,
+    "accepted_trace_objects": 15921,
+    "full_trace_nodes": 97845,
+    "full_trace_edges": 255638,
+    "active_trace_subgraph_nodes": 45352,
+    "active_trace_subgraph_edges": 126798,
+    "object_regions": 156,
+    "decade_bins": 23,
+    "source_families": 272,
+    "historical_influence_edges": 0,
+    "full_client_graph_allowed": "no",
+    "object_lineage_expand_limit": 200
+  },
+  "files": [
+    "prefreeze_candidate_v46_trace_atlas_summary.csv",
+    "prefreeze_candidate_v46_trace_atlas_edge_roles.csv",
+    "prefreeze_candidate_v46_trace_atlas_geo_decades.csv",
+    "prefreeze_candidate_v46_trace_atlas_source_geography.csv"
+  ]
+}

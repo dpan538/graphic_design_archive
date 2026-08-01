@@ -49,8 +49,8 @@
     {
       "batch": "A_reproducibility_contract",
       "path": "scripts/audit_prefreeze_candidate_v46_trace_atlas.py",
-      "bytes": 11377,
-      "sha256": "f50b080462efa50289c3d90c443eefc1a7c32356143519755a4b6b0206fc460a",
+      "bytes": 11398,
+      "sha256": "58617af7e4de57713d7867d7e957ceadea1ada8bce430ce25afe704339376bc5",
       "transfer_class": "regular_git",
       "canonical_role": "reproducibility"
     },
@@ -217,32 +217,32 @@
     {
       "batch": "D_review_and_visual_query_layer",
       "path": "data/prefreeze_candidate_v46_trace_atlas_summary.csv",
-      "bytes": 359,
-      "sha256": "62c183e15c31282f48e67e4f7ce720741b4baee2bccab391d4656cd162342d6f",
+      "bytes": 345,
+      "sha256": "63459199ff5aed82b67db35df18f81e9c39a388283c4d569ed8f672042309623",
       "transfer_class": "regular_git",
       "canonical_role": "review_or_validation"
     },
     {
       "batch": "D_review_and_visual_query_layer",
       "path": "data/prefreeze_candidate_v46_trace_atlas_edge_roles.csv",
-      "bytes": 1212,
-      "sha256": "cafd07f3aff152b4c4613dd57f322fcfbeef74a4f1958aebd62f92d2445fce0c",
+      "bytes": 1192,
+      "sha256": "31fba8a1283e0f114028501ad736edceb0ebe3bda3872e0ddaaead09414f461b",
       "transfer_class": "regular_git",
       "canonical_role": "review_or_validation"
     },
     {
       "batch": "D_review_and_visual_query_layer",
       "path": "data/prefreeze_candidate_v46_trace_atlas_geo_decades.csv",
-      "bytes": 22994,
-      "sha256": "22bf29ea668a02a50d3263f48ff272c2905a56bdac66b462e765e8325394b37b",
+      "bytes": 21890,
+      "sha256": "941f10653a1576aef54e97b1c0cc5d8bcf16bbdbdc08aa72595419b2262e78ee",
       "transfer_class": "regular_git",
       "canonical_role": "review_or_validation"
     },
     {
       "batch": "D_review_and_visual_query_layer",
       "path": "data/prefreeze_candidate_v46_trace_atlas_source_geography.csv",
-      "bytes": 58518,
-      "sha256": "b863628e65b67feaa8a364dfc15ad25a7674ddcbb93db6c9b6a58e3c9824fdc8",
+      "bytes": 57621,
+      "sha256": "4ce77c6bc14ff22501977cb8854460ae382141dc6dfc3d92e2252902af52d084",
       "transfer_class": "regular_git",
       "canonical_role": "review_or_validation"
     },
@@ -257,7 +257,7 @@
   ],
   "totals": {
     "files": 30,
-    "bytes": 613974735,
+    "bytes": 613972721,
     "git_lfs_files": 2
   }
 }

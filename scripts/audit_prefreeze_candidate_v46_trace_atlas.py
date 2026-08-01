@@ -50,7 +50,7 @@ def scalar(conn: sqlite3.Connection, query: str) -> int:
 
 def write_csv(path: Path, fieldnames: list[str], data: list[dict[str, object]]) -> None:
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(data)
 

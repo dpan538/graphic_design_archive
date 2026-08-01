@@ -1,0 +1,10 @@
+gate,value,status,requirement,note
+sqlite_integrity_check,ok,PASS,ok,SQLite page and index integrity.
+active_objects,15921,PASS,15921,Matches candidate v4 active object count.
+searchable_context_or_hold_records,8090,PASS,>0,Context remains searchable but excluded from active count.
+missing_source_urls,0,PASS,0,Every active object returns to source evidence.
+unresolved_region_objects,0,PASS,0,"Content freeze blocker, not schema failure."
+new_trace_objects_incomplete,0,PASS,0,"New TRACE objects require node, edge, and return URL."
+objects_missing_six_tables,0,PASS,0,Six-table metadata is normalized by row.
+duplicate_scoped_source_identities,0,PASS,0,"Document, object key, and locator form the scoped identity."
+search_documents,24011,PASS,>=active_objects,Active objects plus held/context records are pre-indexed.
