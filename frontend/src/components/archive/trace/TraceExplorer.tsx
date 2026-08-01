@@ -1,13 +1,14 @@
 "use client";
 
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
+import ChronogeographicRoutes from "./ChronogeographicRoutes";
+import TraceDiagrams from "./TraceDiagrams";
 import styles from "./TraceExplorer.module.css";
 import type {
   ActiveCatalogItem,
   AtlasRegion,
   AuxiliaryPayload,
   CompactPayload,
-  RelationFamily,
   ReviewCatalogItem,
   TraceAtlas,
   TraceEdge,
@@ -16,20 +17,6 @@ import type {
   TraceNode,
   TraceView,
 } from "./trace-types";
-
-const FAMILY_LABEL: Record<RelationFamily, string> = {
-  source_provenance: "Source and provenance",
-  time_place: "Time and place",
-  medium_context: "Medium and documented context",
-  historical_influence: "Historical influence",
-};
-
-const FAMILY_ORDER: RelationFamily[] = [
-  "source_provenance",
-  "time_place",
-  "medium_context",
-  "historical_influence",
-];
 
 function decodeCompact<T>(payload: CompactPayload): T[] {
   return payload.items.map((values) => {
@@ -242,7 +229,7 @@ export default function TraceExplorer() {
 
       <div className={styles.viewTabs} aria-label="TRACE view">
         <button type="button" aria-pressed={view === "atlas"} onClick={() => setView("atlas")}>
-          Time / geography atlas
+          Time / geography routes
         </button>
         <button
           type="button"
@@ -387,38 +374,7 @@ function AtlasView({
           Counts use frozen object geography. Repository location, creator nationality and search terms are not substituted.
         </p>
       </div>
-      <div className={styles.matrixWrap}>
-        <table className={styles.matrix}>
-          <caption>Active objects by normalized region and decade. Select a count to inspect matching objects.</caption>
-          <thead><tr><th scope="col">Region</th>{atlas.decades.map((value) => <th key={value} scope="col">{String(value).slice(2)}s</th>)}<th scope="col">Total</th></tr></thead>
-          <tbody>
-            {atlas.regionMatrix.map((row) => (
-              <tr key={row.region}>
-                <th scope="row">{row.region}</th>
-                {row.counts.map((count, index) => (
-                  <td key={atlas.decades[index]}>
-                    {count ? (
-                      <button
-                        type="button"
-                        style={{
-                          ["--trace-intensity" as string]: `${Math.round(
-                            Math.max(8, (count / maximum) * 34),
-                          )}%`,
-                        }}
-                        aria-label={`${row.region}, ${atlas.decades[index]}s: ${count} objects`}
-                        onClick={() => exploreCell(row, atlas.decades[index])}
-                      >
-                        {count}
-                      </button>
-                    ) : <span aria-label={`${row.region}, ${atlas.decades[index]}s: 0 objects`}>—</span>}
-                  </td>
-                ))}
-                <td>{row.total.toLocaleString()}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <ChronogeographicRoutes atlas={atlas} exploreCell={exploreCell} />
 
       <div className={styles.mobileAtlas}>
         <label>
@@ -442,6 +398,42 @@ function AtlasView({
         </ol>
       </div>
 
+      <details className={styles.matrixFallback}>
+        <summary>Exact region × decade count table</summary>
+        <div className={styles.matrixWrap}>
+          <table className={styles.matrix}>
+            <caption>Active objects by normalized region and decade. Select a count to inspect matching objects.</caption>
+            <thead><tr><th scope="col">Region</th>{atlas.decades.map((value) => <th key={value} scope="col">{String(value).slice(2)}s</th>)}<th scope="col">Total</th></tr></thead>
+            <tbody>
+              {atlas.regionMatrix.map((row) => (
+                <tr key={row.region}>
+                  <th scope="row">{row.region}</th>
+                  {row.counts.map((count, index) => (
+                    <td key={atlas.decades[index]}>
+                      {count ? (
+                        <button
+                          type="button"
+                          style={{
+                            ["--trace-intensity" as string]: `${Math.round(
+                              Math.max(8, (count / maximum) * 34),
+                            )}%`,
+                          }}
+                          aria-label={`${row.region}, ${atlas.decades[index]}s: ${count} objects`}
+                          onClick={() => exploreCell(row, atlas.decades[index])}
+                        >
+                          {count}
+                        </button>
+                      ) : <span aria-label={`${row.region}, ${atlas.decades[index]}s: 0 objects`}>—</span>}
+                    </td>
+                  ))}
+                  <td>{row.total.toLocaleString()}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </details>
+
       <div className={styles.atlasLists}>
         <section>
           <h3>Evidence relation vocabulary</h3>
@@ -462,13 +454,9 @@ function AtlasView({
 }
 
 function LocalTrace({ graph }: { graph: TraceGraph }) {
-  const [showAll, setShowAll] = useState(false);
-  useEffect(() => setShowAll(false), [graph.object.id]);
+  const [diagramMode, setDiagramMode] = useState<"routes" | "tree">("routes");
+  useEffect(() => setDiagramMode("routes"), [graph.object.id]);
   const nodeById = new Map(graph.nodes.map((node) => [node.id, node]));
-  const visible = showAll ? graph.edges : graph.edges.slice(0, 80);
-  const grouped = new Map<RelationFamily, TraceEdge[]>();
-  for (const family of FAMILY_ORDER) grouped.set(family, []);
-  for (const edge of visible) grouped.get(edge.family)?.push(edge);
   return (
     <article className={styles.localTrace}>
       <header className={styles.rootNode} data-layer={graph.object.layer}>
@@ -489,22 +477,15 @@ function LocalTrace({ graph }: { graph: TraceGraph }) {
         No documented <code>influenced_by</code> edge exists in the v48 freeze. The branches below are evidence and association routes, not influence claims.
       </p>
 
-      <div className={styles.branches}>
-        {FAMILY_ORDER.filter((family) => family !== "historical_influence").map((family) => (
-          <section key={family} data-family={family}>
-            <h3>{FAMILY_LABEL[family]}</h3>
-            {grouped.get(family)?.length ? (
-              <ul>{grouped.get(family)?.map((edge) => <EdgeNode key={edge.id} edge={edge} rootId={graph.object.nodeId} nodeById={nodeById} />)}</ul>
-            ) : <p>No direct edge in this family.</p>}
-          </section>
-        ))}
-      </div>
-
-      {graph.edges.length > 80 ? (
-        <button type="button" className={styles.showButton} onClick={() => setShowAll((value) => !value)}>
-          {showAll ? "Show first 80 direct edges" : `Show all ${graph.edges.length} direct edges`}
+      <div className={styles.diagramTabs} aria-label="Object trace diagram">
+        <button type="button" aria-pressed={diagramMode === "routes"} onClick={() => setDiagramMode("routes")}>
+          Route map
         </button>
-      ) : null}
+        <button type="button" aria-pressed={diagramMode === "tree"} onClick={() => setDiagramMode("tree")}>
+          Rooted tree
+        </button>
+      </div>
+      <TraceDiagrams graph={graph} mode={diagramMode} />
 
       <details className={styles.tableFallback}>
         <summary>Text relation table ({graph.edges.length})</summary>
@@ -524,19 +505,6 @@ function peerNode(edge: TraceEdge, rootId: string, nodeById: Map<string, TraceNo
   if (edge.subject === rootId) return nodeById.get(edge.object);
   if (edge.object === rootId) return nodeById.get(edge.subject);
   return nodeById.get(edge.object) ?? nodeById.get(edge.subject);
-}
-
-function EdgeNode({ edge, rootId, nodeById }: { edge: TraceEdge; rootId: string; nodeById: Map<string, TraceNode> }) {
-  const peer = peerNode(edge, rootId, nodeById);
-  const href = peer?.href || edge.evidenceUrl;
-  return (
-    <li>
-      <span className={styles.edgeLabel}>{edge.direction} · {edge.label.replaceAll("_", " ")}</span>
-      <a href={href} {...externalProps(href)}>{peer?.label || "Evidence node"}</a>
-      <span>{peer?.type?.replaceAll("_", " ")} · {edge.reviewState.replaceAll("_", " ")} · {edge.confidence || "documented"}</span>
-      {edge.evidenceText ? <p>{edge.evidenceText}</p> : null}
-    </li>
-  );
 }
 
 function ReviewRecord({ item }: { item: ReviewCatalogItem }) {

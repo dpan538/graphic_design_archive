@@ -354,6 +354,460 @@
   font-size: 0.78rem;
 }
 
+.diagramTabs {
+  display: flex;
+  gap: 0.4rem;
+  margin: 1rem 0 0;
+}
+
+.diagramTabs button {
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--line-soft);
+  color: var(--ink);
+  background: transparent;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+
+.diagramTabs button[aria-pressed="true"],
+.diagramTabs button:hover {
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.diagram {
+  margin-top: 0.75rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--ink);
+}
+
+.diagramHeading,
+.chronoHeading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(18rem, 1.2fr);
+  gap: 1.5rem;
+  align-items: end;
+  margin-bottom: 1rem;
+}
+
+.diagramHeading p,
+.chronoHeading p,
+.diagramHeading h3,
+.chronoHeading h3 {
+  margin: 0;
+}
+
+.diagramHeading p,
+.chronoHeading > div > p {
+  color: var(--ink-soft);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+}
+
+.diagramHeading h3,
+.chronoHeading h3 {
+  margin-top: 0.25rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.diagramHeading > span,
+.chronoHeading > p {
+  justify-self: end;
+  max-width: 38rem;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+.diagramDesktop {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 64%, var(--canvas));
+}
+
+.routeMapSvg,
+.treeSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+.routeLine,
+.treeTrunk,
+.treeTwig {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.routeLine {
+  stroke-width: 14;
+}
+
+.routeLine[data-family="source_provenance"],
+.treeTrunk[data-family="source_provenance"],
+.treeTwig[data-family="source_provenance"] {
+  stroke: var(--theme);
+}
+
+.routeLine[data-family="time_place"],
+.treeTrunk[data-family="time_place"],
+.treeTwig[data-family="time_place"] {
+  stroke: var(--region);
+}
+
+.routeLine[data-family="medium_context"],
+.treeTrunk[data-family="medium_context"],
+.treeTwig[data-family="medium_context"] {
+  stroke: var(--medium);
+}
+
+.routeStation,
+.treeHub,
+.treeLeaf {
+  fill: var(--paper);
+  stroke-width: 5;
+}
+
+.routeStation[data-family="source_provenance"],
+.treeHub[data-family="source_provenance"],
+.treeLeaf[data-family="source_provenance"] {
+  stroke: var(--theme);
+}
+
+.routeStation[data-family="time_place"],
+.treeHub[data-family="time_place"],
+.treeLeaf[data-family="time_place"] {
+  stroke: var(--region);
+}
+
+.routeStation[data-family="medium_context"],
+.treeHub[data-family="medium_context"],
+.treeLeaf[data-family="medium_context"] {
+  stroke: var(--medium);
+}
+
+.routeMapSvg a:focus-visible .routeStation,
+.treeSvg a:focus-visible .treeLeaf {
+  stroke: var(--ink);
+  stroke-width: 8;
+}
+
+.routeLabel,
+.interchangeLabel,
+.objectLabel,
+.treeBranchLabel,
+.treeRootLabel {
+  fill: var(--ink);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.objectLabel {
+  fill: var(--ink-soft);
+  font-size: 10px;
+}
+
+.stationCode {
+  fill: var(--ink);
+  font-size: 7px;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.interchangeOuter,
+.treeRoot {
+  fill: var(--ink);
+}
+
+.interchangeInner,
+.treeRootInner {
+  fill: var(--paper);
+}
+
+.treeTrunk {
+  stroke-width: 8;
+}
+
+.treeTwig {
+  stroke-width: 2.5;
+}
+
+.treeLeafLabel {
+  fill: var(--ink);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.treeLeafMeta {
+  fill: var(--ink-soft);
+  font-size: 9px;
+}
+
+.mobileDiagramNote {
+  display: none;
+}
+
+.stationIndex {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.stationIndex section {
+  padding-top: 0.65rem;
+  border-top: 4px solid var(--line);
+}
+
+.stationIndex section[data-family="source_provenance"] {
+  border-color: var(--theme);
+}
+
+.stationIndex section[data-family="time_place"] {
+  border-color: var(--region);
+}
+
+.stationIndex section[data-family="medium_context"] {
+  border-color: var(--medium);
+}
+
+.stationIndex h4 {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0 0 0.65rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.stationIndex h4 span,
+.stationIndex b {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+.stationIndex ol {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stationIndex li {
+  display: grid;
+  grid-template-columns: 2.2rem minmax(0, 1fr);
+  gap: 0.45rem;
+  padding: 0.42rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.stationIndex li > b {
+  font-size: 0.65rem;
+}
+
+.stationIndex a {
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.stationIndex small {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--ink-soft);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.58rem;
+  line-height: 1.35;
+}
+
+.stationIndex section > p {
+  color: var(--ink-soft);
+  font-size: 0.68rem;
+}
+
+.chronoRoutes {
+  margin-top: 1.4rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--ink);
+}
+
+.chronoDesktop {
+  min-width: 52rem;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+.chronoRoutes:has(.chronoDesktop) {
+  overflow-x: auto;
+}
+
+.chronoAxisRow,
+.chronoRow {
+  display: grid;
+  grid-template-columns: 10rem minmax(36rem, 1fr) 5rem;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.chronoAxisRow {
+  padding-bottom: 0.55rem;
+  color: var(--ink-soft);
+  font-size: 0.58rem;
+  text-transform: uppercase;
+}
+
+.chronoAxis,
+.chronoRail {
+  display: grid;
+  grid-template-columns: repeat(var(--trace-decades), minmax(1.45rem, 1fr));
+}
+
+.chronoAxis span {
+  text-align: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.chronoRow {
+  min-height: 2.55rem;
+  border-top: 1px solid var(--line);
+}
+
+.chronoRow > strong {
+  font-size: 0.66rem;
+  font-weight: 500;
+}
+
+.chronoRow > b {
+  font-size: 0.66rem;
+  font-weight: 500;
+  text-align: right;
+}
+
+.chronoRail {
+  position: relative;
+  min-height: 2.45rem;
+  align-items: center;
+}
+
+.chronoRail::before {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: color-mix(in srgb, var(--region) 55%, var(--line));
+  content: "";
+}
+
+.chronoCell {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  min-width: 1.45rem;
+  min-height: 2.45rem;
+  place-items: center;
+}
+
+.chronoCell > i {
+  width: 1px;
+  height: 0.45rem;
+  background: var(--line-soft);
+}
+
+.chronoStation {
+  width: var(--station-size);
+  height: var(--station-size);
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: 3px solid var(--region);
+  border-radius: 50%;
+  background: var(--paper);
+}
+
+.chronoStation:hover,
+.chronoStation:focus-visible {
+  border-color: var(--ink);
+  background: var(--region);
+}
+
+.chronoLegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.5rem;
+  margin-top: 0.8rem;
+  color: var(--ink-soft);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.6rem;
+}
+
+.chronoLegend span {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.legendRail,
+.legendGap,
+.legendStation {
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+.legendRail {
+  width: 1.5rem;
+  height: 3px;
+  background: var(--region);
+}
+
+.legendStation {
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 3px solid var(--region);
+  border-radius: 50%;
+  background: var(--paper);
+}
+
+.legendGap {
+  width: 1px;
+  height: 0.65rem;
+  background: var(--line-soft);
+}
+
+.matrixFallback {
+  margin-top: 1.4rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--ink);
+}
+
+.matrixFallback summary {
+  cursor: pointer;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+
+.matrixFallback .matrixWrap {
+  margin-top: 0.8rem;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
 .branches {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -488,8 +942,16 @@
   }
 
   .branches,
-  .atlasLists {
+  .atlasLists,
+  .stationIndex,
+  .diagramHeading,
+  .chronoHeading {
     grid-template-columns: 1fr;
+  }
+
+  .diagramHeading > span,
+  .chronoHeading > p {
+    justify-self: start;
   }
 
   .branches h3 {
@@ -519,6 +981,34 @@
 
   .matrixWrap {
     display: none;
+  }
+
+  .chronoDesktop,
+  .diagramDesktop,
+  .matrixFallback {
+    display: none;
+  }
+
+  .chronoRoutes {
+    overflow: visible;
+  }
+
+  .chronoLegend {
+    display: none;
+  }
+
+  .mobileDiagramNote {
+    display: block;
+    margin: 0;
+    padding: 0.65rem 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 0.7rem;
+  }
+
+  .stationIndex {
+    grid-template-columns: 1fr;
   }
 
   .mobileAtlas {

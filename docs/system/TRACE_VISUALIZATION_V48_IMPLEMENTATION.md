@@ -23,6 +23,14 @@ Implementation date: 2026-08-01
 - Evidence edges are grouped as source/provenance, time/place and
   medium/context. The actual relation label, direction, status and evidence
   URL remain visible.
+- The local object view now provides two equivalent evidence readings: a
+  metro-style route map with the object as interchange, and a rooted tree with
+  the object as root. Route colours encode evidence families only; line width
+  in the tree encodes depth only.
+- The global atlas now adds chronogeographic observation rails. Their x-axis is
+  the recorded decade and each row is a frozen object-geography category. Only
+  stations denote records; the rail itself does not assert diffusion,
+  continuity or influence.
 - No historical influence edge or visual influence arrow is rendered. The
   interface states that the frozen data contains zero documented
   `influenced_by` edges.
@@ -94,7 +102,7 @@ cd frontend && npm run dev -- --hostname 127.0.0.1 --port 3047
 - TypeScript: **PASS** with no diagnostics.
 - Next production compilation and built-in type validation: **PASS**.
 - Next production `compile` mode after the final component change: **PASS** in
-  27.4 seconds; `/trace` is present in the route manifest and the shared first
+  47 seconds; `/trace` is present in the route manifest and the shared first
   load JavaScript is 103 kB. Compile mode deliberately does not claim static
   generation completion.
 - Full production static generation: **not completed**. The existing build
@@ -108,9 +116,18 @@ cd frontend && npm run dev -- --hostname 127.0.0.1 --port 3047
   798 ms and the verification response completed in 14.533 seconds.
 - Served `atlas.json` and `neighborhoods/000.json` hashes matched their
   generated files byte-for-byte.
-- In-app browser attachment timed out twice before a page was available for
-  inspection. Therefore screenshots, console inspection and responsive visual
-  acceptance remain **not passed**, not silently waived.
+- In-app browser desktop acceptance: **PASS**. The active atlas exposed the
+  complete 1800–2020 decade structure; selecting the United States / 2020s
+  station produced the expected 18-object filtered result, and selecting
+  `SURF-CCR2026R0089` loaded five labelled evidence stations.
+- Metro route and rooted-tree modes: **PASS**. Both diagrams linked the same
+  five source, place, date, type and creator nodes and stated that the branches
+  are not historical influence claims.
+- Browser console: **PASS**, with zero warning or error entries and no visible
+  Next development error overlay.
+- Responsive acceptance at 390 x 844: **PASS**. Full diagrams were removed from
+  the accessibility tree and replaced by the labelled evidence-station index;
+  the global atlas became a decade selector plus ranked regional list.
 
 ## Accessibility and responsive implementation
 
@@ -119,16 +136,18 @@ cd frontend && npm run dev -- --hostname 127.0.0.1 --port 3047
 - Relation direction, relation type, review status and evidence route are
   written in text; colour is not the sole signal.
 - The local visual branches have a full text relation table fallback.
-- The desktop atlas is an HTML table. Mobile replaces it with a selected-decade
-  ranked list and progressively enters an object trace.
+- The desktop atlas uses a compact schematic rail plus an exact HTML table
+  disclosure. Mobile replaces both with a selected-decade ranked list and
+  progressively enters an object trace.
 - Loading and error state are exposed through `aria-live`.
 - The active catalogue search uses a deferred query so filtering 15,923 rows
   does not block urgent input updates.
 - Reduced-motion preferences disable non-essential transitions.
 
-Keyboard order, visible focus, screen-reader output and the mobile breakpoint
-still require browser-level acceptance because the in-app browser could not
-attach during this run.
+Keyboard-reachable native controls, accessible diagram names, route-link
+labels, mobile diagram replacement and the mobile atlas breakpoint were
+confirmed in the browser accessibility snapshot. A dedicated screen-reader
+session remains a deployment-stage check.
 
 ## Boundary checks and remaining risks
 
@@ -139,14 +158,19 @@ attach during this run.
 - Medium groups are display-only filters and do not rewrite frozen media.
 - Region aggregation uses frozen normalized object geography. No institution
   location, search term or creator nationality is substituted.
+- The frozen data has no latitude/longitude or audited geometry. The
+  chronogeographic view therefore uses region rails rather than a basemap; a
+  literal map remains deferred until an independently auditable coordinate
+  sidecar exists.
 - The current frontend object-route payload covers only 2,585 of 15,923 active
   roots. The other 13,338 deliberately return to official source pages until a
   separate, audited frontend data sync exists.
 - A production deployment still needs a successful full static build or a
   separately approved change to the legacy static-generation strategy.
-- Browser visual/console/mobile verification remains the final UI acceptance
-  gate.
+- The third reference image described as a time-axis map was not attached, so
+  its exact graphic grammar could not be compared. This does not block the
+  evidence-safe chronogeographic implementation.
 
-No visualization file should be promoted to main until the remaining browser
-acceptance and full-build/deployment gate are resolved or explicitly accepted
-as a documented release exception.
+No visualization file should be promoted to main until the full-build and
+deployment gate is resolved or explicitly accepted as a documented release
+exception.
