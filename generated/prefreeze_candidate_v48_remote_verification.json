@@ -1,0 +1,70 @@
+{
+  "version": "v48",
+  "verificationDate": "2026-08-01",
+  "remote": "origin/main",
+  "verifiedThroughCommit": "5e7a47872610b7903a95d9521f5fb5d4e9a2647f",
+  "isolatedBranchCommit": "f2cf492b480139776ae674d5c26ccfd845e45e45",
+  "freezeCommit": "d592566",
+  "sourceDataCommit": "1d919fb",
+  "transferBatches": [
+    {"batch": "A", "commit": "b243a34edd211dfc94f6ef40adfac567023972e5", "files": 16, "storage": "regular_git"},
+    {"batch": "B", "commit": "d83204bfe3f769683b20bd567a2c2e71541b46b8", "files": 1, "storage": "git_lfs"},
+    {"batch": "C", "commit": "ecfeb933139c1cdecf204abaa5ca3ef33e880aa9", "files": 1, "storage": "git_lfs"},
+    {"batch": "D", "commit": "5e7a47872610b7903a95d9521f5fb5d4e9a2647f", "files": 50, "storage": "regular_git"}
+  ],
+  "manifest": {
+    "path": "generated/prefreeze_candidate_v48_transfer_manifest.json",
+    "sha256": "865358db84c15d960b3535969a32521c0ffec177f7455d21db86cd131f787d5b",
+    "declaredFiles": 65,
+    "declaredBytes": 613077245,
+    "hashMismatches": 0
+  },
+  "controlArtifactsOutsideSelfHashingManifest": {
+    "files": 3,
+    "bytes": 36487,
+    "paths": [
+      "generated/prefreeze_candidate_v48_transfer_manifest.json",
+      "data/prefreeze_candidate_v48_transfer_manifest.csv",
+      "docs/capture/PREFREEZE_CANDIDATE_V48_FREEZE_RECEIPT.md"
+    ]
+  },
+  "lfs": [
+    {
+      "path": "generated/public_surfaces_prefreeze_candidate_v48.json",
+      "bytes": 190067852,
+      "oidSha256": "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48",
+      "remoteContentHashVerified": true
+    },
+    {
+      "path": "data/prefreeze_candidate_v48.sqlite",
+      "bytes": 421801984,
+      "oidSha256": "ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "remoteContentHashVerified": true
+    }
+  ],
+  "remoteReadback": {
+    "freshShallowClone": true,
+    "manifestFilesVerified": 65,
+    "manifestHashMismatches": 0,
+    "sqliteIntegrity": "ok",
+    "activeObjectCount": 15923,
+    "unresolvedRegionActive": 0,
+    "authorityUncertainActive": 0,
+    "traceUnlinkedActive": 0,
+    "influenceEdges": 0,
+    "locRepairEdges": 18,
+    "traceAdjunctDocuments": 11,
+    "sampleRows": 200,
+    "sampleFailures": 0,
+    "savedFreezeGates": 55,
+    "savedFreezeHolds": 0
+  },
+  "boundary": {
+    "officialRelease": false,
+    "candidateFreezeOnly": true,
+    "mainV46HistoryRewritten": false,
+    "forcePushUsed": false,
+    "v47DerivedJsonAndSqliteTransferred": false,
+    "uncommittedDiscoveryProbesTransferred": false
+  }
+}
