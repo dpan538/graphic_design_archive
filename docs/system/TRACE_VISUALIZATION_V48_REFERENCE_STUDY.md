@@ -48,7 +48,8 @@ movements or genealogical influence.
 
 The map uses a restrained Equal Earth world geometry. It highlights only a
 country outline that can be matched from the frozen normalized object region.
-The shared 1800–2030 axis marks the recorded object year.
+The shared 1800–2026 axis runs from the frozen corpus floor to the implementation
+year and marks the recorded object year.
 
 Evidence boundary:
 

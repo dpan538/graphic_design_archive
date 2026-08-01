@@ -45,8 +45,8 @@ const REGION_ALIASES: Record<string, string[]> = {
 };
 
 const MIN_YEAR = 1800;
-const MAX_YEAR = 2030;
-const TIMELINE_TICKS = [1800, 1850, 1900, 1950, 2000, 2030];
+const PRESENT_YEAR = 2026;
+const TIMELINE_TICKS = [1800, 1850, 1900, 1950, 2000, PRESENT_YEAR];
 
 function targetCountryNames(region: string) {
   if (region in REGION_ALIASES) return REGION_ALIASES[region];
@@ -67,8 +67,8 @@ function externalProps(href: string) {
 }
 
 function timelineX(year: number) {
-  const clamped = Math.min(MAX_YEAR, Math.max(MIN_YEAR, year));
-  return 70 + ((clamped - MIN_YEAR) / (MAX_YEAR - MIN_YEAR)) * 980;
+  const clamped = Math.min(PRESENT_YEAR, Math.max(MIN_YEAR, year));
+  return 70 + ((clamped - MIN_YEAR) / (PRESENT_YEAR - MIN_YEAR)) * 980;
 }
 
 export default function TimeGeographyMap({ graph }: { graph: TraceGraph }) {
@@ -104,7 +104,7 @@ export default function TimeGeographyMap({ graph }: { graph: TraceGraph }) {
         >
           <title id="time-map-title">Time and geography map for {graph.object.title}</title>
           <desc id="time-map-desc">
-            A Natural Earth country map highlights only the normalized object region when it resolves to a country outline. A shared 1800 to 2030 axis marks the recorded object year. No object coordinate, travel path, diffusion or influence is inferred.
+            A Natural Earth country map highlights only the normalized object region when it resolves to a country outline. A shared 1800 to 2026 axis marks the recorded object year. No object coordinate, travel path, diffusion or influence is inferred.
           </desc>
           <path className={styles.mapSphere} d={path({ type: "Sphere" }) ?? undefined} />
           {countries.features.map((country) => {
