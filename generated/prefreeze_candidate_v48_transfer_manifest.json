@@ -1,0 +1,551 @@
+{
+  "version": "v48",
+  "freezeDate": "2026-08-01",
+  "sourceDataCommit": "1d919fb",
+  "state": "candidate_frozen_for_trace_visualization_not_official_release",
+  "activeObjectCount": 15923,
+  "remainingToMinimum20000": 4077,
+  "qualityGates": {
+    "passed": 55,
+    "held": 0
+  },
+  "isolatedNotCounted": {
+    "authorityUncertainReview": 4425,
+    "traceAuxiliaryPhotoPrint": 11,
+    "traceAuxiliaryPromotions": 0,
+    "influenceEdges": 0
+  },
+  "excluded": [
+    "uncommitted DigitalNZ, Cooper Hewitt, Smithsonian, Norway and LOC discovery probes",
+    "generated/public_surfaces_prefreeze_candidate_v47.json and data/prefreeze_candidate_v47.sqlite derived intermediates",
+    "older candidate versions, disposable caches, screenshots and unrelated frontend work"
+  ],
+  "transferStopRule": "Push and remotely verify each ordered batch before starting the next; never force-push or rewrite history.",
+  "files": [
+    {
+      "batch": "A_reproducibility_and_freeze_contract",
+      "path": ".gitattributes",
+      "bytes": 489,
+      "sha256": "5548836a6f02acfeeb3c51d2af85be8cb5720ca7dae94fb37bbe7247c93933b1",
+      "lfs_status": "regular_git",
+      "role": "reproducibility_and_contract"
+    },
+    {
+      "batch": "A_reproducibility_and_freeze_contract",
+      "path": "scripts/run_trace_first_aic_geographic_balance_v47.py",
+      "bytes": 15313,
+      "sha256": "18cec03f9b3299fcc845076c45efe3b4b4893a5aa8a4daa100a36037441f1901",
+      "lfs_status": "regular_git",
+      "role": "reproducibility_and_contract"
+    },
+    {
+      "batch": "A_reproducibility_and_freeze_contract",
+      "path": "scripts/build_prefreeze_candidate_v47_aic_balance.py",
+      "bytes": 13928,
+      "sha256": "2651e06099dbf92cee251e9cef1c5308be0cee6ecef249503e2aad750591b53e",
+      "lfs_status": "regular_git",
+      "role": "reproducibility_and_contract"
+    },
+    {
+      "batch": "A_reproducibility_and_freeze_contract",
+      "path": "scripts/build_prefreeze_candidate_v47_search_sqlite.py",
+      "bytes": 11805,
+      "sha256": "6602333ff5f30f32329e5ac602b0155c6ed5df5149257e669aec58a20d77887b",
+      "lfs_status": "regular_git",
+      "role": "reproducibility_and_contract"
+    },
+    {
+      "batch": "A_reproducibility_and_freeze_contract",
+      "path": "scripts/repair_prefreeze_candidate_v48_loc_geography.py",
+      "bytes": 3106,
+      "sha256": "4603bad27c2381d3841c443443f4ebbace50ba951d407541c40ee0090549f8d5",
+      "lfs_status": "regular_git",
+      "role": "reproducibility_and_contract"
+    },
+    {
+      "batch": "A_reproducibility_and_freeze_contract",
+      "path": "scripts/build_prefreeze_candidate_v48_loc_geo_repair.py",
+      "bytes": 7788,
+      "sha256": "df506344ee64c78a5b4100f7311ae01ad1af2da10a6197f66397311a9bd03c99",
+      "lfs_status": "regular_git",
+      "role": "reproducibility_and_contract"
+    },
+    {
+      "batch": "A_reproducibility_and_freeze_contract",
+      "path": "scripts/build_prefreeze_candidate_v48_search_sqlite.py",
+      "bytes": 7129,
+      "sha256": "942246c5aeb796858689d67c03e26fc35927f303034153588517d44a405a56d9",
+      "lfs_status": "regular_git",
+      "role": "reproducibility_and_contract"
+    },
+    {
+      "batch": "A_reproducibility_and_freeze_contract",
+      "path": "scripts/audit_prefreeze_candidate_v48_freeze.py",
+      "bytes": 15958,
+      "sha256": "4f41a10599cf814196d419aaa83789269a775eadd576053ff6da5aa07ba468e5",
+      "lfs_status": "regular_git",
+      "role": "reproducibility_and_contract"
+    },
+    {
+      "batch": "A_reproducibility_and_freeze_contract",
+      "path": "scripts/build_prefreeze_candidate_v48_transfer_manifest.py",
+      "bytes": 7159,
+      "sha256": "9ba8e88046f08f543fb863c51d3e7ae8275a4e2c5fa8aed5798c5760c5cb73db",
+      "lfs_status": "regular_git",
+      "role": "reproducibility_and_contract"
+    },
+    {
+      "batch": "A_reproducibility_and_freeze_contract",
+      "path": "docs/capture/PREFREEZE_CANDIDATE_v47_AIC_TRACE_ADJUNCT.md",
+      "bytes": 1972,
+      "sha256": "19d880fdbb62170b589059ec1bda870def23debffd031763001a90f3ef2a7084",
+      "lfs_status": "regular_git",
+      "role": "reproducibility_and_contract"
+    },
+    {
+      "batch": "A_reproducibility_and_freeze_contract",
+      "path": "docs/capture/PREFREEZE_CANDIDATE_v47_SEARCH_TRACE.md",
+      "bytes": 625,
+      "sha256": "bb86dc53fc20e575a95d1be2ff9e92348e90a023564e5c2badb5a4ccb1b6b3c3",
+      "lfs_status": "regular_git",
+      "role": "reproducibility_and_contract"
+    },
+    {
+      "batch": "A_reproducibility_and_freeze_contract",
+      "path": "docs/capture/PREFREEZE_CANDIDATE_v48_SEARCH_TRACE.md",
+      "bytes": 847,
+      "sha256": "bb4b0146a6931afdb0a64f0d2dcb8d5cf6723cdb4d60d2b35bdf6fc1681bd41d",
+      "lfs_status": "regular_git",
+      "role": "reproducibility_and_contract"
+    },
+    {
+      "batch": "A_reproducibility_and_freeze_contract",
+      "path": "docs/capture/PREFREEZE_CANDIDATE_V48_FROZEN.md",
+      "bytes": 4903,
+      "sha256": "580fecd5e10a55250b4a1f0188d13ab07eefc532ff8970fdac491615e9a09e15",
+      "lfs_status": "regular_git",
+      "role": "reproducibility_and_contract"
+    },
+    {
+      "batch": "B_canonical_v48_candidate_payload",
+      "path": "generated/public_surfaces_prefreeze_candidate_v48.json",
+      "bytes": 190067852,
+      "sha256": "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48",
+      "lfs_status": "required",
+      "role": "canonical_candidate"
+    },
+    {
+      "batch": "C_frozen_v48_search_database",
+      "path": "data/prefreeze_candidate_v48.sqlite",
+      "bytes": 421801984,
+      "sha256": "ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "lfs_status": "required",
+      "role": "frozen_query_snapshot"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "generated/prefreeze_candidate_v47_aic_trace_adjuncts.json",
+      "bytes": 36394,
+      "sha256": "5875201e53492d7e0da688d8e8d5db811998ede5eb7502adbab9e81d0b4d0925",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/capture_batch_trace_first_aic_geographic_balance_v47_quality.csv",
+      "bytes": 320,
+      "sha256": "ca2ee18b1d4a4f322d4bb9c15791cbfec9560b023e9087c2579d7efc1b05264a",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/capture_batch_trace_first_aic_geographic_balance_v47_records.csv",
+      "bytes": 5431,
+      "sha256": "d774548c886fa1f127cb82298ffee94dad7f7bc6fbd1f0d56432909359f2737e",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/capture_batch_trace_first_aic_geographic_balance_v47_summary.csv",
+      "bytes": 319,
+      "sha256": "e0c4766a2e719d9258e0d8e8b304375b81b241501901896b02215dea5da1a02c",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/capture_batch_trace_first_aic_geographic_balance_v47_trace_adjunct_edges.csv",
+      "bytes": 8214,
+      "sha256": "6ede334249ef196fcb7a091927b5958762f879807f69d9b900d7a6c65116d504",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/capture_batch_trace_first_aic_geographic_balance_v47_trace_adjunct_nodes.csv",
+      "bytes": 5698,
+      "sha256": "db21aa53536a4bab7116ba786fa64d581cdae20af679b08c3cda7591d967254b",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/capture_batch_trace_first_aic_geographic_balance_v47_trace_adjunct_records.csv",
+      "bytes": 26889,
+      "sha256": "d18e5da865e51b5db13e5b8d6024c2f4a3cb514fceeb97db44dc7d9cfef838e1",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/capture_batch_trace_first_aic_geographic_balance_v47_trace_edges.csv",
+      "bytes": 1579,
+      "sha256": "ba8073f094365e3461124dc71cfb36367285b4ab29bf7ca2b1d1da0eb8a03b2d",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/capture_batch_trace_first_aic_geographic_balance_v47_trace_nodes.csv",
+      "bytes": 1420,
+      "sha256": "e7c98de3ba74259f2c80fd4d0aa74cf21b78db706222c252f7e94f15330e33a3",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v47_sample_200_audit.csv",
+      "bytes": 69520,
+      "sha256": "f470c82fc6f5821e4f34fdfb90701538f417896dd1f8ef4d74ad6e16ae2c1e3a",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v47_search_benchmark.csv",
+      "bytes": 85,
+      "sha256": "9e851bea78120591efe61a94c8842df4b6cdf7683c30e56d7c4d1d09e0111df6",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v47_search_gate.csv",
+      "bytes": 785,
+      "sha256": "fe161f4bf5930dae4c3c66da85da24196a3ed5848e21e1cd8ec25eedafa2e088",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v47_summary.csv",
+      "bytes": 184,
+      "sha256": "9c7da90d1cdd9d7c4021b3103927c07b5c2eae27158dfeedcdf61e90f67c9907",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_repairs.csv",
+      "bytes": 5148,
+      "sha256": "e1831e30ab3d1d56665e679d10d00de4d2c7917b3bb8491d3473fb51c78855fd",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_trace_edges.csv",
+      "bytes": 4898,
+      "sha256": "65f3fd566e4c83ec96e0763dd47f28b467f633af1dfa727b22a150151ac68ec9",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_trace_nodes.csv",
+      "bytes": 279,
+      "sha256": "873c84818662bd02f356f4288f6f39e0d7b75a0180efbf71b6b032001c0d9629",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_sample_200_audit.csv",
+      "bytes": 69845,
+      "sha256": "cbcfd60dd8c7dd9e739d7c6d79d776260f45043cdecf7de9fd39046820567ca0",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_search_gate.csv",
+      "bytes": 975,
+      "sha256": "78ab7dbcb51184d65d5343befb0e161cde585de9ed7591b616f9cf2b5b16eaa1",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_summary.csv",
+      "bytes": 127,
+      "sha256": "62508af5dbefa7bfff2fe2e47b55fa87ef0233bd6c2fc7c25726eff3d6d9ed7c",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_freeze_gate.csv",
+      "bytes": 4560,
+      "sha256": "f7240d6632f20e9b4d0b628c6fbe5cabef134756ed51bd038f580becaf05ca87",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/capture_batch_trace_first_aic_geographic_balance_v47_raw/brazilian_poster.json",
+      "bytes": 61382,
+      "sha256": "f2a54da9c16bab3e080a016deafff4e8f03a746730b938db94b2447c7d314172",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/capture_batch_trace_first_aic_geographic_balance_v47_raw/chinese_poster.json",
+      "bytes": 69238,
+      "sha256": "eb97bb8d7206b976f516bed26bff9bb6a6524f168ae583d305efa9520646dbea",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/capture_batch_trace_first_aic_geographic_balance_v47_raw/cuban_poster.json",
+      "bytes": 61274,
+      "sha256": "5c0341b309769199b69ea9a83273ecdfa61b397537279ecf55c2ae1a5383b1e5",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/capture_batch_trace_first_aic_geographic_balance_v47_raw/indian_poster.json",
+      "bytes": 60400,
+      "sha256": "93da99ba990af2000cf9d772b357a5aac6ff0c38eabf98a2e113a635434ba15b",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/capture_batch_trace_first_aic_geographic_balance_v47_raw/iranian_poster.json",
+      "bytes": 60216,
+      "sha256": "b01460d1d9ff0acabea31637c7cee909addc8750992b8651b7bce68ec080b16c",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/capture_batch_trace_first_aic_geographic_balance_v47_raw/japanese_poster.json",
+      "bytes": 61057,
+      "sha256": "bb943c2455fb7ee724234e979e98fa99ea7a6487c1d8c39fa5f9ea03e7deef8b",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/capture_batch_trace_first_aic_geographic_balance_v47_raw/mexican_poster.json",
+      "bytes": 60741,
+      "sha256": "14e0c00c56c2ec2e56c25ab56230f4678da2b7ee1ed7a48c55016be5930a1994",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/capture_batch_trace_first_aic_geographic_balance_v47_raw/polish_poster.json",
+      "bytes": 61214,
+      "sha256": "b20a896421a64e25f1ee310e7667a44f03bea6df4edde3caf3416d7be2afaf9d",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/capture_batch_trace_first_aic_geographic_balance_v47_raw/south_african_poster.json",
+      "bytes": 60914,
+      "sha256": "471ef1815f9765adc7005243d3d366480cfa61a6efcfdffb27f0e7f425eca167",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/capture_batch_trace_first_aic_geographic_balance_v47_raw/turkish_poster.json",
+      "bytes": 60658,
+      "sha256": "b96975de2025515862ec87062804b46148fcca6fbec7059e3decb58c4b7f285a",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/capture_batch_trace_first_aic_geographic_balance_v47_raw/ukrainian_poster.json",
+      "bytes": 61435,
+      "sha256": "944a32825f93971f03d35c6dad6323080c228e9815460579072f72f0b6f84fcd",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/capture_batch_trace_first_aic_geographic_balance_v47_raw/yugoslav_poster.json",
+      "bytes": 61479,
+      "sha256": "5b8b93b769e8381bb7266364d0fae55a7bd7440ab0a53507ed54fbb4576e3997",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_repair_raw/2005682800.json",
+      "bytes": 8679,
+      "sha256": "f75e1e624467d03a767e9ba6c4036a9633d0bf68efc23320793e0575b37cd3da",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_repair_raw/2008677258.json",
+      "bytes": 7846,
+      "sha256": "b23069fdf0827722570cb116a78c505897d780e40389036c3a70d51d3f0b640e",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_repair_raw/2018750887.json",
+      "bytes": 7486,
+      "sha256": "7743f67fd69f280a55b5e83066c71f2e8a539e47c0223d6612fbf98723a61d35",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_repair_raw/92510123.json",
+      "bytes": 7918,
+      "sha256": "9bbda4d7af6d3816d6320f738e813c4d4af3cc503e25f586beadf8c665e77d45",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_repair_raw/98508979.json",
+      "bytes": 7723,
+      "sha256": "efdaaaf2518eace2322a015ae635099eb458ab9d3896c9a55e3507e955bd53f4",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_repair_raw/98510115.json",
+      "bytes": 7155,
+      "sha256": "825c351f0bfaab58577331cc5aa2df4c6382f9e7f7ae222fe3cea0b790ebfd4f",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_repair_raw/98513156.json",
+      "bytes": 6789,
+      "sha256": "42fb7e457953cd0f456cde36e9cc14dc660ad0bb88b3d46c1dc9a63f2d13623d",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_repair_raw/98513179.json",
+      "bytes": 6704,
+      "sha256": "400bc1691a134378a7d3e2abb6d67e593e76419c8d55b4b3760ec6d3a8b7db7e",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_repair_raw/98513183.json",
+      "bytes": 6801,
+      "sha256": "95c3ba6eb486f82a2980d13a50dedd0d42704e26e402df1c48ebff2b9d97fbfc",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_repair_raw/98513191.json",
+      "bytes": 7091,
+      "sha256": "bcee5d350e0d30e4fd993f3ded8937b4312cb26c2a807b5074c752a7885ae1d6",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_repair_raw/98513244.json",
+      "bytes": 7220,
+      "sha256": "47163ad4344b9f755427d1e07d04d87f53c8fd6e35c39ba5dcdbb192ec5cf630",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_repair_raw/98513249.json",
+      "bytes": 7220,
+      "sha256": "1d8227f7b00c591ce8d67bbd05ac611cb2bfdd64c9b40b8ec4ed02dc94329c90",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_repair_raw/98513298.json",
+      "bytes": 7310,
+      "sha256": "c6f607144883f97bfdc2cce02ceff7dbb5e8644118ea65f61193199741c1870e",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_repair_raw/98514973.json",
+      "bytes": 7942,
+      "sha256": "df46be0cede4ffae179202d29e5af1c3e6af0f6abd8abd91956b1ec6982547a5",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_repair_raw/98515019.json",
+      "bytes": 6804,
+      "sha256": "cff892536053428d8deb791ff802d3fd5e53656880fc86b65a03f2854eddb303",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_repair_raw/98515024.json",
+      "bytes": 8099,
+      "sha256": "939c3d33bab8823bf3ba77de98dca33586eee7e5bf44b2e3bb5baaae71a58d5b",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_repair_raw/98515025.json",
+      "bytes": 8055,
+      "sha256": "e353c9f8cee7ee6754261d3719b89017685028f81dae7341596aafe1cc73c66e",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    },
+    {
+      "batch": "D_evidence_and_validation",
+      "path": "data/prefreeze_candidate_v48_loc_geo_repair_raw/98517082.json",
+      "bytes": 6867,
+      "sha256": "ef195815923ab7cce65c6db1e8250eff8c87ba7dcaa47f0f6999b0dea36bd0f0",
+      "lfs_status": "regular_git",
+      "role": "evidence_or_validation"
+    }
+  ],
+  "totals": {
+    "files": 65,
+    "bytes": 613077245,
+    "lfsFiles": 2
+  }
+}
