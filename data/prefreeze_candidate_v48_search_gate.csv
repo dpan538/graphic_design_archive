@@ -1,0 +1,7 @@
+gate,value,status,requirement,note
+sqlite_integrity,ok,PASS,ok,v48 explicit LOC object-place repair
+active_object_count,15923,PASS,15923,v48 explicit LOC object-place repair
+unresolved_region_active,0,PASS,0,v48 explicit LOC object-place repair
+trace_unlinked_active,0,PASS,0,v48 explicit LOC object-place repair
+influence_edges,0,PASS,0,v48 explicit LOC object-place repair
+loc_geo_repair_edges,18,PASS,18,v48 explicit LOC object-place repair
