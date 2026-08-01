@@ -1,0 +1,263 @@
+{
+  "version": "v46",
+  "state": "draft_only_no_stage_no_upload",
+  "active_count": 15921,
+  "release_hold": "20,000 active-object target has not been reached",
+  "excluded": [
+    "data/capture_batch_*_raw (research raw cache)",
+    "obsolete candidate versions and generated previews"
+  ],
+  "verification_before_transfer": [
+    "Regenerate this manifest in a clean worktree.",
+    "Compare every selected SHA-256 exactly.",
+    "Verify the search gate, topology audit, and 200-object audit match this version.",
+    "Do not proceed if review layers leak into active counts."
+  ],
+  "files": [
+    {
+      "batch": "A_reproducibility_contract",
+      "path": ".gitattributes",
+      "bytes": 163,
+      "sha256": "03bf3acfcdabaa17f83c89b21e3795524c52db8857cf9de65e981fda64288aad",
+      "transfer_class": "regular_git",
+      "canonical_role": "reproducibility"
+    },
+    {
+      "batch": "A_reproducibility_contract",
+      "path": "scripts/build_prefreeze_candidate_v46_loc_duplicate_resolution.py",
+      "bytes": 15529,
+      "sha256": "1132de1fb3e39362d6f3f7ed41283960f2cfeaf02e83ca1e9dd962d4cfb446b5",
+      "transfer_class": "regular_git",
+      "canonical_role": "reproducibility"
+    },
+    {
+      "batch": "A_reproducibility_contract",
+      "path": "scripts/build_prefreeze_candidate_v46_transfer_manifest.py",
+      "bytes": 5989,
+      "sha256": "6fd229e3591e1c60928abb3e89f356c2ee11e88188d47c6ed37246305c6bd01b",
+      "transfer_class": "regular_git",
+      "canonical_role": "reproducibility"
+    },
+    {
+      "batch": "A_reproducibility_contract",
+      "path": "scripts/audit_prefreeze_candidate_v46_trace_topology.py",
+      "bytes": 1727,
+      "sha256": "9099a4d55639bf94d2db5584a74bf0749be50b37abab35943c96e699b1123502",
+      "transfer_class": "regular_git",
+      "canonical_role": "reproducibility"
+    },
+    {
+      "batch": "A_reproducibility_contract",
+      "path": "scripts/audit_prefreeze_candidate_v46_trace_atlas.py",
+      "bytes": 11377,
+      "sha256": "f50b080462efa50289c3d90c443eefc1a7c32356143519755a4b6b0206fc460a",
+      "transfer_class": "regular_git",
+      "canonical_role": "reproducibility"
+    },
+    {
+      "batch": "A_reproducibility_contract",
+      "path": "scripts/build_prefreeze_candidate_v9_search_sqlite.py",
+      "bytes": 29920,
+      "sha256": "4978383ecf56c0b3049a0a33ea4de29342b3b9a0a7450cc8793ab3f554ba09fb",
+      "transfer_class": "regular_git",
+      "canonical_role": "reproducibility"
+    },
+    {
+      "batch": "A_reproducibility_contract",
+      "path": "scripts/build_prefreeze_candidate_v21_search_sqlite.py",
+      "bytes": 13827,
+      "sha256": "9d457cecebc4af63ef54025285d13334c999326930c61cada00232bbef5544b9",
+      "transfer_class": "regular_git",
+      "canonical_role": "reproducibility"
+    },
+    {
+      "batch": "A_reproducibility_contract",
+      "path": "docs/capture/PREFREEZE_CANDIDATE_v46_TRANSFER_PRECHECK.md",
+      "bytes": 3790,
+      "sha256": "4785bca56ed17cd4e8d224858001760d1f3cb07460d849d549e5e8ccf36af30d",
+      "transfer_class": "regular_git",
+      "canonical_role": "reproducibility"
+    },
+    {
+      "batch": "A_reproducibility_contract",
+      "path": "docs/capture/PREFREEZE_CANDIDATE_V46_FROZEN.md",
+      "bytes": 2069,
+      "sha256": "b1773afd337f17b64885c6d3c2416926e6e1272a3c4ede47dca657362608f7e7",
+      "transfer_class": "regular_git",
+      "canonical_role": "reproducibility"
+    },
+    {
+      "batch": "A_reproducibility_contract",
+      "path": "docs/capture/PREFREEZE_CANDIDATE_v46_TRACE_TOPOLOGY.md",
+      "bytes": 1340,
+      "sha256": "4959793e7ddbda9cbae5ee0b0642186fd873fa1211d9f6b4d2caa1cde8e68d1a",
+      "transfer_class": "regular_git",
+      "canonical_role": "reproducibility"
+    },
+    {
+      "batch": "A_reproducibility_contract",
+      "path": "docs/capture/PREFREEZE_CANDIDATE_V46_TRACE_ATLAS.md",
+      "bytes": 2556,
+      "sha256": "650da8e5fa76fee2a0a399a1ee3439b798c12de355ab76a36bcd17c1c6dc1852",
+      "transfer_class": "regular_git",
+      "canonical_role": "reproducibility"
+    },
+    {
+      "batch": "A_reproducibility_contract",
+      "path": "docs/capture/PREFREEZE_CANDIDATE_v46_SEARCH_TRACE.md",
+      "bytes": 1659,
+      "sha256": "e932a0117cff9a5a14681c7ead4a7fac73c1574f80eee0980ac6f0e34d214075",
+      "transfer_class": "regular_git",
+      "canonical_role": "reproducibility"
+    },
+    {
+      "batch": "A_reproducibility_contract",
+      "path": "docs/handoff/DESIGN_REFINEMENT_PROMPT_v1.md",
+      "bytes": 4372,
+      "sha256": "17280bfffd2ae7f8fd749353b1f483114865cdfffecd63c9ef08c99dd39b1ed4",
+      "transfer_class": "regular_git",
+      "canonical_role": "reproducibility"
+    },
+    {
+      "batch": "B_active_candidate_payload",
+      "path": "generated/public_surfaces_prefreeze_candidate_v46.json",
+      "bytes": 190039480,
+      "sha256": "42515bce22514532a1651b5236100f6660a9f9ff12e9f3b2f889eb85d4ac182b",
+      "transfer_class": "git_lfs_required",
+      "canonical_role": "active_candidate"
+    },
+    {
+      "batch": "C_frozen_search_database",
+      "path": "data/prefreeze_candidate_v46.sqlite",
+      "bytes": 419688448,
+      "sha256": "9975ee1c7ae13d1845428115707e3ad8c8d1d7421a18c5af533385b758ca9731",
+      "transfer_class": "git_lfs_required",
+      "canonical_role": "frozen_query_snapshot"
+    },
+    {
+      "batch": "D_review_and_visual_query_layer",
+      "path": "generated/prefreeze_candidate_v46_object_geography_review_hold.json",
+      "bytes": 590674,
+      "sha256": "5fc512e955a8a1d74bd8c3675b22d551bf6e1d869d1c68b5723006d6efc6963f",
+      "transfer_class": "regular_git",
+      "canonical_role": "review_or_validation"
+    },
+    {
+      "batch": "D_review_and_visual_query_layer",
+      "path": "generated/prefreeze_candidate_v46_duplicate_representation_review_hold.json",
+      "bytes": 11457,
+      "sha256": "96230ffd9545dbefc03db1aed7e17e23c16d0f813646b78f8be8618a84850ba2",
+      "transfer_class": "regular_git",
+      "canonical_role": "review_or_validation"
+    },
+    {
+      "batch": "D_review_and_visual_query_layer",
+      "path": "generated/prefreeze_candidate_v46_trace_atlas_manifest.json",
+      "bytes": 1478,
+      "sha256": "d11c51ae0f53bfa955dfd71c188e12a233389f2d68437d8a14dbe13266166525",
+      "transfer_class": "regular_git",
+      "canonical_role": "review_or_validation"
+    },
+    {
+      "batch": "D_review_and_visual_query_layer",
+      "path": "data/prefreeze_candidate_v46_summary.csv",
+      "bytes": 241,
+      "sha256": "b9474274c00108d0a337777e26ef066f965aa7ebe8fb9ee6bf70fbbf3b94bb94",
+      "transfer_class": "regular_git",
+      "canonical_role": "review_or_validation"
+    },
+    {
+      "batch": "D_review_and_visual_query_layer",
+      "path": "data/prefreeze_candidate_v46_base_database_gate.csv",
+      "bytes": 821,
+      "sha256": "ff73073bb0856878a1dd2d4f0476bfa92f781e19cfd82cd746d9ed99329f5386",
+      "transfer_class": "regular_git",
+      "canonical_role": "review_or_validation"
+    },
+    {
+      "batch": "D_review_and_visual_query_layer",
+      "path": "data/prefreeze_candidate_v46_search_gate.csv",
+      "bytes": 1484,
+      "sha256": "496e3e0176b7bc7de89b35407d950ce7c096a7ff763ccff911ceaf9f0ab04537",
+      "transfer_class": "regular_git",
+      "canonical_role": "review_or_validation"
+    },
+    {
+      "batch": "D_review_and_visual_query_layer",
+      "path": "data/prefreeze_candidate_v46_search_benchmark.csv",
+      "bytes": 494,
+      "sha256": "73ca8ccd2d41df51fd2ab75dfe419a3c4cb097a7e4cbfed9c4ec8e414f1dc8f4",
+      "transfer_class": "regular_git",
+      "canonical_role": "review_or_validation"
+    },
+    {
+      "batch": "D_review_and_visual_query_layer",
+      "path": "data/prefreeze_candidate_v46_sample_200_audit.csv",
+      "bytes": 69357,
+      "sha256": "57b202561a8adb7e0799a414b9b52d1df790df57bc348f67960997c526890242",
+      "transfer_class": "regular_git",
+      "canonical_role": "review_or_validation"
+    },
+    {
+      "batch": "D_review_and_visual_query_layer",
+      "path": "data/prefreeze_candidate_v46_trace_topology_summary.csv",
+      "bytes": 290,
+      "sha256": "7b5fa0abfb8f58d8dfc5381a42d857b07e8ba14d9b2c018b5deefe5fc761382c",
+      "transfer_class": "regular_git",
+      "canonical_role": "review_or_validation"
+    },
+    {
+      "batch": "D_review_and_visual_query_layer",
+      "path": "data/prefreeze_candidate_v46_trace_topology_audit.csv",
+      "bytes": 3392432,
+      "sha256": "619263b922601516a66a48923f4748e0bd7915b0534fc5a4a988bd071ec91acd",
+      "transfer_class": "regular_git",
+      "canonical_role": "review_or_validation"
+    },
+    {
+      "batch": "D_review_and_visual_query_layer",
+      "path": "data/prefreeze_candidate_v46_trace_atlas_summary.csv",
+      "bytes": 359,
+      "sha256": "62c183e15c31282f48e67e4f7ce720741b4baee2bccab391d4656cd162342d6f",
+      "transfer_class": "regular_git",
+      "canonical_role": "review_or_validation"
+    },
+    {
+      "batch": "D_review_and_visual_query_layer",
+      "path": "data/prefreeze_candidate_v46_trace_atlas_edge_roles.csv",
+      "bytes": 1212,
+      "sha256": "cafd07f3aff152b4c4613dd57f322fcfbeef74a4f1958aebd62f92d2445fce0c",
+      "transfer_class": "regular_git",
+      "canonical_role": "review_or_validation"
+    },
+    {
+      "batch": "D_review_and_visual_query_layer",
+      "path": "data/prefreeze_candidate_v46_trace_atlas_geo_decades.csv",
+      "bytes": 22994,
+      "sha256": "22bf29ea668a02a50d3263f48ff272c2905a56bdac66b462e765e8325394b37b",
+      "transfer_class": "regular_git",
+      "canonical_role": "review_or_validation"
+    },
+    {
+      "batch": "D_review_and_visual_query_layer",
+      "path": "data/prefreeze_candidate_v46_trace_atlas_source_geography.csv",
+      "bytes": 58518,
+      "sha256": "b863628e65b67feaa8a364dfc15ad25a7674ddcbb93db6c9b6a58e3c9824fdc8",
+      "transfer_class": "regular_git",
+      "canonical_role": "review_or_validation"
+    },
+    {
+      "batch": "D_review_and_visual_query_layer",
+      "path": "data/prefreeze_candidate_v46_loc_duplicate_resolution_decisions.csv",
+      "bytes": 678,
+      "sha256": "5af20548cbc3fe0833a520a729363b009cc875a570629d8ba91a7ec9b57a041b",
+      "transfer_class": "regular_git",
+      "canonical_role": "review_or_validation"
+    }
+  ],
+  "totals": {
+    "files": 30,
+    "bytes": 613974735,
+    "git_lfs_files": 2
+  }
+}
