@@ -1,9 +1,28 @@
 .page {
+  position: relative;
   min-height: 100%;
   padding: 7rem 6.5rem 5rem 2rem;
   color: var(--ink);
-  background: var(--canvas);
+  background:
+    linear-gradient(rgba(48, 53, 50, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(48, 53, 50, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 82% 12%, rgba(197, 111, 89, 0.09), transparent 25rem),
+    var(--canvas);
+  background-size: 1.2rem 1.2rem, 1.2rem 1.2rem, auto, auto;
   font-family: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.3;
+  background: repeating-linear-gradient(102deg, transparent 0 8rem, rgba(48, 53, 50, 0.05) 8.05rem 8.1rem);
+}
+
+.page > * {
+  position: relative;
 }
 
 .header {
@@ -12,7 +31,7 @@
   gap: 3rem;
   align-items: end;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--ink);
+  border-bottom: 1px solid var(--line);
 }
 
 .header p,
@@ -49,7 +68,7 @@
 
 .header dl div {
   padding-top: 0.4rem;
-  border-top: 2px solid var(--ink);
+  border-top: 2px solid var(--focus-coral);
 }
 
 .header dt {
@@ -82,7 +101,7 @@
   width: 100%;
   padding: 0.3rem 0;
   border: 0;
-  border-bottom: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
   border-radius: 0;
   color: var(--ink);
   background: transparent;
@@ -91,7 +110,7 @@
 }
 
 .queryLabel input:focus {
-  border-color: var(--region-readable);
+  border-color: var(--focus-coral);
 }
 
 .scopeControl {
@@ -104,7 +123,8 @@
   padding: 0.55rem 0.7rem;
   border: 1px solid var(--line-soft);
   color: var(--ink);
-  background: var(--paper);
+  background: color-mix(in srgb, var(--paper) 91%, transparent);
+  backdrop-filter: blur(10px);
   font-family: var(--font-plex-mono), ui-monospace, monospace;
   font-size: 0.58rem;
   text-transform: uppercase;
@@ -130,7 +150,7 @@
   align-items: end;
   padding: 0.9rem 0;
   border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--ink);
+  border-bottom: 1px solid var(--line);
 }
 
 .filterRail label {
@@ -144,7 +164,7 @@
   padding: 0.45rem;
   border: 1px solid var(--line-soft);
   color: var(--ink);
-  background: var(--paper);
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
   font: inherit;
   text-transform: none;
 }
@@ -165,7 +185,7 @@
   gap: 1rem;
   align-items: end;
   padding-bottom: 0.55rem;
-  border-bottom: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
 }
 
 .results article > header p {
@@ -181,7 +201,7 @@
 .tableWrap {
   max-height: 50rem;
   overflow: auto;
-  border-bottom: 1px solid var(--ink);
+  border-bottom: 1px solid var(--line);
 }
 
 .tableWrap table {
@@ -204,7 +224,8 @@
   top: 0;
   z-index: 1;
   color: var(--ink-soft);
-  background: var(--canvas);
+  background: color-mix(in srgb, var(--paper) 95%, transparent);
+  backdrop-filter: blur(8px);
   font-family: var(--font-plex-mono), ui-monospace, monospace;
   font-size: 0.56rem;
   font-weight: 500;

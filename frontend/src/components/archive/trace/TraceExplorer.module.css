@@ -3,8 +3,26 @@
   min-height: 100%;
   padding: 7rem 6.5rem 5rem 2rem;
   color: var(--ink);
-  background: var(--canvas);
+  background:
+    linear-gradient(rgba(48, 53, 50, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(48, 53, 50, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 22% 18%, rgba(104, 133, 154, 0.1), transparent 24rem),
+    var(--canvas);
+  background-size: 1.2rem 1.2rem, 1.2rem 1.2rem, auto, auto;
   font-family: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.32;
+  background: repeating-linear-gradient(102deg, transparent 0 8rem, rgba(48, 53, 50, 0.05) 8.05rem 8.1rem);
+}
+
+.page > * {
+  position: relative;
 }
 
 .page[data-visual-fullscreen="true"] {
@@ -289,7 +307,12 @@
   margin: 0 -6.5rem -5rem -2rem;
   padding-right: 6.5rem;
   overflow: hidden;
-  background: var(--canvas);
+  background:
+    linear-gradient(rgba(48, 53, 50, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(48, 53, 50, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 74% 32%, rgba(104, 126, 98, 0.09), transparent 28rem),
+    var(--canvas);
+  background-size: 1.2rem 1.2rem, 1.2rem 1.2rem, auto, auto;
 }
 
 .page[data-visual-fullscreen="true"] .objectWorkspace {
@@ -316,9 +339,11 @@
   min-height: 2.7rem;
   width: 2.7rem;
   padding: 0.6rem 0.75rem;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--line);
   color: var(--ink);
-  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  box-shadow: 0 0.6rem 1.4rem var(--paper-shadow);
+  backdrop-filter: blur(10px);
   font-family: var(--font-plex-mono), ui-monospace, monospace;
   font-size: 0.65rem;
   text-transform: uppercase;
@@ -370,9 +395,13 @@
   width: min(30rem, calc(100% - 5rem));
   min-height: 100dvh;
   overflow: hidden;
-  border-right: 1px solid var(--ink);
-  background: color-mix(in srgb, var(--paper) 97%, var(--canvas));
-  box-shadow: 1rem 0 2.8rem color-mix(in srgb, var(--ink) 13%, transparent);
+  border-right: 1px solid var(--line);
+  background:
+    linear-gradient(rgba(48, 53, 50, 0.035) 1px, transparent 1px),
+    color-mix(in srgb, var(--paper) 96%, transparent);
+  background-size: 100% 1.1rem, auto;
+  box-shadow: 1rem 0 2.8rem var(--paper-shadow);
+  backdrop-filter: blur(14px);
   transform: translateX(-101%);
   transition: transform 220ms ease;
 }
@@ -522,7 +551,7 @@
 .diagramModeMenu button {
   border: 1px solid var(--line-soft);
   color: var(--ink);
-  background: var(--paper);
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
   font-family: var(--font-plex-mono), ui-monospace, monospace;
 }
 
@@ -534,6 +563,8 @@
   padding: 0.6rem 0.75rem;
   text-align: left;
   text-transform: uppercase;
+  box-shadow: 0 0.5rem 1.2rem var(--paper-shadow);
+  backdrop-filter: blur(10px);
 }
 
 .diagramModeTrigger:hover,
@@ -566,8 +597,10 @@
   display: none;
   width: min(22rem, calc(100vw - 4rem));
   padding: 0.35rem;
-  border: 1px solid var(--ink);
-  background: var(--paper);
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 96%, transparent);
+  box-shadow: 0 0.8rem 1.8rem var(--paper-shadow);
+  backdrop-filter: blur(14px);
 }
 
 .diagramModeControl[data-open="true"] .diagramModeMenu,
@@ -682,7 +715,13 @@
   overflow: hidden;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: color-mix(in srgb, var(--paper) 64%, var(--canvas));
+  background:
+    radial-gradient(circle at 72% 42%, rgba(118, 87, 186, 0.14) 0 1px, transparent 2px),
+    linear-gradient(rgba(239, 236, 223, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239, 236, 223, 0.045) 1px, transparent 1px),
+    linear-gradient(180deg, #303534, var(--ink-deep));
+  background-size: 0.8rem 0.8rem, 1.5rem 1.5rem, 1.5rem 1.5rem, auto;
+  box-shadow: inset 0 0 0 1px rgba(239, 236, 223, 0.06);
 }
 
 .routeMapSvg,
@@ -711,7 +750,7 @@
 
 .mediumRouteLine {
   stroke: var(--medium);
-  stroke-width: 14;
+  stroke-width: 10;
 }
 
 .mediumRouteLine[data-route-index="1"] {
@@ -750,8 +789,8 @@
 .mediumRouteStation,
 .sourceHub,
 .sourceLeaf {
-  fill: var(--paper);
-  stroke-width: 5;
+  fill: var(--ink-deep);
+  stroke-width: 3.5;
 }
 
 .mediumRouteStation {
@@ -776,11 +815,11 @@
 }
 
 .sourceTrunk {
-  stroke-width: 8;
+  stroke-width: 5;
 }
 
 .sourceTwig {
-  stroke-width: 2.5;
+  stroke-width: 1.5;
 }
 
 .sourceHub,
@@ -819,18 +858,18 @@
 .objectLabel,
 .treeBranchLabel,
 .treeRootLabel {
-  fill: var(--ink);
+  fill: var(--paper);
   font-size: 12px;
   font-weight: 500;
 }
 
 .objectLabel {
-  fill: var(--ink-soft);
+  fill: var(--line-soft);
   font-size: 10px;
 }
 
 .stationCode {
-  fill: var(--ink);
+  fill: var(--paper);
   font-size: 7px;
   font-weight: 500;
   pointer-events: none;
@@ -838,30 +877,30 @@
 
 .interchangeOuter,
 .treeRoot {
-  fill: var(--ink);
+  fill: var(--paper);
 }
 
 .interchangeInner,
 .treeRootInner {
-  fill: var(--paper);
+  fill: var(--ink-deep);
 }
 
 .treeTrunk {
-  stroke-width: 8;
+  stroke-width: 5;
 }
 
 .treeTwig {
-  stroke-width: 2.5;
+  stroke-width: 1.5;
 }
 
 .treeLeafLabel {
-  fill: var(--ink);
+  fill: var(--paper);
   font-size: 11px;
   font-weight: 500;
 }
 
 .treeLeafMeta {
-  fill: var(--ink-soft);
+  fill: var(--line-soft);
   font-size: 9px;
 }
 
@@ -1287,8 +1326,8 @@
 .mediumRouteLine[data-selected="true"],
 .sourceTrunk[data-selected="true"],
 .sourceTwig[data-selected="true"] {
-  filter: drop-shadow(0 0 3px color-mix(in srgb, var(--ink) 40%, transparent));
-  stroke: var(--ink);
+  filter: drop-shadow(0 0 4px color-mix(in srgb, var(--focus-coral) 45%, transparent));
+  stroke: var(--focus-coral);
 }
 
 .routeMapSvg a[data-selected="true"] .mediumRouteStation,
@@ -1522,7 +1561,7 @@
   gap: 0.75rem;
   align-items: center;
   padding: 0.55rem 0;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--line-soft);
   border-bottom: 1px solid var(--line);
 }
 
@@ -1577,7 +1616,12 @@
   overflow: hidden;
   place-items: center;
   border-bottom: 1px solid var(--line);
-  background: color-mix(in srgb, var(--paper) 68%, var(--canvas));
+  background:
+    linear-gradient(rgba(48, 53, 50, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(48, 53, 50, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 66% 42%, rgba(118, 87, 186, 0.09), transparent 20rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--focus-coral) 4%, var(--paper)), var(--canvas));
+  background-size: 1.1rem 1.1rem, 1.1rem 1.1rem, auto, auto;
 }
 
 .localTrace .geoCanvas .worldMapSvg {
@@ -1587,7 +1631,7 @@
 
 .mapGraticule {
   fill: none;
-  stroke: color-mix(in srgb, var(--ink) 10%, transparent);
+  stroke: color-mix(in srgb, var(--ink) 15%, transparent);
   stroke-width: 0.6;
 }
 
@@ -1597,10 +1641,10 @@
 
 .mapContextLink {
   fill: none;
-  stroke: var(--ink-soft);
+  stroke: var(--focus-coral);
   stroke-dasharray: 5 7;
   stroke-width: 1.2;
-  opacity: 0.6;
+  opacity: 0.48;
 }
 
 .mapRegionPointHalo {
@@ -1609,7 +1653,7 @@
 }
 
 .mapRegionPoint {
-  fill: color-mix(in srgb, var(--region) 76%, var(--paper));
+  fill: color-mix(in srgb, var(--harbor-teal) 78%, var(--paper));
   stroke: var(--paper);
   stroke-width: 1.5;
 }
@@ -1617,7 +1661,7 @@
 .worldMapSvg a:hover .mapRegionPoint,
 .worldMapSvg a:focus-visible .mapRegionPoint,
 .worldMapSvg a[data-selected="true"] .mapRegionPoint {
-  fill: var(--ink);
+  fill: var(--focus-coral);
   stroke: var(--paper);
   stroke-width: 3;
 }
@@ -1662,9 +1706,13 @@
   left: 1rem;
   width: min(16rem, calc(100% - 2rem));
   padding: 0.8rem;
-  border: 1px solid var(--ink);
-  background: color-mix(in srgb, var(--paper) 94%, transparent);
-  box-shadow: 0.45rem 0.45rem 0 color-mix(in srgb, var(--ink) 8%, transparent);
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(90deg, rgba(48, 53, 50, 0.035) 1px, transparent 1px),
+    color-mix(in srgb, var(--paper) 91%, transparent);
+  background-size: 1rem 100%, auto;
+  box-shadow: 0 0.8rem 2rem var(--paper-shadow);
+  backdrop-filter: blur(12px);
 }
 
 .geoReadout > p,
@@ -1740,7 +1788,7 @@
 
 .timeController input {
   width: 100%;
-  accent-color: var(--region-readable);
+  accent-color: var(--focus-coral);
 }
 
 .timelineTicks {
@@ -1850,6 +1898,11 @@
 }
 
 @media (max-width: 640px) {
+  .page[data-visual-fullscreen="true"] .drawerToggle {
+    top: 4.55rem;
+    left: 0.75rem;
+  }
+
   .header h1 {
     font-size: 1.75rem;
   }
@@ -1902,7 +1955,7 @@
   .localTrace {
     height: 100dvh;
     min-height: 0;
-    padding: 1rem 0.75rem 5.5rem;
+    padding: 9.25rem 0.75rem 5.5rem;
     overflow-y: auto;
   }
 
