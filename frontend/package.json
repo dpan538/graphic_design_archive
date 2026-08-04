@@ -15,6 +15,8 @@
     "capture:text-pages": "node scripts/capture-text-pages.js",
     "preview:cards": "next dev --hostname 127.0.0.1 --port 3036",
     "capture:cards": "node scripts/capture-cards.js",
+    "generate:archive-search": "node scripts/generate-archive-search-index.mjs",
+    "verify:trace-visualization": "node scripts/verify-trace-visualization.mjs",
     "asset:a11y-check": "node scripts/asset-a11y-check.js",
     "lint": "next lint"
   },

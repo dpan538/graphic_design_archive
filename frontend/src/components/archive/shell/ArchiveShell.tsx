@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import SearchBox, { type AssistantContext, type SearchMode } from "./search";
 
 /**
@@ -55,6 +55,7 @@ export default function ArchiveShell({
   hideWordmark?: boolean;
 }) {
   const router = useRouter();
+  const pathname = usePathname();
   const [panelOpen, setPanelOpen] = useState(false);
   const [leftPanelOpen, setLeftPanelOpen] = useState(false);
   const [leftPanelMode, setLeftPanelMode] = useState<"primary" | "secondary">("primary");
@@ -70,6 +71,11 @@ export default function ArchiveShell({
   const searchButtonRef = useRef<HTMLButtonElement | null>(null);
   const searchPanelRef = useRef<HTMLDivElement | null>(null);
   const countCardRef = useRef<HTMLDivElement | null>(null);
+  const mainRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    mainRef.current?.scrollTo({ top: 0, left: 0 });
+  }, [pathname]);
 
   useEffect(() => {
     const openAssistant = (event: Event) => {
@@ -173,6 +179,7 @@ export default function ArchiveShell({
     <div className="app" style={{ ["--folder-color" as string]: folderInk }}>
       {/* Clicking the main area closes any open panel */}
       <div
+        ref={mainRef}
         className={`app__main ${mainScroll ? "app__main--scroll" : ""}`}
         onClick={() => {
           if (panelOpen) setPanelOpen(false);

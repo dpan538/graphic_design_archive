@@ -8,9 +8,19 @@ import {
   useState,
   type FocusEvent,
   type KeyboardEvent,
+  type MouseEvent,
 } from "react";
 import styles from "./TraceExplorer.module.css";
-import type { RelationFamily, TraceEdge, TraceGraph, TraceNode } from "./trace-types";
+import {
+  TRACE_FAMILY_META,
+  buildTraceMarks,
+  diagramModeForFamily,
+  selectionForEdge,
+  tracePeerNode,
+  traceTypeFor,
+  type TraceSelection,
+} from "./trace-taxonomy";
+import type { RelationFamily, TraceAtlas, TraceEdge, TraceGraph, TraceNode } from "./trace-types";
 
 export type DiagramMode = "medium" | "geography" | "sources";
 
@@ -27,17 +37,12 @@ const DIAGRAM_OPTIONS: DiagramOption[] = [
 ];
 
 const TimeGeographyMap = dynamic(() => import("./TimeGeographyMap"), {
+  ssr: false,
   loading: () => <p className={styles.diagramLoading}>Loading geographic boundary layer…</p>,
 });
 
 function nodeMap(graph: TraceGraph) {
   return new Map(graph.nodes.map((node) => [node.id, node]));
-}
-
-function peerNode(edge: TraceEdge, rootId: string, nodes: Map<string, TraceNode>) {
-  if (edge.subject === rootId) return nodes.get(edge.object);
-  if (edge.object === rootId) return nodes.get(edge.subject);
-  return nodes.get(edge.object) ?? nodes.get(edge.subject);
 }
 
 function externalProps(href: string) {
@@ -67,16 +72,46 @@ function relationGroups(edges: TraceEdge[]) {
   return Array.from(groups, ([label, grouped]) => ({ label, edges: grouped }));
 }
 
-export default function TraceDiagrams({ graph }: { graph: TraceGraph }) {
+function selectOnPlainClick(
+  event: MouseEvent<Element>,
+  selection: TraceSelection,
+  onSelect: (selection: TraceSelection) => void,
+) {
+  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  event.preventDefault();
+  onSelect(selection);
+}
+
+export default function TraceDiagrams({
+  atlas,
+  graph,
+  selection,
+  onSelect,
+}: {
+  atlas: TraceAtlas;
+  graph: TraceGraph;
+  selection: TraceSelection | null;
+  onSelect: (selection: TraceSelection) => void;
+}) {
   const [mode, setMode] = useState<DiagramMode>("medium");
   useEffect(() => setMode("medium"), [graph.object.id]);
+  useEffect(() => {
+    const selectedEdge = graph.edges.find((edge) => edge.id === selection?.edgeId);
+    if (selectedEdge) setMode(diagramModeForFamily(selectedEdge.family));
+  }, [graph.edges, selection?.edgeId]);
 
   return (
     <>
       <DiagramModeControl mode={mode} setMode={setMode} />
-      {mode === "medium" ? <MediumContextMetro graph={graph} /> : null}
-      {mode === "geography" ? <TimeGeographyMap graph={graph} /> : null}
-      {mode === "sources" ? <SourceRootedTree graph={graph} /> : null}
+      {mode === "medium" ? (
+        <MediumContextMetro graph={graph} selection={selection} onSelect={onSelect} />
+      ) : null}
+      {mode === "geography" ? (
+        <TimeGeographyMap atlas={atlas} graph={graph} selection={selection} onSelect={onSelect} />
+      ) : null}
+      {mode === "sources" ? (
+        <SourceRootedTree graph={graph} selection={selection} onSelect={onSelect} />
+      ) : null}
     </>
   );
 }
@@ -173,8 +208,17 @@ function DiagramIcon({ mode }: { mode: DiagramMode }) {
   );
 }
 
-function MediumContextMetro({ graph }: { graph: TraceGraph }) {
+function MediumContextMetro({
+  graph,
+  selection,
+  onSelect,
+}: {
+  graph: TraceGraph;
+  selection: TraceSelection | null;
+  onSelect: (selection: TraceSelection) => void;
+}) {
   const nodes = nodeMap(graph);
+  const marks = buildTraceMarks(graph);
   const edges = familyEdges(graph, "medium_context");
   const groups = relationGroups(edges);
   const height = Math.max(330, groups.length * 96 + 130);
@@ -207,22 +251,33 @@ function MediumContextMetro({ graph }: { graph: TraceGraph }) {
               const path = `M 118 ${rootY} H 205 L 286 ${y} H 1040`;
               return (
                 <g key={group.label}>
-                  <path className={styles.mediumRouteLine} data-route-index={routeIndex % 4} d={path} />
-                  <text className={styles.routeLabel} x="294" y={y - 20}>{group.label.replaceAll("_", " ")}</text>
+                  <path
+                    className={styles.mediumRouteLine}
+                    data-route-index={routeIndex % 4}
+                    data-selected={group.edges.some((edge) => edge.id === selection?.edgeId)}
+                    d={path}
+                  />
+                  <text className={styles.routeLabel} x="294" y={y - 20}>
+                    {traceTypeFor(group.label).code} · {group.label.replaceAll("_", " ")}
+                  </text>
                   {group.edges.map((edge, stationIndex) => {
                     const x = 330 + ((stationIndex + 0.5) / group.edges.length) * 660;
-                    const peer = peerNode(edge, graph.object.nodeId, nodes);
+                    const peer = tracePeerNode(edge, graph.object.nodeId, nodes);
                     const href = stationHref(edge, peer);
-                    const code = `M${edges.indexOf(edge) + 1}`;
+                    const edgeSelection = selectionForEdge(graph, edge);
+                    const nodeCode = marks.nodeMarks.get(edgeSelection.nodeId) ?? "N--";
+                    const edgeCode = marks.edgeMarks.get(edge.id) ?? "MC-E--";
                     return (
                       <a
                         key={edge.id}
                         href={href}
-                        aria-label={`${code}: ${peer?.label || edge.label}; ${edge.label}; ${edge.direction}`}
+                        data-selected={selection?.edgeId === edge.id}
+                        aria-label={`${nodeCode}, ${edgeCode}: ${peer?.label || edge.label}; ${edge.label}; ${edge.direction}`}
+                        onClick={(event) => selectOnPlainClick(event, edgeSelection, onSelect)}
                         {...externalProps(href)}
                       >
                         <circle className={styles.mediumRouteStation} data-route-index={routeIndex % 4} cx={x} cy={y} r="10" />
-                        <text className={styles.stationCode} x={x} y={y + 3.5} textAnchor="middle">{code}</text>
+                        <text className={styles.stationCode} x={x} y={y + 3.5} textAnchor="middle">{nodeCode}</text>
                       </a>
                     );
                   })}
@@ -231,20 +286,29 @@ function MediumContextMetro({ graph }: { graph: TraceGraph }) {
             })}
             <circle className={styles.interchangeOuter} cx="118" cy={rootY} r="24" />
             <circle className={styles.interchangeInner} cx="118" cy={rootY} r="10" />
-            <text className={styles.interchangeLabel} x="80" y={rootY + 44}>OBJECT</text>
+            <text className={styles.interchangeLabel} x="80" y={rootY + 44}>OBJ · OBJECT</text>
             <text className={styles.objectLabel} x="58" y={rootY + 70}>{shortLabel(graph.object.title, 30)}</text>
           </svg>
         </div>
       ) : <p className={styles.emptyDiagram}>No medium or context edge is documented for this object.</p>}
 
       <p className={styles.mobileDiagramNote}>On small screens the evidence index replaces the full metro drawing.</p>
-      <EvidenceIndex graph={graph} edges={edges} code="M" label="Medium / context" />
+      <EvidenceIndex graph={graph} edges={edges} label="Medium / context" selection={selection} onSelect={onSelect} />
     </section>
   );
 }
 
-function SourceRootedTree({ graph }: { graph: TraceGraph }) {
+function SourceRootedTree({
+  graph,
+  selection,
+  onSelect,
+}: {
+  graph: TraceGraph;
+  selection: TraceSelection | null;
+  onSelect: (selection: TraceSelection) => void;
+}) {
   const nodes = nodeMap(graph);
+  const marks = buildTraceMarks(graph);
   const edges = familyEdges(graph, "source_provenance");
   const groups = relationGroups(edges);
   let leafCursor = 76;
@@ -283,20 +347,38 @@ function SourceRootedTree({ graph }: { graph: TraceGraph }) {
             </desc>
             {branches.map((branch) => (
               <g key={branch.label}>
-                <path className={styles.sourceTrunk} d={`M 124 ${rootY} C 230 ${rootY}, 210 ${branch.y}, 342 ${branch.y}`} />
+                <path
+                  className={styles.sourceTrunk}
+                  data-selected={branch.edges.some((edge) => edge.id === selection?.edgeId)}
+                  d={`M 124 ${rootY} C 230 ${rootY}, 210 ${branch.y}, 342 ${branch.y}`}
+                />
                 <circle className={styles.sourceHub} cx="342" cy={branch.y} r="12" />
-                <text className={styles.treeBranchLabel} x="370" y={branch.y - 15}>{branch.label.replaceAll("_", " ")}</text>
+                <text className={styles.treeBranchLabel} x="370" y={branch.y - 15}>
+                  {traceTypeFor(branch.label).code} · {branch.label.replaceAll("_", " ")}
+                </text>
                 {branch.leaves.map(({ edge, y }) => {
-                  const peer = peerNode(edge, graph.object.nodeId, nodes);
+                  const peer = tracePeerNode(edge, graph.object.nodeId, nodes);
                   const href = stationHref(edge, peer);
-                  const code = `S${edges.indexOf(edge) + 1}`;
+                  const edgeSelection = selectionForEdge(graph, edge);
+                  const nodeCode = marks.nodeMarks.get(edgeSelection.nodeId) ?? "N--";
+                  const edgeCode = marks.edgeMarks.get(edge.id) ?? "SP-E--";
                   return (
                     <g key={edge.id}>
-                      <path className={styles.sourceTwig} d={`M 342 ${branch.y} C 500 ${branch.y}, 498 ${y}, 650 ${y}`} />
-                      <a href={href} aria-label={`${code}: ${peer?.label || edge.label}; ${edge.label}; ${edge.direction}`} {...externalProps(href)}>
+                      <path
+                        className={styles.sourceTwig}
+                        data-selected={selection?.edgeId === edge.id}
+                        d={`M 342 ${branch.y} C 500 ${branch.y}, 498 ${y}, 650 ${y}`}
+                      />
+                      <a
+                        href={href}
+                        data-selected={selection?.edgeId === edge.id}
+                        aria-label={`${nodeCode}, ${edgeCode}: ${peer?.label || edge.label}; ${edge.label}; ${edge.direction}`}
+                        onClick={(event) => selectOnPlainClick(event, edgeSelection, onSelect)}
+                        {...externalProps(href)}
+                      >
                         <circle className={styles.sourceLeaf} cx="650" cy={y} r="7" />
-                        <text className={styles.treeLeafLabel} x="672" y={y - 3}>{code} · {shortLabel(peer?.label || edge.label, 48)}</text>
-                        <text className={styles.treeLeafMeta} x="672" y={y + 14}>{edge.direction} · {edge.label.replaceAll("_", " ")}</text>
+                        <text className={styles.treeLeafLabel} x="672" y={y - 3}>{nodeCode} · {shortLabel(peer?.label || edge.label, 48)}</text>
+                        <text className={styles.treeLeafMeta} x="672" y={y + 14}>{edgeCode} · {edge.direction} · {edge.label.replaceAll("_", " ")}</text>
                       </a>
                     </g>
                   );
@@ -305,13 +387,13 @@ function SourceRootedTree({ graph }: { graph: TraceGraph }) {
             ))}
             <circle className={styles.treeRoot} cx="124" cy={rootY} r="25" />
             <circle className={styles.treeRootInner} cx="124" cy={rootY} r="9" />
-            <text className={styles.treeRootLabel} x="74" y={rootY + 48}>OBJECT ROOT</text>
+            <text className={styles.treeRootLabel} x="74" y={rootY + 48}>OBJ · OBJECT ROOT</text>
           </svg>
         </div>
       ) : <p className={styles.emptyDiagram}>No source or provenance edge is documented for this object.</p>}
 
       <p className={styles.mobileDiagramNote}>On small screens the evidence index replaces the full source tree.</p>
-      <EvidenceIndex graph={graph} edges={edges} code="S" label="Sources / provenance" />
+      <EvidenceIndex graph={graph} edges={edges} label="Sources / provenance" selection={selection} onSelect={onSelect} />
     </section>
   );
 }
@@ -319,33 +401,39 @@ function SourceRootedTree({ graph }: { graph: TraceGraph }) {
 function EvidenceIndex({
   graph,
   edges,
-  code,
   label,
+  selection,
+  onSelect,
 }: {
   graph: TraceGraph;
   edges: TraceEdge[];
-  code: string;
   label: string;
+  selection: TraceSelection | null;
+  onSelect: (selection: TraceSelection) => void;
 }) {
   const nodes = nodeMap(graph);
+  const marks = buildTraceMarks(graph);
   return (
     <div
       className={`${styles.stationIndex} ${styles.stationIndexSingle} ${styles.diagramEvidenceFallback}`}
       aria-label={`${label} evidence index`}
     >
       <section>
-        <h4><span>{code}</span>{label}</h4>
+        <h4><span>{TRACE_FAMILY_META[edges[0]?.family ?? "medium_context"].code}</span>{label}</h4>
         {edges.length ? (
           <ol>
-            {edges.map((edge, index) => {
-              const peer = peerNode(edge, graph.object.nodeId, nodes);
+            {edges.map((edge) => {
+              const peer = tracePeerNode(edge, graph.object.nodeId, nodes);
               const href = stationHref(edge, peer);
+              const edgeSelection = selectionForEdge(graph, edge);
               return (
-                <li key={edge.id}>
-                  <b>{code}{index + 1}</b>
+                <li key={edge.id} data-selected={selection?.edgeId === edge.id}>
+                  <button type="button" onClick={() => onSelect(edgeSelection)}>
+                    {marks.nodeMarks.get(edgeSelection.nodeId)}
+                  </button>
                   <span>
                     <a href={href} {...externalProps(href)}>{peer?.label || edge.label}</a>
-                    <small>{edge.direction} · {edge.label.replaceAll("_", " ")} · {edge.reviewState.replaceAll("_", " ")}</small>
+                    <small>{marks.edgeMarks.get(edge.id)} · {edge.direction} · {traceTypeFor(edge.label).code} · {edge.reviewState.replaceAll("_", " ")}</small>
                   </span>
                 </li>
               );

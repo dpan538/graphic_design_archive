@@ -1,5 +1,5 @@
 import type { FolderTypeKey, ImageState, SurfaceKind } from "@/types/archive";
-import { getFolderInk } from "@/lib/archive-data";
+import { getFolderInk } from "@/lib/archive-palette";
 
 /** Small shared building blocks, kept quiet and typographic (no chrome boxes). */
 

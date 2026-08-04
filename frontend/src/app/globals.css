@@ -1603,6 +1603,12 @@ body {
   color: var(--paper);
 }
 
+@media (max-width: 560px) {
+  .wordmark {
+    max-width: 10.5rem;
+  }
+}
+
 .left-panel-triggers {
   position: absolute;
   top: 5.2rem;

@@ -1284,6 +1284,488 @@
   vertical-align: top;
 }
 
+.mediumRouteLine[data-selected="true"],
+.sourceTrunk[data-selected="true"],
+.sourceTwig[data-selected="true"] {
+  filter: drop-shadow(0 0 3px color-mix(in srgb, var(--ink) 40%, transparent));
+  stroke: var(--ink);
+}
+
+.routeMapSvg a[data-selected="true"] .mediumRouteStation,
+.treeSvg a[data-selected="true"] .sourceLeaf {
+  fill: var(--ink);
+  stroke: var(--paper);
+  stroke-width: 7;
+}
+
+.evidenceLedger {
+  margin-top: 1.5rem;
+  padding-top: 0.8rem;
+  border-top: 2px solid var(--ink);
+}
+
+.ledgerHeading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: end;
+}
+
+.ledgerHeading p,
+.ledgerHeading h3,
+.ledgerHeading dl {
+  margin: 0;
+}
+
+.ledgerHeading p {
+  color: var(--ink-soft);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+}
+
+.ledgerHeading h3 {
+  margin-top: 0.18rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.ledgerHeading dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(3.2rem, 1fr));
+  gap: 0.65rem;
+}
+
+.ledgerHeading dl div {
+  border-top: 1px solid var(--ink);
+}
+
+.ledgerHeading dt {
+  color: var(--ink-soft);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.52rem;
+  text-transform: uppercase;
+}
+
+.ledgerHeading dd {
+  margin: 0.12rem 0 0;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.82rem;
+}
+
+.ledgerFilters {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin-top: 0.8rem;
+}
+
+.ledgerFilters label {
+  display: grid;
+  gap: 0.28rem;
+  color: var(--ink-soft);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.56rem;
+  text-transform: uppercase;
+}
+
+.ledgerFilters select {
+  min-height: 2.25rem;
+  padding: 0.4rem;
+  border: 1px solid var(--line-soft);
+  color: var(--ink);
+  background: var(--paper);
+  font: inherit;
+  text-transform: none;
+}
+
+.ledgerSelection {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 0.75rem;
+  padding: 0.65rem;
+  border: 1px solid var(--ink);
+  background: var(--paper-2);
+}
+
+.ledgerSelection > b,
+.traceMarkButton {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+.ledgerSelection strong,
+.ledgerSelection small {
+  display: block;
+}
+
+.ledgerSelection strong {
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.ledgerSelection small {
+  color: var(--ink-soft);
+  font-size: 0.58rem;
+}
+
+.ledgerSelection a,
+.ledgerTable a {
+  color: var(--region-readable);
+  text-underline-offset: 0.16em;
+}
+
+.ledgerSelection a {
+  font-size: 0.62rem;
+}
+
+.ledgerHint,
+.ledgerBoundary {
+  color: var(--ink-soft);
+  font-size: 0.64rem;
+  line-height: 1.45;
+}
+
+.ledgerHint {
+  margin: 0.75rem 0 0;
+  padding: 0.55rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.ledgerTableWrap {
+  margin-top: 0.75rem;
+  overflow-x: auto;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.ledgerTable {
+  width: 100%;
+  min-width: 47rem;
+  border-collapse: collapse;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.56rem;
+}
+
+.ledgerTable caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.ledgerTable th,
+.ledgerTable td {
+  padding: 0.48rem 0.38rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.ledgerTable th {
+  color: var(--ink-soft);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.ledgerTable td span,
+.ledgerTable td small {
+  display: block;
+  max-width: 11rem;
+}
+
+.ledgerTable td small {
+  margin-top: 0.1rem;
+  color: var(--ink-soft);
+}
+
+.ledgerTable tr[data-selected="true"] {
+  background: var(--paper-2);
+  box-shadow: inset 3px 0 var(--ink);
+}
+
+.traceMarkButton,
+.stationIndex li > button {
+  min-height: 1.8rem;
+  padding: 0.25rem 0.35rem;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  background: var(--paper);
+  font-size: 0.56rem;
+}
+
+.traceMarkButton[aria-pressed="true"],
+.traceMarkButton:hover,
+.traceMarkButton:focus-visible,
+.stationIndex li[data-selected="true"] > button,
+.stationIndex li > button:hover,
+.stationIndex li > button:focus-visible {
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.geoDashboard {
+  overflow: hidden;
+}
+
+.localTrace > .geoDashboard {
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+}
+
+.geoControlBar {
+  display: grid;
+  grid-template-columns: auto auto minmax(12rem, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.55rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.segmentedControl {
+  display: flex;
+}
+
+.segmentedControl button,
+.timeController > button {
+  min-height: 2.25rem;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid var(--line-soft);
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.58rem;
+  text-transform: uppercase;
+}
+
+.segmentedControl button + button {
+  border-left: 0;
+}
+
+.segmentedControl button[aria-pressed="true"],
+.segmentedControl button:hover,
+.segmentedControl button:focus-visible,
+.timeController > button:hover,
+.timeController > button:focus-visible {
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.geoControlBar > p {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin: 0;
+  color: var(--ink-soft);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.58rem;
+}
+
+.geoControlBar > p b {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.geoCanvas {
+  position: relative;
+  display: grid;
+  min-height: 25rem;
+  overflow: hidden;
+  place-items: center;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 68%, var(--canvas));
+}
+
+.localTrace .geoCanvas .worldMapSvg {
+  width: 100%;
+  max-height: calc(100dvh - 15.5rem);
+}
+
+.mapGraticule {
+  fill: none;
+  stroke: color-mix(in srgb, var(--ink) 10%, transparent);
+  stroke-width: 0.6;
+}
+
+.worldCountryActive {
+  fill: color-mix(in srgb, var(--region) var(--country-intensity), var(--paper));
+}
+
+.mapContextLink {
+  fill: none;
+  stroke: var(--ink-soft);
+  stroke-dasharray: 5 7;
+  stroke-width: 1.2;
+  opacity: 0.6;
+}
+
+.mapRegionPointHalo {
+  fill: color-mix(in srgb, var(--paper) 52%, transparent);
+  stroke: none;
+}
+
+.mapRegionPoint {
+  fill: color-mix(in srgb, var(--region) 76%, var(--paper));
+  stroke: var(--paper);
+  stroke-width: 1.5;
+}
+
+.worldMapSvg a:hover .mapRegionPoint,
+.worldMapSvg a:focus-visible .mapRegionPoint,
+.worldMapSvg a[data-selected="true"] .mapRegionPoint {
+  fill: var(--ink);
+  stroke: var(--paper);
+  stroke-width: 3;
+}
+
+.mapPointCode,
+.mapPointLabel,
+.mapLegend text {
+  fill: var(--ink);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+.mapPointCode {
+  font-size: 8px;
+  font-weight: 500;
+}
+
+.mapPointLabel {
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 4px;
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.mapLegend circle {
+  fill: var(--region);
+}
+
+.mapLegend path {
+  fill: none;
+  stroke: var(--ink-soft);
+  stroke-dasharray: 5 7;
+}
+
+.mapLegend text {
+  font-size: 8px;
+}
+
+.geoReadout {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: min(16rem, calc(100% - 2rem));
+  padding: 0.8rem;
+  border: 1px solid var(--ink);
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  box-shadow: 0.45rem 0.45rem 0 color-mix(in srgb, var(--ink) 8%, transparent);
+}
+
+.geoReadout > p,
+.geoReadout h4,
+.geoReadout dl {
+  margin: 0;
+}
+
+.geoReadout > p:first-child {
+  color: var(--ink-soft);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.52rem;
+  text-transform: uppercase;
+}
+
+.geoReadout h4 {
+  margin-top: 0.2rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.geoReadout dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem;
+  margin-top: 0.7rem;
+}
+
+.geoReadout dl div {
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--line);
+}
+
+.geoReadout dt {
+  color: var(--ink-soft);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.48rem;
+  text-transform: uppercase;
+}
+
+.geoReadout dd {
+  margin: 0.12rem 0 0;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+}
+
+.geoReadout .geoReadoutNote {
+  margin-top: 0.7rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.58rem;
+  line-height: 1.4;
+}
+
+.timeController {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.65rem 0 1rem;
+}
+
+.timeController label {
+  display: grid;
+  gap: 0.25rem;
+  color: var(--ink-soft);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.54rem;
+  text-transform: uppercase;
+}
+
+.timeController input {
+  width: 100%;
+  accent-color: var(--region-readable);
+}
+
+.timelineTicks {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 5.5rem;
+  height: 0.65rem;
+}
+
+.timelineTicks i {
+  position: absolute;
+  color: var(--ink-soft);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.45rem;
+  font-style: normal;
+  transform: translateX(-50%);
+}
+
+.mapDataError {
+  margin: 0;
+  color: var(--medium-readable);
+  font-size: 0.65rem;
+}
+
 .error {
   color: var(--medium-readable) !important;
 }
@@ -1361,6 +1843,10 @@
   .branches h3 {
     min-height: 0;
   }
+
+  .geoControlBar {
+    grid-template-columns: repeat(2, auto) minmax(0, 1fr);
+  }
 }
 
 @media (max-width: 640px) {
@@ -1388,7 +1874,21 @@
     right: 0.75rem;
     bottom: 0.75rem;
     z-index: 11;
-    width: min(13rem, calc(100% - 1.5rem));
+    width: min(18rem, calc(100% - 1.5rem));
+    flex-direction: row;
+    gap: 0;
+    background: color-mix(in srgb, var(--paper) 94%, transparent);
+    box-shadow: 0 0 0 1px var(--line-soft);
+  }
+
+  .page[data-visual-fullscreen="true"] > .viewTabs button {
+    min-height: 2.85rem;
+    padding: 0.5rem 0.6rem;
+    border: 0;
+  }
+
+  .page[data-visual-fullscreen="true"] > .viewTabs button + button {
+    border-left: 1px solid var(--line-soft);
   }
 
   .page[data-drawer-open="true"] > .viewTabs {
@@ -1400,17 +1900,26 @@
   }
 
   .localTrace {
+    height: 100dvh;
+    min-height: 0;
     padding: 1rem 0.75rem 5.5rem;
+    overflow-y: auto;
   }
 
   .localTrace > .diagramModeControl {
-    width: min(19rem, calc(100% - 4rem));
+    width: calc(100% - 5rem);
+    margin-right: 0;
+    margin-left: 4.5rem;
   }
 
   .diagramModeControl,
   .diagramModeTrigger,
   .diagramModeMenu {
     width: 100%;
+  }
+
+  .diagramModeTrigger {
+    grid-template-columns: 1.2rem minmax(0, 1fr) 1rem;
   }
 
   .diagramModeMenu {
@@ -1434,6 +1943,81 @@
 
   .localTrace > .diagram {
     display: block;
+  }
+
+  .localTrace > .geoDashboard {
+    display: grid;
+  }
+
+  .geoDashboard .diagramHeading {
+    margin-bottom: 0.55rem;
+  }
+
+  .geoDashboard .diagramHeading > span {
+    font-size: 0.62rem;
+  }
+
+  .geoControlBar {
+    grid-template-columns: 1fr;
+  }
+
+  .segmentedControl {
+    width: 100%;
+  }
+
+  .segmentedControl button {
+    flex: 1;
+  }
+
+  .geoControlBar > p {
+    justify-content: space-between;
+  }
+
+  .geoCanvas {
+    min-height: 50dvh;
+  }
+
+  .localTrace .geoCanvas .worldMapSvg {
+    width: 150%;
+    max-width: none;
+    max-height: 56dvh;
+  }
+
+  .geoReadout {
+    top: auto;
+    bottom: 0.65rem;
+    left: 0.65rem;
+    width: min(15rem, calc(100% - 1.3rem));
+    padding: 0.6rem;
+  }
+
+  .geoReadout dl {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .geoReadout h4 {
+    font-size: 0.85rem;
+  }
+
+  .geoReadout .geoReadoutNote {
+    display: none;
+  }
+
+  .timeController {
+    padding-bottom: 1.2rem;
+  }
+
+  .ledgerHeading,
+  .ledgerSelection {
+    grid-template-columns: 1fr;
+  }
+
+  .ledgerHeading dl {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ledgerFilters {
+    grid-template-columns: 1fr;
   }
 
   .chronoRoutes {

@@ -9,21 +9,18 @@ import {
   useState,
 } from "react";
 import Link from "next/link";
-import { fuzzySearchSurfaces } from "@/lib/archive-data";
+import { searchArchiveSurfaces, type ArchiveSearchResult } from "@/lib/archive-search-client";
 import {
   assistantPageKey,
   loadAssistantMessages,
   saveAssistantMessages,
   type StoredAssistantMessage,
 } from "@/lib/assistant-memory";
-import { buildAssistantEvidence } from "@/lib/assistant-retrieval";
-import {
-  createQwenAssistantSession,
-  resetQwenAssistantSession,
-  type AssistantModelState,
-  type QwenGenerationTiming,
-  type QwenAssistantSession,
-  type QwenChatMessage,
+import type {
+  AssistantModelState,
+  QwenGenerationTiming,
+  QwenAssistantSession,
+  QwenChatMessage,
 } from "@/lib/qwen35-adapter";
 import { ImgBadge, StatusChip } from "../primitives";
 
@@ -56,6 +53,14 @@ interface AssistantTimingLog {
   askMs?: number;
   totalMs: number;
   qwen?: QwenGenerationTiming;
+}
+
+interface AssistantEvidenceResponse {
+  hasEvidence: boolean;
+  candidateCount: number;
+  contextText: string;
+  fallbackAnswer?: string;
+  requestPlan: { intent: string };
 }
 
 function nowMs() {
@@ -126,13 +131,42 @@ export default function SearchBox({
   const sessionRef = useRef<QwenAssistantSession | null>(null);
   const sessionPromiseRef = useRef<Promise<QwenAssistantSession> | null>(null);
   const loadingRef = useRef(false);
-  const results = useMemo(() => fuzzySearchSurfaces(query), [query]);
+  const [results, setResults] = useState<ArchiveSearchResult[]>([]);
+  const [searchPending, setSearchPending] = useState(false);
   const trimmed = query.trim();
   const isAssistant = mode === "assistant";
   const pageKey = useMemo(
     () => assistantPageKey(assistantContext),
     [assistantContext],
   );
+
+  useEffect(() => {
+    let active = true;
+    if (!trimmed) {
+      setResults([]);
+      setSearchPending(false);
+      return () => {
+        active = false;
+      };
+    }
+    setSearchPending(true);
+    const handle = window.setTimeout(() => {
+      void searchArchiveSurfaces(trimmed, 30)
+        .then((matches) => {
+          if (active) setResults(matches);
+        })
+        .catch(() => {
+          if (active) setResults([]);
+        })
+        .finally(() => {
+          if (active) setSearchPending(false);
+        });
+    }, 120);
+    return () => {
+      active = false;
+      window.clearTimeout(handle);
+    };
+  }, [trimmed]);
 
   const prepareQwen = useCallback(async () => {
     if (!isAssistant) return null;
@@ -141,12 +175,13 @@ export default function SearchBox({
     if (!sessionPromiseRef.current) {
       loadingRef.current = true;
       setAssistantModel({ status: "loading", message: "Preparing" });
-      sessionPromiseRef.current = createQwenAssistantSession((message) =>
-        setAssistantModel({
-          status: "loading",
-          message: message ? "Preparing" : "",
-        }),
-      )
+      sessionPromiseRef.current = import("@/lib/qwen35-adapter")
+        .then(({ createQwenAssistantSession }) => createQwenAssistantSession((message) =>
+          setAssistantModel({
+            status: "loading",
+            message: message ? "Preparing" : "",
+          }),
+        ))
         .then((session) => {
           sessionRef.current = session;
           setAssistantModel({
@@ -183,6 +218,7 @@ export default function SearchBox({
     sessionRef.current = null;
     sessionPromiseRef.current = null;
     loadingRef.current = false;
+    const { resetQwenAssistantSession } = await import("@/lib/qwen35-adapter");
     await resetQwenAssistantSession();
   }, []);
 
@@ -212,9 +248,17 @@ export default function SearchBox({
     const modeLabel: "send" | "research" = researchMode ? "research" : "send";
     const totalStarted = nowMs();
     const retrievalStarted = nowMs();
-    const evidence = buildAssistantEvidence(question, assistantContext, {
-      research: researchMode,
+    const evidenceResponse = await fetch("/api/archive-assistant-evidence", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        question,
+        research: researchMode,
+        context: assistantContext,
+      }),
     });
+    if (!evidenceResponse.ok) throw new Error(`Archive evidence unavailable (${evidenceResponse.status})`);
+    const evidence = await evidenceResponse.json() as AssistantEvidenceResponse;
     const retrievalMs = nowMs() - retrievalStarted;
     const baseTiming = {
       mode: modeLabel,
@@ -596,7 +640,9 @@ export default function SearchBox({
       <div className="text-ink-soft mt-1.5" style={{ fontSize: "0.56rem" }}>
         {trimmed === ""
           ? "Fuzzy match over titles, creators, sources & tables"
-          : `${results.length} ${results.length === 1 ? "match" : "matches"}`}
+          : searchPending
+            ? "Searching compact archive index…"
+            : `${results.length} ${results.length === 1 ? "match" : "matches"}`}
       </div>
 
       <div className="mt-1.5 -mx-1 px-1 overflow-y-auto panel-scroll flex-1 min-h-0">
@@ -626,6 +672,13 @@ export default function SearchBox({
           ))
         )}
       </div>
+      <Link
+        href={`/search${trimmed ? `?q=${encodeURIComponent(trimmed)}` : ""}`}
+        className="block border-t border-ink pt-2 mt-2 label-caps text-ink hover:bg-paper-2"
+        style={{ fontSize: "0.6rem" }}
+      >
+        Open full archive + TRACE search →
+      </Link>
     </div>
   );
 }

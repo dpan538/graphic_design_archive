@@ -3,7 +3,9 @@
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import ChronogeographicRoutes from "./ChronogeographicRoutes";
 import TraceDiagrams from "./TraceDiagrams";
+import TraceEvidenceTable from "./TraceEvidenceTable";
 import styles from "./TraceExplorer.module.css";
+import type { TraceSelection } from "./trace-taxonomy";
 import type {
   ActiveCatalogItem,
   AtlasRegion,
@@ -11,10 +13,8 @@ import type {
   CompactPayload,
   ReviewCatalogItem,
   TraceAtlas,
-  TraceEdge,
   TraceGraph,
   TraceLayer,
-  TraceNode,
   TraceView,
 } from "./trace-types";
 
@@ -56,6 +56,7 @@ export default function TraceExplorer() {
   const [review, setReview] = useState<ReviewCatalogItem[] | null>(null);
   const [auxiliary, setAuxiliary] = useState<AuxiliaryPayload | null>(null);
   const [graph, setGraph] = useState<TraceGraph | null>(null);
+  const [traceSelection, setTraceSelection] = useState<TraceSelection | null>(null);
   const [reviewSelection, setReviewSelection] = useState<ReviewCatalogItem | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(true);
   const [query, setQuery] = useState("");
@@ -67,6 +68,7 @@ export default function TraceExplorer() {
   const [loading, setLoading] = useState("Loading frozen TRACE atlas…");
   const [error, setError] = useState("");
   const shardCache = useRef(new Map<string, Record<string, TraceGraph>>());
+  const deepLinkHandled = useRef(false);
   const deferredQuery = useDeferredValue(query);
 
   useEffect(() => {
@@ -132,6 +134,7 @@ export default function TraceExplorer() {
   async function changeLayer(next: TraceLayer) {
     setLayer(next);
     setGraph(null);
+    setTraceSelection(null);
     setReviewSelection(null);
     setQuery("");
     setRegionMembers([]);
@@ -159,6 +162,7 @@ export default function TraceExplorer() {
       const selected = shard[item.id];
       if (!selected) throw new Error("Object neighbourhood is not present in its declared shard");
       setGraph(selected);
+      setTraceSelection(null);
       setDrawerOpen(false);
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Object trace unavailable");
@@ -166,6 +170,36 @@ export default function TraceExplorer() {
       setLoading("");
     }
   }
+
+  useEffect(() => {
+    if (!atlas || deepLinkHandled.current) return;
+    const params = new URLSearchParams(window.location.search);
+    const objectId = params.get("object");
+    const linkedRegion = params.get("region");
+    const linkedDecade = params.get("decade");
+    if (!objectId && !linkedRegion) return;
+    deepLinkHandled.current = true;
+    setView("object");
+    setLayer("active");
+    void ensureActiveCatalog()
+      .then((items) => {
+        if (objectId) {
+          const item = items?.find((candidate) => candidate.id === objectId);
+          if (!item) throw new Error(`TRACE object ${objectId} is not present in the active catalog`);
+          return selectActive(item);
+        }
+        if (linkedRegion) {
+          setRegionLabel(linkedRegion);
+          setRegionMembers([linkedRegion]);
+          if (linkedDecade && Number.isFinite(Number(linkedDecade))) setDecade(Number(linkedDecade));
+          setDrawerOpen(true);
+        }
+      })
+      .catch((cause: unknown) => {
+        setError(cause instanceof Error ? cause.message : "TRACE deep link unavailable");
+        setLoading("");
+      });
+  }, [atlas]);
 
   function exploreCell(row: AtlasRegion, selectedDecade: number) {
     setView("object");
@@ -358,7 +392,7 @@ export default function TraceExplorer() {
                       key={item.object.id}
                       type="button"
                       onClick={() => {
-                        setGraph(item); setReviewSelection(null); setDrawerOpen(false);
+                        setGraph(item); setTraceSelection(null); setReviewSelection(null); setDrawerOpen(false);
                       }}
                       aria-pressed={graph?.object.id === item.object.id}
                     >
@@ -383,13 +417,29 @@ export default function TraceExplorer() {
                   )) : null}
                 </div>
 
-                {graph ? <ObjectInfoPanel graph={graph} /> : null}
+                {graph ? (
+                  <ObjectInfoPanel
+                    graph={graph}
+                    selection={traceSelection}
+                    onSelect={setTraceSelection}
+                  />
+                ) : null}
                 {reviewSelection ? <ReviewRecord item={reviewSelection} /> : null}
               </div>
             </aside>
 
             <div className={styles.graphArea}>
-              {graph ? <LocalTrace graph={graph} /> : null}
+              {graph ? (
+                <LocalTrace
+                  atlas={atlas}
+                  graph={graph}
+                  selection={traceSelection}
+                  onSelect={(selection) => {
+                    setTraceSelection(selection);
+                    setDrawerOpen(true);
+                  }}
+                />
+              ) : null}
               {reviewSelection ? (
                 <div className={styles.emptyState}>
                   <h2>Review record isolated</h2>
@@ -511,16 +561,33 @@ function AtlasView({
   );
 }
 
-function LocalTrace({ graph }: { graph: TraceGraph }) {
+function LocalTrace({
+  atlas,
+  graph,
+  selection,
+  onSelect,
+}: {
+  atlas: TraceAtlas;
+  graph: TraceGraph;
+  selection: TraceSelection | null;
+  onSelect: (selection: TraceSelection) => void;
+}) {
   return (
     <article className={styles.localTrace} aria-label={`TRACE visualizations for ${graph.object.title}`}>
-      <TraceDiagrams graph={graph} />
+      <TraceDiagrams atlas={atlas} graph={graph} selection={selection} onSelect={onSelect} />
     </article>
   );
 }
 
-function ObjectInfoPanel({ graph }: { graph: TraceGraph }) {
-  const nodeById = new Map(graph.nodes.map((node) => [node.id, node]));
+function ObjectInfoPanel({
+  graph,
+  selection,
+  onSelect,
+}: {
+  graph: TraceGraph;
+  selection: TraceSelection | null;
+  onSelect: (selection: TraceSelection) => void;
+}) {
   return (
     <article className={styles.objectInfoPanel}>
       <header className={styles.rootNode} data-layer={graph.object.layer}>
@@ -541,24 +608,9 @@ function ObjectInfoPanel({ graph }: { graph: TraceGraph }) {
         No documented <code>influenced_by</code> edge exists in the v48 freeze. These are evidence and association routes, not influence claims.
       </p>
 
-      <details className={styles.tableFallback}>
-        <summary>Text relation table ({graph.edges.length})</summary>
-        <table>
-          <thead><tr><th>Direction</th><th>Relation</th><th>Node</th><th>Status</th><th>Evidence</th></tr></thead>
-          <tbody>{graph.edges.map((edge) => {
-            const peer = peerNode(edge, graph.object.nodeId, nodeById);
-            return <tr key={edge.id}><td>{edge.direction}</td><td>{edge.label}</td><td><a href={peer?.href || edge.evidenceUrl} {...externalProps(peer?.href || edge.evidenceUrl)}>{peer?.label || "Evidence node"}</a></td><td>{edge.reviewState}</td><td><a href={edge.evidenceUrl} {...externalProps(edge.evidenceUrl)}>{edge.evidenceField || "Source evidence"}</a></td></tr>;
-          })}</tbody>
-        </table>
-      </details>
+      <TraceEvidenceTable graph={graph} selection={selection} onSelect={onSelect} />
     </article>
   );
-}
-
-function peerNode(edge: TraceEdge, rootId: string, nodeById: Map<string, TraceNode>) {
-  if (edge.subject === rootId) return nodeById.get(edge.object);
-  if (edge.object === rootId) return nodeById.get(edge.subject);
-  return nodeById.get(edge.object) ?? nodeById.get(edge.subject);
 }
 
 function ReviewRecord({ item }: { item: ReviewCatalogItem }) {

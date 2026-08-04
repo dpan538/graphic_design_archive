@@ -18,6 +18,7 @@ import type {
   Surface,
   SurfaceKind,
 } from "@/types/archive";
+export { FOLDER_INK, getFolderColor, getFolderInk } from "@/lib/archive-palette";
 
 const mock = mockRaw as unknown as PublicSurfaceMock;
 
@@ -50,23 +51,6 @@ export function getFolderTypes(): FolderType[] {
 
 export function getFolderType(type: string): FolderType | undefined {
   return mock.folderTypes.find((ft) => ft.type === type);
-}
-
-/** Folder badge inks from the shared open-library / ephemera palette. */
-export const FOLDER_INK: Record<FolderTypeKey, string> = {
-  region: "#1F5FD1",
-  theme: "#138B5E",
-  medium: "#E83D3B",
-  movement: "#7466D6",
-};
-
-export function getFolderInk(type: string): string {
-  return FOLDER_INK[type as FolderTypeKey] ?? "#2E2925";
-}
-
-/** Back-compat alias used by some components. */
-export function getFolderColor(type: string): string {
-  return getFolderInk(type);
 }
 
 export function isFolderTypeKey(value: string): value is FolderTypeKey {
@@ -573,7 +557,7 @@ function termScore(text: string, term: string): number {
  * folder titles, and every table row value. A surface is returned only when
  * every query term matches at least one field (substring or subsequence).
  */
-export function fuzzySearchSurfaces(query: string): FuzzyResult[] {
+export function fuzzySearchSurfaces(query: string, limit = 18): FuzzyResult[] {
   const q = query.trim().toLowerCase();
   if (!q) return [];
   const terms = q.split(/\s+/).filter(Boolean);
@@ -638,7 +622,7 @@ export function fuzzySearchSurfaces(query: string): FuzzyResult[] {
     const bs = b.surface.dateStart ?? Number.POSITIVE_INFINITY;
     if (as !== bs) return as - bs;
     return a.surface.surfaceId.localeCompare(b.surface.surfaceId);
-  }).slice(0, 18);
+  }).slice(0, limit);
 }
 
 // ---------------------------------------------------------------------------
