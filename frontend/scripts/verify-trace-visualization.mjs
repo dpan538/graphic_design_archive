@@ -82,6 +82,7 @@ const unmappedObjects = unmapped.reduce((sum, entry) => sum + entry.count, 0);
 const taxonomyText = await readFile(join(root, "src/components/archive/trace/trace-taxonomy.ts"), "utf8");
 const primitivesText = await readFile(join(root, "src/components/archive/primitives.tsx"), "utf8");
 const shellSearchText = await readFile(join(root, "src/components/archive/shell/search.tsx"), "utf8");
+const evolutionFieldText = await readFile(join(root, "src/components/archive/trace/ChronogeographicRoutes.tsx"), "utf8");
 const definitions = [...taxonomyText.matchAll(
   /id:\s*"([^"]+)"[\s\S]*?family:\s*"([^"]+)"\s*,\s*count:\s*(\d+)\s*,\s*status:/g,
 )].map((match) => ({ id: match[1], family: match[2], count: Number(match[3]) }));
@@ -113,6 +114,19 @@ const checks = {
     !primitivesText.includes("@/lib/archive-data")
     && !shellSearchText.includes("@/lib/archive-data")
     && !shellSearchText.includes("public_surface_mock_v0"),
+  evolution_field_uses_frozen_aggregates:
+    evolutionFieldText.includes("atlas.regionMatrix")
+    && evolutionFieldText.includes("atlas.decadeTotals")
+    && evolutionFieldText.includes("atlas.relationTypes")
+    && evolutionFieldText.includes("atlas.assets.catalog"),
+  evolution_field_keeps_inference_boundary:
+    evolutionFieldText.includes("does not claim geographic diffusion")
+    && evolutionFieldText.includes("does not encode an inferred causal route"),
+  evolution_field_mobile_scroll_binding:
+    evolutionFieldText.includes("IntersectionObserver")
+    && evolutionFieldText.includes("data-evolution-decade"),
+  evolution_field_preserves_object_drilldown:
+    evolutionFieldText.includes("exploreCell(row, cell.decade)"),
 };
 
 console.log(JSON.stringify({

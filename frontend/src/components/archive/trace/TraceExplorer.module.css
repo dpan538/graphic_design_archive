@@ -1067,13 +1067,614 @@
   border-top: 1px solid var(--ink);
 }
 
+.evolutionControls {
+  position: relative;
+  z-index: 6;
+  display: grid;
+  grid-template-columns: auto auto minmax(10rem, 0.55fr) minmax(18rem, 1fr);
+  gap: 0.65rem;
+  align-items: end;
+  margin-bottom: 0.8rem;
+  padding: 0.65rem;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  box-shadow: 0 0.8rem 2rem var(--paper-shadow);
+  backdrop-filter: blur(16px);
+}
+
+.evolutionControls > button,
+.evolutionControls select,
+.evolutionControls .segmentedControl button {
+  min-height: 2.55rem;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: transparent;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.evolutionControls > button {
+  min-width: 5rem;
+  padding: 0.55rem 0.8rem;
+}
+
+.evolutionControls > button:hover,
+.evolutionControls > button:focus-visible,
+.evolutionControls .segmentedControl button:hover,
+.evolutionControls .segmentedControl button:focus-visible,
+.evolutionControls .segmentedControl button[aria-pressed="true"] {
+  color: var(--paper);
+  background: var(--ink-deep);
+}
+
+.evolutionControls .segmentedControl {
+  display: flex;
+}
+
+.evolutionControls .segmentedControl button {
+  padding: 0.55rem 0.75rem;
+}
+
+.evolutionControls .segmentedControl button + button {
+  border-left: 0;
+}
+
+.evolutionControls label {
+  display: grid;
+  gap: 0.3rem;
+  color: var(--ink-soft);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.evolutionControls select {
+  width: 100%;
+  padding: 0.45rem 0.6rem;
+  text-transform: none;
+}
+
+.evolutionRange {
+  grid-template-columns: auto minmax(8rem, 1fr) auto;
+  align-items: center;
+  align-self: stretch;
+}
+
+.evolutionRange input {
+  width: 100%;
+  margin: 0;
+  accent-color: var(--focus-coral);
+}
+
+.evolutionStory {
+  position: relative;
+}
+
+.evolutionStage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.3fr);
+  min-height: min(48rem, calc(100dvh - 5rem));
+  border: 1px solid var(--ink-deep);
+  background: var(--ink-deep);
+}
+
+.evolutionPlate {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 44rem;
+  overflow: hidden;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 52%, rgba(118, 87, 186, 0.32), transparent 13rem),
+    radial-gradient(circle at 48% 52%, rgba(118, 185, 177, 0.19), transparent 25rem),
+    repeating-linear-gradient(90deg, rgba(239, 236, 223, 0.045) 0 1px, transparent 1px 1.2rem),
+    repeating-linear-gradient(0deg, rgba(239, 236, 223, 0.035) 0 1px, transparent 1px 1.2rem),
+    linear-gradient(180deg, #243637, #282630 57%, var(--ink-deep));
+}
+
+.evolutionPlate::before,
+.evolutionPlate::after {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  content: "";
+}
+
+.evolutionPlate::before {
+  inset: 2rem;
+  border: 1px solid rgba(239, 236, 223, 0.14);
+  box-shadow: inset 0 0 0 0.4rem rgba(39, 45, 44, 0.18);
+}
+
+.evolutionPlate::after {
+  right: 2rem;
+  bottom: 2rem;
+  left: 2rem;
+  height: 0.35rem;
+  opacity: 0.6;
+  background:
+    linear-gradient(rgba(239, 236, 223, 0.35), rgba(239, 236, 223, 0.35)) 0 100% / 100% 1px no-repeat,
+    repeating-linear-gradient(90deg, var(--focus-coral) 0 1px, transparent 1px 1.25rem);
+}
+
+.evolutionPlateMeta,
+.evolutionPlateLegend {
+  position: absolute;
+  z-index: 2;
+  right: 2.75rem;
+  left: 2.75rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: color-mix(in srgb, var(--paper) 70%, transparent);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.08em;
+}
+
+.evolutionPlateMeta {
+  top: 2.65rem;
+}
+
+.evolutionPlateLegend {
+  bottom: 2.8rem;
+  justify-content: flex-start;
+}
+
+.evolutionPlateLegend span {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.evolutionPlateLegend i {
+  width: 1rem;
+  height: 1px;
+  background: var(--region);
+}
+
+.evolutionPlateLegend span:nth-child(2) i {
+  background: var(--focus-coral);
+}
+
+.evolutionPlateLegend span:nth-child(3) i {
+  background: var(--theme);
+}
+
+.evolutionRadial {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: min(90%, 45rem);
+  height: auto;
+  overflow: visible;
+}
+
+.evolutionFieldBoundary,
+.evolutionDecadeRing,
+.evolutionRegionRay,
+.evolutionCore {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.evolutionFieldBoundary {
+  stroke: rgba(239, 236, 223, 0.34);
+  stroke-dasharray: 1 5;
+  stroke-width: 1;
+}
+
+.evolutionDecadeRing {
+  stroke: rgba(239, 236, 223, 0.11);
+  stroke-width: 0.7;
+  transition: stroke 280ms linear, opacity 280ms linear;
+}
+
+.evolutionDecadeRing[data-visible="false"] {
+  opacity: 0.28;
+}
+
+.evolutionDecadeRing[data-selected="true"] {
+  stroke: var(--focus-coral);
+  stroke-width: 1.8;
+}
+
+.evolutionRegionRay {
+  stroke: rgba(239, 236, 223, 0.18);
+  stroke-width: 0.7;
+}
+
+g[data-region-active="true"] > .evolutionRegionRay {
+  stroke: var(--focus-coral);
+  stroke-width: 1.2;
+}
+
+.evolutionDecadeLabel,
+.evolutionRegionLabel,
+.evolutionCoreLabel,
+.evolutionCoreYear,
+.evolutionCoreCount {
+  fill: color-mix(in srgb, var(--paper) 82%, transparent);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  pointer-events: none;
+}
+
+.evolutionDecadeLabel {
+  font-size: 7px;
+  letter-spacing: 0.08em;
+}
+
+.evolutionRegionLabel {
+  font-size: 7.6px;
+  letter-spacing: 0.03em;
+}
+
+g[data-region-active="true"] > .evolutionRegionLabel {
+  fill: var(--focus-coral);
+}
+
+.evolutionCell {
+  fill: var(--region);
+  stroke: rgba(239, 236, 223, 0.62);
+  stroke-width: 0.65;
+  opacity: 0.18;
+  cursor: pointer;
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0.5);
+  transition:
+    opacity 360ms linear calc(var(--evolution-order) * 7ms),
+    transform 360ms linear calc(var(--evolution-order) * 7ms),
+    fill 160ms linear,
+    stroke 160ms linear;
+}
+
+.evolutionCell[data-visible="true"] {
+  opacity: 0.76;
+  transform: scale(1);
+}
+
+.evolutionCell[data-region-active="true"] {
+  fill: var(--focus-cyan);
+  opacity: 0.95;
+}
+
+.evolutionCell[data-selected="true"],
+.evolutionCell:hover,
+.evolutionCell:focus-visible {
+  fill: var(--focus-coral);
+  stroke: var(--paper);
+  stroke-width: 1.6;
+  opacity: 1;
+  outline: none;
+  filter: url(#evolution-focus-glow);
+  transform: scale(1.22);
+}
+
+.evolutionRelationTick {
+  stroke-width: 2.2;
+  vector-effect: non-scaling-stroke;
+}
+
+.evolutionRelationTick[data-family="source_provenance"] { stroke: var(--theme); }
+.evolutionRelationTick[data-family="time_place"] { stroke: var(--region); }
+.evolutionRelationTick[data-family="medium_context"] { stroke: var(--medium); }
+.evolutionRelationTick[data-family="historical_influence"] { stroke: var(--movement); }
+
+.evolutionCore {
+  fill: color-mix(in srgb, var(--ink-deep) 84%, transparent);
+  stroke: rgba(239, 236, 223, 0.55);
+  stroke-width: 1;
+}
+
+.evolutionCoreLabel {
+  font-size: 7px;
+  letter-spacing: 0.18em;
+}
+
+.evolutionCoreYear {
+  fill: var(--paper);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.evolutionCoreCount {
+  font-size: 6px;
+  letter-spacing: 0.08em;
+}
+
+.evolutionReadout {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.5rem;
+  border-left: 1px solid rgba(239, 236, 223, 0.18);
+  color: var(--paper);
+  background:
+    linear-gradient(rgba(239, 236, 223, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239, 236, 223, 0.045) 1px, transparent 1px),
+    #303534;
+  background-size: 1.1rem 1.1rem;
+}
+
+.evolutionReadout > p:first-child,
+.evolutionLandscape header p,
+.evolutionLandscapeFooter,
+.evolutionChapters article > span {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+.evolutionReadout > p:first-child {
+  margin: 0 0 1rem;
+  color: color-mix(in srgb, var(--paper) 62%, transparent);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.evolutionReadout h4 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.1vw, 2.35rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.evolutionReadout > strong {
+  margin-top: 0.65rem;
+  color: var(--focus-coral);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.evolutionReadout dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: auto 0 1rem;
+}
+
+.evolutionReadout dl div {
+  min-height: 5.5rem;
+  padding: 0.75rem 0.55rem 0.65rem 0;
+  border-top: 1px solid rgba(239, 236, 223, 0.25);
+}
+
+.evolutionReadout dt {
+  color: color-mix(in srgb, var(--paper) 56%, transparent);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.52rem;
+  text-transform: uppercase;
+}
+
+.evolutionReadout dd {
+  margin: 0.55rem 0 0;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 1rem;
+}
+
+.evolutionReadout > button {
+  min-height: 2.8rem;
+  border: 1px solid rgba(239, 236, 223, 0.45);
+  color: var(--paper);
+  background: transparent;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+}
+
+.evolutionReadout > button:hover,
+.evolutionReadout > button:focus-visible {
+  border-color: var(--focus-coral);
+  color: var(--ink-deep);
+  background: var(--focus-coral);
+}
+
+.evolutionReadout > button:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+
+.evolutionCaution {
+  margin: 1rem 0 0;
+  color: color-mix(in srgb, var(--paper) 60%, transparent);
+  font-size: 0.62rem;
+  line-height: 1.45;
+}
+
+.evolutionChapters {
+  display: none;
+}
+
+.evolutionLandscape {
+  margin-top: 1rem;
+  border: 1px solid var(--ink-deep);
+}
+
+.evolutionLandscape > header {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.7fr) minmax(18rem, 1fr);
+  gap: 2rem;
+  align-items: end;
+  padding: 1rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.evolutionLandscape header p,
+.evolutionLandscape header h4 {
+  margin: 0;
+}
+
+.evolutionLandscape header > div p {
+  color: var(--ink-soft);
+  font-size: 0.56rem;
+  letter-spacing: 0.08em;
+}
+
+.evolutionLandscape header h4 {
+  margin-top: 0.25rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.evolutionLandscape header > p {
+  max-width: 36rem;
+  justify-self: end;
+  color: var(--ink-soft);
+  font-size: 0.65rem;
+}
+
+.evolutionLandscapeCanvas {
+  position: relative;
+  min-height: 20rem;
+  overflow: hidden;
+  background: var(--ink-deep);
+}
+
+.evolutionLandscapeCanvas svg {
+  display: block;
+  width: 100%;
+  min-width: 54rem;
+  height: auto;
+}
+
+.evolutionLandscapeGrid {
+  stroke: rgba(239, 236, 223, 0.1);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.evolutionLandscapeGrid[data-selected="true"] {
+  stroke: var(--focus-coral);
+  stroke-opacity: 0.6;
+}
+
+.evolutionLandscapeAxis {
+  fill: rgba(239, 236, 223, 0.6);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 10px;
+}
+
+.evolutionLandscapeLayer {
+  stroke: rgba(239, 236, 223, 0.18);
+  stroke-width: 0.55;
+  vector-effect: non-scaling-stroke;
+  transition: opacity 180ms linear;
+}
+
+.evolutionLandscapeLayer:hover {
+  opacity: 0.72;
+}
+
+.evolutionRegionProfileGlow,
+.evolutionRegionProfile,
+.evolutionCursor {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+.evolutionRegionProfileGlow {
+  stroke: var(--focus-cyan);
+  stroke-opacity: 0.35;
+  stroke-width: 7;
+}
+
+.evolutionRegionProfile {
+  stroke: var(--paper);
+  stroke-dasharray: 3 4;
+  stroke-width: 1.25;
+}
+
+.evolutionCursor {
+  stroke: var(--focus-coral);
+  stroke-width: 2;
+  transition: transform 360ms linear;
+}
+
+.evolutionLandscapeTarget {
+  fill: transparent;
+  cursor: crosshair;
+  outline: none;
+}
+
+.evolutionLandscapeTarget:focus-visible {
+  fill: rgba(215, 109, 81, 0.12);
+  stroke: var(--focus-coral);
+}
+
+.evolutionLoading {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  margin: 0;
+  padding: 0.45rem 0.55rem;
+  color: var(--paper);
+  background: rgba(39, 45, 44, 0.72);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.58rem;
+}
+
+.evolutionLandscapeFooter {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: start;
+  padding: 0.8rem 1rem;
+  border-top: 1px solid var(--line);
+  background: var(--paper);
+  font-size: 0.58rem;
+}
+
+.evolutionLandscapeFooter ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.evolutionLandscapeFooter li,
+.evolutionLandscapeFooter p {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+  margin: 0;
+}
+
+.evolutionLandscapeFooter i {
+  display: block;
+  width: 0.7rem;
+  height: 0.22rem;
+}
+
+.evolutionLandscapeFooter b {
+  font-weight: 500;
+}
+
+.evolutionLandscapeFooter p span {
+  color: var(--ink-soft);
+}
+
+.chronoHeadingSecondary {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ink);
+}
+
 .chronoDesktop {
   min-width: 52rem;
   font-family: var(--font-plex-mono), ui-monospace, monospace;
 }
 
 .chronoRoutes:has(.chronoDesktop) {
-  overflow-x: auto;
+  overflow-x: clip;
 }
 
 .chronoAxisRow,
@@ -1895,6 +2496,23 @@
   .geoControlBar {
     grid-template-columns: repeat(2, auto) minmax(0, 1fr);
   }
+
+  .evolutionControls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .evolutionControls > button,
+  .evolutionControls > .segmentedControl {
+    align-self: stretch;
+  }
+
+  .evolutionStage {
+    grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.34fr);
+  }
+
+  .evolutionPlate {
+    min-height: 38rem;
+  }
 }
 
 @media (max-width: 640px) {
@@ -2075,6 +2693,204 @@
 
   .chronoRoutes {
     overflow: visible;
+    scroll-margin-top: 11.75rem;
+  }
+
+  .evolutionControls {
+    position: relative;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0.45rem;
+    box-shadow: none;
+  }
+
+  .evolutionControls > button,
+  .evolutionControls .segmentedControl button,
+  .evolutionControls select {
+    min-height: 2.8rem;
+  }
+
+  .evolutionControls > button {
+    min-width: 0;
+  }
+
+  .evolutionControls > .segmentedControl,
+  .evolutionControls > label {
+    grid-column: 1 / -1;
+  }
+
+  .evolutionControls > .segmentedControl {
+    grid-row: 2;
+  }
+
+  .evolutionRange {
+    min-height: 2.6rem;
+  }
+
+  .evolutionStory {
+    min-height: 575dvh;
+  }
+
+  .evolutionStage {
+    position: sticky;
+    top: 11.75rem;
+    z-index: 1;
+    display: block;
+    height: calc(100svh - 12.5rem);
+    min-height: 27rem;
+    overflow: hidden;
+  }
+
+  .evolutionPlate {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .evolutionPlate::before {
+    inset: 0.75rem;
+  }
+
+  .evolutionPlate::after {
+    right: 0.8rem;
+    bottom: 0.8rem;
+    left: 0.8rem;
+  }
+
+  .evolutionPlateMeta {
+    top: 1rem;
+    right: 1rem;
+    left: 1rem;
+    font-size: 0.45rem;
+  }
+
+  .evolutionPlateLegend {
+    display: none;
+  }
+
+  .evolutionRadial {
+    width: 121%;
+    max-width: none;
+    transform: translateX(-8.5%);
+  }
+
+  .evolutionRegionLabel {
+    font-size: 6.2px;
+  }
+
+  .evolutionReadout {
+    display: none;
+  }
+
+  .evolutionChapters {
+    position: relative;
+    z-index: 2;
+    display: block;
+    margin: calc(-100svh + 12.5rem) 0 0;
+    padding: 54svh 0 0;
+    list-style: none;
+    pointer-events: none;
+  }
+
+  .evolutionChapters > li {
+    display: flex;
+    min-height: 72svh;
+    padding: 0.75rem;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  .evolutionChapters > li:last-child {
+    min-height: 96svh;
+  }
+
+  .evolutionChapters article {
+    width: min(17rem, 82%);
+    padding: 0.8rem;
+    border: 1px solid color-mix(in srgb, var(--focus-coral) 44%, var(--line));
+    color: var(--ink);
+    background:
+      linear-gradient(90deg, rgba(48, 53, 50, 0.04) 1px, transparent 1px),
+      color-mix(in srgb, var(--paper) 93%, transparent);
+    background-size: 1rem 100%, auto;
+    box-shadow: 0 1rem 2.2rem rgba(39, 45, 44, 0.24);
+    backdrop-filter: blur(14px);
+  }
+
+  .evolutionChapters article > span {
+    color: var(--medium-readable);
+    font-size: 0.52rem;
+  }
+
+  .evolutionChapters h4 {
+    margin: 0.25rem 0 0;
+    font-family: var(--font-plex-mono), ui-monospace, monospace;
+    font-size: 1.45rem;
+    font-weight: 500;
+  }
+
+  .evolutionChapters p {
+    margin: 0.35rem 0 0.65rem;
+    color: var(--ink-soft);
+    font-size: 0.65rem;
+    line-height: 1.45;
+  }
+
+  .evolutionChapters ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .evolutionChapters ul li {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.65rem;
+    padding: 0.28rem 0;
+    border-top: 1px solid var(--line);
+    font-family: var(--font-plex-mono), ui-monospace, monospace;
+    font-size: 0.55rem;
+  }
+
+  .evolutionChapters b {
+    font-weight: 500;
+  }
+
+  .evolutionLandscape {
+    position: relative;
+    z-index: 3;
+    margin-top: 1.25rem;
+    scroll-margin-top: 11.75rem;
+    background: var(--paper);
+  }
+
+  .evolutionLandscape > header,
+  .evolutionLandscapeFooter {
+    grid-template-columns: 1fr;
+  }
+
+  .evolutionLandscape header > p {
+    justify-self: start;
+  }
+
+  .evolutionLandscapeCanvas {
+    min-height: 16rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+  }
+
+  .evolutionLandscapeCanvas svg {
+    width: 54rem;
+  }
+
+  .evolutionLandscapeFooter ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .chronoHeadingSecondary {
+    position: relative;
+    z-index: 3;
   }
 
   .chronoLegend {
@@ -2125,11 +2941,41 @@
   }
 }
 
+@supports (animation-timeline: view()) {
+  @media (max-width: 640px) {
+    .evolutionChapters article {
+      opacity: 0.18;
+      transform: translateY(1.4rem);
+      animation: evolution-chapter-reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 12% cover 48%;
+    }
+  }
+}
+
+@keyframes evolution-chapter-reveal {
+  0% {
+    opacity: 0.18;
+    transform: translateY(1.4rem);
+  }
+  55%,
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .page *,
   .page *::before,
   .page *::after {
     scroll-behavior: auto !important;
     transition: none !important;
+  }
+
+  .evolutionChapters article {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

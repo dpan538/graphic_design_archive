@@ -1599,8 +1599,12 @@ body {
   left: 1.1rem;
   z-index: 30;
   max-width: 15rem;
-  padding-left: 0.68rem;
+  padding: 0.34rem 0.62rem 0.42rem 0.68rem;
+  border: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
   border-left: 2px solid var(--focus-coral);
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  box-shadow: 0 0.45rem 1.3rem rgba(39, 45, 44, 0.1);
+  backdrop-filter: blur(12px);
   text-decoration: none;
 }
 
