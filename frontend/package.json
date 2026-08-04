@@ -17,6 +17,7 @@
     "capture:cards": "node scripts/capture-cards.js",
     "generate:archive-search": "node scripts/generate-archive-search-index.mjs",
     "verify:trace-visualization": "node scripts/verify-trace-visualization.mjs",
+    "verify:home-archive-box": "node scripts/verify-home-archive-box.mjs",
     "asset:a11y-check": "node scripts/asset-a11y-check.js",
     "lint": "next lint"
   },

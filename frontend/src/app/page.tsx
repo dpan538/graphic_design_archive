@@ -9,7 +9,9 @@ function HomeArchiveBox() {
   const counts = getGlobalCounts();
   return (
     <div className="home-archive-box">
-      <CountsCard />
+      <div className="home-archive-counts">
+        <CountsCard />
+      </div>
       <div className="home-archive-note">
         <p className="label-caps">Archive Box</p>
         <p>

@@ -39,6 +39,7 @@ export default function FolderDrawer({ items }: { items: DrawerItem[] }) {
   }, []);
 
   function onPointerMove(e: React.PointerEvent<HTMLDivElement>) {
+    if (e.pointerType !== "mouse") return;
     const el = scrollRef.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
@@ -61,52 +62,89 @@ export default function FolderDrawer({ items }: { items: DrawerItem[] }) {
 
   return (
     <div className="drawer-stage">
-      <div
-        ref={scrollRef}
-        className="folder-scroll"
-        onPointerMove={onPointerMove}
-        onPointerLeave={stopAutoScroll}
-        onPointerDown={stopAutoScroll}
-      >
-        <div className="folder-stack">
-          {items.map((item) => {
-            return (
-              <Link
-                key={item.key}
-                href={item.href}
-                className="folder-card group"
-                data-folder-type={item.type ?? "unknown"}
-              >
-                <span className="folder-tab">
-                  <span
-                    className="folder-chip"
-                    aria-hidden
-                  />
-                  {item.tabLabel}
-                </span>
+      <header className="drawer-stage__intro">
+        <div>
+          <p className="label-caps">Primary drawers · {String(items.length).padStart(2, "0")}</p>
+          <h1>Four coordinates for entering the archive.</h1>
+        </div>
+        <p>
+          Each divider opens the same evidence collection from a different
+          cataloguing coordinate. Select a tab; the records remain linked.
+        </p>
+      </header>
 
-                <div className="flex justify-end">
-                  <span className="label-caps text-ink-soft shrink-0">
-                    <span className="folder-action--idle">hover to select</span>
-                    <span className="folder-action--hover">click to open →</span>
+      <div className="archive-box-frame">
+        <div
+          ref={scrollRef}
+          className="folder-scroll"
+          role="region"
+          aria-label="Primary archive drawers"
+          tabIndex={0}
+          onPointerMove={onPointerMove}
+          onPointerLeave={stopAutoScroll}
+          onPointerDown={stopAutoScroll}
+        >
+          <div className="folder-stack">
+            {items.map((item, index) => {
+              const detailId = `folder-detail-${item.key}`;
+              return (
+                <Link
+                  key={item.key}
+                  href={item.href}
+                  className="folder-card group"
+                  data-folder-type={item.type ?? "unknown"}
+                  aria-describedby={detailId}
+                  style={
+                    {
+                      "--folder-index": index,
+                      "--folder-tab-left": `${1.15 + index * 7.1}rem`,
+                      "--folder-tab-compact-left": `${0.8 + index * 5.75}rem`,
+                      "--folder-tab-mobile-left": `${0.65 + index * 0.62}rem`,
+                    } as React.CSSProperties
+                  }
+                >
+                  <span className="folder-card__number" aria-hidden>
+                    {String(index + 1).padStart(2, "0")}
                   </span>
-                </div>
+                  <span className="folder-tab">
+                    <span className="folder-chip" aria-hidden />
+                    {item.tabLabel}
+                  </span>
 
-                <div className="mt-auto">
-                  <span className="folder-title">{item.title}</span>
-                  <div className="folder-reveal">
-                    <ul className="mt-3 text-sm text-ink-soft space-y-1">
-                      {item.reveal.map((line, i) => (
-                        <li key={i}>{line}</li>
-                      ))}
-                    </ul>
+                  <div className="folder-card__action">
+                    <span className="label-caps text-ink-soft shrink-0">
+                      <span className="folder-action--idle">lift to inspect</span>
+                      <span className="folder-action--hover">open drawer →</span>
+                      <span className="folder-action--touch">tap to open →</span>
+                    </span>
                   </div>
-                </div>
-              </Link>
-            );
-          })}
+
+                  <div className="folder-card__body">
+                    <span className="folder-title">{item.title}</span>
+                    <div className="folder-reveal" id={detailId}>
+                      <ul className="mt-3 text-sm text-ink-soft space-y-1">
+                        {item.reveal.map((line, i) => (
+                          <li key={i}>{line}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="archive-box-front" aria-hidden="true">
+          <span>ABX / PRIMARY INDEX</span>
+          <span className="archive-box-front__handle">DRAWERS · {String(items.length).padStart(2, "0")}</span>
+          <span>RETURN TO SOURCE</span>
         </div>
       </div>
+
+      <p className="drawer-stage__mobile-instruction label-caps">
+        Swipe the card set · tap a card to open
+      </p>
     </div>
   );
 }
