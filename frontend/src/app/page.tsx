@@ -1,5 +1,4 @@
 import ArchiveShell from "@/components/archive/shell/ArchiveShell";
-import { CountsCard } from "@/components/archive/shell/sidebar";
 import FolderDrawer, {
   type DrawerItem,
 } from "@/components/archive/drawer/FolderDrawer";
@@ -8,21 +7,10 @@ import { getGlobalCounts, getFolderTypeSummaries } from "@/lib/archive-data";
 function HomeArchiveBox() {
   const counts = getGlobalCounts();
   return (
-    <div className="home-archive-box">
-      <div className="home-archive-counts">
-        <CountsCard />
-      </div>
-      <div className="home-archive-note">
-        <p className="label-caps">Archive Box</p>
-        <p>
-          Four primary drawers organize the index. Region opens wider because
-          geography carries the broadest local source distribution.
-        </p>
-      </div>
-      <div className="home-archive-strip">
-        <span>IMG {counts.imageCoveragePercent}%</span>
-        <span>{counts.sources} sources</span>
-      </div>
+    <div className="home-archive-summary" aria-label="Archive totals">
+      <span><strong>{counts.folders}</strong> folders</span>
+      <span><strong>{counts.surfaces}</strong> surfaces</span>
+      <span><strong>{counts.imageCoveragePercent}%</strong> images</span>
     </div>
   );
 }
