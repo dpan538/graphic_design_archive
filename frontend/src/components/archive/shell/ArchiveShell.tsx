@@ -7,16 +7,15 @@ import SearchBox, { type AssistantContext, type SearchMode } from "./search";
 
 /**
  * Fixed, non-scrolling viewport. No sidebar column and no top/bottom bar.
- * Navigation is a set of large floating icons (top-right): Index / Folders /
- * Search. Search expands in the corner-stack. Reader-specific structure can
- * sit on the left; assistant mode shares the search window.
+ * Global navigation lives behind one top-right menu control. Search expands
+ * in the corner-stack. Reader-specific structure can sit on the left;
+ * assistant mode shares the search window.
  */
 export default function ArchiveShell({
   main,
   activeNav,
   cornerCard,
   panel,
-  panelLabel = "Contents",
   leftPanel,
   leftPanelLabel = "Content",
   leftPanelSecondary,
@@ -30,14 +29,12 @@ export default function ArchiveShell({
   onRightPanelOpenChange,
   folderInk = "#2E2925",
   mainScroll = false,
-  hideWordmark = false,
 }: {
   main: React.ReactNode;
   activeNav?: "index" | "folders" | "search" | "about" | "trace";
   cornerCard?: React.ReactNode;
   /** Legacy right-side contextual panel. Prefer leftPanel/rightPanel. */
   panel?: React.ReactNode;
-  panelLabel?: string;
   leftPanel?: React.ReactNode;
   leftPanelLabel?: string;
   leftPanelSecondary?: React.ReactNode;
@@ -51,8 +48,6 @@ export default function ArchiveShell({
   onRightPanelOpenChange?: (open: boolean) => void;
   folderInk?: string;
   mainScroll?: boolean;
-  /** Hide the top-left wordmark for dense reader variants. */
-  hideWordmark?: boolean;
 }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -60,6 +55,7 @@ export default function ArchiveShell({
   const [leftPanelOpen, setLeftPanelOpen] = useState(false);
   const [leftPanelMode, setLeftPanelMode] = useState<"primary" | "secondary">("primary");
   const [searchOpen, setSearchOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [searchMode, setSearchMode] = useState<SearchMode>("search");
   const [assistantContext, setAssistantContext] =
     useState<AssistantContext | null>(null);
@@ -69,7 +65,7 @@ export default function ArchiveShell({
   } | null>(null);
   const touch = useRef<{ x: number; y: number; edge: boolean } | null>(null);
   const searchButtonRef = useRef<HTMLButtonElement | null>(null);
-  const searchPanelRef = useRef<HTMLDivElement | null>(null);
+  const menuButtonRef = useRef<HTMLButtonElement | null>(null);
   const countCardRef = useRef<HTMLDivElement | null>(null);
   const mainRef = useRef<HTMLDivElement | null>(null);
 
@@ -86,6 +82,7 @@ export default function ArchiveShell({
       }
       setAssistantContext(detail);
       setSearchMode("assistant");
+      setMenuOpen(false);
       setLeftPanelOpen(false);
       setPanelOpen(false);
       onContextOverlayOpenChange?.(false);
@@ -138,7 +135,7 @@ export default function ArchiveShell({
 
     let frame = 0;
     const update = () => {
-      const button = searchButtonRef.current;
+      const button = searchButtonRef.current ?? menuButtonRef.current;
       if (!button) return;
       const icon = button.getBoundingClientRect();
       const rootSize =
@@ -186,19 +183,11 @@ export default function ArchiveShell({
           if (leftPanelOpen) setLeftPanelOpen(false);
           if (contextOverlayOpen) onContextOverlayOpenChange?.(false);
           if (rightPanelOpen) onRightPanelOpenChange?.(false);
+          if (menuOpen) setMenuOpen(false);
         }}
       >
         {main}
       </div>
-
-      {!hideWordmark && (
-        <Link href="/" className="wordmark">
-          <div className="label-caps text-ink-soft">Archive Box</div>
-          <div className="font-bold text-sm leading-tight">
-            Modern Graphic Design History
-          </div>
-        </Link>
-      )}
 
       {leftPanel ? (
         <div className="left-panel-triggers" aria-label="Left panel controls">
@@ -267,33 +256,38 @@ export default function ArchiveShell({
         </div>
       ) : null}
 
-      <nav className="nav-icons" aria-label="Archive navigation">
-        {activeNav === "about" ? (
-          <Link
-            href="/contents"
-            className="nav-icon"
-            data-active={false}
-            aria-label="Index"
+      <div className="nav-menu">
+        <button
+          ref={menuButtonRef}
+          type="button"
+          className="nav-icon nav-menu__trigger"
+          data-active={menuOpen}
+          aria-label={menuOpen ? "Close archive menu" : "Open archive menu"}
+          aria-expanded={menuOpen}
+          aria-controls="archive-global-menu"
+          onClick={() => {
+            if (menuOpen) setSearchOpen(false);
+            setMenuOpen((open) => !open);
+          }}
+        >
+          <span className="nav-menu__glyph" aria-hidden="true">
+            <i />
+            <i />
+            <i />
+          </span>
+          <span>{menuOpen ? "Close" : "Menu"}</span>
+        </button>
+
+        {menuOpen ? (
+          <nav
+            id="archive-global-menu"
+            className="nav-menu__panel"
+            aria-label="Archive navigation"
           >
-            <IconIndex />
-            <span>Index</span>
-          </Link>
-        ) : activeNav === "index" ? (
-          <Link
-            href="/about"
-            className="nav-icon"
-            data-active={false}
-            aria-label="About"
-          >
-            <IconAbout />
-            <span>About</span>
-          </Link>
-        ) : (
-          <div className="nav-icons__row">
             <Link
               href="/about"
               className="nav-icon"
-              data-active={false}
+              data-active={activeNav === "about"}
               aria-label="About"
             >
               <IconAbout />
@@ -302,71 +296,53 @@ export default function ArchiveShell({
             <Link
               href="/contents"
               className="nav-icon"
-              data-active={false}
+              data-active={activeNav === "index"}
               aria-label="Index"
             >
               <IconIndex />
               <span>Index</span>
             </Link>
-          </div>
-        )}
-        <Link
-          href="/folders"
-          className="nav-icon"
-          data-active={activeNav === "folders"}
-          aria-label="Folders"
-        >
-          <IconFolder />
-          <span>Folders</span>
-        </Link>
-        <Link
-          href="/trace"
-          className="nav-icon"
-          data-active={activeNav === "trace"}
-          aria-label="TRACE evidence atlas"
-        >
-          <IconTree />
-          <span>TRACE</span>
-        </Link>
-        <button
-          ref={searchButtonRef}
-          type="button"
-          className="nav-icon"
-          data-active={searchOpen && searchMode === "search"}
-          aria-label="Search"
-          onClick={() => {
-            setSearchMode("search");
-            setLeftPanelOpen(false);
-            setPanelOpen(false);
-            onContextOverlayOpenChange?.(false);
-            setSearchOpen((v) => (searchMode === "search" ? !v : true));
-          }}
-        >
-          <IconSearch />
-          <span>Search</span>
-        </button>
-        {panel ? (
-          <button
-            type="button"
-            className="nav-icon"
-            data-active={panelOpen}
-            aria-label={panelLabel}
-            onClick={() => {
-              setSearchOpen(false);
-              setLeftPanelOpen(false);
-              onContextOverlayOpenChange?.(false);
-              setPanelOpen((v) => !v);
-            }}
-          >
-            <IconContents />
-            <span>{panelOpen ? "Close" : panelLabel}</span>
-          </button>
+            <Link
+              href="/folders"
+              className="nav-icon"
+              data-active={activeNav === "folders"}
+              aria-label="Folders"
+            >
+              <IconFolder />
+              <span>Folders</span>
+            </Link>
+            <Link
+              href="/trace"
+              className="nav-icon"
+              data-active={activeNav === "trace"}
+              aria-label="TRACE evidence atlas"
+            >
+              <IconTree />
+              <span>TRACE</span>
+            </Link>
+            <button
+              ref={searchButtonRef}
+              type="button"
+              className="nav-icon"
+              data-active={searchOpen && searchMode === "search"}
+              aria-label="Search"
+              onClick={() => {
+                setSearchMode("search");
+                setLeftPanelOpen(false);
+                setPanelOpen(false);
+                onContextOverlayOpenChange?.(false);
+                setSearchOpen((v) => (searchMode === "search" ? !v : true));
+              }}
+            >
+              <IconSearch />
+              <span>Search</span>
+            </button>
+          </nav>
         ) : null}
-      </nav>
+      </div>
 
       {searchOpen ? (
         <div
-          ref={searchPanelRef}
           className={`search-stack ${panel || leftPanel || rightPanel ? "search-stack--reader" : ""}`}
           style={
             searchFrame === null
@@ -460,16 +436,6 @@ function IconAbout() {
       <circle cx="12" cy="12" r="9" />
       <line x1="12" y1="10" x2="12" y2="17" />
       <line x1="12" y1="6.5" x2="12" y2="8" strokeWidth="2.2" />
-    </svg>
-  );
-}
-
-function IconContents() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="4" y1="12" x2="20" y2="12" />
-      <line x1="4" y1="18" x2="20" y2="18" />
     </svg>
   );
 }

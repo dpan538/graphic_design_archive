@@ -7,11 +7,27 @@ import { getGlobalCounts, getFolderTypeSummaries } from "@/lib/archive-data";
 function HomeArchiveBox() {
   const counts = getGlobalCounts();
   return (
-    <div className="home-archive-summary" aria-label="Archive totals">
-      <span><strong>{counts.folders}</strong> folders</span>
-      <span><strong>{counts.surfaces}</strong> surfaces</span>
-      <span><strong>{counts.imageCoveragePercent}%</strong> images</span>
-    </div>
+    <details className="home-archive-summary">
+      <summary>
+        <span>Archive counts</span>
+        <strong>{counts.surfaces.toLocaleString("en-US")}</strong>
+        <small>surfaces</small>
+      </summary>
+      <dl>
+        <div>
+          <dt>folders</dt>
+          <dd>{counts.folders}</dd>
+        </div>
+        <div>
+          <dt>surfaces</dt>
+          <dd>{counts.surfaces.toLocaleString("en-US")}</dd>
+        </div>
+        <div>
+          <dt>images</dt>
+          <dd>{counts.imageCoveragePercent}%</dd>
+        </div>
+      </dl>
+    </details>
   );
 }
 

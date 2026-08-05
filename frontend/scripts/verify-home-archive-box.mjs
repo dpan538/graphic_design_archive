@@ -4,25 +4,42 @@ import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const frontend = path.resolve(here, "..");
-const [drawer, home, css] = await Promise.all([
+const [drawer, home, shell, css, traceCss] = await Promise.all([
   readFile(path.join(frontend, "src/components/archive/drawer/FolderDrawer.tsx"), "utf8"),
   readFile(path.join(frontend, "src/app/page.tsx"), "utf8"),
+  readFile(path.join(frontend, "src/components/archive/shell/ArchiveShell.tsx"), "utf8"),
   readFile(path.join(frontend, "src/app/globals.css"), "utf8"),
+  readFile(
+    path.join(frontend, "src/components/archive/trace/TraceExplorer.module.css"),
+    "utf8",
+  ),
 ]);
 
 const checks = {
-  desktop_is_compact_cabinet_menu:
-    drawer.includes('className="cabinet-menu"') &&
-    drawer.includes('className="cabinet-menu__rows"') &&
-    drawer.includes('className="cabinet-menu__drawer-front"'),
+  desktop_is_research_coordinate_index:
+    drawer.includes('className="research-coordinate-index"') &&
+    drawer.includes('className="research-coordinate-index__rows"') &&
+    drawer.includes("Every route preserves object and source evidence"),
   desktop_rows_keep_direct_routes:
-    drawer.includes('className="cabinet-row"') &&
+    drawer.includes('className="research-coordinate-row"') &&
     drawer.includes("href={item.href}") &&
     drawer.includes('aria-label="Primary archive coordinates"'),
-  desktop_removed_engineered_auto_scroll:
+  desktop_removed_showcase_language_and_mechanics:
+    !drawer.includes("Open the archive cabinet") &&
+    !drawer.includes("drawer-front") &&
     !drawer.includes("useEffect") &&
     !drawer.includes("useRef") &&
     !drawer.includes("requestAnimationFrame"),
+  navigation_is_one_menu_for_five_entries:
+    shell.includes('className="nav-icon nav-menu__trigger"') &&
+    shell.includes("aria-expanded={menuOpen}") &&
+    shell.includes('id="archive-global-menu"') &&
+    ["About", "Index", "Folders", "TRACE", "Search"].every((label) =>
+      shell.includes(`<span>${label}</span>`),
+    ),
+  top_left_wordmark_is_removed:
+    !shell.includes('className="wordmark"') &&
+    !css.includes(".wordmark {"),
   mobile_is_a_separate_vertical_wheel:
     drawer.includes('className="mobile-card-wheel"') &&
     drawer.includes('aria-label="Archive coordinate card wheel"') &&
@@ -36,17 +53,37 @@ const checks = {
     css.includes("prefers-reduced-motion: reduce"),
   mobile_is_not_hover_or_box_dependent:
     drawer.includes("tap to open") &&
-    css.includes(".cabinet-menu {\n    display: none;") &&
+    css.includes(".research-coordinate-index {\n    display: none;") &&
     css.includes(".app:has(.mobile-card-wheel) .corner-stack") &&
-    css.includes('.mobile-card-wheel__intro h1 {\n    display: none;'),
-  restrained_archive_palette:
-    css.includes("--canvas: #f2eee3") &&
-    css.includes("--paper: #f8f4e8") &&
+    css.includes('.mobile-card-wheel__intro h1 {\n    display: none;') &&
+    !drawer.includes("Scroll up / down"),
+  mobile_cards_form_one_visible_stack:
+    css.includes(".wheel-card + .wheel-card") &&
+    css.includes("margin-top: -8.5rem") &&
+    css.includes("z-index: 10"),
+  warm_paper_palette_with_stronger_reading_contrast:
+    css.includes("--canvas: #f5f0e3") &&
+    css.includes("--paper: #fbf7eb") &&
+    css.includes("--ink: #242925") &&
+    css.includes("--ink-soft: #505650") &&
     css.includes("border-top: 0.18rem solid var(--folder-color)"),
-  home_counts_are_summary_only:
-    home.includes('className="home-archive-summary"') &&
+  tactile_controls_and_state_cursor:
+    css.includes("--cursor-neutral:") &&
+    css.includes("--cursor-interactive:") &&
+    css.includes("--cursor-emphasis:") &&
+    css.includes(".nav-icon:active") &&
+    css.includes("0 0.12rem 0 var(--line)"),
+  trace_colour_is_reserved_but_legible:
+    traceCss.includes("fill: var(--signal-blue)") &&
+    traceCss.includes("fill: var(--signal-orange)") &&
+    traceCss.includes("stroke: var(--signal-orange)") &&
+    traceCss.includes("cursor: var(--cursor-emphasis)"),
+  home_counts_are_clickable_and_emphatic:
+    home.includes('<details className="home-archive-summary">') &&
+    home.includes("<summary>") &&
     !home.includes("CountsCard") &&
-    css.includes(".home-archive-summary"),
+    css.includes(".home-archive-summary summary strong") &&
+    css.includes("font-size: 1.8rem"),
 };
 
 const failed = Object.entries(checks)

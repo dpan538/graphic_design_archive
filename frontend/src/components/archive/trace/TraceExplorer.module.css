@@ -4,9 +4,9 @@
   padding: 7rem 6.5rem 5rem 2rem;
   color: var(--ink);
   background:
-    linear-gradient(rgba(48, 53, 50, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(48, 53, 50, 0.035) 1px, transparent 1px),
-    radial-gradient(circle at 22% 18%, rgba(104, 133, 154, 0.1), transparent 24rem),
+    linear-gradient(rgba(36, 41, 37, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 41, 37, 0.045) 1px, transparent 1px),
+    radial-gradient(circle at 22% 18%, color-mix(in srgb, var(--region) 16%, transparent), transparent 24rem),
     var(--canvas);
   background-size: 1.2rem 1.2rem, 1.2rem 1.2rem, auto, auto;
   font-family: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
@@ -119,11 +119,15 @@
 .clearButton,
 .showButton {
   padding: 0.65rem 0.85rem;
-  border: 1px solid var(--line-soft);
-  background: transparent;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  box-shadow:
+    0 0.1rem 0 var(--line-soft),
+    0 0.35rem 0.8rem rgba(27, 33, 31, 0.08);
   font-family: var(--font-plex-mono), ui-monospace, monospace;
   font-size: 0.7rem;
   text-transform: uppercase;
+  transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
 }
 
 .viewTabs button[aria-pressed="true"],
@@ -132,6 +136,13 @@
 .showButton:hover {
   color: var(--paper);
   background: var(--ink);
+}
+
+.viewTabs button:active,
+.clearButton:active,
+.showButton:active {
+  transform: translateY(1px);
+  box-shadow: 0 0.04rem 0 var(--line-soft);
 }
 
 .atlasStatement {
@@ -193,15 +204,15 @@
   width: 100%;
   min-width: 1.75rem;
   min-height: 1.75rem;
-  border: 1px solid color-mix(in srgb, var(--region) 30%, var(--line));
+  border: 1px solid color-mix(in srgb, var(--region) 52%, var(--line));
   color: var(--ink);
   background: color-mix(in srgb, var(--region) var(--trace-intensity), var(--canvas));
 }
 
 .matrix button:hover,
 .matrix button:focus-visible {
-  border-color: var(--region-readable);
-  background: color-mix(in srgb, var(--region) 42%, var(--canvas));
+  border-color: var(--signal-blue);
+  background: color-mix(in srgb, var(--signal-blue) 46%, var(--canvas));
 }
 
 .mobileAtlas {
@@ -563,8 +574,15 @@
   padding: 0.6rem 0.75rem;
   text-align: left;
   text-transform: uppercase;
-  box-shadow: 0 0.5rem 1.2rem var(--paper-shadow);
+  box-shadow:
+    0 0.1rem 0 var(--line-soft),
+    0 0.5rem 1.2rem var(--paper-shadow);
   backdrop-filter: blur(10px);
+}
+
+.diagramModeTrigger:active,
+.diagramModeMenu button:active {
+  transform: translateY(1px);
 }
 
 .diagramModeTrigger:hover,
@@ -716,10 +734,10 @@
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background:
-    radial-gradient(circle at 72% 42%, rgba(118, 87, 186, 0.14) 0 1px, transparent 2px),
-    linear-gradient(rgba(239, 236, 223, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(239, 236, 223, 0.045) 1px, transparent 1px),
-    linear-gradient(180deg, #303534, var(--ink-deep));
+    radial-gradient(circle at 72% 42%, color-mix(in srgb, var(--focus-violet) 34%, transparent) 0 1px, transparent 2px),
+    linear-gradient(rgba(251, 247, 235, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(251, 247, 235, 0.07) 1px, transparent 1px),
+    linear-gradient(180deg, #252e2c, #151a19);
   background-size: 0.8rem 0.8rem, 1.5rem 1.5rem, 1.5rem 1.5rem, auto;
   box-shadow: inset 0 0 0 1px rgba(239, 236, 223, 0.06);
 }
@@ -849,7 +867,7 @@
 .treeSvg a:focus-visible .treeLeaf,
 .routeMapSvg a:focus-visible .mediumRouteStation,
 .treeSvg a:focus-visible .sourceLeaf {
-  stroke: var(--ink);
+  stroke: var(--signal-orange);
   stroke-width: 8;
 }
 
@@ -864,7 +882,7 @@
 }
 
 .objectLabel {
-  fill: var(--line-soft);
+  fill: color-mix(in srgb, var(--paper) 82%, var(--line));
   font-size: 10px;
 }
 
@@ -900,7 +918,7 @@
 }
 
 .treeLeafMeta {
-  fill: var(--line-soft);
+  fill: color-mix(in srgb, var(--paper) 78%, var(--line));
   font-size: 9px;
 }
 
@@ -938,20 +956,20 @@
 }
 
 .mapSphere {
-  fill: color-mix(in srgb, var(--region) 4%, var(--paper));
+  fill: color-mix(in srgb, var(--region) 8%, var(--paper));
   stroke: var(--line);
   stroke-width: 1;
 }
 
 .worldCountry {
-  fill: color-mix(in srgb, var(--ink) 7%, var(--paper));
+  fill: color-mix(in srgb, var(--ink) 11%, var(--paper));
   stroke: var(--paper);
   stroke-width: 0.8;
 }
 
 .worldCountryHighlighted {
-  fill: color-mix(in srgb, var(--region) 60%, var(--paper));
-  stroke: var(--region-readable);
+  fill: color-mix(in srgb, var(--signal-blue) 68%, var(--paper));
+  stroke: var(--signal-blue);
   stroke-width: 2;
 }
 
@@ -1078,7 +1096,9 @@
   padding: 0.65rem;
   border: 1px solid var(--line);
   background: color-mix(in srgb, var(--paper) 92%, transparent);
-  box-shadow: 0 0.8rem 2rem var(--paper-shadow);
+  box-shadow:
+    0 0.1rem 0 var(--line-soft),
+    0 0.8rem 2rem var(--paper-shadow);
   backdrop-filter: blur(16px);
 }
 
@@ -1169,11 +1189,11 @@
   overflow: hidden;
   place-items: center;
   background:
-    radial-gradient(circle at 50% 52%, rgba(118, 87, 186, 0.32), transparent 13rem),
-    radial-gradient(circle at 48% 52%, rgba(118, 185, 177, 0.19), transparent 25rem),
-    repeating-linear-gradient(90deg, rgba(239, 236, 223, 0.045) 0 1px, transparent 1px 1.2rem),
-    repeating-linear-gradient(0deg, rgba(239, 236, 223, 0.035) 0 1px, transparent 1px 1.2rem),
-    linear-gradient(180deg, #243637, #282630 57%, var(--ink-deep));
+    radial-gradient(circle at 50% 52%, color-mix(in srgb, var(--focus-violet) 46%, transparent), transparent 13rem),
+    radial-gradient(circle at 48% 52%, color-mix(in srgb, var(--focus-cyan) 28%, transparent), transparent 25rem),
+    repeating-linear-gradient(90deg, rgba(251, 247, 235, 0.075) 0 1px, transparent 1px 1.2rem),
+    repeating-linear-gradient(0deg, rgba(251, 247, 235, 0.055) 0 1px, transparent 1px 1.2rem),
+    linear-gradient(180deg, #173638, #252335 57%, #151a19);
 }
 
 .evolutionPlate::before,
@@ -1318,11 +1338,11 @@ g[data-region-active="true"] > .evolutionRegionLabel {
 }
 
 .evolutionCell {
-  fill: var(--region);
-  stroke: rgba(239, 236, 223, 0.62);
+  fill: var(--signal-blue);
+  stroke: rgba(251, 247, 235, 0.78);
   stroke-width: 0.65;
   opacity: 0.18;
-  cursor: pointer;
+  cursor: var(--cursor-interactive);
   transform-box: fill-box;
   transform-origin: center;
   transform: scale(0.5);
@@ -1334,25 +1354,31 @@ g[data-region-active="true"] > .evolutionRegionLabel {
 }
 
 .evolutionCell[data-visible="true"] {
-  opacity: 0.76;
+  opacity: 0.88;
   transform: scale(1);
 }
 
 .evolutionCell[data-region-active="true"] {
   fill: var(--focus-cyan);
-  opacity: 0.95;
+  opacity: 1;
 }
 
 .evolutionCell[data-selected="true"],
 .evolutionCell:hover,
 .evolutionCell:focus-visible {
-  fill: var(--focus-coral);
+  fill: var(--signal-orange);
   stroke: var(--paper);
   stroke-width: 1.6;
   opacity: 1;
   outline: none;
   filter: url(#evolution-focus-glow);
   transform: scale(1.22);
+}
+
+.evolutionCell[data-selected="true"],
+.evolutionCell:hover,
+.evolutionCell:focus-visible {
+  cursor: var(--cursor-emphasis);
 }
 
 .evolutionRelationTick {
@@ -1474,7 +1500,7 @@ g[data-region-active="true"] > .evolutionRegionLabel {
 }
 
 .evolutionReadout > button:disabled {
-  cursor: not-allowed;
+  cursor: var(--cursor-neutral);
   opacity: 0.35;
 }
 
@@ -1599,7 +1625,7 @@ g[data-region-active="true"] > .evolutionRegionLabel {
 
 .evolutionLandscapeTarget {
   fill: transparent;
-  cursor: crosshair;
+  cursor: var(--cursor-emphasis);
   outline: none;
 }
 
@@ -1817,7 +1843,7 @@ g[data-region-active="true"] > .evolutionRegionLabel {
 }
 
 .matrixFallback summary {
-  cursor: pointer;
+  cursor: var(--cursor-interactive);
   font-family: var(--font-plex-mono), ui-monospace, monospace;
   font-size: 0.68rem;
   text-transform: uppercase;
@@ -1903,7 +1929,7 @@ g[data-region-active="true"] > .evolutionRegionLabel {
 }
 
 .tableFallback summary {
-  cursor: pointer;
+  cursor: var(--cursor-interactive);
   font-family: var(--font-plex-mono), ui-monospace, monospace;
   font-size: 0.72rem;
   text-transform: uppercase;
@@ -2220,8 +2246,8 @@ g[data-region-active="true"] > .evolutionRegionLabel {
   background:
     linear-gradient(rgba(48, 53, 50, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(48, 53, 50, 0.03) 1px, transparent 1px),
-    radial-gradient(circle at 66% 42%, rgba(118, 87, 186, 0.09), transparent 20rem),
-    linear-gradient(180deg, color-mix(in srgb, var(--focus-coral) 4%, var(--paper)), var(--canvas));
+    radial-gradient(circle at 66% 42%, color-mix(in srgb, var(--focus-violet) 16%, transparent), transparent 20rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--focus-coral) 7%, var(--paper)), var(--canvas));
   background-size: 1.1rem 1.1rem, 1.1rem 1.1rem, auto, auto;
 }
 
@@ -2232,7 +2258,7 @@ g[data-region-active="true"] > .evolutionRegionLabel {
 
 .mapGraticule {
   fill: none;
-  stroke: color-mix(in srgb, var(--ink) 15%, transparent);
+  stroke: color-mix(in srgb, var(--ink) 24%, transparent);
   stroke-width: 0.6;
 }
 
@@ -2242,10 +2268,10 @@ g[data-region-active="true"] > .evolutionRegionLabel {
 
 .mapContextLink {
   fill: none;
-  stroke: var(--focus-coral);
+  stroke: var(--signal-orange);
   stroke-dasharray: 5 7;
-  stroke-width: 1.2;
-  opacity: 0.48;
+  stroke-width: 1.6;
+  opacity: 0.72;
 }
 
 .mapRegionPointHalo {
@@ -2254,7 +2280,7 @@ g[data-region-active="true"] > .evolutionRegionLabel {
 }
 
 .mapRegionPoint {
-  fill: color-mix(in srgb, var(--harbor-teal) 78%, var(--paper));
+  fill: var(--signal-blue);
   stroke: var(--paper);
   stroke-width: 1.5;
 }
@@ -2262,7 +2288,7 @@ g[data-region-active="true"] > .evolutionRegionLabel {
 .worldMapSvg a:hover .mapRegionPoint,
 .worldMapSvg a:focus-visible .mapRegionPoint,
 .worldMapSvg a[data-selected="true"] .mapRegionPoint {
-  fill: var(--focus-coral);
+  fill: var(--signal-orange);
   stroke: var(--paper);
   stroke-width: 3;
 }
@@ -2288,12 +2314,12 @@ g[data-region-active="true"] > .evolutionRegionLabel {
 }
 
 .mapLegend circle {
-  fill: var(--region);
+  fill: var(--signal-blue);
 }
 
 .mapLegend path {
   fill: none;
-  stroke: var(--ink-soft);
+  stroke: var(--signal-orange);
   stroke-dasharray: 5 7;
 }
 
