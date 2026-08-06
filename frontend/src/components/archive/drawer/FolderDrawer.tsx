@@ -102,7 +102,9 @@ export default function FolderDrawer({ items }: { items: DrawerItem[] }) {
             ))}
           </div>
         </div>
-
+        <p className="mobile-card-wheel__hint">
+          Swipe vertically · centred card is active
+        </p>
       </section>
     </div>
   );

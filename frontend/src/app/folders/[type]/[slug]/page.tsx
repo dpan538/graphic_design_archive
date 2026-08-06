@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import Reader from "@/components/archive/reader/Reader";
 import {
-  allFolderParams,
   getFolder,
   getFolderInk,
   getFolderType,
@@ -9,9 +8,10 @@ import {
 } from "@/lib/archive-data";
 import { folderJumpTargets, paginateFolder } from "@/lib/paginate";
 
-export function generateStaticParams() {
-  return allFolderParams();
-}
+// Large regional folders can contain thousands of reader leaves. Resolve the
+// requested folder on demand so a UI-only release does not paginate every
+// research folder during the production build.
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,

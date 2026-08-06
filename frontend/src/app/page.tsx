@@ -2,29 +2,29 @@ import ArchiveShell from "@/components/archive/shell/ArchiveShell";
 import FolderDrawer, {
   type DrawerItem,
 } from "@/components/archive/drawer/FolderDrawer";
-import { getGlobalCounts, getFolderTypeSummaries } from "@/lib/archive-data";
+import { getFolderTypeSummaries } from "@/lib/archive-data";
+import traceAtlas from "../../public/data/trace-v48/atlas.json";
 
 function HomeArchiveBox() {
-  const counts = getGlobalCounts();
   return (
     <details className="home-archive-summary">
       <summary>
-        <span>Archive counts</span>
-        <strong>{counts.surfaces.toLocaleString("en-US")}</strong>
-        <small>surfaces</small>
+        <span>Archive objects</span>
+        <strong>{traceAtlas.counts.activeObjects.toLocaleString("en-US")}</strong>
+        <small>active, source-linked records</small>
       </summary>
       <dl>
         <div>
-          <dt>folders</dt>
-          <dd>{counts.folders}</dd>
+          <dt>active objects</dt>
+          <dd>{traceAtlas.counts.activeObjects.toLocaleString("en-US")}</dd>
         </div>
         <div>
-          <dt>surfaces</dt>
-          <dd>{counts.surfaces.toLocaleString("en-US")}</dd>
+          <dt>TRACE relations</dt>
+          <dd>{traceAtlas.counts.traceEdges.toLocaleString("en-US")}</dd>
         </div>
         <div>
-          <dt>images</dt>
-          <dd>{counts.imageCoveragePercent}%</dd>
+          <dt>research trees</dt>
+          <dd>{traceAtlas.counts.activeTrees}</dd>
         </div>
       </dl>
     </details>
@@ -33,7 +33,7 @@ function HomeArchiveBox() {
 
 export default function HomePage() {
   const items: DrawerItem[] = getFolderTypeSummaries().map(
-    ({ folderType, folderCount, surfaceCount }) => ({
+    ({ folderType, folderCount }) => ({
       key: folderType.type,
       type: folderType.type,
       tabLabel: folderType.label,
@@ -41,7 +41,9 @@ export default function HomePage() {
       href: `/folders/${folderType.type}`,
       reveal: [
         folderType.scopeNote,
-        `${folderCount} folders · ${surfaceCount} surfaces`,
+        folderType.type === "region"
+          ? `${Math.max(0, folderCount - 1)} active research folders · 1 review route isolated`
+          : `${folderCount} research folders`,
       ],
     }),
   );

@@ -1,4 +1,7 @@
 import ArchiveShell from "@/components/archive/shell/ArchiveShell";
+import MobileResearchDashboard from "@/components/archive/about/MobileResearchDashboard";
+import ProjectCitationPanel from "@/components/archive/about/ProjectCitationPanel";
+import traceAtlas from "../../../public/data/trace-v48/atlas.json";
 
 export const metadata = {
   title: "About and Methodology - Modern Graphic Design History",
@@ -31,15 +34,15 @@ const evidenceColumns = [
 ];
 
 const publicDatasetStats = [
-  ["Public surfaces", "1417", "Generated records in the current static public payload."],
-  ["Folders", "48", "Region, theme, medium, and movement aggregation folders."],
-  ["Active sources", "104", "Distinct source names with at least one captured public record."],
-  ["Image-ready surfaces", "1251", "IMG01, IMG02, or IMG03; separate from open reuse."],
-  ["IMG00", "41", "Visual object expected, but local display is withheld or unsupported."],
-  ["IMG01", "37", "Controlled thumbnail state."],
-  ["IMG02", "733", "Source-hosted image, viewer, IIIF, or source-linked display."],
-  ["IMG03", "481", "Open-display candidate with item-level rights basis."],
-  ["IMG04", "125", "Text, authority, bibliography, appendix, or context-led surface."],
+  ["Active objects", traceAtlas.counts.activeObjects.toLocaleString("en-US"), "Source-linked objects admitted to the frozen v48 active layer."],
+  ["TRACE nodes", traceAtlas.counts.traceNodes.toLocaleString("en-US"), "Evidence nodes across documented research trees."],
+  ["Evidence relations", traceAtlas.counts.traceEdges.toLocaleString("en-US"), "Typed, source-bounded TRACE edges; not inferred influence."],
+  ["Research trees", String(traceAtlas.counts.activeTrees), "Active TRACE trees available for local and aggregate reading."],
+  ["Source verified", traceAtlas.counts.sourceVerified.toLocaleString("en-US"), "Objects whose active evidence route reaches a verified source."],
+  ["Metadata supported", traceAtlas.counts.metadataSupported.toLocaleString("en-US"), "Objects retained with a documented metadata evidence route."],
+  ["Review / hold", traceAtlas.counts.reviewObjects.toLocaleString("en-US"), "Objects isolated from the active main layer for review."],
+  ["TRACE auxiliary", String(traceAtlas.counts.auxiliaryObjects), "Non-counting photography or printmaking adjunct nodes."],
+  ["Inferred influence", String(traceAtlas.counts.influenceEdges), "No historical influence edge is auto-generated."],
 ];
 
 const sourceCoverageMetrics = [
@@ -303,6 +306,20 @@ const currentSources = [
   },
 ];
 
+const sourceDetails = new Map(currentSources.map((source) => [source.name, source]));
+const activeSources = traceAtlas.topSources.map((source) => {
+  const detail = sourceDetails.get(source.name);
+  return {
+    name: source.name,
+    count: source.count.toLocaleString("en-US"),
+    image: detail?.image ?? "object-level route",
+    route: detail?.route ?? "source route recorded per object",
+    role: detail?.role ?? "A major active v48 evidence provider. Object-level source, date, place, rights, and media fields remain controlling.",
+    fields: detail?.fields ?? "Stable source identifier, title, date, object type, holding route, and record-specific evidence fields.",
+    rights: detail?.rights ?? "Rights and image display are resolved per object. Provider membership alone never grants local display or reuse.",
+  };
+});
+
 const productionStages = [
   ["Source registry", "Candidate institutions and repositories are classified by access method, source family, geography, period, rights clarity, and expected image/text path."],
   ["Capture batch", "Official APIs, OAI-PMH, IIIF, structured HTML, or browser capture are used in that order of preference; raw payloads are preserved before normalization."],
@@ -363,6 +380,7 @@ const sourceDependencyReferences = [
 
 const designReferences = [
   ["Design position", "The interface is best described as a civic ephemera index: a research-library system shaped by disposable public-information objects. It borrows from mid-century railway, postal, ticketing, permit, and instructional print, but uses those sources as archival grammar rather than nostalgic surface decoration."],
+  ["Unité d’Habitation", "Le Corbusier’s Unité d’Habitation is used as a structural reference rather than an image motif: a legible frame, repeated yet differentiated units, communal circulation, and primary-color events held inside an otherwise disciplined concrete grid. On mobile this becomes modular information bays and short vertical routes, not an architectural imitation."],
   ["Open research library", "The base layer stays bright because the project is a reading room, not a sealed collection vault. Canvas, paper, surface, line, and Brown Black keep long text, source links, rights notes, and search behavior legible before any expressive color appears."],
   ["Japanese railway tickets", "The Japanese rail references in the research board, including Shonan Monorail Enoshima Line, Kawanishi-Noseguchi to Hirano extension material, Expo '70 rail tickets, and other commemorative passenger slips, inform the route-line diagrams, numbered gates, serial fields, pale ticket stock, yellow route bands, red overprints, and blue transit panels."],
   ["JR station stamp language", "The JR 150th station-stamp references, including Taura Station, Karuizawa Station, Niigata Station, and Nishi-Oyama Station, contribute the idea of a small public system rendered in two or three spot colors: local pictorial icons, station names, rough print texture, and clear geographic indexing."],
@@ -542,6 +560,17 @@ function AboutPageMain() {
       </aside>
 
       <article className="about-doc">
+        <MobileResearchDashboard
+          activeObjects={traceAtlas.counts.activeObjects}
+          traceEdges={traceAtlas.counts.traceEdges}
+          activeTrees={traceAtlas.counts.activeTrees}
+          sourceVerified={traceAtlas.counts.sourceVerified}
+          metadataSupported={traceAtlas.counts.metadataSupported}
+          influenceEdges={traceAtlas.counts.influenceEdges}
+          decades={traceAtlas.decades}
+          decadeTotals={traceAtlas.decadeTotals}
+          relationTypes={traceAtlas.relationTypes}
+        />
         <header id="position" className="about-hero about-hover-panel">
           <div className="about-crumbs">
             <a href="/">Archive Box</a>
@@ -558,22 +587,25 @@ function AboutPageMain() {
           </div>
           <p className="label-caps text-ink-soft">00 / methodological position</p>
           <h1>Modern Graphic Design History</h1>
-          <p>
+          <p className="about-hero__desktop-copy">
             is a rights-aware archive index and research interface for studying
             modern graphic design through distributed, source-returnable
             evidence rather than through a single canonical image collection.
           </p>
-          <p>
+          <p className="about-hero__desktop-copy">
             The project treats graphic design history as a problem of
             provenance, classification, access, rights, and representational
             imbalance. Its public pages are generated from structured source
             records, not composed as isolated essays or image plates.
           </p>
+          <p className="about-hero__mobile-copy">
+            A rights-aware research index for reading modern graphic design
+            through objects, time, place, media, and recoverable source evidence.
+          </p>
           <p className="about-hero__note">
-            Methodology version: 2026-06-02. Current status: static research
-            prototype generated from captured source records and rulebooks. All
-            claims below are bounded by the cited project ledgers, raw captures,
-            and review gates.
+            Data version: v48 · 15,923 active objects · frozen research snapshot.
+            All claims remain bounded by source records, review gates, and the
+            explicit no-inferred-influence rule.
           </p>
         </header>
 
@@ -625,11 +657,10 @@ function AboutPageMain() {
             <p className="label-caps text-ink-soft">corpus and source dependency</p>
             <h2>Current public data is a staged, source-led corpus.</h2>
             <p>
-              The public interface currently renders 1417 surfaces from 104
-              active source names. The table below lists the major source
-              dependencies recorded in the source-dependency ledger; it is a
-              methodological disclosure of dominant evidence families, not an
-              ownership claim over their materials.
+              The frozen v48 active layer contains 15,923 source-linked design
+              objects. The register below lists its largest active evidence
+              providers; it is a methodological disclosure of dependency, not
+              an ownership claim over their materials.
             </p>
             <div className="about-stat-grid">
               {publicDatasetStats.map(([label, value, note]) => (
@@ -640,34 +671,36 @@ function AboutPageMain() {
                 </div>
               ))}
             </div>
-            <div className="about-source-table">
-              <div className="about-source-table__head">source</div>
-              <div className="about-source-table__head">route / IMG</div>
-              <div className="about-source-table__head">records</div>
-              {currentSources.map((source) => (
-                <details key={source.name} className="about-source-item">
-                  <summary className="about-source-summary">
-                    <strong>{source.name}</strong>
-                    <span>{source.route} / {source.image}</span>
-                    <span className="about-source-count">{source.count}</span>
-                  </summary>
-                  <div className="about-source-detail">
-                    <div>
-                      <strong>Coverage role</strong>
-                      <p>{source.role}</p>
+            <Accordion title="Largest active source routes" kicker="source register">
+              <div className="about-source-table">
+                <div className="about-source-table__head">source</div>
+                <div className="about-source-table__head">route / evidence</div>
+                <div className="about-source-table__head">objects</div>
+                {activeSources.map((source) => (
+                  <details key={source.name} className="about-source-item">
+                    <summary className="about-source-summary">
+                      <strong>{source.name}</strong>
+                      <span>{source.route} / {source.image}</span>
+                      <span className="about-source-count">{source.count}</span>
+                    </summary>
+                    <div className="about-source-detail">
+                      <div>
+                        <strong>Coverage role</strong>
+                        <p>{source.role}</p>
+                      </div>
+                      <div>
+                        <strong>Rights dependency</strong>
+                        <p>{source.rights}</p>
+                      </div>
+                      <div>
+                        <strong>Reference fields</strong>
+                        <p>{source.fields}</p>
+                      </div>
                     </div>
-                    <div>
-                      <strong>Rights dependency</strong>
-                      <p>{source.rights}</p>
-                    </div>
-                    <div>
-                      <strong>Reference fields</strong>
-                      <p>{source.fields}</p>
-                    </div>
-                  </div>
-                </details>
-              ))}
-            </div>
+                  </details>
+                ))}
+              </div>
+            </Accordion>
           </div>
         </section>
 
@@ -863,14 +896,16 @@ function AboutPageMain() {
               be mistaken for paper stock, proof, ticket, or asset coloration.
             </p>
             <PaletteSwatches />
-            <div className="about-reference-grid">
-              {designReferences.map(([title, body]) => (
-                <div key={title} className="about-reference about-hover-panel">
-                  <h3>{title}</h3>
-                  <p>{body}</p>
-                </div>
-              ))}
-            </div>
+            <Accordion title="Design research register" kicker="references">
+              <div className="about-reference-grid">
+                {designReferences.map(([title, body]) => (
+                  <div key={title} className="about-reference about-hover-panel">
+                    <h3>{title}</h3>
+                    <p>{body}</p>
+                  </div>
+                ))}
+              </div>
+            </Accordion>
           </div>
         </section>
 
@@ -885,7 +920,7 @@ function AboutPageMain() {
               rendering. Tool licenses govern software use only; captured
               source records keep their own terms.
             </p>
-            <Accordion title="Project ledgers and rulebooks" kicker="references" open>
+            <Accordion title="Project ledgers and rulebooks" kicker="references">
               <Ledger rows={sourceDependencyReferences} />
             </Accordion>
           </div>
@@ -903,15 +938,7 @@ function AboutPageMain() {
               uncertain, that uncertainty should remain in the citation note.
             </p>
             <Ledger rows={citationFields} />
-            <div className="about-citation-box about-hover-panel">
-              <h3>Working format</h3>
-              <p>
-                Creator if known. "Title or supplied title." Date or date
-                range. Holding source / collection. Source URL. Rights
-                statement. Modern Graphic Design History record ID. Accessed
-                day month year.
-              </p>
-            </div>
+            <ProjectCitationPanel />
             <Accordion title="License status" kicker="notice">
               <div className="license-grid">
                 {licensePolicy.map((item) => (

@@ -60,6 +60,8 @@ export default async function FolderTypePage({
         title: folder.title,
         href: `/folders/${folder.type}/${folder.slug}`,
         count: surfaces.length,
+        dateStart: folder.dateStart ?? Number.MIN_SAFE_INTEGER,
+        dateEnd: folder.dateEnd ?? Number.MAX_SAFE_INTEGER,
         date: dateSpanLabel(folder.dateStart, folder.dateEnd),
         mix: `${mix.sheet} sheet · ${mix.card} card · ${mix.fallback_stub} stub`,
       };

@@ -1,8 +1,13 @@
 export type TraceLayer = "active" | "auxiliary" | "review";
-export type TraceView = "atlas" | "object";
+export type TraceView = "atlas" | "constellation" | "object";
 
 export interface AtlasCount {
   name: string;
+  count: number;
+}
+
+export interface AtlasTreeCount {
+  tree: string;
   count: number;
 }
 
@@ -47,6 +52,7 @@ export interface TraceAtlas {
   topSources: AtlasCount[];
   mediumGroups: AtlasCount[];
   relationTypes: AtlasRelation[];
+  treeCounts: AtlasTreeCount[];
   assets: {
     catalog: string;
     review: string;

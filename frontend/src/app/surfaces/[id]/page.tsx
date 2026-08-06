@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import Reader from "@/components/archive/reader/Reader";
 import { LAYOUT_LABEL } from "@/lib/layout";
 import {
-  allSurfaceParams,
   getFolderById,
   getFolderInk,
   getFolderType,
@@ -10,9 +9,11 @@ import {
 } from "@/lib/archive-data";
 import { paginateSurface, type JumpTarget } from "@/lib/paginate";
 
-export function generateStaticParams() {
-  return allSurfaceParams();
-}
+// The archive currently exposes 8,636 reading routes. Rendering the selected
+// record on demand keeps those stable URLs without rebuilding every object for
+// each interface-only release. The application already requires a server for
+// its evidence routes, so this does not remove an existing static-only target.
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,

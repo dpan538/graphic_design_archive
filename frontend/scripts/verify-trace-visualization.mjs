@@ -83,6 +83,7 @@ const taxonomyText = await readFile(join(root, "src/components/archive/trace/tra
 const primitivesText = await readFile(join(root, "src/components/archive/primitives.tsx"), "utf8");
 const shellSearchText = await readFile(join(root, "src/components/archive/shell/search.tsx"), "utf8");
 const evolutionFieldText = await readFile(join(root, "src/components/archive/trace/ChronogeographicRoutes.tsx"), "utf8");
+const constellationText = await readFile(join(root, "src/components/archive/trace/TraceConstellation.tsx"), "utf8");
 const definitions = [...taxonomyText.matchAll(
   /id:\s*"([^"]+)"[\s\S]*?family:\s*"([^"]+)"\s*,\s*count:\s*(\d+)\s*,\s*status:/g,
 )].map((match) => ({ id: match[1], family: match[2], count: Number(match[3]) }));
@@ -127,6 +128,22 @@ const checks = {
     && evolutionFieldText.includes("data-evolution-decade"),
   evolution_field_preserves_object_drilldown:
     evolutionFieldText.includes("exploreCell(row, cell.decade)"),
+  constellation_uses_frozen_tree_and_relation_counts:
+    constellationText.includes("atlas.treeCounts")
+    && constellationText.includes("atlas.relationTypes")
+    && constellationText.includes("atlas.counts.activeObjects"),
+  constellation_geometry_is_deterministic:
+    constellationText.includes("const rings = [")
+    && constellationText.includes("polarPoint")
+    && constellationText.includes("arcPath")
+    && !constellationText.includes("Math.random"),
+  constellation_keeps_inference_boundary:
+    constellationText.includes("It does not encode influence")
+    && constellationText.includes("not historical influence claims"),
+  constellation_has_keyboard_and_text_fallback:
+    constellationText.includes('role="button"')
+    && constellationText.includes("onKeyDown")
+    && constellationText.includes("Exact tree and relation ledger"),
 };
 
 console.log(JSON.stringify({

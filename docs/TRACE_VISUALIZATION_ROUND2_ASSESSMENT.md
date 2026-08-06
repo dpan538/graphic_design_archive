@@ -14,8 +14,8 @@ Completed:
 
 Still open:
 
-- full-project TypeScript and production builds remain too slow to finish inside their bounded verification windows; the focused TypeScript gate passes;
-- measure a clean CI production build before promotion beyond this visualization branch.
+- measure the verified low-concurrency production build again in CI before promotion beyond this visualization branch;
+- reduce the approximately 6.29 MB legacy Reader first-load bundle without reintroducing the full archive mock into TRACE or search.
 
 ## Priority 1 — search and load performance
 

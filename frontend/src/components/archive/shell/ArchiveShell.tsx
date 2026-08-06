@@ -7,9 +7,9 @@ import SearchBox, { type AssistantContext, type SearchMode } from "./search";
 
 /**
  * Fixed, non-scrolling viewport. No sidebar column and no top/bottom bar.
- * Global navigation lives behind one top-right menu control. Search expands
- * in the corner-stack. Reader-specific structure can sit on the left;
- * assistant mode shares the search window.
+ * Large screens keep the full research navigation visible. Compact screens
+ * collapse the same five routes behind one accessible menu control. Search
+ * expands in the corner-stack; assistant mode shares the search window.
  */
 export default function ArchiveShell({
   main,
@@ -64,7 +64,8 @@ export default function ArchiveShell({
     maxHeight: number;
   } | null>(null);
   const touch = useRef<{ x: number; y: number; edge: boolean } | null>(null);
-  const searchButtonRef = useRef<HTMLButtonElement | null>(null);
+  const desktopSearchButtonRef = useRef<HTMLButtonElement | null>(null);
+  const mobileSearchButtonRef = useRef<HTMLButtonElement | null>(null);
   const menuButtonRef = useRef<HTMLButtonElement | null>(null);
   const countCardRef = useRef<HTMLDivElement | null>(null);
   const mainRef = useRef<HTMLDivElement | null>(null);
@@ -135,7 +136,8 @@ export default function ArchiveShell({
 
     let frame = 0;
     const update = () => {
-      const button = searchButtonRef.current ?? menuButtonRef.current;
+      const button = [desktopSearchButtonRef.current, mobileSearchButtonRef.current]
+        .find((candidate) => candidate && candidate.offsetParent !== null) ?? menuButtonRef.current;
       if (!button) return;
       const icon = button.getBoundingClientRect();
       const rootSize =
@@ -256,7 +258,63 @@ export default function ArchiveShell({
         </div>
       ) : null}
 
-      <div className="nav-menu">
+      <nav className="desktop-nav" aria-label="Archive navigation">
+        <Link
+          href="/about"
+          className="nav-icon"
+          data-active={activeNav === "about"}
+          aria-label="About"
+        >
+          <IconAbout />
+          <span>About</span>
+        </Link>
+        <Link
+          href="/contents"
+          className="nav-icon"
+          data-active={activeNav === "index"}
+          aria-label="Index"
+        >
+          <IconIndex />
+          <span>Index</span>
+        </Link>
+        <Link
+          href="/folders"
+          className="nav-icon"
+          data-active={activeNav === "folders"}
+          aria-label="Folders"
+        >
+          <IconFolder />
+          <span>Folders</span>
+        </Link>
+        <Link
+          href="/trace"
+          className="nav-icon"
+          data-active={activeNav === "trace"}
+          aria-label="TRACE evidence atlas"
+        >
+          <IconTree />
+          <span>TRACE</span>
+        </Link>
+        <button
+          ref={desktopSearchButtonRef}
+          type="button"
+          className="nav-icon"
+          data-active={searchOpen && searchMode === "search"}
+          aria-label="Search"
+          onClick={() => {
+            setSearchMode("search");
+            setLeftPanelOpen(false);
+            setPanelOpen(false);
+            onContextOverlayOpenChange?.(false);
+            setSearchOpen((value) => (searchMode === "search" ? !value : true));
+          }}
+        >
+          <IconSearch />
+          <span>Search</span>
+        </button>
+      </nav>
+
+      <div className="nav-menu mobile-nav-menu">
         <button
           ref={menuButtonRef}
           type="button"
@@ -321,7 +379,7 @@ export default function ArchiveShell({
               <span>TRACE</span>
             </Link>
             <button
-              ref={searchButtonRef}
+              ref={mobileSearchButtonRef}
               type="button"
               className="nav-icon"
               data-active={searchOpen && searchMode === "search"}

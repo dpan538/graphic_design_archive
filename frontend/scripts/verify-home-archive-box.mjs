@@ -4,8 +4,9 @@ import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const frontend = path.resolve(here, "..");
-const [drawer, home, shell, css, traceCss] = await Promise.all([
+const [drawer, regionIndex, home, shell, css, traceCss] = await Promise.all([
   readFile(path.join(frontend, "src/components/archive/drawer/FolderDrawer.tsx"), "utf8"),
+  readFile(path.join(frontend, "src/components/archive/drawer/FolderTypeSpeedIndex.tsx"), "utf8"),
   readFile(path.join(frontend, "src/app/page.tsx"), "utf8"),
   readFile(path.join(frontend, "src/components/archive/shell/ArchiveShell.tsx"), "utf8"),
   readFile(path.join(frontend, "src/app/globals.css"), "utf8"),
@@ -30,13 +31,17 @@ const checks = {
     !drawer.includes("useEffect") &&
     !drawer.includes("useRef") &&
     !drawer.includes("requestAnimationFrame"),
-  navigation_is_one_menu_for_five_entries:
+  desktop_navigation_is_visible_and_mobile_menu_is_collapsed:
+    shell.includes('className="desktop-nav"') &&
+    shell.includes('className="nav-menu mobile-nav-menu"') &&
     shell.includes('className="nav-icon nav-menu__trigger"') &&
     shell.includes("aria-expanded={menuOpen}") &&
     shell.includes('id="archive-global-menu"') &&
     ["About", "Index", "Folders", "TRACE", "Search"].every((label) =>
       shell.includes(`<span>${label}</span>`),
-    ),
+    ) &&
+    css.includes(".desktop-nav {\n    display: none;") &&
+    css.includes(".nav-menu {\n    display: block;"),
   top_left_wordmark_is_removed:
     !shell.includes('className="wordmark"') &&
     !css.includes(".wordmark {"),
@@ -61,6 +66,20 @@ const checks = {
     css.includes(".wheel-card + .wheel-card") &&
     css.includes("margin-top: -8.5rem") &&
     css.includes("z-index: 10"),
+  mobile_hint_is_at_the_bottom:
+    drawer.includes('className="mobile-card-wheel__hint"') &&
+    drawer.indexOf('className="mobile-card-wheel__hint"') > drawer.indexOf('className="mobile-card-wheel__viewport"'),
+  region_has_continent_period_filters_and_continuous_mobile_stack:
+    regionIndex.includes("Continent") &&
+    regionIndex.includes("All periods") &&
+    regionIndex.includes('className="region-card-stack"') &&
+    css.includes(".region-card-stack__card + .region-card-stack__card") &&
+    css.includes("@keyframes region-card-wheel") &&
+    css.includes("content-visibility: auto") &&
+    css.includes("scroll-snap-type: y mandatory"),
+  unresolved_region_route_is_not_mixed_into_active_stack:
+    regionIndex.includes('item.macroLabel !== "Unresolved"') &&
+    regionIndex.includes("review / unknown route isolated from the active stack"),
   warm_paper_palette_with_stronger_reading_contrast:
     css.includes("--canvas: #f5f0e3") &&
     css.includes("--paper: #fbf7eb") &&
@@ -83,7 +102,11 @@ const checks = {
     home.includes("<summary>") &&
     !home.includes("CountsCard") &&
     css.includes(".home-archive-summary summary strong") &&
-    css.includes("font-size: 1.8rem"),
+    css.includes("font-size: 2.12rem"),
+  home_uses_frozen_archive_object_language:
+    home.includes("traceAtlas.counts.activeObjects") &&
+    home.includes("active, source-linked records") &&
+    !home.includes("<small>surfaces</small>"),
 };
 
 const failed = Object.entries(checks)

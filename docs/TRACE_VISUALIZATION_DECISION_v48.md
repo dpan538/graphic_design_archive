@@ -123,8 +123,9 @@ No force-directed global graph is introduced. No view attempts to render all nod
 
 Passed:
 
-- targeted TypeScript check covering TRACE, map, search, ArchiveShell, relation pages and assistant API boundary;
+- full-project `tsc --noEmit` plus the targeted TRACE, map, search, ArchiveShell, relation-page and assistant-API checks;
 - enhanced static verifier: active count, unresolved region, zero influence, taxonomy coverage/counts, real geometry, compact archive index integrity/uniqueness and absence of the large archive mock from the TRACE shell graph;
+- production compile and generation with Next.js 15.5.18: 51/51 static routes generated, while 8,636 object readers and data-heavy folder readers remain stable on-demand server routes;
 - formal HTTP routes: `/trace` and `/search` both returned `200` after cold development compilation;
 - desktop browser interaction: global atlas, object selection, metro, world map, globe, source tree, drawer, normalized ledger selection, type page and unified search;
 - time animation advanced from slider index 13 (`1800–1939`) to 22 (`1800–2029`) and stopped at the last decade;
@@ -134,6 +135,6 @@ Passed:
 
 Open build risk:
 
-- full-project `tsc --noEmit` produced no diagnostics but did not finish in five minutes; the targeted check is the passing code gate for this candidate;
-- production build was not rerun after an earlier compile-only attempt exceeded approximately ten minutes;
-- cold development compilation is abnormally slow on this workstation: the minimal page took 498.24 seconds on the first request, while warm responses were usable. This is an environment/build-pipeline risk, not a claim that production latency is acceptable.
+- production compilation remains slow on this workstation because the archive data module is large and webpack caching is disabled; the verified final compile took 10.1 minutes;
+- legacy Reader routes still report approximately 6.29 MB First Load JS and require a separate payload-reduction round;
+- build-time static generation is deliberately single-worker to avoid loading competing copies of the archive module. This affects build throughput, not production request concurrency.

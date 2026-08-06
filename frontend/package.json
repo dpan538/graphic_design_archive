@@ -18,6 +18,7 @@
     "generate:archive-search": "node scripts/generate-archive-search-index.mjs",
     "verify:trace-visualization": "node scripts/verify-trace-visualization.mjs",
     "verify:home-archive-box": "node scripts/verify-home-archive-box.mjs",
+    "verify:about-mobile": "node scripts/verify-about-mobile.mjs",
     "asset:a11y-check": "node scripts/asset-a11y-check.js",
     "lint": "next lint"
   },
