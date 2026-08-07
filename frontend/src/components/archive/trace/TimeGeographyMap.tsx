@@ -2,6 +2,7 @@
 
 import {
   geoCentroid,
+  geoDistance,
   geoEqualEarth,
   geoGraticule10,
   geoOrthographic,
@@ -9,7 +10,14 @@ import {
   type GeoProjection,
 } from "d3-geo";
 import type { Feature, FeatureCollection, Geometry } from "geojson";
-import { useEffect, useMemo, useState, type CSSProperties } from "react";
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type CSSProperties,
+  type PointerEvent as ReactPointerEvent,
+} from "react";
 import { feature } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
 import worldAtlas from "world-atlas/countries-50m.json";
@@ -129,6 +137,10 @@ function periodLabel(decade: number, timeMode: TimeMode) {
   return timeMode === "cumulative" ? `1800–${decade + 9}` : `${decade}–${decade + 9}`;
 }
 
+function normalizedLongitude(value: number) {
+  return ((value + 540) % 360) - 180;
+}
+
 function externalProps(href: string) {
   return href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {};
 }
@@ -153,6 +165,12 @@ export default function TimeGeographyMap({
   const [decadeIndex, setDecadeIndex] = useState(initialIndex);
   const [playing, setPlaying] = useState(false);
   const [rotation, setRotation] = useState<[number, number]>([0, 5]);
+  const globeDrag = useRef<{
+    pointerId: number;
+    x: number;
+    y: number;
+    rotation: [number, number];
+  } | null>(null);
   const [selectedRegion, setSelectedRegion] = useState(graph.object.region);
   const decade = atlas.decades[decadeIndex] ?? atlas.decades.at(-1) ?? 2020;
 
@@ -232,6 +250,19 @@ export default function TimeGeographyMap({
   const maxCount = distribution.mapped[0]?.count ?? 1;
   const projection = useMemo(() => buildProjection(mapMode, rotation), [mapMode, rotation]);
   const path = geoPath(projection);
+  const mobileGlobeCenters = useMemo<[number, number][]>(() => [
+    rotation,
+    [normalizedLongitude(rotation[0] + 180), -rotation[1]],
+  ], [rotation]);
+  const mobileGlobeProjections = useMemo(() => mobileGlobeCenters.map((center) => (
+    geoOrthographic()
+      .translate([180, 150])
+      .scale(138)
+      .rotate([-center[0], -center[1]])
+      .clipAngle(90)
+      .precision(0.5)
+  )), [mobileGlobeCenters]);
+  const mobileGlobePaths = mobileGlobeProjections.map((mobileProjection) => geoPath(mobileProjection));
   const marks = buildTraceMarks(graph);
   const nodes = new Map(graph.nodes.map((node) => [node.id, node]));
   const evidenceEdges = graph.edges.filter((edge) => edge.family === "time_place");
@@ -256,6 +287,32 @@ export default function TimeGeographyMap({
     if (mapMode === "globe") setRotation(entry.coordinates);
   }
 
+  function startGlobeDrag(event: ReactPointerEvent<SVGSVGElement>) {
+    event.currentTarget.setPointerCapture(event.pointerId);
+    globeDrag.current = {
+      pointerId: event.pointerId,
+      x: event.clientX,
+      y: event.clientY,
+      rotation,
+    };
+  }
+
+  function moveGlobe(event: ReactPointerEvent<SVGSVGElement>) {
+    const drag = globeDrag.current;
+    if (!drag || drag.pointerId !== event.pointerId) return;
+    const longitude = normalizedLongitude(drag.rotation[0] - (event.clientX - drag.x) * 0.42);
+    const latitude = Math.max(-68, Math.min(68, drag.rotation[1] + (event.clientY - drag.y) * 0.3));
+    setRotation([longitude, latitude]);
+  }
+
+  function endGlobeDrag(event: ReactPointerEvent<SVGSVGElement>) {
+    if (globeDrag.current?.pointerId !== event.pointerId) return;
+    globeDrag.current = null;
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+  }
+
   return (
     <section className={`${styles.diagram} ${styles.geoDashboard}`} aria-labelledby="trace-geography-title">
       <div className={styles.diagramHeading}>
@@ -267,7 +324,7 @@ export default function TimeGeographyMap({
       </div>
 
       <div className={styles.geoControlBar} aria-label="Time and geography view controls">
-        <div className={styles.segmentedControl} aria-label="Map projection">
+        <div className={`${styles.segmentedControl} ${styles.geoProjectionControl}`} aria-label="Map projection">
           <button type="button" aria-pressed={mapMode === "map"} onClick={() => setMapMode("map")}>World map</button>
           <button type="button" aria-pressed={mapMode === "globe"} onClick={() => setMapMode("globe")}>Globe</button>
         </div>
@@ -278,7 +335,76 @@ export default function TimeGeographyMap({
         <p><b>{periodLabel(decade, timeMode)}</b><span>{catalog ? `${distribution.visible.toLocaleString()} active objects` : "Loading active distribution…"}</span></p>
       </div>
 
+      <div className={styles.geoMobileHeader} aria-live="polite">
+        <span>TIME / GEOGRAPHY</span>
+        <strong>{periodLabel(decade, timeMode)}</strong>
+        <p>{selectedMapped?.region ?? graph.object.region}</p>
+      </div>
+
       <div className={styles.geoCanvas} data-map-mode={mapMode}>
+        <div className={styles.mobileTwinGlobes} aria-label="Two synchronized hemispheres">
+          {mobileGlobeProjections.map((mobileProjection, globeIndex) => {
+            const mobilePath = mobileGlobePaths[globeIndex];
+            const center = mobileGlobeCenters[globeIndex];
+            return (
+              <svg
+                key={`mobile-globe-${globeIndex}`}
+                viewBox="0 0 360 300"
+                role="img"
+                aria-labelledby={`mobile-globe-title-${globeIndex} mobile-globe-desc-${globeIndex}`}
+                onPointerDown={startGlobeDrag}
+                onPointerMove={moveGlobe}
+                onPointerUp={endGlobeDrag}
+                onPointerCancel={endGlobeDrag}
+              >
+                <title id={`mobile-globe-title-${globeIndex}`}>{globeIndex === 0 ? "Primary" : "Complementary"} documented distribution hemisphere</title>
+                <desc id={`mobile-globe-desc-${globeIndex}`}>Drag either globe. Both hemispheres rotate together and always show opposite halves of the same world.</desc>
+                <path className={styles.mobileGlobeSphere} d={mobilePath({ type: "Sphere" }) ?? undefined} />
+                <path className={styles.mobileGlobeGraticule} d={mobilePath(geoGraticule10()) ?? undefined} />
+                {countries.features.map((country, countryIndex) => {
+                  const name = country.properties?.name ?? "Unnamed geography";
+                  const count = countryCounts.get(name) ?? 0;
+                  return (
+                    <path
+                      key={`mobile-${globeIndex}-${String(country.id ?? name)}-${countryIndex}`}
+                      className={count ? `${styles.mobileGlobeCountry} ${styles.mobileGlobeCountryActive}` : styles.mobileGlobeCountry}
+                      d={mobilePath(country) ?? undefined}
+                      style={{ "--country-intensity": `${Math.min(76, 16 + (count / maxCount) * 60)}%` } as CSSProperties}
+                      aria-hidden="true"
+                    />
+                  );
+                })}
+                {distribution.mapped.map((entry, index) => {
+                  if (geoDistance(entry.coordinates, center) > Math.PI / 2) return null;
+                  const point = mobileProjection(entry.coordinates);
+                  if (!point) return null;
+                  const selected = entry.region === selectedRegion;
+                  const radius = 3.5 + Math.sqrt(entry.count / maxCount) * 12;
+                  return (
+                    <g key={`mobile-point-${globeIndex}-${entry.region}`} data-selected={selected}>
+                      <circle className={styles.mobileGlobePointHalo} cx={point[0]} cy={point[1]} r={radius + 5} />
+                      <circle className={styles.mobileGlobePoint} cx={point[0]} cy={point[1]} r={radius} />
+                      <circle
+                        className={styles.mobileGlobeHit}
+                        cx={point[0]}
+                        cy={point[1]}
+                        r={Math.max(18, radius + 7)}
+                        role="button"
+                        tabIndex={0}
+                        aria-label={`${entry.region}, ${entry.count.toLocaleString()} documented objects`}
+                        onClick={() => chooseRegion(entry)}
+                        onKeyDown={(event) => {
+                          if (event.key === "Enter" || event.key === " ") chooseRegion(entry);
+                        }}
+                      />
+                    </g>
+                  );
+                })}
+                <text className={styles.mobileGlobeIndex} x="342" y="28" textAnchor="end">{String.fromCharCode(65 + globeIndex)} · {globeIndex === 0 ? "PRIMARY" : "OPPOSITE"}</text>
+              </svg>
+            );
+          })}
+        </div>
         <svg
           className={styles.worldMapSvg}
           viewBox="0 0 1120 620"
@@ -364,7 +490,8 @@ export default function TimeGeographyMap({
 
       <div className={styles.timeController}>
         <button type="button" onClick={togglePlayback} aria-label={playing ? "Pause time animation" : "Play time animation"}>
-          {playing ? "Pause" : "Play"}
+          <span className={styles.playSymbol} aria-hidden="true">{playing ? "Ⅱ" : "▶"}</span>
+          <span className={styles.playLabel}>{playing ? "Pause" : "Play"}</span>
         </button>
         <label>
           <span>Recorded time · {periodLabel(decade, timeMode)}</span>
@@ -386,7 +513,28 @@ export default function TimeGeographyMap({
       </div>
 
       {catalogError ? <p className={styles.mapDataError}>{catalogError}</p> : null}
-      <p className={styles.mobileDiagramNote}>Use the map controls and timeline first; open the information drawer for normalized evidence rows.</p>
+      <details className={styles.geoMobilePanel}>
+        <summary>Map settings &amp; evidence <span>{evidenceEdges.length}</span></summary>
+        <div className={`${styles.segmentedControl} ${styles.geoProjectionControl}`} aria-label="Mobile map projection">
+          <button type="button" aria-pressed={mapMode === "map"} onClick={() => setMapMode("map")}>Map</button>
+          <button type="button" aria-pressed={mapMode === "globe"} onClick={() => setMapMode("globe")}>Globe</button>
+        </div>
+        <div className={styles.segmentedControl} aria-label="Mobile time accumulation">
+          <button type="button" aria-pressed={timeMode === "cumulative"} onClick={() => setTimeMode("cumulative")}>Development</button>
+          <button type="button" aria-pressed={timeMode === "decade"} onClick={() => setTimeMode("decade")}>Decade</button>
+        </div>
+        <dl>
+          <div><dt>Mapped</dt><dd>{distribution.mapped.reduce((sum, entry) => sum + entry.count, 0).toLocaleString()}</dd></div>
+          <div><dt>Selected</dt><dd>{selectedMapped?.count.toLocaleString() ?? "—"}</dd></div>
+        </dl>
+        <ul>
+          {evidenceEdges.map((edge) => {
+            const peer = tracePeerNode(edge, graph.object.nodeId, nodes);
+            const edgeSelection = selectionForEdge(graph, edge);
+            return <li key={edge.id}><button type="button" onClick={() => onSelect(edgeSelection)}><span>{marks.nodeMarks.get(edgeSelection.nodeId)}</span><strong>{peer?.label || edge.label}</strong></button></li>;
+          })}
+        </ul>
+      </details>
       <div className={`${styles.stationIndex} ${styles.stationIndexSingle} ${styles.diagramEvidenceFallback}`} aria-label="Time and geography evidence index">
         <section data-family="time_place">
           <h4><span>TG</span>Object time / geography evidence</h4>

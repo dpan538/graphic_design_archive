@@ -2,7 +2,7 @@
 
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import ChronogeographicRoutes from "./ChronogeographicRoutes";
-import TraceConstellation from "./TraceConstellation";
+import TraceConstellationSystem from "./TraceConstellationSystem";
 import TraceDiagrams from "./TraceDiagrams";
 import TraceEvidenceTable from "./TraceEvidenceTable";
 import styles from "./TraceExplorer.module.css";
@@ -291,7 +291,7 @@ export default function TraceExplorer() {
       {view === "atlas" ? (
         <AtlasView atlas={atlas} mobileDecade={mobileDecade} setMobileDecade={setMobileDecade} exploreCell={exploreCell} />
       ) : view === "constellation" ? (
-        <TraceConstellation atlas={atlas} />
+        <TraceConstellationSystem atlas={atlas} />
       ) : (
         <section className={styles.objectView} aria-label="Object TRACE explorer">
           <div

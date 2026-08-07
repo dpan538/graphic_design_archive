@@ -17,7 +17,7 @@ const nav = [
   ["04", "Evidence", "#evidence"],
   ["05", "Coverage", "#coverage"],
   ["06", "Rights", "#rights"],
-  ["07", "Surfaces", "#surfaces"],
+  ["07", "Design records", "#surfaces"],
   ["08", "Interface", "#interface"],
   ["09", "Reproducibility", "#reproducibility"],
   ["10", "Citation", "#citation"],
@@ -325,7 +325,7 @@ const productionStages = [
   ["Capture batch", "Official APIs, OAI-PMH, IIIF, structured HTML, or browser capture are used in that order of preference; raw payloads are preserved before normalization."],
   ["Capture row", "A parsed row records source identifier, source URL, title, creator, date text, place, object type, rights text, image evidence, raw path, and access date."],
   ["Candidate pool", "Rows are checked for duplicate source locators, unstable routes, thin snippets, unresolved source ambiguity, and unsupported local display."],
-  ["Review gates", "Source review, rights review, classification review, completeness scoring, and text-reading gates separate usable evidence from publication surfaces."],
+  ["Review gates", "Source review, rights review, classification review, completeness scoring, and text-reading gates separate usable evidence from published design records."],
   ["Surface generation", "Reviewed or staged records become sheets, cards, appendices, stubs, proposed cells, or unassigned research items through deterministic templates."],
 ];
 
@@ -364,12 +364,12 @@ const imageStates = [
   ["IMG01", "Controlled thumbnail with credit and full source link. Used only under source-specific thumbnail constraints."],
   ["IMG02", "Source-hosted viewer, IIIF route, source-interface link, or non-local display behavior. No local copy is assumed."],
   ["IMG03", "Open/reusable image candidate with item-level evidence such as CC0, Public Domain Mark, explicit public domain, CC BY, or source-specific equivalent."],
-  ["IMG04", "No image frame. Used for text, authority, bibliography, appendix, source dossier, or context-led surfaces."],
+  ["IMG04", "No image frame. Used for text, authority, bibliography, appendix, source dossier, or context-led record presentation."],
 ];
 
 const sourceDependencyReferences = [
   ["Project GitHub repository", "https://github.com/dpan538/graphic_design_archive", "dpan538 / graphic_design_archive. GitHub-backed project repository for code, scripts, generated payloads, rulebooks, and frontend implementation; no blanket content or image reuse license is granted by this link."],
-  ["Generated public payload", "frontend/public/data/public_surface_mock_v0.json", "Current static render payload for public surfaces, folders, source names, image states, rights labels, and tables."],
+  ["Generated public payload", "frontend/public/data/public_surface_mock_v0.json", "Current static render payload for public design records, folders, source names, image states, rights labels, and tables."],
   ["Source dependency ledger", "data/source_dependency_ledger.csv", "Current major source dependencies, IMG-state distribution, reference fields, rights dependency, text dependency, and capture scripts."],
   ["Source coverage rate", "docs/capture/SOURCE_COVERAGE_RATE_v1.md", "Defines active source count, candidate source count, weighted target, period balance, and regional diagnostic coverage."],
   ["Production rulebook", "docs/methodology/ARCHIVE_PRODUCTION_RULEBOOK_v0.md", "Defines state transitions, promotion rules, IMG matrix, folder assignment, completeness gate, reading gate, and anti-patterns."],
@@ -836,7 +836,7 @@ function AboutPageMain() {
         <section id="surfaces" className="about-section about-hover-panel">
           <div className="about-section__num">07</div>
           <div>
-            <p className="label-caps text-ink-soft">surface generation</p>
+            <p className="label-caps text-ink-soft">record presentation</p>
             <h2>Templates express record state.</h2>
             <p>
               A main sheet is not the default destination. Records may become
@@ -845,7 +845,7 @@ function AboutPageMain() {
               or deprecated rows according to evidence strength and publication
               role.
             </p>
-            <Accordion title="Surface assignment rule" kicker="logic" open>
+            <Accordion title="Record presentation rule" kicker="logic" open>
               <p>
                 Main-sheet eligibility normally requires a stable identity,
                 source URL, provider name, title or label, date/date_text,
@@ -891,7 +891,7 @@ function AboutPageMain() {
             <p>
               Color is treated as a working protocol. Base colors preserve
               reading; four index colors identify folder axes; ephemera colors
-              build cards, slips, badges, and evidence surfaces. These layers
+              build cards, slips, badges, and evidence panels. These layers
               must remain distinct, because a classification color should never
               be mistaken for paper stock, proof, ticket, or asset coloration.
             </p>

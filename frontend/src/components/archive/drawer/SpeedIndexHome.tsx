@@ -39,7 +39,7 @@ export default function SpeedIndexHome({ groups }: { groups: SpeedIndexGroup[] }
 
             <Link href={group.href} className="speed-group__head">
               <span>{group.title}</span>
-              <span>{group.folderCount} folders / {group.surfaceCount} surfaces</span>
+              <span>{group.folderCount} folders / {group.surfaceCount} design records</span>
             </Link>
 
             <div className="speed-mini-stack">

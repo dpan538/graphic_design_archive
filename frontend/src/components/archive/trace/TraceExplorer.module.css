@@ -12,6 +12,48 @@
   font-family: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
+@media (min-width: 761px) {
+  .page:not([data-visual-fullscreen="true"]) {
+    min-height: 100dvh;
+    padding: 6.8rem 1.5rem 2rem;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) > .header,
+  .page:not([data-visual-fullscreen="true"]) .atlasStatement,
+  .page:not([data-visual-fullscreen="true"]) .chronoHeading {
+    display: none;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) > .viewTabs {
+    position: absolute;
+    top: 1.35rem;
+    left: 1.5rem;
+    z-index: 12;
+    margin: 0;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) .chronoRoutes {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) .evolutionControls {
+    margin-bottom: 0.55rem;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) .systemPlateWrap {
+    height: calc(100dvh - 12.4rem);
+    min-height: 39rem;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) .systemPlate {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+  }
+}
+
 .page::before {
   content: "";
   position: absolute;
@@ -2806,6 +2848,12 @@ g[data-region-active="true"] > .evolutionRegionLabel {
   font-size: 0.65rem;
 }
 
+.geoMobileHeader,
+.geoMobilePanel,
+.playSymbol {
+  display: none;
+}
+
 .error {
   color: var(--medium-readable) !important;
 }
@@ -3522,5 +3570,1198 @@ g[data-region-active="true"] > .evolutionRegionLabel {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+}
+
+/* ---- Reference-led system diagrams ----------------------------------- */
+
+.systemPlateWrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--ink) 62%, var(--line));
+  background: #f7efdf;
+}
+
+.systemPlate {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 44rem;
+}
+
+.systemRegistration line,
+.systemRegistration circle {
+  fill: none;
+  stroke: #34413d;
+  stroke-opacity: 0.075;
+  stroke-width: 0.8;
+  vector-effect: non-scaling-stroke;
+}
+
+.systemRegistration circle {
+  stroke-opacity: 0.16;
+}
+
+.systemMeta text,
+.systemDecades text,
+.systemRegionArc text,
+.systemMediumArc text,
+.systemFamilyArc text,
+.systemCore text,
+.systemMap text,
+.systemFocus text,
+.systemFamilyScale text {
+  fill: #262a28;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  letter-spacing: 0.055em;
+}
+
+.systemMeta text {
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.systemRegionArc g,
+.systemFamilyArc g {
+  outline: none;
+  cursor: var(--cursor-interactive);
+  transition: opacity 180ms ease;
+}
+
+.systemRegionArc path {
+  fill: #2d776c;
+  fill-opacity: var(--system-weight);
+  stroke: #283a36;
+  stroke-width: 0.8;
+  vector-effect: non-scaling-stroke;
+  transition: fill 180ms ease, stroke 180ms ease, filter 180ms ease;
+}
+
+.systemRegionArc g[data-active="true"] path,
+.systemRegionArc g:hover path,
+.systemRegionArc g:focus-visible path {
+  fill: #ef613e;
+  fill-opacity: 1;
+  stroke: #211f1d;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 8px rgba(239, 97, 62, 0.34));
+}
+
+.systemRegionArc text {
+  font-size: 8.3px;
+  font-weight: 650;
+}
+
+.systemRegionArc g[data-active="true"] text {
+  fill: #c83d22;
+}
+
+.systemDecades line {
+  stroke: #2f3734;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.systemDecades g[data-active="true"] line {
+  stroke: #ef4d27;
+  stroke-width: 4;
+}
+
+.systemDecades text {
+  font-size: 7px;
+}
+
+.systemFlows path {
+  fill: none;
+  stroke: #2476d8;
+  stroke-opacity: 0.28;
+  stroke-width: 1.15;
+  vector-effect: non-scaling-stroke;
+}
+
+.systemFlows g:nth-child(2n) path { stroke: #e85a36; }
+.systemFlows g:nth-child(3n) path { stroke: #25865f; }
+
+.systemMediumArc path {
+  fill: #302e2b;
+  stroke: #f5eddd;
+  stroke-width: 0.8;
+  vector-effect: non-scaling-stroke;
+}
+
+.systemMediumArc g:nth-child(2n) path { fill: #384b78; }
+.systemMediumArc g:nth-child(3n) path { fill: #876048; }
+.systemMediumArc g:nth-child(4n) path { fill: #2f6d61; }
+
+.systemMediumArc text {
+  fill: #fff8e9;
+  font-size: 6.7px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+
+.systemFamilyArc path {
+  fill: #e0b84d;
+  stroke: #242725;
+  stroke-width: 1;
+}
+
+.systemFamilyArc g[data-family="time_place"] path { fill: #ed6a45; }
+.systemFamilyArc g[data-family="medium_context"] path { fill: #3a8f7d; }
+.systemFamilyArc g[data-family="historical_influence"] path { fill: transparent; stroke-dasharray: 4 4; }
+.systemFamilyArc text { font-size: 6.8px; font-weight: 700; pointer-events: none; }
+
+.systemCore circle {
+  fill: #272a28;
+  stroke: #f7efdf;
+  stroke-width: 1.5;
+}
+
+.systemCore text {
+  fill: #fff8e9;
+  font-size: 7px;
+  font-weight: 650;
+}
+
+.systemCore text[data-year="true"] {
+  fill: #ff6a43;
+  font-size: 34px;
+  letter-spacing: -0.05em;
+}
+
+.systemMap path[data-sphere="true"] {
+  fill: #e7dfcf;
+  stroke: #252b28;
+  stroke-width: 1.2;
+}
+
+.systemMap path:not([data-sphere="true"]) {
+  fill: #cad5ce;
+  stroke: #f7efdf;
+  stroke-width: 0.55;
+}
+
+.systemMap circle {
+  fill: #226cdb;
+  stroke: #fff8e9;
+  stroke-width: 1;
+  opacity: 0.88;
+}
+
+.systemMap circle[data-active="true"] {
+  fill: #f04d27;
+  stroke: #262a28;
+  stroke-width: 2.5;
+}
+
+.systemMap text {
+  font-size: 7px;
+  font-weight: 650;
+}
+
+.systemFocus rect {
+  fill: #fff9ea;
+  stroke: #262a28;
+  stroke-width: 1;
+}
+
+.systemFocus text,
+.systemFamilyScale text {
+  font-size: 7px;
+}
+
+.systemFocus text[data-title="true"] { font-family: var(--font-sans), sans-serif; font-size: 18px; font-weight: 650; letter-spacing: -0.03em; }
+.systemFocus text[data-value="true"] { fill: #e9502e; font-size: 24px; font-weight: 750; }
+.systemFocus line { stroke: #78766e; stroke-width: 0.8; }
+
+.systemFamilyScale rect { fill: #2674d7; }
+.systemFamilyScale g[data-family="time_place"] rect { fill: #ed6240; }
+.systemFamilyScale g[data-family="medium_context"] rect { fill: #2b8870; }
+.systemFamilyScale g[data-family="historical_influence"] rect { fill: #c5bba6; }
+
+.evolutionStage {
+  display: block;
+  min-height: 0;
+  border-color: var(--ink);
+  background: var(--paper);
+}
+
+.evolutionPlate {
+  display: block;
+  min-height: 0;
+  background: var(--paper);
+}
+
+.evolutionPlate::before,
+.evolutionPlate::after,
+.evolutionPlateMeta,
+.evolutionPlateLegend,
+.evolutionReadout {
+  display: none;
+}
+
+.evolutionScenarios {
+  margin-top: 1rem;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+}
+
+.evolutionScenarios > header {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.8fr) minmax(18rem, 1fr);
+  gap: 2rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--ink);
+}
+
+.evolutionScenarios header p,
+.evolutionScenarios header h4 { margin: 0; }
+.evolutionScenarios header p { color: var(--ink-soft); font-size: 0.61rem; }
+.evolutionScenarios header h4 { margin-top: 0.22rem; font-size: 0.92rem; font-weight: 650; text-transform: uppercase; }
+.evolutionScenarios > header > p { align-self: end; justify-self: end; max-width: 35rem; }
+.evolutionScenarios > div { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.evolutionScenarios article { position: relative; min-width: 0; padding: 0.85rem; border-right: 1px solid var(--line); }
+.evolutionScenarios article:last-child { border-right: 0; }
+.evolutionScenarios article > span { position: absolute; top: 0.72rem; right: 0.78rem; color: #ec5b37; font-family: var(--font-plex-mono), monospace; font-size: 1.25rem; }
+.evolutionScenarios h5 { margin: 0; font-size: 0.78rem; text-transform: uppercase; }
+.evolutionScenarios article > p { margin: 0.2rem 0 0; color: var(--ink-soft); font: 0.54rem var(--font-plex-mono), monospace; }
+.evolutionScenarios svg { display: block; width: 100%; margin-top: 0.45rem; }
+.evolutionScenarios svg line { stroke: var(--line-soft); stroke-width: 0.8; }
+.evolutionScenarios svg polygon { fill: color-mix(in srgb, #2b7cd8 25%, transparent); }
+.evolutionScenarios svg polyline { fill: none; stroke: #2a73cf; stroke-width: 2; }
+.evolutionScenarios svg circle { fill: #ed5a37; stroke: var(--paper); stroke-width: 1; }
+.evolutionScenarios ol { margin: 0.2rem 0 0; padding: 0; list-style: none; }
+.evolutionScenarios li { display: flex; justify-content: space-between; gap: 0.5rem; padding: 0.2rem 0; border-top: 1px solid var(--line-soft); font: 0.51rem var(--font-plex-mono), monospace; }
+
+/* Evidence constellation: central relation river + radial branch system. */
+.constellationSystem {
+  min-height: 100dvh;
+  padding: 1rem;
+  background: var(--canvas);
+}
+
+.constellationSystemHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: start;
+  max-width: calc(100% - 21rem);
+  margin-bottom: 0.75rem;
+}
+
+.constellationSystemHeader p,
+.constellationSystemHeader h2 { margin: 0; }
+.constellationSystemHeader > div > p { color: var(--region-readable); font: 650 0.58rem var(--font-plex-mono), monospace; letter-spacing: 0.08em; }
+.constellationSystemHeader h2 { max-width: 46rem; margin-top: 0.2rem; font-size: clamp(1.3rem, 2.1vw, 2rem); line-height: 1; }
+
+.constellationSystemControls {
+  width: 16rem;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.constellationSystemControls summary { padding: 0.75rem; font: 650 0.62rem var(--font-plex-mono), monospace; text-transform: uppercase; cursor: var(--cursor-interactive); }
+.constellationSystemControls label,
+.constellationSystemControls p { display: grid; gap: 0.3rem; margin: 0; padding: 0.75rem; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: 0.62rem; }
+.constellationSystemControls select { min-height: 2.5rem; padding: 0.4rem; border: 1px solid var(--line); background: var(--canvas); }
+
+.constellationSystemStage {
+  position: relative;
+  min-height: calc(100dvh - 7rem);
+  overflow: hidden;
+  border: 1px solid var(--ink);
+  background: #f7efdf;
+}
+
+.constellationSystemPlot { display: block; width: 100%; height: auto; min-height: 46rem; }
+.constellationSystemGrid circle,
+.constellationSystemGrid line { fill: none; stroke: #333632; stroke-opacity: 0.12; stroke-width: 0.75; vector-effect: non-scaling-stroke; }
+.constellationSystemGrid circle:nth-child(3) { stroke-opacity: 0.28; stroke-width: 1.2; }
+
+.constellationRibbons path { stroke: #fff8e9; stroke-width: 0.8; opacity: 0.82; }
+.constellationRibbons path[data-family="source_provenance"] { fill: #dc5436; }
+.constellationRibbons path[data-family="time_place"] { fill: #df8f3e; }
+.constellationRibbons path[data-family="medium_context"] { fill: #2c8b76; }
+.constellationRibbons path[data-family="historical_influence"] { fill: transparent; stroke: #4b4d48; stroke-dasharray: 5 5; }
+
+.constellationFamilyNodes circle { fill: #282b29; stroke: #fff8e9; stroke-width: 1.4; }
+.constellationFamilyNodes g[data-family="time_place"] circle { fill: #e55f3d; }
+.constellationFamilyNodes g[data-family="medium_context"] circle { fill: #318a75; }
+.constellationFamilyNodes g[data-family="historical_influence"] circle { fill: #f7efdf; stroke: #282b29; stroke-dasharray: 3 3; }
+.constellationFamilyNodes text { fill: #252825; font: 650 7px var(--font-plex-mono), monospace; }
+
+.constellationBranches > g { outline: none; cursor: var(--cursor-interactive); transition: opacity 160ms ease; }
+.constellationBranches > g[data-muted="true"] { opacity: 0.32; }
+.constellationBranches > g[data-selected="true"],
+.constellationBranches > g:hover,
+.constellationBranches > g:focus-visible { opacity: 1; }
+.constellationBranches path { fill: none; stroke: #373a36; vector-effect: non-scaling-stroke; }
+.constellationBranches path[data-trunk="true"] { stroke-width: 1.4; }
+.constellationBranches path[data-twig="true"] { stroke-opacity: 0.48; stroke-width: 0.72; }
+.constellationBranches circle[data-hub="true"] { fill: #2b2e2b; stroke: #fff9ea; stroke-width: 1.4; }
+.constellationBranches circle[data-leaf="true"] { fill: #2776d7; stroke: #fff9ea; stroke-width: 0.8; transform-box: fill-box; transform-origin: center; transition: transform 160ms ease, fill 160ms ease; }
+.constellationBranches > g:nth-child(3n) circle[data-leaf="true"] { fill: #e55a39; }
+.constellationBranches > g:nth-child(4n) circle[data-leaf="true"] { fill: #2d8b72; }
+.constellationBranches > g:nth-child(5n) circle[data-leaf="true"] { fill: #d5ae3e; }
+.constellationBranches > g[data-selected="true"] circle[data-hub="true"],
+.constellationBranches > g:hover circle[data-hub="true"],
+.constellationBranches > g:focus-visible circle[data-hub="true"] { fill: #ef4f29; filter: url(#tree-focus-glow); }
+.constellationBranches > g[data-selected="true"] circle[data-leaf="true"] { transform: scale(1.45); }
+.constellationBranches text { fill: #272a27; font-family: var(--font-plex-mono), monospace; }
+.constellationBranches text[data-rank="true"] { fill: #fff9ea; font-size: 7px; font-weight: 700; pointer-events: none; }
+.constellationBranches text[data-label="true"] { font-size: 6.8px; font-weight: 650; letter-spacing: 0.04em; }
+
+.constellationCoreSystem circle { fill: #252825; stroke: #fff9ea; stroke-width: 1.6; }
+.constellationCoreSystem text { fill: #fff9ea; font: 650 8px var(--font-plex-mono), monospace; }
+.constellationCoreSystem text[data-count="true"] { fill: #ff6945; font-size: 19px; }
+
+.constellationSystemReadout {
+  position: absolute;
+  top: 1.1rem;
+  left: 1.1rem;
+  z-index: 3;
+  display: grid;
+  width: min(19rem, 27%);
+  padding: 1rem;
+  border: 1px solid #292c29;
+  background: rgba(255, 249, 234, 0.94);
+  box-shadow: 0 0.18rem 0 #292c29;
+  backdrop-filter: blur(10px);
+}
+.constellationSystemReadout > * { margin: 0; }
+.constellationSystemReadout > p:first-child,
+.constellationSystemReadout > span,
+.constellationSystemReadout small { color: var(--ink-soft); font: 650 0.55rem var(--font-plex-mono), monospace; letter-spacing: 0.06em; text-transform: uppercase; }
+.constellationSystemReadout > span { margin-top: 0.8rem; }
+.constellationSystemReadout h3 { margin-top: 0.15rem; font-size: clamp(1.4rem, 2.4vw, 2.1rem); }
+.constellationSystemReadout > strong { color: #206bd2; font: 750 clamp(1.8rem, 3vw, 2.8rem) var(--font-plex-mono), monospace; }
+.constellationSystemReadout > div { display: flex; gap: 0.45rem; align-items: center; margin: 0.8rem 0; padding: 0.55rem 0; border-block: 1px solid var(--line); font-size: 0.68rem; }
+.constellationSystemReadout > div i { width: 0.72rem; height: 0.72rem; border-radius: 999px; background: #ed5836; }
+.constellationSystemReadout > p:last-of-type { font-size: 0.72rem; line-height: 1.45; }
+.constellationSystemReadout button { min-height: 2.55rem; margin-top: 0.8rem; border: 1px solid var(--ink); background: transparent; font: 650 0.6rem var(--font-plex-mono), monospace; text-transform: uppercase; }
+
+.constellationTouchRail { display: none; }
+.constellationLedger { margin-top: 0.75rem; border: 1px solid var(--ink); background: var(--paper); }
+.constellationLedger summary { padding: 0.8rem 1rem; font: 650 0.65rem var(--font-plex-mono), monospace; letter-spacing: 0.05em; text-transform: uppercase; }
+.constellationLedger > div { display: grid; grid-template-columns: 1fr 1.35fr; max-height: 24rem; overflow: auto; border-top: 1px solid var(--line); }
+.constellationLedger table { width: 100%; border-collapse: collapse; font-size: 0.64rem; }
+.constellationLedger table + table { border-left: 1px solid var(--line); }
+.constellationLedger caption { padding: 0.65rem; text-align: left; font-weight: 700; }
+.constellationLedger th,
+.constellationLedger td { padding: 0.42rem 0.65rem; border-top: 1px solid var(--line-soft); text-align: left; }
+
+/* Object-local metro: named lines, labelled stations, one clear interchange. */
+.metroSystem { position: relative; overflow: hidden; border: 1px solid #171d1e; background: #162426; }
+.metroSystem .routeMapSvg { min-height: 38rem; background: radial-gradient(circle at 50% 53%, #244143, #172526 62%, #111a1b); }
+.metroGrid line { stroke: rgba(255, 249, 234, 0.07); stroke-width: 0.75; vector-effect: non-scaling-stroke; }
+.metroRoute { transition: opacity 150ms ease; }
+.metroRoute[data-muted="true"] { opacity: 0.26; }
+.metroRoute .mediumRouteLine { fill: none; stroke: #ef6240; stroke-linecap: round; stroke-linejoin: round; stroke-width: 12; vector-effect: non-scaling-stroke; }
+.metroRoute[data-route-index="1"] .mediumRouteLine,
+.metroRoute[data-route-index="1"] .mediumRouteStation,
+.metroRoute[data-route-index="1"] .metroTerminal { stroke: #2b83d7; }
+.metroRoute[data-route-index="2"] .mediumRouteLine,
+.metroRoute[data-route-index="2"] .mediumRouteStation,
+.metroRoute[data-route-index="2"] .metroTerminal { stroke: #36a87e; }
+.metroRoute[data-route-index="3"] .mediumRouteLine,
+.metroRoute[data-route-index="3"] .mediumRouteStation,
+.metroRoute[data-route-index="3"] .metroTerminal { stroke: #e4b83f; }
+.metroRoute[data-route-index="4"] .mediumRouteLine,
+.metroRoute[data-route-index="4"] .mediumRouteStation,
+.metroRoute[data-route-index="4"] .metroTerminal { stroke: #9b72cb; }
+.metroRoute[data-route-index="5"] .mediumRouteLine,
+.metroRoute[data-route-index="5"] .mediumRouteStation,
+.metroRoute[data-route-index="5"] .metroTerminal { stroke: #62b7ba; }
+.metroRoute[data-route-index="6"] .mediumRouteLine,
+.metroRoute[data-route-index="6"] .mediumRouteStation,
+.metroRoute[data-route-index="6"] .metroTerminal { stroke: #d47b9b; }
+.metroTerminal { fill: #172526; stroke: #ef6240; stroke-width: 5; }
+.metroRoute .mediumRouteStation { fill: #fff8e8; stroke: #ef6240; stroke-width: 6; transition: r 150ms ease, fill 150ms ease; }
+.metroRoute a[data-focused="true"] .mediumRouteStation,
+.metroRoute a[data-selected="true"] .mediumRouteStation { fill: #ff6a45; stroke: #fff8e8; }
+.metroRoute .stationCode { fill: #172526; font-size: 6.5px; font-weight: 800; }
+.metroStationLabel { fill: #fff8e8; font-family: var(--font-plex-mono), monospace; font-size: 8px; font-weight: 650; pointer-events: none; }
+.metroSystem .routeLabel { fill: #fff8e8; font-size: 10px; font-weight: 700; letter-spacing: 0.05em; }
+.metroInterchange rect { fill: #fff8e8; stroke: #172526; stroke-width: 1.5; }
+.metroInterchange .interchangeLabel { fill: #172526; font-size: 9px; font-weight: 800; }
+.metroInterchange .objectLabel { fill: #172526; font-size: 10px; font-weight: 650; }
+.metroLegend text { fill: rgba(255, 248, 232, 0.72); font: 650 8px var(--font-plex-mono), monospace; letter-spacing: 0.05em; }
+.metroReadout { position: absolute; right: 1rem; bottom: 1rem; z-index: 3; width: min(22rem, 34%); padding: 0.85rem; border: 1px solid rgba(255, 248, 232, 0.65); color: #fff8e8; background: rgba(17, 26, 27, 0.9); backdrop-filter: blur(12px); }
+.metroReadout > * { margin: 0; }
+.metroReadout span { color: #ff7250; font: 700 0.58rem var(--font-plex-mono), monospace; letter-spacing: 0.06em; }
+.metroReadout h4 { margin-top: 0.28rem; font-size: 1.2rem; line-height: 1; }
+.metroReadout p { margin-top: 0.45rem; color: rgba(255, 248, 232, 0.74); font-size: 0.66rem; line-height: 1.38; }
+.mobileTwinGlobes,
+.mobileDiagramSvg,
+.mobileTraceField { display: none; }
+
+@media (max-width: 760px) {
+  .page:not([data-visual-fullscreen="true"]) {
+    min-height: 100dvh;
+    padding: 4.55rem 0.55rem 4.65rem;
+    overflow-x: hidden;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) > .header,
+  .page:not([data-visual-fullscreen="true"]) .atlasStatement,
+  .page:not([data-visual-fullscreen="true"]) .chronoHeading,
+  .page:not([data-visual-fullscreen="true"]) .atlasLists,
+  .page:not([data-visual-fullscreen="true"]) .mobileAtlas {
+    display: none;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) > .viewTabs {
+    position: fixed;
+    right: 0.65rem;
+    bottom: 0.65rem;
+    left: 0.65rem;
+    z-index: 24;
+    flex-direction: row;
+    gap: 0;
+    margin: 0;
+    border: 1px solid var(--ink);
+    border-radius: 0.78rem;
+    overflow: hidden;
+    background: color-mix(in srgb, var(--paper) 94%, transparent);
+    box-shadow: 0 0.18rem 0 color-mix(in srgb, var(--ink) 20%, transparent);
+    backdrop-filter: blur(14px);
+  }
+
+  .page:not([data-visual-fullscreen="true"]) > .viewTabs button {
+    min-height: 3.2rem;
+    padding: 0.45rem 0.28rem;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 0.51rem;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) > .viewTabs button + button {
+    border-left: 1px solid var(--line);
+  }
+
+  .page:not([data-visual-fullscreen="true"]) .chronoRoutes {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) .evolutionControls {
+    grid-template-columns: 3.8rem minmax(0, 1fr);
+    gap: 0.38rem;
+    margin: 0 0 0.45rem;
+    padding: 0.38rem;
+    border: 1px solid var(--ink);
+    border-radius: 0.7rem;
+    background: color-mix(in srgb, var(--paper) 95%, transparent);
+  }
+
+  .page:not([data-visual-fullscreen="true"]) .evolutionControls > button {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    min-height: 5.65rem;
+    border-radius: 0.48rem;
+    color: var(--paper);
+    background: var(--ink);
+  }
+
+  .page:not([data-visual-fullscreen="true"]) .evolutionControls > .segmentedControl {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) .evolutionControls > label:not(.evolutionRange) {
+    display: none;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) .evolutionControls > .evolutionRange {
+    grid-column: 2;
+    grid-row: 2;
+    min-height: 2.55rem;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) .evolutionStory {
+    min-height: 520dvh;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) .evolutionStage {
+    top: 0;
+    height: calc(100svh - 10.9rem);
+    min-height: 34rem;
+    border: 0;
+    border-radius: 0.8rem;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) .evolutionPlate,
+  .page:not([data-visual-fullscreen="true"]) .systemPlateWrap {
+    height: 100%;
+    border-radius: 0.8rem;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) .systemPlate {
+    width: 158%;
+    height: auto;
+    min-height: 0;
+    max-width: none;
+    transform: translateX(-18.4%);
+  }
+
+  .page:not([data-visual-fullscreen="true"]) .systemMeta,
+  .page:not([data-visual-fullscreen="true"]) .systemFocus,
+  .page:not([data-visual-fullscreen="true"]) .systemFamilyScale {
+    display: none;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) .evolutionChapters {
+    margin-top: calc(-100svh + 10.9rem);
+    padding-top: 49svh;
+  }
+
+  .evolutionScenarios,
+  .evolutionLandscape,
+  .chronoHeadingSecondary,
+  .chronoDesktop,
+  .chronoLegend { display: none; }
+
+  .constellationSystem { padding: 0.55rem 0.55rem 5rem; }
+  .constellationSystemHeader { grid-template-columns: 1fr; max-width: calc(100% - 4.5rem); gap: 0.45rem; }
+  .constellationSystemHeader h2 { font-size: 1.18rem; }
+  .constellationSystemControls { width: 100%; }
+  .constellationSystemStage { min-height: calc(100dvh - 11rem); overflow: visible; }
+  .constellationSystemPlot { width: 100%; min-height: 0; }
+  .constellationSystemReadout { position: static; width: auto; margin: -0.1rem 0.55rem 0.55rem; box-shadow: none; }
+  .constellationSystemReadout > p:last-of-type { display: none; }
+  .constellationTouchRail { display: flex; gap: 0.5rem; margin: 0; padding: 0 0.55rem 0.6rem; overflow-x: auto; list-style: none; scroll-snap-type: x mandatory; }
+  .constellationTouchRail li { flex: 0 0 10.5rem; scroll-snap-align: center; }
+  .constellationTouchRail button { display: grid; grid-template-columns: auto 1fr; width: 100%; min-height: 5rem; padding: 0.65rem; border: 1px solid var(--ink); border-radius: 0.8rem; background: var(--paper); text-align: left; }
+  .constellationTouchRail button[aria-pressed="true"] { color: var(--paper); background: #1f64d6; }
+  .constellationTouchRail span { font: 650 0.52rem var(--font-plex-mono), monospace; }
+  .constellationTouchRail strong { align-self: end; font-size: 1rem; }
+  .constellationTouchRail b { grid-column: 2; color: #e95734; font: 700 0.76rem var(--font-plex-mono), monospace; }
+  .constellationTouchRail button[aria-pressed="true"] b { color: #fff8e8; }
+  .constellationLedger { margin-bottom: 4rem; }
+  .constellationLedger > div { grid-template-columns: 1fr; }
+  .constellationLedger table + table { border-top: 1px solid var(--line); border-left: 0; }
+
+  .page[data-visual-fullscreen="true"] > .viewTabs {
+    display: none;
+  }
+
+  .page[data-visual-fullscreen="true"] .drawerToggle {
+    top: 0.62rem;
+    left: 0.62rem;
+    width: 3.25rem;
+    height: 3.25rem;
+    padding: 0;
+    border-radius: 0.22rem;
+  }
+
+  .page[data-visual-fullscreen="true"] .drawerToggle svg {
+    width: 1.45rem;
+    height: 1.45rem;
+  }
+
+  .page[data-visual-fullscreen="true"] .drawerToggle span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .localTrace {
+    height: 100dvh;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: var(--canvas);
+  }
+
+  .localTrace > .diagramModeControl {
+    position: fixed;
+    top: 0.62rem;
+    left: 4.12rem;
+    z-index: 18;
+    width: 3.25rem;
+    margin: 0;
+  }
+
+  .diagramModeTrigger {
+    display: grid;
+    width: 3.25rem;
+    height: 3.25rem;
+    min-height: 3.25rem;
+    padding: 0;
+    place-items: center;
+    border-radius: 0.22rem;
+  }
+
+  .diagramModeTrigger > span:not(.modeChevron) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .diagramModeTrigger .modeChevron {
+    display: none;
+  }
+
+  .diagramModeIcon {
+    width: 1.45rem;
+    height: 1.45rem;
+  }
+
+  .diagramModeMenu {
+    position: fixed;
+    top: 4.2rem;
+    right: 0.62rem;
+    left: 0.62rem;
+    width: auto;
+    margin: 0;
+    padding: 0.42rem;
+    border-radius: 0.55rem;
+    box-shadow: 0 1rem 3rem color-mix(in srgb, var(--ink) 24%, transparent);
+  }
+
+  .diagramModeMenu button {
+    min-height: 3.25rem;
+    font-size: 1rem;
+  }
+
+  .geoDashboard {
+    position: relative;
+    display: grid;
+    grid-template-rows: minmax(100dvh, auto) auto;
+    min-height: 100dvh;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .geoDashboard > .diagramHeading,
+  .geoDashboard > .geoControlBar,
+  .geoDashboard > .diagramEvidenceFallback,
+  .geoDashboard > .mobileDiagramNote {
+    display: none;
+  }
+
+  .geoMobileHeader {
+    position: absolute;
+    top: 4.15rem;
+    left: 0.72rem;
+    z-index: 7;
+    display: grid;
+    width: min(13.5rem, calc(100% - 1.44rem));
+    padding: 0.7rem 0.78rem;
+    border: 1px solid var(--line);
+    border-radius: 0.72rem;
+    background: color-mix(in srgb, var(--paper) 91%, transparent);
+    backdrop-filter: blur(12px);
+  }
+
+  .geoMobileHeader span {
+    color: var(--region-readable);
+    font: 700 1rem var(--font-plex-mono), monospace;
+    letter-spacing: 0.08em;
+  }
+
+  .geoMobileHeader strong {
+    margin-top: 0.14rem;
+    font-size: clamp(1.4rem, 7vw, 1.85rem);
+    line-height: 1;
+  }
+
+  .geoMobileHeader p {
+    margin: 0.32rem 0 0;
+    color: var(--ink-soft);
+    font-size: 1rem;
+  }
+
+  .geoCanvas {
+    grid-row: 1;
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+    border: 0;
+    background:
+      radial-gradient(circle at 48% 46%, color-mix(in srgb, var(--signal-blue) 15%, transparent), transparent 55%),
+      linear-gradient(180deg, #fffaf0, #ecf0ef 68%, #f5ebd7);
+  }
+
+  .localTrace .geoCanvas .worldMapSvg { display: none; }
+
+  .mobileTwinGlobes {
+    position: absolute;
+    inset: 6.9rem 0.45rem 5rem;
+    z-index: 2;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.15rem;
+  }
+
+  .mobileTwinGlobes svg {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    overflow: visible;
+    touch-action: none;
+    user-select: none;
+  }
+
+  .mobileGlobeSphere {
+    fill: color-mix(in srgb, #fffaf0 92%, var(--signal-blue));
+    stroke: #172526;
+    stroke-width: 1.4;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .mobileGlobeGraticule {
+    fill: none;
+    stroke: color-mix(in srgb, #172526 17%, transparent);
+    stroke-width: 0.8;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .mobileGlobeCountry {
+    fill: #dde5df;
+    stroke: color-mix(in srgb, #172526 42%, transparent);
+    stroke-width: 0.55;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .mobileGlobeCountryActive {
+    fill: color-mix(in srgb, var(--signal-blue) var(--country-intensity), #dbe4df);
+  }
+
+  .mobileGlobePoint {
+    fill: var(--signal-blue);
+    stroke: #fffaf0;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .mobileGlobePointHalo {
+    fill: none;
+    stroke: color-mix(in srgb, var(--signal-blue) 28%, transparent);
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .mobileTwinGlobes g[data-selected="true"] .mobileGlobePoint {
+    fill: var(--signal-orange);
+    stroke: #172526;
+    stroke-width: 2;
+  }
+
+  .mobileGlobeHit { fill: transparent; cursor: pointer; }
+  .mobileGlobeHit:focus-visible { fill: color-mix(in srgb, var(--signal-orange) 18%, transparent); outline: none; }
+  .mobileGlobeIndex {
+    fill: #172526;
+    font: 700 16px var(--font-plex-mono), monospace;
+    letter-spacing: 0.04em;
+  }
+
+  .geoCanvas .geoReadout,
+  .geoCanvas .mapLegend {
+    display: none;
+  }
+
+  .geoCanvas .mapRegionPoint {
+    fill: var(--signal-blue);
+    stroke-width: 2;
+  }
+
+  .geoCanvas .worldMapSvg a[data-selected="true"] .mapRegionPoint {
+    fill: var(--signal-orange);
+    stroke-width: 4;
+  }
+
+  .geoCanvas .mapPointCode,
+  .geoCanvas .mapPointLabel {
+    font-size: 12px;
+    font-weight: 750;
+  }
+
+  .timeController {
+    position: fixed;
+    right: 0.72rem;
+    bottom: 0.75rem;
+    left: 0.72rem;
+    z-index: 8;
+    grid-template-columns: 3.25rem minmax(0, 1fr);
+    gap: 0.72rem;
+    min-height: 4.15rem;
+    padding: 0.42rem 0.58rem;
+    border: 1px solid var(--line);
+    border-radius: 0.86rem;
+    background: color-mix(in srgb, var(--paper) 93%, transparent);
+    box-shadow: 0 0.2rem 0 color-mix(in srgb, var(--ink) 18%, transparent);
+    backdrop-filter: blur(14px);
+  }
+
+  .timeController > button {
+    width: 3.25rem;
+    height: 3.25rem;
+    padding: 0;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    color: var(--paper);
+    background: var(--ink);
+  }
+
+  .playSymbol {
+    display: block;
+    padding-left: 0.16rem;
+    font-size: 1.15rem;
+    line-height: 1;
+  }
+
+  .playLabel {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .timeController label {
+    align-self: center;
+    font-size: 1rem;
+  }
+
+  .timeController input {
+    min-height: 2rem;
+  }
+
+  .timelineTicks {
+    display: none;
+  }
+
+  .timelineTicks i {
+    font-size: 0.42rem;
+  }
+
+  .geoMobilePanel {
+    grid-row: 2;
+    display: block;
+    margin: 0.65rem 0.65rem 6.8rem;
+    border: 1px solid var(--ink);
+    border-radius: 0.86rem;
+    background: var(--paper);
+  }
+
+  .geoMobilePanel summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 3.6rem;
+    padding: 0.65rem 0.78rem;
+    list-style: none;
+    font: 700 1rem var(--font-plex-mono), monospace;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .geoMobilePanel summary::-webkit-details-marker { display: none; }
+  .geoMobilePanel summary span { display: grid; width: 2rem; height: 2rem; place-items: center; border-radius: 999px; color: var(--paper); background: var(--signal-orange); }
+  .geoMobilePanel > .segmentedControl { margin: 0 0.72rem 0.5rem; }
+  .geoMobilePanel dl { display: grid; grid-template-columns: 1fr 1fr; margin: 0; border-top: 1px solid var(--line); }
+  .geoMobilePanel dl div { padding: 0.65rem 0.72rem; }
+  .geoMobilePanel dl div + div { border-left: 1px solid var(--line); }
+  .geoMobilePanel dt { color: var(--ink-soft); font: 0.5rem var(--font-plex-mono), monospace; text-transform: uppercase; }
+  .geoMobilePanel dd { margin: 0.18rem 0 0; font: 700 1.2rem var(--font-plex-mono), monospace; }
+  .geoMobilePanel ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+  .geoMobilePanel li button { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr); gap: 0.55rem; align-items: center; width: 100%; min-height: 3.4rem; padding: 0.5rem 0.72rem; border: 0; border-bottom: 1px solid var(--line-soft); background: transparent; text-align: left; }
+  .geoMobilePanel dt { font-size: 1rem; }
+  .geoMobilePanel li span { display: grid; width: 3.25rem; height: 3.25rem; place-items: center; border: 1px solid var(--region); border-radius: 999px; color: var(--region-readable); font: 700 1rem var(--font-plex-mono), monospace; }
+  .geoMobilePanel li strong { font-size: 1rem; }
+  .geoMobilePanel .geoProjectionControl { display: none; }
+
+  .localTrace > .diagram {
+    position: relative;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: #132122;
+  }
+
+  .localTrace > .diagram > .diagramHeading,
+  .localTrace > .diagram > .mobileDiagramNote,
+  .localTrace > .diagram > .diagramEvidenceFallback {
+    display: none;
+  }
+
+  .localTrace > .diagram > .diagramDesktop,
+  .localTrace > .diagram .metroSystem {
+    display: flex;
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+    align-items: stretch;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border: 0;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    touch-action: pan-y;
+  }
+
+  .localTrace > .diagram > .diagramDesktop::-webkit-scrollbar,
+  .localTrace > .diagram .metroSystem::-webkit-scrollbar {
+    display: none;
+  }
+
+  .localTrace > .diagram .desktopDiagramSvg { display: none; }
+
+  .localTrace > .diagram .mobileDiagramSvg { display: none; }
+
+  .localTrace > .diagram .mobileTraceField {
+    display: grid;
+    grid-template-rows: minmax(0, 3.25fr) minmax(11.5rem, 1fr);
+    width: 100%;
+    min-height: 100dvh;
+    color: #172526;
+    background: #fffaf0;
+  }
+
+  .mobileTraceFieldStage {
+    position: relative;
+    min-height: 37rem;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 14% 20%, color-mix(in srgb, var(--signal-orange) 13%, transparent), transparent 36%),
+      linear-gradient(180deg, #fffaf0 0%, #f7f0df 100%);
+  }
+
+  .mobileTraceFieldStage > svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mobileTraceGuideGrid line {
+    stroke: rgba(23, 37, 38, 0.09);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .mobileTraceRays path {
+    fill: none;
+    stroke: color-mix(in srgb, var(--signal-blue) 38%, #172526);
+    stroke-width: 1.25;
+    stroke-dasharray: 2 5;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .mobileTraceField[data-family="sources"] .mobileTraceRays path {
+    stroke: color-mix(in srgb, var(--signal-orange) 48%, #172526);
+  }
+
+  .mobileTraceFieldLabel {
+    position: absolute;
+    top: 4.35rem;
+    left: 1rem;
+    z-index: 2;
+    margin: 0;
+    color: #172526;
+    font: 700 1rem/1.2 var(--font-plex-mono), monospace;
+    letter-spacing: 0.045em;
+  }
+
+  .mobileTraceNodes { position: absolute; inset: 0; }
+
+  .mobileTraceNode {
+    position: absolute;
+    left: var(--node-x);
+    top: var(--node-y);
+    z-index: 3;
+    display: grid;
+    width: 3.25rem;
+    height: 3.25rem;
+    padding: 0;
+    place-items: center;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    color: #fffaf0;
+    background: color-mix(in srgb, var(--signal-blue) calc(var(--node-alpha) * 100%), #d7e2e1);
+    box-shadow: 0 0 0 1px color-mix(in srgb, #172526 18%, transparent);
+    font: 750 1rem/1 var(--font-plex-mono), monospace;
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0;
+    animation: mobile-node-arrive 460ms cubic-bezier(0.18, 0.8, 0.25, 1) var(--node-delay) forwards;
+    touch-action: manipulation;
+  }
+
+  .mobileTraceField[data-family="sources"] .mobileTraceNode {
+    background: color-mix(in srgb, var(--signal-orange) calc(var(--node-alpha) * 100%), #e8d8c5);
+  }
+
+  .mobileTraceNode[aria-pressed="true"] {
+    border-color: #172526;
+    box-shadow: 0 0 0 3px #fffaf0, 0 0 0 5px #172526;
+  }
+
+  .mobileTraceNode:focus-visible {
+    outline: 3px solid var(--signal-orange);
+    outline-offset: 4px;
+  }
+
+  .mobileTraceEmptyNode {
+    position: absolute;
+    left: var(--node-x);
+    top: var(--node-y);
+    z-index: 1;
+    width: 3.25rem;
+    height: 3.25rem;
+    border: 1px solid color-mix(in srgb, #172526 10%, transparent);
+    border-radius: 999px;
+    background: color-mix(in srgb, #172526 5%, #fffaf0);
+    transform: translate(-50%, -50%);
+  }
+
+  .mobileTraceSelection {
+    position: relative;
+    z-index: 4;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-content: center;
+    gap: 0.55rem 0.8rem;
+    min-height: 11.5rem;
+    padding: 1rem;
+    border-top: 1px solid #172526;
+    background: #fffaf0;
+  }
+
+  .mobileTraceSelection > div {
+    display: flex;
+    grid-column: 1 / -1;
+    gap: 0.65rem;
+    align-items: center;
+  }
+
+  .mobileTraceSelection span {
+    display: grid;
+    width: 3.25rem;
+    height: 3.25rem;
+    flex: 0 0 3.25rem;
+    place-items: center;
+    border: 2px solid #172526;
+    border-radius: 999px;
+    color: #fffaf0;
+    background: var(--signal-blue);
+    font: 750 1rem var(--font-plex-mono), monospace;
+  }
+
+  .mobileTraceField[data-family="sources"] .mobileTraceSelection span { background: var(--signal-orange); }
+  .mobileTraceSelection p { margin: 0; font-size: 1rem; line-height: 1.35; }
+  .mobileTraceSelection > div p { color: #425152; }
+  .mobileTraceSelection h4 { grid-column: 1 / -1; margin: 0; font-size: clamp(1.35rem, 7vw, 2rem); line-height: 1.02; }
+  .mobileTraceSelection > button {
+    align-self: end;
+    min-width: 3.25rem;
+    min-height: 3.25rem;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid #172526;
+    border-radius: 999px;
+    color: #fffaf0;
+    background: #172526;
+    font-size: 1rem;
+  }
+
+  @keyframes mobile-node-arrive {
+    to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  }
+
+  .mobileDiagramGrid line {
+    stroke: rgba(255, 249, 234, 0.075);
+    stroke-width: 0.75;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .mobileMetroTitle text,
+  .mobileDiagramLegend text,
+  .mobileRouteLabel,
+  .mobileMetroLabel,
+  .mobileRootCode,
+  .mobileTreeBranchLabel,
+  .mobileTreeNodeCode,
+  .mobileTreeLeafLabel {
+    fill: #fff8e8;
+    font-family: var(--font-plex-mono), monospace;
+  }
+
+  .mobileMetroTitle text { font-size: 11px; font-weight: 750; letter-spacing: 0.09em; }
+  .mobileMetroTitle text:last-child { fill: #ff6a45; }
+  .mobileRouteLabel { font-size: 8px; font-weight: 720; letter-spacing: 0.035em; }
+  .mobileMetroLabel { font-size: 7px; font-weight: 620; }
+  .mobileDiagramLegend text { fill: rgba(255, 248, 232, 0.68); font-size: 7px; letter-spacing: 0.04em; }
+  .mobileRootCard { fill: #fff8e8; stroke: #172526; stroke-width: 1.5; }
+  .mobileRootCode { fill: #172526; font-size: 8px; font-weight: 800; }
+  .mobileRootTitle { fill: #172526; font: 650 9px var(--font-plex-mono), monospace; }
+  .mobileTreeBranchLabel { font-size: 8px; font-weight: 760; letter-spacing: 0.025em; }
+  .mobileTreeNodeCode { fill: #172526; font-size: 5.5px; font-weight: 850; pointer-events: none; }
+  .mobileTreeLeafLabel { font-size: 6.5px; font-weight: 650; }
+
+  .mobileDiagramSvg .mediumRouteLine {
+    stroke-width: 8;
+    animation: mobile-route-draw 720ms cubic-bezier(0.2, 0.76, 0.24, 1) both;
+  }
+
+  .mobileDiagramSvg .sourceTrunk,
+  .mobileDiagramSvg .sourceTwig {
+    animation: mobile-route-draw 720ms cubic-bezier(0.2, 0.76, 0.24, 1) both;
+  }
+
+  @keyframes mobile-route-draw {
+    from { stroke-dasharray: 1000; stroke-dashoffset: 1000; }
+    to { stroke-dasharray: 1000; stroke-dashoffset: 0; }
+  }
+
+  .localTrace > .diagram .objectLabel,
+  .localTrace > .diagram .interchangeLabel { font-size: 9px; }
+
+  .localTrace > .diagram .stationCode { font-size: 5.5px; }
+
+  .localTrace > .diagram .metroLegend,
+  .localTrace > .diagram .metroReadout {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mobileDiagramSvg .mediumRouteLine,
+    .mobileDiagramSvg .sourceTrunk,
+    .mobileDiagramSvg .sourceTwig { animation: none; }
+    .mobileTraceNode { animation: none; transform: translate(-50%, -50%); opacity: 1; }
+  }
+}
+
+/* Desktop TRACE uses the viewport as the plate: navigation is the header, the
+   visualization is the reading surface. Keep these overrides last so earlier
+   component defaults cannot re-introduce document-like vertical spacing. */
+@media (min-width: 761px) {
+  .page:not([data-visual-fullscreen="true"]) {
+    padding-top: 5.9rem;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) .chronoRoutes {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) .systemPlateWrap {
+    height: calc(100dvh - 10.7rem);
+    min-height: 38rem;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) .systemPlate {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
   }
 }

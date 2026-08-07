@@ -333,7 +333,6 @@ export default function ArchiveShell({
             <i />
             <i />
           </span>
-          <span>{menuOpen ? "Close" : "Menu"}</span>
         </button>
 
         {menuOpen ? (

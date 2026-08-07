@@ -267,7 +267,7 @@ function ChronologySlip({ folder }: { folder: Folder }) {
       </div>
       <div className="bookmark-years">
         <span>{spanLabel(folder.dateStart, folder.dateEnd)}</span>
-        <strong>{folder.surfaceIds.length} surfaces</strong>
+        <strong>{folder.surfaceIds.length} design records</strong>
       </div>
     </BookmarkShell>
   );

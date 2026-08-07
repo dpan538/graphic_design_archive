@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import EvolutionSystemPlate from "./EvolutionSystemPlate";
 import styles from "./TraceExplorer.module.css";
 import type {
   ActiveCatalogItem,
@@ -435,7 +436,7 @@ export default function ChronogeographicRoutes({
             <div className={styles.evolutionPlateMeta} aria-hidden="true">
               <span>15 REGION AXES</span><span>23 DECADE RINGS</span><span>LOG AREA</span>
             </div>
-            <RadialObservationField
+            <EvolutionSystemPlate
               atlas={atlas}
               selectedIndex={selectedIndex}
               selectedRegion={selectedRegion}
@@ -490,6 +491,46 @@ export default function ChronogeographicRoutes({
           })}
         </ol>
       </div>
+
+      <section className={styles.evolutionScenarios} aria-labelledby="evolution-scenarios-title">
+        <header>
+          <div><p>COMPARATIVE WINDOWS / FIXED GEOMETRY</p><h4 id="evolution-scenarios-title">Four periods, one shared scale</h4></div>
+          <p>Each panel repeats the same axes so changes in geographic coverage remain visually comparable.</p>
+        </header>
+        <div>
+          {[
+            { label: "Early archive", start: 1800, end: 1899 },
+            { label: "Modern formation", start: 1900, end: 1944 },
+            { label: "Postwar expansion", start: 1950, end: 1979 },
+            { label: "Networked archive", start: 1980, end: 2020 },
+          ].map((window, panelIndex) => {
+            const indexes = atlas.decades
+              .map((decade, index) => ({ decade, index }))
+              .filter((entry) => entry.decade >= window.start && entry.decade <= window.end);
+            const totals = indexes.map((entry) => atlas.decadeTotals[entry.index]);
+            const panelMaximum = Math.max(...totals, 1);
+            const points = totals.map((count, index) => `${24 + (index / Math.max(1, totals.length - 1)) * 252},${126 - (count / panelMaximum) * 86}`).join(" ");
+            const leaders = atlas.regionMatrix
+              .map((row) => ({ row, count: indexes.reduce((sum, entry) => sum + row.counts[entry.index], 0) }))
+              .sort((left, right) => right.count - left.count)
+              .slice(0, 3);
+            return (
+              <article key={window.label} data-panel={panelIndex + 1}>
+                <span>{String(panelIndex + 1).padStart(2, "0")}</span>
+                <h5>{window.label}</h5>
+                <p>{window.start}–{window.end}</p>
+                <svg viewBox="0 0 300 160" role="img" aria-label={`${window.label} object-count profile`}>
+                  {Array.from({ length: 5 }, (_, index) => <line key={index} x1="24" y1={40 + index * 22} x2="276" y2={40 + index * 22} />)}
+                  <polygon points={`24,126 ${points} 276,126`} />
+                  <polyline points={points} />
+                  {totals.map((count, index) => <circle key={index} cx={24 + (index / Math.max(1, totals.length - 1)) * 252} cy={126 - (count / panelMaximum) * 86} r={index === totals.length - 1 ? 4.5 : 2.4} />)}
+                </svg>
+                <ol>{leaders.map((leader) => <li key={leader.row.region}><span>{leader.row.region}</span><b>{leader.count.toLocaleString()}</b></li>)}</ol>
+              </article>
+            );
+          })}
+        </div>
+      </section>
 
       <section className={styles.evolutionLandscape} aria-labelledby="evolution-landscape-title">
         <header>

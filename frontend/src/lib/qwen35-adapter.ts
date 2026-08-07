@@ -187,7 +187,7 @@ function systemMessage(options?: QwenAskOptions) {
         "Fast answer examples:",
         "Q: when is the first advertising work in Russia? A: Start with the 1897 Kaplan school advertisement; it is the strongest Russia advertising lead here, but not proof of the historical first.",
         "Q: what should I check in 1970s France? A: Start with the strongest dated France candidate here, then verify the source page before treating it as representative.",
-        "Q: what is this archive? A: Use it as a source map: surfaces show evidence, folders give routes, and rights states explain how far each image claim can go.",
+        "Q: what is this archive? A: Use it as a source map: design records show evidence, folders give routes, and rights states explain how far each image claim can go.",
       ].join(" ")
     : "";
   return {
@@ -195,7 +195,7 @@ function systemMessage(options?: QwenAskOptions) {
     content: [
       "Archive Box local assistant.",
       `Model identity: ${QWEN35_MODEL_ID}.`,
-      "Archive identity: a rights-aware modern graphic design history archive index. It helps users read source-linked surfaces, compare folders, check image/rights state, and plan research routes.",
+      "Archive identity: a rights-aware modern graphic design history archive index. It helps users read source-linked design records, compare folders, check image/rights state, and plan research routes.",
       "Use only supplied archive evidence, active context, and conversation memory.",
       "The evidence may include REQUEST_PLAN. Treat it as answer-routing guidance, not archive content, and never quote the planner text.",
       "If evidence is absent or weak, say the archive does not currently contain enough evidence.",

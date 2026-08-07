@@ -224,7 +224,7 @@ export default function SearchWorkspace() {
 
         {showArchive ? (
           <article>
-            <header><p>Published archive surfaces</p><b>{archivePending ? "…" : archiveResults.length}</b></header>
+            <header><p>Published design records</p><b>{archivePending ? "…" : archiveResults.length}</b></header>
             {deferredQuery.trim() ? (
               <div className={styles.archiveGrid}>
                 {archiveResults.map(({ surface, field, snippet }) => (
@@ -235,7 +235,7 @@ export default function SearchWorkspace() {
                   </Link>
                 ))}
               </div>
-            ) : <p className={styles.emptyNote}>Enter a query to search the published archive surface index.</p>}
+            ) : <p className={styles.emptyNote}>Enter a query to search the published design record index.</p>}
           </article>
         ) : null}
       </section>

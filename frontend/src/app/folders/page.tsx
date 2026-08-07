@@ -19,7 +19,7 @@ export default function FolderTypesPage() {
       href: `/folders/${folderType.type}`,
       reveal: [
         folderType.scopeNote,
-        `${folderCount} folders · ${surfaceCount} surfaces`,
+        `${folderCount} folders · ${surfaceCount.toLocaleString("en-US")} design records`,
       ],
     }),
   );

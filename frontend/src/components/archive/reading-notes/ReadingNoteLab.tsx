@@ -215,7 +215,7 @@ function LedgerRows({ surfaces, max = 4 }: { surfaces: Surface[]; max?: number }
 function FactGrid({ ctx }: { ctx: ReadingNoteContext }) {
   const facts: Array<[string, string]> = [
     ["span", folderSpan(ctx.folder)],
-    ["surfaces", String(ctx.folder.surfaceIds.length)],
+    ["design records", String(ctx.folder.surfaceIds.length)],
     ["sources", String(ctx.sourceTotal)],
     ["image", `00 ${ctx.imageCounts.IMG00} / 04 ${ctx.imageCounts.IMG04}`],
   ];
@@ -322,7 +322,7 @@ function RN03SparseStrip({ ctx }: { ctx: ReadingNoteContext }) {
       </div>
       <dl>
         <div>
-          <dt>surfaces</dt>
+          <dt>design records</dt>
           <dd>{ctx.folder.surfaceIds.length}</dd>
         </div>
         <div>

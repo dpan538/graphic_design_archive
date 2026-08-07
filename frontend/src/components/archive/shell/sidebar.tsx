@@ -5,7 +5,7 @@ export function CountsCard() {
   const c = getGlobalCounts();
   const rows: Array<[string, number]> = [
     ["folders", c.folders],
-    ["surfaces", c.surfaces],
+    ["design records", c.surfaces],
     ["sheets", c.sheets],
     ["cards", c.cards],
     ["stubs", c.stubs],
