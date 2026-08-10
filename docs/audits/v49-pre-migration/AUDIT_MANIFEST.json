@@ -1,0 +1,126 @@
+{
+  "schemaVersion": "v49-pre-migration-audit-manifest/v1",
+  "auditId": "v49-phase-1b-2026-08-11",
+  "createdAt": "2026-08-11",
+  "worktree": "/Users/jarlgiovanni/Desktop/modern_GD_history_v49_data_platform",
+  "branch": "refactor/v49-data-platform",
+  "initialHead": "f076ca3444aaa0f413bb61fe2cb568d6a9aa2720",
+  "frozenSourceAncestor": "0404c7f96f9189f576c4c5b1368061e4082e436b",
+  "protectedMain": {
+    "path": "/Users/jarlgiovanni/Desktop/modern_GD_history",
+    "head": "7ef26d66b6ad671fdcc5e11bfa831699a39426bc",
+    "trackedFingerprint": "57ecff59270460a769b743781ecd09ca191b867201991a260785985689f6d568",
+    "untrackedFingerprint": "c1c1c00968cadf25a549cd6776fe05676c1f7029dfa92759e26afea4adfc4730",
+    "untrackedCount": 10937,
+    "stagedCount": 0,
+    "mutated": false
+  },
+  "status": {
+    "auditComplete": true,
+    "preCleanClassificationComplete": true,
+    "reversiblePreCleanComplete": true,
+    "dirtyMainCleanupExecuted": false,
+    "frozenDataMutated": false,
+    "trackedLegacyDeleted": false,
+    "engineeringPreDdlReady": false,
+    "researchSemanticsPreDdlReady": false,
+    "rightsVisualPreDdlReady": false,
+    "overallPreDdlReady": false,
+    "databaseImplemented": false,
+    "databaseFreezeReady": false,
+    "frontendPromotionReady": false,
+    "deploymentReady": false
+  },
+  "coverage": {
+    "A1": { "coverage": "PARTIAL", "result": "PARTIAL", "p0": 2, "p1": 6, "p2": 1, "report": "01_GIT_WORKTREE_AND_HISTORY.md" },
+    "A2": { "coverage": "COMPLETE", "result": "PASS", "p0": 3, "p1": 4, "p2": 2, "report": "02_FILE_AND_STORAGE_INVENTORY.md" },
+    "A3": { "coverage": "COMPLETE", "result": "PARTIAL", "p0": 5, "p1": 5, "p2": 3, "report": "03_DATA_ASSET_AUTHORITY_AND_LINEAGE.md" },
+    "A4": { "coverage": "COMPLETE", "result": "PARTIAL", "p0": 10, "p1": 6, "p2": 3, "report": "04_DATABASE_AND_DDL_READINESS.md" },
+    "A5": { "coverage": "COMPLETE", "result": "PARTIAL", "p0": 8, "p1": 6, "p2": 4, "report": "05_TRACE_RESEARCH_SEMANTICS.md" },
+    "A6": { "coverage": "COMPLETE", "result": "FAIL", "p0": 7, "p1": 6, "p2": 3, "report": "06_RIGHTS_AND_VISUAL_FEDERATION.md" },
+    "A7": { "coverage": "COMPLETE", "result": "PARTIAL", "p0": 5, "p1": 7, "p2": 4, "report": "07_FRONTEND_A4_AND_BUILD_COUPLING.md" },
+    "A8": { "coverage": "COMPLETE", "result": "PARTIAL", "p0": 2, "p1": 6, "p2": 1, "report": "08_AI_RAG_SLM_RETIREMENT.md" },
+    "A9": { "coverage": "COMPLETE", "result": "PARTIAL", "p0": 3, "p1": 5, "p2": 1, "report": "09_QA_ACCESSIBILITY_AND_VISUAL_EVIDENCE.md" },
+    "A10": { "coverage": "COMPLETE", "result": "FAIL", "p0": 7, "p1": 7, "p2": 3, "report": "10_MACHINE_API_SECURITY_CI_DEPLOYMENT.md" }
+  },
+  "priorityContributions": { "p0": 52, "p1": 58, "p2": 25, "deduplicated": false },
+  "inventory": {
+    "rows": 14359,
+    "mechanicalClassification": {
+      "KEEP_ACTIVE": 201,
+      "MIGRATE": 973,
+      "ARCHIVE_READ_ONLY": 12998,
+      "GENERATED_REPRODUCIBLE": 0,
+      "DELETE_CANDIDATE": 11,
+      "HOLD_UNKNOWN": 176
+    },
+    "conservativeActionClassification": {
+      "KEEP_ACTIVE": 201,
+      "MIGRATE": 973,
+      "ARCHIVE_READ_ONLY": 12998,
+      "GENERATED_REPRODUCIBLE": 0,
+      "DELETE_CANDIDATE": 1,
+      "HOLD_UNKNOWN": 186,
+      "override": "Ten exact duplicate QA non-keeper paths remain HOLD_UNKNOWN pending scenario, provenance, and rights manifests."
+    }
+  },
+  "measuredSurfaces": {
+    "canonicalOperationalObjects": 15923,
+    "searchProjectionItems": 8636,
+    "searchCanonicalIntersection": 2585,
+    "searchOnly": 6051,
+    "canonicalOnly": 13338,
+    "union": 21974,
+    "traceProjectionNodes": 97889,
+    "traceProjectionEdges": 255695,
+    "objectRelationMembershipProjections": 126822,
+    "reviewObjects": 4425,
+    "auxiliaryObjects": 11,
+    "directFrontendDataCouplingFiles": 35,
+    "a4PageStaticRenderEntrances": 9,
+    "aiRagSlmRetirementLogicalUnits": 75,
+    "qaFiles": 60
+  },
+  "frozenAssets": [
+    { "path": "generated/public_surfaces_prefreeze_candidate_v48.json", "bytes": 190067852, "sha256": "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48", "authority": "migration_input" },
+    { "path": "data/prefreeze_candidate_v48.sqlite", "bytes": 421801984, "sha256": "ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e", "authority": "immutable_reconciliation", "integrityCheck": "ok" },
+    { "path": "generated/prefreeze_candidate_v48_transfer_manifest.json", "bytes": 21752, "sha256": "865358db84c15d960b3535969a32521c0ffec177f7455d21db86cd131f787d5b", "authority": "integrity_evidence" },
+    { "path": "data/prefreeze_candidate_v48_transfer_manifest.csv", "bytes": 12861, "sha256": "694a60657077bcab8888c4a4ef1daf6059706e544606d4862e46c57dcf6ddc18", "authority": "integrity_evidence" },
+    { "path": "frontend/public/data/trace-v48/manifest.json", "bytes": 83900, "sha256": "1678e211023aa324078e0478f88670d2378b6dc5c398cc5c04722605038fee23", "authority": "derived_trace_integrity_evidence" }
+  ],
+  "artifacts": [
+    { "path": "00_EXECUTIVE_SUMMARY.md", "bytes": 13805, "sha256": "6e760c2ef010a7c717e8ba0163c1164296c57c4b2854221a31dc74ef4d87ab27", "role": "executive_summary" },
+    { "path": "01_GIT_WORKTREE_AND_HISTORY.md", "bytes": 20703, "sha256": "91513aec3d0275a9880337a9be4f7eea17b55ffde28042fb5fef8eb476596ef5", "role": "A1_report" },
+    { "path": "02_FILE_AND_STORAGE_INVENTORY.md", "bytes": 14870, "sha256": "3a01d3efe68b36a57444b32a8c89c41e2218309c669d7b22d17ac69208e1d2c4", "role": "A2_report" },
+    { "path": "02_FILE_INVENTORY.tsv", "bytes": 6761909, "sha256": "9e42b1e83b301c07e4ae1bb5696328b81f66e4f5172960eb6068bc9e29f0c7fa", "role": "path_level_inventory", "rowsExcludingHeader": 14359 },
+    { "path": "03_DATA_ASSET_AUTHORITY_AND_LINEAGE.md", "bytes": 36928, "sha256": "ae772b0081aaa545234d19fceca58c3bd989c9e780344d6c47901c90835e4a03", "role": "A3_report" },
+    { "path": "04_DATABASE_AND_DDL_READINESS.md", "bytes": 36539, "sha256": "2df84815ab032e61fa5fe6596742469e626ada7c23d34129ff050e27411c53a1", "role": "A4_report" },
+    { "path": "05_TRACE_RESEARCH_SEMANTICS.md", "bytes": 39142, "sha256": "d6530b1624d930fef2506d991c1c1e7563ae4e91f8d09db1db247884f396b5f0", "role": "A5_report" },
+    { "path": "06_RIGHTS_AND_VISUAL_FEDERATION.md", "bytes": 37487, "sha256": "f455ba1551dd5d6518fd2fc47750d5b7e33c64c08b5bc8a1af90b678b8fc8e93", "role": "A6_report" },
+    { "path": "07_FRONTEND_A4_AND_BUILD_COUPLING.md", "bytes": 28616, "sha256": "11225d6bd83ef5bb8a6a131a922747643ad81e4b4163fd7967bba3daf99d48c3", "role": "A7_report" },
+    { "path": "08_AI_RAG_SLM_RETIREMENT.md", "bytes": 25430, "sha256": "492e5b371f68fbc532bc5e1adb8b00b209429e45b74de1b427942b52e0354610", "role": "A8_report" },
+    { "path": "09_QA_ACCESSIBILITY_AND_VISUAL_EVIDENCE.md", "bytes": 21673, "sha256": "7513f15e7323213f78f345e011edda07cc58a50da3399d9f98dab71db94c0596", "role": "A9_report" },
+    { "path": "10_MACHINE_API_SECURITY_CI_DEPLOYMENT.md", "bytes": 29504, "sha256": "59b617d12115673eb77178906eba9b0319edad8fed8302f4b13924e4e5127658", "role": "A10_report" },
+    { "path": "11_CLEANUP_ACTION_LEDGER.md", "bytes": 13211, "sha256": "5982520e9c06d4551b5af69479a23232038ae4e358e501c78d9042fd40cbedae", "role": "cleanup_action_ledger" },
+    { "path": "12_FREEZE_READINESS_MATRIX.md", "bytes": 11043, "sha256": "1074894822350a9a58bdbd6dd369f91fefcb5f86890c606a1d02c5a14c8cb167", "role": "freeze_readiness_matrix" },
+    { "path": "13_PROCESS_AND_COMMAND_RECEIPT.md", "bytes": 9619, "sha256": "f7b0bb08b14d86a9cef42d0cd24a8c39b2e887e9768d5e7ea105e5b0b972a34a", "role": "process_command_receipt" },
+    { "path": "AUDIT_TASK_REGISTER.md", "bytes": 1941, "sha256": "f87278bb0e960463c07f1bbbea8e468c7908e40d007f3c480a12b37d5d9eb795", "role": "task_register" }
+  ],
+  "normativeDocuments": [
+    { "path": "ARCHITECTURE.md", "bytes": 18709, "sha256": "f1a74ae30d89ed4ce9e4efc54cc436e5c7bf6d4578b1ad26397d155624dbd832" },
+    { "path": "DATA_MODEL_V49.md", "bytes": 28408, "sha256": "b57ef0198acf045fa3b7f511799ddd6d720e608fc8be8cf3efeb107a5f064ada" },
+    { "path": "READ_API_V1.md", "bytes": 14681, "sha256": "577e0a5cb44b862e17be488be18b8f09d28fb0e0f6a3cb4d4c0f6c98200c3fce" },
+    { "path": "MIGRATION_V48_TO_V49.md", "bytes": 16783, "sha256": "31eaf29125befb8587b844cd796cecdbe5dde1599fb2abee208d55d1da57017e" },
+    { "path": "ACCEPTANCE_GATES.md", "bytes": 18091, "sha256": "7d3a8318c8a0c209e52e73f1b3134cca019ae2fd3e9e829123ddc4d807d24864" },
+    { "path": "docs/adr/0001-canonical-postgres-and-read-only-release.md", "bytes": 8531, "sha256": "f9123f079eae6bff0f3d5df7bedaf6812ef5cda8e496f233e3a8746be661f148" },
+    { "path": "docs/adr/0002-immutable-data-versioning.md", "bytes": 11214, "sha256": "8d04b6f72088234f9ad82c98559c623dc8e4acabc43ed03aeb8c2d883e9171c3" },
+    { "path": "docs/adr/0003-runtime-repository-and-fixture-mode.md", "bytes": 9019, "sha256": "f8ded417443bc3bbebf9986ec67aed8b534644f2232024d2dedad9b16e36d431" },
+    { "path": "docs/adr/0004-research-claims-corpora-and-visual-registry.md", "bytes": 14415, "sha256": "b285572b9c3605850ba51309737b07048711ba83185ffc10cf3fa68dc399dc75" },
+    { "path": "docs/architecture/DDL_DECISION_PACK_V49.md", "bytes": 37635, "sha256": "b1c1aefd5cd73478a6a349f6e28855b51f92973d3a09e342a446a651acf648f8" }
+  ],
+  "checksumFile": {
+    "path": "AUDIT_CHECKSUMS.sha256",
+    "algorithm": "SHA-256",
+    "scope": "All audit artifacts including this manifest, excluding the checksum file itself; normative documents are also listed."
+  }
+}
