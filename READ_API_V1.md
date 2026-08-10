@@ -52,6 +52,8 @@ API DTOs are stable read models and do not reuse PostgreSQL rows or expose schem
 
 `SurfaceSummary` contains only list/search fields: ID, title, display date, principal credited labels, place/medium/type labels, rights-safe thumbnail state, source label, and publication layer.
 
+The exposed `surfaceId` is a durable public route identifier, not the canonical `archive_object_id`. A sealed release also freezes alias/redirect/split/withdrawal resolution; read-time identity never consults mutable canonical crosswalk rows.
+
 `SurfaceDetail` may include:
 
 - the presentation bundle needed by current visual pages;
@@ -69,11 +71,11 @@ It never contains raw provider payloads, private workflow notes, database keys, 
 
 `GET .../trace/objects` requires or defaults an explicit `layer`:
 
-- `active`: accepted and `countEligible=true`;
-- `review`: registered but held/review publication layer, excluded from active counts;
-- `auxiliary`: context-only, always `countEligible=false`.
+- `active`: the sealed active publication layer;
+- `review`: an explicitly published review layer, independent of whether a workflow case is currently in review;
+- `auxiliary`: a context-only publication layer.
 
-The returned summary is a discriminated union and always carries `layer` and `countEligible`. The atlas and default neighborhood expose accepted relation types only.
+The returned summary is a discriminated union and always carries `layer`. Metric-specific eligibility is reported only for a named release metric; there is no universal canonical `countEligible` implication. The atlas and default neighborhood expose accepted relation types only.
 
 An unregistered relation is not an `OTHER` type and is not a normal review DTO. It remains in raw/workflow systems outside the public read API. If an accepted release asset contains an unknown label, the resource fails with `INTEGRITY_FAILURE` rather than returning partial graph data.
 
@@ -96,7 +98,9 @@ The API preserves these separately named units:
 
 Results use a discriminated union (`archive`, `trace`, or `relation`) and carry stable IDs, highlights derived from rights-safe read models, and explicit routes. Search documents are release projections and cannot write back into canonical tables.
 
-v48 parity keeps two existing units distinct: the archive Search artifact contains 8,636 items, while the active TRACE catalog contains 15,923 objects. v49 may build one physical search index, but acceptance and API metrics must retain the logical scope and unit of each count.
+v48 reconciliation keeps two existing populations distinct: archive Search has 8,636 unique IDs and canonical JSON/active TRACE has 15,923. Their intersection is 2,585; Search-only is 6,051; TRACE-only is 13,338; the union is 21,974. Search is therefore not a subset of TRACE.
+
+Only the canonical JSON/TRACE cohort seeds v49 migration. The Search-only derived population is not copied into canonical data. A v49 Search projection is generated from its sealed release cohort, so 8,636 is an integrity/reconciliation fact rather than a required v49 result count.
 
 No query may trigger live provider scraping. Empty queries do not load bulk indexes, preserving the current useful on-demand behavior.
 
@@ -159,7 +163,7 @@ Errors use `application/problem+json`:
 ## Caching and integrity
 
 - Exact sealed endpoints return a strong ETag derived from manifest hash plus resource hash and use `Cache-Control: public, max-age=31536000, immutable` where rights permit public caching.
-- The `current` resolver uses short caching or revalidation and returns the exact descriptor.
+- The `current` resolver uses short caching or revalidation and returns the exact descriptor. Publishing it is a release-layer CAS operation; the read API never updates it.
 - Responses include `X-Archive-Release-Id` and `X-Archive-Manifest-Sha256` for diagnostics; the JSON envelope remains authoritative.
 - Repository caches and request deduplication key on exact release and manifest hash.
 - The service validates database projection identity or immutable asset hash before serving. A permanently invalid release is quarantined from `current`.

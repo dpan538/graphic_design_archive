@@ -14,12 +14,14 @@ Every v49 read dataset is an immutable release. A release has one globally uniqu
 
 ### Release identity and lifecycle
 
-Allowed states are `draft`, `candidate`, `sealed`, and `superseded`.
+The only forward states are `draft → candidate → validated → sealed`.
 
-- `draft` and `candidate` may be regenerated under a new candidate attempt ID.
-- `sealed` bytes are immutable. Database privileges and a seal trigger reject mutation or deletion.
-- `superseded` means a newer release is recommended; it does not permit modification or removal.
-- A failed candidate is retained as workflow evidence but is never resolved by `current`.
+- `draft` projection rows/assets may be rebuilt under the draft attempt.
+- `candidate` closes the source snapshot, cohort, query/registry digests, copied projection rows, and asset paths.
+- `validated` means every required pre-seal receipt passes against one immutable candidate fingerprint.
+- `sealed` commits canonical manifest bytes/hash with the state transition. Database privileges and a defense-in-depth trigger reject mutation or deletion.
+- Supersession is pointer/history metadata on an already sealed release, not a mutable release state.
+- A failed attempt remains with its failed receipts and is never resolved by `current`; remediation uses a new attempt/release ID.
 
 The release ID is semantic but never content authority by itself. Consumers must bind the pair `(releaseId, manifestSha256)`.
 
@@ -38,6 +40,8 @@ Manifest JSON uses one specified canonicalization algorithm (RFC 8785 JSON Canon
     "v48CandidateJsonSha256": "64 lowercase hex",
     "v48SqliteSha256": "64 lowercase hex",
     "v48TransferManifestSha256": "64 lowercase hex",
+    "v48TransferManifestCsvSha256": "64 lowercase hex",
+    "v48TraceManifestSha256": "64 lowercase hex",
     "sourceGitCommit": "full commit"
   },
   "database": {
@@ -69,6 +73,19 @@ Each `assets[]` entry contains:
 The manifest must not contain `current`, mutable URLs, absolute local paths, credentials, or timestamps that make otherwise identical exports non-deterministic.
 
 The manifest hash is stored in a small release descriptor outside the manifest and in the promotion receipt. The manifest cannot self-authenticate by embedding its own final hash.
+
+### Seal protocol
+
+1. Build copied release projections in a repeatable database snapshot while `draft`.
+2. Transition to `candidate` with compare-and-swap on the draft state/version and close the candidate fingerprint.
+3. Produce immutable pre-seal receipts for all five v48 artifacts, migration/query digests, exact counts and population boundaries, FK/orphan checks, relation registry, rights policy, unknown-relation isolation, grants, projection fingerprints, and deterministic asset inventory.
+4. Transition to `validated` only when every required receipt is passing and hash-bound to the same candidate fingerprint.
+5. Generate RFC 8785 manifest bytes from the validated inventory and receipt hashes, then compute SHA-256 over those exact bytes.
+6. In one serializable transaction, recheck the fingerprint, store manifest bytes/hash, and transition `validated → sealed`. Any mismatch aborts.
+7. Write a detached post-seal sidecar containing release ID, manifest SHA-256, seal transaction identity, timestamp, and optional signature/attestation. It is outside the self-hashed manifest and cannot change the asset inventory.
+8. Update `current` only by CAS on the expected pointer generation, release ID, and manifest SHA. The target must be sealed; rollback uses the same CAS mechanism.
+
+Candidate and sealed projections are copied/versioned rows. They are never views that join mutable canonical tables, so later canonical edits cannot make a sealed release drift.
 
 ### Shard envelope
 
@@ -102,7 +119,7 @@ Missing files, schema mismatches, release mismatches, hash mismatches, duplicate
 ### Caching
 
 - Exact sealed resources use strong ETags and `Cache-Control: public, max-age=31536000, immutable`.
-- The `current` descriptor is a resolver with short caching or revalidation. A repository resolves it once, then switches to exact release URLs.
+- The `current` descriptor is mutable routing metadata with append-only history and CAS updates. It uses short caching or revalidation. A repository resolves it once, then switches to exact release URLs.
 - Caches and request deduplication are keyed by release ID and manifest SHA, never path alone.
 
 ## Consequences

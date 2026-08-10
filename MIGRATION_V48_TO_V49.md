@@ -19,10 +19,11 @@ The migration begins only after actual bytes match this ledger:
 | `data/prefreeze_candidate_v48.sqlite` | 421,801,984 | `ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e` |
 | `generated/prefreeze_candidate_v48_transfer_manifest.json` | 21,752 | `865358db84c15d960b3535969a32521c0ffec177f7455d21db86cd131f787d5b` |
 | `data/prefreeze_candidate_v48_transfer_manifest.csv` | 12,861 | `694a60657077bcab8888c4a4ef1daf6059706e544606d4862e46c57dcf6ddc18` |
+| `frontend/public/data/trace-v48/manifest.json` | 83,900 | `1678e211023aa324078e0478f88670d2378b6dc5c398cc5c04722605038fee23` |
 
 Additional frozen evidence includes the transfer inventory (65 files, 613,077,245 bytes, two LFS objects, zero remote mismatch), SQLite `integrity_check=ok`, 55 PASS/0 HOLD, and the TRACE manifest/assets.
 
-The JSON remains canonical for v48. SQLite is a read-only query snapshot used for reconciliation and must never be opened in writable mode or allowed to create sidecars.
+The JSON is the only v48 migration input. SQLite is a read-only reconciliation snapshot and must never be opened in writable mode or allowed to create sidecars. Transfer/TRACE manifests are integrity evidence. Archive Search, atlas/catalogs, and TRACE shards are derived products and may not contribute canonical rows or fill missing JSON fields.
 
 The legacy `public_surface_shards_v1` sidecar is not a frozen release input: it was ignored/untracked while the monolith remained canonical. Migration must not discover or ingest it by directory convention.
 
@@ -36,7 +37,7 @@ Exit: architecture terms, hard invariants, migration gates, and rollback are app
 
 ### M1 — Baseline seal
 
-Use pure read-only verifiers to recompute the four official hashes, file sizes, SQLite integrity, exact counts, transfer inventory, and all declared TRACE asset hashes. Store a new verification receipt outside frozen paths.
+Use pure read-only verifiers to recompute all five hashes, file sizes, SQLite integrity, exact counts/population boundaries, transfer inventory, and all declared TRACE asset hashes. Store a new verification receipt outside frozen paths.
 
 The existing freeze auditor is not a clean-room verifier for this purpose: it expects a v47 intermediate deliberately excluded from the transfer and writes reports into frozen paths. Its saved 55 PASS/0 HOLD receipt remains valid evidence, but cannot be presented as a fresh self-contained rerun from clean `0404c7f`.
 
@@ -52,13 +53,15 @@ Exit: a fresh empty database replays deterministically and constraint/privilege 
 
 ### M3 — Raw staging
 
-Register frozen artifacts by path/hash and ingest their records into append-only raw tables with record order, JSON pointer/column, literal, source locator, and import-run identity. Re-running the same import is idempotent.
+Register all five frozen artifacts by path/hash/authority role, but ingest records only from the canonical JSON. Preserve its raw artifact bytes/hash as lexical authority; parsed JSONB is a versioned convenience projection. Record order, JSON Pointer, literal, source locator, and import-run identity make replay idempotent.
 
 Exit: every source item is accounted for, raw counts and aggregate hashes reconcile, and v48 files remain byte-identical. Parse failures are explicit quarantine rows, never dropped records.
 
 ### M4 — Canonical normalization
 
 Build objects, agents, places, concepts, collections, temporal extents, rights representations, provenance assertions, and research joins from governed mapping versions. Preserve raw text and produce a delta ledger for every unresolved or intentionally changed item.
+
+Identity seeding is deterministic and non-deduplicating: each of the 15,923 canonical JSON `surfaceId` rows creates one UUIDv5 archive object plus one primary surface crosswalk. Each links to its unique `sourceRecordId` and unique TRACE root node. Source object keys and TRACE canonical keys are attributes, not unique identifiers.
 
 Multi-value migration is provenance-led:
 
@@ -76,13 +79,13 @@ Multi-value migration is provenance-led:
 
 Semicolon incidence is a discovery signal, not a parser. Values such as names, place/date phrases, and physical dimensions can contain semicolons. Silent `split(';')`, loss of order/duplicates, trimming that changes meaning, or manufactured entities fail the phase.
 
-Exit: each mapping has source pointer, cardinality, ordering, duplicate/null policy, normalization rule, provenance target, round-trip query, unresolved policy, and orphan checks. Unresolved rows remain held and cannot publish.
+Exit: each mapping has source pointer, cardinality, ordering, duplicate/null policy, normalization rule, provenance target, round-trip query, unresolved policy, and orphan checks. Unresolved values remain proposed assertions in a queued workflow case and create no canonical assignment or publication row.
 
 ### M5 — Governance and relation registry
 
-Seed the reviewed relation registry and rights policy. Canonical edges require a registered type FK and accepted evidence. Unknown source labels go only to `workflow.relation_type_review_queue` as `held`, without family and with `count_eligible=false`.
+Seed the reviewed relation registry and rights policy. Canonical edges require a registered type FK and accepted evidence. Unknown source labels remain proposed raw assertions in a queued `workflow.relation_type_review_queue` case, without family, canonical edge, publication layer, or metric eligibility.
 
-Inject a negative `__unknown_relation__` fixture. It must remain raw/held, leave active/release counts unchanged, and cause any deliberately corrupt release asset to be rejected by the repository.
+Inject a negative `__unknown_relation__` fixture in the later implementation phase. It must remain raw/queued, leave active/release counts unchanged, and cause any deliberately corrupt release asset to be rejected by the repository.
 
 Exit: zero accepted unregistered edges, zero coercions, zero non-approved release edges, zero rights widening, and negative fixture isolation passes.
 
@@ -96,14 +99,17 @@ Compare canonical/projection queries with frozen v48. Exact baseline units inclu
 - 30 active trees;
 - 12,952 source verified and 2,971 metadata supported;
 - 4,425 review/authority hold and 11 auxiliary objects, excluded from active counts;
-- 8,636 archive Search artifact items and 15,923 active TRACE catalog items, recorded as different scopes;
+- 8,636 archive Search IDs and 15,923 canonical JSON/active TRACE IDs;
+- exact population boundary: intersection 2,585, Search-only 6,051, TRACE-only 13,338, union 21,974;
 - 18 forced LOC repair edges, 200/200 saved audit sample, 55 PASS/0 HOLD.
 
-Exit: exact parity or an explicit, reviewed delta ledger for every difference. Any unresolved delta prevents promotion; it is not rounded away or relabeled.
+The 6,051 Search-only rows are reconciled as derived-product exclusions and are not imported. A v49 Search projection is generated from the sealed canonical cohort; 8,636 is not a canonical-row or future Search-result parity target.
+
+Exit: exact canonical parity or an explicit, reviewed delta ledger for every difference, plus exact derived-population set reconciliation. Any unexplained delta prevents promotion; it is not rounded away or relabeled.
 
 ### M7 — Immutable candidate release and read API
 
-Materialize `api_v1`, generate a new release-scoped manifest and deterministic shards in a fresh destination, verify exact declared file set plus detached manifest hash, and run the same repository contract suite against API, immutable release, and fixture adapters.
+Copy release projections from one closed snapshot and advance only through `draft → candidate → validated → sealed`. Candidate closure fixes cohort/query/registry/asset fingerprints; validated requires all pre-seal receipts. Generate canonical manifest bytes/SHA, commit them atomically with seal, emit the post-seal detached sidecar, and publish `current` only by CAS. Then verify exact declared file set and repository contract parity.
 
 Exit: deterministic re-export hashes match, asset/schema/release IDs verify, API/repository DTO parity passes, performance budgets pass, and corruption/unknown-relation tests fail closed. v48 directories remain unchanged.
 
@@ -142,7 +148,7 @@ Stable-ID reconciliation emits sets for missing, unexpected, duplicated, remappe
 
 ## Explicit stop conditions
 
-Stop and mark the relevant gate `FAIL` for any source hash mismatch, write to frozen paths, missing LFS content, silent parse/drop, unknown relation coercion, rights widening, active/review/auxiliary leakage, unexplained count/ID drift, non-deterministic release, cross-release asset reference, API write path, frontend direct database access, or prototype full build.
+Stop and mark the relevant gate `FAIL` for any source hash mismatch, write to frozen paths, missing LFS content, importing SQLite/Search/TRACE-derived rows, silent parse/drop or identity merge, unknown relation coercion, rights widening, state-axis conflation, unexplained count/ID drift, non-deterministic release, incomplete seal/CAS, sealed projection drift, cross-release asset reference, API write path, frontend direct database access, or prototype-only prohibited process during a checkpoint governed by G9.
 
 ## Next implementation work packages
 

@@ -14,6 +14,8 @@ The v49 frontend needs one asynchronous read contract that works with a producti
 
 All archive reads pass through an `ArchiveRepository`. Repository DTOs are stable read models; they do not expose PostgreSQL table or column names and are not aliases for the current `Surface` UI type.
 
+`surfaceId` in that contract is the sealed public/legacy route identifier, not the internal canonical `archive_object_id`. Identity aliases, merges, splits, and withdrawals are resolved from the sealed release projection rather than mutable canonical tables.
+
 An instance is opened against one exact release. Resolving `current` is a provider concern and occurs only once.
 
 ```ts
@@ -120,7 +122,7 @@ One server-side composition root selects `api`, `release`, or `fixture` from an 
 - The repository validates schemas, maps errors, deduplicates requests, handles `AbortSignal`, and caches by exact release.
 - `NOT_FOUND`, `UNAVAILABLE`, and `INTEGRITY_FAILURE` remain distinct; none collapse to `undefined`.
 
-`SurfaceDetail` may project the rights-safe presentation bundle needed by the existing visual pages, but large memberships are separate paginated calls. `FolderDetail` does not embed thousands of surface IDs. TRACE summaries are a discriminated union of `active`, `review`, and `auxiliary`, and always expose `countEligible`.
+`SurfaceDetail` may project the rights-safe presentation bundle needed by the existing visual pages, but large memberships are separate paginated calls. `FolderDetail` does not embed thousands of surface IDs. TRACE summaries are a discriminated union of `active`, `review`, and `auxiliary`; eligibility is returned only for a named sealed-release metric, not as a universal canonical boolean.
 
 ## Fixture mode
 

@@ -17,10 +17,11 @@ PASS requires:
 
 - long-term worktree is not the dirty main worktree;
 - branch is `refactor/v49-data-platform`;
-- source commit `0404c7f96f9189f576c4c5b1368061e4082e436b` is an ancestor of final HEAD;
-- source remote ref resolves to that exact commit at recovery time;
+- source commit `0404c7f96f9189f576c4c5b1368061e4082e436b` is an ancestor of final HEAD and its recovery ref resolves exactly;
+- the phase-defined baseline commit matches local HEAD and the working-branch remote before edits;
 - dirty-main tracked/untracked baseline fingerprints are unchanged after work;
-- final worktree is clean after one local architecture commit.
+- final worktree is clean after at most one phase-authorized architecture commit;
+- when an ordinary push is required, the working-branch remote SHA is verified equal to final HEAD.
 
 Any edit to the dirty main or wrong source commit is FAIL.
 
@@ -34,8 +35,9 @@ PASS requires actual read-only recomputation, not receipt citation alone:
 | SQLite snapshot | 421,801,984 | `ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e` |
 | Transfer manifest JSON | 21,752 | `865358db84c15d960b3535969a32521c0ffec177f7455d21db86cd131f787d5b` |
 | Transfer manifest CSV | 12,861 | `694a60657077bcab8888c4a4ef1daf6059706e544606d4862e46c57dcf6ddc18` |
+| TRACE manifest | 83,900 | `1678e211023aa324078e0478f88670d2378b6dc5c398cc5c04722605038fee23` |
 
-Also required: SQLite `integrity_check=ok`, no source modification, and LFS content present rather than pointer text. Citation-only verification is PARTIAL. Any mismatch or write is FAIL.
+All five must be recomputed from actual bytes. Also required: SQLite `integrity_check=ok`, no source modification, and LFS content present rather than pointer text. Candidate JSON is the only migration input; SQLite is reconciliation-only; manifests are integrity evidence. Citation-only verification is PARTIAL. Any mismatch or write is FAIL.
 
 ## G2 — Exact frozen counts and units
 
@@ -60,14 +62,18 @@ PASS requires independently named exact values:
 | Auxiliary | 11 |
 | Archive Search artifact items | 8,636 |
 | Active TRACE catalog items | 15,923 |
+| Search ∩ canonical/TRACE IDs | 2,585 |
+| Search-only IDs | 6,051 |
+| Canonical/TRACE-only IDs | 13,338 |
+| Search ∪ canonical/TRACE IDs | 21,974 |
 | Saved audit sample | 200 / 200 pass |
 | Freeze gates | 55 PASS / 0 HOLD |
 
-TRACE manifest must have observed SHA-256 `1678e211023aa324078e0478f88670d2378b6dc5c398cc5c04722605038fee23` and declare 580 hashed assets, including 576 neighborhood shards, with zero declared hash failures. Total graph edges and memberships, or archive Search and TRACE objects, must not be conflated. Receipt/manifest evidence without future Postgres parity is PASS for recovery but PARTIAL for migration parity. Any unexplained mismatch or unit relabeling is FAIL.
+TRACE manifest must declare 580 hashed assets, including 576 neighborhood shards, with zero declared hash failures. Search IDs must equal the legacy frontend mock set; canonical JSON IDs must equal the active TRACE catalog set. Search-only derived rows are not migration input. Total graph edges and memberships, or archive Search and TRACE populations, must not be conflated. Receipt/manifest evidence without future Postgres parity is PASS for recovery but PARTIAL for migration parity. Any unexplained mismatch or unit relabeling is FAIL.
 
 ## G3 — Architecture checkpoint scope
 
-PASS requires exactly the requested architecture documents as the only checkpoint changes:
+PASS requires the normative architecture corpus and only authorized documentation changes:
 
 - `ARCHITECTURE.md`
 - `docs/adr/0001-canonical-postgres-and-read-only-release.md`
@@ -77,14 +83,15 @@ PASS requires exactly the requested architecture documents as the only checkpoin
 - `READ_API_V1.md`
 - `MIGRATION_V48_TO_V49.md`
 - `ACCEPTANCE_GATES.md`
+- `docs/architecture/DDL_DECISION_PACK_V49.md`
 
-They must consistently define all eight layers, read-only v48, PostgreSQL authority timing, immutable releases, repository/API boundary, fail-closed relations, migration mapping, CI split, and prototype restrictions. Missing hard invariants are PARTIAL; changes to v48 or visual code are FAIL.
+They must consistently define all eight layers, artifact authority, entity/identity/cardinality, typed FKs, assertion/evidence/decision joins, orthogonal states, immutable release seal/CAS, role privileges, repository/API boundary, fail-closed relations, migration mapping, CI split, and phase-scoped prototype restrictions. Missing P0 invariants are PARTIAL; changes to v48 or visual code are FAIL.
 
 ## G4 — Canonical data model and normalization
 
-Architecture PASS requires a complete logical mapping inventory, raw-literal preservation, provenance pointers, join cardinality/order/duplicate/null/unresolved policies, and JSONB limits.
+Architecture PASS requires a complete identity/cardinality and mapping inventory, raw-byte/literal authority, provenance pointers, real FKs, join cardinality/order/duplicate/null/unresolved policies, and JSONB limits.
 
-Migration PASS later requires lossless raw round-trip, zero orphan joins, accepted joins backed by assertions/decisions, and an explicit quarantine/delta ledger. A reliable held queue with no release leakage is PARTIAL until resolved. Silent delimiter splitting, dropped values/order/duplicates, or opaque canonical JSONB relations are FAIL.
+Migration PASS later requires lossless raw accounting, zero orphan joins, accepted joins backed by assertions/decisions, and an explicit quarantine/delta ledger. Unresolved literals/assertions may remain `proposed` in a fully accounted workflow queue and G4 can still PASS when no canonical assignment or release row exists for them. PARTIAL means accounting, provenance, or isolation is incomplete—not merely that the queue is non-empty. Silent delimiter splitting, dropped values/order/duplicates, unconstrained polymorphic IDs, or opaque canonical JSONB relations are FAIL.
 
 ## G5 — Unknown relation fail-closed
 
@@ -92,13 +99,13 @@ Architecture PASS requires:
 
 - one publishable `research.relation_type` registry;
 - mandatory FK from canonical accepted edge;
-- unmapped labels retained raw and routed to `workflow.relation_type_review_queue`;
-- `held`, `count_eligible=false`, no assigned fallback family;
+- unmapped labels retained as proposed raw assertions and routed to a queued `workflow.relation_type_review_queue` case;
+- no canonical edge, assigned fallback family, publication-layer row, or metric-eligibility row;
 - release/API exclude unknown/non-approved relations;
 - registry digest pinned in manifest;
 - repository returns integrity error on corrupt release data.
 
-Implementation PASS later requires zero accepted unregistered edges, zero coercions, zero non-approved release edges, and a passing `__unknown_relation__` negative fixture. Design without implementation is PARTIAL for the implementation gate. Any fallback to `medium_context/documented` or release leakage is FAIL.
+Implementation PASS later requires zero canonical unregistered edges, zero coercions, zero non-approved release edges, and a passing `__unknown_relation__` negative fixture. A non-empty raw/workflow unknown queue is compatible with G5 PASS when isolation is complete; release completeness/promotion policy is evaluated in G10. Design without implementation is PARTIAL for the implementation gate. Any fallback to `medium_context/documented` or release leakage is FAIL.
 
 ## G6 — `ArchiveRepository` and Read API v1
 
@@ -108,7 +115,15 @@ Implementation PASS later requires one shared conformance suite across all adapt
 
 ## G7 — Immutable manifest and shards
 
-Architecture PASS requires canonical manifest rules, detached hash, exact file inventory, source/database/query/registry lineage, per-asset schema/bytes/records/hash/partition, self-identifying shard envelope, deterministic ordering, seal controls, and fail-closed validation.
+Architecture PASS requires canonical manifest rules, detached hash, exact file inventory, source/database/query/registry lineage, per-asset schema/bytes/records/hash/partition, self-identifying shard envelope, deterministic ordering, and this seal protocol:
+
+- only `draft → candidate → validated → sealed` forward transitions;
+- candidate closure fixes snapshot/cohort/query/registry/projection/asset fingerprints;
+- validated requires immutable passing pre-seal receipts bound to that fingerprint;
+- canonical manifest bytes and SHA are committed atomically with `validated → sealed`;
+- detached post-seal sidecar records the manifest SHA and seal transaction without changing manifest inventory;
+- a verified post-seal sidecar is required before pointer eligibility, and `current` changes only by CAS to an exact sealed release/manifest pair;
+- candidate/sealed projections are copied rows and never drift through joins to mutable canonical tables.
 
 Implementation PASS later requires repeat export byte equality, actual directory set equality (declared assets plus manifest/receipt only), all hashes/schema/release IDs verified, no cross-release references, and corruption tests. Format design without generated artifact is PARTIAL for implementation. Overwriting a version, mutable-only `current`, missing hashes, undeclared files, or fallback after corruption is FAIL.
 
@@ -122,9 +137,9 @@ Architecture PASS requires two independent workflows:
 
 Documented separation with no workflows yet is PARTIAL for CI implementation. A shared job that lets data mutate frontend output, or frontend access the live canonical database, is FAIL.
 
-## G9 — Prototype process prohibition
+## G9 — Prototype/checkpoint process prohibition
 
-PASS for architecture/prototype requires that none of these are run as acceptance steps:
+G9 applies only to an architecture, recovery, or prototype checkpoint whose task explicitly invokes it. It is not a permanent ban on authorized migration CI, release validation, or production promotion. For an in-scope checkpoint, PASS requires that none of these are run as acceptance steps:
 
 - `npm install`;
 - `next dev` or any server;
@@ -133,13 +148,13 @@ PASS for architecture/prototype requires that none of these are run as acceptanc
 - browser automation or manual browser launch;
 - data export or regeneration.
 
-Allowed work is documentation, read-only Git/file/hash/SQLite inspection, fixture/schema design, and later focused repository/unit/contract tests. Running a prohibited process during the prototype gate is FAIL. Full build/browser validation remains PARTIAL until a separately authorized promotion phase.
+Allowed work is the scope explicitly named by that checkpoint. Running a prohibited process during an in-scope G9 checkpoint is FAIL. A later phase does not become PARTIAL merely because it legitimately follows its own command matrix; production promotion may explicitly require full build/browser validation.
 
 ## G10 — Migration parity and promotion
 
 PASS later requires M1–M8 receipts, exact or approved delta-ledger parity, rights non-widening, unknown-relation closure, deterministic sealed release, API/repository parity, independent CI receipts, full promotion-only TypeScript/build/browser/visual checks, and tested rollback.
 
-Architecture-only completion is PARTIAL for this gate. Promotion with any held blocker, unexplained delta, missing receipt, or no rollback is FAIL.
+Architecture-only completion is PARTIAL for this gate. Promotion with any item explicitly designated promotion-blocking, unexplained delta, missing receipt, or no rollback is FAIL. A fully isolated non-blocking raw/workflow queue does not fail G4/G5 by existence alone.
 
 ## G11 — Residual process and local checkpoint receipt
 
@@ -147,7 +162,7 @@ PASS requires:
 
 - no server, build, compiler, browser automation, data generator/export, or package installer process started by this work remains alive;
 - final receipt reports worktree, branch, final HEAD, source ancestor, changed files, local commit, frozen hashes, main baseline comparison, and each gate result;
-- no PR, merge, push, or deployment occurred.
+- no PR, merge, force push, or deployment occurred; an ordinary push is allowed only when the checkpoint explicitly requires it and the remote SHA is then verified.
 
 Unknown residual state is PARTIAL. A prohibited residual process or unreported external mutation is FAIL.
 

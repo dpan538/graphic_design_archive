@@ -11,6 +11,8 @@ v48 has two frozen representations with different authority:
 - `generated/public_surfaces_prefreeze_candidate_v48.json` is the canonical v48 candidate.
 - `data/prefreeze_candidate_v48.sqlite` is a read-only query snapshot and does not supersede the JSON.
 
+The authority decision is stricter for migration: the JSON is the only v48 migration input. SQLite is reconciliation-only; transfer and TRACE manifests are integrity evidence; Search, atlas, catalogs, and shards are derived products and cannot supply canonical rows.
+
 The current frontend imports the large public JSON as its binding contract, builds additional search data separately, and fetches TRACE atlas/catalog/shards inside UI components. This couples storage shape, release packaging, and presentation code. It also makes it possible to mix resources from different versions.
 
 v49 needs a canonical transactional model for normalized data, while preserving deterministic, inspectable, cacheable read releases.
@@ -44,14 +46,17 @@ An immutable release is a reproducible projection of one accepted PostgreSQL sta
 
 `api_v1` exposes only accepted, rights-safe, release-scoped projections. It cannot trigger ingestion, review, promotion, or mutation.
 
+`core.entity` is a closed UUID supertype whose subtype row is enforced by FK and entity kind. Semantically specific links target subtype FKs; deliberately multi-kind links target `core.entity` plus an allowed-kind constraint. Canonical tables never use unconstrained `target_type + target_id`.
+
 ## Authority rules
 
-1. v48 artifacts stay byte-for-byte read-only. Migration imports reference their hashes and never rewrite them.
-2. Raw source literals are preserved even when a normalized value is created.
-3. PostgreSQL becomes canonical for v49 only after all cutover gates pass. Before then, v48 remains the production rollback source.
-4. Queryable domain relationships are represented by typed tables and joins, not opaque JSONB.
-5. JSONB is permitted for immutable raw payloads, provider-specific extensions, and non-authoritative diagnostics only.
-6. `release` and `api_v1` are derived layers; they cannot be used to write back into `core`, `research`, or other canonical schemas.
+1. v48 artifacts stay byte-for-byte read-only. Only the canonical JSON supplies migration records; all other frozen/read products are reconciliation or integrity evidence.
+2. Raw artifact bytes, length, and SHA-256 are lexical authority. JSONB is a versioned parsed projection and cannot reproduce or certify source bytes.
+3. Raw source literals are preserved even when a normalized value is created.
+4. PostgreSQL becomes canonical for v49 only after all cutover gates pass. Before then, v48 remains the production rollback source.
+5. Queryable domain relationships are represented by typed tables and joins, not opaque JSONB.
+6. JSONB is permitted for parsed raw payloads, provider-specific extensions, and non-authoritative diagnostics only.
+7. `release` and `api_v1` are derived layers; they cannot be used to write back into `core`, `research`, or other canonical schemas.
 
 ## Consequences
 
@@ -79,3 +84,5 @@ Costs and constraints:
 ## Follow-up boundary
 
 This ADR authorizes architecture only. It does not authorize schema creation, data import, export, frontend rewiring, deployment, or v48 mutation. Those actions require the gates in `ACCEPTANCE_GATES.md`.
+
+Identity, cardinality, state, release-seal, and privilege decisions are normative in `docs/architecture/DDL_DECISION_PACK_V49.md`.

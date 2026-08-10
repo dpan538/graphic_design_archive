@@ -1,6 +1,6 @@
 # v49 data platform architecture baseline
 
-- Status: Architecture checkpoint; no migration or visual-page implementation
+- Status: Architecture baseline plus Phase 1A pre-DDL decisions; no migration or visual-page implementation
 - Baseline date: 2026-08-10
 - Recovered source commit: `0404c7f96f9189f576c4c5b1368061e4082e436b`
 - Working branch: `refactor/v49-data-platform`
@@ -38,13 +38,14 @@ The v49 architecture treats those blockers as cutover gates, not as reasons to m
 ## Non-negotiable invariants
 
 1. Frozen v48 JSON, SQLite, manifests, shards, and receipts are never edited in place.
-2. v48 canonical authority remains the frozen JSON; v48 SQLite remains a read-only query snapshot.
+2. The frozen v48 JSON is the only migration input. SQLite is reconciliation-only; transfer/TRACE manifests are integrity evidence; Search and TRACE assets are derived products.
 3. PostgreSQL becomes canonical for v49 only after reconciliation and promotion gates pass.
-4. Every normalized value keeps a link to the raw literal, source locator, transformation, and review decision when applicable.
-5. A release is addressed by exact `releaseId` and manifest SHA-256. No consumer silently mixes releases.
-6. Unknown relation types, rights ambiguity, schema mismatch, or hash mismatch fail closed.
-7. Browser and UI code never import a database driver, raw provider payload, full canonical dump, manifest decoder, or shard decoder.
-8. Visual components do not change in this architecture checkpoint.
+4. Raw artifact bytes and SHA-256 are lexical authority. JSONB is a parsed projection and cannot certify or replace those bytes.
+5. Every normalized value keeps a link to the raw literal, source locator, transformation, and review decision when applicable.
+6. A release is addressed by exact `releaseId` and manifest SHA-256. No consumer silently mixes releases.
+7. Unknown relation types, rights ambiguity, schema mismatch, or hash mismatch fail closed.
+8. Browser and UI code never import a database driver, raw provider payload, full canonical dump, manifest decoder, or shard decoder.
+9. Visual components do not change in this architecture checkpoint.
 
 ## Target topology
 
@@ -75,11 +76,11 @@ Arrows represent governed derivation or reads. They do not imply reverse writes.
 | Layer | Owns | Must not own |
 |---|---|---|
 | `raw` | Exact payload bytes/JSON, source artifact hash, capture event, original field literal. | Normalized truth, public display decision, inferred relation family. |
-| `core` | Stable objects, agents, places, concepts, collections, temporal extents, typed joins. | Provider payloads, review queues, UI formatting. |
+| `core` | FK-backed entity supertype/subtypes, stable objects, agents, places, concepts, collections, temporal extents, typed joins. | Provider payloads, review queues, UI formatting, unconstrained polymorphic IDs. |
 | `provenance` | Source records, field assertions, evidence spans/URLs, citations, transformations, capture branches. | Final rights policy or mutable presentation state. |
 | `rights` | Representations, rights statements, license/credit, access and display decisions with evidence. | Object identity, research relation inference. |
 | `research` | Registered taxonomy, TRACE nodes/edges/trees, folder structures, dossiers, classifications. | Unregistered relation fallback, ingestion state, UI state. |
-| `workflow` | Import/review runs, held rows, decisions, gate receipts, promotion attempts, idempotency. | Public read models or sealed release bytes. |
+| `workflow` | Import/review runs, queued/quarantined rows, decisions, gate receipts, promotion attempts, idempotency. | Public read models or sealed release bytes. |
 | `release` | Immutable release version, projection set, counts, assets, manifest and seal receipt. | Canonical editing or mutable `latest` content. |
 | `api_v1` | Rights-safe, release-pinned read views/materializations and search documents. | Canonical writes, workflow commands, PostgreSQL-shaped DTOs. |
 
@@ -98,6 +99,20 @@ Detailed tables and field migrations are in `DATA_MODEL_V49.md`.
 9. Seal a new release. Sealing is append-only and separately receipted.
 
 No step mutates the source artifact or a sealed prior release.
+
+## Phase 1A identity and state decisions
+
+The normative identity/cardinality ledger is `docs/architecture/DDL_DECISION_PACK_V49.md`. Its locked decisions include:
+
+- one deterministic seed `archive_object_id` per canonical v48 JSON `surfaceId`, without deduplication;
+- `surface_id` as a durable public/legacy identifier mapped by FK-backed crosswalk, not the object PK;
+- a closed `core.entity` supertype with exactly one matching subtype;
+- typed bridges instead of `target_type + target_id`;
+- separate assertions, canonical assignments, evidence, review cases, and curator decisions;
+- directed relation-edge triple and object/edge membership natural keys;
+- publication layer, workflow state, acceptance state, rights decision, and metric-specific count eligibility as orthogonal axes.
+
+Measured population boundaries are also normative: canonical JSON and active TRACE contain the same 15,923 IDs; legacy archive Search contains 8,636 IDs, with intersection 2,585, Search-only 6,051, and TRACE-only 13,338. Search-only derived rows are not migration input.
 
 ## Read path and `ArchiveRepository`
 
@@ -119,8 +134,8 @@ The current fallback that maps an unknown label to `medium_context/documented` i
 
 1. `research.relation_type` is the only publishable registry.
 2. A normalized edge must reference a registered relation type with an enforced foreign key.
-3. An unmapped raw label remains in `raw`/`provenance` and creates `workflow.relation_type_review_queue` with `held` and `count_eligible=false`.
-4. Held/unknown rows receive no invented family and appear in neither active TRACE nor `api_v1`.
+3. An unmapped raw label remains a proposed assertion in `raw`/`provenance` and creates a queued `workflow.relation_type_review_queue` case.
+4. It creates no canonical edge, invented family, publication-layer row, or metric-eligibility row, and appears in neither active TRACE nor `api_v1`.
 5. The release gate requires zero active edges with unknown, inactive, evidence-incomplete, or family-mismatched types.
 6. The manifest pins the relation-registry hash. A repository that sees a different or unknown type returns `INTEGRITY_FAILURE` for the resource; it does not render an `OTHER` relation.
 
@@ -131,6 +146,8 @@ Removing the current frontend fallback and proving these constraints is a future
 One canonical manifest covers Archive, Search, TRACE, rights-safe representations, registry snapshots, and gate receipts. It records source lineage, database/migration/query-pack identities, exact counts, and every asset's schema, bytes, records, hash, and partition.
 
 Shards carry their own `schemaVersion`, exact `releaseId`, resource kind, shard ID, deterministic partition, record count, records hash, and records. Assets can reference only same-release assets listed by the manifest. Missing or corrupt assets fail closed without cross-release fallback.
+
+The forward state machine is `draft → candidate → validated → sealed`. Candidate closure fixes the copied projection and asset fingerprint; validated requires bound pre-seal receipts; canonical manifest bytes/SHA are committed atomically with seal. A detached post-seal sidecar makes the sealed pair pointer-eligible, and `current` changes only by CAS. Candidate/sealed projections never join mutable canonical tables.
 
 ADR 0002 is normative for release lifecycle and format.
 
@@ -156,8 +173,9 @@ During the prototype stage, acceptance explicitly forbids full `next build`, ful
 
 ## Security and operational boundaries
 
-- PostgreSQL roles separate ingest, reviewer, releaser, API read-only, and migration privileges.
+- Seven roles are mandatory: NOLOGIN object `owner`, ephemeral `migrator`, `ingestor`, `reviewer`, `releaser`, `reader`, and read-only `auditor`.
 - `api_v1` grants only `SELECT` to the runtime role; canonical schemas are not directly exposed.
+- Application roles own no objects. Allowlisted append/decision/seal/CAS operations alone may use hardened `SECURITY DEFINER`; ordinary reads and audit queries are invoker-rights.
 - Rights policy is evaluated before release projection, then pinned by policy hash.
 - Logs and telemetry identify release ID, manifest hash, API contract version, request ID, and error code; they do not log restricted payloads.
 - Backups and restore drills are required before PostgreSQL promotion.
@@ -165,13 +183,14 @@ During the prototype stage, acceptance explicitly forbids full `next build`, ful
 
 ## Architecture completion boundary
 
-This baseline is complete when all eight requested documents exist, cross-reference consistent layer/release/repository terms, carry the exact v48 acceptance baseline, and are committed locally without forbidden processes. The data platform itself remains partial until migration, adapters, releases, CI, and cutover gates are implemented.
+This baseline is complete when the nine normative documents exist, cross-reference consistent identity/layer/release/repository terms, carry the exact v48 acceptance baseline, and are committed under the phase's process rules. The data platform itself remains partial until migration, adapters, releases, CI, and cutover gates are implemented.
 
 ## Normative documents
 
 - `docs/adr/0001-canonical-postgres-and-read-only-release.md`
 - `docs/adr/0002-immutable-data-versioning.md`
 - `docs/adr/0003-runtime-repository-and-fixture-mode.md`
+- `docs/architecture/DDL_DECISION_PACK_V49.md`
 - `DATA_MODEL_V49.md`
 - `READ_API_V1.md`
 - `MIGRATION_V48_TO_V49.md`

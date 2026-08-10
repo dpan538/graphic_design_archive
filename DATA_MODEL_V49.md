@@ -3,17 +3,18 @@
 - Status: Proposed logical model accepted by the architecture checkpoint
 - Physical PostgreSQL migrations: not implemented
 - Source baseline: frozen v48 candidate at `0404c7f96f9189f576c4c5b1368061e4082e436b`
+- Normative pre-DDL decisions: `docs/architecture/DDL_DECISION_PACK_V49.md`
 
 ## Modeling rules
 
 1. Canonical, queryable entities and relationships use typed tables and foreign keys.
-2. Every public entity has a stable, opaque public ID; internal primary keys may be UUIDs.
+2. `core.entity` and its closed subtypes use immutable UUIDs. Public `surface_id` values live in a typed identifier/crosswalk relation and are not object primary keys.
 3. A source literal is never destroyed by normalization. Parsed values point back to an assertion and exact source field/path/span.
-4. Joins carry role, ordinal, confidence, assertion ID, workflow state, and validity when those semantics exist.
-5. JSONB is allowed for immutable raw/provider payloads and opaque, non-authoritative extensions. It is not a substitute for searchable entities, memberships, rights, gates, or relations.
+4. Typed assignments carry role, ordinal, confidence and validity when those semantics exist; workflow progress remains in `workflow` and supporting assertions use explicit bridges.
+5. Raw bytes/length/SHA-256 are lexical authority. JSONB is a versioned parsed projection or opaque non-authoritative extension; it cannot certify source bytes or substitute for searchable entities, memberships, rights, gates, or relations.
 6. Accepted rows are append-corrected or versioned with decisions; destructive history rewriting is prohibited.
 7. Release projections contain stable DTO fields and do not expose canonical table layout.
-8. `active`, `review`, and `auxiliary` are explicit publication states; only accepted/count-eligible rows enter active counts.
+8. `active`, `review`, and `auxiliary` are release publication layers. Acceptance and metric-specific count eligibility remain separate axes.
 
 ## Shared conventions
 
@@ -24,17 +25,27 @@
 - Soft labels from providers are literals/assertions until mapped to registered canonical IDs.
 - Each import/transformation records software/query-pack version and deterministic input hashes.
 
+## Identity model
+
+`core.entity` is a closed supertype with internal immutable UUID `entity_id` and `entity_kind`. `core.archive_object`, `core.agent`, `core.place`, `core.concept`, `core.collection`, and `core.temporal_extent` each use that UUID as both PK and FK. A deferred invariant requires exactly one matching subtype row.
+
+Semantically specific relationships use an FK to the required subtype. Deliberately multi-kind entity relationships use `target_entity_id` with a real FK to `core.entity` and an allowed-kind rule from the registered predicate. Non-entity targets use typed bridges. Canonical `target_type + target_id` is prohibited.
+
+The v48 seed creates one deterministic UUIDv5 archive object per canonical JSON `surfaceId`; it performs no identity deduplication. `surface_id` is a durable public/legacy route identifier that resolves to one current object or one explicit merged/split/withdrawn/unresolved state. Merge and split history is append-only and curator-decided.
+
+Raw source records, TRACE nodes, folders, evidence, representations, workflow cases, and releases have independent typed identities and are not entity subtypes.
+
 ## `raw`
 
 The `raw` schema is append-only and preserves source evidence.
 
 | Table | Purpose and key fields |
 |---|---|
-| `raw.source_artifact` | One fetched/uploaded artifact: `artifact_id`, provider, locator, media type, byte length, `sha256`, retrieval time, storage reference. Unique on hash plus source identity. |
-| `raw.source_record` | Provider record within an artifact: provider key, locator, immutable `payload jsonb`, payload hash, source order. |
+| `raw.source_artifact` | One immutable byte stream: `artifact_id`, provider, locator, media type, byte length, raw `sha256`, retrieval time, storage reference. The bytes/hash are lexical authority. |
+| `raw.source_record` | One occurrence within an artifact, identified by `(source_artifact_id,record_ordinal)`; provider key/locator and parsed `payload jsonb` are non-unique projections. |
 | `raw.capture_event` | Capture request/result metadata, HTTP status, access time, batch and software version. |
 | `raw.field_literal` | Exact record field/path, original text/JSON scalar, optional byte/character span, ordinal. |
-| `raw.legacy_v48_artifact` | Registered frozen JSON, SQLite, manifests, and receipts with expected/observed hash; bytes remain outside writable canonical tables. |
+| `raw.legacy_v48_artifact` | Registers all five frozen assets with role. Only candidate JSON has role `migration_input`; SQLite is `reconciliation`; manifests are `integrity_evidence`. Bytes remain outside writable canonical tables. |
 
 `raw` roles cannot update or delete accepted source rows. Corrections arrive as new artifacts/records linked by supersession metadata.
 
@@ -44,7 +55,9 @@ The `core` schema owns normalized descriptive identity.
 
 | Table | Purpose and key constraints |
 |---|---|
-| `core.archive_object` | Stable object identity, public ID, title policy, temporal extent ID, publication-neutral lifecycle. Source record ID is not the primary identity. |
+| `core.entity` | Closed UUID supertype, entity kind and lifecycle. Exactly one matching subtype is required. |
+| `core.archive_object` | Stable intellectual-object subtype identity, title policy and publication-neutral lifecycle. Source/surface IDs are not the PK. |
+| `core.object_surface_identifier` | Durable `surface_id` → archive object or explicit terminal resolution; supports primary, alias, merge, split, withdrawal and redirect history. |
 | `core.agent` | Person/organization/unknown-agent identity with preferred label and authority state. |
 | `core.place` | Normalized place/region with type, parent, coordinates only when evidenced, and authority ID. |
 | `core.concept` | Registered medium, object type, subject, movement, and classification concepts with scheme and concept kind. |
@@ -67,8 +80,20 @@ The `provenance` schema explains where every accepted statement came from.
 | Table | Purpose and key constraints |
 |---|---|
 | `provenance.source_document` | Document/source identity, canonical URL, provider, citation metadata, access history. |
-| `provenance.object_source_record` | Object–raw record mapping with identity basis and decision. |
-| `provenance.assertion` | Subject, field/predicate, literal or entity target, source record/literal, evidence locator, status, confidence, actor/run. |
+| `provenance.object_source_record` | N:M object–raw-record assignment, unique on object, record and role. The v48 seed is 15,923 1:1 `seed_description` links. |
+| `provenance.assertion` | Registered predicate plus exactly one row in a closed typed subject family and one row in a closed typed value family. |
+| `provenance.assertion_entity_subject` | Assertion PK/FK plus subject FK to `core.entity`. |
+| `provenance.assertion_source_record_subject` | Assertion PK/FK plus subject FK to `raw.source_record`. |
+| `provenance.assertion_trace_node_subject` | Assertion PK/FK plus subject FK to `research.trace_node`. |
+| `provenance.assertion_representation_subject` | Assertion PK/FK plus subject FK to `rights.digital_representation`. |
+| `provenance.assertion_entity_value` | Assertion PK/FK plus `target_entity_id` FK to `core.entity`. |
+| `provenance.assertion_literal_value` | Assertion PK/FK plus FK to the exact raw field literal. |
+| `provenance.assertion_source_record_value` | Assertion PK/FK plus value FK to `raw.source_record`. |
+| `provenance.assertion_trace_node_value` | Assertion PK/FK plus value FK to `research.trace_node`. |
+| `provenance.canonical_assignment` | Closed identity/acceptance supertype for normalized joins and research relations; exactly one typed assignment subtype shares its PK/FK. |
+| `provenance.evidence_item` | Shareable source-bound locator/span/content-hash identity; distinct from assertion and assignment. |
+| `provenance.assertion_evidence` | N:M assertion/evidence join with stance and ordinal. |
+| `provenance.assignment_assertion` | N:M assignment/assertion support join. |
 | `provenance.transformation` | Parser/mapping rule ID and version, input/output assertion links, deterministic parameters, software hash. |
 | `provenance.citation` | Citation/URL/locator with quoted span metadata where licensed. |
 | `provenance.assertion_citation` | Assertion–citation join with role and ordinal. |
@@ -84,13 +109,13 @@ The `rights` schema separates object existence from representation display permi
 | Table | Purpose and key constraints |
 |---|---|
 | `rights.digital_representation` | Image/file identity, source URL, local asset reference, media type, dimensions, content hash. |
-| `rights.object_representation` | Object–representation join with role, sequence, provenance, and publication state. |
+| `rights.object_representation` | Object–representation assignment with role, sequence, provenance and acceptance; release projection chooses publication layer separately. |
 | `rights.rights_statement` | Registered rights URI/label, jurisdiction, license, credit, restrictions, evidence. |
 | `rights.representation_rights` | Representation–statement join with effective dates and assertion. |
-| `rights.display_policy` | Versioned policy decision such as `permitted`, `source_only`, `metadata_only`, or `held`. |
+| `rights.display_policy` | Versioned policy decision: `unresolved`, `permitted`, `source_only`, `metadata_only`, or `denied`. |
 | `rights.policy_evaluation` | Representation/object, policy version, decision, reason codes, reviewer/run, evidence. |
 
-Unknown or conflicting rights fail closed to `metadata_only`/`held`; they never inherit permission from a sibling representation.
+Unresolved or conflicting rights remain `unresolved`; release display behavior fails closed to metadata-only. Permission never inherits from a sibling representation.
 
 ## `research`
 
@@ -101,14 +126,16 @@ The `research` schema owns reviewed analytical structures, not raw provider labe
 | `research.relation_type` | Unique registered predicate, family, status, evidence requirements, allowed statement, prohibited inference, registry version. |
 | `research.trace_tree` | Research tree identity, label, description, publication state. |
 | `research.trace_branch` | Tree branch with stable ID and ordered hierarchy. |
-| `research.trace_node` | Typed node, tree, canonical key/target, label, evidence and review state. |
-| `research.relation_edge` | Subject/object node, mandatory relation type FK, evidence assertion, confidence, review/publication state, `count_eligible`. |
-| `research.object_relation_membership` | Archive object–edge membership used for active-object relation counts; unique per semantic membership. |
+| `research.trace_node` | Independent typed node identity with non-unique canonical key, tree, label, evidence and optional FK to one core entity. |
+| `research.object_trace_node` | Object–node typed join, unique on object, node and role; root node references at most one object. |
+| `research.relation_edge` | Canonical assignment whose directed natural key is `(subject_trace_node_id,relation_type_id,object_trace_node_id)`; evidence/tree/branch/state are not key fields. |
+| `research.relation_edge_placement` | N:M edge placement, unique on edge, tree and branch. |
+| `research.object_relation_membership` | Separate assignment, unique on archive object, edge and membership role. |
 | `research.object_tree_membership` | Object–tree/branch join replacing a single trace tree assumption. |
 | `research.folder` | Curated folder identity, type, slug, label, narrative metadata. |
-| `research.folder_membership` | Folder–object join with position, role, evidence/review state. |
+| `research.folder_membership` | Folder–object assignment, natural key `(folder_id,archive_object_id,membership_role)`; position is not identity. |
 | `research.folder_relation` | Typed directed folder–folder relation with evidence. |
-| `research.folder_authority_ref` | Folder–agent/place/concept/collection authority reference with typed target and evidence. |
+| `research.folder_authority_ref` | Folder–entity authority reference with `target_entity_id` FK and registered allowed entity kinds; never type plus free ID. |
 | `research.object_classification` | Object–historical node/movement/other registered concept join. |
 | `research.dossier` | Research dossier identity and status. |
 | `research.dossier_folder` | Ordered dossier–folder join. |
@@ -128,9 +155,12 @@ Raw labels that do not resolve are not inserted as accepted edges. They are reco
 | Table | Purpose and key constraints |
 |---|---|
 | `workflow.import_run` | Input artifact hashes, parser/mapping versions, started/completed status, idempotency key. |
-| `workflow.review_queue_item` | Generic held entity/assertion, reason code, priority, owner, state. |
-| `workflow.relation_type_review_queue` | Unmapped raw predicate, occurrence context, candidate mapping, always `held` and `count_eligible=false` until decision. |
+| `workflow.review_queue_item` | Generic queued or quarantined entity/assertion, reason code, priority, owner, state. |
+| `workflow.relation_type_review_queue` | Unmapped raw predicate and occurrence context. Workflow is queued; no canonical edge, publication layer, or metric eligibility row exists until resolution. |
 | `workflow.review_decision` | Append-only reviewer decision, rationale, evidence and supersession. |
+| `workflow.review_case_assertion` | Typed case subject; mutually exclusive with assignment/other case-subject subtypes. |
+| `workflow.review_case_assignment` | Typed case subject for one canonical assignment. |
+| `workflow.decision_evidence` | N:M decision/evidence join; effective decisions require evidence. |
 | `workflow.publication_gate` | Versioned gate definition and severity. |
 | `workflow.gate_run` | Snapshot/release candidate, query/code hash, start/end, overall result. |
 | `workflow.gate_result` | Gate result, expected/actual value, sample/evidence reference, status. |
@@ -142,7 +172,7 @@ Unknown relations, unresolved authority, rights conflicts, and reconciliation di
 
 | Table | Purpose and key constraints |
 |---|---|
-| `release.release_version` | Unique immutable release ID, state, source snapshot identity, exact manifest hash after seal. |
+| `release.release_version` | Unique release ID with forward state `draft → candidate → validated → sealed`, source snapshot identity and exact manifest hash committed at seal. |
 | `release.source_lineage` | Release–raw artifact/hash/commit links. |
 | `release.projection_set` | Migration set and projection query-pack hashes. |
 | `release.count_snapshot` | Named exact count, scope/unit definition, query hash and value. |
@@ -150,8 +180,22 @@ Unknown relations, unresolved authority, rights conflicts, and reconciliation di
 | `release.manifest` | Canonical manifest bytes/hash and schema version. |
 | `release.gate_receipt` | Required gate run/receipt hash and promotion decision. |
 | `release.registry_snapshot` | Relation and rights policy registry hashes included by the release. |
+| `release.current_pointer` | Mutable channel pointer updated only by CAS to an exact sealed release/manifest pair, with append-only history. |
+| `release.*_projection` | Copied candidate/sealed rows keyed by release ID; never a live join to canonical tables. |
 
 Sealed rows are protected by privileges and triggers from `UPDATE`/`DELETE`. A release projection may denormalize data for reads, but it is never canonical input to `core` or `research`.
+
+## Orthogonal state model
+
+| Axis | Values and owner |
+|---|---|
+| Workflow state | `queued`, `claimed`, `in_review`, `resolved`, `superseded` in `workflow`. |
+| Acceptance state | `proposed`, `accepted`, `rejected`, `superseded` on assertions/assignments. `held` is not an acceptance state. |
+| Rights decision | `unresolved`, `permitted`, `source_only`, `metadata_only`, `denied` in `rights`. |
+| Publication layer | `active`, `review`, `auxiliary`, `excluded` in a release projection. |
+| Count eligibility | Per `(release,metric,typed subject)` as eligible/ineligible plus reason; never one universal canonical boolean. |
+
+No axis implies another. In particular, a workflow-queued unknown relation remains a proposed raw assertion and creates no canonical edge, publication row, or metric row.
 
 ## `api_v1`
 
@@ -233,8 +277,13 @@ Migration must preserve and separately name these frozen metrics before any inte
 | Metadata supported | 2,971 |
 | Review/authority hold objects | 4,425 |
 | Auxiliary objects | 11 |
+| Archive Search IDs | 8,636 |
+| Canonical/TRACE ∩ Search | 2,585 |
+| Search-only derived IDs | 6,051 |
+| Canonical/TRACE-only IDs | 13,338 |
+| Canonical/TRACE ∪ Search IDs | 21,974 |
 
-`255,695` and `126,822` are different units and cannot share one label. Exact file hashes and release asset counts are normative in `ACCEPTANCE_GATES.md`.
+`255,695` and `126,822` are different units and cannot share one label. The 8,636 Search rows are a derived legacy population, not an import cohort and not a v49 Search-row parity target. Exact file hashes and release asset counts are normative in `ACCEPTANCE_GATES.md`.
 
 ## Physical-design boundary
 
