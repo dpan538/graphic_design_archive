@@ -2,7 +2,7 @@
 
 - Status: Designed, not executed
 - Source: immutable v48 candidate freeze
-- Target: canonical PostgreSQL plus immutable release/API boundary
+- Target: canonical PostgreSQL plus independent immutable research-release and visual-registry boundaries
 - Rollback anchor: exact v48 release and hashes
 
 ## Scope boundary
@@ -29,11 +29,11 @@ The legacy `public_surface_shards_v1` sidecar is not a frozen release input: it 
 
 ## Migration phases
 
-### M0 — Architecture checkpoint
+### M0 — Architecture and audit checkpoints
 
-Deliver the eight design documents in an isolated branch/worktree. Confirm source commit ancestry, no v48 or visual diffs, no forbidden processes, and one local documentation commit.
+Deliver the normative design corpus and the comprehensive pre-migration audit in an isolated branch/worktree. Confirm source commit ancestry, no v48 or visual diffs, no forbidden processes, and documentation-only commits.
 
-Exit: architecture terms, hard invariants, migration gates, and rollback are approved. No implementation is implied.
+Exit: architecture terms, hard invariants, migration gates, and rollback are approved; every Phase 1B P0 has either been closed normatively or is carried as an explicit DDL-blocking item. No implementation is implied. At the Phase 1B checkpoint, `ENGINEERING_PRE_DDL_READY`, `RESEARCH_SEMANTICS_PRE_DDL_READY`, `RIGHTS_VISUAL_PRE_DDL_READY`, and `OVERALL_PRE_DDL_READY` remain false.
 
 ### M1 — Baseline seal
 
@@ -49,6 +49,8 @@ Exit: all bytes/counts match or work stops. LFS pointer-only files, mismatch, mi
 
 Create physical migrations for `raw`, `core`, `provenance`, `rights`, `research`, `workflow`, `release`, and `api_v1`. Establish least-privilege roles, append-only/seal controls, migration replay, backup/restore plan, stable ID policy, and registry seeds.
 
+M2 may not begin from the legacy `db/*.sql` chain or `scripts/run_db_migrations.py`: that chain is an 82-table/55-view public-schema prototype with unconstrained polymorphic targets and no v49 role, subtype, seal, or CAS guarantees. It is evidence to classify, not a v49 migration prefix. New physical migrations must start from an empty database after the pre-DDL blockers in ADR 0004 and the Phase 1B audit are closed.
+
 Exit: a fresh empty database replays deterministically and constraint/privilege tests pass. No v48 import yet.
 
 ### M3 — Raw staging
@@ -59,7 +61,7 @@ Exit: every source item is accounted for, raw counts and aggregate hashes reconc
 
 ### M4 — Canonical normalization
 
-Build objects, agents, places, concepts, collections, temporal extents, rights representations, provenance assertions, and research joins from governed mapping versions. Preserve raw text and produce a delta ledger for every unresolved or intentionally changed item.
+Build operational archive objects, agents, places, concepts, collections, temporal extents, rights representations, provenance assertions, research claims/relations/corpora, and typed joins from governed mapping versions. An archive object is one catalogued design-object record in the governed release cohort; it is not a claim of a unique intellectual work. Preserve raw text and produce a delta ledger for every unresolved or intentionally changed item.
 
 Identity seeding is deterministic and non-deduplicating: each of the 15,923 canonical JSON `surfaceId` rows creates one UUIDv5 archive object plus one primary surface crosswalk. Each links to its unique `sourceRecordId` and unique TRACE root node. Source object keys and TRACE canonical keys are attributes, not unique identifiers.
 
@@ -70,8 +72,9 @@ Multi-value migration is provenance-led:
 | creator/medium/object type/subject/collection text | Preserve literal; create ordered typed joins only from a provider mapping or reviewed parse. |
 | delimiter-packed branch IDs | Map registered branch tokens to `provenance.capture_branch`; quarantine unknown tokens. |
 | folders, related folders, authority references | Build explicit memberships/relations with stable IDs and order. |
-| historical nodes, movements, trace trees | Build typed classification/tree memberships; never store queryable lists as canonical JSONB. |
-| images and nested rights | Build representation and rights-policy joins; unknown permission fails closed. |
+| historical nodes, movements, trace trees | Build typed research-node, corpus, classification, and tree memberships; never store queryable lists as canonical JSONB. |
+| source statements, scholarly interpretations, computed associations | Build evidence-bearing claims with an epistemic class; semantic relations and TRACE projections are separate rows. |
+| images and nested rights | Build external-visual/provider/endpoint, rights-observation, policy, assessment, delivery-mode, endpoint-health, attribution, review-due, and takedown joins. Unknown, missing, conflicting, or stale rights evidence fails closed to `LINK_ONLY` or `CITATION_ONLY`. |
 | review/publication gates | Build versioned workflow gate runs/results, not opaque mutable JSONB. |
 | dossiers, page sequences, appendix reasons, registration members | Build ordered child/join tables. |
 | compound children | Build typed parent–child object joins. |
@@ -83,43 +86,61 @@ Exit: each mapping has source pointer, cardinality, ordering, duplicate/null pol
 
 ### M5 — Governance and relation registry
 
-Seed the reviewed relation registry and rights policy. Canonical edges require a registered type FK and accepted evidence. Unknown source labels remain proposed raw assertions in a queued `workflow.relation_type_review_queue` case, without family, canonical edge, publication layer, or metric eligibility.
+Seed the reviewed relation/predicate registries and rights/provider policies. An accepted semantic relation requires a registered type FK and at least one accepted supporting claim or an evidence-bearing effective curator decision. A claim records exactly one epistemic class: `documented_source_statement`, `scholarly_claim`, `computed_association`, or `causal_interpretation`. Influence claims require claimant, source, locator, and preserved wording; computed associations require analysis run, method, parameters, exact input research release/hash, and score.
+
+TRACE nodes/edges are release projections of accepted semantic relations and claims for one declared corpus; they are not the canonical relation or claim identity. Unknown source labels remain proposed raw assertions in a queued `workflow.relation_type_review_queue` case, without family, semantic relation, claim acceptance, TRACE projection, publication layer, or metric eligibility.
 
 Inject a negative `__unknown_relation__` fixture in the later implementation phase. It must remain raw/queued, leave active/release counts unchanged, and cause any deliberately corrupt release asset to be rejected by the repository.
 
-Exit: zero accepted unregistered edges, zero coercions, zero non-approved release edges, zero rights widening, and negative fixture isolation passes.
+Exit: zero accepted unregistered relations, zero coercions, zero TRACE projections without an eligible accepted relation/claim, zero non-approved release projections, zero rights widening, and negative fixture isolation passes.
 
 ### M6 — v48 parity and delta ledger
 
-Compare canonical/projection queries with frozen v48. Exact baseline units include:
+Compare canonical/projection queries with frozen v48. Every metric is assigned to one of four non-interchangeable classes:
 
-- 15,923 active objects; 4,077 remaining to the 20,000 capacity target;
-- 97,889 TRACE nodes and 255,695 total graph edges;
-- 126,822 active-object relation memberships: 79,206 medium/context, 31,288 source/provenance, 16,328 time/place, zero historical influence;
-- 30 active trees;
-- 12,952 source verified and 2,971 metadata supported;
-- 4,425 review/authority hold and 11 auxiliary objects, excluded from active counts;
-- 8,636 archive Search IDs and 15,923 canonical JSON/active TRACE IDs;
+**Canonical parity**
+
+- 15,923 canonical JSON rows / operational archive objects;
+- 12,952 `source_verified` rows;
+- 2,971 row-level `metadata_supported` rows, with the manifest/meta value 2,970 retained as a known one-row evidence conflict that must be explained rather than silently normalized.
+
+**Graph parity**
+
+- 97,889 TRACE projection nodes and 255,695 TRACE projection edges;
+- 126,822 active-object relation-membership projections: 79,206 medium/context, 31,288 source/provenance, 16,328 time/place, zero historical influence;
+- 30 active research trees and 20 observed relation labels/types in the v48 product.
+
+**Derived reconciliation**
+
+- 8,636 archive Search artifact IDs and 15,923 canonical JSON/active TRACE IDs;
 - exact population boundary: intersection 2,585, Search-only 6,051, TRACE-only 13,338, union 21,974;
-- 18 forced LOC repair edges, 200/200 saved audit sample, 55 PASS/0 HOLD.
+- 4,425 review/authority-hold objects and 11 auxiliary objects, outside the active operational cohort;
+- 18 forced LOC repair edges, 200/200 saved audit sample, 55 PASS/0 HOLD;
+- 580 TRACE manifest assets, including 576 neighborhood shards, with their declared hashes.
+
+**Historical aspiration**
+
+- 20,000 is a prior capacity/collection aspiration only. Neither “remaining 4,077” nor any future approach to 20,000 is a migration, freeze, release, or promotion condition.
 
 The 6,051 Search-only rows are reconciled as derived-product exclusions and are not imported. A v49 Search projection is generated from the sealed canonical cohort; 8,636 is not a canonical-row or future Search-result parity target.
 
-Exit: exact canonical parity or an explicit, reviewed delta ledger for every difference, plus exact derived-population set reconciliation. Any unexplained delta prevents promotion; it is not rounded away or relabeled.
+Exit: exact canonical and graph parity or an explicit, reviewed delta ledger for every difference, plus exact derived-population set reconciliation. The known 2,970/2,971 conflict and the inability to regenerate the v48 graph solely from the current canonical JSON are blocking delta-ledger items until resolved. Historical aspiration is recorded but never compared as parity. Any unexplained delta prevents promotion; it is not rounded away or relabeled.
 
-### M7 — Immutable candidate release and read API
+### M7 — Immutable research release, visual registry, and read API
 
-Copy release projections from one closed snapshot and advance only through `draft → candidate → validated → sealed`. Candidate closure fixes cohort/query/registry/asset fingerprints; validated requires all pre-seal receipts. Generate canonical manifest bytes/SHA, commit them atomically with seal, emit the post-seal detached sidecar, and publish `current` only by CAS. Then verify exact declared file set and repository contract parity.
+Copy research projections from one closed snapshot and advance the research release only through `draft → candidate → validated → sealed`. Candidate closure fixes cohort, corpus, query, relation/predicate registry, claim, projection, and asset fingerprints; validated requires all research pre-seal receipts. Generate canonical research-manifest bytes/SHA, commit them atomically with seal, emit the post-seal detached sidecar, and publish research `current` only by CAS.
 
-Exit: deterministic re-export hashes match, asset/schema/release IDs verify, API/repository DTO parity passes, performance budgets pass, and corruption/unknown-relation tests fail closed. v48 directories remain unchanged.
+Build the visual registry through its independent `draft → candidate → validated → sealed` lifecycle. Its manifest binds provider objects, typed endpoints, rights observations/policies, assessment, delivery mode, endpoint health, attribution, review-due, takedown overrides, and compatible research-release constraints. It has a distinct manifest SHA, sidecar, and `current` CAS pointer. A visual registry may be superseded for takedown or rights changes without mutating or resealing a research release.
+
+Exit: deterministic re-export hashes match, both exact identity pairs `(researchReleaseId,researchManifestSha256)` and `(visualRegistryVersion,registrySha256)` verify, compatibility is explicit, asset/schema IDs verify, API/repository DTO parity passes, performance budgets pass, and corruption/unknown-relation/rights-leakage tests fail closed. Sealed projections never join mutable canonical tables. v48 directories remain unchanged.
 
 ### M8 — Frontend adapter and promotion
 
-Introduce the repository composition root without changing visual semantics. Dual-read comparison captures DTO/count/route parity. Production can pin either the accepted v49 release or the untouched v48 rollback adapter; there is no data fallback hidden inside a request.
+Introduce the repository composition root without changing visual semantics. Dual-read comparison captures DTO/count/route parity. Production can pin either an accepted v49 research/visual pair or the untouched v48 rollback adapter; there is no data fallback hidden inside a request.
 
 Only after data and frontend receipts pass may a later promotion lane run full TypeScript, production build, browser/accessibility, and visual regression. Prototype work must not use the full build as a progress gate.
 
-Exit: explicit promotion decision, release/manifest pin, production verification receipt, and tested rollback. No merge/deploy is part of the migration implementation itself unless separately authorized.
+Exit: explicit promotion decision, both exact identity/hash pins, production verification receipt, and tested rollback. No merge/deploy is part of the migration implementation itself unless separately authorized.
 
 ## Reconciliation method
 
@@ -142,18 +163,18 @@ Stable-ID reconciliation emits sets for missing, unexpected, duplicated, remappe
 - v48 bytes remain the immutable rollback anchor for the whole migration.
 - No migration deletes or overwrites v48 or a sealed v49 release.
 - Before promotion, rollback means keep production pinned to v48.
-- After promotion, rollback means atomically pin the previous exact release descriptor/adapter; never mutate `current` content in place.
+- After promotion, rollback means atomically pin the previous exact research release and compatible visual-registry descriptor; never mutate either `current` pointer content in place.
 - Database rollback restores a tested backup into a new recovery instance and revalidates release identity. It does not reverse-mutate a sealed release.
 - A failed candidate stays recorded as workflow evidence and cannot be selected by `current`.
 
 ## Explicit stop conditions
 
-Stop and mark the relevant gate `FAIL` for any source hash mismatch, write to frozen paths, missing LFS content, importing SQLite/Search/TRACE-derived rows, silent parse/drop or identity merge, unknown relation coercion, rights widening, state-axis conflation, unexplained count/ID drift, non-deterministic release, incomplete seal/CAS, sealed projection drift, cross-release asset reference, API write path, frontend direct database access, or prototype-only prohibited process during a checkpoint governed by G9.
+Stop and mark the relevant gate `FAIL` for any source hash mismatch, write to frozen paths, missing LFS content, importing SQLite/Search/TRACE-derived rows, silent parse/drop or identity merge, treating an operational archive object as a proven unique intellectual work, collapsing claims/relations/TRACE projections, unknown relation coercion, rights widening, state-axis conflation, unexplained count/ID drift, use of 20,000 as parity/promotion, non-deterministic release, incomplete research or visual seal/CAS, sealed projection drift, cross-version asset reference without declared compatibility, API write path, frontend direct database access, or prototype-only prohibited process during a checkpoint governed by G9.
 
-## Next implementation work packages
+## Next authorized work packages
 
 At most three independent work packages should follow this checkpoint:
 
-1. Physical schema and pure baseline verifier: migrations/roles/constraints plus a read-only v48 receipt, with no record import.
-2. Mapping specification and fixture: field-level mapping ledger, relation registry, small contract fixture, and negative fail-closed cases, with no production data cutover.
-3. Repository/API contract skeleton and CI split: interfaces, DTO schemas, adapter contract tests, and separate workflow definitions, with no visual-page rewrite or full prototype build.
+1. Authority/research delta closure: classify every graph fact as regenerable, governed external evidence, or hold; resolve missing builder parents, 2,970/2,971, and raw artifact disposition. No DDL or derived-row ingestion.
+2. Rights visual-registry decision completion: provider/object/endpoint crosswalk, policy/observation/attribution/review/takedown mapping, held-pixel rules, and dual-version seal/CAS test specification. No image download or frontend change.
+3. Fresh physical-schema specification and privilege test plan: only after packages 1–2 pass, map typed FKs/natural keys/roles/dual seals from an empty namespace and execution-deny the legacy runner. Authorization to write DDL requires a new explicit gate receipt; this package itself does not import data.

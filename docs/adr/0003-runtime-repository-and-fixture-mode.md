@@ -16,16 +16,33 @@ All archive reads pass through an `ArchiveRepository`. Repository DTOs are stabl
 
 `surfaceId` in that contract is the sealed public/legacy route identifier, not the internal canonical `archive_object_id`. Identity aliases, merges, splits, and withdrawals are resolved from the sealed release projection rather than mutable canonical tables.
 
-An instance is opened against one exact release. Resolving `current` is a provider concern and occurs only once.
+An instance is opened against one exact research-release pair and one exact compatible visual-registry pair. Resolving either `current` is a provider concern, occurs only once, and cannot substitute for compatibility validation.
 
 ```ts
-type ReleaseSelector = { releaseId: string } | { alias: "current" };
+type ResearchReleaseSelector =
+  | { researchReleaseId: string; researchManifestSha256: string }
+  | { alias: "current" };
 
-interface ReleaseRef {
+type VisualRegistrySelector =
+  | { visualRegistryVersion: string; registrySha256: string }
+  | { alias: "current" };
+
+interface ResearchReleaseRef {
   apiVersion: "v1";
-  releaseId: string;
-  manifestSha256: string;
-  schemaVersion: "archive-release/v1";
+  researchReleaseId: string;
+  researchManifestSha256: string;
+  schemaVersion: "archive-research-release/v1";
+}
+
+interface VisualRegistryRef {
+  visualRegistryVersion: string;
+  registrySha256: string;
+  schemaVersion: "archive-visual-registry/v1";
+}
+
+interface ArchiveVersionRef {
+  research: ResearchReleaseRef;
+  visual: VisualRegistryRef;
 }
 
 interface PageRequest {
@@ -53,14 +70,15 @@ type RepositoryErrorCode =
   | "UNAVAILABLE";
 
 type RepoResult<T> =
-  | { ok: true; data: T; release: ReleaseRef }
+  | { ok: true; data: T; version: ArchiveVersionRef }
   | {
       ok: false;
       error: {
         code: RepositoryErrorCode;
         message: string;
         retryable: boolean;
-        releaseId?: string;
+        researchReleaseId?: string;
+        visualRegistryVersion?: string;
       };
     };
 
@@ -70,13 +88,16 @@ interface ReadOptions {
 
 interface ArchiveRepositoryProvider {
   open(
-    selector: ReleaseSelector,
+    selector: {
+      research: ResearchReleaseSelector;
+      visual: VisualRegistrySelector;
+    },
     options?: ReadOptions,
   ): Promise<RepoResult<ArchiveRepository>>;
 }
 
 interface ArchiveRepository {
-  readonly release: ReleaseRef;
+  readonly version: ArchiveVersionRef;
 
   getOverview(options?: ReadOptions): Promise<RepoResult<ArchiveOverview>>;
   listFolderTypes(options?: ReadOptions):
@@ -100,16 +121,22 @@ interface ArchiveRepository {
     Promise<RepoResult<readonly RelationTypeDefinition[]>>;
   getRelationType(id: string, options?: ReadOptions):
     Promise<RepoResult<RelationTypeDefinition>>;
+  getRelation(relationId: string, options?: ReadOptions):
+    Promise<RepoResult<SemanticRelation>>;
+  getClaim(claimId: string, options?: ReadOptions):
+    Promise<RepoResult<ResearchClaim>>;
+  getCorpus(corpusVersion: string, options?: ReadOptions):
+    Promise<RepoResult<ResearchCorpus>>;
 }
 ```
 
 The concrete implementations are:
 
-1. `HttpArchiveRepository`: calls only release-pinned `/api/v1` GET endpoints.
-2. `ImmutableReleaseRepository`: validates and reads a sealed manifest and its assets/shards.
-3. `FixtureArchiveRepository`: reads a small, versioned, schema-valid fixture release.
+1. `HttpArchiveRepository`: calls only exact research/visual-pair-pinned `/api/v1` GET endpoints.
+2. `ImmutableReleaseRepository`: validates and reads both sealed manifests, declared compatibility, and their assets/shards.
+3. `FixtureArchiveRepository`: reads a small, versioned, schema-valid fixture research release plus visual registry.
 
-All implementations must pass the same repository contract suite, including error mapping, cursor behavior, release pinning, cancellation, integrity failure, and unknown-relation rejection.
+All implementations must pass the same repository contract suite, including error mapping, cursor behavior, both exact-pair pins, compatibility, cancellation, integrity failure, held-pixel non-disclosure, and unknown-relation rejection.
 
 ## Composition and mode selection
 
@@ -119,22 +146,24 @@ One server-side composition root selects `api`, `release`, or `fixture` from an 
 - Missing or invalid configuration fails closed; there is no implicit fixture fallback.
 - Browser bundles contain no PostgreSQL driver or credentials.
 - UI components contain no `/data/*.json` paths, shard filename construction, compact decoders, or manifest parsing.
-- The repository validates schemas, maps errors, deduplicates requests, handles `AbortSignal`, and caches by exact release.
+- The repository validates schemas and cross-version compatibility, maps errors, deduplicates requests, handles `AbortSignal`, and caches by both exact identity/hash pairs.
 - `NOT_FOUND`, `UNAVAILABLE`, and `INTEGRITY_FAILURE` remain distinct; none collapse to `undefined`.
 
-`SurfaceDetail` may project the rights-safe presentation bundle needed by the existing visual pages, but large memberships are separate paginated calls. `FolderDetail` does not embed thousands of surface IDs. TRACE summaries are a discriminated union of `active`, `review`, and `auxiliary`; eligibility is returned only for a named sealed-release metric, not as a universal canonical boolean.
+`SurfaceDetail` may project the rights-safe presentation bundle needed by the existing visual pages, but it omits pixel URLs when delivery is `LINK_ONLY`, `CITATION_ONLY`, denied, or subject to a takedown override. Rights assessment, delivery mode, and endpoint health remain distinct fields. Large memberships are separate paginated calls. `FolderDetail` does not embed thousands of surface IDs. TRACE summaries are projections of eligible semantic relations/claims for one named corpus and a discriminated union of `active`, `review`, and `auxiliary`; eligibility is returned only for a named sealed-release metric, not as a universal canonical boolean.
 
 ## Fixture mode
 
-The fixture is a complete miniature release, not a slice loaded from the 87 MiB v48 payload. It has a fixed release ID such as `fixture-v1`, a valid manifest, and 10–50 hand-audited objects. It covers:
+The fixture is a complete miniature research release plus compatible visual registry, not a slice loaded from the 87 MiB v48 payload. It has fixed IDs/hashes such as `fixture-research-v1` and `fixture-visual-v1`, valid manifests, and 10–50 hand-audited operational archive objects. It covers:
 
 - image permitted, denied, and absent;
 - active, review, and auxiliary TRACE states;
 - folder pagination and an empty result;
-- deterministic Search results;
-- not found, invalid cursor, release mismatch, corrupt hash, and unknown relation failures.
+- deterministic Search results and a declared research corpus;
+- all four epistemic claim classes plus relation/claim/TRACE distinction;
+- unknown/missing/conflicting/stale rights evidence and takedown precedence;
+- not found, invalid cursor, research/visual mismatch, compatibility failure, corrupt hash, held-pixel leakage, and unknown relation failures.
 
-The fixture uses the same async `RepoResult`, DTO schemas, cursors, and relation registry as production adapters. It cannot be used to certify v48 parity or release counts.
+The fixture uses the same async `RepoResult`, DTO schemas, cursors, relation/predicate registry, rights rules, and pair-bound compatibility checks as production adapters. It cannot be used to certify v48 parity or release counts.
 
 ## Prototype build policy
 

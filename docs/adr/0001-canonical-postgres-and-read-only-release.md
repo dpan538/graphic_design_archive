@@ -29,24 +29,29 @@ The database is divided into these schemas:
 | `core` | Normalized objects, agents, places, concepts, dates, collections, and their joins. |
 | `provenance` | Source records, field assertions, evidence locators, transformations, citations, and lineage. |
 | `rights` | Digital representations, rights statements, display policy, license, credit, and access constraints. |
-| `research` | Taxonomy, registered relation types, nodes, edges, trees, folders, dossiers, and memberships. |
+| `research` | Registered predicates/relation types, epistemic claims, semantic relations, corpora/missingness, analysis runs, TRACE projections, trees, folders, dossiers, and memberships. |
 | `workflow` | Import runs, review queues, decisions, gate results, promotions, and idempotency records. |
 | `release` | Sealed release identities, manifests, projections, asset inventory, and reconciliation receipts. |
 | `api_v1` | Versioned read views/materializations consumed by the read API; no canonical writes. |
 
 Writes flow inward through `raw`, explicit transformation/provenance records, reviewed normalized tables, and promotion gates. Frontend reads flow outward only through `ArchiveRepository`, backed by `api_v1` or a validated immutable release. Browser code never connects to PostgreSQL and never treats a database row as a UI contract.
 
-An immutable release is a reproducible projection of one accepted PostgreSQL state. It is not a second writable database. Once sealed:
+An immutable research release is a reproducible projection of one accepted PostgreSQL state and one declared corpus. It is not a second writable database. The rights-safe external-visual delivery view is carried by a separately sealed visual registry so a takedown or endpoint-health change never mutates or forces resealing of research claims. Once either boundary is sealed:
 
 - its release ID, manifest bytes, asset bytes, row counts, and hashes cannot change;
 - `UPDATE` and `DELETE` are denied for sealed `release` rows;
 - any content change creates a new release ID;
-- the consumer pins the exact release ID and manifest SHA-256;
-- a `current` alias may resolve a release once, but is never embedded in evidence or shard references.
+- the consumer pins `(researchReleaseId,researchManifestSha256)` and a compatible `(visualRegistryVersion,registrySha256)`;
+- each boundary has its own manifest, detached sidecar, lifecycle, and CAS-protected `current` pointer;
+- a `current` alias may resolve once, but is never embedded in evidence, citations, manifests, or shard references.
 
-`api_v1` exposes only accepted, rights-safe, release-scoped projections. It cannot trigger ingestion, review, promotion, or mutation.
+`api_v1` exposes only accepted, research-release-scoped projections combined with a compatible rights-safe visual-registry projection. It cannot trigger ingestion, review, promotion, or mutation and never exposes a held/link-only pixel URL.
 
 `core.entity` is a closed UUID supertype whose subtype row is enforced by FK and entity kind. Semantically specific links target subtype FKs; deliberately multi-kind links target `core.entity` plus an allowed-kind constraint. Canonical tables never use unconstrained `target_type + target_id`.
+
+A `core.archive_object` is operationally one catalogued design-object record in a governed cohort. It does not, by identity alone, assert a unique intellectual work. Possible identity equivalence, merge, and split are evidence-bearing curator decisions with persistent crosswalk/redirect history.
+
+A source assertion, accepted canonical assignment, evidence item, curator decision, epistemic research claim, semantic relation, and TRACE projection are different records with typed bridges. TRACE is a release presentation of eligible claims/relations for a declared corpus; it is never canonical relation or claim identity. The four initial epistemic classes are `documented_source_statement`, `scholarly_claim`, `computed_association`, and `causal_interpretation`.
 
 ## Authority rules
 
@@ -57,6 +62,8 @@ An immutable release is a reproducible projection of one accepted PostgreSQL sta
 5. Queryable domain relationships are represented by typed tables and joins, not opaque JSONB.
 6. JSONB is permitted for parsed raw payloads, provider-specific extensions, and non-authoritative diagnostics only.
 7. `release` and `api_v1` are derived layers; they cannot be used to write back into `core`, `research`, or other canonical schemas.
+8. Search is a release projection, never a second canonical database or a source for missing migration rows.
+9. Rights assessment, delivery mode, and endpoint health are independent axes. Unknown, missing, conflicting, or stale evidence defaults to `LINK_ONLY` or `CITATION_ONLY`; HTTP/API/IIIF accessibility does not establish authorization.
 
 ## Consequences
 
@@ -80,9 +87,10 @@ Costs and constraints:
 - Make SQLite the v49 writable canonical store: rejected because the current SQLite file is explicitly a frozen read snapshot and does not provide the intended multi-writer workflow boundary.
 - Let the frontend query PostgreSQL directly: rejected because it exposes internal schemas, bypasses release/rights gates, and couples UI deployment to database migrations.
 - Store all multi-value fields as JSONB: rejected because canonical queryable relations require provenance-bearing joins and constraints.
+- Reuse the legacy `db/*.sql` public-schema chain as v49 DDL: rejected because it lacks the v49 subtype, typed-FK, role, seal/CAS, research-claim, and visual-registry invariants.
 
 ## Follow-up boundary
 
 This ADR authorizes architecture only. It does not authorize schema creation, data import, export, frontend rewiring, deployment, or v48 mutation. Those actions require the gates in `ACCEPTANCE_GATES.md`.
 
-Identity, cardinality, state, release-seal, and privilege decisions are normative in `docs/architecture/DDL_DECISION_PACK_V49.md`.
+Identity, cardinality, state, release-seal, and privilege decisions are normative in `docs/architecture/DDL_DECISION_PACK_V49.md`. Research claims/corpora and visual-registry decisions are normative in `docs/adr/0004-research-claims-corpora-and-visual-registry.md`. The Phase 1B audit records unresolved pre-DDL evidence gaps; this ADR does not mark them implemented or closed.

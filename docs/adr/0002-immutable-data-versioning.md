@@ -10,9 +10,14 @@ v48 already has useful release evidence: frozen source hashes, a TRACE manifest,
 
 ## Decision
 
-Every v49 read dataset is an immutable release. A release has one globally unique, non-reusable `releaseId`, one canonical manifest, and one externally recorded manifest SHA-256. Archive, Search, TRACE, rights-safe representations, relation registry, and read projections are all members of that same release.
+v49 has two independent immutable version boundaries:
 
-### Release identity and lifecycle
+1. A **research release** has one globally unique, non-reusable `researchReleaseId`, one canonical research manifest, and one externally recorded `researchManifestSha256`. Archive objects, Search, registered predicates/relation types, evidence-bearing claims, semantic relations, corpus/missingness, TRACE projections, and machine-readable research projections are members of that release.
+2. A **visual registry** has one globally unique, non-reusable `visualRegistryVersion`, one canonical registry manifest, and one externally recorded `registrySha256`. Provider objects/endpoints, rights observations/policies, assessment, delivery mode, endpoint health, attribution/required statements, review-due, takedown overrides, and rights-safe visual references are members of that registry.
+
+The boundaries declare compatibility but do not share identity or `current`. A rights, endpoint-health, or takedown change creates a new visual registry without mutating or resealing the research release. A research claim/corpus change creates a new research release without silently carrying forward a visual authorization.
+
+### Independent identity and lifecycle
 
 The only forward states are `draft → candidate → validated → sealed`.
 
@@ -23,17 +28,17 @@ The only forward states are `draft → candidate → validated → sealed`.
 - Supersession is pointer/history metadata on an already sealed release, not a mutable release state.
 - A failed attempt remains with its failed receipts and is never resolved by `current`; remediation uses a new attempt/release ID.
 
-The release ID is semantic but never content authority by itself. Consumers must bind the pair `(releaseId, manifestSha256)`.
+The identity string is semantic but never content authority by itself. Consumers must bind both exact pairs: `(researchReleaseId,researchManifestSha256)` and `(visualRegistryVersion,registrySha256)`. Compatibility is an explicit manifest record, never inferred from simultaneous `current` resolution.
 
-### Canonical manifest
+### Canonical research manifest
 
 Manifest JSON uses one specified canonicalization algorithm (RFC 8785 JSON Canonicalization Scheme) and UTF-8. It contains at least:
 
 ```json
 {
-  "schemaVersion": "archive-release/v1",
+  "schemaVersion": "archive-research-release/v1",
   "apiContractVersion": "v1",
-  "releaseId": "v49-YYYYMMDD.N",
+  "researchReleaseId": "v49-research-YYYYMMDD.N",
   "createdAt": "RFC3339 timestamp",
   "status": "sealed",
   "sourceLineage": {
@@ -51,7 +56,12 @@ Manifest JSON uses one specified canonicalization algorithm (RFC 8785 JSON Canon
   },
   "registries": {
     "relationTypesSha256": "64 lowercase hex",
-    "rightsPolicySha256": "64 lowercase hex"
+    "predicateTypesSha256": "64 lowercase hex"
+  },
+  "corpus": {
+    "corpusVersion": "opaque immutable identifier",
+    "selectionPolicySha256": "64 lowercase hex",
+    "missingnessReceiptSha256": "64 lowercase hex"
   },
   "counts": {},
   "assets": [],
@@ -72,18 +82,45 @@ Each `assets[]` entry contains:
 
 The manifest must not contain `current`, mutable URLs, absolute local paths, credentials, or timestamps that make otherwise identical exports non-deterministic.
 
-The manifest hash is stored in a small release descriptor outside the manifest and in the promotion receipt. The manifest cannot self-authenticate by embedding its own final hash.
+The manifest hash is stored in a small research-release descriptor outside the manifest and in the promotion receipt. The manifest cannot self-authenticate by embedding its own final hash.
 
-### Seal protocol
+### Canonical visual-registry manifest
+
+The visual registry uses RFC 8785 and the same deterministic inventory rules, but a distinct schema and identity:
+
+```json
+{
+  "schemaVersion": "archive-visual-registry/v1",
+  "visualRegistryVersion": "v49-visual-YYYYMMDD.N",
+  "status": "sealed",
+  "compatibleResearchRelease": {
+    "researchReleaseId": "v49-research-YYYYMMDD.N",
+    "researchManifestSha256": "64 lowercase hex"
+  },
+  "providerRegistrySha256": "64 lowercase hex",
+  "rightsPolicySha256": "64 lowercase hex",
+  "assets": [],
+  "gateReceipt": {
+    "path": "receipts/visual-acceptance.json",
+    "sha256": "64 lowercase hex"
+  }
+}
+```
+
+It records typed provider object IDs and separates canonical record URL, IIIF manifest, viewer, thumbnail, and image-service endpoints. Rights assessment, delivery mode, and endpoint health are independent values. Unknown, missing, conflicting, or stale rights evidence serializes no deliverable pixel URL and defaults to `LINK_ONLY` or `CITATION_ONLY`. Accessibility, redirect success, API availability, or IIIF presence never implies authorization. A takedown override takes precedence over all other policy observations.
+
+### Seal protocols
+
+The following protocol is executed independently for the research release and visual registry. A transaction cannot use one boundary's state transition to mutate the other.
 
 1. Build copied release projections in a repeatable database snapshot while `draft`.
 2. Transition to `candidate` with compare-and-swap on the draft state/version and close the candidate fingerprint.
-3. Produce immutable pre-seal receipts for all five v48 artifacts, migration/query digests, exact counts and population boundaries, FK/orphan checks, relation registry, rights policy, unknown-relation isolation, grants, projection fingerprints, and deterministic asset inventory.
+3. Produce immutable pre-seal receipts. Research receipts cover all five v48 artifacts, migration/query digests, canonical/graph/derived counts, population boundaries, corpus/missingness, FK/orphan checks, predicate/relation registries, claim/projection eligibility, unknown-relation isolation, grants, projection fingerprints, and deterministic asset inventory. Visual receipts cover provider/endpoint identity, rights observations/policies, independent state axes, attribution, review-due, takedown precedence, held-pixel non-disclosure, compatibility, grants, and deterministic asset inventory.
 4. Transition to `validated` only when every required receipt is passing and hash-bound to the same candidate fingerprint.
 5. Generate RFC 8785 manifest bytes from the validated inventory and receipt hashes, then compute SHA-256 over those exact bytes.
 6. In one serializable transaction, recheck the fingerprint, store manifest bytes/hash, and transition `validated → sealed`. Any mismatch aborts.
 7. Write a detached post-seal sidecar containing release ID, manifest SHA-256, seal transaction identity, timestamp, and optional signature/attestation. It is outside the self-hashed manifest and cannot change the asset inventory.
-8. Update `current` only by CAS on the expected pointer generation, release ID, and manifest SHA. The target must be sealed; rollback uses the same CAS mechanism.
+8. Update that boundary's `current` only by CAS on the expected pointer generation, exact version ID, and manifest SHA. The target must be sealed and sidecar-verified; rollback uses the same CAS mechanism. Research-current and visual-current histories are separate.
 
 Candidate and sealed projections are copied/versioned rows. They are never views that join mutable canonical tables, so later canonical edits cannot make a sealed release drift.
 
@@ -93,8 +130,9 @@ Every shard uses a self-describing envelope:
 
 ```json
 {
-  "schemaVersion": "archive-shard/v1",
-  "releaseId": "v49-YYYYMMDD.N",
+  "schemaVersion": "archive-research-shard/v1",
+  "researchReleaseId": "v49-research-YYYYMMDD.N",
+  "researchManifestSha256": "64 lowercase hex",
   "resource": "trace-neighborhood",
   "shardId": "000",
   "partition": {
@@ -108,24 +146,24 @@ Every shard uses a self-describing envelope:
 }
 ```
 
-Records are sorted by stable ID with a documented tie-breaker. Partitioning is deterministic for a fixed export algorithm and query pack. Shards may reference only assets declared in the same manifest and release. The manifest lists every shard; unlisted files are not part of the release.
+Records are sorted by stable ID with a documented tie-breaker. Partitioning is deterministic for a fixed export algorithm and query pack. Research shards may reference only assets declared in the same research manifest. Visual-registry shards use their own envelope and may reference only assets declared in that registry. Cross-boundary references carry both exact identity/hash pairs and must satisfy declared compatibility. The owning manifest lists every shard; unlisted files are not part of either boundary.
 
 ### Validation and fail-closed behavior
 
-Before a repository exposes data it validates the descriptor, manifest schema, manifest hash, exact release ID, registry hashes, referenced asset hashes, and shard envelope. Validation may be lazy per asset, but a failed validation permanently poisons that repository instance.
+Before a repository exposes data it validates both descriptors, both manifest schemas/hashes, exact identity pairs, declared compatibility, registry hashes, referenced asset hashes, and shard envelopes. Validation may be lazy per asset, but a failed validation permanently poisons that repository instance.
 
-Missing files, schema mismatches, release mismatches, hash mismatches, duplicate stable IDs, gaps/overlaps outside the declared partition policy, or unregistered relation types return `INTEGRITY_FAILURE`. They never fall back to another release, a mock, an `OTHER` relation, or stale in-memory data.
+Missing files, schema mismatches, version/compatibility mismatches, hash mismatches, duplicate stable IDs, gaps/overlaps outside the declared partition policy, unregistered relation types, or rights-held pixel leakage return `INTEGRITY_FAILURE`. They never fall back to another release/registry, a mock, an `OTHER` relation, a permissive delivery mode, or stale in-memory data.
 
 ### Caching
 
 - Exact sealed resources use strong ETags and `Cache-Control: public, max-age=31536000, immutable`.
-- The `current` descriptor is mutable routing metadata with append-only history and CAS updates. It uses short caching or revalidation. A repository resolves it once, then switches to exact release URLs.
-- Caches and request deduplication are keyed by release ID and manifest SHA, never path alone.
+- Each `current` descriptor is mutable routing metadata with append-only history and CAS updates. It uses short caching or revalidation. A repository resolves each once, verifies compatibility, then switches to exact pair-pinned URLs.
+- Research caches are keyed by research release ID/hash; visual caches are keyed by visual registry version/hash; combined DTO caches include all four values. Path alone is never a cache key.
 
 ## Consequences
 
-Archive, Search, and TRACE cannot drift independently. Reproducibility improves, but every exporter and repository implementation must implement the same integrity rules. Small manifest changes create a new release; that is intentional.
+Archive, Search, claims/relations, corpus, and TRACE cannot drift within a research release. Visual authorization and endpoint state cannot drift within a visual registry. The two boundaries may advance independently only through explicit compatible pairs. Reproducibility and takedown responsiveness improve, but every exporter and repository implementation must implement the same integrity rules. Small manifest changes create a new version in the owning boundary; that is intentional.
 
 ## Follow-up boundary
 
-No v49 manifest or shard is generated in this architecture checkpoint. v48 manifest and shard files remain read-only. Format conformance, deterministic re-export, corruption tests, and seal enforcement are future acceptance gates.
+No v49 manifest or shard is generated in this architecture checkpoint. v48 manifest and shard files remain read-only. Research/visual format conformance, deterministic re-export, corruption and held-pixel tests, compatibility, and both seal/CAS implementations are future acceptance gates.
