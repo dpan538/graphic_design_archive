@@ -1,6 +1,7 @@
 "use client";
 
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
+import type { CSSProperties } from "react";
 import ChronogeographicRoutes from "./ChronogeographicRoutes";
 import TraceConstellationSystem from "./TraceConstellationSystem";
 import TraceDiagrams from "./TraceDiagrams";
@@ -18,6 +19,8 @@ import type {
   TraceLayer,
   TraceView,
 } from "./trace-types";
+
+const MOBILE_FEATURED_OBJECT_ID = "SURF-VAMYEARTRACEV2R0056";
 
 function decodeCompact<T>(payload: CompactPayload): T[] {
   return payload.items.map((values) => {
@@ -49,6 +52,40 @@ function externalProps(href: string) {
     : {};
 }
 
+function TraceViewIcon({ view }: { view: TraceView }) {
+  if (view === "atlas") {
+    return (
+      <svg className={styles.viewTabIcon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="8.5" />
+        <path d="M3.8 12h16.4M12 3.5c2.15 2.3 3.25 5.13 3.25 8.5S14.15 18.2 12 20.5M12 3.5C9.85 5.8 8.75 8.63 8.75 12s1.1 6.2 3.25 8.5" />
+      </svg>
+    );
+  }
+
+  if (view === "constellation") {
+    return (
+      <svg className={styles.viewTabIcon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="6" cy="7" r="1.75" />
+        <circle cx="15.75" cy="5.5" r="1.75" />
+        <circle cx="12" cy="12" r="2.15" />
+        <circle cx="6.5" cy="17.5" r="1.75" />
+        <circle cx="18" cy="17" r="1.75" />
+        <path d="m7.7 7.8 2.65 2.55m3.2-3.6-.9 3.15m1.15 3.05 2.65 2.45m-6.15-1.9-2.25 2.55" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg className={styles.viewTabIcon} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <circle cx="5" cy="12" r="2" />
+      <circle cx="18" cy="5" r="2" />
+      <circle cx="18" cy="12" r="2" />
+      <circle cx="18" cy="19" r="2" />
+      <path d="M7 12h4m0 0c2.4 0 2.8-7 5-7m-5 7h5m-5 0c2.4 0 2.8 7 5 7" />
+    </svg>
+  );
+}
+
 export default function TraceExplorer() {
   const [atlas, setAtlas] = useState<TraceAtlas | null>(null);
   const [view, setView] = useState<TraceView>("atlas");
@@ -66,6 +103,7 @@ export default function TraceExplorer() {
   const [decade, setDecade] = useState<number | "">("");
   const [medium, setMedium] = useState("");
   const [mobileDecade, setMobileDecade] = useState<number | null>(null);
+  const [mobileViewMenuOpen, setMobileViewMenuOpen] = useState(false);
   const [loading, setLoading] = useState("Loading frozen TRACE atlas…");
   const [error, setError] = useState("");
   const shardCache = useRef(new Map<string, Record<string, TraceGraph>>());
@@ -146,6 +184,42 @@ export default function TraceExplorer() {
     await loadLayerData(next);
   }
 
+  async function changeView(next: TraceView) {
+    setMobileViewMenuOpen(false);
+    setView(next);
+    if (next !== "object") return;
+
+    const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+    if (!compactViewport) {
+      await changeLayer(layer);
+      return;
+    }
+
+    if (graph) {
+      setDrawerOpen(false);
+      return;
+    }
+
+    // Mobile opens with one real evidence neighbourhood. The searchable layer
+    // remains available behind the drawer control, but it is not the first
+    // screen: that desktop research list obscures the visual task on a phone.
+    setLayer("active");
+    setReviewSelection(null);
+    setQuery("");
+    setRegionMembers([]);
+    setRegionLabel("");
+    setDecade("");
+    setMedium("");
+    setDrawerOpen(false);
+    try {
+      await selectMobileActive();
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : "Object trace unavailable");
+      setLoading("");
+      setDrawerOpen(true);
+    }
+  }
+
   async function selectActive(item: ActiveCatalogItem) {
     if (!atlas) return;
     setReviewSelection(null);
@@ -172,6 +246,17 @@ export default function TraceExplorer() {
     }
   }
 
+  async function selectMobileActive(
+    preferred?: (item: ActiveCatalogItem) => boolean,
+  ) {
+    const items = await ensureActiveCatalog();
+    const selected = (preferred ? items?.find(preferred) : undefined)
+      ?? items?.find((item) => item.id === MOBILE_FEATURED_OBJECT_ID)
+      ?? items?.[0];
+    if (!selected) throw new Error("The active TRACE catalog is empty");
+    await selectActive(selected);
+  }
+
   useEffect(() => {
     if (!atlas || deepLinkHandled.current) return;
     const params = new URLSearchParams(window.location.search);
@@ -190,9 +275,21 @@ export default function TraceExplorer() {
           return selectActive(item);
         }
         if (linkedRegion) {
+          const members = [linkedRegion];
+          const linkedDecadeNumber = linkedDecade && Number.isFinite(Number(linkedDecade))
+            ? Number(linkedDecade)
+            : null;
           setRegionLabel(linkedRegion);
-          setRegionMembers([linkedRegion]);
-          if (linkedDecade && Number.isFinite(Number(linkedDecade))) setDecade(Number(linkedDecade));
+          setRegionMembers(members);
+          if (linkedDecadeNumber !== null) setDecade(linkedDecadeNumber);
+          if (window.matchMedia("(max-width: 900px)").matches) {
+            const matched = items?.find((item) => (
+              members.includes(item.region)
+              && (linkedDecadeNumber === null || Math.floor(item.year / 10) * 10 === linkedDecadeNumber)
+            ));
+            if (matched) return selectActive(matched);
+            return selectMobileActive();
+          }
           setDrawerOpen(true);
         }
       })
@@ -203,11 +300,19 @@ export default function TraceExplorer() {
   }, [atlas]);
 
   function exploreCell(row: AtlasRegion, selectedDecade: number) {
+    const compactViewport = window.matchMedia("(max-width: 900px)").matches;
     setView("object");
-    void changeLayer("active").then(() => {
+    void changeLayer("active").then(async () => {
       setRegionLabel(row.region);
       setRegionMembers(row.members ?? [row.region]);
       setDecade(selectedDecade);
+      if (!compactViewport) return;
+
+      const members = row.members ?? [row.region];
+      await selectMobileActive((item) => (
+        members.includes(item.region)
+        && Math.floor(item.year / 10) * 10 === selectedDecade
+      ));
     });
   }
 
@@ -250,9 +355,44 @@ export default function TraceExplorer() {
   return (
     <main
       className={styles.page}
+      data-view={view}
       data-visual-fullscreen={view === "constellation" || (view === "object" && Boolean(graph))}
       data-drawer-open={view === "object" && drawerOpen}
     >
+      <div
+        className={styles.mobileViewPicker}
+        data-open={mobileViewMenuOpen}
+        onBlur={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget)) setMobileViewMenuOpen(false);
+        }}
+      >
+        <button
+          type="button"
+          className={styles.mobileViewTrigger}
+          aria-label={`Choose TRACE view; current ${view}`}
+          aria-haspopup="menu"
+          aria-expanded={mobileViewMenuOpen}
+          onClick={() => setMobileViewMenuOpen((open) => !open)}
+        >
+          <TraceViewIcon view={view} />
+        </button>
+        <div className={styles.mobileViewMenu} role="menu" aria-label="Choose TRACE view">
+          {(["atlas", "constellation", "object"] as TraceView[]).map((option) => (
+            <button
+              key={option}
+              type="button"
+              role="menuitemradio"
+              aria-label={`Show ${option === "atlas" ? "global atlas" : option === "constellation" ? "evidence constellation" : "object trace"}`}
+              aria-checked={view === option}
+              onClick={() => {
+                void changeView(option);
+              }}
+            >
+              <TraceViewIcon view={option} />
+            </button>
+          ))}
+        </div>
+      </div>
       <header className={styles.header}>
         <div>
           <p className={styles.eyebrow}>TRACE / frozen candidate v48</p>
@@ -270,21 +410,35 @@ export default function TraceExplorer() {
       </header>
 
       <div className={styles.viewTabs} aria-label="TRACE view">
-        <button type="button" aria-pressed={view === "atlas"} onClick={() => setView("atlas")}>
-          Global atlas
-        </button>
-        <button type="button" aria-pressed={view === "constellation"} onClick={() => setView("constellation")}>
-          Evidence constellation
+        <button
+          type="button"
+          aria-label="Show global atlas"
+          aria-pressed={view === "atlas"}
+          onClick={() => void changeView("atlas")}
+        >
+          <TraceViewIcon view="atlas" />
+          <span className={styles.viewTabDesktopLabel}>Global atlas</span>
+          <span className={styles.viewTabMobileLabel}>Atlas</span>
         </button>
         <button
           type="button"
-          aria-pressed={view === "object"}
-          onClick={() => {
-            setView("object");
-            void changeLayer(layer);
-          }}
+          aria-label="Show evidence constellation"
+          aria-pressed={view === "constellation"}
+          onClick={() => void changeView("constellation")}
         >
-          Object trace
+          <TraceViewIcon view="constellation" />
+          <span className={styles.viewTabDesktopLabel}>Evidence constellation</span>
+          <span className={styles.viewTabMobileLabel}>Evidence</span>
+        </button>
+        <button
+          type="button"
+          aria-label="Show object trace"
+          aria-pressed={view === "object"}
+          onClick={() => void changeView("object")}
+        >
+          <TraceViewIcon view="object" />
+          <span className={styles.viewTabDesktopLabel}>Object trace</span>
+          <span className={styles.viewTabMobileLabel}>Object</span>
         </button>
       </div>
 
@@ -302,13 +456,16 @@ export default function TraceExplorer() {
             <button
               type="button"
               className={styles.drawerToggle}
+              aria-label={drawerOpen ? "Collapse TRACE information and filters" : "Open TRACE information and filters"}
               aria-expanded={drawerOpen}
               aria-controls="trace-object-drawer"
               onClick={() => setDrawerOpen((value) => !value)}
             >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 5h16M4 12h10M4 19h16" />
-                <path d={drawerOpen ? "m9 9-3 3 3 3" : "m6 9 3 3-3 3"} />
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M4 6h5m4 0h7M4 12h10m4 0h2M4 18h2m4 0h10" />
+                <circle cx="11" cy="6" r="2" />
+                <circle cx="16" cy="12" r="2" />
+                <circle cx="8" cy="18" r="2" />
               </svg>
               <span>{drawerOpen ? "Collapse information" : "Open information"}</span>
             </button>
@@ -479,7 +636,38 @@ function AtlasView({
   exploreCell: (row: AtlasRegion, decade: number) => void;
 }) {
   const maximum = Math.max(...atlas.regionMatrix.flatMap((row) => row.counts));
-  const decadeIndex = mobileDecade === null ? -1 : atlas.decades.indexOf(mobileDecade);
+  const [mobilePlaying, setMobilePlaying] = useState(false);
+  const [mobileRegion, setMobileRegion] = useState(atlas.regionMatrix[0]?.region ?? "");
+  const selectedMobileDecade = mobileDecade ?? atlas.decades.at(-1) ?? atlas.decades[0];
+  const selectedMobileIndex = Math.max(0, atlas.decades.indexOf(selectedMobileDecade));
+  const selectedMobileRow = atlas.regionMatrix.find((row) => row.region === mobileRegion)
+    ?? atlas.regionMatrix[0];
+  const selectedMobileCount = selectedMobileRow?.counts[selectedMobileIndex] ?? 0;
+  const selectedRegionCount = atlas.regionMatrix.filter((row) => row.counts[selectedMobileIndex] > 0).length;
+  const relationFamilyTotals = atlas.relationTypes.reduce<Record<string, number>>((totals, relation) => {
+    if (relation.family !== "historical_influence") {
+      totals[relation.family] = (totals[relation.family] ?? 0) + relation.count;
+    }
+    return totals;
+  }, {});
+
+  useEffect(() => {
+    if (!mobilePlaying) return;
+    const timer = window.setInterval(() => {
+      const currentIndex = Math.max(0, atlas.decades.indexOf(selectedMobileDecade));
+      setMobileDecade(atlas.decades[(currentIndex + 1) % atlas.decades.length]);
+    }, 900);
+    return () => window.clearInterval(timer);
+  }, [atlas.decades, mobilePlaying, selectedMobileDecade, setMobileDecade]);
+
+  useEffect(() => {
+    if (selectedMobileRow?.counts[selectedMobileIndex]) return;
+    const next = atlas.regionMatrix
+      .map((row) => ({ row, count: row.counts[selectedMobileIndex] }))
+      .sort((a, b) => b.count - a.count)[0];
+    if (next?.row) setMobileRegion(next.row.region);
+  }, [atlas.regionMatrix, selectedMobileIndex, selectedMobileRow]);
+
   return (
     <section className={styles.atlas} aria-label="Active object time and geography atlas">
       <div className={styles.atlasStatement}>
@@ -491,25 +679,103 @@ function AtlasView({
       <ChronogeographicRoutes atlas={atlas} exploreCell={exploreCell} />
 
       <div className={styles.mobileAtlas}>
-        <label>
-          Decade
-          <select value={mobileDecade ?? ""} onChange={(event) => setMobileDecade(Number(event.target.value))}>
-            {atlas.decades.map((value) => <option key={value} value={value}>{value}s</option>)}
-          </select>
+        <header className={styles.mobileAtlasHeader}>
+          <div>
+            <p>ACTIVE ARCHIVE / TIME × REGION</p>
+            <h2>{selectedMobileDecade}s</h2>
+          </div>
+          <button
+            type="button"
+            className={styles.mobileAtlasPlay}
+            aria-label={mobilePlaying ? "Pause archive development animation" : "Play archive development animation"}
+            aria-pressed={mobilePlaying}
+            onClick={() => setMobilePlaying((playing) => !playing)}
+          >
+            <span aria-hidden="true">{mobilePlaying ? "Ⅱ" : "▶"}</span>
+          </button>
+        </header>
+
+        <dl className={styles.mobileAtlasMetrics}>
+          <div><dt>Objects</dt><dd>{atlas.decadeTotals[selectedMobileIndex].toLocaleString()}</dd></div>
+          <div><dt>Regions</dt><dd>{selectedRegionCount}</dd></div>
+          <div><dt>TRACE edges</dt><dd>{atlas.counts.traceEdges.toLocaleString()}</dd></div>
+        </dl>
+
+        <div
+          className={styles.mobileAtlasDots}
+          style={{ "--mobile-atlas-columns": atlas.regionMatrix.length } as CSSProperties}
+          role="img"
+          aria-label="Dot matrix of active objects by decade and normalized region. Use the decade slider and region selector for an exact value."
+        >
+          {atlas.decades.flatMap((decade, index) => atlas.regionMatrix.map((row) => {
+            const count = row.counts[index];
+            const selected = decade === selectedMobileDecade && row.region === mobileRegion;
+            return (
+              <span
+                key={`${decade}-${row.region}`}
+                aria-hidden="true"
+                data-decade-selected={decade === selectedMobileDecade}
+                data-selected={selected}
+                data-empty={!count}
+                style={{ "--mobile-dot-purity": `${count ? Math.max(18, Math.round((count / maximum) * 100)) : 8}%` } as CSSProperties}
+              />
+            );
+          }))}
+        </div>
+
+        <label className={styles.mobileAtlasTimeline}>
+          <span>{atlas.decades[0]}</span>
+          <input
+            type="range"
+            min={0}
+            max={atlas.decades.length - 1}
+            value={selectedMobileIndex}
+            aria-label="Selected archive decade"
+            onChange={(event) => {
+              setMobilePlaying(false);
+              setMobileDecade(atlas.decades[Number(event.target.value)]);
+            }}
+          />
+          <span>{atlas.decades.at(-1)}</span>
         </label>
-        <ol>
-          {atlas.regionMatrix
-            .map((row) => ({ row, count: decadeIndex >= 0 ? row.counts[decadeIndex] : 0 }))
-            .filter((item) => item.count)
-            .sort((a, b) => b.count - a.count)
-            .map(({ row, count }) => (
-              <li key={row.region}>
-                <button type="button" onClick={() => mobileDecade !== null && exploreCell(row, mobileDecade)}>
-                  <span>{row.region}</span><strong>{count.toLocaleString()}</strong>
-                </button>
-              </li>
-            ))}
-        </ol>
+
+        <article className={styles.mobileAtlasSelection} aria-live="polite">
+          <label>
+            Region
+            <select
+              value={selectedMobileRow?.region ?? ""}
+              onChange={(event) => {
+                setMobilePlaying(false);
+                setMobileRegion(event.target.value);
+              }}
+            >
+              {atlas.regionMatrix.map((row) => (
+                <option key={row.region} value={row.region}>{row.region}</option>
+              ))}
+            </select>
+          </label>
+          <strong>{selectedMobileCount.toLocaleString()}</strong>
+          <span>active objects · {selectedMobileDecade}s</span>
+          <button
+            type="button"
+            disabled={!selectedMobileCount || !selectedMobileRow}
+            onClick={() => selectedMobileRow && exploreCell(selectedMobileRow, selectedMobileDecade)}
+          >
+            Open objects
+          </button>
+        </article>
+
+        <div className={styles.mobileAtlasFamilies} aria-label="Documented relation-family totals">
+          {[
+            ["Source", relationFamilyTotals.source_provenance ?? 0],
+            ["Time / place", relationFamilyTotals.time_place ?? 0],
+            ["Medium / context", relationFamilyTotals.medium_context ?? 0],
+          ].map(([label, value]) => (
+            <span key={String(label)} style={{ "--family-share": `${(Number(value) / Math.max(1, atlas.counts.traceEdges)) * 100}%` } as CSSProperties}>
+              <i aria-hidden="true" /><b>{label}</b><em>{Number(value).toLocaleString()}</em>
+            </span>
+          ))}
+        </div>
       </div>
 
       <details className={styles.matrixFallback}>

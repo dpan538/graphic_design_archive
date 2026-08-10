@@ -83,7 +83,8 @@ const taxonomyText = await readFile(join(root, "src/components/archive/trace/tra
 const primitivesText = await readFile(join(root, "src/components/archive/primitives.tsx"), "utf8");
 const shellSearchText = await readFile(join(root, "src/components/archive/shell/search.tsx"), "utf8");
 const evolutionFieldText = await readFile(join(root, "src/components/archive/trace/ChronogeographicRoutes.tsx"), "utf8");
-const constellationText = await readFile(join(root, "src/components/archive/trace/TraceConstellation.tsx"), "utf8");
+const traceExplorerText = await readFile(join(root, "src/components/archive/trace/TraceExplorer.tsx"), "utf8");
+const constellationText = await readFile(join(root, "src/components/archive/trace/TraceConstellationSystem.tsx"), "utf8");
 const definitions = [...taxonomyText.matchAll(
   /id:\s*"([^"]+)"[\s\S]*?family:\s*"([^"]+)"\s*,\s*count:\s*(\d+)\s*,\s*status:/g,
 )].map((match) => ({ id: match[1], family: match[2], count: Number(match[3]) }));
@@ -97,6 +98,15 @@ const taxonomyMismatches = definitions.flatMap((definition) => {
     ? []
     : [{ ...definition, atlas: relation ?? null }];
 });
+const friendlyTreeCodes = new Set(
+  [...constellationText.matchAll(/^\s+(TRTREE\d+):\s*"[^"]+",?$/gm)].map((match) => match[1]),
+);
+const missingFriendlyTreeLabels = atlas.treeCounts
+  .map((tree) => tree.tree)
+  .filter((tree) => !friendlyTreeCodes.has(tree));
+const documentedFamilyBlock = constellationText.match(
+  /const DOCUMENTED_FAMILY_ORDER:[\s\S]*?=\s*\[([\s\S]*?)\];/,
+)?.[1] ?? "";
 
 const checks = {
   active_catalog_count: catalog.length === atlas.counts.activeObjects,
@@ -128,18 +138,54 @@ const checks = {
     && evolutionFieldText.includes("data-evolution-decade"),
   evolution_field_preserves_object_drilldown:
     evolutionFieldText.includes("exploreCell(row, cell.decade)"),
+  constellation_runtime_uses_system_component:
+    traceExplorerText.includes('import TraceConstellationSystem from "./TraceConstellationSystem"')
+    && traceExplorerText.includes("<TraceConstellationSystem atlas={atlas} />")
+    && !traceExplorerText.includes('from "./TraceConstellation"'),
   constellation_uses_frozen_tree_and_relation_counts:
     constellationText.includes("atlas.treeCounts")
     && constellationText.includes("atlas.relationTypes")
     && constellationText.includes("atlas.counts.activeObjects"),
   constellation_geometry_is_deterministic:
-    constellationText.includes("const rings = [")
+    constellationText.includes("const treeRecords = useMemo")
+    && constellationText.includes("slotDegrees = 360 / Math.max(atlas.treeCounts.length, 1)")
     && constellationText.includes("polarPoint")
     && constellationText.includes("arcPath")
+    && constellationText.includes("annularSectorPath")
     && !constellationText.includes("Math.random"),
+  constellation_filter_preserves_tree_positions:
+    constellationText.includes("Layout is always calculated from the complete frozen tree list")
+    && constellationText.includes("atlas.treeCounts.map((item, index) =>")
+    && constellationText.includes(".filter((record) => record.item.count >= minimum)"),
+  constellation_geometry_uses_real_counts:
+    constellationText.includes("membershipRatio = item.count / maximumMembership")
+    && constellationText.includes("Math.log1p(item.count)")
+    && constellationText.includes("(record.count / total) * available")
+    && constellationText.includes("data-memberships={item.count}")
+    && constellationText.includes("data-edge-count={record.count}"),
+  constellation_removes_fake_packets_and_sine_ribbons:
+    !constellationText.includes("leafCount")
+    && !constellationText.includes("aggregate packet")
+    && !constellationText.includes("--leaf-order")
+    && !constellationText.includes('data-leaf="true"')
+    && !constellationText.includes("ribbonPath")
+    && !constellationText.includes("amplitude")
+    && !constellationText.includes("taper"),
+  constellation_default_keeps_peer_trees_visible:
+    constellationText.includes("data-muted={locked && !selected}")
+    && constellationText.includes("const [locked, setLocked] = useState(false)")
+    && constellationText.includes("const [focus, setFocus] = useState<Focus | null>(null)"),
+  constellation_has_complete_friendly_tree_labels:
+    missingFriendlyTreeLabels.length === 0
+    && friendlyTreeCodes.size === atlas.treeCounts.length
+    && constellationText.includes("treeLabel(item.tree)")
+    && constellationText.includes("${treeLabel(item.tree)}, ${item.tree}")
+    && constellationText.includes("focus.item.tree"),
   constellation_keeps_inference_boundary:
-    constellationText.includes("It does not encode influence")
-    && constellationText.includes("not historical influence claims"),
+    constellationText.includes("does not encode influence")
+    && constellationText.includes("historical influence is not plotted")
+    && constellationText.includes("no historical influence relation is drawn")
+    && !documentedFamilyBlock.includes("historical_influence"),
   constellation_has_keyboard_and_text_fallback:
     constellationText.includes('role="button"')
     && constellationText.includes("onKeyDown")
@@ -159,8 +205,10 @@ console.log(JSON.stringify({
     unmappedObjects,
     unmappedRegionLabels: unmapped,
     archiveSearchSurfaces: archiveSearch.items.length,
+    friendlyTreeLabels: friendlyTreeCodes.size,
   },
   taxonomyMismatches,
+  missingFriendlyTreeLabels,
 }, null, 2));
 
 if (Object.values(checks).some((passed) => !passed)) process.exitCode = 1;

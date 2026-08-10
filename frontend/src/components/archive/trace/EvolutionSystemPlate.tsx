@@ -31,6 +31,13 @@ const FAMILY_LABELS: Record<RelationFamily, string> = {
   historical_influence: "Influence — absent",
 };
 
+const FAMILY_SHORT_LABELS: Record<RelationFamily, string> = {
+  source_provenance: "Source",
+  time_place: "Time / place",
+  medium_context: "Medium / context",
+  historical_influence: "Influence 0",
+};
+
 const REGION_ALIASES: Record<string, string[]> = {
   "United States": ["United States of America"],
   "Aotearoa New Zealand": ["New Zealand"],
@@ -82,6 +89,11 @@ function countryNames(region: string) {
   return REGION_ALIASES[region] ?? [region];
 }
 
+function logarithmicDepth(count: number, maximum: number, minimum: number, maximumDepth: number) {
+  if (count <= 0 || maximum <= 0) return 1;
+  return minimum + (Math.log1p(count) / Math.log1p(maximum)) * (maximumDepth - minimum);
+}
+
 function activate(event: KeyboardEvent<SVGGElement>, callback: () => void) {
   if (event.key === "Enter" || event.key === " ") {
     event.preventDefault();
@@ -119,9 +131,7 @@ export default function EvolutionSystemPlate({
     { source_provenance: 0, time_place: 0, medium_context: 0, historical_influence: 0 },
   );
   const maximumFamily = Math.max(...Object.values(familyTotals), 1);
-  const selectedRegionIndex = Math.max(0, atlas.regionMatrix.findIndex((row) => row.region === selectedRegion));
-  const selectedRegionAngle = -126 + selectedRegionIndex * regionSpan + regionSpan / 2;
-  const selectedRegionPoint = polarPoint(cx, cy, 352, selectedRegionAngle);
+  const maximumMedium = Math.max(...atlas.mediumGroups.map((medium) => medium.count), 1);
   const regionMapPoints = atlas.regionMatrix.flatMap((row) => {
     const aliases = countryNames(row.region);
     const country = countries.features.find((item) => aliases.includes(item.properties?.name ?? ""));
@@ -129,12 +139,18 @@ export default function EvolutionSystemPlate({
     const point = mapPath.centroid(country);
     return Number.isFinite(point[0]) && Number.isFinite(point[1]) ? [{ row, point }] : [];
   });
+  const mappedRegionNames = new Set(regionMapPoints.map(({ row }) => row.region));
+  const unmappedRegionRows = atlas.regionMatrix.filter((row) => !mappedRegionNames.has(row.region));
+  const maximumMappedDecadeCount = Math.max(
+    ...regionMapPoints.map(({ row }) => row.counts[selectedIndex] ?? 0),
+    1,
+  );
 
   return (
     <div className={styles.systemPlateWrap}>
       <svg className={styles.systemPlate} viewBox="0 0 1300 900" role="img" aria-labelledby="evolution-system-title evolution-system-desc">
         <title id="evolution-system-title">TRACE archive evolution system diagram</title>
-        <desc id="evolution-system-desc">Fifteen geographic aggregates, seven display-only medium groups, and four evidence families are aligned with a real Equal Earth map. Curves show aggregate membership, not historical influence.</desc>
+        <desc id="evolution-system-desc">Fifteen geographic aggregates, seven display-only medium groups, and four evidence families are shown as independent count scales beside a real Equal Earth map. Arc depth encodes a logarithmic count. Mapped country centroids and the separate non-coordinate aggregate are selectable. No mark claims historical influence.</desc>
         <defs>
           <linearGradient id="system-field" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#fff9ea" /><stop offset="100%" stopColor="#eee5d2" /></linearGradient>
         </defs>
@@ -145,7 +161,7 @@ export default function EvolutionSystemPlate({
           <circle cx={cx} cy={cy} r="390" /><circle cx={cx} cy={cy} r="318" /><circle cx={cx} cy={cy} r="236" />
         </g>
         <g className={styles.systemMeta} aria-hidden="true">
-          <text x="38" y="40">TRACE / SYSTEM DIAGRAM 01</text><text x="38" y="62">REGION → MEDIUM → EVIDENCE FAMILY</text>
+          <text x="38" y="40">TRACE / SYSTEM DIAGRAM 01</text><text x="38" y="62">INDEPENDENT COUNT SCALES · ARC DEPTH = LOG COUNT</text>
           <text x="1262" y="40" textAnchor="end">FROZEN CANDIDATE V48</text><text x="1262" y="62" textAnchor="end">NO INFERRED INFLUENCE</text>
         </g>
 
@@ -157,10 +173,12 @@ export default function EvolutionSystemPlate({
             const labelPoint = polarPoint(cx, cy, 410, middle);
             const cell = { region: row.region, decade: selectedDecade, count: row.counts[selectedIndex] ?? 0 };
             const active = row.region === selectedRegion;
+            const depth = logarithmicDepth(row.total, maximumRegion, 9, 48);
             return (
-              <g key={row.region} role="button" tabIndex={0} data-active={active} aria-label={`${row.region}: ${cell.count.toLocaleString()} active objects in the ${selectedDecade}s`} onMouseEnter={() => onFocusCell(cell)} onFocus={() => onFocusCell(cell)} onClick={() => onActivate(cell)} onKeyDown={(event) => activate(event, () => onActivate(cell))}>
-                <path d={bandPath(cx, cy, 388, 358, start, end)} style={{ "--system-weight": Math.max(0.08, row.total / maximumRegion) } as CSSProperties} />
+              <g key={row.region} role="button" tabIndex={0} data-active={active} aria-label={`${row.region}: ${row.total.toLocaleString()} active objects across all decades; ${cell.count.toLocaleString()} in the ${selectedDecade}s`} onMouseEnter={() => onFocusCell(cell)} onFocus={() => onFocusCell(cell)} onClick={() => onActivate(cell)} onKeyDown={(event) => activate(event, () => onActivate(cell))}>
+                <path d={bandPath(cx, cy, 388, 388 - depth, start, end)} style={{ "--system-weight": Math.max(0.36, Math.sqrt(row.total / maximumRegion)) } as CSSProperties} />
                 <text x={labelPoint.x} y={labelPoint.y} textAnchor={labelPoint.x < cx ? "end" : "start"}>{row.region.length > 18 ? `${row.region.slice(0, 16)}…` : row.region}</text>
+                <title>{row.region}: {row.total.toLocaleString()} active objects across all decades; {cell.count.toLocaleString()} in the {selectedDecade}s</title>
               </g>
             );
           })}
@@ -175,23 +193,14 @@ export default function EvolutionSystemPlate({
           })}
         </g>
 
-        <g className={styles.systemFlows} aria-hidden="true">
-          {atlas.mediumGroups.map((medium, index) => {
-            const mediumAngle = -108 + (index / Math.max(1, atlas.mediumGroups.length - 1)) * 216;
-            const mediumPoint = polarPoint(cx, cy, 278, mediumAngle);
-            const family = FAMILY_ORDER[index % 3];
-            const familyPoint = polarPoint(cx, cy, 190, -72 + FAMILY_ORDER.indexOf(family) * 48);
-            return <g key={medium.name} data-medium-index={index}><path d={`M${selectedRegionPoint.x},${selectedRegionPoint.y} C${selectedRegionPoint.x},${cy - 132} ${mediumPoint.x},${cy - 132} ${mediumPoint.x},${mediumPoint.y}`} /><path d={`M${mediumPoint.x},${mediumPoint.y} C${mediumPoint.x},${cy - 42} ${familyPoint.x},${cy - 42} ${familyPoint.x},${familyPoint.y}`} /></g>;
-          })}
-        </g>
-
         <g className={styles.systemMediumArc}>
           {atlas.mediumGroups.map((medium, index) => {
             const span = 216 / atlas.mediumGroups.length;
             const start = -108 + index * span + 1.8;
             const end = -108 + (index + 1) * span - 1.8;
-            const labelPoint = polarPoint(cx, cy, 287, (start + end) / 2);
-            return <g key={medium.name} data-medium-index={index}><path d={bandPath(cx, cy, 304, 270, start, end)} /><text x={labelPoint.x} y={labelPoint.y + 3} textAnchor="middle">{medium.name.replace("graphic object / other", "graphic / other")}</text></g>;
+            const depth = logarithmicDepth(medium.count, maximumMedium, 7, 42);
+            const labelPoint = polarPoint(cx, cy, 304 - depth / 2, (start + end) / 2);
+            return <g key={medium.name} data-medium-index={index}><path d={bandPath(cx, cy, 304, 304 - depth, start, end)} /><text x={labelPoint.x} y={labelPoint.y + 3} textAnchor="middle">{medium.name.replace("graphic object / other", "graphic / other")} · {medium.count.toLocaleString()}</text><title>{medium.name}: {medium.count.toLocaleString()} active objects</title></g>;
           })}
         </g>
 
@@ -199,8 +208,9 @@ export default function EvolutionSystemPlate({
           {FAMILY_ORDER.map((family, index) => {
             const start = -82 + index * 48;
             const end = start + 38;
-            const labelPoint = polarPoint(cx, cy, 205, (start + end) / 2);
-            return <g key={family} data-family={family} data-empty={familyTotals[family] === 0}><path d={bandPath(cx, cy, 226, 184, start, end)} /><text x={labelPoint.x} y={labelPoint.y + 3} textAnchor="middle">{FAMILY_LABELS[family]}</text><title>{familyTotals[family].toLocaleString()} documented edges</title></g>;
+            const depth = logarithmicDepth(familyTotals[family], maximumFamily, 8, 42);
+            const labelPoint = polarPoint(cx, cy, 226 - depth / 2, (start + end) / 2);
+            return <g key={family} data-family={family} data-empty={familyTotals[family] === 0}>{familyTotals[family] > 0 ? <path d={bandPath(cx, cy, 226, 226 - depth, start, end)} /> : null}<text x={labelPoint.x} y={labelPoint.y + 3} textAnchor="middle">{FAMILY_SHORT_LABELS[family]} · {familyTotals[family].toLocaleString()}</text><title>{FAMILY_LABELS[family]}: {familyTotals[family].toLocaleString()} documented edges</title></g>;
           })}
         </g>
 
@@ -211,15 +221,31 @@ export default function EvolutionSystemPlate({
           {countries.features.map((country, index) => <path key={`${String(country.id ?? "country")}-${index}`} d={mapPath(country) ?? undefined} />)}
           {regionMapPoints.map(({ row, point }, index) => {
             const count = row.counts[selectedIndex] ?? 0;
-            if (!count) return null;
-            const radius = 2.8 + Math.sqrt(count / Math.max(1, maximumRegion)) * 8;
-            return <circle key={row.region} cx={point[0]} cy={point[1]} r={radius} data-active={row.region === selectedRegion} data-order={index} />;
+            const radius = count ? 3 + Math.sqrt(count / maximumMappedDecadeCount) * 10 : 2.4;
+            const cell = { region: row.region, decade: selectedDecade, count };
+            return (
+              <g key={row.region} role="button" tabIndex={0} aria-label={`${row.region} map centroid: ${count.toLocaleString()} active objects in the ${selectedDecade}s`} onMouseEnter={() => onFocusCell(cell)} onFocus={() => onFocusCell(cell)} onClick={() => onActivate(cell)} onKeyDown={(event) => activate(event, () => onActivate(cell))}>
+                <circle cx={point[0]} cy={point[1]} r={radius} data-active={row.region === selectedRegion} data-order={index} style={{ opacity: count ? 0.9 : 0.24 }} />
+                <title>{row.region}: country-geometry centroid, {count.toLocaleString()} active objects in the {selectedDecade}s</title>
+              </g>
+            );
           })}
-          <text x="650" y="872" textAnchor="middle">GEOGRAPHIC AGGREGATES · COUNTRY-GEOMETRY CENTROIDS · NOT INFLUENCE ROUTES</text>
+          {unmappedRegionRows.map((row, index) => {
+            const count = row.counts[selectedIndex] ?? 0;
+            const cell = { region: row.region, decade: selectedDecade, count };
+            return (
+              <g key={row.region} role="button" tabIndex={0} transform={`translate(286 ${690 + index * 72})`} data-unmapped="true" data-active={row.region === selectedRegion} aria-label={`${row.region}: non-coordinate aggregate, ${row.total.toLocaleString()} active objects across all decades and ${count.toLocaleString()} in the ${selectedDecade}s`} onMouseEnter={() => onFocusCell(cell)} onFocus={() => onFocusCell(cell)} onClick={() => onActivate(cell)} onKeyDown={(event) => activate(event, () => onActivate(cell))}>
+                <rect width="270" height="58" rx="29" fill="#fff9ea" stroke="#252b28" />
+                <circle cx="29" cy="29" r={9 + Math.sqrt(row.total / maximumRegion) * 8} data-active={row.region === selectedRegion} />
+                <text x="58" y="35">{row.region} · {row.total.toLocaleString()}</text>
+                <title>{row.region}: {row.total.toLocaleString()} active objects across all decades. This aggregate has no single geographic coordinate and is not plotted as a country.</title>
+              </g>
+            );
+          })}
         </g>
 
         <g className={styles.systemFocus} transform="translate(40 684)"><rect width="274" height="154" /><text x="18" y="28">CURRENT OBSERVATION</text><text x="18" y="62" data-title="true">{focusCell.region}</text><text x="18" y="94" data-value="true">{focusCell.count.toLocaleString()}</text><text x="18" y="116">ACTIVE OBJECTS · {focusCell.decade}s</text><line x1="18" y1="132" x2="256" y2="132" /><text x="18" y="148">SELECT ARC OR MAP MARK</text></g>
-        <g className={styles.systemFamilyScale} transform="translate(984 680)"><text x="0" y="0">DOCUMENTED EDGE VOLUME</text>{FAMILY_ORDER.map((family, index) => <g key={family} transform={`translate(0 ${22 + index * 34})`} data-family={family}><rect width={24 + (familyTotals[family] / maximumFamily) * 220} height="12" /><text x="0" y="27">{FAMILY_LABELS[family]}</text><text x="260" y="11" textAnchor="end">{familyTotals[family].toLocaleString()}</text></g>)}</g>
+        <g className={styles.systemFamilyScale} transform="translate(984 680)"><text x="0" y="0">DOCUMENTED EDGE VOLUME</text>{FAMILY_ORDER.map((family, index) => <g key={family} transform={`translate(0 ${22 + index * 34})`} data-family={family}><rect width={familyTotals[family] === 0 ? 0 : 24 + (familyTotals[family] / maximumFamily) * 220} height="12" /><text x="0" y="27">{FAMILY_LABELS[family]}</text><text x="260" y="11" textAnchor="end">{familyTotals[family].toLocaleString()}</text></g>)}</g>
       </svg>
     </div>
   );

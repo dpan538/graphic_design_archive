@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import SearchBox, { type AssistantContext, type SearchMode } from "./search";
+import shellStyles from "./ArchiveShell.module.css";
 
 /**
  * Fixed, non-scrolling viewport. No sidebar column and no top/bottom bar.
@@ -99,15 +100,31 @@ export default function ArchiveShell({
   // Left-edge swipe → back. Backspace also goes back.
   useEffect(() => {
     const onStart = (e: TouchEvent) => {
+      if (!window.matchMedia("(max-width: 900px)").matches) {
+        touch.current = null;
+        return;
+      }
       const t = e.touches[0];
-      touch.current = { x: t.clientX, y: t.clientY, edge: t.clientX < 44 };
+      const target = e.target instanceof Element ? e.target : null;
+      const ownsGesture = target?.closest(
+        "button, a, input, select, textarea, summary, [role='button'], [role='slider'], "
+        + ".region-card-stack, .mobile-card-wheel__viewport, .mobileAtlasDots, "
+        + "[data-mobile-gesture-zone]",
+      );
+      touch.current = {
+        x: t.clientX,
+        y: t.clientY,
+        edge: t.clientX < 28 && !ownsGesture,
+      };
     };
     const onEnd = (e: TouchEvent) => {
       const s = touch.current;
       touch.current = null;
       if (!s || !s.edge) return;
       const t = e.changedTouches[0];
-      if (t.clientX - s.x > 70 && Math.abs(t.clientY - s.y) < 70) {
+      const horizontal = t.clientX - s.x;
+      const vertical = Math.abs(t.clientY - s.y);
+      if (horizontal > 76 && vertical < 44 && horizontal > vertical * 1.5) {
         router.back();
       }
     };
@@ -261,7 +278,7 @@ export default function ArchiveShell({
       <nav className="desktop-nav" aria-label="Archive navigation">
         <Link
           href="/about"
-          className="nav-icon"
+          className={`nav-icon ${shellStyles.semanticNavItem}`}
           data-active={activeNav === "about"}
           aria-label="About"
         >
@@ -270,7 +287,7 @@ export default function ArchiveShell({
         </Link>
         <Link
           href="/contents"
-          className="nav-icon"
+          className={`nav-icon ${shellStyles.semanticNavItem}`}
           data-active={activeNav === "index"}
           aria-label="Index"
         >
@@ -279,7 +296,7 @@ export default function ArchiveShell({
         </Link>
         <Link
           href="/folders"
-          className="nav-icon"
+          className={`nav-icon ${shellStyles.semanticNavItem}`}
           data-active={activeNav === "folders"}
           aria-label="Folders"
         >
@@ -288,7 +305,7 @@ export default function ArchiveShell({
         </Link>
         <Link
           href="/trace"
-          className="nav-icon"
+          className={`nav-icon ${shellStyles.semanticNavItem}`}
           data-active={activeNav === "trace"}
           aria-label="TRACE evidence atlas"
         >
@@ -298,7 +315,7 @@ export default function ArchiveShell({
         <button
           ref={desktopSearchButtonRef}
           type="button"
-          className="nav-icon"
+          className={`nav-icon ${shellStyles.semanticNavItem}`}
           data-active={searchOpen && searchMode === "search"}
           aria-label="Search"
           onClick={() => {
@@ -318,7 +335,7 @@ export default function ArchiveShell({
         <button
           ref={menuButtonRef}
           type="button"
-          className="nav-icon nav-menu__trigger"
+          className={`nav-icon nav-menu__trigger ${shellStyles.mobileMenuTrigger}`}
           data-active={menuOpen}
           aria-label={menuOpen ? "Close archive menu" : "Open archive menu"}
           aria-expanded={menuOpen}
@@ -328,22 +345,18 @@ export default function ArchiveShell({
             setMenuOpen((open) => !open);
           }}
         >
-          <span className="nav-menu__glyph" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-          </span>
+          <IconMenu />
         </button>
 
         {menuOpen ? (
           <nav
             id="archive-global-menu"
-            className="nav-menu__panel"
+            className={`nav-menu__panel ${shellStyles.mobileMenuPanel}`}
             aria-label="Archive navigation"
           >
             <Link
               href="/about"
-              className="nav-icon"
+              className={`nav-icon ${shellStyles.semanticNavItem} ${shellStyles.mobileNavItem}`}
               data-active={activeNav === "about"}
               aria-label="About"
             >
@@ -352,7 +365,7 @@ export default function ArchiveShell({
             </Link>
             <Link
               href="/contents"
-              className="nav-icon"
+              className={`nav-icon ${shellStyles.semanticNavItem} ${shellStyles.mobileNavItem}`}
               data-active={activeNav === "index"}
               aria-label="Index"
             >
@@ -361,7 +374,7 @@ export default function ArchiveShell({
             </Link>
             <Link
               href="/folders"
-              className="nav-icon"
+              className={`nav-icon ${shellStyles.semanticNavItem} ${shellStyles.mobileNavItem}`}
               data-active={activeNav === "folders"}
               aria-label="Folders"
             >
@@ -370,7 +383,7 @@ export default function ArchiveShell({
             </Link>
             <Link
               href="/trace"
-              className="nav-icon"
+              className={`nav-icon ${shellStyles.semanticNavItem} ${shellStyles.mobileNavItem}`}
               data-active={activeNav === "trace"}
               aria-label="TRACE evidence atlas"
             >
@@ -380,10 +393,11 @@ export default function ArchiveShell({
             <button
               ref={mobileSearchButtonRef}
               type="button"
-              className="nav-icon"
+              className={`nav-icon ${shellStyles.semanticNavItem} ${shellStyles.mobileNavItem}`}
               data-active={searchOpen && searchMode === "search"}
               aria-label="Search"
               onClick={() => {
+                setMenuOpen(false);
                 setSearchMode("search");
                 setLeftPanelOpen(false);
                 setPanelOpen(false);
@@ -461,7 +475,7 @@ export default function ArchiveShell({
 
 function IconIndex() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
       <rect x="4" y="3" width="16" height="18" />
       <line x1="8" y1="7" x2="16" y2="7" />
       <line x1="8" y1="11" x2="16" y2="11" />
@@ -472,7 +486,7 @@ function IconIndex() {
 
 function IconFolder() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
       <path d="M3 6h6l2 2h10v11H3z" />
     </svg>
   );
@@ -480,7 +494,7 @@ function IconFolder() {
 
 function IconSearch() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
       <circle cx="10.5" cy="10.5" r="6.5" />
       <line x1="15.5" y1="15.5" x2="21" y2="21" strokeWidth="2" />
     </svg>
@@ -489,7 +503,7 @@ function IconSearch() {
 
 function IconAbout() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
       <circle cx="12" cy="12" r="9" />
       <line x1="12" y1="10" x2="12" y2="17" />
       <line x1="12" y1="6.5" x2="12" y2="8" strokeWidth="2.2" />
@@ -499,25 +513,42 @@ function IconAbout() {
 
 function IconTree() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-      <circle cx="6" cy="5" r="2" />
-      <circle cx="17" cy="12" r="2" />
-      <circle cx="17" cy="19" r="2" />
-      <path d="M8 5h3v14h4" />
-      <path d="M11 12h4" />
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+      <circle cx="5" cy="12" r="2" />
+      <circle cx="19" cy="5" r="2" />
+      <circle cx="19" cy="12" r="2" />
+      <circle cx="19" cy="19" r="2" />
+      <path d="M7 12h4c2 0 2-7 6-7M11 12h6M11 12c2 0 2 7 6 7" />
     </svg>
   );
 }
 
 function IconContext() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
       <rect x="5" y="4" width="14" height="16" />
       <path d="M8 8h8" />
       <path d="M8 12h8" />
       <path d="M8 16h5" />
       <circle cx="5" cy="4" r="1.6" fill="currentColor" stroke="none" />
       <circle cx="19" cy="20" r="1.6" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function IconMenu() {
+  return (
+    <svg
+      className={shellStyles.menuIcon}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M4 6.5h16M4 12h16M4 17.5h16" />
     </svg>
   );
 }

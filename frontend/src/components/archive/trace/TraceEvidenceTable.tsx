@@ -109,6 +109,42 @@ export default function TraceEvidenceTable({
         <p className={styles.ledgerHint}>Select an edge mark to wake this evidence detail.</p>
       )}
 
+      <ol className={styles.mobileLedgerList} aria-label={`Normalized TRACE edges for ${graph.object.title}`}>
+        {rows.map((edge) => {
+          const peer = tracePeerNode(edge, graph.object.nodeId, nodes);
+          const definition = traceTypeFor(edge.label);
+          const rowSelection = selectionForEdge(graph, edge);
+          const selected = selection?.edgeId === edge.id;
+          const evidenceHref = edge.evidenceUrl || peer?.href || graph.object.evidenceReturnUrl;
+          return (
+            <li key={`mobile-${edge.id}`} data-selected={selected}>
+              <button
+                type="button"
+                className={styles.traceMarkButton}
+                aria-pressed={selected}
+                aria-label={`Select ${definition.label} evidence edge`}
+                onClick={() => onSelect(rowSelection)}
+              >
+                {marks.edgeMarks.get(edge.id)}
+              </button>
+              <div>
+                <strong>{definition.label}</strong>
+                <span>{marks.nodeMarks.get(rowSelection.nodeId)} · {peer?.label ?? "Evidence node"}</span>
+              </div>
+              <dl>
+                <div><dt>Direction</dt><dd>{edge.direction}</dd></div>
+                <div><dt>State</dt><dd>{edge.reviewState.replaceAll("_", " ")}</dd></div>
+                <div><dt>Confidence</dt><dd>{edge.confidence.replaceAll("_", " ")}</dd></div>
+              </dl>
+              <div className={styles.mobileLedgerLinks}>
+                <Link href={`/trace/types/${edge.label}`}>Type definition</Link>
+                <a href={evidenceHref} {...externalProps(evidenceHref)}>{edge.evidenceField || "Source evidence"}</a>
+              </div>
+            </li>
+          );
+        })}
+      </ol>
+
       <div className={styles.ledgerTableWrap}>
         <table className={styles.ledgerTable}>
           <caption>Normalized, selectable TRACE edges for {graph.object.title}</caption>

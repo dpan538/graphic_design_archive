@@ -60,6 +60,12 @@
   line-height: 0.98;
 }
 
+.mobileHeadline,
+.mobileFilters,
+.mobileResultList {
+  display: none;
+}
+
 .header dl {
   display: grid;
   grid-template-columns: repeat(3, minmax(5rem, 1fr));
@@ -359,5 +365,368 @@
 
   .header h1 {
     font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .page {
+    min-width: 0;
+    padding: 1rem 1rem 3rem;
+    overflow-x: clip;
+    background:
+      radial-gradient(circle at 92% 4%, rgba(47, 108, 216, 0.11), transparent 17rem),
+      var(--canvas);
+  }
+
+  .page::before {
+    display: none;
+  }
+
+  .header {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+    padding: 0 4.25rem 1.25rem 0;
+  }
+
+  .desktopHeadline,
+  .desktopFilters,
+  .tableWrap {
+    display: none;
+  }
+
+  .mobileHeadline {
+    display: inline;
+  }
+
+  .header p,
+  .searchStage span,
+  .results article > header p {
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+  .header h1 {
+    max-width: 16ch;
+    margin-top: 0.5rem;
+    font-size: clamp(2.15rem, 10vw, 3.25rem);
+    line-height: 0.98;
+  }
+
+  .header dl {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .header dl div {
+    min-width: 0;
+    padding-top: 0.5rem;
+  }
+
+  .header dt,
+  .header dd {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .header dd {
+    margin-top: 0.2rem;
+    font-size: 1.2rem;
+  }
+
+  .searchStage {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    padding: 1.5rem 0 0.75rem;
+  }
+
+  .queryLabel {
+    gap: 0.5rem;
+  }
+
+  .queryLabel input {
+    min-height: 3rem;
+    padding: 0.5rem 0;
+    font-size: 1.25rem;
+    line-height: 1.35;
+  }
+
+  .scopeControl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+  }
+
+  .scopeControl button,
+  .mobileFilterGrid > button {
+    min-width: 0;
+    min-height: 3rem;
+    padding: 0.65rem;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .scopeControl button + button {
+    border-left: 1px solid var(--line-soft);
+  }
+
+  .scopeControl button:nth-child(even) {
+    border-left: 0;
+  }
+
+  .scopeControl button:nth-child(n + 3) {
+    border-top: 0;
+  }
+
+  .mobileFilters {
+    display: block;
+    margin-top: 0.25rem;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mobileFilters summary {
+    display: flex;
+    min-height: 3rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    cursor: pointer;
+    font-family: var(--font-plex-mono), ui-monospace, monospace;
+    font-size: 1rem;
+    list-style: none;
+  }
+
+  .mobileFilters summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobileFilters summary::after {
+    content: "+";
+    display: grid;
+    width: 3rem;
+    height: 3rem;
+    flex: 0 0 3rem;
+    place-items: center;
+    border-left: 1px solid var(--line);
+    font-size: 1.5rem;
+  }
+
+  .mobileFilters[open] summary::after {
+    content: "−";
+  }
+
+  .mobileFilters summary b {
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .mobileFilterGrid {
+    display: grid;
+    gap: 0.75rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .mobileFilterGrid label {
+    display: grid;
+    gap: 0.4rem;
+    min-width: 0;
+    font-family: var(--font-plex-mono), ui-monospace, monospace;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .mobileFilterGrid select {
+    width: 100%;
+    min-width: 0;
+    min-height: 3rem;
+    padding: 0.55rem 0.65rem;
+    border: 1px solid var(--line-soft);
+    border-radius: 0.6rem;
+    color: var(--ink);
+    background: var(--paper);
+    font: inherit;
+  }
+
+  .mobileFilterGrid select:disabled {
+    opacity: 0.5;
+  }
+
+  .results {
+    min-width: 0;
+    gap: 2.25rem;
+    padding-top: 1.5rem;
+  }
+
+  .results article {
+    min-width: 0;
+  }
+
+  .results article > header {
+    min-height: 3rem;
+    align-items: center;
+  }
+
+  .results article > header b {
+    font-size: 1.25rem;
+  }
+
+  .mobileResultList {
+    display: grid;
+    min-width: 0;
+    margin: 0;
+    padding: 0.75rem 0 0;
+    gap: 0.75rem;
+    list-style: none;
+  }
+
+  .mobileResultList li {
+    min-width: 0;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 12rem;
+  }
+
+  .mobileResultList a {
+    position: relative;
+    display: grid;
+    min-width: 0;
+    min-height: 12rem;
+    padding: 1rem;
+    overflow: hidden;
+    border: 1px solid var(--line-soft);
+    border-top: 3px solid var(--region-readable);
+    border-radius: 1rem;
+    color: var(--ink);
+    background: color-mix(in srgb, var(--paper) 96%, var(--region-readable));
+    text-decoration: none;
+  }
+
+  .mobileResultList a:active,
+  .mobileResultList a:focus-visible {
+    border-color: var(--focus-coral);
+    outline: 2px solid var(--focus-coral);
+    outline-offset: 2px;
+  }
+
+  .mobileResultMeta,
+  .mobileResultPlace,
+  .mobileResultSource,
+  .mobileResultRoute,
+  .mobileResultList small {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+  .mobileResultMeta,
+  .mobileResultList small {
+    color: var(--ink-soft);
+    font-family: var(--font-plex-mono), ui-monospace, monospace;
+  }
+
+  .mobileResultList strong {
+    margin: 0.55rem 0 0.2rem;
+    overflow-wrap: anywhere;
+    font-size: 1.35rem;
+    font-weight: 550;
+    line-height: 1.08;
+  }
+
+  .mobileResultSource {
+    margin-top: 0.65rem;
+    color: var(--ink-soft);
+  }
+
+  .mobileResultRoute {
+    display: flex;
+    min-height: 3rem;
+    margin-top: 0.8rem;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--line);
+    color: var(--region-readable);
+    font-family: var(--font-plex-mono), ui-monospace, monospace;
+    font-weight: 600;
+  }
+
+  .mobileResultList small {
+    order: -1;
+  }
+
+  .relationGrid,
+  .archiveGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+    padding-top: 0.75rem;
+  }
+
+  .relationGrid a,
+  .archiveGrid a {
+    min-width: 0;
+    min-height: 9rem;
+    padding: 1rem;
+    border: 1px solid var(--line-soft);
+    border-radius: 1rem;
+    background: var(--paper);
+  }
+
+  .relationGrid span,
+  .archiveGrid span,
+  .relationGrid small,
+  .archiveGrid small {
+    overflow-wrap: anywhere;
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+  .relationGrid strong,
+  .archiveGrid strong {
+    margin: 0.65rem 0;
+    overflow-wrap: anywhere;
+    font-size: 1.25rem;
+    line-height: 1.15;
+  }
+
+  .limitNote,
+  .emptyNote,
+  .error {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+@media (min-width: 901px) {
+  .header p,
+  .header dt,
+  .header dd,
+  .searchStage span,
+  .scopeControl button,
+  .filterRail label,
+  .filterRail select,
+  .filterRail > button,
+  .results article > header p,
+  .results article > header b,
+  .tableWrap table,
+  .tableWrap th,
+  .tableWrap td,
+  .tableWrap td small,
+  .relationGrid span,
+  .relationGrid strong,
+  .relationGrid small,
+  .archiveGrid span,
+  .archiveGrid strong,
+  .archiveGrid small,
+  .limitNote,
+  .emptyNote,
+  .error {
+    font-size: 18px;
+  }
+
+  .scopeControl button,
+  .filterRail select,
+  .filterRail > button {
+    min-height: 3rem;
   }
 }

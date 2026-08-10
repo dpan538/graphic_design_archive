@@ -34,6 +34,103 @@ const PERIODS = [
   { id: "1980-now", label: "1980–present", start: 1980, end: Infinity },
 ] as const;
 
+function cardWheelViewportHeight(wheel: HTMLElement) {
+  const stage = wheel.parentElement;
+  if (!stage) return wheel.clientHeight;
+  const filter = stage.querySelector<HTMLElement>(".folder-type-filters");
+  const style = window.getComputedStyle(stage);
+  const padding =
+    Number.parseFloat(style.paddingTop) + Number.parseFloat(style.paddingBottom);
+  const gap = Number.parseFloat(style.rowGap) || 0;
+  return Math.max(
+    1,
+    stage.clientHeight - padding - gap - (filter?.offsetHeight ?? 0),
+  );
+}
+
+/**
+ * Map the native scroll position directly onto the card geometry. This keeps
+ * touch movement one-to-one with the finger instead of replaying a desktop
+ * hover transition after the gesture has ended.
+ */
+function updateCardWheelGeometry(wheel: HTMLElement) {
+  const children = Array.from(wheel.children) as HTMLElement[];
+  const first = children[0];
+  const second = children[1];
+  if (!first) return 0;
+
+  const pitch = Math.max(
+    1,
+    second ? second.offsetTop - first.offsetTop : first.offsetHeight,
+  );
+  // Keep one complete predecessor above the active card. A viewport-centred
+  // focus left a large, apparently empty area at the top of compact screens.
+  const viewportHeight = cardWheelViewportHeight(wheel);
+  const focusLine = Math.min(viewportHeight / 2, pitch * 1.55);
+  const viewportCenter = wheel.scrollTop + focusLine;
+  let nearestIndex = 0;
+  let nearestDistance = Number.POSITIVE_INFINITY;
+
+  children.forEach((child, index) => {
+    const cardCenter = child.offsetTop + child.offsetHeight / 2;
+    const offset = (cardCenter - viewportCenter) / pitch;
+    const distance = Math.abs(offset);
+    if (distance < nearestDistance) {
+      nearestDistance = distance;
+      nearestIndex = index;
+    }
+
+    if (!child.classList.contains("region-card-stack__card")) return;
+    const clamped = Math.max(-2.25, Math.min(2.25, offset));
+    const magnitude = Math.abs(clamped);
+    child.style.setProperty("--wheel-rotate", `${clamped * 18}deg`);
+    child.style.setProperty("--wheel-depth", `${8 - magnitude * 48}px`);
+    child.style.setProperty("--wheel-scale", String(Math.max(0.84, 1 - magnitude * 0.055)));
+    child.style.setProperty("--wheel-opacity", String(Math.max(0.26, 1 - magnitude * 0.22)));
+    child.style.setProperty("--wheel-saturation", String(Math.max(0.52, 1.08 - magnitude * 0.2)));
+  });
+
+  return nearestIndex;
+}
+
+function prepareCardWheel(wheel: HTMLElement) {
+  const sample = wheel.querySelector<HTMLElement>(".region-card-stack__card");
+  if (!sample) return;
+  const children = Array.from(wheel.children) as HTMLElement[];
+  const second = children[1];
+  const pitch = Math.max(
+    1,
+    second ? second.offsetTop - children[0].offsetTop : sample.offsetHeight,
+  );
+  const viewportHeight = cardWheelViewportHeight(wheel);
+  const focusLine = Math.min(viewportHeight / 2, pitch * 1.55);
+  const startPadding = Math.max(13, focusLine - sample.offsetHeight / 2);
+  const endPadding = Math.max(
+    13,
+    viewportHeight - focusLine - sample.offsetHeight / 2,
+  );
+  wheel.style.height = `${viewportHeight}px`;
+  wheel.style.maxHeight = `${viewportHeight}px`;
+  wheel.style.setProperty("--wheel-start-padding", `${startPadding}px`);
+  wheel.style.setProperty("--wheel-end-padding", `${endPadding}px`);
+}
+
+function centreWheelChild(wheel: HTMLElement, child: HTMLElement, behavior: ScrollBehavior) {
+  prepareCardWheel(wheel);
+  const children = Array.from(wheel.children) as HTMLElement[];
+  const second = children[1];
+  const pitch = Math.max(
+    1,
+    second ? second.offsetTop - children[0].offsetTop : child.offsetHeight,
+  );
+  const viewportHeight = cardWheelViewportHeight(wheel);
+  const focusLine = Math.min(viewportHeight / 2, pitch * 1.55);
+  wheel.scrollTo({
+    top: Math.max(0, child.offsetTop + child.offsetHeight / 2 - focusLine),
+    behavior,
+  });
+}
+
 export default function FolderTypeSpeedIndex({
   folderType,
   items,
@@ -44,6 +141,7 @@ export default function FolderTypeSpeedIndex({
   const [continent, setContinent] = useState("all");
   const [period, setPeriod] = useState<(typeof PERIODS)[number]["id"]>("all");
   const [activeCard, setActiveCard] = useState(1);
+  const [compactLayout, setCompactLayout] = useState(false);
   const cardWheelRef = useRef<HTMLElement | null>(null);
   const cardScrollFrame = useRef<number | null>(null);
   const isRegion = folderType.type === "region";
@@ -86,32 +184,59 @@ export default function FolderTypeSpeedIndex({
   let stackIndex = 0;
 
   useEffect(() => {
+    const query = window.matchMedia("(max-width: 900px)");
+    const update = () => setCompactLayout(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
     const wheel = cardWheelRef.current;
-    if (!wheel || !window.matchMedia("(max-width: 760px)").matches) return;
+    if (!wheel) return;
+    if (!compactLayout) {
+      wheel.style.removeProperty("height");
+      wheel.style.removeProperty("max-height");
+      wheel.style.removeProperty("--wheel-start-padding");
+      wheel.style.removeProperty("--wheel-end-padding");
+      return;
+    }
     const initialIndex = filteredItems.length > 1 ? 1 : 0;
     const target = wheel.children[initialIndex] as HTMLElement | undefined;
     if (!target) return;
     setActiveCard(initialIndex);
     const frame = window.requestAnimationFrame(() => {
-      wheel.scrollTop = Math.max(0, target.offsetTop - (wheel.clientHeight - target.offsetHeight) / 2);
+      centreWheelChild(wheel, target, "auto");
+      updateCardWheelGeometry(wheel);
     });
     return () => window.cancelAnimationFrame(frame);
-  }, [filteredItems]);
+  }, [compactLayout, filteredItems]);
 
   useEffect(() => () => {
     if (cardScrollFrame.current !== null) window.cancelAnimationFrame(cardScrollFrame.current);
   }, []);
 
+  useEffect(() => {
+    const wheel = cardWheelRef.current;
+    if (!wheel || !compactLayout) return;
+    const update = () => {
+      prepareCardWheel(wheel);
+      updateCardWheelGeometry(wheel);
+    };
+    const frame = window.requestAnimationFrame(update);
+    const observer = new ResizeObserver(update);
+    observer.observe(wheel);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      observer.disconnect();
+    };
+  }, [activeCard, compactLayout, filteredItems]);
+
   function handleCardWheelScroll(event: UIEvent<HTMLElement>) {
     const wheel = event.currentTarget;
     if (cardScrollFrame.current !== null) window.cancelAnimationFrame(cardScrollFrame.current);
     cardScrollFrame.current = window.requestAnimationFrame(() => {
-      const first = wheel.children[0] as HTMLElement | undefined;
-      const second = wheel.children[1] as HTMLElement | undefined;
-      if (!first) return;
-      const pitch = second ? second.offsetTop - first.offsetTop : first.offsetHeight;
-      const centered = wheel.scrollTop + wheel.clientHeight / 2;
-      const index = Math.round((centered - first.offsetTop - first.offsetHeight / 2) / Math.max(1, pitch));
+      const index = updateCardWheelGeometry(wheel);
       setActiveCard(Math.max(0, Math.min(filteredItems.length - 1, index)));
     });
   }
@@ -184,10 +309,16 @@ export default function FolderTypeSpeedIndex({
           const distance = Math.abs(index - activeCard);
           if (distance > 2) {
             return (
-              <span
+              <Link
                 key={item.key}
+                href={item.href}
                 className="region-card-stack__spacer"
-                aria-hidden="true"
+                aria-label={`Open ${item.title} ${folderType.label.toLowerCase()} folder`}
+                onFocus={(event) => {
+                  const wheel = cardWheelRef.current;
+                  if (wheel) centreWheelChild(wheel, event.currentTarget, "smooth");
+                  setActiveCard(index);
+                }}
               />
             );
           }
@@ -220,11 +351,10 @@ export default function FolderTypeSpeedIndex({
       <details
         className={`folder-type-filters ${isRegion ? "folder-type-filters--region" : "folder-type-filters--period"}`}
       >
-        <summary aria-label={`Open filters for ${folderType.label.toLowerCase()} folders`}>
-          <span className="label-caps">{folderType.label} filters</span>
+        <summary aria-label={`Open filters for ${folderType.label.toLowerCase()} folders. ${isolatedReviewCount} review routes remain outside the active stack.`}>
+          <span className="folder-filter-disc" aria-hidden="true" />
+          <span className="label-caps">Filter</span>
           <strong>{filteredItems.length}</strong>
-          <span>of {primaryItems.length} active research folders</span>
-          <i aria-hidden="true">+</i>
         </summary>
         <div className="folder-type-filters__body">
           {isRegion ? (
@@ -263,11 +393,6 @@ export default function FolderTypeSpeedIndex({
             >
               Reset filters
             </button>
-          ) : null}
-          {isolatedReviewCount > 0 ? (
-            <p className="folder-filter-isolation">
-              {isolatedReviewCount} review / unknown route isolated from the active stack
-            </p>
           ) : null}
         </div>
       </details>

@@ -47,7 +47,16 @@ export default function SearchWorkspace() {
   const [error, setError] = useState("");
   const [archiveResults, setArchiveResults] = useState<ArchiveSearchResult[]>([]);
   const [archivePending, setArchivePending] = useState(false);
+  const [compactLayout, setCompactLayout] = useState<boolean | null>(null);
   const deferredQuery = useDeferredValue(query);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 900px)");
+    const update = () => setCompactLayout(media.matches);
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
 
   useEffect(() => {
     const initialQuery = new URLSearchParams(window.location.search).get("q");
@@ -134,6 +143,7 @@ export default function SearchWorkspace() {
   const total = (showTrace ? traceResults.length : 0)
     + (showArchive ? archiveResults.length : 0)
     + (showRelations ? relationResults.length : 0);
+  const activeFilterCount = [region, decade, medium, family].filter(Boolean).length;
 
   function clearFilters() {
     setQuery("");
@@ -149,7 +159,10 @@ export default function SearchWorkspace() {
       <header className={styles.header}>
         <div>
           <p>SEARCH / ARCHIVE + TRACE</p>
-          <h1>Search the evidence layer, not only the page index.</h1>
+          <h1>
+            <span className={styles.desktopHeadline}>Search the evidence layer, not only the page index.</span>
+            <span className={styles.mobileHeadline}>Search the research archive.</span>
+          </h1>
         </div>
         <dl>
           <div><dt>Active TRACE</dt><dd>{atlas?.counts.activeObjects.toLocaleString() ?? "…"}</dd></div>
@@ -176,7 +189,7 @@ export default function SearchWorkspace() {
         </div>
       </section>
 
-      <section className={styles.filterRail} aria-label="Search filters">
+      <section className={`${styles.filterRail} ${styles.desktopFilters}`} aria-label="Search filters">
         <label>Region<select value={region} onChange={(event) => setRegion(event.target.value)} disabled={!showTrace}><option value="">All regions</option>{regions.map((value) => <option key={value}>{value}</option>)}</select></label>
         <label>Decade<select value={decade} onChange={(event) => setDecade(event.target.value)} disabled={!showTrace}><option value="">All decades</option>{decades.map((value) => <option key={value} value={value}>{value}s</option>)}</select></label>
         <label>Medium group<select value={medium} onChange={(event) => setMedium(event.target.value)} disabled={!showTrace}><option value="">All media</option>{media.map((value) => <option key={value}>{value}</option>)}</select></label>
@@ -184,26 +197,60 @@ export default function SearchWorkspace() {
         <button type="button" onClick={clearFilters}>Clear</button>
       </section>
 
+      <details className={styles.mobileFilters}>
+        <summary>
+          <span>Filters</span>
+          <b>{activeFilterCount ? `${activeFilterCount} active` : "All"}</b>
+        </summary>
+        <div className={styles.mobileFilterGrid} aria-label="Search filters">
+          <label>Region<select value={region} onChange={(event) => setRegion(event.target.value)} disabled={!showTrace}><option value="">All regions</option>{regions.map((value) => <option key={value}>{value}</option>)}</select></label>
+          <label>Decade<select value={decade} onChange={(event) => setDecade(event.target.value)} disabled={!showTrace}><option value="">All decades</option>{decades.map((value) => <option key={value} value={value}>{value}s</option>)}</select></label>
+          <label>Medium group<select value={medium} onChange={(event) => setMedium(event.target.value)} disabled={!showTrace}><option value="">All media</option>{media.map((value) => <option key={value}>{value}</option>)}</select></label>
+          <label>Relation family<select value={family} onChange={(event) => setFamily(event.target.value as RelationFamily | "")} disabled={!showRelations}><option value="">All families</option>{Object.entries(TRACE_FAMILY_META).map(([value, meta]) => <option key={value} value={value}>{meta.code} · {meta.label}</option>)}</select></label>
+          <button type="button" onClick={clearFilters}>Clear filters</button>
+        </div>
+      </details>
+
       {error ? <p className={styles.error}>{error}</p> : null}
       <section className={styles.results} aria-live="polite">
         {showTrace ? (
           <article>
             <header><p>Active TRACE objects</p><b>{traceResults.length.toLocaleString()}</b></header>
-            <div className={styles.tableWrap}>
-              <table>
-                <thead><tr><th>Object</th><th>Year</th><th>Region</th><th>Medium</th><th>Source</th><th>Route</th></tr></thead>
-                <tbody>
-                  {traceResults.slice(0, 240).map((item) => (
-                    <tr key={item.id}>
-                      <td><Link href={`/trace?object=${encodeURIComponent(item.id)}`}>{item.title}</Link><small>{item.id}</small></td>
-                      <td>{item.year}</td><td>{item.region}</td><td>{item.mediumGroup}</td><td>{item.source}</td>
-                      <td><Link href={`/trace?object=${encodeURIComponent(item.id)}`}>Open three views</Link></td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            {traceResults.length > 240 ? <p className={styles.limitNote}>Showing the first 240 of {traceResults.length.toLocaleString()} matches. Refine by region, decade or medium.</p> : null}
+            {compactLayout === true ? (
+              <ol className={styles.mobileResultList} aria-label="Active TRACE object results">
+                {traceResults.slice(0, 80).map((item) => (
+                  <li key={item.id}>
+                    <Link
+                      href={`/trace?object=${encodeURIComponent(item.id)}`}
+                      aria-label={`Open ${item.title}, ${item.year}, ${item.region}, in TRACE`}
+                    >
+                      <span className={styles.mobileResultMeta}>{item.year} · {item.mediumGroup}</span>
+                      <strong>{item.title}</strong>
+                      <span className={styles.mobileResultPlace}>{item.region}</span>
+                      <span className={styles.mobileResultSource}>{item.source}</span>
+                      <span className={styles.mobileResultRoute}>Open TRACE <span aria-hidden="true">→</span></span>
+                      <small>{item.id}</small>
+                    </Link>
+                  </li>
+                ))}
+              </ol>
+            ) : compactLayout === false ? (
+              <div className={styles.tableWrap}>
+                <table>
+                  <thead><tr><th>Object</th><th>Year</th><th>Region</th><th>Medium</th><th>Source</th><th>Route</th></tr></thead>
+                  <tbody>
+                    {traceResults.slice(0, 240).map((item) => (
+                      <tr key={item.id}>
+                        <td><Link href={`/trace?object=${encodeURIComponent(item.id)}`}>{item.title}</Link><small>{item.id}</small></td>
+                        <td>{item.year}</td><td>{item.region}</td><td>{item.mediumGroup}</td><td>{item.source}</td>
+                        <td><Link href={`/trace?object=${encodeURIComponent(item.id)}`}>Open three views</Link></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ) : <p className={styles.emptyNote}>Preparing search results…</p>}
+            {traceResults.length > (compactLayout ? 80 : 240) ? <p className={styles.limitNote}>Showing the first {(compactLayout ? 80 : 240).toLocaleString()} of {traceResults.length.toLocaleString()} matches. Refine by region, decade or medium.</p> : null}
           </article>
         ) : null}
 

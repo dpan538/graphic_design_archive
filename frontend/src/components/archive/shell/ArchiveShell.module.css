@@ -1,0 +1,69 @@
+.semanticNavItem.semanticNavItem svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: 0 0 1.5rem;
+}
+
+.mobileMenuTrigger.mobileMenuTrigger {
+  width: 3rem;
+  min-width: 3rem;
+  height: 3rem;
+  min-height: 3rem;
+  padding: 0;
+}
+
+.menuIcon.menuIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media (min-width: 901px) {
+  .semanticNavItem.semanticNavItem {
+    width: 5.25rem;
+    min-width: 5.25rem;
+    min-height: 4.4rem;
+  }
+
+  .semanticNavItem.semanticNavItem svg {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .semanticNavItem.semanticNavItem span {
+    font-size: 18px;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .mobileMenuPanel.mobileMenuPanel {
+    width: 3rem;
+    min-width: 3rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .mobileMenuPanel.mobileMenuPanel .mobileNavItem.mobileNavItem {
+    display: grid;
+    width: 3rem;
+    min-width: 3rem;
+    min-height: 3rem;
+    height: 3rem;
+    padding: 0;
+    place-items: center;
+    border-radius: 0.45rem;
+    box-shadow: 0 0.12rem 0 var(--line), 0 0.38rem 0.9rem var(--paper-shadow);
+  }
+
+  .mobileMenuPanel.mobileMenuPanel .mobileNavItem.mobileNavItem svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .mobileMenuPanel.mobileMenuPanel .mobileNavItem.mobileNavItem span {
+    display: none;
+  }
+}

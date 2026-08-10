@@ -63,6 +63,13 @@ function familyEdges(graph: TraceGraph, family: RelationFamily) {
   return graph.edges.filter((edge) => edge.family === family);
 }
 
+function mobileEvidencePurity(edge: TraceEdge, layer: TraceGraph["object"]["layer"]) {
+  if (layer === "auxiliary") return edge.confidence === "high" ? 70 : 60;
+  if (edge.reviewState === "accepted" && edge.confidence === "high") return 100;
+  if (edge.reviewState === "accepted" && edge.confidence === "medium") return 80;
+  return 60;
+}
+
 function relationGroups(edges: TraceEdge[]) {
   const groups = new Map<string, TraceEdge[]>();
   for (const edge of edges) {
@@ -87,7 +94,7 @@ function useMobileVisualCenter(key: string) {
   const containerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const container = containerRef.current;
-    if (!container || !window.matchMedia("(max-width: 760px)").matches) return;
+    if (!container || !window.matchMedia("(max-width: 900px)").matches) return;
     const frame = window.requestAnimationFrame(() => {
       container.scrollLeft = Math.max(0, (container.scrollWidth - container.clientWidth) / 2);
     });
@@ -157,8 +164,6 @@ function DiagramModeControl({
     <div
       className={styles.diagramModeControl}
       data-open={open}
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
       onBlur={closeWhenFocusLeaves}
       onKeyDown={handleKeyDown}
     >
@@ -166,6 +171,7 @@ function DiagramModeControl({
         ref={triggerRef}
         type="button"
         className={styles.diagramModeTrigger}
+        aria-label={`Choose object TRACE diagram; current ${current.label}`}
         aria-haspopup="menu"
         aria-expanded={open}
         aria-controls={menuId}
@@ -181,6 +187,7 @@ function DiagramModeControl({
             key={option.mode}
             type="button"
             role="menuitemradio"
+            aria-label={`${option.label}: ${option.question}`}
             aria-checked={mode === option.mode}
             data-selected={mode === option.mode}
             onClick={() => {
@@ -238,107 +245,98 @@ function MobileTraceNodeField({
   family: "medium" | "sources";
 }) {
   const nodes = nodeMap(graph);
-  const marks = buildTraceMarks(graph);
-  const visibleEdges = edges.slice(0, 19);
+  const visibleEdges = [...edges]
+    .sort((left, right) => (
+      mobileEvidencePurity(right, graph.object.layer) - mobileEvidencePurity(left, graph.object.layer)
+      || traceTypeFor(left.label).code.localeCompare(traceTypeFor(right.label).code)
+      || left.id.localeCompare(right.id)
+    ))
+    .slice(0, 30);
   const activeEdge = visibleEdges.find((edge) => edge.id === activeEdgeId);
-  const activePeer = activeEdge
-    ? tracePeerNode(activeEdge, graph.object.nodeId, nodes)
-    : undefined;
+  const activeDefinition = activeEdge ? traceTypeFor(activeEdge.label) : null;
   const activeSelection = activeEdge ? selectionForEdge(graph, activeEdge) : null;
-  const activeTitle = activeEdge
-    ? activePeer?.label || activeEdge.label
-    : graph.object.title;
+  const activePeer = activeEdge ? tracePeerNode(activeEdge, graph.object.nodeId, nodes) : undefined;
+  const activeTitle = activePeer?.label ?? "Choose a relation";
   const activeMeta = activeEdge
-    ? `${traceTypeFor(activeEdge.label).label} · ${activeEdge.direction}`
-    : "Selected design object · TRACE origin";
-  const activeDescription = activeEdge
-    ? activeEdge.evidenceText || "Documented in the object-level source record."
+    ? `${activeDefinition?.label ?? activeEdge.label.replaceAll("_", " ")} · documented route`
     : family === "medium"
-      ? "Choose a numbered point to inspect one documented medium or context relation."
-      : "Choose a numbered point to inspect one documented source or provenance relation.";
-  const fieldItems: Array<{ edge?: TraceEdge; code: string; title: string }> = [
-    { code: "01", title: graph.object.title },
-    ...visibleEdges.map((edge, index) => {
-      const peer = tracePeerNode(edge, graph.object.nodeId, nodes);
-      const edgeSelection = selectionForEdge(graph, edge);
-      return {
-        edge,
-        code: marks.nodeMarks.get(edgeSelection.nodeId) ?? String(index + 2).padStart(2, "0"),
-        title: peer?.label || edge.label,
-      };
-    }),
-  ];
-
+      ? "Tap a branch to see how this object is described."
+      : "Tap a branch to see which evidence supports this object.";
+  const activeDescription = activeEdge?.evidenceText || activeDefinition?.definition
+    || (family === "medium"
+      ? "Only recorded medium, type and context statements appear here."
+      : "Only source-linked creator, collection and documentation statements appear here.");
+  const activeIndex = activeEdge ? visibleEdges.indexOf(activeEdge) : -1;
+  const activeCol = activeIndex >= 0 ? activeIndex % 3 : 0;
+  const activeRow = activeIndex >= 0 ? Math.floor(activeIndex / 3) : 0;
+  const canvasHeight = Math.max(520, 148 + Math.ceil(visibleEdges.length / 3) * 108);
+  const relationLabel = (label: string) => {
+    const labels: Record<string, string> = {
+      associated_with_context: "Context",
+      associated_with_research_cluster: "Research cluster",
+      associated_with_theme: "Theme",
+      has_material_or_technique: "Material",
+      has_medium: "Medium",
+      has_type: "Type",
+      classified_as: "Classification",
+      credited_to: "Credit",
+      part_of_campaign: "Campaign",
+      uses_language: "Language",
+      documented_by: "Source",
+      created_by: "Creator",
+      part_of_collection: "Collection",
+      part_of_series: "Series",
+      issued_by: "Issuer",
+    };
+    return labels[label] ?? traceTypeFor(label).label;
+  };
   return (
     <div className={styles.mobileTraceField} data-family={family}>
       <div className={styles.mobileTraceFieldStage}>
-        <svg viewBox="0 0 390 610" aria-hidden="true">
-          <g className={styles.mobileTraceGuideGrid}>
-            {Array.from({ length: 9 }, (_, index) => <line key={`gx-${index}`} x1={24 + index * 44} y1="70" x2={24 + index * 44} y2="585" />)}
-            {Array.from({ length: 12 }, (_, index) => <line key={`gy-${index}`} x1="18" y1={80 + index * 44} x2="372" y2={80 + index * 44} />)}
-          </g>
-          <g className={styles.mobileTraceRays}>
-            {fieldItems.slice(1).map((item, index) => {
-              const col = (index + 1) % 4;
-              const row = Math.floor((index + 1) / 4);
-              const x = 56 + col * 88;
-              const y = 118 + row * 92;
-              return <path key={item.edge?.id ?? item.code} d={`M56 118 Q${Math.max(56, x - 36)} ${Math.max(118, y - 28)} ${x} ${y}`} />;
-            })}
-          </g>
-        </svg>
-        <p className={styles.mobileTraceFieldLabel}>
-          {family === "medium" ? "MEDIUM / CONTEXT" : "SOURCE / PROVENANCE"}
-        </p>
-        <div className={styles.mobileTraceNodes} aria-label={`${family} TRACE nodes`}>
-          {fieldItems.map((item, index) => {
-            const col = index % 4;
-            const row = Math.floor(index / 4);
-            const distance = col + row;
-            const selected = item.edge ? item.edge.id === activeEdgeId : activeEdgeId === "";
+        <div className={styles.mobileTraceCanvas} style={{ "--trace-canvas-height": `${canvasHeight}px` } as CSSProperties}>
+          <div className={styles.mobileTraceRoot} aria-label={`Current object: ${graph.object.title}`}>
+            <span>Object</span>
+          </div>
+          {activeIndex >= 0 ? (
+            <svg className={styles.mobileTraceActiveRay} viewBox={`0 0 390 ${canvasHeight}`} preserveAspectRatio="none" aria-hidden="true">
+              <path d={`M50 101 Q${Math.max(58, 72 + activeCol * 123 - 38)} ${Math.max(126, 188 + activeRow * 108 - 48)} ${72 + activeCol * 123} ${188 + activeRow * 108}`} />
+            </svg>
+          ) : null}
+          <div className={styles.mobileTraceNodes} aria-label={`${family} TRACE relationship branches`}>
+          {visibleEdges.map((edge, index) => {
+            const col = index % 3;
+            const row = Math.floor(index / 3);
+            const purity = mobileEvidencePurity(edge, graph.object.layer);
+            const selected = edge === activeEdge;
+            const peer = tracePeerNode(edge, graph.object.nodeId, nodes);
             const style = {
-              "--node-x": `${56 + col * 88}px`,
-              "--node-y": `${118 + row * 92}px`,
-              "--node-alpha": String(Math.max(0.46, 1 - distance * 0.09)),
+              "--node-x": `${18.46 + col * 31.54}%`,
+              "--node-y": `${188 + row * 108}px`,
+              "--node-purity": `${purity}%`,
+              "--node-foreground": purity >= 80 ? "#fffaf0" : "#172526",
               "--node-delay": `${Math.min(index * 34, 480)}ms`,
             } as CSSProperties;
             return (
               <button
-                key={item.edge?.id ?? "object-root"}
+                key={edge.id}
                 type="button"
                 className={styles.mobileTraceNode}
                 style={style}
                 aria-pressed={selected}
-                aria-label={`${item.code}: ${item.title}`}
-                onClick={() => onActiveEdgeId(item.edge?.id ?? "")}
+                aria-label={`${traceTypeFor(edge.label).label}: ${peer?.label || "Evidence node"}; ${edge.reviewState.replaceAll("_", " ")}; ${edge.confidence.replaceAll("_", " ")} confidence`}
+                data-purity={purity}
+                data-review-state={edge.reviewState}
+                onClick={() => onActiveEdgeId(selected ? "" : edge.id)}
               >
-                {String(index + 1).padStart(2, "0")}
+                <span>{relationLabel(edge.label)}</span>
               </button>
             );
           })}
-          {Array.from({ length: Math.max(0, 20 - fieldItems.length) }, (_, slotIndex) => {
-            const index = fieldItems.length + slotIndex;
-            const col = index % 4;
-            const row = Math.floor(index / 4);
-            return (
-              <i
-                key={`empty-slot-${index}`}
-                className={styles.mobileTraceEmptyNode}
-                style={{
-                  "--node-x": `${56 + col * 88}px`,
-                  "--node-y": `${118 + row * 92}px`,
-                } as CSSProperties}
-                aria-hidden="true"
-              />
-            );
-          })}
+          </div>
         </div>
       </div>
       <article className={styles.mobileTraceSelection} aria-live="polite">
-        <div>
-          <span>{activeEdge && activeSelection ? marks.nodeMarks.get(activeSelection.nodeId) : "01"}</span>
-          <p>{activeMeta}</p>
-        </div>
+        <p className={styles.mobileTraceSelectionMeta}>{activeMeta}</p>
         <h4>{activeTitle}</h4>
         <p>{activeDescription}</p>
         {activeEdge && activeSelection ? (

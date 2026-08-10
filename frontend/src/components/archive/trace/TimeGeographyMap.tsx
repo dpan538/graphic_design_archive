@@ -170,6 +170,7 @@ export default function TimeGeographyMap({
     x: number;
     y: number;
     rotation: [number, number];
+    locked: boolean;
   } | null>(null);
   const [selectedRegion, setSelectedRegion] = useState(graph.object.region);
   const decade = atlas.decades[decadeIndex] ?? atlas.decades.at(-1) ?? 2020;
@@ -288,21 +289,31 @@ export default function TimeGeographyMap({
   }
 
   function startGlobeDrag(event: ReactPointerEvent<SVGSVGElement>) {
-    event.currentTarget.setPointerCapture(event.pointerId);
     globeDrag.current = {
       pointerId: event.pointerId,
       x: event.clientX,
       y: event.clientY,
       rotation,
+      locked: false,
     };
   }
 
   function moveGlobe(event: ReactPointerEvent<SVGSVGElement>) {
     const drag = globeDrag.current;
     if (!drag || drag.pointerId !== event.pointerId) return;
-    const longitude = normalizedLongitude(drag.rotation[0] - (event.clientX - drag.x) * 0.42);
-    const latitude = Math.max(-68, Math.min(68, drag.rotation[1] + (event.clientY - drag.y) * 0.3));
-    setRotation([longitude, latitude]);
+    const deltaX = event.clientX - drag.x;
+    const deltaY = event.clientY - drag.y;
+    if (!drag.locked) {
+      if (Math.abs(deltaY) > 8 && Math.abs(deltaY) > Math.abs(deltaX)) {
+        globeDrag.current = null;
+        return;
+      }
+      if (Math.abs(deltaX) < 8 || Math.abs(deltaX) <= Math.abs(deltaY) * 1.1) return;
+      drag.locked = true;
+      event.currentTarget.setPointerCapture(event.pointerId);
+    }
+    const longitude = normalizedLongitude(drag.rotation[0] - deltaX * 0.42);
+    setRotation([longitude, drag.rotation[1]]);
   }
 
   function endGlobeDrag(event: ReactPointerEvent<SVGSVGElement>) {
@@ -333,12 +344,6 @@ export default function TimeGeographyMap({
           <button type="button" aria-pressed={timeMode === "decade"} onClick={() => setTimeMode("decade")}>Single decade</button>
         </div>
         <p><b>{periodLabel(decade, timeMode)}</b><span>{catalog ? `${distribution.visible.toLocaleString()} active objects` : "Loading active distribution…"}</span></p>
-      </div>
-
-      <div className={styles.geoMobileHeader} aria-live="polite">
-        <span>TIME / GEOGRAPHY</span>
-        <strong>{periodLabel(decade, timeMode)}</strong>
-        <p>{selectedMapped?.region ?? graph.object.region}</p>
       </div>
 
       <div className={styles.geoCanvas} data-map-mode={mapMode}>
@@ -388,7 +393,7 @@ export default function TimeGeographyMap({
                         className={styles.mobileGlobeHit}
                         cx={point[0]}
                         cy={point[1]}
-                        r={Math.max(18, radius + 7)}
+                        r={Math.max(24, radius + 7)}
                         role="button"
                         tabIndex={0}
                         aria-label={`${entry.region}, ${entry.count.toLocaleString()} documented objects`}
@@ -400,7 +405,6 @@ export default function TimeGeographyMap({
                     </g>
                   );
                 })}
-                <text className={styles.mobileGlobeIndex} x="342" y="28" textAnchor="end">{String.fromCharCode(65 + globeIndex)} · {globeIndex === 0 ? "PRIMARY" : "OPPOSITE"}</text>
               </svg>
             );
           })}

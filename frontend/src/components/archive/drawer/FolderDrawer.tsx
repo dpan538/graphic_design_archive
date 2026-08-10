@@ -66,13 +66,6 @@ export default function FolderDrawer({ items }: { items: DrawerItem[] }) {
       </section>
 
       <section className="mobile-card-wheel" aria-label="Archive coordinate card wheel">
-        <header className="mobile-card-wheel__intro">
-          <p className="label-caps">
-            Browse · {String(items.length).padStart(2, "0")} coordinates
-          </p>
-          <h1 id="mobile-wheel-title">Move through the index.</h1>
-        </header>
-
         <div
           className="mobile-card-wheel__viewport"
           role="region"
@@ -97,14 +90,10 @@ export default function FolderDrawer({ items }: { items: DrawerItem[] }) {
                 <span className="wheel-card__title">{item.title}</span>
                 <span className="wheel-card__scope">{item.reveal[0]}</span>
                 <span className="wheel-card__count">{item.reveal[1]}</span>
-                <span className="wheel-card__action">tap to open →</span>
               </Link>
             ))}
           </div>
         </div>
-        <p className="mobile-card-wheel__hint">
-          Swipe vertically
-        </p>
       </section>
     </div>
   );

@@ -12,7 +12,7 @@
   font-family: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (min-width: 761px) {
+@media (min-width: 901px) {
   .page:not([data-visual-fullscreen="true"]) {
     min-height: 100dvh;
     padding: 6.8rem 1.5rem 2rem;
@@ -52,6 +52,140 @@
     height: 100%;
     min-height: 0;
   }
+
+  /* Desktop research plates use 18px as the visible-text floor. The large SVG
+     viewBoxes are fitted into the viewport, so SVG labels use a slightly larger
+     source size to remain at or above that floor after scaling. */
+  .page:not([data-visual-fullscreen="true"]) > .viewTabs button,
+  .viewTabDesktopLabel,
+  .diagramModeTrigger,
+  .diagramModeMenu button,
+  .diagramModeMenu strong,
+  .diagramModeMenu small,
+  .diagramHeading > span,
+  .chronoHeading > p,
+  .diagramHeading h3,
+  .chronoHeading h3,
+  .emptyDiagram,
+  .diagramLoading,
+  .evolutionControls > button,
+  .evolutionControls select,
+  .evolutionControls label,
+  .evolutionControls .segmentedControl button {
+    font-size: 18px;
+  }
+
+  .page:not([data-visual-fullscreen="true"]) > .viewTabs button,
+  .diagramModeTrigger,
+  .evolutionControls > button,
+  .evolutionControls select,
+  .evolutionControls .segmentedControl button {
+    min-height: 3.25rem;
+  }
+
+  .systemMeta text,
+  .systemRegionArc text,
+  .systemDecades text,
+  .systemMediumArc text,
+  .systemFamilyArc text,
+  .systemCore text,
+  .systemMap text,
+  .systemFocus text,
+  .systemFamilyScale text {
+    font-size: 22px;
+    letter-spacing: 0.015em;
+  }
+
+  .systemMeta text { font-size: 20px; }
+  .systemRegionArc text { font-size: 21px; font-weight: 720; }
+  .systemDecades text { font-size: 20px; }
+  .systemMediumArc text { font-size: 18px; }
+  .systemFamilyArc text { font-size: 19px; }
+  .systemCore text { font-size: 18px; }
+  .systemCore text[data-year="true"] { font-size: 38px; }
+  .systemMap text { font-size: 18px; }
+  .systemFocus text,
+  .systemFamilyScale text { font-size: 18px; }
+  .systemFocus text[data-title="true"] { font-size: 24px; }
+  .systemFocus text[data-value="true"] { font-size: 32px; }
+
+  .systemMap g[role="button"],
+  .systemRegionArc g[role="button"] { cursor: var(--cursor-interactive); outline: none; }
+  .systemMap g[role="button"]:focus-visible rect,
+  .systemMap g[role="button"]:focus-visible circle { stroke: var(--signal-orange); stroke-width: 3; }
+
+  .constellationSystemHeader > div > p,
+  .constellationSystemControls summary,
+  .constellationSystemControls label,
+  .constellationSystemControls p,
+  .constellationSystemControls select,
+  .constellationSystemReadout > p:first-child,
+  .constellationSystemReadout > span,
+  .constellationSystemReadout small,
+  .constellationSystemReadout > div,
+  .constellationSystemReadout > p:last-of-type,
+  .constellationSystemReadout button,
+  .constellationLedger summary,
+  .constellationLedger table,
+  .constellationLedger caption,
+  .constellationLedger small {
+    font-size: 18px;
+  }
+
+  .constellationSystemHeader h2 { font-size: clamp(2rem, 3vw, 3.15rem); }
+  .constellationSystemControls { width: 23rem; }
+  .constellationSystemControls select { min-height: 3.25rem; }
+  .constellationFamilyNodes text { font-size: 22px; font-weight: 720; }
+  .constellationBranches text[data-label="true"] {
+    font-size: 22px;
+    font-weight: 720;
+    letter-spacing: 0.01em;
+    opacity: 0;
+    transition: opacity 160ms ease;
+    pointer-events: none;
+  }
+  .constellationBranches > g[data-major="true"] text[data-label="true"],
+  .constellationBranches > g[data-selected="true"] text[data-label="true"],
+  .constellationBranches > g:hover text[data-label="true"],
+  .constellationBranches > g:focus-visible text[data-label="true"] { opacity: 1; }
+  .constellationCoreSystem text { font-size: 18px; }
+  .constellationCoreSystem text[data-count="true"] { font-size: 30px; }
+  .constellationSystemReadout { width: min(25rem, 33%); }
+  .constellationSystemReadout h3 { font-size: clamp(2rem, 3vw, 3rem); }
+  .constellationSystemReadout > strong { font-size: clamp(2.4rem, 4vw, 4rem); }
+  .constellationSystemReadout button { min-height: 3.25rem; }
+
+  .metroSystem .routeLabel,
+  .metroStationLabel,
+  .metroInterchange .interchangeLabel,
+  .metroInterchange .objectLabel,
+  .treeBranchLabel,
+  .treeLeafLabel,
+  .treeRootLabel {
+    font-size: 18px;
+  }
+
+  .metroSystem .stationCode,
+  .treeLeafMeta { display: none; }
+  .metroStationLabel { opacity: 0; transition: opacity 150ms ease; }
+  .metroRoute a[data-focused="true"] .metroStationLabel,
+  .metroRoute a[data-selected="true"] .metroStationLabel,
+  .metroRoute a:hover .metroStationLabel,
+  .metroRoute a:focus-visible .metroStationLabel { opacity: 1; }
+  .metroReadout span,
+  .metroReadout p,
+  .stationIndex h4,
+  .stationIndex li > b,
+  .stationIndex a,
+  .stationIndex small,
+  .stationIndex section > p { font-size: 18px; }
+  .metroReadout h4 { font-size: 2rem; }
+
+  .evolutionScenarios header p,
+  .evolutionScenarios header h4,
+  .evolutionScenarios h5,
+  .evolutionScenarios article > p,
+  .evolutionScenarios li { font-size: 18px; }
 }
 
 .page::before {
@@ -65,6 +199,10 @@
 
 .page > * {
   position: relative;
+}
+
+.mobileViewPicker {
+  display: none;
 }
 
 .page[data-visual-fullscreen="true"] {
@@ -155,6 +293,33 @@
   display: flex;
   gap: 0.4rem;
   margin: 1.5rem 0;
+}
+
+.viewTabs button {
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewTabIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: 0 0 1.5rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.viewTabIcon[data-kind="dots"] circle {
+  fill: currentColor;
+  stroke: none;
+}
+
+.viewTabMobileLabel {
+  display: none;
 }
 
 .viewTabs button,
@@ -754,8 +919,8 @@
   display: flex;
   gap: 0.55rem;
   align-items: center;
-  min-height: 2.7rem;
-  width: 2.7rem;
+  min-height: 3rem;
+  width: 3rem;
   padding: 0.6rem 0.75rem;
   border: 1px solid var(--line);
   color: var(--ink);
@@ -797,8 +962,8 @@
 }
 
 .drawerToggle svg {
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 1.5rem;
+  height: 1.5rem;
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
@@ -1028,9 +1193,14 @@
   backdrop-filter: blur(14px);
 }
 
-.diagramModeControl[data-open="true"] .diagramModeMenu,
-.diagramModeControl:hover .diagramModeMenu {
+.diagramModeControl[data-open="true"] .diagramModeMenu {
   display: grid;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .diagramModeControl:hover .diagramModeMenu {
+    display: grid;
+  }
 }
 
 .diagramModeMenu button {
@@ -2515,6 +2685,10 @@ g[data-region-active="true"] > .evolutionRegionLabel {
   border-bottom: 1px solid var(--ink);
 }
 
+.mobileLedgerList {
+  display: none;
+}
+
 .ledgerTable {
   width: 100%;
   min-width: 47rem;
@@ -3842,6 +4016,8 @@ g[data-region-active="true"] > .evolutionRegionLabel {
   background: var(--canvas);
 }
 
+.mobileConstellation { display: none; }
+
 .constellationSystemHeader {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -3997,7 +4173,7 @@ g[data-region-active="true"] > .evolutionRegionLabel {
 .mobileDiagramSvg,
 .mobileTraceField { display: none; }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .page:not([data-visual-fullscreen="true"]) {
     min-height: 100dvh;
     padding: 4.55rem 0.55rem 4.65rem;
@@ -4030,12 +4206,25 @@ g[data-region-active="true"] > .evolutionRegionLabel {
   }
 
   .page:not([data-visual-fullscreen="true"]) > .viewTabs button {
-    min-height: 3.2rem;
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 3rem;
     padding: 0.45rem 0.28rem;
     border: 0;
     border-radius: 0;
     box-shadow: none;
-    font-size: 0.51rem;
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .viewTabDesktopLabel {
+    display: none;
+  }
+
+  .viewTabMobileLabel {
+    display: inline;
+    font-size: 1rem;
+    line-height: 1;
   }
 
   .page:not([data-visual-fullscreen="true"]) > .viewTabs button + button {
@@ -4125,25 +4314,142 @@ g[data-region-active="true"] > .evolutionRegionLabel {
   .chronoDesktop,
   .chronoLegend { display: none; }
 
-  .constellationSystem { padding: 0.55rem 0.55rem 5rem; }
-  .constellationSystemHeader { grid-template-columns: 1fr; max-width: calc(100% - 4.5rem); gap: 0.45rem; }
-  .constellationSystemHeader h2 { font-size: 1.18rem; }
-  .constellationSystemControls { width: 100%; }
-  .constellationSystemStage { min-height: calc(100dvh - 11rem); overflow: visible; }
-  .constellationSystemPlot { width: 100%; min-height: 0; }
-  .constellationSystemReadout { position: static; width: auto; margin: -0.1rem 0.55rem 0.55rem; box-shadow: none; }
-  .constellationSystemReadout > p:last-of-type { display: none; }
-  .constellationTouchRail { display: flex; gap: 0.5rem; margin: 0; padding: 0 0.55rem 0.6rem; overflow-x: auto; list-style: none; scroll-snap-type: x mandatory; }
-  .constellationTouchRail li { flex: 0 0 10.5rem; scroll-snap-align: center; }
-  .constellationTouchRail button { display: grid; grid-template-columns: auto 1fr; width: 100%; min-height: 5rem; padding: 0.65rem; border: 1px solid var(--ink); border-radius: 0.8rem; background: var(--paper); text-align: left; }
-  .constellationTouchRail button[aria-pressed="true"] { color: var(--paper); background: #1f64d6; }
-  .constellationTouchRail span { font: 650 0.52rem var(--font-plex-mono), monospace; }
-  .constellationTouchRail strong { align-self: end; font-size: 1rem; }
-  .constellationTouchRail b { grid-column: 2; color: #e95734; font: 700 0.76rem var(--font-plex-mono), monospace; }
-  .constellationTouchRail button[aria-pressed="true"] b { color: #fff8e8; }
-  .constellationLedger { margin-bottom: 4rem; }
-  .constellationLedger > div { grid-template-columns: 1fr; }
-  .constellationLedger table + table { border-top: 1px solid var(--line); border-left: 0; }
+  .constellationSystem {
+    height: 100dvh;
+    min-height: 100dvh;
+    padding: 4.15rem 0.62rem 0.62rem;
+    overflow: hidden;
+    background: var(--canvas);
+  }
+
+  .constellationSystemHeader,
+  .constellationSystemStage,
+  .constellationLedger {
+    display: none;
+  }
+
+  .mobileConstellation {
+    display: grid;
+    grid-template-rows: auto minmax(0, 2.5fr) minmax(10.5rem, 1fr);
+    gap: 0.62rem;
+    height: calc(100dvh - 4.77rem);
+    min-height: 0;
+  }
+
+  .mobileConstellationHeader p,
+  .mobileConstellationHeader h2,
+  .mobileConstellationReadout p,
+  .mobileConstellationReadout h3,
+  .mobileConstellationReadout strong,
+  .mobileConstellationReadout span {
+    margin: 0;
+  }
+
+  .mobileConstellationHeader p,
+  .mobileConstellationReadout p {
+    color: var(--ink-soft);
+    font: 700 1rem/1.15 var(--font-plex-mono), monospace;
+    letter-spacing: 0.035em;
+  }
+
+  .mobileConstellationHeader h2 {
+    margin-top: 0.22rem;
+    font-size: 1.45rem;
+    line-height: 1.02;
+  }
+
+  .mobileConstellationDots {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 4.75rem;
+    gap: 0.62rem;
+    min-height: 0;
+    padding: 0.38rem 0.82rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    touch-action: pan-y;
+    background: var(--canvas);
+  }
+
+  .mobileConstellationDots button {
+    width: 4.55rem;
+    height: 4.55rem;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    justify-self: center;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--signal-blue) 60%, var(--canvas));
+    box-shadow: none;
+    touch-action: manipulation;
+    transition: border-color 180ms linear, background-color 180ms linear, transform 180ms linear;
+  }
+
+  .mobileConstellationDots button[data-purity="70"] { background: color-mix(in srgb, var(--signal-blue) 70%, var(--canvas)); }
+  .mobileConstellationDots button[data-purity="80"] { background: color-mix(in srgb, var(--signal-blue) 80%, var(--canvas)); }
+  .mobileConstellationDots button[data-purity="100"] { background: var(--signal-blue); }
+
+  .mobileConstellationDots button[aria-selected="true"] {
+    border-color: var(--ink);
+    outline: 2px solid var(--canvas);
+    outline-offset: -5px;
+    transform: scale(1.04);
+  }
+
+  .mobileConstellationReadout {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-content: start;
+    gap: 0.28rem 0.72rem;
+    min-height: 0;
+    padding: 0.7rem 0.25rem 0;
+    overflow-y: auto;
+    background: var(--canvas);
+  }
+
+  .mobileConstellationReadout[data-selected="true"] {
+    border-top: 2px solid var(--signal-blue);
+  }
+
+  .mobileConstellationReadout h3,
+  .mobileConstellationReadout strong,
+  .mobileConstellationReadout span {
+    grid-column: 1;
+  }
+
+  .mobileConstellationReadout h3 {
+    font-size: 1.35rem;
+    line-height: 1.05;
+  }
+
+  .mobileConstellationReadout strong {
+    color: var(--signal-blue);
+    font-size: 2.25rem;
+    line-height: 0.95;
+  }
+
+  .mobileConstellationReadout span {
+    max-width: 30rem;
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+  .mobileConstellationReadout button {
+    grid-column: 2;
+    grid-row: 1 / 5;
+    align-self: center;
+    width: 3rem;
+    height: 3rem;
+    min-height: 3rem;
+    padding: 0;
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+    background: transparent;
+    font-size: 1rem;
+  }
 
   .page[data-visual-fullscreen="true"] > .viewTabs {
     display: none;
@@ -4152,15 +4458,15 @@ g[data-region-active="true"] > .evolutionRegionLabel {
   .page[data-visual-fullscreen="true"] .drawerToggle {
     top: 0.62rem;
     left: 0.62rem;
-    width: 3.25rem;
-    height: 3.25rem;
+    width: 3rem;
+    height: 3rem;
     padding: 0;
     border-radius: 0.22rem;
   }
 
   .page[data-visual-fullscreen="true"] .drawerToggle svg {
-    width: 1.45rem;
-    height: 1.45rem;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   .page[data-visual-fullscreen="true"] .drawerToggle span {
@@ -4182,17 +4488,17 @@ g[data-region-active="true"] > .evolutionRegionLabel {
   .localTrace > .diagramModeControl {
     position: fixed;
     top: 0.62rem;
-    left: 4.12rem;
+    left: 3.9rem;
     z-index: 18;
-    width: 3.25rem;
+    width: 3rem;
     margin: 0;
   }
 
   .diagramModeTrigger {
     display: grid;
-    width: 3.25rem;
-    height: 3.25rem;
-    min-height: 3.25rem;
+    width: 3rem;
+    height: 3rem;
+    min-height: 3rem;
     padding: 0;
     place-items: center;
     border-radius: 0.22rem;
@@ -4211,8 +4517,9 @@ g[data-region-active="true"] > .evolutionRegionLabel {
   }
 
   .diagramModeIcon {
-    width: 1.45rem;
-    height: 1.45rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke-width: 1.9;
   }
 
   .diagramModeMenu {
@@ -4232,6 +4539,12 @@ g[data-region-active="true"] > .evolutionRegionLabel {
     font-size: 1rem;
   }
 
+  .diagramModeMenu strong,
+  .diagramModeMenu small {
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+
   .geoDashboard {
     position: relative;
     display: grid;
@@ -4241,43 +4554,16 @@ g[data-region-active="true"] > .evolutionRegionLabel {
     overflow: visible;
   }
 
+  .localTrace > .geoDashboard {
+    display: grid;
+    margin-top: 0;
+  }
+
   .geoDashboard > .diagramHeading,
   .geoDashboard > .geoControlBar,
   .geoDashboard > .diagramEvidenceFallback,
   .geoDashboard > .mobileDiagramNote {
     display: none;
-  }
-
-  .geoMobileHeader {
-    position: absolute;
-    top: 4.15rem;
-    left: 0.72rem;
-    z-index: 7;
-    display: grid;
-    width: min(13.5rem, calc(100% - 1.44rem));
-    padding: 0.7rem 0.78rem;
-    border: 1px solid var(--line);
-    border-radius: 0.72rem;
-    background: color-mix(in srgb, var(--paper) 91%, transparent);
-    backdrop-filter: blur(12px);
-  }
-
-  .geoMobileHeader span {
-    color: var(--region-readable);
-    font: 700 1rem var(--font-plex-mono), monospace;
-    letter-spacing: 0.08em;
-  }
-
-  .geoMobileHeader strong {
-    margin-top: 0.14rem;
-    font-size: clamp(1.4rem, 7vw, 1.85rem);
-    line-height: 1;
-  }
-
-  .geoMobileHeader p {
-    margin: 0.32rem 0 0;
-    color: var(--ink-soft);
-    font-size: 1rem;
   }
 
   .geoCanvas {
@@ -4286,20 +4572,22 @@ g[data-region-active="true"] > .evolutionRegionLabel {
     height: 100dvh;
     min-height: 100dvh;
     border: 0;
-    background:
-      radial-gradient(circle at 48% 46%, color-mix(in srgb, var(--signal-blue) 15%, transparent), transparent 55%),
-      linear-gradient(180deg, #fffaf0, #ecf0ef 68%, #f5ebd7);
+    background: #fffaf0;
+  }
+
+  .localTrace .geoCanvas {
+    margin-top: 0;
   }
 
   .localTrace .geoCanvas .worldMapSvg { display: none; }
 
   .mobileTwinGlobes {
     position: absolute;
-    inset: 6.9rem 0.45rem 5rem;
+    inset: 3.85rem 0.65rem 5.15rem;
     z-index: 2;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    gap: 0.15rem;
+    gap: 0.35rem;
   }
 
   .mobileTwinGlobes svg {
@@ -4307,12 +4595,12 @@ g[data-region-active="true"] > .evolutionRegionLabel {
     height: 100%;
     min-height: 0;
     overflow: visible;
-    touch-action: none;
+    touch-action: pan-y;
     user-select: none;
   }
 
   .mobileGlobeSphere {
-    fill: color-mix(in srgb, #fffaf0 92%, var(--signal-blue));
+    fill: #fffaf0;
     stroke: #172526;
     stroke-width: 1.4;
     vector-effect: non-scaling-stroke;
@@ -4326,8 +4614,8 @@ g[data-region-active="true"] > .evolutionRegionLabel {
   }
 
   .mobileGlobeCountry {
-    fill: #dde5df;
-    stroke: color-mix(in srgb, #172526 42%, transparent);
+    fill: #e8ece5;
+    stroke: color-mix(in srgb, #172526 36%, transparent);
     stroke-width: 0.55;
     vector-effect: non-scaling-stroke;
   }
@@ -4344,10 +4632,7 @@ g[data-region-active="true"] > .evolutionRegionLabel {
   }
 
   .mobileGlobePointHalo {
-    fill: none;
-    stroke: color-mix(in srgb, var(--signal-blue) 28%, transparent);
-    stroke-width: 1.5;
-    vector-effect: non-scaling-stroke;
+    display: none;
   }
 
   .mobileTwinGlobes g[data-selected="true"] .mobileGlobePoint {
@@ -4358,12 +4643,6 @@ g[data-region-active="true"] > .evolutionRegionLabel {
 
   .mobileGlobeHit { fill: transparent; cursor: pointer; }
   .mobileGlobeHit:focus-visible { fill: color-mix(in srgb, var(--signal-orange) 18%, transparent); outline: none; }
-  .mobileGlobeIndex {
-    fill: #172526;
-    font: 700 16px var(--font-plex-mono), monospace;
-    letter-spacing: 0.04em;
-  }
-
   .geoCanvas .geoReadout,
   .geoCanvas .mapLegend {
     display: none;
@@ -4391,9 +4670,9 @@ g[data-region-active="true"] > .evolutionRegionLabel {
     bottom: 0.75rem;
     left: 0.72rem;
     z-index: 8;
-    grid-template-columns: 3.25rem minmax(0, 1fr);
+    grid-template-columns: 3rem minmax(0, 1fr);
     gap: 0.72rem;
-    min-height: 4.15rem;
+    min-height: 3.9rem;
     padding: 0.42rem 0.58rem;
     border: 1px solid var(--line);
     border-radius: 0.86rem;
@@ -4403,8 +4682,8 @@ g[data-region-active="true"] > .evolutionRegionLabel {
   }
 
   .timeController > button {
-    width: 3.25rem;
-    height: 3.25rem;
+    width: 3rem;
+    height: 3rem;
     padding: 0;
     border: 1px solid var(--ink);
     border-radius: 999px;
@@ -4521,59 +4800,67 @@ g[data-region-active="true"] > .evolutionRegionLabel {
 
   .localTrace > .diagram .mobileTraceField {
     display: grid;
-    grid-template-rows: minmax(0, 3.25fr) minmax(11.5rem, 1fr);
+    grid-template-rows: minmax(0, 2.5fr) minmax(13.5rem, 1fr);
     width: 100%;
-    min-height: 100dvh;
+    height: 100dvh;
+    min-height: 44rem;
     color: #172526;
     background: #fffaf0;
   }
 
   .mobileTraceFieldStage {
     position: relative;
-    min-height: 37rem;
-    overflow: hidden;
-    background:
-      radial-gradient(circle at 14% 20%, color-mix(in srgb, var(--signal-orange) 13%, transparent), transparent 36%),
-      linear-gradient(180deg, #fffaf0 0%, #f7f0df 100%);
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: #fffaf0;
+    scrollbar-width: thin;
+    touch-action: pan-y;
   }
 
-  .mobileTraceFieldStage > svg {
+  .mobileTraceCanvas {
+    position: relative;
+    width: 100%;
+    height: var(--trace-canvas-height);
+    min-height: 100%;
+  }
+
+  .mobileTraceRoot {
+    position: absolute;
+    top: 4.3rem;
+    left: 1.12rem;
+    z-index: 4;
+    display: grid;
+    width: 4rem;
+    height: 4rem;
+    place-items: center;
+    border-radius: 999px;
+    color: #fffaf0;
+    background: #172526;
+    font: 700 1rem/1 var(--font-plex-mono), monospace;
+  }
+
+  .mobileTraceActiveRay {
     position: absolute;
     inset: 0;
+    z-index: 1;
     width: 100%;
     height: 100%;
+    overflow: visible;
+    pointer-events: none;
   }
 
-  .mobileTraceGuideGrid line {
-    stroke: rgba(23, 37, 38, 0.09);
-    stroke-width: 1;
-    vector-effect: non-scaling-stroke;
-  }
-
-  .mobileTraceRays path {
+  .mobileTraceActiveRay path {
     fill: none;
-    stroke: color-mix(in srgb, var(--signal-blue) 38%, #172526);
-    stroke-width: 1.25;
-    stroke-dasharray: 2 5;
+    stroke: var(--signal-blue);
+    stroke-width: 2;
     vector-effect: non-scaling-stroke;
   }
 
-  .mobileTraceField[data-family="sources"] .mobileTraceRays path {
-    stroke: color-mix(in srgb, var(--signal-orange) 48%, #172526);
-  }
+  .mobileTraceField[data-family="sources"] .mobileTraceActiveRay path { stroke: var(--signal-orange); }
 
-  .mobileTraceFieldLabel {
-    position: absolute;
-    top: 4.35rem;
-    left: 1rem;
-    z-index: 2;
-    margin: 0;
-    color: #172526;
-    font: 700 1rem/1.2 var(--font-plex-mono), monospace;
-    letter-spacing: 0.045em;
-  }
-
-  .mobileTraceNodes { position: absolute; inset: 0; }
+  .mobileTraceNodes { position: absolute; inset: 0; z-index: 2; }
 
   .mobileTraceNode {
     position: absolute;
@@ -4581,16 +4868,17 @@ g[data-region-active="true"] > .evolutionRegionLabel {
     top: var(--node-y);
     z-index: 3;
     display: grid;
-    width: 3.25rem;
-    height: 3.25rem;
-    padding: 0;
+    width: 5.75rem;
+    height: 5.75rem;
+    padding: 0.35rem;
     place-items: center;
     border: 2px solid transparent;
     border-radius: 999px;
-    color: #fffaf0;
-    background: color-mix(in srgb, var(--signal-blue) calc(var(--node-alpha) * 100%), #d7e2e1);
-    box-shadow: 0 0 0 1px color-mix(in srgb, #172526 18%, transparent);
-    font: 750 1rem/1 var(--font-plex-mono), monospace;
+    color: var(--node-foreground, #172526);
+    background: color-mix(in srgb, var(--signal-blue) var(--node-purity), #fffaf0);
+    box-shadow: none;
+    font: 720 1rem/1.05 var(--font-plex-mono), monospace;
+    text-align: center;
     transform: translate(-50%, -50%) scale(0.7);
     opacity: 0;
     animation: mobile-node-arrive 460ms cubic-bezier(0.18, 0.8, 0.25, 1) var(--node-delay) forwards;
@@ -4598,12 +4886,12 @@ g[data-region-active="true"] > .evolutionRegionLabel {
   }
 
   .mobileTraceField[data-family="sources"] .mobileTraceNode {
-    background: color-mix(in srgb, var(--signal-orange) calc(var(--node-alpha) * 100%), #e8d8c5);
+    background: color-mix(in srgb, var(--signal-orange) var(--node-purity), #fffaf0);
   }
 
   .mobileTraceNode[aria-pressed="true"] {
     border-color: #172526;
-    box-shadow: 0 0 0 3px #fffaf0, 0 0 0 5px #172526;
+    box-shadow: none;
   }
 
   .mobileTraceNode:focus-visible {
@@ -4611,60 +4899,37 @@ g[data-region-active="true"] > .evolutionRegionLabel {
     outline-offset: 4px;
   }
 
-  .mobileTraceEmptyNode {
-    position: absolute;
-    left: var(--node-x);
-    top: var(--node-y);
-    z-index: 1;
-    width: 3.25rem;
-    height: 3.25rem;
-    border: 1px solid color-mix(in srgb, #172526 10%, transparent);
-    border-radius: 999px;
-    background: color-mix(in srgb, #172526 5%, #fffaf0);
-    transform: translate(-50%, -50%);
-  }
-
   .mobileTraceSelection {
     position: relative;
     z-index: 4;
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
-    align-content: center;
-    gap: 0.55rem 0.8rem;
-    min-height: 11.5rem;
+    align-content: start;
+    gap: 0.48rem 0.8rem;
+    min-height: 13.5rem;
     padding: 1rem;
     border-top: 1px solid #172526;
     background: #fffaf0;
   }
 
-  .mobileTraceSelection > div {
-    display: flex;
+  .mobileTraceSelectionMeta {
     grid-column: 1 / -1;
-    gap: 0.65rem;
-    align-items: center;
+    color: #4e5858;
+    font: 650 1rem/1.25 var(--font-plex-mono), monospace;
   }
 
-  .mobileTraceSelection span {
-    display: grid;
-    width: 3.25rem;
-    height: 3.25rem;
-    flex: 0 0 3.25rem;
-    place-items: center;
-    border: 2px solid #172526;
-    border-radius: 999px;
-    color: #fffaf0;
-    background: var(--signal-blue);
-    font: 750 1rem var(--font-plex-mono), monospace;
-  }
-
-  .mobileTraceField[data-family="sources"] .mobileTraceSelection span { background: var(--signal-orange); }
   .mobileTraceSelection p { margin: 0; font-size: 1rem; line-height: 1.35; }
-  .mobileTraceSelection > div p { color: #425152; }
   .mobileTraceSelection h4 { grid-column: 1 / -1; margin: 0; font-size: clamp(1.35rem, 7vw, 2rem); line-height: 1.02; }
+  .mobileTraceSelectionTarget {
+    grid-column: 1 / -1;
+    color: var(--signal-blue);
+    font-weight: 700;
+  }
+  .mobileTraceField[data-family="sources"] .mobileTraceSelectionTarget { color: #b7442b; }
   .mobileTraceSelection > button {
     align-self: end;
-    min-width: 3.25rem;
-    min-height: 3.25rem;
+    min-width: 3rem;
+    min-height: 3rem;
     padding: 0.65rem 0.9rem;
     border: 1px solid #172526;
     border-radius: 999px;
@@ -4743,7 +5008,7 @@ g[data-region-active="true"] > .evolutionRegionLabel {
 /* Desktop TRACE uses the viewport as the plate: navigation is the header, the
    visualization is the reading surface. Keep these overrides last so earlier
    component defaults cannot re-introduce document-like vertical spacing. */
-@media (min-width: 761px) {
+@media (min-width: 901px) {
   .page:not([data-visual-fullscreen="true"]) {
     padding-top: 5.9rem;
   }
@@ -4764,4 +5029,625 @@ g[data-region-active="true"] > .evolutionRegionLabel {
     height: 100%;
     min-height: 0;
   }
+}
+
+/* Mobile TRACE navigation is its own touch system. A single 48px control
+   switches the three analysis levels; the object diagram control remains a
+   separate 48px control because it changes representation, not data scope. */
+@media (max-width: 900px) {
+  .page > .viewTabs {
+    display: none !important;
+  }
+
+  .mobileViewPicker {
+    position: fixed;
+    top: 0.62rem;
+    left: 0.62rem;
+    z-index: 26;
+    display: block;
+  }
+
+  .mobileViewTrigger,
+  .mobileViewMenu button {
+    display: grid;
+    width: 3rem;
+    min-width: 3rem;
+    height: 3rem;
+    min-height: 3rem;
+    padding: 0;
+    place-items: center;
+    border: 1px solid var(--ink-soft);
+    border-radius: 0.28rem;
+    color: var(--ink);
+    background: var(--paper);
+    box-shadow: 0 0.16rem 0 color-mix(in srgb, var(--ink) 22%, transparent);
+  }
+
+  .mobileViewTrigger .viewTabIcon,
+  .mobileViewMenu .viewTabIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .mobileViewMenu {
+    position: absolute;
+    top: 3.45rem;
+    left: 0;
+    display: none;
+    width: 3rem;
+    gap: 0.28rem;
+  }
+
+  .mobileViewPicker[data-open="true"] .mobileViewMenu {
+    display: grid;
+  }
+
+  .mobileViewMenu button[aria-checked="true"] {
+    color: var(--paper);
+    background: var(--ink);
+  }
+
+  .page[data-view="object"] .drawerToggle {
+    left: 3.9rem;
+  }
+
+  .page[data-view="object"] .localTrace > .diagramModeControl {
+    left: 7.18rem;
+  }
+
+  .localTrace .diagramModeMenu {
+    top: 4.08rem;
+    right: auto;
+    left: 7.18rem;
+    display: none;
+    width: 3rem;
+    gap: 0.28rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .localTrace .diagramModeControl[data-open="true"] .diagramModeMenu {
+    display: grid;
+  }
+
+  .localTrace .diagramModeMenu button {
+    display: grid;
+    width: 3rem;
+    min-width: 3rem;
+    height: 3rem;
+    min-height: 3rem;
+    padding: 0;
+    place-items: center;
+    border-radius: 0.28rem;
+    background: var(--paper);
+    box-shadow: 0 0.16rem 0 color-mix(in srgb, var(--ink) 22%, transparent);
+  }
+
+  .localTrace .diagramModeMenu button[data-selected="true"] {
+    color: var(--paper);
+    background: var(--ink);
+  }
+
+  .localTrace .diagramModeMenu button > span {
+    display: none;
+  }
+
+  .constellationTouchRail span,
+  .constellationTouchRail strong,
+  .constellationTouchRail b {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 900px) {
+  .page[data-view="atlas"] {
+    min-height: 100dvh;
+    padding: 4.15rem 0.62rem 0.7rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .page[data-view="atlas"] .chronoRoutes,
+  .page[data-view="atlas"] .atlasStatement,
+  .page[data-view="atlas"] .matrixFallback,
+  .page[data-view="atlas"] .atlasLists {
+    display: none;
+  }
+
+  .page[data-view="atlas"] .mobileAtlas {
+    display: grid;
+    gap: 0.72rem;
+    margin: 0;
+    padding: 0.72rem;
+    border: 1px solid var(--ink);
+    border-radius: 0.78rem;
+    background: color-mix(in srgb, var(--paper) 96%, transparent);
+    box-shadow: 0 0.16rem 0 color-mix(in srgb, var(--ink) 18%, transparent);
+  }
+
+  .mobileAtlasHeader {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 3rem;
+    gap: 0.7rem;
+    align-items: center;
+  }
+
+  .mobileAtlasHeader p,
+  .mobileAtlasHeader h2 {
+    margin: 0;
+  }
+
+  .mobileAtlasHeader p {
+    color: var(--ink-soft);
+    font: 700 1rem/1.2 var(--font-plex-mono), monospace;
+    letter-spacing: 0.045em;
+  }
+
+  .mobileAtlasHeader h2 {
+    margin-top: 0.2rem;
+    font-size: clamp(2.5rem, 14vw, 4rem);
+    line-height: 0.92;
+  }
+
+  .mobileAtlasPlay {
+    display: grid;
+    width: 3rem;
+    height: 3rem;
+    min-height: 3rem;
+    padding: 0;
+    place-items: center;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    color: var(--paper);
+    background: var(--ink);
+    font-size: 1rem;
+  }
+
+  .mobileAtlasMetrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 0;
+    border-block: 1px solid var(--line);
+  }
+
+  .mobileAtlasMetrics div {
+    min-width: 0;
+    padding: 0.55rem 0.35rem;
+  }
+
+  .mobileAtlasMetrics div + div {
+    border-left: 1px solid var(--line);
+  }
+
+  .mobileAtlasMetrics dt,
+  .mobileAtlasMetrics dd {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .mobileAtlasMetrics dt { color: var(--ink-soft); }
+  .mobileAtlasMetrics dd { margin-top: 0.22rem; font-weight: 760; }
+
+  .mobileAtlasDots {
+    display: grid;
+    grid-template-columns: repeat(var(--mobile-atlas-columns), minmax(0, 1fr));
+    grid-auto-rows: 1.25rem;
+    gap: 0.22rem;
+    max-height: 18rem;
+    padding: 0.35rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    touch-action: pan-y;
+  }
+
+  .mobileAtlasDots > span {
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--signal-blue) var(--mobile-dot-purity), var(--paper));
+    box-shadow: none;
+  }
+
+  .mobileAtlasDots > span[data-decade-selected="true"] {
+    background: color-mix(in srgb, var(--signal-orange) var(--mobile-dot-purity), var(--paper));
+  }
+
+  .mobileAtlasDots > span[data-selected="true"] {
+    border-color: var(--ink);
+    box-shadow: 0 0 0 2px var(--paper);
+  }
+
+  .mobileAtlasDots > span[data-empty="true"] {
+    background: color-mix(in srgb, var(--ink) 8%, var(--paper));
+  }
+
+  .mobileAtlas .mobileAtlasTimeline {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.55rem;
+    align-items: center;
+    font: 650 1rem/1 var(--font-plex-mono), monospace;
+    text-transform: none;
+  }
+
+  .mobileAtlasTimeline input { width: 100%; }
+
+  .mobileAtlasSelection {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.2rem 0.65rem;
+    align-items: end;
+    padding-top: 0.65rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .mobileAtlasSelection label,
+  .mobileAtlasSelection select,
+  .mobileAtlasSelection strong,
+  .mobileAtlasSelection span {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .mobileAtlasSelection label {
+    grid-column: 1;
+    display: grid;
+    gap: 0.25rem;
+    color: var(--ink-soft);
+  }
+
+  .mobileAtlasSelection select {
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.45rem 2.35rem 0.45rem 0.6rem;
+    border: 1px solid var(--line);
+    border-radius: 0.25rem;
+    color: var(--ink);
+    background: var(--paper);
+  }
+
+  .mobileAtlasSelection span { grid-column: 1; }
+  .mobileAtlasSelection strong { grid-column: 1; font-size: 2.2rem; line-height: 0.95; }
+
+  .mobileAtlasSelection button {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    align-self: center;
+    min-height: 3rem;
+    padding-inline: 0.8rem;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    color: var(--paper);
+    background: var(--ink);
+    font-size: 1rem;
+  }
+
+  .mobileAtlasFamilies {
+    display: grid;
+    gap: 0.42rem;
+  }
+
+  .mobileAtlasFamilies > span {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.15rem 0.5rem;
+    font-size: 1rem;
+  }
+
+  .mobileAtlasFamilies i {
+    grid-column: 1 / -1;
+    display: block;
+    width: var(--family-share);
+    min-width: 0.28rem;
+    height: 0.28rem;
+    background: var(--signal-blue);
+  }
+
+  .mobileAtlasFamilies span:nth-child(2) i { background: var(--signal-orange); }
+  .mobileAtlasFamilies span:nth-child(3) i { background: var(--theme); }
+  .mobileAtlasFamilies b,
+  .mobileAtlasFamilies em { font-size: 1rem; font-style: normal; }
+  .mobileAtlasFamilies em { justify-self: end; }
+
+  .objectDrawer {
+    width: calc(100% - 0.62rem);
+    background: color-mix(in srgb, var(--paper) 98%, transparent);
+  }
+
+  .drawerScroll {
+    padding: 4.15rem 0.72rem 5.25rem;
+  }
+
+  .objectDrawer .filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.72rem;
+  }
+
+  .objectDrawer .filters label,
+  .objectDrawer .filters input,
+  .objectDrawer .filters select,
+  .objectDrawer .layerNote,
+  .objectDrawer .results strong,
+  .objectDrawer .results span,
+  .objectDrawer .results p {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .objectDrawer .filters input,
+  .objectDrawer .filters select {
+    min-height: 3rem;
+  }
+
+  .objectDrawer .layerNote {
+    align-items: flex-start;
+    margin: 0.78rem 0;
+  }
+
+  .objectDrawer .results {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .objectDrawer .results > button {
+    gap: 0.35rem;
+    min-height: 6rem;
+    padding: 0.78rem 0.52rem;
+  }
+
+  .objectDrawer .rootNode,
+  .objectDrawer .reviewRecord,
+  .objectDrawer .emptyState,
+  .objectDrawer .rootNode dt,
+  .objectDrawer .rootNode dd,
+  .objectDrawer .rootNode p,
+  .objectDrawer .rootNode a,
+  .objectDrawer .reviewRecord dt,
+  .objectDrawer .reviewRecord dd,
+  .objectDrawer .reviewRecord p,
+  .objectDrawer .reviewRecord a {
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+  .objectDrawer .noInfluence,
+  .objectDrawer .ledgerHeading p,
+  .objectDrawer .ledgerHeading h3,
+  .objectDrawer .ledgerHeading dt,
+  .objectDrawer .ledgerHeading dd,
+  .objectDrawer .ledgerFilters label,
+  .objectDrawer .ledgerFilters select,
+  .objectDrawer .ledgerSelection strong,
+  .objectDrawer .ledgerSelection small,
+  .objectDrawer .ledgerSelection a,
+  .objectDrawer .ledgerHint,
+  .objectDrawer .ledgerBoundary,
+  .objectDrawer .mobileLedgerList,
+  .objectDrawer .mobileLedgerList strong,
+  .objectDrawer .mobileLedgerList span,
+  .objectDrawer .mobileLedgerList dt,
+  .objectDrawer .mobileLedgerList dd,
+  .objectDrawer .mobileLedgerList a,
+  .objectDrawer .traceMarkButton {
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+  .objectDrawer .ledgerHeading,
+  .objectDrawer .ledgerSelection,
+  .objectDrawer .ledgerFilters {
+    grid-template-columns: 1fr;
+  }
+
+  .objectDrawer .ledgerHeading {
+    align-items: start;
+  }
+
+  .objectDrawer .ledgerHeading dl {
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .objectDrawer .ledgerFilters select,
+  .objectDrawer .traceMarkButton {
+    min-height: 3rem;
+  }
+
+  .objectDrawer .ledgerTableWrap {
+    display: none;
+  }
+
+  .objectDrawer .mobileLedgerList {
+    display: grid;
+    gap: 0.7rem;
+    margin: 0.78rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .objectDrawer .mobileLedgerList > li {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 0.55rem 0.72rem;
+    padding: 0.72rem;
+    border: 1px solid var(--line);
+    border-radius: 0.45rem;
+    background: var(--paper-2);
+  }
+
+  .objectDrawer .mobileLedgerList > li[data-selected="true"] {
+    border-color: var(--signal-orange);
+    box-shadow: inset 0.2rem 0 var(--signal-orange);
+  }
+
+  .objectDrawer .mobileLedgerList .traceMarkButton {
+    align-self: start;
+    width: 3rem;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .objectDrawer .mobileLedgerList > li > div:nth-of-type(1) {
+    display: grid;
+    gap: 0.15rem;
+  }
+
+  .objectDrawer .mobileLedgerList dl,
+  .objectDrawer .mobileLedgerLinks {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.48rem;
+    margin: 0;
+  }
+
+  .objectDrawer .mobileLedgerList dl > div {
+    min-width: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .objectDrawer .mobileLedgerList dt {
+    color: var(--ink-soft);
+  }
+
+  .objectDrawer .mobileLedgerList dd {
+    margin: 0.15rem 0 0;
+    overflow-wrap: anywhere;
+  }
+
+  .objectDrawer .mobileLedgerLinks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .objectDrawer .mobileLedgerLinks a,
+  .objectDrawer .ledgerSelection a {
+    display: grid;
+    min-height: 3rem;
+    align-items: center;
+    padding: 0.5rem 0.65rem;
+    border: 1px solid var(--line);
+  }
+
+  .timeController input[type="range"],
+  .mobileAtlasTimeline input[type="range"],
+  .segmentedControl button {
+    min-height: 3rem;
+    font-size: 1rem;
+    touch-action: manipulation;
+  }
+
+  .objectWorkspace[data-has-visual="true"] .drawerScroll {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .objectWorkspace[data-has-visual="true"] .objectInfoPanel {
+    order: -1;
+    margin: 0 0 1rem;
+  }
+}
+
+/* The desktop research interface uses 18px as a true rendered floor. These
+   declarations intentionally live last: earlier plate-specific source sizes
+   describe SVG geometry and previously overrode the accessibility floor. */
+@media (min-width: 901px) {
+  .page > .viewTabs button,
+  .viewTabDesktopLabel,
+  .drawerToggle,
+  .objectDrawer label,
+  .objectDrawer input,
+  .objectDrawer select,
+  .objectDrawer button,
+  .objectDrawer p,
+  .objectDrawer span,
+  .objectDrawer strong,
+  .objectDrawer dt,
+  .objectDrawer dd,
+  .objectDrawer a,
+  .objectDrawer small,
+  .objectDrawer code,
+  .diagramModeTrigger,
+  .diagramModeMenu button,
+  .diagramModeMenu strong,
+  .diagramModeMenu small,
+  .diagramHeading > span,
+  .chronoHeading > p,
+  .diagramHeading p,
+  .chronoHeading p,
+  .diagramHeading h3,
+  .chronoHeading h3,
+  .emptyDiagram,
+  .diagramLoading,
+  .evolutionControls > button,
+  .evolutionControls select,
+  .evolutionControls label,
+  .evolutionControls .segmentedControl button,
+  .evolutionScenarios header p,
+  .evolutionScenarios header h4,
+  .evolutionScenarios h5,
+  .evolutionScenarios article > p,
+  .evolutionScenarios li,
+  .constellationSystemHeader > div > p,
+  .constellationSystemControls summary,
+  .constellationSystemControls label,
+  .constellationSystemControls p,
+  .constellationSystemControls select,
+  .constellationSystemReadout > p:first-child,
+  .constellationSystemReadout > span,
+  .constellationSystemReadout small,
+  .constellationSystemReadout > div,
+  .constellationSystemReadout > p:last-of-type,
+  .constellationSystemReadout button,
+  .constellationLedger summary,
+  .constellationLedger table,
+  .constellationLedger caption,
+  .constellationLedger small,
+  .metroReadout span,
+  .metroReadout p,
+  .stationIndex h4,
+  .stationIndex li > b,
+  .stationIndex a,
+  .stationIndex small,
+  .stationIndex section > p {
+    font-size: 18px;
+  }
+
+  .systemMeta text,
+  .systemRegionArc text,
+  .systemDecades text,
+  .systemMediumArc text,
+  .systemFamilyArc text,
+  .systemCore text,
+  .systemMap text,
+  .systemFocus text,
+  .systemFamilyScale text,
+  .constellationFamilyNodes text,
+  .constellationBranches text[data-label="true"],
+  .constellationCoreSystem text,
+  .metroSystem .routeLabel,
+  .metroStationLabel,
+  .metroInterchange .interchangeLabel,
+  .metroInterchange .objectLabel,
+  .treeBranchLabel,
+  .treeLeafLabel,
+  .treeRootLabel {
+    font-size: 18px;
+  }
+
+  .systemCore text[data-year="true"] { font-size: 38px; }
+  .systemFocus text[data-title="true"] { font-size: 24px; }
+  .systemFocus text[data-value="true"] { font-size: 32px; }
+  .constellationSystemReadout h3 { font-size: clamp(2rem, 3vw, 3rem); }
+  .constellationSystemReadout > strong { font-size: clamp(2.4rem, 4vw, 4rem); }
+  .constellationCoreSystem text[data-count="true"] { font-size: 30px; }
 }

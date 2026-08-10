@@ -22,6 +22,14 @@ export { FOLDER_INK, getFolderColor, getFolderInk } from "@/lib/archive-palette"
 
 const mock = mockRaw as unknown as PublicSurfaceMock;
 
+// Several archive views resolve every folder membership during static
+// generation.  A linear Array.find for each id makes the full index roughly
+// quadratic at the frozen dataset size, so keep one immutable lookup table for
+// the lifetime of the module instead.  The source payload remains untouched.
+const surfaceById = new Map(
+  mock.surfaces.map((surface) => [surface.surfaceId, surface] as const),
+);
+
 export const FOLDER_TYPE_ORDER: FolderTypeKey[] = [
   "region",
   "theme",
@@ -151,7 +159,7 @@ export function getSurfaces(): Surface[] {
 }
 
 export function getSurface(id: string): Surface | undefined {
-  return mock.surfaces.find((s) => s.surfaceId === id);
+  return surfaceById.get(id);
 }
 
 export function getResearchDossiers(): ResearchDossier[] {
