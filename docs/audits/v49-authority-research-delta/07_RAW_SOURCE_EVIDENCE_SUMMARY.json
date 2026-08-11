@@ -1,0 +1,101 @@
+{
+  "authorityRulesApplied": [
+    "Candidate JSON remains the sole canonical migration input.",
+    "Provider payloads and probe bytes cannot create canonical objects, assertions, or research claims.",
+    "Git tracking and technical availability are not authority or evidence eligibility.",
+    "Unknown or incomplete provenance fails closed to HELD_UNSUPPORTED.",
+    "The 30 transfer-manifest-selected raw responses are eligible only for legacy reconciliation and lineage verification."
+  ],
+  "bytes": {
+    "byArtifactFamily": {
+      "CAPTURE_RUN_PROVIDER_PAYLOAD": 73646488,
+      "CURATOR_AUTHORED_MANUAL_SOURCE_RECORD": 166174,
+      "CURATOR_AUTHORED_REMEDIATION_SOURCE_RECORD": 36794,
+      "HTTP_SOURCE_DISCOVERY_PROBE_RESPONSE": 21296744,
+      "SELECTED_V47_AIC_PROVIDER_RESPONSE": 740008,
+      "SELECTED_V48_LOC_PROVIDER_RESPONSE": 133709
+    },
+    "total": 96019917
+  },
+  "counts": {
+    "authoredSourceRecords": 38,
+    "byArtifactFamily": {
+      "CAPTURE_RUN_PROVIDER_PAYLOAD": 1266,
+      "CURATOR_AUTHORED_MANUAL_SOURCE_RECORD": 30,
+      "CURATOR_AUTHORED_REMEDIATION_SOURCE_RECORD": 8,
+      "HTTP_SOURCE_DISCOVERY_PROBE_RESPONSE": 265,
+      "SELECTED_V47_AIC_PROVIDER_RESPONSE": 12,
+      "SELECTED_V48_LOC_PROVIDER_RESPONSE": 18
+    },
+    "byAuthority": {
+      "CURATOR_AUTHORED_SOURCE_EVIDENCE": 38,
+      "LEGACY_PROBE_OBSERVATION": 265,
+      "LEGACY_PROVIDER_RESPONSE_EVIDENCE": 1296
+    },
+    "byDetectedFormat": {
+      "APPLICATION_JSON_VALID": 1309,
+      "APPLICATION_XML_ENVELOPE_PRESENT": 16,
+      "TEXT_HTML_CAPTURE": 1,
+      "TEXT_HTML_SNAPSHOT": 267,
+      "TEXT_RESPONSE_BODY": 6
+    },
+    "byEvidenceEligibility": {
+      "ELIGIBLE_LEGACY_RECONCILIATION_ONLY": 30,
+      "HELD_UNSUPPORTED": 1569
+    },
+    "byProvenanceDisposition": {
+      "AUTHORED_RECORD_PRESENT_REINGEST_DECISION_MISSING": 38,
+      "LEGACY_TRANSFORMATION_CHAIN_IDENTIFIED": 30,
+      "PROBE_CONTEXT_PRESENT_ARTIFACT_RECEIPT_MISSING": 265,
+      "RUN_CONTEXT_PRESENT_ARTIFACT_RECEIPT_MISSING": 1266
+    },
+    "byResearchUseDisposition": {
+      "EXCLUDED_FROM_CANONICAL_RESEARCH_CLAIMS": 30,
+      "EXCLUDED_PENDING_GOVERNED_REINGEST": 38,
+      "EXCLUDED_PENDING_PROVENANCE_REVIEW": 1531
+    },
+    "classifiedArtifacts": 1599,
+    "manifestContextArtifacts": 1266,
+    "manifestDeclaredExistingRawDirectories": 26,
+    "manifestDeclaredRawDirectories": 29,
+    "outsideManifestRawArtifacts": 295,
+    "priorAuditRawProbeJsonSubsetMeasured": 1271,
+    "probeObservationArtifacts": 265,
+    "rawDirectoryArtifacts": 1561,
+    "totalArtifacts": 1599,
+    "transferManifestSelectedRawArtifacts": 30,
+    "unclassifiedRawSource": 0
+  },
+  "gates": {
+    "RAW_SOURCE_LEDGER_COMPLETE": true,
+    "TRANSFER_SELECTED_HASH_PARITY": true,
+    "UNCLASSIFIED_RAW_SOURCE": 0,
+    "VISUAL_RIGHTS_PROVIDER_POLICY_DELIVERY_MODE_EVALUATED": false
+  },
+  "schemaVersion": "v49.phase1c.raw-source-evidence-summary.v1",
+  "scope": {
+    "excluded": [
+      "capture result CSVs, indexes, linkage tables, templates, schemas, scripts, and reports because they are context or derived artifacts rather than raw/source-record evidence bytes",
+      "visual-rights assessment, provider-policy decision, endpoint-health decision, and delivery-mode decision; those belong to Prompt B"
+    ],
+    "included": [
+      "every tracked file in a path containing _raw/ or /raw/",
+      "every tracked JSON record under data/manual_source_records/ and data/remediation_source_records/"
+    ]
+  },
+  "setHashes": {
+    "sortedPathBytesAndSha256SetSha256": "76708adc54bf4c86ba68b31325db8f92e4bcfd10488eef89e35631f3caf8c017",
+    "sortedPathSetSha256": "2a13f9e2bcd35d66c0201866ab27fe7ec3a60cf10fe7f67c0cea9ff8d821d12e"
+  },
+  "sourceHead": "6b111a78818a9e9ef37e4909c1f288d3b844b77e",
+  "validation": {
+    "htmlOrTextPayload": 274,
+    "jsonInvalid": 0,
+    "jsonValid": 1309,
+    "transferManifestHashMatches": 30,
+    "transferManifestHashMismatches": 0,
+    "xmlEnvelopeMissing": 0,
+    "xmlEnvelopePresent": 16,
+    "zeroByteFiles": 0
+  }
+}

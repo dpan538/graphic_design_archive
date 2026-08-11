@@ -1,0 +1,365 @@
+{
+  "authorityPolicy": {
+    "candidateJsonMayCreate": [
+      "legacy crosswalk rows",
+      "proposed source-bound assertions"
+    ],
+    "candidateJsonMustNotCreateByItself": [
+      "accepted research claims",
+      "accepted semantic relations",
+      "computed associations without analysis-run provenance",
+      "TRACE projection edges with endpoints absent from the candidate row"
+    ],
+    "derivedProductsMayCreateCanonicalRows": false,
+    "sqliteMayFillCandidateJsonGaps": false
+  },
+  "classificationVocabulary": {
+    "CANONICAL_ASSERTION_CANDIDATE": {
+      "definition": "An exact occurrence in the frozen candidate JSON that may be preserved as a proposed, source-bound assertion or legacy crosswalk. It is not an accepted claim or semantic relation.",
+      "promotion": "provenance.assertion acceptance=proposed; accepted assignment/relation requires independent evidence and curator decision"
+    },
+    "COMPUTED_ASSOCIATION": {
+      "definition": "An analytical TRACE occurrence. It remains non-promotable until an analysis run records method/software version, parameters, exact input release/corpus hashes, score/unit/uncertainty/threshold, and output hash.",
+      "promotion": "held from canonical acceptance and release projection until the computed-association contract is satisfied"
+    },
+    "HELD_UNSUPPORTED": {
+      "definition": "An occurrence with unknown predicate, missing required evidence, review-only authority, unsupported parent lineage, malformed structure, or no approved registry mapping.",
+      "promotion": "workflow queue only; creates no semantic relation, TRACE projection, publication row, or metric row"
+    },
+    "LEGACY_PROJECTION_ONLY": {
+      "definition": "A frozen v48 graph/read-product occurrence preserved for reconciliation, citation, and visual recovery but not authorized as v49 canonical research data.",
+      "promotion": "release-history/reconciliation evidence only; never reverse-ingested"
+    },
+    "REJECTED": {
+      "definition": "An occurrence covered by an explicit evidence-bearing rejection decision. Absence, unfamiliarity, low confidence, or a blank field does not silently imply rejection.",
+      "promotion": "preserve decision and provenance; no active projection"
+    }
+  },
+  "epistemicLabelPolicy": {
+    "analyticalLabels": [
+      "associated_with_research_cluster",
+      "associated_with_theme"
+    ],
+    "approvedV48ActiveRelationLabels": [
+      "associated_with_context",
+      "associated_with_place",
+      "associated_with_research_cluster",
+      "associated_with_theme",
+      "associated_with_year",
+      "circulated_in",
+      "classified_as",
+      "created_by",
+      "credited_to",
+      "dated",
+      "dated_to",
+      "documented_by",
+      "has_material_or_technique",
+      "has_medium",
+      "has_type",
+      "issued_by",
+      "part_of_campaign",
+      "part_of_collection",
+      "part_of_series",
+      "uses_language"
+    ],
+    "legacyFullGraphOnlyLabels": [
+      "associated_with_community",
+      "captured_from_provider",
+      "contains_record",
+      "context_mentions_place",
+      "curated_by",
+      "dated_approximately",
+      "depicts",
+      "documents",
+      "documents_object",
+      "exposes_source_record",
+      "featured_artist",
+      "featured_designer",
+      "grows_to_version",
+      "has_version",
+      "includes_capture_batch",
+      "maintains_collection",
+      "maintains_collection_or_namespace",
+      "part_of_event",
+      "publishes_collection"
+    ],
+    "reservedButUnobservedLabels": [
+      "influenced_by"
+    ]
+  },
+  "failClosedPolicy": {
+    "automaticInfluenceInferenceAllowed": false,
+    "defaultClassification": "HELD_UNSUPPORTED",
+    "defaultEpistemicClass": null,
+    "defaultRelationFamily": null,
+    "futureInfluenceMinimum": [
+      "claimant",
+      "claimant wording",
+      "source or citation",
+      "exact locator",
+      "direction and scope",
+      "temporal qualification",
+      "stance and competing claims",
+      "heightened reviewer decision",
+      "relation-policy version"
+    ],
+    "unknownRelationAction": "preserve literal as a proposed raw assertion and queue review",
+    "unknownRelationCreatesMetricEligibility": false,
+    "unknownRelationCreatesPublicationLayer": false,
+    "unknownRelationCreatesSemanticRelation": false,
+    "unknownRelationCreatesTraceProjection": false
+  },
+  "hashRecipe": {
+    "algorithm": "sha256",
+    "encoding": "UTF-8",
+    "rowFormat": "compact JSON array with ensure_ascii=false followed by LF",
+    "rowOrder": "ascending natural key",
+    "version": "utf8-json-array-compact-lf-v1"
+  },
+  "inputAssets": [
+    {
+      "authority": "canonical_migration_input",
+      "path": "generated/public_surfaces_prefreeze_candidate_v48.json"
+    },
+    {
+      "authority": "immutable_reconciliation_evidence",
+      "path": "data/prefreeze_candidate_v48.sqlite"
+    },
+    {
+      "authority": "unsupported_v47_parent_auxiliary_input",
+      "path": "generated/prefreeze_candidate_v47_aic_trace_adjuncts.json"
+    },
+    {
+      "authority": "derived_product",
+      "path": "frontend/public/data/trace-v48/atlas.json"
+    },
+    {
+      "authority": "integrity_evidence_for_derived_product",
+      "path": "frontend/public/data/trace-v48/manifest.json"
+    },
+    {
+      "authority": "derived_product",
+      "path": "frontend/public/data/trace-v48/neighborhoods/*.json"
+    }
+  ],
+  "legacyFailOpenPaths": [
+    {
+      "behavior": "Any label outside the hard-coded provenance/time/place/influence sets is returned as medium_context.",
+      "line": 107,
+      "path": "scripts/build_prefreeze_candidate_v48_trace_visualization.py",
+      "reuseInV49": false,
+      "symbol": "relation_family"
+    },
+    {
+      "behavior": "Any label absent from TRACE_TYPE_BY_ID receives MC-OTHER, family medium_context, and status documented.",
+      "line": 203,
+      "path": "frontend/src/components/archive/trace/trace-taxonomy.ts",
+      "reuseInV49": false,
+      "symbol": "traceTypeFor"
+    },
+    {
+      "behavior": "A blank candidate trace.tier is derived as source_verified whenever objectNodeId, edgeCount, and an HTTP(S) evidence-return URL satisfy the builder's accepted test.",
+      "line": 299,
+      "path": "scripts/build_prefreeze_candidate_v9_search_sqlite.py",
+      "reuseInV49": false,
+      "symbol": "trace_tier normalization"
+    }
+  ],
+  "rulePriority": [
+    {
+      "classification": "REJECTED",
+      "condition": "an explicit evidence-bearing rejection decision identifies this exact occurrence",
+      "priority": 1
+    },
+    {
+      "classification": "HELD_UNSUPPORTED",
+      "condition": "predicate is absent from the approved registry, structure is malformed, required evidence is missing, or authority depends on an unapproved parent",
+      "priority": 2
+    },
+    {
+      "classification": "COMPUTED_ASSOCIATION",
+      "condition": "registered label is analytical; canonical/release promotion remains blocked unless complete analysis-run provenance exists",
+      "priority": 3
+    },
+    {
+      "classification": "CANONICAL_ASSERTION_CANDIDATE",
+      "condition": "exact field occurrence is present in the frozen candidate JSON and maps to a registered non-analytical predicate or a typed legacy crosswalk",
+      "priority": 4
+    },
+    {
+      "classification": "LEGACY_PROJECTION_ONLY",
+      "condition": "occurrence exists only in immutable SQLite, TRACE manifest/assets, atlas/catalog/shards, or another derived product",
+      "priority": 5
+    },
+    {
+      "classification": "HELD_UNSUPPORTED",
+      "condition": "no earlier rule matches",
+      "priority": 6
+    }
+  ],
+  "schema": "v49.graph-fact-classification-rules/v1",
+  "unitPolicies": {
+    "candidate_branch_reference": {
+      "classification": "CANONICAL_ASSERTION_CANDIDATE",
+      "naturalKey": [
+        "surfaceId",
+        "branchOrdinal"
+      ],
+      "semanticLimit": "legacy placement crosswalk only; does not define a v49 branch or relation"
+    },
+    "candidate_trace_edge_reference": {
+      "classification": "CANONICAL_ASSERTION_CANDIDATE",
+      "naturalKey": [
+        "surfaceId",
+        "edgeId"
+      ],
+      "semanticLimit": "opaque legacy edge crosswalk only; candidate JSON does not contain the complete directed edge endpoint/evidence row and edgeLabels is not positionally zippable"
+    },
+    "candidate_trace_edge_to_label_mapping": {
+      "classification": "HELD_UNSUPPORTED",
+      "naturalKey": null,
+      "reason": "9,393 of 15,923 surfaces have different edgeIds and edgeLabels lengths; the arrays do not define an edge-to-predicate mapping"
+    },
+    "candidate_trace_relation_label_occurrence": {
+      "classificationByLabel": {
+        "analytical": "COMPUTED_ASSOCIATION",
+        "approved_non_analytical": "CANONICAL_ASSERTION_CANDIDATE",
+        "unknown": "HELD_UNSUPPORTED"
+      },
+      "naturalKey": [
+        "surfaceId",
+        "labelOrdinal"
+      ],
+      "semanticLimit": "source-row assertion that a label is present; no endpoint, edgeId, evidence, or semantic-relation identity may be inferred"
+    },
+    "candidate_trace_state_literal": {
+      "classification": "CANONICAL_ASSERTION_CANDIDATE",
+      "fields": [
+        "edgeCount",
+        "influenceState",
+        "reviewState",
+        "state"
+      ],
+      "naturalKey": [
+        "surfaceId",
+        "fieldName"
+      ],
+      "semanticLimit": "source-row workflow/display literal only; accepted or not_inferred does not create an accepted claim, semantic relation, influence finding, corpus membership, or TRACE eligibility"
+    },
+    "candidate_trace_object_node_reference": {
+      "classification": "CANONICAL_ASSERTION_CANDIDATE",
+      "naturalKey": [
+        "surfaceId",
+        "objectNodeId"
+      ],
+      "semanticLimit": "legacy crosswalk only; objectNodeId is not core.entity identity"
+    },
+    "candidate_tree_membership_reference": {
+      "classification": "CANONICAL_ASSERTION_CANDIDATE",
+      "naturalKey": [
+        "surfaceId",
+        "treeId"
+      ],
+      "semanticLimit": "proposed project classification, not historical genealogy"
+    },
+    "candidate_trace_tier_literal": {
+      "classificationByCondition": {
+        "blank_or_missing": "HELD_UNSUPPORTED",
+        "explicit_registered_literal": "CANONICAL_ASSERTION_CANDIDATE",
+        "unknown_literal": "HELD_UNSUPPORTED"
+      },
+      "naturalKey": [
+        "surfaceId"
+      ],
+      "semanticLimit": "tier does not imply research-corpus or TRACE eligibility"
+    },
+    "derived_auxiliary_projection": {
+      "classification": "LEGACY_PROJECTION_ONLY",
+      "naturalKey": [
+        "adjunctId"
+      ]
+    },
+    "sqlite_edge_evidence_observation": {
+      "classificationByCondition": {
+        "blank_required_text_without_approved_locator_only_kind": "HELD_UNSUPPORTED",
+        "otherwise": "LEGACY_PROJECTION_ONLY"
+      },
+      "naturalKey": [
+        "edgeId",
+        "evidenceUrl",
+        "evidenceText",
+        "evidenceField"
+      ]
+    },
+    "sqlite_edge_placement": {
+      "classificationByLabel": {
+        "analytical": "COMPUTED_ASSOCIATION",
+        "approved_non_analytical": "LEGACY_PROJECTION_ONLY",
+        "unknown": "HELD_UNSUPPORTED"
+      },
+      "naturalKey": [
+        "edgeId",
+        "treeId",
+        "branchId"
+      ]
+    },
+    "sqlite_object_trace_edge_membership": {
+      "classificationByLabel": {
+        "analytical": "COMPUTED_ASSOCIATION",
+        "approved_non_analytical": "LEGACY_PROJECTION_ONLY",
+        "unknown": "HELD_UNSUPPORTED"
+      },
+      "naturalKey": [
+        "surfaceId",
+        "edgeId"
+      ]
+    },
+    "sqlite_trace_tier_normalization": {
+      "classification": "LEGACY_PROJECTION_ONLY",
+      "naturalKey": [
+        "surfaceId"
+      ],
+      "semanticLimit": "derived source_verified value cannot replace a blank candidate JSON trace.tier or create eligibility"
+    },
+    "sqlite_review_row": {
+      "classification": "HELD_UNSUPPORTED",
+      "naturalKey": [
+        "reviewId"
+      ],
+      "semanticLimit": "review reconciliation population; cannot create an archive object from SQLite"
+    },
+    "sqlite_trace_edge_record": {
+      "classificationByLabel": {
+        "analytical": "COMPUTED_ASSOCIATION",
+        "approved_non_analytical": "LEGACY_PROJECTION_ONLY",
+        "unknown": "HELD_UNSUPPORTED"
+      },
+      "naturalKey": [
+        "edgeId"
+      ],
+      "semanticLimit": "directed v48 triple is a projection identity, never claim or semantic-relation identity"
+    },
+    "sqlite_trace_node_record": {
+      "classification": "LEGACY_PROJECTION_ONLY",
+      "naturalKey": [
+        "nodeId"
+      ],
+      "semanticLimit": "node type, canonicalKey, label, and layout tree are descriptive projection data"
+    },
+    "sqlite_tree_identifier": {
+      "classification": "LEGACY_PROJECTION_ONLY",
+      "naturalKey": [
+        "treeId"
+      ],
+      "semanticLimit": "tree presence is organizational projection data; active candidate membership is accounted separately"
+    },
+    "v47_auxiliary_input_fact": {
+      "classification": "HELD_UNSUPPORTED",
+      "naturalKey": [
+        "adjunctId"
+      ],
+      "semanticLimit": "v47 parent/adjunct facts require independent governed evidence before v49 ingest"
+    }
+  },
+  "version": "1.0.0"
+}

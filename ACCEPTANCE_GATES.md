@@ -48,9 +48,10 @@ PASS requires independently named exact values in four non-interchangeable class
 | Unit | Expected |
 |---|---:|
 | Operational archive objects / canonical JSON rows | 15,923 |
-| Source verified | 12,952 |
-| Metadata supported, row-level | 2,971 |
-| Metadata supported, manifest/meta declaration | 2,970 (known one-row conflict; blocking until explained) |
+| Candidate rows with explicit `trace.tier=source_verified` | 7,995 |
+| Candidate rows with missing `trace.tier` | 4,957 (fail-closed; not automatically research eligible) |
+| Candidate rows with explicit `trace.tier=metadata_supported` | 2,971 |
+| Candidate meta scalar `traceMetadataSupportedCount` | 2,970 (stale aggregate; no competing member set) |
 
 ### Graph parity
 
@@ -70,6 +71,7 @@ PASS requires independently named exact values in four non-interchangeable class
 
 | Unit | Expected |
 |---|---:|
+| SQLite/TRACE rows normalized to `source_verified` by the legacy accepted-row fallback | 12,952 (= 7,995 explicit + 4,957 missing tier) |
 | Archive Search artifact items | 8,636 |
 | Active TRACE catalog items | 15,923 |
 | Search ∩ canonical/TRACE IDs | 2,585 |
@@ -87,7 +89,7 @@ TRACE manifest must declare 580 hashed assets, including 576 neighborhood shards
 
 The former 20,000 target and derived “remaining 4,077” value are collection/capacity history only. They are excluded from migration parity, release validation, freeze, and promotion. Making either value a gate is FAIL.
 
-Receipt/manifest evidence without future PostgreSQL parity is PASS for recovery but PARTIAL for migration parity. The 2,970/2,971 evidence conflict must remain explicit in the delta ledger. Any other unexplained mismatch, silent normalization of that conflict, or unit relabeling is FAIL.
+Receipt/manifest evidence without future PostgreSQL parity is PASS for recovery but PARTIAL for migration parity. The 2,970/2,971 aggregate mismatch must remain explicit in the delta ledger: PASS requires candidate, immutable SQLite and TRACE catalog member sets to contain the same 2,971 IDs, while retaining 2,970 only as the stale scalar it is. Inventing a one-row symmetric difference, promoting the 4,957 missing-tier rows through the legacy fallback, any other unexplained mismatch, or unit relabeling is FAIL.
 
 ## G3 — Architecture checkpoint scope
 

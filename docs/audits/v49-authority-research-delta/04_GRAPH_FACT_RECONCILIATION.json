@@ -1,0 +1,1071 @@
+{
+  "accountingRule": {
+    "candidateAuthorityOccurrences": "Count exact source-row field occurrences separately from immutable SQLite reconciliation rows; overlap is expected and never summed into one graph-edge metric.",
+    "candidateEdgeIdMeaning": "opaque legacy edge crosswalk only",
+    "candidateEdgeLabelMeaning": "independent source-row label assertion; edgeIds and edgeLabels are not positionally zippable",
+    "fullGraphEdgeMeaning": "one immutable SQLite directed edge record; never a v49 claim or semantic relation",
+    "membershipMeaning": "one surfaceId-edgeId reconciliation pair; not a claim, relation, or evidence count"
+  },
+  "auxiliaryReconciliation": {
+    "derivedAuxiliaryProduct": {
+      "classification": "LEGACY_PROJECTION_ONLY",
+      "edgeLabelCounts": {
+        "associated_with_place": 11,
+        "dated": 11,
+        "documented_by": 11
+      },
+      "edges": {
+        "count": 33,
+        "rowSha256": "a04e5bde029b0f50973c47d8c75bd4fb101715b45f5772cf826ea6f544c76643"
+      },
+      "influenceEdges": 0,
+      "items": {
+        "count": 11,
+        "rowSha256": "3511b594864176ea216c253cbff908de2b941558b440fe02fe10d6f671e6593b"
+      },
+      "nodes": {
+        "count": 44,
+        "rowSha256": "f6f8bbabc152a89b648361f400163146f7bc98859eb737fecaaa1ff9b3c31acf"
+      },
+      "path": "frontend/public/data/trace-v48/auxiliary.json"
+    },
+    "v47ParentAdjunctInput": {
+      "classification": "HELD_UNSUPPORTED",
+      "edgeLabelCounts": {
+        "associated_with_place": 11,
+        "dated": 11,
+        "documented_by": 11
+      },
+      "edges": {
+        "count": 33,
+        "rowSha256": "6530536461ef471437d22c070909831d96c9337f41d7a01818936563290c194e"
+      },
+      "influenceEdges": 0,
+      "items": {
+        "count": 11,
+        "rowSha256": "9e5e4e9638e5bf7209aaece56fd43ce1a2c2838f098639547481b5b5337a6592"
+      },
+      "nodes": {
+        "count": 36,
+        "rowSha256": "b58e601c211a579ca59ec1c0e6085b8bc4d80957f026ddd6d624d6867e0bc655"
+      },
+      "path": "generated/prefreeze_candidate_v47_aic_trace_adjuncts.json",
+      "reason": "not the canonical migration input and depends on the v47 parent lineage"
+    }
+  },
+  "candidateAuthorityMeasurement": {
+    "branchReferences": {
+      "candidateOnlyAgainstSqliteActiveEdgeBranches": [
+        "TRB100",
+        "TRB114",
+        "TRB115",
+        "TRB116",
+        "TRB120",
+        "TRB121",
+        "TRB122",
+        "TRB123"
+      ],
+      "occurrences": 80093,
+      "setSha256RawLines": "eefd5ba62ef82584bfad263a18bd48c5c6774ae7a480a7be436fbbe9d949772a",
+      "sqliteActiveDistinct": 77,
+      "sqliteActiveSetSha256RawLines": "b0a315b41784a538541227276b24c1dfffe8cf11970a7b99d8b0035e58118005",
+      "unique": 85
+    },
+    "edgeIdReferences": {
+      "classification": "CANONICAL_ASSERTION_CANDIDATE",
+      "declaredEdgeCountMismatchRows": 0,
+      "occurrences": 126822,
+      "setEqualsSqliteActiveMembershipEdgeIds": true,
+      "setSha256RawLines": "7b4be2de0dd739d648037b51d77128128cecaaf413385f0a918ae5cf8f4045ba",
+      "sharedAcrossSurfaces": 0,
+      "unique": 126822
+    },
+    "edgeLabelOccurrences": {
+      "analyticalClassification": "COMPUTED_ASSOCIATION",
+      "analyticalOccurrences": 5840,
+      "approvedNonAnalyticalClassification": "CANONICAL_ASSERTION_CANDIDATE",
+      "approvedNonAnalyticalOccurrences": 73843,
+      "counts": {
+        "associated_with_context": 5958,
+        "associated_with_place": 15771,
+        "associated_with_research_cluster": 2920,
+        "associated_with_theme": 2920,
+        "associated_with_year": 25,
+        "circulated_in": 122,
+        "classified_as": 110,
+        "created_by": 8246,
+        "credited_to": 25,
+        "dated": 2,
+        "dated_to": 110,
+        "documented_by": 15923,
+        "has_material_or_technique": 3640,
+        "has_medium": 2920,
+        "has_type": 15608,
+        "issued_by": 122,
+        "part_of_campaign": 19,
+        "part_of_collection": 2906,
+        "part_of_series": 2323,
+        "uses_language": 13
+      },
+      "occurrences": 79683,
+      "vocabularyEqualsSqliteActiveMembershipVocabulary": true,
+      "vocabularySha256RawLines": "6d741cb7822268659dec27b58a77b942157ea05f3afd5530614c2e7dafb3e9f4"
+    },
+    "edgeToLabelMapping": {
+      "classification": "HELD_UNSUPPORTED",
+      "mappingFactsAuthorized": 0,
+      "reason": "the candidate schema supplies separate arrays and 9,393 surfaces have unequal lengths; positional zip is prohibited",
+      "surfacesWithLengthMismatch": 9393
+    },
+    "measurementProvenance": {
+      "candidateParsedExactlyOnceByA2": true,
+      "sharedLedgerBytes": 2238838,
+      "sharedLedgerPath": "/private/tmp/v49_phase1c_candidate_rows.tsv",
+      "sharedLedgerRows": 15923,
+      "sharedLedgerSha256": "4d5f15cda8e1267426fd91ea76da92573ab2851ee033468ebb0ef206ff0c4c46",
+      "sharedSummaryPath": "/private/tmp/v49_phase1c_a2_summary.json"
+    },
+    "objectNodeReferences": {
+      "classification": "CANONICAL_ASSERTION_CANDIDATE",
+      "setEqualsSqliteActiveObjectNodeIds": true,
+      "setSha256RawLines": "7ab83cfcbc11ebc5a5902609f6e6b35f2831ceff9c41fcf33047434d51f98c4d",
+      "surfaceObjectNodePairJsonlSha256": "3c9c48f7322a5f4fe3a7e1083d33554cf32502b3f39a31a75284426acd4ce08b",
+      "unique": 15923
+    },
+    "surfaceTraceRows": {
+      "activeTraceTupleJsonlSha256": "28d964437073bf92bdc2ad3b827620687237f3eefd1199e5d9167011d125de92",
+      "count": 15923,
+      "influenceStateCounts": {
+        "not_inferred": 15923
+      },
+      "reviewStateCounts": {
+        "accepted": 12938,
+        "accepted_direct_institutional_reattachment": 7,
+        "accepted_direct_institutional_record": 5,
+        "accepted_metadata_supported": 2971,
+        "accepted_source_verified": 2
+      },
+      "stateCounts": {
+        "accepted": 15923
+      },
+      "surfaceTreeObjectNodeTripleJsonlSha256": "6cc14666f72d4c53b43a76748fd514fb471551fa119d780e3861a68e8458258d"
+    },
+    "tierLiterals": {
+      "blankHeldUnsupported": 4957,
+      "blankSurfaceIdJsonlSha256": "bb1dd1b773402e4d269805bbbc910436ff579bf0984cccde875e22f4fa359dfb",
+      "blankSurfaceIdSetSha256RawLines": "fbabc473e5ca7c7435a13d3c6c28a05198a97d15331f1f0b0b01b7464d81cceb",
+      "counts": {
+        "": 4957,
+        "metadata_supported": 2971,
+        "source_verified": 7995
+      },
+      "explicitCanonicalAssertionCandidates": 10966
+    },
+    "treeMembershipReferences": {
+      "classification": "CANONICAL_ASSERTION_CANDIDATE",
+      "setEqualsSqliteActiveObjectTrees": true,
+      "treeIds": [
+        "TRTREE001",
+        "TRTREE004",
+        "TRTREE005",
+        "TRTREE010",
+        "TRTREE013",
+        "TRTREE014",
+        "TRTREE015",
+        "TRTREE016",
+        "TRTREE017",
+        "TRTREE018",
+        "TRTREE019",
+        "TRTREE020",
+        "TRTREE021",
+        "TRTREE023",
+        "TRTREE024",
+        "TRTREE025",
+        "TRTREE026",
+        "TRTREE027",
+        "TRTREE030",
+        "TRTREE032",
+        "TRTREE033",
+        "TRTREE034",
+        "TRTREE037",
+        "TRTREE038",
+        "TRTREE039",
+        "TRTREE040",
+        "TRTREE041",
+        "TRTREE042",
+        "TRTREE043",
+        "TRTREE048"
+      ],
+      "uniqueTrees": 30
+    }
+  },
+  "classificationByUnit": {
+    "candidateBranchReference": {
+      "CANONICAL_ASSERTION_CANDIDATE": 80093,
+      "unclassified": 0
+    },
+    "candidateDeclaredEdgeCount": {
+      "CANONICAL_ASSERTION_CANDIDATE": 15923,
+      "unclassified": 0
+    },
+    "candidateEdgeIdReference": {
+      "CANONICAL_ASSERTION_CANDIDATE": 126822,
+      "unclassified": 0
+    },
+    "candidateObjectNodeReference": {
+      "CANONICAL_ASSERTION_CANDIDATE": 15923,
+      "unclassified": 0
+    },
+    "candidateRelationLabelOccurrence": {
+      "CANONICAL_ASSERTION_CANDIDATE": 73843,
+      "COMPUTED_ASSOCIATION": 5840,
+      "unclassified": 0
+    },
+    "candidateTraceInfluenceState": {
+      "CANONICAL_ASSERTION_CANDIDATE": 15923,
+      "unclassified": 0
+    },
+    "candidateTraceReviewState": {
+      "CANONICAL_ASSERTION_CANDIDATE": 15923,
+      "unclassified": 0
+    },
+    "candidateTraceState": {
+      "CANONICAL_ASSERTION_CANDIDATE": 15923,
+      "unclassified": 0
+    },
+    "candidateTierLiteral": {
+      "CANONICAL_ASSERTION_CANDIDATE": 10966,
+      "HELD_UNSUPPORTED": 4957,
+      "unclassified": 0
+    },
+    "candidateTreeMembershipReference": {
+      "CANONICAL_ASSERTION_CANDIDATE": 15923,
+      "unclassified": 0
+    },
+    "derivedAuxiliaryEdge": {
+      "LEGACY_PROJECTION_ONLY": 33,
+      "unclassified": 0
+    },
+    "derivedAuxiliaryItem": {
+      "LEGACY_PROJECTION_ONLY": 11,
+      "unclassified": 0
+    },
+    "derivedAuxiliaryNode": {
+      "LEGACY_PROJECTION_ONLY": 44,
+      "unclassified": 0
+    },
+    "sqliteEdgeEvidenceObservation": {
+      "HELD_UNSUPPORTED": 3,
+      "LEGACY_PROJECTION_ONLY": 255692,
+      "unclassified": 0
+    },
+    "sqliteEdgePlacement": {
+      "COMPUTED_ASSOCIATION": 6004,
+      "HELD_UNSUPPORTED": 32137,
+      "LEGACY_PROJECTION_ONLY": 217554,
+      "unclassified": 0
+    },
+    "sqliteObjectEdgeMembership": {
+      "COMPUTED_ASSOCIATION": 5840,
+      "LEGACY_PROJECTION_ONLY": 120982,
+      "unclassified": 0
+    },
+    "sqliteReviewRow": {
+      "HELD_UNSUPPORTED": 4425,
+      "unclassified": 0
+    },
+    "sqliteTierNormalization": {
+      "LEGACY_PROJECTION_ONLY": 4957,
+      "unclassified": 0
+    },
+    "sqliteTraceEdgeRecord": {
+      "COMPUTED_ASSOCIATION": 6004,
+      "HELD_UNSUPPORTED": 32137,
+      "LEGACY_PROJECTION_ONLY": 217554,
+      "unclassified": 0
+    },
+    "sqliteTraceNodeRecord": {
+      "LEGACY_PROJECTION_ONLY": 97889,
+      "unclassified": 0
+    },
+    "sqliteTreeIdentifier": {
+      "LEGACY_PROJECTION_ONLY": 37,
+      "unclassified": 0
+    },
+    "v47AuxiliaryInputEdge": {
+      "HELD_UNSUPPORTED": 33,
+      "unclassified": 0
+    },
+    "v47AuxiliaryInputItem": {
+      "HELD_UNSUPPORTED": 11,
+      "unclassified": 0
+    },
+    "v47AuxiliaryInputNode": {
+      "HELD_UNSUPPORTED": 36,
+      "unclassified": 0
+    }
+  },
+  "gates": {
+    "AUTOMATIC_INFLUENCE_INFERENCE": 0,
+    "CANONICAL_GRAPH_PROMOTION_ALLOWED": false,
+    "SILENT_UNKNOWN_RELATION_FALLBACK": 0,
+    "UNCLASSIFIED_GRAPH_FACT": 0,
+    "activeMembershipUnknownRelationOccurrences": 0,
+    "candidateUnknownRelationLabelOccurrences": 0,
+    "fullGraphUnknownRegistryLabelOccurrencesHeld": 32137,
+    "legacyTierAutoPromotionPathsObserved": 1,
+    "legacyUnknownRelationFailOpenCodePathsObserved": 2,
+    "result": "PASS_WITH_EXPLICIT_HOLDS"
+  },
+  "graphUnits": {
+    "activeMembershipFamilies": {
+      "historical_influence": 0,
+      "medium_context": 79206,
+      "source_provenance": 31288,
+      "time_place": 16328
+    },
+    "activeObjectRelationMemberships": 126822,
+    "activeRelationTypes": 20,
+    "activeResearchTrees": 30,
+    "fullGraphBranchIds": 106,
+    "fullGraphEdges": 255695,
+    "fullGraphRelationLabels": 39,
+    "fullGraphTreeIds": 37,
+    "fullGraphTreeIdsOutsideActiveCohort": [
+      {
+        "edgeCount": 24,
+        "nodeCount": 25,
+        "treeId": "TRTREE002"
+      },
+      {
+        "edgeCount": 10,
+        "nodeCount": 11,
+        "treeId": "TRTREE003"
+      },
+      {
+        "edgeCount": 86024,
+        "nodeCount": 34735,
+        "treeId": "TRTREE022"
+      },
+      {
+        "edgeCount": 39,
+        "nodeCount": 23,
+        "treeId": "TRTREE028"
+      },
+      {
+        "edgeCount": 526,
+        "nodeCount": 356,
+        "treeId": "TRTREE029"
+      },
+      {
+        "edgeCount": 4448,
+        "nodeCount": 2768,
+        "treeId": "TRTREE035"
+      },
+      {
+        "edgeCount": 4983,
+        "nodeCount": 2265,
+        "treeId": "TRTREE036"
+      }
+    ],
+    "influenceEdges": 0,
+    "traceAssetsExcludingManifest": 580,
+    "traceNodes": 97889,
+    "traceShards": 576
+  },
+  "inputAssets": [
+    {
+      "authority": "canonical_migration_input",
+      "path": "generated/public_surfaces_prefreeze_candidate_v48.json"
+    },
+    {
+      "authority": "immutable_reconciliation_evidence",
+      "openMode": "mode=ro&immutable=1",
+      "path": "data/prefreeze_candidate_v48.sqlite"
+    },
+    {
+      "authority": "unsupported_v47_parent_auxiliary_input",
+      "path": "generated/prefreeze_candidate_v47_aic_trace_adjuncts.json"
+    },
+    {
+      "authority": "integrity_evidence",
+      "path": "frontend/public/data/trace-v48/manifest.json"
+    },
+    {
+      "authority": "derived_product",
+      "path": "frontend/public/data/trace-v48/atlas.json"
+    },
+    {
+      "authority": "derived_product",
+      "path": "frontend/public/data/trace-v48/auxiliary.json"
+    },
+    {
+      "authority": "derived_product",
+      "path": "frontend/public/data/trace-v48/neighborhoods/*.json"
+    }
+  ],
+  "relationLabelReconciliation": [
+    {
+      "activeMembershipCount": 0,
+      "candidateLabelOccurrenceClassification": null,
+      "candidateLabelOccurrenceCount": 0,
+      "label": "associated_with_community",
+      "sqliteEdgeClassification": "HELD_UNSUPPORTED",
+      "sqliteEdgeCount": 1,
+      "status": "absent_from_v48_active_relation_registry"
+    },
+    {
+      "activeMembershipCount": 25403,
+      "candidateLabelOccurrenceClassification": "CANONICAL_ASSERTION_CANDIDATE",
+      "candidateLabelOccurrenceCount": 5958,
+      "label": "associated_with_context",
+      "sqliteEdgeClassification": "LEGACY_PROJECTION_ONLY",
+      "sqliteEdgeCount": 40828,
+      "status": "registered_v48_display_label"
+    },
+    {
+      "activeMembershipCount": 16069,
+      "candidateLabelOccurrenceClassification": "CANONICAL_ASSERTION_CANDIDATE",
+      "candidateLabelOccurrenceCount": 15771,
+      "label": "associated_with_place",
+      "sqliteEdgeClassification": "LEGACY_PROJECTION_ONLY",
+      "sqliteEdgeCount": 31759,
+      "status": "registered_v48_display_label"
+    },
+    {
+      "activeMembershipCount": 2920,
+      "candidateLabelOccurrenceClassification": "COMPUTED_ASSOCIATION",
+      "candidateLabelOccurrenceCount": 2920,
+      "label": "associated_with_research_cluster",
+      "sqliteEdgeClassification": "COMPUTED_ASSOCIATION",
+      "sqliteEdgeCount": 3002,
+      "status": "analytical_without_analysis_run"
+    },
+    {
+      "activeMembershipCount": 2920,
+      "candidateLabelOccurrenceClassification": "COMPUTED_ASSOCIATION",
+      "candidateLabelOccurrenceCount": 2920,
+      "label": "associated_with_theme",
+      "sqliteEdgeClassification": "COMPUTED_ASSOCIATION",
+      "sqliteEdgeCount": 3002,
+      "status": "analytical_without_analysis_run"
+    },
+    {
+      "activeMembershipCount": 25,
+      "candidateLabelOccurrenceClassification": "CANONICAL_ASSERTION_CANDIDATE",
+      "candidateLabelOccurrenceCount": 25,
+      "label": "associated_with_year",
+      "sqliteEdgeClassification": "LEGACY_PROJECTION_ONLY",
+      "sqliteEdgeCount": 14720,
+      "status": "registered_v48_display_label"
+    },
+    {
+      "activeMembershipCount": 0,
+      "candidateLabelOccurrenceClassification": null,
+      "candidateLabelOccurrenceCount": 0,
+      "label": "captured_from_provider",
+      "sqliteEdgeClassification": "HELD_UNSUPPORTED",
+      "sqliteEdgeCount": 48,
+      "status": "absent_from_v48_active_relation_registry"
+    },
+    {
+      "activeMembershipCount": 122,
+      "candidateLabelOccurrenceClassification": "CANONICAL_ASSERTION_CANDIDATE",
+      "candidateLabelOccurrenceCount": 122,
+      "label": "circulated_in",
+      "sqliteEdgeClassification": "LEGACY_PROJECTION_ONLY",
+      "sqliteEdgeCount": 156,
+      "status": "registered_v48_display_label"
+    },
+    {
+      "activeMembershipCount": 110,
+      "candidateLabelOccurrenceClassification": "CANONICAL_ASSERTION_CANDIDATE",
+      "candidateLabelOccurrenceCount": 110,
+      "label": "classified_as",
+      "sqliteEdgeClassification": "LEGACY_PROJECTION_ONLY",
+      "sqliteEdgeCount": 500,
+      "status": "registered_v48_display_label"
+    },
+    {
+      "activeMembershipCount": 0,
+      "candidateLabelOccurrenceClassification": null,
+      "candidateLabelOccurrenceCount": 0,
+      "label": "contains_record",
+      "sqliteEdgeClassification": "HELD_UNSUPPORTED",
+      "sqliteEdgeCount": 1112,
+      "status": "absent_from_v48_active_relation_registry"
+    },
+    {
+      "activeMembershipCount": 0,
+      "candidateLabelOccurrenceClassification": null,
+      "candidateLabelOccurrenceCount": 0,
+      "label": "context_mentions_place",
+      "sqliteEdgeClassification": "HELD_UNSUPPORTED",
+      "sqliteEdgeCount": 32,
+      "status": "absent_from_v48_active_relation_registry"
+    },
+    {
+      "activeMembershipCount": 10006,
+      "candidateLabelOccurrenceClassification": "CANONICAL_ASSERTION_CANDIDATE",
+      "candidateLabelOccurrenceCount": 8246,
+      "label": "created_by",
+      "sqliteEdgeClassification": "LEGACY_PROJECTION_ONLY",
+      "sqliteEdgeCount": 27379,
+      "status": "registered_v48_display_label"
+    },
+    {
+      "activeMembershipCount": 25,
+      "candidateLabelOccurrenceClassification": "CANONICAL_ASSERTION_CANDIDATE",
+      "candidateLabelOccurrenceCount": 25,
+      "label": "credited_to",
+      "sqliteEdgeClassification": "LEGACY_PROJECTION_ONLY",
+      "sqliteEdgeCount": 390,
+      "status": "registered_v48_display_label"
+    },
+    {
+      "activeMembershipCount": 0,
+      "candidateLabelOccurrenceClassification": null,
+      "candidateLabelOccurrenceCount": 0,
+      "label": "curated_by",
+      "sqliteEdgeClassification": "HELD_UNSUPPORTED",
+      "sqliteEdgeCount": 1,
+      "status": "absent_from_v48_active_relation_registry"
+    },
+    {
+      "activeMembershipCount": 2,
+      "candidateLabelOccurrenceClassification": "CANONICAL_ASSERTION_CANDIDATE",
+      "candidateLabelOccurrenceCount": 2,
+      "label": "dated",
+      "sqliteEdgeClassification": "LEGACY_PROJECTION_ONLY",
+      "sqliteEdgeCount": 13,
+      "status": "registered_v48_display_label"
+    },
+    {
+      "activeMembershipCount": 0,
+      "candidateLabelOccurrenceClassification": null,
+      "candidateLabelOccurrenceCount": 0,
+      "label": "dated_approximately",
+      "sqliteEdgeClassification": "HELD_UNSUPPORTED",
+      "sqliteEdgeCount": 24,
+      "status": "absent_from_v48_active_relation_registry"
+    },
+    {
+      "activeMembershipCount": 110,
+      "candidateLabelOccurrenceClassification": "CANONICAL_ASSERTION_CANDIDATE",
+      "candidateLabelOccurrenceCount": 110,
+      "label": "dated_to",
+      "sqliteEdgeClassification": "LEGACY_PROJECTION_ONLY",
+      "sqliteEdgeCount": 918,
+      "status": "registered_v48_display_label"
+    },
+    {
+      "activeMembershipCount": 0,
+      "candidateLabelOccurrenceClassification": null,
+      "candidateLabelOccurrenceCount": 0,
+      "label": "depicts",
+      "sqliteEdgeClassification": "HELD_UNSUPPORTED",
+      "sqliteEdgeCount": 8,
+      "status": "absent_from_v48_active_relation_registry"
+    },
+    {
+      "activeMembershipCount": 15929,
+      "candidateLabelOccurrenceClassification": "CANONICAL_ASSERTION_CANDIDATE",
+      "candidateLabelOccurrenceCount": 15923,
+      "label": "documented_by",
+      "sqliteEdgeClassification": "LEGACY_PROJECTION_ONLY",
+      "sqliteEdgeCount": 21743,
+      "status": "registered_v48_display_label"
+    },
+    {
+      "activeMembershipCount": 0,
+      "candidateLabelOccurrenceClassification": null,
+      "candidateLabelOccurrenceCount": 0,
+      "label": "documents",
+      "sqliteEdgeClassification": "HELD_UNSUPPORTED",
+      "sqliteEdgeCount": 1060,
+      "status": "absent_from_v48_active_relation_registry"
+    },
+    {
+      "activeMembershipCount": 0,
+      "candidateLabelOccurrenceClassification": null,
+      "candidateLabelOccurrenceCount": 0,
+      "label": "documents_object",
+      "sqliteEdgeClassification": "HELD_UNSUPPORTED",
+      "sqliteEdgeCount": 14720,
+      "status": "absent_from_v48_active_relation_registry"
+    },
+    {
+      "activeMembershipCount": 0,
+      "candidateLabelOccurrenceClassification": null,
+      "candidateLabelOccurrenceCount": 0,
+      "label": "exposes_source_record",
+      "sqliteEdgeClassification": "HELD_UNSUPPORTED",
+      "sqliteEdgeCount": 14720,
+      "status": "absent_from_v48_active_relation_registry"
+    },
+    {
+      "activeMembershipCount": 0,
+      "candidateLabelOccurrenceClassification": null,
+      "candidateLabelOccurrenceCount": 0,
+      "label": "featured_artist",
+      "sqliteEdgeClassification": "HELD_UNSUPPORTED",
+      "sqliteEdgeCount": 6,
+      "status": "absent_from_v48_active_relation_registry"
+    },
+    {
+      "activeMembershipCount": 0,
+      "candidateLabelOccurrenceClassification": null,
+      "candidateLabelOccurrenceCount": 0,
+      "label": "featured_designer",
+      "sqliteEdgeClassification": "HELD_UNSUPPORTED",
+      "sqliteEdgeCount": 42,
+      "status": "absent_from_v48_active_relation_registry"
+    },
+    {
+      "activeMembershipCount": 0,
+      "candidateLabelOccurrenceClassification": null,
+      "candidateLabelOccurrenceCount": 0,
+      "label": "grows_to_version",
+      "sqliteEdgeClassification": "HELD_UNSUPPORTED",
+      "sqliteEdgeCount": 1,
+      "status": "absent_from_v48_active_relation_registry"
+    },
+    {
+      "activeMembershipCount": 9992,
+      "candidateLabelOccurrenceClassification": "CANONICAL_ASSERTION_CANDIDATE",
+      "candidateLabelOccurrenceCount": 3640,
+      "label": "has_material_or_technique",
+      "sqliteEdgeClassification": "LEGACY_PROJECTION_ONLY",
+      "sqliteEdgeCount": 12245,
+      "status": "registered_v48_display_label"
+    },
+    {
+      "activeMembershipCount": 2920,
+      "candidateLabelOccurrenceClassification": "CANONICAL_ASSERTION_CANDIDATE",
+      "candidateLabelOccurrenceCount": 2920,
+      "label": "has_medium",
+      "sqliteEdgeClassification": "LEGACY_PROJECTION_ONLY",
+      "sqliteEdgeCount": 3002,
+      "status": "registered_v48_display_label"
+    },
+    {
+      "activeMembershipCount": 34884,
+      "candidateLabelOccurrenceClassification": "CANONICAL_ASSERTION_CANDIDATE",
+      "candidateLabelOccurrenceCount": 15608,
+      "label": "has_type",
+      "sqliteEdgeClassification": "LEGACY_PROJECTION_ONLY",
+      "sqliteEdgeCount": 55671,
+      "status": "registered_v48_display_label"
+    },
+    {
+      "activeMembershipCount": 0,
+      "candidateLabelOccurrenceClassification": null,
+      "candidateLabelOccurrenceCount": 0,
+      "label": "has_version",
+      "sqliteEdgeClassification": "HELD_UNSUPPORTED",
+      "sqliteEdgeCount": 2,
+      "status": "absent_from_v48_active_relation_registry"
+    },
+    {
+      "activeMembershipCount": 0,
+      "candidateLabelOccurrenceClassification": null,
+      "candidateLabelOccurrenceCount": 0,
+      "label": "includes_capture_batch",
+      "sqliteEdgeClassification": "HELD_UNSUPPORTED",
+      "sqliteEdgeCount": 2,
+      "status": "absent_from_v48_active_relation_registry"
+    },
+    {
+      "activeMembershipCount": 122,
+      "candidateLabelOccurrenceClassification": "CANONICAL_ASSERTION_CANDIDATE",
+      "candidateLabelOccurrenceCount": 122,
+      "label": "issued_by",
+      "sqliteEdgeClassification": "LEGACY_PROJECTION_ONLY",
+      "sqliteEdgeCount": 259,
+      "status": "registered_v48_display_label"
+    },
+    {
+      "activeMembershipCount": 0,
+      "candidateLabelOccurrenceClassification": null,
+      "candidateLabelOccurrenceCount": 0,
+      "label": "maintains_collection",
+      "sqliteEdgeClassification": "HELD_UNSUPPORTED",
+      "sqliteEdgeCount": 6,
+      "status": "absent_from_v48_active_relation_registry"
+    },
+    {
+      "activeMembershipCount": 0,
+      "candidateLabelOccurrenceClassification": null,
+      "candidateLabelOccurrenceCount": 0,
+      "label": "maintains_collection_or_namespace",
+      "sqliteEdgeClassification": "HELD_UNSUPPORTED",
+      "sqliteEdgeCount": 58,
+      "status": "absent_from_v48_active_relation_registry"
+    },
+    {
+      "activeMembershipCount": 19,
+      "candidateLabelOccurrenceClassification": "CANONICAL_ASSERTION_CANDIDATE",
+      "candidateLabelOccurrenceCount": 19,
+      "label": "part_of_campaign",
+      "sqliteEdgeClassification": "LEGACY_PROJECTION_ONLY",
+      "sqliteEdgeCount": 45,
+      "status": "registered_v48_display_label"
+    },
+    {
+      "activeMembershipCount": 2906,
+      "candidateLabelOccurrenceClassification": "CANONICAL_ASSERTION_CANDIDATE",
+      "candidateLabelOccurrenceCount": 2906,
+      "label": "part_of_collection",
+      "sqliteEdgeClassification": "LEGACY_PROJECTION_ONLY",
+      "sqliteEdgeCount": 2988,
+      "status": "registered_v48_display_label"
+    },
+    {
+      "activeMembershipCount": 0,
+      "candidateLabelOccurrenceClassification": null,
+      "candidateLabelOccurrenceCount": 0,
+      "label": "part_of_event",
+      "sqliteEdgeClassification": "HELD_UNSUPPORTED",
+      "sqliteEdgeCount": 1,
+      "status": "absent_from_v48_active_relation_registry"
+    },
+    {
+      "activeMembershipCount": 2325,
+      "candidateLabelOccurrenceClassification": "CANONICAL_ASSERTION_CANDIDATE",
+      "candidateLabelOccurrenceCount": 2323,
+      "label": "part_of_series",
+      "sqliteEdgeClassification": "LEGACY_PROJECTION_ONLY",
+      "sqliteEdgeCount": 4917,
+      "status": "registered_v48_display_label"
+    },
+    {
+      "activeMembershipCount": 0,
+      "candidateLabelOccurrenceClassification": null,
+      "candidateLabelOccurrenceCount": 0,
+      "label": "publishes_collection",
+      "sqliteEdgeClassification": "HELD_UNSUPPORTED",
+      "sqliteEdgeCount": 293,
+      "status": "absent_from_v48_active_relation_registry"
+    },
+    {
+      "activeMembershipCount": 13,
+      "candidateLabelOccurrenceClassification": "CANONICAL_ASSERTION_CANDIDATE",
+      "candidateLabelOccurrenceCount": 13,
+      "label": "uses_language",
+      "sqliteEdgeClassification": "LEGACY_PROJECTION_ONLY",
+      "sqliteEdgeCount": 21,
+      "status": "registered_v48_display_label"
+    }
+  ],
+  "reproduction": {
+    "candidateMeasurement": "Use the repository Phase 1C read-only verifier to parse candidate JSON exactly once; order source rows by /surfaces ordinal and preserve arrays without positional zip.",
+    "command": "python3 scripts/verify_v49_authority_research_delta.py --json",
+    "finalAcceptanceMayUseSkipLargeAssets": false,
+    "hashFormat": "utf8-json-array-compact-lf-v1",
+    "sqliteOpenMode": "file:data/prefreeze_candidate_v48.sqlite?mode=ro&immutable=1",
+    "sqliteScan": "Order trace_nodes by node_id, trace_edges by edge_id, object_trace_edges by (surface_id,edge_id), active objects by surface_id, and review rows by review_id."
+  },
+  "schema": "v49.graph-fact-reconciliation/v1",
+  "scopeResult": "PASS",
+  "sqliteReconciliation": {
+    "activeObjectTraceRefs": {
+      "count": 15923,
+      "nullOrBlank": {},
+      "rowSha256": "615c20cd35ae565c5d72bb37b37529dbdd29a3f790ac06a0f53708dddeedf15b",
+      "traceStateCounts": {
+        "accepted": 15923
+      },
+      "traceTierCounts": {
+        "metadata_supported": 2971,
+        "source_verified": 12952
+      },
+      "treeCounts": {
+        "TRTREE001": 76,
+        "TRTREE004": 3,
+        "TRTREE005": 20,
+        "TRTREE010": 122,
+        "TRTREE013": 96,
+        "TRTREE014": 3587,
+        "TRTREE015": 2331,
+        "TRTREE016": 4937,
+        "TRTREE017": 2920,
+        "TRTREE018": 27,
+        "TRTREE019": 51,
+        "TRTREE020": 258,
+        "TRTREE021": 25,
+        "TRTREE023": 34,
+        "TRTREE024": 1,
+        "TRTREE025": 8,
+        "TRTREE026": 50,
+        "TRTREE027": 17,
+        "TRTREE030": 281,
+        "TRTREE032": 17,
+        "TRTREE033": 84,
+        "TRTREE034": 119,
+        "TRTREE037": 196,
+        "TRTREE038": 444,
+        "TRTREE039": 2,
+        "TRTREE040": 204,
+        "TRTREE041": 3,
+        "TRTREE042": 3,
+        "TRTREE043": 5,
+        "TRTREE048": 2
+      },
+      "uniqueObjectNodeIds": 15923,
+      "uniqueTreeIds": 30
+    },
+    "edgeRecords": {
+      "branchIds": 106,
+      "confidenceCounts": {
+        "high": 249313,
+        "low": 99,
+        "medium": 6283
+      },
+      "count": 255695,
+      "inferenceCheckDistinct": 4,
+      "inferenceCheckTop20": [
+        [
+          "pass",
+          255112
+        ],
+        [
+          "pass_no_trace_promotion",
+          526
+        ],
+        [
+          "pass:no_historical_influence_inferred",
+          39
+        ],
+        [
+          "pass:explicit_object_place_not_influence",
+          18
+        ]
+      ],
+      "influenceEdges": 0,
+      "labelCounts": {
+        "associated_with_community": 1,
+        "associated_with_context": 40828,
+        "associated_with_place": 31759,
+        "associated_with_research_cluster": 3002,
+        "associated_with_theme": 3002,
+        "associated_with_year": 14720,
+        "captured_from_provider": 48,
+        "circulated_in": 156,
+        "classified_as": 500,
+        "contains_record": 1112,
+        "context_mentions_place": 32,
+        "created_by": 27379,
+        "credited_to": 390,
+        "curated_by": 1,
+        "dated": 13,
+        "dated_approximately": 24,
+        "dated_to": 918,
+        "depicts": 8,
+        "documented_by": 21743,
+        "documents": 1060,
+        "documents_object": 14720,
+        "exposes_source_record": 14720,
+        "featured_artist": 6,
+        "featured_designer": 42,
+        "grows_to_version": 1,
+        "has_material_or_technique": 12245,
+        "has_medium": 3002,
+        "has_type": 55671,
+        "has_version": 2,
+        "includes_capture_batch": 2,
+        "issued_by": 259,
+        "maintains_collection": 6,
+        "maintains_collection_or_namespace": 58,
+        "part_of_campaign": 45,
+        "part_of_collection": 2988,
+        "part_of_event": 1,
+        "part_of_series": 4917,
+        "publishes_collection": 293,
+        "uses_language": 21
+      },
+      "missingEndpointRefs": 0,
+      "observedRelationTypes": 39,
+      "reviewStateCounts": {
+        "accepted": 243245,
+        "accepted_auxiliary": 33,
+        "accepted_auxiliary_only": 194,
+        "accepted_provenance_only": 276,
+        "auxiliary": 11761,
+        "auxiliary_context_only": 56,
+        "review": 130
+      },
+      "rowSha256": "85c9ec63e42bd510cb6bc02ae5a3d81c5a7adff9db3dd655deccc61746ae9c62",
+      "treeIds": 37,
+      "uniqueDirectedTriples": 255695,
+      "uniqueEdgeIds": 255695,
+      "uniquePlacements": 255695
+    },
+    "evidenceObservations": {
+      "blankCounts": {
+        "evidence_text": 3
+      },
+      "distinctUrlTextField": 255247,
+      "occurrences": 255695,
+      "occurrencesInReusedGroups": 837,
+      "reusedCompositeGroups": 389
+    },
+    "membershipRows": {
+      "count": 126822,
+      "edgeSharedAcrossSurfaces": 0,
+      "influenceMemberships": 0,
+      "labelCounts": {
+        "associated_with_context": 25403,
+        "associated_with_place": 16069,
+        "associated_with_research_cluster": 2920,
+        "associated_with_theme": 2920,
+        "associated_with_year": 25,
+        "circulated_in": 122,
+        "classified_as": 110,
+        "created_by": 10006,
+        "credited_to": 25,
+        "dated": 2,
+        "dated_to": 110,
+        "documented_by": 15929,
+        "has_material_or_technique": 9992,
+        "has_medium": 2920,
+        "has_type": 34884,
+        "issued_by": 122,
+        "part_of_campaign": 19,
+        "part_of_collection": 2906,
+        "part_of_series": 2325,
+        "uses_language": 13
+      },
+      "observedRelationTypes": 20,
+      "orphanEdgeRefs": 0,
+      "rowSha256": "a5b94fce847e2f7bc9473045033704cba504c2d455b0d5e785fcf321679a5018",
+      "uniqueEdges": 126822,
+      "uniquePairs": 126822,
+      "uniqueSurfaces": 15923
+    },
+    "nodeRecords": {
+      "count": 97889,
+      "nodeTypeCounts": {
+        "archival_series": 769,
+        "archive_dataset": 1,
+        "artist": 6,
+        "capture_batch": 2,
+        "collection": 6,
+        "collection_or_namespace": 58,
+        "concept": 22,
+        "context": 94,
+        "contextual_place_candidate": 6,
+        "counter_archive_or_local_public": 1,
+        "creator": 1472,
+        "creator_or_collective": 9934,
+        "creator_or_issuer": 153,
+        "curator": 1,
+        "dataset_version": 2,
+        "document_type": 482,
+        "event": 50,
+        "event_or_campaign": 43,
+        "exhibition": 1,
+        "historical_context": 428,
+        "language": 7,
+        "material_or_technique": 629,
+        "object": 37287,
+        "object_type": 489,
+        "organisation": 26,
+        "person": 723,
+        "person_event_or_place": 8,
+        "place": 739,
+        "place_or_resettlement_area": 1,
+        "programme_or_issuer": 3,
+        "provider": 8,
+        "public_history_project": 1,
+        "research_cluster": 1652,
+        "series_event_or_campaign": 2,
+        "source_collection": 293,
+        "source_provider": 48,
+        "source_record": 37509,
+        "subject_or_context": 4558,
+        "year": 106,
+        "year_context": 269
+      },
+      "rowSha256": "2e43e7382bdaed6a37c6c5c3c994ea8606b3424c51655c1ec649a881adb52824",
+      "treeIds": 37,
+      "uniqueCanonicalKeys": 82918,
+      "uniqueNodeIds": 97889
+    },
+    "reviewRows": {
+      "columns": [
+        "review_id",
+        "surface_id",
+        "source_record_id",
+        "source_name",
+        "source_host",
+        "source_url",
+        "title",
+        "date_start",
+        "region",
+        "authority_state",
+        "authority_origin",
+        "authority_geography_class",
+        "authority_resolution_basis",
+        "narrative_position",
+        "trace_state",
+        "review_route",
+        "count_policy"
+      ],
+      "count": 4425,
+      "reviewRouteCounts": {
+        "resolve_descriptive_authority_from_item_or_source_provenance": 4425
+      },
+      "rowSha256": "a2b8e739edcf4a0007e9b85c4777144022702415c9440db357e8a34f83f661c2",
+      "traceStateCounts": {
+        "unlinked": 4425
+      },
+      "uniqueSurfaceIds": 4425
+    },
+    "tierNormalizationDelta": {
+      "candidateBlankToSqliteSourceVerified": 4957,
+      "classification": "LEGACY_PROJECTION_ONLY",
+      "otherTierDelta": 0,
+      "sourcePathAndLine": "scripts/build_prefreeze_candidate_v9_search_sqlite.py:299",
+      "surfaceIdSetSha256RawLines": "fbabc473e5ca7c7435a13d3c6c28a05198a97d15331f1f0b0b01b7464d81cceb"
+    }
+  },
+  "status": "classification_closed_canonical_promotion_blocked",
+  "unresolvedExplicitHolds": [
+    {
+      "count": 9393,
+      "issue": "Candidate edgeIds and edgeLabels arrays have unequal lengths on these surfaces; no positional edge-to-predicate mapping is authorized.",
+      "promotionImpact": "typed semantic relation and TRACE projection blocked"
+    },
+    {
+      "count": 32137,
+      "issue": "Full SQLite graph edges use 19 labels absent from the 20-label active relation registry.",
+      "promotionImpact": "held; no default medium_context/documented fallback"
+    },
+    {
+      "count": 6004,
+      "issue": "Analytical full-graph edges have no governed analysis-run identity in the candidate input.",
+      "promotionImpact": "computed association retained, canonical/release promotion held"
+    },
+    {
+      "count": 3,
+      "edgeIds": [
+        "TRE-0806BE8E765B3C",
+        "TRE-BND26-496E3C1D0302DC",
+        "TRE-BND26-5CCAB1F2CB58A6"
+      ],
+      "issue": "Evidence text is blank and no approved locator-only evidence kind exists.",
+      "promotionImpact": "held; all three are outside active memberships"
+    },
+    {
+      "count": 4957,
+      "issue": "Candidate trace.tier is blank but SQLite derived source_verified.",
+      "promotionImpact": "derived normalization cannot backfill canonical tier or grant research/TRACE eligibility"
+    },
+    {
+      "count": 11,
+      "issue": "Auxiliary objects depend on a v47 parent adjunct outside the sole canonical input.",
+      "promotionImpact": "source adjunct facts held; derived auxiliary read product remains legacy projection only"
+    }
+  ],
+  "version": "1.0.0"
+}

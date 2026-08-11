@@ -1,0 +1,234 @@
+{
+  "schema": "v49.epistemic-relation-registry/v1",
+  "version": "1.0.0",
+  "effectiveDate": "2026-08-11",
+  "baselineCommit": "6b111a78818a9e9ef37e4909c1f288d3b844b77e",
+  "closedVocabulary": true,
+  "scope": "Epistemic routing, evidence, promotion and TRACE-projectability policy for every relation label observed in the frozen v48 full graph, plus the reserved zero-count influenced_by predicate.",
+  "authorityBoundary": {
+    "canonicalMigrationInput": "generated/public_surfaces_prefreeze_candidate_v48.json",
+    "immutableReconciliationOnly": "data/prefreeze_candidate_v48.sqlite",
+    "integrityEvidence": "frontend/public/data/trace-v48/manifest.json",
+    "derivedProducts": [
+      "frontend/public/data/trace-v48/atlas.json",
+      "frontend/public/data/trace-v48/catalog.json",
+      "frontend/public/data/trace-v48/neighborhoods/*.json"
+    ],
+    "derivedProductsMayCreateCanonicalClaimsOrRelations": false,
+    "sqliteMayFillCandidateGaps": false
+  },
+  "interpretationRule": "A relation label selects an evidence route; it never by itself assigns a claim's epistemic class. A claim receives an epistemic class only when all required claimant, wording, source, locator and class-specific evidence are present and reviewed.",
+  "epistemicClasses": {
+    "documented_source_statement": {
+      "definition": "A bounded statement of what an identified source or provider record says.",
+      "requiredFields": [
+        "source_or_claimant_id",
+        "source_record_id",
+        "preserved_wording_or_exact_structured_value",
+        "exact_locator",
+        "observation_or_access_context",
+        "registered_predicate_mapping"
+      ],
+      "prohibitedImplication": "Documentation does not turn a provider statement into universal truth."
+    },
+    "scholarly_claim": {
+      "definition": "A claimant-bound scholarly interpretation that can support, challenge or qualify a semantic relation while competing claims remain separate.",
+      "requiredFields": [
+        "claimant_agent_id",
+        "cited_work_or_source_id",
+        "exact_locator",
+        "preserved_wording_or_licensed_excerpt_hash",
+        "claim_date_or_version",
+        "stance",
+        "review_state"
+      ],
+      "prohibitedImplication": "Acceptance does not erase competing scholarship and does not imply causation."
+    },
+    "computed_association": {
+      "definition": "A result produced by a named deterministic analysis run.",
+      "requiredFields": [
+        "analysis_run_id",
+        "method_and_software_version_hash",
+        "deterministic_parameters",
+        "research_release_id",
+        "research_manifest_sha256",
+        "corpus_version_and_policy_hash",
+        "subject_and_object",
+        "score_unit_uncertainty_threshold",
+        "output_hash"
+      ],
+      "prohibitedImplication": "Similarity, clustering, score, co-occurrence or layout is neither documented fact nor causation."
+    },
+    "causal_interpretation": {
+      "definition": "A named claimant's explicitly sourced causal or influence interpretation.",
+      "requiredFields": [
+        "claimant_agent_id",
+        "preserved_claimant_wording",
+        "source_or_citation_id",
+        "exact_locator",
+        "typed_subject_and_object",
+        "direction_and_scope",
+        "temporal_qualification",
+        "stance_and_competing_claims",
+        "evidence_chain",
+        "heightened_reviewer_decision",
+        "relation_policy_version"
+      ],
+      "prohibitedImplication": "Chronology, geography, medium, source, similarity, theme, cluster or score never manufactures causation or influence."
+    }
+  },
+  "evidenceProfiles": {
+    "documented-source-v1": {
+      "epistemicClassRoute": "documented_source_statement",
+      "requires": [
+        "typed subject and object",
+        "source-bound exact field literal or preserved wording",
+        "source record and exact locator",
+        "registered predicate/domain/range mapping",
+        "claim/evidence bridge and curator decision"
+      ]
+    },
+    "computed-association-v1": {
+      "epistemicClassRoute": "computed_association",
+      "requires": [
+        "typed subject and object",
+        "complete analysis run identity",
+        "method/software and deterministic parameters",
+        "exact research release and corpus hashes",
+        "score/unit/uncertainty/threshold and output hash",
+        "reviewed promotion decision"
+      ]
+    },
+    "unknown-relation-review-v1": {
+      "epistemicClassRoute": null,
+      "requires": [
+        "approved relation registry entry",
+        "typed domain and range",
+        "explicit epistemic and evidence requirements",
+        "source-bound occurrence and exact locator",
+        "reviewer resolution without default family",
+        "accepted claim/evidence path before semantic promotion"
+      ]
+    },
+    "causal-influence-v1": {
+      "epistemicClassRoute": "causal_interpretation",
+      "requires": [
+        "named claimant and preserved wording",
+        "source/citation and exact locator",
+        "typed subject and object with direction and scope",
+        "temporal qualification and competing claims",
+        "evidence chain and heightened review",
+        "relation policy version"
+      ]
+    }
+  },
+  "failClosedPolicy": {
+    "defaultClassification": "HELD_UNSUPPORTED",
+    "defaultRelationFamily": null,
+    "defaultEpistemicClass": null,
+    "defaultAcceptanceState": "proposed",
+    "defaultDisposition": "held",
+    "defaultWorkflowState": "review",
+    "unknownRelationCreatesSemanticRelation": false,
+    "unknownRelationCreatesTraceProjection": false,
+    "unknownRelationCreatesPublicationLayer": false,
+    "unknownRelationCreatesMetricEligibility": false,
+    "automaticInfluenceInferenceAllowed": false
+  },
+  "defaultUnknownRelation": {
+    "classification": "HELD_UNSUPPORTED",
+    "relationFamily": null,
+    "epistemicClassRoute": null,
+    "states": {
+      "acceptance": "proposed",
+      "disposition": "held",
+      "workflow": "review"
+    },
+    "semanticRelationCreated": false,
+    "traceProjectionCreated": false,
+    "publicationLayerCreated": false,
+    "metricEligibilityCreated": false,
+    "fallbackRelationLabel": null,
+    "fallbackRelationFamily": null
+  },
+  "projectionContract": {
+    "traceIsAuthority": false,
+    "traceMeaning": "A release- and corpus-specific projection of eligible semantic relations and claimant-bound claims into node, edge and placement rows.",
+    "requires": [
+      "accepted registered semantic relation",
+      "eligible claim/evidence path",
+      "selected versioned research corpus",
+      "exact sealed research release",
+      "typed TRACE node endpoints",
+      "explicit projection role and placement"
+    ],
+    "legacyDirectedTripleIsCanonicalRelationIdentity": false,
+    "candidateEdgeIdIsOpaqueCrosswalkOnly": true,
+    "candidateEdgeIdAndLabelMayBePositionallyZipped": false,
+    "currentTraceEligibleObjects": 0
+  },
+  "observedPopulation": {
+    "candidateRelationLabelOccurrences": 79683,
+    "candidateOpaqueEdgeIdOccurrences": 126822,
+    "surfacesWithEdgeIdLabelLengthMismatch": 9393,
+    "fullGraphEdges": 255695,
+    "activeObjectRelationMemberships": 126822,
+    "activeRelationLabels": 20,
+    "fullGraphObservedRelationLabels": 39,
+    "reservedUnobservedRelationLabels": 1,
+    "fullGraphObservedLabelSetSha256RawLines": "ef9a5814d002d3d590ff20d7db94d669cc76cc79e5df9801ce92f566e2431961",
+    "influenceEdges": 0
+  },
+  "relations": [
+    {"label":"associated_with_community","observedScopes":["full_graph"],"registryLifecycleStatus":"unregistered_legacy_literal","relationFamily":null,"epistemicClassRoute":null,"authority":{"candidateOccurrence":null,"sqliteEdge":"HELD_UNSUPPORTED"},"requiredEvidenceProfileId":"unknown-relation-review-v1","specificEvidenceRequirement":"No approved typed meaning exists; preserve the literal and occurrence context for review.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":0,"activeMembership":0,"fullGraphEdge":1}},
+    {"label":"associated_with_context","observedScopes":["candidate","active_membership","full_graph"],"registryLifecycleStatus":"active_v48_display_mapping","relationFamily":"medium_context","epistemicClassRoute":"documented_source_statement","authority":{"candidateOccurrence":"CANONICAL_ASSERTION_CANDIDATE","sqliteEdge":"LEGACY_PROJECTION_ONLY"},"requiredEvidenceProfileId":"documented-source-v1","specificEvidenceRequirement":"Quote or normalize the contextual descriptor from an identified object-level source field.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":5958,"activeMembership":25403,"fullGraphEdge":40828}},
+    {"label":"associated_with_place","observedScopes":["candidate","active_membership","full_graph"],"registryLifecycleStatus":"active_v48_display_mapping","relationFamily":"time_place","epistemicClassRoute":"documented_source_statement","authority":{"candidateOccurrence":"CANONICAL_ASSERTION_CANDIDATE","sqliteEdge":"LEGACY_PROJECTION_ONLY"},"requiredEvidenceProfileId":"documented-source-v1","specificEvidenceRequirement":"Use an object-level place or explicit circulation statement; institution location and creator nationality are not substitutes.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":15771,"activeMembership":16069,"fullGraphEdge":31759}},
+    {"label":"associated_with_research_cluster","observedScopes":["candidate","active_membership","full_graph"],"registryLifecycleStatus":"active_v48_display_mapping","relationFamily":"medium_context","epistemicClassRoute":"computed_association","authority":{"candidateOccurrence":"COMPUTED_ASSOCIATION","sqliteEdge":"COMPUTED_ASSOCIATION"},"requiredEvidenceProfileId":"computed-association-v1","specificEvidenceRequirement":"Retain a governed cluster assignment with a complete analysis-run identity and exact inputs.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":2920,"activeMembership":2920,"fullGraphEdge":3002}},
+    {"label":"associated_with_theme","observedScopes":["candidate","active_membership","full_graph"],"registryLifecycleStatus":"active_v48_display_mapping","relationFamily":"medium_context","epistemicClassRoute":"computed_association","authority":{"candidateOccurrence":"COMPUTED_ASSOCIATION","sqliteEdge":"COMPUTED_ASSOCIATION"},"requiredEvidenceProfileId":"computed-association-v1","specificEvidenceRequirement":"Retain a governed thematic assignment with a complete analysis-run identity and exact inputs.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":2920,"activeMembership":2920,"fullGraphEdge":3002}},
+    {"label":"associated_with_year","observedScopes":["candidate","active_membership","full_graph"],"registryLifecycleStatus":"active_v48_display_mapping","relationFamily":"time_place","epistemicClassRoute":"documented_source_statement","authority":{"candidateOccurrence":"CANONICAL_ASSERTION_CANDIDATE","sqliteEdge":"LEGACY_PROJECTION_ONLY"},"requiredEvidenceProfileId":"documented-source-v1","specificEvidenceRequirement":"Preserve the explicitly stated year and its exact source field or locator.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":25,"activeMembership":25,"fullGraphEdge":14720}},
+    {"label":"captured_from_provider","observedScopes":["full_graph"],"registryLifecycleStatus":"unregistered_legacy_literal","relationFamily":null,"epistemicClassRoute":null,"authority":{"candidateOccurrence":null,"sqliteEdge":"HELD_UNSUPPORTED"},"requiredEvidenceProfileId":"unknown-relation-review-v1","specificEvidenceRequirement":"Define typed capture-event and provider semantics before use; a provider URL is not sufficient.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":0,"activeMembership":0,"fullGraphEdge":48}},
+    {"label":"circulated_in","observedScopes":["candidate","active_membership","full_graph"],"registryLifecycleStatus":"active_v48_display_mapping","relationFamily":"time_place","epistemicClassRoute":"documented_source_statement","authority":{"candidateOccurrence":"CANONICAL_ASSERTION_CANDIDATE","sqliteEdge":"LEGACY_PROJECTION_ONLY"},"requiredEvidenceProfileId":"documented-source-v1","specificEvidenceRequirement":"The source must explicitly distinguish circulation place from repository, creator location and origin.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":122,"activeMembership":122,"fullGraphEdge":156}},
+    {"label":"classified_as","observedScopes":["candidate","active_membership","full_graph"],"registryLifecycleStatus":"active_v48_display_mapping","relationFamily":"medium_context","epistemicClassRoute":"documented_source_statement","authority":{"candidateOccurrence":"CANONICAL_ASSERTION_CANDIDATE","sqliteEdge":"LEGACY_PROJECTION_ONLY"},"requiredEvidenceProfileId":"documented-source-v1","specificEvidenceRequirement":"Preserve the classification literal and originating vocabulary identity.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":110,"activeMembership":110,"fullGraphEdge":500}},
+    {"label":"contains_record","observedScopes":["full_graph"],"registryLifecycleStatus":"unregistered_legacy_literal","relationFamily":null,"epistemicClassRoute":null,"authority":{"candidateOccurrence":null,"sqliteEdge":"HELD_UNSUPPORTED"},"requiredEvidenceProfileId":"unknown-relation-review-v1","specificEvidenceRequirement":"Define container and record endpoint types and provenance before semantic use.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":0,"activeMembership":0,"fullGraphEdge":1112}},
+    {"label":"context_mentions_place","observedScopes":["full_graph"],"registryLifecycleStatus":"unregistered_legacy_literal","relationFamily":null,"epistemicClassRoute":null,"authority":{"candidateOccurrence":null,"sqliteEdge":"HELD_UNSUPPORTED"},"requiredEvidenceProfileId":"unknown-relation-review-v1","specificEvidenceRequirement":"Define mention semantics, context identity and exact text locator before promotion.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":0,"activeMembership":0,"fullGraphEdge":32}},
+    {"label":"created_by","observedScopes":["candidate","active_membership","full_graph"],"registryLifecycleStatus":"active_v48_display_mapping","relationFamily":"source_provenance","epistemicClassRoute":"documented_source_statement","authority":{"candidateOccurrence":"CANONICAL_ASSERTION_CANDIDATE","sqliteEdge":"LEGACY_PROJECTION_ONLY"},"requiredEvidenceProfileId":"documented-source-v1","specificEvidenceRequirement":"Preserve the source's creator or authorship wording; authority resolution requires a separate reviewed assignment.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":8246,"activeMembership":10006,"fullGraphEdge":27379}},
+    {"label":"credited_to","observedScopes":["candidate","active_membership","full_graph"],"registryLifecycleStatus":"active_v48_display_mapping","relationFamily":"medium_context","epistemicClassRoute":"documented_source_statement","authority":{"candidateOccurrence":"CANONICAL_ASSERTION_CANDIDATE","sqliteEdge":"LEGACY_PROJECTION_ONLY"},"requiredEvidenceProfileId":"documented-source-v1","specificEvidenceRequirement":"Retain the literal credit and source field without silently upgrading it to resolved authorship.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":25,"activeMembership":25,"fullGraphEdge":390}},
+    {"label":"curated_by","observedScopes":["full_graph"],"registryLifecycleStatus":"unregistered_legacy_literal","relationFamily":null,"epistemicClassRoute":null,"authority":{"candidateOccurrence":null,"sqliteEdge":"HELD_UNSUPPORTED"},"requiredEvidenceProfileId":"unknown-relation-review-v1","specificEvidenceRequirement":"Define curator role, subject type, evidence and temporal scope before semantic use.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":0,"activeMembership":0,"fullGraphEdge":1}},
+    {"label":"dated","observedScopes":["candidate","active_membership","full_graph"],"registryLifecycleStatus":"active_v48_display_mapping","relationFamily":"time_place","epistemicClassRoute":"documented_source_statement","authority":{"candidateOccurrence":"CANONICAL_ASSERTION_CANDIDATE","sqliteEdge":"LEGACY_PROJECTION_ONLY"},"requiredEvidenceProfileId":"documented-source-v1","specificEvidenceRequirement":"The date statement must be object-level, source-linked and locator-preserving.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":2,"activeMembership":2,"fullGraphEdge":13}},
+    {"label":"dated_approximately","observedScopes":["full_graph"],"registryLifecycleStatus":"unregistered_legacy_literal","relationFamily":null,"epistemicClassRoute":null,"authority":{"candidateOccurrence":null,"sqliteEdge":"HELD_UNSUPPORTED"},"requiredEvidenceProfileId":"unknown-relation-review-v1","specificEvidenceRequirement":"Define approximation syntax, confidence, interval semantics and source locator before promotion.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":0,"activeMembership":0,"fullGraphEdge":24}},
+    {"label":"dated_to","observedScopes":["candidate","active_membership","full_graph"],"registryLifecycleStatus":"active_v48_display_mapping","relationFamily":"time_place","epistemicClassRoute":"documented_source_statement","authority":{"candidateOccurrence":"CANONICAL_ASSERTION_CANDIDATE","sqliteEdge":"LEGACY_PROJECTION_ONLY"},"requiredEvidenceProfileId":"documented-source-v1","specificEvidenceRequirement":"Preserve the source date range and exact end-date field or locator.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":110,"activeMembership":110,"fullGraphEdge":918}},
+    {"label":"depicts","observedScopes":["full_graph"],"registryLifecycleStatus":"unregistered_legacy_literal","relationFamily":null,"epistemicClassRoute":null,"authority":{"candidateOccurrence":null,"sqliteEdge":"HELD_UNSUPPORTED"},"requiredEvidenceProfileId":"unknown-relation-review-v1","specificEvidenceRequirement":"Define depiction subject, source observation and review rule before semantic use.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":0,"activeMembership":0,"fullGraphEdge":8}},
+    {"label":"documented_by","observedScopes":["candidate","active_membership","full_graph"],"registryLifecycleStatus":"active_v48_display_mapping","relationFamily":"source_provenance","epistemicClassRoute":"documented_source_statement","authority":{"candidateOccurrence":"CANONICAL_ASSERTION_CANDIDATE","sqliteEdge":"LEGACY_PROJECTION_ONLY"},"requiredEvidenceProfileId":"documented-source-v1","specificEvidenceRequirement":"A stable official record or auditable source page must resolve to the object with an exact locator.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":15923,"activeMembership":15929,"fullGraphEdge":21743}},
+    {"label":"documents","observedScopes":["full_graph"],"registryLifecycleStatus":"unregistered_legacy_literal","relationFamily":null,"epistemicClassRoute":null,"authority":{"candidateOccurrence":null,"sqliteEdge":"HELD_UNSUPPORTED"},"requiredEvidenceProfileId":"unknown-relation-review-v1","specificEvidenceRequirement":"Define document and documented-subject endpoint types and exact source locator before use.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":0,"activeMembership":0,"fullGraphEdge":1060}},
+    {"label":"documents_object","observedScopes":["full_graph"],"registryLifecycleStatus":"unregistered_legacy_literal","relationFamily":null,"epistemicClassRoute":null,"authority":{"candidateOccurrence":null,"sqliteEdge":"HELD_UNSUPPORTED"},"requiredEvidenceProfileId":"unknown-relation-review-v1","specificEvidenceRequirement":"Define source-record/object semantics and source-bound locator before promotion.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":0,"activeMembership":0,"fullGraphEdge":14720}},
+    {"label":"exposes_source_record","observedScopes":["full_graph"],"registryLifecycleStatus":"unregistered_legacy_literal","relationFamily":null,"epistemicClassRoute":null,"authority":{"candidateOccurrence":null,"sqliteEdge":"HELD_UNSUPPORTED"},"requiredEvidenceProfileId":"unknown-relation-review-v1","specificEvidenceRequirement":"Define exposure semantics separately from record identity and HTTP availability before use.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":0,"activeMembership":0,"fullGraphEdge":14720}},
+    {"label":"featured_artist","observedScopes":["full_graph"],"registryLifecycleStatus":"unregistered_legacy_literal","relationFamily":null,"epistemicClassRoute":null,"authority":{"candidateOccurrence":null,"sqliteEdge":"HELD_UNSUPPORTED"},"requiredEvidenceProfileId":"unknown-relation-review-v1","specificEvidenceRequirement":"Define featured role, agent identity and exact source wording before promotion.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":0,"activeMembership":0,"fullGraphEdge":6}},
+    {"label":"featured_designer","observedScopes":["full_graph"],"registryLifecycleStatus":"unregistered_legacy_literal","relationFamily":null,"epistemicClassRoute":null,"authority":{"candidateOccurrence":null,"sqliteEdge":"HELD_UNSUPPORTED"},"requiredEvidenceProfileId":"unknown-relation-review-v1","specificEvidenceRequirement":"Define featured role, designer identity and exact source wording before promotion.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":0,"activeMembership":0,"fullGraphEdge":42}},
+    {"label":"grows_to_version","observedScopes":["full_graph"],"registryLifecycleStatus":"unregistered_legacy_literal","relationFamily":null,"epistemicClassRoute":null,"authority":{"candidateOccurrence":null,"sqliteEdge":"HELD_UNSUPPORTED"},"requiredEvidenceProfileId":"unknown-relation-review-v1","specificEvidenceRequirement":"Define version identity, direction and temporal evidence before promotion.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":0,"activeMembership":0,"fullGraphEdge":1}},
+    {"label":"has_material_or_technique","observedScopes":["candidate","active_membership","full_graph"],"registryLifecycleStatus":"active_v48_display_mapping","relationFamily":"medium_context","epistemicClassRoute":"documented_source_statement","authority":{"candidateOccurrence":"CANONICAL_ASSERTION_CANDIDATE","sqliteEdge":"LEGACY_PROJECTION_ONLY"},"requiredEvidenceProfileId":"documented-source-v1","specificEvidenceRequirement":"Preserve the source material/process/technique literal and exact object-level locator.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":3640,"activeMembership":9992,"fullGraphEdge":12245}},
+    {"label":"has_medium","observedScopes":["candidate","active_membership","full_graph"],"registryLifecycleStatus":"active_v48_display_mapping","relationFamily":"medium_context","epistemicClassRoute":"documented_source_statement","authority":{"candidateOccurrence":"CANONICAL_ASSERTION_CANDIDATE","sqliteEdge":"LEGACY_PROJECTION_ONLY"},"requiredEvidenceProfileId":"documented-source-v1","specificEvidenceRequirement":"Retain the source medium string and any reviewed normalization with its locator.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":2920,"activeMembership":2920,"fullGraphEdge":3002}},
+    {"label":"has_type","observedScopes":["candidate","active_membership","full_graph"],"registryLifecycleStatus":"active_v48_display_mapping","relationFamily":"medium_context","epistemicClassRoute":"documented_source_statement","authority":{"candidateOccurrence":"CANONICAL_ASSERTION_CANDIDATE","sqliteEdge":"LEGACY_PROJECTION_ONLY"},"requiredEvidenceProfileId":"documented-source-v1","specificEvidenceRequirement":"Preserve the source object/design type literal and exact source locator.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":15608,"activeMembership":34884,"fullGraphEdge":55671}},
+    {"label":"has_version","observedScopes":["full_graph"],"registryLifecycleStatus":"unregistered_legacy_literal","relationFamily":null,"epistemicClassRoute":null,"authority":{"candidateOccurrence":null,"sqliteEdge":"HELD_UNSUPPORTED"},"requiredEvidenceProfileId":"unknown-relation-review-v1","specificEvidenceRequirement":"Define version entity identity, direction and evidence before semantic use.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":0,"activeMembership":0,"fullGraphEdge":2}},
+    {"label":"includes_capture_batch","observedScopes":["full_graph"],"registryLifecycleStatus":"unregistered_legacy_literal","relationFamily":null,"epistemicClassRoute":null,"authority":{"candidateOccurrence":null,"sqliteEdge":"HELD_UNSUPPORTED"},"requiredEvidenceProfileId":"unknown-relation-review-v1","specificEvidenceRequirement":"Define dataset/capture-batch endpoint identity and lineage evidence before promotion.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":0,"activeMembership":0,"fullGraphEdge":2}},
+    {"label":"issued_by","observedScopes":["candidate","active_membership","full_graph"],"registryLifecycleStatus":"active_v48_display_mapping","relationFamily":"source_provenance","epistemicClassRoute":"documented_source_statement","authority":{"candidateOccurrence":"CANONICAL_ASSERTION_CANDIDATE","sqliteEdge":"LEGACY_PROJECTION_ONLY"},"requiredEvidenceProfileId":"documented-source-v1","specificEvidenceRequirement":"Preserve the source's issuer wording and exact locator; issuer does not imply designer or printer.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":122,"activeMembership":122,"fullGraphEdge":259}},
+    {"label":"maintains_collection","observedScopes":["full_graph"],"registryLifecycleStatus":"unregistered_legacy_literal","relationFamily":null,"epistemicClassRoute":null,"authority":{"candidateOccurrence":null,"sqliteEdge":"HELD_UNSUPPORTED"},"requiredEvidenceProfileId":"unknown-relation-review-v1","specificEvidenceRequirement":"Define maintenance role, collection identity and temporal/provider evidence before use.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":0,"activeMembership":0,"fullGraphEdge":6}},
+    {"label":"maintains_collection_or_namespace","observedScopes":["full_graph"],"registryLifecycleStatus":"unregistered_legacy_literal","relationFamily":null,"epistemicClassRoute":null,"authority":{"candidateOccurrence":null,"sqliteEdge":"HELD_UNSUPPORTED"},"requiredEvidenceProfileId":"unknown-relation-review-v1","specificEvidenceRequirement":"Resolve the union endpoint into a typed collection or namespace and define maintenance evidence.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":0,"activeMembership":0,"fullGraphEdge":58}},
+    {"label":"part_of_campaign","observedScopes":["candidate","active_membership","full_graph"],"registryLifecycleStatus":"active_v48_display_mapping","relationFamily":"medium_context","epistemicClassRoute":"documented_source_statement","authority":{"candidateOccurrence":"CANONICAL_ASSERTION_CANDIDATE","sqliteEdge":"LEGACY_PROJECTION_ONLY"},"requiredEvidenceProfileId":"documented-source-v1","specificEvidenceRequirement":"Campaign membership must be object-level, source-linked and locator-preserving.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":19,"activeMembership":19,"fullGraphEdge":45}},
+    {"label":"part_of_collection","observedScopes":["candidate","active_membership","full_graph"],"registryLifecycleStatus":"active_v48_display_mapping","relationFamily":"source_provenance","epistemicClassRoute":"documented_source_statement","authority":{"candidateOccurrence":"CANONICAL_ASSERTION_CANDIDATE","sqliteEdge":"LEGACY_PROJECTION_ONLY"},"requiredEvidenceProfileId":"documented-source-v1","specificEvidenceRequirement":"The object-level source must identify collection membership and preserve its locator.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":2906,"activeMembership":2906,"fullGraphEdge":2988}},
+    {"label":"part_of_event","observedScopes":["full_graph"],"registryLifecycleStatus":"unregistered_legacy_literal","relationFamily":null,"epistemicClassRoute":null,"authority":{"candidateOccurrence":null,"sqliteEdge":"HELD_UNSUPPORTED"},"requiredEvidenceProfileId":"unknown-relation-review-v1","specificEvidenceRequirement":"Define event identity, membership role and exact source evidence before promotion.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":0,"activeMembership":0,"fullGraphEdge":1}},
+    {"label":"part_of_series","observedScopes":["candidate","active_membership","full_graph"],"registryLifecycleStatus":"active_v48_display_mapping","relationFamily":"source_provenance","epistemicClassRoute":"documented_source_statement","authority":{"candidateOccurrence":"CANONICAL_ASSERTION_CANDIDATE","sqliteEdge":"LEGACY_PROJECTION_ONLY"},"requiredEvidenceProfileId":"documented-source-v1","specificEvidenceRequirement":"Series membership must be present in the source record with an exact locator.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":2323,"activeMembership":2325,"fullGraphEdge":4917}},
+    {"label":"publishes_collection","observedScopes":["full_graph"],"registryLifecycleStatus":"unregistered_legacy_literal","relationFamily":null,"epistemicClassRoute":null,"authority":{"candidateOccurrence":null,"sqliteEdge":"HELD_UNSUPPORTED"},"requiredEvidenceProfileId":"unknown-relation-review-v1","specificEvidenceRequirement":"Define publisher/collection endpoint roles and exact source evidence before semantic use.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":0,"activeMembership":0,"fullGraphEdge":293}},
+    {"label":"uses_language","observedScopes":["candidate","active_membership","full_graph"],"registryLifecycleStatus":"active_v48_display_mapping","relationFamily":"medium_context","epistemicClassRoute":"documented_source_statement","authority":{"candidateOccurrence":"CANONICAL_ASSERTION_CANDIDATE","sqliteEdge":"LEGACY_PROJECTION_ONLY"},"requiredEvidenceProfileId":"documented-source-v1","specificEvidenceRequirement":"Language must be source-recorded or directly evidenced by the object with a preserved locator.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":13,"activeMembership":13,"fullGraphEdge":21}},
+    {"label":"influenced_by","observedScopes":[],"registryLifecycleStatus":"reserved_unobserved","relationFamily":"historical_influence","epistemicClassRoute":"causal_interpretation","authority":{"candidateOccurrence":null,"sqliteEdge":null},"requiredEvidenceProfileId":"causal-influence-v1","specificEvidenceRequirement":"Claimant, source, locator and preserved wording are mandatory; influence is never inferred automatically.","states":{"acceptance":"proposed","disposition":"held","workflow":"review"},"promotionEligibleNow":false,"projectableNow":false,"counts":{"candidateLabelOccurrence":0,"activeMembership":0,"fullGraphEdge":0}}
+  ],
+  "gates": {
+    "OBSERVED_FULL_GRAPH_LABELS_CLASSIFIED": 39,
+    "UNCLASSIFIED_GRAPH_FACT": 0,
+    "UNKNOWN_RELATION_FAIL_CLOSED": true,
+    "SILENT_UNKNOWN_RELATION_FALLBACK": 0,
+    "AUTOMATIC_INFLUENCE_INFERENCE": 0,
+    "INFLUENCE_RELATION_COUNT": 0,
+    "TRACE_ELIGIBLE_OBJECTS": 0,
+    "CURRENT_RELATIONS_PROJECTABLE": 0
+  }
+}

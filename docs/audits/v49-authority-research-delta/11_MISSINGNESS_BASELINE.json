@@ -1,0 +1,253 @@
+{
+  "schemaVersion": "v49-missingness-baseline-schema-1.0.0",
+  "baselineId": "v49-missingness-baseline-1.0.0",
+  "corpusPolicyVersion": "v49-research-corpus-policy-1.0.0",
+  "effectiveDate": "2026-08-11",
+  "status": "EVIDENCE_BOUND_FAIL_CLOSED",
+  "scope": {
+    "researchQuestion": "Which v48 operational archive objects carry an explicit row-level source_verified tier sufficient for the minimal source-bounded descriptive-research baseline, without treating catalog, Search, or legacy TRACE presence as research evidence?",
+    "populationFrame": "The 15,923 surfaces in the frozen v48 candidate JSON, one conservative baseline archive object per input surface.",
+    "unit": "archive_object_candidate",
+    "visualRightsProviderPolicyAndDeliveryModeExcluded": true,
+    "claimsOfRepresentativenessOrUniqueIntellectualWorks": false
+  },
+  "authority": {
+    "canonicalInput": {
+      "path": "generated/public_surfaces_prefreeze_candidate_v48.json",
+      "role": "SOLE_CANONICAL_MIGRATION_INPUT",
+      "expectedSha256": "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48"
+    },
+    "sharedSinglePassLedger": {
+      "temporaryPath": "/private/tmp/v49_phase1c_candidate_rows.tsv",
+      "rows": 15923,
+      "bytes": 2238838,
+      "sha256": "4d5f15cda8e1267426fd91ea76da92573ab2851ee033468ebb0ef206ff0c4c46",
+      "createdBy": "A2 deterministic candidate parse",
+      "candidateWasNotRescannedByA4": true
+    },
+    "reconciliationOnly": [
+      "data/prefreeze_candidate_v48.sqlite",
+      "frontend/public/data/archive-search-v1.json",
+      "frontend/public/data/trace-v48/catalog.json",
+      "frontend/public/data/trace-v48/review-catalog.json",
+      "frontend/public/data/trace-v48/auxiliary.json",
+      "frontend/public/data/trace-v48/manifest.json"
+    ],
+    "derivedProductsMayCreateCanonicalOrResearchEligibility": false
+  },
+  "populationCounts": {
+    "legacyInputSurfaces": 15923,
+    "accountedInputSurfaces": 15923,
+    "unaccountedInputSurfaces": 0,
+    "baselineArchiveObjects": 15923,
+    "researchEligibleObjects": 7995,
+    "traceEligibleObjects": 0,
+    "heldObjects": 7928,
+    "rejectedObjects": 0
+  },
+  "candidateFieldObservations": {
+    "surfaceId": {
+      "present": 15923,
+      "missing": 0,
+      "unique": 15923
+    },
+    "sourceRecordId": {
+      "present": 15923,
+      "missing": 0,
+      "unique": 15923
+    },
+    "traceTier": {
+      "source_verified": 7995,
+      "metadata_supported": 2971,
+      "missing_or_blank": 4957,
+      "unknown_nonblank": 0
+    },
+    "traceState": {
+      "accepted": 15923,
+      "missing": 0,
+      "eligibilityImplication": "NONE"
+    },
+    "traceReviewState": {
+      "accepted": 12938,
+      "accepted_direct_institutional_record": 5,
+      "accepted_direct_institutional_reattachment": 7,
+      "accepted_source_verified": 2,
+      "accepted_metadata_supported": 2971,
+      "missing": 0,
+      "eligibilityImplication": "NONE_WITHOUT_EXPLICIT_TIER"
+    },
+    "traceInfluenceState": {
+      "not_inferred": 15923,
+      "other": 0,
+      "automaticInfluenceInference": 0
+    },
+    "traceTreeId": {
+      "present": 15923,
+      "missing": 0,
+      "uniqueTrees": 30,
+      "role": "LEGACY_PROJECTION_CROSSWALK_ONLY"
+    },
+    "traceObjectNodeId": {
+      "present": 15923,
+      "missing": 0,
+      "unique": 15923,
+      "role": "LEGACY_PROJECTION_CROSSWALK_ONLY"
+    },
+    "traceEdgeReferences": {
+      "occurrences": 126822,
+      "unique": 126822,
+      "rowsWithZero": 0,
+      "minimumPerSurface": 2,
+      "maximumPerSurface": 31,
+      "rowsWhereEdgeIdsAndEdgeLabelsCannotBePositionallyZipped": 9393,
+      "role": "OPAQUE_LEGACY_PROJECTION_REFERENCES"
+    }
+  },
+  "missingnessObservations": [
+    {
+      "observationId": "MISS-RESEARCH-TIER-UNKNOWN-001",
+      "dimension": "explicit_research_evidence_tier",
+      "reasonClass": "not_collected_or_unknown",
+      "disposition": "HELD",
+      "denominator": 15923,
+      "count": 4957,
+      "rate": 0.3113106827,
+      "method": "Count candidate rows where trace.tier is absent or blank; do not apply the legacy accepted-to-source_verified fallback.",
+      "confidence": "exact_row_count",
+      "promotionRule": "Requires row-specific authoritative evidence and a governed decision; SQLite or TRACE fallback cannot resolve it."
+    },
+    {
+      "observationId": "MISS-RESEARCH-METADATA-INSUFFICIENT-001",
+      "dimension": "strict_research_evidence_threshold",
+      "reasonClass": "metadata_insufficient",
+      "disposition": "HELD",
+      "denominator": 15923,
+      "count": 2971,
+      "rate": 0.1865854424,
+      "method": "Count candidate rows with explicit trace.tier=metadata_supported.",
+      "confidence": "exact_row_count",
+      "promotionRule": "Metadata support alone does not establish source-bounded research eligibility; promotion needs authoritative row evidence and review."
+    },
+    {
+      "observationId": "MISS-TRACE-CLAIM-RELATION-001",
+      "dimension": "eligible_accepted_semantic_relation_or_claim",
+      "reasonClass": "not_collected_or_unknown",
+      "disposition": "HELD",
+      "denominator": 15923,
+      "count": 15923,
+      "rate": 1.0,
+      "method": "Require an accepted registered semantic relation supported by an eligible claim/evidence path. Candidate edge IDs, labels, tree IDs and node IDs are legacy projection crosswalks only.",
+      "confidence": "exact_policy_application",
+      "promotionRule": "No object becomes TRACE-eligible until the governed relation/claim transformation exists and passes the relation registry and epistemic gates."
+    }
+  ],
+  "researchDisposition": {
+    "eligible": {
+      "reasonCode": "EXPLICIT_SOURCE_VERIFIED_TIER",
+      "count": 7995,
+      "surfaceIdSetSha256": "e474377554ee061f3b7b8953ed0715f131874d1dc3b3e9cb130e3035bb987882"
+    },
+    "held": {
+      "reasonCodes": {
+        "MISSING_EXPLICIT_EVIDENCE_TIER": 4957,
+        "METADATA_SUPPORTED_BELOW_STRICT_EVIDENCE_THRESHOLD": 2971
+      },
+      "count": 7928,
+      "surfaceIdSetSha256": "b5b9e59ccbfbb07bf8493890216ddb18d57b2bb89fbd4d566fcc6944cbbd2c91"
+    },
+    "rejected": {
+      "count": 0,
+      "surfaceIdSetSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "traceDisposition": {
+    "eligible": {
+      "count": 0,
+      "surfaceIdSetSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "held": {
+      "reasonCode": "NO_ELIGIBLE_ACCEPTED_SEMANTIC_RELATION_OR_CLAIM",
+      "count": 15923
+    },
+    "graphFactContext": {
+      "legacyProjectionOnly": 217554,
+      "computedAssociationWithoutGovernedRun": 6004,
+      "heldUnsupported": 32137,
+      "unclassified": 0,
+      "totalGraphEdges": 255695,
+      "source": "03_GRAPH_FACT_CLASSIFICATION_RULES.json and 04_GRAPH_FACT_RECONCILIATION.json"
+    }
+  },
+  "derivedProductReconciliation": {
+    "search": {
+      "items": 8636,
+      "uniqueIds": 8636,
+      "candidateIntersection": 2585,
+      "searchOnly": 6051,
+      "candidateOnly": 13338,
+      "union": 21974,
+      "researchEligibleAndSearch": 80,
+      "researchEligibleNotSearch": 7915,
+      "heldAndSearch": 2505,
+      "heldNotSearch": 5423,
+      "interpretation": "Search presence or absence is derived-product reconciliation, not research eligibility or research missingness. Search-only IDs do not create canonical objects."
+    },
+    "review": {
+      "items": 4425,
+      "uniqueSurfaceIds": 4425,
+      "candidateIntersection": 0,
+      "interpretation": "Separate legacy review/authority-hold layer outside the 15,923 baseline; it does not enter the baseline object ledger."
+    },
+    "auxiliary": {
+      "items": 11,
+      "uniqueObjectIds": 11,
+      "interpretation": "Separate count-ineligible legacy adjunct layer outside the 15,923 baseline; catalog presence does not promote it."
+    }
+  },
+  "setHashContract": {
+    "algorithm": "SHA-256 over the UTF-8 byte stream of unique identifiers sorted lexicographically, each followed by LF.",
+    "browseBaselineSurfaceIds": "7bae71cb2915a6ea6a9c9c43024a0a84bab5200edffad96298f398a7b8053d46",
+    "accountedSurfaceIds": "7bae71cb2915a6ea6a9c9c43024a0a84bab5200edffad96298f398a7b8053d46",
+    "searchSurfaceIds": "05bfd0a89fd050222c4ad77bdd90bf479313a1fd0f058053be287e284b7089e8",
+    "reviewSurfaceIds": "fba41eb91a214973881fddef255601048a011d607bbf59ae786982ee925001ae",
+    "auxiliaryObjectIds": "64fefa9566f36714587f619997b2a77c000773198d8eef6ca7c6f52eecf77a37"
+  },
+  "knownNonMissingnessDeltas": [
+    {
+      "code": "METADATA_SUPPORTED_META_SCALAR_STALE",
+      "candidateRowCount": 2971,
+      "frozenMetaScalar": 2970,
+      "rowMembershipAndTraceCatalogSymmetricDifference": 0,
+      "interpretation": "The aggregate scalar has no member list and cannot identify an extra surface; row-level candidate membership is authoritative."
+    },
+    {
+      "code": "LEGACY_SOURCE_VERIFIED_FALLBACK_PROHIBITED",
+      "candidateExplicitSourceVerified": 7995,
+      "candidateBlankTier": 4957,
+      "derivedSQLiteSourceVerified": 12952,
+      "interpretation": "The SQLite count includes an old accepted+blank fallback. It is reconciliation evidence and cannot upgrade the 4,957 blank candidate rows."
+    }
+  ],
+  "unmeasuredWithoutGuessing": [
+    {
+      "dimension": "provider_and_source_family_concentration",
+      "reason": "Requires a normalized governed source/provider registry; source-record prefixes or URL hosts are not substituted as authoritative provider identity.",
+      "priority": "P1"
+    },
+    {
+      "dimension": "visual_rights_display_missingness",
+      "reason": "Explicitly excluded from A4 and owned by the independent visual-registry/rights closure.",
+      "priority": "OUT_OF_SCOPE"
+    }
+  ],
+  "invariants": {
+    "catalogPresenceImpliesResearchEligibility": false,
+    "searchPresenceImpliesResearchEligibility": false,
+    "traceLegacyProjectionImpliesTraceEligibility": false,
+    "acceptedWorkflowOrTraceStateImpliesResearchEligibility": false,
+    "derivedProductsMayResolveCandidateMissingness": false,
+    "unknownOrBlankEvidenceTierFailsClosed": true,
+    "automaticInfluenceInference": 0,
+    "target20000IsAcceptanceGate": false
+  }
+}

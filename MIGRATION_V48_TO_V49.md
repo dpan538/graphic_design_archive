@@ -101,8 +101,9 @@ Compare canonical/projection queries with frozen v48. Every metric is assigned t
 **Canonical parity**
 
 - 15,923 canonical JSON rows / operational archive objects;
-- 12,952 `source_verified` rows;
-- 2,971 row-level `metadata_supported` rows, with the manifest/meta value 2,970 retained as a known one-row evidence conflict that must be explained rather than silently normalized.
+- 7,995 rows with explicit candidate `trace.tier=source_verified`;
+- 4,957 rows with missing candidate `trace.tier`, preserved and fail-closed rather than silently normalized;
+- 2,971 rows with explicit candidate `trace.tier=metadata_supported`. The candidate row set, immutable SQLite set and TRACE catalog set are identical; the candidate meta scalar 2,970 is retained as a stale aggregate with no competing member set.
 
 **Graph parity**
 
@@ -112,6 +113,7 @@ Compare canonical/projection queries with frozen v48. Every metric is assigned t
 
 **Derived reconciliation**
 
+- 12,952 SQLite/TRACE rows normalized to `source_verified` by the legacy accepted-row fallback (= 7,995 explicit candidate rows + 4,957 missing-tier rows); this derived value cannot backfill the canonical tier or establish research eligibility;
 - 8,636 archive Search artifact IDs and 15,923 canonical JSON/active TRACE IDs;
 - exact population boundary: intersection 2,585, Search-only 6,051, TRACE-only 13,338, union 21,974;
 - 4,425 review/authority-hold objects and 11 auxiliary objects, outside the active operational cohort;
@@ -124,7 +126,7 @@ Compare canonical/projection queries with frozen v48. Every metric is assigned t
 
 The 6,051 Search-only rows are reconciled as derived-product exclusions and are not imported. A v49 Search projection is generated from the sealed canonical cohort; 8,636 is not a canonical-row or future Search-result parity target.
 
-Exit: exact canonical and graph parity or an explicit, reviewed delta ledger for every difference, plus exact derived-population set reconciliation. The known 2,970/2,971 conflict and the inability to regenerate the v48 graph solely from the current canonical JSON are blocking delta-ledger items until resolved. Historical aspiration is recorded but never compared as parity. Any unexplained delta prevents promotion; it is not rounded away or relabeled.
+Exit: exact canonical and graph parity or an explicit, reviewed delta ledger for every difference, plus exact derived-population set reconciliation. The 2,970/2,971 aggregate mismatch is resolved only when the three measured 2,971 member sets remain identical and the stale scalar is retained; it must never be presented as a fabricated one-row symmetric difference. Missing candidate tiers and the inability to regenerate the v48 graph solely from the current canonical JSON remain fail-closed until their explicit ledgers resolve them. Historical aspiration is recorded but never compared as parity. Any unexplained delta prevents promotion; it is not rounded away or relabeled.
 
 ### M7 — Immutable research release, visual registry, and read API
 

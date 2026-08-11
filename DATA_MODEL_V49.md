@@ -298,9 +298,10 @@ Migration must preserve the following measured evidence while keeping four count
 | Metric | Exact v48 value |
 |---|---:|
 | Operational archive objects / canonical JSON rows | 15,923 |
-| Source verified | 12,952 |
-| Metadata supported, row-level | 2,971 |
-| Metadata supported, manifest/meta declaration | 2,970 (known conflict) |
+| Candidate rows with explicit `trace.tier=source_verified` | 7,995 |
+| Candidate rows with missing `trace.tier` | 4,957 |
+| Candidate rows with explicit `trace.tier=metadata_supported` | 2,971 |
+| Candidate meta scalar `traceMetadataSupportedCount` | 2,970 (stale aggregate; not a row set) |
 
 ### Graph parity
 
@@ -321,13 +322,14 @@ Migration must preserve the following measured evidence while keeping four count
 |---|---:|
 | Review/authority hold objects | 4,425 |
 | Auxiliary objects | 11 |
+| SQLite/TRACE rows normalized to `source_verified` by the legacy accepted-row fallback | 12,952 (= 7,995 explicit + 4,957 missing tier) |
 | Archive Search IDs | 8,636 |
 | Canonical/TRACE ∩ Search | 2,585 |
 | Search-only derived IDs | 6,051 |
 | Canonical/TRACE-only IDs | 13,338 |
 | Canonical/TRACE ∪ Search IDs | 21,974 |
 
-`255,695` and `126,822` are different projection units and cannot share one label. The 8,636 Search rows, 4,425 review rows and 11 auxiliary rows are reconciliation populations, not canonical additions. The 2,970/2,971 `metadata_supported` conflict must remain in the delta ledger. The historical 20,000 portfolio goal and derived remaining 4,077 are preserved only as historical aspiration; they are not migration, freeze, release, promotion or quality requirements. Exact file hashes and release asset counts are normative in `ACCEPTANCE_GATES.md`.
+`255,695` and `126,822` are different projection units and cannot share one label. The 8,636 Search rows, 4,425 review rows and 11 auxiliary rows are reconciliation populations, not canonical additions. The candidate row set, immutable SQLite set and TRACE catalog set contain the same 2,971 `metadata_supported` IDs; the 2,970 value is a stale aggregate scalar with no competing member set. Likewise, 12,952 is a legacy derived normalization, not a lexical candidate tier or automatic research-eligibility population. The 4,957 missing-tier rows remain fail-closed until governed evidence supports a research disposition. The historical 20,000 portfolio goal and derived remaining 4,077 are preserved only as historical aspiration; they are not migration, freeze, release, promotion or quality requirements. Exact file hashes and release asset counts are normative in `ACCEPTANCE_GATES.md`.
 
 ## Physical-design boundary
 
