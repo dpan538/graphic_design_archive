@@ -1,0 +1,112 @@
+{
+  "schema": "v49.phase1d-final-manifest/v1",
+  "packageVersion": "1.0.0",
+  "branch": "refactor/v49-data-platform",
+  "initialCommit": "967cbe34a8f30f8e74fa117e1bdee74644f71afe",
+  "decisionCommit": "f75ded85000749beb4735fbbddcce99e9395b0b2",
+  "cleanupCommit": "2d8cde543e68169bb62af59cc46ec57eaf7b046e",
+  "frozenSourceAncestor": "0404c7f96f9189f576c4c5b1368061e4082e436b",
+  "scope": {
+    "phase": "v49 Phase 1D",
+    "decisionBoundary": "rights_visual_registry_machine_contract",
+    "cleanupBoundary": "reversible_scoped_static_verified",
+    "jointVerifier": "independent",
+    "databaseImplemented": false,
+    "freezeReady": false,
+    "promotionReady": false,
+    "deploymentReady": false
+  },
+  "inputPackages": [
+    {
+      "name": "v49-authority-research-delta",
+      "manifestPath": "docs/audits/v49-authority-research-delta/MANIFEST.json",
+      "manifestSha256": "925efaf84b7a38c18beb0726968354dbe087819fa322031812134c39e7a911de",
+      "checksumsPath": "docs/audits/v49-authority-research-delta/CHECKSUMS.sha256",
+      "checksumsSha256": "51f0657ef52d25369cc1c3785673a3a8588c702a0ec6f140ee2816407aebd23b",
+      "authorityResearchDeltaClosed": true
+    },
+    {
+      "name": "v49-rights-machine",
+      "manifestPath": "docs/audits/v49-rights-machine/MANIFEST.json",
+      "manifestSha256": "69e8a78bf30d5af40527b90ab00353ce0aee04595ae9e6c337182455a84f0536",
+      "checksumsPath": "docs/audits/v49-rights-machine/CHECKSUMS.sha256",
+      "checksumsSha256": "562b955a79f31dfea9fb23cdf67407d17a4563100997ee82c46fcfca8a998c24",
+      "formalVerifierChecksPassed": 219,
+      "formalVerifierChecksFailed": 0
+    },
+    {
+      "name": "v49-runtime-cleanup",
+      "manifestPath": "docs/audits/v49-runtime-cleanup/MANIFEST.json",
+      "manifestSha256": "3232a52dcd374ad930c676e50bde618f11497eecce7e28b2831ca905f48be200",
+      "checksumsPath": "docs/audits/v49-runtime-cleanup/CHECKSUMS.sha256",
+      "checksumsSha256": "8f13c4151c9e29e2886e1ed0b885984255f4a853c06083890f5613e3031a9c06",
+      "originalVerifierChecksPassed": 38,
+      "originalVerifierChecksFailed": 0
+    }
+  ],
+  "rightsVisualMetrics": {
+    "legacyInputBundles": 15923,
+    "inventoriedPercent": 100.0,
+    "typedPercent": 100.0,
+    "referenceBearingBundles": 15788,
+    "noVisualReferenceBundles": 135,
+    "locatorOccurrences": 15790,
+    "distinctLocatorValues": 15788,
+    "positiveRightsCount": 0,
+    "positiveRightsDenominator": 15788,
+    "positiveRightsPercent": 0.0,
+    "unclassifiedVisualReference": 0
+  },
+  "cleanupGates": {
+    "aiRuntimeRetired": true,
+    "qwenRuntimeImports": 0,
+    "activeAssistantRoutes": 0,
+    "modelRuntimeProductionImports": 0,
+    "dormantBulkRouteGenerators": 0,
+    "bulkRouteRegressionBlocked": true,
+    "deterministicSearchPreserved": true,
+    "a4VisualComponentsPreserved": true,
+    "safeDeleteExecuted": "docs/.DS_Store",
+    "otherUntrackedDeleted": 0,
+    "deferredCleanupCount": 9,
+    "typescript": "not_run_toolchain_absent"
+  },
+  "jointGates": {
+    "authorityResearchDeltaClosed": true,
+    "rightsVisualDecisionsLocked": true,
+    "machineContractDecisionsLocked": true,
+    "dualReleaseModelLocked": true,
+    "takedownAndCasRulesLocked": true,
+    "engineeringPreDdlReady": true,
+    "researchSemanticsPreDdlReady": true,
+    "rightsVisualPreDdlReady": true,
+    "machineContractPreDdlReady": true,
+    "overallPreDdlReady": true,
+    "decisionResidualP0": 0,
+    "decisionResidualP1": 0,
+    "decisionResidualP2": 0
+  },
+  "downstreamGates": {
+    "databaseImplemented": false,
+    "freezeReady": false,
+    "promotionReady": false,
+    "deploymentReady": false
+  },
+  "processReceipt": {
+    "taskOwnedResidualProcesses": 0,
+    "preExistingSystemNodeProcessesObserved": 1,
+    "preExistingSystemPostgresProcessesObserved": 5
+  },
+  "artifacts": [
+    {
+      "path": "docs/audits/v49-phase1d-final/00_JOINT_PRE_DDL_GATE_RECEIPT.md",
+      "bytes": 18015,
+      "sha256": "3513942c446da62151d5ddd9925735530f238c66e8a1abcc1eb5a1a1b29726f7"
+    },
+    {
+      "path": "docs/audits/v49-phase1d-final/01_PHASE1D_FINAL_LOCAL_RECEIPT.md",
+      "bytes": 8456,
+      "sha256": "28ed644bbcca0f50595035bd656cce2b006a23e07f3abe6699e0b21caf2f6482"
+    }
+  ]
+}
