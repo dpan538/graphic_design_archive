@@ -87,51 +87,52 @@ Source concentration and coverage are release- and corpus-scoped analyses. They 
 
 ## Decision 5: research release and visual registry are independent
 
-Every visual-bearing machine response binds two immutable identities:
+Every successful research response binds the exact research pair and atomically carries either an exact compatible visual pair or two null visual fields:
 
 ```text
 researchReleaseId
 researchManifestSha256
 visualRegistryVersion
-registrySha256
+visualRegistrySha256
 ```
 
-The research release contains scholarly object, claim, semantic relation, corpus, TRACE, Search, and non-visual read projections. The visual registry contains external visual references, provider objects/endpoints, rights observations and assessments, provider-policy snapshots, delivery decisions, endpoint-health observations, attribution/required statements, review due/stale state, and takedown overlays.
+The research release contains scholarly object, claim, semantic relation, corpus, TRACE, Search, and non-visual read projections. The visual registry contains external visual references and object-reference bridges, provider objects and typed locators, rights observations and assessments, provider-policy versions and evaluations, delivery decisions, endpoint-health observations, attribution/required statements, review due/stale state, and takedown overlays. Third-party pixel locators never enter the research release.
 
-Each has its own `draft → candidate → validated → sealed` lifecycle, canonical manifest bytes/hash, detached post-seal receipt, immutable assets/projections, and `current` pointer updated only by CAS. A visual registry declares the exact compatible research pair. Runtime resolves both pointers once, validates compatibility, and then uses exact pairs; cross-pair fallback is prohibited.
+Each has its own `draft → candidate → validated → sealed` lifecycle, canonical manifest bytes/hash, detached post-seal receipt, immutable assets/projections, and `current` pointer updated only by CAS. A visual registry declares exactly one compatible research pair. Runtime resolves pointers once and uses exact pairs. A missing compatible registry yields a normal research-only response with no locator; an explicitly selected incompatible pair is a typed mismatch. Cross-pair fallback is prohibited.
 
-A visual-policy, health, or takedown change never rewrites a sealed research release. A research release never treats a mutable visual endpoint as content authority.
+A visual-policy, health, or takedown change never rewrites a sealed research release. A research release never treats a mutable visual locator as content authority.
 
-## Decision 6: external visual identity and three orthogonal axes
+## Decision 6: external visual identity and five orthogonal decision records
 
-External visual references have stable internal identity and typed links to provider namespace/object ID, canonical record URL, IIIF manifest, viewer, canvas, thumbnail, Image API service/info document, direct source image, and any governed local asset/derivative. URLs and redirects are locators/observations, not identity or permission.
+An external visual reference is a provenance-occurrence identity, unique on source artifact, record, field/JSON pointer and occurrence ordinal. It has a typed N:M bridge to archive objects and zero or one resolved provider object. Typed immutable locators distinguish canonical record, source viewer, provider embed, IIIF manifest/canvas/Image API/info, thumbnail, direct image and governed local asset roles. URLs and redirects are locators/observations, not identity or permission. Observation/assessment/takedown subjects use closed exactly-one subtype families with real FKs; arbitrary `target_type + target_id` is prohibited.
 
-The three independent axes are:
+The five independent decision records are:
 
-1. **Rights assessment** — what evidence supports, including `unknown`, `missing`, `conflict`, `stale`, restrictive states, and positively evidenced permissions.
-2. **Delivery mode** — what this project will return, such as `CITATION_ONLY`, `LINK_ONLY`, governed provider embed/viewer, governed remote thumbnail/image, or governed local derivative/original.
-3. **Endpoint health** — time-bound technical observation such as unknown, healthy, redirected, degraded, missing, blocked, error, or stale observation.
+1. **Rights evidence and assessment** — immutable observations plus a reviewed assessment, including `unknown`, `missing`, `conflict`, `stale`, restrictive states and positively evidenced permissions.
+2. **Provider policy and evaluation** — immutable policy-version evidence plus its application to one object–visual use; it is not folded into rights assessment.
+3. **Delivery decision** — the project return mode: `BLOCKED`, `CITATION_ONLY`, `LINK_ONLY`, `SOURCE_VIEWER`, or `REMOTE_IMAGE`, with explicit support and reason code.
+4. **Endpoint health** — time-bound technical observation for one typed locator; it can only retain or reduce delivery.
+5. **Takedown state** — append-only event, typed scope and monotonic restrictive override; an active override always wins.
 
 No axis implies another. API availability, IIIF presence, redirect success, endpoint health, metadata openness, source reputation, discovery signal, LLM summary, or visual similarity never grants pixel delivery.
 
-`unknown`, `missing`, `conflict`, or `stale` rights/provider state fails closed to `LINK_ONLY` or `CITATION_ONLY`. Pixel, thumbnail, image-service, and embed endpoints are omitted from the projection. An append-only takedown override is monotonic restrictive, immediately wins over sealed registry delivery, records scope/evidence/actor/effective time, and is incorporated into the next registry version.
+`unknown`, `missing`, `conflict`, or `stale` rights/provider-policy state fails closed to `LINK_ONLY` or `CITATION_ONLY`. Only `REMOTE_IMAGE` may expose the v1 allowlisted remote-pixel locator; lower modes structurally omit pixel, thumbnail, image-service and embed fields. Positive remote delivery also requires complete attribution and qualified locator health. An active takedown forces `BLOCKED` or `CITATION_ONLY`, overlays sealed delivery with a deterministic digest, and is incorporated into the next registry version without rewriting old bytes.
 
 ## Decision 7: stable machine identity
 
-The canonical URI namespace is version-independent and class-specific:
+Canonical project identity is domain-independent, version-independent and class-specific:
 
 ```text
-https://modern-gd-history.example/id/object/{archiveObjectId}
-https://modern-gd-history.example/id/relation/{semanticRelationId}
-https://modern-gd-history.example/id/claim/{claimId}
-https://modern-gd-history.example/id/corpus/{corpusId}/version/{corpusVersion}
-https://modern-gd-history.example/id/research-release/{researchReleaseId}
-https://modern-gd-history.example/id/visual-registry/{visualRegistryVersion}
+urn:gdarchive:object:<lowercase-uuid>
+urn:gdarchive:relation:<lowercase-uuid>
+urn:gdarchive:claim:<lowercase-uuid>
+urn:gdarchive:source:<lowercase-uuid>
+urn:gdarchive:visual-reference:<lowercase-uuid>
 ```
 
-Public surface routes are resolvers/aliases and do not replace canonical object URIs. Merge, split, withdrawal, and redirect history remains addressable and release-projected.
+Public routes are resolvers/aliases and do not replace canonical URNs. Exact release occurrences use the `urn:gdarchive:research-snapshot:...` or `urn:gdarchive:visual-snapshot:...` grammar fixed by the Phase 1D stable-ID policy. Merge, split, withdrawal and redirect history remains addressable and release-projected. The frozen `.example` strings in the v48 UUIDv5 recipe remain exact non-resolvable seed inputs only. Until one governed `PUBLIC_CANONICAL_ORIGIN` is approved, output uses URNs and relative routes rather than pretending that a placeholder is final.
 
-Machine publication requires versioned JSON Schemas for manifests and API envelopes; JSON-LD context and canonical alternates; explicit Linked Art and PROV-O mappings; a DCAT dataset/distribution representation for releases; a release diff/change feed; sitemap/robots policy; and GET/HEAD/OPTIONS-only `/api/v1`. Machine shapes must prove that fail-closed visual states expose no rights-held pixel or image-service URL.
+The pre-DDL contract requires a GET/HEAD/OPTIONS-only boundary, exact pair identity, class-specific stable IDs, `SAFE`/`PUBLIC`/`INTERNAL`/`HELD` field classes, a positive serializer allowlist and structural omission of held locators. Actual JSON Schemas, OpenAPI, JSON-LD/canonical alternates, Linked Art/PROV-O, DCAT, diff/change feed, sitemap/robots and crawlability are later pre-freeze or pre-promotion implementation gates.
 
 ## Decision 8: count taxonomy
 
@@ -146,15 +147,9 @@ Historical aspiration is preserved in frozen evidence but is never a migration, 
 
 ## Readiness and consequences
 
-This ADR closes the requested **normative vocabulary and identity direction**. It does not make the repository pre-DDL ready by itself. Physical DDL remains blocked until all of the following have passing evidence:
+Phase 1C supplies passing authority/count/research evidence: all 15,923 inputs are accounted, the stale metadata scalar is reconciled without inventing a row delta, and unclassified graph/raw counts are zero. Phase 1D supplies the typed 100% legacy visual baseline, identities/cardinalities, five-record rights model, dual release/CAS rules, stable URNs, field classes and fail-closed serializer contract. Physical DDL remains blocked only until the independent joint receipt verifies that those decision packages and normative documents have no unresolved authority, identity, cardinality, state, version or serialization conflict and that the legacy runner remains excluded.
 
-1. zero unclassified legacy graph facts in the authority delta ledger;
-2. complete provider/raw artifact redaction, terms, rights, and license disposition;
-3. the known 2,970/2,971 metadata delta encoded as an explicit reconciliation exception with row-level authority;
-4. exact role attributes, grants/default privileges, negative privilege tests, and migration execution boundary;
-5. legacy `db/*.sql` and `scripts/run_db_migrations.py` excluded by a v49 execution deny gate;
-6. repository hygiene, research/data-quality, visual-federation, and machine-contract gates accepted;
-7. no reuse of legacy fail-open relation or IMG/IIIF delivery fallbacks.
+Positive provider authorization, complete artifact-level redistribution clearance, actual DDL/API/OpenAPI/JSON Schema/JSON-LD/DCAT, CI, deployment, frontend Repository adoption, production health service and browser QA are later implementation gates. Their absence keeps freeze/promotion/deployment false but is not an empty-schema blocker.
 
 Until then:
 
@@ -162,6 +157,7 @@ Until then:
 ENGINEERING_PRE_DDL_READY=false
 RESEARCH_SEMANTICS_PRE_DDL_READY=false
 RIGHTS_VISUAL_PRE_DDL_READY=false
+MACHINE_CONTRACT_PRE_DDL_READY=false
 OVERALL_PRE_DDL_READY=false
 DATABASE_IMPLEMENTED=false
 DATABASE_FREEZE_READY=false

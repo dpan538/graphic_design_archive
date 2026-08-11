@@ -1,6 +1,6 @@
 # v49 data platform architecture baseline
 
-- Status: Architecture baseline plus Phase 1A decisions and Phase 1B audit calibration; pre-DDL readiness remains false
+- Status: Phase 1C authority/research closure and Phase 1D rights/machine decisions integrated; joint pre-DDL verification pending
 - Baseline date: 2026-08-11
 - Recovered source commit: `0404c7f96f9189f576c4c5b1368061e4082e436b`
 - Working branch: `refactor/v49-data-platform`
@@ -42,7 +42,7 @@ The v49 architecture treats those blockers as cutover gates, not as reasons to m
 3. PostgreSQL becomes canonical for v49 only after reconciliation and promotion gates pass.
 4. Raw artifact bytes and SHA-256 are lexical authority. JSONB is a parsed projection and cannot certify or replace those bytes.
 5. Every normalized value keeps a link to the raw literal, source locator, transformation, and review decision when applicable.
-6. Research data is addressed by exact `researchReleaseId + researchManifestSha256`; external visual delivery is addressed independently by `visualRegistryVersion + registrySha256`. No consumer silently mixes either pair.
+6. Research data is addressed by exact `researchReleaseId + researchManifestSha256`; external visual delivery is addressed independently by the optional atomic pair `visualRegistryVersion + visualRegistrySha256`. No consumer silently mixes either pair, and registry absence never invalidates the research record.
 7. Unknown relation types, rights ambiguity, schema mismatch, or hash mismatch fail closed.
 8. Browser and UI code never import a database driver, raw provider payload, full canonical dump, manifest decoder, or shard decoder.
 9. Visual components do not change in this architecture checkpoint.
@@ -82,7 +82,7 @@ Arrows represent governed derivation or reads. They do not imply reverse writes.
 | `raw` | Exact payload bytes/JSON, source artifact hash, capture event, original field literal. | Normalized truth, public display decision, inferred relation family. |
 | `core` | FK-backed entity supertype/subtypes, stable objects, agents, places, concepts, collections, temporal extents, typed joins. | Provider payloads, review queues, UI formatting, unconstrained polymorphic IDs. |
 | `provenance` | Source records, field assertions, evidence spans/URLs, citations, transformations, capture branches. | Final rights policy or mutable presentation state. |
-| `rights` | External visual/provider identity, typed endpoint roles, rights observations/assessments, provider policy, delivery mode, endpoint health, attribution, review due and takedown evidence. | Object identity, research relation inference, or treating technical access as authorization. |
+| `rights` | External visual/provider identity, object-reference bridges, typed locator roles, rights observations/assessments, provider-policy versions/evaluations, delivery decisions, endpoint-health observations, attribution, review due and takedown evidence. | Object identity, research relation inference, arbitrary polymorphic targets, or treating technical access as authorization. |
 | `research` | Claimants and epistemic claims, normalized semantic relations, versioned corpora/missingness, analysis runs, TRACE projections, folders and dossiers. | Unregistered relation fallback, ingestion state, UI state, or conflating projection with claim. |
 | `workflow` | Import/review runs, queued/quarantined rows, decisions, gate receipts, promotion attempts, idempotency. | Public read models or sealed release bytes. |
 | `release` | Independent immutable research releases and visual registries, copied projections, manifests, seal receipts, compatibility pins and CAS pointers. | Canonical editing, mutable `latest` content, or cross-pair fallback. |
@@ -114,7 +114,7 @@ The normative identity/cardinality ledger is `docs/architecture/DDL_DECISION_PAC
 - typed bridges instead of `target_type + target_id`;
 - separate assertions, canonical assignments, evidence, review cases, and curator decisions;
 - directed TRACE projection and object/semantic-relation membership natural keys, with projection, semantic-relation, and claim identities kept distinct;
-- publication layer, workflow state, acceptance state, epistemic class, rights assessment, delivery mode, endpoint health, and metric-specific count eligibility as orthogonal axes.
+- publication layer, workflow state, acceptance state, epistemic class, rights assessment, provider-policy evaluation, delivery mode, endpoint health, takedown state, and metric-specific count eligibility as orthogonal axes.
 
 Measured population boundaries are also normative: canonical JSON and active TRACE contain the same 15,923 IDs; legacy archive Search contains 8,636 IDs, with intersection 2,585, Search-only 6,051, and TRACE-only 13,338. Search-only derived rows are not migration input.
 
@@ -122,7 +122,7 @@ ADR 0004 is normative for Phase 1B: the Browse Index contains operational catalo
 
 ## Read path and `ArchiveRepository`
 
-The frontend receives an async, release-bound repository. Its provider resolves an exact research release and, for visual-bearing resources, an exact compatible visual registry. After resolution every request, cursor, cache key, ETag and log binds both exact pairs.
+The frontend receives an async, release-bound repository. Its provider always resolves an exact research release and may resolve one exact compatible visual registry. A missing compatible registry is a normal research-only state: the research object remains usable and every visual locator is absent. An explicitly requested incompatible visual pair is a typed version-mismatch error and never falls back. Composed requests, cursors, cache keys, ETags and logs bind both exact pairs; research-only forms bind the exact research pair plus the explicit visual-unavailable reason.
 
 Required repository capabilities are overview, folder types/folders/members, surface detail, Search, TRACE atlas/object/neighborhood, relation types, semantic relations, claims, and corpora. It owns runtime schema/compatibility validation, exact-pair cache keys, request deduplication, cancellation, pagination, rights-safe projection, and typed error mapping.
 
@@ -151,7 +151,7 @@ Removing the current frontend fallback and proving these constraints is a future
 
 The research manifest covers Archive, Search, claims, semantic relations, corpora, TRACE projections, research registries and gate receipts. It records source lineage, database/migration/query-pack identities, exact counts, and every asset's schema, bytes, records, hash and partition.
 
-The visual-registry manifest independently covers external visual references, provider/endpoints, rights observations and assessments, provider policies, delivery decisions, endpoint health, obligations and takedown state. It pins one compatible research pair. A rights, health or takedown update creates a new visual-registry version or restrictive override; it never rewrites the research manifest.
+The visual-registry manifest independently covers external visual references, object-reference bridges, providers and provider objects, typed visual locators, rights observations and assessments, provider-policy versions and evaluations, delivery decisions, endpoint-health observations, obligations and takedown state. It pins exactly one compatible research pair. Rights evidence, provider-policy evaluation, delivery decision, endpoint health and takedown are separate records. Delivery uses the closed modes `BLOCKED`, `CITATION_ONLY`, `LINK_ONLY`, `SOURCE_VIEWER` and `REMOTE_IMAGE`; only `REMOTE_IMAGE` may expose an allowlisted remote-pixel locator. A rights, health or takedown update creates a new visual-registry version or restrictive override; it never rewrites the research manifest.
 
 Research shards carry their own `schemaVersion`, exact research identity/hash, resource kind, shard ID, deterministic partition, record count, records hash, and records; visual shards carry the exact visual identity/hash. Assets can reference only assets listed by their owning manifest. Cross-boundary references name both exact pairs and require declared compatibility. Missing or corrupt assets fail closed without cross-version fallback.
 
@@ -185,13 +185,13 @@ During the prototype stage, acceptance explicitly forbids full `next build`, ful
 - `api_v1` grants only `SELECT` to the runtime role; canonical schemas are not directly exposed.
 - Application roles own no objects. Allowlisted append/decision/seal/CAS operations alone may use hardened `SECURITY DEFINER`; ordinary reads and audit queries are invoker-rights.
 - Rights/provider policy is evaluated before visual-registry projection, then pinned by policy hash in that registry.
-- Logs and telemetry identify both exact research/visual pairs, API contract version, request ID and error code; they do not log restricted payloads.
+- Logs and telemetry always identify the exact research pair and identify the exact visual pair only when selected; research-only records carry the explicit visual state/reason. They also carry API contract version, request ID and error code, and never log restricted payloads.
 - Backups and restore drills are required before PostgreSQL promotion.
 - Rollback changes the pinned research and compatible visual descriptors or repository mode; it never edits either sealed boundary.
 
 ## Architecture completion boundary
 
-The normative corpus is internally calibrated when the ten documents below use the same identity/layer/release/repository terms and preserve exact v48 evidence. Phase 1B nevertheless leaves `ENGINEERING_PRE_DDL_READY`, `RESEARCH_SEMANTICS_PRE_DDL_READY`, `RIGHTS_VISUAL_PRE_DDL_READY`, and `OVERALL_PRE_DDL_READY` false until the evidence blockers in ADR 0004 and `ACCEPTANCE_GATES.md` close. The database, freeze, frontend promotion and deployment remain unimplemented.
+The normative corpus is internally calibrated when the documents below use the same identity/layer/release/repository terms and preserve exact v48 evidence. Phase 1C closed the authority/count/research decision delta; Phase 1D closes the rights/visual/machine decision delta. Until the independent joint verifier passes, `ENGINEERING_PRE_DDL_READY`, `RESEARCH_SEMANTICS_PRE_DDL_READY`, `RIGHTS_VISUAL_PRE_DDL_READY`, `MACHINE_CONTRACT_PRE_DDL_READY`, and `OVERALL_PRE_DDL_READY` remain false. PostgreSQL, migration, freeze, frontend promotion and deployment remain unimplemented regardless of that later pre-DDL result.
 
 ## Normative documents
 

@@ -1,6 +1,6 @@
 # v49 canonical data model
 
-- Status: Normative logical model calibrated by Phase 1B; physical DDL remains blocked
+- Status: Normative logical model calibrated by Phase 1C/1D; joint pre-DDL verification pending
 - Physical PostgreSQL migrations: not implemented
 - Source baseline: frozen v48 candidate at `0404c7f96f9189f576c4c5b1368061e4082e436b`
 - Normative pre-DDL decisions: `docs/architecture/DDL_DECISION_PACK_V49.md` and `docs/adr/0004-research-claims-corpora-and-visual-registry.md`
@@ -105,26 +105,31 @@ The initial closed assignment subtype codes are `entity_name`, `object_source_re
 
 ## `rights`
 
-The `rights` schema separates object existence, evidence-based assessment, project delivery and endpoint health.
+The `rights` schema separates object existence, evidence-based assessment, provider-policy evaluation, project delivery, endpoint health and takedown state.
 
 | Table | Purpose and key constraints |
 |---|---|
 | `rights.digital_representation` | Governed image/file identity, media type, dimensions and content hash; an external URL is never its identity or permission. |
 | `rights.object_representation` | Object–representation assignment with role, sequence, provenance and acceptance; release projection chooses publication layer separately. |
+| `rights.provider` | Stable governed provider namespace, unique on an immutable `provider_namespace_code`; labels and websites are versioned attributes. |
 | `rights.provider_object` | Provider namespace plus exact provider object ID and source-record evidence; unique within the provider namespace. |
-| `rights.external_visual_reference` | Stable reference identity linked to provider object/representation and provenance. |
-| `rights.visual_endpoint` | Typed endpoint role: canonical record, IIIF manifest/viewer/canvas/thumbnail/Image API service, direct source image or governed local asset. Redirects are observations, not identity. |
-| `rights.rights_observation` | Immutable time-bound observed literal/URI, source artifact/record, locator, hash, observer/method and observation time. |
+| `rights.external_visual_reference` | Stable provenance-occurrence identity, unique on `(source_artifact_id,source_record_id,source_field_or_json_pointer,occurrence_ordinal)`; it is not a URL, representation, permission or archive object. |
+| `rights.object_visual_reference` | N:M object–visual bridge, unique on `(archive_object_id,external_visual_reference_id,reference_role)`, with real FKs and provenance/acceptance support. It cannot create an archive object. |
+| `rights.visual_locator` | Immutable typed locator occurrence for canonical record, source viewer, embed, IIIF roles, thumbnail, direct image or governed local asset. Redirects are observations, not identity. |
+| `rights.external_visual_representation` | N:M reference–governed-representation bridge with registered role; URL presence alone never creates a representation. |
+| `rights.rights_observation` | Immutable time-bound observed literal/URI, source artifact/record, locator, hash, observer/method and observation time, with exactly one closed typed-subject FK. |
 | `rights.rights_statement` | Registered rights URI/label, jurisdiction, license, credit, restrictions, evidence. |
 | `rights.representation_rights` | Representation–statement join with effective dates and assertion. |
 | `rights.provider_policy_version` | Immutable terms/policy snapshot, source/hash, scope, effective interval, review due, restrictions and supersession. |
-| `rights.rights_assessment` | Evidence-based assessment including `unknown`, `missing`, `conflict`, `stale`, restrictive and positively evidenced states. |
-| `rights.delivery_decision` | Independent project delivery mode, governing assessment/policy versions, reason and decision evidence. |
-| `rights.endpoint_health_observation` | Time-bound technical health/redirect/error observation; it never grants delivery. |
+| `rights.provider_policy_evaluation` | Versioned application of exact provider-policy versions to one object–visual bridge, including explicit unknown/missing/conflict/stale outcomes. |
+| `rights.rights_assessment` | Evidence-based assessment over exactly one closed typed subject; N:M observation bridges preserve supporting, contradicting and qualifying evidence. |
+| `rights.delivery_decision` | Independent decision for one object–visual bridge, with N:M assessment/policy-evaluation support, reason code and locator-role allowlist. |
+| `rights.endpoint_health_observation` | Time-bound technical observation for exactly one visual locator; it may only retain or lower effective delivery. |
 | `rights.attribution_bundle` | Ordered language-tagged credit and IIIF required-statement values with provenance. |
-| `rights.takedown_override` | Append-only monotonic restrictive overlay with scope, evidence, actor, effective time and supersession. |
+| `rights.takedown_event` / `rights.takedown_scope` | Append-only evidence/actor/effective-time event with one or more scopes; each scope has exactly one closed real-FK target subtype. |
+| `rights.takedown_override` | Append-only monotonic restrictive result for one scope; it can force only `BLOCKED` or `CITATION_ONLY`. |
 
-`unknown`, `missing`, `conflict` or `stale` rights/provider state fails closed to `LINK_ONLY` or `CITATION_ONLY`, and the projection omits pixel/thumbnail/service/embed endpoints. Rights assessment, delivery mode and endpoint health are independent. Permission never inherits from a sibling representation, endpoint availability or redirect success.
+`unknown`, `missing`, `conflict` or `stale` rights/provider-policy state fails closed to `LINK_ONLY` or `CITATION_ONLY`, and the projection omits pixel/thumbnail/service/embed locators. The closed delivery modes are `BLOCKED`, `CITATION_ONLY`, `LINK_ONLY`, `SOURCE_VIEWER` and `REMOTE_IMAGE`; only `REMOTE_IMAGE` may expose the v1 allowlisted remote-pixel locator. Rights assessment, provider-policy evaluation, delivery decision, endpoint health and takedown are independent. Permission never inherits from a sibling representation, endpoint availability, IIIF presence or redirect success. Observation, assessment and takedown subject families use exactly-one typed subtype rows with real FKs; arbitrary `target_type + target_id` is prohibited.
 
 ## `research`
 
@@ -199,11 +204,13 @@ Unknown relations, unresolved authority, rights conflicts, and reconciliation di
 | `release.gate_receipt` | Required gate run/receipt hash and promotion decision. |
 | `release.research_registry_snapshot` | Predicate/relation/epistemic/corpus policy hashes included by one research release. |
 | `release.visual_policy_snapshot` | Provider/rights/delivery policy hashes included by one visual registry. |
+| `release.visual_registry_entry` | Copied rights-safe entry unique on `(visual_registry_version_id,archive_object_id,external_visual_reference_id,reference_role)`, with a composite FK to the compatible research object projection. |
+| `release.visual_registry_entry_locator` | Copied public locator allowlist unique on `(visual_registry_entry_id,locator_role,ordinal)`; omitted unless the effective mode explicitly permits the role. |
 | `release.trace_projection_edge` | Copied research-release/corpus projection of one eligible semantic relation/claim into a directed TRACE-node triple; not claim or relation identity. |
 | `release.trace_edge_placement` | N:M projection-edge placement, unique on research release, edge, tree and branch. |
 | `release.object_relation_membership_projection` | Copied object–semantic-relation membership with corpus, publication layer and named-metric eligibility. |
 | `release.research_current_pointer` | Mutable channel pointer updated only by CAS to an exact sealed research pair, with append-only history. |
-| `release.visual_current_pointer` | Independent CAS pointer to an exact sealed visual-registry pair; compatibility with the selected research pair is mandatory. |
+| `release.visual_current_pointer` | Independent CAS pointer to an exact sealed visual-registry pair. Publication validates compatibility against the guarded research-current generation, but a later independent research advance may create an explicit fail-closed mismatch window. |
 | `release.*_projection` | Copied candidate/sealed rows keyed by research release or visual registry; never a live join to canonical tables. |
 
 Sealed rows are protected by privileges and triggers from `UPDATE`/`DELETE`. A release projection may denormalize data for reads, but it is never canonical input to `core` or `research`.
@@ -216,8 +223,10 @@ Sealed rows are protected by privileges and triggers from `UPDATE`/`DELETE`. A r
 | Acceptance state | `proposed`, `accepted`, `rejected`, `superseded` on assertions/assignments. `held` is not an acceptance state. |
 | Epistemic class | `documented_source_statement`, `scholarly_claim`, `computed_association`, `causal_interpretation` on research claims. |
 | Rights assessment | Evidence state in `rights`, including `unknown`, `missing`, `conflict`, `stale`, restrictive and positively evidenced states. |
-| Delivery mode | Independent project return mode in `rights`, including at least `CITATION_ONLY` and `LINK_ONLY`. |
+| Provider-policy evaluation | Independent application of exact policy-version evidence to one object–visual use. |
+| Delivery mode | Independent project return mode: `BLOCKED`, `CITATION_ONLY`, `LINK_ONLY`, `SOURCE_VIEWER`, or `REMOTE_IMAGE`. |
 | Endpoint health | Independent time-bound technical observation; never an authorization signal. |
+| Takedown state | Append-only restrictive overlay, independently scoped; an active override always wins and never widens delivery. |
 | Publication layer | `active`, `review`, `auxiliary`, `excluded` in a release projection. |
 | Count eligibility | Per `(release,metric,typed subject)` as eligible/ineligible plus reason; never one universal canonical boolean. |
 
@@ -245,9 +254,9 @@ No axis implies another. In particular, a workflow-queued unknown relation remai
 - `api_v1.research_claim`
 - `api_v1.research_corpus`
 
-Every row is keyed or partitioned by exact research release; visual-bearing rows also bind an exact compatible visual-registry version/hash. Runtime roles receive `SELECT` on these projections only. DTO validation and pixel/service-URL non-disclosure occur at the API/repository boundary.
+Every row is keyed or partitioned by exact research release. Rights-safe visual composition may additionally bind an exact compatible visual-registry version/hash; the visual pair is atomically present or absent. A missing compatible registry returns the complete research projection with an explicit unavailable reason and no locator. An explicitly requested incompatible pair fails as `RELEASE_VERSION_MISMATCH` without fallback. Runtime roles receive `SELECT` on these projections only. DTOs are built by positive allowlist, and held/internal/raw locator non-disclosure occurs before serialization rather than through frontend styling.
 
-Database snake-case columns project to the exact public pairs `(researchReleaseId,researchManifestSha256)` and `(visualRegistryVersion,registrySha256)`; no generic `version` or `releaseId` field may collapse them.
+Database snake-case columns project to the exact public pairs `(researchReleaseId,researchManifestSha256)` and `(visualRegistryVersion,visualRegistrySha256)`; internal `registry_sha256` maps to the single public `visualRegistrySha256` field. No generic `version` or `releaseId` field may collapse them.
 
 ## Multi-value text migration inventory
 

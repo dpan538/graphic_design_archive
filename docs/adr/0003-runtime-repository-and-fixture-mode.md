@@ -16,7 +16,7 @@ All archive reads pass through an `ArchiveRepository`. Repository DTOs are stabl
 
 `surfaceId` in that contract is the sealed public/legacy route identifier, not the internal canonical `archive_object_id`. Identity aliases, merges, splits, and withdrawals are resolved from the sealed release projection rather than mutable canonical tables.
 
-An instance is opened against one exact research-release pair and one exact compatible visual-registry pair. Resolving either `current` is a provider concern, occurs only once, and cannot substitute for compatibility validation.
+An instance is always opened against one exact research-release pair and may also select one exact compatible visual-registry pair. Resolving either `current` is a provider concern, occurs only once, and cannot substitute for compatibility validation. If no compatible registry is selected or available, the repository remains usable in an explicit research-only mode with no visual locator. An explicitly incompatible selector fails without fallback.
 
 ```ts
 type ResearchReleaseSelector =
@@ -24,7 +24,7 @@ type ResearchReleaseSelector =
   | { alias: "current" };
 
 type VisualRegistrySelector =
-  | { visualRegistryVersion: string; registrySha256: string }
+  | { visualRegistryVersion: string; visualRegistrySha256: string }
   | { alias: "current" };
 
 interface ResearchReleaseRef {
@@ -36,13 +36,16 @@ interface ResearchReleaseRef {
 
 interface VisualRegistryRef {
   visualRegistryVersion: string;
-  registrySha256: string;
+  visualRegistrySha256: string;
   schemaVersion: "archive-visual-registry/v1";
 }
 
 interface ArchiveVersionRef {
   research: ResearchReleaseRef;
-  visual: VisualRegistryRef;
+  visual: VisualRegistryRef | null;
+  visualState: "NOT_SELECTED" | "UNAVAILABLE" | "COMPATIBLE";
+  visualReasonCodes: readonly string[];
+  takedownOverlaySha256: string | null;
 }
 
 interface PageRequest {
@@ -64,6 +67,7 @@ type RepositoryErrorCode =
   | "INVALID_CURSOR"
   | "NOT_FOUND"
   | "RELEASE_NOT_FOUND"
+  | "VISUAL_REGISTRY_NOT_FOUND"
   | "RELEASE_VERSION_MISMATCH"
   | "INTEGRITY_FAILURE"
   | "UNREGISTERED_RELATION"
@@ -90,7 +94,7 @@ interface ArchiveRepositoryProvider {
   open(
     selector: {
       research: ResearchReleaseSelector;
-      visual: VisualRegistrySelector;
+      visual?: VisualRegistrySelector | null;
     },
     options?: ReadOptions,
   ): Promise<RepoResult<ArchiveRepository>>;
@@ -132,11 +136,11 @@ interface ArchiveRepository {
 
 The concrete implementations are:
 
-1. `HttpArchiveRepository`: calls only exact research/visual-pair-pinned `/api/v1` GET endpoints.
-2. `ImmutableReleaseRepository`: validates and reads both sealed manifests, declared compatibility, and their assets/shards.
-3. `FixtureArchiveRepository`: reads a small, versioned, schema-valid fixture research release plus visual registry.
+1. `HttpArchiveRepository`: calls exact research-pair-pinned `/api/v1` GET endpoints and supplies an atomic exact visual pair only when selected.
+2. `ImmutableReleaseRepository`: always validates the sealed research manifest and, when selected, validates the sealed visual manifest, declared compatibility, and its assets/shards.
+3. `FixtureArchiveRepository`: reads a small, versioned, schema-valid fixture research release and optional compatible visual registry.
 
-All implementations must pass the same repository contract suite, including error mapping, cursor behavior, both exact-pair pins, compatibility, cancellation, integrity failure, held-pixel non-disclosure, and unknown-relation rejection.
+All implementations must pass the same repository contract suite, including error mapping, cursor behavior, exact pair pins, research-only registry absence, explicit mismatch, cancellation, integrity failure, held-pixel non-disclosure, positive field allowlists, and unknown-relation rejection.
 
 ## Composition and mode selection
 
@@ -146,14 +150,14 @@ One server-side composition root selects `api`, `release`, or `fixture` from an 
 - Missing or invalid configuration fails closed; there is no implicit fixture fallback.
 - Browser bundles contain no PostgreSQL driver or credentials.
 - UI components contain no `/data/*.json` paths, shard filename construction, compact decoders, or manifest parsing.
-- The repository validates schemas and cross-version compatibility, maps errors, deduplicates requests, handles `AbortSignal`, and caches by both exact identity/hash pairs.
+- The repository validates schemas and cross-version compatibility, maps errors, deduplicates requests, handles `AbortSignal`, and caches composed data by both exact pairs or research-only data by the exact research pair plus its visual-unavailable reason.
 - `NOT_FOUND`, `UNAVAILABLE`, and `INTEGRITY_FAILURE` remain distinct; none collapse to `undefined`.
 
-`SurfaceDetail` may project the rights-safe presentation bundle needed by the existing visual pages, but it omits pixel URLs when delivery is `LINK_ONLY`, `CITATION_ONLY`, denied, or subject to a takedown override. Rights assessment, delivery mode, and endpoint health remain distinct fields. Large memberships are separate paginated calls. `FolderDetail` does not embed thousands of surface IDs. TRACE summaries are projections of eligible semantic relations/claims for one named corpus and a discriminated union of `active`, `review`, and `auxiliary`; eligibility is returned only for a named sealed-release metric, not as a universal canonical boolean.
+`SurfaceDetail` may project the rights-safe presentation bundle needed by the existing visual pages, but it is built from an empty positive allowlist. `BLOCKED`, `CITATION_ONLY`, `LINK_ONLY`, and `SOURCE_VIEWER` structurally omit pixel, thumbnail and image-service fields; only `REMOTE_IMAGE` may expose the v1 allowlisted remote pixel. Rights observations/assessments, provider-policy versions/evaluations, delivery decision, endpoint health and takedown state remain distinct. Large memberships are separate paginated calls. `FolderDetail` does not embed thousands of surface IDs. TRACE summaries are projections of eligible semantic relations/claims for one named corpus and a discriminated union of `active`, `review`, and `auxiliary`; eligibility is returned only for a named sealed-release metric, not as a universal canonical boolean.
 
 ## Fixture mode
 
-The fixture is a complete miniature research release plus compatible visual registry, not a slice loaded from the 87 MiB v48 payload. It has fixed IDs/hashes such as `fixture-research-v1` and `fixture-visual-v1`, valid manifests, and 10–50 hand-audited operational archive objects. It covers:
+The fixture is a complete miniature research release with an optional compatible visual registry, not a slice loaded from the 87 MiB v48 payload. It has fixed IDs/hashes such as `fixture-research-v1` and `fixture-visual-v1`, valid manifests, and 10–50 hand-audited operational archive objects. It covers:
 
 - image permitted, denied, and absent;
 - active, review, and auxiliary TRACE states;

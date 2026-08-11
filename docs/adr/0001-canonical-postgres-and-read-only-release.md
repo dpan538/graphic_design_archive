@@ -41,11 +41,11 @@ An immutable research release is a reproducible projection of one accepted Postg
 - its release ID, manifest bytes, asset bytes, row counts, and hashes cannot change;
 - `UPDATE` and `DELETE` are denied for sealed `release` rows;
 - any content change creates a new release ID;
-- the consumer pins `(researchReleaseId,researchManifestSha256)` and a compatible `(visualRegistryVersion,registrySha256)`;
+- the consumer always pins `(researchReleaseId,researchManifestSha256)` and atomically pins a compatible `(visualRegistryVersion,visualRegistrySha256)` when visual composition is selected;
 - each boundary has its own manifest, detached sidecar, lifecycle, and CAS-protected `current` pointer;
 - a `current` alias may resolve once, but is never embedded in evidence, citations, manifests, or shard references.
 
-`api_v1` exposes only accepted, research-release-scoped projections combined with a compatible rights-safe visual-registry projection. It cannot trigger ingestion, review, promotion, or mutation and never exposes a held/link-only pixel URL.
+`api_v1` exposes only accepted, research-release-scoped projections, optionally combined with a compatible rights-safe visual-registry projection. Registry absence is a normal research-only state; an explicit mismatch is reported and never falls back. It cannot trigger ingestion, review, promotion, or mutation and never exposes a held/link-only pixel URL.
 
 `core.entity` is a closed UUID supertype whose subtype row is enforced by FK and entity kind. Semantically specific links target subtype FKs; deliberately multi-kind links target `core.entity` plus an allowed-kind constraint. Canonical tables never use unconstrained `target_type + target_id`.
 
@@ -63,7 +63,7 @@ A source assertion, accepted canonical assignment, evidence item, curator decisi
 6. JSONB is permitted for parsed raw payloads, provider-specific extensions, and non-authoritative diagnostics only.
 7. `release` and `api_v1` are derived layers; they cannot be used to write back into `core`, `research`, or other canonical schemas.
 8. Search is a release projection, never a second canonical database or a source for missing migration rows.
-9. Rights assessment, delivery mode, and endpoint health are independent axes. Unknown, missing, conflicting, or stale evidence defaults to `LINK_ONLY` or `CITATION_ONLY`; HTTP/API/IIIF accessibility does not establish authorization.
+9. Rights observations/assessments, provider-policy versions/evaluations, delivery decisions, endpoint-health observations, and takedown state are independent records. Unknown, missing, conflicting, or stale rights/policy defaults to `LINK_ONLY` or `CITATION_ONLY`; only `REMOTE_IMAGE` may expose an allowlisted v1 remote-pixel locator, and HTTP/API/IIIF accessibility never establishes authorization.
 
 ## Consequences
 
@@ -93,4 +93,4 @@ Costs and constraints:
 
 This ADR authorizes architecture only. It does not authorize schema creation, data import, export, frontend rewiring, deployment, or v48 mutation. Those actions require the gates in `ACCEPTANCE_GATES.md`.
 
-Identity, cardinality, state, release-seal, and privilege decisions are normative in `docs/architecture/DDL_DECISION_PACK_V49.md`. Research claims/corpora and visual-registry decisions are normative in `docs/adr/0004-research-claims-corpora-and-visual-registry.md`. The Phase 1B audit records unresolved pre-DDL evidence gaps; this ADR does not mark them implemented or closed.
+Identity, cardinality, state, release-seal, and privilege decisions are normative in `docs/architecture/DDL_DECISION_PACK_V49.md`. Research claims/corpora and visual-registry decisions are normative in `docs/adr/0004-research-claims-corpora-and-visual-registry.md`. Phase 1C and Phase 1D provide decision-closure evidence for the Phase 1B findings, but only the independent joint receipt may mark pre-DDL readiness; no database or release implementation is claimed here.

@@ -2,34 +2,29 @@
 
 - Status: Contract baseline; implementation pending
 - Transport: HTTPS, JSON, read-only
-- Data authority: exact sealed research release plus, for visual-bearing resources, one compatible sealed visual registry; never a mutable database head
+- Data authority: one exact sealed research release plus zero or one exact compatible sealed visual registry; never a mutable database head
 
 ## Contract/version distinction
 
 `v1` in `/api/v1` is the API contract version. `researchReleaseId` and `visualRegistryVersion` are independent data versions and must never be collapsed into one `version` field.
 
-Every successful resource response identifies:
+Every successful research-resource response exposes the four version fields directly. The visual pair is atomically present or absent:
 
 ```json
 {
   "apiVersion": "v1",
-  "researchRelease": {
-    "researchReleaseId": "v49-research-YYYYMMDD.N",
-    "researchManifestSha256": "64 lowercase hex",
-    "schemaVersion": "archive-research-release/v1"
-  },
-  "visualRegistry": {
-    "visualRegistryVersion": "v49-visual-YYYYMMDD.N",
-    "registrySha256": "64 lowercase hex",
-    "compatibleResearchReleaseId": "v49-research-YYYYMMDD.N",
-    "compatibleResearchManifestSha256": "64 lowercase hex",
-    "schemaVersion": "archive-visual-registry/v1"
-  },
+  "researchReleaseId": "v49-research-YYYYMMDD.N",
+  "researchManifestSha256": "64 lowercase hex",
+  "visualRegistryVersion": null,
+  "visualRegistrySha256": null,
+  "visualRegistryState": "UNAVAILABLE",
+  "visualReasonCodes": ["VISUAL_REGISTRY_UNAVAILABLE"],
+  "takedownOverlaySha256": null,
   "data": {}
 }
 ```
 
-A client may resolve the research and visual `current` pointers once, verify their compatibility, and then use both exact pairs for every visual-bearing request. Each pointer is independently CAS-controlled. `current` is never a substitute for evidence-level version pinning, and cross-pair fallback is prohibited.
+A client may resolve each independent `current` pointer once, verify compatibility, and then use exact pairs. A registry not selected or unavailable yields a complete research-only response with both visual fields `null` and no locator. An explicitly requested incompatible pair yields `409 RELEASE_VERSION_MISMATCH`; it never falls back to an older or current registry. Each pointer is independently CAS-controlled. `current` is never a substitute for evidence-level version pinning.
 
 ## Read-only surface
 
@@ -60,7 +55,7 @@ The API supports only `GET`, `HEAD`, and `OPTIONS`. There are no ingest, scrape,
 | `GET /api/v1/releases/{researchReleaseId}/corpora` | Versioned research corpus summaries and selection policies. |
 | `GET /api/v1/releases/{researchReleaseId}/corpora/{corpusVersionId}` | Exact corpus descriptor, counts, missingness and method hashes. |
 
-All read-model endpoints below the exact research-release path require the exact `Archive-Visual-Registry-Version` and `Archive-Visual-Registry-Sha256` request headers and return both envelope members. They reject absent, mismatched, unsealed, or incompatible visual pairs; they never infer visual `current`. The standalone research/visual descriptor and manifest endpoints are the only discovery exceptions.
+All read-model endpoints below the exact research-release path require the exact research pair. A visual selector is optional but atomic: `Archive-Visual-Registry-Version` and `Archive-Visual-Registry-Sha256` must be supplied together or both omitted. Omission never infers visual `current`; it returns research-only data. An absent compatible visual current also returns research-only data with state `UNAVAILABLE`. An explicit not-found, unsealed, corrupt or incompatible selector is a typed problem and never degrades to another registry. The exact selector transport remains an implementation detail, but these outcomes and nullability are fixed.
 
 ## Archive DTO boundary
 
@@ -79,7 +74,7 @@ The exposed `surfaceId` is a durable public route identifier, not the canonical 
 - ordered metadata tables and dossier links;
 - TRACE summary and routes, not an embedded whole catalog.
 
-It never contains raw provider payloads, private workflow notes, database keys, unrestricted URLs, rights-held bytes, or pixel/thumbnail/image-service/embed URLs when rights/provider state is unknown, missing, conflicting or stale. API/IIIF availability, redirects and endpoint health never grant delivery.
+It never contains raw provider payloads, private workflow notes, database keys, unrestricted URLs, rights-held bytes, or held/internal/raw locators. DTOs are built from an empty positive allowlist rather than filtering a prepopulated database object. Delivery modes are `BLOCKED`, `CITATION_ONLY`, `LINK_ONLY`, `SOURCE_VIEWER` and `REMOTE_IMAGE`: only `REMOTE_IMAGE` may expose the v1 `remoteImageUrl`; lower modes structurally omit pixel, thumbnail and image-service fields rather than returning null or hiding them with CSS. API/IIIF availability, redirects and endpoint health never grant delivery.
 
 `FolderDetail` contains narrative metadata, related-folder summaries, authority reference summaries, and exact named counts. Members use the separate paginated endpoint; it does not embed thousands of surface IDs.
 
@@ -135,16 +130,13 @@ List envelope:
 ```json
 {
   "apiVersion": "v1",
-  "researchRelease": {
-    "researchReleaseId": "v49-research-YYYYMMDD.N",
-    "researchManifestSha256": "...",
-    "schemaVersion": "archive-research-release/v1"
-  },
-  "visualRegistry": {
-    "visualRegistryVersion": "v49-visual-YYYYMMDD.N",
-    "registrySha256": "...",
-    "schemaVersion": "archive-visual-registry/v1"
-  },
+  "researchReleaseId": "v49-research-YYYYMMDD.N",
+  "researchManifestSha256": "...",
+  "visualRegistryVersion": "v49-visual-YYYYMMDD.N",
+  "visualRegistrySha256": "...",
+  "visualRegistryState": "COMPATIBLE",
+  "visualReasonCodes": [],
+  "takedownOverlaySha256": null,
   "data": {
     "nodes": [],
     "pageInfo": {
@@ -162,7 +154,7 @@ Errors use `application/problem+json`:
 
 ```json
 {
-  "type": "https://modern-gd.example/problems/integrity-failure",
+  "type": "urn:gdarchive:problem:integrity-failure",
   "title": "Release integrity failure",
   "status": 503,
   "code": "INTEGRITY_FAILURE",
@@ -170,15 +162,17 @@ Errors use `application/problem+json`:
   "instance": "/api/v1/releases/v49-.../trace/atlas",
   "requestId": "opaque request id",
   "researchReleaseId": "v49-research-...",
-  "visualRegistryVersion": "v49-visual-..."
+  "researchManifestSha256": "...",
+  "visualRegistryVersion": "v49-visual-...",
+  "visualRegistrySha256": "..."
 }
 ```
 
 | Status | Code examples | Meaning |
 |---:|---|---|
 | 400 | `INVALID_ARGUMENT`, `INVALID_CURSOR` | Input cannot be validated. |
-| 404 | `RELEASE_NOT_FOUND`, `NOT_FOUND` | Exact release or resource does not exist. |
-| 409 | `RELEASE_VERSION_MISMATCH` | Cursor, selector, or dependency belongs to another release. |
+| 404 | `RELEASE_NOT_FOUND`, `VISUAL_REGISTRY_NOT_FOUND`, `NOT_FOUND` | Exact release, registry or resource does not exist. |
+| 409 | `RELEASE_VERSION_MISMATCH` | An explicit selector, cursor or dependency belongs to another pair; no mismatched visual data or locator is returned. |
 | 503 | `INTEGRITY_FAILURE`, `UNREGISTERED_RELATION`, `UNAVAILABLE` | Hash/schema/registry/release verification failed or exact release is unavailable. |
 
 `NOT_FOUND`, `UNAVAILABLE`, and `INTEGRITY_FAILURE` are never collapsed to an empty success or `undefined`. A hash mismatch never falls back to `current`, v48, or a fixture.
@@ -188,7 +182,7 @@ Errors use `application/problem+json`:
 - Exact sealed endpoints return a strong ETag derived from the exact research pair, compatible visual pair when applicable, and resource hash; immutable caching is used only where the sealed visual decision permits it.
 - Each `current` resolver uses short caching or revalidation and returns an exact descriptor. Publishing either pointer is a CAS operation; the read API never updates it.
 - Responses include research-release/manifest and visual-registry/hash diagnostic headers; the JSON envelope remains authoritative.
-- Repository caches and request deduplication key on the exact research/visual pair and corpus.
+- Repository caches and request deduplication key composed results on both exact pairs; research-only results key on the exact research pair, corpus and explicit visual state/reason.
 - The service validates database projection identity or immutable asset hash before serving. A permanently invalid release is quarantined from `current`.
 
 ## `ArchiveRepository` mapping
@@ -212,7 +206,7 @@ Errors use `application/problem+json`:
 | `listCorpora` | `/corpora` |
 | `getCorpus` | `/corpora/{corpusVersionId}` |
 
-The HTTP and immutable-release adapters must return equivalent DTOs and errors for the same exact research/visual pair contract fixture.
+The HTTP and immutable-release adapters must return equivalent DTOs and errors for both the same exact composed pair fixture and the same research-only registry-absent fixture.
 
 ## Compatibility policy
 
@@ -224,9 +218,9 @@ The HTTP and immutable-release adapters must return equivalent DTOs and errors f
 
 ## Machine-readable publication
 
-Canonical, version-independent identifiers use the class-specific URI templates in ADR 0004 for objects, semantic relations, claims, corpora, research releases and visual registries. Public surface routes are aliases/resolvers, not canonical object identity.
+Canonical, version-independent public identities use the domain-independent `urn:gdarchive:{object|relation|claim|source|visual-reference}:<lowercase-uuid>` policy in ADR 0004 and the Phase 1D stable-ID specification. Public routes are aliases/resolvers, not canonical identity. Until one governed production origin is approved, machine output emits URNs and relative routes; `.example` strings are never advertised as final identifiers.
 
-Every HTML object/relation/claim resource has server-rendered crawlable metadata, one canonical URL and a JSON-LD alternate. Versioned JSON Schemas cover research/visual manifests, envelopes, resources, cursors, problems and change-feed items. Normative mappings define Linked Art for archive resources, PROV-O for evidence/claims/derivations and DCAT for dataset/distribution release metadata. A release diff/change feed and sitemap/robots policy preserve merges, splits, withdrawals, corpus changes and takedown-safe discovery.
+Later implementation must provide server-rendered crawlable metadata, governed HTTPS resolver aliases, JSON-LD alternates, versioned JSON Schemas, Linked Art/PROV-O mappings, DCAT release metadata, a release diff/change feed, and sitemap/robots policy. Those artifacts are pre-freeze or pre-promotion gates. Their absence does not reopen the pre-DDL stable-ID, exact-pair, field-classification, redaction or fail-closed serializer decisions.
 
 These are contract requirements only. The Phase 1B audit measured zero `/api/v1` routes, zero release/API schemas, zero JSON-LD/DCAT/change-feed/sitemap implementations and zero CI workflows; implementation readiness remains false.
 

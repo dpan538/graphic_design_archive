@@ -1,0 +1,122 @@
+{
+  "schema": "v49.rights-machine-manifest/v1",
+  "packageVersion": "1.0.0",
+  "baselineCommit": "967cbe34a8f30f8e74fa117e1bdee74644f71afe",
+  "frozenSourceAncestor": "0404c7f96f9189f576c4c5b1368061e4082e436b",
+  "authority": {
+    "canonicalMigrationInput": "generated/public_surfaces_prefreeze_candidate_v48.json",
+    "sqliteRole": "immutable_reconciliation_only",
+    "promptAPackage": "docs/audits/v49-authority-research-delta/MANIFEST.json",
+    "researchReleaseRole": "immutable_canonical_research_projection_without_third_party_pixel_locators",
+    "visualRegistryRole": "independently_sealed_rights_aware_delivery_projection",
+    "currentPointers": "independent_cas_protected",
+    "visualRegistryRequiredForResearchRecord": false
+  },
+  "legacyVisualBaseline": {
+    "candidateSurfaceVisualBundles": 15923,
+    "accountedSurfaceVisualBundles": 15923,
+    "unaccountedSurfaceVisualBundles": 0,
+    "referenceBearingSurfaceVisualBundles": 15788,
+    "noReferenceSurfaceVisualBundles": 135,
+    "externalVisualLocatorOccurrences": 15790,
+    "distinctExternalVisualLocatorValues": 15788,
+    "compactDispositionGroups": 71,
+    "positiveRightsEvidenceSurfaceBundles": 0,
+    "legacyVisualReferenceInventoriedPercent": 100,
+    "legacyVisualReferenceTypedPercent": 100,
+    "legacyPositiveRightsCoveragePercent": 0,
+    "unclassifiedVisualReference": 0
+  },
+  "gates": {
+    "AUTHORITY_RESEARCH_DELTA_CLOSED": true,
+    "RIGHTS_VISUAL_DECISIONS_LOCKED": true,
+    "MACHINE_CONTRACT_DECISIONS_LOCKED": true,
+    "DUAL_RELEASE_MODEL_LOCKED": true,
+    "TAKEDOWN_AND_CAS_RULES_LOCKED": true,
+    "LEGACY_VISUAL_REFERENCE_INVENTORIED": "100%",
+    "LEGACY_VISUAL_REFERENCE_TYPED": "100%",
+    "LEGACY_POSITIVE_RIGHTS_COVERAGE": "0.0000%",
+    "UNCLASSIFIED_VISUAL_REFERENCE": 0,
+    "RIGHTS_MACHINE_DECISION_PACKAGE": "PASS",
+    "ENGINEERING_PRE_DDL_READY": false,
+    "RESEARCH_SEMANTICS_PRE_DDL_READY": false,
+    "RIGHTS_VISUAL_PRE_DDL_READY": false,
+    "MACHINE_CONTRACT_PRE_DDL_READY": false,
+    "OVERALL_PRE_DDL_READY": false,
+    "DATABASE_IMPLEMENTED": false,
+    "FREEZE_READY": false,
+    "PROMOTION_READY": false,
+    "DEPLOYMENT_READY": false
+  },
+  "frozenAssets": [
+    {
+      "path": "generated/public_surfaces_prefreeze_candidate_v48.json",
+      "bytes": 190067852,
+      "sha256": "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48",
+      "role": "canonical_migration_input"
+    },
+    {
+      "path": "data/prefreeze_candidate_v48.sqlite",
+      "bytes": 421801984,
+      "sha256": "ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "role": "immutable_reconciliation"
+    },
+    {
+      "path": "generated/prefreeze_candidate_v48_transfer_manifest.json",
+      "bytes": 21752,
+      "sha256": "865358db84c15d960b3535969a32521c0ffec177f7455d21db86cd131f787d5b",
+      "role": "integrity_evidence"
+    },
+    {
+      "path": "data/prefreeze_candidate_v48_transfer_manifest.csv",
+      "bytes": 12861,
+      "sha256": "694a60657077bcab8888c4a4ef1daf6059706e544606d4862e46c57dcf6ddc18",
+      "role": "integrity_evidence"
+    },
+    {
+      "path": "frontend/public/data/trace-v48/manifest.json",
+      "bytes": 83900,
+      "sha256": "1678e211023aa324078e0478f88670d2378b6dc5c398cc5c04722605038fee23",
+      "role": "derived_trace_integrity_evidence"
+    }
+  ],
+  "verifier": {
+    "path": "scripts/verify_v49_rights_machine.py",
+    "command": "python3 scripts/verify_v49_rights_machine.py --json",
+    "network": false,
+    "writesDataOrDatabase": false
+  },
+  "artifacts": [
+    {"path": "ACCEPTANCE_GATES.md", "bytes": 20053, "sha256": "11d2eef08ef4d5831f1903ec1882d54a1ed651298855f1f8d9c935768ad865d7"},
+    {"path": "ARCHITECTURE.md", "bytes": 19935, "sha256": "02c0e90b5f8d23f45b110a49891397664cadbd5582b750ccf9e9db58911fa5bd"},
+    {"path": "DATA_MODEL_V49.md", "bytes": 31920, "sha256": "b1d2e60e1653defe5dae2f03b3312115629521307cb5020bc1f7b479f5df4a9d"},
+    {"path": "MIGRATION_V48_TO_V49.md", "bytes": 18981, "sha256": "9e8de7c67be1e27d665a4c6f31c1ece529c83a12879a9faf394378b30456f51e"},
+    {"path": "READ_API_V1.md", "bytes": 15590, "sha256": "ab660022f844223a785a291ccd094cf9bd0dee532dab6f7f7fb1e5fee7232efe"},
+    {"path": "docs/adr/0001-canonical-postgres-and-read-only-release.md", "bytes": 8974, "sha256": "23ca8a21ce4f7c0a2eef83bf4b8b62aaf4aeea6411c3263439b529fbbc6ef787"},
+    {"path": "docs/adr/0002-immutable-data-versioning.md", "bytes": 12200, "sha256": "02058bbe18a56c7e05b0f343239a87f92d2c14266155b6dbd75b57d10cdc27b1"},
+    {"path": "docs/adr/0003-runtime-repository-and-fixture-mode.md", "bytes": 9909, "sha256": "06af4c2a61800f04ce88c350b15383f4a1f39213391eee041d660097b7b97b9a"},
+    {"path": "docs/adr/0004-research-claims-corpora-and-visual-registry.md", "bytes": 15860, "sha256": "b15ffc50718ef77489fc09330ed145d2dccfa1a19ec8665e10d82f800514490d"},
+    {"path": "docs/architecture/DDL_DECISION_PACK_V49.md", "bytes": 40989, "sha256": "1e45c0b104a023a6670b125b4221f87d3ca7613b92d89817c627c02e7771f239"},
+    {"path": "docs/audits/v49-rights-machine/00_EXECUTIVE_RECEIPT.md", "bytes": 6440, "sha256": "24f636f192135276123c1bed23a84b099a80d399403774407be96e3dac9822e6"},
+    {"path": "docs/audits/v49-rights-machine/01_P0_CROSSWALK.md", "bytes": 8927, "sha256": "070afc44409749507f220492f237a41bba423d79ceddf8486392b609e814ad47"},
+    {"path": "docs/audits/v49-rights-machine/02_RIGHTS_VISUAL_MACHINE_DECISION_PACK_V49.md", "bytes": 18088, "sha256": "d893c011e606446e7a4edf34e14fe8a98398432923726d003d996302631fd1e9"},
+    {"path": "docs/audits/v49-rights-machine/03_VISUAL_ENTITY_CARDINALITY_MATRIX.md", "bytes": 13056, "sha256": "53d8eff747dadc0963ef35644a308ad44517d9ae078d98e6f29cd8cc05e05178"},
+    {"path": "docs/audits/v49-rights-machine/04_RIGHTS_DELIVERY_TRUTH_TABLE.tsv", "bytes": 5994, "sha256": "d859265c46cf7e72eea5d8ad3fbcb5a1a76eb3a176297125a0ecd78df3d8e81d"},
+    {"path": "docs/audits/v49-rights-machine/05_LEGACY_VISUAL_DISPOSITION_BASELINE.tsv", "bytes": 50687, "sha256": "ca802327787821c5d9f0a0a1d3a818b3f6534a92361319fdfbcf7373d6e24e24"},
+    {"path": "docs/audits/v49-rights-machine/06_LEGACY_VISUAL_DISPOSITION_SUMMARY.json", "bytes": 10280, "sha256": "8ecce535515ef9b8d82075938bcb03bbb409e80c3f78cac1da9d8928802d88e3"},
+    {"path": "docs/audits/v49-rights-machine/07_DUAL_RELEASE_SEAL_CAS_SPEC.md", "bytes": 12574, "sha256": "4b2c0f08bd1f43486b22875e16af6bf3ba85dea9f5a32671cde493e87ecaaf0f"},
+    {"path": "docs/audits/v49-rights-machine/08_MACHINE_VISUAL_EXPOSURE_CONTRACT_V1.md", "bytes": 19692, "sha256": "92de97e5be975460d0ce309b112c983e262ba1036a779ee8ab8bfbd2b67575cf"},
+    {"path": "docs/audits/v49-rights-machine/09_STABLE_ID_URI_POLICY.md", "bytes": 10626, "sha256": "51ba78455ab21dec79ee7235a2be16bc69caf8bd55f5c1c62a48a2608b348cf0"},
+    {"path": "docs/audits/v49-rights-machine/10_NEGATIVE_TEST_SPEC.md", "bytes": 21491, "sha256": "a40256ea11536d4aa4cf4c84f2e180936fc20a716b36096df69e11cc4afa1092"},
+    {"path": "docs/audits/v49-rights-machine/11_RIGHTS_MACHINE_GATE_RECEIPT.md", "bytes": 6111, "sha256": "b48d22966c60ed7a327f3088007521adbda808e9f96070add906d77a162d77f8"},
+    {"path": "docs/audits/v49-rights-machine/AGENT_TASK_REGISTER.md", "bytes": 4561, "sha256": "0e8465e360d1030cc634d5d8ea1670e9f54f98caf3919bb8f783287cff65edde"},
+    {"path": "docs/audits/v49-rights-machine/agents/B1_RIGHTS_DELIVERY_RECEIPT.md", "bytes": 6259, "sha256": "f2fa2b94cbda931722ab50c19bc9794116bb2e302d784cc4b5fea04065b6830f"},
+    {"path": "docs/audits/v49-rights-machine/agents/B2_VISUAL_ENTITY_DUAL_RELEASE_RECEIPT.md", "bytes": 5333, "sha256": "62e7e66d743f415ebe51d21c8940550c251d515b34e83b534f06f8b14501841d"},
+    {"path": "docs/audits/v49-rights-machine/agents/B3_LEGACY_VISUAL_DISPOSITION_RECEIPT.md", "bytes": 12967, "sha256": "afe558341614b0d53236e483c7f3d24b64da48ac6e1049e4c970501d050be682"},
+    {"path": "docs/audits/v49-rights-machine/agents/B4_MACHINE_CONTRACT_RECEIPT.md", "bytes": 6320, "sha256": "a19ff73564d12bc8c87ecac213aa2acaf0765705bc7f03b43fb5ff49310a4f35"},
+    {"path": "docs/audits/v49-rights-machine/agents/B5_NEGATIVE_ORACLE_RECEIPT.md", "bytes": 6858, "sha256": "b1aa2374e30ee8dab2102dfc38cfad3aa09ff3822a1659d5a70e46d94639ee0b"},
+    {"path": "docs/audits/v49-rights-machine/agents/B6_NORMATIVE_CROSSCHECK_RECEIPT.md", "bytes": 22206, "sha256": "2421e922a19db5d4b1677645f57c973ae0ccd3c78f1d49ddc3d5cc359951fd2d"},
+    {"path": "docs/audits/v49-rights-machine/agents/B7_RIGHTS_PACKAGE_VERIFIER_RECEIPT.md", "bytes": 11723, "sha256": "62e84fb1fbef2a7e9b9532c026e66976a3742dc9c71e1ac67987aecd82029053"},
+    {"path": "scripts/verify_v49_rights_machine.py", "bytes": 49713, "sha256": "85374ab01158a46f866ca6337d9d33dc13a87086181d041ad07bca0c37bba754"}
+  ]
+}

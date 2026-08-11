@@ -1,0 +1,265 @@
+{
+  "schemaVersion": "v49-phase1d-legacy-visual-disposition-v1",
+  "generatedFrom": {
+    "path": "generated/public_surfaces_prefreeze_candidate_v48.json",
+    "bytes": 190067852,
+    "sha256": "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48",
+    "authority": "canonical_migration_input_lexical_bytes"
+  },
+  "unitBoundary": {
+    "unit": "one candidate /surfaces/<ordinal> raw visual bundle",
+    "included": [
+      "surface.image",
+      "surface.images[]",
+      "surface.rights",
+      "surface.reviewGates.rightsReviewed"
+    ],
+    "locatorRule": "nonblank URL/URI/manifest/viewer/thumbnail/service/canvas/infoJson/imageId-keyed strings inside image objects; only absolute HTTP(S) values count as external visual locators",
+    "sourceUrlRule": "surface.sourceUrl is a canonical/source record locator and is not counted as a visual locator",
+    "deduplication": "none; every input surface is accounted exactly once; locator occurrences and distinct values are both measured"
+  },
+  "closedStatusVocabulary": {
+    "EVIDENCE_PRESENT": "raw structured visual/rights evidence exists; never implies permission",
+    "RIGHTS_UNKNOWN": "no adjudicated positive rights evidence; candidate/review labels remain unknown",
+    "POLICY_UNKNOWN": "no versioned provider-policy snapshot exists in the candidate",
+    "CONFLICT": "explicit structured conflict/dispute token",
+    "STALE": "explicit structured stale/expired/review-overdue token only",
+    "NO_VISUAL_REFERENCE": "no valid external visual locator in the raw visual bundle",
+    "TAKEDOWN_HOLD": "explicit structured takedown/withdrawal/suppression token",
+    "MALFORMED": "invalid image/rights shape or non-HTTP(S)/unparseable locator",
+    "UNMAPPED_PROVIDER": "candidate has no stable provider foreign key; sourceName/host remain raw tokens"
+  },
+  "positiveRightsCoverageDefinition": {
+    "numerator": "reference-bearing surface bundles with independently adjudicated rights evidence, a versioned provider policy permitting remote display, complete attribution obligations, and no restrictive/takedown condition",
+    "denominator": "all reference-bearing candidate surface visual bundles",
+    "candidateRule": "the v48 candidate carries no versioned provider policy or sealed visual-registry assessment; IMG codes, open_candidate, URL, HTTP(S), IIIF-like fields, credit, and license labels cannot qualify"
+  },
+  "counts": {
+    "candidateSurfaceVisualBundles": 15923,
+    "accountedSurfaceVisualBundles": 15923,
+    "unaccountedSurfaceVisualBundles": 0,
+    "referenceBearingSurfaceVisualBundles": 15788,
+    "noReferenceSurfaceVisualBundles": 135,
+    "externalVisualLocatorOccurrences": 15790,
+    "distinctExternalVisualLocatorValues": 15788,
+    "compactDispositionGroups": 71,
+    "positiveRightsEvidenceSurfaceBundles": 0,
+    "unclassifiedVisualReference": 0,
+    "rawStructuredEvidenceSurfaceBundles": 15923
+  },
+  "percentages": {
+    "legacyVisualReferenceInventoried": 100,
+    "legacyVisualReferenceTyped": 100,
+    "legacyPositiveRightsCoverage": 0
+  },
+  "distributions": {
+    "overallDisposition": {
+      "NO_VISUAL_REFERENCE": 135,
+      "RIGHTS_UNKNOWN": 15788
+    },
+    "rightsEvidenceStatus": {
+      "NOT_APPLICABLE": 135,
+      "RIGHTS_UNKNOWN": 15788
+    },
+    "providerPolicyStatus": {
+      "NOT_APPLICABLE": 135,
+      "POLICY_UNKNOWN": 15788
+    },
+    "providerMappingStatus": {
+      "NOT_APPLICABLE": 135,
+      "UNMAPPED_PROVIDER": 15788
+    },
+    "imageState": {
+      "IMG00": 38,
+      "IMG01": 30,
+      "IMG02": 8388,
+      "IMG03": 7370,
+      "IMG04": 97
+    },
+    "rightsState": {
+      "compound_member_rights": 2,
+      "open_candidate": 7370,
+      "rights_review_required": 131,
+      "source_link_only": 2,
+      "source_viewer_candidate": 8388,
+      "thumbnail_candidate": 30
+    },
+    "displayPolicy": {
+      "empty_rights_frame": 36,
+      "no_image_frame": 91,
+      "open_image_frame": 7463,
+      "rights_empty_frame": 2,
+      "source_viewer_frame": 5153,
+      "source_visible_image_frame": 3142,
+      "text_only": 6,
+      "thumbnail_frame": 30
+    },
+    "rightsReviewed": {
+      "false": 8501,
+      "true": 7422
+    },
+    "locatorRoles": {
+      "image.evidenceImageUrl": 2,
+      "image.sourceViewerUrl": 2,
+      "image.url": 15621,
+      "image.viewerUrl": 165
+    },
+    "locatorHosts": {
+      "antarctica.recollect.co.nz": 3,
+      "api.europeana.eu": 1,
+      "archivesonline.wcc.govt.nz": 19,
+      "ark.digitalcommonwealth.org": 2,
+      "asianfilmarchive.org": 8,
+      "canterburystories.nz": 13,
+      "cdn.knowledgebank.org.nz": 2,
+      "ciim-static-media.s3.us-east-1.amazonaws.com": 198,
+      "collection-api.aucklandmuseum.com": 15,
+      "d28dhd8eubcyz4.cloudfront.net": 3,
+      "d3ecqbn6etsqar.cloudfront.net": 3,
+      "dgi.or.id": 79,
+      "digital.library.temple.edu": 1,
+      "digitalcollections.lib.washington.edu": 6,
+      "digitalcollections.library.gsu.edu": 82,
+      "digitalcollections.library.miami.edu": 5,
+      "digitalcollections.smu.edu": 3,
+      "framemark.vam.ac.uk": 3568,
+      "gallica.bnf.fr": 300,
+      "hocken.recollect.co.nz": 2,
+      "ibali.uct.ac.za": 8,
+      "ids.si.edu": 11,
+      "iiif-cloud.princeton.edu": 41,
+      "iiif.micr.io": 17,
+      "iiif.wellcomecollection.org": 31,
+      "kura.aucklandlibraries.govt.nz": 10,
+      "letterformarchive.org": 8,
+      "media.collections.yale.edu": 438,
+      "media.tepapa.govt.nz": 56,
+      "ms01.nasjonalmuseet.no": 96,
+      "ndownloader.figshare.com": 1,
+      "openaccess-cdn.clevelandart.org": 14,
+      "paperspast.natlib.govt.nz": 12,
+      "prc.recollect.co.nz": 1,
+      "s3-eu-west-1.amazonaws.com": 2,
+      "s3.amazonaws.com": 2,
+      "search.malaysiadesignarchive.org": 68,
+      "teara.govt.nz": 20,
+      "tessa2.lapl.org": 5,
+      "tile.loc.gov": 2332,
+      "upload.wikimedia.org": 6921,
+      "www.artic.edu": 570,
+      "www.bibliotecanacionaldigital.gob.cl": 69,
+      "www.canterburystories.nz": 1,
+      "www.loc.gov": 1,
+      "www.memoriachilena.gob.cl": 1,
+      "www.naidoc.org.au": 49,
+      "www.nb.no": 522,
+      "www.saha.org.za": 3,
+      "www.spc.int": 165
+    },
+    "locatorSchemes": {
+      "http": 16,
+      "https": 15772
+    }
+  },
+  "hashes": {
+    "surfaceOrdinalIdSequenceSha256": "0ded26112f66e9b269dd6f7ca5978d9454e254e52241ca121f63c56368eab418",
+    "surfaceIdSetSha256": "7bae71cb2915a6ea6a9c9c43024a0a84bab5200edffad96298f398a7b8053d46",
+    "sourceRecordIdSetSha256": "16795db4223fd1e00ef362ba0a29b7a521a38ccf56638e9928d70a3343112f2e",
+    "rawVisualBundleSequenceSha256": "265cc790ffcc5b4c4dddf5ddbb29a894f35f92e166df474a744dafa0b7e8743e",
+    "externalLocatorOccurrenceSequenceSha256": "1bbd68dfaf8661a1976fea56a2d121d807a42b5ed8a735094dda9868dcec5812",
+    "externalLocatorValueSetSha256": "434dafb489119676615a6cd604a65286f17e2d8f2f18e48bf5e06943b6439e28",
+    "classifiedSurfaceSequenceSha256": "2ba50afc2175e350895f9b7b76615ba72cf2175cf4599b13b49f5ee107242abc"
+  },
+  "observedSchema": {
+    "imageKeys": {
+      "credit": 15923,
+      "displayMode": 11390,
+      "evidenceImageUrl": 2,
+      "expectation": 11158,
+      "hasImageFrame": 15923,
+      "licenseLabel": 15923,
+      "parserStatus": 11390,
+      "placeholderText": 201,
+      "routeEvidence": 2,
+      "sourceViewerUrl": 2,
+      "state": 15923,
+      "url": 15923,
+      "viewerUrl": 165
+    },
+    "secondaryImageKeys": {},
+    "rightsKeys": {
+      "displayPolicy": 15923,
+      "label": 15923,
+      "state": 15923
+    }
+  },
+  "reconciliationEvidence": {
+    "path": "data/prefreeze_candidate_v48.sqlite",
+    "openMode": "mode=ro&immutable=1",
+    "authority": "immutable_reconciliation_evidence_only",
+    "objectRows": 15923,
+    "nonblankImageUrlRows": 15621,
+    "distinctImageUrls": 15620,
+    "candidatePrimaryImageUrlOccurrences": 15621,
+    "candidateAdditionalLocatorOccurrences": 169,
+    "result": "PASS_PRIMARY_IMAGE_URL_COUNT",
+    "semanticBoundary": "SQLite image_url reconciles only candidate image.url; it does not enumerate viewer/sourceViewer/evidence roles and cannot create or promote canonical visual references."
+  },
+  "closedStatusCountsSemantics": "Mutually exclusive overallDisposition counts only. POLICY_UNKNOWN and UNMAPPED_PROVIDER are orthogonal axes, not unclassified rows; their 15,788 counts remain authoritative in distributions.providerPolicyStatus and distributions.providerMappingStatus.",
+  "orthogonalStatusAxisCounts": {
+    "rightsEvidenceStatus": {
+      "NOT_APPLICABLE": 135,
+      "RIGHTS_UNKNOWN": 15788
+    },
+    "providerPolicyStatus": {
+      "NOT_APPLICABLE": 135,
+      "POLICY_UNKNOWN": 15788
+    },
+    "providerMappingStatus": {
+      "NOT_APPLICABLE": 135,
+      "UNMAPPED_PROVIDER": 15788
+    }
+  },
+  "closedStatusCounts": {
+    "EVIDENCE_PRESENT": 0,
+    "RIGHTS_UNKNOWN": 15788,
+    "POLICY_UNKNOWN": 0,
+    "CONFLICT": 0,
+    "STALE": 0,
+    "NO_VISUAL_REFERENCE": 135,
+    "TAKEDOWN_HOLD": 0,
+    "MALFORMED": 0,
+    "UNMAPPED_PROVIDER": 0
+  },
+  "compactLedger": {
+    "path": "docs/audits/v49-rights-machine/05_LEGACY_VISUAL_DISPOSITION_BASELINE.tsv",
+    "rowsExcludingHeader": 71,
+    "columns": 29,
+    "sha256": "ca802327787821c5d9f0a0a1d3a818b3f6534a92361319fdfbcf7373d6e24e24",
+    "aggregation": "one row per exact deterministic disposition signature; member surface sets and locator-occurrence-hash sets are committed as SHA-256, with no source-row deduplication",
+    "sumSurfaceCount": 15923,
+    "sumVisualLocatorOccurrences": 15790,
+    "sumPositiveRightsEvidenceSurfaceCount": 0
+  },
+  "validation": {
+    "artifactTool": {
+      "library": "@oai/artifact-tool",
+      "workbookRowsIncludingHeader": 72,
+      "workbookColumns": 29,
+      "inspectCompleted": true,
+      "formulaErrorScanCompleted": true,
+      "visualPreviewCompleted": true,
+      "temporaryPreview": "/private/tmp/v49_phase1d_b3_artifact_preview.png"
+    },
+    "strictTsvExpectedColumns": 29,
+    "strictTsvExpectedDataRows": 71
+  },
+  "gates": {
+    "LEGACY_VISUAL_REFERENCE_INVENTORIED": "100%",
+    "LEGACY_VISUAL_REFERENCE_TYPED": "100%",
+    "LEGACY_POSITIVE_RIGHTS_COVERAGE": "0.0000%",
+    "UNCLASSIFIED_VISUAL_REFERENCE": 0,
+    "NO_NETWORK_OR_PROVIDER_PROBE": true,
+    "POSITIVE_RIGHTS_NOT_INFERRED_FROM_TECHNICAL_ACCESS": true
+  }
+}

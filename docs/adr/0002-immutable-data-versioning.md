@@ -13,7 +13,7 @@ v48 already has useful release evidence: frozen source hashes, a TRACE manifest,
 v49 has two independent immutable version boundaries:
 
 1. A **research release** has one globally unique, non-reusable `researchReleaseId`, one canonical research manifest, and one externally recorded `researchManifestSha256`. Archive objects, Search, registered predicates/relation types, evidence-bearing claims, semantic relations, corpus/missingness, TRACE projections, and machine-readable research projections are members of that release.
-2. A **visual registry** has one globally unique, non-reusable `visualRegistryVersion`, one canonical registry manifest, and one externally recorded `registrySha256`. Provider objects/endpoints, rights observations/policies, assessment, delivery mode, endpoint health, attribution/required statements, review-due, takedown overrides, and rights-safe visual references are members of that registry.
+2. A **visual registry** has one globally unique, non-reusable `visualRegistryVersion`, one canonical registry manifest, and one externally recorded public `visualRegistrySha256` (the same digest stored internally as `registry_sha256`). External visual references/object bridges, provider objects, typed locators, rights observations/assessments, provider-policy versions/evaluations, delivery decisions, endpoint-health observations, attribution/required statements, review due and takedown state are members of that registry.
 
 The boundaries declare compatibility but do not share identity or `current`. A rights, endpoint-health, or takedown change creates a new visual registry without mutating or resealing the research release. A research claim/corpus change creates a new research release without silently carrying forward a visual authorization.
 
@@ -28,7 +28,7 @@ The only forward states are `draft → candidate → validated → sealed`.
 - Supersession is pointer/history metadata on an already sealed release, not a mutable release state.
 - A failed attempt remains with its failed receipts and is never resolved by `current`; remediation uses a new attempt/release ID.
 
-The identity string is semantic but never content authority by itself. Consumers must bind both exact pairs: `(researchReleaseId,researchManifestSha256)` and `(visualRegistryVersion,registrySha256)`. Compatibility is an explicit manifest record, never inferred from simultaneous `current` resolution.
+The identity string is semantic but never content authority by itself. Consumers always bind `(researchReleaseId,researchManifestSha256)` and, when visual composition is selected, atomically bind `(visualRegistryVersion,visualRegistrySha256)`. The visual pair may be absent for a normal research-only response. Compatibility is an explicit manifest record, never inferred from simultaneous `current` resolution; an explicit mismatch fails without fallback.
 
 ### Canonical research manifest
 
@@ -107,7 +107,7 @@ The visual registry uses RFC 8785 and the same deterministic inventory rules, bu
 }
 ```
 
-It records typed provider object IDs and separates canonical record URL, IIIF manifest, viewer, thumbnail, and image-service endpoints. Rights assessment, delivery mode, and endpoint health are independent values. Unknown, missing, conflicting, or stale rights evidence serializes no deliverable pixel URL and defaults to `LINK_ONLY` or `CITATION_ONLY`. Accessibility, redirect success, API availability, or IIIF presence never implies authorization. A takedown override takes precedence over all other policy observations.
+It records provenance-bound visual references, object-reference bridges and typed provider object IDs, and it separates canonical-record, viewer, embed, IIIF, thumbnail, image-service and direct-image locator roles. Rights observations/assessments, provider-policy versions/evaluations, delivery decisions, endpoint-health observations and takedown state are independent records. Unknown, missing, conflicting or stale rights/policy serializes no pixel URL and defaults to `LINK_ONLY` or `CITATION_ONLY`. Only `REMOTE_IMAGE` may expose the v1 allowlisted remote-pixel locator. Accessibility, redirect success, API availability or IIIF presence never implies authorization. An active takedown takes precedence and may force only `BLOCKED` or `CITATION_ONLY`.
 
 ### Seal protocols
 
@@ -115,7 +115,7 @@ The following protocol is executed independently for the research release and vi
 
 1. Build copied release projections in a repeatable database snapshot while `draft`.
 2. Transition to `candidate` with compare-and-swap on the draft state/version and close the candidate fingerprint.
-3. Produce immutable pre-seal receipts. Research receipts cover all five v48 artifacts, migration/query digests, canonical/graph/derived counts, population boundaries, corpus/missingness, FK/orphan checks, predicate/relation registries, claim/projection eligibility, unknown-relation isolation, grants, projection fingerprints, and deterministic asset inventory. Visual receipts cover provider/endpoint identity, rights observations/policies, independent state axes, attribution, review-due, takedown precedence, held-pixel non-disclosure, compatibility, grants, and deterministic asset inventory.
+3. Produce immutable pre-seal receipts. Research receipts cover all five v48 artifacts, migration/query digests, canonical/graph/derived counts, population boundaries, corpus/missingness, FK/orphan checks, predicate/relation registries, claim/projection eligibility, unknown-relation isolation, grants, projection fingerprints, and deterministic asset inventory. Visual receipts cover reference/bridge/provider/locator identity, rights observations/assessments, policy versions/evaluations, delivery/health/takedown separation, attribution, review due, held-pixel non-disclosure, compatibility, grants, and deterministic asset inventory.
 4. Transition to `validated` only when every required receipt is passing and hash-bound to the same candidate fingerprint.
 5. Generate RFC 8785 manifest bytes from the validated inventory and receipt hashes, then compute SHA-256 over those exact bytes.
 6. In one serializable transaction, recheck the fingerprint, store manifest bytes/hash, and transition `validated → sealed`. Any mismatch aborts.
@@ -150,15 +150,15 @@ Records are sorted by stable ID with a documented tie-breaker. Partitioning is d
 
 ### Validation and fail-closed behavior
 
-Before a repository exposes data it validates both descriptors, both manifest schemas/hashes, exact identity pairs, declared compatibility, registry hashes, referenced asset hashes, and shard envelopes. Validation may be lazy per asset, but a failed validation permanently poisons that repository instance.
+Before a repository exposes research data it validates the research descriptor, manifest schema/hash, exact identity pair, referenced asset hashes and shard envelopes. If visual composition is selected it additionally validates the exact visual descriptor/manifest, declared compatibility and registry assets. Registry absence returns research-only data with no locator; an explicit invalid selector does not. Validation may be lazy per asset, but a failed selected boundary permanently poisons that repository instance.
 
 Missing files, schema mismatches, version/compatibility mismatches, hash mismatches, duplicate stable IDs, gaps/overlaps outside the declared partition policy, unregistered relation types, or rights-held pixel leakage return `INTEGRITY_FAILURE`. They never fall back to another release/registry, a mock, an `OTHER` relation, a permissive delivery mode, or stale in-memory data.
 
 ### Caching
 
-- Exact sealed resources use strong ETags and `Cache-Control: public, max-age=31536000, immutable`.
+- Exact sealed research assets and non-public immutable visual evidence assets use strong ETags and immutable caching.
 - Each `current` descriptor is mutable routing metadata with append-only history and CAS updates. It uses short caching or revalidation. A repository resolves each once, verifies compatibility, then switches to exact pair-pinned URLs.
-- Research caches are keyed by research release ID/hash; visual caches are keyed by visual registry version/hash; combined DTO caches include all four values. Path alone is never a cache key.
+- Research caches are keyed by research release ID/hash; visual caches are keyed by visual registry version/hash; combined DTO caches include all four values. Path alone is never a cache key. Locator-bearing public composition revalidates the active restrictive takedown overlay before cache lookup and includes `takedownOverlaySha256` in the cache/ETag/receipt identity when present.
 
 ## Consequences
 

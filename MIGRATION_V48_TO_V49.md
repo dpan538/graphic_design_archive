@@ -49,7 +49,7 @@ Exit: all bytes/counts match or work stops. LFS pointer-only files, mismatch, mi
 
 Create physical migrations for `raw`, `core`, `provenance`, `rights`, `research`, `workflow`, `release`, and `api_v1`. Establish least-privilege roles, append-only/seal controls, migration replay, backup/restore plan, stable ID policy, and registry seeds.
 
-M2 may not begin from the legacy `db/*.sql` chain or `scripts/run_db_migrations.py`: that chain is an 82-table/55-view public-schema prototype with unconstrained polymorphic targets and no v49 role, subtype, seal, or CAS guarantees. It is evidence to classify, not a v49 migration prefix. New physical migrations must start from an empty database after the pre-DDL blockers in ADR 0004 and the Phase 1B audit are closed.
+M2 may not begin from the legacy `db/*.sql` chain or `scripts/run_db_migrations.py`: that chain is an 82-table/55-view public-schema prototype with unconstrained polymorphic targets and no v49 role, subtype, seal, or CAS guarantees. It is evidence to classify, not a v49 migration prefix. A future physical-schema task must start from an empty database only after the Phase 1C authority/research and Phase 1D rights/machine packages pass the independent joint pre-DDL verifier; this document itself does not authorize schema execution.
 
 Exit: a fresh empty database replays deterministically and constraint/privilege tests pass. No v48 import yet.
 
@@ -74,11 +74,13 @@ Multi-value migration is provenance-led:
 | folders, related folders, authority references | Build explicit memberships/relations with stable IDs and order. |
 | historical nodes, movements, trace trees | Build typed research-node, corpus, classification, and tree memberships; never store queryable lists as canonical JSONB. |
 | source statements, scholarly interpretations, computed associations | Build evidence-bearing claims with an epistemic class; semantic relations and TRACE projections are separate rows. |
-| images and nested rights | Build external-visual/provider/endpoint, rights-observation, policy, assessment, delivery-mode, endpoint-health, attribution, review-due, and takedown joins. Unknown, missing, conflicting, or stale rights evidence fails closed to `LINK_ONLY` or `CITATION_ONLY`. |
+| images and nested rights | Preserve each raw visual bundle and locator role. Build provenance-occurrence external visual references, the N:M object–visual bridge, provider/provider-object mappings, typed visual locators, rights observations/assessments, provider-policy versions/evaluations, delivery decisions, endpoint-health observations, attribution and typed takedown joins. Unknown, missing, conflicting or stale rights/policy fails closed to `LINK_ONLY` or `CITATION_ONLY`; unresolved provider mapping remains held. |
 | review/publication gates | Build versioned workflow gate runs/results, not opaque mutable JSONB. |
 | dossiers, page sequences, appendix reasons, registration members | Build ordered child/join tables. |
 | compound children | Build typed parent–child object joins. |
 | table citation arrays | Build assertion–citation joins with ordinal and role. |
+
+The Phase 1D authoritative visual baseline accounts for all 15,923 candidate surface bundles: 15,788 are reference-bearing, 135 are `NO_VISUAL_REFERENCE`, and the reference-bearing population contains 15,790 typed locator occurrences across four legacy roles. All 15,788 are conservatively `RIGHTS_UNKNOWN`, `POLICY_UNKNOWN`, and `UNMAPPED_PROVIDER`; positive-rights coverage is 0.0000% because no versioned provider policy or governed visual assessment exists in v48. Those unknown states are migration work, not unclassified loss and not permission. Migration must reproduce the committed sequence/set hashes and `UNCLASSIFIED_VISUAL_REFERENCE=0` without URL deduplication or provider inference.
 
 Semicolon incidence is a discovery signal, not a parser. Values such as names, place/date phrases, and physical dimensions can contain semicolons. Silent `split(';')`, loss of order/duplicates, trimming that changes meaning, or manufactured entities fail the phase.
 
@@ -132,9 +134,9 @@ Exit: exact canonical and graph parity or an explicit, reviewed delta ledger for
 
 Copy research projections from one closed snapshot and advance the research release only through `draft → candidate → validated → sealed`. Candidate closure fixes cohort, corpus, query, relation/predicate registry, claim, projection, and asset fingerprints; validated requires all research pre-seal receipts. Generate canonical research-manifest bytes/SHA, commit them atomically with seal, emit the post-seal detached sidecar, and publish research `current` only by CAS.
 
-Build the visual registry through its independent `draft → candidate → validated → sealed` lifecycle. Its manifest binds provider objects, typed endpoints, rights observations/policies, assessment, delivery mode, endpoint health, attribution, review-due, takedown overrides, and compatible research-release constraints. It has a distinct manifest SHA, sidecar, and `current` CAS pointer. A visual registry may be superseded for takedown or rights changes without mutating or resealing a research release.
+Build the visual registry through its independent `draft → candidate → validated → sealed` lifecycle. Its manifest binds external visual references, object-reference bridges, provider objects, typed locators, rights observations/assessments, provider-policy versions/evaluations, delivery decisions, endpoint-health observations, attribution/review due, takedown overlays, and exactly one compatible research pair. It has a distinct manifest SHA, sidecar, and `current` CAS pointer. A visual registry may be superseded for takedown or rights changes without mutating or resealing a research release; a later research-current advance may temporarily leave no compatible visual current, in which case research remains available and every visual locator is omitted.
 
-Exit: deterministic re-export hashes match, both exact identity pairs `(researchReleaseId,researchManifestSha256)` and `(visualRegistryVersion,registrySha256)` verify, compatibility is explicit, asset/schema IDs verify, API/repository DTO parity passes, performance budgets pass, and corruption/unknown-relation/rights-leakage tests fail closed. Sealed projections never join mutable canonical tables. v48 directories remain unchanged.
+Exit: deterministic re-export hashes match, both exact identity pairs `(researchReleaseId,researchManifestSha256)` and `(visualRegistryVersion,visualRegistrySha256)` verify, compatibility is explicit, asset/schema IDs verify, API/repository DTO parity passes, performance budgets pass, and corruption/unknown-relation/rights-leakage tests fail closed. Sealed projections never join mutable canonical tables. The public serializer starts from an empty allowlist; a non-`REMOTE_IMAGE` entry contains no pixel, thumbnail or image-service field. v48 directories remain unchanged.
 
 ### M8 — Frontend adapter and promotion
 
@@ -171,7 +173,7 @@ Stable-ID reconciliation emits sets for missing, unexpected, duplicated, remappe
 
 ## Explicit stop conditions
 
-Stop and mark the relevant gate `FAIL` for any source hash mismatch, write to frozen paths, missing LFS content, importing SQLite/Search/TRACE-derived rows, silent parse/drop or identity merge, treating an operational archive object as a proven unique intellectual work, collapsing claims/relations/TRACE projections, unknown relation coercion, rights widening, state-axis conflation, unexplained count/ID drift, use of 20,000 as parity/promotion, non-deterministic release, incomplete research or visual seal/CAS, sealed projection drift, cross-version asset reference without declared compatibility, API write path, frontend direct database access, or prototype-only prohibited process during a checkpoint governed by G9.
+Stop and mark the relevant gate `FAIL` for any source hash mismatch, write to frozen paths, missing LFS content, importing SQLite/Search/TRACE-derived rows, silent parse/drop or identity merge, treating an operational archive object as a proven unique intellectual work, collapsing claims/relations/TRACE projections, unknown relation coercion, rights widening, state-axis conflation, arbitrary visual target IDs, unexplained visual input, held-locator serialization, unexplained count/ID drift, use of 20,000 as parity/promotion, non-deterministic release, incomplete research or visual seal/CAS, stale CAS success, sealed projection drift, implicit cross-version fallback, API write path, frontend direct database access, or prototype-only prohibited process during a checkpoint governed by G9.
 
 ## Next authorized work packages
 

@@ -1,13 +1,13 @@
 # v49 Phase 1A: pre-DDL decision pack
 
-- Status: Phase 1A decisions accepted; Phase 1B evidence supersedes the readiness claim and PostgreSQL DDL remains blocked
+- Status: Phase 1A decisions recalibrated by Phase 1C/1D evidence; joint pre-DDL verification pending
 - Date: 2026-08-10
 - Baseline commit: `2a91c86bef7d23f05074187ffc53bd9f6a8f6213`
 - Measurement authority: frozen v48 JSON; SQLite was used only for read-only reconciliation
 
 ## Purpose and boundary
 
-This pack records the Phase 1A choices needed for PostgreSQL keys, foreign keys, state constraints, release sealing, and grants. The Phase 1B repository/data/research/rights audit found additional P0 evidence and semantic gaps; therefore this pack no longer claims that every pre-DDL P0 is closed. It contains no migration, verifier, import, fixture, API, adapter, frontend, or deployment implementation.
+This pack records the choices needed for PostgreSQL keys, foreign keys, state constraints, release sealing, and grants. Phase 1C closed the authority/count/research decisions found by the Phase 1B audit; Phase 1D integrates the remaining visual identity/cardinality, rights-state, dual-release and serializer decisions. The independent joint verifier still controls the readiness result. This pack contains no migration, import, fixture, API, adapter, frontend, or deployment implementation.
 
 Measured v48 facts and declared v49 rules are deliberately separated. A measured 1:1 baseline does not claim that two source descriptions can never represent the same intellectual object. Conversely, a declared future N:M cardinality does not rewrite v48 history.
 
@@ -25,7 +25,7 @@ The five frozen artifacts have distinct jobs:
 
 Archive Search, TRACE atlas/catalogs, and TRACE neighborhood shards are derived products. They can prove the behavior and population of v48 read products, but they are not migration inputs. If a derived product contains an ID absent from the canonical JSON, that ID is not inserted into v49 merely to preserve the product.
 
-TRACE nodes/edges beyond fields present in the canonical JSON may enter v49 only when a versioned deterministic transformation independently regenerates them from that JSON and governed configuration. Derived assets/SQLite may then verify IDs, counts, and hashes, but cannot fill a regeneration gap. Phase 1B confirmed that the current tree cannot regenerate the 97,889-node/255,695-edge graph solely from the canonical JSON and governed configuration; this is an open P0, not an implied migration permission. Anything not reproducible from the migration input remains excluded with a blocking delta ledger entry.
+TRACE nodes/edges beyond fields present in the canonical JSON cannot enter canonical v49 tables by replaying derived products. Phase 1C closed this authority boundary by classifying every legacy graph fact as legacy projection, computed association or held evidence with `UNCLASSIFIED_GRAPH_FACT=0`; it did not pretend the 97,889-node/255,695-edge graph is regenerable from the JSON. A future governed transformation may create a new evidence-bearing research projection, but current legacy-only graph facts remain non-canonical and fail closed rather than block physical key/constraint design.
 
 The legacy `frontend/src/data/public_surface_mock_v0.json` is the exact 8,636-ID source of `archive-search-v1.json`; it is not one of the five frozen migration-authority artifacts.
 
@@ -95,8 +95,9 @@ The two known scoped source-key collisions are retained as separate source recor
 | `semantic_relation_id` | Internal immutable UUID for an accepted evidence-bearing semantic relation. Natural-key uniqueness is enforced separately from the surrogate ID. |
 | `trace_projection_edge_id` | Internal immutable UUID for a TRACE projection edge in one research release/corpus. The v48 `TRE-*` value is crosswalk data, not semantic-relation identity. |
 | `folder_membership_id` | The `assignment_id` of the folder-membership assignment subtype. The natural key remains the typed pair described below. |
+| public canonical identity | Class-specific `urn:gdarchive:{object|relation|claim|source|visual-reference}:<lowercase-uuid>`. A governed HTTPS resolver may be added later; deployment hostname and `.example` text are never canonical identity. |
 
-UUIDv5 is required only for deterministic seed replay. It does not assert that the source row describes a globally unique real-world object. Other v48 legacy-ID seeds use the same URL namespace and exact names `https://modern-gd-history.example/identity/v49/v48/{trace-node|trace-edge|folder}/<legacyId>`. Raw record names are `https://modern-gd-history.example/identity/v49/raw/<artifactSha256>/record/<zeroBasedOrdinal>` so non-unique provider keys cannot collide. Names use source case and Unicode bytes unchanged.
+UUIDv5 is required only for deterministic seed replay. It does not assert that the source row describes a globally unique real-world object. Other v48 legacy-ID seeds use the same URL namespace and exact names `https://modern-gd-history.example/identity/v49/v48/{trace-node|trace-edge|folder}/<legacyId>`. Raw record names are `https://modern-gd-history.example/identity/v49/raw/<artifactSha256>/record/<zeroBasedOrdinal>` so non-unique provider keys cannot collide. Names use source case and Unicode bytes unchanged. Every `.example` string in this paragraph is a frozen, non-resolvable namespace input only: it must never be emitted or dereferenced as a final public URI, problem identifier or resolver origin.
 
 ### Object ↔ surface
 
@@ -295,6 +296,12 @@ WHERE membership.research_release_id = :research_release_id
 
 Family counts join the sealed relation-type snapshot and group by its family. They must sum to the active membership-projection count. `count(DISTINCT semantic_relation_id)`, `count(DISTINCT trace_projection_edge_id)`, and evidence-bridge counts are explicitly wrong for this metric.
 
+### Visual-reference identity and cardinality
+
+`rights.external_visual_reference` identifies one provenance occurrence, unique on `(source_artifact_id,source_record_id,source_field_or_json_pointer,occurrence_ordinal)`. It is not a URL, provider object, representation, permission or archive object. `rights.object_visual_reference` is the N:M archive-object ↔ external-reference bridge, unique on `(archive_object_id,external_visual_reference_id,reference_role)` with real FKs; it cannot reverse-create an object. `rights.visual_locator` records an immutable typed locator occurrence. Canonical-record, source-viewer, provider-embed, IIIF manifest/canvas/Image API/info, thumbnail, direct-image and governed-local roles never imply one another.
+
+Provider and provider-object identities, rights observations/assessments, provider-policy versions/evaluations, delivery decisions, endpoint-health observations, attribution bundles, and takedown event/scope/override records remain distinct. Rights-observation subjects, assessment subjects and takedown scopes use closed exactly-one subtype families with real FKs. An arbitrary `target_type + target_id` is prohibited. The copied `release.visual_registry_entry` natural key is `(visual_registry_version_id,archive_object_id,external_visual_reference_id,reference_role)`; copied locator rows exist only for roles allowed by the effective delivery rule.
+
 ## 9. Orthogonal states
 
 The following axes are independent and stored in their owning layer:
@@ -304,13 +311,15 @@ The following axes are independent and stored in their owning layer:
 | workflow state | `workflow`: `queued`, `claimed`, `in_review`, `resolved`, `superseded` | Processing progress only. It does not accept or publish data. |
 | acceptance state | assertion/assignment: `proposed`, `accepted`, `rejected`, `superseded` | Epistemic/editorial outcome. `held` is not an acceptance value. |
 | epistemic class | `research.claim`: `documented_source_statement`, `scholarly_claim`, `computed_association`, `causal_interpretation` | What kind of knowledge statement is being made; never inferred from relation family or TRACE styling. |
-| rights assessment | `rights`: `unknown`, `missing`, `conflict`, `stale`, `permitted`, `restricted`, `denied` | Evidence-based assessment for a representation and policy version. It does not describe transport health or itself emit a pixel URL. |
-| delivery mode | `rights`: `PIXEL_ALLOWED`, `LINK_ONLY`, `CITATION_ONLY`, `WITHHELD` | What the product may deliver. Unknown/missing/conflict/stale assessment can yield only `LINK_ONLY` or `CITATION_ONLY`; takedown forces `WITHHELD`. |
+| rights assessment | `rights`: `unknown`, `missing`, `conflict`, `stale`, restrictive states and positively evidenced states | Evidence-based assessment over one typed subject. It does not describe provider policy, transport health or delivery. |
+| provider-policy evaluation | `rights`: explicit versioned evaluation, including unknown/missing/conflict/stale and restrictive/permissive outcomes | Application of exact provider-policy evidence to one object–visual use. It is not a rights assessment. |
+| delivery mode | `rights`: `BLOCKED`, `CITATION_ONLY`, `LINK_ONLY`, `SOURCE_VIEWER`, `REMOTE_IMAGE` | What the project may return. Only `REMOTE_IMAGE` may expose the v1 allowlisted remote-pixel locator. |
 | endpoint health | `rights`: `unknown`, `healthy`, `redirected`, `degraded`, `unreachable` | Network observation only. `healthy` or IIIF availability never widens delivery. |
+| takedown state | `rights`: append-only event/scope/override state | An active override is monotonic restrictive and forces `BLOCKED` or `CITATION_ONLY`; it never rewrites sealed bytes or widens delivery. |
 | publication layer | sealed release projection: `active`, `review`, `auxiliary`, `excluded` | Audience/read-layer placement for that release. It is not workflow state. |
 | count eligibility | sealed research-release metric membership: `eligible`/`ineligible` plus reason | Eligibility for one named metric in one research release/corpus; never a universal canonical-object boolean. |
 
-Implications are prohibited: accepted does not imply active; active metadata does not imply image permission; a permitted assessment does not imply `PIXEL_ALLOWED` without policy; healthy endpoints do not imply permission; resolved workflow can end in rejection; review publication layer does not mean a case is currently in review; count eligibility for one metric says nothing about another; an epistemic class does not follow from a visualization label.
+Implications are prohibited: accepted does not imply active; active metadata does not imply image permission; a permitted assessment does not imply `REMOTE_IMAGE` without an independently permissive policy evaluation and complete attribution; healthy endpoints do not imply permission; resolved workflow can end in rejection; review publication layer does not mean a case is currently in review; count eligibility for one metric says nothing about another; an epistemic class does not follow from a visualization label.
 
 An unknown relation label is a raw assertion with acceptance `proposed` and workflow `queued`. No semantic relation, accepted claim, TRACE projection, publication layer, or metric membership exists. This is the G4/G5 fail-closed resolution.
 
@@ -318,7 +327,7 @@ An unknown relation label is a raw assertion with acceptance `proposed` and work
 
 The research release and visual registry are independent immutable boundaries. Each has its own identity/hash pair, copied projections, manifest, post-seal sidecar, state/version column, pointer table, and CAS history. Neither transition may update the other. The only forward states for either boundary are:
 
-The database identity columns project publicly as `(researchReleaseId,researchManifestSha256)` and `(visualRegistryVersion,registrySha256)`; a generic single release/version identity is prohibited.
+The database identity columns project publicly as `(researchReleaseId,researchManifestSha256)` and `(visualRegistryVersion,visualRegistrySha256)`; internal `registry_sha256` maps to that one public visual digest field. A generic single release/version identity is prohibited. The visual pair is atomically present or null in successful research responses.
 
 ```text
 draft → candidate → validated → sealed
@@ -337,13 +346,13 @@ A failed attempt remains in its current state with failed workflow receipts; rem
 
 1. In a repeatable snapshot, build copied research projections or copied visual-registry projections under `draft`.
 2. Close the cohort and transition to `candidate` using compare-and-swap on state/version.
-3. Produce boundary-specific pre-seal receipts. Research receipts cover all five frozen artifacts, migration/query digests, canonical/graph/derived counts and populations, corpus/missingness/concentration, FK/orphan checks, predicate/relation registries, claim/projection eligibility, unknown-relation isolation, projection fingerprints, deterministic asset inventory, and grants. Visual receipts cover provider/endpoint identity, rights observations/policy, assessment/delivery/health separation, attribution, review-due, takedown precedence, held-pixel non-disclosure, declared research compatibility, deterministic asset inventory, and grants.
+3. Produce boundary-specific pre-seal receipts. Research receipts cover all five frozen artifacts, migration/query digests, canonical/graph/derived counts and populations, corpus/missingness/concentration, FK/orphan checks, predicate/relation registries, claim/projection eligibility, unknown-relation isolation, projection fingerprints, deterministic asset inventory, and grants. Visual receipts cover reference/bridge/provider/locator identity, rights observations/assessments, policy versions/evaluations, delivery/health/takedown separation, attribution, review due, held-pixel non-disclosure, declared research compatibility, deterministic asset inventory, and grants.
 4. Transition `candidate → validated` only when every required receipt is present, immutable, passing, and hash-bound to the same candidate fingerprint.
 5. Generate RFC 8785 manifest bytes from the validated inventory and receipt hashes. Compute SHA-256 over those exact bytes.
 6. In one serializable transaction scoped to that boundary, verify the candidate fingerprint again, store manifest bytes/hash, and transition `validated → sealed`. Any mismatch aborts the transaction.
 7. Enforce sealed immutability through ownership, revoked DML, and a defense-in-depth trigger. Sealed projections are copied rows, never views that join mutable canonical tables.
 8. Write the post-seal detached sidecar containing the exact research or visual identity, manifest SHA-256, seal transaction identity, timestamp, and optional signature/attestation. The sidecar cannot be inside the self-hashed manifest and cannot alter its asset inventory. If sidecar creation fails, that version remains sealed but is not pointer-eligible.
-9. Publish research `current` only through CAS on `(channel,expected_generation,expected_research_release_id,expected_research_manifest_sha256)`. Publish visual `current` only through its separate CAS on `(channel,expected_generation,expected_visual_registry_version,expected_registry_sha256)`. The replacement must be sealed and sidecar-verified. A combined consumer pair is accepted only after compatibility validation. Rollback uses the owning CAS operation to an older sealed pair.
+9. Publish research `current` only through CAS on `(channel,expected_generation,expected_research_release_id,expected_research_manifest_sha256)`. Publish visual `current` only through its separate CAS on `(channel,expected_generation,expected_visual_registry_version,expected_registry_sha256)` plus a read guard over the expected research-current generation/pair. The replacement must be sealed, sidecar-verified and compatible at publication. A later independent research-current advance may create a transient mismatch window: research stays available, every visual locator is omitted, and no older registry is inherited. Rollback uses the owning CAS operation to an older sealed pair.
 
 Each current pointer is mutable routing metadata with append-only history. It is never embedded in evidence, manifests, shards, or scholarly citations; citations name exact research identity/hash, and visual evidence names exact registry identity/hash.
 
@@ -376,24 +385,26 @@ Auditing and ordinary reads are `SECURITY INVOKER`. The migrator uses explicit `
 
 ## 12. Pre-DDL entry gate
 
-Phase 1B supersedes the former claim that all P0 decisions are closed. At this checkpoint:
+Phase 1C closes the authority, 15,923-input parity, metadata-supported reconciliation, graph classification, raw-evidence classification, research-corpus and missingness decisions without importing derived rows. Phase 1D closes the remaining visual identity/cardinality, legacy typed-population, five-axis rights/delivery model, dual-release/CAS, stable-ID and serializer decisions. Until the independent joint verifier passes, this document remains conservative:
 
 ```text
 ENGINEERING_PRE_DDL_READY = false
 RESEARCH_SEMANTICS_PRE_DDL_READY = false
 RIGHTS_VISUAL_PRE_DDL_READY = false
+MACHINE_CONTRACT_PRE_DDL_READY = false
 OVERALL_PRE_DDL_READY = false
 ```
 
-DDL may begin only after a new evidence receipt closes all of these P0s:
+DDL may begin only after the joint receipt confirms all of these decision-level P0s remain closed:
 
-- the current-tree v47-parent absence and canonical-JSON-to-TRACE graph regeneration gap have an approved authoritative resolution that does not ingest SQLite/Search/TRACE-derived rows;
-- the 2,970 manifest/meta versus 2,971 row-level `metadata_supported` conflict has an evidence-bearing delta decision;
-- the 1,266 tracked raw files have artifact-level redaction, terms, license/rights, retention, and migration disposition, and the declared 29 versus observed 26 raw-directory discrepancy is resolved;
-- operational archive-object semantics, the closed predicate/assignment/endpoint registries, relation/claim/TRACE separation, four epistemic classes, corpus selection/missingness, and count units are represented in an approved logical-to-physical mapping;
-- independent research-release and visual-registry tables can enforce separate state machines, manifests, sidecars, CAS pointers, compatibility, rights assessment/delivery/health axes, takedown precedence, and held-pixel non-disclosure;
-- the legacy 82-table/55-view public-schema migration runner is execution-denied for v49 and a fresh migration namespace/path is approved;
-- repository hygiene, research/data-quality freeze, machine-readable contract, and rights/visual gates have owners, evidence producers, and blocking SQL/test semantics.
+- canonical JSON is the sole migration input; SQLite is reconciliation only; manifests are integrity evidence; Search/TRACE assets are derived and cannot create canonical rows;
+- all 15,923 input surfaces are accounted without deduplication, the 2,970 scalar versus 2,971 member-set conflict is resolved as a stale aggregate, and unclassified graph/raw counts remain zero;
+- operational object, relation/claim/TRACE, epistemic registry, corpus/missingness and unknown-relation fail-closed semantics are internally consistent;
+- all legacy visual input is inventoried and typed with zero unclassified references; unknown/unmapped is legal and does not imply permission;
+- visual identity/cardinality, five independent decision axes, dual immutable releases, separate CAS pointers, mismatch behavior, typed stable IDs and positive-allowlist serialization have no unresolved vocabulary or key conflict;
+- the legacy 82-table/55-view runner remains excluded from the future v49 migration path.
+
+Provider outreach, positive-rights adjudication, complete artifact-level redistribution clearance, actual OpenAPI/JSON Schema/JSON-LD/DCAT, API/frontend implementation, CI, deployment, production health checks and browser QA remain pre-freeze/pre-promotion work. Their absence does not reopen a physical-schema decision.
 
 The subsequent DDL review must also demonstrate:
 
@@ -406,4 +417,4 @@ The subsequent DDL review must also demonstrate:
 - release DDL can enforce both full validated/seal/CAS protocols without cross-mutation;
 - grants match the complete role matrix with no `PUBLIC` leakage.
 
-Index choice, partition size, storage implementation, and query-plan tuning remain physical-design decisions. They cannot weaken these P0 invariants. The Phase 1B audit is evidence for this stop decision, not authorization to write DDL.
+Index choice, partition size, storage implementation, and query-plan tuning remain physical-design decisions. They cannot weaken these P0 invariants. Phase 1B is discovery evidence, Phase 1C/1D are decision-closure evidence, and only the independent joint receipt may authorize the next physical-schema specification task; none of these documents authorizes DDL execution.
