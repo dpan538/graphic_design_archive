@@ -1,0 +1,106 @@
+{
+  "schema": "v49.runtime-cleanup-manifest/v1",
+  "packageVersion": "1.0.0",
+  "baselineCommit": "f75ded85000749beb4735fbbddcce99e9395b0b2",
+  "frozenSourceAncestor": "0404c7f96f9189f576c4c5b1368061e4082e436b",
+  "scope": {
+    "rightsMachineDecisionCommit": "f75ded85000749beb4735fbbddcce99e9395b0b2",
+    "rightsGateAffectedByCleanup": false,
+    "cleanupMode": "reversible_scoped_static_verified",
+    "deferredCleanupScopeCount": 9,
+    "typescript": "not_run_toolchain_absent"
+  },
+  "gates": {
+    "AI_RUNTIME_RETIRED": true,
+    "QWEN_RUNTIME_IMPORTS": 0,
+    "ACTIVE_ASSISTANT_ROUTES": 0,
+    "MODEL_RUNTIME_PRODUCTION_IMPORTS": 0,
+    "DORMANT_BULK_ROUTE_GENERATORS": 0,
+    "BULK_ROUTE_REGRESSION_BLOCKED": true,
+    "DETERMINISTIC_SEARCH_PRESERVED": true,
+    "A4_VISUAL_COMPONENTS_PRESERVED": true,
+    "ARCHIVED_PROBE_FILE_COUNT": 7,
+    "ARCHIVED_PROBE_BYTES_PRESERVED": true,
+    "QA_IMAGE_COUNT": 60,
+    "QA_IMAGES_UNCHANGED": true,
+    "SAFE_DELETE_EXECUTED": "docs/.DS_Store",
+    "OTHER_UNTRACKED_DELETED": 0,
+    "DEFERRED_CLEANUP_COUNT": 9,
+    "CLEANUP_STAGE": "PASS_STATIC_SCOPE"
+  },
+  "packageGraph": {
+    "baselineEntries": 218,
+    "currentEntries": 176,
+    "removedEntries": 42,
+    "addedEntries": 0,
+    "retainedVersionResolvedIntegrityDrift": 0,
+    "nodeModulesCreated": false
+  },
+  "qa": {
+    "trackedScreenshots": 60,
+    "filesystemScreenshots": 60,
+    "pathContentFingerprint": "287289be2f58cae02f8746290c37ebec8880cd1bf461f112a64733b1cb499220",
+    "imageDiff": 0
+  },
+  "removedPaths": [
+    {"path": "frontend/src/app/api/archive-assistant-evidence/route.ts", "baselineBytes": 799, "baselineSha256": "3710ed2e9ab2a28c158cc3e28d09a246c93c85014a1bb25dc0a73910c4d1188c", "reason": "retired_assistant_post_route"},
+    {"path": "frontend/src/lib/assistant-memory.ts", "baselineBytes": 3937, "baselineSha256": "b952a8779006228fbab2e62ac3f0cba859524a15b1a23d60baad7a917f888454", "reason": "retired_assistant_runtime"},
+    {"path": "frontend/src/lib/assistant-retrieval.ts", "baselineBytes": 22232, "baselineSha256": "5eb6330f27b08983b1706e2ffd95c38b24f684039d87451d8759077f8db6c0c6", "reason": "retired_assistant_runtime"},
+    {"path": "frontend/src/lib/qwen35-adapter.ts", "baselineBytes": 12852, "baselineSha256": "4e8b9f671a553f80c5d3e52a4bf361b92779282c24a77f44b2ffb27733161cdd", "reason": "retired_model_runtime"}
+  ],
+  "movedPaths": [
+    {"from": "frontend/scripts/probe-qwen35-runtime.mjs", "to": "archive/ai-rag-slm/qwen35-browser-local-probes/runners/probe-qwen35-runtime.mjs", "sha256": "4c1cd1ca7e219d2a4ea4c0634474bda37bd1a3aa1985acf6cc9c18537300bda7", "gitSimilarity": 100},
+    {"from": "frontend/scripts/probe-qwen35-generation.mjs", "to": "archive/ai-rag-slm/qwen35-browser-local-probes/runners/probe-qwen35-generation.mjs", "sha256": "6beeae595eff4e200cca082557443393d3794f2d6f62b6590f901535c5965616", "gitSimilarity": 100},
+    {"from": "frontend/scripts/probe-qwen35-rag-policy.js", "to": "archive/ai-rag-slm/qwen35-browser-local-probes/runners/probe-qwen35-rag-policy.js", "sha256": "9951d67c86aab508ad378dbdde7c442f6d0ddefe89a070bbccffcd6e9e557f79", "gitSimilarity": 100},
+    {"from": "generated/qwen35_runtime_probe_v0.json", "to": "archive/ai-rag-slm/qwen35-browser-local-probes/results/qwen35_runtime_probe_v0.json", "sha256": "dfeaaca5aa1509b8c0f50a1cc15e66004d10e15f748a0b68fd3aaed924c1cdb6", "gitSimilarity": 100},
+    {"from": "generated/qwen35_generation_probe_v0.json", "to": "archive/ai-rag-slm/qwen35-browser-local-probes/results/qwen35_generation_probe_v0.json", "sha256": "1e11428a88e5c70445f6b0ee2733134d4f521eef36469a3c8a0bf05529853643", "gitSimilarity": 100},
+    {"from": "generated/qwen35_rag_policy_probe_v0.json", "to": "archive/ai-rag-slm/qwen35-browser-local-probes/results/qwen35_rag_policy_probe_v0.json", "sha256": "2d163202c5a6c281d069da938393fff71a3d71e1b6348c7d857016e804eec682", "gitSimilarity": 100},
+    {"from": "generated/archive_assistant_primer_v0.json", "to": "archive/ai-rag-slm/qwen35-browser-local-probes/results/archive_assistant_primer_v0.json", "sha256": "b189bca6593c83a674595665b415b0df749bd1364fee56c9850109552b564b06", "gitSimilarity": 100}
+  ],
+  "safeDeletes": [
+    {
+      "path": "docs/.DS_Store",
+      "beforeBytes": 10244,
+      "beforeSha256": "dcdc3b5be1090bb9a63ec44a879703de496bfdcb496e5bb1471095b138a51cd8",
+      "beforeGitStatus": "ignored_untracked",
+      "afterExists": false,
+      "recoverability": "macos_metadata_recreatable"
+    }
+  ],
+  "verifier": {
+    "path": "scripts/verify_v49_runtime_cleanup.py",
+    "command": "python3 scripts/verify_v49_runtime_cleanup.py",
+    "network": false,
+    "writesFilesOrDatabase": false,
+    "finalAuditableChecksPassed": 38,
+    "finalAuditableChecksFailed": 0,
+    "processScan": "external_sanitized_receipt_required"
+  },
+  "artifacts": [
+    {"path": "archive/ai-rag-slm/qwen35-browser-local-probes/README.md", "bytes": 2438, "sha256": "48646700e11b2d0553ae4afbc84f668a9e762db2c126f7e816fab6d081b8be40"},
+    {"path": "archive/ai-rag-slm/qwen35-browser-local-probes/results/archive_assistant_primer_v0.json", "bytes": 1272, "sha256": "b189bca6593c83a674595665b415b0df749bd1364fee56c9850109552b564b06"},
+    {"path": "archive/ai-rag-slm/qwen35-browser-local-probes/results/qwen35_generation_probe_v0.json", "bytes": 3141, "sha256": "1e11428a88e5c70445f6b0ee2733134d4f521eef36469a3c8a0bf05529853643"},
+    {"path": "archive/ai-rag-slm/qwen35-browser-local-probes/results/qwen35_rag_policy_probe_v0.json", "bytes": 25321, "sha256": "2d163202c5a6c281d069da938393fff71a3d71e1b6348c7d857016e804eec682"},
+    {"path": "archive/ai-rag-slm/qwen35-browser-local-probes/results/qwen35_runtime_probe_v0.json", "bytes": 3572, "sha256": "dfeaaca5aa1509b8c0f50a1cc15e66004d10e15f748a0b68fd3aaed924c1cdb6"},
+    {"path": "archive/ai-rag-slm/qwen35-browser-local-probes/runners/probe-qwen35-generation.mjs", "bytes": 14078, "sha256": "6beeae595eff4e200cca082557443393d3794f2d6f62b6590f901535c5965616"},
+    {"path": "archive/ai-rag-slm/qwen35-browser-local-probes/runners/probe-qwen35-rag-policy.js", "bytes": 5046, "sha256": "9951d67c86aab508ad378dbdde7c442f6d0ddefe89a070bbccffcd6e9e557f79"},
+    {"path": "archive/ai-rag-slm/qwen35-browser-local-probes/runners/probe-qwen35-runtime.mjs", "bytes": 6372, "sha256": "4c1cd1ca7e219d2a4ea4c0634474bda37bd1a3aa1985acf6cc9c18537300bda7"},
+    {"path": "frontend/package-lock.json", "bytes": 87070, "sha256": "8d6d8186a7344f595aa152f682c863fb0edaac422771cd4d291a9e0feb6b61b6"},
+    {"path": "frontend/package.json", "bytes": 1746, "sha256": "994f0d786e7ecbb136250ba13d2cd41a31e46e54efd57e40a4f91bc672bc00b0"},
+    {"path": "frontend/src/app/globals.css", "bytes": 358756, "sha256": "0b9e39563e9554e94a0f3cd1f55689102ae7c976b80765bb677b367d3912fe75"},
+    {"path": "frontend/src/components/archive/reader/Reader.tsx", "bytes": 28848, "sha256": "de3c47e48f9ba30e497c9831fa6d6a8e55a471293dee892588d5277e199c1294"},
+    {"path": "frontend/src/components/archive/shell/ArchiveShell.tsx", "bytes": 17643, "sha256": "221c50e2346cc88a4e505e5deb1e7bfbaaac3d9da16db643bd7f18ecf83d8cec"},
+    {"path": "frontend/src/components/archive/shell/search.tsx", "bytes": 4071, "sha256": "8690d45a24ededd6586ba039663837b329fd6903069d00c808215266d4d809da"},
+    {"path": "frontend/src/lib/archive-data.ts", "bytes": 19936, "sha256": "d189d765d0648ac4b623c4795a05fcfb60538c5cf9050d78b2005d858eb704ed"},
+    {"path": "docs/qa/README.md", "bytes": 1966, "sha256": "f9a0a90ae827bd0eaee68701dd6b85b14b480c1e7633c3a448d0b5e763616e1b"},
+    {"path": "docs/qa/SCREENSHOT_MANIFEST.schema.json", "bytes": 6503, "sha256": "4e56fcf105cf6d6ec929764fbd8ddcb3d069b5df32eeb46c5e6f36406958b7b9"},
+    {"path": "docs/audits/v49-runtime-cleanup/00_EXECUTIVE_RECEIPT.md", "bytes": 4268, "sha256": "eca3eadd2ba9ffa3e3c97eeb26e37ff0d8325a21cb24117474fc29c9e0db10b2"},
+    {"path": "docs/audits/v49-runtime-cleanup/01_DEFERRED_CLEANUP_LEDGER.md", "bytes": 3285, "sha256": "d0e05f29fb596aea7c2d7526c01c9943f327d39a51bcb72e7139889072cffa64"},
+    {"path": "docs/audits/v49-runtime-cleanup/02_CLEANUP_GATE_RECEIPT.md", "bytes": 3050, "sha256": "ad5877fdfa102ffccbe41c51661669523df4ad0c3cc351f2235b2ad03ed9051a"},
+    {"path": "docs/audits/v49-runtime-cleanup/AGENT_TASK_REGISTER.md", "bytes": 1852, "sha256": "1c117d65941d26d2dd700f6664a67c4e80d5abb1d217a56601aa8531926010e5"},
+    {"path": "docs/audits/v49-runtime-cleanup/agents/C1_AI_RUNTIME_RETIREMENT_RECEIPT.md", "bytes": 7458, "sha256": "e3c6d969ea7a8af751c8681e65f235bc96bf84bf6afb8b84fff3f6b91b8d44a8"},
+    {"path": "docs/audits/v49-runtime-cleanup/agents/C2_ARCHIVE_BULK_QA_RECEIPT.md", "bytes": 8952, "sha256": "bd1a7cda9b179ba69f16167919b44e8fd2f329252b84320b66dbe8a13eb9f183"},
+    {"path": "docs/audits/v49-runtime-cleanup/agents/C3_INDEPENDENT_CLEANUP_VERIFIER_RECEIPT.md", "bytes": 8950, "sha256": "fdb25c1d487d55173209263b392bc93ccc6f1fa04164c72056c7a6afdb864365"},
+    {"path": "scripts/verify_v49_runtime_cleanup.py", "bytes": 34198, "sha256": "63b12bd525a29cebb7a78887c3ea88dcde1d4311dcdd26e85d6bfc41587ba7fd"}
+  ]
+}

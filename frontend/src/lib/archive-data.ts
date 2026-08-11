@@ -641,14 +641,6 @@ export function allFolderTypeParams(): { type: FolderTypeKey }[] {
   return getFolderTypes().map((ft) => ({ type: ft.type }));
 }
 
-export function allFolderParams(): { type: FolderTypeKey; slug: string }[] {
-  return getFolders().map((f) => ({ type: f.type, slug: f.slug }));
-}
-
-export function allSurfaceParams(): { id: string }[] {
-  return getSurfaces().map((s) => ({ id: s.surfaceId }));
-}
-
 export const SURFACE_KIND_LABEL: Record<SurfaceKind, string> = {
   sheet: "Sheet",
   card: "Card",

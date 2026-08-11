@@ -3,14 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import SearchBox, { type AssistantContext, type SearchMode } from "./search";
+import SearchBox from "./search";
 import shellStyles from "./ArchiveShell.module.css";
 
 /**
  * Fixed, non-scrolling viewport. No sidebar column and no top/bottom bar.
  * Large screens keep the full research navigation visible. Compact screens
  * collapse the same five routes behind one accessible menu control. Search
- * expands in the corner-stack; assistant mode shares the search window.
+ * expands in the corner-stack.
  */
 export default function ArchiveShell({
   main,
@@ -57,9 +57,6 @@ export default function ArchiveShell({
   const [leftPanelMode, setLeftPanelMode] = useState<"primary" | "secondary">("primary");
   const [searchOpen, setSearchOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [searchMode, setSearchMode] = useState<SearchMode>("search");
-  const [assistantContext, setAssistantContext] =
-    useState<AssistantContext | null>(null);
   const [searchFrame, setSearchFrame] = useState<{
     top: number;
     maxHeight: number;
@@ -74,28 +71,6 @@ export default function ArchiveShell({
   useEffect(() => {
     mainRef.current?.scrollTo({ top: 0, left: 0 });
   }, [pathname]);
-
-  useEffect(() => {
-    const openAssistant = (event: Event) => {
-      const detail = (event as CustomEvent<AssistantContext>).detail ?? null;
-      if (searchOpen && searchMode === "assistant") {
-        setSearchOpen(false);
-        return;
-      }
-      setAssistantContext(detail);
-      setSearchMode("assistant");
-      setMenuOpen(false);
-      setLeftPanelOpen(false);
-      setPanelOpen(false);
-      onContextOverlayOpenChange?.(false);
-      onRightPanelOpenChange?.(false);
-      setSearchOpen(true);
-    };
-    window.addEventListener("archive:open-assistant", openAssistant);
-    return () => {
-      window.removeEventListener("archive:open-assistant", openAssistant);
-    };
-  }, [onContextOverlayOpenChange, onRightPanelOpenChange, searchMode, searchOpen]);
 
   // Left-edge swipe → back. Backspace also goes back.
   useEffect(() => {
@@ -316,14 +291,13 @@ export default function ArchiveShell({
           ref={desktopSearchButtonRef}
           type="button"
           className={`nav-icon ${shellStyles.semanticNavItem}`}
-          data-active={searchOpen && searchMode === "search"}
+          data-active={searchOpen}
           aria-label="Search"
           onClick={() => {
-            setSearchMode("search");
             setLeftPanelOpen(false);
             setPanelOpen(false);
             onContextOverlayOpenChange?.(false);
-            setSearchOpen((value) => (searchMode === "search" ? !value : true));
+            setSearchOpen((value) => !value);
           }}
         >
           <IconSearch />
@@ -394,15 +368,14 @@ export default function ArchiveShell({
               ref={mobileSearchButtonRef}
               type="button"
               className={`nav-icon ${shellStyles.semanticNavItem} ${shellStyles.mobileNavItem}`}
-              data-active={searchOpen && searchMode === "search"}
+              data-active={searchOpen}
               aria-label="Search"
               onClick={() => {
                 setMenuOpen(false);
-                setSearchMode("search");
                 setLeftPanelOpen(false);
                 setPanelOpen(false);
                 onContextOverlayOpenChange?.(false);
-                setSearchOpen((v) => (searchMode === "search" ? !v : true));
+                setSearchOpen((value) => !value);
               }}
             >
               <IconSearch />
@@ -425,11 +398,7 @@ export default function ArchiveShell({
                 }
           }
         >
-          <SearchBox
-            mode={searchMode}
-            assistantContext={assistantContext}
-            onClose={() => setSearchOpen(false)}
-          />
+          <SearchBox onClose={() => setSearchOpen(false)} />
         </div>
       ) : null}
 

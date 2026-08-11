@@ -87,23 +87,6 @@ export default function Reader({
     setSelectedContextId("active");
   }, [activeSurface?.surfaceId, activeLeaf?.id]);
 
-  const openAssistant = useCallback(() => {
-    window.dispatchEvent(
-      new CustomEvent("archive:open-assistant", {
-        detail: {
-          surfaceId: activeSurface?.surfaceId,
-          title: activeSurface?.title ?? contextTitle,
-          dateText: activeSurface?.dateText ?? contextSubtitle,
-          imageState: activeSurface?.image.state,
-          rightsLabel: activeSurface?.rights.label,
-          sourceName: activeSurface?.sourceName,
-          creator: activeSurface?.creator,
-          objectType: activeSurface?.objectType,
-        },
-      }),
-    );
-  }, [activeSurface, contextSubtitle, contextTitle]);
-
   const atStart = index <= 0;
   const atEnd = index >= leaves.length - 1;
 
@@ -170,17 +153,6 @@ export default function Reader({
       </div>
 
       <div className="page-turn">
-        <button
-          type="button"
-          className="btn-turn btn-turn--assistant"
-          onClick={openAssistant}
-          aria-label="Open research assistant"
-          title="Research"
-        >
-          <IconAssistant />
-          <span>Research</span>
-        </button>
-        <div className="page-turn__sep" aria-hidden />
         <button
           type="button"
           className="btn-turn"
@@ -578,22 +550,6 @@ function IconRelation() {
       <circle cx="17" cy="19" r="2" />
       <path d="M8 5h3v14h4" />
       <path d="M11 12h4" />
-    </svg>
-  );
-}
-
-function IconAssistant() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden>
-      <path d="M12 3v3" />
-      <path d="M12 18v3" />
-      <path d="M3 12h3" />
-      <path d="M18 12h3" />
-      <path d="M7.8 7.8l2.1 2.1" />
-      <path d="M14.1 14.1l2.1 2.1" />
-      <path d="M16.2 7.8l-2.1 2.1" />
-      <path d="M9.9 14.1l-2.1 2.1" />
-      <circle cx="12" cy="12" r="2.6" />
     </svg>
   );
 }
