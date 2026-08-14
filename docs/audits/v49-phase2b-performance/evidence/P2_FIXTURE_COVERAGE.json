@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "schema": "gda-v49-phase2b-performance-fixture-coverage/v1",
+  "sourceStagingManifestSha256": "01ac60c705f7450c6668a91ee6a3d2842c3b0258a4ecd85139611bf916681322",
+  "sourceStagingAttestationSha256": "11742e9afc577d976ea097540326c2697937290635735ad9d4466efce1758bcc",
+  "candidateSha256": "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48",
+  "folderPopulation": {
+    "objects": 15923,
+    "membershipCountDistribution": {
+      "3": 15716,
+      "4": 201,
+      "5": 6
+    },
+    "valueQuantileCutValues": [3, 3, 3, 3],
+    "valueQuantileLabelCollapsedByTies": true,
+    "rankQuantileMethod": "sort by (folder_count, sha256(candidate_sha256 + '|' + archive_object_id)); assign min(4, floor(zero_based_rank * 5 / 15923))",
+    "interpretation": "All five population rank quantiles are represented. The fixture manifest's single value-quantile label 4 is a tied-cut artifact, not missing membership coverage; every scale also includes counts 3, 4, and the six count-5 high-cardinality objects."
+  },
+  "scales": {
+    "50": {
+      "selectionSha256": "d5f2d5fa2b07bff6924d5a2d6c8f2ecdf25cae47715deea5d7a91b11b9217fee",
+      "membershipCountDistribution": {"3": 41, "4": 3, "5": 6},
+      "populationRankQuantileDistribution": {"0": 30, "1": 7, "2": 2, "3": 1, "4": 10}
+    },
+    "250": {
+      "selectionSha256": "0744ad83e685f999c90400c518e34a3f63412e0f11e3a575a105001287ac94cb",
+      "membershipCountDistribution": {"3": 234, "4": 10, "5": 6},
+      "populationRankQuantileDistribution": {"0": 181, "1": 22, "2": 15, "3": 11, "4": 21}
+    },
+    "1000": {
+      "selectionSha256": "24f7d1f75dcfc8db30fff567ee38f92b2acb2e4100b7f641270461438bfa94dc",
+      "membershipCountDistribution": {"3": 957, "4": 37, "5": 6},
+      "populationRankQuantileDistribution": {"0": 657, "1": 134, "2": 77, "3": 51, "4": 81}
+    },
+    "4000": {
+      "selectionSha256": "369075e818ff4d85cf0caf6f343058af45b7071cd56c154142e2973fa7a33141",
+      "membershipCountDistribution": {"3": 3874, "4": 120, "5": 6},
+      "populationRankQuantileDistribution": {"0": 2101, "1": 647, "2": 445, "3": 409, "4": 398}
+    },
+    "8000": {
+      "selectionSha256": "e2e88ffff7db65536266dcdd9839ab30086cc0470c7dc1c0203718dcf63a2eb3",
+      "membershipCountDistribution": {"3": 7840, "4": 154, "5": 6},
+      "populationRankQuantileDistribution": {"0": 2891, "1": 1869, "2": 1517, "3": 898, "4": 825}
+    }
+  },
+  "allScalesCoverEligibleAndHeld": true,
+  "allScalesCoverTierPresentAndMissing": true,
+  "allScalesCoverVisualPresentAndAbsent": true,
+  "allScalesCoverFiveLiteralValueQuantiles": true,
+  "allScalesCoverFiveFolderPopulationRankQuantiles": true,
+  "allScalesCoverAllObservedRightsStates": true,
+  "allScalesCoverHighCardinalityObjects": true,
+  "extractorRerun": false,
+  "stagingModified": false
+}

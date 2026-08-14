@@ -1,0 +1,163 @@
+{
+  "finalSchemaSha256": "aa8cb0af7b61931e51f1f71ed2e4cf0d10b178669de16807871819b330742e8b",
+  "fixtureScale": 50,
+  "fullScaleFailureProbesRerun": false,
+  "probeCount": 11,
+  "probes": {
+    "after_corpus": {
+      "expectedMarker": "PHASE2B_INJECTED_FAILURE:after_corpus",
+      "markerObserved": true,
+      "residue": {
+        "currentPointerResidue": 0,
+        "migrationBatchResidue": 0,
+        "nonzeroProjectTables": {},
+        "partialImportResidue": 0,
+        "sealedReleaseResidue": 0
+      },
+      "returnCode": 2,
+      "status": "PASS",
+      "tail": "s\nTime: 48.371 ms\nTime: 51.733 ms\nTime: 1.046 ms\nTime: 59.642 ms\nTime: 8.783 ms\nTime: 0.680 ms\nTime: 1.457 ms\nTime: 0.739 ms\nTime: 3.130 ms\nTime: 0.798 ms\nTime: 0.301 ms\nTime: 8.159 ms\nTime: 0.589 ms\nTime: 0.119 ms\nPHASE2B_STAGE_BEGIN|COPY|2026-08-15 01:09:21.065774+10|0/EAB6000\nTime: 74549.362 ms (01:14.549)\nTime: 37.879 ms\nTime: 0.871 ms\nTime: 373.372 ms\nTime: 275.641 ms\nTime: 25.883 ms\nTime: 52.332 ms\nTime: 44.222 ms\nTime: 0.446 ms\nTime: 1.859 ms\nTime: 0.346 ms\nTime: 4.290 ms\nTime: 0.865 ms\nTime: 0.760 ms\nTime: 15.219 ms\nTime: 6.064 ms\nTime: 67.736 ms\nTime: 1.987 ms\nTime: 0.881 ms\nTime: 34.339 ms\nTime: 14.228 ms\nTime: 2.573 ms\nTime: 2.435 ms\nTime: 0.596 ms\nTime: 0.776 ms\nTime: 1.469 ms\nTime: 5.878 ms\nTime: 1.102 ms\nPHASE2B_STAGE_END|COPY|wall_seconds=75.588815|wal_bytes=1807872|rows=12961|bytes=256830322\nTime: 5.622 ms\nTime: 0.258 ms\nTime: 42.681 ms\nTime: 0.815 ms\nTime: 0.082 ms\nPHASE2B_STAGE_BEGIN|DURABLE_INSERTS|2026-08-14 15:10:36.706649+00|0/EC6F600\nTime: 73884.239 ms (01:13.884)\nTime: 94.734 ms\nTime: 61.546 ms\nTime: 625.021 ms\nTime: 3390.689 ms (00:03.391)\nTime: 2.499 ms\nTime: 16.995 ms\nTime: 59.399 ms\nPHASE2B_MID_OBJECT_SUBSET_ROWS=33\nTime: 0.291 ms\n\nTime: 3.082 ms\nTime: 12.166 ms\nTime: 91.103 ms\nTime: 81.671 ms\nTime: 98.960 ms\nTime: 86.053 ms\nTime: 53.845 ms\nTime: 76.685 ms\nTime: 16.845 ms\nTime: 114.022 ms\n\nTime: 0.127 ms\nTime: 4.182 ms\nTime: 60.164 ms\nTime: 48.314 ms\nTime: 26.563 ms\npsql:/private/tmp/modern_GD_history_v49_phase2b_performance/database/data-migrations/v48-to-v49/load.sql:284: ERROR:  PHASE2B_INJECTED_FAILURE:after_corpus\nCONTEXT:  PL/pgSQL function pg_temp_3.gda_inject(text) line 4 at RAISE\nTime: 382.428 ms\n{\"error\": \"IMPORT_TRANSACTION_ROLLED_BACK\\nPHASE2B_BACKEND_PID|10282\\nTime: 51.077 ms\\nTime: 43.887 ms\\nTime: 1.995 ms\\nTime: 2.482 ms\\nTime: 0.049 ms\\nTime: 0.029 ms\\nTime: 0.029 ms\\nTime: 0.025 ms\\nTime: 0.031 ms\\nTime: 0.037 ms\\nTime: 0.028 ms\\nTime: 0.028 ms\\nTime: 0.058 ms\\nTime: 92.202 ms\\nTime: 12.793 ms\\nTime: 44.745 ms\\nTime: 53.243 ms\\nTime: 0.587 ms\\nTime: 61.303 ms\\nTime: 98.850 ms\\nTime: 7.847 ms\\nTime: 3.449 ms\\nTime: 1.498 ms\\nTime: 12.482 ms\\nTime: 52.037 ms\\nTime: 1.820 ms\\nTime: 100.662 ms\\nTime: 0.839 ms\\nTime: 52.700 ms\\nTime: 52.903 ms\\nTime: 59.278 ms\\nTime: 48.371 ms\\nTime: 51.733 ms\\nTime: 1.046 ms\\nTime: 59.642 ms\\nTime: 8.783 ms\\nTime: 0.680 ms\\nTime: 1.457 ms\\nTime: 0.739 ms\\nTime: 3.130 ms\\nTime: 0.798 ms\\nTime: 0.301 ms\\nTime: 8.159 ms\\nTime: 0.589 ms\\nTime: 0.119 ms\\nPHASE2B_STAGE_BEGIN|COPY|2026-08-15 01:09:21.065774+10|0/EAB6000\\nTime: 74549.362 ms (01:14.549)\\nTime: 37.879 ms\\nTime: 0.871 ms\\nTime: 373.372 ms\\nTime: 275.641 ms\\nTime: 25.883 ms\\nTime: 52.332 ms\\nTime: 44.222 ms\\nTime: 0.446 ms\\nTime: 1.859 ms\\nTime: 0.346 ms\\nTime: 4.290 ms\\nTime: 0.865 ms\\nTime: 0.760 ms\\nTime: 15.219 ms\\nTime: 6.064 ms\\nTime: 67.736 ms\\nTime: 1.987 ms\\nTime: 0.881 ms\\nTime: 34.339 ms\\nTime: 14.228 ms\\nTime: 2.573 ms\\nTime: 2.435 ms\\nTime: 0.596 ms\\nTime: 0.776 ms\\nTime: 1.469 ms\\nTime: 5.878 ms\\nTime: 1.102 ms\\nPHASE2B_STAGE_END|COPY|wall_seconds=75.588815|wal_bytes=1807872|rows=12961|bytes=256830322\\nTime: 5.622 ms\\nTime: 0.258 ms\\nTime: 42.681 ms\\nTime: 0.815 ms\\nTime: 0.082 ms\\nPHASE2B_STAGE_BEGIN|DURABLE_INSERTS|2026-08-14 15:10:36.706649+00|0/EC6F600\\nTime: 73884.239 ms (01:13.884)\\nTime: 94.734 ms\\nTime: 61.546 ms\\nTime: 625.021 ms\\nTime: 3390.689 ms (00:03.391)\\nTime: 2.499 ms\\nTime: 16.995 ms\\nTime: 59.399 ms\\nPHASE2B_MID_OBJECT_SUBSET_ROWS=33\\nTime: 0.291 ms\\n\\nTime: 3.082 ms\\nTime: 12.166 ms\\nTime: 91.103 ms\\nTime: 81.671 ms\\nTime: 98.960 ms\\nTime: 86.053 ms\\nTime: 53.845 ms\\nTime: 76.685 ms\\nTime: 16.845 ms\\nTime: 114.022 ms\\n\\nTime: 0.127 ms\\nTime: 4.182 ms\\nTime: 60.164 ms\\nTime: 48.314 ms\\nTime: 26.563 ms\\npsql:/private/tmp/modern_GD_history_v49_phase2b_performance/database/data-migrations/v48-to-v49/load.sql:284: ERROR:  PHASE2B_INJECTED_FAILURE:after_corpus\\nCONTEXT:  PL/pgSQL function pg_temp_3.gda_inject(text) line 4 at RAISE\\nTime: 382.428 ms\", \"status\": \"FAIL\"}\n"
+    },
+    "after_parity": {
+      "expectedMarker": "PHASE2B_INJECTED_FAILURE:after_parity",
+      "markerObserved": true,
+      "residue": {
+        "currentPointerResidue": 0,
+        "migrationBatchResidue": 0,
+        "nonzeroProjectTables": {},
+        "partialImportResidue": 0,
+        "sealedReleaseResidue": 0
+      },
+      "returnCode": 2,
+      "status": "PASS",
+      "tail": ": 32.554 ms\nTime: 48.365 ms\nTime: 0.432 ms\nTime: 2.361 ms\nPHASE2B_STAGE_BEGIN|DURABLE_INSERTS|2026-08-14 15:19:14.634618+00|0/17B59390\nTime: 79286.857 ms (01:19.287)\nTime: 2.584 ms\nTime: 46.512 ms\nTime: 405.542 ms\nTime: 2806.879 ms (00:02.807)\nTime: 15.939 ms\nTime: 104.528 ms\nTime: 117.934 ms\nPHASE2B_MID_OBJECT_SUBSET_ROWS=33\nTime: 21.054 ms\n\nTime: 1.107 ms\nTime: 1.050 ms\nTime: 4.482 ms\nTime: 7.983 ms\nTime: 10.453 ms\nTime: 3.164 ms\nTime: 107.315 ms\nTime: 260.205 ms\nTime: 17.230 ms\nTime: 5.788 ms\n\nTime: 0.168 ms\nTime: 2.247 ms\nTime: 5.573 ms\nTime: 5.720 ms\nTime: 4.391 ms\n\nTime: 0.644 ms\nTime: 12.393 ms\nTime: 2.546 ms\nTime: 19.401 ms\nTime: 1.864 ms\nTime: 1.109 ms\nTime: 33.897 ms\nTime: 92.156 ms\nTime: 3.866 ms\nTime: 1.158 ms\nTime: 3.895 ms\nTime: 79.498 ms\nTime: 98.550 ms\nTime: 90.738 ms\nTime: 7.592 ms\n\nTime: 0.649 ms\nPHASE2B_STAGE_END|DURABLE_INSERTS|wall_seconds=83.731200|wal_bytes=73051248|rows=12541\nTime: 13.311 ms\nTime: 1.149 ms\nPHASE2B_STAGE_BEGIN|PARITY|2026-08-14 15:20:38.368051+00|0/1C104000\nTime: 4.239 ms\nPHASE2B_STAGE_END|PARITY|wall_seconds=0.004536|wal_bytes=0|rows=50\nTime: 0.162 ms\npsql:/private/tmp/modern_GD_history_v49_phase2b_performance/database/data-migrations/v48-to-v49/load.sql:525: ERROR:  PHASE2B_INJECTED_FAILURE:after_parity\nCONTEXT:  PL/pgSQL function pg_temp_4.gda_inject(text) line 4 at RAISE\nTime: 417.354 ms\n{\"error\": \"IMPORT_TRANSACTION_ROLLED_BACK\\nTime: 23.172 ms\\nTime: 51.765 ms\\nTime: 47.125 ms\\nTime: 73.601 ms\\nTime: 75.857 ms\\nTime: 17.366 ms\\nTime: 51.728 ms\\nTime: 13.928 ms\\nTime: 81.842 ms\\nTime: 26.729 ms\\nTime: 74.784 ms\\nTime: 21.250 ms\\nTime: 41.172 ms\\nTime: 3.767 ms\\nTime: 108.002 ms\\nTime: 25.679 ms\\nTime: 2.142 ms\\nTime: 1.975 ms\\nTime: 0.856 ms\\nTime: 1.180 ms\\nTime: 1.163 ms\\nTime: 19.315 ms\\nTime: 21.163 ms\\nTime: 39.497 ms\\nTime: 16.981 ms\\nTime: 0.543 ms\\nTime: 1.589 ms\\nTime: 0.200 ms\\nTime: 2.403 ms\\nPHASE2B_STAGE_BEGIN|COPY|2026-08-15 01:16:49.02461+10|0/17B3A000\\nTime: 136760.068 ms (02:16.760)\\nTime: 175.443 ms\\nTime: 99.325 ms\\nTime: 5440.961 ms (00:05.441)\\nTime: 2355.117 ms (00:02.355)\\nTime: 35.814 ms\\nTime: 57.885 ms\\nTime: 6.585 ms\\nTime: 164.077 ms\\nTime: 165.803 ms\\nTime: 7.733 ms\\nTime: 17.848 ms\\nTime: 0.600 ms\\nTime: 13.936 ms\\nTime: 2.169 ms\\nTime: 31.378 ms\\nTime: 84.736 ms\\nTime: 4.091 ms\\nTime: 1.269 ms\\nTime: 6.353 ms\\nTime: 9.611 ms\\nTime: 4.889 ms\\nTime: 1.684 ms\\nTime: 0.911 ms\\nTime: 10.181 ms\\nTime: 3.981 ms\\nTime: 0.799 ms\\nTime: 1.405 ms\\nPHASE2B_STAGE_END|COPY|wall_seconds=145.520780|wal_bytes=127888|rows=12961|bytes=256830322\\nTime: 15.951 ms\\nTime: 32.554 ms\\nTime: 48.365 ms\\nTime: 0.432 ms\\nTime: 2.361 ms\\nPHASE2B_STAGE_BEGIN|DURABLE_INSERTS|2026-08-14 15:19:14.634618+00|0/17B59390\\nTime: 79286.857 ms (01:19.287)\\nTime: 2.584 ms\\nTime: 46.512 ms\\nTime: 405.542 ms\\nTime: 2806.879 ms (00:02.807)\\nTime: 15.939 ms\\nTime: 104.528 ms\\nTime: 117.934 ms\\nPHASE2B_MID_OBJECT_SUBSET_ROWS=33\\nTime: 21.054 ms\\n\\nTime: 1.107 ms\\nTime: 1.050 ms\\nTime: 4.482 ms\\nTime: 7.983 ms\\nTime: 10.453 ms\\nTime: 3.164 ms\\nTime: 107.315 ms\\nTime: 260.205 ms\\nTime: 17.230 ms\\nTime: 5.788 ms\\n\\nTime: 0.168 ms\\nTime: 2.247 ms\\nTime: 5.573 ms\\nTime: 5.720 ms\\nTime: 4.391 ms\\n\\nTime: 0.644 ms\\nTime: 12.393 ms\\nTime: 2.546 ms\\nTime: 19.401 ms\\nTime: 1.864 ms\\nTime: 1.109 ms\\nTime: 33.897 ms\\nTime: 92.156 ms\\nTime: 3.866 ms\\nTime: 1.158 ms\\nTime: 3.895 ms\\nTime: 79.498 ms\\nTime: 98.550 ms\\nTime: 90.738 ms\\nTime: 7.592 ms\\n\\nTime: 0.649 ms\\nPHASE2B_STAGE_END|DURABLE_INSERTS|wall_seconds=83.731200|wal_bytes=73051248|rows=12541\\nTime: 13.311 ms\\nTime: 1.149 ms\\nPHASE2B_STAGE_BEGIN|PARITY|2026-08-14 15:20:38.368051+00|0/1C104000\\nTime: 4.239 ms\\nPHASE2B_STAGE_END|PARITY|wall_seconds=0.004536|wal_bytes=0|rows=50\\nTime: 0.162 ms\\npsql:/private/tmp/modern_GD_history_v49_phase2b_performance/database/data-migrations/v48-to-v49/load.sql:525: ERROR:  PHASE2B_INJECTED_FAILURE:after_parity\\nCONTEXT:  PL/pgSQL function pg_temp_4.gda_inject(text) line 4 at RAISE\\nTime: 417.354 ms\", \"status\": \"FAIL\"}\n"
+    },
+    "after_staging": {
+      "expectedMarker": "PHASE2B_INJECTED_FAILURE:after_staging",
+      "markerObserved": true,
+      "residue": {
+        "currentPointerResidue": 0,
+        "migrationBatchResidue": 0,
+        "nonzeroProjectTables": {},
+        "partialImportResidue": 0,
+        "sealedReleaseResidue": 0
+      },
+      "returnCode": 2,
+      "status": "PASS",
+      "tail": "PHASE2B_BACKEND_PID|9872\nTime: 0.449 ms\nTime: 0.057 ms\nTime: 0.067 ms\nTime: 0.032 ms\nTime: 0.100 ms\nTime: 0.032 ms\nTime: 0.050 ms\nTime: 0.035 ms\nTime: 0.044 ms\nTime: 0.032 ms\nTime: 0.030 ms\nTime: 0.030 ms\nTime: 0.056 ms\nTime: 6.891 ms\nTime: 50.214 ms\nTime: 27.377 ms\nTime: 3.526 ms\nTime: 33.908 ms\nTime: 48.584 ms\nTime: 3.600 ms\nTime: 28.011 ms\nTime: 40.578 ms\nTime: 0.660 ms\nTime: 59.796 ms\nTime: 3.247 ms\nTime: 0.786 ms\nTime: 26.833 ms\nTime: 1.714 ms\nTime: 5.419 ms\nTime: 0.707 ms\nTime: 1.713 ms\nTime: 8.193 ms\nTime: 2.191 ms\nTime: 3.787 ms\nTime: 0.541 ms\nTime: 0.607 ms\nTime: 0.969 ms\nTime: 2.148 ms\nTime: 0.473 ms\nTime: 22.181 ms\nTime: 22.094 ms\nTime: 0.371 ms\nTime: 1.482 ms\nTime: 5.631 ms\nTime: 0.375 ms\nPHASE2B_STAGE_BEGIN|COPY|2026-08-15 01:04:09.579377+10|0/A4E2000\nTime: 94713.554 ms (01:34.714)\nTime: 5.748 ms\nTime: 1.574 ms\nTime: 1127.370 ms (00:01.127)\nTime: 1578.981 ms (00:01.579)\nTime: 5.302 ms\nTime: 1.604 ms\nTime: 3.143 ms\nTime: 18.210 ms\nTime: 161.141 ms\nTime: 2.145 ms\nTime: 1.539 ms\nTime: 1.066 ms\nTime: 5.799 ms\nTime: 1.331 ms\nTime: 0.314 ms\nTime: 0.862 ms\nTime: 0.511 ms\nTime: 28.735 ms\nTime: 100.379 ms\nTime: 126.928 ms\nTime: 3.909 ms\nTime: 1.095 ms\nTime: 1.212 ms\nTime: 100.571 ms\nTime: 44.495 ms\nTime: 2.388 ms\nTime: 65.448 ms\nPHASE2B_STAGE_END|COPY|wall_seconds=98.121660|wal_bytes=208960|rows=12961|bytes=256830322\nTime: 34.564 ms\npsql:/private/tmp/gda_v49_phase2b_perf_60423/runs/failure-fixed-00050/runtime-import-gda_v49_phase2a_failure_fixed-ic79eng6.sql:49: ERROR:  PHASE2B_INJECTED_FAILURE:after_staging\nCONTEXT:  PL/pgSQL function inline_code_block line 1 at RAISE\nTime: 794.073 ms\n{\"error\": \"IMPORT_TRANSACTION_ROLLED_BACK\\nPHASE2B_BACKEND_PID|9872\\nTime: 0.449 ms\\nTime: 0.057 ms\\nTime: 0.067 ms\\nTime: 0.032 ms\\nTime: 0.100 ms\\nTime: 0.032 ms\\nTime: 0.050 ms\\nTime: 0.035 ms\\nTime: 0.044 ms\\nTime: 0.032 ms\\nTime: 0.030 ms\\nTime: 0.030 ms\\nTime: 0.056 ms\\nTime: 6.891 ms\\nTime: 50.214 ms\\nTime: 27.377 ms\\nTime: 3.526 ms\\nTime: 33.908 ms\\nTime: 48.584 ms\\nTime: 3.600 ms\\nTime: 28.011 ms\\nTime: 40.578 ms\\nTime: 0.660 ms\\nTime: 59.796 ms\\nTime: 3.247 ms\\nTime: 0.786 ms\\nTime: 26.833 ms\\nTime: 1.714 ms\\nTime: 5.419 ms\\nTime: 0.707 ms\\nTime: 1.713 ms\\nTime: 8.193 ms\\nTime: 2.191 ms\\nTime: 3.787 ms\\nTime: 0.541 ms\\nTime: 0.607 ms\\nTime: 0.969 ms\\nTime: 2.148 ms\\nTime: 0.473 ms\\nTime: 22.181 ms\\nTime: 22.094 ms\\nTime: 0.371 ms\\nTime: 1.482 ms\\nTime: 5.631 ms\\nTime: 0.375 ms\\nPHASE2B_STAGE_BEGIN|COPY|2026-08-15 01:04:09.579377+10|0/A4E2000\\nTime: 94713.554 ms (01:34.714)\\nTime: 5.748 ms\\nTime: 1.574 ms\\nTime: 1127.370 ms (00:01.127)\\nTime: 1578.981 ms (00:01.579)\\nTime: 5.302 ms\\nTime: 1.604 ms\\nTime: 3.143 ms\\nTime: 18.210 ms\\nTime: 161.141 ms\\nTime: 2.145 ms\\nTime: 1.539 ms\\nTime: 1.066 ms\\nTime: 5.799 ms\\nTime: 1.331 ms\\nTime: 0.314 ms\\nTime: 0.862 ms\\nTime: 0.511 ms\\nTime: 28.735 ms\\nTime: 100.379 ms\\nTime: 126.928 ms\\nTime: 3.909 ms\\nTime: 1.095 ms\\nTime: 1.212 ms\\nTime: 100.571 ms\\nTime: 44.495 ms\\nTime: 2.388 ms\\nTime: 65.448 ms\\nPHASE2B_STAGE_END|COPY|wall_seconds=98.121660|wal_bytes=208960|rows=12961|bytes=256830322\\nTime: 34.564 ms\\npsql:/private/tmp/gda_v49_phase2b_perf_60423/runs/failure-fixed-00050/runtime-import-gda_v49_phase2a_failure_fixed-ic79eng6.sql:49: ERROR:  PHASE2B_INJECTED_FAILURE:after_staging\\nCONTEXT:  PL/pgSQL function inline_code_block line 1 at RAISE\\nTime: 794.073 ms\", \"status\": \"FAIL\"}\n"
+    },
+    "after_visual": {
+      "expectedMarker": "PHASE2B_INJECTED_FAILURE:after_visual",
+      "markerObserved": true,
+      "residue": {
+        "currentPointerResidue": 0,
+        "migrationBatchResidue": 0,
+        "nonzeroProjectTables": {},
+        "partialImportResidue": 0,
+        "sealedReleaseResidue": 0
+      },
+      "returnCode": 2,
+      "status": "PASS",
+      "tail": "90.876 ms\nTime: 12.815 ms\nTime: 8.527 ms\nTime: 42.225 ms\nTime: 0.681 ms\nTime: 6.937 ms\nTime: 0.688 ms\nTime: 1.263 ms\nTime: 0.436 ms\nTime: 0.897 ms\nTime: 109.739 ms\nTime: 8.114 ms\nTime: 10.460 ms\nTime: 6.817 ms\nTime: 77.773 ms\nTime: 76.590 ms\nTime: 10.094 ms\nTime: 39.403 ms\nTime: 0.946 ms\nTime: 1.267 ms\nTime: 6.170 ms\nTime: 1.077 ms\nPHASE2B_STAGE_END|COPY|wall_seconds=179.766650|wal_bytes=1769992|rows=12961|bytes=256830322\nTime: 5.132 ms\nTime: 1.073 ms\nTime: 1.969 ms\nTime: 0.138 ms\nTime: 0.068 ms\nPHASE2B_STAGE_BEGIN|DURABLE_INSERTS|2026-08-14 15:15:17.809781+00|0/133C8208\nTime: 63703.318 ms (01:03.703)\nTime: 5.498 ms\nTime: 44.254 ms\nTime: 665.488 ms\nTime: 2684.311 ms (00:02.684)\nTime: 1.807 ms\nTime: 31.290 ms\nTime: 33.141 ms\nPHASE2B_MID_OBJECT_SUBSET_ROWS=33\nTime: 5.586 ms\n\nTime: 37.036 ms\nTime: 4.521 ms\nTime: 51.520 ms\nTime: 91.430 ms\nTime: 77.748 ms\nTime: 1.893 ms\nTime: 0.889 ms\nTime: 52.303 ms\nTime: 182.761 ms\nTime: 11.561 ms\n\nTime: 3.680 ms\nTime: 4.641 ms\nTime: 13.434 ms\nTime: 120.274 ms\nTime: 9.354 ms\n\nTime: 2.331 ms\nTime: 166.619 ms\nTime: 166.732 ms\nTime: 113.829 ms\nTime: 15.221 ms\nTime: 68.600 ms\nTime: 4.288 ms\nTime: 5.770 ms\nTime: 155.306 ms\nTime: 157.546 ms\nTime: 62.103 ms\nTime: 2.672 ms\nTime: 45.425 ms\nTime: 78.451 ms\nTime: 39.489 ms\npsql:/private/tmp/modern_GD_history_v49_phase2b_performance/database/data-migrations/v48-to-v49/load.sql:423: ERROR:  PHASE2B_INJECTED_FAILURE:after_visual\nCONTEXT:  PL/pgSQL function pg_temp_3.gda_inject(text) line 4 at RAISE\nTime: 449.557 ms\n{\"error\": \"IMPORT_TRANSACTION_ROLLED_BACK\\nTime: 0.382 ms\\nTime: 0.068 ms\\nTime: 0.046 ms\\nTime: 0.066 ms\\nTime: 0.042 ms\\nTime: 0.085 ms\\nTime: 24.858 ms\\nTime: 0.880 ms\\nTime: 8.369 ms\\nTime: 1.501 ms\\nTime: 3.035 ms\\nTime: 0.743 ms\\nTime: 0.556 ms\\nTime: 1.471 ms\\nTime: 8.372 ms\\nTime: 2.014 ms\\nTime: 3.268 ms\\nTime: 2.288 ms\\nTime: 0.509 ms\\nTime: 26.128 ms\\nTime: 87.989 ms\\nTime: 35.919 ms\\nTime: 55.721 ms\\nTime: 11.534 ms\\nTime: 11.257 ms\\nTime: 17.654 ms\\nTime: 122.411 ms\\nTime: 14.544 ms\\nTime: 115.865 ms\\nTime: 64.647 ms\\nTime: 61.952 ms\\nTime: 63.737 ms\\nTime: 135.940 ms\\nTime: 58.783 ms\\nTime: 81.591 ms\\nTime: 131.401 ms\\nTime: 8.014 ms\\nTime: 14.345 ms\\nPHASE2B_STAGE_BEGIN|COPY|2026-08-15 01:12:18.038065+10|0/13218000\\nTime: 175832.539 ms (02:55.833)\\nTime: 70.678 ms\\nTime: 4.638 ms\\nTime: 1403.491 ms (00:01.403)\\nTime: 1728.591 ms (00:01.729)\\nTime: 57.928 ms\\nTime: 90.876 ms\\nTime: 12.815 ms\\nTime: 8.527 ms\\nTime: 42.225 ms\\nTime: 0.681 ms\\nTime: 6.937 ms\\nTime: 0.688 ms\\nTime: 1.263 ms\\nTime: 0.436 ms\\nTime: 0.897 ms\\nTime: 109.739 ms\\nTime: 8.114 ms\\nTime: 10.460 ms\\nTime: 6.817 ms\\nTime: 77.773 ms\\nTime: 76.590 ms\\nTime: 10.094 ms\\nTime: 39.403 ms\\nTime: 0.946 ms\\nTime: 1.267 ms\\nTime: 6.170 ms\\nTime: 1.077 ms\\nPHASE2B_STAGE_END|COPY|wall_seconds=179.766650|wal_bytes=1769992|rows=12961|bytes=256830322\\nTime: 5.132 ms\\nTime: 1.073 ms\\nTime: 1.969 ms\\nTime: 0.138 ms\\nTime: 0.068 ms\\nPHASE2B_STAGE_BEGIN|DURABLE_INSERTS|2026-08-14 15:15:17.809781+00|0/133C8208\\nTime: 63703.318 ms (01:03.703)\\nTime: 5.498 ms\\nTime: 44.254 ms\\nTime: 665.488 ms\\nTime: 2684.311 ms (00:02.684)\\nTime: 1.807 ms\\nTime: 31.290 ms\\nTime: 33.141 ms\\nPHASE2B_MID_OBJECT_SUBSET_ROWS=33\\nTime: 5.586 ms\\n\\nTime: 37.036 ms\\nTime: 4.521 ms\\nTime: 51.520 ms\\nTime: 91.430 ms\\nTime: 77.748 ms\\nTime: 1.893 ms\\nTime: 0.889 ms\\nTime: 52.303 ms\\nTime: 182.761 ms\\nTime: 11.561 ms\\n\\nTime: 3.680 ms\\nTime: 4.641 ms\\nTime: 13.434 ms\\nTime: 120.274 ms\\nTime: 9.354 ms\\n\\nTime: 2.331 ms\\nTime: 166.619 ms\\nTime: 166.732 ms\\nTime: 113.829 ms\\nTime: 15.221 ms\\nTime: 68.600 ms\\nTime: 4.288 ms\\nTime: 5.770 ms\\nTime: 155.306 ms\\nTime: 157.546 ms\\nTime: 62.103 ms\\nTime: 2.672 ms\\nTime: 45.425 ms\\nTime: 78.451 ms\\nTime: 39.489 ms\\npsql:/private/tmp/modern_GD_history_v49_phase2b_performance/database/data-migrations/v48-to-v49/load.sql:423: ERROR:  PHASE2B_INJECTED_FAILURE:after_visual\\nCONTEXT:  PL/pgSQL function pg_temp_3.gda_inject(text) line 4 at RAISE\\nTime: 449.557 ms\", \"status\": \"FAIL\"}\n"
+    },
+    "duplicate_surface_key": {
+      "expectedMarker": "SURFACE_LEDGER_CARDINALITY_MISMATCH",
+      "markerObserved": true,
+      "residue": {
+        "currentPointerResidue": 0,
+        "migrationBatchResidue": 0,
+        "nonzeroProjectTables": {},
+        "partialImportResidue": 0,
+        "sealedReleaseResidue": 0
+      },
+      "returnCode": 2,
+      "status": "PASS",
+      "tail": "{\"error\": \"SURFACE_LEDGER_CARDINALITY_MISMATCH:51\", \"status\": \"FAIL\"}\n"
+    },
+    "during_objects": {
+      "expectedMarker": "PHASE2B_INJECTED_FAILURE:during_objects",
+      "markerObserved": true,
+      "residue": {
+        "currentPointerResidue": 0,
+        "migrationBatchResidue": 0,
+        "nonzeroProjectTables": {},
+        "partialImportResidue": 0,
+        "sealedReleaseResidue": 0
+      },
+      "returnCode": 2,
+      "status": "PASS",
+      "tail": "1.766 ms\nTime: 0.498 ms\nTime: 0.594 ms\nTime: 2.059 ms\nTime: 0.137 ms\nTime: 45.396 ms\nTime: 0.209 ms\nTime: 0.079 ms\nTime: 11.583 ms\nTime: 0.604 ms\nTime: 0.091 ms\nTime: 0.070 ms\nTime: 1.558 ms\nTime: 12.924 ms\nTime: 53.265 ms\nTime: 171.956 ms\nTime: 91.942 ms\nTime: 97.230 ms\nTime: 62.122 ms\nTime: 46.902 ms\nTime: 95.174 ms\nTime: 80.412 ms\nTime: 163.553 ms\nTime: 4.169 ms\nTime: 173.763 ms\nTime: 33.644 ms\nTime: 8.186 ms\nTime: 16.945 ms\nTime: 18.493 ms\nTime: 24.117 ms\nTime: 51.025 ms\nTime: 9.637 ms\nTime: 48.563 ms\nTime: 18.524 ms\nTime: 8.470 ms\nTime: 7.655 ms\nTime: 56.075 ms\nTime: 6.999 ms\nTime: 6.535 ms\nTime: 136.349 ms\nTime: 76.505 ms\nTime: 121.927 ms\nTime: 7.366 ms\nTime: 0.292 ms\nTime: 0.182 ms\nPHASE2B_STAGE_BEGIN|COPY|2026-08-15 01:06:20.920195+10|0/A562000\nTime: 104778.218 ms (01:44.778)\nTime: 37.875 ms\nTime: 41.342 ms\nTime: 617.177 ms\nTime: 118.155 ms\nTime: 3.285 ms\nTime: 9.361 ms\nTime: 49.486 ms\nTime: 74.139 ms\nTime: 10.591 ms\nTime: 0.279 ms\nTime: 1.479 ms\nTime: 0.284 ms\nTime: 47.012 ms\nTime: 1.341 ms\nTime: 0.326 ms\nTime: 0.228 ms\nTime: 1.767 ms\nTime: 0.339 ms\nTime: 0.905 ms\nTime: 0.288 ms\nTime: 0.905 ms\nTime: 7.930 ms\nTime: 1.097 ms\nTime: 0.490 ms\nTime: 13.735 ms\nTime: 1.072 ms\nTime: 0.486 ms\nPHASE2B_STAGE_END|COPY|wall_seconds=105.829713|wal_bytes=11896|rows=12961|bytes=256830322\nTime: 17.053 ms\nTime: 0.361 ms\nTime: 1.140 ms\nTime: 0.045 ms\nTime: 0.057 ms\nPHASE2B_STAGE_BEGIN|DURABLE_INSERTS|2026-08-14 15:08:06.767877+00|0/A564E78\nTime: 53834.576 ms (00:53.835)\nTime: 46.931 ms\nTime: 3.917 ms\nTime: 298.277 ms\nTime: 2536.248 ms (00:02.536)\nTime: 1.643 ms\nTime: 23.633 ms\nTime: 220.561 ms\nPHASE2B_MID_OBJECT_SUBSET_ROWS=33\nTime: 43.962 ms\npsql:/private/tmp/modern_GD_history_v49_phase2b_performance/database/data-migrations/v48-to-v49/load.sql:133: ERROR:  PHASE2B_INJECTED_FAILURE:during_objects\nCONTEXT:  PL/pgSQL function pg_temp_3.gda_inject(text) line 4 at RAISE\nTime: 446.630 ms\n{\"error\": \"IMPORT_TRANSACTION_ROLLED_BACK\\nPHASE2B_BACKEND_PID|9983\\nTime: 1.766 ms\\nTime: 0.498 ms\\nTime: 0.594 ms\\nTime: 2.059 ms\\nTime: 0.137 ms\\nTime: 45.396 ms\\nTime: 0.209 ms\\nTime: 0.079 ms\\nTime: 11.583 ms\\nTime: 0.604 ms\\nTime: 0.091 ms\\nTime: 0.070 ms\\nTime: 1.558 ms\\nTime: 12.924 ms\\nTime: 53.265 ms\\nTime: 171.956 ms\\nTime: 91.942 ms\\nTime: 97.230 ms\\nTime: 62.122 ms\\nTime: 46.902 ms\\nTime: 95.174 ms\\nTime: 80.412 ms\\nTime: 163.553 ms\\nTime: 4.169 ms\\nTime: 173.763 ms\\nTime: 33.644 ms\\nTime: 8.186 ms\\nTime: 16.945 ms\\nTime: 18.493 ms\\nTime: 24.117 ms\\nTime: 51.025 ms\\nTime: 9.637 ms\\nTime: 48.563 ms\\nTime: 18.524 ms\\nTime: 8.470 ms\\nTime: 7.655 ms\\nTime: 56.075 ms\\nTime: 6.999 ms\\nTime: 6.535 ms\\nTime: 136.349 ms\\nTime: 76.505 ms\\nTime: 121.927 ms\\nTime: 7.366 ms\\nTime: 0.292 ms\\nTime: 0.182 ms\\nPHASE2B_STAGE_BEGIN|COPY|2026-08-15 01:06:20.920195+10|0/A562000\\nTime: 104778.218 ms (01:44.778)\\nTime: 37.875 ms\\nTime: 41.342 ms\\nTime: 617.177 ms\\nTime: 118.155 ms\\nTime: 3.285 ms\\nTime: 9.361 ms\\nTime: 49.486 ms\\nTime: 74.139 ms\\nTime: 10.591 ms\\nTime: 0.279 ms\\nTime: 1.479 ms\\nTime: 0.284 ms\\nTime: 47.012 ms\\nTime: 1.341 ms\\nTime: 0.326 ms\\nTime: 0.228 ms\\nTime: 1.767 ms\\nTime: 0.339 ms\\nTime: 0.905 ms\\nTime: 0.288 ms\\nTime: 0.905 ms\\nTime: 7.930 ms\\nTime: 1.097 ms\\nTime: 0.490 ms\\nTime: 13.735 ms\\nTime: 1.072 ms\\nTime: 0.486 ms\\nPHASE2B_STAGE_END|COPY|wall_seconds=105.829713|wal_bytes=11896|rows=12961|bytes=256830322\\nTime: 17.053 ms\\nTime: 0.361 ms\\nTime: 1.140 ms\\nTime: 0.045 ms\\nTime: 0.057 ms\\nPHASE2B_STAGE_BEGIN|DURABLE_INSERTS|2026-08-14 15:08:06.767877+00|0/A564E78\\nTime: 53834.576 ms (00:53.835)\\nTime: 46.931 ms\\nTime: 3.917 ms\\nTime: 298.277 ms\\nTime: 2536.248 ms (00:02.536)\\nTime: 1.643 ms\\nTime: 23.633 ms\\nTime: 220.561 ms\\nPHASE2B_MID_OBJECT_SUBSET_ROWS=33\\nTime: 43.962 ms\\npsql:/private/tmp/modern_GD_history_v49_phase2b_performance/database/data-migrations/v48-to-v49/load.sql:133: ERROR:  PHASE2B_INJECTED_FAILURE:during_objects\\nCONTEXT:  PL/pgSQL function pg_temp_3.gda_inject(text) line 4 at RAISE\\nTime: 446.630 ms\", \"status\": \"FAIL\"}\n"
+    },
+    "extra_surface": {
+      "expectedMarker": "SURFACE_LEDGER_CARDINALITY_MISMATCH",
+      "markerObserved": true,
+      "residue": {
+        "currentPointerResidue": 0,
+        "migrationBatchResidue": 0,
+        "nonzeroProjectTables": {},
+        "partialImportResidue": 0,
+        "sealedReleaseResidue": 0
+      },
+      "returnCode": 2,
+      "status": "PASS",
+      "tail": "{\"error\": \"SURFACE_LEDGER_CARDINALITY_MISMATCH:51\", \"status\": \"FAIL\"}\n"
+    },
+    "missing_surface": {
+      "expectedMarker": "SURFACE_LEDGER_CARDINALITY_MISMATCH",
+      "markerObserved": true,
+      "residue": {
+        "currentPointerResidue": 0,
+        "migrationBatchResidue": 0,
+        "nonzeroProjectTables": {},
+        "partialImportResidue": 0,
+        "sealedReleaseResidue": 0
+      },
+      "returnCode": 2,
+      "status": "PASS",
+      "tail": "{\"error\": \"SURFACE_LEDGER_CARDINALITY_MISMATCH:49\", \"status\": \"FAIL\"}\n"
+    },
+    "schema_sha_mismatch": {
+      "expectedMarker": "DATABASE_SCHEMA_SHA_MISMATCH",
+      "markerObserved": true,
+      "residue": {
+        "currentPointerResidue": 0,
+        "migrationBatchResidue": 0,
+        "nonzeroProjectTables": {},
+        "partialImportResidue": 0,
+        "sealedReleaseResidue": 0
+      },
+      "returnCode": 2,
+      "status": "PASS",
+      "tail": "{\"error\": \"DATABASE_SCHEMA_SHA_MISMATCH:aa8cb0af7b61931e51f1f71ed2e4cf0d10b178669de16807871819b330742e8b\", \"status\": \"FAIL\"}\n"
+    },
+    "source_sha_mismatch": {
+      "expectedMarker": "PERFORMANCE_FIXTURE_SOURCE_BINDING",
+      "markerObserved": true,
+      "residue": {
+        "currentPointerResidue": 0,
+        "migrationBatchResidue": 0,
+        "nonzeroProjectTables": {},
+        "partialImportResidue": 0,
+        "sealedReleaseResidue": 0
+      },
+      "returnCode": 2,
+      "status": "PASS",
+      "tail": "{\"error\": \"PERFORMANCE_FIXTURE_SOURCE_BINDING\", \"status\": \"FAIL\"}\n"
+    },
+    "unknown_field_or_type_without_disposition": {
+      "expectedMarker": "FIELD_OCCURRENCE_UNDECLARED_RULE",
+      "markerObserved": true,
+      "residue": {
+        "currentPointerResidue": 0,
+        "migrationBatchResidue": 0,
+        "nonzeroProjectTables": {},
+        "partialImportResidue": 0,
+        "sealedReleaseResidue": 0
+      },
+      "returnCode": 2,
+      "status": "PASS",
+      "tail": "{\"error\": \"FIELD_OCCURRENCE_UNDECLARED_RULE:1\", \"status\": \"FAIL\"}\n"
+    }
+  },
+  "status": "PASS"
+}

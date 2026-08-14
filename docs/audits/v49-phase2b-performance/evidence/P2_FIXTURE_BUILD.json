@@ -1,0 +1,269 @@
+{
+  "extractorRerun": false,
+  "scales": {
+    "1000": {
+      "coverage": {
+        "folderQuantiles": [
+          4
+        ],
+        "literalQuantiles": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "maxFieldLiteralsPerObject": 565,
+        "maxFolderMembershipsPerObject": 5,
+        "researchDisposition": [
+          "eligible",
+          "held"
+        ],
+        "rightsState": [
+          "compound_member_rights",
+          "open_candidate",
+          "rights_review_required",
+          "source_link_only",
+          "source_viewer_candidate",
+          "thumbnail_candidate"
+        ],
+        "sourceSha256Distinct": 134,
+        "tierClass": [
+          "metadata_supported",
+          "missing",
+          "source_verified"
+        ],
+        "visualPresent": [
+          false,
+          true
+        ]
+      },
+      "directory": "/private/tmp/gda_v49_phase2b_perf_60423/fixtures/scale-01000",
+      "expected": {
+        "eligible": 390,
+        "fieldLiterals": 225929,
+        "folderAssignments": 3049,
+        "folders": 132,
+        "held": 610,
+        "locators": 899,
+        "surfaces": 1000,
+        "visual": 899
+      },
+      "fixtureManifestSha256": "38b7f7b3e3c8773a483e524eab587f6caaddc16ab9e240b391d47002cf78cb14",
+      "inputBytes": 317108731,
+      "selectionSha256": "24f7d1f75dcfc8db30fff567ee38f92b2acb2e4100b7f641270461438bfa94dc"
+    },
+    "250": {
+      "coverage": {
+        "folderQuantiles": [
+          4
+        ],
+        "literalQuantiles": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "maxFieldLiteralsPerObject": 565,
+        "maxFolderMembershipsPerObject": 5,
+        "researchDisposition": [
+          "eligible",
+          "held"
+        ],
+        "rightsState": [
+          "compound_member_rights",
+          "open_candidate",
+          "rights_review_required",
+          "source_link_only",
+          "source_viewer_candidate",
+          "thumbnail_candidate"
+        ],
+        "sourceSha256Distinct": 67,
+        "tierClass": [
+          "metadata_supported",
+          "missing",
+          "source_verified"
+        ],
+        "visualPresent": [
+          false,
+          true
+        ]
+      },
+      "directory": "/private/tmp/gda_v49_phase2b_perf_60423/fixtures/scale-00250",
+      "expected": {
+        "eligible": 105,
+        "fieldLiterals": 56851,
+        "folderAssignments": 772,
+        "folders": 91,
+        "held": 145,
+        "locators": 206,
+        "surfaces": 250,
+        "visual": 206
+      },
+      "fixtureManifestSha256": "56a65219d081cba181d77620d1ac30abe640e4045684606fb40d5332dbd2bcad",
+      "inputBytes": 269414195,
+      "selectionSha256": "0744ad83e685f999c90400c518e34a3f63412e0f11e3a575a105001287ac94cb"
+    },
+    "4000": {
+      "coverage": {
+        "folderQuantiles": [
+          4
+        ],
+        "literalQuantiles": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "maxFieldLiteralsPerObject": 565,
+        "maxFolderMembershipsPerObject": 5,
+        "researchDisposition": [
+          "eligible",
+          "held"
+        ],
+        "rightsState": [
+          "compound_member_rights",
+          "open_candidate",
+          "rights_review_required",
+          "source_link_only",
+          "source_viewer_candidate",
+          "thumbnail_candidate"
+        ],
+        "sourceSha256Distinct": 220,
+        "tierClass": [
+          "metadata_supported",
+          "missing",
+          "source_verified"
+        ],
+        "visualPresent": [
+          false,
+          true
+        ]
+      },
+      "directory": "/private/tmp/gda_v49_phase2b_perf_60423/fixtures/scale-04000",
+      "expected": {
+        "eligible": 1565,
+        "fieldLiterals": 901977,
+        "folderAssignments": 12132,
+        "folders": 171,
+        "held": 2435,
+        "locators": 3867,
+        "surfaces": 4000,
+        "visual": 3865
+      },
+      "fixtureManifestSha256": "6b2196f543c22e23529b3571bc3470b7a7a4a5101ae6ad20cdc79765802d6d60",
+      "inputBytes": 507571899,
+      "selectionSha256": "369075e818ff4d85cf0caf6f343058af45b7071cd56c154142e2973fa7a33141"
+    },
+    "50": {
+      "coverage": {
+        "folderQuantiles": [
+          4
+        ],
+        "literalQuantiles": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "maxFieldLiteralsPerObject": 565,
+        "maxFolderMembershipsPerObject": 5,
+        "researchDisposition": [
+          "eligible",
+          "held"
+        ],
+        "rightsState": [
+          "compound_member_rights",
+          "open_candidate",
+          "rights_review_required",
+          "source_link_only",
+          "source_viewer_candidate",
+          "thumbnail_candidate"
+        ],
+        "sourceSha256Distinct": 17,
+        "tierClass": [
+          "metadata_supported",
+          "missing",
+          "source_verified"
+        ],
+        "visualPresent": [
+          false,
+          true
+        ]
+      },
+      "directory": "/private/tmp/gda_v49_phase2b_perf_60423/fixtures/scale-00050",
+      "expected": {
+        "eligible": 36,
+        "fieldLiterals": 11750,
+        "folderAssignments": 165,
+        "folders": 40,
+        "held": 14,
+        "locators": 39,
+        "surfaces": 50,
+        "visual": 39
+      },
+      "fixtureManifestSha256": "2da48a77622e1e920ec51b2a0baae89df5de2c6ad38a62c523bc9773b926292e",
+      "inputBytes": 256830322,
+      "selectionSha256": "d5f2d5fa2b07bff6924d5a2d6c8f2ecdf25cae47715deea5d7a91b11b9217fee"
+    },
+    "8000": {
+      "coverage": {
+        "folderQuantiles": [
+          4
+        ],
+        "literalQuantiles": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "maxFieldLiteralsPerObject": 565,
+        "maxFolderMembershipsPerObject": 5,
+        "researchDisposition": [
+          "eligible",
+          "held"
+        ],
+        "rightsState": [
+          "compound_member_rights",
+          "open_candidate",
+          "rights_review_required",
+          "source_link_only",
+          "source_viewer_candidate",
+          "thumbnail_candidate"
+        ],
+        "sourceSha256Distinct": 252,
+        "tierClass": [
+          "metadata_supported",
+          "missing",
+          "source_verified"
+        ],
+        "visualPresent": [
+          false,
+          true
+        ]
+      },
+      "directory": "/private/tmp/gda_v49_phase2b_perf_60423/fixtures/scale-08000",
+      "expected": {
+        "eligible": 3378,
+        "fieldLiterals": 1799337,
+        "folderAssignments": 24166,
+        "folders": 178,
+        "held": 4622,
+        "locators": 7867,
+        "surfaces": 8000,
+        "visual": 7865
+      },
+      "fixtureManifestSha256": "f23301dfc9003ac86240ef1a8f219f5ecc578614e0927a0da082ae2a8592bb08",
+      "inputBytes": 760195954,
+      "selectionSha256": "e2e88ffff7db65536266dcdd9839ab30086cc0470c7dc1c0203718dcf63a2eb3"
+    }
+  },
+  "schema": "gda-v49-phase2b-performance-fixture-build/v1",
+  "stagingReused": true,
+  "status": "PASS",
+  "wallSeconds": 1139.095441
+}

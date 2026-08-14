@@ -1,0 +1,203 @@
+{
+  "backendPid": 21622,
+  "constraintGroups": {
+    "delivery_history_and_rule": {
+      "cpuSeconds": 0.6217710000000001,
+      "filesystemBlocksIn": 0,
+      "filesystemBlocksOut": 0,
+      "maxResidentKiB": 1132288,
+      "statementCount": 1,
+      "statementElapsedSeconds": 6.79568,
+      "systemCpuSeconds": 0.011553,
+      "userCpuSeconds": 0.610218
+    },
+    "delivery_parent_validation": {
+      "cpuSeconds": 3.052222,
+      "filesystemBlocksIn": 0,
+      "filesystemBlocksOut": 0,
+      "maxResidentKiB": 1132288,
+      "statementCount": 1,
+      "statementElapsedSeconds": 48.240186,
+      "systemCpuSeconds": 0.091518,
+      "userCpuSeconds": 2.960704
+    },
+    "delivery_policy_validation": {
+      "cpuSeconds": 2.798211,
+      "filesystemBlocksIn": 0,
+      "filesystemBlocksOut": 0,
+      "maxResidentKiB": 1132288,
+      "statementCount": 1,
+      "statementElapsedSeconds": 28.240558,
+      "systemCpuSeconds": 0.072279,
+      "userCpuSeconds": 2.725932
+    },
+    "delivery_rights_validation": {
+      "cpuSeconds": 2.7180739999999997,
+      "filesystemBlocksIn": 0,
+      "filesystemBlocksOut": 0,
+      "maxResidentKiB": 1132288,
+      "statementCount": 1,
+      "statementElapsedSeconds": 31.202855,
+      "systemCpuSeconds": 0.069609,
+      "userCpuSeconds": 2.648465
+    },
+    "final_all_omission_check": {
+      "cpuSeconds": 3.5000000000000004e-05,
+      "filesystemBlocksIn": 0,
+      "filesystemBlocksOut": 0,
+      "maxResidentKiB": 1132288,
+      "statementCount": 1,
+      "statementElapsedSeconds": 3.1e-05,
+      "systemCpuSeconds": 4e-06,
+      "userCpuSeconds": 3.1e-05
+    },
+    "folder_assignment_shape": {
+      "cpuSeconds": 10.351041,
+      "filesystemBlocksIn": 0,
+      "filesystemBlocksOut": 0,
+      "maxResidentKiB": 1132288,
+      "statementCount": 1,
+      "statementElapsedSeconds": 157.993089,
+      "systemCpuSeconds": 0.345751,
+      "userCpuSeconds": 10.00529
+    },
+    "provider_policy": {
+      "cpuSeconds": 0.773986,
+      "filesystemBlocksIn": 0,
+      "filesystemBlocksOut": 0,
+      "maxResidentKiB": 1132288,
+      "statementCount": 1,
+      "statementElapsedSeconds": 11.545641,
+      "systemCpuSeconds": 0.027523,
+      "userCpuSeconds": 0.746463
+    },
+    "raw_core_cycle": {
+      "cpuSeconds": 1.60324,
+      "filesystemBlocksIn": 0,
+      "filesystemBlocksOut": 0,
+      "maxResidentKiB": 1132288,
+      "statementCount": 1,
+      "statementElapsedSeconds": 24.829914,
+      "systemCpuSeconds": 0.071368,
+      "userCpuSeconds": 1.531872
+    },
+    "rights_assessment_current_leaf": {
+      "cpuSeconds": 0.237232,
+      "filesystemBlocksIn": 0,
+      "filesystemBlocksOut": 0,
+      "maxResidentKiB": 1132288,
+      "statementCount": 1,
+      "statementElapsedSeconds": 3.481859,
+      "systemCpuSeconds": 0.004135,
+      "userCpuSeconds": 0.233097
+    },
+    "rights_assessment_shape_support": {
+      "cpuSeconds": 3.600962,
+      "filesystemBlocksIn": 0,
+      "filesystemBlocksOut": 0,
+      "maxResidentKiB": 1132288,
+      "statementCount": 1,
+      "statementElapsedSeconds": 52.126658,
+      "systemCpuSeconds": 0.120629,
+      "userCpuSeconds": 3.480333
+    },
+    "rights_observation": {
+      "cpuSeconds": 1.260594,
+      "filesystemBlocksIn": 0,
+      "filesystemBlocksOut": 0,
+      "maxResidentKiB": 1132288,
+      "statementCount": 1,
+      "statementElapsedSeconds": 12.564069,
+      "systemCpuSeconds": 0.047064,
+      "userCpuSeconds": 1.21353
+    },
+    "visual_bridge_and_locator": {
+      "cpuSeconds": 0.49734700000000004,
+      "filesystemBlocksIn": 0,
+      "filesystemBlocksOut": 0,
+      "maxResidentKiB": 1132288,
+      "statementCount": 1,
+      "statementElapsedSeconds": 6.723511,
+      "systemCpuSeconds": 0.025517,
+      "userCpuSeconds": 0.47183
+    }
+  },
+  "database": "gda_v49_phase2a_scale_cpu_08000",
+  "missingConstraintGroups": [],
+  "schema": "gda-v49-phase2b-backend-statement-cpu/v1",
+  "stages": {
+    "CONSTRAINTS": {
+      "cpuSeconds": 27.514715,
+      "filesystemBlocksIn": 0,
+      "filesystemBlocksOut": 0,
+      "maxResidentKiB": 1132288,
+      "statementCount": 12,
+      "statementElapsedSeconds": 383.74405099999996,
+      "systemCpuSeconds": 0.88695,
+      "userCpuSeconds": 26.627765
+    },
+    "COPY": {
+      "cpuSeconds": 12.811904,
+      "filesystemBlocksIn": 0,
+      "filesystemBlocksOut": 0,
+      "maxResidentKiB": 1132288,
+      "statementCount": 28,
+      "statementElapsedSeconds": 222.2501890000001,
+      "systemCpuSeconds": 1.368049,
+      "userCpuSeconds": 11.443855000000003
+    },
+    "DURABLE_INSERTS": {
+      "cpuSeconds": 57.66289699999998,
+      "filesystemBlocksIn": 0,
+      "filesystemBlocksOut": 0,
+      "maxResidentKiB": 1132288,
+      "statementCount": 35,
+      "statementElapsedSeconds": 1052.9320979999998,
+      "systemCpuSeconds": 4.852411000000001,
+      "userCpuSeconds": 52.810486
+    },
+    "OTHER": {
+      "cpuSeconds": 0.6122929999999999,
+      "filesystemBlocksIn": 0,
+      "filesystemBlocksOut": 0,
+      "maxResidentKiB": 1132288,
+      "statementCount": 88,
+      "statementElapsedSeconds": 10.947545999999997,
+      "systemCpuSeconds": 0.3358030000000001,
+      "userCpuSeconds": 0.27648999999999996
+    },
+    "PARITY": {
+      "cpuSeconds": 0.448553,
+      "filesystemBlocksIn": 0,
+      "filesystemBlocksOut": 0,
+      "maxResidentKiB": 1132288,
+      "statementCount": 1,
+      "statementElapsedSeconds": 9.315371,
+      "systemCpuSeconds": 0.156857,
+      "userCpuSeconds": 0.291696
+    },
+    "TARGETED_ANALYZE": {
+      "cpuSeconds": 0.154847,
+      "filesystemBlocksIn": 0,
+      "filesystemBlocksOut": 0,
+      "maxResidentKiB": 1132288,
+      "statementCount": 17,
+      "statementElapsedSeconds": 4.2114329999999995,
+      "systemCpuSeconds": 0.010793000000000002,
+      "userCpuSeconds": 0.14405400000000002
+    }
+  },
+  "statementStatsRecordCount": 181,
+  "status": "PASS",
+  "total": {
+    "cpuSeconds": 99.20520899999998,
+    "filesystemBlocksIn": 0,
+    "filesystemBlocksOut": 0,
+    "maxResidentKiB": 1132288,
+    "statementCount": 181,
+    "statementElapsedSeconds": 1683.4006879999981,
+    "systemCpuSeconds": 7.610863000000003,
+    "userCpuSeconds": 91.59434600000003
+  },
+  "unmappedConstraintStatements": []
+}

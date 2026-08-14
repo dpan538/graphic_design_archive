@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "database": "gda_v49_phase2a_fresh_b_performance",
+  "controllerWallSeconds": 2513.48,
+  "importWallSeconds": 2007.777488,
+  "constraintWallSeconds": 668.211717,
+  "backendPid": 28393,
+  "transactionCommitted": true,
+  "inputParity": 15923,
+  "schemaSha256": "aa8cb0af7b61931e51f1f71ed2e4cf0d10b178669de16807871819b330742e8b",
+  "countVectorSha256": "92eda020d2ac9b2e60bb364f63758700df793e43fdc30dcf065120ee9b1ff66b",
+  "normalizedContentSha256": "a0fa7aaeb84b383371c20340afa2c2a5c7f12408102767de189225cc93e478b9",
+  "stableKeySetSha256": "9bf3491b9c6603f3a7f8f141f2d9abac915ec1b91cd442b9248190263a8835a0",
+  "replayCodeFreezeSha256": "f39764c8ddc2c0ba54778502e23a8800e867e47214d961a2c8bc0749c606e910",
+  "currentPointerCount": 0,
+  "sealedReleaseCount": 0,
+  "migrationBatchCount": 1,
+  "verifierStatus": "PASS",
+  "performanceBudgetMet": true,
+  "replayDigestMatchFreshA": true
+}

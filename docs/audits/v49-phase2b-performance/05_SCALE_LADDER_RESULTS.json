@@ -1,0 +1,242 @@
+{
+  "schema": "gda-v49-phase2b-scale-ladder-results/v1",
+  "status": "PASS",
+  "baseSchemaSha256": "4ec9a76421548bda1b90ccdbf604906df9da9d349a70c9100abdddd1a7fee105",
+  "finalSchemaSha256": "aa8cb0af7b61931e51f1f71ed2e4cf0d10b178669de16807871819b330742e8b",
+  "postgresqlVersion": "16.13",
+  "cacheState": "warm",
+  "durabilitySettings": {
+    "fsync": "on",
+    "synchronous_commit": "on",
+    "full_page_writes": "on"
+  },
+  "fixtureBinding": {
+    "coverageReceipt": "evidence/P2_FIXTURE_COVERAGE.json",
+    "coverageStatus": "PASS",
+    "stagingReused": true,
+    "extractorRerun": false,
+    "sourceStagingManifestSha256": "01ac60c705f7450c6668a91ee6a3d2842c3b0258a4ecd85139611bf916681322",
+    "sourceStagingAttestationSha256": "11742e9afc577d976ea097540326c2697937290635735ad9d4466efce1758bcc",
+    "candidateSha256": "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48",
+    "allScalesCoverRequiredStrata": true
+  },
+  "initialLadder": [
+    {
+      "scale": 50,
+      "status": "PASS",
+      "totalWallSeconds": 231.127721,
+      "importWallSeconds": 161.739072,
+      "inputBytes": 256830322,
+      "databaseBytes": 88505367,
+      "stages": {
+        "copyWallSeconds": 87.481063,
+        "copyRows": 12961,
+        "durableInsertWallSeconds": 61.503729,
+        "durableInsertRows": 12541,
+        "targetedAnalyzeWallSeconds": 1.687390,
+        "parityWallSeconds": 0.048938
+      },
+      "constraintTotalWallSeconds": 8.092517,
+      "maxConstraintGroup": "folder_assignment_shape",
+      "maxConstraintWallSeconds": 3.348217,
+      "finalAllWallSeconds": 0.046832,
+      "selectionSha256": "d5f2d5fa2b07bff6924d5a2d6c8f2ecdf25cae47715deea5d7a91b11b9217fee",
+      "fixtureManifestSha256": "2da48a77622e1e920ec51b2a0baae89df5de2c6ad38a62c523bc9773b926292e",
+      "expected": {"surfaces": 50, "eligible": 36, "held": 14, "fieldLiterals": 11750, "folders": 40, "folderAssignments": 165, "visualReferences": 39, "locatorOccurrences": 39},
+      "digests": {"countVectorSha256": "2c6760003ba2dae726ef04fe6ccf39f85c04c0b6e6535473066d49342a186634", "normalizedContentSha256": "048b0074a9ffa273ddd7cac7476065943c3c3bc82550287bfc5c015072177155", "stableKeySetSha256": "22e948fb3cb9f313831f0b0557d6df19612d5c14828d5229604a497d504d08c3"}
+    },
+    {
+      "scale": 250,
+      "status": "PASS",
+      "totalWallSeconds": 542.888934,
+      "importWallSeconds": 386.023878,
+      "inputBytes": 269414195,
+      "databaseBytes": 104938519,
+      "stages": {"copyWallSeconds": 206.793863, "copyRows": 62823, "durableInsertWallSeconds": 143.744543, "durableInsertRows": 60818, "targetedAnalyzeWallSeconds": 1.053915, "parityWallSeconds": 0.636199},
+      "constraintTotalWallSeconds": 26.941707,
+      "maxConstraintGroup": "folder_assignment_shape",
+      "maxConstraintWallSeconds": 7.398826,
+      "finalAllWallSeconds": 0.000265,
+      "selectionSha256": "0744ad83e685f999c90400c518e34a3f63412e0f11e3a575a105001287ac94cb",
+      "fixtureManifestSha256": "56a65219d081cba181d77620d1ac30abe640e4045684606fb40d5332dbd2bcad",
+      "expected": {"surfaces": 250, "eligible": 105, "held": 145, "fieldLiterals": 56851, "folders": 91, "folderAssignments": 772, "visualReferences": 206, "locatorOccurrences": 206},
+      "digests": {"countVectorSha256": "c7ab28f186c038287556176f62f9fdfe75b7caaed06ab9f861eb6802c4c4e8b0", "normalizedContentSha256": "36549b595631656bb7fef8f7bf10fc1c97f35057e74232438b7a18d55d202dd1", "stableKeySetSha256": "fe98f4684e30eaac10dbf2bf51451bf9e1c9e5d07fcc276b36f8aea8fcc4b5de"}
+    },
+    {
+      "scale": 1000,
+      "status": "PASS",
+      "totalWallSeconds": 586.432368,
+      "importWallSeconds": 382.874296,
+      "inputBytes": 317108731,
+      "databaseBytes": 163847191,
+      "stages": {"copyWallSeconds": 141.344922, "copyRows": 250206, "durableInsertWallSeconds": 175.425267, "durableInsertRows": 242274, "targetedAnalyzeWallSeconds": 3.004043, "parityWallSeconds": 0.836281},
+      "constraintTotalWallSeconds": 59.720740,
+      "maxConstraintGroup": "folder_assignment_shape",
+      "maxConstraintWallSeconds": 22.568334,
+      "finalAllWallSeconds": 0.005127,
+      "selectionSha256": "24f7d1f75dcfc8db30fff567ee38f92b2acb2e4100b7f641270461438bfa94dc",
+      "fixtureManifestSha256": "38b7f7b3e3c8773a483e524eab587f6caaddc16ab9e240b391d47002cf78cb14",
+      "expected": {"surfaces": 1000, "eligible": 390, "held": 610, "fieldLiterals": 225929, "folders": 132, "folderAssignments": 3049, "visualReferences": 899, "locatorOccurrences": 899},
+      "digests": {"countVectorSha256": "2d9efc1515c83b63fb495455c7a2b8985458cd9952dc5485f842f62087ea8d9b", "normalizedContentSha256": "3bb62a463df1eaf041f5985ee37241b2120240a28fb49f0ef84aeaf429be2e23", "stableKeySetSha256": "29b99d7b30aa7c3a4ec543dbd1e58e93ecb60e435d6a299c305128099f22c94d"}
+    },
+    {
+      "scale": 4000,
+      "status": "PASS",
+      "totalWallSeconds": 1596.583135,
+      "importWallSeconds": 1219.804102,
+      "inputBytes": 507571899,
+      "databaseBytes": 399203351,
+      "stages": {"copyWallSeconds": 547.488146, "copyRows": 1001072, "durableInsertWallSeconds": 433.968392, "durableInsertRows": 969169, "targetedAnalyzeWallSeconds": 1.125898, "parityWallSeconds": 2.502620},
+      "constraintTotalWallSeconds": 215.857099,
+      "maxConstraintGroup": "folder_assignment_shape",
+      "maxConstraintWallSeconds": 61.486119,
+      "finalAllWallSeconds": 0.021803,
+      "selectionSha256": "369075e818ff4d85cf0caf6f343058af45b7071cd56c154142e2973fa7a33141",
+      "fixtureManifestSha256": "6b2196f543c22e23529b3571bc3470b7a7a4a5101ae6ad20cdc79765802d6d60",
+      "expected": {"surfaces": 4000, "eligible": 1565, "held": 2435, "fieldLiterals": 901977, "folders": 171, "folderAssignments": 12132, "visualReferences": 3865, "locatorOccurrences": 3867},
+      "digests": {"countVectorSha256": "c17d06159a44dbbd531607f32349e990fd7ff5bc9ed34a51df29071fd10d7ed8", "normalizedContentSha256": "cebeefcb50fd0d7b5ec8e3e0a9e811303705efaf8b9caaac0a8a625aae2da6f7", "stableKeySetSha256": "77c67f5fb875178c0a15e287b9a2b55c7dd4c86f6537b89fa6b2871025f12b88"}
+    },
+    {
+      "scale": 8000,
+      "status": "PASS",
+      "totalWallSeconds": 1970.162085,
+      "importWallSeconds": 1500.752674,
+      "inputBytes": 760195954,
+      "databaseBytes": 710827031,
+      "stages": {"copyWallSeconds": 607.249744, "copyRows": 1998473, "durableInsertWallSeconds": 577.213124, "durableInsertRows": 1934563, "targetedAnalyzeWallSeconds": 2.881048, "parityWallSeconds": 5.650543},
+      "constraintTotalWallSeconds": 296.287399,
+      "maxConstraintGroup": "folder_assignment_shape",
+      "maxConstraintWallSeconds": 107.538819,
+      "finalAllWallSeconds": 0.000334,
+      "selectionSha256": "e2e88ffff7db65536266dcdd9839ab30086cc0470c7dc1c0203718dcf63a2eb3",
+      "fixtureManifestSha256": "f23301dfc9003ac86240ef1a8f219f5ecc578614e0927a0da082ae2a8592bb08",
+      "expected": {"surfaces": 8000, "eligible": 3378, "held": 4622, "fieldLiterals": 1799337, "folders": 178, "folderAssignments": 24166, "visualReferences": 7865, "locatorOccurrences": 7867},
+      "digests": {"countVectorSha256": "b05d02b2ce4869bf2fd0cf8150ac82525fa378328f04d7dd89b5b1a39cd1f91c", "normalizedContentSha256": "6992476f531566f3f55295c6f55f7c3b75916474b636734eee405790c95c88ff", "stableKeySetSha256": "f7b0997a3cc296694dfb0063cb7a0b65c8169520cb766d902fc876f323abd0e3"}
+    }
+  ],
+  "decisiveMonitored": {
+    "scales": [1000, 4000, 8000],
+    "results": [
+      {
+        "scale": 1000,
+        "status": "PASS",
+        "totalWallSeconds": 470.001139,
+        "importWallSeconds": 268.347949,
+        "stages": {"copyWallSeconds": 106.270762, "copyRows": 250206, "durableInsertWallSeconds": 107.717277, "durableInsertRows": 242274, "targetedAnalyzeWallSeconds": 1.074860, "parityWallSeconds": 1.262412},
+        "constraints": {"totalWallSeconds": 48.073639, "maxGroup": "folder_assignment_shape", "maxGroupWallSeconds": 14.339426, "finalAllWallSeconds": 0.000342},
+        "backendCpu": {"status": "PASS", "statementCount": 181, "statementElapsedSeconds": 265.433561, "userSeconds": 18.994704, "systemSeconds": 1.777530, "totalSeconds": 20.772234, "copySeconds": 7.285589, "durableInsertSeconds": 9.823038, "constraintSeconds": 3.411498, "targetedAnalyzeSeconds": 0.028338, "missingConstraintGroups": 0, "unmappedConstraintStatements": 0},
+        "monitor": {"status": "PASS", "sampleIntervalSeconds": 5.0, "sampleCount": 60, "peakBackendRssBytes": 1009762304, "peakDatabaseBytes": 358611991, "peakPgdataAllocatedBytes": 1515515904, "peakPgdataLogicalBytes": 1494564183},
+        "initialLogicalMatch": true
+      },
+      {
+        "scale": 4000,
+        "status": "PASS",
+        "totalWallSeconds": 1045.175616,
+        "importWallSeconds": 738.936675,
+        "stages": {"copyWallSeconds": 150.196810, "copyRows": 1001072, "durableInsertWallSeconds": 337.197362, "durableInsertRows": 969169, "targetedAnalyzeWallSeconds": 2.096969, "parityWallSeconds": 4.121074},
+        "constraints": {"totalWallSeconds": 239.870203, "maxGroup": "folder_assignment_shape", "maxGroupWallSeconds": 80.159357, "finalAllWallSeconds": 0.000796},
+        "backendCpu": {"status": "PASS", "statementCount": 181, "statementElapsedSeconds": 736.386665, "userSeconds": 50.265446, "systemSeconds": 3.999568, "totalSeconds": 54.265014, "copySeconds": 9.781771, "durableInsertSeconds": 26.827745, "constraintSeconds": 16.978775, "targetedAnalyzeSeconds": 0.090478, "missingConstraintGroups": 0, "unmappedConstraintStatements": 0},
+        "monitor": {"status": "PASS", "sampleIntervalSeconds": 5.0, "sampleCount": 134, "peakBackendRssBytes": 1068859392, "peakDatabaseBytes": 789609495, "peakPgdataAllocatedBytes": 1992167424, "peakPgdataLogicalBytes": 1925578071},
+        "initialLogicalMatch": true
+      },
+      {
+        "scale": 8000,
+        "status": "PASS",
+        "totalWallSeconds": 2376.102825,
+        "importWallSeconds": 1687.537084,
+        "stages": {"copyWallSeconds": 222.517797, "copyRows": 1998473, "durableInsertWallSeconds": 1054.606571, "durableInsertRows": 1934563, "targetedAnalyzeWallSeconds": 4.821018, "parityWallSeconds": 9.465361},
+        "constraints": {"totalWallSeconds": 384.410882, "maxGroup": "folder_assignment_shape", "maxGroupWallSeconds": 158.029628, "finalAllWallSeconds": 0.057805},
+        "backendCpu": {"status": "PASS", "statementCount": 181, "statementElapsedSeconds": 1683.400688, "userSeconds": 91.594346, "systemSeconds": 7.610863, "totalSeconds": 99.205209, "copySeconds": 12.811904, "durableInsertSeconds": 57.662897, "constraintSeconds": 27.514715, "targetedAnalyzeSeconds": 0.154847, "missingConstraintGroups": 0, "unmappedConstraintStatements": 0},
+        "monitor": {"status": "PASS", "sampleIntervalSeconds": 5.0, "sampleCount": 263, "peakBackendRssBytes": 1086816256, "peakDatabaseBytes": 1360010263, "peakPgdataAllocatedBytes": 2676232192, "peakPgdataLogicalBytes": 2579873111},
+        "initialLogicalMatch": true,
+        "expected": {"surfaces": 8000, "eligible": 3378, "held": 4622, "fieldLiterals": 1799337, "folders": 178, "folderAssignments": 24166, "visualBundles": 8000, "visualReferences": 7865, "locatorOccurrences": 7867, "traceEligible": 0, "positiveRights": 0, "currentPointers": 0, "sealedReleases": 0},
+        "digests": {"countVectorSha256": "b05d02b2ce4869bf2fd0cf8150ac82525fa378328f04d7dd89b5b1a39cd1f91c", "normalizedContentSha256": "6992476f531566f3f55295c6f55f7c3b75916474b636734eee405790c95c88ff", "stableKeySetSha256": "f7b0997a3cc296694dfb0063cb7a0b65c8169520cb766d902fc876f323abd0e3"}
+      }
+    ],
+    "initialLogicalEquality": {
+      "status": "PASS",
+      "scalesMatched": [1000, 4000, 8000],
+      "selectionSha256Match": true,
+      "fixtureManifestSha256Match": true,
+      "schemaSha256Match": true,
+      "countVectorMatch": true,
+      "normalizedContentSha256Match": true,
+      "stableKeySetSha256Match": true,
+      "metricsMatch": true
+    }
+  },
+  "ols": {
+    "method": "natural-log ordinary least squares over monitored scales 1000,4000,8000",
+    "formula": "beta=sum((lnN-mean(lnN))*(lnT-mean(lnT)))/sum((lnN-mean(lnN))^2)",
+    "populationProjection": 15923,
+    "metrics": {
+      "totalReplay": {"seconds": [470.001139, 1045.175616, 2376.102825], "beta": 0.750318118554367, "olsProjectionSeconds": 3530.5179820149265, "anchor8000ProjectionSeconds": 3982.552489738611},
+      "import": {"seconds": [268.347949, 738.936675, 1687.537084], "beta": 0.8623082593141354, "olsProjectionSeconds": 2788.69607166383, "anchor8000ProjectionSeconds": 3055.1136147282114},
+      "copy": {"seconds": [106.270762, 150.196810, 222.517797], "beta": 0.3402723892860016, "olsProjectionSeconds": 264.10420032470734, "anchor8000ProjectionSeconds": 281.24450575605465},
+      "durableInserts": {"seconds": [107.717277, 337.197362, 1054.606571], "beta": 1.057991204740965, "olsProjectionSeconds": 1856.4073952187334, "anchor8000ProjectionSeconds": 2184.544905838631},
+      "combinedNamedConstraints": {"seconds": [48.073639, 239.870203, 384.410882], "beta": 1.0225900760851283, "olsProjectionSeconds": 854.4524707714165}
+    },
+    "namedConstraintGroups": {
+      "raw_core_cycle": {"seconds": [2.401542, 17.267301, 24.899010], "beta": 1.16730224262907, "olsProjectionSeconds": 66.3901448008078},
+      "folder_assignment_shape": {"seconds": [14.339426, 80.159357, 158.029628], "beta": 1.166530514595369, "olsProjectionSeconds": 371.54015940711867},
+      "visual_bridge_and_locator": {"seconds": [0.798809, 4.784737, 6.796247], "beta": 1.0669843078073284, "olsProjectionSeconds": 16.54783910815457},
+      "rights_observation": {"seconds": [2.308174, 12.399924, 12.611877], "beta": 0.8732388464152251, "olsProjectionSeconds": 29.10887720476043},
+      "rights_assessment_shape_support": {"seconds": [5.444886, 30.708232, 52.165013], "beta": 1.109720484323163, "olsProjectionSeconds": 123.22174910872526},
+      "rights_assessment_current_leaf": {"seconds": [0.248402, 2.704366, 3.598544], "beta": 1.3479428668528752, "olsProjectionSeconds": 11.796629739205926, "latestAdjacentExponent": 0.41212288409873105},
+      "provider_policy": {"seconds": [1.340211, 8.771429, 11.560464], "beta": 1.0817871948513138, "olsProjectionSeconds": 29.42099890343244},
+      "delivery_parent_validation": {"seconds": [8.345858, 27.698326, 48.309048], "beta": 0.8473793629338771, "olsProjectionSeconds": 87.64848441961699},
+      "delivery_rights_validation": {"seconds": [6.506917, 27.386344, 31.204781], "beta": 0.7943067676891612, "olsProjectionSeconds": 63.77293322502974},
+      "delivery_policy_validation": {"seconds": [5.655180, 24.461918, 28.241692], "beta": 0.8138299555264968, "olsProjectionSeconds": 58.50698304672181},
+      "delivery_history_and_rule": {"seconds": [0.683892, 3.527473, 6.936773], "beta": 1.1240351175930208, "olsProjectionSeconds": 15.668976103264924},
+      "final_all_omission_check": {"seconds": [0.000342, 0.000796, 0.057805], "beta": 2.2016420511472505, "olsProjectionSeconds": 0.08725619154808807}
+    },
+    "backendCpuExponents": {"total": 0.7434574244203215, "copy": 0.26303711337488433, "durableInserts": 0.8330780820278606, "constraints": 1.0258685383098154},
+    "backendCpuNamedConstraintSeconds": {
+      "raw_core_cycle": [0.194188, 1.000854, 1.603240],
+      "folder_assignment_shape": [1.153225, 6.327624, 10.351041],
+      "visual_bridge_and_locator": [0.054219, 0.329419, 0.497347],
+      "rights_observation": [0.106831, 0.815649, 1.260594],
+      "rights_assessment_shape_support": [0.376848, 2.102070, 3.600962],
+      "rights_assessment_current_leaf": [0.032661, 0.156662, 0.237232],
+      "provider_policy": [0.086511, 0.501470, 0.773986],
+      "delivery_parent_validation": [0.472081, 1.846684, 3.052222],
+      "delivery_rights_validation": [0.453850, 1.777491, 2.718074],
+      "delivery_policy_validation": [0.402197, 1.695980, 2.798211],
+      "delivery_history_and_rule": [0.078879, 0.424855, 0.621771],
+      "final_all_omission_check": [0.000008, 0.000017, 0.000035]
+    },
+    "adjacentSensitivity": {"total4000To8000Exponent": 1.1848518975866391, "total15923ProjectionSeconds": 5371.045405, "durable4000To8000Exponent": 1.6450397361602638, "durable15923ProjectionSeconds": 3272.278624}
+  },
+  "diagnosticExceptions": [
+    {
+      "metric": "rights_assessment_current_leaf",
+      "gateBlocking": false,
+      "explanation": "The beta above 1.25 is driven by a 0.248402-second 1000-object baseline; the 4000-to-8000 exponent is 0.412122884, the 8000 result is 3.598544 seconds, and the full OLS projection is 11.796630 seconds. The indexed P1 plan and absolute budget show no return of the former quadratic scan."
+    },
+    {
+      "metric": "final_all_omission_check",
+      "gateBlocking": false,
+      "explanation": "The first two observations are 0.342 and 0.796 milliseconds. The 57.805-millisecond 8000 observation is scheduling and statement-logging noise for the required no-op omission check; even its OLS full projection is 0.087257 seconds."
+    }
+  ],
+  "p3Gate": {
+    "rootCauseIdentified": true,
+    "scale8000Passed": true,
+    "scale8000TotalSeconds": 2376.102825,
+    "scale8000TotalLimitSeconds": 2700,
+    "largestThreeTotalExponent": 0.750318118554367,
+    "exponentLimitApproximately": 1.25,
+    "maxNamedConstraintGroup": "folder_assignment_shape",
+    "maxNamedConstraintGroupSeconds": 158.029628,
+    "namedConstraintGroupLimitSeconds": 900,
+    "fullProjectionSeconds": 3530.5179820149265,
+    "anchoredProjectionSeconds": 3982.552489738611,
+    "fullProjectionLimitSeconds": 5400,
+    "countsDigestPermissionsRollbackDeviation": 0,
+    "updatedCodeFailureProbes": {"status": "PASS", "passed": 11, "total": 11, "fullScaleRerun": false, "receipt": "evidence/P2_UPDATED_CODE_FAILURE_PROBES.json"},
+    "queueB2P0Findings": 0,
+    "queueB2P1Findings": 0,
+    "performanceBudgetMet": true,
+    "fullReplayAuthorizedByB2": true
+  }
+}

@@ -1,0 +1,38 @@
+# Fresh replay A receipt
+
+Fresh A used the frozen staging cache and replay code freeze
+`f39764c8ddc2c0ba54778502e23a8800e867e47214d961a2c8bc0749c606e910`.
+The importer ran one writer and one transaction; the verifier ran only after
+commit.
+
+```text
+FRESH_REPLAY_A_STARTED=true
+FRESH_REPLAY_A_COMMITTED=true
+FRESH_REPLAY_A_ROLLED_BACK=false
+FRESH_REPLAY_A_TOTAL_SECONDS=2981.42
+FRESH_REPLAY_A_IMPORT_SECONDS=2140.160339
+FRESH_REPLAY_A_CONSTRAINT_SECONDS=517.169478
+FRESH_REPLAY_A_MAX_NAMED_GROUP_SECONDS=149.547223
+FRESH_REPLAY_A_FINAL_ALL_SECONDS=0.003559
+FRESH_REPLAY_A_BACKEND_CPU_SECONDS=163.646947
+ATOMIC_SINGLE_TRANSACTION=true
+INPUT_PARITY=15923
+SCHEMA_SHA256=aa8cb0af7b61931e51f1f71ed2e4cf0d10b178669de16807871819b330742e8b
+COUNT_VECTOR_SHA256=92eda020d2ac9b2e60bb364f63758700df793e43fdc30dcf065120ee9b1ff66b
+NORMALIZED_CONTENT_SHA256=a0fa7aaeb84b383371c20340afa2c2a5c7f12408102767de189225cc93e478b9
+STABLE_KEY_SET_SHA256=9bf3491b9c6603f3a7f8f141f2d9abac915ec1b91cd442b9248190263a8835a0
+CURRENT_POINTER_COUNT=0
+SEALED_RELEASE_COUNT=0
+PERFORMANCE_BUDGET_MET=true
+```
+
+COPY completed in 629.550017 seconds for 3,957,270 rows / 1,245,479,023
+bytes. Durable inserts completed in 960.083812 seconds for 3,829,784 rows.
+All 12 named/final groups completed under the 20-minute bound. Peak sampled
+database, PGDATA allocation and backend RSS were 2,468,707,351,
+4,794,028,032 and 1,018,855,424 bytes. The verifier reported all integrity
+invariants zero and exact frozen population counts.
+
+Evidence: `evidence/P4_FRESH_A_IMPORT.json`, `P4_FRESH_A_VERIFY.json`,
+`P4_FRESH_A_BACKEND_CPU.json`, `P4_FRESH_A_MONITOR.json`, and
+`P4_FRESH_A_SUMMARY.json`.

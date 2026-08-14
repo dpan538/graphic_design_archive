@@ -1,0 +1,88 @@
+{
+  "backendPid": 28393,
+  "baseSchemaSha256": "4ec9a76421548bda1b90ccdbf604906df9da9d349a70c9100abdddd1a7fee105",
+  "childSystemCpuSeconds": 1.696943,
+  "childUserCpuSeconds": 0.665837,
+  "committedMarker": true,
+  "constraintGroups": {
+    "delivery_history_and_rule": {
+      "wal_bytes": "0",
+      "wall_seconds": "11.012941"
+    },
+    "delivery_parent_validation": {
+      "wal_bytes": "8224",
+      "wall_seconds": "43.524621"
+    },
+    "delivery_policy_validation": {
+      "wal_bytes": "0",
+      "wall_seconds": "43.124455"
+    },
+    "delivery_rights_validation": {
+      "wal_bytes": "0",
+      "wall_seconds": "44.706784"
+    },
+    "final_all_omission_check": {
+      "wal_bytes": "0",
+      "wall_seconds": "0.000617"
+    },
+    "folder_assignment_shape": {
+      "wal_bytes": "5040",
+      "wall_seconds": "306.706418"
+    },
+    "provider_policy": {
+      "wal_bytes": "0",
+      "wall_seconds": "15.059662"
+    },
+    "raw_core_cycle": {
+      "wal_bytes": "17768",
+      "wall_seconds": "52.211397"
+    },
+    "rights_assessment_current_leaf": {
+      "wal_bytes": "0",
+      "wall_seconds": "3.560510"
+    },
+    "rights_assessment_shape_support": {
+      "wal_bytes": "0",
+      "wall_seconds": "86.415257"
+    },
+    "rights_observation": {
+      "wal_bytes": "0",
+      "wall_seconds": "45.831037"
+    },
+    "visual_bridge_and_locator": {
+      "wal_bytes": "0",
+      "wall_seconds": "16.058018"
+    }
+  },
+  "database": "gda_v49_phase2a_fresh_b_performance",
+  "expectedSchemaSha256": "aa8cb0af7b61931e51f1f71ed2e4cf0d10b178669de16807871819b330742e8b",
+  "logPath": "/private/tmp/gda_v49_phase2b_perf_60423/runs/fresh-b/runtime/import-gda_v49_phase2a_fresh_b_performance.log",
+  "returnCode": 0,
+  "stageManifestSha256": "01ac60c705f7450c6668a91ee6a3d2842c3b0258a4ecd85139611bf916681322",
+  "stages": {
+    "COPY": {
+      "bytes": "1245479023",
+      "rows": "3957270",
+      "wal_bytes": "323736",
+      "wall_seconds": "410.459403"
+    },
+    "DURABLE_INSERTS": {
+      "rows": "3829784",
+      "wal_bytes": "2176741224",
+      "wall_seconds": "907.297327"
+    },
+    "PARITY": {
+      "rows": "15923",
+      "wal_bytes": "0",
+      "wall_seconds": "7.165969"
+    },
+    "TARGETED_ANALYZE": {
+      "rows": "15923",
+      "wal_bytes": "173056",
+      "wall_seconds": "2.557191"
+    }
+  },
+  "stagingAttestationReused": true,
+  "status": "COMMITTED",
+  "wallSeconds": 2007.777488
+}

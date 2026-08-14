@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "database": "gda_v49_phase2a_fresh_b_performance",
+  "connectionBoundary": {
+    "unixSocketOnly": true,
+    "serverAddress": null,
+    "serverPortViaInet": null,
+    "listenAddresses": "",
+    "productionDatabaseTouched": false
+  },
+  "population": {
+    "archiveObjects": 15923,
+    "heldObjects": 7928,
+    "migrationBatches": 1,
+    "currentPointers": 0,
+    "sealedReleases": 0
+  },
+  "publicBoundary": {
+    "apiCurrentRows": 0,
+    "apiRemoteImageRows": 0,
+    "heldLocatorPublicLeakCount": 0,
+    "positiveRights": 0,
+    "remoteImageDecisions": 0,
+    "publicPixelLocators": 0,
+    "apiReaderRawLocatorSelectPrivilege": false,
+    "apiReaderRawLocatorActualSelectDenied": true,
+    "apiReaderRawSourceActualSelectDenied": true,
+    "apiReaderArchiveWriteActualAttemptDenied": true
+  },
+  "genericPhase2aFixture": {
+    "status": "NOT_APPLICABLE_TO_POPULATED_CARDINALITY",
+    "transactionRolledBack": true,
+    "persistentRowsCreated": 0,
+    "failedAssertion": "held migration row survives release build",
+    "reason": "The generic empty-schema fixture asserts total held ledger rows equals one; the frozen rehearsal correctly contains 7928 held rows. The failure was an exact-count fixture precondition, not a public-boundary leak."
+  },
+  "evidence": [
+    "P5_FRESH_B_VERIFY.json",
+    "population-specific read-only aggregate probe"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "gda-v49-phase2b-performance-cleanup/v1",
+  "status": "PASS",
+  "cleanedAtUtc": "2026-08-14T20:04:37Z",
+  "databases": {
+    "freshA": {"name": "gda_v49_phase2a_fresh_a_performance", "normalDrop": true},
+    "freshB": {"name": "gda_v49_phase2a_fresh_b_performance", "normalDrop": true},
+    "diagnostic": {"name": "gda_v49_phase2a_phase2b_perf_diag", "normalDrop": true}
+  },
+  "cluster": {
+    "root": "/private/tmp/gda_v49_phase2b_perf_60423",
+    "pgdata": "/private/tmp/gda_v49_phase2b_perf_60423/pgdata",
+    "socket": "/private/tmp/gda_v49_phase2b_perf_60423/socket",
+    "port": 60423,
+    "listenAddresses": "",
+    "preDeleteRootKiB": 3019388,
+    "preDeletePgdataKiB": 2170380,
+    "normalFastShutdown": true,
+    "shutdownTimeoutSeconds": 120,
+    "socketAbsentAfterStop": true,
+    "rootDeleted": true,
+    "pgdataDeleted": true
+  },
+  "processes": {
+    "taskOwnedPostgresql": 0,
+    "taskOwnedImporter": 0,
+    "taskOwnedExtractor": 0,
+    "taskOwnedPsql": 0,
+    "sigkillUsed": false
+  },
+  "staging": {
+    "path": "/Users/jarlgiovanni/Library/Caches/gda_v49_phase2b/staging-20260814",
+    "preserved": true,
+    "regenerated": false
+  },
+  "safety": {
+    "stableWorktreeTouched": false,
+    "protectedMainTouched": false,
+    "protectedMainUnchanged": true,
+    "preExistingLegacyTempPathsSwept": false,
+    "productionDatabaseTouched": false
+  }
+}

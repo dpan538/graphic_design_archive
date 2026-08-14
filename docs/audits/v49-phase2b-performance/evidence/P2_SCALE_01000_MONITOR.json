@@ -1,0 +1,17 @@
+{
+  "database": "gda_v49_phase2a_scale_cpu_01000",
+  "maxBackendCumulativeCpuSeconds": 20.29,
+  "peakBackendRssBytes": 1009762304,
+  "peakDatabaseBytes": 358611991,
+  "peakPgdataAllocatedBytes": 1515515904,
+  "peakPgdataLogicalBytes": 1494564183,
+  "sampleCount": 60,
+  "sampleIntervalSeconds": 5.0,
+  "sampleLogRetained": false,
+  "sampleLogRuntimePath": "/private/tmp/gda_v49_phase2b_perf_60423/runs/scale-01000-monitored/monitor.jsonl",
+  "schema": "gda-v49-phase2b-performance-monitor/v1",
+  "status": "PASS",
+  "wallSeconds": 362.924305,
+  "writerExitObserved": true,
+  "writerObserved": true
+}
