@@ -1,0 +1,28 @@
+# Root reconciliation ledger provenance
+
+The full 1,317,982-row ledger is preserved only in the verified non-Git staging cache. It is intentionally not duplicated in this recovery branch.
+
+```json
+{
+  "bytes": 290101148,
+  "cachePath": "/Users/jarlgiovanni/Library/Caches/gda_v49_phase2b/staging-20260814/root-reconciliation-ledger.tsv",
+  "columns": [
+    "json_pointer",
+    "json_type",
+    "presence_class",
+    "literal_sha256",
+    "mapping_rule_id",
+    "raw_source_location"
+  ],
+  "regeneration": "Use the mapping-pinned extract.py with the frozen Candidate JSON only after separately authorized resume; do not regenerate during this performance-block checkpoint.",
+  "rows": 1317981,
+  "samplePath": "/Users/jarlgiovanni/Desktop/modern_GD_history_v49_data_platform/docs/audits/v49-phase2b-migration/22_ROOT_RECONCILIATION_LEDGER_SAMPLE.tsv",
+  "sampleRows": 23,
+  "schema": "gda-v49-phase2b-externalized-ledger/v1",
+  "sha256": "f006ebe9b42b4956c82deaff2e6bd31c58c9c3b7cd8d9ffee5dcfe2341be385a",
+  "sourceAuditCopy": "/Users/jarlgiovanni/Desktop/modern_GD_history_v49_data_platform/docs/audits/v49-phase2b-migration/22_ROOT_RECONCILIATION_LEDGER.tsv",
+  "status": "PASS"
+}
+```
+
+The committed sample preserves the header and deterministic first/periodic/tail rows; the cache descriptor above is the complete evidence commitment.

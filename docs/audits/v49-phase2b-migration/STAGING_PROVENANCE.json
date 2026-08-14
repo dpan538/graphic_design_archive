@@ -1,0 +1,325 @@
+{
+  "copiedLedgers": {
+    "19_TRACE_DELTA_LEDGER.tsv": {
+      "bytes": 1924758,
+      "sha256": "92feb6ebee9bd87801cf4a5a3c3619cf5ad0ae3899e3fd858b381ef7ccebaab5",
+      "stagePath": "trace-delta-ledger.tsv"
+    },
+    "20_VISUAL_BUNDLE_LEDGER.tsv": {
+      "bytes": 1574456,
+      "sha256": "3034404636afa77b7ff82e206002dd93cde038a11cb5694cdd03d089120921de",
+      "stagePath": "visual-bundle-ledger.tsv"
+    },
+    "21_VISUAL_LOCATOR_OCCURRENCE_LEDGER.tsv": {
+      "bytes": 6655319,
+      "sha256": "048edf6f381550017c726a9efa410c927e4ffbf1839b5bb4884dacf5e062c890",
+      "stagePath": "visual-locators.tsv"
+    },
+    "23_FOLDER_PAIR_LEDGER.tsv": {
+      "bytes": 2756617,
+      "sha256": "cff28e74380a3d113947aa8bbb90c6e46ac8b39ba77f336912ccb7de336e2fd3",
+      "stagePath": "surface-folder-pairs.tsv"
+    }
+  },
+  "externalizedLargeLedgers": {
+    "22_ROOT_RECONCILIATION_LEDGER.tsv": {
+      "bytes": 290101148,
+      "cachePath": "/Users/jarlgiovanni/Library/Caches/gda_v49_phase2b/staging-20260814/root-reconciliation-ledger.tsv",
+      "columns": [
+        "json_pointer",
+        "json_type",
+        "presence_class",
+        "literal_sha256",
+        "mapping_rule_id",
+        "raw_source_location"
+      ],
+      "regeneration": "Use the mapping-pinned extract.py with the frozen Candidate JSON only after separately authorized resume; do not regenerate during this performance-block checkpoint.",
+      "rows": 1317981,
+      "samplePath": "/Users/jarlgiovanni/Desktop/modern_GD_history_v49_data_platform/docs/audits/v49-phase2b-migration/22_ROOT_RECONCILIATION_LEDGER_SAMPLE.tsv",
+      "sampleRows": 23,
+      "schema": "gda-v49-phase2b-externalized-ledger/v1",
+      "sha256": "f006ebe9b42b4956c82deaff2e6bd31c58c9c3b7cd8d9ffee5dcfe2341be385a",
+      "sourceAuditCopy": "/Users/jarlgiovanni/Desktop/modern_GD_history_v49_data_platform/docs/audits/v49-phase2b-migration/22_ROOT_RECONCILIATION_LEDGER.tsv",
+      "status": "PASS"
+    }
+  },
+  "fullTemporaryLedgers": {
+    "fieldLiteralStage": {
+      "bytes": 536461545,
+      "pathAtGeneration": "/private/tmp/gda_v49_phase2b_stage_final.eVALvR/staging/field-literals.tsv",
+      "rows": 3559820,
+      "sha256": "8bdf94adc40b3fcdd14c71e1798f2ca7acd9ba6f41d18d4b5dafb4c1fe9af7ac"
+    },
+    "fieldOccurrenceLedger": {
+      "bytes": 3185696686,
+      "pathAtGeneration": "/private/tmp/gda_v49_phase2b_stage_final.eVALvR/staging/field-occurrence-ledger.jsonl",
+      "regeneration": "python3 database/data-migrations/v48-to-v49/extract.py --candidate generated/public_surfaces_prefreeze_candidate_v48.json --mapping database/data-migrations/v48-to-v49/mapping-v1.json --baseline database/data-migrations/v48-to-v49/expected-baseline.json --output-dir <fresh-task-temp>/staging --implementation-base-commit 86ba95cae9ecf12e58fcabb8170c9020e151b386",
+      "rows": 6282271,
+      "schema": "database/data-migrations/v48-to-v49/field-occurrence-ledger.schema.json",
+      "sha256": "dc33c3efe3fb3e4f2b1bad3b9fb9e65a0a4af48caf5e53ec4e25cf042db2b7bb"
+    }
+  },
+  "normalizedAuditLedgers": {
+    "18_SURFACE_ROW_LEDGER.tsv": {
+      "rawAuditCopy": {
+        "bytes": 4640510,
+        "sha256": "b18acf47c73b852a9be9bcbbb7b030b32850fc4a459d7bf080027c3fe55e5eff"
+      },
+      "rawStagingDescriptor": {
+        "bytes": 4640510,
+        "sha256": "b18acf47c73b852a9be9bcbbb7b030b32850fc4a459d7bf080027c3fe55e5eff",
+        "stagePath": "surface-row-ledger.tsv"
+      },
+      "transformedAuditCopy": {
+        "bytes": 4704202,
+        "convertedRows": 15923,
+        "path": "/Users/jarlgiovanni/Desktop/modern_GD_history_v49_data_platform/docs/audits/v49-phase2b-migration/18_SURFACE_ROW_LEDGER.tsv",
+        "quarantineIdEmptyValuesEncodedAs": "NONE",
+        "rows": 15923,
+        "sha256": "48f98f68ca2ec0cef96c82ecc9c01e4129eb9a3f91e08b07ad9a59644a9d4e01"
+      }
+    }
+  },
+  "schema": "gda-v49-phase2b-staging-provenance/v1",
+  "stageManifest": {
+    "bundleBinding": {
+      "payload": {
+        "candidateSha256": "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48",
+        "extractorSha256": "7bffa7d110dfcbabbcfb06bc971a72c27ede014e03571297e502950b642d4783",
+        "implementationBaseCommit": "86ba95cae9ecf12e58fcabb8170c9020e151b386",
+        "mappingSha256": "6ca7b8658a12b680c2b9d6253c77be018ed98ecfd93174416eeb766f75465c70",
+        "schemaNormalizedSha256": "4ec9a76421548bda1b90ccdbf604906df9da9d349a70c9100abdddd1a7fee105",
+        "version": "gda-phase2b-bundle-binding-v1"
+      },
+      "sha256": "174bc9ef19293ebbb12feb0fc77ef45185bce489466d2005b04e26250e35742b",
+      "value": "gda-phase2b-bundle-binding-v1:174bc9ef19293ebbb12feb0fc77ef45185bce489466d2005b04e26250e35742b"
+    },
+    "candidate": {
+      "bytes": 190067852,
+      "path": "generated/public_surfaces_prefreeze_candidate_v48.json",
+      "sha256": "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48"
+    },
+    "extractor": {
+      "canonicalization": "gda-json-c14n-v1",
+      "path": "/Users/jarlgiovanni/Desktop/modern_GD_history_v49_data_platform/database/data-migrations/v48-to-v49/extract.py",
+      "sha256": "7bffa7d110dfcbabbcfb06bc971a72c27ede014e03571297e502950b642d4783"
+    },
+    "files": {
+      "archive-objects.tsv": {
+        "bytes": 2478959,
+        "sha256": "1ca0ce3133173deeb6383199ee104d6478fd275960b4b08f52d3594a88df48ac"
+      },
+      "corpora.tsv": {
+        "bytes": 210,
+        "sha256": "7ee6fc838574edc3bac69c5d8991f9ce58a9e0a0e867ea3e36d5f3c57e143ed9"
+      },
+      "corpus-memberships.tsv": {
+        "bytes": 1391230,
+        "sha256": "413191242954776a9177e18f8fbfd60ec91a3c70debfc2700474b43d8693e44a"
+      },
+      "corpus-versions.tsv": {
+        "bytes": 445,
+        "sha256": "4a6b727e48fd4886e6c5f57381495c0d60a1fb90d57ea992dbd12b6514e13737"
+      },
+      "delivery-assessments.tsv": {
+        "bytes": 3536696,
+        "sha256": "a6448d838cdae46f18ca38a60e1f7b7564533070ce290e7e2276d72cdc6ac1d2"
+      },
+      "entities.tsv": {
+        "bytes": 1273889,
+        "sha256": "6ff29c9e397eb4ff997159657daeffde863bf38eacbfe8bb9e34b5cca845c562"
+      },
+      "field-literals.tsv": {
+        "bytes": 536461545,
+        "sha256": "8bdf94adc40b3fcdd14c71e1798f2ca7acd9ba6f41d18d4b5dafb4c1fe9af7ac"
+      },
+      "field-occurrence-ledger.jsonl": {
+        "bytes": 3185696686,
+        "sha256": "dc33c3efe3fb3e4f2b1bad3b9fb9e65a0a4af48caf5e53ec4e25cf042db2b7bb"
+      },
+      "folder-assignments.tsv": {
+        "bytes": 8558490,
+        "sha256": "b9c1b2874d8ae5c12469e1b2b70e08ef3f8b9083eb131fa142db7f6bcf9c5f82"
+      },
+      "folders.tsv": {
+        "bytes": 24718,
+        "sha256": "594903a00b4b715c55807d4dfaea9d2114474d66495dc96a8d00b74ddb4ba1e8"
+      },
+      "held-deltas.tsv": {
+        "bytes": 1855215,
+        "sha256": "c4b8ce279f62c02d903e35281c7bc61ec1b1a31b9589c4945da68df710ad176c"
+      },
+      "legacy-identities.tsv": {
+        "bytes": 6079781,
+        "sha256": "27b13f7947f737736effba99b55948e9312c97145275c48f410205f43b744d63"
+      },
+      "legacy-resolutions.tsv": {
+        "bytes": 172,
+        "sha256": "eb268aa597c081104e96633fb9b990e4edcb18893bccb7cc344cb26755f80744"
+      },
+      "mapping-versions.tsv": {
+        "bytes": 432,
+        "sha256": "c46dbb8c7ac9eae1d455b155bf953837b1253f90328ae5b08fd9d4373cbc2061"
+      },
+      "migration-batches.tsv": {
+        "bytes": 384,
+        "sha256": "3deed334a8906ddee975cf5d3f7ca090733e4161fe7c5ab0a8dc703c1d939344"
+      },
+      "object-source-links.tsv": {
+        "bytes": 1449040,
+        "sha256": "ac143601a008ca492c1af966974677a161464d0d5e5694cceefc46910c63465e"
+      },
+      "object-trace-nodes.tsv": {
+        "bytes": 1321660,
+        "sha256": "922ab5a704889857a4ff9c87c144856558a79f1be50c35f092ddc2469d376d71"
+      },
+      "observed-pointer-inventory.json": {
+        "bytes": 134540888,
+        "sha256": "db52193b168b4a4920a92c5aa5a0ab2f7e45a4db2d1e7da6c00ac1291c8bfd84"
+      },
+      "policy-evaluations.tsv": {
+        "bytes": 2020975,
+        "sha256": "5cc3064eb51c20fa8d8dcf13ce2e5164ad66b2dc4db9cd03a1f7fa31f535dcc7"
+      },
+      "rights-assessments.tsv": {
+        "bytes": 4089248,
+        "sha256": "db8d68634c46d12c14fbf35198cc4ec6600d88b74e911c12e531180812631782"
+      },
+      "rights-observations.tsv": {
+        "bytes": 3241780,
+        "sha256": "7dda77b867941f47c59eaba7bb2419fe24efa179d8d0eb97485fc736302706e0"
+      },
+      "root-reconciliation-ledger.tsv": {
+        "bytes": 290101148,
+        "sha256": "f006ebe9b42b4956c82deaff2e6bd31c58c9c3b7cd8d9ffee5dcfe2341be385a"
+      },
+      "source-assets.tsv": {
+        "bytes": 253424179,
+        "sha256": "091535999495ee647c63a2db5aae0ce125e62c002bdd330bce01495a03926fc8"
+      },
+      "source-records.tsv": {
+        "bytes": 391689479,
+        "sha256": "61e42f7a728db0ef1262f7ae6f7769216c6dae8f0ae9e352a142a1daa4ad8eca"
+      },
+      "surface-folder-pairs.tsv": {
+        "bytes": 2756617,
+        "sha256": "cff28e74380a3d113947aa8bbb90c6e46ac8b39ba77f336912ccb7de336e2fd3"
+      },
+      "surface-ledgers.tsv": {
+        "bytes": 5323981,
+        "sha256": "dc317fd82a8ea555526a9782e5b89a001c7b78bb0486e1c7559b04642304039d"
+      },
+      "surface-row-ledger.tsv": {
+        "bytes": 4640510,
+        "sha256": "b18acf47c73b852a9be9bcbbb7b030b32850fc4a459d7bf080027c3fe55e5eff"
+      },
+      "trace-delta-ledger.tsv": {
+        "bytes": 1924758,
+        "sha256": "92feb6ebee9bd87801cf4a5a3c3619cf5ad0ae3899e3fd858b381ef7ccebaab5"
+      },
+      "trace-nodes.tsv": {
+        "bytes": 3468206,
+        "sha256": "99e48d44725069efb47a275ec3ebd19eda0ee573c0d22d4c2dd345dc1dac9e30"
+      },
+      "visual-bridges.tsv": {
+        "bytes": 2210434,
+        "sha256": "19559fb69cf696b8485b9286bd1eb2bb5f1cb15452e9355e94f7861871ecf877"
+      },
+      "visual-bundle-ledger.tsv": {
+        "bytes": 1574456,
+        "sha256": "3034404636afa77b7ff82e206002dd93cde038a11cb5694cdd03d089120921de"
+      },
+      "visual-classifications.tsv": {
+        "bytes": 2518024,
+        "sha256": "6acebaec89571868d4713c5bc56fb9ac38947556956059ada97a1bf900d6ebad"
+      },
+      "visual-dispositions.tsv": {
+        "bytes": 3057345,
+        "sha256": "0307834cfff243f5219fd43e6813880eb6d710eff018845e9f14e2b7e30d94a9"
+      },
+      "visual-locators.tsv": {
+        "bytes": 6655319,
+        "sha256": "048edf6f381550017c726a9efa410c927e4ffbf1839b5bb4884dacf5e062c890"
+      },
+      "visual-references.tsv": {
+        "bytes": 3347187,
+        "sha256": "161d1e98b108fb6fc226e21a324fb189d03eb1e85d2c45a1ec5a749a0aa6602c"
+      }
+    },
+    "ids": {
+      "mappingVersion": "9dc35b97-34d5-5311-8ff3-debe61064634",
+      "migrationBatch": "3dc790c8-a637-5afc-9f67-6b3637754093",
+      "sourceAsset": "f63c6288-3428-558c-b321-363289a6a19f",
+      "strictCorpus": "d1b1a2f5-2307-543f-9549-d4c990db0d91",
+      "strictCorpusVersion": "a16fc853-5f23-5b0f-934b-6ddcdfe0095a"
+    },
+    "implementationBaseCommit": "86ba95cae9ecf12e58fcabb8170c9020e151b386",
+    "mapping": {
+      "path": "database/data-migrations/v48-to-v49/mapping-v1.json",
+      "sha256": "6ca7b8658a12b680c2b9d6253c77be018ed98ecfd93174416eeb766f75465c70",
+      "version": "v48-to-v49-json-only-v1"
+    },
+    "metrics": {
+      "automaticDeduplication": 0,
+      "crossArrayPositionalZips": 0,
+      "fieldLiteralCount": 3559820,
+      "fieldOccurrenceCount": 6282271,
+      "folderAssignmentCount": 47982,
+      "folderCount": 185,
+      "folderPairCount": 47982,
+      "folderPairSetSha256": "b2ddbe94f4d569f6b9970246855b535374b7c1a9b8ac047de58899c860bd4573",
+      "locatorRoleCounts": {
+        "image.evidenceImageUrl": 2,
+        "image.sourceViewerUrl": 2,
+        "image.url": 15621,
+        "image.viewerUrl": 165
+      },
+      "mappingRuleUse": {
+        "conservative-object-label": 15923,
+        "folder-membership-assignment": 191928,
+        "recursive-raw-snapshot-only": 4215073,
+        "rights-raw-fail-closed-observation": 63692,
+        "source-record-identity": 15923,
+        "strict-tier-disposition": 15923,
+        "surface-identity": 15923,
+        "top-level-reconciliation-raw": 1317981,
+        "trace-arrays-held-no-zip": 334367,
+        "trace-root-crosswalk": 15923,
+        "visual-locator-occurrence": 63692,
+        "visual-reference-occurrence": 15923
+      },
+      "phase1DVisualParityHashes": {
+        "classifiedSurfaceSequenceSha256": "2ba50afc2175e350895f9b7b76615ba72cf2175cf4599b13b49f5ee107242abc",
+        "externalLocatorOccurrenceSequenceSha256": "1bbd68dfaf8661a1976fea56a2d121d807a42b5ed8a735094dda9868dcec5812",
+        "externalLocatorValueSetSha256": "434dafb489119676615a6cd604a65286f17e2d8f2f18e48bf5e06943b6439e28",
+        "rawVisualBundleSequenceSha256": "265cc790ffcc5b4c4dddf5ddbb29a894f35f92e166df474a744dafa0b7e8743e",
+        "sourceRecordIdSetSha256": "16795db4223fd1e00ef362ba0a29b7a521a38ccf56638e9928d70a3343112f2e",
+        "surfaceIdSetSha256": "7bae71cb2915a6ea6a9c9c43024a0a84bab5200edffad96298f398a7b8053d46",
+        "surfaceOrdinalIdSequenceSha256": "0ded26112f66e9b269dd6f7ca5978d9454e254e52241ca121f63c56368eab418"
+      },
+      "rootOccurrenceCount": 1317981,
+      "silentDelimiterSplits": 0,
+      "silentlyDroppedFields": 0,
+      "sourceRecordCount": 15923,
+      "surfaceCount": 15923,
+      "tierCounts": {
+        "metadata_supported": 2971,
+        "missing": 4957,
+        "source_verified": 7995
+      },
+      "traceEdgeLabelLengthMismatchRows": 9393,
+      "traceRootCount": 15923,
+      "unexplainedMappingDeltas": 0,
+      "unmappedSourceFields": 0,
+      "unsafePairingHeldRows": 9393,
+      "visual": {
+        "locator_occurrences": 15790,
+        "no_reference": 135,
+        "reference_bearing": 15788
+      }
+    },
+    "schema": "gda-v49-phase2b-staging-manifest/v1",
+    "schemaNormalizedSha256": "4ec9a76421548bda1b90ccdbf604906df9da9d349a70c9100abdddd1a7fee105"
+  },
+  "stageManifestSha256": "01ac60c705f7450c6668a91ee6a3d2842c3b0258a4ecd85139611bf916681322"
+}

@@ -1,0 +1,22 @@
+# Task-temp finalization
+
+```json
+{
+  "cacheRetained": true,
+  "cacheStage": "/Users/jarlgiovanni/Library/Caches/gda_v49_phase2b/staging-20260814",
+  "finalizedAtUtc": "2026-08-14T11:53:07Z",
+  "recoveryBackupVerifiedAbsent": true,
+  "removed": {
+    "cacheStageKiB": 4752659,
+    "recoveryBackupRoot": "/private/tmp/gda_v49_phase2b_recovery_backup.m46y4r",
+    "recoveryBackupRootKiB": 818,
+    "stageTempRoot": "/private/tmp/gda_v49_phase2b_stage_final.eVALvR",
+    "stageTempRootKiB": 645
+  },
+  "schema": "gda-v49-phase2b-task-temp-finalization/v1",
+  "stageTempVerifiedAbsent": true,
+  "status": "PASS"
+}
+```
+
+The removable task-local checkpoint roots were deleted only after their evidence had been copied into this audit package. The verified external staging cache remains retained and is not a Git artifact.

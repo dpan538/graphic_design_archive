@@ -1,0 +1,83 @@
+{
+  "database": "gda_v49_phase2a_phase2b_failure",
+  "probes": {
+    "after_corpus": {
+      "currentPointerAdvanced": false,
+      "exitCode": 2,
+      "partialImportResidue": 0,
+      "releaseSealed": false,
+      "runtime": true
+    },
+    "after_parity": {
+      "currentPointerAdvanced": false,
+      "exitCode": 2,
+      "partialImportResidue": 0,
+      "releaseSealed": false,
+      "runtime": true
+    },
+    "after_staging": {
+      "currentPointerAdvanced": false,
+      "exitCode": 2,
+      "partialImportResidue": 0,
+      "releaseSealed": false,
+      "runtime": true
+    },
+    "after_visual": {
+      "currentPointerAdvanced": false,
+      "exitCode": 2,
+      "partialImportResidue": 0,
+      "releaseSealed": false,
+      "runtime": true
+    },
+    "duplicate_surface_key": {
+      "currentPointerAdvanced": false,
+      "exitCode": 2,
+      "partialImportResidue": 0,
+      "releaseSealed": false,
+      "runtime": false
+    },
+    "during_objects": {
+      "currentPointerAdvanced": false,
+      "exitCode": 2,
+      "partialImportResidue": 0,
+      "releaseSealed": false,
+      "runtime": true
+    },
+    "extra_surface": {
+      "currentPointerAdvanced": false,
+      "exitCode": 2,
+      "partialImportResidue": 0,
+      "releaseSealed": false,
+      "runtime": false
+    },
+    "missing_surface": {
+      "currentPointerAdvanced": false,
+      "exitCode": 2,
+      "partialImportResidue": 0,
+      "releaseSealed": false,
+      "runtime": false
+    },
+    "schema_sha_mismatch": {
+      "currentPointerAdvanced": false,
+      "exitCode": 2,
+      "partialImportResidue": 0,
+      "releaseSealed": false,
+      "runtime": false
+    },
+    "source_sha_mismatch": {
+      "currentPointerAdvanced": false,
+      "exitCode": 2,
+      "partialImportResidue": 0,
+      "releaseSealed": false,
+      "runtime": false
+    },
+    "unknown_field_or_type_without_disposition": {
+      "currentPointerAdvanced": false,
+      "exitCode": 2,
+      "partialImportResidue": 0,
+      "releaseSealed": false,
+      "runtime": false
+    }
+  },
+  "status": "PASS"
+}

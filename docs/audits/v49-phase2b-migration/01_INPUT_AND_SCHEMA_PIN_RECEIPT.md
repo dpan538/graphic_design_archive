@@ -1,0 +1,13 @@
+# Input and schema pins
+
+```text
+IMPLEMENTATION_BASE_COMMIT=86ba95cae9ecf12e58fcabb8170c9020e151b386
+EXPECTED_SCHEMA_SHA256=4ec9a76421548bda1b90ccdbf604906df9da9d349a70c9100abdddd1a7fee105
+CANDIDATE_JSON_SHA256=b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48
+SCHEMA_SHA_BEFORE=4ec9a76421548bda1b90ccdbf604906df9da9d349a70c9100abdddd1a7fee105
+SCHEMA_SHA_AFTER=4ec9a76421548bda1b90ccdbf604906df9da9d349a70c9100abdddd1a7fee105
+SCHEMA_DRIFT=0
+CANONICAL_POPULATION_INPUT_ARTIFACTS=1
+```
+
+The 35-file staging bundle was descriptor-rehashed before and after an atomic same-filesystem move; no frozen input or Phase 2A migration was modified.
