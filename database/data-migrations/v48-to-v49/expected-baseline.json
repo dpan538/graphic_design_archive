@@ -1,0 +1,46 @@
+{
+  "schema": "gda-v49-phase2b-expected-baseline/v1",
+  "implementationBaseCommit": "86ba95cae9ecf12e58fcabb8170c9020e151b386",
+  "normalizedSchemaSha256": "4ec9a76421548bda1b90ccdbf604906df9da9d349a70c9100abdddd1a7fee105",
+  "candidateJsonSha256": "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48",
+  "candidateJsonBytes": 190067852,
+  "logicalTimestampUtc": "2026-08-10T00:00:00Z",
+  "counts": {
+    "legacyInputSurfaces": 15923,
+    "sourceVerified": 7995,
+    "metadataSupportedHeld": 2971,
+    "missingTraceTierHeld": 4957,
+    "heldObjects": 7928,
+    "rejectedObjects": 0,
+    "acceptedTraceRelations": 0,
+    "traceEligibleObjects": 0,
+    "visualBundles": 15923,
+    "bundlesWithReference": 15788,
+    "bundlesWithoutReference": 135,
+    "locatorOccurrences": 15790,
+    "folderMembershipPairs": 47982,
+    "legacyGraphEdgesReconciled": 255695,
+    "legacyMembershipsReconciled": 126822,
+    "searchIds": 8636,
+    "searchCanonicalIntersection": 2585,
+    "searchOnly": 6051,
+    "canonicalOnly": 13338,
+        "searchUnion": 21974,
+        "staleTraceMetadataSupportedCount": 2970
+  },
+  "sourceHashes": {
+    "sqlite": "ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "transferManifestJson": "865358db84c15d960b3535969a32521c0ffec177f7455d21db86cd131f787d5b",
+    "transferManifestCsv": "694a60657077bcab8888c4a4ef1daf6059706e544606d4862e46c57dcf6ddc18",
+    "traceManifest": "1678e211023aa324078e0478f88670d2378b6dc5c398cc5c04722605038fee23"
+  },
+  "phase1DVisualParityHashes": {
+    "surfaceOrdinalIdSequenceSha256": "0ded26112f66e9b269dd6f7ca5978d9454e254e52241ca121f63c56368eab418",
+    "surfaceIdSetSha256": "7bae71cb2915a6ea6a9c9c43024a0a84bab5200edffad96298f398a7b8053d46",
+    "sourceRecordIdSetSha256": "16795db4223fd1e00ef362ba0a29b7a521a38ccf56638e9928d70a3343112f2e",
+    "rawVisualBundleSequenceSha256": "265cc790ffcc5b4c4dddf5ddbb29a894f35f92e166df474a744dafa0b7e8743e",
+    "externalLocatorOccurrenceSequenceSha256": "1bbd68dfaf8661a1976fea56a2d121d807a42b5ed8a735094dda9868dcec5812",
+    "externalLocatorValueSetSha256": "434dafb489119676615a6cd604a65286f17e2d8f2f18e48bf5e06943b6439e28",
+    "classifiedSurfaceSequenceSha256": "2ba50afc2175e350895f9b7b76615ba72cf2175cf4599b13b49f5ee107242abc"
+  }
+}

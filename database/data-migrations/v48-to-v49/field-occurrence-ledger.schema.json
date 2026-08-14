@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "gda-v49-phase2b-field-occurrence-ledger/v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "sourceOrdinal",
+    "sourceRecordUuid",
+    "jsonPointer",
+    "relativeJsonPointer",
+    "jsonType",
+    "presenceClass",
+    "arrayOrdinal",
+    "literalSha256",
+    "fieldLiteralId",
+    "mappingRuleId",
+    "rawSnapshotOnly",
+    "exactRawValueLocation"
+  ],
+  "properties": {
+    "sourceOrdinal": { "type": ["integer", "null"], "minimum": 0 },
+    "sourceRecordUuid": { "type": ["string", "null"], "format": "uuid" },
+    "jsonPointer": { "type": "string", "pattern": "^/" },
+    "relativeJsonPointer": { "type": "string", "pattern": "^/" },
+    "jsonType": { "enum": ["object", "array", "string", "number", "boolean", "null", "missing"] },
+    "presenceClass": { "enum": ["MISSING", "NULL", "EMPTY_STRING", "EMPTY_ARRAY", "EMPTY_OBJECT", "PRESENT"] },
+    "arrayOrdinal": { "type": ["integer", "null"], "minimum": 0 },
+    "literalSha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+    "fieldLiteralId": { "type": ["string", "null"], "format": "uuid" },
+    "mappingRuleId": { "type": "string", "minLength": 1 },
+    "rawSnapshotOnly": { "type": "boolean" },
+    "exactRawValueLocation": { "type": "string", "pattern": "^raw\\.(source_record\\.raw_value|source_asset\\.raw_bytes)#" }
+  }
+}
