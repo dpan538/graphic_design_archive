@@ -8,6 +8,11 @@
 SET LOCAL TIME ZONE 'UTC';
 SET CONSTRAINTS ALL DEFERRED;
 
+SELECT clock_timestamp() AS phase2b_insert_started,
+       pg_current_wal_lsn() AS phase2b_insert_wal_started
+\gset
+\echo PHASE2B_STAGE_BEGIN|DURABLE_INSERTS|:phase2b_insert_started|:phase2b_insert_wal_started
+
 -- import.py creates two pg_temp helpers before SET ROLE.  That keeps staging
 -- creation under the disposable-cluster administrator while all durable rows
 -- below are written as the approved schema-owner migration role.
@@ -417,6 +422,39 @@ FROM gda_stage_visual_classifications;
 
 SELECT pg_temp.gda_inject('after_visual');
 
+SELECT format(
+  'PHASE2B_STAGE_END|DURABLE_INSERTS|wall_seconds=%s|wal_bytes=%s|rows=%s',
+  extract(epoch FROM clock_timestamp()-:'phase2b_insert_started'::timestamptz),
+  pg_wal_lsn_diff(pg_current_wal_lsn(), :'phase2b_insert_wal_started'::pg_lsn),
+  (SELECT sum(row_count) FROM (VALUES
+    ((SELECT count(*) FROM raw.source_asset)),
+    ((SELECT count(*) FROM raw.mapping_version)),
+    ((SELECT count(*) FROM raw.migration_batch)),
+    ((SELECT count(*) FROM raw.source_record)),
+    ((SELECT count(*) FROM raw.field_literal)),
+    ((SELECT count(*) FROM core.entity)),
+    ((SELECT count(*) FROM core.archive_object)),
+    ((SELECT count(*) FROM raw.legacy_surface_ledger)),
+    ((SELECT count(*) FROM provenance.object_source_record)),
+    ((SELECT count(*) FROM provenance.assignment_folder_membership)),
+    ((SELECT count(*) FROM research.trace_node)),
+    ((SELECT count(*) FROM research.corpus_membership)),
+    ((SELECT count(*) FROM raw.fail_closed_delta)),
+    ((SELECT count(*) FROM rights.external_visual_reference)),
+    ((SELECT count(*) FROM rights.object_visual_reference)),
+    ((SELECT count(*) FROM rights.visual_locator)),
+    ((SELECT count(*) FROM rights.rights_observation)),
+    ((SELECT count(*) FROM rights.rights_assessment)),
+    ((SELECT count(*) FROM rights.provider_policy_evaluation)),
+    ((SELECT count(*) FROM rights.delivery_assessment))
+  ) AS counts(row_count))
+);
+
+SELECT clock_timestamp() AS phase2b_parity_started,
+       pg_current_wal_lsn() AS phase2b_parity_wal_started
+\gset
+\echo PHASE2B_STAGE_BEGIN|PARITY|:phase2b_parity_started|:phase2b_parity_wal_started
+
 DO $parity$
 DECLARE
   v_surfaces bigint;
@@ -433,6 +471,14 @@ DECLARE
   v_field_literals bigint;
   v_folders bigint;
   v_folder_assignments bigint;
+  v_expected_surfaces bigint := current_setting('gda.phase2b.expected_surfaces')::bigint;
+  v_expected_eligible bigint := current_setting('gda.phase2b.expected_eligible')::bigint;
+  v_expected_held bigint := current_setting('gda.phase2b.expected_held')::bigint;
+  v_expected_visual bigint := current_setting('gda.phase2b.expected_visual')::bigint;
+  v_expected_locators bigint := current_setting('gda.phase2b.expected_locators')::bigint;
+  v_expected_field_literals bigint := current_setting('gda.phase2b.expected_field_literals')::bigint;
+  v_expected_folders bigint := current_setting('gda.phase2b.expected_folders')::bigint;
+  v_expected_folder_assignments bigint := current_setting('gda.phase2b.expected_folder_assignments')::bigint;
 BEGIN
   SELECT count(*) INTO v_surfaces FROM raw.legacy_surface_ledger;
   SELECT count(*) INTO v_objects FROM core.archive_object;
@@ -450,18 +496,215 @@ BEGIN
   SELECT count(*) INTO v_field_literals FROM raw.field_literal;
   SELECT count(*) INTO v_folders FROM research.folder;
   SELECT count(*) INTO v_folder_assignments FROM provenance.assignment_folder_membership;
-  IF v_surfaces <> 15923 OR v_objects <> 15923 OR v_records <> 15923
-     OR v_links <> 15923 OR v_eligible <> 7995 OR v_held <> 7928
-     OR v_visual <> 15788 OR v_locators <> 15790
-     OR v_rights_assessments <> 15788 OR v_policy_evaluations <> 15788
-     OR v_delivery_assessments <> 15788
+  IF v_surfaces <> v_expected_surfaces
+     OR v_objects <> v_expected_surfaces
+     OR v_records <> v_expected_surfaces
+     OR v_links <> v_expected_surfaces
+     OR v_eligible <> v_expected_eligible OR v_held <> v_expected_held
+     OR v_visual <> v_expected_visual OR v_locators <> v_expected_locators
+     OR v_rights_assessments <> v_expected_visual
+     OR v_policy_evaluations <> v_expected_visual
+     OR v_delivery_assessments <> v_expected_visual
+     OR v_field_literals <> v_expected_field_literals
      OR v_field_literals <> (SELECT count(*) FROM gda_stage_field_literals)
-     OR v_folders <> 185 OR v_folder_assignments <> 47982 THEN
+     OR v_folders <> v_expected_folders
+     OR v_folder_assignments <> v_expected_folder_assignments THEN
     RAISE EXCEPTION USING ERRCODE = '23514',
       MESSAGE = 'PHASE2B_PARITY_ASSERTION_FAILED';
   END IF;
 END
 $parity$;
 
+SELECT format(
+  'PHASE2B_STAGE_END|PARITY|wall_seconds=%s|wal_bytes=%s|rows=%s',
+  extract(epoch FROM clock_timestamp()-:'phase2b_parity_started'::timestamptz),
+  pg_wal_lsn_diff(pg_current_wal_lsn(), :'phase2b_parity_wal_started'::pg_lsn),
+  current_setting('gda.phase2b.expected_surfaces')
+);
+
 SELECT pg_temp.gda_inject('after_parity');
+
+SELECT clock_timestamp() AS phase2b_analyze_started,
+       pg_current_wal_lsn() AS phase2b_analyze_wal_started
+\gset
+\echo PHASE2B_STAGE_BEGIN|TARGETED_ANALYZE|:phase2b_analyze_started|:phase2b_analyze_wal_started
+ANALYZE raw.migration_batch;
+ANALYZE raw.legacy_surface_ledger;
+ANALYZE core.entity;
+ANALYZE core.archive_object;
+ANALYZE provenance.canonical_assignment;
+ANALYZE provenance.assignment_folder_membership;
+ANALYZE rights.object_visual_reference;
+ANALYZE rights.visual_locator;
+ANALYZE rights.rights_observation;
+ANALYZE rights.rights_observation_visual_reference;
+ANALYZE rights.rights_assessment;
+ANALYZE rights.rights_assessment_visual_reference;
+ANALYZE rights.rights_assessment_observation;
+ANALYZE rights.provider_policy_evaluation;
+ANALYZE rights.delivery_assessment;
+ANALYZE rights.delivery_rights_assessment;
+ANALYZE rights.delivery_policy_evaluation;
+SELECT format(
+  'PHASE2B_STAGE_END|TARGETED_ANALYZE|wall_seconds=%s|wal_bytes=%s|rows=%s',
+  extract(epoch FROM clock_timestamp()-:'phase2b_analyze_started'::timestamptz),
+  pg_wal_lsn_diff(pg_current_wal_lsn(), :'phase2b_analyze_wal_started'::pg_lsn),
+  current_setting('gda.phase2b.expected_surfaces')
+);
+
+-- Every populated constraint family receives a named, timed completion
+-- boundary.  The final ALL is retained as a mandatory omission check.
+SELECT set_config(
+  'statement_timeout', current_setting('gda.phase2b.constraint_timeout'), true
+);
+
+SELECT clock_timestamp() AS phase2b_group_started,
+       pg_current_wal_lsn() AS phase2b_group_wal_started \gset
+\echo PHASE2B_CONSTRAINT_BEGIN|raw_core_cycle|:phase2b_group_started|:phase2b_group_wal_started
+SET CONSTRAINTS
+  raw.migration_batch_authority_exact,
+  core.archive_object_surface_ledger_fk,
+  raw.legacy_surface_lineage_exact,
+  core.archive_object_surface_reciprocal,
+  core.entity_subtype_from_entity,
+  core.entity_subtype_from_archive_object
+IMMEDIATE;
+SELECT format(
+  'PHASE2B_CONSTRAINT_END|raw_core_cycle|wall_seconds=%s|wal_bytes=%s',
+  extract(epoch FROM clock_timestamp()-:'phase2b_group_started'::timestamptz),
+  pg_wal_lsn_diff(pg_current_wal_lsn(), :'phase2b_group_wal_started'::pg_lsn)
+);
+
+SELECT clock_timestamp() AS phase2b_group_started,
+       pg_current_wal_lsn() AS phase2b_group_wal_started \gset
+\echo PHASE2B_CONSTRAINT_BEGIN|folder_assignment_shape|:phase2b_group_started|:phase2b_group_wal_started
+SET CONSTRAINTS
+  provenance.assignment_shape_from_assignment,
+  provenance.assignment_shape_from_folder,
+  provenance.assignment_supersession_parent
+IMMEDIATE;
+SELECT format(
+  'PHASE2B_CONSTRAINT_END|folder_assignment_shape|wall_seconds=%s|wal_bytes=%s',
+  extract(epoch FROM clock_timestamp()-:'phase2b_group_started'::timestamptz),
+  pg_wal_lsn_diff(pg_current_wal_lsn(), :'phase2b_group_wal_started'::pg_lsn)
+);
+
+SELECT clock_timestamp() AS phase2b_group_started,
+       pg_current_wal_lsn() AS phase2b_group_wal_started \gset
+\echo PHASE2B_CONSTRAINT_BEGIN|visual_bridge_and_locator|:phase2b_group_started|:phase2b_group_wal_started
+SET CONSTRAINTS
+  rights.object_visual_reference_decision_from_bridge,
+  rights.locator_supersession_parent
+IMMEDIATE;
+SELECT format(
+  'PHASE2B_CONSTRAINT_END|visual_bridge_and_locator|wall_seconds=%s|wal_bytes=%s',
+  extract(epoch FROM clock_timestamp()-:'phase2b_group_started'::timestamptz),
+  pg_wal_lsn_diff(pg_current_wal_lsn(), :'phase2b_group_wal_started'::pg_lsn)
+);
+
+SELECT clock_timestamp() AS phase2b_group_started,
+       pg_current_wal_lsn() AS phase2b_group_wal_started \gset
+\echo PHASE2B_CONSTRAINT_BEGIN|rights_observation|:phase2b_group_started|:phase2b_group_wal_started
+SET CONSTRAINTS
+  rights.rights_observation_shape_from_parent,
+  rights.rights_observation_shape_from_reference,
+  rights.rights_observation_supersession_parent
+IMMEDIATE;
+SELECT format(
+  'PHASE2B_CONSTRAINT_END|rights_observation|wall_seconds=%s|wal_bytes=%s',
+  extract(epoch FROM clock_timestamp()-:'phase2b_group_started'::timestamptz),
+  pg_wal_lsn_diff(pg_current_wal_lsn(), :'phase2b_group_wal_started'::pg_lsn)
+);
+
+SELECT clock_timestamp() AS phase2b_group_started,
+       pg_current_wal_lsn() AS phase2b_group_wal_started \gset
+\echo PHASE2B_CONSTRAINT_BEGIN|rights_assessment_shape_support|:phase2b_group_started|:phase2b_group_wal_started
+SET CONSTRAINTS
+  rights.rights_assessment_from_assessment,
+  rights.rights_assessment_from_reference,
+  rights.rights_assessment_from_observation_bridge,
+  rights.rights_assessment_supersession_parent
+IMMEDIATE;
+SELECT format(
+  'PHASE2B_CONSTRAINT_END|rights_assessment_shape_support|wall_seconds=%s|wal_bytes=%s',
+  extract(epoch FROM clock_timestamp()-:'phase2b_group_started'::timestamptz),
+  pg_wal_lsn_diff(pg_current_wal_lsn(), :'phase2b_group_wal_started'::pg_lsn)
+);
+
+SELECT clock_timestamp() AS phase2b_group_started,
+       pg_current_wal_lsn() AS phase2b_group_wal_started \gset
+\echo PHASE2B_CONSTRAINT_BEGIN|rights_assessment_current_leaf|:phase2b_group_started|:phase2b_group_wal_started
+SET CONSTRAINTS rights.rights_assessment_one_current_leaf IMMEDIATE;
+SELECT format(
+  'PHASE2B_CONSTRAINT_END|rights_assessment_current_leaf|wall_seconds=%s|wal_bytes=%s',
+  extract(epoch FROM clock_timestamp()-:'phase2b_group_started'::timestamptz),
+  pg_wal_lsn_diff(pg_current_wal_lsn(), :'phase2b_group_wal_started'::pg_lsn)
+);
+
+SELECT clock_timestamp() AS phase2b_group_started,
+       pg_current_wal_lsn() AS phase2b_group_wal_started \gset
+\echo PHASE2B_CONSTRAINT_BEGIN|provider_policy|:phase2b_group_started|:phase2b_group_wal_started
+SET CONSTRAINTS
+  rights.provider_policy_evaluation_from_parent,
+  rights.policy_evaluation_supersession_parent,
+  rights.policy_evaluation_one_current_leaf
+IMMEDIATE;
+SELECT format(
+  'PHASE2B_CONSTRAINT_END|provider_policy|wall_seconds=%s|wal_bytes=%s',
+  extract(epoch FROM clock_timestamp()-:'phase2b_group_started'::timestamptz),
+  pg_wal_lsn_diff(pg_current_wal_lsn(), :'phase2b_group_wal_started'::pg_lsn)
+);
+
+SELECT clock_timestamp() AS phase2b_group_started,
+       pg_current_wal_lsn() AS phase2b_group_wal_started \gset
+\echo PHASE2B_CONSTRAINT_BEGIN|delivery_parent_validation|:phase2b_group_started|:phase2b_group_wal_started
+SET CONSTRAINTS rights.delivery_assessment_validation IMMEDIATE;
+SELECT format(
+  'PHASE2B_CONSTRAINT_END|delivery_parent_validation|wall_seconds=%s|wal_bytes=%s',
+  extract(epoch FROM clock_timestamp()-:'phase2b_group_started'::timestamptz),
+  pg_wal_lsn_diff(pg_current_wal_lsn(), :'phase2b_group_wal_started'::pg_lsn)
+);
+
+SELECT clock_timestamp() AS phase2b_group_started,
+       pg_current_wal_lsn() AS phase2b_group_wal_started \gset
+\echo PHASE2B_CONSTRAINT_BEGIN|delivery_rights_validation|:phase2b_group_started|:phase2b_group_wal_started
+SET CONSTRAINTS rights.delivery_rights_validation IMMEDIATE;
+SELECT format(
+  'PHASE2B_CONSTRAINT_END|delivery_rights_validation|wall_seconds=%s|wal_bytes=%s',
+  extract(epoch FROM clock_timestamp()-:'phase2b_group_started'::timestamptz),
+  pg_wal_lsn_diff(pg_current_wal_lsn(), :'phase2b_group_wal_started'::pg_lsn)
+);
+
+SELECT clock_timestamp() AS phase2b_group_started,
+       pg_current_wal_lsn() AS phase2b_group_wal_started \gset
+\echo PHASE2B_CONSTRAINT_BEGIN|delivery_policy_validation|:phase2b_group_started|:phase2b_group_wal_started
+SET CONSTRAINTS rights.delivery_policy_validation IMMEDIATE;
+SELECT format(
+  'PHASE2B_CONSTRAINT_END|delivery_policy_validation|wall_seconds=%s|wal_bytes=%s',
+  extract(epoch FROM clock_timestamp()-:'phase2b_group_started'::timestamptz),
+  pg_wal_lsn_diff(pg_current_wal_lsn(), :'phase2b_group_wal_started'::pg_lsn)
+);
+
+SELECT clock_timestamp() AS phase2b_group_started,
+       pg_current_wal_lsn() AS phase2b_group_wal_started \gset
+\echo PHASE2B_CONSTRAINT_BEGIN|delivery_history_and_rule|:phase2b_group_started|:phase2b_group_wal_started
+SET CONSTRAINTS
+  rights.delivery_supersession_parent,
+  rights.delivery_assessment_one_current_leaf,
+  rights.delivery_rule_pair
+IMMEDIATE;
+SELECT format(
+  'PHASE2B_CONSTRAINT_END|delivery_history_and_rule|wall_seconds=%s|wal_bytes=%s',
+  extract(epoch FROM clock_timestamp()-:'phase2b_group_started'::timestamptz),
+  pg_wal_lsn_diff(pg_current_wal_lsn(), :'phase2b_group_wal_started'::pg_lsn)
+);
+
+SELECT clock_timestamp() AS phase2b_group_started,
+       pg_current_wal_lsn() AS phase2b_group_wal_started \gset
+\echo PHASE2B_CONSTRAINT_BEGIN|final_all_omission_check|:phase2b_group_started|:phase2b_group_wal_started
 SET CONSTRAINTS ALL IMMEDIATE;
+SELECT format(
+  'PHASE2B_CONSTRAINT_END|final_all_omission_check|wall_seconds=%s|wal_bytes=%s',
+  extract(epoch FROM clock_timestamp()-:'phase2b_group_started'::timestamptz),
+  pg_wal_lsn_diff(pg_current_wal_lsn(), :'phase2b_group_wal_started'::pg_lsn)
+);

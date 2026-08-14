@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
 import json
 import os
@@ -14,7 +15,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[3]
-DEFAULT_SCHEMA = "4ec9a76421548bda1b90ccdbf604906df9da9d349a70c9100abdddd1a7fee105"
+DEFAULT_SCHEMA = "aa8cb0af7b61931e51f1f71ed2e4cf0d10b178669de16807871819b330742e8b"
 OWNER_ROLE = "gda_v49_phase2a_schema_owner"
 API_ROLE = "gda_v49_phase2a_api_reader"
 
@@ -271,7 +272,11 @@ def public_boundary(args: argparse.Namespace) -> dict[str, int]:
     }
 
 
-def integrity_invariants(args: argparse.Namespace) -> dict[str, int]:
+def integrity_invariants(
+    args: argparse.Namespace, *, expected_surfaces: int = 15923,
+    expected_eligible: int = 7995, expected_held: int = 7928,
+    expected_folder_assignments: int = 47982,
+) -> dict[str, int]:
     """Return zero-only invariant failures, including the tier partition."""
     sql = f"""
 SET ROLE {OWNER_ROLE};
@@ -294,16 +299,16 @@ SELECT jsonb_build_object(
   'distinctSeedLinkMismatch', abs((SELECT count(*) FROM provenance.object_source_record WHERE source_role='seed_description') - (SELECT count(DISTINCT archive_object_id) FROM provenance.object_source_record WHERE source_role='seed_description')),
   'fieldLiteralOrphan', (SELECT count(*) FROM raw.field_literal f LEFT JOIN raw.source_record r ON r.source_record_id=f.source_record_id WHERE r.source_record_id IS NULL),
   'fieldLiteralDuplicate', (SELECT count(*) FROM (SELECT source_record_id,json_pointer,occurrence_ordinal FROM raw.field_literal GROUP BY source_record_id,json_pointer,occurrence_ordinal HAVING count(*) <> 1) q),
-  'folderMembershipMismatch', abs((SELECT count(*) FROM provenance.assignment_folder_membership)-47982),
+  'folderMembershipMismatch', abs((SELECT count(*) FROM provenance.assignment_folder_membership)-{expected_folder_assignments}),
   'folderAssignmentStatusMismatch', (SELECT count(*) FROM provenance.canonical_assignment WHERE assignment_kind='folder_membership' AND status <> 'proposed'),
   'folderAssignmentSubtypeMismatch', (SELECT count(*) FROM provenance.canonical_assignment a LEFT JOIN provenance.assignment_folder_membership f ON f.canonical_assignment_id=a.canonical_assignment_id WHERE a.assignment_kind='folder_membership' AND f.canonical_assignment_id IS NULL),
   'ledgerObjectOrphan', (SELECT count(*) FROM ledger l LEFT JOIN core.archive_object o ON o.archive_object_id=l.archive_object_id WHERE o.archive_object_id IS NULL),
   'ledgerRecordOrphan', (SELECT count(*) FROM ledger l LEFT JOIN raw.source_record r ON r.source_record_id=l.source_record_id WHERE r.source_record_id IS NULL),
   'recordAssetMismatch', (SELECT count(*) FROM ledger l JOIN raw.source_record r ON r.source_record_id=l.source_record_id WHERE r.source_asset_id IS DISTINCT FROM l.canonical_input_asset_id),
-  'eligibleCountMismatch', abs((SELECT count(*) FROM eligible)-7995),
-  'heldCountMismatch', abs((SELECT count(*) FROM held)-7928),
+  'eligibleCountMismatch', abs((SELECT count(*) FROM eligible)-{expected_eligible}),
+  'heldCountMismatch', abs((SELECT count(*) FROM held)-{expected_held}),
   'tierOverlap', (SELECT count(*) FROM eligible e JOIN held h USING (archive_object_id)),
-  'tierCoverageMismatch', abs((SELECT count(*) FROM (SELECT archive_object_id FROM eligible UNION SELECT archive_object_id FROM held) q)-15923),
+  'tierCoverageMismatch', abs((SELECT count(*) FROM (SELECT archive_object_id FROM eligible UNION SELECT archive_object_id FROM held) q)-{expected_surfaces}),
   'ledgerWithoutVisualDisposition', (SELECT count(*) FROM ledger l LEFT JOIN rights.legacy_visual_surface_disposition d ON d.legacy_surface_ledger_id=l.legacy_surface_ledger_id WHERE d.legacy_surface_ledger_id IS NULL),
   'visualDispositionDuplicate', (SELECT count(*) FROM (SELECT legacy_surface_ledger_id FROM rights.legacy_visual_surface_disposition GROUP BY legacy_surface_ledger_id HAVING count(*) <> 1) q),
   'ledgerWithoutVisualClassification', (SELECT count(*) FROM ledger l LEFT JOIN rights.legacy_visual_surface_classification c ON c.legacy_surface_ledger_id=l.legacy_surface_ledger_id WHERE c.legacy_surface_ledger_id IS NULL),
@@ -321,6 +326,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--database", required=True)
     parser.add_argument("--admin-user", default="gda_v49_phase2b_admin")
     parser.add_argument("--expected-schema", default=DEFAULT_SCHEMA)
+    parser.add_argument("--performance-fixture-manifest", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     return parser.parse_args()
 
@@ -336,30 +342,78 @@ def main() -> int:
     metrics = metric_query(args)
     stable_key_set_sha256, stable_row_count = stable_key_hash(args)
     normalized_content_sha256, semantic_content_row_count = semantic_content_hash(args)
-    invariants = integrity_invariants(args)
+    fixture: dict[str, Any] | None = None
+    tier_counts = {
+        "source_verified": 7995,
+        "metadata_supported": 2971,
+        "missing": 4957,
+    }
+    expected_counts = {
+        "surfaces": 15923, "eligible": 7995, "held": 7928,
+        "visual": 15788, "locators": 15790, "fieldLiterals": 3559820,
+        "folders": 185, "folderAssignments": 47982,
+    }
+    if args.performance_fixture_manifest is not None:
+        fixture_path = args.performance_fixture_manifest.resolve()
+        try:
+            fixture = json.loads(fixture_path.read_text(encoding="utf-8"))
+            if fixture.get("schema") != "gda-v49-phase2b-performance-fixture/v1":
+                raise VerifyError("PERFORMANCE_FIXTURE_SCHEMA")
+            expected_counts = fixture["expected"]
+            selected_path = fixture_path.parent / "selected-objects.tsv"
+            with selected_path.open("r", encoding="utf-8", newline="") as handle:
+                selected_rows = list(csv.DictReader(handle, delimiter="\t"))
+            tier_counts = {
+                key: sum(row["tier_class"] == key for row in selected_rows)
+                for key in ("source_verified", "metadata_supported", "missing")
+            }
+            if len(selected_rows) != expected_counts["surfaces"]:
+                raise VerifyError("PERFORMANCE_FIXTURE_SELECTION_COUNT")
+        except (OSError, KeyError, TypeError, csv.Error, json.JSONDecodeError) as error:
+            raise VerifyError("PERFORMANCE_FIXTURE_READ_FAILED") from error
+    invariants = integrity_invariants(
+        args,
+        expected_surfaces=expected_counts["surfaces"],
+        expected_eligible=expected_counts["eligible"],
+        expected_held=expected_counts["held"],
+        expected_folder_assignments=expected_counts["folderAssignments"],
+    )
     public = public_boundary(args)
     after = schema_hash(args)
     if after != args.expected_schema:
         raise VerifyError("SCHEMA_SHA_AFTER_MISMATCH:" + after)
     expected = {
-        "legacyInputSurfaces": 15923, "operationalObjects": 15923, "rawSourceRecords": 15923,
-        "objectSourceSeedLinks": 15923, "folders": 185,
-        "folderMembershipAssignments": 47982, "sourceVerified": 7995, "metadataSupportedHeld": 2971,
-        "missingTraceTierHeld": 4957, "researchEligibleObjects": 7995, "heldObjects": 7928,
+        "legacyInputSurfaces": expected_counts["surfaces"],
+        "operationalObjects": expected_counts["surfaces"],
+        "rawSourceRecords": expected_counts["surfaces"],
+        "objectSourceSeedLinks": expected_counts["surfaces"],
+        "rawFieldLiterals": expected_counts["fieldLiterals"],
+        "folders": expected_counts["folders"],
+        "folderMembershipAssignments": expected_counts["folderAssignments"],
+        "sourceVerified": tier_counts["source_verified"],
+        "metadataSupportedHeld": tier_counts["metadata_supported"],
+        "missingTraceTierHeld": tier_counts["missing"],
+        "researchEligibleObjects": expected_counts["eligible"],
+        "heldObjects": expected_counts["held"],
         "rejectedObjects": 0, "acceptedTraceRelations": 0, "traceEligibleObjects": 0,
         "semanticRelationRows": 0, "legacyProjectionFactRows": 0,
         "traceWorkingTreeRows": 0, "traceWorkingBranchRows": 0,
         "traceWorkingNodePlacementRows": 0, "traceWorkingAssignmentRows": 0,
-        "traceRootNodes": 15923,
-        "visualBundles": 15923, "bundlesWithReference": 15788, "bundlesWithoutReference": 135,
-        "locatorOccurrences": 15790, "unclassifiedVisualReference": 0, "positiveRights": 0,
+        "traceRootNodes": expected_counts["surfaces"],
+        "visualBundles": expected_counts["surfaces"],
+        "bundlesWithReference": expected_counts["visual"],
+        "bundlesWithoutReference": expected_counts["surfaces"] - expected_counts["visual"],
+        "locatorOccurrences": expected_counts["locators"],
+        "unclassifiedVisualReference": 0, "positiveRights": 0,
         "remoteImageDecisions": 0, "publicPixelLocators": 0, "acceptedSemanticRelations": 0,
         "traceProjectionEdges": 0, "traceProjectionNodes": 0,
         "traceProjectionTrees": 0, "traceProjectionBranches": 0,
         "traceProjectionNodePlacements": 0, "traceProjectionEdgePlacements": 0,
         "currentPointers": 0, "sealedReleases": 0,
-        "rightsObservations": 15788, "rightsAssessments": 15788,
-        "policyEvaluations": 15788, "citationOnlyDecisions": 15788,
+        "rightsObservations": expected_counts["visual"],
+        "rightsAssessments": expected_counts["visual"],
+        "policyEvaluations": expected_counts["visual"],
+        "citationOnlyDecisions": expected_counts["visual"],
     }
     failed = {key: [metrics.get(key), wanted] for key, wanted in expected.items() if metrics.get(key) != wanted}
     if any(value != 0 for value in invariants.values()):
@@ -382,6 +436,10 @@ def main() -> int:
         "stableRowCount": stable_row_count,
         "semanticContentRowCount": semantic_content_row_count,
         "integrityInvariants": invariants, "publicBoundary": public, "failures": failed,
+        "performanceFixtureManifestSha256": (
+            sha256(args.performance_fixture_manifest.resolve().read_bytes())
+            if args.performance_fixture_manifest is not None else None
+        ),
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, sort_keys=True, indent=2) + "\n", encoding="utf-8")

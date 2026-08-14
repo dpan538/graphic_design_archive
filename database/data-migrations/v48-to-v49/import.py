@@ -16,18 +16,26 @@ import csv
 import hashlib
 import json
 import os
+import resource
 import subprocess
 import sys
+import tempfile
+import time
 import uuid
+from collections import deque
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[3]
 MIGRATION_DIR = Path(__file__).resolve().parent
-DEFAULT_SCHEMA = "4ec9a76421548bda1b90ccdbf604906df9da9d349a70c9100abdddd1a7fee105"
+BASE_SCHEMA = "4ec9a76421548bda1b90ccdbf604906df9da9d349a70c9100abdddd1a7fee105"
+DEFAULT_FINAL_SCHEMA = "aa8cb0af7b61931e51f1f71ed2e4cf0d10b178669de16807871819b330742e8b"
 DEFAULT_CANDIDATE = "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48"
 DEFAULT_BASE = "86ba95cae9ecf12e58fcabb8170c9020e151b386"
+STAGING_MANIFEST_SHA256 = "01ac60c705f7450c6668a91ee6a3d2842c3b0258a4ecd85139611bf916681322"
+STAGING_ATTESTATION_SHA256 = "11742e9afc577d976ea097540326c2697937290635735ad9d4466efce1758bcc"
 OWNER_ROLE = "gda_v49_phase2a_schema_owner"
 MIGRATOR_ROLE = "gda_v49_phase2a_migrator"
 UUID_NAMESPACE = uuid.UUID("6ba7b811-9dad-11d1-80b4-00c04fd430c8")
@@ -50,6 +58,37 @@ PHASE1D_VISUAL_HASHES = {
     "classifiedSurfaceSequenceSha256": "2ba50afc2175e350895f9b7b76615ba72cf2175cf4599b13b49f5ee107242abc",
 }
 
+TABLE_FILES = [
+    ("gda_stage_source_assets", "source-assets.tsv"),
+    ("gda_stage_mapping_versions", "mapping-versions.tsv"),
+    ("gda_stage_migration_batches", "migration-batches.tsv"),
+    ("gda_stage_source_records", "source-records.tsv"),
+    ("gda_stage_field_literals", "field-literals.tsv"),
+    ("gda_stage_entities", "entities.tsv"),
+    ("gda_stage_archive_objects", "archive-objects.tsv"),
+    ("gda_stage_surface_ledgers", "surface-ledgers.tsv"),
+    ("gda_stage_object_source_links", "object-source-links.tsv"),
+    ("gda_stage_legacy_identities", "legacy-identities.tsv"),
+    ("gda_stage_folders", "folders.tsv"),
+    ("gda_stage_folder_assignments", "folder-assignments.tsv"),
+    ("gda_stage_legacy_resolutions", "legacy-resolutions.tsv"),
+    ("gda_stage_trace_nodes", "trace-nodes.tsv"),
+    ("gda_stage_object_trace_nodes", "object-trace-nodes.tsv"),
+    ("gda_stage_corpora", "corpora.tsv"),
+    ("gda_stage_corpus_versions", "corpus-versions.tsv"),
+    ("gda_stage_corpus_memberships", "corpus-memberships.tsv"),
+    ("gda_stage_held_deltas", "held-deltas.tsv"),
+    ("gda_stage_visual_references", "visual-references.tsv"),
+    ("gda_stage_visual_bridges", "visual-bridges.tsv"),
+    ("gda_stage_visual_locators", "visual-locators.tsv"),
+    ("gda_stage_visual_dispositions", "visual-dispositions.tsv"),
+    ("gda_stage_visual_classifications", "visual-classifications.tsv"),
+    ("gda_stage_rights_observations", "rights-observations.tsv"),
+    ("gda_stage_rights_assessments", "rights-assessments.tsv"),
+    ("gda_stage_policy_evaluations", "policy-evaluations.tsv"),
+    ("gda_stage_delivery_assessments", "delivery-assessments.tsv"),
+]
+
 
 class ImportErrorPhase2B(RuntimeError):
     pass
@@ -64,6 +103,13 @@ def sha256_file(path: Path) -> str:
                 break
             digest.update(chunk)
     return digest.hexdigest()
+
+
+def canonical_sha256(value: Any) -> str:
+    encoded = json.dumps(
+        value, ensure_ascii=False, separators=(",", ":"), sort_keys=True,
+    ).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
 
 
 def strict_object(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
@@ -85,7 +131,10 @@ def b64_json_scalar(value: str, *, context: str) -> str:
     return decoded
 
 
-def validate_surface_ledger_contract(stage: Path, *, inject: str | None = None) -> None:
+def validate_surface_ledger_contract(
+    stage: Path, *, expected_count: int = 15923,
+    expected_ordinals: set[int] | None = None, inject: str | None = None,
+) -> None:
     """Validate the exact 15,923-row source surface identity contract.
 
     The three identity fault modes alter only the in-memory validation stream.
@@ -120,7 +169,7 @@ def validate_surface_ledger_contract(stage: Path, *, inject: str | None = None) 
         extra["surface_id_exact"] = "__phase2b_injected_extra_surface__"
         extra["source_record_id_exact"] = "__phase2b_injected_extra_source__"
         rows.append(extra)
-    if len(rows) != 15923:
+    if len(rows) != expected_count:
         raise ImportErrorPhase2B(f"SURFACE_LEDGER_CARDINALITY_MISMATCH:{len(rows)}")
     ordinals: list[int] = []
     surfaces: list[str] = []
@@ -137,11 +186,15 @@ def validate_surface_ledger_contract(stage: Path, *, inject: str | None = None) 
         ordinals.append(ordinal)
         surfaces.append(row["surface_id_exact"])
         sources.append(row["source_record_id_exact"])
-    if sorted(ordinals) != list(range(15923)):
+    required_ordinals = (
+        sorted(expected_ordinals) if expected_ordinals is not None
+        else list(range(expected_count))
+    )
+    if sorted(ordinals) != required_ordinals:
         raise ImportErrorPhase2B("SURFACE_LEDGER_ORDINAL_SEQUENCE_MISMATCH")
-    if len(set(surfaces)) != 15923:
+    if len(set(surfaces)) != expected_count:
         raise ImportErrorPhase2B("SURFACE_LEDGER_SURFACE_ID_UNIQUENESS_MISMATCH")
-    if len(set(sources)) != 15923:
+    if len(set(sources)) != expected_count:
         raise ImportErrorPhase2B("SURFACE_LEDGER_SOURCE_ID_UNIQUENESS_MISMATCH")
 
 
@@ -286,13 +339,144 @@ def run(command: list[str], *, env: dict[str, str], check: bool = True) -> subpr
     return result
 
 
+def run_streaming(
+    command: list[str], *, env: dict[str, str], log_path: Path,
+) -> tuple[int, list[str], float, float, float]:
+    started = time.monotonic()
+    before = resource.getrusage(resource.RUSAGE_CHILDREN)
+    # Keep the complete bounded psql transcript markers, including the backend
+    # PID emitted before COPY.  The loader is intentionally finite and emits
+    # far fewer than 5,000 lines, while 500 could evict the cancellation target
+    # before a post-run receipt was assembled.
+    tail: deque[str] = deque(maxlen=5000)
+    with log_path.open("w", encoding="utf-8") as log_handle:
+        process = subprocess.Popen(
+            command, text=True, stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT, env=env, bufsize=1,
+        )
+        if process.stdout is None:
+            raise ImportErrorPhase2B("IMPORT_STREAM_MISSING")
+        for line in process.stdout:
+            log_handle.write(line)
+            log_handle.flush()
+            sys.stdout.write(line)
+            sys.stdout.flush()
+            tail.append(line.rstrip("\n"))
+        return_code = process.wait()
+    after = resource.getrusage(resource.RUSAGE_CHILDREN)
+    return (
+        return_code,
+        list(tail),
+        time.monotonic() - started,
+        after.ru_utime - before.ru_utime,
+        after.ru_stime - before.ru_stime,
+    )
+
+
+def parse_runtime_markers(lines: list[str]) -> dict[str, Any]:
+    stages: dict[str, dict[str, str]] = {}
+    constraints: dict[str, dict[str, str]] = {}
+    backend_pid: int | None = None
+    committed = False
+    for line in lines:
+        if line.startswith("PHASE2B_BACKEND_PID|"):
+            try:
+                backend_pid = int(line.split("|", 1)[1])
+            except ValueError:
+                pass
+        elif line == "PHASE2B_TRANSACTION_COMMITTED|true":
+            committed = True
+        elif line.startswith("PHASE2B_STAGE_END|"):
+            parts = line.split("|")
+            stages[parts[1]] = dict(
+                item.split("=", 1) for item in parts[2:] if "=" in item
+            )
+        elif line.startswith("PHASE2B_CONSTRAINT_END|"):
+            parts = line.split("|")
+            constraints[parts[1]] = dict(
+                item.split("=", 1) for item in parts[2:] if "=" in item
+            )
+    return {
+        "backendPid": backend_pid,
+        "committedMarker": committed,
+        "stages": stages,
+        "constraintGroups": constraints,
+    }
+
+
 def sql_path(path: Path) -> str:
     return str(path.resolve()).replace("'", "''")
 
 
+def require_staging_attestation(
+    attestation_path: Path, stage: Path, manifest: dict[str, Any],
+) -> dict[str, Any]:
+    """Reuse the one full-content verification without rereading 4.5 GB.
+
+    The signed payload is re-hashed, its immutable bindings are compared, and
+    every descriptor receives a cheap path/type/size/mtime check.  Any file
+    newer than the full verification instant invalidates reuse.
+    """
+    try:
+        document = json.loads(
+            attestation_path.read_text(encoding="utf-8"),
+            object_pairs_hook=strict_object,
+        )
+    except (OSError, UnicodeError, json.JSONDecodeError) as error:
+        raise ImportErrorPhase2B("STAGING_ATTESTATION_READ_FAILED") from error
+    if not isinstance(document, dict) or document.get("status") != "PASS":
+        raise ImportErrorPhase2B("STAGING_ATTESTATION_NOT_PASS")
+    payload = document.get("attestationPayload")
+    if not isinstance(payload, dict):
+        raise ImportErrorPhase2B("STAGING_ATTESTATION_PAYLOAD_MISSING")
+    actual_attestation_sha = canonical_sha256(payload)
+    if (
+        document.get("attestationSha256") != actual_attestation_sha
+        or actual_attestation_sha != STAGING_ATTESTATION_SHA256
+    ):
+        raise ImportErrorPhase2B("STAGING_ATTESTATION_SHA_MISMATCH")
+    if (
+        payload.get("schema") != "gda-v49-phase2b-staging-attestation/v1"
+        or payload.get("manifestSha256") != STAGING_MANIFEST_SHA256
+        or payload.get("schemaNormalizedSha256") != BASE_SCHEMA
+        or payload.get("candidateSha256") != DEFAULT_CANDIDATE
+        or Path(payload.get("stageRealpath", "")) != stage
+    ):
+        raise ImportErrorPhase2B("STAGING_ATTESTATION_BINDING_MISMATCH")
+    if sha256_file(stage / "staging-manifest.json") != STAGING_MANIFEST_SHA256:
+        raise ImportErrorPhase2B("STAGING_MANIFEST_SHA_MISMATCH")
+    try:
+        verified_ns = int(datetime.fromisoformat(document["verifiedAtUtc"]).timestamp() * 1_000_000_000)
+    except (KeyError, TypeError, ValueError) as error:
+        raise ImportErrorPhase2B("STAGING_ATTESTATION_TIME_INVALID") from error
+    descriptors = payload.get("descriptors")
+    if not isinstance(descriptors, list) or len(descriptors) != 35:
+        raise ImportErrorPhase2B("STAGING_ATTESTATION_DESCRIPTOR_COUNT")
+    by_name = {item.get("path"): item for item in descriptors if isinstance(item, dict)}
+    if set(by_name) != set(manifest.get("files", {})):
+        raise ImportErrorPhase2B("STAGING_ATTESTATION_DESCRIPTOR_ALLOWLIST")
+    for name, descriptor in by_name.items():
+        path = stage / name
+        try:
+            stat = path.stat()
+        except OSError as error:
+            raise ImportErrorPhase2B(f"STAGING_ATTESTED_FILE_MISSING:{name}") from error
+        manifest_descriptor = manifest["files"].get(name, {})
+        if (
+            not path.is_file() or path.is_symlink()
+            or stat.st_size != descriptor.get("bytes")
+            or descriptor.get("bytes") != manifest_descriptor.get("bytes")
+            or descriptor.get("sha256") != manifest_descriptor.get("sha256")
+            or stat.st_mtime_ns > verified_ns
+        ):
+            raise ImportErrorPhase2B(f"STAGING_ATTESTATION_REUSE_INVALID:{name}")
+    return document
+
+
 def require_stage(
-    stage: Path, expected_candidate: str, expected_schema: str, mapping_path: Path,
-    *, fault: str | None = None,
+    stage: Path, expected_candidate: str, expected_base_schema: str,
+    mapping_path: Path, *, attestation_path: Path | None = None,
+    fault: str | None = None,
 ) -> dict[str, Any]:
     manifest_path = stage / "staging-manifest.json"
     if not manifest_path.is_file():
@@ -309,7 +493,7 @@ def require_stage(
         raise ImportErrorPhase2B("UNKNOWN_STAGING_MANIFEST_SCHEMA")
     if manifest.get("candidate", {}).get("sha256") != expected_candidate:
         raise ImportErrorPhase2B("CANDIDATE_SHA_MISMATCH")
-    if manifest.get("schemaNormalizedSha256") != expected_schema:
+    if manifest.get("schemaNormalizedSha256") != expected_base_schema:
         raise ImportErrorPhase2B("STAGING_SCHEMA_SHA_MISMATCH")
     if manifest.get("implementationBaseCommit") != DEFAULT_BASE:
         raise ImportErrorPhase2B("IMPLEMENTATION_BASE_COMMIT_MISMATCH")
@@ -334,7 +518,7 @@ def require_stage(
         "extractorSha256": manifest.get("extractor", {}).get("sha256"),
         "implementationBaseCommit": DEFAULT_BASE,
         "mappingSha256": manifest.get("mapping", {}).get("sha256"),
-        "schemaNormalizedSha256": expected_schema,
+        "schemaNormalizedSha256": expected_base_schema,
         "version": "gda-phase2b-bundle-binding-v1",
     }
     expected_binding_sha = hashlib.sha256(
@@ -385,14 +569,23 @@ def require_stage(
     files = manifest.get("files", {})
     if set(files) != required:
         raise ImportErrorPhase2B("STAGING_FILE_ALLOWLIST_MISMATCH")
-    for name, descriptor in files.items():
-        path = stage / name
-        if not path.is_file() or path.stat().st_size != descriptor.get("bytes") or sha256_file(path) != descriptor.get("sha256"):
-            raise ImportErrorPhase2B(f"STAGING_FILE_HASH_MISMATCH:{name}")
-    # This is deliberately before database ownership/schema checks: a staged
-    # field or mapping contract failure must not even open a PostgreSQL session.
-    validate_surface_ledger_contract(stage, inject=fault)
-    validate_stage_occurrence_contract(stage, mapping_path, manifest, inject=fault)
+    if attestation_path is not None:
+        if fault is not None:
+            raise ImportErrorPhase2B("FAULT_REQUIRES_DIRECT_FIXTURE_PREFLIGHT")
+        require_staging_attestation(attestation_path, stage, manifest)
+    else:
+        for name, descriptor in files.items():
+            path = stage / name
+            if (
+                not path.is_file()
+                or path.stat().st_size != descriptor.get("bytes")
+                or sha256_file(path) != descriptor.get("sha256")
+            ):
+                raise ImportErrorPhase2B(f"STAGING_FILE_HASH_MISMATCH:{name}")
+        # Direct mode remains for bounded failure fixtures only.  Production
+        # replays use the one content-addressed attestation above.
+        validate_surface_ledger_contract(stage, inject=fault)
+        validate_stage_occurrence_contract(stage, mapping_path, manifest, inject=fault)
     mapping_rows = (stage / "mapping-versions.tsv").read_text(encoding="utf-8").splitlines()
     if len(mapping_rows) != 2 or manifest["mapping"]["sha256"] not in mapping_rows[1].split("\t"):
         raise ImportErrorPhase2B("STAGING_MAPPING_ROW_MISMATCH")
@@ -402,6 +595,139 @@ def require_stage(
         raise ImportErrorPhase2B("STAGING_MAPPING_BINDING_DECODE_FAILED") from exc
     if staged_binding != binding["value"]:
         raise ImportErrorPhase2B("STAGING_MAPPING_BINDING_MISMATCH")
+    manifest["_performanceExpected"] = {
+        "surfaces": 15923,
+        "eligible": 7995,
+        "held": 7928,
+        "visual": 15788,
+        "locators": 15790,
+        "fieldLiterals": 3559820,
+        "folders": 185,
+        "folderAssignments": 47982,
+    }
+    manifest["_inputDescriptorBytes"] = sum(
+        files[name]["bytes"] for _, name in TABLE_FILES
+    )
+    manifest["_attestationReused"] = attestation_path is not None
+    return manifest
+
+
+def validate_fixture_occurrence_sample(
+    stage: Path, mapping_path: Path, *, inject: str | None = None,
+) -> None:
+    try:
+        mapping = json.loads(
+            mapping_path.read_text(encoding="utf-8"), object_pairs_hook=strict_object,
+        )
+        rule_ids = {
+            rule["ruleId"] for rule in mapping["rules"]
+            if isinstance(rule, dict) and isinstance(rule.get("ruleId"), str)
+        }
+        rows = []
+        with (stage / "field-occurrence-sample.jsonl").open("r", encoding="utf-8") as handle:
+            for line_number, line in enumerate(handle, start=1):
+                row = json.loads(line, object_pairs_hook=strict_object)
+                if not isinstance(row, dict) or set(row) != FIELD_OCCURRENCE_KEYS:
+                    raise ImportErrorPhase2B(
+                        f"FIXTURE_FIELD_OCCURRENCE_SCHEMA_KEYS:{line_number}"
+                    )
+                rows.append(row)
+    except (OSError, KeyError, UnicodeError, json.JSONDecodeError) as error:
+        raise ImportErrorPhase2B("FIXTURE_FIELD_OCCURRENCE_SAMPLE_INVALID") from error
+    if not rows:
+        raise ImportErrorPhase2B("FIXTURE_FIELD_OCCURRENCE_SAMPLE_EMPTY")
+    for index, row in enumerate(rows):
+        rule_id = row.get("mappingRuleId")
+        if inject == "unknown_field" and index == 0:
+            rule_id = "__phase2b_undeclared_mapping_rule__"
+        if rule_id not in rule_ids:
+            raise ImportErrorPhase2B(
+                f"FIELD_OCCURRENCE_UNDECLARED_RULE:{index + 1}"
+            )
+
+
+def require_performance_fixture(
+    stage: Path, fixture_manifest_path: Path, expected_candidate: str,
+    expected_base_schema: str, mapping_path: Path, *, fault: str | None = None,
+) -> dict[str, Any]:
+    try:
+        manifest_bytes = fixture_manifest_path.read_bytes()
+        manifest = json.loads(
+            manifest_bytes.decode("utf-8"), object_pairs_hook=strict_object,
+        )
+    except (OSError, UnicodeError, json.JSONDecodeError) as error:
+        raise ImportErrorPhase2B("PERFORMANCE_FIXTURE_MANIFEST_READ_FAILED") from error
+    if not isinstance(manifest, dict) or manifest.get("schema") != "gda-v49-phase2b-performance-fixture/v1":
+        raise ImportErrorPhase2B("PERFORMANCE_FIXTURE_MANIFEST_SCHEMA")
+    source = manifest.get("source", {})
+    if (
+        source.get("stagingAttestationSha256") != STAGING_ATTESTATION_SHA256
+        or source.get("stagingManifestSha256") != STAGING_MANIFEST_SHA256
+        or source.get("candidateSha256") != expected_candidate
+        or source.get("baseSchemaSha256") != expected_base_schema
+        or source.get("implementationBaseCommit") != DEFAULT_BASE
+    ):
+        raise ImportErrorPhase2B("PERFORMANCE_FIXTURE_SOURCE_BINDING")
+    scale = manifest.get("scale")
+    if not isinstance(scale, int) or scale not in {50, 250, 1000, 4000, 8000}:
+        raise ImportErrorPhase2B("PERFORMANCE_FIXTURE_SCALE")
+    mapping = manifest.get("mapping", {})
+    if (
+        not mapping_path.is_file()
+        or sha256_file(mapping_path) != mapping.get("sha256")
+    ):
+        raise ImportErrorPhase2B("PERFORMANCE_FIXTURE_MAPPING_SHA")
+    required_files = {name for _, name in TABLE_FILES} | {
+        "surface-row-ledger.tsv", "selected-objects.tsv",
+        "field-occurrence-sample.jsonl",
+    }
+    files = manifest.get("files")
+    if not isinstance(files, dict) or set(files) != required_files:
+        raise ImportErrorPhase2B("PERFORMANCE_FIXTURE_FILE_ALLOWLIST")
+    for name, descriptor in files.items():
+        path = stage / name
+        if (
+            not isinstance(descriptor, dict) or not path.is_file()
+            or path.stat().st_size != descriptor.get("bytes")
+            or sha256_file(path) != descriptor.get("sha256")
+        ):
+            raise ImportErrorPhase2B(f"PERFORMANCE_FIXTURE_FILE_BINDING:{name}")
+    selected_path = stage / "selected-objects.tsv"
+    expected_selection_sha = manifest.get("selection", {}).get("sha256")
+    if sha256_file(selected_path) != expected_selection_sha:
+        raise ImportErrorPhase2B("PERFORMANCE_FIXTURE_SELECTION_SHA")
+    try:
+        with selected_path.open("r", encoding="utf-8", newline="") as handle:
+            selected = list(csv.DictReader(handle, delimiter="\t"))
+        ordinals = {int(row["source_ordinal"]) for row in selected}
+    except (OSError, KeyError, TypeError, ValueError, csv.Error) as error:
+        raise ImportErrorPhase2B("PERFORMANCE_FIXTURE_SELECTION_INVALID") from error
+    if len(selected) != scale or len(ordinals) != scale:
+        raise ImportErrorPhase2B("PERFORMANCE_FIXTURE_SELECTION_CARDINALITY")
+    validate_surface_ledger_contract(
+        stage, expected_count=scale, expected_ordinals=ordinals,
+        inject=fault if fault in {"duplicate_surface", "missing_surface", "extra_surface"} else None,
+    )
+    validate_fixture_occurrence_sample(
+        stage, mapping_path, inject=fault if fault == "unknown_field" else None,
+    )
+    expected = manifest.get("expected")
+    required_expected = {
+        "surfaces", "eligible", "held", "visual", "locators",
+        "fieldLiterals", "folders", "folderAssignments",
+    }
+    if (
+        not isinstance(expected, dict) or set(expected) != required_expected
+        or expected.get("surfaces") != scale
+        or expected.get("eligible", 0) + expected.get("held", 0) != scale
+    ):
+        raise ImportErrorPhase2B("PERFORMANCE_FIXTURE_EXPECTED_COUNTS")
+    manifest["_performanceExpected"] = expected
+    manifest["_inputDescriptorBytes"] = sum(
+        files[name]["bytes"] for _, name in TABLE_FILES
+    )
+    manifest["_attestationReused"] = True
+    manifest["_manifestSha256"] = hashlib.sha256(manifest_bytes).hexdigest()
     return manifest
 
 
@@ -511,56 +837,52 @@ def query_database_owner(args: argparse.Namespace) -> str:
     return result.stdout.strip()
 
 
-def build_runtime_sql(stage: Path, inject: str | None, output: Path) -> None:
-    table_files = [
-        ("gda_stage_source_assets", "source-assets.tsv"),
-        ("gda_stage_mapping_versions", "mapping-versions.tsv"),
-        ("gda_stage_migration_batches", "migration-batches.tsv"),
-        ("gda_stage_source_records", "source-records.tsv"),
-        ("gda_stage_field_literals", "field-literals.tsv"),
-        ("gda_stage_entities", "entities.tsv"),
-        ("gda_stage_archive_objects", "archive-objects.tsv"),
-        ("gda_stage_surface_ledgers", "surface-ledgers.tsv"),
-        ("gda_stage_object_source_links", "object-source-links.tsv"),
-        ("gda_stage_legacy_identities", "legacy-identities.tsv"),
-        ("gda_stage_folders", "folders.tsv"),
-        ("gda_stage_folder_assignments", "folder-assignments.tsv"),
-        ("gda_stage_legacy_resolutions", "legacy-resolutions.tsv"),
-        ("gda_stage_trace_nodes", "trace-nodes.tsv"),
-        ("gda_stage_object_trace_nodes", "object-trace-nodes.tsv"),
-        ("gda_stage_corpora", "corpora.tsv"),
-        ("gda_stage_corpus_versions", "corpus-versions.tsv"),
-        ("gda_stage_corpus_memberships", "corpus-memberships.tsv"),
-        ("gda_stage_held_deltas", "held-deltas.tsv"),
-        ("gda_stage_visual_references", "visual-references.tsv"),
-        ("gda_stage_visual_bridges", "visual-bridges.tsv"),
-        ("gda_stage_visual_locators", "visual-locators.tsv"),
-        ("gda_stage_visual_dispositions", "visual-dispositions.tsv"),
-        ("gda_stage_visual_classifications", "visual-classifications.tsv"),
-        ("gda_stage_rights_observations", "rights-observations.tsv"),
-        ("gda_stage_rights_assessments", "rights-assessments.tsv"),
-        ("gda_stage_policy_evaluations", "policy-evaluations.tsv"),
-        ("gda_stage_delivery_assessments", "delivery-assessments.tsv"),
-    ]
+def build_runtime_sql(
+    stage: Path, inject: str | None, output: Path,
+    manifest: dict[str, Any], constraint_timeout_seconds: int,
+) -> None:
     inject_value = inject or ""
+    expected = manifest["_performanceExpected"]
     lines = [
         "\\set ON_ERROR_STOP on",
+        "\\timing on",
+        "SELECT format('PHASE2B_BACKEND_PID|%s', pg_backend_pid());",
         "BEGIN;",
         f"SET LOCAL gda.phase2b.inject = '{inject_value}';",
+        f"SET LOCAL gda.phase2b.constraint_timeout = '{constraint_timeout_seconds}s';",
+        f"SET LOCAL gda.phase2b.expected_surfaces = '{expected['surfaces']}';",
+        f"SET LOCAL gda.phase2b.expected_eligible = '{expected['eligible']}';",
+        f"SET LOCAL gda.phase2b.expected_held = '{expected['held']}';",
+        f"SET LOCAL gda.phase2b.expected_visual = '{expected['visual']}';",
+        f"SET LOCAL gda.phase2b.expected_locators = '{expected['locators']}';",
+        f"SET LOCAL gda.phase2b.expected_field_literals = '{expected['fieldLiterals']}';",
+        f"SET LOCAL gda.phase2b.expected_folders = '{expected['folders']}';",
+        f"SET LOCAL gda.phase2b.expected_folder_assignments = '{expected['folderAssignments']}';",
         f"SET ROLE {OWNER_ROLE};",
         f"\\i '{sql_path(MIGRATION_DIR / 'prepare-staging.sql')}'",
         f"\\i '{sql_path(MIGRATION_DIR / 'prepare-runtime.sql')}'",
+        "SELECT clock_timestamp() AS phase2b_copy_started, "
+        "pg_current_wal_lsn() AS phase2b_copy_wal_started \\gset",
+        "\\echo PHASE2B_STAGE_BEGIN|COPY|:phase2b_copy_started|:phase2b_copy_wal_started",
     ]
-    for table, filename in table_files:
+    for table, filename in TABLE_FILES:
         lines.append(
             f"\\copy {table} FROM '{sql_path(stage / filename)}' "
             "WITH (FORMAT csv, DELIMITER E'\\t', HEADER true)"
         )
     lines.extend([
+        "SELECT format('PHASE2B_STAGE_END|COPY|wall_seconds=%s|wal_bytes=%s|rows=%s|bytes=%s', "
+        "extract(epoch FROM clock_timestamp()-:'phase2b_copy_started'::timestamptz), "
+        "pg_wal_lsn_diff(pg_current_wal_lsn(), :'phase2b_copy_wal_started'::pg_lsn), "
+        "(SELECT sum(n) FROM (VALUES "
+        + ",".join(f"((SELECT count(*) FROM {table}))" for table, _ in TABLE_FILES)
+        + ") AS copied(n)), "
+        f"{manifest['_inputDescriptorBytes']});",
         "DO $$ BEGIN IF current_setting('gda.phase2b.inject', true) = 'after_staging' THEN "
         "RAISE EXCEPTION USING ERRCODE='P0001', MESSAGE='PHASE2B_INJECTED_FAILURE:after_staging'; END IF; END $$;",
         f"\\i '{sql_path(MIGRATION_DIR / 'load.sql')}'",
         "COMMIT;",
+        "SELECT 'PHASE2B_TRANSACTION_COMMITTED|true';",
     ])
     output.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -573,8 +895,15 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--database", required=True)
     parser.add_argument("--admin-user", default="gda_v49_phase2b_admin")
     parser.add_argument("--mapping", type=Path, default=MIGRATION_DIR / "mapping-v1.json")
-    parser.add_argument("--expected-schema", default=DEFAULT_SCHEMA)
+    parser.add_argument("--expected-base-schema", default=BASE_SCHEMA)
+    parser.add_argument("--expected-schema", default=DEFAULT_FINAL_SCHEMA)
     parser.add_argument("--expected-candidate", default=DEFAULT_CANDIDATE)
+    parser.add_argument("--staging-attestation", type=Path)
+    parser.add_argument("--performance-fixture-manifest", type=Path)
+    parser.add_argument("--runtime-dir", type=Path, required=True)
+    parser.add_argument("--log", type=Path)
+    parser.add_argument("--receipt", type=Path)
+    parser.add_argument("--constraint-timeout-seconds", type=int, default=1200)
     parser.add_argument("--inject", choices=("after_staging", "during_objects", "after_objects", "after_corpus", "after_visual", "after_parity"))
     parser.add_argument("--fault", choices=("duplicate_surface", "missing_surface", "extra_surface", "unknown_field"))
     parser.add_argument("--test-batch-mapping-sha", help="failure-test only: a 64-hex mapping SHA expected to conflict with an existing batch")
@@ -586,10 +915,47 @@ def main() -> int:
     if args.pg_port == 5432 or not args.pg_host.startswith("/") or not args.database.startswith("gda_v49_phase2a_"):
         raise ImportErrorPhase2B("DISPOSABLE_CONNECTION_POLICY_VIOLATION")
     args.stage_dir = args.stage_dir.resolve()
-    manifest = require_stage(
-        args.stage_dir, args.expected_candidate, args.expected_schema,
-        args.mapping.resolve(), fault=args.fault,
+    args.runtime_dir = args.runtime_dir.resolve()
+    if (
+        not args.runtime_dir.is_dir() or args.runtime_dir == args.stage_dir
+        or args.stage_dir in args.runtime_dir.parents
+        or not 1 <= args.constraint_timeout_seconds <= 1200
+    ):
+        raise ImportErrorPhase2B("RUNTIME_DIRECTORY_OR_TIMEOUT_POLICY_VIOLATION")
+    log_path = (
+        args.log.resolve() if args.log is not None
+        else args.runtime_dir / f"import-{args.database}.log"
     )
+    receipt_path = args.receipt.resolve() if args.receipt is not None else None
+    protected_output_paths = (log_path,) + ((receipt_path,) if receipt_path else ())
+    if any(
+        output_path == args.stage_dir or args.stage_dir in output_path.parents
+        for output_path in protected_output_paths
+    ):
+        raise ImportErrorPhase2B("IMPORT_OUTPUT_INSIDE_FROZEN_STAGE")
+    if any(not output_path.parent.is_dir() for output_path in protected_output_paths):
+        raise ImportErrorPhase2B("IMPORT_OUTPUT_PARENT_MISSING")
+    mapping_path = args.mapping.resolve()
+    if args.performance_fixture_manifest is not None:
+        if args.staging_attestation is not None:
+            raise ImportErrorPhase2B("FIXTURE_AND_STAGING_ATTESTATION_MUTUALLY_EXCLUSIVE")
+        manifest = require_performance_fixture(
+            args.stage_dir, args.performance_fixture_manifest.resolve(),
+            args.expected_candidate, args.expected_base_schema,
+            mapping_path, fault=args.fault,
+        )
+        manifest_sha = manifest["_manifestSha256"]
+    else:
+        manifest = require_stage(
+            args.stage_dir, args.expected_candidate, args.expected_base_schema,
+            mapping_path,
+            attestation_path=(
+                args.staging_attestation.resolve()
+                if args.staging_attestation is not None else None
+            ),
+            fault=args.fault,
+        )
+        manifest_sha = STAGING_MANIFEST_SHA256
     if args.fault:
         raise ImportErrorPhase2B("INJECTED_STAGING_PREFLIGHT_FAILURE:" + args.fault)
     admin_env = psql_env(args, args.admin_user)
@@ -605,20 +971,55 @@ def main() -> int:
     if existing:
         print(json.dumps({"status": "IDEMPOTENT_NOOP", "batch": existing}, sort_keys=True))
         return 0
-    runtime_sql = args.stage_dir / f"runtime-import-{args.database}.sql"
-    build_runtime_sql(args.stage_dir, args.inject, runtime_sql)
+    runtime_handle = tempfile.NamedTemporaryFile(
+        mode="w", prefix=f"runtime-import-{args.database}-", suffix=".sql",
+        dir=args.runtime_dir, delete=False,
+    )
+    runtime_sql = Path(runtime_handle.name)
+    runtime_handle.close()
+    build_runtime_sql(
+        args.stage_dir, args.inject, runtime_sql, manifest,
+        args.constraint_timeout_seconds,
+    )
     try:
-        result = run(["psql", "-X", "-v", "ON_ERROR_STOP=1", "-f", str(runtime_sql)], env=psql_env(args, MIGRATOR_ROLE), check=False)
+        return_code, tail, wall_seconds, user_seconds, system_seconds = run_streaming(
+            ["psql", "-X", "-qAt", "-v", "ON_ERROR_STOP=1", "-f", str(runtime_sql)],
+            env=psql_env(args, MIGRATOR_ROLE), log_path=log_path,
+        )
     finally:
         runtime_sql.unlink(missing_ok=True)
-    if result.returncode != 0:
-        raise ImportErrorPhase2B("IMPORT_TRANSACTION_ROLLED_BACK\n" + result.stdout[-2000:] + result.stderr[-4000:])
+    runtime = parse_runtime_markers(tail)
+    receipt = {
+        "status": "COMMITTED" if return_code == 0 and runtime["committedMarker"] else "ROLLED_BACK",
+        "returnCode": return_code,
+        "wallSeconds": round(wall_seconds, 6),
+        "childUserCpuSeconds": round(user_seconds, 6),
+        "childSystemCpuSeconds": round(system_seconds, 6),
+        "database": args.database,
+        "expectedSchemaSha256": args.expected_schema,
+        "baseSchemaSha256": args.expected_base_schema,
+        "stageManifestSha256": manifest_sha,
+        "stagingAttestationReused": manifest["_attestationReused"],
+        "logPath": str(log_path),
+        **runtime,
+    }
+    if receipt_path is not None:
+        receipt_path.write_text(
+            json.dumps(receipt, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
+    if return_code != 0 or not runtime["committedMarker"]:
+        raise ImportErrorPhase2B(
+            "IMPORT_TRANSACTION_ROLLED_BACK\n" + "\n".join(tail[-120:])
+        )
     after_schema = schema_hash(admin_env)
     if after_schema != args.expected_schema:
         raise ImportErrorPhase2B("SCHEMA_DRIFT_AFTER_IMPORT:" + after_schema)
     print(json.dumps({
         "status": "COMMITTED", "batchId": manifest["ids"]["migrationBatch"],
-        "schemaSha256": after_schema, "stageManifestSha256": sha256_file(args.stage_dir / "staging-manifest.json"),
+        "schemaSha256": after_schema, "stageManifestSha256": manifest_sha,
+        "stagingAttestationReused": manifest["_attestationReused"],
+        "receipt": str(receipt_path) if receipt_path else None,
     }, sort_keys=True))
     return 0
 

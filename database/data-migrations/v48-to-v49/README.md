@@ -1,8 +1,15 @@
 # v48 Candidate JSON → v49 population rehearsal
 
-This directory is a **population migration**, separate from the immutable
-Phase 2A physical-schema chain. It does not modify `database/migrations/`,
-roles, functions, views, or any Phase 1/2A receipt.
+This directory is a **population migration plus a forward-only Phase 2B-P
+performance remediation**, separate from the immutable Phase 2A physical-
+schema chain. It does not modify `database/migrations/`, the frozen Phase 2A
+functions, roles, views, schema manifest, or any Phase 1/2A receipt.
+
+`001_performance_remediation.sql` runs after every fresh Phase 2A replay. It
+adds four target-leading indexes and replaces two functions in the disposable
+database with semantically equivalent, indexed set-based implementations. The
+base Phase 2A hash remains `4ec9a764...`; the remediated schema receives its
+own deterministic hash.
 
 `generated/public_surfaces_prefreeze_candidate_v48.json` is the one and only
 source that can create population rows. SQLite, transfer manifests, TRACE
@@ -19,11 +26,15 @@ integrity evidence.
    fixed UUIDv5 identities from the frozen hash and exact occurrence keys; no
    runtime timestamp, sequence, random UUID, delimiter split, array zip or
    deduplication contributes to content.
-3. `import.py` imports one bundle into a fresh replayed Phase 2A database or
+3. `import.py` imports one bundle into a fresh replayed and remediated database or
    returns a verified deterministic no-op for an identical completed batch.
    The persisted batch binding contains the Candidate, mapping, schema,
    extractor and implementation-base hashes; a reused batch ID with any one
-   of those bindings changed fails before a write.
+   of those bindings changed fails before a write. A reusable P0 content
+   attestation avoids repeating the 4.5 GB descriptor and 3.5 GB semantic
+   preflight on each replay; cheap manifest, path, size, and verification-time
+   checks still run before any connection. Runtime SQL and logs are written
+   only in explicitly supplied task-owned scratch space, never in staging.
 4. `verify.py` compares table vectors, stable-key hashes and a distinct
    normalized semantic-content hash. It also executes the `api_reader` role
    for its allowed view and denied raw-locator/source/write probes, and checks
@@ -74,13 +85,17 @@ PGHOST=/private/tmp/gda_v49_phase2b/socket \
 PGPORT=58652 \
 PGDATABASE=gda_v49_phase2a_phase2b_replay1 \
 GDA_ADMIN_USER=gda_v49_phase2b_admin \
-GDA_PHASE2B_STAGE=/private/tmp/gda_v49_phase2b_stage/staging \
+GDA_PHASE2B_STAGE=/absolute/path/to/staging-20260814 \
+GDA_PHASE2B_ATTESTATION=/absolute/path/to/P0_STAGING_ATTESTATION.json \
+GDA_PHASE2B_RUNTIME_DIR=/private/tmp/gda_v49_phase2b/runtime \
+GDA_PHASE2B_IMPORT_RECEIPT=/private/tmp/gda_v49_phase2b/import1.json \
 GDA_PHASE2B_REPORT=/private/tmp/gda_v49_phase2b_report1.json \
 sh database/data-migrations/v48-to-v49/run-rehearsal.sh
 ```
 
-The runner only replays the existing Phase 2A schema and invokes the Phase 2B
-population code. It does not create or remove clusters/databases, access the
-network, or perform release sealing. The controller runs it once per fresh
-database, then runs fault injection and idempotency probes against explicitly
-named disposable databases.
+The runner replays the existing Phase 2A schema, applies the separate forward
+performance migration as the schema owner, imports in one transaction with
+named constraint groups, retains a final `SET CONSTRAINTS ALL IMMEDIATE`
+omission check, and invokes the verifier. It does not create or remove
+clusters/databases, access the network, or perform release sealing. The
+controller runs it once per fresh database and supplies all task-owned paths.
