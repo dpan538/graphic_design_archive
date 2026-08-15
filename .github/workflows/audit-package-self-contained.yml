@@ -1,0 +1,29 @@
+name: Audit package self-contained
+
+on:
+  pull_request:
+    paths:
+      - 'docs/audits/v49-phase2b-evidence-amendment/**'
+      - 'database/scripts/build_audit_package_manifest.py'
+      - 'database/scripts/verify_audit_package_self_contained.py'
+      - '.github/workflows/audit-package-self-contained.yml'
+      - '.gitignore'
+  push:
+    paths:
+      - 'docs/audits/v49-phase2b-evidence-amendment/**'
+      - 'database/scripts/build_audit_package_manifest.py'
+      - 'database/scripts/verify_audit_package_self_contained.py'
+      - '.github/workflows/audit-package-self-contained.yml'
+      - '.gitignore'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: >-
+          python3 database/scripts/verify_audit_package_self_contained.py
+          --package docs/audits/v49-phase2b-evidence-amendment --require-index
