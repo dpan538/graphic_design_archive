@@ -20,7 +20,9 @@
     "verify:home-archive-box": "node scripts/verify-home-archive-box.mjs",
     "verify:about-mobile": "node scripts/verify-about-mobile.mjs",
     "asset:a11y-check": "node scripts/asset-a11y-check.js",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck:affected": "tsc --noEmit --pretty false",
+    "test:read-platform": "node scripts/verify-read-platform-contract.mjs"
   },
   "dependencies": {
     "d3-geo": "^3.1.1",

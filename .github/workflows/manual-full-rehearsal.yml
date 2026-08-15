@@ -1,0 +1,14 @@
+name: manual-full-rehearsal
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: "Enter APPROVE_MANUAL_FULL_REHEARSAL to allow an external manual run."
+        required: true
+        type: string
+jobs:
+  validate-input:
+    runs-on: ubuntu-latest
+    steps:
+      - run: test "${{ inputs.confirmation }}" = "APPROVE_MANUAL_FULL_REHEARSAL"
+      - run: echo "Manual wiring verified; no population replay is executed by this workflow."

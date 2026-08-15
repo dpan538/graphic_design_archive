@@ -36,7 +36,7 @@ BEGIN
 END
 $function$;
 
-\ir ../fixtures/phase2a_base.sql
+\ir ../fixtures/phase2c_32_base.sql
 
 INSERT INTO release.public_channel VALUES (
   'public', 'read-api-v1', clock_timestamp());
@@ -103,11 +103,11 @@ SELECT release.copy_research_corpus_snapshot_to_draft(
 SELECT release.add_research_count_snapshot_to_draft(
   '70000000-0000-4000-8000-000000000001', 'fixture-object-count',
   'fixture operational archive objects', 'archive_object',
-  repeat('7', 64), 2);
+  repeat('7', 64), 32);
 SELECT release.add_research_asset_to_draft(
   '70000000-0000-4000-8000-000000000001', 'objects.json',
   'release-object-projection', 'application/json', 'identity',
-  'schema-v49.0', 2, 2, repeat('8', 64), '001-objects', NULL, NULL);
+  'schema-v49.0', 32, 32, repeat('8', 64), '001-objects', NULL, NULL);
 SELECT release.add_research_object_to_draft(
   '70000000-0000-4000-8000-000000000001',
   '40000000-0000-4000-8000-000000000002',
@@ -116,6 +116,17 @@ SELECT release.add_research_object_to_draft(
   '70000000-0000-4000-8000-000000000001',
   '40000000-0000-4000-8000-000000000002',
   '20000000-0000-4000-8000-000000000002');
+DO $copy_phase2c_fixture_objects$
+DECLARE i integer; object_id uuid;
+BEGIN
+  FOR i IN 3..32 LOOP
+    object_id := ('21000000-0000-4000-8000-' || lpad(i::text, 12, '0'))::uuid;
+    PERFORM release.add_research_object_to_draft(
+      '70000000-0000-4000-8000-000000000001',
+      '40000000-0000-4000-8000-000000000002', object_id);
+  END LOOP;
+END
+$copy_phase2c_fixture_objects$;
 SELECT release.add_research_relation_to_draft(
   '70000000-0000-4000-8000-000000000001',
   '70000000-0000-4000-8000-000000000021', NULL);
@@ -789,8 +800,8 @@ SELECT pg_temp.assert_true(
 
 SET SESSION AUTHORIZATION gda_v49_phase2a_api_reader;
 SELECT pg_temp.assert_true(
-  (SELECT count(*) FROM api_v1.current_object) = 1,
-  'public reader sees accepted active object');
+  (SELECT count(*) FROM api_v1.current_object) = 31,
+  'public reader sees every accepted active object in the 32-object fixture');
 SELECT pg_temp.assert_true(
   (SELECT count(*) FROM api_v1.current_object
     WHERE effective_delivery_mode = 'blocked'
@@ -798,6 +809,156 @@ SELECT pg_temp.assert_true(
       AND canonical_record_url IS NULL
       AND source_viewer_url IS NULL) = 1,
   'takedown serializer omits every locator');
+RESET SESSION AUTHORIZATION;
+
+-- Phase 2C: the miniature release contains 32 objects and a new research
+-- release can be sealed and promoted without a visual registry inheriting it.
+SELECT pg_temp.assert_true(
+  (SELECT count(*) FROM core.archive_object) = 32
+  AND (SELECT count(*) FROM release.research_release_object
+       WHERE research_release_id = '70000000-0000-4000-8000-000000000001') = 32,
+  'phase2c compact fixture has exactly 32 copied research objects');
+
+SET SESSION AUTHORIZATION gda_v49_phase2a_publisher;
+SELECT release.create_research_release(
+  '74000000-0000-4000-8000-000000000001', 'phase2c-r2-v1',
+  'schema-v49.0', 'model-v49.0', '74000000-0000-4000-8000-000000000002',
+  repeat('1', 64));
+SELECT release.add_research_source_lineage_to_draft(
+  '74000000-0000-4000-8000-000000000001', 'v48_candidate_json',
+  '10000000-0000-4000-8000-000000000001', repeat('a', 40));
+SELECT release.add_research_source_lineage_to_draft(
+  '74000000-0000-4000-8000-000000000001', 'v48_sqlite_reconciliation',
+  '10000000-0000-4000-8000-000000000021', repeat('a', 40));
+SELECT release.add_research_source_lineage_to_draft(
+  '74000000-0000-4000-8000-000000000001', 'v48_transfer_manifest_json',
+  '10000000-0000-4000-8000-000000000022', repeat('a', 40));
+SELECT release.add_research_source_lineage_to_draft(
+  '74000000-0000-4000-8000-000000000001', 'v48_transfer_manifest_csv',
+  '10000000-0000-4000-8000-000000000023', repeat('a', 40));
+SELECT release.add_research_source_lineage_to_draft(
+  '74000000-0000-4000-8000-000000000001', 'v48_trace_manifest',
+  '10000000-0000-4000-8000-000000000024', repeat('a', 40));
+SELECT release.set_research_projection_set_to_draft(
+  '74000000-0000-4000-8000-000000000001', 'phase2c-r2-fixture',
+  repeat('1', 64), repeat('2', 64));
+SELECT release.set_research_registry_snapshot_to_draft(
+  '74000000-0000-4000-8000-000000000001', repeat('3', 64),
+  repeat('4', 64), repeat('5', 64));
+SELECT release.copy_research_corpus_snapshot_to_draft(
+  '74000000-0000-4000-8000-000000000001',
+  '40000000-0000-4000-8000-000000000002',
+  '40000000-0000-4000-8000-000000000021',
+  '40000000-0000-4000-8000-000000000022', repeat('6', 64));
+SELECT release.add_research_count_snapshot_to_draft(
+  '74000000-0000-4000-8000-000000000001', 'fixture-object-count',
+  'phase2c compact fixture objects', 'archive_object', repeat('7',64), 32);
+SELECT release.add_research_asset_to_draft(
+  '74000000-0000-4000-8000-000000000001', 'objects.json',
+  'release-object-projection', 'application/json', 'identity', 'schema-v49.0',
+  32, 32, repeat('8',64), '001-objects', NULL, NULL);
+DO $copy_r2_objects$
+DECLARE i integer; object_id uuid;
+BEGIN
+  FOREACH object_id IN ARRAY ARRAY[
+    '20000000-0000-4000-8000-000000000001'::uuid,
+    '20000000-0000-4000-8000-000000000002'::uuid
+  ] LOOP
+    PERFORM release.add_research_object_to_draft(
+      '74000000-0000-4000-8000-000000000001',
+      '40000000-0000-4000-8000-000000000002', object_id);
+  END LOOP;
+  FOR i IN 3..32 LOOP
+    object_id := ('21000000-0000-4000-8000-' || lpad(i::text, 12, '0'))::uuid;
+    PERFORM release.add_research_object_to_draft(
+      '74000000-0000-4000-8000-000000000001',
+      '40000000-0000-4000-8000-000000000002', object_id);
+  END LOOP;
+END
+$copy_r2_objects$;
+RESET SESSION AUTHORIZATION;
+SELECT release.compute_research_candidate_fingerprint(
+  '74000000-0000-4000-8000-000000000001') AS r2_fp \gset
+SET SESSION AUTHORIZATION gda_v49_phase2a_publisher;
+SELECT release.close_research_candidate(
+  '74000000-0000-4000-8000-000000000001', :'r2_fp',
+  '74000000-0000-4000-8000-000000000003', repeat('2',64));
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION gda_v49_phase2a_reviewer;
+DO $r2_receipts$
+DECLARE k release.validation_receipt_kind; b bytea;
+BEGIN
+  FOREACH k IN ARRAY ARRAY[
+    'research_frozen_asset_authority','research_migration_query_identity',
+    'research_population_and_count_parity','research_corpus_missingness_concentration',
+    'research_fk_orphan_integrity','research_predicate_relation_epistemic_registry',
+    'research_claim_projection_eligibility','research_unknown_relation_isolation',
+    'research_projection_fingerprint','research_deterministic_asset_inventory',
+    'research_role_grant_security']::release.validation_receipt_kind[]
+  LOOP
+    b := release.build_validation_receipt_bytes(
+      'research', '74000000-0000-4000-8000-000000000001', k,
+      'phase2c-r2-test-v1', repeat('a',64));
+    PERFORM release.record_research_validation_receipt(
+      gen_random_uuid(), '74000000-0000-4000-8000-000000000001', k,
+      'phase2c-r2-test-v1', repeat('a',64), b, gen_random_uuid());
+  END LOOP;
+END
+$r2_receipts$;
+RESET SESSION AUTHORIZATION;
+SELECT research_validation_receipt_id AS r2_receipt_id,
+  receipt_sha256 AS r2_receipt_sha
+FROM release.research_validation_receipt
+WHERE research_release_id = '74000000-0000-4000-8000-000000000001'
+ORDER BY receipt_kind LIMIT 1 \gset
+SET SESSION AUTHORIZATION gda_v49_phase2a_publisher;
+SELECT release.validate_research_release(
+  '74000000-0000-4000-8000-000000000001', :'r2_receipt_id',
+  'phase2c-r2-test-v1', :'r2_receipt_sha',
+  '74000000-0000-4000-8000-000000000004', repeat('3',64));
+SELECT release.seal_research_release(
+  '74000000-0000-4000-8000-000000000001',
+  '74000000-0000-4000-8000-000000000005',
+  '74000000-0000-4000-8000-000000000006', repeat('4',64));
+RESET SESSION AUTHORIZATION;
+SELECT manifest_sha256 AS r2_manifest_sha FROM release.research_release
+WHERE research_release_id = '74000000-0000-4000-8000-000000000001' \gset
+SELECT release.compute_research_verification_sidecar_sha(
+  '74000000-0000-4000-8000-000000000001', :'r2_manifest_sha',
+  'phase2c-r2-independent-v1') AS r2_sidecar_sha \gset
+SET SESSION AUTHORIZATION gda_v49_phase2a_reviewer;
+SELECT release.record_research_verification(
+  '74000000-0000-4000-8000-000000000007',
+  '74000000-0000-4000-8000-000000000001', :'r2_manifest_sha',
+  'phase2c-r2-independent-v1', :'r2_sidecar_sha',
+  '74000000-0000-4000-8000-000000000008', repeat('5',64));
+RESET SESSION AUTHORIZATION;
+SET SESSION AUTHORIZATION gda_v49_phase2a_publisher;
+SELECT * FROM release.promote_research_current_cas(
+  '74000000-0000-4000-8000-000000000009', 'public', 1,
+  '70000000-0000-4000-8000-000000000001', :'research_manifest_sha',
+  '74000000-0000-4000-8000-000000000001');
+SELECT * FROM release.promote_research_current_cas(
+  '74000000-0000-4000-8000-000000000010', 'public', 1,
+  '70000000-0000-4000-8000-000000000001', :'research_manifest_sha',
+  '74000000-0000-4000-8000-000000000001');
+RESET SESSION AUTHORIZATION;
+SELECT pg_temp.assert_true(
+  (SELECT research_release_id FROM release.research_current_pointer WHERE channel = 'public') = '74000000-0000-4000-8000-000000000001'::uuid
+  AND (SELECT count(*) FROM release.visual_current_pointer WHERE channel = 'public') = 1,
+  'research CAS advances R1 to R2 without changing visual current');
+SELECT pg_temp.assert_true(
+  (SELECT visual_registry_state FROM api_v1.current_version_status WHERE channel = 'public') = 'release_version_mismatch',
+  'V1 does not inherit R2 and becomes an explicit mismatch');
+SELECT pg_temp.assert_true(
+  (SELECT manifest_sha256 FROM release.research_release
+    WHERE research_release_id = '70000000-0000-4000-8000-000000000001') = :'research_manifest_sha',
+  'old exact sealed R1 manifest remains stable after R2 promotion');
+SET SESSION AUTHORIZATION gda_v49_phase2a_api_reader;
+SELECT pg_temp.expect_error(
+  $$INSERT INTO release.research_release (research_release_id, release_token, release_state, schema_version, model_version, created_at)
+    VALUES ('74000000-0000-4000-8000-000000000011', 'reader-write-denied', 'draft', 'schema-v49.0', 'model-v49.0', clock_timestamp())$$,
+  ARRAY['42501'], 'api reader cannot write release tables');
 RESET SESSION AUTHORIZATION;
 
 -- Detached verification rechecks only immutable copied rows and manifest
