@@ -1,0 +1,14 @@
+2026-08-15 16:25:53.388 AEST [57037] LOG:  starting PostgreSQL 16.13 (Homebrew) on aarch64-apple-darwin25.2.0, compiled by Apple clang version 17.0.0 (clang-1700.6.3.2), 64-bit
+2026-08-15 16:25:53.502 AEST [57037] LOG:  listening on Unix socket "/private/tmp/gda_v49_phase2b.evidence-vgv6bbje/socket/.s.PGSQL.57343"
+2026-08-15 16:25:53.849 AEST [57042] LOG:  database system was shut down at 2026-08-15 16:25:51 AEST
+2026-08-15 16:25:53.936 AEST [57043] FATAL:  the database system is starting up
+2026-08-15 16:25:53.952 AEST [57037] LOG:  database system is ready to accept connections
+2026-08-15 16:28:21.040 AEST [57040] LOG:  checkpoint starting: immediate force wait
+2026-08-15 16:28:22.985 AEST [57040] LOG:  checkpoint complete: wrote 68 buffers (0.4%); 0 WAL file(s) added, 0 removed, 1 recycled; write=1.599 s, sync=0.323 s, total=1.946 s; sync files=33, longest=0.075 s, average=0.010 s; distance=14541 kB, estimate=14541 kB; lsn=0/23510B0, redo lsn=0/2351078
+2026-08-15 16:28:30.299 AEST [57037] LOG:  received fast shutdown request
+2026-08-15 16:28:30.303 AEST [57037] LOG:  aborting any active transactions
+2026-08-15 16:28:30.347 AEST [57037] LOG:  background worker "logical replication launcher" (PID 57046) exited with exit code 1
+2026-08-15 16:28:30.371 AEST [57040] LOG:  shutting down
+2026-08-15 16:28:30.430 AEST [57040] LOG:  checkpoint starting: shutdown immediate
+2026-08-15 16:28:30.564 AEST [57040] LOG:  checkpoint complete: wrote 1 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.194 s; sync files=1, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=13087 kB; lsn=0/23511C8, redo lsn=0/23511C8
+2026-08-15 16:28:30.574 AEST [57037] LOG:  database system is shut down

@@ -1,0 +1,127 @@
+{
+  "activeSchemaHash": "4ec9a76421548bda1b90ccdbf604906df9da9d349a70c9100abdddd1a7fee105",
+  "activeSchemaHashCommand": {
+    "command": [
+      "/private/tmp/graphic_design_archive_v49_phase2b_evidence_repair/database/scripts/schema_hash.sh"
+    ],
+    "endedAtUtc": "2026-08-15T05:44:09Z",
+    "exitCode": 0,
+    "startedAtUtc": "2026-08-15T05:43:49Z",
+    "stderr": {
+      "bytes": 0,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/reproduced/02_P1_RIGHTS_LEAF_PRE_FIX_250.base.schema-hash.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 65,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/reproduced/02_P1_RIGHTS_LEAF_PRE_FIX_250.base.schema-hash.stdout.log",
+      "sha256": "5ff08511717092d2c8bff7a8e777d2fbd6881bdfc89d99f0f310492d222f5d4f"
+    }
+  },
+  "baseSchemaHash": "4ec9a76421548bda1b90ccdbf604906df9da9d349a70c9100abdddd1a7fee105",
+  "baseSchemaHashCommand": {
+    "command": [
+      "/private/tmp/graphic_design_archive_v49_phase2b_evidence_repair/database/scripts/schema_hash.sh"
+    ],
+    "endedAtUtc": "2026-08-15T05:44:09Z",
+    "exitCode": 0,
+    "startedAtUtc": "2026-08-15T05:43:49Z",
+    "stderr": {
+      "bytes": 0,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/reproduced/02_P1_RIGHTS_LEAF_PRE_FIX_250.base.schema-hash.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 65,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/reproduced/02_P1_RIGHTS_LEAF_PRE_FIX_250.base.schema-hash.stdout.log",
+      "sha256": "5ff08511717092d2c8bff7a8e777d2fbd6881bdfc89d99f0f310492d222f5d4f"
+    }
+  },
+  "database": "gda_v49_phase2a_phase2b_replay_02",
+  "databaseDropped": true,
+  "forwardIndexes": null,
+  "forwardMigration": null,
+  "name": "P1_RIGHTS_LEAF_PRE_FIX_250",
+  "planRole": false,
+  "probe": {
+    "execution": {
+      "command": [
+        "psql",
+        "-X",
+        "-q",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-v",
+        "scale=250",
+        "-f",
+        "/private/tmp/graphic_design_archive_v49_phase2b_evidence_repair/docs/audits/v49-phase2b-evidence-amendment/reproduced/02_P1_RIGHTS_LEAF_PRE_FIX_250.wrapper.sql"
+      ],
+      "endedAtUtc": "2026-08-15T05:45:38Z",
+      "exitCode": 0,
+      "startedAtUtc": "2026-08-15T05:44:11Z",
+      "stderr": {
+        "bytes": 0,
+        "path": "docs/audits/v49-phase2b-evidence-amendment/reproduced/02_P1_RIGHTS_LEAF_PRE_FIX_250.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 29148,
+        "path": "docs/audits/v49-phase2b-evidence-amendment/reproduced/02_P1_RIGHTS_LEAF_PRE_FIX_250.stdout.log",
+        "sha256": "b73a8f909bb37b80b97194698b821535e2b0be341aa30d5517c78e05afa0ba68"
+      }
+    },
+    "fixture": {
+      "planRole": false,
+      "probeScriptSha256": "f932c676dcf8a718f3cece8506523e6b61f1d92ce592d574503de4a6d69cfed5",
+      "scale": 250,
+      "schemaState": "pre_fix"
+    },
+    "fixtureSha256": "20655829191b6a51901cfc3c372ab6527d874092162017c79e40fa86e973af4d",
+    "planAssertion": "sequential_scan",
+    "rollbackObserved": true,
+    "timingSeconds": [
+      82.098974
+    ]
+  },
+  "probeFamily": "rights_leaf",
+  "replay": {
+    "command": [
+      "/private/tmp/graphic_design_archive_v49_phase2b_evidence_repair/database/scripts/replay.sh"
+    ],
+    "endedAtUtc": "2026-08-15T05:43:49Z",
+    "exitCode": 0,
+    "startedAtUtc": "2026-08-15T05:41:25Z",
+    "stderr": {
+      "bytes": 0,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/reproduced/02_P1_RIGHTS_LEAF_PRE_FIX_250.replay.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 63,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/reproduced/02_P1_RIGHTS_LEAF_PRE_FIX_250.replay.stdout.log",
+      "sha256": "c9665f987e92d00a3422f0d969ac0b874deeab1c718724f281005c43840d2cb9"
+    }
+  },
+  "residue": {
+    "core_archive_object": 0,
+    "core_entity": 0,
+    "delivery_assessment": 0,
+    "delivery_policy_evaluation": 0,
+    "delivery_rights_assessment": 0,
+    "external_visual_reference": 0,
+    "object_visual_reference": 0,
+    "raw_source_asset": 0,
+    "raw_source_record": 0,
+    "rights_assessment": 0
+  },
+  "scale": 250,
+  "schemaState": "pre_fix",
+  "settings": {
+    "listen_addresses": "",
+    "port": "59242",
+    "server_version": "16.13 (Homebrew)",
+    "server_version_num": "160013",
+    "session_replication_role": "origin",
+    "transaction_read_only": "off"
+  }
+}

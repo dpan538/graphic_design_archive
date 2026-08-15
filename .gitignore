@@ -40,6 +40,12 @@ local-downloads/
 *.tmp
 *.log
 
+# Audited Phase 2B supersession evidence is intentionally committed.  The
+# package verifier rejects an ignored manifest/checksum entry, so a future
+# packaging run cannot recreate the historical omitted-log defect.
+!docs/audits/v49-phase2b-evidence-amendment/
+!docs/audits/v49-phase2b-evidence-amendment/**
+
 # Generated public-surface sidecar shards
 generated/public_surfaces_v1_shards/
 frontend/public/data/public_surface_shards_v1/

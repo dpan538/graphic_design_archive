@@ -1,0 +1,12 @@
+evidentiary_role	schema_state	probe_script	scale	fresh_database	rollback_only	plan_expectation
+P1_RIGHTS_LEAF_PRE_FIX_50	86ba95c base schema	p1_rights_leaf_probe.sql	50	true	true	sequential scan
+P1_RIGHTS_LEAF_PRE_FIX_250	86ba95c base schema	p1_rights_leaf_probe.sql	250	true	true	sequential scan
+P1_RIGHTS_LEAF_POST_FIX_50	302ddb9 forward-remediated schema	p1_rights_leaf_probe.sql	50	true	true	target-led function; four forward indexes present (small-scale planner may use seq scan)
+P1_RIGHTS_LEAF_POST_FIX_250	302ddb9 forward-remediated schema	p1_rights_leaf_probe.sql	250	true	true	target-led function; four forward indexes present (small-scale planner may use seq scan)
+P1_RIGHTS_LEAF_POST_FIX_1000	302ddb9 forward-remediated schema	p1_rights_leaf_probe.sql	1000	true	true	rights_assessment_visual_reference_target_idx
+P1_RIGHTS_LEAF_POST_FIX_PLAN_1000	302ddb9 forward-remediated schema	p1_rights_leaf_probe.sql	1000	true	true	rights_assessment_visual_reference_target_idx
+P1_DELIVERY_PRE_FIX_50	86ba95c base schema	p1_delivery_validation_probe.sql	50	true	true	sequential scan
+P1_DELIVERY_POST_FIX_50	302ddb9 forward-remediated schema	p1_delivery_validation_probe.sql	50	true	true	target-led function; four forward indexes present (small-scale planner may use seq scan)
+P1_DELIVERY_POST_FIX_250	302ddb9 forward-remediated schema	p1_delivery_validation_probe.sql	250	true	true	target-led function; four forward indexes present (small-scale planner may use seq scan)
+P1_DELIVERY_POST_FIX_1000	302ddb9 forward-remediated schema	p1_delivery_validation_probe.sql	1000	true	true	rights_assessment_visual_reference_target_idx
+P1_DELIVERY_POST_FIX_PLAN_1000	302ddb9 forward-remediated schema	p1_delivery_validation_probe.sql	1000	true	true	rights_assessment_visual_reference_target_idx

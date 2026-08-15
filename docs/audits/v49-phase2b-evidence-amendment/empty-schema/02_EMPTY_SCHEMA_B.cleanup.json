@@ -1,0 +1,31 @@
+{
+  "clusterDeleted": true,
+  "normalStop": true,
+  "socketAbsent": true,
+  "stop": {
+    "command": [
+      "pg_ctl",
+      "-D",
+      "/private/tmp/gda_v49_phase2b.evidence-b0jy1p8h/data",
+      "stop",
+      "-m",
+      "fast",
+      "-t",
+      "120"
+    ],
+    "endedAtUtc": "2026-08-15T06:32:55Z",
+    "exitCode": 0,
+    "startedAtUtc": "2026-08-15T06:32:54Z",
+    "stderr": {
+      "bytes": 0,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/empty-schema/empty_B.cluster-stop.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 56,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/empty-schema/empty_B.cluster-stop.stdout.log",
+      "sha256": "ca19178a35ab4153b75b494963b66ce8243e1b94c173107c87b44d09db23652d"
+    }
+  },
+  "taskOwnedProcessCount": 0
+}

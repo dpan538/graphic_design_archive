@@ -1,0 +1,33 @@
+2026-08-15 15:38:07.517 AEST [51951] LOG:  starting PostgreSQL 16.13 (Homebrew) on aarch64-apple-darwin25.2.0, compiled by Apple clang version 17.0.0 (clang-1700.6.3.2), 64-bit
+2026-08-15 15:38:07.530 AEST [51951] LOG:  listening on Unix socket "/private/tmp/gda_v49_phase2b.evidence-acvqzmpt/socket/.s.PGSQL.59242"
+2026-08-15 15:38:07.784 AEST [51956] LOG:  database system was shut down at 2026-08-15 15:38:04 AEST
+2026-08-15 15:38:08.245 AEST [51951] LOG:  database system is ready to accept connections
+2026-08-15 15:41:07.878 AEST [51954] LOG:  checkpoint starting: immediate force wait
+2026-08-15 15:41:08.269 AEST [51954] LOG:  checkpoint complete: wrote 49 buffers (0.3%); 0 WAL file(s) added, 0 removed, 1 recycled; write=0.287 s, sync=0.002 s, total=0.483 s; sync files=29, longest=0.001 s, average=0.001 s; distance=14469 kB, estimate=14469 kB; lsn=0/233F220, redo lsn=0/233F1E8
+2026-08-15 15:45:41.900 AEST [51954] LOG:  checkpoint starting: immediate force wait
+2026-08-15 15:45:42.416 AEST [51954] LOG:  checkpoint complete: wrote 37 buffers (0.2%); 0 WAL file(s) added, 0 removed, 1 recycled; write=0.378 s, sync=0.040 s, total=0.516 s; sync files=15, longest=0.008 s, average=0.002 s; distance=14961 kB, estimate=14961 kB; lsn=0/31DB620, redo lsn=0/31DB5E8
+2026-08-15 15:48:55.346 AEST [51954] LOG:  checkpoint starting: immediate force wait
+2026-08-15 15:48:56.209 AEST [51954] LOG:  checkpoint complete: wrote 36 buffers (0.2%); 0 WAL file(s) added, 0 removed, 1 recycled; write=0.770 s, sync=0.030 s, total=0.863 s; sync files=16, longest=0.011 s, average=0.002 s; distance=14602 kB, estimate=14925 kB; lsn=0/401DE48, redo lsn=0/401DE10
+2026-08-15 15:51:15.515 AEST [51954] LOG:  checkpoint starting: immediate force wait
+2026-08-15 15:51:15.833 AEST [51954] LOG:  checkpoint complete: wrote 34 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.242 s, sync=0.001 s, total=0.318 s; sync files=15, longest=0.001 s, average=0.001 s; distance=14844 kB, estimate=14917 kB; lsn=0/4E9CF48, redo lsn=0/4E9CF10
+2026-08-15 15:52:49.609 AEST [51954] LOG:  checkpoint starting: immediate force wait
+2026-08-15 15:52:50.724 AEST [51954] LOG:  checkpoint complete: wrote 33 buffers (0.2%); 0 WAL file(s) added, 0 removed, 1 recycled; write=0.584 s, sync=0.341 s, total=1.123 s; sync files=14, longest=0.168 s, average=0.020 s; distance=15968 kB, estimate=15968 kB; lsn=0/5E352C0, redo lsn=0/5E35288
+2026-08-15 15:55:17.766 AEST [51954] LOG:  checkpoint starting: immediate force wait
+2026-08-15 15:55:18.074 AEST [51954] LOG:  checkpoint complete: wrote 31 buffers (0.2%); 0 WAL file(s) added, 0 removed, 1 recycled; write=0.279 s, sync=0.012 s, total=0.308 s; sync files=14, longest=0.003 s, average=0.001 s; distance=16140 kB, estimate=16140 kB; lsn=0/6DF8370, redo lsn=0/6DF8338
+2026-08-15 15:57:06.465 AEST [51954] LOG:  checkpoint starting: immediate force wait
+2026-08-15 15:57:07.150 AEST [51954] LOG:  checkpoint complete: wrote 32 buffers (0.2%); 0 WAL file(s) added, 0 removed, 1 recycled; write=0.231 s, sync=0.350 s, total=0.685 s; sync files=14, longest=0.098 s, average=0.021 s; distance=14510 kB, estimate=15977 kB; lsn=0/7C23E88, redo lsn=0/7C23E50
+2026-08-15 15:59:10.769 AEST [51954] LOG:  checkpoint starting: immediate force wait
+2026-08-15 15:59:10.788 AEST [51954] LOG:  checkpoint complete: wrote 28 buffers (0.2%); 0 WAL file(s) added, 0 removed, 1 recycled; write=0.015 s, sync=0.001 s, total=0.020 s; sync files=12, longest=0.001 s, average=0.001 s; distance=14584 kB, estimate=15837 kB; lsn=0/8A62020, redo lsn=0/8A61FD0
+2026-08-15 16:00:51.468 AEST [51954] LOG:  checkpoint starting: immediate force wait
+2026-08-15 16:00:51.637 AEST [51954] LOG:  checkpoint complete: wrote 28 buffers (0.2%); 0 WAL file(s) added, 0 removed, 1 recycled; write=0.154 s, sync=0.008 s, total=0.169 s; sync files=12, longest=0.002 s, average=0.001 s; distance=15337 kB, estimate=15787 kB; lsn=0/995C5B8, redo lsn=0/995C580
+2026-08-15 16:04:11.398 AEST [51954] LOG:  checkpoint starting: immediate force wait
+2026-08-15 16:04:12.308 AEST [51954] LOG:  checkpoint complete: wrote 33 buffers (0.2%); 0 WAL file(s) added, 0 removed, 1 recycled; write=0.792 s, sync=0.002 s, total=0.910 s; sync files=14, longest=0.001 s, average=0.001 s; distance=18072 kB, estimate=18072 kB; lsn=0/AB02868, redo lsn=0/AB02830
+2026-08-15 16:08:28.575 AEST [51954] LOG:  checkpoint starting: immediate force wait
+2026-08-15 16:08:29.354 AEST [51954] LOG:  checkpoint complete: wrote 34 buffers (0.2%); 0 WAL file(s) added, 0 removed, 1 recycled; write=0.328 s, sync=0.316 s, total=0.780 s; sync files=15, longest=0.094 s, average=0.022 s; distance=17960 kB, estimate=18061 kB; lsn=0/BC8C8A0, redo lsn=0/BC8C868
+2026-08-15 16:08:40.883 AEST [51951] LOG:  received fast shutdown request
+2026-08-15 16:08:41.005 AEST [51951] LOG:  aborting any active transactions
+2026-08-15 16:08:41.244 AEST [51951] LOG:  background worker "logical replication launcher" (PID 51959) exited with exit code 1
+2026-08-15 16:08:41.310 AEST [51954] LOG:  shutting down
+2026-08-15 16:08:41.363 AEST [51954] LOG:  checkpoint starting: shutdown immediate
+2026-08-15 16:08:41.381 AEST [51954] LOG:  checkpoint complete: wrote 1 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.008 s, sync=0.001 s, total=0.071 s; sync files=1, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=16255 kB; lsn=0/BC8C9F0, redo lsn=0/BC8C9F0
+2026-08-15 16:08:41.387 AEST [51951] LOG:  database system is shut down

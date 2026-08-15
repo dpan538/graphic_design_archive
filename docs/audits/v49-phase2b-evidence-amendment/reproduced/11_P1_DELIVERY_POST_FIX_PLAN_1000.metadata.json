@@ -1,0 +1,157 @@
+{
+  "activeSchemaHash": "aa8cb0af7b61931e51f1f71ed2e4cf0d10b178669de16807871819b330742e8b",
+  "activeSchemaHashCommand": {
+    "command": [
+      "/private/tmp/graphic_design_archive_v49_phase2b_evidence_repair/database/scripts/schema_hash.sh"
+    ],
+    "endedAtUtc": "2026-08-15T06:07:33Z",
+    "exitCode": 0,
+    "startedAtUtc": "2026-08-15T06:07:25Z",
+    "stderr": {
+      "bytes": 0,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/reproduced/11_P1_DELIVERY_POST_FIX_PLAN_1000.postfix.schema-hash.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 65,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/reproduced/11_P1_DELIVERY_POST_FIX_PLAN_1000.postfix.schema-hash.stdout.log",
+      "sha256": "4be178ad951ffd72a9b0c3fc2dc1bf218102c49f65387ea41a41b88ce9d28d30"
+    }
+  },
+  "baseSchemaHash": "4ec9a76421548bda1b90ccdbf604906df9da9d349a70c9100abdddd1a7fee105",
+  "baseSchemaHashCommand": {
+    "command": [
+      "/private/tmp/graphic_design_archive_v49_phase2b_evidence_repair/database/scripts/schema_hash.sh"
+    ],
+    "endedAtUtc": "2026-08-15T06:07:24Z",
+    "exitCode": 0,
+    "startedAtUtc": "2026-08-15T06:07:11Z",
+    "stderr": {
+      "bytes": 0,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/reproduced/11_P1_DELIVERY_POST_FIX_PLAN_1000.base.schema-hash.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 65,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/reproduced/11_P1_DELIVERY_POST_FIX_PLAN_1000.base.schema-hash.stdout.log",
+      "sha256": "5ff08511717092d2c8bff7a8e777d2fbd6881bdfc89d99f0f310492d222f5d4f"
+    }
+  },
+  "database": "gda_v49_phase2a_phase2b_replay_11",
+  "databaseDropped": true,
+  "forwardIndexes": {
+    "locator": true,
+    "providerObject": true,
+    "representation": true,
+    "visualReference": true
+  },
+  "forwardMigration": {
+    "command": [
+      "psql",
+      "-X",
+      "-q",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-f",
+      "/private/tmp/graphic_design_archive_v49_phase2b_evidence_repair/docs/audits/v49-phase2b-evidence-amendment/reproduced/11_P1_DELIVERY_POST_FIX_PLAN_1000.apply-forward-wrapper.sql"
+    ],
+    "endedAtUtc": "2026-08-15T06:07:25Z",
+    "exitCode": 0,
+    "startedAtUtc": "2026-08-15T06:07:24Z",
+    "stderr": {
+      "bytes": 0,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/reproduced/11_P1_DELIVERY_POST_FIX_PLAN_1000.forward.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 0,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/reproduced/11_P1_DELIVERY_POST_FIX_PLAN_1000.forward.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "name": "P1_DELIVERY_POST_FIX_PLAN_1000",
+  "planRole": true,
+  "probe": {
+    "execution": {
+      "command": [
+        "psql",
+        "-X",
+        "-q",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-v",
+        "scale=1000",
+        "-f",
+        "/private/tmp/graphic_design_archive_v49_phase2b_evidence_repair/docs/audits/v49-phase2b-evidence-amendment/reproduced/11_P1_DELIVERY_POST_FIX_PLAN_1000.wrapper.sql"
+      ],
+      "endedAtUtc": "2026-08-15T06:08:23Z",
+      "exitCode": 0,
+      "startedAtUtc": "2026-08-15T06:07:34Z",
+      "stderr": {
+        "bytes": 0,
+        "path": "docs/audits/v49-phase2b-evidence-amendment/reproduced/11_P1_DELIVERY_POST_FIX_PLAN_1000.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 67116,
+        "path": "docs/audits/v49-phase2b-evidence-amendment/reproduced/11_P1_DELIVERY_POST_FIX_PLAN_1000.stdout.log",
+        "sha256": "e1b40639a56d5881f5460762364a22fb187a4ecedfdd9dd76cced441dcb67728"
+      }
+    },
+    "fixture": {
+      "planRole": true,
+      "probeScriptSha256": "97118861ccf09a1818d3c6dcb0171f63fea33b1da8ba8e3c9d2465c956234a57",
+      "scale": 1000,
+      "schemaState": "post_fix"
+    },
+    "fixtureSha256": "8857f5380c162ac3c2b66c7ad5f47adcb155d5c58054dc4943aa7a06c1400adc",
+    "planAssertion": "rights_assessment_visual_reference_target_idx",
+    "rollbackObserved": true,
+    "timingSeconds": [
+      14.483797,
+      15.163548,
+      14.514198
+    ]
+  },
+  "probeFamily": "delivery",
+  "replay": {
+    "command": [
+      "/private/tmp/graphic_design_archive_v49_phase2b_evidence_repair/database/scripts/replay.sh"
+    ],
+    "endedAtUtc": "2026-08-15T06:07:11Z",
+    "exitCode": 0,
+    "startedAtUtc": "2026-08-15T06:04:28Z",
+    "stderr": {
+      "bytes": 0,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/reproduced/11_P1_DELIVERY_POST_FIX_PLAN_1000.replay.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 63,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/reproduced/11_P1_DELIVERY_POST_FIX_PLAN_1000.replay.stdout.log",
+      "sha256": "ffe6c9be76f13bb068b3f74e86af9ed1e8e50e95638fda2fc7fb72cb8813e7a9"
+    }
+  },
+  "residue": {
+    "core_archive_object": 0,
+    "core_entity": 0,
+    "delivery_assessment": 0,
+    "delivery_policy_evaluation": 0,
+    "delivery_rights_assessment": 0,
+    "external_visual_reference": 0,
+    "object_visual_reference": 0,
+    "raw_source_asset": 0,
+    "raw_source_record": 0,
+    "rights_assessment": 0
+  },
+  "scale": 1000,
+  "schemaState": "post_fix",
+  "settings": {
+    "listen_addresses": "",
+    "port": "59242",
+    "server_version": "16.13 (Homebrew)",
+    "server_version_num": "160013",
+    "session_replication_role": "origin",
+    "transaction_read_only": "off"
+  }
+}

@@ -1,0 +1,273 @@
+Time: 287.978 ms
+Time: 387.923 ms
+Time: 2.448 ms
+Time: 347.872 ms
+Time: 103.329 ms
+Time: 316.434 ms
+Time: 451.211 ms
+Time: 2.619 ms
+Time: 72.145 ms
+Time: 470.854 ms
+P1_POSTFIX_DIRECT_EXPLAIN_BEGIN scale=50
+                                                    QUERY PLAN                                                    
+------------------------------------------------------------------------------------------------------------------
+ [                                                                                                               +
+   {                                                                                                             +
+     "Plan": {                                                                                                   +
+       "Node Type": "Aggregate",                                                                                 +
+       "Strategy": "Plain",                                                                                      +
+       "Partial Mode": "Simple",                                                                                 +
+       "Parallel Aware": false,                                                                                  +
+       "Async Capable": false,                                                                                   +
+       "Startup Cost": 4.06,                                                                                     +
+       "Total Cost": 4.07,                                                                                       +
+       "Plan Rows": 1,                                                                                           +
+       "Plan Width": 8,                                                                                          +
+       "Actual Startup Time": 0.052,                                                                             +
+       "Actual Total Time": 0.053,                                                                               +
+       "Actual Rows": 1,                                                                                         +
+       "Actual Loops": 1,                                                                                        +
+       "Shared Hit Blocks": 3,                                                                                   +
+       "Shared Read Blocks": 0,                                                                                  +
+       "Shared Dirtied Blocks": 0,                                                                               +
+       "Shared Written Blocks": 0,                                                                               +
+       "Local Hit Blocks": 0,                                                                                    +
+       "Local Read Blocks": 0,                                                                                   +
+       "Local Dirtied Blocks": 0,                                                                                +
+       "Local Written Blocks": 0,                                                                                +
+       "Temp Read Blocks": 0,                                                                                    +
+       "Temp Written Blocks": 0,                                                                                 +
+       "WAL Records": 0,                                                                                         +
+       "WAL FPI": 0,                                                                                             +
+       "WAL Bytes": 0,                                                                                           +
+       "Plans": [                                                                                                +
+         {                                                                                                       +
+           "Node Type": "Nested Loop",                                                                           +
+           "Parent Relationship": "Outer",                                                                       +
+           "Parallel Aware": false,                                                                              +
+           "Async Capable": false,                                                                               +
+           "Join Type": "Anti",                                                                                  +
+           "Startup Cost": 1.78,                                                                                 +
+           "Total Cost": 4.06,                                                                                   +
+           "Plan Rows": 1,                                                                                       +
+           "Plan Width": 0,                                                                                      +
+           "Actual Startup Time": 0.032,                                                                         +
+           "Actual Total Time": 0.046,                                                                           +
+           "Actual Rows": 1,                                                                                     +
+           "Actual Loops": 1,                                                                                    +
+           "Inner Unique": false,                                                                                +
+           "Shared Hit Blocks": 3,                                                                               +
+           "Shared Read Blocks": 0,                                                                              +
+           "Shared Dirtied Blocks": 0,                                                                           +
+           "Shared Written Blocks": 0,                                                                           +
+           "Local Hit Blocks": 0,                                                                                +
+           "Local Read Blocks": 0,                                                                               +
+           "Local Dirtied Blocks": 0,                                                                            +
+           "Local Written Blocks": 0,                                                                            +
+           "Temp Read Blocks": 0,                                                                                +
+           "Temp Written Blocks": 0,                                                                             +
+           "WAL Records": 0,                                                                                     +
+           "WAL FPI": 0,                                                                                         +
+           "WAL Bytes": 0,                                                                                       +
+           "Plans": [                                                                                            +
+             {                                                                                                   +
+               "Node Type": "Hash Join",                                                                         +
+               "Parent Relationship": "Outer",                                                                   +
+               "Parallel Aware": false,                                                                          +
+               "Async Capable": false,                                                                           +
+               "Join Type": "Inner",                                                                             +
+               "Startup Cost": 1.64,                                                                             +
+               "Total Cost": 3.40,                                                                               +
+               "Plan Rows": 1,                                                                                   +
+               "Plan Width": 16,                                                                                 +
+               "Actual Startup Time": 0.028,                                                                     +
+               "Actual Total Time": 0.042,                                                                       +
+               "Actual Rows": 1,                                                                                 +
+               "Actual Loops": 1,                                                                                +
+               "Inner Unique": true,                                                                             +
+               "Hash Cond": "(x.rights_assessment_id = t.rights_assessment_id)",                                 +
+               "Shared Hit Blocks": 2,                                                                           +
+               "Shared Read Blocks": 0,                                                                          +
+               "Shared Dirtied Blocks": 0,                                                                       +
+               "Shared Written Blocks": 0,                                                                       +
+               "Local Hit Blocks": 0,                                                                            +
+               "Local Read Blocks": 0,                                                                           +
+               "Local Dirtied Blocks": 0,                                                                        +
+               "Local Written Blocks": 0,                                                                        +
+               "Temp Read Blocks": 0,                                                                            +
+               "Temp Written Blocks": 0,                                                                         +
+               "WAL Records": 0,                                                                                 +
+               "WAL FPI": 0,                                                                                     +
+               "WAL Bytes": 0,                                                                                   +
+               "Plans": [                                                                                        +
+                 {                                                                                               +
+                   "Node Type": "Seq Scan",                                                                      +
+                   "Parent Relationship": "Outer",                                                               +
+                   "Parallel Aware": false,                                                                      +
+                   "Async Capable": false,                                                                       +
+                   "Relation Name": "rights_assessment",                                                         +
+                   "Alias": "x",                                                                                 +
+                   "Startup Cost": 0.00,                                                                         +
+                   "Total Cost": 1.62,                                                                           +
+                   "Plan Rows": 50,                                                                              +
+                   "Plan Width": 16,                                                                             +
+                   "Actual Startup Time": 0.008,                                                                 +
+                   "Actual Total Time": 0.015,                                                                   +
+                   "Actual Rows": 50,                                                                            +
+                   "Actual Loops": 1,                                                                            +
+                   "Filter": "(subject_kind = 'external_visual_reference'::rights.rights_subject_kind)",         +
+                   "Rows Removed by Filter": 0,                                                                  +
+                   "Shared Hit Blocks": 1,                                                                       +
+                   "Shared Read Blocks": 0,                                                                      +
+                   "Shared Dirtied Blocks": 0,                                                                   +
+                   "Shared Written Blocks": 0,                                                                   +
+                   "Local Hit Blocks": 0,                                                                        +
+                   "Local Read Blocks": 0,                                                                       +
+                   "Local Dirtied Blocks": 0,                                                                    +
+                   "Local Written Blocks": 0,                                                                    +
+                   "Temp Read Blocks": 0,                                                                        +
+                   "Temp Written Blocks": 0,                                                                     +
+                   "WAL Records": 0,                                                                             +
+                   "WAL FPI": 0,                                                                                 +
+                   "WAL Bytes": 0                                                                                +
+                 },                                                                                              +
+                 {                                                                                               +
+                   "Node Type": "Hash",                                                                          +
+                   "Parent Relationship": "Inner",                                                               +
+                   "Parallel Aware": false,                                                                      +
+                   "Async Capable": false,                                                                       +
+                   "Startup Cost": 1.62,                                                                         +
+                   "Total Cost": 1.62,                                                                           +
+                   "Plan Rows": 1,                                                                               +
+                   "Plan Width": 16,                                                                             +
+                   "Actual Startup Time": 0.012,                                                                 +
+                   "Actual Total Time": 0.012,                                                                   +
+                   "Actual Rows": 1,                                                                             +
+                   "Actual Loops": 1,                                                                            +
+                   "Hash Buckets": 1024,                                                                         +
+                   "Original Hash Buckets": 1024,                                                                +
+                   "Hash Batches": 1,                                                                            +
+                   "Original Hash Batches": 1,                                                                   +
+                   "Peak Memory Usage": 9,                                                                       +
+                   "Shared Hit Blocks": 1,                                                                       +
+                   "Shared Read Blocks": 0,                                                                      +
+                   "Shared Dirtied Blocks": 0,                                                                   +
+                   "Shared Written Blocks": 0,                                                                   +
+                   "Local Hit Blocks": 0,                                                                        +
+                   "Local Read Blocks": 0,                                                                       +
+                   "Local Dirtied Blocks": 0,                                                                    +
+                   "Local Written Blocks": 0,                                                                    +
+                   "Temp Read Blocks": 0,                                                                        +
+                   "Temp Written Blocks": 0,                                                                     +
+                   "WAL Records": 0,                                                                             +
+                   "WAL FPI": 0,                                                                                 +
+                   "WAL Bytes": 0,                                                                               +
+                   "Plans": [                                                                                    +
+                     {                                                                                           +
+                       "Node Type": "Seq Scan",                                                                  +
+                       "Parent Relationship": "Outer",                                                           +
+                       "Parallel Aware": false,                                                                  +
+                       "Async Capable": false,                                                                   +
+                       "Relation Name": "rights_assessment_visual_reference",                                    +
+                       "Alias": "t",                                                                             +
+                       "Startup Cost": 0.00,                                                                     +
+                       "Total Cost": 1.62,                                                                       +
+                       "Plan Rows": 1,                                                                           +
+                       "Plan Width": 16,                                                                         +
+                       "Actual Startup Time": 0.004,                                                             +
+                       "Actual Total Time": 0.008,                                                               +
+                       "Actual Rows": 1,                                                                         +
+                       "Actual Loops": 1,                                                                        +
+                       "Filter": "(external_visual_reference_id = 'a3000000-0000-4000-8000-000000000001'::uuid)",+
+                       "Rows Removed by Filter": 49,                                                             +
+                       "Shared Hit Blocks": 1,                                                                   +
+                       "Shared Read Blocks": 0,                                                                  +
+                       "Shared Dirtied Blocks": 0,                                                               +
+                       "Shared Written Blocks": 0,                                                               +
+                       "Local Hit Blocks": 0,                                                                    +
+                       "Local Read Blocks": 0,                                                                   +
+                       "Local Dirtied Blocks": 0,                                                                +
+                       "Local Written Blocks": 0,                                                                +
+                       "Temp Read Blocks": 0,                                                                    +
+                       "Temp Written Blocks": 0,                                                                 +
+                       "WAL Records": 0,                                                                         +
+                       "WAL FPI": 0,                                                                             +
+                       "WAL Bytes": 0                                                                            +
+                     }                                                                                           +
+                   ]                                                                                             +
+                 }                                                                                               +
+               ]                                                                                                 +
+             },                                                                                                  +
+             {                                                                                                   +
+               "Node Type": "Index Only Scan",                                                                   +
+               "Parent Relationship": "Inner",                                                                   +
+               "Parallel Aware": false,                                                                          +
+               "Async Capable": false,                                                                           +
+               "Scan Direction": "Forward",                                                                      +
+               "Index Name": "rights_assessment_supersedes_rights_assessment_id_key",                            +
+               "Relation Name": "rights_assessment",                                                             +
+               "Alias": "newer",                                                                                 +
+               "Startup Cost": 0.14,                                                                             +
+               "Total Cost": 0.40,                                                                               +
+               "Plan Rows": 1,                                                                                   +
+               "Plan Width": 16,                                                                                 +
+               "Actual Startup Time": 0.003,                                                                     +
+               "Actual Total Time": 0.003,                                                                       +
+               "Actual Rows": 0,                                                                                 +
+               "Actual Loops": 1,                                                                                +
+               "Index Cond": "(supersedes_rights_assessment_id = x.rights_assessment_id)",                       +
+               "Rows Removed by Index Recheck": 0,                                                               +
+               "Heap Fetches": 0,                                                                                +
+               "Shared Hit Blocks": 1,                                                                           +
+               "Shared Read Blocks": 0,                                                                          +
+               "Shared Dirtied Blocks": 0,                                                                       +
+               "Shared Written Blocks": 0,                                                                       +
+               "Local Hit Blocks": 0,                                                                            +
+               "Local Read Blocks": 0,                                                                           +
+               "Local Dirtied Blocks": 0,                                                                        +
+               "Local Written Blocks": 0,                                                                        +
+               "Temp Read Blocks": 0,                                                                            +
+               "Temp Written Blocks": 0,                                                                         +
+               "WAL Records": 0,                                                                                 +
+               "WAL FPI": 0,                                                                                     +
+               "WAL Bytes": 0                                                                                    +
+             }                                                                                                   +
+           ]                                                                                                     +
+         }                                                                                                       +
+       ]                                                                                                         +
+     },                                                                                                          +
+     "Settings": {                                                                                               +
+     },                                                                                                          +
+     "Planning": {                                                                                               +
+       "Shared Hit Blocks": 120,                                                                                 +
+       "Shared Read Blocks": 0,                                                                                  +
+       "Shared Dirtied Blocks": 0,                                                                               +
+       "Shared Written Blocks": 0,                                                                               +
+       "Local Hit Blocks": 0,                                                                                    +
+       "Local Read Blocks": 0,                                                                                   +
+       "Local Dirtied Blocks": 0,                                                                                +
+       "Local Written Blocks": 0,                                                                                +
+       "Temp Read Blocks": 0,                                                                                    +
+       "Temp Written Blocks": 0                                                                                  +
+     },                                                                                                          +
+     "Planning Time": 1.033,                                                                                     +
+     "Triggers": [                                                                                               +
+     ],                                                                                                          +
+     "Execution Time": 0.098                                                                                     +
+   }                                                                                                             +
+ ]
+(1 row)
+
+Time: 2.691 ms
+P1_POSTFIX_DIRECT_EXPLAIN_END scale=50
+Time: 7.342 ms
+P1_NAMED_CONSTRAINT_BEGIN constraint=rights.rights_assessment_one_current_leaf scale=50
+Time: 1838.867 ms (00:01.839)
+ scale | named_constraint_seconds | named_constraint_wal_bytes | assessment_rows | typed_subject_rows 
+-------+--------------------------+----------------------------+-----------------+--------------------
+    50 |                 1.843855 |                          0 |              50 |                 50
+(1 row)
+
+Time: 0.525 ms
+P1_NAMED_CONSTRAINT_END constraint=rights.rights_assessment_one_current_leaf scale=50
+Time: 4.872 ms

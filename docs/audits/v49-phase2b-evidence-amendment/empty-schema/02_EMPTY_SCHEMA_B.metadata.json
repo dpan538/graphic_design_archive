@@ -1,0 +1,95 @@
+{
+  "catalog": {
+    "constraints": 1200,
+    "functions": 183,
+    "indexes": 469,
+    "publicApiUsage": false,
+    "publicRawUsage": false,
+    "roles": 7,
+    "triggers": 335
+  },
+  "database": "gda_v49_phase2a_phase2b_replay_empty_2",
+  "databaseDropped": true,
+  "emptyRowCounts": {
+    "core_archive_object": 0,
+    "core_entity": 0,
+    "delivery_assessment": 0,
+    "delivery_policy_evaluation": 0,
+    "delivery_rights_assessment": 0,
+    "external_visual_reference": 0,
+    "object_visual_reference": 0,
+    "raw_source_asset": 0,
+    "raw_source_record": 0,
+    "rights_assessment": 0
+  },
+  "forwardMigration": {
+    "command": [
+      "psql",
+      "-X",
+      "-q",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-f",
+      "/private/tmp/graphic_design_archive_v49_phase2b_evidence_repair/docs/audits/v49-phase2b-evidence-amendment/empty-schema/empty_B.apply-forward-wrapper.sql"
+    ],
+    "endedAtUtc": "2026-08-15T06:32:24Z",
+    "exitCode": 0,
+    "startedAtUtc": "2026-08-15T06:32:21Z",
+    "stderr": {
+      "bytes": 0,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/empty-schema/empty_B.forward.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 0,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/empty-schema/empty_B.forward.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "label": "B",
+  "replay": {
+    "command": [
+      "/private/tmp/graphic_design_archive_v49_phase2b_evidence_repair/database/scripts/replay.sh"
+    ],
+    "endedAtUtc": "2026-08-15T06:32:21Z",
+    "exitCode": 0,
+    "startedAtUtc": "2026-08-15T06:30:03Z",
+    "stderr": {
+      "bytes": 0,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/empty-schema/empty_B.replay.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 68,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/empty-schema/empty_B.replay.stdout.log",
+      "sha256": "9d511028c8eb5933ec12687fc88f668400444d0da3832808874543b47f7ef7de"
+    }
+  },
+  "schemaHash": "aa8cb0af7b61931e51f1f71ed2e4cf0d10b178669de16807871819b330742e8b",
+  "schemaHashCommand": {
+    "command": [
+      "/private/tmp/graphic_design_archive_v49_phase2b_evidence_repair/database/scripts/schema_hash.sh"
+    ],
+    "endedAtUtc": "2026-08-15T06:32:41Z",
+    "exitCode": 0,
+    "startedAtUtc": "2026-08-15T06:32:24Z",
+    "stderr": {
+      "bytes": 0,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/empty-schema/empty_B.schema-hash.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 65,
+      "path": "docs/audits/v49-phase2b-evidence-amendment/empty-schema/empty_B.schema-hash.stdout.log",
+      "sha256": "4be178ad951ffd72a9b0c3fc2dc1bf218102c49f65387ea41a41b88ce9d28d30"
+    }
+  },
+  "settings": {
+    "listen_addresses": "",
+    "port": "59655",
+    "server_version": "16.13 (Homebrew)",
+    "server_version_num": "160013",
+    "session_replication_role": "origin",
+    "transaction_read_only": "off"
+  }
+}
