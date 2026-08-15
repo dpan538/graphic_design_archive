@@ -1,0 +1,7 @@
+`DISPOSABLE_DATABASE_STARTED=false`
+
+No task-owned PostgreSQL cluster was started. The only available 32-object DB runner includes the full R1/V1/R2 Seal/CAS rehearsal; this Runtime Acceptance task explicitly prohibits rerunning that protocol. There is no separately sealed compact projection snapshot from which a Postgres adapter parity vector can be run without rerunning forbidden work.
+
+`DISPOSABLE_DATABASE_RESIDUE=0`
+
+This is a scope-preserving blocker, not a successful Postgres adapter result.

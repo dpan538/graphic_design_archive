@@ -1,0 +1,26 @@
+COMMAND 1
+cwd: /private/tmp/graphic_design_archive_v49_runtime_acceptance/frontend
+command: npm run typecheck:runtime
+exit: 0
+elapsed_ms: 31495
+stdout:
+
+> archive-box-frontend@0.1.0 typecheck:runtime
+> tsc --project tsconfig.runtime-acceptance.json --pretty false
+
+stderr: (empty)
+
+COMMAND 2
+reason: the first Fixture/HTTP vector exposed the HTTP folder `{type,slug}` selector being encoded as a single folder id; `HttpArchiveRepository.getFolder` was minimally repaired to resolve a matching folder id before requesting the documented id route.
+cwd: /private/tmp/graphic_design_archive_v49_runtime_acceptance/frontend
+command: npm run typecheck:runtime
+exit: 0
+elapsed_ms: 32897
+stdout:
+
+> archive-box-frontend@0.1.0 typecheck:runtime
+> tsc --project tsconfig.runtime-acceptance.json --pretty false
+
+stderr: (empty)
+
+`AFFECTED_TYPESCRIPT_EXIT=0`

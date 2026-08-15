@@ -1,0 +1,24 @@
+{
+  "package": "v49-runtime-acceptance",
+  "baseCommit": "6e66186f2626bd10272b3cd408778f2ac091a598",
+  "kind": "additive-runtime-checkpoint",
+  "historicalPackageRewritten": false,
+  "status": "PARTIAL_CHECKPOINTED",
+  "artifacts": [
+    "00_EXECUTIVE_RECEIPT.md",
+    "01_FIXED_START_RECEIPT.md",
+    "02_TYPESCRIPT_TRANSCRIPTS.txt",
+    "03_PR_FAST_LOCAL_EQUIVALENT.txt",
+    "04_ADAPTER_VECTOR_RECEIPT.md",
+    "05_DISPOSABLE_DATABASE_RECEIPT.txt",
+    "06_DEV_SERVER_ATTEMPTS.txt",
+    "07_LISTENER_ROOT_CAUSE.md",
+    "08_BROWSER_RUNTIME_RECEIPT.md",
+    "09_PUBLIC_BOUNDARY_RECEIPT.md",
+    "10_GIT_AND_PROCESS_RECEIPT.md",
+    "agents/R1_runtime_gate_audit.md",
+    "agents/R2_runtime_independent_verifier.md"
+  ],
+  "ignoredEvidencePathCount": 0,
+  "manifestMissingPathCount": 0
+}

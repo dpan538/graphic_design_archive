@@ -1,0 +1,19 @@
+The workflow was corrected from the misleading full-project `typecheck:affected` command to `typecheck:runtime`, a committed narrow tsconfig covering the read-platform contract, adapters, API route, migrated pages, and their transitive imports.
+
+Static contract command:
+cwd: /private/tmp/graphic_design_archive_v49_runtime_acceptance/frontend
+command: npm run test:read-platform
+exit: 0
+elapsed_ms: 11746
+stdout:
+
+> archive-box-frontend@0.1.0 test:read-platform
+> node scripts/verify-read-platform-contract.mjs
+
+READ_PLATFORM_CONTRACT=PASS DIRECT_DATA_COUPLING=0
+
+The narrow TypeScript command is recorded separately in `02_TYPESCRIPT_TRANSCRIPTS.txt`. It was not rerun a third time merely to reconstruct a single shell sequence after the diagnosed second TypeScript run. Therefore:
+
+`PR_FAST_LOCAL_EQUIVALENT_EXIT=UNVERIFIED`
+
+This is deliberately not represented as a passing local workflow dispatch.

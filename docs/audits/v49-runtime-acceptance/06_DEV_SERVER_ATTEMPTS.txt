@@ -1,0 +1,24 @@
+ATTEMPT 1
+command: ARCHIVE_REPOSITORY_MODE=fixture NEXT_TELEMETRY_DISABLED=1 npm run dev -- --hostname 127.0.0.1 --port 3107
+PTY session: 98476
+result: failed
+output:
+Failed to start server
+Error: listen EPERM: operation not permitted 127.0.0.1:3107
+
+ATTEMPT 2
+same foreground command, using the permitted localhost-capable execution context
+PTY session: 31971
+result: passed
+listener: node PID 84534, `127.0.0.1:3107 (LISTEN)`
+ready output: `✓ Ready in 57.6s`
+
+Route compilation and probes:
+- `/api/v1/[...path]` compiled in 81.6s; exact descriptor returned HTTP 200 with the fixture research pair.
+- `/search` compiled in 263.9s; later server receipt was `GET /search 200 in 3735ms`.
+- final descriptor probe returned `200`.
+- all three successful probes were separated by more than five seconds. The early pre-compilation probes timed out and are not counted.
+
+`NEXT_DEV_ATTEMPT_COUNT=2`
+`LIVE_NEXT_HTTP_VERIFIED=true`
+`THREE_CONSECUTIVE_HTTP_PROBES=true`
