@@ -1,0 +1,15 @@
+{
+  "package": "v49-product-foundation",
+  "schemaVersion": 1,
+  "selfContained": true,
+  "evidenceStatus": "PARTIAL_CHECKPOINTED_BROWSER_UNVERIFIED",
+  "files": [
+    "00_CONTRACT_DELTA.md",
+    "00_PHASE2C2D_CHECKPOINT_RECEIPT.md",
+    "01_DATABASE_AND_CONTRACT_RECEIPT.md",
+    "02_FRONTEND_AND_BROWSER_LIMITATION.md",
+    "agents/A1_repository_api_rights_audit.md",
+    "agents/A2_ci_coupling_routes_audit.md",
+    "agents/B1_frontend_accessibility_independent_review.md"
+  ]
+}
