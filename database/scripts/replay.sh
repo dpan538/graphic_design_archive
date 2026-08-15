@@ -46,6 +46,7 @@ for GDA_SQL in \
   database/migrations/006_epistemic_trace_closure.sql \
   database/migrations/007_release_copy_integrity.sql \
   database/migrations/008_final_integrity_closure.sql \
+  database/migrations/009_read_api_core.sql \
   database/functions/001_deferred_constraints.sql \
   database/functions/002_mutation_guards.sql \
   database/functions/003_release_and_cas.sql \
@@ -73,6 +74,10 @@ done
   -v database_name="$PGDATABASE" \
   -h "$PGHOST" -p "$PGPORT" -d "$PGDATABASE" \
   -f "$GDA_REPO_ROOT/database/roles/002_database_grants.sql"
+
+"$GDA_PSQL" -X -q -v ON_ERROR_STOP=1 \
+  -h "$PGHOST" -p "$PGPORT" -d "$PGDATABASE" \
+  -f "$GDA_REPO_ROOT/database/roles/003_read_api_core_grants.sql"
 
 GDA_SCHEMA_COUNT=$(
   "$GDA_PSQL" -X -Atq -v ON_ERROR_STOP=1 \
