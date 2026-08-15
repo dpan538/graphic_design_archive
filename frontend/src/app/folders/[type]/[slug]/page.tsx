@@ -1,12 +1,7 @@
 import { notFound } from "next/navigation";
-import Reader from "@/components/archive/reader/Reader";
-import {
-  getFolder,
-  getFolderInk,
-  getFolderType,
-  isFolderTypeKey,
-} from "@/lib/archive-data";
-import { folderJumpTargets, paginateFolder } from "@/lib/paginate";
+import ArchiveShell from "@/components/archive/shell/ArchiveShell";
+import { FolderDetailReadSlice } from "@/components/archive/read-platform/ReadPlatformViews";
+import { openCurrentReadRepository } from "@/lib/read-platform/server/open-read-repository";
 
 // Large regional folders can contain thousands of reader leaves. Resolve the
 // requested folder on demand so a UI-only release does not paginate every
@@ -19,8 +14,7 @@ export async function generateMetadata({
   params: Promise<{ type: string; slug: string }>;
 }) {
   const { type, slug } = await params;
-  const folder = getFolder(type, slug);
-  return { title: folder ? `${folder.title} — Archive Box` : "Folder" };
+  return { title: `${slug} — Archive Box` };
 }
 
 export default async function FolderReaderPage({
@@ -29,25 +23,8 @@ export default async function FolderReaderPage({
   params: Promise<{ type: string; slug: string }>;
 }) {
   const { type, slug } = await params;
-  if (!isFolderTypeKey(type)) notFound();
-  const folder = getFolder(type, slug);
-  if (!folder) notFound();
-
-  const leaves = paginateFolder(folder);
-  const jumpTargets = folderJumpTargets(leaves);
-  const folderTypeLabel = getFolderType(type)?.label ?? type;
-
-  return (
-    <Reader
-      leaves={leaves}
-      jumpTargets={jumpTargets}
-      activeFolderId={folder.folderId}
-      folderInk={getFolderInk(type)}
-      folderType={folder.type}
-      contextTitle={folder.title}
-      contextSubtitle={`${folderTypeLabel} folder`}
-      backHref={`/folders/${type}`}
-      backLabel={`${folderTypeLabel} folders`}
-    />
-  );
+  const repository = await openCurrentReadRepository();
+  const result = await repository.getFolder({ type, slug });
+  if (!result.ok) notFound();
+  return <ArchiveShell activeNav="folders" mainScroll main={<FolderDetailReadSlice folder={result.data} />} />;
 }

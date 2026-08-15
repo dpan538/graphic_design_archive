@@ -59,6 +59,28 @@
   --folder-color-readable: var(--ink);
 }
 
+.read-platform { width: min(62rem, calc(100% - 3rem)); margin: 0 auto; padding: clamp(5rem, 12vh, 9rem) 0 5rem; color: var(--ink-deep); font-family: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif; font-size: max(1rem, 16px); line-height: 1.45; }
+.read-platform h1 { max-width: 18ch; margin: .2rem 0 1rem; font-size: clamp(2rem, 6vw, 4.8rem); line-height: .95; letter-spacing: -.04em; }
+.read-platform__eyebrow { margin: 0; color: var(--ink-soft); font-family: var(--font-plex-mono), ui-monospace, monospace; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; }
+.read-platform__form { display: grid; gap: .5rem; max-width: 44rem; margin: 2rem 0; font-family: var(--font-plex-mono), ui-monospace, monospace; }
+.read-platform__form > div { display: flex; gap: .5rem; }
+.read-platform input, .read-platform button { min-height: 48px; border: 1px solid var(--ink); border-radius: 0; font: inherit; font-size: 1rem; }
+.read-platform input { flex: 1; min-width: 0; padding: .5rem .75rem; background: var(--paper); }
+.read-platform button { padding: .5rem 1rem; color: var(--paper); background: var(--ink); }
+.read-platform__results { display: grid; gap: .75rem; margin: 2rem 0; padding: 0; list-style: none; }
+.read-platform__results li { padding: 1rem; border: 1px solid var(--line); background: color-mix(in srgb, var(--paper) 80%, transparent); }
+.read-platform__results a { color: inherit; font-size: 1.15rem; font-weight: 600; }
+.read-platform__results button { width: 100%; color: var(--ink); text-align: left; background: transparent; }
+.read-platform__wheel { max-width: 44rem; }
+.read-platform__focus-card { min-height: 12rem; margin: 1rem 0; padding: 1.5rem; border: 2px solid var(--ink); background: var(--paper); }
+.read-platform__focus-card a { color: inherit; font-size: clamp(1.5rem, 6vw, 2.5rem); font-weight: 600; }
+.read-platform__results li[data-active="true"] { border-color: var(--ink); box-shadow: inset .35rem 0 0 var(--focus-coral); }
+.read-platform__results p { margin: .25rem 0; }
+.read-platform dl { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+.read-platform dt { font: .75rem var(--font-plex-mono), ui-monospace, monospace; text-transform: uppercase; }
+.read-platform dd { margin: .15rem 0 0; }
+@media (min-width: 901px) { .read-platform { font-size: 1.125rem; } }
+
 /* ---- Badge asset studies --------------------------------------------- */
 
 html:has(.badge-lab),

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ArchiveShell from "@/components/archive/shell/ArchiveShell";
-import TraceExplorer from "@/components/archive/trace/TraceExplorer";
+import { TraceReadSlice } from "@/components/archive/read-platform/ReadPlatformViews";
 
 export const metadata: Metadata = {
   title: "TRACE evidence atlas — Modern Graphic Design History",
@@ -12,7 +12,7 @@ export default function TracePage() {
   return (
     <ArchiveShell
       activeNav="trace"
-      main={<TraceExplorer />}
+      main={<TraceReadSlice />}
       mainScroll
     />
   );

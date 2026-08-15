@@ -121,6 +121,18 @@ export default function ArchiveShell({
   }, [router]);
 
   useEffect(() => {
+    if (!menuOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      event.preventDefault();
+      setMenuOpen(false);
+      menuButtonRef.current?.focus();
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [menuOpen]);
+
+  useEffect(() => {
     if (!searchOpen) {
       setSearchFrame(null);
       return;
@@ -333,6 +345,7 @@ export default function ArchiveShell({
               className={`nav-icon ${shellStyles.semanticNavItem} ${shellStyles.mobileNavItem}`}
               data-active={activeNav === "about"}
               aria-label="About"
+              onClick={() => setMenuOpen(false)}
             >
               <IconAbout />
               <span>About</span>
@@ -342,6 +355,7 @@ export default function ArchiveShell({
               className={`nav-icon ${shellStyles.semanticNavItem} ${shellStyles.mobileNavItem}`}
               data-active={activeNav === "index"}
               aria-label="Index"
+              onClick={() => setMenuOpen(false)}
             >
               <IconIndex />
               <span>Index</span>
@@ -351,6 +365,7 @@ export default function ArchiveShell({
               className={`nav-icon ${shellStyles.semanticNavItem} ${shellStyles.mobileNavItem}`}
               data-active={activeNav === "folders"}
               aria-label="Folders"
+              onClick={() => setMenuOpen(false)}
             >
               <IconFolder />
               <span>Folders</span>
@@ -360,6 +375,7 @@ export default function ArchiveShell({
               className={`nav-icon ${shellStyles.semanticNavItem} ${shellStyles.mobileNavItem}`}
               data-active={activeNav === "trace"}
               aria-label="TRACE evidence atlas"
+              onClick={() => setMenuOpen(false)}
             >
               <IconTree />
               <span>TRACE</span>

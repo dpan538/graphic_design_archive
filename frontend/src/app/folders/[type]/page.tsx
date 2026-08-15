@@ -1,23 +1,8 @@
-import { notFound } from "next/navigation";
 import ArchiveShell from "@/components/archive/shell/ArchiveShell";
-import FolderTypeSpeedIndex, {
-  type FolderTypeSpeedItem,
-} from "@/components/archive/drawer/FolderTypeSpeedIndex";
-import {
-  allFolderTypeParams,
-  dateSpanLabel,
-  getFolderInk,
-  getFoldersByType,
-  getFolderType,
-  getSurfacesForFolder,
-  isFolderTypeKey,
-  regionGroup,
-  surfaceMix,
-} from "@/lib/archive-data";
+import { FolderReadSlice } from "@/components/archive/read-platform/ReadPlatformViews";
+import { openCurrentReadRepository } from "@/lib/read-platform/server/open-read-repository";
 
-export function generateStaticParams() {
-  return allFolderTypeParams();
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
@@ -25,8 +10,7 @@ export async function generateMetadata({
   params: Promise<{ type: string }>;
 }) {
   const { type } = await params;
-  const ft = getFolderType(type);
-  return { title: ft ? `${ft.label} folders — Archive Box` : "Folders" };
+  return { title: `${type} folders — Archive Box` };
 }
 
 export default async function FolderTypePage({
@@ -35,44 +19,14 @@ export default async function FolderTypePage({
   params: Promise<{ type: string }>;
 }) {
   const { type } = await params;
-  if (!isFolderTypeKey(type)) notFound();
-  const folderType = getFolderType(type);
-  if (!folderType) notFound();
-
-  const items: FolderTypeSpeedItem[] = getFoldersByType(folderType.type).map(
-    (folder) => {
-      const surfaces = getSurfacesForFolder(folder);
-      const mix = surfaceMix(surfaces);
-      return {
-        key: folder.folderId,
-        type: folder.type,
-        macroLabel: folder.type === "region" ? regionGroup(folder).continent : undefined,
-        groupLabel: folder.type === "region" ? regionGroup(folder).subregion : undefined,
-        code: folder.title
-          .replace(/[^a-z0-9 ]/gi, " ")
-          .trim()
-          .split(/\s+/)
-          .slice(0, 2)
-          .map((part) => part.slice(0, 3))
-          .join("")
-          .slice(0, 6)
-          .toUpperCase(),
-        title: folder.title,
-        href: `/folders/${folder.type}/${folder.slug}`,
-        count: surfaces.length,
-        dateStart: folder.dateStart ?? Number.MIN_SAFE_INTEGER,
-        dateEnd: folder.dateEnd ?? Number.MAX_SAFE_INTEGER,
-        date: dateSpanLabel(folder.dateStart, folder.dateEnd),
-        mix: `${mix.sheet} sheet · ${mix.card} card · ${mix.fallback_stub} stub`,
-      };
-    },
-  );
+  const repository = await openCurrentReadRepository();
+  const result = await repository.listFolders({ type });
+  if (!result.ok) throw new Error(result.error.message);
 
   return (
     <ArchiveShell
       activeNav="folders"
-      folderInk={getFolderInk(folderType.type)}
-      main={<FolderTypeSpeedIndex folderType={folderType} items={items} />}
+      main={<FolderReadSlice type={type} folders={result.data.nodes} />}
     />
   );
 }
