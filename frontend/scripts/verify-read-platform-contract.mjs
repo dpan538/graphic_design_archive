@@ -11,6 +11,8 @@ const forbid = (path, needle) => {
 };
 
 requireText("frontend/src/lib/read-platform/repository.ts", "interface ArchiveRepository");
+requireText("frontend/package.json", "typecheck:runtime");
+requireText("frontend/tsconfig.runtime-acceptance.json", "src/app/api/v1/[...path]/route.ts");
 requireText("frontend/src/lib/read-platform/server/fixture.ts", "length: 32");
 requireText("frontend/src/lib/read-platform/server/fixture.ts", "traceEligibleObjectCount: 0");
 requireText("frontend/src/lib/read-platform/server/fixture.ts", "positiveVisualRightsCount: 0");

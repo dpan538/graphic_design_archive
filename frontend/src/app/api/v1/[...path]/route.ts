@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getArchiveRepositoryProvider } from "@/lib/read-platform/server/provider";
-import type { ArchiveRepository } from "@/lib/read-platform/repository";
+import type { ArchiveRepository, ArchiveRepositoryProvider } from "@/lib/read-platform/repository";
 import type { ArchiveVersionRef, RepoResult } from "@/lib/read-platform/types";
 
 export const dynamic = "force-dynamic";
@@ -22,14 +22,17 @@ function failure<T>(result: Extract<RepoResult<T>, { ok: false }>, instance: str
 }
 function first(url: URL) { const value = url.searchParams.get("first"); return value === null ? undefined : Number(value); }
 
-async function dispatch(request: Request, path: readonly string[], head: boolean): Promise<Response> {
+export async function dispatchReadApiRequest(request: Request, path: readonly string[], provider: ArchiveRepositoryProvider = getArchiveRepositoryProvider()): Promise<Response> {
+  const head = request.method === "HEAD";
+  if (!allow.split(", ").includes(request.method)) return NextResponse.json({ code: "NOT_FOUND", detail: "Read API is GET/HEAD/OPTIONS only" }, { status: 405, headers: headers() });
+  if (request.method === "OPTIONS") return new NextResponse(null, { status: 204, headers: headers() });
   const url = new URL(request.url);
   try {
     if (path.join("/") === "visual-registries/current") return NextResponse.json({ type: "urn:gdarchive:problem:visual-registry-not-found", title: "Visual registry unavailable", status: 404, code: "VISUAL_REGISTRY_NOT_FOUND", detail: "No visual registry is selected for the fixture release", instance: url.pathname }, { status: 404, headers: headers() });
     if (path[0] !== "releases" || !path[1]) return NextResponse.json({ type: "urn:gdarchive:problem:not-found", title: "Not found", status: 404, code: "NOT_FOUND", detail: "unknown Read API resource", instance: url.pathname }, { status: 404, headers: headers() });
     const release = path[1];
     const research = release === "current" ? { alias: "current" as const } : { researchReleaseId: release, researchManifestSha256: request.headers.get("Archive-Research-Manifest-Sha256") ?? "" };
-    const opened = await getArchiveRepositoryProvider().open({ research }, { signal: request.signal });
+    const opened = await provider.open({ research }, { signal: request.signal });
     if (!opened.ok) return failure(opened, url.pathname);
     const repo = opened.data;
     const tail = path.slice(2);
@@ -61,8 +64,8 @@ async function resource(repo: ArchiveRepository, tail: readonly string[], url: U
   return { ok: false as const, error: { code: "NOT_FOUND" as const, message: "unknown Read API resource", retryable: false } };
 }
 
-export async function GET(request: Request, context: { params: Promise<{ path: string[] }> }) { return dispatch(request, (await context.params).path, false); }
-export async function HEAD(request: Request, context: { params: Promise<{ path: string[] }> }) { return dispatch(request, (await context.params).path, true); }
+export async function GET(request: Request, context: { params: Promise<{ path: string[] }> }) { return dispatchReadApiRequest(request, (await context.params).path); }
+export async function HEAD(request: Request, context: { params: Promise<{ path: string[] }> }) { return dispatchReadApiRequest(request, (await context.params).path); }
 export function OPTIONS() { return new NextResponse(null, { status: 204, headers: headers() }); }
 export function POST() { return NextResponse.json({ code: "NOT_FOUND", detail: "Read API is GET/HEAD/OPTIONS only" }, { status: 405, headers: headers() }); }
 export const PUT = POST; export const PATCH = POST; export const DELETE = POST;

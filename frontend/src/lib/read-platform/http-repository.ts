@@ -14,12 +14,14 @@ const errorCode = (value: unknown): RepositoryErrorCode => typeof value === "str
 function selectorPath(selector: ResearchReleaseSelector): string { return "alias" in selector ? "/api/v1/releases/current" : `/api/v1/releases/${encodeURIComponent(selector.researchReleaseId)}`; }
 function signalError<T>(): RepoResult<T> { return { ok: false, error: { code: "UNAVAILABLE", message: "request was cancelled", retryable: true } }; }
 
+export type ReadFetch = (input: string, init?: RequestInit) => Promise<Response>;
+
 export class HttpArchiveRepository implements ArchiveRepository {
-  constructor(readonly version: ArchiveVersionRef, private readonly baseUrl = "") {}
+  constructor(readonly version: ArchiveVersionRef, private readonly baseUrl = "", private readonly readFetch: ReadFetch = fetch) {}
   private releasePath() { return `/api/v1/releases/${encodeURIComponent(this.version.research.researchReleaseId)}`; }
   private async request<T>(path: string, options?: ReadOptions): Promise<RepoResult<T>> {
     if (options?.signal?.aborted) return signalError();
-    const response = await fetch(`${this.baseUrl}${path}`, { signal: options?.signal, headers: { "Archive-Research-Manifest-Sha256": this.version.research.researchManifestSha256 } }).catch(() => null);
+    const response = await this.readFetch(`${this.baseUrl}${path}`, { signal: options?.signal, headers: { "Archive-Research-Manifest-Sha256": this.version.research.researchManifestSha256 } }).catch(() => null);
     if (!response) return { ok: false, error: { code: "UNAVAILABLE", message: "read API is unavailable", retryable: true } };
     if (!response.ok) { const problem = (await response.json().catch(() => ({}))) as Problem; return { ok: false, error: { code: errorCode(problem.code), message: problem.detail ?? problem.title ?? "read API request failed", retryable: response.status >= 500 } }; }
     const envelope = (await response.json()) as Envelope<T>;
@@ -29,7 +31,13 @@ export class HttpArchiveRepository implements ArchiveRepository {
   getOverview(o?: ReadOptions) { return this.request<ArchiveOverview>(`${this.releasePath()}/archive/overview`, o); }
   listFolderTypes(o?: ReadOptions) { return this.request<readonly FolderTypeSummary[]>(`${this.releasePath()}/folder-types`, o); }
   listFolders(input: FolderQuery & PageRequest, o?: ReadOptions) { return this.request<Page<FolderSummary>>(`${this.releasePath()}/folders?${new URLSearchParams(clean(input))}`, o); }
-  getFolder(ref: { id: string } | { type: string; slug: string }, o?: ReadOptions) { const id = "id" in ref ? ref.id : `${ref.type}/${ref.slug}`; return this.request<FolderDetail>(`${this.releasePath()}/folders/${encodeURIComponent(id)}`, o); }
+  async getFolder(ref: { id: string } | { type: string; slug: string }, o?: ReadOptions): Promise<RepoResult<FolderDetail>> {
+    if ("id" in ref) return this.request<FolderDetail>(`${this.releasePath()}/folders/${encodeURIComponent(ref.id)}`, o);
+    const folders = await this.listFolders({ type: ref.type, first: 100 }, o);
+    if (!folders.ok) return folders;
+    const match = folders.data.nodes.find((folder) => folder.slug === ref.slug);
+    return match ? this.getFolder({ id: match.id }, o) : { ok: false, error: { code: "NOT_FOUND", message: "folder is not part of this sealed release", retryable: false } };
+  }
   listFolderMembers(folderId: string, page: PageRequest, o?: ReadOptions) { return this.request<Page<SurfaceSummary>>(`${this.releasePath()}/folders/${encodeURIComponent(folderId)}/surfaces?${new URLSearchParams(clean(page))}`, o); }
   getSurface(surfaceId: string, o?: ReadOptions) { return this.request<SurfaceDetail>(`${this.releasePath()}/surfaces/${encodeURIComponent(surfaceId)}`, o); }
   search(input: ArchiveSearchQuery & PageRequest, o?: ReadOptions) { return this.request<Page<SearchHit>>(`${this.releasePath()}/search?${new URLSearchParams(clean(input))}`, o); }
@@ -45,14 +53,14 @@ export class HttpArchiveRepository implements ArchiveRepository {
 function clean(input: object) { return Object.fromEntries(Object.entries(input).filter(([, value]) => value !== undefined).map(([key, value]) => [key, String(value)])); }
 
 export class HttpArchiveRepositoryProvider implements ArchiveRepositoryProvider {
-  constructor(private readonly baseUrl = "") {}
+  constructor(private readonly baseUrl = "", private readonly readFetch: ReadFetch = fetch) {}
   async open(input: { research: ResearchReleaseSelector; visual?: VisualRegistrySelector | null }, options?: ReadOptions): Promise<RepoResult<ArchiveRepository>> {
     if (input.visual) return { ok: false, error: { code: "RELEASE_VERSION_MISMATCH", message: "visual selector transport is not implemented in this core client", retryable: false } };
     const headers = "alias" in input.research ? undefined : { "Archive-Research-Manifest-Sha256": input.research.researchManifestSha256 };
-    const descriptor = await fetch(`${this.baseUrl}${selectorPath(input.research)}`, { signal: options?.signal, headers }).catch(() => null);
+    const descriptor = await this.readFetch(`${this.baseUrl}${selectorPath(input.research)}`, { signal: options?.signal, headers }).catch(() => null);
     if (!descriptor?.ok) return { ok: false, error: { code: "UNAVAILABLE", message: "release descriptor is unavailable", retryable: true } };
     const body = await descriptor.json() as Envelope<{ schemaVersion?: "archive-research-release/v1" }>;
     const version: ArchiveVersionRef = { research: { apiVersion: "v1", researchReleaseId: body.researchReleaseId, researchManifestSha256: body.researchManifestSha256, schemaVersion: body.data.schemaVersion ?? "archive-research-release/v1" }, visual: null, visualState: body.visualRegistryState, visualReasonCodes: body.visualReasonCodes, takedownOverlaySha256: body.takedownOverlaySha256 };
-    return { ok: true, data: new HttpArchiveRepository(version, this.baseUrl), version };
+    return { ok: true, data: new HttpArchiveRepository(version, this.baseUrl, this.readFetch), version };
   }
 }

@@ -21,7 +21,7 @@
     "verify:about-mobile": "node scripts/verify-about-mobile.mjs",
     "asset:a11y-check": "node scripts/asset-a11y-check.js",
     "lint": "next lint",
-    "typecheck:affected": "tsc --noEmit --pretty false",
+    "typecheck:runtime": "tsc --project tsconfig.runtime-acceptance.json --pretty false",
     "test:read-platform": "node scripts/verify-read-platform-contract.mjs"
   },
   "dependencies": {

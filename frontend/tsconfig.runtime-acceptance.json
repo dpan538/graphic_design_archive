@@ -1,0 +1,26 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "incremental": false,
+    "plugins": []
+  },
+  "files": [
+    "src/lib/read-platform/types.ts",
+    "src/lib/read-platform/pagination.ts",
+    "src/lib/read-platform/repository.ts",
+    "src/lib/read-platform/http-repository.ts",
+    "src/lib/read-platform/server/fixture.ts",
+    "src/lib/read-platform/server/provider.ts",
+    "src/lib/read-platform/server/open-read-repository.ts",
+    "src/lib/read-platform/server/postgres-repository.ts",
+    "src/app/api/v1/[...path]/route.ts",
+    "src/app/search/page.tsx",
+    "src/app/folders/[type]/page.tsx",
+    "src/app/folders/[type]/[slug]/page.tsx",
+    "src/app/surfaces/[id]/page.tsx",
+    "src/app/trace/page.tsx",
+    "src/app/error.tsx",
+    "src/components/archive/read-platform/ReadPlatformViews.tsx",
+    "src/components/archive/shell/ArchiveShell.tsx"
+  ]
+}

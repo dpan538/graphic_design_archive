@@ -10,7 +10,7 @@ export default function NotFound() {
         </span>
         <h1 className="font-bold text-2xl mt-4">No such folder or surface</h1>
         <p className="text-sm text-ink-soft mt-2">
-          This coordinate is not part of the current staged pool.
+          This coordinate is not part of the selected sealed release.
         </p>
         <Link
           href="/"

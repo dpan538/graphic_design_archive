@@ -5,7 +5,7 @@ import { TraceReadSlice } from "@/components/archive/read-platform/ReadPlatformV
 export const metadata: Metadata = {
   title: "TRACE evidence atlas — Modern Graphic Design History",
   description:
-    "Object-local evidence routes and aggregate time/geography views for the frozen v48 archive candidate.",
+    "Object-local evidence routes and aggregate views for the selected sealed archive release.",
 };
 
 export default function TracePage() {
