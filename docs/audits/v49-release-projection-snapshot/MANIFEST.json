@@ -1,0 +1,16 @@
+{
+  "checksumScope": "all package files except CHECKSUMS.sha256; MANIFEST.json is included in CHECKSUMS and does not self-hash",
+  "files": [
+    {"bytes": 2020, "path": "00_EXECUTIVE_RECEIPT.md", "sha256": "188558ab40b4e5b35232ce4d8386ffe0745a5ac6d4262fef7f2804798c6b2751"},
+    {"bytes": 2413, "path": "01_READ_MODEL_PROJECTION_COVERAGE.tsv", "sha256": "aae31b0e7bc492dc3a75eabd31a41c0506cc5767f424cc5458edf5847aa96b23"},
+    {"bytes": 1161, "path": "02_SCHEMA_AND_32_OBJECT_RECEIPT.txt", "sha256": "1a28be91f7050509b9983c2a324f3409d7b5c0a63b7085db81fbb518bb831aea"},
+    {"bytes": 1387, "path": "03_PERFORMANCE_STOP_RECEIPT.txt", "sha256": "3eb0fea47a220833b14b7b53792cade57ebc2c7432d257f33c0fd01e0c28d81c"},
+    {"bytes": 562, "path": "04_SCHEMA_INVENTORY_RECEIPT.txt", "sha256": "838720cf7733fa31fddcf721307a890104cc4a868dd8b25fb8807d99fbed6182"},
+    {"bytes": 959, "path": "05_SCOPE_AND_PROCESS_RECEIPT.md", "sha256": "d3170378d201b97256f066c77bc835befa86605cd680ad155588efaed8ee2289"},
+    {"bytes": 10659, "path": "agents/A1_projection_coverage.md", "sha256": "f896217ddb9b9da0430025fda1190a60c272544c392e3235c885021d87201d14"},
+    {"bytes": 12580, "path": "agents/A2_atomic_lifecycle_audit.md", "sha256": "3f55ee77ae33796f4499c138ddff525e6bcfeb4565c11e4b1444b864fd55dd98"},
+    {"bytes": 14180, "path": "agents/B1_independent_schema_verifier.md", "sha256": "31f2b5224c2b61b410cd546108934ad31c10c7f6ee23bb9e03bdb820c462bc4f"}
+  ],
+  "phaseStatus": "PARTIAL_CHECKPOINTED",
+  "schema": "gda-v49-release-projection-snapshot-audit-manifest/v1"
+}

@@ -1,0 +1,31 @@
+Phase 2C-S synthetic performance ladder stop receipt
+
+Allowed source scope:
+  transaction-scoped synthetic fixture only; no v48 staging, full population
+  replay, extractor, production database, frontend, or browser process.
+
+Attempt 1 result:
+  The 32-object focused test passed. The 8,000-object preparation then failed
+  before the builder with:
+    duplicate key value violates unique constraint "source_record_occurrence_unique"
+    Key (source_asset_id, record_ordinal)=(10000000-0000-4000-8000-000000000001, 100) already exists.
+
+One root-cause repair was made: performance-only synthetic record ordinals
+were moved to a disjoint high range.
+
+Attempt 2 result:
+  Both fresh schema replays and the 32-object focused test passed. The
+  8,000-object preparation then failed before the builder with:
+    ERROR: column "entity_type" of relation "entity" does not exist
+
+The actual canonical schema names are `entity_kind`, `lifecycle_state`, and
+`withdrawn_at`. This is a second independent fixture-schema defect. The task
+limits this command class to one diagnosed repair and one recheck, so no third
+performance run, no 15,923-object run, and no concurrency run was started.
+
+PERFORMANCE_32_OBJECT=PASS
+PERFORMANCE_8000_OBJECT=NOT_COMPLETED
+PERFORMANCE_15923_OBJECT=NOT_STARTED
+PERFORMANCE_BUDGET_MET=UNVERIFIED
+CONCURRENT_SNAPSHOT_TEST_PASS=UNVERIFIED
+TASK_OWNED_DATABASE_RESIDUE=0

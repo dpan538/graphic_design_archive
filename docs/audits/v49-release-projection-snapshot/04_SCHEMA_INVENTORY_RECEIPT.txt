@@ -1,0 +1,11 @@
+Command:
+  python3 database/scripts/verify_schema_inventory_v3.py
+
+Actual result:
+  SCHEMA_INVENTORY_V3=PASS files=38 digest=22d1299906997cc989b5a78517eb29c6445da9f5373db21014ed2a1576a40a88
+
+The new additive manifest is `database/schema-manifest-v3.json`. It preserves
+the historical Phase 2A manifest and hash as a named historical record while
+making the effective replay order explicit through migrations 009 and 010.
+Its managed file inventory includes reader grants, v3 roles/functions/guards,
+the dedicated fixture/test, replay, and schema-hash machinery.

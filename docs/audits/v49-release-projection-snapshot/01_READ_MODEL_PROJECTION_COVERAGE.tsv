@@ -1,0 +1,17 @@
+capability	classification	v3_release_owned_evidence	launch_disposition
+current_research_descriptor	SNAPSHOT_COMPLETE	existing exact sealed descriptor; current remains a one-time mutable alias	preserved; not copied into v3 manifest
+exact_release_descriptor	SNAPSHOT_COMPLETE	existing sealed release identity plus v3 manifest/component receipt	preserved and extended by v3 receipt
+archive_overview	IMPLEMENT_IN_THIS_PHASE	component manifest rows and release-owned folder/search/trace/corpus projections	read API wiring deferred to next authorized 011 phase
+folder_types	IMPLEMENT_IN_THIS_PHASE	research_folder_type_projection_v3	registry is closed and copied by v3 builder
+folder_list_detail	IMPLEMENT_IN_THIS_PHASE	research_folder_projection_v3	metadata comes from normalized publication metadata, not token parsing
+folder_members	IMPLEMENT_IN_THIS_PHASE	research_folder_membership_projection_v3	object-level composite release FKs, role and ordinal are frozen
+surface_summary_detail	IMPLEMENT_IN_THIS_PHASE	research_surface_presentation_projection_v3 and credit/citation projections	no raw payload, held locator, UUID, or pixel URL is projected
+archive_search	IMPLEMENT_IN_THIS_PHASE	research_search_document_projection_v3	search input is release-owned presentation data
+trace_atlas_availability	HONEST_EMPTY_FROM_RELEASE	research_trace_availability_projection_v3	zero is calculated from the selected release source; no v48 graph fallback
+trace_objects_neighborhood	DEFERRED_NOT_IN_LAUNCH_SCOPE	zero availability is release-owned but nonempty graph rows are absent	nonempty TRACE remains expressly deferred
+relation_type_registry	DEFERRED_NOT_IN_LAUNCH_SCOPE	no complete public registry projection	must fail closed in later API phase
+relation	DEFERRED_NOT_IN_LAUNCH_SCOPE	no nonempty relation projection	must not read mutable canonical state
+claim	DEFERRED_NOT_IN_LAUNCH_SCOPE	no public claimant/evidence summary projection	must not be represented by an empty success response
+corpus_basic_descriptor_count	IMPLEMENT_IN_THIS_PHASE	research_corpus_summary_projection_v3	selected corpus is bound by v3 policy and its dispositions are counted
+public_source_citation	IMPLEMENT_IN_THIS_PHASE	research_surface_citation_projection_v3	only positive allowlist label and local source route are copied
+visual_composition	DEFERRED_NOT_IN_LAUNCH_SCOPE	no visual builder or visual release is involved	visual pair remains absent

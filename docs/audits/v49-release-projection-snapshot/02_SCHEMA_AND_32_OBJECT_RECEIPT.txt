@@ -1,0 +1,26 @@
+Phase 2C-S focused runner, actual execution summary
+
+Command:
+  sh database/scripts/run-phase2s-snapshot.sh
+
+Disposable environment:
+  PostgreSQL 16.13
+  Unix socket only
+  random task-owned temporary PGDATA and socket directory
+  port 55681 (not 5432)
+  listen_addresses=''
+
+Successful focused run after the public-eligibility correction:
+  REPLAY_OK database=gda_v49_phase2a_phase2s_a schemas=9
+  REPLAY_OK database=gda_v49_phase2a_phase2s_b schemas=9
+  PHASE2S_SNAPSHOT_TESTS=PASS
+  PHASE2S_SNAPSHOT=PASS SCHEMA_SHA256=6b6a7a01cfb08bf934b695722782e829da5941378ce7b242ea8c127addb8211b
+
+The test ran the 32-object transaction-scoped fixture, four folders, 32
+accepted/evidence-backed object memberships, one accounted-but-corpus-held
+sentinel, and one proposed membership sentinel. It verified the v3 builder,
+candidate validation, v3 seal, post-build/post-seal mutation denial, five
+fault injection points with rollback, reader base-table/write denial, PUBLIC
+privilege denial, and post-build canonical-drift stability. The runner stopped
+the cluster and removed its PGDATA/socket directory; a subsequent task-owned
+process check found no PostgreSQL process.
