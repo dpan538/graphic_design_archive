@@ -15,7 +15,7 @@ case "${PGDATABASE}" in gda_v49_phase2a_*) ;; *) exit 64 ;; esac
 GDA_PG_DUMP=${GDA_PG_DUMP:-pg_dump}
 GDA_PYTHON=${GDA_PYTHON:-python3}
 GDA_REPO_ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)
-GDA_DUMP=$(mktemp "${TMPDIR:-/tmp}/gda_v49_phase2a_schema.XXXXXX.sql")
+GDA_DUMP=$(mktemp "${TMPDIR:-/tmp}/gda_v49_phase2a_schema.XXXXXX")
 trap 'rm -f -- "$GDA_DUMP"' EXIT HUP INT TERM
 
 "$GDA_PG_DUMP" --schema-only --no-owner --no-privileges \
