@@ -1,0 +1,43 @@
+{
+  "package": "v49 TRACE positioning research",
+  "prepared_at": "2026-08-16",
+  "source_branch": "origin/verify/v49-read-platform-runtime-acceptance-20260815",
+  "source_sha": "64de7ab1ccc190b433266e3a793b9ff7d4c06016",
+  "research_branch": "research/v49-trace-positioning-20260816",
+  "scope": "read-only academic, competitive, product and adversarial positioning research",
+  "baseline": {
+    "ARCHIVE_OBJECTS": 15923,
+    "RESEARCH_ELIGIBLE_OBJECTS": 7995,
+    "HELD_OBJECTS": 7928,
+    "TRACE_ELIGIBLE_OBJECTS": 0,
+    "POSITIVE_VISUAL_RIGHTS_COVERAGE": "0%",
+    "TARGET_20000_IS_ACCEPTANCE_GATE": false,
+    "old_v48_graph_reused": false
+  },
+  "decisions": {
+    "primary_academic_positioning": "Digital Humanities / design-history digital scholarship",
+    "primary_audience": "design-history researchers",
+    "trace_publication": "TRACE Preview — Evidence Navigation; no accepted semantic relations",
+    "two_week_status": "GO_NARROW",
+    "corpus_growth": "STOP_UNTARGETED_GROWTH_CLEAN_AND_MEASURE_FIRST",
+    "implementation_executed": false
+  },
+  "agent_reports": [
+    "agents/A1_ACADEMIC_POSITIONING.md",
+    "agents/A2_TRACE_EPISTEMIC_MODEL.md",
+    "agents/A3_ARCHIVE_AND_STANDARD_COMPARISON.md",
+    "agents/A4_CORPUS_SCOPE_AND_GROWTH.md",
+    "agents/B1_COMPETITIVE_ARCHIVE_LANDSCAPE.md",
+    "agents/B2_VISUAL_ANALYTICS_AND_PRODUCT_MODEL.md",
+    "agents/B3_EDUCATION_MACHINE_AND_PUBLIC_USE.md",
+    "agents/B4_PORTFOLIO_COMPETITIVE_RED_TEAM.md"
+  ],
+  "comparison_project_count": 15,
+  "source_register_rows": 29,
+  "known_limits": [
+    "No accepted TRACE relations are published.",
+    "No positive visual rights coverage is established.",
+    "No deployed product, API, database, browser or accessibility test was run.",
+    "Competitor UNKNOWN values are documentation limits, not negative findings."
+  ]
+}
