@@ -1,0 +1,33 @@
+P0 stop was reached before a database, Next server, Chrome instance, or
+Puppeteer context was started.
+
+The local capability scan found PostgreSQL 16.13 and an executable Google
+Chrome. The requested `puppeteer-core@25.1.0` package install was initiated
+without browser download, then stopped after the P0 conclusion; exact tracked
+files `frontend/package.json` and `frontend/package-lock.json` remained
+unchanged.
+
+No task-owned PostgreSQL, Next, browser, TypeScript, importer, or npm process
+remained at receipt time.
+
+```text
+FORWARD_ONLY_API_MIGRATION=false
+HISTORICAL_MIGRATION_EDITED=false
+EMPTY_SCHEMA_REPLAY_COUNT=0
+SEALED_FIXTURE_OBJECT_COUNT=0
+MINIMAL_RESEARCH_RELEASE_COUNT=0
+MINIMAL_RESEARCH_SEAL_CALL_COUNT=0
+INITIAL_CURRENT_CAS_CALL_COUNT=0
+VISUAL_RELEASE_COUNT=0
+FULL_SEAL_CAS_SUITE_RERUN=false
+FULL_NEXT_BUILD_RUN=false
+FULL_POPULATION_REPLAY_RUN=false
+EXTRACTOR_RERUN=false
+STAGING_ACCESSED=false
+PRODUCTION_DATABASE_TOUCHED=false
+STABLE_BRANCH_TOUCHED=false
+PROTECTED_MAIN_TOUCHED_BY_TASK=false
+PR_CREATED=false
+MERGED=false
+DEPLOYED=false
+```

@@ -1,0 +1,18 @@
+{
+  "package": "v49-runtime-acceptance-closure",
+  "baseCommit": "64de7ab1ccc190b433266e3a793b9ff7d4c06016",
+  "kind": "additive-p0-checkpoint",
+  "historicalRuntimeAuditRewritten": false,
+  "status": "PARTIAL_CHECKPOINTED",
+  "artifacts": [
+    "00_EXECUTIVE_RECEIPT.md",
+    "01_FIXED_START_RECEIPT.md",
+    "02_SEALED_FOLDER_MEMBERSHIP_P0.md",
+    "03_SCOPE_AND_PROCESS_RECEIPT.txt",
+    "04_UNRUN_GATE_LEDGER.tsv",
+    "agents/A1_projection_adapter_audit.md",
+    "agents/B1_independent_p0_verifier.md"
+  ],
+  "manifestMissingPathCount": 0,
+  "ignoredEvidencePathCount": 0
+}
