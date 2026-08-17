@@ -1,0 +1,18 @@
+{
+  "checksumScope": "all package files except CHECKSUMS.sha256; MANIFEST.json is included in CHECKSUMS and does not self-hash",
+  "files": [
+    {"bytes": 1264, "path": "00_EXECUTIVE_PERFORMANCE_CHECKPOINT.md", "sha256": "bd643d166127b8790aba846238c0fc2b402e904653137cd8261a6d839d1000bf"},
+    {"bytes": 708, "path": "01_FIXED_START_AND_BOUNDARY.md", "sha256": "363f14494f2f176a6be1bb67b39eb28b7dfc9956ac7083de7f71dec1c2d174db"},
+    {"bytes": 1263, "path": "02_FORWARD_ONLY_CORRECTIONS.md", "sha256": "363a1807af5a9ec6aafe1bde3cf3cc0cccb3e84fddaa014b80000ce0203e44bf"},
+    {"bytes": 861, "path": "03_FOCUSED_32_RECEIPT.txt", "sha256": "475e6163ee68214cb797429717b1c3bb13967ec8fddb6efdc93683f34cfc8b4d"},
+    {"bytes": 686, "path": "04_PERFORMANCE_STOP_RECEIPT.txt", "sha256": "c1b037b57b45d7e10313d08fa153dd020b6a708d090fed7767263356bb975f3f"},
+    {"bytes": 453, "path": "05_ZERO_RESIDUE_RECEIPT.txt", "sha256": "fcf140276b9a83e539cc9dd1d4c9dc0a9cf2c5c2dc83c0d3b2ec23aba09349e6"},
+    {"bytes": 602, "path": "06_UNRUN_GATES.md", "sha256": "deee1574bd406c4d2f6ba1d2c589898b329c3d8fc179e7ec99b41d03b1e155fc"},
+    {"bytes": 342, "path": "07_SELF_CONTAINED_CHECK.txt", "sha256": "c402bba2a586a805c8ea5b7aca5e24f2805b8de0478587c11f55e5756ac80842"},
+    {"bytes": 8546, "path": "agents/A1_schema_fixture_audit.md", "sha256": "a2482ee309c7472b0cd65d902bc5f7fec3ee53f3d971c403c57e6d90ab6ea5b3"},
+    {"bytes": 15860, "path": "agents/A2_negative_concurrency_audit.md", "sha256": "6a9d32ab0933e827d06a783f8067a9ea960767754e8352ece420845237100fdc"},
+    {"bytes": 5234, "path": "agents/B1_final_checkpoint_verifier.md", "sha256": "75366f6ed41cf74b536561a71da7d03acac8aa0123c9fe498d78e8c6612b1717"}
+  ],
+  "phaseStatus": "PARTIAL_PERFORMANCE_CHECKPOINT",
+  "schema": "gda-v49-release-projection-snapshot-closure-audit-manifest/v1"
+}

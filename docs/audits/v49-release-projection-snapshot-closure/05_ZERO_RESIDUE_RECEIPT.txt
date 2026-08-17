@@ -1,0 +1,13 @@
+After each cancelled 8000-object builder the disposable scale database was queried:
+
+SELECT count(*) FROM release.research_release_object;
+SELECT count(*) FROM release.research_launch_build_receipt_v3;
+
+Observed result after the final cancellation:
+
+0
+0
+
+The builder transaction rolled back.  No task-owned parent release, projection
+row, build receipt, protocol marker, candidate event, or current pointer was
+committed by the cancelled scale attempt.

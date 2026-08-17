@@ -1,0 +1,12 @@
+SCALE=8000 objects / 24107 memberships
+BUILDER_BUDGET_SECONDS=180
+ATTEMPT_1=historical aggregate JCS component hashing; cancelled after budget breach
+ATTEMPT_2=per-row JCS stream hashing; cancelled before budget breach
+ATTEMPT_3=PostgreSQL 16 ordered jsonb-array stream hashing plus v4 assignment/decision hashes and source indexes; cancelled at budget
+ACTIVE_BACKEND=task-owned only
+CANCEL_METHOD=pg_cancel_backend(pid) on the identified disposable-cluster session
+LAST_OBSERVED_CONTEXT=bidirectional release-object EXCEPT parity query
+RETRY_POLICY=No further retry: mandatory hard performance stop applied
+FULL_15923_47982_RUN=false
+CONCURRENCY_RUN=false
+PERFORMANCE_BUDGET_MET=false
