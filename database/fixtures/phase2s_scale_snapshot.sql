@@ -38,8 +38,11 @@ DO $shape$
 DECLARE v_objects integer:=current_setting('gda_phase2s.object_count')::integer;
   v_memberships integer:=current_setting('gda_phase2s.membership_count')::integer;
 BEGIN
-  IF v_objects NOT IN (8000,15923)
-    OR v_memberships <> 3*v_objects + (CASE WHEN v_objects=8000 THEN 107 ELSE 213 END) THEN
+  IF v_objects NOT IN (32,1000,2000,4000,8000,15923)
+    OR v_memberships <> 3*v_objects + (CASE
+      WHEN v_objects=15923 THEN 213
+      ELSE least(v_objects,107)
+    END) THEN
     RAISE EXCEPTION USING ERRCODE='22023', MESSAGE='PHASE2S_SCALE_SHAPE_NOT_AUTHORIZED';
   END IF;
 END
