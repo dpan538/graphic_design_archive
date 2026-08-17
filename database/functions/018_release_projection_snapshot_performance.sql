@@ -159,6 +159,37 @@ CREATE FUNCTION release.research_launch_component_hash_v5(
   )::text,'UTF8')),'hex')::core.sha256_hex
 $function$;
 
+-- Builder-only fast path.  The same semantic row digest as the public v5
+-- verifier is materialised exactly once, then each component reads its own
+-- bounded ordered stream.  Candidate validation still recomputes from
+-- release-owned rows through research_launch_component_hash_v5.
+CREATE FUNCTION release.research_launch_component_hash_staged_v5(p_component text)
+RETURNS core.sha256_hex LANGUAGE plpgsql VOLATILE SET search_path=pg_catalog AS $function$
+DECLARE v_hash core.sha256_hex;
+BEGIN
+  WITH chunks AS (
+    SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count,
+      encode(sha256(convert_to(jsonb_build_object(
+        'format','gda-v49-research-component-chunk-v5','component',p_component,
+        'chunkSize',1024,'chunkOrdinal',((row_number-1)/1024)::bigint,
+        'rowDigests',jsonb_agg(row_digest ORDER BY row_number)
+      )::text,'UTF8')),'hex') AS chunk_digest
+    FROM (
+      SELECT row_number() OVER (ORDER BY semantic_key) AS row_number,row_digest
+      FROM pg_temp.gda_v5_component_rows WHERE component_code=p_component
+    ) rows GROUP BY ((row_number-1)/1024)
+  )
+  SELECT encode(sha256(convert_to(jsonb_build_object(
+    'format','gda-v49-research-component-merkle-v5','component',p_component,
+    'rowCount',coalesce((SELECT sum(chunk_row_count) FROM chunks),0),
+    'chunkSize',1024,
+    'chunks',coalesce((SELECT jsonb_agg(jsonb_build_array(chunk_ordinal,chunk_row_count,chunk_digest)
+      ORDER BY chunk_ordinal) FROM chunks),'[]'::jsonb)
+  )::text,'UTF8')),'hex')::core.sha256_hex INTO v_hash;
+  RETURN v_hash;
+END
+$function$;
+
 CREATE FUNCTION release.research_launch_component_manifest_sha_v5(p_release_id uuid)
 RETURNS core.sha256_hex LANGUAGE sql STABLE SET search_path=pg_catalog AS $function$
   SELECT release.canonical_jsonb_sha256(jsonb_build_object(
@@ -358,8 +389,23 @@ BEGIN
   FROM (VALUES ('proposed'),('accepted'),('rejected'),('superseded')) x(disposition)
   LEFT JOIN provenance.canonical_assignment a ON a.assignment_kind='folder_membership' AND a.status::text=x.disposition
   GROUP BY x.disposition;
+  CREATE TEMPORARY TABLE gda_v5_component_rows(
+    component_code text NOT NULL,semantic_key text NOT NULL,row_digest core.sha256_hex NOT NULL
+  ) ON COMMIT DROP;
+  INSERT INTO gda_v5_component_rows
+  SELECT 'releaseObjects',archive_object_id::text,encode(sha256(convert_to(jsonb_build_array(archive_object_id,object_urn,legacy_surface_id,title,publication_layer,acceptance_state,workflow_state)::text,'UTF8')),'hex')::core.sha256_hex FROM release.research_release_object WHERE research_release_id=p_release_id
+  UNION ALL SELECT 'surfacePresentation',archive_object_id::text,encode(sha256(convert_to(jsonb_build_array(archive_object_id,public_surface_id,title,title_missingness,display_date,display_date_missingness,normalized_year,normalized_year_missingness,place_label,place_missingness,medium_label,medium_missingness,type_label,type_missingness,source_label,description,description_missingness,public_citation_label,public_source_route,publication_layer)::text,'UTF8')),'hex')::core.sha256_hex FROM release.research_surface_presentation_projection_v3 WHERE research_release_id=p_release_id
+  UNION ALL SELECT 'surfaceCredits',archive_object_id::text||':'||lpad(credit_ordinal::text,12,'0'),encode(sha256(convert_to(jsonb_build_array(archive_object_id,credit_ordinal,credited_label,credit_role)::text,'UTF8')),'hex')::core.sha256_hex FROM release.research_surface_credit_projection_v3 WHERE research_release_id=p_release_id
+  UNION ALL SELECT 'surfaceCitations',archive_object_id::text||':'||lpad(citation_ordinal::text,12,'0'),encode(sha256(convert_to(jsonb_build_array(archive_object_id,citation_ordinal,citation_label,public_source_route)::text,'UTF8')),'hex')::core.sha256_hex FROM release.research_surface_citation_projection_v3 WHERE research_release_id=p_release_id
+  UNION ALL SELECT 'folderTypes',lpad(sort_ordinal::text,12,'0')||':'||folder_type_code,encode(sha256(convert_to(jsonb_build_array(folder_type_code,type_label,sort_ordinal)::text,'UTF8')),'hex')::core.sha256_hex FROM release.research_folder_type_projection_v3 WHERE research_release_id=p_release_id
+  UNION ALL SELECT 'folders',folder_type_code||':'||lpad(sort_ordinal::text,12,'0')||':'||folder_id::text,encode(sha256(convert_to(jsonb_build_array(folder_id,folder_token,folder_type_code,slug,label,scope_note,sort_ordinal)::text,'UTF8')),'hex')::core.sha256_hex FROM release.research_folder_projection_v3 WHERE research_release_id=p_release_id
+  UNION ALL SELECT 'folderMemberships',folder_id::text||':'||membership_role||':'||lpad(member_ordinal::text,12,'0')||':'||archive_object_id::text,encode(sha256(convert_to(jsonb_build_array(folder_id,archive_object_id,source_assignment_id,membership_role,member_ordinal,source_assignment_status,source_assignment_snapshot_sha256,effective_decision_id,effective_decision_snapshot_sha256)::text,'UTF8')),'hex')::core.sha256_hex FROM release.research_folder_membership_projection_v3 WHERE research_release_id=p_release_id
+  UNION ALL SELECT 'searchDocuments',sort_key||':'||archive_object_id::text,encode(sha256(convert_to(jsonb_build_array(archive_object_id,public_surface_id,title,search_document,sort_key)::text,'UTF8')),'hex')::core.sha256_hex FROM release.research_search_document_projection_v3 WHERE research_release_id=p_release_id
+  UNION ALL SELECT 'corpusSummary',corpus_version_id::text,encode(sha256(convert_to(jsonb_build_array(corpus_version_id,corpus_token,corpus_version_token,corpus_label,eligible_object_count,held_object_count)::text,'UTF8')),'hex')::core.sha256_hex FROM release.research_corpus_summary_projection_v3 WHERE research_release_id=p_release_id
+  UNION ALL SELECT 'traceAvailability',research_release_id::text,encode(sha256(convert_to(jsonb_build_array(trace_eligible_object_count,trace_relation_count,availability_reason)::text,'UTF8')),'hex')::core.sha256_hex FROM release.research_trace_availability_projection_v3 WHERE research_release_id=p_release_id;
+  CREATE UNIQUE INDEX ON gda_v5_component_rows(component_code,semantic_key);
   INSERT INTO release.research_launch_component_manifest_v3
-  SELECT p_release_id,x.component_code,x.row_count,release.research_launch_component_hash_v5(p_release_id,x.component_code)
+  SELECT p_release_id,x.component_code,x.row_count,release.research_launch_component_hash_staged_v5(x.component_code)
   FROM (VALUES
     ('releaseObjects',(SELECT count(*) FROM release.research_release_object WHERE research_release_id=p_release_id)),
     ('surfacePresentation',(SELECT count(*) FROM release.research_surface_presentation_projection_v3 WHERE research_release_id=p_release_id)),
