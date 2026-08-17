@@ -1,0 +1,7 @@
+artifact	classification	binding	note
+docs/audits/v49-release-projection-snapshot-closure/CHECKSUMS.sha256	INHERITED	56d41d7	12/12 verified before worktree creation
+docs/audits/v49-release-projection-snapshot-closure/03_FOCUSED_32_RECEIPT.txt	HISTORICAL_ONLY	56d41d7	pre-v5 focused result; not final-tree PASS
+docs/audits/v49-release-projection-snapshot-closure/04_PERFORMANCE_STOP_RECEIPT.txt	INHERITED	56d41d7	historical v4 timeout/rollback fact
+docs/audits/v49-release-projection-snapshot-closure/05_ZERO_RESIDUE_RECEIPT.txt	HISTORICAL_ONLY	56d41d7	prior temporary-cluster cleanup only
+v5 current-leaf focused test	REPLACED	00241aa	final-tree test 008 pass; see 02 and 04
+v5 1k/2k scale measurements	REPLACED	00241aa	final-tree measurements; see 04 and 08

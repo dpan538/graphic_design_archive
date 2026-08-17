@@ -1,0 +1,9 @@
+scale	phase	query_sha256	plan_sha256	execution_ms	rows	loops	shared_hit	temp_read	temp_write	wal_bytes	note
+32	publishable_assignment_selection	374a013a60846e78ce1d190581c53a4157b8e1c2656e5ab9b3738903ae52437e	cbd49a1fa26953d0c0253c448ab68bfc188d34a8f38983bdc8173f992de684d8	38.172	128	1	1938	0	0	67	Function Scan
+1000	publishable_assignment_selection	374a013a60846e78ce1d190581c53a4157b8e1c2656e5ab9b3738903ae52437e	20bf5d38fb6843e2b007baebedcf6d8685ca21843069c32016d6c54244504dd8	3402.258	3107	1	2152	0	0	231	Function Scan
+2000	publishable_assignment_selection	374a013a60846e78ce1d190581c53a4157b8e1c2656e5ab9b3738903ae52437e	6c748abc27b2967d947cb0ce98ad1e2f3df4e064a7b1939016a1d0ae87107b55	19125.186	6107	1	2358	0	0	0	Function Scan
+
+`BEFORE_AFTER_INDEX_PLAN=UNVERIFIED`: the final plan is an opaque SQL Function
+Scan and the permitted two-remediation limit was reached before an internal
+plan decomposition could be added.  This is an explicit checkpoint gap, not a
+claimed index improvement.

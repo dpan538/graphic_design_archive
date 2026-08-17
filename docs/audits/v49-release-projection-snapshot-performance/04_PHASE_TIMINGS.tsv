@@ -1,0 +1,7 @@
+scale	memberships	fixture_wall_ms	analyze_wall_ms	publishable_plan_ms	builder_transaction_wall_ms	builder_budget_ms	result
+32	128	9926.302	2007.004	38.172	3505.257	30000	PASS
+1000	3107	91578.403	2500.600	3402.258	26111.103	45000	PASS
+2000	6107	262176.298	2787.591	19125.186	86370.397	75000	FAIL_GATE
+
+# `builder_transaction_wall_ms` is measured after fixture load and ANALYZE;
+# fixture/analyze/plan columns are deliberately recorded separately.

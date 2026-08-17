@@ -1,0 +1,14 @@
+{
+  "postgresVersion": "16.13",
+  "cluster": "disposable private PGDATA",
+  "listener": "Unix socket only",
+  "listenAddresses": "",
+  "port": 55483,
+  "productionDatabaseTouched": false,
+  "stagingAccessed": false,
+  "builderProtocol": "release-snapshot-v5",
+  "chunkSize": 1024,
+  "timeoutIncreased": false,
+  "constraintsDisabled": false,
+  "clusterRemovedAfterRun": true
+}

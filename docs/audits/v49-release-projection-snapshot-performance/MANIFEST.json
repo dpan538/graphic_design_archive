@@ -1,0 +1,130 @@
+{
+  "files": [
+    {
+      "bytes": 824,
+      "path": "00_EXECUTIVE_RECEIPT.md",
+      "sha256": "67cb9fed585546872570891fbfcef759e9592e1d324d129ff166477c6a728c11"
+    },
+    {
+      "bytes": 758,
+      "path": "01_INHERITED_EVIDENCE_LEDGER.tsv",
+      "sha256": "a257ecdbbbddcd8c08193a3b3eefe746a882bbf3d6193920016ebdf12b434470"
+    },
+    {
+      "bytes": 1042,
+      "path": "02_CORRECTNESS_ROOT_CAUSE.md",
+      "sha256": "85d8fd76d98ab3716db28d863ac5e77622ef79e11284e4021a293a8f9b4ad516"
+    },
+    {
+      "bytes": 377,
+      "path": "03_PROFILE_ENVIRONMENT.json",
+      "sha256": "c6e6bacfff832762fc2a1fd1195a0ac0b03421683e93b899901e9c6267a02371"
+    },
+    {
+      "bytes": 446,
+      "path": "04_PHASE_TIMINGS.tsv",
+      "sha256": "633002eda4178367b2ff84675b86e3545c8bb45addc8dbbcb7a2de2d0a665618"
+    },
+    {
+      "bytes": 995,
+      "path": "05_EXPLAIN_INDEX.tsv",
+      "sha256": "7c0d2bfe4f07cc01a3826d9e4145d162fa03c421653e0273e936f1606eeee3c5"
+    },
+    {
+      "bytes": 850,
+      "path": "06_PERFORMANCE_ROOT_CAUSE.md",
+      "sha256": "39b604f9d532426f4673269007ae8061729c7c07d61fecbe42f3ddb47a9a714b"
+    },
+    {
+      "bytes": 311,
+      "path": "07_CANDIDATE_EXPERIMENTS.tsv",
+      "sha256": "b00fd64a54787d9fad2e2204bca9221b38df95876fc240908dacf563e7447c42"
+    },
+    {
+      "bytes": 298,
+      "path": "08_POST_FIX_SCALE_LADDER.tsv",
+      "sha256": "c99cbaeef38c57ef6c2b905fb71be29631c29aded6e6ce603ec4f1c0749d0af5"
+    },
+    {
+      "bytes": 170,
+      "path": "09_SCALE_8000_RECEIPT.md",
+      "sha256": "e585930a43cd1c8c80e917111db1a5f168c0d14a137cecb5a88d58f038ab83aa"
+    },
+    {
+      "bytes": 186,
+      "path": "10_FRESH_A_RECEIPT.md",
+      "sha256": "34f04497f2270d52462d93d8a865680af322841b67b6d083bd8d80c1bba5a323"
+    },
+    {
+      "bytes": 140,
+      "path": "11_FRESH_B_RECEIPT.md",
+      "sha256": "e9d1b1139ff314784e9f186033ebd5a39cd6044dec1e5cffc2f5225b04b6482a"
+    },
+    {
+      "bytes": 162,
+      "path": "12_CONCURRENCY_RECEIPT.md",
+      "sha256": "a0353b92c02ce9c96152f9bcd1d77508011aa0d1dbc7ff9aadaa40ab07b690e1"
+    },
+    {
+      "bytes": 457,
+      "path": "13_FINAL_NEGATIVE_MATRIX.md",
+      "sha256": "7ef9205a1f638367f5e1da4980c9930a550fa6b28ca263174c4170412cd417d9"
+    },
+    {
+      "bytes": 832,
+      "path": "14_GIT_PROCESS_CLEANUP_RECEIPT.md",
+      "sha256": "492dfcbf3aa2b182ef3a5c0a98365a423dc4077fcee194c75c771e701673be0b"
+    },
+    {
+      "bytes": 429,
+      "path": "15_SELF_CONTAINED_RECEIPT.txt",
+      "sha256": "9a9123748a08684fb04429632789664e12d5a415b2849520b6208f7cecd36400"
+    },
+    {
+      "bytes": 8439,
+      "path": "agents/A1_current_leaf_correctness.md",
+      "sha256": "e036fc7f13a76eac539faa8e091d150296921b59e207e021882878966775afe6"
+    },
+    {
+      "bytes": 9050,
+      "path": "agents/A2_sql_complexity.md",
+      "sha256": "221f07b639c9a7b95d4b28fcc03c76999dfdb12c98ba970b9c2bf04f0e1471ce"
+    },
+    {
+      "bytes": 7965,
+      "path": "agents/A3_digest_design.md",
+      "sha256": "b3cec35244cb75150e036d9606d9704cf8c043aeabc2c12ac59621d080a62a91"
+    },
+    {
+      "bytes": 8499,
+      "path": "agents/B4_harness_scaling_audit.md",
+      "sha256": "43b4cd928756eaf52aee1078eb1163f2a0128e94cc12b24ac7312ae523a89cf2"
+    },
+    {
+      "bytes": 6488,
+      "path": "agents/B5_matrix_concurrency_audit.md",
+      "sha256": "6d90bdf72bc2169a412a8d1f5230b1ac9943fcd38dd54cd386ef0e809a44073a"
+    },
+    {
+      "bytes": 5349,
+      "path": "agents/B6_final_inheritance_audit.md",
+      "sha256": "bb67281197ee78a16c73646983d7dfa8ffd83bf8dbfd4ea33aaa2d2e86fb0739"
+    },
+    {
+      "bytes": 360,
+      "path": "plans/final-1000.json",
+      "sha256": "dc55db0b4ba02d5d621b318bfb69fd4748f40060c8945518eec6dc65faf8f083"
+    },
+    {
+      "bytes": 359,
+      "path": "plans/final-2000.json",
+      "sha256": "eefc57127d746199b27d96f5e7e2b7db8bd39669a69f2126a4495cf6d6d238ef"
+    },
+    {
+      "bytes": 354,
+      "path": "plans/final-32.json",
+      "sha256": "af538cc484e548df7370b29fe2bb4d5678d7d8c39d56859cceffae5688c77a5f"
+    }
+  ],
+  "schema": "phase2sp-performance-audit-v1"
+}

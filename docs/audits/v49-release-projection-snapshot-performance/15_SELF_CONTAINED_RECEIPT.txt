@@ -1,0 +1,10 @@
+PACKAGE_STATUS=PARTIAL_PERFORMANCE_CHECKPOINT
+MANIFEST_MISSING_PATH_COUNT=0
+MANIFEST_UNDECLARED_PATH_COUNT=0
+IGNORED_EVIDENCE_PATH_COUNT=0
+CHECKSUM_STATUS=26/26_PASS
+
+The final package contains 25 manifest-bound evidence files plus the
+manifest's own checksum.  It is generated only after this receipt's final
+content is present, then verified against the Git index with
+`verify_audit_package_self_contained.py --require-index`.

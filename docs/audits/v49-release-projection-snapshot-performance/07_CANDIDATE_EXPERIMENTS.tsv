@@ -1,0 +1,3 @@
+remediation_sha	protocol	change	result
+8940b1d	release-snapshot-v5	current-leaf anti-join; reverse indexes; set materialization; bounded 1024-row digest	32 pass; baseline 1k/2k p=1.696
+00241aa	release-snapshot-v5	stage component row digests once before component manifest	final 1k/2k p=1.725873519; gate failed
