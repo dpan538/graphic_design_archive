@@ -1,0 +1,63 @@
+{
+  "canonicalWriterOverlap": {
+    "acceptedOutcome": "serialization_failure_or_consistent_prestate",
+    "builderResult": {
+      "message": null,
+      "psqlExitCode": 0,
+      "state": "00000"
+    },
+    "databaseState": {
+      "canonicalAdditionCount": 1,
+      "projectedMembershipCount": 128,
+      "receiptCount": 1,
+      "releaseState": "candidate"
+    },
+    "pass": true,
+    "wallMs": 3034.336,
+    "writerExitCode": 0,
+    "writerStderr": ""
+  },
+  "controllerProcessCount": 1,
+  "database": "gda_v49_phase2a_concurrency4",
+  "differentRelease": {
+    "pass": true,
+    "results": [
+      {
+        "message": null,
+        "psqlExitCode": 0,
+        "state": "00000"
+      },
+      {
+        "message": null,
+        "psqlExitCode": 0,
+        "state": "00000"
+      }
+    ],
+    "wallMs": 90.758
+  },
+  "format": "v49-db-closure-concurrency-v1",
+  "pass": true,
+  "postgresSessionCount": 2,
+  "sameRelease": {
+    "databaseState": {
+      "candidateEventCount": 1,
+      "protocolCount": 1,
+      "receiptCount": 1,
+      "releaseState": "candidate"
+    },
+    "pass": true,
+    "results": [
+      {
+        "message": "could not serialize access due to concurrent update",
+        "psqlExitCode": 0,
+        "state": "40001"
+      },
+      {
+        "message": null,
+        "psqlExitCode": 0,
+        "state": "00000"
+      }
+    ],
+    "wallMs": 61.871
+  }
+}

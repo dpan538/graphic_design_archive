@@ -1,0 +1,14 @@
+{
+  "analyzeWallMs": 22.223,
+  "builderTransactionWallMs": 62.978,
+  "exitCode": 0,
+  "fixtureWallMs": 149.847,
+  "membershipCount": 128,
+  "planSha256": "a70bf01316eeb74d5f387698d90adb203c6c5b888b6b6b26dba24e9c164e703b",
+  "profilePlanWallMs": 27.335,
+  "scale": 32,
+  "stderr": "",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout": "BEGIN\nSET\n create_research_release \n-------------------------\n \n(1 row)\n\nRESET\n                                                                                                                                               jsonb_build_object                                                                                                                                                \n-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n {\"content\": \"60f5f6d55804417fdeed1337f14ac434228f17380de22c95959fc7f8f8dd8d16\", \"objectCount\": 32, \"membershipCount\": 128, \"componentManifest\": \"60f5f6d55804417fdeed1337f14ac434228f17380de22c95959fc7f8f8dd8d16\", \"candidateFingerprint\": \"5239d977e5f3879a3b2b7ea57c8ac80f1e19e0b4698430b674d0e80cd68405c5\"}\n(1 row)\n\nCOMMIT\nPHASE2SP_SCALE_V5=PASS\n",
+  "stdoutSha256": "200574d2467d399532e35923fe8b2e69a4cc608a1c8d7e1b4f7fe2e1873e5f8b"
+}

@@ -1,0 +1,63 @@
+{
+  "canonicalWriterOverlap": {
+    "acceptedOutcome": "serialization_failure_or_consistent_prestate",
+    "builderResult": {
+      "message": "RESEARCH_LAUNCH_V5_SOURCE_IDENTITY_NOT_RESOLVABLE",
+      "psqlExitCode": 0,
+      "state": "23514"
+    },
+    "databaseState": {
+      "canonicalAdditionCount": 0,
+      "projectedMembershipCount": 0,
+      "receiptCount": 0,
+      "releaseState": "draft"
+    },
+    "pass": false,
+    "wallMs": 546.559,
+    "writerExitCode": 3,
+    "writerStderr": "ERROR:  insert or update on table \"assignment_folder_membership\" violates foreign key constraint \"assignment_folder_membership_archive_object_id_fkey\"\nDETAIL:  Key (archive_object_id)=(a2000000-0000-4000-8000-000000001001) is not present in table \"archive_object\".\n"
+  },
+  "controllerProcessCount": 1,
+  "database": "gda_v49_phase2a_concurrency",
+  "differentRelease": {
+    "pass": false,
+    "results": [
+      {
+        "message": "RESEARCH_LAUNCH_V5_SOURCE_IDENTITY_NOT_RESOLVABLE",
+        "psqlExitCode": 0,
+        "state": "23514"
+      },
+      {
+        "message": "RESEARCH_LAUNCH_V5_SOURCE_IDENTITY_NOT_RESOLVABLE",
+        "psqlExitCode": 0,
+        "state": "23514"
+      }
+    ],
+    "wallMs": 19.834
+  },
+  "format": "v49-db-closure-concurrency-v1",
+  "pass": false,
+  "postgresSessionCount": 2,
+  "sameRelease": {
+    "databaseState": {
+      "candidateEventCount": 0,
+      "protocolCount": 0,
+      "receiptCount": 0,
+      "releaseState": "draft"
+    },
+    "pass": false,
+    "results": [
+      {
+        "message": "RESEARCH_LAUNCH_V5_SOURCE_IDENTITY_NOT_RESOLVABLE",
+        "psqlExitCode": 0,
+        "state": "23514"
+      },
+      {
+        "message": "RESEARCH_LAUNCH_V5_SOURCE_IDENTITY_NOT_RESOLVABLE",
+        "psqlExitCode": 0,
+        "state": "23514"
+      }
+    ],
+    "wallMs": 20.613
+  }
+}

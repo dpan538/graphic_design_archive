@@ -1,0 +1,63 @@
+{
+  "canonicalWriterOverlap": {
+    "acceptedOutcome": "serialization_failure_or_consistent_prestate",
+    "builderResult": {
+      "message": null,
+      "psqlExitCode": 0,
+      "state": "00000"
+    },
+    "databaseState": {
+      "canonicalAdditionCount": 1,
+      "projectedMembershipCount": 128,
+      "receiptCount": 1,
+      "releaseState": "candidate"
+    },
+    "pass": true,
+    "wallMs": 3031.782,
+    "writerExitCode": 0,
+    "writerStderr": ""
+  },
+  "controllerProcessCount": 1,
+  "database": "gda_v49_phase2a_concurrency3",
+  "differentRelease": {
+    "pass": false,
+    "results": [
+      {
+        "message": null,
+        "psqlExitCode": 0,
+        "state": "00000"
+      },
+      {
+        "message": "ERROR:  could not serialize access due to read/write dependencies among transactions\nDETAIL:  Reason code: Canceled on identification as a pivot, during commit attempt.\nHINT:  The transaction might succeed if retried.",
+        "psqlExitCode": 3,
+        "state": "HARNESS_ERROR"
+      }
+    ],
+    "wallMs": 62.208
+  },
+  "format": "v49-db-closure-concurrency-v1",
+  "pass": false,
+  "postgresSessionCount": 2,
+  "sameRelease": {
+    "databaseState": {
+      "candidateEventCount": 1,
+      "protocolCount": 1,
+      "receiptCount": 1,
+      "releaseState": "candidate"
+    },
+    "pass": true,
+    "results": [
+      {
+        "message": null,
+        "psqlExitCode": 0,
+        "state": "00000"
+      },
+      {
+        "message": "could not serialize access due to concurrent update",
+        "psqlExitCode": 0,
+        "state": "40001"
+      }
+    ],
+    "wallMs": 106.126
+  }
+}

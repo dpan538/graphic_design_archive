@@ -12,6 +12,7 @@ set -eu
 : "${GDA_PHASE2B_RUNTIME_DIR:?GDA_PHASE2B_RUNTIME_DIR must be task-owned scratch space}"
 : "${GDA_PHASE2B_IMPORT_RECEIPT:?GDA_PHASE2B_IMPORT_RECEIPT must name importer timing JSON}"
 : "${GDA_PHASE2B_REPORT:?GDA_PHASE2B_REPORT must name the verifier JSON output}"
+: "${GDA_PHASE2B_EXPECTED_SCHEMA:?GDA_PHASE2B_EXPECTED_SCHEMA must pin the final normalized schema hash}"
 
 case "$PGHOST" in /*) ;; *) echo 'PGHOST must be an absolute Unix socket directory' >&2; exit 64 ;; esac
 case "$PGPORT" in 5432) echo 'refusing PostgreSQL port 5432' >&2; exit 64 ;; esac
@@ -37,9 +38,11 @@ GDA_ADMIN_USER=${GDA_ADMIN_USER:-gda_v49_phase2b_admin}
   --runtime-dir "$GDA_PHASE2B_RUNTIME_DIR" \
   --log "$GDA_PHASE2B_RUNTIME_DIR/import-$PGDATABASE.log" \
   --receipt "$GDA_PHASE2B_IMPORT_RECEIPT" \
+  --expected-schema "$GDA_PHASE2B_EXPECTED_SCHEMA" \
   --constraint-timeout-seconds 1200
 "$GDA_PYTHON" "$GDA_REPO_ROOT/database/data-migrations/v48-to-v49/verify.py" \
   --pg-host "$PGHOST" --pg-port "$PGPORT" --database "$PGDATABASE" \
-  --admin-user "$GDA_ADMIN_USER" --output "$GDA_PHASE2B_REPORT"
+  --admin-user "$GDA_ADMIN_USER" --expected-schema "$GDA_PHASE2B_EXPECTED_SCHEMA" \
+  --output "$GDA_PHASE2B_REPORT"
 
 printf '%s\n' 'PHASE2B_REHEARSAL_REPLAY=PASS'
