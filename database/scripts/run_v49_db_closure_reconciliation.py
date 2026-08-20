@@ -111,7 +111,10 @@ SET ROLE gda_v49_phase2a_schema_owner;
 COPY (
   SELECT l.input_ordinal::text,l.surface_id,l.legacy_surface_ledger_id::text,
     l.source_record_id::text,l.archive_object_id::text,l.import_disposition::text,
-    l.reason_code,coalesce(cm.disposition::text,'') AS corpus_disposition,
+    l.reason_code,coalesce(
+      cm.disposition::text,
+      CASE WHEN d.fail_closed_delta_id IS NOT NULL THEN 'held' ELSE '' END
+    ) AS corpus_disposition,
     coalesce(d.fail_closed_delta_id::text,'') AS fail_closed_delta_id
   FROM raw.legacy_surface_ledger l
   LEFT JOIN research.corpus_membership cm ON cm.archive_object_id=l.archive_object_id
