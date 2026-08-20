@@ -1,0 +1,10 @@
+GDA_API_RESPONSE status=503 body={"type":"urn:gdarchive:problem:unavailable","title":"Read API unavailable","status":503,"code":"UNAVAILABLE","detail":"read query failed: ERROR:  syntax error at or near \":\"\nLINE 1: ...us WHERE channel = $1) gda_rows; EXECUTE gda_read(:'gda_valu...\n                                                             ^","instance":"/api/v1/releases/current/manifest"}
+file:///private/tmp/graphic_design_archive_v49_release_snapshot_db_closure/database/scripts/run_v49_db_closure_api_smoke.mjs:102
+function assert(condition, message) { if (!condition) throw new Error(message); }
+                                                            ^
+
+Error: current metadata mismatch
+    at assert (file:///private/tmp/graphic_design_archive_v49_release_snapshot_db_closure/database/scripts/run_v49_db_closure_api_smoke.mjs:102:61)
+    at file:///private/tmp/graphic_design_archive_v49_release_snapshot_db_closure/database/scripts/run_v49_db_closure_api_smoke.mjs:123:1
+
+Node.js v22.21.0

@@ -1,0 +1,40 @@
+Timing is on.
+BEGIN ISOLATION LEVEL SERIALIZABLE;
+BEGIN
+Time: 0.053 ms
+SET SESSION AUTHORIZATION gda_v49_phase2a_publisher;
+SET
+Time: 0.044 ms
+SELECT release.create_research_release(
+  'e4000000-0000-4000-8000-000000002000'::uuid, 'final32000'::core.release_token, 'schema-v49.0','model-v49.0',
+  'e4100000-0000-4000-8000-000000002000'::uuid, repeat('d',64));
+ create_research_release 
+-------------------------
+ 
+(1 row)
+
+Time: 3.329 ms
+SELECT release.build_research_launch_snapshot_v5(
+  'e4000000-0000-4000-8000-000000002000'::uuid,'a0000000-0000-4000-8000-000000000003',
+  'a8000000-0000-4000-8000-000000000010','e4200000-0000-4000-8000-000000002000'::uuid,repeat('e',64)) AS candidate_fingerprint 
+Time: 6331.871 ms (00:06.332)
+RESET SESSION AUTHORIZATION;
+RESET
+Time: 0.033 ms
+SELECT jsonb_build_object(
+  'objectCount',(SELECT count(*) FROM release.research_release_object WHERE research_release_id='e4000000-0000-4000-8000-000000002000'::uuid),
+  'membershipCount',(SELECT count(*) FROM release.research_folder_membership_projection_v3 WHERE research_release_id='e4000000-0000-4000-8000-000000002000'::uuid),
+  'componentManifest',release.research_launch_component_manifest_sha_v5('e4000000-0000-4000-8000-000000002000'::uuid),
+  'candidateFingerprint','727fa992cdb148786ea24dfdaf7ce90cf951d38fea10f048836d7d44aa8c21f0',
+  'content',(SELECT projection_content_sha256 FROM release.research_launch_build_receipt_v3 WHERE research_release_id='e4000000-0000-4000-8000-000000002000'::uuid)
+)::text;
+                                                                                                                                                 jsonb_build_object                                                                                                                                                 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ {"content": "3d97c8af78b7e692924f75d4d594e188d5b09b22c140f1ded8d90e014196fe3b", "objectCount": 2000, "membershipCount": 6107, "componentManifest": "3d97c8af78b7e692924f75d4d594e188d5b09b22c140f1ded8d90e014196fe3b", "candidateFingerprint": "727fa992cdb148786ea24dfdaf7ce90cf951d38fea10f048836d7d44aa8c21f0"}
+(1 row)
+
+Time: 1.380 ms
+COMMIT;
+COMMIT
+Time: 3.314 ms
+PHASE2SP_SCALE_V5=PASS

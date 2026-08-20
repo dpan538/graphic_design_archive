@@ -1,0 +1,222 @@
+PHASE2B_BACKEND_PID|86939
+Time: 0.220 ms
+Time: 0.043 ms
+Time: 0.030 ms
+Time: 0.012 ms
+Time: 0.016 ms
+Time: 0.075 ms
+Time: 0.055 ms
+Time: 0.019 ms
+Time: 0.080 ms
+Time: 0.059 ms
+Time: 0.018 ms
+Time: 0.020 ms
+Time: 0.074 ms
+Time: 1.543 ms
+Time: 0.609 ms
+Time: 0.516 ms
+Time: 0.549 ms
+Time: 0.470 ms
+Time: 0.566 ms
+Time: 0.508 ms
+Time: 0.634 ms
+Time: 0.615 ms
+Time: 0.574 ms
+Time: 1.037 ms
+Time: 0.710 ms
+Time: 0.703 ms
+Time: 0.596 ms
+Time: 0.490 ms
+Time: 0.468 ms
+Time: 0.489 ms
+Time: 0.497 ms
+Time: 0.498 ms
+Time: 0.526 ms
+Time: 0.468 ms
+Time: 0.513 ms
+Time: 0.496 ms
+Time: 0.482 ms
+Time: 0.484 ms
+Time: 0.472 ms
+Time: 0.560 ms
+Time: 0.564 ms
+Time: 0.314 ms
+Time: 0.950 ms
+Time: 0.052 ms
+Time: 0.114 ms
+PHASE2B_STAGE_BEGIN|COPY|2026-08-21 01:47:00.511658+10|0/516B8000
+Time: 4695.008 ms (00:04.695)
+Time: 3.662 ms
+Time: 0.167 ms
+Time: 6564.025 ms (00:06.564)
+Time: 3479.615 ms (00:03.480)
+Time: 11.362 ms
+Time: 17.764 ms
+Time: 30.654 ms
+Time: 11.372 ms
+Time: 40.642 ms
+Time: 1.066 ms
+Time: 54.909 ms
+Time: 0.277 ms
+Time: 22.216 ms
+Time: 11.135 ms
+Time: 0.392 ms
+Time: 0.343 ms
+Time: 9.694 ms
+Time: 13.209 ms
+Time: 20.396 ms
+Time: 14.563 ms
+Time: 37.189 ms
+Time: 19.144 ms
+Time: 19.352 ms
+Time: 20.301 ms
+Time: 25.023 ms
+Time: 13.841 ms
+Time: 22.015 ms
+PHASE2B_STAGE_END|COPY|wall_seconds=15.167754|wal_bytes=386848|rows=3957270|bytes=1245479023
+Time: 310.471 ms
+Time: 0.548 ms
+Time: 0.923 ms
+Time: 0.401 ms
+Time: 0.045 ms
+PHASE2B_STAGE_BEGIN|DURABLE_INSERTS|2026-08-20 15:47:15.987797+00|0/51716720
+Time: 4384.624 ms (00:04.385)
+Time: 1.656 ms
+Time: 5.736 ms
+Time: 8416.160 ms (00:08.416)
+Time: 60366.168 ms (01:00.366)
+Time: 45.293 ms
+Time: 225.835 ms
+Time: 452.538 ms
+PHASE2B_MID_OBJECT_SUBSET_ROWS=8000
+Time: 0.987 ms
+
+Time: 1.212 ms
+Time: 240.829 ms
+Time: 449.612 ms
+Time: 253.103 ms
+Time: 545.559 ms
+Time: 8.169 ms
+Time: 408.428 ms
+Time: 1002.086 ms (00:01.002)
+Time: 333.770 ms
+Time: 298.174 ms
+
+Time: 0.089 ms
+Time: 1.011 ms
+Time: 2.703 ms
+Time: 182.406 ms
+Time: 118.434 ms
+
+Time: 0.100 ms
+Time: 771.635 ms
+Time: 278.138 ms
+Time: 780.735 ms
+Time: 126.573 ms
+Time: 180.803 ms
+Time: 220.645 ms
+Time: 185.632 ms
+Time: 224.603 ms
+Time: 254.270 ms
+Time: 298.562 ms
+Time: 183.699 ms
+Time: 175.762 ms
+Time: 365.625 ms
+Time: 363.799 ms
+
+Time: 0.085 ms
+PHASE2B_STAGE_END|DURABLE_INSERTS|wall_seconds=82.160394|wal_bytes=2421070048|rows=3829784
+Time: 112.354 ms
+Time: 0.077 ms
+PHASE2B_STAGE_BEGIN|PARITY|2026-08-20 15:48:38.259872+00|0/E1DE4000
+Time: 497.463 ms
+PHASE2B_STAGE_END|PARITY|wall_seconds=0.497702|wal_bytes=0|rows=15923
+Time: 0.121 ms
+
+Time: 0.038 ms
+Time: 0.102 ms
+PHASE2B_STAGE_BEGIN|TARGETED_ANALYZE|2026-08-20 15:48:38.75768+00|0/E1DE4000
+Time: 1.521 ms
+Time: 27.486 ms
+Time: 3.493 ms
+Time: 13.961 ms
+Time: 12.126 ms
+Time: 21.623 ms
+Time: 15.399 ms
+Time: 43.880 ms
+Time: 19.542 ms
+Time: 6.820 ms
+Time: 11.973 ms
+Time: 10.861 ms
+Time: 10.298 ms
+Time: 8.678 ms
+Time: 10.123 ms
+Time: 6.198 ms
+Time: 10.144 ms
+PHASE2B_STAGE_END|TARGETED_ANALYZE|wall_seconds=0.234705|wal_bytes=81920|rows=15923
+Time: 0.103 ms
+20min
+Time: 0.244 ms
+Time: 0.027 ms
+PHASE2B_CONSTRAINT_BEGIN|raw_core_cycle|2026-08-20 15:48:38.992696+00|0/E1DF8000
+Time: 1461.996 ms (00:01.462)
+PHASE2B_CONSTRAINT_END|raw_core_cycle|wall_seconds=1.462206|wal_bytes=163840
+Time: 0.138 ms
+Time: 0.029 ms
+PHASE2B_CONSTRAINT_BEGIN|folder_assignment_shape|2026-08-20 15:48:40.454964+00|0/E1E20000
+Time: 9688.045 ms (00:09.688)
+PHASE2B_CONSTRAINT_END|folder_assignment_shape|wall_seconds=9.688372|wal_bytes=2792
+Time: 0.096 ms
+Time: 0.025 ms
+PHASE2B_CONSTRAINT_BEGIN|visual_bridge_and_locator|2026-08-20 15:48:50.143388+00|0/E1E20AE8
+Time: 512.456 ms
+PHASE2B_CONSTRAINT_END|visual_bridge_and_locator|wall_seconds=0.512618|wal_bytes=0
+Time: 0.112 ms
+Time: 0.066 ms
+PHASE2B_CONSTRAINT_BEGIN|rights_observation|2026-08-20 15:48:50.656104+00|0/E1E20AE8
+Time: 1200.066 ms (00:01.200)
+PHASE2B_CONSTRAINT_END|rights_observation|wall_seconds=1.200252|wal_bytes=0
+Time: 0.111 ms
+Time: 0.044 ms
+PHASE2B_CONSTRAINT_BEGIN|rights_assessment_shape_support|2026-08-20 15:48:51.856429+00|0/E1E20AE8
+Time: 3085.233 ms (00:03.085)
+PHASE2B_CONSTRAINT_END|rights_assessment_shape_support|wall_seconds=3.085434|wal_bytes=0
+Time: 0.096 ms
+Time: 0.068 ms
+PHASE2B_CONSTRAINT_BEGIN|rights_assessment_current_leaf|2026-08-20 15:48:54.941954+00|0/E1E20AE8
+Time: 217.077 ms
+PHASE2B_CONSTRAINT_END|rights_assessment_current_leaf|wall_seconds=0.217226|wal_bytes=0
+Time: 0.100 ms
+Time: 0.056 ms
+PHASE2B_CONSTRAINT_BEGIN|provider_policy|2026-08-20 15:48:55.159267+00|0/E1E20AE8
+Time: 737.299 ms
+PHASE2B_CONSTRAINT_END|provider_policy|wall_seconds=0.737479|wal_bytes=0
+Time: 0.133 ms
+Time: 0.036 ms
+PHASE2B_CONSTRAINT_BEGIN|delivery_parent_validation|2026-08-20 15:48:55.896843+00|0/E1E20AE8
+Time: 2473.861 ms (00:02.474)
+PHASE2B_CONSTRAINT_END|delivery_parent_validation|wall_seconds=2.474048|wal_bytes=0
+Time: 0.095 ms
+Time: 0.026 ms
+PHASE2B_CONSTRAINT_BEGIN|delivery_rights_validation|2026-08-20 15:48:58.370944+00|0/E1E20AE8
+Time: 2418.611 ms (00:02.419)
+PHASE2B_CONSTRAINT_END|delivery_rights_validation|wall_seconds=2.418795|wal_bytes=90192
+Time: 0.102 ms
+Time: 0.069 ms
+PHASE2B_CONSTRAINT_BEGIN|delivery_policy_validation|2026-08-20 15:49:00.789834+00|0/E1E36B38
+Time: 2452.299 ms (00:02.452)
+PHASE2B_CONSTRAINT_END|delivery_policy_validation|wall_seconds=2.453500|wal_bytes=0
+Time: 0.088 ms
+Time: 0.033 ms
+PHASE2B_CONSTRAINT_BEGIN|delivery_history_and_rule|2026-08-20 15:49:03.243391+00|0/E1E36B38
+Time: 623.630 ms
+PHASE2B_CONSTRAINT_END|delivery_history_and_rule|wall_seconds=0.623852|wal_bytes=0
+Time: 0.138 ms
+Time: 0.029 ms
+PHASE2B_CONSTRAINT_BEGIN|final_all_omission_check|2026-08-20 15:49:03.867306+00|0/E1E36B38
+Time: 0.083 ms
+PHASE2B_CONSTRAINT_END|final_all_omission_check|wall_seconds=0.000169|wal_bytes=0
+Time: 0.049 ms
+Time: 318.589 ms
+PHASE2B_TRANSACTION_COMMITTED|true
+Time: 1.350 ms

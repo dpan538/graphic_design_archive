@@ -1,0 +1,9 @@
+file:///private/tmp/graphic_design_archive_v49_release_snapshot_db_closure/database/scripts/run_v49_db_closure_api_smoke.mjs:102
+function assert(condition, message) { if (!condition) throw new Error(message); }
+                                                            ^
+
+Error: current metadata mismatch
+    at assert (file:///private/tmp/graphic_design_archive_v49_release_snapshot_db_closure/database/scripts/run_v49_db_closure_api_smoke.mjs:102:61)
+    at file:///private/tmp/graphic_design_archive_v49_release_snapshot_db_closure/database/scripts/run_v49_db_closure_api_smoke.mjs:123:1
+
+Node.js v22.21.0

@@ -1,0 +1,23 @@
+{
+    "exists": false,
+    "target": "provenance.canonical_assignment_publishable_v5_idx",
+    "database": "gda_v49_phase2a_final3_full_a",
+    "apiReferenceCount": 0,
+    "sealedReleaseCount": 0,
+    "functionReferenceCount": 0,
+    "currentLeafIndexesPresent": true,
+    "remainingComparisonIndexes": [
+        {
+            "name": "assignment_review_decision_current_leaf_v5_idx",
+            "definition": "CREATE INDEX assignment_review_decision_current_leaf_v5_idx ON provenance.assignment_review_decision USING btree (supersedes_decision_id) WHERE (supersedes_decision_id IS NOT NULL)"
+        },
+        {
+            "name": "canonical_assignment_current_leaf_v5_idx",
+            "definition": "CREATE INDEX canonical_assignment_current_leaf_v5_idx ON provenance.canonical_assignment USING btree (supersedes_assignment_id) WHERE (supersedes_assignment_id IS NOT NULL)"
+        },
+        {
+            "name": "canonical_assignment_launch_v4_selection_idx",
+            "definition": "CREATE INDEX canonical_assignment_launch_v4_selection_idx ON provenance.canonical_assignment USING btree (assignment_kind, status, supersedes_assignment_id, canonical_assignment_id)"
+        }
+    ]
+}

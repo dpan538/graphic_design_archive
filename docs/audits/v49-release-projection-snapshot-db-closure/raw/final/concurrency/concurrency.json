@@ -1,0 +1,87 @@
+{
+  "canonicalWriterOverlap": {
+    "acceptedOutcome": "serialization_failure_or_consistent_prestate",
+    "builderResult": {
+      "backendPid": 4334,
+      "message": null,
+      "psqlExitCode": 0,
+      "state": "00000"
+    },
+    "databaseState": {
+      "canonicalAdditionCount": 1,
+      "projectedMembershipCount": 128,
+      "receiptCount": 1,
+      "releaseState": "candidate"
+    },
+    "pass": true,
+    "wallMs": 3032.279,
+    "writerBarrier": {
+      "applicationName": "gda_v49_concurrency_writer",
+      "backendPid": 4330,
+      "state": "active",
+      "waitEvent": "PgSleep",
+      "waitEventType": "Timeout"
+    },
+    "writerExitCode": 0,
+    "writerStderr": ""
+  },
+  "controllerProcessCount": 1,
+  "database": "gda_v49_phase2a_final3_concurrency",
+  "differentRelease": {
+    "pass": true,
+    "results": [
+      {
+        "backendPid": 4326,
+        "message": null,
+        "psqlExitCode": 0,
+        "state": "00000"
+      },
+      {
+        "backendPid": 4325,
+        "message": null,
+        "psqlExitCode": 0,
+        "state": "00000"
+      }
+    ],
+    "wallMs": 99.941
+  },
+  "format": "v49-db-closure-concurrency-v1",
+  "pass": true,
+  "postgresSessionCountPeak": 2,
+  "postgresSessionRoles": [
+    "publisher-builder",
+    "schema-owner-canonical-writer",
+    "read-only-barrier"
+  ],
+  "sameRelease": {
+    "databaseState": {
+      "candidateEventCount": 1,
+      "protocolCount": 1,
+      "receiptCount": 1,
+      "releaseState": "candidate"
+    },
+    "pass": true,
+    "results": [
+      {
+        "backendPid": 4320,
+        "message": null,
+        "psqlExitCode": 0,
+        "state": "00000"
+      },
+      {
+        "backendPid": 4319,
+        "message": "could not serialize access due to concurrent update",
+        "psqlExitCode": 0,
+        "state": "40001"
+      }
+    ],
+    "wallMs": 58.563
+  },
+  "timeouts": {
+    "barrierSeconds": 15,
+    "lockSeconds": 30,
+    "statementSeconds": 120,
+    "wholeHarnessSeconds": 300
+  },
+  "wholeHarnessMs": 3352.423
+}

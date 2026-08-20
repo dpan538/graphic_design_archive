@@ -1,0 +1,2523 @@
+{
+  "after": {
+    "1000": {
+      "instrumentedBuilderWallMs": 422.382,
+      "memberships": 3107,
+      "outerBuilderPlanMs": 397.866,
+      "resourceAfter": {
+        "activeWriters": 0,
+        "blksHit": 1249543,
+        "blksRead": 0,
+        "capturedAt": "2026-08-21T01:29:25.641992+10:00",
+        "database": "gda_v49_phase2a_final_profile_1000",
+        "otherDatabaseSessions": 0,
+        "settings": {
+          "effectiveCacheSize": "4GB",
+          "jit": "on",
+          "maintenanceWorkMem": "64MB",
+          "maxParallelWorkersPerGather": "2",
+          "serverVersion": "16.13 (Homebrew)",
+          "sharedBuffers": "128MB",
+          "trackIoTiming": "off",
+          "workMem": "4MB"
+        },
+        "tempBytes": 0,
+        "tempFiles": 0,
+        "walLsn": "0/3A101600",
+        "xactCommit": 25,
+        "xactRollback": 0
+      },
+      "resourceBefore": {
+        "activeWriters": 0,
+        "blksHit": 1471,
+        "blksRead": 0,
+        "capturedAt": "2026-08-21T01:29:23.468882+10:00",
+        "database": "gda_v49_phase2a_final_profile_1000",
+        "otherDatabaseSessions": 0,
+        "settings": {
+          "effectiveCacheSize": "4GB",
+          "jit": "on",
+          "maintenanceWorkMem": "64MB",
+          "maxParallelWorkersPerGather": "2",
+          "serverVersion": "16.13 (Homebrew)",
+          "sharedBuffers": "128MB",
+          "trackIoTiming": "off",
+          "workMem": "4MB"
+        },
+        "tempBytes": 0,
+        "tempFiles": 0,
+        "walLsn": "0/394763C8",
+        "xactCommit": 1,
+        "xactRollback": 0
+      },
+      "scale": 1000,
+      "stages": {
+        "analyze": {
+          "durationMs": 20.828,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 6,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "assignment_supersession_current_leaf": {
+          "durationMs": 80.692,
+          "fingerprints": [
+            {
+              "query": "CREATE TEMPORARY TABLE gda_v5_effective_decisions ON COMMIT DROP AS SELECT d.assignment_review_decision_id,d.canonical_assignment_id, encode(sha256(convert_to(jsonb_build_object('decision',jsonb_build_array( d.assignment_review_decision_id,",
+              "sha256": "5cda8482c327227d1d5680df46e6baf69d2b3d925de17c2fe47c7386fd544aaf"
+            },
+            {
+              "query": "CREATE TEMPORARY TABLE gda_v5_expected_memberships ON COMMIT DROP AS WITH current_assignment AS MATERIALIZED ( SELECT a.canonical_assignment_id,a.assignment_kind,a.status,a.supersedes_assignment_id FROM provenance.canonical_assignment a WHE",
+              "sha256": "5b5008e2ae20061688be46e60eb95cd1631eb933e40638ccd3c7fb5bb51e5541"
+            }
+          ],
+          "loops": 2,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "CTE Scan",
+            "Hash",
+            "Hash Join",
+            "Index Only Scan",
+            "Seq Scan",
+            "Sort"
+          ],
+          "queryCount": 2,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 6214,
+          "sharedHitBlocks": 265,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "canonical_assignment_load": {
+          "durationMs": 0.706,
+          "fingerprints": [
+            {
+              "query": "CREATE TEMPORARY TABLE gda_v5_expected_objects ON COMMIT DROP AS SELECT l.archive_object_id,l.surface_id,o.object_urn,o.preferred_label FROM raw.legacy_surface_ledger l JOIN core.archive_object o ON o.archive_object_id=l.archive_object_id J",
+              "sha256": "4f65d0eaa8d011e9a11b996a532ef1237bdffd067d6094f665e7145121cd0421"
+            }
+          ],
+          "loops": 1,
+          "plannerNodeTypes": [
+            "Hash",
+            "Hash Join",
+            "Seq Scan"
+          ],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 1000,
+          "sharedHitBlocks": 69,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "chunk_digest_calculation": {
+          "durationMs": 79.426,
+          "fingerprints": [
+            {
+              "query": "INSERT INTO gda_v5_component_rows SELECT 'releaseObjects',archive_object_id::text,encode(sha256(convert_to(jsonb_build_array(archive_object_id,object_urn,legacy_surface_id,title,publication_layer,acceptance_state,workflow_state)::text,'UTF8",
+              "sha256": "58b248e39fea5f1a9e767fd9ed373f642e19520903ff1157c5798152a8b906ee"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            }
+          ],
+          "loops": 3,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Append",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "CTE Scan",
+            "Index Scan",
+            "ModifyTable",
+            "Result",
+            "Sort",
+            "Subquery Scan",
+            "WindowAgg"
+          ],
+          "queryCount": 3,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 2,
+          "sharedHitBlocks": 325,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "final_digest_reduction": {
+          "durationMs": 10.248,
+          "fingerprints": [
+            {
+              "query": "INSERT INTO release.research_launch_component_manifest_v3 SELECT p_release_id,x.component_code,x.row_count,release.research_launch_component_hash_staged_v5(x.component_code) FROM (VALUES ('releaseObjects',(SELECT count(*) FROM release.resea",
+              "sha256": "aaec59c877eebe0d56fdc87b5140551d625285bb6995bf907da0b305095f1bd9"
+            }
+          ],
+          "loops": 1,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "Index Only Scan",
+            "ModifyTable",
+            "Values Scan"
+          ],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 571,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 2675
+        },
+        "fixture_input_preparation": {
+          "durationMs": 1613.741,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 1000,
+          "rowsOut": 3107,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "index_creation_or_maintenance_and_plpgsql_overhead": {
+          "durationMs": 81.563,
+          "fingerprints": [],
+          "loops": 0,
+          "note": "outer builder time minus all classified nested statements; includes two temporary indexes, advisory locks, trigger time, and PL/pgSQL scalar overhead",
+          "plannerNodeTypes": [],
+          "queryCount": 2,
+          "repeatedScans": 0,
+          "rowsIn": 3107,
+          "rowsOut": 3107,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "release_projection_build": {
+          "durationMs": 137.957,
+          "fingerprints": [
+            {
+              "query": "INSERT INTO release.research_release(research_release_id,release_token,release_state,schema_version,model_version,created_at,validation_profile_id,validation_boundary) VALUES(p_release_id,p_release_token,'draft',p_schema_version,p_model_ver",
+              "sha256": "97d184f4b011f87f05fcf043a7855b6971f2d99161b9c63eec3458726a09f6b7"
+            },
+            {
+              "query": "INSERT INTO release.research_release_object(research_release_id,archive_object_id,object_urn,legacy_surface_id,title,publication_layer,acceptance_state,workflow_state) SELECT p_release_id,archive_object_id,object_urn,surface_id,preferred_la",
+              "sha256": "e3cd84f2d2b230ee28706a12ded2bbc82abeff251f5470cd12bd74eda222f9a4"
+            },
+            {
+              "query": "INSERT INTO release.research_surface_presentation_projection_v3(research_release_id,archive_object_id,public_surface_id,title,title_missingness,display_date,display_date_missingness,normalized_year,normalized_year_missingness,place_label,pl",
+              "sha256": "e38f4929aefbd3c9d7697e8a7ea499954a810f850ef5a3cec16ebdb8fe499452"
+            },
+            {
+              "query": "INSERT INTO release.research_surface_citation_projection_v3 SELECT p_release_id,archive_object_id,0,public_citation_label,public_source_route FROM release.research_surface_presentation_projection_v3 WHERE research_release_id=p_release_id",
+              "sha256": "eb7a736f1a7ecf11a9de81ab2e734683cea6f8f4ea4a6754901d26281137015e"
+            },
+            {
+              "query": "INSERT INTO release.research_folder_membership_projection_v3 SELECT p_release_id,e.folder_id,e.archive_object_id,e.source_assignment_id,e.membership_role,e.member_ordinal, 'accepted',e.assignment_snapshot_sha256,e.effective_decision_id,e.de",
+              "sha256": "fe7be247e636f90b81e0514930c67cceebb7dd84fa2fd9606eb1a82e5ea8c21d"
+            },
+            {
+              "query": "INSERT INTO release.research_search_document_projection_v3 SELECT p_release_id,archive_object_id,public_surface_id,title,coalesce(title,'')||' '||source_label,coalesce(title,'')||' '||public_surface_id FROM release.research_surface_presenta",
+              "sha256": "035b6a77a267afbb00a755a294caf1f11625aa9e6f9ca051784be4290287eb8e"
+            },
+            {
+              "query": "INSERT INTO release.research_corpus_summary_projection_v3 SELECT p_release_id,cv.corpus_version_id,c.corpus_token,cv.version_token,c.label, count(*) FILTER (WHERE cm.disposition='eligible'),count(*) FILTER (WHERE cm.disposition='held') FROM",
+              "sha256": "da644db03998f0d1389eec4cf388dafb55e9b3fa5ec6eeec5509a50975af5522"
+            },
+            {
+              "query": "INSERT INTO release.research_launch_source_disposition_count_v3 SELECT p_release_id,'corpusMemberships',x.disposition,count(cm.*) FROM (VALUES ('eligible'),('held'),('rejected'),('excluded')) x(disposition) LEFT JOIN research.corpus_members",
+              "sha256": "d99ca33c81a5baaf19f411ed95769ef273f33dcf8633287b041b474f5e538102"
+            }
+          ],
+          "loops": 8,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Append",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "Hash",
+            "Hash Join",
+            "Index Scan",
+            "ModifyTable",
+            "Nested Loop",
+            "Result",
+            "Seq Scan",
+            "Values Scan"
+          ],
+          "queryCount": 8,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 89989,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 4788201
+        },
+        "reverse_index_construction": {
+          "durationMs": 0.0,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 0,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "sealing_finalization": {
+          "durationMs": 0.0,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 0,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "transaction_commit": {
+          "durationMs": 3.547,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "validation_reconciliation": {
+          "durationMs": 7.274,
+          "fingerprints": [
+            {
+              "query": "EXISTS (SELECT 1 FROM gda_v5_expected_memberships e LEFT JOIN research.folder_publication_metadata m ON m.folder_id=e.folder_id WHERE m.folder_id IS NULL)",
+              "sha256": "46b32a96cc73dfac9cf4e97358abbc9b9b7e1f2bb4c7cebb5beb73e0aeaa4e1b"
+            },
+            {
+              "query": "INSERT INTO release.research_folder_type_projection_v3 SELECT DISTINCT p_release_id,t.folder_type_code,t.type_label,t.type_sort_ordinal FROM research.folder_type_registry t JOIN research.folder_publication_metadata md ON md.folder_type_code",
+              "sha256": "0b05bb9514c89583dbedd892e46ad29eb4cdc89a08544fb8c0ed00d325acaa8f"
+            },
+            {
+              "query": "INSERT INTO release.research_folder_projection_v3 SELECT p_release_id,f.folder_id,f.folder_token,md.folder_type_code,md.slug,f.label,md.scope_note,md.folder_sort_ordinal FROM research.folder f JOIN research.folder_publication_metadata md ON",
+              "sha256": "ad290967039af01032b7e9a0d625e8ace35b0e911ad53e209805f6ed34307867"
+            },
+            {
+              "query": "(SELECT count(*) FROM gda_v5_expected_objects)<>(SELECT count(*) FROM release.research_release_object WHERE research_release_id=p_release_id) OR EXISTS (SELECT 1 FROM gda_v5_expected_objects e LEFT JOIN release.research_release_object r ON ",
+              "sha256": "b7247fa50aad91ce1945050132c072b48ba2a607dfac1e7ddf689ffc4ff9d0c7"
+            }
+          ],
+          "loops": 4,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "Hash",
+            "Hash Join",
+            "Index Only Scan",
+            "Index Scan",
+            "Merge Join",
+            "ModifyTable",
+            "Nested Loop",
+            "Result",
+            "Seq Scan"
+          ],
+          "queryCount": 4,
+          "repeatedScans": 2,
+          "rowsIn": 0,
+          "rowsOut": 2,
+          "sharedHitBlocks": 9736,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 3449
+        }
+      }
+    },
+    "2000": {
+      "instrumentedBuilderWallMs": 790.262,
+      "memberships": 6107,
+      "outerBuilderPlanMs": 760.37,
+      "resourceAfter": {
+        "activeWriters": 0,
+        "blksHit": 2447555,
+        "blksRead": 0,
+        "capturedAt": "2026-08-21T01:30:19.360835+10:00",
+        "database": "gda_v49_phase2a_final_profile_2000",
+        "otherDatabaseSessions": 0,
+        "settings": {
+          "effectiveCacheSize": "4GB",
+          "jit": "on",
+          "maintenanceWorkMem": "64MB",
+          "maxParallelWorkersPerGather": "2",
+          "serverVersion": "16.13 (Homebrew)",
+          "sharedBuffers": "128MB",
+          "trackIoTiming": "off",
+          "workMem": "4MB"
+        },
+        "tempBytes": 0,
+        "tempFiles": 0,
+        "walLsn": "0/3C3046F0",
+        "xactCommit": 25,
+        "xactRollback": 0
+      },
+      "resourceBefore": {
+        "activeWriters": 0,
+        "blksHit": 1471,
+        "blksRead": 0,
+        "capturedAt": "2026-08-21T01:30:15.18195+10:00",
+        "database": "gda_v49_phase2a_final_profile_2000",
+        "otherDatabaseSessions": 0,
+        "settings": {
+          "effectiveCacheSize": "4GB",
+          "jit": "on",
+          "maintenanceWorkMem": "64MB",
+          "maxParallelWorkersPerGather": "2",
+          "serverVersion": "16.13 (Homebrew)",
+          "sharedBuffers": "128MB",
+          "trackIoTiming": "off",
+          "workMem": "4MB"
+        },
+        "tempBytes": 0,
+        "tempFiles": 0,
+        "walLsn": "0/3AA40D58",
+        "xactCommit": 1,
+        "xactRollback": 0
+      },
+      "scale": 2000,
+      "stages": {
+        "analyze": {
+          "durationMs": 23.854,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 6,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "assignment_supersession_current_leaf": {
+          "durationMs": 161.472,
+          "fingerprints": [
+            {
+              "query": "CREATE TEMPORARY TABLE gda_v5_effective_decisions ON COMMIT DROP AS SELECT d.assignment_review_decision_id,d.canonical_assignment_id, encode(sha256(convert_to(jsonb_build_object('decision',jsonb_build_array( d.assignment_review_decision_id,",
+              "sha256": "5cda8482c327227d1d5680df46e6baf69d2b3d925de17c2fe47c7386fd544aaf"
+            },
+            {
+              "query": "EXISTS (SELECT 1 FROM gda_v5_effective_decisions GROUP BY canonical_assignment_id HAVING count(*)>1)",
+              "sha256": "579d6371ea33ff77f0f37d649715060a8a9b3f6c1ab8defbd0ca43b2f43e4eed"
+            },
+            {
+              "query": "CREATE TEMPORARY TABLE gda_v5_expected_memberships ON COMMIT DROP AS WITH current_assignment AS MATERIALIZED ( SELECT a.canonical_assignment_id,a.assignment_kind,a.status,a.supersedes_assignment_id FROM provenance.canonical_assignment a WHE",
+              "sha256": "5b5008e2ae20061688be46e60eb95cd1631eb933e40638ccd3c7fb5bb51e5541"
+            }
+          ],
+          "loops": 3,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "CTE Scan",
+            "Hash",
+            "Hash Join",
+            "Index Only Scan",
+            "Result",
+            "Seq Scan",
+            "Sort"
+          ],
+          "queryCount": 3,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 12215,
+          "sharedHitBlocks": 495,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "canonical_assignment_load": {
+          "durationMs": 1.495,
+          "fingerprints": [
+            {
+              "query": "CREATE TEMPORARY TABLE gda_v5_expected_objects ON COMMIT DROP AS SELECT l.archive_object_id,l.surface_id,o.object_urn,o.preferred_label FROM raw.legacy_surface_ledger l JOIN core.archive_object o ON o.archive_object_id=l.archive_object_id J",
+              "sha256": "4f65d0eaa8d011e9a11b996a532ef1237bdffd067d6094f665e7145121cd0421"
+            }
+          ],
+          "loops": 1,
+          "plannerNodeTypes": [
+            "Hash",
+            "Hash Join",
+            "Seq Scan"
+          ],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 2000,
+          "sharedHitBlocks": 136,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "chunk_digest_calculation": {
+          "durationMs": 160.682,
+          "fingerprints": [
+            {
+              "query": "INSERT INTO gda_v5_component_rows SELECT 'releaseObjects',archive_object_id::text,encode(sha256(convert_to(jsonb_build_array(archive_object_id,object_urn,legacy_surface_id,title,publication_layer,acceptance_state,workflow_state)::text,'UTF8",
+              "sha256": "58b248e39fea5f1a9e767fd9ed373f642e19520903ff1157c5798152a8b906ee"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            }
+          ],
+          "loops": 6,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Append",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "CTE Scan",
+            "Index Scan",
+            "ModifyTable",
+            "Result",
+            "Sort",
+            "Subquery Scan",
+            "WindowAgg"
+          ],
+          "queryCount": 6,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 5,
+          "sharedHitBlocks": 624,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "final_digest_reduction": {
+          "durationMs": 17.886,
+          "fingerprints": [
+            {
+              "query": "INSERT INTO release.research_launch_component_manifest_v3 SELECT p_release_id,x.component_code,x.row_count,release.research_launch_component_hash_staged_v5(x.component_code) FROM (VALUES ('releaseObjects',(SELECT count(*) FROM release.resea",
+              "sha256": "aaec59c877eebe0d56fdc87b5140551d625285bb6995bf907da0b305095f1bd9"
+            }
+          ],
+          "loops": 1,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "Index Only Scan",
+            "ModifyTable",
+            "Values Scan"
+          ],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 867,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 2675
+        },
+        "fixture_input_preparation": {
+          "durationMs": 3169.222,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 2000,
+          "rowsOut": 6107,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "index_creation_or_maintenance_and_plpgsql_overhead": {
+          "durationMs": 130.123,
+          "fingerprints": [],
+          "loops": 0,
+          "note": "outer builder time minus all classified nested statements; includes two temporary indexes, advisory locks, trigger time, and PL/pgSQL scalar overhead",
+          "plannerNodeTypes": [],
+          "queryCount": 2,
+          "repeatedScans": 0,
+          "rowsIn": 6107,
+          "rowsOut": 6107,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "release_projection_build": {
+          "durationMs": 277.219,
+          "fingerprints": [
+            {
+              "query": "INSERT INTO release.research_release(research_release_id,release_token,release_state,schema_version,model_version,created_at,validation_profile_id,validation_boundary) VALUES(p_release_id,p_release_token,'draft',p_schema_version,p_model_ver",
+              "sha256": "97d184f4b011f87f05fcf043a7855b6971f2d99161b9c63eec3458726a09f6b7"
+            },
+            {
+              "query": "INSERT INTO release.research_release_object(research_release_id,archive_object_id,object_urn,legacy_surface_id,title,publication_layer,acceptance_state,workflow_state) SELECT p_release_id,archive_object_id,object_urn,surface_id,preferred_la",
+              "sha256": "e3cd84f2d2b230ee28706a12ded2bbc82abeff251f5470cd12bd74eda222f9a4"
+            },
+            {
+              "query": "INSERT INTO release.research_surface_presentation_projection_v3(research_release_id,archive_object_id,public_surface_id,title,title_missingness,display_date,display_date_missingness,normalized_year,normalized_year_missingness,place_label,pl",
+              "sha256": "e38f4929aefbd3c9d7697e8a7ea499954a810f850ef5a3cec16ebdb8fe499452"
+            },
+            {
+              "query": "INSERT INTO release.research_surface_citation_projection_v3 SELECT p_release_id,archive_object_id,0,public_citation_label,public_source_route FROM release.research_surface_presentation_projection_v3 WHERE research_release_id=p_release_id",
+              "sha256": "eb7a736f1a7ecf11a9de81ab2e734683cea6f8f4ea4a6754901d26281137015e"
+            },
+            {
+              "query": "INSERT INTO release.research_folder_membership_projection_v3 SELECT p_release_id,e.folder_id,e.archive_object_id,e.source_assignment_id,e.membership_role,e.member_ordinal, 'accepted',e.assignment_snapshot_sha256,e.effective_decision_id,e.de",
+              "sha256": "fe7be247e636f90b81e0514930c67cceebb7dd84fa2fd9606eb1a82e5ea8c21d"
+            },
+            {
+              "query": "INSERT INTO release.research_search_document_projection_v3 SELECT p_release_id,archive_object_id,public_surface_id,title,coalesce(title,'')||' '||source_label,coalesce(title,'')||' '||public_surface_id FROM release.research_surface_presenta",
+              "sha256": "035b6a77a267afbb00a755a294caf1f11625aa9e6f9ca051784be4290287eb8e"
+            },
+            {
+              "query": "INSERT INTO release.research_launch_source_disposition_count_v3 SELECT p_release_id,'corpusMemberships',x.disposition,count(cm.*) FROM (VALUES ('eligible'),('held'),('rejected'),('excluded')) x(disposition) LEFT JOIN research.corpus_members",
+              "sha256": "d99ca33c81a5baaf19f411ed95769ef273f33dcf8633287b041b474f5e538102"
+            }
+          ],
+          "loops": 7,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Append",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "Hash",
+            "Hash Join",
+            "Index Scan",
+            "ModifyTable",
+            "Nested Loop",
+            "Result",
+            "Seq Scan",
+            "Values Scan"
+          ],
+          "queryCount": 7,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 179862,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 9530872
+        },
+        "reverse_index_construction": {
+          "durationMs": 0.0,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 0,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "sealing_finalization": {
+          "durationMs": 0.0,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 0,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "transaction_commit": {
+          "durationMs": 7.484,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "validation_reconciliation": {
+          "durationMs": 11.493,
+          "fingerprints": [
+            {
+              "query": "EXISTS (SELECT 1 FROM gda_v5_expected_memberships e LEFT JOIN research.folder_publication_metadata m ON m.folder_id=e.folder_id WHERE m.folder_id IS NULL)",
+              "sha256": "46b32a96cc73dfac9cf4e97358abbc9b9b7e1f2bb4c7cebb5beb73e0aeaa4e1b"
+            },
+            {
+              "query": "INSERT INTO release.research_folder_type_projection_v3 SELECT DISTINCT p_release_id,t.folder_type_code,t.type_label,t.type_sort_ordinal FROM research.folder_type_registry t JOIN research.folder_publication_metadata md ON md.folder_type_code",
+              "sha256": "0b05bb9514c89583dbedd892e46ad29eb4cdc89a08544fb8c0ed00d325acaa8f"
+            },
+            {
+              "query": "INSERT INTO release.research_folder_projection_v3 SELECT p_release_id,f.folder_id,f.folder_token,md.folder_type_code,md.slug,f.label,md.scope_note,md.folder_sort_ordinal FROM research.folder f JOIN research.folder_publication_metadata md ON",
+              "sha256": "ad290967039af01032b7e9a0d625e8ace35b0e911ad53e209805f6ed34307867"
+            },
+            {
+              "query": "(SELECT count(*) FROM gda_v5_expected_objects)<>(SELECT count(*) FROM release.research_release_object WHERE research_release_id=p_release_id) OR EXISTS (SELECT 1 FROM gda_v5_expected_objects e LEFT JOIN release.research_release_object r ON ",
+              "sha256": "b7247fa50aad91ce1945050132c072b48ba2a607dfac1e7ddf689ffc4ff9d0c7"
+            }
+          ],
+          "loops": 4,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "Hash",
+            "Hash Join",
+            "Index Only Scan",
+            "Index Scan",
+            "Merge Join",
+            "ModifyTable",
+            "Nested Loop",
+            "Result",
+            "Seq Scan"
+          ],
+          "queryCount": 4,
+          "repeatedScans": 2,
+          "rowsIn": 0,
+          "rowsOut": 2,
+          "sharedHitBlocks": 13093,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 3449
+        }
+      }
+    },
+    "32": {
+      "instrumentedBuilderWallMs": 70.416,
+      "memberships": 128,
+      "outerBuilderPlanMs": 40.309,
+      "resourceAfter": {
+        "activeWriters": 0,
+        "blksHit": 61656,
+        "blksRead": 0,
+        "capturedAt": "2026-08-21T01:28:38.55481+10:00",
+        "database": "gda_v49_phase2a_final_profile_32",
+        "otherDatabaseSessions": 0,
+        "settings": {
+          "effectiveCacheSize": "4GB",
+          "jit": "on",
+          "maintenanceWorkMem": "64MB",
+          "maxParallelWorkersPerGather": "2",
+          "serverVersion": "16.13 (Homebrew)",
+          "sharedBuffers": "128MB",
+          "trackIoTiming": "off",
+          "workMem": "4MB"
+        },
+        "tempBytes": 0,
+        "tempFiles": 0,
+        "walLsn": "0/38B24668",
+        "xactCommit": 23,
+        "xactRollback": 0
+      },
+      "resourceBefore": {
+        "activeWriters": 0,
+        "blksHit": 1471,
+        "blksRead": 0,
+        "capturedAt": "2026-08-21T01:28:38.328032+10:00",
+        "database": "gda_v49_phase2a_final_profile_32",
+        "otherDatabaseSessions": 0,
+        "settings": {
+          "effectiveCacheSize": "4GB",
+          "jit": "on",
+          "maintenanceWorkMem": "64MB",
+          "maxParallelWorkersPerGather": "2",
+          "serverVersion": "16.13 (Homebrew)",
+          "sharedBuffers": "128MB",
+          "trackIoTiming": "off",
+          "workMem": "4MB"
+        },
+        "tempBytes": 0,
+        "tempFiles": 0,
+        "walLsn": "0/38A92CA8",
+        "xactCommit": 1,
+        "xactRollback": 0
+      },
+      "scale": 32,
+      "stages": {
+        "analyze": {
+          "durationMs": 15.876,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 6,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "assignment_supersession_current_leaf": {
+          "durationMs": 3.788,
+          "fingerprints": [
+            {
+              "query": "CREATE TEMPORARY TABLE gda_v5_effective_decisions ON COMMIT DROP AS SELECT d.assignment_review_decision_id,d.canonical_assignment_id, encode(sha256(convert_to(jsonb_build_object('decision',jsonb_build_array( d.assignment_review_decision_id,",
+              "sha256": "5cda8482c327227d1d5680df46e6baf69d2b3d925de17c2fe47c7386fd544aaf"
+            },
+            {
+              "query": "CREATE TEMPORARY TABLE gda_v5_expected_memberships ON COMMIT DROP AS WITH current_assignment AS MATERIALIZED ( SELECT a.canonical_assignment_id,a.assignment_kind,a.status,a.supersedes_assignment_id FROM provenance.canonical_assignment a WHE",
+              "sha256": "5b5008e2ae20061688be46e60eb95cd1631eb933e40638ccd3c7fb5bb51e5541"
+            }
+          ],
+          "loops": 2,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "CTE Scan",
+            "Hash",
+            "Hash Join",
+            "Seq Scan",
+            "Sort"
+          ],
+          "queryCount": 2,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 256,
+          "sharedHitBlocks": 38,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "canonical_assignment_load": {
+          "durationMs": 0.0,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 0,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "chunk_digest_calculation": {
+          "durationMs": 3.209,
+          "fingerprints": [
+            {
+              "query": "INSERT INTO gda_v5_component_rows SELECT 'releaseObjects',archive_object_id::text,encode(sha256(convert_to(jsonb_build_array(archive_object_id,object_urn,legacy_surface_id,title,publication_layer,acceptance_state,workflow_state)::text,'UTF8",
+              "sha256": "58b248e39fea5f1a9e767fd9ed373f642e19520903ff1157c5798152a8b906ee"
+            }
+          ],
+          "loops": 1,
+          "plannerNodeTypes": [
+            "Append",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "Index Scan",
+            "ModifyTable"
+          ],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 29,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "final_digest_reduction": {
+          "durationMs": 1.774,
+          "fingerprints": [
+            {
+              "query": "INSERT INTO release.research_launch_component_manifest_v3 SELECT p_release_id,x.component_code,x.row_count,release.research_launch_component_hash_staged_v5(x.component_code) FROM (VALUES ('releaseObjects',(SELECT count(*) FROM release.resea",
+              "sha256": "aaec59c877eebe0d56fdc87b5140551d625285bb6995bf907da0b305095f1bd9"
+            }
+          ],
+          "loops": 1,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "Index Only Scan",
+            "ModifyTable",
+            "Values Scan"
+          ],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 272,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 2675
+        },
+        "fixture_input_preparation": {
+          "durationMs": 103.047,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 32,
+          "rowsOut": 128,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "index_creation_or_maintenance_and_plpgsql_overhead": {
+          "durationMs": 25.264,
+          "fingerprints": [],
+          "loops": 0,
+          "note": "outer builder time minus all classified nested statements; includes two temporary indexes, advisory locks, trigger time, and PL/pgSQL scalar overhead",
+          "plannerNodeTypes": [],
+          "queryCount": 2,
+          "repeatedScans": 0,
+          "rowsIn": 128,
+          "rowsOut": 128,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "release_projection_build": {
+          "durationMs": 6.274,
+          "fingerprints": [
+            {
+              "query": "INSERT INTO release.research_release_object(research_release_id,archive_object_id,object_urn,legacy_surface_id,title,publication_layer,acceptance_state,workflow_state) SELECT p_release_id,archive_object_id,object_urn,surface_id,preferred_la",
+              "sha256": "e3cd84f2d2b230ee28706a12ded2bbc82abeff251f5470cd12bd74eda222f9a4"
+            },
+            {
+              "query": "INSERT INTO release.research_surface_presentation_projection_v3(research_release_id,archive_object_id,public_surface_id,title,title_missingness,display_date,display_date_missingness,normalized_year,normalized_year_missingness,place_label,pl",
+              "sha256": "e38f4929aefbd3c9d7697e8a7ea499954a810f850ef5a3cec16ebdb8fe499452"
+            },
+            {
+              "query": "INSERT INTO release.research_surface_citation_projection_v3 SELECT p_release_id,archive_object_id,0,public_citation_label,public_source_route FROM release.research_surface_presentation_projection_v3 WHERE research_release_id=p_release_id",
+              "sha256": "eb7a736f1a7ecf11a9de81ab2e734683cea6f8f4ea4a6754901d26281137015e"
+            },
+            {
+              "query": "INSERT INTO release.research_folder_membership_projection_v3 SELECT p_release_id,e.folder_id,e.archive_object_id,e.source_assignment_id,e.membership_role,e.member_ordinal, 'accepted',e.assignment_snapshot_sha256,e.effective_decision_id,e.de",
+              "sha256": "fe7be247e636f90b81e0514930c67cceebb7dd84fa2fd9606eb1a82e5ea8c21d"
+            }
+          ],
+          "loops": 4,
+          "plannerNodeTypes": [
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "Index Scan",
+            "ModifyTable",
+            "Nested Loop",
+            "Seq Scan"
+          ],
+          "queryCount": 4,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 2532,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 148181
+        },
+        "reverse_index_construction": {
+          "durationMs": 0.0,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 0,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "sealing_finalization": {
+          "durationMs": 0.0,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 0,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "transaction_commit": {
+          "durationMs": 1.816,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "validation_reconciliation": {
+          "durationMs": 0.0,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 0,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        }
+      }
+    }
+  },
+  "baseline": {
+    "1000": {
+      "instrumentedBuilderWallMs": 645.557,
+      "memberships": 3107,
+      "outerBuilderPlanMs": 619.847,
+      "resourceAfter": {
+        "activeWriters": 0,
+        "blksHit": 1321680,
+        "blksRead": 0,
+        "capturedAt": "2026-08-20T21:58:04.605782+10:00",
+        "database": "gda_v49_phase2a_stage_1000",
+        "otherDatabaseSessions": 0,
+        "settings": {
+          "effectiveCacheSize": "4GB",
+          "jit": "on",
+          "maintenanceWorkMem": "64MB",
+          "maxParallelWorkersPerGather": "2",
+          "serverVersion": "16.13 (Homebrew)",
+          "sharedBuffers": "128MB",
+          "trackIoTiming": "off",
+          "workMem": "4MB"
+        },
+        "tempBytes": 0,
+        "tempFiles": 0,
+        "walLsn": "0/8B9A9E0",
+        "xactCommit": 23,
+        "xactRollback": 0
+      },
+      "resourceBefore": {
+        "activeWriters": 0,
+        "blksHit": 1471,
+        "blksRead": 0,
+        "capturedAt": "2026-08-20T21:58:02.273806+10:00",
+        "database": "gda_v49_phase2a_stage_1000",
+        "otherDatabaseSessions": 0,
+        "settings": {
+          "effectiveCacheSize": "4GB",
+          "jit": "on",
+          "maintenanceWorkMem": "64MB",
+          "maxParallelWorkersPerGather": "2",
+          "serverVersion": "16.13 (Homebrew)",
+          "sharedBuffers": "128MB",
+          "trackIoTiming": "off",
+          "workMem": "4MB"
+        },
+        "tempBytes": 0,
+        "tempFiles": 0,
+        "walLsn": "0/7ECF328",
+        "xactCommit": 1,
+        "xactRollback": 0
+      },
+      "scale": 1000,
+      "stages": {
+        "analyze": {
+          "durationMs": 20.525,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 6,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "assignment_supersession_current_leaf": {
+          "durationMs": 81.196,
+          "fingerprints": [
+            {
+              "query": "CREATE TEMPORARY TABLE gda_v5_effective_decisions ON COMMIT DROP AS SELECT d.assignment_review_decision_id,d.canonical_assignment_id, encode(sha256(convert_to(jsonb_build_object('decision',jsonb_build_array( d.assignment_review_decision_id,",
+              "sha256": "5cda8482c327227d1d5680df46e6baf69d2b3d925de17c2fe47c7386fd544aaf"
+            },
+            {
+              "query": "CREATE TEMPORARY TABLE gda_v5_expected_memberships ON COMMIT DROP AS WITH current_assignment AS MATERIALIZED ( SELECT a.canonical_assignment_id,a.assignment_kind,a.status,a.supersedes_assignment_id FROM provenance.canonical_assignment a WHE",
+              "sha256": "5b5008e2ae20061688be46e60eb95cd1631eb933e40638ccd3c7fb5bb51e5541"
+            }
+          ],
+          "loops": 2,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "CTE Scan",
+            "Hash",
+            "Hash Join",
+            "Index Only Scan",
+            "Seq Scan",
+            "Sort"
+          ],
+          "queryCount": 2,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 6214,
+          "sharedHitBlocks": 265,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "canonical_assignment_load": {
+          "durationMs": 0.797,
+          "fingerprints": [
+            {
+              "query": "CREATE TEMPORARY TABLE gda_v5_expected_objects ON COMMIT DROP AS SELECT l.archive_object_id,l.surface_id,o.object_urn,o.preferred_label FROM raw.legacy_surface_ledger l JOIN core.archive_object o ON o.archive_object_id=l.archive_object_id J",
+              "sha256": "4f65d0eaa8d011e9a11b996a532ef1237bdffd067d6094f665e7145121cd0421"
+            }
+          ],
+          "loops": 1,
+          "plannerNodeTypes": [
+            "Hash",
+            "Hash Join",
+            "Seq Scan"
+          ],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 1000,
+          "sharedHitBlocks": 69,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "chunk_digest_calculation": {
+          "durationMs": 83.876,
+          "fingerprints": [
+            {
+              "query": "INSERT INTO gda_v5_component_rows SELECT 'releaseObjects',archive_object_id::text,encode(sha256(convert_to(jsonb_build_array(archive_object_id,object_urn,legacy_surface_id,title,publication_layer,acceptance_state,workflow_state)::text,'UTF8",
+              "sha256": "58b248e39fea5f1a9e767fd9ed373f642e19520903ff1157c5798152a8b906ee"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            }
+          ],
+          "loops": 4,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Append",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "CTE Scan",
+            "Index Scan",
+            "ModifyTable",
+            "Result",
+            "Sort",
+            "Subquery Scan",
+            "WindowAgg"
+          ],
+          "queryCount": 4,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 3,
+          "sharedHitBlocks": 325,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "final_digest_reduction": {
+          "durationMs": 10.388,
+          "fingerprints": [
+            {
+              "query": "INSERT INTO release.research_launch_component_manifest_v3 SELECT p_release_id,x.component_code,x.row_count,release.research_launch_component_hash_staged_v5(x.component_code) FROM (VALUES ('releaseObjects',(SELECT count(*) FROM release.resea",
+              "sha256": "aaec59c877eebe0d56fdc87b5140551d625285bb6995bf907da0b305095f1bd9"
+            }
+          ],
+          "loops": 1,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "Index Only Scan",
+            "ModifyTable",
+            "Values Scan"
+          ],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 571,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 2618
+        },
+        "fixture_input_preparation": {
+          "durationMs": 1547.328,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 1000,
+          "rowsOut": 3107,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "index_creation_or_maintenance_and_plpgsql_overhead": {
+          "durationMs": 72.451,
+          "fingerprints": [],
+          "loops": 0,
+          "note": "outer builder time minus all classified nested statements; includes two temporary indexes, advisory locks, trigger time, and PL/pgSQL scalar overhead",
+          "plannerNodeTypes": [],
+          "queryCount": 2,
+          "repeatedScans": 0,
+          "rowsIn": 3107,
+          "rowsOut": 3107,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "release_projection_build": {
+          "durationMs": 127.276,
+          "fingerprints": [
+            {
+              "query": "INSERT INTO release.research_release(research_release_id,release_token,release_state,schema_version,model_version,created_at,validation_profile_id,validation_boundary) VALUES(p_release_id,p_release_token,'draft',p_schema_version,p_model_ver",
+              "sha256": "97d184f4b011f87f05fcf043a7855b6971f2d99161b9c63eec3458726a09f6b7"
+            },
+            {
+              "query": "INSERT INTO release.research_release_object(research_release_id,archive_object_id,object_urn,legacy_surface_id,title,publication_layer,acceptance_state,workflow_state) SELECT p_release_id,archive_object_id,object_urn,surface_id,preferred_la",
+              "sha256": "e3cd84f2d2b230ee28706a12ded2bbc82abeff251f5470cd12bd74eda222f9a4"
+            },
+            {
+              "query": "INSERT INTO release.research_surface_presentation_projection_v3(research_release_id,archive_object_id,public_surface_id,title,title_missingness,display_date,display_date_missingness,normalized_year,normalized_year_missingness,place_label,pl",
+              "sha256": "e38f4929aefbd3c9d7697e8a7ea499954a810f850ef5a3cec16ebdb8fe499452"
+            },
+            {
+              "query": "INSERT INTO release.research_surface_citation_projection_v3 SELECT p_release_id,archive_object_id,0,public_citation_label,public_source_route FROM release.research_surface_presentation_projection_v3 WHERE research_release_id=p_release_id",
+              "sha256": "eb7a736f1a7ecf11a9de81ab2e734683cea6f8f4ea4a6754901d26281137015e"
+            },
+            {
+              "query": "INSERT INTO release.research_folder_membership_projection_v3 SELECT p_release_id,e.folder_id,e.archive_object_id,e.source_assignment_id,e.membership_role,e.member_ordinal, 'accepted',e.assignment_snapshot_sha256,e.effective_decision_id,e.de",
+              "sha256": "fe7be247e636f90b81e0514930c67cceebb7dd84fa2fd9606eb1a82e5ea8c21d"
+            },
+            {
+              "query": "INSERT INTO release.research_search_document_projection_v3 SELECT p_release_id,archive_object_id,public_surface_id,title,coalesce(title,'')||' '||source_label,coalesce(title,'')||' '||public_surface_id FROM release.research_surface_presenta",
+              "sha256": "035b6a77a267afbb00a755a294caf1f11625aa9e6f9ca051784be4290287eb8e"
+            },
+            {
+              "query": "INSERT INTO release.research_launch_source_disposition_count_v3 SELECT p_release_id,'corpusMemberships',x.disposition,count(cm.*) FROM (VALUES ('eligible'),('held'),('rejected'),('excluded')) x(disposition) LEFT JOIN research.corpus_members",
+              "sha256": "d99ca33c81a5baaf19f411ed95769ef273f33dcf8633287b041b474f5e538102"
+            }
+          ],
+          "loops": 7,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Append",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "Hash",
+            "Hash Join",
+            "Index Scan",
+            "ModifyTable",
+            "Nested Loop",
+            "Result",
+            "Seq Scan",
+            "Values Scan"
+          ],
+          "queryCount": 7,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 89937,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 4787848
+        },
+        "reverse_index_construction": {
+          "durationMs": 0.0,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 0,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "sealing_finalization": {
+          "durationMs": 0.0,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 0,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "transaction_commit": {
+          "durationMs": 2.341,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "validation_reconciliation": {
+          "durationMs": 243.863,
+          "fingerprints": [
+            {
+              "query": "EXISTS (SELECT 1 FROM gda_v5_expected_memberships e LEFT JOIN research.folder_publication_metadata m ON m.folder_id=e.folder_id WHERE m.folder_id IS NULL)",
+              "sha256": "46b32a96cc73dfac9cf4e97358abbc9b9b7e1f2bb4c7cebb5beb73e0aeaa4e1b"
+            },
+            {
+              "query": "INSERT INTO release.research_folder_type_projection_v3 SELECT DISTINCT p_release_id,t.folder_type_code,t.type_label,t.type_sort_ordinal FROM research.folder_type_registry t JOIN research.folder_publication_metadata md ON md.folder_type_code",
+              "sha256": "0b05bb9514c89583dbedd892e46ad29eb4cdc89a08544fb8c0ed00d325acaa8f"
+            },
+            {
+              "query": "INSERT INTO release.research_folder_projection_v3 SELECT p_release_id,f.folder_id,f.folder_token,md.folder_type_code,md.slug,f.label,md.scope_note,md.folder_sort_ordinal FROM research.folder f JOIN research.folder_publication_metadata md ON",
+              "sha256": "ad290967039af01032b7e9a0d625e8ace35b0e911ad53e209805f6ed34307867"
+            },
+            {
+              "query": "(SELECT count(*) FROM gda_v5_expected_objects)<>(SELECT count(*) FROM release.research_release_object WHERE research_release_id=p_release_id) OR EXISTS (SELECT 1 FROM gda_v5_expected_objects e LEFT JOIN release.research_release_object r ON ",
+              "sha256": "c4a554493b4ec4689ba2192b5ad4c2145a9a57606c9625daee0e3ec7a1c004c0"
+            }
+          ],
+          "loops": 4,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "Hash",
+            "Hash Join",
+            "Index Only Scan",
+            "Index Scan",
+            "Merge Join",
+            "ModifyTable",
+            "Nested Loop",
+            "Result",
+            "Seq Scan"
+          ],
+          "queryCount": 4,
+          "repeatedScans": 2,
+          "rowsIn": 0,
+          "rowsOut": 2,
+          "sharedHitBlocks": 76004,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 3449
+        }
+      }
+    },
+    "2000": {
+      "instrumentedBuilderWallMs": 1722.714,
+      "memberships": 6107,
+      "outerBuilderPlanMs": 1695.291,
+      "resourceAfter": {
+        "activeWriters": 0,
+        "blksHit": 2722969,
+        "blksRead": 0,
+        "capturedAt": "2026-08-20T21:59:14.379869+10:00",
+        "database": "gda_v49_phase2a_stage_2000",
+        "otherDatabaseSessions": 0,
+        "settings": {
+          "effectiveCacheSize": "4GB",
+          "jit": "on",
+          "maintenanceWorkMem": "64MB",
+          "maxParallelWorkersPerGather": "2",
+          "serverVersion": "16.13 (Homebrew)",
+          "sharedBuffers": "128MB",
+          "trackIoTiming": "off",
+          "workMem": "4MB"
+        },
+        "tempBytes": 0,
+        "tempFiles": 0,
+        "walLsn": "0/AE75090",
+        "xactCommit": 46,
+        "xactRollback": 0
+      },
+      "resourceBefore": {
+        "activeWriters": 0,
+        "blksHit": 1471,
+        "blksRead": 0,
+        "capturedAt": "2026-08-20T21:59:09.390434+10:00",
+        "database": "gda_v49_phase2a_stage_2000",
+        "otherDatabaseSessions": 0,
+        "settings": {
+          "effectiveCacheSize": "4GB",
+          "jit": "on",
+          "maintenanceWorkMem": "64MB",
+          "maxParallelWorkersPerGather": "2",
+          "serverVersion": "16.13 (Homebrew)",
+          "sharedBuffers": "128MB",
+          "trackIoTiming": "off",
+          "workMem": "4MB"
+        },
+        "tempBytes": 0,
+        "tempFiles": 0,
+        "walLsn": "0/95132C0",
+        "xactCommit": 1,
+        "xactRollback": 0
+      },
+      "scale": 2000,
+      "stages": {
+        "analyze": {
+          "durationMs": 25.146,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 6,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "assignment_supersession_current_leaf": {
+          "durationMs": 158.493,
+          "fingerprints": [
+            {
+              "query": "CREATE TEMPORARY TABLE gda_v5_effective_decisions ON COMMIT DROP AS SELECT d.assignment_review_decision_id,d.canonical_assignment_id, encode(sha256(convert_to(jsonb_build_object('decision',jsonb_build_array( d.assignment_review_decision_id,",
+              "sha256": "5cda8482c327227d1d5680df46e6baf69d2b3d925de17c2fe47c7386fd544aaf"
+            },
+            {
+              "query": "EXISTS (SELECT 1 FROM gda_v5_effective_decisions GROUP BY canonical_assignment_id HAVING count(*)>1)",
+              "sha256": "579d6371ea33ff77f0f37d649715060a8a9b3f6c1ab8defbd0ca43b2f43e4eed"
+            },
+            {
+              "query": "CREATE TEMPORARY TABLE gda_v5_expected_memberships ON COMMIT DROP AS WITH current_assignment AS MATERIALIZED ( SELECT a.canonical_assignment_id,a.assignment_kind,a.status,a.supersedes_assignment_id FROM provenance.canonical_assignment a WHE",
+              "sha256": "5b5008e2ae20061688be46e60eb95cd1631eb933e40638ccd3c7fb5bb51e5541"
+            }
+          ],
+          "loops": 3,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "CTE Scan",
+            "Hash",
+            "Hash Join",
+            "Index Only Scan",
+            "Result",
+            "Seq Scan",
+            "Sort"
+          ],
+          "queryCount": 3,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 12215,
+          "sharedHitBlocks": 495,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "canonical_assignment_load": {
+          "durationMs": 1.437,
+          "fingerprints": [
+            {
+              "query": "CREATE TEMPORARY TABLE gda_v5_expected_objects ON COMMIT DROP AS SELECT l.archive_object_id,l.surface_id,o.object_urn,o.preferred_label FROM raw.legacy_surface_ledger l JOIN core.archive_object o ON o.archive_object_id=l.archive_object_id J",
+              "sha256": "4f65d0eaa8d011e9a11b996a532ef1237bdffd067d6094f665e7145121cd0421"
+            }
+          ],
+          "loops": 1,
+          "plannerNodeTypes": [
+            "Hash",
+            "Hash Join",
+            "Seq Scan"
+          ],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 2000,
+          "sharedHitBlocks": 136,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "chunk_digest_calculation": {
+          "durationMs": 160.397,
+          "fingerprints": [
+            {
+              "query": "INSERT INTO gda_v5_component_rows SELECT 'releaseObjects',archive_object_id::text,encode(sha256(convert_to(jsonb_build_array(archive_object_id,object_urn,legacy_surface_id,title,publication_layer,acceptance_state,workflow_state)::text,'UTF8",
+              "sha256": "58b248e39fea5f1a9e767fd9ed373f642e19520903ff1157c5798152a8b906ee"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            }
+          ],
+          "loops": 6,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Append",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "CTE Scan",
+            "Index Scan",
+            "ModifyTable",
+            "Result",
+            "Sort",
+            "Subquery Scan",
+            "WindowAgg"
+          ],
+          "queryCount": 6,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 5,
+          "sharedHitBlocks": 624,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "final_digest_reduction": {
+          "durationMs": 18.084,
+          "fingerprints": [
+            {
+              "query": "INSERT INTO release.research_launch_component_manifest_v3 SELECT p_release_id,x.component_code,x.row_count,release.research_launch_component_hash_staged_v5(x.component_code) FROM (VALUES ('releaseObjects',(SELECT count(*) FROM release.resea",
+              "sha256": "aaec59c877eebe0d56fdc87b5140551d625285bb6995bf907da0b305095f1bd9"
+            }
+          ],
+          "loops": 1,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "Index Only Scan",
+            "ModifyTable",
+            "Values Scan"
+          ],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 867,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 2618
+        },
+        "fixture_input_preparation": {
+          "durationMs": 3047.279,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 2000,
+          "rowsOut": 6107,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "index_creation_or_maintenance_and_plpgsql_overhead": {
+          "durationMs": 129.404,
+          "fingerprints": [],
+          "loops": 0,
+          "note": "outer builder time minus all classified nested statements; includes two temporary indexes, advisory locks, trigger time, and PL/pgSQL scalar overhead",
+          "plannerNodeTypes": [],
+          "queryCount": 2,
+          "repeatedScans": 0,
+          "rowsIn": 6107,
+          "rowsOut": 6107,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "release_projection_build": {
+          "durationMs": 256.509,
+          "fingerprints": [
+            {
+              "query": "INSERT INTO release.research_release(research_release_id,release_token,release_state,schema_version,model_version,created_at,validation_profile_id,validation_boundary) VALUES(p_release_id,p_release_token,'draft',p_schema_version,p_model_ver",
+              "sha256": "97d184f4b011f87f05fcf043a7855b6971f2d99161b9c63eec3458726a09f6b7"
+            },
+            {
+              "query": "INSERT INTO release.research_release_object(research_release_id,archive_object_id,object_urn,legacy_surface_id,title,publication_layer,acceptance_state,workflow_state) SELECT p_release_id,archive_object_id,object_urn,surface_id,preferred_la",
+              "sha256": "e3cd84f2d2b230ee28706a12ded2bbc82abeff251f5470cd12bd74eda222f9a4"
+            },
+            {
+              "query": "INSERT INTO release.research_surface_presentation_projection_v3(research_release_id,archive_object_id,public_surface_id,title,title_missingness,display_date,display_date_missingness,normalized_year,normalized_year_missingness,place_label,pl",
+              "sha256": "e38f4929aefbd3c9d7697e8a7ea499954a810f850ef5a3cec16ebdb8fe499452"
+            },
+            {
+              "query": "INSERT INTO release.research_surface_citation_projection_v3 SELECT p_release_id,archive_object_id,0,public_citation_label,public_source_route FROM release.research_surface_presentation_projection_v3 WHERE research_release_id=p_release_id",
+              "sha256": "eb7a736f1a7ecf11a9de81ab2e734683cea6f8f4ea4a6754901d26281137015e"
+            },
+            {
+              "query": "INSERT INTO release.research_folder_membership_projection_v3 SELECT p_release_id,e.folder_id,e.archive_object_id,e.source_assignment_id,e.membership_role,e.member_ordinal, 'accepted',e.assignment_snapshot_sha256,e.effective_decision_id,e.de",
+              "sha256": "fe7be247e636f90b81e0514930c67cceebb7dd84fa2fd9606eb1a82e5ea8c21d"
+            },
+            {
+              "query": "INSERT INTO release.research_search_document_projection_v3 SELECT p_release_id,archive_object_id,public_surface_id,title,coalesce(title,'')||' '||source_label,coalesce(title,'')||' '||public_surface_id FROM release.research_surface_presenta",
+              "sha256": "035b6a77a267afbb00a755a294caf1f11625aa9e6f9ca051784be4290287eb8e"
+            },
+            {
+              "query": "INSERT INTO release.research_corpus_summary_projection_v3 SELECT p_release_id,cv.corpus_version_id,c.corpus_token,cv.version_token,c.label, count(*) FILTER (WHERE cm.disposition='eligible'),count(*) FILTER (WHERE cm.disposition='held') FROM",
+              "sha256": "da644db03998f0d1389eec4cf388dafb55e9b3fa5ec6eeec5509a50975af5522"
+            },
+            {
+              "query": "INSERT INTO release.research_launch_source_disposition_count_v3 SELECT p_release_id,'corpusMemberships',x.disposition,count(cm.*) FROM (VALUES ('eligible'),('held'),('rejected'),('excluded')) x(disposition) LEFT JOIN research.corpus_members",
+              "sha256": "d99ca33c81a5baaf19f411ed95769ef273f33dcf8633287b041b474f5e538102"
+            }
+          ],
+          "loops": 8,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Append",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "Hash",
+            "Hash Join",
+            "Index Scan",
+            "ModifyTable",
+            "Nested Loop",
+            "Result",
+            "Seq Scan",
+            "Values Scan"
+          ],
+          "queryCount": 8,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 179929,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 9531225
+        },
+        "reverse_index_construction": {
+          "durationMs": 0.0,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 0,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "sealing_finalization": {
+          "durationMs": 0.975,
+          "fingerprints": [
+            {
+              "query": "INSERT INTO release.research_launch_protocol_v5 VALUES(p_release_id,'release-snapshot-v5',clock_timestamp())",
+              "sha256": "e7a1ff843bffa5e2ebc3638f36be097f25685876a236c5d15a7093129d6f9f52"
+            }
+          ],
+          "loops": 1,
+          "plannerNodeTypes": [
+            "ModifyTable",
+            "Result"
+          ],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 2,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 265
+        },
+        "transaction_commit": {
+          "durationMs": 3.936,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "validation_reconciliation": {
+          "durationMs": 969.992,
+          "fingerprints": [
+            {
+              "query": "EXISTS (SELECT 1 FROM gda_v5_expected_memberships e LEFT JOIN research.folder_publication_metadata m ON m.folder_id=e.folder_id WHERE m.folder_id IS NULL)",
+              "sha256": "46b32a96cc73dfac9cf4e97358abbc9b9b7e1f2bb4c7cebb5beb73e0aeaa4e1b"
+            },
+            {
+              "query": "INSERT INTO release.research_folder_type_projection_v3 SELECT DISTINCT p_release_id,t.folder_type_code,t.type_label,t.type_sort_ordinal FROM research.folder_type_registry t JOIN research.folder_publication_metadata md ON md.folder_type_code",
+              "sha256": "0b05bb9514c89583dbedd892e46ad29eb4cdc89a08544fb8c0ed00d325acaa8f"
+            },
+            {
+              "query": "INSERT INTO release.research_folder_projection_v3 SELECT p_release_id,f.folder_id,f.folder_token,md.folder_type_code,md.slug,f.label,md.scope_note,md.folder_sort_ordinal FROM research.folder f JOIN research.folder_publication_metadata md ON",
+              "sha256": "ad290967039af01032b7e9a0d625e8ace35b0e911ad53e209805f6ed34307867"
+            },
+            {
+              "query": "(SELECT count(*) FROM gda_v5_expected_objects)<>(SELECT count(*) FROM release.research_release_object WHERE research_release_id=p_release_id) OR EXISTS (SELECT 1 FROM gda_v5_expected_objects e LEFT JOIN release.research_release_object r ON ",
+              "sha256": "c4a554493b4ec4689ba2192b5ad4c2145a9a57606c9625daee0e3ec7a1c004c0"
+            }
+          ],
+          "loops": 4,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "Hash",
+            "Hash Join",
+            "Index Only Scan",
+            "Index Scan",
+            "Merge Join",
+            "ModifyTable",
+            "Nested Loop",
+            "Result",
+            "Seq Scan"
+          ],
+          "queryCount": 4,
+          "repeatedScans": 2,
+          "rowsIn": 0,
+          "rowsOut": 2,
+          "sharedHitBlocks": 273343,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 3449
+        }
+      }
+    },
+    "32": {
+      "instrumentedBuilderWallMs": 597.595,
+      "memberships": 128,
+      "outerBuilderPlanMs": 99.274,
+      "resourceAfter": {
+        "activeWriters": 0,
+        "blksHit": 61945,
+        "blksRead": 0,
+        "capturedAt": "2026-08-20T21:56:08.101027+10:00",
+        "database": "gda_v49_phase2a_stage_32",
+        "otherDatabaseSessions": 0,
+        "settings": {
+          "effectiveCacheSize": "4GB",
+          "jit": "on",
+          "maintenanceWorkMem": "64MB",
+          "maxParallelWorkersPerGather": "2",
+          "serverVersion": "16.13 (Homebrew)",
+          "sharedBuffers": "128MB",
+          "trackIoTiming": "off",
+          "workMem": "4MB"
+        },
+        "tempBytes": 0,
+        "tempFiles": 0,
+        "walLsn": "0/7585B88",
+        "xactCommit": 23,
+        "xactRollback": 0
+      },
+      "resourceBefore": {
+        "activeWriters": 0,
+        "blksHit": 1471,
+        "blksRead": 0,
+        "capturedAt": "2026-08-20T21:56:07.330922+10:00",
+        "database": "gda_v49_phase2a_stage_32",
+        "otherDatabaseSessions": 0,
+        "settings": {
+          "effectiveCacheSize": "4GB",
+          "jit": "on",
+          "maintenanceWorkMem": "64MB",
+          "maxParallelWorkersPerGather": "2",
+          "serverVersion": "16.13 (Homebrew)",
+          "sharedBuffers": "128MB",
+          "trackIoTiming": "off",
+          "workMem": "4MB"
+        },
+        "tempBytes": 0,
+        "tempFiles": 0,
+        "walLsn": "0/74F1770",
+        "xactCommit": 1,
+        "xactRollback": 0
+      },
+      "scale": 32,
+      "stages": {
+        "analyze": {
+          "durationMs": 15.849,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 6,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "assignment_supersession_current_leaf": {
+          "durationMs": 3.858,
+          "fingerprints": [
+            {
+              "query": "CREATE TEMPORARY TABLE gda_v5_effective_decisions ON COMMIT DROP AS SELECT d.assignment_review_decision_id,d.canonical_assignment_id, encode(sha256(convert_to(jsonb_build_object('decision',jsonb_build_array( d.assignment_review_decision_id,",
+              "sha256": "5cda8482c327227d1d5680df46e6baf69d2b3d925de17c2fe47c7386fd544aaf"
+            },
+            {
+              "query": "EXISTS (SELECT 1 FROM gda_v5_effective_decisions GROUP BY canonical_assignment_id HAVING count(*)>1)",
+              "sha256": "579d6371ea33ff77f0f37d649715060a8a9b3f6c1ab8defbd0ca43b2f43e4eed"
+            },
+            {
+              "query": "CREATE TEMPORARY TABLE gda_v5_expected_memberships ON COMMIT DROP AS WITH current_assignment AS MATERIALIZED ( SELECT a.canonical_assignment_id,a.assignment_kind,a.status,a.supersedes_assignment_id FROM provenance.canonical_assignment a WHE",
+              "sha256": "5b5008e2ae20061688be46e60eb95cd1631eb933e40638ccd3c7fb5bb51e5541"
+            }
+          ],
+          "loops": 3,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "CTE Scan",
+            "Hash",
+            "Hash Join",
+            "Result",
+            "Seq Scan",
+            "Sort"
+          ],
+          "queryCount": 3,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 257,
+          "sharedHitBlocks": 38,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "canonical_assignment_load": {
+          "durationMs": 0.036,
+          "fingerprints": [
+            {
+              "query": "CREATE TEMPORARY TABLE gda_v5_expected_objects ON COMMIT DROP AS SELECT l.archive_object_id,l.surface_id,o.object_urn,o.preferred_label FROM raw.legacy_surface_ledger l JOIN core.archive_object o ON o.archive_object_id=l.archive_object_id J",
+              "sha256": "4f65d0eaa8d011e9a11b996a532ef1237bdffd067d6094f665e7145121cd0421"
+            }
+          ],
+          "loops": 1,
+          "plannerNodeTypes": [
+            "Hash",
+            "Hash Join",
+            "Seq Scan"
+          ],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 32,
+          "sharedHitBlocks": 3,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "chunk_digest_calculation": {
+          "durationMs": 3.947,
+          "fingerprints": [
+            {
+              "query": "INSERT INTO gda_v5_component_rows SELECT 'releaseObjects',archive_object_id::text,encode(sha256(convert_to(jsonb_build_array(archive_object_id,object_urn,legacy_surface_id,title,publication_layer,acceptance_state,workflow_state)::text,'UTF8",
+              "sha256": "58b248e39fea5f1a9e767fd9ed373f642e19520903ff1157c5798152a8b906ee"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            },
+            {
+              "query": "WITH chunks AS ( SELECT ((row_number-1)/1024)::bigint AS chunk_ordinal,count(*)::bigint AS chunk_row_count, encode(sha256(convert_to(jsonb_build_object( 'format','gda-v49-research-component-chunk-v5','component',p_component, 'chunkSize',102",
+              "sha256": "7593244e0cdf6ce40ba6ecfb45a1c284533de514d0ab2c9fbefafb62235cb9dd"
+            }
+          ],
+          "loops": 11,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Append",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "CTE Scan",
+            "Index Scan",
+            "ModifyTable",
+            "Result",
+            "Sort",
+            "Subquery Scan",
+            "WindowAgg"
+          ],
+          "queryCount": 11,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 10,
+          "sharedHitBlocks": 32,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "final_digest_reduction": {
+          "durationMs": 4.003,
+          "fingerprints": [
+            {
+              "query": "INSERT INTO release.research_launch_component_manifest_v3 SELECT p_release_id,x.component_code,x.row_count,release.research_launch_component_hash_staged_v5(x.component_code) FROM (VALUES ('releaseObjects',(SELECT count(*) FROM release.resea",
+              "sha256": "aaec59c877eebe0d56fdc87b5140551d625285bb6995bf907da0b305095f1bd9"
+            }
+          ],
+          "loops": 1,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "Index Only Scan",
+            "ModifyTable",
+            "Values Scan"
+          ],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 275,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 2618
+        },
+        "fixture_input_preparation": {
+          "durationMs": 117.854,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 32,
+          "rowsOut": 128,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "index_creation_or_maintenance_and_plpgsql_overhead": {
+          "durationMs": 49.469,
+          "fingerprints": [],
+          "loops": 0,
+          "note": "outer builder time minus all classified nested statements; includes two temporary indexes, advisory locks, trigger time, and PL/pgSQL scalar overhead",
+          "plannerNodeTypes": [],
+          "queryCount": 2,
+          "repeatedScans": 0,
+          "rowsIn": 128,
+          "rowsOut": 128,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "release_projection_build": {
+          "durationMs": 34.11,
+          "fingerprints": [
+            {
+              "query": "INSERT INTO release.research_release(research_release_id,release_token,release_state,schema_version,model_version,created_at,validation_profile_id,validation_boundary) VALUES(p_release_id,p_release_token,'draft',p_schema_version,p_model_ver",
+              "sha256": "97d184f4b011f87f05fcf043a7855b6971f2d99161b9c63eec3458726a09f6b7"
+            },
+            {
+              "query": "INSERT INTO release.research_release_object(research_release_id,archive_object_id,object_urn,legacy_surface_id,title,publication_layer,acceptance_state,workflow_state) SELECT p_release_id,archive_object_id,object_urn,surface_id,preferred_la",
+              "sha256": "e3cd84f2d2b230ee28706a12ded2bbc82abeff251f5470cd12bd74eda222f9a4"
+            },
+            {
+              "query": "INSERT INTO release.research_surface_presentation_projection_v3(research_release_id,archive_object_id,public_surface_id,title,title_missingness,display_date,display_date_missingness,normalized_year,normalized_year_missingness,place_label,pl",
+              "sha256": "e38f4929aefbd3c9d7697e8a7ea499954a810f850ef5a3cec16ebdb8fe499452"
+            },
+            {
+              "query": "INSERT INTO release.research_surface_citation_projection_v3 SELECT p_release_id,archive_object_id,0,public_citation_label,public_source_route FROM release.research_surface_presentation_projection_v3 WHERE research_release_id=p_release_id",
+              "sha256": "eb7a736f1a7ecf11a9de81ab2e734683cea6f8f4ea4a6754901d26281137015e"
+            },
+            {
+              "query": "INSERT INTO release.research_folder_membership_projection_v3 SELECT p_release_id,e.folder_id,e.archive_object_id,e.source_assignment_id,e.membership_role,e.member_ordinal, 'accepted',e.assignment_snapshot_sha256,e.effective_decision_id,e.de",
+              "sha256": "fe7be247e636f90b81e0514930c67cceebb7dd84fa2fd9606eb1a82e5ea8c21d"
+            },
+            {
+              "query": "INSERT INTO release.research_search_document_projection_v3 SELECT p_release_id,archive_object_id,public_surface_id,title,coalesce(title,'')||' '||source_label,coalesce(title,'')||' '||public_surface_id FROM release.research_surface_presenta",
+              "sha256": "035b6a77a267afbb00a755a294caf1f11625aa9e6f9ca051784be4290287eb8e"
+            },
+            {
+              "query": "INSERT INTO release.research_corpus_summary_projection_v3 SELECT p_release_id,cv.corpus_version_id,c.corpus_token,cv.version_token,c.label, count(*) FILTER (WHERE cm.disposition='eligible'),count(*) FILTER (WHERE cm.disposition='held') FROM",
+              "sha256": "da644db03998f0d1389eec4cf388dafb55e9b3fa5ec6eeec5509a50975af5522"
+            },
+            {
+              "query": "INSERT INTO release.research_trace_availability_projection_v3 VALUES(p_release_id,0,0,'NO_ACCEPTED_SEMANTIC_RELATIONS')",
+              "sha256": "bc41b265086fbfb5ce03648669ca1922c020bfa945fe23cd708b88f4926e5063"
+            },
+            {
+              "query": "INSERT INTO release.research_launch_source_disposition_count_v3 SELECT p_release_id,'corpusMemberships',x.disposition,count(cm.*) FROM (VALUES ('eligible'),('held'),('rejected'),('excluded')) x(disposition) LEFT JOIN research.corpus_members",
+              "sha256": "d99ca33c81a5baaf19f411ed95769ef273f33dcf8633287b041b474f5e538102"
+            }
+          ],
+          "loops": 9,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Append",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "Hash",
+            "Hash Join",
+            "Index Scan",
+            "ModifyTable",
+            "Nested Loop",
+            "Result",
+            "Seq Scan",
+            "Values Scan"
+          ],
+          "queryCount": 9,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 3059,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 165706
+        },
+        "reverse_index_construction": {
+          "durationMs": 0.0,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 0,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "sealing_finalization": {
+          "durationMs": 0.748,
+          "fingerprints": [
+            {
+              "query": "INSERT INTO release.research_launch_protocol_v5 VALUES(p_release_id,'release-snapshot-v5',clock_timestamp())",
+              "sha256": "e7a1ff843bffa5e2ebc3638f36be097f25685876a236c5d15a7093129d6f9f52"
+            },
+            {
+              "query": "INSERT INTO release.research_launch_build_receipt_v3(research_release_id,builder_version,migration_batch_id,public_corpus_version_id,candidate_asset_id,candidate_asset_sha256,mapping_specification_sha256,projection_query_pack_sha256,selecti",
+              "sha256": "e5171db3580fc92e9d4f75a99fafcf832a4485e72a7e0ff79eb6d30b9e53ab64"
+            },
+            {
+              "query": "UPDATE release.research_release SET release_state='candidate',candidate_fingerprint=v_fingerprint,candidate_at=clock_timestamp() WHERE research_release_id=p_release_id",
+              "sha256": "d277210ba0753d01dd2b52522dc071050f8dbc0c3e748aab60b21054de56d58d"
+            }
+          ],
+          "loops": 3,
+          "plannerNodeTypes": [
+            "Index Scan",
+            "ModifyTable",
+            "Result"
+          ],
+          "queryCount": 3,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 117,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 1719
+        },
+        "transaction_commit": {
+          "durationMs": 1.918,
+          "fingerprints": [],
+          "loops": 0,
+          "plannerNodeTypes": [],
+          "queryCount": 1,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 0,
+          "sharedHitBlocks": 0,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 0
+        },
+        "validation_reconciliation": {
+          "durationMs": 3.103,
+          "fingerprints": [
+            {
+              "query": "EXISTS (SELECT 1 FROM gda_v5_expected_memberships e LEFT JOIN research.folder_publication_metadata m ON m.folder_id=e.folder_id WHERE m.folder_id IS NULL)",
+              "sha256": "46b32a96cc73dfac9cf4e97358abbc9b9b7e1f2bb4c7cebb5beb73e0aeaa4e1b"
+            },
+            {
+              "query": "INSERT INTO release.research_folder_type_projection_v3 SELECT DISTINCT p_release_id,t.folder_type_code,t.type_label,t.type_sort_ordinal FROM research.folder_type_registry t JOIN research.folder_publication_metadata md ON md.folder_type_code",
+              "sha256": "0b05bb9514c89583dbedd892e46ad29eb4cdc89a08544fb8c0ed00d325acaa8f"
+            },
+            {
+              "query": "INSERT INTO release.research_folder_projection_v3 SELECT p_release_id,f.folder_id,f.folder_token,md.folder_type_code,md.slug,f.label,md.scope_note,md.folder_sort_ordinal FROM research.folder f JOIN research.folder_publication_metadata md ON",
+              "sha256": "ad290967039af01032b7e9a0d625e8ace35b0e911ad53e209805f6ed34307867"
+            },
+            {
+              "query": "(SELECT count(*) FROM gda_v5_expected_objects)<>(SELECT count(*) FROM release.research_release_object WHERE research_release_id=p_release_id) OR EXISTS (SELECT 1 FROM gda_v5_expected_objects e LEFT JOIN release.research_release_object r ON ",
+              "sha256": "c4a554493b4ec4689ba2192b5ad4c2145a9a57606c9625daee0e3ec7a1c004c0"
+            }
+          ],
+          "loops": 4,
+          "plannerNodeTypes": [
+            "Aggregate",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan",
+            "Hash",
+            "Hash Join",
+            "Index Only Scan",
+            "Index Scan",
+            "Merge Join",
+            "ModifyTable",
+            "Result",
+            "Seq Scan"
+          ],
+          "queryCount": 4,
+          "repeatedScans": 0,
+          "rowsIn": 0,
+          "rowsOut": 2,
+          "sharedHitBlocks": 354,
+          "sharedReadBlocks": 0,
+          "tempBytes": 0,
+          "tempReadBlocks": 0,
+          "tempWrittenBlocks": 0,
+          "walBytes": 3449
+        }
+      }
+    }
+  },
+  "format": "gda-v49-db-closure-stage-comparison/v1",
+  "stageComparison": [
+    {
+      "after_1000_ms": 1613.741,
+      "after_2000_ms": 3169.222,
+      "after_32_ms": 103.047,
+      "after_exponent_1k_2k": 0.973719673,
+      "after_percent_2k": 416.799979,
+      "after_ratio_1k_2k": 1.963897552,
+      "baseline_1000_ms": 1547.328,
+      "baseline_2000_ms": 3047.279,
+      "baseline_32_ms": 117.854,
+      "baseline_exponent_1k_2k": 0.977742546,
+      "baseline_percent_2k": 179.749612,
+      "baseline_ratio_1k_2k": 1.969381411,
+      "stage": "fixture_input_preparation"
+    },
+    {
+      "after_1000_ms": 0.706,
+      "after_2000_ms": 1.495,
+      "after_32_ms": 0.0,
+      "after_exponent_1k_2k": 1.082405396,
+      "after_percent_2k": 0.196615,
+      "after_ratio_1k_2k": 2.117563739,
+      "baseline_1000_ms": 0.797,
+      "baseline_2000_ms": 1.437,
+      "baseline_32_ms": 0.036,
+      "baseline_exponent_1k_2k": 0.850408432,
+      "baseline_percent_2k": 0.084764,
+      "baseline_ratio_1k_2k": 1.803011292,
+      "stage": "canonical_assignment_load"
+    },
+    {
+      "after_1000_ms": 80.692,
+      "after_2000_ms": 161.472,
+      "after_32_ms": 3.788,
+      "after_exponent_1k_2k": 1.000786463,
+      "after_percent_2k": 21.235977,
+      "after_ratio_1k_2k": 2.001090567,
+      "baseline_1000_ms": 81.196,
+      "baseline_2000_ms": 158.493,
+      "baseline_32_ms": 3.858,
+      "baseline_exponent_1k_2k": 0.964938562,
+      "baseline_percent_2k": 9.349014,
+      "baseline_ratio_1k_2k": 1.951980393,
+      "stage": "assignment_supersession_current_leaf"
+    },
+    {
+      "after_1000_ms": 0.0,
+      "after_2000_ms": 0.0,
+      "after_32_ms": 0.0,
+      "after_exponent_1k_2k": null,
+      "after_percent_2k": 0.0,
+      "after_ratio_1k_2k": null,
+      "baseline_1000_ms": 0.0,
+      "baseline_2000_ms": 0.0,
+      "baseline_32_ms": 0.0,
+      "baseline_exponent_1k_2k": null,
+      "baseline_percent_2k": 0.0,
+      "baseline_ratio_1k_2k": null,
+      "stage": "reverse_index_construction"
+    },
+    {
+      "after_1000_ms": 137.957,
+      "after_2000_ms": 277.219,
+      "after_32_ms": 6.274,
+      "after_exponent_1k_2k": 1.006807479,
+      "after_percent_2k": 36.458435,
+      "after_ratio_1k_2k": 2.009459469,
+      "baseline_1000_ms": 127.276,
+      "baseline_2000_ms": 256.509,
+      "baseline_32_ms": 34.11,
+      "baseline_exponent_1k_2k": 1.011049045,
+      "baseline_percent_2k": 15.130677,
+      "baseline_ratio_1k_2k": 2.015376033,
+      "stage": "release_projection_build"
+    },
+    {
+      "after_1000_ms": 79.426,
+      "after_2000_ms": 160.682,
+      "after_32_ms": 3.209,
+      "after_exponent_1k_2k": 1.01652507,
+      "after_percent_2k": 21.13208,
+      "after_ratio_1k_2k": 2.023040314,
+      "baseline_1000_ms": 83.876,
+      "baseline_2000_ms": 160.397,
+      "baseline_32_ms": 3.947,
+      "baseline_exponent_1k_2k": 0.935317192,
+      "baseline_percent_2k": 9.461326,
+      "baseline_ratio_1k_2k": 1.912311031,
+      "stage": "chunk_digest_calculation"
+    },
+    {
+      "after_1000_ms": 10.248,
+      "after_2000_ms": 17.886,
+      "after_32_ms": 1.774,
+      "after_exponent_1k_2k": 0.8034884,
+      "after_percent_2k": 2.352276,
+      "after_ratio_1k_2k": 1.745316159,
+      "baseline_1000_ms": 10.388,
+      "baseline_2000_ms": 18.084,
+      "baseline_32_ms": 4.003,
+      "baseline_exponent_1k_2k": 0.799795904,
+      "baseline_percent_2k": 1.06672,
+      "baseline_ratio_1k_2k": 1.740854832,
+      "stage": "final_digest_reduction"
+    },
+    {
+      "after_1000_ms": 7.274,
+      "after_2000_ms": 11.493,
+      "after_32_ms": 0.0,
+      "after_exponent_1k_2k": 0.659934601,
+      "after_percent_2k": 1.511501,
+      "after_ratio_1k_2k": 1.580010998,
+      "baseline_1000_ms": 243.863,
+      "baseline_2000_ms": 969.992,
+      "baseline_32_ms": 3.103,
+      "baseline_exponent_1k_2k": 1.991901966,
+      "baseline_percent_2k": 57.216844,
+      "baseline_ratio_1k_2k": 3.97761038,
+      "stage": "validation_reconciliation"
+    },
+    {
+      "after_1000_ms": 81.563,
+      "after_2000_ms": 130.123,
+      "after_32_ms": 25.264,
+      "after_exponent_1k_2k": 0.673889244,
+      "after_percent_2k": 17.113116,
+      "after_ratio_1k_2k": 1.595367998,
+      "baseline_1000_ms": 72.451,
+      "baseline_2000_ms": 129.404,
+      "baseline_32_ms": 49.469,
+      "baseline_exponent_1k_2k": 0.836804705,
+      "baseline_percent_2k": 7.633144,
+      "baseline_ratio_1k_2k": 1.786089909,
+      "stage": "index_creation_or_maintenance_and_plpgsql_overhead"
+    },
+    {
+      "after_1000_ms": 20.828,
+      "after_2000_ms": 23.854,
+      "after_32_ms": 15.876,
+      "after_exponent_1k_2k": 0.195706896,
+      "after_percent_2k": 3.137157,
+      "after_ratio_1k_2k": 1.145285193,
+      "baseline_1000_ms": 20.525,
+      "baseline_2000_ms": 25.146,
+      "baseline_32_ms": 15.849,
+      "baseline_exponent_1k_2k": 0.292946705,
+      "baseline_percent_2k": 1.483285,
+      "baseline_ratio_1k_2k": 1.225140073,
+      "stage": "analyze"
+    },
+    {
+      "after_1000_ms": 0.0,
+      "after_2000_ms": 0.0,
+      "after_32_ms": 0.0,
+      "after_exponent_1k_2k": null,
+      "after_percent_2k": 0.0,
+      "after_ratio_1k_2k": null,
+      "baseline_1000_ms": 0.0,
+      "baseline_2000_ms": 0.975,
+      "baseline_32_ms": 0.748,
+      "baseline_exponent_1k_2k": null,
+      "baseline_percent_2k": 0.057512,
+      "baseline_ratio_1k_2k": null,
+      "stage": "sealing_finalization"
+    },
+    {
+      "after_1000_ms": 3.547,
+      "after_2000_ms": 7.484,
+      "after_32_ms": 1.816,
+      "after_exponent_1k_2k": 1.077210228,
+      "after_percent_2k": 0.984258,
+      "after_ratio_1k_2k": 2.109952072,
+      "baseline_1000_ms": 2.341,
+      "baseline_2000_ms": 3.936,
+      "baseline_32_ms": 1.918,
+      "baseline_exponent_1k_2k": 0.749605286,
+      "baseline_percent_2k": 0.232173,
+      "baseline_ratio_1k_2k": 1.681332764,
+      "stage": "transaction_commit"
+    }
+  ]
+}

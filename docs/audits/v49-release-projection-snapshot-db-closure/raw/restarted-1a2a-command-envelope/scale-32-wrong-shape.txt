@@ -1,0 +1,12 @@
+ set_config 
+------------
+ 32
+(1 row)
+
+ set_config 
+------------
+ 107
+(1 row)
+
+psql:database/fixtures/phase2s_scale_snapshot.sql:49: ERROR:  PHASE2S_SCALE_SHAPE_NOT_AUTHORIZED
+CONTEXT:  PL/pgSQL function inline_code_block line 10 at RAISE

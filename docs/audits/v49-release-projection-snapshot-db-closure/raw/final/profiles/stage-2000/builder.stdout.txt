@@ -1,0 +1,34 @@
+LOAD
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+Timing is on.
+BEGIN
+Time: 0.019 ms
+SET
+Time: 0.020 ms
+ create_research_release 
+-------------------------
+ 
+(1 row)
+
+Time: 3.441 ms
+Time: 799.391 ms
+RESET
+Time: 0.040 ms
+                                                                                                                                                 jsonb_build_object                                                                                                                                                 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ {"content": "3d97c8af78b7e692924f75d4d594e188d5b09b22c140f1ded8d90e014196fe3b", "objectCount": 2000, "membershipCount": 6107, "componentManifest": "3d97c8af78b7e692924f75d4d594e188d5b09b22c140f1ded8d90e014196fe3b", "candidateFingerprint": "7fdfc45a4325fac0574fff708204a171b6b7570d6fe8215ef566f642b218d5a0"}
+(1 row)
+
+Time: 1.581 ms
+COMMIT
+Time: 6.801 ms
+PHASE2SP_SCALE_V5=PASS

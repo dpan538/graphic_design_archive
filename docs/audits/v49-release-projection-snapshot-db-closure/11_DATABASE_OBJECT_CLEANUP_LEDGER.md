@@ -10,3 +10,5 @@
 | `release.record_research_launch_verification_v5` | function | function 019 | v5 seal verification before API/CAS | add/keep | function 019 + roles 007 | reviewer only |
 
 Catalog dependency, definition, usage, owner, and post-drop evidence is under `raw/final/cleanup/`. Cleanup passes only with fresh replay, digest/schema parity, permission, and fault matrices.
+
+The catalog inventory contains 168 v3/v4/v5/current-leaf/projection/launch objects plus its header. The post-drop proof reports the target absent, API/function references zero, and both reverse-leaf indexes present. Fresh A/B replay, schema/digest parity, 36/36 permissions, and 6/6 faults all passed, so `DATABASE_CLEANUP_LEDGER=PASS`.

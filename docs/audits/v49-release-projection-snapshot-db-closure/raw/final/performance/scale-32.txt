@@ -1,0 +1,32 @@
+BEGIN ISOLATION LEVEL SERIALIZABLE;
+BEGIN
+SET SESSION AUTHORIZATION gda_v49_phase2a_publisher;
+SET
+SELECT release.create_research_release(
+  'e4000000-0000-4000-8000-000000000032'::uuid, 'final332b'::core.release_token, 'schema-v49.0','model-v49.0',
+  'e4100000-0000-4000-8000-000000000032'::uuid, repeat('d',64));
+ create_research_release 
+-------------------------
+ 
+(1 row)
+
+SELECT release.build_research_launch_snapshot_v5(
+  'e4000000-0000-4000-8000-000000000032'::uuid,'a0000000-0000-4000-8000-000000000003',
+  'a8000000-0000-4000-8000-000000000010','e4200000-0000-4000-8000-000000000032'::uuid,repeat('e',64)) AS candidate_fingerprint 
+RESET SESSION AUTHORIZATION;
+RESET
+SELECT jsonb_build_object(
+  'objectCount',(SELECT count(*) FROM release.research_release_object WHERE research_release_id='e4000000-0000-4000-8000-000000000032'::uuid),
+  'membershipCount',(SELECT count(*) FROM release.research_folder_membership_projection_v3 WHERE research_release_id='e4000000-0000-4000-8000-000000000032'::uuid),
+  'componentManifest',release.research_launch_component_manifest_sha_v5('e4000000-0000-4000-8000-000000000032'::uuid),
+  'candidateFingerprint','6deb0fde9cc315da0890322260f2c1c1a2be095d82b000ff9ab5511f77705ea9',
+  'content',(SELECT projection_content_sha256 FROM release.research_launch_build_receipt_v3 WHERE research_release_id='e4000000-0000-4000-8000-000000000032'::uuid)
+)::text;
+                                                                                                                                               jsonb_build_object                                                                                                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ {"content": "60f5f6d55804417fdeed1337f14ac434228f17380de22c95959fc7f8f8dd8d16", "objectCount": 32, "membershipCount": 128, "componentManifest": "60f5f6d55804417fdeed1337f14ac434228f17380de22c95959fc7f8f8dd8d16", "candidateFingerprint": "6deb0fde9cc315da0890322260f2c1c1a2be095d82b000ff9ab5511f77705ea9"}
+(1 row)
+
+COMMIT;
+COMMIT
+PHASE2SP_SCALE_V5=PASS

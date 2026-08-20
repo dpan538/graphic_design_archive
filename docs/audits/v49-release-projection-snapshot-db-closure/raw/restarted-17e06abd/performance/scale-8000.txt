@@ -1,0 +1,52 @@
+********* QUERY **********
+BEGIN ISOLATION LEVEL SERIALIZABLE;
+**************************
+
+BEGIN
+********* QUERY **********
+SET SESSION AUTHORIZATION gda_v49_phase2a_publisher;
+**************************
+
+SET
+********* QUERY **********
+SELECT release.create_research_release(
+  'e3000000-0000-4000-8000-000000008000'::uuid, 'final28000'::core.release_token, 'schema-v49.0','model-v49.0',
+  'e3100000-0000-4000-8000-000000008000'::uuid, repeat('d',64));
+**************************
+
+ create_research_release 
+-------------------------
+ 
+(1 row)
+
+********* QUERY **********
+SELECT release.build_research_launch_snapshot_v5(
+  'e3000000-0000-4000-8000-000000008000'::uuid,'a0000000-0000-4000-8000-000000000003',
+  'a8000000-0000-4000-8000-000000000010','e3200000-0000-4000-8000-000000008000'::uuid,repeat('e',64)) AS candidate_fingerprint 
+**************************
+
+********* QUERY **********
+RESET SESSION AUTHORIZATION;
+**************************
+
+RESET
+********* QUERY **********
+SELECT jsonb_build_object(
+  'objectCount',(SELECT count(*) FROM release.research_release_object WHERE research_release_id='e3000000-0000-4000-8000-000000008000'::uuid),
+  'membershipCount',(SELECT count(*) FROM release.research_folder_membership_projection_v3 WHERE research_release_id='e3000000-0000-4000-8000-000000008000'::uuid),
+  'componentManifest',release.research_launch_component_manifest_sha_v5('e3000000-0000-4000-8000-000000008000'::uuid),
+  'candidateFingerprint','2c187cc57f24b3a94f50d74a363be52b02f7ce1bee60b45e85fe6a4b70492dad',
+  'content',(SELECT projection_content_sha256 FROM release.research_launch_build_receipt_v3 WHERE research_release_id='e3000000-0000-4000-8000-000000008000'::uuid)
+)::text;
+**************************
+
+                                                                                                                                                 jsonb_build_object                                                                                                                                                  
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ {"content": "ddde1aa06da9853526aaaa8ef5bfca90edecaedd8d3ffc713bc41704777611c0", "objectCount": 8000, "membershipCount": 24107, "componentManifest": "ddde1aa06da9853526aaaa8ef5bfca90edecaedd8d3ffc713bc41704777611c0", "candidateFingerprint": "2c187cc57f24b3a94f50d74a363be52b02f7ce1bee60b45e85fe6a4b70492dad"}
+(1 row)
+
+********* QUERY **********
+COMMIT;
+**************************
+
+COMMIT

@@ -1,0 +1,21 @@
+{
+  "format": "gda-v49-db-closure-api-read-smoke-failure/v1",
+  "status": "FAIL",
+  "firstFailedGate": "API_READ_SMOKE",
+  "apiReadRole": "gda_v49_phase2a_api_reader",
+  "endpointsAttempted": 6,
+  "endpointsSucceeded": 5,
+  "firstFailedEndpoint": "GET /api/v1/releases/{release}/search?q=Phase%202S&first=5",
+  "actualHttpStatus": 503,
+  "requiredHttpStatus": 200,
+  "error": "(0 , _pagination.pageByKey) is not a function",
+  "rootCause": "postgres-repository.ts imports and calls pageByKey, but pagination.ts exports keysetPage and no pageByKey",
+  "writeMethodNegativeCheck": "NOT_RUN_STOP_RULE",
+  "directRoleBoundary": "PASS_VIA_36_OF_36_MATRIX",
+  "frontendFilesChanged": 0,
+  "browserMatrixRun": false,
+  "visualRegressionRun": false,
+  "accessibilityMatrixRun": false,
+  "dataPollution": false,
+  "permissionPollution": false
+}

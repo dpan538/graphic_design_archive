@@ -1,0 +1,12 @@
+{
+  "postgres_version": "16.13",
+  "task_owned_postgres_cluster_count_max": 1,
+  "task_owned_importer_count_max": 1,
+  "task_owned_builder_count_max": 1,
+  "postgres_writers_observed_max": 1,
+  "dedicated_concurrency_database_sessions": 2,
+  "dedicated_concurrency_controller_processes": 1,
+  "task_owned_residual_process_count": 0,
+  "cluster_stopped": true,
+  "scratch_root_removed": true
+}

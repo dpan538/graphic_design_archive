@@ -1,0 +1,555 @@
+********* QUERY **********
+BEGIN ISOLATION LEVEL SERIALIZABLE;
+**************************
+
+BEGIN
+********* QUERY **********
+SET CONSTRAINTS ALL DEFERRED;
+**************************
+
+SET CONSTRAINTS
+********* QUERY **********
+INSERT INTO raw.source_asset(source_asset_id,authority,logical_name,sha256,byte_length,raw_bytes,media_type,received_at)
+VALUES ('10000000-0000-4000-8000-000000000001','canonical_migration_input','phase2s-candidate.json',
+  encode(sha256(convert_to('phase2s-candidate','UTF8')),'hex'),octet_length(convert_to('phase2s-candidate','UTF8')),
+  convert_to('phase2s-candidate','UTF8'),'application/json','2026-08-16T00:00:00Z');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO raw.mapping_version VALUES ('10000000-0000-4000-8000-000000000002','phase2s-mapping-v1',repeat('1',64),'phase2s-parser','preserve_no_automatic_split','2026-08-16T00:00:00Z');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO raw.migration_batch VALUES ('10000000-0000-4000-8000-000000000003','phase2s-batch-v1','10000000-0000-4000-8000-000000000001','10000000-0000-4000-8000-000000000002',
+  encode(sha256(convert_to('phase2s-candidate','UTF8')),'hex'),'2026-08-16T00:00:00Z',NULL);
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO release.validation_profile VALUES ('90000000-0000-4000-8000-000000000001','research','model-v49.0',repeat('2',64),'2026-08-16T00:00:00Z');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO release.validation_profile_requirement(validation_profile_id,receipt_kind,requirement_ordinal)
+SELECT '90000000-0000-4000-8000-000000000001'::uuid,k,ord::integer
+FROM unnest(ARRAY[
+  'research_frozen_asset_authority','research_migration_query_identity','research_population_and_count_parity',
+  'research_corpus_missingness_concentration','research_fk_orphan_integrity','research_predicate_relation_epistemic_registry',
+  'research_claim_projection_eligibility','research_unknown_relation_isolation','research_projection_fingerprint',
+  'research_deterministic_asset_inventory','research_role_grant_security'
+]::release.validation_receipt_kind[]) WITH ORDINALITY AS t(k,ord);
+**************************
+
+INSERT 0 11
+********* QUERY **********
+INSERT INTO provenance.source_document(source_document_id,source_kind,public_citation,created_at)
+VALUES ('30000000-0000-4000-8000-000000000001','synthetic_fixture','Phase 2C-S synthetic public citation','2026-08-16T00:00:00Z');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO provenance.source_version(source_version_id,source_document_id,version_token,content_sha256,byte_length,supersedes_source_version_id,created_at,source_asset_id)
+VALUES ('30000000-0000-4000-8000-000000000002','30000000-0000-4000-8000-000000000001','phase2s-source-v1',repeat('3',64),16,NULL,'2026-08-16T00:00:00Z','10000000-0000-4000-8000-000000000001');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO raw.source_record(source_record_id,source_asset_id,record_ordinal,legacy_source_record_id,raw_value,raw_fingerprint,parsed_projection,parse_error_code)
+VALUES ('10000000-0000-4000-8000-000000000004','10000000-0000-4000-8000-000000000001',100,'phase2s-evidence',convert_to('{"id":"phase2s-evidence"}','UTF8'),
+  encode(sha256(convert_to('{"id":"phase2s-evidence"}','UTF8')),'hex'),jsonb_build_object('id','phase2s-evidence'),NULL);
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO provenance.evidence_item VALUES ('30000000-0000-4000-8000-000000000003','30000000-0000-4000-8000-000000000002','10000000-0000-4000-8000-000000000004',
+  'json_pointer','/fixture/evidence',0,1,repeat('4',64),'Phase 2C-S fixture citation',NULL,'2026-08-16T00:00:00Z','10000000-0000-4000-8000-000000000001');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+DO $phase2s_objects$
+DECLARE i integer; v_object uuid; v_record uuid; v_ledger uuid;
+BEGIN
+  FOR i IN 1..33 LOOP
+    v_object:=('20000000-0000-4000-8000-'||lpad((1000+i)::text,12,'0'))::uuid;
+    v_record:=('10000000-0000-4000-8000-'||lpad((1000+i)::text,12,'0'))::uuid;
+    v_ledger:=('10000000-0000-4000-8000-'||lpad((2000+i)::text,12,'0'))::uuid;
+    INSERT INTO raw.source_record VALUES(v_record,'10000000-0000-4000-8000-000000000001',i,
+      'phase2s-record-'||i,convert_to(jsonb_build_object('id',i)::text,'UTF8'),
+      encode(sha256(convert_to(jsonb_build_object('id',i)::text,'UTF8')),'hex'),jsonb_build_object('id',i),NULL);
+    INSERT INTO core.entity VALUES(v_object,'archive_object','active','2026-08-16T00:00:00Z',NULL);
+    INSERT INTO core.archive_object(archive_object_id,operational_semantics_version,preferred_label,created_from_surface_ledger_id)
+    VALUES(v_object,'operational-v49.0','Phase 2S object '||i,v_ledger);
+    INSERT INTO raw.legacy_surface_ledger VALUES(v_ledger,'10000000-0000-4000-8000-000000000003',v_record,'10000000-0000-4000-8000-000000000001',i,
+      'phase2s-surface-'||i,'phase2s-record-'||i,encode(sha256(convert_to(jsonb_build_object('id',i)::text,'UTF8')),'hex'),
+      'accounted'::raw.import_disposition,v_object,
+      CASE WHEN i=33 THEN 'HELD_SENTINEL' ELSE 'PUBLIC_FIXTURE' END);
+  END LOOP;
+END $phase2s_objects$;
+**************************
+
+DO
+********* QUERY **********
+INSERT INTO research.corpus VALUES ('40000000-0000-4000-8000-000000000001','phase2s-corpus','Phase 2C-S Corpus','2026-08-16T00:00:00Z');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO research.corpus_version VALUES ('40000000-0000-4000-8000-000000000002','40000000-0000-4000-8000-000000000001','phase2s-corpus-v1','phase2s-policy-v1',repeat('5',64),'synthetic phase2s public objects','2026-08-16T00:00:00Z');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO research.corpus_membership
+SELECT '40000000-0000-4000-8000-000000000002',('20000000-0000-4000-8000-'||lpad((1000+i)::text,12,'0'))::uuid,
+  CASE WHEN i=33 THEN 'held'::research.membership_disposition ELSE 'eligible'::research.membership_disposition END,
+  CASE WHEN i=33 THEN 'HELD_SENTINEL' ELSE 'PUBLIC_FIXTURE' END,'30000000-0000-4000-8000-000000000003','fixture-reviewer','2026-08-16T00:00:00Z'
+FROM generate_series(1,33) AS i;
+**************************
+
+INSERT 0 33
+********* QUERY **********
+INSERT INTO research.launch_snapshot_policy_v3 VALUES ('80000000-0000-4000-8000-000000000010','phase2s-policy-v3','40000000-0000-4000-8000-000000000002',repeat('a',64),repeat('b',64),repeat('c',64),'2026-08-16T00:00:00Z');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO research.public_source_citation_allowlist_v3 VALUES ('10000000-0000-4000-8000-000000000001','Phase 2C-S synthetic public citation','2026-08-16T00:00:00Z');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO research.folder_type_registry VALUES ('region','Region',0);
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO research.folder VALUES
+  ('80000000-0000-4000-8000-000000000001','region-alpha','Region Alpha','2026-08-16T00:00:00Z'),
+  ('80000000-0000-4000-8000-000000000002','region-beta','Region Beta','2026-08-16T00:00:00Z'),
+  ('80000000-0000-4000-8000-000000000003','region-gamma','Region Gamma','2026-08-16T00:00:00Z'),
+  ('80000000-0000-4000-8000-000000000004','region-delta','Region Delta','2026-08-16T00:00:00Z');
+**************************
+
+INSERT 0 4
+********* QUERY **********
+INSERT INTO research.folder_publication_metadata VALUES
+  ('80000000-0000-4000-8000-000000000001','region','alpha','Synthetic region scope alpha',0),
+  ('80000000-0000-4000-8000-000000000002','region','beta','Synthetic region scope beta',1),
+  ('80000000-0000-4000-8000-000000000003','region','gamma','Synthetic region scope gamma',2),
+  ('80000000-0000-4000-8000-000000000004','region','delta','Synthetic region scope delta',3);
+**************************
+
+INSERT 0 4
+********* QUERY **********
+DO $phase2s_memberships$
+DECLARE i integer; v_object uuid; v_folder uuid; v_assignment uuid; v_decision uuid;
+BEGIN
+  FOR i IN 1..32 LOOP
+    v_object:=('20000000-0000-4000-8000-'||lpad((1000+i)::text,12,'0'))::uuid;
+    v_folder:=('80000000-0000-4000-8000-'||lpad((((i-1)/8)+1)::text,12,'0'))::uuid;
+    v_assignment:=('60000000-0000-4000-8000-'||lpad((1000+i)::text,12,'0'))::uuid;
+    v_decision:=('70000000-0000-4000-8000-'||lpad((1000+i)::text,12,'0'))::uuid;
+    INSERT INTO provenance.canonical_assignment VALUES(v_assignment,'folder_membership','accepted',NULL,'2026-08-16T00:00:00Z');
+    INSERT INTO provenance.assignment_folder_membership VALUES(v_assignment,v_folder,v_object,'primary',(i-1)%8);
+    INSERT INTO provenance.assignment_review_decision VALUES(v_decision,v_assignment,'accept','fixture-reviewer','Synthetic accepted folder membership',NULL,'2026-08-16T00:00:00Z');
+    INSERT INTO provenance.assignment_decision_evidence VALUES(v_decision,'30000000-0000-4000-8000-000000000003','supports');
+  END LOOP;
+  INSERT INTO provenance.canonical_assignment VALUES('60000000-0000-4000-8000-000000009999','folder_membership','proposed',NULL,'2026-08-16T00:00:00Z');
+  INSERT INTO provenance.assignment_folder_membership VALUES('60000000-0000-4000-8000-000000009999','80000000-0000-4000-8000-000000000001',
+    '20000000-0000-4000-8000-000000001033','held_sentinel',99);
+END $phase2s_memberships$;
+**************************
+
+DO
+********* QUERY **********
+DO $negative_topology$
+DECLARE v_state text; v_message text;
+BEGIN
+  BEGIN
+    INSERT INTO provenance.canonical_assignment VALUES(
+      '60000000-0000-4000-8000-000000009991','folder_membership','accepted',
+      '60000000-0000-4000-8000-000000009990','2026-08-20T00:00:00Z');
+    RAISE EXCEPTION 'ORPHAN_SUCCESSOR_NOT_REJECTED';
+  EXCEPTION WHEN foreign_key_violation THEN NULL;
+  END;
+
+  BEGIN
+    INSERT INTO provenance.canonical_assignment VALUES(
+      '60000000-0000-4000-8000-000000009992','folder_membership','superseded',
+      '60000000-0000-4000-8000-000000009992','2026-08-20T00:00:00Z');
+    SET CONSTRAINTS provenance.assignment_supersession_parent IMMEDIATE;
+    RAISE EXCEPTION 'ASSIGNMENT_CYCLE_NOT_REJECTED';
+  EXCEPTION WHEN check_violation THEN
+    GET STACKED DIAGNOSTICS v_state=RETURNED_SQLSTATE,v_message=MESSAGE_TEXT;
+    IF v_state <> '23514' OR v_message <> 'ASSIGNMENT_SUPERSESSION_CYCLE' THEN RAISE; END IF;
+  END;
+  SET CONSTRAINTS ALL DEFERRED;
+
+  BEGIN
+    UPDATE provenance.canonical_assignment SET status='superseded'
+    WHERE canonical_assignment_id='60000000-0000-4000-8000-000000001006';
+    INSERT INTO provenance.canonical_assignment VALUES(
+      '60000000-0000-4000-8000-000000009993','folder_membership','accepted',
+      '60000000-0000-4000-8000-000000001006','2026-08-20T00:00:00Z');
+    INSERT INTO provenance.assignment_folder_membership VALUES(
+      '60000000-0000-4000-8000-000000009993',
+      '80000000-0000-4000-8000-000000000004',
+      '20000000-0000-4000-8000-000000001007','cross_object',70);
+    SET CONSTRAINTS provenance.assignment_supersession_parent IMMEDIATE;
+    RAISE EXCEPTION 'CROSS_OBJECT_SUPERSESSION_NOT_REJECTED';
+  EXCEPTION WHEN check_violation THEN
+    GET STACKED DIAGNOSTICS v_state=RETURNED_SQLSTATE,v_message=MESSAGE_TEXT;
+    IF v_state <> '23514' OR v_message <> 'ASSIGNMENT_SUPERSESSION_OBJECT_MISMATCH' THEN RAISE; END IF;
+  END;
+  SET CONSTRAINTS ALL DEFERRED;
+END
+$negative_topology$;
+**************************
+
+DO
+********* QUERY **********
+UPDATE provenance.canonical_assignment SET status='superseded'
+WHERE canonical_assignment_id='60000000-0000-4000-8000-000000001001';
+**************************
+
+UPDATE 1
+********* QUERY **********
+INSERT INTO provenance.canonical_assignment VALUES(
+  '60000000-0000-4000-8000-000000008001','folder_membership','accepted',
+  '60000000-0000-4000-8000-000000001001','2026-08-17T00:00:00Z');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO provenance.assignment_folder_membership VALUES(
+  '60000000-0000-4000-8000-000000008001',
+  '80000000-0000-4000-8000-000000000002',
+  '20000000-0000-4000-8000-000000001001','primary',20);
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO provenance.assignment_review_decision VALUES(
+  '70000000-0000-4000-8000-000000008001',
+  '60000000-0000-4000-8000-000000008001','accept','fixture-reviewer',
+  'single successor accepted',NULL,'2026-08-17T00:00:00Z');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO provenance.assignment_decision_evidence VALUES(
+  '70000000-0000-4000-8000-000000008001',
+  '30000000-0000-4000-8000-000000000003','supports');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+UPDATE provenance.canonical_assignment SET status='superseded'
+WHERE canonical_assignment_id='60000000-0000-4000-8000-000000001002';
+**************************
+
+UPDATE 1
+********* QUERY **********
+INSERT INTO provenance.canonical_assignment VALUES(
+  '60000000-0000-4000-8000-000000008201','folder_membership','superseded',
+  '60000000-0000-4000-8000-000000001002','2026-08-17T00:00:00Z');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO provenance.assignment_folder_membership VALUES(
+  '60000000-0000-4000-8000-000000008201',
+  '80000000-0000-4000-8000-000000000002',
+  '20000000-0000-4000-8000-000000001002','primary',21);
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO provenance.canonical_assignment VALUES(
+  '60000000-0000-4000-8000-000000008202','folder_membership','accepted',
+  '60000000-0000-4000-8000-000000008201','2026-08-18T00:00:00Z');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO provenance.assignment_folder_membership VALUES(
+  '60000000-0000-4000-8000-000000008202',
+  '80000000-0000-4000-8000-000000000003',
+  '20000000-0000-4000-8000-000000001002','primary',21);
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO provenance.assignment_review_decision VALUES(
+  '70000000-0000-4000-8000-000000008202',
+  '60000000-0000-4000-8000-000000008202','accept','fixture-reviewer',
+  'multi-level terminal leaf accepted',NULL,'2026-08-18T00:00:00Z');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO provenance.assignment_decision_evidence VALUES(
+  '70000000-0000-4000-8000-000000008202',
+  '30000000-0000-4000-8000-000000000003','supports');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+UPDATE provenance.canonical_assignment SET status='superseded'
+WHERE canonical_assignment_id='60000000-0000-4000-8000-000000001003';
+**************************
+
+UPDATE 1
+********* QUERY **********
+INSERT INTO provenance.canonical_assignment VALUES
+  ('60000000-0000-4000-8000-000000008301','folder_membership','accepted',
+    '60000000-0000-4000-8000-000000001003','2026-08-19T00:00:00Z'),
+  ('60000000-0000-4000-8000-000000008302','folder_membership','accepted',
+    '60000000-0000-4000-8000-000000001003','2026-08-19T00:00:00Z');
+**************************
+
+INSERT 0 2
+********* QUERY **********
+INSERT INTO provenance.assignment_folder_membership VALUES
+  ('60000000-0000-4000-8000-000000008301',
+    '80000000-0000-4000-8000-000000000002',
+    '20000000-0000-4000-8000-000000001003','branch_a',30),
+  ('60000000-0000-4000-8000-000000008302',
+    '80000000-0000-4000-8000-000000000003',
+    '20000000-0000-4000-8000-000000001003','branch_b',30);
+**************************
+
+INSERT 0 2
+********* QUERY **********
+INSERT INTO provenance.assignment_review_decision VALUES
+  ('70000000-0000-4000-8000-000000008301',
+    '60000000-0000-4000-8000-000000008301','accept','fixture-reviewer',
+    'branch A accepted',NULL,'2026-08-19T00:00:00Z'),
+  ('70000000-0000-4000-8000-000000008302',
+    '60000000-0000-4000-8000-000000008302','accept','fixture-reviewer',
+    'branch B accepted',NULL,'2026-08-19T00:00:00Z');
+**************************
+
+INSERT 0 2
+********* QUERY **********
+INSERT INTO provenance.assignment_decision_evidence
+SELECT d,'30000000-0000-4000-8000-000000000003'::uuid,'supports'::provenance.evidence_role
+FROM unnest(ARRAY[
+  '70000000-0000-4000-8000-000000008301'::uuid,
+  '70000000-0000-4000-8000-000000008302'::uuid]) AS d;
+**************************
+
+INSERT 0 2
+********* QUERY **********
+INSERT INTO provenance.assignment_review_decision VALUES(
+  '70000000-0000-4000-8000-000000008401',
+  '60000000-0000-4000-8000-000000001004','accept','fixture-reviewer',
+  'equal timestamp decision successor',
+  '70000000-0000-4000-8000-000000001004','2026-08-16T00:00:00Z');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO provenance.assignment_decision_evidence VALUES(
+  '70000000-0000-4000-8000-000000008401',
+  '30000000-0000-4000-8000-000000000003','supports');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO provenance.canonical_assignment VALUES
+  ('60000000-0000-4000-8000-000000008501','folder_membership','rejected',NULL,'2026-08-20T00:00:00Z'),
+  ('60000000-0000-4000-8000-000000008502','folder_membership','rejected',NULL,'2026-08-20T00:00:00Z');
+**************************
+
+INSERT 0 2
+********* QUERY **********
+INSERT INTO provenance.assignment_folder_membership VALUES
+  ('60000000-0000-4000-8000-000000008501',
+    '80000000-0000-4000-8000-000000000004',
+    '20000000-0000-4000-8000-000000001005','withdrawn_candidate',90),
+  ('60000000-0000-4000-8000-000000008502',
+    '80000000-0000-4000-8000-000000000004',
+    '20000000-0000-4000-8000-000000001006','failed_review',91);
+**************************
+
+INSERT 0 2
+********* QUERY **********
+INSERT INTO provenance.assignment_review_decision VALUES(
+  '70000000-0000-4000-8000-000000008502',
+  '60000000-0000-4000-8000-000000008502','reject','fixture-reviewer',
+  'failed review candidate',NULL,'2026-08-20T00:00:00Z');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+INSERT INTO provenance.assignment_decision_evidence VALUES(
+  '70000000-0000-4000-8000-000000008502',
+  '30000000-0000-4000-8000-000000000003','supports');
+**************************
+
+INSERT 0 1
+********* QUERY **********
+SET CONSTRAINTS ALL IMMEDIATE;
+**************************
+
+SET CONSTRAINTS
+********* QUERY **********
+SET CONSTRAINTS ALL DEFERRED;
+**************************
+
+SET CONSTRAINTS
+********* QUERY **********
+SET SESSION AUTHORIZATION gda_v49_phase2a_publisher;
+**************************
+
+SET
+********* QUERY **********
+SELECT release.create_research_release(
+  '93000000-0000-4000-8000-000000001001','db-closure-leaf-v1',
+  'schema-v49.0','model-v49.0',
+  '93000000-0000-4000-8000-000000001002',repeat('1',64));
+**************************
+
+ create_research_release 
+-------------------------
+ 
+(1 row)
+
+********* QUERY **********
+SELECT release.build_research_launch_snapshot_v5(
+  '93000000-0000-4000-8000-000000001001',
+  '10000000-0000-4000-8000-000000000003',
+  '80000000-0000-4000-8000-000000000010',
+  '93000000-0000-4000-8000-000000001003',repeat('2',64)) AS candidate_fingerprint 
+**************************
+
+********* QUERY **********
+RESET SESSION AUTHORIZATION;
+**************************
+
+RESET
+********* QUERY **********
+DO $leaf_assertions$
+BEGIN
+  IF (SELECT count(*) FROM release.research_release_object
+      WHERE research_release_id='93000000-0000-4000-8000-000000001001') <> 32 THEN
+    RAISE EXCEPTION 'CURRENT_LEAF_OBJECT_COUNT_MISMATCH';
+  END IF;
+  IF (SELECT count(*) FROM release.research_folder_membership_projection_v3
+      WHERE research_release_id='93000000-0000-4000-8000-000000001001') <> 33 THEN
+    RAISE EXCEPTION 'CURRENT_LEAF_MEMBERSHIP_COUNT_MISMATCH';
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM release.research_folder_membership_projection_v3
+      WHERE research_release_id='93000000-0000-4000-8000-000000001001'
+        AND source_assignment_id='60000000-0000-4000-8000-000000001010') THEN
+    RAISE EXCEPTION 'NO_SUCCESSOR_ASSIGNMENT_NOT_PUBLISHED';
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM release.research_folder_membership_projection_v3
+      WHERE research_release_id='93000000-0000-4000-8000-000000001001'
+        AND source_assignment_id='60000000-0000-4000-8000-000000008001') THEN
+    RAISE EXCEPTION 'ONE_SUCCESSOR_LEAF_NOT_PUBLISHED';
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM release.research_folder_membership_projection_v3
+      WHERE research_release_id='93000000-0000-4000-8000-000000001001'
+        AND source_assignment_id='60000000-0000-4000-8000-000000008202') THEN
+    RAISE EXCEPTION 'MULTILEVEL_LEAF_NOT_PUBLISHED';
+  END IF;
+  IF (SELECT count(*) FROM release.research_folder_membership_projection_v3
+      WHERE research_release_id='93000000-0000-4000-8000-000000001001'
+        AND source_assignment_id IN (
+          '60000000-0000-4000-8000-000000008301',
+          '60000000-0000-4000-8000-000000008302')) <> 2 THEN
+    RAISE EXCEPTION 'BRANCH_LEAF_SEMANTICS_MISMATCH';
+  END IF;
+  IF EXISTS (SELECT 1 FROM release.research_folder_membership_projection_v3
+      WHERE research_release_id='93000000-0000-4000-8000-000000001001'
+        AND source_assignment_id IN (
+          '60000000-0000-4000-8000-000000001001',
+          '60000000-0000-4000-8000-000000001002',
+          '60000000-0000-4000-8000-000000008201',
+          '60000000-0000-4000-8000-000000001003',
+          '60000000-0000-4000-8000-000000008501',
+          '60000000-0000-4000-8000-000000008502')) THEN
+    RAISE EXCEPTION 'NONCURRENT_OR_FAILED_ASSIGNMENT_LEAKED';
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM release.research_folder_membership_projection_v3
+      WHERE research_release_id='93000000-0000-4000-8000-000000001001'
+        AND source_assignment_id='60000000-0000-4000-8000-000000001004'
+        AND effective_decision_id='70000000-0000-4000-8000-000000008401') THEN
+    RAISE EXCEPTION 'EQUAL_TIMESTAMP_DECISION_LEAF_MISMATCH';
+  END IF;
+  IF EXISTS (SELECT 1 FROM release.research_folder_membership_projection_v3
+      WHERE research_release_id='93000000-0000-4000-8000-000000001001'
+        AND effective_decision_id='70000000-0000-4000-8000-000000001004') THEN
+    RAISE EXCEPTION 'SUPERSEDED_DECISION_LEAKED';
+  END IF;
+END
+$leaf_assertions$;
+**************************
+
+DO
+********* QUERY **********
+SELECT release.canonical_jsonb_sha256(jsonb_build_object(
+  'format','gda-v49-research-validation-v5',
+  'releaseId','93000000-0000-4000-8000-000000001001'::uuid,
+  'candidateFingerprint','9569fc77808283dd0300f8a31466571d13882494a9971d4882b84f18aedda6df'::core.sha256_hex,
+  'componentManifestSha256',release.research_launch_component_manifest_sha_v5(
+    '93000000-0000-4000-8000-000000001001'))) AS validation_sha 
+**************************
+
+********* QUERY **********
+SET SESSION AUTHORIZATION gda_v49_phase2a_publisher;
+**************************
+
+SET
+********* QUERY **********
+SELECT release.validate_research_launch_snapshot_v5(
+  '93000000-0000-4000-8000-000000001001','f126856eb0b0240d1c47ba77c815e58bfa07cc8a063f4c24c670d9d0ac360e82',
+  '93000000-0000-4000-8000-000000001004',repeat('3',64));
+**************************
+
+ validate_research_launch_snapshot_v5 
+--------------------------------------
+ 
+(1 row)
+
+********* QUERY **********
+SELECT release.seal_research_launch_snapshot_v5(
+  '93000000-0000-4000-8000-000000001001',
+  '93000000-0000-4000-8000-000000001005',
+  '93000000-0000-4000-8000-000000001006',repeat('4',64));
+**************************
+
+                 seal_research_launch_snapshot_v5                 
+------------------------------------------------------------------
+ f5d487a199e03ac78fe20e2115c4b53df5db8beac69a6cea16f2aa7ee38dbc53
+(1 row)
+
+********* QUERY **********
+RESET SESSION AUTHORIZATION;
+**************************
+
+RESET
+********* QUERY **********
+DO $lifecycle_assertion$
+BEGIN
+  IF NOT EXISTS (SELECT 1 FROM release.research_release
+      WHERE research_release_id='93000000-0000-4000-8000-000000001001'
+        AND release_state='sealed' AND manifest_sha256 IS NOT NULL) THEN
+    RAISE EXCEPTION 'VALIDATED_SEALED_LIFECYCLE_MISMATCH';
+  END IF;
+END
+$lifecycle_assertion$;
+**************************
+
+DO
+********* QUERY **********
+ROLLBACK;
+**************************
+
+ROLLBACK
