@@ -51,12 +51,12 @@ def extract_plans(path: Path) -> list[dict[str, Any]]:
 
 def classify(query: str) -> str | None:
     normalized = " ".join(query.split())
+    if normalized.startswith("CREATE TEMPORARY TABLE gda_v5_expected_memberships"):
+        return "reverse_index_construction"
     if "gda_v5_effective_decisions" in normalized and normalized.startswith("CREATE TEMPORARY TABLE"):
         return "assignment_supersession_current_leaf"
     if normalized.startswith("EXISTS (SELECT 1 FROM gda_v5_effective_decisions"):
         return "assignment_supersession_current_leaf"
-    if "gda_v5_expected_memberships" in normalized and normalized.startswith("CREATE TEMPORARY TABLE"):
-        return "reverse_index_construction"
     if "gda_v5_expected_memberships" in normalized and "folder_publication_metadata" in normalized:
         return "validation_reconciliation"
     if normalized.startswith("CREATE TEMPORARY TABLE gda_v5_expected_objects"):
@@ -100,7 +100,11 @@ def add_plan(stage: dict[str, Any], item: dict[str, Any]) -> None:
     query = " ".join(item["Query Text"].split())
     fingerprint = hashlib.sha256(query.encode()).hexdigest()
     stage["durationMs"] += float(plan.get("Actual Total Time", 0))
-    stage["rowsOut"] += int(plan.get("Actual Rows", 0))
+    root_rows = int(plan.get("Actual Rows", 0))
+    if root_rows == 0 and plan.get("Operation") == "Insert" and plan.get("Plans"):
+        root_rows = int(plan["Plans"][0].get("Actual Rows", 0))
+    stage["rowsIn"] += root_rows
+    stage["rowsOut"] += root_rows
     stage["queryCount"] += 1
     stage["tempReadBlocks"] += int(plan.get("Temp Read Blocks", 0))
     stage["tempWrittenBlocks"] += int(plan.get("Temp Written Blocks", 0))
@@ -182,7 +186,12 @@ def main() -> int:
             two = float(row[f"{label}_2000_ms"])
             row[f"{label}_ratio_1k_2k"] = round(two / one, 9) if one else None
             row[f"{label}_exponent_1k_2k"] = round(math.log(two / one, 2), 9) if one and two else None
-            total = payload[label]["2000"]["outerBuilderPlanMs"]
+            measured = payload[label]["2000"]
+            total = (
+                measured["stages"]["fixture_input_preparation"]["durationMs"]
+                + measured["stages"]["analyze"]["durationMs"]
+                + measured["instrumentedBuilderWallMs"]
+            )
             row[f"{label}_percent_2k"] = round(two * 100 / total, 6) if total else None
         rows.append(row)
     payload["stageComparison"] = rows
