@@ -1,139 +1,76 @@
 # Graphic Design Archive
 
-A rights-aware archive index and research framework for modern graphic design history.
+Graphic Design Archive is a rights-aware PostgreSQL-backed research archive for modern graphic design history. v49 closes and freezes the database/release projection and exposes the sealed release through the versioned read-only API.
 
-## Status
+## v49 status
 
-- Status: research prototype / public backup
-- Dataset: seed and candidate data only
-- Frontend: static archive-box prototype
-- Images: rights-aware display states only
-- Publication status: not final publication data
+- PostgreSQL schema and release projection: closed and frozen.
+- Canonical objects / assignments: 15,923 / 47,982.
+- Publicly eligible / held: 7,995 / 7,928.
+- Accepted TRACE relations / positive visual rights: 0 / 0, fail-closed.
+- Public Read API: 18 documented endpoint templates; search and pagination closed.
+- Frontend: consumes the API/repository boundary and never connects directly to PostgreSQL.
+- Immutable source anchor: `v49-data-api-closure-20260821`.
 
-## Project Scope
+## Repository layout
 
-Graphic Design Archive is a public archive index and research framework for organizing distributed material related to modern graphic design history. It connects source records, texts, designers, institutions, media, regions, movements, themes, rights notes, citations, and source links into a static, inspectable archive-box interface.
+- `database/` — the only active database root: migrations, functions, roles, views, fixtures, tests, and v48→v49 replay tooling.
+- `frontend/` — current Next.js frontend and server-side Read API implementation.
+- `data/` and `generated/` — only the four byte-pinned v49 input/reconciliation artifacts listed in `docs/releases/v49/DATA_INPUT_MANIFEST.json`.
+- `scripts/repository/` — repository hygiene, release-document, and database-freeze verification tooling.
+- `docs/api/` — Read API catalog, OpenAPI 3.1 contract, interface map, and examples.
+- `docs/architecture/`, `docs/operations/`, `docs/design/` — current architecture, operations, and design handoff indexes.
+- `docs/releases/v49/` — immutable source, data-input, audit, and freeze indexes.
+- `docs/maintenance/` — repository layout, retention policy, inventories, and branch/worktree ledgers.
+- `docs/audits/` — indexed v49 audit evidence, including final DB, API, and repository closure packages.
 
-The project is a metadata, citation, and source-link layer. It is designed to point back to source institutions, archives, catalogues, publications, and stable URLs rather than locally absorbing or republishing their materials. The archive-box interface is a prototype for reading and testing this structure, not a declaration that the current records are complete or publication-ready.
+The former `db/` skeleton, raw capture trees, backups, pre-v49 generated artifacts, prompts, reports, and the full historical project log are not active inputs. They remain recoverable from the immutable source tag without being copied into another active archive directory.
 
-## What This Project Is Not
+## Canonical and generated data boundary
 
-- Not a museum collection
-- Not an image gallery
-- Not an inspiration board
-- Not a textbook or course
-- Not a replacement for source archives
-- Not a claim of final scholarly authority
-- Not a repository of locally copied copyrighted images
+`generated/public_surfaces_prefreeze_candidate_v48.json` is the sole canonical population input. The v48 SQLite database and two transfer manifests are reconciliation/integrity inputs only; they must never backfill, infer, normalize, or widen canonical state. Missing, null, empty-string, empty-array, absent-relationship, and quarantined semantics remain distinct.
 
-## Repository Structure
+Current frontend/runtime data under `frontend/` is separate from the canonical migration input. Generated files may remain active only when a current runtime, API, test, or release verification consumer and checksum are documented.
 
-- `frontend/` - Next.js static archive-box interface prototype.
-- `data/` - seed data, candidate data, source registry, rights strategy, capture summaries, staged source records, and related implementation data.
-- `generated/` - generated public-surface payloads consumed by the frontend prototype.
-- `db/` - schema, read models, validation queries, and database validation work.
-- `scripts/` - capture, normalization, generation, validation, export, and audit scripts.
-- `docs/` - methodology notes, system contracts, frontend contracts, capture notes, and review documents.
-- `reports/deep-research/` - research reports and review material, where included.
-- `prompts/` - research prompts used to develop and test the framework.
-- `PROJECT_LOG.md` - implementation log and collaboration notes, not a public scholarly record.
+## Database and API commands
 
-## Frontend Quick Start
+Database replay and verification:
+
+```bash
+database/data-migrations/v48-to-v49/run-rehearsal.sh
+python3 scripts/repository/verify_v49_database_freeze.py
+python3 scripts/repository/audit_repository_hygiene.py
+```
+
+Frontend/API checks:
 
 ```bash
 cd frontend
 npm install
-npm run dev -- -p 3000
-```
-
-Build check:
-
-```bash
-cd frontend
+npm run typecheck:runtime
+npm run test:read-platform
+node scripts/verify-page-by-key-module-contract.mjs
+node scripts/run-runtime-acceptance-vectors.mjs
 npm run build
 ```
 
-The frontend consumes static generated payloads. The main prototype payloads currently include:
+The exhaustive PostgreSQL-backed API harness is documented in `docs/audits/v49-api-read-contract-closure/` and must use the dedicated read-only API database role.
 
-- `generated/public_surfaces_v1.json`
-- `frontend/src/data/public_surface_mock_v0.json`
-- `frontend/public/data/public_surface_mock_v0.json`
+## Freeze and change policy
 
-These payloads support interface testing and archive-box rendering. Their presence in the frontend does not mean the records are final, complete, or publication-ready.
+The v49 files enumerated by `database/FREEZE_V49.json` are immutable. Subsequent database work must target database version 50 or later, use a new forward-only migration, preserve every v49 historical file, and include a new ADR. Frontend design work must not modify `database/**` or canonical release inputs; server adapters must conform to the frozen API contract.
 
-## Data and Publication Status
+## Rights boundary
 
-The files in `data/`, `generated/`, and related prototype folders are implementation-stage materials. Seed files are implementation seeds. Source records may be candidates, drafts, fallback stubs, staged capture rows, generated summaries, or prototype views.
+This repository is a metadata, citation, and source-return layer, not a source-image mirror. Zero positive visual rights is an intentional release fact. Do not infer rights, acceptance, relations, or publication eligibility. Software is governed by `LICENSE`; original interface design and visual identity are governed separately by `FRONTEND_DESIGN_LICENSE.md`; third-party material remains subject to its source terms.
 
-Candidate data should not be cited as final evidence unless each record has source terms review, rights review, field provenance, and citation review. Generated public-surface payloads are test and prototype outputs unless they are explicitly marked as publication-ready.
+## Documentation entry points
 
-The repository may contain raw capture summaries or local reproducibility evidence for development. These materials exist to make the pipeline inspectable; they are not source mirrors and they do not imply permission to republish source material.
+- `docs/releases/v49/RELEASE_INDEX.md`
+- `docs/releases/v49/AUDIT_INDEX.md`
+- `docs/maintenance/DOCUMENTATION_MAP.md`
+- `docs/maintenance/REPOSITORY_LAYOUT.md`
+- `database/FROZEN_V49.md`
+- `READ_API_V1.md`
+- `PROJECT_LOG.md`
 
-## Rights-Aware Image Policy
-
-Image handling is governed by rights-aware display states:
-
-- `IMG00`: image evidence exists or is expected, but the interface renders an empty rights-aware frame only. No source image, thumbnail, screenshot, preview, or local copy should be displayed.
-- `IMG01`: a controlled thumbnail or limited display may be possible when source terms and project policy support it.
-- `IMG02`: source-hosted viewer, IIIF, or similar source-return display is preferred; the project points users back to the source rather than taking possession of the image.
-- `IMG03`: open or reusable image state based on explicit rights evidence, source metadata, or reviewed source terms.
-- `IMG04`: genuine no-image text, appendix, bibliography, authority, or context page. It is not a failed image state.
-
-Parser failure is not an image state. Failed capture, blocked access, missing parser support, or ambiguous rights should be recorded separately and should not be converted into `IMG04`.
-
-Do not locally copy, scrape, or republish source images unless rights fields and source terms clearly permit it. When evidence is unclear, default to source links and rights-aware empty frames.
-
-## Source and Citation Policy
-
-Public records should point users back to source institutions, archives, catalogues, publications, or stable source URLs. The project should preserve provenance rather than collapse conflicting sources into unsupported certainty.
-
-Interpretive text must be traceable to source records, reviewed references, or explicitly marked research notes. AI-generated or exploratory research text must not be treated as evidence by itself.
-
-## Backup Boundary
-
-This repository is a public code and research backup, not the sole preservation copy and not a publication release. GitHub backup does not equal rights clearance, source permission, scholarly publication, or institutional approval.
-
-Do not commit secrets, credentials, private notes, browser sessions, cookies, API keys, local tokens, or private machine paths. Do not commit large local caches, `node_modules`, `.next` builds, local model caches, temporary browser downloads, or downloaded copyrighted source files.
-
-## License / Reuse
-
-This repository uses layered licensing because the project combines software,
-research data, documentation, frontend design, and third-party source references.
-GitHub may display the repository license as MIT because `LICENSE` covers the
-software code layer. That label must be read together with this section.
-
-- Source code is licensed under the MIT License. See `LICENSE`.
-- The original frontend visual design, archive-box interface concept, layout
-  language, visual identity, design-specific assets, prototype trade dress, and
-  screenshots are not MIT-licensed. They are covered by the personal frontend
-  design license in `FRONTEND_DESIGN_LICENSE.md`.
-- Project data, generated records, candidate rows, reports, and documentation
-  are research-prototype materials unless a file says otherwise. They should not
-  be treated as final publication data or as rights clearance.
-- Third-party source records, catalogue descriptions, images, archive materials,
-  trademarks, and institution metadata remain governed by their original owners'
-  terms and rights.
-
-The MIT License does not grant permission to reuse third-party materials or the
-personal frontend visual design. When in doubt, use this repository as code and
-methodology reference, not as an asset library.
-
-## Suggested Citation
-
-For now, cite this repository as a research prototype, not as a completed archive or authoritative dataset.
-
-Suggested form:
-
-> Dai Pan / dpan538. `Graphic Design Archive`. Research prototype and public backup for a rights-aware graphic design history archive index. GitHub repository.
-
-## Contributing
-
-External contributions are not currently open unless explicitly invited. Issues or pull requests may be used for technical corrections, source corrections, or documentation improvements later.
-
-Do not submit copyrighted images, copied archive materials, private research notes, credentials, or source files that cannot be redistributed.
-
-## Maintenance Note
-
-Maintainer: Dai / dpan538.
-
-This is an active research and development repository. Major changes should update `README.md`, `data/README.md`, and `PROJECT_LOG.md` consistently.

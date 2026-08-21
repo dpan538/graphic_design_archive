@@ -1,0 +1,27 @@
+name: v49 database freeze
+
+on:
+  pull_request:
+    paths:
+      - "database/**"
+      - "DATA_MODEL_V49.md"
+      - "MIGRATION_V48_TO_V49.md"
+      - "READ_API_V1.md"
+      - "data/prefreeze_candidate_v48.sqlite"
+      - "data/prefreeze_candidate_v48_transfer_manifest.csv"
+      - "generated/public_surfaces_prefreeze_candidate_v48.json"
+      - "generated/prefreeze_candidate_v48_transfer_manifest.json"
+      - "docs/api/**"
+      - "scripts/repository/verify_v49_database_freeze.py"
+  push:
+    branches: [main]
+
+jobs:
+  verify-v49-freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Verify frozen v49 implementation and inputs
+        run: python3 scripts/repository/verify_v49_database_freeze.py --repo "$GITHUB_WORKSPACE"

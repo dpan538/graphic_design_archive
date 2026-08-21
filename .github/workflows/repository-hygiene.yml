@@ -1,0 +1,19 @@
+name: repository hygiene
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  repository-hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+      - name: Fetch immutable v49 anchor
+        run: git fetch origin tag v49-data-api-closure-20260821
+      - name: Verify repository hygiene
+        run: python3 scripts/repository/audit_repository_hygiene.py --repo "$GITHUB_WORKSPACE"

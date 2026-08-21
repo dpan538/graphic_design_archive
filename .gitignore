@@ -39,6 +39,55 @@ local-downloads/
 # Temporary files
 *.tmp
 *.log
+*.coverage
+.coverage
+.coverage.*
+coverage/
+htmlcov/
+test-results/
+playwright-report/
+puppeteer-report/
+browser-recordings/
+screenshots/
+*.webm
+
+# PostgreSQL and database verification runtime
+pgdata/
+postgres-data/
+postgres-runtime/
+postgres-socket/
+**/.s.PGSQL.*
+**/postmaster.pid
+**/postmaster.opts
+auto_explain*.log
+schema-dump*.sql
+*.schema.dump
+*.pgdump
+*.dump
+*.dump.gz
+test-database-runtime/
+
+# Local databases and journals
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Local exports, backups, packaging, and audit staging
+local-export/
+local-exports/
+local-backup/
+local-backups/
+repository-inventory-scratch/
+release-packaging-scratch/
+audit-staging/
+checksum-scratch/
+worktree-receipts/
+profile-output/
+profiles-local/
+*.local-checksums
 
 # Audited Phase 2B supersession evidence is intentionally committed.  The
 # package verifier rejects an ignored manifest/checksum entry, so a future

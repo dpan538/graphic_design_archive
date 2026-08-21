@@ -1,0 +1,191 @@
+d78f496 (HEAD -> chore/v49-repository-hygiene-database-freeze-20260821, origin/fix/v49-api-read-contract-closure-20260821, fix/v49-api-read-contract-closure-20260821) finalize v49 API contract audit
+f5e5254 close v49 read API contract
+55f1d71 (origin/fix/v49-release-projection-snapshot-db-closure-20260820, fix/v49-release-projection-snapshot-db-closure-20260820) record v49 database closure checkpoint
+1a2a2b9 fix held-state reconciliation mapping
+17e06ab correct v49 profile stage reduction
+33e6bed close v49 release snapshot database path
+321e89f (origin/fix/v49-release-projection-snapshot-performance-20260817, fix/v49-release-projection-snapshot-performance-20260817) docs: record v5 snapshot performance checkpoint
+00241aa perf(database): stage v5 component row digests once
+0282ca9 test(database): add bounded v5 snapshot profiler
+8940b1d feat(database): add v5 release snapshot protocol
+56d41d7 (origin/fix/v49-release-projection-snapshot-closure-20260816, fix/v49-release-projection-snapshot-closure-20260816) docs: record release snapshot performance checkpoint
+ca1d061 test(database): add release snapshot closure harness
+035a2eb feat(database): add release snapshot closure protocol
+dc76920 (origin/fix/v49-release-projection-snapshot-20260816, fix/v49-release-projection-snapshot-20260816) docs: record v49 release projection checkpoint
+77f0af9 test(database): verify release snapshot integrity
+10d0dcb feat(database): add atomic research release snapshots
+3128a6e (origin/research/v49-trace-positioning-20260816, research/v49-trace-positioning-20260816) docs(research): synthesize contribution and two-week scope
+9b7459f docs(research): add TRACE positioning evidence
+3e666b5 (origin/fix/v49-read-platform-parity-browser-20260816, fix/v49-read-platform-parity-browser-20260816) docs: checkpoint read platform closure P0
+64de7ab (origin/verify/v49-read-platform-runtime-acceptance-20260815, verify/v49-read-platform-runtime-acceptance-20260815) docs: checkpoint v49 runtime acceptance evidence
+d5a792a test: add v49 runtime acceptance seams
+6e66186 (origin/feat/v49-read-platform, feat/v49-read-platform) docs: record v49 product foundation checkpoint
+36c5659 feat: migrate core archive slices to read platform
+e00a5bb test: enforce v49 sealed fixture gates
+4c686d9 feat: add v49 read repository and API core
+60329e8 (origin/refactor/v49-data-platform, origin/chore/v49-phase2b-evidence-repair-20260815, refactor/v49-data-platform, chore/v49-phase2b-evidence-repair-20260815) test: enforce self-contained audit packages
+4297334 docs: repair or supersede v49 phase 2b audit evidence
+11e7b82 (origin/refactor/v49-phase2b-performance, refactor/v49-phase2b-performance, chore/v49-phase2b-promotion-20260815) docs: verify v49 phase 2b performance replays
+302ddb9 perf(data): remediate v49 migration validation
+6b918dd (origin/recovery/v49-phase2b-performance-checkpoint-20260814, recovery/v49-phase2b-performance-checkpoint-20260814) docs: record v49 phase 2b migration receipts
+222e06b feat(data): add deterministic v48 to v49 migration rehearsal
+86ba95c docs: record v49 phase 2a schema receipts
+7f48384 test(db): add v49 constraints roles and seal CAS verification
+9f3c20d feat(db): implement v49 PostgreSQL physical schema
+ee393a8 docs: record v49 pre-DDL and cleanup receipts
+2d8cde5 refactor: retire browser-local AI runtime and bulk routes
+f75ded8 docs: close v49 rights visual and machine decisions
+967cbe3 docs: close v49 authority and research delta
+6b111a7 docs: add comprehensive v49 pre-migration audit
+587aee5 docs: align v49 research rights and freeze gates
+f076ca3 docs: close v49 pre-DDL architecture decisions
+2a91c86 docs: establish v49 data platform architecture baseline
+0404c7f (origin/recovery/v48-visual-analytics-20260810, recovery/v48-visual-analytics-20260810) checkpoint: preserve interrupted v48 visual analytics prototype
+35969e5 (origin/codex/v48-visual-analytics, codex/v48-visual-analytics) refine responsive trace research views
+1ecbadf build responsive trace visual analytics
+6b4a60e (origin/codex/v48-trace-visualization, codex/v48-trace-visualization-round2, codex/v48-trace-visualization) refine research index contrast and navigation
+5c98472 decouple cabinet index and mobile card wheel
+40173e3 refine home archive box interaction
+fa36857 build interactive trace evolution field
+f369bb5 refine archive material atmosphere
+3bb5162 build v48 trace research views
+eebd6ff bound v48 trace timeline to present year
+5279228 separate v48 TRACE into fullscreen research views
+eb3e43e refine v48 TRACE with schematic research views
+2909945 implement v48 TRACE evidence visualization
+d323d41 document v48 TRACE visualization decision
+592c765 (origin/main, origin/HEAD, codex/v48-main-transfer) record v48 supervised main transfer
+5e7a478 transfer v48 evidence and validation
+ecfeb93 transfer v48 frozen search database
+d83204b transfer v48 canonical candidate payload
+b243a34 transfer v48 freeze contract
+f2cf492 (origin/codex/v47-data-expansion, codex/v48-freeze-staging, codex/v47-data-expansion) record v48 candidate freeze receipt
+d592566 freeze v48 candidate baseline
+1d919fb repair v48 AIC display routes and add freeze audit
+f9a635b repair v48 object geography evidence
+31f8481 add v47 trace adjunct candidate
+7ef26d6 (main) record v46 supervised transfer completion
+c460333 publish v46 validation and trace atlas artifacts
+8f0f318 freeze v46 search database snapshot
+fce7535 freeze v46 canonical candidate payload
+f48cc93 freeze v46 transfer contract and design handoff
+02fce7e data: refine cover editorial sandbox review
+cc138f3 data: sandbox cover editorial packet seeds
+923e05b data: plan high priority packet seeds
+d6df919 data: audit packet anchor selection
+87e54c3 data: layer research packet readiness
+3e3652e data: define research packet structure
+a3574e9 data: refine global packet seed policy
+79a2c81 data: resolve non commons packet seeds
+2382d03 data: audit source family packet tuning
+f3b1957 data: audit non commons packet scope
+94eb8c4 data: preview packet relation sandbox
+d80f80d data: audit packet relation method
+4dfd3f6 data: calibrate main sub text sandbox roles
+931ac26 data: audit full main sub text roles
+532cf80 data: preview main sub text card overrides
+53b90d0 data: calibrate main sub text review
+65a6ec2 data: add main sub text method review
+e52ff07 data: prepare main sub text method validation
+d370caa data: audit prefreeze main anchor structure
+c1b9ef5 data: prepare packet role apply readiness
+4e40285 data: draft prefreeze packet role review
+83ad8be data: audit prefreeze packetization
+061c541 data: audit prefreeze surface roles
+a846973 data: add prefreeze geography repair review
+4b28bda data: audit candidate promotion blockers
+33282a4 data: add prefreeze candidate evaluation
+37ddaac data: validate chunked prefreeze rebuild
+3cdbb12 data: gate prefreeze source rebuilds
+c0da61b data: add prefreeze cleaning audit
+6bfec65 data: capture final-gap productive seeds
+564f2cb data: add final-gap capture guards
+eadb664 data: add release quality action plan
+9158111 data: audit temporal and recent object quality
+9558f25 data: complete Commons authority open source batch
+921b8ac data: repair nonmainstream summary geography
+aec36c6 data: refine nonmainstream geo audit
+10a554a data: audit nonmainstream capture quality
+57fbca0 data: apply reviewed loc img03 repairs
+f86180f data: add loc img03 apply plan script
+5c2e736 data: dry run loc img03 apply plan
+4b81127 data: queue loc manual img03 rebuilds
+a6f0bfb data: probe loc rights repair candidates
+31e87fe fix: harden capture rights rules
+6948bc1 data: summarize p0 rights repair preflights
+3e873f8 data: audit vam rights repair preflight
+a2deb6a data: audit internet archive rights preflight
+79927ca data: audit aic rights repair preflight
+eaab891 data: audit gsu rights repair preflight
+90940ec data: audit loc rights repair preflight
+82423b2 data: audit wellcome rights repair preflight
+d148009 data: audit cooper hewitt rights repair preflight
+8a6394a data: add image rights repair preflight batches
+2743fed data: harden region geography cleaning plan
+f4d875f data: add image rights repair queue
+dc4a798 chore: retarget release gates for 20k sources
+453db44 build: add public surface payload sharding
+d22d4d4 docs: record release state assessment
+3129223 data: clean and extend commons open sources
+cfbd1f4 data: add commons open source expansion v1
+5bd5d6b data: add region-balanced commons capture v2
+9537028 data: apply region cleanup guardrails
+926d281 data: plan region geo cleaning and capture
+3e5c7ac data: add region geography confidence gates
+9c365ae add reader context overlay
+f059ce3 remove context overlay engineering labels
+bc46686 land civic ephemera color system
+c3c37f3 add context overlay preview prototype
+baad2fb assistant: add qwen rag timing to main
+84d710b frontend: stabilize research assistant panels
+409b464 frontend: tune assistant rag prompt composition
+0792caa frontend: restore qwen-backed assistant rag
+28a9a48 frontend: make assistant instant with qwen refine
+53fef83 frontend: reduce qwen assistant latency
+ee73a7d frontend: enforce qwen assistant model
+8406756 frontend: simplify assistant panel controls
+47f8b51 frontend: simplify assistant webllm chat
+56d7c36 frontend: refine assistant search reader flow
+0a930de frontend: add research packet reader panels
+c8c872d data: add research-quality source coverage audits
+3d9842c data: expand release gate active sources
+600b58e data: expand open active sources
+582d677 data: add nonmainstream item image capture
+2994968 fix: keep pre-surface sources out of release count
+4e612da data: add 500 nonmainstream source successes
+4d0ecb3 docs: clarify image-based release direction
+2b1f7f2 data: add nonmainstream source profile pages
+fea732d data: expand low-coverage source probes v3
+cfeb77e data: add nonmainstream regional capture batch
+6c85744 data: add contemporary source followup queues v2
+a9507e3 data: expand contemporary source candidates v2
+a7c5691 data: probe edge source candidates
+84863a1 docs: add global edge source discovery registry
+70dde75 data: refresh edge source records and public payload
+7c3e764 docs: normalize public backup readme
+99ef1ef Update archive coverage, dossiers, and local RAG probes
+a260472 Add rights-first crawler decision guardrails
+62c12cb fix archive sheet layout contracts
+777b4ef archive snapshot before next coverage capture
+7f33363 document development failures and constraints
+12e9d07 add edge wordpress source capture
+40ed548 add edge source probe v2
+edd9109 add independent Asia source capture
+141ba8e expand source breadth capture
+129b65e add edge source probe queue
+7b9a1a0 add global source candidate registry
+6f18330 tighten reading note variants
+83fd10a refine reading note layout
+fe0b6ff archive box data and interface update
+e46976b add noncanonical image text gap capture
+7195a5c add noncanonical exact source capture
+f4540cc add noncanonical movement image seeds
+5ff02fe freeze digital asset studies
+2ace58c add Cooper Hewitt image-ready records
+870eadf add GSU later-stage image records
+7754c51 expand GSU image-ready records
+c49724e tighten public surface integrity
+9a73c75 add gsu raw capture evidence
+d0c9795 expand image-ready archive data sources
+3ea8003 normalize surfaces and distinguish physical formats
+4f1a10f initial archive framework

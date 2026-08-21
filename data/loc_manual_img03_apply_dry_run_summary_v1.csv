@@ -1,9 +1,0 @@
-metric,value,notes
-planned_rows,20,Rows in dry-run patch plan.
-ready_for_manual_apply_rows,20,"Rows with matching capture id, IMG01 current state, image URL, and rights text."
-blocked_review_required_rows,0,Rows not ready for controlled apply.
-automatic_upgrade_allowed_rows,0,Dry-run only; no writes performed.
-target_file_data/capture_batch_midcentury_1930_1970_records.csv,13,Target capture CSV for future apply.
-target_file_data/capture_batch_early_region_1830_1930_records.csv,5,Target capture CSV for future apply.
-target_file_data/capture_batch_early_region_1830_1880_records.csv,2,Target capture CSV for future apply.
-current_image_state_IMG01,20,Current image state in target capture records.
