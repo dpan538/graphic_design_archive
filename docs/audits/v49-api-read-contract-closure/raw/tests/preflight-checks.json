@@ -1,5 +1,6 @@
 {
-  "format": "gda-v49-api-contract-test-receipt/v1",
+  "format": "gda-v49-api-contract-final-test-receipt/v1",
+  "completeVerificationTreeSha": "f5e52545f9cc9e125f095039df5a636d480bdb36",
   "status": "PASS",
   "typecheck": "PASS",
   "readPlatformContract": "PASS",
@@ -14,6 +15,8 @@
   "runtimeSuccesses": 558,
   "runtimeTimeouts": 0,
   "runtimeHttp5xx": 0,
+  "runtimeWorstP95Ms": 68.19,
+  "runtimeWorstP95Endpoint": "search",
   "openapi": "PASS:3.1.0:18_PATHS",
   "lint": "PASS_OR_NOT_CONFIGURED:next lint interactive setup prompt",
   "productionBuild": "PASS",

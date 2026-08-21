@@ -11,14 +11,14 @@
     "sqlPolicy": "SELECT-only; mutation and DDL keywords rejected before execution"
   },
   "releaseIdentity": {
-    "builtAt": "2026-08-21T13:24:46.407182+10:00",
-    "sealedAt": "2026-08-21T13:24:46.690163+10:00",
-    "createdAt": "2026-08-21T13:24:45.008154+10:00",
+    "builtAt": "2026-08-21T14:15:51.20579+10:00",
+    "sealedAt": "2026-08-21T14:15:51.504903+10:00",
+    "createdAt": "2026-08-21T14:15:49.673583+10:00",
     "releaseId": "v49-api-contract-fresh-c",
     "sealStatus": "sealed",
-    "candidateAt": "2026-08-21T13:24:46.408051+10:00",
+    "candidateAt": "2026-08-21T14:15:51.206117+10:00",
     "releaseUuid": "99000000-0000-4000-8000-000000000100",
-    "validatedAt": "2026-08-21T13:24:46.550792+10:00",
+    "validatedAt": "2026-08-21T14:15:51.35717+10:00",
     "schemaVersion": "schema-v49.0",
     "builderVersion": "release-snapshot-v5",
     "manifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
@@ -2963,7 +2963,7 @@
   },
   "apiVisible": {
     "descriptor": {
-      "sealed_at": "2026-08-21T13:24:46.690163+10:00",
+      "sealed_at": "2026-08-21T14:15:51.504903+10:00",
       "object_count": 7995,
       "model_version": "model-v49.0",
       "relation_count": 0,

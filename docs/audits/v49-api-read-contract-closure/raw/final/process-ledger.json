@@ -11,7 +11,12 @@
   "controlledConcurrentApiReadSessionMaximum": 10,
   "concurrencyRole": "gda_v49_phase2a_api_reader",
   "preFinalizationResidualProcessCount": 1,
-  "finalResidualProcessCount": "PENDING_CLUSTER_STOP",
+  "finalResidualProcessCount": 0,
+  "postmasterExitedCleanly": true,
+  "taskOwnedScratchRootsRemoved": [
+    "/private/tmp/gda_v49_api_contract.gJRjqP",
+    "/private/tmp/gda_v49_api_contract.PVjQHi"
+  ],
   "unexpectedOverlappingBuilderImporter": false,
   "kill9Used": false
 }

@@ -8,7 +8,7 @@ READ_API_CONTRACT_CLOSED=true
 HELD_DATA_PUBLIC=false
 POSITIVE_RIGHTS_COUNT=0
 PUBLIC_PIXEL_FIELDS_PRESENT=false
-FRONTEND_DESIGN_AUTHORIZED=PENDING_FINAL_SHA_AND_CLEAN_PUSH
+FRONTEND_DESIGN_AUTHORIZED=true
 ```
 
-Authorization becomes true only after final-tree verification, zero residual task processes, a clean worktree, and local/remote SHA parity. It does not authorize deployment, staging, production access, browser work in this phase, or relaxation of citation-only rights semantics.
+Authorization is limited to beginning a separately scoped frontend design phase after the final handoff confirms final-tree verification, zero residual task processes, a clean worktree, and local/remote SHA parity. It does not authorize deployment, staging, production access, browser work in this phase, or relaxation of citation-only rights semantics.

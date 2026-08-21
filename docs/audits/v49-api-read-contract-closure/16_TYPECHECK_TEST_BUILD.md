@@ -18,3 +18,5 @@ ACCESSIBILITY_MATRIX_RUN=false
 ```
 
 `npm run lint` was executed. Its declared `next lint` command found no ESLint configuration/dependency and entered the framework's interactive setup prompt, then exited non-zero without checking files. The success definition explicitly permits `PASS_OR_NOT_CONFIGURED`; no dependency, configuration, or expected output was changed to mask this. `next build` compiled, typechecked, generated 46 static pages, and emitted the dynamic `/api/v1/[...path]` route successfully.
+
+The complete sequence was rerun after the final empty-database replay on candidate commit `f5e52545f9cc9e125f095039df5a636d480bdb36`. The audit-only final commit is checked again with typecheck, read-platform/module contract, 22-vector parity, OpenAPI parse, and production build; its exact execution SHA is bound in the external final receipt.

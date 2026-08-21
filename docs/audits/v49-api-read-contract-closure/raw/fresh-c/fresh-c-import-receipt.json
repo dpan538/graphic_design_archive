@@ -1,88 +1,88 @@
 {
-  "backendPid": 67781,
+  "backendPid": 79253,
   "baseSchemaSha256": "4ec9a76421548bda1b90ccdbf604906df9da9d349a70c9100abdddd1a7fee105",
-  "childSystemCpuSeconds": 0.963478,
-  "childUserCpuSeconds": 0.452334,
+  "childSystemCpuSeconds": 0.968854,
+  "childUserCpuSeconds": 0.467685,
   "committedMarker": true,
   "constraintGroups": {
     "delivery_history_and_rule": {
-      "wal_bytes": "0",
-      "wall_seconds": "0.682296"
+      "wal_bytes": "1432",
+      "wall_seconds": "0.643262"
     },
     "delivery_parent_validation": {
       "wal_bytes": "0",
-      "wall_seconds": "2.308063"
+      "wall_seconds": "2.798450"
     },
     "delivery_policy_validation": {
       "wal_bytes": "0",
-      "wall_seconds": "2.528645"
+      "wall_seconds": "2.612304"
     },
     "delivery_rights_validation": {
       "wal_bytes": "0",
-      "wall_seconds": "2.430570"
+      "wall_seconds": "3.009520"
     },
     "final_all_omission_check": {
       "wal_bytes": "0",
-      "wall_seconds": "0.000115"
+      "wall_seconds": "0.000066"
     },
     "folder_assignment_shape": {
-      "wal_bytes": "0",
-      "wall_seconds": "9.331832"
+      "wal_bytes": "6416",
+      "wall_seconds": "10.738478"
     },
     "provider_policy": {
       "wal_bytes": "0",
-      "wall_seconds": "0.699224"
+      "wall_seconds": "0.890072"
     },
     "raw_core_cycle": {
-      "wal_bytes": "0",
-      "wall_seconds": "1.519448"
+      "wal_bytes": "90112",
+      "wall_seconds": "1.842064"
     },
     "rights_assessment_current_leaf": {
       "wal_bytes": "0",
-      "wall_seconds": "0.209059"
+      "wall_seconds": "0.252567"
     },
     "rights_assessment_shape_support": {
-      "wal_bytes": "8472",
-      "wall_seconds": "2.827463"
+      "wal_bytes": "0",
+      "wall_seconds": "4.318399"
     },
     "rights_observation": {
       "wal_bytes": "0",
-      "wall_seconds": "1.142385"
+      "wall_seconds": "1.428094"
     },
     "visual_bridge_and_locator": {
       "wal_bytes": "0",
-      "wall_seconds": "0.486119"
+      "wall_seconds": "0.586373"
     }
   },
   "database": "gda_v49_phase2a_fresh_c",
   "expectedSchemaSha256": "df1e7741e59e5e6bf1ca80f2a33edfad1abb2fc6d95b57d4d6993b49917020dd",
-  "logPath": "/private/tmp/gda_v49_api_contract.gJRjqP/runtime/fresh-c/import-gda_v49_phase2a_fresh_c.log",
+  "logPath": "/private/tmp/gda_v49_api_contract.gJRjqP/runtime/final-f5e5254/import-gda_v49_phase2a_fresh_c.log",
   "returnCode": 0,
   "stageManifestSha256": "01ac60c705f7450c6668a91ee6a3d2842c3b0258a4ecd85139611bf916681322",
   "stages": {
     "COPY": {
       "bytes": "1245479023",
       "rows": "3957270",
-      "wal_bytes": "572968",
-      "wall_seconds": "14.550149"
+      "wal_bytes": "575976",
+      "wall_seconds": "15.060572"
     },
     "DURABLE_INSERTS": {
       "rows": "3829784",
-      "wal_bytes": "2369044952",
-      "wall_seconds": "77.292855"
+      "wal_bytes": "2367387160",
+      "wall_seconds": "83.925036"
     },
     "PARITY": {
       "rows": "15923",
-      "wal_bytes": "3465216",
-      "wall_seconds": "0.539021"
+      "wal_bytes": "2375680",
+      "wall_seconds": "0.399248"
     },
     "TARGETED_ANALYZE": {
       "rows": "15923",
-      "wal_bytes": "303104",
-      "wall_seconds": "0.256669"
+      "wal_bytes": "172032",
+      "wall_seconds": "0.224031"
     }
   },
   "stagingAttestationReused": true,
   "status": "COMMITTED",
-  "wallSeconds": 117.620201
+  "wallSeconds": 130.608178
 }

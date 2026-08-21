@@ -18,3 +18,5 @@ POSITIVE_RIGHTS=0
 ```
 
 The disposable release fixture then produced sealed/current release `v49-api-contract-fresh-c`, manifest `4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a`, projection digest `e7ab41633b481d455bc3ceab3e2d0d2a1d5410b186b65bfb2697059182d1b49d`, and 7,995 public surfaces. An initial fixture preflight referred to a non-existent `description` column; its transaction rolled back atomically before the corrected `public_contract_version` insert ran.
+
+The final candidate-commit replay repeated the empty-database import at `f5e52545f9cc9e125f095039df5a636d480bdb36`: 3,957,270 COPY rows / 1,245,479,023 bytes, 3,829,784 durable inserts, 15,923 parity, and verifier status PASS. It then reran current-leaf, 14/14 missingness, 36/36 DML permission, sealed release preparation, the exhaustive API harness, and the official schema hash. Evidence is in `raw/fresh-c/fresh-c-final-replay.log`, `fresh-c-*-final.txt`, and `raw/final/post-api-schema-release.txt`.

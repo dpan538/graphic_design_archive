@@ -4,23 +4,23 @@ Performance gate source: `OBSERVATIONAL_ONLY`. Every endpoint used one first/col
 
 | Endpoint | Requests | Expected responses | Cold ms | Median ms | p95 ms | Max ms | Bytes | DB queries |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| `/api/v1/visual-registries/current` | 31 | 31 | 0.22 | 0.038 | 0.436 | 0.455 | 257 | 0 |
-| `/api/v1/releases/{release}` | 31 | 31 | 23.801 | 22.465 | 47.736 | 48.871 | 388 | 62 |
-| `/api/v1/releases/{release}/manifest` | 31 | 31 | 10.878 | 10.831 | 21.467 | 23.546 | 388 | 31 |
-| `/api/v1/releases/{release}/archive/overview` | 31 | 31 | 22.658 | 22.62 | 48.845 | 48.861 | 436 | 62 |
-| `/api/v1/releases/{release}/folder-types` | 31 | 31 | 10.937 | 10.683 | 20.869 | 23.494 | 343 | 31 |
-| `/api/v1/releases/{release}/folders` | 31 | 31 | 11.866 | 10.758 | 22.684 | 22.798 | 419 | 31 |
-| `/api/v1/releases/{release}/folders/{id}/surfaces` | 31 | 31 | 10.851 | 10.89 | 22.115 | 22.761 | 247 | 31 |
-| `/api/v1/releases/{release}/folders/{id}` | 31 | 31 | 10.853 | 10.67 | 23.724 | 24.69 | 254 | 31 |
-| `/api/v1/releases/{release}/surfaces/{id}` | 31 | 31 | 24.345 | 22.71 | 49.977 | 50.717 | 725 | 62 |
-| `/api/v1/releases/{release}/search` | 31 | 31 | 30.117 | 29.266 | 63.366 | 64.806 | 6943 | 62 |
-| `/api/v1/releases/{release}/trace/atlas` | 31 | 31 | 11.374 | 10.705 | 23.951 | 23.954 | 430 | 31 |
-| `/api/v1/releases/{release}/trace/objects` | 31 | 31 | 11.079 | 10.774 | 21.098 | 21.594 | 419 | 31 |
-| `/api/v1/releases/{release}/trace/objects/{id}/neighborhood` | 31 | 31 | 10.927 | 10.721 | 22.34 | 22.771 | 281 | 31 |
-| `/api/v1/releases/{release}/trace/relation-types` | 31 | 31 | 10.924 | 10.748 | 21.892 | 22.516 | 343 | 31 |
-| `/api/v1/releases/{release}/trace/relation-types/{id}` | 31 | 31 | 10.852 | 11.906 | 24.947 | 26.6 | 263 | 31 |
-| `/api/v1/releases/{release}/relations/{id}` | 31 | 31 | 11.477 | 11.407 | 22.291 | 23.353 | 247 | 31 |
-| `/api/v1/releases/{release}/claims/{id}` | 31 | 31 | 10.908 | 10.793 | 22.282 | 22.487 | 241 | 31 |
-| `/api/v1/releases/{release}/corpora/{version}` | 31 | 31 | 11.25 | 11.471 | 23.913 | 24.811 | 243 | 31 |
+| `/api/v1/visual-registries/current` | 31 | 31 | 0.241 | 0.048 | 0.437 | 0.457 | 257 | 0 |
+| `/api/v1/releases/{release}` | 31 | 31 | 23.204 | 22.989 | 49.768 | 49.915 | 388 | 62 |
+| `/api/v1/releases/{release}/manifest` | 31 | 31 | 11.285 | 11.393 | 22.113 | 22.562 | 388 | 31 |
+| `/api/v1/releases/{release}/archive/overview` | 31 | 31 | 25.003 | 24.194 | 52.049 | 54.163 | 436 | 62 |
+| `/api/v1/releases/{release}/folder-types` | 31 | 31 | 11.62 | 11.179 | 23.552 | 24.175 | 343 | 31 |
+| `/api/v1/releases/{release}/folders` | 31 | 31 | 11.647 | 11.42 | 26.482 | 26.619 | 419 | 31 |
+| `/api/v1/releases/{release}/folders/{id}/surfaces` | 31 | 31 | 11.056 | 11.32 | 24.387 | 24.722 | 247 | 31 |
+| `/api/v1/releases/{release}/folders/{id}` | 31 | 31 | 11.123 | 11.32 | 22.425 | 22.57 | 254 | 31 |
+| `/api/v1/releases/{release}/surfaces/{id}` | 31 | 31 | 23.336 | 23.821 | 47.642 | 51.022 | 725 | 62 |
+| `/api/v1/releases/{release}/search` | 31 | 31 | 29.787 | 31.539 | 68.19 | 71.294 | 6943 | 62 |
+| `/api/v1/releases/{release}/trace/atlas` | 31 | 31 | 12.25 | 12.25 | 23.842 | 25.394 | 430 | 31 |
+| `/api/v1/releases/{release}/trace/objects` | 31 | 31 | 11.493 | 11.466 | 24.064 | 25.41 | 419 | 31 |
+| `/api/v1/releases/{release}/trace/objects/{id}/neighborhood` | 31 | 31 | 11.497 | 11.526 | 22.156 | 22.846 | 281 | 31 |
+| `/api/v1/releases/{release}/trace/relation-types` | 31 | 31 | 11.047 | 11.279 | 22.547 | 23.582 | 343 | 31 |
+| `/api/v1/releases/{release}/trace/relation-types/{id}` | 31 | 31 | 11.527 | 14.768 | 34.473 | 98.548 | 263 | 31 |
+| `/api/v1/releases/{release}/relations/{id}` | 31 | 31 | 11.35 | 12.267 | 23.085 | 24.47 | 247 | 31 |
+| `/api/v1/releases/{release}/claims/{id}` | 31 | 31 | 11.465 | 11.251 | 23.688 | 24.461 | 241 | 31 |
+| `/api/v1/releases/{release}/corpora/{version}` | 31 | 31 | 11.22 | 12.474 | 23.261 | 24.293 | 243 | 31 |
 
 Total requests: 558; timeouts: 0; HTTP 5xx: 0.

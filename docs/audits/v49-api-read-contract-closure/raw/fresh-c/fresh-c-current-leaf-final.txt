@@ -1,0 +1,70 @@
+BEGIN
+SET CONSTRAINTS
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 11
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+DO
+INSERT 0 1
+INSERT 0 1
+INSERT 0 33
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 4
+INSERT 0 4
+DO
+DO
+UPDATE 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+UPDATE 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+UPDATE 1
+INSERT 0 2
+INSERT 0 2
+INSERT 0 2
+INSERT 0 2
+INSERT 0 1
+INSERT 0 1
+INSERT 0 2
+INSERT 0 2
+INSERT 0 1
+INSERT 0 1
+SET CONSTRAINTS
+SET CONSTRAINTS
+SET
+ create_research_release
+-------------------------
+
+(1 row)
+
+RESET
+DO
+SET
+ validate_research_launch_snapshot_v5
+--------------------------------------
+
+(1 row)
+
+                 seal_research_launch_snapshot_v5
+------------------------------------------------------------------
+ b3632acd4019be26245762728c27963672f28fec27a583627236c104a0f873d0
+(1 row)
+
+RESET
+DO
+ROLLBACK
+V49_DB_CLOSURE_CURRENT_LEAF=PASS

@@ -10,4 +10,4 @@ P2: the repository declares `next lint`, but has no ESLint configuration or dire
 
 Deliberate fail-closed product state remains: zero accepted TRACE relations, zero public relation/claim/corpus detail records, zero folder projections, zero positive visual rights, and citation-only surface delivery. These are data/publication semantics, not missing API fallbacks. Future frontend design must render valid empty/404 states and must not infer relationships, rights, pixels, acceptance, or held records.
 
-No staging/production/deployment residual exists. The only final operational residual before audit finalization is the task-owned local PostgreSQL process, which will be stopped and recorded as zero before the final audit commit.
+No staging/production/deployment residual exists. The sole task-owned PostgreSQL cluster was stopped cleanly; its postmaster PID no longer exists, no task-owned importer/builder/API harness process remains, and both exact scratch roots were removed after evidence was copied into this audit package. `TASK_OWNED_RESIDUAL_PROCESS_COUNT=0`.
