@@ -92,7 +92,13 @@ def main() -> int:
     runtime_files = sorted(path for path in files if any(pattern.search(path) for pattern in RUNTIME_PATTERNS))
     raw_dirs = sorted({part for path in files for part in Path(path).parts if part.endswith("_raw")})
     backup_dirs = sorted({path.split("/", 2)[0] + "/" + path.split("/", 2)[1] for path in files if "/backups/" in "/" + path})
-    pre_v49_generated = sorted(path for path in files if path.startswith("generated/") and re.search(r"v(?:4[0-8]|[0-3][0-9])", path, re.I))
+    pre_v49_generated = sorted(
+        path
+        for path in files
+        if path.startswith("generated/")
+        and path not in ALLOWED_GENERATED
+        and re.search(r"v(?:4[0-8]|[0-3][0-9])", path, re.I)
+    )
     unconsumed_generated = sorted(path for path in files if path.startswith("generated/") and path not in ALLOWED_GENERATED)
     unmanifested_inputs = sorted((release_inputs - tracked_set) | ({"generated/public_surfaces_prefreeze_candidate_v48.json"} - release_inputs))
     large: list[dict[str, object]] = []
