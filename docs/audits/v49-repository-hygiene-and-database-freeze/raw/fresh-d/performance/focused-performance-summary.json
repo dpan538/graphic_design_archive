@@ -1,0 +1,35 @@
+{
+  "exponent1000To2000": 0.9801560673638208,
+  "exponentBudget": 1.35,
+  "format": "gda-v49-fresh-d-focused-performance/v1",
+  "fullDigestMatch": true,
+  "ratio1000To2000": 1.9726787972074105,
+  "scale2000BudgetMs": 75000,
+  "scales": {
+    "1000": {
+      "builderMs": 363.82,
+      "contentSha256": "802b0a664fd254df4a170d04e64a1a9b1fb79af5624a19afd83b6d4441410c67",
+      "membershipCount": 3107,
+      "objectCount": 1000
+    },
+    "15923": {
+      "builderMs": 6532.02,
+      "contentSha256": "11d92b70bd3a87113d4daabac2b5e4e38a3416cc55be894b42b0dd3d072ca640",
+      "membershipCount": 47982,
+      "objectCount": 15923
+    },
+    "2000": {
+      "builderMs": 717.7,
+      "contentSha256": "3d97c8af78b7e692924f75d4d594e188d5b09b22c140f1ded8d90e014196fe3b",
+      "membershipCount": 6107,
+      "objectCount": 2000
+    },
+    "32": {
+      "builderMs": 36.585,
+      "contentSha256": "60f5f6d55804417fdeed1337f14ac434228f17380de22c95959fc7f8f8dd8d16",
+      "membershipCount": 128,
+      "objectCount": 32
+    }
+  },
+  "status": "PASS"
+}

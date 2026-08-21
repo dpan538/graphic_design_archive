@@ -95,6 +95,11 @@ profiles-local/
 !docs/audits/v49-phase2b-evidence-amendment/
 !docs/audits/v49-phase2b-evidence-amendment/**
 
+# Formal repository-closure logs are checksum-covered evidence, not local
+# runtime.  Keep this exception narrower than the global *.log policy.
+!docs/audits/v49-repository-hygiene-and-database-freeze/
+!docs/audits/v49-repository-hygiene-and-database-freeze/**
+
 # Generated public-surface sidecar shards
 generated/public_surfaces_v1_shards/
 frontend/public/data/public_surface_shards_v1/

@@ -1,0 +1,2087 @@
+{
+  "format": "gda-v49-active-script-allowlist/v1",
+  "scriptCount": 208,
+  "unknownClassificationCount": 0,
+  "scripts": [
+    {
+      "path": "scripts/apply_commons_open_source_cleaning_2026_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/apply_first_ingest_scope_seed.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/apply_loc_manual_img03_records_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/assign_capture_batch_cells.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_active_source_success_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_aic_rights_repair_preflight_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_appendix_generation_rules_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_capture_rights_rule_hardening_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_commons_open_source_cleaning_2026_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_contemporary_noise_filter_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_cooperhewitt_rights_repair_preflight_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_gsu_rights_repair_preflight_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_image_release_gate.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_image_rights_repair_queue_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_img_state_contract.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_internet_archive_rights_repair_preflight_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_layered_image_source_metrics_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_loc_manual_img03_apply_postcheck_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_loc_rights_repair_preflight_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_main_sheet_research_value_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_main_sub_text_full_role_assessment_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_main_sub_text_packet_relation_method_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_main_sub_text_packet_relation_source_family_scope_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_main_sub_text_packet_relation_source_family_tuning_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_main_sub_text_packet_relation_tiny_seed_resolution_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_nonmainstream_item_image_capture_quality_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_nonmainstream_low_coverage_source_probe_v3.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_nonmainstream_region_capture_health_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_period_source_image_priority_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_prefreeze_candidate_payload_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_prefreeze_candidate_promotion_blockers_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_prefreeze_candidate_v46_trace_atlas.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_prefreeze_candidate_v46_trace_topology.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_prefreeze_candidate_v48_freeze.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_prefreeze_candidate_v48_trace_visualization.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_prefreeze_cleaning_review_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_prefreeze_data_cleaning_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_prefreeze_main_anchor_strictness_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_prefreeze_main_sub_text_structure_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_prefreeze_packetization_candidates_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_public_date_range_leaks_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_public_surface_integrity.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_public_surface_sheet_counts_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_recent_design_object_quality_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_region_geo_auto_apply_hardening_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_region_geo_enrichment_suggestions_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_research_packet_anchor_selection_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_research_packet_high_priority_anchor_seed_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_research_packet_readiness_layers_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_research_packet_structure_requirements_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_secret_patterns.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_sheet_topology_text_ratio_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_source_coverage_rate_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_source_coverage_rate_v2.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_surface_assignment_gates_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_temporal_distribution_anomalies_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_vam_rights_repair_preflight_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/audit_wellcome_rights_repair_preflight_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_image_rights_repair_preflight_batches_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_loc_manual_img03_rebuild_queue_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_main_sub_text_full_role_sandbox_preview_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_main_sub_text_packet_relation_sandbox_preview_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_main_sub_text_sandbox_card_preview_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_methodology_docx.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_prefreeze_candidate_payload_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_prefreeze_candidate_v21_search_sqlite.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_prefreeze_candidate_v46_loc_duplicate_resolution.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_prefreeze_candidate_v46_transfer_manifest.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_prefreeze_candidate_v47_aic_balance.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_prefreeze_candidate_v47_search_sqlite.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_prefreeze_candidate_v48_loc_geo_repair.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_prefreeze_candidate_v48_search_sqlite.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_prefreeze_candidate_v48_trace_visualization.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_prefreeze_candidate_v48_transfer_manifest.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_prefreeze_candidate_v9_search_sqlite.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_prefreeze_geo_repair_decisions_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_prefreeze_main_sub_text_method_validation_packet_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_prefreeze_packet_role_applied_overrides_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_prefreeze_packet_role_apply_readiness_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_prefreeze_packet_role_review_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_prefreeze_public_rebuild_exclusion_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_prefreeze_surface_role_overrides_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_region_geo_cleaning_plan_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_region_geo_safe_apply_review_lists_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_research_packet_cover_editorial_sandbox_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/build_sqlite_snapshot.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/calibrate_main_sub_text_full_role_sample_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/calibrate_main_sub_text_review_second_pass_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/check_db_skeleton.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/contemporary_noise_filter.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/discovery_signal_policy.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/dry_run_loc_manual_img03_apply_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/export_ready_manual_targets.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/extract_deep_research_report_tables.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_capture_run_manifest_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_contemporary_source_followup_1990_2026_v2.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_contemporary_source_scan_1990_2026_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_contemporary_source_scan_1990_2026_v2.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_fallback_remediation_projection.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_fallback_source_stubs.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_global_coverage_data.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_global_edge_discovery_registry_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_global_stress_public_surfaces.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_item_capture_queue_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_manual_source_record_drafts.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_next_capture_plan_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_nonmainstream_low_coverage_source_targets_1990_2026_v3.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_postgres_seed_sql.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_region_geography_normalization_candidates_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_region_geography_normalization_decisions_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_regional_coverage_data.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_release_quality_action_plan_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_remediation_source_record_drafts.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_seed_data.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_source_candidate_registry_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_source_dependency_reference.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_source_expansion_matrix.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_source_prospect_registry_v2.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_source_record_linkage_candidates_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/generate_surface_group_candidates_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/harvest_gsu_contentdm_raw_records.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/harvest_gsu_contentdm_raw_records_1971_2026.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/iiif_discovery.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/lib/__init__.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/lib/archive_audit.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/normalize_public_surfaces.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/parse_region_conflict_evidence_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/probe_edge_source_candidates_v2.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/probe_global_edge_discovery_candidates_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/probe_independent_asia_sources_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/probe_loc_rights_item_metadata_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/probe_source_candidate_registry_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/probe_south_asia_sources_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/rebuild_public_surfaces_chunked_prefreeze_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/rebuild_public_surfaces_from_records.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/remediate_img00_source_hosted_images.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/repair_nonmainstream_item_image_source_summary_geo_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/repair_prefreeze_candidate_v48_loc_geography.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/repository/audit_repository_hygiene.py",
+      "category": "CURRENT_REPOSITORY_MAINTENANCE",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": true,
+      "retained_audit_role": false,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/repository/build_repository_closure_audit.py",
+      "category": "CURRENT_REPOSITORY_MAINTENANCE",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": true,
+      "retained_audit_role": false,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/repository/build_git_hygiene_ledgers.py",
+      "category": "CURRENT_REPOSITORY_MAINTENANCE",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": true,
+      "retained_audit_role": false,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/repository/build_repository_inventory.py",
+      "category": "CURRENT_REPOSITORY_MAINTENANCE",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": true,
+      "retained_audit_role": false,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/repository/build_v49_release_documents.py",
+      "category": "CURRENT_REPOSITORY_MAINTENANCE",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": true,
+      "retained_audit_role": false,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/repository/verify_v49_database_freeze.py",
+      "category": "CURRENT_REPOSITORY_MAINTENANCE",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": true,
+      "retained_audit_role": false,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/resurface_region_geo_text_suggestions_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/review_main_sub_text_validation_packet_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/rights_decision_engine.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_capture_batch_001.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_commons_open_authority_topoff_2026_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_commons_open_authority_weighted_expansion_2026_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_commons_open_category_tree_image_capture_2026_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_commons_open_contemporary_region_research_capture_2026_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_commons_open_controlled_expansion_2026_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_commons_open_global_south_image_capture_2026_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_commons_open_period_balance_image_capture_2026_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_commons_open_publication_category_tree_2026_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_commons_open_region_balance_image_capture_2026_v2.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_commons_open_region_balance_image_capture_2026_v3.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_commons_open_release_gate_expansion_2026_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_cooperhewitt_graphql_image_ready_1830_2026.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_db_migrations.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_digitalnz_image_ready_1830_1970.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_digitalnz_postwar_image_ready_1945_2026.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_early_region_capture_1830_1930.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_edge_rss_html_source_capture_1970_2026.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_edge_source_registry_context_capture_1931_2026.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_edge_wordpress_source_capture_1970_2026.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_final_gap_open_source_capture_1955_2024_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_gallica_image_ready_1830_1970.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_gallica_secondary_image_ready_1830_1970.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_gap_noncanonical_image_text_capture_1930_2000.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_gsu_contentdm_image_ready_1830_1970.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_image_ready_expansion_1931_1970.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_independent_asia_capture_1990_2026.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_late_period_coverage_capture_1970_2026.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_loc_deep_image_ready_1931_1970.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_midcentury_capture_1930_1970.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_midcentury_expansion_capture_1931_1970.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_noncanonical_exact_source_capture_1970_2000.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_noncanonical_movement_commons_capture_1930_2000.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_nonmainstream_item_image_capture_2026_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_nonmainstream_region_content_capture_1990_2026.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_nonmainstream_source_profile_capture_1990_2026_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_nonmainstream_source_success_registry_2026_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_postwar_commons_open_image_capture_1945_2026.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_princeton_figgy_image_ready_1830_1970.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_protocol_item_capture_1970_2026.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_release_snapshot_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_smithsonian_open_access_image_ready_1830_1970.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_source_breadth_capture_1970_2026.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_source_coverage_gap_capture_1931_2026.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_trace_first_aic_geographic_balance_v47.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_wikimedia_commons_deep_image_ready_1830_1970.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/run_wikimedia_commons_image_ready_1830_1970.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/sample_region_geography_auto_candidates_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/score_region_geo_enrichment_confidence_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/search_seed.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/shard_public_surface_payload_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/source_policy_registry.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/suggest_region_conflict_historical_splits_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/summarize_p0_rights_repair_preflight_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/v49_api_contract_prepare_fresh_c_release.sql",
+      "category": "CURRENT_V49_API_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": true,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": false,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/v49_read_api_statistics.mjs",
+      "category": "CURRENT_V49_API_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": true,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": false,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/validate_manual_source_record.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/verify_v49_authority_research_delta.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/verify_v49_rights_machine.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/verify_v49_runtime_cleanup.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/wikidata_region_geo_factcheck_v1.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    }
+  ]
+}

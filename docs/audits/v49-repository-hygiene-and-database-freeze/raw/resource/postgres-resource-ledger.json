@@ -1,0 +1,20 @@
+{
+    "port": "58749",
+    "database": "gda_v49_phase2a_fresh_d",
+    "sessions": [
+        {
+            "pid": 91978,
+            "state": "active",
+            "usename": "gda_v49_phase2b_admin",
+            "backendType": "client backend"
+        }
+    ],
+    "capturedAt": "2026-08-21T15:23:10.488193+10:00",
+    "clusterPath": "/private/tmp/gda_v49_repository_freeze.FRESH_D",
+    "serverVersion": "16.13 (Homebrew)",
+    "maxBuilderCount": 1,
+    "maxImporterCount": 1,
+    "taskOwnedClusterCount": 1,
+    "activeNonSelectWriters": 0,
+    "maxPostgresWritersObserved": 1
+}

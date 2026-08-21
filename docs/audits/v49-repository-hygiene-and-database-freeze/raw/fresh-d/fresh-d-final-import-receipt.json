@@ -1,0 +1,88 @@
+{
+  "backendPid": 89806,
+  "baseSchemaSha256": "4ec9a76421548bda1b90ccdbf604906df9da9d349a70c9100abdddd1a7fee105",
+  "childSystemCpuSeconds": 0.853641,
+  "childUserCpuSeconds": 0.452128,
+  "committedMarker": true,
+  "constraintGroups": {
+    "delivery_history_and_rule": {
+      "wal_bytes": "0",
+      "wall_seconds": "0.586232"
+    },
+    "delivery_parent_validation": {
+      "wal_bytes": "0",
+      "wall_seconds": "2.271801"
+    },
+    "delivery_policy_validation": {
+      "wal_bytes": "0",
+      "wall_seconds": "2.276671"
+    },
+    "delivery_rights_validation": {
+      "wal_bytes": "0",
+      "wall_seconds": "2.214141"
+    },
+    "final_all_omission_check": {
+      "wal_bytes": "0",
+      "wall_seconds": "0.000078"
+    },
+    "folder_assignment_shape": {
+      "wal_bytes": "0",
+      "wall_seconds": "8.800114"
+    },
+    "provider_policy": {
+      "wal_bytes": "0",
+      "wall_seconds": "0.687139"
+    },
+    "raw_core_cycle": {
+      "wal_bytes": "57344",
+      "wall_seconds": "1.358147"
+    },
+    "rights_assessment_current_leaf": {
+      "wal_bytes": "0",
+      "wall_seconds": "0.200182"
+    },
+    "rights_assessment_shape_support": {
+      "wal_bytes": "0",
+      "wall_seconds": "2.843075"
+    },
+    "rights_observation": {
+      "wal_bytes": "3744",
+      "wall_seconds": "1.139252"
+    },
+    "visual_bridge_and_locator": {
+      "wal_bytes": "0",
+      "wall_seconds": "0.482755"
+    }
+  },
+  "database": "gda_v49_phase2a_fresh_d",
+  "expectedSchemaSha256": "df1e7741e59e5e6bf1ca80f2a33edfad1abb2fc6d95b57d4d6993b49917020dd",
+  "logPath": "/private/tmp/gda_v49_repository_freeze.FRESH_D/runtime/import-gda_v49_phase2a_fresh_d.log",
+  "returnCode": 0,
+  "stageManifestSha256": "01ac60c705f7450c6668a91ee6a3d2842c3b0258a4ecd85139611bf916681322",
+  "stages": {
+    "COPY": {
+      "bytes": "1245479023",
+      "rows": "3957270",
+      "wal_bytes": "327680",
+      "wall_seconds": "14.217299"
+    },
+    "DURABLE_INSERTS": {
+      "rows": "3829784",
+      "wal_bytes": "2370281472",
+      "wall_seconds": "80.709443"
+    },
+    "PARITY": {
+      "rows": "15923",
+      "wal_bytes": "3170304",
+      "wall_seconds": "0.412709"
+    },
+    "TARGETED_ANALYZE": {
+      "rows": "15923",
+      "wal_bytes": "196608",
+      "wall_seconds": "0.390627"
+    }
+  },
+  "stagingAttestationReused": true,
+  "status": "COMMITTED",
+  "wallSeconds": 120.101089
+}

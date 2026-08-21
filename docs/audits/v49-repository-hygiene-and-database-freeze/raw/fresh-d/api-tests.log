@@ -1,0 +1,5 @@
+
+> archive-box-frontend@0.1.0 test:read-platform
+> node scripts/verify-read-platform-contract.mjs
+
+READ_PLATFORM_CONTRACT=PASS DIRECT_DATA_COUPLING=0

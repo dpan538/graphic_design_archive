@@ -1,0 +1,65 @@
+
+> archive-box-frontend@0.1.0 build
+> next build
+
+   ▲ Next.js 15.5.18
+   - Experiments (use with caution):
+     · cpus: 2
+     · staticGenerationMaxConcurrency: 1
+     · staticGenerationMinPagesPerWorker: 100
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 14.6s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/46) ...
+   Generating static pages (11/46) 
+   Generating static pages (22/46) 
+   Generating static pages (34/46) 
+ ✓ Generating static pages (46/46)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                    Size  First Load JS
+┌ ○ /                                         183 B         111 kB
+├ ○ /_not-found                               158 B         103 kB
+├ ○ /about                                  1.08 kB         112 kB
+├ ƒ /api/v1/[...path]                         158 B         103 kB
+├ ○ /appendix                                 158 B         103 kB
+├ ○ /badges                                   158 B         103 kB
+├ ○ /bookmarks                                158 B         103 kB
+├ ○ /bookmarks/horizontal                     158 B         103 kB
+├ ○ /bookmarks/vertical                       158 B         103 kB
+├ ○ /cards                                    158 B         103 kB
+├ ○ /cards/color                              158 B         103 kB
+├ ○ /cards/dense                              158 B         103 kB
+├ ○ /cards/rectangle                          158 B         103 kB
+├ ○ /cards/special                            158 B         103 kB
+├ ○ /cards/square                             158 B         103 kB
+├ ○ /contents                                 482 B        6.25 MB
+├ ○ /folders                                  183 B         111 kB
+├ ƒ /folders/[type]                           174 B         114 kB
+├ ƒ /folders/[type]/[slug]                    174 B         114 kB
+├ ○ /main-sheets                            3.22 kB        6.24 MB
+├ ○ /reading-notes                            158 B         103 kB
+├ ○ /search                                   173 B         114 kB
+├ ○ /slips                                    158 B         103 kB
+├ ○ /sub-sheets                             3.31 kB        6.24 MB
+├ ƒ /surfaces/[id]                            174 B         114 kB
+├ ○ /text-pages                             4.58 kB        6.25 MB
+├ ○ /trace                                    171 B         114 kB
+└ ● /trace/types/[type]                       343 B         111 kB
+    ├ /trace/types/has_type
+    ├ /trace/types/associated_with_context
+    ├ /trace/types/associated_with_place
+    └ [+18 more paths]
++ First Load JS shared by all                102 kB
+  ├ chunks/255-4f84124391a7dac4.js          46.2 kB
+  ├ chunks/4bd1b696-c023c6e3521b1417.js     54.2 kB
+  └ other shared chunks (total)             1.94 kB
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

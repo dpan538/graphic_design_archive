@@ -1,0 +1,3 @@
+# Scope and preconditions
+
+The API Read Contract Closure preconditions were PASS: database integrity, 18-endpoint catalog, search HTTP 200/no 503, zero 5xx, negative methods, typecheck, and production build. This phase changed repository organization, guards, and documentation only. Source commit `d78f496bcdf2cd6941791986007cd7a885c4c532` and source tree `f0549c319d1e0b0cf5e0aab5a2b297361675b701` are recoverable through the pushed annotated tag `v49-data-api-closure-20260821`. No staging or production service was contacted; all PostgreSQL evidence came from one socket-only PostgreSQL 16.13 cluster under `/private/tmp`.

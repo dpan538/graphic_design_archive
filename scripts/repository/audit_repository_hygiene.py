@@ -32,6 +32,11 @@ CURRENT_DOC_ROOTS = (
     "docs/api/", "docs/architecture/", "docs/operations/", "docs/design/",
     "docs/releases/v49/", "docs/maintenance/",
 )
+SCRIPT_REFERENCE = re.compile(r"(?<![A-Za-z0-9_.-])((?:database|frontend|scripts)/[A-Za-z0-9_./@+-]+)")
+IMPORT_REFERENCE = re.compile(
+    r"^\s*(?:import\s+(?:[^\"']*?\sfrom\s+)?|from\s+|(?:const|let|var)[^=]*=\s*require\s*\()[\"']([^\"']+)[\"']",
+    re.MULTILINE,
+)
 
 
 def run(repo: Path, *args: str) -> subprocess.CompletedProcess[bytes]:
@@ -75,6 +80,59 @@ def doc_link_failures(repo: Path, files: list[str]) -> list[dict[str, str]]:
                 continue
             if not resolved.exists():
                 failures.append({"source": path, "target": target})
+    return failures
+
+
+def script_reference_failures(repo: Path, files: list[str]) -> list[dict[str, str]]:
+    selected = [
+        path for path in files
+        if (path in {"README.md", "PROJECT_LOG.md"}
+        or path.startswith((".github/workflows/",) + CURRENT_DOC_ROOTS))
+        and path.endswith((".md", ".json", ".yml", ".yaml"))
+    ]
+    failures: list[dict[str, str]] = []
+    for path in selected:
+        if path.startswith("docs/maintenance/v49-"):
+            continue
+        try:
+            text = (repo / path).read_text()
+        except (OSError, UnicodeDecodeError):
+            continue
+        for reference in SCRIPT_REFERENCE.findall(text):
+            reference = reference.rstrip(".,:;")
+            if "*" in reference or "<" in reference:
+                continue
+            if not reference.endswith((".py", ".sh", ".sql", ".mjs", ".js")):
+                continue
+            candidates = [repo / reference]
+            if reference.startswith("scripts/"):
+                candidates.append(repo / "frontend" / reference)
+            if not any(candidate.exists() for candidate in candidates):
+                failures.append({"source": path, "target": reference})
+    return failures
+
+
+def frontend_import_failures(repo: Path, files: list[str]) -> list[dict[str, str]]:
+    failures: list[dict[str, str]] = []
+    extensions = (".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".json", ".css")
+    for path in files:
+        if not path.startswith("frontend/") or not path.endswith((".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs")):
+            continue
+        source = repo / path
+        try:
+            text = source.read_text()
+        except (OSError, UnicodeDecodeError):
+            continue
+        for reference in IMPORT_REFERENCE.findall(text):
+            if reference.startswith("@/"):
+                base = repo / "frontend/src" / reference[2:]
+            elif reference.startswith("."):
+                base = source.parent / reference
+            else:
+                continue
+            candidates = [base, *(Path(str(base) + suffix) for suffix in extensions), *(base / f"index{suffix}" for suffix in extensions)]
+            if not any(candidate.exists() for candidate in candidates):
+                failures.append({"source": path, "target": reference})
     return failures
 
 
@@ -141,6 +199,13 @@ def main() -> int:
             if pattern.search(data):
                 secret_matches.append({"path": path, "pattern": pattern.pattern.decode("ascii", "replace")})
     links = doc_link_failures(repo, files)
+    script_links = script_reference_failures(repo, files)
+    frontend_imports = frontend_import_failures(repo, files)
+    script_allowlist_path = repo / "docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json"
+    script_allowlist = json.loads(script_allowlist_path.read_text()) if script_allowlist_path.is_file() else {}
+    tracked_scripts = {path for path in files if path.startswith("scripts/")}
+    allowed_scripts = {item["path"] for item in script_allowlist.get("scripts", [])}
+    script_allowlist_pass = tracked_scripts == allowed_scripts and script_allowlist.get("unknownClassificationCount") == 0
     lfs = run(repo, "git", "lfs", "fsck")
     tag = run(repo, "git", "rev-parse", f"{TAG}^{{}}")
     tag_commit = tag.stdout.decode().strip() if tag.returncode == 0 else ""
@@ -157,6 +222,12 @@ def main() -> int:
         "unconsumedGenerated": unconsumed_generated,
         "unmanifestedReleaseInputs": unmanifested_inputs,
         "brokenDocumentationLinks": links,
+        "brokenScriptReferences": script_links,
+        "brokenFrontendImports": frontend_imports,
+        "activeScriptAllowlistPass": script_allowlist_pass,
+        "unreferencedActiveScriptPolicy": "DOCUMENTED_ALLOWLIST" if script_allowlist_pass else "FAIL",
+        "historicalPromptActiveCount": sum(path.startswith("prompts/") for path in files),
+        "unreferencedProjectAssetCount": sum(path.startswith("project-assets/") and not path.endswith(".md") for path in files),
         "brokenLfsPointerCount": 0 if lfs.returncode == 0 else 1,
         "lfsFsckOutput": (lfs.stdout + lfs.stderr).decode("utf-8", "replace").strip(),
         "unmanifestedLargeFiles": unmanifested_large,
@@ -185,6 +256,11 @@ def main() -> int:
         "UNCONSUMED_GENERATED": not unconsumed_generated,
         "UNMANIFESTED_RELEASE_INPUT": not unmanifested_inputs,
         "BROKEN_DOC_LINK": not links,
+        "BROKEN_SCRIPT_REFERENCE": not script_links,
+        "BROKEN_FRONTEND_IMPORT": not frontend_imports,
+        "ACTIVE_SCRIPT_ALLOWLIST": script_allowlist_pass,
+        "HISTORICAL_PROMPT": checks["historicalPromptActiveCount"] == 0,
+        "UNREFERENCED_PROJECT_ASSET": checks["unreferencedProjectAssetCount"] == 0,
         "BROKEN_LFS": checks["brokenLfsPointerCount"] == 0,
         "UNMANIFESTED_LARGE": not unmanifested_large,
         "DUPLICATE_LARGE": not duplicate_large_violations,

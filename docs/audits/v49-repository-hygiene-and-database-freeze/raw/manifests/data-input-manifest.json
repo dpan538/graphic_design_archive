@@ -1,0 +1,38 @@
+{
+  "format": "gda-v49-data-input-manifest/v1",
+  "canonicalPopulationInputCount": 1,
+  "inputs": [
+    {
+      "path": "generated/public_surfaces_prefreeze_candidate_v48.json",
+      "role": "sole_canonical_population_input",
+      "sha256": "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48",
+      "byteSize": 190067852,
+      "lfs": true,
+      "mutable": false
+    },
+    {
+      "path": "data/prefreeze_candidate_v48.sqlite",
+      "role": "reconciliation_only",
+      "sha256": "ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "byteSize": 421801984,
+      "lfs": true,
+      "mutable": false
+    },
+    {
+      "path": "generated/prefreeze_candidate_v48_transfer_manifest.json",
+      "role": "integrity_manifest",
+      "sha256": "865358db84c15d960b3535969a32521c0ffec177f7455d21db86cd131f787d5b",
+      "byteSize": 21752,
+      "lfs": false,
+      "mutable": false
+    },
+    {
+      "path": "data/prefreeze_candidate_v48_transfer_manifest.csv",
+      "role": "integrity_manifest",
+      "sha256": "694a60657077bcab8888c4a4ef1daf6059706e544606d4862e46c57dcf6ddc18",
+      "byteSize": 12861,
+      "lfs": false,
+      "mutable": false
+    }
+  ]
+}

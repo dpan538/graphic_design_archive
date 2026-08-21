@@ -1,0 +1,122 @@
+BEGIN
+SET CONSTRAINTS
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 11
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+DO
+INSERT 0 1
+INSERT 0 1
+INSERT 0 33
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 4
+INSERT 0 4
+DO
+CREATE TABLE
+CREATE FUNCTION
+SET
+ create_research_release 
+-------------------------
+ 
+(1 row)
+
+RESET
+INSERT 0 1
+ expect_missingness_check 
+--------------------------
+ 
+(1 row)
+
+ expect_missingness_check 
+--------------------------
+ 
+(1 row)
+
+ expect_missingness_check 
+--------------------------
+ 
+(1 row)
+
+ expect_missingness_check 
+--------------------------
+ 
+(1 row)
+
+ expect_missingness_check 
+--------------------------
+ 
+(1 row)
+
+ expect_missingness_check 
+--------------------------
+ 
+(1 row)
+
+ expect_missingness_check 
+--------------------------
+ 
+(1 row)
+
+ expect_missingness_check 
+--------------------------
+ 
+(1 row)
+
+ expect_missingness_check 
+--------------------------
+ 
+(1 row)
+
+ expect_missingness_check 
+--------------------------
+ 
+(1 row)
+
+ expect_missingness_check 
+--------------------------
+ 
+(1 row)
+
+ expect_missingness_check 
+--------------------------
+ 
+(1 row)
+
+ expect_missingness_check 
+--------------------------
+ 
+(1 row)
+
+ expect_missingness_check 
+--------------------------
+ 
+(1 row)
+
+            case_id            | expected_sqlstate | actual_sqlstate |                 actual_constraint                  | residue_count | pass 
+-------------------------------+-------------------+-----------------+----------------------------------------------------+---------------+------
+ description_null_present      | 23514             | 23514           | research_surface_presentation_projection_v3_check6 |             0 | t
+ description_value_missing     | 23514             | 23514           | research_surface_presentation_projection_v3_check6 |             0 | t
+ display_date_null_present     | 23514             | 23514           | research_surface_presentation_projection_v3_check1 |             0 | t
+ display_date_value_missing    | 23514             | 23514           | research_surface_presentation_projection_v3_check1 |             0 | t
+ medium_null_present           | 23514             | 23514           | research_surface_presentation_projection_v3_check4 |             0 | t
+ medium_value_missing          | 23514             | 23514           | research_surface_presentation_projection_v3_check4 |             0 | t
+ normalized_year_null_present  | 23514             | 23514           | research_surface_presentation_projection_v3_check2 |             0 | t
+ normalized_year_value_missing | 23514             | 23514           | research_surface_presentation_projection_v3_check2 |             0 | t
+ place_null_present            | 23514             | 23514           | research_surface_presentation_projection_v3_check3 |             0 | t
+ place_value_missing           | 23514             | 23514           | research_surface_presentation_projection_v3_check3 |             0 | t
+ title_null_present            | 23514             | 23514           | research_surface_presentation_projection_v3_check  |             0 | t
+ title_value_missing           | 23514             | 23514           | research_surface_presentation_projection_v3_check  |             0 | t
+ type_null_present             | 23514             | 23514           | research_surface_presentation_projection_v3_check5 |             0 | t
+ type_value_missing            | 23514             | 23514           | research_surface_presentation_projection_v3_check5 |             0 | t
+(14 rows)
+
+DO
+ROLLBACK
+V49_MISSINGNESS_MATRIX=PASS CASES=14/14

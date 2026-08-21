@@ -4,7 +4,7 @@
 {
   "format": "gda-v49-repository-hygiene/v1",
   "status": "PASS",
-  "trackedFileCount": 2375,
+  "trackedFileCount": 2517,
   "checks": {
     "activeDatabaseRootCount": 1,
     "activeDatabaseRoot": "database",
@@ -16,6 +16,12 @@
     "unconsumedGenerated": [],
     "unmanifestedReleaseInputs": [],
     "brokenDocumentationLinks": [],
+    "brokenScriptReferences": [],
+    "brokenFrontendImports": [],
+    "activeScriptAllowlistPass": true,
+    "unreferencedActiveScriptPolicy": "DOCUMENTED_ALLOWLIST",
+    "historicalPromptActiveCount": 0,
+    "unreferencedProjectAssetCount": 0,
     "brokenLfsPointerCount": 0,
     "lfsFsckOutput": "Git LFS fsck OK",
     "unmanifestedLargeFiles": [],
@@ -63,7 +69,13 @@
           "docs/audits/v49-release-projection-snapshot-db-closure/raw/final/reconciliation/candidate-derived-stable-ids.tsv",
           "docs/audits/v49-release-projection-snapshot-db-closure/raw/final/reconciliation/fresh-a-stable-ids.tsv",
           "docs/audits/v49-release-projection-snapshot-db-closure/raw/final/reconciliation/fresh-b-stable-ids.tsv",
-          "docs/audits/v49-release-projection-snapshot-db-closure/raw/restarted-17e06abd/reconciliation/candidate-derived-stable-ids.tsv"
+          "docs/audits/v49-release-projection-snapshot-db-closure/raw/restarted-17e06abd/reconciliation/candidate-derived-stable-ids.tsv",
+          "docs/audits/v49-repository-hygiene-and-database-freeze/raw/fresh-d/final-reconciliation/candidate-derived-stable-ids.tsv",
+          "docs/audits/v49-repository-hygiene-and-database-freeze/raw/fresh-d/final-reconciliation/fresh-a-stable-ids.tsv",
+          "docs/audits/v49-repository-hygiene-and-database-freeze/raw/fresh-d/final-reconciliation/fresh-b-stable-ids.tsv",
+          "docs/audits/v49-repository-hygiene-and-database-freeze/raw/fresh-d/reconciliation/candidate-derived-stable-ids.tsv",
+          "docs/audits/v49-repository-hygiene-and-database-freeze/raw/fresh-d/reconciliation/fresh-a-stable-ids.tsv",
+          "docs/audits/v49-repository-hygiene-and-database-freeze/raw/fresh-d/reconciliation/fresh-b-stable-ids.tsv"
         ],
         "reason": "self-contained audit evidence or current frontend contract copy"
       },
@@ -72,7 +84,9 @@
         "byteSize": 1749122,
         "paths": [
           "docs/audits/v49-api-read-contract-closure/raw/fresh-c/reconciliation/quarantined-stable-ids.tsv",
-          "docs/audits/v49-release-projection-snapshot-db-closure/raw/final/reconciliation/quarantined-stable-ids.tsv"
+          "docs/audits/v49-release-projection-snapshot-db-closure/raw/final/reconciliation/quarantined-stable-ids.tsv",
+          "docs/audits/v49-repository-hygiene-and-database-freeze/raw/fresh-d/final-reconciliation/quarantined-stable-ids.tsv",
+          "docs/audits/v49-repository-hygiene-and-database-freeze/raw/fresh-d/reconciliation/quarantined-stable-ids.tsv"
         ],
         "reason": "self-contained audit evidence or current frontend contract copy"
       },
