@@ -1,0 +1,30 @@
+Timing is on.
+ANALYZE
+ANALYZE
+ANALYZE
+ANALYZE
+ANALYZE
+ANALYZE
+Time: 3.335 ms
+BEGIN
+Time: 0.029 ms
+SET
+Time: 0.026 ms
+ create_research_release 
+-------------------------
+ 
+(1 row)
+
+Time: 3.159 ms
+Time: 36.124 ms
+RESET
+Time: 0.029 ms
+                                                                                                                                               jsonb_build_object                                                                                                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ {"content": "60f5f6d55804417fdeed1337f14ac434228f17380de22c95959fc7f8f8dd8d16", "objectCount": 32, "membershipCount": 128, "componentManifest": "60f5f6d55804417fdeed1337f14ac434228f17380de22c95959fc7f8f8dd8d16", "candidateFingerprint": "f274a993dd273bf1cd6b67f9613e8f081716e89d70b4389ae73d44f820419053"}
+(1 row)
+
+Time: 0.379 ms
+COMMIT
+Time: 1.890 ms
+PHASE2SP_SCALE_V5=PASS

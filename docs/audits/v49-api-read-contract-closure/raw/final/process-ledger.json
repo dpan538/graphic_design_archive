@@ -1,0 +1,17 @@
+{
+  "format": "gda-v49-api-contract-process-ledger/v1",
+  "clusterRoot": "/private/tmp/gda_v49_api_contract.gJRjqP",
+  "postgresVersion": "16.13 (Homebrew)",
+  "port": 55591,
+  "postmasterPid": 67613,
+  "maxTaskOwnedPostgresClusterCount": 1,
+  "maxTaskOwnedImporterCount": 1,
+  "maxTaskOwnedBuilderCount": 1,
+  "maxPostgresWritersObserved": 1,
+  "controlledConcurrentApiReadSessionMaximum": 10,
+  "concurrencyRole": "gda_v49_phase2a_api_reader",
+  "preFinalizationResidualProcessCount": 1,
+  "finalResidualProcessCount": "PENDING_CLUSTER_STOP",
+  "unexpectedOverlappingBuilderImporter": false,
+  "kill9Used": false
+}

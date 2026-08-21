@@ -1,0 +1,2547 @@
+{
+  "format": "gda-v49-read-api-examples/v1",
+  "source": "gda_v49_phase2a_fresh_c",
+  "releaseId": "v49-api-contract-fresh-c",
+  "manifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+  "examples": {
+    "/api/v1/visual-registries/current": {
+      "primary": {
+        "name": "visual-registry-current",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/visual-registries/current",
+        "path": "/api/v1/visual-registries/current",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 257,
+        "returnedRecords": 0,
+        "elapsedMs": 2.481,
+        "databaseQueryCount": 0,
+        "body": {
+          "type": "urn:gdarchive:problem:visual-registry-not-found",
+          "title": "Visual registry unavailable",
+          "status": 404,
+          "code": "VISUAL_REGISTRY_NOT_FOUND",
+          "detail": "No visual registry is selected for the fixture release",
+          "instance": "/api/v1/visual-registries/current"
+        },
+        "bodySha256": "2a6e14b0241895ea57e80cb186d8912cfa2344a51f31f3fd0ff148f192dbdd64"
+      },
+      "deterministicRepeat": {
+        "status": 404,
+        "bodySha256": "2a6e14b0241895ea57e80cb186d8912cfa2344a51f31f3fd0ff148f192dbdd64"
+      },
+      "successResponse": null,
+      "successUnavailableReason": "the fresh sealed release publishes no resource of this type",
+      "emptyOrNotFoundResponse": {
+        "name": "visual-registry-current",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/visual-registries/current",
+        "path": "/api/v1/visual-registries/current",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 257,
+        "returnedRecords": 0,
+        "elapsedMs": 2.481,
+        "databaseQueryCount": 0,
+        "body": {
+          "type": "urn:gdarchive:problem:visual-registry-not-found",
+          "title": "Visual registry unavailable",
+          "status": 404,
+          "code": "VISUAL_REGISTRY_NOT_FOUND",
+          "detail": "No visual registry is selected for the fixture release",
+          "instance": "/api/v1/visual-registries/current"
+        },
+        "bodySha256": "2a6e14b0241895ea57e80cb186d8912cfa2344a51f31f3fd0ff148f192dbdd64"
+      },
+      "invalidResponse": null,
+      "invalidNotApplicableReason": "the implemented endpoint has no independently validated request parameter"
+    },
+    "/api/v1/releases/{release}": {
+      "primary": {
+        "name": "current-release",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/current",
+        "path": "/api/v1/releases/current",
+        "query": {},
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 388,
+        "returnedRecords": 1,
+        "elapsedMs": 26.515,
+        "databaseQueryCount": 2,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": {
+            "schemaVersion": "archive-research-release/v1"
+          }
+        },
+        "bodySha256": "77b6b489b1025ee5be644e892e5022ae81d0c81590fc08d3218e3b25203818c7"
+      },
+      "deterministicRepeat": {
+        "status": 200,
+        "bodySha256": "77b6b489b1025ee5be644e892e5022ae81d0c81590fc08d3218e3b25203818c7"
+      },
+      "successResponse": {
+        "name": "current-release",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/current",
+        "path": "/api/v1/releases/current",
+        "query": {},
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 388,
+        "returnedRecords": 1,
+        "elapsedMs": 26.515,
+        "databaseQueryCount": 2,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": {
+            "schemaVersion": "archive-research-release/v1"
+          }
+        },
+        "bodySha256": "77b6b489b1025ee5be644e892e5022ae81d0c81590fc08d3218e3b25203818c7"
+      },
+      "successUnavailableReason": null,
+      "emptyOrNotFoundResponse": {
+        "name": "current-release-example-not-found",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/not-published",
+        "path": "/api/v1/releases/not-published",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 219,
+        "returnedRecords": 0,
+        "elapsedMs": 11.056,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:release-not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "RELEASE_NOT_FOUND",
+          "detail": "sealed exact release pair was not found",
+          "instance": "/api/v1/releases/not-published"
+        },
+        "bodySha256": "5fb97f8b0681982486695a6c5bbca9a4b519fdd5c4f626c70d0185e35f6b3e17"
+      },
+      "invalidResponse": null,
+      "invalidNotApplicableReason": "the implemented endpoint has no independently validated request parameter"
+    },
+    "/api/v1/releases/{release}/manifest": {
+      "primary": {
+        "name": "release-manifest",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/manifest",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/manifest",
+        "query": {},
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 388,
+        "returnedRecords": 1,
+        "elapsedMs": 11.835,
+        "databaseQueryCount": 1,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": {
+            "schemaVersion": "archive-research-release/v1"
+          }
+        },
+        "bodySha256": "77b6b489b1025ee5be644e892e5022ae81d0c81590fc08d3218e3b25203818c7"
+      },
+      "deterministicRepeat": {
+        "status": 200,
+        "bodySha256": "77b6b489b1025ee5be644e892e5022ae81d0c81590fc08d3218e3b25203818c7"
+      },
+      "successResponse": {
+        "name": "release-manifest",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/manifest",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/manifest",
+        "query": {},
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 388,
+        "returnedRecords": 1,
+        "elapsedMs": 11.835,
+        "databaseQueryCount": 1,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": {
+            "schemaVersion": "archive-research-release/v1"
+          }
+        },
+        "bodySha256": "77b6b489b1025ee5be644e892e5022ae81d0c81590fc08d3218e3b25203818c7"
+      },
+      "successUnavailableReason": null,
+      "emptyOrNotFoundResponse": {
+        "name": "release-manifest-example-not-found",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/not-published/manifest",
+        "path": "/api/v1/releases/not-published/manifest",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 228,
+        "returnedRecords": 0,
+        "elapsedMs": 11.544,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:release-not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "RELEASE_NOT_FOUND",
+          "detail": "sealed exact release pair was not found",
+          "instance": "/api/v1/releases/not-published/manifest"
+        },
+        "bodySha256": "644ae8fc86cc11416bed78360f176adf8e0ab98425bf2543e8ab15c8402928b2"
+      },
+      "invalidResponse": null,
+      "invalidNotApplicableReason": "the implemented endpoint has no independently validated request parameter"
+    },
+    "/api/v1/releases/{release}/archive/overview": {
+      "primary": {
+        "name": "archive-overview",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/archive/overview",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/archive/overview",
+        "query": {},
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 436,
+        "returnedRecords": 1,
+        "elapsedMs": 23.709,
+        "databaseQueryCount": 2,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": {
+            "objectCount": 7995,
+            "folderCount": 0,
+            "traceEligibleObjectCount": 0,
+            "positiveVisualRightsCount": 0
+          }
+        },
+        "bodySha256": "8d40c8a9efe177a19107ef11ddc4cda7ae2baf268e8483e11e1bfc6c83cd0f7d"
+      },
+      "deterministicRepeat": {
+        "status": 200,
+        "bodySha256": "8d40c8a9efe177a19107ef11ddc4cda7ae2baf268e8483e11e1bfc6c83cd0f7d"
+      },
+      "successResponse": {
+        "name": "archive-overview",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/archive/overview",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/archive/overview",
+        "query": {},
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 436,
+        "returnedRecords": 1,
+        "elapsedMs": 23.709,
+        "databaseQueryCount": 2,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": {
+            "objectCount": 7995,
+            "folderCount": 0,
+            "traceEligibleObjectCount": 0,
+            "positiveVisualRightsCount": 0
+          }
+        },
+        "bodySha256": "8d40c8a9efe177a19107ef11ddc4cda7ae2baf268e8483e11e1bfc6c83cd0f7d"
+      },
+      "successUnavailableReason": null,
+      "emptyOrNotFoundResponse": {
+        "name": "archive-overview-example-not-found",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/not-published/archive/overview",
+        "path": "/api/v1/releases/not-published/archive/overview",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 236,
+        "returnedRecords": 0,
+        "elapsedMs": 11.457,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:release-not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "RELEASE_NOT_FOUND",
+          "detail": "sealed exact release pair was not found",
+          "instance": "/api/v1/releases/not-published/archive/overview"
+        },
+        "bodySha256": "2522e56c8040aab1768724e3b50c78a367661f407132208ec355826abff53144"
+      },
+      "invalidResponse": null,
+      "invalidNotApplicableReason": "the implemented endpoint has no independently validated request parameter"
+    },
+    "/api/v1/releases/{release}/folder-types": {
+      "primary": {
+        "name": "folder-types",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/folder-types",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/folder-types",
+        "query": {},
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 343,
+        "returnedRecords": 0,
+        "elapsedMs": 11.715,
+        "databaseQueryCount": 1,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": []
+        },
+        "bodySha256": "a64c33f8fff13beccfd7f0310a0760d359d183e32f6838ba964138f73f985418"
+      },
+      "deterministicRepeat": {
+        "status": 200,
+        "bodySha256": "a64c33f8fff13beccfd7f0310a0760d359d183e32f6838ba964138f73f985418"
+      },
+      "successResponse": {
+        "name": "folder-types",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/folder-types",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/folder-types",
+        "query": {},
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 343,
+        "returnedRecords": 0,
+        "elapsedMs": 11.715,
+        "databaseQueryCount": 1,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": []
+        },
+        "bodySha256": "a64c33f8fff13beccfd7f0310a0760d359d183e32f6838ba964138f73f985418"
+      },
+      "successUnavailableReason": null,
+      "emptyOrNotFoundResponse": {
+        "name": "folder-types-example-not-found",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/not-published/folder-types",
+        "path": "/api/v1/releases/not-published/folder-types",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 232,
+        "returnedRecords": 0,
+        "elapsedMs": 11.348,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:release-not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "RELEASE_NOT_FOUND",
+          "detail": "sealed exact release pair was not found",
+          "instance": "/api/v1/releases/not-published/folder-types"
+        },
+        "bodySha256": "9ee32e9dd9583855653639877889611043022b676402f27bed4630fc984e7a0a"
+      },
+      "invalidResponse": null,
+      "invalidNotApplicableReason": "the implemented endpoint has no independently validated request parameter"
+    },
+    "/api/v1/releases/{release}/folders": {
+      "primary": {
+        "name": "folders",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/folders?first=10",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/folders",
+        "query": {
+          "first": "10"
+        },
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 419,
+        "returnedRecords": 0,
+        "elapsedMs": 11.222,
+        "databaseQueryCount": 1,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "nextCursor": null,
+              "totalExact": 0
+            }
+          }
+        },
+        "bodySha256": "c200526f9c82ff5a370c57639178cde50d4cc8129699d5c0ce6dfa6e26e8613f"
+      },
+      "deterministicRepeat": {
+        "status": 200,
+        "bodySha256": "c200526f9c82ff5a370c57639178cde50d4cc8129699d5c0ce6dfa6e26e8613f"
+      },
+      "successResponse": {
+        "name": "folders",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/folders?first=10",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/folders",
+        "query": {
+          "first": "10"
+        },
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 419,
+        "returnedRecords": 0,
+        "elapsedMs": 11.222,
+        "databaseQueryCount": 1,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "nextCursor": null,
+              "totalExact": 0
+            }
+          }
+        },
+        "bodySha256": "c200526f9c82ff5a370c57639178cde50d4cc8129699d5c0ce6dfa6e26e8613f"
+      },
+      "successUnavailableReason": null,
+      "emptyOrNotFoundResponse": {
+        "name": "folders-example-not-found",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/not-published/folders?first=10",
+        "path": "/api/v1/releases/not-published/folders",
+        "query": {
+          "first": "10"
+        },
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 227,
+        "returnedRecords": 0,
+        "elapsedMs": 11.206,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:release-not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "RELEASE_NOT_FOUND",
+          "detail": "sealed exact release pair was not found",
+          "instance": "/api/v1/releases/not-published/folders"
+        },
+        "bodySha256": "9fdf6d871adf21d18a0819bd49a1e0e577407ef9d6470aa2c99fead3abc8a525"
+      },
+      "invalidResponse": {
+        "name": "folders-example-invalid",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/folders?first=0",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/folders",
+        "query": {
+          "first": "0"
+        },
+        "status": 400,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 235,
+        "returnedRecords": 0,
+        "elapsedMs": 11.427,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:invalid-argument",
+          "title": "Read API request failed",
+          "status": 400,
+          "code": "INVALID_ARGUMENT",
+          "detail": "first must be an integer from 1 to 100",
+          "instance": "/api/v1/releases/v49-api-contract-fresh-c/folders"
+        },
+        "bodySha256": "c28022dbaac26ce5d629e31572cf1afd5c7f5cc56f35689636e63bef785c24e1"
+      },
+      "invalidNotApplicableReason": null
+    },
+    "/api/v1/releases/{release}/folders/{id}/surfaces": {
+      "primary": {
+        "name": "folder-members",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/folders/not-published/surfaces?first=10",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/folders/not-published/surfaces",
+        "query": {
+          "first": "10"
+        },
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 247,
+        "returnedRecords": 0,
+        "elapsedMs": 11.176,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "NOT_FOUND",
+          "detail": "folder is not part of this sealed release",
+          "instance": "/api/v1/releases/v49-api-contract-fresh-c/folders/not-published/surfaces"
+        },
+        "bodySha256": "b43cda55ee63b4e3cee6d14a6d7d28a69dd6900676424411f363e3033da9c9e6"
+      },
+      "deterministicRepeat": {
+        "status": 404,
+        "bodySha256": "b43cda55ee63b4e3cee6d14a6d7d28a69dd6900676424411f363e3033da9c9e6"
+      },
+      "successResponse": null,
+      "successUnavailableReason": "the fresh sealed release publishes no resource of this type",
+      "emptyOrNotFoundResponse": {
+        "name": "folder-members",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/folders/not-published/surfaces?first=10",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/folders/not-published/surfaces",
+        "query": {
+          "first": "10"
+        },
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 247,
+        "returnedRecords": 0,
+        "elapsedMs": 11.176,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "NOT_FOUND",
+          "detail": "folder is not part of this sealed release",
+          "instance": "/api/v1/releases/v49-api-contract-fresh-c/folders/not-published/surfaces"
+        },
+        "bodySha256": "b43cda55ee63b4e3cee6d14a6d7d28a69dd6900676424411f363e3033da9c9e6"
+      },
+      "invalidResponse": null,
+      "invalidNotApplicableReason": "the implemented endpoint has no independently validated request parameter"
+    },
+    "/api/v1/releases/{release}/folders/{id}": {
+      "primary": {
+        "name": "folder-detail",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/folders/not-published",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/folders/not-published",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 254,
+        "returnedRecords": 0,
+        "elapsedMs": 11.044,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "NOT_FOUND",
+          "detail": "folder projections are unavailable for this exact release",
+          "instance": "/api/v1/releases/v49-api-contract-fresh-c/folders/not-published"
+        },
+        "bodySha256": "4caf74d4dd579675389b6bdfdb70a1f2ed790821cd44f4894fc97461d786dbf5"
+      },
+      "deterministicRepeat": {
+        "status": 404,
+        "bodySha256": "4caf74d4dd579675389b6bdfdb70a1f2ed790821cd44f4894fc97461d786dbf5"
+      },
+      "successResponse": null,
+      "successUnavailableReason": "the fresh sealed release publishes no resource of this type",
+      "emptyOrNotFoundResponse": {
+        "name": "folder-detail",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/folders/not-published",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/folders/not-published",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 254,
+        "returnedRecords": 0,
+        "elapsedMs": 11.044,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "NOT_FOUND",
+          "detail": "folder projections are unavailable for this exact release",
+          "instance": "/api/v1/releases/v49-api-contract-fresh-c/folders/not-published"
+        },
+        "bodySha256": "4caf74d4dd579675389b6bdfdb70a1f2ed790821cd44f4894fc97461d786dbf5"
+      },
+      "invalidResponse": null,
+      "invalidNotApplicableReason": "the implemented endpoint has no independently validated request parameter"
+    },
+    "/api/v1/releases/{release}/surfaces/{id}": {
+      "primary": {
+        "name": "surface-detail",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/surfaces/SURF-AICTRACEV47R0001",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/surfaces/SURF-AICTRACEV47R0001",
+        "query": {},
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 725,
+        "returnedRecords": 1,
+        "elapsedMs": 22.726,
+        "databaseQueryCount": 2,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": {
+            "surfaceId": "SURF-AICTRACEV47R0001",
+            "title": "Portfolio Cover for Mexican People",
+            "creditedLabels": [],
+            "displayDate": "Undated",
+            "year": null,
+            "placeLabel": "Unspecified",
+            "mediumLabel": "Not publicly specified",
+            "typeLabel": "Archive surface",
+            "sourceLabel": "Sealed research release",
+            "publicationLayer": "active",
+            "deliveryState": "CITATION_ONLY",
+            "citation": null,
+            "folderIds": [],
+            "description": null
+          }
+        },
+        "bodySha256": "cdc9a9da6659f386447d3180b6b9e70c6cbe5c61d82a3b41e0e03e10cf1072b3"
+      },
+      "deterministicRepeat": {
+        "status": 200,
+        "bodySha256": "cdc9a9da6659f386447d3180b6b9e70c6cbe5c61d82a3b41e0e03e10cf1072b3"
+      },
+      "notFound": {
+        "name": "held-quarantined-surface",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/surfaces/SURF-CSPTRACE2026R0093",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/surfaces/SURF-CSPTRACE2026R0093",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 248,
+        "returnedRecords": 0,
+        "elapsedMs": 23.896,
+        "databaseQueryCount": 2,
+        "body": {
+          "type": "urn:gdarchive:problem:not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "NOT_FOUND",
+          "detail": "surface not found in exact sealed release",
+          "instance": "/api/v1/releases/v49-api-contract-fresh-c/surfaces/SURF-CSPTRACE2026R0093"
+        },
+        "bodySha256": "3a38d8fe92ba949446895bbeb3152a70d7fa437d1f88f2b4e945f94c6f35da08"
+      },
+      "successResponse": {
+        "name": "surface-detail",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/surfaces/SURF-AICTRACEV47R0001",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/surfaces/SURF-AICTRACEV47R0001",
+        "query": {},
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 725,
+        "returnedRecords": 1,
+        "elapsedMs": 22.726,
+        "databaseQueryCount": 2,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": {
+            "surfaceId": "SURF-AICTRACEV47R0001",
+            "title": "Portfolio Cover for Mexican People",
+            "creditedLabels": [],
+            "displayDate": "Undated",
+            "year": null,
+            "placeLabel": "Unspecified",
+            "mediumLabel": "Not publicly specified",
+            "typeLabel": "Archive surface",
+            "sourceLabel": "Sealed research release",
+            "publicationLayer": "active",
+            "deliveryState": "CITATION_ONLY",
+            "citation": null,
+            "folderIds": [],
+            "description": null
+          }
+        },
+        "bodySha256": "cdc9a9da6659f386447d3180b6b9e70c6cbe5c61d82a3b41e0e03e10cf1072b3"
+      },
+      "successUnavailableReason": null,
+      "emptyOrNotFoundResponse": {
+        "name": "surface-detail-example-not-found",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/not-published/surfaces/SURF-AICTRACEV47R0001",
+        "path": "/api/v1/releases/not-published/surfaces/SURF-AICTRACEV47R0001",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 250,
+        "returnedRecords": 0,
+        "elapsedMs": 10.616,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:release-not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "RELEASE_NOT_FOUND",
+          "detail": "sealed exact release pair was not found",
+          "instance": "/api/v1/releases/not-published/surfaces/SURF-AICTRACEV47R0001"
+        },
+        "bodySha256": "48014111598b18db07f684702aaa06628f798161a573f5c2c36a9cb4f2417c4f"
+      },
+      "invalidResponse": null,
+      "invalidNotApplicableReason": "the implemented endpoint has no independently validated request parameter"
+    },
+    "/api/v1/releases/{release}/search": {
+      "primary": {
+        "name": "search",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/search?q=Poster&first=10",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/search",
+        "query": {
+          "q": "Poster",
+          "first": "10"
+        },
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 6943,
+        "returnedRecords": 10,
+        "elapsedMs": 30.501,
+        "databaseQueryCount": 2,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": {
+            "nodes": [
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-MODERNAPITRACE2026R0041",
+                "highlight": "¡GuateAmala! Posters",
+                "surface": {
+                  "surfaceId": "SURF-MODERNAPITRACE2026R0041",
+                  "title": "¡GuateAmala! Posters",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-VAM20K-03013",
+                "highlight": "‘Flying Eyeball’ poster",
+                "surface": {
+                  "surfaceId": "SURF-VAM20K-03013",
+                  "title": "‘Flying Eyeball’ poster",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-MODERNAPITRACE2026R0064",
+                "highlight": "\"Top Dogs,\" Works by the 11 Jurors of the First Chicago International Poster Biennial",
+                "surface": {
+                  "surfaceId": "SURF-MODERNAPITRACE2026R0064",
+                  "title": "\"Top Dogs,\" Works by the 11 Jurors of the First Chicago International Poster Biennial",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R02567",
+                "highlight": "[Partial screen of poster for Red Flag Theater presentation of The mother, by Bertolt Brecht]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R02567",
+                  "title": "[Partial screen of poster for Red Flag Theater presentation of The mother, by Bertolt Brecht]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R01090",
+                "highlight": "[Poster of emblem of the Social Democratic Party of Germany repeated to form a pattern in red, blue, and white]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R01090",
+                  "title": "[Poster of emblem of the Social Democratic Party of Germany repeated to form a pattern in red, blue, and white]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R00734",
+                "highlight": "[Poster showing circular coin with the words Palestine, 1927 written in English, Hebrew, and Arabic]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R00734",
+                  "title": "[Poster showing circular coin with the words Palestine, 1927 written in English, Hebrew, and Arabic]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R02357",
+                "highlight": "[Poster showing Israeli Peace and Equality Movement initial and logo]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R02357",
+                  "title": "[Poster showing Israeli Peace and Equality Movement initial and logo]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R01643",
+                "highlight": "[Poster showing Tibetan and Chinese doctors riding horse and oxen over snow-covered mountain]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R01643",
+                  "title": "[Poster showing Tibetan and Chinese doctors riding horse and oxen over snow-covered mountain]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R01708",
+                "highlight": "[Poster with photos showing Ho Chi Minh inspecting gun emplacement, coastal defense installation, soldiers in Hanoi reading newspaper describing North Vietnamese destruction of enemy aircraft, Vietnamese capturing American pilot, and site of wreckage of American aircraft]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R01708",
+                  "title": "[Poster with photos showing Ho Chi Minh inspecting gun emplacement, coastal defense installation, soldiers in Hanoi reading newspaper describing North Vietnamese destruction of enemy aircraft, Vietnamese capturing American pilot, and site of wreckage of American aircraft]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R02599",
+                "highlight": "[Poster, composed of six different images, highlighting behavior that impedes perestroika: drunkenness, laziness, covetousness, bribery, speculation, embezzlement]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R02599",
+                  "title": "[Poster, composed of six different images, highlighting behavior that impedes perestroika: drunkenness, laziness, covetousness, bribery, speculation, embezzlement]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              }
+            ],
+            "pageInfo": {
+              "hasNextPage": true,
+              "nextCursor": "eyJyZWxlYXNlSWQiOiJ2NDktYXBpLWNvbnRyYWN0LWZyZXNoLWMiLCJtYW5pZmVzdCI6IjRhZGRmZGIzY2I5MzE0NTg3OTA4MDk2NTcyMjQyYjlkNjNlOWNlZjllNmUxYmU2OGMwYzY0NjQ5MWE0M2E5MGEiLCJyZXNvdXJjZSI6InNlYXJjaCIsImZpbHRlciI6IntcInFcIjpcInBvc3RlclwiLFwic2NvcGVcIjpcImFsbFwifSIsInNvcnQiOiJ0aXRsZSIsImtleSI6IltQb3N0ZXIsIGNvbXBvc2VkIG9mIHNpeCBkaWZmZXJlbnQgaW1hZ2VzLCBoaWdobGlnaHRpbmcgYmVoYXZpb3IgdGhhdCBpbXBlZGVzIHBlcmVzdHJvaWthOiBkcnVua2VubmVzcywgbGF6aW5lc3MsIGNvdmV0b3VzbmVzcywgYnJpYmVyeSwgc3BlY3VsYXRpb24sIGVtYmV6emxlbWVudF1cdTAwMDBTVVJGLUxPQ1RSQUNFMjAyNlIwMjU5OSJ9",
+              "totalExact": 486
+            }
+          }
+        },
+        "bodySha256": "5cc57d183efeb00babca5a18c8564ca92b327e80abdf9565aa42a4ce447468e0"
+      },
+      "deterministicRepeat": {
+        "status": 200,
+        "bodySha256": "5cc57d183efeb00babca5a18c8564ca92b327e80abdf9565aa42a4ce447468e0"
+      },
+      "success": {
+        "name": "search-canonical-request",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/search?q=Poster&first=10",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/search",
+        "query": {
+          "q": "Poster",
+          "first": "10"
+        },
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 6943,
+        "returnedRecords": 10,
+        "elapsedMs": 28.551,
+        "databaseQueryCount": 2,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": {
+            "nodes": [
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-MODERNAPITRACE2026R0041",
+                "highlight": "¡GuateAmala! Posters",
+                "surface": {
+                  "surfaceId": "SURF-MODERNAPITRACE2026R0041",
+                  "title": "¡GuateAmala! Posters",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-VAM20K-03013",
+                "highlight": "‘Flying Eyeball’ poster",
+                "surface": {
+                  "surfaceId": "SURF-VAM20K-03013",
+                  "title": "‘Flying Eyeball’ poster",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-MODERNAPITRACE2026R0064",
+                "highlight": "\"Top Dogs,\" Works by the 11 Jurors of the First Chicago International Poster Biennial",
+                "surface": {
+                  "surfaceId": "SURF-MODERNAPITRACE2026R0064",
+                  "title": "\"Top Dogs,\" Works by the 11 Jurors of the First Chicago International Poster Biennial",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R02567",
+                "highlight": "[Partial screen of poster for Red Flag Theater presentation of The mother, by Bertolt Brecht]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R02567",
+                  "title": "[Partial screen of poster for Red Flag Theater presentation of The mother, by Bertolt Brecht]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R01090",
+                "highlight": "[Poster of emblem of the Social Democratic Party of Germany repeated to form a pattern in red, blue, and white]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R01090",
+                  "title": "[Poster of emblem of the Social Democratic Party of Germany repeated to form a pattern in red, blue, and white]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R00734",
+                "highlight": "[Poster showing circular coin with the words Palestine, 1927 written in English, Hebrew, and Arabic]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R00734",
+                  "title": "[Poster showing circular coin with the words Palestine, 1927 written in English, Hebrew, and Arabic]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R02357",
+                "highlight": "[Poster showing Israeli Peace and Equality Movement initial and logo]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R02357",
+                  "title": "[Poster showing Israeli Peace and Equality Movement initial and logo]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R01643",
+                "highlight": "[Poster showing Tibetan and Chinese doctors riding horse and oxen over snow-covered mountain]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R01643",
+                  "title": "[Poster showing Tibetan and Chinese doctors riding horse and oxen over snow-covered mountain]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R01708",
+                "highlight": "[Poster with photos showing Ho Chi Minh inspecting gun emplacement, coastal defense installation, soldiers in Hanoi reading newspaper describing North Vietnamese destruction of enemy aircraft, Vietnamese capturing American pilot, and site of wreckage of American aircraft]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R01708",
+                  "title": "[Poster with photos showing Ho Chi Minh inspecting gun emplacement, coastal defense installation, soldiers in Hanoi reading newspaper describing North Vietnamese destruction of enemy aircraft, Vietnamese capturing American pilot, and site of wreckage of American aircraft]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R02599",
+                "highlight": "[Poster, composed of six different images, highlighting behavior that impedes perestroika: drunkenness, laziness, covetousness, bribery, speculation, embezzlement]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R02599",
+                  "title": "[Poster, composed of six different images, highlighting behavior that impedes perestroika: drunkenness, laziness, covetousness, bribery, speculation, embezzlement]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              }
+            ],
+            "pageInfo": {
+              "hasNextPage": true,
+              "nextCursor": "eyJyZWxlYXNlSWQiOiJ2NDktYXBpLWNvbnRyYWN0LWZyZXNoLWMiLCJtYW5pZmVzdCI6IjRhZGRmZGIzY2I5MzE0NTg3OTA4MDk2NTcyMjQyYjlkNjNlOWNlZjllNmUxYmU2OGMwYzY0NjQ5MWE0M2E5MGEiLCJyZXNvdXJjZSI6InNlYXJjaCIsImZpbHRlciI6IntcInFcIjpcInBvc3RlclwiLFwic2NvcGVcIjpcImFsbFwifSIsInNvcnQiOiJ0aXRsZSIsImtleSI6IltQb3N0ZXIsIGNvbXBvc2VkIG9mIHNpeCBkaWZmZXJlbnQgaW1hZ2VzLCBoaWdobGlnaHRpbmcgYmVoYXZpb3IgdGhhdCBpbXBlZGVzIHBlcmVzdHJvaWthOiBkcnVua2VubmVzcywgbGF6aW5lc3MsIGNvdmV0b3VzbmVzcywgYnJpYmVyeSwgc3BlY3VsYXRpb24sIGVtYmV6emxlbWVudF1cdTAwMDBTVVJGLUxPQ1RSQUNFMjAyNlIwMjU5OSJ9",
+              "totalExact": 486
+            }
+          }
+        },
+        "bodySha256": "5cc57d183efeb00babca5a18c8564ca92b327e80abdf9565aa42a4ce447468e0"
+      },
+      "empty": {
+        "name": "search-no-result",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/search?q=gda-definitely-no-result-6d8f&first=10",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/search",
+        "query": {
+          "q": "gda-definitely-no-result-6d8f",
+          "first": "10"
+        },
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 419,
+        "returnedRecords": 0,
+        "elapsedMs": 26.184,
+        "databaseQueryCount": 2,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "nextCursor": null,
+              "totalExact": 0
+            }
+          }
+        },
+        "bodySha256": "c200526f9c82ff5a370c57639178cde50d4cc8129699d5c0ce6dfa6e26e8613f"
+      },
+      "invalid": {
+        "name": "search-empty-query",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/search?q=&first=10",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/search",
+        "query": {
+          "q": "",
+          "first": "10"
+        },
+        "status": 400,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 249,
+        "returnedRecords": 0,
+        "elapsedMs": 10.458,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:invalid-argument",
+          "title": "Read API request failed",
+          "status": 400,
+          "code": "INVALID_ARGUMENT",
+          "detail": "q must be a non-empty query of at most 120 characters",
+          "instance": "/api/v1/releases/v49-api-contract-fresh-c/search"
+        },
+        "bodySha256": "22935920e7b6406eff4aa97df25612f940837c2098ae85bd36419e7d5225948b"
+      },
+      "successResponse": {
+        "name": "search",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/search?q=Poster&first=10",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/search",
+        "query": {
+          "q": "Poster",
+          "first": "10"
+        },
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 6943,
+        "returnedRecords": 10,
+        "elapsedMs": 30.501,
+        "databaseQueryCount": 2,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": {
+            "nodes": [
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-MODERNAPITRACE2026R0041",
+                "highlight": "¡GuateAmala! Posters",
+                "surface": {
+                  "surfaceId": "SURF-MODERNAPITRACE2026R0041",
+                  "title": "¡GuateAmala! Posters",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-VAM20K-03013",
+                "highlight": "‘Flying Eyeball’ poster",
+                "surface": {
+                  "surfaceId": "SURF-VAM20K-03013",
+                  "title": "‘Flying Eyeball’ poster",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-MODERNAPITRACE2026R0064",
+                "highlight": "\"Top Dogs,\" Works by the 11 Jurors of the First Chicago International Poster Biennial",
+                "surface": {
+                  "surfaceId": "SURF-MODERNAPITRACE2026R0064",
+                  "title": "\"Top Dogs,\" Works by the 11 Jurors of the First Chicago International Poster Biennial",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R02567",
+                "highlight": "[Partial screen of poster for Red Flag Theater presentation of The mother, by Bertolt Brecht]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R02567",
+                  "title": "[Partial screen of poster for Red Flag Theater presentation of The mother, by Bertolt Brecht]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R01090",
+                "highlight": "[Poster of emblem of the Social Democratic Party of Germany repeated to form a pattern in red, blue, and white]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R01090",
+                  "title": "[Poster of emblem of the Social Democratic Party of Germany repeated to form a pattern in red, blue, and white]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R00734",
+                "highlight": "[Poster showing circular coin with the words Palestine, 1927 written in English, Hebrew, and Arabic]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R00734",
+                  "title": "[Poster showing circular coin with the words Palestine, 1927 written in English, Hebrew, and Arabic]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R02357",
+                "highlight": "[Poster showing Israeli Peace and Equality Movement initial and logo]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R02357",
+                  "title": "[Poster showing Israeli Peace and Equality Movement initial and logo]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R01643",
+                "highlight": "[Poster showing Tibetan and Chinese doctors riding horse and oxen over snow-covered mountain]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R01643",
+                  "title": "[Poster showing Tibetan and Chinese doctors riding horse and oxen over snow-covered mountain]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R01708",
+                "highlight": "[Poster with photos showing Ho Chi Minh inspecting gun emplacement, coastal defense installation, soldiers in Hanoi reading newspaper describing North Vietnamese destruction of enemy aircraft, Vietnamese capturing American pilot, and site of wreckage of American aircraft]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R01708",
+                  "title": "[Poster with photos showing Ho Chi Minh inspecting gun emplacement, coastal defense installation, soldiers in Hanoi reading newspaper describing North Vietnamese destruction of enemy aircraft, Vietnamese capturing American pilot, and site of wreckage of American aircraft]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              },
+              {
+                "kind": "archive",
+                "route": "/surfaces/SURF-LOCTRACE2026R02599",
+                "highlight": "[Poster, composed of six different images, highlighting behavior that impedes perestroika: drunkenness, laziness, covetousness, bribery, speculation, embezzlement]",
+                "surface": {
+                  "surfaceId": "SURF-LOCTRACE2026R02599",
+                  "title": "[Poster, composed of six different images, highlighting behavior that impedes perestroika: drunkenness, laziness, covetousness, bribery, speculation, embezzlement]",
+                  "creditedLabels": [],
+                  "displayDate": "Undated",
+                  "year": null,
+                  "placeLabel": "Unspecified",
+                  "mediumLabel": "Not publicly specified",
+                  "typeLabel": "Archive surface",
+                  "sourceLabel": "Sealed research release",
+                  "publicationLayer": "active",
+                  "deliveryState": "CITATION_ONLY"
+                }
+              }
+            ],
+            "pageInfo": {
+              "hasNextPage": true,
+              "nextCursor": "eyJyZWxlYXNlSWQiOiJ2NDktYXBpLWNvbnRyYWN0LWZyZXNoLWMiLCJtYW5pZmVzdCI6IjRhZGRmZGIzY2I5MzE0NTg3OTA4MDk2NTcyMjQyYjlkNjNlOWNlZjllNmUxYmU2OGMwYzY0NjQ5MWE0M2E5MGEiLCJyZXNvdXJjZSI6InNlYXJjaCIsImZpbHRlciI6IntcInFcIjpcInBvc3RlclwiLFwic2NvcGVcIjpcImFsbFwifSIsInNvcnQiOiJ0aXRsZSIsImtleSI6IltQb3N0ZXIsIGNvbXBvc2VkIG9mIHNpeCBkaWZmZXJlbnQgaW1hZ2VzLCBoaWdobGlnaHRpbmcgYmVoYXZpb3IgdGhhdCBpbXBlZGVzIHBlcmVzdHJvaWthOiBkcnVua2VubmVzcywgbGF6aW5lc3MsIGNvdmV0b3VzbmVzcywgYnJpYmVyeSwgc3BlY3VsYXRpb24sIGVtYmV6emxlbWVudF1cdTAwMDBTVVJGLUxPQ1RSQUNFMjAyNlIwMjU5OSJ9",
+              "totalExact": 486
+            }
+          }
+        },
+        "bodySha256": "5cc57d183efeb00babca5a18c8564ca92b327e80abdf9565aa42a4ce447468e0"
+      },
+      "successUnavailableReason": null,
+      "emptyOrNotFoundResponse": {
+        "name": "search-example-not-found",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/not-published/search?q=Poster&first=10",
+        "path": "/api/v1/releases/not-published/search",
+        "query": {
+          "q": "Poster",
+          "first": "10"
+        },
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 226,
+        "returnedRecords": 0,
+        "elapsedMs": 11.066,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:release-not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "RELEASE_NOT_FOUND",
+          "detail": "sealed exact release pair was not found",
+          "instance": "/api/v1/releases/not-published/search"
+        },
+        "bodySha256": "01c61b3e56d605bceb44516e722ce0f9b9d86705a05b2a3da20936f36af1d363"
+      },
+      "invalidResponse": {
+        "name": "search-empty-query",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/search?q=&first=10",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/search",
+        "query": {
+          "q": "",
+          "first": "10"
+        },
+        "status": 400,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 249,
+        "returnedRecords": 0,
+        "elapsedMs": 10.458,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:invalid-argument",
+          "title": "Read API request failed",
+          "status": 400,
+          "code": "INVALID_ARGUMENT",
+          "detail": "q must be a non-empty query of at most 120 characters",
+          "instance": "/api/v1/releases/v49-api-contract-fresh-c/search"
+        },
+        "bodySha256": "22935920e7b6406eff4aa97df25612f940837c2098ae85bd36419e7d5225948b"
+      },
+      "invalidNotApplicableReason": null
+    },
+    "/api/v1/releases/{release}/trace/atlas": {
+      "primary": {
+        "name": "trace-atlas",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/trace/atlas",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/trace/atlas",
+        "query": {},
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 430,
+        "returnedRecords": 1,
+        "elapsedMs": 10.907,
+        "databaseQueryCount": 1,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": {
+            "namedUnits": [],
+            "totalExact": 0,
+            "message": "This release has no verified TRACE evidence."
+          }
+        },
+        "bodySha256": "ad1f87e0d75831a728b6df774a2d6f8d20b38bb032536f3685f7e0e7ffe9edd5"
+      },
+      "deterministicRepeat": {
+        "status": 200,
+        "bodySha256": "ad1f87e0d75831a728b6df774a2d6f8d20b38bb032536f3685f7e0e7ffe9edd5"
+      },
+      "successResponse": {
+        "name": "trace-atlas",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/trace/atlas",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/trace/atlas",
+        "query": {},
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 430,
+        "returnedRecords": 1,
+        "elapsedMs": 10.907,
+        "databaseQueryCount": 1,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": {
+            "namedUnits": [],
+            "totalExact": 0,
+            "message": "This release has no verified TRACE evidence."
+          }
+        },
+        "bodySha256": "ad1f87e0d75831a728b6df774a2d6f8d20b38bb032536f3685f7e0e7ffe9edd5"
+      },
+      "successUnavailableReason": null,
+      "emptyOrNotFoundResponse": {
+        "name": "trace-atlas-example-not-found",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/not-published/trace/atlas",
+        "path": "/api/v1/releases/not-published/trace/atlas",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 231,
+        "returnedRecords": 0,
+        "elapsedMs": 10.916,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:release-not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "RELEASE_NOT_FOUND",
+          "detail": "sealed exact release pair was not found",
+          "instance": "/api/v1/releases/not-published/trace/atlas"
+        },
+        "bodySha256": "a56550ad7731faa17ffda8da9f630a66b965daa4db8ff8b2b60d176896a8ae79"
+      },
+      "invalidResponse": null,
+      "invalidNotApplicableReason": "the implemented endpoint has no independently validated request parameter"
+    },
+    "/api/v1/releases/{release}/trace/objects": {
+      "primary": {
+        "name": "trace-objects",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/trace/objects?first=10",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/trace/objects",
+        "query": {
+          "first": "10"
+        },
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 419,
+        "returnedRecords": 0,
+        "elapsedMs": 11.053,
+        "databaseQueryCount": 1,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "nextCursor": null,
+              "totalExact": 0
+            }
+          }
+        },
+        "bodySha256": "c200526f9c82ff5a370c57639178cde50d4cc8129699d5c0ce6dfa6e26e8613f"
+      },
+      "deterministicRepeat": {
+        "status": 200,
+        "bodySha256": "c200526f9c82ff5a370c57639178cde50d4cc8129699d5c0ce6dfa6e26e8613f"
+      },
+      "successResponse": {
+        "name": "trace-objects",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/trace/objects?first=10",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/trace/objects",
+        "query": {
+          "first": "10"
+        },
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 419,
+        "returnedRecords": 0,
+        "elapsedMs": 11.053,
+        "databaseQueryCount": 1,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "nextCursor": null,
+              "totalExact": 0
+            }
+          }
+        },
+        "bodySha256": "c200526f9c82ff5a370c57639178cde50d4cc8129699d5c0ce6dfa6e26e8613f"
+      },
+      "successUnavailableReason": null,
+      "emptyOrNotFoundResponse": {
+        "name": "trace-objects-example-not-found",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/not-published/trace/objects?first=10",
+        "path": "/api/v1/releases/not-published/trace/objects",
+        "query": {
+          "first": "10"
+        },
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 233,
+        "returnedRecords": 0,
+        "elapsedMs": 10.593,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:release-not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "RELEASE_NOT_FOUND",
+          "detail": "sealed exact release pair was not found",
+          "instance": "/api/v1/releases/not-published/trace/objects"
+        },
+        "bodySha256": "f3eda3aed165d4694cf7c065e459e8b01200b02023ba4a4ecc66e826504c464d"
+      },
+      "invalidResponse": {
+        "name": "trace-objects-example-invalid",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/trace/objects?first=0",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/trace/objects",
+        "query": {
+          "first": "0"
+        },
+        "status": 400,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 241,
+        "returnedRecords": 0,
+        "elapsedMs": 10.529,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:invalid-argument",
+          "title": "Read API request failed",
+          "status": 400,
+          "code": "INVALID_ARGUMENT",
+          "detail": "first must be an integer from 1 to 100",
+          "instance": "/api/v1/releases/v49-api-contract-fresh-c/trace/objects"
+        },
+        "bodySha256": "314b2d0c7bd05505142f915d1dc4d1455c849e3ce81676a7d67e66560002bb38"
+      },
+      "invalidNotApplicableReason": null
+    },
+    "/api/v1/releases/{release}/trace/objects/{id}/neighborhood": {
+      "primary": {
+        "name": "trace-neighborhood",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/trace/objects/SURF-AICTRACEV47R0001/neighborhood",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/trace/objects/SURF-AICTRACEV47R0001/neighborhood",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 281,
+        "returnedRecords": 0,
+        "elapsedMs": 10.865,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "NOT_FOUND",
+          "detail": "object has no verified TRACE neighborhood in this release",
+          "instance": "/api/v1/releases/v49-api-contract-fresh-c/trace/objects/SURF-AICTRACEV47R0001/neighborhood"
+        },
+        "bodySha256": "6b270e0d98613c7f97e8a3813fcaf9b4f9b253d4c84211b305f1b3462f7f9e88"
+      },
+      "deterministicRepeat": {
+        "status": 404,
+        "bodySha256": "6b270e0d98613c7f97e8a3813fcaf9b4f9b253d4c84211b305f1b3462f7f9e88"
+      },
+      "successResponse": null,
+      "successUnavailableReason": "the fresh sealed release publishes no resource of this type",
+      "emptyOrNotFoundResponse": {
+        "name": "trace-neighborhood",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/trace/objects/SURF-AICTRACEV47R0001/neighborhood",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/trace/objects/SURF-AICTRACEV47R0001/neighborhood",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 281,
+        "returnedRecords": 0,
+        "elapsedMs": 10.865,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "NOT_FOUND",
+          "detail": "object has no verified TRACE neighborhood in this release",
+          "instance": "/api/v1/releases/v49-api-contract-fresh-c/trace/objects/SURF-AICTRACEV47R0001/neighborhood"
+        },
+        "bodySha256": "6b270e0d98613c7f97e8a3813fcaf9b4f9b253d4c84211b305f1b3462f7f9e88"
+      },
+      "invalidResponse": null,
+      "invalidNotApplicableReason": "the implemented endpoint has no independently validated request parameter"
+    },
+    "/api/v1/releases/{release}/trace/relation-types": {
+      "primary": {
+        "name": "relation-types",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/trace/relation-types",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/trace/relation-types",
+        "query": {},
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 343,
+        "returnedRecords": 0,
+        "elapsedMs": 10.836,
+        "databaseQueryCount": 1,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": []
+        },
+        "bodySha256": "a64c33f8fff13beccfd7f0310a0760d359d183e32f6838ba964138f73f985418"
+      },
+      "deterministicRepeat": {
+        "status": 200,
+        "bodySha256": "a64c33f8fff13beccfd7f0310a0760d359d183e32f6838ba964138f73f985418"
+      },
+      "successResponse": {
+        "name": "relation-types",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/trace/relation-types",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/trace/relation-types",
+        "query": {},
+        "status": 200,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 343,
+        "returnedRecords": 0,
+        "elapsedMs": 10.836,
+        "databaseQueryCount": 1,
+        "body": {
+          "apiVersion": "v1",
+          "researchReleaseId": "v49-api-contract-fresh-c",
+          "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "visualRegistryVersion": null,
+          "visualRegistrySha256": null,
+          "visualRegistryState": "UNAVAILABLE",
+          "visualReasonCodes": [
+            "VISUAL_REGISTRY_NOT_SELECTED"
+          ],
+          "takedownOverlaySha256": null,
+          "data": []
+        },
+        "bodySha256": "a64c33f8fff13beccfd7f0310a0760d359d183e32f6838ba964138f73f985418"
+      },
+      "successUnavailableReason": null,
+      "emptyOrNotFoundResponse": {
+        "name": "relation-types-example-not-found",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/not-published/trace/relation-types",
+        "path": "/api/v1/releases/not-published/trace/relation-types",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 240,
+        "returnedRecords": 0,
+        "elapsedMs": 10.603,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:release-not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "RELEASE_NOT_FOUND",
+          "detail": "sealed exact release pair was not found",
+          "instance": "/api/v1/releases/not-published/trace/relation-types"
+        },
+        "bodySha256": "966c13ff2d1cd13e86a5ed29cb908373ae6f1f730f9fe4bf774e4003fe6918af"
+      },
+      "invalidResponse": null,
+      "invalidNotApplicableReason": "the implemented endpoint has no independently validated request parameter"
+    },
+    "/api/v1/releases/{release}/trace/relation-types/{id}": {
+      "primary": {
+        "name": "relation-type",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/trace/relation-types/not-published",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/trace/relation-types/not-published",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 263,
+        "returnedRecords": 0,
+        "elapsedMs": 10.668,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "NOT_FOUND",
+          "detail": "relation type is not published in this sealed release",
+          "instance": "/api/v1/releases/v49-api-contract-fresh-c/trace/relation-types/not-published"
+        },
+        "bodySha256": "1a8e6ec0541624549fce3fa211c7652a70e363f3b8b93b004740a9d86bf1a0ff"
+      },
+      "deterministicRepeat": {
+        "status": 404,
+        "bodySha256": "1a8e6ec0541624549fce3fa211c7652a70e363f3b8b93b004740a9d86bf1a0ff"
+      },
+      "successResponse": null,
+      "successUnavailableReason": "the fresh sealed release publishes no resource of this type",
+      "emptyOrNotFoundResponse": {
+        "name": "relation-type",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/trace/relation-types/not-published",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/trace/relation-types/not-published",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 263,
+        "returnedRecords": 0,
+        "elapsedMs": 10.668,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "NOT_FOUND",
+          "detail": "relation type is not published in this sealed release",
+          "instance": "/api/v1/releases/v49-api-contract-fresh-c/trace/relation-types/not-published"
+        },
+        "bodySha256": "1a8e6ec0541624549fce3fa211c7652a70e363f3b8b93b004740a9d86bf1a0ff"
+      },
+      "invalidResponse": null,
+      "invalidNotApplicableReason": "the implemented endpoint has no independently validated request parameter"
+    },
+    "/api/v1/releases/{release}/relations/{id}": {
+      "primary": {
+        "name": "relation-detail",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/relations/not-published",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/relations/not-published",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 247,
+        "returnedRecords": 0,
+        "elapsedMs": 10.527,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "NOT_FOUND",
+          "detail": "relation is not published in this sealed release",
+          "instance": "/api/v1/releases/v49-api-contract-fresh-c/relations/not-published"
+        },
+        "bodySha256": "49e4d476bd9525185869a8b0a9f54cae4ac4f92f57756ea89a3c30943daef2ea"
+      },
+      "deterministicRepeat": {
+        "status": 404,
+        "bodySha256": "49e4d476bd9525185869a8b0a9f54cae4ac4f92f57756ea89a3c30943daef2ea"
+      },
+      "successResponse": null,
+      "successUnavailableReason": "the fresh sealed release publishes no resource of this type",
+      "emptyOrNotFoundResponse": {
+        "name": "relation-detail",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/relations/not-published",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/relations/not-published",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 247,
+        "returnedRecords": 0,
+        "elapsedMs": 10.527,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "NOT_FOUND",
+          "detail": "relation is not published in this sealed release",
+          "instance": "/api/v1/releases/v49-api-contract-fresh-c/relations/not-published"
+        },
+        "bodySha256": "49e4d476bd9525185869a8b0a9f54cae4ac4f92f57756ea89a3c30943daef2ea"
+      },
+      "invalidResponse": null,
+      "invalidNotApplicableReason": "the implemented endpoint has no independently validated request parameter"
+    },
+    "/api/v1/releases/{release}/claims/{id}": {
+      "primary": {
+        "name": "claim-detail",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/claims/not-published",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/claims/not-published",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 241,
+        "returnedRecords": 0,
+        "elapsedMs": 10.759,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "NOT_FOUND",
+          "detail": "claim is not published in this sealed release",
+          "instance": "/api/v1/releases/v49-api-contract-fresh-c/claims/not-published"
+        },
+        "bodySha256": "90652c890b208c1016291dbe6d87a571e55c60f7bb702d0ff81efc0fea746b5b"
+      },
+      "deterministicRepeat": {
+        "status": 404,
+        "bodySha256": "90652c890b208c1016291dbe6d87a571e55c60f7bb702d0ff81efc0fea746b5b"
+      },
+      "successResponse": null,
+      "successUnavailableReason": "the fresh sealed release publishes no resource of this type",
+      "emptyOrNotFoundResponse": {
+        "name": "claim-detail",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/claims/not-published",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/claims/not-published",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 241,
+        "returnedRecords": 0,
+        "elapsedMs": 10.759,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "NOT_FOUND",
+          "detail": "claim is not published in this sealed release",
+          "instance": "/api/v1/releases/v49-api-contract-fresh-c/claims/not-published"
+        },
+        "bodySha256": "90652c890b208c1016291dbe6d87a571e55c60f7bb702d0ff81efc0fea746b5b"
+      },
+      "invalidResponse": null,
+      "invalidNotApplicableReason": "the implemented endpoint has no independently validated request parameter"
+    },
+    "/api/v1/releases/{release}/corpora/{version}": {
+      "primary": {
+        "name": "corpus-detail",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/corpora/not-published",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/corpora/not-published",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 243,
+        "returnedRecords": 0,
+        "elapsedMs": 10.751,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "NOT_FOUND",
+          "detail": "corpus is not published in this sealed release",
+          "instance": "/api/v1/releases/v49-api-contract-fresh-c/corpora/not-published"
+        },
+        "bodySha256": "df198e8e9196d8a42113a33a54861f49a4e8088f75075f418e2fc81921846a00"
+      },
+      "deterministicRepeat": {
+        "status": 404,
+        "bodySha256": "df198e8e9196d8a42113a33a54861f49a4e8088f75075f418e2fc81921846a00"
+      },
+      "successResponse": null,
+      "successUnavailableReason": "the fresh sealed release publishes no resource of this type",
+      "emptyOrNotFoundResponse": {
+        "name": "corpus-detail",
+        "method": "GET",
+        "url": "http://api-contract.local/api/v1/releases/v49-api-contract-fresh-c/corpora/not-published",
+        "path": "/api/v1/releases/v49-api-contract-fresh-c/corpora/not-published",
+        "query": {},
+        "status": 404,
+        "headers": {
+          "allow": "GET, HEAD, OPTIONS",
+          "archive-research-manifest-sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+          "archive-research-release-id": "v49-api-contract-fresh-c",
+          "cache-control": "no-store",
+          "content-type": "application/json",
+          "vary": "Archive-Research-Manifest-Sha256"
+        },
+        "contentType": "application/json",
+        "responseBytes": 243,
+        "returnedRecords": 0,
+        "elapsedMs": 10.751,
+        "databaseQueryCount": 1,
+        "body": {
+          "type": "urn:gdarchive:problem:not-found",
+          "title": "Read API request failed",
+          "status": 404,
+          "code": "NOT_FOUND",
+          "detail": "corpus is not published in this sealed release",
+          "instance": "/api/v1/releases/v49-api-contract-fresh-c/corpora/not-published"
+        },
+        "bodySha256": "df198e8e9196d8a42113a33a54861f49a4e8088f75075f418e2fc81921846a00"
+      },
+      "invalidResponse": null,
+      "invalidNotApplicableReason": "the implemented endpoint has no independently validated request parameter"
+    }
+  }
+}

@@ -4,11 +4,14 @@ import { createHash } from "node:crypto";
 const require = createRequire(import.meta.url);
 const jiti = require("jiti")(new URL(import.meta.url).pathname, {
   interopDefault: true,
-  alias: { "@": new URL("../src", import.meta.url).pathname },
+  alias: {
+    "@": new URL("../src", import.meta.url).pathname,
+    "server-only": new URL("./server-only-marker.mjs", import.meta.url).pathname,
+  },
 });
 const { FixtureArchiveRepositoryProvider, FIXTURE_RELEASE_ID, FIXTURE_MANIFEST_SHA256 } = jiti("../src/lib/read-platform/server/fixture.ts");
 const { HttpArchiveRepositoryProvider } = jiti("../src/lib/read-platform/http-repository.ts");
-const { dispatchReadApiRequest } = jiti("../src/app/api/v1/[...path]/route.ts");
+const { dispatchReadApiRequest } = jiti("../src/lib/read-platform/server/read-api-controller.ts");
 
 const fixtureProvider = new FixtureArchiveRepositoryProvider();
 function segments(url) {

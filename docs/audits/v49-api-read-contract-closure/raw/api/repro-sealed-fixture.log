@@ -1,0 +1,62 @@
+BEGIN
+SET CONSTRAINTS
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 11
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+DO
+INSERT 0 1
+INSERT 0 1
+INSERT 0 33
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 4
+INSERT 0 4
+DO
+INSERT 0 1
+SET
+ create_research_release 
+-------------------------
+ 
+(1 row)
+
+RESET
+SET
+ validate_research_launch_snapshot_v5 
+--------------------------------------
+ 
+(1 row)
+
+RESET
+SET
+ record_research_launch_verification_v5 
+----------------------------------------
+ 
+(1 row)
+
+RESET
+SET
+ initialize_research_current 
+-----------------------------
+ 
+(1 row)
+
+ succeeded | reason_code | new_generation 
+-----------+-------------+----------------
+ t         | PROMOTED    |              1
+(1 row)
+
+RESET
+SET CONSTRAINTS
+COMMIT
+                                                                                                                        jsonb_build_object                                                                                                                        
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ {"surfaceId": "phase2s-surface-1", "objectCount": 32, "researchReleaseId": "v49-db-closure-api-v1", "researchReleaseUuid": "98000000-0000-4000-8000-000000000001", "researchManifestSha256": "1890471540888c2811b88f1a8cb77acb2d7f2a6270ea68b7183227e92a09db69"}
+(1 row)
+

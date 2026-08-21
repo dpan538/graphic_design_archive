@@ -1,0 +1,23 @@
+{
+  "format": "gda-v49-api-contract-test-receipt/v1",
+  "status": "PASS",
+  "typecheck": "PASS",
+  "readPlatformContract": "PASS",
+  "pageByKeyModuleContract": "PASS",
+  "runtimeAdapterVectorCount": 22,
+  "runtimeAdapterDigest": "33f07ae3a0e065d9e6cb4e05c158890cb1d243bea30a4c4cd4513bbdfce06622",
+  "runtimeAdapterDigestParity": true,
+  "apiIntegration": "PASS:18/18",
+  "apiContractCases": 170,
+  "negativeMethodCases": 72,
+  "runtimeRequests": 558,
+  "runtimeSuccesses": 558,
+  "runtimeTimeouts": 0,
+  "runtimeHttp5xx": 0,
+  "openapi": "PASS:3.1.0:18_PATHS",
+  "lint": "PASS_OR_NOT_CONFIGURED:next lint interactive setup prompt",
+  "productionBuild": "PASS",
+  "browserMatrixRun": false,
+  "visualRegressionRun": false,
+  "accessibilityMatrixRun": false
+}

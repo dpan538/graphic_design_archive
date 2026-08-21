@@ -1,0 +1,3 @@
+TypeError: (0 , _pagination.pageByKey) is not a function
+    at PostgresArchiveRepository.search (/private/tmp/graphic_design_archive_v49_api_read_contract_closure/frontend/src/lib/read-platform/server/postgres-repository.ts:48:44)
+    at async file:///private/tmp/graphic_design_archive_v49_api_read_contract_closure/docs/audits/v49-api-read-contract-closure/raw/api/reproduce-page-by-key-before.mjs:77:3

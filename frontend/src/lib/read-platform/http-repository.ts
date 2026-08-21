@@ -58,7 +58,11 @@ export class HttpArchiveRepositoryProvider implements ArchiveRepositoryProvider 
     if (input.visual) return { ok: false, error: { code: "RELEASE_VERSION_MISMATCH", message: "visual selector transport is not implemented in this core client", retryable: false } };
     const headers = "alias" in input.research ? undefined : { "Archive-Research-Manifest-Sha256": input.research.researchManifestSha256 };
     const descriptor = await this.readFetch(`${this.baseUrl}${selectorPath(input.research)}`, { signal: options?.signal, headers }).catch(() => null);
-    if (!descriptor?.ok) return { ok: false, error: { code: "UNAVAILABLE", message: "release descriptor is unavailable", retryable: true } };
+    if (!descriptor) return { ok: false, error: { code: "UNAVAILABLE", message: "release descriptor is unavailable", retryable: true } };
+    if (!descriptor.ok) {
+      const problem = (await descriptor.json().catch(() => ({}))) as Problem;
+      return { ok: false, error: { code: errorCode(problem.code), message: problem.detail ?? problem.title ?? "release descriptor is unavailable", retryable: descriptor.status >= 500 } };
+    }
     const body = await descriptor.json() as Envelope<{ schemaVersion?: "archive-research-release/v1" }>;
     const version: ArchiveVersionRef = { research: { apiVersion: "v1", researchReleaseId: body.researchReleaseId, researchManifestSha256: body.researchManifestSha256, schemaVersion: body.data.schemaVersion ?? "archive-research-release/v1" }, visual: null, visualState: body.visualRegistryState, visualReasonCodes: body.visualReasonCodes, takedownOverlaySha256: body.takedownOverlaySha256 };
     return { ok: true, data: new HttpArchiveRepository(version, this.baseUrl, this.readFetch), version };

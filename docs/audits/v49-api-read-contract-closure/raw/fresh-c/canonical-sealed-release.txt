@@ -1,0 +1,48 @@
+BEGIN
+SET CONSTRAINTS
+DO
+INSERT 0 1
+INSERT 0 11
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+SET
+ create_research_release 
+-------------------------
+ 
+(1 row)
+
+RESET
+SET
+ validate_research_launch_snapshot_v5 
+--------------------------------------
+ 
+(1 row)
+
+RESET
+SET
+ record_research_launch_verification_v5 
+----------------------------------------
+ 
+(1 row)
+
+RESET
+SET
+ initialize_research_current 
+-----------------------------
+ 
+(1 row)
+
+ succeeded | reason_code | new_generation 
+-----------+-------------+----------------
+ t         | PROMOTED    |              1
+(1 row)
+
+RESET
+SET CONSTRAINTS
+COMMIT
+                                                                                                                                                                                jsonb_build_object                                                                                                                                                                                 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ {"status": "PASS", "releaseId": "v49-api-contract-fresh-c", "objectCount": 7995, "relationCount": 0, "manifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a", "searchDocumentCount": 7995, "folderMembershipCount": 0, "projectionContentSha256": "e7ab41633b481d455bc3ceab3e2d0d2a1d5410b186b65bfb2697059182d1b49d", "traceEligibleObjectCount": 0}
+(1 row)
+

@@ -4,9 +4,10 @@ import type { ArchiveRepository } from "../repository";
 import { keysetPage, resultError } from "../pagination";
 import type {
   ArchiveOverview, ArchiveSearchQuery, ArchiveVersionRef, FolderDetail, FolderQuery,
-  FolderSummary, FolderTypeSummary, PageRequest, ReadOptions, RelationTypeDefinition,
-  RepoResult, ResearchReleaseSelector, SearchHit, SurfaceDetail, SurfaceSummary,
-  TraceAtlas, TraceObjectQuery, VisualRegistrySelector,
+  FolderSummary, FolderTypeSummary, Page, PageRequest, ReadOptions, RelationTypeDefinition,
+  RepoResult, ResearchClaim, ResearchCorpus, ResearchReleaseSelector, SearchHit,
+  SemanticRelation, SurfaceDetail, SurfaceSummary, TraceAtlas, TraceGraph,
+  TraceObjectQuery, TraceObjectSummary, VisualRegistrySelector,
 } from "../types";
 
 export const FIXTURE_RELEASE_ID = "fixture-research-v1";
@@ -52,7 +53,7 @@ export class FixtureArchiveRepository implements ArchiveRepository {
     return abort(options) ?? ok({ objectCount: 32, folderCount: folders.length, traceEligibleObjectCount: 0, positiveVisualRightsCount: 0 });
   }
   async listFolderTypes(options?: ReadOptions): Promise<RepoResult<readonly FolderTypeSummary[]>> { return abort(options) ?? ok([{ type: "region", label: "Region", folderCount: folders.length }]); }
-  async listFolders(input: FolderQuery & PageRequest, options?: ReadOptions) {
+  async listFolders(input: FolderQuery & PageRequest, options?: ReadOptions): Promise<RepoResult<Page<FolderSummary>>> {
     if (abort(options)) return abort(options)!;
     if (input.type && input.type !== "region") return keysetPage([], (item: FolderSummary) => item.id, version, input, "folders", input.type, "title");
     return keysetPage(folders, (item) => `${item.title}\u0000${item.id}`, version, input, "folders", input.type ?? "", "title");
@@ -62,14 +63,14 @@ export class FixtureArchiveRepository implements ArchiveRepository {
     const folder = "id" in ref ? folders.find((item) => item.id === ref.id) : folders.find((item) => item.type === ref.type && item.slug === ref.slug);
     return folder ? ok({ ...folder, relatedFolders: [] }) : resultError("NOT_FOUND", "folder is not part of this sealed release");
   }
-  async listFolderMembers(folderId: string, page: PageRequest, options?: ReadOptions) {
+  async listFolderMembers(folderId: string, page: PageRequest, options?: ReadOptions): Promise<RepoResult<Page<SurfaceSummary>>> {
     if (abort(options)) return abort(options)!;
     if (!folders.some((folder) => folder.id === folderId)) return resultError("NOT_FOUND", "folder is not part of this sealed release");
     const members = fixtureSurfaces.filter((surface) => surface.folderIds.includes(folderId));
     return keysetPage(members, (item) => `${item.title}\u0000${item.surfaceId}`, version, page, "folder-members", folderId, "title");
   }
-  async getSurface(surfaceId: string, options?: ReadOptions) { if (abort(options)) return abort(options)!; const surface = fixtureSurfaces.find((item) => item.surfaceId === surfaceId); return surface ? ok(surface) : resultError("NOT_FOUND", "surface is not part of this sealed release"); }
-  async search(input: ArchiveSearchQuery & PageRequest, options?: ReadOptions) {
+  async getSurface(surfaceId: string, options?: ReadOptions): Promise<RepoResult<SurfaceDetail>> { if (abort<SurfaceDetail>(options)) return abort<SurfaceDetail>(options)!; const surface = fixtureSurfaces.find((item) => item.surfaceId === surfaceId); return surface ? ok(surface) : resultError<SurfaceDetail>("NOT_FOUND", "surface is not part of this sealed release"); }
+  async search(input: ArchiveSearchQuery & PageRequest, options?: ReadOptions): Promise<RepoResult<Page<SearchHit>>> {
     if (abort(options)) return abort(options)!;
     const query = input.q.trim().toLocaleLowerCase();
     if (!query || query.length > 120) return resultError("INVALID_ARGUMENT", "q must be a non-empty query of at most 120 characters");
@@ -78,13 +79,13 @@ export class FixtureArchiveRepository implements ArchiveRepository {
     return keysetPage(hits, (item) => `${item.surface.title}\u0000${item.surface.surfaceId}`, version, input, "search", JSON.stringify({ q: query, scope: input.scope ?? "all" }), "title");
   }
   async getTraceAtlas(options?: ReadOptions): Promise<RepoResult<TraceAtlas>> { return abort(options) ?? ok({ namedUnits: [{ id: "active-trace-objects", label: "Active TRACE objects", totalExact: 0 }], totalExact: 0, message: "This release has no verified TRACE evidence." }); }
-  async listTraceObjects(input: TraceObjectQuery & PageRequest, options?: ReadOptions) { if (abort(options)) return abort(options)!; return keysetPage([], (item) => item.objectId, version, input, "trace-objects", input.layer ?? "active", "id"); }
-  async getTraceNeighborhood(_objectId: string, options?: ReadOptions) { return abort(options) ?? resultError("NOT_FOUND", "this release has no TRACE-eligible object for a neighborhood"); }
+  async listTraceObjects(input: TraceObjectQuery & PageRequest, options?: ReadOptions): Promise<RepoResult<Page<TraceObjectSummary>>> { if (abort<Page<TraceObjectSummary>>(options)) return abort<Page<TraceObjectSummary>>(options)!; return keysetPage<TraceObjectSummary>([], (item) => item.objectId, version, input, "trace-objects", input.layer ?? "active", "id"); }
+  async getTraceNeighborhood(_objectId: string, options?: ReadOptions): Promise<RepoResult<TraceGraph>> { return abort<TraceGraph>(options) ?? resultError<TraceGraph>("NOT_FOUND", "this release has no TRACE-eligible object for a neighborhood"); }
   async listRelationTypes(options?: ReadOptions): Promise<RepoResult<readonly RelationTypeDefinition[]>> { return abort(options) ?? ok([]); }
-  async getRelationType(_id: string, options?: ReadOptions) { return abort(options) ?? resultError("NOT_FOUND", "relation type is not published in this sealed release"); }
-  async getRelation(_id: string, options?: ReadOptions) { return abort(options) ?? resultError("NOT_FOUND", "relation is not published in this sealed release"); }
-  async getClaim(_id: string, options?: ReadOptions) { return abort(options) ?? resultError("NOT_FOUND", "claim is not published in this sealed release"); }
-  async getCorpus(corpusVersion: string, options?: ReadOptions) { return abort(options) ?? (corpusVersion === FIXTURE_CORPUS_VERSION ? ok({ version: FIXTURE_CORPUS_VERSION, totalExact: 32 }) : resultError("NOT_FOUND", "corpus is not part of this sealed release")); }
+  async getRelationType(_id: string, options?: ReadOptions): Promise<RepoResult<RelationTypeDefinition>> { return abort<RelationTypeDefinition>(options) ?? resultError<RelationTypeDefinition>("NOT_FOUND", "relation type is not published in this sealed release"); }
+  async getRelation(_id: string, options?: ReadOptions): Promise<RepoResult<SemanticRelation>> { return abort<SemanticRelation>(options) ?? resultError<SemanticRelation>("NOT_FOUND", "relation is not published in this sealed release"); }
+  async getClaim(_id: string, options?: ReadOptions): Promise<RepoResult<ResearchClaim>> { return abort<ResearchClaim>(options) ?? resultError<ResearchClaim>("NOT_FOUND", "claim is not published in this sealed release"); }
+  async getCorpus(corpusVersion: string, options?: ReadOptions): Promise<RepoResult<ResearchCorpus>> { return abort<ResearchCorpus>(options) ?? (corpusVersion === FIXTURE_CORPUS_VERSION ? ok({ version: FIXTURE_CORPUS_VERSION, totalExact: 32 }) : resultError<ResearchCorpus>("NOT_FOUND", "corpus is not part of this sealed release")); }
 }
 
 export class FixtureArchiveRepositoryProvider {

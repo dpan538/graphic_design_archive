@@ -41,3 +41,9 @@ export function keysetPage<T>(items: readonly T[], keyFor: (value: T) => string,
   const finalKey = nodes.at(-1) ? keyFor(nodes.at(-1)!) : null;
   return { ok: true, version, data: { nodes, pageInfo: { hasNextPage, nextCursor: hasNextPage && finalKey ? encodeCursor(version, resource, filter, sort, finalKey) : null, totalExact: ordered.length } } };
 }
+
+/** Named server-adapter contract for paging a complete, release-pinned
+ * result set by its stable terminal key. */
+export function pageByKey<T>(items: readonly T[], keyFor: (value: T) => string, version: ArchiveVersionRef, request: PageRequest, resource: string, filter: string, sort: string): RepoResult<Page<T>> {
+  return keysetPage(items, keyFor, version, request, resource, filter, sort);
+}

@@ -1,0 +1,54 @@
+2026-08-21 09:38:29.628 AEST [67613] LOG:  starting PostgreSQL 16.13 (Homebrew) on aarch64-apple-darwin25.2.0, compiled by Apple clang version 17.0.0 (clang-1700.6.3.2), 64-bit
+2026-08-21 09:38:29.629 AEST [67613] LOG:  listening on Unix socket "/private/tmp/gda_v49_api_contract.gJRjqP/socket/.s.PGSQL.55591"
+2026-08-21 09:38:29.632 AEST [67618] LOG:  database system was shut down at 2026-08-21 09:38:29 AEST
+2026-08-21 09:38:29.633 AEST [67613] LOG:  database system is ready to accept connections
+2026-08-21 09:38:29.733 AEST [67623] FATAL:  role "jarlgiovanni" does not exist
+2026-08-21 09:41:25.681 AEST [67616] LOG:  checkpoint starting: wal
+2026-08-21 09:41:37.273 AEST [67616] LOG:  checkpoint complete: wrote 5394 buffers (32.9%); 0 WAL file(s) added, 0 removed, 33 recycled; write=11.034 s, sync=0.552 s, total=11.593 s; sync files=1514, longest=0.330 s, average=0.001 s; distance=539529 kB, estimate=539529 kB; lsn=0/401845B0, redo lsn=0/223FFF20
+2026-08-21 09:41:38.661 AEST [67616] LOG:  checkpoints are occurring too frequently (13 seconds apart)
+2026-08-21 09:41:38.661 AEST [67616] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2026-08-21 09:41:38.663 AEST [67616] LOG:  checkpoint starting: wal
+2026-08-21 09:41:50.135 AEST [67616] LOG:  checkpoint complete: wrote 12075 buffers (73.7%); 0 WAL file(s) added, 0 removed, 33 recycled; write=11.058 s, sync=0.403 s, total=11.474 s; sync files=5, longest=0.151 s, average=0.081 s; distance=540672 kB, estimate=540672 kB; lsn=0/6106EDB8, redo lsn=0/434000C0
+2026-08-21 09:41:51.746 AEST [67616] LOG:  checkpoints are occurring too frequently (13 seconds apart)
+2026-08-21 09:41:51.746 AEST [67616] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2026-08-21 09:41:51.746 AEST [67616] LOG:  checkpoint starting: wal
+2026-08-21 09:42:12.170 AEST [67616] LOG:  checkpoint complete: wrote 5976 buffers (36.5%); 0 WAL file(s) added, 0 removed, 33 recycled; write=19.754 s, sync=0.666 s, total=20.424 s; sync files=22, longest=0.316 s, average=0.031 s; distance=539268 kB, estimate=540532 kB; lsn=0/829FC068, redo lsn=0/642A1378
+2026-08-21 09:42:13.592 AEST [67616] LOG:  checkpoints are occurring too frequently (22 seconds apart)
+2026-08-21 09:42:13.592 AEST [67616] HINT:  Consider increasing the configuration parameter "max_wal_size".
+2026-08-21 09:42:13.592 AEST [67616] LOG:  checkpoint starting: wal
+2026-08-21 09:43:14.425 AEST [67871] ERROR:  permission denied for schema rights at character 15
+2026-08-21 09:43:14.425 AEST [67871] STATEMENT:  SELECT 1 FROM rights.visual_locator LIMIT 1;
+2026-08-21 09:43:14.436 AEST [67873] ERROR:  permission denied for schema raw at character 15
+2026-08-21 09:43:14.436 AEST [67873] STATEMENT:  SELECT 1 FROM raw.source_record LIMIT 1;
+2026-08-21 09:43:14.446 AEST [67875] ERROR:  permission denied for schema core at character 20
+2026-08-21 09:43:14.446 AEST [67875] STATEMENT:  BEGIN; DELETE FROM core.archive_object WHERE false; ROLLBACK;
+2026-08-21 09:46:43.099 AEST [67616] LOG:  checkpoint complete: wrote 1487 buffers (9.1%); 0 WAL file(s) added, 0 removed, 33 recycled; write=269.473 s, sync=0.022 s, total=269.508 s; sync files=192, longest=0.001 s, average=0.001 s; distance=539111 kB, estimate=540390 kB; lsn=0/901F15A0, redo lsn=0/8511B2E0
+2026-08-21 09:47:13.101 AEST [67616] LOG:  checkpoint starting: time
+2026-08-21 09:53:04.506 AEST [67616] LOG:  checkpoint complete: wrote 2314 buffers (14.1%); 0 WAL file(s) added, 0 removed, 11 recycled; write=351.383 s, sync=0.013 s, total=351.406 s; sync files=294, longest=0.002 s, average=0.001 s; distance=183018 kB, estimate=504652 kB; lsn=0/903F76E0, redo lsn=0/903D5CF0
+2026-08-21 09:57:48.911 AEST [68221] ERROR:  invalid input syntax for type integer: ""
+2026-08-21 09:57:48.911 AEST [68221] CONTEXT:  PL/pgSQL function inline_code_block line 2 during statement block local variable initialization
+2026-08-21 09:57:48.911 AEST [68221] STATEMENT:  DO $shape$
+	DECLARE v_objects integer:=current_setting('gda_phase2s.object_count')::integer;
+	  v_memberships integer:=current_setting('gda_phase2s.membership_count')::integer;
+	BEGIN
+	  IF v_objects NOT IN (32,1000,2000,4000,8000,15923)
+	    OR v_memberships <> 3*v_objects + (CASE
+	      WHEN v_objects=15923 THEN 213
+	      ELSE least(v_objects,107)
+	    END) THEN
+	    RAISE EXCEPTION USING ERRCODE='22023', MESSAGE='PHASE2S_SCALE_SHAPE_NOT_AUTHORIZED';
+	  END IF;
+	END
+	$shape$;
+2026-08-21 10:00:28.436 AEST [67616] LOG:  checkpoint starting: immediate force wait time
+2026-08-21 10:00:28.459 AEST [67616] LOG:  checkpoint complete: wrote 53 buffers (0.3%); 0 WAL file(s) added, 1 removed, 0 recycled; write=0.007 s, sync=0.001 s, total=0.023 s; sync files=17, longest=0.001 s, average=0.001 s; distance=15548 kB, estimate=455742 kB; lsn=0/91304E58, redo lsn=0/91304E20
+2026-08-21 10:22:19.186 AEST [67616] LOG:  checkpoint starting: time
+2026-08-21 10:40:14.796 AEST [67616] LOG:  checkpoint complete: wrote 14778 buffers (90.2%); 0 WAL file(s) added, 4 removed, 14 recycled; write=1075.149 s, sync=0.329 s, total=1075.611 s; sync files=5998, longest=0.009 s, average=0.001 s; distance=305376 kB, estimate=440705 kB; lsn=0/A3D3D130, redo lsn=0/A3D3D0F8
+2026-08-21 13:08:10.932 AEST [67616] LOG:  checkpoint starting: immediate force wait time
+2026-08-21 13:08:10.937 AEST [67616] LOG:  checkpoint complete: wrote 15 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.005 s; sync files=3, longest=0.001 s, average=0.001 s; distance=113 kB, estimate=396646 kB; lsn=0/A3D59678, redo lsn=0/A3D59640
+2026-08-21 13:08:11.075 AEST [67616] LOG:  checkpoint starting: immediate force wait
+2026-08-21 13:08:11.076 AEST [67616] LOG:  checkpoint complete: wrote 9 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=82 kB, estimate=356990 kB; lsn=0/A3D6E040, redo lsn=0/A3D6DFF0
+2026-08-21 13:08:11.210 AEST [67616] LOG:  checkpoint starting: immediate force wait
+2026-08-21 13:08:11.211 AEST [67616] LOG:  checkpoint complete: wrote 10 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=88 kB, estimate=321300 kB; lsn=0/A3D84348, redo lsn=0/A3D84310
+2026-08-21 13:08:11.355 AEST [67616] LOG:  checkpoint starting: immediate force wait
+2026-08-21 13:08:11.356 AEST [67616] LOG:  checkpoint complete: wrote 11 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=5, longest=0.001 s, average=0.001 s; distance=89 kB, estimate=289178 kB; lsn=0/A3D9A748, redo lsn=0/A3D9A710

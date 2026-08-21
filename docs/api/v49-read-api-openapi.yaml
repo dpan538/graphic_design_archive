@@ -1,0 +1,476 @@
+openapi: 3.1.0
+info:
+  title: Graphic Design Archive v49 Read API
+  version: 1.0.0-v49
+  description: >-
+    Actual GET-only v49 release-pinned interface implemented by the App Router
+    catch-all handler. HEAD is supported with the same status and headers but no
+    body; OPTIONS returns 204. POST, PUT, PATCH, and DELETE return 405.
+servers:
+  - url: /
+paths:
+  /api/v1/visual-registries/current:
+    get:
+      operationId: getCurrentVisualRegistry
+      responses:
+        '404': { $ref: '#/components/responses/NotFound' }
+        '405': { $ref: '#/components/responses/MethodNotAllowed' }
+  /api/v1/releases/{release}:
+    get:
+      operationId: getReleaseMetadata
+      parameters:
+        - $ref: '#/components/parameters/Release'
+        - $ref: '#/components/parameters/ManifestHeader'
+      responses:
+        '200':
+          description: Exact sealed release metadata
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ReleaseMetadataEnvelope' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '405': { $ref: '#/components/responses/MethodNotAllowed' }
+        '503': { $ref: '#/components/responses/Unavailable' }
+  /api/v1/releases/{release}/manifest:
+    get:
+      operationId: getReleaseManifestMetadata
+      parameters:
+        - $ref: '#/components/parameters/Release'
+        - $ref: '#/components/parameters/ManifestHeader'
+      responses:
+        '200':
+          description: Exact sealed release manifest metadata
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ReleaseMetadataEnvelope' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '405': { $ref: '#/components/responses/MethodNotAllowed' }
+        '503': { $ref: '#/components/responses/Unavailable' }
+  /api/v1/releases/{release}/archive/overview:
+    get:
+      operationId: getArchiveOverview
+      parameters: [ { $ref: '#/components/parameters/Release' }, { $ref: '#/components/parameters/ManifestHeader' } ]
+      responses:
+        '200':
+          description: Release aggregate counts
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - { $ref: '#/components/schemas/Envelope' }
+                  - type: object
+                    properties: { data: { $ref: '#/components/schemas/ArchiveOverview' } }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '405': { $ref: '#/components/responses/MethodNotAllowed' }
+        '503': { $ref: '#/components/responses/Unavailable' }
+  /api/v1/releases/{release}/folder-types:
+    get:
+      operationId: listFolderTypes
+      parameters: [ { $ref: '#/components/parameters/Release' }, { $ref: '#/components/parameters/ManifestHeader' } ]
+      responses:
+        '200':
+          description: Published folder types; empty for this release
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - { $ref: '#/components/schemas/Envelope' }
+                  - type: object
+                    properties:
+                      data: { type: array, items: { $ref: '#/components/schemas/FolderTypeSummary' } }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '405': { $ref: '#/components/responses/MethodNotAllowed' }
+        '503': { $ref: '#/components/responses/Unavailable' }
+  /api/v1/releases/{release}/folders:
+    get:
+      operationId: listFolders
+      parameters:
+        - { $ref: '#/components/parameters/Release' }
+        - { $ref: '#/components/parameters/ManifestHeader' }
+        - name: type
+          in: query
+          required: false
+          schema: { type: string }
+        - { $ref: '#/components/parameters/First' }
+        - { $ref: '#/components/parameters/After' }
+      responses:
+        '200': { $ref: '#/components/responses/FolderPage' }
+        '400': { $ref: '#/components/responses/Invalid' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/VersionMismatch' }
+        '405': { $ref: '#/components/responses/MethodNotAllowed' }
+        '503': { $ref: '#/components/responses/Unavailable' }
+  /api/v1/releases/{release}/folders/{id}/surfaces:
+    get:
+      operationId: listFolderSurfaces
+      parameters:
+        - { $ref: '#/components/parameters/Release' }
+        - { $ref: '#/components/parameters/ManifestHeader' }
+        - { $ref: '#/components/parameters/Id' }
+        - { $ref: '#/components/parameters/First' }
+        - { $ref: '#/components/parameters/After' }
+      responses:
+        '404': { $ref: '#/components/responses/NotFound' }
+        '405': { $ref: '#/components/responses/MethodNotAllowed' }
+        '503': { $ref: '#/components/responses/Unavailable' }
+  /api/v1/releases/{release}/folders/{id}:
+    get:
+      operationId: getFolder
+      parameters: [ { $ref: '#/components/parameters/Release' }, { $ref: '#/components/parameters/ManifestHeader' }, { $ref: '#/components/parameters/Id' } ]
+      responses:
+        '404': { $ref: '#/components/responses/NotFound' }
+        '405': { $ref: '#/components/responses/MethodNotAllowed' }
+        '503': { $ref: '#/components/responses/Unavailable' }
+  /api/v1/releases/{release}/surfaces/{id}:
+    get:
+      operationId: getSurface
+      parameters: [ { $ref: '#/components/parameters/Release' }, { $ref: '#/components/parameters/ManifestHeader' }, { $ref: '#/components/parameters/Id' } ]
+      responses:
+        '200':
+          description: Public surface detail
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - { $ref: '#/components/schemas/Envelope' }
+                  - type: object
+                    properties: { data: { $ref: '#/components/schemas/SurfaceDetail' } }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '405': { $ref: '#/components/responses/MethodNotAllowed' }
+        '503': { $ref: '#/components/responses/Unavailable' }
+  /api/v1/releases/{release}/search:
+    get:
+      operationId: searchRelease
+      parameters:
+        - { $ref: '#/components/parameters/Release' }
+        - { $ref: '#/components/parameters/ManifestHeader' }
+        - name: q
+          in: query
+          required: true
+          description: Trimmed, case-insensitive literal substring; 1–120 characters.
+          schema: { type: string, minLength: 1, maxLength: 120 }
+        - name: scope
+          in: query
+          required: false
+          schema: { type: string, enum: [archive, trace, relation, all], default: all }
+        - { $ref: '#/components/parameters/First' }
+        - { $ref: '#/components/parameters/After' }
+      responses:
+        '200': { $ref: '#/components/responses/SearchPage' }
+        '400': { $ref: '#/components/responses/Invalid' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/VersionMismatch' }
+        '405': { $ref: '#/components/responses/MethodNotAllowed' }
+        '503': { $ref: '#/components/responses/Unavailable' }
+  /api/v1/releases/{release}/trace/atlas:
+    get:
+      operationId: getTraceAtlas
+      parameters: [ { $ref: '#/components/parameters/Release' }, { $ref: '#/components/parameters/ManifestHeader' } ]
+      responses:
+        '200':
+          description: TRACE availability
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - { $ref: '#/components/schemas/Envelope' }
+                  - type: object
+                    properties: { data: { $ref: '#/components/schemas/TraceAtlas' } }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '405': { $ref: '#/components/responses/MethodNotAllowed' }
+        '503': { $ref: '#/components/responses/Unavailable' }
+  /api/v1/releases/{release}/trace/objects:
+    get:
+      operationId: listTraceObjects
+      parameters:
+        - { $ref: '#/components/parameters/Release' }
+        - { $ref: '#/components/parameters/ManifestHeader' }
+        - name: layer
+          in: query
+          required: false
+          schema: { type: string, enum: [active, review, auxiliary], default: active }
+        - { $ref: '#/components/parameters/First' }
+        - { $ref: '#/components/parameters/After' }
+      responses:
+        '200': { $ref: '#/components/responses/TraceObjectPage' }
+        '400': { $ref: '#/components/responses/Invalid' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/VersionMismatch' }
+        '405': { $ref: '#/components/responses/MethodNotAllowed' }
+        '503': { $ref: '#/components/responses/Unavailable' }
+  /api/v1/releases/{release}/trace/objects/{id}/neighborhood:
+    get:
+      operationId: getTraceNeighborhood
+      parameters: [ { $ref: '#/components/parameters/Release' }, { $ref: '#/components/parameters/ManifestHeader' }, { $ref: '#/components/parameters/Id' } ]
+      responses:
+        '404': { $ref: '#/components/responses/NotFound' }
+        '405': { $ref: '#/components/responses/MethodNotAllowed' }
+        '503': { $ref: '#/components/responses/Unavailable' }
+  /api/v1/releases/{release}/trace/relation-types:
+    get:
+      operationId: listRelationTypes
+      parameters: [ { $ref: '#/components/parameters/Release' }, { $ref: '#/components/parameters/ManifestHeader' } ]
+      responses:
+        '200':
+          description: Approved relation types; empty for this release
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - { $ref: '#/components/schemas/Envelope' }
+                  - type: object
+                    properties:
+                      data: { type: array, items: { $ref: '#/components/schemas/RelationTypeDefinition' } }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '405': { $ref: '#/components/responses/MethodNotAllowed' }
+        '503': { $ref: '#/components/responses/Unavailable' }
+  /api/v1/releases/{release}/trace/relation-types/{id}:
+    get:
+      operationId: getRelationType
+      parameters: [ { $ref: '#/components/parameters/Release' }, { $ref: '#/components/parameters/ManifestHeader' }, { $ref: '#/components/parameters/Id' } ]
+      responses:
+        '404': { $ref: '#/components/responses/NotFound' }
+        '405': { $ref: '#/components/responses/MethodNotAllowed' }
+        '503': { $ref: '#/components/responses/Unavailable' }
+  /api/v1/releases/{release}/relations/{id}:
+    get:
+      operationId: getRelation
+      parameters: [ { $ref: '#/components/parameters/Release' }, { $ref: '#/components/parameters/ManifestHeader' }, { $ref: '#/components/parameters/Id' } ]
+      responses:
+        '404': { $ref: '#/components/responses/NotFound' }
+        '405': { $ref: '#/components/responses/MethodNotAllowed' }
+        '503': { $ref: '#/components/responses/Unavailable' }
+  /api/v1/releases/{release}/claims/{id}:
+    get:
+      operationId: getClaim
+      parameters: [ { $ref: '#/components/parameters/Release' }, { $ref: '#/components/parameters/ManifestHeader' }, { $ref: '#/components/parameters/Id' } ]
+      responses:
+        '404': { $ref: '#/components/responses/NotFound' }
+        '405': { $ref: '#/components/responses/MethodNotAllowed' }
+        '503': { $ref: '#/components/responses/Unavailable' }
+  /api/v1/releases/{release}/corpora/{version}:
+    get:
+      operationId: getCorpus
+      parameters:
+        - { $ref: '#/components/parameters/Release' }
+        - { $ref: '#/components/parameters/ManifestHeader' }
+        - name: version
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '404': { $ref: '#/components/responses/NotFound' }
+        '405': { $ref: '#/components/responses/MethodNotAllowed' }
+        '503': { $ref: '#/components/responses/Unavailable' }
+components:
+  parameters:
+    Release:
+      name: release
+      in: path
+      required: true
+      description: The literal `current` or an exact sealed release token.
+      schema: { type: string }
+    ManifestHeader:
+      name: Archive-Research-Manifest-Sha256
+      in: header
+      required: false
+      description: Required to resolve a non-current exact release token.
+      schema: { type: string, pattern: '^[0-9a-f]{64}$' }
+    Id:
+      name: id
+      in: path
+      required: true
+      schema: { type: string }
+    First:
+      name: first
+      in: query
+      required: false
+      schema: { type: integer, minimum: 1, maximum: 100, default: 50 }
+    After:
+      name: after
+      in: query
+      required: false
+      schema: { type: string }
+  schemas:
+    Envelope:
+      type: object
+      required: [apiVersion, researchReleaseId, researchManifestSha256, visualRegistryVersion, visualRegistrySha256, visualRegistryState, visualReasonCodes, takedownOverlaySha256, data]
+      properties:
+        apiVersion: { const: v1 }
+        researchReleaseId: { type: string }
+        researchManifestSha256: { type: string, pattern: '^[0-9a-f]{64}$' }
+        visualRegistryVersion: { type: [string, 'null'] }
+        visualRegistrySha256: { type: [string, 'null'] }
+        visualRegistryState: { type: string, enum: [NOT_SELECTED, UNAVAILABLE, COMPATIBLE] }
+        visualReasonCodes: { type: array, items: { type: string } }
+        takedownOverlaySha256: { type: [string, 'null'] }
+        data: {}
+    ReleaseMetadataEnvelope:
+      allOf:
+        - { $ref: '#/components/schemas/Envelope' }
+        - type: object
+          properties:
+            data:
+              type: object
+              required: [schemaVersion]
+              properties: { schemaVersion: { const: archive-research-release/v1 } }
+    ArchiveOverview:
+      type: object
+      required: [objectCount, folderCount, traceEligibleObjectCount, positiveVisualRightsCount]
+      properties:
+        objectCount: { type: integer, minimum: 0 }
+        folderCount: { type: integer, minimum: 0 }
+        traceEligibleObjectCount: { type: integer, minimum: 0 }
+        positiveVisualRightsCount: { type: integer, minimum: 0 }
+    PageInfo:
+      type: object
+      required: [hasNextPage, nextCursor]
+      properties:
+        hasNextPage: { type: boolean }
+        nextCursor: { type: [string, 'null'] }
+        totalExact: { type: integer, minimum: 0 }
+    SurfaceSummary:
+      type: object
+      required: [surfaceId, title, creditedLabels, displayDate, year, placeLabel, mediumLabel, typeLabel, sourceLabel, publicationLayer, deliveryState]
+      properties:
+        surfaceId: { type: string }
+        title: { type: string }
+        creditedLabels: { type: array, items: { type: string } }
+        displayDate: { type: string }
+        year: { type: [integer, 'null'] }
+        placeLabel: { type: string }
+        mediumLabel: { type: string }
+        typeLabel: { type: string }
+        sourceLabel: { type: string }
+        publicationLayer: { type: string, enum: [active, review, auxiliary] }
+        deliveryState: { type: string, enum: [BLOCKED, CITATION_ONLY, LINK_ONLY, SOURCE_VIEWER, REMOTE_IMAGE] }
+    SurfaceDetail:
+      allOf:
+        - { $ref: '#/components/schemas/SurfaceSummary' }
+        - type: object
+          required: [citation, folderIds, description]
+          properties:
+            citation:
+              oneOf:
+                - type: 'null'
+                - type: object
+                  required: [label, href]
+                  properties: { label: { type: string }, href: { type: string } }
+            folderIds: { type: array, items: { type: string } }
+            description: { type: [string, 'null'] }
+    SearchHit:
+      type: object
+      required: [kind, route, highlight, surface]
+      properties:
+        kind: { const: archive }
+        route: { type: string }
+        highlight: { type: string }
+        surface: { $ref: '#/components/schemas/SurfaceSummary' }
+    FolderTypeSummary:
+      type: object
+      required: [type, label, folderCount]
+      properties: { type: { type: string }, label: { type: string }, folderCount: { type: integer } }
+    FolderSummary:
+      type: object
+      required: [id, type, slug, title, scopeNote, memberCount]
+      properties:
+        id: { type: string }
+        type: { type: string }
+        slug: { type: string }
+        title: { type: string }
+        scopeNote: { type: string }
+        memberCount: { type: integer }
+    TraceAtlas:
+      type: object
+      required: [namedUnits, totalExact, message]
+      properties:
+        namedUnits:
+          type: array
+          items:
+            type: object
+            required: [id, label, totalExact]
+            properties: { id: { type: string }, label: { type: string }, totalExact: { type: integer } }
+        totalExact: { const: 0 }
+        message: { type: string }
+    TraceObjectSummary:
+      type: object
+      required: [objectId, layer, corpusVersion, title]
+      properties:
+        objectId: { type: string }
+        layer: { type: string, enum: [active, review, auxiliary] }
+        corpusVersion: { type: string }
+        title: { type: string }
+    RelationTypeDefinition:
+      type: object
+      required: [id, label, family, evidencePolicy]
+      properties: { id: { type: string }, label: { type: string }, family: { type: string }, evidencePolicy: { type: string } }
+    Problem:
+      type: object
+      required: [type, title, status, code, detail, instance]
+      properties:
+        type: { type: string }
+        title: { type: string }
+        status: { type: integer }
+        code: { type: string }
+        detail: { type: string }
+        instance: { type: string }
+    MethodProblem:
+      type: object
+      required: [code, detail]
+      properties: { code: { const: NOT_FOUND }, detail: { type: string } }
+  responses:
+    FolderPage:
+      description: Keyset folder page
+      content:
+        application/json:
+          schema:
+            allOf:
+              - { $ref: '#/components/schemas/Envelope' }
+              - type: object
+                properties:
+                  data:
+                    type: object
+                    required: [nodes, pageInfo]
+                    properties: { nodes: { type: array, items: { $ref: '#/components/schemas/FolderSummary' } }, pageInfo: { $ref: '#/components/schemas/PageInfo' } }
+    SearchPage:
+      description: Keyset search page
+      content:
+        application/json:
+          schema:
+            allOf:
+              - { $ref: '#/components/schemas/Envelope' }
+              - type: object
+                properties:
+                  data:
+                    type: object
+                    required: [nodes, pageInfo]
+                    properties: { nodes: { type: array, items: { $ref: '#/components/schemas/SearchHit' } }, pageInfo: { $ref: '#/components/schemas/PageInfo' } }
+    TraceObjectPage:
+      description: Keyset TRACE object page
+      content:
+        application/json:
+          schema:
+            allOf:
+              - { $ref: '#/components/schemas/Envelope' }
+              - type: object
+                properties:
+                  data:
+                    type: object
+                    required: [nodes, pageInfo]
+                    properties: { nodes: { type: array, items: { $ref: '#/components/schemas/TraceObjectSummary' } }, pageInfo: { $ref: '#/components/schemas/PageInfo' } }
+    Invalid:
+      description: Invalid argument or cursor
+      content: { application/json: { schema: { $ref: '#/components/schemas/Problem' } } }
+    NotFound:
+      description: Release or resource is not published
+      content: { application/json: { schema: { $ref: '#/components/schemas/Problem' } } }
+    VersionMismatch:
+      description: Cursor belongs to another exact release pair
+      content: { application/json: { schema: { $ref: '#/components/schemas/Problem' } } }
+    MethodNotAllowed:
+      description: Read API does not accept write methods
+      headers:
+        Allow: { schema: { type: string, const: 'GET, HEAD, OPTIONS' } }
+      content: { application/json: { schema: { $ref: '#/components/schemas/MethodProblem' } } }
+    Unavailable:
+      description: Actual adapter or database failure; never converted to an empty success
+      content: { application/json: { schema: { $ref: '#/components/schemas/Problem' } } }

@@ -1,0 +1,229 @@
+REPLAY_OK database=gda_v49_phase2a_fresh_c schemas=9
+PHASE2B_BACKEND_PID|67781
+Time: 0.172 ms
+Time: 0.015 ms
+Time: 0.032 ms
+Time: 0.018 ms
+Time: 0.013 ms
+Time: 0.017 ms
+Time: 0.017 ms
+Time: 0.039 ms
+Time: 0.010 ms
+Time: 0.015 ms
+Time: 0.015 ms
+Time: 0.026 ms
+Time: 0.058 ms
+Time: 1.125 ms
+Time: 0.541 ms
+Time: 0.500 ms
+Time: 0.566 ms
+Time: 0.464 ms
+Time: 0.464 ms
+Time: 0.427 ms
+Time: 0.524 ms
+Time: 0.469 ms
+Time: 0.472 ms
+Time: 0.437 ms
+Time: 0.429 ms
+Time: 0.438 ms
+Time: 0.433 ms
+Time: 0.501 ms
+Time: 0.422 ms
+Time: 0.457 ms
+Time: 0.409 ms
+Time: 0.458 ms
+Time: 0.453 ms
+Time: 0.428 ms
+Time: 0.461 ms
+Time: 0.421 ms
+Time: 0.425 ms
+Time: 0.471 ms
+Time: 0.554 ms
+Time: 0.580 ms
+Time: 0.503 ms
+Time: 0.233 ms
+Time: 0.783 ms
+Time: 0.052 ms
+Time: 0.063 ms
+PHASE2B_STAGE_BEGIN|COPY|2026-08-21 09:40:48.199533+10|0/2428000
+Time: 4194.126 ms (00:04.194)
+Time: 0.237 ms
+Time: 0.123 ms
+Time: 6490.306 ms (00:06.490)
+Time: 3437.388 ms (00:03.437)
+Time: 11.206 ms
+Time: 16.634 ms
+Time: 29.657 ms
+Time: 10.615 ms
+Time: 38.588 ms
+Time: 0.989 ms
+Time: 54.368 ms
+Time: 0.270 ms
+Time: 21.909 ms
+Time: 10.835 ms
+Time: 0.318 ms
+Time: 0.230 ms
+Time: 9.362 ms
+Time: 13.784 ms
+Time: 21.711 ms
+Time: 18.026 ms
+Time: 40.594 ms
+Time: 19.893 ms
+Time: 18.978 ms
+Time: 19.131 ms
+Time: 27.769 ms
+Time: 14.530 ms
+Time: 23.725 ms
+PHASE2B_STAGE_END|COPY|wall_seconds=14.550149|wal_bytes=572968|rows=3957270|bytes=1245479023
+Time: 277.915 ms
+Time: 0.257 ms
+Time: 0.466 ms
+Time: 0.039 ms
+Time: 0.076 ms
+PHASE2B_STAGE_BEGIN|DURABLE_INSERTS|2026-08-20 23:41:03.027678+00|0/24B3E28
+Time: 3568.477 ms (00:03.568)
+Time: 0.732 ms
+Time: 0.976 ms
+Time: 8046.478 ms (00:08.046)
+Time: 56654.227 ms (00:56.654)
+Time: 44.862 ms
+Time: 222.639 ms
+Time: 578.461 ms
+PHASE2B_MID_OBJECT_SUBSET_ROWS=8000
+Time: 1.248 ms
+
+Time: 0.854 ms
+Time: 175.697 ms
+Time: 465.424 ms
+Time: 168.281 ms
+Time: 542.554 ms
+Time: 7.020 ms
+Time: 454.984 ms
+Time: 928.996 ms
+Time: 378.775 ms
+Time: 299.070 ms
+
+Time: 0.074 ms
+Time: 1.726 ms
+Time: 3.294 ms
+Time: 157.316 ms
+Time: 190.400 ms
+
+Time: 0.110 ms
+Time: 845.450 ms
+Time: 305.108 ms
+Time: 732.530 ms
+Time: 101.306 ms
+Time: 169.751 ms
+Time: 171.860 ms
+Time: 237.854 ms
+Time: 189.042 ms
+Time: 214.678 ms
+Time: 280.365 ms
+Time: 182.669 ms
+Time: 242.108 ms
+Time: 386.810 ms
+Time: 326.879 ms
+
+Time: 0.110 ms
+PHASE2B_STAGE_END|DURABLE_INSERTS|wall_seconds=77.292855|wal_bytes=2369044952|rows=3829784
+Time: 102.322 ms
+Time: 0.087 ms
+PHASE2B_STAGE_BEGIN|PARITY|2026-08-20 23:42:20.422048+00|0/8F800000
+Time: 538.799 ms
+PHASE2B_STAGE_END|PARITY|wall_seconds=0.539021|wal_bytes=3465216|rows=15923
+Time: 0.108 ms
+
+Time: 0.053 ms
+Time: 0.031 ms
+PHASE2B_STAGE_BEGIN|TARGETED_ANALYZE|2026-08-20 23:42:20.961205+00|0/8FB4E000
+Time: 2.160 ms
+Time: 28.618 ms
+Time: 3.417 ms
+Time: 14.744 ms
+Time: 11.864 ms
+Time: 22.037 ms
+Time: 14.963 ms
+Time: 54.525 ms
+Time: 16.410 ms
+Time: 10.510 ms
+Time: 10.858 ms
+Time: 9.306 ms
+Time: 13.687 ms
+Time: 11.409 ms
+Time: 14.746 ms
+Time: 6.874 ms
+Time: 10.050 ms
+PHASE2B_STAGE_END|TARGETED_ANALYZE|wall_seconds=0.256669|wal_bytes=303104|rows=15923
+Time: 0.100 ms
+20min
+Time: 0.226 ms
+Time: 0.057 ms
+PHASE2B_CONSTRAINT_BEGIN|raw_core_cycle|2026-08-20 23:42:21.218203+00|0/8FB98000
+Time: 1519.285 ms (00:01.519)
+PHASE2B_CONSTRAINT_END|raw_core_cycle|wall_seconds=1.519448|wal_bytes=0
+Time: 0.115 ms
+Time: 0.026 ms
+PHASE2B_CONSTRAINT_BEGIN|folder_assignment_shape|2026-08-20 23:42:22.737709+00|0/8FB98000
+Time: 9331.676 ms (00:09.332)
+PHASE2B_CONSTRAINT_END|folder_assignment_shape|wall_seconds=9.331832|wal_bytes=0
+Time: 0.100 ms
+Time: 0.036 ms
+PHASE2B_CONSTRAINT_BEGIN|visual_bridge_and_locator|2026-08-20 23:42:32.069601+00|0/8FB98000
+Time: 485.977 ms
+PHASE2B_CONSTRAINT_END|visual_bridge_and_locator|wall_seconds=0.486119|wal_bytes=0
+Time: 0.103 ms
+Time: 0.039 ms
+PHASE2B_CONSTRAINT_BEGIN|rights_observation|2026-08-20 23:42:32.555792+00|0/8FB98000
+Time: 1142.230 ms (00:01.142)
+PHASE2B_CONSTRAINT_END|rights_observation|wall_seconds=1.142385|wal_bytes=0
+Time: 0.102 ms
+Time: 0.039 ms
+PHASE2B_CONSTRAINT_BEGIN|rights_assessment_shape_support|2026-08-20 23:42:33.69823+00|0/8FB98000
+Time: 2827.316 ms (00:02.827)
+PHASE2B_CONSTRAINT_END|rights_assessment_shape_support|wall_seconds=2.827463|wal_bytes=8472
+Time: 0.079 ms
+Time: 0.035 ms
+PHASE2B_CONSTRAINT_BEGIN|rights_assessment_current_leaf|2026-08-20 23:42:36.52575+00|0/8FB9A118
+Time: 208.916 ms
+PHASE2B_CONSTRAINT_END|rights_assessment_current_leaf|wall_seconds=0.209059|wal_bytes=0
+Time: 0.103 ms
+Time: 0.052 ms
+PHASE2B_CONSTRAINT_BEGIN|provider_policy|2026-08-20 23:42:36.734863+00|0/8FB9A118
+Time: 699.054 ms
+PHASE2B_CONSTRAINT_END|provider_policy|wall_seconds=0.699224|wal_bytes=0
+Time: 0.104 ms
+Time: 0.034 ms
+PHASE2B_CONSTRAINT_BEGIN|delivery_parent_validation|2026-08-20 23:42:37.43415+00|0/8FB9A118
+Time: 2307.929 ms (00:02.308)
+PHASE2B_CONSTRAINT_END|delivery_parent_validation|wall_seconds=2.308063|wal_bytes=0
+Time: 0.096 ms
+Time: 0.042 ms
+PHASE2B_CONSTRAINT_BEGIN|delivery_rights_validation|2026-08-20 23:42:39.742282+00|0/8FB9A118
+Time: 2430.421 ms (00:02.430)
+PHASE2B_CONSTRAINT_END|delivery_rights_validation|wall_seconds=2.430570|wal_bytes=0
+Time: 0.102 ms
+Time: 0.061 ms
+PHASE2B_CONSTRAINT_BEGIN|delivery_policy_validation|2026-08-20 23:42:42.172941+00|0/8FB9A118
+Time: 2528.507 ms (00:02.529)
+PHASE2B_CONSTRAINT_END|delivery_policy_validation|wall_seconds=2.528645|wal_bytes=0
+Time: 0.085 ms
+Time: 0.028 ms
+PHASE2B_CONSTRAINT_BEGIN|delivery_history_and_rule|2026-08-20 23:42:44.701641+00|0/8FB9A118
+Time: 682.156 ms
+PHASE2B_CONSTRAINT_END|delivery_history_and_rule|wall_seconds=0.682296|wal_bytes=0
+Time: 0.100 ms
+Time: 0.037 ms
+PHASE2B_CONSTRAINT_BEGIN|final_all_omission_check|2026-08-20 23:42:45.383994+00|0/8FB9A118
+Time: 0.024 ms
+PHASE2B_CONSTRAINT_END|final_all_omission_check|wall_seconds=0.000115|wal_bytes=0
+Time: 0.069 ms
+Time: 402.703 ms
+PHASE2B_TRANSACTION_COMMITTED|true
+Time: 1.400 ms
+{"batchId": "3dc790c8-a637-5afc-9f67-6b3637754093", "receipt": "/private/tmp/gda_v49_api_contract.gJRjqP/evidence/fresh-c-import-receipt.json", "schemaSha256": "df1e7741e59e5e6bf1ca80f2a33edfad1abb2fc6d95b57d4d6993b49917020dd", "stageManifestSha256": "01ac60c705f7450c6668a91ee6a3d2842c3b0258a4ecd85139611bf916681322", "stagingAttestationReused": true, "status": "COMMITTED"}
+{"countVectorSha256": "92eda020d2ac9b2e60bb364f63758700df793e43fdc30dcf065120ee9b1ff66b", "normalizedContentSha256": "a0fa7aaeb84b383371c20340afa2c2a5c7f12408102767de189225cc93e478b9", "schemaDrift": 0, "stableKeySetSha256": "9bf3491b9c6603f3a7f8f141f2d9abac915ec1b91cd442b9248190263a8835a0", "status": "PASS"}
+PHASE2B_REHEARSAL_REPLAY=PASS
+real 148.68
+user 2.94
+sys 2.04

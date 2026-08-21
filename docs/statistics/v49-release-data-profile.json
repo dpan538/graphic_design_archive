@@ -1,0 +1,3316 @@
+{
+  "format": "gda-v49-release-data-profile/v1",
+  "database": "gda_v49_phase2a_fresh_c",
+  "generatedBy": "scripts/v49_read_api_statistics.mjs",
+  "readOnlyProof": {
+    "auditSessionRole": "gda_v49_phase2b_admin",
+    "auditSessionEnforcement": "PGOPTIONS default_transaction_read_only=on + BEGIN READ ONLY",
+    "auditTransactionReadOnly": "on",
+    "apiRole": "gda_v49_phase2a_api_reader",
+    "apiTransactionReadOnly": "on",
+    "sqlPolicy": "SELECT-only; mutation and DDL keywords rejected before execution"
+  },
+  "releaseIdentity": {
+    "builtAt": "2026-08-21T13:24:46.407182+10:00",
+    "sealedAt": "2026-08-21T13:24:46.690163+10:00",
+    "createdAt": "2026-08-21T13:24:45.008154+10:00",
+    "releaseId": "v49-api-contract-fresh-c",
+    "sealStatus": "sealed",
+    "candidateAt": "2026-08-21T13:24:46.408051+10:00",
+    "releaseUuid": "99000000-0000-4000-8000-000000000100",
+    "validatedAt": "2026-08-21T13:24:46.550792+10:00",
+    "schemaVersion": "schema-v49.0",
+    "builderVersion": "release-snapshot-v5",
+    "manifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+    "releaseVersion": "model-v49.0",
+    "canonicalSource": {
+      "sha256": "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48",
+      "authority": "canonical_migration_input",
+      "byte_length": 190067852,
+      "received_at": "2026-08-10T10:00:00+10:00",
+      "logical_name": "generated/public_surfaces_prefreeze_candidate_v48.json",
+      "source_asset_id": "f63c6288-3428-558c-b321-363289a6a19f"
+    },
+    "candidateFingerprint": "0bed99ddb98cd700f15da9b359be9331505db53354db6c794d32e7e0c8a5cc2b",
+    "projectionContentSha256": "e7ab41633b481d455bc3ceab3e2d0d2a1d5410b186b65bfb2697059182d1b49d",
+    "schemaHash": "df1e7741e59e5e6bf1ca80f2a33edfad1abb2fc6d95b57d4d6993b49917020dd"
+  },
+  "coreScale": {
+    "assignmentCount": 47982,
+    "heldObjectCount": 7928,
+    "eligibleObjectCount": 7995,
+    "canonicalObjectCount": 15923,
+    "quarantinedObjectCount": 7928,
+    "supersededAssignmentCount": 0,
+    "currentAssignmentLeafCount": 47982,
+    "releaseSearchDocumentCount": 7995,
+    "relationshipAssignmentCount": 47982,
+    "acceptedSemanticRelationCount": 0,
+    "releaseRelationProjectionCount": 0,
+    "releaseFolderMembershipProjectionCount": 0,
+    "apiVisibleObjectCount": 7995,
+    "apiVisibleRelationshipCount": 0
+  },
+  "distributions": {
+    "source": [
+      {
+        "count": 3505,
+        "value": "V&A Collections API"
+      },
+      {
+        "count": 2767,
+        "value": "Colnect via Wikimedia Commons"
+      },
+      {
+        "count": 2300,
+        "value": "Library of Congress Prints and Photographs API"
+      },
+      {
+        "count": 1866,
+        "value": "Creator-contributed record via Wikimedia Commons"
+      },
+      {
+        "count": 772,
+        "value": "Private collection scan via Wikimedia Commons"
+      },
+      {
+        "count": 606,
+        "value": "Art Institute of Chicago API"
+      },
+      {
+        "count": 522,
+        "value": "National Library of Norway Catalogue API"
+      },
+      {
+        "count": 438,
+        "value": "Yale University Art Gallery Linked Art"
+      },
+      {
+        "count": 300,
+        "value": "Gallica / BnF APIs"
+      },
+      {
+        "count": 270,
+        "value": "Digital Public Library of America via Wikimedia Commons"
+      },
+      {
+        "count": 257,
+        "value": "Kazakhstan Post via Wikimedia Commons"
+      },
+      {
+        "count": 198,
+        "value": "Cooper Hewitt Collection GraphQL API"
+      },
+      {
+        "count": 190,
+        "value": "Wikimedia Commons contributor record via Wikimedia Commons"
+      },
+      {
+        "count": 165,
+        "value": "Pacific Community Digital Library"
+      },
+      {
+        "count": 103,
+        "value": "DigitalNZ"
+      },
+      {
+        "count": 96,
+        "value": "Nasjonalmuseet Design collection / DigitaltMuseum"
+      },
+      {
+        "count": 95,
+        "value": "Malaysia Design Archive"
+      },
+      {
+        "count": 90,
+        "value": "flickr.com via Wikimedia Commons"
+      },
+      {
+        "count": 82,
+        "value": "Georgia State University Library Digital Collections / CONTENTdm"
+      },
+      {
+        "count": 82,
+        "value": "Victoria and Albert Museum Collections API"
+      },
+      {
+        "count": 80,
+        "value": "Desain Grafis Indonesia"
+      },
+      {
+        "count": 73,
+        "value": "U.S. National Archives via Wikimedia Commons"
+      },
+      {
+        "count": 67,
+        "value": "Biblioteca Nacional Digital de Chile"
+      },
+      {
+        "count": 56,
+        "value": "Te Papa Collections Online"
+      },
+      {
+        "count": 51,
+        "value": "Library of Congress loc.gov API"
+      },
+      {
+        "count": 49,
+        "value": "Library of Congress via Wikimedia Commons"
+      },
+      {
+        "count": 49,
+        "value": "NAIDOC Poster Gallery"
+      },
+      {
+        "count": 41,
+        "value": "Princeton University Library Digital Collections / Figgy"
+      },
+      {
+        "count": 36,
+        "value": "Indiana State Library via Wikimedia Commons"
+      },
+      {
+        "count": 36,
+        "value": "Nationaal Museum van Wereldculturen via Wikimedia Commons"
+      },
+      {
+        "count": 35,
+        "value": "WNS Stamps via Wikimedia Commons"
+      },
+      {
+        "count": 33,
+        "value": "Wellcome Collection Catalogue API"
+      },
+      {
+        "count": 32,
+        "value": "Museum of South Texas History via Wikimedia Commons"
+      },
+      {
+        "count": 26,
+        "value": "Science History Institute via Wikimedia Commons"
+      },
+      {
+        "count": 26,
+        "value": "StampWorld via Wikimedia Commons"
+      },
+      {
+        "count": 23,
+        "value": "PhilPost via Wikimedia Commons"
+      },
+      {
+        "count": 21,
+        "value": "eBay Singapore via Wikimedia Commons"
+      },
+      {
+        "count": 17,
+        "value": "Rijksmuseum Data Services"
+      },
+      {
+        "count": 14,
+        "value": "Cleveland Museum Open Access API"
+      },
+      {
+        "count": 13,
+        "value": "neuromat.numec.prp.usp.br via Wikimedia Commons"
+      },
+      {
+        "count": 11,
+        "value": "Smithsonian Open Access"
+      },
+      {
+        "count": 11,
+        "value": "eBay via Wikimedia Commons"
+      },
+      {
+        "count": 10,
+        "value": "Auckland Libraries Heritage Collections / CONTENTdm"
+      },
+      {
+        "count": 10,
+        "value": "Seattle Public Library via Wikimedia Commons"
+      },
+      {
+        "count": 9,
+        "value": "Hemeroteca Digital de Lisboa via Wikimedia Commons"
+      },
+      {
+        "count": 9,
+        "value": "State Library of Queensland via Wikimedia Commons"
+      },
+      {
+        "count": 8,
+        "value": "Asian Film Archive"
+      },
+      {
+        "count": 8,
+        "value": "Letterform Archive"
+      },
+      {
+        "count": 8,
+        "value": "Metropolitan Museum of Art via Wikimedia Commons"
+      },
+      {
+        "count": 8,
+        "value": "University of Cape Town Digital Collections"
+      },
+      {
+        "count": 7,
+        "value": "Stamp Kiev via Wikimedia Commons"
+      },
+      {
+        "count": 6,
+        "value": "Lithuania Post via Wikimedia Commons"
+      },
+      {
+        "count": 6,
+        "value": "NDL Search / National Diet Library"
+      },
+      {
+        "count": 6,
+        "value": "University of Washington Digital Collections / CONTENTdm"
+      },
+      {
+        "count": 5,
+        "value": "I Bolli via Wikimedia Commons"
+      },
+      {
+        "count": 5,
+        "value": "Los Angeles Public Library Tessa / CONTENTdm"
+      },
+      {
+        "count": 5,
+        "value": "Malaysian Design Archive"
+      },
+      {
+        "count": 5,
+        "value": "USC Digital Library via Wikimedia Commons"
+      },
+      {
+        "count": 5,
+        "value": "University of Miami Libraries Digital Collections / CONTENTdm"
+      },
+      {
+        "count": 5,
+        "value": "columbia.edu via Wikimedia Commons"
+      },
+      {
+        "count": 4,
+        "value": "American University of Beirut ScholarWorks"
+      },
+      {
+        "count": 4,
+        "value": "Archivportal-D via Wikimedia Commons"
+      },
+      {
+        "count": 4,
+        "value": "Biblioteca del Congreso Nacional de Chile via Wikimedia Commons"
+      },
+      {
+        "count": 4,
+        "value": "National Library of Australia / Trove via Wikimedia Commons"
+      },
+      {
+        "count": 4,
+        "value": "Stellenbosch University Scholar"
+      },
+      {
+        "count": 4,
+        "value": "University of Ghana Digital Collections"
+      },
+      {
+        "count": 4,
+        "value": "University of Pretoria Research Repository"
+      },
+      {
+        "count": 4,
+        "value": "Wits University WiredSpace"
+      },
+      {
+        "count": 4,
+        "value": "floranativadeuruguay.blogspot.com.ar via Wikimedia Commons"
+      },
+      {
+        "count": 4,
+        "value": "foi.gov.ph via Wikimedia Commons"
+      },
+      {
+        "count": 4,
+        "value": "scienceimage.csiro.au via Wikimedia Commons"
+      },
+      {
+        "count": 3,
+        "value": "Australian War Memorial via Wikimedia Commons"
+      },
+      {
+        "count": 3,
+        "value": "Biblioteca Nacional Digital de Chile / Memoria Chilena"
+      },
+      {
+        "count": 3,
+        "value": "Bibliothèques spécialisées de Paris via Wikimedia Commons"
+      },
+      {
+        "count": 3,
+        "value": "Cleveland Museum of Art via Wikimedia Commons"
+      },
+      {
+        "count": 3,
+        "value": "Mercado Libre via Wikimedia Commons"
+      },
+      {
+        "count": 3,
+        "value": "Museum of New Zealand Te Papa Tongarewa via Wikimedia Commons"
+      },
+      {
+        "count": 3,
+        "value": "National Repository of Nigeria"
+      },
+      {
+        "count": 3,
+        "value": "SMU Libraries Digital Collections / CONTENTdm"
+      },
+      {
+        "count": 3,
+        "value": "Smithsonian National Postal Museum via Wikimedia Commons"
+      },
+      {
+        "count": 3,
+        "value": "South African History Archive"
+      },
+      {
+        "count": 3,
+        "value": "dl.ndl.go.jp via Wikimedia Commons"
+      },
+      {
+        "count": 3,
+        "value": "media.iwm.org.uk via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "Bulgarian Archives State Agency via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "Digital Commonwealth / Boston Public Library"
+      },
+      {
+        "count": 2,
+        "value": "National Gallery of Australia via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "National Library of Vietnam via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "PIASA auction via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "POLONA / National Library of Poland via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "Post of Serbia via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "Roseberys auction via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "Royal Museums Greenwich via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "Stamp Mall via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "Ukraine Post via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "cgi.ebay.com via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "cinemaportuguesmemoriale.pt via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "film.ua via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "gmic.co.uk via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "maps.lib.utexas.edu via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "mavka.ua via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "mydvdlist.co.kr via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "oregonnews.uoregon.edu via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "people.cohums.ohio-state.edu via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "permalink.snl.ch via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "philaseiten.de via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "resolver.kb.nl via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "si.edu via Wikimedia Commons"
+      },
+      {
+        "count": 2,
+        "value": "stoa.usp.br via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "2001-2009.state.gov via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "Bophana Audiovisual Resource Center"
+      },
+      {
+        "count": 1,
+        "value": "Temple University Libraries Digital Collections / CONTENTdm"
+      },
+      {
+        "count": 1,
+        "value": "The Met Open Access"
+      },
+      {
+        "count": 1,
+        "value": "abccultural.com.ar via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "agenciabrasil.ebc.com.br via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "agi.ac.za via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "ajinomoto.co.jp via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "ajman.shop-pro.jp via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "americanart.si.edu via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "anet.be via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "api.records.nsw.gov.au via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "archivesonline.wcc.govt.nz via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "archiwumallegro.pl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "art.state.gov via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "asia.si.edu via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "bali.kemenag.go.id via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "banisadr.com.fr via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "bbc.co.uk via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "beeldbank.amsterdam.nl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "bfa.gov.bd via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "bgb.rs via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "bildarchivaustria.at via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "bjksdigital.museusegall.org.br via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "bl.uk via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "blogs.estadao.com.br via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "books.google.co.uk via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "books.google.com via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "books.google.com.ar via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "britishnewspaperarchive.co.uk via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "buecher.de via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "casarosada.gov.ar via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "catalog.archives.gov via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "centrodae.cl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "chineseposters.net via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "cifr.it via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "cinechile.cl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "cloudmakingmachine.de via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "collections.lib.uwm.edu via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "completestamp.co.nz via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "content.lib.washington.edu via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "cup.com.hk via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "customs.gov.au via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "dailymail.co.uk via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "data.adic.co.kr via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "dds.crl.edu via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "desa.pl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "diamant24-fatenhamama.blogspot.ae via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "dig.nmtl.gov.tw via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "digital.iai.spk-berlin.de via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "digital.nls.uk via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "digital.wienbibliothek.at via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "digitalna.bgb.rs via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "digitalrepository.trincoll.edu via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "dsal.uchicago.edu via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "ecx.images-amazon.com via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "editora.ufpr.br via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "ejection-history.org.uk via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "emuseum.anmm.gov.au via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "enciclopedia.itaucultural.org.br via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "enu.kz via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "epaper.ntu.edu.tw via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "estantevirtual.com.br via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "filmweb.pl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "find.natlib.govt.nz via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "finna.fi via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "fondoeditorial.iep.org.pe via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "gen.scatteredmind.co.uk via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "google.nl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "gov.ph via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "gutenberg.org via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "hdl.loc.gov via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "hindutamil.in via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "historia.de via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "history.org.uk via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "ihm.nlm.nih.gov via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "image.blog.livedoor.jp via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "jakarta.go.id via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "jbc.bj.uj.edu.pl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "jevrejskadigitalnabiblioteka.rs via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "korea.net via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "ksiegarnia.bn.org.pl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "kura.aucklandlibraries.govt.nz via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "lapantalladelira.com.ar via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "lastdodo.fr via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "leodis.net via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "library.yale.edu via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "litnet.co.za via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "luna.lib.uchicago.edu via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "magicasruinas.com.ar via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "maharashtrapost.gov.in via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "maoeraobjects.ac.uk via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "mbc.malopolska.pl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "mdz-nbn-resolving.de via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "media.stampworld.com via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "meijigakuin.ac.jp via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "memoria.bn.br via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "memoria.bn.gov.br via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "minagro.gov.ua via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "mintic.gov.co via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "mkw98.republika.pl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "mountainstamp.com via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "museum.seoul.kr via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "museummusikindonesia.id via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "museusdoestado.rj.gov.br via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "muzejunr.io.ua via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "naa12.naa.gov.au via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "nla.gov.au via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "no.pinterest.com via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "nordicposters.se via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "novekino.pl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "nps.gov via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "obtienearchivo.bcn.cl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "ole.com.ar via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "original-briefmarken.de via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "otago.ourheritage.ac.nz via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "paperspast.natlib.govt.nz via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "parresia.com.ng via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "pbc.rzeszow.pl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "pdfbangla24.blogspot.in via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "pinterest.com via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "plakatpolski.pl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "pm.ukrposhta.ua via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "polona2.pl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "press.uchicago.edu via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "pressacademy.ap.gov.in via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "preview.redd.it via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "prl.cba.pl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "proceso.com.mx via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "ptt-museum.dk via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "purl.pt via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "putradzynonthemap.pl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "qalbum.archives.qld.gov.au via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "repository.ubn.ru.nl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "restosdecoleccao.blogspot.pt via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "roots.sg via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "rynekisztuka.pl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "sahistory.org.za via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "sammlungonline.mkg-hamburg.de via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "scroll.in via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "sfa.nasa.gov via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "sk.kz via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "sociedadfilatelica.cl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "spcbl.org.bd via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "stadtarchiv.muenchen.de via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "state.gov via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "swistak.pl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "szukajwarchiwach.gov.pl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "tomaspresidente.cl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "trc-leiden.nl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "tropenmuseum.nl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "twcenter.org.tw via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "tx.liberal.ntu.edu.tw via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "tyzhden.ua via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "ucpress.edu via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "ufdc.ufl.edu via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "ukrinform.ua via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "universalmedios.com.ar via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "vam.ac.uk via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "versindaba.co.za via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "wbc.poznan.pl via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "webshop.morphisto.de via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "widewalls.ch via Wikimedia Commons"
+      },
+      {
+        "count": 1,
+        "value": "xn--szlakpamici-zrb.radom.pl via Wikimedia Commons"
+      }
+    ],
+    "folderType": [
+      {
+        "count": 15924,
+        "value": "region"
+      },
+      {
+        "count": 15924,
+        "value": "theme"
+      },
+      {
+        "count": 15923,
+        "value": "medium"
+      },
+      {
+        "count": 211,
+        "value": "movement"
+      }
+    ],
+    "yearDecade": [
+      {
+        "count": 19,
+        "value": "1800s"
+      },
+      {
+        "count": 21,
+        "value": "1810s"
+      },
+      {
+        "count": 18,
+        "value": "1820s"
+      },
+      {
+        "count": 32,
+        "value": "1830s"
+      },
+      {
+        "count": 273,
+        "value": "1840s"
+      },
+      {
+        "count": 87,
+        "value": "1850s"
+      },
+      {
+        "count": 194,
+        "value": "1860s"
+      },
+      {
+        "count": 135,
+        "value": "1870s"
+      },
+      {
+        "count": 255,
+        "value": "1880s"
+      },
+      {
+        "count": 496,
+        "value": "1890s"
+      },
+      {
+        "count": 476,
+        "value": "1900s"
+      },
+      {
+        "count": 536,
+        "value": "1910s"
+      },
+      {
+        "count": 637,
+        "value": "1920s"
+      },
+      {
+        "count": 894,
+        "value": "1930s"
+      },
+      {
+        "count": 826,
+        "value": "1940s"
+      },
+      {
+        "count": 813,
+        "value": "1950s"
+      },
+      {
+        "count": 1913,
+        "value": "1960s"
+      },
+      {
+        "count": 1575,
+        "value": "1970s"
+      },
+      {
+        "count": 2185,
+        "value": "1980s"
+      },
+      {
+        "count": 1013,
+        "value": "1990s"
+      },
+      {
+        "count": 1202,
+        "value": "2000s"
+      },
+      {
+        "count": 1321,
+        "value": "2010s"
+      },
+      {
+        "count": 1002,
+        "value": "2020s"
+      }
+    ],
+    "relationType": [],
+    "geographyClass": [
+      {
+        "count": 10608,
+        "value": "platform_or_collector_mediated"
+      },
+      {
+        "count": 4353,
+        "value": "euro_us_center"
+      },
+      {
+        "count": 834,
+        "value": "regionally_based_outside_euro_us"
+      },
+      {
+        "count": 122,
+        "value": "regional_intergovernmental"
+      },
+      {
+        "count": 5,
+        "value": "institutional_record_metadata_separate_from_publication_geography"
+      },
+      {
+        "count": 1,
+        "value": "institutional_record_metadata_separate_from_object_geography"
+      }
+    ],
+    "objectDesignType": [
+      {
+        "count": 7109,
+        "value": "Poster"
+      },
+      {
+        "count": 2268,
+        "value": "Commons country category-tree open image record; postage stamp"
+      },
+      {
+        "count": 685,
+        "value": "authority-weighted Commons open image record; postage stamp; postage_stamp"
+      },
+      {
+        "count": 381,
+        "value": "authority-weighted Commons open image record; poster; poster"
+      },
+      {
+        "count": 288,
+        "value": "large region-balanced open image record; postage stamp"
+      },
+      {
+        "count": 266,
+        "value": "open image record; advertising"
+      },
+      {
+        "count": 266,
+        "value": "region-balanced open image record; postage stamp"
+      },
+      {
+        "count": 256,
+        "value": "Commons country category-tree open image record; poster"
+      },
+      {
+        "count": 246,
+        "value": "open image record; poster"
+      },
+      {
+        "count": 239,
+        "value": "Graphic design object"
+      },
+      {
+        "count": 238,
+        "value": "Gallica visual/document record"
+      },
+      {
+        "count": 217,
+        "value": "controlled Commons open image record; advertisement; stamp"
+      },
+      {
+        "count": 157,
+        "value": "open image record; typography"
+      },
+      {
+        "count": 151,
+        "value": "controlled Commons open image record; advertisement; advertisement"
+      },
+      {
+        "count": 148,
+        "value": "open image record; stamp"
+      },
+      {
+        "count": 118,
+        "value": "Commons country category-tree open image record; film poster"
+      },
+      {
+        "count": 114,
+        "value": "Product design / container"
+      },
+      {
+        "count": 111,
+        "value": "Images"
+      },
+      {
+        "count": 107,
+        "value": "Contemporary print / graphic carrier"
+      },
+      {
+        "count": 107,
+        "value": "region-balanced open image record; poster"
+      },
+      {
+        "count": 92,
+        "value": "authority-weighted Commons open image record; advertisement; postage_stamp"
+      },
+      {
+        "count": 86,
+        "value": "Commons country category-tree open image record; book cover"
+      },
+      {
+        "count": 83,
+        "value": "authority topoff Commons open image record; stamp; postage_stamp"
+      },
+      {
+        "count": 63,
+        "value": "authority-weighted Commons open image record; label; postage_stamp"
+      },
+      {
+        "count": 62,
+        "value": "Placard"
+      },
+      {
+        "count": 56,
+        "value": "Artist book / designed publication"
+      },
+      {
+        "count": 56,
+        "value": "authority-weighted Commons open image record; trade card; advertising_trade"
+      },
+      {
+        "count": 56,
+        "value": "poster-object / public graphic object"
+      },
+      {
+        "count": 56,
+        "value": "region-balanced open image record; book cover"
+      },
+      {
+        "count": 55,
+        "value": "Text"
+      },
+      {
+        "count": 51,
+        "value": "authority-weighted Commons open image record; pamphlet; brochure_pamphlet"
+      },
+      {
+        "count": 49,
+        "value": "poster-object / official poster-gallery item"
+      },
+      {
+        "count": 48,
+        "value": "period-balanced open image record; stamp"
+      },
+      {
+        "count": 47,
+        "value": "open image record; book cover"
+      },
+      {
+        "count": 46,
+        "value": "authority-weighted Commons open image record; advertisement; advertising_trade"
+      },
+      {
+        "count": 44,
+        "value": "Plakat"
+      },
+      {
+        "count": 42,
+        "value": "controlled Commons open image record; stamp; stamp"
+      },
+      {
+        "count": 42,
+        "value": "large region-balanced open image record; poster"
+      },
+      {
+        "count": 40,
+        "value": "image fixe; image; still image; estampe; engraving"
+      },
+      {
+        "count": 37,
+        "value": "open image record; propaganda poster"
+      },
+      {
+        "count": 34,
+        "value": "authority topoff Commons open image record; matchbox label; label_packaging"
+      },
+      {
+        "count": 31,
+        "value": "authority-weighted Commons open image record; label; label_packaging"
+      },
+      {
+        "count": 31,
+        "value": "open image record; magazine cover"
+      },
+      {
+        "count": 27,
+        "value": "authority topoff Commons open image record; postage stamp; postage_stamp"
+      },
+      {
+        "count": 25,
+        "value": "Simple Resource"
+      },
+      {
+        "count": 25,
+        "value": "region-balanced open image record; typography"
+      },
+      {
+        "count": 23,
+        "value": "Advertisement"
+      },
+      {
+        "count": 23,
+        "value": "open image record; graphic design"
+      },
+      {
+        "count": 22,
+        "value": "Open image record; poster/print candidate"
+      },
+      {
+        "count": 22,
+        "value": "controlled Commons open image record; poster; poster"
+      },
+      {
+        "count": 20,
+        "value": "1 print on board (poster) :"
+      },
+      {
+        "count": 19,
+        "value": "Posters; Lithographs"
+      },
+      {
+        "count": 17,
+        "value": "Commons country category-tree open image record; packaging"
+      },
+      {
+        "count": 17,
+        "value": "Commons country category-tree open image record; political poster"
+      },
+      {
+        "count": 17,
+        "value": "Leaflet"
+      },
+      {
+        "count": 17,
+        "value": "authority-weighted Commons open image record; film poster; film_poster"
+      },
+      {
+        "count": 17,
+        "value": "poster"
+      },
+      {
+        "count": 16,
+        "value": "Buku"
+      },
+      {
+        "count": 16,
+        "value": "Plakat; Utstillingsplakat"
+      },
+      {
+        "count": 16,
+        "value": "Product design / furniture"
+      },
+      {
+        "count": 16,
+        "value": "Product design / jewelry"
+      },
+      {
+        "count": 16,
+        "value": "poster; print; prints and drawing"
+      },
+      {
+        "count": 15,
+        "value": "Booklet"
+      },
+      {
+        "count": 13,
+        "value": "Commons country category-tree open image record; magazine cover"
+      },
+      {
+        "count": 13,
+        "value": "authority-weighted Commons open image record; book cover; book_cover"
+      },
+      {
+        "count": 13,
+        "value": "authority-weighted Commons open image record; poster; political_poster"
+      },
+      {
+        "count": 13,
+        "value": "region-balanced open image record; film poster"
+      },
+      {
+        "count": 12,
+        "value": "Print"
+      },
+      {
+        "count": 12,
+        "value": "authority-weighted Commons open image record; magazine cover; magazine_cover"
+      },
+      {
+        "count": 12,
+        "value": "period-balanced open image record; film poster"
+      },
+      {
+        "count": 11,
+        "value": "Book cover"
+      },
+      {
+        "count": 11,
+        "value": "controlled Commons open image record; advertising poster; advertising poster"
+      },
+      {
+        "count": 11,
+        "value": "controlled Commons open image record; magazine cover; magazine cover"
+      },
+      {
+        "count": 11,
+        "value": "image fixe; image; still image"
+      },
+      {
+        "count": 11,
+        "value": "region-balanced open image record; political poster"
+      },
+      {
+        "count": 10,
+        "value": "Brochure"
+      },
+      {
+        "count": 10,
+        "value": "Plakat; Reklameplakat"
+      },
+      {
+        "count": 10,
+        "value": "large region-balanced open image record; book cover"
+      },
+      {
+        "count": 9,
+        "value": "Commons open image record; poster"
+      },
+      {
+        "count": 9,
+        "value": "authority-weighted Commons open image record; poster; film_poster"
+      },
+      {
+        "count": 9,
+        "value": "authority-weighted Commons open image record; poster; postage_stamp"
+      },
+      {
+        "count": 8,
+        "value": "Brochure / pamphlet"
+      },
+      {
+        "count": 8,
+        "value": "Logo"
+      },
+      {
+        "count": 8,
+        "value": "Plakat; Publikasjonsplakat"
+      },
+      {
+        "count": 8,
+        "value": "affiche; poster"
+      },
+      {
+        "count": 7,
+        "value": "Commons open image record; playbill"
+      },
+      {
+        "count": 7,
+        "value": "Ilustrasi"
+      },
+      {
+        "count": 7,
+        "value": "Lithographs; Posters"
+      },
+      {
+        "count": 7,
+        "value": "Scanned Resource"
+      },
+      {
+        "count": 7,
+        "value": "controlled Commons open image record; trade card; trade card"
+      },
+      {
+        "count": 7,
+        "value": "open image record; film poster"
+      },
+      {
+        "count": 7,
+        "value": "region-balanced open image record; pamphlet"
+      },
+      {
+        "count": 6,
+        "value": "Commons country category-tree open image record; propaganda poster"
+      },
+      {
+        "count": 6,
+        "value": "Image"
+      },
+      {
+        "count": 6,
+        "value": "Invitation"
+      },
+      {
+        "count": 6,
+        "value": "Omeka item"
+      },
+      {
+        "count": 6,
+        "value": "Product design / lighting"
+      },
+      {
+        "count": 6,
+        "value": "bibliographic design/print record"
+      },
+      {
+        "count": 6,
+        "value": "book"
+      },
+      {
+        "count": 6,
+        "value": "large region-balanced open image record; magazine cover"
+      },
+      {
+        "count": 5,
+        "value": "1 print :"
+      },
+      {
+        "count": 5,
+        "value": "Asian Cinema Digest"
+      },
+      {
+        "count": 5,
+        "value": "Commons open image record; postage stamp"
+      },
+      {
+        "count": 5,
+        "value": "Guide"
+      },
+      {
+        "count": 5,
+        "value": "Image; Text;"
+      },
+      {
+        "count": 5,
+        "value": "Kartun"
+      },
+      {
+        "count": 5,
+        "value": "Postage stamp"
+      },
+      {
+        "count": 5,
+        "value": "Thesis"
+      },
+      {
+        "count": 5,
+        "value": "authority topoff Commons open image record; film poster; film_poster"
+      },
+      {
+        "count": 5,
+        "value": "authority-weighted Commons open image record; packaging; label_packaging"
+      },
+      {
+        "count": 5,
+        "value": "image/tiff"
+      },
+      {
+        "count": 5,
+        "value": "large region-balanced open image record; advertising poster"
+      },
+      {
+        "count": 5,
+        "value": "large region-balanced open image record; film poster"
+      },
+      {
+        "count": 5,
+        "value": "poster; print; prints and drawing; lithograph"
+      },
+      {
+        "count": 5,
+        "value": "region-balanced open image record; brochure"
+      },
+      {
+        "count": 5,
+        "value": "region-balanced open image record; label"
+      },
+      {
+        "count": 5,
+        "value": "source-linked regional design/context record"
+      },
+      {
+        "count": 4,
+        "value": "Article"
+      },
+      {
+        "count": 4,
+        "value": "Collections"
+      },
+      {
+        "count": 4,
+        "value": "Commons publication category-tree open image record; postage stamp"
+      },
+      {
+        "count": 4,
+        "value": "Documents"
+      },
+      {
+        "count": 4,
+        "value": "Flyer; Tidsskrift"
+      },
+      {
+        "count": 4,
+        "value": "Illustrated book / designed publication"
+      },
+      {
+        "count": 4,
+        "value": "Informasjonsplakat; Plakat"
+      },
+      {
+        "count": 4,
+        "value": "Katalog"
+      },
+      {
+        "count": 4,
+        "value": "Posters"
+      },
+      {
+        "count": 4,
+        "value": "Printed serial / public notice"
+      },
+      {
+        "count": 4,
+        "value": "Text;"
+      },
+      {
+        "count": 4,
+        "value": "Tidsskrift"
+      },
+      {
+        "count": 4,
+        "value": "authority-weighted Commons open image record; brochure; brochure_pamphlet"
+      },
+      {
+        "count": 4,
+        "value": "controlled Commons open image record; advertisement; poster"
+      },
+      {
+        "count": 4,
+        "value": "controlled Commons open image record; book cover; book cover"
+      },
+      {
+        "count": 4,
+        "value": "controlled Commons open image record; film poster; film poster"
+      },
+      {
+        "count": 4,
+        "value": "ephemera; Trade card; Trade card; Trade cards; Ephemera"
+      },
+      {
+        "count": 4,
+        "value": "open image record; advertising poster"
+      },
+      {
+        "count": 4,
+        "value": "poster-object"
+      },
+      {
+        "count": 4,
+        "value": "poster; stencil; print; prints and drawing"
+      },
+      {
+        "count": 4,
+        "value": "region-balanced open image record; magazine cover"
+      },
+      {
+        "count": 4,
+        "value": "repository text record / graphic communication context"
+      },
+      {
+        "count": 3,
+        "value": "Book"
+      },
+      {
+        "count": 3,
+        "value": "Broadside / printed notice"
+      },
+      {
+        "count": 3,
+        "value": "Commons country category-tree open image record; typography"
+      },
+      {
+        "count": 3,
+        "value": "Commons open image record; book cover"
+      },
+      {
+        "count": 3,
+        "value": "Commons publication category-tree open image record; poster"
+      },
+      {
+        "count": 3,
+        "value": "Digital banner"
+      },
+      {
+        "count": 3,
+        "value": "Image;"
+      },
+      {
+        "count": 3,
+        "value": "Kaos"
+      },
+      {
+        "count": 3,
+        "value": "Posters; Advertisements"
+      },
+      {
+        "count": 3,
+        "value": "Product design / textile"
+      },
+      {
+        "count": 3,
+        "value": "Sticker"
+      },
+      {
+        "count": 3,
+        "value": "Text; Image"
+      },
+      {
+        "count": 3,
+        "value": "Trade card"
+      },
+      {
+        "count": 3,
+        "value": "authority-weighted Commons open image record; political poster; political_poster"
+      },
+      {
+        "count": 3,
+        "value": "large region-balanced open image record; propaganda poster"
+      },
+      {
+        "count": 3,
+        "value": "large region-balanced open image record; stamp"
+      },
+      {
+        "count": 3,
+        "value": "lithograph; poster; print; prints and drawing"
+      },
+      {
+        "count": 3,
+        "value": "map; carte; image fixe; image; still image"
+      },
+      {
+        "count": 3,
+        "value": "period-balanced open image record; advertising"
+      },
+      {
+        "count": 3,
+        "value": "period-balanced open image record; advertising poster"
+      },
+      {
+        "count": 3,
+        "value": "poster; affiche"
+      },
+      {
+        "count": 3,
+        "value": "poster; prints and drawing; print"
+      },
+      {
+        "count": 2,
+        "value": "1 negative :"
+      },
+      {
+        "count": 2,
+        "value": "1 photographic print :"
+      },
+      {
+        "count": 2,
+        "value": "Album cover"
+      },
+      {
+        "count": 2,
+        "value": "Books"
+      },
+      {
+        "count": 2,
+        "value": "Catalogue"
+      },
+      {
+        "count": 2,
+        "value": "Chromolithograph"
+      },
+      {
+        "count": 2,
+        "value": "Commons open image record; broadside"
+      },
+      {
+        "count": 2,
+        "value": "Drawing"
+      },
+      {
+        "count": 2,
+        "value": "Encoded moving images"
+      },
+      {
+        "count": 2,
+        "value": "Ephemera; Posters; Broadsides"
+      },
+      {
+        "count": 2,
+        "value": "Features"
+      },
+      {
+        "count": 2,
+        "value": "Flyer"
+      },
+      {
+        "count": 2,
+        "value": "Graphic design object record"
+      },
+      {
+        "count": 2,
+        "value": "Iklan"
+      },
+      {
+        "count": 2,
+        "value": "Image ; Poster ; Print ; text"
+      },
+      {
+        "count": 2,
+        "value": "Image ; Print ; Poster ; Text"
+      },
+      {
+        "count": 2,
+        "value": "Image; Text"
+      },
+      {
+        "count": 2,
+        "value": "Infinity Within (Poster)"
+      },
+      {
+        "count": 2,
+        "value": "Manual"
+      },
+      {
+        "count": 2,
+        "value": "Omeka archive item"
+      },
+      {
+        "count": 2,
+        "value": "Other"
+      },
+      {
+        "count": 2,
+        "value": "Pamflet"
+      },
+      {
+        "count": 2,
+        "value": "Plakat; Politisk plakat"
+      },
+      {
+        "count": 2,
+        "value": "Plakat; Reiselivsplakat"
+      },
+      {
+        "count": 2,
+        "value": "Political satirical print"
+      },
+      {
+        "count": 2,
+        "value": "Posters; Caricatures"
+      },
+      {
+        "count": 2,
+        "value": "Presentation"
+      },
+      {
+        "count": 2,
+        "value": "Printed prospectus / monograph"
+      },
+      {
+        "count": 2,
+        "value": "Proceedings National"
+      },
+      {
+        "count": 2,
+        "value": "Product Label for Ice Cream (Drawing)"
+      },
+      {
+        "count": 2,
+        "value": "Salesman's sample book"
+      },
+      {
+        "count": 2,
+        "value": "Stamps"
+      },
+      {
+        "count": 2,
+        "value": "Stillimage"
+      },
+      {
+        "count": 2,
+        "value": "Text only"
+      },
+      {
+        "count": 2,
+        "value": "Text; Stillimage"
+      },
+      {
+        "count": 2,
+        "value": "Typography"
+      },
+      {
+        "count": 2,
+        "value": "aanplakbiljet; poster"
+      },
+      {
+        "count": 2,
+        "value": "affiche; poster; prent; print"
+      },
+      {
+        "count": 2,
+        "value": "authority-weighted Commons open image record; advertising poster; poster"
+      },
+      {
+        "count": 2,
+        "value": "card, trade; Trade Card; Printed; card, trade; Trade Card; Printed"
+      },
+      {
+        "count": 2,
+        "value": "controlled Commons open image record; label; label"
+      },
+      {
+        "count": 2,
+        "value": "controlled Commons open image record; packaging; label"
+      },
+      {
+        "count": 2,
+        "value": "large region-balanced open image record; travel poster"
+      },
+      {
+        "count": 2,
+        "value": "linocut; print; prints and drawing; paper"
+      },
+      {
+        "count": 2,
+        "value": "lithograph; print; prints and drawing"
+      },
+      {
+        "count": 2,
+        "value": "lithograph; print; prints and drawing; poster"
+      },
+      {
+        "count": 2,
+        "value": "period-balanced open image record; poster"
+      },
+      {
+        "count": 2,
+        "value": "poster; lithograph; print; prints and drawing"
+      },
+      {
+        "count": 2,
+        "value": "region-balanced open image record; advertising poster"
+      },
+      {
+        "count": 2,
+        "value": "region-balanced open image record; propaganda poster"
+      },
+      {
+        "count": 2,
+        "value": "text;"
+      },
+      {
+        "count": 2,
+        "value": "trade cards; Trade cards (advertising)"
+      },
+      {
+        "count": 1,
+        "value": "\"Disappeared\" in Guinea (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "\"Kenneth Snelson\" (Poster)"
+      },
+      {
+        "count": 1,
+        "value": ". . . . AND National Bohemian Advertisement Proof (Print)"
+      },
+      {
+        "count": 1,
+        "value": "1 print  on board (poster) :"
+      },
+      {
+        "count": 1,
+        "value": "1 print (poster) :"
+      },
+      {
+        "count": 1,
+        "value": "1 print (trade card)."
+      },
+      {
+        "count": 1,
+        "value": "240 prints :"
+      },
+      {
+        "count": 1,
+        "value": "5 posters:"
+      },
+      {
+        "count": 1,
+        "value": "907 prints (posters) :"
+      },
+      {
+        "count": 1,
+        "value": "A Beautiful Summer Day, NBC (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Academic Writing; Case Study; Inspiration; Observation; Perspective; Read"
+      },
+      {
+        "count": 1,
+        "value": "Academy for Educational Development (Envelope)"
+      },
+      {
+        "count": 1,
+        "value": "Air Canada - Atlantic Provinces (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Air Canada - Montréal (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Air Canada - Québec City (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Air Canada - Toronto (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Album: A. P. W. Finest Satin Tissue 1500 (packaging)"
+      },
+      {
+        "count": 1,
+        "value": "Album: Pickwick Beer (packaging)"
+      },
+      {
+        "count": 1,
+        "value": "Album: The Cotton Picker (packaging)"
+      },
+      {
+        "count": 1,
+        "value": "Album: pmg/ Gilbert's Oral Antiseptic (packaging)"
+      },
+      {
+        "count": 1,
+        "value": "Art Directors Club of Chicago (ADCC) 27th Annual Exhibition of Advertising Art (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Attention (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Behind the Scenes; Collections"
+      },
+      {
+        "count": 1,
+        "value": "Blues Explosion: Extra Wi (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Bourjois Parfumeur Paris (Print)"
+      },
+      {
+        "count": 1,
+        "value": "Buyer Beware (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Calendar"
+      },
+      {
+        "count": 1,
+        "value": "Case Study; Inspiration; Observation; Perspective; Read"
+      },
+      {
+        "count": 1,
+        "value": "Catalogues"
+      },
+      {
+        "count": 1,
+        "value": "Celebrate 10: Designers Row (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Collections; Publishing"
+      },
+      {
+        "count": 1,
+        "value": "Commons open image record; logo extracted from campaign poster"
+      },
+      {
+        "count": 1,
+        "value": "Connection (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Death and Taxes (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Design for Undersea Lounge: Scheme 1 (drawing)"
+      },
+      {
+        "count": 1,
+        "value": "Design for a Monogram: D. C. (Drawing)"
+      },
+      {
+        "count": 1,
+        "value": "Design for a Monogram: E. D. (Drawing)"
+      },
+      {
+        "count": 1,
+        "value": "Design for a Monogram: K. E. (Drawing)"
+      },
+      {
+        "count": 1,
+        "value": "Design variations for MS2 (Drawing)"
+      },
+      {
+        "count": 1,
+        "value": "Detmold Wald (Detmold Forest) (Brochure)"
+      },
+      {
+        "count": 1,
+        "value": "Die Thierwelt (The Animal Kinggom) (Game)"
+      },
+      {
+        "count": 1,
+        "value": "Digital graphic"
+      },
+      {
+        "count": 1,
+        "value": "Dissertation"
+      },
+      {
+        "count": 1,
+        "value": "Distinction (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Don't Burn PCB's (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Education"
+      },
+      {
+        "count": 1,
+        "value": "El Dorado (Scenic)"
+      },
+      {
+        "count": 1,
+        "value": "Envelope"
+      },
+      {
+        "count": 1,
+        "value": "Europa Carton Aktiengesellschaft (Envelope)"
+      },
+      {
+        "count": 1,
+        "value": "Europa Carton Aktiengesellschaft (Stationery)"
+      },
+      {
+        "count": 1,
+        "value": "Everglades National Park (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Faraday Centenary (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Four Male Heads in Ancient Roman Style (Drawing)"
+      },
+      {
+        "count": 1,
+        "value": "General; General"
+      },
+      {
+        "count": 1,
+        "value": "Go Couple Busting (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Graphic Identity Samples, Noreen and Wilshire (Print)"
+      },
+      {
+        "count": 1,
+        "value": "Greassed Nude (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Hand over your $8! (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Handbook"
+      },
+      {
+        "count": 1,
+        "value": "Hollywood in Bloom (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Hotel Cecil, Bulawayo, Southern Rhodesia (Print)"
+      },
+      {
+        "count": 1,
+        "value": "Human Rights Now! (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "IAUS-IUAV Summer Architecture: Venice (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Identitas"
+      },
+      {
+        "count": 1,
+        "value": "Identity / logo"
+      },
+      {
+        "count": 1,
+        "value": "Iklan Cetak"
+      },
+      {
+        "count": 1,
+        "value": "Image ; Print ; Text ; poster"
+      },
+      {
+        "count": 1,
+        "value": "Intern Writings"
+      },
+      {
+        "count": 1,
+        "value": "JPS Experience: Bleeding (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Jetzt auch mottenecht durch Eulan (Print)"
+      },
+      {
+        "count": 1,
+        "value": "Jewels (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Joslyn Art Museum (Envelope)"
+      },
+      {
+        "count": 1,
+        "value": "Joslyn Art Museum (Letterhead)"
+      },
+      {
+        "count": 1,
+        "value": "Konsertplakat; Plakat"
+      },
+      {
+        "count": 1,
+        "value": "Kutná Hora (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "L'Initiation (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Life Size (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "List"
+      },
+      {
+        "count": 1,
+        "value": "Macy's Annual Flower Show (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Manufacturer's Photograph of K4s Class Locomotive, Pennsylvania Railroad"
+      },
+      {
+        "count": 1,
+        "value": "Mark Lanegan, Whiskey for the Holy Ghost (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Masayoshi Nakajo, Turn on the Light of Sagacity (for NAGOYA Design Center) (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Miniwatt/ Philips Radio (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Mumbo Jumbo (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Natural History Museum (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "New York Botanical Garden (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "News; Read"
+      },
+      {
+        "count": 1,
+        "value": "Nike 180 AIR (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "No War (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Notebook"
+      },
+      {
+        "count": 1,
+        "value": "Old Master Drawings (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Opening Night (Perfume bottle, lid, packaging)"
+      },
+      {
+        "count": 1,
+        "value": "Package Design for National Dairy Ice Cream (Drawing)"
+      },
+      {
+        "count": 1,
+        "value": "Package design"
+      },
+      {
+        "count": 1,
+        "value": "Paint Your Wagon (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Pamphlets"
+      },
+      {
+        "count": 1,
+        "value": "People's Flag Show (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Perangko"
+      },
+      {
+        "count": 1,
+        "value": "Perception (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Periodical page"
+      },
+      {
+        "count": 1,
+        "value": "Perspective; Read"
+      },
+      {
+        "count": 1,
+        "value": "Philadelphia: City of Myriad Moods (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Photograph"
+      },
+      {
+        "count": 1,
+        "value": "Piano, Steinway and Sons (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Picnic Kit (Picnic kit including forks, spoons, and pick)"
+      },
+      {
+        "count": 1,
+        "value": "Planned Parenthood: Avoid Accidents (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Policy Brief"
+      },
+      {
+        "count": 1,
+        "value": "Poster andletter"
+      },
+      {
+        "count": 1,
+        "value": "Poster; Project"
+      },
+      {
+        "count": 1,
+        "value": "Posters; Lithographs; Offset photomechanical prints"
+      },
+      {
+        "count": 1,
+        "value": "Power Strike (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Printed almanac / serial"
+      },
+      {
+        "count": 1,
+        "value": "Printed serial / public notices"
+      },
+      {
+        "count": 1,
+        "value": "Processed Food (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Publication design"
+      },
+      {
+        "count": 1,
+        "value": "Publicity Pays on the Underground (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Publishing"
+      },
+      {
+        "count": 1,
+        "value": "Remember Vietnam (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Revenue Stamps; Tax stamps"
+      },
+      {
+        "count": 1,
+        "value": "Rheuma-Heil, Reine Wolle (Rheuma-Heil, Pure Wool) (Brochure)"
+      },
+      {
+        "count": 1,
+        "value": "Rhodiafil (Print)"
+      },
+      {
+        "count": 1,
+        "value": "Rolled Poster"
+      },
+      {
+        "count": 1,
+        "value": "Salon Politique (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Sampul Album"
+      },
+      {
+        "count": 1,
+        "value": "Sampul Buku"
+      },
+      {
+        "count": 1,
+        "value": "Sampul Majalah"
+      },
+      {
+        "count": 1,
+        "value": "San Francisco Seals (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Save the Rainforest (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Scenic Panel from 'Eldorado'"
+      },
+      {
+        "count": 1,
+        "value": "Shop between 10 and 4, The Quiet Hours (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Ski at Mont Gabriel, Piedmont near St. Saveur, Province Quebec, Canada (Brochure)"
+      },
+      {
+        "count": 1,
+        "value": "Sporting-Stepper (Print)"
+      },
+      {
+        "count": 1,
+        "value": "Study for \"You Can Be Sure of Shell\" (Drawing)"
+      },
+      {
+        "count": 1,
+        "value": "Study for British Airways Advertisement (Drawing)"
+      },
+      {
+        "count": 1,
+        "value": "Study for Marine Air Navigation Co. Advertisement (Drawing)"
+      },
+      {
+        "count": 1,
+        "value": "Study for a Poster, Obey The Road Signs (Drawing)"
+      },
+      {
+        "count": 1,
+        "value": "Study for a Still Life Arrangement (Drawing)"
+      },
+      {
+        "count": 1,
+        "value": "Study for an Advertisement, Burgundy (Drawing)"
+      },
+      {
+        "count": 1,
+        "value": "Study for an Advertisement, OK Triplex (Drawing)"
+      },
+      {
+        "count": 1,
+        "value": "Study of an Abstract Bird (Drawing)"
+      },
+      {
+        "count": 1,
+        "value": "Summer Picnic, 1970 (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Tall Ships are Coming! Ho (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Tension (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Text; Image;"
+      },
+      {
+        "count": 1,
+        "value": "The Bronx Zoo: Crocodile Teeth (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "The Ghost that isn't Returning (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "The Incredible String Band (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "The Philippines (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "The Shams: Quilt (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "The Yale Symphony (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "The Yale Symphony Orchestra (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Toiling Midgets: Sketches (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Torero and Bull (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Trade card; Trade card; Trade cards"
+      },
+      {
+        "count": 1,
+        "value": "Two Covered Boxes, One with Tassels (Photograph)"
+      },
+      {
+        "count": 1,
+        "value": "Undergraduate project"
+      },
+      {
+        "count": 1,
+        "value": "War posters; Posters; Lithographs"
+      },
+      {
+        "count": 1,
+        "value": "Well Done! 11 World Records, Villiers (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "Zeke Clements in Person (Poster)"
+      },
+      {
+        "count": 1,
+        "value": "advertisements; Advertisements"
+      },
+      {
+        "count": 1,
+        "value": "application/pdf"
+      },
+      {
+        "count": 1,
+        "value": "authority-weighted Commons open image record; advertising poster; travel_poster"
+      },
+      {
+        "count": 1,
+        "value": "authority-weighted Commons open image record; book cover; postage_stamp"
+      },
+      {
+        "count": 1,
+        "value": "authority-weighted Commons open image record; brochure; advertising_trade"
+      },
+      {
+        "count": 1,
+        "value": "authority-weighted Commons open image record; film poster; postage_stamp"
+      },
+      {
+        "count": 1,
+        "value": "authority-weighted Commons open image record; magazine cover; book_cover"
+      },
+      {
+        "count": 1,
+        "value": "authority-weighted Commons open image record; type specimen; label_packaging"
+      },
+      {
+        "count": 1,
+        "value": "authority-weighted Commons open image record; type specimen; typography_identity"
+      },
+      {
+        "count": 1,
+        "value": "bibliography/image page"
+      },
+      {
+        "count": 1,
+        "value": "controlled Commons open image record; advertisement; label"
+      },
+      {
+        "count": 1,
+        "value": "final-gap open image record; poster; 1945_1949_moderate_gap"
+      },
+      {
+        "count": 1,
+        "value": "final-gap open image record; poster; 1955_1964_gap"
+      },
+      {
+        "count": 1,
+        "value": "image/jp2"
+      },
+      {
+        "count": 1,
+        "value": "image; text;"
+      },
+      {
+        "count": 1,
+        "value": "linocut; paper; print; prints and drawing"
+      },
+      {
+        "count": 1,
+        "value": "lithograph; book; prints and drawing; print"
+      },
+      {
+        "count": 1,
+        "value": "lithograph; prints and drawing; print"
+      },
+      {
+        "count": 1,
+        "value": "lithograph; prints and drawing; print; poster"
+      },
+      {
+        "count": 1,
+        "value": "offset print; photomechanical process; photography; photograph"
+      },
+      {
+        "count": 1,
+        "value": "photographic record / mural documentation"
+      },
+      {
+        "count": 1,
+        "value": "poster; advertisement; catalog; letterpress; print"
+      },
+      {
+        "count": 1,
+        "value": "poster; affiche; photomechanical print; fotomechanische afdruk"
+      },
+      {
+        "count": 1,
+        "value": "poster; affiche; prent; print"
+      },
+      {
+        "count": 1,
+        "value": "poster; graphic design; modern and contemporary art"
+      },
+      {
+        "count": 1,
+        "value": "region-balanced open image record; packaging"
+      },
+      {
+        "count": 1,
+        "value": "stencil; poster; print; prints and drawing"
+      }
+    ],
+    "assignmentLifecycleState": [
+      {
+        "count": 47982,
+        "value": "proposed"
+      }
+    ]
+  },
+  "missingness": {
+    "emptyArray": {
+      "count": 38991,
+      "definition": "JSON empty-array occurrences"
+    },
+    "emptyString": {
+      "count": 11136,
+      "definition": "JSON empty-string occurrences"
+    },
+    "explicitNull": {
+      "count": 676,
+      "definition": "JSON null literal occurrences"
+    },
+    "missingField": {
+      "count": 4957,
+      "definition": "trace.tier absent; governed fail-closed delta"
+    },
+    "quarantinedValue": {
+      "count": 7928,
+      "definition": "fail_closed_delta rows retained with held disposition"
+    },
+    "absentRelationship": {
+      "count": 15923,
+      "definition": "canonical objects with no accepted semantic relation in a zero-relation canonical set"
+    }
+  },
+  "dataQuality": {
+    "duplicateStableIds": 0,
+    "unknownRelationTypes": 0,
+    "orphanAssignmentMemberships": 0,
+    "failedCandidateSelectedCurrent": 0,
+    "malformedAssignmentSupersessionCycles": 0,
+    "assignmentSupersessionDepthDistribution": [
+      {
+        "count": 47982,
+        "depth": 1
+      }
+    ],
+    "duplicateStableIdsReconciled": 0,
+    "missingStableIds": 0,
+    "unexpectedStableIds": 0,
+    "remappedStableIds": 0,
+    "unexplainedDeltas": 0,
+    "silentDrops": 0,
+    "silentSplits": 0,
+    "rightsWidening": 0,
+    "verifierIntegrityFailures": 0
+  },
+  "rightsAndPublication": {
+    "heldCount": 7928,
+    "eligibleCount": 7995,
+    "acceptedTraceCount": 0,
+    "sealedReleaseCount": 1,
+    "currentReleaseCount": 1,
+    "positiveRightsCount": 0,
+    "rightsStateDistribution": [
+      {
+        "count": 15788,
+        "value": "citation_only"
+      }
+    ]
+  },
+  "searchReadiness": {
+    "searchableRecordCount": 7995,
+    "uniqueSearchKeyCount": 7995,
+    "duplicatePageSearchKeyCount": 0,
+    "missingPageSearchKeyCount": 0,
+    "recordsExcludedFromSearch": 7928,
+    "searchIndexSourceRecordCount": 7995,
+    "pageByKeyPotentialSourceSize": 7995,
+    "pageByKeyCanonicalPosterQuerySourceSize": 486,
+    "keyNormalizationCollisions": 0,
+    "emptyTitlesLabels": 0,
+    "recordsWithNoSearchableText": 0
+  },
+  "apiVisible": {
+    "descriptor": {
+      "sealed_at": "2026-08-21T13:24:46.690163+10:00",
+      "object_count": 7995,
+      "model_version": "model-v49.0",
+      "relation_count": 0,
+      "schema_version": "schema-v49.0",
+      "research_release_id": "v49-api-contract-fresh-c",
+      "research_release_key": "99000000-0000-4000-8000-000000000100",
+      "research_manifest_sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+      "trace_eligible_object_count": 0
+    },
+    "currentRelease": {
+      "research_release_id": "v49-api-contract-fresh-c",
+      "research_manifest_sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a"
+    },
+    "emptyTitleCount": 0,
+    "surfaceIdMaximum": "SURF-YRGAP-REGION-0116",
+    "surfaceIdMinimum": "SURF-AICTRACEV47R0001",
+    "transactionReadOnly": "on",
+    "uniqueSearchKeyCount": 7995,
+    "apiVisibleObjectCount": 7995,
+    "missingSearchKeyCount": 0,
+    "searchableRecordCount": 7995,
+    "duplicateSearchKeyCount": 0,
+    "apiVisibleRelationshipCount": 0,
+    "recordsWithNoSearchableText": 0,
+    "publicationLayerDistribution": {
+      "active": 7995
+    },
+    "endpointStatistics": [
+      {
+        "endpoint": "/api/v1/visual-registries/current",
+        "totalRecordsAddressable": 0,
+        "defaultPageSize": null,
+        "maximumPageSize": null,
+        "firstResponseRecordCount": 0,
+        "emptyResultSemantics": "NOT_FOUND/404",
+        "responsePayloadBytes": 257,
+        "nullableFields": [],
+        "fieldsOmittedByBoundary": [
+          "raw source payload",
+          "internal UUIDs",
+          "held/quarantined rows",
+          "rights internals",
+          "candidate state"
+        ]
+      },
+      {
+        "endpoint": "/api/v1/releases/{release}",
+        "totalRecordsAddressable": 1,
+        "defaultPageSize": null,
+        "maximumPageSize": null,
+        "firstResponseRecordCount": 1,
+        "emptyResultSemantics": "not applicable to primary case",
+        "responsePayloadBytes": 388,
+        "nullableFields": [],
+        "fieldsOmittedByBoundary": [
+          "raw source payload",
+          "internal UUIDs",
+          "held/quarantined rows",
+          "rights internals",
+          "candidate state"
+        ]
+      },
+      {
+        "endpoint": "/api/v1/releases/{release}/manifest",
+        "totalRecordsAddressable": 1,
+        "defaultPageSize": null,
+        "maximumPageSize": null,
+        "firstResponseRecordCount": 1,
+        "emptyResultSemantics": "not applicable to primary case",
+        "responsePayloadBytes": 388,
+        "nullableFields": [],
+        "fieldsOmittedByBoundary": [
+          "raw source payload",
+          "internal UUIDs",
+          "held/quarantined rows",
+          "rights internals",
+          "candidate state"
+        ]
+      },
+      {
+        "endpoint": "/api/v1/releases/{release}/archive/overview",
+        "totalRecordsAddressable": 1,
+        "defaultPageSize": null,
+        "maximumPageSize": null,
+        "firstResponseRecordCount": 1,
+        "emptyResultSemantics": "not applicable to primary case",
+        "responsePayloadBytes": 436,
+        "nullableFields": [],
+        "fieldsOmittedByBoundary": [
+          "raw source payload",
+          "internal UUIDs",
+          "held/quarantined rows",
+          "rights internals",
+          "candidate state"
+        ]
+      },
+      {
+        "endpoint": "/api/v1/releases/{release}/folder-types",
+        "totalRecordsAddressable": 0,
+        "defaultPageSize": null,
+        "maximumPageSize": null,
+        "firstResponseRecordCount": 0,
+        "emptyResultSemantics": "200 with empty collection",
+        "responsePayloadBytes": 343,
+        "nullableFields": [],
+        "fieldsOmittedByBoundary": [
+          "raw source payload",
+          "internal UUIDs",
+          "held/quarantined rows",
+          "rights internals",
+          "candidate state"
+        ]
+      },
+      {
+        "endpoint": "/api/v1/releases/{release}/folders",
+        "totalRecordsAddressable": 0,
+        "defaultPageSize": 50,
+        "maximumPageSize": 100,
+        "firstResponseRecordCount": 0,
+        "emptyResultSemantics": "200 with empty collection",
+        "responsePayloadBytes": 419,
+        "nullableFields": [],
+        "fieldsOmittedByBoundary": [
+          "raw source payload",
+          "internal UUIDs",
+          "held/quarantined rows",
+          "rights internals",
+          "candidate state"
+        ]
+      },
+      {
+        "endpoint": "/api/v1/releases/{release}/folders/{id}/surfaces",
+        "totalRecordsAddressable": 0,
+        "defaultPageSize": 50,
+        "maximumPageSize": 100,
+        "firstResponseRecordCount": 0,
+        "emptyResultSemantics": "NOT_FOUND/404",
+        "responsePayloadBytes": 247,
+        "nullableFields": [],
+        "fieldsOmittedByBoundary": [
+          "raw source payload",
+          "internal UUIDs",
+          "held/quarantined rows",
+          "rights internals",
+          "candidate state"
+        ]
+      },
+      {
+        "endpoint": "/api/v1/releases/{release}/folders/{id}",
+        "totalRecordsAddressable": 0,
+        "defaultPageSize": null,
+        "maximumPageSize": null,
+        "firstResponseRecordCount": 0,
+        "emptyResultSemantics": "NOT_FOUND/404",
+        "responsePayloadBytes": 254,
+        "nullableFields": [],
+        "fieldsOmittedByBoundary": [
+          "raw source payload",
+          "internal UUIDs",
+          "held/quarantined rows",
+          "rights internals",
+          "candidate state"
+        ]
+      },
+      {
+        "endpoint": "/api/v1/releases/{release}/surfaces/{id}",
+        "totalRecordsAddressable": 7995,
+        "defaultPageSize": null,
+        "maximumPageSize": null,
+        "firstResponseRecordCount": 1,
+        "emptyResultSemantics": "not applicable to primary case",
+        "responsePayloadBytes": 725,
+        "nullableFields": [
+          "year",
+          "citation",
+          "description"
+        ],
+        "fieldsOmittedByBoundary": [
+          "raw source payload",
+          "internal UUIDs",
+          "held/quarantined rows",
+          "rights internals",
+          "candidate state"
+        ]
+      },
+      {
+        "endpoint": "/api/v1/releases/{release}/search",
+        "totalRecordsAddressable": 7995,
+        "defaultPageSize": 50,
+        "maximumPageSize": 100,
+        "firstResponseRecordCount": 10,
+        "emptyResultSemantics": "not applicable to primary case",
+        "responsePayloadBytes": 6943,
+        "nullableFields": [
+          "nodes[].surface.year"
+        ],
+        "fieldsOmittedByBoundary": [
+          "raw source payload",
+          "internal UUIDs",
+          "held/quarantined rows",
+          "rights internals",
+          "candidate state"
+        ]
+      },
+      {
+        "endpoint": "/api/v1/releases/{release}/trace/atlas",
+        "totalRecordsAddressable": 1,
+        "defaultPageSize": null,
+        "maximumPageSize": null,
+        "firstResponseRecordCount": 1,
+        "emptyResultSemantics": "not applicable to primary case",
+        "responsePayloadBytes": 430,
+        "nullableFields": [],
+        "fieldsOmittedByBoundary": [
+          "raw source payload",
+          "internal UUIDs",
+          "held/quarantined rows",
+          "rights internals",
+          "candidate state"
+        ]
+      },
+      {
+        "endpoint": "/api/v1/releases/{release}/trace/objects",
+        "totalRecordsAddressable": 0,
+        "defaultPageSize": 50,
+        "maximumPageSize": 100,
+        "firstResponseRecordCount": 0,
+        "emptyResultSemantics": "200 with empty collection",
+        "responsePayloadBytes": 419,
+        "nullableFields": [],
+        "fieldsOmittedByBoundary": [
+          "raw source payload",
+          "internal UUIDs",
+          "held/quarantined rows",
+          "rights internals",
+          "candidate state"
+        ]
+      },
+      {
+        "endpoint": "/api/v1/releases/{release}/trace/objects/{id}/neighborhood",
+        "totalRecordsAddressable": 0,
+        "defaultPageSize": null,
+        "maximumPageSize": null,
+        "firstResponseRecordCount": 0,
+        "emptyResultSemantics": "NOT_FOUND/404",
+        "responsePayloadBytes": 281,
+        "nullableFields": [],
+        "fieldsOmittedByBoundary": [
+          "raw source payload",
+          "internal UUIDs",
+          "held/quarantined rows",
+          "rights internals",
+          "candidate state"
+        ]
+      },
+      {
+        "endpoint": "/api/v1/releases/{release}/trace/relation-types",
+        "totalRecordsAddressable": 0,
+        "defaultPageSize": null,
+        "maximumPageSize": null,
+        "firstResponseRecordCount": 0,
+        "emptyResultSemantics": "200 with empty collection",
+        "responsePayloadBytes": 343,
+        "nullableFields": [],
+        "fieldsOmittedByBoundary": [
+          "raw source payload",
+          "internal UUIDs",
+          "held/quarantined rows",
+          "rights internals",
+          "candidate state"
+        ]
+      },
+      {
+        "endpoint": "/api/v1/releases/{release}/trace/relation-types/{id}",
+        "totalRecordsAddressable": 0,
+        "defaultPageSize": null,
+        "maximumPageSize": null,
+        "firstResponseRecordCount": 0,
+        "emptyResultSemantics": "NOT_FOUND/404",
+        "responsePayloadBytes": 263,
+        "nullableFields": [],
+        "fieldsOmittedByBoundary": [
+          "raw source payload",
+          "internal UUIDs",
+          "held/quarantined rows",
+          "rights internals",
+          "candidate state"
+        ]
+      },
+      {
+        "endpoint": "/api/v1/releases/{release}/relations/{id}",
+        "totalRecordsAddressable": 0,
+        "defaultPageSize": null,
+        "maximumPageSize": null,
+        "firstResponseRecordCount": 0,
+        "emptyResultSemantics": "NOT_FOUND/404",
+        "responsePayloadBytes": 247,
+        "nullableFields": [],
+        "fieldsOmittedByBoundary": [
+          "raw source payload",
+          "internal UUIDs",
+          "held/quarantined rows",
+          "rights internals",
+          "candidate state"
+        ]
+      },
+      {
+        "endpoint": "/api/v1/releases/{release}/claims/{id}",
+        "totalRecordsAddressable": 0,
+        "defaultPageSize": null,
+        "maximumPageSize": null,
+        "firstResponseRecordCount": 0,
+        "emptyResultSemantics": "NOT_FOUND/404",
+        "responsePayloadBytes": 241,
+        "nullableFields": [],
+        "fieldsOmittedByBoundary": [
+          "raw source payload",
+          "internal UUIDs",
+          "held/quarantined rows",
+          "rights internals",
+          "candidate state"
+        ]
+      },
+      {
+        "endpoint": "/api/v1/releases/{release}/corpora/{version}",
+        "totalRecordsAddressable": 0,
+        "defaultPageSize": null,
+        "maximumPageSize": null,
+        "firstResponseRecordCount": 0,
+        "emptyResultSemantics": "NOT_FOUND/404",
+        "responsePayloadBytes": 243,
+        "nullableFields": [],
+        "fieldsOmittedByBoundary": [
+          "raw source payload",
+          "internal UUIDs",
+          "held/quarantined rows",
+          "rights internals",
+          "candidate state"
+        ]
+      }
+    ]
+  },
+  "evidenceCrosscheck": {
+    "verifierSchemaHash": "df1e7741e59e5e6bf1ca80f2a33edfad1abb2fc6d95b57d4d6993b49917020dd",
+    "verifierContentDigest": "a0fa7aaeb84b383371c20340afa2c2a5c7f12408102767de189225cc93e478b9",
+    "verifierStableKeySetSha256": "9bf3491b9c6603f3a7f8f141f2d9abac915ec1b91cd442b9248190263a8835a0",
+    "apiContractStatus": "PASS",
+    "runtimeProfileStatus": "PASS"
+  }
+}

@@ -31,6 +31,7 @@ for (const path of [
   forbid(path, "archive-search-v1");
 }
 const api = read("frontend/src/app/api/v1/[...path]/route.ts");
+const apiController = read("frontend/src/lib/read-platform/server/read-api-controller.ts");
 for (const blocked of ["remote_image_url", "raw payload", "held locator", "SELECT *"]) forbid("frontend/src/app/api/v1/[...path]/route.ts", blocked);
-if (!api.includes("export function POST") || !api.includes("status: 405")) throw new Error("read API must reject writes");
+if (!api.includes("export function POST") || !apiController.includes("status: 405")) throw new Error("read API must reject writes");
 console.log("READ_PLATFORM_CONTRACT=PASS DIRECT_DATA_COUPLING=0");

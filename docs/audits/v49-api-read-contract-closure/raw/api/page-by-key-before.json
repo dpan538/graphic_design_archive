@@ -1,0 +1,58 @@
+{
+  "format": "gda-v49-page-by-key-reproduction/v1",
+  "status": "PASS",
+  "startupCommand": "/usr/local/bin/node /private/tmp/graphic_design_archive_v49_api_read_contract_closure/docs/audits/v49-api-read-contract-closure/raw/api/reproduce-page-by-key-before.mjs --repo /private/tmp/graphic_design_archive_v49_api_read_contract_closure --psql /opt/homebrew/opt/postgresql@16/bin/psql --host /private/tmp/gda_v49_api_contract.gJRjqP/socket --port 55591 --database gda_v49_phase2a_api_repro --output docs/audits/v49-api-read-contract-closure/raw/api/page-by-key-before.json",
+  "runtimeMode": "node-jiti-server-route-dispatch",
+  "nodeVersion": "v22.21.0",
+  "request": {
+    "method": "GET",
+    "url": "http://api-contract.local/api/v1/releases/v49-db-closure-api-v1/search?q=Phase%202S&first=5",
+    "query": {
+      "q": "Phase 2S",
+      "first": 5
+    }
+  },
+  "response": {
+    "status": 503,
+    "headers": {
+      "allow": "GET, HEAD, OPTIONS",
+      "cache-control": "no-store",
+      "content-type": "application/json",
+      "vary": "Archive-Research-Manifest-Sha256"
+    },
+    "body": {
+      "type": "urn:gdarchive:problem:unavailable",
+      "title": "Read API unavailable",
+      "status": 503,
+      "code": "UNAVAILABLE",
+      "detail": "(0 , _pagination.pageByKey) is not a function",
+      "instance": "/api/v1/releases/v49-db-closure-api-v1/search"
+    }
+  },
+  "moduleResolution": {
+    "paginationFile": "/private/tmp/graphic_design_archive_v49_api_read_contract_closure/frontend/src/lib/read-platform/pagination.ts",
+    "repositoryFile": "/private/tmp/graphic_design_archive_v49_api_read_contract_closure/frontend/src/lib/read-platform/server/postgres-repository.ts",
+    "routeFile": "/private/tmp/graphic_design_archive_v49_api_read_contract_closure/frontend/src/app/api/v1/[...path]/route.ts",
+    "serverOnlyAlias": "/private/tmp/graphic_design_archive_v49_api_read_contract_closure/docs/audits/v49-api-read-contract-closure/raw/api/server-only-marker.js"
+  },
+  "pageByKey": {
+    "definitionFile": "/private/tmp/graphic_design_archive_v49_api_read_contract_closure/frontend/src/lib/read-platform/pagination.ts",
+    "importFile": "/private/tmp/graphic_design_archive_v49_api_read_contract_closure/frontend/src/lib/read-platform/server/postgres-repository.ts",
+    "exportForm": "ABSENT_NAMED_EXPORT",
+    "importForm": "NAMED_IMPORT",
+    "runtimeType": "undefined",
+    "expectedType": "function",
+    "availableExports": [
+      "decodeCursor",
+      "encodeCursor",
+      "keysetPage",
+      "requireFirst",
+      "resultError"
+    ],
+    "keysetPageRuntimeType": "function"
+  },
+  "directError": {
+    "stack": "TypeError: (0 , _pagination.pageByKey) is not a function\n    at PostgresArchiveRepository.search (/private/tmp/graphic_design_archive_v49_api_read_contract_closure/frontend/src/lib/read-platform/server/postgres-repository.ts:48:44)\n    at async file:///private/tmp/graphic_design_archive_v49_api_read_contract_closure/docs/audits/v49-api-read-contract-closure/raw/api/reproduce-page-by-key-before.mjs:77:3",
+    "firstApplicationFrame": "at PostgresArchiveRepository.search (/private/tmp/graphic_design_archive_v49_api_read_contract_closure/frontend/src/lib/read-platform/server/postgres-repository.ts:48:44)"
+  }
+}
