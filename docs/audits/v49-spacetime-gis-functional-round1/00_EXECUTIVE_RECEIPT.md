@@ -35,6 +35,6 @@ The `raw/` directory contains only aggregate, sanitized JSON evidence: no held I
 
 ## Final gates
 
-The final projection is resealed as `f751b0f432ff684fd1000201b910aa397a4d9965468c2f7dd5022d6a4ae01c06`. `npm ci`, full/runtime typechecks, Context projection/API/governance/runtime rehearsal, Search index/regression, TRACE preprogram (19 invariants/16 checks), Read Platform, synthetic Canvas (36 nodes/18 connections), Spacetime projection/governance/GIS/API/full cohort, production build, built-output API guard, functional benchmarks, and whitespace QA pass.
+The final projection is resealed as `f751b0f432ff684fd1000201b910aa397a4d9965468c2f7dd5022d6a4ae01c06`. `npm ci`, full/runtime typechecks, Context projection/API/governance/runtime rehearsal, Search index/regression, TRACE preprogram (19 checks/16 invariants), Read Platform, synthetic Canvas (36 checks/18 invariants), Spacetime projection/governance/GIS/API/full cohort, production build, built-output API guard, functional benchmarks, and whitespace QA pass.
 
 The installed `world-atlas` package remains solely to preserve legacy/test compatibility. The final built route is dynamic, reports 18.8 kB route / 125 kB first load, and has an exact route-specific client delta of 55,936 raw / 18,766 gzip JavaScript bytes plus 7,361 CSS bytes. The shared Link chunk is excluded. Project Log contains all required closure tokens. The implementation inventory is 81 paths: five modified and 76 new, including both audit ledgers.
