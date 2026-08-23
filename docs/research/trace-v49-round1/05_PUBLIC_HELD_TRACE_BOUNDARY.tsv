@@ -1,0 +1,12 @@
+structure	endpoint_category	row_count	public_projection_allowed	notes
+research.semantic_relation	PUBLIC_TO_PUBLIC	0	NO_ROWS	No binary semantic relations exist.
+research.semantic_relation	PUBLIC_TO_HELD	0	NO	Invariant guard remains mandatory.
+research.semantic_relation	HELD_TO_PUBLIC	0	NO	Invariant guard remains mandatory.
+research.semantic_relation	HELD_TO_HELD	0	NO	No binary semantic relations exist.
+research.semantic_relation	UNKNOWN	0	NO	No unresolved endpoints.
+research.object_trace_node	PUBLIC_OBJECT_ROOT	7995	REQUIRES_PUBLIC_PROJECTION	Identity bridge only; not a TRACE eligibility decision.
+research.object_trace_node	HELD_OBJECT_ROOT	7928	NO	Must remain excluded.
+provenance.assignment_folder_membership	PUBLIC_OBJECT_TO_FOLDER	24102	NO_PROPOSED_STATE	Proposed curated membership, not a semantic edge.
+provenance.assignment_folder_membership	HELD_OBJECT_TO_FOLDER	23880	NO	Held object endpoint.
+provenance.object_source_record	PUBLIC_OBJECT_TO_RESTRICTED_RAW_RECORD	7995	REQUIRES_SAFE_SERIALIZER	Raw source record fields cannot be copied directly.
+provenance.object_source_record	HELD_OBJECT_TO_RESTRICTED_RAW_RECORD	7928	NO	Held object and raw record remain excluded.

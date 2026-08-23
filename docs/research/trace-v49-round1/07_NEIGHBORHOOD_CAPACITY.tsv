@@ -1,0 +1,14 @@
+population	metric	n	p50	p90	p95	p99	max	diagnostic_note
+public_object	selected_object_nodes	7995	1	1	1	1	1	accepted v49 semantic graph; selected object retained; no 2-hop expansion required
+public_object	incoming_semantic_edges	7995	0	0	0	0	0	accepted v49 semantic graph; selected object retained; no 2-hop expansion required
+public_object	outgoing_semantic_edges	7995	0	0	0	0	0	accepted v49 semantic graph; selected object retained; no 2-hop expansion required
+public_object	unique_semantic_neighbors	7995	0	0	0	0	0	accepted v49 semantic graph; selected object retained; no 2-hop expansion required
+public_object	relation_type_diversity	7995	0	0	0	0	0	accepted v49 semantic graph; selected object retained; no 2-hop expansion required
+public_object	one_hop_nodes	7995	1	1	1	1	1	accepted v49 semantic graph; selected object retained; no 2-hop expansion required
+public_object	one_hop_edges	7995	0	0	0	0	0	accepted v49 semantic graph; selected object retained; no 2-hop expansion required
+public_object	two_hop_nodes_capped	7995	1	1	1	1	1	accepted v49 semantic graph; selected object retained; no 2-hop expansion required
+public_object	two_hop_edges_capped	7995	0	0	0	0	0	accepted v49 semantic graph; selected object retained; no 2-hop expansion required
+legacy_v48_public_eligible_reconciliation_only	legacy_one_hop_nodes	7995	12	16	17	20	32	LEGACY v48 capacity diagnostic only; not a v49 relation or publication candidate; 2-hop caps nodes=10000 edges=50000
+legacy_v48_public_eligible_reconciliation_only	legacy_one_hop_edges	7995	11	15	16	19	31	LEGACY v48 capacity diagnostic only; not a v49 relation or publication candidate; 2-hop caps nodes=10000 edges=50000
+legacy_v48_public_eligible_reconciliation_only	legacy_two_hop_nodes	7995	3637	5671	5682	5759	6363	LEGACY v48 capacity diagnostic only; not a v49 relation or publication candidate; 2-hop caps nodes=10000 edges=50000
+legacy_v48_public_eligible_reconciliation_only	legacy_two_hop_edges	7995	21099	26415	27614	27739	28566	LEGACY v48 capacity diagnostic only; not a v49 relation or publication candidate; 2-hop caps nodes=10000 edges=50000

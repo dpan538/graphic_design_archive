@@ -1,0 +1,42 @@
+schema	structure	row_count	semantic_meaning	database_state	normalized_analysis_state	public_eligibility	trace_category	notes
+research	relation_type	0	semantic predicate registry	none	empty	not projected	SEMANTIC_RELATION	No rows exist.
+research	epistemic_class	0	epistemic policy registry	none	empty	not projected	SEMANTIC_POLICY	No rows exist.
+research	claim	0	stable claim identity	none	empty	not projected	CLAIM	No rows exist.
+research	claim_revision	0	versioned claim wording/state	none	empty	not projected	CLAIM	No rows exist.
+research	claim_evidence	0	claim-to-evidence bridge	none	empty	not projected	EVIDENCE_BRIDGE	No rows exist.
+research	semantic_relation	0	typed subject-predicate-object proposition	none	empty	not projected	SEMANTIC_RELATION	Canonical accepted/candidate relation set is empty.
+research	relation_claim	0	relation-to-claim bridge	none	empty	not projected	CLAIM_BRIDGE	No rows exist.
+research	analysis_run	0	deterministic/computed analysis provenance	none	empty	not projected	ANALYSIS_PROVENANCE	No rows exist.
+research	trace_tree	0	working TRACE tree	none	empty	not projected	CURATED_STRUCTURE	No rows exist.
+research	trace_branch	0	working TRACE branch	none	empty	not projected	CURATED_STRUCTURE	No rows exist.
+research	trace_node	15923	canonical object-root TRACE node	root	active	not projected	IDENTITY_BRIDGE	Exactly one internal root per canonical object; not an edge.
+research	object_trace_node	15923	object-to-root-node identity bridge	root	active	not projected	IDENTITY_BRIDGE	Exactly one per object; not a semantic relation.
+research	object_relation_membership	0	object-to-semantic-relation membership	none	empty	not projected	SEMANTIC_MEMBERSHIP	No rows exist.
+research	trace_node_tree_membership	0	TRACE node placement in tree	none	empty	not projected	CURATED_MEMBERSHIP	No rows exist.
+provenance	assignment_object_tree_membership	0	governed object/tree assignment	none	empty	not projected	CURATED_MEMBERSHIP	No rows exist.
+provenance	canonical_assignment	47982	typed assignment lifecycle row	proposed	review	not projected	CONTROLLED_ASSIGNMENT	All rows are folder_membership/proposed.
+provenance	assignment_folder_membership	47982	curated folder membership subtype	proposed	review	not projected	CURATED_MEMBERSHIP	This is the complete 47,982 headline count.
+provenance	assignment_object_agent_credit	0	normalized object-agent credit	none	empty	not projected	CONTROLLED_ASSIGNMENT	Table exists but was not populated.
+provenance	assignment_object_medium	0	normalized object-medium assignment	none	empty	not projected	CONTROLLED_ASSIGNMENT	Table exists but was not populated.
+provenance	assignment_object_type	0	normalized object-type assignment	none	empty	not projected	CONTROLLED_ASSIGNMENT	Table exists but was not populated.
+provenance	assignment_object_subject	0	normalized object-subject assignment	none	empty	not projected	CONTROLLED_ASSIGNMENT	Table exists but was not populated.
+provenance	assignment_object_place	0	normalized object-place assignment	none	empty	not projected	CONTROLLED_ASSIGNMENT	Table exists but was not populated.
+provenance	assignment_object_temporal	0	normalized object-time assignment	none	empty	not projected	CONTROLLED_ASSIGNMENT	Table exists but was not populated.
+provenance	assignment_object_collection	0	normalized object-collection assignment	none	empty	not projected	CONTROLLED_ASSIGNMENT	Table exists but was not populated.
+provenance	assignment_object_source_record	0	governed source-record assignment	none	empty	not projected	SOURCE_ASSOCIATION	Table exists but was not populated.
+provenance	object_source_record	15923	object-to-raw-source-record bridge	active	active	not projected	SOURCE_ASSOCIATION	One internal bridge per canonical object.
+provenance	source_document	0	normalized source document	none	empty	not projected	SOURCE	No rows exist.
+provenance	source_version	0	versioned source document	none	empty	not projected	SOURCE	No rows exist.
+provenance	evidence_item	0	located source evidence occurrence	none	empty	not projected	EVIDENCE	No rows exist.
+provenance	object_evidence	0	object-to-evidence bridge	none	empty	not projected	EVIDENCE_BRIDGE	No rows exist.
+provenance	assertion	0	typed assertion	none	empty	not projected	ASSERTION	No rows exist.
+provenance	assertion_evidence	0	assertion-to-evidence bridge	none	empty	not projected	EVIDENCE_BRIDGE	No rows exist.
+raw	source_record	15923	canonical raw source record	active	active	restricted	RAW_PROVENANCE	One per object; raw payload is not public-safe.
+raw	field_literal	3559820	path-addressed raw field occurrence	active	active	restricted	RAW_PROVENANCE	Internal field-occurrence evidence, not semantic assignments.
+raw	fail_closed_delta	7928	held-object release exclusion	held	held	excluded	PUBLICATION_GUARD	Exactly the 7,928 held objects.
+research	corpus_membership	7995	public corpus eligibility decision	eligible	active	public selection input	PUBLICATION_DECISION	Contains the 7,995 eligible rows only.
+release	research_trace_availability_projection_v3	1	sealed release TRACE availability row	active	active	public	AVAILABILITY	Explicit NO_ACCEPTED_SEMANTIC_RELATIONS state; counts are both zero.
+release	research_folder_membership_projection_v3	0	sealed public folder membership	none	empty	public	CURATED_MEMBERSHIP	Release receipt folderMembershipCount=0.
+release	trace_projection_node	0	release-owned TRACE node	none	empty	public	IDENTITY_BRIDGE	Release receipt traceEligibleObjectCount=0.
+release	trace_projection_edge	0	release-owned accepted semantic edge	none	empty	public	SEMANTIC_RELATION	Release receipt relationCount=0.
+release	object_relation_membership_projection	0	release-owned object/relation membership	none	empty	public	SEMANTIC_MEMBERSHIP	No published relation memberships.

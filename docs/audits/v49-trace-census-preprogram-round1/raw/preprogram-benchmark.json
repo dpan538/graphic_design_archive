@@ -1,0 +1,497 @@
+{
+  "benchmark_version": "trace-v49-preprogram-benchmark-v1",
+  "runtime": "v22.21.0",
+  "platform": "darwin-arm64",
+  "source_sha": "f9bdfdd293023592ddc6af92858a24857c5a532a",
+  "release_id": "v49-api-contract-fresh-c",
+  "release_manifest_sha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+  "fixture_classification": "public-safe synthetic structures sized from measured v49 public-object density; no held rows",
+  "iterations_per_timing": 2000,
+  "warmup_iterations": 200,
+  "provisional_projection_p95_target_ms": 20,
+  "maximum_observed_projection_p95_ms": 0.035545,
+  "target_met": true,
+  "memory_measurement_note": "Retained heap delta after 250 simultaneously retained outputs; null means GC/runtime noise made the delta non-positive.",
+  "results": [
+    {
+      "workload": "minimal",
+      "domain": "context",
+      "measured_input_counts": {
+        "controlled_assignments": 2,
+        "curated_memberships": 3,
+        "places": 1,
+        "times": 1,
+        "source_associations": 1,
+        "accepted_semantic_edges": 0
+      },
+      "output_counts": {
+        "items": 6,
+        "non_semantic_associations": 5,
+        "semantic_edges": 0,
+        "accessible_rows": 6
+      },
+      "projection_ms": {
+        "p50": 0.018041,
+        "p95": 0.023546,
+        "p99": 0.080912,
+        "max": 0.254958
+      },
+      "accessible_rows_ms": {
+        "p50": 0.007125,
+        "p95": 0.007836,
+        "p99": 0.010209,
+        "max": 0.2065
+      },
+      "serialized_output_bytes": 4277,
+      "retained_heap_delta_bytes_for_250_outputs": 937920
+    },
+    {
+      "workload": "minimal",
+      "domain": "spacetime",
+      "measured_input_counts": {
+        "controlled_assignments": 2,
+        "curated_memberships": 3,
+        "places": 1,
+        "times": 1,
+        "source_associations": 1,
+        "accepted_semantic_edges": 0
+      },
+      "output_counts": {
+        "items": 3,
+        "non_semantic_associations": 2,
+        "semantic_edges": 0,
+        "accessible_rows": 3
+      },
+      "projection_ms": {
+        "p50": 0.005875,
+        "p95": 0.007458,
+        "p99": 0.011254,
+        "max": 0.468959
+      },
+      "accessible_rows_ms": {
+        "p50": 0.002959,
+        "p95": 0.003459,
+        "p99": 0.011586,
+        "max": 0.173167
+      },
+      "serialized_output_bytes": 1905,
+      "retained_heap_delta_bytes_for_250_outputs": 554192
+    },
+    {
+      "workload": "minimal",
+      "domain": "sources",
+      "measured_input_counts": {
+        "controlled_assignments": 2,
+        "curated_memberships": 3,
+        "places": 1,
+        "times": 1,
+        "source_associations": 1,
+        "accepted_semantic_edges": 0
+      },
+      "output_counts": {
+        "items": 2,
+        "non_semantic_associations": 1,
+        "semantic_edges": 0,
+        "accessible_rows": 2
+      },
+      "projection_ms": {
+        "p50": 0.005083,
+        "p95": 0.005959,
+        "p99": 0.007086,
+        "max": 0.19775
+      },
+      "accessible_rows_ms": {
+        "p50": 0.002291,
+        "p95": 0.002916,
+        "p99": 0.007806,
+        "max": 0.12225
+      },
+      "serialized_output_bytes": 1636,
+      "retained_heap_delta_bytes_for_250_outputs": 481296
+    },
+    {
+      "workload": "median",
+      "domain": "context",
+      "measured_input_counts": {
+        "controlled_assignments": 2,
+        "curated_memberships": 3,
+        "places": 1,
+        "times": 1,
+        "source_associations": 1,
+        "accepted_semantic_edges": 0
+      },
+      "output_counts": {
+        "items": 6,
+        "non_semantic_associations": 5,
+        "semantic_edges": 0,
+        "accessible_rows": 6
+      },
+      "projection_ms": {
+        "p50": 0.016458,
+        "p95": 0.018333,
+        "p99": 0.041095,
+        "max": 0.261459
+      },
+      "accessible_rows_ms": {
+        "p50": 0.007042,
+        "p95": 0.007541,
+        "p99": 0.009169,
+        "max": 0.229541
+      },
+      "serialized_output_bytes": 4252,
+      "retained_heap_delta_bytes_for_250_outputs": 1012000
+    },
+    {
+      "workload": "median",
+      "domain": "spacetime",
+      "measured_input_counts": {
+        "controlled_assignments": 2,
+        "curated_memberships": 3,
+        "places": 1,
+        "times": 1,
+        "source_associations": 1,
+        "accepted_semantic_edges": 0
+      },
+      "output_counts": {
+        "items": 3,
+        "non_semantic_associations": 2,
+        "semantic_edges": 0,
+        "accessible_rows": 3
+      },
+      "projection_ms": {
+        "p50": 0.005083,
+        "p95": 0.005708,
+        "p99": 0.014838,
+        "max": 0.187166
+      },
+      "accessible_rows_ms": {
+        "p50": 0.002958,
+        "p95": 0.003292,
+        "p99": 0.003792,
+        "max": 0.15425
+      },
+      "serialized_output_bytes": 1897,
+      "retained_heap_delta_bytes_for_250_outputs": 552432
+    },
+    {
+      "workload": "median",
+      "domain": "sources",
+      "measured_input_counts": {
+        "controlled_assignments": 2,
+        "curated_memberships": 3,
+        "places": 1,
+        "times": 1,
+        "source_associations": 1,
+        "accepted_semantic_edges": 0
+      },
+      "output_counts": {
+        "items": 2,
+        "non_semantic_associations": 1,
+        "semantic_edges": 0,
+        "accessible_rows": 2
+      },
+      "projection_ms": {
+        "p50": 0.004209,
+        "p95": 0.00475,
+        "p99": 0.008542,
+        "max": 0.16775
+      },
+      "accessible_rows_ms": {
+        "p50": 0.001917,
+        "p95": 0.002042,
+        "p99": 0.002583,
+        "max": 0.13525
+      },
+      "serialized_output_bytes": 1628,
+      "retained_heap_delta_bytes_for_250_outputs": 471480
+    },
+    {
+      "workload": "p95",
+      "domain": "context",
+      "measured_input_counts": {
+        "controlled_assignments": 2,
+        "curated_memberships": 3,
+        "places": 1,
+        "times": 1,
+        "source_associations": 1,
+        "accepted_semantic_edges": 0
+      },
+      "output_counts": {
+        "items": 6,
+        "non_semantic_associations": 5,
+        "semantic_edges": 0,
+        "accessible_rows": 6
+      },
+      "projection_ms": {
+        "p50": 0.016125,
+        "p95": 0.017875,
+        "p99": 0.030703,
+        "max": 0.241041
+      },
+      "accessible_rows_ms": {
+        "p50": 0.007,
+        "p95": 0.0075,
+        "p99": 0.015978,
+        "max": 0.196125
+      },
+      "serialized_output_bytes": 4177,
+      "retained_heap_delta_bytes_for_250_outputs": 992112
+    },
+    {
+      "workload": "p95",
+      "domain": "spacetime",
+      "measured_input_counts": {
+        "controlled_assignments": 2,
+        "curated_memberships": 3,
+        "places": 1,
+        "times": 1,
+        "source_associations": 1,
+        "accepted_semantic_edges": 0
+      },
+      "output_counts": {
+        "items": 3,
+        "non_semantic_associations": 2,
+        "semantic_edges": 0,
+        "accessible_rows": 3
+      },
+      "projection_ms": {
+        "p50": 0.004834,
+        "p95": 0.005542,
+        "p99": 0.012715,
+        "max": 0.16775
+      },
+      "accessible_rows_ms": {
+        "p50": 0.003,
+        "p95": 0.003125,
+        "p99": 0.00371,
+        "max": 0.143208
+      },
+      "serialized_output_bytes": 1873,
+      "retained_heap_delta_bytes_for_250_outputs": 552032
+    },
+    {
+      "workload": "p95",
+      "domain": "sources",
+      "measured_input_counts": {
+        "controlled_assignments": 2,
+        "curated_memberships": 3,
+        "places": 1,
+        "times": 1,
+        "source_associations": 1,
+        "accepted_semantic_edges": 0
+      },
+      "output_counts": {
+        "items": 2,
+        "non_semantic_associations": 1,
+        "semantic_edges": 0,
+        "accessible_rows": 2
+      },
+      "projection_ms": {
+        "p50": 0.004333,
+        "p95": 0.005,
+        "p99": 0.008044,
+        "max": 0.175625
+      },
+      "accessible_rows_ms": {
+        "p50": 0.002125,
+        "p95": 0.0025,
+        "p99": 0.003208,
+        "max": 0.133542
+      },
+      "serialized_output_bytes": 1604,
+      "retained_heap_delta_bytes_for_250_outputs": 491120
+    },
+    {
+      "workload": "p99",
+      "domain": "context",
+      "measured_input_counts": {
+        "controlled_assignments": 3,
+        "curated_memberships": 4,
+        "places": 1,
+        "times": 1,
+        "source_associations": 1,
+        "accepted_semantic_edges": 0
+      },
+      "output_counts": {
+        "items": 8,
+        "non_semantic_associations": 7,
+        "semantic_edges": 0,
+        "accessible_rows": 8
+      },
+      "projection_ms": {
+        "p50": 0.021709,
+        "p95": 0.023711,
+        "p99": 0.043044,
+        "max": 0.23725
+      },
+      "accessible_rows_ms": {
+        "p50": 0.0095,
+        "p95": 0.010044,
+        "p99": 0.0195,
+        "max": 0.209916
+      },
+      "serialized_output_bytes": 5475,
+      "retained_heap_delta_bytes_for_250_outputs": 1218000
+    },
+    {
+      "workload": "p99",
+      "domain": "spacetime",
+      "measured_input_counts": {
+        "controlled_assignments": 3,
+        "curated_memberships": 4,
+        "places": 1,
+        "times": 1,
+        "source_associations": 1,
+        "accepted_semantic_edges": 0
+      },
+      "output_counts": {
+        "items": 3,
+        "non_semantic_associations": 2,
+        "semantic_edges": 0,
+        "accessible_rows": 3
+      },
+      "projection_ms": {
+        "p50": 0.004875,
+        "p95": 0.006211,
+        "p99": 0.019253,
+        "max": 0.224042
+      },
+      "accessible_rows_ms": {
+        "p50": 0.002875,
+        "p95": 0.003083,
+        "p99": 0.003877,
+        "max": 0.1315
+      },
+      "serialized_output_bytes": 1873,
+      "retained_heap_delta_bytes_for_250_outputs": 551688
+    },
+    {
+      "workload": "p99",
+      "domain": "sources",
+      "measured_input_counts": {
+        "controlled_assignments": 3,
+        "curated_memberships": 4,
+        "places": 1,
+        "times": 1,
+        "source_associations": 1,
+        "accepted_semantic_edges": 0
+      },
+      "output_counts": {
+        "items": 2,
+        "non_semantic_associations": 1,
+        "semantic_edges": 0,
+        "accessible_rows": 2
+      },
+      "projection_ms": {
+        "p50": 0.004459,
+        "p95": 0.005,
+        "p99": 0.012679,
+        "max": 0.225125
+      },
+      "accessible_rows_ms": {
+        "p50": 0.002042,
+        "p95": 0.002209,
+        "p99": 0.002916,
+        "max": 0.156541
+      },
+      "serialized_output_bytes": 1604,
+      "retained_heap_delta_bytes_for_250_outputs": 465952
+    },
+    {
+      "workload": "maximum",
+      "domain": "context",
+      "measured_input_counts": {
+        "controlled_assignments": 4,
+        "curated_memberships": 5,
+        "places": 1,
+        "times": 1,
+        "source_associations": 1,
+        "accepted_semantic_edges": 0
+      },
+      "output_counts": {
+        "items": 10,
+        "non_semantic_associations": 9,
+        "semantic_edges": 0,
+        "accessible_rows": 10
+      },
+      "projection_ms": {
+        "p50": 0.027625,
+        "p95": 0.035545,
+        "p99": 0.064626,
+        "max": 0.684209
+      },
+      "accessible_rows_ms": {
+        "p50": 0.012417,
+        "p95": 0.013916,
+        "p99": 0.033417,
+        "max": 0.268584
+      },
+      "serialized_output_bytes": 6954,
+      "retained_heap_delta_bytes_for_250_outputs": 1495864
+    },
+    {
+      "workload": "maximum",
+      "domain": "spacetime",
+      "measured_input_counts": {
+        "controlled_assignments": 4,
+        "curated_memberships": 5,
+        "places": 1,
+        "times": 1,
+        "source_associations": 1,
+        "accepted_semantic_edges": 0
+      },
+      "output_counts": {
+        "items": 3,
+        "non_semantic_associations": 2,
+        "semantic_edges": 0,
+        "accessible_rows": 3
+      },
+      "projection_ms": {
+        "p50": 0.004875,
+        "p95": 0.0055,
+        "p99": 0.009545,
+        "max": 0.292167
+      },
+      "accessible_rows_ms": {
+        "p50": 0.002916,
+        "p95": 0.003208,
+        "p99": 0.009208,
+        "max": 0.074541
+      },
+      "serialized_output_bytes": 1905,
+      "retained_heap_delta_bytes_for_250_outputs": 553904
+    },
+    {
+      "workload": "maximum",
+      "domain": "sources",
+      "measured_input_counts": {
+        "controlled_assignments": 4,
+        "curated_memberships": 5,
+        "places": 1,
+        "times": 1,
+        "source_associations": 1,
+        "accepted_semantic_edges": 0
+      },
+      "output_counts": {
+        "items": 2,
+        "non_semantic_associations": 1,
+        "semantic_edges": 0,
+        "accessible_rows": 2
+      },
+      "projection_ms": {
+        "p50": 0.004333,
+        "p95": 0.005417,
+        "p99": 0.021193,
+        "max": 0.270125
+      },
+      "accessible_rows_ms": {
+        "p50": 0.002166,
+        "p95": 0.002209,
+        "p99": 0.00275,
+        "max": 0.07425
+      },
+      "serialized_output_bytes": 1636,
+      "retained_heap_delta_bytes_for_250_outputs": 469648
+    }
+  ]
+}

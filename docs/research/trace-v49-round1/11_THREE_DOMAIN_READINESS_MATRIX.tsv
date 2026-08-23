@@ -1,0 +1,8 @@
+domain	data_concept	source	total	public_total	coverage_percent	review_completeness	evidence_completeness	stable_ids	public_safe	aggregation_ready	object_local_ready	semantic_edge_ready	api_ready	blocker	recommendation
+context	folder membership	provenance.assignment_folder_membership	47982	24102	100	0% accepted; all proposed	not satisfied	internal UUID + frozen folder token	no	analysis-only	preprogram-only	no	no	REVIEW,PUBLICATION,API	REQUIRES_SEMANTIC_REVIEW
+context	raw medium/type labels	raw.field_literal + v48 reconciliation	15923	7995	100	raw only	source record only	object only	no	analysis-only	preprogram-only	no	no	PUBLICATION,API	REQUIRES_PUBLIC_PROJECTION
+spacetime	raw temporal value	raw.field_literal + v48 reconciliation	15923	7995	100	raw only	no evidence_item	object only	no	analysis-only	preprogram-only	no	no	PUBLICATION,API	REQUIRES_PUBLIC_PROJECTION
+spacetime	untyped object region label	raw.field_literal + v48 reconciliation	15923	7995	100	role unresolved	no coordinate evidence	object only	no	analysis-only	preprogram-only	no	no	SEMANTIC,PUBLICATION,API	REQUIRES_SEMANTIC_REVIEW
+sources	object/raw-source-record association	provenance.object_source_record	15923	7995	100	active bridge	no evidence_item/assertion/claim	internal source-record UUID forbidden	no	analysis-only	preprogram-only	no	no	PUBLICATION,API	REQUIRES_PUBLIC_PROJECTION
+sources	evidence and claims	provenance.evidence_item + research.claim	0	0	0	empty	empty	schema supports IDs; no rows	no rows	no	no	no	no	DATA	NOT_SUPPORTED
+cross-domain	accepted semantic relation	research.semantic_relation	0	0	0	empty	empty	schema supports URNs; no rows	no rows	no	no	no	empty contract only	DATA,SEMANTIC,REVIEW	NOT_SUPPORTED

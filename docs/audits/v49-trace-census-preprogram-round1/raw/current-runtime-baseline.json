@@ -1,0 +1,72 @@
+{
+  "source_sha": "f9bdfdd293023592ddc6af92858a24857c5a532a",
+  "provider_mode": "derived-v49",
+  "browser_before": {
+    "url": "http://127.0.0.1:3047/trace",
+    "title": "TRACE evidence atlas — Modern Graphic Design History",
+    "status_message": "This public release has no verified TRACE evidence.",
+    "verified_trace_objects": 0,
+    "console_warnings": 0,
+    "console_errors": 0,
+    "result": "PASS"
+  },
+  "browser_after": {
+    "url": "http://127.0.0.1:3047/trace",
+    "title": "TRACE evidence atlas — Modern Graphic Design History",
+    "status_message": "This public release has no verified TRACE evidence.",
+    "verified_trace_objects": 0,
+    "console_warnings": 0,
+    "console_errors": 0,
+    "http_status": 200,
+    "result": "PASS_FUNCTIONALLY_IDENTICAL"
+  },
+  "api": [
+    {
+      "resource": "trace_atlas",
+      "status": 200,
+      "body_bytes": 547,
+      "total_exact": 0,
+      "message": "This public release has no verified TRACE evidence."
+    },
+    {
+      "resource": "trace_objects",
+      "status": 200,
+      "body_bytes": 454,
+      "nodes": 0,
+      "total_exact": 0
+    },
+    {
+      "resource": "relation_types",
+      "status": 200,
+      "body_bytes": 378,
+      "items": 0
+    },
+    {
+      "resource": "object_neighborhood",
+      "status": 404,
+      "detail": "this public release has no TRACE-eligible object"
+    },
+    {
+      "resource": "relation_type_detail",
+      "status": 404,
+      "detail": "relation type is not published in this public release"
+    },
+    {
+      "resource": "relation_detail",
+      "status": 404,
+      "detail": "relation is not published in this public release"
+    },
+    {
+      "resource": "claim_detail",
+      "status": 404,
+      "detail": "claim is not published in this public release"
+    }
+  ],
+  "input_validation_gap": {
+    "derived_invalid_layer_status": 200,
+    "derived_first_zero_status": 200,
+    "derived_first_101_status": 200,
+    "derived_malformed_cursor_status": 200,
+    "classification": "out-of-scope API conformance defect"
+  }
+}

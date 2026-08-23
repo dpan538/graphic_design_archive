@@ -1,0 +1,43 @@
+# v49 TRACE Census and Preprogram Round 1 — Audit Receipt
+
+```text
+SOURCE_BRANCH=feat/v49-fuzzy-search-round1-20260823
+SOURCE_SHA=f9bdfdd293023592ddc6af92858a24857c5a532a
+DATABASE_VERSION=49
+DATABASE_FROZEN=true
+CANONICAL_OBJECT_COUNT=15923
+PUBLIC_OBJECT_COUNT=7995
+HELD_OBJECT_COUNT=7928
+
+REPORTED_RELATIONSHIP_COUNT=47982
+RELATIONSHIP_COUNT_RECONCILED=true
+RELATIONSHIP_COUNT_ACTUAL_MEANING=proposed curated folder-membership assignments
+FOLDER_PAIR_SET_SHA256=b2ddbe94f4d569f6b9970246855b535374b7c1a9b8ac047de58899c860bd4573
+
+SEMANTIC_RELATION_COUNT=0
+RELATION_TYPE_COUNT=0
+ACCEPTED_SEMANTIC_RELATION_COUNT=0
+PUBLIC_PUBLIC_RELATION_COUNT=0
+EVIDENCE_COMPLETE_PUBLIC_RELATION_COUNT=0
+PUBLIC_TRACE_ELIGIBLE_OBJECT_COUNT=0
+
+CONTEXT_V1=READY_FOR_PREPROGRAM_ONLY
+SPACETIME_V1=SEMANTIC_REVIEW_REQUIRED
+SOURCES_V1=READY_FOR_PREPROGRAM_ONLY
+
+TRACE_EMPIRICAL_MODEL_READY=true
+TRACE_CAPACITY_ENVELOPE_READY=true
+TRACE_PREPROGRAM_FOUNDATION_READY=true
+TRACE_PUBLIC_PROJECTION_GAPS_KNOWN=true
+TRACE_PUBLIC_READ_MODEL_READY=false
+TRACE_VISUALIZATION_DECISION_PENDING=true
+TRACE_VISUAL_IMPLEMENTATION_AUTHORIZED=false
+
+P0_COUNT=0
+P1_COUNT=7
+P2_COUNT=3
+```
+
+The 47,982 parent assignment rows and 47,982 typed membership rows are the same assignment set, not 95,964 records and not semantic edges. Current public TRACE remains correctly empty.
+
+No temporary PostgreSQL database was needed. Frozen replay receipts supplied the physical v49 counts and schema/release identities; object-local diagnostics used the sealed SQLite artifact in immutable/query-only mode. Database, canonical release, protected Search, current `/trace`, and retained v48 assets are outside the change set.
