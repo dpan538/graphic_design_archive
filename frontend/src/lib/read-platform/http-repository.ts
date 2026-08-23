@@ -13,16 +13,19 @@ const errorCode = (value: unknown): RepositoryErrorCode => typeof value === "str
 
 function selectorPath(selector: ResearchReleaseSelector): string { return "alias" in selector ? "/api/v1/releases/current" : `/api/v1/releases/${encodeURIComponent(selector.researchReleaseId)}`; }
 function signalError<T>(): RepoResult<T> { return { ok: false, error: { code: "UNAVAILABLE", message: "request was cancelled", retryable: true } }; }
+function fetchFailure(cause: unknown, fallback: string): string { return cause instanceof Error && cause.message ? `${fallback}: ${cause.message}` : fallback; }
 
 export type ReadFetch = (input: string, init?: RequestInit) => Promise<Response>;
+const defaultReadFetch: ReadFetch = (input, init) => fetch(input, init);
 
 export class HttpArchiveRepository implements ArchiveRepository {
-  constructor(readonly version: ArchiveVersionRef, private readonly baseUrl = "", private readonly readFetch: ReadFetch = fetch) {}
+  constructor(readonly version: ArchiveVersionRef, private readonly baseUrl = "", private readonly readFetch: ReadFetch = defaultReadFetch) {}
   private releasePath() { return `/api/v1/releases/${encodeURIComponent(this.version.research.researchReleaseId)}`; }
   private async request<T>(path: string, options?: ReadOptions): Promise<RepoResult<T>> {
     if (options?.signal?.aborted) return signalError();
-    const response = await this.readFetch(`${this.baseUrl}${path}`, { signal: options?.signal, headers: { "Archive-Research-Manifest-Sha256": this.version.research.researchManifestSha256 } }).catch(() => null);
-    if (!response) return { ok: false, error: { code: "UNAVAILABLE", message: "read API is unavailable", retryable: true } };
+    let response: Response;
+    try { response = await this.readFetch(`${this.baseUrl}${path}`, { signal: options?.signal, headers: { "Archive-Research-Manifest-Sha256": this.version.research.researchManifestSha256 } }); }
+    catch (cause) { return { ok: false, error: { code: "UNAVAILABLE", message: fetchFailure(cause, "read API is unavailable"), retryable: true } }; }
     if (!response.ok) { const problem = (await response.json().catch(() => ({}))) as Problem; return { ok: false, error: { code: errorCode(problem.code), message: problem.detail ?? problem.title ?? "read API request failed", retryable: response.status >= 500 } }; }
     const envelope = (await response.json()) as Envelope<T>;
     if (envelope.apiVersion !== "v1" || envelope.researchReleaseId !== this.version.research.researchReleaseId || envelope.researchManifestSha256 !== this.version.research.researchManifestSha256) return { ok: false, error: { code: "INTEGRITY_FAILURE", message: "response exact release pair does not match request", retryable: false } };
@@ -53,12 +56,13 @@ export class HttpArchiveRepository implements ArchiveRepository {
 function clean(input: object) { return Object.fromEntries(Object.entries(input).filter(([, value]) => value !== undefined).map(([key, value]) => [key, String(value)])); }
 
 export class HttpArchiveRepositoryProvider implements ArchiveRepositoryProvider {
-  constructor(private readonly baseUrl = "", private readonly readFetch: ReadFetch = fetch) {}
+  constructor(private readonly baseUrl = "", private readonly readFetch: ReadFetch = defaultReadFetch) {}
   async open(input: { research: ResearchReleaseSelector; visual?: VisualRegistrySelector | null }, options?: ReadOptions): Promise<RepoResult<ArchiveRepository>> {
     if (input.visual) return { ok: false, error: { code: "RELEASE_VERSION_MISMATCH", message: "visual selector transport is not implemented in this core client", retryable: false } };
     const headers = "alias" in input.research ? undefined : { "Archive-Research-Manifest-Sha256": input.research.researchManifestSha256 };
-    const descriptor = await this.readFetch(`${this.baseUrl}${selectorPath(input.research)}`, { signal: options?.signal, headers }).catch(() => null);
-    if (!descriptor) return { ok: false, error: { code: "UNAVAILABLE", message: "release descriptor is unavailable", retryable: true } };
+    let descriptor: Response;
+    try { descriptor = await this.readFetch(`${this.baseUrl}${selectorPath(input.research)}`, { signal: options?.signal, headers }); }
+    catch (cause) { return { ok: false, error: { code: "UNAVAILABLE", message: fetchFailure(cause, "release descriptor is unavailable"), retryable: true } }; }
     if (!descriptor.ok) {
       const problem = (await descriptor.json().catch(() => ({}))) as Problem;
       return { ok: false, error: { code: errorCode(problem.code), message: problem.detail ?? problem.title ?? "release descriptor is unavailable", retryable: descriptor.status >= 500 } };

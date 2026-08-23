@@ -56,7 +56,7 @@ async function resource(repo: ArchiveRepository, tail: readonly string[], url: U
   if (tail[0] === "folders" && tail[1] && tail[2] === "surfaces") return repo.listFolderMembers(tail[1], { first: first(url), after: url.searchParams.get("after") ?? undefined });
   if (tail[0] === "folders" && tail[1]) return repo.getFolder({ id: tail[1] });
   if (tail[0] === "surfaces" && tail[1]) return repo.getSurface(tail[1]);
-  if (joined === "search") return repo.search({ q: url.searchParams.get("q") ?? "", scope: (url.searchParams.get("scope") ?? "all") as "archive" | "trace" | "relation" | "all", sort: "title", first: first(url), after: url.searchParams.get("after") ?? undefined });
+  if (joined === "search") return repo.search({ q: url.searchParams.get("q") ?? "", scope: (url.searchParams.get("scope") ?? "archive") as "archive" | "trace" | "relation" | "all", sort: "relevance", first: first(url), after: url.searchParams.get("after") ?? undefined });
   if (joined === "trace/atlas") return repo.getTraceAtlas();
   if (joined === "trace/objects") return repo.listTraceObjects({ layer: (url.searchParams.get("layer") ?? "active") as "active" | "review" | "auxiliary", first: first(url), after: url.searchParams.get("after") ?? undefined });
   if (tail[0] === "trace" && tail[1] === "objects" && tail[2] && tail[3] === "neighborhood") return repo.getTraceNeighborhood(tail[2]);

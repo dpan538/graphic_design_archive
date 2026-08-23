@@ -15,7 +15,10 @@
     "capture:text-pages": "node scripts/capture-text-pages.js",
     "preview:cards": "next dev --hostname 127.0.0.1 --port 3036",
     "capture:cards": "node scripts/capture-cards.js",
-    "generate:archive-search": "node scripts/generate-archive-search-index.mjs",
+    "generate:search-v49": "node scripts/generate-search-v49.mjs",
+    "verify:search-v49-index": "node scripts/generate-search-v49.mjs --check",
+    "test:search-v49": "node --conditions=react-server scripts/test-search-v49.mjs",
+    "benchmark:search-v49": "node --expose-gc scripts/benchmark-search-v49.mjs",
     "verify:trace-visualization": "node scripts/verify-trace-visualization.mjs",
     "verify:home-archive-box": "node scripts/verify-home-archive-box.mjs",
     "verify:about-mobile": "node scripts/verify-about-mobile.mjs",
@@ -23,6 +26,9 @@
     "lint": "next lint",
     "typecheck:runtime": "tsc --project tsconfig.runtime-acceptance.json --pretty false",
     "test:read-platform": "node scripts/verify-read-platform-contract.mjs"
+  },
+  "engines": {
+    "node": "22.x"
   },
   "dependencies": {
     "d3-geo": "^3.1.1",

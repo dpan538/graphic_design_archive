@@ -1,0 +1,583 @@
+{
+  "schema": "gda-search-benchmark-v1",
+  "sourceSha": "c0ca9a1d4745cfd1054b924c648e57887830960d",
+  "sourceTreeHash": "f8ecd0046a4b8e3c1be657b2a31ac0b863f08ad0",
+  "releaseId": "v49-api-contract-fresh-c",
+  "releaseManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+  "indexSha256": "35a6b7e1f8b749fca0ebfda9cf84f265de58d69fe6ef2bac0a4a2a9d263b1522",
+  "algorithmVersion": "v49-lexical-fuzzy-1",
+  "environment": {
+    "node": "v22.21.0",
+    "unicode": "16.0",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "corpus": {
+    "canonical": 15923,
+    "publicSearchable": 7995,
+    "heldExcluded": 7928,
+    "indexedFields": [
+      "stableId",
+      "title"
+    ]
+  },
+  "evaluation": {
+    "totalQueries": 271,
+    "tuningQueries": 74,
+    "heldOutQueries": 197
+  },
+  "old": {
+    "positiveQueries": 173,
+    "top1": 0.3179190751445087,
+    "top5": 0.3236994219653179,
+    "recallAt10": 0.3236994219653179,
+    "mrrAt10": 0.3190751445086705,
+    "noResultQueries": 12,
+    "noResultPrecision": 1
+  },
+  "new": {
+    "positiveQueries": 173,
+    "top1": 1,
+    "top5": 1,
+    "recallAt10": 1,
+    "mrrAt10": 1,
+    "noResultQueries": 12,
+    "noResultPrecision": 1
+  },
+  "recovery": {
+    "prefixOld": 0.48,
+    "prefixNew": 1,
+    "typoOld": 0,
+    "typoNew": 1,
+    "multilingualOld": 0.1875,
+    "multilingualNew": 1
+  },
+  "performance": {
+    "readMs": 3.0227919999999955,
+    "parseMs": 2.8927089999999964,
+    "hydrateMs": 21.13479199999999,
+    "coldQueryMs": 88.831583,
+    "generationBuildMs": 1304.743042,
+    "indexRebuildDeterministic": true,
+    "candidateGeneration": {
+      "strategy": "fixed full public corpus",
+      "candidateCount": 7995,
+      "measuredSeparateMs": 0
+    },
+    "oldComputeMs": {
+      "p50": 0.6017090000004828,
+      "p95": 1.006083000000217,
+      "max": 7.36291700000038
+    },
+    "newComputeMs": {
+      "p50": 41.90174999999999,
+      "p95": 56.72666699999991,
+      "max": 189.3050000000003
+    },
+    "serializationMs": {
+      "p50": 0.016000000000531145,
+      "p95": 0.02920799999992596,
+      "max": 0.0885000000000673
+    },
+    "memory": {
+      "rssBytes": 183074816,
+      "heapUsedBytes": 37988760
+    },
+    "worst": [
+      {
+        "id": "Q069",
+        "category": "punctuation",
+        "query": "levi s the strongest thread",
+        "newMs": 189.3050000000003
+      },
+      {
+        "id": "Q202",
+        "category": "ordered_two_token",
+        "query": "technique forms",
+        "newMs": 83.37033300000076
+      },
+      {
+        "id": "Q159",
+        "category": "one_character_substitution",
+        "query": "premieobligaxjonslotteri",
+        "newMs": 79.16575000000012
+      },
+      {
+        "id": "Q077",
+        "category": "punctuation",
+        "query": "mascoutah kennel club dog show dogs from both continents",
+        "newMs": 77.09762499999943
+      },
+      {
+        "id": "Q179",
+        "category": "adjacent_transposition",
+        "query": "premieobligsajonslotteri",
+        "newMs": 73.56233400000019
+      },
+      {
+        "id": "Q198",
+        "category": "ordered_two_token",
+        "query": "alle salgsstedene",
+        "newMs": 63.82258299999921
+      },
+      {
+        "id": "Q056",
+        "category": "case",
+        "query": "TECHNIQUE OF WORKING ON SMALL FORMS",
+        "newMs": 63.69300000000021
+      },
+      {
+        "id": "Q063",
+        "category": "case",
+        "query": "MASCOUTAH KENNEL CLUB DOG SHOW. DOGS FROM BOTH CONTINENTS",
+        "newMs": 60.92554199999995
+      },
+      {
+        "id": "Q107",
+        "category": "latin_diacritic",
+        "query": "folkepartiets mal trygging av heim og arbeid er du samd i det røyst med f det nye folkepartiet",
+        "newMs": 60.33912499999951
+      },
+      {
+        "id": "Q086",
+        "category": "whitespace",
+        "query": "technique   of   working   on   small   forms",
+        "newMs": 57.62233300000025
+      }
+    ]
+  },
+  "artifact": {
+    "bytes": 1435371,
+    "gzipBytes": 256941,
+    "documentCount": 7995
+  },
+  "failureCandidates": [
+    {
+      "id": "Q115",
+      "category": "unique_prefix",
+      "query": "froh",
+      "expectedIds": [
+        "SURF-LOCTRACE2026I79FFABC798DD25"
+      ],
+      "observedTop5": [
+        "SURF-LOCTRACE2026I79FFABC798DD25",
+        "SURF-LOCTRACE2026I26EBBD7BA27C98",
+        "SURF-YALEPOSTERTRACE2026V1R0025",
+        "SURF-YALEPOSTERTRACE2026V1R0094",
+        "SURF-YALEPOSTERTRACE2026V1R0031"
+      ],
+      "expectedRank": 1,
+      "resultCount": 204,
+      "newMs": 43.75645900000018
+    },
+    {
+      "id": "Q113",
+      "category": "unique_prefix",
+      "query": "alle ",
+      "expectedIds": [
+        "SURF-NBPOSTERTRACE2026V1R0044"
+      ],
+      "observedTop5": [
+        "SURF-NBPOSTERTRACE2026V1R0044",
+        "SURF-LOCTRACE2026I66A545258C1B33",
+        "SURF-LOCTRACE2026R02039",
+        "SURF-MDAFATRACE2026R0024",
+        "SURF-CHWCONTEMP2026V1R0061"
+      ],
+      "expectedRank": 1,
+      "resultCount": 172,
+      "newMs": 53.731291000000056
+    },
+    {
+      "id": "Q119",
+      "category": "unique_prefix",
+      "query": "the ow",
+      "expectedIds": [
+        "SURF-VAM20K-01317"
+      ],
+      "observedTop5": [
+        "SURF-VAM20K-01317",
+        "SURF-ER1830R070",
+        "SURF-YALEPOSTERTRACE2026V1R0112",
+        "SURF-LOCTRACE2026R01468",
+        "SURF-MODERNAPITRACE2026R0168"
+      ],
+      "expectedRank": 1,
+      "resultCount": 108,
+      "newMs": 20.002207999999882
+    },
+    {
+      "id": "Q126",
+      "category": "unique_prefix",
+      "query": "pan ",
+      "expectedIds": [
+        "SURF-LOCTRACE2026I2A777BF54A61AD"
+      ],
+      "observedTop5": [
+        "SURF-LOCTRACE2026I2A777BF54A61AD",
+        "SURF-LOCTRACE2026R02360",
+        "SURF-MDAFATRACE2026R0077",
+        "SURF-LOCTRACE2026R00585",
+        "SURF-LOCTRACE2026I011061BD52C7D3"
+      ],
+      "expectedRank": 1,
+      "resultCount": 69,
+      "newMs": 13.861750000000029
+    },
+    {
+      "id": "Q130",
+      "category": "unique_prefix",
+      "query": "pend",
+      "expectedIds": [
+        "SURF-YALEPRODUCTTRACE2026V3R0057"
+      ],
+      "observedTop5": [
+        "SURF-YALEPRODUCTTRACE2026V3R0057",
+        "SURF-LOCTRACE2026R01321",
+        "SURF-LOCTRACE2026IF7D8F1D4068830",
+        "SURF-LOCTRACE2026R02250",
+        "SURF-LOCTRACE2026R00533"
+      ],
+      "expectedRank": 1,
+      "resultCount": 34,
+      "newMs": 39.93687499999942
+    },
+    {
+      "id": "Q133",
+      "category": "unique_prefix",
+      "query": "stori",
+      "expectedIds": [
+        "SURF-SPCBTRACE2026V1R0579"
+      ],
+      "observedTop5": [
+        "SURF-SPCBTRACE2026V1R0579",
+        "SURF-LOCTRACE2026IE0ECAEA13EDF22",
+        "SURF-NBPOSTERTRACE2026V1R0015",
+        "SURF-MODERNAPITRACE2026R0123",
+        "SURF-MODERNAPITRACE2026R0142"
+      ],
+      "expectedRank": 1,
+      "resultCount": 33,
+      "newMs": 44.32020800000009
+    },
+    {
+      "id": "Q123",
+      "category": "unique_prefix",
+      "query": "don t t",
+      "expectedIds": [
+        "SURF-NMKTRACE2026R00488"
+      ],
+      "observedTop5": [
+        "SURF-NMKTRACE2026R00488",
+        "SURF-HISTORICALAICTRACE2026V1R0123",
+        "SURF-LOCTRACE2026IBBEB8D3C40FFA0",
+        "SURF-VAM20K-01874",
+        "SURF-VAMYEARTRACEV2R0053"
+      ],
+      "expectedRank": 1,
+      "resultCount": 25,
+      "newMs": 14.496374999999716
+    },
+    {
+      "id": "Q125",
+      "category": "unique_prefix",
+      "query": "9 75",
+      "expectedIds": [
+        "SURF-NBPOSTERTRACE2026V1R0050"
+      ],
+      "observedTop5": [
+        "SURF-NBPOSTERTRACE2026V1R0050",
+        "SURF-LOCTRACE2026R02160",
+        "SURF-LOCTRACE2026R02198",
+        "SURF-LOCTRACE2026R02207",
+        "SURF-LOCTRACE2026I1D452E0DFB74A7"
+      ],
+      "expectedRank": 1,
+      "resultCount": 19,
+      "newMs": 10.78625000000011
+    },
+    {
+      "id": "Q127",
+      "category": "unique_prefix",
+      "query": "arun",
+      "expectedIds": [
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES"
+      ],
+      "observedTop5": [
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "SURF-LOCTRACE2026R01078",
+        "SURF-LOCTRACE2026I97E92EDAA8A4B0",
+        "SURF-LOCTRACE2026R02436",
+        "SURF-NBPOSTERTRACE2026V1R0314"
+      ],
+      "expectedRank": 1,
+      "resultCount": 14,
+      "newMs": 43.27124999999978
+    },
+    {
+      "id": "Q114",
+      "category": "unique_prefix",
+      "query": "the bra",
+      "expectedIds": [
+        "SURF-CGS2026R0670"
+      ],
+      "observedTop5": [
+        "SURF-CGS2026R0670",
+        "SURF-NBPOSTERTRACE2026V1R0129",
+        "SURF-NBPOSTERTRACE2026V1R0214",
+        "SURF-VAM20K-02814",
+        "SURF-YALEPRODUCTTRACE2026V3R0011"
+      ],
+      "expectedRank": 1,
+      "resultCount": 14,
+      "newMs": 18.531208999999762
+    },
+    {
+      "id": "Q124",
+      "category": "unique_prefix",
+      "query": "masc",
+      "expectedIds": [
+        "SURF-LOCTRACE2026I05C08973C33EE1"
+      ],
+      "observedTop5": [
+        "SURF-LOCTRACE2026I05C08973C33EE1",
+        "SURF-LOCTRACE2026IE3304CF3B51D72",
+        "SURF-LOCTRACE2026R01120",
+        "SURF-LOCTRACE2026R00347",
+        "SURF-LOCTRACE2026R00525"
+      ],
+      "expectedRank": 1,
+      "resultCount": 13,
+      "newMs": 42.93866700000035
+    },
+    {
+      "id": "Q142",
+      "category": "unique_middle_substring",
+      "query": "an never",
+      "expectedIds": [
+        "SURF-LOCTRACE2026R00949"
+      ],
+      "observedTop5": [
+        "SURF-LOCTRACE2026R00949",
+        "SURF-LOCTRACE2026R01161",
+        "SURF-LOCTRACE2026R00884",
+        "SURF-MODERNAPITRACE2026R0079",
+        "SURF-MDA2026V2R0418"
+      ],
+      "expectedRank": 1,
+      "resultCount": 9,
+      "newMs": 32.55699999999979
+    },
+    {
+      "id": "Q117",
+      "category": "unique_prefix",
+      "query": "techni",
+      "expectedIds": [
+        "SURF-NMKTRACE2026R00308"
+      ],
+      "observedTop5": [
+        "SURF-NMKTRACE2026R00308",
+        "SURF-MODERNAPITRACE2026R0054",
+        "SURF-MODERNAPITRACE2026R0055",
+        "SURF-LOCTRACE2026IEFF730A981A168",
+        "SURF-SPCMTRACE2026V1R0159"
+      ],
+      "expectedRank": 1,
+      "resultCount": 6,
+      "newMs": 50.51970900000015
+    },
+    {
+      "id": "Q182",
+      "category": "adjacent_transposition",
+      "query": "komemt",
+      "expectedIds": [
+        "SURF-NBPOSTERTRACE2026V1R0044"
+      ],
+      "observedTop5": [
+        "SURF-NBPOSTERTRACE2026V1R0044",
+        "SURF-LOCTRACE2026R01420",
+        "SURF-LOCTRACE2026R01421",
+        "SURF-LOCTRACE2026R01074",
+        "SURF-LOCTRACE2026I5F4455B8CA12CB"
+      ],
+      "expectedRank": 1,
+      "resultCount": 5,
+      "newMs": 41.50929199999882
+    },
+    {
+      "id": "Q190",
+      "category": "adjacent_transposition",
+      "query": "strkening",
+      "expectedIds": [
+        "SURF-NBPOSTERTRACE2026V1R0044"
+      ],
+      "observedTop5": [
+        "SURF-NBPOSTERTRACE2026V1R0044",
+        "SURF-NBPOSTERTRACE2026V1R0019",
+        "SURF-NBPOSTERTRACE2026V1R0272",
+        "SURF-NBPOSTERTRACE2026V1R0014"
+      ],
+      "expectedRank": 1,
+      "resultCount": 4,
+      "newMs": 56.027000000000044
+    },
+    {
+      "id": "Q170",
+      "category": "one_character_substitution",
+      "query": "strexning",
+      "expectedIds": [
+        "SURF-NBPOSTERTRACE2026V1R0044"
+      ],
+      "observedTop5": [
+        "SURF-NBPOSTERTRACE2026V1R0044",
+        "SURF-NBPOSTERTRACE2026V1R0019",
+        "SURF-NBPOSTERTRACE2026V1R0272",
+        "SURF-NBPOSTERTRACE2026V1R0014"
+      ],
+      "expectedRank": 1,
+      "resultCount": 4,
+      "newMs": 55.7114160000001
+    },
+    {
+      "id": "Q131",
+      "category": "unique_prefix",
+      "query": "elna",
+      "expectedIds": [
+        "SURF-LOCTRACE2026I2F35744A3B29CD"
+      ],
+      "observedTop5": [
+        "SURF-LOCTRACE2026I2F35744A3B29CD",
+        "SURF-NMKTRACE2026R00458",
+        "SURF-LOCTRACE2026R00474",
+        "SURF-NBPOSTERTRACE2026V2R0096"
+      ],
+      "expectedRank": 1,
+      "resultCount": 4,
+      "newMs": 43.21799999999985
+    },
+    {
+      "id": "Q231",
+      "category": "incomplete_multi_token",
+      "query": "forf brei",
+      "expectedIds": [
+        "SURF-NBPOSTERTRACE2026V1R0266"
+      ],
+      "observedTop5": [
+        "SURF-NBPOSTERTRACE2026V1R0266",
+        "SURF-NBPOSTERTRACE2026V2R0026",
+        "SURF-NBPOSTERTRACE2026V2R0156"
+      ],
+      "expectedRank": 1,
+      "resultCount": 3,
+      "newMs": 45.15391699999964
+    },
+    {
+      "id": "Q233",
+      "category": "incomplete_multi_token",
+      "query": "cosi post",
+      "expectedIds": [
+        "SURF-VAM20K-01688"
+      ],
+      "observedTop5": [
+        "SURF-VAM20K-01688",
+        "SURF-SPCTRACE2026V2R0105",
+        "SURF-LOCTRACE2026R00298"
+      ],
+      "expectedRank": 1,
+      "resultCount": 3,
+      "newMs": 42.1668750000008
+    },
+    {
+      "id": "Q196",
+      "category": "ordered_two_token",
+      "query": "nous commun",
+      "expectedIds": [
+        "SURF-LOCTRACE2026R01999"
+      ],
+      "observedTop5": [
+        "SURF-LOCTRACE2026R01999",
+        "SURF-LOCTRACE2026R00376"
+      ],
+      "expectedRank": 1,
+      "resultCount": 2,
+      "newMs": 46.534959000000526
+    },
+    {
+      "id": "Q158",
+      "category": "one_character_substitution",
+      "query": "spixle",
+      "expectedIds": [
+        "SURF-NBPOSTERTRACE2026V1R0044"
+      ],
+      "observedTop5": [
+        "SURF-NBPOSTERTRACE2026V1R0044",
+        "SURF-LOCTRACE2026R01932"
+      ],
+      "expectedRank": 1,
+      "resultCount": 2,
+      "newMs": 43.740082999999686
+    },
+    {
+      "id": "Q172",
+      "category": "one_character_substitution",
+      "query": "selxes",
+      "expectedIds": [
+        "SURF-NBPOSTERTRACE2026V1R0044"
+      ],
+      "observedTop5": [
+        "SURF-NBPOSTERTRACE2026V1R0044",
+        "SURF-YALEPOSTERTRACE2026V1R0030"
+      ],
+      "expectedRank": 1,
+      "resultCount": 2,
+      "newMs": 42.78495800000019
+    },
+    {
+      "id": "Q171",
+      "category": "one_character_substitution",
+      "query": "obligaxjonene",
+      "expectedIds": [
+        "SURF-NBPOSTERTRACE2026V1R0044"
+      ],
+      "observedTop5": [
+        "SURF-NBPOSTERTRACE2026V1R0044",
+        "SURF-NBPOSTERTRACE2026V1R0019"
+      ],
+      "expectedRank": 1,
+      "resultCount": 2,
+      "newMs": 40.150165999999444
+    },
+    {
+      "id": "Q264",
+      "category": "ambiguous_short_manual",
+      "query": "1",
+      "expectedIds": [],
+      "observedTop5": [
+        "SURF-LOCTRACE2026ID489D71D4FF22E",
+        "SURF-LOCTRACE2026I26EBBD7BA27C98",
+        "SURF-LOCTRACE2026I2F296324135CE6",
+        "SURF-LOCTRACE2026R01399",
+        "SURF-BNDCLTRACE2026V1R0068"
+      ],
+      "expectedRank": 0,
+      "resultCount": 3392,
+      "newMs": 8.518458000000464
+    },
+    {
+      "id": "Q258",
+      "category": "ambiguous_short_manual",
+      "query": "an",
+      "expectedIds": [],
+      "observedTop5": [
+        "SURF-VAM20K-00547",
+        "SURF-LOCTRACE2026R00538",
+        "SURF-VAM20K-02790",
+        "SURF-VAM20K-02791",
+        "SURF-VAMMODERNTRACE2026R0086"
+      ],
+      "expectedRank": 0,
+      "resultCount": 1966,
+      "newMs": 13.04437500000131
+    }
+  ]
+}

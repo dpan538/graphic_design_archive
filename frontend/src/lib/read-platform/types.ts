@@ -39,6 +39,7 @@ export interface PageRequest { first?: number; after?: string }
 export interface Page<T> {
   nodes: readonly T[];
   pageInfo: { hasNextPage: boolean; nextCursor: string | null; totalExact?: number };
+  searchMetadata?: { algorithmVersion: string; indexFormatVersion: string; indexSha256: string };
 }
 export type RepoResult<T> =
   | { ok: true; data: T; version: ArchiveVersionRef }
@@ -59,7 +60,16 @@ export interface SurfaceDetail extends SurfaceSummary {
   folderIds: readonly string[];
   description: string | null;
 }
-export interface SearchHit { kind: "archive"; route: string; highlight: string; surface: SurfaceSummary }
+export type SearchMatchType = "identifier" | "exact_title" | "normalized_title" | "prefix" | "substring" | "multi_token" | "typo";
+export interface SearchMatchExplanation {
+  algorithmVersion: string;
+  score: number;
+  matchType: SearchMatchType;
+  matchedFields: readonly ("stableId" | "title")[];
+  signals: readonly string[];
+  normalizedQuery: string;
+}
+export interface SearchHit { kind: "archive"; route: string; highlight: string; surface: SurfaceSummary; explanation?: SearchMatchExplanation }
 export interface TraceAtlas { namedUnits: readonly { id: string; label: string; totalExact: number }[]; totalExact: 0; message: string }
 export interface TraceObjectSummary { objectId: string; layer: "active" | "review" | "auxiliary"; corpusVersion: string; title: string }
 export interface TraceGraph { objectId: string; nodes: readonly never[]; edges: readonly never[] }
@@ -68,5 +78,5 @@ export interface SemanticRelation { id: string }
 export interface ResearchClaim { id: string }
 export interface ResearchCorpus { version: string; totalExact: number }
 export interface FolderQuery { type?: string }
-export interface ArchiveSearchQuery { q: string; scope?: "archive" | "trace" | "relation" | "all"; sort?: "title" }
+export interface ArchiveSearchQuery { q: string; scope?: "archive" | "trace" | "relation" | "all"; sort?: "title" | "relevance" }
 export interface TraceObjectQuery { layer?: "active" | "review" | "auxiliary" }

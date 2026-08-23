@@ -1,0 +1,19 @@
+source_id	type	title	url_or_path	accessed_at	used_for	notes
+SRC-001	standard	Unicode Standard Annex #15: Unicode Normalization Forms	https://www.unicode.org/reports/tr15/	2026-08-23	NFC/NFKC policy	Canonical versus compatibility equivalence and normalization stability
+SRC-002	standard	Unicode Technical Standard #18: Unicode Regular Expressions	https://www.unicode.org/reports/tr18/	2026-08-23	Unicode properties and case matching	Primary Unicode regex reference
+SRC-003	standard	Unicode Standard Annex #29: Unicode Text Segmentation	https://www.unicode.org/reports/tr29/	2026-08-23	CJK segmentation decision	Default word boundaries require language tailoring
+SRC-004	standard	ECMAScript 2024 Internationalization API	https://tc39.es/ecma402/2024/	2026-08-23	Intl.Segmenter determinism decision	Locale data and some behavior are implementation-dependent
+SRC-005	standard	ECMAScript 2024 text processing	https://tc39.es/ecma262/2024/multipage/text-processing.html	2026-08-23	String normalization and case operations	Runtime language contract
+SRC-006	standard	Unicode Technical Standard #39: Unicode Security Mechanisms	https://www.unicode.org/reports/tr39/	2026-08-23	Reject cross-script confusable folding	Confusable handling reference
+SRC-007	official_documentation	PostgreSQL pg_trgm	https://www.postgresql.org/docs/17/pgtrgm.html	2026-08-23	Architecture Option A/C research	Trigram similarity and index capabilities; not enabled by this round
+SRC-008	official_documentation	SQLite FTS5 Extension	https://www.sqlite.org/fts5.html	2026-08-23	Architecture alternatives	Token/full-text alternative; not selected
+SRC-009	paper	A Technique for Computer Detection and Correction of Spelling Errors	https://doi.org/10.1145/363958.363994	2026-08-23	Edit-distance research	Damerau 1964; production accurately claims bounded OSA, not unrestricted DL
+SRC-010	paper	Algorithms for Approximate String Matching	https://www.cs.helsinki.fi/u/ukkonen/JAlg.pdf	2026-08-23	Bounded edit-distance research	Early termination and approximate matching background
+SRC-011	official_documentation	Node.js performance hooks	https://nodejs.org/api/perf_hooks.html	2026-08-23	Benchmark timing	performance.now measurements
+SRC-012	official_documentation	Node.js zlib	https://nodejs.org/api/zlib.html	2026-08-23	Compressed artifact size	gzipSync level 9 measurement
+SRC-013	internal_release_receipt	v49 frozen database receipt	database/FREEZE_V49.json	2026-08-23	release identity and counts	Canonical 15923; eligible 7995; held 7928
+SRC-014	internal_audit	v49 API closure executive receipt	docs/audits/v49-api-read-contract-closure/00_EXECUTIVE_RECEIPT.md	2026-08-23	public/searchable count	API visible and searchable both 7995
+SRC-015	internal_code	v49 release projection builder	database/functions/019_release_projection_snapshot_db_closure.sql	2026-08-23	eligibility boundary	Selects corpus membership disposition eligible
+SRC-016	internal_code	Baseline PostgreSQL search repository	frontend/src/lib/read-platform/server/postgres-repository.ts	2026-08-23	current-search audit	Literal lowercase title substring and title keyset order
+SRC-017	internal_measurement	v49 API runtime profile	docs/statistics/v49-api-runtime-profile.csv	2026-08-23	baseline latency	Existing literal endpoint measurement
+SRC-018	internal_generated_evidence	Search v49 benchmark results	docs/audits/v49-search-fuzzy-round1/benchmark-results.json	2026-08-23	quality/performance decision	271 deterministic real-record-derived cases

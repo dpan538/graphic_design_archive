@@ -1,0 +1,14 @@
+.workspace { max-width: 72rem; }
+.intro { max-width: 52rem; }
+.form { max-width: 56rem; }
+.form small { display: block; color: var(--ink-soft); }
+.secondaryButton { color: var(--ink) !important; background: var(--paper) !important; }
+.invalid { color: #9b241d !important; font-weight: 700; }
+.status { min-height: 2rem; max-width: 56rem; }
+.results { max-width: 56rem; }
+.meta { display: flex; flex-wrap: wrap; gap: .5rem 1rem; margin-top: .45rem; color: var(--ink-soft); font: .72rem var(--font-plex-mono), ui-monospace, monospace; text-transform: uppercase; }
+.meta code { color: inherit; font: inherit; text-transform: none; overflow-wrap: anywhere; }
+.reason { color: var(--ink-soft); font-size: .82rem; }
+.loadMore { min-height: 48px; padding: .6rem 1rem; border: 1px solid var(--ink); color: var(--paper); background: var(--ink); font: .9rem var(--font-plex-mono), ui-monospace, monospace; }
+.algorithm { max-width: 56rem; margin-top: 2rem; color: var(--ink-soft); font-size: .78rem; }
+@media (max-width: 640px) { .form > div { flex-wrap: wrap; } .form input { flex-basis: 100%; } .form button { flex: 1; } }

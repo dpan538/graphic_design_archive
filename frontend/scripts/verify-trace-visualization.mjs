@@ -54,7 +54,7 @@ const aliases = {
 const atlas = await readJson(join(root, "public/data/trace-v48/atlas.json"));
 const catalogPayload = await readJson(join(root, "public", atlas.assets.catalog));
 const catalog = decodeCompact(catalogPayload);
-const archiveSearch = await readJson(join(root, "public/data/archive-search-v1.json"));
+const archiveSearch = await readJson(join(root, "generated/search-v49/documents.json"));
 const worldPath = require.resolve("world-atlas/countries-50m.json");
 const topology = await readJson(worldPath);
 const countries = feature(topology, topology.objects.countries);
@@ -116,11 +116,11 @@ const checks = {
   taxonomy_counts_match_atlas: taxonomyMismatches.length === 0,
   real_map_geometry_present: countries.features.length >= 200,
   archive_search_index_is_consistent:
-    archiveSearch.version === "archive-search-v1"
-    && archiveSearch.count === archiveSearch.items.length
-    && archiveSearch.items.every((item) => item.length === archiveSearch.schema.length),
+    archiveSearch.format === "gda-search-documents-v1"
+    && archiveSearch.documents.length === 7995
+    && archiveSearch.documents.every((item) => item.length === archiveSearch.schema.length),
   archive_search_surface_ids_are_unique:
-    new Set(archiveSearch.items.map((item) => item[0])).size === archiveSearch.items.length,
+    new Set(archiveSearch.documents.map((item) => item[0])).size === archiveSearch.documents.length,
   trace_shell_avoids_large_archive_mock:
     !primitivesText.includes("@/lib/archive-data")
     && !shellSearchText.includes("@/lib/archive-data")
@@ -204,7 +204,7 @@ console.log(JSON.stringify({
     mappedObjects: catalog.length - unmappedObjects,
     unmappedObjects,
     unmappedRegionLabels: unmapped,
-    archiveSearchSurfaces: archiveSearch.items.length,
+    archiveSearchSurfaces: archiveSearch.documents.length,
     friendlyTreeLabels: friendlyTreeCodes.size,
   },
   taxonomyMismatches,

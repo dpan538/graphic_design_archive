@@ -133,6 +133,20 @@ export default function ArchiveShell({
   }, [menuOpen]);
 
   useEffect(() => {
+    if (!searchOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      event.preventDefault();
+      setSearchOpen(false);
+      const button = [desktopSearchButtonRef.current, mobileSearchButtonRef.current]
+        .find((candidate) => candidate && candidate.offsetParent !== null);
+      button?.focus();
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [searchOpen]);
+
+  useEffect(() => {
     if (!searchOpen) {
       setSearchFrame(null);
       return;
@@ -305,6 +319,8 @@ export default function ArchiveShell({
           className={`nav-icon ${shellStyles.semanticNavItem}`}
           data-active={searchOpen}
           aria-label="Search"
+          aria-expanded={searchOpen}
+          aria-controls="archive-search-panel"
           onClick={() => {
             setLeftPanelOpen(false);
             setPanelOpen(false);
@@ -386,6 +402,8 @@ export default function ArchiveShell({
               className={`nav-icon ${shellStyles.semanticNavItem} ${shellStyles.mobileNavItem}`}
               data-active={searchOpen}
               aria-label="Search"
+              aria-expanded={searchOpen}
+              aria-controls="archive-search-panel"
               onClick={() => {
                 setMenuOpen(false);
                 setLeftPanelOpen(false);

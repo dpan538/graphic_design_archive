@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import ArchiveShell from "@/components/archive/shell/ArchiveShell";
-import { SearchReadSlice } from "@/components/archive/read-platform/ReadPlatformViews";
+import SearchWorkspace from "@/features/search-v49/ui/SearchWorkspace";
 
 export const metadata: Metadata = {
-  title: "Search archive and TRACE — Modern Graphic Design History",
-  description: "A full search workspace across published design records, active TRACE objects and normalized relation types.",
+  title: "Search the public v49 archive — Modern Graphic Design History",
+  description: "Deterministic multilingual lexical search over 7,995 rights-safe public archive records.",
 };
 
 export default function SearchPage() {
-  return <ArchiveShell activeNav="search" mainScroll main={<SearchReadSlice />} />;
+  return <ArchiveShell activeNav="search" mainScroll main={<Suspense fallback={<p className="read-platform" role="status">Loading search…</p>}><SearchWorkspace /></Suspense>} />;
 }

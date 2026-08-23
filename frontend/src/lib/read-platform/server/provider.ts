@@ -1,6 +1,7 @@
 import "server-only";
 
 import type { ArchiveRepositoryProvider } from "../repository";
+import { DerivedV49ArchiveRepositoryProvider } from "@/features/search-v49/server/derived-repository";
 import { FixtureArchiveRepositoryProvider } from "./fixture";
 
 /** Server-only composition root. There is no browser fallback or mode probing. */
@@ -10,5 +11,6 @@ export function getArchiveRepositoryProvider(): ArchiveRepositoryProvider {
     if (process.env.NODE_ENV === "production") throw new Error("fixture repository is forbidden in production");
     return new FixtureArchiveRepositoryProvider();
   }
-  throw new Error("ARCHIVE_REPOSITORY_MODE must explicitly select a configured production repository");
+  if (!mode || mode === "derived-v49") return new DerivedV49ArchiveRepositoryProvider();
+  throw new Error("ARCHIVE_REPOSITORY_MODE must be derived-v49 or the non-production fixture mode");
 }
