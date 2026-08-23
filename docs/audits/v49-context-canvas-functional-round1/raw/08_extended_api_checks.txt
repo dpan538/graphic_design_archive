@@ -1,0 +1,10 @@
+COMMAND: npm run typecheck:runtime
+WORKING_DIRECTORY: frontend
+EXIT_STATUS: 0
+RESULT: PASS
+
+COMMAND: node scripts/verify-page-by-key-module-contract.mjs
+WORKING_DIRECTORY: frontend
+EXIT_STATUS: 0
+OUTPUT:
+{"status":"PASS","pageByKeyRuntimeType":"function","definitionFile":"/private/tmp/graphic_design_archive_v49_context_canvas_functional_round1/frontend/src/lib/read-platform/pagination.ts","productionImportFile":"/private/tmp/graphic_design_archive_v49_context_canvas_functional_round1/frontend/src/lib/read-platform/server/postgres-repository.ts","knownKey":"PASS","unknownKey":"PASS:INVALID_CURSOR"}

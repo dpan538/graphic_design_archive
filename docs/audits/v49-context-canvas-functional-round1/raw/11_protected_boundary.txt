@@ -1,0 +1,7 @@
+COMMAND: git diff --name-only c5f4e794580607116206a9986ac6a549257f3bd2 -- <protected paths>
+WORKING_DIRECTORY: repository root
+EXIT_STATUS: 0
+OUTPUT: (none)
+
+Protected paths checked: database, docs/api, Search index/feature, current /trace page, legacy trace-v48 data/visualization, Spacetime, Sources, ArchiveShell, package.json, and package-lock.json.
+RESULT: PROTECTED_BOUNDARY=PASS

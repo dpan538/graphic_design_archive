@@ -1,0 +1,127 @@
+import type { TraceContextDataset } from "../types";
+import { autoArrangeContextCanvas } from "./layout";
+import {
+  contextCanvasEntityId,
+  type ContextCanvasComposition,
+  type ContextCanvasEntityId,
+  type ContextCanvasTemplateId,
+} from "./types";
+
+export interface ContextCanvasTemplateContract {
+  readonly templateId: ContextCanvasTemplateId;
+  readonly version: 1;
+  readonly label: string;
+  readonly description: string;
+  readonly entitySelectionRule:
+    | "overview-with-capacity"
+    | "controlled-assignment-context"
+    | "curated-membership-context"
+    | "all-published-context";
+  readonly initialLayoutRule: "typed-lanes-v1";
+  readonly defaultZoomBehavior: "fit-content";
+}
+
+export const CONTEXT_CANVAS_TEMPLATES: readonly ContextCanvasTemplateContract[] = Object.freeze([
+  Object.freeze({
+    templateId: "context-overview",
+    version: 1,
+    label: "Context overview",
+    description: "Selected object with a representative cross-section of its available context.",
+    entitySelectionRule: "overview-with-capacity",
+    initialLayoutRule: "typed-lanes-v1",
+    defaultZoomBehavior: "fit-content",
+  }),
+  Object.freeze({
+    templateId: "descriptive-context",
+    version: 1,
+    label: "Descriptive context",
+    description: "Selected object and available controlled assignments.",
+    entitySelectionRule: "controlled-assignment-context",
+    initialLayoutRule: "typed-lanes-v1",
+    defaultZoomBehavior: "fit-content",
+  }),
+  Object.freeze({
+    templateId: "curated-context",
+    version: 1,
+    label: "Curated context",
+    description: "Selected object and curated memberships or research pathways.",
+    entitySelectionRule: "curated-membership-context",
+    initialLayoutRule: "typed-lanes-v1",
+    defaultZoomBehavior: "fit-content",
+  }),
+  Object.freeze({
+    templateId: "full-context",
+    version: 1,
+    label: "Full context",
+    description: "Every available entity and validated connection in this Context dataset.",
+    entitySelectionRule: "all-published-context",
+    initialLayoutRule: "typed-lanes-v1",
+    defaultZoomBehavior: "fit-content",
+  }),
+]);
+
+export function getContextCanvasTemplate(
+  templateId: ContextCanvasTemplateId,
+): ContextCanvasTemplateContract {
+  const template = CONTEXT_CANVAS_TEMPLATES.find((item) => item.templateId === templateId);
+  if (!template) throw new Error(`Unknown Context Canvas template: ${templateId}`);
+  return template;
+}
+
+function sorted(values: Iterable<ContextCanvasEntityId>): readonly ContextCanvasEntityId[] {
+  return Object.freeze([...new Set(values)].sort((left, right) => left.localeCompare(right, "en")));
+}
+
+function controlledEntityIds(dataset: TraceContextDataset): readonly ContextCanvasEntityId[] {
+  return sorted(dataset.controlledAssignments.flatMap((item) => [
+    contextCanvasEntityId(item.subject),
+    contextCanvasEntityId(item.value),
+  ]));
+}
+
+function curatedEntityIds(dataset: TraceContextDataset): readonly ContextCanvasEntityId[] {
+  return sorted(dataset.curatedMemberships.flatMap((item) => [
+    contextCanvasEntityId(item.member),
+    contextCanvasEntityId(item.container),
+  ]));
+}
+
+function allEntityIds(dataset: TraceContextDataset): readonly ContextCanvasEntityId[] {
+  return sorted(dataset.items.map(contextCanvasEntityId));
+}
+
+export function selectContextCanvasTemplateEntities(
+  dataset: TraceContextDataset,
+  templateId: ContextCanvasTemplateId,
+): readonly ContextCanvasEntityId[] {
+  const rootId = contextCanvasEntityId(dataset.selectedRecord);
+  switch (templateId) {
+    case "descriptive-context":
+      return sorted([rootId, ...controlledEntityIds(dataset)]);
+    case "curated-context":
+      return sorted([rootId, ...curatedEntityIds(dataset)]);
+    case "full-context":
+      return allEntityIds(dataset);
+    case "context-overview": {
+      const all = allEntityIds(dataset);
+      if (all.length <= 16) return all;
+      const controlled = controlledEntityIds(dataset).filter((id) => id !== rootId).slice(0, 6);
+      const curated = curatedEntityIds(dataset).filter((id) => id !== rootId).slice(0, 6);
+      return sorted([rootId, ...controlled, ...curated]);
+    }
+  }
+}
+
+export function initializeContextCanvasTemplate(
+  dataset: TraceContextDataset,
+  templateId: ContextCanvasTemplateId,
+): ContextCanvasComposition {
+  const template = getContextCanvasTemplate(templateId);
+  const visibleEntityIds = selectContextCanvasTemplateEntities(dataset, templateId);
+  return Object.freeze({
+    templateId,
+    templateVersion: template.version,
+    visibleEntityIds,
+    positions: autoArrangeContextCanvas(dataset, visibleEntityIds),
+  });
+}

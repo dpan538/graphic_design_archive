@@ -1,0 +1,5 @@
+COMMAND: node scripts/verify-trace-v49-preprogram.mjs
+WORKING_DIRECTORY: frontend
+EXIT_STATUS: 0
+
+TRACE_V49_PREPROGRAM_TESTS=PASS CHECKS=19 INVARIANTS=16

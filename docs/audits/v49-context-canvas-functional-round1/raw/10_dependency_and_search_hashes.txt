@@ -1,0 +1,10 @@
+COMMAND: shasum -a 256 frontend/package.json frontend/package-lock.json frontend/generated/search-v49/manifest.json frontend/generated/search-v49/documents.json
+WORKING_DIRECTORY: repository root
+EXIT_STATUS: 0
+
+02adf3b4d759c788bf544a910fc727c082d503a02dda33e756b347de7f8087d7  frontend/package.json
+8d6d8186a7344f595aa152f682c863fb0edaac422771cd4d291a9e0feb6b61b6  frontend/package-lock.json
+320dd6ffa0219bdbaf181534dcb27c8d7286b93b9f73a80c4a0f35d458111012  frontend/generated/search-v49/manifest.json
+35a6b7e1f8b749fca0ebfda9cf84f265de58d69fe6ef2bac0a4a2a9d263b1522  frontend/generated/search-v49/documents.json
+
+RESULT: dependency manifests and Search artifacts unchanged from source.

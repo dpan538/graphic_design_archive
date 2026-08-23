@@ -13,7 +13,7 @@ git show v49-data-api-closure-20260821:PROJECT_LOG.md
 - Immutable annotated tag: `v49-data-api-closure-20260821`.
 - Schema SHA-256: `df1e7741e59e5e6bf1ca80f2a33edfad1abb2fc6d95b57d4d6993b49917020dd`.
 - Release projection digest: `11d92b70bd3a87113d4daabac2b5e4e38a3416cc55be894b42b0dd3d072ca640`.
-- Canonical objects / assignments: 15,923 / 47,982.
+- Canonical objects / proposed curated folder-membership assignments: 15,923 / 47,982.
 - Eligible / held: 7,995 / 7,928.
 - Accepted TRACE / positive visual rights: 0 / 0.
 - Public Read API templates: 18; all tested with no 5xx/search 503.
@@ -38,3 +38,31 @@ git show v49-data-api-closure-20260821:PROJECT_LOG.md
 - Database freeze: `database/FROZEN_V49.md`
 - Read API: `docs/api/v49-read-api-catalog.md`
 
+## TRACE interface direction — 2026-08-23
+
+### Context Canvas
+
+- Confirmed as the first TRACE implementation: an ERD-style interactive research canvas with typed entities and typed connections.
+- Initialize from deterministic templates; provide a sidebar entity palette, drag/add, automatic connections from validated context data, pan/zoom/reposition, auto-layout, inspector, and PNG export.
+- Do not permit manual historical-relation creation. Canvas and layout edits are local composition only; canonical data remain read-only.
+- Final typography, color, spacing, visual language, and component styling are deferred to the later frontend redesign.
+
+### Spacetime
+
+- Confirmed as the second TRACE direction: map-first, with exactly one selected time layer/bucket at a time for v1 and a discrete selector rather than autoplay.
+- Use governed aggregate geographic marks; selecting geography reveals matching recorded objects.
+- Parameter inventory and geography/time governance are next. No map implementation belongs in this round.
+
+### Exploration Field
+
+- Confirmed as the third TRACE research direction: an exploratory pixel-grid/generative field driven by similarity, probability-like signals, and ambient factors.
+- Use seeded deterministic randomness; approximately 8–10 template families are currently envisioned, with theme, medium, and similar single-factor selections able to drive exploration.
+- Derived associations are not historical relations. Data mining remains active; do not freeze factors, scoring, or the template catalog yet.
+
+`CONTEXT_CANVAS=FUNCTIONAL_IMPLEMENTATION_ACTIVE`
+
+`SPACETIME=PARAMETER_GOVERNANCE_NEXT`
+
+`EXPLORATION_FIELD=OPEN_ENDED_DATA_MINING`
+
+`FINAL_TRACE_VISUAL_DESIGN=DEFERRED`

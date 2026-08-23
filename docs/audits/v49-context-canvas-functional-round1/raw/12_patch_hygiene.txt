@@ -1,0 +1,11 @@
+COMMAND: git diff --check
+WORKING_DIRECTORY: repository root
+EXIT_STATUS: 0
+OUTPUT: (none)
+
+COMMAND: task-owned text hygiene scan (trailing whitespace and final newline)
+WORKING_DIRECTORY: repository root
+EXIT_STATUS: 0
+OUTPUT: TASK_FILE_TEXT_HYGIENE=PASS FILES=48
+
+RESULT: PATCH_HYGIENE=PASS
