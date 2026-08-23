@@ -14,7 +14,7 @@ interface ContextCanvasInspectorProps {
 }
 
 function refLabel(ref: Readonly<{ stableId: string; label?: string }>): string {
-  return ref.label?.trim() || ref.stableId;
+  return ref.label && ref.label.trim() ? ref.label : ref.stableId;
 }
 
 export function ContextCanvasInspector({
@@ -35,6 +35,7 @@ export function ContextCanvasInspector({
   const selectedConnection = selection?.kind === "connection"
     ? connections.find((item) => item.id === selection.id)
     : undefined;
+  const selectedRefIsRoot = selection?.kind === "node" && selection.id === rootId;
 
   return (
     <aside className={`${styles.inspector} ${collapsed ? styles.panelCollapsed : ""}`} aria-label="Context Canvas inspector">
@@ -67,11 +68,14 @@ export function ContextCanvasInspector({
               <h3>{refLabel(selectedRef)}</h3>
               <dl className={styles.inspectorFields}>
                 <div><dt>Kind</dt><dd>{selectedRef.kind}</dd></div>
-                <div><dt>Stable public reference</dt><dd>{selectedRef.stableId}</dd></div>
+                <div>
+                  <dt>{selectedRefIsRoot ? "Stable public reference" : "Validation-only identifier"}</dt>
+                  <dd>{selectedRef.stableId}</dd>
+                </div>
                 <div><dt>Availability</dt><dd>{dataset.availability.state}</dd></div>
-                <div><dt>Canvas status</dt><dd>{selection.id === rootId ? "visible · selected root" : "visible"}</dd></div>
+                <div><dt>Canvas status</dt><dd>{selectedRefIsRoot ? "visible · selected root" : "visible"}</dd></div>
               </dl>
-              {selection.id !== rootId ? (
+              {!selectedRefIsRoot ? (
                 <button type="button" className={styles.removeButton} onClick={() => onHideEntity(selection.id)}>
                   Remove from canvas
                 </button>

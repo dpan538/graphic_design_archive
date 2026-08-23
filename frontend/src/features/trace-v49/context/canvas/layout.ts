@@ -1,4 +1,3 @@
-import type { TracePublicDataRef } from "../../domain";
 import type { TraceContextDataset } from "../types";
 import {
   CONTEXT_CANVAS_MAX_ZOOM,
@@ -23,16 +22,8 @@ const LANE_X = Object.freeze({
 const LANE_Y = 72;
 const LANE_GAP_Y = 136;
 
-function compareEntityIds(
-  refs: ReadonlyMap<ContextCanvasEntityId, TracePublicDataRef>,
-  left: ContextCanvasEntityId,
-  right: ContextCanvasEntityId,
-): number {
-  const leftRef = refs.get(left);
-  const rightRef = refs.get(right);
-  const leftLabel = leftRef?.label?.trim() || leftRef?.stableId || left;
-  const rightLabel = rightRef?.label?.trim() || rightRef?.stableId || right;
-  return leftLabel.localeCompare(rightLabel, "en") || left.localeCompare(right, "en");
+function compareEntityIds(left: ContextCanvasEntityId, right: ContextCanvasEntityId): number {
+  return left < right ? -1 : left > right ? 1 : 0;
 }
 
 export function autoArrangeContextCanvas(
@@ -40,7 +31,6 @@ export function autoArrangeContextCanvas(
   visibleEntityIds: readonly ContextCanvasEntityId[],
 ): Readonly<Record<ContextCanvasEntityId, ContextCanvasPosition>> {
   const visible = new Set(visibleEntityIds);
-  const refs = new Map(dataset.items.map((item) => [contextCanvasEntityId(item), item]));
   const rootId = contextCanvasEntityId(dataset.selectedRecord);
   const controlled = new Set(
     dataset.controlledAssignments.map((item) => contextCanvasEntityId(item.value)),
@@ -72,7 +62,7 @@ export function autoArrangeContextCanvas(
 
   const positions: Record<ContextCanvasEntityId, ContextCanvasPosition> = {};
   for (const lane of Object.keys(lanes) as Array<keyof typeof lanes>) {
-    const sorted = [...lanes[lane]].sort((left, right) => compareEntityIds(refs, left, right));
+    const sorted = [...lanes[lane]].sort(compareEntityIds);
     sorted.forEach((entityId, index) => {
       positions[entityId] = Object.freeze({
         x: LANE_X[lane],

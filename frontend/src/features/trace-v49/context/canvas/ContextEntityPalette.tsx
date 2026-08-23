@@ -1,5 +1,10 @@
 import { useMemo, type PointerEvent } from "react";
 import type { TracePublicDataRef } from "../../domain";
+import {
+  CONTEXT_CANVAS_NODE_ID_DISPLAY_UNIT_LIMIT,
+  contextCanvasFullLabel,
+  fitContextCanvasDisplayLabel,
+} from "./display-label";
 import { contextCanvasEntityId } from "./types";
 import styles from "./ContextCanvas.module.css";
 
@@ -37,8 +42,7 @@ export function ContextEntityPalette({
       .sort(([left], [right]) => left.localeCompare(right, "en"))
       .map(([kind, values]) => [
         kind,
-        values.sort((left, right) =>
-          (left.label || left.stableId).localeCompare(right.label || right.stableId, "en")),
+        values.sort((left, right) => left.stableId < right.stableId ? -1 : left.stableId > right.stableId ? 1 : 0),
       ] as const);
   }, [entities]);
 
@@ -78,19 +82,24 @@ export function ContextEntityPalette({
               <ul>
                 {values.map((entity) => {
                   const entityId = contextCanvasEntityId(entity);
-                  const displayLabel = entity.label?.trim() || entity.stableId;
+                  const fullLabel = contextCanvasFullLabel(entity);
+                  const displayLabel = fitContextCanvasDisplayLabel(fullLabel, 44).displayText;
+                  const displayId = fitContextCanvasDisplayLabel(
+                    entity.stableId,
+                    CONTEXT_CANVAS_NODE_ID_DISPLAY_UNIT_LIMIT,
+                  ).displayText;
                   return (
                     <li key={entityId} className={styles.paletteItem}>
                       <div>
-                        <span className={styles.paletteLabel}>{displayLabel}</span>
-                        <span className={styles.paletteId}>{entity.stableId}</span>
+                        <span className={styles.paletteLabel} title={fullLabel}>{displayLabel}</span>
+                        <span className={styles.paletteId} title={entity.stableId}>{displayId}</span>
                       </div>
                       <div className={styles.paletteActions}>
                         <button
                           type="button"
                           className={styles.dragHandle}
                           disabled={disabled}
-                          aria-label={`Drag ${displayLabel} to canvas; press Enter or Space to add`}
+                          aria-label={`Drag ${fullLabel} to canvas; press Enter or Space to add`}
                           aria-keyshortcuts="Enter Space"
                           onKeyDown={(event) => {
                             if (event.key === "Enter" || event.key === " ") {

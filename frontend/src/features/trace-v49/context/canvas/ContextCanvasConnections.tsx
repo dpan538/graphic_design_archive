@@ -1,5 +1,9 @@
 import type { KeyboardEvent, PointerEvent } from "react";
 import { contextCanvasConnectionLabel } from "./connections";
+import {
+  CONTEXT_CANVAS_CONNECTION_LABEL_DISPLAY_UNIT_LIMIT,
+  fitContextCanvasDisplayLabel,
+} from "./display-label";
 import type { ContextCanvasConnectionGeometry } from "./types";
 import styles from "./ContextCanvas.module.css";
 
@@ -37,6 +41,11 @@ export function ContextCanvasConnections({
     <g aria-label="Context connections">
       {geometry.map((item) => {
         const selected = selectedConnectionId === item.connection.id;
+        const connectionLabel = contextCanvasConnectionLabel(item.connection);
+        const displayLabel = fitContextCanvasDisplayLabel(
+          connectionLabel,
+          CONTEXT_CANVAS_CONNECTION_LABEL_DISPLAY_UNIT_LIMIT,
+        );
         return (
           <g
             key={item.connection.id}
@@ -53,7 +62,7 @@ export function ContextCanvasConnections({
             <path className={styles.connectionHitArea} d={item.path} />
             <path className={styles.connectionPath} d={item.path} markerEnd="url(#context-canvas-arrow)" />
             <text className={styles.connectionLabel} x={item.labelX} y={item.labelY}>
-              {contextCanvasConnectionLabel(item.connection)}
+              {displayLabel.displayText}
             </text>
           </g>
         );

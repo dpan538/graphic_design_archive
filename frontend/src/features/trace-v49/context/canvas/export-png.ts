@@ -2,6 +2,13 @@ import type { TraceContextDataset } from "../types";
 import { buildContextCanvasConnectionGeometry, contextCanvasConnectionLabel, visibleContextCanvasNodes } from "./connections";
 import { computeContextCanvasBounds } from "./layout";
 import {
+  CONTEXT_CANVAS_CONNECTION_LABEL_DISPLAY_UNIT_LIMIT,
+  CONTEXT_CANVAS_NODE_ID_DISPLAY_UNIT_LIMIT,
+  contextCanvasFullLabel,
+  escapeContextCanvasXml,
+  fitContextCanvasDisplayLabel,
+} from "./display-label";
+import {
   CONTEXT_CANVAS_DEFAULT_EXPORT_SCALE,
   CONTEXT_CANVAS_NODE_HEIGHT,
   CONTEXT_CANVAS_NODE_WIDTH,
@@ -14,19 +21,10 @@ const EXPORT_FOOTER_HEIGHT = 44;
 const MAX_EXPORT_SCALE = 4;
 const MAX_EXPORT_DIMENSION = 16_384;
 const MAX_EXPORT_PIXEL_AREA = 64_000_000;
-const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+const UUID_PATTERN = /\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b/gi;
 
 function publicSafeExportValue(value: string): string {
-  return UUID_PATTERN.test(value.trim()) ? "public-reference-withheld" : value;
-}
-
-function escapeXml(value: string): string {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&apos;");
+  return value.replace(UUID_PATTERN, "public-reference-withheld");
 }
 
 function connectionStroke(connectionKind: "controlled_assignment" | "curated_membership" | "semantic_edge"): string {
@@ -46,37 +44,62 @@ export function prepareContextCanvasExportSvg(
     composition.visibleEntityIds,
     composition.positions,
   );
-  const naturalWidth = contentBounds.empty ? 480 : contentBounds.width + EXPORT_PADDING * 2;
+  const footerText = `Context Canvas · ${publicSafeExportValue(dataset.selectedRecord.stableId)} · ${publicSafeExportValue(dataset.release.releaseId)}`;
+  const contentWidth = contentBounds.empty ? 480 : contentBounds.width + EXPORT_PADDING * 2;
+  const footerWidth = includeMetadataFooter
+    ? Array.from(footerText).length * 8 + EXPORT_PADDING * 2
+    : 0;
+  const naturalWidth = Math.max(contentWidth, footerWidth);
   const naturalHeight = contentBounds.empty ? 240 : contentBounds.height + EXPORT_PADDING * 2;
   const width = Math.ceil(naturalWidth);
   const height = Math.ceil(naturalHeight + (includeMetadataFooter ? EXPORT_FOOTER_HEIGHT : 0));
   const offsetX = contentBounds.empty ? EXPORT_PADDING : EXPORT_PADDING - contentBounds.x;
   const offsetY = contentBounds.empty ? EXPORT_PADDING : EXPORT_PADDING - contentBounds.y;
+  if (
+    !Number.isSafeInteger(width)
+    || !Number.isSafeInteger(height)
+    || !Number.isFinite(offsetX)
+    || !Number.isFinite(offsetY)
+    || width <= 0
+    || height <= 0
+  ) throw new Error("The canvas composition cannot be prepared for a safe export.");
 
   const connectionMarkup = connections.map((item) => {
     const stroke = connectionStroke(item.connection.connectionKind);
+    const fullLabel = publicSafeExportValue(contextCanvasConnectionLabel(item.connection));
+    const displayLabel = fitContextCanvasDisplayLabel(
+      fullLabel,
+      CONTEXT_CANVAS_CONNECTION_LABEL_DISPLAY_UNIT_LIMIT,
+    ).displayText;
     return [
       `<g data-connection-kind="${item.connection.connectionKind}">`,
+      `<title>${escapeContextCanvasXml(publicSafeExportValue(item.accessibleLabel))}</title>`,
       `<path d="${item.path}" fill="none" stroke="${stroke}" stroke-width="2" marker-end="url(#context-arrow)"/>`,
-      `<text x="${item.labelX}" y="${item.labelY}" fill="#333b43" font-family="ui-monospace, monospace" font-size="12">${escapeXml(publicSafeExportValue(contextCanvasConnectionLabel(item.connection)))}</text>`,
+      `<text x="${item.labelX}" y="${item.labelY}" fill="#333b43" font-family="ui-monospace, monospace" font-size="12">${escapeContextCanvasXml(displayLabel)}</text>`,
       "</g>",
     ].join("");
   }).join("");
 
   const nodeMarkup = nodes.map((node) => {
-    const displayLabel = publicSafeExportValue(node.ref.label?.trim() || node.ref.stableId);
+    const fullLabel = publicSafeExportValue(contextCanvasFullLabel(node.ref));
+    const displayLabel = fitContextCanvasDisplayLabel(fullLabel).displayText;
+    const displayId = fitContextCanvasDisplayLabel(
+      publicSafeExportValue(node.ref.stableId),
+      CONTEXT_CANVAS_NODE_ID_DISPLAY_UNIT_LIMIT,
+    ).displayText;
     return [
-      `<g transform="translate(${node.position.x} ${node.position.y})" data-entity-kind="${escapeXml(node.ref.kind)}">`,
+      `<g transform="translate(${node.position.x} ${node.position.y})" data-entity-kind="${escapeContextCanvasXml(node.ref.kind)}">`,
+      `<title>${escapeContextCanvasXml(`${fullLabel} (${node.ref.kind})`)}</title>`,
       `<rect width="${CONTEXT_CANVAS_NODE_WIDTH}" height="${CONTEXT_CANVAS_NODE_HEIGHT}" rx="8" fill="#ffffff" stroke="#27313a" stroke-width="2"/>`,
-      `<text x="16" y="29" fill="#172028" font-family="ui-sans-serif, sans-serif" font-size="16" font-weight="600">${escapeXml(displayLabel)}</text>`,
-      `<text x="16" y="55" fill="#56616a" font-family="ui-monospace, monospace" font-size="11">${escapeXml(node.ref.kind)}</text>`,
-      `<text x="16" y="79" fill="#56616a" font-family="ui-monospace, monospace" font-size="10">${escapeXml(publicSafeExportValue(node.ref.stableId))}</text>`,
+      `<text x="16" y="29" fill="#172028" font-family="ui-sans-serif, sans-serif" font-size="16" font-weight="600">${escapeContextCanvasXml(displayLabel)}</text>`,
+      `<text x="16" y="55" fill="#56616a" font-family="ui-monospace, monospace" font-size="11">${escapeContextCanvasXml(node.ref.kind)}</text>`,
+      `<text x="16" y="79" fill="#56616a" font-family="ui-monospace, monospace" font-size="10">${escapeContextCanvasXml(displayId)}</text>`,
       "</g>",
     ].join("");
   }).join("");
 
   const footer = includeMetadataFooter
-    ? `<text x="${EXPORT_PADDING}" y="${height - 16}" fill="#4e5962" font-family="ui-monospace, monospace" font-size="11">${escapeXml(`Context Canvas · ${publicSafeExportValue(dataset.selectedRecord.stableId)} · ${publicSafeExportValue(dataset.release.releaseId)}`)}</text>`
+    ? `<text x="${EXPORT_PADDING}" y="${height - 16}" fill="#4e5962" font-family="ui-monospace, monospace" font-size="11">${escapeContextCanvasXml(footerText)}</text>`
     : "";
   const emptyMessage = contentBounds.empty
     ? `<text x="${EXPORT_PADDING}" y="${EXPORT_PADDING + 24}" fill="#4e5962" font-family="ui-sans-serif, sans-serif" font-size="16">No visible canvas entities</text>`
@@ -84,7 +107,7 @@ export function prepareContextCanvasExportSvg(
 
   const svg = [
     `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">`,
-    `<title>Context Canvas for ${escapeXml(publicSafeExportValue(dataset.selectedRecord.stableId))}</title>`,
+    `<title>Context Canvas for ${escapeContextCanvasXml(publicSafeExportValue(dataset.selectedRecord.stableId))}</title>`,
     '<defs><marker id="context-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 8 4 L 0 8 z" fill="#4f5962"/></marker></defs>',
     `<rect width="${width}" height="${height}" fill="#f5f5f2"/>`,
     `<g transform="translate(${offsetX} ${offsetY})">${connectionMarkup}${nodeMarkup}</g>`,
@@ -100,9 +123,8 @@ export function buildContextCanvasPngFilename(
   selectedPublicRecordId: string,
   instant: Date = new Date(),
 ): string {
-  const rawId = publicSafeExportValue(selectedPublicRecordId.trim()) === "public-reference-withheld"
-    ? "public-record"
-    : selectedPublicRecordId.trim();
+  const redactedId = publicSafeExportValue(selectedPublicRecordId.trim());
+  const rawId = redactedId.includes("public-reference-withheld") ? "public-record" : redactedId;
   const safeId = rawId
     .replace(/[^a-z0-9_-]+/gi, "-")
     .replace(/^-+|-+$/g, "")
@@ -117,6 +139,7 @@ export async function downloadContextCanvasPng(
   snapshot: ContextCanvasExportSnapshot,
   filename: string,
   scale = CONTEXT_CANVAS_DEFAULT_EXPORT_SCALE,
+  signal?: AbortSignal,
 ): Promise<void> {
   if (typeof document === "undefined" || typeof Image === "undefined") {
     throw new Error("PNG export requires browser-native image APIs.");
@@ -137,13 +160,27 @@ export async function downloadContextCanvasPng(
   }
   const svgUrl = URL.createObjectURL(new Blob([snapshot.svg], { type: "image/svg+xml;charset=utf-8" }));
   try {
+    signal?.throwIfAborted();
     const image = new Image();
     const loaded = new Promise<void>((resolve, reject) => {
-      image.onload = () => resolve();
-      image.onerror = () => reject(new Error("The export-only SVG could not be rendered."));
+      const abort = () => {
+        image.onload = null;
+        image.onerror = null;
+        reject(new DOMException("PNG export was cancelled.", "AbortError"));
+      };
+      image.onload = () => {
+        signal?.removeEventListener("abort", abort);
+        resolve();
+      };
+      image.onerror = () => {
+        signal?.removeEventListener("abort", abort);
+        reject(new Error("The export-only SVG could not be rendered."));
+      };
+      signal?.addEventListener("abort", abort, { once: true });
     });
     image.src = svgUrl;
     await loaded;
+    signal?.throwIfAborted();
 
     const canvas = document.createElement("canvas");
     canvas.width = pixelWidth;
@@ -157,12 +194,14 @@ export async function downloadContextCanvasPng(
     const blob = await new Promise<Blob>((resolve, reject) => {
       canvas.toBlob((value) => value ? resolve(value) : reject(new Error("PNG encoding failed.")), "image/png");
     });
+    signal?.throwIfAborted();
     const pngUrl = URL.createObjectURL(blob);
     try {
       const link = document.createElement("a");
       link.href = pngUrl;
       link.download = filename;
       link.rel = "noopener";
+      signal?.throwIfAborted();
       link.click();
     } finally {
       URL.revokeObjectURL(pngUrl);

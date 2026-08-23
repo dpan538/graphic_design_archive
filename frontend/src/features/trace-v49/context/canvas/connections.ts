@@ -107,7 +107,10 @@ function connectionAccessibleLabel(
   accessibleRows: ReadonlyMap<string, TraceAccessibleRow>,
 ): string {
   const row = accessibleRows.get(connection.accessibleRowId);
-  if (row) return `${connection.connectionKind}: ${row.label}`;
+  if (row) {
+    const values = row.values.map((value) => `${value.label}: ${value.value}`).join("; ");
+    return `${connection.connectionKind}: ${row.label}${values ? `; ${values}` : ""}`;
+  }
   return `${connection.connectionKind}: ${label(refs.get(connection.sourceEntityId), connection.sourceEntityId)} to ${label(refs.get(connection.targetEntityId), connection.targetEntityId)}`;
 }
 

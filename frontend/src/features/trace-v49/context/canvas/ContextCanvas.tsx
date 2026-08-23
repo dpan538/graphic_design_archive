@@ -3,11 +3,13 @@
 import {
   useCallback,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useReducer,
   useRef,
   useState,
 } from "react";
+import type { TraceContextDataset } from "../types";
 import { deriveVisibleContextCanvasConnections } from "./connections";
 import { ContextCanvasInspector } from "./ContextCanvasInspector";
 import { ContextCanvasToolbar } from "./ContextCanvasToolbar";
@@ -18,10 +20,6 @@ import {
   downloadContextCanvasPng,
   prepareContextCanvasExportSvg,
 } from "./export-png";
-import {
-  CONTEXT_CANVAS_FIXTURE_METADATA,
-  CONTEXT_CANVAS_SYNTHETIC_DATASET,
-} from "./fixture";
 import {
   autoArrangeContextCanvas,
   computeContextCanvasBounds,
@@ -46,15 +44,55 @@ import {
   CONTEXT_CANVAS_NODE_WIDTH,
   contextCanvasEntityId,
   contextCanvasNodeDomId,
+  type ContextCanvasDataMetadata,
+  type ContextCanvasDataMode,
+  type ContextCanvasState,
   type ContextCanvasViewportSize,
 } from "./types";
 import { contextCanvasScreenToWorld, zoomContextCanvasAtPoint } from "./viewport";
 import styles from "./ContextCanvas.module.css";
 
-const dataset = CONTEXT_CANVAS_SYNTHETIC_DATASET;
 const DEFAULT_VIEWPORT_SIZE = Object.freeze({ width: 1_000, height: 640 });
 
-export default function ContextCanvas() {
+export interface ContextCanvasProps {
+  readonly dataset: TraceContextDataset;
+  readonly dataMode: ContextCanvasDataMode;
+  readonly metadata: ContextCanvasDataMetadata;
+}
+
+function stateForPersistenceTeardown(state: ContextCanvasState): ContextCanvasState {
+  if (state.interaction.mode !== "NODE_DRAGGING") return state;
+  return {
+    ...state,
+    history: {
+      ...state.history,
+      present: state.interaction.baseline,
+    },
+  };
+}
+
+function persistContextCanvasSession(
+  dataset: TraceContextDataset,
+  state: ContextCanvasState,
+): boolean {
+  try {
+    return saveContextCanvasWorkspace(dataset, state, window.localStorage);
+  } catch {
+    return false;
+  }
+}
+
+export default function ContextCanvas(props: ContextCanvasProps) {
+  const sessionKey = JSON.stringify([
+    props.dataMode,
+    props.dataset.release.manifestSha256,
+    props.dataset.selectedRecord.stableId,
+  ]);
+
+  return <ContextCanvasSession key={sessionKey} {...props} />;
+}
+
+function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProps) {
   const [state, dispatch] = useReducer(
     contextCanvasReducer,
     dataset,
@@ -67,16 +105,18 @@ export default function ContextCanvas() {
   const [pendingFocusTarget, setPendingFocusTarget] = useState<string | null>(null);
   const viewportContainerRef = useRef<HTMLDivElement>(null);
   const initialViewportFitPending = useRef(true);
+  const latestStateRef = useRef(state);
+  const exportAbortControllerRef = useRef<AbortController | null>(null);
 
   const composition = state.history.present;
   const visibleIds = useMemo(() => new Set(composition.visibleEntityIds), [composition.visibleEntityIds]);
   const availableEntities = useMemo(
     () => dataset.items.filter((item) => !visibleIds.has(contextCanvasEntityId(item))),
-    [visibleIds],
+    [dataset, visibleIds],
   );
   const visibleConnections = useMemo(
     () => deriveVisibleContextCanvasConnections(dataset, composition.visibleEntityIds),
-    [composition.visibleEntityIds],
+    [dataset, composition.visibleEntityIds],
   );
   const visibleAccessibleRows = useMemo(() => {
     const rowIds = new Set([
@@ -84,7 +124,7 @@ export default function ContextCanvas() {
       ...visibleConnections.map((connection) => connection.accessibleRowId),
     ]);
     return dataset.accessibleRows.filter((row) => rowIds.has(row.id));
-  }, [visibleConnections]);
+  }, [dataset, visibleConnections]);
   const interactionLocked = state.phase === "INITIALIZING"
     || state.phase === "EXPORTING"
     || state.interaction.mode !== "READY";
@@ -105,7 +145,7 @@ export default function ContextCanvas() {
         ),
       });
     }
-  }, []);
+  }, [dataset]);
 
   useEffect(() => {
     const restored = loadContextCanvasWorkspace(dataset, window.localStorage);
@@ -116,15 +156,45 @@ export default function ContextCanvas() {
     }
     const initial = initializeContextCanvasTemplate(dataset, "context-overview");
     dispatch({ type: "INITIALIZE", composition: initial });
-  }, []);
+  }, [dataset]);
+
+  useLayoutEffect(() => {
+    latestStateRef.current = state;
+  }, [state]);
 
   useEffect(() => {
     if (state.phase === "INITIALIZING" || state.interaction.mode === "NODE_DRAGGING") return;
     const timer = window.setTimeout(() => {
-      saveContextCanvasWorkspace(dataset, state, window.localStorage);
+      persistContextCanvasSession(dataset, state);
     }, 160);
     return () => window.clearTimeout(timer);
-  }, [composition, state.viewport, state.phase, state.interaction.mode]);
+  }, [dataset, composition, state.viewport, state.phase, state.interaction.mode]);
+
+  useEffect(() => {
+    const flushLatestSession = () => {
+      exportAbortControllerRef.current?.abort();
+      exportAbortControllerRef.current = null;
+
+      const latestState = latestStateRef.current;
+      if (latestState.phase === "INITIALIZING") return;
+      persistContextCanvasSession(
+        dataset,
+        stateForPersistenceTeardown(latestState),
+      );
+    };
+    const restoreAfterPageCache = (event: PageTransitionEvent) => {
+      if (event.persisted && latestStateRef.current.phase === "EXPORTING") {
+        dispatch({ type: "EXPORT_CANCEL" });
+      }
+    };
+    window.addEventListener("pagehide", flushLatestSession);
+    window.addEventListener("pageshow", restoreAfterPageCache);
+    return () => {
+      window.removeEventListener("pagehide", flushLatestSession);
+      window.removeEventListener("pageshow", restoreAfterPageCache);
+      flushLatestSession();
+    };
+  }, [dataset]);
 
   useEffect(() => {
     if (!pendingFocusTarget) return;
@@ -217,17 +287,31 @@ export default function ContextCanvas() {
   }
 
   async function exportPng() {
-    const stableSnapshot = prepareContextCanvasExportSvg(dataset, composition);
-    const filename = buildContextCanvasPngFilename(dataset.selectedRecord.stableId);
+    exportAbortControllerRef.current?.abort();
+    const controller = new AbortController();
+    exportAbortControllerRef.current = controller;
     dispatch({ type: "EXPORT_START" });
     try {
-      await downloadContextCanvasPng(stableSnapshot, filename, CONTEXT_CANVAS_DEFAULT_EXPORT_SCALE);
+      const stableSnapshot = prepareContextCanvasExportSvg(dataset, composition);
+      const filename = buildContextCanvasPngFilename(dataset.selectedRecord.stableId);
+      await downloadContextCanvasPng(
+        stableSnapshot,
+        filename,
+        CONTEXT_CANVAS_DEFAULT_EXPORT_SCALE,
+        controller.signal,
+      );
+      if (controller.signal.aborted) return;
       dispatch({ type: "EXPORT_SUCCESS" });
     } catch (error) {
+      if (controller.signal.aborted) return;
       dispatch({
         type: "EXPORT_FAILURE",
         message: error instanceof Error ? error.message : "Unknown PNG export error.",
       });
+    } finally {
+      if (exportAbortControllerRef.current === controller) {
+        exportAbortControllerRef.current = null;
+      }
     }
   }
 
@@ -235,16 +319,22 @@ export default function ContextCanvas() {
     <main className={styles.prototype}>
       <header className={styles.prototypeHeader}>
         <div>
-          <p className={styles.eyebrow}>TRACE v49 · functional prototype</p>
+          <p className={styles.eyebrow}>
+            TRACE v49 · {dataMode === "real_v49_validation" ? "real-data validation workspace" : "synthetic contract workspace"}
+          </p>
           <h1>Context Canvas</h1>
           <p>
             Compose a view over a read-only context dataset. Moving or hiding items changes only this local canvas.
           </p>
         </div>
-        <dl className={styles.fixtureNotice}>
-          <div><dt>Data</dt><dd>{CONTEXT_CANVAS_FIXTURE_METADATA.fixtureKind}</dd></div>
-          <div><dt>Historical evidence</dt><dd>{String(CONTEXT_CANVAS_FIXTURE_METADATA.historicalEvidence)}</dd></div>
-          <div><dt>Public release data</dt><dd>{String(CONTEXT_CANVAS_FIXTURE_METADATA.publicReleaseData)}</dd></div>
+        <dl className={styles.dataNotice}>
+          <div><dt>Data mode</dt><dd>{dataMode}</dd></div>
+          <div><dt>Dataset</dt><dd>{metadata.dataLabel}</dd></div>
+          <div><dt>Mapping</dt><dd>{metadata.mappingVersion}</dd></div>
+          <div><dt>Selected public ID</dt><dd>{dataset.selectedRecord.stableId}</dd></div>
+          <div><dt>Candidate state</dt><dd>{metadata.candidateState}</dd></div>
+          <div><dt>Availability</dt><dd>{dataset.availability.state}</dd></div>
+          <div><dt>Governed release</dt><dd>{String(metadata.governedPublicRelease)}</dd></div>
         </dl>
       </header>
 
@@ -266,16 +356,7 @@ export default function ContextCanvas() {
         onFit={() => fitComposition()}
         onZoomIn={() => zoomBy(1.2)}
         onZoomOut={() => zoomBy(1 / 1.2)}
-        onResetView={() => {
-          const initial = initializeContextCanvasTemplate(dataset, composition.templateId);
-          dispatch({
-            type: "SET_VIEWPORT",
-            viewport: fitContextCanvasViewport(
-              computeContextCanvasBounds(initial.visibleEntityIds, initial.positions),
-              viewportSize,
-            ),
-          });
-        }}
+        onResetView={() => fitComposition()}
         onResetCanvas={resetCanvas}
         onExportPng={exportPng}
       />
@@ -300,13 +381,42 @@ export default function ContextCanvas() {
           }}
         />
 
-        <ContextCanvasViewport
-          dataset={dataset}
-          state={state}
-          dispatch={dispatch}
-          containerRef={viewportContainerRef}
-          onViewportSizeChange={handleViewportSizeChange}
-        />
+        <div className={styles.canvasColumn}>
+          <ContextCanvasViewport
+            dataset={dataset}
+            state={state}
+            dispatch={dispatch}
+            containerRef={viewportContainerRef}
+            onViewportSizeChange={handleViewportSizeChange}
+          />
+
+          <details
+            id="context-canvas-accessible-reference"
+            className={styles.accessibleReference}
+          >
+            <summary className={styles.accessibleSummary}>
+              Accessible context reference ({visibleAccessibleRows.length} rows)
+            </summary>
+            <div className={styles.accessibleReferenceContent}>
+              <p>This table is the non-graphic equivalent for the selected record and every currently visible typed connection.</p>
+              <div className={styles.tableScroll}>
+                <table>
+                  <caption>Visible Context Canvas reference rows</caption>
+                  <thead><tr><th scope="col">Category</th><th scope="col">Connection or record</th><th scope="col">Verified fields</th></tr></thead>
+                  <tbody>
+                    {visibleAccessibleRows.map((row) => (
+                      <tr key={row.id}>
+                        <td>{row.category}</td>
+                        <th scope="row">{row.label}</th>
+                        <td>{row.values.map((value) => `${value.label}: ${value.value}`).join("; ")}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+        </div>
 
         <ContextCanvasInspector
           dataset={dataset}
@@ -335,25 +445,6 @@ export default function ContextCanvas() {
         {state.exportError ? <span role="alert">{state.exportError}</span> : null}
       </div>
 
-      <section id="context-canvas-accessible-reference" className={styles.accessibleReference} aria-labelledby="context-canvas-accessible-heading">
-        <h2 id="context-canvas-accessible-heading">Accessible context reference</h2>
-        <p>This table is the non-graphic equivalent for the selected record and every currently visible semantic connection.</p>
-        <div className={styles.tableScroll}>
-          <table>
-            <caption>Visible Context Canvas reference rows</caption>
-            <thead><tr><th scope="col">Category</th><th scope="col">Connection or record</th><th scope="col">Verified fields</th></tr></thead>
-            <tbody>
-              {visibleAccessibleRows.map((row) => (
-                <tr key={row.id}>
-                  <td>{row.category}</td>
-                  <th scope="row">{row.label}</th>
-                  <td>{row.values.map((value) => `${value.label}: ${value.value}`).join("; ")}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
     </main>
   );
 }

@@ -12,6 +12,21 @@ export const CONTEXT_CANVAS_NODE_HEIGHT = 104;
 export const CONTEXT_CANVAS_MIN_ZOOM = 0.35;
 export const CONTEXT_CANVAS_MAX_ZOOM = 2.5;
 export const CONTEXT_CANVAS_DEFAULT_EXPORT_SCALE = 2;
+export const CONTEXT_CANVAS_MAX_ABS_COORDINATE = 1_000_000;
+
+export type ContextCanvasDataMode =
+  | "synthetic_contract"
+  | "real_v49_validation";
+
+export interface ContextCanvasDataMetadata {
+  readonly dataLabel: string;
+  readonly mappingVersion: string;
+  readonly candidateState: "synthetic_contract" | "not_published";
+  readonly historicalEvidence: false;
+  readonly governedPublicRelease: false;
+  readonly publicReleaseData: false;
+  readonly publicObjectCohortCount: number;
+}
 
 export type ContextCanvasTemplateId =
   | "context-overview"
@@ -169,5 +184,8 @@ export function contextCanvasNodeDomId(entityId: ContextCanvasEntityId): string 
 export function isFiniteCanvasPosition(value: unknown): value is ContextCanvasPosition {
   if (!value || typeof value !== "object") return false;
   const candidate = value as Partial<ContextCanvasPosition>;
-  return Number.isFinite(candidate.x) && Number.isFinite(candidate.y);
+  return Number.isFinite(candidate.x)
+    && Number.isFinite(candidate.y)
+    && Math.abs(candidate.x as number) <= CONTEXT_CANVAS_MAX_ABS_COORDINATE
+    && Math.abs(candidate.y as number) <= CONTEXT_CANVAS_MAX_ABS_COORDINATE;
 }

@@ -24,6 +24,7 @@ const stateModule = await jiti.import(join(canvasRoot, "state.ts"));
 const reducerModule = await jiti.import(join(canvasRoot, "reducer.ts"));
 const persistence = await jiti.import(join(canvasRoot, "persistence.ts"));
 const exportPng = await jiti.import(join(canvasRoot, "export-png.ts"));
+const displayLabel = await jiti.import(join(canvasRoot, "display-label.ts"));
 const fixture = await jiti.import(join(canvasRoot, "fixture.ts"));
 
 const dataset = fixture.CONTEXT_CANVAS_SYNTHETIC_DATASET;
@@ -284,6 +285,24 @@ check("CONTEXT-CANVAS-REDUCER-002 template switch and reset", () => {
   assert.equal(reset.history.future.length, 0);
 });
 
+check("CONTEXT-CANVAS-REDUCER-003 export cancellation restores ready state", () => {
+  const exporting = reducerModule.contextCanvasReducer(redoneState, { type: "EXPORT_START" });
+  assert.equal(exporting.phase, "EXPORTING");
+  assert.equal(exporting.interaction.mode, "READY");
+  const recovered = reducerModule.contextCanvasReducer(exporting, { type: "EXPORT_CANCEL" });
+  assert.equal(recovered.phase, "READY");
+  assert.equal(recovered.exportError, null);
+  assert.equal(recovered.interaction.mode, "READY");
+  assert.deepEqual(recovered.history, exporting.history);
+  assert.deepEqual(recovered.viewport, exporting.viewport);
+  assert.deepEqual(recovered.selection, exporting.selection);
+  assert.match(recovered.statusMessage, /export cancelled/i);
+  assert.strictEqual(
+    reducerModule.contextCanvasReducer(recovered, { type: "EXPORT_CANCEL" }),
+    recovered,
+  );
+});
+
 let boundedHistoryState = readyDescriptiveState;
 for (let index = 0; index < 55; index += 1) {
   boundedHistoryState = reducerModule.contextCanvasReducer(boundedHistoryState, {
@@ -429,6 +448,113 @@ check("CONTEXT-CANVAS-EXPORT-001 deterministic canvas-only SVG and safe PNG file
   );
 });
 
+const longFooterPublicId = `SURF-${"LONG-PUBLIC-ID-".repeat(12)}END`;
+const longFooterReleaseId = `trace-v49-${"long-validation-release-".repeat(10)}end`;
+const longFooterText = `Context Canvas · ${longFooterPublicId} · ${longFooterReleaseId}`;
+const longFooterDataset = Object.freeze({
+  ...dataset,
+  release: Object.freeze({ ...dataset.release, releaseId: longFooterReleaseId }),
+  selectedRecord: Object.freeze({ ...dataset.selectedRecord, stableId: longFooterPublicId }),
+});
+const emptyFooterComposition = Object.freeze({
+  ...fullComposition,
+  visibleEntityIds: Object.freeze([]),
+  positions: Object.freeze({}),
+});
+const longFooterSnapshot = exportPng.prepareContextCanvasExportSvg(
+  longFooterDataset,
+  emptyFooterComposition,
+);
+
+check("CONTEXT-CANVAS-EXPORT-002 long metadata footer fits conservative width", () => {
+  const padding = 48;
+  const conservativeFooterWidth = Array.from(longFooterText).length * 8 + padding * 2;
+  assert.equal(longFooterSnapshot.width, Math.ceil(conservativeFooterWidth));
+  assert.ok(padding + Array.from(longFooterText).length * 8 <= longFooterSnapshot.width - padding);
+  assert.match(
+    longFooterSnapshot.svg,
+    new RegExp(escapeRegExp(displayLabel.escapeContextCanvasXml(longFooterText)), "u"),
+  );
+  assert.match(longFooterSnapshot.svg, new RegExp(`width="${longFooterSnapshot.width}"`, "u"));
+  assert.deepEqual(longFooterSnapshot.contentBounds, {
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0,
+    empty: true,
+  });
+});
+
+const hostileFullLabel = "👩🏽‍💻e\u0301漢字 & <tag> \"quoted\" 'apostrophe' \u0096 "
+  + "a deliberately long suffix that must be shortened without splitting a grapheme";
+const hostileFittedLabel = displayLabel.fitContextCanvasDisplayLabel(hostileFullLabel, 14);
+const hostileDefaultFittedLabel = displayLabel.fitContextCanvasDisplayLabel(hostileFullLabel);
+const hostileRootRef = Object.freeze({ ...dataset.selectedRecord, label: hostileFullLabel });
+const hostileDataset = Object.freeze({
+  ...dataset,
+  selectedRecord: hostileRootRef,
+  items: Object.freeze(dataset.items.map((item) =>
+    types.contextCanvasEntityId(item) === rootEntityId ? hostileRootRef : item)),
+});
+const hostileExportSnapshot = exportPng.prepareContextCanvasExportSvg(
+  hostileDataset,
+  fullComposition,
+);
+
+check("CONTEXT-CANVAS-LABEL-001 hostile grapheme, XML, full-label, and export parity", () => {
+  assert.equal(displayLabel.CONTEXT_CANVAS_DISPLAY_LABEL_POLICY_VERSION, 1);
+  assert.equal(hostileFittedLabel.fullText, hostileFullLabel);
+  assert.equal(hostileFittedLabel.truncated, true);
+  assert.match(hostileFittedLabel.displayText, /…$/u);
+  assert.doesNotMatch(hostileFittedLabel.displayText, /[\ud800-\udfff]$/u);
+  assert.equal(
+    displayLabel.fitContextCanvasDisplayLabel(hostileFittedLabel.displayText, 14).truncated,
+    false,
+  );
+  const untitledFallback = displayLabel.fitContextCanvasDisplayLabel("\u0000\t  ");
+  assert.equal(untitledFallback.fullText, "\u0000\t  ");
+  assert.equal(untitledFallback.displayText, "Untitled");
+  assert.equal(untitledFallback.graphemeCount, 8);
+  assert.ok(untitledFallback.displayUnitCount >= untitledFallback.graphemeCount);
+  assert.equal(untitledFallback.truncated, false);
+
+  const escaped = displayLabel.escapeContextCanvasXml(hostileFullLabel);
+  assert.match(escaped, /&amp;/u);
+  assert.match(escaped, /&lt;tag&gt;/u);
+  assert.match(escaped, /&quot;quoted&quot;/u);
+  assert.match(escaped, /&apos;apostrophe&apos;/u);
+  assert.match(escaped, /&#x96;/u);
+  assert.doesNotMatch(escaped, /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f]/u);
+  assert.equal(hostileFittedLabel.fullText, hostileFullLabel);
+
+  const fullTitle = displayLabel.escapeContextCanvasXml(
+    `${hostileFullLabel} (${hostileRootRef.kind})`,
+  );
+  assert.match(hostileExportSnapshot.svg, new RegExp(`<title>${escapeRegExp(fullTitle)}</title>`, "u"));
+  assert.match(
+    hostileExportSnapshot.svg,
+    new RegExp(escapeRegExp(displayLabel.escapeContextCanvasXml(hostileDefaultFittedLabel.displayText)), "u"),
+  );
+  assert.doesNotMatch(hostileExportSnapshot.svg, /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f]/u);
+  assert.equal(hostileDataset.selectedRecord.label, hostileFullLabel);
+  assert.equal(JSON.stringify(dataset), datasetSnapshot);
+});
+
+check("CONTEXT-CANVAS-LABEL-003 lone surrogates are display-safe and source-preserving", () => {
+  for (const source of ["before\ud800after", "before\udc00after"]) {
+    const fitted = displayLabel.fitContextCanvasDisplayLabel(source);
+    assert.equal(fitted.fullText, source);
+    assert.equal(fitted.displayText, "before\ufffdafter");
+    assert.equal(fitted.truncated, false);
+    assert.doesNotMatch(fitted.displayText, /[\ud800-\udfff]/u);
+    assert.equal(displayLabel.escapeContextCanvasXml(source), "before&#xFFFD;after");
+    assert.equal(displayLabel.escapeContextCanvasXml(fitted.displayText), "before\ufffdafter");
+  }
+  const validPair = "before\ud83d\ude00after";
+  assert.equal(displayLabel.fitContextCanvasDisplayLabel(validPair).fullText, validPair);
+  assert.match(displayLabel.fitContextCanvasDisplayLabel(validPair).displayText, /😀/u);
+});
+
 check("CONTEXT-CANVAS-A11Y-001 every visible connection has a typed row", () => {
   const rows = new Map(dataset.accessibleRows.map((row) => [row.id, row]));
   const expectedCategory = {
@@ -457,6 +583,21 @@ const importRecords = sourceEntries.flatMap(([path, source]) =>
 );
 const reducerSource = sourceEntries.find(([path]) => path === join(canvasRoot, "reducer.ts"))?.[1] ?? "";
 const canvasSource = sourceEntries.map(([, source]) => source).join("\n");
+
+check("CONTEXT-CANVAS-LABEL-002 renderer and export share the display-label policy", () => {
+  const nodeSource = sourceEntries.find(([path]) => path === join(canvasRoot, "ContextCanvasNode.tsx"))?.[1] ?? "";
+  const connectionSource = sourceEntries.find(([path]) => path === join(canvasRoot, "ContextCanvasConnections.tsx"))?.[1] ?? "";
+  const exportSource = sourceEntries.find(([path]) => path === join(canvasRoot, "export-png.ts"))?.[1] ?? "";
+  for (const source of [nodeSource, connectionSource, exportSource]) {
+    assert.match(source, /fitContextCanvasDisplayLabel/u);
+    assert.match(source, /\.\/display-label/u);
+  }
+  assert.match(nodeSource, /contextCanvasFullLabel/u);
+  assert.match(exportSource, /contextCanvasFullLabel/u);
+  assert.match(nodeSource, /<title>/u);
+  assert.match(connectionSource, /<title>/u);
+  assert.match(exportSource, /<title>/u);
+});
 
 check("CTX-CANVAS-INV-001 composition never mutates TraceContextDataset", () => {
   assert.equal(JSON.stringify(dataset), datasetSnapshot);
@@ -626,9 +767,13 @@ check("CTX-CANVAS-INV-014 fixture and export contain no held/private/internal id
   });
   const uuidPattern = /\b[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}\b/i;
   assert.deepEqual(fixture.CONTEXT_CANVAS_FIXTURE_METADATA, {
-    fixtureKind: "synthetic-contract-only",
+    dataLabel: "synthetic contract fixture",
+    mappingVersion: "synthetic-context-contract-v1",
+    candidateState: "synthetic_contract",
     historicalEvidence: false,
+    governedPublicRelease: false,
     publicReleaseData: false,
+    publicObjectCohortCount: 2,
   });
   assert.doesNotMatch(fixtureText, uuidPattern);
   assert.doesNotMatch(fixtureText, /"(?:held|private|internalUuid|internalId)"\s*:/i);
@@ -758,4 +903,8 @@ function collectKeys(value, found = new Set()) {
     collectKeys(child, found);
   }
   return found;
+}
+
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }

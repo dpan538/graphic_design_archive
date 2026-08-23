@@ -1,0 +1,17 @@
+{
+  "cold_rebuild_a_ms": 302.671,
+  "cold_rebuild_b_ms": 305.578,
+  "cold_rebuild_p50_ms": 302.671,
+  "cold_rebuild_p95_ms": 305.578,
+  "heap_delta_bytes": 425887128,
+  "index_cache_identity_reused": true,
+  "warm_cache_reference_ms": 0.001,
+  "warm_selected_record_lookup": {
+    "count": 500,
+    "max": 0.747,
+    "p50": 0.029,
+    "p90": 0.032,
+    "p95": 0.035,
+    "p99": 0.05
+  }
+}

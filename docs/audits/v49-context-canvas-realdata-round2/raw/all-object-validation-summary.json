@@ -1,0 +1,325 @@
+{
+  "aggregate_sha256": "499624075b99745c1eb95a8d6c2c1438eb7e74ca63222227b8bfb87fdaf38d76",
+  "bug_class_totals": {
+    "control_character_label_count": 2,
+    "dangling_endpoint_count": 0,
+    "duplicate_accessible_row_count": 0,
+    "duplicate_connection_id_count": 0,
+    "duplicate_entity_id_count": 0,
+    "empty_display_label_count": 0,
+    "empty_source_label_count": 0,
+    "export_preparation_failure_count": 0,
+    "extreme_label_length_count": 0,
+    "held_object_exposure_count": 0,
+    "internal_uuid_exposure_count": 0,
+    "invalid_connector_count": 0,
+    "invalid_unicode_sequence_count": 0,
+    "lone_surrogate_count": 0,
+    "missing_accessible_row_count": 0,
+    "node_outside_bounds_count": 0,
+    "node_overlap_count": 0,
+    "nonfinite_x_count": 0,
+    "nonfinite_y_count": 0,
+    "nonfinite_zoom_count": 0,
+    "persistence_roundtrip_mismatch_count": 0,
+    "same_identity_conflicting_label_count": 0,
+    "same_label_different_identity_count": 155,
+    "serialization_failure_count": 0,
+    "truncation_required_label_count": 23024,
+    "unexpected_newline_count": 0,
+    "unsafe_export_filename_count": 0,
+    "whitespace_only_label_count": 0
+  },
+  "canonical_object_count": 15923,
+  "frozen_input_count": 3,
+  "held_object_count": 7928,
+  "invariants": [
+    {
+      "description": "Exactly 7,995 eligible records project.",
+      "id": "CTX-REAL-INV-001",
+      "status": "PASS"
+    },
+    {
+      "description": "No held record projects.",
+      "id": "CTX-REAL-INV-002",
+      "status": "PASS"
+    },
+    {
+      "description": "Held and unknown lookups are externally indistinguishable.",
+      "id": "CTX-REAL-INV-003",
+      "status": "PASS"
+    },
+    {
+      "description": "No internal UUID enters Canvas data, persistence, or export.",
+      "id": "CTX-REAL-INV-004",
+      "status": "PASS"
+    },
+    {
+      "description": "No candidate is relabeled accepted.",
+      "id": "CTX-REAL-INV-005",
+      "status": "PASS"
+    },
+    {
+      "description": "The real v49 semantic-edge collection remains empty.",
+      "id": "CTX-REAL-INV-006",
+      "status": "PASS"
+    },
+    {
+      "description": "Every connection maps to a documented validation source category.",
+      "id": "CTX-REAL-INV-007",
+      "status": "PASS"
+    },
+    {
+      "description": "Every visible entity belongs to the selected dataset.",
+      "id": "CTX-REAL-INV-008",
+      "status": "PASS"
+    },
+    {
+      "description": "Record switching retains no stale selection or interaction.",
+      "id": "CTX-REAL-INV-009",
+      "status": "PASS"
+    },
+    {
+      "description": "Persistence never crosses object identity.",
+      "id": "CTX-REAL-INV-010",
+      "status": "PASS"
+    },
+    {
+      "description": "Persistence never crosses release identity.",
+      "id": "CTX-REAL-INV-011",
+      "status": "PASS"
+    },
+    {
+      "description": "Same frozen source and mapping version are deterministic.",
+      "id": "CTX-REAL-INV-012",
+      "status": "PASS"
+    },
+    {
+      "description": "Auto layout is collision-free for every object and template.",
+      "id": "CTX-REAL-INV-013",
+      "status": "PASS"
+    },
+    {
+      "description": "Full labels remain accessible despite display truncation.",
+      "id": "CTX-REAL-INV-014",
+      "status": "PASS"
+    },
+    {
+      "description": "Display fitting never mutates source text.",
+      "id": "CTX-REAL-INV-015",
+      "status": "PASS"
+    },
+    {
+      "description": "Export preparation succeeds for every public object.",
+      "id": "CTX-REAL-INV-016",
+      "status": "PASS"
+    },
+    {
+      "description": "The real validation corpus is absent from client-reachable code and available bundles.",
+      "id": "CTX-REAL-INV-017",
+      "status": "PASS"
+    },
+    {
+      "description": "Production-default behavior does not expose real candidates.",
+      "id": "CTX-REAL-INV-018",
+      "status": "PASS"
+    }
+  ],
+  "mapping_version": "trace-context-realdata-v1",
+  "public_object_count": 7995,
+  "source_manifest_sha256": "c07de2b6531f5f17cd31f705b6e42443277bf837ce9e13225ae684001da17363",
+  "validation": {
+    "accessible_row_mismatch_count": 0,
+    "auto_layout_collision_count": 0,
+    "connection_id_collision_count": 0,
+    "context_associations": {
+      "max": 9,
+      "min": 5,
+      "p50": 5,
+      "p95": 5,
+      "p99": 7
+    },
+    "controlled_assignment_object_coverage": 7995,
+    "curated_membership_object_coverage": 7995,
+    "dangling_connection_count": 0,
+    "duplicate_accessible_row_count": 0,
+    "entity_id_collision_count": 0,
+    "export_missing_full_label_count": 0,
+    "export_preparation_failure_count": 0,
+    "export_svg_preparation_object_count": 7995,
+    "export_template_cases": 31980,
+    "failed_object_count": 0,
+    "internal_uuid_exposure_count": 0,
+    "invalid_connector_count": 0,
+    "label_shape": {
+      "all_labels": {
+        "control_character_label_count": 2,
+        "count": 48203,
+        "diacritic_bearing_count": 470,
+        "empty_count": 0,
+        "empty_display_count": 0,
+        "extreme_length_count": 0,
+        "han_count": 1,
+        "invalid": 0,
+        "invalid_unicode_count": 0,
+        "lone_surrogate_count": 0,
+        "max": 806,
+        "min": 2,
+        "multiline_count": 0,
+        "non_ascii_count": 691,
+        "p50": 14,
+        "p90": 39,
+        "p95": 46,
+        "p99": 103,
+        "truncation_required_count": 23024,
+        "unexpected_newline_count": 0,
+        "whitespace_only_count": 0,
+        "xml_special_count": 828
+      },
+      "controlled_assignment": {
+        "control_character_label_count": 0,
+        "count": 16106,
+        "diacritic_bearing_count": 0,
+        "empty_count": 0,
+        "empty_display_count": 0,
+        "extreme_length_count": 0,
+        "han_count": 0,
+        "invalid": 0,
+        "invalid_unicode_count": 0,
+        "lone_surrogate_count": 0,
+        "max": 52,
+        "min": 6,
+        "multiline_count": 0,
+        "non_ascii_count": 0,
+        "p50": 28,
+        "p90": 39,
+        "p95": 39,
+        "p99": 41,
+        "truncation_required_count": 8958,
+        "unexpected_newline_count": 0,
+        "whitespace_only_count": 0,
+        "xml_special_count": 0
+      },
+      "curated_membership": {
+        "control_character_label_count": 0,
+        "count": 24102,
+        "diacritic_bearing_count": 0,
+        "empty_count": 0,
+        "empty_display_count": 0,
+        "extreme_length_count": 0,
+        "han_count": 0,
+        "invalid": 0,
+        "invalid_unicode_count": 0,
+        "lone_surrogate_count": 0,
+        "max": 52,
+        "min": 4,
+        "multiline_count": 0,
+        "non_ascii_count": 0,
+        "p50": 14,
+        "p90": 39,
+        "p95": 39,
+        "p99": 41,
+        "truncation_required_count": 9426,
+        "unexpected_newline_count": 0,
+        "whitespace_only_count": 0,
+        "xml_special_count": 0
+      },
+      "object_title": {
+        "control_character_label_count": 2,
+        "count": 7995,
+        "diacritic_bearing_count": 470,
+        "empty_count": 0,
+        "empty_display_count": 0,
+        "extreme_length_count": 0,
+        "han_count": 1,
+        "invalid": 0,
+        "invalid_unicode_count": 0,
+        "lone_surrogate_count": 0,
+        "max": 806,
+        "min": 2,
+        "multiline_count": 0,
+        "non_ascii_count": 691,
+        "p50": 23,
+        "p90": 84,
+        "p95": 109,
+        "p99": 163,
+        "truncation_required_count": 4640,
+        "unexpected_newline_count": 0,
+        "whitespace_only_count": 0,
+        "xml_special_count": 828
+      }
+    },
+    "node_outside_bounds_count": 0,
+    "non_proposed_candidate_count": 0,
+    "nonfinite_x_count": 0,
+    "nonfinite_y_count": 0,
+    "nonfinite_zoom_count": 0,
+    "objects_tested": 7995,
+    "payload_distribution": {
+      "accessible_row_count": {
+        "count": 7995,
+        "max": 10,
+        "p50": 6,
+        "p90": 6,
+        "p95": 6,
+        "p99": 8
+      },
+      "connection_count": {
+        "count": 7995,
+        "max": 9,
+        "p50": 5,
+        "p90": 5,
+        "p95": 5,
+        "p99": 7
+      },
+      "dataset_bytes": {
+        "count": 7995,
+        "max": 16510,
+        "p50": 6167,
+        "p90": 7047,
+        "p95": 7434,
+        "p99": 8882
+      },
+      "entity_count": {
+        "count": 7995,
+        "max": 10,
+        "p50": 6,
+        "p90": 6,
+        "p95": 6,
+        "p99": 8
+      },
+      "export_svg_bytes": {
+        "count": 7995,
+        "max": 12050,
+        "p50": 6496,
+        "p90": 6906,
+        "p95": 7091,
+        "p99": 8903
+      }
+    },
+    "persistence_key_collision_count": 0,
+    "persistence_key_count": 7995,
+    "persistence_roundtrip_mismatch_count": 0,
+    "real_semantic_edge_count": 0,
+    "same_identity_conflicting_label_count": 0,
+    "same_label_different_identity_by_label_class": {
+      "controlled_assignment": 0,
+      "curated_membership": 0,
+      "object_title": 155
+    },
+    "same_label_different_identity_count": 155,
+    "serialization_failure_count": 0,
+    "source_label_mutation_count": 0,
+    "template_cases": 31980,
+    "undocumented_connection_category_count": 0,
+    "unsafe_export_filename_count": 0,
+    "visible_entity_outside_dataset_count": 0,
+    "workload_histogram": {
+      "5": 7884,
+      "7": 105,
+      "8": 1,
+      "9": 5
+    }
+  },
+  "validation_mode": "real_v49_validation"
+}

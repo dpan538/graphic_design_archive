@@ -6,6 +6,11 @@ import {
   type ContextCanvasPosition,
   type ContextCanvasVisibleNode,
 } from "./types";
+import {
+  CONTEXT_CANVAS_NODE_ID_DISPLAY_UNIT_LIMIT,
+  contextCanvasFullLabel,
+  fitContextCanvasDisplayLabel,
+} from "./display-label";
 import styles from "./ContextCanvas.module.css";
 
 interface ContextCanvasNodeProps {
@@ -23,7 +28,12 @@ export function ContextCanvasNode({
   onSelect,
   onMoveBy,
 }: ContextCanvasNodeProps) {
-  const displayLabel = node.ref.label?.trim() || node.ref.stableId;
+  const fullLabel = contextCanvasFullLabel(node.ref);
+  const displayLabel = fitContextCanvasDisplayLabel(fullLabel);
+  const displayId = fitContextCanvasDisplayLabel(
+    node.ref.stableId,
+    CONTEXT_CANVAS_NODE_ID_DISPLAY_UNIT_LIMIT,
+  );
 
   function handleKeyDown(event: KeyboardEvent<SVGGElement>) {
     if (event.key === "Enter" || event.key === " ") {
@@ -52,7 +62,7 @@ export function ContextCanvasNode({
       role="button"
       tabIndex={0}
       aria-pressed={selected}
-      aria-label={`${displayLabel}, ${node.ref.kind}${node.isRoot ? ", selected root object" : ""}. Use arrow keys to move 10 units; hold Shift for 1-unit precision.`}
+      aria-label={`${fullLabel}, ${node.ref.kind}${node.isRoot ? ", selected root object" : ""}. Use arrow keys to move 10 units; hold Shift for 1-unit precision.`}
       onPointerDown={(event) => {
         event.preventDefault();
         event.stopPropagation();
@@ -66,7 +76,7 @@ export function ContextCanvasNode({
       }}
       onKeyDown={handleKeyDown}
     >
-      <title>{`${displayLabel} (${node.ref.kind})`}</title>
+      <title>{`${fullLabel} (${node.ref.kind})`}</title>
       <rect
         className={styles.nodeBody}
         width={CONTEXT_CANVAS_NODE_WIDTH}
@@ -75,9 +85,9 @@ export function ContextCanvasNode({
       />
       <circle className={styles.nodePort} cx={0} cy={CONTEXT_CANVAS_NODE_HEIGHT / 2} r={5} aria-hidden="true" />
       <circle className={styles.nodePort} cx={CONTEXT_CANVAS_NODE_WIDTH} cy={CONTEXT_CANVAS_NODE_HEIGHT / 2} r={5} aria-hidden="true" />
-      <text className={styles.nodeLabel} x={16} y={30}>{displayLabel}</text>
+      <text className={styles.nodeLabel} x={16} y={30}>{displayLabel.displayText}</text>
       <text className={styles.nodeKind} x={16} y={57}>{node.ref.kind}</text>
-      <text className={styles.nodeId} x={16} y={81}>{node.ref.stableId}</text>
+      <text className={styles.nodeId} x={16} y={81}>{displayId.displayText}</text>
     </g>
   );
 }

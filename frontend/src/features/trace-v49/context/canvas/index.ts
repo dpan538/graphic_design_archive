@@ -1,4 +1,5 @@
 export * from "./connections";
+export * from "./display-label";
 export * from "./export-png";
 export * from "./fixture";
 export * from "./layout";

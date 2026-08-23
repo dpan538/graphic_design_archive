@@ -1,6 +1,11 @@
 .prototype {
-  min-height: 100vh;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 12px;
+  overflow: hidden;
   color: #182027;
   background: #eeeeea;
   font-family: var(--font-plex-sans), system-ui, sans-serif;
@@ -8,10 +13,12 @@
 
 .prototypeHeader {
   display: flex;
+  flex: 0 0 auto;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 24px;
-  margin-bottom: 16px;
-  padding: 18px;
+  margin-bottom: 10px;
+  padding: 12px 14px;
   border: 1px solid #b8bdbd;
   background: #fafaf8;
 }
@@ -22,8 +29,7 @@
 .panelHeader p,
 .paletteGroup h3,
 .inspectorContent h3,
-.accessibleReference h2,
-.accessibleReference p {
+.accessibleReferenceContent p {
   margin: 0;
 }
 
@@ -46,32 +52,36 @@
   text-transform: uppercase;
 }
 
-.fixtureNotice {
+.dataNotice {
   display: grid;
-  min-width: 250px;
+  min-width: min(420px, 48vw);
+  max-width: 620px;
   margin: 0;
   font-family: var(--font-plex-mono), ui-monospace, monospace;
   font-size: 0.7rem;
 }
 
-.fixtureNotice div {
+.dataNotice div {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(116px, auto) minmax(0, 1fr);
   gap: 12px;
   padding: 4px 0;
   border-bottom: 1px solid #d7d9d7;
 }
 
-.fixtureNotice dt {
+.dataNotice dt {
   color: #667077;
 }
 
-.fixtureNotice dd {
+.dataNotice dd {
   margin: 0;
+  overflow-wrap: anywhere;
+  text-align: right;
 }
 
 .toolbar {
   display: flex;
+  flex: 0 0 auto;
   flex-wrap: wrap;
   align-items: end;
   gap: 8px;
@@ -158,15 +168,21 @@
 
 .workspace {
   display: grid;
+  flex: 1 1 auto;
   grid-template-columns: minmax(220px, 260px) minmax(420px, 1fr) minmax(230px, 280px);
-  min-height: 640px;
+  min-height: 0;
+  overflow: hidden;
   border: 1px solid #aeb4b5;
   background: #f5f5f2;
 }
 
 .palette,
 .inspector {
+  display: flex;
+  flex-direction: column;
   min-width: 0;
+  min-height: 0;
+  overflow: hidden;
   background: #f8f8f5;
 }
 
@@ -180,6 +196,7 @@
 
 .panelHeader {
   display: flex;
+  flex: 0 0 auto;
   align-items: flex-start;
   justify-content: space-between;
   gap: 8px;
@@ -216,7 +233,8 @@
 
 .paletteContent,
 .inspectorContent {
-  max-height: 590px;
+  flex: 1 1 auto;
+  min-height: 0;
   overflow: auto;
   padding: 12px;
 }
@@ -289,10 +307,19 @@
   touch-action: none;
 }
 
+.canvasColumn {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
 .viewport {
   position: relative;
+  flex: 1 1 auto;
   min-width: 0;
-  min-height: 640px;
+  min-height: 0;
   overflow: hidden;
   background: #e5e7e5;
 }
@@ -305,7 +332,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 640px;
+  min-height: 0;
   touch-action: none;
   user-select: none;
 }
@@ -499,6 +526,7 @@
 
 .statusBar {
   display: flex;
+  flex: 0 0 auto;
   flex-wrap: wrap;
   gap: 10px 24px;
   padding: 9px 12px;
@@ -511,25 +539,51 @@
 }
 
 .accessibleReference {
-  margin-top: 16px;
-  padding: 16px;
-  border: 1px solid #b8bdbd;
+  flex: 0 0 auto;
+  min-height: 0;
+  max-height: min(38%, 320px);
+  overflow: hidden;
+  border-top: 1px solid #aeb4b5;
   background: #fafaf8;
 }
 
-.accessibleReference h2 {
-  font-size: 1rem;
+.accessibleReference[open] {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  height: min(38%, 320px);
 }
 
-.accessibleReference > p {
-  margin-top: 4px;
+.accessibleSummary {
+  padding: 9px 12px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.accessibleSummary:focus-visible {
+  outline: 3px solid #2d6b8c;
+  outline-offset: -3px;
+}
+
+.accessibleReferenceContent {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 0 12px 12px;
+  overflow: hidden;
+}
+
+.accessibleReferenceContent > p {
+  flex: 0 0 auto;
   color: #59646b;
   font-size: 0.78rem;
 }
 
 .tableScroll {
+  flex: 1 1 auto;
+  min-height: 0;
   margin-top: 12px;
-  overflow-x: auto;
+  overflow: auto;
 }
 
 .accessibleReference table {
@@ -558,17 +612,7 @@
 
 @media (max-width: 1120px) {
   .workspace {
-    grid-template-columns: minmax(200px, 240px) minmax(420px, 1fr);
-  }
-
-  .inspector {
-    grid-column: 1 / -1;
-    border-top: 1px solid #bcc1c1;
-    border-left: 0;
-  }
-
-  .inspectorContent {
-    max-height: none;
+    grid-template-columns: minmax(180px, 220px) minmax(320px, 1fr) minmax(190px, 230px);
   }
 }
 
@@ -579,30 +623,54 @@
 
   .prototypeHeader {
     display: grid;
+    gap: 8px;
+    padding: 9px;
   }
 
-  .fixtureNotice {
+  .prototypeHeader > div > p:last-child {
+    display: none;
+  }
+
+  .dataNotice {
     min-width: 0;
+    max-width: none;
   }
 
   .workspace {
     grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(76px, auto) minmax(240px, 1fr) minmax(76px, auto);
+    overflow-y: auto;
   }
 
   .palette,
   .inspector {
+    max-height: 24dvh;
     border: 0;
     border-bottom: 1px solid #bcc1c1;
   }
 
-  .viewport,
-  .canvasSvg {
-    min-height: 480px;
+  .inspector {
+    border-top: 1px solid #bcc1c1;
+    border-bottom: 0;
   }
 
   .toolbarGroup {
     padding-left: 0;
     border-left: 0;
+  }
+}
+
+@media (max-height: 680px) and (min-width: 761px) {
+  .prototypeHeader > div > p:last-child {
+    display: none;
+  }
+
+  .prototypeHeader {
+    padding-block: 8px;
+  }
+
+  .toolbar {
+    padding-block: 6px;
   }
 }
 

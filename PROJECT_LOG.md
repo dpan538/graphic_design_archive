@@ -59,7 +59,15 @@ git show v49-data-api-closure-20260821:PROJECT_LOG.md
 - Use seeded deterministic randomness; approximately 8–10 template families are currently envisioned, with theme, medium, and similar single-factor selections able to drive exploration.
 - Derived associations are not historical relations. Data mining remains active; do not freeze factors, scoring, or the template catalog yet.
 
-`CONTEXT_CANVAS=FUNCTIONAL_IMPLEMENTATION_ACTIVE`
+### Context Canvas real-data validation — 2026-08-23
+
+- Real-data validation uses the audited 7,995-object public cohort while retaining proposed candidate states; it is validation-only, not a governed public TRACE release, and introduces no accepted semantic edges.
+
+`CONTEXT_CANVAS_FUNCTIONAL_CORE=COMPLETE`
+
+`CONTEXT_CANVAS_REAL_DATA_VALIDATION=ACTIVE`
+
+`CONTEXT_CANVAS_FINAL_VISUAL_DESIGN=DEFERRED`
 
 `SPACETIME=PARAMETER_GOVERNANCE_NEXT`
 

@@ -2,9 +2,13 @@ import type { TraceContextInput } from "../types";
 import { deriveContextTraceDataset } from "../project";
 
 export const CONTEXT_CANVAS_FIXTURE_METADATA = Object.freeze({
-  fixtureKind: "synthetic-contract-only" as const,
+  dataLabel: "synthetic contract fixture",
+  mappingVersion: "synthetic-context-contract-v1",
+  candidateState: "synthetic_contract" as const,
   historicalEvidence: false as const,
+  governedPublicRelease: false as const,
   publicReleaseData: false as const,
+  publicObjectCohortCount: 2,
 });
 
 const objectA = Object.freeze({

@@ -43,6 +43,7 @@ export type ContextCanvasAction =
   | Readonly<{ type: "AUTO_ARRANGE"; positions: ContextCanvasComposition["positions"] }>
   | Readonly<{ type: "RESET_CANVAS"; composition: ContextCanvasComposition }>
   | Readonly<{ type: "EXPORT_START" }>
+  | Readonly<{ type: "EXPORT_CANCEL" }>
   | Readonly<{ type: "EXPORT_SUCCESS" }>
   | Readonly<{ type: "EXPORT_FAILURE"; message: string }>;
 
@@ -335,6 +336,15 @@ export function contextCanvasReducer(
     case "EXPORT_START":
       if (state.phase === "INITIALIZING" || state.phase === "EXPORTING" || state.interaction.mode !== "READY") return state;
       return Object.freeze({ ...state, phase: "EXPORTING", exportError: null, interaction: readyInteraction(), statusMessage: "Preparing PNG export." });
+
+    case "EXPORT_CANCEL":
+      if (state.phase !== "EXPORTING") return state;
+      return Object.freeze({
+        ...state,
+        phase: "READY",
+        exportError: null,
+        statusMessage: "PNG export cancelled.",
+      });
 
     case "EXPORT_SUCCESS":
       return Object.freeze({ ...state, phase: "READY", exportError: null, statusMessage: "PNG export ready and downloaded." });

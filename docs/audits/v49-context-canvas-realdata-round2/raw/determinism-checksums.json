@@ -1,0 +1,32 @@
+{
+  "aggregate_sha256": "499624075b99745c1eb95a8d6c2c1438eb7e74ca63222227b8bfb87fdaf38d76",
+  "frozen_input_sha256": {
+    "data/prefreeze_candidate_v48.sqlite": "ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "database/FREEZE_V49.json": "f0dda59dd515ba243eaf213bce9f42513727f1ab0a44685635921c3759a7d22e",
+    "docs/audits/v49-phase2b-migration/18_SURFACE_ROW_LEDGER.tsv": "48f98f68ca2ec0cef96c82ecc9c01e4129eb9a3f91e08b07ad9a59644a9d4e01"
+  },
+  "full_projection_pass_a": {
+    "accessibility": "d8330df370e97b28dad33cfee75d1d9820e2eb2e730c2b304ae7e883cad40a0b",
+    "connectionIdentity": "3c21bcc92a29fa421ce3279c5b87482f24ad2253666bab175d843ab119c4ce68",
+    "dataset": "1ad56c6fdbf2d618576d16278dcbb95f26f34488b4c106816a841b277df154fb",
+    "entityIdentity": "e04d063d6a7a02ed145bbdb93bc019e99fa7890739413377163eef76882cb510",
+    "exportPreparation": "3c88449337f52ece7be2b8bf282812fb2402b020f72ced7984a9a7c03ab410b9",
+    "layoutGeometry": "dce03ff8a54c2f2254ab3cff4e10cad48f403cbf14fbfc63269fcdda43cadce9",
+    "templateSelection": "3b2ff39d72649764868b247e491c6458361ec62931507283bc09ee7c9fda17c1"
+  },
+  "full_projection_pass_b": {
+    "accessibility": "d8330df370e97b28dad33cfee75d1d9820e2eb2e730c2b304ae7e883cad40a0b",
+    "connectionIdentity": "3c21bcc92a29fa421ce3279c5b87482f24ad2253666bab175d843ab119c4ce68",
+    "dataset": "1ad56c6fdbf2d618576d16278dcbb95f26f34488b4c106816a841b277df154fb",
+    "entityIdentity": "e04d063d6a7a02ed145bbdb93bc019e99fa7890739413377163eef76882cb510",
+    "exportPreparation": "3c88449337f52ece7be2b8bf282812fb2402b020f72ced7984a9a7c03ab410b9",
+    "layoutGeometry": "dce03ff8a54c2f2254ab3cff4e10cad48f403cbf14fbfc63269fcdda43cadce9",
+    "templateSelection": "3b2ff39d72649764868b247e491c6458361ec62931507283bc09ee7c9fda17c1"
+  },
+  "real_context_checksum_match": true,
+  "real_context_rebuild_deterministic": true,
+  "rebuild_runs": 2,
+  "source_index_pass_a_sha256": "c71fe62a0163f64f1e5701864b618aec8c58c36dcb0cd595762e7838a3870287",
+  "source_index_pass_b_sha256": "c71fe62a0163f64f1e5701864b618aec8c58c36dcb0cd595762e7838a3870287",
+  "source_manifest_sha256": "c07de2b6531f5f17cd31f705b6e42443277bf837ce9e13225ae684001da17363"
+}
