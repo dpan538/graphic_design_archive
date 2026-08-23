@@ -71,6 +71,13 @@ git show v49-data-api-closure-20260821:PROJECT_LOG.md
 - Context has an additive release-pinned public Read API and compact server-only projection. The route remains unlinked and `noindex`; final visual design and public navigation are deferred.
 - Region is excluded from Context and handed to Spacetime parameter governance. No map/time implementation is included.
 
+### Context runtime + Spacetime functional foundation — 2026-08-23
+
+- Context V1 runtime behavior is rehearsed and frozen: the Context API dispatches through its compact governed projection without loading the Search index, SQLite, or the generic archive repository in the normal Context path.
+- Spacetime V1 governs all 7,996 public typed-region assignments across the 7,995-record public cohort, with explicit mapped, aggregate-only, and display-unmapped outcomes. It publishes recorded project context only; it does not assert object coordinates, historical presence, movement, influence, or semantic relations.
+- The functional foundation uses a checksum-bound Natural Earth Admin 0 Countries 50m artifact, an Equal Earth default projection, deterministic aggregate marks, 23 decade buckets, and release-pinned server API reads. Final visual design, public navigation, and visual acceptance remain deferred.
+- Exploration Field remains an open-ended data-mining direction; no implementation or factor/template freeze is included here.
+
 `CONTEXT_CANVAS_FUNCTIONAL_CORE=COMPLETE`
 
 `CONTEXT_CANVAS_REAL_DATA_VALIDATION=ACTIVE`
@@ -79,7 +86,19 @@ git show v49-data-api-closure-20260821:PROJECT_LOG.md
 
 `CONTEXT_CANVAS_FINAL_VISUAL_DESIGN=DEFERRED`
 
-`SPACETIME=PARAMETER_GOVERNANCE_NEXT`
+`CONTEXT_V1_RUNTIME_REHEARSAL=PASS`
+
+`CONTEXT_V1_ENGINEERING_LOGIC=FROZEN`
+
+`SPACETIME=GOVERNED_FUNCTIONAL_FOUNDATION_READY`
+
+`SPACETIME_GIS_GOVERNANCE=PASS`
+
+`SPACETIME_TIME_GOVERNANCE=PASS`
+
+`SPACETIME_FUNCTIONAL_FOUNDATION=PASS`
+
+`SPACETIME_VISUAL_DESIGN=DEFERRED`
 
 `EXPLORATION_FIELD=OPEN_ENDED_DATA_MINING`
 

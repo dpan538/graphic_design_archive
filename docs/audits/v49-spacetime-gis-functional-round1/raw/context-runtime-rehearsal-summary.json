@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "trace-context-runtime-rehearsal/v1",
+  "sourceSha": "5767928180b90a4194cc47e325d78ab8d9226b48",
+  "generatedAt": "2026-08-23T00:00:00.000Z",
+  "projection": {
+    "projectionId": "trace-context-v1",
+    "projectionSha256": "825f6ecaa9ae1496c8a00ea0fefa5c90319046cf9c1f08a2ef76b9b02df4baeb",
+    "policyVersion": "context-governance-v1",
+    "policySha256": "aa13eaff6d42533a37777e546b8976bdad7d2be3a4ab4d405a77ce1aa61c7a0c",
+    "recordCount": 7995
+  },
+  "preflight": {
+    "command": "npm run verify:context-v1-projection",
+    "status": "PASS",
+    "deterministicRebuildRuns": 2
+  },
+  "apiLazyBoundary": {
+    "status": "PASS",
+    "unrelatedContextModuleLoadCount": 0,
+    "contextGenericProviderOpenCount": 0
+  },
+  "staticDependency": {
+    "graphSummaries": {
+      "contextApiRuntime": {
+        "entry": "frontend/src/features/trace-v49/context/governed/read-api-runtime.server.ts",
+        "moduleCount": 9,
+        "edgeCount": 8,
+        "externalSpecifiers": [
+          "node:crypto",
+          "node:perf_hooks",
+          "server-only"
+        ]
+      },
+      "projectionLoader": {
+        "entry": "frontend/src/features/trace-v49/context/governed/reader.server.ts",
+        "moduleCount": 8,
+        "edgeCount": 7,
+        "externalSpecifiers": [
+          "node:crypto",
+          "node:perf_hooks",
+          "server-only"
+        ]
+      },
+      "governedCanvas": {
+        "entry": "frontend/src/app/trace/context-canvas/page.tsx",
+        "moduleCount": 39,
+        "edgeCount": 84,
+        "externalSpecifiers": [
+          "node:crypto",
+          "node:perf_hooks",
+          "react",
+          "server-only"
+        ]
+      }
+    },
+    "heavyValidationImportCount": 0,
+    "sqliteDependency": false,
+    "filesystemSourceParserImportCount": 0,
+    "searchRuntimeImportCount": 0,
+    "controllerHookBeforeProviderOpen": true,
+    "contextRuntimeImportPathGated": true,
+    "genericProviderLazyLoaded": true
+  },
+  "runtime": {
+    "publicLookups": 7995,
+    "publicFailures": 0,
+    "publicPipelinePasses": 7995,
+    "heldLookups": 7928,
+    "heldExposures": 0,
+    "heldFailures": 0,
+    "representationCount": 16106,
+    "accessibleRowCount": 24101,
+    "canvasNodeCount": 24101,
+    "canvasConnectionCount": 16106,
+    "exportBytes": 49556748,
+    "fullPipelineMs": 3511.936,
+    "indexBuildAttempts": 1,
+    "successfulIndexBuilds": 1,
+    "validationOncePerProcess": true,
+    "apiFastPath": {
+      "providerOpenCalls": 0,
+      "searchRuntimeModulesLoaded": 0,
+      "get": "PASS",
+      "head": "PASS",
+      "currentExactParity": "PASS",
+      "heldUnknownParity": "PASS",
+      "releasePinning": "PASS"
+    }
+  },
+  "performance": {
+    "coldLoadMs": 479.59,
+    "moduleImportMs": 52.051,
+    "firstSelectedRecordLookupMs": 427.54,
+    "manifestVerificationMs": 109.485,
+    "registryValidationMs": 0.542,
+    "recordIndexConstructionMs": 57.819,
+    "boundaryValidationMs": 259.203,
+    "validationAndIndexTotalMs": 427.094,
+    "warmLookupMs": {
+      "count": 7995,
+      "p50": 0.003,
+      "p95": 0.004,
+      "p99": 0.005,
+      "max": 0.591
+    },
+    "runtimeHeapBytes": 18296176
+  },
+  "semantics": {
+    "contextDecision": "CONTEXT_V1_CLOSED",
+    "contextSemanticsChanged": false,
+    "contextGovernanceChanged": false,
+    "engineeringLogicFrozen": true
+  }
+}

@@ -1,0 +1,32 @@
+.failure {
+  display: grid;
+  align-content: center;
+  min-height: 100dvh;
+  padding: clamp(28px, 7vw, 96px);
+  color: #1c2525;
+  background: #ecece7;
+  font-family: var(--font-plex-sans), system-ui, sans-serif;
+}
+
+.failure h1,
+.failure p {
+  max-width: 780px;
+  margin: 0;
+}
+
+.failure h1 {
+  margin: 7px 0 18px;
+  font-size: clamp(2rem, 6vw, 4.6rem);
+}
+
+.failure p:first-child {
+  color: #53615f;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.failure p + p {
+  margin-top: 10px;
+}

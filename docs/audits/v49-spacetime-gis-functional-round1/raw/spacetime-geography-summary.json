@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "trace-spacetime-geography-audit-summary/v1",
+  "generatedAt": "2026-08-23T00:00:00.000Z",
+  "sourceRelease": {
+    "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+    "researchReleaseId": "v49-api-contract-fresh-c"
+  },
+  "geographyRole": "recorded_region_context",
+  "geographyPolicyVersion": "spacetime-geography-governance-v1",
+  "regionAssignmentCount": 7996,
+  "regionObjectCoverage": 7995,
+  "uniqueRawRegionLabelCount": 94,
+  "uniqueTypedRegionLabelCount": 93,
+  "multiRegionObjectCount": 1,
+  "registryCounts": {
+    "aggregateOnlyEntries": 11,
+    "heldEntries": 0,
+    "mappedEntries": 81,
+    "registryEntries": 93,
+    "sourceAssignments": 7996,
+    "sourceObjectCoverage": 7995,
+    "unmappedEntries": 1
+  },
+  "objectCounts": {
+    "mapped": 7800,
+    "aggregateOnly": 194,
+    "unmapped": 1
+  },
+  "mappedGeometryTargetCount": 84,
+  "missingMappedGeometryTargetCount": 0,
+  "rawTypedDiagnosticCount": 1,
+  "exactObjectCoordinateClaims": 0,
+  "silentHistoricalNormalizations": 0
+}

@@ -1,6 +1,7 @@
 import "server-only";
 
 import { createHash } from "node:crypto";
+import { performance } from "node:perf_hooks";
 import exceptionRegisterJson from "../../../../../generated/trace-context-v1/exception-register.json";
 import explanationRegistryJson from "../../../../../generated/trace-context-v1/explanation-registry.json";
 import governancePolicyJson from "../../../../../generated/trace-context-v1/governance-policy.json";
@@ -202,6 +203,24 @@ interface GovernedContextIndex {
 }
 
 let cachedIndex: GovernedContextIndex | null = null;
+let indexBuildAttempts = 0;
+let successfulIndexBuilds = 0;
+let lastSuccessfulBuildTiming: GovernedContextReaderBuildTiming | null = null;
+
+export interface GovernedContextReaderBuildTiming {
+  readonly manifestVerificationMs: number;
+  readonly registryValidationMs: number;
+  readonly recordIndexConstructionMs: number;
+  readonly boundaryValidationMs: number;
+  readonly totalMs: number;
+}
+
+export interface GovernedContextReaderRuntimeDiagnostics {
+  readonly indexInitialized: boolean;
+  readonly indexBuildAttempts: number;
+  readonly successfulIndexBuilds: number;
+  readonly lastSuccessfulBuildTiming: GovernedContextReaderBuildTiming | null;
+}
 
 function compareText(left: string, right: string): number {
   return left < right ? -1 : left > right ? 1 : 0;
@@ -471,6 +490,8 @@ function validateManifest(
 }
 
 function buildIndex(): GovernedContextIndex {
+  indexBuildAttempts += 1;
+  const buildStarted = performance.now();
   const manifest = manifestJson as unknown as ArtifactManifest;
   const records = recordsJson as unknown as ArtifactRecordsDocument;
   const terms = termsJson as unknown as ArtifactTermsDocument;
@@ -487,10 +508,17 @@ function buildIndex(): GovernedContextIndex {
     "records.json": records,
     "terms.json": terms,
   });
+  const manifestStarted = performance.now();
   validateManifest(manifest, payloads);
+  const manifestVerificationMs = performance.now() - manifestStarted;
+  const registryStarted = performance.now();
   const explanationByCode = validateExplanationRegistry(explanations);
   const termById = validateTerms(terms, explanationByCode);
+  const registryValidationMs = performance.now() - registryStarted;
+  const recordsStarted = performance.now();
   const recordById = validateRecords(records, termById, explanationByCode);
+  const recordIndexConstructionMs = performance.now() - recordsStarted;
+  const boundaryStarted = performance.now();
   const orderedRecords = [...recordById.values()];
   const sampleCount = 12;
   const sampleOptions = Object.freeze(Array.from({ length: sampleCount }, (_, index) => {
@@ -508,6 +536,16 @@ function buildIndex(): GovernedContextIndex {
   assert(!RAW_SOURCE_TERM_PATTERN.test(publicPayloadText), "raw source term entered governed projection");
   assert(!UUID_PATTERN.test(publicPayloadText), "internal UUID entered governed projection");
   assert(!URL_PATTERN.test(publicPayloadText), "URL entered governed projection");
+
+  const boundaryValidationMs = performance.now() - boundaryStarted;
+  successfulIndexBuilds += 1;
+  lastSuccessfulBuildTiming = Object.freeze({
+    manifestVerificationMs,
+    registryValidationMs,
+    recordIndexConstructionMs,
+    boundaryValidationMs,
+    totalMs: performance.now() - buildStarted,
+  });
 
   return Object.freeze({
     manifest,
@@ -622,6 +660,19 @@ function projectDataset(index: GovernedContextIndex, record: ArtifactRecord): Pu
 
 export function resetGovernedContextReaderForTests(): void {
   cachedIndex = null;
+  indexBuildAttempts = 0;
+  successfulIndexBuilds = 0;
+  lastSuccessfulBuildTiming = null;
+}
+
+/** Test/rehearsal diagnostics only; this never initializes or mutates the runtime index. */
+export function getGovernedContextReaderRuntimeDiagnosticsForTests(): GovernedContextReaderRuntimeDiagnostics {
+  return Object.freeze({
+    indexInitialized: cachedIndex !== null,
+    indexBuildAttempts,
+    successfulIndexBuilds,
+    lastSuccessfulBuildTiming,
+  });
 }
 
 export function getGovernedContextProjectionInfo(): GovernedContextProjectionInfo {

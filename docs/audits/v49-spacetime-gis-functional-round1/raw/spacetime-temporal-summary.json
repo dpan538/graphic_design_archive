@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "trace-spacetime-temporal-audit-summary/v1",
+  "generatedAt": "2026-08-23T00:00:00.000Z",
+  "sourceRelease": {
+    "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+    "researchReleaseId": "v49-api-contract-fresh-c"
+  },
+  "temporalRole": "recorded_date_context",
+  "temporalPolicyVersion": "spacetime-temporal-governance-v1",
+  "temporalObjectCoverage": 7995,
+  "precision": {
+    "approximate": 305,
+    "day": 78,
+    "month": 27,
+    "range": 33,
+    "unknown": 0,
+    "year": 7552
+  },
+  "earliestGovernedYear": 1800,
+  "latestGovernedYear": 2026,
+  "bucketPolicy": "DECADE",
+  "rangeMembershipPolicy": "INTERVAL_OVERLAP",
+  "bucketCount": 23,
+  "defaultPeriodId": "SPT-PERIOD-1980-1990",
+  "totalPeriodMemberships": {
+    "memberships": 8033,
+    "mappedMemberships": 7838,
+    "unmappedMemberships": 195
+  },
+  "zeroCountBuckets": 0
+}

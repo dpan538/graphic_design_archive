@@ -1,0 +1,82 @@
+{
+  "benchmarkId": "trace-spacetime-functional-benchmark-v1",
+  "projectionId": "trace-spacetime-v1",
+  "projectionSha256": "f751b0f432ff684fd1000201b910aa397a4d9965468c2f7dd5022d6a4ae01c06",
+  "publicRecords": 7995,
+  "periods": 23,
+  "defaultPeriodId": "SPT-PERIOD-1980-1990",
+  "reader": {
+    "coldLoadMs": 422.977,
+    "buildTiming": {
+      "payloadVerificationMs": 344.2892089999999,
+      "registryValidationMs": 1.3767500000000155,
+      "recordIndexConstructionMs": 50.48091699999998,
+      "aggregateValidationMs": 20.993458000000032,
+      "publicProjectionConstructionMs": 5.670083999999974,
+      "totalMs": 422.837459
+    },
+    "warmAtlasLookup": {
+      "runs": 460,
+      "p50Ms": 0.281,
+      "p95Ms": 0.94,
+      "p99Ms": 1.051,
+      "maxMs": 1.278
+    },
+    "heapDeltaBytes": 26747856,
+    "indexBuildAttempts": 1,
+    "successfulIndexBuilds": 1
+  },
+  "geometry": {
+    "loadAndValidate": {
+      "runs": 30,
+      "p50Ms": 12.583,
+      "p95Ms": 13.606,
+      "p99Ms": 13.91,
+      "maxMs": 13.91
+    },
+    "equalEarthFit": {
+      "runs": 20,
+      "p50Ms": 27.709,
+      "p95Ms": 32.364,
+      "p99Ms": 41.555,
+      "maxMs": 41.555
+    },
+    "allPathGeneration": {
+      "runs": 12,
+      "p50Ms": 76.956,
+      "p95Ms": 91.781,
+      "p99Ms": 91.781,
+      "maxMs": 91.781
+    },
+    "featureCount": 242,
+    "svgPathBytes": 1529632
+  },
+  "periodSwitch": {
+    "runs": 460,
+    "p50Ms": 9.903,
+    "p95Ms": 37.94,
+    "p99Ms": 40.676,
+    "maxMs": 48.709
+  },
+  "mapViewModel": {
+    "runs": 460,
+    "p50Ms": 9.667,
+    "p95Ms": 37.122,
+    "p99Ms": 39.759,
+    "maxMs": 47.801
+  },
+  "defaultAtlas": {
+    "payloadBytes": 21238,
+    "denominator": 1898,
+    "mappedMarks": 19,
+    "aggregateOnlyRows": 3,
+    "unmappedRows": 0,
+    "accessibleRows": 22
+  },
+  "functionalSvg": {
+    "bytes": 1533363,
+    "domElementCount": 264,
+    "handAuthoredGeographyPathCount": 0,
+    "manualObjectCoordinateCount": 0
+  }
+}

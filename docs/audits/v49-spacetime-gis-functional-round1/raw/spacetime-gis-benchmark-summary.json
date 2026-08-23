@@ -1,0 +1,347 @@
+{
+  "benchmarkId": "trace-spacetime-gis-benchmark-v1",
+  "runtime": {
+    "node": "v22.21.0",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "viewport": {
+    "width": 1440,
+    "height": 800,
+    "padding": 24
+  },
+  "naturalEarth": {
+    "version": "5.1.1",
+    "scales": {
+      "110m": {
+        "scale": "110m",
+        "rawBytes": 279027,
+        "gzipBytes": 101118,
+        "jsonParse": {
+          "runs": 30,
+          "p50Ms": 1.576,
+          "p95Ms": 2.555,
+          "p99Ms": 2.676,
+          "maxMs": 2.676
+        },
+        "featureCount": 177,
+        "polygonCount": 288,
+        "ringCount": 289,
+        "coordinateCount": 10654,
+        "projections": {
+          "equal-earth": {
+            "fit": {
+              "runs": 20,
+              "p50Ms": 3.963,
+              "p95Ms": 4.755,
+              "p99Ms": 6.008,
+              "maxMs": 6.008
+            },
+            "pathGeneration": {
+              "runs": 12,
+              "p50Ms": 11.203,
+              "p95Ms": 11.744,
+              "p99Ms": 11.744,
+              "maxMs": 11.744
+            },
+            "svgPathStringBytes": 165121,
+            "areaProperty": "equal-area"
+          },
+          "natural-earth-1": {
+            "fit": {
+              "runs": 20,
+              "p50Ms": 2.96,
+              "p95Ms": 3.465,
+              "p99Ms": 4.165,
+              "maxMs": 4.165
+            },
+            "pathGeneration": {
+              "runs": 12,
+              "p50Ms": 9.484,
+              "p95Ms": 11.157,
+              "p99Ms": 11.157,
+              "maxMs": 11.157
+            },
+            "svgPathStringBytes": 165492,
+            "areaProperty": "neither-equal-area-nor-conformal"
+          }
+        },
+        "selectedRegionZoomPathBytes": {
+          "USA": 7231,
+          "JPN": 1250,
+          "FJI": 309
+        }
+      },
+      "50m": {
+        "scale": "50m",
+        "rawBytes": 2134794,
+        "gzipBytes": 785828,
+        "jsonParse": {
+          "runs": 30,
+          "p50Ms": 12.977,
+          "p95Ms": 13.897,
+          "p99Ms": 15.532,
+          "maxMs": 15.532
+        },
+        "featureCount": 242,
+        "polygonCount": 1620,
+        "ringCount": 1632,
+        "coordinateCount": 99613,
+        "projections": {
+          "equal-earth": {
+            "fit": {
+              "runs": 20,
+              "p50Ms": 30.905,
+              "p95Ms": 36.13,
+              "p99Ms": 36.694,
+              "maxMs": 36.694
+            },
+            "pathGeneration": {
+              "runs": 12,
+              "p50Ms": 129.83,
+              "p95Ms": 142.181,
+              "p99Ms": 142.181,
+              "maxMs": 142.181
+            },
+            "svgPathStringBytes": 1553980,
+            "areaProperty": "equal-area"
+          },
+          "natural-earth-1": {
+            "fit": {
+              "runs": 20,
+              "p50Ms": 24.254,
+              "p95Ms": 26.763,
+              "p99Ms": 27.122,
+              "maxMs": 27.122
+            },
+            "pathGeneration": {
+              "runs": 12,
+              "p50Ms": 116.788,
+              "p95Ms": 137.379,
+              "p99Ms": 137.379,
+              "maxMs": 137.379
+            },
+            "svgPathStringBytes": 1557039,
+            "areaProperty": "neither-equal-area-nor-conformal"
+          }
+        },
+        "selectedRegionZoomPathBytes": {
+          "USA": 88551,
+          "JPN": 16660,
+          "FJI": 4203
+        }
+      }
+    },
+    "decision": "50m",
+    "decisionRationale": "50m preserves materially more Admin-0 features and selected-region detail; measured costs remain suitable for one immutable fetched asset. 10m is not justified for the v1 full-world research viewport."
+  },
+  "worldAtlas": {
+    "packageVersion": "2.0.2",
+    "naturalEarthVersion": "4.1.0",
+    "scales": {
+      "110m": {
+        "scale": "110m",
+        "sourceVersion": "Natural Earth 4.1.0",
+        "rawBytes": 107761,
+        "gzipBytes": 38063,
+        "featureCount": 177,
+        "topojsonDecode": {
+          "runs": 30,
+          "p50Ms": 0.892,
+          "p95Ms": 2.202,
+          "p99Ms": 2.837,
+          "maxMs": 2.837
+        }
+      },
+      "50m": {
+        "scale": "50m",
+        "sourceVersion": "Natural Earth 4.1.0",
+        "rawBytes": 756420,
+        "gzipBytes": 229093,
+        "featureCount": 241,
+        "topojsonDecode": {
+          "runs": 30,
+          "p50Ms": 7.586,
+          "p95Ms": 7.803,
+          "p99Ms": 7.867,
+          "maxMs": 7.867
+        }
+      },
+      "10m": {
+        "scale": "10m",
+        "sourceVersion": "Natural Earth 4.1.0",
+        "rawBytes": 3661071,
+        "gzipBytes": 916570,
+        "featureCount": 255,
+        "topojsonDecode": {
+          "runs": 30,
+          "p50Ms": 76.872,
+          "p95Ms": 143.401,
+          "p99Ms": 148.758,
+          "maxMs": 148.758
+        }
+      }
+    },
+    "decision": "REPLACE_WITH_PINNED_NATURAL_EARTH_ARTIFACT",
+    "packageRetention": "LEGACY_AND_TEST_REFERENCE_ONLY"
+  },
+  "projections": {
+    "default": "Equal Earth",
+    "alternative": "Natural Earth 1",
+    "rationale": "D3 documents Equal Earth as equal-area and Natural Earth 1 as neither conformal nor equal-area; equal-area is the defensible default for aggregate density comparison."
+  },
+  "dots": {
+    "policyVersion": "trace-dot-density-grid-v1",
+    "dotUnit": 1,
+    "workloads": [
+      {
+        "geometryId": "USA",
+        "recordCount": 500
+      },
+      {
+        "geometryId": "AUS",
+        "recordCount": 250
+      },
+      {
+        "geometryId": "JPN",
+        "recordCount": 100
+      },
+      {
+        "geometryId": "FJI",
+        "recordCount": 25
+      },
+      {
+        "geometryId": "VAT",
+        "recordCount": 7
+      }
+    ],
+    "perGeometry": {
+      "USA": {
+        "recordCount": 500,
+        "generation": {
+          "runs": 30,
+          "p50Ms": 55.032,
+          "p95Ms": 63.875,
+          "p99Ms": 67.432,
+          "maxMs": 67.432
+        }
+      },
+      "AUS": {
+        "recordCount": 250,
+        "generation": {
+          "runs": 30,
+          "p50Ms": 18.468,
+          "p95Ms": 19.346,
+          "p99Ms": 21.211,
+          "maxMs": 21.211
+        }
+      },
+      "JPN": {
+        "recordCount": 100,
+        "generation": {
+          "runs": 30,
+          "p50Ms": 6.633,
+          "p95Ms": 7.264,
+          "p99Ms": 7.449,
+          "maxMs": 7.449
+        }
+      },
+      "FJI": {
+        "recordCount": 25,
+        "generation": {
+          "runs": 30,
+          "p50Ms": 10.943,
+          "p95Ms": 14.709,
+          "p99Ms": 15.012,
+          "maxMs": 15.012
+        }
+      },
+      "VAT": {
+        "recordCount": 7,
+        "generation": {
+          "runs": 30,
+          "p50Ms": 0.007,
+          "p95Ms": 0.007,
+          "p99Ms": 0.007,
+          "maxMs": 0.007
+        }
+      }
+    },
+    "worstFieldP95Ms": 63.875,
+    "aggregateWorkload": {
+      "runs": 30,
+      "p50Ms": 90.652,
+      "p95Ms": 100.706,
+      "p99Ms": 101.14,
+      "maxMs": 101.14
+    },
+    "actualMaximumField": {
+      "periodId": "SPT-PERIOD-1980-1990",
+      "geographyId": "SPTGEO:627ad144a3cb31d9f0749b6fae5b6fc7221a2fe88c2cb7fea4178a97d44b1b01",
+      "geometryId": "GBR",
+      "recordCount": 1630,
+      "generatedDotCount": 60,
+      "representedRecordCount": 1630,
+      "generation": {
+        "runs": 20,
+        "p50Ms": 4.051,
+        "p95Ms": 4.301,
+        "p99Ms": 4.331,
+        "maxMs": 4.331
+      }
+    },
+    "maxDotsPerPeriod": 1898,
+    "deterministic": true,
+    "positionSemantics": "aggregate_only",
+    "tinyGeographyPolicy": "aggregate_anchor",
+    "multipartPolicy": "whole_geometry_candidate_pool"
+  },
+  "textures": {
+    "native": {
+      "sourceRawBytes": 5456,
+      "sourceGzipBytes": 1605,
+      "generation": {
+        "runs": 100,
+        "p50Ms": 0.251,
+        "p95Ms": 0.35,
+        "p99Ms": 0.723,
+        "maxMs": 0.859
+      },
+      "definitions": 100,
+      "serializedBytes": 23417,
+      "deterministicIds": true,
+      "reactDeclarative": true
+    },
+    "texturesJs": {
+      "version": "1.2.3",
+      "esmRawBytes": 12760,
+      "esmGzipBytes": 2394,
+      "generation": {
+        "runs": 100,
+        "p50Ms": 0.299,
+        "p95Ms": 0.676,
+        "p99Ms": 1.256,
+        "maxMs": 1.26
+      },
+      "definitions": 100,
+      "serializedBytes": 25980,
+      "deterministicIdsByDefault": false,
+      "usesMathRandomByDefault": true,
+      "requiresImperativeSelectionApi": true,
+      "reactDeclarative": false
+    }
+  },
+  "externalReferences": [
+    "https://d3js.org/d3-geo",
+    "https://d3js.org/d3-geo/path",
+    "https://d3js.org/d3-geo/projection",
+    "https://d3js.org/d3-geo/cylindrical",
+    "https://www.naturalearthdata.com/downloads/50m-cultural-vectors/",
+    "https://www.naturalearthdata.com/downloads/110m-cultural-vectors/",
+    "https://www.naturalearthdata.com/about/terms-of-use/",
+    "https://github.com/nvkelso/natural-earth-vector/releases/tag/v5.1.1",
+    "https://github.com/topojson/world-atlas",
+    "https://github.com/topojson/world-atlas/releases/tag/v2.0.2",
+    "https://github.com/riccardoscalco/textures"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "trace-spacetime-projection-audit-summary/v1",
+  "generatedAt": "2026-08-23T00:00:00.000Z",
+  "schema": "trace-spacetime/v1",
+  "projectionId": "trace-spacetime-v1",
+  "projectionSha256": "f751b0f432ff684fd1000201b910aa397a4d9965468c2f7dd5022d6a4ae01c06",
+  "deterministic": true,
+  "serverOnly": true,
+  "sourceRelease": {
+    "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+    "researchReleaseId": "v49-api-contract-fresh-c"
+  },
+  "counts": {
+    "aggregateOnlyGeographyEntries": 11,
+    "aggregateOnlyObjects": 194,
+    "earliestGovernedYear": 1800,
+    "governedGeographyEntries": 93,
+    "heldObjects": 7928,
+    "latestGovernedYear": 2026,
+    "mappedGeographyEntries": 81,
+    "mappedObjects": 7800,
+    "periodRegionCells": 373,
+    "publicObjects": 7995,
+    "rawRegionLabels": 94,
+    "regionAssignments": 7996,
+    "regionObjectCoverage": 7995,
+    "temporalObjectCoverage": 7995,
+    "temporalPrecision": {
+      "approximate": 305,
+      "day": 78,
+      "month": 27,
+      "range": 33,
+      "unknown": 0,
+      "year": 7552
+    },
+    "timeBuckets": 23,
+    "unmappedGeographyEntries": 1,
+    "unmappedObjects": 1
+  },
+  "policies": {
+    "geography": "spacetime-geography-governance-v1",
+    "temporal": "spacetime-temporal-governance-v1",
+    "bucket": "DECADE",
+    "rangeMembership": "INTERVAL_OVERLAP"
+  },
+  "geometry": {
+    "assetPath": "/trace-spacetime-v1/natural-earth-50m-admin0-v5.1.1.geojson",
+    "assetSha256": "01a926cc82cda561692eeefcdde8d52310730c08919fd9f73e679c79a9fa718d",
+    "featureCount": 242,
+    "geometryArtifactId": "natural-earth-admin0-countries-5.1.1-50m",
+    "geometryManifestPath": "geometry/geometry-manifest.json",
+    "geometryManifestSha256": "6324ec99530eb223ada4ca4c3876c8de30cf70ae3da6c6f764f8aee4baaf1f92"
+  },
+  "payloadSha256": {
+    "geography-registry.json": "e88e968d5abe5d676c7dc9e15c8ccf48315dfbe5345d13958e772813860e433d",
+    "governance-policy.json": "0a60ed7d85f87ca63ae634d1a3caafa4f93e32ba0ae212fa2fe53f90694751fc",
+    "period-region-aggregates.json": "711e539a70aba1de1bb511ee3097b6c71fc26b5d7741fbe98ff28a2aaa2b111e",
+    "record-index.json": "0f4720672f1e906301e3966dc3970737e3a1e459b27317b47018a2e6445c3dec",
+    "time-buckets.json": "9c81a182485f4499338eaf8777475a08fc4e68f6457a723a69252a569793c860"
+  },
+  "safety": {
+    "heldObjectsProjected": 0,
+    "internalUuidExposureCount": 0,
+    "exactObjectCoordinateClaims": 0,
+    "realSemanticEdges": 0,
+    "unmappedRecordsHidden": 0
+  }
+}

@@ -1,0 +1,382 @@
+.workspace {
+  min-height: 100dvh;
+  color: #1c2525;
+  background: #ecece7;
+  font-family: var(--font-plex-sans), system-ui, sans-serif;
+}
+
+.header,
+.controls,
+.contentGrid,
+.accessiblePanel {
+  border-bottom: 1px solid #a9b0ad;
+}
+
+.header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 20px;
+  background: #f8f8f5;
+}
+
+.header h1,
+.header p,
+.detailPanel h2,
+.methodNote p {
+  margin: 0;
+}
+
+.header h1 {
+  margin: 2px 0 4px;
+  font-size: clamp(1.5rem, 3vw, 2.45rem);
+  line-height: 1;
+}
+
+.header > div > p:last-child {
+  max-width: 760px;
+  color: #4e5958;
+}
+
+.eyebrow,
+.statusGrid,
+.methodNote,
+.legend,
+.recordList span,
+.listStatus {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+.eyebrow {
+  color: #53615f;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.statusGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(110px, 1fr));
+  gap: 5px 16px;
+  min-width: 310px;
+  font-size: 0.7rem;
+}
+
+.statusGrid span {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 8px;
+  padding: 9px 20px;
+  background: #dedfd9;
+}
+
+.controls label {
+  display: grid;
+  gap: 3px;
+  color: #4f5958;
+  font-size: 0.68rem;
+}
+
+.controls button,
+.controls select,
+.recordList + button,
+.accessiblePanel button {
+  min-height: 34px;
+  border: 1px solid #7d8986;
+  border-radius: 3px;
+  color: #1c2525;
+  background: #fff;
+  font: inherit;
+}
+
+.controls button,
+.recordList + button {
+  padding: 6px 11px;
+  cursor: pointer;
+}
+
+.controls select {
+  min-width: 210px;
+  padding: 5px 8px;
+}
+
+.controls button:disabled,
+.recordList + button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.controls button:focus-visible,
+.controls select:focus-visible,
+.recordList + button:focus-visible,
+.accessiblePanel button:focus-visible,
+.recordList a:focus-visible {
+  outline: 3px solid #275f62;
+  outline-offset: 2px;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  min-height: min(690px, 72dvh);
+}
+
+.mapPanel {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto minmax(320px, 1fr) auto;
+  min-width: 0;
+  background: #dfe5e2;
+}
+
+.methodNote {
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 18px;
+  padding: 9px 12px;
+  color: #354240;
+  border-bottom: 1px solid #aeb7b4;
+  background: rgb(248 248 245 / 92%);
+  font-size: 0.68rem;
+}
+
+.map {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+}
+
+.land {
+  fill: #f1f1ec;
+  stroke: #96a29f;
+  stroke-width: 0.65;
+  vector-effect: non-scaling-stroke;
+}
+
+.mappedLand {
+  fill: #d2dcd7;
+  cursor: pointer;
+}
+
+.selectedLand {
+  fill: #b8d2c8;
+  stroke: #164e50;
+  stroke-width: 1.5;
+}
+
+.aggregateMark,
+.densityMark,
+.selectedMark {
+  cursor: pointer;
+  stroke: #f8f8f5;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.aggregateMark,
+.densityMark {
+  fill: #265f62;
+}
+
+.densityMark {
+  stroke-width: 0.55;
+}
+
+.selectedMark {
+  fill: #a5372c;
+}
+
+.patternPrimitive {
+  fill: #265f62;
+  stroke: #265f62;
+}
+
+.legend {
+  margin: 0;
+  padding: 8px 12px;
+  color: #495553;
+  border-top: 1px solid #aeb7b4;
+  background: #f8f8f5;
+  font-size: 0.64rem;
+}
+
+.loading {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  min-height: 320px;
+}
+
+.detailPanel {
+  overflow: auto;
+  padding: 18px;
+  border-left: 1px solid #a9b0ad;
+  background: #f8f8f5;
+}
+
+.detailPanel h2 {
+  margin: 4px 0 14px;
+  font-size: 1.25rem;
+}
+
+.selectionFacts {
+  display: grid;
+  gap: 5px;
+  margin: 0 0 18px;
+}
+
+.selectionFacts div {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 8px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #d5d8d4;
+}
+
+.selectionFacts dt {
+  color: #5d6765;
+  font-size: 0.72rem;
+}
+
+.selectionFacts dd {
+  margin: 0;
+  font-size: 0.76rem;
+}
+
+.listStatus {
+  color: #4f5b59;
+  font-size: 0.68rem;
+}
+
+.recordList {
+  display: grid;
+  gap: 10px;
+  padding-left: 20px;
+}
+
+.recordList li {
+  padding-left: 3px;
+}
+
+.recordList a {
+  color: #174f55;
+  font-weight: 650;
+}
+
+.recordList span {
+  display: block;
+  margin-top: 2px;
+  color: #5a6563;
+  font-size: 0.62rem;
+  overflow-wrap: anywhere;
+}
+
+.accessiblePanel {
+  padding: 12px 20px 20px;
+  background: #f8f8f5;
+}
+
+.accessiblePanel summary {
+  padding: 6px 0;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.accessiblePanel table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.76rem;
+}
+
+.accessiblePanel caption {
+  padding: 6px 0 10px;
+  text-align: left;
+  color: #53605e;
+}
+
+.accessiblePanel th,
+.accessiblePanel td {
+  padding: 7px 9px;
+  border: 1px solid #c8ceca;
+  text-align: left;
+  vertical-align: top;
+}
+
+.accessiblePanel thead th {
+  background: #e5e8e3;
+}
+
+.accessiblePanel tr[data-selected] {
+  background: #dcebe5;
+}
+
+.accessiblePanel button {
+  min-height: 28px;
+  padding: 3px 7px;
+  text-align: left;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .header {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .statusGrid {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .contentGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .detailPanel {
+    border-top: 1px solid #a9b0ad;
+    border-left: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .header,
+  .controls,
+  .accessiblePanel {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .controls {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .controls label {
+    grid-column: 1 / -1;
+  }
+
+  .controls select {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workspace * {
+    scroll-behavior: auto;
+  }
+}

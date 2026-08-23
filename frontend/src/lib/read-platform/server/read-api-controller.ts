@@ -3,7 +3,6 @@ import "server-only";
 import { NextResponse } from "next/server";
 import type { ArchiveRepository, ArchiveRepositoryProvider } from "../repository";
 import type { ArchiveVersionRef, RepoResult } from "../types";
-import { getArchiveRepositoryProvider } from "./provider";
 
 const allow = "GET, HEAD, OPTIONS";
 
@@ -31,21 +30,80 @@ function isContextResourcePath(path: readonly string[]): boolean {
     && Boolean(path[2])
     && path[3] === "context";
 }
+function isFullContextResourcePath(path: readonly string[]): boolean {
+  return path.length === 6
+    && path[0] === "releases"
+    && Boolean(path[1])
+    && path[2] === "trace"
+    && path[3] === "objects"
+    && Boolean(path[4])
+    && path[5] === "context";
+}
+function isFullSpacetimeResourcePath(path: readonly string[]): boolean {
+  const isCollection = path.length === 5
+    && path[0] === "releases"
+    && Boolean(path[1])
+    && path[2] === "trace"
+    && path[3] === "spacetime"
+    && (path[4] === "periods" || path[4] === "atlas");
+  const isGeographyRecords = path.length === 7
+    && path[0] === "releases"
+    && Boolean(path[1])
+    && path[2] === "trace"
+    && path[3] === "spacetime"
+    && path[4] === "geographies"
+    && Boolean(path[5])
+    && path[6] === "records";
+  return isCollection || isGeographyRecords;
+}
 
 export function readApiOptionsResponse() { return new NextResponse(null, { status: 204, headers: readApiHeaders() }); }
 export function readApiMethodNotAllowedResponse() { return NextResponse.json({ code: "NOT_FOUND", detail: "Read API is GET/HEAD/OPTIONS only" }, { status: 405, headers: readApiHeaders() }); }
 
-export async function dispatchReadApiRequest(request: Request, path: readonly string[], provider: ArchiveRepositoryProvider = getArchiveRepositoryProvider()): Promise<Response> {
+export async function dispatchReadApiRequest(request: Request, path: readonly string[], provider?: ArchiveRepositoryProvider): Promise<Response> {
   const head = request.method === "HEAD";
   if (!allow.split(", ").includes(request.method)) return readApiMethodNotAllowedResponse();
   if (request.method === "OPTIONS") return readApiOptionsResponse();
   const url = new URL(request.url);
   try {
     if (path.join("/") === "visual-registries/current") return NextResponse.json({ type: "urn:gdarchive:problem:visual-registry-not-found", title: "Visual registry unavailable", status: 404, code: "VISUAL_REGISTRY_NOT_FOUND", detail: "No visual registry is selected for the fixture release", instance: url.pathname }, { status: 404, headers: readApiHeaders() });
+    if (isFullContextResourcePath(path)) {
+      const { tryReadGovernedContextApiResource } = await import(
+        "@/features/trace-v49/context/governed/read-api-runtime.server"
+      );
+      const context = tryReadGovernedContextApiResource(
+        path,
+        request.headers.get("Archive-Research-Manifest-Sha256"),
+      );
+      if (!context.matched) throw new Error("Context path dispatch did not match");
+      const contextInstance = !context.result.ok
+        && context.result.error.code === "NOT_FOUND"
+        ? "/api/v1/releases/{release}/trace/objects/{id}/context"
+        : url.pathname;
+      return context.result.ok
+        ? success(context.result, head)
+        : failure(context.result, contextInstance, context.version, head);
+    }
+    if (isFullSpacetimeResourcePath(path)) {
+      const { tryReadGovernedSpacetimeApiResource } = await import(
+        "@/features/trace-v49/spacetime/governed/read-api-runtime.server"
+      );
+      const spacetime = tryReadGovernedSpacetimeApiResource(
+        path,
+        url.searchParams,
+        request.headers.get("Archive-Research-Manifest-Sha256"),
+      );
+      if (!spacetime.matched) throw new Error("Spacetime path dispatch did not match");
+      return spacetime.result.ok
+        ? success(spacetime.result, head)
+        : failure(spacetime.result, url.pathname, spacetime.version, head);
+    }
     if (path[0] !== "releases" || !path[1]) return NextResponse.json({ type: "urn:gdarchive:problem:not-found", title: "Not found", status: 404, code: "NOT_FOUND", detail: "unknown Read API resource", instance: url.pathname }, { status: 404, headers: readApiHeaders() });
     const release = path[1];
     const research = release === "current" ? { alias: "current" as const } : { researchReleaseId: release, researchManifestSha256: request.headers.get("Archive-Research-Manifest-Sha256") ?? "" };
-    const opened = await provider.open({ research }, { signal: request.signal });
+    const repositoryProvider = provider
+      ?? (await import("./provider")).getArchiveRepositoryProvider();
+    const opened = await repositoryProvider.open({ research }, { signal: request.signal });
     if (!opened.ok) return failure(opened, url.pathname, undefined, head);
     const repo = opened.data;
     const tail = path.slice(2);
