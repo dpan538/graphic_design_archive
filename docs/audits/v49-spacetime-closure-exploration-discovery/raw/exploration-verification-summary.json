@@ -1,0 +1,256 @@
+{
+  "auditRawOutputReceipts": {
+    "exploration-cross-dimensional-summary.json": {
+      "bytes": 81489,
+      "sha256": "c1d4016ff83b043e21f589422d435ae61a31ba4acccc85db4fc9bcabe2701571"
+    },
+    "exploration-curatorial-summary.json": {
+      "bytes": 36407,
+      "sha256": "fbba6a7040023292745399db2ac9411d1a8f23996af56dc6147ee2d38edf2dff"
+    },
+    "exploration-curatorial-support-summary.json": {
+      "bytes": 13621,
+      "sha256": "407125b4ccd520ca7b4d05498955db1418923cf100053c4dbc5cdb390ef86ad5"
+    },
+    "exploration-generation-summary.json": {
+      "bytes": 4259,
+      "sha256": "33988738ccc789770b2caf5cb162f86b957854b15a870cef5260822f986c7aff"
+    },
+    "exploration-missingness-summary.json": {
+      "bytes": 12084,
+      "sha256": "e31b43b813bd37a89a847ded1bca7f24a9db01177efbf0d3821298795fc115c3"
+    },
+    "exploration-pathological-samples-summary.json": {
+      "bytes": 620,
+      "sha256": "3332965992ad0ebacd13ce94b3d2a92c936b5bb67119476e204f41dac5e94490"
+    },
+    "exploration-signal-registry-summary.json": {
+      "bytes": 1222,
+      "sha256": "e0336ed402d680d915ced36a0fb21ef68d9415151a11da5f61eedb8ead9a955f"
+    },
+    "exploration-source-curatorial-structure-registry.json": {
+      "bytes": 34494,
+      "sha256": "85b7f9a315ea89c63157e3831c6c0a2118a203d2b9f865f4dbc60e4446748a7b"
+    },
+    "exploration-source-inventory-summary.json": {
+      "bytes": 2563,
+      "sha256": "df48fdae6a998142b852acff47e8086bf0f460e6c83a84560ffc00537c1d2d1c"
+    }
+  },
+  "deterministicBundleSha256": "bdb7f5f8350dde9e8264d254654d691ecc68e4fd279aa61ec2188bf2d65c8285",
+  "heldObjectsInStatistics": 0,
+  "invariantCount": 18,
+  "invariants": [
+    {
+      "evidence": "named sources present on 64 registry rows",
+      "invariantId": "EXP-INV-001",
+      "requirement": "Every Exploration signal has a named source.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "every derived TSV row carries a derivation version",
+      "invariantId": "EXP-INV-002",
+      "requirement": "Every derived signal has a derivation version.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "all emitted counts/rates passed numeric denominator checks",
+      "invariantId": "EXP-INV-003",
+      "requirement": "Every count/rate exposes its denominator.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "registry semantic_relation=false",
+      "invariantId": "EXP-INV-004",
+      "requirement": "No signal is a semantic relation.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "curatorial co-membership is structural diagnostic only",
+      "invariantId": "EXP-INV-005",
+      "requirement": "No curatorial co-membership becomes historical relation.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "10-class explicit taxonomy exceeds null detection",
+      "invariantId": "EXP-INV-006",
+      "requirement": "Missingness is not reduced to null detection.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "NOT_GOVERNED remains distinct from missing",
+      "invariantId": "EXP-INV-007",
+      "requirement": "Not-applicable and missing remain distinct.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "movement absence retains NO_PUBLISHED_MOVEMENT_CONTEXT",
+      "invariantId": "EXP-INV-008",
+      "requirement": "Movement-context absence is not automatically missingness.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "7,995 public and zero held objects in statistics",
+      "invariantId": "EXP-INV-009",
+      "requirement": "Held records do not enter public-cohort statistics.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "no UUID found in committed bytes",
+      "invariantId": "EXP-INV-010",
+      "requirement": "No internal UUID appears in committed Exploration artifacts.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "importance inference prohibited on 4251 rare rows",
+      "invariantId": "EXP-INV-011",
+      "requirement": "Rare does not imply important.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "high overlap remains a non-historical structural diagnostic",
+      "invariantId": "EXP-INV-012",
+      "requirement": "High overlap does not imply influence.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "geographic distance remains DEFER",
+      "invariantId": "EXP-INV-013",
+      "requirement": "Geographic layout distance is not historical distance.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "temporal/geographic/source/curatorial concentration rows are analysis diagnostics",
+      "invariantId": "EXP-INV-014",
+      "requirement": "Source concentration is not truth/quality.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "two-run canonical SHA bdb7f5f8350dde9e8264d254654d691ecc68e4fd279aa61ec2188bf2d65c8285",
+      "invariantId": "EXP-INV-015",
+      "requirement": "Same inputs produce deterministic statistics.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "similarity model not selected",
+      "invariantId": "EXP-INV-016",
+      "requirement": "No final similarity score exists in Round 1.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "ranking not selected",
+      "invariantId": "EXP-INV-017",
+      "requirement": "No final ranking exists in Round 1.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "template registry not created",
+      "invariantId": "EXP-INV-018",
+      "requirement": "No final Exploration template registry exists in Round 1.",
+      "status": "PASS"
+    }
+  ],
+  "modelBoundary": {
+    "probabilityModelSelected": false,
+    "rankingSelected": false,
+    "rendererImplemented": false,
+    "similarityModelSelected": false,
+    "templateRegistryCreated": false
+  },
+  "publicObjectCount": 7995,
+  "researchOutputReceipts": {
+    "06_MISSINGNESS_CENSUS.tsv": {
+      "bytes": 11336,
+      "sha256": "5550af8621d2b410619613091e6c01108aa128cb5eea8e63614dc50e20b46c41"
+    },
+    "08_ONE_DIMENSION_FREQUENCIES.tsv": {
+      "bytes": 1068096,
+      "sha256": "d5c706243598755b57b50c10b2d4ac2f6e5075cd201436e163ea817b1c3f8059"
+    },
+    "09_TWO_DIMENSION_INTERSECTIONS.tsv": {
+      "bytes": 3117848,
+      "sha256": "02a1f32485235e060c8dc96aa5a8aa7b9e6557e2aa1d7bec29394de53fdaeb8f"
+    },
+    "10_THREE_DIMENSION_INTERSECTIONS.tsv": {
+      "bytes": 1357428,
+      "sha256": "ce2cbc2a9f12967f1cd5a0a82b1d53f61cc6494bcb0939d306c3a51a5f16e8c2"
+    },
+    "11_RARE_INTERSECTION_REGISTER.tsv": {
+      "bytes": 2207276,
+      "sha256": "73c4e483d58a0e7a016f30dbda5c37ec3d856f0071788b445c58ac50f1202ff6"
+    },
+    "13_EXPLORATION_SIGNAL_REGISTRY.tsv": {
+      "bytes": 56897,
+      "sha256": "0c5ad4a0d39190eaf63998b54d3b65d99cb160f3ad2653ebb4517f89a9dc9eab"
+    },
+    "15_PATHOLOGICAL_SAMPLE_REGISTER.tsv": {
+      "bytes": 6323,
+      "sha256": "b7ad059298fcac96ec40008a7a62d43057c3ad0b461ff285c564fb99227420a6"
+    }
+  },
+  "rowCounts": {
+    "06_MISSINGNESS_CENSUS.tsv": 38,
+    "08_ONE_DIMENSION_FREQUENCIES.tsv": 3364,
+    "09_TWO_DIMENSION_INTERSECTIONS.tsv": 6146,
+    "10_THREE_DIMENSION_INTERSECTIONS.tsv": 2399,
+    "11_RARE_INTERSECTION_REGISTER.tsv": 4251,
+    "13_EXPLORATION_SIGNAL_REGISTRY.tsv": 64,
+    "15_PATHOLOGICAL_SAMPLE_REGISTER.tsv": 15
+  },
+  "schemaVersion": "trace-exploration-round1-verification/v1",
+  "scopedAuditRawReceipts": {
+    "exploration-benchmark-summary.json": {
+      "bytes": 14767,
+      "sha256": "750b9d3746e8393eb1fa33a4072aeec9d22ec15873ec80e454555fb154b462ae"
+    },
+    "exploration-cross-dimensional-summary.json": {
+      "bytes": 81489,
+      "sha256": "c1d4016ff83b043e21f589422d435ae61a31ba4acccc85db4fc9bcabe2701571"
+    },
+    "exploration-curatorial-summary.json": {
+      "bytes": 36407,
+      "sha256": "fbba6a7040023292745399db2ac9411d1a8f23996af56dc6147ee2d38edf2dff"
+    },
+    "exploration-curatorial-support-summary.json": {
+      "bytes": 13621,
+      "sha256": "407125b4ccd520ca7b4d05498955db1418923cf100053c4dbc5cdb390ef86ad5"
+    },
+    "exploration-generation-summary.json": {
+      "bytes": 4259,
+      "sha256": "33988738ccc789770b2caf5cb162f86b957854b15a870cef5260822f986c7aff"
+    },
+    "exploration-missingness-summary.json": {
+      "bytes": 12084,
+      "sha256": "e31b43b813bd37a89a847ded1bca7f24a9db01177efbf0d3821298795fc115c3"
+    },
+    "exploration-pathological-samples-summary.json": {
+      "bytes": 620,
+      "sha256": "3332965992ad0ebacd13ce94b3d2a92c936b5bb67119476e204f41dac5e94490"
+    },
+    "exploration-signal-registry-summary.json": {
+      "bytes": 1222,
+      "sha256": "e0336ed402d680d915ced36a0fb21ef68d9415151a11da5f61eedb8ead9a955f"
+    },
+    "exploration-source-curatorial-structure-registry.json": {
+      "bytes": 34494,
+      "sha256": "85b7f9a315ea89c63157e3831c6c0a2118a203d2b9f865f4dbc60e4446748a7b"
+    },
+    "exploration-source-inventory-summary.json": {
+      "bytes": 2563,
+      "sha256": "df48fdae6a998142b852acff47e8086bf0f460e6c83a84560ffc00537c1d2d1c"
+    },
+    "exploration-verification-summary.json": {
+      "hashOmitted": "SELF_REFERENCE",
+      "safetyScan": "PASS"
+    }
+  },
+  "scopedResearchTsvCount": 7,
+  "security": {
+    "heldIdentifierCount": 0,
+    "internalUuidCount": 0,
+    "rawPrivateIdentifierCount": 0,
+    "titleKeyCount": 0,
+    "urlCount": 0
+  },
+  "status": "PASS"
+}

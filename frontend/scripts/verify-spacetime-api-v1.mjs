@@ -44,10 +44,17 @@ try {
     `SPACETIME_API_PUBLIC_RECORD_COUNT=${result.recordCount}`,
     `SPACETIME_API_HELD_EXCLUDED=${result.heldExcluded}`,
     `SPACETIME_API_PROVIDER_OPEN_COUNT=${result.providerOpenCount}`,
+    `SPACETIME_PUBLIC_RUNTIME_GENERATOR_IMPORT_COUNT=${result.generatorRuntimeImportCount}`,
+    `SPACETIME_PUBLIC_RUNTIME_SQLITE_DEPENDENCY=${result.sqliteRuntimeImportCount > 0}`,
+    `SPACETIME_PUBLIC_RUNTIME_FORBIDDEN_SOURCE_IMPORT_COUNT=${result.forbiddenSourceImportCount}`,
     `SPACETIME_API_SEARCH_RUNTIME_IMPORT_COUNT=${result.searchRuntimeImportCount}`,
     `SPACETIME_API_SQLITE_RUNTIME_IMPORT_COUNT=${result.sqliteRuntimeImportCount}`,
     `SPACETIME_CLIENT_RECORD_ARTIFACT_REFERENCE_COUNT=${result.clientRecordArtifactReferenceCount}`,
     `SPACETIME_BUILD_CLIENT_GUARD=${result.buildClientGuard}`,
+    `SPACETIME_API_NONZERO_CELL_COUNT=${result.nonzeroCellCount}`,
+    `SPACETIME_API_MAPPED_NONZERO_CELL_COUNT=${result.mappedNonzeroCellCount}`,
+    `SPACETIME_API_MATRIX_REQUEST_COUNT=${result.matrixRequestCount}`,
+    `SPACETIME_API_MATRIX_PAGE_COUNT=${result.matrixPageCount}`,
   ].join(" "));
 } catch (error) {
   console.error(`SPACETIME_API_V1=FAIL ERROR=${safeError(error)}`);
@@ -170,15 +177,32 @@ function verifySourceBoundaries() {
   const readerGraph = buildRuntimeImportGraph(readerPath);
   const apiGraph = buildRuntimeImportGraph(apiRuntimePath);
   const clientGraph = buildRuntimeImportGraph(clientPath);
+  const pageGraph = buildRuntimeImportGraph(pagePath);
   const serverModules = new Set([...readerGraph.modules, ...apiGraph.modules]);
+  const publicModules = new Set([...serverModules, ...clientGraph.modules, ...pageGraph.modules]);
   const searchModules = [...serverModules].filter((path) => path.includes("/search-v49/") || path.includes("/generated/search-v49/"));
   const sqliteImports = [...readerGraph.externalSpecifiers, ...apiGraph.externalSpecifiers]
     .filter((value) => value === "node:sqlite" || value === "sqlite");
+  const sqliteSourceModules = [...publicModules].filter((path) =>
+    [".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs"].includes(extname(path))
+    && /["'](?:node:sqlite|sqlite|better-sqlite3)["']/u.test(readFileSync(path, "utf8")));
   const filesystemImports = [...readerGraph.externalSpecifiers, ...apiGraph.externalSpecifiers]
     .filter((value) => value === "node:fs" || value === "node:fs/promises");
+  const generatorModules = [...publicModules].filter((path) =>
+    path.includes("/scripts/generate-")
+    || path.includes("/scripts/reconcile-")
+    || path.includes("/scripts/build-"));
+  const forbiddenSourceModules = [...publicModules].filter((path) =>
+    /candidate.*\.sqlite$/u.test(path)
+    || path.includes("/context/realdata/")
+    || path.includes("/held-record")
+    || path.includes("/raw-geography-label")
+    || path.includes("/temporal-reconciliation"));
   assert.equal(searchModules.length, 0, "Spacetime runtime reaches Search modules");
-  assert.equal(sqliteImports.length, 0, "Spacetime runtime reaches SQLite");
+  assert.equal(sqliteImports.length + sqliteSourceModules.length, 0, "Spacetime runtime reaches SQLite");
   assert.equal(filesystemImports.length, 0, "Spacetime runtime parses source files at request time");
+  assert.equal(generatorModules.length, 0, "Spacetime public runtime reaches a generation tool");
+  assert.equal(forbiddenSourceModules.length, 0, "Spacetime public runtime reaches a raw or held source");
   const forbiddenClientModules = clientGraph.modules.filter((path) =>
     path.endsWith("/governed/reader.server.ts")
     || path.endsWith("/governed/read-api-runtime.server.ts")
@@ -201,12 +225,15 @@ function verifySourceBoundaries() {
   assert(lazyProviderPosition > importPosition && providerOpenPosition > importPosition, "generic provider precedes Spacetime dispatch");
   return Object.freeze({
     searchRuntimeImportCount: searchModules.length,
-    sqliteRuntimeImportCount: sqliteImports.length,
+    sqliteRuntimeImportCount: sqliteImports.length + sqliteSourceModules.length,
+    generatorRuntimeImportCount: generatorModules.length,
+    forbiddenSourceImportCount: forbiddenSourceModules.length,
     clientRecordArtifactReferenceCount: forbiddenClientModules.length,
     graph: Object.freeze({
       readerModules: readerGraph.modules.length,
       apiModules: apiGraph.modules.length,
       clientModules: clientGraph.modules.length,
+      pageModules: pageGraph.modules.length,
       clientEntry: relative(repositoryRoot, clientPath),
     }),
   });
@@ -242,6 +269,9 @@ function verifyBuildClientBoundary(firstPublicId) {
     "reader.server.ts",
     "read-api-runtime.server.ts",
     "generated/trace-spacetime-v1/record-index",
+    "generate-trace-spacetime-v1",
+    "node:sqlite",
+    "modern-graphic-design-candidate",
   ];
   const hits = [];
   for (const path of inspected) {
@@ -284,8 +314,10 @@ async function verify() {
   const manifest = readJson(join(generatedRoot, "manifest.json"));
   const records = readJson(join(generatedRoot, "record-index.json"));
   const geography = readJson(join(generatedRoot, "geography-registry.json"));
+  const aggregateDocument = readJson(join(generatedRoot, "period-region-aggregates.json"));
   assert.equal(records.records.length, EXPECTED_RECORDS);
   assert.equal(geography.entries.length, EXPECTED_GEOGRAPHIES);
+  assert.equal(aggregateDocument.periods.length, EXPECTED_PERIODS);
   const sourceBoundaries = verifySourceBoundaries();
   const buildClientGuard = verifyBuildClientBoundary(records.records[0].objectId);
 
@@ -383,6 +415,114 @@ async function verify() {
   assert.equal(secondPage.body.data.nodes.length, 2);
   assert.notEqual(secondPage.body.data.nodes[0].stableId, firstPage.body.data.nodes[0].stableId);
 
+  const publicRecordIds = new Set(records.records.map((record) => record.objectId));
+  const cellsByPeriod = new Map(aggregateDocument.periods.map((period) => [
+    period.periodId,
+    new Map(period.cells.map((cell) => [cell.geographyId, cell])),
+  ]));
+  const nonzeroCells = aggregateDocument.periods.flatMap((period) => period.cells);
+  const mappedNonzeroCells = nonzeroCells.filter((cell) => cell.mappingState === "mapped");
+  assert.equal(nonzeroCells.length, 373, "Spacetime nonzero cell count drifted");
+  assert.equal(mappedNonzeroCells.length, 351, "Spacetime mapped nonzero cell count drifted");
+  let matrixRequestCount = 0;
+  let matrixPageCount = 0;
+  let reusableCursorCase = null;
+
+  for (const expectedPeriod of periods.body.data.periods) {
+    const matrixAtlas = await dispatch(
+      `${exactBase}/atlas?period=${encodeURIComponent(expectedPeriod.periodId)}`,
+      { headers: releaseHeader },
+    );
+    matrixRequestCount += 1;
+    assert.equal(matrixAtlas.status, 200);
+    assert.equal(matrixAtlas.body.data.selectedPeriod.periodId, expectedPeriod.periodId);
+    assert.equal(matrixAtlas.body.data.counts.denominator, expectedPeriod.recordCount);
+    assert.equal(matrixAtlas.body.data.counts.heldExcluded, EXPECTED_HELD);
+    const expectedCells = cellsByPeriod.get(expectedPeriod.periodId);
+    assert(expectedCells, `aggregate period missing: ${expectedPeriod.periodId}`);
+    assert.equal(matrixAtlas.body.data.accessibleRows.length, expectedCells.size);
+    for (const row of matrixAtlas.body.data.accessibleRows) {
+      const cell = expectedCells.get(row.geographyId);
+      assert(cell, `atlas returned a zero/unknown geography cell: ${row.geographyId}`);
+      assert.equal(row.mappingState, cell.mappingState);
+      assert.equal(row.recordCount, cell.recordCount);
+      assert.equal(row.denominator, cell.denominator);
+    }
+
+    for (const entry of geography.entries) {
+      const expectedCell = expectedCells.get(entry.geographyId);
+      const expectedTotal = expectedCell?.recordCount ?? 0;
+      let after;
+      let returnedCount = 0;
+      const returnedIds = new Set();
+      do {
+        const query = new URLSearchParams({
+          period: expectedPeriod.periodId,
+          first: "100",
+        });
+        if (after) query.set("after", after);
+        const pageResponse = await dispatch(
+          `${exactBase}/geographies/${encodeURIComponent(entry.geographyId)}/records?${query}`,
+          { headers: releaseHeader },
+        );
+        matrixRequestCount += 1;
+        matrixPageCount += 1;
+        assert.equal(pageResponse.status, 200);
+        const pageData = pageResponse.body.data;
+        assert.equal(pageData.period.periodId, expectedPeriod.periodId);
+        assert.equal(pageData.geography.geographyId, entry.geographyId);
+        assert.equal(pageData.geography.mappingState, entry.mappingState);
+        assert.equal(pageData.totalCount, expectedTotal);
+        assert(pageData.nodes.length <= 100);
+        for (const node of pageData.nodes) {
+          assert(publicRecordIds.has(node.stableId), "records API returned a non-public record ID");
+          assert(!returnedIds.has(node.stableId), "records API repeated a record within one cursor walk");
+          assert(!UUID_PATTERN.test(JSON.stringify(node)), "records API returned an internal UUID");
+          returnedIds.add(node.stableId);
+        }
+        returnedCount += pageData.nodes.length;
+        if (!reusableCursorCase && pageData.pageInfo.endCursor) {
+          reusableCursorCase = Object.freeze({
+            periodId: expectedPeriod.periodId,
+            geographyId: entry.geographyId,
+            cursor: pageData.pageInfo.endCursor,
+          });
+        }
+        after = pageData.pageInfo.endCursor ?? undefined;
+        assert.equal(pageData.pageInfo.hasNextPage, Boolean(after));
+      } while (after);
+      assert.equal(returnedCount, expectedTotal);
+    }
+  }
+  assert(reusableCursorCase, "API matrix did not find a reusable cursor case");
+  const reusablePath = `${exactBase}/geographies/${encodeURIComponent(reusableCursorCase.geographyId)}/records?period=${encodeURIComponent(reusableCursorCase.periodId)}&first=100&after=${encodeURIComponent(reusableCursorCase.cursor)}`;
+  const cursorReuseOne = await dispatch(reusablePath, { headers: releaseHeader });
+  const cursorReuseTwo = await dispatch(reusablePath, { headers: releaseHeader });
+  matrixRequestCount += 2;
+  assert.equal(cursorReuseOne.status, 200);
+  assert.equal(cursorReuseTwo.status, 200);
+  assert.equal(sha256(cursorReuseOne.text), sha256(cursorReuseTwo.text), "same cursor is not deterministic/reusable");
+  const otherPeriodId = periods.body.data.periods.find(
+    (candidate) => candidate.periodId !== reusableCursorCase.periodId,
+  )?.periodId;
+  const otherGeographyId = geography.entries.find(
+    (candidate) => candidate.geographyId !== reusableCursorCase.geographyId,
+  )?.geographyId;
+  assert(otherPeriodId && otherGeographyId);
+  const crossPeriodCursor = await dispatch(
+    `${exactBase}/geographies/${encodeURIComponent(reusableCursorCase.geographyId)}/records?period=${encodeURIComponent(otherPeriodId)}&first=100&after=${encodeURIComponent(reusableCursorCase.cursor)}`,
+    { headers: releaseHeader },
+  );
+  const crossGeographyCursor = await dispatch(
+    `${exactBase}/geographies/${encodeURIComponent(otherGeographyId)}/records?period=${encodeURIComponent(reusableCursorCase.periodId)}&first=100&after=${encodeURIComponent(reusableCursorCase.cursor)}`,
+    { headers: releaseHeader },
+  );
+  matrixRequestCount += 2;
+  assert.equal(crossPeriodCursor.status, 400);
+  assert.equal(crossPeriodCursor.body.code, "INVALID_CURSOR");
+  assert.equal(crossGeographyCursor.status, 400);
+  assert.equal(crossGeographyCursor.body.code, "INVALID_CURSOR");
+
   const invalidCursor = await dispatch(`${recordPath}&after=not-a-cursor`, { headers: releaseHeader });
   assert.equal(invalidCursor.status, 400);
   assert.equal(invalidCursor.body.code, "INVALID_CURSOR");
@@ -440,9 +580,15 @@ async function verify() {
     recordCount: manifest.counts.publicObjects,
     heldExcluded: atlas.body.data.counts.heldExcluded,
     providerOpenCount,
+    generatorRuntimeImportCount: sourceBoundaries.generatorRuntimeImportCount,
+    forbiddenSourceImportCount: sourceBoundaries.forbiddenSourceImportCount,
     searchRuntimeImportCount: sourceBoundaries.searchRuntimeImportCount + searchRuntimeModules.length,
     sqliteRuntimeImportCount: sourceBoundaries.sqliteRuntimeImportCount,
     clientRecordArtifactReferenceCount: sourceBoundaries.clientRecordArtifactReferenceCount,
     buildClientGuard,
+    nonzeroCellCount: nonzeroCells.length,
+    mappedNonzeroCellCount: mappedNonzeroCells.length,
+    matrixRequestCount,
+    matrixPageCount,
   });
 }

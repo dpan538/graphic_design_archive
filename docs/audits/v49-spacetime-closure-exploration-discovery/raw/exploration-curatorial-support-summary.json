@@ -1,0 +1,535 @@
+{
+  "derivationVersion": "trace-exploration-round1-aggregate-v1",
+  "features": {
+    "mostCommonCuratedMembershipSupport": {
+      "definition": "Maximum public support among an object's curated containers.",
+      "distribution": {
+        "max": 7105,
+        "mean": 6636.100438,
+        "min": 51,
+        "n": 7995,
+        "p50": 7105,
+        "p90": 7105,
+        "p95": 7105,
+        "p99": 7105,
+        "zeroCount": 0
+      },
+      "eligibleDenominator": 7995,
+      "histogram": [
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 2,
+          "rate": 0.0002501563477173233,
+          "value": 51
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 7,
+          "rate": 0.0008755472170106316,
+          "value": 79
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 8,
+          "rate": 0.0010006253908692933,
+          "value": 164
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 1,
+          "rate": 0.00012507817385866166,
+          "value": 224
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 43,
+          "rate": 0.0053783614759224515,
+          "value": 234
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 2,
+          "rate": 0.0002501563477173233,
+          "value": 271
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 6,
+          "rate": 0.00075046904315197,
+          "value": 403
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 37,
+          "rate": 0.0046278924327704815,
+          "value": 545
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 1,
+          "rate": 0.00012507817385866166,
+          "value": 562
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 48,
+          "rate": 0.00600375234521576,
+          "value": 1175
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 400,
+          "rate": 0.050031269543464665,
+          "value": 2957
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 23,
+          "rate": 0.0028767979987492183,
+          "value": 3214
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 312,
+          "rate": 0.03902439024390244,
+          "value": 3928
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 7105,
+          "rate": 0.8886804252657912,
+          "value": 7105
+        }
+      ]
+    },
+    "rareCuratedMembershipCount": {
+      "definition": "Number of memberships whose public support is at most 20.",
+      "distribution": {
+        "max": 2,
+        "mean": 0.04803,
+        "min": 0,
+        "n": 7995,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 1,
+        "zeroCount": 7616
+      },
+      "eligibleDenominator": 7995,
+      "histogram": [
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 7616,
+          "rate": 0.9525953721075673,
+          "value": 0
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 374,
+          "rate": 0.046779237023139464,
+          "value": 1
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 5,
+          "rate": 0.0006253908692933083,
+          "value": 2
+        }
+      ]
+    },
+    "rarestCuratedContainerSupport": {
+      "definition": "Minimum public support among an object's curated containers.",
+      "distribution": {
+        "max": 3214,
+        "mean": 1426.828768,
+        "min": 1,
+        "n": 7995,
+        "p50": 562,
+        "p90": 3214,
+        "p95": 3214,
+        "p99": 3214,
+        "zeroCount": 0
+      },
+      "eligibleDenominator": 7995,
+      "histogram": [
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 21,
+          "rate": 0.002626641651031895,
+          "value": 1
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 14,
+          "rate": 0.0017510944340212633,
+          "value": 2
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 21,
+          "rate": 0.002626641651031895,
+          "value": 3
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 12,
+          "rate": 0.00150093808630394,
+          "value": 4
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 15,
+          "rate": 0.001876172607879925,
+          "value": 5
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 42,
+          "rate": 0.00525328330206379,
+          "value": 6
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 7,
+          "rate": 0.0008755472170106316,
+          "value": 7
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 32,
+          "rate": 0.004002501563477173,
+          "value": 8
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 18,
+          "rate": 0.00225140712945591,
+          "value": 9
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 20,
+          "rate": 0.0025015634771732333,
+          "value": 10
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 22,
+          "rate": 0.0027517198248905566,
+          "value": 11
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 24,
+          "rate": 0.00300187617260788,
+          "value": 12
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 39,
+          "rate": 0.004878048780487805,
+          "value": 13
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 28,
+          "rate": 0.0035021888680425266,
+          "value": 14
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 14,
+          "rate": 0.0017510944340212633,
+          "value": 16
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 14,
+          "rate": 0.0017510944340212633,
+          "value": 17
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 36,
+          "rate": 0.00450281425891182,
+          "value": 18
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 43,
+          "rate": 0.0053783614759224515,
+          "value": 22
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 23,
+          "rate": 0.0028767979987492183,
+          "value": 23
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 25,
+          "rate": 0.0031269543464665416,
+          "value": 25
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 28,
+          "rate": 0.0035021888680425266,
+          "value": 28
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 27,
+          "rate": 0.003377110694183865,
+          "value": 29
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 30,
+          "rate": 0.00375234521575985,
+          "value": 30
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 31,
+          "rate": 0.0038774233896185116,
+          "value": 31
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 31,
+          "rate": 0.0038774233896185116,
+          "value": 32
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 56,
+          "rate": 0.007004377736085053,
+          "value": 36
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 37,
+          "rate": 0.0046278924327704815,
+          "value": 37
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 43,
+          "rate": 0.0053783614759224515,
+          "value": 43
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 26,
+          "rate": 0.0032520325203252032,
+          "value": 44
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 27,
+          "rate": 0.003377110694183865,
+          "value": 51
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 49,
+          "rate": 0.0061288305190744215,
+          "value": 52
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 55,
+          "rate": 0.0068792995622263915,
+          "value": 55
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 47,
+          "rate": 0.005878674171357098,
+          "value": 57
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 58,
+          "rate": 0.0072545340838023765,
+          "value": 58
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 116,
+          "rate": 0.014509068167604753,
+          "value": 59
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 65,
+          "rate": 0.008130081300813009,
+          "value": 76
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 77,
+          "rate": 0.009631019387116949,
+          "value": 77
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 71,
+          "rate": 0.008880550343964979,
+          "value": 79
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 96,
+          "rate": 0.01200750469043152,
+          "value": 96
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 89,
+          "rate": 0.011131957473420889,
+          "value": 97
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 97,
+          "rate": 0.012132582864290182,
+          "value": 99
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 114,
+          "rate": 0.01425891181988743,
+          "value": 116
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 127,
+          "rate": 0.015884928080050032,
+          "value": 128
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 125,
+          "rate": 0.015634771732332707,
+          "value": 129
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 127,
+          "rate": 0.015884928080050032,
+          "value": 154
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 162,
+          "rate": 0.02026266416510319,
+          "value": 163
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 153,
+          "rate": 0.019136960600375234,
+          "value": 164
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 29,
+          "rate": 0.0036272670419011882,
+          "value": 204
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 213,
+          "rate": 0.026641651031894933,
+          "value": 224
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 224,
+          "rate": 0.028017510944340213,
+          "value": 231
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 94,
+          "rate": 0.011757348342714196,
+          "value": 234
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 189,
+          "rate": 0.023639774859287054,
+          "value": 271
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 156,
+          "rate": 0.01951219512195122,
+          "value": 403
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 372,
+          "rate": 0.04652908067542214,
+          "value": 427
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 225,
+          "rate": 0.028142589118198873,
+          "value": 545
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 496,
+          "rate": 0.062038774233896185,
+          "value": 562
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 497,
+          "rate": 0.06216385240775485,
+          "value": 1175
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 114,
+          "rate": 0.01425891181988743,
+          "value": 2957
+        },
+        {
+          "eligibleDenominator": 7995,
+          "objectCount": 2952,
+          "rate": 0.36923076923076925,
+          "value": 3214
+        }
+      ]
+    }
+  },
+  "hashes": {
+    "aggregatePayloadSha256": "740792056f954e68eaec18cd423560c266109e1e10ec1a838e09d39371e4a273",
+    "objectVectorSha256": "a647968fb7ce64e6feb12bbd13ba07650caee63b3c90d59781e6488e3f73e032"
+  },
+  "population": {
+    "heldObjectCount": 0,
+    "objectsWithCuratedMembership": 7995,
+    "objectsWithoutCuratedMembership": 0,
+    "publicObjectCount": 7995
+  },
+  "rareMembershipPolicy": {
+    "importanceInference": "PROHIBITED",
+    "maximumInclusivePublicMemberCount": 20,
+    "status": "ANALYSIS_DIAGNOSTIC"
+  },
+  "safety": {
+    "heldObjectsIncluded": 0,
+    "objectVectorRowsEmitted": 0,
+    "publicObjectIdsEmitted": 0,
+    "rawContainerIdsEmitted": 0,
+    "titlesEmitted": 0
+  },
+  "schemaVersion": "trace-exploration-curatorial-support/v1"
+}

@@ -1,0 +1,384 @@
+{
+  "derivationVersion": "trace-exploration-round1-benchmark-v1",
+  "deterministicBundleSha256": "bdb7f5f8350dde9e8264d254654d691ecc68e4fd279aa61ec2188bf2d65c8285",
+  "deterministicPayloadSha256": "c809ee903e630ef537276625c99a16ad26c9c762687e3a22ae9ddf8f5e7b6ecf",
+  "inputReceipts": {
+    "data/prefreeze_candidate_v48.sqlite": "ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "database/FREEZE_V49.json": "f0dda59dd515ba243eaf213bce9f42513727f1ab0a44685635921c3759a7d22e",
+    "docs/audits/v49-phase2b-migration/18_SURFACE_ROW_LEDGER.tsv": "48f98f68ca2ec0cef96c82ecc9c01e4129eb9a3f91e08b07ad9a59644a9d4e01",
+    "frontend/generated/trace-context-v1": "825f6ecaa9ae1496c8a00ea0fefa5c90319046cf9c1f08a2ef76b9b02df4baeb",
+    "frontend/generated/trace-context-v1/manifest.json": "ff8ebc15eeb95407b6b6b274dd2fc69ce4c3c183bb2f6a7e7f261c028b96f92c",
+    "frontend/generated/trace-context-v1/records.json": "c767b9661e4cb417cfaae3948d7ed2b974fc88e1dcc9a3686eae90ae8610a9e7",
+    "frontend/generated/trace-spacetime-v1": "f751b0f432ff684fd1000201b910aa397a4d9965468c2f7dd5022d6a4ae01c06",
+    "frontend/generated/trace-spacetime-v1/geography-registry.json": "e88e968d5abe5d676c7dc9e15c8ccf48315dfbe5345d13958e772813860e433d",
+    "frontend/generated/trace-spacetime-v1/manifest.json": "93e88157865d987376ec8997e94a4101353038cf792e665d35e4c50b1c4384ec",
+    "frontend/generated/trace-spacetime-v1/record-index.json": "0f4720672f1e906301e3966dc3970737e3a1e459b27317b47018a2e6445c3dec",
+    "frontend/generated/trace-spacetime-v1/time-buckets.json": "9c81a182485f4499338eaf8777475a08fc4e68f6457a723a69252a569793c860",
+    "generated/public_surfaces_prefreeze_candidate_v48.json": "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48"
+  },
+  "iterations": 3,
+  "measurementPolicy": {
+    "explorationAnalysisPeakHeapBytes": "alias of pythonTracemallocPeakBytes from the dedicated replay; Python-traced allocation peak, not process RSS",
+    "fullObjectPairMatrixMaterialized": false,
+    "gzip": "gzip level 9 mtime 0",
+    "memoryMeasurementsIncludedInDeterministicHash": false,
+    "normalizedRowsEmitted": false,
+    "pythonHeapMeasurement": "dedicated one-iteration warm-process benchmark-body replay after the timed pass; peak bytes currently traced by tracemalloc, with pre-trace and native allocations excluded; memory replay excluded from stage and total timings",
+    "quantile": "R7_LINEAR",
+    "rssMeasurement": "resource.getrusage(RUSAGE_SELF).ru_maxrss process-lifetime high-water mark normalized to bytes after timed and memory passes",
+    "stageIsolation": {
+      "curatorialFolderInvertedIndex": "ordered object_folder_refs scan plus object adjacency, public folder bitsets, and pair digest; excludes ledger load, public ordinal construction, and immutable connection validation",
+      "dimensionConcentration": "four native public-only dimension concentration rows over source, decade, geography, and curated-container assignments",
+      "missingnessAggregateCensus": "state counters, co-occurrence cells, and field matrix derived from vectors; excludes vector construction and hashing",
+      "missingnessNormalization": "record validation/normalization and public-ID ordering",
+      "missingnessObjectVectorBuild": "per-object diagnostic vector and active-state derivation; excludes normalization, aggregate census, and hashing"
+    },
+    "timingsIncludedInDeterministicHash": false
+  },
+  "outputFileMetrics": [
+    {
+      "filename": "06_MISSINGNESS_CENSUS.tsv",
+      "group": "RESEARCH_TSV",
+      "gzipBytes": 1752,
+      "gzipRatio": 0.15455187,
+      "gzipSha256": "2c5356cd4b3780df57f540ea081283eb64bbe42907840e5ffaf122f53a955c15",
+      "rawBytes": 11336,
+      "rowCount": 38,
+      "sha256": "5550af8621d2b410619613091e6c01108aa128cb5eea8e63614dc50e20b46c41"
+    },
+    {
+      "filename": "08_ONE_DIMENSION_FREQUENCIES.tsv",
+      "group": "RESEARCH_TSV",
+      "gzipBytes": 222474,
+      "gzipRatio": 0.208290266,
+      "gzipSha256": "22ea90ef71add4f72f71f395d74ae3626c59c2075f0feb102c96047402ed0af2",
+      "rawBytes": 1068096,
+      "rowCount": 3364,
+      "sha256": "d5c706243598755b57b50c10b2d4ac2f6e5075cd201436e163ea817b1c3f8059"
+    },
+    {
+      "filename": "09_TWO_DIMENSION_INTERSECTIONS.tsv",
+      "group": "RESEARCH_TSV",
+      "gzipBytes": 387535,
+      "gzipRatio": 0.124295668,
+      "gzipSha256": "d6480959d90f99d8066afe40f677b3d1ce37ad55f7d8224f3ecd75dabc5cf075",
+      "rawBytes": 3117848,
+      "rowCount": 6146,
+      "sha256": "02a1f32485235e060c8dc96aa5a8aa7b9e6557e2aa1d7bec29394de53fdaeb8f"
+    },
+    {
+      "filename": "10_THREE_DIMENSION_INTERSECTIONS.tsv",
+      "group": "RESEARCH_TSV",
+      "gzipBytes": 74971,
+      "gzipRatio": 0.055230185,
+      "gzipSha256": "a7819e8c68f0c9d6306206ceac9d3ae4824a2eb90162c3369f59a535d3f094f9",
+      "rawBytes": 1357428,
+      "rowCount": 2399,
+      "sha256": "ce2cbc2a9f12967f1cd5a0a82b1d53f61cc6494bcb0939d306c3a51a5f16e8c2"
+    },
+    {
+      "filename": "11_RARE_INTERSECTION_REGISTER.tsv",
+      "group": "RESEARCH_TSV",
+      "gzipBytes": 125375,
+      "gzipRatio": 0.056800781,
+      "gzipSha256": "36f3665cdf2dccb320f31a023bc85b27097c9162e61d23d54a89ce1d7f420b14",
+      "rawBytes": 2207276,
+      "rowCount": 4251,
+      "sha256": "73c4e483d58a0e7a016f30dbda5c37ec3d856f0071788b445c58ac50f1202ff6"
+    },
+    {
+      "filename": "13_EXPLORATION_SIGNAL_REGISTRY.tsv",
+      "group": "RESEARCH_TSV",
+      "gzipBytes": 8500,
+      "gzipRatio": 0.149392762,
+      "gzipSha256": "49815ba3794c2e7b3e60f72ca5d0a9c7c93b2291d286c32be1e839ef45fd05d1",
+      "rawBytes": 56897,
+      "rowCount": 64,
+      "sha256": "0c5ad4a0d39190eaf63998b54d3b65d99cb160f3ad2653ebb4517f89a9dc9eab"
+    },
+    {
+      "filename": "15_PATHOLOGICAL_SAMPLE_REGISTER.tsv",
+      "group": "RESEARCH_TSV",
+      "gzipBytes": 1631,
+      "gzipRatio": 0.257947177,
+      "gzipSha256": "0a87af2945bc334ae3f7f3d6d47f6e9576e29981a80627445cf563adfae656d7",
+      "rawBytes": 6323,
+      "rowCount": 15,
+      "sha256": "b7ad059298fcac96ec40008a7a62d43057c3ad0b461ff285c564fb99227420a6"
+    },
+    {
+      "filename": "exploration-cross-dimensional-summary.json",
+      "group": "AUDIT_RAW_JSON",
+      "gzipBytes": 11724,
+      "gzipRatio": 0.143872179,
+      "gzipSha256": "269e1fac4301bcbd3bf549b663983a3c892d413188cef249671973cd766738bc",
+      "rawBytes": 81489,
+      "rowCount": null,
+      "sha256": "c1d4016ff83b043e21f589422d435ae61a31ba4acccc85db4fc9bcabe2701571"
+    },
+    {
+      "filename": "exploration-curatorial-summary.json",
+      "group": "AUDIT_RAW_JSON",
+      "gzipBytes": 5674,
+      "gzipRatio": 0.15584915,
+      "gzipSha256": "333ade09f35ad6516ea7c0aa15820e759e5943dad775e8c75eec2ea402a5fa0b",
+      "rawBytes": 36407,
+      "rowCount": null,
+      "sha256": "fbba6a7040023292745399db2ac9411d1a8f23996af56dc6147ee2d38edf2dff"
+    },
+    {
+      "filename": "exploration-curatorial-support-summary.json",
+      "group": "AUDIT_RAW_JSON",
+      "gzipBytes": 1868,
+      "gzipRatio": 0.137141179,
+      "gzipSha256": "4eebb8ebf84dfa0484cae75da4a49a8341bcc9e102a8e573e9c82965e11cfd93",
+      "rawBytes": 13621,
+      "rowCount": null,
+      "sha256": "407125b4ccd520ca7b4d05498955db1418923cf100053c4dbc5cdb390ef86ad5"
+    },
+    {
+      "filename": "exploration-generation-summary.json",
+      "group": "AUDIT_RAW_JSON",
+      "gzipBytes": 1646,
+      "gzipRatio": 0.386475699,
+      "gzipSha256": "9a65071f17b1809d2489824201bbe608d36aba1d455d2c666123acc291522cb9",
+      "rawBytes": 4259,
+      "rowCount": null,
+      "sha256": "33988738ccc789770b2caf5cb162f86b957854b15a870cef5260822f986c7aff"
+    },
+    {
+      "filename": "exploration-missingness-summary.json",
+      "group": "AUDIT_RAW_JSON",
+      "gzipBytes": 2223,
+      "gzipRatio": 0.183962264,
+      "gzipSha256": "8c370c18299041f7ac6807dab1856872e3e6e7011000e0dfdbc97ddd67480931",
+      "rawBytes": 12084,
+      "rowCount": null,
+      "sha256": "e31b43b813bd37a89a847ded1bca7f24a9db01177efbf0d3821298795fc115c3"
+    },
+    {
+      "filename": "exploration-pathological-samples-summary.json",
+      "group": "AUDIT_RAW_JSON",
+      "gzipBytes": 353,
+      "gzipRatio": 0.569354839,
+      "gzipSha256": "5214e427ada5c59832a9cc5e47a1102ebe2a57fbbd8bdb1edd94c358326fbae3",
+      "rawBytes": 620,
+      "rowCount": null,
+      "sha256": "3332965992ad0ebacd13ce94b3d2a92c936b5bb67119476e204f41dac5e94490"
+    },
+    {
+      "filename": "exploration-signal-registry-summary.json",
+      "group": "AUDIT_RAW_JSON",
+      "gzipBytes": 662,
+      "gzipRatio": 0.541734861,
+      "gzipSha256": "34de69d8d6180532493d4e43631bb819a164a88f5c5dd97f8fa63b6cd73b12cb",
+      "rawBytes": 1222,
+      "rowCount": null,
+      "sha256": "e0336ed402d680d915ced36a0fb21ef68d9415151a11da5f61eedb8ead9a955f"
+    },
+    {
+      "filename": "exploration-source-curatorial-structure-registry.json",
+      "group": "AUDIT_RAW_JSON",
+      "gzipBytes": 2888,
+      "gzipRatio": 0.083724706,
+      "gzipSha256": "e9022d0b9dca7d5f4b912c0749e1b30520a38b98f9594edc887b6a036d31f242",
+      "rawBytes": 34494,
+      "rowCount": null,
+      "sha256": "85b7f9a315ea89c63157e3831c6c0a2118a203d2b9f865f4dbc60e4446748a7b"
+    },
+    {
+      "filename": "exploration-source-inventory-summary.json",
+      "group": "AUDIT_RAW_JSON",
+      "gzipBytes": 868,
+      "gzipRatio": 0.338665626,
+      "gzipSha256": "c8d09abbd90a616d8df983f1f2319b67ebd7831e0765e3f0020a33f4b20fd74c",
+      "rawBytes": 2563,
+      "rowCount": null,
+      "sha256": "df48fdae6a998142b852acff47e8086bf0f460e6c83a84560ffc00537c1d2d1c"
+    }
+  ],
+  "outputRowCounts": {
+    "06_MISSINGNESS_CENSUS.tsv": 38,
+    "08_ONE_DIMENSION_FREQUENCIES.tsv": 3364,
+    "09_TWO_DIMENSION_INTERSECTIONS.tsv": 6146,
+    "10_THREE_DIMENSION_INTERSECTIONS.tsv": 2399,
+    "11_RARE_INTERSECTION_REGISTER.tsv": 4251,
+    "13_EXPLORATION_SIGNAL_REGISTRY.tsv": 64,
+    "15_PATHOLOGICAL_SAMPLE_REGISTER.tsv": 15
+  },
+  "performance": {
+    "explorationAnalysisPeakHeapBytes": 149142324,
+    "memoryProbeIterations": 1,
+    "outputProjectionMs": 772.341,
+    "peakRssBytes": 446955520,
+    "pythonTracemallocCurrentBytes": 2673,
+    "pythonTracemallocPeakBytes": 149142324,
+    "stageDistributions": {
+      "cross_normalization_index_ms": {
+        "maxMs": 423.28,
+        "n": 3,
+        "p50Ms": 405.092,
+        "p95Ms": 421.461,
+        "p99Ms": 422.916
+      },
+      "curatorial_co_membership_core_ms": {
+        "maxMs": 72.081,
+        "n": 3,
+        "p50Ms": 71.957,
+        "p95Ms": 72.069,
+        "p99Ms": 72.079
+      },
+      "curatorial_folder_inverted_index_ms": {
+        "maxMs": 76.969,
+        "n": 3,
+        "p50Ms": 75.204,
+        "p95Ms": 76.792,
+        "p99Ms": 76.934
+      },
+      "curatorial_index_and_co_membership_ms": {
+        "maxMs": 1564.147,
+        "n": 3,
+        "p50Ms": 1542.917,
+        "p95Ms": 1562.024,
+        "p99Ms": 1563.722
+      },
+      "dimension_concentration_ms": {
+        "maxMs": 41.689,
+        "n": 3,
+        "p50Ms": 26.327,
+        "p95Ms": 40.153,
+        "p99Ms": 41.382
+      },
+      "missingness_aggregate_census_ms": {
+        "maxMs": 10.586,
+        "n": 3,
+        "p50Ms": 9.98,
+        "p95Ms": 10.526,
+        "p99Ms": 10.574
+      },
+      "missingness_end_to_end_ms": {
+        "maxMs": 341.932,
+        "n": 3,
+        "p50Ms": 318.396,
+        "p95Ms": 339.578,
+        "p99Ms": 341.461
+      },
+      "missingness_normalization_ms": {
+        "maxMs": 262.304,
+        "n": 3,
+        "p50Ms": 247.792,
+        "p95Ms": 260.853,
+        "p99Ms": 262.014
+      },
+      "missingness_object_vector_build_ms": {
+        "maxMs": 10.283,
+        "n": 3,
+        "p50Ms": 9.712,
+        "p95Ms": 10.226,
+        "p99Ms": 10.272
+      },
+      "normalized_public_record_load_ms": {
+        "maxMs": 2263.615,
+        "n": 3,
+        "p50Ms": 2079.054,
+        "p95Ms": 2245.159,
+        "p99Ms": 2259.924
+      },
+      "one_dimension_frequency_ms": {
+        "maxMs": 95.175,
+        "n": 3,
+        "p50Ms": 85.947,
+        "p95Ms": 94.252,
+        "p99Ms": 94.99
+      },
+      "source_concentration_ms": {
+        "maxMs": 15.33,
+        "n": 3,
+        "p50Ms": 12.328,
+        "p95Ms": 15.029,
+        "p99Ms": 15.269
+      },
+      "source_inventory_ms": {
+        "maxMs": 1188.796,
+        "n": 3,
+        "p50Ms": 1187.788,
+        "p95Ms": 1188.695,
+        "p99Ms": 1188.776
+      },
+      "three_dimension_observed_cells_ms": {
+        "maxMs": 77.228,
+        "n": 3,
+        "p50Ms": 71.224,
+        "p95Ms": 76.627,
+        "p99Ms": 77.108
+      },
+      "two_dimension_observed_cells_ms": {
+        "maxMs": 172.47,
+        "n": 3,
+        "p50Ms": 154.252,
+        "p95Ms": 170.648,
+        "p99Ms": 172.105
+      }
+    },
+    "totalBenchmarkMs": 25117.727,
+    "tracemallocTracebackLimit": 1
+  },
+  "population": {
+    "heldObjectsInStatistics": 0,
+    "publicObjectCount": 7995
+  },
+  "schemaVersion": "trace-exploration-round1-benchmark/v1",
+  "stageWorkloadCounts": {
+    "crossDimensional": {
+      "dimensionConcentrationAssignmentCounts": {
+        "curated_container": 24102,
+        "decade": 8033,
+        "geography": 7996,
+        "source": 7995
+      },
+      "dimensionConcentrationRowCount": 4,
+      "frequencyRowCount": 3364,
+      "normalizedRecordCount": 7995,
+      "pairObservedCellCount": 6146,
+      "pairSummaryCount": 18,
+      "sourceConcentrationRowCount": 59,
+      "tripleObservedCellCount": 2399,
+      "tripleSummaryCount": 6
+    },
+    "curatorialFolderInvertedIndex": {
+      "folderCount": 185,
+      "indexedObjectCount": 15923,
+      "membershipCount": 47982,
+      "membershipPairSha256": "b2ddbe94f4d569f6b9970246855b535374b7c1a9b8ac047de58899c860bd4573",
+      "publicFolderCount": 118,
+      "publicMaskMembershipCount": 24102,
+      "publicMembershipCount": 24102,
+      "publicObjectCount": 7995
+    },
+    "missingness": {
+      "activeStateEventCount": 11075,
+      "cooccurrenceCellCount": 19,
+      "cooccurrencesSha256": "9c237e41005265780be1a285952fe49835b2b88d30d313c5d1b39558c11e96bd",
+      "fieldMatrixSha256": "725d58b7e52ef36d0a945bf45efdbeca0a444553565945993e729b6019e07041",
+      "normalizedRecordCount": 7995,
+      "objectVectorCount": 7995,
+      "objectVectorsSha256": "da439396aa1782ee616929ca70d451d822fe748dac5e8f622e342286ed644603"
+    }
+  },
+  "workloadCounts": {
+    "dimensionConcentrationAssignmentCounts": {
+      "curated_container": 24102,
+      "decade": 8033,
+      "geography": 7996,
+      "source": 7995
+    },
+    "dimensionConcentrationRowCount": 4,
+    "frequencyRowCount": 3364,
+    "normalizedRecordCount": 7995,
+    "pairObservedCellCount": 6146,
+    "pairSummaryCount": 18,
+    "sourceConcentrationRowCount": 59,
+    "tripleObservedCellCount": 2399,
+    "tripleSummaryCount": 6
+  }
+}

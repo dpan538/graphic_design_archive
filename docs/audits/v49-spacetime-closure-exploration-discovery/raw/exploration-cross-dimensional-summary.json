@@ -1,0 +1,2282 @@
+{
+  "concentrationDiagnostics": {
+    "policies": {
+      "entropy": "natural-log Shannon entropy plus distinct-normalized entropy",
+      "hhiBasis": "assignment-event shares",
+      "historicalRelation": false,
+      "semanticRelation": false,
+      "source": "cross_dimensional_analysis.dimensionConcentrationRows",
+      "topK": [
+        1,
+        5
+      ],
+      "zeroCartesianRows": false
+    },
+    "rowCount": 4,
+    "rows": [
+      {
+        "assignmentCount": 7995,
+        "assignmentDenominator": 7995,
+        "derivationVersion": "trace-exploration-cross-dimensional-v1",
+        "deterministic": true,
+        "diagnosticId": "CONCENTRATION_SOURCE",
+        "diagnosticStatus": "ANALYSIS_DIAGNOSTIC_NOT_A_RELATION",
+        "dimension": "source",
+        "distinctValueCount": 15,
+        "eligibleDenominator": 7995,
+        "eligibleDenominatorSemantics": "AUTHORITATIVE_PUBLIC_OBJECTS",
+        "family": "SOURCE",
+        "governanceState": "PUBLIC_METADATA_DERIVED",
+        "hhi": 0.2881509041962984,
+        "historicalRelation": false,
+        "interpretationBoundary": "CORPUS_COMPOSITION_NOT_SOURCE_AUTHORITY_OR_HISTORICAL_REPRESENTATIVENESS",
+        "membershipPolicy": "UNIQUE_PER_OBJECT_VALUE_MEMBERSHIP",
+        "normalizedEntropy": 0.5992306679246528,
+        "observedObjectCount": 7995,
+        "receiptSha256": "195639201fcb4ccfc087caab230d3d5d23b640aee8218ed6042f79de0dc5aeef",
+        "semanticRelation": false,
+        "shannonEntropyNats": 1.622746730779968,
+        "shareDenominatorSemantics": "UNIQUE_OBJECT_VALUE_ASSIGNMENTS",
+        "top1AssignmentCount": 3505,
+        "top1Share": 0.43839899937460913,
+        "top1ValueId": "EXP:SOURCE:25d1164762bf9812b77cd2735c6d7c6ee4fceaa0a141070629f07075797b80ac",
+        "top1ValueLabel": "V&A Collections API",
+        "top5AssignmentCount": 7326,
+        "top5Share": 0.9163227016885553,
+        "unassignedObjectCount": 0
+      },
+      {
+        "assignmentCount": 8033,
+        "assignmentDenominator": 8033,
+        "derivationVersion": "trace-exploration-cross-dimensional-v1",
+        "deterministic": true,
+        "diagnosticId": "CONCENTRATION_TEMPORAL",
+        "diagnosticStatus": "ANALYSIS_DIAGNOSTIC_NOT_A_RELATION",
+        "dimension": "decade",
+        "distinctValueCount": 23,
+        "eligibleDenominator": 7995,
+        "eligibleDenominatorSemantics": "AUTHORITATIVE_PUBLIC_OBJECTS",
+        "family": "TEMPORAL",
+        "governanceState": "PUBLIC_GOVERNED_DERIVED",
+        "hhi": 0.12388228508851257,
+        "historicalRelation": false,
+        "interpretationBoundary": "CORPUS_DISTRIBUTION_NOT_HISTORICAL_IMPORTANCE_OR_RELATION",
+        "membershipPolicy": "UNIQUE_PER_OBJECT_VALUE_MEMBERSHIP",
+        "normalizedEntropy": 0.7771096246292455,
+        "observedObjectCount": 7995,
+        "receiptSha256": "f78098b10e222181e10d3a9d86b2c72c33f6881ce6f6e0c974c2d105908ef1f1",
+        "semanticRelation": false,
+        "shannonEntropyNats": 2.436622733167872,
+        "shareDenominatorSemantics": "UNIQUE_OBJECT_VALUE_ASSIGNMENTS",
+        "top1AssignmentCount": 1898,
+        "top1Share": 0.23627536412299266,
+        "top1ValueId": "SPT-PERIOD-1980-1990",
+        "top1ValueLabel": "1980s",
+        "top5AssignmentCount": 5478,
+        "top5Share": 0.681937009834433,
+        "unassignedObjectCount": 0
+      },
+      {
+        "assignmentCount": 7996,
+        "assignmentDenominator": 7996,
+        "derivationVersion": "trace-exploration-cross-dimensional-v1",
+        "deterministic": true,
+        "diagnosticId": "CONCENTRATION_GEOGRAPHIC",
+        "diagnosticStatus": "ANALYSIS_DIAGNOSTIC_NOT_A_RELATION",
+        "dimension": "geography",
+        "distinctValueCount": 93,
+        "eligibleDenominator": 7995,
+        "eligibleDenominatorSemantics": "AUTHORITATIVE_PUBLIC_OBJECTS",
+        "family": "GEOGRAPHIC",
+        "governanceState": "PUBLIC_GOVERNED_DERIVED",
+        "hhi": 0.19532871738520585,
+        "historicalRelation": false,
+        "interpretationBoundary": "CORPUS_DISTRIBUTION_NOT_HISTORICAL_DISTANCE_OR_REPRESENTATIVENESS",
+        "membershipPolicy": "UNIQUE_PER_OBJECT_VALUE_MEMBERSHIP",
+        "normalizedEntropy": 0.5576924624955911,
+        "observedObjectCount": 7995,
+        "receiptSha256": "3f8ec2f5a6033d751b0a10ffee89571091631639009c78f7fcfe0b6256167f76",
+        "semanticRelation": false,
+        "shannonEntropyNats": 2.5277965728429077,
+        "shareDenominatorSemantics": "UNIQUE_OBJECT_VALUE_ASSIGNMENTS",
+        "top1AssignmentCount": 3214,
+        "top1Share": 0.4019509754877439,
+        "top1ValueId": "SPTGEO:627ad144a3cb31d9f0749b6fae5b6fc7221a2fe88c2cb7fea4178a97d44b1b01",
+        "top1ValueLabel": "United Kingdom",
+        "top5AssignmentCount": 5609,
+        "top5Share": 0.7014757378689345,
+        "unassignedObjectCount": 0
+      },
+      {
+        "assignmentCount": 24102,
+        "assignmentDenominator": 24102,
+        "derivationVersion": "trace-exploration-cross-dimensional-v1",
+        "deterministic": true,
+        "diagnosticId": "CONCENTRATION_CURATORIAL",
+        "diagnosticStatus": "ANALYSIS_DIAGNOSTIC_NOT_A_RELATION",
+        "dimension": "curated_container",
+        "distinctValueCount": 118,
+        "eligibleDenominator": 7995,
+        "eligibleDenominatorSemantics": "AUTHORITATIVE_PUBLIC_OBJECTS",
+        "family": "CURATORIAL",
+        "governanceState": "ANALYSIS_ONLY_CURATORIAL_DERIVED",
+        "hhi": 0.15115428130139877,
+        "historicalRelation": false,
+        "interpretationBoundary": "PROJECT_CURATORIAL_DISTRIBUTION_NOT_HISTORICAL_RELATION_OR_IMPORTANCE",
+        "membershipPolicy": "UNIQUE_PER_OBJECT_VALUE_MEMBERSHIP",
+        "normalizedEntropy": 0.5292154358685331,
+        "observedObjectCount": 7995,
+        "receiptSha256": "fd1e80f99bb435a493de3a3fd53736a1a1416ecb38fc9d4f466b57743f5dd066",
+        "semanticRelation": false,
+        "shannonEntropyNats": 2.524719942927906,
+        "shareDenominatorSemantics": "UNIQUE_OBJECT_VALUE_ASSIGNMENTS",
+        "top1AssignmentCount": 7105,
+        "top1Share": 0.29478881420628994,
+        "top1ValueId": "EXP:CURATED_CONTAINER_MEDIUM:e1add64c4e817030bc3f2ab5320a4db62d7f2e47995e11c6782cfc25efe56bcc",
+        "top1ValueLabel": "Poster",
+        "top5AssignmentCount": 18379,
+        "top5Share": 0.7625508256576218,
+        "unassignedObjectCount": 0
+      }
+    ],
+    "rowsSha256": "57f2eedd0a9c91d132b21de6c1cabc1496bc220e1c2f8d6273759d73a1100000",
+    "schemaVersion": "trace-exploration-native-concentration-receipt/v1"
+  },
+  "deferredFamilies": [
+    {
+      "family": "geographic_distance",
+      "reason": "No distance semantics selected.",
+      "status": "DEFER"
+    },
+    {
+      "family": "rights_or_image_state",
+      "reason": "No governed public aggregate class is available.",
+      "status": "DEFER_NOT_GOVERNED"
+    },
+    {
+      "family": "raw_source_collection",
+      "reason": "Internal source diagnostic is not a public direct feature.",
+      "status": "NOT_GOVERNED"
+    }
+  ],
+  "densityRows": [
+    {
+      "cellKind": "PAIR",
+      "dimensionCoverageCounts": [
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "medium",
+        "theme"
+      ],
+      "distinctValueFrameCellCount": 80,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 40,
+      "observedCellDensity": 0.5,
+      "observedMembershipEventCount": 7996,
+      "specId": "medium__theme"
+    },
+    {
+      "cellKind": "PAIR",
+      "dimensionCoverageCounts": [
+        7995,
+        110
+      ],
+      "dimensions": [
+        "medium",
+        "movement_context"
+      ],
+      "distinctValueFrameCellCount": 70,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 110,
+      "observedCellCount": 12,
+      "observedCellDensity": 0.17142857142857143,
+      "observedMembershipEventCount": 115,
+      "specId": "medium__movement_context"
+    },
+    {
+      "cellKind": "PAIR",
+      "dimensionCoverageCounts": [
+        7995,
+        110
+      ],
+      "dimensions": [
+        "theme",
+        "movement_context"
+      ],
+      "distinctValueFrameCellCount": 56,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 110,
+      "observedCellCount": 16,
+      "observedCellDensity": 0.2857142857142857,
+      "observedMembershipEventCount": 115,
+      "specId": "theme__movement_context"
+    },
+    {
+      "cellKind": "PAIR",
+      "dimensionCoverageCounts": [
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "medium",
+        "decade"
+      ],
+      "distinctValueFrameCellCount": 230,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 104,
+      "observedCellDensity": 0.45217391304347826,
+      "observedMembershipEventCount": 8033,
+      "specId": "medium__decade"
+    },
+    {
+      "cellKind": "PAIR",
+      "dimensionCoverageCounts": [
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "theme",
+        "decade"
+      ],
+      "distinctValueFrameCellCount": 184,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 116,
+      "observedCellDensity": 0.6304347826086957,
+      "observedMembershipEventCount": 8037,
+      "specId": "theme__decade"
+    },
+    {
+      "cellKind": "PAIR",
+      "dimensionCoverageCounts": [
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "medium",
+        "geography"
+      ],
+      "distinctValueFrameCellCount": 930,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 168,
+      "observedCellDensity": 0.18064516129032257,
+      "observedMembershipEventCount": 7996,
+      "specId": "medium__geography"
+    },
+    {
+      "cellKind": "PAIR",
+      "dimensionCoverageCounts": [
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "theme",
+        "geography"
+      ],
+      "distinctValueFrameCellCount": 744,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 228,
+      "observedCellDensity": 0.3064516129032258,
+      "observedMembershipEventCount": 7998,
+      "specId": "theme__geography"
+    },
+    {
+      "cellKind": "PAIR",
+      "dimensionCoverageCounts": [
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "decade",
+        "geography"
+      ],
+      "distinctValueFrameCellCount": 2139,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 373,
+      "observedCellDensity": 0.17438055165965405,
+      "observedMembershipEventCount": 8037,
+      "specId": "decade__geography"
+    },
+    {
+      "cellKind": "PAIR",
+      "dimensionCoverageCounts": [
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "source",
+        "medium"
+      ],
+      "distinctValueFrameCellCount": 150,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 45,
+      "observedCellDensity": 0.3,
+      "observedMembershipEventCount": 7995,
+      "specId": "source__medium"
+    },
+    {
+      "cellKind": "PAIR",
+      "dimensionCoverageCounts": [
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "source",
+        "theme"
+      ],
+      "distinctValueFrameCellCount": 120,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 63,
+      "observedCellDensity": 0.525,
+      "observedMembershipEventCount": 7996,
+      "specId": "source__theme"
+    },
+    {
+      "cellKind": "PAIR",
+      "dimensionCoverageCounts": [
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "source",
+        "decade"
+      ],
+      "distinctValueFrameCellCount": 345,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 136,
+      "observedCellDensity": 0.39420289855072466,
+      "observedMembershipEventCount": 8033,
+      "specId": "source__decade"
+    },
+    {
+      "cellKind": "PAIR",
+      "dimensionCoverageCounts": [
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "source",
+        "geography"
+      ],
+      "distinctValueFrameCellCount": 1395,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 192,
+      "observedCellDensity": 0.13763440860215054,
+      "observedMembershipEventCount": 7996,
+      "specId": "source__geography"
+    },
+    {
+      "cellKind": "PAIR",
+      "dimensionCoverageCounts": [
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "object_type",
+        "medium"
+      ],
+      "distinctValueFrameCellCount": 890,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 114,
+      "observedCellDensity": 0.12808988764044943,
+      "observedMembershipEventCount": 7995,
+      "specId": "object_type__medium"
+    },
+    {
+      "cellKind": "PAIR",
+      "dimensionCoverageCounts": [
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "creator",
+        "medium"
+      ],
+      "distinctValueFrameCellCount": 29840,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 3039,
+      "observedCellDensity": 0.101843163538874,
+      "observedMembershipEventCount": 7995,
+      "specId": "creator__medium"
+    },
+    {
+      "cellKind": "PAIR",
+      "dimensionCoverageCounts": [
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "curated_container",
+        "decade"
+      ],
+      "distinctValueFrameCellCount": 2714,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 611,
+      "observedCellDensity": 0.22512896094325718,
+      "observedMembershipEventCount": 24222,
+      "specId": "curated_container__decade"
+    },
+    {
+      "cellKind": "PAIR",
+      "dimensionCoverageCounts": [
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "curated_container",
+        "geography"
+      ],
+      "distinctValueFrameCellCount": 10974,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 515,
+      "observedCellDensity": 0.04692910515764535,
+      "observedMembershipEventCount": 24107,
+      "specId": "curated_container__geography"
+    },
+    {
+      "cellKind": "PAIR",
+      "dimensionCoverageCounts": [
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "curated_container_type",
+        "decade"
+      ],
+      "distinctValueFrameCellCount": 92,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 79,
+      "observedCellDensity": 0.8586956521739131,
+      "observedMembershipEventCount": 24209,
+      "specId": "curated_container_type__decade"
+    },
+    {
+      "cellKind": "PAIR",
+      "dimensionCoverageCounts": [
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "curated_container_type",
+        "geography"
+      ],
+      "distinctValueFrameCellCount": 372,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 295,
+      "observedCellDensity": 0.793010752688172,
+      "observedMembershipEventCount": 24098,
+      "specId": "curated_container_type__geography"
+    },
+    {
+      "cellKind": "BOUNDED_TRIPLE",
+      "dimensionCoverageCounts": [
+        7995,
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "medium",
+        "theme",
+        "decade"
+      ],
+      "distinctValueFrameCellCount": 1840,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 244,
+      "observedCellDensity": 0.13260869565217392,
+      "observedMembershipEventCount": 8037,
+      "specId": "medium__theme__decade"
+    },
+    {
+      "cellKind": "BOUNDED_TRIPLE",
+      "dimensionCoverageCounts": [
+        7995,
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "medium",
+        "theme",
+        "geography"
+      ],
+      "distinctValueFrameCellCount": 7440,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 336,
+      "observedCellDensity": 0.04516129032258064,
+      "observedMembershipEventCount": 7998,
+      "specId": "medium__theme__geography"
+    },
+    {
+      "cellKind": "BOUNDED_TRIPLE",
+      "dimensionCoverageCounts": [
+        7995,
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "theme",
+        "decade",
+        "geography"
+      ],
+      "distinctValueFrameCellCount": 17112,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 714,
+      "observedCellDensity": 0.04172510518934081,
+      "observedMembershipEventCount": 8045,
+      "specId": "theme__decade__geography"
+    },
+    {
+      "cellKind": "BOUNDED_TRIPLE",
+      "dimensionCoverageCounts": [
+        7995,
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "medium",
+        "decade",
+        "geography"
+      ],
+      "distinctValueFrameCellCount": 21390,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 530,
+      "observedCellDensity": 0.024777933613838243,
+      "observedMembershipEventCount": 8037,
+      "specId": "medium__decade__geography"
+    },
+    {
+      "cellKind": "BOUNDED_TRIPLE",
+      "dimensionCoverageCounts": [
+        7995,
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "source",
+        "theme",
+        "decade"
+      ],
+      "distinctValueFrameCellCount": 2760,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 320,
+      "observedCellDensity": 0.11594202898550725,
+      "observedMembershipEventCount": 8037,
+      "specId": "source__theme__decade"
+    },
+    {
+      "cellKind": "BOUNDED_TRIPLE",
+      "dimensionCoverageCounts": [
+        7995,
+        7995,
+        7995
+      ],
+      "dimensions": [
+        "source",
+        "medium",
+        "geography"
+      ],
+      "distinctValueFrameCellCount": 13950,
+      "eligibleDenominator": 7995,
+      "jointObservableObjectCount": 7995,
+      "observedCellCount": 255,
+      "observedCellDensity": 0.01827956989247312,
+      "observedMembershipEventCount": 7996,
+      "specId": "source__medium__geography"
+    }
+  ],
+  "derivationVersion": "trace-exploration-cross-dimensional-v1",
+  "dimensionConcentrationRows": [
+    {
+      "assignmentCount": 7995,
+      "assignmentDenominator": 7995,
+      "derivationVersion": "trace-exploration-cross-dimensional-v1",
+      "deterministic": true,
+      "diagnosticId": "CONCENTRATION_SOURCE",
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC_NOT_A_RELATION",
+      "dimension": "source",
+      "distinctValueCount": 15,
+      "eligibleDenominator": 7995,
+      "eligibleDenominatorSemantics": "AUTHORITATIVE_PUBLIC_OBJECTS",
+      "family": "SOURCE",
+      "governanceState": "PUBLIC_METADATA_DERIVED",
+      "hhi": 0.2881509041962984,
+      "historicalRelation": false,
+      "interpretationBoundary": "CORPUS_COMPOSITION_NOT_SOURCE_AUTHORITY_OR_HISTORICAL_REPRESENTATIVENESS",
+      "membershipPolicy": "UNIQUE_PER_OBJECT_VALUE_MEMBERSHIP",
+      "normalizedEntropy": 0.5992306679246528,
+      "observedObjectCount": 7995,
+      "receiptSha256": "195639201fcb4ccfc087caab230d3d5d23b640aee8218ed6042f79de0dc5aeef",
+      "semanticRelation": false,
+      "shannonEntropyNats": 1.622746730779968,
+      "shareDenominatorSemantics": "UNIQUE_OBJECT_VALUE_ASSIGNMENTS",
+      "top1AssignmentCount": 3505,
+      "top1Share": 0.43839899937460913,
+      "top1ValueId": "EXP:SOURCE:25d1164762bf9812b77cd2735c6d7c6ee4fceaa0a141070629f07075797b80ac",
+      "top1ValueLabel": "V&A Collections API",
+      "top5AssignmentCount": 7326,
+      "top5Share": 0.9163227016885553,
+      "unassignedObjectCount": 0
+    },
+    {
+      "assignmentCount": 8033,
+      "assignmentDenominator": 8033,
+      "derivationVersion": "trace-exploration-cross-dimensional-v1",
+      "deterministic": true,
+      "diagnosticId": "CONCENTRATION_TEMPORAL",
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC_NOT_A_RELATION",
+      "dimension": "decade",
+      "distinctValueCount": 23,
+      "eligibleDenominator": 7995,
+      "eligibleDenominatorSemantics": "AUTHORITATIVE_PUBLIC_OBJECTS",
+      "family": "TEMPORAL",
+      "governanceState": "PUBLIC_GOVERNED_DERIVED",
+      "hhi": 0.12388228508851257,
+      "historicalRelation": false,
+      "interpretationBoundary": "CORPUS_DISTRIBUTION_NOT_HISTORICAL_IMPORTANCE_OR_RELATION",
+      "membershipPolicy": "UNIQUE_PER_OBJECT_VALUE_MEMBERSHIP",
+      "normalizedEntropy": 0.7771096246292455,
+      "observedObjectCount": 7995,
+      "receiptSha256": "f78098b10e222181e10d3a9d86b2c72c33f6881ce6f6e0c974c2d105908ef1f1",
+      "semanticRelation": false,
+      "shannonEntropyNats": 2.436622733167872,
+      "shareDenominatorSemantics": "UNIQUE_OBJECT_VALUE_ASSIGNMENTS",
+      "top1AssignmentCount": 1898,
+      "top1Share": 0.23627536412299266,
+      "top1ValueId": "SPT-PERIOD-1980-1990",
+      "top1ValueLabel": "1980s",
+      "top5AssignmentCount": 5478,
+      "top5Share": 0.681937009834433,
+      "unassignedObjectCount": 0
+    },
+    {
+      "assignmentCount": 7996,
+      "assignmentDenominator": 7996,
+      "derivationVersion": "trace-exploration-cross-dimensional-v1",
+      "deterministic": true,
+      "diagnosticId": "CONCENTRATION_GEOGRAPHIC",
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC_NOT_A_RELATION",
+      "dimension": "geography",
+      "distinctValueCount": 93,
+      "eligibleDenominator": 7995,
+      "eligibleDenominatorSemantics": "AUTHORITATIVE_PUBLIC_OBJECTS",
+      "family": "GEOGRAPHIC",
+      "governanceState": "PUBLIC_GOVERNED_DERIVED",
+      "hhi": 0.19532871738520585,
+      "historicalRelation": false,
+      "interpretationBoundary": "CORPUS_DISTRIBUTION_NOT_HISTORICAL_DISTANCE_OR_REPRESENTATIVENESS",
+      "membershipPolicy": "UNIQUE_PER_OBJECT_VALUE_MEMBERSHIP",
+      "normalizedEntropy": 0.5576924624955911,
+      "observedObjectCount": 7995,
+      "receiptSha256": "3f8ec2f5a6033d751b0a10ffee89571091631639009c78f7fcfe0b6256167f76",
+      "semanticRelation": false,
+      "shannonEntropyNats": 2.5277965728429077,
+      "shareDenominatorSemantics": "UNIQUE_OBJECT_VALUE_ASSIGNMENTS",
+      "top1AssignmentCount": 3214,
+      "top1Share": 0.4019509754877439,
+      "top1ValueId": "SPTGEO:627ad144a3cb31d9f0749b6fae5b6fc7221a2fe88c2cb7fea4178a97d44b1b01",
+      "top1ValueLabel": "United Kingdom",
+      "top5AssignmentCount": 5609,
+      "top5Share": 0.7014757378689345,
+      "unassignedObjectCount": 0
+    },
+    {
+      "assignmentCount": 24102,
+      "assignmentDenominator": 24102,
+      "derivationVersion": "trace-exploration-cross-dimensional-v1",
+      "deterministic": true,
+      "diagnosticId": "CONCENTRATION_CURATORIAL",
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC_NOT_A_RELATION",
+      "dimension": "curated_container",
+      "distinctValueCount": 118,
+      "eligibleDenominator": 7995,
+      "eligibleDenominatorSemantics": "AUTHORITATIVE_PUBLIC_OBJECTS",
+      "family": "CURATORIAL",
+      "governanceState": "ANALYSIS_ONLY_CURATORIAL_DERIVED",
+      "hhi": 0.15115428130139877,
+      "historicalRelation": false,
+      "interpretationBoundary": "PROJECT_CURATORIAL_DISTRIBUTION_NOT_HISTORICAL_RELATION_OR_IMPORTANCE",
+      "membershipPolicy": "UNIQUE_PER_OBJECT_VALUE_MEMBERSHIP",
+      "normalizedEntropy": 0.5292154358685331,
+      "observedObjectCount": 7995,
+      "receiptSha256": "fd1e80f99bb435a493de3a3fd53736a1a1416ecb38fc9d4f466b57743f5dd066",
+      "semanticRelation": false,
+      "shannonEntropyNats": 2.524719942927906,
+      "shareDenominatorSemantics": "UNIQUE_OBJECT_VALUE_ASSIGNMENTS",
+      "top1AssignmentCount": 7105,
+      "top1Share": 0.29478881420628994,
+      "top1ValueId": "EXP:CURATED_CONTAINER_MEDIUM:e1add64c4e817030bc3f2ab5320a4db62d7f2e47995e11c6782cfc25efe56bcc",
+      "top1ValueLabel": "Poster",
+      "top5AssignmentCount": 18379,
+      "top5Share": 0.7625508256576218,
+      "unassignedObjectCount": 0
+    }
+  ],
+  "dimensionRegistry": [
+    {
+      "derivationLevel": "DIRECT_GOVERNED",
+      "dimension": "medium",
+      "shape": "array",
+      "signalStatus": "HIGH_POTENTIAL"
+    },
+    {
+      "derivationLevel": "DIRECT_GOVERNED",
+      "dimension": "theme",
+      "shape": "array",
+      "signalStatus": "HIGH_POTENTIAL"
+    },
+    {
+      "derivationLevel": "DIRECT_GOVERNED",
+      "dimension": "movement_context",
+      "shape": "array",
+      "signalStatus": "SUPPORTING"
+    },
+    {
+      "derivationLevel": "DIRECT_GOVERNED",
+      "dimension": "decade",
+      "shape": "array",
+      "signalStatus": "HIGH_POTENTIAL"
+    },
+    {
+      "derivationLevel": "DIRECT_GOVERNED",
+      "dimension": "geography",
+      "shape": "array",
+      "signalStatus": "HIGH_POTENTIAL"
+    },
+    {
+      "derivationLevel": "PUBLIC_METADATA",
+      "dimension": "source",
+      "shape": "scalar",
+      "signalStatus": "SUPPORTING"
+    },
+    {
+      "derivationLevel": "PUBLIC_METADATA",
+      "dimension": "object_type",
+      "shape": "scalar",
+      "signalStatus": "SUPPORTING"
+    },
+    {
+      "derivationLevel": "PUBLIC_METADATA",
+      "dimension": "creator",
+      "shape": "scalar",
+      "signalStatus": "RESEARCH_ONLY_HIGH_CARDINALITY"
+    },
+    {
+      "derivationLevel": "DIRECT_GOVERNED",
+      "dimension": "temporal_precision",
+      "shape": "scalar",
+      "signalStatus": "SUPPORTING"
+    },
+    {
+      "derivationLevel": "DIRECT_GOVERNED",
+      "dimension": "geography_mapping_state",
+      "shape": "scalar",
+      "signalStatus": "SUPPORTING"
+    },
+    {
+      "derivationLevel": "DIRECT_GOVERNED",
+      "dimension": "geography_class",
+      "shape": "scalar",
+      "signalStatus": "SUPPORTING"
+    },
+    {
+      "derivationLevel": "ANALYSIS_ONLY_CURATED",
+      "dimension": "curated_container",
+      "shape": "optional_array",
+      "signalStatus": "RESEARCH_ONLY_NEEDS_MORE_DATA"
+    },
+    {
+      "derivationLevel": "ANALYSIS_ONLY_CURATED",
+      "dimension": "curated_container_type",
+      "shape": "optional_array",
+      "signalStatus": "RESEARCH_ONLY_NEEDS_MORE_DATA"
+    }
+  ],
+  "enrichmentHashes": {
+    "concentrationRowsSha256": "57f2eedd0a9c91d132b21de6c1cabc1496bc220e1c2f8d6273759d73a1100000",
+    "curatorialSupportAggregateSha256": "740792056f954e68eaec18cd423560c266109e1e10ec1a838e09d39371e4a273"
+  },
+  "hashes": {
+    "cohortObjectIdSetSha256": "b64a6dcb10a8ffdd52cf9bf7a7a8918de012b76805823a79afae71dcf2c07d05",
+    "deterministicPayloadSha256": "dc64fca6425e163f0bc7d3d20018086166482a8996ca6b99113860e883212f81",
+    "dimensionConcentrationRowsSha256": "57f2eedd0a9c91d132b21de6c1cabc1496bc220e1c2f8d6273759d73a1100000",
+    "frequencyRowsSha256": "d4267d53490fc1687ddcc59b97c0a4435cd5bd268222398fd04952d6b4e37278",
+    "pairRowsSha256": "8ad32a968dff5170d429566d162345263a8812b10506bc505f93367d816e2b1c",
+    "sourceConcentrationRowsSha256": "522d95b0ef3be2ecb1f5a95b8b55546527dd44fbfdc740e1fecf3967feda7e28",
+    "tripleRowsSha256": "afb2b7deca405d3b137794969d5b94caa1e88019bcd1e980dcd34140d21a15de"
+  },
+  "invariants": {
+    "dimensionConcentrationHistoricalRelation": false,
+    "dimensionConcentrationRowsComplete": true,
+    "dimensionConcentrationSemanticRelation": false,
+    "dimensionConcentrationSeparatesAssignmentAndEligibleDenominators": true,
+    "dimensionConcentrationSourceGlobalReconciled": true,
+    "dimensionConcentrationUsesUniqueMemberships": true,
+    "heldObjectsIncluded": 0,
+    "internalUuidExposureCount": 0,
+    "objectIdsEmittedInAggregateRows": 0,
+    "observedCellsOnly": true,
+    "rawFolderIdsEmitted": 0,
+    "titleExposureCount": 0,
+    "urlExposureCount": 0,
+    "zeroCountRowsEmitted": 0
+  },
+  "metrics": {
+    "aggregateCanonicalBytes": 8645959,
+    "concentrationDiagnosticRowCount": 4,
+    "densityRowCount": 24,
+    "dimensionConcentrationRowCount": 4,
+    "dimensionMembershipEventCount": 128302,
+    "frequencyRowCount": 3364,
+    "maximumDimensionMembersPerObject": 25,
+    "normalizedRecordCount": 7995,
+    "pairMembershipEventCount": 192973,
+    "pairObservedCellCount": 6146,
+    "sourceConcentrationRowCount": 59,
+    "tripleMembershipEventCount": 48150,
+    "tripleObservedCellCount": 2399
+  },
+  "pairRegistry": [
+    {
+      "dimensions": [
+        "medium",
+        "theme"
+      ],
+      "pairId": "medium__theme",
+      "registryStatus": "FROZEN_BASE"
+    },
+    {
+      "dimensions": [
+        "medium",
+        "movement_context"
+      ],
+      "pairId": "medium__movement_context",
+      "registryStatus": "FROZEN_BASE"
+    },
+    {
+      "dimensions": [
+        "theme",
+        "movement_context"
+      ],
+      "pairId": "theme__movement_context",
+      "registryStatus": "FROZEN_BASE"
+    },
+    {
+      "dimensions": [
+        "medium",
+        "decade"
+      ],
+      "pairId": "medium__decade",
+      "registryStatus": "FROZEN_BASE"
+    },
+    {
+      "dimensions": [
+        "theme",
+        "decade"
+      ],
+      "pairId": "theme__decade",
+      "registryStatus": "FROZEN_BASE"
+    },
+    {
+      "dimensions": [
+        "medium",
+        "geography"
+      ],
+      "pairId": "medium__geography",
+      "registryStatus": "FROZEN_BASE"
+    },
+    {
+      "dimensions": [
+        "theme",
+        "geography"
+      ],
+      "pairId": "theme__geography",
+      "registryStatus": "FROZEN_BASE"
+    },
+    {
+      "dimensions": [
+        "decade",
+        "geography"
+      ],
+      "pairId": "decade__geography",
+      "registryStatus": "FROZEN_BASE"
+    },
+    {
+      "dimensions": [
+        "source",
+        "medium"
+      ],
+      "pairId": "source__medium",
+      "registryStatus": "FROZEN_BASE"
+    },
+    {
+      "dimensions": [
+        "source",
+        "theme"
+      ],
+      "pairId": "source__theme",
+      "registryStatus": "FROZEN_BASE"
+    },
+    {
+      "dimensions": [
+        "source",
+        "decade"
+      ],
+      "pairId": "source__decade",
+      "registryStatus": "FROZEN_BASE"
+    },
+    {
+      "dimensions": [
+        "source",
+        "geography"
+      ],
+      "pairId": "source__geography",
+      "registryStatus": "FROZEN_BASE"
+    },
+    {
+      "dimensions": [
+        "object_type",
+        "medium"
+      ],
+      "pairId": "object_type__medium",
+      "registryStatus": "FROZEN_BASE"
+    },
+    {
+      "dimensions": [
+        "creator",
+        "medium"
+      ],
+      "pairId": "creator__medium",
+      "registryStatus": "FROZEN_BASE"
+    },
+    {
+      "dimensions": [
+        "curated_container",
+        "decade"
+      ],
+      "pairId": "curated_container__decade",
+      "registryStatus": "CURATORIAL_EXTENSION"
+    },
+    {
+      "dimensions": [
+        "curated_container",
+        "geography"
+      ],
+      "pairId": "curated_container__geography",
+      "registryStatus": "CURATORIAL_EXTENSION"
+    },
+    {
+      "dimensions": [
+        "curated_container_type",
+        "decade"
+      ],
+      "pairId": "curated_container_type__decade",
+      "registryStatus": "CURATORIAL_EXTENSION"
+    },
+    {
+      "dimensions": [
+        "curated_container_type",
+        "geography"
+      ],
+      "pairId": "curated_container_type__geography",
+      "registryStatus": "CURATORIAL_EXTENSION"
+    }
+  ],
+  "policies": {
+    "cellPolicy": "OBSERVED_CELLS_ONLY_NO_CARTESIAN_ZERO_ROWS",
+    "clusterModelSelected": false,
+    "conditionalAndLiftStatus": "ANALYSIS_DIAGNOSTIC",
+    "creatorMediumStatus": "RESEARCH_ONLY_HIGH_CARDINALITY",
+    "dimensionConcentrationMembershipPolicy": "UNIQUE_PER_OBJECT_VALUE_MEMBERSHIP",
+    "dimensionConcentrationShareDenominator": "UNIQUE_OBJECT_VALUE_ASSIGNMENTS",
+    "featureWeightsSelected": false,
+    "membershipPolicy": "UNIQUE_OBJECT_MEMBERSHIP_PER_VALUE_OR_CELL",
+    "minimumSubsetSupport": 30,
+    "probabilityModelSelected": false,
+    "rareIntersectionMaximumCount": 20,
+    "similarityFunctionSelected": false,
+    "tripleStatus": "RESEARCH_ONLY_BOUNDED_TRIPLE"
+  },
+  "population": {
+    "eligibleDenominator": 7995,
+    "heldObjectCount": 0,
+    "publicObjectCount": 7995
+  },
+  "raritySummaryRows": [
+    {
+      "cellKind": "ONE_DIMENSIONAL",
+      "observedCellCount": 76,
+      "rarityBand": "COUNT_100_PLUS"
+    },
+    {
+      "cellKind": "ONE_DIMENSIONAL",
+      "observedCellCount": 97,
+      "rarityBand": "COUNT_21_TO_99"
+    },
+    {
+      "cellKind": "ONE_DIMENSIONAL",
+      "observedCellCount": 579,
+      "rarityBand": "COUNT_2_TO_5"
+    },
+    {
+      "cellKind": "ONE_DIMENSIONAL",
+      "observedCellCount": 226,
+      "rarityBand": "COUNT_6_TO_20"
+    },
+    {
+      "cellKind": "ONE_DIMENSIONAL",
+      "observedCellCount": 2386,
+      "rarityBand": "SINGLETON"
+    },
+    {
+      "cellKind": "PAIR",
+      "observedCellCount": 284,
+      "rarityBand": "COUNT_100_PLUS"
+    },
+    {
+      "cellKind": "PAIR",
+      "observedCellCount": 608,
+      "rarityBand": "COUNT_21_TO_99"
+    },
+    {
+      "cellKind": "PAIR",
+      "observedCellCount": 1360,
+      "rarityBand": "COUNT_2_TO_5"
+    },
+    {
+      "cellKind": "PAIR",
+      "observedCellCount": 789,
+      "rarityBand": "COUNT_6_TO_20"
+    },
+    {
+      "cellKind": "PAIR",
+      "observedCellCount": 3105,
+      "rarityBand": "SINGLETON"
+    },
+    {
+      "cellKind": "BOUNDED_TRIPLE",
+      "observedCellCount": 76,
+      "rarityBand": "COUNT_100_PLUS"
+    },
+    {
+      "cellKind": "BOUNDED_TRIPLE",
+      "observedCellCount": 310,
+      "rarityBand": "COUNT_21_TO_99"
+    },
+    {
+      "cellKind": "BOUNDED_TRIPLE",
+      "observedCellCount": 733,
+      "rarityBand": "COUNT_2_TO_5"
+    },
+    {
+      "cellKind": "BOUNDED_TRIPLE",
+      "observedCellCount": 404,
+      "rarityBand": "COUNT_6_TO_20"
+    },
+    {
+      "cellKind": "BOUNDED_TRIPLE",
+      "observedCellCount": 876,
+      "rarityBand": "SINGLETON"
+    }
+  ],
+  "schemaVersion": "trace-exploration-cross-dimensional-analysis/v1",
+  "sourceConcentrationRows": [
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 15,
+      "entropyNats": 1.622746730779968,
+      "hhi": 0.2881509041962984,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.5992306679246528,
+      "objectCount": 7995,
+      "subsetDimension": "ALL_PUBLIC_OBJECTS",
+      "subsetValueId": "ALL_PUBLIC_OBJECTS",
+      "subsetValueLabel": "All public objects",
+      "supportPolicyStatus": "GLOBAL_EXEMPT",
+      "top1ObjectCount": 3505,
+      "top1Share": 0.43839899937460913,
+      "top1SourceValueId": "EXP:SOURCE:25d1164762bf9812b77cd2735c6d7c6ee4fceaa0a141070629f07075797b80ac",
+      "top1SourceValueLabel": "V&A Collections API",
+      "top5ObjectCount": 7326,
+      "top5Share": 0.9163227016885553
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 2,
+      "entropyNats": 0.09962338946616205,
+      "hhi": 0.9600166597251145,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.14372616993938178,
+      "objectCount": 49,
+      "subsetDimension": "decade",
+      "subsetValueId": "SPT-PERIOD-1850-1860",
+      "subsetValueLabel": "1850s",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 48,
+      "top1Share": 0.9795918367346939,
+      "top1SourceValueId": "EXP:SOURCE:25d1164762bf9812b77cd2735c6d7c6ee4fceaa0a141070629f07075797b80ac",
+      "top1SourceValueLabel": "V&A Collections API",
+      "top5ObjectCount": 49,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 2,
+      "entropyNats": 0.11806415824102724,
+      "hhi": 0.9506489344656304,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.17033057560105985,
+      "objectCount": 79,
+      "subsetDimension": "decade",
+      "subsetValueId": "SPT-PERIOD-1860-1870",
+      "subsetValueLabel": "1860s",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 77,
+      "top1Share": 0.9746835443037974,
+      "top1SourceValueId": "EXP:SOURCE:25d1164762bf9812b77cd2735c6d7c6ee4fceaa0a141070629f07075797b80ac",
+      "top1SourceValueLabel": "V&A Collections API",
+      "top5ObjectCount": 79,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 3,
+      "entropyNats": 0.16702617252679575,
+      "hhi": 0.9360386992743885,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.15203377410723126,
+      "objectCount": 61,
+      "subsetDimension": "decade",
+      "subsetValueId": "SPT-PERIOD-1870-1880",
+      "subsetValueLabel": "1870s",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 59,
+      "top1Share": 0.9672131147540983,
+      "top1SourceValueId": "EXP:SOURCE:25d1164762bf9812b77cd2735c6d7c6ee4fceaa0a141070629f07075797b80ac",
+      "top1SourceValueLabel": "V&A Collections API",
+      "top5ObjectCount": 61,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 5,
+      "entropyNats": 0.7963564999943264,
+      "hhi": 0.6380208333333333,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.49480411381009637,
+      "objectCount": 48,
+      "subsetDimension": "decade",
+      "subsetValueId": "SPT-PERIOD-1880-1890",
+      "subsetValueLabel": "1880s",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 38,
+      "top1Share": 0.7916666666666666,
+      "top1SourceValueId": "EXP:SOURCE:25d1164762bf9812b77cd2735c6d7c6ee4fceaa0a141070629f07075797b80ac",
+      "top1SourceValueLabel": "V&A Collections API",
+      "top5ObjectCount": 48,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 7,
+      "entropyNats": 1.4925179186484474,
+      "hhi": 0.28694324026863727,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.7670024843505876,
+      "objectCount": 211,
+      "subsetDimension": "decade",
+      "subsetValueId": "SPT-PERIOD-1890-1900",
+      "subsetValueLabel": "1890s",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 97,
+      "top1Share": 0.4597156398104265,
+      "top1SourceValueId": "EXP:SOURCE:25d1164762bf9812b77cd2735c6d7c6ee4fceaa0a141070629f07075797b80ac",
+      "top1SourceValueLabel": "V&A Collections API",
+      "top5ObjectCount": 202,
+      "top5Share": 0.957345971563981
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 7,
+      "entropyNats": 1.0265293493468635,
+      "hhi": 0.4926383105294468,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.5275317310232519,
+      "objectCount": 164,
+      "subsetDimension": "decade",
+      "subsetValueId": "SPT-PERIOD-1900-1910",
+      "subsetValueLabel": "1900s",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 110,
+      "top1Share": 0.6707317073170732,
+      "top1SourceValueId": "EXP:SOURCE:25d1164762bf9812b77cd2735c6d7c6ee4fceaa0a141070629f07075797b80ac",
+      "top1SourceValueLabel": "V&A Collections API",
+      "top5ObjectCount": 161,
+      "top5Share": 0.9817073170731707
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 7,
+      "entropyNats": 1.4148688407818297,
+      "hhi": 0.3030783159800815,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.727098751948393,
+      "objectCount": 188,
+      "subsetDimension": "decade",
+      "subsetValueId": "SPT-PERIOD-1910-1920",
+      "subsetValueLabel": "1910s",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 88,
+      "top1Share": 0.46808510638297873,
+      "top1SourceValueId": "EXP:SOURCE:25d1164762bf9812b77cd2735c6d7c6ee4fceaa0a141070629f07075797b80ac",
+      "top1SourceValueLabel": "V&A Collections API",
+      "top5ObjectCount": 185,
+      "top5Share": 0.9840425531914894
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 7,
+      "entropyNats": 1.4864554638860272,
+      "hhi": 0.2567336371481779,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.7638869988974882,
+      "objectCount": 257,
+      "subsetDimension": "decade",
+      "subsetValueId": "SPT-PERIOD-1920-1930",
+      "subsetValueLabel": "1920s",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 85,
+      "top1Share": 0.33073929961089493,
+      "top1SourceValueId": "EXP:SOURCE:25d1164762bf9812b77cd2735c6d7c6ee4fceaa0a141070629f07075797b80ac",
+      "top1SourceValueLabel": "V&A Collections API",
+      "top5ObjectCount": 251,
+      "top5Share": 0.9766536964980544
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 9,
+      "entropyNats": 1.649527452355332,
+      "hhi": 0.23531505873976502,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.7507322962658274,
+      "objectCount": 265,
+      "subsetDimension": "decade",
+      "subsetValueId": "SPT-PERIOD-1930-1940",
+      "subsetValueLabel": "1930s",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 98,
+      "top1Share": 0.36981132075471695,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 253,
+      "top5Share": 0.9547169811320755
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 8,
+      "entropyNats": 1.4497317627430144,
+      "hhi": 0.2775857338820302,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.6971736082428541,
+      "objectCount": 270,
+      "subsetDimension": "decade",
+      "subsetValueId": "SPT-PERIOD-1940-1950",
+      "subsetValueLabel": "1940s",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 114,
+      "top1Share": 0.4222222222222222,
+      "top1SourceValueId": "EXP:SOURCE:25d1164762bf9812b77cd2735c6d7c6ee4fceaa0a141070629f07075797b80ac",
+      "top1SourceValueLabel": "V&A Collections API",
+      "top5ObjectCount": 264,
+      "top5Share": 0.9777777777777777
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 7,
+      "entropyNats": 0.9109121565001921,
+      "hhi": 0.6053828167074559,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.46811624726990364,
+      "objectCount": 383,
+      "subsetDimension": "decade",
+      "subsetValueId": "SPT-PERIOD-1950-1960",
+      "subsetValueLabel": "1950s",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 295,
+      "top1Share": 0.7702349869451697,
+      "top1SourceValueId": "EXP:SOURCE:25d1164762bf9812b77cd2735c6d7c6ee4fceaa0a141070629f07075797b80ac",
+      "top1SourceValueLabel": "V&A Collections API",
+      "top5ObjectCount": 370,
+      "top5Share": 0.9660574412532636
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 9,
+      "entropyNats": 0.693788118120019,
+      "hhi": 0.6719926993572995,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.31575658004022744,
+      "objectCount": 1397,
+      "subsetDimension": "decade",
+      "subsetValueId": "SPT-PERIOD-1960-1970",
+      "subsetValueLabel": "1960s",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 1129,
+      "top1Share": 0.8081603435934145,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 1379,
+      "top5Share": 0.9871152469577666
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 10,
+      "entropyNats": 0.96630207694253,
+      "hhi": 0.573662022483883,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.4196596598677922,
+      "objectCount": 1096,
+      "subsetDimension": "decade",
+      "subsetValueId": "SPT-PERIOD-1970-1980",
+      "subsetValueLabel": "1970s",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 816,
+      "top1Share": 0.7445255474452555,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 1058,
+      "top5Share": 0.9653284671532847
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 9,
+      "entropyNats": 0.4980770480273034,
+      "hhi": 0.8059556895895076,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.22668463349847537,
+      "objectCount": 1898,
+      "subsetDimension": "decade",
+      "subsetValueId": "SPT-PERIOD-1980-1990",
+      "subsetValueLabel": "1980s",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 1701,
+      "top1Share": 0.8962065331928346,
+      "top1SourceValueId": "EXP:SOURCE:25d1164762bf9812b77cd2735c6d7c6ee4fceaa0a141070629f07075797b80ac",
+      "top1SourceValueLabel": "V&A Collections API",
+      "top5ObjectCount": 1876,
+      "top5Share": 0.9884088514225501
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 10,
+      "entropyNats": 1.668763271610868,
+      "hhi": 0.23629557643163088,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.7247346804634174,
+      "objectCount": 441,
+      "subsetDimension": "decade",
+      "subsetValueId": "SPT-PERIOD-1990-2000",
+      "subsetValueLabel": "1990s",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 166,
+      "top1Share": 0.3764172335600907,
+      "top1SourceValueId": "EXP:SOURCE:25d1164762bf9812b77cd2735c6d7c6ee4fceaa0a141070629f07075797b80ac",
+      "top1SourceValueLabel": "V&A Collections API",
+      "top5ObjectCount": 416,
+      "top5Share": 0.9433106575963719
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 7,
+      "entropyNats": 1.3801061440071394,
+      "hhi": 0.31771127874320654,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.7092342596995774,
+      "objectCount": 646,
+      "subsetDimension": "decade",
+      "subsetValueId": "SPT-PERIOD-2000-2010",
+      "subsetValueLabel": "2000s",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 298,
+      "top1Share": 0.4613003095975232,
+      "top1SourceValueId": "EXP:SOURCE:fb516f967afb6592bcebf4bf54b1b23008666ce30405627123ba58ac470ba84e",
+      "top1SourceValueLabel": "Yale University Art Gallery Linked Art",
+      "top5ObjectCount": 631,
+      "top5Share": 0.9767801857585139
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 10,
+      "entropyNats": 1.70581994858676,
+      "hhi": 0.22916210095697276,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.7408281907917186,
+      "objectCount": 351,
+      "subsetDimension": "decade",
+      "subsetValueId": "SPT-PERIOD-2010-2020",
+      "subsetValueLabel": "2010s",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 128,
+      "top1Share": 0.3646723646723647,
+      "top1SourceValueId": "EXP:SOURCE:cbb77fc29d8005e490a419abdd68639254166b99e15dcf5cbf3986ac2923ba05",
+      "top1SourceValueLabel": "Art Institute of Chicago API",
+      "top5ObjectCount": 322,
+      "top5Share": 0.9173789173789174
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 6,
+      "entropyNats": 1.298799993549263,
+      "hhi": 0.3141885210236937,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.724874078164535,
+      "objectCount": 159,
+      "subsetDimension": "decade",
+      "subsetValueId": "SPT-PERIOD-2020-2030",
+      "subsetValueLabel": "2020s",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 70,
+      "top1Share": 0.44025157232704404,
+      "top1SourceValueId": "EXP:SOURCE:60703a61441e37e15587110e7dd33ed148a49bb2de53e798b944360b1642f8aa",
+      "top1SourceValueLabel": "Pacific Community Digital Library",
+      "top5ObjectCount": 158,
+      "top5Share": 0.9937106918238994
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 1,
+      "entropyNats": -0.0,
+      "hhi": 1.0,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.0,
+      "objectCount": 37,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:22e6b81248a8ec90e55ee82b37265228b7c9da14869b0d55dd8bc9461586ba0c",
+      "subsetValueLabel": "Wallis and Futuna",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 37,
+      "top1Share": 1.0,
+      "top1SourceValueId": "EXP:SOURCE:60703a61441e37e15587110e7dd33ed148a49bb2de53e798b944360b1642f8aa",
+      "top1SourceValueLabel": "Pacific Community Digital Library",
+      "top5ObjectCount": 37,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 3,
+      "entropyNats": 0.29113983883196504,
+      "hhi": 0.8733333333333334,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.2650069017386699,
+      "objectCount": 30,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:2a9d66d92e756c747118baa7436ad788121f07b6e99b653bbccd9db32c566fc3",
+      "subsetValueLabel": "Turkey",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 28,
+      "top1Share": 0.9333333333333333,
+      "top1SourceValueId": "EXP:SOURCE:cbb77fc29d8005e490a419abdd68639254166b99e15dcf5cbf3986ac2923ba05",
+      "top1SourceValueLabel": "Art Institute of Chicago API",
+      "top5ObjectCount": 30,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 5,
+      "entropyNats": 0.3201296753686695,
+      "hhi": 0.8650093083927509,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.19890775089578203,
+      "objectCount": 562,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:2be2877e2336a0a4f23ab56680dde82cfe5e78893dd6944558a26f169313f532",
+      "subsetValueLabel": "Norway",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 522,
+      "top1Share": 0.9288256227758007,
+      "top1SourceValueId": "EXP:SOURCE:b6ba9f294516352311a1a5f63a63ffed7271856bf0c2d8c8113dcd026c76fe10",
+      "top1SourceValueLabel": "National Library of Norway Catalogue API",
+      "top5ObjectCount": 562,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 5,
+      "entropyNats": 0.7938499908296858,
+      "hhi": 0.5443115234375,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.4932467321023113,
+      "objectCount": 128,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:31ebadef54116aebf6f0921581708e7e65c459a59954ca470f6b5f09ddc1e891",
+      "subsetValueLabel": "Italy",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 88,
+      "top1Share": 0.6875,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 128,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 3,
+      "entropyNats": 0.2913183746932608,
+      "hhi": 0.8720313146900522,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.2651694120829809,
+      "objectCount": 163,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:38b90fc6afc90269586919bdf81cf0a84109a64b1fabb4efe98b105bf187a824",
+      "subsetValueLabel": "China / Hong Kong",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 152,
+      "top1Share": 0.9325153374233128,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 163,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 2,
+      "entropyNats": 0.3165489716094417,
+      "hhi": 0.8261834319526626,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.4566836315394428,
+      "objectCount": 52,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:3bd1a3b021ace4b8588079ea1cb59555c7fdbb53c0c67a4f0c70aa190098a619",
+      "subsetValueLabel": "Malaysia",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 47,
+      "top1Share": 0.9038461538461539,
+      "top1SourceValueId": "EXP:SOURCE:bc7784f01ad738816dd58078a8471e9526d1202f862affea4338c3266a361d27",
+      "top1SourceValueLabel": "Malaysia Design Archive",
+      "top5ObjectCount": 52,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 5,
+      "entropyNats": 0.9274498058913458,
+      "hhi": 0.5189370514045838,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.5762569644508241,
+      "objectCount": 231,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:48f4e0fe74ed341a1562a77b83d9144c45eceeed26cc56fb8a817da6e011f0e8",
+      "subsetValueLabel": "Russia",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 160,
+      "top1Share": 0.6926406926406926,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 231,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 5,
+      "entropyNats": 1.2715985033412482,
+      "hhi": 0.3260557311117495,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.7900885728596349,
+      "objectCount": 59,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:4aa95281d59a599408e3c1dfd9ced025abc75f76c787d4b29377a32a6f27a135",
+      "subsetValueLabel": "Belgium",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 23,
+      "top1Share": 0.3898305084745763,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 59,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 7,
+      "entropyNats": 0.3275518853829138,
+      "hhi": 0.8642178412816672,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.16832837093836597,
+      "objectCount": 3214,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:627ad144a3cb31d9f0749b6fae5b6fc7221a2fe88c2cb7fea4178a97d44b1b01",
+      "subsetValueLabel": "United Kingdom",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 2984,
+      "top1Share": 0.9284380833851898,
+      "top1SourceValueId": "EXP:SOURCE:25d1164762bf9812b77cd2735c6d7c6ee4fceaa0a141070629f07075797b80ac",
+      "top1SourceValueLabel": "V&A Collections API",
+      "top5ObjectCount": 3211,
+      "top5Share": 0.9990665836963286
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 3,
+      "entropyNats": 0.7085815342437357,
+      "hhi": 0.5601851851851851,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.6449787077320759,
+      "objectCount": 36,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:64aa6e6ea5220958106e57404aca07b64a3d09f21e06c9b2d845d1056073b6f0",
+      "subsetValueLabel": "South Africa",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 25,
+      "top1Share": 0.6944444444444444,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 36,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 5,
+      "entropyNats": 1.1098119833078144,
+      "hhi": 0.40625,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.6895649560220339,
+      "objectCount": 96,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:6bf87c5a8e9b90c22ca1470d349dd8a27908229cb65349bc0d4c2ab3cef770b6",
+      "subsetValueLabel": "Switzerland",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 54,
+      "top1Share": 0.5625,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 96,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 3,
+      "entropyNats": 0.7320782089061162,
+      "hhi": 0.49341986659455567,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.6663663027050635,
+      "objectCount": 129,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:6db2978ff939b8fdccd88b9487ba0a570c7c305a91de6b5e6dc3d36c8c97e041",
+      "subsetValueLabel": "Chile",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 67,
+      "top1Share": 0.5193798449612403,
+      "top1SourceValueId": "EXP:SOURCE:026292ad69be4542745d93b298f198d0f900dd40b0ec09f8d9f1d50a05961bc7",
+      "top1SourceValueLabel": "Biblioteca Nacional Digital de Chile",
+      "top5ObjectCount": 129,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 3,
+      "entropyNats": 0.48058081267994823,
+      "hhi": 0.7628116343490305,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.437443507265493,
+      "objectCount": 76,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:6fccb8054d254f1ff993c0f884105d432cadfe70b595117d46ac535b0287cbe2",
+      "subsetValueLabel": "Cuba / transnational",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 66,
+      "top1Share": 0.868421052631579,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 76,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 2,
+      "entropyNats": 0.0693153717009415,
+      "hhi": 0.9743632990386237,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.1000009430103235,
+      "objectCount": 77,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:7d4e00c1c39ca8ed6783edc0b77103ddab21f9b0c1612e447ac15a193f4958cf",
+      "subsetValueLabel": "Austria",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 76,
+      "top1Share": 0.987012987012987,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 77,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 7,
+      "entropyNats": 1.2342347684810493,
+      "hhi": 0.3762755102040817,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.6342712016175243,
+      "objectCount": 224,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:7fa25d0a42d57f51454b440a3bd0bab7cfedf7e75e7333dbb4392079331df3b2",
+      "subsetValueLabel": "France",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 125,
+      "top1Share": 0.5580357142857143,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 222,
+      "top5Share": 0.9910714285714286
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 6,
+      "entropyNats": 0.930091205647831,
+      "hhi": 0.4586050491145127,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.5190937855339159,
+      "objectCount": 427,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:858c03ee8dc67cb3815308c2a70d2a8076ce7c65fbdd89e183c3c449ec2454ad",
+      "subsetValueLabel": "Germany",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 237,
+      "top1Share": 0.5550351288056206,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 424,
+      "top5Share": 0.9929742388758781
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 3,
+      "entropyNats": 0.9743147528693494,
+      "hhi": 0.40625,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.8868595071429147,
+      "objectCount": 32,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:9698ac2a6ac50d2cfcaafb9eae7b7c59c175d2d6ff1fff73ff652030bb2f81e0",
+      "subsetValueLabel": "Canada",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 16,
+      "top1Share": 0.5,
+      "top1SourceValueId": "EXP:SOURCE:cbb77fc29d8005e490a419abdd68639254166b99e15dcf5cbf3986ac2923ba05",
+      "top1SourceValueLabel": "Art Institute of Chicago API",
+      "top5ObjectCount": 32,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 7,
+      "entropyNats": 1.509546503350782,
+      "hhi": 0.26223558171118155,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.7757534458020202,
+      "objectCount": 1175,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+      "subsetValueLabel": "United States",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 436,
+      "top1Share": 0.37106382978723407,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 1141,
+      "top5Share": 0.971063829787234
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 3,
+      "entropyNats": 0.8301240421463305,
+      "hhi": 0.491076740035693,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.75561146612762,
+      "objectCount": 164,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:a292e840b9faecf0fd352f675b1b98e6e0fcb9f3a56e47792ebbe7dd4a0cea61",
+      "subsetValueLabel": "Netherlands",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 102,
+      "top1Share": 0.6219512195121951,
+      "top1SourceValueId": "EXP:SOURCE:cbb77fc29d8005e490a419abdd68639254166b99e15dcf5cbf3986ac2923ba05",
+      "top1SourceValueLabel": "Art Institute of Chicago API",
+      "top5ObjectCount": 164,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 1,
+      "entropyNats": -0.0,
+      "hhi": 1.0,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.0,
+      "objectCount": 31,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:b0f75ffbbaec68b620b1a85df45938c1a4d052d5e8ffe6ff97d59c399f4125cb",
+      "subsetValueLabel": "Israel / Palestine",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 31,
+      "top1Share": 1.0,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 31,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 5,
+      "entropyNats": 1.4333760813368026,
+      "hhi": 0.2614447086801427,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.8906066336967151,
+      "objectCount": 116,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:cfd1477cf6e2b32305cfafcd71cd50232db813ab2f928f618ca953d6d8af03c2",
+      "subsetValueLabel": "Japan",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 39,
+      "top1Share": 0.33620689655172414,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 116,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 3,
+      "entropyNats": 0.18562471040523598,
+      "hhi": 0.9262938631629547,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.16896289284209265,
+      "objectCount": 79,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:e284c31e051c79de8d16ff51c8fb582bb4d3146aba7588db8e551314850a655b",
+      "subsetValueLabel": "Indonesia",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 76,
+      "top1Share": 0.9620253164556962,
+      "top1SourceValueId": "EXP:SOURCE:7757996e69a0e4ee982d7bb0353415082764b8e7273d98614113d8879b35a5ef",
+      "top1SourceValueLabel": "Desain Grafis Indonesia",
+      "top5ObjectCount": 79,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 3,
+      "entropyNats": 0.24640649928057798,
+      "hhi": 0.8955371900826445,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.22428886134097964,
+      "objectCount": 55,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:ec6a3f77d4223df55bea73b526870a8f37efdc54cc111c6aa1f9f6731605d441",
+      "subsetValueLabel": "Denmark",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 52,
+      "top1Share": 0.9454545454545454,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 55,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 1,
+      "entropyNats": -0.0,
+      "hhi": 1.0,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.0,
+      "objectCount": 97,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:eeb9639cd23888a9604e7dd1615f50181e69dbef72fbc0efd02c7ea29ba956a3",
+      "subsetValueLabel": "Global / transnational",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 97,
+      "top1Share": 1.0,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 97,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 1,
+      "entropyNats": -0.0,
+      "hhi": 1.0,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.0,
+      "objectCount": 59,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:f074763413b3cd3f875b20dae36ee5c7b001f0371965041f7201c6d40b03968c",
+      "subsetValueLabel": "Finland",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 59,
+      "top1Share": 1.0,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 59,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 2,
+      "entropyNats": 0.11045304667259806,
+      "hhi": 0.9545700378583017,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.15935006268563445,
+      "objectCount": 43,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:f3cac2e9bf2148fb591e4b9ed0e81090c7d31ebbc027c16b2cad2ad33867c683",
+      "subsetValueLabel": "Ireland",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 42,
+      "top1Share": 0.9767441860465116,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 43,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 5,
+      "entropyNats": 0.7850686443753433,
+      "hhi": 0.5833078257320682,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.4877905747777571,
+      "objectCount": 99,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:f59f70d97d216d02dbaec94c9e13978a108d67b162036c4311e5f4f121464ca4",
+      "subsetValueLabel": "Poland",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 73,
+      "top1Share": 0.7373737373737373,
+      "top1SourceValueId": "EXP:SOURCE:25d1164762bf9812b77cd2735c6d7c6ee4fceaa0a141070629f07075797b80ac",
+      "top1SourceValueLabel": "V&A Collections API",
+      "top5ObjectCount": 99,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 1,
+      "entropyNats": -0.0,
+      "hhi": 1.0,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.0,
+      "objectCount": 36,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:f7a1e0543e00af2f825804ce4640dc1e8831d57ddb0e86eed6cf066fe4ff835e",
+      "subsetValueLabel": "Portugal",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 36,
+      "top1Share": 1.0,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 36,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 3,
+      "entropyNats": 0.41779362978247203,
+      "hhi": 0.7841854934601665,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.3802921504628165,
+      "objectCount": 58,
+      "subsetDimension": "geography",
+      "subsetValueId": "SPTGEO:ffb19cc3b67d7e25234a2f2e209e691555077023fadac675d95d24ff8a11d656",
+      "subsetValueLabel": "Sweden",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 51,
+      "top1Share": 0.8793103448275862,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 58,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 8,
+      "entropyNats": 1.3288611924934521,
+      "hhi": 0.33136094674556216,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.6390471508133659,
+      "objectCount": 234,
+      "subsetDimension": "medium",
+      "subsetValueId": "CTX:MEDIUM:05a46f43a6191e7bf5bf3010b49850f524069e03756a4a8737f1118a3bb6fd7b",
+      "subsetValueLabel": "Publication design",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 114,
+      "top1Share": 0.48717948717948717,
+      "top1SourceValueId": "EXP:SOURCE:cbb77fc29d8005e490a419abdd68639254166b99e15dcf5cbf3986ac2923ba05",
+      "top1SourceValueLabel": "Art Institute of Chicago API",
+      "top5ObjectCount": 230,
+      "top5Share": 0.982905982905983
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 8,
+      "entropyNats": 1.4434210269301968,
+      "hhi": 0.292248127262015,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.69413878582235,
+      "objectCount": 545,
+      "subsetDimension": "medium",
+      "subsetValueId": "CTX:MEDIUM:0e06cb99dcf5a5922c5259b6421e249d80aa108de6d6950413da30a259367f05",
+      "subsetValueLabel": "Graphic design object record",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 247,
+      "top1Share": 0.45321100917431195,
+      "top1SourceValueId": "EXP:SOURCE:fb516f967afb6592bcebf4bf54b1b23008666ce30405627123ba58ac470ba84e",
+      "top1SourceValueLabel": "Yale University Art Gallery Linked Art",
+      "top5ObjectCount": 538,
+      "top5Share": 0.9871559633027523
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 5,
+      "entropyNats": 1.3833037571960496,
+      "hhi": 0.27485380116959063,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.8594949494534727,
+      "objectCount": 57,
+      "subsetDimension": "medium",
+      "subsetValueId": "CTX:MEDIUM:99930bf1af62c91911b6b94ec15c10e441abcb4d5025d5ce6323e91e4d65b692",
+      "subsetValueLabel": "Lithographic print",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 18,
+      "top1Share": 0.3157894736842105,
+      "top1SourceValueId": "EXP:SOURCE:cbb77fc29d8005e490a419abdd68639254166b99e15dcf5cbf3986ac2923ba05",
+      "top1SourceValueLabel": "Art Institute of Chicago API",
+      "top5ObjectCount": 57,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 12,
+      "entropyNats": 1.3488857423542553,
+      "hhi": 0.3553075437751116,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.5428315556519338,
+      "objectCount": 7105,
+      "subsetDimension": "medium",
+      "subsetValueId": "CTX:MEDIUM:d64b03f2bd55a27dd76c69049442616ce238e8e1212ea16af95db9ce493a3751",
+      "subsetValueLabel": "Poster",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 3500,
+      "top1Share": 0.49261083743842365,
+      "top1SourceValueId": "EXP:SOURCE:25d1164762bf9812b77cd2735c6d7c6ee4fceaa0a141070629f07075797b80ac",
+      "top1SourceValueLabel": "V&A Collections API",
+      "top5ObjectCount": 6724,
+      "top5Share": 0.9463757916959887
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 2,
+      "entropyNats": 0.5017585356756924,
+      "hhi": 0.6788254517493273,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.7238845511430295,
+      "objectCount": 204,
+      "subsetDimension": "theme",
+      "subsetValueId": "CTX:THEME:189ea23586874dfde5f2e2a09964caa4dd7a4a3f5c855d9198ec115c0342e453",
+      "subsetValueLabel": "Public health and social communication",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 163,
+      "top1Share": 0.7990196078431373,
+      "top1SourceValueId": "EXP:SOURCE:60703a61441e37e15587110e7dd33ed148a49bb2de53e798b944360b1642f8aa",
+      "top1SourceValueLabel": "Pacific Community Digital Library",
+      "top5ObjectCount": 204,
+      "top5Share": 1.0
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 12,
+      "entropyNats": 1.3387853373517102,
+      "hhi": 0.40334587368926605,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.5387668536626632,
+      "objectCount": 403,
+      "subsetDimension": "theme",
+      "subsetValueId": "CTX:THEME:2e3123d820bc6a13599c60ac18b60c00c434a9a1683894a90ac2aa160faba867",
+      "subsetValueLabel": "World War and public-information graphics",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 243,
+      "top1Share": 0.6029776674937966,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 379,
+      "top5Share": 0.9404466501240695
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 9,
+      "entropyNats": 1.4755984645789946,
+      "hhi": 0.29667734862540057,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.6715738026050663,
+      "objectCount": 154,
+      "subsetDimension": "theme",
+      "subsetValueId": "CTX:THEME:384a2097e63e53fca52946a12791c9b734bd66b0b7e6032d33124a957cc07fdc",
+      "subsetValueLabel": "Travel and transport poster culture",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 63,
+      "top1Share": 0.4090909090909091,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 146,
+      "top5Share": 0.948051948051948
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 7,
+      "entropyNats": 1.3513193734321278,
+      "hhi": 0.3556324490580547,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.6944407860189007,
+      "objectCount": 51,
+      "subsetDimension": "theme",
+      "subsetValueId": "CTX:THEME:d7f576d7cca2a3e95ce2b91544fdac83fbccab886611bf3cd1542ea6b1d9fe3d",
+      "subsetValueLabel": "Corporate identity and design systems",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 28,
+      "top1Share": 0.5490196078431373,
+      "top1SourceValueId": "EXP:SOURCE:cbb77fc29d8005e490a419abdd68639254166b99e15dcf5cbf3986ac2923ba05",
+      "top1SourceValueLabel": "Art Institute of Chicago API",
+      "top5ObjectCount": 49,
+      "top5Share": 0.9607843137254902
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 11,
+      "entropyNats": 0.5222211406981799,
+      "hhi": 0.7790520872652759,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.21778313115765977,
+      "objectCount": 3928,
+      "subsetDimension": "theme",
+      "subsetValueId": "CTX:THEME:eb268354d0e71366fb495290bb538687d5d4be7cf5f45d7cd1b50f776bbcb1f0",
+      "subsetValueLabel": "Modern typography and layout",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 3453,
+      "top1Share": 0.8790733197556008,
+      "top1SourceValueId": "EXP:SOURCE:25d1164762bf9812b77cd2735c6d7c6ee4fceaa0a141070629f07075797b80ac",
+      "top1SourceValueLabel": "V&A Collections API",
+      "top5ObjectCount": 3891,
+      "top5Share": 0.9905804480651731
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 9,
+      "entropyNats": 1.4624186942228243,
+      "hhi": 0.29772198090984603,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.6655754306170064,
+      "objectCount": 271,
+      "subsetDimension": "theme",
+      "subsetValueId": "CTX:THEME:edbfd0c09f5e2be9dbb9680ecf46df5e08826783f886ebe2a10cdc2a6b2e082f",
+      "subsetValueLabel": "Postwar exhibition and cultural posters",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 114,
+      "top1Share": 0.42066420664206644,
+      "top1SourceValueId": "EXP:SOURCE:fb516f967afb6592bcebf4bf54b1b23008666ce30405627123ba58ac470ba84e",
+      "top1SourceValueLabel": "Yale University Art Gallery Linked Art",
+      "top5ObjectCount": 260,
+      "top5Share": 0.9594095940959411
+    },
+    {
+      "diagnosticStatus": "ANALYSIS_DIAGNOSTIC",
+      "distinctSourceCount": 11,
+      "entropyNats": 1.285872754803182,
+      "hhi": 0.42800155858135247,
+      "minimumSubsetSupport": 30,
+      "normalizedEntropy": 0.5362505900028546,
+      "objectCount": 2957,
+      "subsetDimension": "theme",
+      "subsetValueId": "CTX:THEME:edd0123d156f0bd4accbcf0f7f680cf4129b817f34ff9bf30d204681bd95ede0",
+      "subsetValueLabel": "Midcentury modern graphic communication",
+      "supportPolicyStatus": "MEETS_MINIMUM_SUPPORT",
+      "top1ObjectCount": 1851,
+      "top1Share": 0.6259722691917484,
+      "top1SourceValueId": "EXP:SOURCE:072a2bee8f749e64baa7799fae5c09ba5911d34ed44fa05f203191bb91944012",
+      "top1SourceValueLabel": "Library of Congress Prints and Photographs API",
+      "top5ObjectCount": 2785,
+      "top5Share": 0.9418329387893135
+    }
+  ],
+  "tripleRegistry": [
+    {
+      "dimensions": [
+        "medium",
+        "theme",
+        "decade"
+      ],
+      "registryStatus": "FROZEN_BOUNDED_TRIPLE",
+      "tripleId": "medium__theme__decade"
+    },
+    {
+      "dimensions": [
+        "medium",
+        "theme",
+        "geography"
+      ],
+      "registryStatus": "FROZEN_BOUNDED_TRIPLE",
+      "tripleId": "medium__theme__geography"
+    },
+    {
+      "dimensions": [
+        "theme",
+        "decade",
+        "geography"
+      ],
+      "registryStatus": "FROZEN_BOUNDED_TRIPLE",
+      "tripleId": "theme__decade__geography"
+    },
+    {
+      "dimensions": [
+        "medium",
+        "decade",
+        "geography"
+      ],
+      "registryStatus": "FROZEN_BOUNDED_TRIPLE",
+      "tripleId": "medium__decade__geography"
+    },
+    {
+      "dimensions": [
+        "source",
+        "theme",
+        "decade"
+      ],
+      "registryStatus": "FROZEN_BOUNDED_TRIPLE",
+      "tripleId": "source__theme__decade"
+    },
+    {
+      "dimensions": [
+        "source",
+        "medium",
+        "geography"
+      ],
+      "registryStatus": "FROZEN_BOUNDED_TRIPLE",
+      "tripleId": "source__medium__geography"
+    }
+  ]
+}

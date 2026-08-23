@@ -200,3 +200,8 @@ console.log(
     "MANUAL_OBJECT_COORDINATE_COUNT=0",
   ].join(" "),
 );
+
+// The runtime closure extends the focused GIS samples above with the complete
+// 23-period / 93-geography state cube, both deterministic dot passes, renderer
+// parity, cache lifecycle, races, export preparation, and texture stability.
+await import("./verify-spacetime-runtime-v1.mjs");

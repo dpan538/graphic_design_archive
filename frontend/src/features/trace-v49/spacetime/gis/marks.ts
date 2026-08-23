@@ -1,6 +1,7 @@
 import { geoPath, type GeoProjection } from "d3-geo";
 import type { PublicSpacetimeAtlasDataset } from "../governed/types";
 import type {
+  AggregateLayoutAnchor,
   GovernedGeometryFeature,
   RegisteredAggregateAnchor,
   SpacetimeMapRegionMark,
@@ -13,6 +14,8 @@ export interface DeriveSpacetimeMapViewModelInput {
   readonly atlas: PublicSpacetimeAtlasDataset;
   readonly geometryIndex: ReadonlyMap<string, GovernedGeometryFeature>;
   readonly projection: GeoProjection;
+  readonly projectedAreaByGeometryId?: ReadonlyMap<string, number>;
+  readonly anchorByGeometryId?: ReadonlyMap<string, AggregateLayoutAnchor>;
   readonly registeredAnchorOverrides?: ReadonlyMap<string, RegisteredAggregateAnchor>;
 }
 
@@ -25,6 +28,7 @@ function selectAnchorGeometry(
   geometryIds: readonly string[],
   geometryIndex: ReadonlyMap<string, GovernedGeometryFeature>,
   projection: GeoProjection,
+  projectedAreaByGeometryId?: ReadonlyMap<string, number>,
 ): GovernedGeometryFeature {
   if (geometryIds.length === 0) throw new Error(`mapped geography has no geometry: ${geographyId}`);
   const path = geoPath(projection);
@@ -34,7 +38,10 @@ function selectAnchorGeometry(
     return geometry;
   });
   return resolved
-    .map((geometry) => ({ geometry, area: path.area(geometry) }))
+    .map((geometry) => ({
+      geometry,
+      area: projectedAreaByGeometryId?.get(geometry.id) ?? path.area(geometry),
+    }))
     .sort((left, right) => right.area - left.area || left.geometry.id.localeCompare(right.geometry.id))[0].geometry;
 }
 
@@ -52,13 +59,27 @@ function deriveMappedMark(
     geography.geometryIds,
     input.geometryIndex,
     input.projection,
+    input.projectedAreaByGeometryId,
   );
-  const anchor = deriveRegionAnchor({
+  const registeredOverride = input.registeredAnchorOverrides?.get(geography.geographyId);
+  const cachedAnchor = registeredOverride
+    ? undefined
+    : input.anchorByGeometryId?.get(anchorGeometry.id);
+  if (
+    cachedAnchor
+    && (
+      cachedAnchor.geometryId !== anchorGeometry.id
+      || cachedAnchor.geometryArtifactId !== input.atlas.geometry.geometryArtifactId
+      || cachedAnchor.geometryVersion !== input.atlas.geometry.sourceVersion
+      || cachedAnchor.positionClaim !== "aggregate_only"
+    )
+  ) throw new Error("cached Spacetime aggregate anchor identity differs");
+  const anchor = cachedAnchor ?? deriveRegionAnchor({
     geometry: anchorGeometry,
     projection: input.projection,
     geometryArtifactId: input.atlas.geometry.geometryArtifactId,
     geometryVersion: input.atlas.geometry.sourceVersion,
-    registeredOverride: input.registeredAnchorOverrides?.get(geography.geographyId),
+    registeredOverride,
   });
   return Object.freeze({
     geographyId: geography.geographyId,

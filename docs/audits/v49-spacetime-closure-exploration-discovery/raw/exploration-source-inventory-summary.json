@@ -1,0 +1,83 @@
+{
+  "candidatePayloadSha256": "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48",
+  "compoundChildReferenceCount": 132,
+  "dossierStructures": {
+    "crossAnchorPageReferenceCount": 0,
+    "multiPageDossierCount": 15453,
+    "pageCount": 46961,
+    "pageTypeCounts": {
+      "appendix": 15453,
+      "card": 470,
+      "child_source_record": 132,
+      "main_sheet": 14966,
+      "subsheet": 487,
+      "text_page": 15453
+    }
+  },
+  "eligibilityLedgerSha256": "48f98f68ca2ec0cef96c82ecc9c01e4129eb9a3f91e08b07ad9a59644a9d4e01",
+  "folderStructures": {
+    "duplicateRepresentationIntegrity": {
+      "folder.surfaceIds": {
+        "membershipCount": 47982,
+        "pairSha256": "b2ddbe94f4d569f6b9970246855b535374b7c1a9b8ac047de58899c860bd4573"
+      },
+      "registrationCard.memberPages": {
+        "membershipCount": 47982,
+        "pairSha256": "b2ddbe94f4d569f6b9970246855b535374b7c1a9b8ac047de58899c860bd4573"
+      },
+      "researchDossier.folderIds": {
+        "membershipCount": 47982,
+        "pairSha256": "b2ddbe94f4d569f6b9970246855b535374b7c1a9b8ac047de58899c860bd4573"
+      },
+      "surface.folders": {
+        "membershipCount": 47982,
+        "pairSha256": "b2ddbe94f4d569f6b9970246855b535374b7c1a9b8ac047de58899c860bd4573"
+      }
+    },
+    "folderTypeContainerCounts": {
+      "medium": 10,
+      "movement": 11,
+      "region": 156,
+      "theme": 8
+    },
+    "membershipCount": 47982,
+    "membershipPairSha256": "b2ddbe94f4d569f6b9970246855b535374b7c1a9b8ac047de58899c860bd4573",
+    "relatedFolderDanglingReferences": 0,
+    "relatedFolderDirectedReferences": 2016,
+    "relatedFolderMissingReciprocals": 0,
+    "relatedFolderSelfReferences": 0,
+    "relatedFolderUndirectedEdges": 1008
+  },
+  "legacyTraceStructures": {
+    "branchCount": 85,
+    "branchMembershipCount": 80093,
+    "heldBranchMembershipCount": 39088,
+    "heldTreeMembershipCount": 7928,
+    "publicBranchMembershipCount": 41005,
+    "publicTreeMembershipCount": 7995,
+    "treeCount": 30,
+    "treeMembershipCount": 15923
+  },
+  "population": {
+    "allObjects": 15923,
+    "heldObjects": 7928,
+    "publicObjects": 7995
+  },
+  "safety": {
+    "heldObjectIdsEmitted": 0,
+    "rawFolderIdsEmitted": 0,
+    "rawObjectRowsEmitted": 0,
+    "urlsEmitted": 0
+  },
+  "schemaVersion": "trace-exploration-source-inventory/v1",
+  "topLevelStructures": {
+    "appendices": 15453,
+    "bookmarks": 0,
+    "folderTypes": 4,
+    "folders": 185,
+    "readingNotes": 354,
+    "registrationCards": 185,
+    "researchDossiers": 15923,
+    "surfaces": 15923
+  }
+}

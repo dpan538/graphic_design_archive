@@ -78,6 +78,13 @@ git show v49-data-api-closure-20260821:PROJECT_LOG.md
 - The functional foundation uses a checksum-bound Natural Earth Admin 0 Countries 50m artifact, an Equal Earth default projection, deterministic aggregate marks, 23 decade buckets, and release-pinned server API reads. Final visual design, public navigation, and visual acceptance remain deferred.
 - Exploration Field remains an open-ended data-mining direction; no implementation or factor/template freeze is included here.
 
+### Spacetime engineering closure + Exploration discovery — 2026-08-24
+
+- Spacetime V1 engineering logic is frozen after production-runtime rehearsal, exhaustive period/geography validation, deterministic renderer parity, cache and stale-request hardening, and functional browser acceptance. Final visual design and public navigation remain deferred.
+- Exploration Field Data Discovery Round 1 maps a 64-signal research space across governed Context, governed Spacetime, source/corpus composition, descriptive metadata, curatorial structure, missingness/uncertainty, and bounded frequency/intersection diagnostics.
+- Curatorial co-membership, rarity, concentration, conditional rates, lift, and uncertainty remain analysis diagnostics only. They are not historical or semantic relations, rankings, probabilities, or evidence of influence.
+- No similarity model, weights, clustering model, probability model, renderer, or final Exploration template registry is selected in this round. Context governance and Spacetime governance remain unchanged.
+
 `CONTEXT_CANVAS_FUNCTIONAL_CORE=COMPLETE`
 
 `CONTEXT_CANVAS_REAL_DATA_VALIDATION=ACTIVE`
@@ -100,6 +107,20 @@ git show v49-data-api-closure-20260821:PROJECT_LOG.md
 
 `SPACETIME_VISUAL_DESIGN=DEFERRED`
 
+`SPACETIME_ENGINEERING_LOGIC=FROZEN`
+
+`SPACETIME_RUNTIME_REHEARSAL=PASS`
+
+`SPACETIME_FINAL_VISUAL_DESIGN=DEFERRED`
+
 `EXPLORATION_FIELD=OPEN_ENDED_DATA_MINING`
+
+`EXPLORATION_FIELD_DATA_DISCOVERY_ROUND1=COMPLETE`
+
+`EXPLORATION_SIGNAL_REGISTRY=64`
+
+`EXPLORATION_SIMILARITY_MODEL=NOT_SELECTED`
+
+`EXPLORATION_RENDERER=NOT_IMPLEMENTED`
 
 `FINAL_TRACE_VISUAL_DESIGN=DEFERRED`

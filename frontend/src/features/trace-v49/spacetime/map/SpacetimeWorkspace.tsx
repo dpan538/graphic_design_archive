@@ -9,25 +9,14 @@ import {
   useState,
 } from "react";
 import {
-  buildAggregateDotSeed,
-  deriveGeoPath,
-  deriveNativePatternDefinition,
   deriveNativePatternFillUrl,
-  deriveNativeCountTier,
-  deriveSpacetimeMapViewModel,
-  fitProjection,
-  generateAggregateDotField,
-  indexGovernedGeometry,
-  loadGovernedGeometry,
-  prepareAggregateDotGeometry,
+  deriveSpacetimeRendererModel,
+  spacetimeGeometryRuntimeCache,
   TRACE_NATIVE_COUNT_TIERS,
   TRACE_NATIVE_COUNT_TIER_POLICY_VERSION,
-  type AggregateDensityDot,
-  type GovernedGeometryCollection,
-  type GovernedGeometryFeature,
-  type NativePatternDefinition,
-  type PreparedAggregateDotGeometry,
-  type SpacetimeMapRegionMark,
+  type PreparedSpacetimeProjection,
+  type PreparedSpacetimeRendererMark,
+  type SpacetimeRendererMode,
 } from "@/features/trace-v49/spacetime/gis";
 import type {
   PublicSpacetimeAtlasDataset,
@@ -36,6 +25,12 @@ import type {
   PublicSpacetimeRecordPage,
   PublicSpacetimeRecordSummary,
 } from "@/features/trace-v49/spacetime/governed/types";
+import {
+  applySpacetimeRecordPage,
+  spacetimeAtlasResultMatches,
+  SpacetimeRequestEpochGate,
+  type SpacetimeRecordAccumulator,
+} from "./request-epochs";
 import styles from "./SpacetimeWorkspace.module.css";
 
 const MAP_WIDTH = 1_200;
@@ -44,29 +39,11 @@ const MAP_PADDING = 28;
 const RECORD_PAGE_SIZE = 25;
 const FULL_MAP_VIEWBOX = `0 0 ${MAP_WIDTH} ${MAP_HEIGHT}`;
 
-type RendererMode = "aggregate" | "density" | "texture";
 type RequestState = "idle" | "loading" | "ready" | "error";
 
 interface ReadApiEnvelope<T> {
   readonly apiVersion: "v1";
   readonly data: T;
-}
-
-interface PreparedGeometry {
-  readonly collection: GovernedGeometryCollection;
-  readonly byId: ReadonlyMap<string, GovernedGeometryFeature>;
-  readonly pathById: ReadonlyMap<string, string>;
-  readonly dotGeometryById: Map<string, PreparedAggregateDotGeometry>;
-  readonly projection: ReturnType<typeof fitProjection>;
-}
-
-interface PreparedMark {
-  readonly geography: SpacetimeMapRegionMark;
-  readonly x: number;
-  readonly y: number;
-  readonly dots: readonly AggregateDensityDot[];
-  readonly fallbackCount: number;
-  readonly pattern: NativePatternDefinition;
 }
 
 function apiPath(
@@ -97,107 +74,16 @@ async function readApi<T>(
   return envelope.data;
 }
 
-function prepareGeometry(
-  collection: GovernedGeometryCollection,
-): PreparedGeometry {
-  const projection = fitProjection("equal-earth", collection, {
-    width: MAP_WIDTH,
-    height: MAP_HEIGHT,
-    padding: MAP_PADDING,
-  });
-  const path = deriveGeoPath(projection);
-  const pathById = new Map<string, string>();
-  for (const feature of collection.features) {
-    const value = path(feature);
-    if (value) pathById.set(String(feature.id), value);
-  }
-  return Object.freeze({
-    collection,
-    byId: indexGovernedGeometry(collection),
-    pathById,
-    dotGeometryById: new Map<string, PreparedAggregateDotGeometry>(),
-    projection,
-  });
-}
-
-function prepareMarks(
-  atlas: PublicSpacetimeAtlasDataset,
-  geometry: PreparedGeometry,
-  mode: RendererMode,
-): readonly PreparedMark[] {
-  const viewModel = deriveSpacetimeMapViewModel({
-    atlas,
-    geometryIndex: geometry.byId,
-    projection: geometry.projection,
-  });
-  return Object.freeze(viewModel.mappedMarks.flatMap((geography) => {
-    const anchorGeometry = geometry.byId.get(geography.anchor.geometryId);
-    if (!anchorGeometry) return [];
-    const projected = geometry.projection([geography.anchor.longitude, geography.anchor.latitude]);
-    if (!projected) return [];
-    const tier = deriveNativeCountTier(geography.recordCount);
-    const pattern = deriveNativePatternDefinition({
-      namespace: `${TRACE_NATIVE_COUNT_TIER_POLICY_VERSION}:${atlas.selectedPeriod.periodId}:${geography.geographyId}`,
-      family: "dots",
-      encodedVariable: "record_count_tier",
-      legendValue: tier.legendValue,
-      spacingPx: tier.spacingPx,
-      weightPx: tier.weightPx,
-    });
-
-    // Multi-geometry concepts use one aggregate anchor. Repeating a dot field in
-    // every target geometry would multiply the represented record count.
-    let preparedDotGeometry: PreparedAggregateDotGeometry | undefined;
-    if (mode === "density" && geography.geometryIds.length === 1) {
-      preparedDotGeometry = geometry.dotGeometryById.get(anchorGeometry.id);
-      if (!preparedDotGeometry) {
-        preparedDotGeometry = prepareAggregateDotGeometry(
-          anchorGeometry,
-          geometry.projection,
-          `equal-earth:${MAP_WIDTH}x${MAP_HEIGHT}:padding-${MAP_PADDING}`,
-        );
-        geometry.dotGeometryById.set(anchorGeometry.id, preparedDotGeometry);
-      }
-    }
-    const density = preparedDotGeometry
-      ? generateAggregateDotField({
-          geometry: anchorGeometry,
-          projection: geometry.projection,
-          recordCount: geography.recordCount,
-          seed: buildAggregateDotSeed({
-            releaseId: atlas.release.researchReleaseId,
-            geometryId: anchorGeometry.id,
-            timeBucketId: atlas.selectedPeriod.periodId,
-            recordCount: geography.recordCount,
-            policyVersion: "trace-dot-density-grid-v1",
-          }),
-          fallbackAnchor: geography.anchor,
-          preparedGeometry: preparedDotGeometry,
-        })
-      : null;
-    return [Object.freeze({
-      geography,
-      x: projected[0],
-      y: projected[1],
-      dots: density?.dots ?? Object.freeze([]),
-      fallbackCount: density?.fallback?.representedRecordCount ?? 0,
-      pattern,
-    })];
-  }));
-}
-
 function deriveSelectionViewBox(
   atlas: PublicSpacetimeAtlasDataset,
-  geometry: PreparedGeometry,
+  geometry: PreparedSpacetimeProjection,
   geographyId: string,
 ): string {
   const geography = atlas.mappedGeographies.find((candidate) => candidate.geographyId === geographyId);
   if (!geography) return FULL_MAP_VIEWBOX;
-  const path = deriveGeoPath(geometry.projection);
   const bounds = geography.geometryIds
-    .map((geometryId) => geometry.byId.get(geometryId))
-    .filter((feature): feature is GovernedGeometryFeature => Boolean(feature))
-    .map((feature) => path.bounds(feature));
+    .map((geometryId) => geometry.boundsById.get(geometryId))
+    .filter((value): value is readonly [readonly [number, number], readonly [number, number]] => Boolean(value));
   if (bounds.length === 0) return FULL_MAP_VIEWBOX;
   const minimumX = Math.min(...bounds.map((value) => value[0][0]));
   const minimumY = Math.min(...bounds.map((value) => value[0][1]));
@@ -235,9 +121,9 @@ function MapGraphic({
   onSelect,
 }: Readonly<{
   atlas: PublicSpacetimeAtlasDataset;
-  geometry: PreparedGeometry;
-  marks: readonly PreparedMark[];
-  mode: RendererMode;
+  geometry: PreparedSpacetimeProjection;
+  marks: readonly PreparedSpacetimeRendererMark[];
+  mode: SpacetimeRendererMode;
   viewBox: string;
   selectedGeographyId: string | null;
   onSelect: (geographyId: string) => void;
@@ -250,7 +136,12 @@ function MapGraphic({
     return result;
   }, [atlas.mappedGeographies]);
   const patternByGeographyId = useMemo(
-    () => new Map(marks.map((mark) => [mark.geography.geographyId, mark.pattern])),
+    () => new Map(marks.flatMap((mark) =>
+      mark.pattern ? [[mark.geography.geographyId, mark.pattern] as const] : [])),
+    [marks],
+  );
+  const patterns = useMemo(
+    () => marks.flatMap((mark) => mark.pattern ? [mark.pattern] : []),
     [marks],
   );
 
@@ -267,28 +158,28 @@ function MapGraphic({
       </desc>
       {mode === "texture" ? (
         <defs>
-          {marks.map((mark) => (
+          {patterns.map((pattern) => (
             <pattern
-              key={mark.pattern.id}
-              id={mark.pattern.id}
+              key={pattern.id}
+              id={pattern.id}
               patternUnits="userSpaceOnUse"
-              width={mark.pattern.width}
-              height={mark.pattern.height}
+              width={pattern.width}
+              height={pattern.height}
             >
-              {mark.pattern.primitive.kind === "circle" ? (
+              {pattern.primitive.kind === "circle" ? (
                 <circle
-                  cx={mark.pattern.primitive.cx}
-                  cy={mark.pattern.primitive.cy}
-                  r={mark.pattern.primitive.radius}
+                  cx={pattern.primitive.cx}
+                  cy={pattern.primitive.cy}
+                  r={pattern.primitive.radius}
                   className={styles.patternPrimitive}
                 />
               ) : (
                 <line
-                  x1={mark.pattern.primitive.x1}
-                  y1={mark.pattern.primitive.y1}
-                  x2={mark.pattern.primitive.x2}
-                  y2={mark.pattern.primitive.y2}
-                  strokeWidth={mark.pattern.primitive.strokeWidth}
+                  x1={pattern.primitive.x1}
+                  y1={pattern.primitive.y1}
+                  x2={pattern.primitive.x2}
+                  y2={pattern.primitive.y2}
+                  strokeWidth={pattern.primitive.strokeWidth}
                   className={styles.patternPrimitive}
                 />
               )}
@@ -297,7 +188,7 @@ function MapGraphic({
         </defs>
       ) : null}
       <g aria-hidden="true">
-        {geometry.collection.features.map((feature) => {
+        {geometry.source.collection.features.map((feature) => {
           const geometryId = String(feature.id);
           const geographyId = geographyByGeometryId.get(geometryId);
           const selected = geographyId === selectedGeographyId;
@@ -319,7 +210,8 @@ function MapGraphic({
         <g aria-hidden="true">
           {marks.map((mark) => (
             <g key={mark.geography.geographyId}>
-              {mode === "density" && mark.dots.length > 0 ? mark.dots.map((dot) => (
+              {mode === "density" && mark.density && mark.density.dots.length > 0
+                ? mark.density.dots.map((dot) => (
                 <circle
                   key={dot.id}
                   cx={dot.x}
@@ -328,14 +220,18 @@ function MapGraphic({
                   className={mark.geography.geographyId === selectedGeographyId ? styles.selectedMark : styles.densityMark}
                   onClick={() => onSelect(mark.geography.geographyId)}
                 />
-              )) : null}
-              {mode !== "density" || mark.dots.length === 0 || mark.fallbackCount > 0 ? (
+                ))
+                : null}
+              {mode !== "density"
+              || !mark.density
+              || mark.density.dots.length === 0
+              || mark.density.anchorRemainderCount > 0 ? (
                 <circle
                   cx={mark.x}
                   cy={mark.y}
                   r={Math.max(4, Math.min(18, 3 + Math.sqrt(
-                    mode === "density" && mark.fallbackCount > 0
-                      ? mark.fallbackCount
+                    mode === "density" && mark.density && mark.density.anchorRemainderCount > 0
+                      ? mark.density.anchorRemainderCount
                       : mark.geography.recordCount,
                   ) * 0.75))}
                   className={mark.geography.geographyId === selectedGeographyId ? styles.selectedMark : styles.aggregateMark}
@@ -394,136 +290,188 @@ export default function SpacetimeWorkspace({
   const [atlas, setAtlas] = useState(initialAtlas);
   const [selectedPeriodId, setSelectedPeriodId] = useState(initialAtlas.selectedPeriod.periodId);
   const [selectedGeographyId, setSelectedGeographyId] = useState<string | null>(null);
-  const [mode, setMode] = useState<RendererMode>("aggregate");
+  const [mode, setMode] = useState<SpacetimeRendererMode>("aggregate");
   const [viewBox, setViewBox] = useState(FULL_MAP_VIEWBOX);
-  const [geometry, setGeometry] = useState<PreparedGeometry | null>(null);
+  const [geometry, setGeometry] = useState<PreparedSpacetimeProjection | null>(null);
   const [geometryState, setGeometryState] = useState<RequestState>("loading");
   const [atlasState, setAtlasState] = useState<RequestState>("ready");
   const [recordsState, setRecordsState] = useState<RequestState>("idle");
-  const [recordPage, setRecordPage] = useState<PublicSpacetimeRecordPage | null>(null);
-  const [records, setRecords] = useState<readonly PublicSpacetimeRecordSummary[]>(Object.freeze([]));
-  const geometryAbortRef = useRef<AbortController | null>(null);
-  const atlasAbortRef = useRef<AbortController | null>(null);
-  const recordsAbortRef = useRef<AbortController | null>(null);
+  const [recordAccumulator, setRecordAccumulator] = useState<SpacetimeRecordAccumulator | null>(null);
+  const atlasRef = useRef(initialAtlas);
+  const recordAccumulatorRef = useRef<SpacetimeRecordAccumulator | null>(null);
+  const selectedPeriodIdRef = useRef(initialAtlas.selectedPeriod.periodId);
+  const requestGateRef = useRef(new SpacetimeRequestEpochGate());
 
   const releaseId = periods.release.researchReleaseId;
   const manifestSha256 = periods.release.researchManifestSha256;
+  const spacetimeProjectionSha256 = periods.release.spacetimeProjectionSha256;
+
+  const clearRecords = useCallback((state: RequestState = "idle") => {
+    recordAccumulatorRef.current = null;
+    setRecordAccumulator(null);
+    setRecordsState(state);
+  }, []);
 
   useEffect(() => {
-    const controller = new AbortController();
-    geometryAbortRef.current?.abort();
-    geometryAbortRef.current = controller;
+    let active = true;
+    setGeometry(null);
     setGeometryState("loading");
-    void fetch(periods.geometry.assetPath, { cache: "force-cache", signal: controller.signal })
-      .then(async (response) => {
-        if (!response.ok) throw new Error(`Geometry request failed (${response.status})`);
-        const json = await response.json() as unknown;
-        return loadGovernedGeometry(json, {
-          featureCount: periods.geometry.featureCount,
-          geometryArtifactId: periods.geometry.geometryArtifactId,
+    void spacetimeGeometryRuntimeCache.loadSource(periods.geometry)
+      .then((source) => {
+        const prepared = spacetimeGeometryRuntimeCache.prepareProjection(source, {
+          projectionId: "equal-earth",
+          viewport: Object.freeze({
+            width: MAP_WIDTH,
+            height: MAP_HEIGHT,
+            padding: MAP_PADDING,
+          }),
         });
-      })
-      .then((collection) => {
-        if (controller.signal.aborted) return;
-        setGeometry(prepareGeometry(collection));
+        if (!active) return;
+        setGeometry(prepared);
         setGeometryState("ready");
       })
       .catch(() => {
-        if (!controller.signal.aborted) setGeometryState("error");
+        if (active) setGeometryState("error");
       });
-    return () => controller.abort();
-  }, [periods.geometry.assetPath, periods.geometry.featureCount, periods.geometry.geometryArtifactId]);
+    return () => {
+      active = false;
+    };
+  }, [
+    periods.geometry.assetPath,
+    periods.geometry.assetSha256,
+    periods.geometry.featureCount,
+    periods.geometry.geometryArtifactId,
+  ]);
 
   const selectPeriod = useCallback((periodId: string) => {
-    if (periodId === selectedPeriodId) return;
-    const controller = new AbortController();
-    atlasAbortRef.current?.abort();
-    recordsAbortRef.current?.abort();
-    atlasAbortRef.current = controller;
-    setAtlasState("loading");
+    if (periodId === selectedPeriodIdRef.current) return;
+    selectedPeriodIdRef.current = periodId;
+    requestGateRef.current.abort("records");
     setSelectedGeographyId(null);
     setViewBox(FULL_MAP_VIEWBOX);
-    setRecordPage(null);
-    setRecords(Object.freeze([]));
-    setRecordsState("idle");
+    clearRecords();
+    setSelectedPeriodId(periodId);
+    if (periodId === atlasRef.current.selectedPeriod.periodId) {
+      requestGateRef.current.abort("atlas");
+      setAtlasState("ready");
+      return;
+    }
+    const ticket = requestGateRef.current.begin("atlas");
+    const identity = Object.freeze({ spacetimeProjectionSha256, periodId });
+    setAtlasState("loading");
     void readApi<PublicSpacetimeAtlasDataset>(
       `${apiPath(releaseId, "atlas")}?period=${encodeURIComponent(periodId)}`,
       manifestSha256,
-      controller.signal,
+      ticket.signal,
     ).then((nextAtlas) => {
-      if (controller.signal.aborted) return;
+      if (!ticket.isCurrent()) return;
+      if (!spacetimeAtlasResultMatches(identity, nextAtlas)) {
+        selectedPeriodIdRef.current = atlasRef.current.selectedPeriod.periodId;
+        setSelectedPeriodId(atlasRef.current.selectedPeriod.periodId);
+        setAtlasState("error");
+        return;
+      }
+      atlasRef.current = nextAtlas;
       setAtlas(nextAtlas);
-      setSelectedPeriodId(nextAtlas.selectedPeriod.periodId);
       setAtlasState("ready");
     }).catch(() => {
-      if (!controller.signal.aborted) setAtlasState("error");
+      if (!ticket.isCurrent()) return;
+      selectedPeriodIdRef.current = atlasRef.current.selectedPeriod.periodId;
+      setSelectedPeriodId(atlasRef.current.selectedPeriod.periodId);
+      setAtlasState("error");
     });
-  }, [manifestSha256, releaseId, selectedPeriodId]);
+  }, [
+    clearRecords,
+    manifestSha256,
+    releaseId,
+    spacetimeProjectionSha256,
+  ]);
 
   useEffect(() => () => {
-    geometryAbortRef.current?.abort();
-    atlasAbortRef.current?.abort();
-    recordsAbortRef.current?.abort();
+    requestGateRef.current.abortAll();
   }, []);
 
   const loadRecordPage = useCallback((after?: string) => {
     if (!selectedGeographyId) return;
-    const controller = new AbortController();
-    recordsAbortRef.current?.abort();
-    recordsAbortRef.current = controller;
+    const ticket = requestGateRef.current.begin("records");
+    const identity = Object.freeze({
+      spacetimeProjectionSha256,
+      periodId: selectedPeriodId,
+      geographyId: selectedGeographyId,
+      after: after ?? null,
+    });
     setRecordsState("loading");
     const query = new URLSearchParams({
-      period: selectedPeriodId,
+      period: identity.periodId,
       first: String(RECORD_PAGE_SIZE),
     });
-    if (after) query.set("after", after);
+    if (identity.after) query.set("after", identity.after);
     void readApi<PublicSpacetimeRecordPage>(
-      `${apiPath(releaseId, `geographies/${encodeURIComponent(selectedGeographyId)}/records`)}?${query}`,
+      `${apiPath(releaseId, `geographies/${encodeURIComponent(identity.geographyId)}/records`)}?${query}`,
       manifestSha256,
-      controller.signal,
+      ticket.signal,
     ).then((page) => {
-      if (controller.signal.aborted) return;
-      setRecordPage(page);
-      setRecords((current) => Object.freeze(after ? [...current, ...page.nodes] : [...page.nodes]));
-      setRecordsState("ready");
+      if (!ticket.isCurrent()) return;
+      try {
+        const next = applySpacetimeRecordPage(recordAccumulatorRef.current, identity, page);
+        recordAccumulatorRef.current = next;
+        setRecordAccumulator(next);
+        setRecordsState("ready");
+      } catch {
+        setRecordsState("error");
+      }
     }).catch(() => {
-      if (!controller.signal.aborted) setRecordsState("error");
+      if (ticket.isCurrent()) setRecordsState("error");
     });
-  }, [manifestSha256, releaseId, selectedGeographyId, selectedPeriodId]);
+  }, [
+    manifestSha256,
+    releaseId,
+    selectedGeographyId,
+    selectedPeriodId,
+    spacetimeProjectionSha256,
+  ]);
 
   useEffect(() => {
     if (!selectedGeographyId) {
-      setRecordPage(null);
-      setRecords(Object.freeze([]));
-      setRecordsState("idle");
+      clearRecords();
       return;
     }
     loadRecordPage();
-  }, [loadRecordPage, selectedGeographyId]);
+  }, [clearRecords, loadRecordPage, selectedGeographyId]);
 
-  const marks = useMemo(
-    () => geometry ? prepareMarks(atlas, geometry, mode) : Object.freeze([]),
-    [atlas, geometry, mode],
+  const renderer = useMemo(
+    () => geometry
+      ? deriveSpacetimeRendererModel({
+          atlas,
+          projection: geometry,
+          mode,
+          selectedGeographyId,
+        })
+      : null,
+    [atlas, geometry, mode, selectedGeographyId],
   );
+  const marks = renderer?.marks ?? Object.freeze([]);
+  const recordPage = recordAccumulator?.page ?? null;
+  const records = recordAccumulator?.records ?? Object.freeze([]);
   const selectedIndex = periods.periods.findIndex((period) => period.periodId === selectedPeriodId);
   const selectedGeography = atlas.accessibleRows.find((row) => row.geographyId === selectedGeographyId) ?? null;
   const selectGeography = useCallback((geographyId: string) => {
-    if (geographyId === selectedGeographyId) return;
-    recordsAbortRef.current?.abort();
-    setRecordPage(null);
-    setRecords(Object.freeze([]));
-    setRecordsState("idle");
+    if (atlasState === "loading") return;
+    if (geographyId === selectedGeographyId) {
+      if (recordsState === "error") loadRecordPage();
+      return;
+    }
+    requestGateRef.current.abort("records");
+    clearRecords();
     setSelectedGeographyId(geographyId);
     if (geometry) setViewBox(deriveSelectionViewBox(atlas, geometry, geographyId));
-  }, [atlas, geometry, selectedGeographyId]);
+  }, [atlas, atlasState, clearRecords, geometry, loadRecordPage, recordsState, selectedGeographyId]);
   const resetMap = useCallback(() => {
-    recordsAbortRef.current?.abort();
-    setRecordPage(null);
-    setRecords(Object.freeze([]));
-    setRecordsState("idle");
+    requestGateRef.current.abort("records");
+    clearRecords();
     setSelectedGeographyId(null);
     setViewBox(FULL_MAP_VIEWBOX);
-  }, []);
+  }, [clearRecords]);
 
   return (
     <main className={styles.workspace}>
@@ -545,7 +493,7 @@ export default function SpacetimeWorkspace({
         <button
           type="button"
           onClick={() => selectedIndex > 0 && selectPeriod(periods.periods[selectedIndex - 1].periodId)}
-          disabled={selectedIndex <= 0 || atlasState === "loading"}
+          disabled={selectedIndex <= 0}
         >
           Previous period
         </button>
@@ -554,7 +502,6 @@ export default function SpacetimeWorkspace({
           <select
             value={selectedPeriodId}
             onChange={(event) => selectPeriod(event.target.value)}
-            disabled={atlasState === "loading"}
           >
             {periods.periods.map((period) => (
               <option key={period.periodId} value={period.periodId}>
@@ -567,13 +514,13 @@ export default function SpacetimeWorkspace({
           type="button"
           onClick={() => selectedIndex >= 0 && selectedIndex < periods.periods.length - 1
             && selectPeriod(periods.periods[selectedIndex + 1].periodId)}
-          disabled={selectedIndex < 0 || selectedIndex >= periods.periods.length - 1 || atlasState === "loading"}
+          disabled={selectedIndex < 0 || selectedIndex >= periods.periods.length - 1}
         >
           Next period
         </button>
         <label>
           Functional renderer
-          <select value={mode} onChange={(event) => setMode(event.target.value as RendererMode)}>
+          <select value={mode} onChange={(event) => setMode(event.target.value as SpacetimeRendererMode)}>
             <option value="aggregate">Aggregate anchors</option>
             <option value="density">Deterministic density dots</option>
             <option value="texture">Native count-tier texture</option>
@@ -585,7 +532,11 @@ export default function SpacetimeWorkspace({
       </section>
 
       <div className={styles.contentGrid}>
-        <section className={styles.mapPanel} aria-label="Functional aggregate map">
+        <section
+          className={styles.mapPanel}
+          aria-label="Functional aggregate map"
+          aria-busy={atlasState === "loading"}
+        >
           <div className={styles.methodNote}>
             <strong>{atlas.selectedPeriod.label}</strong>
             <span>Records whose recorded temporal extent overlaps this period.</span>
@@ -593,6 +544,7 @@ export default function SpacetimeWorkspace({
           </div>
           {geometryState === "loading" ? <p role="status" className={styles.loading}>Loading governed geometry…</p> : null}
           {geometryState === "error" ? <p role="alert" className={styles.loading}>Governed geometry could not be loaded.</p> : null}
+          {atlasState === "loading" ? <p role="status" className={styles.loading}>Loading selected period…</p> : null}
           {atlasState === "error" ? <p role="alert" className={styles.loading}>The selected period could not be loaded.</p> : null}
           {geometry ? (
             <MapGraphic
@@ -656,7 +608,11 @@ export default function SpacetimeWorkspace({
               {atlas.accessibleRows.map((row) => (
                 <tr key={row.id} data-selected={row.geographyId === selectedGeographyId || undefined}>
                   <th scope="row">
-                    <button type="button" onClick={() => selectGeography(row.geographyId)}>
+                    <button
+                      type="button"
+                      onClick={() => selectGeography(row.geographyId)}
+                      disabled={atlasState === "loading"}
+                    >
                       {row.label}
                     </button>
                   </th>

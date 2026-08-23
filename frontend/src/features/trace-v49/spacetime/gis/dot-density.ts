@@ -1,4 +1,4 @@
-import { geoPath, type GeoContext, type GeoProjection } from "d3-geo";
+import { geoContains, geoPath, type GeoContext, type GeoProjection } from "d3-geo";
 import type {
   AggregateDensityDot,
   AggregateDotFallback,
@@ -274,7 +274,17 @@ function selectCandidates(input: AggregateDotFieldInput, policy: AggregateDotFie
   if (surface.geometryId !== input.geometry.id) throw new Error("aggregate dot prepared geometry ID mismatch");
   let best: readonly CandidatePoint[] = Object.freeze([]);
   for (const spacing of candidateSpacingSequence(policy)) {
-    const candidates = generateCandidates(surface, input.seed, spacing, policy.maxCandidateTests);
+    // Coordinates are serialized to three decimals below. Revalidate that
+    // exact serialized position so rounding cannot move a boundary candidate
+    // outside its governed projected surface.
+    const candidates = generateCandidates(surface, input.seed, spacing, policy.maxCandidateTests)
+      .filter((candidate) => {
+        const serializedX = Number(candidate.x.toFixed(3));
+        const serializedY = Number(candidate.y.toFixed(3));
+        if (!surfaceContains(surface, serializedX, serializedY)) return false;
+        const geographic = input.projection.invert?.([serializedX, serializedY]);
+        return Boolean(geographic && geoContains(input.geometry, geographic));
+      });
     best = candidates;
     if (candidates.length >= target) break;
   }

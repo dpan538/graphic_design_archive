@@ -1,0 +1,35 @@
+{
+  "derivationVersion": "trace-exploration-round1-aggregate-v1",
+  "deterministicReceipt": {
+    "canonicalization": "recursive key sort; compact JSON; final LF; UTF-8",
+    "sha256": "224aaea1123ad9d5730006aa5e779c17b4673fdfc9ee87988f3f96ac8ce26424"
+  },
+  "invariants": {
+    "ALLOWED_STATUS_VOCABULARY_ONLY": true,
+    "ALL_EIGHT_FAMILIES_PRESENT": true,
+    "ALL_REQUIRED_COLUMNS_PRESENT": true,
+    "BOUND_DIMENSION_CONCENTRATION_SIGNAL_COUNT": 6,
+    "CLUSTER_MODEL_SELECTED": false,
+    "EVERY_DERIVED_SIGNAL_VERSIONED": true,
+    "EVERY_METRIC_EXPOSES_DENOMINATOR": true,
+    "FEATURE_WEIGHTS_SELECTED": false,
+    "HISTORICAL_RELATION": false,
+    "NATIVE_DIMENSION_CONCENTRATION_RECEIPTS_BOUND": true,
+    "PROBABILITY_MODEL_SELECTED": false,
+    "RENDERER_SELECTED": false,
+    "SEMANTIC_RELATION": false,
+    "SIMILARITY_MODEL_SELECTED": false,
+    "TEMPLATE_SELECTED": false
+  },
+  "rowsSha256": "14e5bbd0c6cdb87e099e86226009ccb39513212b141cebfc3882108d152e25ba",
+  "schemaVersion": "trace-exploration-signal-registry/v1",
+  "signalCount": 64,
+  "statusCounts": {
+    "DEFER": 5,
+    "HIGH_POTENTIAL": 20,
+    "NEEDS_MORE_DATA": 2,
+    "REJECT": 4,
+    "RESEARCH_ONLY": 16,
+    "SUPPORTING_SIGNAL": 17
+  }
+}

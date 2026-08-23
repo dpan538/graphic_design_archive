@@ -8,8 +8,8 @@ import {
 } from "d3-geo";
 import type { SpacetimeProjectionKind, SpacetimeProjectionViewport } from "./types";
 
-const DEFAULT_PROJECTION_PRECISION = 0.1;
-const DEFAULT_PATH_DIGITS = 3;
+export const DEFAULT_SPACETIME_PROJECTION_PRECISION = 0.1;
+export const DEFAULT_SPACETIME_PATH_DIGITS = 3;
 
 function assertViewport(viewport: SpacetimeProjectionViewport): void {
   if (!Number.isFinite(viewport.width) || viewport.width <= 0) throw new Error("projection viewport width must be positive");
@@ -22,7 +22,7 @@ function assertViewport(viewport: SpacetimeProjectionViewport): void {
 
 export function buildProjection(
   kind: SpacetimeProjectionKind,
-  precision = DEFAULT_PROJECTION_PRECISION,
+  precision = DEFAULT_SPACETIME_PROJECTION_PRECISION,
 ): GeoProjection {
   if (!Number.isFinite(precision) || precision <= 0) throw new Error("projection precision must be positive");
   if (kind === "equal-earth") return geoEqualEarth().precision(precision);
@@ -35,9 +35,10 @@ export function fitProjection(
   kind: SpacetimeProjectionKind,
   geometry: GeoPermissibleObjects,
   viewport: SpacetimeProjectionViewport,
+  precision = DEFAULT_SPACETIME_PROJECTION_PRECISION,
 ): GeoProjection {
   assertViewport(viewport);
-  const projection = buildProjection(kind);
+  const projection = buildProjection(kind, precision);
   projection.fitExtent(
     [
       [viewport.padding, viewport.padding],
@@ -48,7 +49,10 @@ export function fitProjection(
   return projection;
 }
 
-export function deriveGeoPath(projection: GeoProjection, digits = DEFAULT_PATH_DIGITS): GeoPath<unknown, GeoPermissibleObjects> {
+export function deriveGeoPath(
+  projection: GeoProjection,
+  digits = DEFAULT_SPACETIME_PATH_DIGITS,
+): GeoPath<unknown, GeoPermissibleObjects> {
   if (!Number.isSafeInteger(digits) || digits < 0 || digits > 15) throw new Error("geo path digits must be an integer from 0 to 15");
   return geoPath(projection).digits(digits);
 }
@@ -57,9 +61,10 @@ export function deriveProjectedPath(
   geometry: GeoPermissibleObjects,
   kind: SpacetimeProjectionKind,
   viewport: SpacetimeProjectionViewport,
-  digits = DEFAULT_PATH_DIGITS,
+  digits = DEFAULT_SPACETIME_PATH_DIGITS,
+  precision = DEFAULT_SPACETIME_PROJECTION_PRECISION,
 ): string {
-  const path = deriveGeoPath(fitProjection(kind, geometry, viewport), digits)(geometry);
+  const path = deriveGeoPath(fitProjection(kind, geometry, viewport, precision), digits)(geometry);
   if (!path) throw new Error("governed geometry produced an empty projected path");
   return path;
 }

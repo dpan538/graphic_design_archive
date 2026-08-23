@@ -1,0 +1,1410 @@
+{
+  "candidate_structure_summary": {
+    "candidatePayloadSha256": "b16bb0158c3ea27cee2909e96631ab84f3c8f6d0356476e45e641eb27edb4f48",
+    "compoundChildReferenceCount": 132,
+    "dossierStructures": {
+      "crossAnchorPageReferenceCount": 0,
+      "multiPageDossierCount": 15453,
+      "pageCount": 46961,
+      "pageTypeCounts": {
+        "appendix": 15453,
+        "card": 470,
+        "child_source_record": 132,
+        "main_sheet": 14966,
+        "subsheet": 487,
+        "text_page": 15453
+      }
+    },
+    "eligibilityLedgerSha256": "48f98f68ca2ec0cef96c82ecc9c01e4129eb9a3f91e08b07ad9a59644a9d4e01",
+    "folderStructures": {
+      "duplicateRepresentationIntegrity": {
+        "folder.surfaceIds": {
+          "membershipCount": 47982,
+          "pairSha256": "b2ddbe94f4d569f6b9970246855b535374b7c1a9b8ac047de58899c860bd4573"
+        },
+        "registrationCard.memberPages": {
+          "membershipCount": 47982,
+          "pairSha256": "b2ddbe94f4d569f6b9970246855b535374b7c1a9b8ac047de58899c860bd4573"
+        },
+        "researchDossier.folderIds": {
+          "membershipCount": 47982,
+          "pairSha256": "b2ddbe94f4d569f6b9970246855b535374b7c1a9b8ac047de58899c860bd4573"
+        },
+        "surface.folders": {
+          "membershipCount": 47982,
+          "pairSha256": "b2ddbe94f4d569f6b9970246855b535374b7c1a9b8ac047de58899c860bd4573"
+        }
+      },
+      "folderTypeContainerCounts": {
+        "medium": 10,
+        "movement": 11,
+        "region": 156,
+        "theme": 8
+      },
+      "membershipCount": 47982,
+      "membershipPairSha256": "b2ddbe94f4d569f6b9970246855b535374b7c1a9b8ac047de58899c860bd4573",
+      "relatedFolderDanglingReferences": 0,
+      "relatedFolderDirectedReferences": 2016,
+      "relatedFolderMissingReciprocals": 0,
+      "relatedFolderSelfReferences": 0,
+      "relatedFolderUndirectedEdges": 1008
+    },
+    "legacyTraceStructures": {
+      "branchCount": 85,
+      "branchMembershipCount": 80093,
+      "heldBranchMembershipCount": 39088,
+      "heldTreeMembershipCount": 7928,
+      "publicBranchMembershipCount": 41005,
+      "publicTreeMembershipCount": 7995,
+      "treeCount": 30,
+      "treeMembershipCount": 15923
+    },
+    "population": {
+      "allObjects": 15923,
+      "heldObjects": 7928,
+      "publicObjects": 7995
+    },
+    "safety": {
+      "heldObjectIdsEmitted": 0,
+      "rawFolderIdsEmitted": 0,
+      "rawObjectRowsEmitted": 0,
+      "urlsEmitted": 0
+    },
+    "schemaVersion": "trace-exploration-source-inventory/v1",
+    "topLevelStructures": {
+      "appendices": 15453,
+      "bookmarks": 0,
+      "folderTypes": 4,
+      "folders": 185,
+      "readingNotes": 354,
+      "registrationCards": 185,
+      "researchDossiers": 15923,
+      "surfaces": 15923
+    }
+  },
+  "co_membership": {
+    "algorithm": {
+      "global_pair_method": "half of exact directed fanout sums",
+      "id": "trace-v49-curatorial-bitset-v1",
+      "index": "per-folder arbitrary-precision integer membership bitset",
+      "matrix_materialized": false,
+      "pair_identifiers_emitted": false,
+      "pair_rows_materialized": false,
+      "public_id_order": "surface_id_exact Unicode code-point ascending",
+      "threshold_method": "OR of k-way container-bitset intersections",
+      "time_complexity": "O(objects * combinations(memberships_per_object)) bitset operations",
+      "working_memory": "O(nonempty_containers * public_objects / 8)"
+    },
+    "degree_shared_container_histogram": [
+      {
+        "left_membership_count": 3,
+        "pair_count": 16278062,
+        "right_membership_count": 3,
+        "shared_container_count": 1
+      },
+      {
+        "left_membership_count": 3,
+        "pair_count": 6260742,
+        "right_membership_count": 3,
+        "shared_container_count": 2
+      },
+      {
+        "left_membership_count": 3,
+        "pair_count": 4677423,
+        "right_membership_count": 3,
+        "shared_container_count": 3
+      },
+      {
+        "left_membership_count": 3,
+        "pair_count": 511015,
+        "right_membership_count": 4,
+        "shared_container_count": 1
+      },
+      {
+        "left_membership_count": 3,
+        "pair_count": 217949,
+        "right_membership_count": 4,
+        "shared_container_count": 2
+      },
+      {
+        "left_membership_count": 3,
+        "pair_count": 15004,
+        "right_membership_count": 4,
+        "shared_container_count": 3
+      },
+      {
+        "left_membership_count": 3,
+        "pair_count": 30877,
+        "right_membership_count": 5,
+        "shared_container_count": 1
+      },
+      {
+        "left_membership_count": 3,
+        "pair_count": 12744,
+        "right_membership_count": 5,
+        "shared_container_count": 2
+      },
+      {
+        "left_membership_count": 3,
+        "pair_count": 27,
+        "right_membership_count": 5,
+        "shared_container_count": 3
+      },
+      {
+        "left_membership_count": 4,
+        "pair_count": 1143,
+        "right_membership_count": 4,
+        "shared_container_count": 1
+      },
+      {
+        "left_membership_count": 4,
+        "pair_count": 2264,
+        "right_membership_count": 4,
+        "shared_container_count": 2
+      },
+      {
+        "left_membership_count": 4,
+        "pair_count": 606,
+        "right_membership_count": 4,
+        "shared_container_count": 3
+      },
+      {
+        "left_membership_count": 4,
+        "pair_count": 543,
+        "right_membership_count": 4,
+        "shared_container_count": 4
+      },
+      {
+        "left_membership_count": 4,
+        "pair_count": 127,
+        "right_membership_count": 5,
+        "shared_container_count": 1
+      },
+      {
+        "left_membership_count": 4,
+        "pair_count": 205,
+        "right_membership_count": 5,
+        "shared_container_count": 2
+      },
+      {
+        "left_membership_count": 4,
+        "pair_count": 165,
+        "right_membership_count": 5,
+        "shared_container_count": 3
+      },
+      {
+        "left_membership_count": 4,
+        "pair_count": 65,
+        "right_membership_count": 5,
+        "shared_container_count": 4
+      },
+      {
+        "left_membership_count": 5,
+        "pair_count": 5,
+        "right_membership_count": 5,
+        "shared_container_count": 1
+      },
+      {
+        "left_membership_count": 5,
+        "pair_count": 10,
+        "right_membership_count": 5,
+        "shared_container_count": 5
+      }
+    ],
+    "fanout_ge1": {
+      "max": 7691,
+      "mean": 7006.623139,
+      "min": 60,
+      "n": 7995,
+      "p50": 7439,
+      "p90": 7523,
+      "p95": 7648,
+      "p99": 7691,
+      "zero_count": 0
+    },
+    "fanout_ge2": {
+      "max": 5600,
+      "mean": 2798.685929,
+      "min": 1,
+      "n": 7995,
+      "p50": 3225,
+      "p90": 3850,
+      "p95": 3861,
+      "p99": 5600,
+      "zero_count": 0
+    },
+    "fanout_ge3": {
+      "max": 2957,
+      "mean": 1174.194622,
+      "min": 0,
+      "n": 7995,
+      "p50": 170,
+      "p90": 2955,
+      "p95": 2955,
+      "p99": 2955,
+      "zero_count": 111
+    },
+    "jaccard_structural_diagnostic": {
+      "classification": "STRUCTURAL_DIAGNOSTIC",
+      "final_similarity_metric": false,
+      "histogram": [
+        {
+          "denominator": 9,
+          "numerator": 1,
+          "pair_count": 5,
+          "value": 0.111111
+        },
+        {
+          "denominator": 8,
+          "numerator": 1,
+          "pair_count": 127,
+          "value": 0.125
+        },
+        {
+          "denominator": 7,
+          "numerator": 1,
+          "pair_count": 32020,
+          "value": 0.142857
+        },
+        {
+          "denominator": 6,
+          "numerator": 1,
+          "pair_count": 511015,
+          "value": 0.166667
+        },
+        {
+          "denominator": 5,
+          "numerator": 1,
+          "pair_count": 16278062,
+          "value": 0.2
+        },
+        {
+          "denominator": 7,
+          "numerator": 2,
+          "pair_count": 205,
+          "value": 0.285714
+        },
+        {
+          "denominator": 3,
+          "numerator": 1,
+          "pair_count": 15008,
+          "value": 0.333333
+        },
+        {
+          "denominator": 5,
+          "numerator": 2,
+          "pair_count": 217949,
+          "value": 0.4
+        },
+        {
+          "denominator": 2,
+          "numerator": 1,
+          "pair_count": 6260907,
+          "value": 0.5
+        },
+        {
+          "denominator": 5,
+          "numerator": 3,
+          "pair_count": 633,
+          "value": 0.6
+        },
+        {
+          "denominator": 4,
+          "numerator": 3,
+          "pair_count": 15004,
+          "value": 0.75
+        },
+        {
+          "denominator": 5,
+          "numerator": 4,
+          "pair_count": 65,
+          "value": 0.8
+        },
+        {
+          "denominator": 1,
+          "numerator": 1,
+          "pair_count": 4677976,
+          "value": 1
+        }
+      ],
+      "historical_relation": false,
+      "max": 1,
+      "p50": 0.2,
+      "p90": 1,
+      "p95": 1,
+      "p99": 1,
+      "semantic_relation": false
+    },
+    "shared_container_count_histogram": {
+      "1": 16821229,
+      "2": 6493904,
+      "3": 4693225,
+      "4": 608,
+      "5": 10
+    },
+    "unique_pair_count_ge1": 28008976,
+    "unique_pair_count_ge2": 11187747,
+    "unique_pair_count_ge3": 4693843
+  },
+  "cohort": {
+    "all_object_count": 15923,
+    "held_object_count": 7928,
+    "partition_complete": true,
+    "partition_overlap_count": 0,
+    "public_object_count": 7995
+  },
+  "derivation_version": "trace-v49-curatorial-bitset-v1",
+  "deterministic_receipt": {
+    "canonicalization": "recursive key sort; compact JSON; final LF; UTF-8",
+    "sha256": "2fd240562ba627a815489efb2371f47200488443658af6e27e4c9dc2774a29a9"
+  },
+  "duplicate_membership_view_integrity": {
+    "status": "PASS",
+    "summary_receipt": {
+      "matches_sqlite": true,
+      "pair_count": 47982,
+      "pair_sha256": "b2ddbe94f4d569f6b9970246855b535374b7c1a9b8ac047de58899c860bd4573"
+    },
+    "view_count": 4,
+    "views": {
+      "folder.surfaceIds": {
+        "matches_sqlite": true,
+        "pair_count": 47982,
+        "pair_sha256": "b2ddbe94f4d569f6b9970246855b535374b7c1a9b8ac047de58899c860bd4573"
+      },
+      "registrationCard.memberPages": {
+        "matches_sqlite": true,
+        "pair_count": 47982,
+        "pair_sha256": "b2ddbe94f4d569f6b9970246855b535374b7c1a9b8ac047de58899c860bd4573"
+      },
+      "researchDossier.folderIds": {
+        "matches_sqlite": true,
+        "pair_count": 47982,
+        "pair_sha256": "b2ddbe94f4d569f6b9970246855b535374b7c1a9b8ac047de58899c860bd4573"
+      },
+      "surface.folders": {
+        "matches_sqlite": true,
+        "pair_count": 47982,
+        "pair_sha256": "b2ddbe94f4d569f6b9970246855b535374b7c1a9b8ac047de58899c860bd4573"
+      }
+    }
+  },
+  "folder_census": {
+    "by_cohort": {
+      "all": {
+        "all_known_container_size_including_zero": {
+          "max": 10010,
+          "mean": 259.362162,
+          "min": 1,
+          "n": 185,
+          "p50": 29,
+          "p90": 322.6,
+          "p95": 570.0,
+          "p99": 5867.56,
+          "zero_count": 0
+        },
+        "container_size": {
+          "max": 10010,
+          "mean": 259.362162,
+          "min": 1,
+          "n": 185,
+          "p50": 29,
+          "p90": 322.6,
+          "p95": 570.0,
+          "p99": 5867.56,
+          "zero_count": 0
+        },
+        "membership_count": 47982,
+        "memberships_per_object": {
+          "max": 5,
+          "mean": 3.013377,
+          "min": 3,
+          "n": 15923,
+          "p50": 3,
+          "p90": 3,
+          "p95": 3,
+          "p99": 4,
+          "zero_count": 0
+        },
+        "nonempty_container_count": 185,
+        "object_count": 15923,
+        "objects_with_multiple_memberships": 15923,
+        "objects_without_membership": 0,
+        "raw_pair_event_count": 120229777
+      },
+      "eligible": {
+        "all_known_container_size_including_zero": {
+          "max": 7105,
+          "mean": 130.281081,
+          "min": 0,
+          "n": 185,
+          "p50": 2,
+          "p90": 123.2,
+          "p95": 263.6,
+          "p99": 3328.24,
+          "zero_count": 67
+        },
+        "container_size": {
+          "max": 7105,
+          "mean": 204.254237,
+          "min": 1,
+          "n": 118,
+          "p50": 11.5,
+          "p90": 226.1,
+          "p95": 547.55,
+          "p99": 3806.62,
+          "zero_count": 0
+        },
+        "membership_count": 24102,
+        "memberships_per_object": {
+          "max": 5,
+          "mean": 3.014634,
+          "min": 3,
+          "n": 7995,
+          "p50": 3,
+          "p90": 3,
+          "p95": 3,
+          "p99": 4,
+          "zero_count": 0
+        },
+        "nonempty_container_count": 118,
+        "object_count": 7995,
+        "objects_with_multiple_memberships": 7995,
+        "objects_without_membership": 0,
+        "raw_pair_event_count": 43891194
+      },
+      "held": {
+        "all_known_container_size_including_zero": {
+          "max": 6082,
+          "mean": 129.081081,
+          "min": 0,
+          "n": 185,
+          "p50": 12,
+          "p90": 226.8,
+          "p95": 362.0,
+          "p99": 2339.04,
+          "zero_count": 28
+        },
+        "container_size": {
+          "max": 6082,
+          "mean": 152.101911,
+          "min": 1,
+          "n": 157,
+          "p50": 20,
+          "p90": 277.6,
+          "p95": 407.8,
+          "p99": 3135.36,
+          "zero_count": 0
+        },
+        "membership_count": 23880,
+        "memberships_per_object": {
+          "max": 4,
+          "mean": 3.012109,
+          "min": 3,
+          "n": 7928,
+          "p50": 3,
+          "p90": 3,
+          "p95": 3,
+          "p99": 4,
+          "zero_count": 0
+        },
+        "nonempty_container_count": 157,
+        "object_count": 7928,
+        "objects_with_multiple_memberships": 7928,
+        "objects_without_membership": 0,
+        "raw_pair_event_count": 33430602
+      }
+    },
+    "by_type": {
+      "medium": {
+        "container_count": 10,
+        "held": {
+          "container_size": {
+            "max": 4728,
+            "mean": 792.8,
+            "min": 0,
+            "n": 10,
+            "p50": 81.5,
+            "p90": 2168.4,
+            "p95": 3448.2,
+            "p99": 4472.04,
+            "zero_count": 2
+          },
+          "membership_count": 7928,
+          "nonempty_container_count": 8,
+          "object_coverage": 7928,
+          "raw_pair_event_count": 13322971
+        },
+        "public": {
+          "container_size": {
+            "max": 7105,
+            "mean": 799.5,
+            "min": 1,
+            "n": 10,
+            "p50": 16.5,
+            "p90": 1201.0,
+            "p95": 4153.0,
+            "p99": 6514.6,
+            "zero_count": 0
+          },
+          "membership_count": 7995,
+          "nonempty_container_count": 10,
+          "object_coverage": 7995,
+          "raw_pair_event_count": 25414386
+        }
+      },
+      "movement": {
+        "container_count": 11,
+        "held": {
+          "container_size": {
+            "max": 49,
+            "mean": 8.727273,
+            "min": 1,
+            "n": 11,
+            "p50": 1,
+            "p90": 17,
+            "p95": 33,
+            "p99": 45.8,
+            "zero_count": 0
+          },
+          "membership_count": 96,
+          "nonempty_container_count": 11,
+          "object_coverage": 96,
+          "raw_pair_event_count": 1417
+        },
+        "public": {
+          "container_size": {
+            "max": 44,
+            "mean": 10.454545,
+            "min": 0,
+            "n": 11,
+            "p50": 1,
+            "p90": 31,
+            "p95": 37.5,
+            "p99": 42.7,
+            "zero_count": 4
+          },
+          "membership_count": 115,
+          "nonempty_container_count": 7,
+          "object_coverage": 110,
+          "raw_pair_event_count": 1734
+        }
+      },
+      "region": {
+        "container_count": 156,
+        "held": {
+          "container_size": {
+            "max": 932,
+            "mean": 50.820513,
+            "min": 0,
+            "n": 156,
+            "p50": 11.5,
+            "p90": 130.5,
+            "p95": 281.25,
+            "p99": 412.55,
+            "zero_count": 26
+          },
+          "membership_count": 7928,
+          "nonempty_container_count": 130,
+          "object_coverage": 7928,
+          "raw_pair_event_count": 1117501
+        },
+        "public": {
+          "container_size": {
+            "max": 3214,
+            "mean": 51.25641,
+            "min": 0,
+            "n": 156,
+            "p50": 1,
+            "p90": 76.5,
+            "p95": 137.5,
+            "p99": 837.85,
+            "zero_count": 63
+          },
+          "membership_count": 7996,
+          "nonempty_container_count": 93,
+          "object_coverage": 7995,
+          "raw_pair_event_count": 6240272
+        }
+      },
+      "theme": {
+        "container_count": 8,
+        "held": {
+          "container_size": {
+            "max": 6082,
+            "mean": 991,
+            "min": 4,
+            "n": 8,
+            "p50": 193,
+            "p90": 2327.2,
+            "p95": 4204.6,
+            "p99": 5706.52,
+            "zero_count": 0
+          },
+          "membership_count": 7928,
+          "nonempty_container_count": 8,
+          "object_coverage": 7928,
+          "raw_pair_event_count": 18988713
+        },
+        "public": {
+          "container_size": {
+            "max": 3928,
+            "mean": 999.5,
+            "min": 28,
+            "n": 8,
+            "p50": 237.5,
+            "p90": 3248.3,
+            "p95": 3588.15,
+            "p99": 3860.03,
+            "zero_count": 0
+          },
+          "membership_count": 7996,
+          "nonempty_container_count": 8,
+          "object_coverage": 7995,
+          "raw_pair_event_count": 12234802
+        }
+      }
+    },
+    "cross_public_held_pair_event_count": 42907981,
+    "folder_count": 185,
+    "largest_public_pair_producers": [
+      {
+        "all_members": 8989,
+        "folder_type": "medium",
+        "held_members": 1884,
+        "public_members": 7105,
+        "public_raw_pair_events": 25236960,
+        "rank": 1
+      },
+      {
+        "all_members": 10010,
+        "folder_type": "theme",
+        "held_members": 6082,
+        "public_members": 3928,
+        "public_raw_pair_events": 7712628,
+        "rank": 2
+      },
+      {
+        "all_members": 3257,
+        "folder_type": "region",
+        "held_members": 43,
+        "public_members": 3214,
+        "public_raw_pair_events": 5163291,
+        "rank": 3
+      },
+      {
+        "all_members": 3579,
+        "folder_type": "theme",
+        "held_members": 622,
+        "public_members": 2957,
+        "public_raw_pair_events": 4370446,
+        "rank": 4
+      },
+      {
+        "all_members": 1455,
+        "folder_type": "region",
+        "held_members": 280,
+        "public_members": 1175,
+        "public_raw_pair_events": 689725,
+        "rank": 5
+      },
+      {
+        "all_members": 562,
+        "folder_type": "region",
+        "held_members": 0,
+        "public_members": 562,
+        "public_raw_pair_events": 157641,
+        "rank": 6
+      },
+      {
+        "all_members": 5273,
+        "folder_type": "medium",
+        "held_members": 4728,
+        "public_members": 545,
+        "public_raw_pair_events": 148240,
+        "rank": 7
+      },
+      {
+        "all_members": 460,
+        "folder_type": "region",
+        "held_members": 33,
+        "public_members": 427,
+        "public_raw_pair_events": 90951,
+        "rank": 8
+      },
+      {
+        "all_members": 1121,
+        "folder_type": "theme",
+        "held_members": 718,
+        "public_members": 403,
+        "public_raw_pair_events": 81003,
+        "rank": 9
+      },
+      {
+        "all_members": 401,
+        "folder_type": "theme",
+        "held_members": 130,
+        "public_members": 271,
+        "public_raw_pair_events": 36585,
+        "rank": 10
+      },
+      {
+        "all_members": 572,
+        "folder_type": "medium",
+        "held_members": 338,
+        "public_members": 234,
+        "public_raw_pair_events": 27261,
+        "rank": 11
+      },
+      {
+        "all_members": 261,
+        "folder_type": "region",
+        "held_members": 30,
+        "public_members": 231,
+        "public_raw_pair_events": 26565,
+        "rank": 12
+      },
+      {
+        "all_members": 546,
+        "folder_type": "region",
+        "held_members": 322,
+        "public_members": 224,
+        "public_raw_pair_events": 24976,
+        "rank": 13
+      },
+      {
+        "all_members": 223,
+        "folder_type": "theme",
+        "held_members": 19,
+        "public_members": 204,
+        "public_raw_pair_events": 20706,
+        "rank": 14
+      },
+      {
+        "all_members": 187,
+        "folder_type": "region",
+        "held_members": 23,
+        "public_members": 164,
+        "public_raw_pair_events": 13366,
+        "rank": 15
+      }
+    ],
+    "membership_pair_count": 47982,
+    "membership_pair_sha256": "b2ddbe94f4d569f6b9970246855b535374b7c1a9b8ac047de58899c860bd4573",
+    "observed_folder_type_count": 4,
+    "observed_folder_types": [
+      "medium",
+      "movement",
+      "region",
+      "theme"
+    ],
+    "pair_semantics": "project-curated container membership; not historical relation"
+  },
+  "format": "trace-v49-curatorial-analysis/v1",
+  "invariants": {
+    "CURATORIAL_COUNTS_RECONCILE": true,
+    "HELD_EXPLORATION_OBJECT_COUNT": 0,
+    "PAIR_EVENTS_RECONCILE": true,
+    "PAIR_MATRIX_MATERIALIZED": false,
+    "PAIR_ROWS_EMITTED": false,
+    "PUBLIC_HELD_PARTITION_COMPLETE": true,
+    "SIMILARITY_MODEL_SELECTED": false,
+    "STRUCTURAL_DIAGNOSTIC_ONLY": true
+  },
+  "legacy_structure_census": {
+    "classification": "LEGACY_ONLY_UNSAFE_NOT_V49_GOVERNED",
+    "object_trace_edge_membership": {
+      "all": {
+        "container_count": 126822,
+        "container_size": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "n": 126822,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zero_count": 0
+        },
+        "membership_count": 126822,
+        "memberships_per_object": {
+          "max": 31,
+          "mean": 7.964705,
+          "min": 2,
+          "n": 15923,
+          "p50": 8,
+          "p90": 14,
+          "p95": 15,
+          "p99": 18,
+          "zero_count": 0
+        },
+        "object_coverage": 15923,
+        "objects_without_membership": 0,
+        "raw_pair_event_count": 0
+      },
+      "eligible": {
+        "container_count": 84355,
+        "container_size": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "n": 84355,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zero_count": 0
+        },
+        "membership_count": 84355,
+        "memberships_per_object": {
+          "max": 31,
+          "mean": 10.550969,
+          "min": 2,
+          "n": 7995,
+          "p50": 11,
+          "p90": 15,
+          "p95": 16,
+          "p99": 19,
+          "zero_count": 0
+        },
+        "object_coverage": 7995,
+        "objects_without_membership": 0,
+        "raw_pair_event_count": 0
+      },
+      "held": {
+        "container_count": 42467,
+        "container_size": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "n": 42467,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zero_count": 0
+        },
+        "membership_count": 42467,
+        "memberships_per_object": {
+          "max": 8,
+          "mean": 5.356584,
+          "min": 3,
+          "n": 7928,
+          "p50": 4,
+          "p90": 8,
+          "p95": 8,
+          "p99": 8,
+          "zero_count": 0
+        },
+        "object_coverage": 7928,
+        "objects_without_membership": 0,
+        "raw_pair_event_count": 0
+      }
+    },
+    "sqlite_table_counts": {
+      "capture_records": 11413,
+      "object_metadata_rows": 808787,
+      "object_trace_edges": 126822,
+      "source_documents": 12635,
+      "trace_edges": 255695,
+      "trace_nodes": 97889
+    },
+    "trace_tree_membership": {
+      "all": {
+        "container_count": 30,
+        "container_size": {
+          "max": 4937,
+          "mean": 530.766667,
+          "min": 1,
+          "n": 30,
+          "p50": 50.5,
+          "p90": 2389.9,
+          "p95": 3286.85,
+          "p99": 4545.5,
+          "zero_count": 0
+        },
+        "membership_count": 15923,
+        "memberships_per_object": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "n": 15923,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zero_count": 0
+        },
+        "object_coverage": 15923,
+        "objects_without_membership": 0,
+        "raw_pair_event_count": 25833538
+      },
+      "eligible": {
+        "container_count": 27,
+        "container_size": {
+          "max": 3587,
+          "mean": 296.111111,
+          "min": 1,
+          "n": 27,
+          "p50": 34,
+          "p90": 346.2,
+          "p95": 1764.9,
+          "p99": 3260.44,
+          "zero_count": 0
+        },
+        "membership_count": 7995,
+        "memberships_per_object": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "n": 7995,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zero_count": 0
+        },
+        "object_coverage": 7995,
+        "objects_without_membership": 0,
+        "raw_pair_event_count": 9385677
+      },
+      "held": {
+        "container_count": 4,
+        "container_size": {
+          "max": 4930,
+          "mean": 1982,
+          "min": 27,
+          "n": 4,
+          "p50": 1485.5,
+          "p90": 4327,
+          "p95": 4628.5,
+          "p99": 4869.7,
+          "zero_count": 0
+        },
+        "membership_count": 7928,
+        "memberships_per_object": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "n": 7928,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zero_count": 0
+        },
+        "object_coverage": 7928,
+        "objects_without_membership": 0,
+        "raw_pair_event_count": 16413351
+      }
+    }
+  },
+  "pair_explosion": {
+    "folder_bitset_payload_bytes": 118000,
+    "full_pair_matrix_committed": false,
+    "full_pair_rows_committed": false,
+    "materialization_estimates_bytes": {
+      "dense_float64_matrix": 511360200,
+      "dense_uint8_matrix": 63920025,
+      "raw_event_16_byte_record": 702259104,
+      "raw_event_uint64": 351129552,
+      "upper_triangle_16_byte_record": 511296240,
+      "upper_triangle_uint64": 255648120,
+      "upper_triangle_uint8": 31956015
+    },
+    "possible_public_pair_count": 31956015,
+    "public_raw_pair_event_count": 43891194,
+    "public_unique_pair_count": 28008976,
+    "public_unique_pair_support_rate": 0.876485,
+    "raw_event_to_unique_pair_ratio": 1.56704,
+    "recommended_future_architecture": "precomputed aggregate index plus on-demand object fanout",
+    "risk": "HIGH",
+    "risk_policy": "HIGH when exact unique pairs or raw pair events exceed 10,000,000"
+  },
+  "semantic_boundary": {
+    "analysis_role": "exploratory_derived_signal",
+    "classification": "STRUCTURAL_DIAGNOSTIC",
+    "held_rows_in_public_statistics": 0,
+    "historical_relation": false,
+    "probability_model_selected": false,
+    "ranking_selected": false,
+    "raw_identifiers_emitted": 0,
+    "semantic_relation": false,
+    "similarity_model_selected": false
+  },
+  "source_receipt": {
+    "candidate_summary_supplied": true,
+    "ledger_sha256": "48f98f68ca2ec0cef96c82ecc9c01e4129eb9a3f91e08b07ad9a59644a9d4e01",
+    "sqlite_open_mode": "mode=ro&immutable=1;PRAGMA query_only=ON",
+    "sqlite_quick_check": "ok",
+    "sqlite_sha256": "ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e"
+  },
+  "source_structure_census": {
+    "source_collection": {
+      "all": {
+        "container_count": 3750,
+        "container_size": {
+          "max": 3531,
+          "mean": 4.242133,
+          "min": 1,
+          "n": 3750,
+          "p50": 1,
+          "p90": 1,
+          "p95": 2,
+          "p99": 27.51,
+          "zero_count": 0
+        },
+        "membership_count": 15908,
+        "memberships_per_object": {
+          "max": 1,
+          "mean": 0.999058,
+          "min": 0,
+          "n": 15923,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zero_count": 15
+        },
+        "object_coverage": 15908,
+        "objects_without_membership": 15,
+        "raw_pair_event_count": 10323615
+      },
+      "eligible": {
+        "container_count": 51,
+        "container_size": {
+          "max": 3531,
+          "mean": 156.470588,
+          "min": 1,
+          "n": 51,
+          "p50": 4,
+          "p90": 267,
+          "p95": 541.5,
+          "p99": 2747,
+          "zero_count": 0
+        },
+        "membership_count": 7980,
+        "memberships_per_object": {
+          "max": 1,
+          "mean": 0.998124,
+          "min": 0,
+          "n": 7995,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zero_count": 15
+        },
+        "object_coverage": 7980,
+        "objects_without_membership": 15,
+        "raw_pair_event_count": 8569329
+      },
+      "held": {
+        "container_count": 3705,
+        "container_size": {
+          "max": 1809,
+          "mean": 2.139811,
+          "min": 1,
+          "n": 3705,
+          "p50": 1,
+          "p90": 1,
+          "p95": 2,
+          "p99": 14.96,
+          "zero_count": 0
+        },
+        "membership_count": 7928,
+        "memberships_per_object": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "n": 7928,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zero_count": 0
+        },
+        "object_coverage": 7928,
+        "objects_without_membership": 0,
+        "raw_pair_event_count": 1717113
+      }
+    },
+    "source_document": {
+      "all": {
+        "container_count": 12635,
+        "container_size": {
+          "max": 1963,
+          "mean": 1.26023,
+          "min": 1,
+          "n": 12635,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zero_count": 0
+        },
+        "membership_count": 15923,
+        "memberships_per_object": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "n": 15923,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zero_count": 0
+        },
+        "object_coverage": 15923,
+        "objects_without_membership": 0,
+        "raw_pair_event_count": 2002056
+      },
+      "eligible": {
+        "container_count": 4711,
+        "container_size": {
+          "max": 1963,
+          "mean": 1.697092,
+          "min": 1,
+          "n": 4711,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 5,
+          "zero_count": 0
+        },
+        "membership_count": 7995,
+        "memberships_per_object": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "n": 7995,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zero_count": 0
+        },
+        "object_coverage": 7995,
+        "objects_without_membership": 0,
+        "raw_pair_event_count": 2002052
+      },
+      "held": {
+        "container_count": 7924,
+        "container_size": {
+          "max": 2,
+          "mean": 1.000505,
+          "min": 1,
+          "n": 7924,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zero_count": 0
+        },
+        "membership_count": 7928,
+        "memberships_per_object": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "n": 7928,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zero_count": 0
+        },
+        "object_coverage": 7928,
+        "objects_without_membership": 0,
+        "raw_pair_event_count": 4
+      }
+    },
+    "source_name": {
+      "all": {
+        "container_count": 272,
+        "container_size": {
+          "max": 3505,
+          "mean": 58.540441,
+          "min": 1,
+          "n": 272,
+          "p50": 1,
+          "p90": 40.5,
+          "p95": 130.9,
+          "p99": 1991.86,
+          "zero_count": 0
+        },
+        "membership_count": 15923,
+        "memberships_per_object": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "n": 15923,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zero_count": 0
+        },
+        "object_coverage": 15923,
+        "objects_without_membership": 0,
+        "raw_pair_event_count": 15272915
+      },
+      "eligible": {
+        "container_count": 15,
+        "container_size": {
+          "max": 3505,
+          "mean": 533,
+          "min": 2,
+          "n": 15,
+          "p50": 84,
+          "p90": 1604.4,
+          "p95": 2661.5,
+          "p99": 3336.3,
+          "zero_count": 0
+        },
+        "membership_count": 7995,
+        "memberships_per_object": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "n": 7995,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zero_count": 0
+        },
+        "object_coverage": 7995,
+        "objects_without_membership": 0,
+        "raw_pair_event_count": 9205309
+      },
+      "held": {
+        "container_count": 263,
+        "container_size": {
+          "max": 2767,
+          "mean": 30.144487,
+          "min": 1,
+          "n": 263,
+          "p50": 1,
+          "p90": 20.2,
+          "p95": 49,
+          "p99": 474.4,
+          "zero_count": 0
+        },
+        "membership_count": 7928,
+        "memberships_per_object": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "n": 7928,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zero_count": 0
+        },
+        "object_coverage": 7928,
+        "objects_without_membership": 0,
+        "raw_pair_event_count": 6027479
+      }
+    }
+  },
+  "structure_classification": [
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "CANDIDATE",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "historical_relation": false,
+      "row_count": 47982,
+      "semantic_relation": false,
+      "structure": "sqlite.object_folder_refs"
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "historical_relation": false,
+      "row_count": 12635,
+      "semantic_relation": false,
+      "structure": "sqlite.source_documents"
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "CANDIDATE",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "historical_relation": false,
+      "row_count": 15908,
+      "semantic_relation": false,
+      "structure": "sqlite.object_metadata_rows/source_collection"
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "historical_relation": false,
+      "row_count": 15923,
+      "semantic_relation": false,
+      "structure": "sqlite.objects/trace_tree_id"
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "historical_relation": false,
+      "row_count": 97889,
+      "semantic_relation": false,
+      "structure": "sqlite.trace_nodes"
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "historical_relation": false,
+      "row_count": 255695,
+      "semantic_relation": false,
+      "structure": "sqlite.trace_edges"
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "historical_relation": false,
+      "row_count": 126822,
+      "semantic_relation": false,
+      "structure": "sqlite.object_trace_edges"
+    },
+    {
+      "classifications": [
+        "CANDIDATE",
+        "INTERNAL_ONLY"
+      ],
+      "historical_relation": false,
+      "row_count": null,
+      "semantic_relation": false,
+      "structure": "candidate_summary"
+    }
+  ]
+}

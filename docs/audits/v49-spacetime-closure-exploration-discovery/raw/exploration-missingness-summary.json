@@ -1,0 +1,377 @@
+{
+  "cooccurrences": [
+    {
+      "count": 50,
+      "eligibleDenominator": 7995,
+      "interpretation": "OBSERVED_INTERSECTION_ONLY_NO_CAUSAL_INFERENCE",
+      "stateA": "GEOGRAPHY:AGGREGATE_ONLY",
+      "stateB": "CREATOR:UNKNOWN_SOURCE_VALUE",
+      "supportRate": 0.006253908692933083
+    },
+    {
+      "count": 194,
+      "eligibleDenominator": 7995,
+      "interpretation": "OBSERVED_INTERSECTION_ONLY_NO_CAUSAL_INFERENCE",
+      "stateA": "GEOGRAPHY:AGGREGATE_ONLY",
+      "stateB": "GEOGRAPHY:QUALIFIED",
+      "supportRate": 0.024265165728580364
+    },
+    {
+      "count": 191,
+      "eligibleDenominator": 7995,
+      "interpretation": "OBSERVED_INTERSECTION_ONLY_NO_CAUSAL_INFERENCE",
+      "stateA": "GEOGRAPHY:QUALIFIED",
+      "stateB": "CREATOR:UNKNOWN_SOURCE_VALUE",
+      "supportRate": 0.02388993120700438
+    },
+    {
+      "count": 1,
+      "eligibleDenominator": 7995,
+      "interpretation": "OBSERVED_INTERSECTION_ONLY_NO_CAUSAL_INFERENCE",
+      "stateA": "GEOGRAPHY:UNMAPPED",
+      "stateB": "CREATOR:UNKNOWN_SOURCE_VALUE",
+      "supportRate": 0.00012507817385866166
+    },
+    {
+      "count": 1,
+      "eligibleDenominator": 7995,
+      "interpretation": "OBSERVED_INTERSECTION_ONLY_NO_CAUSAL_INFERENCE",
+      "stateA": "GEOGRAPHY:UNMAPPED",
+      "stateB": "GEOGRAPHY:QUALIFIED",
+      "supportRate": 0.00012507817385866166
+    },
+    {
+      "count": 162,
+      "eligibleDenominator": 7995,
+      "interpretation": "OBSERVED_INTERSECTION_ONLY_NO_CAUSAL_INFERENCE",
+      "stateA": "MOVEMENT_CONTEXT:NO_PUBLISHED_MOVEMENT_CONTEXT",
+      "stateB": "CREATOR:QUALIFIED_UNKNOWN_SOURCE_VALUE",
+      "supportRate": 0.02026266416510319
+    },
+    {
+      "count": 2014,
+      "eligibleDenominator": 7995,
+      "interpretation": "OBSERVED_INTERSECTION_ONLY_NO_CAUSAL_INFERENCE",
+      "stateA": "MOVEMENT_CONTEXT:NO_PUBLISHED_MOVEMENT_CONTEXT",
+      "stateB": "CREATOR:UNKNOWN_SOURCE_VALUE",
+      "supportRate": 0.2519074421513446
+    },
+    {
+      "count": 175,
+      "eligibleDenominator": 7995,
+      "interpretation": "OBSERVED_INTERSECTION_ONLY_NO_CAUSAL_INFERENCE",
+      "stateA": "MOVEMENT_CONTEXT:NO_PUBLISHED_MOVEMENT_CONTEXT",
+      "stateB": "GEOGRAPHY:AGGREGATE_ONLY",
+      "supportRate": 0.021888680425265792
+    },
+    {
+      "count": 1,
+      "eligibleDenominator": 7995,
+      "interpretation": "OBSERVED_INTERSECTION_ONLY_NO_CAUSAL_INFERENCE",
+      "stateA": "MOVEMENT_CONTEXT:NO_PUBLISHED_MOVEMENT_CONTEXT",
+      "stateB": "GEOGRAPHY:MULTI_REGION",
+      "supportRate": 0.00012507817385866166
+    },
+    {
+      "count": 417,
+      "eligibleDenominator": 7995,
+      "interpretation": "OBSERVED_INTERSECTION_ONLY_NO_CAUSAL_INFERENCE",
+      "stateA": "MOVEMENT_CONTEXT:NO_PUBLISHED_MOVEMENT_CONTEXT",
+      "stateB": "GEOGRAPHY:QUALIFIED",
+      "supportRate": 0.052157598499061916
+    },
+    {
+      "count": 1,
+      "eligibleDenominator": 7995,
+      "interpretation": "OBSERVED_INTERSECTION_ONLY_NO_CAUSAL_INFERENCE",
+      "stateA": "MOVEMENT_CONTEXT:NO_PUBLISHED_MOVEMENT_CONTEXT",
+      "stateB": "GEOGRAPHY:UNMAPPED",
+      "supportRate": 0.00012507817385866166
+    },
+    {
+      "count": 301,
+      "eligibleDenominator": 7995,
+      "interpretation": "OBSERVED_INTERSECTION_ONLY_NO_CAUSAL_INFERENCE",
+      "stateA": "MOVEMENT_CONTEXT:NO_PUBLISHED_MOVEMENT_CONTEXT",
+      "stateB": "TEMPORAL:APPROXIMATE",
+      "supportRate": 0.03764853033145716
+    },
+    {
+      "count": 33,
+      "eligibleDenominator": 7995,
+      "interpretation": "OBSERVED_INTERSECTION_ONLY_NO_CAUSAL_INFERENCE",
+      "stateA": "MOVEMENT_CONTEXT:NO_PUBLISHED_MOVEMENT_CONTEXT",
+      "stateB": "TEMPORAL:RANGE",
+      "supportRate": 0.004127579737335835
+    },
+    {
+      "count": 26,
+      "eligibleDenominator": 7995,
+      "interpretation": "OBSERVED_INTERSECTION_ONLY_NO_CAUSAL_INFERENCE",
+      "stateA": "TEMPORAL:APPROXIMATE",
+      "stateB": "CREATOR:QUALIFIED_UNKNOWN_SOURCE_VALUE",
+      "supportRate": 0.0032520325203252032
+    },
+    {
+      "count": 57,
+      "eligibleDenominator": 7995,
+      "interpretation": "OBSERVED_INTERSECTION_ONLY_NO_CAUSAL_INFERENCE",
+      "stateA": "TEMPORAL:APPROXIMATE",
+      "stateB": "CREATOR:UNKNOWN_SOURCE_VALUE",
+      "supportRate": 0.007129455909943715
+    },
+    {
+      "count": 5,
+      "eligibleDenominator": 7995,
+      "interpretation": "OBSERVED_INTERSECTION_ONLY_NO_CAUSAL_INFERENCE",
+      "stateA": "TEMPORAL:APPROXIMATE",
+      "stateB": "GEOGRAPHY:QUALIFIED",
+      "supportRate": 0.0006253908692933083
+    },
+    {
+      "count": 1,
+      "eligibleDenominator": 7995,
+      "interpretation": "OBSERVED_INTERSECTION_ONLY_NO_CAUSAL_INFERENCE",
+      "stateA": "TEMPORAL:RANGE",
+      "stateB": "CREATOR:QUALIFIED_UNKNOWN_SOURCE_VALUE",
+      "supportRate": 0.00012507817385866166
+    },
+    {
+      "count": 5,
+      "eligibleDenominator": 7995,
+      "interpretation": "OBSERVED_INTERSECTION_ONLY_NO_CAUSAL_INFERENCE",
+      "stateA": "TEMPORAL:RANGE",
+      "stateB": "CREATOR:UNKNOWN_SOURCE_VALUE",
+      "supportRate": 0.0006253908692933083
+    },
+    {
+      "count": 1,
+      "eligibleDenominator": 7995,
+      "interpretation": "OBSERVED_INTERSECTION_ONLY_NO_CAUSAL_INFERENCE",
+      "stateA": "TEMPORAL:RANGE",
+      "stateB": "GEOGRAPHY:MULTI_REGION",
+      "supportRate": 0.00012507817385866166
+    }
+  ],
+  "deferredFields": [
+    {
+      "field": "rights_delivery_state",
+      "governanceState": "NOT_GOVERNED",
+      "reason": "No governed public Exploration projection exists for per-object rights/delivery state.",
+      "status": "DEFER"
+    },
+    {
+      "field": "image_state",
+      "governanceState": "NOT_GOVERNED",
+      "reason": "No governed public Exploration projection exists for per-object image state.",
+      "status": "DEFER"
+    }
+  ],
+  "derivationVersion": "trace-exploration-missingness-v1",
+  "fieldMatrix": [
+    {
+      "eligibleDenominator": 7995,
+      "field": "medium",
+      "governanceState": "LEVEL_A_GOVERNED_DIRECT_FEATURE",
+      "stateCounts": {
+        "OBSERVED": 7995
+      }
+    },
+    {
+      "eligibleDenominator": 7995,
+      "field": "theme",
+      "governanceState": "LEVEL_A_GOVERNED_DIRECT_FEATURE",
+      "stateCounts": {
+        "OBSERVED": 7995
+      }
+    },
+    {
+      "eligibleDenominator": 7995,
+      "field": "movement_context",
+      "governanceState": "LEVEL_A_GOVERNED_DIRECT_FEATURE",
+      "stateCounts": {
+        "NO_PUBLISHED_MOVEMENT_CONTEXT": 7885,
+        "OBSERVED": 110
+      }
+    },
+    {
+      "eligibleDenominator": 7995,
+      "field": "temporal_precision",
+      "governanceState": "LEVEL_A_GOVERNED_DIRECT_FEATURE",
+      "stateCounts": {
+        "approximate": 305,
+        "day": 78,
+        "month": 27,
+        "range": 33,
+        "year": 7552
+      },
+      "uncertaintyCounts": {
+        "APPROXIMATE": 305,
+        "RANGE": 33,
+        "UNKNOWN_SOURCE_VALUE": 0
+      }
+    },
+    {
+      "eligibleDenominator": 7995,
+      "field": "geography_mapping_state",
+      "governanceState": "LEVEL_A_GOVERNED_DIRECT_FEATURE",
+      "qualifierCounts": {
+        "MULTI_REGION": 1,
+        "QUALIFIED": 467
+      },
+      "stateCounts": {
+        "aggregate_only": 194,
+        "mapped": 7800,
+        "unmapped": 1
+      }
+    },
+    {
+      "eligibleDenominator": 7995,
+      "field": "creator",
+      "governanceState": "PUBLIC_ROOT_METADATA_ANALYSIS_ONLY",
+      "nullMissingCount": 0,
+      "stateCounts": {
+        "OBSERVED": 5806,
+        "QUALIFIED_UNKNOWN_SOURCE_VALUE": 162,
+        "UNKNOWN_SOURCE_VALUE": 2027
+      }
+    },
+    {
+      "eligibleDenominator": 7995,
+      "field": "source",
+      "governanceState": "PUBLIC_ROOT_METADATA_ANALYSIS_ONLY",
+      "nullMissingCount": 0,
+      "stateCounts": {
+        "OBSERVED": 7995
+      }
+    },
+    {
+      "eligibleDenominator": 7995,
+      "field": "object_type",
+      "governanceState": "PUBLIC_ROOT_METADATA_ANALYSIS_ONLY",
+      "nullMissingCount": 0,
+      "stateCounts": {
+        "OBSERVED": 7995
+      }
+    },
+    {
+      "diagnosticAbsenceCount": 15,
+      "diagnosticPresenceCount": 7980,
+      "diagnosticProvidedCount": 7995,
+      "eligibleDenominator": 7995,
+      "field": "source_collection",
+      "governanceState": "NOT_GOVERNED",
+      "interpretation": "Internal source diagnostic only; absence is not public missingness.",
+      "missingCount": 0
+    }
+  ],
+  "hashes": {
+    "cooccurrencesSha256": "9c237e41005265780be1a285952fe49835b2b88d30d313c5d1b39558c11e96bd",
+    "deterministicPayloadSha256": "0ad7438e700abb9bb2f395e307251b4a2032a37a45f00698386fd2fc168d2178",
+    "fieldMatrixSha256": "725d58b7e52ef36d0a945bf45efdbeca0a444553565945993e729b6019e07041",
+    "objectVectorsSha256": "da439396aa1782ee616929ca70d451d822fe748dac5e8f622e342286ed644603"
+  },
+  "invariants": {
+    "creatorNullMissingCount": 0,
+    "genericMovementMissingCount": 0,
+    "heldObjectsIncluded": 0,
+    "historicalRelation": false,
+    "internalUuidExposureCount": 0,
+    "movementAbsenceClass": "NO_PUBLISHED_MOVEMENT_CONTEXT",
+    "semanticRelation": false,
+    "singleUncertaintyScore": false
+  },
+  "metrics": {
+    "activeStateEventCount": 11075,
+    "cooccurrenceCellCount": 19,
+    "maxActiveStatesPerObject": 4,
+    "normalizedRecordCount": 7995,
+    "objectVectorCanonicalBytes": 4102662,
+    "objectVectorCount": 7995
+  },
+  "orthogonalFlags": [
+    {
+      "flag": "MULTI_REGION",
+      "meaning": "More than one governed geography assignment; not a missingness class."
+    }
+  ],
+  "population": {
+    "heldObjectCount": 0,
+    "objectVectorCount": 7995,
+    "publicObjectCount": 7995
+  },
+  "schemaVersion": "trace-exploration-missingness-analysis/v1",
+  "stateCounts": {
+    "CREATOR:QUALIFIED_UNKNOWN_SOURCE_VALUE": 162,
+    "CREATOR:UNKNOWN_SOURCE_VALUE": 2027,
+    "GEOGRAPHY:AGGREGATE_ONLY": 194,
+    "GEOGRAPHY:MULTI_REGION": 1,
+    "GEOGRAPHY:QUALIFIED": 467,
+    "GEOGRAPHY:UNMAPPED": 1,
+    "MOVEMENT_CONTEXT:NO_PUBLISHED_MOVEMENT_CONTEXT": 7885,
+    "TEMPORAL:APPROXIMATE": 305,
+    "TEMPORAL:RANGE": 33
+  },
+  "taxonomy": [
+    {
+      "applicability": "object field",
+      "class": "OBSERVED",
+      "isGenericMissing": false,
+      "meaning": "A governed or explicitly classified value is present."
+    },
+    {
+      "applicability": "creator attribution",
+      "class": "UNKNOWN_SOURCE_VALUE",
+      "isGenericMissing": false,
+      "meaning": "The public source value explicitly states unknown."
+    },
+    {
+      "applicability": "creator attribution",
+      "class": "QUALIFIED_UNKNOWN_SOURCE_VALUE",
+      "isGenericMissing": false,
+      "meaning": "The public source states unknown with a bounded role qualifier."
+    },
+    {
+      "applicability": "movement_context",
+      "class": "NO_PUBLISHED_MOVEMENT_CONTEXT",
+      "isGenericMissing": false,
+      "meaning": "No governed movement-context representation is published for the object."
+    },
+    {
+      "applicability": "temporal precision",
+      "class": "APPROXIMATE",
+      "isGenericMissing": false,
+      "meaning": "The governed temporal observation retains approximate precision."
+    },
+    {
+      "applicability": "temporal precision",
+      "class": "RANGE",
+      "isGenericMissing": false,
+      "meaning": "The governed temporal observation is an inclusive range."
+    },
+    {
+      "applicability": "geography mapping state",
+      "class": "AGGREGATE_ONLY",
+      "isGenericMissing": false,
+      "meaning": "The governed geography remains countable without a map point."
+    },
+    {
+      "applicability": "geography mapping state",
+      "class": "UNMAPPED",
+      "isGenericMissing": false,
+      "meaning": "The governed geography has no selected geometry mapping."
+    },
+    {
+      "applicability": "geography governance",
+      "class": "QUALIFIED",
+      "isGenericMissing": false,
+      "meaning": "A governed value carries an explicit qualification."
+    },
+    {
+      "applicability": "field-level diagnostics only",
+      "class": "NOT_GOVERNED",
+      "isGenericMissing": false,
+      "meaning": "A source diagnostic exists but is not a governed public direct feature."
+    }
+  ]
+}

@@ -1,0 +1,1184 @@
+{
+  "classificationCounts": {
+    "CANDIDATE": 4,
+    "EMPTY": 4,
+    "INTERNAL_ONLY": 15,
+    "LEGACY_ONLY": 15,
+    "POPULATED": 16,
+    "PUBLIC_GOVERNED": 4,
+    "UNSAFE": 14
+  },
+  "derivationVersion": "trace-exploration-round1-aggregate-v1",
+  "duplicateRepresentationPolicy": "DUPLICATE_VIEWS_ARE_NON_ADDITIVE",
+  "invariants": {
+    "duplicateRepresentationsAddedToCounts": 0,
+    "historicalRelationsCreated": 0,
+    "rawIdentifiersEmitted": 0,
+    "semanticRelationsCreated": 0
+  },
+  "populationStateCounts": {
+    "EMPTY": 4,
+    "POPULATED": 16
+  },
+  "rowCount": 20,
+  "rows": [
+    {
+      "classifications": [
+        "EMPTY",
+        "PUBLIC_GOVERNED"
+      ],
+      "containerCount": 0,
+      "containerSize": {
+        "rationale": "Structure is empty in the current release.",
+        "status": "NOT_APPLICABLE"
+      },
+      "countSource": "Round 1 semantic boundary receipt",
+      "distributionSource": "current empty-release receipt",
+      "duplicateRepresentationCount": 0,
+      "duplicateRepresentationsAdditive": false,
+      "heldMembershipsPerObject": {
+        "rationale": "Structure is empty in the current release.",
+        "status": "NOT_APPLICABLE"
+      },
+      "heldObjectCoverage": 0,
+      "historicalRelation": false,
+      "membershipCount": 0,
+      "note": "",
+      "populationState": "EMPTY",
+      "publicMembershipsPerObject": {
+        "rationale": "Structure is empty in the current release.",
+        "status": "NOT_APPLICABLE"
+      },
+      "publicObjectCoverage": 0,
+      "semanticRelation": false,
+      "structureId": "accepted_semantic_relations",
+      "structureName": "Accepted semantic relations"
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "containerCount": 15453,
+      "containerSize": {
+        "distribution": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "n": 15453,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zeroCount": 0
+        },
+        "population": "all containers",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "countSource": "canonical candidate aggregate receipt",
+      "distributionSource": "streamed candidate appendix surface reference",
+      "duplicateRepresentationCount": 0,
+      "duplicateRepresentationsAdditive": false,
+      "heldMembershipsPerObject": {
+        "distribution": {
+          "max": 1,
+          "mean": 0.940716,
+          "min": 0,
+          "multipleCount": 0,
+          "n": 7928,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zeroCount": 470
+        },
+        "population": "authoritative held objects; aggregate receipt only",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "heldObjectCoverage": 7458,
+      "historicalRelation": false,
+      "membershipCount": 15453,
+      "note": "",
+      "populationState": "POPULATED",
+      "publicMembershipsPerObject": {
+        "distribution": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "multipleCount": 0,
+          "n": 7995,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zeroCount": 0
+        },
+        "population": "authoritative public objects",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "publicObjectCoverage": 7995,
+      "semanticRelation": false,
+      "structureId": "appendices",
+      "structureName": "Appendices"
+    },
+    {
+      "classifications": [
+        "EMPTY",
+        "LEGACY_ONLY",
+        "INTERNAL_ONLY"
+      ],
+      "containerCount": 0,
+      "containerSize": {
+        "rationale": "Structure is empty in the current release.",
+        "status": "NOT_APPLICABLE"
+      },
+      "countSource": "canonical candidate aggregate receipt",
+      "distributionSource": "current empty-release receipt",
+      "duplicateRepresentationCount": 0,
+      "duplicateRepresentationsAdditive": false,
+      "heldMembershipsPerObject": {
+        "rationale": "Structure is empty in the current release.",
+        "status": "NOT_APPLICABLE"
+      },
+      "heldObjectCoverage": 0,
+      "historicalRelation": false,
+      "membershipCount": 0,
+      "note": "",
+      "populationState": "EMPTY",
+      "publicMembershipsPerObject": {
+        "rationale": "Structure is empty in the current release.",
+        "status": "NOT_APPLICABLE"
+      },
+      "publicObjectCoverage": 0,
+      "semanticRelation": false,
+      "structureId": "bookmarks",
+      "structureName": "Bookmarks"
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "containerCount": 15,
+      "containerSize": {
+        "distribution": {
+          "max": 64,
+          "mean": 8.8,
+          "min": 3,
+          "n": 15,
+          "p50": 3,
+          "p90": 9.6,
+          "p95": 26.2,
+          "p99": 56.44,
+          "zeroCount": 0
+        },
+        "population": "all containers",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "countSource": "canonical candidate aggregate receipt",
+      "distributionSource": "streamed candidate compound-parent child count",
+      "duplicateRepresentationCount": 0,
+      "duplicateRepresentationsAdditive": false,
+      "heldMembershipsPerObject": {
+        "distribution": {
+          "max": 0,
+          "mean": 0,
+          "min": 0,
+          "multipleCount": 0,
+          "n": 7928,
+          "p50": 0,
+          "p90": 0,
+          "p95": 0,
+          "p99": 0,
+          "zeroCount": 7928
+        },
+        "population": "authoritative held objects; aggregate receipt only",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "heldObjectCoverage": 0,
+      "historicalRelation": false,
+      "membershipCount": 132,
+      "note": "",
+      "populationState": "POPULATED",
+      "publicMembershipsPerObject": {
+        "distribution": {
+          "max": 64,
+          "mean": 0.01651,
+          "min": 0,
+          "multipleCount": 15,
+          "n": 7995,
+          "p50": 0,
+          "p90": 0,
+          "p95": 0,
+          "p99": 0,
+          "zeroCount": 7980
+        },
+        "population": "authoritative public objects",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "publicObjectCoverage": 15,
+      "semanticRelation": false,
+      "structureId": "compound_child_references",
+      "structureName": "Compound-child references"
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "CANDIDATE",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "containerCount": 185,
+      "containerSize": {
+        "distribution": {
+          "max": 10010,
+          "mean": 259.362162,
+          "min": 1,
+          "n": 185,
+          "p50": 29,
+          "p90": 322.6,
+          "p95": 570.0,
+          "p99": 5867.56,
+          "zeroCount": 0
+        },
+        "population": "all observed curated containers",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "countSource": "immutable SQLite plus candidate duplicate-view receipt",
+      "distributionSource": "immutable SQLite folder census reconciled to candidate",
+      "duplicateRepresentationCount": 4,
+      "duplicateRepresentationsAdditive": false,
+      "heldMembershipsPerObject": {
+        "distribution": {
+          "max": 4,
+          "mean": 3.012109,
+          "min": 3,
+          "multipleCount": 7928,
+          "n": 7928,
+          "p50": 3,
+          "p90": 3,
+          "p95": 3,
+          "p99": 4,
+          "zeroCount": 0
+        },
+        "population": "authoritative held objects; aggregate receipt only",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "heldObjectCoverage": 7928,
+      "historicalRelation": false,
+      "membershipCount": 47982,
+      "note": "Duplicate candidate representations reconcile to one non-additive membership set.",
+      "populationState": "POPULATED",
+      "publicMembershipsPerObject": {
+        "distribution": {
+          "max": 5,
+          "mean": 3.014634,
+          "min": 3,
+          "multipleCount": 7995,
+          "n": 7995,
+          "p50": 3,
+          "p90": 3,
+          "p95": 3,
+          "p99": 4,
+          "zeroCount": 0
+        },
+        "population": "authoritative public objects",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "publicObjectCoverage": 7995,
+      "semanticRelation": false,
+      "structureId": "folder_membership",
+      "structureName": "Folder membership"
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "CANDIDATE",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "containerCount": 185,
+      "containerSize": {
+        "distribution": {
+          "max": 148,
+          "mean": 10.897297,
+          "min": 0,
+          "n": 185,
+          "p50": 5,
+          "p90": 13,
+          "p95": 39,
+          "p99": 135.08,
+          "zeroCount": 1
+        },
+        "population": "candidate folders as graph vertices",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "countSource": "canonical candidate aggregate receipt",
+      "directedReferenceCount": 2016,
+      "distributionSource": "streamed candidate folder-related adjacency",
+      "duplicateRepresentationCount": 0,
+      "duplicateRepresentationsAdditive": false,
+      "heldMembershipsPerObject": {
+        "rationale": "Folder-related edges connect curated containers, not objects.",
+        "status": "NOT_APPLICABLE"
+      },
+      "heldObjectCoverage": 0,
+      "historicalRelation": false,
+      "membershipCount": 0,
+      "note": "",
+      "populationState": "POPULATED",
+      "publicMembershipsPerObject": {
+        "rationale": "Folder-related edges connect curated containers, not objects.",
+        "status": "NOT_APPLICABLE"
+      },
+      "publicObjectCoverage": 0,
+      "semanticRelation": false,
+      "structureId": "folder_related_graph",
+      "structureName": "Folder-related graph",
+      "undirectedEdgeCount": 1008
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "PUBLIC_GOVERNED"
+      ],
+      "containerCount": 25,
+      "containerSize": {
+        "distribution": {
+          "max": 7105,
+          "mean": 644.24,
+          "min": 1,
+          "n": 25,
+          "p50": 31,
+          "p90": 1992.2,
+          "p95": 3733.8,
+          "p99": 6342.52,
+          "zeroCount": 0
+        },
+        "population": "governed public dimension values",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "countSource": "governed Context public projection",
+      "distributionSource": "governed public projection frequency receipt",
+      "duplicateRepresentationCount": 0,
+      "duplicateRepresentationsAdditive": false,
+      "heldMembershipsPerObject": {
+        "rationale": "Governed Context and Spacetime releases are public-only projections.",
+        "status": "NOT_APPLICABLE"
+      },
+      "heldObjectCoverage": 0,
+      "historicalRelation": false,
+      "membershipCount": 16106,
+      "note": "",
+      "populationState": "POPULATED",
+      "publicMembershipsPerObject": {
+        "distribution": {
+          "max": 4,
+          "mean": 2.014509,
+          "min": 2,
+          "multipleCount": 7995,
+          "n": 7995,
+          "p50": 2,
+          "p90": 2,
+          "p95": 2,
+          "p99": 3,
+          "zeroCount": 0
+        },
+        "population": "authoritative public objects",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "publicObjectCoverage": 7995,
+      "semanticRelation": false,
+      "structureId": "governed_context_representations",
+      "structureName": "Governed Context representations"
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "PUBLIC_GOVERNED"
+      ],
+      "containerCount": 93,
+      "containerSize": {
+        "distribution": {
+          "max": 3214,
+          "mean": 85.978495,
+          "min": 1,
+          "n": 93,
+          "p50": 8,
+          "p90": 125.6,
+          "p95": 226.8,
+          "p99": 1338.12,
+          "zeroCount": 0
+        },
+        "population": "governed public dimension values",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "countSource": "governed Spacetime public projection",
+      "distributionSource": "governed public projection frequency receipt",
+      "duplicateRepresentationCount": 0,
+      "duplicateRepresentationsAdditive": false,
+      "heldMembershipsPerObject": {
+        "rationale": "Governed Context and Spacetime releases are public-only projections.",
+        "status": "NOT_APPLICABLE"
+      },
+      "heldObjectCoverage": 0,
+      "historicalRelation": false,
+      "membershipCount": 7996,
+      "note": "",
+      "populationState": "POPULATED",
+      "publicMembershipsPerObject": {
+        "distribution": {
+          "max": 2,
+          "mean": 1.000125,
+          "min": 1,
+          "multipleCount": 1,
+          "n": 7995,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zeroCount": 0
+        },
+        "population": "authoritative public objects",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "publicObjectCoverage": 7995,
+      "semanticRelation": false,
+      "structureId": "governed_spacetime_geography",
+      "structureName": "Governed Spacetime geography assignments"
+    },
+    {
+      "classifications": [
+        "EMPTY",
+        "PUBLIC_GOVERNED"
+      ],
+      "containerCount": 0,
+      "containerSize": {
+        "rationale": "Structure is empty in the current release.",
+        "status": "NOT_APPLICABLE"
+      },
+      "countSource": "known fail-closed public projection receipt",
+      "distributionSource": "current empty-release receipt",
+      "duplicateRepresentationCount": 0,
+      "duplicateRepresentationsAdditive": false,
+      "heldMembershipsPerObject": {
+        "rationale": "Structure is empty in the current release.",
+        "status": "NOT_APPLICABLE"
+      },
+      "heldObjectCoverage": 0,
+      "historicalRelation": false,
+      "membershipCount": 0,
+      "note": "",
+      "populationState": "EMPTY",
+      "publicMembershipsPerObject": {
+        "rationale": "Structure is empty in the current release.",
+        "status": "NOT_APPLICABLE"
+      },
+      "publicObjectCoverage": 0,
+      "semanticRelation": false,
+      "structureId": "governed_trace_projection",
+      "structureName": "Governed TRACE projection"
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "containerCount": 85,
+      "containerSize": {
+        "distribution": {
+          "max": 4937,
+          "mean": 942.270588,
+          "min": 2,
+          "n": 85,
+          "p50": 96,
+          "p90": 2920,
+          "p95": 3587,
+          "p99": 4937,
+          "zeroCount": 0
+        },
+        "population": "all containers",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "countSource": "canonical candidate aggregate receipt",
+      "distributionSource": "streamed candidate trace-branch membership",
+      "duplicateRepresentationCount": 0,
+      "duplicateRepresentationsAdditive": false,
+      "heldMembershipsPerObject": {
+        "distribution": {
+          "max": 8,
+          "mean": 4.930373,
+          "min": 3,
+          "multipleCount": 7928,
+          "n": 7928,
+          "p50": 4,
+          "p90": 8,
+          "p95": 8,
+          "p99": 8,
+          "zeroCount": 0
+        },
+        "population": "authoritative held objects; aggregate receipt only",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "heldObjectCoverage": 7928,
+      "historicalRelation": false,
+      "membershipCount": 80093,
+      "note": "",
+      "populationState": "POPULATED",
+      "publicMembershipsPerObject": {
+        "distribution": {
+          "max": 8,
+          "mean": 5.128831,
+          "min": 1,
+          "multipleCount": 7993,
+          "n": 7995,
+          "p50": 5,
+          "p90": 6,
+          "p95": 6,
+          "p99": 7,
+          "zeroCount": 0
+        },
+        "population": "authoritative public objects",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "publicObjectCoverage": 7995,
+      "semanticRelation": false,
+      "structureId": "legacy_trace_branches",
+      "structureName": "Legacy trace branches"
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "containerCount": 30,
+      "containerSize": {
+        "distribution": {
+          "max": 4937,
+          "mean": 530.766667,
+          "min": 1,
+          "n": 30,
+          "p50": 50.5,
+          "p90": 2389.9,
+          "p95": 3286.85,
+          "p99": 4545.5,
+          "zeroCount": 0
+        },
+        "population": "all observed containers",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "countSource": "canonical candidate aggregate receipt",
+      "distributionSource": "immutable SQLite trace-tree census",
+      "duplicateRepresentationCount": 0,
+      "duplicateRepresentationsAdditive": false,
+      "heldMembershipsPerObject": {
+        "distribution": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "multipleCount": 0,
+          "n": 7928,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zeroCount": 0
+        },
+        "population": "authoritative held objects; aggregate receipt only",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "heldObjectCoverage": 7928,
+      "historicalRelation": false,
+      "membershipCount": 15923,
+      "note": "",
+      "populationState": "POPULATED",
+      "publicMembershipsPerObject": {
+        "distribution": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "multipleCount": 0,
+          "n": 7995,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zeroCount": 0
+        },
+        "population": "authoritative public objects",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "publicObjectCoverage": 7995,
+      "semanticRelation": false,
+      "structureId": "legacy_trace_trees",
+      "structureName": "Legacy trace trees"
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "containerCount": 126822,
+      "containerSize": {
+        "distribution": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "n": 126822,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zeroCount": 0
+        },
+        "population": "all observed containers",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "countSource": "immutable SQLite aggregate census",
+      "distributionSource": "immutable SQLite object-to-trace-edge census",
+      "duplicateRepresentationCount": 0,
+      "duplicateRepresentationsAdditive": false,
+      "heldMembershipsPerObject": {
+        "distribution": {
+          "max": 8,
+          "mean": 5.356584,
+          "min": 3,
+          "multipleCount": 7928,
+          "n": 7928,
+          "p50": 4,
+          "p90": 8,
+          "p95": 8,
+          "p99": 8,
+          "zeroCount": 0
+        },
+        "population": "authoritative held objects; aggregate receipt only",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "heldObjectCoverage": 7928,
+      "historicalRelation": false,
+      "membershipCount": 126822,
+      "note": "",
+      "populationState": "POPULATED",
+      "publicMembershipsPerObject": {
+        "distribution": {
+          "max": 31,
+          "mean": 10.550969,
+          "min": 2,
+          "multipleCount": 7995,
+          "n": 7995,
+          "p50": 11,
+          "p90": 15,
+          "p95": 16,
+          "p99": 19,
+          "zeroCount": 0
+        },
+        "population": "authoritative public objects",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "publicObjectCoverage": 7995,
+      "semanticRelation": false,
+      "structureId": "object_trace_edge_membership",
+      "structureName": "Object-to-trace-edge membership"
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "containerCount": 354,
+      "containerSize": {
+        "distribution": {
+          "max": 10010,
+          "mean": 135.542373,
+          "min": 0,
+          "n": 354,
+          "p50": 1,
+          "p90": 142,
+          "p95": 351.0,
+          "p99": 3408.34,
+          "zeroCount": 169
+        },
+        "population": "all containers",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "countSource": "canonical candidate aggregate receipt",
+      "distributionSource": "streamed candidate reading-note folder membership",
+      "duplicateRepresentationCount": 0,
+      "duplicateRepresentationsAdditive": false,
+      "heldMembershipsPerObject": {
+        "distribution": {
+          "max": 4,
+          "mean": 3.012109,
+          "min": 3,
+          "multipleCount": 7928,
+          "n": 7928,
+          "p50": 3,
+          "p90": 3,
+          "p95": 3,
+          "p99": 4,
+          "zeroCount": 0
+        },
+        "population": "authoritative held objects; aggregate receipt only",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "heldObjectCoverage": 7928,
+      "historicalRelation": false,
+      "membershipCount": 47982,
+      "note": "",
+      "populationState": "POPULATED",
+      "publicMembershipsPerObject": {
+        "distribution": {
+          "max": 5,
+          "mean": 3.014634,
+          "min": 3,
+          "multipleCount": 7995,
+          "n": 7995,
+          "p50": 3,
+          "p90": 3,
+          "p95": 3,
+          "p99": 4,
+          "zeroCount": 0
+        },
+        "population": "authoritative public objects",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "publicObjectCoverage": 7995,
+      "semanticRelation": false,
+      "structureId": "reading_notes",
+      "structureName": "Reading notes"
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "containerCount": 185,
+      "containerSize": {
+        "distribution": {
+          "max": 10010,
+          "mean": 259.362162,
+          "min": 1,
+          "n": 185,
+          "p50": 29,
+          "p90": 322.6,
+          "p95": 570.0,
+          "p99": 5867.56,
+          "zeroCount": 0
+        },
+        "population": "all containers",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "countSource": "canonical candidate aggregate receipt",
+      "distributionSource": "streamed candidate registration-card membership",
+      "duplicateRepresentationCount": 1,
+      "duplicateRepresentationsAdditive": false,
+      "heldMembershipsPerObject": {
+        "distribution": {
+          "max": 4,
+          "mean": 3.012109,
+          "min": 3,
+          "multipleCount": 7928,
+          "n": 7928,
+          "p50": 3,
+          "p90": 3,
+          "p95": 3,
+          "p99": 4,
+          "zeroCount": 0
+        },
+        "population": "authoritative held objects; aggregate receipt only",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "heldObjectCoverage": 7928,
+      "historicalRelation": false,
+      "membershipCount": 47982,
+      "note": "Member pages duplicate the folder membership view.",
+      "populationState": "POPULATED",
+      "publicMembershipsPerObject": {
+        "distribution": {
+          "max": 5,
+          "mean": 3.014634,
+          "min": 3,
+          "multipleCount": 7995,
+          "n": 7995,
+          "p50": 3,
+          "p90": 3,
+          "p95": 3,
+          "p99": 4,
+          "zeroCount": 0
+        },
+        "population": "authoritative public objects",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "publicObjectCoverage": 7995,
+      "semanticRelation": false,
+      "structureId": "registration_cards",
+      "structureName": "Registration cards"
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "containerCount": 15923,
+      "containerSize": {
+        "distribution": {
+          "max": 67,
+          "mean": 2.949256,
+          "min": 1,
+          "n": 15923,
+          "p50": 3,
+          "p90": 3,
+          "p95": 3,
+          "p99": 3,
+          "zeroCount": 0
+        },
+        "population": "all containers",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "countSource": "canonical candidate aggregate receipt",
+      "distributionSource": "streamed candidate dossier page sequence",
+      "duplicateRepresentationCount": 0,
+      "duplicateRepresentationsAdditive": false,
+      "heldMembershipsPerObject": {
+        "distribution": {
+          "max": 3,
+          "mean": 2.881433,
+          "min": 1,
+          "multipleCount": 7458,
+          "n": 7928,
+          "p50": 3,
+          "p90": 3,
+          "p95": 3,
+          "p99": 3,
+          "zeroCount": 0
+        },
+        "population": "authoritative held objects; aggregate receipt only",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "heldObjectCoverage": 7928,
+      "historicalRelation": false,
+      "membershipCount": 46961,
+      "note": "",
+      "populationState": "POPULATED",
+      "publicMembershipsPerObject": {
+        "distribution": {
+          "max": 67,
+          "mean": 3.01651,
+          "min": 3,
+          "multipleCount": 7995,
+          "n": 7995,
+          "p50": 3,
+          "p90": 3,
+          "p95": 3,
+          "p99": 3,
+          "zeroCount": 0
+        },
+        "population": "authoritative public objects",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "publicObjectCoverage": 7995,
+      "semanticRelation": false,
+      "structureId": "research_dossiers",
+      "structureName": "Research dossiers"
+    },
+    {
+      "classifications": [
+        "EMPTY",
+        "CANDIDATE"
+      ],
+      "containerCount": 0,
+      "containerSize": {
+        "rationale": "Structure is empty in the current release.",
+        "status": "NOT_APPLICABLE"
+      },
+      "countSource": "current sealed release inventory",
+      "distributionSource": "current empty-release receipt",
+      "duplicateRepresentationCount": 0,
+      "duplicateRepresentationsAdditive": false,
+      "heldMembershipsPerObject": {
+        "rationale": "Structure is empty in the current release.",
+        "status": "NOT_APPLICABLE"
+      },
+      "heldObjectCoverage": 0,
+      "historicalRelation": false,
+      "membershipCount": 0,
+      "note": "",
+      "populationState": "EMPTY",
+      "publicMembershipsPerObject": {
+        "rationale": "Structure is empty in the current release.",
+        "status": "NOT_APPLICABLE"
+      },
+      "publicObjectCoverage": 0,
+      "semanticRelation": false,
+      "structureId": "sealed_public_folder_membership_release",
+      "structureName": "Current sealed public folder-membership release"
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "CANDIDATE",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "containerCount": 3750,
+      "containerSize": {
+        "distribution": {
+          "max": 3531,
+          "mean": 4.242133,
+          "min": 1,
+          "n": 3750,
+          "p50": 1,
+          "p90": 1,
+          "p95": 2,
+          "p99": 27.51,
+          "zeroCount": 0
+        },
+        "population": "all observed containers",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "countSource": "immutable SQLite aggregate census",
+      "distributionSource": "immutable SQLite source-collection census",
+      "duplicateRepresentationCount": 0,
+      "duplicateRepresentationsAdditive": false,
+      "heldMembershipsPerObject": {
+        "distribution": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "multipleCount": 0,
+          "n": 7928,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zeroCount": 0
+        },
+        "population": "authoritative held objects; aggregate receipt only",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "heldObjectCoverage": 7928,
+      "historicalRelation": false,
+      "membershipCount": 15908,
+      "note": "",
+      "populationState": "POPULATED",
+      "publicMembershipsPerObject": {
+        "distribution": {
+          "max": 1,
+          "mean": 0.998124,
+          "min": 0,
+          "multipleCount": 0,
+          "n": 7995,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zeroCount": 15
+        },
+        "population": "authoritative public objects",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "publicObjectCoverage": 7980,
+      "semanticRelation": false,
+      "structureId": "source_collection_membership",
+      "structureName": "Source-collection membership"
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "containerCount": 12635,
+      "containerSize": {
+        "distribution": {
+          "max": 1963,
+          "mean": 1.26023,
+          "min": 1,
+          "n": 12635,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zeroCount": 0
+        },
+        "population": "all observed containers",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "countSource": "immutable SQLite aggregate census",
+      "distributionSource": "immutable SQLite source-document census",
+      "duplicateRepresentationCount": 0,
+      "duplicateRepresentationsAdditive": false,
+      "heldMembershipsPerObject": {
+        "distribution": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "multipleCount": 0,
+          "n": 7928,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zeroCount": 0
+        },
+        "population": "authoritative held objects; aggregate receipt only",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "heldObjectCoverage": 7928,
+      "historicalRelation": false,
+      "membershipCount": 15923,
+      "note": "",
+      "populationState": "POPULATED",
+      "publicMembershipsPerObject": {
+        "distribution": {
+          "max": 1,
+          "mean": 1,
+          "min": 1,
+          "multipleCount": 0,
+          "n": 7995,
+          "p50": 1,
+          "p90": 1,
+          "p95": 1,
+          "p99": 1,
+          "zeroCount": 0
+        },
+        "population": "authoritative public objects",
+        "quantileMethod": "R7_LINEAR",
+        "status": "APPLICABLE"
+      },
+      "publicObjectCoverage": 7995,
+      "semanticRelation": false,
+      "structureId": "source_document_assignment",
+      "structureName": "Source-document assignment"
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "containerCount": 0,
+      "containerSize": {
+        "rationale": "Trace edges are legacy structural rows, not object-membership containers.",
+        "status": "NOT_APPLICABLE"
+      },
+      "countSource": "immutable SQLite aggregate census",
+      "distributionSource": "immutable SQLite scalar table census",
+      "duplicateRepresentationCount": 0,
+      "duplicateRepresentationsAdditive": false,
+      "heldMembershipsPerObject": {
+        "rationale": "Trace edges are legacy structural rows, not object-membership containers.",
+        "status": "NOT_APPLICABLE"
+      },
+      "heldObjectCoverage": 0,
+      "historicalRelation": false,
+      "membershipCount": 0,
+      "note": "",
+      "populationState": "POPULATED",
+      "publicMembershipsPerObject": {
+        "rationale": "Trace edges are legacy structural rows, not object-membership containers.",
+        "status": "NOT_APPLICABLE"
+      },
+      "publicObjectCoverage": 0,
+      "semanticRelation": false,
+      "structureId": "sqlite_trace_edges",
+      "structureName": "SQLite trace edges",
+      "structureRowCount": 255695
+    },
+    {
+      "classifications": [
+        "POPULATED",
+        "LEGACY_ONLY",
+        "INTERNAL_ONLY",
+        "UNSAFE"
+      ],
+      "containerCount": 0,
+      "containerSize": {
+        "rationale": "Trace nodes are legacy structural rows, not object-membership containers.",
+        "status": "NOT_APPLICABLE"
+      },
+      "countSource": "immutable SQLite aggregate census",
+      "distributionSource": "immutable SQLite scalar table census",
+      "duplicateRepresentationCount": 0,
+      "duplicateRepresentationsAdditive": false,
+      "heldMembershipsPerObject": {
+        "rationale": "Trace nodes are legacy structural rows, not object-membership containers.",
+        "status": "NOT_APPLICABLE"
+      },
+      "heldObjectCoverage": 0,
+      "historicalRelation": false,
+      "membershipCount": 0,
+      "note": "",
+      "populationState": "POPULATED",
+      "publicMembershipsPerObject": {
+        "rationale": "Trace nodes are legacy structural rows, not object-membership containers.",
+        "status": "NOT_APPLICABLE"
+      },
+      "publicObjectCoverage": 0,
+      "semanticRelation": false,
+      "structureId": "sqlite_trace_nodes",
+      "structureName": "SQLite trace nodes",
+      "structureRowCount": 97889
+    }
+  ],
+  "rowsSha256": "5690118c0b3c931f2d828158d6a32a436136beb887b422192d26dea489267751",
+  "schemaVersion": "trace-exploration-source-curatorial-structure-registry/v1"
+}
