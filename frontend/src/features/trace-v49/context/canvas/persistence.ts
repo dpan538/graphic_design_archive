@@ -1,17 +1,20 @@
 import type { TraceContextDataset } from "../types";
+import { contextCanvasEntityRefsForMode, getGovernedContextMetadata } from "./model";
 import { getContextCanvasTemplate } from "./templates";
 import {
   CONTEXT_CANVAS_SCHEMA_VERSION,
   contextCanvasEntityId,
   isFiniteCanvasPosition,
   type ContextCanvasComposition,
+  type ContextCanvasDataMetadata,
+  type ContextCanvasDataMode,
   type ContextCanvasState,
   type ContextCanvasTemplateId,
   type ContextCanvasViewport,
 } from "./types";
 import { sanitizeContextCanvasViewport } from "./viewport";
 
-const TEMPLATE_CATALOG_VERSION = 1;
+const TEMPLATE_CATALOG_VERSION = 2;
 
 interface ContextCanvasPersistedPayload {
   readonly schemaVersion: typeof CONTEXT_CANVAS_SCHEMA_VERSION;
@@ -28,12 +31,22 @@ export interface RestoredContextCanvasWorkspace {
   readonly viewport: ContextCanvasViewport;
 }
 
-export function contextCanvasPersistenceKey(dataset: TraceContextDataset): string {
+export function contextCanvasPersistenceKey(
+  dataset: TraceContextDataset,
+  dataMode: ContextCanvasDataMode = "synthetic_contract",
+  metadata?: ContextCanvasDataMetadata,
+): string {
+  const governed = dataMode === "governed_context_v1"
+    ? getGovernedContextMetadata(dataMode, metadata ?? invalidMissingMetadata())
+    : null;
   return [
     "trace-context-canvas",
     `schema-${CONTEXT_CANVAS_SCHEMA_VERSION}`,
     `templates-${TEMPLATE_CATALOG_VERSION}`,
+    dataMode,
     dataset.release.manifestSha256,
+    governed?.projectionId ?? "no-context-projection",
+    governed?.projectionSha256 ?? "no-context-projection-sha",
     encodeURIComponent(dataset.selectedRecord.stableId),
   ].join(":");
 }
@@ -61,6 +74,8 @@ export function serializeContextCanvasWorkspace(state: ContextCanvasState): stri
 export function deserializeContextCanvasWorkspace(
   serialized: string,
   dataset: TraceContextDataset,
+  dataMode: ContextCanvasDataMode = "synthetic_contract",
+  metadata?: ContextCanvasDataMetadata,
 ): RestoredContextCanvasWorkspace | null {
   let value: unknown;
   try {
@@ -83,13 +98,18 @@ export function deserializeContextCanvasWorkspace(
 
   let template;
   try {
-    template = getContextCanvasTemplate(payload.templateId as ContextCanvasTemplateId);
+    template = getContextCanvasTemplate(payload.templateId as ContextCanvasTemplateId, dataMode);
   } catch {
     return null;
   }
   if (template.version !== payload.templateVersion) return null;
 
-  const allowed = new Set(dataset.items.map(contextCanvasEntityId));
+  if (!metadata && dataMode !== "synthetic_contract") return null;
+  const effectiveMetadata = metadata ?? syntheticPersistenceMetadata(dataset);
+  const allowed = new Set(
+    contextCanvasEntityRefsForMode(dataset, dataMode, effectiveMetadata)
+      .map(contextCanvasEntityId),
+  );
   const rootId = contextCanvasEntityId(dataset.selectedRecord);
   const visibleEntityIds = payload.visibleEntityIds;
   if (
@@ -121,10 +141,14 @@ export function deserializeContextCanvasWorkspace(
 export function loadContextCanvasWorkspace(
   dataset: TraceContextDataset,
   storage: Pick<Storage, "getItem">,
+  dataMode: ContextCanvasDataMode = "synthetic_contract",
+  metadata?: ContextCanvasDataMetadata,
 ): RestoredContextCanvasWorkspace | null {
   try {
-    const serialized = storage.getItem(contextCanvasPersistenceKey(dataset));
-    return serialized ? deserializeContextCanvasWorkspace(serialized, dataset) : null;
+    const serialized = storage.getItem(contextCanvasPersistenceKey(dataset, dataMode, metadata));
+    return serialized
+      ? deserializeContextCanvasWorkspace(serialized, dataset, dataMode, metadata)
+      : null;
   } catch {
     return null;
   }
@@ -134,9 +158,14 @@ export function saveContextCanvasWorkspace(
   dataset: TraceContextDataset,
   state: ContextCanvasState,
   storage: Pick<Storage, "setItem">,
+  dataMode: ContextCanvasDataMode = "synthetic_contract",
+  metadata?: ContextCanvasDataMetadata,
 ): boolean {
   try {
-    storage.setItem(contextCanvasPersistenceKey(dataset), serializeContextCanvasWorkspace(state));
+    storage.setItem(
+      contextCanvasPersistenceKey(dataset, dataMode, metadata),
+      serializeContextCanvasWorkspace(state),
+    );
     return true;
   } catch {
     return false;
@@ -146,11 +175,29 @@ export function saveContextCanvasWorkspace(
 export function clearContextCanvasWorkspace(
   dataset: TraceContextDataset,
   storage: Pick<Storage, "removeItem">,
+  dataMode: ContextCanvasDataMode = "synthetic_contract",
+  metadata?: ContextCanvasDataMetadata,
 ): boolean {
   try {
-    storage.removeItem(contextCanvasPersistenceKey(dataset));
+    storage.removeItem(contextCanvasPersistenceKey(dataset, dataMode, metadata));
     return true;
   } catch {
     return false;
   }
+}
+
+function invalidMissingMetadata(): ContextCanvasDataMetadata {
+  throw new Error("Governed Context persistence requires metadata.");
+}
+
+function syntheticPersistenceMetadata(dataset: TraceContextDataset): ContextCanvasDataMetadata {
+  return {
+    dataLabel: "synthetic contract fixture",
+    mappingVersion: "synthetic-context-contract-v1",
+    candidateState: "synthetic_contract",
+    historicalEvidence: false,
+    governedPublicRelease: false,
+    publicReleaseData: false,
+    publicObjectCohortCount: dataset.counts.denominator,
+  };
 }

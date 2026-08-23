@@ -1,22 +1,26 @@
 import type { TraceContextDataset } from "../types";
 import { autoArrangeContextCanvas } from "./layout";
+import { contextCanvasEntityRefsForMode } from "./model";
 import {
   contextCanvasEntityId,
   type ContextCanvasComposition,
+  type ContextCanvasDataMetadata,
+  type ContextCanvasDataMode,
   type ContextCanvasEntityId,
   type ContextCanvasTemplateId,
 } from "./types";
 
 export interface ContextCanvasTemplateContract {
   readonly templateId: ContextCanvasTemplateId;
-  readonly version: 1;
+  readonly version: 1 | 2;
   readonly label: string;
   readonly description: string;
   readonly entitySelectionRule:
     | "overview-with-capacity"
     | "controlled-assignment-context"
     | "curated-membership-context"
-    | "all-published-context";
+    | "all-published-context"
+    | "all-governed-representations";
   readonly initialLayoutRule: "typed-lanes-v1";
   readonly defaultZoomBehavior: "fit-content";
 }
@@ -60,10 +64,44 @@ export const CONTEXT_CANVAS_TEMPLATES: readonly ContextCanvasTemplateContract[] 
   }),
 ]);
 
+const CONTROLLED_VALIDATION_CONTEXT_CANVAS_TEMPLATES: readonly ContextCanvasTemplateContract[] = Object.freeze([
+  Object.freeze({
+    templateId: "context-overview",
+    version: 2,
+    label: "Controlled candidates",
+    description: "Selected object and its validation-only controlled-assignment candidates.",
+    entitySelectionRule: "controlled-assignment-context",
+    initialLayoutRule: "typed-lanes-v1",
+    defaultZoomBehavior: "fit-content",
+  }),
+]);
+
+export const GOVERNED_CONTEXT_CANVAS_TEMPLATES: readonly ContextCanvasTemplateContract[] = Object.freeze([
+  Object.freeze({
+    templateId: "context-overview",
+    version: 2,
+    label: "Context overview",
+    description: "Selected object and every governed controlled Context representation.",
+    entitySelectionRule: "all-governed-representations",
+    initialLayoutRule: "typed-lanes-v1",
+    defaultZoomBehavior: "fit-content",
+  }),
+]);
+
+export function getContextCanvasTemplatesForMode(
+  dataMode: ContextCanvasDataMode,
+): readonly ContextCanvasTemplateContract[] {
+  if (dataMode === "synthetic_contract") return CONTEXT_CANVAS_TEMPLATES;
+  if (dataMode === "real_v49_validation") return CONTROLLED_VALIDATION_CONTEXT_CANVAS_TEMPLATES;
+  return GOVERNED_CONTEXT_CANVAS_TEMPLATES;
+}
+
 export function getContextCanvasTemplate(
   templateId: ContextCanvasTemplateId,
+  dataMode: ContextCanvasDataMode = "synthetic_contract",
 ): ContextCanvasTemplateContract {
-  const template = CONTEXT_CANVAS_TEMPLATES.find((item) => item.templateId === templateId);
+  const template = getContextCanvasTemplatesForMode(dataMode)
+    .find((item) => item.templateId === templateId);
   if (!template) throw new Error(`Unknown Context Canvas template: ${templateId}`);
   return template;
 }
@@ -93,8 +131,23 @@ function allEntityIds(dataset: TraceContextDataset): readonly ContextCanvasEntit
 export function selectContextCanvasTemplateEntities(
   dataset: TraceContextDataset,
   templateId: ContextCanvasTemplateId,
+  dataMode: ContextCanvasDataMode = "synthetic_contract",
+  metadata?: ContextCanvasDataMetadata,
 ): readonly ContextCanvasEntityId[] {
   const rootId = contextCanvasEntityId(dataset.selectedRecord);
+  if (dataMode === "real_v49_validation") {
+    if (templateId !== "context-overview") {
+      throw new Error(`Template ${templateId} is not available in real_v49_validation mode.`);
+    }
+    return sorted([rootId, ...controlledEntityIds(dataset)]);
+  }
+  if (dataMode === "governed_context_v1") {
+    if (!metadata) throw new Error("Governed Context template initialization requires metadata.");
+    if (templateId !== "context-overview") {
+      throw new Error(`Template ${templateId} is not available in governed_context_v1 mode.`);
+    }
+    return sorted(contextCanvasEntityRefsForMode(dataset, dataMode, metadata).map(contextCanvasEntityId));
+  }
   switch (templateId) {
     case "descriptive-context":
       return sorted([rootId, ...controlledEntityIds(dataset)]);
@@ -115,13 +168,15 @@ export function selectContextCanvasTemplateEntities(
 export function initializeContextCanvasTemplate(
   dataset: TraceContextDataset,
   templateId: ContextCanvasTemplateId,
+  dataMode: ContextCanvasDataMode = "synthetic_contract",
+  metadata?: ContextCanvasDataMetadata,
 ): ContextCanvasComposition {
-  const template = getContextCanvasTemplate(templateId);
-  const visibleEntityIds = selectContextCanvasTemplateEntities(dataset, templateId);
+  const template = getContextCanvasTemplate(templateId, dataMode);
+  const visibleEntityIds = selectContextCanvasTemplateEntities(dataset, templateId, dataMode, metadata);
   return Object.freeze({
     templateId,
     templateVersion: template.version,
     visibleEntityIds,
-    positions: autoArrangeContextCanvas(dataset, visibleEntityIds),
+    positions: autoArrangeContextCanvas(dataset, visibleEntityIds, dataMode, metadata),
   });
 }

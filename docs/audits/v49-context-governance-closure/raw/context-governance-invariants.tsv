@@ -1,0 +1,23 @@
+invariant_id	status	description	evidence
+CTX-GOV-INV-001	PASS	Every visible governed Context node has a registered explanation.	visible representations checked=16106; unexplained=0
+CTX-GOV-INV-002	PASS	Every visible governed Context node has a stable governed public ID.	representations checked=16106; ID failures=0
+CTX-GOV-INV-003	PASS	No validation-only ctxv49 ID appears in governed DTOs.	validation ID exposure=0
+CTX-GOV-INV-004	PASS	No internal folder ID or UUID appears in governed DTOs.	internal identity exposure=0
+CTX-GOV-INV-005	PASS	Curated memberships are provenance, not default Canvas nodes.	membership provenance only; default nodes=0
+CTX-GOV-INV-006	PASS	Region is absent from Context V1 and registered for Spacetime handoff.	Context Region nodes=0; Spacetime handoff terms=93
+CTX-GOV-INV-007	PASS	Every Context representation is explicitly project-curated.	project-curated representations=16106
+CTX-GOV-INV-008	PASS	No Context representation becomes a semantic relation.	representation connection class=context_representation
+CTX-GOV-INV-009	PASS	Real semantic-edge count remains zero.	real semantic edges=0
+CTX-GOV-INV-010	PASS	Every movement representation has an explicit governance decision.	movement decisions=115
+CTX-GOV-INV-011	PASS	Every term belongs to exactly one governed Context kind.	terms checked=25; collisions=0
+CTX-GOV-INV-012	PASS	No held object enters the governed projection.	held exclusions checked=7928; exposed=0
+CTX-GOV-INV-013	PASS	Held and unknown lookups remain fail-closed.	held/unknown parity failures=0
+CTX-GOV-INV-014	PASS	Every governed representation resolves provenance.	provenance checked=16106; failures=0
+CTX-GOV-INV-015	PASS	Every representation resolves a publication state.	publication states checked=16106; failures=0
+CTX-GOV-INV-016	PASS	Every public DTO is release/projection pinned.	release/projection-pinned DTOs=7995
+CTX-GOV-INV-017	PASS	Governed rebuild is deterministic.	in-memory rebuilds=2; checksum match=true
+CTX-GOV-INV-018	PASS	Full Context projection is absent from the initial client bundle.	client modules checked=62; corpus exposure=false
+CTX-GOV-INV-019	PASS	Default governed Canvas contains zero membership nodes.	default membership nodes=0
+CTX-GOV-INV-020	PASS	Default governed Canvas contains zero semantic edges.	default semantic connections=0
+CTX-GOV-INV-021	PASS	Accessible explanation is semantically equivalent to visual explanation.	accessible/visual representations checked=16106; failures=0
+CTX-GOV-INV-022	PASS	Context publication does not mutate frozen v49 source state.	source state=proposed; frozen checksum failures=0

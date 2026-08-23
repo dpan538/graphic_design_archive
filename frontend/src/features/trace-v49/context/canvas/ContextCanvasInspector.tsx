@@ -1,10 +1,24 @@
 import { useMemo } from "react";
 import type { TraceContextDataset } from "../types";
-import { contextCanvasEntityId, type ContextCanvasConnection, type ContextCanvasSelection } from "./types";
+import {
+  contextCanvasEntityRefsForMode,
+  contextCanvasRepresentationByEntityId,
+  getGovernedContextMetadata,
+} from "./model";
+import {
+  contextCanvasEntityId,
+  type ContextCanvasConnection,
+  type ContextCanvasDataMetadata,
+  type ContextCanvasDataMode,
+  type ContextCanvasGovernedRepresentation,
+  type ContextCanvasSelection,
+} from "./types";
 import styles from "./ContextCanvas.module.css";
 
 interface ContextCanvasInspectorProps {
   readonly dataset: TraceContextDataset;
+  readonly dataMode: ContextCanvasDataMode;
+  readonly metadata: ContextCanvasDataMetadata;
   readonly selection: ContextCanvasSelection;
   readonly connections: readonly ContextCanvasConnection[];
   readonly collapsed: boolean;
@@ -19,6 +33,8 @@ function refLabel(ref: Readonly<{ stableId: string; label?: string }>): string {
 
 export function ContextCanvasInspector({
   dataset,
+  dataMode,
+  metadata,
   selection,
   connections,
   collapsed,
@@ -27,15 +43,26 @@ export function ContextCanvasInspector({
   onHideEntity,
 }: ContextCanvasInspectorProps) {
   const refs = useMemo(
-    () => new Map(dataset.items.map((ref) => [contextCanvasEntityId(ref), ref])),
-    [dataset],
+    () => new Map(
+      contextCanvasEntityRefsForMode(dataset, dataMode, metadata)
+        .map((ref) => [contextCanvasEntityId(ref), ref]),
+    ),
+    [dataMode, dataset, metadata],
   );
+  const representationByEntityId = useMemo(
+    () => contextCanvasRepresentationByEntityId(dataMode, metadata),
+    [dataMode, metadata],
+  );
+  const governed = getGovernedContextMetadata(dataMode, metadata);
   const rootId = contextCanvasEntityId(dataset.selectedRecord);
   const selectedRef = selection?.kind === "node" ? refs.get(selection.id) : undefined;
   const selectedConnection = selection?.kind === "connection"
     ? connections.find((item) => item.id === selection.id)
     : undefined;
   const selectedRefIsRoot = selection?.kind === "node" && selection.id === rootId;
+  const selectedRepresentation = selection?.kind === "node"
+    ? representationByEntityId.get(selection.id)
+    : undefined;
 
   return (
     <aside className={`${styles.inspector} ${collapsed ? styles.panelCollapsed : ""}`} aria-label="Context Canvas inspector">
@@ -63,6 +90,13 @@ export function ContextCanvasInspector({
         <div id="context-canvas-inspector-content" className={styles.inspectorContent}>
           {!selection ? (
             <p className={styles.emptyState}>Select an entity or connection to inspect its verified fields.</p>
+          ) : selectedRef && selection.kind === "node" && selectedRepresentation ? (
+            <>
+              <RepresentationInspector representation={selectedRepresentation} />
+              <button type="button" className={styles.removeButton} onClick={() => onHideEntity(selection.id)}>
+                Remove from canvas
+              </button>
+            </>
           ) : selectedRef && selection.kind === "node" ? (
             <>
               <h3>{refLabel(selectedRef)}</h3>
@@ -74,6 +108,14 @@ export function ContextCanvasInspector({
                 </div>
                 <div><dt>Availability</dt><dd>{dataset.availability.state}</dd></div>
                 <div><dt>Canvas status</dt><dd>{selectedRefIsRoot ? "visible · selected root" : "visible"}</dd></div>
+                {selectedRefIsRoot && governed?.rootMetadata ? (
+                  <>
+                    <div><dt>Source-reported attribution</dt><dd>{governed.rootMetadata.creatorAttribution}</dd></div>
+                    <div><dt>Source-reported object type</dt><dd>{governed.rootMetadata.objectType}</dd></div>
+                    <div><dt>Source-reported date</dt><dd>{governed.rootMetadata.dateDisplay}</dd></div>
+                    <div><dt>Source name</dt><dd>{governed.rootMetadata.sourceName}</dd></div>
+                  </>
+                ) : null}
               </dl>
               {!selectedRefIsRoot ? (
                 <button type="button" className={styles.removeButton} onClick={() => onHideEntity(selection.id)}>
@@ -96,6 +138,8 @@ export function ContextCanvasInspector({
 
 function ConnectionInspector({ connection }: { readonly connection: ContextCanvasConnection }) {
   switch (connection.connectionKind) {
+    case "context_representation":
+      return <RepresentationInspector representation={connection.representation} />;
     case "controlled_assignment":
       return (
         <>
@@ -135,4 +179,42 @@ function ConnectionInspector({ connection }: { readonly connection: ContextCanva
         </>
       );
   }
+}
+
+function RepresentationInspector({
+  representation,
+}: Readonly<{ representation: ContextCanvasGovernedRepresentation }>) {
+  return (
+    <>
+      <h3>{representation.label}</h3>
+      <dl className={styles.inspectorFields}>
+        <div><dt>Context type</dt><dd>{representation.explanation.publicName}</dd></div>
+        <div><dt>Full label</dt><dd>{representation.label}</dd></div>
+        <div><dt>Meaning</dt><dd>{representation.explanation.longDefinition}</dd></div>
+        <div><dt>Why shown</dt><dd>{representation.explanation.whyShown}</dd></div>
+        <div><dt>Epistemic role</dt><dd>{representation.epistemicRole}</dd></div>
+        <div><dt>Source basis</dt><dd>{representation.explanation.sourceBasis}</dd></div>
+        <div><dt>Source state</dt><dd>{representation.provenance.sourceState}</dd></div>
+        <div><dt>Governance decision</dt><dd>{representation.provenance.decision}</dd></div>
+        <div><dt>Context publication</dt><dd>{representation.publicationState}</dd></div>
+        <div><dt>Permitted interpretation</dt><dd>{representation.explanation.permittedInterpretation}</dd></div>
+        <div>
+          <dt>Prohibited interpretations</dt>
+          <dd>
+            <ul className={styles.inspectorList}>
+              {representation.explanation.prohibitedInterpretations.map((value) => (
+                <li key={value}>{value}</li>
+              ))}
+            </ul>
+          </dd>
+        </div>
+        <div><dt>Explanation code</dt><dd>{representation.explanationCode}</dd></div>
+        <div><dt>Public representation ID</dt><dd>{representation.representationId}</dd></div>
+        <div><dt>Public term ID</dt><dd>{representation.termId}</dd></div>
+        <div><dt>Public provenance ID</dt><dd>{representation.provenance.provenanceId}</dd></div>
+        <div><dt>Mapping policy version</dt><dd>{representation.provenance.mappingPolicyVersion}</dd></div>
+        <div><dt>Governance policy version</dt><dd>{representation.provenance.governancePolicyVersion}</dd></div>
+      </dl>
+    </>
+  );
 }

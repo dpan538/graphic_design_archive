@@ -1,0 +1,15 @@
+review_id	scope	left_label	right_label	issue_class	observed_count	decision	rationale	display_action
+CTX-NORM-001	All 25 public terms			SAME_ID_CONFLICTING_LABEL	0	KEEP_DISTINCT	No conflict exists.	No action
+CTX-NORM-002	All 25 public terms			SAME_LABEL_DIFFERENT_ID	0	KEEP_DISTINCT	No duplicate label identity exists.	No action
+CTX-NORM-003	All 25 public terms			CASE_ONLY_VARIANT	0	KEEP_DISTINCT	No case-only group exists.	No action
+CTX-NORM-004	All 25 public terms			PUNCTUATION_ONLY_VARIANT	0	KEEP_DISTINCT	No punctuation-only group exists.	No action
+CTX-NORM-005	All 25 public terms			WHITESPACE_VARIANT	0	KEEP_DISTINCT	No whitespace-only group exists.	No action
+CTX-NORM-006	All 25 public terms			MALFORMED_OR_CONTROL_LABEL	0	KEEP_DISTINCT	No malformed, control, leading/trailing, repeated-whitespace, or NFC issue exists.	No action
+CTX-NORM-007	Cross-kind vocabulary			EXACT_OR_NORMALIZED_REUSE	0	KEEP_DISTINCT	No exact or punctuation-normalized cross-kind reuse exists.	No action
+CTX-NORM-008	Near concept	Corporate identity record	Corporate identity and design systems	POSSIBLE_SYNONYM	1	KEEP_DISTINCT	Medium grouping and thematic research category have different kind, identity, and evidence.	Preserve both exact labels
+CTX-NORM-009	Near concept	Poster	Poster-bearing theme and movement labels	POSSIBLE_SYNONYM	1	KEEP_DISTINCT	Format and research-context concepts are not interchangeable.	Preserve all exact labels
+CTX-NORM-010	Near concept	Modern typography and layout	Bauhaus / New Typography first-ingest network	POSSIBLE_SYNONYM	1	KEEP_DISTINCT	Theme and movement context have distinct kind, identity, evidence, and permitted interpretation.	Preserve both exact labels
+CTX-NORM-011	Near concept	Catalogue	Publication design / Portfolio cover	POSSIBLE_SYNONYM	1	KEEP_DISTINCT	The governed medium categories represent distinct source identities.	Preserve all exact labels
+CTX-NORM-012	Movement spelling	Taller de Grafica Popular first-ingest scope		UNSUPPORTED_ACCENT_CORRECTION	1	KEEP_DISTINCT	Preserve the audited source spelling; no external authority reconciliation is in scope.	Preserve exact source label
+CTX-NORM-013	Movement punctuation	Bauhaus / New Typography first-ingest network		PUNCTUATION_SIGNIFICANCE	1	KEEP_DISTINCT	Slash is part of the governed label and no normalization decision authorizes its removal.	Preserve slash
+CTX-NORM-014	All movement terms			ABNORMAL_LONG_LABEL_REVIEW	7	KEEP_DISTINCT	Labels of 38–52 characters are valid; Canvas may fit display text while inspector and accessibility retain full labels.	Display-fit only; never change identity or full label

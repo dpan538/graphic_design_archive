@@ -1,10 +1,11 @@
 import type { ChangeEvent } from "react";
-import { CONTEXT_CANVAS_TEMPLATES } from "./templates";
+import type { ContextCanvasTemplateContract } from "./templates";
 import type { ContextCanvasTemplateId } from "./types";
 import styles from "./ContextCanvas.module.css";
 
 interface ContextCanvasToolbarProps {
   readonly templateId: ContextCanvasTemplateId;
+  readonly templates: readonly ContextCanvasTemplateContract[];
   readonly canUndo: boolean;
   readonly canRedo: boolean;
   readonly canZoomIn: boolean;
@@ -25,6 +26,7 @@ interface ContextCanvasToolbarProps {
 
 export function ContextCanvasToolbar({
   templateId,
+  templates,
   canUndo,
   canRedo,
   canZoomIn,
@@ -56,7 +58,7 @@ export function ContextCanvasToolbar({
           aria-label="Context Canvas template"
           onChange={handleTemplateChange}
         >
-          {CONTEXT_CANVAS_TEMPLATES.map((template) => (
+          {templates.map((template) => (
             <option key={template.templateId} value={template.templateId}>{template.label}</option>
           ))}
         </select>

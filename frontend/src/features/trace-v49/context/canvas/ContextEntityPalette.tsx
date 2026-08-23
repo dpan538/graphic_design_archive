@@ -5,11 +5,15 @@ import {
   contextCanvasFullLabel,
   fitContextCanvasDisplayLabel,
 } from "./display-label";
-import { contextCanvasEntityId } from "./types";
+import {
+  contextCanvasEntityId,
+  type ContextCanvasGovernedRepresentation,
+} from "./types";
 import styles from "./ContextCanvas.module.css";
 
 interface ContextEntityPaletteProps {
   readonly entities: readonly TracePublicDataRef[];
+  readonly representationByEntityId: ReadonlyMap<string, ContextCanvasGovernedRepresentation>;
   readonly collapsed: boolean;
   readonly disabled: boolean;
   readonly onToggleCollapsed: () => void;
@@ -22,6 +26,7 @@ interface ContextEntityPaletteProps {
 
 export function ContextEntityPalette({
   entities,
+  representationByEntityId,
   collapsed,
   disabled,
   onToggleCollapsed,
@@ -34,9 +39,11 @@ export function ContextEntityPalette({
   const groups = useMemo(() => {
     const grouped = new Map<string, TracePublicDataRef[]>();
     for (const entity of entities) {
-      const values = grouped.get(entity.kind) ?? [];
+      const representation = representationByEntityId.get(contextCanvasEntityId(entity));
+      const groupLabel = representation?.explanation.publicName || entity.kind;
+      const values = grouped.get(groupLabel) ?? [];
       values.push(entity);
-      grouped.set(entity.kind, values);
+      grouped.set(groupLabel, values);
     }
     return [...grouped.entries()]
       .sort(([left], [right]) => left.localeCompare(right, "en"))
@@ -44,7 +51,7 @@ export function ContextEntityPalette({
         kind,
         values.sort((left, right) => left.stableId < right.stableId ? -1 : left.stableId > right.stableId ? 1 : 0),
       ] as const);
-  }, [entities]);
+  }, [entities, representationByEntityId]);
 
   function beginDrag(event: PointerEvent<HTMLButtonElement>, entityId: string) {
     if (disabled || event.button !== 0) return;
@@ -76,12 +83,15 @@ export function ContextEntityPalette({
           <p className={styles.helpText}>Add entities only. Known connections appear automatically.</p>
           {groups.length === 0 ? (
             <p className={styles.emptyState}>Every available entity is on the canvas.</p>
-          ) : groups.map(([kind, values]) => (
-            <section key={kind} className={styles.paletteGroup} aria-labelledby={`palette-group-${kind}`}>
-              <h3 id={`palette-group-${kind}`}>{kind.replaceAll("_", " ")}</h3>
+          ) : groups.map(([kind, values]) => {
+            const groupDomId = `palette-group-${encodeURIComponent(kind).replaceAll("%", "_")}`;
+            return (
+            <section key={kind} className={styles.paletteGroup} aria-labelledby={groupDomId}>
+              <h3 id={groupDomId}>{kind.replaceAll("_", " ")}</h3>
               <ul>
                 {values.map((entity) => {
                   const entityId = contextCanvasEntityId(entity);
+                  const representation = representationByEntityId.get(entityId);
                   const fullLabel = contextCanvasFullLabel(entity);
                   const displayLabel = fitContextCanvasDisplayLabel(fullLabel, 44).displayText;
                   const displayId = fitContextCanvasDisplayLabel(
@@ -99,7 +109,9 @@ export function ContextEntityPalette({
                           type="button"
                           className={styles.dragHandle}
                           disabled={disabled}
-                          aria-label={`Drag ${fullLabel} to canvas; press Enter or Space to add`}
+                          aria-label={representation
+                            ? `Drag ${fullLabel} to canvas. ${representation.explanation.accessibilityWording} Press Enter or Space to add.`
+                            : `Drag ${fullLabel} to canvas; press Enter or Space to add`}
                           aria-keyshortcuts="Enter Space"
                           onKeyDown={(event) => {
                             if (event.key === "Enter" || event.key === " ") {
@@ -137,7 +149,8 @@ export function ContextEntityPalette({
                 })}
               </ul>
             </section>
-          ))}
+            );
+          })}
         </div>
       ) : null}
     </aside>

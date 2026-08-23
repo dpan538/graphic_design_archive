@@ -1,5 +1,6 @@
 import type { TraceContextDataset } from "../types";
 import { buildContextCanvasConnectionGeometry, contextCanvasConnectionLabel, visibleContextCanvasNodes } from "./connections";
+import { getGovernedContextMetadata } from "./model";
 import { computeContextCanvasBounds } from "./layout";
 import {
   CONTEXT_CANVAS_CONNECTION_LABEL_DISPLAY_UNIT_LIMIT,
@@ -13,6 +14,8 @@ import {
   CONTEXT_CANVAS_NODE_HEIGHT,
   CONTEXT_CANVAS_NODE_WIDTH,
   type ContextCanvasComposition,
+  type ContextCanvasDataMetadata,
+  type ContextCanvasDataMode,
   type ContextCanvasExportSnapshot,
 } from "./types";
 
@@ -27,7 +30,10 @@ function publicSafeExportValue(value: string): string {
   return value.replace(UUID_PATTERN, "public-reference-withheld");
 }
 
-function connectionStroke(connectionKind: "controlled_assignment" | "curated_membership" | "semantic_edge"): string {
+function connectionStroke(
+  connectionKind: "context_representation" | "controlled_assignment" | "curated_membership" | "semantic_edge",
+): string {
+  if (connectionKind === "context_representation") return "#53606b";
   if (connectionKind === "controlled_assignment") return "#53606b";
   if (connectionKind === "curated_membership") return "#6c6254";
   return "#4f5969";
@@ -37,14 +43,36 @@ export function prepareContextCanvasExportSvg(
   dataset: TraceContextDataset,
   composition: ContextCanvasComposition,
   includeMetadataFooter = true,
+  dataMode: ContextCanvasDataMode = "synthetic_contract",
+  metadata?: ContextCanvasDataMetadata,
 ): ContextCanvasExportSnapshot {
-  const nodes = visibleContextCanvasNodes(dataset, composition);
-  const connections = buildContextCanvasConnectionGeometry(dataset, composition);
+  if (!metadata && dataMode !== "synthetic_contract") {
+    throw new Error(`${dataMode} Context Canvas export requires metadata.`);
+  }
+  const effectiveMetadata = metadata ?? {
+    dataLabel: "synthetic contract fixture",
+    mappingVersion: "synthetic-context-contract-v1",
+    candidateState: "synthetic_contract" as const,
+    historicalEvidence: false as const,
+    governedPublicRelease: false,
+    publicReleaseData: false,
+    publicObjectCohortCount: dataset.counts.denominator,
+  };
+  const governed = getGovernedContextMetadata(dataMode, effectiveMetadata);
+  const nodes = visibleContextCanvasNodes(dataset, composition, dataMode, effectiveMetadata);
+  const connections = buildContextCanvasConnectionGeometry(
+    dataset,
+    composition,
+    dataMode,
+    effectiveMetadata,
+  );
   const contentBounds = computeContextCanvasBounds(
     composition.visibleEntityIds,
     composition.positions,
   );
-  const footerText = `Context Canvas · ${publicSafeExportValue(dataset.selectedRecord.stableId)} · ${publicSafeExportValue(dataset.release.releaseId)}`;
+  const footerText = governed
+    ? `Context Canvas · ${publicSafeExportValue(dataset.selectedRecord.stableId)} · research release ${publicSafeExportValue(dataset.release.releaseId)} · Context projection ${publicSafeExportValue(governed.projectionId)} · ${governed.projectionSha256}`
+    : `Context Canvas · ${publicSafeExportValue(dataset.selectedRecord.stableId)} · ${publicSafeExportValue(dataset.release.releaseId)}`;
   const contentWidth = contentBounds.empty ? 480 : contentBounds.width + EXPORT_PADDING * 2;
   const footerWidth = includeMetadataFooter
     ? Array.from(footerText).length * 8 + EXPORT_PADDING * 2
@@ -74,7 +102,7 @@ export function prepareContextCanvasExportSvg(
     return [
       `<g data-connection-kind="${item.connection.connectionKind}">`,
       `<title>${escapeContextCanvasXml(publicSafeExportValue(item.accessibleLabel))}</title>`,
-      `<path d="${item.path}" fill="none" stroke="${stroke}" stroke-width="2" marker-end="url(#context-arrow)"/>`,
+      `<path d="${item.path}" fill="none" stroke="${stroke}" stroke-width="2"${item.connection.connectionKind === "context_representation" ? "" : ' marker-end="url(#context-arrow)"'}/>`,
       `<text x="${item.labelX}" y="${item.labelY}" fill="#333b43" font-family="ui-monospace, monospace" font-size="12">${escapeContextCanvasXml(displayLabel)}</text>`,
       "</g>",
     ].join("");
@@ -87,12 +115,16 @@ export function prepareContextCanvasExportSvg(
       publicSafeExportValue(node.ref.stableId),
       CONTEXT_CANVAS_NODE_ID_DISPLAY_UNIT_LIMIT,
     ).displayText;
+    const publicKind = node.representation?.explanation.publicName || node.ref.kind;
+    const fullTitle = node.representation
+      ? `${fullLabel} (${publicKind}). ${publicSafeExportValue(node.representation.explanation.accessibilityWording)}`
+      : `${fullLabel} (${node.ref.kind})`;
     return [
       `<g transform="translate(${node.position.x} ${node.position.y})" data-entity-kind="${escapeContextCanvasXml(node.ref.kind)}">`,
-      `<title>${escapeContextCanvasXml(`${fullLabel} (${node.ref.kind})`)}</title>`,
+      `<title>${escapeContextCanvasXml(fullTitle)}</title>`,
       `<rect width="${CONTEXT_CANVAS_NODE_WIDTH}" height="${CONTEXT_CANVAS_NODE_HEIGHT}" rx="8" fill="#ffffff" stroke="#27313a" stroke-width="2"/>`,
       `<text x="16" y="29" fill="#172028" font-family="ui-sans-serif, sans-serif" font-size="16" font-weight="600">${escapeContextCanvasXml(displayLabel)}</text>`,
-      `<text x="16" y="55" fill="#56616a" font-family="ui-monospace, monospace" font-size="11">${escapeContextCanvasXml(node.ref.kind)}</text>`,
+      `<text x="16" y="55" fill="#56616a" font-family="ui-monospace, monospace" font-size="11">${escapeContextCanvasXml(publicKind)}</text>`,
       `<text x="16" y="79" fill="#56616a" font-family="ui-monospace, monospace" font-size="10">${escapeContextCanvasXml(displayId)}</text>`,
       "</g>",
     ].join("");

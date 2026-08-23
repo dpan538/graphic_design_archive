@@ -1,4 +1,5 @@
 import type { TraceContextDataset } from "../types";
+import { contextCanvasEntityRefsForMode } from "./model";
 import { initializeContextCanvasTemplate } from "./templates";
 import {
   CONTEXT_CANVAS_HISTORY_LIMIT,
@@ -6,6 +7,8 @@ import {
   contextCanvasEntityId,
   isFiniteCanvasPosition,
   type ContextCanvasComposition,
+  type ContextCanvasDataMetadata,
+  type ContextCanvasDataMode,
   type ContextCanvasState,
   type ContextCanvasViewport,
 } from "./types";
@@ -13,12 +16,30 @@ import { CONTEXT_CANVAS_DEFAULT_VIEWPORT, sanitizeContextCanvasViewport } from "
 
 export function createInitializingContextCanvasState(
   dataset: TraceContextDataset,
+  dataMode: ContextCanvasDataMode = "synthetic_contract",
+  metadata?: ContextCanvasDataMetadata,
 ): ContextCanvasState {
-  const present = initializeContextCanvasTemplate(dataset, "context-overview");
+  if (!metadata && dataMode !== "synthetic_contract") {
+    throw new Error(`${dataMode} Context Canvas initialization requires metadata.`);
+  }
+  const effectiveMetadata = metadata ?? {
+    dataLabel: "synthetic contract fixture",
+    mappingVersion: "synthetic-context-contract-v1",
+    candidateState: "synthetic_contract" as const,
+    historicalEvidence: false as const,
+    governedPublicRelease: false,
+    publicReleaseData: false,
+    publicObjectCohortCount: dataset.counts.denominator,
+  };
+  const present = initializeContextCanvasTemplate(dataset, "context-overview", dataMode, effectiveMetadata);
   return Object.freeze({
     schemaVersion: CONTEXT_CANVAS_SCHEMA_VERSION,
     rootEntityId: contextCanvasEntityId(dataset.selectedRecord),
-    allowedEntityIds: Object.freeze(dataset.items.map(contextCanvasEntityId).sort()),
+    allowedEntityIds: Object.freeze(
+      contextCanvasEntityRefsForMode(dataset, dataMode, effectiveMetadata)
+        .map(contextCanvasEntityId)
+        .sort(),
+    ),
     history: Object.freeze({ past: Object.freeze([]), present, future: Object.freeze([]) }),
     viewport: CONTEXT_CANVAS_DEFAULT_VIEWPORT,
     selection: null,

@@ -443,6 +443,10 @@
   pointer-events: none;
 }
 
+.connection_context_representation .connectionPath {
+  stroke: #526069;
+}
+
 .connection_curated_membership .connectionPath {
   stroke: #6f6558;
   stroke-dasharray: 8 5;
@@ -502,6 +506,17 @@
   margin: 0;
   font-size: 0.78rem;
   overflow-wrap: anywhere;
+}
+
+.inspectorList {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.nodeQualified .nodeBody {
+  stroke-dasharray: 6 4;
 }
 
 .removeButton {

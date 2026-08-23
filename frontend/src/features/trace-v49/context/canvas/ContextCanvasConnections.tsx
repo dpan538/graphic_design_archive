@@ -60,7 +60,13 @@ export function ContextCanvasConnections({
           >
             <title>{item.accessibleLabel}</title>
             <path className={styles.connectionHitArea} d={item.path} />
-            <path className={styles.connectionPath} d={item.path} markerEnd="url(#context-canvas-arrow)" />
+            <path
+              className={styles.connectionPath}
+              d={item.path}
+              markerEnd={item.connection.connectionKind === "context_representation"
+                ? undefined
+                : "url(#context-canvas-arrow)"}
+            />
             <text className={styles.connectionLabel} x={item.labelX} y={item.labelY}>
               {displayLabel.displayText}
             </text>

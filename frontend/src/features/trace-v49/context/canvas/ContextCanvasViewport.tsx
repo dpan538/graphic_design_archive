@@ -12,12 +12,19 @@ import { buildContextCanvasConnectionGeometry, visibleContextCanvasNodes } from 
 import { ContextCanvasConnections } from "./ContextCanvasConnections";
 import { ContextCanvasNode } from "./ContextCanvasNode";
 import type { ContextCanvasAction } from "./reducer";
-import type { ContextCanvasState, ContextCanvasViewportSize } from "./types";
+import type {
+  ContextCanvasDataMetadata,
+  ContextCanvasDataMode,
+  ContextCanvasState,
+  ContextCanvasViewportSize,
+} from "./types";
 import { panContextCanvasFromPointer, zoomContextCanvasAtPoint } from "./viewport";
 import styles from "./ContextCanvas.module.css";
 
 interface ContextCanvasViewportProps {
   readonly dataset: TraceContextDataset;
+  readonly dataMode: ContextCanvasDataMode;
+  readonly metadata: ContextCanvasDataMetadata;
   readonly state: ContextCanvasState;
   readonly dispatch: Dispatch<ContextCanvasAction>;
   readonly containerRef: RefObject<HTMLDivElement | null>;
@@ -26,6 +33,8 @@ interface ContextCanvasViewportProps {
 
 export function ContextCanvasViewport({
   dataset,
+  dataMode,
+  metadata,
   state,
   dispatch,
   containerRef,
@@ -34,12 +43,12 @@ export function ContextCanvasViewport({
   const svgRef = useRef<SVGSVGElement>(null);
   const composition = state.history.present;
   const nodes = useMemo(
-    () => visibleContextCanvasNodes(dataset, composition),
-    [dataset, composition],
+    () => visibleContextCanvasNodes(dataset, composition, dataMode, metadata),
+    [composition, dataMode, dataset, metadata],
   );
   const geometry = useMemo(
-    () => buildContextCanvasConnectionGeometry(dataset, composition),
-    [dataset, composition],
+    () => buildContextCanvasConnectionGeometry(dataset, composition, dataMode, metadata),
+    [composition, dataMode, dataset, metadata],
   );
 
   useEffect(() => {

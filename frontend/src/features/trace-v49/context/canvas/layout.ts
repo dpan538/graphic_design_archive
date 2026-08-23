@@ -1,4 +1,5 @@
 import type { TraceContextDataset } from "../types";
+import { contextCanvasRepresentationByEntityId } from "./model";
 import {
   CONTEXT_CANVAS_MAX_ZOOM,
   CONTEXT_CANVAS_MIN_ZOOM,
@@ -6,6 +7,8 @@ import {
   CONTEXT_CANVAS_NODE_WIDTH,
   contextCanvasEntityId,
   type ContextCanvasBounds,
+  type ContextCanvasDataMetadata,
+  type ContextCanvasDataMode,
   type ContextCanvasEntityId,
   type ContextCanvasPosition,
   type ContextCanvasViewport,
@@ -29,12 +32,20 @@ function compareEntityIds(left: ContextCanvasEntityId, right: ContextCanvasEntit
 export function autoArrangeContextCanvas(
   dataset: TraceContextDataset,
   visibleEntityIds: readonly ContextCanvasEntityId[],
+  dataMode: ContextCanvasDataMode = "synthetic_contract",
+  metadata?: ContextCanvasDataMetadata,
 ): Readonly<Record<ContextCanvasEntityId, ContextCanvasPosition>> {
   const visible = new Set(visibleEntityIds);
   const rootId = contextCanvasEntityId(dataset.selectedRecord);
   const controlled = new Set(
     dataset.controlledAssignments.map((item) => contextCanvasEntityId(item.value)),
   );
+  if (dataMode === "governed_context_v1") {
+    if (!metadata) throw new Error("Governed Context layout requires metadata.");
+    for (const entityId of contextCanvasRepresentationByEntityId(dataMode, metadata).keys()) {
+      controlled.add(entityId);
+    }
+  }
   const curated = new Set(
     dataset.curatedMemberships.map((item) => contextCanvasEntityId(item.container)),
   );

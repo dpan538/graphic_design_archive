@@ -63,9 +63,19 @@ git show v49-data-api-closure-20260821:PROJECT_LOG.md
 
 - Real-data validation uses the audited 7,995-object public cohort while retaining proposed candidate states; it is validation-only, not a governed public TRACE release, and introduces no accepted semantic edges.
 
+### Context V1 governance closure — 2026-08-23
+
+- Context V1 is frozen as a release-derived `project_curated_context` read model: it describes how the archive project classifies a selected public record and does not publish historical relations, influence, causation, creator intent, chronology, or definitive movement membership.
+- The governed projection `trace-context-v1` contains 25 controlled terms and 16,106 published representations for all 7,995 eligible public records. Frozen source rows remain `proposed`; publication is a separate Context governance decision.
+- Governed Canvas defaults to the selected record plus controlled medium, theme, and movement-context representations. Curated memberships are provenance only; default membership nodes/connections and real semantic edges are zero.
+- Context has an additive release-pinned public Read API and compact server-only projection. The route remains unlinked and `noindex`; final visual design and public navigation are deferred.
+- Region is excluded from Context and handed to Spacetime parameter governance. No map/time implementation is included.
+
 `CONTEXT_CANVAS_FUNCTIONAL_CORE=COMPLETE`
 
 `CONTEXT_CANVAS_REAL_DATA_VALIDATION=ACTIVE`
+
+`CONTEXT_V1=GOVERNED_DATA_AND_READ_MODEL_READY`
 
 `CONTEXT_CANVAS_FINAL_VISUAL_DESIGN=DEFERRED`
 

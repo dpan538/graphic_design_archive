@@ -9,6 +9,7 @@ import type {
   TraceObjectQuery, TraceObjectSummary, VisualRegistrySelector,
 } from "../types";
 import { pageByKey, requireFirst } from "../pagination";
+import type { PublicContextDataset } from "@/features/trace-v49/context/governed/types";
 
 /** The application owns no database pool.  Its host injects a reader-only
  * parameterised executor; this keeps `pg` and any database URL out of client bundles. */
@@ -58,6 +59,23 @@ export class PostgresArchiveRepository implements ArchiveRepository {
   async getTraceAtlas(): Promise<RepoResult<TraceAtlas>> { return this.success({ namedUnits: [], totalExact: 0, message: "This release has no verified TRACE evidence." }); }
   async listTraceObjects(input: TraceObjectQuery & PageRequest): Promise<RepoResult<Page<TraceObjectSummary>>> { return pageByKey([], (item: TraceObjectSummary) => item.objectId, this.version, input, "trace-objects", input.layer ?? "active", "id"); }
   async getTraceNeighborhood(): Promise<RepoResult<TraceGraph>> { return notFound("object has no verified TRACE neighborhood in this release"); }
+  async getTraceContext(objectId: string, options?: ReadOptions): Promise<RepoResult<PublicContextDataset>> {
+    if (options?.signal?.aborted) return unavailable("request was cancelled");
+    try {
+      const { lookupGovernedContextDataset } = await import(
+        "@/features/trace-v49/context/governed/reader.server"
+      );
+      const result = lookupGovernedContextDataset(objectId, {
+        researchReleaseId: this.version.research.researchReleaseId,
+        researchManifestSha256: this.version.research.researchManifestSha256,
+      });
+      return result.ok
+        ? this.success(result.data)
+        : { ok: false, error: { code: result.code, message: result.message, retryable: false } };
+    } catch {
+      return { ok: false, error: { code: "INTEGRITY_FAILURE", message: "the governed Context projection failed validation", retryable: false } };
+    }
+  }
   async listRelationTypes(): Promise<RepoResult<readonly RelationTypeDefinition[]>> { return this.success([]); }
   async getRelationType(): Promise<RepoResult<RelationTypeDefinition>> { return notFound("relation type is not published in this sealed release"); }
   async getRelation(): Promise<RepoResult<SemanticRelation>> { return notFound("relation is not published in this sealed release"); }

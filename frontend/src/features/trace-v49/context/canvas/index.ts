@@ -3,6 +3,7 @@ export * from "./display-label";
 export * from "./export-png";
 export * from "./fixture";
 export * from "./layout";
+export * from "./model";
 export * from "./persistence";
 export * from "./reducer";
 export * from "./state";

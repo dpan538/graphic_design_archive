@@ -1,12 +1,20 @@
 import type { TraceAccessibleRow, TracePublicDataRef } from "../../domain";
 import type { TraceContextDataset } from "../types";
 import {
+  contextCanvasAccessibleRowsForMode,
+  contextCanvasEntityRefsForMode,
+  contextCanvasRepresentationByEntityId,
+  getGovernedContextMetadata,
+} from "./model";
+import {
   CONTEXT_CANVAS_NODE_HEIGHT,
   CONTEXT_CANVAS_NODE_WIDTH,
   contextCanvasEntityId,
   type ContextCanvasComposition,
   type ContextCanvasConnection,
   type ContextCanvasConnectionGeometry,
+  type ContextCanvasDataMetadata,
+  type ContextCanvasDataMode,
   type ContextCanvasEntityId,
   type ContextCanvasVisibleNode,
 } from "./types";
@@ -18,9 +26,35 @@ function compareText(left: string, right: string): number {
 export function deriveVisibleContextCanvasConnections(
   dataset: TraceContextDataset,
   visibleEntityIds: readonly ContextCanvasEntityId[],
+  dataMode: ContextCanvasDataMode = "synthetic_contract",
+  metadata?: ContextCanvasDataMetadata,
 ): readonly ContextCanvasConnection[] {
   const visible = new Set(visibleEntityIds);
   const connections: ContextCanvasConnection[] = [];
+
+  if (dataMode === "governed_context_v1") {
+    if (!metadata) throw new Error("Governed Context connections require metadata.");
+    const governed = getGovernedContextMetadata(dataMode, metadata);
+    if (!governed) throw new Error("Governed Context metadata is unavailable.");
+    const sourceEntityId = contextCanvasEntityId(dataset.selectedRecord);
+    for (const representation of governed.representations) {
+      const targetEntityId = contextCanvasEntityId({
+        stableId: representation.termId,
+        kind: "controlled_term",
+      });
+      if (visible.has(sourceEntityId) && visible.has(targetEntityId)) {
+        connections.push(Object.freeze({
+          id: `connection:context_representation:${representation.representationId}`,
+          connectionKind: "context_representation",
+          sourceEntityId,
+          targetEntityId,
+          accessibleRowId: `representation:${representation.representationId}`,
+          representation,
+        }));
+      }
+    }
+    return Object.freeze(connections.sort((left, right) => compareText(left.id, right.id)));
+  }
 
   for (const assignment of dataset.controlledAssignments) {
     const sourceEntityId = contextCanvasEntityId(assignment.subject);
@@ -37,7 +71,7 @@ export function deriveVisibleContextCanvasConnections(
     }
   }
 
-  for (const membership of dataset.curatedMemberships) {
+  if (dataMode === "synthetic_contract") for (const membership of dataset.curatedMemberships) {
     const sourceEntityId = contextCanvasEntityId(membership.member);
     const targetEntityId = contextCanvasEntityId(membership.container);
     if (visible.has(sourceEntityId) && visible.has(targetEntityId)) {
@@ -52,7 +86,7 @@ export function deriveVisibleContextCanvasConnections(
     }
   }
 
-  for (const semanticEdge of dataset.semanticEdges) {
+  if (dataMode === "synthetic_contract") for (const semanticEdge of dataset.semanticEdges) {
     const sourceEntityId = contextCanvasEntityId(semanticEdge.subject);
     const targetEntityId = contextCanvasEntityId(semanticEdge.object);
     if (visible.has(sourceEntityId) && visible.has(targetEntityId)) {
@@ -73,21 +107,47 @@ export function deriveVisibleContextCanvasConnections(
 export function visibleContextCanvasNodes(
   dataset: TraceContextDataset,
   composition: ContextCanvasComposition,
+  dataMode: ContextCanvasDataMode = "synthetic_contract",
+  metadata?: ContextCanvasDataMetadata,
 ): readonly ContextCanvasVisibleNode[] {
-  const refs = new Map(dataset.items.map((ref) => [contextCanvasEntityId(ref), ref]));
+  if (!metadata && dataMode !== "synthetic_contract") {
+    throw new Error(`${dataMode} Context Canvas nodes require metadata.`);
+  }
+  const effectiveMetadata = metadata ?? {
+    dataLabel: "synthetic contract fixture",
+    mappingVersion: "synthetic-context-contract-v1",
+    candidateState: "synthetic_contract" as const,
+    historicalEvidence: false as const,
+    governedPublicRelease: false,
+    publicReleaseData: false,
+    publicObjectCohortCount: dataset.counts.denominator,
+  };
+  const refs = new Map(
+    contextCanvasEntityRefsForMode(dataset, dataMode, effectiveMetadata)
+      .map((ref) => [contextCanvasEntityId(ref), ref]),
+  );
+  const representationByEntityId = contextCanvasRepresentationByEntityId(dataMode, effectiveMetadata);
   const rootId = contextCanvasEntityId(dataset.selectedRecord);
   const nodes: ContextCanvasVisibleNode[] = [];
   for (const id of composition.visibleEntityIds) {
     const ref = refs.get(id);
     const position = composition.positions[id];
     if (!ref || !position) continue;
-    nodes.push(Object.freeze({ id, ref, position, isRoot: id === rootId }));
+    nodes.push(Object.freeze({
+      id,
+      ref,
+      position,
+      isRoot: id === rootId,
+      representation: representationByEntityId.get(id),
+    }));
   }
   return Object.freeze(nodes.sort((left, right) => compareText(left.id, right.id)));
 }
 
 export function contextCanvasConnectionLabel(connection: ContextCanvasConnection): string {
   switch (connection.connectionKind) {
+    case "context_representation":
+      return connection.representation.connectionLabel;
     case "controlled_assignment":
       return connection.assignment.assignmentType;
     case "curated_membership":
@@ -121,10 +181,35 @@ function precise(value: number): number {
 export function buildContextCanvasConnectionGeometry(
   dataset: TraceContextDataset,
   composition: ContextCanvasComposition,
+  dataMode: ContextCanvasDataMode = "synthetic_contract",
+  metadata?: ContextCanvasDataMetadata,
 ): readonly ContextCanvasConnectionGeometry[] {
-  const connections = deriveVisibleContextCanvasConnections(dataset, composition.visibleEntityIds);
-  const refs = new Map(dataset.items.map((ref) => [contextCanvasEntityId(ref), ref]));
-  const rows = new Map(dataset.accessibleRows.map((row) => [row.id, row]));
+  if (!metadata && dataMode !== "synthetic_contract") {
+    throw new Error(`${dataMode} Context Canvas geometry requires metadata.`);
+  }
+  const effectiveMetadata = metadata ?? {
+    dataLabel: "synthetic contract fixture",
+    mappingVersion: "synthetic-context-contract-v1",
+    candidateState: "synthetic_contract" as const,
+    historicalEvidence: false as const,
+    governedPublicRelease: false,
+    publicReleaseData: false,
+    publicObjectCohortCount: dataset.counts.denominator,
+  };
+  const connections = deriveVisibleContextCanvasConnections(
+    dataset,
+    composition.visibleEntityIds,
+    dataMode,
+    effectiveMetadata,
+  );
+  const refs = new Map(
+    contextCanvasEntityRefsForMode(dataset, dataMode, effectiveMetadata)
+      .map((ref) => [contextCanvasEntityId(ref), ref]),
+  );
+  const rows = new Map(
+    contextCanvasAccessibleRowsForMode(dataset, dataMode, effectiveMetadata)
+      .map((row) => [row.id, row]),
+  );
   const routeGroups = new Map<string, ContextCanvasConnection[]>();
   for (const connection of connections) {
     const key = `${connection.sourceEntityId}\u0000${connection.targetEntityId}`;

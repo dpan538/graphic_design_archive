@@ -5,6 +5,7 @@ import type {
   SemanticRelation, SurfaceDetail, SurfaceSummary, TraceAtlas, TraceGraph,
   TraceObjectQuery, TraceObjectSummary, VisualRegistrySelector,
 } from "./types";
+import type { PublicContextDataset } from "@/features/trace-v49/context/governed/types";
 
 export interface ArchiveRepository {
   readonly version: ArchiveVersionRef;
@@ -18,6 +19,7 @@ export interface ArchiveRepository {
   getTraceAtlas(options?: ReadOptions): Promise<RepoResult<TraceAtlas>>;
   listTraceObjects(input: TraceObjectQuery & PageRequest, options?: ReadOptions): Promise<RepoResult<Page<TraceObjectSummary>>>;
   getTraceNeighborhood(objectId: string, options?: ReadOptions): Promise<RepoResult<TraceGraph>>;
+  getTraceContext?(objectId: string, options?: ReadOptions): Promise<RepoResult<PublicContextDataset>>;
   listRelationTypes(options?: ReadOptions): Promise<RepoResult<readonly RelationTypeDefinition[]>>;
   getRelationType(id: string, options?: ReadOptions): Promise<RepoResult<RelationTypeDefinition>>;
   getRelation(relationId: string, options?: ReadOptions): Promise<RepoResult<SemanticRelation>>;

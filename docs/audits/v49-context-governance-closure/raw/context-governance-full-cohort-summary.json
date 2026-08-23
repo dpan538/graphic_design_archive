@@ -1,0 +1,90 @@
+{
+  "closure_decision": "CONTEXT_V1_CLOSED",
+  "cohort": {
+    "api_serialization_failures": 0,
+    "by_kind": {
+      "medium": {
+        "objects": 7995,
+        "representations": 7995
+      },
+      "movement_context": {
+        "objects": 110,
+        "representations": 115
+      },
+      "theme": {
+        "objects": 7995,
+        "representations": 7996
+      }
+    },
+    "failed_context_objects": 0,
+    "internal_id_exposure_count": 0,
+    "membership_connection_count": 0,
+    "membership_node_count": 0,
+    "object_histogram": {
+      "2": 7884,
+      "3": 106,
+      "4": 5
+    },
+    "objects_with_context": 7995,
+    "objects_with_multiple_representations": 7995,
+    "objects_with_only_one_representation": 0,
+    "provenance_failures": 0,
+    "public_objects_tested": 7995,
+    "publication_counts": {
+      "excluded": 0,
+      "held": 0,
+      "published": 16106,
+      "qualified": 0
+    },
+    "representations": 16106,
+    "same_kind_multivalue_objects": 6,
+    "semantic_connection_count": 0,
+    "semantic_edge_count": 0,
+    "term_assignment_counts_sha256": "d1a536c740a6ba5250d831e53eec03196c7aa122983b54dfb48a55698b9299ec",
+    "unexplained_nodes": 0,
+    "unknown_term_ids": 0
+  },
+  "context_data_mode": "governed_context_v1",
+  "context_projection_id": "trace-context-v1",
+  "context_projection_sha256": "825f6ecaa9ae1496c8a00ea0fefa5c90319046cf9c1f08a2ef76b9b02df4baeb",
+  "context_schema_version": "trace-context/v1",
+  "default_template": {
+    "entity_selection_rule": "all-governed-representations",
+    "template_id": "context-overview",
+    "template_version": 2
+  },
+  "deterministic": {
+    "deterministic": true,
+    "projection_sha256": "825f6ecaa9ae1496c8a00ea0fefa5c90319046cf9c1f08a2ef76b9b02df4baeb",
+    "rebuild_runs": 2
+  },
+  "explanation_registry_version": "trace-context-explanations-v1",
+  "governed_projection_gzip_bytes": 1661608,
+  "governed_projection_raw_bytes": 13129562,
+  "held_lookup": {
+    "held_lookups": 7928,
+    "held_objects_exposed": 0,
+    "held_unknown_parity_failures": 0,
+    "lookup_ms": {
+      "count": 7928,
+      "max": 0.024,
+      "p50": 0,
+      "p90": 0,
+      "p95": 0,
+      "p99": 0.001
+    }
+  },
+  "policy_sha256": "aa13eaff6d42533a37777e546b8976bdad7d2be3a4ab4d405a77ce1aa61c7a0c",
+  "policy_version": "context-governance-v1",
+  "region_handoff": {
+    "context_node_count": 0,
+    "decision": "DEFER_TO_SPACETIME",
+    "public_row_count": 7996,
+    "term_count": 93
+  },
+  "source_release": {
+    "id": "v49-api-contract-fresh-c",
+    "manifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a"
+  },
+  "status": "PASS"
+}

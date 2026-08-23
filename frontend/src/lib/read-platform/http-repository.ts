@@ -6,6 +6,7 @@ import type {
   SurfaceDetail, SurfaceSummary, TraceAtlas, TraceGraph, TraceObjectQuery, TraceObjectSummary,
   VisualRegistrySelector, RepositoryErrorCode,
 } from "./types";
+import type { PublicContextDataset } from "@/features/trace-v49/context/governed/types";
 
 type Envelope<T> = { apiVersion: "v1"; researchReleaseId: string; researchManifestSha256: string; visualRegistryVersion: string | null; visualRegistrySha256: string | null; visualRegistryState: ArchiveVersionRef["visualState"]; visualReasonCodes: string[]; takedownOverlaySha256: string | null; data: T };
 type Problem = { code?: string; detail?: string; title?: string };
@@ -47,6 +48,7 @@ export class HttpArchiveRepository implements ArchiveRepository {
   getTraceAtlas(o?: ReadOptions) { return this.request<TraceAtlas>(`${this.releasePath()}/trace/atlas`, o); }
   listTraceObjects(input: TraceObjectQuery & PageRequest, o?: ReadOptions) { return this.request<Page<TraceObjectSummary>>(`${this.releasePath()}/trace/objects?${new URLSearchParams(clean(input))}`, o); }
   getTraceNeighborhood(id: string, o?: ReadOptions) { return this.request<TraceGraph>(`${this.releasePath()}/trace/objects/${encodeURIComponent(id)}/neighborhood`, o); }
+  getTraceContext(id: string, o?: ReadOptions) { return this.request<PublicContextDataset>(`${this.releasePath()}/trace/objects/${encodeURIComponent(id)}/context`, o); }
   listRelationTypes(o?: ReadOptions) { return this.request<readonly RelationTypeDefinition[]>(`${this.releasePath()}/trace/relation-types`, o); }
   getRelationType(id: string, o?: ReadOptions) { return this.request<RelationTypeDefinition>(`${this.releasePath()}/trace/relation-types/${encodeURIComponent(id)}`, o); }
   getRelation(id: string, o?: ReadOptions) { return this.request<SemanticRelation>(`${this.releasePath()}/relations/${encodeURIComponent(id)}`, o); }

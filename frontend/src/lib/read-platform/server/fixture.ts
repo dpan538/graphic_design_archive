@@ -9,6 +9,7 @@ import type {
   SemanticRelation, SurfaceDetail, SurfaceSummary, TraceAtlas, TraceGraph,
   TraceObjectQuery, TraceObjectSummary, VisualRegistrySelector,
 } from "../types";
+import type { PublicContextDataset } from "@/features/trace-v49/context/governed/types";
 
 export const FIXTURE_RELEASE_ID = "fixture-research-v1";
 export const FIXTURE_MANIFEST_SHA256 = "8c9bd8a3d2b1fa60b95cf1278a7315e7af2f7bfe3b3fa7fcb7fc7a64c018497";
@@ -81,6 +82,7 @@ export class FixtureArchiveRepository implements ArchiveRepository {
   async getTraceAtlas(options?: ReadOptions): Promise<RepoResult<TraceAtlas>> { return abort(options) ?? ok({ namedUnits: [{ id: "active-trace-objects", label: "Active TRACE objects", totalExact: 0 }], totalExact: 0, message: "This release has no verified TRACE evidence." }); }
   async listTraceObjects(input: TraceObjectQuery & PageRequest, options?: ReadOptions): Promise<RepoResult<Page<TraceObjectSummary>>> { if (abort<Page<TraceObjectSummary>>(options)) return abort<Page<TraceObjectSummary>>(options)!; return keysetPage<TraceObjectSummary>([], (item) => item.objectId, version, input, "trace-objects", input.layer ?? "active", "id"); }
   async getTraceNeighborhood(_objectId: string, options?: ReadOptions): Promise<RepoResult<TraceGraph>> { return abort<TraceGraph>(options) ?? resultError<TraceGraph>("NOT_FOUND", "this release has no TRACE-eligible object for a neighborhood"); }
+  async getTraceContext(_objectId: string, options?: ReadOptions): Promise<RepoResult<PublicContextDataset>> { return abort<PublicContextDataset>(options) ?? resultError<PublicContextDataset>("NOT_FOUND", "Context dataset is not available for this object"); }
   async listRelationTypes(options?: ReadOptions): Promise<RepoResult<readonly RelationTypeDefinition[]>> { return abort(options) ?? ok([]); }
   async getRelationType(_id: string, options?: ReadOptions): Promise<RepoResult<RelationTypeDefinition>> { return abort<RelationTypeDefinition>(options) ?? resultError<RelationTypeDefinition>("NOT_FOUND", "relation type is not published in this sealed release"); }
   async getRelation(_id: string, options?: ReadOptions): Promise<RepoResult<SemanticRelation>> { return abort<SemanticRelation>(options) ?? resultError<SemanticRelation>("NOT_FOUND", "relation is not published in this sealed release"); }

@@ -5,7 +5,7 @@ import type {
   TraceSemanticEdge,
 } from "../../domain";
 
-export const CONTEXT_CANVAS_SCHEMA_VERSION = 1 as const;
+export const CONTEXT_CANVAS_SCHEMA_VERSION = 2 as const;
 export const CONTEXT_CANVAS_HISTORY_LIMIT = 50;
 export const CONTEXT_CANVAS_NODE_WIDTH = 224;
 export const CONTEXT_CANVAS_NODE_HEIGHT = 104;
@@ -16,17 +16,95 @@ export const CONTEXT_CANVAS_MAX_ABS_COORDINATE = 1_000_000;
 
 export type ContextCanvasDataMode =
   | "synthetic_contract"
-  | "real_v49_validation";
+  | "real_v49_validation"
+  | "governed_context_v1";
 
-export interface ContextCanvasDataMetadata {
+export type ContextCanvasRepresentationKind =
+  | "medium"
+  | "theme"
+  | "movement_context";
+
+export type ContextCanvasRepresentationSourceKind =
+  | "medium"
+  | "theme"
+  | "movement";
+
+export interface ContextCanvasRepresentationExplanation {
+  readonly publicName: string;
+  readonly definition: string;
+  readonly longDefinition: string;
+  readonly whyShown: string;
+  readonly sourceBasis: string;
+  readonly permittedInterpretation: string;
+  readonly prohibitedInterpretations: readonly string[];
+  readonly accessibilityWording: string;
+}
+
+export interface ContextCanvasRepresentationProvenance {
+  readonly provenanceId: string;
+  readonly basis: "project_curated_typed_membership";
+  readonly sourceKind: ContextCanvasRepresentationSourceKind;
+  readonly sourceState: "proposed";
+  readonly mappingPolicyVersion: string;
+  readonly governancePolicyVersion: "context-governance-v1";
+  readonly decision:
+    | "PUBLISHED"
+    | "QUALIFIED";
+}
+
+export interface ContextCanvasGovernedRepresentation {
+  readonly representationId: string;
+  readonly termId: string;
+  readonly kind: ContextCanvasRepresentationKind;
+  readonly label: string;
+  readonly epistemicRole: "project_curated_context";
+  readonly publicationState: "published" | "qualified";
+  readonly explanationCode: "CTX-MEDIUM" | "CTX-THEME" | "CTX-MOVEMENT";
+  readonly connectionLabel: "classified as" | "themed as" | "curated within";
+  readonly explanation: ContextCanvasRepresentationExplanation;
+  readonly provenance: ContextCanvasRepresentationProvenance;
+}
+
+export interface ContextCanvasGovernedRootMetadata {
+  readonly creatorAttribution: string;
+  readonly objectType: string;
+  readonly dateDisplay: string;
+  readonly sourceName: string;
+}
+
+export interface ContextCanvasGovernedContextMetadata {
+  readonly projectionId: string;
+  readonly projectionSha256: string;
+  readonly policyVersion: "context-governance-v1";
+  readonly explanationRegistryVersion: string;
+  readonly representations: readonly ContextCanvasGovernedRepresentation[];
+  readonly rootMetadata?: ContextCanvasGovernedRootMetadata;
+}
+
+interface ContextCanvasDataMetadataBase {
   readonly dataLabel: string;
   readonly mappingVersion: string;
-  readonly candidateState: "synthetic_contract" | "not_published";
   readonly historicalEvidence: false;
-  readonly governedPublicRelease: false;
-  readonly publicReleaseData: false;
   readonly publicObjectCohortCount: number;
 }
+
+export interface ContextCanvasUngovernedDataMetadata extends ContextCanvasDataMetadataBase {
+  readonly candidateState: "synthetic_contract" | "not_published";
+  readonly governedPublicRelease: false;
+  readonly publicReleaseData: false;
+  readonly governedContext?: never;
+}
+
+export interface ContextCanvasGovernedDataMetadata extends ContextCanvasDataMetadataBase {
+  readonly candidateState: "published";
+  readonly governedPublicRelease: true;
+  readonly publicReleaseData: true;
+  readonly governedContext: ContextCanvasGovernedContextMetadata;
+}
+
+export type ContextCanvasDataMetadata =
+  | ContextCanvasUngovernedDataMetadata
+  | ContextCanvasGovernedDataMetadata;
 
 export type ContextCanvasTemplateId =
   | "context-overview"
@@ -68,6 +146,15 @@ export interface ContextCanvasControlledAssignmentConnection {
   readonly assignment: TraceControlledAssignment;
 }
 
+export interface ContextCanvasContextRepresentationConnection {
+  readonly id: string;
+  readonly connectionKind: "context_representation";
+  readonly sourceEntityId: ContextCanvasEntityId;
+  readonly targetEntityId: ContextCanvasEntityId;
+  readonly accessibleRowId: string;
+  readonly representation: ContextCanvasGovernedRepresentation;
+}
+
 export interface ContextCanvasCuratedMembershipConnection {
   readonly id: string;
   readonly connectionKind: "curated_membership";
@@ -87,6 +174,7 @@ export interface ContextCanvasSemanticConnection {
 }
 
 export type ContextCanvasConnection =
+  | ContextCanvasContextRepresentationConnection
   | ContextCanvasControlledAssignmentConnection
   | ContextCanvasCuratedMembershipConnection
   | ContextCanvasSemanticConnection;
@@ -104,6 +192,7 @@ export interface ContextCanvasVisibleNode {
   readonly ref: TracePublicDataRef;
   readonly position: ContextCanvasPosition;
   readonly isRoot: boolean;
+  readonly representation?: ContextCanvasGovernedRepresentation;
 }
 
 export type ContextCanvasSelection =

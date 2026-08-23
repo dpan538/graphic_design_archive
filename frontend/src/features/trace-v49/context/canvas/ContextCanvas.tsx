@@ -26,6 +26,13 @@ import {
   fitContextCanvasViewport,
 } from "./layout";
 import {
+  contextCanvasAccessibleRowsForMode,
+  contextCanvasEntityRefsForMode,
+  contextCanvasRepresentationByEntityId,
+  contextCanvasSessionKey,
+  getGovernedContextMetadata,
+} from "./model";
+import {
   clearContextCanvasWorkspace,
   loadContextCanvasWorkspace,
   saveContextCanvasWorkspace,
@@ -35,7 +42,10 @@ import {
   contextCanvasFunctionalState,
   createInitializingContextCanvasState,
 } from "./state";
-import { initializeContextCanvasTemplate } from "./templates";
+import {
+  getContextCanvasTemplatesForMode,
+  initializeContextCanvasTemplate,
+} from "./templates";
 import {
   CONTEXT_CANVAS_DEFAULT_EXPORT_SCALE,
   CONTEXT_CANVAS_MAX_ZOOM,
@@ -74,20 +84,24 @@ function stateForPersistenceTeardown(state: ContextCanvasState): ContextCanvasSt
 function persistContextCanvasSession(
   dataset: TraceContextDataset,
   state: ContextCanvasState,
+  dataMode: ContextCanvasDataMode,
+  metadata: ContextCanvasDataMetadata,
 ): boolean {
   try {
-    return saveContextCanvasWorkspace(dataset, state, window.localStorage);
+    return saveContextCanvasWorkspace(
+      dataset,
+      state,
+      window.localStorage,
+      dataMode,
+      metadata,
+    );
   } catch {
     return false;
   }
 }
 
 export default function ContextCanvas(props: ContextCanvasProps) {
-  const sessionKey = JSON.stringify([
-    props.dataMode,
-    props.dataset.release.manifestSha256,
-    props.dataset.selectedRecord.stableId,
-  ]);
+  const sessionKey = contextCanvasSessionKey(props.dataset, props.dataMode, props.metadata);
 
   return <ContextCanvasSession key={sessionKey} {...props} />;
 }
@@ -95,8 +109,8 @@ export default function ContextCanvas(props: ContextCanvasProps) {
 function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProps) {
   const [state, dispatch] = useReducer(
     contextCanvasReducer,
-    dataset,
-    createInitializingContextCanvasState,
+    undefined,
+    () => createInitializingContextCanvasState(dataset, dataMode, metadata),
   );
   const [viewportSize, setViewportSize] = useState<ContextCanvasViewportSize>(DEFAULT_VIEWPORT_SIZE);
   const [paletteCollapsed, setPaletteCollapsed] = useState(false);
@@ -109,22 +123,41 @@ function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProp
   const exportAbortControllerRef = useRef<AbortController | null>(null);
 
   const composition = state.history.present;
+  const templates = useMemo(() => getContextCanvasTemplatesForMode(dataMode), [dataMode]);
   const visibleIds = useMemo(() => new Set(composition.visibleEntityIds), [composition.visibleEntityIds]);
+  const canvasEntities = useMemo(
+    () => contextCanvasEntityRefsForMode(dataset, dataMode, metadata),
+    [dataMode, dataset, metadata],
+  );
+  const representationByEntityId = useMemo(
+    () => contextCanvasRepresentationByEntityId(dataMode, metadata),
+    [dataMode, metadata],
+  );
+  const allAccessibleRows = useMemo(
+    () => contextCanvasAccessibleRowsForMode(dataset, dataMode, metadata),
+    [dataMode, dataset, metadata],
+  );
+  const governed = getGovernedContextMetadata(dataMode, metadata);
   const availableEntities = useMemo(
-    () => dataset.items.filter((item) => !visibleIds.has(contextCanvasEntityId(item))),
-    [dataset, visibleIds],
+    () => canvasEntities.filter((item) => !visibleIds.has(contextCanvasEntityId(item))),
+    [canvasEntities, visibleIds],
   );
   const visibleConnections = useMemo(
-    () => deriveVisibleContextCanvasConnections(dataset, composition.visibleEntityIds),
-    [dataset, composition.visibleEntityIds],
+    () => deriveVisibleContextCanvasConnections(
+      dataset,
+      composition.visibleEntityIds,
+      dataMode,
+      metadata,
+    ),
+    [composition.visibleEntityIds, dataMode, dataset, metadata],
   );
   const visibleAccessibleRows = useMemo(() => {
     const rowIds = new Set([
       `selected:${dataset.selectedRecord.stableId}`,
       ...visibleConnections.map((connection) => connection.accessibleRowId),
     ]);
-    return dataset.accessibleRows.filter((row) => rowIds.has(row.id));
-  }, [dataset, visibleConnections]);
+    return allAccessibleRows.filter((row) => rowIds.has(row.id));
+  }, [allAccessibleRows, dataset.selectedRecord.stableId, visibleConnections]);
   const interactionLocked = state.phase === "INITIALIZING"
     || state.phase === "EXPORTING"
     || state.interaction.mode !== "READY";
@@ -136,7 +169,12 @@ function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProp
         : size);
     if (initialViewportFitPending.current && size.width > 0 && size.height > 0) {
       initialViewportFitPending.current = false;
-      const initial = initializeContextCanvasTemplate(dataset, "context-overview");
+      const initial = initializeContextCanvasTemplate(
+        dataset,
+        "context-overview",
+        dataMode,
+        metadata,
+      );
       dispatch({
         type: "SET_VIEWPORT",
         viewport: fitContextCanvasViewport(
@@ -145,18 +183,28 @@ function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProp
         ),
       });
     }
-  }, [dataset]);
+  }, [dataMode, dataset, metadata]);
 
   useEffect(() => {
-    const restored = loadContextCanvasWorkspace(dataset, window.localStorage);
+    const restored = loadContextCanvasWorkspace(
+      dataset,
+      window.localStorage,
+      dataMode,
+      metadata,
+    );
     if (restored) {
       initialViewportFitPending.current = false;
       dispatch({ type: "INITIALIZE", ...restored });
       return;
     }
-    const initial = initializeContextCanvasTemplate(dataset, "context-overview");
+    const initial = initializeContextCanvasTemplate(
+      dataset,
+      "context-overview",
+      dataMode,
+      metadata,
+    );
     dispatch({ type: "INITIALIZE", composition: initial });
-  }, [dataset]);
+  }, [dataMode, dataset, metadata]);
 
   useLayoutEffect(() => {
     latestStateRef.current = state;
@@ -165,10 +213,10 @@ function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProp
   useEffect(() => {
     if (state.phase === "INITIALIZING" || state.interaction.mode === "NODE_DRAGGING") return;
     const timer = window.setTimeout(() => {
-      persistContextCanvasSession(dataset, state);
+      persistContextCanvasSession(dataset, state, dataMode, metadata);
     }, 160);
     return () => window.clearTimeout(timer);
-  }, [dataset, composition, state.viewport, state.phase, state.interaction.mode]);
+  }, [dataMode, dataset, metadata, composition, state.viewport, state.phase, state.interaction.mode]);
 
   useEffect(() => {
     const flushLatestSession = () => {
@@ -180,6 +228,8 @@ function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProp
       persistContextCanvasSession(
         dataset,
         stateForPersistenceTeardown(latestState),
+        dataMode,
+        metadata,
       );
     };
     const restoreAfterPageCache = (event: PageTransitionEvent) => {
@@ -194,7 +244,7 @@ function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProp
       window.removeEventListener("pageshow", restoreAfterPageCache);
       flushLatestSession();
     };
-  }, [dataset]);
+  }, [dataMode, dataset, metadata]);
 
   useEffect(() => {
     if (!pendingFocusTarget) return;
@@ -215,7 +265,7 @@ function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProp
   }
 
   function applyTemplate(templateId: typeof composition.templateId) {
-    const next = initializeContextCanvasTemplate(dataset, templateId);
+    const next = initializeContextCanvasTemplate(dataset, templateId, dataMode, metadata);
     dispatch({ type: "APPLY_TEMPLATE", composition: next });
     fitComposition(next);
   }
@@ -280,8 +330,13 @@ function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProp
   }
 
   function resetCanvas() {
-    const initial = initializeContextCanvasTemplate(dataset, composition.templateId);
-    clearContextCanvasWorkspace(dataset, window.localStorage);
+    const initial = initializeContextCanvasTemplate(
+      dataset,
+      composition.templateId,
+      dataMode,
+      metadata,
+    );
+    clearContextCanvasWorkspace(dataset, window.localStorage, dataMode, metadata);
     dispatch({ type: "RESET_CANVAS", composition: initial });
     fitComposition(initial);
   }
@@ -292,7 +347,13 @@ function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProp
     exportAbortControllerRef.current = controller;
     dispatch({ type: "EXPORT_START" });
     try {
-      const stableSnapshot = prepareContextCanvasExportSvg(dataset, composition);
+      const stableSnapshot = prepareContextCanvasExportSvg(
+        dataset,
+        composition,
+        true,
+        dataMode,
+        metadata,
+      );
       const filename = buildContextCanvasPngFilename(dataset.selectedRecord.stableId);
       await downloadContextCanvasPng(
         stableSnapshot,
@@ -320,11 +381,17 @@ function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProp
       <header className={styles.prototypeHeader}>
         <div>
           <p className={styles.eyebrow}>
-            TRACE v49 · {dataMode === "real_v49_validation" ? "real-data validation workspace" : "synthetic contract workspace"}
+            TRACE v49 · {dataMode === "governed_context_v1"
+              ? "governed Context v1 workspace"
+              : dataMode === "real_v49_validation"
+                ? "real-data validation workspace"
+                : "synthetic contract workspace"}
           </p>
           <h1>Context Canvas</h1>
           <p>
-            Compose a view over a read-only context dataset. Moving or hiding items changes only this local canvas.
+            {dataMode === "governed_context_v1"
+              ? "Explore the archive's governed project-curated classifications. They are research-navigation context, not historical relations."
+              : "Compose a view over a read-only context dataset. Moving or hiding items changes only this local canvas."}
           </p>
         </div>
         <dl className={styles.dataNotice}>
@@ -332,7 +399,18 @@ function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProp
           <div><dt>Dataset</dt><dd>{metadata.dataLabel}</dd></div>
           <div><dt>Mapping</dt><dd>{metadata.mappingVersion}</dd></div>
           <div><dt>Selected public ID</dt><dd>{dataset.selectedRecord.stableId}</dd></div>
-          <div><dt>Candidate state</dt><dd>{metadata.candidateState}</dd></div>
+          {governed ? (
+            <>
+              <div><dt>Context projection</dt><dd>{governed.projectionId}</dd></div>
+              <div><dt>Governance policy</dt><dd>{governed.policyVersion}</dd></div>
+              <div><dt>Explanation registry</dt><dd>{governed.explanationRegistryVersion}</dd></div>
+              <div><dt>Context publication</dt><dd>published as project-curated context</dd></div>
+              <div><dt>Frozen source state</dt><dd>proposed</dd></div>
+              <div><dt>Historical relations</dt><dd>none asserted by Context</dd></div>
+            </>
+          ) : (
+            <div><dt>Candidate state</dt><dd>{metadata.candidateState}</dd></div>
+          )}
           <div><dt>Availability</dt><dd>{dataset.availability.state}</dd></div>
           <div><dt>Governed release</dt><dd>{String(metadata.governedPublicRelease)}</dd></div>
         </dl>
@@ -340,6 +418,7 @@ function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProp
 
       <ContextCanvasToolbar
         templateId={composition.templateId}
+        templates={templates}
         canUndo={state.history.past.length > 0}
         canRedo={state.history.future.length > 0}
         canZoomIn={state.viewport.zoom < CONTEXT_CANVAS_MAX_ZOOM}
@@ -351,7 +430,12 @@ function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProp
         onRedo={() => dispatch({ type: "REDO" })}
         onAutoArrange={() => dispatch({
           type: "AUTO_ARRANGE",
-          positions: autoArrangeContextCanvas(dataset, composition.visibleEntityIds),
+          positions: autoArrangeContextCanvas(
+            dataset,
+            composition.visibleEntityIds,
+            dataMode,
+            metadata,
+          ),
         })}
         onFit={() => fitComposition()}
         onZoomIn={() => zoomBy(1.2)}
@@ -364,12 +448,13 @@ function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProp
       <div className={styles.workspace}>
         <ContextEntityPalette
           entities={availableEntities}
+          representationByEntityId={representationByEntityId}
           collapsed={paletteCollapsed}
           disabled={interactionLocked}
           onToggleCollapsed={() => setPaletteCollapsed((value) => !value)}
           onAdd={addEntity}
           onDragStart={(entityId, pointerId, clientX, clientY) => {
-            const ref = dataset.items.find((item) => contextCanvasEntityId(item) === entityId);
+            const ref = canvasEntities.find((item) => contextCanvasEntityId(item) === entityId);
             setPaletteGhost({ x: clientX, y: clientY, label: ref?.label || ref?.stableId || "Entity" });
             dispatch({ type: "BEGIN_PALETTE_DRAG", entityId, pointerId });
           }}
@@ -384,6 +469,8 @@ function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProp
         <div className={styles.canvasColumn}>
           <ContextCanvasViewport
             dataset={dataset}
+            dataMode={dataMode}
+            metadata={metadata}
             state={state}
             dispatch={dispatch}
             containerRef={viewportContainerRef}
@@ -398,7 +485,11 @@ function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProp
               Accessible context reference ({visibleAccessibleRows.length} rows)
             </summary>
             <div className={styles.accessibleReferenceContent}>
-              <p>This table is the non-graphic equivalent for the selected record and every currently visible typed connection.</p>
+              <p>
+                {dataMode === "governed_context_v1"
+                  ? "This table is the non-graphic equivalent for the selected record and every visible governed Context representation, including its explanation and provenance summary."
+                  : "This table is the non-graphic equivalent for the selected record and every currently visible typed connection."}
+              </p>
               <div className={styles.tableScroll}>
                 <table>
                   <caption>Visible Context Canvas reference rows</caption>
@@ -420,6 +511,8 @@ function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProp
 
         <ContextCanvasInspector
           dataset={dataset}
+          dataMode={dataMode}
+          metadata={metadata}
           selection={state.selection}
           connections={visibleConnections}
           collapsed={inspectorCollapsed}
