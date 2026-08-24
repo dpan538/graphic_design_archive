@@ -93,6 +93,41 @@ git show v49-data-api-closure-20260821:PROJECT_LOG.md
 - Human review is next. No probability model, clustering model, renderer, public Exploration API or route, template-registry freeze, historical-relation claim, or semantic-relation claim is introduced.
 - Context and Spacetime remain frozen. Round 6 consumes their governed projections without changing semantics, governance, or public projection.
 
+### Exploration NLP semantic corpus audit Round 1 — 2026-08-24
+
+- The governed NLP corpus audit covers all 7,995 public objects and excludes all
+  7,928 held objects. All 37 source text fields are classified, source narrative
+  remains isolated, and unavailable aspects remain explicit.
+- Four lexical families and two exact-revision dense candidates completed the
+  bounded baseline program. The dense evidence comprises six authenticated
+  encodings; the two title replay pairs are deterministic. Known-item retrieval
+  measures representation consistency only, and the cross-language task remains
+  `N/A` because there are zero archive-native verified language-variant pairs.
+- Both dense title models trigger the frozen source-provider-dominance gate.
+  The conservative result is corpus-audit-only: no NLP family, dense model,
+  architecture position, structured/NLP fusion, weight set, or public channel is
+  selected. Context, Spacetime, `CG-CUR-4`, and `M2/M5/M7` remain unchanged.
+
+EXPLORATION_NLP_CORPUS_AUDIT=COMPLETE
+
+EXPLORATION_NLP_BASELINES=COMPLETE_WITH_LIMITATIONS
+
+EXPLORATION_NLP_REGRESSION=PASS
+
+EXPLORATION_NLP_MODEL_DECISION=NLP_CORPUS_AUDIT_ONLY
+
+EXPLORATION_STRUCTURED_NLP_FUSION=NOT_SELECTED
+
+PROJECT_LOG_UPDATED=true
+
+CONTEXT_STATUS=FROZEN
+
+SPACETIME_STATUS=FROZEN
+
+EXPLORATION_STRUCTURED_CANDIDATE_RETRIEVAL=CG-CUR-4
+
+EXPLORATION_STRUCTURED_MODEL_SHORTLIST=M2,M5,M7
+
 `CONTEXT_CANVAS_FUNCTIONAL_CORE=COMPLETE`
 
 `CONTEXT_CANVAS_REAL_DATA_VALIDATION=ACTIVE`
@@ -135,10 +170,10 @@ git show v49-data-api-closure-20260821:PROJECT_LOG.md
 
 `EXPLORATION_PROVISIONAL_MODEL=NOT_SELECTED`
 
-`EXPLORATION_PUBLIC_MODEL=NOT_SELECTED`
+EXPLORATION_PUBLIC_MODEL=NOT_SELECTED
 
 `EXPLORATION_HUMAN_REVIEW=NEXT`
 
-`EXPLORATION_RENDERER=NOT_IMPLEMENTED`
+EXPLORATION_RENDERER=NOT_IMPLEMENTED
 
 `FINAL_TRACE_VISUAL_DESIGN=DEFERRED`
