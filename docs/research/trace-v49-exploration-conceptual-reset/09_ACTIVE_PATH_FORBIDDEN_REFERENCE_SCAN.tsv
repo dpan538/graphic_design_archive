@@ -1,0 +1,27 @@
+scan_id	path_scope	reference_class	active_violation_count	classification	enforcement
+SCAN-001	frontend/src/lib/trace	archive object fields	0	PASS	positive domain schemas and recursive identity guard
+SCAN-002	frontend/src/lib/trace	record routes	0	PASS	static active-source scanner
+SCAN-003	frontend/src/lib/trace	object cards, titles, thumbnails	0	PASS	positive schemas and static scanner
+SCAN-004	frontend/src/lib/trace	Search DTO imports	0	PASS	static import scanner
+SCAN-005	frontend/src/lib/trace	Context imports	0	PASS	static import scanner
+SCAN-006	frontend/src/lib/trace	Spacetime imports	0	PASS	static import scanner
+SCAN-007	frontend/src/lib/trace	external model references	0	PASS	static reference scanner
+SCAN-008	frontend/src/lib/trace	external model imports	0	PASS	static import scanner
+SCAN-009	frontend/src/lib/trace	model download targets	0	PASS	static invocation scanner
+SCAN-010	frontend/src/lib/trace	nearest-neighbor and object scoring	0	PASS	static architecture scanner
+SCAN-011	frontend/package.json and lockfile	external model dependencies	0	PASS	manifest audit
+SCAN-012	frontend/package.json and lockfile	vector database dependencies	0	PASS	manifest audit
+SCAN-013	scripts/exploration-v49-analysis	active legacy execution directory	0	REMOVED	explicit tracked-path purge
+SCAN-014	scripts/exploration-v49-similarity	active legacy execution directory	0	REMOVED	explicit tracked-path purge
+SCAN-015	scripts/exploration-v49-nlp	active legacy execution directory	0	REMOVED	explicit tracked-path purge
+SCAN-016	frontend/src/app/trace/exploration	public route	0	PASS	path guard
+SCAN-017	frontend/src/app/api/**/exploration	public API	0	PASS	path guard
+SCAN-018	docs/research and docs/audits sealed Round 6/7	forbidden historical terms	N/A	ALLOWLISTED_SUPERSEDED_EVIDENCE	Git tree identity and diff guard
+SCAN-019	reset policy and test fixtures	forbidden denial examples	N/A	ALLOWLISTED_ENFORCEMENT	explicit denial/test classification; never runtime capability
+SCAN-020	Search, Context, Spacetime, database	protected changes	0	PASS	source-commit scoped git diff
+SCAN-021	active Exploration implementation	object affinity, recommendation, pair scoring	0	PASS	static architecture scanner
+SCAN-022	active Exploration implementation	embedding inference and dense vector runtime	0	PASS	static model/import/invocation scanner
+SCAN-023	active Exploration implementation	CG-CUR-4, M2, M5, M7	0	PASS	legacy runtime purge; only supersession documents retain names
+SCAN-024	active Exploration implementation	Qwen, E5, BGE, Jina, fastText	0	PASS	legacy runtime purge; only bad-practice/supersession documents retain names
+SCAN-025	active Exploration implementation	vector database and ANN integration	0	PASS	manifest and source scanner
+SCAN-026	PROJECT_LOG.md and EXPLORATION_CURRENT.md	obsolete active-authority statements	0	PASS	required/obsolete status-token audit

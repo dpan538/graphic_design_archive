@@ -1,0 +1,15 @@
+check	status	evidence
+TYPECHECK	PASS	npx tsc --project tsconfig.json --pretty false
+EXPLORATION_DOMAIN_TESTS	PASS	6 structural checks
+ZERO_OBJECT_EXPOSURE_TESTS	PASS	0 active fields/routes/cards/titles/thumbnails
+BAD_PRACTICE_GUARD_TESTS	PASS	12 of 12 adversaries rejected
+EXTERNAL_MODEL_PURGE_TESTS	PASS	0 refs/imports/download targets/dependencies/vector dependencies
+IMAGE_IMMUTABILITY_TESTS	PASS	0 Image hash mutations after Container edits
+FLOW_EPISTEMIC_TESTS	PASS	0 invalid generative historical claims accepted
+ACTIVE_REFERENCE_SCAN	PASS	0 active implementation violations
+SEARCH_REGRESSION	PASS	14 checks; 7995 documents
+CONTEXT_REGRESSION	PASS	projection, API, governance, runtime
+SPACETIME_REGRESSION	PASS	projection, governance, API, GIS, runtime
+API_TESTS	PASS	Read platform, Context API, Spacetime API
+PRODUCTION_BUILD	PASS	46 static-generation pages; no Exploration route
+GIT_DIFF_CHECK	PASS	No whitespace errors

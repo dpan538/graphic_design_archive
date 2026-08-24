@@ -55,9 +55,9 @@ git show v49-data-api-closure-20260821:PROJECT_LOG.md
 
 ### Exploration Field
 
-- Confirmed as the third TRACE research direction: an exploratory pixel-grid/generative field driven by similarity, probability-like signals, and ambient factors.
-- Use seeded deterministic randomness; approximately 8–10 template families are currently envisioned, with theme, medium, and similar single-factor selections able to drive exploration.
-- Derived associations are not historical relations. Data mining remains active; do not freeze factors, scoring, or the template catalog yet.
+- Confirmed as the third TRACE research direction: a non-object-facing conceptual relation inspiration field for composing nodes, flows, clusters, and persistent tree-map topology.
+- The primary unit is `CONCEPTUAL_RELATION_NODE`. Exploration exposes zero archive objects and accepts no Context, Spacetime, object metadata, similarity, affinity, recommendation, or object-ranking input.
+- Seeded deterministic composition may choose only among governed conceptual structures. It cannot invent vocabulary, evidence, or historical facts. Renderer and relation vocabulary remain future work.
 
 ### Context Canvas real-data validation — 2026-08-23
 
@@ -76,57 +76,34 @@ git show v49-data-api-closure-20260821:PROJECT_LOG.md
 - Context V1 runtime behavior is rehearsed and frozen: the Context API dispatches through its compact governed projection without loading the Search index, SQLite, or the generic archive repository in the normal Context path.
 - Spacetime V1 governs all 7,996 public typed-region assignments across the 7,995-record public cohort, with explicit mapped, aggregate-only, and display-unmapped outcomes. It publishes recorded project context only; it does not assert object coordinates, historical presence, movement, influence, or semantic relations.
 - The functional foundation uses a checksum-bound Natural Earth Admin 0 Countries 50m artifact, an Equal Earth default projection, deterministic aggregate marks, 23 decade buckets, and release-pinned server API reads. Final visual design, public navigation, and visual acceptance remain deferred.
-- Exploration Field remains an open-ended data-mining direction; no implementation or factor/template freeze is included here.
+- Exploration Field is independent from Context and Spacetime. Their projections are not semantic inputs to Exploration.
 
-### Spacetime engineering closure + Exploration discovery — 2026-08-24
+### Historical Exploration data-discovery research — superseded 2026-08-25
 
 - Spacetime V1 engineering logic is frozen after production-runtime rehearsal, exhaustive period/geography validation, deterministic renderer parity, cache and stale-request hardening, and functional browser acceptance. Final visual design and public navigation remain deferred.
-- Exploration Field Data Discovery Round 1 maps a 64-signal research space across governed Context, governed Spacetime, source/corpus composition, descriptive metadata, curatorial structure, missingness/uncertainty, and bounded frequency/intersection diagnostics.
-- Curatorial co-membership, rarity, concentration, conditional rates, lift, and uncertainty remain analysis diagnostics only. They are not historical or semantic relations, rankings, probabilities, or evidence of influence.
-- No similarity model, weights, clustering model, probability model, renderer, or final Exploration template registry is selected in this round. Context governance and Spacetime governance remain unchanged.
+- The Round 5 data-discovery package remains immutable historical evidence only. Its object/metadata signals are not an active Exploration architecture or input.
+- Context and Spacetime engineering closures remain frozen and authoritative for their own TRACE functions.
 
-### Exploration affinity research Round 1 — 2026-08-24
+### Historical Exploration affinity research Round 1 — superseded 2026-08-25
 
-- Signal-lineage review maps eight independent base signals. Governed geography class remains a deterministic candidate-generation/explanation fallback and adds zero independent geography score.
-- CG-CUR-4 is selected as the bounded public-only candidate-retrieval architecture. Evaluation streamed all 31,956,015 unordered public pairs twice, retained bounded top-k evidence only, and committed no pair matrix.
-- M2 smoothed-IDF cosine and M5 Gower-style family balance are shortlisted for symmetric object-local research; M7 BM25F-like fielded retrieval is shortlisted for explicit query-conditioned research. This is a model-family shortlist only, not a selected model, formula, weight set, or public decision.
-- Human review is next. No probability model, clustering model, renderer, public Exploration API or route, template-registry freeze, historical-relation claim, or semantic-relation claim is introduced.
-- Context and Spacetime remain frozen. Round 6 consumes their governed projections without changing semantics, governance, or public projection.
+- `CG-CUR-4`, `M2`, `M5`, and `M7` are `SUPERSEDED_NON_AUTHORITATIVE_EXPLORATION_RESEARCH`.
+- The sealed Round 6 research and audit packages remain evidence that object-centric similarity was investigated and rejected. They are not current architecture, future renderer input, a model shortlist, or a human-review next step.
 
-### Exploration NLP semantic corpus audit Round 1 — 2026-08-24
+### Historical Exploration NLP semantic corpus audit Round 1 — superseded 2026-08-25
 
-- The governed NLP corpus audit covers all 7,995 public objects and excludes all
-  7,928 held objects. All 37 source text fields are classified, source narrative
-  remains isolated, and unavailable aspects remain explicit.
-- Four lexical families and two exact-revision dense candidates completed the
-  bounded baseline program. The dense evidence comprises six authenticated
-  encodings; the two title replay pairs are deterministic. Known-item retrieval
-  measures representation consistency only, and the cross-language task remains
-  `N/A` because there are zero archive-native verified language-variant pairs.
-- Both dense title models trigger the frozen source-provider-dominance gate.
-  The conservative result is corpus-audit-only: no NLP family, dense model,
-  architecture position, structured/NLP fusion, weight set, or public channel is
-  selected. Context, Spacetime, `CG-CUR-4`, and `M2/M5/M7` remain unchanged.
+- The sealed Round 7 research and audit packages remain useful evidence of source/provider leakage, absent governed object-description text, absent semantic ground truth, and absent verified multilingual pairs.
+- The entire object-title, object-subject, source-narrative, lexical-neighbor, dense-neighbor, and structured/NLP fusion direction is `SUPERSEDED_NON_AUTHORITATIVE_EXPLORATION_RESEARCH`.
+- No external semantic model is approved. Active model download, inference, registry, encoder, checkpoint, vector-index, and selection surfaces have been removed.
 
-EXPLORATION_NLP_CORPUS_AUDIT=COMPLETE
+ROUND7_OBJECT_NLP_STATUS=SUPERSEDED_NON_AUTHORITATIVE_EXPLORATION_RESEARCH
 
-EXPLORATION_NLP_BASELINES=COMPLETE_WITH_LIMITATIONS
-
-EXPLORATION_NLP_REGRESSION=PASS
-
-EXPLORATION_NLP_MODEL_DECISION=NLP_CORPUS_AUDIT_ONLY
-
-EXPLORATION_STRUCTURED_NLP_FUSION=NOT_SELECTED
+ROUND7_NLP_EVIDENCE_RETENTION=SEALED_HISTORICAL_ONLY
 
 PROJECT_LOG_UPDATED=true
 
 CONTEXT_STATUS=FROZEN
 
 SPACETIME_STATUS=FROZEN
-
-EXPLORATION_STRUCTURED_CANDIDATE_RETRIEVAL=CG-CUR-4
-
-EXPLORATION_STRUCTURED_MODEL_SHORTLIST=M2,M5,M7
 
 `CONTEXT_CANVAS_FUNCTIONAL_CORE=COMPLETE`
 
@@ -156,24 +133,40 @@ EXPLORATION_STRUCTURED_MODEL_SHORTLIST=M2,M5,M7
 
 `SPACETIME_FINAL_VISUAL_DESIGN=DEFERRED`
 
-`EXPLORATION_FIELD=OPEN_ENDED_DATA_MINING`
+`EXPLORATION_FIELD=CONCEPTUAL_RELATION_INSPIRATION_FIELD`
 
-`EXPLORATION_FIELD_DATA_DISCOVERY_ROUND1=COMPLETE`
+`EXPLORATION_OBJECT_CENTRIC_BRANCH=SUPERSEDED`
 
-`EXPLORATION_SIGNAL_REGISTRY=64`
+`EXPLORATION_OBJECT_NLP_BRANCH=SUPERSEDED`
 
-`EXPLORATION_INDEPENDENT_BASE_SIGNAL_COUNT=8`
+`EXPLORATION_PRIMARY_UNIT=CONCEPTUAL_RELATION_NODE`
 
-`EXPLORATION_CANDIDATE_RETRIEVAL=CG-CUR-4_SELECTED`
+`EXPLORATION_FRONTEND_OBJECT_EXPOSURE=ZERO`
 
-`EXPLORATION_SIMILARITY_MODEL=MODEL_FAMILY_SHORTLISTED_M2_M5_M7`
+`EXPLORATION_SIMILARITY=PROHIBITED`
 
-`EXPLORATION_PROVISIONAL_MODEL=NOT_SELECTED`
+`EXPLORATION_RECOMMENDATION=PROHIBITED`
 
-EXPLORATION_PUBLIC_MODEL=NOT_SELECTED
+`EXPLORATION_OBJECT_RANKING=PROHIBITED`
 
-`EXPLORATION_HUMAN_REVIEW=NEXT`
+`EXPLORATION_CONTEXT_INPUT=PROHIBITED`
 
-EXPLORATION_RENDERER=NOT_IMPLEMENTED
+`EXPLORATION_SPACETIME_INPUT=PROHIBITED`
+
+`EXPLORATION_EXTERNAL_MODEL_POLICY=DENY_BY_DEFAULT`
+
+`EXPLORATION_APPROVED_EXTERNAL_MODEL_COUNT=0`
+
+`EXPLORATION_RELATION_VOCABULARY=RESEARCH_NEXT`
+
+`EXPLORATION_RELATION_GRAMMAR=RESEARCH_NEXT`
+
+`EXPLORATION_IMAGE_CONTRACT=DEFINED`
+
+`EXPLORATION_INSTANCE_CONTAINER_CONTRACT=DEFINED`
+
+`EXPLORATION_RENDERER=NOT_IMPLEMENTED`
+
+`EXPLORATION_PUBLIC_ROUTE=NOT_IMPLEMENTED`
 
 `FINAL_TRACE_VISUAL_DESIGN=DEFERRED`

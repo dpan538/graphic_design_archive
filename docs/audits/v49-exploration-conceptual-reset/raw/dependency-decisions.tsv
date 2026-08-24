@@ -1,0 +1,10 @@
+manifest	dependency_or_surface	before	decision	after	reason
+frontend/package.json	external model dependencies	0	NO_REMOVAL_REQUIRED	0	No superseded model package was present
+frontend/package-lock.json	external model dependencies	0	UNCHANGED	0	No superseded model package was present
+frontend/package.json	vector database dependencies	0	NO_REMOVAL_REQUIRED	0	No vector database package was present
+frontend/package-lock.json	vector database dependencies	0	UNCHANGED	0	No vector database package was present
+frontend/package.json	generate:exploration-v49-round1	1	REMOVED	0	Executed superseded object-signal analysis
+frontend/package.json	verify:exploration-v49-round1	1	REMOVED	0	Exposed superseded object-signal execution surface
+frontend/package.json	benchmark:exploration-v49-round1	1	REMOVED	0	Exposed superseded object-signal benchmark
+frontend/package.json	test:exploration-domain	0	ADDED	1	Local renderer-neutral contract and red-team tests
+frontend/package.json	verify:exploration-reset	0	ADDED	1	Deterministic active-path guard

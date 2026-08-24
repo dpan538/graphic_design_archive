@@ -1,0 +1,7 @@
+task_owned_path	artifact_type	bytes_before	action	bytes_after	ownership_proof
+/private/tmp/trace-nlp-v1-venv	Round 7 isolated Python runtime	11042371	REMOVED	0	Exact path documented in sealed Round 7 reproducibility evidence
+/private/tmp/trace-nlp-v1-runtime	Round 7 empty runtime directory	0	REMOVED	0	Trace NLP task-specific name and adjacent documented runtime
+/private/tmp/run_trace_nlp_dense_preflight.py	Round 7 dense preflight helper	4936	REMOVED	0	Trace NLP task-specific executable name
+/private/tmp/trace_nlp_round1_schema.json	Round 7 temporary schema	22963	REMOVED	0	Trace NLP Round 1 task-specific name
+/private/tmp/trace-nlp-selftest-*.json	23 Round 7 self-test receipts	7021	REMOVED	0	Trace NLP self-test task-specific names
+GLOBAL_OR_SHARED_MODEL_CACHES	Ambiguous shared/user caches	N/A	NOT_TOUCHED	N/A	Ownership not provable; outside task scope
