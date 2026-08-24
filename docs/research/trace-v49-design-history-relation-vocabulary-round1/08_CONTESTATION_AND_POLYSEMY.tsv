@@ -1,0 +1,34 @@
+candidate_id	candidate_label	contestation_status	contestation_sources	qualification_notes	polysemy_status	candidate_sense_ids	sense_split_count	final_decision
+REL-CAND-0001	mediation	UNCONTESTED_IN_REVIEWED_CORPUS	ATT-0001;ATT-0002	Two exact article attestations support a coherent intermediary process.	NO_PASS_BLOCKING_SPLIT		0	PASS_TO_GRAMMAR_RESEARCH
+REL-CAND-0002	circulation	POLYSEMOUS	ATT-0003;ATT-0004	Design-element movement and metropolitan circulation are materially different senses.	SEMANTIC_POLYSEMY_REQUIRES_SPLIT	CIRCULATION#DESIGN-ELEMENT-MOVEMENT;CIRCULATION#METROPOLITAN-MOVEMENT-POWER	2	DEFER_SEMANTIC_AMBIGUITY
+REL-CAND-0003	appropriation	POLYSEMOUS	ATT-0005;ATT-0006	Selective local incorporation and colonial extraction require separate senses and further evidence.	SEMANTIC_POLYSEMY_REQUIRES_SPLIT	APPROPRIATION#SELECTIVE-LOCAL-INCORPORATION;APPROPRIATION#COLONIAL-EXTRACTION	2	DEFER_SEMANTIC_AMBIGUITY
+REL-CAND-0004	canonization	CONTESTED	ATT-0007;ATT-0008	Two historical studies use the noun for elevation into canonical status.	NO_PASS_BLOCKING_SPLIT		0	PASS_TO_GRAMMAR_RESEARCH
+REL-CAND-0005	professionalization	HISTORICALLY_SHIFTING	ATT-0009;ATT-0010	Article and scholarly chapter support a coherent status-forming process.	NO_PASS_BLOCKING_SPLIT		0	PASS_TO_GRAMMAR_RESEARCH
+REL-CAND-0006	institutionalization	HISTORICALLY_SHIFTING	ATT-0011;ATT-0012	Two articles use the noun for design's embedding in durable organizations.	NO_PASS_BLOCKING_SPLIT		0	PASS_TO_GRAMMAR_RESEARCH
+REL-CAND-0007	transnational interactions	CONTESTED	ATT-0013;ATT-0014	Independent regional studies attest the exact plural relational phrase.	NO_PASS_BLOCKING_SPLIT		0	PASS_TO_GRAMMAR_RESEARCH
+REL-CAND-0008	cultural translation	CONTESTED	ATT-0015;ATT-0016	Independent historical works use the exact phrase for cross-cultural remaking.	NO_PASS_BLOCKING_SPLIT		0	PASS_TO_GRAMMAR_RESEARCH
+REL-CAND-0009	design exchanges	CONTESTED	ATT-0017;ATT-0018	Two independent works define and apply the exact phrase, with issue-concentration noted.	NO_PASS_BLOCKING_SPLIT		0	PASS_TO_GRAMMAR_RESEARCH
+REL-CAND-0010	commodification	CONTESTED	ATT-0019;ATT-0020	Independent articles attest transformation into marketable value.	NO_PASS_BLOCKING_SPLIT		0	PASS_TO_GRAMMAR_RESEARCH
+REL-CAND-0011	gendering	CONTESTED	ATT-0021;ATT-0022	Independent articles attest gendered positioning of nature, commodities, and art forms.	NO_PASS_BLOCKING_SPLIT		0	PASS_TO_GRAMMAR_RESEARCH
+REL-CAND-0012	displacement	POLYSEMOUS	ATT-0023;ATT-0024	Two independently authored articles attest movement or status-changing recontextualization.	NO_PASS_BLOCKING_SPLIT		0	PASS_TO_GRAMMAR_RESEARCH
+REL-CAND-0013	exclusion	CONTESTED	ATT-0025	One exact design-historiographic noun use was verified.	NO_PASS_BLOCKING_SPLIT		0	DEFER_SINGLE_ATTESTATION
+REL-CAND-0014	erasure	INSUFFICIENT_EVIDENCE	ATT-0026	One exact graphic-design-historiographic use was verified.	NO_PASS_BLOCKING_SPLIT		0	DEFER_SINGLE_ATTESTATION
+REL-CAND-0015	access	CONTESTED	ATT-0027	One explicitly relational but generic use was verified.	NO_PASS_BLOCKING_SPLIT		0	DEFER_SINGLE_ATTESTATION
+REL-CAND-0016	translation	POLYSEMOUS	ATT-0028	One exact bare noun use cannot establish a stable cultural rather than literal sense.	SEMANTIC_POLYSEMY_REQUIRES_SPLIT	TRANSLATION#LINGUISTIC;TRANSLATION#CONCEPTUAL-CULTURAL	2	DEFER_SEMANTIC_AMBIGUITY
+REL-CAND-0017	creative appropriation	POLYSEMOUS	ATT-0029	The exact modified phrase occurs in one independent work.	NO_PASS_BLOCKING_SPLIT		0	DEFER_SINGLE_ATTESTATION
+REL-CAND-0018	collective process	INSUFFICIENT_EVIDENCE	ATT-0030	The phrase is a compositional description, not a stable design-history relation label.	NO_PASS_BLOCKING_SPLIT		0	REJECT_GENERIC_NON_DESIGN_HISTORY_TERM
+REL-CAND-0019	relational infrastructure	INSUFFICIENT_EVIDENCE	ATT-0031	The phrase is an author-specific rhetorical formulation with no independent uptake.	NO_PASS_BLOCKING_SPLIT		0	REJECT_ONE_OFF_METAPHOR
+REL-CAND-0020	work migrations	INSUFFICIENT_EVIDENCE	ATT-0032;ATT-0033	Published English forms are one translation chain and the original Norwegian term was not exposed.	NO_PASS_BLOCKING_SPLIT		0	DEFER_TRANSLATION
+REL-CAND-0021	collective production	INSUFFICIENT_EVIDENCE	ATT-0034	One peer-reviewed contextual introduction attests the English phrase; the original term is unverified.	NO_PASS_BLOCKING_SPLIT		0	DEFER_SINGLE_ATTESTATION
+REL-CAND-0022	oblikovanje	HISTORICALLY_SHIFTING	ATT-0035	The published Croatian term/gloss names form-giving or design practice rather than a relation.	NO_PASS_BLOCKING_SPLIT		0	REJECT_NOT_RELATIONAL
+REL-CAND-0023	transculturation	CONTESTED	ATT-0036;ATT-0037	An article and independent scholarly chapter support cultural change through contact.	NO_PASS_BLOCKING_SPLIT		0	PASS_TO_GRAMMAR_RESEARCH
+REL-CAND-0024	cultural mobility	POLYSEMOUS	ATT-0038;ATT-0039	An article and independent chapter attest mobility of goods, people, and practices.	NO_PASS_BLOCKING_SPLIT		0	PASS_TO_GRAMMAR_RESEARCH
+REL-CAND-0025	self-exoticization	CONTESTED	ATT-0040;ATT-0041	The coined noun has a foundational article and independent design-history reception.	NO_PASS_BLOCKING_SPLIT		0	PASS_TO_GRAMMAR_RESEARCH_FOUNDATIONAL_TERM
+REL-CAND-0026	coloniality	CONTESTED	ATT-0042;ATT-0043	Published Portuguese-English evidence and independent English use support one bounded structural sense.	NO_PASS_BLOCKING_SPLIT		0	PASS_TO_GRAMMAR_RESEARCH
+REL-CAND-0027	decolonization	POLYSEMOUS	ATT-0044;ATT-0045	Disciplinary/practice and historical-political senses require separately attested sense records.	SEMANTIC_POLYSEMY_REQUIRES_SPLIT	DECOLONIZATION#DISCIPLINARY-PRACTICE;DECOLONIZATION#HISTORICAL-POLITICAL	2	DEFER_SEMANTIC_AMBIGUITY
+REL-CAND-0028	power relations	CONTESTED	ATT-0046;ATT-0047	The phrase is relational but remains generic social-science vocabulary rather than a stable design-history construct.	NO_PASS_BLOCKING_SPLIT		0	REJECT_GENERIC_NON_DESIGN_HISTORY_TERM
+REL-CAND-0029	cultural transferral	INSUFFICIENT_EVIDENCE	ATT-0048	The exact phrase has one design-history work.	NO_PASS_BLOCKING_SPLIT		0	DEFER_SINGLE_ATTESTATION
+REL-CAND-0030	cultural diplomacy	CONTESTED	ATT-0049;ATT-0050	Two sources attest the phrase but explicitly question its precision and actor boundary.	NO_PASS_BLOCKING_SPLIT		0	DEFER_SEMANTIC_AMBIGUITY
+REL-CAND-0031	transnationalism	CONTESTED	ATT-0051	Sources present it as a historiographic framework or field label, not a relation.	NO_PASS_BLOCKING_SPLIT		0	REJECT_NOT_RELATIONAL
+REL-CAND-0032	imitation	HISTORICALLY_SHIFTING	ATT-0052;ATT-0053	Independent peer-reviewed design-history articles attest copying as a historical process.	NO_PASS_BLOCKING_SPLIT		0	PASS_TO_GRAMMAR_RESEARCH
+REL-CAND-0033	piracy	CONTESTED	ATT-0054;ATT-0055	A design-history article and independent historical design-protection article attest unauthorized copying.	NO_PASS_BLOCKING_SPLIT		0	PASS_TO_GRAMMAR_RESEARCH

@@ -1,0 +1,5 @@
+# Relation vocabulary red team
+
+All required cases were attempted against the full frozen registry. Agent-only nouns and dictionary-only candidates were barred before freeze; no movement/style/entity candidate passed. Missing second attestations blocked exclusion, erasure, access, creative appropriation, cultural transferral, and collective production. `oblikovanje` and `transnationalism` failed relation/topic-method discrimination. `relational infrastructure` failed the one-off metaphor test. `power relations` failed the generic imported-vocabulary specificity test. `circulation`, `appropriation`, `translation`, and `decolonization` received supported sense splits and were deferred rather than collapsed. The translated work-migration chain did not establish an original-language label. No synonym merge was allowed, no candidate was sampled, and no visual convenience affected a decision.
+
+The verbal-only morphology case was also tested as a prohibited pathway: a verb cannot create a noun row. No such row entered the frozen noun registry, so `VERBAL_RELATION_ONLY_COUNT=0` and `UNATTESTED_CANONICAL_NOUN_COUNT=0`.

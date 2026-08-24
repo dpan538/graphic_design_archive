@@ -1,0 +1,11 @@
+# Full term verification
+
+CANDIDATE_TERM_FULL_VERIFICATION_RATE=1.0
+VERIFY_A_COMPLETION_RATE=1.0
+VERIFY_B_COMPLETION_RATE=1.0
+SEMANTIC_VERIFICATION_COMPLETION_RATE=1.0
+ADVERSARIAL_REVIEW_COMPLETION_RATE=1.0
+CANDIDATES_WITH_INCOMPLETE_VERIFICATION=0
+TERM_VERIFICATION_MATRIX_ROW_COUNT=165
+
+Every one of 33 candidates has exactly the five required role rows. A completed FAIL/BLOCK result is a verified reason for defer/reject, not an incomplete check.

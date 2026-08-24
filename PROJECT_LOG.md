@@ -170,3 +170,38 @@ SPACETIME_STATUS=FROZEN
 `EXPLORATION_PUBLIC_ROUTE=NOT_IMPLEMENTED`
 
 `FINAL_TRACE_VISUAL_DESIGN=DEFERRED`
+
+## TRACE v49 Round 9 — design-history relation vocabulary discovery Round 1
+
+- Built a 50-work scholarly corpus across all eight required source strata without archive objects, object titles, Context, Spacetime, or external research models.
+- Froze 33 exact noun or nominal-phrase candidates as `trace-design-history-relation-candidates-v1` with SHA-256 `818b306406d6a557a563ec285ae36394106c4c88a3e14cae19e4f1da4e92f4d5` before verification.
+- Completed all five required roles for every candidate: 165 matrix rows, zero incomplete candidates, and no sampling.
+- Passed 16 source-bounded research senses to the Round 10 handoff, deferred 12, and rejected 5. Four polysemous nouns remain split and deferred; no synonym merge was authorized.
+- Validated all 16 passing glosses in ordinary language with three independent comprehension checks and an adversarial review.
+- Preserved the active Exploration domain at zero relation types. No grammar, renderer, route, API, database, Search, Context, or Spacetime change was made.
+
+`ROUND9_RELATION_VOCABULARY_DISCOVERY=COMPLETE`
+
+`ROUND9_CANDIDATE_REGISTRY_VERSION=trace-design-history-relation-candidates-v1`
+
+`ROUND9_CANDIDATE_REGISTRY_SHA256=818b306406d6a557a563ec285ae36394106c4c88a3e14cae19e4f1da4e92f4d5`
+
+`ROUND9_RAW_CANDIDATE_TERM_COUNT=33`
+
+`ROUND9_PASS_TO_GRAMMAR_COUNT=16`
+
+`ROUND9_DEFER_COUNT=12`
+
+`ROUND9_REJECT_COUNT=5`
+
+`ROUND9_CANDIDATE_TERM_FULL_VERIFICATION_RATE=1.0`
+
+`ROUND9_CANDIDATES_WITH_INCOMPLETE_VERIFICATION=0`
+
+`EXPLORATION_RELATION_VOCABULARY_RESEARCH_CANDIDATE=READY_FOR_GRAMMAR_RESEARCH`
+
+`EXPLORATION_ACTIVE_RELATION_TYPE_COUNT=0`
+
+`EXPLORATION_RELATION_GRAMMAR=RESEARCH_NEXT`
+
+`NEXT_RESEARCH_ROUND=DESIGN_HISTORY_RELATION_GRAMMAR_ROUND1`

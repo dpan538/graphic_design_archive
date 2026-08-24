@@ -1,0 +1,31 @@
+SOURCE_REGISTRY_VALIDATION=PASS
+ATTESTATION_VALIDATION=PASS
+FULL_CANDIDATE_VERIFICATION=PASS
+NOUN_ATTESTATION_GATE=PASS
+NATURAL_LANGUAGE_EXPLAINABILITY_GATE=PASS
+POLYSEMY_CONTESTATION_GATE=PASS
+SYNONYM_GATE=PASS
+GLOBAL_SOURCE_BREADTH_GATE=PASS
+LEXICAL_SATURATION_GATE=PASS
+ROUND8_BAD_PRACTICE_REGRESSION=PASS
+EXPLORATION_DOMAIN_TEST=PASS
+TYPECHECK=PASS
+SEARCH_REGRESSION=PASS
+CONTEXT_REGRESSION=PASS
+SPACETIME_REGRESSION=PASS
+API_TESTS=PASS
+PRODUCTION_BUILD=PASS
+
+python3 scripts/validate_trace_v49_relation_vocabulary_round1.py
+npm run verify:exploration-reset
+npm run test:exploration-domain
+npm run typecheck:runtime
+npm run test:search-v49
+npm run test:context-governance-v1
+npm run test:spacetime-governance-v1
+npm run test:context-api-v1
+npm run test:spacetime-api-v1
+npm run test:read-platform
+npm run build
+
+The first dependency-borrowing attempt lacked declared GIS packages. An isolated `npm ci` from the committed lockfile resolved the environment. A concurrent typecheck/build retry then raced while `.next/types` was being regenerated; the final post-build typecheck passed.
