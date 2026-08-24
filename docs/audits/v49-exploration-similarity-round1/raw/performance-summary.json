@@ -1,0 +1,17 @@
+{
+  "candidateIndexBuildMs": 532.542624976486,
+  "candidateIndexBytes": 2866456,
+  "candidateIndexHeapBytes": 159714072,
+  "exhaustiveModelBenchmarkMs": 242356.32762307068,
+  "fullPairMatrixCommitted": false,
+  "fullPairMatrixInClient": false,
+  "interactionRegistryAndPostingBuildMs": 61253.70875000954,
+  "normalizedPublicLoadMs": 11228.36379200453,
+  "objectLocalQueryP50Ms": 124.96837499202229,
+  "objectLocalQueryP95Ms": 365.8331037295284,
+  "peakHeapBytes": 159714072,
+  "peakHeapMeasurementPolicy": "PYTHON_TRACEMALLOC_INDEX_MODEL_CONTEXT_REPLAY;NATIVE_NUMPY_EXCLUDED",
+  "peakRssBytes": 899448832,
+  "peakRssMeasurementPolicy": "PROCESS_LIFETIME_RU_MAXRSS",
+  "totalElapsedMs": 715879.1515830089
+}

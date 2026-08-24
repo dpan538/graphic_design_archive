@@ -1,0 +1,60 @@
+{
+  "comparabilityChannelImplemented": true,
+  "comparabilityDistribution": {
+    "max": 1.0,
+    "min": 1.0,
+    "p50": 1.0,
+    "p95": 1.0
+  },
+  "evaluatedPairCount": 159900,
+  "missingnessVariantCount": 4,
+  "notApplicableAsMissingCount": 0,
+  "pairsSharingOneOrMoreUnknownStates": 156539,
+  "rows": [
+    {
+      "affinityP50": 0.875,
+      "affinityP95": 1.0,
+      "comparabilityP50": 1.0,
+      "comparabilityP95": 1.0,
+      "evaluatedPairCount": 159900,
+      "missingnessVariant": "MISSING-A",
+      "notApplicableAsMissingCount": 0,
+      "separateComparabilityChannel": true,
+      "sharedUnknownPositiveCreditCount": 0
+    },
+    {
+      "affinityP50": 0.875,
+      "affinityP95": 1.0,
+      "comparabilityP50": 1.0,
+      "comparabilityP95": 1.0,
+      "evaluatedPairCount": 159900,
+      "missingnessVariant": "MISSING-B",
+      "notApplicableAsMissingCount": 0,
+      "separateComparabilityChannel": true,
+      "sharedUnknownPositiveCreditCount": 0
+    },
+    {
+      "affinityP50": 0.875,
+      "affinityP95": 1.0,
+      "comparabilityP50": 1.0,
+      "comparabilityP95": 1.0,
+      "evaluatedPairCount": 159900,
+      "missingnessVariant": "MISSING-C",
+      "notApplicableAsMissingCount": 0,
+      "separateComparabilityChannel": true,
+      "sharedUnknownPositiveCreditCount": 0
+    },
+    {
+      "affinityP50": 0.875,
+      "affinityP95": 1.0,
+      "comparabilityP50": 1.0,
+      "comparabilityP95": 1.0,
+      "evaluatedPairCount": 159900,
+      "missingnessVariant": "MISSING-D",
+      "notApplicableAsMissingCount": 0,
+      "separateComparabilityChannel": true,
+      "sharedUnknownPositiveCreditCount": 0
+    }
+  ],
+  "sharedUnknownPositiveCreditCount": 0
+}

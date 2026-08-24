@@ -1,0 +1,246 @@
+{
+  "ablationVariantCount": 216,
+  "analysisRunCount": 47,
+  "analysisRunReceiptFailureCount": 0,
+  "candidateArchitectureSelected": true,
+  "candidateGenerationOnlySignalCount": 9,
+  "candidateGeneratorVariantCount": 6,
+  "candidateIndexBuildMs": 532.542624976486,
+  "candidateIndexBytes": 2866456,
+  "candidateIndexHeapBytes": 159714072,
+  "candidateIndexSha256": "abba30fcdded21b8f1ba6f7ec87a47b6bbd83c0d1e40d90670143fb88b83873f",
+  "canonicalReleaseChanged": false,
+  "clusteringModelSelected": false,
+  "comparabilityChannelImplemented": true,
+  "comparabilityOnlySignalCount": 8,
+  "comparabilityP50": 1.0,
+  "comparabilityP95": 1.0,
+  "compiledFeatureContextSha256": "21041ea785e0356f9c628e9ce75104e5478b8efb2820ec0171dec33ba1dbea8f",
+  "contextGovernanceChanged": false,
+  "contextProjectionId": "trace-context-v1",
+  "contextProjectionSha256": "825f6ecaa9ae1496c8a00ea0fefa5c90319046cf9c1f08a2ef76b9b02df4baeb",
+  "contextPublicProjectionChanged": false,
+  "contextSemanticsChanged": false,
+  "contributionSchemaValid": true,
+  "curatorialAsIndependentScore": false,
+  "curatorialAsRecallIndex": true,
+  "curatorialAttenuationVariantCount": 6,
+  "curatorialHistoricalRelationCount": 0,
+  "curatorialParentDuplicationFailureCount": 0,
+  "curatorialResidualSignalCount": 0,
+  "databaseFilesChanged": 0,
+  "dependentInteractionSignalCount": 2,
+  "diagnosticOnlySignalCount": 19,
+  "exhaustiveModelBenchmarkMs": 242356.32762307068,
+  "exhaustivePairCount": 31956015,
+  "explanationContractReady": true,
+  "explanationCount": 864,
+  "explanationOnlySignalCount": 9,
+  "explanationRowsSha256": "cb11a539f461233cc9ce0e8b8eac5ca5304a0e2569ca943202751d86658e739b",
+  "explorationRendererImplemented": false,
+  "explorationSignalInputCount": 64,
+  "explorationSignalRegistrySha256": "224aaea1123ad9d5730006aa5e779c17b4673fdfc9ee87988f3f96ac8ce26424",
+  "explorationTemplateRegistryFrozen": false,
+  "fullPairMatrixCommitted": false,
+  "fullPairMatrixInClient": false,
+  "geographicLayoutDistanceScoreCount": 0,
+  "heldExplorationObjectCount": 0,
+  "historicalRelationCount": 0,
+  "hubnessCorrectionSelected": false,
+  "hubnessCorrectionTested": true,
+  "hubnessKValues": [
+    10,
+    20,
+    50
+  ],
+  "humanReviewCompleted": false,
+  "humanReviewPacketAnchorCount": 72,
+  "humanReviewPacketReady": true,
+  "independentBaseSignalCount": 8,
+  "interactionMethodCount": 8,
+  "interactionParentDoubleCountFailures": 0,
+  "interactionSupportThresholdCount": 5,
+  "internalUuidExposureCount": 0,
+  "lowSupportInflationFailureCount": 0,
+  "mechanicalAxiomCount": 15,
+  "mechanicalAxiomFailureCount": 0,
+  "missingnessVariantCount": 4,
+  "missingnessVariantIds": [
+    "MISSING-A",
+    "MISSING-B",
+    "MISSING-C",
+    "MISSING-D"
+  ],
+  "modelContextSha256": "8d23dfcc8d4b4effb908de2b39eccf9f033ae1169203ad481fcb1024732c4743",
+  "modelDecision": "MODEL_FAMILY_SHORTLISTED",
+  "modelIds": [
+    "M0",
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5",
+    "M6",
+    "M7",
+    "M8"
+  ],
+  "modelShortlistCount": 3,
+  "modelVariantCount": 25,
+  "nearFullCorpusCandidateObjectCount": 0,
+  "notApplicableAsMissingCount": 0,
+  "objectLocalQueryP50Ms": 124.96837499202229,
+  "objectLocalQueryP95Ms": 365.8331037295284,
+  "pathologicalAnchorCount": 15,
+  "peakHeapBytes": 159714072,
+  "peakRssBytes": 899448832,
+  "preparationSha256": "85b29917e9cb4038441f25d3fd54a6f6c7be345ea4ced9c35cb83d27f7ce9ad8",
+  "probabilityCount": 0,
+  "probabilityModelSelected": false,
+  "publicExplorationApiAdded": false,
+  "publicExplorationRouteAdded": false,
+  "publicObjectCount": 7995,
+  "publicSimilarityModelSelected": false,
+  "publicSimilarityWeightsSelected": false,
+  "randomnessAffectsAffinity": false,
+  "randomnessAffectsCandidateSet": false,
+  "rawCuratedJaccardImportBoundary": "PASS",
+  "rawCuratedJaccardProductionEligible": false,
+  "rejectedScoringSignalCount": 9,
+  "researchManifestSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+  "researchOutputReceipts": {
+    "00_EXECUTIVE_DECISION.md": {
+      "bytes": 7585,
+      "sha256": "e5688d6d8ad78fca7864f3ccaec2abd2ec9c6822c94045635088e1711e638f1b"
+    },
+    "01_EXPLORATION_TASK_DEFINITIONS.md": {
+      "bytes": 6859,
+      "sha256": "861b879498c04a49616973fd8bfc57cbef084037f5f8b2ccf4012ccaf466dbe0"
+    },
+    "02_SIMILARITY_LITERATURE_AND_APPLICABILITY.md": {
+      "bytes": 52693,
+      "sha256": "efcf2d19d119f9b7258bfd39978b4576b574ab80ebc605bf82fc6e496d0d3151"
+    },
+    "03_SIGNAL_LINEAGE_REGISTRY.tsv": {
+      "bytes": 26841,
+      "sha256": "48fd9c793e60a73ffcb3fd0f8b4dc3c9a0c6b34784250437d531bccb42feb06a"
+    },
+    "04_INDEPENDENT_SIGNAL_BASIS.md": {
+      "bytes": 8667,
+      "sha256": "475c4a6525e26b86c11ec56d3f5d5f2e2f9c717548e9e7f27fe851cb64e4397f"
+    },
+    "05_EVALUATION_PROTOCOL.md": {
+      "bytes": 10772,
+      "sha256": "2883291fbf0c905404cd53135cf5741aba95ee29f88387ba51dbcc1cffe9799f"
+    },
+    "06_CANDIDATE_GENERATION_ARCHITECTURE.md": {
+      "bytes": 7843,
+      "sha256": "3292056a926daa777d825db1d6c88ee5a12a7b5a65c8f5542e26ade692d11859"
+    },
+    "07_CURATORIAL_ATTENUATION_EXPERIMENTS.tsv": {
+      "bytes": 2679,
+      "sha256": "6f283b2db2d583fa8c907406c8c770be40e7ca36205e9609f3bd7f8349d893da"
+    },
+    "08_MISSINGNESS_AND_COMPARABILITY.md": {
+      "bytes": 7440,
+      "sha256": "b9f80752c28efdb34ea1f7ab5ef4fb232bec1ac6a2661b2e00006f85c6044d59"
+    },
+    "09_MODEL_SPECIFICATIONS.md": {
+      "bytes": 11788,
+      "sha256": "e4e48e9e3bb5333cdbd1697c39b246f54128e5ec430f3af1bfbe11023a7b485d"
+    },
+    "10_MODEL_BENCHMARK_RESULTS.tsv": {
+      "bytes": 23388,
+      "sha256": "b6df902c4e00e865f577f92465308de010dfe61732bbb58728b51221626ff108"
+    },
+    "11_CANDIDATE_RECALL_RESULTS.tsv": {
+      "bytes": 17845,
+      "sha256": "0681cac151cadfde8f537cf20c4ab8d9ae3d7cd6606b939574173904d6f880cd"
+    },
+    "12_SOURCE_BIAS_AND_FAMILY_DOMINANCE.tsv": {
+      "bytes": 2590,
+      "sha256": "13a0a22910bbeb217cd3d46f15fec4ac2e187bdcf3ad0911cd09305da8d54588"
+    },
+    "13_HUBNESS_ANALYSIS.tsv": {
+      "bytes": 9413,
+      "sha256": "fa4635d76295fdd9fde4d38634acc0cd3afe344ef6fdf677ea150a6045ba4d5f"
+    },
+    "14_ABLATION_AND_STABILITY.tsv": {
+      "bytes": 96367,
+      "sha256": "a38da9b8f7fe8f10721099bb801a1e02e15e8b4256f538f6a09e3868a7b20f5c"
+    },
+    "15_INTERACTION_STATISTICS_REVIEW.tsv": {
+      "bytes": 3665,
+      "sha256": "b7a31dda3b62e1024a67c511d4d650f51c9daf48c86de3a3c8dfafe98275179b"
+    },
+    "16_MECHANICAL_EXPECTATION_CASES.tsv": {
+      "bytes": 8621,
+      "sha256": "33c4ebb0b67f1cb6a3fcb0c2fef8459b19f8f7580af060c8596b773cda71d7f8"
+    },
+    "17_HUMAN_REVIEW_PACKET.tsv": {
+      "bytes": 615269,
+      "sha256": "0668fb343de0e0b873d889a2c240cbb0877546ee37dbef8f677596921a080444"
+    },
+    "18_EXPLANATION_CONTRACT.md": {
+      "bytes": 9473,
+      "sha256": "6e2ef71300a29eedd59d7a182ef5282b5b59e033883d4779e175f753f1e64574"
+    },
+    "19_ANALYSIS_RUN_REGISTER.tsv": {
+      "bytes": 112041,
+      "sha256": "cf64d91fb43322c412f9f6a2d2b348fe97afb80fe739f36b6f333f2a9ea7c44a"
+    },
+    "20_PERFORMANCE_AND_ARCHITECTURE.md": {
+      "bytes": 5908,
+      "sha256": "c1f2577f16bb3968d9fe2817063f22bd317de5977ff00769cae8ac6d328ef8d1"
+    },
+    "21_RED_TEAM.md": {
+      "bytes": 11981,
+      "sha256": "18e122dba19cffda8ffbc8ca1dc651f06b49182be622d1357b83e54527c71d1f"
+    },
+    "22_MODEL_SHORTLIST_DECISION.md": {
+      "bytes": 6956,
+      "sha256": "d28e26cf35fcf76d06e66e9406323c75be751f921eebde7fc88eab703e0a14a5"
+    },
+    "23_ROUND_DECISION.md": {
+      "bytes": 6038,
+      "sha256": "3454de30d3d8990761cd315dcfc06a8617714ec0d20d80511b9764aa59e7a1c5"
+    }
+  },
+  "researchOutputReceiptsBound": true,
+  "researchReleaseId": "v49-api-contract-fresh-c",
+  "researchReleaseSha256": "4addfdb3cb9314587908096572242b9d63e9cef9e6e1be68c0c646491a43a90a",
+  "sameSourceFactDoubleScoreCount": 0,
+  "sameSourceFactGroupCount": 28,
+  "sameSourcePositiveAffinityDefault": false,
+  "schemaVersion": "trace-exploration-evidence-preparation/v1",
+  "scoreOnlyResultCount": 0,
+  "scoringRecordsSha256": "636c5d6c52743545a8158da56f45b82c69a29c4a2d7b12c7dec5c8d138cdacc1",
+  "searchFilesChanged": 0,
+  "selectedCandidatePoolMax": 5991,
+  "selectedCandidatePoolP50": 3008.0,
+  "selectedCandidatePoolP95": 3662.0,
+  "selectedCandidatePoolP99": 5644.0,
+  "selectedCandidateRecallAt10": 0.9998499061913696,
+  "selectedCandidateRecallAt20": 0.9995809881175735,
+  "selectedCandidateRecallAt50": 0.9974158849280801,
+  "selectedCandidateVariant": "CG-CUR-4",
+  "semanticRelationCount": 0,
+  "sharedUnknownPositiveCreditCount": 0,
+  "shortlistModelIds": [
+    "M2",
+    "M5",
+    "M7"
+  ],
+  "signalLineageClassifiedCount": 64,
+  "signalLineageUnclassifiedCount": 0,
+  "sourceBenchmarkDeterministicPayloadSha256": "c4ba0106e4a361c52f56106f86aa6b4cc360ff48ecb26019fc3d248aac9fde8a",
+  "sourceBenchmarkImplementationVersion": "trace-exploration-similarity-benchmark-2026-08-24",
+  "sourceBenchmarkSchemaVersion": "trace-exploration-similarity-evaluation/v1",
+  "sourceBenchmarkSha256": "d42fdcc5eb63f0bbdb74cb57437eb40345314748c38393ad7876db13ea75c428",
+  "sourceCommit": "0e311f0b88b4adc3cbfe2080ac98d622013cc6d3",
+  "spacetimeGovernanceChanged": false,
+  "spacetimeProjectionId": "trace-spacetime-v1",
+  "spacetimeProjectionSha256": "f751b0f432ff684fd1000201b910aa397a4d9965468c2f7dd5022d6a4ae01c06",
+  "spacetimePublicProjectionChanged": false,
+  "unexplainedShortlistResultCount": 0,
+  "zeroCandidateObjectCount": 0
+}

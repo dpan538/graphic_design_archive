@@ -85,6 +85,14 @@ git show v49-data-api-closure-20260821:PROJECT_LOG.md
 - Curatorial co-membership, rarity, concentration, conditional rates, lift, and uncertainty remain analysis diagnostics only. They are not historical or semantic relations, rankings, probabilities, or evidence of influence.
 - No similarity model, weights, clustering model, probability model, renderer, or final Exploration template registry is selected in this round. Context governance and Spacetime governance remain unchanged.
 
+### Exploration affinity research Round 1 — 2026-08-24
+
+- Signal-lineage review maps eight independent base signals. Governed geography class remains a deterministic candidate-generation/explanation fallback and adds zero independent geography score.
+- CG-CUR-4 is selected as the bounded public-only candidate-retrieval architecture. Evaluation streamed all 31,956,015 unordered public pairs twice, retained bounded top-k evidence only, and committed no pair matrix.
+- M2 smoothed-IDF cosine and M5 Gower-style family balance are shortlisted for symmetric object-local research; M7 BM25F-like fielded retrieval is shortlisted for explicit query-conditioned research. This is a model-family shortlist only, not a selected model, formula, weight set, or public decision.
+- Human review is next. No probability model, clustering model, renderer, public Exploration API or route, template-registry freeze, historical-relation claim, or semantic-relation claim is introduced.
+- Context and Spacetime remain frozen. Round 6 consumes their governed projections without changing semantics, governance, or public projection.
+
 `CONTEXT_CANVAS_FUNCTIONAL_CORE=COMPLETE`
 
 `CONTEXT_CANVAS_REAL_DATA_VALIDATION=ACTIVE`
@@ -119,7 +127,17 @@ git show v49-data-api-closure-20260821:PROJECT_LOG.md
 
 `EXPLORATION_SIGNAL_REGISTRY=64`
 
-`EXPLORATION_SIMILARITY_MODEL=NOT_SELECTED`
+`EXPLORATION_INDEPENDENT_BASE_SIGNAL_COUNT=8`
+
+`EXPLORATION_CANDIDATE_RETRIEVAL=CG-CUR-4_SELECTED`
+
+`EXPLORATION_SIMILARITY_MODEL=MODEL_FAMILY_SHORTLISTED_M2_M5_M7`
+
+`EXPLORATION_PROVISIONAL_MODEL=NOT_SELECTED`
+
+`EXPLORATION_PUBLIC_MODEL=NOT_SELECTED`
+
+`EXPLORATION_HUMAN_REVIEW=NEXT`
 
 `EXPLORATION_RENDERER=NOT_IMPLEMENTED`
 

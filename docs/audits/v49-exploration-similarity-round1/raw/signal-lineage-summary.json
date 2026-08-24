@@ -1,0 +1,1778 @@
+{
+  "candidateGenerationSignalIds": [
+    "SIG-CONTEXT-MEDIUM",
+    "SIG-CONTEXT-MOVEMENT",
+    "SIG-CONTEXT-THEME",
+    "SIG-CONTEXT-THEME-MOVEMENT",
+    "SIG-CURATORIAL-MEMBERSHIP",
+    "SIG-CURATORIAL-SHARED-COUNT",
+    "SIG-CURATORIAL-SUPPORT",
+    "SIG-DESCRIPTIVE-CREATOR",
+    "SIG-DESCRIPTIVE-CREATOR-MEDIUM",
+    "SIG-DESCRIPTIVE-OBJECT-TYPE",
+    "SIG-DESCRIPTIVE-OBJECT-TYPE-MEDIUM",
+    "SIG-GEOGRAPHY-ASSIGNMENT",
+    "SIG-GEOGRAPHY-CLASS",
+    "SIG-INTERSECTION-MEDIUM-THEME",
+    "SIG-SOURCE-NAME",
+    "SIG-TEMPORAL-DECADE",
+    "SIG-TEMPORAL-EXTENT"
+  ],
+  "counts": {
+    "candidateGenerationAllowedCount": 17,
+    "candidateGenerationOnlySignalCount": 9,
+    "comparabilityOnlySignalCount": 8,
+    "curatorialResidualSignalCount": 0,
+    "dependentInteractionSignalCount": 2,
+    "diagnosticOnlySignalCount": 19,
+    "dispositionCounts": {
+      "CANDIDATE_GENERATION_ONLY": 9,
+      "COMPARABILITY_ONLY": 8,
+      "DEPENDENT_INTERACTION_SIGNAL": 2,
+      "DIAGNOSTIC_ONLY": 19,
+      "EXPLANATION_ONLY": 9,
+      "INDEPENDENT_BASE_SIGNAL": 8,
+      "REJECT": 9
+    },
+    "duplicateForScoringSignalCount": 54,
+    "explanationAllowedCount": 55,
+    "explanationOnlySignalCount": 9,
+    "independentBaseSignalCount": 8,
+    "interactionOnlySignalCount": 9,
+    "multiSignalSameSourceFactGroupCount": 12,
+    "rejectedScoringSignalCount": 9,
+    "sameSourceFactDoubleScoreCount": 0,
+    "sameSourceFactGroupCount": 28,
+    "scoringAllowedCount": 10,
+    "signalInputCount": 64,
+    "signalLineageClassifiedCount": 64,
+    "signalLineageUnclassifiedCount": 0
+  },
+  "dependentInteractionSignalIds": [
+    "SIG-INTERSECTION-BOUNDED-TRIPLE",
+    "SIG-INTERSECTION-PAIR-SUPPORT"
+  ],
+  "derivationVersion": "trace-exploration-signal-lineage-round1-v1",
+  "deterministicReceipt": {
+    "canonicalization": "recursive key sort; compact JSON; final LF; UTF-8",
+    "sha256": "cd952bf0d23fb642830a8800eb9c12cf2edc8185cb1ef4fcb140423bf2488bed"
+  },
+  "geographyClassMappingReceipt": {
+    "ambiguousClassMappingCount": 0,
+    "deterministicLookup": true,
+    "distinctGeographyClassCount": 5,
+    "governedGeographyIdCount": 93,
+    "independentInformationAdded": false,
+    "mappingSha256": "10b51f6f33964cd267e35cd96703406d9ce55edfbc1534cfe55f5f7695902849",
+    "missingClassMappingCount": 0,
+    "singleClassMappingCount": 93
+  },
+  "independentBaseSignalIds": [
+    "SIG-CONTEXT-MEDIUM",
+    "SIG-CONTEXT-MOVEMENT",
+    "SIG-CONTEXT-THEME",
+    "SIG-DESCRIPTIVE-CREATOR",
+    "SIG-DESCRIPTIVE-OBJECT-TYPE",
+    "SIG-GEOGRAPHY-ASSIGNMENT",
+    "SIG-SOURCE-NAME",
+    "SIG-TEMPORAL-EXTENT"
+  ],
+  "inputReceipt": {
+    "contextProjectionSha256": "825f6ecaa9ae1496c8a00ea0fefa5c90319046cf9c1f08a2ef76b9b02df4baeb",
+    "exhaustivePairCount": 31956015,
+    "explorationRound5BundleSha256": "bdb7f5f8350dde9e8264d254654d691ecc68e4fd279aa61ec2188bf2d65c8285",
+    "explorationSignalRegistrySha256": "224aaea1123ad9d5730006aa5e779c17b4673fdfc9ee87988f3f96ac8ce26424",
+    "heldObjectCount": 7928,
+    "publicObjectCount": 7995,
+    "researchReleaseId": "v49-api-contract-fresh-c",
+    "sourceCommit": "0e311f0b88b4adc3cbfe2080ac98d622013cc6d3",
+    "spacetimeProjectionSha256": "f751b0f432ff684fd1000201b910aa397a4d9965468c2f7dd5022d6a4ae01c06"
+  },
+  "invariants": {
+    "CURATORIAL_RESIDUAL_SIGNAL_COUNT_ZERO": true,
+    "EXP_SIM_INV_001_RAW_CURATED_JACCARD_PRODUCTION_INELIGIBLE": true,
+    "EXP_SIM_INV_002_EVERY_SCORED_SIGNAL_RESOLVES_TO_LINEAGE": true,
+    "EXP_SIM_INV_003_SAME_SOURCE_FACT_AT_MOST_ONCE": true,
+    "EXP_SIM_INV_004_INTERACTIONS_SEPARATE_FROM_PARENTS": true,
+    "EXP_SIM_INV_005_SHARED_MISSING_ZERO_DEFAULT_AFFINITY": true,
+    "EXP_SIM_INV_008_CURATION_NOT_HISTORICAL_RELATION": true,
+    "EXP_SIM_INV_009_RARE_NOT_IMPORTANT": true,
+    "EXP_SIM_INV_010_MAP_DISTANCE_ZERO": true,
+    "EXP_SIM_INV_011_SOURCE_NOT_AUTOMATICALLY_POSITIVE": true,
+    "EXP_SIM_INV_012_LINEAGE_DETERMINISTIC": true,
+    "EXP_SIM_INV_013_INPUTS_PINNED": true,
+    "EXP_SIM_INV_014_HELD_EXCLUDED": true,
+    "EXP_SIM_INV_017_UNSUPPORTED_RELATION_COMPOUND_REJECTED": true,
+    "EXP_SIM_INV_019_CLUSTERING_REJECTED": true,
+    "GEOGRAPHY_CLASS_DETERMINISTIC_LOOKUP_NOT_INDEPENDENT": true,
+    "RAW_CURATED_JACCARD_IMPORT_BOUNDARY_DECLARED": true,
+    "UNCLASSIFIED_SIGNAL_LINEAGE_COUNT_ZERO": true
+  },
+  "rawCuratedJaccardImportBoundary": {
+    "allowedAnalysisRoot": "scripts/exploration-v49-similarity",
+    "allowedRoles": [
+      "NEGATIVE_CONTROL",
+      "STRUCTURAL_DIAGNOSTIC"
+    ],
+    "boundaryId": "EXP-SIM-RAW-CURATED-JACCARD-NO-PRODUCTION-IMPORT-V1",
+    "candidateGeneratorImportAllowed": false,
+    "explanationRuntimeImportAllowed": false,
+    "forbiddenProductionImportTokens": [
+      "M0_RAW_CURATED_JACCARD_NEGATIVE_CONTROL",
+      "RAW_CURATED_JACCARD",
+      "SIG-CURATORIAL-JACCARD",
+      "compute_raw_curated_jaccard",
+      "raw_curated_jaccard"
+    ],
+    "forbiddenProductionRoots": [
+      "frontend/app",
+      "frontend/pages",
+      "frontend/src/app",
+      "frontend/src/features"
+    ],
+    "modelId": "M0_RAW_CURATED_JACCARD_NEGATIVE_CONTROL",
+    "productionEligible": false,
+    "runtimeScorerImportAllowed": false,
+    "shortlistEligible": false,
+    "signalId": "SIG-CURATORIAL-JACCARD"
+  },
+  "sameSourceFactDoubleScoreGroups": [],
+  "sameSourceFactGroups": {
+    "SSF-CONTEXT-MEDIUM": [
+      "SIG-CONTEXT-MEDIUM",
+      "SIG-CONTEXT-SAME-MEDIUM"
+    ],
+    "SSF-CONTEXT-MOVEMENT": [
+      "SIG-CONTEXT-MOVEMENT",
+      "SIG-CONTEXT-SAME-MOVEMENT",
+      "SIG-MISSINGNESS-MOVEMENT-AVAILABILITY"
+    ],
+    "SSF-CONTEXT-THEME": [
+      "SIG-CONTEXT-SAME-THEME",
+      "SIG-CONTEXT-THEME"
+    ],
+    "SSF-CROSS-DIMENSION-FREQUENCY": [
+      "SIG-FREQUENCY-ONE-DIMENSION",
+      "SIG-FREQUENCY-RARITY-BAND"
+    ],
+    "SSF-CURATORIAL-CONTAINER-TYPE": [
+      "SIG-CURATORIAL-CONTAINER-TYPE"
+    ],
+    "SSF-CURATORIAL-MEMBERSHIP": [
+      "SIG-CURATORIAL-FANOUT",
+      "SIG-CURATORIAL-JACCARD",
+      "SIG-CURATORIAL-MEMBERSHIP",
+      "SIG-CURATORIAL-MEMBERSHIP-COUNT",
+      "SIG-CURATORIAL-SHARED-COUNT",
+      "SIG-CURATORIAL-SUPPORT"
+    ],
+    "SSF-DESCRIPTIVE-CREATOR": [
+      "SIG-DESCRIPTIVE-CREATOR",
+      "SIG-DESCRIPTIVE-SAME-CREATOR",
+      "SIG-MISSINGNESS-CREATOR"
+    ],
+    "SSF-DESCRIPTIVE-OBJECT-TYPE": [
+      "SIG-DESCRIPTIVE-OBJECT-TYPE"
+    ],
+    "SSF-GEOGRAPHY-ASSIGNMENT": [
+      "SIG-GEOGRAPHY-ASSIGNMENT",
+      "SIG-GEOGRAPHY-CLASS",
+      "SIG-GEOGRAPHY-CONCENTRATION",
+      "SIG-GEOGRAPHY-RARITY",
+      "SIG-GEOGRAPHY-SAME"
+    ],
+    "SSF-GEOGRAPHY-MAPPING-STATE": [
+      "SIG-GEOGRAPHY-MAPPING-STATE",
+      "SIG-MISSINGNESS-GEOGRAPHY-MAPPING"
+    ],
+    "SSF-GEOGRAPHY-MULTI-REGION": [
+      "SIG-GEOGRAPHY-MULTI-REGION"
+    ],
+    "SSF-GEOGRAPHY-QUALIFICATION": [
+      "SIG-MISSINGNESS-GEOGRAPHY-QUALIFIED"
+    ],
+    "SSF-INTERSECTION-RARITY-CLASS": [
+      "SIG-INTERSECTION-RARE-MULTI"
+    ],
+    "SSF-MISSINGNESS-COOCCURRENCE": [
+      "SIG-MISSINGNESS-COOCCURRENCE"
+    ],
+    "SSF-NOT-GOVERNED-RIGHTS-DELIVERY": [
+      "SIG-MISSINGNESS-RIGHTS-DELIVERY"
+    ],
+    "SSF-PAIR-INTERSECTION-CELL": [
+      "SIG-CONTEXT-MEDIUM-THEME",
+      "SIG-CONTEXT-THEME-MOVEMENT",
+      "SIG-DESCRIPTIVE-CREATOR-MEDIUM",
+      "SIG-DESCRIPTIVE-OBJECT-TYPE-MEDIUM",
+      "SIG-INTERSECTION-CONDITIONAL-LIFT",
+      "SIG-INTERSECTION-MEDIUM-THEME",
+      "SIG-INTERSECTION-PAIR-SUPPORT"
+    ],
+    "SSF-SOURCE-IDENTITY": [
+      "SIG-SOURCE-CONCENTRATION",
+      "SIG-SOURCE-DIVERSITY",
+      "SIG-SOURCE-DOMINANT",
+      "SIG-SOURCE-FREQUENCY",
+      "SIG-SOURCE-NAME",
+      "SIG-SOURCE-RARE",
+      "SIG-SOURCE-SAME",
+      "SIG-SOURCE-SHARE"
+    ],
+    "SSF-TEMPORAL-OBSERVATION": [
+      "SIG-TEMPORAL-CONCENTRATION",
+      "SIG-TEMPORAL-DECADE",
+      "SIG-TEMPORAL-EXTENT",
+      "SIG-TEMPORAL-LONG-RANGE",
+      "SIG-TEMPORAL-RANGE-SPAN",
+      "SIG-TEMPORAL-SAME-DECADE"
+    ],
+    "SSF-TEMPORAL-PRECISION": [
+      "SIG-MISSINGNESS-TEMPORAL",
+      "SIG-TEMPORAL-PRECISION"
+    ],
+    "SSF-TRIPLE-INTERSECTION-CELL": [
+      "SIG-INTERSECTION-BOUNDED-TRIPLE"
+    ],
+    "SSF-UNSELECTED-CURATORIAL-AFFINITY": [
+      "SIG-CURATORIAL-AFFINITY"
+    ],
+    "SSF-UNSELECTED-TEMPORAL-DISTANCE": [
+      "SIG-TEMPORAL-DISTANCE"
+    ],
+    "SSF-UNSUPPORTED-CLUSTER": [
+      "SIG-MODEL-CLUSTER"
+    ],
+    "SSF-UNSUPPORTED-CREATOR-INTENT": [
+      "SIG-DESCRIPTIVE-CREATOR-INTENT"
+    ],
+    "SSF-UNSUPPORTED-CURATORIAL-HISTORICAL-RELATION": [
+      "SIG-CURATORIAL-HISTORICAL-RELATION"
+    ],
+    "SSF-UNSUPPORTED-GEOGRAPHY-DISTANCE": [
+      "SIG-GEOGRAPHY-DISTANCE"
+    ],
+    "SSF-UNSUPPORTED-MISSINGNESS-SCORE": [
+      "SIG-MISSINGNESS-SINGLE-SCORE"
+    ],
+    "SSF-UNSUPPORTED-RELATION-PROBABILITY": [
+      "SIG-MODEL-RELATION-PROBABILITY"
+    ]
+  },
+  "schemaVersion": "trace-exploration-signal-lineage/v1",
+  "scoringEligibleSignalIds": [
+    "SIG-CONTEXT-MEDIUM",
+    "SIG-CONTEXT-MOVEMENT",
+    "SIG-CONTEXT-THEME",
+    "SIG-DESCRIPTIVE-CREATOR",
+    "SIG-DESCRIPTIVE-OBJECT-TYPE",
+    "SIG-GEOGRAPHY-ASSIGNMENT",
+    "SIG-INTERSECTION-BOUNDED-TRIPLE",
+    "SIG-INTERSECTION-PAIR-SUPPORT",
+    "SIG-SOURCE-NAME",
+    "SIG-TEMPORAL-EXTENT"
+  ],
+  "scoringGuardsBySignalId": {
+    "SIG-CONTEXT-MEDIUM": "ONE_CONTEXT_FAMILY_CONTRIBUTION;BROAD_VALUE_ATTENUATION_REQUIRED",
+    "SIG-CONTEXT-MEDIUM-THEME": "NOT_SCORING_ELIGIBLE",
+    "SIG-CONTEXT-MOVEMENT": "OBSERVED_VALUES_ONLY;NO_PUBLISHED_MOVEMENT_CONTEXT_ZERO_CREDIT",
+    "SIG-CONTEXT-SAME-MEDIUM": "NOT_SCORING_ELIGIBLE",
+    "SIG-CONTEXT-SAME-MOVEMENT": "NOT_SCORING_ELIGIBLE",
+    "SIG-CONTEXT-SAME-THEME": "NOT_SCORING_ELIGIBLE",
+    "SIG-CONTEXT-THEME": "ONE_CONTEXT_FAMILY_CONTRIBUTION;BROAD_VALUE_ATTENUATION_REQUIRED",
+    "SIG-CONTEXT-THEME-MOVEMENT": "NOT_SCORING_ELIGIBLE",
+    "SIG-CURATORIAL-AFFINITY": "NOT_SCORING_ELIGIBLE",
+    "SIG-CURATORIAL-CONTAINER-TYPE": "NOT_SCORING_ELIGIBLE",
+    "SIG-CURATORIAL-FANOUT": "NOT_SCORING_ELIGIBLE",
+    "SIG-CURATORIAL-HISTORICAL-RELATION": "NOT_SCORING_ELIGIBLE",
+    "SIG-CURATORIAL-JACCARD": "M0_NEGATIVE_CONTROL_ONLY;PRODUCTION_IMPORT_FORBIDDEN;SHORTLIST_FORBIDDEN",
+    "SIG-CURATORIAL-MEMBERSHIP": "NOT_SCORING_ELIGIBLE",
+    "SIG-CURATORIAL-MEMBERSHIP-COUNT": "NOT_SCORING_ELIGIBLE",
+    "SIG-CURATORIAL-SHARED-COUNT": "NOT_SCORING_ELIGIBLE",
+    "SIG-CURATORIAL-SUPPORT": "NOT_SCORING_ELIGIBLE",
+    "SIG-DESCRIPTIVE-CREATOR": "OBSERVED_CREATOR_ONLY;UNKNOWN_AND_QUALIFIED_UNKNOWN_ZERO_CREDIT;FAMILY_CAP_REQUIRED",
+    "SIG-DESCRIPTIVE-CREATOR-INTENT": "NOT_SCORING_ELIGIBLE",
+    "SIG-DESCRIPTIVE-CREATOR-MEDIUM": "NOT_SCORING_ELIGIBLE",
+    "SIG-DESCRIPTIVE-OBJECT-TYPE": "ONE_DESCRIPTIVE_FAMILY_CONTRIBUTION;SOURCE_GRANULARITY_DIAGNOSTIC_REQUIRED",
+    "SIG-DESCRIPTIVE-OBJECT-TYPE-MEDIUM": "NOT_SCORING_ELIGIBLE",
+    "SIG-DESCRIPTIVE-SAME-CREATOR": "NOT_SCORING_ELIGIBLE",
+    "SIG-FREQUENCY-ONE-DIMENSION": "NOT_SCORING_ELIGIBLE",
+    "SIG-FREQUENCY-RARITY-BAND": "NOT_SCORING_ELIGIBLE",
+    "SIG-GEOGRAPHY-ASSIGNMENT": "EXACT_GOVERNED_OVERLAP_ONLY;LAYOUT_AND_CENTROID_DISTANCE_FORBIDDEN",
+    "SIG-GEOGRAPHY-CLASS": "DETERMINISTIC_LOOKUP_FROM_GEOGRAPHY_ASSIGNMENT;CANDIDATE_OR_EXPLANATION_ONLY;NEVER_ADDITIVE",
+    "SIG-GEOGRAPHY-CONCENTRATION": "NOT_SCORING_ELIGIBLE",
+    "SIG-GEOGRAPHY-DISTANCE": "NOT_SCORING_ELIGIBLE",
+    "SIG-GEOGRAPHY-MAPPING-STATE": "NOT_SCORING_ELIGIBLE",
+    "SIG-GEOGRAPHY-MULTI-REGION": "NOT_SCORING_ELIGIBLE",
+    "SIG-GEOGRAPHY-RARITY": "NOT_SCORING_ELIGIBLE",
+    "SIG-GEOGRAPHY-SAME": "NOT_SCORING_ELIGIBLE",
+    "SIG-INTERSECTION-BOUNDED-TRIPLE": "APPROVED_CELLS_ONLY;PARENT_RESIDUAL_ONLY;SUPPORT_THRESHOLD_AND_CAP_REQUIRED",
+    "SIG-INTERSECTION-CONDITIONAL-LIFT": "NOT_SCORING_ELIGIBLE",
+    "SIG-INTERSECTION-MEDIUM-THEME": "NOT_SCORING_ELIGIBLE",
+    "SIG-INTERSECTION-PAIR-SUPPORT": "APPROVED_NON_CURATORIAL_CELLS_ONLY;PARENT_RESIDUAL_ONLY;SUPPORT_THRESHOLD_AND_CAP_REQUIRED",
+    "SIG-INTERSECTION-RARE-MULTI": "NOT_SCORING_ELIGIBLE",
+    "SIG-MISSINGNESS-COOCCURRENCE": "NOT_SCORING_ELIGIBLE",
+    "SIG-MISSINGNESS-CREATOR": "NOT_SCORING_ELIGIBLE",
+    "SIG-MISSINGNESS-GEOGRAPHY-MAPPING": "NOT_SCORING_ELIGIBLE",
+    "SIG-MISSINGNESS-GEOGRAPHY-QUALIFIED": "NOT_SCORING_ELIGIBLE",
+    "SIG-MISSINGNESS-MOVEMENT-AVAILABILITY": "NOT_SCORING_ELIGIBLE",
+    "SIG-MISSINGNESS-RIGHTS-DELIVERY": "NOT_SCORING_ELIGIBLE",
+    "SIG-MISSINGNESS-SINGLE-SCORE": "NOT_SCORING_ELIGIBLE",
+    "SIG-MISSINGNESS-TEMPORAL": "NOT_SCORING_ELIGIBLE",
+    "SIG-MODEL-CLUSTER": "NOT_SCORING_ELIGIBLE",
+    "SIG-MODEL-RELATION-PROBABILITY": "NOT_SCORING_ELIGIBLE",
+    "SIG-SOURCE-CONCENTRATION": "NOT_SCORING_ELIGIBLE",
+    "SIG-SOURCE-DIVERSITY": "NOT_SCORING_ELIGIBLE",
+    "SIG-SOURCE-DOMINANT": "NOT_SCORING_ELIGIBLE",
+    "SIG-SOURCE-FREQUENCY": "NOT_SCORING_ELIGIBLE",
+    "SIG-SOURCE-NAME": "SOURCE_POLICY_VARIANT_REQUIRED;NOT_AUTOMATICALLY_POSITIVE;FAMILY_CAP_REQUIRED",
+    "SIG-SOURCE-RARE": "NOT_SCORING_ELIGIBLE",
+    "SIG-SOURCE-SAME": "NOT_SCORING_ELIGIBLE",
+    "SIG-SOURCE-SHARE": "NOT_SCORING_ELIGIBLE",
+    "SIG-TEMPORAL-CONCENTRATION": "NOT_SCORING_ELIGIBLE",
+    "SIG-TEMPORAL-DECADE": "NOT_SCORING_ELIGIBLE",
+    "SIG-TEMPORAL-DISTANCE": "NOT_SCORING_ELIGIBLE",
+    "SIG-TEMPORAL-EXTENT": "TRANSPARENT_BOUNDED_INTERVAL_FUNCTION_ONLY;PRECISION_PRESERVED;NO_HISTORICAL_PROXIMITY_CLAIM",
+    "SIG-TEMPORAL-LONG-RANGE": "NOT_SCORING_ELIGIBLE",
+    "SIG-TEMPORAL-PRECISION": "NOT_SCORING_ELIGIBLE",
+    "SIG-TEMPORAL-RANGE-SPAN": "NOT_SCORING_ELIGIBLE",
+    "SIG-TEMPORAL-SAME-DECADE": "NOT_SCORING_ELIGIBLE"
+  },
+  "signals": [
+    {
+      "candidate_generation_allowed": true,
+      "derived_from_signals": [],
+      "diagnostic_only": false,
+      "direct_parent_signals": [],
+      "duplicate_for_scoring": false,
+      "epistemic_level": "DIRECT_GOVERNED_FACT",
+      "explanation_allowed": true,
+      "independent_information_candidate": true,
+      "interaction_only": false,
+      "reason": "The governed medium membership is the canonical medium source fact.",
+      "same_source_fact_group": "SSF-CONTEXT-MEDIUM",
+      "scoring_allowed": true,
+      "scoring_disposition": "INDEPENDENT_BASE_SIGNAL",
+      "signal_id": "SIG-CONTEXT-MEDIUM",
+      "source_artifact": "frontend/generated/trace-context-v1/records.json",
+      "source_row_family": "records[].representations[kind=medium]"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-CONTEXT-MEDIUM",
+        "SIG-CONTEXT-THEME"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-CONTEXT-MEDIUM",
+        "SIG-CONTEXT-THEME"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "DEPENDENT_INTERACTION_DERIVATION",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": true,
+      "reason": "This is an alias of the medium-theme cell already represented by the generic pair-interaction carrier.",
+      "same_source_fact_group": "SSF-PAIR-INTERSECTION-CELL",
+      "scoring_allowed": false,
+      "scoring_disposition": "EXPLANATION_ONLY",
+      "signal_id": "SIG-CONTEXT-MEDIUM-THEME",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/09_TWO_DIMENSION_INTERSECTIONS.tsv",
+      "source_row_family": "pair_id=medium__theme alias"
+    },
+    {
+      "candidate_generation_allowed": true,
+      "derived_from_signals": [],
+      "diagnostic_only": false,
+      "direct_parent_signals": [],
+      "duplicate_for_scoring": false,
+      "epistemic_level": "DIRECT_GOVERNED_FACT",
+      "explanation_allowed": true,
+      "independent_information_candidate": true,
+      "interaction_only": false,
+      "reason": "Published governed movement context is a sparse canonical source fact; absence is not a match.",
+      "same_source_fact_group": "SSF-CONTEXT-MOVEMENT",
+      "scoring_allowed": true,
+      "scoring_disposition": "INDEPENDENT_BASE_SIGNAL",
+      "signal_id": "SIG-CONTEXT-MOVEMENT",
+      "source_artifact": "frontend/generated/trace-context-v1/records.json",
+      "source_row_family": "records[].representations[kind=movement_context]"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-CONTEXT-MEDIUM"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-CONTEXT-MEDIUM"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "DETERMINISTIC_DERIVATION",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Pair equality is computed from the canonical medium base and cannot add a second contribution.",
+      "same_source_fact_group": "SSF-CONTEXT-MEDIUM",
+      "scoring_allowed": false,
+      "scoring_disposition": "EXPLANATION_ONLY",
+      "signal_id": "SIG-CONTEXT-SAME-MEDIUM",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/13_EXPLORATION_SIGNAL_REGISTRY.tsv",
+      "source_row_family": "pairwise comparison derived from medium memberships"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-CONTEXT-MOVEMENT"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-CONTEXT-MOVEMENT"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "DETERMINISTIC_DERIVATION",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Pair equality repeats the movement source fact and is explanation-only.",
+      "same_source_fact_group": "SSF-CONTEXT-MOVEMENT",
+      "scoring_allowed": false,
+      "scoring_disposition": "EXPLANATION_ONLY",
+      "signal_id": "SIG-CONTEXT-SAME-MOVEMENT",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/13_EXPLORATION_SIGNAL_REGISTRY.tsv",
+      "source_row_family": "pairwise comparison derived from movement memberships"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-CONTEXT-THEME"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-CONTEXT-THEME"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "DETERMINISTIC_DERIVATION",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Pair equality is computed from the canonical theme base and cannot add a second contribution.",
+      "same_source_fact_group": "SSF-CONTEXT-THEME",
+      "scoring_allowed": false,
+      "scoring_disposition": "EXPLANATION_ONLY",
+      "signal_id": "SIG-CONTEXT-SAME-THEME",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/13_EXPLORATION_SIGNAL_REGISTRY.tsv",
+      "source_row_family": "pairwise comparison derived from theme memberships"
+    },
+    {
+      "candidate_generation_allowed": true,
+      "derived_from_signals": [],
+      "diagnostic_only": false,
+      "direct_parent_signals": [],
+      "duplicate_for_scoring": false,
+      "epistemic_level": "DIRECT_GOVERNED_FACT",
+      "explanation_allowed": true,
+      "independent_information_candidate": true,
+      "interaction_only": false,
+      "reason": "The governed theme membership is the canonical theme source fact.",
+      "same_source_fact_group": "SSF-CONTEXT-THEME",
+      "scoring_allowed": true,
+      "scoring_disposition": "INDEPENDENT_BASE_SIGNAL",
+      "signal_id": "SIG-CONTEXT-THEME",
+      "source_artifact": "frontend/generated/trace-context-v1/records.json",
+      "source_row_family": "records[].representations[kind=theme]"
+    },
+    {
+      "candidate_generation_allowed": true,
+      "derived_from_signals": [
+        "SIG-CONTEXT-MOVEMENT",
+        "SIG-CONTEXT-THEME"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-CONTEXT-MOVEMENT",
+        "SIG-CONTEXT-THEME"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "DEPENDENT_INTERACTION_DERIVATION",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": true,
+      "reason": "The sparse cell may retrieve candidates, but any score must pass through the one residual pair-interaction channel.",
+      "same_source_fact_group": "SSF-PAIR-INTERSECTION-CELL",
+      "scoring_allowed": false,
+      "scoring_disposition": "CANDIDATE_GENERATION_ONLY",
+      "signal_id": "SIG-CONTEXT-THEME-MOVEMENT",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/09_TWO_DIMENSION_INTERSECTIONS.tsv",
+      "source_row_family": "pair_id=theme__movement_context"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-CURATORIAL-JACCARD",
+        "SIG-CURATORIAL-MEMBERSHIP",
+        "SIG-CURATORIAL-SHARED-COUNT"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-CURATORIAL-JACCARD",
+        "SIG-CURATORIAL-MEMBERSHIP",
+        "SIG-CURATORIAL-SHARED-COUNT"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "UNSELECTED_COMPOUND",
+      "explanation_allowed": false,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "No curatorial score, formula, or weights exist; the compound cannot enter scoring.",
+      "same_source_fact_group": "SSF-UNSELECTED-CURATORIAL-AFFINITY",
+      "scoring_allowed": false,
+      "scoring_disposition": "REJECT",
+      "signal_id": "SIG-CURATORIAL-AFFINITY",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/13_EXPLORATION_SIGNAL_REGISTRY.tsv",
+      "source_row_family": "unselected compound candidate"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [],
+      "diagnostic_only": true,
+      "direct_parent_signals": [],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "ANALYSIS_DIAGNOSTIC",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Four broad project-curated types diagnose structure but are not independent affinity evidence.",
+      "same_source_fact_group": "SSF-CURATORIAL-CONTAINER-TYPE",
+      "scoring_allowed": false,
+      "scoring_disposition": "DIAGNOSTIC_ONLY",
+      "signal_id": "SIG-CURATORIAL-CONTAINER-TYPE",
+      "source_artifact": "docs/audits/v49-spacetime-closure-exploration-discovery/raw/exploration-curatorial-summary.json",
+      "source_row_family": "publicContainerTypeRows"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-CURATORIAL-MEMBERSHIP"
+      ],
+      "diagnostic_only": true,
+      "direct_parent_signals": [
+        "SIG-CURATORIAL-MEMBERSHIP"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "ANALYSIS_DIAGNOSTIC",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Fanout measures candidate explosion caused by the same membership substrate.",
+      "same_source_fact_group": "SSF-CURATORIAL-MEMBERSHIP",
+      "scoring_allowed": false,
+      "scoring_disposition": "DIAGNOSTIC_ONLY",
+      "signal_id": "SIG-CURATORIAL-FANOUT",
+      "source_artifact": "docs/audits/v49-spacetime-closure-exploration-discovery/raw/exploration-curatorial-summary.json",
+      "source_row_family": "perObjectFanoutThresholds"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-CURATORIAL-MEMBERSHIP"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-CURATORIAL-MEMBERSHIP"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "UNSUPPORTED_INFERENCE",
+      "explanation_allowed": false,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Project-curated overlap cannot establish historical relation, influence, contact, or lineage.",
+      "same_source_fact_group": "SSF-UNSUPPORTED-CURATORIAL-HISTORICAL-RELATION",
+      "scoring_allowed": false,
+      "scoring_disposition": "REJECT",
+      "signal_id": "SIG-CURATORIAL-HISTORICAL-RELATION",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/13_EXPLORATION_SIGNAL_REGISTRY.tsv",
+      "source_row_family": "explicitly prohibited inference"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-CURATORIAL-MEMBERSHIP"
+      ],
+      "diagnostic_only": true,
+      "direct_parent_signals": [
+        "SIG-CURATORIAL-MEMBERSHIP"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "ANALYSIS_DIAGNOSTIC",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Raw curated-set Jaccard is retained only as M0 negative control and structural diagnostic.",
+      "same_source_fact_group": "SSF-CURATORIAL-MEMBERSHIP",
+      "scoring_allowed": false,
+      "scoring_disposition": "DIAGNOSTIC_ONLY",
+      "signal_id": "SIG-CURATORIAL-JACCARD",
+      "source_artifact": "docs/audits/v49-spacetime-closure-exploration-discovery/raw/exploration-curatorial-summary.json",
+      "source_row_family": "rawCuratedJaccardDistribution"
+    },
+    {
+      "candidate_generation_allowed": true,
+      "derived_from_signals": [],
+      "diagnostic_only": false,
+      "direct_parent_signals": [],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "PROJECT_CURATED_RECALL_SUBSTRATE",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Raw memberships may support bounded recall and provenance, never independent score credit.",
+      "same_source_fact_group": "SSF-CURATORIAL-MEMBERSHIP",
+      "scoring_allowed": false,
+      "scoring_disposition": "CANDIDATE_GENERATION_ONLY",
+      "signal_id": "SIG-CURATORIAL-MEMBERSHIP",
+      "source_artifact": "docs/audits/v49-spacetime-closure-exploration-discovery/raw/exploration-curatorial-summary.json",
+      "source_row_family": "unique public object-container memberships"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-CURATORIAL-MEMBERSHIP"
+      ],
+      "diagnostic_only": true,
+      "direct_parent_signals": [
+        "SIG-CURATORIAL-MEMBERSHIP"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "ANALYSIS_DIAGNOSTIC",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Membership count diagnoses cataloguing density and cannot imply importance or affinity.",
+      "same_source_fact_group": "SSF-CURATORIAL-MEMBERSHIP",
+      "scoring_allowed": false,
+      "scoring_disposition": "DIAGNOSTIC_ONLY",
+      "signal_id": "SIG-CURATORIAL-MEMBERSHIP-COUNT",
+      "source_artifact": "docs/audits/v49-spacetime-closure-exploration-discovery/raw/exploration-curatorial-summary.json",
+      "source_row_family": "membershipsPerObjectDistribution"
+    },
+    {
+      "candidate_generation_allowed": true,
+      "derived_from_signals": [
+        "SIG-CURATORIAL-MEMBERSHIP"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-CURATORIAL-MEMBERSHIP"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "PROJECT_CURATED_RECALL_SUBSTRATE",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Shared-count thresholds may narrow curatorial recall but repeat the raw membership fact for scoring.",
+      "same_source_fact_group": "SSF-CURATORIAL-MEMBERSHIP",
+      "scoring_allowed": false,
+      "scoring_disposition": "CANDIDATE_GENERATION_ONLY",
+      "signal_id": "SIG-CURATORIAL-SHARED-COUNT",
+      "source_artifact": "docs/audits/v49-spacetime-closure-exploration-discovery/raw/exploration-curatorial-summary.json",
+      "source_row_family": "sharedContainerCountThresholds"
+    },
+    {
+      "candidate_generation_allowed": true,
+      "derived_from_signals": [
+        "SIG-CURATORIAL-MEMBERSHIP"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-CURATORIAL-MEMBERSHIP"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "PROJECT_CURATED_RECALL_SUBSTRATE",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Support may attenuate or stop broad postings, but is not an additional pair observation.",
+      "same_source_fact_group": "SSF-CURATORIAL-MEMBERSHIP",
+      "scoring_allowed": false,
+      "scoring_disposition": "CANDIDATE_GENERATION_ONLY",
+      "signal_id": "SIG-CURATORIAL-SUPPORT",
+      "source_artifact": "docs/audits/v49-spacetime-closure-exploration-discovery/raw/exploration-curatorial-support-summary.json",
+      "source_row_family": "containerSupportRows"
+    },
+    {
+      "candidate_generation_allowed": true,
+      "derived_from_signals": [],
+      "diagnostic_only": false,
+      "direct_parent_signals": [],
+      "duplicate_for_scoring": false,
+      "epistemic_level": "DIRECT_APPROVED_PUBLIC_METADATA",
+      "explanation_allowed": true,
+      "independent_information_candidate": true,
+      "interaction_only": false,
+      "reason": "Normalized public creator attribution is independently observable when it is not an explicit unknown state.",
+      "same_source_fact_group": "SSF-DESCRIPTIVE-CREATOR",
+      "scoring_allowed": true,
+      "scoring_disposition": "INDEPENDENT_BASE_SIGNAL",
+      "signal_id": "SIG-DESCRIPTIVE-CREATOR",
+      "source_artifact": "frontend/generated/trace-context-v1/records.json",
+      "source_row_family": "records[].selectedRecord.rootMetadata.creatorAttribution"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-DESCRIPTIVE-CREATOR"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-DESCRIPTIVE-CREATOR"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "UNSUPPORTED_INFERENCE",
+      "explanation_allowed": false,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Creator attribution cannot establish intent.",
+      "same_source_fact_group": "SSF-UNSUPPORTED-CREATOR-INTENT",
+      "scoring_allowed": false,
+      "scoring_disposition": "REJECT",
+      "signal_id": "SIG-DESCRIPTIVE-CREATOR-INTENT",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/13_EXPLORATION_SIGNAL_REGISTRY.tsv",
+      "source_row_family": "explicitly prohibited inference"
+    },
+    {
+      "candidate_generation_allowed": true,
+      "derived_from_signals": [
+        "SIG-CONTEXT-MEDIUM",
+        "SIG-DESCRIPTIVE-CREATOR"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-CONTEXT-MEDIUM",
+        "SIG-DESCRIPTIVE-CREATOR"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "DEPENDENT_INTERACTION_DERIVATION",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": true,
+      "reason": "The cell may retrieve candidates; score credit belongs only to the residual pair-interaction channel.",
+      "same_source_fact_group": "SSF-PAIR-INTERSECTION-CELL",
+      "scoring_allowed": false,
+      "scoring_disposition": "CANDIDATE_GENERATION_ONLY",
+      "signal_id": "SIG-DESCRIPTIVE-CREATOR-MEDIUM",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/09_TWO_DIMENSION_INTERSECTIONS.tsv",
+      "source_row_family": "pair_id=creator__medium"
+    },
+    {
+      "candidate_generation_allowed": true,
+      "derived_from_signals": [],
+      "diagnostic_only": false,
+      "direct_parent_signals": [],
+      "duplicate_for_scoring": false,
+      "epistemic_level": "DIRECT_APPROVED_PUBLIC_METADATA",
+      "explanation_allowed": true,
+      "independent_information_candidate": true,
+      "interaction_only": false,
+      "reason": "Normalized public object type is independently observable, subject to source-granularity diagnostics.",
+      "same_source_fact_group": "SSF-DESCRIPTIVE-OBJECT-TYPE",
+      "scoring_allowed": true,
+      "scoring_disposition": "INDEPENDENT_BASE_SIGNAL",
+      "signal_id": "SIG-DESCRIPTIVE-OBJECT-TYPE",
+      "source_artifact": "frontend/generated/trace-context-v1/records.json",
+      "source_row_family": "records[].selectedRecord.rootMetadata.objectType"
+    },
+    {
+      "candidate_generation_allowed": true,
+      "derived_from_signals": [
+        "SIG-CONTEXT-MEDIUM",
+        "SIG-DESCRIPTIVE-OBJECT-TYPE"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-CONTEXT-MEDIUM",
+        "SIG-DESCRIPTIVE-OBJECT-TYPE"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "DEPENDENT_INTERACTION_DERIVATION",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": true,
+      "reason": "The cell may retrieve candidates; it cannot add object-type and medium evidence again.",
+      "same_source_fact_group": "SSF-PAIR-INTERSECTION-CELL",
+      "scoring_allowed": false,
+      "scoring_disposition": "CANDIDATE_GENERATION_ONLY",
+      "signal_id": "SIG-DESCRIPTIVE-OBJECT-TYPE-MEDIUM",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/09_TWO_DIMENSION_INTERSECTIONS.tsv",
+      "source_row_family": "pair_id=object_type__medium"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-DESCRIPTIVE-CREATOR"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-DESCRIPTIVE-CREATOR"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "DETERMINISTIC_DERIVATION",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Same-creator equality repeats the canonical creator source fact; unknown states remain zero credit.",
+      "same_source_fact_group": "SSF-DESCRIPTIVE-CREATOR",
+      "scoring_allowed": false,
+      "scoring_disposition": "EXPLANATION_ONLY",
+      "signal_id": "SIG-DESCRIPTIVE-SAME-CREATOR",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/13_EXPLORATION_SIGNAL_REGISTRY.tsv",
+      "source_row_family": "pairwise comparison derived from creator attribution"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-CONTEXT-MEDIUM",
+        "SIG-CONTEXT-MOVEMENT",
+        "SIG-CONTEXT-THEME",
+        "SIG-CURATORIAL-CONTAINER-TYPE",
+        "SIG-CURATORIAL-MEMBERSHIP",
+        "SIG-DESCRIPTIVE-CREATOR",
+        "SIG-DESCRIPTIVE-OBJECT-TYPE",
+        "SIG-GEOGRAPHY-ASSIGNMENT",
+        "SIG-GEOGRAPHY-CLASS",
+        "SIG-GEOGRAPHY-MAPPING-STATE",
+        "SIG-SOURCE-NAME",
+        "SIG-TEMPORAL-DECADE",
+        "SIG-TEMPORAL-PRECISION"
+      ],
+      "diagnostic_only": true,
+      "direct_parent_signals": [
+        "SIG-CONTEXT-MEDIUM",
+        "SIG-CONTEXT-MOVEMENT",
+        "SIG-CONTEXT-THEME",
+        "SIG-CURATORIAL-CONTAINER-TYPE",
+        "SIG-CURATORIAL-MEMBERSHIP",
+        "SIG-DESCRIPTIVE-CREATOR",
+        "SIG-DESCRIPTIVE-OBJECT-TYPE",
+        "SIG-GEOGRAPHY-ASSIGNMENT",
+        "SIG-GEOGRAPHY-CLASS",
+        "SIG-GEOGRAPHY-MAPPING-STATE",
+        "SIG-SOURCE-NAME",
+        "SIG-TEMPORAL-DECADE",
+        "SIG-TEMPORAL-PRECISION"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "ANALYSIS_DIAGNOSTIC",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Frequency supplies bounded weighting diagnostics; it is not a second observation of a feature value.",
+      "same_source_fact_group": "SSF-CROSS-DIMENSION-FREQUENCY",
+      "scoring_allowed": false,
+      "scoring_disposition": "DIAGNOSTIC_ONLY",
+      "signal_id": "SIG-FREQUENCY-ONE-DIMENSION",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/08_ONE_DIMENSION_FREQUENCIES.tsv",
+      "source_row_family": "all observed one-dimensional frequency rows"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-FREQUENCY-ONE-DIMENSION"
+      ],
+      "diagnostic_only": true,
+      "direct_parent_signals": [
+        "SIG-FREQUENCY-ONE-DIMENSION"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "ANALYSIS_DIAGNOSTIC",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "A rarity label derives from frequency and cannot become importance or independent score evidence.",
+      "same_source_fact_group": "SSF-CROSS-DIMENSION-FREQUENCY",
+      "scoring_allowed": false,
+      "scoring_disposition": "DIAGNOSTIC_ONLY",
+      "signal_id": "SIG-FREQUENCY-RARITY-BAND",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/08_ONE_DIMENSION_FREQUENCIES.tsv",
+      "source_row_family": "rarity_band over one-dimensional frequency rows"
+    },
+    {
+      "candidate_generation_allowed": true,
+      "derived_from_signals": [],
+      "diagnostic_only": false,
+      "direct_parent_signals": [],
+      "duplicate_for_scoring": false,
+      "epistemic_level": "DIRECT_GOVERNED_FACT",
+      "explanation_allowed": true,
+      "independent_information_candidate": true,
+      "interaction_only": false,
+      "reason": "Governed geography identity is the canonical exact-overlap source fact.",
+      "same_source_fact_group": "SSF-GEOGRAPHY-ASSIGNMENT",
+      "scoring_allowed": true,
+      "scoring_disposition": "INDEPENDENT_BASE_SIGNAL",
+      "signal_id": "SIG-GEOGRAPHY-ASSIGNMENT",
+      "source_artifact": "frontend/generated/trace-spacetime-v1/record-index.json",
+      "source_row_family": "records[].geographyIds"
+    },
+    {
+      "candidate_generation_allowed": true,
+      "derived_from_signals": [
+        "SIG-GEOGRAPHY-ASSIGNMENT"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-GEOGRAPHY-ASSIGNMENT"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "GOVERNED_PROJECTION_DERIVATION",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "All 93 governed geography IDs map deterministically to exactly one class, so class adds no independent information and is only a weaker retrieval/explanation fallback.",
+      "same_source_fact_group": "SSF-GEOGRAPHY-ASSIGNMENT",
+      "scoring_allowed": false,
+      "scoring_disposition": "CANDIDATE_GENERATION_ONLY",
+      "signal_id": "SIG-GEOGRAPHY-CLASS",
+      "source_artifact": "frontend/generated/trace-spacetime-v1/geography-registry.json",
+      "source_row_family": "entries[].geographyClass"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-GEOGRAPHY-ASSIGNMENT"
+      ],
+      "diagnostic_only": true,
+      "direct_parent_signals": [
+        "SIG-GEOGRAPHY-ASSIGNMENT"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "ANALYSIS_DIAGNOSTIC",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Corpus concentration derives from governed geography assignments and diagnoses bias only.",
+      "same_source_fact_group": "SSF-GEOGRAPHY-ASSIGNMENT",
+      "scoring_allowed": false,
+      "scoring_disposition": "DIAGNOSTIC_ONLY",
+      "signal_id": "SIG-GEOGRAPHY-CONCENTRATION",
+      "source_artifact": "docs/audits/v49-spacetime-closure-exploration-discovery/raw/exploration-cross-dimensional-summary.json",
+      "source_row_family": "dimensionConcentrationRows[dimension=geography]"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-GEOGRAPHY-ASSIGNMENT"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-GEOGRAPHY-ASSIGNMENT"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "UNSELECTED_COMPOUND",
+      "explanation_allowed": false,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "No governed research-distance policy exists; layout, centroid, adjacency, and coordinate distance are forbidden.",
+      "same_source_fact_group": "SSF-UNSUPPORTED-GEOGRAPHY-DISTANCE",
+      "scoring_allowed": false,
+      "scoring_disposition": "REJECT",
+      "signal_id": "SIG-GEOGRAPHY-DISTANCE",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/13_EXPLORATION_SIGNAL_REGISTRY.tsv",
+      "source_row_family": "unselected geography-distance candidate"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [],
+      "diagnostic_only": false,
+      "direct_parent_signals": [],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "COMPARABILITY_STATE",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Mapped, aggregate-only, and unmapped states describe observability, not positive affinity.",
+      "same_source_fact_group": "SSF-GEOGRAPHY-MAPPING-STATE",
+      "scoring_allowed": false,
+      "scoring_disposition": "COMPARABILITY_ONLY",
+      "signal_id": "SIG-GEOGRAPHY-MAPPING-STATE",
+      "source_artifact": "frontend/generated/trace-spacetime-v1/geography-registry.json",
+      "source_row_family": "entries[].mappingState"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-GEOGRAPHY-ASSIGNMENT"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-GEOGRAPHY-ASSIGNMENT"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "COMPARABILITY_STATE",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Multi-region incidence changes comparison shape but is not an extra match.",
+      "same_source_fact_group": "SSF-GEOGRAPHY-MULTI-REGION",
+      "scoring_allowed": false,
+      "scoring_disposition": "COMPARABILITY_ONLY",
+      "signal_id": "SIG-GEOGRAPHY-MULTI-REGION",
+      "source_artifact": "docs/audits/v49-spacetime-closure-exploration-discovery/raw/exploration-missingness-summary.json",
+      "source_row_family": "objectVectors[].geographyCount>1 aggregate"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-FREQUENCY-ONE-DIMENSION",
+        "SIG-GEOGRAPHY-ASSIGNMENT"
+      ],
+      "diagnostic_only": true,
+      "direct_parent_signals": [
+        "SIG-FREQUENCY-ONE-DIMENSION",
+        "SIG-GEOGRAPHY-ASSIGNMENT"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "ANALYSIS_DIAGNOSTIC",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Geographic rarity derives from assignment frequency; rare does not mean important.",
+      "same_source_fact_group": "SSF-GEOGRAPHY-ASSIGNMENT",
+      "scoring_allowed": false,
+      "scoring_disposition": "DIAGNOSTIC_ONLY",
+      "signal_id": "SIG-GEOGRAPHY-RARITY",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/08_ONE_DIMENSION_FREQUENCIES.tsv",
+      "source_row_family": "dimension=geography rarity_band"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-GEOGRAPHY-ASSIGNMENT"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-GEOGRAPHY-ASSIGNMENT"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "DETERMINISTIC_DERIVATION",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Same-geography equality is calculated from the canonical assignment and cannot add a second contribution.",
+      "same_source_fact_group": "SSF-GEOGRAPHY-ASSIGNMENT",
+      "scoring_allowed": false,
+      "scoring_disposition": "EXPLANATION_ONLY",
+      "signal_id": "SIG-GEOGRAPHY-SAME",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/13_EXPLORATION_SIGNAL_REGISTRY.tsv",
+      "source_row_family": "pairwise comparison derived from geographyIds"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-CONTEXT-MEDIUM",
+        "SIG-CONTEXT-THEME",
+        "SIG-GEOGRAPHY-ASSIGNMENT",
+        "SIG-SOURCE-NAME",
+        "SIG-TEMPORAL-DECADE"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-CONTEXT-MEDIUM",
+        "SIG-CONTEXT-THEME",
+        "SIG-GEOGRAPHY-ASSIGNMENT",
+        "SIG-SOURCE-NAME",
+        "SIG-TEMPORAL-DECADE"
+      ],
+      "duplicate_for_scoring": false,
+      "epistemic_level": "DEPENDENT_INTERACTION_DERIVATION",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": true,
+      "reason": "Approved triple cells may add only bounded information residual after their base parents.",
+      "same_source_fact_group": "SSF-TRIPLE-INTERSECTION-CELL",
+      "scoring_allowed": true,
+      "scoring_disposition": "DEPENDENT_INTERACTION_SIGNAL",
+      "signal_id": "SIG-INTERSECTION-BOUNDED-TRIPLE",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/10_THREE_DIMENSION_INTERSECTIONS.tsv",
+      "source_row_family": "all approved bounded triple cells"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-INTERSECTION-PAIR-SUPPORT"
+      ],
+      "diagnostic_only": true,
+      "direct_parent_signals": [
+        "SIG-INTERSECTION-PAIR-SUPPORT"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "ANALYSIS_DIAGNOSTIC",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": true,
+      "reason": "Conditional support and raw lift are alternative diagnostics over the same pair cells, not extra evidence.",
+      "same_source_fact_group": "SSF-PAIR-INTERSECTION-CELL",
+      "scoring_allowed": false,
+      "scoring_disposition": "DIAGNOSTIC_ONLY",
+      "signal_id": "SIG-INTERSECTION-CONDITIONAL-LIFT",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/09_TWO_DIMENSION_INTERSECTIONS.tsv",
+      "source_row_family": "conditional rates and lift diagnostics"
+    },
+    {
+      "candidate_generation_allowed": true,
+      "derived_from_signals": [
+        "SIG-CONTEXT-MEDIUM",
+        "SIG-CONTEXT-THEME"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-CONTEXT-MEDIUM",
+        "SIG-CONTEXT-THEME"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "DEPENDENT_INTERACTION_DERIVATION",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": true,
+      "reason": "The high-information posting may retrieve candidates; score credit is centralized in the residual pair carrier.",
+      "same_source_fact_group": "SSF-PAIR-INTERSECTION-CELL",
+      "scoring_allowed": false,
+      "scoring_disposition": "CANDIDATE_GENERATION_ONLY",
+      "signal_id": "SIG-INTERSECTION-MEDIUM-THEME",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/09_TWO_DIMENSION_INTERSECTIONS.tsv",
+      "source_row_family": "pair_id=medium__theme canonical retrieval alias"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-CONTEXT-MEDIUM",
+        "SIG-CONTEXT-MOVEMENT",
+        "SIG-CONTEXT-THEME",
+        "SIG-DESCRIPTIVE-CREATOR",
+        "SIG-DESCRIPTIVE-OBJECT-TYPE",
+        "SIG-GEOGRAPHY-ASSIGNMENT",
+        "SIG-SOURCE-NAME",
+        "SIG-TEMPORAL-DECADE"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-CONTEXT-MEDIUM",
+        "SIG-CONTEXT-MOVEMENT",
+        "SIG-CONTEXT-THEME",
+        "SIG-DESCRIPTIVE-CREATOR",
+        "SIG-DESCRIPTIVE-OBJECT-TYPE",
+        "SIG-GEOGRAPHY-ASSIGNMENT",
+        "SIG-SOURCE-NAME",
+        "SIG-TEMPORAL-DECADE"
+      ],
+      "duplicate_for_scoring": false,
+      "epistemic_level": "DEPENDENT_INTERACTION_DERIVATION",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": true,
+      "reason": "One residual pair-interaction carrier prevents named cells, support, lift, and rarity from being added repeatedly.",
+      "same_source_fact_group": "SSF-PAIR-INTERSECTION-CELL",
+      "scoring_allowed": true,
+      "scoring_disposition": "DEPENDENT_INTERACTION_SIGNAL",
+      "signal_id": "SIG-INTERSECTION-PAIR-SUPPORT",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/09_TWO_DIMENSION_INTERSECTIONS.tsv",
+      "source_row_family": "approved non-curatorial observed pair cells"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-INTERSECTION-BOUNDED-TRIPLE",
+        "SIG-INTERSECTION-PAIR-SUPPORT"
+      ],
+      "diagnostic_only": true,
+      "direct_parent_signals": [
+        "SIG-INTERSECTION-BOUNDED-TRIPLE",
+        "SIG-INTERSECTION-PAIR-SUPPORT"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "ANALYSIS_DIAGNOSTIC",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": true,
+      "reason": "Rare is a bounded sensitivity label, not importance and not an additional interaction observation.",
+      "same_source_fact_group": "SSF-INTERSECTION-RARITY-CLASS",
+      "scoring_allowed": false,
+      "scoring_disposition": "DIAGNOSTIC_ONLY",
+      "signal_id": "SIG-INTERSECTION-RARE-MULTI",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/11_RARE_INTERSECTION_REGISTER.tsv",
+      "source_row_family": "bounded rare pair and triple cells"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-MISSINGNESS-CREATOR",
+        "SIG-MISSINGNESS-GEOGRAPHY-MAPPING",
+        "SIG-MISSINGNESS-GEOGRAPHY-QUALIFIED",
+        "SIG-MISSINGNESS-MOVEMENT-AVAILABILITY",
+        "SIG-MISSINGNESS-TEMPORAL"
+      ],
+      "diagnostic_only": true,
+      "direct_parent_signals": [
+        "SIG-MISSINGNESS-CREATOR",
+        "SIG-MISSINGNESS-GEOGRAPHY-MAPPING",
+        "SIG-MISSINGNESS-GEOGRAPHY-QUALIFIED",
+        "SIG-MISSINGNESS-MOVEMENT-AVAILABILITY",
+        "SIG-MISSINGNESS-TEMPORAL"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "ANALYSIS_DIAGNOSTIC",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Shared uncertainty states are useful only for missingness-oriented aggregate exploration.",
+      "same_source_fact_group": "SSF-MISSINGNESS-COOCCURRENCE",
+      "scoring_allowed": false,
+      "scoring_disposition": "DIAGNOSTIC_ONLY",
+      "signal_id": "SIG-MISSINGNESS-COOCCURRENCE",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/06_MISSINGNESS_CENSUS.tsv",
+      "source_row_family": "row_kind=COOCCURRENCE"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-DESCRIPTIVE-CREATOR"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-DESCRIPTIVE-CREATOR"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "COMPARABILITY_STATE",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Creator unknown and qualified-unknown states alter availability and add zero default affinity.",
+      "same_source_fact_group": "SSF-DESCRIPTIVE-CREATOR",
+      "scoring_allowed": false,
+      "scoring_disposition": "COMPARABILITY_ONLY",
+      "signal_id": "SIG-MISSINGNESS-CREATOR",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/06_MISSINGNESS_CENSUS.tsv",
+      "source_row_family": "row_kind=FIELD_MATRIX;field=creator"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-GEOGRAPHY-MAPPING-STATE"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-GEOGRAPHY-MAPPING-STATE"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "COMPARABILITY_STATE",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Mapping availability belongs to the comparability channel and adds zero affinity.",
+      "same_source_fact_group": "SSF-GEOGRAPHY-MAPPING-STATE",
+      "scoring_allowed": false,
+      "scoring_disposition": "COMPARABILITY_ONLY",
+      "signal_id": "SIG-MISSINGNESS-GEOGRAPHY-MAPPING",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/06_MISSINGNESS_CENSUS.tsv",
+      "source_row_family": "row_kind=FIELD_MATRIX;field=geography_mapping_state"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-GEOGRAPHY-ASSIGNMENT"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-GEOGRAPHY-ASSIGNMENT"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "COMPARABILITY_STATE",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Qualification is uncertainty metadata and cannot create positive pair credit.",
+      "same_source_fact_group": "SSF-GEOGRAPHY-QUALIFICATION",
+      "scoring_allowed": false,
+      "scoring_disposition": "COMPARABILITY_ONLY",
+      "signal_id": "SIG-MISSINGNESS-GEOGRAPHY-QUALIFIED",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/06_MISSINGNESS_CENSUS.tsv",
+      "source_row_family": "taxonomy_class=QUALIFIED geography rows"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-CONTEXT-MOVEMENT"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-CONTEXT-MOVEMENT"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "COMPARABILITY_STATE",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "No published movement context is an explicit availability state, not a shared positive feature.",
+      "same_source_fact_group": "SSF-CONTEXT-MOVEMENT",
+      "scoring_allowed": false,
+      "scoring_disposition": "COMPARABILITY_ONLY",
+      "signal_id": "SIG-MISSINGNESS-MOVEMENT-AVAILABILITY",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/06_MISSINGNESS_CENSUS.tsv",
+      "source_row_family": "row_kind=FIELD_MATRIX;field=movement_context"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [],
+      "diagnostic_only": false,
+      "direct_parent_signals": [],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "UNSELECTED_COMPOUND",
+      "explanation_allowed": false,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Rights and delivery states are not governed public Exploration features.",
+      "same_source_fact_group": "SSF-NOT-GOVERNED-RIGHTS-DELIVERY",
+      "scoring_allowed": false,
+      "scoring_disposition": "REJECT",
+      "signal_id": "SIG-MISSINGNESS-RIGHTS-DELIVERY",
+      "source_artifact": "docs/audits/v49-spacetime-closure-exploration-discovery/raw/exploration-missingness-summary.json",
+      "source_row_family": "internal rights and delivery diagnostics"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-MISSINGNESS-CREATOR",
+        "SIG-MISSINGNESS-GEOGRAPHY-MAPPING",
+        "SIG-MISSINGNESS-GEOGRAPHY-QUALIFIED",
+        "SIG-MISSINGNESS-MOVEMENT-AVAILABILITY",
+        "SIG-MISSINGNESS-TEMPORAL"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-MISSINGNESS-CREATOR",
+        "SIG-MISSINGNESS-GEOGRAPHY-MAPPING",
+        "SIG-MISSINGNESS-GEOGRAPHY-QUALIFIED",
+        "SIG-MISSINGNESS-MOVEMENT-AVAILABILITY",
+        "SIG-MISSINGNESS-TEMPORAL"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "UNSUPPORTED_INFERENCE",
+      "explanation_allowed": false,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Collapsing heterogeneous availability states into one score hides comparability and is prohibited.",
+      "same_source_fact_group": "SSF-UNSUPPORTED-MISSINGNESS-SCORE",
+      "scoring_allowed": false,
+      "scoring_disposition": "REJECT",
+      "signal_id": "SIG-MISSINGNESS-SINGLE-SCORE",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/13_EXPLORATION_SIGNAL_REGISTRY.tsv",
+      "source_row_family": "explicitly rejected uncertainty compound"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-TEMPORAL-PRECISION"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-TEMPORAL-PRECISION"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "COMPARABILITY_STATE",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Approximate and range precision affect temporal comparability; matching uncertainty adds zero affinity.",
+      "same_source_fact_group": "SSF-TEMPORAL-PRECISION",
+      "scoring_allowed": false,
+      "scoring_disposition": "COMPARABILITY_ONLY",
+      "signal_id": "SIG-MISSINGNESS-TEMPORAL",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/06_MISSINGNESS_CENSUS.tsv",
+      "source_row_family": "row_kind=FIELD_MATRIX;field=temporal_precision"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [],
+      "diagnostic_only": false,
+      "direct_parent_signals": [],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "UNSELECTED_COMPOUND",
+      "explanation_allowed": false,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Clustering is outside this round and is not an archive source fact.",
+      "same_source_fact_group": "SSF-UNSUPPORTED-CLUSTER",
+      "scoring_allowed": false,
+      "scoring_disposition": "REJECT",
+      "signal_id": "SIG-MODEL-CLUSTER",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/13_EXPLORATION_SIGNAL_REGISTRY.tsv",
+      "source_row_family": "unselected clustering candidate"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [],
+      "diagnostic_only": false,
+      "direct_parent_signals": [],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "UNSUPPORTED_INFERENCE",
+      "explanation_allowed": false,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Archive-derived overlap cannot support a probability of historical or semantic relation.",
+      "same_source_fact_group": "SSF-UNSUPPORTED-RELATION-PROBABILITY",
+      "scoring_allowed": false,
+      "scoring_disposition": "REJECT",
+      "signal_id": "SIG-MODEL-RELATION-PROBABILITY",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/13_EXPLORATION_SIGNAL_REGISTRY.tsv",
+      "source_row_family": "explicitly prohibited relation-probability candidate"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-SOURCE-NAME"
+      ],
+      "diagnostic_only": true,
+      "direct_parent_signals": [
+        "SIG-SOURCE-NAME"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "ANALYSIS_DIAGNOSTIC",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Source concentration derives from source identity and diagnoses corpus bias.",
+      "same_source_fact_group": "SSF-SOURCE-IDENTITY",
+      "scoring_allowed": false,
+      "scoring_disposition": "DIAGNOSTIC_ONLY",
+      "signal_id": "SIG-SOURCE-CONCENTRATION",
+      "source_artifact": "docs/audits/v49-spacetime-closure-exploration-discovery/raw/exploration-cross-dimensional-summary.json",
+      "source_row_family": "dimensionConcentrationRows[dimension=source]"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-SOURCE-CONCENTRATION",
+        "SIG-SOURCE-NAME"
+      ],
+      "diagnostic_only": true,
+      "direct_parent_signals": [
+        "SIG-SOURCE-CONCENTRATION",
+        "SIG-SOURCE-NAME"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "ANALYSIS_DIAGNOSTIC",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Diversity is an aggregate/source-stratification diagnostic, not object-pair affinity.",
+      "same_source_fact_group": "SSF-SOURCE-IDENTITY",
+      "scoring_allowed": false,
+      "scoring_disposition": "DIAGNOSTIC_ONLY",
+      "signal_id": "SIG-SOURCE-DIVERSITY",
+      "source_artifact": "docs/audits/v49-spacetime-closure-exploration-discovery/raw/exploration-cross-dimensional-summary.json",
+      "source_row_family": "sourceCompositionRows candidate diversity summary"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-SOURCE-FREQUENCY"
+      ],
+      "diagnostic_only": true,
+      "direct_parent_signals": [
+        "SIG-SOURCE-FREQUENCY"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "ANALYSIS_DIAGNOSTIC",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Dominant-source incidence is corpus composition, not independent pair evidence.",
+      "same_source_fact_group": "SSF-SOURCE-IDENTITY",
+      "scoring_allowed": false,
+      "scoring_disposition": "DIAGNOSTIC_ONLY",
+      "signal_id": "SIG-SOURCE-DOMINANT",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/08_ONE_DIMENSION_FREQUENCIES.tsv",
+      "source_row_family": "dimension=source dominant-value diagnostic"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-SOURCE-NAME"
+      ],
+      "diagnostic_only": true,
+      "direct_parent_signals": [
+        "SIG-SOURCE-NAME"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "ANALYSIS_DIAGNOSTIC",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Source frequency may inform caps or IDF but repeats the source identity population.",
+      "same_source_fact_group": "SSF-SOURCE-IDENTITY",
+      "scoring_allowed": false,
+      "scoring_disposition": "DIAGNOSTIC_ONLY",
+      "signal_id": "SIG-SOURCE-FREQUENCY",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/08_ONE_DIMENSION_FREQUENCIES.tsv",
+      "source_row_family": "dimension=source"
+    },
+    {
+      "candidate_generation_allowed": true,
+      "derived_from_signals": [],
+      "diagnostic_only": false,
+      "direct_parent_signals": [],
+      "duplicate_for_scoring": false,
+      "epistemic_level": "DIRECT_APPROVED_PUBLIC_METADATA",
+      "explanation_allowed": true,
+      "independent_information_candidate": true,
+      "interaction_only": false,
+      "reason": "Public source identity is observable but biased; positive use requires an explicit capped experiment policy.",
+      "same_source_fact_group": "SSF-SOURCE-IDENTITY",
+      "scoring_allowed": true,
+      "scoring_disposition": "INDEPENDENT_BASE_SIGNAL",
+      "signal_id": "SIG-SOURCE-NAME",
+      "source_artifact": "frontend/generated/trace-context-v1/records.json",
+      "source_row_family": "records[].selectedRecord.rootMetadata.sourceName"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-SOURCE-FREQUENCY"
+      ],
+      "diagnostic_only": true,
+      "direct_parent_signals": [
+        "SIG-SOURCE-FREQUENCY"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "ANALYSIS_DIAGNOSTIC",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Rare-source status derives from frequency and is not importance or a separate score signal.",
+      "same_source_fact_group": "SSF-SOURCE-IDENTITY",
+      "scoring_allowed": false,
+      "scoring_disposition": "DIAGNOSTIC_ONLY",
+      "signal_id": "SIG-SOURCE-RARE",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/08_ONE_DIMENSION_FREQUENCIES.tsv",
+      "source_row_family": "dimension=source rarity_band"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-SOURCE-NAME"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-SOURCE-NAME"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "DETERMINISTIC_DERIVATION",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Same-source equality repeats the source fact and is not automatically positive affinity.",
+      "same_source_fact_group": "SSF-SOURCE-IDENTITY",
+      "scoring_allowed": false,
+      "scoring_disposition": "EXPLANATION_ONLY",
+      "signal_id": "SIG-SOURCE-SAME",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/13_EXPLORATION_SIGNAL_REGISTRY.tsv",
+      "source_row_family": "pairwise comparison derived from sourceName"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-SOURCE-FREQUENCY"
+      ],
+      "diagnostic_only": true,
+      "direct_parent_signals": [
+        "SIG-SOURCE-FREQUENCY"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "ANALYSIS_DIAGNOSTIC",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Source share is frequency divided by the public denominator and supplies bias diagnostics only.",
+      "same_source_fact_group": "SSF-SOURCE-IDENTITY",
+      "scoring_allowed": false,
+      "scoring_disposition": "DIAGNOSTIC_ONLY",
+      "signal_id": "SIG-SOURCE-SHARE",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/08_ONE_DIMENSION_FREQUENCIES.tsv",
+      "source_row_family": "dimension=source assignment_share"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-TEMPORAL-DECADE"
+      ],
+      "diagnostic_only": true,
+      "direct_parent_signals": [
+        "SIG-TEMPORAL-DECADE"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "ANALYSIS_DIAGNOSTIC",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Decade concentration derives from governed temporal observations and diagnoses corpus composition.",
+      "same_source_fact_group": "SSF-TEMPORAL-OBSERVATION",
+      "scoring_allowed": false,
+      "scoring_disposition": "DIAGNOSTIC_ONLY",
+      "signal_id": "SIG-TEMPORAL-CONCENTRATION",
+      "source_artifact": "docs/audits/v49-spacetime-closure-exploration-discovery/raw/exploration-cross-dimensional-summary.json",
+      "source_row_family": "dimensionConcentrationRows[dimension=decade]"
+    },
+    {
+      "candidate_generation_allowed": true,
+      "derived_from_signals": [
+        "SIG-TEMPORAL-EXTENT"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-TEMPORAL-EXTENT"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "GOVERNED_PROJECTION_DERIVATION",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Decade postings are deterministically projected from temporal extent and cannot add a second temporal score.",
+      "same_source_fact_group": "SSF-TEMPORAL-OBSERVATION",
+      "scoring_allowed": false,
+      "scoring_disposition": "CANDIDATE_GENERATION_ONLY",
+      "signal_id": "SIG-TEMPORAL-DECADE",
+      "source_artifact": "frontend/generated/trace-spacetime-v1/record-index.json",
+      "source_row_family": "records[].periodIds"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-TEMPORAL-EXTENT",
+        "SIG-TEMPORAL-PRECISION"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-TEMPORAL-EXTENT",
+        "SIG-TEMPORAL-PRECISION"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "UNSELECTED_COMPOUND",
+      "explanation_allowed": false,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "A Round 5 unselected distance signal cannot be scored; Round 6 methods must derive transparent bounded variants from extent.",
+      "same_source_fact_group": "SSF-UNSELECTED-TEMPORAL-DISTANCE",
+      "scoring_allowed": false,
+      "scoring_disposition": "REJECT",
+      "signal_id": "SIG-TEMPORAL-DISTANCE",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/13_EXPLORATION_SIGNAL_REGISTRY.tsv",
+      "source_row_family": "unselected temporal-distance candidate"
+    },
+    {
+      "candidate_generation_allowed": true,
+      "derived_from_signals": [],
+      "diagnostic_only": false,
+      "direct_parent_signals": [],
+      "duplicate_for_scoring": false,
+      "epistemic_level": "DIRECT_GOVERNED_FACT",
+      "explanation_allowed": true,
+      "independent_information_candidate": true,
+      "interaction_only": false,
+      "reason": "Inclusive governed temporal extent is the canonical temporal source fact.",
+      "same_source_fact_group": "SSF-TEMPORAL-OBSERVATION",
+      "scoring_allowed": true,
+      "scoring_disposition": "INDEPENDENT_BASE_SIGNAL",
+      "signal_id": "SIG-TEMPORAL-EXTENT",
+      "source_artifact": "frontend/generated/trace-spacetime-v1/record-index.json",
+      "source_row_family": "records[].time.startYearInclusive/endYearInclusive"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-TEMPORAL-EXTENT",
+        "SIG-TEMPORAL-RANGE-SPAN"
+      ],
+      "diagnostic_only": true,
+      "direct_parent_signals": [
+        "SIG-TEMPORAL-RANGE-SPAN"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "ANALYSIS_DIAGNOSTIC",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Long-range status derives from extent and diagnoses uncertainty rather than affinity.",
+      "same_source_fact_group": "SSF-TEMPORAL-OBSERVATION",
+      "scoring_allowed": false,
+      "scoring_disposition": "DIAGNOSTIC_ONLY",
+      "signal_id": "SIG-TEMPORAL-LONG-RANGE",
+      "source_artifact": "docs/audits/v49-spacetime-closure-exploration-discovery/raw/exploration-missingness-summary.json",
+      "source_row_family": "longRangeTemporalDiagnostic"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [],
+      "diagnostic_only": false,
+      "direct_parent_signals": [],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "COMPARABILITY_STATE",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Temporal precision qualifies interval comparability; matching precision is not positive affinity.",
+      "same_source_fact_group": "SSF-TEMPORAL-PRECISION",
+      "scoring_allowed": false,
+      "scoring_disposition": "COMPARABILITY_ONLY",
+      "signal_id": "SIG-TEMPORAL-PRECISION",
+      "source_artifact": "frontend/generated/trace-spacetime-v1/record-index.json",
+      "source_row_family": "records[].time.precision"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-TEMPORAL-EXTENT"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-TEMPORAL-EXTENT"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "DETERMINISTIC_DERIVATION",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Range span is computed from the same inclusive extent and may explain a temporal contribution only.",
+      "same_source_fact_group": "SSF-TEMPORAL-OBSERVATION",
+      "scoring_allowed": false,
+      "scoring_disposition": "EXPLANATION_ONLY",
+      "signal_id": "SIG-TEMPORAL-RANGE-SPAN",
+      "source_artifact": "docs/audits/v49-spacetime-closure-exploration-discovery/raw/exploration-missingness-summary.json",
+      "source_row_family": "rangeSpanDistribution"
+    },
+    {
+      "candidate_generation_allowed": false,
+      "derived_from_signals": [
+        "SIG-TEMPORAL-DECADE",
+        "SIG-TEMPORAL-EXTENT"
+      ],
+      "diagnostic_only": false,
+      "direct_parent_signals": [
+        "SIG-TEMPORAL-DECADE"
+      ],
+      "duplicate_for_scoring": true,
+      "epistemic_level": "DETERMINISTIC_DERIVATION",
+      "explanation_allowed": true,
+      "independent_information_candidate": false,
+      "interaction_only": false,
+      "reason": "Same-decade equality repeats the temporal extent projection and cannot add a second temporal score.",
+      "same_source_fact_group": "SSF-TEMPORAL-OBSERVATION",
+      "scoring_allowed": false,
+      "scoring_disposition": "EXPLANATION_ONLY",
+      "signal_id": "SIG-TEMPORAL-SAME-DECADE",
+      "source_artifact": "docs/research/trace-v49-exploration-discovery-round1/13_EXPLORATION_SIGNAL_REGISTRY.tsv",
+      "source_row_family": "pairwise comparison derived from periodIds"
+    }
+  ],
+  "signalsSha256": "a476dd4a613ad08b394e00d3dc191423a80b20858c8340a5cf1a253ef3db4709"
+}
