@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://graphic-design-archive.local/schemas/trace/exploration/inquiry-seed-v1.schema.json",
+  "title": "TRACE Exploration Inquiry Seed v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["seedId", "seedKind", "candidateSenseIds", "researchStatus", "pairDecision", "evidenceRefs", "grammarAttestationRefs", "unresolvedGapRefs", "allowedTreeStrategies", "canonicalTreeStrategy", "plainLanguageResearchQuestion", "historicalClaim", "publicExportable", "allowedOrigins"],
+  "properties": {
+    "seedId": {"type": "string", "pattern": "^INQUIRY-SEED-[0-9]{3}$"},
+    "seedKind": {"enum": ["PAIR_RESEARCH_QUESTION", "SINGLE_NODE_INQUIRY"]},
+    "candidateSenseIds": {"type": "array", "minItems": 1, "maxItems": 2, "items": {"type": "string"}, "uniqueItems": true},
+    "researchStatus": {"enum": ["DEFERRED_PAIR_RESEARCH_QUESTION", "SINGLE_NODE_INQUIRY"]},
+    "pairDecision": {"type": "string", "minLength": 1},
+    "evidenceRefs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "grammarAttestationRefs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "unresolvedGapRefs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "allowedTreeStrategies": {"type": "array", "minItems": 1, "items": {"enum": ["LINEAR_PATH", "BINARY_FORK", "BINARY_CONVERGENCE", "QUALIFIED_PATH", "REFLEXIVE_RETURN", "EVIDENCE_GAP_TREE"]}, "uniqueItems": true},
+    "canonicalTreeStrategy": {"enum": ["LINEAR_PATH", "BINARY_FORK", "BINARY_CONVERGENCE", "QUALIFIED_PATH", "REFLEXIVE_RETURN", "EVIDENCE_GAP_TREE"]},
+    "plainLanguageResearchQuestion": {"type": "string", "pattern": "\\?$"},
+    "historicalClaim": {"const": false},
+    "publicExportable": {"const": false},
+    "allowedOrigins": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"const": "RESEARCH_INQUIRY"}}
+  }
+}

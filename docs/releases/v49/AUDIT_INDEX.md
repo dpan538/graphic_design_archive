@@ -31,3 +31,11 @@ All listed packages are recoverable at `v49-data-api-closure-20260821`. Final au
 The paired release package is `docs/releases/v49/main-integration-20260825/`. It preserves the 72-commit history from old main `592c765d0af5bf15b1666784dce784ac8e22624d` through Round 9 `47978c519c3c7141690e3894315a1ef1b7a403db`; the new main anchor is the integration commit identified by `v49-research-main-integration-20260825`.
 
 Round 6 object similarity and Round 7 object NLP remain superseded despite becoming reachable from main. Round 9 is research input for Round 10 grammar research and is not active product vocabulary. No branch deletion or deployment is part of this audit.
+
+## Round 11–12 history-coordination audit — 2026-08-25
+
+| Package | Classification | Scope |
+|---|---|---|
+| `docs/audits/v49-round11-round12-main-integration` | FINAL_AUTHORITATIVE_HISTORY_COORDINATION | 1/2 graph divergence, three preserved commit identities, remote/tag/bundle backups, restore drill, sealed Round 11/12 preservation, allowlist rebuild, protected systems, and full validation. |
+
+The paired release package is `docs/releases/v49/round11-round12-main-integration-20260825/`. The post-integration main identity is established by `v49-round12-main-integration-20260825` and the remote final receipt because a commit cannot contain its own SHA.

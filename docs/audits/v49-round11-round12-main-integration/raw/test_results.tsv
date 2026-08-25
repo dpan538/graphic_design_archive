@@ -1,0 +1,21 @@
+gate	status	evidence
+DEPENDENCY_INSTALL	PASS	frontend npm ci; 145 packages installed
+GIT_FSCK	PASS	git fsck --full exit 0; dangling objects informational
+LFS_FSCK	PASS	git lfs fsck: Git LFS fsck OK
+ROUND8_REGRESSION	PASS	reset guard; 6 structural checks; 12/12 red-team rejects
+ROUND9_REGRESSION	PASS	sealed source/attestation/full-candidate/noun/explainability/polysemy/breadth/saturation gates
+ROUND10_REGRESSION	PASS	sealed validator; 256 ordered pairs; zero universal passes; 1,904 review rows
+ROUND11_REGRESSION	PASS	sealed validator plus final-tree kernel: 20/20 adversarial, 10 mutations, real build rejected
+ROUND12_REGRESSION	PASS	9 Python tests; 14 TypeScript fixtures; strict schema/flow/tree/five Instance gates
+TYPECHECK	PASS	npx tsc --noEmit --pretty false
+SEARCH_REGRESSION	PASS	index check; 14 checks; 7,995 public documents
+CONTEXT_REGRESSION	PASS	projection, governance, runtime and API
+SPACETIME_REGRESSION	PASS	projection, governance, runtime, API and GIS
+API_TESTS	PASS	read-platform, page module, Context and Spacetime APIs
+DATABASE_FREEZE	PASS	126 frozen files; drift 0; unmanifested v49 count 0
+REPOSITORY_HYGIENE	PASS	enhanced audit; preliminary and final staged-tree passes; violations 0
+AUDIT_SELF_CONTAINED	PASS	232 manifest files; 233 checksums; ignored evidence rejected
+PRODUCTION_BUILD	PASS	Next.js compile/type validity; 46/46 static pages
+BUNDLE_VERIFY	PASS	dbd5c6160ad0305eb7bfaa7932e53c8637fa7eeec9bc7484d5043e84e943695c
+RESTORE_DRILL	PASS	4/4 commits and trees; parents; restored fsck
+ALLOWLIST_RECONCILIATION	PASS	230 declared/rows/tracked; missing/extra/duplicate/unknown all 0

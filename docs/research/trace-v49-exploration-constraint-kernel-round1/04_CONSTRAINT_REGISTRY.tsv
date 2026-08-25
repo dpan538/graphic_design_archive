@@ -1,0 +1,38 @@
+constraint_id	requirement	status	evidence
+PRE-IMG-INV-001	Round 10 is fast-forward integrated before Round 11.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-002	No research candidate becomes active vocabulary.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-003	No research candidate becomes active grammar.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-004	Current real semantic compilation is rejected.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-005	No empty or partial real Image is emitted.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-006	Only governed-active inputs are potentially eligible.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-007	Research-only Nodes cannot enter a real Image.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-008	Unknown pairs default deny.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-009	Deferred pairs are denied.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-010	No bridge or connectedness objective exists.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-011	Universal Nodes cannot compile.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-012	ANY roles cannot compile.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-013	Directionality must be authorized.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-014	Structural conditions are not binary Flows.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-015	Required qualification cannot be dropped.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-016	Cluster membership requires active policy.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-017	Transitivity requires active chain policy.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-018	Seed cannot change authorization.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-019	Synthetic grammar is test-only.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-020	Synthetic fixtures cannot reach production runtime.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-021	Compiled Image is immutable.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-022	Container mutation leaves Image hash unchanged.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-023	No real semantic Instance is created.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-024	No real semantic Container is created.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-025	No renderer is implemented.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-026	No PNG export is implemented.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-027	No active visual template exists.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-028	No project record enters the compiler.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-029	No Context or Spacetime input enters.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-030	No external model or vector store enters.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-031	Round 8 guards remain passing.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-032	Round 9 evidence remains immutable.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-033	Round 10 evidence remains immutable.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-034	Search remains unchanged.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-035	Context remains frozen.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-036	Spacetime remains frozen.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation
+PRE-IMG-INV-037	The v49 database remains frozen.	PASS	kernel tests; Round 10 reconciliation; protected-boundary validation

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://graphic-design-archive.local/schemas/trace/exploration/research-inquiry-instance-v1.schema.json",
+  "title": "TRACE Exploration Research Inquiry Instance v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["instanceId", "instanceVersion", "freezePackageHash", "seedId", "seedHash", "treeStrategy", "treeStrategyVersion", "rootInquiry", "semanticNodeRefs", "primaryInquiryFlow", "treeItems", "evidenceCoverage", "sourceCoverage", "qualificationRefs", "contestationRefs", "gapRefs", "inclusionExplanation", "nonClaimExplanation", "evidenceSummary", "limitationStatement", "historicalClaim", "semanticRelation", "publicExportable", "activationState", "researchPreviewOnly", "canonicalHash"],
+  "properties": {
+    "instanceId": {"type": "string", "pattern": "^INQUIRY-INSTANCE-[0-9]{3}$"}, "instanceVersion": {"const": "1"},
+    "freezePackageHash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "seedId": {"type": "string"}, "seedHash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "treeStrategy": {"enum": ["LINEAR_PATH", "BINARY_FORK", "BINARY_CONVERGENCE", "QUALIFIED_PATH", "REFLEXIVE_RETURN", "EVIDENCE_GAP_TREE"]}, "treeStrategyVersion": {"const": "1"},
+    "rootInquiry": {"type": "string", "pattern": "\\?$"},
+    "semanticNodeRefs": {"type": "array", "minItems": 1, "maxItems": 2, "uniqueItems": true, "items": {"$ref": "#/$defs/semanticNodeRef"}},
+    "primaryInquiryFlow": {"$ref": "#/$defs/primaryInquiryFlow"}, "treeItems": {"type": "array", "minItems": 1, "maxItems": 7, "items": {"$ref": "#/$defs/treeItem"}},
+    "evidenceCoverage": {"$ref": "#/$defs/evidenceCoverage"}, "sourceCoverage": {"$ref": "#/$defs/sourceCoverage"},
+    "qualificationRefs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}, "contestationRefs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}, "gapRefs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "inclusionExplanation": {"type": "string", "minLength": 1}, "nonClaimExplanation": {"type": "string", "minLength": 1}, "evidenceSummary": {"type": "string", "minLength": 1}, "limitationStatement": {"type": "string", "minLength": 1},
+    "historicalClaim": {"const": false}, "semanticRelation": {"const": false}, "publicExportable": {"const": false},
+    "activationState": {"const": "RESEARCH_CANDIDATE_ONLY"}, "researchPreviewOnly": {"const": true},
+    "canonicalHash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "$defs": {
+    "semanticNodeRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidateId", "senseId", "label", "researchStatus", "round9Decision", "round10NodeRoleDecision", "technicalRole", "plainLanguageGlossRef", "argumentRoleRef", "directionalityStatus", "qualificationStatus", "contestationStatus", "lexicalAttestationIds", "grammarAttestationIds", "sourceIds"],
+      "properties": {
+        "candidateId": {"type": "string", "minLength": 1}, "senseId": {"type": "string", "minLength": 1}, "label": {"type": "string", "minLength": 1},
+        "researchStatus": {"const": "BOUNDED_NODE_ROLE_CANDIDATE"}, "round9Decision": {"const": "PASS_TO_GRAMMAR_RESEARCH"},
+        "round10NodeRoleDecision": {"type": "string", "pattern": "^PASS_"}, "technicalRole": {"type": "string", "minLength": 1},
+        "plainLanguageGlossRef": {"type": "string", "minLength": 1}, "argumentRoleRef": {"type": "string", "minLength": 1},
+        "directionalityStatus": {"type": "string", "minLength": 1}, "qualificationStatus": {"type": "string", "minLength": 1}, "contestationStatus": {"type": "string", "minLength": 1},
+        "lexicalAttestationIds": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "grammarAttestationIds": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "sourceIds": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "primaryInquiryFlow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["flowId", "origin", "carrierKind", "linkKind", "candidateSenseIds", "navigationDirection", "historicalDirectionStatus", "historicalClaim", "semanticRelation", "evidenceBackedHistoricalFlow"],
+      "properties": {
+        "flowId": {"type": "string", "minLength": 1}, "origin": {"const": "RESEARCH_INQUIRY"}, "carrierKind": {"const": "INQUIRY_LINK"},
+        "linkKind": {"enum": ["OPEN_QUESTION", "CONTRAST_QUESTION", "CONDITION_QUESTION", "QUALIFICATION_QUESTION", "REFLEXIVE_QUESTION", "EVIDENCE_GAP_QUESTION"]},
+        "candidateSenseIds": {"type": "array", "minItems": 1, "maxItems": 2, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "navigationDirection": {"enum": ["ROOT_TO_CHILDREN", "RETURN_TO_ROOT", "CONVERGE_ON_ROOT"]}, "historicalDirectionStatus": {"const": "UNRESOLVED_OR_NOT_APPLICABLE"},
+        "historicalClaim": {"const": false}, "semanticRelation": {"const": false}, "evidenceBackedHistoricalFlow": {"const": false}
+      }
+    },
+    "treeItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["itemId", "itemKind", "parentItemId", "depth", "order", "label", "evidenceRefs", "gapRefs"],
+      "properties": {
+        "itemId": {"type": "string", "minLength": 1}, "itemKind": {"enum": ["SEMANTIC_NODE_REFERENCE", "INQUIRY_OPERATION", "EVIDENCE_NOTE", "QUALIFICATION_NOTE", "CONTESTATION_NOTE", "EVIDENCE_GAP_NOTE"]},
+        "parentItemId": {"type": ["string", "null"]}, "depth": {"type": "integer", "minimum": 0, "maximum": 4}, "order": {"type": "integer", "minimum": 0}, "label": {"type": "string", "minLength": 1},
+        "candidateSenseId": {"type": "string", "minLength": 1}, "evidenceRefs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}, "gapRefs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "evidenceCoverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["lexicalAttestationCount", "grammarAttestationCount", "directAttestationCount"],
+      "properties": {"lexicalAttestationCount": {"type": "integer", "minimum": 1}, "grammarAttestationCount": {"type": "integer", "minimum": 1}, "directAttestationCount": {"type": "integer", "minimum": 2}}
+    },
+    "sourceCoverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["distinctSourceCount", "sourceIds"],
+      "properties": {"distinctSourceCount": {"type": "integer", "minimum": 1}, "sourceIds": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}}
+    }
+  }
+}

@@ -23,3 +23,13 @@ The active tip may remove anchored historical captures, prompts, reports, genera
 - Next research gate: Round 10 `DESIGN_HISTORY_RELATION_GRAMMAR_ROUND1`.
 
 The integration is documentation and reachability closure only. It performs no deployment and no branch cleanup.
+
+## Round 11–12 main integration — 2026-08-25
+
+- Main-before anchor: `cc311ab0c9a74731cc1bb0158579708a8a9158fc`.
+- Preserved Round 11/12 anchors: `5ca999b53d9a5d18b47317817402f9e51ad26cec` and `fc11f033d2fcdbb98130879cdbd3e4a52890e5d2`.
+- Common ancestor: `4bd82deba482ec2fbf8c4856080151416fb8ee83`; observed divergence: 1 main-only / 2 Round12-only commits.
+- Release package: `docs/releases/v49/round11-round12-main-integration-20260825/`.
+- Audit package: `docs/audits/v49-round11-round12-main-integration/`.
+- Recovery assets: two remote backup branches, two annotated tags, and retained verified bundle SHA-256 `dbd5c6160ad0305eb7bfaa7932e53c8637fa7eeec9bc7484d5043e84e943695c`.
+- Integration policy: two-parent merge, no history rewrite, no force push, no deletion, no deployment, and no activation of research candidates.

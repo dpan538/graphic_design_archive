@@ -1,0 +1,31 @@
+failure_code	meaning	fail_closed	partial_image_allowed
+NO_ACTIVE_VOCABULARY	No governed-active vocabulary package exists.	true	false
+NO_ACTIVE_GRAMMAR	No governed-active grammar package exists.	true	false
+NO_AUTHORIZED_PAIR_RULES	The active package contains no explicit allowed pair.	true	false
+UNRESOLVED_NODE	A requested Node remains unresolved.	true	false
+RESEARCH_ONLY_NODE	A research-candidate Node cannot enter a real Image.	true	false
+UNKNOWN_NODE	A requested Node has no policy.	true	false
+UNAUTHORIZED_PAIR	An absent/default-denied pair cannot compile.	true	false
+DEFERRED_PAIR	A deferred pair cannot compile.	true	false
+REJECTED_PAIR	A rejected pair cannot compile.	true	false
+DIRECTIONALITY_NOT_AUTHORIZED	Requested directionality differs from policy.	true	false
+SELF_RELATION_NOT_AUTHORIZED	A self relation lacks explicit reflexive authorization.	true	false
+UNBOUNDED_ARGUMENT_ROLE	An argument role is ANY or any-to-any.	true	false
+ROLE_MISMATCH	Requested argument or technical role differs from policy.	true	false
+SENSE_ID_MISMATCH	Requested sense identity differs from policy.	true	false
+SEMANTIC_LABEL_MISMATCH	Requested semantic label differs from policy.	true	false
+UNIVERSAL_NODE_PROHIBITED	Universal or unbounded Node policy is prohibited.	true	false
+REQUIRED_CONTEXT_MISSING	A mandatory bounded context value was dropped.	true	false
+REQUIRED_QUALIFICATION_MISSING	A mandatory qualification was dropped.	true	false
+UNAUTHORIZED_CLUSTER	Cluster membership lacks active policy.	true	false
+UNAUTHORIZED_CHAIN	Chain lacks active policy.	true	false
+TRANSITIVE_INFERENCE_PROHIBITED	A chain was inferred without explicit policy.	true	false
+ARCHIVE_OBJECT_CONTAMINATION	Project-record identity entered the request.	true	false
+CONTEXT_CONTAMINATION	Context input entered the request.	true	false
+SPACETIME_CONTAMINATION	Spacetime input entered the request.	true	false
+EXTERNAL_MODEL_CONTAMINATION	External-model provenance entered the request.	true	false
+PACKAGE_HASH_MISMATCH	Constraint package or request binding is invalid.	true	false
+PROVENANCE_MISSING	Required provenance is absent.	true	false
+NONDETERMINISTIC_BUILD	Replay changed a canonical semantic hash.	true	false
+SYNTHETIC_POLICY_LEAKAGE	A synthetic package reached a real request.	true	false
+SYNTHETIC_FLAG_MISMATCH	Synthetic request/package flags disagree.	true	false

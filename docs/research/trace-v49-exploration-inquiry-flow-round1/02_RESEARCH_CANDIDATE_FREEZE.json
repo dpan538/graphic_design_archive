@@ -1,0 +1,582 @@
+{
+  "packageId": "trace-exploration-research-candidates-v1",
+  "version": "1",
+  "round9CandidateRegistrySha256": "818b306406d6a557a563ec285ae36394106c4c88a3e14cae19e4f1da4e92f4d5",
+  "round10InputTermSha256": "da22e62828b9d6ae2dd1692ec4f23b82a984ce9d53240d198246915668481aec",
+  "round10CommitSha": "4bd82deba482ec2fbf8c4856080151416fb8ee83",
+  "round11CommitSha": "5ca999b53d9a5d18b47317817402f9e51ad26cec",
+  "active": false,
+  "candidates": [
+    {
+      "candidateId": "REL-CAND-0001",
+      "senseId": "REL-CAND-0001#SENSE-A",
+      "label": "mediation",
+      "researchStatus": "DEFERRED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH",
+      "round10NodeRoleDecision": "DEFER_TOO_BROAD",
+      "technicalRole": "UNRESOLVED_MIXED_ROLE",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0001:REL-CAND-0001#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0001",
+      "directionalityStatus": "MIXED_USAGE_DEFER",
+      "qualificationStatus": "which mediation sense and mediating actor are meant",
+      "contestationStatus": "UNCONTESTED_IN_REVIEWED_CORPUS",
+      "lexicalAttestationIds": [
+        "ATT-0001",
+        "ATT-0002"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-001",
+        "GRAM-ATT-002"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-001",
+        "GRAM-SRC-002",
+        "SRC-0001",
+        "SRC-0002"
+      ],
+      "pairQuestionIds": [],
+      "clusterHandoffIds": [],
+      "observedChainIds": [],
+      "vocabularyGapIds": [
+        "VOCAB-GAP-001"
+      ],
+      "active": false
+    },
+    {
+      "candidateId": "REL-CAND-0004",
+      "senseId": "REL-CAND-0004#SENSE-A",
+      "label": "canonization",
+      "researchStatus": "BOUNDED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH",
+      "round10NodeRoleDecision": "PASS_HISTORIOGRAPHIC_POSITION_NODE",
+      "technicalRole": "HISTORIOGRAPHIC_POSITIONING",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0004:REL-CAND-0004#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0004",
+      "directionalityStatus": "DIRECTED",
+      "qualificationStatus": "selection mechanisms and exclusions must be stated",
+      "contestationStatus": "CONTESTED",
+      "lexicalAttestationIds": [
+        "ATT-0007",
+        "ATT-0008"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-003"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-003",
+        "SRC-0007",
+        "SRC-0008"
+      ],
+      "pairQuestionIds": [],
+      "clusterHandoffIds": [
+        "CLUSTER-HANDOFF-001"
+      ],
+      "observedChainIds": [],
+      "vocabularyGapIds": [],
+      "active": false
+    },
+    {
+      "candidateId": "REL-CAND-0005",
+      "senseId": "REL-CAND-0005#SENSE-A",
+      "label": "professionalization",
+      "researchStatus": "BOUNDED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH",
+      "round10NodeRoleDecision": "PASS_FLOW_ELIGIBLE_NODE",
+      "technicalRole": "DIRECTED_PROCESS",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0005:REL-CAND-0005#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0005",
+      "directionalityStatus": "DIRECTED",
+      "qualificationStatus": "professional standing is historically contested and may exclude",
+      "contestationStatus": "HISTORICALLY_SHIFTING",
+      "lexicalAttestationIds": [
+        "ATT-0009",
+        "ATT-0010"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-004",
+        "GRAM-ATT-005",
+        "GRAM-ATT-008",
+        "GRAM-ATT-026"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-004",
+        "GRAM-SRC-005",
+        "GRAM-SRC-007",
+        "GRAM-SRC-025",
+        "SRC-0009",
+        "SRC-0010"
+      ],
+      "pairQuestionIds": [
+        "GRAM-RULE-001"
+      ],
+      "clusterHandoffIds": [
+        "CLUSTER-HANDOFF-001"
+      ],
+      "observedChainIds": [
+        "OBS-CHAIN-001"
+      ],
+      "vocabularyGapIds": [],
+      "active": false
+    },
+    {
+      "candidateId": "REL-CAND-0006",
+      "senseId": "REL-CAND-0006#SENSE-A",
+      "label": "institutionalization",
+      "researchStatus": "BOUNDED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH",
+      "round10NodeRoleDecision": "PASS_FLOW_ELIGIBLE_NODE",
+      "technicalRole": "DIRECTED_PROCESS",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0006:REL-CAND-0006#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0006",
+      "directionalityStatus": "DIRECTED",
+      "qualificationStatus": "institutionalization is degree- and mechanism-specific",
+      "contestationStatus": "HISTORICALLY_SHIFTING",
+      "lexicalAttestationIds": [
+        "ATT-0011",
+        "ATT-0012"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-006",
+        "GRAM-ATT-007"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-005",
+        "GRAM-SRC-006",
+        "SRC-0011",
+        "SRC-0012"
+      ],
+      "pairQuestionIds": [
+        "GRAM-RULE-001"
+      ],
+      "clusterHandoffIds": [
+        "CLUSTER-HANDOFF-001"
+      ],
+      "observedChainIds": [
+        "OBS-CHAIN-001"
+      ],
+      "vocabularyGapIds": [],
+      "active": false
+    },
+    {
+      "candidateId": "REL-CAND-0007",
+      "senseId": "REL-CAND-0007#SENSE-A",
+      "label": "transnational interactions",
+      "researchStatus": "DEFERRED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH",
+      "round10NodeRoleDecision": "DEFER_HIGH_CONNECTIVITY",
+      "technicalRole": "UNRESOLVED_MIXED_ROLE",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0007:REL-CAND-0007#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0007",
+      "directionalityStatus": "MULTIPARTY",
+      "qualificationStatus": "interaction mechanism and power relation must be explicit",
+      "contestationStatus": "CONTESTED",
+      "lexicalAttestationIds": [
+        "ATT-0013",
+        "ATT-0014"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-009"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-008",
+        "SRC-0011",
+        "SRC-0013"
+      ],
+      "pairQuestionIds": [],
+      "clusterHandoffIds": [],
+      "observedChainIds": [],
+      "vocabularyGapIds": [
+        "VOCAB-GAP-005"
+      ],
+      "active": false
+    },
+    {
+      "candidateId": "REL-CAND-0008",
+      "senseId": "REL-CAND-0008#SENSE-A",
+      "label": "cultural translation",
+      "researchStatus": "DEFERRED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH",
+      "round10NodeRoleDecision": "DEFER_SPLIT_REQUIRED",
+      "technicalRole": "UNRESOLVED_MIXED_ROLE",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0008:REL-CAND-0008#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0008",
+      "directionalityStatus": "MIXED_USAGE_DEFER",
+      "qualificationStatus": "transfer, adaptation, negotiation, and transformation senses must not be collapsed",
+      "contestationStatus": "CONTESTED",
+      "lexicalAttestationIds": [
+        "ATT-0015",
+        "ATT-0016"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-011",
+        "GRAM-ATT-012",
+        "GRAM-ATT-013"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-010",
+        "GRAM-SRC-011",
+        "GRAM-SRC-012",
+        "SRC-0014",
+        "SRC-0015"
+      ],
+      "pairQuestionIds": [],
+      "clusterHandoffIds": [],
+      "observedChainIds": [],
+      "vocabularyGapIds": [
+        "VOCAB-GAP-002"
+      ],
+      "active": false
+    },
+    {
+      "candidateId": "REL-CAND-0009",
+      "senseId": "REL-CAND-0009#SENSE-A",
+      "label": "design exchanges",
+      "researchStatus": "DEFERRED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH",
+      "round10NodeRoleDecision": "DEFER_HIGH_CONNECTIVITY",
+      "technicalRole": "MULTIPARTY_ENCOUNTER",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0009:REL-CAND-0009#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0009",
+      "directionalityStatus": "MULTIPARTY",
+      "qualificationStatus": "agency, reciprocity, and power asymmetry must be recorded",
+      "contestationStatus": "CONTESTED",
+      "lexicalAttestationIds": [
+        "ATT-0017",
+        "ATT-0018"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-010"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-009",
+        "SRC-0005",
+        "SRC-0016"
+      ],
+      "pairQuestionIds": [],
+      "clusterHandoffIds": [],
+      "observedChainIds": [],
+      "vocabularyGapIds": [
+        "VOCAB-GAP-005"
+      ],
+      "active": false
+    },
+    {
+      "candidateId": "REL-CAND-0010",
+      "senseId": "REL-CAND-0010#SENSE-A",
+      "label": "commodification",
+      "researchStatus": "BOUNDED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH",
+      "round10NodeRoleDecision": "PASS_FLOW_ELIGIBLE_NODE",
+      "technicalRole": "DIRECTED_STATE_TRANSITION",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0010:REL-CAND-0010#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0010",
+      "directionalityStatus": "DIRECTED",
+      "qualificationStatus": "what becomes exchangeable and by whose action must be named",
+      "contestationStatus": "CONTESTED",
+      "lexicalAttestationIds": [
+        "ATT-0019",
+        "ATT-0020"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-014",
+        "GRAM-ATT-015"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-013",
+        "GRAM-SRC-014",
+        "SRC-0006",
+        "SRC-0017"
+      ],
+      "pairQuestionIds": [
+        "GRAM-RULE-002"
+      ],
+      "clusterHandoffIds": [
+        "CLUSTER-HANDOFF-002"
+      ],
+      "observedChainIds": [],
+      "vocabularyGapIds": [],
+      "active": false
+    },
+    {
+      "candidateId": "REL-CAND-0011",
+      "senseId": "REL-CAND-0011#SENSE-A",
+      "label": "gendering",
+      "researchStatus": "BOUNDED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH",
+      "round10NodeRoleDecision": "PASS_FLOW_ELIGIBLE_NODE",
+      "technicalRole": "DIRECTED_PROCESS",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0011:REL-CAND-0011#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0011",
+      "directionalityStatus": "DIRECTED",
+      "qualificationStatus": "gender is performed and historically situated, not inherent in form",
+      "contestationStatus": "CONTESTED",
+      "lexicalAttestationIds": [
+        "ATT-0021",
+        "ATT-0022"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-016",
+        "GRAM-ATT-027"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-015",
+        "GRAM-SRC-026",
+        "SRC-0017",
+        "SRC-0018"
+      ],
+      "pairQuestionIds": [
+        "GRAM-RULE-002"
+      ],
+      "clusterHandoffIds": [],
+      "observedChainIds": [],
+      "vocabularyGapIds": [],
+      "active": false
+    },
+    {
+      "candidateId": "REL-CAND-0012",
+      "senseId": "REL-CAND-0012#SENSE-A",
+      "label": "displacement",
+      "researchStatus": "DEFERRED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH",
+      "round10NodeRoleDecision": "DEFER_SPLIT_REQUIRED",
+      "technicalRole": "UNRESOLVED_MIXED_ROLE",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0012:REL-CAND-0012#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0012",
+      "directionalityStatus": "MIXED_USAGE_DEFER",
+      "qualificationStatus": "forced, material, spatial, semantic, and strategic senses must be separated",
+      "contestationStatus": "POLYSEMOUS",
+      "lexicalAttestationIds": [
+        "ATT-0023",
+        "ATT-0024"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-017"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-016",
+        "SRC-0020",
+        "SRC-0021"
+      ],
+      "pairQuestionIds": [],
+      "clusterHandoffIds": [],
+      "observedChainIds": [],
+      "vocabularyGapIds": [
+        "VOCAB-GAP-003"
+      ],
+      "active": false
+    },
+    {
+      "candidateId": "REL-CAND-0023",
+      "senseId": "REL-CAND-0023#SENSE-A",
+      "label": "transculturation",
+      "researchStatus": "DEFERRED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH",
+      "round10NodeRoleDecision": "DEFER_TOO_BROAD",
+      "technicalRole": "MULTIPARTY_ENCOUNTER",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0023:REL-CAND-0023#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0023",
+      "directionalityStatus": "MULTIPARTY",
+      "qualificationStatus": "not a static import-export model",
+      "contestationStatus": "CONTESTED",
+      "lexicalAttestationIds": [
+        "ATT-0036",
+        "ATT-0037"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-018"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-017",
+        "SRC-0031",
+        "SRC-0032"
+      ],
+      "pairQuestionIds": [],
+      "clusterHandoffIds": [],
+      "observedChainIds": [],
+      "vocabularyGapIds": [],
+      "active": false
+    },
+    {
+      "candidateId": "REL-CAND-0024",
+      "senseId": "REL-CAND-0024#SENSE-A",
+      "label": "cultural mobility",
+      "researchStatus": "DEFERRED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH",
+      "round10NodeRoleDecision": "DEFER_SPLIT_REQUIRED",
+      "technicalRole": "UNRESOLVED_MIXED_ROLE",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0024:REL-CAND-0024#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0024",
+      "directionalityStatus": "MIXED_USAGE_DEFER",
+      "qualificationStatus": "material, human, semantic, and institutional mobility must be distinguished",
+      "contestationStatus": "POLYSEMOUS",
+      "lexicalAttestationIds": [
+        "ATT-0038",
+        "ATT-0039"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-019"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-018",
+        "SRC-0035",
+        "SRC-0036"
+      ],
+      "pairQuestionIds": [],
+      "clusterHandoffIds": [],
+      "observedChainIds": [],
+      "vocabularyGapIds": [
+        "VOCAB-GAP-004"
+      ],
+      "active": false
+    },
+    {
+      "candidateId": "REL-CAND-0025",
+      "senseId": "REL-CAND-0025#SENSE-A",
+      "label": "self-exoticization",
+      "researchStatus": "BOUNDED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH_FOUNDATIONAL_TERM",
+      "round10NodeRoleDecision": "PASS_REFLEXIVE_NODE",
+      "technicalRole": "REFLEXIVE_PROCESS",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0025:REL-CAND-0025#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0025",
+      "directionalityStatus": "REFLEXIVE",
+      "qualificationStatus": "agency, external gaze, and power asymmetry must remain explicit",
+      "contestationStatus": "CONTESTED",
+      "lexicalAttestationIds": [
+        "ATT-0040",
+        "ATT-0041"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-020"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-019",
+        "SRC-0033",
+        "SRC-0037"
+      ],
+      "pairQuestionIds": [],
+      "clusterHandoffIds": [],
+      "observedChainIds": [],
+      "vocabularyGapIds": [],
+      "active": false
+    },
+    {
+      "candidateId": "REL-CAND-0026",
+      "senseId": "REL-CAND-0026#SENSE-A",
+      "label": "coloniality",
+      "researchStatus": "DEFERRED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH",
+      "round10NodeRoleDecision": "DEFER_HIGH_CONNECTIVITY",
+      "technicalRole": "STRUCTURAL_CONDITION",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0026:REL-CAND-0026#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0026",
+      "directionalityStatus": "STRUCTURAL_NON_EDGE",
+      "qualificationStatus": "coloniality is not interchangeable with colonialism or any inequality",
+      "contestationStatus": "CONTESTED",
+      "lexicalAttestationIds": [
+        "ATT-0042",
+        "ATT-0043"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-021"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-020",
+        "SRC-0038",
+        "SRC-0039"
+      ],
+      "pairQuestionIds": [],
+      "clusterHandoffIds": [],
+      "observedChainIds": [],
+      "vocabularyGapIds": [
+        "VOCAB-GAP-006"
+      ],
+      "active": false
+    },
+    {
+      "candidateId": "REL-CAND-0032",
+      "senseId": "REL-CAND-0032#SENSE-A",
+      "label": "imitation",
+      "researchStatus": "BOUNDED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH",
+      "round10NodeRoleDecision": "PASS_FLOW_ELIGIBLE_NODE",
+      "technicalRole": "DIRECTED_PROCESS",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0032:REL-CAND-0032#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0032",
+      "directionalityStatus": "DIRECTED",
+      "qualificationStatus": "imitation must not be equated automatically with infringement or piracy",
+      "contestationStatus": "HISTORICALLY_SHIFTING",
+      "lexicalAttestationIds": [
+        "ATT-0052",
+        "ATT-0053"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-022",
+        "GRAM-ATT-023",
+        "GRAM-ATT-029"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-021",
+        "GRAM-SRC-022",
+        "GRAM-SRC-028",
+        "SRC-0048",
+        "SRC-0049"
+      ],
+      "pairQuestionIds": [
+        "GRAM-RULE-003"
+      ],
+      "clusterHandoffIds": [
+        "CLUSTER-HANDOFF-002"
+      ],
+      "observedChainIds": [
+        "OBS-CHAIN-002"
+      ],
+      "vocabularyGapIds": [],
+      "active": false
+    },
+    {
+      "candidateId": "REL-CAND-0033",
+      "senseId": "REL-CAND-0033#SENSE-A",
+      "label": "piracy",
+      "researchStatus": "BOUNDED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH",
+      "round10NodeRoleDecision": "PASS_NORMATIVE_RELATION_NODE",
+      "technicalRole": "NORMATIVELY_QUALIFIED_RELATION",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0033:REL-CAND-0033#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0033",
+      "directionalityStatus": "DIRECTED",
+      "qualificationStatus": "authorization, ownership claim, jurisdiction, legal or market status, ethical framework, and historical standard are mandatory",
+      "contestationStatus": "CONTESTED",
+      "lexicalAttestationIds": [
+        "ATT-0054",
+        "ATT-0055"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-024",
+        "GRAM-ATT-025",
+        "GRAM-ATT-028",
+        "GRAM-ATT-030"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-023",
+        "GRAM-SRC-024",
+        "GRAM-SRC-027",
+        "GRAM-SRC-028",
+        "SRC-0048",
+        "SRC-0050"
+      ],
+      "pairQuestionIds": [
+        "GRAM-RULE-003"
+      ],
+      "clusterHandoffIds": [
+        "CLUSTER-HANDOFF-002"
+      ],
+      "observedChainIds": [
+        "OBS-CHAIN-002"
+      ],
+      "vocabularyGapIds": [],
+      "active": false
+    }
+  ],
+  "canonicalHash": "b7d42015862e12fd54bc05a9ed0a53223771fc03954c112e72652c0349fb6f90"
+}

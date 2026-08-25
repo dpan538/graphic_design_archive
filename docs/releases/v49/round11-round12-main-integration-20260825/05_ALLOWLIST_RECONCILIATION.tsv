@@ -1,0 +1,8 @@
+metric	value	status	evidence
+tracked_script_count	230	PASS	git ls-files scripts
+allowlist_row_count	230	PASS	docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json
+declared_script_count	230	PASS	docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json
+missing_path_count	0	PASS	tracked minus allowlisted
+extra_path_count	0	PASS	allowlisted minus tracked
+duplicate_path_count	0	PASS	tracked and source path uniqueness
+unknown_classification_count	0	PASS	category and decision fields

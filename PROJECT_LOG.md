@@ -269,3 +269,95 @@ SPACETIME_STATUS=FROZEN
 `RELATION_GRAMMAR_CANDIDATE_READY_FOR_IMAGE_BUILD=false`
 
 `NEXT_RESEARCH_ROUND=EXPLORATION_IMAGE_BUILD_AND_GENERATIVE_CONSTRAINTS_ROUND1`
+
+## TRACE v49 Round 11 — Exploration constraint-kernel preprogramming Round 1
+
+- Fast-forward synchronized `main` from `0241b0f51e2523901b0858d54ffb7f5d2a9aa13c` to the authoritative Round 10 commit `4bd82deba482ec2fbf8c4856080151416fb8ee83` after independently rerunning the current Round 8–10, Search, Context, Spacetime, API, database-freeze, typecheck, and production-build gates. No force push, merge commit, history rewrite, or deployment occurred.
+- Added a generic, renderer-neutral constraint kernel, build contract, and Image compiler with explicit `UNRESOLVED`, `RESEARCH_CANDIDATE_ONLY`, and `GOVERNED_ACTIVE` activation states. The kernel is default deny and does not read Round 9/10 TSVs or embed their real candidate labels.
+- Attempted one current-state real compilation and rejected it atomically: real build attempts/successes/rejections are 1/0/1, with no partial Image. Active vocabulary, grammar, Flow-pair, Cluster, and chain rule counts all remain zero.
+- Passed all 20 required adversarial cases plus ten fail-open mutation cases. Three deterministic, test-only synthetic Image builds proved compilation, replay hashing, immutable Image, Instance creation, and mutable Container behavior without authorizing any production semantic relation.
+- Reconciled the sealed Round 10 package exactly: 16 input senses, 8 bounded Node candidates, 8 deferred Nodes, 256 ordered pairs, 0 pass pairs, 3 deferred pairs, 16 rejected self-relations, 237 default-denied pairs, 0 universal passes, 2 inactive Cluster handoffs, 2 inactive chains, and 6 open vocabulary gaps.
+- Kept all synthetic fixtures outside production imports and preserved zero archive-object, Search, Context, Spacetime, external-model, renderer, route, API, database, and deployment changes. Nine real-Image blockers remain open.
+- The next research gate is independent composition evidence and external design-history domain review; Round 11 does not activate Round 9 terms, a Round 10 grammar, or a real semantic Image.
+
+`ROUND11_CONSTRAINT_KERNEL_PREPROGRAMMING=COMPLETE_WITH_LIMITATIONS`
+
+`ROUND11_DECISION=PREPROGRAMMING_READY_WITH_LIMITATIONS`
+
+`CONSTRAINT_KERNEL_READY=true`
+
+`IMAGE_COMPILER_INFRASTRUCTURE_READY=true`
+
+`REAL_SEMANTIC_IMAGE_READY=false`
+
+`CURRENT_REAL_BUILD_ATTEMPT_COUNT=1`
+
+`CURRENT_REAL_BUILD_SUCCESS_COUNT=0`
+
+`CURRENT_REAL_BUILD_REJECTION_COUNT=1`
+
+`SYNTHETIC_TEST_IMAGE_BUILD_COUNT=3`
+
+`ACTIVE_RELATION_VOCABULARY_COUNT=0`
+
+`ACTIVE_RELATION_GRAMMAR_COUNT=0`
+
+`ACTIVE_PAIR_RULE_COUNT=0`
+
+`ACTIVE_CLUSTER_RULE_COUNT=0`
+
+`ACTIVE_CHAIN_RULE_COUNT=0`
+
+`REAL_IMAGE_BLOCKER_COUNT=9`
+
+`NEXT_RESEARCH_ROUND=DESIGN_HISTORY_COMPOSITION_EVIDENCE_AND_DOMAIN_REVIEW_ROUND1`
+
+## TRACE v49 Round 12 — research candidate freeze and inquiry flow engine Round 1
+
+- Froze the exact 16 Round 9 passing senses as immutable package `trace-exploration-research-candidates-v1` with canonical SHA-256 `b7d42015862e12fd54bc05a9ed0a53223771fc03954c112e72652c0349fb6f90`; eight retain bounded research-preview Node roles and eight remain deferred.
+- Recomputed the evidence census from sealed Round 9–11 artifacts: the total corpus is 78 sources/85 attestations, while direct frozen-candidate evidence is 57 distinct sources/62 attestations, bounded-candidate evidence is 31/35, and deferred-candidate evidence is 27/27.
+- Added four normative language-neutral JSON Schemas and a Python standard-library reference engine for the complete freeze → seed → primary inquiry flow → bounded tree → Research Inquiry Instance pipeline. TypeScript remains a strict loader/hash/conformance adapter, not the normative semantic engine.
+- Hardened Round 11 untrusted inputs with exact-field parsing, duplicate and dangling-reference rejection, arity/role consistency, explicit origin policies, semantic-carrier separation, schema-aware canonicalization, and undeclared recursive archive-object, Context, Spacetime, model, and vector contamination detection.
+- Compiled exactly five deterministic, non-public Research Inquiry Instances: three pair questions and two single-node questions covering all eight bounded candidates. Maximum observed structure is two semantic Nodes, two siblings, depth three, and six total tree items.
+- Preserved zero active vocabulary, grammar, pair, Cluster, and chain rules; zero real Exploration Images, public Instances, Containers, routes, APIs, renderers, PNGs, objects, Context/Spacetime inputs, external models, or deployments. External human design-history review remains incomplete.
+
+`ROUND12_RESEARCH_CANDIDATE_FREEZE=READY`
+
+`ROUND12_FREEZE_SHA256=b7d42015862e12fd54bc05a9ed0a53223771fc03954c112e72652c0349fb6f90`
+
+`ROUND12_FROZEN_CANDIDATE_COUNT=16`
+
+`ROUND12_BOUNDED_CANDIDATE_COUNT=8`
+
+`ROUND12_DEFERRED_CANDIDATE_COUNT=8`
+
+`ROUND12_RESEARCH_INQUIRY_INSTANCE_COUNT=5`
+
+`ROUND12_BOUNDED_NODE_COVERAGE=8/8`
+
+`ACTIVE_RELATION_VOCABULARY_COUNT=0`
+
+`ACTIVE_RELATION_GRAMMAR_COUNT=0`
+
+`REAL_SEMANTIC_IMAGE_READY=false`
+
+`NEXT_RESEARCH_GATE=EXTERNAL_DOMAIN_REVIEW_AND_INQUIRY_GRAMMAR_ACTIVATION_RESEARCH`
+
+## v49 Round 11–12 history coordination — 2026-08-25
+
+- Reconciled main maintenance `cc311ab0c9a74731cc1bb0158579708a8a9158fc` with sealed Round 11 `5ca999b53d9a5d18b47317817402f9e51ad26cec` and Round 12 `fc11f033d2fcdbb98130879cdbd3e4a52890e5d2` through an authorized two-parent merge from common ancestor `4bd82deba482ec2fbf8c4856080151416fb8ee83`.
+- Preserved all three existing commit identities and sealed research/audit subtrees. Rebuilt the final active-script ledgers at 230/230/230 with zero missing, extra, duplicate, or unknown entries while retaining main's enhanced hygiene diagnostics.
+- Established two remote backup branches, two annotated tags, and a verified 91,051,946-byte bundle with a successful four-commit restore drill before updating main.
+- All Round 8–12, Search, Context, Spacetime, API, typecheck, database-freeze, repository-hygiene, audit, LFS, Git integrity, and production-build gates pass. No research activation, history rewrite, force push, branch/tag cleanup, bundle cleanup, or deployment is authorized.
+
+`ROUND11_ROUND12_HISTORY_COORDINATION=AUTHORITATIVE`
+
+`EXISTING_COMMIT_SHA_PRESERVATION=3/3`
+
+`ACTIVE_RELATION_VOCABULARY_COUNT=0`
+
+`ACTIVE_RELATION_GRAMMAR_COUNT=0`
+
+`REAL_SEMANTIC_IMAGE_READY=false`
+
+`NEXT_RESEARCH_GATE=EXTERNAL_DOMAIN_REVIEW_AND_INQUIRY_GRAMMAR_ACTIVATION_RESEARCH`
