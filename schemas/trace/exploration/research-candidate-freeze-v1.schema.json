@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://graphic-design-archive.local/schemas/trace/exploration/research-candidate-freeze-v1.schema.json",
+  "title": "TRACE Exploration Research Candidate Freeze v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["packageId", "version", "round9CandidateRegistrySha256", "round10InputTermSha256", "round10CommitSha", "round11CommitSha", "active", "candidates", "canonicalHash"],
+  "properties": {
+    "packageId": {"const": "trace-exploration-research-candidates-v1"},
+    "version": {"const": "1"},
+    "round9CandidateRegistrySha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "round10InputTermSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "round10CommitSha": {"const": "4bd82deba482ec2fbf8c4856080151416fb8ee83"},
+    "round11CommitSha": {"const": "5ca999b53d9a5d18b47317817402f9e51ad26cec"},
+    "active": {"const": false},
+    "candidates": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["candidateId", "senseId", "label", "researchStatus", "round9Decision", "round10NodeRoleDecision", "technicalRole", "plainLanguageGlossRef", "argumentRoleRef", "directionalityStatus", "qualificationStatus", "contestationStatus", "lexicalAttestationIds", "grammarAttestationIds", "sourceIds", "pairQuestionIds", "clusterHandoffIds", "observedChainIds", "vocabularyGapIds", "active"],
+        "properties": {
+          "candidateId": {"type": "string", "pattern": "^REL-CAND-[0-9]{4}$"},
+          "senseId": {"type": "string", "minLength": 1},
+          "label": {"type": "string", "minLength": 1},
+          "researchStatus": {"enum": ["BOUNDED_NODE_ROLE_CANDIDATE", "DEFERRED_NODE_ROLE_CANDIDATE"]},
+          "round9Decision": {"type": "string", "minLength": 1},
+          "round10NodeRoleDecision": {"type": "string", "minLength": 1},
+          "technicalRole": {"type": "string", "minLength": 1},
+          "plainLanguageGlossRef": {"type": "string", "minLength": 1},
+          "argumentRoleRef": {"type": "string", "minLength": 1},
+          "directionalityStatus": {"type": "string", "minLength": 1},
+          "qualificationStatus": {"type": "string", "minLength": 1},
+          "contestationStatus": {"type": "string", "minLength": 1},
+          "lexicalAttestationIds": {"type": "array", "minItems": 1, "items": {"type": "string"}, "uniqueItems": true},
+          "grammarAttestationIds": {"type": "array", "minItems": 1, "items": {"type": "string"}, "uniqueItems": true},
+          "sourceIds": {"type": "array", "minItems": 1, "items": {"type": "string"}, "uniqueItems": true},
+          "pairQuestionIds": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "clusterHandoffIds": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "observedChainIds": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "vocabularyGapIds": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "active": {"const": false}
+        }
+      }
+    },
+    "canonicalHash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

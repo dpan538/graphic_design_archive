@@ -1,0 +1,145 @@
+{
+  "instanceId": "INQUIRY-INSTANCE-005",
+  "instanceVersion": "1",
+  "freezePackageHash": "b7d42015862e12fd54bc05a9ed0a53223771fc03954c112e72652c0349fb6f90",
+  "seedId": "INQUIRY-SEED-005",
+  "seedHash": "46ffb5f6187bb14136ea7411c13e7857753a0c7305b186608a3141be4c846040",
+  "treeStrategy": "REFLEXIVE_RETURN",
+  "treeStrategyVersion": "1",
+  "rootInquiry": "How might self-exoticization be investigated as a bounded reflexive research question while keeping agency, audience, external gaze, and power asymmetry explicit?",
+  "semanticNodeRefs": [
+    {
+      "candidateId": "REL-CAND-0025",
+      "senseId": "REL-CAND-0025#SENSE-A",
+      "label": "self-exoticization",
+      "researchStatus": "BOUNDED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH_FOUNDATIONAL_TERM",
+      "round10NodeRoleDecision": "PASS_REFLEXIVE_NODE",
+      "technicalRole": "REFLEXIVE_PROCESS",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0025:REL-CAND-0025#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0025",
+      "directionalityStatus": "REFLEXIVE",
+      "qualificationStatus": "agency, external gaze, and power asymmetry must remain explicit",
+      "contestationStatus": "CONTESTED",
+      "lexicalAttestationIds": [
+        "ATT-0040",
+        "ATT-0041"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-020"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-019",
+        "SRC-0033",
+        "SRC-0037"
+      ]
+    }
+  ],
+  "primaryInquiryFlow": {
+    "flowId": "PRIMARY-FLOW-005",
+    "origin": "RESEARCH_INQUIRY",
+    "carrierKind": "INQUIRY_LINK",
+    "linkKind": "REFLEXIVE_QUESTION",
+    "candidateSenseIds": [
+      "REL-CAND-0025#SENSE-A"
+    ],
+    "navigationDirection": "RETURN_TO_ROOT",
+    "historicalDirectionStatus": "UNRESOLVED_OR_NOT_APPLICABLE",
+    "historicalClaim": false,
+    "semanticRelation": false,
+    "evidenceBackedHistoricalFlow": false
+  },
+  "treeItems": [
+    {
+      "itemId": "TREE-ROOT-005",
+      "itemKind": "INQUIRY_OPERATION",
+      "parentItemId": null,
+      "depth": 0,
+      "order": 0,
+      "label": "How might self-exoticization be investigated as a bounded reflexive research question while keeping agency, audience, external gaze, and power asymmetry explicit?",
+      "evidenceRefs": [],
+      "gapRefs": []
+    },
+    {
+      "itemId": "TREE-NODE-005-1",
+      "itemKind": "SEMANTIC_NODE_REFERENCE",
+      "parentItemId": "TREE-ROOT-005",
+      "depth": 1,
+      "order": 0,
+      "label": "self-exoticization",
+      "candidateSenseId": "REL-CAND-0025#SENSE-A",
+      "evidenceRefs": [
+        "ATT-0040",
+        "ATT-0041",
+        "GRAM-ATT-020"
+      ],
+      "gapRefs": []
+    },
+    {
+      "itemId": "TREE-EVIDENCE-005",
+      "itemKind": "EVIDENCE_NOTE",
+      "parentItemId": "TREE-NODE-005-1",
+      "depth": 2,
+      "order": 0,
+      "label": "Direct lexical and grammar evidence bound to this inquiry",
+      "evidenceRefs": [
+        "GRAM-ATT-020"
+      ],
+      "gapRefs": []
+    },
+    {
+      "itemId": "TREE-BOUNDARY-005",
+      "itemKind": "CONTESTATION_NOTE",
+      "parentItemId": "TREE-NODE-005-1",
+      "depth": 2,
+      "order": 0,
+      "label": "Qualification and contestation remain attached to the source-bounded meanings",
+      "evidenceRefs": [],
+      "gapRefs": []
+    },
+    {
+      "itemId": "TREE-GAP-005",
+      "itemKind": "EVIDENCE_GAP_NOTE",
+      "parentItemId": "TREE-BOUNDARY-005",
+      "depth": 3,
+      "order": 0,
+      "label": "Unresolved evidence and external domain-review gate",
+      "evidenceRefs": [],
+      "gapRefs": [
+        "REVIEW-GAP:EXTERNAL-DOMAIN-REVIEW"
+      ]
+    }
+  ],
+  "evidenceCoverage": {
+    "lexicalAttestationCount": 2,
+    "grammarAttestationCount": 1,
+    "directAttestationCount": 3
+  },
+  "sourceCoverage": {
+    "distinctSourceCount": 3,
+    "sourceIds": [
+      "GRAM-SRC-019",
+      "SRC-0033",
+      "SRC-0037"
+    ]
+  },
+  "qualificationRefs": [
+    "agency, external gaze, and power asymmetry must remain explicit"
+  ],
+  "contestationRefs": [
+    "CONTESTED"
+  ],
+  "gapRefs": [
+    "REVIEW-GAP:EXTERNAL-DOMAIN-REVIEW"
+  ],
+  "inclusionExplanation": "This research preview includes self-exoticization because each is a frozen bounded Node-role candidate and the seed is one of the five governed inquiry questions.",
+  "nonClaimExplanation": "The primary carrier is an inquiry link with unresolved historical direction; it asks how to investigate the concepts and does not assert a semantic relation or historical claim.",
+  "evidenceSummary": "Direct binding includes 2 lexical attestations, 1 grammar attestations, and 3 distinct source IDs for this Instance.",
+  "limitationStatement": "The available evidence does not authorize a historical pair rule, public export, active grammar, or semantic Image; external design-history review remains required.",
+  "historicalClaim": false,
+  "semanticRelation": false,
+  "publicExportable": false,
+  "activationState": "RESEARCH_CANDIDATE_ONLY",
+  "researchPreviewOnly": true,
+  "canonicalHash": "f7227ca98203ea254c57db50cb323fd05df20f8ea57dd8831d9d0705fac0c802"
+}

@@ -9,6 +9,7 @@ import {
   type PairPolicy,
   verifyExplorationConstraintPackageHash,
 } from "./exploration-build-contract.ts";
+import { validateExplorationRuntimeInputs } from "./exploration-runtime-guard.ts";
 
 export interface AuthorizedBuildPlan {
   nodePolicies: readonly NodePolicy[];
@@ -73,7 +74,10 @@ export async function evaluateExplorationConstraints(
   constraintPackage: ExplorationConstraintPackage,
   request: ExplorationBuildRequest,
 ): Promise<ConstraintEvaluation> {
-  const failures: BuildFailureCode[] = contaminationFailures(request);
+  const failures: BuildFailureCode[] = [
+    ...contaminationFailures(request),
+    ...validateExplorationRuntimeInputs(constraintPackage, request),
+  ];
 
   if (!(await verifyExplorationConstraintPackageHash(constraintPackage))) {
     failures.push("PACKAGE_HASH_MISMATCH");

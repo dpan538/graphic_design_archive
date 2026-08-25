@@ -1,0 +1,7 @@
+operation_id	link_kind	semantic_carrier_kind	historical_claim	semantic_relation	explanation
+INQUIRY-OP-001	OPEN_QUESTION	EVIDENCE_FLOW	false	false	Open inquiry; distinct from evidence-backed historical Flow.
+INQUIRY-OP-002	CONTRAST_QUESTION	CONTRAST_LINK	false	false	Keeps concepts comparable without transition semantics.
+INQUIRY-OP-003	CONDITION_QUESTION	STRUCTURAL_CONDITION	false	false	Records a question about conditions, not an arrow.
+INQUIRY-OP-004	QUALIFICATION_QUESTION	QUALIFICATION_LINK	false	false	Makes required qualifications visible and non-optional.
+INQUIRY-OP-005	REFLEXIVE_QUESTION	INQUIRY_LINK	false	false	Returns navigation to the root without asserting self-causation.
+INQUIRY-OP-006	EVIDENCE_GAP_QUESTION	GAP_LINK	false	false	Makes an evidence absence navigable without inventing a Node.

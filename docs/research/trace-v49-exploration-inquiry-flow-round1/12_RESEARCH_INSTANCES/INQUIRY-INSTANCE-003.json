@@ -1,0 +1,218 @@
+{
+  "instanceId": "INQUIRY-INSTANCE-003",
+  "instanceVersion": "1",
+  "freezePackageHash": "b7d42015862e12fd54bc05a9ed0a53223771fc03954c112e72652c0349fb6f90",
+  "seedId": "INQUIRY-SEED-003",
+  "seedHash": "8670370aa29dc57ff401bee111a18eea26e5e4e7455a2a341565831c336a51c4",
+  "treeStrategy": "BINARY_FORK",
+  "treeStrategyVersion": "1",
+  "rootInquiry": "How might imitation be examined alongside piracy when legal, market, normative, and historical regimes determine whether the concepts remain distinct?",
+  "semanticNodeRefs": [
+    {
+      "candidateId": "REL-CAND-0032",
+      "senseId": "REL-CAND-0032#SENSE-A",
+      "label": "imitation",
+      "researchStatus": "BOUNDED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH",
+      "round10NodeRoleDecision": "PASS_FLOW_ELIGIBLE_NODE",
+      "technicalRole": "DIRECTED_PROCESS",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0032:REL-CAND-0032#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0032",
+      "directionalityStatus": "DIRECTED",
+      "qualificationStatus": "imitation must not be equated automatically with infringement or piracy",
+      "contestationStatus": "HISTORICALLY_SHIFTING",
+      "lexicalAttestationIds": [
+        "ATT-0052",
+        "ATT-0053"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-022",
+        "GRAM-ATT-023",
+        "GRAM-ATT-029"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-021",
+        "GRAM-SRC-022",
+        "GRAM-SRC-028",
+        "SRC-0048",
+        "SRC-0049"
+      ]
+    },
+    {
+      "candidateId": "REL-CAND-0033",
+      "senseId": "REL-CAND-0033#SENSE-A",
+      "label": "piracy",
+      "researchStatus": "BOUNDED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH",
+      "round10NodeRoleDecision": "PASS_NORMATIVE_RELATION_NODE",
+      "technicalRole": "NORMATIVELY_QUALIFIED_RELATION",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0033:REL-CAND-0033#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0033",
+      "directionalityStatus": "DIRECTED",
+      "qualificationStatus": "authorization, ownership claim, jurisdiction, legal or market status, ethical framework, and historical standard are mandatory",
+      "contestationStatus": "CONTESTED",
+      "lexicalAttestationIds": [
+        "ATT-0054",
+        "ATT-0055"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-024",
+        "GRAM-ATT-025",
+        "GRAM-ATT-028",
+        "GRAM-ATT-030"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-023",
+        "GRAM-SRC-024",
+        "GRAM-SRC-027",
+        "GRAM-SRC-028",
+        "SRC-0048",
+        "SRC-0050"
+      ]
+    }
+  ],
+  "primaryInquiryFlow": {
+    "flowId": "PRIMARY-FLOW-003",
+    "origin": "RESEARCH_INQUIRY",
+    "carrierKind": "INQUIRY_LINK",
+    "linkKind": "CONTRAST_QUESTION",
+    "candidateSenseIds": [
+      "REL-CAND-0032#SENSE-A",
+      "REL-CAND-0033#SENSE-A"
+    ],
+    "navigationDirection": "ROOT_TO_CHILDREN",
+    "historicalDirectionStatus": "UNRESOLVED_OR_NOT_APPLICABLE",
+    "historicalClaim": false,
+    "semanticRelation": false,
+    "evidenceBackedHistoricalFlow": false
+  },
+  "treeItems": [
+    {
+      "itemId": "TREE-ROOT-003",
+      "itemKind": "INQUIRY_OPERATION",
+      "parentItemId": null,
+      "depth": 0,
+      "order": 0,
+      "label": "How might imitation be examined alongside piracy when legal, market, normative, and historical regimes determine whether the concepts remain distinct?",
+      "evidenceRefs": [],
+      "gapRefs": []
+    },
+    {
+      "itemId": "TREE-NODE-003-1",
+      "itemKind": "SEMANTIC_NODE_REFERENCE",
+      "parentItemId": "TREE-ROOT-003",
+      "depth": 1,
+      "order": 0,
+      "label": "imitation",
+      "candidateSenseId": "REL-CAND-0032#SENSE-A",
+      "evidenceRefs": [
+        "ATT-0052",
+        "ATT-0053",
+        "GRAM-ATT-022",
+        "GRAM-ATT-023",
+        "GRAM-ATT-029"
+      ],
+      "gapRefs": []
+    },
+    {
+      "itemId": "TREE-NODE-003-2",
+      "itemKind": "SEMANTIC_NODE_REFERENCE",
+      "parentItemId": "TREE-ROOT-003",
+      "depth": 1,
+      "order": 1,
+      "label": "piracy",
+      "candidateSenseId": "REL-CAND-0033#SENSE-A",
+      "evidenceRefs": [
+        "ATT-0054",
+        "ATT-0055",
+        "GRAM-ATT-024",
+        "GRAM-ATT-025",
+        "GRAM-ATT-028",
+        "GRAM-ATT-030"
+      ],
+      "gapRefs": []
+    },
+    {
+      "itemId": "TREE-EVIDENCE-003",
+      "itemKind": "EVIDENCE_NOTE",
+      "parentItemId": "TREE-NODE-003-1",
+      "depth": 2,
+      "order": 0,
+      "label": "Direct lexical and grammar evidence bound to this inquiry",
+      "evidenceRefs": [
+        "GRAM-ATT-022",
+        "GRAM-ATT-023",
+        "GRAM-ATT-024",
+        "GRAM-ATT-025",
+        "GRAM-ATT-028",
+        "GRAM-ATT-029",
+        "GRAM-ATT-030"
+      ],
+      "gapRefs": []
+    },
+    {
+      "itemId": "TREE-BOUNDARY-003",
+      "itemKind": "CONTESTATION_NOTE",
+      "parentItemId": "TREE-NODE-003-2",
+      "depth": 2,
+      "order": 0,
+      "label": "Qualification and contestation remain attached to the source-bounded meanings",
+      "evidenceRefs": [],
+      "gapRefs": []
+    },
+    {
+      "itemId": "TREE-GAP-003",
+      "itemKind": "EVIDENCE_GAP_NOTE",
+      "parentItemId": "TREE-BOUNDARY-003",
+      "depth": 3,
+      "order": 0,
+      "label": "Unresolved evidence and external domain-review gate",
+      "evidenceRefs": [],
+      "gapRefs": [
+        "PAIR-EVIDENCE-GAP:GRAM-RULE-003",
+        "REVIEW-GAP:EXTERNAL-DOMAIN-REVIEW"
+      ]
+    }
+  ],
+  "evidenceCoverage": {
+    "lexicalAttestationCount": 4,
+    "grammarAttestationCount": 7,
+    "directAttestationCount": 11
+  },
+  "sourceCoverage": {
+    "distinctSourceCount": 9,
+    "sourceIds": [
+      "GRAM-SRC-021",
+      "GRAM-SRC-022",
+      "GRAM-SRC-023",
+      "GRAM-SRC-024",
+      "GRAM-SRC-027",
+      "GRAM-SRC-028",
+      "SRC-0048",
+      "SRC-0049",
+      "SRC-0050"
+    ]
+  },
+  "qualificationRefs": [
+    "authorization, ownership claim, jurisdiction, legal or market status, ethical framework, and historical standard are mandatory",
+    "imitation must not be equated automatically with infringement or piracy"
+  ],
+  "contestationRefs": [
+    "CONTESTED",
+    "HISTORICALLY_SHIFTING"
+  ],
+  "gapRefs": [
+    "PAIR-EVIDENCE-GAP:GRAM-RULE-003",
+    "REVIEW-GAP:EXTERNAL-DOMAIN-REVIEW"
+  ],
+  "inclusionExplanation": "This research preview includes imitation, piracy because each is a frozen bounded Node-role candidate and the seed is one of the five governed inquiry questions.",
+  "nonClaimExplanation": "The primary carrier is an inquiry link with unresolved historical direction; it asks how to investigate the concepts and does not assert a semantic relation or historical claim.",
+  "evidenceSummary": "Direct binding includes 4 lexical attestations, 7 grammar attestations, and 9 distinct source IDs for this Instance.",
+  "limitationStatement": "The available evidence does not authorize a historical pair rule, public export, active grammar, or semantic Image; external design-history review remains required.",
+  "historicalClaim": false,
+  "semanticRelation": false,
+  "publicExportable": false,
+  "activationState": "RESEARCH_CANDIDATE_ONLY",
+  "researchPreviewOnly": true,
+  "canonicalHash": "653ab5af7187dac5cc59f4f0ce0a5156457edbc49b2a8a5df305fa2a05844a41"
+}

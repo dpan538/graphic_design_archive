@@ -1,0 +1,22 @@
+gate_id	gate	status	command	evidence
+GATE-001	dependency_install	PASS	cd frontend && npm ci	145 packages installed
+GATE-002	candidate_freeze_and_coverage	PASS	python3 scripts/trace-v49-exploration-inquiry-engine/validate.py	16 candidates; 57 sources; 62 attestations; 8/8 split
+GATE-003	python_reference_engine	PASS	python3 scripts/trace-v49-exploration-inquiry-engine/test_reference_engine.py	9 suites; mutation, parser, determinism, tree and claim gates pass
+GATE-004	typescript_adapter	PASS	cd frontend && npm run test:exploration-inquiry-adapter	14 fixtures; zero decision/hash mismatches
+GATE-005	round8_reset_guard	PASS	cd frontend && npm run verify:exploration-reset	30 policy rules; zero active implementation violations
+GATE-006	exploration_domain	PASS	cd frontend && npm run test:exploration-domain	6 structural checks and 12 red-team rejections
+GATE-007	round9_research	PASS	python3 scripts/validate_trace_v49_relation_vocabulary_round1.py at preserved Round 9 worktree	all source, attestation, noun, explainability, contestation, breadth and saturation gates pass
+GATE-008	round10_grammar	PASS	python3 scripts/trace-v49-relation-grammar/validate_round1.py at preserved Round 10 worktree	16 Nodes; 256 cells; 1904 verification rows; seal pass
+GATE-009	round10_reconciliation	PASS	python3 scripts/trace-v49-exploration-constraint-kernel/reconcile_round10.py	16/8/8 Nodes and 256/0/3/16/237 pair decisions
+GATE-010	round11_kernel	PASS	cd frontend && npm run test:exploration-constraint-kernel	21 checks; ten mutations; real build 0 success
+GATE-011	typecheck	PASS	cd frontend && npx tsc --noEmit --pretty false	exit 0
+GATE-012	search	PASS	cd frontend && npm run verify:search-v49-index && npm run test:search-v49	7995 documents; 14 checks
+GATE-013	context	PASS	cd frontend && Context projection/governance/runtime/API gates	7995 public and 7928 held; zero failures/exposures
+GATE-014	spacetime	PASS	cd frontend && Spacetime projection/governance/runtime/API/GIS gates	23 periods; 93 geographies; zero governance failures
+GATE-015	read_platform_api	PASS	cd frontend && npm run test:read-platform	zero direct data coupling
+GATE-016	page_module_api	PASS	cd frontend && node scripts/verify-page-by-key-module-contract.mjs	known and unknown key behavior pass
+GATE-017	database_freeze	PASS	python3 scripts/repository/verify_v49_database_freeze.py --repo .	126 frozen files; zero drift
+GATE-018	repository_hygiene	PASS	python3 scripts/repository/audit_repository_hygiene.py --repo .	3237 indexed files; zero violations
+GATE-019	production_build	PASS	cd frontend && npm run build	Next.js 15.5.18 compiled; 46 pages
+GATE-020	protected_test_side_effect_cleanup	PASS	git restore docs/audits/v49-context-governance-closure/raw	fresh timing/evidence rewrites removed
+GATE-021	audit_seal	PASS	python3 scripts/trace-v49-exploration-inquiry-engine/validate.py	manifest and SHA256SUMS independently recomputed

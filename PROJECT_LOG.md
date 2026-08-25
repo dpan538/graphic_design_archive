@@ -311,3 +311,34 @@ SPACETIME_STATUS=FROZEN
 `REAL_IMAGE_BLOCKER_COUNT=9`
 
 `NEXT_RESEARCH_ROUND=DESIGN_HISTORY_COMPOSITION_EVIDENCE_AND_DOMAIN_REVIEW_ROUND1`
+
+## TRACE v49 Round 12 — research candidate freeze and inquiry flow engine Round 1
+
+- Froze the exact 16 Round 9 passing senses as immutable package `trace-exploration-research-candidates-v1` with canonical SHA-256 `b7d42015862e12fd54bc05a9ed0a53223771fc03954c112e72652c0349fb6f90`; eight retain bounded research-preview Node roles and eight remain deferred.
+- Recomputed the evidence census from sealed Round 9–11 artifacts: the total corpus is 78 sources/85 attestations, while direct frozen-candidate evidence is 57 distinct sources/62 attestations, bounded-candidate evidence is 31/35, and deferred-candidate evidence is 27/27.
+- Added four normative language-neutral JSON Schemas and a Python standard-library reference engine for the complete freeze → seed → primary inquiry flow → bounded tree → Research Inquiry Instance pipeline. TypeScript remains a strict loader/hash/conformance adapter, not the normative semantic engine.
+- Hardened Round 11 untrusted inputs with exact-field parsing, duplicate and dangling-reference rejection, arity/role consistency, explicit origin policies, semantic-carrier separation, schema-aware canonicalization, and undeclared recursive archive-object, Context, Spacetime, model, and vector contamination detection.
+- Compiled exactly five deterministic, non-public Research Inquiry Instances: three pair questions and two single-node questions covering all eight bounded candidates. Maximum observed structure is two semantic Nodes, two siblings, depth three, and six total tree items.
+- Preserved zero active vocabulary, grammar, pair, Cluster, and chain rules; zero real Exploration Images, public Instances, Containers, routes, APIs, renderers, PNGs, objects, Context/Spacetime inputs, external models, or deployments. External human design-history review remains incomplete.
+
+`ROUND12_RESEARCH_CANDIDATE_FREEZE=READY`
+
+`ROUND12_FREEZE_SHA256=b7d42015862e12fd54bc05a9ed0a53223771fc03954c112e72652c0349fb6f90`
+
+`ROUND12_FROZEN_CANDIDATE_COUNT=16`
+
+`ROUND12_BOUNDED_CANDIDATE_COUNT=8`
+
+`ROUND12_DEFERRED_CANDIDATE_COUNT=8`
+
+`ROUND12_RESEARCH_INQUIRY_INSTANCE_COUNT=5`
+
+`ROUND12_BOUNDED_NODE_COVERAGE=8/8`
+
+`ACTIVE_RELATION_VOCABULARY_COUNT=0`
+
+`ACTIVE_RELATION_GRAMMAR_COUNT=0`
+
+`REAL_SEMANTIC_IMAGE_READY=false`
+
+`NEXT_RESEARCH_GATE=EXTERNAL_DOMAIN_REVIEW_AND_INQUIRY_GRAMMAR_ACTIVATION_RESEARCH`

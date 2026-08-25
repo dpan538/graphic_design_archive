@@ -1,0 +1,145 @@
+{
+  "instanceId": "INQUIRY-INSTANCE-004",
+  "instanceVersion": "1",
+  "freezePackageHash": "b7d42015862e12fd54bc05a9ed0a53223771fc03954c112e72652c0349fb6f90",
+  "seedId": "INQUIRY-SEED-004",
+  "seedHash": "1e77cdeabe2ee4f7c99f79f8534606a758999babc596b26c43288a2c1a78977f",
+  "treeStrategy": "BINARY_FORK",
+  "treeStrategyVersion": "1",
+  "rootInquiry": "How might canonization be investigated through bounded questions about selection and exclusion without inventing a second semantic concept?",
+  "semanticNodeRefs": [
+    {
+      "candidateId": "REL-CAND-0004",
+      "senseId": "REL-CAND-0004#SENSE-A",
+      "label": "canonization",
+      "researchStatus": "BOUNDED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH",
+      "round10NodeRoleDecision": "PASS_HISTORIOGRAPHIC_POSITION_NODE",
+      "technicalRole": "HISTORIOGRAPHIC_POSITIONING",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0004:REL-CAND-0004#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0004",
+      "directionalityStatus": "DIRECTED",
+      "qualificationStatus": "selection mechanisms and exclusions must be stated",
+      "contestationStatus": "CONTESTED",
+      "lexicalAttestationIds": [
+        "ATT-0007",
+        "ATT-0008"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-003"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-003",
+        "SRC-0007",
+        "SRC-0008"
+      ]
+    }
+  ],
+  "primaryInquiryFlow": {
+    "flowId": "PRIMARY-FLOW-004",
+    "origin": "RESEARCH_INQUIRY",
+    "carrierKind": "INQUIRY_LINK",
+    "linkKind": "CONTRAST_QUESTION",
+    "candidateSenseIds": [
+      "REL-CAND-0004#SENSE-A"
+    ],
+    "navigationDirection": "ROOT_TO_CHILDREN",
+    "historicalDirectionStatus": "UNRESOLVED_OR_NOT_APPLICABLE",
+    "historicalClaim": false,
+    "semanticRelation": false,
+    "evidenceBackedHistoricalFlow": false
+  },
+  "treeItems": [
+    {
+      "itemId": "TREE-ROOT-004",
+      "itemKind": "INQUIRY_OPERATION",
+      "parentItemId": null,
+      "depth": 0,
+      "order": 0,
+      "label": "How might canonization be investigated through bounded questions about selection and exclusion without inventing a second semantic concept?",
+      "evidenceRefs": [],
+      "gapRefs": []
+    },
+    {
+      "itemId": "TREE-NODE-004-1",
+      "itemKind": "SEMANTIC_NODE_REFERENCE",
+      "parentItemId": "TREE-ROOT-004",
+      "depth": 1,
+      "order": 0,
+      "label": "canonization",
+      "candidateSenseId": "REL-CAND-0004#SENSE-A",
+      "evidenceRefs": [
+        "ATT-0007",
+        "ATT-0008",
+        "GRAM-ATT-003"
+      ],
+      "gapRefs": []
+    },
+    {
+      "itemId": "TREE-EVIDENCE-004",
+      "itemKind": "EVIDENCE_NOTE",
+      "parentItemId": "TREE-NODE-004-1",
+      "depth": 2,
+      "order": 0,
+      "label": "Direct lexical and grammar evidence bound to this inquiry",
+      "evidenceRefs": [
+        "GRAM-ATT-003"
+      ],
+      "gapRefs": []
+    },
+    {
+      "itemId": "TREE-BOUNDARY-004",
+      "itemKind": "CONTESTATION_NOTE",
+      "parentItemId": "TREE-NODE-004-1",
+      "depth": 2,
+      "order": 0,
+      "label": "Qualification and contestation remain attached to the source-bounded meanings",
+      "evidenceRefs": [],
+      "gapRefs": []
+    },
+    {
+      "itemId": "TREE-GAP-004",
+      "itemKind": "EVIDENCE_GAP_NOTE",
+      "parentItemId": "TREE-BOUNDARY-004",
+      "depth": 3,
+      "order": 0,
+      "label": "Unresolved evidence and external domain-review gate",
+      "evidenceRefs": [],
+      "gapRefs": [
+        "REVIEW-GAP:EXTERNAL-DOMAIN-REVIEW"
+      ]
+    }
+  ],
+  "evidenceCoverage": {
+    "lexicalAttestationCount": 2,
+    "grammarAttestationCount": 1,
+    "directAttestationCount": 3
+  },
+  "sourceCoverage": {
+    "distinctSourceCount": 3,
+    "sourceIds": [
+      "GRAM-SRC-003",
+      "SRC-0007",
+      "SRC-0008"
+    ]
+  },
+  "qualificationRefs": [
+    "selection mechanisms and exclusions must be stated"
+  ],
+  "contestationRefs": [
+    "CONTESTED"
+  ],
+  "gapRefs": [
+    "REVIEW-GAP:EXTERNAL-DOMAIN-REVIEW"
+  ],
+  "inclusionExplanation": "This research preview includes canonization because each is a frozen bounded Node-role candidate and the seed is one of the five governed inquiry questions.",
+  "nonClaimExplanation": "The primary carrier is an inquiry link with unresolved historical direction; it asks how to investigate the concepts and does not assert a semantic relation or historical claim.",
+  "evidenceSummary": "Direct binding includes 2 lexical attestations, 1 grammar attestations, and 3 distinct source IDs for this Instance.",
+  "limitationStatement": "The available evidence does not authorize a historical pair rule, public export, active grammar, or semantic Image; external design-history review remains required.",
+  "historicalClaim": false,
+  "semanticRelation": false,
+  "publicExportable": false,
+  "activationState": "RESEARCH_CANDIDATE_ONLY",
+  "researchPreviewOnly": true,
+  "canonicalHash": "2384345c5a7113f4b062a79c31a80cfb2aee13b9682f4323b50b89bea7a54ba5"
+}

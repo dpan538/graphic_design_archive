@@ -48,8 +48,28 @@ The current real compilation request is deliberately rejected and produces no Im
 
 Next research round after Round 11: **Design-History Composition Evidence and Domain Review Round 1**. It must supply independent pair-composition evidence and external human domain review before any semantic activation can be considered.
 
+TRACE v49 Round 12 freezes the exact sixteen Round 9 passing senses before function execution. Package `trace-exploration-research-candidates-v1` has canonical SHA-256 `b7d42015862e12fd54bc05a9ed0a53223771fc03954c112e72652c0349fb6f90`; eight candidates have bounded research-preview Node roles and eight remain deferred. Direct evidence is explicitly narrower than the 78-source/85-attestation corpus: the sixteen senses bind 57 distinct sources and 62 attestations, with bounded and deferred unions reported separately.
+
+The language-neutral pre-activation pipeline is now executable: frozen package → one of five governed inquiry seeds → one primary inquiry flow → a bounded tree strategy → a Research Inquiry Instance. Exactly five JSON research previews cover all eight bounded candidates through three deferred pair questions and two single-node inquiries. Each has one question-form root, one inquiry carrier, at most two semantic Nodes, and bound evidence, qualification, contestation, and gap references.
+
+These artifacts are `RESEARCH_CANDIDATE_ONLY`, non-public, non-exportable, and not historical claims. They are separate from the active Exploration Image contract and cannot pass through the real Image compiler. The active vocabulary and grammar remain unresolved; active relation, pair, Cluster, and chain counts remain zero. No renderer, route, API, PNG, archive object, Context/Spacetime payload, external model, or vector store has been introduced.
+
+`RESEARCH_CANDIDATE_FREEZE_READY=true`
+
+`RESEARCH_INQUIRY_FLOW_ENGINE_READY=true`
+
+`RESEARCH_INQUIRY_INSTANCE_COUNT=5`
+
+`RESEARCH_INQUIRY_INSTANCE_IS_ACTIVE_IMAGE=false`
+
+`EXTERNAL_HUMAN_DOMAIN_REVIEW_COMPLETED=false`
+
+Next research gate after Round 12: **External Domain Review and Inquiry Grammar Activation Research**. It must not treat the present questions as authorized historical relations.
+
 Authoritative conceptual-field package: `docs/research/trace-v49-exploration-conceptual-reset/`.
 
 Authoritative Round 9 vocabulary-evidence package: `docs/research/trace-v49-design-history-relation-vocabulary-round1/`.
 
 Governed Round 10 grammar-research package: `docs/research/trace-v49-design-history-relation-grammar-round1/`.
+
+Governed Round 12 freeze and inquiry package: `docs/research/trace-v49-exploration-inquiry-flow-round1/`.

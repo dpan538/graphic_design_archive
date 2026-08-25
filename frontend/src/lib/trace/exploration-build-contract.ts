@@ -74,8 +74,15 @@ export interface PairPolicy {
   sourceRole: string;
   targetRole: string;
   requiredQualification: readonly string[];
+  allowedOrigins: readonly FlowOrigin[];
   provenanceRef: string;
 }
+
+export type FlowOrigin =
+  | "EVIDENCE_BACKED"
+  | "GENERATIVE_COMPOSITION"
+  | "USER_COMPOSED"
+  | "RESEARCH_INQUIRY";
 
 export interface ClusterPolicy {
   clusterPolicyId: string;
@@ -159,7 +166,18 @@ export type BuildFailureCode =
   | "PROVENANCE_MISSING"
   | "NONDETERMINISTIC_BUILD"
   | "SYNTHETIC_POLICY_LEAKAGE"
-  | "SYNTHETIC_FLAG_MISMATCH";
+  | "SYNTHETIC_FLAG_MISMATCH"
+  | "UNKNOWN_FIELD"
+  | "DUPLICATE_ID"
+  | "DUPLICATE_SEMANTIC_ID"
+  | "DUPLICATE_QUALIFICATION_KEY"
+  | "DANGLING_REFERENCE"
+  | "INCONSISTENT_ACTIVATION_STATE"
+  | "EMPTY_VALUE"
+  | "INVALID_ARITY"
+  | "PARTY_ROLE_COUNT_MISMATCH"
+  | "ORIGIN_POLICY_VIOLATION"
+  | "VECTOR_REFERENCE_CONTAMINATION";
 /* exploration-guard:allow-denial-end */
 
 export interface RequestedNode {
@@ -179,7 +197,7 @@ export interface RequestedFlow {
   directionality: DirectionalityCapability;
   sourceRole: string;
   targetRole: string;
-  origin: "EVIDENCE_BACKED" | "GENERATIVE_COMPOSITION" | "USER_COMPOSED";
+  origin: FlowOrigin;
   qualifications: Readonly<Record<string, string>>;
   provenanceRef: string;
 }

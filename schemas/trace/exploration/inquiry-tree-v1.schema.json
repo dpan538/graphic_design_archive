@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://graphic-design-archive.local/schemas/trace/exploration/inquiry-tree-v1.schema.json",
+  "title": "TRACE Exploration Inquiry Tree v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["rootInquiryId", "strategy", "primaryInquiryFlow", "treeItems"],
+  "properties": {
+    "rootInquiryId": {"type": "string", "minLength": 1},
+    "strategy": {"enum": ["LINEAR_PATH", "BINARY_FORK", "BINARY_CONVERGENCE", "QUALIFIED_PATH", "REFLEXIVE_RETURN", "EVIDENCE_GAP_TREE"]},
+    "primaryInquiryFlow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["flowId", "origin", "carrierKind", "linkKind", "candidateSenseIds", "navigationDirection", "historicalDirectionStatus", "historicalClaim", "semanticRelation", "evidenceBackedHistoricalFlow"],
+      "properties": {
+        "flowId": {"type": "string"}, "origin": {"const": "RESEARCH_INQUIRY"},
+        "carrierKind": {"const": "INQUIRY_LINK"},
+        "linkKind": {"enum": ["OPEN_QUESTION", "CONTRAST_QUESTION", "CONDITION_QUESTION", "QUALIFICATION_QUESTION", "REFLEXIVE_QUESTION", "EVIDENCE_GAP_QUESTION"]},
+        "candidateSenseIds": {"type": "array", "minItems": 1, "maxItems": 2, "items": {"type": "string"}, "uniqueItems": true},
+        "navigationDirection": {"enum": ["ROOT_TO_CHILDREN", "RETURN_TO_ROOT", "CONVERGE_ON_ROOT"]},
+        "historicalDirectionStatus": {"const": "UNRESOLVED_OR_NOT_APPLICABLE"},
+        "historicalClaim": {"const": false}, "semanticRelation": {"const": false}, "evidenceBackedHistoricalFlow": {"const": false}
+      }
+    },
+    "treeItems": {
+      "type": "array", "minItems": 1, "maxItems": 7,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["itemId", "itemKind", "parentItemId", "depth", "order", "label", "evidenceRefs", "gapRefs"],
+        "properties": {
+          "itemId": {"type": "string"},
+          "itemKind": {"enum": ["SEMANTIC_NODE_REFERENCE", "INQUIRY_OPERATION", "EVIDENCE_NOTE", "QUALIFICATION_NOTE", "CONTESTATION_NOTE", "EVIDENCE_GAP_NOTE"]},
+          "parentItemId": {"type": ["string", "null"]}, "depth": {"type": "integer", "minimum": 0, "maximum": 4},
+          "order": {"type": "integer", "minimum": 0}, "label": {"type": "string", "minLength": 1},
+          "candidateSenseId": {"type": "string"},
+          "evidenceRefs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "gapRefs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+        }
+      }
+    }
+  }
+}

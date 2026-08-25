@@ -83,6 +83,7 @@ export const syntheticConstraintInput: ConstraintPackageInput = {
       sourceRole: "bounded synthetic source role",
       targetRole: "bounded synthetic counterpart role",
       requiredQualification: [],
+      allowedOrigins: ["EVIDENCE_BACKED"],
       provenanceRef: "PROVENANCE-PAIR-TEST-A",
     },
     {
@@ -95,6 +96,7 @@ export const syntheticConstraintInput: ConstraintPackageInput = {
       sourceRole: "bounded synthetic participant role",
       targetRole: "bounded qualified synthetic target role",
       requiredQualification: [],
+      allowedOrigins: ["EVIDENCE_BACKED"],
       provenanceRef: "PROVENANCE-PAIR-TEST-B",
     },
     {
@@ -107,6 +109,7 @@ export const syntheticConstraintInput: ConstraintPackageInput = {
       sourceRole: "bounded synthetic source role",
       targetRole: "bounded qualified synthetic target role",
       requiredQualification: ["jurisdiction"],
+      allowedOrigins: ["EVIDENCE_BACKED"],
       provenanceRef: "PROVENANCE-PAIR-TEST-C",
     },
     {
@@ -119,6 +122,7 @@ export const syntheticConstraintInput: ConstraintPackageInput = {
       sourceRole: "bounded synthetic source role",
       targetRole: "bounded qualified synthetic target role",
       requiredQualification: [],
+      allowedOrigins: ["RESEARCH_INQUIRY"],
       provenanceRef: "PROVENANCE-PAIR-TEST-DEFER",
     },
     {
@@ -131,6 +135,7 @@ export const syntheticConstraintInput: ConstraintPackageInput = {
       sourceRole: "bounded qualified synthetic source role",
       targetRole: "bounded synthetic target role",
       requiredQualification: [],
+      allowedOrigins: ["EVIDENCE_BACKED"],
       provenanceRef: "PROVENANCE-PAIR-TEST-REJECT",
     },
     {
@@ -143,6 +148,7 @@ export const syntheticConstraintInput: ConstraintPackageInput = {
       sourceRole: "bounded synthetic participant role",
       targetRole: "bounded synthetic target role",
       requiredQualification: [],
+      allowedOrigins: ["EVIDENCE_BACKED"],
       provenanceRef: "PROVENANCE-PAIR-TEST-STRUCTURAL",
     },
   ],

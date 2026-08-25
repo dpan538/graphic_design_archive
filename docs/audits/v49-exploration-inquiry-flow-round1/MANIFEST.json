@@ -1,0 +1,100 @@
+{
+  "format": "gda-audit-package/v1",
+  "files": [
+    {
+      "path": "00_EXECUTIVE_RECEIPT.md",
+      "sha256": "6b1a553f220d5ea1546bcdddee808d80c1b2dc4a0fe26325801cc182420881d8",
+      "bytes": 524
+    },
+    {
+      "path": "01_SOURCE_AND_FREEZE_VALIDATION.md",
+      "sha256": "101a4113173d4e8f17db3e32594436a265dda869f527122523a30d302e8cf728",
+      "bytes": 314
+    },
+    {
+      "path": "02_EVIDENCE_COVERAGE_VALIDATION.md",
+      "sha256": "1effbb35e1ab3d45fc72ffc223aebbe7f3fd60fb4b4c17be380642941bae2236",
+      "bytes": 270
+    },
+    {
+      "path": "03_LANGUAGE_NEUTRAL_SCHEMA_VALIDATION.md",
+      "sha256": "9660fa63cdb9156f6ec8e4d7190436a12c74cb335215d5d909008da5f62cb4f3",
+      "bytes": 243
+    },
+    {
+      "path": "04_PYTHON_REFERENCE_ENGINE_VALIDATION.md",
+      "sha256": "a39ae068e06ddca1a3823f6c66167cb56ce1fff02b33f4899744bdafc71deb58",
+      "bytes": 273
+    },
+    {
+      "path": "05_TYPESCRIPT_ADAPTER_CONFORMANCE.md",
+      "sha256": "1ee70602fc91e9adbaacf17e361f98f0f59e0f19932c82640967c9c9857f6fcc",
+      "bytes": 267
+    },
+    {
+      "path": "06_FLOW_AND_TREE_VALIDATION.md",
+      "sha256": "337a678e9feaa18ec33da65aaa2680c510715ad446f24da24a90951db0a48508",
+      "bytes": 237
+    },
+    {
+      "path": "07_INSTANCE_VALIDATION.md",
+      "sha256": "688399f9827cf3720f7513fc865c454e047d7143f200da14cd2e13f7df383184",
+      "bytes": 273
+    },
+    {
+      "path": "08_RUNTIME_SCHEMA_HARDENING.md",
+      "sha256": "3c9a498537353c10eaf706f588487cd35ed0a69c02e8521c5fc22d78a68188b5",
+      "bytes": 297
+    },
+    {
+      "path": "09_ZERO_OBJECT_AND_MODEL_BOUNDARY.md",
+      "sha256": "10b6bf1adf467ba6f0a2f1bb64646afea4f63b08ae4c2561a889e2a9e6fc9065",
+      "bytes": 232
+    },
+    {
+      "path": "10_PROTECTED_SYSTEMS.md",
+      "sha256": "32b3dd73d797270679050af368917654069f12779b9e28c5d0b64686851f8d4a",
+      "bytes": 190
+    },
+    {
+      "path": "11_CHANGED_FILES.md",
+      "sha256": "c5a8482a703eb01ce9a2f0b1090b19f08314c22ca699dbe4684f49f0c9dc8029",
+      "bytes": 1855
+    },
+    {
+      "path": "MANIFEST.tsv",
+      "sha256": "0ccbe1c674bd92ec8ac1f28bed9dbc0ba366ec60db0a365d022a5142c716a770",
+      "bytes": 9894
+    },
+    {
+      "path": "SHA256SUMS.txt",
+      "sha256": "e70429e898f461d852d8c182e64c7df878c0300ccd639193d736ed8dbdf65bc2",
+      "bytes": 9597
+    },
+    {
+      "path": "raw/coverage-reconciliation.json",
+      "sha256": "ae601be36aeab404cfb80003406d2a25102a6e7cadbf4e1577a0383d9ab8688b",
+      "bytes": 832
+    },
+    {
+      "path": "raw/cross-runtime-fixtures.json",
+      "sha256": "e6e811c5f58da7a6f2d3d44a955c581ffccc46f17b4f271e1e4c45d172f7c88c",
+      "bytes": 159
+    },
+    {
+      "path": "raw/freeze-replay.json",
+      "sha256": "9b87d34cd0b5d4caf34f958e69f765f9a4fcf681b379ffab7d9b2967d29a6181",
+      "bytes": 236
+    },
+    {
+      "path": "raw/reference-engine.json",
+      "sha256": "a6a8479d575e4af095380d715534fa05dedd5d40ac74633d89d9c28e3d436261",
+      "bytes": 481
+    },
+    {
+      "path": "raw/test-results.tsv",
+      "sha256": "6f76a0f899369bc49bd489adea598433126d4ead3397d4abaf2bc9fe03b5474e",
+      "bytes": 2902
+    }
+  ]
+}
