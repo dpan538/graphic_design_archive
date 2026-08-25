@@ -1,0 +1,52 @@
+
+> archive-box-frontend@0.1.0 verify:exploration-reset
+> node scripts/exploration-reset-guard.mjs
+
+{
+  "status": "PASS",
+  "sourceSha": "3d7536b4588032d806b6492a1be97b59891ca031",
+  "metrics": {
+    "implementationFileCount": 1,
+    "activeExplorationArchiveObjectFieldCount": 0,
+    "activeExplorationRecordRouteReferenceCount": 0,
+    "activeExplorationObjectCardReferenceCount": 0,
+    "activeExplorationObjectTitleReferenceCount": 0,
+    "activeExplorationObjectThumbnailReferenceCount": 0,
+    "activeExplorationExternalModelReferenceCount": 0,
+    "activeExplorationExternalModelImportCount": 0,
+    "activeExplorationModelDownloadTargetCount": 0,
+    "explorationExternalModelDependencyCount": 0,
+    "explorationVectorDatabaseDependencyCount": 0,
+    "activeImplementationViolationCount": 0,
+    "legacyExecutionDirCount": 0,
+    "legacyPackageScriptCount": 0,
+    "publicExplorationRouteCount": 0,
+    "sealedEvidenceChangedFileCount": 0,
+    "searchFilesChanged": 0,
+    "contextFilesChanged": 0,
+    "spacetimeFilesChanged": 0,
+    "databaseFilesChanged": 0,
+    "policyDocumentFailureCount": 0
+  },
+  "failures": [],
+  "activeRows": [],
+  "dependencyDecisions": {
+    "externalModelDependencies": [],
+    "vectorDatabaseDependencies": [],
+    "decision": "No dependency was removed: no superseded Exploration-only package was present in the manifests."
+  },
+  "policyDocuments": {
+    "badPracticeRuleCount": 30,
+    "failures": []
+  },
+  "protectedChanges": {
+    "search": [],
+    "context": [],
+    "spacetime": [],
+    "database": [],
+    "sealedEvidence": []
+  },
+  "legacyExecutionDirsRemaining": [],
+  "oldPackageScripts": [],
+  "publicRoutePaths": []
+}

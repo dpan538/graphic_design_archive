@@ -12,6 +12,12 @@ Graphic Design Archive is a rights-aware PostgreSQL-backed research archive for 
 - Frontend: consumes the API/repository boundary and never connects directly to PostgreSQL.
 - Immutable source anchor: `v49-data-api-closure-20260821`.
 
+## v49 research-history main integration
+
+On 2026-08-25, the complete linear v49 research and engineering chain was prepared for fast-forward-only integration from the old `main` anchor `592c765d0af5bf15b1666784dce784ac8e22624d`. The 72 existing commits through Round 9 tip `47978c519c3c7141690e3894315a1ef1b7a403db` are preserved without rewriting; the new `main` anchor is the documentation commit identified by annotated tag `v49-research-main-integration-20260825`.
+
+The integration ledger and receipts are under `docs/releases/v49/main-integration-20260825/` and `docs/audits/v49-main-integration-20260825/`. Integration does not reactivate the superseded Round 6 object-similarity or Round 7 object-NLP approaches. Round 9 supplies grammar-research candidates only; it does not define active product vocabulary. The next research step is Round 10, `DESIGN_HISTORY_RELATION_GRAMMAR_ROUND1`.
+
 ## Repository layout
 
 - `database/` — the only active database root: migrations, functions, roles, views, fixtures, tests, and v48→v49 replay tooling.
@@ -68,9 +74,9 @@ This repository is a metadata, citation, and source-return layer, not a source-i
 
 - `docs/releases/v49/RELEASE_INDEX.md`
 - `docs/releases/v49/AUDIT_INDEX.md`
+- `docs/releases/v49/main-integration-20260825/00_EXECUTIVE_DECISION.md`
 - `docs/maintenance/DOCUMENTATION_MAP.md`
 - `docs/maintenance/REPOSITORY_LAYOUT.md`
 - `database/FROZEN_V49.md`
 - `READ_API_V1.md`
 - `PROJECT_LOG.md`
-

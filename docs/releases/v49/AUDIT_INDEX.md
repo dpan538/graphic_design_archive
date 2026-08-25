@@ -21,3 +21,13 @@ All listed packages are recoverable at `v49-data-api-closure-20260821`. Final au
 | `docs/audits/v49-runtime-acceptance` | INDEXED_SUPPORTING_EVIDENCE | 15 | 27310 |
 | `docs/audits/v49-runtime-acceptance-closure` | INDEXED_SUPPORTING_EVIDENCE | 9 | 26530 |
 | `docs/audits/v49-runtime-cleanup` | INDEXED_SUPPORTING_EVIDENCE | 9 | 50092 |
+
+## Main integration audit — 2026-08-25
+
+| Package | Classification | Scope |
+|---|---|---|
+| `docs/audits/v49-main-integration-20260825` | FINAL_AUTHORITATIVE_INTEGRATION_RECEIPT | Old-main/Round-9 ancestry, 72 complete commit descriptions, authority/supersession, current gates, branch reachability, rollback tags, and non-force main update policy. |
+
+The paired release package is `docs/releases/v49/main-integration-20260825/`. It preserves the 72-commit history from old main `592c765d0af5bf15b1666784dce784ac8e22624d` through Round 9 `47978c519c3c7141690e3894315a1ef1b7a403db`; the new main anchor is the integration commit identified by `v49-research-main-integration-20260825`.
+
+Round 6 object similarity and Round 7 object NLP remain superseded despite becoming reachable from main. Round 9 is research input for Round 10 grammar research and is not active product vocabulary. No branch deletion or deployment is part of this audit.

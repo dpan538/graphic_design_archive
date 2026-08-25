@@ -1,0 +1,2 @@
+diagnostic	result	authority	explanation
+legacy_runtime_acceptance_vectors	FAIL	NOT_CURRENT_AUTHORITATIVE_GATE	The d5a792a fixture/HTTP equality probe requests legacy title-sorted fixture search, while current Search commit f9bdfdd intentionally routes API search to relevance-sorted deterministic fuzzy Search; current Search regression and read/API contract gates pass.

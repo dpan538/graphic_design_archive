@@ -1,0 +1,26 @@
+# Phase and dependency map
+
+Phases are derived from path-level changes and their attached research/audit packages; names are not inferred from subjects alone.
+
+| Order | Phase | Commit range | Major decision | Authoritative output | Superseded output | Depends on |
+|---:|---|---|---|---|---|---|
+| 1 | P01 — v48 TRACE and visual foundations | 01 `d323d41` → 14 `0404c7f` | Established the evidence-led TRACE interface, responsive research views, and archive material language. | The v48 visual/data foundation retained by the v49 chain. | The interrupted prototype checkpoint remains historical; later commits in the phase refine it. | v48 anchor |
+| 2 | P02 — v49 data/read-platform architecture | 15 `2a91c86` → 22 `ee393a8` | Closed architecture, authority, rights, migration, and browser-runtime decisions before database DDL. | The approved pre-DDL decision record and cleanup receipts. | Earlier provisional architecture wording is retained as checkpoints, not as a competing contract. | P01 |
+| 3 | P03 — database schema and deterministic migration | 23 `9f3c20d` → 31 `60329e8` | Implemented PostgreSQL schema, constraints, sealed fixtures, migration rehearsal, performance repair, and self-contained audits. | The physical-schema and migration evidence foundation. | The original Phase 2b evidence is explicitly repaired/superseded by the amendment package. | P02 |
+| 4 | P04 — read platform and product foundation | 32 `4c686d9` → 38 `3e666b5` | Added repository/API reads, migrated archive slices, and closed sealed-fixture and runtime acceptance gates. | The active read-platform foundation consumed by later TRACE work. | Checkpoint packages document gates; they do not create alternate runtime authority. | P03 |
+| 5 | P05 — release snapshots and API closure | 39 `10d0dcb` → 54 `d78f496` | Developed atomic release snapshots through integrity, closure, performance, reconciliation, and API-contract gates. | Frozen database release protocol and closed read API contract. | Earlier snapshot protocol iterations are retained as foundations/checkpoints behind the final closure. | P03–P04 |
+| 6 | P06 — repository hygiene and database freeze | 55 `0a5bfc2` → 60 `c0ca9a1` | Consolidated active files, froze the database contract, normalized safety ledgers, and recorded cleanup closure. | The active repository surface and database-freeze governance. | Cleanup ledgers remain maintenance evidence; no branch deletion is implied. | P04–P05 |
+| 7 | P07 — fuzzy Search | 61 `f9bdfdd` → 61 `f9bdfdd` | Added deterministic fuzzy archive Search, projections, tests, and audit evidence. | Search ACTIVE/FROZEN. | None; this remains current. | P04–P06 |
+| 8 | P08 — TRACE census and semantic correction | 62 `c5f4e79` → 62 `c5f4e79` | Built the TRACE census, corrected semantics, and established preprogram evidence. | The empirical foundation for Context, Spacetime, and Exploration. | None; this remains a foundation. | P04–P07 |
+| 9 | P09 — Context functional development and governance | 63 `0a0ebbe` → 65 `5767928` | Implemented Context Canvas, validated real-data behavior, and closed its governed public projection. | Context ACTIVE/FROZEN. | Functional prototypes are governed by the Round 3 closure. | P08 |
+| 10 | P10 — Spacetime GIS and runtime closure | 66 `a421595` → 68 `0e311f0` | Implemented governed GIS/time projections, corrected audit counters, and closed runtime/API behavior. | Spacetime ACTIVE/FROZEN. | The Exploration discovery bundled in the closure is superseded by the Round 8 conceptual reset. | P08–P09 |
+| 11 | P11 — Exploration object-centric similarity research | 69 `580587a` → 69 `580587a` | Benchmarked explainable object-affinity models as a falsifiable research branch. | Historical negative result retained for provenance. | Superseded by 0526c3375285d8785d2993cdad9d1da620766423. | P10 |
+| 12 | P12 — Exploration multilingual object NLP | 70 `3d7536b` → 70 `3d7536b` | Audited dense multilingual object semantics, limitations, and model risks. | Superseded research retained for provenance. | Superseded by 0526c3375285d8785d2993cdad9d1da620766423. | P11 |
+| 13 | P13 — Exploration conceptual reset | 71 `0526c33` → 71 `0526c33` | Removed object-centric production assumptions and reset Exploration to a conceptual relation field. | Round 8 ACTIVE_AUTHORITATIVE Exploration architecture. | Supersedes the Round 6 similarity and Round 7 object-NLP approaches. | P08, informed by P11–P12 |
+| 14 | P14 — design-history relation vocabulary Round 9 | 72 `47978c5` → 72 `47978c5` | Validated sourced relation-vocabulary candidates against linguistic, breadth, contestation, and saturation gates. | Research input for Round 10 grammar work; not active product vocabulary. | No terms are activated by integration into main. | P13 |
+
+## Dependency sequence
+
+`v48 visual evidence → v49 architecture/rights → schema/migration → read platform → release/API closure → hygiene/freeze → Search/census → Context → Spacetime → negative Exploration experiments → conceptual reset → relation-vocabulary research`
+
+Rounds 6 and 7 are explanatory negative evidence, not dependencies that re-enter the current runtime. Round 8 depends on their findings to prohibit object-centric architecture; Round 9 depends on the Round 8 conceptual relation field and supplies only candidates for a future grammar gate.

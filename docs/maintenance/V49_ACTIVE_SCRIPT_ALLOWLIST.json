@@ -1,6 +1,6 @@
 {
   "format": "gda-v49-active-script-allowlist/v1",
-  "scriptCount": 208,
+  "scriptCount": 212,
   "unknownClassificationCount": 0,
   "scripts": [
     {
@@ -2014,6 +2014,36 @@
       "decision": "DOCUMENTED_ALLOWLIST"
     },
     {
+      "path": "scripts/trace-v49-analysis/benchmark_trace_v49_preprogram.mjs",
+      "category": "CURRENT_V49_TRACE_RESEARCH_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/trace-v49-analysis/generate_trace_v49_round1.py",
+      "category": "CURRENT_V49_TRACE_RESEARCH_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/trace-v49-relation-vocabulary/generate_round1.py",
+      "category": "CURRENT_V49_RELATION_VOCABULARY_RESEARCH_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
       "path": "scripts/v49_api_contract_prepare_fresh_c_release.sql",
       "category": "CURRENT_V49_API_VERIFICATION",
       "current_runtime_required": false,
@@ -2036,6 +2066,16 @@
     {
       "path": "scripts/validate_manual_source_record.py",
       "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/validate_trace_v49_relation_vocabulary_round1.py",
+      "category": "CURRENT_V49_RELATION_VOCABULARY_RESEARCH_VERIFICATION",
       "current_runtime_required": false,
       "current_api_required": false,
       "current_database_required": false,

@@ -1,0 +1,7 @@
+
+> archive-box-frontend@0.1.0 verify:spacetime-v1-projection
+> node scripts/generate-trace-spacetime-v1.mjs --check
+
+(node:21469) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+TRACE_SPACETIME_V1_GENERATION=PASS MODE=CHECK PROJECTION_ID=trace-spacetime-v1 PROJECTION_SHA256=f751b0f432ff684fd1000201b910aa397a4d9965468c2f7dd5022d6a4ae01c06 PUBLIC_OBJECTS=7995 HELD_OBJECTS=7928 REGION_ASSIGNMENTS=7996 GEOGRAPHIES=93 MAPPED_GEOGRAPHIES=81 AGGREGATE_ONLY_GEOGRAPHIES=11 UNMAPPED_GEOGRAPHIES=1 MAPPED_OBJECTS=7800 AGGREGATE_ONLY_OBJECTS=194 UNMAPPED_OBJECTS=1 PERIODS=23 DEFAULT_PERIOD=SPT-PERIOD-1980-1990

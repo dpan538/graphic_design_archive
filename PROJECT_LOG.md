@@ -205,3 +205,33 @@ SPACETIME_STATUS=FROZEN
 `EXPLORATION_RELATION_GRAMMAR=RESEARCH_NEXT`
 
 `NEXT_RESEARCH_ROUND=DESIGN_HISTORY_RELATION_GRAMMAR_ROUND1`
+
+## v49 main integration closure — 2026-08-25
+
+- Prepared a fast-forward-only update from old `main` anchor `592c765d0af5bf15b1666784dce784ac8e22624d` through the preserved Round 9 tip `47978c519c3c7141690e3894315a1ef1b7a403db` plus one documentation-only integration commit.
+- Preserved all 72 incoming commit identities and documented every commit from its actual diff, changed paths, packages, tests, tree, and place in the linear research chain.
+- Added the integration decision, 72-row ledger, 72-section narrative, phase/dependency map, 30-branch reachability inventory, authority map, validation, and rollback package under `docs/releases/v49/main-integration-20260825/`.
+- Added the sealed audit receipt under `docs/audits/v49-main-integration-20260825/` and the prospective commit-body policy under `docs/maintenance/COMMIT_DESCRIPTION_POLICY.md`.
+- Preserved Search, Context, and Spacetime as ACTIVE/FROZEN; preserved Round 6 object similarity and Round 7 object NLP as superseded research; preserved Round 8 as the authoritative Exploration conceptual reset.
+- Classified Round 9 relation vocabulary as research candidates for Round 10 grammar research only. Integration does not activate terms, begin Round 10, delete branches, change the frozen database, or deploy.
+- Established rollback anchor `main-pre-v49-research-integration-20260825` at the old main commit; the new main anchor is the integration commit identified by `v49-research-main-integration-20260825`.
+
+`V49_MAIN_INTEGRATION_DATE=2026-08-25`
+
+`V49_MAIN_OLD_ANCHOR=592c765d0af5bf15b1666784dce784ac8e22624d`
+
+`V49_ROUND9_TIP=47978c519c3c7141690e3894315a1ef1b7a403db`
+
+`V49_INCOMING_COMMIT_SHA_PRESERVATION=72/72`
+
+`V49_MAIN_UPDATE_MODE=FAST_FORWARD_ONLY`
+
+`V49_MAIN_NEW_ANCHOR_TAG=v49-research-main-integration-20260825`
+
+`EXPLORATION_ROUND6_OBJECT_SIMILARITY=SUPERSEDED_BUT_RETAINED`
+
+`EXPLORATION_ROUND7_OBJECT_NLP=SUPERSEDED_BUT_RETAINED`
+
+`ROUND9_RELATION_VOCABULARY=GRAMMAR_RESEARCH_CANDIDATES_ONLY`
+
+`NEXT_RESEARCH_ROUND=DESIGN_HISTORY_RELATION_GRAMMAR_ROUND1`

@@ -1,0 +1,10 @@
+file:///private/tmp/graphic_design_archive_v49_main_integration_20260825/frontend/scripts/run-runtime-acceptance-vectors.mjs:28
+function assert(condition, message) { if (!condition) throw new Error(message); }
+                                                            ^
+
+Error: deterministic-search semantic mismatch
+    at assert (file:///private/tmp/graphic_design_archive_v49_main_integration_20260825/frontend/scripts/run-runtime-acceptance-vectors.mjs:28:61)
+    at paired (file:///private/tmp/graphic_design_archive_v49_main_integration_20260825/frontend/scripts/run-runtime-acceptance-vectors.mjs:46:3)
+    at async file:///private/tmp/graphic_design_archive_v49_main_integration_20260825/frontend/scripts/run-runtime-acceptance-vectors.mjs:71:16
+
+Node.js v22.21.0

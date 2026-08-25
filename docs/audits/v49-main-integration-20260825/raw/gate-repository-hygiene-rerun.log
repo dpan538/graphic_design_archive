@@ -1,0 +1,6 @@
+COMMAND=python3 scripts/repository/audit_repository_hygiene.py --repo .
+REMEDIATION=classified four already-tracked TRACE/Round-9 research scripts in V49_ACTIVE_SCRIPT_ALLOWLIST.json
+EXIT_CODE=0
+TRACKED_FILE_COUNT=3030
+VIOLATION_COUNT=0
+REPOSITORY_HYGIENE=PASS
