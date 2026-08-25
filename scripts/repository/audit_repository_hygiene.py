@@ -204,8 +204,20 @@ def main() -> int:
     script_allowlist_path = repo / "docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json"
     script_allowlist = json.loads(script_allowlist_path.read_text()) if script_allowlist_path.is_file() else {}
     tracked_scripts = {path for path in files if path.startswith("scripts/")}
-    allowed_scripts = {item["path"] for item in script_allowlist.get("scripts", [])}
-    script_allowlist_pass = tracked_scripts == allowed_scripts and script_allowlist.get("unknownClassificationCount") == 0
+    allowed_script_rows = script_allowlist.get("scripts", [])
+    allowed_script_paths = [item["path"] for item in allowed_script_rows]
+    allowed_scripts = set(allowed_script_paths)
+    missing_active_scripts = sorted(tracked_scripts - allowed_scripts)
+    unexpected_allowlisted_scripts = sorted(allowed_scripts - tracked_scripts)
+    duplicate_allowlisted_script_count = len(allowed_script_paths) - len(allowed_scripts)
+    declared_script_count = script_allowlist.get("scriptCount")
+    script_allowlist_pass = (
+        not missing_active_scripts
+        and not unexpected_allowlisted_scripts
+        and duplicate_allowlisted_script_count == 0
+        and declared_script_count == len(allowed_script_rows)
+        and script_allowlist.get("unknownClassificationCount") == 0
+    )
     lfs = run(repo, "git", "lfs", "fsck")
     tag = run(repo, "git", "rev-parse", f"{TAG}^{{}}")
     tag_commit = tag.stdout.decode().strip() if tag.returncode == 0 else ""
@@ -225,6 +237,12 @@ def main() -> int:
         "brokenScriptReferences": script_links,
         "brokenFrontendImports": frontend_imports,
         "activeScriptAllowlistPass": script_allowlist_pass,
+        "activeScriptAllowlistDeclaredCount": declared_script_count,
+        "activeScriptAllowlistRowCount": len(allowed_script_rows),
+        "activeScriptAllowlistTrackedCount": len(tracked_scripts),
+        "activeScriptAllowlistMissingScripts": missing_active_scripts,
+        "activeScriptAllowlistUnexpectedScripts": unexpected_allowlisted_scripts,
+        "activeScriptAllowlistDuplicatePathCount": duplicate_allowlisted_script_count,
         "unreferencedActiveScriptPolicy": "DOCUMENTED_ALLOWLIST" if script_allowlist_pass else "FAIL",
         "historicalPromptActiveCount": sum(path.startswith("prompts/") for path in files),
         "unreferencedProjectAssetCount": sum(path.startswith("project-assets/") and not path.endswith(".md") for path in files),
@@ -281,7 +299,23 @@ def main() -> int:
     if args.markdown:
         args.markdown.parent.mkdir(parents=True, exist_ok=True)
         args.markdown.write_text("# Repository hygiene gate\n\n```json\n" + rendered + "```\n")
-    print(json.dumps({"status": payload["status"], "trackedFileCount": len(files), "violationCount": len(violations), "violations": violations}, sort_keys=True))
+    summary = {
+        "status": payload["status"],
+        "trackedFileCount": len(files),
+        "violationCount": len(violations),
+        "violations": violations,
+    }
+    if not script_allowlist_pass:
+        summary["activeScriptAllowlist"] = {
+            "declaredCount": declared_script_count,
+            "rowCount": len(allowed_script_rows),
+            "trackedCount": len(tracked_scripts),
+            "missingScripts": missing_active_scripts,
+            "unexpectedScripts": unexpected_allowlisted_scripts,
+            "duplicatePathCount": duplicate_allowlisted_script_count,
+            "unknownClassificationCount": script_allowlist.get("unknownClassificationCount"),
+        }
+    print(json.dumps(summary, sort_keys=True))
     return 0 if not violations else 1
 
 
