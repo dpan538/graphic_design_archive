@@ -26,6 +26,28 @@ The Round 10 result is `GRAMMAR_CANDIDATES_READY_WITH_LIMITATIONS`, but `RELATIO
 
 Next research round: **Exploration Image Build and Generative Constraints Round 1**, constrained by zero authorized Flow edges and no active grammar.
 
+TRACE v49 Round 11 completed fail-closed preprogramming of the renderer-neutral constraint kernel, build contract, and Image compiler. This infrastructure is ready for a future governed activation package, but the present activation state is unresolved. Active vocabulary, grammar, pair, Cluster, and chain counts remain zero; the Round 9 senses and Round 10 Node/pair decisions remain research-only inputs.
+
+The current real compilation request is deliberately rejected and produces no Image or partial placeholder. Only neutral, test-only synthetic fixtures compile; they are excluded from production imports and do not constitute runtime data, historical claims, or product vocabulary. No real Image, Flow, Cluster, chain, Instance, Container, renderer, route, API, database, external model, or archive-object reference is authorized.
+
+`CONSTRAINT_KERNEL_PREPROGRAMMING_READY`
+
+`REAL_SEMANTIC_IMAGE_READY=false`
+
+`CURRENT_ACTIVATION_STATE=UNRESOLVED`
+
+`ACTIVE_RELATION_VOCABULARY_COUNT=0`
+
+`ACTIVE_RELATION_GRAMMAR_COUNT=0`
+
+`ACTIVE_PAIR_RULE_COUNT=0`
+
+`ACTIVE_CLUSTER_RULE_COUNT=0`
+
+`ACTIVE_CHAIN_RULE_COUNT=0`
+
+Next research round after Round 11: **Design-History Composition Evidence and Domain Review Round 1**. It must supply independent pair-composition evidence and external human domain review before any semantic activation can be considered.
+
 Authoritative conceptual-field package: `docs/research/trace-v49-exploration-conceptual-reset/`.
 
 Authoritative Round 9 vocabulary-evidence package: `docs/research/trace-v49-design-history-relation-vocabulary-round1/`.

@@ -1,0 +1,30 @@
+gate_id	gate	status	command	evidence
+GATE-001	dependency_install	PASS	cd frontend && npm ci	145 packages installed; exit 0
+GATE-002	round8_reset_guard	PASS	cd frontend && npm run verify:exploration-reset	30 bad-practice rules; 4 active implementation files; zero violations or protected changes
+GATE-003	exploration_domain	PASS	cd frontend && npm run test:exploration-domain	6 structural checks and 12 red-team rejections pass
+GATE-004	round9_historical_validation	PASS	python3 scripts/validate_trace_v49_relation_vocabulary_round1.py at preserved Round 9 tip	all source, attestation, noun, explainability, polysemy, synonym, breadth, and saturation gates pass
+GATE-005	round10_grammar_validation	PASS	python3 scripts/trace-v49-relation-grammar/validate_round1.py at preserved Round 10 tip	16 Nodes; 256 cells; 1904 review rows; audit seal pass
+GATE-006	round10_reconciliation	PASS	python3 scripts/trace-v49-exploration-constraint-kernel/reconcile_round10.py	16/8/8 Nodes; 256/0/3/16/237 pairs; sealed commit-object verification pass
+GATE-007	round11_constraint_kernel	PASS	cd frontend && npm run test:exploration-constraint-kernel	20/20 adversarial cases and 10/10 fail-closed mutations pass
+GATE-008	current_real_build_rejection	PASS	cd frontend && npm run test:exploration-constraint-kernel	1 attempted; 1 rejected; 0 success; no partial Image
+GATE-009	synthetic_lifecycle	PASS	cd frontend && npm run test:exploration-constraint-kernel	3 test-only Images; deterministic replay; Instance and Container pass
+GATE-010	typecheck	PASS	cd frontend && npx tsc --noEmit --pretty false	exit 0
+GATE-011	search_index_verification	PASS	cd frontend && npm run verify:search-v49-index	7995 documents; index SHA-256 35a6b7e1f8b749fca0ebfda9cf84f265de58d69fe6ef2bac0a4a2a9d263b1522
+GATE-012	search_regression	PASS	cd frontend && npm run test:search-v49	14 checks; 7995 documents
+GATE-013	context_projection	PASS	cd frontend && npm run verify:context-v1-projection	7995 public objects; 25 terms; 16106 representations
+GATE-014	context_governance	PASS	cd frontend && npm run test:context-governance-v1	22 invariants; full public cohort; zero failures
+GATE-015	context_runtime	PASS	cd frontend && npm run test:context-runtime-v1	7995 public and 7928 held lookups; zero failures or exposures
+GATE-016	context_api	PASS	cd frontend && npm run test:context-api-v1	GET, HEAD, OPTIONS, malformed, held parity, release pinning, and determinism pass
+GATE-017	spacetime_projection	PASS	cd frontend && npm run verify:spacetime-v1-projection	7995 public objects; 93 geographies; 23 periods
+GATE-018	spacetime_governance	PASS	cd frontend && npm run test:spacetime-governance-v1	20 invariants; full cohort and held exclusion pass
+GATE-019	spacetime_runtime	PASS	cd frontend && npm run test:spacetime-runtime-v1	deterministic cells and cache, stale-response, cursor, and mode-parity guards pass
+GATE-020	spacetime_api	PASS	cd frontend && npm run test:spacetime-api-v1	3 endpoints; 7995 public records; 7928 held excluded
+GATE-021	spacetime_gis	PASS	cd frontend && npm run test:spacetime-gis-v1	242 features; 81 mapped entries; zero missing mapped targets
+GATE-022	read_platform_api	PASS	cd frontend && npm run test:read-platform	zero direct data coupling
+GATE-023	page_module_api_contract	PASS	cd frontend && node scripts/verify-page-by-key-module-contract.mjs	known and unknown key behavior pass
+GATE-024	database_freeze	PASS	python3 scripts/repository/verify_v49_database_freeze.py --repo .	126 frozen files; zero drift; zero unmanifested v49 files
+GATE-025	repository_hygiene	PASS	python3 scripts/repository/audit_repository_hygiene.py --repo .	3172 tracked files; zero violations
+GATE-026	production_build	PASS	cd frontend && npm run build	Next.js 15.5.18 compiled; 46 static pages generated
+GATE-027	protected_test_side_effect_cleanup	PASS	git restore three Context governance raw evidence files	fresh timing-output rewrites removed; no protected Context change remains
+GATE-028	git_diff_check	PASS	git diff --check && git diff --cached --check	zero whitespace errors after generated-receipt normalization
+GATE-029	round11_strict_validation	PASS	python3 scripts/trace-v49-exploration-constraint-kernel/validate_round1.py	registries, runtime boundary, changed paths, test receipt, indexes, allowlist, and audit seal pass

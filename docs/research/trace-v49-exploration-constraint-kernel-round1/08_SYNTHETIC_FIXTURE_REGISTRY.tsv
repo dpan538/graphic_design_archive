@@ -1,0 +1,11 @@
+fixture_id	fixture_kind	purpose	synthetic_test_only	production_exportable
+NODE-TEST-A	NODE	synthetic active policy	true	false
+NODE-TEST-B	NODE	synthetic active policy	true	false
+NODE-TEST-C	NODE	synthetic qualified policy	true	false
+FLOW-TEST-A	FLOW	directed synthetic Flow	true	false
+FLOW-TEST-B	FLOW	reciprocal synthetic Flow	true	false
+FLOW-TEST-C	FLOW	qualified synthetic Flow	true	false
+CLUSTER-TEST-A	CLUSTER	explicit synthetic Cluster	true	false
+CHAIN-TEST-A	CHAIN	explicit short synthetic chain	true	false
+GRAMMAR-TEST-V1	GRAMMAR	test-only grammar version	true	false
+VOCABULARY-TEST-V1	VOCABULARY	test-only vocabulary version	true	false

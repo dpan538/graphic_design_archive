@@ -1,0 +1,199 @@
+{
+  "cases": [
+    {
+      "durationMs": 0.509,
+      "id": "A",
+      "name": "UNRESOLVED vocabulary rejects real build",
+      "status": "PASS"
+    },
+    {
+      "durationMs": 0.547,
+      "id": "B",
+      "name": "RESEARCH_CANDIDATE_ONLY node rejects",
+      "status": "PASS"
+    },
+    {
+      "durationMs": 0.366,
+      "id": "C",
+      "name": "unknown pair default denies",
+      "status": "PASS"
+    },
+    {
+      "durationMs": 0.362,
+      "id": "D",
+      "name": "deferred pair rejects",
+      "status": "PASS"
+    },
+    {
+      "durationMs": 0.171,
+      "id": "E",
+      "name": "wrong direction rejects",
+      "status": "PASS"
+    },
+    {
+      "durationMs": 0.552,
+      "id": "F",
+      "name": "authorized directed reciprocal qualified synthetic compile passes",
+      "status": "PASS"
+    },
+    {
+      "durationMs": 0.186,
+      "id": "G",
+      "name": "reciprocal pair cannot become one-way",
+      "status": "PASS"
+    },
+    {
+      "durationMs": 0.12,
+      "id": "H",
+      "name": "structural condition cannot become binary Flow",
+      "status": "PASS"
+    },
+    {
+      "durationMs": 0.222,
+      "id": "I",
+      "name": "universal ANY role rejects",
+      "status": "PASS"
+    },
+    {
+      "durationMs": 0.29,
+      "id": "J",
+      "name": "required qualification drop rejects",
+      "status": "PASS"
+    },
+    {
+      "durationMs": 0.226,
+      "id": "K",
+      "name": "unauthorized Cluster rejects",
+      "status": "PASS"
+    },
+    {
+      "durationMs": 0.237,
+      "id": "L",
+      "name": "unauthorized transitive chain rejects",
+      "status": "PASS"
+    },
+    {
+      "durationMs": 0.127,
+      "id": "M",
+      "name": "ARCHIVE_OBJECT contamination rejects",
+      "status": "PASS"
+    },
+    {
+      "durationMs": 0.105,
+      "id": "N",
+      "name": "CONTEXT_PAYLOAD contamination rejects",
+      "status": "PASS"
+    },
+    {
+      "durationMs": 0.11,
+      "id": "O",
+      "name": "SPACETIME_PAYLOAD contamination rejects",
+      "status": "PASS"
+    },
+    {
+      "durationMs": 0.182,
+      "id": "P",
+      "name": "EXTERNAL_MODEL_PROVENANCE contamination rejects",
+      "status": "PASS"
+    },
+    {
+      "durationMs": 0.455,
+      "id": "Q",
+      "name": "Container mutation leaves Image hash unchanged",
+      "status": "PASS"
+    },
+    {
+      "durationMs": 0.925,
+      "id": "R",
+      "name": "same synthetic request replays identical Image hash",
+      "status": "PASS"
+    },
+    {
+      "durationMs": 0.397,
+      "id": "S",
+      "name": "seed changes layout choice only, never authorization",
+      "status": "PASS"
+    },
+    {
+      "durationMs": 0.081,
+      "id": "T",
+      "name": "current real semantic build rejects atomically",
+      "status": "PASS"
+    },
+    {
+      "durationMs": 0.87,
+      "id": "ISOLATION",
+      "name": "synthetic fixtures are absent from production imports",
+      "status": "PASS"
+    }
+  ],
+  "compilerVersion": "trace-exploration-constraint-compiler-preprogram-v1",
+  "constraintPackageValidationMs": 3.311,
+  "currentRealBuildAttemptCount": 1,
+  "currentRealBuildRejectionCount": 1,
+  "currentRealBuildSuccessCount": 0,
+  "failOpenMutationCount": 0,
+  "hashingMs": 0.045,
+  "imageHashMutationAfterContainerEditCount": 0,
+  "imageImmutability": "PASS",
+  "mutationCaseCount": 10,
+  "mutationResults": [
+    {
+      "name": "activation state",
+      "status": "REJECTED"
+    },
+    {
+      "name": "pair decision",
+      "status": "REJECTED"
+    },
+    {
+      "name": "directionality",
+      "status": "REJECTED"
+    },
+    {
+      "name": "qualification",
+      "status": "REJECTED"
+    },
+    {
+      "name": "sense ID",
+      "status": "REJECTED"
+    },
+    {
+      "name": "constraint package hash",
+      "status": "REJECTED"
+    },
+    {
+      "name": "provenance reference",
+      "status": "REJECTED"
+    },
+    {
+      "name": "synthetic flag",
+      "status": "REJECTED"
+    },
+    {
+      "name": "node role",
+      "status": "REJECTED"
+    },
+    {
+      "name": "cluster authorization",
+      "status": "REJECTED"
+    }
+  ],
+  "realSemanticChainBuildCount": 0,
+  "realSemanticClusterBuildCount": 0,
+  "realSemanticFlowBuildCount": 0,
+  "realSemanticImageBuildCount": 0,
+  "requiredAdversarialCaseCount": 20,
+  "requiredAdversarialPassCount": 20,
+  "status": "PASS",
+  "syntheticBuildHashEquality": "PASS",
+  "syntheticBuildReplayCount": 2,
+  "syntheticCompileMs": 0.471,
+  "syntheticContainerLifecycle": "PASS",
+  "syntheticFixtureProductionImportCount": 0,
+  "syntheticInstanceCreation": "PASS",
+  "syntheticTestImageBuildCount": 3,
+  "syntheticTestImageBuildPass": true,
+  "testSuiteMs": 12.372,
+  "totalCheckCount": 21
+}

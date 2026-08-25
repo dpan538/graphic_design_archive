@@ -1,0 +1,14 @@
+metric	expected	actual	status	runtime_activation
+nodeInputCount	16	16	PASS	false
+passNodeRoleCount	8	8	PASS	false
+deferNodeRoleCount	8	8	PASS	false
+pairMatrixCount	256	256	PASS	false
+passPairRuleCount	0	0	PASS	false
+deferPairRuleCount	3	3	PASS	false
+rejectPairRuleCount	16	16	PASS	false
+defaultDenyPairCount	237	237	PASS	false
+universalNodeCandidateCount	8	8	PASS	false
+universalNodePassCount	0	0	PASS	false
+clusterHandoffCount	2	2	PASS	false
+observedChainCount	2	2	PASS	false
+vocabularyGapCount	6	6	PASS	false

@@ -269,3 +269,45 @@ SPACETIME_STATUS=FROZEN
 `RELATION_GRAMMAR_CANDIDATE_READY_FOR_IMAGE_BUILD=false`
 
 `NEXT_RESEARCH_ROUND=EXPLORATION_IMAGE_BUILD_AND_GENERATIVE_CONSTRAINTS_ROUND1`
+
+## TRACE v49 Round 11 — Exploration constraint-kernel preprogramming Round 1
+
+- Fast-forward synchronized `main` from `0241b0f51e2523901b0858d54ffb7f5d2a9aa13c` to the authoritative Round 10 commit `4bd82deba482ec2fbf8c4856080151416fb8ee83` after independently rerunning the current Round 8–10, Search, Context, Spacetime, API, database-freeze, typecheck, and production-build gates. No force push, merge commit, history rewrite, or deployment occurred.
+- Added a generic, renderer-neutral constraint kernel, build contract, and Image compiler with explicit `UNRESOLVED`, `RESEARCH_CANDIDATE_ONLY`, and `GOVERNED_ACTIVE` activation states. The kernel is default deny and does not read Round 9/10 TSVs or embed their real candidate labels.
+- Attempted one current-state real compilation and rejected it atomically: real build attempts/successes/rejections are 1/0/1, with no partial Image. Active vocabulary, grammar, Flow-pair, Cluster, and chain rule counts all remain zero.
+- Passed all 20 required adversarial cases plus ten fail-open mutation cases. Three deterministic, test-only synthetic Image builds proved compilation, replay hashing, immutable Image, Instance creation, and mutable Container behavior without authorizing any production semantic relation.
+- Reconciled the sealed Round 10 package exactly: 16 input senses, 8 bounded Node candidates, 8 deferred Nodes, 256 ordered pairs, 0 pass pairs, 3 deferred pairs, 16 rejected self-relations, 237 default-denied pairs, 0 universal passes, 2 inactive Cluster handoffs, 2 inactive chains, and 6 open vocabulary gaps.
+- Kept all synthetic fixtures outside production imports and preserved zero archive-object, Search, Context, Spacetime, external-model, renderer, route, API, database, and deployment changes. Nine real-Image blockers remain open.
+- The next research gate is independent composition evidence and external design-history domain review; Round 11 does not activate Round 9 terms, a Round 10 grammar, or a real semantic Image.
+
+`ROUND11_CONSTRAINT_KERNEL_PREPROGRAMMING=COMPLETE_WITH_LIMITATIONS`
+
+`ROUND11_DECISION=PREPROGRAMMING_READY_WITH_LIMITATIONS`
+
+`CONSTRAINT_KERNEL_READY=true`
+
+`IMAGE_COMPILER_INFRASTRUCTURE_READY=true`
+
+`REAL_SEMANTIC_IMAGE_READY=false`
+
+`CURRENT_REAL_BUILD_ATTEMPT_COUNT=1`
+
+`CURRENT_REAL_BUILD_SUCCESS_COUNT=0`
+
+`CURRENT_REAL_BUILD_REJECTION_COUNT=1`
+
+`SYNTHETIC_TEST_IMAGE_BUILD_COUNT=3`
+
+`ACTIVE_RELATION_VOCABULARY_COUNT=0`
+
+`ACTIVE_RELATION_GRAMMAR_COUNT=0`
+
+`ACTIVE_PAIR_RULE_COUNT=0`
+
+`ACTIVE_CLUSTER_RULE_COUNT=0`
+
+`ACTIVE_CHAIN_RULE_COUNT=0`
+
+`REAL_IMAGE_BLOCKER_COUNT=9`
+
+`NEXT_RESEARCH_ROUND=DESIGN_HISTORY_COMPOSITION_EVIDENCE_AND_DOMAIN_REVIEW_ROUND1`
