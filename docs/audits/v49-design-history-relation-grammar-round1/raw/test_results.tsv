@@ -1,0 +1,27 @@
+gate_id	gate	status	command	evidence
+GATE-001	dependency_install	PASS	cd frontend && npm ci	145 packages installed; exit 0
+GATE-002	typecheck	PASS	cd frontend && npx tsc --noEmit --pretty false	exit 0
+GATE-003	search_index_verification	PASS	cd frontend && npm run verify:search-v49-index	7995 documents; index SHA-256 35a6b7e1f8b749fca0ebfda9cf84f265de58d69fe6ef2bac0a4a2a9d263b1522
+GATE-004	search_regression	PASS	cd frontend && npm run test:search-v49	14 checks; 7995 documents
+GATE-005	context_projection	PASS	cd frontend && npm run verify:context-v1-projection	7995 public objects; 25 terms; 16106 representations
+GATE-006	context_governance	PASS	cd frontend && npm run test:context-governance-v1	22 invariants; 7995/7995 public cohort; zero failures
+GATE-007	context_runtime	PASS	cd frontend && npm run test:context-runtime-v1	7995 public lookups; 7928 held lookups; zero failures or exposures
+GATE-008	context_api	PASS	cd frontend && npm run test:context-api-v1	GET HEAD OPTIONS malformed held parity release pinning and determinism pass
+GATE-009	spacetime_projection	PASS	cd frontend && npm run verify:spacetime-v1-projection	7995 public objects; 93 geographies; 23 periods
+GATE-010	spacetime_governance	PASS	cd frontend && npm run test:spacetime-governance-v1	20 invariants; full cohort and held exclusion pass
+GATE-011	spacetime_runtime	PASS	cd frontend && npm run test:spacetime-runtime-v1	period-region cells deterministic; stale and cache guards pass
+GATE-012	spacetime_api	PASS	cd frontend && npm run test:spacetime-api-v1	3 endpoints; 7995 public records; 7928 held excluded
+GATE-013	spacetime_gis	PASS	cd frontend && npm run test:spacetime-gis-v1	242 features; 81 mapped entries; zero missing mapped targets
+GATE-014	round8_reset_guard	PASS	cd frontend && npm run verify:exploration-reset	30 bad-practice policy rules; zero active implementation violations
+GATE-015	exploration_domain	PASS	cd frontend && npm run test:exploration-domain	6 structural checks; all 12 red-team cases rejected
+GATE-016	round9_historical_validation	PASS	python3 scripts/validate_trace_v49_relation_vocabulary_round1.py at preserved tip 47978c519c3c7141690e3894315a1ef1b7a403db	source registry attestation candidate noun explainability polysemy synonym breadth and saturation gates pass; 1.0 verification
+GATE-017	round10_grammar_validation	PASS	python3 scripts/trace-v49-relation-grammar/validate_round1.py	16 Nodes; 256 cells; 1904 review rows; seven receipts; audit seal pass
+GATE-018	read_platform_api	PASS	cd frontend && npm run test:read-platform	zero direct data coupling
+GATE-019	page_module_api_contract	PASS	cd frontend && node scripts/verify-page-by-key-module-contract.mjs	known and unknown key behavior pass
+GATE-020	database_freeze	PASS	python3 scripts/repository/verify_v49_database_freeze.py --repo .	126 frozen files; zero drift; zero unmanifested v49 files
+GATE-021	repository_hygiene	PASS	python3 scripts/repository/audit_repository_hygiene.py --repo .	3085 tracked files; zero violations
+GATE-022	production_build	PASS	cd frontend && npm run build	Next.js 15.5.18 production build compiled; 46 static pages generated
+GATE-023	protected_test_side_effect_cleanup	PASS	git restore four Context governance raw evidence files	fresh timing-output rewrites removed; no protected Context change remains
+GATE-024	git_diff_check	PASS	git diff --check	zero whitespace errors
+GATE-025	round10_manifest_checksum_seal	PASS	python3 scripts/trace-v49-relation-grammar/validate_round1.py	manifest and SHA256SUMS independently recomputed by validator
+GATE-026	generic_audit_package_helper	NOT_APPLICABLE	python3 database/scripts/verify_audit_package_self_contained.py --package <package>	helper requires PACKAGE_METADATA absent from both task-specified Round 9 and Round 10 package schemas; Round 10 manifest checksum seal is authoritative

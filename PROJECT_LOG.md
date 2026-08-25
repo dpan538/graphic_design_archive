@@ -235,3 +235,37 @@ SPACETIME_STATUS=FROZEN
 `ROUND9_RELATION_VOCABULARY=GRAMMAR_RESEARCH_CANDIDATES_ONLY`
 
 `NEXT_RESEARCH_ROUND=DESIGN_HISTORY_RELATION_GRAMMAR_ROUND1`
+
+## TRACE v49 Round 10 — design-history relation grammar research Round 1
+
+- Reproduced exactly the 16 passed Round 9 senses with input identity SHA-256 `da22e62828b9d6ae2dd1692ec4f23b82a984ce9d53240d198246915668481aec`; no deferred or rejected Round 9 term entered.
+- Completed review of all 16 Node roles and the exhaustive 16×16 ordered-pair space. Eight senses have bounded research-candidate roles; the other eight remain deferred because they require splitting, remain too broad, or present universal/high-connectivity risk.
+- Applied the two-independent-source composition gate to every pair. No pair passes. Three pairs remain deferred research questions, all 16 diagonals reject an unsupported self-relation, and 237 off-diagonal pairs default deny.
+- Added 28 grammar sources and 30 bounded attestations across 24 source strata, with explicit peer-review uncertainty retained for book chapters, edited books, an editorial article, and a commentary. Saturation is claimed only within the seven reviewed discovery batches.
+- Completed seven computational review processes over every Node and all 256 cells, with final outcomes serialized only after independent completion. This is process independence, not external human design-history review.
+- Preserved all 16 labels separately, recorded explicit anti-flattening comparisons, six vocabulary gaps, and eight semantic any-like deferrals, and authorized no universal Node, Flow edge, self-loop, Cluster, multistep grammar, arrow, or transitive inference.
+- Kept the active relation vocabulary and grammar unresolved with zero active relation types. No renderer, route, API, database, Search, Context, Spacetime, model, archive object, title, deployment, PR, or main update is part of this round.
+
+`ROUND10_RELATION_GRAMMAR_RESEARCH=COMPLETE_WITH_LIMITATIONS`
+
+`ROUND10_INPUT_TERM_COUNT=16`
+
+`ROUND10_INPUT_TERM_SHA256=da22e62828b9d6ae2dd1692ec4f23b82a984ce9d53240d198246915668481aec`
+
+`ROUND10_PASS_NODE_CANDIDATE_COUNT=8`
+
+`ROUND10_DEFER_NODE_COUNT=8`
+
+`ROUND10_PASS_PAIR_RULE_COUNT=0`
+
+`ROUND10_DEFER_PAIR_RULE_COUNT=3`
+
+`ROUND10_UNSUPPORTED_DEFAULT_DENY_COUNT=237`
+
+`ROUND10_UNIVERSAL_NODE_PASS_COUNT=0`
+
+`EXPLORATION_ACTIVE_RELATION_TYPE_COUNT=0`
+
+`RELATION_GRAMMAR_CANDIDATE_READY_FOR_IMAGE_BUILD=false`
+
+`NEXT_RESEARCH_ROUND=EXPLORATION_IMAGE_BUILD_AND_GENERATIVE_CONSTRAINTS_ROUND1`

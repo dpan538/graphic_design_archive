@@ -1,0 +1,17 @@
+candidate_id	candidate_label	allowed_out_degree	allowed_in_degree	deferred_out_degree	deferred_in_degree	default_denied_degree	any_role_usage	literal_any_token	semantic_any_like_role	generic_relation_wording	unbounded_scope	high_connectivity	repeated_bridge_use	universal_risk_pair_specific_evidence_missing	universal_node_candidate	universal_node_passed	red_team_decision
+REL-CAND-0001	mediation	0	0	0	0	30	false	false	true	true	true	true	false	true	true	false	DEFER
+REL-CAND-0004	canonization	0	0	0	0	30	false	false	false	false	false	false	false	false	false	false	PASS_BOUNDARY
+REL-CAND-0005	professionalization	0	0	1	0	29	false	false	false	false	false	false	false	false	false	false	PASS_BOUNDARY
+REL-CAND-0006	institutionalization	0	0	0	1	29	false	false	false	false	false	false	false	false	false	false	PASS_BOUNDARY
+REL-CAND-0007	transnational interactions	0	0	0	0	30	false	false	true	true	true	true	false	true	true	false	DEFER
+REL-CAND-0008	cultural translation	0	0	0	0	30	false	false	true	true	true	true	false	true	true	false	DEFER
+REL-CAND-0009	design exchanges	0	0	0	0	30	false	false	true	true	true	true	false	true	true	false	DEFER
+REL-CAND-0010	commodification	0	0	0	1	29	false	false	false	false	false	false	false	false	false	false	PASS_BOUNDARY
+REL-CAND-0011	gendering	0	0	1	0	29	false	false	false	false	false	false	false	false	false	false	PASS_BOUNDARY
+REL-CAND-0012	displacement	0	0	0	0	30	false	false	true	true	true	true	false	true	true	false	DEFER
+REL-CAND-0023	transculturation	0	0	0	0	30	false	false	true	true	true	true	false	true	true	false	DEFER
+REL-CAND-0024	cultural mobility	0	0	0	0	30	false	false	true	true	true	true	false	true	true	false	DEFER
+REL-CAND-0025	self-exoticization	0	0	0	0	30	false	false	false	false	false	false	false	false	false	false	PASS_BOUNDARY
+REL-CAND-0026	coloniality	0	0	0	0	30	false	false	true	true	true	true	false	true	true	false	DEFER
+REL-CAND-0032	imitation	0	0	1	0	29	false	false	false	false	false	false	false	false	false	false	PASS_BOUNDARY
+REL-CAND-0033	piracy	0	0	0	1	29	false	false	false	false	false	false	false	false	false	false	PASS_BOUNDARY

@@ -1,0 +1,3 @@
+# Changed files
+
+The authorized change set consists of the 25-file Round 10 research package, this audit package (including raw evidence and seals), `scripts/trace-v49-relation-grammar/generate_round1.py`, `scripts/trace-v49-relation-grammar/validate_round1.py`, `PROJECT_LOG.md`, and `docs/research/EXPLORATION_CURRENT.md`. No database, Search, Context, Spacetime, frontend, API, renderer, route, deployment, archive-object, or title path is authorized. The final Git changed-path receipt and boundary result is recorded in `raw/test_results.tsv`; any path outside the authorized set fails the boundary gate.

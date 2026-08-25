@@ -1,0 +1,3 @@
+# Executive receipt
+
+Round 10 binds source `0241b0f51e2523901b0858d54ffb7f5d2a9aa13c`, Round 9 registry `818b306406d6a557a563ec285ae36394106c4c88a3e14cae19e4f1da4e92f4d5`, and exact 16-term input hash `da22e62828b9d6ae2dd1692ec4f23b82a984ce9d53240d198246915668481aec`. Exhaustive matrix construction records 8 bounded candidate Node roles, 8 deferred roles, 0 passing pairs, 3 deferred pairs, 16 rejected diagonals, and 237 unsupported-default-deny cells. All seven computational roles reviewed every Node and matrix cell through independently executed process receipts. External human domain review is false. Active grammar remains unresolved.

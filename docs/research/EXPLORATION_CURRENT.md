@@ -10,8 +10,24 @@ External models are denied by default and the approved count is zero. The relati
 
 TRACE v49 Round 9 completed the first scholarly vocabulary-discovery round. Its frozen research registry contains 33 exact noun or nominal-phrase candidates backed by 50 scholarly works and candidate-registry SHA-256 `818b306406d6a557a563ec285ae36394106c4c88a3e14cae19e4f1da4e92f4d5`. Exhaustive verification passed 16 source-bounded research senses to the grammar handoff, deferred 12, and rejected 5. This is a research-candidate decision only: active relation type count remains zero, `UNRESOLVED_RELATION_VOCABULARY_VERSION` and `UNRESOLVED_RELATION_GRAMMAR_VERSION` remain unchanged, and no grammar has been selected.
 
-Next: **Design-History Relation Grammar Round 1**, consuming only the 16 passed Round 9 rows and applying complete scholarly verification to every proposed grammar rule.
+TRACE v49 Round 10 completed the first relation-grammar research round over exactly those 16 senses. Eight senses retain bounded research-candidate Node roles and eight remain deferred. The complete 256-cell ordered-pair matrix authorizes zero pair rules: three pairs remain deferred research questions, 16 diagonals reject unsupported self-relations, and 237 pairs default deny. All eight deferred senses are blocked by the semantic any-like/universal-node gate. No active relation vocabulary, grammar, Cluster, chain, arrow, self-loop, renderer, route, or API was selected.
+
+The Round 10 result is `GRAMMAR_CANDIDATES_READY_WITH_LIMITATIONS`, but `RELATION_GRAMMAR_CANDIDATE_READY_FOR_IMAGE_BUILD=false`. A later image-build and generative-constraints research round may consume the governed negative constraints and bounded Node research candidates only as research inputs; it must not infer missing edges or activate a grammar. Independent scholarly composition evidence and external human design-history review remain future gates.
+
+`UNRESOLVED_RELATION_VOCABULARY_VERSION`
+
+`UNRESOLVED_RELATION_GRAMMAR_VERSION`
+
+`FINAL_ACTIVE_RELATION_TYPE_COUNT=0`
+
+`ACTIVE_EXPLORATION_RELATION_VOCABULARY_CHANGED=false`
+
+`ACTIVE_EXPLORATION_RELATION_GRAMMAR_CHANGED=false`
+
+Next research round: **Exploration Image Build and Generative Constraints Round 1**, constrained by zero authorized Flow edges and no active grammar.
 
 Authoritative conceptual-field package: `docs/research/trace-v49-exploration-conceptual-reset/`.
 
 Authoritative Round 9 vocabulary-evidence package: `docs/research/trace-v49-design-history-relation-vocabulary-round1/`.
+
+Governed Round 10 grammar-research package: `docs/research/trace-v49-design-history-relation-grammar-round1/`.
