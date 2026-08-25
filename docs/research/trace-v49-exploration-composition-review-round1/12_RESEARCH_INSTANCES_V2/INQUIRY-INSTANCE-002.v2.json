@@ -1,0 +1,221 @@
+{
+  "instanceId": "INQUIRY-INSTANCE-002",
+  "instanceVersion": "2",
+  "parentInstanceHash": "4377500a14cdf90767c219971eb23c737548ede2e7aaccef5d42e5086cf83443",
+  "parentInstanceVersion": "1",
+  "freezePackageHash": "b7d42015862e12fd54bc05a9ed0a53223771fc03954c112e72652c0349fb6f90",
+  "seedId": "INQUIRY-SEED-002",
+  "seedHash": "2dbf70a36285d06b114a35d758829c9609b5fa4d95b2ccfb8aef0a5d4484d354",
+  "treeStrategy": "QUALIFIED_PATH",
+  "treeStrategyVersion": "2",
+  "rootInquiry": "How might gendering be examined alongside commodification when the available composition evidence comes from only one source and the market and gender regimes must remain explicit?",
+  "semanticNodeRefs": [
+    {
+      "candidateId": "REL-CAND-0011",
+      "senseId": "REL-CAND-0011#SENSE-A",
+      "label": "gendering",
+      "researchStatus": "BOUNDED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH",
+      "round10NodeRoleDecision": "PASS_FLOW_ELIGIBLE_NODE",
+      "technicalRole": "DIRECTED_PROCESS",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0011:REL-CAND-0011#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0011",
+      "directionalityStatus": "DIRECTED",
+      "qualificationStatus": "gender is performed and historically situated, not inherent in form",
+      "contestationStatus": "CONTESTED",
+      "lexicalAttestationIds": [
+        "ATT-0021",
+        "ATT-0022"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-016",
+        "GRAM-ATT-027"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-015",
+        "GRAM-SRC-026",
+        "SRC-0017",
+        "SRC-0018"
+      ]
+    },
+    {
+      "candidateId": "REL-CAND-0010",
+      "senseId": "REL-CAND-0010#SENSE-A",
+      "label": "commodification",
+      "researchStatus": "BOUNDED_NODE_ROLE_CANDIDATE",
+      "round9Decision": "PASS_TO_GRAMMAR_RESEARCH",
+      "round10NodeRoleDecision": "PASS_FLOW_ELIGIBLE_NODE",
+      "technicalRole": "DIRECTED_STATE_TRANSITION",
+      "plainLanguageGlossRef": "docs/research/trace-v49-design-history-relation-vocabulary-round1/07_SEMANTIC_GLOSS_REGISTRY.tsv#REL-CAND-0010:REL-CAND-0010#SENSE-A",
+      "argumentRoleRef": "docs/research/trace-v49-design-history-relation-grammar-round1/06_ARGUMENT_ROLE_REGISTRY.tsv#REL-CAND-0010",
+      "directionalityStatus": "DIRECTED",
+      "qualificationStatus": "what becomes exchangeable and by whose action must be named",
+      "contestationStatus": "CONTESTED",
+      "lexicalAttestationIds": [
+        "ATT-0019",
+        "ATT-0020"
+      ],
+      "grammarAttestationIds": [
+        "GRAM-ATT-014",
+        "GRAM-ATT-015"
+      ],
+      "sourceIds": [
+        "GRAM-SRC-013",
+        "GRAM-SRC-014",
+        "SRC-0006",
+        "SRC-0017"
+      ]
+    }
+  ],
+  "primaryInquiryFlow": {
+    "flowId": "PRIMARY-FLOW-002",
+    "origin": "RESEARCH_INQUIRY",
+    "carrierKind": "INQUIRY_LINK",
+    "linkKind": "QUALIFICATION_QUESTION",
+    "candidateSenseIds": [
+      "REL-CAND-0011#SENSE-A",
+      "REL-CAND-0010#SENSE-A"
+    ],
+    "navigationDirection": "ROOT_TO_CHILDREN",
+    "historicalDirectionStatus": "UNRESOLVED_OR_NOT_APPLICABLE",
+    "historicalClaim": false,
+    "semanticRelation": false,
+    "evidenceBackedHistoricalFlow": false
+  },
+  "treeItems": [
+    {
+      "itemId": "V2-INQUIRY-INSTANCE-002-ROOT",
+      "itemKind": "INQUIRY_OPERATION",
+      "parentItemId": null,
+      "depth": 0,
+      "order": 0,
+      "label": "How might gendering be examined alongside commodification when the available composition evidence comes from only one source and the market and gender regimes must remain explicit?",
+      "inquiryRole": "ROOT_INQUIRY",
+      "branchStatus": "PRIMARY",
+      "evidenceRefs": [],
+      "gapRefs": [],
+      "convergenceSourceItemIds": [],
+      "navigationTargetItemId": null
+    },
+    {
+      "itemId": "V2-INQUIRY-INSTANCE-002-NODE-1",
+      "itemKind": "SEMANTIC_NODE_REFERENCE",
+      "parentItemId": "V2-INQUIRY-INSTANCE-002-ROOT",
+      "depth": 1,
+      "order": 0,
+      "label": "gendering",
+      "inquiryRole": "PRIMARY_CONCEPT_QUESTION",
+      "branchStatus": "PRIMARY",
+      "evidenceRefs": [
+        "ATT-0021",
+        "ATT-0022",
+        "GRAM-ATT-016",
+        "GRAM-ATT-027"
+      ],
+      "gapRefs": [],
+      "convergenceSourceItemIds": [],
+      "navigationTargetItemId": null,
+      "candidateSenseId": "REL-CAND-0011#SENSE-A"
+    },
+    {
+      "itemId": "V2-INQUIRY-INSTANCE-002-QUALIFICATION",
+      "itemKind": "QUALIFICATION_NOTE",
+      "parentItemId": "V2-INQUIRY-INSTANCE-002-NODE-1",
+      "depth": 2,
+      "order": 0,
+      "label": "Apply the explicit source, regime, role, and scope qualification",
+      "inquiryRole": "MANDATORY_QUALIFICATION_GATE",
+      "branchStatus": "GATE",
+      "evidenceRefs": [
+        "GRAM-ATT-014",
+        "GRAM-ATT-015",
+        "GRAM-ATT-016",
+        "GRAM-ATT-027"
+      ],
+      "gapRefs": [
+        "PAIR-EVIDENCE-GAP:GRAM-RULE-002",
+        "REVIEW-GAP:EXTERNAL-DOMAIN-REVIEW"
+      ],
+      "convergenceSourceItemIds": [],
+      "navigationTargetItemId": null
+    },
+    {
+      "itemId": "V2-INQUIRY-INSTANCE-002-NODE-2",
+      "itemKind": "SEMANTIC_NODE_REFERENCE",
+      "parentItemId": "V2-INQUIRY-INSTANCE-002-QUALIFICATION",
+      "depth": 3,
+      "order": 0,
+      "label": "commodification",
+      "inquiryRole": "QUALIFIED_CONTINUATION",
+      "branchStatus": "PRIMARY",
+      "evidenceRefs": [
+        "ATT-0019",
+        "ATT-0020",
+        "GRAM-ATT-014",
+        "GRAM-ATT-015"
+      ],
+      "gapRefs": [],
+      "convergenceSourceItemIds": [],
+      "navigationTargetItemId": null,
+      "candidateSenseId": "REL-CAND-0010#SENSE-A"
+    },
+    {
+      "itemId": "V2-INQUIRY-INSTANCE-002-BOUNDARY",
+      "itemKind": "CONTESTATION_NOTE",
+      "parentItemId": "V2-INQUIRY-INSTANCE-002-NODE-2",
+      "depth": 4,
+      "order": 0,
+      "label": "Review whether the qualification prevents flattening",
+      "inquiryRole": "QUALIFICATION_REVIEW",
+      "branchStatus": "GATED",
+      "evidenceRefs": [],
+      "gapRefs": [],
+      "convergenceSourceItemIds": [],
+      "navigationTargetItemId": null
+    }
+  ],
+  "evidenceCoverage": {
+    "lexicalAttestationCount": 4,
+    "grammarAttestationCount": 4,
+    "directAttestationCount": 8
+  },
+  "sourceCoverage": {
+    "distinctSourceCount": 7,
+    "sourceIds": [
+      "GRAM-SRC-013",
+      "GRAM-SRC-014",
+      "GRAM-SRC-015",
+      "GRAM-SRC-026",
+      "SRC-0006",
+      "SRC-0017",
+      "SRC-0018"
+    ]
+  },
+  "qualificationRefs": [
+    "gender is performed and historically situated, not inherent in form",
+    "what becomes exchangeable and by whose action must be named"
+  ],
+  "contestationRefs": [
+    "CONTESTED"
+  ],
+  "gapRefs": [
+    "PAIR-EVIDENCE-GAP:GRAM-RULE-002",
+    "REVIEW-GAP:EXTERNAL-DOMAIN-REVIEW"
+  ],
+  "inclusionExplanation": "This research preview includes gendering, commodification because each is a frozen bounded Node-role candidate and the seed is one of the five governed inquiry questions.",
+  "nonClaimExplanation": "The primary carrier is an inquiry link with unresolved historical direction; it asks how to investigate the concepts and does not assert a semantic relation or historical claim.",
+  "evidenceSummary": "Direct binding includes 4 lexical attestations, 4 grammar attestations, and 7 distinct source IDs for this Instance.",
+  "limitationStatement": "The available evidence does not authorize a historical pair rule, public export, active grammar, or semantic Image; external design-history review remains required.",
+  "topologyChange": {
+    "changed": true,
+    "summary": "Enum-only presentation was replaced by a strategy-specific canonical inquiry topology.",
+    "semanticContentUnchanged": true,
+    "evidenceBindingChange": "UNCHANGED"
+  },
+  "historicalClaim": false,
+  "semanticRelation": false,
+  "publicExportable": false,
+  "activationState": "RESEARCH_CANDIDATE_ONLY",
+  "researchPreviewOnly": true,
+  "canonicalHash": "83a3bd0778ae6db5569942e43031e4c025adf160f247643562c02877044ce1dd"
+}

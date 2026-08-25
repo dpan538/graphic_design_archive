@@ -202,6 +202,14 @@ scripts/suggest_region_conflict_historical_splits_v1.py,AUDIT_PROVENANCE_REPRODU
 scripts/summarize_p0_rights_repair_preflight_v1.py,AUDIT_PROVENANCE_REPRODUCTION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
 scripts/trace-v49-analysis/benchmark_trace_v49_preprogram.mjs,CURRENT_V49_TRACE_RESEARCH_VERIFICATION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
 scripts/trace-v49-analysis/generate_trace_v49_round1.py,CURRENT_V49_TRACE_RESEARCH_VERIFICATION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
+scripts/trace-v49-exploration-composition-review/canonical_v2.py,RESEARCH_ENGINE_VALIDATION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
+scripts/trace-v49-exploration-composition-review/fixtures/tree-strategy-conformance-v2.json,RESEARCH_ENGINE_VALIDATION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
+scripts/trace-v49-exploration-composition-review/fixtures/tree-strategy-negative-v2.json,RESEARCH_ENGINE_VALIDATION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
+scripts/trace-v49-exploration-composition-review/generate_round1.py,RESEARCH_ENGINE_VALIDATION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
+scripts/trace-v49-exploration-composition-review/instance_v2.py,RESEARCH_ENGINE_VALIDATION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
+scripts/trace-v49-exploration-composition-review/test_round1.py,RESEARCH_ENGINE_VALIDATION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
+scripts/trace-v49-exploration-composition-review/topology.py,RESEARCH_ENGINE_VALIDATION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
+scripts/trace-v49-exploration-composition-review/validate_round1.py,RESEARCH_ENGINE_VALIDATION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
 scripts/trace-v49-exploration-constraint-kernel/generate_round1.py,CURRENT_V49_EXPLORATION_CONSTRAINT_KERNEL_VERIFICATION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
 scripts/trace-v49-exploration-constraint-kernel/reconcile_round10.py,CURRENT_V49_EXPLORATION_CONSTRAINT_KERNEL_VERIFICATION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
 scripts/trace-v49-exploration-constraint-kernel/validate_round1.py,CURRENT_V49_EXPLORATION_CONSTRAINT_KERNEL_VERIFICATION,False,False,False,False,True,DOCUMENTED_ALLOWLIST

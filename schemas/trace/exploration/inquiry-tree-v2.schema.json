@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://graphic-design-archive.local/schemas/trace/exploration/inquiry-tree-v2.schema.json",
+  "title": "TRACE inquiry tree v2",
+  "$defs": {
+    "treeItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "itemId",
+        "itemKind",
+        "parentItemId",
+        "depth",
+        "order",
+        "label",
+        "inquiryRole",
+        "branchStatus",
+        "evidenceRefs",
+        "gapRefs",
+        "convergenceSourceItemIds",
+        "navigationTargetItemId"
+      ],
+      "properties": {
+        "itemId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "itemKind": {
+          "enum": [
+            "SEMANTIC_NODE_REFERENCE",
+            "INQUIRY_OPERATION",
+            "EVIDENCE_NOTE",
+            "QUALIFICATION_NOTE",
+            "CONTESTATION_NOTE",
+            "EVIDENCE_GAP_NOTE"
+          ]
+        },
+        "parentItemId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "depth": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "inquiryRole": {
+          "type": "string",
+          "minLength": 1
+        },
+        "branchStatus": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidateSenseId": {
+          "type": "string"
+        },
+        "evidenceRefs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "gapRefs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "convergenceSourceItemIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "maxItems": 2,
+          "items": {
+            "type": "string"
+          }
+        },
+        "navigationTargetItemId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "rootInquiryId",
+    "strategy",
+    "treeItems"
+  ],
+  "properties": {
+    "rootInquiryId": {
+      "type": "string"
+    },
+    "strategy": {
+      "enum": [
+        "LINEAR_PATH",
+        "BINARY_FORK",
+        "BINARY_CONVERGENCE",
+        "QUALIFIED_PATH",
+        "REFLEXIVE_RETURN",
+        "EVIDENCE_GAP_TREE"
+      ]
+    },
+    "treeItems": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 7,
+      "items": {
+        "$ref": "#/$defs/treeItem"
+      }
+    }
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://graphic-design-archive.local/schemas/trace/exploration/research-inquiry-instance-v2.schema.json",
+  "title": "TRACE Research Inquiry Instance v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "instanceId",
+    "instanceVersion",
+    "parentInstanceHash",
+    "parentInstanceVersion",
+    "freezePackageHash",
+    "seedId",
+    "seedHash",
+    "treeStrategy",
+    "treeStrategyVersion",
+    "rootInquiry",
+    "semanticNodeRefs",
+    "primaryInquiryFlow",
+    "treeItems",
+    "evidenceCoverage",
+    "sourceCoverage",
+    "qualificationRefs",
+    "contestationRefs",
+    "gapRefs",
+    "inclusionExplanation",
+    "nonClaimExplanation",
+    "evidenceSummary",
+    "limitationStatement",
+    "topologyChange",
+    "historicalClaim",
+    "semanticRelation",
+    "publicExportable",
+    "activationState",
+    "researchPreviewOnly",
+    "canonicalHash"
+  ],
+  "properties": {
+    "instanceId": {
+      "type": "string",
+      "pattern": "^INQUIRY-INSTANCE-[0-9]{3}$"
+    },
+    "instanceVersion": {
+      "const": "2"
+    },
+    "parentInstanceHash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "parentInstanceVersion": {
+      "const": "1"
+    },
+    "freezePackageHash": {
+      "const": "b7d42015862e12fd54bc05a9ed0a53223771fc03954c112e72652c0349fb6f90"
+    },
+    "seedId": {
+      "type": "string"
+    },
+    "seedHash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "treeStrategy": {
+      "enum": [
+        "LINEAR_PATH",
+        "BINARY_FORK",
+        "BINARY_CONVERGENCE",
+        "QUALIFIED_PATH",
+        "REFLEXIVE_RETURN",
+        "EVIDENCE_GAP_TREE"
+      ]
+    },
+    "treeStrategyVersion": {
+      "const": "2"
+    },
+    "rootInquiry": {
+      "type": "string",
+      "pattern": "\\?$"
+    },
+    "semanticNodeRefs": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 2,
+      "items": {
+        "type": "object"
+      }
+    },
+    "primaryInquiryFlow": {
+      "type": "object"
+    },
+    "treeItems": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 7,
+      "items": {
+        "$ref": "inquiry-tree-v2.schema.json#/$defs/treeItem"
+      }
+    },
+    "evidenceCoverage": {
+      "type": "object"
+    },
+    "sourceCoverage": {
+      "type": "object"
+    },
+    "qualificationRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "contestationRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "gapRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "inclusionExplanation": {
+      "type": "string"
+    },
+    "nonClaimExplanation": {
+      "type": "string"
+    },
+    "evidenceSummary": {
+      "type": "string"
+    },
+    "limitationStatement": {
+      "type": "string"
+    },
+    "topologyChange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "changed",
+        "summary",
+        "semanticContentUnchanged",
+        "evidenceBindingChange"
+      ],
+      "properties": {
+        "changed": {
+          "const": true
+        },
+        "summary": {
+          "type": "string"
+        },
+        "semanticContentUnchanged": {
+          "const": true
+        },
+        "evidenceBindingChange": {
+          "const": "UNCHANGED"
+        }
+      }
+    },
+    "historicalClaim": {
+      "const": false
+    },
+    "semanticRelation": {
+      "const": false
+    },
+    "publicExportable": {
+      "const": false
+    },
+    "activationState": {
+      "const": "RESEARCH_CANDIDATE_ONLY"
+    },
+    "researchPreviewOnly": {
+      "const": true
+    },
+    "canonicalHash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

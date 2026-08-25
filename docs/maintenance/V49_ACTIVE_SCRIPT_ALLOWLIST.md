@@ -7,3 +7,5 @@ The immutable source anchor `v49-data-api-closure-20260821` preserves every orig
 Machine fields include path, category, current runtime/API/database/CI use, retained audit role, and decision. There are no unclassified scripts.
 
 Round 11–12 history coordination rebuilds all three ledgers from the final merge index. The final set includes every Round 10 grammar script, every Round 11 constraint-kernel script, and all Round 12 inquiry-engine scripts plus the shared cross-runtime fixture. Their classifications remain governed research/audit reproduction roles; no runtime, API, database, CI, or public Exploration activation is inferred by integration.
+
+Round 13 adds 8 composition-review reference, generator, validator, test, and topology-fixture files. They are research/audit reproduction tooling only and do not activate runtime semantics. The reconciled count is 238 with zero missing, extra, duplicate, or unknown classifications.

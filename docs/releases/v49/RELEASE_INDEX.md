@@ -33,3 +33,13 @@ The integration is documentation and reachability closure only. It performs no d
 - Audit package: `docs/audits/v49-round11-round12-main-integration/`.
 - Recovery assets: two remote backup branches, two annotated tags, and retained verified bundle SHA-256 `dbd5c6160ad0305eb7bfaa7932e53c8637fa7eeec9bc7484d5043e84e943695c`.
 - Integration policy: two-parent merge, no history rewrite, no force push, no deletion, no deployment, and no activation of research candidates.
+
+## TRACE Round 13 research closure — 2026-08-25
+
+- Source anchor: `83f1fba3464f5828fcfd15a1c557035bb1341bf3`.
+- Research package: `docs/research/trace-v49-exploration-composition-review-round1/`.
+- Audit package: `docs/audits/v49-exploration-composition-review-round1/`.
+- Preservation: Round 12 candidate freeze v1 and five Instance v1 artifacts remain immutable; five Instance v2 artifacts bind their parent hashes and change topology only.
+- Decision: two pair questions remain inquiry-only, one remains deferred, and zero pair activation candidates are produced. Seven narrower noun candidates, six inquiry topologies, and one structural annotation remain inactive external-review candidates.
+- Boundary: no active vocabulary or grammar, no real semantic Image, no product route/API/renderer, no protected-system semantic change, and no deployment.
+- Next gate: external human design-history review followed by a separate semantic-activation decision.

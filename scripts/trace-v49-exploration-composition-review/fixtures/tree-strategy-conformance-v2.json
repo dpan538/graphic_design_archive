@@ -1,0 +1,573 @@
+{
+  "fixtureVersion": "2",
+  "syntheticOnly": true,
+  "historicalClaim": false,
+  "fixtures": [
+    {
+      "fixtureId": "TREE-CONF-001",
+      "strategy": "LINEAR_PATH",
+      "topologySignature": "INQUIRY_OPERATION|ROOT|0|PRIMARY||;SEMANTIC_NODE_REFERENCE|0|1|PRIMARY||;EVIDENCE_NOTE|1|2|PRIMARY||;SEMANTIC_NODE_REFERENCE|2|3|PRIMARY||;QUALIFICATION_NOTE|3|4|PRIMARY||",
+      "treeItems": [
+        {
+          "itemId": "SYNTH-01-ROOT",
+          "itemKind": "INQUIRY_OPERATION",
+          "parentItemId": null,
+          "depth": 0,
+          "order": 0,
+          "label": "How should two neutral concepts be investigated?",
+          "inquiryRole": "ROOT_INQUIRY",
+          "branchStatus": "PRIMARY",
+          "evidenceRefs": [],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null
+        },
+        {
+          "itemId": "SYNTH-01-NODE-1",
+          "itemKind": "SEMANTIC_NODE_REFERENCE",
+          "parentItemId": "SYNTH-01-ROOT",
+          "depth": 1,
+          "order": 0,
+          "label": "neutral concept A",
+          "inquiryRole": "STARTING_CONCEPT_QUESTION",
+          "branchStatus": "PRIMARY",
+          "evidenceRefs": [
+            "SYNTHETIC-GRAM-A",
+            "SYNTHETIC-LEX-A"
+          ],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null,
+          "candidateSenseId": "SYNTHETIC-SENSE-A"
+        },
+        {
+          "itemId": "SYNTH-01-EVIDENCE",
+          "itemKind": "EVIDENCE_NOTE",
+          "parentItemId": "SYNTH-01-NODE-1",
+          "depth": 2,
+          "order": 0,
+          "label": "Check the bounded evidence before continuing",
+          "inquiryRole": "EVIDENCE_CHECK",
+          "branchStatus": "PRIMARY",
+          "evidenceRefs": [
+            "SYNTHETIC-GRAM-A",
+            "SYNTHETIC-GRAM-B"
+          ],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null
+        },
+        {
+          "itemId": "SYNTH-01-NODE-2",
+          "itemKind": "SEMANTIC_NODE_REFERENCE",
+          "parentItemId": "SYNTH-01-EVIDENCE",
+          "depth": 3,
+          "order": 0,
+          "label": "neutral concept B",
+          "inquiryRole": "FOLLOWING_CONCEPT_QUESTION",
+          "branchStatus": "PRIMARY",
+          "evidenceRefs": [
+            "SYNTHETIC-GRAM-B",
+            "SYNTHETIC-LEX-B"
+          ],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null,
+          "candidateSenseId": "SYNTHETIC-SENSE-B"
+        },
+        {
+          "itemId": "SYNTH-01-BOUNDARY",
+          "itemKind": "QUALIFICATION_NOTE",
+          "parentItemId": "SYNTH-01-NODE-2",
+          "depth": 4,
+          "order": 0,
+          "label": "Keep the inquiry sequence distinct from historical succession",
+          "inquiryRole": "SEQUENCE_BOUNDARY",
+          "branchStatus": "PRIMARY",
+          "evidenceRefs": [],
+          "gapRefs": [
+            "SYNTHETIC-GAP"
+          ],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null
+        }
+      ],
+      "productionEligible": false
+    },
+    {
+      "fixtureId": "TREE-CONF-002",
+      "strategy": "BINARY_FORK",
+      "topologySignature": "INQUIRY_OPERATION|ROOT|0|PRIMARY||;INQUIRY_OPERATION|0|1|ALTERNATIVE||;INQUIRY_OPERATION|0|1|ALTERNATIVE||;SEMANTIC_NODE_REFERENCE|1|2|PRIMARY||;SEMANTIC_NODE_REFERENCE|2|2|PRIMARY||",
+      "treeItems": [
+        {
+          "itemId": "SYNTH-02-ROOT",
+          "itemKind": "INQUIRY_OPERATION",
+          "parentItemId": null,
+          "depth": 0,
+          "order": 0,
+          "label": "How should two neutral concepts be investigated?",
+          "inquiryRole": "ROOT_INQUIRY",
+          "branchStatus": "PRIMARY",
+          "evidenceRefs": [],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null
+        },
+        {
+          "itemId": "SYNTH-02-BRANCH-A",
+          "itemKind": "INQUIRY_OPERATION",
+          "parentItemId": "SYNTH-02-ROOT",
+          "depth": 1,
+          "order": 0,
+          "label": "Examine the first bounded interpretation",
+          "inquiryRole": "ALTERNATIVE_BRANCH_A",
+          "branchStatus": "ALTERNATIVE",
+          "evidenceRefs": [],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null
+        },
+        {
+          "itemId": "SYNTH-02-BRANCH-B",
+          "itemKind": "INQUIRY_OPERATION",
+          "parentItemId": "SYNTH-02-ROOT",
+          "depth": 1,
+          "order": 1,
+          "label": "Examine the second bounded interpretation",
+          "inquiryRole": "ALTERNATIVE_BRANCH_B",
+          "branchStatus": "ALTERNATIVE",
+          "evidenceRefs": [],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null
+        },
+        {
+          "itemId": "SYNTH-02-NODE-1",
+          "itemKind": "SEMANTIC_NODE_REFERENCE",
+          "parentItemId": "SYNTH-02-BRANCH-A",
+          "depth": 2,
+          "order": 0,
+          "label": "neutral concept A",
+          "inquiryRole": "BRANCH_A_CONCEPT",
+          "branchStatus": "PRIMARY",
+          "evidenceRefs": [
+            "SYNTHETIC-GRAM-A",
+            "SYNTHETIC-LEX-A"
+          ],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null,
+          "candidateSenseId": "SYNTHETIC-SENSE-A"
+        },
+        {
+          "itemId": "SYNTH-02-NODE-2",
+          "itemKind": "SEMANTIC_NODE_REFERENCE",
+          "parentItemId": "SYNTH-02-BRANCH-B",
+          "depth": 2,
+          "order": 0,
+          "label": "neutral concept B",
+          "inquiryRole": "BRANCH_B_CONCEPT",
+          "branchStatus": "PRIMARY",
+          "evidenceRefs": [
+            "SYNTHETIC-GRAM-B",
+            "SYNTHETIC-LEX-B"
+          ],
+          "gapRefs": [
+            "SYNTHETIC-GAP"
+          ],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null,
+          "candidateSenseId": "SYNTHETIC-SENSE-B"
+        }
+      ],
+      "productionEligible": false
+    },
+    {
+      "fixtureId": "TREE-CONF-003",
+      "strategy": "BINARY_CONVERGENCE",
+      "topologySignature": "INQUIRY_OPERATION|ROOT|0|PRIMARY||;INQUIRY_OPERATION|0|1|CONVERGING||;INQUIRY_OPERATION|0|1|CONVERGING||;SEMANTIC_NODE_REFERENCE|1|2|PRIMARY||;SEMANTIC_NODE_REFERENCE|2|2|PRIMARY||;INQUIRY_OPERATION|3|3|CONVERGENCE|3,4|",
+      "treeItems": [
+        {
+          "itemId": "SYNTH-03-ROOT",
+          "itemKind": "INQUIRY_OPERATION",
+          "parentItemId": null,
+          "depth": 0,
+          "order": 0,
+          "label": "How should two neutral concepts be investigated?",
+          "inquiryRole": "ROOT_INQUIRY",
+          "branchStatus": "PRIMARY",
+          "evidenceRefs": [],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null
+        },
+        {
+          "itemId": "SYNTH-03-BRANCH-A",
+          "itemKind": "INQUIRY_OPERATION",
+          "parentItemId": "SYNTH-03-ROOT",
+          "depth": 1,
+          "order": 0,
+          "label": "Develop the first bounded question branch",
+          "inquiryRole": "CONVERGENCE_BRANCH_A",
+          "branchStatus": "CONVERGING",
+          "evidenceRefs": [],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null
+        },
+        {
+          "itemId": "SYNTH-03-BRANCH-B",
+          "itemKind": "INQUIRY_OPERATION",
+          "parentItemId": "SYNTH-03-ROOT",
+          "depth": 1,
+          "order": 1,
+          "label": "Develop the second bounded question branch",
+          "inquiryRole": "CONVERGENCE_BRANCH_B",
+          "branchStatus": "CONVERGING",
+          "evidenceRefs": [],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null
+        },
+        {
+          "itemId": "SYNTH-03-NODE-1",
+          "itemKind": "SEMANTIC_NODE_REFERENCE",
+          "parentItemId": "SYNTH-03-BRANCH-A",
+          "depth": 2,
+          "order": 0,
+          "label": "neutral concept A",
+          "inquiryRole": "CONVERGENCE_INPUT_A",
+          "branchStatus": "PRIMARY",
+          "evidenceRefs": [
+            "SYNTHETIC-GRAM-A",
+            "SYNTHETIC-LEX-A"
+          ],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null,
+          "candidateSenseId": "SYNTHETIC-SENSE-A"
+        },
+        {
+          "itemId": "SYNTH-03-NODE-2",
+          "itemKind": "SEMANTIC_NODE_REFERENCE",
+          "parentItemId": "SYNTH-03-BRANCH-B",
+          "depth": 2,
+          "order": 0,
+          "label": "neutral concept B",
+          "inquiryRole": "CONVERGENCE_INPUT_B",
+          "branchStatus": "PRIMARY",
+          "evidenceRefs": [
+            "SYNTHETIC-GRAM-B",
+            "SYNTHETIC-LEX-B"
+          ],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null,
+          "candidateSenseId": "SYNTHETIC-SENSE-B"
+        },
+        {
+          "itemId": "SYNTH-03-CONVERGENCE",
+          "itemKind": "INQUIRY_OPERATION",
+          "parentItemId": "SYNTH-03-NODE-1",
+          "depth": 3,
+          "order": 0,
+          "label": "Bring both question branches to one shared unresolved review problem",
+          "inquiryRole": "SHARED_REVIEW_PROBLEM",
+          "branchStatus": "CONVERGENCE",
+          "evidenceRefs": [
+            "SYNTHETIC-GRAM-A",
+            "SYNTHETIC-GRAM-B"
+          ],
+          "gapRefs": [
+            "SYNTHETIC-GAP"
+          ],
+          "convergenceSourceItemIds": [
+            "SYNTH-03-NODE-1",
+            "SYNTH-03-NODE-2"
+          ],
+          "navigationTargetItemId": null
+        }
+      ],
+      "productionEligible": false
+    },
+    {
+      "fixtureId": "TREE-CONF-004",
+      "strategy": "QUALIFIED_PATH",
+      "topologySignature": "INQUIRY_OPERATION|ROOT|0|PRIMARY||;SEMANTIC_NODE_REFERENCE|0|1|PRIMARY||;QUALIFICATION_NOTE|1|2|GATE||;SEMANTIC_NODE_REFERENCE|2|3|PRIMARY||;CONTESTATION_NOTE|3|4|GATED||",
+      "treeItems": [
+        {
+          "itemId": "SYNTH-04-ROOT",
+          "itemKind": "INQUIRY_OPERATION",
+          "parentItemId": null,
+          "depth": 0,
+          "order": 0,
+          "label": "How should two neutral concepts be investigated?",
+          "inquiryRole": "ROOT_INQUIRY",
+          "branchStatus": "PRIMARY",
+          "evidenceRefs": [],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null
+        },
+        {
+          "itemId": "SYNTH-04-NODE-1",
+          "itemKind": "SEMANTIC_NODE_REFERENCE",
+          "parentItemId": "SYNTH-04-ROOT",
+          "depth": 1,
+          "order": 0,
+          "label": "neutral concept A",
+          "inquiryRole": "PRIMARY_CONCEPT_QUESTION",
+          "branchStatus": "PRIMARY",
+          "evidenceRefs": [
+            "SYNTHETIC-GRAM-A",
+            "SYNTHETIC-LEX-A"
+          ],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null,
+          "candidateSenseId": "SYNTHETIC-SENSE-A"
+        },
+        {
+          "itemId": "SYNTH-04-QUALIFICATION",
+          "itemKind": "QUALIFICATION_NOTE",
+          "parentItemId": "SYNTH-04-NODE-1",
+          "depth": 2,
+          "order": 0,
+          "label": "Apply the explicit source, regime, role, and scope qualification",
+          "inquiryRole": "MANDATORY_QUALIFICATION_GATE",
+          "branchStatus": "GATE",
+          "evidenceRefs": [
+            "SYNTHETIC-GRAM-A",
+            "SYNTHETIC-GRAM-B"
+          ],
+          "gapRefs": [
+            "SYNTHETIC-GAP"
+          ],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null
+        },
+        {
+          "itemId": "SYNTH-04-NODE-2",
+          "itemKind": "SEMANTIC_NODE_REFERENCE",
+          "parentItemId": "SYNTH-04-QUALIFICATION",
+          "depth": 3,
+          "order": 0,
+          "label": "neutral concept B",
+          "inquiryRole": "QUALIFIED_CONTINUATION",
+          "branchStatus": "PRIMARY",
+          "evidenceRefs": [
+            "SYNTHETIC-GRAM-B",
+            "SYNTHETIC-LEX-B"
+          ],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null,
+          "candidateSenseId": "SYNTHETIC-SENSE-B"
+        },
+        {
+          "itemId": "SYNTH-04-BOUNDARY",
+          "itemKind": "CONTESTATION_NOTE",
+          "parentItemId": "SYNTH-04-NODE-2",
+          "depth": 4,
+          "order": 0,
+          "label": "Review whether the qualification prevents flattening",
+          "inquiryRole": "QUALIFICATION_REVIEW",
+          "branchStatus": "GATED",
+          "evidenceRefs": [],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null
+        }
+      ],
+      "productionEligible": false
+    },
+    {
+      "fixtureId": "TREE-CONF-005",
+      "strategy": "REFLEXIVE_RETURN",
+      "topologySignature": "INQUIRY_OPERATION|ROOT|0|PRIMARY||;SEMANTIC_NODE_REFERENCE|0|1|PRIMARY||;INQUIRY_OPERATION|1|2|PRIMARY||;CONTESTATION_NOTE|2|3|RETURN||0;QUALIFICATION_NOTE|3|4|RETURN||",
+      "treeItems": [
+        {
+          "itemId": "SYNTH-05-ROOT",
+          "itemKind": "INQUIRY_OPERATION",
+          "parentItemId": null,
+          "depth": 0,
+          "order": 0,
+          "label": "How should two neutral concepts be investigated?",
+          "inquiryRole": "ROOT_INQUIRY",
+          "branchStatus": "PRIMARY",
+          "evidenceRefs": [],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null
+        },
+        {
+          "itemId": "SYNTH-05-NODE-1",
+          "itemKind": "SEMANTIC_NODE_REFERENCE",
+          "parentItemId": "SYNTH-05-ROOT",
+          "depth": 1,
+          "order": 0,
+          "label": "neutral concept A",
+          "inquiryRole": "REFLEXIVE_CONCEPT_QUESTION",
+          "branchStatus": "PRIMARY",
+          "evidenceRefs": [
+            "SYNTHETIC-GRAM-A",
+            "SYNTHETIC-LEX-A"
+          ],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null,
+          "candidateSenseId": "SYNTHETIC-SENSE-A"
+        },
+        {
+          "itemId": "SYNTH-05-REFLEXIVE",
+          "itemKind": "INQUIRY_OPERATION",
+          "parentItemId": "SYNTH-05-NODE-1",
+          "depth": 2,
+          "order": 0,
+          "label": "Examine actor position, audience, gaze, and power",
+          "inquiryRole": "SELF_POSITIONING_QUESTION",
+          "branchStatus": "PRIMARY",
+          "evidenceRefs": [
+            "SYNTHETIC-GRAM-A",
+            "SYNTHETIC-GRAM-B"
+          ],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null
+        },
+        {
+          "itemId": "SYNTH-05-RETURN",
+          "itemKind": "CONTESTATION_NOTE",
+          "parentItemId": "SYNTH-05-REFLEXIVE",
+          "depth": 3,
+          "order": 0,
+          "label": "Return navigation to the root inquiry without a semantic self-loop",
+          "inquiryRole": "NAVIGATION_RETURN",
+          "branchStatus": "RETURN",
+          "evidenceRefs": [],
+          "gapRefs": [
+            "SYNTHETIC-GAP"
+          ],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": "SYNTH-05-ROOT"
+        },
+        {
+          "itemId": "SYNTH-05-NO-LOOP",
+          "itemKind": "QUALIFICATION_NOTE",
+          "parentItemId": "SYNTH-05-RETURN",
+          "depth": 4,
+          "order": 0,
+          "label": "The return is navigational and never a historical relation",
+          "inquiryRole": "RETURN_BOUNDARY",
+          "branchStatus": "RETURN",
+          "evidenceRefs": [],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null
+        }
+      ],
+      "productionEligible": false
+    },
+    {
+      "fixtureId": "TREE-CONF-006",
+      "strategy": "EVIDENCE_GAP_TREE",
+      "topologySignature": "INQUIRY_OPERATION|ROOT|0|PRIMARY||;INQUIRY_OPERATION|0|1|SUPPORTED||;INQUIRY_OPERATION|0|1|UNRESOLVED||;SEMANTIC_NODE_REFERENCE|1|2|PRIMARY||;EVIDENCE_NOTE|3|3|SUPPORTED||;EVIDENCE_GAP_NOTE|2|2|UNRESOLVED||",
+      "treeItems": [
+        {
+          "itemId": "SYNTH-06-ROOT",
+          "itemKind": "INQUIRY_OPERATION",
+          "parentItemId": null,
+          "depth": 0,
+          "order": 0,
+          "label": "How should two neutral concepts be investigated?",
+          "inquiryRole": "ROOT_INQUIRY",
+          "branchStatus": "PRIMARY",
+          "evidenceRefs": [],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null
+        },
+        {
+          "itemId": "SYNTH-06-SUPPORTED",
+          "itemKind": "INQUIRY_OPERATION",
+          "parentItemId": "SYNTH-06-ROOT",
+          "depth": 1,
+          "order": 0,
+          "label": "Follow the source-supported branch",
+          "inquiryRole": "SUPPORTED_BRANCH",
+          "branchStatus": "SUPPORTED",
+          "evidenceRefs": [],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null
+        },
+        {
+          "itemId": "SYNTH-06-UNRESOLVED",
+          "itemKind": "INQUIRY_OPERATION",
+          "parentItemId": "SYNTH-06-ROOT",
+          "depth": 1,
+          "order": 1,
+          "label": "Follow the missing-evidence branch",
+          "inquiryRole": "UNRESOLVED_BRANCH",
+          "branchStatus": "UNRESOLVED",
+          "evidenceRefs": [],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null
+        },
+        {
+          "itemId": "SYNTH-06-NODE-1",
+          "itemKind": "SEMANTIC_NODE_REFERENCE",
+          "parentItemId": "SYNTH-06-SUPPORTED",
+          "depth": 2,
+          "order": 0,
+          "label": "neutral concept A",
+          "inquiryRole": "SUPPORTED_CONCEPT",
+          "branchStatus": "PRIMARY",
+          "evidenceRefs": [
+            "SYNTHETIC-GRAM-A",
+            "SYNTHETIC-LEX-A"
+          ],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null,
+          "candidateSenseId": "SYNTHETIC-SENSE-A"
+        },
+        {
+          "itemId": "SYNTH-06-EVIDENCE",
+          "itemKind": "EVIDENCE_NOTE",
+          "parentItemId": "SYNTH-06-NODE-1",
+          "depth": 3,
+          "order": 0,
+          "label": "Inspect the bounded support",
+          "inquiryRole": "SUPPORTED_EVIDENCE",
+          "branchStatus": "SUPPORTED",
+          "evidenceRefs": [
+            "SYNTHETIC-GRAM-A",
+            "SYNTHETIC-GRAM-B"
+          ],
+          "gapRefs": [],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null
+        },
+        {
+          "itemId": "SYNTH-06-GAP",
+          "itemKind": "EVIDENCE_GAP_NOTE",
+          "parentItemId": "SYNTH-06-UNRESOLVED",
+          "depth": 2,
+          "order": 0,
+          "label": "Record the unresolved evidence as a first-class branch",
+          "inquiryRole": "FIRST_CLASS_EVIDENCE_GAP",
+          "branchStatus": "UNRESOLVED",
+          "evidenceRefs": [],
+          "gapRefs": [
+            "SYNTHETIC-GAP"
+          ],
+          "convergenceSourceItemIds": [],
+          "navigationTargetItemId": null
+        }
+      ],
+      "productionEligible": false
+    }
+  ]
+}

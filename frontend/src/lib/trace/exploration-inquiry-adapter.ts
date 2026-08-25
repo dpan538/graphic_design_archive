@@ -20,7 +20,7 @@ export class InquiryAdapterError extends Error {
 
 const SORTED_STRING_ARRAY_KEYS = new Set([
   "allowedOrigins", "allowedTreeStrategies", "clusterHandoffIds", "contestationRefs",
-  "evidenceRefs", "gapRefs", "grammarAttestationIds", "grammarAttestationRefs",
+  "convergenceSourceItemIds", "evidenceRefs", "gapRefs", "grammarAttestationIds", "grammarAttestationRefs",
   "lexicalAttestationIds", "observedChainIds", "pairQuestionIds", "qualificationRefs",
   "sourceIds", "unresolvedGapRefs", "vocabularyGapIds",
 ]);

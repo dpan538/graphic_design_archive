@@ -73,3 +73,21 @@ Authoritative Round 9 vocabulary-evidence package: `docs/research/trace-v49-desi
 Governed Round 10 grammar-research package: `docs/research/trace-v49-design-history-relation-grammar-round1/`.
 
 Governed Round 12 freeze and inquiry package: `docs/research/trace-v49-exploration-inquiry-flow-round1/`.
+
+TRACE v49 Round 13 strengthens the exact three deferred pair questions without enumerating the 8×8 matrix. Professionalization/institutionalization and imitation/piracy now have sufficient source-bounded support to remain useful inquiry compositions, but neither has a stable historical direction and neither is an active pair rule. Gendering/commodification still lacks a second qualifying design-history composition article and remains deferred.
+
+Seven narrower noun-level vocabulary candidates and one coloniality structural-annotation candidate are packaged for external review only. Six Python TreeStrategy functions now produce genuinely distinct inquiry topologies, and five Instance v2 artifacts preserve the v1 semantic Nodes, questions, evidence, claims, and activation status while replacing enum-only topology presentation.
+
+The activation-candidate package is inactive, cannot feed the real Image compiler, requires external human review, and requires a separate activation decision. The 36-unit review packet contains no fabricated answers. Active vocabulary and grammar remain unresolved; active pair, Cluster, chain, and real semantic Image counts remain zero.
+
+`ROUND13_COMPOSITION_REVIEW_READY_WITH_LIMITATIONS`
+
+`ACTIVE_RELATION_VOCABULARY_COUNT=0`
+
+`ACTIVE_RELATION_GRAMMAR_COUNT=0`
+
+`EXTERNAL_HUMAN_DOMAIN_REVIEW_COMPLETED=false`
+
+Next gate after Round 13: **External Human Review and Separate Semantic Activation Decision**.
+
+Governed Round 13 composition-review package: `docs/research/trace-v49-exploration-composition-review-round1/`.

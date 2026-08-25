@@ -1,0 +1,135 @@
+{
+  "packageId": "trace-exploration-inquiry-grammar-activation-candidates-v1",
+  "version": "1",
+  "sourceRound": 13,
+  "sourceCommit": "83f1fba3464f5828fcfd15a1c557035bb1341bf3",
+  "active": false,
+  "requiresExternalHumanReview": true,
+  "requiresSeparateActivationDecision": true,
+  "feedsRealImageCompiler": false,
+  "nodeActivationCandidates": [
+    {
+      "candidateId": "R13-SPLIT-001",
+      "label": "cultural transfer",
+      "gapId": "GAP-002",
+      "argumentRoles": "source;transferred content;carrier or institution;receiving actors and agency;receiving context;contested reception",
+      "directionality": "SOURCE_BOUNDED_CONTESTED_TRANSFER_WITH_RECEIVING_AGENCY",
+      "active": false
+    },
+    {
+      "candidateId": "R13-SPLIT-002",
+      "label": "cultural negotiation",
+      "gapId": "GAP-002",
+      "argumentRoles": "participants;contact zone;shared issue;power regime;acts of borrowing, adaptation, or rejection",
+      "directionality": "MULTIDIRECTIONAL",
+      "active": false
+    },
+    {
+      "candidateId": "R13-SPLIT-003",
+      "label": "cultural adaptation",
+      "gapId": "GAP-002",
+      "argumentRoles": "source work;adapter;target context;retained and modified features;adapted artifact",
+      "directionality": "SOURCE_TO_ADAPTED_VERSION",
+      "active": false
+    },
+    {
+      "candidateId": "R13-SPLIT-004",
+      "label": "cultural transformation",
+      "gapId": "GAP-002",
+      "argumentRoles": "historical state C0;actors and forces;material evidence;time;historical state C1",
+      "directionality": "STATE_T0_TO_STATE_T1",
+      "active": false
+    },
+    {
+      "candidateId": "R13-SPLIT-005",
+      "label": "material displacement",
+      "gapId": "GAP-003",
+      "argumentRoles": "moved material;production site;designed destination;supply chain;labor and ecological effects",
+      "directionality": "ORIGIN_TO_RECEIVING_CONTEXT",
+      "active": false
+    },
+    {
+      "candidateId": "R13-SPLIT-006",
+      "label": "mobile object",
+      "gapId": "GAP-004",
+      "argumentRoles": "moved entity;origin;carrier;route;receiving context;reception change",
+      "directionality": "ITINERARY_WITHOUT_TRANSITIVITY",
+      "active": false
+    },
+    {
+      "candidateId": "R13-SPLIT-007",
+      "label": "design diplomacy",
+      "gapId": "GAP-005",
+      "argumentRoles": "state or institution;designers and curators;designed media or exposition;negotiating counterpart;foreign public;contingent reception",
+      "directionality": "INTENTIONAL_OUTWARD_WITH_NEGOTIATION_AND_CONTEXTUAL_RECEPTION",
+      "active": false
+    }
+  ],
+  "pairCompositionCandidates": [],
+  "inquiryGrammarCandidates": [
+    {
+      "candidateId": "R13-INQUIRY-RULE-001",
+      "strategy": "LINEAR_PATH",
+      "historicalClaim": false,
+      "semanticRelation": false,
+      "active": false
+    },
+    {
+      "candidateId": "R13-INQUIRY-RULE-002",
+      "strategy": "BINARY_FORK",
+      "historicalClaim": false,
+      "semanticRelation": false,
+      "active": false
+    },
+    {
+      "candidateId": "R13-INQUIRY-RULE-003",
+      "strategy": "BINARY_CONVERGENCE",
+      "historicalClaim": false,
+      "semanticRelation": false,
+      "active": false
+    },
+    {
+      "candidateId": "R13-INQUIRY-RULE-004",
+      "strategy": "QUALIFIED_PATH",
+      "historicalClaim": false,
+      "semanticRelation": false,
+      "active": false
+    },
+    {
+      "candidateId": "R13-INQUIRY-RULE-005",
+      "strategy": "REFLEXIVE_RETURN",
+      "historicalClaim": false,
+      "semanticRelation": false,
+      "active": false
+    },
+    {
+      "candidateId": "R13-INQUIRY-RULE-006",
+      "strategy": "EVIDENCE_GAP_TREE",
+      "historicalClaim": false,
+      "semanticRelation": false,
+      "active": false
+    }
+  ],
+  "structuralAnnotationCandidates": [
+    {
+      "candidateId": "R13-ANNOT-001",
+      "label": "coloniality",
+      "representation": "SOURCE_BOUNDED_STRUCTURAL_ANNOTATION",
+      "requiredFields": [
+        "source",
+        "geography",
+        "period",
+        "mechanism",
+        "affectedActorsOrObjects",
+        "beneficiaryOrControlStructure",
+        "continuityClaim",
+        "qualification",
+        "contestation"
+      ],
+      "universalNode": false,
+      "edge": false,
+      "active": false
+    }
+  ],
+  "canonicalHash": "aef66899389cd17076663cef6d8907c3ccc027822081a8be79e967f4a179be61"
+}

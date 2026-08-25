@@ -343,6 +343,33 @@ SPACETIME_STATUS=FROZEN
 
 `NEXT_RESEARCH_GATE=EXTERNAL_DOMAIN_REVIEW_AND_INQUIRY_GRAMMAR_ACTIVATION_RESEARCH`
 
+## TRACE v49 Round 13 — composition evidence and inquiry grammar review Round 1
+
+- Preserved the immutable Round 12 freeze (`b7d42015862e12fd54bc05a9ed0a53223771fc03954c112e72652c0349fb6f90`) and all five v1 Research Inquiry Instances, then created five v2 Instances whose semantic Nodes, root questions, primary inquiry flows, evidence bindings, claims, exportability, and activation state remain unchanged.
+- Researched exactly the three governed pair questions. Professionalization/institutionalization and imitation/piracy are `INQUIRY_ONLY_SUPPORTED`; gendering/commodification remains `DEFER_MORE_EVIDENCE`; no pair is an activation candidate.
+- Investigated all six documented vocabulary gaps. Four gaps yield seven source-attested narrower noun candidates, coloniality yields one bounded structural-annotation candidate, and mediation role distinctions remain evidence-limited. None enters the Round 12 freeze or active vocabulary.
+- Replaced enum-only TreeStrategy presentation with six distinct Python topology functions and six neutral synthetic fixtures. Canonical signatures are unique; convergence, qualification, reflexive navigation return, and first-class evidence gaps are structural rather than metadata aliases.
+- Prepared an inactive activation-candidate package and an unanswered 36-unit external design-history review packet. External human review remains incomplete and requires a separate later activation decision.
+- Preserved zero active relation, pair, Cluster, or chain rules; zero real semantic Images, renderers, routes, APIs, archive-object inputs, Context/Spacetime inputs, external models, vectors, or deployments.
+
+`ROUND13_DECISION=COMPOSITION_REVIEW_READY_WITH_LIMITATIONS`
+
+`PAIR_ACTIVATION_CANDIDATE_COUNT=0`
+
+`TREE_STRATEGY_TOPOLOGY_DUPLICATE_COUNT=0`
+
+`RESEARCH_INQUIRY_INSTANCE_V2_COUNT=5`
+
+`EXTERNAL_HUMAN_DOMAIN_REVIEW_COMPLETED=false`
+
+`ACTIVE_RELATION_VOCABULARY_COUNT=0`
+
+`ACTIVE_RELATION_GRAMMAR_COUNT=0`
+
+`REAL_SEMANTIC_IMAGE_READY=false`
+
+`NEXT_RESEARCH_GATE=EXTERNAL_HUMAN_REVIEW_AND_SEPARATE_SEMANTIC_ACTIVATION_DECISION`
+
 ## v49 Round 11–12 history coordination — 2026-08-25
 
 - Reconciled main maintenance `cc311ab0c9a74731cc1bb0158579708a8a9158fc` with sealed Round 11 `5ca999b53d9a5d18b47317817402f9e51ad26cec` and Round 12 `fc11f033d2fcdbb98130879cdbd3e4a52890e5d2` through an authorized two-parent merge from common ancestor `4bd82deba482ec2fbf8c4856080151416fb8ee83`.

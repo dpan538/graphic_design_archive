@@ -1,0 +1,3 @@
+# Executive receipt
+
+Round 13 preserves `b7d42015862e12fd54bc05a9ed0a53223771fc03954c112e72652c0349fb6f90` and five v1 Instances, verifies exactly three pair decisions and six gap decisions, implements six non-duplicate inquiry topologies, compiles five v2 Instances with 8/8 bounded-node coverage, and creates an inactive trace-exploration-inquiry-grammar-activation-candidates-v1 package plus an unanswered 36-unit external review packet. Independent source, semantic, and adversarial re-reviews report PASS after all corrections; the authoritative regression, typecheck, database-freeze, hygiene, build, and audit-seal gates pass.

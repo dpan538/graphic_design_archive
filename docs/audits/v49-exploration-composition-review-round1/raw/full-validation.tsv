@@ -1,0 +1,27 @@
+gate	status	execution_context	command_or_evidence
+ROUND8_REGRESSION	PASS	current Round 13 tree	npm run verify:exploration-reset; npm run test:exploration-domain
+ROUND9_REGRESSION	PASS	preserved worktree 47978c519c3c7141690e3894315a1ef1b7a403db	python3 scripts/validate_trace_v49_relation_vocabulary_round1.py
+ROUND10_REGRESSION	PASS	preserved worktree 4bd82deba482ec2fbf8c4856080151416fb8ee83	python3 scripts/trace-v49-relation-grammar/validate_round1.py
+ROUND11_REGRESSION	PASS	preserved worktree 5ca999b53d9a5d18b47317817402f9e51ad26cec and current tree	validate_round1.py; npm run test:exploration-constraint-kernel
+ROUND12_REGRESSION	PASS	preserved worktree fc11f033d2fcdbb98130879cdbd3e4a52890e5d2 and current tree	validate.py; npm run test:exploration-inquiry-adapter
+COMPOSITION_EVIDENCE_TESTS	PASS	current tree	29/29 evidence rows; derived source metadata and sense bindings
+PAIR_DECISION_TESTS	PASS	current tree	3/3 derived scope/count/cluster/design-history gates
+VOCABULARY_GAP_TESTS	PASS	current tree	6/6 exact candidate/term/package ownership gates
+TREE_STRATEGY_TESTS	PASS	Python and TypeScript	6 positive and 12 shared negative fixtures
+TREE_TOPOLOGY_NON_DUPLICATION	PASS	Python and TypeScript	6 distinct canonical topology signatures
+INSTANCE_V1_IMMUTABILITY	PASS	Git source tree 83f1fba3464f5828fcfd15a1c557035bb1341bf3	freeze and five v1 paths unchanged
+INSTANCE_V2_TESTS	PASS	Python and TypeScript	five deterministic v2 instances; 8/8 bounded senses
+V1_V2_SEMANTIC_PRESERVATION	PASS	Python and TypeScript	semantic nodes/questions/claims/evidence and gap binding unions unchanged
+STRICT_SCHEMA_TESTS	PASS	JSON Schema 2020-12 and exact-field validators	additionalProperties=false; required/property contracts exact
+CROSS_RUNTIME_CONFORMANCE	PASS	Python reference and TypeScript verifier	decision mismatches=0; hash mismatches=0
+TYPECHECK	PASS	frontend	npx tsc --noEmit --pretty false; npm run typecheck:runtime
+SEARCH_REGRESSION	PASS	frontend	verify:search-v49-index; test:search-v49
+CONTEXT_REGRESSION	PASS	frontend	projection, governance, runtime, and API gates
+SPACETIME_REGRESSION	PASS	frontend	projection, governance, runtime, API, and GIS gates
+API_TESTS	PASS	frontend	test:read-platform; page-by-key contract
+DATABASE_FREEZE	PASS	repository	verify_v49_database_freeze.py --repo .
+REPOSITORY_HYGIENE	PASS	explicitly staged final tree	audit_repository_hygiene.py --repo .
+PRODUCTION_BUILD	PASS	frontend	npm run build
+GIT_DIFF_CHECK	PASS	repository	git diff --check; git diff --cached --check
+GIT_FSCK	PASS	repository	git fsck --full
+AUDIT_SEAL	PASS	Round 13 audit package	manifest paths/bytes/SHA-256 equal SHA256SUMS

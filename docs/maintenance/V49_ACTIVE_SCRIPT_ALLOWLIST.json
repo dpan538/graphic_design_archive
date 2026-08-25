@@ -1,6 +1,6 @@
 {
   "format": "gda-v49-active-script-allowlist/v1",
-  "scriptCount": 230,
+  "scriptCount": 238,
   "unknownClassificationCount": 0,
   "scripts": [
     {
@@ -2026,6 +2026,86 @@
     {
       "path": "scripts/trace-v49-analysis/generate_trace_v49_round1.py",
       "category": "CURRENT_V49_TRACE_RESEARCH_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-review/canonical_v2.py",
+      "category": "RESEARCH_ENGINE_VALIDATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-review/fixtures/tree-strategy-conformance-v2.json",
+      "category": "RESEARCH_ENGINE_VALIDATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-review/fixtures/tree-strategy-negative-v2.json",
+      "category": "RESEARCH_ENGINE_VALIDATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-review/generate_round1.py",
+      "category": "RESEARCH_ENGINE_VALIDATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-review/instance_v2.py",
+      "category": "RESEARCH_ENGINE_VALIDATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-review/test_round1.py",
+      "category": "RESEARCH_ENGINE_VALIDATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-review/topology.py",
+      "category": "RESEARCH_ENGINE_VALIDATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-review/validate_round1.py",
+      "category": "RESEARCH_ENGINE_VALIDATION",
       "current_runtime_required": false,
       "current_api_required": false,
       "current_database_required": false,
