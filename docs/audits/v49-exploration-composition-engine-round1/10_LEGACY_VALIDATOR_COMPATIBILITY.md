@@ -1,0 +1,3 @@
+# Legacy validator compatibility
+
+Round 11 through Round 14 semantic regression gates pass through their current unit and cross-runtime conformance suites, with their sealed source/core packages unchanged. Their historical exhaustive validators are intentionally not treated as whole-tree Round 15 gates: the Round 11 scope guard rejects every later-round path, the Round 13 product-boundary guard predates and forbids Round 15's explicitly internal renderer, and the Round 14 manifest includes `frontend/package.json`, whose test-script table is intentionally extended here. Round 15 therefore records current conformance plus zero frozen Round 13/14 core mutations instead of misreporting those expected scope/seal incompatibilities as semantic regressions.

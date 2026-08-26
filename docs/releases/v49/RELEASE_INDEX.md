@@ -53,3 +53,13 @@ The integration is documentation and reachability closure only. It performs no d
 - Calibration: 35 associations, 69 provenance rows, 21 passes, 14 failures, 10 hard negatives, zero co-occurrence-only passes, and stable one-at-a-time sensitivity.
 - Boundary: the Python engine is normative; TypeScript is a frozen-decision/schema/hash verifier only. No typed historical edge, active relation grammar, public Image, renderer, route, API, object input, model, vector store, deployment, or external-review answer is authorized.
 - Next gate: Round 15 internal-only evidence-grounded spatial composition; public activation remains gated by real external human review.
+
+## TRACE Round 15 research closure — 2026-08-26
+
+- Source anchor: `cf4490e93449a46823a6de0c0676e431a7da6738`.
+- Research package: `docs/research/trace-v49-exploration-composition-engine-round1/`.
+- Audit package: `docs/audits/v49-exploration-composition-engine-round1/`.
+- Decision: the Python-normative bounded composition engine, three strict schemas, separate semantic/presentation hashes, six-topology arbitration, finite pruning/split/gap semantics, and internal TypeScript research renderer are ready with limitations.
+- Corpus: all 21 frozen passing associations, all 14 failures, all 10 hard negatives, 25 composition fixtures, eight visual-leakage questions per fixture, and bounded synthetic 5/10/20/40-node stress probes.
+- Boundary: no recalibration, typed relation, causal/directional/hierarchical output, archive-object/Context/Spacetime semantic input, model, vector store, public route/API/renderer, deployment, or simulated human review.
+- Next gate: real external composition/visual-semantics review and internal accessibility/interpretation research; public activation remains unsafe.

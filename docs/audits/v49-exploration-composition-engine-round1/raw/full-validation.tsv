@@ -1,0 +1,21 @@
+gate	status	execution_context	command_or_evidence
+ROUND8_REGRESSION	PASS	Round 15 isolated worktree	npm run verify:exploration-reset; npm run test:exploration-domain
+ROUND9_REGRESSION	PASS	Round 15 isolated worktree	sealed Round 9 relation-vocabulary validation plus current reset guard
+ROUND10_REGRESSION	PASS	Round 15 isolated worktree	sealed Round 10 relation-grammar validation plus current reset guard
+ROUND11_REGRESSION	PASS	Round 15 isolated worktree	Round 11 sealed source package unchanged from SOURCE_SHA; npm run test:exploration-constraint-kernel
+ROUND12_REGRESSION	PASS	Round 15 isolated worktree	python3 scripts/trace-v49-exploration-inquiry-engine/test_reference_engine.py; npm run test:exploration-inquiry-adapter
+ROUND13_REGRESSION	PASS	Round 15 isolated worktree	python3 scripts/trace-v49-exploration-composition-review/test_round1.py; npm run test:exploration-composition-review
+ROUND14_REGRESSION	PASS	Round 15 isolated worktree	python3 scripts/trace-v49-exploration-association-calibration/test_round1.py; npm run test:exploration-association-calibration
+ROUND15_PYTHON_TESTS	PASS	Round 15 isolated worktree	python3 scripts/trace-v49-exploration-composition-engine/test_round1.py
+ROUND15_EXHAUSTIVE_VALIDATOR	PASS	Round 15 isolated worktree	python3 scripts/trace-v49-exploration-composition-engine/validate_round1.py
+CROSS_RUNTIME_CONFORMANCE	PASS	Round 15 isolated worktree	npm run test:exploration-composition-engine
+SEARCH_REGRESSION	PASS	Round 15 isolated worktree	npm run verify:search-v49-index; npm run test:search-v49
+CONTEXT_REGRESSION	PASS	Round 15 isolated worktree	context projection, API, governance, and runtime gates
+SPACETIME_REGRESSION	PASS	Round 15 isolated worktree	Spacetime projection, governance, API, GIS, and runtime gates
+API_TESTS	PASS	Round 15 isolated worktree	npm run test:read-platform; node scripts/verify-page-by-key-module-contract.mjs
+DATABASE_FREEZE	PASS	Round 15 isolated worktree	python3 scripts/repository/verify_v49_database_freeze.py --repo .
+REPOSITORY_HYGIENE	PASS	Round 15 isolated worktree	python3 scripts/repository/audit_repository_hygiene.py --repo .
+TYPECHECK	PASS	Round 15 isolated worktree	npm run typecheck:runtime; npx tsc --noEmit --pretty false
+PRODUCTION_BUILD	PASS	Round 15 isolated worktree	npm run build
+GIT_DIFF_CHECK	PASS	Round 15 isolated worktree	git diff --check; git diff --cached --check
+AUDIT_SEAL	PASS	Round 15 isolated worktree	manifest path/byte/SHA-256 equality

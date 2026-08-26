@@ -1,0 +1,203 @@
+{
+  "source_sha": "cf4490e93449a46823a6de0c0676e431a7da6738",
+  "round13_files": [],
+  "round14_files": [
+    {
+      "path": "docs/audits/v49-exploration-association-calibration-round1/raw/association-calibration.tsv",
+      "byte_size": "20677",
+      "sha256": "cbb41db463dafcd43da4779e2db271fd2c1df0b4c769d5ea1d59bb8fa52333b8"
+    },
+    {
+      "path": "docs/audits/v49-exploration-association-calibration-round1/raw/direct-neighbour-evaluation.tsv",
+      "byte_size": "10292",
+      "sha256": "7534a1391cf8863f48c4940aa0b8149fc1ec9cefa6acc479b2a57027c68bea3c"
+    },
+    {
+      "path": "docs/audits/v49-exploration-association-calibration-round1/raw/evidence-provenance.tsv",
+      "byte_size": "34999",
+      "sha256": "3bfc526c160909838da90db700a72c987e1b9ea80fb605358a400951c64c2d8c"
+    },
+    {
+      "path": "docs/audits/v49-exploration-association-calibration-round1/raw/full-validation.tsv",
+      "byte_size": "3445",
+      "sha256": "0435672f1beae2c06a7ed303de78ef1b5b89503d69a6c5f84fa4a622528007d6"
+    },
+    {
+      "path": "docs/audits/v49-exploration-association-calibration-round1/raw/input-freeze.json",
+      "byte_size": "8383",
+      "sha256": "8961a93b1dcd2d3c78395984132fdf3f032de4e72b41e6093a542b290d657042"
+    },
+    {
+      "path": "docs/audits/v49-exploration-association-calibration-round1/raw/nary-validation.tsv",
+      "byte_size": "1094",
+      "sha256": "13dff659bc55003f49c78211149bd504cffae4bc6abda27098e2c69a0179c4d7"
+    },
+    {
+      "path": "docs/audits/v49-exploration-association-calibration-round1/raw/pruning-validation.tsv",
+      "byte_size": "837",
+      "sha256": "b30475f9f4c9aa24f5055b0156f7fdd05755c47aa2b9753716f9098e7b927a9d"
+    },
+    {
+      "path": "docs/audits/v49-exploration-association-calibration-round1/raw/quantitative-audit.json",
+      "byte_size": "1889",
+      "sha256": "948b8457c5eef85d752a960b36b460cf26e58e501595556c295d01e41c269ddb"
+    },
+    {
+      "path": "docs/audits/v49-exploration-association-calibration-round1/raw/round13-reassessment.tsv",
+      "byte_size": "1104",
+      "sha256": "52b0a33e71bfc3dee76173f85ec7c718853197eeef622b88cb3fd05ae6ba5de0"
+    },
+    {
+      "path": "docs/audits/v49-exploration-association-calibration-round1/raw/sensitivity-analysis.tsv",
+      "byte_size": "46654",
+      "sha256": "5e2bd3f83162fd9addd0aae8704423432d2fab3e8048487fbb7c4a7c4403c828"
+    },
+    {
+      "path": "docs/audits/v49-exploration-association-calibration-round1/raw/skip-one-evaluation.tsv",
+      "byte_size": "10327",
+      "sha256": "074ff22dcec51d0c997e9a7e6ac111cbb027238543557b7ad171de509e5756e0"
+    },
+    {
+      "path": "docs/audits/v49-exploration-association-calibration-round1/raw/threshold-sweep.tsv",
+      "byte_size": "2207",
+      "sha256": "162bd73a4f3bbd0dd31ad3a42e3e5815a2f6c8233f05c0f6c3fc80be90b56162"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-association-calibration-round1/00_EXECUTIVE_DECISION.md",
+      "byte_size": "1194",
+      "sha256": "974219d2b5061d1c85652023bc472164101205ab82962788772ff0f5bb31a000"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-association-calibration-round1/01_METHOD_AND_SCOPE.md",
+      "byte_size": "1069",
+      "sha256": "9b03ff5d8992ab2e5f575662b6c3a2b0b9b4744ac61c4770b14bd4fa45bb0196"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-association-calibration-round1/02_GENERIC_ASSOCIATION_TAXONOMY.md",
+      "byte_size": "686",
+      "sha256": "0d5850325bf68f86d02d4c313fabf55d51727f7b3d786912e193361cc07ae84a"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-association-calibration-round1/03_EVIDENCE_STATUS_AND_PROVENANCE.md",
+      "byte_size": "991",
+      "sha256": "2fb50172f3cd3beebb5ef2b115588c4e3d2899b3faedaebf6a7f18061b65423f"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-association-calibration-round1/04_ASSOCIATION_RUBRIC.md",
+      "byte_size": "1004",
+      "sha256": "3ced2abd3fb19a2dd235c7241eb312abb26fefa7f2c244061079de6fdb6b2a6c"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-association-calibration-round1/05_CALIBRATION_SET_METHOD.md",
+      "byte_size": "710",
+      "sha256": "69d7fa36905f42b1374e64014a0a554adb54206e91043707a58e768680b64f7e"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-association-calibration-round1/06_DIRECT_NEIGHBOUR_THRESHOLD.md",
+      "byte_size": "758",
+      "sha256": "6a932ad51aee8e302c6ebcf56b2b1381dc07fe047800bc6b83e2429a742b425c"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-association-calibration-round1/07_SKIP_ONE_THRESHOLD.md",
+      "byte_size": "604",
+      "sha256": "2aea05c1402750b01a595b3d6f541ce1d28c7c1c918f4e413bec34f5ce84f303"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-association-calibration-round1/08_NARY_LOCAL_COHERENCE.md",
+      "byte_size": "1061",
+      "sha256": "9c4b263fd4a85aaeb28d9c40f55408b0a6744ec3af59ff1b851b963ac247c096"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-association-calibration-round1/09_PRUNING_AND_RESTRUCTURING_CONTRACT.md",
+      "byte_size": "690",
+      "sha256": "e807b0f2d18a47fecc2ef64637b4b47a26bcec9feecabe522f2a5a5d8df1b5b8"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-association-calibration-round1/10_SPATIAL_SEMANTICS_CONTRACT.md",
+      "byte_size": "854",
+      "sha256": "c71e3db2515cdfd80943919721f8b9f39556c58cac13a9ef91a6ffa6da9146a2"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-association-calibration-round1/11_ASSOCIATION_INSPECTION_AND_REDIRECT_CONTRACT.md",
+      "byte_size": "832",
+      "sha256": "6c642fb7f109f565aecfa206d29db8cc5ac2b246e6817e2087f923096e449f35"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-association-calibration-round1/12_THRESHOLD_SENSITIVITY_ANALYSIS.md",
+      "byte_size": "764",
+      "sha256": "9f5f2df23d9405100460e2b2c0c89c9b3882b202a10e3e6f0ff1e0d1bcc490b1"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-association-calibration-round1/13_ROUND13_CASE_REASSESSMENT.md",
+      "byte_size": "673",
+      "sha256": "efba310fc09dfef0172789d83dfd5f170e874f5618c15064e4777021cb25b846"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-association-calibration-round1/14_LIMITATIONS_AND_OPEN_QUESTIONS.md",
+      "byte_size": "706",
+      "sha256": "c8224ff88834ccbcd48621cf8ff224d84e88663f4ff7ee8edba6af90c45d4d5a"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-association-calibration-round1/15_NEXT_GATE.md",
+      "byte_size": "540",
+      "sha256": "03807ef7018dff6e98b1f5f217370738749df0b955db31745551293937abcc92"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-association-calibration-round1/16_EXTERNAL_REVIEW_PACKET.md",
+      "byte_size": "1256",
+      "sha256": "97e2ed3e6f1092278dfe015ac90e7479ea4400e9474e493e9478f3b21e8cc855"
+    },
+    {
+      "path": "schemas/trace/exploration/association-assessment-v1.schema.json",
+      "byte_size": "7281",
+      "sha256": "cbbfdb59cc960c20f968d959e7209fd5e357609f9265f79bbfb6101bc2b66d1e"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-association-calibration/calibration_input.py",
+      "byte_size": "32175",
+      "sha256": "a194e041eabf9b8d08ec07df78dd535037348a1d42c381a0f233aa557ee37427"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-association-calibration/fixtures/association-assessments-v1.json",
+      "byte_size": "49354",
+      "sha256": "1108b7fbea167d79ca8c96633e41ac6d565ed63641893c77211b5e9356e747bb"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-association-calibration/fixtures/nary-local-coherence-v1.json",
+      "byte_size": "4327",
+      "sha256": "32c8fa359e6bd14d3d2e4d62c4a276a1bcfa6daee1c29e9b18bffb427f6e0e56"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-association-calibration/generate_round1.py",
+      "byte_size": "48968",
+      "sha256": "22720b09910a0d9bbeb805585d3ea061ec1c779c02f0bc72f886a3f036fd4fec"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-association-calibration/local_coherence.py",
+      "byte_size": "6767",
+      "sha256": "4ddb35f45f862c35aae4eebed0ff092a9f79797beb62634831f7529a1e382785"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-association-calibration/model.py",
+      "byte_size": "9215",
+      "sha256": "4d7e7e336cf760b229dac77eb6f8545de67cbe6f483b9d6060189636cf91e1bb"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-association-calibration/nary_fixtures.py",
+      "byte_size": "3713",
+      "sha256": "c76ccd70ce4143ff480e15e086c20605f78a0adce91aea0083fc5117e3b3fe85"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-association-calibration/test_round1.py",
+      "byte_size": "9780",
+      "sha256": "3d385959a9787e707e011e76666c56a165d73469aa34d38f73d6a691e1ca7862"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-association-calibration/validate_round1.py",
+      "byte_size": "9991",
+      "sha256": "545c1357e1fc1eeb68bd8937e9cc8650bb3e1f334d1c762a9fde2cbe1be6b55e"
+    }
+  ],
+  "round13_mutation_count": 0,
+  "round14_mutation_count": 0
+}

@@ -395,6 +395,31 @@ SPACETIME_STATUS=FROZEN
 
 `PUBLIC_RENDERER_SAFE=false`
 
+## TRACE v49 Round 15 — evidence-governed composition engine Round 1
+
+- Consumed the immutable Round 14 package at source `cf4490e93449a46823a6de0c0676e431a7da6738` without threshold or evidence-rule changes. All 21 passes, all 14 failures, and all 10 hard negatives appear in the Round 15 corpus.
+- Reviewed 25 graph-drawing, uncertainty, provenance, digital-humanities, and cultural-heritage methods and selected `PARETO_MINIMAL_SUFFICIENT_V1`: ordinal evidence groups plus the frozen two-branch topology budget, with equal-cutoff ties and multiple-valid-topology cases left unresolved.
+- Added Bounded Semantic Image V1, composition-decision, and composition-audit schemas; a Python normative engine; 25 composition fixtures; 5/10/20/40-node bounded synthetic stress probes; full provenance chains; and separate semantic/presentation hashes.
+- Formalized all six topology entry conditions, finite non-negative prune/split/gap reasons, failed-association and pair-orientation invariance, input-order/idempotence properties, and zero unsupported/typed/causal/directional emissions.
+- Added a TypeScript frozen-output/hash validator and internal-only deterministic SVG harness. Equal-size nodes, equal-width undirected lines, circular peer placement, explicit gaps, and leakage questions prevent default importance, hierarchy, strength, chronology, or causality encodings.
+- Prepared an unanswered eight-unit external review packet. No public route, API, renderer activation, deployment, archive-object/Context/Spacetime semantic input, model, embedding, vector store, or external human approval was introduced.
+
+`ROUND15_DECISION=READY_WITH_LIMITATIONS`
+
+`ASSOCIATION_TO_COMPOSITION_PIPELINE_READY=true`
+
+`BOUNDED_SEMANTIC_IMAGE_READY=true`
+
+`INTERNAL_COMPOSITION_RESEARCH_READY=true`
+
+`REAL_TYPED_HISTORICAL_RELATION_READY=false`
+
+`EXTERNAL_HUMAN_DOMAIN_REVIEW_COMPLETED=false`
+
+`PUBLIC_RENDERER_SAFE=false`
+
+`NEXT_GATE=EXTERNAL_COMPOSITION_AND_VISUAL_SEMANTICS_REVIEW`
+
 ## v49 Round 11–12 history coordination — 2026-08-25
 
 - Reconciled main maintenance `cc311ab0c9a74731cc1bb0158579708a8a9158fc` with sealed Round 11 `5ca999b53d9a5d18b47317817402f9e51ad26cec` and Round 12 `fc11f033d2fcdbb98130879cdbd3e4a52890e5d2` through an authorized two-parent merge from common ancestor `4bd82deba482ec2fbf8c4856080151416fb8ee83`.

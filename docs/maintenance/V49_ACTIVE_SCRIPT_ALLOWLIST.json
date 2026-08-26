@@ -1,6 +1,6 @@
 {
   "format": "gda-v49-active-script-allowlist/v1",
-  "scriptCount": 247,
+  "scriptCount": 253,
   "unknownClassificationCount": 0,
   "scripts": [
     {
@@ -2116,6 +2116,66 @@
     {
       "path": "scripts/trace-v49-exploration-association-calibration/validate_round1.py",
       "category": "CURRENT_V49_EXPLORATION_ASSOCIATION_RESEARCH_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-engine/fixtures.py",
+      "category": "CURRENT_V49_EXPLORATION_COMPOSITION_RESEARCH_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-engine/fixtures/composition-fixtures-v1.json",
+      "category": "CURRENT_V49_EXPLORATION_COMPOSITION_RESEARCH_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-engine/generate_round1.py",
+      "category": "CURRENT_V49_EXPLORATION_COMPOSITION_RESEARCH_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-engine/model.py",
+      "category": "CURRENT_V49_EXPLORATION_COMPOSITION_RESEARCH_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-engine/test_round1.py",
+      "category": "CURRENT_V49_EXPLORATION_COMPOSITION_RESEARCH_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-engine/validate_round1.py",
+      "category": "CURRENT_V49_EXPLORATION_COMPOSITION_RESEARCH_VERIFICATION",
       "current_runtime_required": false,
       "current_api_required": false,
       "current_database_required": false,

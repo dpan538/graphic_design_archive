@@ -115,3 +115,25 @@ All six Round 13 strategies now have distance-one/distance-two local-coherence f
 `PUBLIC_RENDERER_SAFE=false`
 
 Governed Round 14 package: `docs/research/trace-v49-exploration-association-calibration-round1/`.
+
+TRACE v49 Round 15 consumes the frozen 21 Round 14 passes and 14 failures without recalibration. The Python-normative `PARETO_MINIMAL_SUFFICIENT_V1` engine produces provenance-complete Bounded Semantic Image V1 artifacts, applies the inherited two-branch topology budget without numeric evidence scoring, preserves equal-evidence cutoff ties and multiple-valid-topology cases as unresolved, and separates semantic-core from presentation hashes.
+
+Twenty-five methodological sources govern the visual policy. The internal-only TypeScript harness renders equal-size nodes, equal-width undirected lines, circular peer placement, explicit gaps, and non-negative prune/split notes. TypeScript validates frozen decisions and hashes but contains no unique semantic rule. Context and Spacetime remain future presentation/filter/annotation inputs only; real records are not Round 15 fixtures.
+
+`ROUND15_DECISION=READY_WITH_LIMITATIONS`
+
+`ASSOCIATION_TO_COMPOSITION_PIPELINE_READY=true`
+
+`BOUNDED_SEMANTIC_IMAGE_READY=true`
+
+`INTERNAL_RESEARCH_RENDERER_READY=true`
+
+`EXTERNAL_HUMAN_DOMAIN_REVIEW_COMPLETED=false`
+
+`REAL_TYPED_HISTORICAL_RELATION_READY=false`
+
+`PUBLIC_RENDERER_SAFE=false`
+
+Next gate after Round 15: **External Composition and Visual-Semantics Review plus internal accessibility/interpretation research**. Public activation and typed historical relations remain prohibited.
+
+Governed Round 15 package: `docs/research/trace-v49-exploration-composition-engine-round1/`.

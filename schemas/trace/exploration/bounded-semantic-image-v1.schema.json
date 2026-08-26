@@ -1,0 +1,320 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trace.example.invalid/schemas/exploration/bounded-semantic-image-v1.schema.json",
+  "title": "TRACE Bounded Semantic Image V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "semantic_core",
+    "evidence_core",
+    "composition_core",
+    "presentation_hints",
+    "provenance",
+    "audit",
+    "semantic_core_hash",
+    "presentation_hash"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "bounded-semantic-image-v1"
+    },
+    "semantic_core": {
+      "$ref": "#/$defs/semanticCore"
+    },
+    "evidence_core": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidenceRecord"
+      }
+    },
+    "composition_core": {
+      "$ref": "composition-decision-v1.schema.json"
+    },
+    "presentation_hints": {
+      "$ref": "#/$defs/presentationHints"
+    },
+    "provenance": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/provenanceRecord"
+      }
+    },
+    "audit": {
+      "$ref": "composition-audit-v1.schema.json"
+    },
+    "semantic_core_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "presentation_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "$defs": {
+    "semanticCore": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "semantic_image_id",
+        "seed_node_ids",
+        "node_ids",
+        "qualified_association_ids",
+        "admitted_association_ids",
+        "association_states",
+        "topology_type",
+        "topology_candidates",
+        "neighbourhood_depth",
+        "evidence_gap_node_ids",
+        "split_components",
+        "semantic_version"
+      ],
+      "properties": {
+        "semantic_image_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "seed_node_ids": {
+          "$ref": "#/$defs/nonEmptyStrings"
+        },
+        "node_ids": {
+          "$ref": "#/$defs/nonEmptyStrings"
+        },
+        "qualified_association_ids": {
+          "$ref": "#/$defs/strings"
+        },
+        "admitted_association_ids": {
+          "$ref": "#/$defs/strings"
+        },
+        "association_states": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "assessment_id",
+              "state",
+              "reason_code"
+            ],
+            "properties": {
+              "assessment_id": {
+                "type": "string"
+              },
+              "state": {
+                "enum": [
+                  "ADMITTED",
+                  "PRUNED",
+                  "SPLIT_BOUNDARY",
+                  "EVIDENCE_GAP",
+                  "UNRESOLVED"
+                ]
+              },
+              "reason_code": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "topology_type": {
+          "enum": [
+            "LINEAR_PATH",
+            "BINARY_FORK",
+            "BINARY_CONVERGENCE",
+            "QUALIFIED_PATH",
+            "REFLEXIVE_RETURN",
+            "EVIDENCE_GAP_TREE",
+            "UNRESOLVED"
+          ]
+        },
+        "topology_candidates": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "LINEAR_PATH",
+              "BINARY_FORK",
+              "BINARY_CONVERGENCE",
+              "QUALIFIED_PATH",
+              "REFLEXIVE_RETURN",
+              "EVIDENCE_GAP_TREE"
+            ]
+          }
+        },
+        "neighbourhood_depth": {
+          "const": 2
+        },
+        "evidence_gap_node_ids": {
+          "$ref": "#/$defs/strings"
+        },
+        "split_components": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonEmptyStrings"
+          }
+        },
+        "semantic_version": {
+          "const": "bounded-semantic-image-v1"
+        }
+      }
+    },
+    "evidenceRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assessment_id",
+        "support_status",
+        "strength",
+        "confidence",
+        "mandatory_dimension_results",
+        "provenance_refs",
+        "qualification"
+      ],
+      "properties": {
+        "assessment_id": {
+          "type": "string"
+        },
+        "support_status": {
+          "enum": [
+            "EXTERNALLY_SUPPORTED",
+            "SOURCE_SUPPORTED"
+          ]
+        },
+        "strength": {
+          "enum": [
+            "MODERATE",
+            "STRONG"
+          ]
+        },
+        "confidence": {
+          "enum": [
+            "MODERATE",
+            "HIGH"
+          ]
+        },
+        "mandatory_dimension_results": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "D1",
+            "D5",
+            "D7"
+          ],
+          "properties": {
+            "D1": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 2
+            },
+            "D5": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 2
+            },
+            "D7": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 2
+            }
+          }
+        },
+        "provenance_refs": {
+          "$ref": "#/$defs/nonEmptyStrings"
+        },
+        "qualification": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "presentationHints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "layout_engine",
+        "optional_seed",
+        "node_positions",
+        "edge_hints",
+        "visual_gap_hint",
+        "cosmetic_order",
+        "semantic_mutation_permitted"
+      ],
+      "properties": {
+        "layout_engine": {
+          "const": "DETERMINISTIC_RESEARCH_CIRCLE_V1"
+        },
+        "optional_seed": {
+          "type": "string"
+        },
+        "node_positions": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "edge_hints": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "visual_gap_hint": {
+          "type": "boolean"
+        },
+        "cosmetic_order": {
+          "$ref": "#/$defs/strings"
+        },
+        "semantic_mutation_permitted": {
+          "const": false
+        }
+      }
+    },
+    "provenanceRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assessment_id",
+        "evidence_ids",
+        "source_ids",
+        "source_urls"
+      ],
+      "properties": {
+        "assessment_id": {
+          "type": "string"
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/nonEmptyStrings"
+        },
+        "source_ids": {
+          "$ref": "#/$defs/nonEmptyStrings"
+        },
+        "source_urls": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "strings": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "nonEmptyStrings": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

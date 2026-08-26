@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trace.example.invalid/schemas/exploration/composition-decision-v1.schema.json",
+  "title": "TRACE Composition Decision V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_count",
+    "admitted_count",
+    "pruned_count",
+    "split_count",
+    "evidence_gap_count",
+    "unresolved_count",
+    "arbitration_method",
+    "arbitration_version",
+    "degree_bound",
+    "pruning_reason_codes",
+    "split_reason_codes",
+    "topology_reason_code",
+    "topology_explanation",
+    "candidate_decisions"
+  ],
+  "properties": {
+    "candidate_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "admitted_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "pruned_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "split_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "evidence_gap_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "unresolved_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "arbitration_method": {
+      "const": "PARETO_MINIMAL_SUFFICIENT_V1"
+    },
+    "arbitration_version": {
+      "const": "1"
+    },
+    "degree_bound": {
+      "const": 2
+    },
+    "pruning_reason_codes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "split_reason_codes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "topology_reason_code": {
+      "type": "string"
+    },
+    "topology_explanation": {
+      "type": "string"
+    },
+    "candidate_decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "assessment_id",
+          "node_ids",
+          "semantic_eligibility",
+          "composition_eligibility",
+          "neighbourhood_role",
+          "topology_role",
+          "presentation_role",
+          "decision_state",
+          "reason_code",
+          "explanation"
+        ],
+        "properties": {
+          "assessment_id": {
+            "type": "string"
+          },
+          "node_ids": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "semantic_eligibility": {
+            "enum": [
+              "QUALIFIED",
+              "NOT_QUALIFIED"
+            ]
+          },
+          "composition_eligibility": {
+            "enum": [
+              "ELIGIBLE_DIRECT",
+              "ELIGIBLE_SKIP_ONE",
+              "INELIGIBLE"
+            ]
+          },
+          "neighbourhood_role": {
+            "enum": [
+              "DIRECT_NEIGHBOUR",
+              "SKIP_ONE_NEIGHBOUR",
+              "OUTSIDE_BOUNDED_NEIGHBOURHOOD"
+            ]
+          },
+          "topology_role": {
+            "enum": [
+              "SEMANTIC_CONNECTION",
+              "COMPOSITION_BOUNDARY"
+            ]
+          },
+          "presentation_role": {
+            "enum": [
+              "ADMITTED",
+              "PRUNED",
+              "UNRESOLVED",
+              "INELIGIBLE_CONTROL"
+            ]
+          },
+          "decision_state": {
+            "enum": [
+              "ADMITTED",
+              "PRUNED",
+              "UNRESOLVED",
+              "INELIGIBLE_CONTROL"
+            ]
+          },
+          "reason_code": {
+            "type": "string"
+          },
+          "explanation": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

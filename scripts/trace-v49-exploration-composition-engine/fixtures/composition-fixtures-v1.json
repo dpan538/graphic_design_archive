@@ -1,0 +1,637 @@
+{
+  "packageId": "trace-exploration-composition-fixtures-v1",
+  "version": "1",
+  "sourceSha": "cf4490e93449a46823a6de0c0676e431a7da6738",
+  "methodVersion": "trace-evidence-governed-composition-v1",
+  "fixtures": [
+    {
+      "fixtureId": "R15-COMP-001",
+      "fixtureFamily": "SINGLE_VALID_PATH",
+      "seedNodeIds": [
+        "professionalization"
+      ],
+      "nodeIds": [
+        "professionalization",
+        "institutionalization"
+      ],
+      "associationIds": [
+        "R14-ASSOC-001"
+      ],
+      "topologyRequest": "LINEAR_PATH",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "Two-node clean pass from the frozen professionalization assessment."
+    },
+    {
+      "fixtureId": "R15-COMP-002",
+      "fixtureFamily": "DENSE_NEIGHBOURHOOD",
+      "seedNodeIds": [
+        "design diplomacy"
+      ],
+      "nodeIds": [
+        "design diplomacy",
+        "exhibition",
+        "propaganda",
+        "trade"
+      ],
+      "associationIds": [
+        "R14-ASSOC-005",
+        "R14-ASSOC-006",
+        "R14-ASSOC-007",
+        "R14-ASSOC-008",
+        "R14-ASSOC-009"
+      ],
+      "topologyRequest": "BINARY_FORK",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "Dense exposition neighbourhood tests topology-derived degree control."
+    },
+    {
+      "fixtureId": "R15-COMP-003",
+      "fixtureFamily": "MULTIPLE_COMPETING_BRANCHES",
+      "seedNodeIds": [
+        "design diplomacy"
+      ],
+      "nodeIds": [
+        "design diplomacy",
+        "exhibition",
+        "propaganda"
+      ],
+      "associationIds": [
+        "R14-ASSOC-005",
+        "R14-ASSOC-006",
+        "R14-ASSOC-008"
+      ],
+      "topologyRequest": "BINARY_FORK",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "Three equally supported associations form a bounded three-node composition."
+    },
+    {
+      "fixtureId": "R15-COMP-004",
+      "fixtureFamily": "MULTIPLE_VALID_TOPOLOGIES",
+      "seedNodeIds": [
+        "mediation"
+      ],
+      "nodeIds": [
+        "production",
+        "mediation",
+        "consumption"
+      ],
+      "associationIds": [
+        "R14-ASSOC-002",
+        "R14-ASSOC-003",
+        "R14-ASSOC-004"
+      ],
+      "topologyRequest": "AUTO",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "The same three-node association graph supports several inquiry topologies, so selection remains unresolved."
+    },
+    {
+      "fixtureId": "R15-COMP-005",
+      "fixtureFamily": "UNSUPPORTED_BRIDGE",
+      "seedNodeIds": [
+        "gendering",
+        "design education"
+      ],
+      "nodeIds": [
+        "gendering",
+        "commodification",
+        "design education",
+        "institutionalization"
+      ],
+      "associationIds": [
+        "R14-ASSOC-016",
+        "R14-ASSOC-021",
+        "R14-ASSOC-024"
+      ],
+      "topologyRequest": "AUTO",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "A failed bridge is an invariant negative control and cannot join two qualified components."
+    },
+    {
+      "fixtureId": "R15-COMP-006",
+      "fixtureFamily": "HARD_NEGATIVE_INTRUSION",
+      "seedNodeIds": [
+        "material displacement"
+      ],
+      "nodeIds": [
+        "material displacement",
+        "supply chain",
+        "professionalization"
+      ],
+      "associationIds": [
+        "R14-ASSOC-010",
+        "R14-ASSOC-026"
+      ],
+      "topologyRequest": "LINEAR_PATH",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "A hard negative is retained only as an audit control."
+    },
+    {
+      "fixtureId": "R15-COMP-007",
+      "fixtureFamily": "ALL_PASS_LOCAL_CLUSTER",
+      "seedNodeIds": [
+        "adaptation"
+      ],
+      "nodeIds": [
+        "cultural negotiation",
+        "adaptation",
+        "rejection"
+      ],
+      "associationIds": [
+        "R14-ASSOC-013",
+        "R14-ASSOC-014",
+        "R14-ASSOC-015"
+      ],
+      "topologyRequest": "BINARY_CONVERGENCE",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "All three source-bounded associations pass without claiming convergence as history."
+    },
+    {
+      "fixtureId": "R15-COMP-008",
+      "fixtureFamily": "MIXED_SUPPORT_CLASS",
+      "seedNodeIds": [
+        "professionalization",
+        "photography"
+      ],
+      "nodeIds": [
+        "professionalization",
+        "institutionalization",
+        "photography",
+        "typography"
+      ],
+      "associationIds": [
+        "R14-ASSOC-001",
+        "R14-ASSOC-018"
+      ],
+      "topologyRequest": "AUTO",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "Externally and source-supported components remain distinct and unranked."
+    },
+    {
+      "fixtureId": "R15-COMP-009",
+      "fixtureFamily": "SPLIT_PRODUCING_GRAPH",
+      "seedNodeIds": [
+        "gendering",
+        "design education"
+      ],
+      "nodeIds": [
+        "gendering",
+        "commodification",
+        "design education",
+        "institutionalization"
+      ],
+      "associationIds": [
+        "R14-ASSOC-016",
+        "R14-ASSOC-021",
+        "R14-ASSOC-024",
+        "R14-ASSOC-033",
+        "R14-ASSOC-034"
+      ],
+      "topologyRequest": "AUTO",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "No qualified bridge exists; split means separate composition components, not historical separation."
+    },
+    {
+      "fixtureId": "R15-COMP-010",
+      "fixtureFamily": "GAP_PRODUCING_GRAPH",
+      "seedNodeIds": [
+        "imitation"
+      ],
+      "nodeIds": [
+        "imitation",
+        "piracy",
+        "cultural transformation"
+      ],
+      "associationIds": [
+        "R14-ASSOC-017",
+        "R14-ASSOC-023",
+        "R14-ASSOC-035"
+      ],
+      "topologyRequest": "EVIDENCE_GAP_TREE",
+      "evidenceGapNodeIds": [
+        "cultural transformation"
+      ],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "The unsupported node is represented as an explicit evidence gap rather than a negative claim."
+    },
+    {
+      "fixtureId": "R15-COMP-011",
+      "fixtureFamily": "HIGH_DEGREE_SEED",
+      "seedNodeIds": [
+        "design diplomacy"
+      ],
+      "nodeIds": [
+        "design diplomacy",
+        "exhibition",
+        "propaganda",
+        "trade"
+      ],
+      "associationIds": [
+        "R14-ASSOC-005",
+        "R14-ASSOC-006",
+        "R14-ASSOC-009"
+      ],
+      "topologyRequest": "BINARY_FORK",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "Strictly weaker evidence is pruned after the two-branch topology bound is satisfied."
+    },
+    {
+      "fixtureId": "R15-COMP-012",
+      "fixtureFamily": "PERMUTATION_EQUIVALENT",
+      "seedNodeIds": [
+        "supply chain"
+      ],
+      "nodeIds": [
+        "production site",
+        "material displacement",
+        "supply chain"
+      ],
+      "associationIds": [
+        "R14-ASSOC-011",
+        "R14-ASSOC-010"
+      ],
+      "topologyRequest": "LINEAR_PATH",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "Deliberately permuted input tests canonical semantic output."
+    },
+    {
+      "fixtureId": "R15-COMP-013",
+      "fixtureFamily": "DUPLICATE_ASSOCIATION_INPUT",
+      "seedNodeIds": [
+        "supply chain"
+      ],
+      "nodeIds": [
+        "material displacement",
+        "supply chain",
+        "production site"
+      ],
+      "associationIds": [
+        "R14-ASSOC-010",
+        "R14-ASSOC-011",
+        "R14-ASSOC-010"
+      ],
+      "topologyRequest": "LINEAR_PATH",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "Duplicate association input is idempotently deduplicated."
+    },
+    {
+      "fixtureId": "R15-COMP-014",
+      "fixtureFamily": "TOPOLOGY_LINEAR",
+      "seedNodeIds": [
+        "supply chain"
+      ],
+      "nodeIds": [
+        "material displacement",
+        "supply chain",
+        "production site"
+      ],
+      "associationIds": [
+        "R14-ASSOC-010",
+        "R14-ASSOC-011"
+      ],
+      "topologyRequest": "LINEAR_PATH",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "Linear topology conformance fixture."
+    },
+    {
+      "fixtureId": "R15-COMP-015",
+      "fixtureFamily": "TOPOLOGY_BINARY_FORK",
+      "seedNodeIds": [
+        "design diplomacy"
+      ],
+      "nodeIds": [
+        "design diplomacy",
+        "exhibition",
+        "propaganda"
+      ],
+      "associationIds": [
+        "R14-ASSOC-005",
+        "R14-ASSOC-006",
+        "R14-ASSOC-008"
+      ],
+      "topologyRequest": "BINARY_FORK",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "Binary fork is an inquiry shape, not historical branching."
+    },
+    {
+      "fixtureId": "R15-COMP-016",
+      "fixtureFamily": "TOPOLOGY_BINARY_CONVERGENCE",
+      "seedNodeIds": [
+        "supply chain"
+      ],
+      "nodeIds": [
+        "material displacement",
+        "supply chain",
+        "production site"
+      ],
+      "associationIds": [
+        "R14-ASSOC-010",
+        "R14-ASSOC-011"
+      ],
+      "topologyRequest": "BINARY_CONVERGENCE",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "Binary convergence is an inquiry shape, not historical direction."
+    },
+    {
+      "fixtureId": "R15-COMP-017",
+      "fixtureFamily": "TOPOLOGY_QUALIFIED_PATH",
+      "seedNodeIds": [
+        "mediation"
+      ],
+      "nodeIds": [
+        "production",
+        "mediation",
+        "consumption"
+      ],
+      "associationIds": [
+        "R14-ASSOC-002",
+        "R14-ASSOC-003"
+      ],
+      "topologyRequest": "QUALIFIED_PATH",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": true,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "Continuation is gated by an explicit inquiry qualification."
+    },
+    {
+      "fixtureId": "R15-COMP-018",
+      "fixtureFamily": "TOPOLOGY_REFLEXIVE_RETURN",
+      "seedNodeIds": [
+        "adaptation"
+      ],
+      "nodeIds": [
+        "cultural negotiation",
+        "adaptation",
+        "rejection"
+      ],
+      "associationIds": [
+        "R14-ASSOC-013",
+        "R14-ASSOC-014"
+      ],
+      "topologyRequest": "REFLEXIVE_RETURN",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": true,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "Return is navigational only and creates no semantic self-loop."
+    },
+    {
+      "fixtureId": "R15-COMP-019",
+      "fixtureFamily": "TOPOLOGY_EVIDENCE_GAP_TREE",
+      "seedNodeIds": [
+        "imitation"
+      ],
+      "nodeIds": [
+        "imitation",
+        "piracy",
+        "cultural transformation"
+      ],
+      "associationIds": [
+        "R14-ASSOC-017",
+        "R14-ASSOC-023",
+        "R14-ASSOC-035"
+      ],
+      "topologyRequest": "EVIDENCE_GAP_TREE",
+      "evidenceGapNodeIds": [
+        "cultural transformation"
+      ],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "Evidence-gap topology conformance fixture."
+    },
+    {
+      "fixtureId": "R15-COMP-020",
+      "fixtureFamily": "SOURCE_SUPPORTED_COMPOSITION",
+      "seedNodeIds": [
+        "photography",
+        "advertising",
+        "craft"
+      ],
+      "nodeIds": [
+        "photography",
+        "typography",
+        "advertising",
+        "consumer culture",
+        "craft",
+        "education"
+      ],
+      "associationIds": [
+        "R14-ASSOC-018",
+        "R14-ASSOC-019",
+        "R14-ASSOC-020"
+      ],
+      "topologyRequest": "AUTO",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "All three source-supported associations remain visible as unranked separate components."
+    },
+    {
+      "fixtureId": "R15-COMP-021",
+      "fixtureFamily": "CLOSURE_ASSOCIATION",
+      "seedNodeIds": [
+        "material displacement"
+      ],
+      "nodeIds": [
+        "material displacement",
+        "supply chain",
+        "production site"
+      ],
+      "associationIds": [
+        "R14-ASSOC-010",
+        "R14-ASSOC-011",
+        "R14-ASSOC-012"
+      ],
+      "topologyRequest": "BINARY_CONVERGENCE",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "The moderate closure association is admitted because the triangle stays within degree two."
+    },
+    {
+      "fixtureId": "R15-COMP-022",
+      "fixtureFamily": "FAILED_CONTROL_SET_A",
+      "seedNodeIds": [
+        "cultural transfer"
+      ],
+      "nodeIds": [
+        "cultural transfer",
+        "cultural negotiation",
+        "cultural transformation",
+        "piracy",
+        "design education",
+        "commodification"
+      ],
+      "associationIds": [
+        "R14-ASSOC-022",
+        "R14-ASSOC-023",
+        "R14-ASSOC-024"
+      ],
+      "topologyRequest": "AUTO",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "Qualified-but-inactive and insufficient controls remain structurally ineligible."
+    },
+    {
+      "fixtureId": "R15-COMP-023",
+      "fixtureFamily": "FAILED_CONTROL_SET_B",
+      "seedNodeIds": [
+        "gendering"
+      ],
+      "nodeIds": [
+        "gendering",
+        "mobile object",
+        "photography",
+        "institutionalization",
+        "craft",
+        "design diplomacy"
+      ],
+      "associationIds": [
+        "R14-ASSOC-025",
+        "R14-ASSOC-027",
+        "R14-ASSOC-028"
+      ],
+      "topologyRequest": "AUTO",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "Hard-negative controls cannot enter composition."
+    },
+    {
+      "fixtureId": "R15-COMP-024",
+      "fixtureFamily": "FAILED_CONTROL_SET_C",
+      "seedNodeIds": [
+        "Bauhaus"
+      ],
+      "nodeIds": [
+        "Bauhaus",
+        "desktop publishing",
+        "Arts and Crafts",
+        "digital interface",
+        "Swiss typography",
+        "Brazilian exposition"
+      ],
+      "associationIds": [
+        "R14-ASSOC-029",
+        "R14-ASSOC-030",
+        "R14-ASSOC-031"
+      ],
+      "topologyRequest": "AUTO",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "Temporal-near-neighbour controls cannot enter composition without a qualified association."
+    },
+    {
+      "fixtureId": "R15-COMP-025",
+      "fixtureFamily": "FAILED_CONTROL_SET_D",
+      "seedNodeIds": [
+        "photomontage",
+        "gendering",
+        "imitation"
+      ],
+      "nodeIds": [
+        "photomontage",
+        "professionalization",
+        "gendering",
+        "design education",
+        "commodification",
+        "institutionalization",
+        "imitation",
+        "cultural transformation"
+      ],
+      "associationIds": [
+        "R14-ASSOC-032",
+        "R14-ASSOC-033",
+        "R14-ASSOC-034",
+        "R14-ASSOC-035"
+      ],
+      "topologyRequest": "AUTO",
+      "evidenceGapNodeIds": [],
+      "qualificationGate": false,
+      "navigationReturn": false,
+      "synthetic": false,
+      "visualSeed": "round15-default",
+      "description": "Remaining hard negatives are exercised together without producing an edge."
+    }
+  ],
+  "canonicalHash": "c8424d94ea630b956d90f7b7d97895c994554ad7f15bdf8e13356ca713aae526"
+}

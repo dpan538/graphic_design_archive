@@ -55,3 +55,11 @@ The corresponding research package is `docs/research/trace-v49-exploration-compo
 | `docs/audits/v49-exploration-association-calibration-round1` | RESEARCH_CALIBRATION_AND_ENGINE_VALIDATION | Round 13 freeze preservation, 35 association cases, 69 provenance bindings, ordinal direct/skip threshold sweep, 490 sensitivity perturbations, six topology-local fixtures, deterministic pruning, strict inspection redirects, cross-runtime frozen-decision equivalence, product/model boundaries, regressions, and checksum seal. |
 
 The corresponding research package is `docs/research/trace-v49-exploration-association-calibration-round1/`. It authorizes internal Round 15 research only; no public renderer, object-connected field, active precise relation, human-review completion, or deployment is inferred.
+
+## TRACE Round 15 bounded-composition audit — 2026-08-26
+
+| Package | Classification | Scope |
+|---|---|---|
+| `docs/audits/v49-exploration-composition-engine-round1` | INTERNAL_RESEARCH_COMPOSITION_AND_RENDERER_VALIDATION | Frozen Round 13/14 preservation, 25-method visual-epistemology review, all 35 Round 14 association decisions as passes or controls, 25 composition fixtures, six distinct topology contracts, semantic/presentation hash separation, metamorphic invariants, provenance completeness, visual-leakage audit, cross-runtime parity, non-public SVG snapshots, regressions, and checksum seal. |
+
+The corresponding research package is `docs/research/trace-v49-exploration-composition-engine-round1/`. It authorizes bounded internal composition and external-review preparation only. Real typed relations, public rendering, deployment, and human-review completion remain false.

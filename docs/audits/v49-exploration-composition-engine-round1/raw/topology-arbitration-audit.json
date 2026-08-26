@@ -1,0 +1,248 @@
+{
+  "method_version": "trace-evidence-governed-composition-v1",
+  "topology_signatures": {
+    "LINEAR_PATH": "PATH:START-EVIDENCE-CONTINUATION-BOUNDARY",
+    "BINARY_FORK": "FORK:ROOT-TWO-ALTERNATIVES",
+    "BINARY_CONVERGENCE": "CONVERGENCE:TWO-INPUTS-SHARED-REVIEW",
+    "QUALIFIED_PATH": "QUALIFIED:PATH-WITH-MANDATORY-GATE",
+    "REFLEXIVE_RETURN": "RETURN:ACYCLIC-PATH-NAVIGATION-TO-ROOT",
+    "EVIDENCE_GAP_TREE": "GAP:SUPPORTED-AND-UNRESOLVED-PEERS"
+  },
+  "tree_strategy_topology_duplicate_count": 0,
+  "cases": [
+    {
+      "fixture_id": "R15-COMP-001",
+      "selected_topology": "LINEAR_PATH",
+      "valid_topologies": [
+        "LINEAR_PATH"
+      ],
+      "arbitration_required": false,
+      "reason_code": "EXPLICIT_INQUIRY_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-002",
+      "selected_topology": "BINARY_FORK",
+      "valid_topologies": [
+        "BINARY_FORK",
+        "BINARY_CONVERGENCE"
+      ],
+      "arbitration_required": true,
+      "reason_code": "EXPLICIT_INQUIRY_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-003",
+      "selected_topology": "BINARY_FORK",
+      "valid_topologies": [
+        "BINARY_FORK",
+        "BINARY_CONVERGENCE"
+      ],
+      "arbitration_required": true,
+      "reason_code": "EXPLICIT_INQUIRY_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-004",
+      "selected_topology": "UNRESOLVED",
+      "valid_topologies": [
+        "BINARY_FORK",
+        "BINARY_CONVERGENCE"
+      ],
+      "arbitration_required": true,
+      "reason_code": "MULTIPLE_VALID_TOPOLOGIES"
+    },
+    {
+      "fixture_id": "R15-COMP-005",
+      "selected_topology": "UNRESOLVED",
+      "valid_topologies": [],
+      "arbitration_required": false,
+      "reason_code": "NO_VALID_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-006",
+      "selected_topology": "LINEAR_PATH",
+      "valid_topologies": [
+        "LINEAR_PATH"
+      ],
+      "arbitration_required": false,
+      "reason_code": "EXPLICIT_INQUIRY_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-007",
+      "selected_topology": "BINARY_CONVERGENCE",
+      "valid_topologies": [
+        "BINARY_FORK",
+        "BINARY_CONVERGENCE"
+      ],
+      "arbitration_required": true,
+      "reason_code": "EXPLICIT_INQUIRY_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-008",
+      "selected_topology": "UNRESOLVED",
+      "valid_topologies": [],
+      "arbitration_required": false,
+      "reason_code": "NO_VALID_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-009",
+      "selected_topology": "UNRESOLVED",
+      "valid_topologies": [],
+      "arbitration_required": false,
+      "reason_code": "NO_VALID_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-010",
+      "selected_topology": "EVIDENCE_GAP_TREE",
+      "valid_topologies": [
+        "LINEAR_PATH",
+        "EVIDENCE_GAP_TREE"
+      ],
+      "arbitration_required": true,
+      "reason_code": "EXPLICIT_INQUIRY_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-011",
+      "selected_topology": "BINARY_FORK",
+      "valid_topologies": [
+        "LINEAR_PATH",
+        "BINARY_FORK",
+        "BINARY_CONVERGENCE"
+      ],
+      "arbitration_required": true,
+      "reason_code": "EXPLICIT_INQUIRY_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-012",
+      "selected_topology": "LINEAR_PATH",
+      "valid_topologies": [
+        "LINEAR_PATH",
+        "BINARY_FORK",
+        "BINARY_CONVERGENCE"
+      ],
+      "arbitration_required": true,
+      "reason_code": "EXPLICIT_INQUIRY_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-013",
+      "selected_topology": "LINEAR_PATH",
+      "valid_topologies": [
+        "LINEAR_PATH",
+        "BINARY_FORK",
+        "BINARY_CONVERGENCE"
+      ],
+      "arbitration_required": true,
+      "reason_code": "EXPLICIT_INQUIRY_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-014",
+      "selected_topology": "LINEAR_PATH",
+      "valid_topologies": [
+        "LINEAR_PATH",
+        "BINARY_FORK",
+        "BINARY_CONVERGENCE"
+      ],
+      "arbitration_required": true,
+      "reason_code": "EXPLICIT_INQUIRY_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-015",
+      "selected_topology": "BINARY_FORK",
+      "valid_topologies": [
+        "BINARY_FORK",
+        "BINARY_CONVERGENCE"
+      ],
+      "arbitration_required": true,
+      "reason_code": "EXPLICIT_INQUIRY_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-016",
+      "selected_topology": "BINARY_CONVERGENCE",
+      "valid_topologies": [
+        "LINEAR_PATH",
+        "BINARY_FORK",
+        "BINARY_CONVERGENCE"
+      ],
+      "arbitration_required": true,
+      "reason_code": "EXPLICIT_INQUIRY_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-017",
+      "selected_topology": "QUALIFIED_PATH",
+      "valid_topologies": [
+        "LINEAR_PATH",
+        "BINARY_FORK",
+        "BINARY_CONVERGENCE",
+        "QUALIFIED_PATH"
+      ],
+      "arbitration_required": true,
+      "reason_code": "EXPLICIT_INQUIRY_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-018",
+      "selected_topology": "REFLEXIVE_RETURN",
+      "valid_topologies": [
+        "LINEAR_PATH",
+        "BINARY_FORK",
+        "BINARY_CONVERGENCE",
+        "REFLEXIVE_RETURN"
+      ],
+      "arbitration_required": true,
+      "reason_code": "EXPLICIT_INQUIRY_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-019",
+      "selected_topology": "EVIDENCE_GAP_TREE",
+      "valid_topologies": [
+        "LINEAR_PATH",
+        "EVIDENCE_GAP_TREE"
+      ],
+      "arbitration_required": true,
+      "reason_code": "EXPLICIT_INQUIRY_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-020",
+      "selected_topology": "UNRESOLVED",
+      "valid_topologies": [],
+      "arbitration_required": false,
+      "reason_code": "NO_VALID_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-021",
+      "selected_topology": "BINARY_CONVERGENCE",
+      "valid_topologies": [
+        "BINARY_FORK",
+        "BINARY_CONVERGENCE"
+      ],
+      "arbitration_required": true,
+      "reason_code": "EXPLICIT_INQUIRY_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-022",
+      "selected_topology": "UNRESOLVED",
+      "valid_topologies": [],
+      "arbitration_required": false,
+      "reason_code": "NO_VALID_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-023",
+      "selected_topology": "UNRESOLVED",
+      "valid_topologies": [],
+      "arbitration_required": false,
+      "reason_code": "NO_VALID_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-024",
+      "selected_topology": "UNRESOLVED",
+      "valid_topologies": [],
+      "arbitration_required": false,
+      "reason_code": "NO_VALID_TOPOLOGY"
+    },
+    {
+      "fixture_id": "R15-COMP-025",
+      "selected_topology": "UNRESOLVED",
+      "valid_topologies": [],
+      "arbitration_required": false,
+      "reason_code": "NO_VALID_TOPOLOGY"
+    }
+  ],
+  "canonical_hash": "b16f57cd9731f47857b1aee65a0f715e94a8862475d6f76610f9f4b753e53e05"
+}

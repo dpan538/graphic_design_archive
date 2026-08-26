@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trace.example.invalid/schemas/exploration/composition-audit-v1.schema.json",
+  "title": "TRACE Composition Audit V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "fixture_id",
+    "fixture_family",
+    "synthetic",
+    "duplicate_input_count",
+    "failed_association_control_count",
+    "hard_negative_control_count",
+    "unsupported_rendered_edge_count",
+    "typed_historical_relation_emission_count",
+    "causal_relation_emission_count",
+    "directional_relation_emission_count",
+    "negative_language_violation_count",
+    "explicit_non_claims"
+  ],
+  "properties": {
+    "fixture_id": {
+      "type": "string"
+    },
+    "fixture_family": {
+      "type": "string"
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "duplicate_input_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "failed_association_control_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "hard_negative_control_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "unsupported_rendered_edge_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "typed_historical_relation_emission_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "causal_relation_emission_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "directional_relation_emission_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "negative_language_violation_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "explicit_non_claims": {
+      "type": "array",
+      "minItems": 3,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

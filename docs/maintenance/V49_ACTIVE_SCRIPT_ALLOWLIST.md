@@ -11,3 +11,5 @@ Round 11–12 history coordination rebuilds all three ledgers from the final mer
 Round 13 adds 8 composition-review reference, generator, validator, test, and topology-fixture files. They are research/audit reproduction tooling only and do not activate runtime semantics. The reconciled count is 238 with zero missing, extra, duplicate, or unknown classifications.
 
 Round 14 adds 9 generic-association calibration input, reference, generator, validator, test, and fixture files. They remain research/audit reproduction tooling; Python is normative and none is a runtime, API, database, CI, renderer, or public-activation entry point. The reconciled count is 247 with zero missing, extra, duplicate, or unknown classifications.
+
+Round 15 adds the bounded-composition Python model, fixture registry/package, generator, validator, and test files. They remain internal research/audit reproduction tooling. The renderer is a non-public TypeScript fixture harness outside `scripts/`; it cannot change Python-authored semantic output and adds no route or API. The generated ledger count and zero-difference result are authoritative.
