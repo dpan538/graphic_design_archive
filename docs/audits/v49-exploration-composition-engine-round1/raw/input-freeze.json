@@ -1,6 +1,217 @@
 {
   "source_sha": "cf4490e93449a46823a6de0c0676e431a7da6738",
-  "round13_files": [],
+  "round13_files": [
+    {
+      "path": "docs/audits/v49-exploration-composition-review-round1/raw/activation-boundary.json",
+      "byte_size": "289",
+      "sha256": "055145942df7e8e59c9d1f5d63de75c07c24af21884fbb7b2fbc9aeb81f52229"
+    },
+    {
+      "path": "docs/audits/v49-exploration-composition-review-round1/raw/composition-evidence.json",
+      "byte_size": "146",
+      "sha256": "92faf872e0dc872178bbb3f88c9dc1831582e2399c324f727a54fb0fbf2837c9"
+    },
+    {
+      "path": "docs/audits/v49-exploration-composition-review-round1/raw/full-validation.tsv",
+      "byte_size": "2640",
+      "sha256": "526de0b76f21a4a3dea82a90e69ebc3e745522636da39cb911c75fd206a24235"
+    },
+    {
+      "path": "docs/audits/v49-exploration-composition-review-round1/raw/independent-review-provenance.json",
+      "byte_size": "1760",
+      "sha256": "afff8fed37245420fc20ee14d7b9511a4efed62139811994cc50943b44a63842"
+    },
+    {
+      "path": "docs/audits/v49-exploration-composition-review-round1/raw/input-freeze.json",
+      "byte_size": "587",
+      "sha256": "7c91dc909ca10b0ca111e51f6261d22cb60fb668c5e51a7ee0c5ef555338a749"
+    },
+    {
+      "path": "docs/audits/v49-exploration-composition-review-round1/raw/instance-v2-validation.json",
+      "byte_size": "560",
+      "sha256": "e3249054dbb404238191f5ae8a3929e80aeaab65aa00262c82b91e2a90603dff"
+    },
+    {
+      "path": "docs/audits/v49-exploration-composition-review-round1/raw/tree-strategy-validation.json",
+      "byte_size": "1394",
+      "sha256": "03f0f544a22f4ed245d37d6b94d0f69ec50efbae9e4600bf9ed6a89ea5bf6665"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/00_EXECUTIVE_DECISION.md",
+      "byte_size": "1091",
+      "sha256": "1d74fa61b2373c1ff1a67f78a124c651c5a5c3a233c08a0c3d634fb9b232124f"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/01_SCOPE_AND_METHOD.md",
+      "byte_size": "886",
+      "sha256": "b73aeda92594c212611aad90b2f91cba7cccb7bc729164c1aef566eced1a9668"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/02_ROUND12_INPUT_FREEZE.md",
+      "byte_size": "673",
+      "sha256": "eb54d5ed255762fc426531088a47aafe071de0148287acaee5e521f08b67b1c1"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/03_COMPOSITION_SCHOLARLY_SOURCE_REGISTRY.tsv",
+      "byte_size": "10048",
+      "sha256": "1f54c0956ca12dfaad472a6644c6102ee13b2e9a46f6c1794e21e1a2d7097dca"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv",
+      "byte_size": "18020",
+      "sha256": "c3d24a2a6f90d1e0b6ce7f0f483d04a752761cb3699294039c97778ed84dd714"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/05_PAIR_DECISION_REGISTRY.tsv",
+      "byte_size": "2345",
+      "sha256": "eb8857757aa0daca1a827a224133962fc3e22b296d4a71e80a81f9d281c9b012"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/06_VOCABULARY_GAP_EVIDENCE.tsv",
+      "byte_size": "13279",
+      "sha256": "a38600ead90276d12b97a394443a93cefab1009ea7b391c36aa8d141fcee1051"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/07_VOCABULARY_GAP_DECISIONS.tsv",
+      "byte_size": "2830",
+      "sha256": "70fe25529eab69513fc31899b237a3e9eb42e770c0bc2b5a252a132790550004"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/08_INQUIRY_GRAMMAR_CANDIDATES.tsv",
+      "byte_size": "1803",
+      "sha256": "bcc66652a0eab047ebf06a47176efb47ada299f7ee60497574f0b8c295986c5a"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/09_TREE_STRATEGY_TOPOLOGY_SPEC.md",
+      "byte_size": "1250",
+      "sha256": "03ce93e1e42aefafec82a10d097a9d5b7629bf0329f79c93b479820bb222af2a"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/10_TREE_STRATEGY_CONFORMANCE.tsv",
+      "byte_size": "1668",
+      "sha256": "c801d0ed6fd1dc7f2df01830cdfd071a6e4b39d50d7921df68d57f59d57adc69"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/11_RESEARCH_INSTANCE_V2_REGISTRY.tsv",
+      "byte_size": "1618",
+      "sha256": "62093f0d89884299e2f1e975f390ead5dc4bdefb2faccef5e057cef318486045"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/12_RESEARCH_INSTANCES_V2/INQUIRY-INSTANCE-001.v2.json",
+      "byte_size": "9002",
+      "sha256": "36c70521a52e964ef577f1f73121c9b4c1ef03502381bf08adb5ae6def13abdd"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/12_RESEARCH_INSTANCES_V2/INQUIRY-INSTANCE-002.v2.json",
+      "byte_size": "8171",
+      "sha256": "a46cde2f367e832eb11303e49bb99960415955e23eca23110e41da23b7d05f58"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/12_RESEARCH_INSTANCES_V2/INQUIRY-INSTANCE-003.v2.json",
+      "byte_size": "8373",
+      "sha256": "505e8bf19ec95933b9f6e6e8f55f4b0c8dfae9be37c7a163f35908c926cb087a"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/12_RESEARCH_INSTANCES_V2/INQUIRY-INSTANCE-004.v2.json",
+      "byte_size": "6399",
+      "sha256": "bf82292834a2f55d35a09ff20cea6d4e2b9937b38801ab6ef5520b5cf493ea3c"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/12_RESEARCH_INSTANCES_V2/INQUIRY-INSTANCE-005.v2.json",
+      "byte_size": "6532",
+      "sha256": "612fefa34ca349747ffa0312b85813a9457cbaa707975fd2ad140188726e70d7"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/13_INSTANCE_V1_V2_DIFF.tsv",
+      "byte_size": "1591",
+      "sha256": "cb89d73dcb311270822291447b9c680b57ad3b718a4c7ba8539f4293d851541e"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/14_ACTIVATION_CANDIDATE_PACKAGE.json",
+      "byte_size": "4366",
+      "sha256": "0b467800163e9a44481ced527e7a0b52c11b843b3fe0efa15912ae981eb836db"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/15_EXTERNAL_DOMAIN_REVIEW_PACKET.md",
+      "byte_size": "57380",
+      "sha256": "44301652044f6701a976fa2899254eeb204ac8da5b8422735961217b011d74cd"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/16_EXTERNAL_DOMAIN_REVIEW_REGISTRY.tsv",
+      "byte_size": "47923",
+      "sha256": "903369afab8486b9a7553898ef0cf1bcf858d87bea99bd96887e62aa17a478b6"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/17_SOURCE_BREADTH_AND_CONCENTRATION.md",
+      "byte_size": "852",
+      "sha256": "5bdb4615293486c0fb451d4fa5359b56058c102d234e84dadb13f1a7e3dfeaf6"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/18_LIMITATIONS_AND_ACTIVATION_BOUNDARY.md",
+      "byte_size": "912",
+      "sha256": "3f2472e36641353575b233036fd468ffbb83eed01b08674ec824da78769ace71"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/19_REFERENCE_LIST.md",
+      "byte_size": "7770",
+      "sha256": "95562d52c53923775a2ac6adccf7aaaa437b44212ecd1d83f98470a64ab514bc"
+    },
+    {
+      "path": "docs/research/trace-v49-exploration-composition-review-round1/20_ROUND_DECISION.md",
+      "byte_size": "560",
+      "sha256": "0953ad851ce698f0f4eb960f60d1229ce4432b16028f2c84b773dea772cacb2b"
+    },
+    {
+      "path": "schemas/trace/exploration/inquiry-tree-v2.schema.json",
+      "byte_size": "2796",
+      "sha256": "5e91b5c82dd9d8459e3d34a3dd5bdd2a986517fd41fb17a18b9166895dcd8eee"
+    },
+    {
+      "path": "schemas/trace/exploration/research-inquiry-instance-v2.schema.json",
+      "byte_size": "3809",
+      "sha256": "19f4d2052e3a48d6bee5a9b88ee6f11eec4ef095dfb56476785f3479b5be871b"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-review/canonical_v2.py",
+      "byte_size": "2242",
+      "sha256": "f07897ebf03e00e1ff926eb9f3648d6940b0a461ff531e414e8d12641019bfbc"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-review/fixtures/tree-strategy-conformance-v2.json",
+      "byte_size": "19487",
+      "sha256": "8d93ef24edb8bcf527ed87232862006fd0d82995d82f5267069498a11cbdafcc"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-review/fixtures/tree-strategy-negative-v2.json",
+      "byte_size": "36521",
+      "sha256": "0f2c468f12d0e62fd985ccadbb9bb200073d02a90b25ca579f75bec455b4dcc6"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-review/generate_round1.py",
+      "byte_size": "93808",
+      "sha256": "455185cac255de81e5b0e8bc22c3810ebd3796689f731951116cf54858ee1fe7"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-review/instance_v2.py",
+      "byte_size": "7037",
+      "sha256": "9a0031afaa36defa9a5138252f4f2b86358223ea7b59bec72d06d4a18aeb1833"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-review/test_round1.py",
+      "byte_size": "5920",
+      "sha256": "37b9223b5dc0bb39c8d64f408ed7409c5446bc0298cac6fccf4710aab8efaef1"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-review/topology.py",
+      "byte_size": "21153",
+      "sha256": "a9d3089e354100dd3e967fe66cec7559af50d121fc700f356a61b33425669ba1"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-composition-review/validate_round1.py",
+      "byte_size": "34689",
+      "sha256": "8f101874ad194211b9a6231df1b2a067003de68024d7255e9c65f89b29b3ed33"
+    }
+  ],
   "round14_files": [
     {
       "path": "docs/audits/v49-exploration-association-calibration-round1/raw/association-calibration.tsv",

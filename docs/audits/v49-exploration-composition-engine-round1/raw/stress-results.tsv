@@ -1,5 +1,5 @@
 node_count	input_edge_count	bounded_partition_count	largest_partition_node_count	largest_admitted_degree	partition_edge_count	runtime_ms	output_byte_count	deterministic	degree_explosion	synthetic
-5	4	1	5	2	4	0.009500	298	true	false	true
-10	9	2	8	2	8	0.004500	590	true	false	true
-20	19	3	8	2	17	0.005666	1172	true	false	true
-40	39	5	8	2	35	0.008875	2336	true	false	true
+5	4	1	5	2	4	0.007667	298	true	false	true
+10	9	2	8	2	8	0.004875	590	true	false	true
+20	19	3	8	2	17	0.006416	1172	true	false	true
+40	39	5	8	2	35	0.009292	2336	true	false	true

@@ -428,13 +428,23 @@ def generate() -> dict[str, Any]:
         for gate, command in validation_rows
     ])
 
+    round13_manifest = REPO / "docs/audits/v49-exploration-composition-review-round1/MANIFEST.tsv"
     round14_manifest = REPO / "docs/audits/v49-exploration-association-calibration-round1/MANIFEST.tsv"
     round13_rows: list[dict[str, str]] = []
     round14_rows: list[dict[str, str]] = []
+    with round13_manifest.open(encoding="utf-8", newline="") as handle:
+        for row in csv.DictReader(handle, delimiter="\t"):
+            if row["path"].startswith((
+                "docs/research/trace-v49-exploration-composition-review-round1/",
+                "docs/audits/v49-exploration-composition-review-round1/raw/",
+                "scripts/trace-v49-exploration-composition-review/",
+            )) or row["path"] in {
+                "schemas/trace/exploration/inquiry-tree-v2.schema.json",
+                "schemas/trace/exploration/research-inquiry-instance-v2.schema.json",
+            }:
+                round13_rows.append(row)
     with round14_manifest.open(encoding="utf-8", newline="") as handle:
         for row in csv.DictReader(handle, delimiter="\t"):
-            if row["path"].startswith(("docs/research/trace-v49-exploration-composition-review-round1/", "scripts/trace-v49-exploration-composition-review/")):
-                round13_rows.append(row)
             if row["path"].startswith(("docs/research/trace-v49-exploration-association-calibration-round1/", "docs/audits/v49-exploration-association-calibration-round1/raw/", "scripts/trace-v49-exploration-association-calibration/")) or row["path"].endswith("association-assessment-v1.schema.json"):
                 round14_rows.append(row)
     freeze = {
