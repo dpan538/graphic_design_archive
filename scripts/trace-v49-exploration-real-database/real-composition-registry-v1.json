@@ -1,0 +1,146 @@
+{
+  "format": "trace-exploration-real-composition-registry-v1",
+  "categoryOrder": ["region", "theme", "medium", "movement"],
+  "categories": {
+    "region": {
+      "label": "Region",
+      "description": "Browse evidence-bounded compositions through governed geographic entry records.",
+      "approvedTaxonomyRefs": ["database:object_folder_refs:region", "trace-spacetime-v1:geography-registry"],
+      "anchorFolderTitles": ["Indonesia", "Brazil", "United States"],
+      "compositions": ["R16-COMP-REGION-01", "R16-COMP-REGION-02", "R16-COMP-REGION-03"]
+    },
+    "theme": {
+      "label": "Theme",
+      "description": "Browse evidence-bounded compositions through governed thematic entry records.",
+      "approvedTaxonomyRefs": ["database:object_folder_refs:theme", "trace-context-v1:theme"],
+      "anchorFolderTitles": ["Postwar exhibition and cultural posters", "World War and public-information graphics", "Corporate identity and design systems"],
+      "compositions": ["R16-COMP-THEME-01", "R16-COMP-THEME-02", "R16-COMP-THEME-03"]
+    },
+    "medium": {
+      "label": "Medium / format",
+      "description": "Browse evidence-bounded compositions through governed medium and format entry records.",
+      "approvedTaxonomyRefs": ["database:object_folder_refs:medium", "trace-context-v1:medium"],
+      "anchorFolderTitles": ["Photomontage", "Advertisement", "Publication design"],
+      "compositions": ["R16-COMP-MEDIUM-01", "R16-COMP-MEDIUM-02"]
+    },
+    "movement": {
+      "label": "Movement context",
+      "description": "Browse evidence-bounded compositions through governed movement-context entry records.",
+      "approvedTaxonomyRefs": ["database:object_folder_refs:movement", "trace-context-v1:movement_context"],
+      "anchorFolderTitles": ["Bauhaus / New Typography first-ingest network", "Polish Poster School first-ingest scope"],
+      "compositions": ["R16-COMP-MOVEMENT-01", "R16-COMP-MOVEMENT-02", "R16-COMP-MOVEMENT-03"]
+    }
+  },
+  "compositions": [
+    {
+      "compositionId": "R16-COMP-REGION-01",
+      "categoryId": "region",
+      "entryEvidence": "COMP-SRC-013;COMP-SRC-014;SPTGEO:Indonesia",
+      "seedNodeIds": ["cultural negotiation"],
+      "nodeIds": ["cultural negotiation", "adaptation", "rejection"],
+      "associationIds": ["R14-ASSOC-013", "R14-ASSOC-014", "R14-ASSOC-015"],
+      "topologyRequest": "BINARY_FORK",
+      "description": "Contact-zone and Javanese adaptation research, entered through governed Indonesia records."
+    },
+    {
+      "compositionId": "R16-COMP-REGION-02",
+      "categoryId": "region",
+      "entryEvidence": "COMP-SRC-019;COMP-SRC-020;SPTGEO:United States",
+      "seedNodeIds": ["supply chain"],
+      "nodeIds": ["material displacement", "supply chain", "production site"],
+      "associationIds": ["R14-ASSOC-010", "R14-ASSOC-011", "R14-ASSOC-012"],
+      "topologyRequest": "BINARY_FORK",
+      "description": "Material-chain histories entered through governed United States records."
+    },
+    {
+      "compositionId": "R16-COMP-REGION-03",
+      "categoryId": "region",
+      "entryEvidence": "COMP-SRC-004;SPTGEO:Brazil",
+      "seedNodeIds": ["gendering"],
+      "nodeIds": ["gendering", "commodification"],
+      "associationIds": ["R14-ASSOC-016"],
+      "topologyRequest": "LINEAR_PATH",
+      "description": "Brazilian exposition research entered through governed Brazil records."
+    },
+    {
+      "compositionId": "R16-COMP-THEME-01",
+      "categoryId": "theme",
+      "entryEvidence": "COMP-SRC-023;COMP-SRC-024;COMP-SRC-025;CTX:THEME:Postwar exhibition and cultural posters",
+      "seedNodeIds": ["design diplomacy"],
+      "nodeIds": ["design diplomacy", "exhibition", "propaganda", "trade"],
+      "associationIds": ["R14-ASSOC-005", "R14-ASSOC-006", "R14-ASSOC-007", "R14-ASSOC-008", "R14-ASSOC-009"],
+      "topologyRequest": "BINARY_FORK",
+      "description": "International-exhibition research entered through the governed exhibition-poster theme."
+    },
+    {
+      "compositionId": "R16-COMP-THEME-02",
+      "categoryId": "theme",
+      "entryEvidence": "COMP-SRC-009;COMP-SRC-010;CTX:THEME:Midcentury modern graphic communication",
+      "seedNodeIds": ["mediation"],
+      "nodeIds": ["production", "mediation", "consumption"],
+      "associationIds": ["R14-ASSOC-002", "R14-ASSOC-003", "R14-ASSOC-004"],
+      "topologyRequest": "BINARY_FORK",
+      "description": "Production-consumption-mediation design historiography entered through a governed communication theme."
+    },
+    {
+      "compositionId": "R16-COMP-THEME-03",
+      "categoryId": "theme",
+      "entryEvidence": "R14-ARC-003;R14-ARC-004;R16-SRC-003;R16-SRC-004;CTX:THEME:Corporate identity and design systems",
+      "seedNodeIds": ["advertising"],
+      "nodeIds": ["advertising", "consumer culture"],
+      "associationIds": ["R14-ASSOC-019"],
+      "topologyRequest": "LINEAR_PATH",
+      "description": "First Things First evidence entered through governed commercial-design context."
+    },
+    {
+      "compositionId": "R16-COMP-MEDIUM-01",
+      "categoryId": "medium",
+      "entryEvidence": "R14-ARC-002;R16-SRC-001;R16-SRC-002;CTX:MEDIUM:Photomontage",
+      "seedNodeIds": ["photography"],
+      "nodeIds": ["photography", "typography"],
+      "associationIds": ["R14-ASSOC-018"],
+      "topologyRequest": "LINEAR_PATH",
+      "description": "Herbert Matter evidence entered through the governed photomontage medium."
+    },
+    {
+      "compositionId": "R16-COMP-MEDIUM-02",
+      "categoryId": "medium",
+      "entryEvidence": "COMP-SRC-006;COMP-SRC-007;COMP-SRC-008;COMP-SRC-029;CTX:MEDIUM:Publication design",
+      "seedNodeIds": ["imitation"],
+      "nodeIds": ["imitation", "piracy"],
+      "associationIds": ["R14-ASSOC-017"],
+      "topologyRequest": "LINEAR_PATH",
+      "description": "Design-copying research entered through governed publication-design records."
+    },
+    {
+      "compositionId": "R16-COMP-MOVEMENT-01",
+      "categoryId": "movement",
+      "entryEvidence": "R14-ARC-001;R16-SRC-005;CTX:MOVEMENT:Bauhaus / New Typography first-ingest network",
+      "seedNodeIds": ["craft"],
+      "nodeIds": ["craft", "education"],
+      "associationIds": ["R14-ASSOC-020"],
+      "topologyRequest": "LINEAR_PATH",
+      "description": "Bauhaus craft and education evidence entered through the governed Bauhaus context."
+    },
+    {
+      "compositionId": "R16-COMP-MOVEMENT-02",
+      "categoryId": "movement",
+      "entryEvidence": "COMP-SRC-001;COMP-SRC-002;CTX:MOVEMENT:Bauhaus / New Typography first-ingest network",
+      "seedNodeIds": ["professionalization"],
+      "nodeIds": ["professionalization", "institutionalization"],
+      "associationIds": ["R14-ASSOC-001"],
+      "topologyRequest": "LINEAR_PATH",
+      "description": "Professional-history research entered through governed institutional design context."
+    },
+    {
+      "compositionId": "R16-COMP-MOVEMENT-03",
+      "categoryId": "movement",
+      "entryEvidence": "COMP-SRC-001;COMP-SRC-002;R16-SRC-006;CTX:MOVEMENT:Bauhaus / New Typography first-ingest network",
+      "seedNodeIds": ["design education"],
+      "nodeIds": ["design education", "institutionalization"],
+      "associationIds": ["R14-ASSOC-021"],
+      "topologyRequest": "LINEAR_PATH",
+      "description": "Design-education institutional research entered through governed education context."
+    }
+  ]
+}

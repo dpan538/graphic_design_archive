@@ -1,0 +1,240 @@
+{
+  "association_ids": [
+    "R14-ASSOC-010",
+    "R14-ASSOC-011",
+    "R14-ASSOC-012"
+  ],
+  "content_type": "image/png",
+  "dimensions": {
+    "height": 1620,
+    "padding": 72,
+    "width": 1080
+  },
+  "export_alt_text": "Region exploration card. supply chain; |-- material displacement; `-- production site",
+  "export_id": "TREX:61895bf2cc5497f5845593385a5641d4bf7f4c1d56af50b73ab030082ee2fa79",
+  "export_preset": "portrait_card",
+  "map_id": "TRMAP:8ad4ffaca99b1219b90e3d7c1133fdeba3634c48343f4963e0f5facbba43c7cd",
+  "map_region": {
+    "associations": [
+      {
+        "active_for_proximity": true,
+        "association_accessible_description": "material displacement is available to explore with supply chain as a qualified generic association.",
+        "association_id": "R14-ASSOC-010",
+        "confidence": "HIGH",
+        "endpoint_labels": [
+          "material displacement",
+          "supply chain"
+        ],
+        "endpoint_vocabulary_ids": [
+          "TRV:d366de58d3002458bfb404ee505621e926c518871a4caeffcdfb89b45f8112ef",
+          "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c"
+        ],
+        "explicit_non_claims": [
+          "causation",
+          "influence",
+          "chronology",
+          "hierarchy",
+          "direction",
+          "equivalence"
+        ],
+        "generic_association_only": true,
+        "hard_negative": false,
+        "mandatory_dimension_results": {
+          "D1": 2,
+          "D5": 2,
+          "D7": 2
+        },
+        "provenance_refs": [
+          "R14-EVID-010-01",
+          "R14-EVID-010-02"
+        ],
+        "qualification": "The association does not reduce all material movement to one supply-chain model.",
+        "qualification_version": "trace-generic-association-rubric-v1",
+        "source_refs": [
+          "COMP-SRC-019",
+          "COMP-SRC-020"
+        ],
+        "source_urls": [
+          "https://academic.oup.com/jdh/issue/34/3",
+          "https://www.tandfonline.com/doi/abs/10.1080/18626033.2013.798922"
+        ],
+        "strength": "STRONG",
+        "support_status": "EXTERNALLY_SUPPORTED"
+      },
+      {
+        "active_for_proximity": true,
+        "association_accessible_description": "supply chain is available to explore with production site as a qualified generic association.",
+        "association_id": "R14-ASSOC-011",
+        "confidence": "MODERATE",
+        "endpoint_labels": [
+          "supply chain",
+          "production site"
+        ],
+        "endpoint_vocabulary_ids": [
+          "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c",
+          "TRV:be33e16d8f585c08bb0efe6f0df92659a22d534298639f5318d2a2580546fdcc"
+        ],
+        "explicit_non_claims": [
+          "causation",
+          "influence",
+          "chronology",
+          "hierarchy",
+          "direction",
+          "equivalence"
+        ],
+        "generic_association_only": true,
+        "hard_negative": false,
+        "mandatory_dimension_results": {
+          "D1": 2,
+          "D5": 2,
+          "D7": 2
+        },
+        "provenance_refs": [
+          "R14-EVID-011-01"
+        ],
+        "qualification": "One bounded study and source family; confidence is moderate.",
+        "qualification_version": "trace-generic-association-rubric-v1",
+        "source_refs": [
+          "COMP-SRC-020"
+        ],
+        "source_urls": [
+          "https://www.tandfonline.com/doi/abs/10.1080/18626033.2013.798922"
+        ],
+        "strength": "STRONG",
+        "support_status": "EXTERNALLY_SUPPORTED"
+      },
+      {
+        "active_for_proximity": true,
+        "association_accessible_description": "material displacement is available to explore with production site as a qualified generic association.",
+        "association_id": "R14-ASSOC-012",
+        "confidence": "MODERATE",
+        "endpoint_labels": [
+          "material displacement",
+          "production site"
+        ],
+        "endpoint_vocabulary_ids": [
+          "TRV:d366de58d3002458bfb404ee505621e926c518871a4caeffcdfb89b45f8112ef",
+          "TRV:be33e16d8f585c08bb0efe6f0df92659a22d534298639f5318d2a2580546fdcc"
+        ],
+        "explicit_non_claims": [
+          "causation",
+          "influence",
+          "chronology",
+          "hierarchy",
+          "direction",
+          "equivalence"
+        ],
+        "generic_association_only": true,
+        "hard_negative": false,
+        "mandatory_dimension_results": {
+          "D1": 1,
+          "D5": 2,
+          "D7": 2
+        },
+        "provenance_refs": [
+          "R14-EVID-012-01"
+        ],
+        "qualification": "Association is inferred within the source's explicit chain, not elevated to a universal relation.",
+        "qualification_version": "trace-generic-association-rubric-v1",
+        "source_refs": [
+          "COMP-SRC-020"
+        ],
+        "source_urls": [
+          "https://www.tandfonline.com/doi/abs/10.1080/18626033.2013.798922"
+        ],
+        "strength": "MODERATE",
+        "support_status": "EXTERNALLY_SUPPORTED"
+      }
+    ],
+    "nodes": [
+      {
+        "canonical_label": "material displacement",
+        "node_accessible_label": "material displacement, evidence-supported exploration term",
+        "projection": {
+          "bounding_hint": {
+            "radius": 0.022222222222222223
+          },
+          "branch_slot": 0,
+          "group_slot": "region",
+          "layer_slot": 0,
+          "normalised_x": 0.591667,
+          "normalised_y": 0.877778,
+          "projection_version": "trace-exploration-neutral-projection-v1"
+        },
+        "vocabulary_id": "TRV:d366de58d3002458bfb404ee505621e926c518871a4caeffcdfb89b45f8112ef"
+      },
+      {
+        "canonical_label": "supply chain",
+        "node_accessible_label": "supply chain, evidence-supported exploration term",
+        "projection": {
+          "bounding_hint": {
+            "radius": 0.022222222222222223
+          },
+          "branch_slot": 2,
+          "group_slot": "region",
+          "layer_slot": 0,
+          "normalised_x": 0.698611,
+          "normalised_y": 0.205556,
+          "projection_version": "trace-exploration-neutral-projection-v1"
+        },
+        "vocabulary_id": "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c"
+      },
+      {
+        "canonical_label": "production site",
+        "node_accessible_label": "production site, evidence-supported exploration term",
+        "projection": {
+          "bounding_hint": {
+            "radius": 0.022222222222222223
+          },
+          "branch_slot": 1,
+          "group_slot": "region",
+          "layer_slot": 0,
+          "normalised_x": 0.211111,
+          "normalised_y": 0.418519,
+          "projection_version": "trace-exploration-neutral-projection-v1"
+        },
+        "vocabulary_id": "TRV:be33e16d8f585c08bb0efe6f0df92659a22d534298639f5318d2a2580546fdcc"
+      }
+    ],
+    "projection_version": "trace-exploration-neutral-projection-v1",
+    "region_id": "TRREG:999e42d10bf8153a28760ddcc418995b816c6032d6aad7e76af79ca14c1ff5aa"
+  },
+  "plain_text_tree": {
+    "generic_association_only": true,
+    "plain_text_tree": "supply chain\n├── material displacement\n└── production site",
+    "plain_text_tree_ascii": "supply chain\n|-- material displacement\n`-- production site",
+    "schema_version": "trace-plain-text-tree-v1",
+    "structural_hierarchy_is_historical_claim": false,
+    "tree_association_ids": [
+      "R14-ASSOC-010",
+      "R14-ASSOC-011"
+    ],
+    "tree_node_ids": [
+      "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c",
+      "TRV:d366de58d3002458bfb404ee505621e926c518871a4caeffcdfb89b45f8112ef",
+      "TRV:be33e16d8f585c08bb0efe6f0df92659a22d534298639f5318d2a2580546fdcc"
+    ],
+    "tree_root_node_id": "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c",
+    "tree_semantic_hash": "5da23c45d7321d5c93f88fb07b2899f3c18dae1ec760ba0f6cefde752416ee44"
+  },
+  "presentation_hash": "2dfa891647081868637c26783d55ac8efb843997c38292a94ca36ff95c751c95",
+  "provenance_summary": {
+    "archive_object_reference_count": 12,
+    "context_reference_count": 25,
+    "database_snapshot_id": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "source_count": 2,
+    "spacetime_reference_count": 3
+  },
+  "render_version": "trace-exploration-portrait-png-v1",
+  "schema_version": "trace-exploration-export-manifest-v1",
+  "selected_composition_id": "R16-COMP-REGION-02",
+  "semantic_hash": "466cca22e0e291275be5dffd48d67629da89f4b9d482eb4b5b5ba1f2facfbd7b",
+  "state_hash": "b91aa3e9f7cab81c92ab2e382cf36b9501a2e4239219a2ecb99caaa1b344b2db",
+  "suggested_filename": "trace-region-61895bf2cc54.png",
+  "theme_token_set": "neutral-v1",
+  "vocabulary_ids": [
+    "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c",
+    "TRV:d366de58d3002458bfb404ee505621e926c518871a4caeffcdfb89b45f8112ef",
+    "TRV:be33e16d8f585c08bb0efe6f0df92659a22d534298639f5318d2a2580546fdcc"
+  ]
+}

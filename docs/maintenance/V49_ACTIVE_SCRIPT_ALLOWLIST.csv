@@ -241,6 +241,10 @@ scripts/trace-v49-exploration-inquiry-engine/strict_parse.py,CURRENT_V49_EXPLORA
 scripts/trace-v49-exploration-inquiry-engine/test_reference_engine.py,CURRENT_V49_EXPLORATION_INQUIRY_ENGINE_VERIFICATION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
 scripts/trace-v49-exploration-inquiry-engine/tree_engine.py,CURRENT_V49_EXPLORATION_INQUIRY_ENGINE_VERIFICATION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
 scripts/trace-v49-exploration-inquiry-engine/validate.py,CURRENT_V49_EXPLORATION_INQUIRY_ENGINE_VERIFICATION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
+scripts/trace-v49-exploration-real-database/generate_round1.py,CURRENT_V49_EXPLORATION_REAL_DATABASE_VERIFICATION,False,True,True,False,True,KEEP_ACTIVE
+scripts/trace-v49-exploration-real-database/model.py,CURRENT_V49_EXPLORATION_REAL_DATABASE_VERIFICATION,False,True,True,False,True,KEEP_ACTIVE
+scripts/trace-v49-exploration-real-database/real-composition-registry-v1.json,CURRENT_V49_EXPLORATION_REAL_DATABASE_VERIFICATION,False,True,True,False,True,KEEP_ACTIVE
+scripts/trace-v49-exploration-real-database/scholarly-source-additions-v1.tsv,CURRENT_V49_EXPLORATION_REAL_DATABASE_VERIFICATION,False,True,True,False,True,KEEP_ACTIVE
 scripts/trace-v49-relation-grammar/generate_round1.py,CURRENT_V49_RELATION_GRAMMAR_RESEARCH_VERIFICATION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
 scripts/trace-v49-relation-grammar/validate_round1.py,CURRENT_V49_RELATION_GRAMMAR_RESEARCH_VERIFICATION,False,False,False,False,True,DOCUMENTED_ALLOWLIST
 scripts/trace-v49-relation-vocabulary/generate_round1.py,CURRENT_V49_RELATION_VOCABULARY_RESEARCH_VERIFICATION,False,False,False,False,True,DOCUMENTED_ALLOWLIST

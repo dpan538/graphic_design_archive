@@ -1,0 +1,116 @@
+{
+  "cases": [
+    {
+      "duration_ms": 0.432,
+      "evidence": {
+        "count": 4
+      },
+      "name": "Exactly four canonical categories are returned",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.05,
+      "evidence": {
+        "resolved": 4
+      },
+      "name": "Every category resolves to approved source records",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.031,
+      "evidence": {
+        "attested": 26
+      },
+      "name": "Every visible vocabulary item has real source attestation",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.055,
+      "evidence": {
+        "academically_supported": 26
+      },
+      "name": "Every visible vocabulary item has academic support",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.82,
+      "name": "No fixture-only term appears in a product response",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.395,
+      "name": "No invented or model-generated term appears",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 2.087,
+      "evidence": {
+        "held_leaks": 0,
+        "public_refs": 36
+      },
+      "name": "No held object appears",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.061,
+      "evidence": {
+        "references": 41
+      },
+      "name": "Every archive object reference resolves",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.034,
+      "evidence": {
+        "projection": "trace-context-v1",
+        "references": 90
+      },
+      "name": "Every Context reference resolves",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.024,
+      "evidence": {
+        "projection": "trace-spacetime-v1",
+        "references": 11
+      },
+      "name": "Every Spacetime reference resolves",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.011,
+      "name": "Archive, Context, Spacetime, and Exploration use one snapshot",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.012,
+      "name": "Category counts match the direct database-derived read model",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.023,
+      "evidence": {
+        "unique_active_vocabulary": 26
+      },
+      "name": "Vocabulary counts reconcile by category",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.016,
+      "evidence": {
+        "unique_qualified_associations": 21
+      },
+      "name": "Association counts reconcile by category",
+      "status": "PASS"
+    }
+  ],
+  "database_schema_version": 49,
+  "database_snapshot_id": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+  "failure_count": 0,
+  "failures": [],
+  "group_id": 1,
+  "name": "Real Data, Four Categories, and Vocabulary Authenticity",
+  "read_model_sha256": "1abdeda493eed7871e0b1a5f1d7412be6bc6203068ac20e9547a32b6c5b473e9",
+  "status": "PASS",
+  "test_case_count": 14
+}

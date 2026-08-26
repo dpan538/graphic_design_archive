@@ -137,3 +137,25 @@ Twenty-five methodological sources govern the visual policy. The internal-only T
 Next gate after Round 15: **External Composition and Visual-Semantics Review plus internal accessibility/interpretation research**. Public activation and typed historical relations remain prohibited.
 
 Governed Round 15 package: `docs/research/trace-v49-exploration-composition-engine-round1/`.
+
+TRACE v49 Round 16 completes Function 3's non-frontend product path. The frozen database and eligibility ledger supply real public archive objects; the existing Context and Spacetime projections supply same-snapshot browse references; exact attestation plus independent academic support govern 26 visible terms; and all 21 frozen Round 14 passes are covered by 11 real, Python-composed local structures across exactly four approved categories: Region, Theme, Medium / format, and Movement context.
+
+The server-only API materializes four deterministic maps, 52 immutable states, 816 hash-bound transitions, evidence endpoints, same-state Unicode/ASCII trees, manifest preview, and a 1080×1620 portrait PNG renderer. TypeScript retrieves Python-authored outcomes and handles HTTP/render integration; it does not add semantic admission, pruning, category, or association rules. Fixtures remain tests only and are never a product fallback.
+
+`ROUND16_DECISION=FUNCTION3_BACKEND_COMPLETE_READY_FOR_FRONTEND`
+
+`FUNCTION3_BACKEND_COMPLETE=true`
+
+`REAL_DATABASE_EXPLORATION_READY=true`
+
+`OPENAPI_CONTRACT_READY=true`
+
+`TYPESCRIPT_CLIENT_READY=true`
+
+`PORTRAIT_PNG_CARD_EXPORT_READY=true`
+
+`EXTERNAL_HUMAN_DOMAIN_REVIEW_COMPLETED=false`
+
+Next gate after Round 16: **Claude frontend design and frontend integration**. Final visual layout, production interaction components, public navigation, deployment, and any external academic-release review remain separate.
+
+Governed Round 16 package: `docs/research/trace-v49-exploration-real-database-round1/`.

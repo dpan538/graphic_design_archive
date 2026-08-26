@@ -1,0 +1,289 @@
+{
+  "category_id": "medium",
+  "elapsed_ms": 96.326,
+  "map_id": "TRMAP:bfa41a08345a0f339881e36ffea12f7cf2005e15953386e943c4571b188c3921",
+  "name": "Medium photomontage browse",
+  "png_sha256": "bc37f10de3449a084b66e14e474f541c9a36313a24af632ca31a8aa88a15614b",
+  "schema_version": "trace-exploration-workflow-audit-v1",
+  "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+  "stage_count": 18,
+  "stages": [
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.011,
+      "errors": [],
+      "excluded_count": 3,
+      "input_count": 4,
+      "output_count": 1,
+      "reason_codes": [
+        "CANONICAL_CATEGORY_SELECTED"
+      ],
+      "semantic_hash": "1abdeda493eed7871e0b1a5f1d7412be6bc6203068ac20e9547a32b6c5b473e9",
+      "stage": "category selected",
+      "state_hash": "",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.001,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 1,
+      "output_count": 1,
+      "reason_codes": [
+        "DATABASE_SNAPSHOT_MATCH"
+      ],
+      "semantic_hash": "ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "stage": "database snapshot resolved",
+      "state_hash": "",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.023,
+      "errors": [],
+      "excluded_count": 7984,
+      "input_count": 7995,
+      "output_count": 11,
+      "reason_codes": [
+        "PUBLIC_ELIGIBLE_OBJECTS_ONLY"
+      ],
+      "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+      "stage": "public-object query executed",
+      "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 22,
+      "output_count": 22,
+      "reason_codes": [
+        "CONTEXT_SNAPSHOT_MATCH"
+      ],
+      "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+      "stage": "Context references resolved",
+      "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 4,
+      "output_count": 4,
+      "reason_codes": [
+        "SPACETIME_SNAPSHOT_MATCH"
+      ],
+      "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+      "stage": "Spacetime references resolved",
+      "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.003,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 4,
+      "output_count": 4,
+      "reason_codes": [
+        "REAL_DATABASE_CANDIDATE"
+      ],
+      "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+      "stage": "candidate vocabulary retrieved",
+      "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.001,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 4,
+      "output_count": 4,
+      "reason_codes": [
+        "REAL_ATTESTATION_PRESENT"
+      ],
+      "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+      "stage": "vocabulary attestation gate applied",
+      "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.001,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 4,
+      "output_count": 4,
+      "reason_codes": [
+        "ACADEMIC_SUPPORT_PRESENT"
+      ],
+      "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+      "stage": "academic-support gate applied",
+      "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.002,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 2,
+      "output_count": 2,
+      "reason_codes": [
+        "ROUND14_ASSESSMENT_RESOLVED"
+      ],
+      "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+      "stage": "candidate associations retrieved",
+      "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.001,
+      "errors": [],
+      "excluded_count": 14,
+      "input_count": 16,
+      "output_count": 2,
+      "reason_codes": [
+        "ROUND14_FROZEN_GATE_PASS",
+        "FAILED_CASES_AUDIT_ONLY"
+      ],
+      "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+      "stage": "Round 14 association gate applied",
+      "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.001,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 1,
+      "output_count": 1,
+      "reason_codes": [
+        "PYTHON_NORMATIVE_COMPOSITION"
+      ],
+      "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+      "stage": "Round 15 composition applied",
+      "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.053,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 7,
+      "output_count": 7,
+      "reason_codes": [
+        "IMMUTABLE_PRECOMPUTED_TRANSITIONS"
+      ],
+      "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+      "stage": "map state generated",
+      "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0,
+      "errors": [],
+      "excluded_count": 1,
+      "input_count": 2,
+      "output_count": 1,
+      "reason_codes": [
+        "GOVERNED_FOCUS_TARGET"
+      ],
+      "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+      "stage": "focus selected",
+      "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.001,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 2,
+      "output_count": 2,
+      "reason_codes": [
+        "SAME_SELECTED_COMPOSITION"
+      ],
+      "semantic_hash": "fcf3e4b0c9f3d6893b414f73b2c6c32e9f657c2b8a1c0263d6e93eeb8b2a8d46",
+      "stage": "plain-text tree generated",
+      "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.005,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 1,
+      "output_count": 1,
+      "reason_codes": [
+        "MAP_TREE_SAME_STATE"
+      ],
+      "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+      "stage": "export manifest generated",
+      "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 57.249,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 2,
+      "output_count": 2,
+      "reason_codes": [
+        "PORTRAIT_CARD_RENDERED"
+      ],
+      "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+      "stage": "PNG rendered",
+      "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.206,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 1,
+      "output_count": 1,
+      "reason_codes": [
+        "PNG_DECODED",
+        "DIMENSIONS_MATCH"
+      ],
+      "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+      "stage": "PNG validated",
+      "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 36.659,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 17,
+      "output_count": 17,
+      "reason_codes": [
+        "STATE_REPLAY_IDENTICAL",
+        "PNG_REPLAY_IDENTICAL"
+      ],
+      "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+      "stage": "workflow replayed",
+      "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881",
+      "warnings": []
+    }
+  ],
+  "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881",
+  "status": "PASS",
+  "synthetic": false,
+  "workflow_id": "C"
+}

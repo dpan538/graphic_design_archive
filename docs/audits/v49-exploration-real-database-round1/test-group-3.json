@@ -1,0 +1,104 @@
+{
+  "cases": [
+    {
+      "duration_ms": 0.048,
+      "evidence": {
+        "validated": 21
+      },
+      "name": "Every direct pair passes",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.161,
+      "evidence": {
+        "trees": 26
+      },
+      "name": "Every skip-one pair passes",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.02,
+      "name": "Failed associations cannot enter product output",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.01,
+      "name": "Hard negatives cannot enter product output",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.037,
+      "name": "Input order does not alter semantic output",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.011,
+      "name": "Generic pair orientation does not alter association meaning",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.015,
+      "name": "Duplicate association input does not duplicate output",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.081,
+      "name": "Irrelevant metadata cannot change semantic output",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.015,
+      "name": "Same input yields the same semantic hash",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.059,
+      "name": "Presentation changes preserve semantic hash",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.166,
+      "name": "Tree labels exactly match active vocabulary",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.069,
+      "name": "Tree associations match selected compositions",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.018,
+      "name": "No typed relation is emitted",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.011,
+      "name": "No causal relation is emitted",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.01,
+      "name": "No directional relation is emitted",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.013,
+      "name": "Context cannot override a failed association",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.011,
+      "name": "Spacetime cannot override a failed association",
+      "status": "PASS"
+    }
+  ],
+  "database_schema_version": 49,
+  "database_snapshot_id": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+  "failure_count": 0,
+  "failures": [],
+  "group_id": 3,
+  "name": "Association, Composition, Tree, and Invariant Correctness",
+  "read_model_sha256": "1abdeda493eed7871e0b1a5f1d7412be6bc6203068ac20e9547a32b6c5b473e9",
+  "status": "PASS",
+  "test_case_count": 17
+}

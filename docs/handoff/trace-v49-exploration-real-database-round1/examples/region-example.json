@@ -1,0 +1,240 @@
+{
+  "association_ids": [
+    "R14-ASSOC-013",
+    "R14-ASSOC-014",
+    "R14-ASSOC-015"
+  ],
+  "content_type": "image/png",
+  "dimensions": {
+    "height": 1620,
+    "padding": 72,
+    "width": 1080
+  },
+  "export_alt_text": "Region exploration card. cultural negotiation; |-- adaptation; `-- rejection",
+  "export_id": "TREX:df75c1107f0af7104ce395ffacf75cb013ec77e573bc74bb8f62968cfe07c508",
+  "export_preset": "portrait_card",
+  "map_id": "TRMAP:8ad4ffaca99b1219b90e3d7c1133fdeba3634c48343f4963e0f5facbba43c7cd",
+  "map_region": {
+    "associations": [
+      {
+        "active_for_proximity": true,
+        "association_accessible_description": "cultural negotiation is available to explore with adaptation as a qualified generic association.",
+        "association_id": "R14-ASSOC-013",
+        "confidence": "HIGH",
+        "endpoint_labels": [
+          "cultural negotiation",
+          "adaptation"
+        ],
+        "endpoint_vocabulary_ids": [
+          "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+          "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0"
+        ],
+        "explicit_non_claims": [
+          "causation",
+          "influence",
+          "chronology",
+          "hierarchy",
+          "direction",
+          "equivalence"
+        ],
+        "generic_association_only": true,
+        "hard_negative": false,
+        "mandatory_dimension_results": {
+          "D1": 2,
+          "D5": 2,
+          "D7": 2
+        },
+        "provenance_refs": [
+          "R14-EVID-013-01",
+          "R14-EVID-013-02"
+        ],
+        "qualification": "Adaptation is situated agency, not passive transfer.",
+        "qualification_version": "trace-generic-association-rubric-v1",
+        "source_refs": [
+          "COMP-SRC-013",
+          "COMP-SRC-014"
+        ],
+        "source_urls": [
+          "https://doi.org/10.1080/23311983.2025.2482456",
+          "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745"
+        ],
+        "strength": "STRONG",
+        "support_status": "EXTERNALLY_SUPPORTED"
+      },
+      {
+        "active_for_proximity": true,
+        "association_accessible_description": "adaptation is available to explore with rejection as a qualified generic association.",
+        "association_id": "R14-ASSOC-014",
+        "confidence": "MODERATE",
+        "endpoint_labels": [
+          "adaptation",
+          "rejection"
+        ],
+        "endpoint_vocabulary_ids": [
+          "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0",
+          "TRV:fd793986cd6d45968d3c7103e778813542e6a9979a85e9cf512450307c9f7342"
+        ],
+        "explicit_non_claims": [
+          "causation",
+          "influence",
+          "chronology",
+          "hierarchy",
+          "direction",
+          "equivalence"
+        ],
+        "generic_association_only": true,
+        "hard_negative": false,
+        "mandatory_dimension_results": {
+          "D1": 2,
+          "D5": 2,
+          "D7": 2
+        },
+        "provenance_refs": [
+          "R14-EVID-014-01"
+        ],
+        "qualification": "Alternatives within one contact-zone model, not successive stages.",
+        "qualification_version": "trace-generic-association-rubric-v1",
+        "source_refs": [
+          "COMP-SRC-013"
+        ],
+        "source_urls": [
+          "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745"
+        ],
+        "strength": "STRONG",
+        "support_status": "EXTERNALLY_SUPPORTED"
+      },
+      {
+        "active_for_proximity": true,
+        "association_accessible_description": "cultural negotiation is available to explore with rejection as a qualified generic association.",
+        "association_id": "R14-ASSOC-015",
+        "confidence": "MODERATE",
+        "endpoint_labels": [
+          "cultural negotiation",
+          "rejection"
+        ],
+        "endpoint_vocabulary_ids": [
+          "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+          "TRV:fd793986cd6d45968d3c7103e778813542e6a9979a85e9cf512450307c9f7342"
+        ],
+        "explicit_non_claims": [
+          "causation",
+          "influence",
+          "chronology",
+          "hierarchy",
+          "direction",
+          "equivalence"
+        ],
+        "generic_association_only": true,
+        "hard_negative": false,
+        "mandatory_dimension_results": {
+          "D1": 1,
+          "D5": 2,
+          "D7": 2
+        },
+        "provenance_refs": [
+          "R14-EVID-015-01"
+        ],
+        "qualification": "One conceptual source; no claim that rejection always constitutes negotiation.",
+        "qualification_version": "trace-generic-association-rubric-v1",
+        "source_refs": [
+          "COMP-SRC-013"
+        ],
+        "source_urls": [
+          "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745"
+        ],
+        "strength": "MODERATE",
+        "support_status": "EXTERNALLY_SUPPORTED"
+      }
+    ],
+    "nodes": [
+      {
+        "canonical_label": "cultural negotiation",
+        "node_accessible_label": "cultural negotiation, evidence-supported exploration term",
+        "projection": {
+          "bounding_hint": {
+            "radius": 0.022222222222222223
+          },
+          "branch_slot": 1,
+          "group_slot": "region",
+          "layer_slot": 0,
+          "normalised_x": 0.218056,
+          "normalised_y": 0.362963,
+          "projection_version": "trace-exploration-neutral-projection-v1"
+        },
+        "vocabulary_id": "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed"
+      },
+      {
+        "canonical_label": "adaptation",
+        "node_accessible_label": "adaptation, evidence-supported exploration term",
+        "projection": {
+          "bounding_hint": {
+            "radius": 0.022222222222222223
+          },
+          "branch_slot": 0,
+          "group_slot": "region",
+          "layer_slot": 0,
+          "normalised_x": 0.551389,
+          "normalised_y": 0.890741,
+          "projection_version": "trace-exploration-neutral-projection-v1"
+        },
+        "vocabulary_id": "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0"
+      },
+      {
+        "canonical_label": "rejection",
+        "node_accessible_label": "rejection, evidence-supported exploration term",
+        "projection": {
+          "bounding_hint": {
+            "radius": 0.022222222222222223
+          },
+          "branch_slot": 2,
+          "group_slot": "region",
+          "layer_slot": 0,
+          "normalised_x": 0.726389,
+          "normalised_y": 0.246296,
+          "projection_version": "trace-exploration-neutral-projection-v1"
+        },
+        "vocabulary_id": "TRV:fd793986cd6d45968d3c7103e778813542e6a9979a85e9cf512450307c9f7342"
+      }
+    ],
+    "projection_version": "trace-exploration-neutral-projection-v1",
+    "region_id": "TRREG:a6078066b560698c6dc6a29800463fbdc9699c4f892665f61901955768c3d7fd"
+  },
+  "plain_text_tree": {
+    "generic_association_only": true,
+    "plain_text_tree": "cultural negotiation\n├── adaptation\n└── rejection",
+    "plain_text_tree_ascii": "cultural negotiation\n|-- adaptation\n`-- rejection",
+    "schema_version": "trace-plain-text-tree-v1",
+    "structural_hierarchy_is_historical_claim": false,
+    "tree_association_ids": [
+      "R14-ASSOC-013",
+      "R14-ASSOC-015"
+    ],
+    "tree_node_ids": [
+      "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+      "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0",
+      "TRV:fd793986cd6d45968d3c7103e778813542e6a9979a85e9cf512450307c9f7342"
+    ],
+    "tree_root_node_id": "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+    "tree_semantic_hash": "9ce713a30b9237f305d09e24eb8c91f26caad66cb6226ab08d58f157f6633ae7"
+  },
+  "presentation_hash": "1edaf989f334614a1f644aa68430756172006ced7993a7c0d1c8686496346bc7",
+  "provenance_summary": {
+    "archive_object_reference_count": 12,
+    "context_reference_count": 25,
+    "database_snapshot_id": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "source_count": 2,
+    "spacetime_reference_count": 3
+  },
+  "render_version": "trace-exploration-portrait-png-v1",
+  "schema_version": "trace-exploration-export-manifest-v1",
+  "selected_composition_id": "R16-COMP-REGION-01",
+  "semantic_hash": "6ecc9651549ea2f9e572c21d4aa5909a7c8aa79d88594022a1321d7d712f03f3",
+  "state_hash": "569a4a9cc55134402332368050c5d3f9c284f4cb02ced1c5d54486d249262f27",
+  "suggested_filename": "trace-region-df75c1107f0a.png",
+  "theme_token_set": "neutral-v1",
+  "vocabulary_ids": [
+    "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+    "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0",
+    "TRV:fd793986cd6d45968d3c7103e778813542e6a9979a85e9cf512450307c9f7342"
+  ]
+}

@@ -1,0 +1,278 @@
+{
+  "cases": [
+    {
+      "duration_ms": 96.369,
+      "evidence": {
+        "bytes": 70400,
+        "lower_zone_stdev": 17.435,
+        "png_sha256": "0c480405e2e0f403c78a9db91d23402ee9db7127c6e01a8cf07f38ea8d1f3906",
+        "upper_zone_stdev": 17.435
+      },
+      "name": "PNG integrity for Workflow A",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 99.29,
+      "evidence": {
+        "bytes": 69971,
+        "lower_zone_stdev": 17.481,
+        "png_sha256": "c322bb4dd6a9d6102c89447abd14817c937aa7260f09bd1e0a1df2f7f684a47a",
+        "upper_zone_stdev": 17.481
+      },
+      "name": "PNG integrity for Workflow B",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 99.692,
+      "evidence": {
+        "bytes": 57105,
+        "lower_zone_stdev": 14.941,
+        "png_sha256": "bc37f10de3449a084b66e14e474f541c9a36313a24af632ca31a8aa88a15614b",
+        "upper_zone_stdev": 14.941
+      },
+      "name": "PNG integrity for Workflow C",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 99.243,
+      "evidence": {
+        "bytes": 54190,
+        "lower_zone_stdev": 13.865,
+        "png_sha256": "e78223a3fbe239afba8b690d9b9cdea783563df411f1c4cc1967e9c500892508",
+        "upper_zone_stdev": 13.865
+      },
+      "name": "PNG integrity for Workflow D",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 97.437,
+      "evidence": {
+        "bytes": 74974,
+        "lower_zone_stdev": 18.197,
+        "png_sha256": "556237e47e5532832fa63e5a4434be378a5fa5302cc1c248dab9bf296fd8a2f6",
+        "upper_zone_stdev": 18.197
+      },
+      "name": "PNG integrity for Workflow E",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 691.762,
+      "evidence": {
+        "association_api": {
+          "max_ms": 0.002,
+          "p50_ms": 0.001,
+          "p95_ms": 0.001,
+          "sample_count": 24,
+          "samples_ms": [
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.002,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001
+          ]
+        },
+        "browse_action": {
+          "max_ms": 0.023,
+          "p50_ms": 0.005,
+          "p95_ms": 0.007,
+          "sample_count": 24,
+          "samples_ms": [
+            0.007,
+            0.006,
+            0.006,
+            0.005,
+            0.005,
+            0.005,
+            0.023,
+            0.007,
+            0.007,
+            0.006,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005
+          ]
+        },
+        "category_api": {
+          "max_ms": 0.006,
+          "p50_ms": 0.001,
+          "p95_ms": 0.004,
+          "sample_count": 24,
+          "samples_ms": [
+            0.004,
+            0.006,
+            0.003,
+            0.002,
+            0.001,
+            0.002,
+            0.001,
+            0.002,
+            0.003,
+            0.002,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.002,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001
+          ]
+        },
+        "initial_map": {
+          "max_ms": 0.009,
+          "p50_ms": 0.005,
+          "p95_ms": 0.006,
+          "sample_count": 24,
+          "samples_ms": [
+            0.006,
+            0.009,
+            0.006,
+            0.005,
+            0.005,
+            0.006,
+            0.005,
+            0.006,
+            0.006,
+            0.006,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005
+          ]
+        },
+        "png_export": {
+          "max_ms": 67.453,
+          "p50_ms": 47.01,
+          "p95_ms": 67.453,
+          "sample_count": 12,
+          "samples_ms": [
+            66.842,
+            46.967,
+            66.258,
+            67.453,
+            66.105,
+            46.744,
+            46.844,
+            47.331,
+            46.892,
+            47.01,
+            46.9,
+            47.833
+          ]
+        },
+        "vocabulary_api": {
+          "max_ms": 0.002,
+          "p50_ms": 0.001,
+          "p95_ms": 0.001,
+          "sample_count": 24,
+          "samples_ms": [
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.002,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0,
+            0.001,
+            0,
+            0.001,
+            0.001,
+            0
+          ]
+        }
+      },
+      "name": "Six endpoint families report warm-run P50, P95, maximum, and all samples",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 130044.583,
+      "evidence": {
+        "API_TESTS": "PASS",
+        "CONTEXT_REGRESSION": "PASS",
+        "DATABASE_FREEZE": "PASS",
+        "PRODUCTION_BUILD": "PASS",
+        "REPOSITORY_HYGIENE": "PASS",
+        "ROUND10_REGRESSION": "PASS",
+        "ROUND11_REGRESSION": "PASS",
+        "ROUND12_REGRESSION": "PASS",
+        "ROUND13_REGRESSION": "PASS",
+        "ROUND14_REGRESSION": "PASS",
+        "ROUND15_REGRESSION": "PASS",
+        "ROUND8_REGRESSION": "PASS",
+        "ROUND9_REGRESSION": "PASS",
+        "SEARCH_REGRESSION": "PASS",
+        "SPACETIME_REGRESSION": "PASS",
+        "TYPECHECK": "PASS"
+      },
+      "name": "Round 8–15, Search, Context, Spacetime, API, freeze, hygiene, typecheck, and production build regressions",
+      "status": "PASS"
+    }
+  ],
+  "database_schema_version": 49,
+  "database_snapshot_id": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+  "failure_count": 0,
+  "failures": [],
+  "group_id": 5,
+  "name": "PNG Export, Output Integrity, Performance, and Regression",
+  "read_model_sha256": "1abdeda493eed7871e0b1a5f1d7412be6bc6203068ac20e9547a32b6c5b473e9",
+  "status": "PASS",
+  "test_case_count": 7
+}

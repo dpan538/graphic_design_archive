@@ -1,0 +1,2809 @@
+{
+  "api_version": "trace-exploration/v1",
+  "associations": [
+    {
+      "active_for_proximity": true,
+      "association_accessible_description": "material displacement is available to explore with supply chain as a qualified generic association.",
+      "association_id": "R14-ASSOC-010",
+      "confidence": "HIGH",
+      "endpoint_labels": [
+        "material displacement",
+        "supply chain"
+      ],
+      "endpoint_vocabulary_ids": [
+        "TRV:d366de58d3002458bfb404ee505621e926c518871a4caeffcdfb89b45f8112ef",
+        "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c"
+      ],
+      "explicit_non_claims": [
+        "causation",
+        "influence",
+        "chronology",
+        "hierarchy",
+        "direction",
+        "equivalence"
+      ],
+      "generic_association_only": true,
+      "hard_negative": false,
+      "mandatory_dimension_results": {
+        "D1": 2,
+        "D5": 2,
+        "D7": 2
+      },
+      "provenance_refs": [
+        "R14-EVID-010-01",
+        "R14-EVID-010-02"
+      ],
+      "qualification": "The association does not reduce all material movement to one supply-chain model.",
+      "qualification_version": "trace-generic-association-rubric-v1",
+      "source_refs": [
+        "COMP-SRC-019",
+        "COMP-SRC-020"
+      ],
+      "source_urls": [
+        "https://academic.oup.com/jdh/issue/34/3",
+        "https://www.tandfonline.com/doi/abs/10.1080/18626033.2013.798922"
+      ],
+      "strength": "STRONG",
+      "support_status": "EXTERNALLY_SUPPORTED"
+    },
+    {
+      "active_for_proximity": true,
+      "association_accessible_description": "supply chain is available to explore with production site as a qualified generic association.",
+      "association_id": "R14-ASSOC-011",
+      "confidence": "MODERATE",
+      "endpoint_labels": [
+        "supply chain",
+        "production site"
+      ],
+      "endpoint_vocabulary_ids": [
+        "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c",
+        "TRV:be33e16d8f585c08bb0efe6f0df92659a22d534298639f5318d2a2580546fdcc"
+      ],
+      "explicit_non_claims": [
+        "causation",
+        "influence",
+        "chronology",
+        "hierarchy",
+        "direction",
+        "equivalence"
+      ],
+      "generic_association_only": true,
+      "hard_negative": false,
+      "mandatory_dimension_results": {
+        "D1": 2,
+        "D5": 2,
+        "D7": 2
+      },
+      "provenance_refs": [
+        "R14-EVID-011-01"
+      ],
+      "qualification": "One bounded study and source family; confidence is moderate.",
+      "qualification_version": "trace-generic-association-rubric-v1",
+      "source_refs": [
+        "COMP-SRC-020"
+      ],
+      "source_urls": [
+        "https://www.tandfonline.com/doi/abs/10.1080/18626033.2013.798922"
+      ],
+      "strength": "STRONG",
+      "support_status": "EXTERNALLY_SUPPORTED"
+    },
+    {
+      "active_for_proximity": true,
+      "association_accessible_description": "material displacement is available to explore with production site as a qualified generic association.",
+      "association_id": "R14-ASSOC-012",
+      "confidence": "MODERATE",
+      "endpoint_labels": [
+        "material displacement",
+        "production site"
+      ],
+      "endpoint_vocabulary_ids": [
+        "TRV:d366de58d3002458bfb404ee505621e926c518871a4caeffcdfb89b45f8112ef",
+        "TRV:be33e16d8f585c08bb0efe6f0df92659a22d534298639f5318d2a2580546fdcc"
+      ],
+      "explicit_non_claims": [
+        "causation",
+        "influence",
+        "chronology",
+        "hierarchy",
+        "direction",
+        "equivalence"
+      ],
+      "generic_association_only": true,
+      "hard_negative": false,
+      "mandatory_dimension_results": {
+        "D1": 1,
+        "D5": 2,
+        "D7": 2
+      },
+      "provenance_refs": [
+        "R14-EVID-012-01"
+      ],
+      "qualification": "Association is inferred within the source's explicit chain, not elevated to a universal relation.",
+      "qualification_version": "trace-generic-association-rubric-v1",
+      "source_refs": [
+        "COMP-SRC-020"
+      ],
+      "source_urls": [
+        "https://www.tandfonline.com/doi/abs/10.1080/18626033.2013.798922"
+      ],
+      "strength": "MODERATE",
+      "support_status": "EXTERNALLY_SUPPORTED"
+    },
+    {
+      "active_for_proximity": true,
+      "association_accessible_description": "cultural negotiation is available to explore with adaptation as a qualified generic association.",
+      "association_id": "R14-ASSOC-013",
+      "confidence": "HIGH",
+      "endpoint_labels": [
+        "cultural negotiation",
+        "adaptation"
+      ],
+      "endpoint_vocabulary_ids": [
+        "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+        "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0"
+      ],
+      "explicit_non_claims": [
+        "causation",
+        "influence",
+        "chronology",
+        "hierarchy",
+        "direction",
+        "equivalence"
+      ],
+      "generic_association_only": true,
+      "hard_negative": false,
+      "mandatory_dimension_results": {
+        "D1": 2,
+        "D5": 2,
+        "D7": 2
+      },
+      "provenance_refs": [
+        "R14-EVID-013-01",
+        "R14-EVID-013-02"
+      ],
+      "qualification": "Adaptation is situated agency, not passive transfer.",
+      "qualification_version": "trace-generic-association-rubric-v1",
+      "source_refs": [
+        "COMP-SRC-013",
+        "COMP-SRC-014"
+      ],
+      "source_urls": [
+        "https://doi.org/10.1080/23311983.2025.2482456",
+        "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745"
+      ],
+      "strength": "STRONG",
+      "support_status": "EXTERNALLY_SUPPORTED"
+    },
+    {
+      "active_for_proximity": true,
+      "association_accessible_description": "adaptation is available to explore with rejection as a qualified generic association.",
+      "association_id": "R14-ASSOC-014",
+      "confidence": "MODERATE",
+      "endpoint_labels": [
+        "adaptation",
+        "rejection"
+      ],
+      "endpoint_vocabulary_ids": [
+        "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0",
+        "TRV:fd793986cd6d45968d3c7103e778813542e6a9979a85e9cf512450307c9f7342"
+      ],
+      "explicit_non_claims": [
+        "causation",
+        "influence",
+        "chronology",
+        "hierarchy",
+        "direction",
+        "equivalence"
+      ],
+      "generic_association_only": true,
+      "hard_negative": false,
+      "mandatory_dimension_results": {
+        "D1": 2,
+        "D5": 2,
+        "D7": 2
+      },
+      "provenance_refs": [
+        "R14-EVID-014-01"
+      ],
+      "qualification": "Alternatives within one contact-zone model, not successive stages.",
+      "qualification_version": "trace-generic-association-rubric-v1",
+      "source_refs": [
+        "COMP-SRC-013"
+      ],
+      "source_urls": [
+        "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745"
+      ],
+      "strength": "STRONG",
+      "support_status": "EXTERNALLY_SUPPORTED"
+    },
+    {
+      "active_for_proximity": true,
+      "association_accessible_description": "cultural negotiation is available to explore with rejection as a qualified generic association.",
+      "association_id": "R14-ASSOC-015",
+      "confidence": "MODERATE",
+      "endpoint_labels": [
+        "cultural negotiation",
+        "rejection"
+      ],
+      "endpoint_vocabulary_ids": [
+        "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+        "TRV:fd793986cd6d45968d3c7103e778813542e6a9979a85e9cf512450307c9f7342"
+      ],
+      "explicit_non_claims": [
+        "causation",
+        "influence",
+        "chronology",
+        "hierarchy",
+        "direction",
+        "equivalence"
+      ],
+      "generic_association_only": true,
+      "hard_negative": false,
+      "mandatory_dimension_results": {
+        "D1": 1,
+        "D5": 2,
+        "D7": 2
+      },
+      "provenance_refs": [
+        "R14-EVID-015-01"
+      ],
+      "qualification": "One conceptual source; no claim that rejection always constitutes negotiation.",
+      "qualification_version": "trace-generic-association-rubric-v1",
+      "source_refs": [
+        "COMP-SRC-013"
+      ],
+      "source_urls": [
+        "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745"
+      ],
+      "strength": "MODERATE",
+      "support_status": "EXTERNALLY_SUPPORTED"
+    },
+    {
+      "active_for_proximity": true,
+      "association_accessible_description": "gendering is available to explore with commodification as a qualified generic association.",
+      "association_id": "R14-ASSOC-016",
+      "confidence": "MODERATE",
+      "endpoint_labels": [
+        "gendering",
+        "commodification"
+      ],
+      "endpoint_vocabulary_ids": [
+        "TRV:628bbc2d6553accb5320993afff75b39993c7ae9514d1f39d8a28834bfaf8170",
+        "TRV:b57559d1d19ef1967b6015fa23577c3fac4b79ae3ca54ef4eb760e18300875a3"
+      ],
+      "explicit_non_claims": [
+        "causation",
+        "influence",
+        "chronology",
+        "hierarchy",
+        "direction",
+        "equivalence"
+      ],
+      "generic_association_only": true,
+      "hard_negative": false,
+      "mandatory_dimension_results": {
+        "D1": 2,
+        "D5": 2,
+        "D7": 2
+      },
+      "provenance_refs": [
+        "R14-EVID-016-01",
+        "R14-EVID-016-02"
+      ],
+      "qualification": "The generic association is case-bounded; it does not assert that either process causes the other.",
+      "qualification_version": "trace-generic-association-rubric-v1",
+      "source_refs": [
+        "COMP-SRC-004",
+        "COMP-SRC-005"
+      ],
+      "source_urls": [
+        "https://journals.sagepub.com/doi/abs/10.1177/1469540519872069",
+        "https://researchonline.rca.ac.uk/2773/"
+      ],
+      "strength": "STRONG",
+      "support_status": "EXTERNALLY_SUPPORTED"
+    }
+  ],
+  "available_actions": [
+    "SELECT_CATEGORY",
+    "FOCUS_NODE",
+    "EXPAND_NODE",
+    "COLLAPSE_NODE",
+    "MOVE_FOCUS",
+    "SELECT_COMPOSITION",
+    "RESET_CATEGORY",
+    "EXPORT_CURRENT_STATE"
+  ],
+  "compositions": [
+    {
+      "admitted_association_ids": [
+        "R14-ASSOC-013",
+        "R14-ASSOC-014",
+        "R14-ASSOC-015"
+      ],
+      "associations": [
+        {
+          "active_for_proximity": true,
+          "association_accessible_description": "cultural negotiation is available to explore with adaptation as a qualified generic association.",
+          "association_id": "R14-ASSOC-013",
+          "confidence": "HIGH",
+          "endpoint_labels": [
+            "cultural negotiation",
+            "adaptation"
+          ],
+          "endpoint_vocabulary_ids": [
+            "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+            "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0"
+          ],
+          "explicit_non_claims": [
+            "causation",
+            "influence",
+            "chronology",
+            "hierarchy",
+            "direction",
+            "equivalence"
+          ],
+          "generic_association_only": true,
+          "hard_negative": false,
+          "mandatory_dimension_results": {
+            "D1": 2,
+            "D5": 2,
+            "D7": 2
+          },
+          "provenance_refs": [
+            "R14-EVID-013-01",
+            "R14-EVID-013-02"
+          ],
+          "qualification": "Adaptation is situated agency, not passive transfer.",
+          "qualification_version": "trace-generic-association-rubric-v1",
+          "source_refs": [
+            "COMP-SRC-013",
+            "COMP-SRC-014"
+          ],
+          "source_urls": [
+            "https://doi.org/10.1080/23311983.2025.2482456",
+            "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745"
+          ],
+          "strength": "STRONG",
+          "support_status": "EXTERNALLY_SUPPORTED"
+        },
+        {
+          "active_for_proximity": true,
+          "association_accessible_description": "adaptation is available to explore with rejection as a qualified generic association.",
+          "association_id": "R14-ASSOC-014",
+          "confidence": "MODERATE",
+          "endpoint_labels": [
+            "adaptation",
+            "rejection"
+          ],
+          "endpoint_vocabulary_ids": [
+            "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0",
+            "TRV:fd793986cd6d45968d3c7103e778813542e6a9979a85e9cf512450307c9f7342"
+          ],
+          "explicit_non_claims": [
+            "causation",
+            "influence",
+            "chronology",
+            "hierarchy",
+            "direction",
+            "equivalence"
+          ],
+          "generic_association_only": true,
+          "hard_negative": false,
+          "mandatory_dimension_results": {
+            "D1": 2,
+            "D5": 2,
+            "D7": 2
+          },
+          "provenance_refs": [
+            "R14-EVID-014-01"
+          ],
+          "qualification": "Alternatives within one contact-zone model, not successive stages.",
+          "qualification_version": "trace-generic-association-rubric-v1",
+          "source_refs": [
+            "COMP-SRC-013"
+          ],
+          "source_urls": [
+            "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745"
+          ],
+          "strength": "STRONG",
+          "support_status": "EXTERNALLY_SUPPORTED"
+        },
+        {
+          "active_for_proximity": true,
+          "association_accessible_description": "cultural negotiation is available to explore with rejection as a qualified generic association.",
+          "association_id": "R14-ASSOC-015",
+          "confidence": "MODERATE",
+          "endpoint_labels": [
+            "cultural negotiation",
+            "rejection"
+          ],
+          "endpoint_vocabulary_ids": [
+            "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+            "TRV:fd793986cd6d45968d3c7103e778813542e6a9979a85e9cf512450307c9f7342"
+          ],
+          "explicit_non_claims": [
+            "causation",
+            "influence",
+            "chronology",
+            "hierarchy",
+            "direction",
+            "equivalence"
+          ],
+          "generic_association_only": true,
+          "hard_negative": false,
+          "mandatory_dimension_results": {
+            "D1": 1,
+            "D5": 2,
+            "D7": 2
+          },
+          "provenance_refs": [
+            "R14-EVID-015-01"
+          ],
+          "qualification": "One conceptual source; no claim that rejection always constitutes negotiation.",
+          "qualification_version": "trace-generic-association-rubric-v1",
+          "source_refs": [
+            "COMP-SRC-013"
+          ],
+          "source_urls": [
+            "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745"
+          ],
+          "strength": "MODERATE",
+          "support_status": "EXTERNALLY_SUPPORTED"
+        }
+      ],
+      "category_id": "region",
+      "composition_id": "R16-COMP-REGION-01",
+      "description": "Contact-zone and Javanese adaptation research, entered through governed Indonesia records.",
+      "entry_evidence": [
+        "COMP-SRC-013",
+        "COMP-SRC-014",
+        "SPTGEO:Indonesia"
+      ],
+      "exportable": true,
+      "generic_association_only": true,
+      "nodes": [
+        {
+          "canonical_label": "cultural negotiation",
+          "node_accessible_label": "cultural negotiation, evidence-supported exploration term",
+          "projection": {
+            "bounding_hint": {
+              "radius": 0.022222222222222223
+            },
+            "branch_slot": 1,
+            "group_slot": "region",
+            "layer_slot": 0,
+            "normalised_x": 0.218056,
+            "normalised_y": 0.362963,
+            "projection_version": "trace-exploration-neutral-projection-v1"
+          },
+          "vocabulary_id": "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed"
+        },
+        {
+          "canonical_label": "adaptation",
+          "node_accessible_label": "adaptation, evidence-supported exploration term",
+          "projection": {
+            "bounding_hint": {
+              "radius": 0.022222222222222223
+            },
+            "branch_slot": 0,
+            "group_slot": "region",
+            "layer_slot": 0,
+            "normalised_x": 0.551389,
+            "normalised_y": 0.890741,
+            "projection_version": "trace-exploration-neutral-projection-v1"
+          },
+          "vocabulary_id": "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0"
+        },
+        {
+          "canonical_label": "rejection",
+          "node_accessible_label": "rejection, evidence-supported exploration term",
+          "projection": {
+            "bounding_hint": {
+              "radius": 0.022222222222222223
+            },
+            "branch_slot": 2,
+            "group_slot": "region",
+            "layer_slot": 0,
+            "normalised_x": 0.726389,
+            "normalised_y": 0.246296,
+            "projection_version": "trace-exploration-neutral-projection-v1"
+          },
+          "vocabulary_id": "TRV:fd793986cd6d45968d3c7103e778813542e6a9979a85e9cf512450307c9f7342"
+        }
+      ],
+      "presentation_hash": "18a21dc3b67f7f710c33077f36ef19e737eafb40f6a0ad5d6c6dabba27844308",
+      "pruned_association_ids": [],
+      "qualified_association_ids": [
+        "R14-ASSOC-013",
+        "R14-ASSOC-014",
+        "R14-ASSOC-015"
+      ],
+      "round15_semantic_image": {
+        "audit": {
+          "causal_relation_emission_count": 0,
+          "directional_relation_emission_count": 0,
+          "duplicate_input_count": 0,
+          "explicit_non_claims": [
+            "Association is not a typed historical relation.",
+            "Topology and geometry are not historical facts.",
+            "Pruning, split, and evidence-gap states are not negative historical evidence."
+          ],
+          "failed_association_control_count": 0,
+          "fixture_family": "REAL_DATABASE_CATEGORY_COMPOSITION",
+          "fixture_id": "R16-COMP-REGION-01",
+          "hard_negative_control_count": 0,
+          "negative_language_violation_count": 0,
+          "synthetic": false,
+          "typed_historical_relation_emission_count": 0,
+          "unsupported_rendered_edge_count": 0
+        },
+        "composition_core": {
+          "admitted_count": 3,
+          "arbitration_method": "PARETO_MINIMAL_SUFFICIENT_V1",
+          "arbitration_version": "1",
+          "candidate_count": 3,
+          "candidate_decisions": [
+            {
+              "assessment_id": "R14-ASSOC-013",
+              "composition_eligibility": "ELIGIBLE_DIRECT",
+              "decision_state": "ADMITTED",
+              "explanation": "Qualified association was admitted because its ordinal evidence group fits the topology-derived degree bound.",
+              "neighbourhood_role": "DIRECT_NEIGHBOUR",
+              "node_ids": [
+                "adaptation",
+                "cultural negotiation"
+              ],
+              "presentation_role": "ADMITTED",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "semantic_eligibility": "QUALIFIED",
+              "topology_role": "SEMANTIC_CONNECTION"
+            },
+            {
+              "assessment_id": "R14-ASSOC-014",
+              "composition_eligibility": "ELIGIBLE_SKIP_ONE",
+              "decision_state": "ADMITTED",
+              "explanation": "Qualified association was admitted because its ordinal evidence group fits the topology-derived degree bound.",
+              "neighbourhood_role": "SKIP_ONE_NEIGHBOUR",
+              "node_ids": [
+                "adaptation",
+                "rejection"
+              ],
+              "presentation_role": "ADMITTED",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "semantic_eligibility": "QUALIFIED",
+              "topology_role": "SEMANTIC_CONNECTION"
+            },
+            {
+              "assessment_id": "R14-ASSOC-015",
+              "composition_eligibility": "ELIGIBLE_DIRECT",
+              "decision_state": "ADMITTED",
+              "explanation": "Qualified association was admitted because its ordinal evidence group fits the topology-derived degree bound.",
+              "neighbourhood_role": "DIRECT_NEIGHBOUR",
+              "node_ids": [
+                "cultural negotiation",
+                "rejection"
+              ],
+              "presentation_role": "ADMITTED",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "semantic_eligibility": "QUALIFIED",
+              "topology_role": "SEMANTIC_CONNECTION"
+            }
+          ],
+          "degree_bound": 2,
+          "evidence_gap_count": 0,
+          "pruned_count": 0,
+          "pruning_reason_codes": [],
+          "split_count": 0,
+          "split_reason_codes": [],
+          "topology_explanation": "Topology follows an explicit inquiry-structure request and makes no historical directional claim.",
+          "topology_reason_code": "EXPLICIT_INQUIRY_TOPOLOGY",
+          "unresolved_count": 0
+        },
+        "evidence_core": [
+          {
+            "assessment_id": "R14-ASSOC-013",
+            "confidence": "HIGH",
+            "mandatory_dimension_results": {
+              "D1": 2,
+              "D5": 2,
+              "D7": 2
+            },
+            "provenance_refs": [
+              "R14-EVID-013-01",
+              "R14-EVID-013-02"
+            ],
+            "qualification": "Adaptation is situated agency, not passive transfer.",
+            "strength": "STRONG",
+            "support_status": "EXTERNALLY_SUPPORTED"
+          },
+          {
+            "assessment_id": "R14-ASSOC-014",
+            "confidence": "MODERATE",
+            "mandatory_dimension_results": {
+              "D1": 2,
+              "D5": 2,
+              "D7": 2
+            },
+            "provenance_refs": [
+              "R14-EVID-014-01"
+            ],
+            "qualification": "Alternatives within one contact-zone model, not successive stages.",
+            "strength": "STRONG",
+            "support_status": "EXTERNALLY_SUPPORTED"
+          },
+          {
+            "assessment_id": "R14-ASSOC-015",
+            "confidence": "MODERATE",
+            "mandatory_dimension_results": {
+              "D1": 1,
+              "D5": 2,
+              "D7": 2
+            },
+            "provenance_refs": [
+              "R14-EVID-015-01"
+            ],
+            "qualification": "One conceptual source; no claim that rejection always constitutes negotiation.",
+            "strength": "MODERATE",
+            "support_status": "EXTERNALLY_SUPPORTED"
+          }
+        ],
+        "presentation_hash": "18a21dc3b67f7f710c33077f36ef19e737eafb40f6a0ad5d6c6dabba27844308",
+        "presentation_hints": {
+          "cosmetic_order": [
+            "adaptation",
+            "cultural negotiation",
+            "rejection"
+          ],
+          "edge_hints": [
+            {
+              "arrowhead": false,
+              "association_id": "R14-ASSOC-013",
+              "source_node_id": "adaptation",
+              "stroke_width": 2,
+              "support_class_label": "EXTERNALLY_SUPPORTED",
+              "target_node_id": "cultural negotiation"
+            },
+            {
+              "arrowhead": false,
+              "association_id": "R14-ASSOC-014",
+              "source_node_id": "adaptation",
+              "stroke_width": 2,
+              "support_class_label": "EXTERNALLY_SUPPORTED",
+              "target_node_id": "rejection"
+            },
+            {
+              "arrowhead": false,
+              "association_id": "R14-ASSOC-015",
+              "source_node_id": "cultural negotiation",
+              "stroke_width": 2,
+              "support_class_label": "EXTERNALLY_SUPPORTED",
+              "target_node_id": "rejection"
+            }
+          ],
+          "layout_engine": "DETERMINISTIC_RESEARCH_CIRCLE_V1",
+          "node_positions": [
+            {
+              "branch_slot": 0,
+              "layout_role": "PEER",
+              "node_id": "adaptation",
+              "node_radius": 16,
+              "relative_layer": 0,
+              "x": 397,
+              "y": 481
+            },
+            {
+              "branch_slot": 1,
+              "layout_role": "SEED",
+              "node_id": "cultural negotiation",
+              "node_radius": 16,
+              "relative_layer": 0,
+              "x": 157,
+              "y": 196
+            },
+            {
+              "branch_slot": 2,
+              "layout_role": "PEER",
+              "node_id": "rejection",
+              "node_radius": 16,
+              "relative_layer": 0,
+              "x": 523,
+              "y": 133
+            }
+          ],
+          "optional_seed": "round16|region|R16-COMP-REGION-01",
+          "semantic_mutation_permitted": false,
+          "visual_gap_hint": false
+        },
+        "provenance": [
+          {
+            "assessment_id": "R14-ASSOC-013",
+            "evidence_ids": [
+              "R14-EVID-013-01",
+              "R14-EVID-013-02"
+            ],
+            "source_ids": [
+              "COMP-SRC-013",
+              "COMP-SRC-014"
+            ],
+            "source_urls": [
+              "https://doi.org/10.1080/23311983.2025.2482456",
+              "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745"
+            ]
+          },
+          {
+            "assessment_id": "R14-ASSOC-014",
+            "evidence_ids": [
+              "R14-EVID-014-01"
+            ],
+            "source_ids": [
+              "COMP-SRC-013"
+            ],
+            "source_urls": [
+              "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745"
+            ]
+          },
+          {
+            "assessment_id": "R14-ASSOC-015",
+            "evidence_ids": [
+              "R14-EVID-015-01"
+            ],
+            "source_ids": [
+              "COMP-SRC-013"
+            ],
+            "source_urls": [
+              "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745"
+            ]
+          }
+        ],
+        "schema_version": "bounded-semantic-image-v1",
+        "semantic_core": {
+          "admitted_association_ids": [
+            "R14-ASSOC-013",
+            "R14-ASSOC-014",
+            "R14-ASSOC-015"
+          ],
+          "association_states": [
+            {
+              "assessment_id": "R14-ASSOC-013",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "state": "ADMITTED"
+            },
+            {
+              "assessment_id": "R14-ASSOC-014",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "state": "ADMITTED"
+            },
+            {
+              "assessment_id": "R14-ASSOC-015",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "state": "ADMITTED"
+            }
+          ],
+          "evidence_gap_node_ids": [],
+          "neighbourhood_depth": 2,
+          "node_ids": [
+            "adaptation",
+            "cultural negotiation",
+            "rejection"
+          ],
+          "qualified_association_ids": [
+            "R14-ASSOC-013",
+            "R14-ASSOC-014",
+            "R14-ASSOC-015"
+          ],
+          "seed_node_ids": [
+            "cultural negotiation"
+          ],
+          "semantic_image_id": "R15-IMAGE-R16-COMP-REGION-01",
+          "semantic_version": "bounded-semantic-image-v1",
+          "split_components": [
+            [
+              "adaptation",
+              "cultural negotiation",
+              "rejection"
+            ]
+          ],
+          "topology_candidates": [
+            "BINARY_FORK",
+            "BINARY_CONVERGENCE"
+          ],
+          "topology_type": "BINARY_FORK"
+        },
+        "semantic_core_hash": "6ecc9651549ea2f9e572c21d4aa5909a7c8aa79d88594022a1321d7d712f03f3"
+      },
+      "seed_labels": [
+        "cultural negotiation"
+      ],
+      "seed_node_ids": [
+        "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed"
+      ],
+      "semantic_hash": "6ecc9651549ea2f9e572c21d4aa5909a7c8aa79d88594022a1321d7d712f03f3",
+      "topology_type": "BINARY_FORK"
+    },
+    {
+      "admitted_association_ids": [
+        "R14-ASSOC-010",
+        "R14-ASSOC-011",
+        "R14-ASSOC-012"
+      ],
+      "associations": [
+        {
+          "active_for_proximity": true,
+          "association_accessible_description": "material displacement is available to explore with supply chain as a qualified generic association.",
+          "association_id": "R14-ASSOC-010",
+          "confidence": "HIGH",
+          "endpoint_labels": [
+            "material displacement",
+            "supply chain"
+          ],
+          "endpoint_vocabulary_ids": [
+            "TRV:d366de58d3002458bfb404ee505621e926c518871a4caeffcdfb89b45f8112ef",
+            "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c"
+          ],
+          "explicit_non_claims": [
+            "causation",
+            "influence",
+            "chronology",
+            "hierarchy",
+            "direction",
+            "equivalence"
+          ],
+          "generic_association_only": true,
+          "hard_negative": false,
+          "mandatory_dimension_results": {
+            "D1": 2,
+            "D5": 2,
+            "D7": 2
+          },
+          "provenance_refs": [
+            "R14-EVID-010-01",
+            "R14-EVID-010-02"
+          ],
+          "qualification": "The association does not reduce all material movement to one supply-chain model.",
+          "qualification_version": "trace-generic-association-rubric-v1",
+          "source_refs": [
+            "COMP-SRC-019",
+            "COMP-SRC-020"
+          ],
+          "source_urls": [
+            "https://academic.oup.com/jdh/issue/34/3",
+            "https://www.tandfonline.com/doi/abs/10.1080/18626033.2013.798922"
+          ],
+          "strength": "STRONG",
+          "support_status": "EXTERNALLY_SUPPORTED"
+        },
+        {
+          "active_for_proximity": true,
+          "association_accessible_description": "supply chain is available to explore with production site as a qualified generic association.",
+          "association_id": "R14-ASSOC-011",
+          "confidence": "MODERATE",
+          "endpoint_labels": [
+            "supply chain",
+            "production site"
+          ],
+          "endpoint_vocabulary_ids": [
+            "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c",
+            "TRV:be33e16d8f585c08bb0efe6f0df92659a22d534298639f5318d2a2580546fdcc"
+          ],
+          "explicit_non_claims": [
+            "causation",
+            "influence",
+            "chronology",
+            "hierarchy",
+            "direction",
+            "equivalence"
+          ],
+          "generic_association_only": true,
+          "hard_negative": false,
+          "mandatory_dimension_results": {
+            "D1": 2,
+            "D5": 2,
+            "D7": 2
+          },
+          "provenance_refs": [
+            "R14-EVID-011-01"
+          ],
+          "qualification": "One bounded study and source family; confidence is moderate.",
+          "qualification_version": "trace-generic-association-rubric-v1",
+          "source_refs": [
+            "COMP-SRC-020"
+          ],
+          "source_urls": [
+            "https://www.tandfonline.com/doi/abs/10.1080/18626033.2013.798922"
+          ],
+          "strength": "STRONG",
+          "support_status": "EXTERNALLY_SUPPORTED"
+        },
+        {
+          "active_for_proximity": true,
+          "association_accessible_description": "material displacement is available to explore with production site as a qualified generic association.",
+          "association_id": "R14-ASSOC-012",
+          "confidence": "MODERATE",
+          "endpoint_labels": [
+            "material displacement",
+            "production site"
+          ],
+          "endpoint_vocabulary_ids": [
+            "TRV:d366de58d3002458bfb404ee505621e926c518871a4caeffcdfb89b45f8112ef",
+            "TRV:be33e16d8f585c08bb0efe6f0df92659a22d534298639f5318d2a2580546fdcc"
+          ],
+          "explicit_non_claims": [
+            "causation",
+            "influence",
+            "chronology",
+            "hierarchy",
+            "direction",
+            "equivalence"
+          ],
+          "generic_association_only": true,
+          "hard_negative": false,
+          "mandatory_dimension_results": {
+            "D1": 1,
+            "D5": 2,
+            "D7": 2
+          },
+          "provenance_refs": [
+            "R14-EVID-012-01"
+          ],
+          "qualification": "Association is inferred within the source's explicit chain, not elevated to a universal relation.",
+          "qualification_version": "trace-generic-association-rubric-v1",
+          "source_refs": [
+            "COMP-SRC-020"
+          ],
+          "source_urls": [
+            "https://www.tandfonline.com/doi/abs/10.1080/18626033.2013.798922"
+          ],
+          "strength": "MODERATE",
+          "support_status": "EXTERNALLY_SUPPORTED"
+        }
+      ],
+      "category_id": "region",
+      "composition_id": "R16-COMP-REGION-02",
+      "description": "Material-chain histories entered through governed United States records.",
+      "entry_evidence": [
+        "COMP-SRC-019",
+        "COMP-SRC-020",
+        "SPTGEO:United States"
+      ],
+      "exportable": true,
+      "generic_association_only": true,
+      "nodes": [
+        {
+          "canonical_label": "material displacement",
+          "node_accessible_label": "material displacement, evidence-supported exploration term",
+          "projection": {
+            "bounding_hint": {
+              "radius": 0.022222222222222223
+            },
+            "branch_slot": 0,
+            "group_slot": "region",
+            "layer_slot": 0,
+            "normalised_x": 0.591667,
+            "normalised_y": 0.877778,
+            "projection_version": "trace-exploration-neutral-projection-v1"
+          },
+          "vocabulary_id": "TRV:d366de58d3002458bfb404ee505621e926c518871a4caeffcdfb89b45f8112ef"
+        },
+        {
+          "canonical_label": "supply chain",
+          "node_accessible_label": "supply chain, evidence-supported exploration term",
+          "projection": {
+            "bounding_hint": {
+              "radius": 0.022222222222222223
+            },
+            "branch_slot": 2,
+            "group_slot": "region",
+            "layer_slot": 0,
+            "normalised_x": 0.698611,
+            "normalised_y": 0.205556,
+            "projection_version": "trace-exploration-neutral-projection-v1"
+          },
+          "vocabulary_id": "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c"
+        },
+        {
+          "canonical_label": "production site",
+          "node_accessible_label": "production site, evidence-supported exploration term",
+          "projection": {
+            "bounding_hint": {
+              "radius": 0.022222222222222223
+            },
+            "branch_slot": 1,
+            "group_slot": "region",
+            "layer_slot": 0,
+            "normalised_x": 0.211111,
+            "normalised_y": 0.418519,
+            "projection_version": "trace-exploration-neutral-projection-v1"
+          },
+          "vocabulary_id": "TRV:be33e16d8f585c08bb0efe6f0df92659a22d534298639f5318d2a2580546fdcc"
+        }
+      ],
+      "presentation_hash": "baa9d9be2bb23026256c0848447c98d4527b2fb3808c9bfba387010b291226a9",
+      "pruned_association_ids": [],
+      "qualified_association_ids": [
+        "R14-ASSOC-010",
+        "R14-ASSOC-011",
+        "R14-ASSOC-012"
+      ],
+      "round15_semantic_image": {
+        "audit": {
+          "causal_relation_emission_count": 0,
+          "directional_relation_emission_count": 0,
+          "duplicate_input_count": 0,
+          "explicit_non_claims": [
+            "Association is not a typed historical relation.",
+            "Topology and geometry are not historical facts.",
+            "Pruning, split, and evidence-gap states are not negative historical evidence."
+          ],
+          "failed_association_control_count": 0,
+          "fixture_family": "REAL_DATABASE_CATEGORY_COMPOSITION",
+          "fixture_id": "R16-COMP-REGION-02",
+          "hard_negative_control_count": 0,
+          "negative_language_violation_count": 0,
+          "synthetic": false,
+          "typed_historical_relation_emission_count": 0,
+          "unsupported_rendered_edge_count": 0
+        },
+        "composition_core": {
+          "admitted_count": 3,
+          "arbitration_method": "PARETO_MINIMAL_SUFFICIENT_V1",
+          "arbitration_version": "1",
+          "candidate_count": 3,
+          "candidate_decisions": [
+            {
+              "assessment_id": "R14-ASSOC-010",
+              "composition_eligibility": "ELIGIBLE_DIRECT",
+              "decision_state": "ADMITTED",
+              "explanation": "Qualified association was admitted because its ordinal evidence group fits the topology-derived degree bound.",
+              "neighbourhood_role": "DIRECT_NEIGHBOUR",
+              "node_ids": [
+                "material displacement",
+                "supply chain"
+              ],
+              "presentation_role": "ADMITTED",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "semantic_eligibility": "QUALIFIED",
+              "topology_role": "SEMANTIC_CONNECTION"
+            },
+            {
+              "assessment_id": "R14-ASSOC-011",
+              "composition_eligibility": "ELIGIBLE_DIRECT",
+              "decision_state": "ADMITTED",
+              "explanation": "Qualified association was admitted because its ordinal evidence group fits the topology-derived degree bound.",
+              "neighbourhood_role": "DIRECT_NEIGHBOUR",
+              "node_ids": [
+                "production site",
+                "supply chain"
+              ],
+              "presentation_role": "ADMITTED",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "semantic_eligibility": "QUALIFIED",
+              "topology_role": "SEMANTIC_CONNECTION"
+            },
+            {
+              "assessment_id": "R14-ASSOC-012",
+              "composition_eligibility": "ELIGIBLE_SKIP_ONE",
+              "decision_state": "ADMITTED",
+              "explanation": "Qualified association was admitted because its ordinal evidence group fits the topology-derived degree bound.",
+              "neighbourhood_role": "SKIP_ONE_NEIGHBOUR",
+              "node_ids": [
+                "material displacement",
+                "production site"
+              ],
+              "presentation_role": "ADMITTED",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "semantic_eligibility": "QUALIFIED",
+              "topology_role": "SEMANTIC_CONNECTION"
+            }
+          ],
+          "degree_bound": 2,
+          "evidence_gap_count": 0,
+          "pruned_count": 0,
+          "pruning_reason_codes": [],
+          "split_count": 0,
+          "split_reason_codes": [],
+          "topology_explanation": "Topology follows an explicit inquiry-structure request and makes no historical directional claim.",
+          "topology_reason_code": "EXPLICIT_INQUIRY_TOPOLOGY",
+          "unresolved_count": 0
+        },
+        "evidence_core": [
+          {
+            "assessment_id": "R14-ASSOC-010",
+            "confidence": "HIGH",
+            "mandatory_dimension_results": {
+              "D1": 2,
+              "D5": 2,
+              "D7": 2
+            },
+            "provenance_refs": [
+              "R14-EVID-010-01",
+              "R14-EVID-010-02"
+            ],
+            "qualification": "The association does not reduce all material movement to one supply-chain model.",
+            "strength": "STRONG",
+            "support_status": "EXTERNALLY_SUPPORTED"
+          },
+          {
+            "assessment_id": "R14-ASSOC-011",
+            "confidence": "MODERATE",
+            "mandatory_dimension_results": {
+              "D1": 2,
+              "D5": 2,
+              "D7": 2
+            },
+            "provenance_refs": [
+              "R14-EVID-011-01"
+            ],
+            "qualification": "One bounded study and source family; confidence is moderate.",
+            "strength": "STRONG",
+            "support_status": "EXTERNALLY_SUPPORTED"
+          },
+          {
+            "assessment_id": "R14-ASSOC-012",
+            "confidence": "MODERATE",
+            "mandatory_dimension_results": {
+              "D1": 1,
+              "D5": 2,
+              "D7": 2
+            },
+            "provenance_refs": [
+              "R14-EVID-012-01"
+            ],
+            "qualification": "Association is inferred within the source's explicit chain, not elevated to a universal relation.",
+            "strength": "MODERATE",
+            "support_status": "EXTERNALLY_SUPPORTED"
+          }
+        ],
+        "presentation_hash": "baa9d9be2bb23026256c0848447c98d4527b2fb3808c9bfba387010b291226a9",
+        "presentation_hints": {
+          "cosmetic_order": [
+            "material displacement",
+            "production site",
+            "supply chain"
+          ],
+          "edge_hints": [
+            {
+              "arrowhead": false,
+              "association_id": "R14-ASSOC-010",
+              "source_node_id": "material displacement",
+              "stroke_width": 2,
+              "support_class_label": "EXTERNALLY_SUPPORTED",
+              "target_node_id": "supply chain"
+            },
+            {
+              "arrowhead": false,
+              "association_id": "R14-ASSOC-011",
+              "source_node_id": "production site",
+              "stroke_width": 2,
+              "support_class_label": "EXTERNALLY_SUPPORTED",
+              "target_node_id": "supply chain"
+            },
+            {
+              "arrowhead": false,
+              "association_id": "R14-ASSOC-012",
+              "source_node_id": "material displacement",
+              "stroke_width": 2,
+              "support_class_label": "EXTERNALLY_SUPPORTED",
+              "target_node_id": "production site"
+            }
+          ],
+          "layout_engine": "DETERMINISTIC_RESEARCH_CIRCLE_V1",
+          "node_positions": [
+            {
+              "branch_slot": 0,
+              "layout_role": "PEER",
+              "node_id": "material displacement",
+              "node_radius": 16,
+              "relative_layer": 0,
+              "x": 426,
+              "y": 474
+            },
+            {
+              "branch_slot": 1,
+              "layout_role": "PEER",
+              "node_id": "production site",
+              "node_radius": 16,
+              "relative_layer": 0,
+              "x": 152,
+              "y": 226
+            },
+            {
+              "branch_slot": 2,
+              "layout_role": "SEED",
+              "node_id": "supply chain",
+              "node_radius": 16,
+              "relative_layer": 0,
+              "x": 503,
+              "y": 111
+            }
+          ],
+          "optional_seed": "round16|region|R16-COMP-REGION-02",
+          "semantic_mutation_permitted": false,
+          "visual_gap_hint": false
+        },
+        "provenance": [
+          {
+            "assessment_id": "R14-ASSOC-010",
+            "evidence_ids": [
+              "R14-EVID-010-01",
+              "R14-EVID-010-02"
+            ],
+            "source_ids": [
+              "COMP-SRC-019",
+              "COMP-SRC-020"
+            ],
+            "source_urls": [
+              "https://academic.oup.com/jdh/issue/34/3",
+              "https://www.tandfonline.com/doi/abs/10.1080/18626033.2013.798922"
+            ]
+          },
+          {
+            "assessment_id": "R14-ASSOC-011",
+            "evidence_ids": [
+              "R14-EVID-011-01"
+            ],
+            "source_ids": [
+              "COMP-SRC-020"
+            ],
+            "source_urls": [
+              "https://www.tandfonline.com/doi/abs/10.1080/18626033.2013.798922"
+            ]
+          },
+          {
+            "assessment_id": "R14-ASSOC-012",
+            "evidence_ids": [
+              "R14-EVID-012-01"
+            ],
+            "source_ids": [
+              "COMP-SRC-020"
+            ],
+            "source_urls": [
+              "https://www.tandfonline.com/doi/abs/10.1080/18626033.2013.798922"
+            ]
+          }
+        ],
+        "schema_version": "bounded-semantic-image-v1",
+        "semantic_core": {
+          "admitted_association_ids": [
+            "R14-ASSOC-010",
+            "R14-ASSOC-011",
+            "R14-ASSOC-012"
+          ],
+          "association_states": [
+            {
+              "assessment_id": "R14-ASSOC-010",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "state": "ADMITTED"
+            },
+            {
+              "assessment_id": "R14-ASSOC-011",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "state": "ADMITTED"
+            },
+            {
+              "assessment_id": "R14-ASSOC-012",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "state": "ADMITTED"
+            }
+          ],
+          "evidence_gap_node_ids": [],
+          "neighbourhood_depth": 2,
+          "node_ids": [
+            "material displacement",
+            "production site",
+            "supply chain"
+          ],
+          "qualified_association_ids": [
+            "R14-ASSOC-010",
+            "R14-ASSOC-011",
+            "R14-ASSOC-012"
+          ],
+          "seed_node_ids": [
+            "supply chain"
+          ],
+          "semantic_image_id": "R15-IMAGE-R16-COMP-REGION-02",
+          "semantic_version": "bounded-semantic-image-v1",
+          "split_components": [
+            [
+              "material displacement",
+              "production site",
+              "supply chain"
+            ]
+          ],
+          "topology_candidates": [
+            "BINARY_FORK",
+            "BINARY_CONVERGENCE"
+          ],
+          "topology_type": "BINARY_FORK"
+        },
+        "semantic_core_hash": "466cca22e0e291275be5dffd48d67629da89f4b9d482eb4b5b5ba1f2facfbd7b"
+      },
+      "seed_labels": [
+        "supply chain"
+      ],
+      "seed_node_ids": [
+        "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c"
+      ],
+      "semantic_hash": "466cca22e0e291275be5dffd48d67629da89f4b9d482eb4b5b5ba1f2facfbd7b",
+      "topology_type": "BINARY_FORK"
+    },
+    {
+      "admitted_association_ids": [
+        "R14-ASSOC-016"
+      ],
+      "associations": [
+        {
+          "active_for_proximity": true,
+          "association_accessible_description": "gendering is available to explore with commodification as a qualified generic association.",
+          "association_id": "R14-ASSOC-016",
+          "confidence": "MODERATE",
+          "endpoint_labels": [
+            "gendering",
+            "commodification"
+          ],
+          "endpoint_vocabulary_ids": [
+            "TRV:628bbc2d6553accb5320993afff75b39993c7ae9514d1f39d8a28834bfaf8170",
+            "TRV:b57559d1d19ef1967b6015fa23577c3fac4b79ae3ca54ef4eb760e18300875a3"
+          ],
+          "explicit_non_claims": [
+            "causation",
+            "influence",
+            "chronology",
+            "hierarchy",
+            "direction",
+            "equivalence"
+          ],
+          "generic_association_only": true,
+          "hard_negative": false,
+          "mandatory_dimension_results": {
+            "D1": 2,
+            "D5": 2,
+            "D7": 2
+          },
+          "provenance_refs": [
+            "R14-EVID-016-01",
+            "R14-EVID-016-02"
+          ],
+          "qualification": "The generic association is case-bounded; it does not assert that either process causes the other.",
+          "qualification_version": "trace-generic-association-rubric-v1",
+          "source_refs": [
+            "COMP-SRC-004",
+            "COMP-SRC-005"
+          ],
+          "source_urls": [
+            "https://journals.sagepub.com/doi/abs/10.1177/1469540519872069",
+            "https://researchonline.rca.ac.uk/2773/"
+          ],
+          "strength": "STRONG",
+          "support_status": "EXTERNALLY_SUPPORTED"
+        }
+      ],
+      "category_id": "region",
+      "composition_id": "R16-COMP-REGION-03",
+      "description": "Brazilian exposition research entered through governed Brazil records.",
+      "entry_evidence": [
+        "COMP-SRC-004",
+        "SPTGEO:Brazil"
+      ],
+      "exportable": true,
+      "generic_association_only": true,
+      "nodes": [
+        {
+          "canonical_label": "gendering",
+          "node_accessible_label": "gendering, evidence-supported exploration term",
+          "projection": {
+            "bounding_hint": {
+              "radius": 0.022222222222222223
+            },
+            "branch_slot": 1,
+            "group_slot": "region",
+            "layer_slot": 0,
+            "normalised_x": 0.443056,
+            "normalised_y": 0.894444,
+            "projection_version": "trace-exploration-neutral-projection-v1"
+          },
+          "vocabulary_id": "TRV:628bbc2d6553accb5320993afff75b39993c7ae9514d1f39d8a28834bfaf8170"
+        },
+        {
+          "canonical_label": "commodification",
+          "node_accessible_label": "commodification, evidence-supported exploration term",
+          "projection": {
+            "bounding_hint": {
+              "radius": 0.022222222222222223
+            },
+            "branch_slot": 0,
+            "group_slot": "region",
+            "layer_slot": 0,
+            "normalised_x": 0.556944,
+            "normalised_y": 0.109259,
+            "projection_version": "trace-exploration-neutral-projection-v1"
+          },
+          "vocabulary_id": "TRV:b57559d1d19ef1967b6015fa23577c3fac4b79ae3ca54ef4eb760e18300875a3"
+        }
+      ],
+      "presentation_hash": "e2d7540370deef1557cf0d93808bd2035e434b343a27e27e8627172fbb50161a",
+      "pruned_association_ids": [],
+      "qualified_association_ids": [
+        "R14-ASSOC-016"
+      ],
+      "round15_semantic_image": {
+        "audit": {
+          "causal_relation_emission_count": 0,
+          "directional_relation_emission_count": 0,
+          "duplicate_input_count": 0,
+          "explicit_non_claims": [
+            "Association is not a typed historical relation.",
+            "Topology and geometry are not historical facts.",
+            "Pruning, split, and evidence-gap states are not negative historical evidence."
+          ],
+          "failed_association_control_count": 0,
+          "fixture_family": "REAL_DATABASE_CATEGORY_COMPOSITION",
+          "fixture_id": "R16-COMP-REGION-03",
+          "hard_negative_control_count": 0,
+          "negative_language_violation_count": 0,
+          "synthetic": false,
+          "typed_historical_relation_emission_count": 0,
+          "unsupported_rendered_edge_count": 0
+        },
+        "composition_core": {
+          "admitted_count": 1,
+          "arbitration_method": "PARETO_MINIMAL_SUFFICIENT_V1",
+          "arbitration_version": "1",
+          "candidate_count": 1,
+          "candidate_decisions": [
+            {
+              "assessment_id": "R14-ASSOC-016",
+              "composition_eligibility": "ELIGIBLE_DIRECT",
+              "decision_state": "ADMITTED",
+              "explanation": "Qualified association was admitted because its ordinal evidence group fits the topology-derived degree bound.",
+              "neighbourhood_role": "DIRECT_NEIGHBOUR",
+              "node_ids": [
+                "commodification",
+                "gendering"
+              ],
+              "presentation_role": "ADMITTED",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "semantic_eligibility": "QUALIFIED",
+              "topology_role": "SEMANTIC_CONNECTION"
+            }
+          ],
+          "degree_bound": 2,
+          "evidence_gap_count": 0,
+          "pruned_count": 0,
+          "pruning_reason_codes": [],
+          "split_count": 0,
+          "split_reason_codes": [],
+          "topology_explanation": "Topology follows an explicit inquiry-structure request and makes no historical directional claim.",
+          "topology_reason_code": "EXPLICIT_INQUIRY_TOPOLOGY",
+          "unresolved_count": 0
+        },
+        "evidence_core": [
+          {
+            "assessment_id": "R14-ASSOC-016",
+            "confidence": "MODERATE",
+            "mandatory_dimension_results": {
+              "D1": 2,
+              "D5": 2,
+              "D7": 2
+            },
+            "provenance_refs": [
+              "R14-EVID-016-01",
+              "R14-EVID-016-02"
+            ],
+            "qualification": "The generic association is case-bounded; it does not assert that either process causes the other.",
+            "strength": "STRONG",
+            "support_status": "EXTERNALLY_SUPPORTED"
+          }
+        ],
+        "presentation_hash": "e2d7540370deef1557cf0d93808bd2035e434b343a27e27e8627172fbb50161a",
+        "presentation_hints": {
+          "cosmetic_order": [
+            "commodification",
+            "gendering"
+          ],
+          "edge_hints": [
+            {
+              "arrowhead": false,
+              "association_id": "R14-ASSOC-016",
+              "source_node_id": "commodification",
+              "stroke_width": 2,
+              "support_class_label": "EXTERNALLY_SUPPORTED",
+              "target_node_id": "gendering"
+            }
+          ],
+          "layout_engine": "DETERMINISTIC_RESEARCH_CIRCLE_V1",
+          "node_positions": [
+            {
+              "branch_slot": 0,
+              "layout_role": "PEER",
+              "node_id": "commodification",
+              "node_radius": 16,
+              "relative_layer": 0,
+              "x": 401,
+              "y": 59
+            },
+            {
+              "branch_slot": 1,
+              "layout_role": "SEED",
+              "node_id": "gendering",
+              "node_radius": 16,
+              "relative_layer": 0,
+              "x": 319,
+              "y": 483
+            }
+          ],
+          "optional_seed": "round16|region|R16-COMP-REGION-03",
+          "semantic_mutation_permitted": false,
+          "visual_gap_hint": false
+        },
+        "provenance": [
+          {
+            "assessment_id": "R14-ASSOC-016",
+            "evidence_ids": [
+              "R14-EVID-016-01",
+              "R14-EVID-016-02"
+            ],
+            "source_ids": [
+              "COMP-SRC-004",
+              "COMP-SRC-005"
+            ],
+            "source_urls": [
+              "https://journals.sagepub.com/doi/abs/10.1177/1469540519872069",
+              "https://researchonline.rca.ac.uk/2773/"
+            ]
+          }
+        ],
+        "schema_version": "bounded-semantic-image-v1",
+        "semantic_core": {
+          "admitted_association_ids": [
+            "R14-ASSOC-016"
+          ],
+          "association_states": [
+            {
+              "assessment_id": "R14-ASSOC-016",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "state": "ADMITTED"
+            }
+          ],
+          "evidence_gap_node_ids": [],
+          "neighbourhood_depth": 2,
+          "node_ids": [
+            "commodification",
+            "gendering"
+          ],
+          "qualified_association_ids": [
+            "R14-ASSOC-016"
+          ],
+          "seed_node_ids": [
+            "gendering"
+          ],
+          "semantic_image_id": "R15-IMAGE-R16-COMP-REGION-03",
+          "semantic_version": "bounded-semantic-image-v1",
+          "split_components": [
+            [
+              "commodification",
+              "gendering"
+            ]
+          ],
+          "topology_candidates": [
+            "LINEAR_PATH"
+          ],
+          "topology_type": "LINEAR_PATH"
+        },
+        "semantic_core_hash": "d883b672e8386c9768f088bd8f709b7339553413851cad9f9ed85bee3987e7d4"
+      },
+      "seed_labels": [
+        "gendering"
+      ],
+      "seed_node_ids": [
+        "TRV:628bbc2d6553accb5320993afff75b39993c7ae9514d1f39d8a28834bfaf8170"
+      ],
+      "semantic_hash": "d883b672e8386c9768f088bd8f709b7339553413851cad9f9ed85bee3987e7d4",
+      "topology_type": "LINEAR_PATH"
+    }
+  ],
+  "database_snapshot_id": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+  "default_focus": "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+  "map": {
+    "archive_object_references": [
+      {
+        "folder_id": "FOL-REGION-INDONESIA",
+        "folder_title": "Indonesia",
+        "surface_id": "SURF-DGITRACE2026R0004",
+        "title": "Bali"
+      },
+      {
+        "folder_id": "FOL-REGION-INDONESIA",
+        "folder_title": "Indonesia",
+        "surface_id": "SURF-DGITRACE2026R0007",
+        "title": "Boeng, Ajo Boeng"
+      },
+      {
+        "folder_id": "FOL-REGION-INDONESIA",
+        "folder_title": "Indonesia",
+        "surface_id": "SURF-DGITRACE2026R0012",
+        "title": "Pasar Seni ITB 1972"
+      },
+      {
+        "folder_id": "FOL-REGION-INDONESIA",
+        "folder_title": "Indonesia",
+        "surface_id": "SURF-DGITRACE2026R0015",
+        "title": "Apa dan Siapa Indonesia Indah"
+      },
+      {
+        "folder_id": "FOL-REGION-BRAZIL",
+        "folder_title": "Brazil",
+        "surface_id": "SURF-CGS2026R0383",
+        "title": "Reichssporttag des B.D.M. 23 September 1934 - Ludwig HOHLWEIN München Plakat Poster Library of Congress No know copyright restrictions Public domain 71sK7kr99UL. AC SL1411"
+      },
+      {
+        "folder_id": "FOL-REGION-BRAZIL",
+        "folder_title": "Brazil",
+        "surface_id": "SURF-CGS2026R0670",
+        "title": "The Brazilian in The Very merry mariner LCCN2014637100"
+      },
+      {
+        "folder_id": "FOL-REGION-BRAZIL",
+        "folder_title": "Brazil",
+        "surface_id": "SURF-LOCTRACE2026R01098",
+        "title": "Em se plantando tudo da plante! : Ensine a ler e escrever, voce tambem e responsavel"
+      },
+      {
+        "folder_id": "FOL-REGION-BRAZIL",
+        "folder_title": "Brazil",
+        "surface_id": "SURF-MODERNAPITRACE2026R0218",
+        "title": "All Directions At Once"
+      },
+      {
+        "folder_id": "FOL-REGION-UNITED-STATES",
+        "folder_title": "United States",
+        "surface_id": "SURF-CHWCONTEMP2026V1R0002",
+        "title": "\"Subjective Archives: an Installation,\" SF Camerawork, a Center for Photography and Related Media, San Francisco"
+      },
+      {
+        "folder_id": "FOL-REGION-UNITED-STATES",
+        "folder_title": "United States",
+        "surface_id": "SURF-CHWCONTEMP2026V1R0003",
+        "title": "\"The Next Generation: Student Work from the United States\" Competition, 2AES, Art and Exhibition Space, San Francisco"
+      },
+      {
+        "folder_id": "FOL-REGION-UNITED-STATES",
+        "folder_title": "United States",
+        "surface_id": "SURF-CHWCONTEMP2026V1R0005",
+        "title": "A New Era Begins... IBM"
+      },
+      {
+        "folder_id": "FOL-REGION-UNITED-STATES",
+        "folder_title": "United States",
+        "surface_id": "SURF-CHWCONTEMP2026V1R0006",
+        "title": "AIDS Crisis"
+      }
+    ],
+    "association_ids": [
+      "R14-ASSOC-010",
+      "R14-ASSOC-011",
+      "R14-ASSOC-012",
+      "R14-ASSOC-013",
+      "R14-ASSOC-014",
+      "R14-ASSOC-015",
+      "R14-ASSOC-016"
+    ],
+    "category_id": "region",
+    "composition_ids": [
+      "R16-COMP-REGION-01",
+      "R16-COMP-REGION-02",
+      "R16-COMP-REGION-03"
+    ],
+    "context_references": [
+      "CTXA:011d08de61ba1037d3eb999691049786d952de6e53b66b9b2b1a6983d0adf566",
+      "CTXA:04ea7620074c488ebde730701999641102f60e28a4b0791b9e36bc13c6d14e10",
+      "CTXA:077f59b60ff5285fa4b8a416b9d4342e17d4bae30625ee4658dbc130109480f2",
+      "CTXA:0bb551639a8a04eaf94f622dff9dccfd91c465eb0612a4576d4f39c0508b3b9e",
+      "CTXA:13f52559b3895460a0d6dcfd5f0067bbc833bc4058d036914c39fa2e821f7aac",
+      "CTXA:18316b6f10c682ced51148d188d567bac31b3b88588dcefa9c08b000876c271b",
+      "CTXA:1b4fffb039b2166b35304a5ba0534e02fd929e8a4e0dbebc5486b5afbc5ba891",
+      "CTXA:291d32806745d7ffbf1704fcf66f4c8c9c2e603957c5ac7916cd11f3326ae364",
+      "CTXA:34788a8b999885725615262f6b100b77df6067fb20e3c556c385e73db1ab7300",
+      "CTXA:39debac2c09f5f65aa3bc398e7e025f4e361b9889335fa6bd385bc7c87acd3a9",
+      "CTXA:4f4204463e6fa0cf1e02ac215243e6f674fa0816ec5dd68ed321f60b4706ff7a",
+      "CTXA:55623e7a572d839b6036bf50b128ca1c648f1376b970d7df12e7d1967cd16bd6",
+      "CTXA:5ac02eb48e73a592cdf74152688b7fe38f420b5576ecb2d1b247455822f8c300",
+      "CTXA:63f8f4f0d87aad1637cc596c61ca9e57e57a4438238e0f940a29b3bf242e22ba",
+      "CTXA:7551caf971448e38cd6e722da796ed4202dde9cdbe9ee9800873a3bf9a0e9b22",
+      "CTXA:767488c71079482e8ed8f83596a18ff2f54dd6c210d655b1a5a94249ea2193e6",
+      "CTXA:83f742c491b3a4f7d12328ebbe85bb55876dfbae3b9dba2b7ca71054445e2e1c",
+      "CTXA:916c1c135ded85285c4cd699ac06b79a60b939f0e61d32f429a33b055e0a65dd",
+      "CTXA:954545aa716d2336fb2787158e40eb2d2c171dbe1c4884e8dcf0ef98ba873976",
+      "CTXA:c2c4c7fff2573e382af84688e2e18cf89617c6286ecf574341bb968d8db5a9ed",
+      "CTXA:c7401f50a52a6100cd1c6cfbed041e3c4e650f4989dfbcf1e15294d8e5e4decf",
+      "CTXA:cc10fa6433291013bcfc732c92e2a92f8956abaf538f3e2e5b7e54e8924e96f2",
+      "CTXA:e6a718a17546d9c6198bdae7f53ab35e8262c4dc82dacbfc4c6c5ba3af159891",
+      "CTXA:ec0da3632f4fe11169d1e718a0221eed521e902263b35caa512b2cc33ac99e69",
+      "CTXA:ff834e3e0655c2f0451ab42bd93ba0dba5d2ce1c6b4a96f75e25279b7c1baed8"
+    ],
+    "default_composition_id": "R16-COMP-REGION-01",
+    "default_focus": "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+    "initial_state_id": "TRSTATE:9bc4ba7f1e0790dfd580285124a7df9753586de08ca2f4facd27cca8121f3eeb",
+    "map_id": "TRMAP:8ad4ffaca99b1219b90e3d7c1133fdeba3634c48343f4963e0f5facbba43c7cd",
+    "map_regions": [
+      {
+        "association_ids": [
+          "R14-ASSOC-013",
+          "R14-ASSOC-014",
+          "R14-ASSOC-015"
+        ],
+        "category_id": "region",
+        "composition_ids": [
+          "R16-COMP-REGION-01"
+        ],
+        "context_refs": [
+          "CTXA:011d08de61ba1037d3eb999691049786d952de6e53b66b9b2b1a6983d0adf566",
+          "CTXA:04ea7620074c488ebde730701999641102f60e28a4b0791b9e36bc13c6d14e10",
+          "CTXA:077f59b60ff5285fa4b8a416b9d4342e17d4bae30625ee4658dbc130109480f2",
+          "CTXA:0bb551639a8a04eaf94f622dff9dccfd91c465eb0612a4576d4f39c0508b3b9e",
+          "CTXA:13f52559b3895460a0d6dcfd5f0067bbc833bc4058d036914c39fa2e821f7aac",
+          "CTXA:18316b6f10c682ced51148d188d567bac31b3b88588dcefa9c08b000876c271b",
+          "CTXA:1b4fffb039b2166b35304a5ba0534e02fd929e8a4e0dbebc5486b5afbc5ba891",
+          "CTXA:291d32806745d7ffbf1704fcf66f4c8c9c2e603957c5ac7916cd11f3326ae364",
+          "CTXA:34788a8b999885725615262f6b100b77df6067fb20e3c556c385e73db1ab7300",
+          "CTXA:39debac2c09f5f65aa3bc398e7e025f4e361b9889335fa6bd385bc7c87acd3a9",
+          "CTXA:4f4204463e6fa0cf1e02ac215243e6f674fa0816ec5dd68ed321f60b4706ff7a",
+          "CTXA:55623e7a572d839b6036bf50b128ca1c648f1376b970d7df12e7d1967cd16bd6",
+          "CTXA:5ac02eb48e73a592cdf74152688b7fe38f420b5576ecb2d1b247455822f8c300",
+          "CTXA:63f8f4f0d87aad1637cc596c61ca9e57e57a4438238e0f940a29b3bf242e22ba",
+          "CTXA:7551caf971448e38cd6e722da796ed4202dde9cdbe9ee9800873a3bf9a0e9b22",
+          "CTXA:767488c71079482e8ed8f83596a18ff2f54dd6c210d655b1a5a94249ea2193e6",
+          "CTXA:83f742c491b3a4f7d12328ebbe85bb55876dfbae3b9dba2b7ca71054445e2e1c",
+          "CTXA:916c1c135ded85285c4cd699ac06b79a60b939f0e61d32f429a33b055e0a65dd",
+          "CTXA:954545aa716d2336fb2787158e40eb2d2c171dbe1c4884e8dcf0ef98ba873976",
+          "CTXA:c2c4c7fff2573e382af84688e2e18cf89617c6286ecf574341bb968d8db5a9ed",
+          "CTXA:c7401f50a52a6100cd1c6cfbed041e3c4e650f4989dfbcf1e15294d8e5e4decf",
+          "CTXA:cc10fa6433291013bcfc732c92e2a92f8956abaf538f3e2e5b7e54e8924e96f2",
+          "CTXA:e6a718a17546d9c6198bdae7f53ab35e8262c4dc82dacbfc4c6c5ba3af159891",
+          "CTXA:ec0da3632f4fe11169d1e718a0221eed521e902263b35caa512b2cc33ac99e69",
+          "CTXA:ff834e3e0655c2f0451ab42bd93ba0dba5d2ce1c6b4a96f75e25279b7c1baed8"
+        ],
+        "entry_node_ids": [
+          "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed"
+        ],
+        "focusable_node_ids": [
+          "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0",
+          "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+          "TRV:fd793986cd6d45968d3c7103e778813542e6a9979a85e9cf512450307c9f7342"
+        ],
+        "node_ids": [
+          "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+          "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0",
+          "TRV:fd793986cd6d45968d3c7103e778813542e6a9979a85e9cf512450307c9f7342"
+        ],
+        "region_id": "TRREG:a6078066b560698c6dc6a29800463fbdc9699c4f892665f61901955768c3d7fd",
+        "semantic_hash": "6ecc9651549ea2f9e572c21d4aa5909a7c8aa79d88594022a1321d7d712f03f3",
+        "spacetime_refs": [
+          "SPTGEO:3254082f0059b355924952744dff7933a62c0534af9ce4e52b4326bf25514b83",
+          "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+          "SPTGEO:e284c31e051c79de8d16ff51c8fb582bb4d3146aba7588db8e551314850a655b"
+        ],
+        "stable_order": 0
+      },
+      {
+        "association_ids": [
+          "R14-ASSOC-010",
+          "R14-ASSOC-011",
+          "R14-ASSOC-012"
+        ],
+        "category_id": "region",
+        "composition_ids": [
+          "R16-COMP-REGION-02"
+        ],
+        "context_refs": [
+          "CTXA:011d08de61ba1037d3eb999691049786d952de6e53b66b9b2b1a6983d0adf566",
+          "CTXA:04ea7620074c488ebde730701999641102f60e28a4b0791b9e36bc13c6d14e10",
+          "CTXA:077f59b60ff5285fa4b8a416b9d4342e17d4bae30625ee4658dbc130109480f2",
+          "CTXA:0bb551639a8a04eaf94f622dff9dccfd91c465eb0612a4576d4f39c0508b3b9e",
+          "CTXA:13f52559b3895460a0d6dcfd5f0067bbc833bc4058d036914c39fa2e821f7aac",
+          "CTXA:18316b6f10c682ced51148d188d567bac31b3b88588dcefa9c08b000876c271b",
+          "CTXA:1b4fffb039b2166b35304a5ba0534e02fd929e8a4e0dbebc5486b5afbc5ba891",
+          "CTXA:291d32806745d7ffbf1704fcf66f4c8c9c2e603957c5ac7916cd11f3326ae364",
+          "CTXA:34788a8b999885725615262f6b100b77df6067fb20e3c556c385e73db1ab7300",
+          "CTXA:39debac2c09f5f65aa3bc398e7e025f4e361b9889335fa6bd385bc7c87acd3a9",
+          "CTXA:4f4204463e6fa0cf1e02ac215243e6f674fa0816ec5dd68ed321f60b4706ff7a",
+          "CTXA:55623e7a572d839b6036bf50b128ca1c648f1376b970d7df12e7d1967cd16bd6",
+          "CTXA:5ac02eb48e73a592cdf74152688b7fe38f420b5576ecb2d1b247455822f8c300",
+          "CTXA:63f8f4f0d87aad1637cc596c61ca9e57e57a4438238e0f940a29b3bf242e22ba",
+          "CTXA:7551caf971448e38cd6e722da796ed4202dde9cdbe9ee9800873a3bf9a0e9b22",
+          "CTXA:767488c71079482e8ed8f83596a18ff2f54dd6c210d655b1a5a94249ea2193e6",
+          "CTXA:83f742c491b3a4f7d12328ebbe85bb55876dfbae3b9dba2b7ca71054445e2e1c",
+          "CTXA:916c1c135ded85285c4cd699ac06b79a60b939f0e61d32f429a33b055e0a65dd",
+          "CTXA:954545aa716d2336fb2787158e40eb2d2c171dbe1c4884e8dcf0ef98ba873976",
+          "CTXA:c2c4c7fff2573e382af84688e2e18cf89617c6286ecf574341bb968d8db5a9ed",
+          "CTXA:c7401f50a52a6100cd1c6cfbed041e3c4e650f4989dfbcf1e15294d8e5e4decf",
+          "CTXA:cc10fa6433291013bcfc732c92e2a92f8956abaf538f3e2e5b7e54e8924e96f2",
+          "CTXA:e6a718a17546d9c6198bdae7f53ab35e8262c4dc82dacbfc4c6c5ba3af159891",
+          "CTXA:ec0da3632f4fe11169d1e718a0221eed521e902263b35caa512b2cc33ac99e69",
+          "CTXA:ff834e3e0655c2f0451ab42bd93ba0dba5d2ce1c6b4a96f75e25279b7c1baed8"
+        ],
+        "entry_node_ids": [
+          "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c"
+        ],
+        "focusable_node_ids": [
+          "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c",
+          "TRV:be33e16d8f585c08bb0efe6f0df92659a22d534298639f5318d2a2580546fdcc",
+          "TRV:d366de58d3002458bfb404ee505621e926c518871a4caeffcdfb89b45f8112ef"
+        ],
+        "node_ids": [
+          "TRV:d366de58d3002458bfb404ee505621e926c518871a4caeffcdfb89b45f8112ef",
+          "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c",
+          "TRV:be33e16d8f585c08bb0efe6f0df92659a22d534298639f5318d2a2580546fdcc"
+        ],
+        "region_id": "TRREG:999e42d10bf8153a28760ddcc418995b816c6032d6aad7e76af79ca14c1ff5aa",
+        "semantic_hash": "466cca22e0e291275be5dffd48d67629da89f4b9d482eb4b5b5ba1f2facfbd7b",
+        "spacetime_refs": [
+          "SPTGEO:3254082f0059b355924952744dff7933a62c0534af9ce4e52b4326bf25514b83",
+          "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+          "SPTGEO:e284c31e051c79de8d16ff51c8fb582bb4d3146aba7588db8e551314850a655b"
+        ],
+        "stable_order": 1
+      },
+      {
+        "association_ids": [
+          "R14-ASSOC-016"
+        ],
+        "category_id": "region",
+        "composition_ids": [
+          "R16-COMP-REGION-03"
+        ],
+        "context_refs": [
+          "CTXA:011d08de61ba1037d3eb999691049786d952de6e53b66b9b2b1a6983d0adf566",
+          "CTXA:04ea7620074c488ebde730701999641102f60e28a4b0791b9e36bc13c6d14e10",
+          "CTXA:077f59b60ff5285fa4b8a416b9d4342e17d4bae30625ee4658dbc130109480f2",
+          "CTXA:0bb551639a8a04eaf94f622dff9dccfd91c465eb0612a4576d4f39c0508b3b9e",
+          "CTXA:13f52559b3895460a0d6dcfd5f0067bbc833bc4058d036914c39fa2e821f7aac",
+          "CTXA:18316b6f10c682ced51148d188d567bac31b3b88588dcefa9c08b000876c271b",
+          "CTXA:1b4fffb039b2166b35304a5ba0534e02fd929e8a4e0dbebc5486b5afbc5ba891",
+          "CTXA:291d32806745d7ffbf1704fcf66f4c8c9c2e603957c5ac7916cd11f3326ae364",
+          "CTXA:34788a8b999885725615262f6b100b77df6067fb20e3c556c385e73db1ab7300",
+          "CTXA:39debac2c09f5f65aa3bc398e7e025f4e361b9889335fa6bd385bc7c87acd3a9",
+          "CTXA:4f4204463e6fa0cf1e02ac215243e6f674fa0816ec5dd68ed321f60b4706ff7a",
+          "CTXA:55623e7a572d839b6036bf50b128ca1c648f1376b970d7df12e7d1967cd16bd6",
+          "CTXA:5ac02eb48e73a592cdf74152688b7fe38f420b5576ecb2d1b247455822f8c300",
+          "CTXA:63f8f4f0d87aad1637cc596c61ca9e57e57a4438238e0f940a29b3bf242e22ba",
+          "CTXA:7551caf971448e38cd6e722da796ed4202dde9cdbe9ee9800873a3bf9a0e9b22",
+          "CTXA:767488c71079482e8ed8f83596a18ff2f54dd6c210d655b1a5a94249ea2193e6",
+          "CTXA:83f742c491b3a4f7d12328ebbe85bb55876dfbae3b9dba2b7ca71054445e2e1c",
+          "CTXA:916c1c135ded85285c4cd699ac06b79a60b939f0e61d32f429a33b055e0a65dd",
+          "CTXA:954545aa716d2336fb2787158e40eb2d2c171dbe1c4884e8dcf0ef98ba873976",
+          "CTXA:c2c4c7fff2573e382af84688e2e18cf89617c6286ecf574341bb968d8db5a9ed",
+          "CTXA:c7401f50a52a6100cd1c6cfbed041e3c4e650f4989dfbcf1e15294d8e5e4decf",
+          "CTXA:cc10fa6433291013bcfc732c92e2a92f8956abaf538f3e2e5b7e54e8924e96f2",
+          "CTXA:e6a718a17546d9c6198bdae7f53ab35e8262c4dc82dacbfc4c6c5ba3af159891",
+          "CTXA:ec0da3632f4fe11169d1e718a0221eed521e902263b35caa512b2cc33ac99e69",
+          "CTXA:ff834e3e0655c2f0451ab42bd93ba0dba5d2ce1c6b4a96f75e25279b7c1baed8"
+        ],
+        "entry_node_ids": [
+          "TRV:628bbc2d6553accb5320993afff75b39993c7ae9514d1f39d8a28834bfaf8170"
+        ],
+        "focusable_node_ids": [
+          "TRV:628bbc2d6553accb5320993afff75b39993c7ae9514d1f39d8a28834bfaf8170",
+          "TRV:b57559d1d19ef1967b6015fa23577c3fac4b79ae3ca54ef4eb760e18300875a3"
+        ],
+        "node_ids": [
+          "TRV:628bbc2d6553accb5320993afff75b39993c7ae9514d1f39d8a28834bfaf8170",
+          "TRV:b57559d1d19ef1967b6015fa23577c3fac4b79ae3ca54ef4eb760e18300875a3"
+        ],
+        "region_id": "TRREG:ac15bf419b8e91cdbc82b72244351a2a2c4a4d792af725c95c16d3eafd4606f4",
+        "semantic_hash": "d883b672e8386c9768f088bd8f709b7339553413851cad9f9ed85bee3987e7d4",
+        "spacetime_refs": [
+          "SPTGEO:3254082f0059b355924952744dff7933a62c0534af9ce4e52b4326bf25514b83",
+          "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+          "SPTGEO:e284c31e051c79de8d16ff51c8fb582bb4d3146aba7588db8e551314850a655b"
+        ],
+        "stable_order": 2
+      }
+    ],
+    "map_summary": "Region map with 3 evidence-bounded regions and 8 active terms.",
+    "node_ids": [
+      "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c",
+      "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0",
+      "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+      "TRV:628bbc2d6553accb5320993afff75b39993c7ae9514d1f39d8a28834bfaf8170",
+      "TRV:b57559d1d19ef1967b6015fa23577c3fac4b79ae3ca54ef4eb760e18300875a3",
+      "TRV:be33e16d8f585c08bb0efe6f0df92659a22d534298639f5318d2a2580546fdcc",
+      "TRV:d366de58d3002458bfb404ee505621e926c518871a4caeffcdfb89b45f8112ef",
+      "TRV:fd793986cd6d45968d3c7103e778813542e6a9979a85e9cf512450307c9f7342"
+    ],
+    "semantic_hash": "076bcbdeacaee83cc2d7485ca82dfee141c1133b49c59e521b2fdc6f72a36f99",
+    "spacetime_references": [
+      "SPTGEO:3254082f0059b355924952744dff7933a62c0534af9ce4e52b4326bf25514b83",
+      "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+      "SPTGEO:e284c31e051c79de8d16ff51c8fb582bb4d3146aba7588db8e551314850a655b"
+    ]
+  },
+  "nodes": [
+    {
+      "academic_support": [
+        {
+          "authors": "Tom Avermaete;Cathelijne Nuijsink",
+          "doi_or_identifier": "10.1080/13264826.2021.1939745",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-013",
+          "stable_url": "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745",
+          "support_scope": "",
+          "title": "Architectural Contact Zones: Another Way to Write Global Histories of the Post-War Period?",
+          "venue": "Architectural Theory Review 25.3",
+          "year": "2021"
+        },
+        {
+          "authors": "Imam Santosa;I. Kadek Dwi Noorwatha",
+          "doi_or_identifier": "10.1080/23311983.2025.2482456",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-014",
+          "stable_url": "https://doi.org/10.1080/23311983.2025.2482456",
+          "support_scope": "",
+          "title": "Symbolic and Aesthetic Fusion in Keraton Surakarta: Colonial Influence and Javanese Cultural Resistance through Architectural Design Adaptation",
+          "venue": "Cogent Arts & Humanities 12.1",
+          "year": "2025"
+        }
+      ],
+      "academic_support_refs": [
+        "COMP-SRC-013",
+        "COMP-SRC-014"
+      ],
+      "activation_status": "ACTIVE_USER_VISIBLE",
+      "ambiguity_note": "Interpret within the cited historical scope and source record; no universal definition is implied.",
+      "archive_object_refs": [],
+      "attested_form": "adaptation",
+      "attested_forms": [
+        "adaptation"
+      ],
+      "canonical_label": "adaptation",
+      "context_refs": [],
+      "first_or_relevant_attested_date": 2021,
+      "language": "en",
+      "normalised_form": "adaptation",
+      "provenance_chain_complete": true,
+      "scope_note": "Evidence-bounded historical or design-historical vocabulary; its visibility does not assert a typed relation.",
+      "source_attestation_refs": [
+        "R14-EVID-013-01",
+        "R14-EVID-013-02",
+        "R14-EVID-014-01"
+      ],
+      "source_attestations": [
+        {
+          "attestation_ref": "R14-EVID-013-01",
+          "attested_form": "adaptation",
+          "creator": "Tom Avermaete;Cathelijne Nuijsink",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "p.354; Contact Zone section",
+          "source_id": "COMP-SRC-013",
+          "stable_url": "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745",
+          "title": "Architectural Contact Zones: Another Way to Write Global Histories of the Post-War Period?",
+          "year": "2021"
+        },
+        {
+          "attestation_ref": "R14-EVID-013-02",
+          "attested_form": "adaptation",
+          "creator": "Imam Santosa;I. Kadek Dwi Noorwatha",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "abstract and results",
+          "source_id": "COMP-SRC-014",
+          "stable_url": "https://doi.org/10.1080/23311983.2025.2482456",
+          "title": "Symbolic and Aesthetic Fusion in Keraton Surakarta: Colonial Influence and Javanese Cultural Resistance through Architectural Design Adaptation",
+          "year": "2025"
+        },
+        {
+          "attestation_ref": "R14-EVID-014-01",
+          "attested_form": "adaptation",
+          "creator": "Tom Avermaete;Cathelijne Nuijsink",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "p.354; Contact Zone section",
+          "source_id": "COMP-SRC-013",
+          "stable_url": "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745",
+          "title": "Architectural Contact Zones: Another Way to Write Global Histories of the Post-War Period?",
+          "year": "2021"
+        }
+      ],
+      "spacetime_refs": [],
+      "vocabulary_id": "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0"
+    },
+    {
+      "academic_support": [
+        {
+          "authors": "Livia Rezende",
+          "doi_or_identifier": "10.1093/jdh/epx007",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-004",
+          "stable_url": "https://researchonline.rca.ac.uk/2773/",
+          "support_scope": "",
+          "title": "Manufacturing the Raw in Design Pageantries: the Commodification and Gendering of Brazilian Tropical Nature",
+          "venue": "Journal of Design History 30.2",
+          "year": "2017"
+        },
+        {
+          "authors": "Emma Waight",
+          "doi_or_identifier": "10.1177/1469540519872069",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-005",
+          "stable_url": "https://journals.sagepub.com/doi/abs/10.1177/1469540519872069",
+          "support_scope": "",
+          "title": "Mother, Consumer, Trader: Gendering the Commodification of Second-Hand Economies",
+          "venue": "Journal of Consumer Culture 19.4",
+          "year": "2019"
+        }
+      ],
+      "academic_support_refs": [
+        "COMP-SRC-004",
+        "COMP-SRC-005"
+      ],
+      "activation_status": "ACTIVE_USER_VISIBLE",
+      "ambiguity_note": "Interpret within the cited historical scope and source record; no universal definition is implied.",
+      "archive_object_refs": [],
+      "attested_form": "commodification",
+      "attested_forms": [
+        "commodification"
+      ],
+      "canonical_label": "commodification",
+      "context_refs": [],
+      "first_or_relevant_attested_date": 2017,
+      "language": "en",
+      "normalised_form": "commodification",
+      "provenance_chain_complete": true,
+      "scope_note": "Evidence-bounded historical or design-historical vocabulary; its visibility does not assert a typed relation.",
+      "source_attestation_refs": [
+        "R14-EVID-016-01",
+        "R14-EVID-016-02"
+      ],
+      "source_attestations": [
+        {
+          "attestation_ref": "R14-EVID-016-01",
+          "attested_form": "commodification",
+          "creator": "Livia Rezende",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "title; abstract; pp.122–138",
+          "source_id": "COMP-SRC-004",
+          "stable_url": "https://researchonline.rca.ac.uk/2773/",
+          "title": "Manufacturing the Raw in Design Pageantries: the Commodification and Gendering of Brazilian Tropical Nature",
+          "year": "2017"
+        },
+        {
+          "attestation_ref": "R14-EVID-016-02",
+          "attested_form": "commodification",
+          "creator": "Emma Waight",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "title; abstract; pp.532–550",
+          "source_id": "COMP-SRC-005",
+          "stable_url": "https://journals.sagepub.com/doi/abs/10.1177/1469540519872069",
+          "title": "Mother, Consumer, Trader: Gendering the Commodification of Second-Hand Economies",
+          "year": "2019"
+        }
+      ],
+      "spacetime_refs": [],
+      "vocabulary_id": "TRV:b57559d1d19ef1967b6015fa23577c3fac4b79ae3ca54ef4eb760e18300875a3"
+    },
+    {
+      "academic_support": [
+        {
+          "authors": "Tom Avermaete;Cathelijne Nuijsink",
+          "doi_or_identifier": "10.1080/13264826.2021.1939745",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-013",
+          "stable_url": "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745",
+          "support_scope": "",
+          "title": "Architectural Contact Zones: Another Way to Write Global Histories of the Post-War Period?",
+          "venue": "Architectural Theory Review 25.3",
+          "year": "2021"
+        },
+        {
+          "authors": "Imam Santosa;I. Kadek Dwi Noorwatha",
+          "doi_or_identifier": "10.1080/23311983.2025.2482456",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-014",
+          "stable_url": "https://doi.org/10.1080/23311983.2025.2482456",
+          "support_scope": "",
+          "title": "Symbolic and Aesthetic Fusion in Keraton Surakarta: Colonial Influence and Javanese Cultural Resistance through Architectural Design Adaptation",
+          "venue": "Cogent Arts & Humanities 12.1",
+          "year": "2025"
+        }
+      ],
+      "academic_support_refs": [
+        "COMP-SRC-013",
+        "COMP-SRC-014"
+      ],
+      "activation_status": "ACTIVE_USER_VISIBLE",
+      "ambiguity_note": "Interpret within the cited historical scope and source record; no universal definition is implied.",
+      "archive_object_refs": [],
+      "attested_form": "cultural negotiation",
+      "attested_forms": [
+        "cultural negotiation"
+      ],
+      "canonical_label": "cultural negotiation",
+      "context_refs": [],
+      "first_or_relevant_attested_date": 2021,
+      "language": "en",
+      "normalised_form": "cultural negotiation",
+      "provenance_chain_complete": true,
+      "scope_note": "Evidence-bounded historical or design-historical vocabulary; its visibility does not assert a typed relation.",
+      "source_attestation_refs": [
+        "COMP-EVID-014",
+        "COMP-EVID-015"
+      ],
+      "source_attestations": [
+        {
+          "attestation_ref": "COMP-EVID-014",
+          "attested_form": "cultural negotiation",
+          "creator": "Tom Avermaete;Cathelijne Nuijsink",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "p.354; Contact Zone section",
+          "source_id": "COMP-SRC-013",
+          "stable_url": "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745",
+          "title": "Architectural Contact Zones: Another Way to Write Global Histories of the Post-War Period?",
+          "year": "2021"
+        },
+        {
+          "attestation_ref": "COMP-EVID-015",
+          "attested_form": "cultural negotiation",
+          "creator": "Imam Santosa;I. Kadek Dwi Noorwatha",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "abstract and results",
+          "source_id": "COMP-SRC-014",
+          "stable_url": "https://doi.org/10.1080/23311983.2025.2482456",
+          "title": "Symbolic and Aesthetic Fusion in Keraton Surakarta: Colonial Influence and Javanese Cultural Resistance through Architectural Design Adaptation",
+          "year": "2025"
+        }
+      ],
+      "spacetime_refs": [],
+      "vocabulary_id": "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed"
+    },
+    {
+      "academic_support": [
+        {
+          "authors": "Livia Rezende",
+          "doi_or_identifier": "10.1093/jdh/epx007",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-004",
+          "stable_url": "https://researchonline.rca.ac.uk/2773/",
+          "support_scope": "",
+          "title": "Manufacturing the Raw in Design Pageantries: the Commodification and Gendering of Brazilian Tropical Nature",
+          "venue": "Journal of Design History 30.2",
+          "year": "2017"
+        },
+        {
+          "authors": "Emma Waight",
+          "doi_or_identifier": "10.1177/1469540519872069",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-005",
+          "stable_url": "https://journals.sagepub.com/doi/abs/10.1177/1469540519872069",
+          "support_scope": "",
+          "title": "Mother, Consumer, Trader: Gendering the Commodification of Second-Hand Economies",
+          "venue": "Journal of Consumer Culture 19.4",
+          "year": "2019"
+        }
+      ],
+      "academic_support_refs": [
+        "COMP-SRC-004",
+        "COMP-SRC-005"
+      ],
+      "activation_status": "ACTIVE_USER_VISIBLE",
+      "ambiguity_note": "Interpret within the cited historical scope and source record; no universal definition is implied.",
+      "archive_object_refs": [],
+      "attested_form": "gendering",
+      "attested_forms": [
+        "gendering"
+      ],
+      "canonical_label": "gendering",
+      "context_refs": [],
+      "first_or_relevant_attested_date": 2017,
+      "language": "en",
+      "normalised_form": "gendering",
+      "provenance_chain_complete": true,
+      "scope_note": "Evidence-bounded historical or design-historical vocabulary; its visibility does not assert a typed relation.",
+      "source_attestation_refs": [
+        "R14-EVID-016-01",
+        "R14-EVID-016-02"
+      ],
+      "source_attestations": [
+        {
+          "attestation_ref": "R14-EVID-016-01",
+          "attested_form": "gendering",
+          "creator": "Livia Rezende",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "title; abstract; pp.122–138",
+          "source_id": "COMP-SRC-004",
+          "stable_url": "https://researchonline.rca.ac.uk/2773/",
+          "title": "Manufacturing the Raw in Design Pageantries: the Commodification and Gendering of Brazilian Tropical Nature",
+          "year": "2017"
+        },
+        {
+          "attestation_ref": "R14-EVID-016-02",
+          "attested_form": "gendering",
+          "creator": "Emma Waight",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "title; abstract; pp.532–550",
+          "source_id": "COMP-SRC-005",
+          "stable_url": "https://journals.sagepub.com/doi/abs/10.1177/1469540519872069",
+          "title": "Mother, Consumer, Trader: Gendering the Commodification of Second-Hand Economies",
+          "year": "2019"
+        }
+      ],
+      "spacetime_refs": [],
+      "vocabulary_id": "TRV:628bbc2d6553accb5320993afff75b39993c7ae9514d1f39d8a28834bfaf8170"
+    },
+    {
+      "academic_support": [
+        {
+          "authors": "Sarah A. Lichtman;Jilly Traganou",
+          "doi_or_identifier": "10.1093/jdh/epab027",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-019",
+          "stable_url": "https://academic.oup.com/jdh/issue/34/3",
+          "support_scope": "",
+          "title": "Introduction to Material Displacements",
+          "venue": "Journal of Design History 34.3",
+          "year": "2021"
+        },
+        {
+          "authors": "Jane Hutton",
+          "doi_or_identifier": "10.1080/18626033.2013.798922",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-020",
+          "stable_url": "https://www.tandfonline.com/doi/abs/10.1080/18626033.2013.798922",
+          "support_scope": "",
+          "title": "Reciprocal Landscapes: Material Portraits in New York City and Elsewhere",
+          "venue": "Journal of Landscape Architecture 8.1",
+          "year": "2013"
+        }
+      ],
+      "academic_support_refs": [
+        "COMP-SRC-019",
+        "COMP-SRC-020"
+      ],
+      "activation_status": "ACTIVE_USER_VISIBLE",
+      "ambiguity_note": "Interpret within the cited historical scope and source record; no universal definition is implied.",
+      "archive_object_refs": [],
+      "attested_form": "material displacement",
+      "attested_forms": [
+        "material displacement"
+      ],
+      "canonical_label": "material displacement",
+      "context_refs": [],
+      "first_or_relevant_attested_date": 2021,
+      "language": "en",
+      "normalised_form": "material displacement",
+      "provenance_chain_complete": true,
+      "scope_note": "Evidence-bounded historical or design-historical vocabulary; its visibility does not assert a typed relation.",
+      "source_attestation_refs": [
+        "R14-EVID-010-01"
+      ],
+      "source_attestations": [
+        {
+          "attestation_ref": "R14-EVID-010-01",
+          "attested_form": "material displacement",
+          "creator": "Sarah A. Lichtman;Jilly Traganou",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "abstract; pp.195–211",
+          "source_id": "COMP-SRC-019",
+          "stable_url": "https://academic.oup.com/jdh/issue/34/3",
+          "title": "Introduction to Material Displacements",
+          "year": "2021"
+        }
+      ],
+      "spacetime_refs": [],
+      "vocabulary_id": "TRV:d366de58d3002458bfb404ee505621e926c518871a4caeffcdfb89b45f8112ef"
+    },
+    {
+      "academic_support": [
+        {
+          "authors": "Jane Hutton",
+          "doi_or_identifier": "10.1080/18626033.2013.798922",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-020",
+          "stable_url": "https://www.tandfonline.com/doi/abs/10.1080/18626033.2013.798922",
+          "support_scope": "",
+          "title": "Reciprocal Landscapes: Material Portraits in New York City and Elsewhere",
+          "venue": "Journal of Landscape Architecture 8.1",
+          "year": "2013"
+        }
+      ],
+      "academic_support_refs": [
+        "COMP-SRC-020"
+      ],
+      "activation_status": "ACTIVE_USER_VISIBLE",
+      "ambiguity_note": "Interpret within the cited historical scope and source record; no universal definition is implied.",
+      "archive_object_refs": [],
+      "attested_form": "production site",
+      "attested_forms": [
+        "production site"
+      ],
+      "canonical_label": "production site",
+      "context_refs": [],
+      "first_or_relevant_attested_date": 2013,
+      "language": "en",
+      "normalised_form": "production site",
+      "provenance_chain_complete": true,
+      "scope_note": "Evidence-bounded historical or design-historical vocabulary; its visibility does not assert a typed relation.",
+      "source_attestation_refs": [
+        "COMP-EVID-021"
+      ],
+      "source_attestations": [
+        {
+          "attestation_ref": "COMP-EVID-021",
+          "attested_form": "production site",
+          "creator": "Jane Hutton",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "abstract; p.40",
+          "source_id": "COMP-SRC-020",
+          "stable_url": "https://www.tandfonline.com/doi/abs/10.1080/18626033.2013.798922",
+          "title": "Reciprocal Landscapes: Material Portraits in New York City and Elsewhere",
+          "year": "2013"
+        }
+      ],
+      "spacetime_refs": [],
+      "vocabulary_id": "TRV:be33e16d8f585c08bb0efe6f0df92659a22d534298639f5318d2a2580546fdcc"
+    },
+    {
+      "academic_support": [
+        {
+          "authors": "Tom Avermaete;Cathelijne Nuijsink",
+          "doi_or_identifier": "10.1080/13264826.2021.1939745",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-013",
+          "stable_url": "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745",
+          "support_scope": "",
+          "title": "Architectural Contact Zones: Another Way to Write Global Histories of the Post-War Period?",
+          "venue": "Architectural Theory Review 25.3",
+          "year": "2021"
+        }
+      ],
+      "academic_support_refs": [
+        "COMP-SRC-013"
+      ],
+      "activation_status": "ACTIVE_USER_VISIBLE",
+      "ambiguity_note": "Interpret within the cited historical scope and source record; no universal definition is implied.",
+      "archive_object_refs": [],
+      "attested_form": "rejection",
+      "attested_forms": [
+        "rejection"
+      ],
+      "canonical_label": "rejection",
+      "context_refs": [],
+      "first_or_relevant_attested_date": 2021,
+      "language": "en",
+      "normalised_form": "rejection",
+      "provenance_chain_complete": true,
+      "scope_note": "Evidence-bounded historical or design-historical vocabulary; its visibility does not assert a typed relation.",
+      "source_attestation_refs": [
+        "R14-EVID-014-01",
+        "R14-EVID-015-01"
+      ],
+      "source_attestations": [
+        {
+          "attestation_ref": "R14-EVID-014-01",
+          "attested_form": "rejection",
+          "creator": "Tom Avermaete;Cathelijne Nuijsink",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "p.354; Contact Zone section",
+          "source_id": "COMP-SRC-013",
+          "stable_url": "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745",
+          "title": "Architectural Contact Zones: Another Way to Write Global Histories of the Post-War Period?",
+          "year": "2021"
+        },
+        {
+          "attestation_ref": "R14-EVID-015-01",
+          "attested_form": "rejection",
+          "creator": "Tom Avermaete;Cathelijne Nuijsink",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "p.354; Contact Zone section",
+          "source_id": "COMP-SRC-013",
+          "stable_url": "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745",
+          "title": "Architectural Contact Zones: Another Way to Write Global Histories of the Post-War Period?",
+          "year": "2021"
+        }
+      ],
+      "spacetime_refs": [],
+      "vocabulary_id": "TRV:fd793986cd6d45968d3c7103e778813542e6a9979a85e9cf512450307c9f7342"
+    },
+    {
+      "academic_support": [
+        {
+          "authors": "Sarah A. Lichtman;Jilly Traganou",
+          "doi_or_identifier": "10.1093/jdh/epab027",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-019",
+          "stable_url": "https://academic.oup.com/jdh/issue/34/3",
+          "support_scope": "",
+          "title": "Introduction to Material Displacements",
+          "venue": "Journal of Design History 34.3",
+          "year": "2021"
+        },
+        {
+          "authors": "Jane Hutton",
+          "doi_or_identifier": "10.1080/18626033.2013.798922",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-020",
+          "stable_url": "https://www.tandfonline.com/doi/abs/10.1080/18626033.2013.798922",
+          "support_scope": "",
+          "title": "Reciprocal Landscapes: Material Portraits in New York City and Elsewhere",
+          "venue": "Journal of Landscape Architecture 8.1",
+          "year": "2013"
+        }
+      ],
+      "academic_support_refs": [
+        "COMP-SRC-019",
+        "COMP-SRC-020"
+      ],
+      "activation_status": "ACTIVE_USER_VISIBLE",
+      "ambiguity_note": "Interpret within the cited historical scope and source record; no universal definition is implied.",
+      "archive_object_refs": [],
+      "attested_form": "supply chain",
+      "attested_forms": [
+        "supply chain"
+      ],
+      "canonical_label": "supply chain",
+      "context_refs": [],
+      "first_or_relevant_attested_date": 2013,
+      "language": "en",
+      "normalised_form": "supply chain",
+      "provenance_chain_complete": true,
+      "scope_note": "Evidence-bounded historical or design-historical vocabulary; its visibility does not assert a typed relation.",
+      "source_attestation_refs": [
+        "COMP-EVID-021"
+      ],
+      "source_attestations": [
+        {
+          "attestation_ref": "COMP-EVID-021",
+          "attested_form": "supply chain",
+          "creator": "Jane Hutton",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "abstract; p.40",
+          "source_id": "COMP-SRC-020",
+          "stable_url": "https://www.tandfonline.com/doi/abs/10.1080/18626033.2013.798922",
+          "title": "Reciprocal Landscapes: Material Portraits in New York City and Elsewhere",
+          "year": "2013"
+        }
+      ],
+      "spacetime_refs": [],
+      "vocabulary_id": "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c"
+    }
+  ],
+  "plain_text_tree": {
+    "generic_association_only": true,
+    "plain_text_tree": "cultural negotiation\n├── adaptation\n└── rejection",
+    "plain_text_tree_ascii": "cultural negotiation\n|-- adaptation\n`-- rejection",
+    "schema_version": "trace-plain-text-tree-v1",
+    "structural_hierarchy_is_historical_claim": false,
+    "tree_association_ids": [
+      "R14-ASSOC-013",
+      "R14-ASSOC-015"
+    ],
+    "tree_node_ids": [
+      "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+      "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0",
+      "TRV:fd793986cd6d45968d3c7103e778813542e6a9979a85e9cf512450307c9f7342"
+    ],
+    "tree_root_node_id": "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+    "tree_semantic_hash": "9ce713a30b9237f305d09e24eb8c91f26caad66cb6226ab08d58f157f6633ae7"
+  },
+  "provenance_summary": {
+    "archive_object_refs": [
+      {
+        "folder_id": "FOL-REGION-INDONESIA",
+        "folder_title": "Indonesia",
+        "surface_id": "SURF-DGITRACE2026R0004",
+        "title": "Bali"
+      },
+      {
+        "folder_id": "FOL-REGION-INDONESIA",
+        "folder_title": "Indonesia",
+        "surface_id": "SURF-DGITRACE2026R0007",
+        "title": "Boeng, Ajo Boeng"
+      },
+      {
+        "folder_id": "FOL-REGION-INDONESIA",
+        "folder_title": "Indonesia",
+        "surface_id": "SURF-DGITRACE2026R0012",
+        "title": "Pasar Seni ITB 1972"
+      },
+      {
+        "folder_id": "FOL-REGION-INDONESIA",
+        "folder_title": "Indonesia",
+        "surface_id": "SURF-DGITRACE2026R0015",
+        "title": "Apa dan Siapa Indonesia Indah"
+      },
+      {
+        "folder_id": "FOL-REGION-BRAZIL",
+        "folder_title": "Brazil",
+        "surface_id": "SURF-CGS2026R0383",
+        "title": "Reichssporttag des B.D.M. 23 September 1934 - Ludwig HOHLWEIN München Plakat Poster Library of Congress No know copyright restrictions Public domain 71sK7kr99UL. AC SL1411"
+      },
+      {
+        "folder_id": "FOL-REGION-BRAZIL",
+        "folder_title": "Brazil",
+        "surface_id": "SURF-CGS2026R0670",
+        "title": "The Brazilian in The Very merry mariner LCCN2014637100"
+      },
+      {
+        "folder_id": "FOL-REGION-BRAZIL",
+        "folder_title": "Brazil",
+        "surface_id": "SURF-LOCTRACE2026R01098",
+        "title": "Em se plantando tudo da plante! : Ensine a ler e escrever, voce tambem e responsavel"
+      },
+      {
+        "folder_id": "FOL-REGION-BRAZIL",
+        "folder_title": "Brazil",
+        "surface_id": "SURF-MODERNAPITRACE2026R0218",
+        "title": "All Directions At Once"
+      },
+      {
+        "folder_id": "FOL-REGION-UNITED-STATES",
+        "folder_title": "United States",
+        "surface_id": "SURF-CHWCONTEMP2026V1R0002",
+        "title": "\"Subjective Archives: an Installation,\" SF Camerawork, a Center for Photography and Related Media, San Francisco"
+      },
+      {
+        "folder_id": "FOL-REGION-UNITED-STATES",
+        "folder_title": "United States",
+        "surface_id": "SURF-CHWCONTEMP2026V1R0003",
+        "title": "\"The Next Generation: Student Work from the United States\" Competition, 2AES, Art and Exhibition Space, San Francisco"
+      },
+      {
+        "folder_id": "FOL-REGION-UNITED-STATES",
+        "folder_title": "United States",
+        "surface_id": "SURF-CHWCONTEMP2026V1R0005",
+        "title": "A New Era Begins... IBM"
+      },
+      {
+        "folder_id": "FOL-REGION-UNITED-STATES",
+        "folder_title": "United States",
+        "surface_id": "SURF-CHWCONTEMP2026V1R0006",
+        "title": "AIDS Crisis"
+      }
+    ],
+    "context_refs": [
+      "CTXA:011d08de61ba1037d3eb999691049786d952de6e53b66b9b2b1a6983d0adf566",
+      "CTXA:04ea7620074c488ebde730701999641102f60e28a4b0791b9e36bc13c6d14e10",
+      "CTXA:077f59b60ff5285fa4b8a416b9d4342e17d4bae30625ee4658dbc130109480f2",
+      "CTXA:0bb551639a8a04eaf94f622dff9dccfd91c465eb0612a4576d4f39c0508b3b9e",
+      "CTXA:13f52559b3895460a0d6dcfd5f0067bbc833bc4058d036914c39fa2e821f7aac",
+      "CTXA:18316b6f10c682ced51148d188d567bac31b3b88588dcefa9c08b000876c271b",
+      "CTXA:1b4fffb039b2166b35304a5ba0534e02fd929e8a4e0dbebc5486b5afbc5ba891",
+      "CTXA:291d32806745d7ffbf1704fcf66f4c8c9c2e603957c5ac7916cd11f3326ae364",
+      "CTXA:34788a8b999885725615262f6b100b77df6067fb20e3c556c385e73db1ab7300",
+      "CTXA:39debac2c09f5f65aa3bc398e7e025f4e361b9889335fa6bd385bc7c87acd3a9",
+      "CTXA:4f4204463e6fa0cf1e02ac215243e6f674fa0816ec5dd68ed321f60b4706ff7a",
+      "CTXA:55623e7a572d839b6036bf50b128ca1c648f1376b970d7df12e7d1967cd16bd6",
+      "CTXA:5ac02eb48e73a592cdf74152688b7fe38f420b5576ecb2d1b247455822f8c300",
+      "CTXA:63f8f4f0d87aad1637cc596c61ca9e57e57a4438238e0f940a29b3bf242e22ba",
+      "CTXA:7551caf971448e38cd6e722da796ed4202dde9cdbe9ee9800873a3bf9a0e9b22",
+      "CTXA:767488c71079482e8ed8f83596a18ff2f54dd6c210d655b1a5a94249ea2193e6",
+      "CTXA:83f742c491b3a4f7d12328ebbe85bb55876dfbae3b9dba2b7ca71054445e2e1c",
+      "CTXA:916c1c135ded85285c4cd699ac06b79a60b939f0e61d32f429a33b055e0a65dd",
+      "CTXA:954545aa716d2336fb2787158e40eb2d2c171dbe1c4884e8dcf0ef98ba873976",
+      "CTXA:c2c4c7fff2573e382af84688e2e18cf89617c6286ecf574341bb968d8db5a9ed",
+      "CTXA:c7401f50a52a6100cd1c6cfbed041e3c4e650f4989dfbcf1e15294d8e5e4decf",
+      "CTXA:cc10fa6433291013bcfc732c92e2a92f8956abaf538f3e2e5b7e54e8924e96f2",
+      "CTXA:e6a718a17546d9c6198bdae7f53ab35e8262c4dc82dacbfc4c6c5ba3af159891",
+      "CTXA:ec0da3632f4fe11169d1e718a0221eed521e902263b35caa512b2cc33ac99e69",
+      "CTXA:ff834e3e0655c2f0451ab42bd93ba0dba5d2ce1c6b4a96f75e25279b7c1baed8"
+    ],
+    "database_snapshot_id": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "spacetime_refs": [
+      "SPTGEO:3254082f0059b355924952744dff7933a62c0534af9ce4e52b4326bf25514b83",
+      "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+      "SPTGEO:e284c31e051c79de8d16ff51c8fb582bb4d3146aba7588db8e551314850a655b"
+    ]
+  },
+  "regions": [
+    {
+      "association_ids": [
+        "R14-ASSOC-013",
+        "R14-ASSOC-014",
+        "R14-ASSOC-015"
+      ],
+      "category_id": "region",
+      "composition_ids": [
+        "R16-COMP-REGION-01"
+      ],
+      "context_refs": [
+        "CTXA:011d08de61ba1037d3eb999691049786d952de6e53b66b9b2b1a6983d0adf566",
+        "CTXA:04ea7620074c488ebde730701999641102f60e28a4b0791b9e36bc13c6d14e10",
+        "CTXA:077f59b60ff5285fa4b8a416b9d4342e17d4bae30625ee4658dbc130109480f2",
+        "CTXA:0bb551639a8a04eaf94f622dff9dccfd91c465eb0612a4576d4f39c0508b3b9e",
+        "CTXA:13f52559b3895460a0d6dcfd5f0067bbc833bc4058d036914c39fa2e821f7aac",
+        "CTXA:18316b6f10c682ced51148d188d567bac31b3b88588dcefa9c08b000876c271b",
+        "CTXA:1b4fffb039b2166b35304a5ba0534e02fd929e8a4e0dbebc5486b5afbc5ba891",
+        "CTXA:291d32806745d7ffbf1704fcf66f4c8c9c2e603957c5ac7916cd11f3326ae364",
+        "CTXA:34788a8b999885725615262f6b100b77df6067fb20e3c556c385e73db1ab7300",
+        "CTXA:39debac2c09f5f65aa3bc398e7e025f4e361b9889335fa6bd385bc7c87acd3a9",
+        "CTXA:4f4204463e6fa0cf1e02ac215243e6f674fa0816ec5dd68ed321f60b4706ff7a",
+        "CTXA:55623e7a572d839b6036bf50b128ca1c648f1376b970d7df12e7d1967cd16bd6",
+        "CTXA:5ac02eb48e73a592cdf74152688b7fe38f420b5576ecb2d1b247455822f8c300",
+        "CTXA:63f8f4f0d87aad1637cc596c61ca9e57e57a4438238e0f940a29b3bf242e22ba",
+        "CTXA:7551caf971448e38cd6e722da796ed4202dde9cdbe9ee9800873a3bf9a0e9b22",
+        "CTXA:767488c71079482e8ed8f83596a18ff2f54dd6c210d655b1a5a94249ea2193e6",
+        "CTXA:83f742c491b3a4f7d12328ebbe85bb55876dfbae3b9dba2b7ca71054445e2e1c",
+        "CTXA:916c1c135ded85285c4cd699ac06b79a60b939f0e61d32f429a33b055e0a65dd",
+        "CTXA:954545aa716d2336fb2787158e40eb2d2c171dbe1c4884e8dcf0ef98ba873976",
+        "CTXA:c2c4c7fff2573e382af84688e2e18cf89617c6286ecf574341bb968d8db5a9ed",
+        "CTXA:c7401f50a52a6100cd1c6cfbed041e3c4e650f4989dfbcf1e15294d8e5e4decf",
+        "CTXA:cc10fa6433291013bcfc732c92e2a92f8956abaf538f3e2e5b7e54e8924e96f2",
+        "CTXA:e6a718a17546d9c6198bdae7f53ab35e8262c4dc82dacbfc4c6c5ba3af159891",
+        "CTXA:ec0da3632f4fe11169d1e718a0221eed521e902263b35caa512b2cc33ac99e69",
+        "CTXA:ff834e3e0655c2f0451ab42bd93ba0dba5d2ce1c6b4a96f75e25279b7c1baed8"
+      ],
+      "entry_node_ids": [
+        "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed"
+      ],
+      "focusable_node_ids": [
+        "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0",
+        "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+        "TRV:fd793986cd6d45968d3c7103e778813542e6a9979a85e9cf512450307c9f7342"
+      ],
+      "node_ids": [
+        "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+        "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0",
+        "TRV:fd793986cd6d45968d3c7103e778813542e6a9979a85e9cf512450307c9f7342"
+      ],
+      "region_id": "TRREG:a6078066b560698c6dc6a29800463fbdc9699c4f892665f61901955768c3d7fd",
+      "semantic_hash": "6ecc9651549ea2f9e572c21d4aa5909a7c8aa79d88594022a1321d7d712f03f3",
+      "spacetime_refs": [
+        "SPTGEO:3254082f0059b355924952744dff7933a62c0534af9ce4e52b4326bf25514b83",
+        "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+        "SPTGEO:e284c31e051c79de8d16ff51c8fb582bb4d3146aba7588db8e551314850a655b"
+      ],
+      "stable_order": 0
+    },
+    {
+      "association_ids": [
+        "R14-ASSOC-010",
+        "R14-ASSOC-011",
+        "R14-ASSOC-012"
+      ],
+      "category_id": "region",
+      "composition_ids": [
+        "R16-COMP-REGION-02"
+      ],
+      "context_refs": [
+        "CTXA:011d08de61ba1037d3eb999691049786d952de6e53b66b9b2b1a6983d0adf566",
+        "CTXA:04ea7620074c488ebde730701999641102f60e28a4b0791b9e36bc13c6d14e10",
+        "CTXA:077f59b60ff5285fa4b8a416b9d4342e17d4bae30625ee4658dbc130109480f2",
+        "CTXA:0bb551639a8a04eaf94f622dff9dccfd91c465eb0612a4576d4f39c0508b3b9e",
+        "CTXA:13f52559b3895460a0d6dcfd5f0067bbc833bc4058d036914c39fa2e821f7aac",
+        "CTXA:18316b6f10c682ced51148d188d567bac31b3b88588dcefa9c08b000876c271b",
+        "CTXA:1b4fffb039b2166b35304a5ba0534e02fd929e8a4e0dbebc5486b5afbc5ba891",
+        "CTXA:291d32806745d7ffbf1704fcf66f4c8c9c2e603957c5ac7916cd11f3326ae364",
+        "CTXA:34788a8b999885725615262f6b100b77df6067fb20e3c556c385e73db1ab7300",
+        "CTXA:39debac2c09f5f65aa3bc398e7e025f4e361b9889335fa6bd385bc7c87acd3a9",
+        "CTXA:4f4204463e6fa0cf1e02ac215243e6f674fa0816ec5dd68ed321f60b4706ff7a",
+        "CTXA:55623e7a572d839b6036bf50b128ca1c648f1376b970d7df12e7d1967cd16bd6",
+        "CTXA:5ac02eb48e73a592cdf74152688b7fe38f420b5576ecb2d1b247455822f8c300",
+        "CTXA:63f8f4f0d87aad1637cc596c61ca9e57e57a4438238e0f940a29b3bf242e22ba",
+        "CTXA:7551caf971448e38cd6e722da796ed4202dde9cdbe9ee9800873a3bf9a0e9b22",
+        "CTXA:767488c71079482e8ed8f83596a18ff2f54dd6c210d655b1a5a94249ea2193e6",
+        "CTXA:83f742c491b3a4f7d12328ebbe85bb55876dfbae3b9dba2b7ca71054445e2e1c",
+        "CTXA:916c1c135ded85285c4cd699ac06b79a60b939f0e61d32f429a33b055e0a65dd",
+        "CTXA:954545aa716d2336fb2787158e40eb2d2c171dbe1c4884e8dcf0ef98ba873976",
+        "CTXA:c2c4c7fff2573e382af84688e2e18cf89617c6286ecf574341bb968d8db5a9ed",
+        "CTXA:c7401f50a52a6100cd1c6cfbed041e3c4e650f4989dfbcf1e15294d8e5e4decf",
+        "CTXA:cc10fa6433291013bcfc732c92e2a92f8956abaf538f3e2e5b7e54e8924e96f2",
+        "CTXA:e6a718a17546d9c6198bdae7f53ab35e8262c4dc82dacbfc4c6c5ba3af159891",
+        "CTXA:ec0da3632f4fe11169d1e718a0221eed521e902263b35caa512b2cc33ac99e69",
+        "CTXA:ff834e3e0655c2f0451ab42bd93ba0dba5d2ce1c6b4a96f75e25279b7c1baed8"
+      ],
+      "entry_node_ids": [
+        "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c"
+      ],
+      "focusable_node_ids": [
+        "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c",
+        "TRV:be33e16d8f585c08bb0efe6f0df92659a22d534298639f5318d2a2580546fdcc",
+        "TRV:d366de58d3002458bfb404ee505621e926c518871a4caeffcdfb89b45f8112ef"
+      ],
+      "node_ids": [
+        "TRV:d366de58d3002458bfb404ee505621e926c518871a4caeffcdfb89b45f8112ef",
+        "TRV:177025b0eec6e5e441b7f637224e31440c6cc60afd1d06ced1ad993d4ac8988c",
+        "TRV:be33e16d8f585c08bb0efe6f0df92659a22d534298639f5318d2a2580546fdcc"
+      ],
+      "region_id": "TRREG:999e42d10bf8153a28760ddcc418995b816c6032d6aad7e76af79ca14c1ff5aa",
+      "semantic_hash": "466cca22e0e291275be5dffd48d67629da89f4b9d482eb4b5b5ba1f2facfbd7b",
+      "spacetime_refs": [
+        "SPTGEO:3254082f0059b355924952744dff7933a62c0534af9ce4e52b4326bf25514b83",
+        "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+        "SPTGEO:e284c31e051c79de8d16ff51c8fb582bb4d3146aba7588db8e551314850a655b"
+      ],
+      "stable_order": 1
+    },
+    {
+      "association_ids": [
+        "R14-ASSOC-016"
+      ],
+      "category_id": "region",
+      "composition_ids": [
+        "R16-COMP-REGION-03"
+      ],
+      "context_refs": [
+        "CTXA:011d08de61ba1037d3eb999691049786d952de6e53b66b9b2b1a6983d0adf566",
+        "CTXA:04ea7620074c488ebde730701999641102f60e28a4b0791b9e36bc13c6d14e10",
+        "CTXA:077f59b60ff5285fa4b8a416b9d4342e17d4bae30625ee4658dbc130109480f2",
+        "CTXA:0bb551639a8a04eaf94f622dff9dccfd91c465eb0612a4576d4f39c0508b3b9e",
+        "CTXA:13f52559b3895460a0d6dcfd5f0067bbc833bc4058d036914c39fa2e821f7aac",
+        "CTXA:18316b6f10c682ced51148d188d567bac31b3b88588dcefa9c08b000876c271b",
+        "CTXA:1b4fffb039b2166b35304a5ba0534e02fd929e8a4e0dbebc5486b5afbc5ba891",
+        "CTXA:291d32806745d7ffbf1704fcf66f4c8c9c2e603957c5ac7916cd11f3326ae364",
+        "CTXA:34788a8b999885725615262f6b100b77df6067fb20e3c556c385e73db1ab7300",
+        "CTXA:39debac2c09f5f65aa3bc398e7e025f4e361b9889335fa6bd385bc7c87acd3a9",
+        "CTXA:4f4204463e6fa0cf1e02ac215243e6f674fa0816ec5dd68ed321f60b4706ff7a",
+        "CTXA:55623e7a572d839b6036bf50b128ca1c648f1376b970d7df12e7d1967cd16bd6",
+        "CTXA:5ac02eb48e73a592cdf74152688b7fe38f420b5576ecb2d1b247455822f8c300",
+        "CTXA:63f8f4f0d87aad1637cc596c61ca9e57e57a4438238e0f940a29b3bf242e22ba",
+        "CTXA:7551caf971448e38cd6e722da796ed4202dde9cdbe9ee9800873a3bf9a0e9b22",
+        "CTXA:767488c71079482e8ed8f83596a18ff2f54dd6c210d655b1a5a94249ea2193e6",
+        "CTXA:83f742c491b3a4f7d12328ebbe85bb55876dfbae3b9dba2b7ca71054445e2e1c",
+        "CTXA:916c1c135ded85285c4cd699ac06b79a60b939f0e61d32f429a33b055e0a65dd",
+        "CTXA:954545aa716d2336fb2787158e40eb2d2c171dbe1c4884e8dcf0ef98ba873976",
+        "CTXA:c2c4c7fff2573e382af84688e2e18cf89617c6286ecf574341bb968d8db5a9ed",
+        "CTXA:c7401f50a52a6100cd1c6cfbed041e3c4e650f4989dfbcf1e15294d8e5e4decf",
+        "CTXA:cc10fa6433291013bcfc732c92e2a92f8956abaf538f3e2e5b7e54e8924e96f2",
+        "CTXA:e6a718a17546d9c6198bdae7f53ab35e8262c4dc82dacbfc4c6c5ba3af159891",
+        "CTXA:ec0da3632f4fe11169d1e718a0221eed521e902263b35caa512b2cc33ac99e69",
+        "CTXA:ff834e3e0655c2f0451ab42bd93ba0dba5d2ce1c6b4a96f75e25279b7c1baed8"
+      ],
+      "entry_node_ids": [
+        "TRV:628bbc2d6553accb5320993afff75b39993c7ae9514d1f39d8a28834bfaf8170"
+      ],
+      "focusable_node_ids": [
+        "TRV:628bbc2d6553accb5320993afff75b39993c7ae9514d1f39d8a28834bfaf8170",
+        "TRV:b57559d1d19ef1967b6015fa23577c3fac4b79ae3ca54ef4eb760e18300875a3"
+      ],
+      "node_ids": [
+        "TRV:628bbc2d6553accb5320993afff75b39993c7ae9514d1f39d8a28834bfaf8170",
+        "TRV:b57559d1d19ef1967b6015fa23577c3fac4b79ae3ca54ef4eb760e18300875a3"
+      ],
+      "region_id": "TRREG:ac15bf419b8e91cdbc82b72244351a2a2c4a4d792af725c95c16d3eafd4606f4",
+      "semantic_hash": "d883b672e8386c9768f088bd8f709b7339553413851cad9f9ed85bee3987e7d4",
+      "spacetime_refs": [
+        "SPTGEO:3254082f0059b355924952744dff7933a62c0534af9ce4e52b4326bf25514b83",
+        "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+        "SPTGEO:e284c31e051c79de8d16ff51c8fb582bb4d3146aba7588db8e551314850a655b"
+      ],
+      "stable_order": 2
+    }
+  ],
+  "semantic_hash": "6ecc9651549ea2f9e572c21d4aa5909a7c8aa79d88594022a1321d7d712f03f3",
+  "state": {
+    "api_version": "trace-exploration/v1",
+    "available_actions": [
+      "SELECT_CATEGORY",
+      "FOCUS_NODE",
+      "EXPAND_NODE",
+      "COLLAPSE_NODE",
+      "MOVE_FOCUS",
+      "SELECT_COMPOSITION",
+      "RESET_CATEGORY",
+      "EXPORT_CURRENT_STATE"
+    ],
+    "category_id": "region",
+    "current_region_id": "TRREG:a6078066b560698c6dc6a29800463fbdc9699c4f892665f61901955768c3d7fd",
+    "database_snapshot_id": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "expanded_node_ids": [
+      "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed"
+    ],
+    "exploration_state_id": "TRSTATE:9bc4ba7f1e0790dfd580285124a7df9753586de08ca2f4facd27cca8121f3eeb",
+    "focused_node_id": "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+    "map_id": "TRMAP:8ad4ffaca99b1219b90e3d7c1133fdeba3634c48343f4963e0f5facbba43c7cd",
+    "presentation_hash": "64cb3bcc665f0f497f257cd9fab01ef795a973aaadbb2a10344bfb2dc367d4f8",
+    "schema_version": "trace-exploration-state-v1",
+    "selected_composition_id": "R16-COMP-REGION-01",
+    "semantic_hash": "6ecc9651549ea2f9e572c21d4aa5909a7c8aa79d88594022a1321d7d712f03f3",
+    "state_hash": "569a4a9cc55134402332368050c5d3f9c284f4cb02ced1c5d54486d249262f27",
+    "visible_association_ids": [
+      "R14-ASSOC-013",
+      "R14-ASSOC-014",
+      "R14-ASSOC-015"
+    ],
+    "visible_node_ids": [
+      "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0",
+      "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+      "TRV:fd793986cd6d45968d3c7103e778813542e6a9979a85e9cf512450307c9f7342"
+    ]
+  },
+  "state_hash": "569a4a9cc55134402332368050c5d3f9c284f4cb02ced1c5d54486d249262f27"
+}

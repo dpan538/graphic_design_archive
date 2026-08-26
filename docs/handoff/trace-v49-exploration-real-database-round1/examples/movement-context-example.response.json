@@ -1,0 +1,1873 @@
+{
+  "api_version": "trace-exploration/v1",
+  "associations": [
+    {
+      "active_for_proximity": true,
+      "association_accessible_description": "professionalization is available to explore with institutionalization as a qualified generic association.",
+      "association_id": "R14-ASSOC-001",
+      "confidence": "HIGH",
+      "endpoint_labels": [
+        "professionalization",
+        "institutionalization"
+      ],
+      "endpoint_vocabulary_ids": [
+        "TRV:b1195fbfc5f343ebd84eb46acece15907e639a564f04af5d04d58c70e127a14b",
+        "TRV:54d55704f5d7e2caa927feedf94edf8b9dd2ebfafc4b0aa68875bcbcbabaaa79"
+      ],
+      "explicit_non_claims": [
+        "causation",
+        "influence",
+        "chronology",
+        "hierarchy",
+        "direction",
+        "equivalence"
+      ],
+      "generic_association_only": true,
+      "hard_negative": false,
+      "mandatory_dimension_results": {
+        "D1": 2,
+        "D5": 2,
+        "D7": 2
+      },
+      "provenance_refs": [
+        "R14-EVID-001-01",
+        "R14-EVID-001-02"
+      ],
+      "qualification": "Association is non-directional and scope-bounded; no universal professional sequence is claimed.",
+      "qualification_version": "trace-generic-association-rubric-v1",
+      "source_refs": [
+        "COMP-SRC-001",
+        "COMP-SRC-002"
+      ],
+      "source_urls": [
+        "https://academic.oup.com/jdh/article/21/1/1/361205",
+        "https://munin.uit.no/handle/10037/22810"
+      ],
+      "strength": "STRONG",
+      "support_status": "EXTERNALLY_SUPPORTED"
+    },
+    {
+      "active_for_proximity": true,
+      "association_accessible_description": "craft is available to explore with education as a qualified generic association.",
+      "association_id": "R14-ASSOC-020",
+      "confidence": "MODERATE",
+      "endpoint_labels": [
+        "craft",
+        "education"
+      ],
+      "endpoint_vocabulary_ids": [
+        "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737",
+        "TRV:68bf0109c6f8a87bfa96d1ecd9503326ba35cf4a6086988a1d2c8a20fbef00d1"
+      ],
+      "explicit_non_claims": [
+        "causation",
+        "influence",
+        "chronology",
+        "hierarchy",
+        "direction",
+        "equivalence"
+      ],
+      "generic_association_only": true,
+      "hard_negative": false,
+      "mandatory_dimension_results": {
+        "D1": 2,
+        "D5": 2,
+        "D7": 1
+      },
+      "provenance_refs": [
+        "R14-EVID-020-01"
+      ],
+      "qualification": "Supported by archive/source evidence. Independent scholarly validation pending.",
+      "qualification_version": "trace-generic-association-rubric-v1",
+      "source_refs": [
+        "R14-ARC-001"
+      ],
+      "source_urls": [
+        "https://www.bauhaus.de/de/das_bauhaus/"
+      ],
+      "strength": "STRONG",
+      "support_status": "SOURCE_SUPPORTED"
+    },
+    {
+      "active_for_proximity": true,
+      "association_accessible_description": "design education is available to explore with institutionalization as a qualified generic association.",
+      "association_id": "R14-ASSOC-021",
+      "confidence": "HIGH",
+      "endpoint_labels": [
+        "design education",
+        "institutionalization"
+      ],
+      "endpoint_vocabulary_ids": [
+        "TRV:20f9f4ed48de5d0e333c767bae2d1a50022c17b7aa2d67b9a00007ee179e4a97",
+        "TRV:54d55704f5d7e2caa927feedf94edf8b9dd2ebfafc4b0aa68875bcbcbabaaa79"
+      ],
+      "explicit_non_claims": [
+        "causation",
+        "influence",
+        "chronology",
+        "hierarchy",
+        "direction",
+        "equivalence"
+      ],
+      "generic_association_only": true,
+      "hard_negative": false,
+      "mandatory_dimension_results": {
+        "D1": 1,
+        "D5": 2,
+        "D7": 2
+      },
+      "provenance_refs": [
+        "R14-EVID-021-01",
+        "R14-EVID-021-02"
+      ],
+      "qualification": "The association is institutional and contextual, not a universal path to professional status.",
+      "qualification_version": "trace-generic-association-rubric-v1",
+      "source_refs": [
+        "COMP-SRC-001",
+        "COMP-SRC-002"
+      ],
+      "source_urls": [
+        "https://academic.oup.com/jdh/article/21/1/1/361205",
+        "https://munin.uit.no/handle/10037/22810"
+      ],
+      "strength": "MODERATE",
+      "support_status": "EXTERNALLY_SUPPORTED"
+    }
+  ],
+  "available_actions": [
+    "SELECT_CATEGORY",
+    "FOCUS_NODE",
+    "EXPAND_NODE",
+    "COLLAPSE_NODE",
+    "MOVE_FOCUS",
+    "SELECT_COMPOSITION",
+    "RESET_CATEGORY",
+    "EXPORT_CURRENT_STATE"
+  ],
+  "compositions": [
+    {
+      "admitted_association_ids": [
+        "R14-ASSOC-020"
+      ],
+      "associations": [
+        {
+          "active_for_proximity": true,
+          "association_accessible_description": "craft is available to explore with education as a qualified generic association.",
+          "association_id": "R14-ASSOC-020",
+          "confidence": "MODERATE",
+          "endpoint_labels": [
+            "craft",
+            "education"
+          ],
+          "endpoint_vocabulary_ids": [
+            "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737",
+            "TRV:68bf0109c6f8a87bfa96d1ecd9503326ba35cf4a6086988a1d2c8a20fbef00d1"
+          ],
+          "explicit_non_claims": [
+            "causation",
+            "influence",
+            "chronology",
+            "hierarchy",
+            "direction",
+            "equivalence"
+          ],
+          "generic_association_only": true,
+          "hard_negative": false,
+          "mandatory_dimension_results": {
+            "D1": 2,
+            "D5": 2,
+            "D7": 1
+          },
+          "provenance_refs": [
+            "R14-EVID-020-01"
+          ],
+          "qualification": "Supported by archive/source evidence. Independent scholarly validation pending.",
+          "qualification_version": "trace-generic-association-rubric-v1",
+          "source_refs": [
+            "R14-ARC-001"
+          ],
+          "source_urls": [
+            "https://www.bauhaus.de/de/das_bauhaus/"
+          ],
+          "strength": "STRONG",
+          "support_status": "SOURCE_SUPPORTED"
+        }
+      ],
+      "category_id": "movement",
+      "composition_id": "R16-COMP-MOVEMENT-01",
+      "description": "Bauhaus craft and education evidence entered through the governed Bauhaus context.",
+      "entry_evidence": [
+        "R14-ARC-001",
+        "R16-SRC-005",
+        "CTX:MOVEMENT:Bauhaus / New Typography first-ingest network"
+      ],
+      "exportable": true,
+      "generic_association_only": true,
+      "nodes": [
+        {
+          "canonical_label": "craft",
+          "node_accessible_label": "craft, evidence-supported exploration term",
+          "projection": {
+            "bounding_hint": {
+              "radius": 0.022222222222222223
+            },
+            "branch_slot": 0,
+            "group_slot": "movement",
+            "layer_slot": 0,
+            "normalised_x": 0.656944,
+            "normalised_y": 0.164815,
+            "projection_version": "trace-exploration-neutral-projection-v1"
+          },
+          "vocabulary_id": "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737"
+        },
+        {
+          "canonical_label": "education",
+          "node_accessible_label": "education, evidence-supported exploration term",
+          "projection": {
+            "bounding_hint": {
+              "radius": 0.022222222222222223
+            },
+            "branch_slot": 1,
+            "group_slot": "movement",
+            "layer_slot": 0,
+            "normalised_x": 0.340278,
+            "normalised_y": 0.840741,
+            "projection_version": "trace-exploration-neutral-projection-v1"
+          },
+          "vocabulary_id": "TRV:68bf0109c6f8a87bfa96d1ecd9503326ba35cf4a6086988a1d2c8a20fbef00d1"
+        }
+      ],
+      "presentation_hash": "8b2a746498441490c27468aa5a619f055a2b9bead11a8a625546c245b21e3d58",
+      "pruned_association_ids": [],
+      "qualified_association_ids": [
+        "R14-ASSOC-020"
+      ],
+      "round15_semantic_image": {
+        "audit": {
+          "causal_relation_emission_count": 0,
+          "directional_relation_emission_count": 0,
+          "duplicate_input_count": 0,
+          "explicit_non_claims": [
+            "Association is not a typed historical relation.",
+            "Topology and geometry are not historical facts.",
+            "Pruning, split, and evidence-gap states are not negative historical evidence."
+          ],
+          "failed_association_control_count": 0,
+          "fixture_family": "REAL_DATABASE_CATEGORY_COMPOSITION",
+          "fixture_id": "R16-COMP-MOVEMENT-01",
+          "hard_negative_control_count": 0,
+          "negative_language_violation_count": 0,
+          "synthetic": false,
+          "typed_historical_relation_emission_count": 0,
+          "unsupported_rendered_edge_count": 0
+        },
+        "composition_core": {
+          "admitted_count": 1,
+          "arbitration_method": "PARETO_MINIMAL_SUFFICIENT_V1",
+          "arbitration_version": "1",
+          "candidate_count": 1,
+          "candidate_decisions": [
+            {
+              "assessment_id": "R14-ASSOC-020",
+              "composition_eligibility": "ELIGIBLE_DIRECT",
+              "decision_state": "ADMITTED",
+              "explanation": "Qualified association was admitted because its ordinal evidence group fits the topology-derived degree bound.",
+              "neighbourhood_role": "DIRECT_NEIGHBOUR",
+              "node_ids": [
+                "craft",
+                "education"
+              ],
+              "presentation_role": "ADMITTED",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "semantic_eligibility": "QUALIFIED",
+              "topology_role": "SEMANTIC_CONNECTION"
+            }
+          ],
+          "degree_bound": 2,
+          "evidence_gap_count": 0,
+          "pruned_count": 0,
+          "pruning_reason_codes": [],
+          "split_count": 0,
+          "split_reason_codes": [],
+          "topology_explanation": "Topology follows an explicit inquiry-structure request and makes no historical directional claim.",
+          "topology_reason_code": "EXPLICIT_INQUIRY_TOPOLOGY",
+          "unresolved_count": 0
+        },
+        "evidence_core": [
+          {
+            "assessment_id": "R14-ASSOC-020",
+            "confidence": "MODERATE",
+            "mandatory_dimension_results": {
+              "D1": 2,
+              "D5": 2,
+              "D7": 1
+            },
+            "provenance_refs": [
+              "R14-EVID-020-01"
+            ],
+            "qualification": "Supported by archive/source evidence. Independent scholarly validation pending.",
+            "strength": "STRONG",
+            "support_status": "SOURCE_SUPPORTED"
+          }
+        ],
+        "presentation_hash": "8b2a746498441490c27468aa5a619f055a2b9bead11a8a625546c245b21e3d58",
+        "presentation_hints": {
+          "cosmetic_order": [
+            "craft",
+            "education"
+          ],
+          "edge_hints": [
+            {
+              "arrowhead": false,
+              "association_id": "R14-ASSOC-020",
+              "source_node_id": "craft",
+              "stroke_width": 2,
+              "support_class_label": "SOURCE_SUPPORTED",
+              "target_node_id": "education"
+            }
+          ],
+          "layout_engine": "DETERMINISTIC_RESEARCH_CIRCLE_V1",
+          "node_positions": [
+            {
+              "branch_slot": 0,
+              "layout_role": "SEED",
+              "node_id": "craft",
+              "node_radius": 16,
+              "relative_layer": 0,
+              "x": 473,
+              "y": 89
+            },
+            {
+              "branch_slot": 1,
+              "layout_role": "PEER",
+              "node_id": "education",
+              "node_radius": 16,
+              "relative_layer": 0,
+              "x": 245,
+              "y": 454
+            }
+          ],
+          "optional_seed": "round16|movement|R16-COMP-MOVEMENT-01",
+          "semantic_mutation_permitted": false,
+          "visual_gap_hint": false
+        },
+        "provenance": [
+          {
+            "assessment_id": "R14-ASSOC-020",
+            "evidence_ids": [
+              "R14-EVID-020-01"
+            ],
+            "source_ids": [
+              "R14-ARC-001"
+            ],
+            "source_urls": [
+              "https://www.bauhaus.de/de/das_bauhaus/"
+            ]
+          }
+        ],
+        "schema_version": "bounded-semantic-image-v1",
+        "semantic_core": {
+          "admitted_association_ids": [
+            "R14-ASSOC-020"
+          ],
+          "association_states": [
+            {
+              "assessment_id": "R14-ASSOC-020",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "state": "ADMITTED"
+            }
+          ],
+          "evidence_gap_node_ids": [],
+          "neighbourhood_depth": 2,
+          "node_ids": [
+            "craft",
+            "education"
+          ],
+          "qualified_association_ids": [
+            "R14-ASSOC-020"
+          ],
+          "seed_node_ids": [
+            "craft"
+          ],
+          "semantic_image_id": "R15-IMAGE-R16-COMP-MOVEMENT-01",
+          "semantic_version": "bounded-semantic-image-v1",
+          "split_components": [
+            [
+              "craft",
+              "education"
+            ]
+          ],
+          "topology_candidates": [
+            "LINEAR_PATH"
+          ],
+          "topology_type": "LINEAR_PATH"
+        },
+        "semantic_core_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510"
+      },
+      "seed_labels": [
+        "craft"
+      ],
+      "seed_node_ids": [
+        "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737"
+      ],
+      "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+      "topology_type": "LINEAR_PATH"
+    },
+    {
+      "admitted_association_ids": [
+        "R14-ASSOC-001"
+      ],
+      "associations": [
+        {
+          "active_for_proximity": true,
+          "association_accessible_description": "professionalization is available to explore with institutionalization as a qualified generic association.",
+          "association_id": "R14-ASSOC-001",
+          "confidence": "HIGH",
+          "endpoint_labels": [
+            "professionalization",
+            "institutionalization"
+          ],
+          "endpoint_vocabulary_ids": [
+            "TRV:b1195fbfc5f343ebd84eb46acece15907e639a564f04af5d04d58c70e127a14b",
+            "TRV:54d55704f5d7e2caa927feedf94edf8b9dd2ebfafc4b0aa68875bcbcbabaaa79"
+          ],
+          "explicit_non_claims": [
+            "causation",
+            "influence",
+            "chronology",
+            "hierarchy",
+            "direction",
+            "equivalence"
+          ],
+          "generic_association_only": true,
+          "hard_negative": false,
+          "mandatory_dimension_results": {
+            "D1": 2,
+            "D5": 2,
+            "D7": 2
+          },
+          "provenance_refs": [
+            "R14-EVID-001-01",
+            "R14-EVID-001-02"
+          ],
+          "qualification": "Association is non-directional and scope-bounded; no universal professional sequence is claimed.",
+          "qualification_version": "trace-generic-association-rubric-v1",
+          "source_refs": [
+            "COMP-SRC-001",
+            "COMP-SRC-002"
+          ],
+          "source_urls": [
+            "https://academic.oup.com/jdh/article/21/1/1/361205",
+            "https://munin.uit.no/handle/10037/22810"
+          ],
+          "strength": "STRONG",
+          "support_status": "EXTERNALLY_SUPPORTED"
+        }
+      ],
+      "category_id": "movement",
+      "composition_id": "R16-COMP-MOVEMENT-02",
+      "description": "Professional-history research entered through governed institutional design context.",
+      "entry_evidence": [
+        "COMP-SRC-001",
+        "COMP-SRC-002",
+        "CTX:MOVEMENT:Bauhaus / New Typography first-ingest network"
+      ],
+      "exportable": true,
+      "generic_association_only": true,
+      "nodes": [
+        {
+          "canonical_label": "professionalization",
+          "node_accessible_label": "professionalization, evidence-supported exploration term",
+          "projection": {
+            "bounding_hint": {
+              "radius": 0.022222222222222223
+            },
+            "branch_slot": 1,
+            "group_slot": "movement",
+            "layer_slot": 0,
+            "normalised_x": 0.208333,
+            "normalised_y": 0.424074,
+            "projection_version": "trace-exploration-neutral-projection-v1"
+          },
+          "vocabulary_id": "TRV:b1195fbfc5f343ebd84eb46acece15907e639a564f04af5d04d58c70e127a14b"
+        },
+        {
+          "canonical_label": "institutionalization",
+          "node_accessible_label": "institutionalization, evidence-supported exploration term",
+          "projection": {
+            "bounding_hint": {
+              "radius": 0.022222222222222223
+            },
+            "branch_slot": 0,
+            "group_slot": "movement",
+            "layer_slot": 0,
+            "normalised_x": 0.793056,
+            "normalised_y": 0.575926,
+            "projection_version": "trace-exploration-neutral-projection-v1"
+          },
+          "vocabulary_id": "TRV:54d55704f5d7e2caa927feedf94edf8b9dd2ebfafc4b0aa68875bcbcbabaaa79"
+        }
+      ],
+      "presentation_hash": "3c2a8db0708cccba87036414ebfe38b8ddd7de65ed4cd3a9be94edf119c3d7e0",
+      "pruned_association_ids": [],
+      "qualified_association_ids": [
+        "R14-ASSOC-001"
+      ],
+      "round15_semantic_image": {
+        "audit": {
+          "causal_relation_emission_count": 0,
+          "directional_relation_emission_count": 0,
+          "duplicate_input_count": 0,
+          "explicit_non_claims": [
+            "Association is not a typed historical relation.",
+            "Topology and geometry are not historical facts.",
+            "Pruning, split, and evidence-gap states are not negative historical evidence."
+          ],
+          "failed_association_control_count": 0,
+          "fixture_family": "REAL_DATABASE_CATEGORY_COMPOSITION",
+          "fixture_id": "R16-COMP-MOVEMENT-02",
+          "hard_negative_control_count": 0,
+          "negative_language_violation_count": 0,
+          "synthetic": false,
+          "typed_historical_relation_emission_count": 0,
+          "unsupported_rendered_edge_count": 0
+        },
+        "composition_core": {
+          "admitted_count": 1,
+          "arbitration_method": "PARETO_MINIMAL_SUFFICIENT_V1",
+          "arbitration_version": "1",
+          "candidate_count": 1,
+          "candidate_decisions": [
+            {
+              "assessment_id": "R14-ASSOC-001",
+              "composition_eligibility": "ELIGIBLE_DIRECT",
+              "decision_state": "ADMITTED",
+              "explanation": "Qualified association was admitted because its ordinal evidence group fits the topology-derived degree bound.",
+              "neighbourhood_role": "DIRECT_NEIGHBOUR",
+              "node_ids": [
+                "institutionalization",
+                "professionalization"
+              ],
+              "presentation_role": "ADMITTED",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "semantic_eligibility": "QUALIFIED",
+              "topology_role": "SEMANTIC_CONNECTION"
+            }
+          ],
+          "degree_bound": 2,
+          "evidence_gap_count": 0,
+          "pruned_count": 0,
+          "pruning_reason_codes": [],
+          "split_count": 0,
+          "split_reason_codes": [],
+          "topology_explanation": "Topology follows an explicit inquiry-structure request and makes no historical directional claim.",
+          "topology_reason_code": "EXPLICIT_INQUIRY_TOPOLOGY",
+          "unresolved_count": 0
+        },
+        "evidence_core": [
+          {
+            "assessment_id": "R14-ASSOC-001",
+            "confidence": "HIGH",
+            "mandatory_dimension_results": {
+              "D1": 2,
+              "D5": 2,
+              "D7": 2
+            },
+            "provenance_refs": [
+              "R14-EVID-001-01",
+              "R14-EVID-001-02"
+            ],
+            "qualification": "Association is non-directional and scope-bounded; no universal professional sequence is claimed.",
+            "strength": "STRONG",
+            "support_status": "EXTERNALLY_SUPPORTED"
+          }
+        ],
+        "presentation_hash": "3c2a8db0708cccba87036414ebfe38b8ddd7de65ed4cd3a9be94edf119c3d7e0",
+        "presentation_hints": {
+          "cosmetic_order": [
+            "institutionalization",
+            "professionalization"
+          ],
+          "edge_hints": [
+            {
+              "arrowhead": false,
+              "association_id": "R14-ASSOC-001",
+              "source_node_id": "institutionalization",
+              "stroke_width": 2,
+              "support_class_label": "EXTERNALLY_SUPPORTED",
+              "target_node_id": "professionalization"
+            }
+          ],
+          "layout_engine": "DETERMINISTIC_RESEARCH_CIRCLE_V1",
+          "node_positions": [
+            {
+              "branch_slot": 0,
+              "layout_role": "PEER",
+              "node_id": "institutionalization",
+              "node_radius": 16,
+              "relative_layer": 0,
+              "x": 571,
+              "y": 311
+            },
+            {
+              "branch_slot": 1,
+              "layout_role": "SEED",
+              "node_id": "professionalization",
+              "node_radius": 16,
+              "relative_layer": 0,
+              "x": 150,
+              "y": 229
+            }
+          ],
+          "optional_seed": "round16|movement|R16-COMP-MOVEMENT-02",
+          "semantic_mutation_permitted": false,
+          "visual_gap_hint": false
+        },
+        "provenance": [
+          {
+            "assessment_id": "R14-ASSOC-001",
+            "evidence_ids": [
+              "R14-EVID-001-01",
+              "R14-EVID-001-02"
+            ],
+            "source_ids": [
+              "COMP-SRC-001",
+              "COMP-SRC-002"
+            ],
+            "source_urls": [
+              "https://academic.oup.com/jdh/article/21/1/1/361205",
+              "https://munin.uit.no/handle/10037/22810"
+            ]
+          }
+        ],
+        "schema_version": "bounded-semantic-image-v1",
+        "semantic_core": {
+          "admitted_association_ids": [
+            "R14-ASSOC-001"
+          ],
+          "association_states": [
+            {
+              "assessment_id": "R14-ASSOC-001",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "state": "ADMITTED"
+            }
+          ],
+          "evidence_gap_node_ids": [],
+          "neighbourhood_depth": 2,
+          "node_ids": [
+            "institutionalization",
+            "professionalization"
+          ],
+          "qualified_association_ids": [
+            "R14-ASSOC-001"
+          ],
+          "seed_node_ids": [
+            "professionalization"
+          ],
+          "semantic_image_id": "R15-IMAGE-R16-COMP-MOVEMENT-02",
+          "semantic_version": "bounded-semantic-image-v1",
+          "split_components": [
+            [
+              "institutionalization",
+              "professionalization"
+            ]
+          ],
+          "topology_candidates": [
+            "LINEAR_PATH"
+          ],
+          "topology_type": "LINEAR_PATH"
+        },
+        "semantic_core_hash": "1270cf1abff273fdbad8299c58f86680a330120497936027afba98c9c7b741ce"
+      },
+      "seed_labels": [
+        "professionalization"
+      ],
+      "seed_node_ids": [
+        "TRV:b1195fbfc5f343ebd84eb46acece15907e639a564f04af5d04d58c70e127a14b"
+      ],
+      "semantic_hash": "1270cf1abff273fdbad8299c58f86680a330120497936027afba98c9c7b741ce",
+      "topology_type": "LINEAR_PATH"
+    },
+    {
+      "admitted_association_ids": [
+        "R14-ASSOC-021"
+      ],
+      "associations": [
+        {
+          "active_for_proximity": true,
+          "association_accessible_description": "design education is available to explore with institutionalization as a qualified generic association.",
+          "association_id": "R14-ASSOC-021",
+          "confidence": "HIGH",
+          "endpoint_labels": [
+            "design education",
+            "institutionalization"
+          ],
+          "endpoint_vocabulary_ids": [
+            "TRV:20f9f4ed48de5d0e333c767bae2d1a50022c17b7aa2d67b9a00007ee179e4a97",
+            "TRV:54d55704f5d7e2caa927feedf94edf8b9dd2ebfafc4b0aa68875bcbcbabaaa79"
+          ],
+          "explicit_non_claims": [
+            "causation",
+            "influence",
+            "chronology",
+            "hierarchy",
+            "direction",
+            "equivalence"
+          ],
+          "generic_association_only": true,
+          "hard_negative": false,
+          "mandatory_dimension_results": {
+            "D1": 1,
+            "D5": 2,
+            "D7": 2
+          },
+          "provenance_refs": [
+            "R14-EVID-021-01",
+            "R14-EVID-021-02"
+          ],
+          "qualification": "The association is institutional and contextual, not a universal path to professional status.",
+          "qualification_version": "trace-generic-association-rubric-v1",
+          "source_refs": [
+            "COMP-SRC-001",
+            "COMP-SRC-002"
+          ],
+          "source_urls": [
+            "https://academic.oup.com/jdh/article/21/1/1/361205",
+            "https://munin.uit.no/handle/10037/22810"
+          ],
+          "strength": "MODERATE",
+          "support_status": "EXTERNALLY_SUPPORTED"
+        }
+      ],
+      "category_id": "movement",
+      "composition_id": "R16-COMP-MOVEMENT-03",
+      "description": "Design-education institutional research entered through governed education context.",
+      "entry_evidence": [
+        "COMP-SRC-001",
+        "COMP-SRC-002",
+        "R16-SRC-006",
+        "CTX:MOVEMENT:Bauhaus / New Typography first-ingest network"
+      ],
+      "exportable": true,
+      "generic_association_only": true,
+      "nodes": [
+        {
+          "canonical_label": "design education",
+          "node_accessible_label": "design education, evidence-supported exploration term",
+          "projection": {
+            "bounding_hint": {
+              "radius": 0.022222222222222223
+            },
+            "branch_slot": 0,
+            "group_slot": "movement",
+            "layer_slot": 0,
+            "normalised_x": 0.5625,
+            "normalised_y": 0.888889,
+            "projection_version": "trace-exploration-neutral-projection-v1"
+          },
+          "vocabulary_id": "TRV:20f9f4ed48de5d0e333c767bae2d1a50022c17b7aa2d67b9a00007ee179e4a97"
+        },
+        {
+          "canonical_label": "institutionalization",
+          "node_accessible_label": "institutionalization, evidence-supported exploration term",
+          "projection": {
+            "bounding_hint": {
+              "radius": 0.022222222222222223
+            },
+            "branch_slot": 1,
+            "group_slot": "movement",
+            "layer_slot": 0,
+            "normalised_x": 0.438889,
+            "normalised_y": 0.112963,
+            "projection_version": "trace-exploration-neutral-projection-v1"
+          },
+          "vocabulary_id": "TRV:54d55704f5d7e2caa927feedf94edf8b9dd2ebfafc4b0aa68875bcbcbabaaa79"
+        }
+      ],
+      "presentation_hash": "1338f2792451323662d5ab080c60ebd1c6f85c6a1aca5d28c4f48a19ebb697bd",
+      "pruned_association_ids": [],
+      "qualified_association_ids": [
+        "R14-ASSOC-021"
+      ],
+      "round15_semantic_image": {
+        "audit": {
+          "causal_relation_emission_count": 0,
+          "directional_relation_emission_count": 0,
+          "duplicate_input_count": 0,
+          "explicit_non_claims": [
+            "Association is not a typed historical relation.",
+            "Topology and geometry are not historical facts.",
+            "Pruning, split, and evidence-gap states are not negative historical evidence."
+          ],
+          "failed_association_control_count": 0,
+          "fixture_family": "REAL_DATABASE_CATEGORY_COMPOSITION",
+          "fixture_id": "R16-COMP-MOVEMENT-03",
+          "hard_negative_control_count": 0,
+          "negative_language_violation_count": 0,
+          "synthetic": false,
+          "typed_historical_relation_emission_count": 0,
+          "unsupported_rendered_edge_count": 0
+        },
+        "composition_core": {
+          "admitted_count": 1,
+          "arbitration_method": "PARETO_MINIMAL_SUFFICIENT_V1",
+          "arbitration_version": "1",
+          "candidate_count": 1,
+          "candidate_decisions": [
+            {
+              "assessment_id": "R14-ASSOC-021",
+              "composition_eligibility": "ELIGIBLE_DIRECT",
+              "decision_state": "ADMITTED",
+              "explanation": "Qualified association was admitted because its ordinal evidence group fits the topology-derived degree bound.",
+              "neighbourhood_role": "DIRECT_NEIGHBOUR",
+              "node_ids": [
+                "design education",
+                "institutionalization"
+              ],
+              "presentation_role": "ADMITTED",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "semantic_eligibility": "QUALIFIED",
+              "topology_role": "SEMANTIC_CONNECTION"
+            }
+          ],
+          "degree_bound": 2,
+          "evidence_gap_count": 0,
+          "pruned_count": 0,
+          "pruning_reason_codes": [],
+          "split_count": 0,
+          "split_reason_codes": [],
+          "topology_explanation": "Topology follows an explicit inquiry-structure request and makes no historical directional claim.",
+          "topology_reason_code": "EXPLICIT_INQUIRY_TOPOLOGY",
+          "unresolved_count": 0
+        },
+        "evidence_core": [
+          {
+            "assessment_id": "R14-ASSOC-021",
+            "confidence": "HIGH",
+            "mandatory_dimension_results": {
+              "D1": 1,
+              "D5": 2,
+              "D7": 2
+            },
+            "provenance_refs": [
+              "R14-EVID-021-01",
+              "R14-EVID-021-02"
+            ],
+            "qualification": "The association is institutional and contextual, not a universal path to professional status.",
+            "strength": "MODERATE",
+            "support_status": "EXTERNALLY_SUPPORTED"
+          }
+        ],
+        "presentation_hash": "1338f2792451323662d5ab080c60ebd1c6f85c6a1aca5d28c4f48a19ebb697bd",
+        "presentation_hints": {
+          "cosmetic_order": [
+            "design education",
+            "institutionalization"
+          ],
+          "edge_hints": [
+            {
+              "arrowhead": false,
+              "association_id": "R14-ASSOC-021",
+              "source_node_id": "design education",
+              "stroke_width": 2,
+              "support_class_label": "EXTERNALLY_SUPPORTED",
+              "target_node_id": "institutionalization"
+            }
+          ],
+          "layout_engine": "DETERMINISTIC_RESEARCH_CIRCLE_V1",
+          "node_positions": [
+            {
+              "branch_slot": 0,
+              "layout_role": "SEED",
+              "node_id": "design education",
+              "node_radius": 16,
+              "relative_layer": 0,
+              "x": 405,
+              "y": 480
+            },
+            {
+              "branch_slot": 1,
+              "layout_role": "PEER",
+              "node_id": "institutionalization",
+              "node_radius": 16,
+              "relative_layer": 0,
+              "x": 316,
+              "y": 61
+            }
+          ],
+          "optional_seed": "round16|movement|R16-COMP-MOVEMENT-03",
+          "semantic_mutation_permitted": false,
+          "visual_gap_hint": false
+        },
+        "provenance": [
+          {
+            "assessment_id": "R14-ASSOC-021",
+            "evidence_ids": [
+              "R14-EVID-021-01",
+              "R14-EVID-021-02"
+            ],
+            "source_ids": [
+              "COMP-SRC-001",
+              "COMP-SRC-002"
+            ],
+            "source_urls": [
+              "https://academic.oup.com/jdh/article/21/1/1/361205",
+              "https://munin.uit.no/handle/10037/22810"
+            ]
+          }
+        ],
+        "schema_version": "bounded-semantic-image-v1",
+        "semantic_core": {
+          "admitted_association_ids": [
+            "R14-ASSOC-021"
+          ],
+          "association_states": [
+            {
+              "assessment_id": "R14-ASSOC-021",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "state": "ADMITTED"
+            }
+          ],
+          "evidence_gap_node_ids": [],
+          "neighbourhood_depth": 2,
+          "node_ids": [
+            "design education",
+            "institutionalization"
+          ],
+          "qualified_association_ids": [
+            "R14-ASSOC-021"
+          ],
+          "seed_node_ids": [
+            "design education"
+          ],
+          "semantic_image_id": "R15-IMAGE-R16-COMP-MOVEMENT-03",
+          "semantic_version": "bounded-semantic-image-v1",
+          "split_components": [
+            [
+              "design education",
+              "institutionalization"
+            ]
+          ],
+          "topology_candidates": [
+            "LINEAR_PATH"
+          ],
+          "topology_type": "LINEAR_PATH"
+        },
+        "semantic_core_hash": "6b0ab6f0c360ee450b4b3dd14dc175f7a995ce6ccbf928e2cce801088d416b55"
+      },
+      "seed_labels": [
+        "design education"
+      ],
+      "seed_node_ids": [
+        "TRV:20f9f4ed48de5d0e333c767bae2d1a50022c17b7aa2d67b9a00007ee179e4a97"
+      ],
+      "semantic_hash": "6b0ab6f0c360ee450b4b3dd14dc175f7a995ce6ccbf928e2cce801088d416b55",
+      "topology_type": "LINEAR_PATH"
+    }
+  ],
+  "database_snapshot_id": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+  "default_focus": "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737",
+  "map": {
+    "archive_object_references": [
+      {
+        "folder_id": "FOL-MOVEMENT-BAUHAUS-NEW-TYPOGRAPHY-FIRST-INGEST-NETWORK",
+        "folder_title": "Bauhaus / New Typography first-ingest network",
+        "surface_id": "SURF-HISTORICALAICTRACE2026V1R0056",
+        "title": "America the Hope of All who Suffer"
+      },
+      {
+        "folder_id": "FOL-MOVEMENT-BAUHAUS-NEW-TYPOGRAPHY-FIRST-INGEST-NETWORK",
+        "folder_title": "Bauhaus / New Typography first-ingest network",
+        "surface_id": "SURF-HISTORICALAICTRACE2026V1R0057",
+        "title": "To Make the World a Decent Place"
+      },
+      {
+        "folder_id": "FOL-MOVEMENT-BAUHAUS-NEW-TYPOGRAPHY-FIRST-INGEST-NETWORK",
+        "folder_title": "Bauhaus / New Typography first-ingest network",
+        "surface_id": "SURF-HISTORICALAICTRACE2026V1R0159",
+        "title": "Collage Design for Bent Plywood Chairs, Student Project, Institute of Design, Chicago, Illinois"
+      },
+      {
+        "folder_id": "FOL-MOVEMENT-BAUHAUS-NEW-TYPOGRAPHY-FIRST-INGEST-NETWORK",
+        "folder_title": "Bauhaus / New Typography first-ingest network",
+        "surface_id": "SURF-HISTORICALAICTRACE2026V1R0160",
+        "title": "Untitled Photogram"
+      },
+      {
+        "folder_id": "FOL-MOVEMENT-POLISH-POSTER-SCHOOL-FIRST-INGEST-SCOPE",
+        "folder_title": "Polish Poster School first-ingest scope",
+        "surface_id": "SURF-VAM20K-02949",
+        "title": "Historia"
+      },
+      {
+        "folder_id": "FOL-MOVEMENT-POLISH-POSTER-SCHOOL-FIRST-INGEST-SCOPE",
+        "folder_title": "Polish Poster School first-ingest scope",
+        "surface_id": "SURF-VAM20K-03135",
+        "title": "Polish Poster Gallery"
+      }
+    ],
+    "association_ids": [
+      "R14-ASSOC-001",
+      "R14-ASSOC-020",
+      "R14-ASSOC-021"
+    ],
+    "category_id": "movement",
+    "composition_ids": [
+      "R16-COMP-MOVEMENT-01",
+      "R16-COMP-MOVEMENT-02",
+      "R16-COMP-MOVEMENT-03"
+    ],
+    "context_references": [
+      "CTXA:039780190ae9b72533c0f7df212a0481b45d418aecff4aaf45309a2574ef4f7f",
+      "CTXA:039d73dde50d42ffb7c81f6b3527ccce234dc47c57c7c25677a7a79a41ae425b",
+      "CTXA:06b167054c199262dcb0506c2c9f95f9c417738a44335cec7f8d6624b6f9a130",
+      "CTXA:07dca05b235b7a8e74cf9bf7ae7deab76e9f021152ff30ed41ae99b61c68e3b3",
+      "CTXA:1ece0814c96b1b9e6f474dd2b7a761e56136dfe39401ecc7d0ffac1a3d9b745f",
+      "CTXA:2431dbd18c5a485082f9fda7ce65dad1b7e71864f96555ff210060bff317b642",
+      "CTXA:2f7655b2cbd9e4ab6130d0edfe113778ce67006958b4c5a993db5669959f6092",
+      "CTXA:42b6cb51ac1fcec65fded3b33ebf55e483eb00bede960383fecd74bb5bb135a1",
+      "CTXA:778a2fb9b23330a08a7e5fa1ebd160d5b60c063fc108375ded881c829850faa8",
+      "CTXA:8563e28e7c168f3581642165dabd4c44d6d565d622470c38798e7c0fccd41d4f",
+      "CTXA:86eabc4d3bd04cdee907482041a6f3778f535affc93d2e95df33cd3c66544153",
+      "CTXA:9227215ed1a68394a36f292f542d8f8463c5905a785166b9ba17ea50af4bf228",
+      "CTXA:928a539d657d06006b37ba61a3d8652d0ab8caa4f8da54dc3b0751e783995b3a",
+      "CTXA:9bea08f958da4f6c9cc95e5feb434b3e6eb62543d35667889aeac3a8d1abc18b",
+      "CTXA:a71b4a36e721267338fce479d66c8d9b82e5f02f9b7c96d66d810a1536292ab9",
+      "CTXA:ad0521a49a6d8c52067259e5af11e5a5741319e855e109c5d198e7b9191425a0",
+      "CTXA:d29ff28898f1443f48eb439205a5b1816a98fc5065486f887bb9660f33916971",
+      "CTXA:f5c9eb180fb04d93063ebf8c0a5c93a109f57a842488425ba9a61c45108a5df3"
+    ],
+    "default_composition_id": "R16-COMP-MOVEMENT-01",
+    "default_focus": "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737",
+    "initial_state_id": "TRSTATE:cd0fdd404f68457aa6719c74c82dbba05d054b709e0ea091161318b27c199c49",
+    "map_id": "TRMAP:d113eab6ab254a0b463ae9b0d12f22f5395497c9a283c309126e1e52b44860b7",
+    "map_regions": [
+      {
+        "association_ids": [
+          "R14-ASSOC-020"
+        ],
+        "category_id": "movement",
+        "composition_ids": [
+          "R16-COMP-MOVEMENT-01"
+        ],
+        "context_refs": [
+          "CTXA:039780190ae9b72533c0f7df212a0481b45d418aecff4aaf45309a2574ef4f7f",
+          "CTXA:039d73dde50d42ffb7c81f6b3527ccce234dc47c57c7c25677a7a79a41ae425b",
+          "CTXA:06b167054c199262dcb0506c2c9f95f9c417738a44335cec7f8d6624b6f9a130",
+          "CTXA:07dca05b235b7a8e74cf9bf7ae7deab76e9f021152ff30ed41ae99b61c68e3b3",
+          "CTXA:1ece0814c96b1b9e6f474dd2b7a761e56136dfe39401ecc7d0ffac1a3d9b745f",
+          "CTXA:2431dbd18c5a485082f9fda7ce65dad1b7e71864f96555ff210060bff317b642",
+          "CTXA:2f7655b2cbd9e4ab6130d0edfe113778ce67006958b4c5a993db5669959f6092",
+          "CTXA:42b6cb51ac1fcec65fded3b33ebf55e483eb00bede960383fecd74bb5bb135a1",
+          "CTXA:778a2fb9b23330a08a7e5fa1ebd160d5b60c063fc108375ded881c829850faa8",
+          "CTXA:8563e28e7c168f3581642165dabd4c44d6d565d622470c38798e7c0fccd41d4f",
+          "CTXA:86eabc4d3bd04cdee907482041a6f3778f535affc93d2e95df33cd3c66544153",
+          "CTXA:9227215ed1a68394a36f292f542d8f8463c5905a785166b9ba17ea50af4bf228",
+          "CTXA:928a539d657d06006b37ba61a3d8652d0ab8caa4f8da54dc3b0751e783995b3a",
+          "CTXA:9bea08f958da4f6c9cc95e5feb434b3e6eb62543d35667889aeac3a8d1abc18b",
+          "CTXA:a71b4a36e721267338fce479d66c8d9b82e5f02f9b7c96d66d810a1536292ab9",
+          "CTXA:ad0521a49a6d8c52067259e5af11e5a5741319e855e109c5d198e7b9191425a0",
+          "CTXA:d29ff28898f1443f48eb439205a5b1816a98fc5065486f887bb9660f33916971",
+          "CTXA:f5c9eb180fb04d93063ebf8c0a5c93a109f57a842488425ba9a61c45108a5df3"
+        ],
+        "entry_node_ids": [
+          "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737"
+        ],
+        "focusable_node_ids": [
+          "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737",
+          "TRV:68bf0109c6f8a87bfa96d1ecd9503326ba35cf4a6086988a1d2c8a20fbef00d1"
+        ],
+        "node_ids": [
+          "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737",
+          "TRV:68bf0109c6f8a87bfa96d1ecd9503326ba35cf4a6086988a1d2c8a20fbef00d1"
+        ],
+        "region_id": "TRREG:64e8d164f1d888459b74c966b6870b6f924f790b8e3a75c62aab67424dee7048",
+        "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+        "spacetime_refs": [
+          "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+          "SPTGEO:f59f70d97d216d02dbaec94c9e13978a108d67b162036c4311e5f4f121464ca4"
+        ],
+        "stable_order": 0
+      },
+      {
+        "association_ids": [
+          "R14-ASSOC-001"
+        ],
+        "category_id": "movement",
+        "composition_ids": [
+          "R16-COMP-MOVEMENT-02"
+        ],
+        "context_refs": [
+          "CTXA:039780190ae9b72533c0f7df212a0481b45d418aecff4aaf45309a2574ef4f7f",
+          "CTXA:039d73dde50d42ffb7c81f6b3527ccce234dc47c57c7c25677a7a79a41ae425b",
+          "CTXA:06b167054c199262dcb0506c2c9f95f9c417738a44335cec7f8d6624b6f9a130",
+          "CTXA:07dca05b235b7a8e74cf9bf7ae7deab76e9f021152ff30ed41ae99b61c68e3b3",
+          "CTXA:1ece0814c96b1b9e6f474dd2b7a761e56136dfe39401ecc7d0ffac1a3d9b745f",
+          "CTXA:2431dbd18c5a485082f9fda7ce65dad1b7e71864f96555ff210060bff317b642",
+          "CTXA:2f7655b2cbd9e4ab6130d0edfe113778ce67006958b4c5a993db5669959f6092",
+          "CTXA:42b6cb51ac1fcec65fded3b33ebf55e483eb00bede960383fecd74bb5bb135a1",
+          "CTXA:778a2fb9b23330a08a7e5fa1ebd160d5b60c063fc108375ded881c829850faa8",
+          "CTXA:8563e28e7c168f3581642165dabd4c44d6d565d622470c38798e7c0fccd41d4f",
+          "CTXA:86eabc4d3bd04cdee907482041a6f3778f535affc93d2e95df33cd3c66544153",
+          "CTXA:9227215ed1a68394a36f292f542d8f8463c5905a785166b9ba17ea50af4bf228",
+          "CTXA:928a539d657d06006b37ba61a3d8652d0ab8caa4f8da54dc3b0751e783995b3a",
+          "CTXA:9bea08f958da4f6c9cc95e5feb434b3e6eb62543d35667889aeac3a8d1abc18b",
+          "CTXA:a71b4a36e721267338fce479d66c8d9b82e5f02f9b7c96d66d810a1536292ab9",
+          "CTXA:ad0521a49a6d8c52067259e5af11e5a5741319e855e109c5d198e7b9191425a0",
+          "CTXA:d29ff28898f1443f48eb439205a5b1816a98fc5065486f887bb9660f33916971",
+          "CTXA:f5c9eb180fb04d93063ebf8c0a5c93a109f57a842488425ba9a61c45108a5df3"
+        ],
+        "entry_node_ids": [
+          "TRV:b1195fbfc5f343ebd84eb46acece15907e639a564f04af5d04d58c70e127a14b"
+        ],
+        "focusable_node_ids": [
+          "TRV:54d55704f5d7e2caa927feedf94edf8b9dd2ebfafc4b0aa68875bcbcbabaaa79",
+          "TRV:b1195fbfc5f343ebd84eb46acece15907e639a564f04af5d04d58c70e127a14b"
+        ],
+        "node_ids": [
+          "TRV:b1195fbfc5f343ebd84eb46acece15907e639a564f04af5d04d58c70e127a14b",
+          "TRV:54d55704f5d7e2caa927feedf94edf8b9dd2ebfafc4b0aa68875bcbcbabaaa79"
+        ],
+        "region_id": "TRREG:63c422fb1c834578c7e48cd26438da77263b32c2b074de3a198595d00150e884",
+        "semantic_hash": "1270cf1abff273fdbad8299c58f86680a330120497936027afba98c9c7b741ce",
+        "spacetime_refs": [
+          "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+          "SPTGEO:f59f70d97d216d02dbaec94c9e13978a108d67b162036c4311e5f4f121464ca4"
+        ],
+        "stable_order": 1
+      },
+      {
+        "association_ids": [
+          "R14-ASSOC-021"
+        ],
+        "category_id": "movement",
+        "composition_ids": [
+          "R16-COMP-MOVEMENT-03"
+        ],
+        "context_refs": [
+          "CTXA:039780190ae9b72533c0f7df212a0481b45d418aecff4aaf45309a2574ef4f7f",
+          "CTXA:039d73dde50d42ffb7c81f6b3527ccce234dc47c57c7c25677a7a79a41ae425b",
+          "CTXA:06b167054c199262dcb0506c2c9f95f9c417738a44335cec7f8d6624b6f9a130",
+          "CTXA:07dca05b235b7a8e74cf9bf7ae7deab76e9f021152ff30ed41ae99b61c68e3b3",
+          "CTXA:1ece0814c96b1b9e6f474dd2b7a761e56136dfe39401ecc7d0ffac1a3d9b745f",
+          "CTXA:2431dbd18c5a485082f9fda7ce65dad1b7e71864f96555ff210060bff317b642",
+          "CTXA:2f7655b2cbd9e4ab6130d0edfe113778ce67006958b4c5a993db5669959f6092",
+          "CTXA:42b6cb51ac1fcec65fded3b33ebf55e483eb00bede960383fecd74bb5bb135a1",
+          "CTXA:778a2fb9b23330a08a7e5fa1ebd160d5b60c063fc108375ded881c829850faa8",
+          "CTXA:8563e28e7c168f3581642165dabd4c44d6d565d622470c38798e7c0fccd41d4f",
+          "CTXA:86eabc4d3bd04cdee907482041a6f3778f535affc93d2e95df33cd3c66544153",
+          "CTXA:9227215ed1a68394a36f292f542d8f8463c5905a785166b9ba17ea50af4bf228",
+          "CTXA:928a539d657d06006b37ba61a3d8652d0ab8caa4f8da54dc3b0751e783995b3a",
+          "CTXA:9bea08f958da4f6c9cc95e5feb434b3e6eb62543d35667889aeac3a8d1abc18b",
+          "CTXA:a71b4a36e721267338fce479d66c8d9b82e5f02f9b7c96d66d810a1536292ab9",
+          "CTXA:ad0521a49a6d8c52067259e5af11e5a5741319e855e109c5d198e7b9191425a0",
+          "CTXA:d29ff28898f1443f48eb439205a5b1816a98fc5065486f887bb9660f33916971",
+          "CTXA:f5c9eb180fb04d93063ebf8c0a5c93a109f57a842488425ba9a61c45108a5df3"
+        ],
+        "entry_node_ids": [
+          "TRV:20f9f4ed48de5d0e333c767bae2d1a50022c17b7aa2d67b9a00007ee179e4a97"
+        ],
+        "focusable_node_ids": [
+          "TRV:20f9f4ed48de5d0e333c767bae2d1a50022c17b7aa2d67b9a00007ee179e4a97",
+          "TRV:54d55704f5d7e2caa927feedf94edf8b9dd2ebfafc4b0aa68875bcbcbabaaa79"
+        ],
+        "node_ids": [
+          "TRV:20f9f4ed48de5d0e333c767bae2d1a50022c17b7aa2d67b9a00007ee179e4a97",
+          "TRV:54d55704f5d7e2caa927feedf94edf8b9dd2ebfafc4b0aa68875bcbcbabaaa79"
+        ],
+        "region_id": "TRREG:40b7ec3b54f2ffb2fbf0664b1f6c7e8edd1a52df2681f32f815a5276cd9be1f3",
+        "semantic_hash": "6b0ab6f0c360ee450b4b3dd14dc175f7a995ce6ccbf928e2cce801088d416b55",
+        "spacetime_refs": [
+          "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+          "SPTGEO:f59f70d97d216d02dbaec94c9e13978a108d67b162036c4311e5f4f121464ca4"
+        ],
+        "stable_order": 2
+      }
+    ],
+    "map_summary": "Movement context map with 3 evidence-bounded regions and 5 active terms.",
+    "node_ids": [
+      "TRV:20f9f4ed48de5d0e333c767bae2d1a50022c17b7aa2d67b9a00007ee179e4a97",
+      "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737",
+      "TRV:54d55704f5d7e2caa927feedf94edf8b9dd2ebfafc4b0aa68875bcbcbabaaa79",
+      "TRV:68bf0109c6f8a87bfa96d1ecd9503326ba35cf4a6086988a1d2c8a20fbef00d1",
+      "TRV:b1195fbfc5f343ebd84eb46acece15907e639a564f04af5d04d58c70e127a14b"
+    ],
+    "semantic_hash": "1a1fdb38358b1d59fb94615ae403bc0c92c83184ef90e7971d03345c422d35b3",
+    "spacetime_references": [
+      "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+      "SPTGEO:f59f70d97d216d02dbaec94c9e13978a108d67b162036c4311e5f4f121464ca4"
+    ]
+  },
+  "nodes": [
+    {
+      "academic_support": [
+        {
+          "authors": "Lorraine White-Hancock",
+          "doi_or_identifier": "10.1007/s10798-022-09729-2",
+          "peer_reviewed": true,
+          "source_id": "R16-SRC-005",
+          "stable_url": "https://doi.org/10.1007/s10798-022-09729-2",
+          "support_scope": "Historical analysis of Bauhaus arts-crafts integration and design education; vocabulary support only.",
+          "title": "Insights from Bauhaus innovation for education and workplaces in a post-pandemic world",
+          "venue": "International Journal of Technology and Design Education",
+          "year": "2023"
+        }
+      ],
+      "academic_support_refs": [
+        "R16-SRC-005"
+      ],
+      "activation_status": "ACTIVE_USER_VISIBLE",
+      "ambiguity_note": "Interpret within the cited historical scope and source record; no universal definition is implied.",
+      "archive_object_refs": [
+        {
+          "surface_id": "SURF-DGITRACE2026R0110",
+          "title": "Australia-Indonesia-Malaysia, Art, Craft and Design Research Group"
+        },
+        {
+          "surface_id": "SURF-IR1970R010",
+          "title": "1888-1938. 50th Anniversary Exhibition of the Arts & Crafts Exhibition Soc."
+        },
+        {
+          "surface_id": "SURF-LOCTRACE2026I1949B95E06A53D",
+          "title": "Cincinnati fall festival September 7 to 19 1903."
+        },
+        {
+          "surface_id": "SURF-LOCTRACE2026I5878E693FD8585",
+          "title": "Women's edition - The Press Thanksgiving eve, Nov. 27th 1895 /"
+        },
+        {
+          "surface_id": "SURF-LOCTRACE2026I6E669BA31BD930",
+          "title": "Grande semaine d'aviation de la Champagne: Reims de 22 au 29 août 1909 /"
+        }
+      ],
+      "attested_form": "craft",
+      "attested_forms": [
+        "craft"
+      ],
+      "canonical_label": "craft",
+      "context_refs": [
+        "CTXA:1bb3364b73ac0ee13cfa7bf6fce93d0522abc87f84011898dc771f5a4469bc2b",
+        "CTXA:342cf202ab44a9830d11a25df2e1679cc470a536eccf21b6bbe61b005e14403f",
+        "CTXA:372a442335be5a19b3209355be10329ff66e86647ec5d322cacf07a1d6a127bf",
+        "CTXA:5ed4e68da7a271ca1f436caf3c6662357d53a96f42912f0fb5d41d6ea394ef88",
+        "CTXA:5fa97027ea1058304c9dfcb1b822a26f155acbdac9400aa30c9af230ba7f6bf6",
+        "CTXA:6a05cc48c1c53155c252395f37d0cab4f3cfd60232cf66ba28e3085399a0fc9a",
+        "CTXA:7c34839926a002f1ed93b8edf4539511f7e267718e15d6dc48c0e3d9ad7f5040",
+        "CTXA:c97a4d0cf16a1bdb91e8fe240560bdcb0517e612fe37cca8f88360cbf19d01fb",
+        "CTXA:e145f8e58270bfab506f28917768af8358460298d1e5b6da92cad666220ac55a",
+        "CTXA:e3fb8f033dd332ac0ce078bd2f3ef6d428211b7f5ce75cd83eb742cf738879c2"
+      ],
+      "first_or_relevant_attested_date": 1919,
+      "language": "en",
+      "normalised_form": "craft",
+      "provenance_chain_complete": true,
+      "scope_note": "Evidence-bounded historical or design-historical vocabulary; its visibility does not assert a typed relation.",
+      "source_attestation_refs": [
+        "R14-EVID-020-01"
+      ],
+      "source_attestations": [
+        {
+          "attestation_ref": "R14-EVID-020-01",
+          "attested_form": "craft",
+          "creator": "Bauhaus-Archiv / Museum für Gestaltung",
+          "evidence_channel": "ARCHIVE_SOURCE",
+          "locator": "Program section and 1919 chronology",
+          "source_id": "R14-ARC-001",
+          "stable_url": "https://www.bauhaus.de/de/das_bauhaus/",
+          "title": "Manifest und Programm des Staatlichen Bauhauses / Das Bauhaus",
+          "year": "1919; current institutional description"
+        }
+      ],
+      "spacetime_refs": [
+        "SPTGEO:627ad144a3cb31d9f0749b6fae5b6fc7221a2fe88c2cb7fea4178a97d44b1b01",
+        "SPTGEO:7fa25d0a42d57f51454b440a3bd0bab7cfedf7e75e7333dbb4392079331df3b2",
+        "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+        "SPTGEO:e284c31e051c79de8d16ff51c8fb582bb4d3146aba7588db8e551314850a655b"
+      ],
+      "vocabulary_id": "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737"
+    },
+    {
+      "academic_support": [
+        {
+          "authors": "Grace Lees-Maffei",
+          "doi_or_identifier": "10.1093/jdh/epn007",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-001",
+          "stable_url": "https://academic.oup.com/jdh/article/21/1/1/361205",
+          "support_scope": "",
+          "title": "Introduction: Professionalization as a Focus in Interior Design History",
+          "venue": "Journal of Design History 21.1",
+          "year": "2008"
+        },
+        {
+          "authors": "Turid Moldenæs;Hilde Marie Pettersen",
+          "doi_or_identifier": "10.1093/jpo/joab010",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-002",
+          "stable_url": "https://munin.uit.no/handle/10037/22810",
+          "support_scope": "",
+          "title": "The Professional Project of Graphic Designers and Universities' Visual Identities",
+          "venue": "Journal of Professions and Organization 8.2",
+          "year": "2021"
+        },
+        {
+          "authors": "Lorraine White-Hancock",
+          "doi_or_identifier": "10.1007/s10798-022-09729-2",
+          "peer_reviewed": true,
+          "source_id": "R16-SRC-005",
+          "stable_url": "https://doi.org/10.1007/s10798-022-09729-2",
+          "support_scope": "Historical analysis of Bauhaus arts-crafts integration and design education; vocabulary support only.",
+          "title": "Insights from Bauhaus innovation for education and workplaces in a post-pandemic world",
+          "venue": "International Journal of Technology and Design Education",
+          "year": "2023"
+        },
+        {
+          "authors": "Jarrett Fuller",
+          "doi_or_identifier": "10.1093/jdh/epac039",
+          "peer_reviewed": true,
+          "source_id": "R16-SRC-006",
+          "stable_url": "https://doi.org/10.1093/jdh/epac039",
+          "support_scope": "Design-history review explicitly addressing graphic design education and institutions; vocabulary support only.",
+          "title": "After the Bauhaus, Before the Internet: A History of Graphic Design Pedagogy",
+          "venue": "Journal of Design History",
+          "year": "2023"
+        }
+      ],
+      "academic_support_refs": [
+        "COMP-SRC-001",
+        "COMP-SRC-002",
+        "R16-SRC-005",
+        "R16-SRC-006"
+      ],
+      "activation_status": "ACTIVE_USER_VISIBLE",
+      "ambiguity_note": "Interpret within the cited historical scope and source record; no universal definition is implied.",
+      "archive_object_refs": [],
+      "attested_form": "design education",
+      "attested_forms": [
+        "design education"
+      ],
+      "canonical_label": "design education",
+      "context_refs": [],
+      "first_or_relevant_attested_date": 2023,
+      "language": "en",
+      "normalised_form": "design education",
+      "provenance_chain_complete": true,
+      "scope_note": "Evidence-bounded historical or design-historical vocabulary; its visibility does not assert a typed relation.",
+      "source_attestation_refs": [
+        "R16-SRC-005:attestation:design-education",
+        "R16-SRC-006:attestation:design-education"
+      ],
+      "source_attestations": [
+        {
+          "attestation_ref": "R16-SRC-005:attestation:design-education",
+          "attested_form": "design education",
+          "creator": "Lorraine White-Hancock",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "title, abstract, or indexed chapter description",
+          "source_id": "R16-SRC-005",
+          "stable_url": "https://doi.org/10.1007/s10798-022-09729-2",
+          "title": "Insights from Bauhaus innovation for education and workplaces in a post-pandemic world",
+          "year": "2023"
+        },
+        {
+          "attestation_ref": "R16-SRC-006:attestation:design-education",
+          "attested_form": "design education",
+          "creator": "Jarrett Fuller",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "title, abstract, or indexed chapter description",
+          "source_id": "R16-SRC-006",
+          "stable_url": "https://doi.org/10.1093/jdh/epac039",
+          "title": "After the Bauhaus, Before the Internet: A History of Graphic Design Pedagogy",
+          "year": "2023"
+        }
+      ],
+      "spacetime_refs": [],
+      "vocabulary_id": "TRV:20f9f4ed48de5d0e333c767bae2d1a50022c17b7aa2d67b9a00007ee179e4a97"
+    },
+    {
+      "academic_support": [
+        {
+          "authors": "Lorraine White-Hancock",
+          "doi_or_identifier": "10.1007/s10798-022-09729-2",
+          "peer_reviewed": true,
+          "source_id": "R16-SRC-005",
+          "stable_url": "https://doi.org/10.1007/s10798-022-09729-2",
+          "support_scope": "Historical analysis of Bauhaus arts-crafts integration and design education; vocabulary support only.",
+          "title": "Insights from Bauhaus innovation for education and workplaces in a post-pandemic world",
+          "venue": "International Journal of Technology and Design Education",
+          "year": "2023"
+        }
+      ],
+      "academic_support_refs": [
+        "R16-SRC-005"
+      ],
+      "activation_status": "ACTIVE_USER_VISIBLE",
+      "ambiguity_note": "Interpret within the cited historical scope and source record; no universal definition is implied.",
+      "archive_object_refs": [
+        {
+          "surface_id": "SURF-HISTORICALAICTRACE2026V1R0159",
+          "title": "Collage Design for Bent Plywood Chairs, Student Project, Institute of Design, Chicago, Illinois"
+        },
+        {
+          "surface_id": "SURF-HISTORICALAICTRACE2026V1R0160",
+          "title": "Untitled Photogram"
+        },
+        {
+          "surface_id": "SURF-HISTORICALAICTRACE2026V1R0161",
+          "title": "Momentum Exhibition Catalogue"
+        },
+        {
+          "surface_id": "SURF-HISTORICALAICTRACE2026V1R0206",
+          "title": "Announcement for 23rd Annual Society of Typographic Arts Exhibition"
+        },
+        {
+          "surface_id": "SURF-HISTORICALAICTRACE2026V1R0207",
+          "title": "Chicago Magazine, Feature on the Institute of Design"
+        }
+      ],
+      "attested_form": "education",
+      "attested_forms": [
+        "education"
+      ],
+      "canonical_label": "education",
+      "context_refs": [
+        "CTXA:039780190ae9b72533c0f7df212a0481b45d418aecff4aaf45309a2574ef4f7f",
+        "CTXA:06b167054c199262dcb0506c2c9f95f9c417738a44335cec7f8d6624b6f9a130",
+        "CTXA:0e1e47f90a0f675bad53a3ce071aed9f626a80297766cda3307ef8c2e475a8cf",
+        "CTXA:1ece0814c96b1b9e6f474dd2b7a761e56136dfe39401ecc7d0ffac1a3d9b745f",
+        "CTXA:32aca9a5cc97a376b53441f6c8518c690858f08e6d4e8670c5030c82da7964c3",
+        "CTXA:36937236ff13f771509b593c00de41a502a413fc0367c7ead0c27be8de7ea3c3",
+        "CTXA:38c1661333559bd21ab30087e3b587c1f268c6ffb5b6e955762e617bc64e0056",
+        "CTXA:45754955b44f48c30264dd97678373214a8a10e8a2131dea4bda43ce6b8a50fa",
+        "CTXA:8563e28e7c168f3581642165dabd4c44d6d565d622470c38798e7c0fccd41d4f",
+        "CTXA:9db0388db6a4586cbc6138e9b94c648b8024cdedb7a11870b293f1762374fa33",
+        "CTXA:ad0521a49a6d8c52067259e5af11e5a5741319e855e109c5d198e7b9191425a0",
+        "CTXA:bfeac556bab70c1a6af1b4bfe97e028d5e7a7c7ebc202740272f2a33e6a28cdd",
+        "CTXA:dbb41a42c532ae10bd643c19a1132a25c7bf610c2eeef6983f0930e08bb75c4e",
+        "CTXA:f2caf95ae336e30ec56f5c6d891379782bba361eaaae45bdcd4148737b01012e",
+        "CTXA:f5c9eb180fb04d93063ebf8c0a5c93a109f57a842488425ba9a61c45108a5df3"
+      ],
+      "first_or_relevant_attested_date": 1919,
+      "language": "en",
+      "normalised_form": "education",
+      "provenance_chain_complete": true,
+      "scope_note": "Evidence-bounded historical or design-historical vocabulary; its visibility does not assert a typed relation.",
+      "source_attestation_refs": [
+        "R14-EVID-020-01"
+      ],
+      "source_attestations": [
+        {
+          "attestation_ref": "R14-EVID-020-01",
+          "attested_form": "education",
+          "creator": "Bauhaus-Archiv / Museum für Gestaltung",
+          "evidence_channel": "ARCHIVE_SOURCE",
+          "locator": "Program section and 1919 chronology",
+          "source_id": "R14-ARC-001",
+          "stable_url": "https://www.bauhaus.de/de/das_bauhaus/",
+          "title": "Manifest und Programm des Staatlichen Bauhauses / Das Bauhaus",
+          "year": "1919; current institutional description"
+        }
+      ],
+      "spacetime_refs": [
+        "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275"
+      ],
+      "vocabulary_id": "TRV:68bf0109c6f8a87bfa96d1ecd9503326ba35cf4a6086988a1d2c8a20fbef00d1"
+    },
+    {
+      "academic_support": [
+        {
+          "authors": "Grace Lees-Maffei",
+          "doi_or_identifier": "10.1093/jdh/epn007",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-001",
+          "stable_url": "https://academic.oup.com/jdh/article/21/1/1/361205",
+          "support_scope": "",
+          "title": "Introduction: Professionalization as a Focus in Interior Design History",
+          "venue": "Journal of Design History 21.1",
+          "year": "2008"
+        },
+        {
+          "authors": "Turid Moldenæs;Hilde Marie Pettersen",
+          "doi_or_identifier": "10.1093/jpo/joab010",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-002",
+          "stable_url": "https://munin.uit.no/handle/10037/22810",
+          "support_scope": "",
+          "title": "The Professional Project of Graphic Designers and Universities' Visual Identities",
+          "venue": "Journal of Professions and Organization 8.2",
+          "year": "2021"
+        }
+      ],
+      "academic_support_refs": [
+        "COMP-SRC-001",
+        "COMP-SRC-002"
+      ],
+      "activation_status": "ACTIVE_USER_VISIBLE",
+      "ambiguity_note": "Interpret within the cited historical scope and source record; no universal definition is implied.",
+      "archive_object_refs": [],
+      "attested_form": "institutionalization",
+      "attested_forms": [
+        "institutionalization"
+      ],
+      "canonical_label": "institutionalization",
+      "context_refs": [],
+      "first_or_relevant_attested_date": 2021,
+      "language": "en",
+      "normalised_form": "institutionalization",
+      "provenance_chain_complete": true,
+      "scope_note": "Evidence-bounded historical or design-historical vocabulary; its visibility does not assert a typed relation.",
+      "source_attestation_refs": [
+        "R14-EVID-001-02",
+        "R14-EVID-021-02"
+      ],
+      "source_attestations": [
+        {
+          "attestation_ref": "R14-EVID-001-02",
+          "attested_form": "institutionalization",
+          "creator": "Turid Moldenæs;Hilde Marie Pettersen",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "pp.185, 194",
+          "source_id": "COMP-SRC-002",
+          "stable_url": "https://munin.uit.no/handle/10037/22810",
+          "title": "The Professional Project of Graphic Designers and Universities' Visual Identities",
+          "year": "2021"
+        },
+        {
+          "attestation_ref": "R14-EVID-021-02",
+          "attested_form": "institutionalization",
+          "creator": "Turid Moldenæs;Hilde Marie Pettersen",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "pp.185, 194",
+          "source_id": "COMP-SRC-002",
+          "stable_url": "https://munin.uit.no/handle/10037/22810",
+          "title": "The Professional Project of Graphic Designers and Universities' Visual Identities",
+          "year": "2021"
+        }
+      ],
+      "spacetime_refs": [],
+      "vocabulary_id": "TRV:54d55704f5d7e2caa927feedf94edf8b9dd2ebfafc4b0aa68875bcbcbabaaa79"
+    },
+    {
+      "academic_support": [
+        {
+          "authors": "Grace Lees-Maffei",
+          "doi_or_identifier": "10.1093/jdh/epn007",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-001",
+          "stable_url": "https://academic.oup.com/jdh/article/21/1/1/361205",
+          "support_scope": "",
+          "title": "Introduction: Professionalization as a Focus in Interior Design History",
+          "venue": "Journal of Design History 21.1",
+          "year": "2008"
+        },
+        {
+          "authors": "Turid Moldenæs;Hilde Marie Pettersen",
+          "doi_or_identifier": "10.1093/jpo/joab010",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-002",
+          "stable_url": "https://munin.uit.no/handle/10037/22810",
+          "support_scope": "",
+          "title": "The Professional Project of Graphic Designers and Universities' Visual Identities",
+          "venue": "Journal of Professions and Organization 8.2",
+          "year": "2021"
+        }
+      ],
+      "academic_support_refs": [
+        "COMP-SRC-001",
+        "COMP-SRC-002"
+      ],
+      "activation_status": "ACTIVE_USER_VISIBLE",
+      "ambiguity_note": "Interpret within the cited historical scope and source record; no universal definition is implied.",
+      "archive_object_refs": [],
+      "attested_form": "professionalization",
+      "attested_forms": [
+        "professionalization"
+      ],
+      "canonical_label": "professionalization",
+      "context_refs": [],
+      "first_or_relevant_attested_date": 2008,
+      "language": "en",
+      "normalised_form": "professionalization",
+      "provenance_chain_complete": true,
+      "scope_note": "Evidence-bounded historical or design-historical vocabulary; its visibility does not assert a typed relation.",
+      "source_attestation_refs": [
+        "R14-EVID-001-01"
+      ],
+      "source_attestations": [
+        {
+          "attestation_ref": "R14-EVID-001-01",
+          "attested_form": "professionalization",
+          "creator": "Grace Lees-Maffei",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "accepted manuscript p.9",
+          "source_id": "COMP-SRC-001",
+          "stable_url": "https://academic.oup.com/jdh/article/21/1/1/361205",
+          "title": "Introduction: Professionalization as a Focus in Interior Design History",
+          "year": "2008"
+        }
+      ],
+      "spacetime_refs": [],
+      "vocabulary_id": "TRV:b1195fbfc5f343ebd84eb46acece15907e639a564f04af5d04d58c70e127a14b"
+    }
+  ],
+  "plain_text_tree": {
+    "generic_association_only": true,
+    "plain_text_tree": "craft\n└── education",
+    "plain_text_tree_ascii": "craft\n`-- education",
+    "schema_version": "trace-plain-text-tree-v1",
+    "structural_hierarchy_is_historical_claim": false,
+    "tree_association_ids": [
+      "R14-ASSOC-020"
+    ],
+    "tree_node_ids": [
+      "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737",
+      "TRV:68bf0109c6f8a87bfa96d1ecd9503326ba35cf4a6086988a1d2c8a20fbef00d1"
+    ],
+    "tree_root_node_id": "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737",
+    "tree_semantic_hash": "0689d25e28dd04526062794e6d68888e0abbb60f6de9d02389402344c72dead7"
+  },
+  "provenance_summary": {
+    "archive_object_refs": [
+      {
+        "folder_id": "FOL-MOVEMENT-BAUHAUS-NEW-TYPOGRAPHY-FIRST-INGEST-NETWORK",
+        "folder_title": "Bauhaus / New Typography first-ingest network",
+        "surface_id": "SURF-HISTORICALAICTRACE2026V1R0056",
+        "title": "America the Hope of All who Suffer"
+      },
+      {
+        "folder_id": "FOL-MOVEMENT-BAUHAUS-NEW-TYPOGRAPHY-FIRST-INGEST-NETWORK",
+        "folder_title": "Bauhaus / New Typography first-ingest network",
+        "surface_id": "SURF-HISTORICALAICTRACE2026V1R0057",
+        "title": "To Make the World a Decent Place"
+      },
+      {
+        "folder_id": "FOL-MOVEMENT-BAUHAUS-NEW-TYPOGRAPHY-FIRST-INGEST-NETWORK",
+        "folder_title": "Bauhaus / New Typography first-ingest network",
+        "surface_id": "SURF-HISTORICALAICTRACE2026V1R0159",
+        "title": "Collage Design for Bent Plywood Chairs, Student Project, Institute of Design, Chicago, Illinois"
+      },
+      {
+        "folder_id": "FOL-MOVEMENT-BAUHAUS-NEW-TYPOGRAPHY-FIRST-INGEST-NETWORK",
+        "folder_title": "Bauhaus / New Typography first-ingest network",
+        "surface_id": "SURF-HISTORICALAICTRACE2026V1R0160",
+        "title": "Untitled Photogram"
+      },
+      {
+        "folder_id": "FOL-MOVEMENT-POLISH-POSTER-SCHOOL-FIRST-INGEST-SCOPE",
+        "folder_title": "Polish Poster School first-ingest scope",
+        "surface_id": "SURF-VAM20K-02949",
+        "title": "Historia"
+      },
+      {
+        "folder_id": "FOL-MOVEMENT-POLISH-POSTER-SCHOOL-FIRST-INGEST-SCOPE",
+        "folder_title": "Polish Poster School first-ingest scope",
+        "surface_id": "SURF-VAM20K-03135",
+        "title": "Polish Poster Gallery"
+      }
+    ],
+    "context_refs": [
+      "CTXA:039780190ae9b72533c0f7df212a0481b45d418aecff4aaf45309a2574ef4f7f",
+      "CTXA:039d73dde50d42ffb7c81f6b3527ccce234dc47c57c7c25677a7a79a41ae425b",
+      "CTXA:06b167054c199262dcb0506c2c9f95f9c417738a44335cec7f8d6624b6f9a130",
+      "CTXA:07dca05b235b7a8e74cf9bf7ae7deab76e9f021152ff30ed41ae99b61c68e3b3",
+      "CTXA:1ece0814c96b1b9e6f474dd2b7a761e56136dfe39401ecc7d0ffac1a3d9b745f",
+      "CTXA:2431dbd18c5a485082f9fda7ce65dad1b7e71864f96555ff210060bff317b642",
+      "CTXA:2f7655b2cbd9e4ab6130d0edfe113778ce67006958b4c5a993db5669959f6092",
+      "CTXA:42b6cb51ac1fcec65fded3b33ebf55e483eb00bede960383fecd74bb5bb135a1",
+      "CTXA:778a2fb9b23330a08a7e5fa1ebd160d5b60c063fc108375ded881c829850faa8",
+      "CTXA:8563e28e7c168f3581642165dabd4c44d6d565d622470c38798e7c0fccd41d4f",
+      "CTXA:86eabc4d3bd04cdee907482041a6f3778f535affc93d2e95df33cd3c66544153",
+      "CTXA:9227215ed1a68394a36f292f542d8f8463c5905a785166b9ba17ea50af4bf228",
+      "CTXA:928a539d657d06006b37ba61a3d8652d0ab8caa4f8da54dc3b0751e783995b3a",
+      "CTXA:9bea08f958da4f6c9cc95e5feb434b3e6eb62543d35667889aeac3a8d1abc18b",
+      "CTXA:a71b4a36e721267338fce479d66c8d9b82e5f02f9b7c96d66d810a1536292ab9",
+      "CTXA:ad0521a49a6d8c52067259e5af11e5a5741319e855e109c5d198e7b9191425a0",
+      "CTXA:d29ff28898f1443f48eb439205a5b1816a98fc5065486f887bb9660f33916971",
+      "CTXA:f5c9eb180fb04d93063ebf8c0a5c93a109f57a842488425ba9a61c45108a5df3"
+    ],
+    "database_snapshot_id": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "spacetime_refs": [
+      "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+      "SPTGEO:f59f70d97d216d02dbaec94c9e13978a108d67b162036c4311e5f4f121464ca4"
+    ]
+  },
+  "regions": [
+    {
+      "association_ids": [
+        "R14-ASSOC-020"
+      ],
+      "category_id": "movement",
+      "composition_ids": [
+        "R16-COMP-MOVEMENT-01"
+      ],
+      "context_refs": [
+        "CTXA:039780190ae9b72533c0f7df212a0481b45d418aecff4aaf45309a2574ef4f7f",
+        "CTXA:039d73dde50d42ffb7c81f6b3527ccce234dc47c57c7c25677a7a79a41ae425b",
+        "CTXA:06b167054c199262dcb0506c2c9f95f9c417738a44335cec7f8d6624b6f9a130",
+        "CTXA:07dca05b235b7a8e74cf9bf7ae7deab76e9f021152ff30ed41ae99b61c68e3b3",
+        "CTXA:1ece0814c96b1b9e6f474dd2b7a761e56136dfe39401ecc7d0ffac1a3d9b745f",
+        "CTXA:2431dbd18c5a485082f9fda7ce65dad1b7e71864f96555ff210060bff317b642",
+        "CTXA:2f7655b2cbd9e4ab6130d0edfe113778ce67006958b4c5a993db5669959f6092",
+        "CTXA:42b6cb51ac1fcec65fded3b33ebf55e483eb00bede960383fecd74bb5bb135a1",
+        "CTXA:778a2fb9b23330a08a7e5fa1ebd160d5b60c063fc108375ded881c829850faa8",
+        "CTXA:8563e28e7c168f3581642165dabd4c44d6d565d622470c38798e7c0fccd41d4f",
+        "CTXA:86eabc4d3bd04cdee907482041a6f3778f535affc93d2e95df33cd3c66544153",
+        "CTXA:9227215ed1a68394a36f292f542d8f8463c5905a785166b9ba17ea50af4bf228",
+        "CTXA:928a539d657d06006b37ba61a3d8652d0ab8caa4f8da54dc3b0751e783995b3a",
+        "CTXA:9bea08f958da4f6c9cc95e5feb434b3e6eb62543d35667889aeac3a8d1abc18b",
+        "CTXA:a71b4a36e721267338fce479d66c8d9b82e5f02f9b7c96d66d810a1536292ab9",
+        "CTXA:ad0521a49a6d8c52067259e5af11e5a5741319e855e109c5d198e7b9191425a0",
+        "CTXA:d29ff28898f1443f48eb439205a5b1816a98fc5065486f887bb9660f33916971",
+        "CTXA:f5c9eb180fb04d93063ebf8c0a5c93a109f57a842488425ba9a61c45108a5df3"
+      ],
+      "entry_node_ids": [
+        "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737"
+      ],
+      "focusable_node_ids": [
+        "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737",
+        "TRV:68bf0109c6f8a87bfa96d1ecd9503326ba35cf4a6086988a1d2c8a20fbef00d1"
+      ],
+      "node_ids": [
+        "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737",
+        "TRV:68bf0109c6f8a87bfa96d1ecd9503326ba35cf4a6086988a1d2c8a20fbef00d1"
+      ],
+      "region_id": "TRREG:64e8d164f1d888459b74c966b6870b6f924f790b8e3a75c62aab67424dee7048",
+      "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+      "spacetime_refs": [
+        "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+        "SPTGEO:f59f70d97d216d02dbaec94c9e13978a108d67b162036c4311e5f4f121464ca4"
+      ],
+      "stable_order": 0
+    },
+    {
+      "association_ids": [
+        "R14-ASSOC-001"
+      ],
+      "category_id": "movement",
+      "composition_ids": [
+        "R16-COMP-MOVEMENT-02"
+      ],
+      "context_refs": [
+        "CTXA:039780190ae9b72533c0f7df212a0481b45d418aecff4aaf45309a2574ef4f7f",
+        "CTXA:039d73dde50d42ffb7c81f6b3527ccce234dc47c57c7c25677a7a79a41ae425b",
+        "CTXA:06b167054c199262dcb0506c2c9f95f9c417738a44335cec7f8d6624b6f9a130",
+        "CTXA:07dca05b235b7a8e74cf9bf7ae7deab76e9f021152ff30ed41ae99b61c68e3b3",
+        "CTXA:1ece0814c96b1b9e6f474dd2b7a761e56136dfe39401ecc7d0ffac1a3d9b745f",
+        "CTXA:2431dbd18c5a485082f9fda7ce65dad1b7e71864f96555ff210060bff317b642",
+        "CTXA:2f7655b2cbd9e4ab6130d0edfe113778ce67006958b4c5a993db5669959f6092",
+        "CTXA:42b6cb51ac1fcec65fded3b33ebf55e483eb00bede960383fecd74bb5bb135a1",
+        "CTXA:778a2fb9b23330a08a7e5fa1ebd160d5b60c063fc108375ded881c829850faa8",
+        "CTXA:8563e28e7c168f3581642165dabd4c44d6d565d622470c38798e7c0fccd41d4f",
+        "CTXA:86eabc4d3bd04cdee907482041a6f3778f535affc93d2e95df33cd3c66544153",
+        "CTXA:9227215ed1a68394a36f292f542d8f8463c5905a785166b9ba17ea50af4bf228",
+        "CTXA:928a539d657d06006b37ba61a3d8652d0ab8caa4f8da54dc3b0751e783995b3a",
+        "CTXA:9bea08f958da4f6c9cc95e5feb434b3e6eb62543d35667889aeac3a8d1abc18b",
+        "CTXA:a71b4a36e721267338fce479d66c8d9b82e5f02f9b7c96d66d810a1536292ab9",
+        "CTXA:ad0521a49a6d8c52067259e5af11e5a5741319e855e109c5d198e7b9191425a0",
+        "CTXA:d29ff28898f1443f48eb439205a5b1816a98fc5065486f887bb9660f33916971",
+        "CTXA:f5c9eb180fb04d93063ebf8c0a5c93a109f57a842488425ba9a61c45108a5df3"
+      ],
+      "entry_node_ids": [
+        "TRV:b1195fbfc5f343ebd84eb46acece15907e639a564f04af5d04d58c70e127a14b"
+      ],
+      "focusable_node_ids": [
+        "TRV:54d55704f5d7e2caa927feedf94edf8b9dd2ebfafc4b0aa68875bcbcbabaaa79",
+        "TRV:b1195fbfc5f343ebd84eb46acece15907e639a564f04af5d04d58c70e127a14b"
+      ],
+      "node_ids": [
+        "TRV:b1195fbfc5f343ebd84eb46acece15907e639a564f04af5d04d58c70e127a14b",
+        "TRV:54d55704f5d7e2caa927feedf94edf8b9dd2ebfafc4b0aa68875bcbcbabaaa79"
+      ],
+      "region_id": "TRREG:63c422fb1c834578c7e48cd26438da77263b32c2b074de3a198595d00150e884",
+      "semantic_hash": "1270cf1abff273fdbad8299c58f86680a330120497936027afba98c9c7b741ce",
+      "spacetime_refs": [
+        "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+        "SPTGEO:f59f70d97d216d02dbaec94c9e13978a108d67b162036c4311e5f4f121464ca4"
+      ],
+      "stable_order": 1
+    },
+    {
+      "association_ids": [
+        "R14-ASSOC-021"
+      ],
+      "category_id": "movement",
+      "composition_ids": [
+        "R16-COMP-MOVEMENT-03"
+      ],
+      "context_refs": [
+        "CTXA:039780190ae9b72533c0f7df212a0481b45d418aecff4aaf45309a2574ef4f7f",
+        "CTXA:039d73dde50d42ffb7c81f6b3527ccce234dc47c57c7c25677a7a79a41ae425b",
+        "CTXA:06b167054c199262dcb0506c2c9f95f9c417738a44335cec7f8d6624b6f9a130",
+        "CTXA:07dca05b235b7a8e74cf9bf7ae7deab76e9f021152ff30ed41ae99b61c68e3b3",
+        "CTXA:1ece0814c96b1b9e6f474dd2b7a761e56136dfe39401ecc7d0ffac1a3d9b745f",
+        "CTXA:2431dbd18c5a485082f9fda7ce65dad1b7e71864f96555ff210060bff317b642",
+        "CTXA:2f7655b2cbd9e4ab6130d0edfe113778ce67006958b4c5a993db5669959f6092",
+        "CTXA:42b6cb51ac1fcec65fded3b33ebf55e483eb00bede960383fecd74bb5bb135a1",
+        "CTXA:778a2fb9b23330a08a7e5fa1ebd160d5b60c063fc108375ded881c829850faa8",
+        "CTXA:8563e28e7c168f3581642165dabd4c44d6d565d622470c38798e7c0fccd41d4f",
+        "CTXA:86eabc4d3bd04cdee907482041a6f3778f535affc93d2e95df33cd3c66544153",
+        "CTXA:9227215ed1a68394a36f292f542d8f8463c5905a785166b9ba17ea50af4bf228",
+        "CTXA:928a539d657d06006b37ba61a3d8652d0ab8caa4f8da54dc3b0751e783995b3a",
+        "CTXA:9bea08f958da4f6c9cc95e5feb434b3e6eb62543d35667889aeac3a8d1abc18b",
+        "CTXA:a71b4a36e721267338fce479d66c8d9b82e5f02f9b7c96d66d810a1536292ab9",
+        "CTXA:ad0521a49a6d8c52067259e5af11e5a5741319e855e109c5d198e7b9191425a0",
+        "CTXA:d29ff28898f1443f48eb439205a5b1816a98fc5065486f887bb9660f33916971",
+        "CTXA:f5c9eb180fb04d93063ebf8c0a5c93a109f57a842488425ba9a61c45108a5df3"
+      ],
+      "entry_node_ids": [
+        "TRV:20f9f4ed48de5d0e333c767bae2d1a50022c17b7aa2d67b9a00007ee179e4a97"
+      ],
+      "focusable_node_ids": [
+        "TRV:20f9f4ed48de5d0e333c767bae2d1a50022c17b7aa2d67b9a00007ee179e4a97",
+        "TRV:54d55704f5d7e2caa927feedf94edf8b9dd2ebfafc4b0aa68875bcbcbabaaa79"
+      ],
+      "node_ids": [
+        "TRV:20f9f4ed48de5d0e333c767bae2d1a50022c17b7aa2d67b9a00007ee179e4a97",
+        "TRV:54d55704f5d7e2caa927feedf94edf8b9dd2ebfafc4b0aa68875bcbcbabaaa79"
+      ],
+      "region_id": "TRREG:40b7ec3b54f2ffb2fbf0664b1f6c7e8edd1a52df2681f32f815a5276cd9be1f3",
+      "semantic_hash": "6b0ab6f0c360ee450b4b3dd14dc175f7a995ce6ccbf928e2cce801088d416b55",
+      "spacetime_refs": [
+        "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+        "SPTGEO:f59f70d97d216d02dbaec94c9e13978a108d67b162036c4311e5f4f121464ca4"
+      ],
+      "stable_order": 2
+    }
+  ],
+  "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+  "state": {
+    "api_version": "trace-exploration/v1",
+    "available_actions": [
+      "SELECT_CATEGORY",
+      "FOCUS_NODE",
+      "EXPAND_NODE",
+      "COLLAPSE_NODE",
+      "MOVE_FOCUS",
+      "SELECT_COMPOSITION",
+      "RESET_CATEGORY",
+      "EXPORT_CURRENT_STATE"
+    ],
+    "category_id": "movement",
+    "current_region_id": "TRREG:64e8d164f1d888459b74c966b6870b6f924f790b8e3a75c62aab67424dee7048",
+    "database_snapshot_id": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "expanded_node_ids": [
+      "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737"
+    ],
+    "exploration_state_id": "TRSTATE:cd0fdd404f68457aa6719c74c82dbba05d054b709e0ea091161318b27c199c49",
+    "focused_node_id": "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737",
+    "map_id": "TRMAP:d113eab6ab254a0b463ae9b0d12f22f5395497c9a283c309126e1e52b44860b7",
+    "presentation_hash": "dede274b947ddcbc36c0ee220a84564591670830390ef9fa5dcdd1f6c2d108c4",
+    "schema_version": "trace-exploration-state-v1",
+    "selected_composition_id": "R16-COMP-MOVEMENT-01",
+    "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+    "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539",
+    "visible_association_ids": [
+      "R14-ASSOC-020"
+    ],
+    "visible_node_ids": [
+      "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737",
+      "TRV:68bf0109c6f8a87bfa96d1ecd9503326ba35cf4a6086988a1d2c8a20fbef00d1"
+    ]
+  },
+  "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539"
+}

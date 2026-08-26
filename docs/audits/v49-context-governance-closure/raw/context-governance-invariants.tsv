@@ -16,7 +16,7 @@ CTX-GOV-INV-014	PASS	Every governed representation resolves provenance.	provenan
 CTX-GOV-INV-015	PASS	Every representation resolves a publication state.	publication states checked=16106; failures=0
 CTX-GOV-INV-016	PASS	Every public DTO is release/projection pinned.	release/projection-pinned DTOs=7995
 CTX-GOV-INV-017	PASS	Governed rebuild is deterministic.	in-memory rebuilds=2; checksum match=true
-CTX-GOV-INV-018	PASS	Full Context projection is absent from the initial client bundle.	client modules checked=62; corpus exposure=false
+CTX-GOV-INV-018	PASS	Full Context projection is absent from the initial client bundle.	client modules checked=73; corpus exposure=false
 CTX-GOV-INV-019	PASS	Default governed Canvas contains zero membership nodes.	default membership nodes=0
 CTX-GOV-INV-020	PASS	Default governed Canvas contains zero semantic edges.	default semantic connections=0
 CTX-GOV-INV-021	PASS	Accessible explanation is semantically equivalent to visual explanation.	accessible/visual representations checked=16106; failures=0

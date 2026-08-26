@@ -1,6 +1,6 @@
 {
   "format": "gda-v49-active-script-allowlist/v1",
-  "scriptCount": 253,
+  "scriptCount": 257,
   "unknownClassificationCount": 0,
   "scripts": [
     {
@@ -2422,6 +2422,46 @@
       "current_ci_required": false,
       "retained_audit_role": true,
       "decision": "DOCUMENTED_ALLOWLIST"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-real-database/generate_round1.py",
+      "category": "CURRENT_V49_EXPLORATION_REAL_DATABASE_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": true,
+      "current_database_required": true,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-real-database/model.py",
+      "category": "CURRENT_V49_EXPLORATION_REAL_DATABASE_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": true,
+      "current_database_required": true,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-real-database/real-composition-registry-v1.json",
+      "category": "CURRENT_V49_EXPLORATION_REAL_DATABASE_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": true,
+      "current_database_required": true,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace-v49-exploration-real-database/scholarly-source-additions-v1.tsv",
+      "category": "CURRENT_V49_EXPLORATION_REAL_DATABASE_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": true,
+      "current_database_required": true,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
     },
     {
       "path": "scripts/trace-v49-relation-grammar/generate_round1.py",

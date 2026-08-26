@@ -1,0 +1,1509 @@
+{
+  "api_version": "trace-exploration/v1",
+  "associations": [
+    {
+      "active_for_proximity": true,
+      "association_accessible_description": "imitation is available to explore with piracy as a qualified generic association.",
+      "association_id": "R14-ASSOC-017",
+      "confidence": "HIGH",
+      "endpoint_labels": [
+        "imitation",
+        "piracy"
+      ],
+      "endpoint_vocabulary_ids": [
+        "TRV:f921321aaedb0bb53398796772f843dc4a5963edfba778ee3a6bd9f592e21795",
+        "TRV:c460d6a56db8d84e6ee3a5c96c4a72ce1170116cab3ad0659544494547ecae77"
+      ],
+      "explicit_non_claims": [
+        "causation",
+        "influence",
+        "chronology",
+        "hierarchy",
+        "direction",
+        "equivalence"
+      ],
+      "generic_association_only": true,
+      "hard_negative": false,
+      "mandatory_dimension_results": {
+        "D1": 2,
+        "D5": 2,
+        "D7": 2
+      },
+      "provenance_refs": [
+        "R14-EVID-017-01",
+        "R14-EVID-017-02",
+        "R14-EVID-017-03"
+      ],
+      "qualification": "Authorization and rights regimes condition the classification; imitation is not automatically piracy.",
+      "qualification_version": "trace-generic-association-rubric-v1",
+      "source_refs": [
+        "COMP-SRC-006",
+        "COMP-SRC-007",
+        "COMP-SRC-008"
+      ],
+      "source_urls": [
+        "https://academic.oup.com/jiplp/article/20/2/71/7916754",
+        "https://www.cambridge.org/core/journals/enterprise-and-society/article/from-the-margins-to-the-core-of-haute-couture-the-entrepreneurial-journey-of-coco-chanel/2EB663E94E9C67F6CB3B9CF962242FAD",
+        "https://www.sciencedirect.com/science/article/pii/S0148296323003041"
+      ],
+      "strength": "STRONG",
+      "support_status": "EXTERNALLY_SUPPORTED"
+    },
+    {
+      "active_for_proximity": true,
+      "association_accessible_description": "photography is available to explore with typography as a qualified generic association.",
+      "association_id": "R14-ASSOC-018",
+      "confidence": "MODERATE",
+      "endpoint_labels": [
+        "photography",
+        "typography"
+      ],
+      "endpoint_vocabulary_ids": [
+        "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea",
+        "TRV:48047b49b975ee8880742ea2544b30e8965f1675df787e9d832f8e0c2db87630"
+      ],
+      "explicit_non_claims": [
+        "causation",
+        "influence",
+        "chronology",
+        "hierarchy",
+        "direction",
+        "equivalence"
+      ],
+      "generic_association_only": true,
+      "hard_negative": false,
+      "mandatory_dimension_results": {
+        "D1": 2,
+        "D5": 2,
+        "D7": 1
+      },
+      "provenance_refs": [
+        "R14-EVID-018-01"
+      ],
+      "qualification": "Supported by archive/source evidence. Independent scholarly validation pending.",
+      "qualification_version": "trace-generic-association-rubric-v1",
+      "source_refs": [
+        "R14-ARC-002"
+      ],
+      "source_urls": [
+        "https://www.moma.org/calendar/exhibitions/340"
+      ],
+      "strength": "STRONG",
+      "support_status": "SOURCE_SUPPORTED"
+    }
+  ],
+  "available_actions": [
+    "SELECT_CATEGORY",
+    "FOCUS_NODE",
+    "EXPAND_NODE",
+    "COLLAPSE_NODE",
+    "MOVE_FOCUS",
+    "SELECT_COMPOSITION",
+    "RESET_CATEGORY",
+    "EXPORT_CURRENT_STATE"
+  ],
+  "compositions": [
+    {
+      "admitted_association_ids": [
+        "R14-ASSOC-018"
+      ],
+      "associations": [
+        {
+          "active_for_proximity": true,
+          "association_accessible_description": "photography is available to explore with typography as a qualified generic association.",
+          "association_id": "R14-ASSOC-018",
+          "confidence": "MODERATE",
+          "endpoint_labels": [
+            "photography",
+            "typography"
+          ],
+          "endpoint_vocabulary_ids": [
+            "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea",
+            "TRV:48047b49b975ee8880742ea2544b30e8965f1675df787e9d832f8e0c2db87630"
+          ],
+          "explicit_non_claims": [
+            "causation",
+            "influence",
+            "chronology",
+            "hierarchy",
+            "direction",
+            "equivalence"
+          ],
+          "generic_association_only": true,
+          "hard_negative": false,
+          "mandatory_dimension_results": {
+            "D1": 2,
+            "D5": 2,
+            "D7": 1
+          },
+          "provenance_refs": [
+            "R14-EVID-018-01"
+          ],
+          "qualification": "Supported by archive/source evidence. Independent scholarly validation pending.",
+          "qualification_version": "trace-generic-association-rubric-v1",
+          "source_refs": [
+            "R14-ARC-002"
+          ],
+          "source_urls": [
+            "https://www.moma.org/calendar/exhibitions/340"
+          ],
+          "strength": "STRONG",
+          "support_status": "SOURCE_SUPPORTED"
+        }
+      ],
+      "category_id": "medium",
+      "composition_id": "R16-COMP-MEDIUM-01",
+      "description": "Herbert Matter evidence entered through the governed photomontage medium.",
+      "entry_evidence": [
+        "R14-ARC-002",
+        "R16-SRC-001",
+        "R16-SRC-002",
+        "CTX:MEDIUM:Photomontage"
+      ],
+      "exportable": true,
+      "generic_association_only": true,
+      "nodes": [
+        {
+          "canonical_label": "photography",
+          "node_accessible_label": "photography, evidence-supported exploration term",
+          "projection": {
+            "bounding_hint": {
+              "radius": 0.022222222222222223
+            },
+            "branch_slot": 0,
+            "group_slot": "medium",
+            "layer_slot": 0,
+            "normalised_x": 0.215278,
+            "normalised_y": 0.624074,
+            "projection_version": "trace-exploration-neutral-projection-v1"
+          },
+          "vocabulary_id": "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea"
+        },
+        {
+          "canonical_label": "typography",
+          "node_accessible_label": "typography, evidence-supported exploration term",
+          "projection": {
+            "bounding_hint": {
+              "radius": 0.022222222222222223
+            },
+            "branch_slot": 1,
+            "group_slot": "medium",
+            "layer_slot": 0,
+            "normalised_x": 0.784722,
+            "normalised_y": 0.375926,
+            "projection_version": "trace-exploration-neutral-projection-v1"
+          },
+          "vocabulary_id": "TRV:48047b49b975ee8880742ea2544b30e8965f1675df787e9d832f8e0c2db87630"
+        }
+      ],
+      "presentation_hash": "55d718679ff3e00a35eb3eb4632a4d7ed483d0716f6267dad05cba93be99ab1b",
+      "pruned_association_ids": [],
+      "qualified_association_ids": [
+        "R14-ASSOC-018"
+      ],
+      "round15_semantic_image": {
+        "audit": {
+          "causal_relation_emission_count": 0,
+          "directional_relation_emission_count": 0,
+          "duplicate_input_count": 0,
+          "explicit_non_claims": [
+            "Association is not a typed historical relation.",
+            "Topology and geometry are not historical facts.",
+            "Pruning, split, and evidence-gap states are not negative historical evidence."
+          ],
+          "failed_association_control_count": 0,
+          "fixture_family": "REAL_DATABASE_CATEGORY_COMPOSITION",
+          "fixture_id": "R16-COMP-MEDIUM-01",
+          "hard_negative_control_count": 0,
+          "negative_language_violation_count": 0,
+          "synthetic": false,
+          "typed_historical_relation_emission_count": 0,
+          "unsupported_rendered_edge_count": 0
+        },
+        "composition_core": {
+          "admitted_count": 1,
+          "arbitration_method": "PARETO_MINIMAL_SUFFICIENT_V1",
+          "arbitration_version": "1",
+          "candidate_count": 1,
+          "candidate_decisions": [
+            {
+              "assessment_id": "R14-ASSOC-018",
+              "composition_eligibility": "ELIGIBLE_DIRECT",
+              "decision_state": "ADMITTED",
+              "explanation": "Qualified association was admitted because its ordinal evidence group fits the topology-derived degree bound.",
+              "neighbourhood_role": "DIRECT_NEIGHBOUR",
+              "node_ids": [
+                "photography",
+                "typography"
+              ],
+              "presentation_role": "ADMITTED",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "semantic_eligibility": "QUALIFIED",
+              "topology_role": "SEMANTIC_CONNECTION"
+            }
+          ],
+          "degree_bound": 2,
+          "evidence_gap_count": 0,
+          "pruned_count": 0,
+          "pruning_reason_codes": [],
+          "split_count": 0,
+          "split_reason_codes": [],
+          "topology_explanation": "Topology follows an explicit inquiry-structure request and makes no historical directional claim.",
+          "topology_reason_code": "EXPLICIT_INQUIRY_TOPOLOGY",
+          "unresolved_count": 0
+        },
+        "evidence_core": [
+          {
+            "assessment_id": "R14-ASSOC-018",
+            "confidence": "MODERATE",
+            "mandatory_dimension_results": {
+              "D1": 2,
+              "D5": 2,
+              "D7": 1
+            },
+            "provenance_refs": [
+              "R14-EVID-018-01"
+            ],
+            "qualification": "Supported by archive/source evidence. Independent scholarly validation pending.",
+            "strength": "STRONG",
+            "support_status": "SOURCE_SUPPORTED"
+          }
+        ],
+        "presentation_hash": "55d718679ff3e00a35eb3eb4632a4d7ed483d0716f6267dad05cba93be99ab1b",
+        "presentation_hints": {
+          "cosmetic_order": [
+            "photography",
+            "typography"
+          ],
+          "edge_hints": [
+            {
+              "arrowhead": false,
+              "association_id": "R14-ASSOC-018",
+              "source_node_id": "photography",
+              "stroke_width": 2,
+              "support_class_label": "SOURCE_SUPPORTED",
+              "target_node_id": "typography"
+            }
+          ],
+          "layout_engine": "DETERMINISTIC_RESEARCH_CIRCLE_V1",
+          "node_positions": [
+            {
+              "branch_slot": 0,
+              "layout_role": "SEED",
+              "node_id": "photography",
+              "node_radius": 16,
+              "relative_layer": 0,
+              "x": 155,
+              "y": 337
+            },
+            {
+              "branch_slot": 1,
+              "layout_role": "PEER",
+              "node_id": "typography",
+              "node_radius": 16,
+              "relative_layer": 0,
+              "x": 565,
+              "y": 203
+            }
+          ],
+          "optional_seed": "round16|medium|R16-COMP-MEDIUM-01",
+          "semantic_mutation_permitted": false,
+          "visual_gap_hint": false
+        },
+        "provenance": [
+          {
+            "assessment_id": "R14-ASSOC-018",
+            "evidence_ids": [
+              "R14-EVID-018-01"
+            ],
+            "source_ids": [
+              "R14-ARC-002"
+            ],
+            "source_urls": [
+              "https://www.moma.org/calendar/exhibitions/340"
+            ]
+          }
+        ],
+        "schema_version": "bounded-semantic-image-v1",
+        "semantic_core": {
+          "admitted_association_ids": [
+            "R14-ASSOC-018"
+          ],
+          "association_states": [
+            {
+              "assessment_id": "R14-ASSOC-018",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "state": "ADMITTED"
+            }
+          ],
+          "evidence_gap_node_ids": [],
+          "neighbourhood_depth": 2,
+          "node_ids": [
+            "photography",
+            "typography"
+          ],
+          "qualified_association_ids": [
+            "R14-ASSOC-018"
+          ],
+          "seed_node_ids": [
+            "photography"
+          ],
+          "semantic_image_id": "R15-IMAGE-R16-COMP-MEDIUM-01",
+          "semantic_version": "bounded-semantic-image-v1",
+          "split_components": [
+            [
+              "photography",
+              "typography"
+            ]
+          ],
+          "topology_candidates": [
+            "LINEAR_PATH"
+          ],
+          "topology_type": "LINEAR_PATH"
+        },
+        "semantic_core_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e"
+      },
+      "seed_labels": [
+        "photography"
+      ],
+      "seed_node_ids": [
+        "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea"
+      ],
+      "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+      "topology_type": "LINEAR_PATH"
+    },
+    {
+      "admitted_association_ids": [
+        "R14-ASSOC-017"
+      ],
+      "associations": [
+        {
+          "active_for_proximity": true,
+          "association_accessible_description": "imitation is available to explore with piracy as a qualified generic association.",
+          "association_id": "R14-ASSOC-017",
+          "confidence": "HIGH",
+          "endpoint_labels": [
+            "imitation",
+            "piracy"
+          ],
+          "endpoint_vocabulary_ids": [
+            "TRV:f921321aaedb0bb53398796772f843dc4a5963edfba778ee3a6bd9f592e21795",
+            "TRV:c460d6a56db8d84e6ee3a5c96c4a72ce1170116cab3ad0659544494547ecae77"
+          ],
+          "explicit_non_claims": [
+            "causation",
+            "influence",
+            "chronology",
+            "hierarchy",
+            "direction",
+            "equivalence"
+          ],
+          "generic_association_only": true,
+          "hard_negative": false,
+          "mandatory_dimension_results": {
+            "D1": 2,
+            "D5": 2,
+            "D7": 2
+          },
+          "provenance_refs": [
+            "R14-EVID-017-01",
+            "R14-EVID-017-02",
+            "R14-EVID-017-03"
+          ],
+          "qualification": "Authorization and rights regimes condition the classification; imitation is not automatically piracy.",
+          "qualification_version": "trace-generic-association-rubric-v1",
+          "source_refs": [
+            "COMP-SRC-006",
+            "COMP-SRC-007",
+            "COMP-SRC-008"
+          ],
+          "source_urls": [
+            "https://academic.oup.com/jiplp/article/20/2/71/7916754",
+            "https://www.cambridge.org/core/journals/enterprise-and-society/article/from-the-margins-to-the-core-of-haute-couture-the-entrepreneurial-journey-of-coco-chanel/2EB663E94E9C67F6CB3B9CF962242FAD",
+            "https://www.sciencedirect.com/science/article/pii/S0148296323003041"
+          ],
+          "strength": "STRONG",
+          "support_status": "EXTERNALLY_SUPPORTED"
+        }
+      ],
+      "category_id": "medium",
+      "composition_id": "R16-COMP-MEDIUM-02",
+      "description": "Design-copying research entered through governed publication-design records.",
+      "entry_evidence": [
+        "COMP-SRC-006",
+        "COMP-SRC-007",
+        "COMP-SRC-008",
+        "COMP-SRC-029",
+        "CTX:MEDIUM:Publication design"
+      ],
+      "exportable": true,
+      "generic_association_only": true,
+      "nodes": [
+        {
+          "canonical_label": "imitation",
+          "node_accessible_label": "imitation, evidence-supported exploration term",
+          "projection": {
+            "bounding_hint": {
+              "radius": 0.022222222222222223
+            },
+            "branch_slot": 0,
+            "group_slot": "medium",
+            "layer_slot": 0,
+            "normalised_x": 0.711111,
+            "normalised_y": 0.218519,
+            "projection_version": "trace-exploration-neutral-projection-v1"
+          },
+          "vocabulary_id": "TRV:f921321aaedb0bb53398796772f843dc4a5963edfba778ee3a6bd9f592e21795"
+        },
+        {
+          "canonical_label": "piracy",
+          "node_accessible_label": "piracy, evidence-supported exploration term",
+          "projection": {
+            "bounding_hint": {
+              "radius": 0.022222222222222223
+            },
+            "branch_slot": 1,
+            "group_slot": "medium",
+            "layer_slot": 0,
+            "normalised_x": 0.2875,
+            "normalised_y": 0.783333,
+            "projection_version": "trace-exploration-neutral-projection-v1"
+          },
+          "vocabulary_id": "TRV:c460d6a56db8d84e6ee3a5c96c4a72ce1170116cab3ad0659544494547ecae77"
+        }
+      ],
+      "presentation_hash": "2ceba21308646938121f7e76e600ab00753ac9751e95b7523ae54b807de6d8ca",
+      "pruned_association_ids": [],
+      "qualified_association_ids": [
+        "R14-ASSOC-017"
+      ],
+      "round15_semantic_image": {
+        "audit": {
+          "causal_relation_emission_count": 0,
+          "directional_relation_emission_count": 0,
+          "duplicate_input_count": 0,
+          "explicit_non_claims": [
+            "Association is not a typed historical relation.",
+            "Topology and geometry are not historical facts.",
+            "Pruning, split, and evidence-gap states are not negative historical evidence."
+          ],
+          "failed_association_control_count": 0,
+          "fixture_family": "REAL_DATABASE_CATEGORY_COMPOSITION",
+          "fixture_id": "R16-COMP-MEDIUM-02",
+          "hard_negative_control_count": 0,
+          "negative_language_violation_count": 0,
+          "synthetic": false,
+          "typed_historical_relation_emission_count": 0,
+          "unsupported_rendered_edge_count": 0
+        },
+        "composition_core": {
+          "admitted_count": 1,
+          "arbitration_method": "PARETO_MINIMAL_SUFFICIENT_V1",
+          "arbitration_version": "1",
+          "candidate_count": 1,
+          "candidate_decisions": [
+            {
+              "assessment_id": "R14-ASSOC-017",
+              "composition_eligibility": "ELIGIBLE_DIRECT",
+              "decision_state": "ADMITTED",
+              "explanation": "Qualified association was admitted because its ordinal evidence group fits the topology-derived degree bound.",
+              "neighbourhood_role": "DIRECT_NEIGHBOUR",
+              "node_ids": [
+                "imitation",
+                "piracy"
+              ],
+              "presentation_role": "ADMITTED",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "semantic_eligibility": "QUALIFIED",
+              "topology_role": "SEMANTIC_CONNECTION"
+            }
+          ],
+          "degree_bound": 2,
+          "evidence_gap_count": 0,
+          "pruned_count": 0,
+          "pruning_reason_codes": [],
+          "split_count": 0,
+          "split_reason_codes": [],
+          "topology_explanation": "Topology follows an explicit inquiry-structure request and makes no historical directional claim.",
+          "topology_reason_code": "EXPLICIT_INQUIRY_TOPOLOGY",
+          "unresolved_count": 0
+        },
+        "evidence_core": [
+          {
+            "assessment_id": "R14-ASSOC-017",
+            "confidence": "HIGH",
+            "mandatory_dimension_results": {
+              "D1": 2,
+              "D5": 2,
+              "D7": 2
+            },
+            "provenance_refs": [
+              "R14-EVID-017-01",
+              "R14-EVID-017-02",
+              "R14-EVID-017-03"
+            ],
+            "qualification": "Authorization and rights regimes condition the classification; imitation is not automatically piracy.",
+            "strength": "STRONG",
+            "support_status": "EXTERNALLY_SUPPORTED"
+          }
+        ],
+        "presentation_hash": "2ceba21308646938121f7e76e600ab00753ac9751e95b7523ae54b807de6d8ca",
+        "presentation_hints": {
+          "cosmetic_order": [
+            "imitation",
+            "piracy"
+          ],
+          "edge_hints": [
+            {
+              "arrowhead": false,
+              "association_id": "R14-ASSOC-017",
+              "source_node_id": "imitation",
+              "stroke_width": 2,
+              "support_class_label": "EXTERNALLY_SUPPORTED",
+              "target_node_id": "piracy"
+            }
+          ],
+          "layout_engine": "DETERMINISTIC_RESEARCH_CIRCLE_V1",
+          "node_positions": [
+            {
+              "branch_slot": 0,
+              "layout_role": "SEED",
+              "node_id": "imitation",
+              "node_radius": 16,
+              "relative_layer": 0,
+              "x": 512,
+              "y": 118
+            },
+            {
+              "branch_slot": 1,
+              "layout_role": "PEER",
+              "node_id": "piracy",
+              "node_radius": 16,
+              "relative_layer": 0,
+              "x": 207,
+              "y": 423
+            }
+          ],
+          "optional_seed": "round16|medium|R16-COMP-MEDIUM-02",
+          "semantic_mutation_permitted": false,
+          "visual_gap_hint": false
+        },
+        "provenance": [
+          {
+            "assessment_id": "R14-ASSOC-017",
+            "evidence_ids": [
+              "R14-EVID-017-01",
+              "R14-EVID-017-02",
+              "R14-EVID-017-03"
+            ],
+            "source_ids": [
+              "COMP-SRC-006",
+              "COMP-SRC-007",
+              "COMP-SRC-008"
+            ],
+            "source_urls": [
+              "https://academic.oup.com/jiplp/article/20/2/71/7916754",
+              "https://www.cambridge.org/core/journals/enterprise-and-society/article/from-the-margins-to-the-core-of-haute-couture-the-entrepreneurial-journey-of-coco-chanel/2EB663E94E9C67F6CB3B9CF962242FAD",
+              "https://www.sciencedirect.com/science/article/pii/S0148296323003041"
+            ]
+          }
+        ],
+        "schema_version": "bounded-semantic-image-v1",
+        "semantic_core": {
+          "admitted_association_ids": [
+            "R14-ASSOC-017"
+          ],
+          "association_states": [
+            {
+              "assessment_id": "R14-ASSOC-017",
+              "reason_code": "QUALIFIED_WITHIN_TOPOLOGY_BOUND",
+              "state": "ADMITTED"
+            }
+          ],
+          "evidence_gap_node_ids": [],
+          "neighbourhood_depth": 2,
+          "node_ids": [
+            "imitation",
+            "piracy"
+          ],
+          "qualified_association_ids": [
+            "R14-ASSOC-017"
+          ],
+          "seed_node_ids": [
+            "imitation"
+          ],
+          "semantic_image_id": "R15-IMAGE-R16-COMP-MEDIUM-02",
+          "semantic_version": "bounded-semantic-image-v1",
+          "split_components": [
+            [
+              "imitation",
+              "piracy"
+            ]
+          ],
+          "topology_candidates": [
+            "LINEAR_PATH"
+          ],
+          "topology_type": "LINEAR_PATH"
+        },
+        "semantic_core_hash": "4ee1d01cd027ba03092007b273fe8c9d539912af1f190a792b5488a0c203d586"
+      },
+      "seed_labels": [
+        "imitation"
+      ],
+      "seed_node_ids": [
+        "TRV:f921321aaedb0bb53398796772f843dc4a5963edfba778ee3a6bd9f592e21795"
+      ],
+      "semantic_hash": "4ee1d01cd027ba03092007b273fe8c9d539912af1f190a792b5488a0c203d586",
+      "topology_type": "LINEAR_PATH"
+    }
+  ],
+  "database_snapshot_id": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+  "default_focus": "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea",
+  "map": {
+    "archive_object_references": [
+      {
+        "folder_id": "FOL-MEDIUM-PHOTOMONTAGE",
+        "folder_title": "Photomontage",
+        "surface_id": "SURF-HISTORICALAICTRACE2026V1R0138",
+        "title": "Arkhitektura sovremennogo Zapada (Western Architecture Today)"
+      },
+      {
+        "folder_id": "FOL-MEDIUM-PHOTOMONTAGE",
+        "folder_title": "Photomontage",
+        "surface_id": "SURF-HISTORICALAICTRACE2026V1R0139",
+        "title": "SSSR stroit sotsializm (USSR Builds Socialism)"
+      },
+      {
+        "folder_id": "FOL-MEDIUM-PHOTOMONTAGE",
+        "folder_title": "Photomontage",
+        "surface_id": "SURF-HISTORICALAICTRACE2026V1R0149",
+        "title": "Delft Kabels / N.V. Nederlandsche Kabelfabriek (Delft Cables/ Dutch Cable Factory)"
+      },
+      {
+        "folder_id": "FOL-MEDIUM-ADVERTISEMENT",
+        "folder_title": "Advertisement",
+        "surface_id": "SURF-ER1830R008",
+        "title": "Gardner's photographic advertising card"
+      },
+      {
+        "folder_id": "FOL-MEDIUM-ADVERTISEMENT",
+        "folder_title": "Advertisement",
+        "surface_id": "SURF-ER1830R070",
+        "title": "A cobbler who doesn't wear shoes. This hole in the wall is a typical cobbler's shop at Skoplje, Serbia. His own shoeless feet wouldn't be considered a very good advertisement for his trade in America. But he has all the trade that he can take care of as leather is mighty scarce. He didn't mind because the American Red Cross brought several thousand pairs of shoes into the Balkans for distribution to the needy. He says, he realizes the soles will wear out sometime and that means more trade for him"
+      },
+      {
+        "folder_id": "FOL-MEDIUM-ADVERTISEMENT",
+        "folder_title": "Advertisement",
+        "surface_id": "SURF-HISTORICALAICTRACE2026V1R0052",
+        "title": "Advertising brochure: An Ancient Medium in a Modern Rendering"
+      },
+      {
+        "folder_id": "FOL-MEDIUM-ADVERTISEMENT",
+        "folder_title": "Advertisement",
+        "surface_id": "SURF-HISTORICALAICTRACE2026V1R0143",
+        "title": "Fotografie v reklame a Neubertuv hlubotisk (Photography in Advertising and Neubert’s Heliogravure)"
+      },
+      {
+        "folder_id": "FOL-MEDIUM-PUBLICATION-DESIGN",
+        "folder_title": "Publication design",
+        "surface_id": "SURF-CONTEMPORARYAICTRACE2026V1R0002",
+        "title": "Graphic design in the Netherlands"
+      },
+      {
+        "folder_id": "FOL-MEDIUM-PUBLICATION-DESIGN",
+        "folder_title": "Publication design",
+        "surface_id": "SURF-CONTEMPORARYAICTRACE2026V1R0005",
+        "title": "Geoffrey Beene: A Design Tribute"
+      },
+      {
+        "folder_id": "FOL-MEDIUM-PUBLICATION-DESIGN",
+        "folder_title": "Publication design",
+        "surface_id": "SURF-CONTEMPORARYAICTRACE2026V1R0008",
+        "title": "Waterweavers: A Chronicle of Rivers"
+      },
+      {
+        "folder_id": "FOL-MEDIUM-PUBLICATION-DESIGN",
+        "folder_title": "Publication design",
+        "surface_id": "SURF-CONTEMPORARYAICTRACE2026V1R0014",
+        "title": "Interlace, Woven Research"
+      }
+    ],
+    "association_ids": [
+      "R14-ASSOC-017",
+      "R14-ASSOC-018"
+    ],
+    "category_id": "medium",
+    "composition_ids": [
+      "R16-COMP-MEDIUM-01",
+      "R16-COMP-MEDIUM-02"
+    ],
+    "context_references": [
+      "CTXA:18dc81ae3b012ba9ae9e736fd4ba23d06b03444d8695f22894216934d0c5ce98",
+      "CTXA:2af78334fc7ab1ab2ad72ff8020dd8b8b183a487e397cd3511fe614beea87ab0",
+      "CTXA:2faab1cfe60da07788a030b932b5db415898b964bdb9df0b5ce1194eb93fbcd5",
+      "CTXA:3b460365840c419fa2cf1354913d9dbf1f430dab52e28cf530d157a7e2ca6e36",
+      "CTXA:4376ad0266936fc44869193b6bb53d41aa0af339af72c282442273b6c3dbcb12",
+      "CTXA:46247ca845feff299443be455ed283552269be2760fc3e197e2591f0a7b66b7c",
+      "CTXA:4ce2644f96f6c02ed858a090435b42dd2bdd9e2ca0d57b01d74ba3f794d6ff2e",
+      "CTXA:59d7e4054f4909d572e4e3a82b3b942515ac104919ac34c474e2603e93daf23c",
+      "CTXA:5afe456295b33e7ec968db55c6a9b6ab8db8f5129cafa6ea54f5699a07339630",
+      "CTXA:5e80f1fe452f7b44cede3ed55b12a93d48ba85a2ccd654f5c5125b7a802ac34a",
+      "CTXA:840b42bf336f733b6937b5f896ae087ae09c4402ac08a6caab4f2d4f7877a805",
+      "CTXA:8a59aca5979bb8c39faf2583f02b0e084b5a9d0bc57a1c00f4c92a67686157be",
+      "CTXA:a80efc23de898436a5909008e3c10fba8eeb03234dbabb549d63786a2be15fd1",
+      "CTXA:ae751e852ae3f156ca8f771b1cbd5a2d2ae9adcfe100d42b1cb4d0ccbe9e23f2",
+      "CTXA:b326d097ca55d455711bf02b9b9efc04ac5d46472623a51355cc862ed53adcf9",
+      "CTXA:b3e50708b0e34dd6b1337e4f7b0a177a9a406bd367eb88ed18bb9709e5b104a9",
+      "CTXA:bf49feab637ac96460bcecb643696b291010f3e54bd850a28444e9689114bc87",
+      "CTXA:c29f215dd65480e09ad2c2671ba0a5d6910d385f9177d629164b1819dde5e235",
+      "CTXA:de5a443646532d2885b71cb7003f99680adbc82649e9d0ec0d7c109675291892",
+      "CTXA:e56da13a90a74e380a5452fe902adaee36869ebceb82bc78f5c85eb33e8018aa",
+      "CTXA:fba270655397bab26995c8a90e47d5f5c54249a56f24b624fdb266f20bacc1e7",
+      "CTXA:fc267c456068dc9639ee6133d2f81ddd1c56aa5f54cb3e765609ebc077850c27"
+    ],
+    "default_composition_id": "R16-COMP-MEDIUM-01",
+    "default_focus": "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea",
+    "initial_state_id": "TRSTATE:af911b90dd7b8025e9bb5c94a3d0b679612bd0012e3f1469a7d07f1890a39a16",
+    "map_id": "TRMAP:bfa41a08345a0f339881e36ffea12f7cf2005e15953386e943c4571b188c3921",
+    "map_regions": [
+      {
+        "association_ids": [
+          "R14-ASSOC-018"
+        ],
+        "category_id": "medium",
+        "composition_ids": [
+          "R16-COMP-MEDIUM-01"
+        ],
+        "context_refs": [
+          "CTXA:18dc81ae3b012ba9ae9e736fd4ba23d06b03444d8695f22894216934d0c5ce98",
+          "CTXA:2af78334fc7ab1ab2ad72ff8020dd8b8b183a487e397cd3511fe614beea87ab0",
+          "CTXA:2faab1cfe60da07788a030b932b5db415898b964bdb9df0b5ce1194eb93fbcd5",
+          "CTXA:3b460365840c419fa2cf1354913d9dbf1f430dab52e28cf530d157a7e2ca6e36",
+          "CTXA:4376ad0266936fc44869193b6bb53d41aa0af339af72c282442273b6c3dbcb12",
+          "CTXA:46247ca845feff299443be455ed283552269be2760fc3e197e2591f0a7b66b7c",
+          "CTXA:4ce2644f96f6c02ed858a090435b42dd2bdd9e2ca0d57b01d74ba3f794d6ff2e",
+          "CTXA:59d7e4054f4909d572e4e3a82b3b942515ac104919ac34c474e2603e93daf23c",
+          "CTXA:5afe456295b33e7ec968db55c6a9b6ab8db8f5129cafa6ea54f5699a07339630",
+          "CTXA:5e80f1fe452f7b44cede3ed55b12a93d48ba85a2ccd654f5c5125b7a802ac34a",
+          "CTXA:840b42bf336f733b6937b5f896ae087ae09c4402ac08a6caab4f2d4f7877a805",
+          "CTXA:8a59aca5979bb8c39faf2583f02b0e084b5a9d0bc57a1c00f4c92a67686157be",
+          "CTXA:a80efc23de898436a5909008e3c10fba8eeb03234dbabb549d63786a2be15fd1",
+          "CTXA:ae751e852ae3f156ca8f771b1cbd5a2d2ae9adcfe100d42b1cb4d0ccbe9e23f2",
+          "CTXA:b326d097ca55d455711bf02b9b9efc04ac5d46472623a51355cc862ed53adcf9",
+          "CTXA:b3e50708b0e34dd6b1337e4f7b0a177a9a406bd367eb88ed18bb9709e5b104a9",
+          "CTXA:bf49feab637ac96460bcecb643696b291010f3e54bd850a28444e9689114bc87",
+          "CTXA:c29f215dd65480e09ad2c2671ba0a5d6910d385f9177d629164b1819dde5e235",
+          "CTXA:de5a443646532d2885b71cb7003f99680adbc82649e9d0ec0d7c109675291892",
+          "CTXA:e56da13a90a74e380a5452fe902adaee36869ebceb82bc78f5c85eb33e8018aa",
+          "CTXA:fba270655397bab26995c8a90e47d5f5c54249a56f24b624fdb266f20bacc1e7",
+          "CTXA:fc267c456068dc9639ee6133d2f81ddd1c56aa5f54cb3e765609ebc077850c27"
+        ],
+        "entry_node_ids": [
+          "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea"
+        ],
+        "focusable_node_ids": [
+          "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea",
+          "TRV:48047b49b975ee8880742ea2544b30e8965f1675df787e9d832f8e0c2db87630"
+        ],
+        "node_ids": [
+          "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea",
+          "TRV:48047b49b975ee8880742ea2544b30e8965f1675df787e9d832f8e0c2db87630"
+        ],
+        "region_id": "TRREG:a8df5ccb4e9853f1580e5819b29b0bdb63a27eecfc93e04bb95fbd8ebbd14f78",
+        "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+        "spacetime_refs": [
+          "SPTGEO:48f4e0fe74ed341a1562a77b83d9144c45eceeed26cc56fb8a817da6e011f0e8",
+          "SPTGEO:66dd7e66b366720473e2381bd7c1625ba538cbba873b4cc7ef790c03a91373b4",
+          "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+          "SPTGEO:a292e840b9faecf0fd352f675b1b98e6e0fcb9f3a56e47792ebbe7dd4a0cea61"
+        ],
+        "stable_order": 0
+      },
+      {
+        "association_ids": [
+          "R14-ASSOC-017"
+        ],
+        "category_id": "medium",
+        "composition_ids": [
+          "R16-COMP-MEDIUM-02"
+        ],
+        "context_refs": [
+          "CTXA:18dc81ae3b012ba9ae9e736fd4ba23d06b03444d8695f22894216934d0c5ce98",
+          "CTXA:2af78334fc7ab1ab2ad72ff8020dd8b8b183a487e397cd3511fe614beea87ab0",
+          "CTXA:2faab1cfe60da07788a030b932b5db415898b964bdb9df0b5ce1194eb93fbcd5",
+          "CTXA:3b460365840c419fa2cf1354913d9dbf1f430dab52e28cf530d157a7e2ca6e36",
+          "CTXA:4376ad0266936fc44869193b6bb53d41aa0af339af72c282442273b6c3dbcb12",
+          "CTXA:46247ca845feff299443be455ed283552269be2760fc3e197e2591f0a7b66b7c",
+          "CTXA:4ce2644f96f6c02ed858a090435b42dd2bdd9e2ca0d57b01d74ba3f794d6ff2e",
+          "CTXA:59d7e4054f4909d572e4e3a82b3b942515ac104919ac34c474e2603e93daf23c",
+          "CTXA:5afe456295b33e7ec968db55c6a9b6ab8db8f5129cafa6ea54f5699a07339630",
+          "CTXA:5e80f1fe452f7b44cede3ed55b12a93d48ba85a2ccd654f5c5125b7a802ac34a",
+          "CTXA:840b42bf336f733b6937b5f896ae087ae09c4402ac08a6caab4f2d4f7877a805",
+          "CTXA:8a59aca5979bb8c39faf2583f02b0e084b5a9d0bc57a1c00f4c92a67686157be",
+          "CTXA:a80efc23de898436a5909008e3c10fba8eeb03234dbabb549d63786a2be15fd1",
+          "CTXA:ae751e852ae3f156ca8f771b1cbd5a2d2ae9adcfe100d42b1cb4d0ccbe9e23f2",
+          "CTXA:b326d097ca55d455711bf02b9b9efc04ac5d46472623a51355cc862ed53adcf9",
+          "CTXA:b3e50708b0e34dd6b1337e4f7b0a177a9a406bd367eb88ed18bb9709e5b104a9",
+          "CTXA:bf49feab637ac96460bcecb643696b291010f3e54bd850a28444e9689114bc87",
+          "CTXA:c29f215dd65480e09ad2c2671ba0a5d6910d385f9177d629164b1819dde5e235",
+          "CTXA:de5a443646532d2885b71cb7003f99680adbc82649e9d0ec0d7c109675291892",
+          "CTXA:e56da13a90a74e380a5452fe902adaee36869ebceb82bc78f5c85eb33e8018aa",
+          "CTXA:fba270655397bab26995c8a90e47d5f5c54249a56f24b624fdb266f20bacc1e7",
+          "CTXA:fc267c456068dc9639ee6133d2f81ddd1c56aa5f54cb3e765609ebc077850c27"
+        ],
+        "entry_node_ids": [
+          "TRV:f921321aaedb0bb53398796772f843dc4a5963edfba778ee3a6bd9f592e21795"
+        ],
+        "focusable_node_ids": [
+          "TRV:c460d6a56db8d84e6ee3a5c96c4a72ce1170116cab3ad0659544494547ecae77",
+          "TRV:f921321aaedb0bb53398796772f843dc4a5963edfba778ee3a6bd9f592e21795"
+        ],
+        "node_ids": [
+          "TRV:f921321aaedb0bb53398796772f843dc4a5963edfba778ee3a6bd9f592e21795",
+          "TRV:c460d6a56db8d84e6ee3a5c96c4a72ce1170116cab3ad0659544494547ecae77"
+        ],
+        "region_id": "TRREG:a5b8c34205499300db0b04cd5fa7f4746fa91b56d52ee424054797dc5ba783db",
+        "semantic_hash": "4ee1d01cd027ba03092007b273fe8c9d539912af1f190a792b5488a0c203d586",
+        "spacetime_refs": [
+          "SPTGEO:48f4e0fe74ed341a1562a77b83d9144c45eceeed26cc56fb8a817da6e011f0e8",
+          "SPTGEO:66dd7e66b366720473e2381bd7c1625ba538cbba873b4cc7ef790c03a91373b4",
+          "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+          "SPTGEO:a292e840b9faecf0fd352f675b1b98e6e0fcb9f3a56e47792ebbe7dd4a0cea61"
+        ],
+        "stable_order": 1
+      }
+    ],
+    "map_summary": "Medium / format map with 2 evidence-bounded regions and 4 active terms.",
+    "node_ids": [
+      "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea",
+      "TRV:48047b49b975ee8880742ea2544b30e8965f1675df787e9d832f8e0c2db87630",
+      "TRV:c460d6a56db8d84e6ee3a5c96c4a72ce1170116cab3ad0659544494547ecae77",
+      "TRV:f921321aaedb0bb53398796772f843dc4a5963edfba778ee3a6bd9f592e21795"
+    ],
+    "semantic_hash": "befb477ca66026e7b99861e2081b48c7269c0816dd81b1af96998de347e2cd17",
+    "spacetime_references": [
+      "SPTGEO:48f4e0fe74ed341a1562a77b83d9144c45eceeed26cc56fb8a817da6e011f0e8",
+      "SPTGEO:66dd7e66b366720473e2381bd7c1625ba538cbba873b4cc7ef790c03a91373b4",
+      "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+      "SPTGEO:a292e840b9faecf0fd352f675b1b98e6e0fcb9f3a56e47792ebbe7dd4a0cea61"
+    ]
+  },
+  "nodes": [
+    {
+      "academic_support": [
+        {
+          "authors": "Gino Cattani;Mariachiara Colucci;Simone Ferriani",
+          "doi_or_identifier": "10.1017/eso.2021.58",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-006",
+          "stable_url": "https://www.cambridge.org/core/journals/enterprise-and-society/article/from-the-margins-to-the-core-of-haute-couture-the-entrepreneurial-journey-of-coco-chanel/2EB663E94E9C67F6CB3B9CF962242FAD",
+          "support_scope": "",
+          "title": "From the Margins to the Core of Haute Couture: The Entrepreneurial Journey of Coco Chanel",
+          "venue": "Enterprise & Society 24.2",
+          "year": "2023"
+        },
+        {
+          "authors": "Alice Wickens",
+          "doi_or_identifier": "10.1093/jiplp/jpae107",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-007",
+          "stable_url": "https://academic.oup.com/jiplp/article/20/2/71/7916754",
+          "support_scope": "",
+          "title": "From Calico to Catwalk: Addressing the UK's Enduring Issue of Fashion Piracy",
+          "venue": "Journal of Intellectual Property Law & Practice 20.2",
+          "year": "2025"
+        },
+        {
+          "authors": "Areti T. Vogel;Jacob Vogel;Kittichai Watchravesringkan;Sasikarn Chatvijit Cook;James Beasley;Randall Croom;Dale Peterson;Joshua Finkelstein",
+          "doi_or_identifier": "10.1016/j.jbusres.2023.113946",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-008",
+          "stable_url": "https://www.sciencedirect.com/science/article/pii/S0148296323003041",
+          "support_scope": "",
+          "title": "Design Piracy: An Interdisciplinary Investigation into Competitive Industrial Behavior",
+          "venue": "Journal of Business Research 164",
+          "year": "2023"
+        }
+      ],
+      "academic_support_refs": [
+        "COMP-SRC-006",
+        "COMP-SRC-007",
+        "COMP-SRC-008"
+      ],
+      "activation_status": "ACTIVE_USER_VISIBLE",
+      "ambiguity_note": "Interpret within the cited historical scope and source record; no universal definition is implied.",
+      "archive_object_refs": [],
+      "attested_form": "imitation",
+      "attested_forms": [
+        "imitation"
+      ],
+      "canonical_label": "imitation",
+      "context_refs": [],
+      "first_or_relevant_attested_date": 2023,
+      "language": "en",
+      "normalised_form": "imitation",
+      "provenance_chain_complete": true,
+      "scope_note": "Evidence-bounded historical or design-historical vocabulary; its visibility does not assert a typed relation.",
+      "source_attestation_refs": [
+        "R14-EVID-017-01",
+        "R14-EVID-017-03"
+      ],
+      "source_attestations": [
+        {
+          "attestation_ref": "R14-EVID-017-01",
+          "attested_form": "imitation",
+          "creator": "Gino Cattani;Mariachiara Colucci;Simone Ferriani",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "p.573 and note 164",
+          "source_id": "COMP-SRC-006",
+          "stable_url": "https://www.cambridge.org/core/journals/enterprise-and-society/article/from-the-margins-to-the-core-of-haute-couture-the-entrepreneurial-journey-of-coco-chanel/2EB663E94E9C67F6CB3B9CF962242FAD",
+          "title": "From the Margins to the Core of Haute Couture: The Entrepreneurial Journey of Coco Chanel",
+          "year": "2023"
+        },
+        {
+          "attestation_ref": "R14-EVID-017-03",
+          "attested_form": "imitation",
+          "creator": "Areti T. Vogel;Jacob Vogel;Kittichai Watchravesringkan;Sasikarn Chatvijit Cook;James Beasley;Randall Croom;Dale Peterson;Joshua Finkelstein",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "abstract; Actors of Design Piracy",
+          "source_id": "COMP-SRC-008",
+          "stable_url": "https://www.sciencedirect.com/science/article/pii/S0148296323003041",
+          "title": "Design Piracy: An Interdisciplinary Investigation into Competitive Industrial Behavior",
+          "year": "2023"
+        }
+      ],
+      "spacetime_refs": [],
+      "vocabulary_id": "TRV:f921321aaedb0bb53398796772f843dc4a5963edfba778ee3a6bd9f592e21795"
+    },
+    {
+      "academic_support": [
+        {
+          "authors": "Cristina Cuevas-Wolf",
+          "doi_or_identifier": "10.1080/03087298.2026.2664030",
+          "peer_reviewed": true,
+          "source_id": "R16-SRC-001",
+          "stable_url": "https://doi.org/10.1080/03087298.2026.2664030",
+          "support_scope": "Academic history of photographic montage in a graphic designer's practice; vocabulary support only.",
+          "title": "John Heartfield Un/Masked: Montage as Collective Photographic and Social Practice",
+          "venue": "History of Photography",
+          "year": "2026"
+        }
+      ],
+      "academic_support_refs": [
+        "R16-SRC-001"
+      ],
+      "activation_status": "ACTIVE_USER_VISIBLE",
+      "ambiguity_note": "Interpret within the cited historical scope and source record; no universal definition is implied.",
+      "archive_object_refs": [
+        {
+          "surface_id": "SURF-CHWCONTEMP2026V1R0002",
+          "title": "\"Subjective Archives: an Installation,\" SF Camerawork, a Center for Photography and Related Media, San Francisco"
+        },
+        {
+          "surface_id": "SURF-CHWCONTEMP2026V1R0003",
+          "title": "\"The Next Generation: Student Work from the United States\" Competition, 2AES, Art and Exhibition Space, San Francisco"
+        },
+        {
+          "surface_id": "SURF-CHWCONTEMP2026V1R0042",
+          "title": "Poster for Open House and"
+        },
+        {
+          "surface_id": "SURF-CHWCONTEMP2026V1R0078",
+          "title": "Levi's, The Strongest Thread"
+        },
+        {
+          "surface_id": "SURF-CONTEMPORARYAICTRACE2026V1R0001",
+          "title": "Emigre, Issue No. 26, “All Fired Up,” Tattoo Art, Manraygun"
+        }
+      ],
+      "attested_form": "photography",
+      "attested_forms": [
+        "photography"
+      ],
+      "canonical_label": "photography",
+      "context_refs": [
+        "CTXA:13f52559b3895460a0d6dcfd5f0067bbc833bc4058d036914c39fa2e821f7aac",
+        "CTXA:1945b339ea7e483e009789695e012236fc1e32fabfc7cedb2c2381c804ee2459",
+        "CTXA:244ac6729df6ffe1135e095871cb42c632dd58822eb7ae6fee66aa2458f50908",
+        "CTXA:2a15b18da226cec0055025cc2850c95fd2d809e594a3f04e157a56e725396335",
+        "CTXA:39debac2c09f5f65aa3bc398e7e025f4e361b9889335fa6bd385bc7c87acd3a9",
+        "CTXA:83f742c491b3a4f7d12328ebbe85bb55876dfbae3b9dba2b7ca71054445e2e1c",
+        "CTXA:86daed344d2f064e47756bdf14d492f0a7d2bb58837c0514d50da8849889a569",
+        "CTXA:b5d63be3f7eab14dae1bf1f38ad1b2b427bc9fceb5e0cd38795cee73c797e183",
+        "CTXA:c2c4c7fff2573e382af84688e2e18cf89617c6286ecf574341bb968d8db5a9ed",
+        "CTXA:c8f4fa66b9f621ee8ddbe45997a5a59b288de7188ec53f4feacde1ae08ed6e6a"
+      ],
+      "first_or_relevant_attested_date": 1991,
+      "language": "en",
+      "normalised_form": "photography",
+      "provenance_chain_complete": true,
+      "scope_note": "Evidence-bounded historical or design-historical vocabulary; its visibility does not assert a typed relation.",
+      "source_attestation_refs": [
+        "R14-EVID-018-01"
+      ],
+      "source_attestations": [
+        {
+          "attestation_ref": "R14-EVID-018-01",
+          "attested_form": "photography",
+          "creator": "The Museum of Modern Art",
+          "evidence_channel": "ARCHIVE_SOURCE",
+          "locator": "Exhibition description",
+          "source_id": "R14-ARC-002",
+          "stable_url": "https://www.moma.org/calendar/exhibitions/340",
+          "title": "The Graphic Designs of Herbert Matter",
+          "year": "1991"
+        }
+      ],
+      "spacetime_refs": [
+        "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275"
+      ],
+      "vocabulary_id": "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea"
+    },
+    {
+      "academic_support": [
+        {
+          "authors": "Gino Cattani;Mariachiara Colucci;Simone Ferriani",
+          "doi_or_identifier": "10.1017/eso.2021.58",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-006",
+          "stable_url": "https://www.cambridge.org/core/journals/enterprise-and-society/article/from-the-margins-to-the-core-of-haute-couture-the-entrepreneurial-journey-of-coco-chanel/2EB663E94E9C67F6CB3B9CF962242FAD",
+          "support_scope": "",
+          "title": "From the Margins to the Core of Haute Couture: The Entrepreneurial Journey of Coco Chanel",
+          "venue": "Enterprise & Society 24.2",
+          "year": "2023"
+        },
+        {
+          "authors": "Alice Wickens",
+          "doi_or_identifier": "10.1093/jiplp/jpae107",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-007",
+          "stable_url": "https://academic.oup.com/jiplp/article/20/2/71/7916754",
+          "support_scope": "",
+          "title": "From Calico to Catwalk: Addressing the UK's Enduring Issue of Fashion Piracy",
+          "venue": "Journal of Intellectual Property Law & Practice 20.2",
+          "year": "2025"
+        },
+        {
+          "authors": "Areti T. Vogel;Jacob Vogel;Kittichai Watchravesringkan;Sasikarn Chatvijit Cook;James Beasley;Randall Croom;Dale Peterson;Joshua Finkelstein",
+          "doi_or_identifier": "10.1016/j.jbusres.2023.113946",
+          "peer_reviewed": true,
+          "source_id": "COMP-SRC-008",
+          "stable_url": "https://www.sciencedirect.com/science/article/pii/S0148296323003041",
+          "support_scope": "",
+          "title": "Design Piracy: An Interdisciplinary Investigation into Competitive Industrial Behavior",
+          "venue": "Journal of Business Research 164",
+          "year": "2023"
+        }
+      ],
+      "academic_support_refs": [
+        "COMP-SRC-006",
+        "COMP-SRC-007",
+        "COMP-SRC-008"
+      ],
+      "activation_status": "ACTIVE_USER_VISIBLE",
+      "ambiguity_note": "Interpret within the cited historical scope and source record; no universal definition is implied.",
+      "archive_object_refs": [],
+      "attested_form": "piracy",
+      "attested_forms": [
+        "piracy"
+      ],
+      "canonical_label": "piracy",
+      "context_refs": [],
+      "first_or_relevant_attested_date": 2023,
+      "language": "en",
+      "normalised_form": "piracy",
+      "provenance_chain_complete": true,
+      "scope_note": "Evidence-bounded historical or design-historical vocabulary; its visibility does not assert a typed relation.",
+      "source_attestation_refs": [
+        "R14-EVID-017-01",
+        "R14-EVID-017-02",
+        "R14-EVID-017-03"
+      ],
+      "source_attestations": [
+        {
+          "attestation_ref": "R14-EVID-017-01",
+          "attested_form": "piracy",
+          "creator": "Gino Cattani;Mariachiara Colucci;Simone Ferriani",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "p.573 and note 164",
+          "source_id": "COMP-SRC-006",
+          "stable_url": "https://www.cambridge.org/core/journals/enterprise-and-society/article/from-the-margins-to-the-core-of-haute-couture-the-entrepreneurial-journey-of-coco-chanel/2EB663E94E9C67F6CB3B9CF962242FAD",
+          "title": "From the Margins to the Core of Haute Couture: The Entrepreneurial Journey of Coco Chanel",
+          "year": "2023"
+        },
+        {
+          "attestation_ref": "R14-EVID-017-02",
+          "attested_form": "piracy",
+          "creator": "Alice Wickens",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "pp.71–77; section 3",
+          "source_id": "COMP-SRC-007",
+          "stable_url": "https://academic.oup.com/jiplp/article/20/2/71/7916754",
+          "title": "From Calico to Catwalk: Addressing the UK's Enduring Issue of Fashion Piracy",
+          "year": "2025"
+        },
+        {
+          "attestation_ref": "R14-EVID-017-03",
+          "attested_form": "piracy",
+          "creator": "Areti T. Vogel;Jacob Vogel;Kittichai Watchravesringkan;Sasikarn Chatvijit Cook;James Beasley;Randall Croom;Dale Peterson;Joshua Finkelstein",
+          "evidence_channel": "EXTERNAL_SCHOLARSHIP",
+          "locator": "abstract; Actors of Design Piracy",
+          "source_id": "COMP-SRC-008",
+          "stable_url": "https://www.sciencedirect.com/science/article/pii/S0148296323003041",
+          "title": "Design Piracy: An Interdisciplinary Investigation into Competitive Industrial Behavior",
+          "year": "2023"
+        }
+      ],
+      "spacetime_refs": [],
+      "vocabulary_id": "TRV:c460d6a56db8d84e6ee3a5c96c4a72ce1170116cab3ad0659544494547ecae77"
+    },
+    {
+      "academic_support": [
+        {
+          "authors": "Priscila L. Farias;Jeremy Aynsley",
+          "doi_or_identifier": "10.1093/jdh/epab030",
+          "peer_reviewed": true,
+          "source_id": "R16-SRC-002",
+          "stable_url": "https://doi.org/10.1093/jdh/epab030",
+          "support_scope": "Design-history review of typography research; vocabulary support only.",
+          "title": "Typographic Histories: Three Decades of Research",
+          "venue": "Journal of Design History",
+          "year": "2021"
+        }
+      ],
+      "academic_support_refs": [
+        "R16-SRC-002"
+      ],
+      "activation_status": "ACTIVE_USER_VISIBLE",
+      "ambiguity_note": "Interpret within the cited historical scope and source record; no universal definition is implied.",
+      "archive_object_refs": [
+        {
+          "surface_id": "SURF-CHWCONTEMP2026V1R0014",
+          "title": "Deja Vu"
+        },
+        {
+          "surface_id": "SURF-CHWCONTEMP2026V1R0080",
+          "title": "David Bowie 1976-84"
+        },
+        {
+          "surface_id": "SURF-HISTORICALAICTRACE2026V1R0144",
+          "title": "Moderní architektura v československu (MSA 2 Modern architecture in Czechoslovakia)"
+        },
+        {
+          "surface_id": "SURF-HISTORICALAICTRACE2026V1R0161",
+          "title": "Momentum Exhibition Catalogue"
+        },
+        {
+          "surface_id": "SURF-HISTORICALAICTRACE2026V1R0177",
+          "title": "Cover Design (That One Mistake)"
+        }
+      ],
+      "attested_form": "typography",
+      "attested_forms": [
+        "typography"
+      ],
+      "canonical_label": "typography",
+      "context_refs": [
+        "CTXA:0954960fd54da6c7d9fe65a51a8931f8e86606e0f7776df192f9f684b3c7b2db",
+        "CTXA:0e1e47f90a0f675bad53a3ce071aed9f626a80297766cda3307ef8c2e475a8cf",
+        "CTXA:32aca9a5cc97a376b53441f6c8518c690858f08e6d4e8670c5030c82da7964c3",
+        "CTXA:3e251497ec39fd8413141354d0e559401b6b345964067fec573e235f0ab6548e",
+        "CTXA:45754955b44f48c30264dd97678373214a8a10e8a2131dea4bda43ce6b8a50fa",
+        "CTXA:5027fc34f5c0088347a8a99bbd1e6feaf19edda3dca008e79085cfc0f3e3c8e6",
+        "CTXA:517d43e785c71ed9db1c996f414f10f2b6d30de688c650d958f24ffb92a2569d",
+        "CTXA:8010b841ef6a6264228e4dbf62c8547cebe75cf0eec9efd0aab37097967f344e",
+        "CTXA:8d00cc92541ac45ca467555abeb8df2388906f0850f231b755e88b75c7e516ce",
+        "CTXA:9ee7cacadbf7cd7a3db24f3dc87b4eb002c516a711b88bbbbb411001fe5da346",
+        "CTXA:a8237f6918d3fb3808de70a2f5d15dea99ecde23d453be413dcdd15e72973f58"
+      ],
+      "first_or_relevant_attested_date": 1991,
+      "language": "en",
+      "normalised_form": "typography",
+      "provenance_chain_complete": true,
+      "scope_note": "Evidence-bounded historical or design-historical vocabulary; its visibility does not assert a typed relation.",
+      "source_attestation_refs": [
+        "R14-EVID-018-01"
+      ],
+      "source_attestations": [
+        {
+          "attestation_ref": "R14-EVID-018-01",
+          "attested_form": "typography",
+          "creator": "The Museum of Modern Art",
+          "evidence_channel": "ARCHIVE_SOURCE",
+          "locator": "Exhibition description",
+          "source_id": "R14-ARC-002",
+          "stable_url": "https://www.moma.org/calendar/exhibitions/340",
+          "title": "The Graphic Designs of Herbert Matter",
+          "year": "1991"
+        }
+      ],
+      "spacetime_refs": [
+        "SPTGEO:2be2877e2336a0a4f23ab56680dde82cfe5e78893dd6944558a26f169313f532",
+        "SPTGEO:66dd7e66b366720473e2381bd7c1625ba538cbba873b4cc7ef790c03a91373b4",
+        "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275"
+      ],
+      "vocabulary_id": "TRV:48047b49b975ee8880742ea2544b30e8965f1675df787e9d832f8e0c2db87630"
+    }
+  ],
+  "plain_text_tree": {
+    "generic_association_only": true,
+    "plain_text_tree": "photography\n└── typography",
+    "plain_text_tree_ascii": "photography\n`-- typography",
+    "schema_version": "trace-plain-text-tree-v1",
+    "structural_hierarchy_is_historical_claim": false,
+    "tree_association_ids": [
+      "R14-ASSOC-018"
+    ],
+    "tree_node_ids": [
+      "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea",
+      "TRV:48047b49b975ee8880742ea2544b30e8965f1675df787e9d832f8e0c2db87630"
+    ],
+    "tree_root_node_id": "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea",
+    "tree_semantic_hash": "fcf3e4b0c9f3d6893b414f73b2c6c32e9f657c2b8a1c0263d6e93eeb8b2a8d46"
+  },
+  "provenance_summary": {
+    "archive_object_refs": [
+      {
+        "folder_id": "FOL-MEDIUM-PHOTOMONTAGE",
+        "folder_title": "Photomontage",
+        "surface_id": "SURF-HISTORICALAICTRACE2026V1R0138",
+        "title": "Arkhitektura sovremennogo Zapada (Western Architecture Today)"
+      },
+      {
+        "folder_id": "FOL-MEDIUM-PHOTOMONTAGE",
+        "folder_title": "Photomontage",
+        "surface_id": "SURF-HISTORICALAICTRACE2026V1R0139",
+        "title": "SSSR stroit sotsializm (USSR Builds Socialism)"
+      },
+      {
+        "folder_id": "FOL-MEDIUM-PHOTOMONTAGE",
+        "folder_title": "Photomontage",
+        "surface_id": "SURF-HISTORICALAICTRACE2026V1R0149",
+        "title": "Delft Kabels / N.V. Nederlandsche Kabelfabriek (Delft Cables/ Dutch Cable Factory)"
+      },
+      {
+        "folder_id": "FOL-MEDIUM-ADVERTISEMENT",
+        "folder_title": "Advertisement",
+        "surface_id": "SURF-ER1830R008",
+        "title": "Gardner's photographic advertising card"
+      },
+      {
+        "folder_id": "FOL-MEDIUM-ADVERTISEMENT",
+        "folder_title": "Advertisement",
+        "surface_id": "SURF-ER1830R070",
+        "title": "A cobbler who doesn't wear shoes. This hole in the wall is a typical cobbler's shop at Skoplje, Serbia. His own shoeless feet wouldn't be considered a very good advertisement for his trade in America. But he has all the trade that he can take care of as leather is mighty scarce. He didn't mind because the American Red Cross brought several thousand pairs of shoes into the Balkans for distribution to the needy. He says, he realizes the soles will wear out sometime and that means more trade for him"
+      },
+      {
+        "folder_id": "FOL-MEDIUM-ADVERTISEMENT",
+        "folder_title": "Advertisement",
+        "surface_id": "SURF-HISTORICALAICTRACE2026V1R0052",
+        "title": "Advertising brochure: An Ancient Medium in a Modern Rendering"
+      },
+      {
+        "folder_id": "FOL-MEDIUM-ADVERTISEMENT",
+        "folder_title": "Advertisement",
+        "surface_id": "SURF-HISTORICALAICTRACE2026V1R0143",
+        "title": "Fotografie v reklame a Neubertuv hlubotisk (Photography in Advertising and Neubert’s Heliogravure)"
+      },
+      {
+        "folder_id": "FOL-MEDIUM-PUBLICATION-DESIGN",
+        "folder_title": "Publication design",
+        "surface_id": "SURF-CONTEMPORARYAICTRACE2026V1R0002",
+        "title": "Graphic design in the Netherlands"
+      },
+      {
+        "folder_id": "FOL-MEDIUM-PUBLICATION-DESIGN",
+        "folder_title": "Publication design",
+        "surface_id": "SURF-CONTEMPORARYAICTRACE2026V1R0005",
+        "title": "Geoffrey Beene: A Design Tribute"
+      },
+      {
+        "folder_id": "FOL-MEDIUM-PUBLICATION-DESIGN",
+        "folder_title": "Publication design",
+        "surface_id": "SURF-CONTEMPORARYAICTRACE2026V1R0008",
+        "title": "Waterweavers: A Chronicle of Rivers"
+      },
+      {
+        "folder_id": "FOL-MEDIUM-PUBLICATION-DESIGN",
+        "folder_title": "Publication design",
+        "surface_id": "SURF-CONTEMPORARYAICTRACE2026V1R0014",
+        "title": "Interlace, Woven Research"
+      }
+    ],
+    "context_refs": [
+      "CTXA:18dc81ae3b012ba9ae9e736fd4ba23d06b03444d8695f22894216934d0c5ce98",
+      "CTXA:2af78334fc7ab1ab2ad72ff8020dd8b8b183a487e397cd3511fe614beea87ab0",
+      "CTXA:2faab1cfe60da07788a030b932b5db415898b964bdb9df0b5ce1194eb93fbcd5",
+      "CTXA:3b460365840c419fa2cf1354913d9dbf1f430dab52e28cf530d157a7e2ca6e36",
+      "CTXA:4376ad0266936fc44869193b6bb53d41aa0af339af72c282442273b6c3dbcb12",
+      "CTXA:46247ca845feff299443be455ed283552269be2760fc3e197e2591f0a7b66b7c",
+      "CTXA:4ce2644f96f6c02ed858a090435b42dd2bdd9e2ca0d57b01d74ba3f794d6ff2e",
+      "CTXA:59d7e4054f4909d572e4e3a82b3b942515ac104919ac34c474e2603e93daf23c",
+      "CTXA:5afe456295b33e7ec968db55c6a9b6ab8db8f5129cafa6ea54f5699a07339630",
+      "CTXA:5e80f1fe452f7b44cede3ed55b12a93d48ba85a2ccd654f5c5125b7a802ac34a",
+      "CTXA:840b42bf336f733b6937b5f896ae087ae09c4402ac08a6caab4f2d4f7877a805",
+      "CTXA:8a59aca5979bb8c39faf2583f02b0e084b5a9d0bc57a1c00f4c92a67686157be",
+      "CTXA:a80efc23de898436a5909008e3c10fba8eeb03234dbabb549d63786a2be15fd1",
+      "CTXA:ae751e852ae3f156ca8f771b1cbd5a2d2ae9adcfe100d42b1cb4d0ccbe9e23f2",
+      "CTXA:b326d097ca55d455711bf02b9b9efc04ac5d46472623a51355cc862ed53adcf9",
+      "CTXA:b3e50708b0e34dd6b1337e4f7b0a177a9a406bd367eb88ed18bb9709e5b104a9",
+      "CTXA:bf49feab637ac96460bcecb643696b291010f3e54bd850a28444e9689114bc87",
+      "CTXA:c29f215dd65480e09ad2c2671ba0a5d6910d385f9177d629164b1819dde5e235",
+      "CTXA:de5a443646532d2885b71cb7003f99680adbc82649e9d0ec0d7c109675291892",
+      "CTXA:e56da13a90a74e380a5452fe902adaee36869ebceb82bc78f5c85eb33e8018aa",
+      "CTXA:fba270655397bab26995c8a90e47d5f5c54249a56f24b624fdb266f20bacc1e7",
+      "CTXA:fc267c456068dc9639ee6133d2f81ddd1c56aa5f54cb3e765609ebc077850c27"
+    ],
+    "database_snapshot_id": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "spacetime_refs": [
+      "SPTGEO:48f4e0fe74ed341a1562a77b83d9144c45eceeed26cc56fb8a817da6e011f0e8",
+      "SPTGEO:66dd7e66b366720473e2381bd7c1625ba538cbba873b4cc7ef790c03a91373b4",
+      "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+      "SPTGEO:a292e840b9faecf0fd352f675b1b98e6e0fcb9f3a56e47792ebbe7dd4a0cea61"
+    ]
+  },
+  "regions": [
+    {
+      "association_ids": [
+        "R14-ASSOC-018"
+      ],
+      "category_id": "medium",
+      "composition_ids": [
+        "R16-COMP-MEDIUM-01"
+      ],
+      "context_refs": [
+        "CTXA:18dc81ae3b012ba9ae9e736fd4ba23d06b03444d8695f22894216934d0c5ce98",
+        "CTXA:2af78334fc7ab1ab2ad72ff8020dd8b8b183a487e397cd3511fe614beea87ab0",
+        "CTXA:2faab1cfe60da07788a030b932b5db415898b964bdb9df0b5ce1194eb93fbcd5",
+        "CTXA:3b460365840c419fa2cf1354913d9dbf1f430dab52e28cf530d157a7e2ca6e36",
+        "CTXA:4376ad0266936fc44869193b6bb53d41aa0af339af72c282442273b6c3dbcb12",
+        "CTXA:46247ca845feff299443be455ed283552269be2760fc3e197e2591f0a7b66b7c",
+        "CTXA:4ce2644f96f6c02ed858a090435b42dd2bdd9e2ca0d57b01d74ba3f794d6ff2e",
+        "CTXA:59d7e4054f4909d572e4e3a82b3b942515ac104919ac34c474e2603e93daf23c",
+        "CTXA:5afe456295b33e7ec968db55c6a9b6ab8db8f5129cafa6ea54f5699a07339630",
+        "CTXA:5e80f1fe452f7b44cede3ed55b12a93d48ba85a2ccd654f5c5125b7a802ac34a",
+        "CTXA:840b42bf336f733b6937b5f896ae087ae09c4402ac08a6caab4f2d4f7877a805",
+        "CTXA:8a59aca5979bb8c39faf2583f02b0e084b5a9d0bc57a1c00f4c92a67686157be",
+        "CTXA:a80efc23de898436a5909008e3c10fba8eeb03234dbabb549d63786a2be15fd1",
+        "CTXA:ae751e852ae3f156ca8f771b1cbd5a2d2ae9adcfe100d42b1cb4d0ccbe9e23f2",
+        "CTXA:b326d097ca55d455711bf02b9b9efc04ac5d46472623a51355cc862ed53adcf9",
+        "CTXA:b3e50708b0e34dd6b1337e4f7b0a177a9a406bd367eb88ed18bb9709e5b104a9",
+        "CTXA:bf49feab637ac96460bcecb643696b291010f3e54bd850a28444e9689114bc87",
+        "CTXA:c29f215dd65480e09ad2c2671ba0a5d6910d385f9177d629164b1819dde5e235",
+        "CTXA:de5a443646532d2885b71cb7003f99680adbc82649e9d0ec0d7c109675291892",
+        "CTXA:e56da13a90a74e380a5452fe902adaee36869ebceb82bc78f5c85eb33e8018aa",
+        "CTXA:fba270655397bab26995c8a90e47d5f5c54249a56f24b624fdb266f20bacc1e7",
+        "CTXA:fc267c456068dc9639ee6133d2f81ddd1c56aa5f54cb3e765609ebc077850c27"
+      ],
+      "entry_node_ids": [
+        "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea"
+      ],
+      "focusable_node_ids": [
+        "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea",
+        "TRV:48047b49b975ee8880742ea2544b30e8965f1675df787e9d832f8e0c2db87630"
+      ],
+      "node_ids": [
+        "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea",
+        "TRV:48047b49b975ee8880742ea2544b30e8965f1675df787e9d832f8e0c2db87630"
+      ],
+      "region_id": "TRREG:a8df5ccb4e9853f1580e5819b29b0bdb63a27eecfc93e04bb95fbd8ebbd14f78",
+      "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+      "spacetime_refs": [
+        "SPTGEO:48f4e0fe74ed341a1562a77b83d9144c45eceeed26cc56fb8a817da6e011f0e8",
+        "SPTGEO:66dd7e66b366720473e2381bd7c1625ba538cbba873b4cc7ef790c03a91373b4",
+        "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+        "SPTGEO:a292e840b9faecf0fd352f675b1b98e6e0fcb9f3a56e47792ebbe7dd4a0cea61"
+      ],
+      "stable_order": 0
+    },
+    {
+      "association_ids": [
+        "R14-ASSOC-017"
+      ],
+      "category_id": "medium",
+      "composition_ids": [
+        "R16-COMP-MEDIUM-02"
+      ],
+      "context_refs": [
+        "CTXA:18dc81ae3b012ba9ae9e736fd4ba23d06b03444d8695f22894216934d0c5ce98",
+        "CTXA:2af78334fc7ab1ab2ad72ff8020dd8b8b183a487e397cd3511fe614beea87ab0",
+        "CTXA:2faab1cfe60da07788a030b932b5db415898b964bdb9df0b5ce1194eb93fbcd5",
+        "CTXA:3b460365840c419fa2cf1354913d9dbf1f430dab52e28cf530d157a7e2ca6e36",
+        "CTXA:4376ad0266936fc44869193b6bb53d41aa0af339af72c282442273b6c3dbcb12",
+        "CTXA:46247ca845feff299443be455ed283552269be2760fc3e197e2591f0a7b66b7c",
+        "CTXA:4ce2644f96f6c02ed858a090435b42dd2bdd9e2ca0d57b01d74ba3f794d6ff2e",
+        "CTXA:59d7e4054f4909d572e4e3a82b3b942515ac104919ac34c474e2603e93daf23c",
+        "CTXA:5afe456295b33e7ec968db55c6a9b6ab8db8f5129cafa6ea54f5699a07339630",
+        "CTXA:5e80f1fe452f7b44cede3ed55b12a93d48ba85a2ccd654f5c5125b7a802ac34a",
+        "CTXA:840b42bf336f733b6937b5f896ae087ae09c4402ac08a6caab4f2d4f7877a805",
+        "CTXA:8a59aca5979bb8c39faf2583f02b0e084b5a9d0bc57a1c00f4c92a67686157be",
+        "CTXA:a80efc23de898436a5909008e3c10fba8eeb03234dbabb549d63786a2be15fd1",
+        "CTXA:ae751e852ae3f156ca8f771b1cbd5a2d2ae9adcfe100d42b1cb4d0ccbe9e23f2",
+        "CTXA:b326d097ca55d455711bf02b9b9efc04ac5d46472623a51355cc862ed53adcf9",
+        "CTXA:b3e50708b0e34dd6b1337e4f7b0a177a9a406bd367eb88ed18bb9709e5b104a9",
+        "CTXA:bf49feab637ac96460bcecb643696b291010f3e54bd850a28444e9689114bc87",
+        "CTXA:c29f215dd65480e09ad2c2671ba0a5d6910d385f9177d629164b1819dde5e235",
+        "CTXA:de5a443646532d2885b71cb7003f99680adbc82649e9d0ec0d7c109675291892",
+        "CTXA:e56da13a90a74e380a5452fe902adaee36869ebceb82bc78f5c85eb33e8018aa",
+        "CTXA:fba270655397bab26995c8a90e47d5f5c54249a56f24b624fdb266f20bacc1e7",
+        "CTXA:fc267c456068dc9639ee6133d2f81ddd1c56aa5f54cb3e765609ebc077850c27"
+      ],
+      "entry_node_ids": [
+        "TRV:f921321aaedb0bb53398796772f843dc4a5963edfba778ee3a6bd9f592e21795"
+      ],
+      "focusable_node_ids": [
+        "TRV:c460d6a56db8d84e6ee3a5c96c4a72ce1170116cab3ad0659544494547ecae77",
+        "TRV:f921321aaedb0bb53398796772f843dc4a5963edfba778ee3a6bd9f592e21795"
+      ],
+      "node_ids": [
+        "TRV:f921321aaedb0bb53398796772f843dc4a5963edfba778ee3a6bd9f592e21795",
+        "TRV:c460d6a56db8d84e6ee3a5c96c4a72ce1170116cab3ad0659544494547ecae77"
+      ],
+      "region_id": "TRREG:a5b8c34205499300db0b04cd5fa7f4746fa91b56d52ee424054797dc5ba783db",
+      "semantic_hash": "4ee1d01cd027ba03092007b273fe8c9d539912af1f190a792b5488a0c203d586",
+      "spacetime_refs": [
+        "SPTGEO:48f4e0fe74ed341a1562a77b83d9144c45eceeed26cc56fb8a817da6e011f0e8",
+        "SPTGEO:66dd7e66b366720473e2381bd7c1625ba538cbba873b4cc7ef790c03a91373b4",
+        "SPTGEO:9859d40c449b029e7a48ef3049be591b17005635749be839199ebf41b6c16275",
+        "SPTGEO:a292e840b9faecf0fd352f675b1b98e6e0fcb9f3a56e47792ebbe7dd4a0cea61"
+      ],
+      "stable_order": 1
+    }
+  ],
+  "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+  "state": {
+    "api_version": "trace-exploration/v1",
+    "available_actions": [
+      "SELECT_CATEGORY",
+      "FOCUS_NODE",
+      "EXPAND_NODE",
+      "COLLAPSE_NODE",
+      "MOVE_FOCUS",
+      "SELECT_COMPOSITION",
+      "RESET_CATEGORY",
+      "EXPORT_CURRENT_STATE"
+    ],
+    "category_id": "medium",
+    "current_region_id": "TRREG:a8df5ccb4e9853f1580e5819b29b0bdb63a27eecfc93e04bb95fbd8ebbd14f78",
+    "database_snapshot_id": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "expanded_node_ids": [
+      "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea"
+    ],
+    "exploration_state_id": "TRSTATE:af911b90dd7b8025e9bb5c94a3d0b679612bd0012e3f1469a7d07f1890a39a16",
+    "focused_node_id": "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea",
+    "map_id": "TRMAP:bfa41a08345a0f339881e36ffea12f7cf2005e15953386e943c4571b188c3921",
+    "presentation_hash": "f9f8a4c4df944a40065abf2135a045c509ab6a2691860d1bbee4e5693ecfdac8",
+    "schema_version": "trace-exploration-state-v1",
+    "selected_composition_id": "R16-COMP-MEDIUM-01",
+    "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+    "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881",
+    "visible_association_ids": [
+      "R14-ASSOC-018"
+    ],
+    "visible_node_ids": [
+      "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea",
+      "TRV:48047b49b975ee8880742ea2544b30e8965f1675df787e9d832f8e0c2db87630"
+    ]
+  },
+  "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881"
+}

@@ -63,3 +63,11 @@ The corresponding research package is `docs/research/trace-v49-exploration-assoc
 | `docs/audits/v49-exploration-composition-engine-round1` | INTERNAL_RESEARCH_COMPOSITION_AND_RENDERER_VALIDATION | Frozen Round 13/14 preservation, 25-method visual-epistemology review, all 35 Round 14 association decisions as passes or controls, 25 composition fixtures, six distinct topology contracts, semantic/presentation hash separation, metamorphic invariants, provenance completeness, visual-leakage audit, cross-runtime parity, non-public SVG snapshots, regressions, and checksum seal. |
 
 The corresponding research package is `docs/research/trace-v49-exploration-composition-engine-round1/`. It authorizes bounded internal composition and external-review preparation only. Real typed relations, public rendering, deployment, and human-review completion remain false.
+
+## TRACE Round 16 real-database Exploration audit — 2026-08-26
+
+| Package | Classification | Scope |
+|---|---|---|
+| `docs/audits/v49-exploration-real-database-round1` | FUNCTION3_BACKEND_PRODUCT_AND_WORKFLOW_VALIDATION | Frozen database/projection identity, exact four-category resolution, real public-object bindings, 26 attested and academically supported vocabulary records, all 21 qualified Round 14 associations, 11 Python-composed real structures, four maps, immutable browse transitions, OpenAPI/schema/client parity, evidence and error APIs, five real same-state tree/PNG workflows, exactly five top-level test groups, performance samples, regressions, held-data and injection boundaries, and checksum seals. |
+
+The paired research and handoff packages are `docs/research/trace-v49-exploration-real-database-round1/` and `docs/handoff/trace-v49-exploration-real-database-round1/`. The audit completes Function 3 backend readiness only. Final frontend visual design, public page integration, deployment, and external human domain review remain outside the decision.

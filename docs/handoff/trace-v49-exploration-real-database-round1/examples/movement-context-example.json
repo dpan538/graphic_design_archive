@@ -1,0 +1,132 @@
+{
+  "association_ids": [
+    "R14-ASSOC-020"
+  ],
+  "content_type": "image/png",
+  "dimensions": {
+    "height": 1620,
+    "padding": 72,
+    "width": 1080
+  },
+  "export_alt_text": "Movement context exploration card. craft; `-- education",
+  "export_id": "TREX:f3361b453517de1e03ca919c3b8fbef95280ef9bdedf20cf00a1934ff1c7e16e",
+  "export_preset": "portrait_card",
+  "map_id": "TRMAP:d113eab6ab254a0b463ae9b0d12f22f5395497c9a283c309126e1e52b44860b7",
+  "map_region": {
+    "associations": [
+      {
+        "active_for_proximity": true,
+        "association_accessible_description": "craft is available to explore with education as a qualified generic association.",
+        "association_id": "R14-ASSOC-020",
+        "confidence": "MODERATE",
+        "endpoint_labels": [
+          "craft",
+          "education"
+        ],
+        "endpoint_vocabulary_ids": [
+          "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737",
+          "TRV:68bf0109c6f8a87bfa96d1ecd9503326ba35cf4a6086988a1d2c8a20fbef00d1"
+        ],
+        "explicit_non_claims": [
+          "causation",
+          "influence",
+          "chronology",
+          "hierarchy",
+          "direction",
+          "equivalence"
+        ],
+        "generic_association_only": true,
+        "hard_negative": false,
+        "mandatory_dimension_results": {
+          "D1": 2,
+          "D5": 2,
+          "D7": 1
+        },
+        "provenance_refs": [
+          "R14-EVID-020-01"
+        ],
+        "qualification": "Supported by archive/source evidence. Independent scholarly validation pending.",
+        "qualification_version": "trace-generic-association-rubric-v1",
+        "source_refs": [
+          "R14-ARC-001"
+        ],
+        "source_urls": [
+          "https://www.bauhaus.de/de/das_bauhaus/"
+        ],
+        "strength": "STRONG",
+        "support_status": "SOURCE_SUPPORTED"
+      }
+    ],
+    "nodes": [
+      {
+        "canonical_label": "craft",
+        "node_accessible_label": "craft, evidence-supported exploration term",
+        "projection": {
+          "bounding_hint": {
+            "radius": 0.022222222222222223
+          },
+          "branch_slot": 0,
+          "group_slot": "movement",
+          "layer_slot": 0,
+          "normalised_x": 0.656944,
+          "normalised_y": 0.164815,
+          "projection_version": "trace-exploration-neutral-projection-v1"
+        },
+        "vocabulary_id": "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737"
+      },
+      {
+        "canonical_label": "education",
+        "node_accessible_label": "education, evidence-supported exploration term",
+        "projection": {
+          "bounding_hint": {
+            "radius": 0.022222222222222223
+          },
+          "branch_slot": 1,
+          "group_slot": "movement",
+          "layer_slot": 0,
+          "normalised_x": 0.340278,
+          "normalised_y": 0.840741,
+          "projection_version": "trace-exploration-neutral-projection-v1"
+        },
+        "vocabulary_id": "TRV:68bf0109c6f8a87bfa96d1ecd9503326ba35cf4a6086988a1d2c8a20fbef00d1"
+      }
+    ],
+    "projection_version": "trace-exploration-neutral-projection-v1",
+    "region_id": "TRREG:64e8d164f1d888459b74c966b6870b6f924f790b8e3a75c62aab67424dee7048"
+  },
+  "plain_text_tree": {
+    "generic_association_only": true,
+    "plain_text_tree": "craft\n└── education",
+    "plain_text_tree_ascii": "craft\n`-- education",
+    "schema_version": "trace-plain-text-tree-v1",
+    "structural_hierarchy_is_historical_claim": false,
+    "tree_association_ids": [
+      "R14-ASSOC-020"
+    ],
+    "tree_node_ids": [
+      "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737",
+      "TRV:68bf0109c6f8a87bfa96d1ecd9503326ba35cf4a6086988a1d2c8a20fbef00d1"
+    ],
+    "tree_root_node_id": "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737",
+    "tree_semantic_hash": "0689d25e28dd04526062794e6d68888e0abbb60f6de9d02389402344c72dead7"
+  },
+  "presentation_hash": "ebed40c69ba1b128ccc27f5e9f2f16d3dd049970e0cba51ad961f9434aa6464d",
+  "provenance_summary": {
+    "archive_object_reference_count": 6,
+    "context_reference_count": 18,
+    "database_snapshot_id": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "source_count": 1,
+    "spacetime_reference_count": 2
+  },
+  "render_version": "trace-exploration-portrait-png-v1",
+  "schema_version": "trace-exploration-export-manifest-v1",
+  "selected_composition_id": "R16-COMP-MOVEMENT-01",
+  "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+  "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539",
+  "suggested_filename": "trace-movement-f3361b453517.png",
+  "theme_token_set": "neutral-v1",
+  "vocabulary_ids": [
+    "TRV:355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737",
+    "TRV:68bf0109c6f8a87bfa96d1ecd9503326ba35cf4a6086988a1d2c8a20fbef00d1"
+  ]
+}

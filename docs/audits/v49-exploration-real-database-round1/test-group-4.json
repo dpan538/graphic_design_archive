@@ -1,0 +1,121 @@
+{
+  "cases": [
+    {
+      "duration_ms": 0.017,
+      "evidence": {
+        "paths": 9
+      },
+      "name": "Every documented endpoint is present in OpenAPI",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 1.723,
+      "name": "Every schema and generated example has its required fields",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 2.456,
+      "name": "Category endpoint returns exactly four categories",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.458,
+      "name": "Invalid category returns INVALID_CATEGORY",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.228,
+      "name": "Invalid vocabulary returns INVALID_VOCABULARY",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.285,
+      "name": "Invalid association returns INVALID_ASSOCIATION",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.5,
+      "name": "Invalid action returns INVALID_ACTION",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.561,
+      "name": "Unavailable action returns ACTION_NOT_AVAILABLE",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.204,
+      "name": "Stale state returns STALE_EXPLORATION_STATE",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.223,
+      "name": "Snapshot mismatch returns STATE_DATABASE_VERSION_MISMATCH",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.012,
+      "name": "Sparse vocabulary state has a documented error",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.007,
+      "name": "Sparse association state has a documented error",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.457,
+      "name": "Mismatched export has NO_EXPORTABLE_COMPOSITION",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.169,
+      "name": "Excessive node request is bounded",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.152,
+      "name": "Expansion depth is bounded by governed transitions",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.163,
+      "name": "Invalid export preset is rejected",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.103,
+      "name": "Held-data access is explicitly blocked",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.206,
+      "name": "Malformed text cannot inject SVG markup",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 2.404,
+      "name": "Repeated identical requests are idempotent",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 18.512,
+      "name": "Concurrent reads do not mutate semantic state",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 0.722,
+      "name": "Expected failures never return an unexplained 500",
+      "status": "PASS"
+    }
+  ],
+  "database_schema_version": 49,
+  "database_snapshot_id": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+  "failure_count": 0,
+  "failures": [],
+  "group_id": 4,
+  "name": "API Contract, State Safety, and Failure Handling",
+  "read_model_sha256": "1abdeda493eed7871e0b1a5f1d7412be6bc6203068ac20e9547a32b6c5b473e9",
+  "status": "PASS",
+  "test_case_count": 21
+}

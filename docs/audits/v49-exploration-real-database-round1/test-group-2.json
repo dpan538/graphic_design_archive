@@ -1,0 +1,68 @@
+{
+  "cases": [
+    {
+      "duration_ms": 155.278,
+      "evidence": {
+        "category_id": "region",
+        "png_sha256": "0c480405e2e0f403c78a9db91d23402ee9db7127c6e01a8cf07f38ea8d1f3906",
+        "stage_count": 18,
+        "state_hash": "569a4a9cc55134402332368050c5d3f9c284f4cb02ced1c5d54486d249262f27"
+      },
+      "name": "Workflow A: Regional contact-zone browse",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 136.906,
+      "evidence": {
+        "category_id": "theme",
+        "png_sha256": "c322bb4dd6a9d6102c89447abd14817c937aa7260f09bd1e0a1df2f7f684a47a",
+        "stage_count": 18,
+        "state_hash": "803e9d6c17ab2f07e05eddb2d424be628c189e1312b4e47c886b29da8a9cc1d7"
+      },
+      "name": "Workflow B: Thematic exhibition browse",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 96.617,
+      "evidence": {
+        "category_id": "medium",
+        "png_sha256": "bc37f10de3449a084b66e14e474f541c9a36313a24af632ca31a8aa88a15614b",
+        "stage_count": 18,
+        "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881"
+      },
+      "name": "Workflow C: Medium photomontage browse",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 77.085,
+      "evidence": {
+        "category_id": "movement",
+        "png_sha256": "e78223a3fbe239afba8b690d9b9cdea783563df411f1c4cc1967e9c500892508",
+        "stage_count": 18,
+        "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539"
+      },
+      "name": "Workflow D: Movement-context Bauhaus browse",
+      "status": "PASS"
+    },
+    {
+      "duration_ms": 118.818,
+      "evidence": {
+        "category_id": "region",
+        "png_sha256": "556237e47e5532832fa63e5a4434be378a5fa5302cc1c248dab9bf296fd8a2f6",
+        "stage_count": 18,
+        "state_hash": "b91aa3e9f7cab81c92ab2e382cf36b9501a2e4239219a2ecb99caaa1b344b2db"
+      },
+      "name": "Workflow E: Real material-chain stress case",
+      "status": "PASS"
+    }
+  ],
+  "database_schema_version": 49,
+  "database_snapshot_id": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+  "failure_count": 0,
+  "failures": [],
+  "group_id": 2,
+  "name": "Five Real End-to-End User Workflows",
+  "read_model_sha256": "1abdeda493eed7871e0b1a5f1d7412be6bc6203068ac20e9547a32b6c5b473e9",
+  "status": "PASS",
+  "test_case_count": 5
+}

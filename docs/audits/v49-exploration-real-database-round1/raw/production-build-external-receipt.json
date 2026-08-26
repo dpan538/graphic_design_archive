@@ -1,0 +1,7 @@
+{
+  "command": "npm run build",
+  "duration_ms": 71500,
+  "evidence": "Approved network-enabled Next.js 15.5.18 production build: compiled successfully, framework type/lint validation passed, 46/46 static pages generated, build traces and page optimization completed, and /api/trace/v1/exploration/[...path] was emitted as a dynamic server route.",
+  "network_reason": "The sandboxed run failed only because next/font could not resolve fonts.googleapis.com; the required approved rerun completed successfully.",
+  "status": "PASS"
+}

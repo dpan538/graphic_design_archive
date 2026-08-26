@@ -1,0 +1,132 @@
+{
+  "association_ids": [
+    "R14-ASSOC-018"
+  ],
+  "content_type": "image/png",
+  "dimensions": {
+    "height": 1620,
+    "padding": 72,
+    "width": 1080
+  },
+  "export_alt_text": "Medium / format exploration card. photography; `-- typography",
+  "export_id": "TREX:e87eb47ad9b0d122c8e18f6fc49052dcb6e2fa578a642300815f07457afe8c68",
+  "export_preset": "portrait_card",
+  "map_id": "TRMAP:bfa41a08345a0f339881e36ffea12f7cf2005e15953386e943c4571b188c3921",
+  "map_region": {
+    "associations": [
+      {
+        "active_for_proximity": true,
+        "association_accessible_description": "photography is available to explore with typography as a qualified generic association.",
+        "association_id": "R14-ASSOC-018",
+        "confidence": "MODERATE",
+        "endpoint_labels": [
+          "photography",
+          "typography"
+        ],
+        "endpoint_vocabulary_ids": [
+          "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea",
+          "TRV:48047b49b975ee8880742ea2544b30e8965f1675df787e9d832f8e0c2db87630"
+        ],
+        "explicit_non_claims": [
+          "causation",
+          "influence",
+          "chronology",
+          "hierarchy",
+          "direction",
+          "equivalence"
+        ],
+        "generic_association_only": true,
+        "hard_negative": false,
+        "mandatory_dimension_results": {
+          "D1": 2,
+          "D5": 2,
+          "D7": 1
+        },
+        "provenance_refs": [
+          "R14-EVID-018-01"
+        ],
+        "qualification": "Supported by archive/source evidence. Independent scholarly validation pending.",
+        "qualification_version": "trace-generic-association-rubric-v1",
+        "source_refs": [
+          "R14-ARC-002"
+        ],
+        "source_urls": [
+          "https://www.moma.org/calendar/exhibitions/340"
+        ],
+        "strength": "STRONG",
+        "support_status": "SOURCE_SUPPORTED"
+      }
+    ],
+    "nodes": [
+      {
+        "canonical_label": "photography",
+        "node_accessible_label": "photography, evidence-supported exploration term",
+        "projection": {
+          "bounding_hint": {
+            "radius": 0.022222222222222223
+          },
+          "branch_slot": 0,
+          "group_slot": "medium",
+          "layer_slot": 0,
+          "normalised_x": 0.215278,
+          "normalised_y": 0.624074,
+          "projection_version": "trace-exploration-neutral-projection-v1"
+        },
+        "vocabulary_id": "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea"
+      },
+      {
+        "canonical_label": "typography",
+        "node_accessible_label": "typography, evidence-supported exploration term",
+        "projection": {
+          "bounding_hint": {
+            "radius": 0.022222222222222223
+          },
+          "branch_slot": 1,
+          "group_slot": "medium",
+          "layer_slot": 0,
+          "normalised_x": 0.784722,
+          "normalised_y": 0.375926,
+          "projection_version": "trace-exploration-neutral-projection-v1"
+        },
+        "vocabulary_id": "TRV:48047b49b975ee8880742ea2544b30e8965f1675df787e9d832f8e0c2db87630"
+      }
+    ],
+    "projection_version": "trace-exploration-neutral-projection-v1",
+    "region_id": "TRREG:a8df5ccb4e9853f1580e5819b29b0bdb63a27eecfc93e04bb95fbd8ebbd14f78"
+  },
+  "plain_text_tree": {
+    "generic_association_only": true,
+    "plain_text_tree": "photography\n└── typography",
+    "plain_text_tree_ascii": "photography\n`-- typography",
+    "schema_version": "trace-plain-text-tree-v1",
+    "structural_hierarchy_is_historical_claim": false,
+    "tree_association_ids": [
+      "R14-ASSOC-018"
+    ],
+    "tree_node_ids": [
+      "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea",
+      "TRV:48047b49b975ee8880742ea2544b30e8965f1675df787e9d832f8e0c2db87630"
+    ],
+    "tree_root_node_id": "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea",
+    "tree_semantic_hash": "fcf3e4b0c9f3d6893b414f73b2c6c32e9f657c2b8a1c0263d6e93eeb8b2a8d46"
+  },
+  "presentation_hash": "d305dbc144986184ff0345397bd843a5bc7aa3ed7ae40351c2bc533d77e93a2b",
+  "provenance_summary": {
+    "archive_object_reference_count": 11,
+    "context_reference_count": 22,
+    "database_snapshot_id": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "source_count": 1,
+    "spacetime_reference_count": 4
+  },
+  "render_version": "trace-exploration-portrait-png-v1",
+  "schema_version": "trace-exploration-export-manifest-v1",
+  "selected_composition_id": "R16-COMP-MEDIUM-01",
+  "semantic_hash": "cf0d8e199c1c6920812f05ec968a878f35f9690f9aa7b247363759197091155e",
+  "state_hash": "c52ed2c1bcbc90115f18c6dc7964525683a33f4fa1c2242ba8da47775b1c0881",
+  "suggested_filename": "trace-medium-e87eb47ad9b0.png",
+  "theme_token_set": "neutral-v1",
+  "vocabulary_ids": [
+    "TRV:25f3aeb51f1cc784d9d0bcc166bd876f80678d5528c3e5db0e627a3991ab8fea",
+    "TRV:48047b49b975ee8880742ea2544b30e8965f1675df787e9d832f8e0c2db87630"
+  ]
+}

@@ -1,0 +1,36 @@
+association_id	endpoint_labels	active_for_proximity	support_status	strength	confidence	hard_negative	rendered	status
+R14-ASSOC-001	"[""professionalization"",""institutionalization""]"	True	EXTERNALLY_SUPPORTED	STRONG	HIGH	False	True	PASS
+R14-ASSOC-002	"[""production"",""mediation""]"	True	EXTERNALLY_SUPPORTED	STRONG	HIGH	False	True	PASS
+R14-ASSOC-003	"[""mediation"",""consumption""]"	True	EXTERNALLY_SUPPORTED	STRONG	HIGH	False	True	PASS
+R14-ASSOC-004	"[""production"",""consumption""]"	True	EXTERNALLY_SUPPORTED	STRONG	HIGH	False	True	PASS
+R14-ASSOC-005	"[""exhibition"",""design diplomacy""]"	True	EXTERNALLY_SUPPORTED	STRONG	HIGH	False	True	PASS
+R14-ASSOC-006	"[""design diplomacy"",""propaganda""]"	True	EXTERNALLY_SUPPORTED	STRONG	HIGH	False	True	PASS
+R14-ASSOC-007	"[""propaganda"",""trade""]"	True	EXTERNALLY_SUPPORTED	STRONG	MODERATE	False	True	PASS
+R14-ASSOC-008	"[""exhibition"",""propaganda""]"	True	EXTERNALLY_SUPPORTED	STRONG	HIGH	False	True	PASS
+R14-ASSOC-009	"[""design diplomacy"",""trade""]"	True	EXTERNALLY_SUPPORTED	STRONG	MODERATE	False	True	PASS
+R14-ASSOC-010	"[""material displacement"",""supply chain""]"	True	EXTERNALLY_SUPPORTED	STRONG	HIGH	False	True	PASS
+R14-ASSOC-011	"[""supply chain"",""production site""]"	True	EXTERNALLY_SUPPORTED	STRONG	MODERATE	False	True	PASS
+R14-ASSOC-012	"[""material displacement"",""production site""]"	True	EXTERNALLY_SUPPORTED	MODERATE	MODERATE	False	True	PASS
+R14-ASSOC-013	"[""cultural negotiation"",""adaptation""]"	True	EXTERNALLY_SUPPORTED	STRONG	HIGH	False	True	PASS
+R14-ASSOC-014	"[""adaptation"",""rejection""]"	True	EXTERNALLY_SUPPORTED	STRONG	MODERATE	False	True	PASS
+R14-ASSOC-015	"[""cultural negotiation"",""rejection""]"	True	EXTERNALLY_SUPPORTED	MODERATE	MODERATE	False	True	PASS
+R14-ASSOC-016	"[""gendering"",""commodification""]"	True	EXTERNALLY_SUPPORTED	STRONG	MODERATE	False	True	PASS
+R14-ASSOC-017	"[""imitation"",""piracy""]"	True	EXTERNALLY_SUPPORTED	STRONG	HIGH	False	True	PASS
+R14-ASSOC-018	"[""photography"",""typography""]"	True	SOURCE_SUPPORTED	STRONG	MODERATE	False	True	PASS
+R14-ASSOC-019	"[""advertising"",""consumer culture""]"	True	SOURCE_SUPPORTED	STRONG	MODERATE	False	True	PASS
+R14-ASSOC-020	"[""craft"",""education""]"	True	SOURCE_SUPPORTED	STRONG	MODERATE	False	True	PASS
+R14-ASSOC-021	"[""design education"",""institutionalization""]"	True	EXTERNALLY_SUPPORTED	MODERATE	HIGH	False	True	PASS
+R14-ASSOC-022	"[""cultural transfer"",""cultural negotiation""]"	False	QUALIFIED	MODERATE	MODERATE	False	False	PASS
+R14-ASSOC-023	"[""cultural transformation"",""piracy""]"	False	INSUFFICIENT	WEAK	LOW	True	False	PASS
+R14-ASSOC-024	"[""design education"",""commodification""]"	False	INSUFFICIENT	WEAK	LOW	True	False	PASS
+R14-ASSOC-025	"[""gendering"",""mobile object""]"	False	INSUFFICIENT	WEAK	LOW	True	False	PASS
+R14-ASSOC-026	"[""professionalization"",""material displacement""]"	False	INSUFFICIENT	WEAK	LOW	True	False	PASS
+R14-ASSOC-027	"[""photography"",""institutionalization""]"	False	INSUFFICIENT	WEAK	LOW	True	False	PASS
+R14-ASSOC-028	"[""craft"",""design diplomacy""]"	False	INSUFFICIENT	WEAK	LOW	True	False	PASS
+R14-ASSOC-029	"[""Bauhaus"",""desktop publishing""]"	False	INSUFFICIENT	WEAK	LOW	False	False	PASS
+R14-ASSOC-030	"[""Arts and Crafts"",""digital interface""]"	False	INSUFFICIENT	WEAK	LOW	False	False	PASS
+R14-ASSOC-031	"[""Swiss typography"",""Brazilian exposition""]"	False	INSUFFICIENT	WEAK	LOW	False	False	PASS
+R14-ASSOC-032	"[""photomontage"",""professionalization""]"	False	INSUFFICIENT	WEAK	LOW	True	False	PASS
+R14-ASSOC-033	"[""gendering"",""design education""]"	False	INSUFFICIENT	WEAK	LOW	True	False	PASS
+R14-ASSOC-034	"[""commodification"",""institutionalization""]"	False	INSUFFICIENT	WEAK	LOW	True	False	PASS
+R14-ASSOC-035	"[""imitation"",""cultural transformation""]"	False	INSUFFICIENT	WEAK	LOW	True	False	PASS

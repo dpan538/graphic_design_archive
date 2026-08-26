@@ -1,0 +1,46 @@
+{
+  "TEST_GROUP_COUNT": 5,
+  "TEST_GROUP_FAIL_COUNT": 0,
+  "TEST_GROUP_PASS_COUNT": 5,
+  "database_snapshot_id": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+  "format": "trace-round16-five-test-group-summary-v1",
+  "groups": [
+    {
+      "failure_count": 0,
+      "group_id": 1,
+      "name": "Real Data, Four Categories, and Vocabulary Authenticity",
+      "status": "PASS",
+      "test_case_count": 14
+    },
+    {
+      "failure_count": 0,
+      "group_id": 2,
+      "name": "Five Real End-to-End User Workflows",
+      "status": "PASS",
+      "test_case_count": 5
+    },
+    {
+      "failure_count": 0,
+      "group_id": 3,
+      "name": "Association, Composition, Tree, and Invariant Correctness",
+      "status": "PASS",
+      "test_case_count": 17
+    },
+    {
+      "failure_count": 0,
+      "group_id": 4,
+      "name": "API Contract, State Safety, and Failure Handling",
+      "status": "PASS",
+      "test_case_count": 21
+    },
+    {
+      "failure_count": 0,
+      "group_id": 5,
+      "name": "PNG Export, Output Integrity, Performance, and Regression",
+      "status": "PASS",
+      "test_case_count": 7
+    }
+  ],
+  "read_model_sha256": "1abdeda493eed7871e0b1a5f1d7412be6bc6203068ac20e9547a32b6c5b473e9",
+  "status": "PASS"
+}

@@ -420,6 +420,33 @@ SPACETIME_STATUS=FROZEN
 
 `NEXT_GATE=EXTERNAL_COMPOSITION_AND_VISUAL_SEMANTICS_REVIEW`
 
+## TRACE v49 Round 16 — real-database Exploration backend Round 1
+
+- Resolved the approved four-category taxonomy directly from the frozen database and existing TypeScript contract: `region`, `theme`, `medium`, and `movement`; no category was inferred, renamed, or invented.
+- Bound the frozen 7,995-public/7,928-held v49 database, eligible-object ledger, Context projection, Spacetime projection, all 21 qualified Round 14 associations, and the Round 15 Python engine into one deterministic product read model. Real archive, Context, and Spacetime references are non-zero in every category.
+- Activated 26 user-visible terms only after exact attestation and independent academic-support gates. The three source-supported Round 14 pairs retain their frozen association status; endpoint scholarship is an independent vocabulary gate and does not upgrade association evidence.
+- Added four real category maps, 11 exportable compositions, 52 immutable states, 816 stateless transitions, deterministic Unicode/ASCII trees, nine API capabilities, 12 schemas, OpenAPI, TypeScript types/client, and a server-side 1080×1620 portrait PNG renderer with two replaceable neutral theme-token sets.
+- Added five real workflow packages and exactly five top-level verification groups covering authenticity, end-to-end use, semantic invariants, API/state/security behavior, PNG integrity, performance, all Round 8–15 regressions, Search, Context, Spacetime, API, database freeze, hygiene, typecheck, and production build.
+- Preserved the generic-association boundary: typed, causal, directional, hierarchical, fixture-fallback, model-inference, vector, held-data, and unsupported-edge emission counts remain zero. Final frontend design, public page integration, deployment, and external human domain review remain incomplete.
+
+`ROUND16_DECISION=FUNCTION3_BACKEND_COMPLETE_READY_FOR_FRONTEND`
+
+`FUNCTION3_BACKEND_COMPLETE=true`
+
+`FOUR_CATEGORY_SELECTION_READY=true`
+
+`REAL_DATABASE_EXPLORATION_READY=true`
+
+`FRONTEND_CONSUMABLE_API_READY=true`
+
+`PORTRAIT_PNG_CARD_EXPORT_READY=true`
+
+`FINAL_FRONTEND_LAYOUT_READY=false`
+
+`PUBLIC_EXPLORATION_PAGE_READY=false`
+
+`NEXT_GATE=CLAUDE_FRONTEND_DESIGN_AND_FRONTEND_INTEGRATION`
+
 ## v49 Round 11–12 history coordination — 2026-08-25
 
 - Reconciled main maintenance `cc311ab0c9a74731cc1bb0158579708a8a9158fc` with sealed Round 11 `5ca999b53d9a5d18b47317817402f9e51ad26cec` and Round 12 `fc11f033d2fcdbb98130879cdbd3e4a52890e5d2` through an authorized two-parent merge from common ancestor `4bd82deba482ec2fbf8c4856080151416fb8ee83`.

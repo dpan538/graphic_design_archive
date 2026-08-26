@@ -1,0 +1,5 @@
+category_id	label	approved	invented	taxonomy_refs	map_available	status
+region	Region	True	False	"[""database:object_folder_refs:region"",""trace-spacetime-v1:geography-registry""]"	True	PASS
+theme	Theme	True	False	"[""database:object_folder_refs:theme"",""trace-context-v1:theme""]"	True	PASS
+medium	Medium / format	True	False	"[""database:object_folder_refs:medium"",""trace-context-v1:medium""]"	True	PASS
+movement	Movement context	True	False	"[""database:object_folder_refs:movement"",""trace-context-v1:movement_context""]"	True	PASS

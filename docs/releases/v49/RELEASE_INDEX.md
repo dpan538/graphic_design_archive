@@ -63,3 +63,14 @@ The integration is documentation and reachability closure only. It performs no d
 - Corpus: all 21 frozen passing associations, all 14 failures, all 10 hard negatives, 25 composition fixtures, eight visual-leakage questions per fixture, and bounded synthetic 5/10/20/40-node stress probes.
 - Boundary: no recalibration, typed relation, causal/directional/hierarchical output, archive-object/Context/Spacetime semantic input, model, vector store, public route/API/renderer, deployment, or simulated human review.
 - Next gate: real external composition/visual-semantics review and internal accessibility/interpretation research; public activation remains unsafe.
+
+## TRACE Round 16 Function 3 backend closure — 2026-08-26
+
+- Immutable source anchor: `aca7b9627ca42776d966f96ce4bd03db1f296ae3`.
+- Database snapshot: `v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e`; schema 49; 7,995 public and 7,928 held objects.
+- Research package: `docs/research/trace-v49-exploration-real-database-round1/`.
+- Frontend handoff: `docs/handoff/trace-v49-exploration-real-database-round1/`.
+- Audit package: `docs/audits/v49-exploration-real-database-round1/`.
+- Contract: exactly four approved categories, 26 attested and academically supported visible terms, 21 qualified associations, 11 real compositions, four maps, 52 immutable states, 816 transitions, nine API capabilities, 12 schemas, OpenAPI, typed client, deterministic trees, and five validated portrait PNG exports.
+- Boundary: generic association only; no typed/causal/directional relation, held-data disclosure, fixture fallback, external model, vector store, final frontend, public page, deployment, or completed external human review.
+- Decision: `FUNCTION3_BACKEND_COMPLETE_READY_FOR_FRONTEND`; next gate is Claude frontend design and integration.

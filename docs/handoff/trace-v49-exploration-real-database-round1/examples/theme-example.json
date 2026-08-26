@@ -1,0 +1,252 @@
+{
+  "association_ids": [
+    "R14-ASSOC-005",
+    "R14-ASSOC-006",
+    "R14-ASSOC-008"
+  ],
+  "content_type": "image/png",
+  "dimensions": {
+    "height": 1620,
+    "padding": 72,
+    "width": 1080
+  },
+  "export_alt_text": "Theme exploration card. design diplomacy; |-- exhibition; `-- propaganda",
+  "export_id": "TREX:24192dc869a15df25f54766003370398d8e5d43be4e780d6396ea40c7a18897c",
+  "export_preset": "portrait_card",
+  "map_id": "TRMAP:17c086ab8affea43b25cda33569221f7ec12459946e2d6405a8f83486530fdba",
+  "map_region": {
+    "associations": [
+      {
+        "active_for_proximity": true,
+        "association_accessible_description": "exhibition is available to explore with design diplomacy as a qualified generic association.",
+        "association_id": "R14-ASSOC-005",
+        "confidence": "HIGH",
+        "endpoint_labels": [
+          "exhibition",
+          "design diplomacy"
+        ],
+        "endpoint_vocabulary_ids": [
+          "TRV:83a2bff84b1d599d9eed884a09666501c96224a0b3b7457699ef0be145e76e73",
+          "TRV:303eafd7c2afb63e99e140c4ba2abd1de5f78f9e8ebbb3040b4531b6df568639"
+        ],
+        "explicit_non_claims": [
+          "causation",
+          "influence",
+          "chronology",
+          "hierarchy",
+          "direction",
+          "equivalence"
+        ],
+        "generic_association_only": true,
+        "hard_negative": false,
+        "mandatory_dimension_results": {
+          "D1": 2,
+          "D5": 2,
+          "D7": 2
+        },
+        "provenance_refs": [
+          "R14-EVID-005-01",
+          "R14-EVID-005-02",
+          "R14-EVID-005-03"
+        ],
+        "qualification": "Diplomatic intention does not guarantee audience reception or political effect.",
+        "qualification_version": "trace-generic-association-rubric-v1",
+        "source_refs": [
+          "COMP-SRC-023",
+          "COMP-SRC-024",
+          "COMP-SRC-025"
+        ],
+        "source_urls": [
+          "https://doi.org/10.1080/10331867.2023.2282294",
+          "https://www.cambridge.org/core/journals/contemporary-european-history/article/socialist-humanist-and-welldesigned-the-polish-welfare-state-at-the-international-labour-exhibition-in-turin-1961/94D125A40C5B3B013872B9A949430909",
+          "https://www.tandfonline.com/doi/abs/10.1080/17547075.2017.1333388"
+        ],
+        "strength": "STRONG",
+        "support_status": "EXTERNALLY_SUPPORTED"
+      },
+      {
+        "active_for_proximity": true,
+        "association_accessible_description": "design diplomacy is available to explore with propaganda as a qualified generic association.",
+        "association_id": "R14-ASSOC-006",
+        "confidence": "HIGH",
+        "endpoint_labels": [
+          "design diplomacy",
+          "propaganda"
+        ],
+        "endpoint_vocabulary_ids": [
+          "TRV:303eafd7c2afb63e99e140c4ba2abd1de5f78f9e8ebbb3040b4531b6df568639",
+          "TRV:c82d3d4865e41e2a263ff0427c4df2b8e3e43a85c835404d033d764468b3ba55"
+        ],
+        "explicit_non_claims": [
+          "causation",
+          "influence",
+          "chronology",
+          "hierarchy",
+          "direction",
+          "equivalence"
+        ],
+        "generic_association_only": true,
+        "hard_negative": false,
+        "mandatory_dimension_results": {
+          "D1": 2,
+          "D5": 2,
+          "D7": 2
+        },
+        "provenance_refs": [
+          "R14-EVID-006-01",
+          "R14-EVID-006-02",
+          "R14-EVID-006-03"
+        ],
+        "qualification": "The sources distinguish diplomacy from propaganda rather than equating them.",
+        "qualification_version": "trace-generic-association-rubric-v1",
+        "source_refs": [
+          "COMP-SRC-023",
+          "COMP-SRC-024",
+          "COMP-SRC-025"
+        ],
+        "source_urls": [
+          "https://doi.org/10.1080/10331867.2023.2282294",
+          "https://www.cambridge.org/core/journals/contemporary-european-history/article/socialist-humanist-and-welldesigned-the-polish-welfare-state-at-the-international-labour-exhibition-in-turin-1961/94D125A40C5B3B013872B9A949430909",
+          "https://www.tandfonline.com/doi/abs/10.1080/17547075.2017.1333388"
+        ],
+        "strength": "STRONG",
+        "support_status": "EXTERNALLY_SUPPORTED"
+      },
+      {
+        "active_for_proximity": true,
+        "association_accessible_description": "exhibition is available to explore with propaganda as a qualified generic association.",
+        "association_id": "R14-ASSOC-008",
+        "confidence": "HIGH",
+        "endpoint_labels": [
+          "exhibition",
+          "propaganda"
+        ],
+        "endpoint_vocabulary_ids": [
+          "TRV:83a2bff84b1d599d9eed884a09666501c96224a0b3b7457699ef0be145e76e73",
+          "TRV:c82d3d4865e41e2a263ff0427c4df2b8e3e43a85c835404d033d764468b3ba55"
+        ],
+        "explicit_non_claims": [
+          "causation",
+          "influence",
+          "chronology",
+          "hierarchy",
+          "direction",
+          "equivalence"
+        ],
+        "generic_association_only": true,
+        "hard_negative": false,
+        "mandatory_dimension_results": {
+          "D1": 2,
+          "D5": 2,
+          "D7": 2
+        },
+        "provenance_refs": [
+          "R14-EVID-008-01",
+          "R14-EVID-008-02"
+        ],
+        "qualification": "The assessment remains case-bounded and does not classify every exhibition as propaganda.",
+        "qualification_version": "trace-generic-association-rubric-v1",
+        "source_refs": [
+          "COMP-SRC-024",
+          "COMP-SRC-025"
+        ],
+        "source_urls": [
+          "https://doi.org/10.1080/10331867.2023.2282294",
+          "https://www.cambridge.org/core/journals/contemporary-european-history/article/socialist-humanist-and-welldesigned-the-polish-welfare-state-at-the-international-labour-exhibition-in-turin-1961/94D125A40C5B3B013872B9A949430909"
+        ],
+        "strength": "STRONG",
+        "support_status": "EXTERNALLY_SUPPORTED"
+      }
+    ],
+    "nodes": [
+      {
+        "canonical_label": "design diplomacy",
+        "node_accessible_label": "design diplomacy, evidence-supported exploration term",
+        "projection": {
+          "bounding_hint": {
+            "radius": 0.022222222222222223
+          },
+          "branch_slot": 0,
+          "group_slot": "theme",
+          "layer_slot": 0,
+          "normalised_x": 0.551389,
+          "normalised_y": 0.888889,
+          "projection_version": "trace-exploration-neutral-projection-v1"
+        },
+        "vocabulary_id": "TRV:303eafd7c2afb63e99e140c4ba2abd1de5f78f9e8ebbb3040b4531b6df568639"
+      },
+      {
+        "canonical_label": "exhibition",
+        "node_accessible_label": "exhibition, evidence-supported exploration term",
+        "projection": {
+          "bounding_hint": {
+            "radius": 0.022222222222222223
+          },
+          "branch_slot": 1,
+          "group_slot": "theme",
+          "layer_slot": 0,
+          "normalised_x": 0.202778,
+          "normalised_y": 0.57037,
+          "projection_version": "trace-exploration-neutral-projection-v1"
+        },
+        "vocabulary_id": "TRV:83a2bff84b1d599d9eed884a09666501c96224a0b3b7457699ef0be145e76e73"
+      },
+      {
+        "canonical_label": "propaganda",
+        "node_accessible_label": "propaganda, evidence-supported exploration term",
+        "projection": {
+          "bounding_hint": {
+            "radius": 0.022222222222222223
+          },
+          "branch_slot": 2,
+          "group_slot": "theme",
+          "layer_slot": 0,
+          "normalised_x": 0.448611,
+          "normalised_y": 0.111111,
+          "projection_version": "trace-exploration-neutral-projection-v1"
+        },
+        "vocabulary_id": "TRV:c82d3d4865e41e2a263ff0427c4df2b8e3e43a85c835404d033d764468b3ba55"
+      }
+    ],
+    "projection_version": "trace-exploration-neutral-projection-v1",
+    "region_id": "TRREG:1d64d16f09fc5316693f5d915724bd988fc58eec571f4fa3851988d144cf01f9"
+  },
+  "plain_text_tree": {
+    "generic_association_only": true,
+    "plain_text_tree": "design diplomacy\n├── exhibition\n└── propaganda",
+    "plain_text_tree_ascii": "design diplomacy\n|-- exhibition\n`-- propaganda",
+    "schema_version": "trace-plain-text-tree-v1",
+    "structural_hierarchy_is_historical_claim": false,
+    "tree_association_ids": [
+      "R14-ASSOC-005",
+      "R14-ASSOC-006"
+    ],
+    "tree_node_ids": [
+      "TRV:303eafd7c2afb63e99e140c4ba2abd1de5f78f9e8ebbb3040b4531b6df568639",
+      "TRV:83a2bff84b1d599d9eed884a09666501c96224a0b3b7457699ef0be145e76e73",
+      "TRV:c82d3d4865e41e2a263ff0427c4df2b8e3e43a85c835404d033d764468b3ba55"
+    ],
+    "tree_root_node_id": "TRV:303eafd7c2afb63e99e140c4ba2abd1de5f78f9e8ebbb3040b4531b6df568639",
+    "tree_semantic_hash": "8ca299acbbc4a09463b9f4330dd983e24c5176b196038bf1f4f3523e1a1b5265"
+  },
+  "presentation_hash": "759e1fea0a55feff31b94e4f77136db0657a2468b6468be0ac4dceadcc7c3ded",
+  "provenance_summary": {
+    "archive_object_reference_count": 12,
+    "context_reference_count": 25,
+    "database_snapshot_id": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "source_count": 3,
+    "spacetime_reference_count": 2
+  },
+  "render_version": "trace-exploration-portrait-png-v1",
+  "schema_version": "trace-exploration-export-manifest-v1",
+  "selected_composition_id": "R16-COMP-THEME-01",
+  "semantic_hash": "61b94fe16a42bcfa55d75fd89371b3e67192a198bdf940a0042418eb9a95be26",
+  "state_hash": "803e9d6c17ab2f07e05eddb2d424be628c189e1312b4e47c886b29da8a9cc1d7",
+  "suggested_filename": "trace-theme-24192dc869a1.png",
+  "theme_token_set": "neutral-v1",
+  "vocabulary_ids": [
+    "TRV:303eafd7c2afb63e99e140c4ba2abd1de5f78f9e8ebbb3040b4531b6df568639",
+    "TRV:83a2bff84b1d599d9eed884a09666501c96224a0b3b7457699ef0be145e76e73",
+    "TRV:c82d3d4865e41e2a263ff0427c4df2b8e3e43a85c835404d033d764468b3ba55"
+  ]
+}

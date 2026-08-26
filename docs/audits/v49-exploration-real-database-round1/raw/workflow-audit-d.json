@@ -1,0 +1,289 @@
+{
+  "category_id": "movement",
+  "elapsed_ms": 76.716,
+  "map_id": "TRMAP:d113eab6ab254a0b463ae9b0d12f22f5395497c9a283c309126e1e52b44860b7",
+  "name": "Movement-context Bauhaus browse",
+  "png_sha256": "e78223a3fbe239afba8b690d9b9cdea783563df411f1c4cc1967e9c500892508",
+  "schema_version": "trace-exploration-workflow-audit-v1",
+  "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+  "stage_count": 18,
+  "stages": [
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.012,
+      "errors": [],
+      "excluded_count": 3,
+      "input_count": 4,
+      "output_count": 1,
+      "reason_codes": [
+        "CANONICAL_CATEGORY_SELECTED"
+      ],
+      "semantic_hash": "1abdeda493eed7871e0b1a5f1d7412be6bc6203068ac20e9547a32b6c5b473e9",
+      "stage": "category selected",
+      "state_hash": "",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.001,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 1,
+      "output_count": 1,
+      "reason_codes": [
+        "DATABASE_SNAPSHOT_MATCH"
+      ],
+      "semantic_hash": "ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "stage": "database snapshot resolved",
+      "state_hash": "",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.022,
+      "errors": [],
+      "excluded_count": 7989,
+      "input_count": 7995,
+      "output_count": 6,
+      "reason_codes": [
+        "PUBLIC_ELIGIBLE_OBJECTS_ONLY"
+      ],
+      "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+      "stage": "public-object query executed",
+      "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 18,
+      "output_count": 18,
+      "reason_codes": [
+        "CONTEXT_SNAPSHOT_MATCH"
+      ],
+      "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+      "stage": "Context references resolved",
+      "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 2,
+      "output_count": 2,
+      "reason_codes": [
+        "SPACETIME_SNAPSHOT_MATCH"
+      ],
+      "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+      "stage": "Spacetime references resolved",
+      "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.003,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 5,
+      "output_count": 5,
+      "reason_codes": [
+        "REAL_DATABASE_CANDIDATE"
+      ],
+      "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+      "stage": "candidate vocabulary retrieved",
+      "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.001,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 5,
+      "output_count": 5,
+      "reason_codes": [
+        "REAL_ATTESTATION_PRESENT"
+      ],
+      "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+      "stage": "vocabulary attestation gate applied",
+      "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.001,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 5,
+      "output_count": 5,
+      "reason_codes": [
+        "ACADEMIC_SUPPORT_PRESENT"
+      ],
+      "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+      "stage": "academic-support gate applied",
+      "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.002,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 3,
+      "output_count": 3,
+      "reason_codes": [
+        "ROUND14_ASSESSMENT_RESOLVED"
+      ],
+      "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+      "stage": "candidate associations retrieved",
+      "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.001,
+      "errors": [],
+      "excluded_count": 14,
+      "input_count": 17,
+      "output_count": 3,
+      "reason_codes": [
+        "ROUND14_FROZEN_GATE_PASS",
+        "FAILED_CASES_AUDIT_ONLY"
+      ],
+      "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+      "stage": "Round 14 association gate applied",
+      "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.001,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 1,
+      "output_count": 1,
+      "reason_codes": [
+        "PYTHON_NORMATIVE_COMPOSITION"
+      ],
+      "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+      "stage": "Round 15 composition applied",
+      "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.118,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 7,
+      "output_count": 7,
+      "reason_codes": [
+        "IMMUTABLE_PRECOMPUTED_TRANSITIONS"
+      ],
+      "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+      "stage": "map state generated",
+      "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0,
+      "errors": [],
+      "excluded_count": 1,
+      "input_count": 2,
+      "output_count": 1,
+      "reason_codes": [
+        "GOVERNED_FOCUS_TARGET"
+      ],
+      "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+      "stage": "focus selected",
+      "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.001,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 2,
+      "output_count": 2,
+      "reason_codes": [
+        "SAME_SELECTED_COMPOSITION"
+      ],
+      "semantic_hash": "0689d25e28dd04526062794e6d68888e0abbb60f6de9d02389402344c72dead7",
+      "stage": "plain-text tree generated",
+      "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.005,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 1,
+      "output_count": 1,
+      "reason_codes": [
+        "MAP_TREE_SAME_STATE"
+      ],
+      "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+      "stage": "export manifest generated",
+      "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 36.901,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 2,
+      "output_count": 2,
+      "reason_codes": [
+        "PORTRAIT_CARD_RENDERED"
+      ],
+      "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+      "stage": "PNG rendered",
+      "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 0.177,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 1,
+      "output_count": 1,
+      "reason_codes": [
+        "PNG_DECODED",
+        "DIMENSIONS_MATCH"
+      ],
+      "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+      "stage": "PNG validated",
+      "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539",
+      "warnings": []
+    },
+    {
+      "database_snapshot": "v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+      "duration_ms": 37.447,
+      "errors": [],
+      "excluded_count": 0,
+      "input_count": 17,
+      "output_count": 17,
+      "reason_codes": [
+        "STATE_REPLAY_IDENTICAL",
+        "PNG_REPLAY_IDENTICAL"
+      ],
+      "semantic_hash": "398076c7b1fc91d64e8aea68153e03b8f64818a4b6687d5d8482a55e1e826510",
+      "stage": "workflow replayed",
+      "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539",
+      "warnings": []
+    }
+  ],
+  "state_hash": "12c998d8f69750bbcde5bcf525958d6d28c9549501b5f3cb4bd6ae56f1a37539",
+  "status": "PASS",
+  "synthetic": false,
+  "workflow_id": "D"
+}

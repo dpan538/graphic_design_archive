@@ -1,0 +1,11 @@
+# Security and data boundary
+
+Only the 7,995-object eligible ledger enters product responses. Held IDs are excluded before read-model construction. Request bodies are bounded, database text is treated as untrusted, SVG/XML is escaped, no remote resources are permitted, and expected failures use a versioned error schema rather than unexplained 500s.
+
+Database snapshot: `v49-api-contract-fresh-c:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e`
+
+Source commit: `aca7b9627ca42776d966f96ce4bd03db1f296ae3`
+
+Read-model hash: `1abdeda493eed7871e0b1a5f1d7412be6bc6203068ac20e9547a32b6c5b473e9`
+
+The product boundary is evidence-governed generic association. It does not emit typed, causal, directional, hierarchical, temporal, or quantitative historical relations. Fixtures are test inputs only and are never a production fallback.

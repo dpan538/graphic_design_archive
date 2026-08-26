@@ -1,0 +1,464 @@
+{
+  "regressions": [
+    {
+      "label": "ROUND8_REGRESSION",
+      "runs": [
+        {
+          "command": "npm run verify:exploration-reset",
+          "duration_ms": 198.528,
+          "label": "ROUND8_REGRESSION",
+          "output_tail": [
+            "  },",
+            "  \"protectedChanges\": {",
+            "    \"search\": [],",
+            "    \"context\": [],",
+            "    \"spacetime\": [],",
+            "    \"database\": [],",
+            "    \"sealedEvidence\": []",
+            "  },",
+            "  \"legacyExecutionDirsRemaining\": [],",
+            "  \"oldPackageScripts\": [],",
+            "  \"publicRoutePaths\": []",
+            "}"
+          ],
+          "status": "PASS"
+        },
+        {
+          "command": "npm run test:exploration-domain",
+          "duration_ms": 239.823,
+          "label": "ROUND8_REGRESSION",
+          "output_tail": [
+            "      \"status\": \"REJECTED\"",
+            "    },",
+            "    {",
+            "      \"name\": \"K vector database dependency added\",",
+            "      \"status\": \"REJECTED\"",
+            "    },",
+            "    {",
+            "      \"name\": \"L ungoverned relation type added\",",
+            "      \"status\": \"REJECTED\"",
+            "    }",
+            "  ]",
+            "}"
+          ],
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "ROUND9_REGRESSION",
+      "runs": [
+        {
+          "command": "sealed evidence docs/audits/v49-exploration-composition-engine-round1/raw/full-validation.tsv",
+          "evidence": "Round 15 isolated-worktree regression plus the current Round 16 reset/domain and downstream engine suites",
+          "label": "ROUND9_REGRESSION",
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "ROUND10_REGRESSION",
+      "runs": [
+        {
+          "command": "sealed evidence docs/audits/v49-exploration-composition-engine-round1/raw/full-validation.tsv",
+          "evidence": "Round 15 isolated-worktree regression plus the current Round 16 reset/domain and downstream engine suites",
+          "label": "ROUND10_REGRESSION",
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "ROUND11_REGRESSION",
+      "runs": [
+        {
+          "command": "npm run test:exploration-constraint-kernel",
+          "duration_ms": 164.399,
+          "label": "ROUND11_REGRESSION",
+          "output_tail": [
+            "      \"status\": \"REJECTED\"",
+            "    },",
+            "    {",
+            "      \"name\": \"node role\",",
+            "      \"status\": \"REJECTED\"",
+            "    },",
+            "    {",
+            "      \"name\": \"cluster authorization\",",
+            "      \"status\": \"REJECTED\"",
+            "    }",
+            "  ]",
+            "}"
+          ],
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "ROUND12_REGRESSION",
+      "runs": [
+        {
+          "command": "python3 scripts/trace-v49-exploration-inquiry-engine/test_reference_engine.py",
+          "duration_ms": 78.546,
+          "label": "ROUND12_REGRESSION",
+          "output_tail": [
+            ""
+          ],
+          "status": "PASS"
+        },
+        {
+          "command": "npm run test:exploration-inquiry-adapter",
+          "duration_ms": 170.167,
+          "label": "ROUND12_REGRESSION",
+          "output_tail": [
+            "      \"accepted\": false,",
+            "      \"failureCode\": \"ORIGIN_POLICY_VIOLATION\",",
+            "      \"status\": \"PASS\"",
+            "    },",
+            "    {",
+            "      \"fixtureId\": \"CONF-014\",",
+            "      \"accepted\": false,",
+            "      \"failureCode\": \"HASH_MISMATCH\",",
+            "      \"status\": \"PASS\"",
+            "    }",
+            "  ]",
+            "}"
+          ],
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "ROUND13_REGRESSION",
+      "runs": [
+        {
+          "command": "python3 scripts/trace-v49-exploration-composition-review/test_round1.py",
+          "duration_ms": 54.788,
+          "label": "ROUND13_REGRESSION",
+          "output_tail": [
+            ""
+          ],
+          "status": "PASS"
+        },
+        {
+          "command": "npm run test:exploration-composition-review",
+          "duration_ms": 157.473,
+          "label": "ROUND13_REGRESSION",
+          "output_tail": [
+            "  \"historicalClaimRejection\": \"PASS\",",
+            "  \"structuralContaminationRejection\": \"PASS\",",
+            "  \"fakeConvergenceRejection\": \"PASS\",",
+            "  \"typescriptOnlySemanticRuleCount\": 0,",
+            "  \"instanceHashes\": [",
+            "    \"b35afffdb48619c8963a868d98b0008c85001e7a1813c61ed09fd666df349047\",",
+            "    \"83a3bd0778ae6db5569942e43031e4c025adf160f247643562c02877044ce1dd\",",
+            "    \"d0c683c57374eae4fe2c89f2865ced1f7b11fccae727da340cfcf14acedc83f8\",",
+            "    \"f960d377d05b00ed1eb4e49832e1b836f3d90bd833a42a49310c9d2cc649413b\",",
+            "    \"1142773adfe54817056be13c31befb1ffaff96955fc350ad9b35e5500c469398\"",
+            "  ]",
+            "}"
+          ],
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "ROUND14_REGRESSION",
+      "runs": [
+        {
+          "command": "python3 scripts/trace-v49-exploration-association-calibration/test_round1.py",
+          "duration_ms": 60.777,
+          "label": "ROUND14_REGRESSION",
+          "output_tail": [
+            ""
+          ],
+          "status": "PASS"
+        },
+        {
+          "command": "npm run test:exploration-association-calibration",
+          "duration_ms": 138.539,
+          "label": "ROUND14_REGRESSION",
+          "output_tail": [
+            "",
+            "{",
+            "  \"status\": \"PASS\",",
+            "  \"assessmentCount\": 35,",
+            "  \"crossRuntimeDecisionMismatchCount\": 0,",
+            "  \"crossRuntimeHashMismatchCount\": 0,",
+            "  \"typescriptOnlySemanticRuleCount\": 0,",
+            "  \"mirrorMode\": \"SCHEMA_AND_FROZEN_DECISION_VALIDATION_ONLY\",",
+            "  \"hashMutationRejection\": \"PASS\",",
+            "  \"qualificationLossRejection\": \"PASS\",",
+            "  \"cooccurrenceActivationRejection\": \"PASS\"",
+            "}"
+          ],
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "ROUND15_REGRESSION",
+      "runs": [
+        {
+          "command": "python3 scripts/trace-v49-exploration-composition-engine/test_round1.py",
+          "duration_ms": 62.588,
+          "label": "ROUND15_REGRESSION",
+          "output_tail": [
+            ""
+          ],
+          "status": "PASS"
+        },
+        {
+          "command": "npm run test:exploration-composition-engine",
+          "duration_ms": 163.137,
+          "label": "ROUND15_REGRESSION",
+          "output_tail": [
+            "{",
+            "  \"status\": \"PASS\",",
+            "  \"imageCount\": 25,",
+            "  \"renderedSnapshotCount\": 8,",
+            "  \"crossRuntimeDecisionMismatchCount\": 0,",
+            "  \"crossRuntimeHashMismatchCount\": 0,",
+            "  \"typescriptOnlySemanticRuleCount\": 0,",
+            "  \"pythonNormative\": true,",
+            "  \"typescriptNormativeSemanticEngine\": false,",
+            "  \"publicRouteAdded\": false,",
+            "  \"publicApiAdded\": false",
+            "}"
+          ],
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "SEARCH_REGRESSION",
+      "runs": [
+        {
+          "command": "npm run test:search-v49",
+          "duration_ms": 1977.033,
+          "label": "SEARCH_REGRESSION",
+          "output_tail": [
+            "> archive-box-frontend@0.1.0 test:search-v49",
+            "> node --conditions=react-server scripts/test-search-v49.mjs",
+            "",
+            "SEARCH_V49_TESTS=PASS CHECKS=14 DOCUMENTS=7995"
+          ],
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "CONTEXT_REGRESSION",
+      "runs": [
+        {
+          "command": "npm run test:context-api-v1",
+          "duration_ms": 1030.943,
+          "label": "CONTEXT_REGRESSION",
+          "output_tail": [
+            "> archive-box-frontend@0.1.0 test:context-api-v1",
+            "> node --conditions=react-server scripts/verify-context-api-v1.mjs",
+            "",
+            "CONTEXT_API_V1=PASS ENDPOINT_TEMPLATES_ADDED=1 PUBLIC_RECORD=SURF-AICTRACEV47R0001 REPRESENTATIONS=2 PROJECTION_SHA256=825f6ecaa9ae1496c8a00ea0fefa5c90319046cf9c1f08a2ef76b9b02df4baeb GET=PASS HEAD=PASS OPTIONS=PASS MALFORMED_400=PASS HELD_UNKNOWN_PARITY=PASS RELEASE_PINNING=PASS DETERMINISM=PASS PUBLIC_OBJECTS_TESTED=7995 HELD_OBJECTS_EXPOSED=0 FAILED_CONTEXT_OBJECTS=0 API_SERIALIZATION_FAILURES=0 GOVERNED_CONTEXT_VALIDATION_ID_COUNT=0 FULL_CONTEXT_CORPUS_IN_CLIENT_BUNDLE=false INTERNAL_ID_EXPOSURE_COUNT=0"
+          ],
+          "status": "PASS"
+        },
+        {
+          "command": "npm run test:context-governance-v1",
+          "duration_ms": 20912.014,
+          "label": "CONTEXT_REGRESSION",
+          "output_tail": [
+            "> archive-box-frontend@0.1.0 test:context-governance-v1",
+            "> node --expose-gc --conditions=react-server scripts/verify-context-governance-v1.mjs",
+            "",
+            "CONTEXT_GOVERNANCE_V1=PASS CONTEXT_V1_DECISION=CONTEXT_V1_CLOSED INVARIANTS=22 POLICY_VERSION=context-governance-v1 POLICY_SHA256=aa13eaff6d42533a37777e546b8976bdad7d2be3a4ab4d405a77ce1aa61c7a0c",
+            "CONTEXT_GOVERNANCE_FULL_COHORT=PASS PUBLIC_OBJECTS_TESTED=7995 PUBLIC_OBJECTS_GOVERNED=7995 PUBLIC_OBJECTS_WITH_CONTEXT=7995 OBJECTS_WITH_ONLY_ONE_REPRESENTATION=0 SAME_KIND_MULTIVALUE_OBJECTS=6 FAILED_CONTEXT_OBJECTS=0 GOVERNED_DATASET_FAILURE_COUNT=0 UNEXPLAINED_NODES=0 UNKNOWN_TERM_IDS=0 PROVENANCE_FAILURES=0 API_SERIALIZATION_FAILURES=0",
+            "CONTEXT_GOVERNANCE_PUBLICATION=PASS CONTEXT_KIND_COUNT=3 MEDIUM_TERM_COUNT=10 THEME_TERM_COUNT=8 MOVEMENT_TERM_COUNT=7 TERMS=25 REPRESENTATIONS=16106 PUBLISHED=16106 QUALIFIED=0 HELD=0 EXCLUDED=0 MOVEMENT_REPRESENTATIONS=115 REGION_CONTEXT_NODES=0 REGION_DEFERRED_TO_SPACETIME_COUNT=7996",
+            "CONTEXT_GOVERNANCE_SECURITY=PASS HELD_LOOKUPS=7928 HELD_OBJECTS_EXPOSED=0 LOOKUP_INDISTINGUISHABLE=true UNEXPLAINED_VISIBLE_NODE_COUNT=0 UNRESOLVED_EXPLANATION_CODE_COUNT=0 PROVENANCE_RESOLUTION_FAILURE_COUNT=0 PUBLIC_ID_COLLISION_COUNT=0 VALIDATION_ID_IN_GOVERNED_DTO_COUNT=0 INTERNAL_ID_EXPOSURE_COUNT=0 HEAVY_VALIDATION_SOURCE_INDEX_USED_BY_PUBLIC_RUNTIME=false FULL_CONTEXT_CORPUS_IN_CLIENT_BUNDLE=false BUNDLE_GUARD=SOURCE_GRAPH_PASS",
+            "CONTEXT_GOVERNANCE_CANVAS=PASS DATA_MODE=governed_context_v1 TEMPLATE=context-overview TEMPLATE_VERSION=2 DEFAULT_VISIBLE_MEMBERSHIP_NODE_COUNT=0 DEFAULT_VISIBLE_MEMBERSHIP_CONNECTION_COUNT=0 DEFAULT_VISIBLE_SEMANTIC_EDGE_COUNT=0 VISIBLE_REPRESENTATIONS_P50=2 VISIBLE_REPRESENTATIONS_P95=2 VISIBLE_REPRESENTATIONS_MAX=4 DEFAULT_TOTAL_NODES_P50=3 DEFAULT_TOTAL_NODES_P95=3 DEFAULT_TOTAL_NODES_MAX=5",
+            "CONTEXT_GOVERNANCE_RUNTIME=PASS PROJECTION_ID=trace-context-v1 PROJECTION_SHA256=825f6ecaa9ae1496c8a00ea0fefa5c90319046cf9c1f08a2ef76b9b02df4baeb DETERMINISTIC=true GOVERNED_PROJECTION_RAW_BYTES=13129562 GOVERNED_PROJECTION_GZIP_BYTES=1661608 GOVERNED_RUNTIME_HEAP_BYTES=18195792 GOVERNED_RECORD_LOOKUP_P95_MS=0.012",
+            "CONTEXT_GOVERNANCE_EVIDENCE=PASS FILES=12 SHA256=46f7f6c27ad042fb87e055dd3cedbe6a16a5a3e96c959e8713a9a83db391ab13 REGION_HANDOFF_TERMS=93 REGION_HANDOFF_ROWS=7996"
+          ],
+          "status": "PASS"
+        },
+        {
+          "command": "npm run test:context-runtime-v1",
+          "duration_ms": 7450.462,
+          "label": "CONTEXT_REGRESSION",
+          "output_tail": [
+            "> archive-box-frontend@0.1.0 test:context-runtime-v1",
+            "> node --expose-gc --conditions=react-server scripts/rehearse-context-runtime-v1.mjs",
+            "",
+            "CONTEXT_RUNTIME_DEPENDENCIES=PASS CONTEXT_PUBLIC_RUNTIME_HEAVY_VALIDATION_IMPORT_COUNT=0 CONTEXT_PUBLIC_RUNTIME_SQLITE_DEPENDENCY=false CONTEXT_PUBLIC_RUNTIME_SEARCH_IMPORT_COUNT=0 CONTEXT_API_GENERIC_PROVIDER_OPEN_COUNT=0",
+            "CONTEXT_RUNTIME_REHEARSAL=PASS PUBLIC_CONTEXT_RUNTIME_LOOKUPS=7995 PUBLIC_CONTEXT_RUNTIME_FAILURES=0 HELD_CONTEXT_RUNTIME_LOOKUPS=7928 HELD_CONTEXT_RUNTIME_EXPOSURES=0 PIPELINE_PASSES=7995 INDEX_BUILD_ATTEMPTS=1 SUCCESSFUL_INDEX_BUILDS=1 VALIDATION_ONCE_PER_PROCESS=true",
+            "CONTEXT_RUNTIME_PERFORMANCE=PASS COLD_LOAD_MS=442.219 MODULE_IMPORT_MS=50.198 MANIFEST_VERIFICATION_MS=97.428 INDEX_CONSTRUCTION_MS=53.076 FIRST_SELECTED_RECORD_LOOKUP_MS=392.021 WARM_LOOKUP_P50_MS=0.002 WARM_LOOKUP_P95_MS=0.003 WARM_LOOKUP_P99_MS=0.003 WARM_LOOKUP_MAX_MS=0.557 CONTEXT_RUNTIME_HEAP_BYTES=18286784",
+            "CONTEXT_RUNTIME_PREFLIGHT=PASS PREGENERATED=true PREVERIFIED=true READ_ONLY_AT_RUNTIME=true EVIDENCE_FILES=3 EVIDENCE_SHA256=dd220a45689cf0ca7c5d593cd3dc20b114f0bdfac6ac5377e828c001dfea59b8 EVIDENCE_DIR=/var/folders/1b/flzg0zvs1d39_1094twcdhxr0000gn/T/trace-v49-context-runtime-rehearsal"
+          ],
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "SPACETIME_REGRESSION",
+      "runs": [
+        {
+          "command": "npm run test:spacetime-api-v1",
+          "duration_ms": 1538.617,
+          "label": "SPACETIME_REGRESSION",
+          "output_tail": [
+            "> archive-box-frontend@0.1.0 test:spacetime-api-v1",
+            "> node --conditions=react-server scripts/verify-spacetime-api-v1.mjs",
+            "",
+            "SPACETIME_API_V1=PASS SPACETIME_API_ENDPOINT_COUNT=3 SPACETIME_PROJECTION_SHA256=f751b0f432ff684fd1000201b910aa397a4d9965468c2f7dd5022d6a4ae01c06 SPACETIME_API_PERIOD_COUNT=23 SPACETIME_API_GEOGRAPHY_COUNT=93 SPACETIME_API_PUBLIC_RECORD_COUNT=7995 SPACETIME_API_HELD_EXCLUDED=7928 SPACETIME_API_PROVIDER_OPEN_COUNT=0 SPACETIME_PUBLIC_RUNTIME_GENERATOR_IMPORT_COUNT=0 SPACETIME_PUBLIC_RUNTIME_SQLITE_DEPENDENCY=false SPACETIME_PUBLIC_RUNTIME_FORBIDDEN_SOURCE_IMPORT_COUNT=0 SPACETIME_API_SEARCH_RUNTIME_IMPORT_COUNT=0 SPACETIME_API_SQLITE_RUNTIME_IMPORT_COUNT=0 SPACETIME_CLIENT_RECORD_ARTIFACT_REFERENCE_COUNT=0 SPACETIME_BUILD_CLIENT_GUARD=NOT_REQUIRED SPACETIME_API_NONZERO_CELL_COUNT=373 SPACETIME_API_MAPPED_NONZERO_CELL_COUNT=351 SPACETIME_API_MATRIX_REQUEST_COUNT=2200 SPACETIME_API_MATRIX_PAGE_COUNT=2173"
+          ],
+          "status": "PASS"
+        },
+        {
+          "command": "npm run test:spacetime-governance-v1",
+          "duration_ms": 892.572,
+          "label": "SPACETIME_REGRESSION",
+          "output_tail": [
+            "> archive-box-frontend@0.1.0 test:spacetime-governance-v1",
+            "> node --expose-gc --conditions=react-server scripts/verify-spacetime-governance-v1.mjs",
+            "",
+            "SPACETIME_GEOGRAPHY_GOVERNANCE=PASS REGION_ASSIGNMENTS=7996 REGION_OBJECT_COVERAGE=7995/7995 RAW_LABELS=94 TYPED_LABELS=93 MAPPED_ENTRIES=81 AGGREGATE_ONLY_ENTRIES=11 UNMAPPED_ENTRIES=1 MAPPED_OBJECTS=7800 AGGREGATE_ONLY_OBJECTS=194 UNMAPPED_OBJECTS=1",
+            "SPACETIME_TEMPORAL_GOVERNANCE=PASS TIME_OBJECT_COVERAGE=7995/7995 YEAR=7552 APPROXIMATE=305 DAY=78 MONTH=27 RANGE=33 UNKNOWN=0 EARLIEST=1800 LATEST=2026 BUCKETS=23 RANGE_MEMBERSHIP=INTERVAL_OVERLAP",
+            "SPACETIME_FULL_COHORT=PASS PUBLIC_OBJECTS_TESTED=7995 HELD_IDS_TESTED=7928 HELD_EXPOSURES=0 PERIODS_TESTED=23 PERIOD_REGION_CELLS_TESTED=373 AGGREGATE_FAILURES=0",
+            "SPACETIME_PURE_FUNCTIONS=PASS ADVERSARIES=10 ISO_DAY=day MONTH=month APPROXIMATE=approximate RANGE=range INTERVAL_OVERLAP=PASS DETERMINISTIC=PASS",
+            "SPACETIME_INVARIANTS=PASS COUNT=20 PROJECTION_ID=trace-spacetime-v1 PROJECTION_SHA256=f751b0f432ff684fd1000201b910aa397a4d9965468c2f7dd5022d6a4ae01c06"
+          ],
+          "status": "PASS"
+        },
+        {
+          "command": "npm run test:spacetime-gis-v1",
+          "duration_ms": 30365.688,
+          "label": "SPACETIME_REGRESSION",
+          "output_tail": [
+            "> archive-box-frontend@0.1.0 test:spacetime-gis-v1",
+            "> node scripts/verify-spacetime-gis.mjs",
+            "",
+            "SPACETIME_GIS=PASS GEOMETRY_ARTIFACT_ID=natural-earth-admin0-countries-5.1.1-50m GEOMETRY_SHA256=01a926cc82cda561692eeefcdde8d52310730c08919fd9f73e679c79a9fa718d FEATURE_COUNT=242 MAPPED_REGISTRY_ENTRIES=81 MAPPED_GEOMETRY_TARGETS=84 MISSING_MAPPED_GEOMETRY_TARGETS=0 DEFAULT_PROJECTION=equal-earth PROJECTED_PATH_COUNT=242 DOTS_TESTED=250 DOT_DETERMINISTIC=true DOT_POSITION_SEMANTICS=aggregate_only TINY_GEOGRAPHY_FALLBACK=tiny_geometry NATIVE_PATTERN_DETERMINISTIC=true NATIVE_PATTERN_TIER_POLICY=trace-native-count-tier-v1 NATIVE_PATTERN_TIER_COUNT=4 HAND_AUTHORED_GEOGRAPHY_PATH_COUNT=0 MANUAL_OBJECT_COORDINATE_COUNT=0",
+            "SPACETIME_RUNTIME_V1=PASS SPACETIME_PERIOD_COUNT=23 SPACETIME_NONZERO_PERIOD_REGION_CELL_COUNT=373 DOT_FIELD_CELL_COUNT=351 DOT_FIELD_RECONCILIATION_FAILURE_COUNT=0 DOT_FIELD_DETERMINISM_FAILURE_COUNT=0 DOT_FIELD_CONTAINMENT_FAILURE_COUNT=0 MULTI_GEOMETRY_ANCHOR_ONLY_CELL_COUNT=14 NATIVE_PATTERN_ID_COLLISION_COUNT=0 DOT_HOSTILE_BOUNDARY_REGRESSION=PASS GEOMETRY_SINGLE_FLIGHT_FETCH_COUNT=1 GEOMETRY_SOURCE_CACHE_HIT_COUNT=1 PROJECTION_PATH_CACHE_HIT_COUNT=1 PROJECTION_GEOMETRY_ANCHOR_CACHE_COUNT=84 SPACETIME_RAPID_PERIOD_SWITCH=PASS SPACETIME_STALE_RESPONSE_GUARD=PASS SPACETIME_CURSOR_ISOLATION=PASS AGGREGATE_MODE_SEMANTIC_PARITY=PASS DOT_MODE_SEMANTIC_PARITY=PASS TEXTURE_MODE_SEMANTIC_PARITY=PASS SPACETIME_EXPORT_PREPARATION=PASS SPACETIME_TEXTURE_HYDRATION_STABILITY=PASS"
+          ],
+          "status": "PASS"
+        },
+        {
+          "command": "npm run test:spacetime-runtime-v1",
+          "duration_ms": 29319.005,
+          "label": "SPACETIME_REGRESSION",
+          "output_tail": [
+            "> archive-box-frontend@0.1.0 test:spacetime-runtime-v1",
+            "> node --conditions=react-server scripts/verify-spacetime-runtime-v1.mjs",
+            "",
+            "SPACETIME_RUNTIME_V1=PASS SPACETIME_PERIOD_COUNT=23 SPACETIME_NONZERO_PERIOD_REGION_CELL_COUNT=373 DOT_FIELD_CELL_COUNT=351 DOT_FIELD_RECONCILIATION_FAILURE_COUNT=0 DOT_FIELD_DETERMINISM_FAILURE_COUNT=0 DOT_FIELD_CONTAINMENT_FAILURE_COUNT=0 MULTI_GEOMETRY_ANCHOR_ONLY_CELL_COUNT=14 NATIVE_PATTERN_ID_COLLISION_COUNT=0 DOT_HOSTILE_BOUNDARY_REGRESSION=PASS GEOMETRY_SINGLE_FLIGHT_FETCH_COUNT=1 GEOMETRY_SOURCE_CACHE_HIT_COUNT=1 PROJECTION_PATH_CACHE_HIT_COUNT=1 PROJECTION_GEOMETRY_ANCHOR_CACHE_COUNT=84 SPACETIME_RAPID_PERIOD_SWITCH=PASS SPACETIME_STALE_RESPONSE_GUARD=PASS SPACETIME_CURSOR_ISOLATION=PASS AGGREGATE_MODE_SEMANTIC_PARITY=PASS DOT_MODE_SEMANTIC_PARITY=PASS TEXTURE_MODE_SEMANTIC_PARITY=PASS SPACETIME_EXPORT_PREPARATION=PASS SPACETIME_TEXTURE_HYDRATION_STABILITY=PASS"
+          ],
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "API_TESTS",
+      "runs": [
+        {
+          "command": "npm run test:read-platform",
+          "duration_ms": 112.875,
+          "label": "API_TESTS",
+          "output_tail": [
+            "> archive-box-frontend@0.1.0 test:read-platform",
+            "> node scripts/verify-read-platform-contract.mjs",
+            "",
+            "READ_PLATFORM_CONTRACT=PASS DIRECT_DATA_COUPLING=0"
+          ],
+          "status": "PASS"
+        },
+        {
+          "command": "python3 scripts/trace-v49-exploration-real-database/generate_round1.py --check",
+          "duration_ms": 4366.568,
+          "label": "API_TESTS",
+          "output_tail": [
+            "PASS 1abdeda493eed7871e0b1a5f1d7412be6bc6203068ac20e9547a32b6c5b473e9"
+          ],
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "DATABASE_FREEZE",
+      "runs": [
+        {
+          "command": "python3 scripts/repository/verify_v49_database_freeze.py --repo .",
+          "duration_ms": 433.7,
+          "label": "DATABASE_FREEZE",
+          "output_tail": [
+            "{\"databaseVersion\": 49, \"frozenFileCount\": 126, \"frozenPathDriftCount\": 0, \"manifestSha256\": \"f0dda59dd515ba243eaf213bce9f42513727f1ab0a44685635921c3759a7d22e\", \"mode\": \"verify\", \"status\": \"PASS\", \"unmanifestedV49DatabaseFileCount\": 0}"
+          ],
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "REPOSITORY_HYGIENE",
+      "runs": [
+        {
+          "command": "python3 scripts/repository/audit_repository_hygiene.py --repo .",
+          "duration_ms": 4972.235,
+          "label": "REPOSITORY_HYGIENE",
+          "output_tail": [
+            "{\"status\": \"PASS\", \"trackedFileCount\": 3576, \"violationCount\": 0, \"violations\": []}"
+          ],
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "TYPECHECK",
+      "runs": [
+        {
+          "command": "npm run typecheck:runtime",
+          "duration_ms": 19195.768,
+          "label": "TYPECHECK",
+          "output_tail": [
+            "> archive-box-frontend@0.1.0 typecheck:runtime",
+            "> tsc --project tsconfig.runtime-acceptance.json --pretty false"
+          ],
+          "status": "PASS"
+        },
+        {
+          "command": "npx tsc --noEmit --pretty false",
+          "duration_ms": 5985.603,
+          "label": "TYPECHECK",
+          "output_tail": [
+            ""
+          ],
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "PRODUCTION_BUILD",
+      "runs": [
+        {
+          "command": "npm run build",
+          "duration_ms": 71500,
+          "evidence": "Approved network-enabled Next.js 15.5.18 production build: compiled successfully, framework type/lint validation passed, 46/46 static pages generated, build traces and page optimization completed, and /api/trace/v1/exploration/[...path] was emitted as a dynamic server route.",
+          "label": "PRODUCTION_BUILD",
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS"
+}
