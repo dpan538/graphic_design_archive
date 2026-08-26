@@ -91,3 +91,27 @@ The activation-candidate package is inactive, cannot feed the real Image compile
 Next gate after Round 13: **External Human Review and Separate Semantic Activation Decision**.
 
 Governed Round 13 composition-review package: `docs/research/trace-v49-exploration-composition-review-round1/`.
+
+TRACE v49 Round 14 corrects the governing question: Exploration Field does not need a typed historical knowledge graph. A pair is a local validation unit only. The Python reference engine now evaluates whether bounded, provenance-aware evidence is sufficient to justify meaningful spatial proximity without asserting causation, direction, mechanism, statistical correlation, or semantic similarity.
+
+The frozen V1 method uses eight broad association types, four evidence statuses, separate ordinal strength and confidence, and seven inspectable 0–2 rubric dimensions. Direct and skip-one neighbourhoods share the calibrated minimum gate `MODERATE strength + MODERATE confidence + EXTERNALLY_SUPPORTED or SOURCE_SUPPORTED`, with contextual-directness, historical-specificity, source-directness, and non-co-occurrence hard gates. Thirty-five cases include 10 clear positives, 12 borderline cases, 13 negatives, 10 hard negatives, and three source-supported cases. Twenty-one pass; every co-occurrence-only, qualified, and insufficient case remains inactive.
+
+All six Round 13 strategies now have distance-one/distance-two local-coherence fixtures. All-to-all association is unnecessary. Deterministic repair prunes terminal or failing branches, splits internal failures, restructures skip-one failures, and rejects fields above eight active concepts until decomposed. A strict inspection/redirect contract and spatial-channel contract are ready for internal engine research. External human review is incomplete, so public rendering remains unauthorized.
+
+`ROUND14_DECISION=COMPLETE_WITH_LIMITATIONS`
+
+`GENERIC_ASSOCIATION_TAXONOMY_READY=true`
+
+`DIRECT_NEIGHBOUR_STANDARD_READY=true`
+
+`SKIP_ONE_STANDARD_READY=true`
+
+`CO_OCCURRENCE_ONLY_PASS_COUNT=0`
+
+`LEGACY_PAIR_ACTIVATION_GATE_NORMATIVE=false`
+
+`ROUND15_SAFE_TO_BEGIN=true`
+
+`PUBLIC_RENDERER_SAFE=false`
+
+Governed Round 14 package: `docs/research/trace-v49-exploration-association-calibration-round1/`.

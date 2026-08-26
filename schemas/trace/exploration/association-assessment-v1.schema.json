@@ -1,0 +1,306 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trace.example.invalid/schemas/exploration/association-assessment-v1.schema.json",
+  "title": "TRACE Exploration Generic Association Assessment Package v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "packageId",
+    "version",
+    "methodVersion",
+    "pythonNormative",
+    "typescriptMirrorMode",
+    "selectedThresholds",
+    "taxonomy",
+    "evidenceStatusVocabulary",
+    "assessments",
+    "canonicalHash"
+  ],
+  "properties": {
+    "packageId": {
+      "const": "trace-exploration-generic-association-assessments-v1"
+    },
+    "version": {
+      "const": "1"
+    },
+    "methodVersion": {
+      "const": "trace-generic-association-rubric-v1"
+    },
+    "pythonNormative": {
+      "const": true
+    },
+    "typescriptMirrorMode": {
+      "const": "SCHEMA_AND_FROZEN_DECISION_VALIDATION_ONLY"
+    },
+    "selectedThresholds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "directNeighbour",
+        "skipOne"
+      ],
+      "properties": {
+        "directNeighbour": {
+          "type": "string"
+        },
+        "skipOne": {
+          "type": "string"
+        }
+      }
+    },
+    "taxonomy": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "TEMPORAL_HISTORICAL_CONTEXT",
+          "INSTITUTIONAL_PROFESSIONAL",
+          "CULTURAL_DISCURSIVE",
+          "ECONOMIC_COMMERCIAL",
+          "SOCIAL_IDENTITY",
+          "MATERIAL_TECHNOLOGICAL",
+          "CIRCULATION_EXCHANGE",
+          "PRACTICE_PRODUCTION"
+        ]
+      }
+    },
+    "evidenceStatusVocabulary": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "EXTERNALLY_SUPPORTED",
+          "SOURCE_SUPPORTED",
+          "QUALIFIED",
+          "INSUFFICIENT"
+        ]
+      }
+    },
+    "assessments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/assessment"
+      }
+    },
+    "canonicalHash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "$defs": {
+    "assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assessmentId",
+        "nodeA",
+        "nodeB",
+        "primaryGenericType",
+        "secondaryGenericType",
+        "historicalScope",
+        "contextScope",
+        "associationStrength",
+        "evidenceConfidence",
+        "evidenceStatus",
+        "rubricDimensions",
+        "externalSourceRefs",
+        "archiveSourceRefs",
+        "directNeighbourPass",
+        "skipOnePass",
+        "qualification",
+        "decisionReason",
+        "methodVersion",
+        "activeForProximity",
+        "redirectTargets",
+        "calibrationStratum",
+        "hardNegative",
+        "cooccurrenceOnly"
+      ],
+      "properties": {
+        "assessmentId": {
+          "type": "string",
+          "pattern": "^R14-ASSOC-[0-9]{3}$"
+        },
+        "nodeA": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nodeB": {
+          "type": "string",
+          "minLength": 1
+        },
+        "primaryGenericType": {
+          "enum": [
+            "TEMPORAL_HISTORICAL_CONTEXT",
+            "INSTITUTIONAL_PROFESSIONAL",
+            "CULTURAL_DISCURSIVE",
+            "ECONOMIC_COMMERCIAL",
+            "SOCIAL_IDENTITY",
+            "MATERIAL_TECHNOLOGICAL",
+            "CIRCULATION_EXCHANGE",
+            "PRACTICE_PRODUCTION"
+          ]
+        },
+        "secondaryGenericType": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "enum": [
+                "TEMPORAL_HISTORICAL_CONTEXT",
+                "INSTITUTIONAL_PROFESSIONAL",
+                "CULTURAL_DISCURSIVE",
+                "ECONOMIC_COMMERCIAL",
+                "SOCIAL_IDENTITY",
+                "MATERIAL_TECHNOLOGICAL",
+                "CIRCULATION_EXCHANGE",
+                "PRACTICE_PRODUCTION"
+              ]
+            }
+          ]
+        },
+        "historicalScope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contextScope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "associationStrength": {
+          "enum": [
+            "WEAK",
+            "MODERATE",
+            "STRONG"
+          ]
+        },
+        "evidenceConfidence": {
+          "enum": [
+            "LOW",
+            "MODERATE",
+            "HIGH"
+          ]
+        },
+        "evidenceStatus": {
+          "enum": [
+            "EXTERNALLY_SUPPORTED",
+            "SOURCE_SUPPORTED",
+            "QUALIFIED",
+            "INSUFFICIENT"
+          ]
+        },
+        "rubricDimensions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "D1",
+            "D2",
+            "D3",
+            "D4",
+            "D5",
+            "D6",
+            "D7"
+          ],
+          "properties": {
+            "D1": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2
+            },
+            "D2": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2
+            },
+            "D3": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2
+            },
+            "D4": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2
+            },
+            "D5": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2
+            },
+            "D6": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2
+            },
+            "D7": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2
+            }
+          }
+        },
+        "externalSourceRefs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "archiveSourceRefs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "directNeighbourPass": {
+          "type": "boolean"
+        },
+        "skipOnePass": {
+          "type": "boolean"
+        },
+        "qualification": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decisionReason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "methodVersion": {
+          "const": "trace-generic-association-rubric-v1"
+        },
+        "activeForProximity": {
+          "type": "boolean"
+        },
+        "redirectTargets": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^https://"
+          }
+        },
+        "calibrationStratum": {
+          "enum": [
+            "CLEAR_POSITIVE",
+            "BORDERLINE",
+            "NEGATIVE"
+          ]
+        },
+        "hardNegative": {
+          "type": "boolean"
+        },
+        "cooccurrenceOnly": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

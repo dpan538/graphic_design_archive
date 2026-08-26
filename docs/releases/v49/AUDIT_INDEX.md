@@ -47,3 +47,11 @@ The paired release package is `docs/releases/v49/round11-round12-main-integratio
 | `docs/audits/v49-exploration-composition-review-round1` | RESEARCH_AND_ENGINE_VALIDATION | Round 12 freeze/v1 preservation, exhaustive three-pair and six-gap evidence decisions, six distinct inquiry topologies, five Instance v2 artifacts, inactive activation candidates, unanswered external-review packet, protected systems, and checksum seal. |
 
 The corresponding research package is `docs/research/trace-v49-exploration-composition-review-round1/`. It authorizes no active vocabulary, historical grammar, real semantic Image, product feature, external review answer, or deployment.
+
+## TRACE Round 14 generic-association calibration audit — 2026-08-26
+
+| Package | Classification | Scope |
+|---|---|---|
+| `docs/audits/v49-exploration-association-calibration-round1` | RESEARCH_CALIBRATION_AND_ENGINE_VALIDATION | Round 13 freeze preservation, 35 association cases, 69 provenance bindings, ordinal direct/skip threshold sweep, 490 sensitivity perturbations, six topology-local fixtures, deterministic pruning, strict inspection redirects, cross-runtime frozen-decision equivalence, product/model boundaries, regressions, and checksum seal. |
+
+The corresponding research package is `docs/research/trace-v49-exploration-association-calibration-round1/`. It authorizes internal Round 15 research only; no public renderer, object-connected field, active precise relation, human-review completion, or deployment is inferred.

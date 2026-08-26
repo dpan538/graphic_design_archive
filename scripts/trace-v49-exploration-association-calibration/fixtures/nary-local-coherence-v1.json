@@ -1,0 +1,177 @@
+{
+  "fixturePackageId": "trace-round14-nary-local-coherence-v1",
+  "syntheticLayoutOnly": true,
+  "productionEligible": false,
+  "fixtures": [
+    {
+      "fixtureId": "R14-NARY-001",
+      "strategy": "LINEAR_PATH",
+      "nodes": [
+        "production",
+        "mediation",
+        "consumption"
+      ],
+      "semanticEdges": [
+        [
+          "production",
+          "mediation"
+        ],
+        [
+          "mediation",
+          "consumption"
+        ]
+      ],
+      "pairBindings": {
+        "mediation|production": "R14-ASSOC-002",
+        "consumption|mediation": "R14-ASSOC-003",
+        "consumption|production": "R14-ASSOC-004"
+      },
+      "expectedResult": "PASS",
+      "syntheticLayoutOnly": true
+    },
+    {
+      "fixtureId": "R14-NARY-002",
+      "strategy": "BINARY_FORK",
+      "nodes": [
+        "design diplomacy",
+        "exhibition",
+        "propaganda"
+      ],
+      "semanticEdges": [
+        [
+          "design diplomacy",
+          "exhibition"
+        ],
+        [
+          "design diplomacy",
+          "propaganda"
+        ]
+      ],
+      "pairBindings": {
+        "design diplomacy|exhibition": "R14-ASSOC-005",
+        "design diplomacy|propaganda": "R14-ASSOC-006",
+        "exhibition|propaganda": "R14-ASSOC-008"
+      },
+      "expectedResult": "PASS",
+      "syntheticLayoutOnly": true
+    },
+    {
+      "fixtureId": "R14-NARY-003",
+      "strategy": "BINARY_CONVERGENCE",
+      "nodes": [
+        "material displacement",
+        "supply chain",
+        "production site"
+      ],
+      "semanticEdges": [
+        [
+          "material displacement",
+          "supply chain"
+        ],
+        [
+          "supply chain",
+          "production site"
+        ]
+      ],
+      "pairBindings": {
+        "material displacement|supply chain": "R14-ASSOC-010",
+        "production site|supply chain": "R14-ASSOC-011",
+        "material displacement|production site": "R14-ASSOC-012"
+      },
+      "expectedResult": "PASS",
+      "syntheticLayoutOnly": true
+    },
+    {
+      "fixtureId": "R14-NARY-004",
+      "strategy": "QUALIFIED_PATH",
+      "nodes": [
+        "gendering",
+        "commodification",
+        "design education",
+        "institutionalization"
+      ],
+      "semanticEdges": [
+        [
+          "gendering",
+          "commodification"
+        ],
+        [
+          "commodification",
+          "design education"
+        ],
+        [
+          "design education",
+          "institutionalization"
+        ]
+      ],
+      "pairBindings": {
+        "commodification|gendering": "R14-ASSOC-016",
+        "commodification|design education": "R14-ASSOC-024",
+        "design education|institutionalization": "R14-ASSOC-021",
+        "design education|gendering": "R14-ASSOC-033",
+        "commodification|institutionalization": "R14-ASSOC-034"
+      },
+      "expectedResult": "SPLIT",
+      "syntheticLayoutOnly": true
+    },
+    {
+      "fixtureId": "R14-NARY-005",
+      "strategy": "REFLEXIVE_RETURN",
+      "nodes": [
+        "cultural negotiation",
+        "adaptation",
+        "rejection"
+      ],
+      "semanticEdges": [
+        [
+          "cultural negotiation",
+          "adaptation"
+        ],
+        [
+          "adaptation",
+          "rejection"
+        ]
+      ],
+      "navigationReturn": [
+        "rejection",
+        "cultural negotiation"
+      ],
+      "pairBindings": {
+        "adaptation|cultural negotiation": "R14-ASSOC-013",
+        "adaptation|rejection": "R14-ASSOC-014",
+        "cultural negotiation|rejection": "R14-ASSOC-015"
+      },
+      "expectedResult": "PASS",
+      "syntheticLayoutOnly": true
+    },
+    {
+      "fixtureId": "R14-NARY-006",
+      "strategy": "EVIDENCE_GAP_TREE",
+      "nodes": [
+        "imitation",
+        "piracy",
+        "cultural transformation"
+      ],
+      "semanticEdges": [
+        [
+          "imitation",
+          "piracy"
+        ],
+        [
+          "piracy",
+          "cultural transformation"
+        ]
+      ],
+      "evidenceGapNodeIds": [
+        "cultural transformation"
+      ],
+      "pairBindings": {
+        "imitation|piracy": "R14-ASSOC-017",
+        "cultural transformation|piracy": "R14-ASSOC-023",
+        "cultural transformation|imitation": "R14-ASSOC-035"
+      },
+      "expectedResult": "PRUNED",
+      "syntheticLayoutOnly": true
+    }
+  ]
+}

@@ -1,0 +1,1354 @@
+{
+  "packageId": "trace-exploration-generic-association-assessments-v1",
+  "version": "1",
+  "methodVersion": "trace-generic-association-rubric-v1",
+  "pythonNormative": true,
+  "typescriptMirrorMode": "SCHEMA_AND_FROZEN_DECISION_VALIDATION_ONLY",
+  "selectedThresholds": {
+    "directNeighbour": "MIN_STRENGTH=MODERATE;MIN_CONFIDENCE=MODERATE;STATUS_IN={EXTERNALLY_SUPPORTED,SOURCE_SUPPORTED};HARD_GATES=D1>=1,D5>=1,D7>=1,CO_OCCURRENCE_ONLY=false",
+    "skipOne": "MIN_STRENGTH=MODERATE;MIN_CONFIDENCE=MODERATE;STATUS_IN={EXTERNALLY_SUPPORTED,SOURCE_SUPPORTED};HARD_GATES=D1>=1,D5>=1,D7>=1,CO_OCCURRENCE_ONLY=false"
+  },
+  "taxonomy": [
+    "TEMPORAL_HISTORICAL_CONTEXT",
+    "INSTITUTIONAL_PROFESSIONAL",
+    "CULTURAL_DISCURSIVE",
+    "ECONOMIC_COMMERCIAL",
+    "SOCIAL_IDENTITY",
+    "MATERIAL_TECHNOLOGICAL",
+    "CIRCULATION_EXCHANGE",
+    "PRACTICE_PRODUCTION"
+  ],
+  "evidenceStatusVocabulary": [
+    "EXTERNALLY_SUPPORTED",
+    "SOURCE_SUPPORTED",
+    "QUALIFIED",
+    "INSUFFICIENT"
+  ],
+  "assessments": [
+    {
+      "assessmentId": "R14-ASSOC-001",
+      "nodeA": "professionalization",
+      "nodeB": "institutionalization",
+      "primaryGenericType": "INSTITUTIONAL_PROFESSIONAL",
+      "secondaryGenericType": null,
+      "historicalScope": "Western interior design 1870–1970 and university visual-identity practice",
+      "contextScope": "Named education, association, accreditation, occupational-trust, and university mechanisms",
+      "associationStrength": "STRONG",
+      "evidenceConfidence": "HIGH",
+      "evidenceStatus": "EXTERNALLY_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 2,
+        "D2": 2,
+        "D3": 1,
+        "D4": 2,
+        "D5": 2,
+        "D6": 2,
+        "D7": 2
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-001",
+        "COMP-SRC-002"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "Association is non-directional and scope-bounded; no universal professional sequence is claimed.",
+      "decisionReason": "Two independent domain-aligned studies explicitly discuss the concepts together through named institutions.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://academic.oup.com/jdh/article/21/1/1/361205",
+        "https://munin.uit.no/handle/10037/22810"
+      ],
+      "calibrationStratum": "CLEAR_POSITIVE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-002",
+      "nodeA": "production",
+      "nodeB": "mediation",
+      "primaryGenericType": "PRACTICE_PRODUCTION",
+      "secondaryGenericType": "CULTURAL_DISCURSIVE",
+      "historicalScope": "Design-history accounts of production-consumption mediation",
+      "contextScope": "Designed channels and devices between production and consumption",
+      "associationStrength": "STRONG",
+      "evidenceConfidence": "HIGH",
+      "evidenceStatus": "EXTERNALLY_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 2,
+        "D2": 2,
+        "D3": 1,
+        "D4": 2,
+        "D5": 1,
+        "D6": 2,
+        "D7": 2
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-009",
+        "COMP-SRC-010"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "Mediation is contextual, not a causal arrow from production.",
+      "decisionReason": "Independent design-history sources explicitly place mediating channels or devices in production contexts.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://academic.oup.com/jdh/article/39/2/113/8537083",
+        "https://doi.org/10.1093/jdh/epp031"
+      ],
+      "calibrationStratum": "CLEAR_POSITIVE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-003",
+      "nodeA": "mediation",
+      "nodeB": "consumption",
+      "primaryGenericType": "PRACTICE_PRODUCTION",
+      "secondaryGenericType": "ECONOMIC_COMMERCIAL",
+      "historicalScope": "Design-history accounts of production-consumption mediation",
+      "contextScope": "Meaning inscription and data relations involving consumption",
+      "associationStrength": "STRONG",
+      "evidenceConfidence": "HIGH",
+      "evidenceStatus": "EXTERNALLY_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 2,
+        "D2": 2,
+        "D3": 1,
+        "D4": 2,
+        "D5": 1,
+        "D6": 2,
+        "D7": 2
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-009",
+        "COMP-SRC-010"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "The association does not make consumers passive endpoints.",
+      "decisionReason": "Independent sources explicitly locate designed mediation within consumption and reception.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://academic.oup.com/jdh/article/39/2/113/8537083",
+        "https://doi.org/10.1093/jdh/epp031"
+      ],
+      "calibrationStratum": "CLEAR_POSITIVE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-004",
+      "nodeA": "production",
+      "nodeB": "consumption",
+      "primaryGenericType": "PRACTICE_PRODUCTION",
+      "secondaryGenericType": "ECONOMIC_COMMERCIAL",
+      "historicalScope": "Production-consumption mediation in design history",
+      "contextScope": "The PCM model and digital extension explicitly retain both poles",
+      "associationStrength": "STRONG",
+      "evidenceConfidence": "HIGH",
+      "evidenceStatus": "EXTERNALLY_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 2,
+        "D2": 2,
+        "D3": 1,
+        "D4": 2,
+        "D5": 1,
+        "D6": 2,
+        "D7": 2
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-009",
+        "COMP-SRC-010"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "Spatial association does not assert a single linear market mechanism.",
+      "decisionReason": "The sources explicitly frame designed channels and devices between production and consumption.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://academic.oup.com/jdh/article/39/2/113/8537083",
+        "https://doi.org/10.1093/jdh/epp031"
+      ],
+      "calibrationStratum": "CLEAR_POSITIVE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-005",
+      "nodeA": "exhibition",
+      "nodeB": "design diplomacy",
+      "primaryGenericType": "CIRCULATION_EXCHANGE",
+      "secondaryGenericType": "CULTURAL_DISCURSIVE",
+      "historicalScope": "Swedish, Polish, Soviet, and US-linked exposition histories",
+      "contextScope": "Designed exhibition media used in international negotiation and representation",
+      "associationStrength": "STRONG",
+      "evidenceConfidence": "HIGH",
+      "evidenceStatus": "EXTERNALLY_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 2,
+        "D2": 2,
+        "D3": 2,
+        "D4": 2,
+        "D5": 2,
+        "D6": 2,
+        "D7": 2
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-023",
+        "COMP-SRC-024",
+        "COMP-SRC-025"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "Diplomatic intention does not guarantee audience reception or political effect.",
+      "decisionReason": "Three independent histories directly analyze exhibitions as sites of design diplomacy.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://doi.org/10.1080/10331867.2023.2282294",
+        "https://www.cambridge.org/core/journals/contemporary-european-history/article/socialist-humanist-and-welldesigned-the-polish-welfare-state-at-the-international-labour-exhibition-in-turin-1961/94D125A40C5B3B013872B9A949430909",
+        "https://www.tandfonline.com/doi/abs/10.1080/17547075.2017.1333388"
+      ],
+      "calibrationStratum": "CLEAR_POSITIVE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-006",
+      "nodeA": "design diplomacy",
+      "nodeB": "propaganda",
+      "primaryGenericType": "CULTURAL_DISCURSIVE",
+      "secondaryGenericType": "CIRCULATION_EXCHANGE",
+      "historicalScope": "State-sponsored international display",
+      "contextScope": "Persuasion, propaganda, negotiation, and goodwill in exposition practice",
+      "associationStrength": "STRONG",
+      "evidenceConfidence": "HIGH",
+      "evidenceStatus": "EXTERNALLY_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 2,
+        "D2": 2,
+        "D3": 2,
+        "D4": 2,
+        "D5": 2,
+        "D6": 2,
+        "D7": 2
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-023",
+        "COMP-SRC-024",
+        "COMP-SRC-025"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "The sources distinguish diplomacy from propaganda rather than equating them.",
+      "decisionReason": "The exhibition studies explicitly compare or combine diplomatic and propagandistic functions.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://doi.org/10.1080/10331867.2023.2282294",
+        "https://www.cambridge.org/core/journals/contemporary-european-history/article/socialist-humanist-and-welldesigned-the-polish-welfare-state-at-the-international-labour-exhibition-in-turin-1961/94D125A40C5B3B013872B9A949430909",
+        "https://www.tandfonline.com/doi/abs/10.1080/17547075.2017.1333388"
+      ],
+      "calibrationStratum": "CLEAR_POSITIVE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-007",
+      "nodeA": "propaganda",
+      "nodeB": "trade",
+      "primaryGenericType": "ECONOMIC_COMMERCIAL",
+      "secondaryGenericType": "CULTURAL_DISCURSIVE",
+      "historicalScope": "Swedish national representation at an international exposition",
+      "contextScope": "Designed display combining propaganda, goodwill, and trade",
+      "associationStrength": "STRONG",
+      "evidenceConfidence": "MODERATE",
+      "evidenceStatus": "EXTERNALLY_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 2,
+        "D2": 1,
+        "D3": 0,
+        "D4": 2,
+        "D5": 2,
+        "D6": 1,
+        "D7": 2
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-025"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "One bounded exposition case; no general identity between propaganda and trade.",
+      "decisionReason": "One domain-aligned historical study explicitly treats propaganda and trade within the same designed display program.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://doi.org/10.1080/10331867.2023.2282294"
+      ],
+      "calibrationStratum": "CLEAR_POSITIVE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-008",
+      "nodeA": "exhibition",
+      "nodeB": "propaganda",
+      "primaryGenericType": "CULTURAL_DISCURSIVE",
+      "secondaryGenericType": "CIRCULATION_EXCHANGE",
+      "historicalScope": "State-sponsored international exhibitions",
+      "contextScope": "Designed exposition used for persuasion, national representation, and propaganda",
+      "associationStrength": "STRONG",
+      "evidenceConfidence": "HIGH",
+      "evidenceStatus": "EXTERNALLY_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 2,
+        "D2": 2,
+        "D3": 1,
+        "D4": 2,
+        "D5": 2,
+        "D6": 2,
+        "D7": 2
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-024",
+        "COMP-SRC-025"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "The assessment remains case-bounded and does not classify every exhibition as propaganda.",
+      "decisionReason": "Independent exposition histories directly discuss propagandistic functions of designed exhibitions.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://doi.org/10.1080/10331867.2023.2282294",
+        "https://www.cambridge.org/core/journals/contemporary-european-history/article/socialist-humanist-and-welldesigned-the-polish-welfare-state-at-the-international-labour-exhibition-in-turin-1961/94D125A40C5B3B013872B9A949430909"
+      ],
+      "calibrationStratum": "CLEAR_POSITIVE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-009",
+      "nodeA": "design diplomacy",
+      "nodeB": "trade",
+      "primaryGenericType": "ECONOMIC_COMMERCIAL",
+      "secondaryGenericType": "CIRCULATION_EXCHANGE",
+      "historicalScope": "Swedish international exposition practice",
+      "contextScope": "Diplomatic representation, goodwill, and trade through designed display",
+      "associationStrength": "STRONG",
+      "evidenceConfidence": "MODERATE",
+      "evidenceStatus": "EXTERNALLY_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 2,
+        "D2": 1,
+        "D3": 0,
+        "D4": 2,
+        "D5": 2,
+        "D6": 1,
+        "D7": 2
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-025"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "Single-case source support; diplomatic outcome is not asserted.",
+      "decisionReason": "A design-history exposition case directly joins diplomatic representation and trade.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://doi.org/10.1080/10331867.2023.2282294"
+      ],
+      "calibrationStratum": "CLEAR_POSITIVE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-010",
+      "nodeA": "material displacement",
+      "nodeB": "supply chain",
+      "primaryGenericType": "MATERIAL_TECHNOLOGICAL",
+      "secondaryGenericType": "CIRCULATION_EXCHANGE",
+      "historicalScope": "Movement of designed materials between production and receiving sites",
+      "contextScope": "Material chains with labor and ecological consequences",
+      "associationStrength": "STRONG",
+      "evidenceConfidence": "HIGH",
+      "evidenceStatus": "EXTERNALLY_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 2,
+        "D2": 2,
+        "D3": 1,
+        "D4": 2,
+        "D5": 2,
+        "D6": 2,
+        "D7": 2
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-019",
+        "COMP-SRC-020"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "The association does not reduce all material movement to one supply-chain model.",
+      "decisionReason": "Two design-history sources explicitly treat material movement through sites and chains.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://academic.oup.com/jdh/issue/34/3",
+        "https://www.tandfonline.com/doi/abs/10.1080/18626033.2013.798922"
+      ],
+      "calibrationStratum": "CLEAR_POSITIVE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-011",
+      "nodeA": "supply chain",
+      "nodeB": "production site",
+      "primaryGenericType": "MATERIAL_TECHNOLOGICAL",
+      "secondaryGenericType": "PRACTICE_PRODUCTION",
+      "historicalScope": "Landscape material chains",
+      "contextScope": "Named production sites, destinations, labor, and ecological effects",
+      "associationStrength": "STRONG",
+      "evidenceConfidence": "MODERATE",
+      "evidenceStatus": "EXTERNALLY_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 2,
+        "D2": 1,
+        "D3": 0,
+        "D4": 2,
+        "D5": 2,
+        "D6": 1,
+        "D7": 2
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-020"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "One bounded study and source family; confidence is moderate.",
+      "decisionReason": "The study explicitly describes production sites as part of the material chain.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://www.tandfonline.com/doi/abs/10.1080/18626033.2013.798922"
+      ],
+      "calibrationStratum": "BORDERLINE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-012",
+      "nodeA": "material displacement",
+      "nodeB": "production site",
+      "primaryGenericType": "MATERIAL_TECHNOLOGICAL",
+      "secondaryGenericType": "PRACTICE_PRODUCTION",
+      "historicalScope": "Movement of landscape materials",
+      "contextScope": "Production site and designed destination linked by a material chain",
+      "associationStrength": "MODERATE",
+      "evidenceConfidence": "MODERATE",
+      "evidenceStatus": "EXTERNALLY_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 1,
+        "D2": 1,
+        "D3": 0,
+        "D4": 2,
+        "D5": 2,
+        "D6": 1,
+        "D7": 2
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-020"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "Association is inferred within the source's explicit chain, not elevated to a universal relation.",
+      "decisionReason": "The bounded source-level account supplies a contextual bridge between displacement and production site.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://www.tandfonline.com/doi/abs/10.1080/18626033.2013.798922"
+      ],
+      "calibrationStratum": "BORDERLINE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-013",
+      "nodeA": "cultural negotiation",
+      "nodeB": "adaptation",
+      "primaryGenericType": "CULTURAL_DISCURSIVE",
+      "secondaryGenericType": "CIRCULATION_EXCHANGE",
+      "historicalScope": "Architectural contact zones and Javanese design",
+      "contextScope": "Selective borrowing, adaptation, rejection, and symbolic resistance",
+      "associationStrength": "STRONG",
+      "evidenceConfidence": "HIGH",
+      "evidenceStatus": "EXTERNALLY_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 2,
+        "D2": 2,
+        "D3": 1,
+        "D4": 2,
+        "D5": 2,
+        "D6": 2,
+        "D7": 2
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-013",
+        "COMP-SRC-014"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "Adaptation is situated agency, not passive transfer.",
+      "decisionReason": "Two studies explicitly place adaptation within negotiated contact and resistance.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://doi.org/10.1080/23311983.2025.2482456",
+        "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745"
+      ],
+      "calibrationStratum": "BORDERLINE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-014",
+      "nodeA": "adaptation",
+      "nodeB": "rejection",
+      "primaryGenericType": "CULTURAL_DISCURSIVE",
+      "secondaryGenericType": null,
+      "historicalScope": "Architectural contact zones",
+      "contextScope": "Selective borrowing, adaptation, or rejection",
+      "associationStrength": "STRONG",
+      "evidenceConfidence": "MODERATE",
+      "evidenceStatus": "EXTERNALLY_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 2,
+        "D2": 1,
+        "D3": 0,
+        "D4": 2,
+        "D5": 2,
+        "D6": 1,
+        "D7": 2
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-013"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "Alternatives within one contact-zone model, not successive stages.",
+      "decisionReason": "A domain-aligned study explicitly presents adaptation and rejection as situated responses.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745"
+      ],
+      "calibrationStratum": "BORDERLINE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-015",
+      "nodeA": "cultural negotiation",
+      "nodeB": "rejection",
+      "primaryGenericType": "CULTURAL_DISCURSIVE",
+      "secondaryGenericType": null,
+      "historicalScope": "Architectural contact zones",
+      "contextScope": "Negotiation through borrowing, adaptation, or rejection",
+      "associationStrength": "MODERATE",
+      "evidenceConfidence": "MODERATE",
+      "evidenceStatus": "EXTERNALLY_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 1,
+        "D2": 1,
+        "D3": 0,
+        "D4": 2,
+        "D5": 2,
+        "D6": 1,
+        "D7": 2
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-013"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "One conceptual source; no claim that rejection always constitutes negotiation.",
+      "decisionReason": "The source explicitly situates rejection within a negotiated contact-zone repertoire.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745"
+      ],
+      "calibrationStratum": "BORDERLINE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-016",
+      "nodeA": "gendering",
+      "nodeB": "commodification",
+      "primaryGenericType": "SOCIAL_IDENTITY",
+      "secondaryGenericType": "ECONOMIC_COMMERCIAL",
+      "historicalScope": "Paris 1867 Brazilian display with a qualified consumption-history comparison",
+      "contextScope": "Parallel classification of tropical nature/raw material and gendered consumer/trader positions",
+      "associationStrength": "STRONG",
+      "evidenceConfidence": "MODERATE",
+      "evidenceStatus": "EXTERNALLY_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 2,
+        "D2": 2,
+        "D3": 1,
+        "D4": 2,
+        "D5": 2,
+        "D6": 1,
+        "D7": 2
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-004",
+        "COMP-SRC-005"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "The generic association is case-bounded; it does not assert that either process causes the other.",
+      "decisionReason": "A design-history article explicitly treats both processes in one exposition; the second source broadens but does not universalize the association.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://journals.sagepub.com/doi/abs/10.1177/1469540519872069",
+        "https://researchonline.rca.ac.uk/2773/"
+      ],
+      "calibrationStratum": "BORDERLINE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-017",
+      "nodeA": "imitation",
+      "nodeB": "piracy",
+      "primaryGenericType": "PRACTICE_PRODUCTION",
+      "secondaryGenericType": "ECONOMIC_COMMERCIAL",
+      "historicalScope": "Fashion and product-design copying regimes",
+      "contextScope": "Source-bounded classifications distinguish accommodated imitation from piracy",
+      "associationStrength": "STRONG",
+      "evidenceConfidence": "HIGH",
+      "evidenceStatus": "EXTERNALLY_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 2,
+        "D2": 2,
+        "D3": 2,
+        "D4": 2,
+        "D5": 2,
+        "D6": 2,
+        "D7": 2
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-006",
+        "COMP-SRC-007",
+        "COMP-SRC-008"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "Authorization and rights regimes condition the classification; imitation is not automatically piracy.",
+      "decisionReason": "Three independent sources explicitly analyze the concepts together while preserving their distinction.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://academic.oup.com/jiplp/article/20/2/71/7916754",
+        "https://www.cambridge.org/core/journals/enterprise-and-society/article/from-the-margins-to-the-core-of-haute-couture-the-entrepreneurial-journey-of-coco-chanel/2EB663E94E9C67F6CB3B9CF962242FAD",
+        "https://www.sciencedirect.com/science/article/pii/S0148296323003041"
+      ],
+      "calibrationStratum": "BORDERLINE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-018",
+      "nodeA": "photography",
+      "nodeB": "typography",
+      "primaryGenericType": "MATERIAL_TECHNOLOGICAL",
+      "secondaryGenericType": "PRACTICE_PRODUCTION",
+      "historicalScope": "Herbert Matter's modern graphic-design practice",
+      "contextScope": "Institutional record of photographic/typographic synthesis",
+      "associationStrength": "STRONG",
+      "evidenceConfidence": "MODERATE",
+      "evidenceStatus": "SOURCE_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 2,
+        "D2": 1,
+        "D3": 0,
+        "D4": 2,
+        "D5": 2,
+        "D6": 1,
+        "D7": 1
+      },
+      "externalSourceRefs": [],
+      "archiveSourceRefs": [
+        "R14-ARC-002"
+      ],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "Supported by archive/source evidence. Independent scholarly validation pending.",
+      "decisionReason": "The museum exhibition record explicitly describes a synthesis of photography and typography.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://www.moma.org/calendar/exhibitions/340"
+      ],
+      "calibrationStratum": "BORDERLINE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-019",
+      "nodeA": "advertising",
+      "nodeB": "consumer culture",
+      "primaryGenericType": "ECONOMIC_COMMERCIAL",
+      "secondaryGenericType": "SOCIAL_IDENTITY",
+      "historicalScope": "Ken Garland's First Things First intervention",
+      "contextScope": "Commercial priorities, consumer selling, and social-purpose alternatives",
+      "associationStrength": "STRONG",
+      "evidenceConfidence": "MODERATE",
+      "evidenceStatus": "SOURCE_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 2,
+        "D2": 1,
+        "D3": 0,
+        "D4": 2,
+        "D5": 2,
+        "D6": 1,
+        "D7": 1
+      },
+      "externalSourceRefs": [],
+      "archiveSourceRefs": [
+        "R14-ARC-003",
+        "R14-ARC-004"
+      ],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "Supported by archive/source evidence. Independent scholarly validation pending.",
+      "decisionReason": "The designer's own published accounts explicitly connect advertising priorities with consumer selling and social context.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://eyemagazine.com/feature/article/last-things-last",
+        "https://eyemagazine.com/opinion/article/letter-first-things-last"
+      ],
+      "calibrationStratum": "BORDERLINE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-020",
+      "nodeA": "craft",
+      "nodeB": "education",
+      "primaryGenericType": "INSTITUTIONAL_PROFESSIONAL",
+      "secondaryGenericType": "PRACTICE_PRODUCTION",
+      "historicalScope": "Staatliches Bauhaus founding program",
+      "contextScope": "Workshop education and the joining of art and craft",
+      "associationStrength": "STRONG",
+      "evidenceConfidence": "MODERATE",
+      "evidenceStatus": "SOURCE_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 2,
+        "D2": 1,
+        "D3": 0,
+        "D4": 2,
+        "D5": 2,
+        "D6": 1,
+        "D7": 1
+      },
+      "externalSourceRefs": [],
+      "archiveSourceRefs": [
+        "R14-ARC-001"
+      ],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "Supported by archive/source evidence. Independent scholarly validation pending.",
+      "decisionReason": "The institutional archive presents the primary program's explicit educational and workshop context.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://www.bauhaus.de/de/das_bauhaus/"
+      ],
+      "calibrationStratum": "BORDERLINE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-021",
+      "nodeA": "design education",
+      "nodeB": "institutionalization",
+      "primaryGenericType": "INSTITUTIONAL_PROFESSIONAL",
+      "secondaryGenericType": null,
+      "historicalScope": "Formal design education and university visual-identity practice",
+      "contextScope": "Education, accreditation, universities, associations, and professional logic",
+      "associationStrength": "MODERATE",
+      "evidenceConfidence": "HIGH",
+      "evidenceStatus": "EXTERNALLY_SUPPORTED",
+      "rubricDimensions": {
+        "D1": 1,
+        "D2": 2,
+        "D3": 1,
+        "D4": 2,
+        "D5": 2,
+        "D6": 2,
+        "D7": 2
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-001",
+        "COMP-SRC-002"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": true,
+      "skipOnePass": true,
+      "qualification": "The association is institutional and contextual, not a universal path to professional status.",
+      "decisionReason": "Independent studies repeatedly place formal education and universities within institutionalization contexts.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": true,
+      "redirectTargets": [
+        "https://academic.oup.com/jdh/article/21/1/1/361205",
+        "https://munin.uit.no/handle/10037/22810"
+      ],
+      "calibrationStratum": "BORDERLINE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-022",
+      "nodeA": "cultural transfer",
+      "nodeB": "cultural negotiation",
+      "primaryGenericType": "CIRCULATION_EXCHANGE",
+      "secondaryGenericType": "CULTURAL_DISCURSIVE",
+      "historicalScope": "Print, exhibition, and architectural contact settings",
+      "contextScope": "Receiving agency and negotiated borrowing are compatible but not directly joined across the bounded sources",
+      "associationStrength": "MODERATE",
+      "evidenceConfidence": "MODERATE",
+      "evidenceStatus": "QUALIFIED",
+      "rubricDimensions": {
+        "D1": 1,
+        "D2": 2,
+        "D3": 1,
+        "D4": 2,
+        "D5": 1,
+        "D6": 1,
+        "D7": 2
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-011",
+        "COMP-SRC-012",
+        "COMP-SRC-013"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": false,
+      "skipOnePass": false,
+      "qualification": "The bridge is cross-source and conceptually plausible, but direct historical contextual support remains incomplete.",
+      "decisionReason": "Evidence exists for both concepts and receiving agency, but the V1 proximity gate excludes this qualified bridge.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": false,
+      "redirectTargets": [
+        "https://academic.oup.com/jdh/article/23/4/387/426251",
+        "https://doi.org/10.1093/oxartj/kcad007",
+        "https://www.tandfonline.com/doi/full/10.1080/13264826.2021.1939745"
+      ],
+      "calibrationStratum": "BORDERLINE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-023",
+      "nodeA": "cultural transformation",
+      "nodeB": "piracy",
+      "primaryGenericType": "CULTURAL_DISCURSIVE",
+      "secondaryGenericType": "ECONOMIC_COMMERCIAL",
+      "historicalScope": "No shared bounded historical case",
+      "contextScope": "Near-neighbour language about change does not establish association",
+      "associationStrength": "WEAK",
+      "evidenceConfidence": "LOW",
+      "evidenceStatus": "INSUFFICIENT",
+      "rubricDimensions": {
+        "D1": 0,
+        "D2": 1,
+        "D3": 1,
+        "D4": 1,
+        "D5": 0,
+        "D6": 0,
+        "D7": 0
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-006",
+        "COMP-SRC-017"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": false,
+      "skipOnePass": false,
+      "qualification": "Separate source families attest each concept only.",
+      "decisionReason": "No source-level contextual bridge supports meaningful proximity.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": false,
+      "redirectTargets": [],
+      "calibrationStratum": "NEGATIVE",
+      "hardNegative": true,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-024",
+      "nodeA": "design education",
+      "nodeB": "commodification",
+      "primaryGenericType": "INSTITUTIONAL_PROFESSIONAL",
+      "secondaryGenericType": "ECONOMIC_COMMERCIAL",
+      "historicalScope": "No shared bounded historical case",
+      "contextScope": "Broad design-history membership only",
+      "associationStrength": "WEAK",
+      "evidenceConfidence": "LOW",
+      "evidenceStatus": "INSUFFICIENT",
+      "rubricDimensions": {
+        "D1": 0,
+        "D2": 1,
+        "D3": 1,
+        "D4": 2,
+        "D5": 0,
+        "D6": 0,
+        "D7": 0
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-001",
+        "COMP-SRC-004"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": false,
+      "skipOnePass": false,
+      "qualification": "Corpus co-membership is not contextual evidence.",
+      "decisionReason": "The sources support separate histories, not this association.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": false,
+      "redirectTargets": [],
+      "calibrationStratum": "NEGATIVE",
+      "hardNegative": true,
+      "cooccurrenceOnly": true
+    },
+    {
+      "assessmentId": "R14-ASSOC-025",
+      "nodeA": "gendering",
+      "nodeB": "mobile object",
+      "primaryGenericType": "SOCIAL_IDENTITY",
+      "secondaryGenericType": "CIRCULATION_EXCHANGE",
+      "historicalScope": "No shared bounded historical case",
+      "contextScope": "Possible visual-culture overlap without direct evidence",
+      "associationStrength": "WEAK",
+      "evidenceConfidence": "LOW",
+      "evidenceStatus": "INSUFFICIENT",
+      "rubricDimensions": {
+        "D1": 0,
+        "D2": 1,
+        "D3": 1,
+        "D4": 2,
+        "D5": 0,
+        "D6": 0,
+        "D7": 0
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-004",
+        "COMP-SRC-021"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": false,
+      "skipOnePass": false,
+      "qualification": "A future case-specific study could change the result; none is present here.",
+      "decisionReason": "The evidence rows attest different concepts in unrelated cases.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": false,
+      "redirectTargets": [],
+      "calibrationStratum": "NEGATIVE",
+      "hardNegative": true,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-026",
+      "nodeA": "professionalization",
+      "nodeB": "material displacement",
+      "primaryGenericType": "INSTITUTIONAL_PROFESSIONAL",
+      "secondaryGenericType": "MATERIAL_TECHNOLOGICAL",
+      "historicalScope": "No shared bounded historical case",
+      "contextScope": "Both are design-history topics but not a supported local association",
+      "associationStrength": "WEAK",
+      "evidenceConfidence": "LOW",
+      "evidenceStatus": "INSUFFICIENT",
+      "rubricDimensions": {
+        "D1": 0,
+        "D2": 1,
+        "D3": 1,
+        "D4": 2,
+        "D5": 0,
+        "D6": 0,
+        "D7": 0
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-001",
+        "COMP-SRC-019"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": false,
+      "skipOnePass": false,
+      "qualification": "Domain alignment alone cannot activate proximity.",
+      "decisionReason": "This hard negative tests broad disciplinary similarity without contextual support.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": false,
+      "redirectTargets": [],
+      "calibrationStratum": "NEGATIVE",
+      "hardNegative": true,
+      "cooccurrenceOnly": true
+    },
+    {
+      "assessmentId": "R14-ASSOC-027",
+      "nodeA": "photography",
+      "nodeB": "institutionalization",
+      "primaryGenericType": "INSTITUTIONAL_PROFESSIONAL",
+      "secondaryGenericType": "MATERIAL_TECHNOLOGICAL",
+      "historicalScope": "No shared bounded historical case",
+      "contextScope": "Modern design prominence without a source-level bridge",
+      "associationStrength": "WEAK",
+      "evidenceConfidence": "LOW",
+      "evidenceStatus": "INSUFFICIENT",
+      "rubricDimensions": {
+        "D1": 0,
+        "D2": 1,
+        "D3": 1,
+        "D4": 2,
+        "D5": 0,
+        "D6": 0,
+        "D7": 0
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-001"
+      ],
+      "archiveSourceRefs": [
+        "R14-ARC-002"
+      ],
+      "directNeighbourPass": false,
+      "skipOnePass": false,
+      "qualification": "Prominence in design history is not association evidence.",
+      "decisionReason": "Separate records do not justify close placement.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": false,
+      "redirectTargets": [],
+      "calibrationStratum": "NEGATIVE",
+      "hardNegative": true,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-028",
+      "nodeA": "craft",
+      "nodeB": "design diplomacy",
+      "primaryGenericType": "CIRCULATION_EXCHANGE",
+      "secondaryGenericType": "PRACTICE_PRODUCTION",
+      "historicalScope": "No shared bounded historical case",
+      "contextScope": "Institutional design contexts remain unrelated at the assessed scope",
+      "associationStrength": "WEAK",
+      "evidenceConfidence": "LOW",
+      "evidenceStatus": "INSUFFICIENT",
+      "rubricDimensions": {
+        "D1": 0,
+        "D2": 1,
+        "D3": 1,
+        "D4": 2,
+        "D5": 0,
+        "D6": 0,
+        "D7": 0
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-023"
+      ],
+      "archiveSourceRefs": [
+        "R14-ARC-001"
+      ],
+      "directNeighbourPass": false,
+      "skipOnePass": false,
+      "qualification": "A specific diplomatic craft exhibition could support a future assessment; none is bound here.",
+      "decisionReason": "The evidence does not contextualize the concepts together.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": false,
+      "redirectTargets": [],
+      "calibrationStratum": "NEGATIVE",
+      "hardNegative": true,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-029",
+      "nodeA": "Bauhaus",
+      "nodeB": "desktop publishing",
+      "primaryGenericType": "TEMPORAL_HISTORICAL_CONTEXT",
+      "secondaryGenericType": "MATERIAL_TECHNOLOGICAL",
+      "historicalScope": "Non-overlapping source cases",
+      "contextScope": "Famous design topics with no bounded bridge in the evidence",
+      "associationStrength": "WEAK",
+      "evidenceConfidence": "LOW",
+      "evidenceStatus": "INSUFFICIENT",
+      "rubricDimensions": {
+        "D1": 0,
+        "D2": 1,
+        "D3": 1,
+        "D4": 2,
+        "D5": 1,
+        "D6": 0,
+        "D7": 0
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-010"
+      ],
+      "archiveSourceRefs": [
+        "R14-ARC-001"
+      ],
+      "directNeighbourPass": false,
+      "skipOnePass": false,
+      "qualification": "Chronological difference alone is not proof of disassociation, but the supplied evidence cannot justify proximity.",
+      "decisionReason": "This obvious negative verifies that corpus fame does not substitute for evidence.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": false,
+      "redirectTargets": [],
+      "calibrationStratum": "NEGATIVE",
+      "hardNegative": false,
+      "cooccurrenceOnly": true
+    },
+    {
+      "assessmentId": "R14-ASSOC-030",
+      "nodeA": "Arts and Crafts",
+      "nodeB": "digital interface",
+      "primaryGenericType": "TEMPORAL_HISTORICAL_CONTEXT",
+      "secondaryGenericType": "MATERIAL_TECHNOLOGICAL",
+      "historicalScope": "No shared bounded case",
+      "contextScope": "Chronological bookends without documented circulation or reception",
+      "associationStrength": "WEAK",
+      "evidenceConfidence": "LOW",
+      "evidenceStatus": "INSUFFICIENT",
+      "rubricDimensions": {
+        "D1": 0,
+        "D2": 1,
+        "D3": 1,
+        "D4": 1,
+        "D5": 1,
+        "D6": 0,
+        "D7": 0
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-010"
+      ],
+      "archiveSourceRefs": [
+        "R14-ARC-001"
+      ],
+      "directNeighbourPass": false,
+      "skipOnePass": false,
+      "qualification": "A documented reception history could change the assessment.",
+      "decisionReason": "Temporal contrast and broad design classification do not establish association.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": false,
+      "redirectTargets": [],
+      "calibrationStratum": "NEGATIVE",
+      "hardNegative": false,
+      "cooccurrenceOnly": true
+    },
+    {
+      "assessmentId": "R14-ASSOC-031",
+      "nodeA": "Swiss typography",
+      "nodeB": "Brazilian exposition",
+      "primaryGenericType": "TEMPORAL_HISTORICAL_CONTEXT",
+      "secondaryGenericType": "CULTURAL_DISCURSIVE",
+      "historicalScope": "Distinct cases and geographies",
+      "contextScope": "No source-level discussion of reception or exchange",
+      "associationStrength": "WEAK",
+      "evidenceConfidence": "LOW",
+      "evidenceStatus": "INSUFFICIENT",
+      "rubricDimensions": {
+        "D1": 0,
+        "D2": 1,
+        "D3": 1,
+        "D4": 2,
+        "D5": 1,
+        "D6": 0,
+        "D7": 0
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-004"
+      ],
+      "archiveSourceRefs": [
+        "R14-ARC-002"
+      ],
+      "directNeighbourPass": false,
+      "skipOnePass": false,
+      "qualification": "Shared graphic-design historiography is insufficient.",
+      "decisionReason": "The evidence provides no contextual bridge.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": false,
+      "redirectTargets": [],
+      "calibrationStratum": "NEGATIVE",
+      "hardNegative": false,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-032",
+      "nodeA": "photomontage",
+      "nodeB": "professionalization",
+      "primaryGenericType": "PRACTICE_PRODUCTION",
+      "secondaryGenericType": "INSTITUTIONAL_PROFESSIONAL",
+      "historicalScope": "No shared bounded historical case",
+      "contextScope": "A practice and a professional process that may coexist but are not linked here",
+      "associationStrength": "WEAK",
+      "evidenceConfidence": "LOW",
+      "evidenceStatus": "INSUFFICIENT",
+      "rubricDimensions": {
+        "D1": 0,
+        "D2": 1,
+        "D3": 1,
+        "D4": 2,
+        "D5": 0,
+        "D6": 0,
+        "D7": 0
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-002"
+      ],
+      "archiveSourceRefs": [
+        "R14-ARC-002"
+      ],
+      "directNeighbourPass": false,
+      "skipOnePass": false,
+      "qualification": "Plausible coexistence is not evidence-grounded association.",
+      "decisionReason": "The sources independently attest practice and professionalization without a shared context.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": false,
+      "redirectTargets": [],
+      "calibrationStratum": "NEGATIVE",
+      "hardNegative": true,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-033",
+      "nodeA": "gendering",
+      "nodeB": "design education",
+      "primaryGenericType": "SOCIAL_IDENTITY",
+      "secondaryGenericType": "INSTITUTIONAL_PROFESSIONAL",
+      "historicalScope": "No shared bounded historical case in the supplied evidence",
+      "contextScope": "Both topics may intersect in future research, but these sources do not join them",
+      "associationStrength": "WEAK",
+      "evidenceConfidence": "LOW",
+      "evidenceStatus": "INSUFFICIENT",
+      "rubricDimensions": {
+        "D1": 0,
+        "D2": 1,
+        "D3": 1,
+        "D4": 2,
+        "D5": 0,
+        "D6": 0,
+        "D7": 0
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-001",
+        "COMP-SRC-004"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": false,
+      "skipOnePass": false,
+      "qualification": "Potential general relevance is not case-level support.",
+      "decisionReason": "Separate evidence units cannot justify skip-one proximity.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": false,
+      "redirectTargets": [],
+      "calibrationStratum": "NEGATIVE",
+      "hardNegative": true,
+      "cooccurrenceOnly": false
+    },
+    {
+      "assessmentId": "R14-ASSOC-034",
+      "nodeA": "commodification",
+      "nodeB": "institutionalization",
+      "primaryGenericType": "ECONOMIC_COMMERCIAL",
+      "secondaryGenericType": "INSTITUTIONAL_PROFESSIONAL",
+      "historicalScope": "No shared bounded historical case in the supplied evidence",
+      "contextScope": "Broad institutional/economic overlap only",
+      "associationStrength": "WEAK",
+      "evidenceConfidence": "LOW",
+      "evidenceStatus": "INSUFFICIENT",
+      "rubricDimensions": {
+        "D1": 0,
+        "D2": 1,
+        "D3": 1,
+        "D4": 2,
+        "D5": 0,
+        "D6": 0,
+        "D7": 0
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-002",
+        "COMP-SRC-004"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": false,
+      "skipOnePass": false,
+      "qualification": "Co-membership in design-history scholarship is insufficient.",
+      "decisionReason": "No contextual evidence binds the concepts in the assessed scope.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": false,
+      "redirectTargets": [],
+      "calibrationStratum": "NEGATIVE",
+      "hardNegative": true,
+      "cooccurrenceOnly": true
+    },
+    {
+      "assessmentId": "R14-ASSOC-035",
+      "nodeA": "imitation",
+      "nodeB": "cultural transformation",
+      "primaryGenericType": "CULTURAL_DISCURSIVE",
+      "secondaryGenericType": "PRACTICE_PRODUCTION",
+      "historicalScope": "No shared bounded historical case in the supplied evidence",
+      "contextScope": "Generic change language without shared actors, place, or source discussion",
+      "associationStrength": "WEAK",
+      "evidenceConfidence": "LOW",
+      "evidenceStatus": "INSUFFICIENT",
+      "rubricDimensions": {
+        "D1": 0,
+        "D2": 1,
+        "D3": 1,
+        "D4": 1,
+        "D5": 0,
+        "D6": 0,
+        "D7": 0
+      },
+      "externalSourceRefs": [
+        "COMP-SRC-006",
+        "COMP-SRC-017"
+      ],
+      "archiveSourceRefs": [],
+      "directNeighbourPass": false,
+      "skipOnePass": false,
+      "qualification": "Separate studies attest the terms only.",
+      "decisionReason": "The skip-one control has no evidence-grounded contextual bridge.",
+      "methodVersion": "trace-generic-association-rubric-v1",
+      "activeForProximity": false,
+      "redirectTargets": [],
+      "calibrationStratum": "NEGATIVE",
+      "hardNegative": true,
+      "cooccurrenceOnly": false
+    }
+  ],
+  "canonicalHash": "b2ed5d452392e709ebaca2104209dbfced42102a94f2f482b8b045dec9573d1a"
+}

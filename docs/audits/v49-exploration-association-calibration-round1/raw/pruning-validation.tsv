@@ -1,0 +1,7 @@
+fixture_id	fixture_scope	expected_result	actual_result	pruned_nodes	component_count	components	contract_reason	status
+PRUNE-001	SYNTHETIC_ONLY_NO_HISTORICAL_CLAIM	PRUNED	PRUNED	C	1	A,B	terminal direct failure removes C	PASS
+PRUNE-002	SYNTHETIC_ONLY_NO_HISTORICAL_CLAIM	SPLIT	SPLIT		2	A,B | C,D	internal direct failure splits AB from CD	PASS
+PRUNE-003	SYNTHETIC_ONLY_NO_HISTORICAL_CLAIM	SPLIT	SPLIT		2	A,B | C	skip-one failure removes the canonical later edge	PASS
+PRUNE-004	SYNTHETIC_ONLY_NO_HISTORICAL_CLAIM	PRUNED	PRUNED	C	1	A,B	failing fork leaf C is pruned	PASS
+PRUNE-005	SYNTHETIC_ONLY_NO_HISTORICAL_CLAIM	PASS	PASS		1	A,B,C	fully coherent local path is retained	PASS
+PRUNE-006	SYNTHETIC_ONLY_NO_HISTORICAL_CLAIM	REJECT_COMPLEXITY_LIMIT	REJECT_COMPLEXITY_LIMIT		0		more than 8 active concept nodes requires prior decomposition	PASS

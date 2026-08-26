@@ -1,0 +1,25 @@
+gate	status	execution_context	command_or_evidence
+ROUND8_REGRESSION	PASS	Round 14 isolated worktree or named sealed prior worktree	npm run verify:exploration-reset; npm run test:exploration-domain
+ROUND9_REGRESSION	PASS	Round 14 isolated worktree or named sealed prior worktree	sealed 47978c519c3c7141690e3894315a1ef1b7a403db validator
+ROUND10_REGRESSION	PASS	Round 14 isolated worktree or named sealed prior worktree	sealed 4bd82deba482ec2fbf8c4856080151416fb8ee83 validator
+ROUND11_REGRESSION	PASS	Round 14 isolated worktree or named sealed prior worktree	sealed 5ca999b53d9a5d18b47317817402f9e51ad26cec validator; current TypeScript test
+ROUND12_REGRESSION	PASS	Round 14 isolated worktree or named sealed prior worktree	sealed fc11f033d2fcdbb98130879cdbd3e4a52890e5d2 validator; current TypeScript test
+ROUND13_REGRESSION	PASS	Round 14 isolated worktree or named sealed prior worktree	sealed 6dacbbfa962d687ceee64b23d5437369f845d4f4 validator; current TypeScript test
+ROUND14_PYTHON_TESTS	PASS	Round 14 isolated worktree or named sealed prior worktree	python3 scripts/trace-v49-exploration-association-calibration/test_round1.py
+ROUND14_EXHAUSTIVE_VALIDATOR	PASS	Round 14 isolated worktree or named sealed prior worktree	python3 scripts/trace-v49-exploration-association-calibration/validate_round1.py
+EVIDENCE_LOGIC	PASS	Round 14 isolated worktree or named sealed prior worktree	co-occurrence/status/provenance/qualification tests
+THRESHOLD_LOGIC	PASS	Round 14 isolated worktree or named sealed prior worktree	direct, skip-one, boundary, sweep, and 490 sensitivity rows
+NARY_LOCAL_COHERENCE	PASS	Round 14 isolated worktree or named sealed prior worktree	six topology strategies; graph distance one and two
+PRUNING_AND_RESTRUCTURING	PASS	Round 14 isolated worktree or named sealed prior worktree	terminal, internal, skip-one, branch, pass, and complexity fixtures
+CROSS_RUNTIME_CONFORMANCE	PASS	Round 14 isolated worktree or named sealed prior worktree	npm run test:exploration-association-calibration; decision/hash mismatches=0
+TYPECHECK	PASS	Round 14 isolated worktree or named sealed prior worktree	npm run typecheck:runtime; npx tsc --noEmit --pretty false
+SEARCH_REGRESSION	PASS	Round 14 isolated worktree or named sealed prior worktree	verify:search-v49-index; test:search-v49
+CONTEXT_REGRESSION	PASS	Round 14 isolated worktree or named sealed prior worktree	projection, API, governance, and runtime gates
+SPACETIME_REGRESSION	PASS	Round 14 isolated worktree or named sealed prior worktree	projection, governance, API, GIS, and runtime gates
+API_TESTS	PASS	Round 14 isolated worktree or named sealed prior worktree	test:read-platform; verify-page-by-key-module-contract.mjs
+DATABASE_FREEZE	PASS	Round 14 isolated worktree or named sealed prior worktree	python3 scripts/repository/verify_v49_database_freeze.py --repo .
+REPOSITORY_HYGIENE	PASS	Round 14 isolated worktree or named sealed prior worktree	python3 scripts/repository/audit_repository_hygiene.py --repo .
+PRODUCTION_BUILD	PASS	Round 14 isolated worktree or named sealed prior worktree	npm run build
+GIT_DIFF_CHECK	PASS	Round 14 isolated worktree or named sealed prior worktree	git diff --check; git diff --cached --check
+GIT_FSCK	PASS	Round 14 isolated worktree or named sealed prior worktree	git fsck --full; exit 0; dangling unreachable objects are informational
+AUDIT_SEAL	PASS	Round 14 isolated worktree or named sealed prior worktree	manifest path/byte/SHA-256 equality

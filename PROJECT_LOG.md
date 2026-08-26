@@ -370,6 +370,31 @@ SPACETIME_STATUS=FROZEN
 
 `NEXT_RESEARCH_GATE=EXTERNAL_HUMAN_REVIEW_AND_SEPARATE_SEMANTIC_ACTIVATION_DECISION`
 
+## TRACE v49 Round 14 — bounded generic association calibration Round 1
+
+- Corrected the Exploration Field methodology from precise pair-relation activation to generic, evidence-grounded spatial association. Pairs are local validation units and do not become causal, directional, typed-mechanism, similarity, or statistical edges.
+- Built a provenance-complete 35-case calibration corpus: 10 clear positives, 12 borderline cases, 13 negatives, and 10 hard negatives across eight closed generic types. Three active cases use explicit archive/source evidence and preserve the independent-scholarly-validation-pending label.
+- Selected an ordinal direct and skip-one threshold of at least `MODERATE` strength, `MODERATE` confidence, and `EXTERNALLY_SUPPORTED` or `SOURCE_SUPPORTED` status after a 10-policy sweep. The selected gate retains 21 cases, rejects 14, and produces zero co-occurrence-only passes; 490 one-at-a-time rubric perturbations remain within the predeclared stability band.
+- Added Python-normative D1–D7 assessment, sweep, sensitivity, graph-distance-one/two validation, six-topology n-ary conformance, maximum-eight complexity control, and deterministic prune/split behaviour. TypeScript only validates the frozen package/schema/hash and introduces zero unique semantic rules.
+- Reassessed the three Round 13 pairs without mutating Round 13: professionalization/institutionalization, gendering/commodification, and imitation/piracy pass as qualified, scope-bounded generic proximity decisions, never precise historical pair rules.
+- Defined inspectable evidence redirects and one-channel/one-role spatial semantics. No public renderer, route, API, PNG, public object, Context/Spacetime input, external model, vector database, active relation grammar, or deployment was introduced.
+
+`ROUND14_DECISION=COMPLETE_WITH_LIMITATIONS`
+
+`CALIBRATION_ASSOCIATION_COUNT=35`
+
+`DIRECT_NEIGHBOUR_PASS_COUNT=21`
+
+`SKIP_ONE_PASS_COUNT=21`
+
+`THRESHOLD_SENSITIVITY_STABLE=true`
+
+`LEGACY_PAIR_ACTIVATION_GATE_NORMATIVE=false`
+
+`ROUND15_SAFE_TO_BEGIN=true`
+
+`PUBLIC_RENDERER_SAFE=false`
+
 ## v49 Round 11–12 history coordination — 2026-08-25
 
 - Reconciled main maintenance `cc311ab0c9a74731cc1bb0158579708a8a9158fc` with sealed Round 11 `5ca999b53d9a5d18b47317817402f9e51ad26cec` and Round 12 `fc11f033d2fcdbb98130879cdbd3e4a52890e5d2` through an authorized two-parent merge from common ancestor `4bd82deba482ec2fbf8c4856080151416fb8ee83`.

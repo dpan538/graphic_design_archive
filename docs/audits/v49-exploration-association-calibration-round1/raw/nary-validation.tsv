@@ -1,0 +1,7 @@
+fixture_id	strategy	node_count	direct_pair_count	skip_one_pair_count	failed_direct_pairs	failed_skip_one_pairs	expected_result	actual_result	pruned_nodes	pruned_branch_count	component_count	components	all_to_all_required	production_eligible	status
+R14-NARY-001	LINEAR_PATH	3	2	1			PASS	PASS		0	1	consumption,mediation,production	false	false	PASS
+R14-NARY-002	BINARY_FORK	3	2	1			PASS	PASS		0	1	design diplomacy,exhibition,propaganda	false	false	PASS
+R14-NARY-003	BINARY_CONVERGENCE	3	2	1			PASS	PASS		0	1	material displacement,production site,supply chain	false	false	PASS
+R14-NARY-004	QUALIFIED_PATH	4	3	2	commodification|design education	commodification|institutionalization;design education|gendering	SPLIT	SPLIT		0	2	commodification,gendering | design education,institutionalization	false	false	PASS
+R14-NARY-005	REFLEXIVE_RETURN	3	2	1			PASS	PASS		0	1	adaptation,cultural negotiation,rejection	false	false	PASS
+R14-NARY-006	EVIDENCE_GAP_TREE	3	2	1	cultural transformation|piracy	cultural transformation|imitation	PRUNED	PRUNED	cultural transformation	1	1	imitation,piracy	false	false	PASS

@@ -1,0 +1,11 @@
+configuration_id	neighbourhood	minimum_strength	minimum_confidence	allowed_statuses	selected	true_positive	false_positive	true_negative	false_negative	precision_fraction	recall_fraction	false_positive_rate_fraction	retained_count	methodological_note
+ADJ-01	DIRECT	STRONG	HIGH	EXTERNALLY_SUPPORTED	false	10	0	14	11	10/10	10/21	0/14	10	false positives costlier than false negatives; retain a usable zero-false-positive boundary
+ADJ-02	DIRECT	STRONG	MODERATE	EXTERNALLY_SUPPORTED;SOURCE_SUPPORTED	false	18	0	14	3	18/18	18/21	0/14	18	false positives costlier than false negatives; retain a usable zero-false-positive boundary
+ADJ-03	DIRECT	MODERATE	MODERATE	EXTERNALLY_SUPPORTED;SOURCE_SUPPORTED	true	21	0	14	0	21/21	21/21	0/14	21	false positives costlier than false negatives; retain a usable zero-false-positive boundary
+ADJ-04	DIRECT	MODERATE	LOW	EXTERNALLY_SUPPORTED;SOURCE_SUPPORTED;QUALIFIED	false	21	1	13	0	21/22	21/21	1/14	22	false positives costlier than false negatives; retain a usable zero-false-positive boundary
+ADJ-05	DIRECT	WEAK	LOW	EXTERNALLY_SUPPORTED;SOURCE_SUPPORTED;QUALIFIED	false	21	1	13	0	21/22	21/21	1/14	22	false positives costlier than false negatives; retain a usable zero-false-positive boundary
+SKIP-01	SKIP_ONE	STRONG	HIGH	EXTERNALLY_SUPPORTED	false	10	0	14	11	10/10	10/21	0/14	10	false positives costlier than false negatives; retain a usable zero-false-positive boundary
+SKIP-02	SKIP_ONE	STRONG	MODERATE	EXTERNALLY_SUPPORTED;SOURCE_SUPPORTED	false	18	0	14	3	18/18	18/21	0/14	18	false positives costlier than false negatives; retain a usable zero-false-positive boundary
+SKIP-03	SKIP_ONE	MODERATE	MODERATE	EXTERNALLY_SUPPORTED;SOURCE_SUPPORTED	true	21	0	14	0	21/21	21/21	0/14	21	false positives costlier than false negatives; retain a usable zero-false-positive boundary
+SKIP-04	SKIP_ONE	MODERATE	LOW	EXTERNALLY_SUPPORTED;SOURCE_SUPPORTED;QUALIFIED	false	21	1	13	0	21/22	21/21	1/14	22	false positives costlier than false negatives; retain a usable zero-false-positive boundary
+SKIP-05	SKIP_ONE	WEAK	LOW	EXTERNALLY_SUPPORTED;SOURCE_SUPPORTED;QUALIFIED	false	21	1	13	0	21/22	21/21	1/14	22	false positives costlier than false negatives; retain a usable zero-false-positive boundary

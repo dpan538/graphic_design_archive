@@ -43,3 +43,13 @@ The integration is documentation and reachability closure only. It performs no d
 - Decision: two pair questions remain inquiry-only, one remains deferred, and zero pair activation candidates are produced. Seven narrower noun candidates, six inquiry topologies, and one structural annotation remain inactive external-review candidates.
 - Boundary: no active vocabulary or grammar, no real semantic Image, no product route/API/renderer, no protected-system semantic change, and no deployment.
 - Next gate: external human design-history review followed by a separate semantic-activation decision.
+
+## TRACE Round 14 research closure — 2026-08-26
+
+- Source anchor: `6dacbbfa962d687ceee64b23d5437369f845d4f4`.
+- Research package: `docs/research/trace-v49-exploration-association-calibration-round1/`.
+- Audit package: `docs/audits/v49-exploration-association-calibration-round1/`.
+- Decision: an eight-type generic-association taxonomy, four provenance statuses, an ordinal D1–D7 rubric, equal calibrated direct/skip-one eligibility gates, six topology-local rules, and deterministic pruning/splitting are ready with limitations.
+- Calibration: 35 associations, 69 provenance rows, 21 passes, 14 failures, 10 hard negatives, zero co-occurrence-only passes, and stable one-at-a-time sensitivity.
+- Boundary: the Python engine is normative; TypeScript is a frozen-decision/schema/hash verifier only. No typed historical edge, active relation grammar, public Image, renderer, route, API, object input, model, vector store, deployment, or external-review answer is authorized.
+- Next gate: Round 15 internal-only evidence-grounded spatial composition; public activation remains gated by real external human review.

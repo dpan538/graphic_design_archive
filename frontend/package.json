@@ -35,6 +35,7 @@
     "test:exploration-constraint-kernel": "node --experimental-strip-types scripts/test-exploration-constraint-kernel.mjs",
     "test:exploration-inquiry-adapter": "node --experimental-strip-types scripts/test-exploration-inquiry-adapter.mjs",
     "test:exploration-composition-review": "node --experimental-strip-types scripts/test-exploration-composition-review.mjs",
+    "test:exploration-association-calibration": "node --experimental-strip-types scripts/test-exploration-association-calibration.mjs",
     "verify:exploration-reset": "node scripts/exploration-reset-guard.mjs",
     "verify:trace-visualization": "node scripts/verify-trace-visualization.mjs",
     "verify:home-archive-box": "node scripts/verify-home-archive-box.mjs",
