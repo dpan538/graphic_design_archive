@@ -12,7 +12,10 @@ import argparse
 import csv
 import hashlib
 import json
+import resource
 import statistics
+import sys
+import time
 from collections import Counter, defaultdict, deque
 from pathlib import Path
 from typing import Any, Iterable
@@ -168,6 +171,7 @@ def articulation_and_bridges(nodes: list[str], edges: list[dict[str, Any]]) -> t
 
 
 def main() -> int:
+    script_started = time.perf_counter()
     parser = argparse.ArgumentParser()
     parser.add_argument("--active-vocabulary", type=Path, default=RAW / "active-vocabulary-v2.json")
     parser.add_argument("--pair-universe", type=Path, default=RAW / "pair-universe-v2.tsv")
@@ -362,6 +366,8 @@ def main() -> int:
     if sum(status_counts.values()) != 465 or status_counts["ACTIVE_EXTERNALLY_SUPPORTED"] != 18 or status_counts["ACTIVE_SOURCE_SUPPORTED"] != 3:
         raise ValueError(f"CENSUS_RECONCILIATION:{dict(status_counts)}")
 
+    pair_census_finished = time.perf_counter()
+    graph_build_started = pair_census_finished
     active_edges: list[dict[str, Any]] = []
     for row in census:
         if not row["active"]:
@@ -436,6 +442,7 @@ def main() -> int:
         "graph_hash": "",
     }
     graph["graph_hash"] = digest({key: graph[key] for key in ("schema_version", "source_sha", "database_snapshot", "method_version", "frozen", "nodes", "edges")})
+    graph_build_finished = time.perf_counter()
 
     tsv_fields = [
         "pair_id", "vocabulary_id_a", "vocabulary_id_b", "label_a", "label_b", "canonical_pair_key",
@@ -451,6 +458,7 @@ def main() -> int:
         "locator", "stable_url", "doi", "domain_alignment", "review_disposition", "rejection_reason",
         "supports_active_edge", "association_context", "source_metadata_verified", "evidence_verified",
     ]
+    artifact_write_started = time.perf_counter()
     write_tsv(RAW / "association-census-v2.tsv", census, tsv_fields)
     write_tsv(RAW / "association-evidence-ledger-v2.tsv", evidence_ledger, evidence_fields)
     (RAW / "association-census-v2.json").write_bytes(canonical_json({
@@ -475,6 +483,22 @@ def main() -> int:
         "evidence_ledger_count": len(evidence_ledger),
         "graph_node_count": len(node_ids),
         "graph_edge_count": len(active_edges),
+    }))
+    artifact_write_finished = time.perf_counter()
+    usage = resource.getrusage(resource.RUSAGE_SELF)
+    peak_rss = int(usage.ru_maxrss if sys.platform == "darwin" else usage.ru_maxrss * 1024)
+    (RAW / "association-build-performance-v2.json").write_bytes(canonical_json({
+        "schema_version": "trace-exploration-association-build-performance-v2",
+        "measurement_scope": "offline association census and graph builder process",
+        "timing_values_are_nondeterministic": True,
+        "pair_census_duration_ms": round((pair_census_finished - script_started) * 1000, 3),
+        "graph_build_duration_ms": round((graph_build_finished - graph_build_started) * 1000, 3),
+        "artifact_serialization_duration_ms": round((artifact_write_finished - artifact_write_started) * 1000, 3),
+        "total_duration_ms": round((artifact_write_finished - script_started) * 1000, 3),
+        "peak_rss_bytes": peak_rss,
+        "cpu_user_ms": round(usage.ru_utime * 1000, 3),
+        "cpu_system_ms": round(usage.ru_stime * 1000, 3),
+        "temporary_storage_bytes": 0,
     }))
     print(json.dumps({
         "pair_count": len(census),

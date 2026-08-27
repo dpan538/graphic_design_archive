@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16a/build_association_census.py"
+  ],
+  "command": "python3 scripts/trace_round16a/build_association_census.py",
+  "command_id": "1787832961525-association-build-timed-pass1",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 152,
+  "end_timestamp_utc": "2026-08-27T12:16:01Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "association-build-timed-pass1",
+  "phase_id": "GATE4_7_BUILD_TIME",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-27T12:16:01Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "106cbb21bfa792bb4de7f172595cc72713dc34f3e1d5cd23344b787bc16539a5",
+  "timed_out": false
+}
