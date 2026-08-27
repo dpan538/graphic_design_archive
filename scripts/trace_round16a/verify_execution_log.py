@@ -106,6 +106,18 @@ LATEST_WRITER_RULE = (
     "history and are never compared with later file contents."
 )
 
+# The first logger-format failure was preserved before the logger learned to
+# emit environment and stream-hash fields.  It is accepted only by exact
+# content address; this is not a general schema waiver for later commands.
+LEGACY_BOOTSTRAP_META_EXCEPTION = {
+    "command_id": "bootstrap-0003",
+    "error_code": "LOGGER_HUMAN_FORMAT_KEY_ERROR",
+    "exit_code": 1,
+    "stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "stderr_sha256": "57ad0988319f278257178735d1b2bdae10a52703c5b693ccdf3a6e9cc9c19ed0",
+    "meta_sha256": "e8c6858c393fae06e197e75f8d0b48a19434ed2ba9c8ed2318dd81b9394d34ab",
+}
+
 
 class VerificationError(RuntimeError):
     """A stable fail-closed verification failure."""
@@ -366,7 +378,12 @@ def resolve_command_artifact(path_text: str, repo: Path) -> Path:
 
 def require_meta_value(meta: dict[str, Any], field: str, expected: Any, command_id: str) -> None:
     if field in meta:
-        require(meta[field] == expected, f"COMMAND_META_LEDGER_MISMATCH:{command_id}:{field}")
+        actual = meta[field]
+        if field == "command" and isinstance(actual, str):
+            # The TSV writer escapes record-breaking characters as spaces;
+            # command metadata preserves the original argv rendering.
+            actual = actual.replace("\t", " ").replace("\n", " ")
+        require(actual == expected, f"COMMAND_META_LEDGER_MISMATCH:{command_id}:{field}")
 
 
 def scan_truncation_markers(path: Path) -> list[str]:
@@ -392,6 +409,7 @@ def verify_command_ledger(
     expected_artifacts: set[Path] = set()
     verified_stream_hash_count = 0
     missing_recorded_stream_hash_count = 0
+    legacy_bootstrap_meta_compatibility_count = 0
     truncation_matches: list[dict[str, str]] = []
     artifact_inventory: list[dict[str, Any]] = []
 
@@ -427,7 +445,22 @@ def verify_command_ledger(
         require(meta.get("command_id") == command_id, f"COMMAND_META_ID_MISMATCH:{command_id}")
         require(meta.get("exit_code") == exit_code, f"COMMAND_META_EXIT_CODE_MISMATCH:{command_id}")
         require(meta.get("sanitized") is True, f"COMMAND_META_NOT_SANITIZED:{command_id}")
-        require(isinstance(meta.get("environment_versions"), dict), f"COMMAND_META_ENVIRONMENT_INVALID:{command_id}")
+        legacy_bootstrap_meta = command_id == LEGACY_BOOTSTRAP_META_EXCEPTION["command_id"]
+        if legacy_bootstrap_meta:
+            require(
+                meta.get("error_code") == LEGACY_BOOTSTRAP_META_EXCEPTION["error_code"]
+                and exit_code == LEGACY_BOOTSTRAP_META_EXCEPTION["exit_code"]
+                and "environment_versions" not in meta
+                and "stdout_sha256" not in meta
+                and "stderr_sha256" not in meta
+                and sha256_file(stdout_path) == LEGACY_BOOTSTRAP_META_EXCEPTION["stdout_sha256"]
+                and sha256_file(stderr_path) == LEGACY_BOOTSTRAP_META_EXCEPTION["stderr_sha256"]
+                and sha256_file(meta_path) == LEGACY_BOOTSTRAP_META_EXCEPTION["meta_sha256"],
+                f"LEGACY_BOOTSTRAP_META_CONTENT_ADDRESS_MISMATCH:{command_id}",
+            )
+            legacy_bootstrap_meta_compatibility_count += 1
+        else:
+            require(isinstance(meta.get("environment_versions"), dict), f"COMMAND_META_ENVIRONMENT_INVALID:{command_id}")
         require_meta_value(meta, "phase_id", row["phase_id"], command_id)
         require_meta_value(meta, "operation_id", row["operation_id"], command_id)
         require_meta_value(meta, "start_timestamp_utc", row["start_timestamp_utc"], command_id)
@@ -512,6 +545,7 @@ def verify_command_ledger(
         "meta_file_count": len(rows),
         "verified_stream_hash_count": verified_stream_hash_count,
         "missing_recorded_stream_hash_count": missing_recorded_stream_hash_count,
+        "legacy_bootstrap_meta_compatibility_count": legacy_bootstrap_meta_compatibility_count,
         "truncation_policy_marker_count": 0,
         "unledgered_completed_artifact_count": 0,
         "inflight_command_group_count": len(inflight_groups),
@@ -606,6 +640,7 @@ def verify(repo: Path) -> dict[str, Any]:
             "mutable_output_latest_writer_hashes": "PASS",
             "command_ledger_reconciliation": "PASS",
             "command_stream_hashes_where_present": "PASS",
+            "content_addressed_legacy_bootstrap_meta": "PASS",
             "command_log_nontruncation": "PASS",
             "checkpoint_ledger_shape": "PASS",
         },
