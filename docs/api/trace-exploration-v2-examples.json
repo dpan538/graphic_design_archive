@@ -1,0 +1,371 @@
+{
+  "format": "trace-exploration-v2-contract-examples",
+  "api_base": "/api/trace/v2/exploration",
+  "database_snapshot": "v49:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+  "production_read_model_sha256": "53eaf59c95446eeb3781a7153183c54b3ff59fd52f21744cc917053959dfdcc9",
+  "categories_response_note": "The compact example shows one entry per canonical category; the production response contains all 81 governed category entries.",
+  "root_redirect": {
+    "status": 308,
+    "location": "/api/trace/v2/exploration/capabilities"
+  },
+  "categories_response": {
+    "api_version": "trace-exploration/v2",
+    "database_snapshot": "v49:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "categories": [
+      {
+        "category_id": "region",
+        "category_entry_id": "category-entry:region:default",
+        "label": "Region",
+        "entry_label": "Region",
+        "description": "Browse qualified generic associations through a governed region entry.",
+        "composition_ids": ["TEV2-COMP-REGION-EXAMPLE"],
+        "initial_state_id": "TEV2-STATE-REGION-EXAMPLE"
+      },
+      {
+        "category_id": "theme",
+        "category_entry_id": "category-entry:theme:default",
+        "label": "Theme",
+        "composition_ids": ["TEV2-COMP-THEME-EXAMPLE"],
+        "initial_state_id": "TEV2-STATE-THEME-EXAMPLE"
+      },
+      {
+        "category_id": "medium",
+        "category_entry_id": "category-entry:medium:default",
+        "label": "Medium / format",
+        "composition_ids": ["TEV2-COMP-MEDIUM-EXAMPLE"],
+        "initial_state_id": "TEV2-STATE-MEDIUM-EXAMPLE"
+      },
+      {
+        "category_id": "movement",
+        "category_entry_id": "category-entry:movement:default",
+        "label": "Movement",
+        "composition_ids": ["TEV2-COMP-MOVEMENT-EXAMPLE"],
+        "initial_state_id": "TEV2-STATE-MOVEMENT-EXAMPLE"
+      }
+    ]
+  },
+  "capabilities_response": {
+    "api_version": "trace-exploration/v2",
+    "database_snapshot": "v49:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "category_count": 4,
+    "category_entry_count": 81,
+    "vocabulary_count": 31,
+    "association_count": 21,
+    "composition_count": 228,
+    "state_count": 5760,
+    "transition_count": 749944,
+    "maximum_visible_nodes": 8,
+    "supported_actions": [
+      "SELECT_CATEGORY",
+      "FOCUS_NODE",
+      "EXPAND_NODE",
+      "COLLAPSE_NODE",
+      "MOVE_FOCUS",
+      "SELECT_COMPOSITION",
+      "RESET_CATEGORY",
+      "EXPORT_CURRENT_STATE"
+    ],
+    "topology_families": [
+      "BINARY_CONVERGENCE",
+      "BINARY_FORK",
+      "EVIDENCE_GAP_TREE",
+      "LINEAR_PATH",
+      "QUALIFIED_PATH",
+      "REFLEXIVE_RETURN"
+    ],
+    "export": {
+      "presets": ["portrait_card"],
+      "theme_token_sets": ["neutral-v1", "neutral-contrast-v1"],
+      "width": 1080,
+      "height": 1620
+    }
+  },
+  "map_request": {
+    "category_id": "region",
+    "category_entry_id": "category-entry:region:default",
+    "locale": "en"
+  },
+  "map_response": {
+    "api_version": "trace-exploration/v2",
+    "database_snapshot": "v49:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "map_id": "category-entry:region:default",
+    "is_initial_state": true,
+    "category": {
+      "category_id": "region",
+      "category_entry_id": "category-entry:region:default",
+      "label": "Region",
+      "entry_label": "Region",
+      "description": "Browse qualified generic associations through a governed region entry.",
+      "composition_ids": ["TEV2-COMP-REGION-EXAMPLE"],
+      "initial_state_id": "TEV2-STATE-REGION-EXAMPLE"
+    },
+    "state": {
+      "state_id": "TEV2-STATE-REGION-EXAMPLE",
+      "state_hash": "1111111111111111111111111111111111111111111111111111111111111111",
+      "category_entry_id": "category-entry:region:default",
+      "composition_id": "TEV2-COMP-REGION-EXAMPLE",
+      "seed_id": "TEV2-SEED-CULTURAL-NEGOTIATION",
+      "focused_node_id": "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+      "expanded_node_ids": [],
+      "visible_node_ids": [
+        "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+        "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0"
+      ],
+      "visible_association_ids": ["R14-ASSOC-013"],
+      "available_actions": [
+        "SELECT_CATEGORY",
+        "FOCUS_NODE",
+        "EXPAND_NODE",
+        "MOVE_FOCUS",
+        "SELECT_COMPOSITION",
+        "RESET_CATEGORY",
+        "EXPORT_CURRENT_STATE"
+      ],
+      "semantic_hash": "2222222222222222222222222222222222222222222222222222222222222222",
+      "presentation_hash": "3333333333333333333333333333333333333333333333333333333333333333",
+      "database_snapshot": "v49:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e"
+    },
+    "composition": {
+      "composition_id": "TEV2-COMP-REGION-EXAMPLE",
+      "category_entry_id": "category-entry:region:default",
+      "seed_id": "TEV2-SEED-CULTURAL-NEGOTIATION",
+      "seed_node_id": "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+      "node_ids": [
+        "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+        "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0"
+      ],
+      "association_ids": ["R14-ASSOC-013"],
+      "topology_family": "LINEAR_PATH",
+      "semantic_hash": "2222222222222222222222222222222222222222222222222222222222222222",
+      "label": "Cultural negotiation and adaptation",
+      "description": "Evidence-qualified generic-association composition; topology is an inquiry presentation, not a historical relation."
+    },
+    "nodes": [
+      {
+        "vocabulary_id": "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+        "canonical_label": "cultural negotiation",
+        "attested_forms": ["cultural negotiation"],
+        "language": "en",
+        "focused": true,
+        "expanded": false,
+        "position": { "normalised_x": 0.5, "normalised_y": 0.12 }
+      },
+      {
+        "vocabulary_id": "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0",
+        "canonical_label": "adaptation",
+        "attested_forms": ["adaptation"],
+        "language": "en",
+        "focused": false,
+        "expanded": false,
+        "position": { "normalised_x": 0.5, "normalised_y": 0.88 }
+      }
+    ],
+    "associations": [
+      {
+        "association_id": "R14-ASSOC-013",
+        "endpoint_vocabulary_ids": [
+          "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+          "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0"
+        ],
+        "endpoint_labels": ["cultural negotiation", "adaptation"],
+        "support_status": "ACTIVE_EXTERNALLY_SUPPORTED",
+        "generic_association_only": true,
+        "association_accessible_description": "Cultural negotiation is available to explore with adaptation as a qualified generic association.",
+        "explicit_non_claims": [
+          "causation",
+          "influence",
+          "chronology",
+          "hierarchy",
+          "direction",
+          "equivalence"
+        ]
+      }
+    ],
+    "plain_text_tree": {
+      "tree_version": "trace-exploration-plain-text-tree-v2",
+      "composition_id": "TEV2-COMP-REGION-EXAMPLE",
+      "root_node_id": "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+      "tree_node_ids": [
+        "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+        "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0"
+      ],
+      "tree_association_ids": ["R14-ASSOC-013"],
+      "visible_association_ids": ["R14-ASSOC-013"],
+      "plain_text_tree": "cultural negotiation\n└── adaptation",
+      "plain_text_tree_ascii": "cultural negotiation\n`-- adaptation"
+    },
+    "map_summary": "Region: 2 visible terms and 1 qualified generic association."
+  },
+  "action_request": {
+    "action": "FOCUS_NODE",
+    "target_id": "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0",
+    "expected_state_hash": "1111111111111111111111111111111111111111111111111111111111111111",
+    "database_snapshot": "v49:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e"
+  },
+  "vocabulary_response": {
+    "api_version": "trace-exploration/v2",
+    "database_snapshot": "v49:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "vocabulary": {
+      "vocabulary_id": "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+      "canonical_label": "cultural negotiation",
+      "attested_forms": ["cultural negotiation"],
+      "language": "en",
+      "activation_status": "ACTIVE_USER_VISIBLE"
+    }
+  },
+  "association_response": {
+    "api_version": "trace-exploration/v2",
+    "database_snapshot": "v49:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "association": {
+      "association_id": "R14-ASSOC-013",
+      "endpoint_vocabulary_ids": [
+        "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+        "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0"
+      ],
+      "endpoint_labels": ["cultural negotiation", "adaptation"],
+      "support_status": "ACTIVE_EXTERNALLY_SUPPORTED",
+      "generic_association_only": true,
+      "association_accessible_description": "Cultural negotiation is available to explore with adaptation as a qualified generic association.",
+      "explicit_non_claims": [
+        "causation",
+        "influence",
+        "chronology",
+        "hierarchy",
+        "direction",
+        "equivalence"
+      ]
+    }
+  },
+  "export_request": {
+    "map_id": "category-entry:region:default",
+    "state_hash": "1111111111111111111111111111111111111111111111111111111111111111",
+    "composition_id": "TEV2-COMP-REGION-EXAMPLE",
+    "export_preset": "portrait_card",
+    "theme_token_set": "neutral-v1"
+  },
+  "export_manifest": {
+    "manifest_version": "trace-exploration-export-manifest-v2",
+    "api_version": "trace-exploration/v2",
+    "render_version": "trace-exploration-portrait-png-v2",
+    "export_id": "TEV2-555555555555555555555555",
+    "database_snapshot": "v49:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e",
+    "map_id": "category-entry:region:default",
+    "state_id": "TEV2-STATE-REGION-EXAMPLE",
+    "state_hash": "1111111111111111111111111111111111111111111111111111111111111111",
+    "category_entry_id": "category-entry:region:default",
+    "composition_id": "TEV2-COMP-REGION-EXAMPLE",
+    "seed_id": "TEV2-SEED-CULTURAL-NEGOTIATION",
+    "export_preset": "portrait_card",
+    "theme_token_set": "neutral-v1",
+    "dimensions": { "width": 1080, "height": 1620 },
+    "category": {
+      "category_id": "region",
+      "category_entry_id": "category-entry:region:default",
+      "label": "Region",
+      "entry_label": "Region",
+      "description": "Browse qualified generic associations through a governed region entry.",
+      "composition_ids": ["TEV2-COMP-REGION-EXAMPLE"],
+      "initial_state_id": "TEV2-STATE-REGION-EXAMPLE"
+    },
+    "nodes": [
+      {
+        "vocabulary_id": "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+        "canonical_label": "cultural negotiation",
+        "attested_forms": ["cultural negotiation"],
+        "language": "en",
+        "focused": true,
+        "expanded": false,
+        "position": { "normalised_x": 0.5, "normalised_y": 0.12 }
+      },
+      {
+        "vocabulary_id": "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0",
+        "canonical_label": "adaptation",
+        "attested_forms": ["adaptation"],
+        "language": "en",
+        "focused": false,
+        "expanded": false,
+        "position": { "normalised_x": 0.5, "normalised_y": 0.88 }
+      }
+    ],
+    "associations": [
+      {
+        "association_id": "R14-ASSOC-013",
+        "endpoint_vocabulary_ids": [
+          "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+          "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0"
+        ],
+        "endpoint_labels": ["cultural negotiation", "adaptation"],
+        "support_status": "ACTIVE_EXTERNALLY_SUPPORTED",
+        "generic_association_only": true,
+        "association_accessible_description": "Cultural negotiation is available to explore with adaptation as a qualified generic association.",
+        "explicit_non_claims": [
+          "causation",
+          "influence",
+          "chronology",
+          "hierarchy",
+          "direction",
+          "equivalence"
+        ]
+      }
+    ],
+    "plain_text_tree": {
+      "tree_version": "trace-exploration-plain-text-tree-v2",
+      "composition_id": "TEV2-COMP-REGION-EXAMPLE",
+      "root_node_id": "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+      "tree_node_ids": [
+        "TRV:5660ce124250ffd0ecbcf64a7359315bd26afdb0d89c559c03a491cc2138e4ed",
+        "TRV:2fe1d615f7fb24b99fb828c5ceadcf06635e7fb6f47910f32d2daf1f6bd763f0"
+      ],
+      "tree_association_ids": ["R14-ASSOC-013"],
+      "visible_association_ids": ["R14-ASSOC-013"],
+      "plain_text_tree": "cultural negotiation\n└── adaptation",
+      "plain_text_tree_ascii": "cultural negotiation\n`-- adaptation"
+    },
+    "node_count": 2,
+    "association_count": 1,
+    "provenance_summary": {
+      "association_count": 1,
+      "externally_supported_count": 1,
+      "source_supported_count": 0,
+      "generic_association_only": true,
+      "source_locators_withheld_from_public_export": true
+    },
+    "semantic_hash": "2222222222222222222222222222222222222222222222222222222222222222",
+    "presentation_hash": "5555555555555555555555555555555555555555555555555555555555555555",
+    "export_alt_text": "Region exploration map with 2 terms and 1 qualified generic association.",
+    "suggested_filename": "trace-exploration-region-111111111111-neutral-v1.png"
+  },
+  "svg_export_response": {
+    "request_path": "/api/trace/v2/exploration/export/svg",
+    "status": 200,
+    "headers": {
+      "Content-Type": "image/svg+xml; charset=utf-8",
+      "Content-Disposition": "attachment; filename=\"trace-exploration-region-111111111111-neutral-v1.svg\"",
+      "X-Content-Type-Options": "nosniff",
+      "X-TRACE-State-Hash": "1111111111111111111111111111111111111111111111111111111111111111",
+      "X-TRACE-Semantic-Hash": "2222222222222222222222222222222222222222222222222222222222222222",
+      "X-TRACE-Presentation-Hash": "5555555555555555555555555555555555555555555555555555555555555555",
+      "X-TRACE-Export-ID": "TEV2-555555555555555555555555",
+      "X-TRACE-Read-Model": "53eaf59c95446eeb3781a7153183c54b3ff59fd52f21744cc917053959dfdcc9",
+      "X-TRACE-Export-Version": "trace-exploration-portrait-png-v2"
+    },
+    "manifest_identity": {
+      "manifest_version": "trace-exploration-export-manifest-v2",
+      "export_id": "TEV2-555555555555555555555555",
+      "state_hash": "1111111111111111111111111111111111111111111111111111111111111111",
+      "semantic_hash": "2222222222222222222222222222222222222222222222222222222222222222",
+      "presentation_hash": "5555555555555555555555555555555555555555555555555555555555555555"
+    },
+    "body_excerpt": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1080\" height=\"1620\" viewBox=\"0 0 1080 1620\" role=\"img\" aria-label=\"Region exploration map with 2 terms and 1 qualified generic association.\">…</svg>"
+  },
+  "error_response": {
+    "schema_version": "trace-exploration-api-error-v2",
+    "api_version": "trace-exploration/v2",
+    "code": "STALE_EXPLORATION_STATE",
+    "message": "The expected state is stale or belongs to another map.",
+    "status": 409,
+    "retryable": false,
+    "instance": "/api/trace/v2/exploration",
+    "database_snapshot": "v49:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e"
+  }
+}

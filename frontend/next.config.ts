@@ -16,6 +16,11 @@ const nextConfig: NextConfig = {
   // Pin the file-tracing root to this app so an unrelated lockfile higher up
   // the filesystem is not picked as the workspace root.
   outputFileTracingRoot: path.join(__dirname),
+  // The Exploration v2 model is loaded at runtime rather than statically
+  // imported, so include the governed data asset in standalone/server output.
+  outputFileTracingIncludes: {
+    "/*": ["./generated/trace-exploration-v2/production-read-model.json"],
+  },
   webpack: (config, { dev }) => {
     if (!dev) {
       config.cache = false;

@@ -1,0 +1,414 @@
+openapi: 3.1.0
+jsonSchemaDialect: https://json-schema.org/draft/2020-12/schema
+info:
+  title: TRACE Exploration API
+  version: 2.0.0
+  description: >-
+    Deterministic category-entry, state-transition, tree, and portrait-export API
+    with manifest, SVG, and PNG representations.
+    Public responses contain only governed Exploration vocabulary and qualified
+    generic associations. The compact production model stores a frozen
+    transition-derivation descriptor; all 749944 legal state/action/target
+    outcomes are resolved deterministically from the immutable state and
+    composition registries. Request bodies are limited to 65536 UTF-8 bytes.
+servers:
+  - url: /api/trace/v2/exploration
+tags:
+  - name: Discovery
+  - name: Maps
+  - name: Vocabulary
+  - name: Exports
+paths:
+  /:
+    get:
+      tags: [Discovery]
+      operationId: redirectExplorationV2Root
+      responses:
+        '308':
+          description: Deterministic redirect to the canonical capabilities resource.
+          headers:
+            Location:
+              description: Canonical v2 discovery resource.
+              schema:
+                const: /api/trace/v2/exploration/capabilities
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+  /categories:
+    get:
+      tags: [Discovery]
+      operationId: listExplorationV2Categories
+      responses:
+        '200':
+          description: Governed category entries.
+          headers:
+            X-TRACE-Database-Snapshot:
+              $ref: '#/components/headers/DatabaseSnapshot'
+          content:
+            application/json:
+              schema:
+                $ref: ../../schemas/trace/exploration/v2/category-response.schema.json
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+  /capabilities:
+    get:
+      tags: [Discovery]
+      operationId: getExplorationV2Capabilities
+      responses:
+        '200':
+          description: Runtime counts, actions, topology families, and export limits. The transition count is the exhaustive derived relation, not a count of stored transition-map entries.
+          content:
+            application/json:
+              schema:
+                $ref: ../../schemas/trace/exploration/v2/capabilities-response.schema.json
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+  /maps:
+    post:
+      tags: [Maps]
+      operationId: createExplorationV2Map
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../../schemas/trace/exploration/v2/map-request.schema.json
+      responses:
+        '200':
+          description: Initial reachable state for the selected category entry.
+          content:
+            application/json:
+              schema:
+                $ref: ../../schemas/trace/exploration/v2/map-response.schema.json
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '413':
+          $ref: '#/components/responses/RequestTooLarge'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+  /maps/{map_id}:
+    parameters:
+      - $ref: '#/components/parameters/MapId'
+    get:
+      tags: [Maps]
+      operationId: retrieveExplorationV2Map
+      parameters:
+        - name: state_id
+          in: query
+          required: false
+          schema:
+            type: string
+            minLength: 1
+            maxLength: 256
+          description: Omit to retrieve the category entry's initial state.
+      responses:
+        '200':
+          description: Requested reachable state and its deterministic map/tree projection.
+          content:
+            application/json:
+              schema:
+                $ref: ../../schemas/trace/exploration/v2/map-response.schema.json
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+  /maps/{map_id}/actions:
+    parameters:
+      - $ref: '#/components/parameters/MapId'
+    post:
+      tags: [Maps]
+      operationId: applyExplorationV2Action
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../../schemas/trace/exploration/v2/action-request.schema.json
+      responses:
+        '200':
+          description: Governed transition target state.
+          content:
+            application/json:
+              schema:
+                $ref: ../../schemas/trace/exploration/v2/map-response.schema.json
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '413':
+          $ref: '#/components/responses/RequestTooLarge'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+  /vocabulary/{vocabulary_id}:
+    get:
+      tags: [Vocabulary]
+      operationId: retrieveExplorationV2Vocabulary
+      parameters:
+        - name: vocabulary_id
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+            maxLength: 256
+      responses:
+        '200':
+          description: Public governed vocabulary record.
+          content:
+            application/json:
+              schema:
+                $ref: ../../schemas/trace/exploration/v2/vocabulary-response.schema.json
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+  /associations/{association_id}:
+    get:
+      tags: [Vocabulary]
+      operationId: retrieveExplorationV2Association
+      parameters:
+        - name: association_id
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+            maxLength: 256
+      responses:
+        '200':
+          description: Public qualified generic association.
+          content:
+            application/json:
+              schema:
+                $ref: ../../schemas/trace/exploration/v2/association-response.schema.json
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+  /exports/manifest:
+    post:
+      tags: [Exports]
+      operationId: createExplorationV2ExportManifest
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../../schemas/trace/exploration/v2/export-request.schema.json
+      responses:
+        '200':
+          description: Deterministically derived portrait export manifest with a public-safe association provenance summary and no source locators.
+          content:
+            application/json:
+              schema:
+                $ref: ../../schemas/trace/exploration/v2/export-manifest.schema.json
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '413':
+          $ref: '#/components/responses/RequestTooLarge'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+  /exports/png:
+    post:
+      tags: [Exports]
+      operationId: renderExplorationV2Png
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../../schemas/trace/exploration/v2/export-request.schema.json
+      responses:
+        '200':
+          description: Fixed 1080 by 1620 PNG rendered from the corresponding manifest.
+          headers:
+            X-TRACE-Semantic-Hash:
+              $ref: '#/components/headers/Sha256Header'
+            X-TRACE-Presentation-Hash:
+              $ref: '#/components/headers/Sha256Header'
+            X-TRACE-State-Hash:
+              $ref: '#/components/headers/Sha256Header'
+            X-TRACE-Export-ID:
+              $ref: '#/components/headers/ExportIdHeader'
+            X-TRACE-Read-Model:
+              $ref: '#/components/headers/ReadModelHeader'
+            X-TRACE-Export-Version:
+              $ref: '#/components/headers/ExportVersionHeader'
+          content:
+            image/png:
+              schema:
+                type: string
+                format: binary
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '413':
+          $ref: '#/components/responses/RequestTooLarge'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+  /export/svg:
+    post:
+      tags: [Exports]
+      operationId: renderExplorationV2Svg
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../../schemas/trace/exploration/v2/export-request.schema.json
+      responses:
+        '200':
+          description: >-
+            Deterministic, self-contained 1080 by 1620 UTF-8 SVG rendered from
+            the same export manifest identity as PNG. For the same request, the
+            state, semantic, presentation, and export-version headers are
+            identical to `/exports/png`. Governed labels are XML-escaped; the
+            document contains no scripts, event handlers, active embedded XML,
+            external-resource references, source locators, or held data.
+          headers:
+            Content-Disposition:
+              description: >-
+                Attachment filename deterministically derived from the manifest's
+                suggested filename with only the extension changed to `.svg`.
+              schema:
+                type: string
+                pattern: '^attachment; filename="trace-exploration-[a-z0-9_-]+-[0-9a-f]{12}-neutral(?:-contrast)?-v1\.svg"$'
+            Content-Length:
+              description: Exact UTF-8 byte length, bounded to 262144 bytes.
+              schema:
+                type: integer
+                minimum: 1
+                maximum: 262144
+            X-TRACE-Semantic-Hash:
+              $ref: '#/components/headers/Sha256Header'
+            X-TRACE-Presentation-Hash:
+              $ref: '#/components/headers/Sha256Header'
+            X-TRACE-State-Hash:
+              $ref: '#/components/headers/Sha256Header'
+            X-TRACE-Export-ID:
+              $ref: '#/components/headers/ExportIdHeader'
+            X-TRACE-Read-Model:
+              $ref: '#/components/headers/ReadModelHeader'
+            X-TRACE-Export-Version:
+              $ref: '#/components/headers/ExportVersionHeader'
+          content:
+            image/svg+xml:
+              schema:
+                type: string
+                description: Canonical UTF-8 SVG serialization; identical requests produce byte-identical bodies.
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '413':
+          $ref: '#/components/responses/RequestTooLarge'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+components:
+  parameters:
+    MapId:
+      name: map_id
+      in: path
+      required: true
+      schema:
+        type: string
+        minLength: 1
+        maxLength: 256
+      description: Stable category-entry identifier returned as map_id.
+  headers:
+    DatabaseSnapshot:
+      description: Frozen database identity bound to the response.
+      schema:
+        type: string
+    Sha256Header:
+      schema:
+        type: string
+        pattern: '^[0-9a-f]{64}$'
+    ExportVersionHeader:
+      description: Manifest render identity shared by SVG and PNG for the same export request.
+      schema:
+        type: string
+        const: trace-exploration-portrait-png-v2
+    ExportIdHeader:
+      description: Export-manifest identity shared by SVG and PNG for the same export request.
+      schema:
+        type: string
+        pattern: '^TEV2-[0-9a-f]{24}$'
+    ReadModelHeader:
+      description: SHA-256 of the exact compact production read-model file.
+      schema:
+        type: string
+        const: 53eaf59c95446eeb3781a7153183c54b3ff59fd52f21744cc917053959dfdcc9
+  schemas:
+    ApiError:
+      $ref: ../../schemas/trace/exploration/v2/error.schema.json
+  responses:
+    BadRequest:
+      description: Invalid or malformed request.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+    NotFound:
+      description: Requested governed identifier was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+    Conflict:
+      description: Stale state, database mismatch, or unavailable transition/export.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+    MethodNotAllowed:
+      description: HTTP method is not available for the endpoint.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+    RequestTooLarge:
+      description: Request body exceeds 65536 UTF-8 bytes.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+    ServiceUnavailable:
+      description: Read-model/render integrity failure or temporary bounded-render capacity exhaustion.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiError'
+security: []

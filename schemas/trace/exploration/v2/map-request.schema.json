@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trace-exploration.example/schemas/trace/exploration/v2/map-request.schema.json",
+  "title": "TRACE Exploration v2 map request",
+  "$ref": "common.schema.json#/$defs/MapRequest"
+}
