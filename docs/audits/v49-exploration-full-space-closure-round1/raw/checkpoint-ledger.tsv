@@ -1,2 +1,2 @@
 checkpoint_id	phase	commit_sha	timestamp_utc	exact_counts	commands	known_limitations	next_gate
-
+CHECKPOINT-001	GATE_0_1_AUTHORITY_DATABASE_VOCABULARY	a20e950b68847b1642959dac80e8bdff7a750b3b	2026-08-27T11:25:08Z	candidate=65;active=31;research_only=21;rejected=12;superseded=1;unclassified=0	verify_v49_database_freeze.py;capture_database_identity.py;build_vocabulary_universe.py;build_vocabulary_census.py	pair_graph_composition_runtime_http_export_load_reproduction_open;external_human_review=false	GATE_2_COMPLETE_PAIR_AND_ASSOCIATION_CENSUS

@@ -1,0 +1,31 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16a/search_association_pairs.py",
+    "--repo-root",
+    "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+    "--start",
+    "0",
+    "--count",
+    "1",
+    "--shard-output",
+    "docs/audits/v49-exploration-full-space-closure-round1/raw/association-query-shards-v2/batch-001.jsonl"
+  ],
+  "command": "python3 scripts/trace_round16a/search_association_pairs.py --repo-root /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --start 0 --count 1 --shard-output docs/audits/v49-exploration-full-space-closure-round1/raw/association-query-shards-v2/batch-001.jsonl",
+  "command_id": "1787830093596-association-search-batch-001-final",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 81,
+  "end_timestamp_utc": "2026-08-27T11:28:13Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "association-search-batch-001-final",
+  "phase_id": "GATE2_ASSOCIATION_SEARCH",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-27T11:28:13Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "26d1d93c1faf4fa2c32108746e132bd69829f710534e6b47b943aac34915f0be",
+  "timed_out": false
+}
