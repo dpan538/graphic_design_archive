@@ -465,3 +465,19 @@ SPACETIME_STATUS=FROZEN
 `REAL_SEMANTIC_IMAGE_READY=false`
 
 `NEXT_RESEARCH_GATE=EXTERNAL_DOMAIN_REVIEW_AND_INQUIRY_GRAMMAR_ACTIVATION_RESEARCH`
+
+<!-- TRACE_ROUND16A_PROJECT_AUTHORITY_RECONCILIATION_V2 -->
+## TRACE v49 Round 16A — authority reconciliation
+
+- Activated the versioned `trace-exploration-authority-v2` clarification for Function 3 only; preserved all earlier Round 8–16 entries as historical evidence.
+- Superseded the active Round 16 object-facing/Search/Context/Spacetime dependency statements for Exploration v2 without modifying those separate project blocks.
+- Retained frozen database `v49:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e` only for direct snapshot/public-held identity and the four governed category-entry types.
+- Recorded that generic association is evidence-qualified proximity only and that prior example counts do not demonstrate full-space closure.
+- Deferred every census, runtime, independent-verification, reproduction, integration, and final closure claim to the sealed Round 16A receipts.
+
+`ACTIVE_EXPLORATION_AUTHORITY_COUNT=1`
+
+`AUTHORITY_RECONCILIATION_READY=true`
+
+`PROJECT_FRONTEND_DESIGN_SAFE_TO_BEGIN=false`
+<!-- /TRACE_ROUND16A_PROJECT_AUTHORITY_RECONCILIATION_V2 -->

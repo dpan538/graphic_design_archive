@@ -159,3 +159,21 @@ The server-only API materializes four deterministic maps, 52 immutable states, 8
 Next gate after Round 16: **Claude frontend design and frontend integration**. Final visual layout, production interaction components, public navigation, deployment, and any external academic-release review remain separate.
 
 Governed Round 16 package: `docs/research/trace-v49-exploration-real-database-round1/`.
+
+<!-- TRACE_ROUND16A_AUTHORITY_CLARIFICATION_V2 -->
+## TRACE v49 Round 16A — active Exploration authority clarification
+
+This later versioned clarification supersedes only the active Round 16 statements that made archive objects, Search manifests, Context references, or Spacetime references normative/public Exploration inputs, and the claim that 11 curated compositions, 52 states, 816 transitions, or five workflows constituted full functional closure. Earlier sealed packages remain immutable historical evidence.
+
+The sole active user-facing authority is the conceptual vocabulary-and-generic-association Exploration Field defined by `trace-exploration-authority-v2`. Its public unit is a governed concept, not an archive object. Search is a separate project block; Context Canvas and Spacetime are separate TRACE functions; none is a semantic or runtime input to Exploration v2. Generic association means evidence-qualified proximity only, never a typed, causal, directional, temporal, hierarchical, similarity, equivalence, or importance claim.
+
+The frozen database `v49:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e` remains authoritative only for snapshot/public-held identity and the four governed category-entry types: `region`, `theme`, `medium`, and `movement`. Object rows and internal witness references do not enter the production read model, public API, SVG, or PNG.
+
+The full-space counts, functional/backend result, and closure decision are governed by the later Round 16A census, production-HTTP, independent-verification, reproduction, regression, and seal receipts in `docs/research/trace-v49-exploration-full-space-closure-round1/` and `docs/audits/v49-exploration-full-space-closure-round1/raw/`. No pre-existing example count is a closure proof.
+
+`ACTIVE_EXPLORATION_AUTHORITY_COUNT=1`
+
+`SEARCH_STATUS=OUT_OF_SCOPE_NOT_EVALUATED`
+
+`PROJECT_FRONTEND_DESIGN_SAFE_TO_BEGIN=false`
+<!-- /TRACE_ROUND16A_AUTHORITY_CLARIFICATION_V2 -->

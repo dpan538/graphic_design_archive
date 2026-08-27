@@ -214,7 +214,7 @@ paths:
               $ref: ../../schemas/trace/exploration/v2/export-request.schema.json
       responses:
         '200':
-          description: Deterministically derived portrait export manifest with a public-safe association provenance summary and no source locators.
+          description: Deterministically derived portrait export manifest with a public-safe association provenance summary; it does not expose source locator data.
           content:
             application/json:
               schema:

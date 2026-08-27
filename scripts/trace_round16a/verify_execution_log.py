@@ -97,6 +97,14 @@ TRUNCATION_POLICY_MARKERS = (
 UTC_TIMESTAMP = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$")
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
 GIT_SHA = re.compile(r"^[0-9a-f]{40}$")
+TERMINAL_EVENT_STATUSES = {"PASS", "FAIL"}
+EVENT_STATUSES = TERMINAL_EVENT_STATUSES | {"STARTED"}
+LATEST_WRITER_RULE = (
+    "Execution events are append-only historical observations. For each mutable local file "
+    "path, only the highest-sequence completed PASS or FAIL event that names that path is "
+    "compared with the current file bytes; superseded event hashes remain schema-validated "
+    "history and are never compared with later file contents."
+)
 
 
 class VerificationError(RuntimeError):
@@ -170,6 +178,7 @@ def parse_events(path: Path) -> list[dict[str, Any]]:
             require(bool(event["phase_id"]), f"EXECUTION_EVENT_PHASE_EMPTY:{sequence}")
             require(bool(event["operation_id"]), f"EXECUTION_EVENT_OPERATION_EMPTY:{sequence}")
             require(bool(event["status"]), f"EXECUTION_EVENT_STATUS_EMPTY:{sequence}")
+            require(event["status"] in EVENT_STATUSES, f"EXECUTION_EVENT_STATUS_INVALID:{sequence}")
             require(bool(event["command"]), f"EXECUTION_EVENT_COMMAND_EMPTY:{sequence}")
             require(Path(event["cwd"]).is_absolute(), f"EXECUTION_EVENT_CWD_NOT_ABSOLUTE:{sequence}")
             validate_string_list(event["input_paths"], f"EXECUTION_EVENT_INPUT_PATHS_INVALID:{sequence}")
@@ -206,49 +215,120 @@ def event_output_file(path_text: str, event: dict[str, Any]) -> Path:
 
 def verify_event_output_hashes(
     events: list[dict[str, Any]], repo: Path
-) -> tuple[list[dict[str, Any]], int, int]:
-    verified: list[dict[str, Any]] = []
-    existing_unhashed_count = 0
-    non_file_hash_count = 0
-    seen: set[tuple[int, str]] = set()
+) -> dict[str, Any]:
+    """Reconcile current mutable files with their latest completed writer.
+
+    A completed event records what existed when that command ended.  A later
+    command may legitimately overwrite the same output, so comparing every
+    historical hash with the current bytes makes an append-only log impossible
+    to verify after a retry or deterministic regeneration.  Historical records
+    still pass through ``parse_events`` and every historical local-file hash is
+    required to have SHA-256 shape.  Only the latest completed writer for each
+    resolved path is eligible for a current-byte comparison.
+    """
+    latest_completed_writer: dict[Path, tuple[dict[str, Any], str, str | None]] = {}
+    historical_output_hash_observation_count = 0
+    historical_local_file_hash_count = 0
+    historical_non_file_or_symbolic_hash_count = 0
+    completed_writer_observation_count = 0
+    existing_unhashed_started_outputs: set[tuple[int, Path]] = set()
+
     for event in events:
         candidate_names = list(event["output_paths"])
         candidate_names.extend(
             key for key in event["output_hashes"] if key not in event["output_paths"]
         )
+        candidates_by_path: dict[Path, tuple[str, str | None]] = {}
         for name in candidate_names:
-            identity = (event["sequence"], name)
-            if identity in seen:
-                continue
-            seen.add(identity)
             candidate = event_output_file(name, event).resolve()
             expected = event["output_hashes"].get(name)
-            if not candidate.is_file():
-                if expected is not None:
-                    non_file_hash_count += 1
-                continue
-            if expected is None:
-                existing_unhashed_count += 1
+            prior = candidates_by_path.get(candidate)
+            if prior is None or (prior[1] is None and expected is not None):
+                candidates_by_path[candidate] = (name, expected)
+
+        for candidate, (name, expected) in candidates_by_path.items():
+            if expected is not None:
+                historical_output_hash_observation_count += 1
                 require(
-                    event["status"] != "PASS",
-                    f"PASS_EVENT_LOCAL_OUTPUT_HASH_MISSING:{event['sequence']}:{name}",
+                    expected == "MISSING"
+                    or SHA256.fullmatch(expected) is not None
+                    or GIT_SHA.fullmatch(expected) is not None,
+                    f"HISTORICAL_OUTPUT_HASH_VALUE_INVALID:{event['sequence']}:{name}",
                 )
-                continue
-            require(SHA256.fullmatch(expected) is not None, f"LOCAL_OUTPUT_SHA256_INVALID:{event['sequence']}:{name}")
-            actual = sha256_file(candidate)
-            require(actual == expected, f"LOCAL_OUTPUT_SHA256_MISMATCH:{event['sequence']}:{name}")
-            try:
-                display_path = relative(candidate, repo)
-            except ValueError:
-                display_path = candidate.as_posix()
-            verified.append(
-                {
-                    "event_sequence": event["sequence"],
-                    "path": display_path,
-                    "sha256": actual,
-                }
+                if candidate.is_file():
+                    require(
+                        expected == "MISSING" or SHA256.fullmatch(expected) is not None,
+                        f"HISTORICAL_LOCAL_OUTPUT_SHA256_INVALID:{event['sequence']}:{name}",
+                    )
+                    if expected != "MISSING":
+                        historical_local_file_hash_count += 1
+                else:
+                    # Git refs, commit/tree identities, directories, and outputs
+                    # no longer present are intentional non-file observations.
+                    historical_non_file_or_symbolic_hash_count += 1
+
+            if event["status"] in TERMINAL_EVENT_STATUSES:
+                completed_writer_observation_count += 1
+                latest_completed_writer[candidate] = (event, name, expected)
+            elif candidate.is_file() and expected is None:
+                existing_unhashed_started_outputs.add((event["sequence"], candidate))
+
+    verified: list[dict[str, Any]] = []
+    latest_non_file_or_symbolic_writer_count = 0
+    for candidate, (event, name, expected) in sorted(
+        latest_completed_writer.items(), key=lambda item: item[0].as_posix()
+    ):
+        if not candidate.is_file():
+            latest_non_file_or_symbolic_writer_count += 1
+            continue
+        if expected is None:
+            require(
+                False,
+                f"LATEST_COMPLETED_WRITER_OUTPUT_HASH_MISSING:{event['sequence']}:{name}",
             )
-    return verified, existing_unhashed_count, non_file_hash_count
+        require(
+            SHA256.fullmatch(expected) is not None,
+            f"LATEST_COMPLETED_WRITER_OUTPUT_SHA256_INVALID:{event['sequence']}:{name}",
+        )
+        actual = sha256_file(candidate)
+        require(
+            actual == expected,
+            f"LATEST_COMPLETED_WRITER_OUTPUT_SHA256_MISMATCH:{event['sequence']}:{name}",
+        )
+        try:
+            display_path = relative(candidate, repo)
+        except ValueError:
+            display_path = candidate.as_posix()
+        verified.append(
+            {
+                "event_sequence": event["sequence"],
+                "event_status": event["status"],
+                "path": display_path,
+                "sha256": actual,
+            }
+        )
+
+    verified.sort(key=lambda item: (item["path"], item["event_sequence"]))
+    latest_completed_writer_count = len(latest_completed_writer)
+    return {
+        "reconciliation_rule": "APPEND_ONLY_LATEST_COMPLETED_WRITER_V1",
+        "reconciliation_rule_description": LATEST_WRITER_RULE,
+        "terminal_statuses": sorted(TERMINAL_EVENT_STATUSES),
+        "historical_output_hash_observation_count": historical_output_hash_observation_count,
+        "historical_local_file_hash_count": historical_local_file_hash_count,
+        "historical_non_file_or_symbolic_output_hash_count": historical_non_file_or_symbolic_hash_count,
+        "non_file_or_symbolic_output_hash_count": historical_non_file_or_symbolic_hash_count,
+        "completed_writer_observation_count": completed_writer_observation_count,
+        "latest_completed_writer_count": latest_completed_writer_count,
+        "superseded_completed_writer_count": (
+            completed_writer_observation_count - latest_completed_writer_count
+        ),
+        "verified_local_file_hash_count": len(verified),
+        "existing_unhashed_started_output_count": len(existing_unhashed_started_outputs),
+        "latest_non_file_or_symbolic_writer_count": latest_non_file_or_symbolic_writer_count,
+        "mismatch_count": 0,
+        "verified": verified,
+    }
 
 
 def parse_tsv(path: Path, expected_fields: tuple[str, ...], ledger_name: str) -> list[dict[str, str]]:
@@ -482,9 +562,7 @@ def verify(repo: Path) -> dict[str, Any]:
     core_inputs_before = input_inventory(evidence_paths, repo)
 
     events = parse_events(events_path)
-    verified_outputs, existing_unhashed_count, non_file_hash_count = verify_event_output_hashes(
-        events, repo
-    )
+    event_output_summary = verify_event_output_hashes(events, repo)
     command_rows = parse_tsv(command_ledger_path, COMMAND_LEDGER_FIELDS, "COMMAND_LEDGER")
     checkpoint_rows = parse_tsv(
         checkpoint_ledger_path, CHECKPOINT_LEDGER_FIELDS, "CHECKPOINT_LEDGER"
@@ -496,8 +574,6 @@ def verify(repo: Path) -> dict[str, Any]:
         core_inputs == core_inputs_before,
         "EXECUTION_EVIDENCE_CHANGED_DURING_VERIFICATION",
     )
-    verified_outputs.sort(key=lambda item: (item["event_sequence"], item["path"]))
-
     return {
         "format": "trace-exploration-execution-log-verification-v1",
         "status": "PASS",
@@ -514,13 +590,7 @@ def verify(repo: Path) -> dict[str, Any]:
                 for status in sorted({event["status"] for event in events})
             },
         },
-        "event_output_hashes": {
-            "verified_local_file_hash_count": len(verified_outputs),
-            "existing_unhashed_started_output_count": existing_unhashed_count,
-            "non_file_or_symbolic_output_hash_count": non_file_hash_count,
-            "mismatch_count": 0,
-            "verified": verified_outputs,
-        },
+        "event_output_hashes": event_output_summary,
         "command_ledger": command_summary,
         "checkpoint_ledger": checkpoint_summary,
         "full_command_log_ready": True,
@@ -532,6 +602,8 @@ def verify(repo: Path) -> dict[str, Any]:
             "execution_event_schema": "PASS",
             "execution_event_sequence": "PASS",
             "existing_output_hashes": "PASS",
+            "historical_output_hash_schema": "PASS",
+            "mutable_output_latest_writer_hashes": "PASS",
             "command_ledger_reconciliation": "PASS",
             "command_stream_hashes_where_present": "PASS",
             "command_log_nontruncation": "PASS",

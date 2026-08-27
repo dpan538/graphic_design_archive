@@ -1,0 +1,59 @@
+{
+  "format": "trace-exploration-v2-functional-validation",
+  "status": "PASS",
+  "fatal_error": "",
+  "inputs": {
+    "production_read_model": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1/frontend/generated/trace-exploration-v2/production-read-model.json",
+    "production_read_model_sha256": "53eaf59c95446eeb3781a7153183c54b3ff59fd52f21744cc917053959dfdcc9",
+    "transition_census": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1/docs/audits/v49-exploration-full-space-closure-round1/raw/transition-census-v2.tsv",
+    "workflow_census": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1/docs/audits/v49-exploration-full-space-closure-round1/raw/workflow-census-v2.tsv",
+    "export_census": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1/docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv",
+    "service_module": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1/frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+    "renderer_module": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1/frontend/src/features/trace-v49/exploration-v2/renderer.server.ts"
+  },
+  "case_ledgers": {
+    "model": "/tmp/trace-round16a-api-schema/model.tsv",
+    "transitions": "/tmp/trace-round16a-api-schema/transitions.tsv",
+    "workflows": "/tmp/trace-round16a-api-schema/workflows.tsv",
+    "exports": "/tmp/trace-round16a-api-schema/exports.tsv",
+    "service_dtos": "/tmp/trace-round16a-api-schema/service.tsv"
+  },
+  "suites": {
+    "model": {
+      "pass": 12202,
+      "fail": 0
+    },
+    "transition": {
+      "pass": 796027,
+      "fail": 0
+    },
+    "workflow": {
+      "pass": 11521,
+      "fail": 0
+    },
+    "export": {
+      "pass": 11521,
+      "fail": 0
+    },
+    "service": {
+      "pass": 767378,
+      "fail": 0
+    }
+  },
+  "invariants": {
+    "exact_production_model_keys": true,
+    "every_transition_table_executed": true,
+    "every_workflow_replayed_twice": true,
+    "every_export_identity_verified": true,
+    "every_service_transition_executed": true,
+    "governed_error_dispositions_verified": true,
+    "export_provenance_summary_verified": true,
+    "every_export_svg_rendered_twice": true,
+    "public_dto_allowlists_verified": true,
+    "forbidden_public_field_count": 0,
+    "state_mutation_count": 0,
+    "state_mutation_definition": "In-place mutation of a governed current/next state; a transition to a different next-state identity is expected and is not a mutation.",
+    "STATE_MUTATION_COUNT": 0,
+    "NEXT_STATE_IDENTITY_CHANGE_IS_MUTATION": false
+  }
+}

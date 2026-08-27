@@ -94,19 +94,117 @@ API_SOURCE_RELS = (
     Path("frontend/src/features/trace-v49/exploration-v2/renderer.server.ts"),
     Path("frontend/src/features/trace-v49/exploration-v2/service.server.ts"),
     Path("frontend/src/features/trace-v49/exploration-v2/theme-tokens.ts"),
+    Path("frontend/src/features/trace-v49/exploration-v2/transition.server.ts"),
     Path("frontend/src/features/trace-v49/exploration-v2/types.ts"),
+    Path("frontend/src/app/api/trace/v1/exploration/route.ts"),
+    Path("frontend/src/app/api/trace/v1/exploration/[...path]/route.ts"),
+    Path("frontend/src/app/api/trace/v2/exploration/route.ts"),
     Path("frontend/src/app/api/trace/v2/exploration/[...path]/route.ts"),
 )
+API_CONTRACT_RELS = (
+    Path("schemas/trace/exploration/v2/action-request.schema.json"),
+    Path("schemas/trace/exploration/v2/association-response.schema.json"),
+    Path("schemas/trace/exploration/v2/capabilities-response.schema.json"),
+    Path("schemas/trace/exploration/v2/category-response.schema.json"),
+    Path("schemas/trace/exploration/v2/common.schema.json"),
+    Path("schemas/trace/exploration/v2/error.schema.json"),
+    Path("schemas/trace/exploration/v2/export-manifest.schema.json"),
+    Path("schemas/trace/exploration/v2/export-request.schema.json"),
+    Path("schemas/trace/exploration/v2/map-request.schema.json"),
+    Path("schemas/trace/exploration/v2/map-response.schema.json"),
+    Path("schemas/trace/exploration/v2/production-read-model.schema.json"),
+    Path("schemas/trace/exploration/v2/vocabulary-response.schema.json"),
+    Path("docs/api/trace-exploration-v2-error-catalog.md"),
+    Path("docs/api/trace-exploration-v2-examples.json"),
+    Path("docs/api/trace-exploration-v2-openapi.yaml"),
+)
 GENERATOR_SOURCE_RELS = (
+    Path("scripts/trace_round16a/apply_authority_clarification.py"),
+    Path("scripts/trace_round16a/capture_database_identity.py"),
     Path("scripts/trace_round16a/build_vocabulary_universe.py"),
     Path("scripts/trace_round16a/build_vocabulary_census.py"),
     Path("scripts/trace_round16a/build_pair_universe.py"),
     Path("scripts/trace_round16a/search_association_pairs.py"),
     Path("scripts/trace_round16a/build_association_census.py"),
     Path("scripts/trace_round16a/build_exploration_space.py"),
+    Path("scripts/trace_round16a/build_final_gate_evidence.py"),
+    Path("scripts/trace_round16a/build_operational_gate_receipts.py"),
+    Path("scripts/trace_round16a/build_research_reports.py"),
+    Path("scripts/trace_round16a/capture_final_integration_evidence.py"),
+    Path("scripts/trace_round16a/run_logged.py"),
+    Path("scripts/trace_round16a/seal_audit_package.py"),
+    Path("scripts/trace_round16a/start_production_server.py"),
+    Path("scripts/trace_round16a/summarize_runtime_results.py"),
+    Path("scripts/trace_round16a/verify_execution_log.py"),
     Path("scripts/trace_round16a/verify_full_space.py"),
+    Path("scripts/trace_round16a/verify_repository_boundary.py"),
+    Path("scripts/trace_round16a/verify_reproducibility.py"),
+)
+RUNTIME_HARNESS_SOURCE_RELS = (
+    Path("scripts/trace_round16a/node_runtime_probe.cjs"),
+    Path("frontend/scripts/benchmark-trace-exploration-v2-http.mjs"),
+    Path("frontend/scripts/measure-trace-exploration-v2-model.mjs"),
+    Path("frontend/scripts/test-trace-exploration-v2.mjs"),
+    Path("frontend/scripts/validate-trace-exploration-v2-http.mjs"),
+)
+BUILD_CONFIG_RELS = (
+    Path(".gitattributes"),
+    Path("frontend/next.config.ts"),
+    Path("frontend/package.json"),
+    Path("frontend/package-lock.json"),
+    Path("frontend/postcss.config.mjs"),
+    Path("frontend/tailwind.config.ts"),
+    Path("frontend/tsconfig.json"),
+    Path("frontend/tsconfig.runtime-acceptance.json"),
+)
+ALL_SOURCE_RELS = (
+    *API_SOURCE_RELS,
+    *API_CONTRACT_RELS,
+    *GENERATOR_SOURCE_RELS,
+    *RUNTIME_HARNESS_SOURCE_RELS,
+    *BUILD_CONFIG_RELS,
 )
 GATED_ARTIFACTS = {"api-functional-validation-v2.json", "png-validation-v2.tsv"}
+
+
+def discovered_round16a_source_rels() -> set[Path]:
+    """Discover governed source surfaces so new unsealed helpers fail closed."""
+    discovered: set[Path] = set()
+    for directory in (
+        REPO / "frontend/src/app/api/trace/v1/exploration",
+        REPO / "frontend/src/app/api/trace/v2/exploration",
+        REPO / "frontend/src/features/trace-v49/exploration-v2",
+        REPO / "schemas/trace/exploration/v2",
+        REPO / "scripts/trace_round16a",
+    ):
+        if directory.is_dir():
+            discovered.update(
+                path.relative_to(REPO)
+                for path in directory.rglob("*")
+                if path.is_file() and path.suffix in {".ts", ".json", ".py", ".cjs"}
+            )
+    api_docs = REPO / "docs/api"
+    if api_docs.is_dir():
+        discovered.update(
+            path.relative_to(REPO)
+            for path in api_docs.glob("trace-exploration-v2-*")
+            if path.is_file()
+        )
+    frontend_scripts = REPO / "frontend/scripts"
+    if frontend_scripts.is_dir():
+        discovered.update(
+            path.relative_to(REPO)
+            for path in frontend_scripts.glob("*trace-exploration-v2*")
+            if path.is_file()
+        )
+    return discovered
+
+
+def uninventoried_round16a_source_rels() -> list[Path]:
+    return sorted(
+        discovered_round16a_source_rels() - set(ALL_SOURCE_RELS),
+        key=lambda path: path.as_posix(),
+    )
 
 
 def compact(value: Any) -> bytes:
@@ -238,9 +336,13 @@ def require_inputs(audit: Audit, allow_incomplete_gates: bool) -> bool:
             missing.append(rel(path))
     if not MODEL.is_file():
         missing.append(rel(MODEL))
-    for path_rel in API_SOURCE_RELS:
+    for path_rel in ALL_SOURCE_RELS:
         if not (REPO / path_rel).is_file():
             missing.append(path_rel.as_posix())
+    missing.extend(
+        f"UNINVENTORIED_ROUND16A_SOURCE:{path.as_posix()}"
+        for path in uninventoried_round16a_source_rels()
+    )
     return audit.equal("INPUT.REQUIRED_ARTIFACTS", missing, [], domain="inputs",
                        sources=[RAW_REL.as_posix(), MODEL_REL.as_posix()])
 
@@ -2060,10 +2162,15 @@ def verify_summaries_and_equations(audit: Audit, composition_space: dict[str, An
 
 
 def current_artifact_entries(*, allow_incomplete_gates: bool) -> list[dict[str, Any]]:
+    uninventoried = uninventoried_round16a_source_rels()
+    if uninventoried:
+        raise FileNotFoundError(
+            "uninventoried Round 16A source paths: "
+            + ", ".join(path.as_posix() for path in uninventoried)
+        )
     paths: set[Path] = {RAW / name for name in SEMANTIC_ARTIFACTS}
     paths.add(MODEL)
-    paths.update(REPO / path for path in API_SOURCE_RELS)
-    paths.update(REPO / path for path in GENERATOR_SOURCE_RELS)
+    paths.update(REPO / path for path in ALL_SOURCE_RELS)
     # Reproduction also freezes the governed upstream inputs named by the
     # vocabulary universe plus the independent association/composition inputs.
     universe_path = RAW / "vocabulary-candidate-universe-v2.json"
@@ -2117,7 +2224,8 @@ def write_case_tsv(path: Path, cases: Sequence[Mapping[str, Any]]) -> None:
                 "case_id": case["case_id"], "domain": case["domain"], "status": case["status"],
                 "expected": compact(case["expected"]).decode("utf-8"),
                 "actual": compact(case["actual"]).decode("utf-8"),
-                "sources": compact(case["sources"]).decode("utf-8"), "detail": case["detail"],
+                "sources": compact(case["sources"]).decode("utf-8"),
+                "detail": case["detail"] or "NONE",
             })
 
 
@@ -2232,7 +2340,7 @@ def main() -> int:
     required_ok = require_inputs(audit, args.allow_incomplete_gates)
     core_names = [name for name in SEMANTIC_ARTIFACTS if name not in GATED_ARTIFACTS]
     core_ready = all((RAW / name).is_file() for name in core_names) and MODEL.is_file() and all(
-        (REPO / path).is_file() for path in API_SOURCE_RELS
+        (REPO / path).is_file() for path in ALL_SOURCE_RELS
     )
     if core_ready:
         try:
