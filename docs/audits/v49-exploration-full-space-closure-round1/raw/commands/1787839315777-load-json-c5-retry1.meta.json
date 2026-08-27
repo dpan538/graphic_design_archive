@@ -1,0 +1,43 @@
+{
+  "argv": [
+    "node",
+    "frontend/scripts/benchmark-trace-exploration-v2-http.mjs",
+    "--repo",
+    "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+    "--base-url",
+    "http://127.0.0.1:3034",
+    "--mode",
+    "json",
+    "--concurrency",
+    "5",
+    "--requests",
+    "2000",
+    "--minimum-duration-ms",
+    "0",
+    "--timeout-ms",
+    "30000",
+    "--scenario",
+    "concurrency_scaling",
+    "--workload-id",
+    "json-c5-run2",
+    "--output",
+    "docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c5-run2.json"
+  ],
+  "command": "node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 5 --requests 2000 --minimum-duration-ms 0 --timeout-ms 30000 --scenario concurrency_scaling --workload-id json-c5-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c5-run2.json",
+  "command_id": "1787839315777-load-json-c5-retry1",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 3867,
+  "end_timestamp_utc": "2026-08-27T14:01:59Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "load-json-c5-retry1",
+  "phase_id": "GATE-11",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-27T14:01:55Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "61f377a6d9481829e115ba8430e74f1ec26b1deb2402876b6717cb6eedd6a035",
+  "timed_out": false
+}

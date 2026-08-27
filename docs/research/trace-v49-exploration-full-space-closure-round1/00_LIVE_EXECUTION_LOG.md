@@ -2622,3 +2622,1903 @@ Next gate: enumerate and assess all 465 unordered active-vocabulary pairs.'`
 - Decision: operation started
 - Next operation: Verify cached diff and commit checkpoint 4.
 - Current Git SHA: `4fd4646320dbfc8b45e5970742f8bc5a32fcc108`
+
+## Event 136
+
+- Sequence: 136
+- UTC timestamp: 2026-08-27T12:54:48Z
+- Phase: CHECKPOINT-4
+- Operation: PASS — Stage generated-ledger whitespace policy and EOF repair
+- Input artifact(s): .gitattributes, frontend/src/features/trace-v49/exploration-v2/theme-tokens.ts
+- Input count: 2
+- Output artifact(s): none
+- Output count: 0
+- Command or script: `git add .gitattributes frontend/src/features/trace-v49/exploration-v2/theme-tokens.ts docs/audits/v49-exploration-full-space-closure-round1/raw/command-ledger.tsv docs/audits/v49-exploration-full-space-closure-round1/raw/execution-events.jsonl docs/audits/v49-exploration-full-space-closure-round1/raw/commands docs/research/trace-v49-exploration-full-space-closure-round1/00_LIVE_EXECUTION_LOG.md`
+- Elapsed duration: 46 ms
+- Current cumulative counts: {}
+- Warnings: none
+- Errors: none
+- Decision: Generated TSV terminal empty fields are structural and excluded from whitespace diagnostics; source EOF remains clean.
+- Next operation: Verify cached diff and commit checkpoint 4.
+- Current Git SHA: `4fd4646320dbfc8b45e5970742f8bc5a32fcc108`
+
+## Event 137
+
+- Sequence: 137
+- UTC timestamp: 2026-08-27T12:55:05Z
+- Phase: CHECKPOINT-4
+- Operation: START — Commit production Exploration API and exhaustive static evidence
+- Input artifact(s): .gitattributes, frontend/src/features/trace-v49/exploration-v2, frontend/src/app/api/trace/v2/exploration, docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json
+- Input count: 4
+- Output artifact(s): none
+- Output count: pending
+- Command or script: `git commit -m 'checkpoint: complete production exploration API'`
+- Elapsed duration: running
+- Current cumulative counts: {}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Append checkpoint ledger then start production server.
+- Current Git SHA: `4fd4646320dbfc8b45e5970742f8bc5a32fcc108`
+
+## Event 138
+
+- Sequence: 138
+- UTC timestamp: 2026-08-27T12:55:06Z
+- Phase: CHECKPOINT-4
+- Operation: PASS — Commit production Exploration API and exhaustive static evidence
+- Input artifact(s): .gitattributes, frontend/src/features/trace-v49/exploration-v2, frontend/src/app/api/trace/v2/exploration, docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json
+- Input count: 4
+- Output artifact(s): none
+- Output count: 0
+- Command or script: `git commit -m 'checkpoint: complete production exploration API'`
+- Elapsed duration: 305 ms
+- Current cumulative counts: {}
+- Warnings: none
+- Errors: none
+- Decision: Checkpoint 4 freezes the passing compact production API before actual production HTTP load.
+- Next operation: Append checkpoint ledger then start production server.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 139
+
+- Sequence: 139
+- UTC timestamp: 2026-08-27T12:55:39Z
+- Phase: GATE-10
+- Operation: START — Start instrumented actual Next.js production server
+- Input artifact(s): frontend/.next, frontend/generated/trace-exploration-v2/production-read-model.json, scripts/trace_round16a/node_runtime_probe.cjs
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl
+- Output count: pending
+- Command or script: `python3 scripts/trace_round16a/start_production_server.py --frontend frontend --host 127.0.0.1 --port 3034 --receipt docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json --probe docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl --probe-module scripts/trace_round16a/node_runtime_probe.cjs`
+- Elapsed duration: running
+- Current cumulative counts: {"static_api_gate":"PASS","production_build":"PASS"}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Execute every transition through actual HTTP and validate every export variant.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 140
+
+- Sequence: 140
+- UTC timestamp: 2026-08-27T12:55:41Z
+- Phase: GATE-10
+- Operation: FAIL — Start instrumented actual Next.js production server
+- Input artifact(s): frontend/.next, frontend/generated/trace-exploration-v2/production-read-model.json, scripts/trace_round16a/node_runtime_probe.cjs
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl
+- Output count: 2
+- Command or script: `python3 scripts/trace_round16a/start_production_server.py --frontend frontend --host 127.0.0.1 --port 3034 --receipt docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json --probe docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl --probe-module scripts/trace_round16a/node_runtime_probe.cjs`
+- Elapsed duration: 2509 ms
+- Current cumulative counts: {"static_api_gate":"PASS","production_build":"PASS"}
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Stop this operation and preserve failure evidence.
+- Next operation: Execute every transition through actual HTTP and validate every export variant.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 141
+
+- Sequence: 141
+- UTC timestamp: 2026-08-27T12:56:00Z
+- Phase: GATE-10
+- Operation: START — Retry instrumented actual Next.js production server outside local-bind sandbox
+- Input artifact(s): frontend/.next, frontend/generated/trace-exploration-v2/production-read-model.json, scripts/trace_round16a/node_runtime_probe.cjs
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl
+- Output count: pending
+- Command or script: `python3 scripts/trace_round16a/start_production_server.py --frontend frontend --host 127.0.0.1 --port 3034 --receipt docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json --probe docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl --probe-module scripts/trace_round16a/node_runtime_probe.cjs`
+- Elapsed duration: running
+- Current cumulative counts: {"static_api_gate":"PASS","production_build":"PASS"}
+- Warnings: INITIAL_SERVER_BIND_BLOCKED_BY_SANDBOX_EPERM
+- Errors: none at start
+- Decision: operation started
+- Next operation: Execute every transition through actual HTTP and validate every export variant.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 142
+
+- Sequence: 142
+- UTC timestamp: 2026-08-27T12:57:03Z
+- Phase: GATE-10
+- Operation: START — Execute exhaustive functional census through actual production HTTP
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/transition-census-v2.tsv, schemas/trace/exploration/v2/common.schema.json, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 4
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-http-case-ledger-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json
+- Output count: pending
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode functional --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --concurrency 25 --timeout-ms 30000 --case-ledger docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-http-case-ledger-v2.tsv --output docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json`
+- Elapsed duration: running
+- Current cumulative counts: {"expected_transition_http_cases":749944,"states":5760,"category_entries":81,"vocabulary":31,"associations":21}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Validate all 11520 SVG and PNG export variants through production HTTP.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 143
+
+- Sequence: 143
+- UTC timestamp: 2026-08-27T13:03:32Z
+- Phase: GATE-10
+- Operation: FAIL — Execute exhaustive functional census through actual production HTTP
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/transition-census-v2.tsv, schemas/trace/exploration/v2/common.schema.json, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 4
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-http-case-ledger-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json
+- Output count: 2
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode functional --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --concurrency 25 --timeout-ms 30000 --case-ledger docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-http-case-ledger-v2.tsv --output docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json`
+- Elapsed duration: 388657 ms
+- Current cumulative counts: {"expected_transition_http_cases":749944,"states":5760,"category_entries":81,"vocabulary":31,"associations":21}
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Stop this operation and preserve failure evidence.
+- Next operation: Validate all 11520 SVG and PNG export variants through production HTTP.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 144
+
+- Sequence: 144
+- UTC timestamp: 2026-08-27T13:05:02Z
+- Phase: GATE-10
+- Operation: START — Retry exhaustive functional production HTTP census after supported-topology schema reconciliation
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/transition-census-v2.tsv, schemas/trace/exploration/v2/common.schema.json, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 4
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-http-case-ledger-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json
+- Output count: pending
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode functional --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --concurrency 25 --timeout-ms 30000 --case-ledger docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-http-case-ledger-v2.tsv --output docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json`
+- Elapsed duration: running
+- Current cumulative counts: {"expected_transition_http_cases":749944,"states":5760,"category_entries":81,"vocabulary":31,"associations":21}
+- Warnings: CAPABILITIES_SCHEMA_PRODUCTION_TOPOLOGY_SET_RECONCILED
+- Errors: none at start
+- Decision: operation started
+- Next operation: Validate all 11520 SVG and PNG export variants through production HTTP.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 145
+
+- Sequence: 145
+- UTC timestamp: 2026-08-27T13:11:19Z
+- Phase: GATE-10
+- Operation: PASS — Retry exhaustive functional production HTTP census after supported-topology schema reconciliation
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/transition-census-v2.tsv, schemas/trace/exploration/v2/common.schema.json, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 4
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-http-case-ledger-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json
+- Output count: 2
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode functional --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --concurrency 25 --timeout-ms 30000 --case-ledger docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-http-case-ledger-v2.tsv --output docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json`
+- Elapsed duration: 376817 ms
+- Current cumulative counts: {"expected_transition_http_cases":749944,"states":5760,"category_entries":81,"vocabulary":31,"associations":21}
+- Warnings: CAPABILITIES_SCHEMA_PRODUCTION_TOPOLOGY_SET_RECONCILED
+- Errors: none
+- Decision: Every actual HTTP case must return the governed schema identity and next state with zero forbidden references or unexpected 5xx.
+- Next operation: Validate all 11520 SVG and PNG export variants through production HTTP.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 146
+
+- Sequence: 146
+- UTC timestamp: 2026-08-27T13:11:48Z
+- Phase: GATE-10
+- Operation: START — Validate production export variants 0 through 999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-00-v2.tsv
+- Output count: pending
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 0 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-00-v2.tsv`
+- Elapsed duration: running
+- Current cumulative counts: {"export_validated_before":0,"export_total":11520}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Continue with export partition 1.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 147
+
+- Sequence: 147
+- UTC timestamp: 2026-08-27T13:14:19Z
+- Phase: GATE-10
+- Operation: PASS — Validate production export variants 0 through 999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-00-v2.tsv
+- Output count: 1000
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 0 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-00-v2.tsv`
+- Elapsed duration: 150988 ms
+- Current cumulative counts: {"export_validated_before":0,"export_total":11520}
+- Warnings: none
+- Errors: none
+- Decision: Every manifest SVG PNG zone label association provenance and replay gate must pass.
+- Next operation: Continue with export partition 1.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 148
+
+- Sequence: 148
+- UTC timestamp: 2026-08-27T13:14:49Z
+- Phase: GATE-10
+- Operation: START — Validate production export variants 1000 through 1999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-01-v2.tsv
+- Output count: pending
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 1000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-01-v2.tsv`
+- Elapsed duration: running
+- Current cumulative counts: {"export_validated_before":1000,"export_total":11520}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Continue with export partition 2.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 149
+
+- Sequence: 149
+- UTC timestamp: 2026-08-27T13:17:18Z
+- Phase: GATE-10
+- Operation: PASS — Validate production export variants 1000 through 1999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-01-v2.tsv
+- Output count: 1000
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 1000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-01-v2.tsv`
+- Elapsed duration: 149272 ms
+- Current cumulative counts: {"export_validated_before":1000,"export_total":11520}
+- Warnings: none
+- Errors: none
+- Decision: Every manifest SVG PNG zone label association provenance and replay gate must pass.
+- Next operation: Continue with export partition 2.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 150
+
+- Sequence: 150
+- UTC timestamp: 2026-08-27T13:17:25Z
+- Phase: GATE-10
+- Operation: START — Validate production export variants 2000 through 2999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-02-v2.tsv
+- Output count: pending
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 2000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-02-v2.tsv`
+- Elapsed duration: running
+- Current cumulative counts: {"export_validated_before":2000,"export_total":11520}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Continue with export partition 3.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 151
+
+- Sequence: 151
+- UTC timestamp: 2026-08-27T13:19:55Z
+- Phase: GATE-10
+- Operation: PASS — Validate production export variants 2000 through 2999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-02-v2.tsv
+- Output count: 1000
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 2000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-02-v2.tsv`
+- Elapsed duration: 150013 ms
+- Current cumulative counts: {"export_validated_before":2000,"export_total":11520}
+- Warnings: none
+- Errors: none
+- Decision: Every manifest SVG PNG zone label association provenance and replay gate must pass.
+- Next operation: Continue with export partition 3.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 152
+
+- Sequence: 152
+- UTC timestamp: 2026-08-27T13:19:58Z
+- Phase: GATE-10
+- Operation: START — Validate production export variants 3000 through 3999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-03-v2.tsv
+- Output count: pending
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 3000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-03-v2.tsv`
+- Elapsed duration: running
+- Current cumulative counts: {"export_validated_before":3000,"export_total":11520}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Continue with export partition 4.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 153
+
+- Sequence: 153
+- UTC timestamp: 2026-08-27T13:22:30Z
+- Phase: GATE-10
+- Operation: PASS — Validate production export variants 3000 through 3999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-03-v2.tsv
+- Output count: 1000
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 3000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-03-v2.tsv`
+- Elapsed duration: 151683 ms
+- Current cumulative counts: {"export_validated_before":3000,"export_total":11520}
+- Warnings: none
+- Errors: none
+- Decision: Every manifest SVG PNG zone label association provenance and replay gate must pass.
+- Next operation: Continue with export partition 4.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 154
+
+- Sequence: 154
+- UTC timestamp: 2026-08-27T13:22:33Z
+- Phase: GATE-10
+- Operation: START — Validate production export variants 4000 through 4999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-04-v2.tsv
+- Output count: pending
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 4000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-04-v2.tsv`
+- Elapsed duration: running
+- Current cumulative counts: {"export_validated_before":4000,"export_total":11520}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Continue with export partition 5.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 155
+
+- Sequence: 155
+- UTC timestamp: 2026-08-27T13:25:00Z
+- Phase: GATE-10
+- Operation: PASS — Validate production export variants 4000 through 4999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-04-v2.tsv
+- Output count: 1000
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 4000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-04-v2.tsv`
+- Elapsed duration: 146967 ms
+- Current cumulative counts: {"export_validated_before":4000,"export_total":11520}
+- Warnings: none
+- Errors: none
+- Decision: Every manifest SVG PNG zone label association provenance and replay gate must pass.
+- Next operation: Continue with export partition 5.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 156
+
+- Sequence: 156
+- UTC timestamp: 2026-08-27T13:25:03Z
+- Phase: GATE-10
+- Operation: START — Validate production export variants 5000 through 5999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-05-v2.tsv
+- Output count: pending
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 5000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-05-v2.tsv`
+- Elapsed duration: running
+- Current cumulative counts: {"export_validated_before":5000,"export_total":11520}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Continue with export partition 6.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 157
+
+- Sequence: 157
+- UTC timestamp: 2026-08-27T13:27:31Z
+- Phase: GATE-10
+- Operation: PASS — Validate production export variants 5000 through 5999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-05-v2.tsv
+- Output count: 1000
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 5000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-05-v2.tsv`
+- Elapsed duration: 147324 ms
+- Current cumulative counts: {"export_validated_before":5000,"export_total":11520}
+- Warnings: none
+- Errors: none
+- Decision: Every manifest SVG PNG zone label association provenance and replay gate must pass.
+- Next operation: Continue with export partition 6.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 158
+
+- Sequence: 158
+- UTC timestamp: 2026-08-27T13:27:34Z
+- Phase: GATE-10
+- Operation: START — Validate production export variants 6000 through 6999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-06-v2.tsv
+- Output count: pending
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 6000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-06-v2.tsv`
+- Elapsed duration: running
+- Current cumulative counts: {"export_validated_before":6000,"export_total":11520}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Continue with export partition 7.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 159
+
+- Sequence: 159
+- UTC timestamp: 2026-08-27T13:30:03Z
+- Phase: GATE-10
+- Operation: PASS — Validate production export variants 6000 through 6999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-06-v2.tsv
+- Output count: 1000
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 6000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-06-v2.tsv`
+- Elapsed duration: 149025 ms
+- Current cumulative counts: {"export_validated_before":6000,"export_total":11520}
+- Warnings: none
+- Errors: none
+- Decision: Every manifest SVG PNG zone label association provenance and replay gate must pass.
+- Next operation: Continue with export partition 7.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 160
+
+- Sequence: 160
+- UTC timestamp: 2026-08-27T13:30:08Z
+- Phase: GATE-10
+- Operation: START — Validate production export variants 7000 through 7999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-07-v2.tsv
+- Output count: pending
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 7000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-07-v2.tsv`
+- Elapsed duration: running
+- Current cumulative counts: {"export_validated_before":7000,"export_total":11520}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Continue with export partition 8.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 161
+
+- Sequence: 161
+- UTC timestamp: 2026-08-27T13:32:39Z
+- Phase: GATE-10
+- Operation: PASS — Validate production export variants 7000 through 7999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-07-v2.tsv
+- Output count: 1000
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 7000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-07-v2.tsv`
+- Elapsed duration: 151473 ms
+- Current cumulative counts: {"export_validated_before":7000,"export_total":11520}
+- Warnings: none
+- Errors: none
+- Decision: Every manifest SVG PNG zone label association provenance and replay gate must pass.
+- Next operation: Continue with export partition 8.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 162
+
+- Sequence: 162
+- UTC timestamp: 2026-08-27T13:32:42Z
+- Phase: GATE-10
+- Operation: START — Validate production export variants 8000 through 8999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-08-v2.tsv
+- Output count: pending
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 8000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-08-v2.tsv`
+- Elapsed duration: running
+- Current cumulative counts: {"export_validated_before":8000,"export_total":11520}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Continue with export partition 9.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 163
+
+- Sequence: 163
+- UTC timestamp: 2026-08-27T13:35:10Z
+- Phase: GATE-10
+- Operation: PASS — Validate production export variants 8000 through 8999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-08-v2.tsv
+- Output count: 1000
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 8000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-08-v2.tsv`
+- Elapsed duration: 148573 ms
+- Current cumulative counts: {"export_validated_before":8000,"export_total":11520}
+- Warnings: none
+- Errors: none
+- Decision: Every manifest SVG PNG zone label association provenance and replay gate must pass.
+- Next operation: Continue with export partition 9.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 164
+
+- Sequence: 164
+- UTC timestamp: 2026-08-27T13:35:13Z
+- Phase: GATE-10
+- Operation: START — Validate production export variants 9000 through 9999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-09-v2.tsv
+- Output count: pending
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 9000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-09-v2.tsv`
+- Elapsed duration: running
+- Current cumulative counts: {"export_validated_before":9000,"export_total":11520}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Continue with export partition 10.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 165
+
+- Sequence: 165
+- UTC timestamp: 2026-08-27T13:37:41Z
+- Phase: GATE-10
+- Operation: PASS — Validate production export variants 9000 through 9999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-09-v2.tsv
+- Output count: 1000
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 9000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-09-v2.tsv`
+- Elapsed duration: 147706 ms
+- Current cumulative counts: {"export_validated_before":9000,"export_total":11520}
+- Warnings: none
+- Errors: none
+- Decision: Every manifest SVG PNG zone label association provenance and replay gate must pass.
+- Next operation: Continue with export partition 10.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 166
+
+- Sequence: 166
+- UTC timestamp: 2026-08-27T13:37:44Z
+- Phase: GATE-10
+- Operation: START — Validate production export variants 10000 through 10999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-10-v2.tsv
+- Output count: pending
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 10000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-10-v2.tsv`
+- Elapsed duration: running
+- Current cumulative counts: {"export_validated_before":10000,"export_total":11520}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Continue with export partition 11.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 167
+
+- Sequence: 167
+- UTC timestamp: 2026-08-27T13:40:12Z
+- Phase: GATE-10
+- Operation: PASS — Validate production export variants 10000 through 10999
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-10-v2.tsv
+- Output count: 1000
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 10000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-10-v2.tsv`
+- Elapsed duration: 147771 ms
+- Current cumulative counts: {"export_validated_before":10000,"export_total":11520}
+- Warnings: none
+- Errors: none
+- Decision: Every manifest SVG PNG zone label association provenance and replay gate must pass.
+- Next operation: Continue with export partition 11.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 168
+
+- Sequence: 168
+- UTC timestamp: 2026-08-27T13:40:15Z
+- Phase: GATE-10
+- Operation: START — Validate production export variants 11000 through 11519
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 520
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-11-v2.tsv
+- Output count: pending
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 11000 --count 520 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-11-v2.tsv`
+- Elapsed duration: running
+- Current cumulative counts: {"export_validated_before":11000,"export_total":11520}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Merge all exhaustive export validation partitions.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 169
+
+- Sequence: 169
+- UTC timestamp: 2026-08-27T13:41:33Z
+- Phase: GATE-10
+- Operation: PASS — Validate production export variants 11000 through 11519
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2/common.schema.json
+- Input count: 520
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-11-v2.tsv
+- Output count: 520
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 11000 --count 520 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-11-v2.tsv`
+- Elapsed duration: 78126 ms
+- Current cumulative counts: {"export_validated_before":11000,"export_total":11520}
+- Warnings: none
+- Errors: none
+- Decision: Every manifest SVG PNG zone label association provenance and replay gate must pass.
+- Next operation: Merge all exhaustive export validation partitions.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 170
+
+- Sequence: 170
+- UTC timestamp: 2026-08-27T13:41:53Z
+- Phase: GATE-10
+- Operation: START — Merge and reconcile all exhaustive export validation partitions
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-00-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-01-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-02-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-03-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-04-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-05-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-06-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-07-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-08-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-09-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-10-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-11-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv
+- Input count: 11520
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-v2.tsv
+- Output count: pending
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode merge-png --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-00-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-01-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-02-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-03-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-04-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-05-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-06-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-07-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-08-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-09-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-10-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-11-v2.tsv --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-v2.tsv`
+- Elapsed duration: running
+- Current cumulative counts: {"manifest_validated":11520,"svg_rendered_twice":11520,"png_rendered_twice":11520}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Execute concurrency and sustained-load matrix.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 171
+
+- Sequence: 171
+- UTC timestamp: 2026-08-27T13:41:53Z
+- Phase: GATE-10
+- Operation: PASS — Merge and reconcile all exhaustive export validation partitions
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-00-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-01-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-02-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-03-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-04-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-05-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-06-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-07-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-08-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-09-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-10-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-11-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv
+- Input count: 11520
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-v2.tsv
+- Output count: 11520
+- Command or script: `node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode merge-png --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-00-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-01-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-02-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-03-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-04-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-05-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-06-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-07-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-08-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-09-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-10-v2.tsv --input docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-11-v2.tsv --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-v2.tsv`
+- Elapsed duration: 377 ms
+- Current cumulative counts: {"manifest_validated":11520,"svg_rendered_twice":11520,"png_rendered_twice":11520}
+- Warnings: none
+- Errors: none
+- Decision: Merged ledger must have exactly one passing row for every frozen export identity and exact replay hashes.
+- Next operation: Execute concurrency and sustained-load matrix.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 172
+
+- Sequence: 172
+- UTC timestamp: 2026-08-27T13:42:03Z
+- Phase: GATE-11
+- Operation: START — Create governed workload evidence directory
+- Input artifact(s): none
+- Input count: 0
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2
+- Output count: pending
+- Command or script: `mkdir -p docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2`
+- Elapsed duration: running
+- Current cumulative counts: {}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Run JSON and PNG concurrency matrix.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 173
+
+- Sequence: 173
+- UTC timestamp: 2026-08-27T13:42:03Z
+- Phase: GATE-11
+- Operation: PASS — Create governed workload evidence directory
+- Input artifact(s): none
+- Input count: 0
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2
+- Output count: 1
+- Command or script: `mkdir -p docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2`
+- Elapsed duration: 4 ms
+- Current cumulative counts: {}
+- Warnings: none
+- Errors: none
+- Decision: All workload case evidence is isolated under one governed directory.
+- Next operation: Run JSON and PNG concurrency matrix.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 174
+
+- Sequence: 174
+- UTC timestamp: 2026-08-27T13:42:33Z
+- Phase: GATE-11
+- Operation: START — Actual production JSON workload json-c1-warm
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c1-warm.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 1 --requests 1000 --minimum-duration-ms 30000 --timeout-ms 30000 --scenario warm_steady_state --workload-id json-c1-warm --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c1-warm.json`
+- Elapsed duration: running
+- Current cumulative counts: {"mode":"json","concurrency":1,"minimum_requests":1000,"minimum_duration_ms":30000}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Continue concurrency matrix.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 175
+
+- Sequence: 175
+- UTC timestamp: 2026-08-27T13:43:06Z
+- Phase: GATE-11
+- Operation: PASS — Actual production JSON workload json-c1-warm
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 1000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c1-warm.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 1 --requests 1000 --minimum-duration-ms 30000 --timeout-ms 30000 --scenario warm_steady_state --workload-id json-c1-warm --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c1-warm.json`
+- Elapsed duration: 32382 ms
+- Current cumulative counts: {"mode":"json","concurrency":1,"minimum_requests":1000,"minimum_duration_ms":30000}
+- Warnings: none
+- Errors: none
+- Decision: Every measured response must pass HTTP and semantic integrity checks with zero timeout or unexpected 5xx.
+- Next operation: Continue concurrency matrix.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 176
+
+- Sequence: 176
+- UTC timestamp: 2026-08-27T13:43:09Z
+- Phase: GATE-11
+- Operation: START — Actual production JSON workload json-c5
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 2000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c5.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 5 --requests 2000 --minimum-duration-ms 0 --timeout-ms 30000 --scenario concurrency_scaling --workload-id json-c5 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c5.json`
+- Elapsed duration: running
+- Current cumulative counts: {"mode":"json","concurrency":5,"minimum_requests":2000,"minimum_duration_ms":0}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Continue concurrency matrix.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 177
+
+- Sequence: 177
+- UTC timestamp: 2026-08-27T13:43:13Z
+- Phase: GATE-11
+- Operation: PASS — Actual production JSON workload json-c5
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 2000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c5.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 5 --requests 2000 --minimum-duration-ms 0 --timeout-ms 30000 --scenario concurrency_scaling --workload-id json-c5 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c5.json`
+- Elapsed duration: 3261 ms
+- Current cumulative counts: {"mode":"json","concurrency":5,"minimum_requests":2000,"minimum_duration_ms":0}
+- Warnings: none
+- Errors: none
+- Decision: Every measured response must pass HTTP and semantic integrity checks with zero timeout or unexpected 5xx.
+- Next operation: Continue concurrency matrix.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 178
+
+- Sequence: 178
+- UTC timestamp: 2026-08-27T13:43:17Z
+- Phase: GATE-11
+- Operation: START — Actual production JSON workload json-c10
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c10.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 10 --requests 3000 --minimum-duration-ms 0 --timeout-ms 30000 --scenario concurrency_scaling --workload-id json-c10 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c10.json`
+- Elapsed duration: running
+- Current cumulative counts: {"mode":"json","concurrency":10,"minimum_requests":3000,"minimum_duration_ms":0}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Continue concurrency matrix.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 179
+
+- Sequence: 179
+- UTC timestamp: 2026-08-27T13:43:21Z
+- Phase: GATE-11
+- Operation: PASS — Actual production JSON workload json-c10
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c10.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 10 --requests 3000 --minimum-duration-ms 0 --timeout-ms 30000 --scenario concurrency_scaling --workload-id json-c10 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c10.json`
+- Elapsed duration: 3494 ms
+- Current cumulative counts: {"mode":"json","concurrency":10,"minimum_requests":3000,"minimum_duration_ms":0}
+- Warnings: none
+- Errors: none
+- Decision: Every measured response must pass HTTP and semantic integrity checks with zero timeout or unexpected 5xx.
+- Next operation: Continue concurrency matrix.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 180
+
+- Sequence: 180
+- UTC timestamp: 2026-08-27T13:43:24Z
+- Phase: GATE-11
+- Operation: START — Actual production JSON workload json-c25
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 5000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c25.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 25 --requests 5000 --minimum-duration-ms 0 --timeout-ms 30000 --scenario concurrency_scaling --workload-id json-c25 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c25.json`
+- Elapsed duration: running
+- Current cumulative counts: {"mode":"json","concurrency":25,"minimum_requests":5000,"minimum_duration_ms":0}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Continue concurrency matrix.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 181
+
+- Sequence: 181
+- UTC timestamp: 2026-08-27T13:43:28Z
+- Phase: GATE-11
+- Operation: PASS — Actual production JSON workload json-c25
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 5000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c25.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 25 --requests 5000 --minimum-duration-ms 0 --timeout-ms 30000 --scenario concurrency_scaling --workload-id json-c25 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c25.json`
+- Elapsed duration: 4367 ms
+- Current cumulative counts: {"mode":"json","concurrency":25,"minimum_requests":5000,"minimum_duration_ms":0}
+- Warnings: none
+- Errors: none
+- Decision: Every measured response must pass HTTP and semantic integrity checks with zero timeout or unexpected 5xx.
+- Next operation: Continue concurrency matrix.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 182
+
+- Sequence: 182
+- UTC timestamp: 2026-08-27T13:43:31Z
+- Phase: GATE-11
+- Operation: START — Actual production JSON workload json-c50-burst
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 5000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c50-burst.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 50 --requests 5000 --minimum-duration-ms 0 --timeout-ms 30000 --scenario burst_load --workload-id json-c50-burst --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c50-burst.json`
+- Elapsed duration: running
+- Current cumulative counts: {"mode":"json","concurrency":50,"minimum_requests":5000,"minimum_duration_ms":0}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Continue concurrency matrix.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 183
+
+- Sequence: 183
+- UTC timestamp: 2026-08-27T13:43:36Z
+- Phase: GATE-11
+- Operation: PASS — Actual production JSON workload json-c50-burst
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 5000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c50-burst.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 50 --requests 5000 --minimum-duration-ms 0 --timeout-ms 30000 --scenario burst_load --workload-id json-c50-burst --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/json-c50-burst.json`
+- Elapsed duration: 4372 ms
+- Current cumulative counts: {"mode":"json","concurrency":50,"minimum_requests":5000,"minimum_duration_ms":0}
+- Warnings: none
+- Errors: none
+- Decision: Every measured response must pass HTTP and semantic integrity checks with zero timeout or unexpected 5xx.
+- Next operation: Continue concurrency matrix.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 184
+
+- Sequence: 184
+- UTC timestamp: 2026-08-27T13:43:39Z
+- Phase: GATE-11
+- Operation: START — Actual production PNG workload png-c1
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 100
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/png-c1.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode png --concurrency 1 --requests 100 --minimum-duration-ms 10000 --timeout-ms 30000 --scenario concurrent_png_load --workload-id png-c1 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/png-c1.json`
+- Elapsed duration: running
+- Current cumulative counts: {"mode":"png","concurrency":1,"minimum_requests":100,"minimum_duration_ms":10000}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Continue concurrency matrix.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 185
+
+- Sequence: 185
+- UTC timestamp: 2026-08-27T13:43:51Z
+- Phase: GATE-11
+- Operation: PASS — Actual production PNG workload png-c1
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 100
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/png-c1.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode png --concurrency 1 --requests 100 --minimum-duration-ms 10000 --timeout-ms 30000 --scenario concurrent_png_load --workload-id png-c1 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/png-c1.json`
+- Elapsed duration: 11974 ms
+- Current cumulative counts: {"mode":"png","concurrency":1,"minimum_requests":100,"minimum_duration_ms":10000}
+- Warnings: none
+- Errors: none
+- Decision: Every measured response must pass HTTP and semantic integrity checks with zero timeout or unexpected 5xx.
+- Next operation: Continue concurrency matrix.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 186
+
+- Sequence: 186
+- UTC timestamp: 2026-08-27T13:43:57Z
+- Phase: GATE-11
+- Operation: START — Actual production PNG workload png-c2
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 100
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/png-c2.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode png --concurrency 2 --requests 100 --minimum-duration-ms 10000 --timeout-ms 30000 --scenario concurrent_png_load --workload-id png-c2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/png-c2.json`
+- Elapsed duration: running
+- Current cumulative counts: {"mode":"png","concurrency":2,"minimum_requests":100,"minimum_duration_ms":10000}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Continue concurrency matrix.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 187
+
+- Sequence: 187
+- UTC timestamp: 2026-08-27T13:44:09Z
+- Phase: GATE-11
+- Operation: PASS — Actual production PNG workload png-c2
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 100
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/png-c2.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode png --concurrency 2 --requests 100 --minimum-duration-ms 10000 --timeout-ms 30000 --scenario concurrent_png_load --workload-id png-c2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/png-c2.json`
+- Elapsed duration: 12164 ms
+- Current cumulative counts: {"mode":"png","concurrency":2,"minimum_requests":100,"minimum_duration_ms":10000}
+- Warnings: none
+- Errors: none
+- Decision: Every measured response must pass HTTP and semantic integrity checks with zero timeout or unexpected 5xx.
+- Next operation: Continue concurrency matrix.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 188
+
+- Sequence: 188
+- UTC timestamp: 2026-08-27T13:44:12Z
+- Phase: GATE-11
+- Operation: START — Actual production PNG workload png-c5
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 100
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/png-c5.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode png --concurrency 5 --requests 100 --minimum-duration-ms 10000 --timeout-ms 30000 --scenario concurrent_png_load --workload-id png-c5 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/png-c5.json`
+- Elapsed duration: running
+- Current cumulative counts: {"mode":"png","concurrency":5,"minimum_requests":100,"minimum_duration_ms":10000}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Continue concurrency matrix.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 189
+
+- Sequence: 189
+- UTC timestamp: 2026-08-27T13:44:24Z
+- Phase: GATE-11
+- Operation: PASS — Actual production PNG workload png-c5
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 100
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/png-c5.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode png --concurrency 5 --requests 100 --minimum-duration-ms 10000 --timeout-ms 30000 --scenario concurrent_png_load --workload-id png-c5 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/png-c5.json`
+- Elapsed duration: 12095 ms
+- Current cumulative counts: {"mode":"png","concurrency":5,"minimum_requests":100,"minimum_duration_ms":10000}
+- Warnings: none
+- Errors: none
+- Decision: Every measured response must pass HTTP and semantic integrity checks with zero timeout or unexpected 5xx.
+- Next operation: Continue concurrency matrix.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 190
+
+- Sequence: 190
+- UTC timestamp: 2026-08-27T13:44:28Z
+- Phase: GATE-11
+- Operation: START — Actual production PNG workload png-c10
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 100
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/png-c10.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode png --concurrency 10 --requests 100 --minimum-duration-ms 10000 --timeout-ms 30000 --scenario concurrent_png_load --workload-id png-c10 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/png-c10.json`
+- Elapsed duration: running
+- Current cumulative counts: {"mode":"png","concurrency":10,"minimum_requests":100,"minimum_duration_ms":10000}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Declare and run sustained mixed-load criterion.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 191
+
+- Sequence: 191
+- UTC timestamp: 2026-08-27T13:44:40Z
+- Phase: GATE-11
+- Operation: PASS — Actual production PNG workload png-c10
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 100
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/png-c10.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode png --concurrency 10 --requests 100 --minimum-duration-ms 10000 --timeout-ms 30000 --scenario concurrent_png_load --workload-id png-c10 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/png-c10.json`
+- Elapsed duration: 12232 ms
+- Current cumulative counts: {"mode":"png","concurrency":10,"minimum_requests":100,"minimum_duration_ms":10000}
+- Warnings: none
+- Errors: none
+- Decision: Every measured response must pass HTTP and semantic integrity checks with zero timeout or unexpected 5xx.
+- Next operation: Declare and run sustained mixed-load criterion.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 192
+
+- Sequence: 192
+- UTC timestamp: 2026-08-27T13:44:59Z
+- Phase: GATE-11
+- Operation: START — Predeclare sustained mixed-load termination and stability criteria
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json, scripts/trace_round16a/summarize_runtime_results.py
+- Input count: 2
+- Output artifact(s): none
+- Output count: pending
+- Command or script: `python3 -c 'print('"'"'SUSTAINED_CRITERION: requests>=10000 AND duration_ms>=300000; concurrency=25; mixed=90pct JSON+10pct PNG; timeout=30000ms; zero failures/timeouts/5xx/corruption; telemetry>=60 samples; unbounded RSS iff final-window median growth>max(16MiB,10pct initial) AND positive OLS slope'"'"')'`
+- Elapsed duration: running
+- Current cumulative counts: {"minimum_request_count":10000,"minimum_duration_ms":300000,"both_required":true,"concurrency":25,"png_share":0.1,"request_timeout_ms":30000}
+- Warnings: MEMORY_STABILITY_RULE=flag only when final-window median RSS exceeds initial-window median by more than max(16MiB,10pct) and OLS slope is positive
+- Errors: none at start
+- Decision: operation started
+- Next operation: Run sustained mixed production load exactly under these criteria.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 193
+
+- Sequence: 193
+- UTC timestamp: 2026-08-27T13:44:59Z
+- Phase: GATE-11
+- Operation: PASS — Predeclare sustained mixed-load termination and stability criteria
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json, scripts/trace_round16a/summarize_runtime_results.py
+- Input count: 2
+- Output artifact(s): none
+- Output count: 0
+- Command or script: `python3 -c 'print('"'"'SUSTAINED_CRITERION: requests>=10000 AND duration_ms>=300000; concurrency=25; mixed=90pct JSON+10pct PNG; timeout=30000ms; zero failures/timeouts/5xx/corruption; telemetry>=60 samples; unbounded RSS iff final-window median growth>max(16MiB,10pct initial) AND positive OLS slope'"'"')'`
+- Elapsed duration: 25 ms
+- Current cumulative counts: {"minimum_request_count":10000,"minimum_duration_ms":300000,"both_required":true,"concurrency":25,"png_share":0.1,"request_timeout_ms":30000}
+- Warnings: MEMORY_STABILITY_RULE=flag only when final-window median RSS exceeds initial-window median by more than max(16MiB,10pct) and OLS slope is positive
+- Errors: none
+- Decision: Sustained closure requires both volume and duration, zero failure timeout 5xx or semantic corruption, at least 60 telemetry samples, and no unbounded RSS growth under the predeclared rule.
+- Next operation: Run sustained mixed production load exactly under these criteria.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 194
+
+- Sequence: 194
+- UTC timestamp: 2026-08-27T13:45:14Z
+- Phase: GATE-11
+- Operation: START — Run predeclared sustained mixed production load
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json, scripts/trace_round16a/summarize_runtime_results.py
+- Input count: 10000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/mixed-c25-sustained.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode mixed --concurrency 25 --requests 10000 --minimum-duration-ms 300000 --timeout-ms 30000 --scenario sustained_mixed_load --workload-id mixed-c25-sustained --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/mixed-c25-sustained.json`
+- Elapsed duration: running
+- Current cumulative counts: {"minimum_request_count":10000,"minimum_duration_ms":300000,"both_required":true,"concurrency":25,"png_share":0.1}
+- Warnings: PREDECLARED_TERMINATION_AND_MEMORY_RULE_EVENT_PRECEDES_THIS_COMMAND
+- Errors: none at start
+- Decision: operation started
+- Next operation: Stop the server and summarize all production runtime evidence.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 195
+
+- Sequence: 195
+- UTC timestamp: 2026-08-27T13:50:18Z
+- Phase: GATE-11
+- Operation: PASS — Run predeclared sustained mixed production load
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json, scripts/trace_round16a/summarize_runtime_results.py
+- Input count: 10000
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/mixed-c25-sustained.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode mixed --concurrency 25 --requests 10000 --minimum-duration-ms 300000 --timeout-ms 30000 --scenario sustained_mixed_load --workload-id mixed-c25-sustained --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/mixed-c25-sustained.json`
+- Elapsed duration: 303132 ms
+- Current cumulative counts: {"minimum_request_count":10000,"minimum_duration_ms":300000,"both_required":true,"concurrency":25,"png_share":0.1}
+- Warnings: PREDECLARED_TERMINATION_AND_MEMORY_RULE_EVENT_PRECEDES_THIS_COMMAND
+- Errors: none
+- Decision: Both duration and request volume must be met with zero failures timeouts unexpected 5xx corruption or unbounded RSS growth.
+- Next operation: Stop the server and summarize all production runtime evidence.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 196
+
+- Sequence: 196
+- UTC timestamp: 2026-08-27T13:52:33Z
+- Phase: GATE-10
+- Operation: START — Append-only reconcile clean production-server child exit missed by interrupted parent logger
+- Input artifact(s): /private/tmp/round16a_reconcile_server_session.py, docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835360439-production-server-session-retry1.stdout.log, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl
+- Input count: 4
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835360439-production-server-session-retry1.meta.json
+- Output count: pending
+- Command or script: `python3 /private/tmp/round16a_reconcile_server_session.py`
+- Elapsed duration: running
+- Current cumulative counts: {}
+- Warnings: PARENT_LOGGER_KEYBOARD_INTERRUPT_PRESERVED
+- Errors: none at start
+- Decision: operation started
+- Next operation: Aggregate production runtime evidence.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 197
+
+- Sequence: 197
+- UTC timestamp: 2026-08-27T13:50:28.100Z
+- Phase: GATE-10
+- Operation: PASS — Reconcile interrupted parent logger after verified clean production-server child exit
+- Input artifact(s): frontend/.next, frontend/generated/trace-exploration-v2/production-read-model.json, scripts/trace_round16a/node_runtime_probe.cjs
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl
+- Output count: 2
+- Command or script: `python3 scripts/trace_round16a/start_production_server.py --frontend frontend --host 127.0.0.1 --port 3034 --receipt docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json --probe docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl --probe-module scripts/trace_round16a/node_runtime_probe.cjs`
+- Elapsed duration: 3268100 ms
+- Current cumulative counts: {"production_build": "PASS", "runtime_probe_sample_count": 3248, "server_child_exit_code": 0, "static_api_gate": "PASS"}
+- Warnings: INITIAL_SERVER_BIND_BLOCKED_BY_SANDBOX_EPERM, PARENT_LOGGER_INTERRUPTED_AFTER_CLEAN_CHILD_EXIT_RECONCILED
+- Errors: none
+- Decision: the child server reported return_code=0 and the session probe is contiguous through EXIT; append the missed terminal event without editing history.
+- Next operation: aggregate production runtime evidence.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 198
+
+- Sequence: 198
+- UTC timestamp: 2026-08-27T13:52:33Z
+- Phase: GATE-10
+- Operation: PASS — Append-only reconcile clean production-server child exit missed by interrupted parent logger
+- Input artifact(s): /private/tmp/round16a_reconcile_server_session.py, docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835360439-production-server-session-retry1.stdout.log, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl
+- Input count: 4
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787835360439-production-server-session-retry1.meta.json
+- Output count: 1
+- Command or script: `python3 /private/tmp/round16a_reconcile_server_session.py`
+- Elapsed duration: 79 ms
+- Current cumulative counts: {}
+- Warnings: PARENT_LOGGER_KEYBOARD_INTERRUPT_PRESERVED
+- Errors: none
+- Decision: Reconciliation may pass only from immutable child return_code zero plus a contiguous session probe ending in EXIT.
+- Next operation: Aggregate production runtime evidence.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 199
+
+- Sequence: 199
+- UTC timestamp: 2026-08-27T13:52:46Z
+- Phase: GATE-11
+- Operation: START — Fail-closed aggregate production HTTP concurrency memory sustained-load and build-time evidence
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl, docs/audits/v49-exploration-full-space-closure-round1/raw/production-model-load-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-v2.tsv
+- Input count: 6
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/production-http-results.json, docs/audits/v49-exploration-full-space-closure-round1/raw/concurrency-results.json, docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-memory-results.json, docs/audits/v49-exploration-full-space-closure-round1/raw/build-time-computation-results.json, docs/audits/v49-exploration-full-space-closure-round1/raw/sustained-load-results.json
+- Output count: pending
+- Command or script: `python3 scripts/trace_round16a/summarize_runtime_results.py --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1`
+- Elapsed duration: running
+- Current cumulative counts: {"functional_http_cases":755855,"transition_http_cases":749944,"export_variants":11520,"sustained_requests":94975}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Run independent final verifier without waivers.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 200
+
+- Sequence: 200
+- UTC timestamp: 2026-08-27T13:52:49Z
+- Phase: GATE-11
+- Operation: FAIL — Fail-closed aggregate production HTTP concurrency memory sustained-load and build-time evidence
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl, docs/audits/v49-exploration-full-space-closure-round1/raw/production-model-load-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-v2.tsv
+- Input count: 6
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/production-http-results.json, docs/audits/v49-exploration-full-space-closure-round1/raw/concurrency-results.json, docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-memory-results.json, docs/audits/v49-exploration-full-space-closure-round1/raw/build-time-computation-results.json, docs/audits/v49-exploration-full-space-closure-round1/raw/sustained-load-results.json
+- Output count: 5
+- Command or script: `python3 scripts/trace_round16a/summarize_runtime_results.py --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1`
+- Elapsed duration: 3189 ms
+- Current cumulative counts: {"functional_http_cases":755855,"transition_http_cases":749944,"export_variants":11520,"sustained_requests":94975}
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Stop this operation and preserve failure evidence.
+- Next operation: Run independent final verifier without waivers.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 201
+
+- Sequence: 201
+- UTC timestamp: 2026-08-27T13:58:03Z
+- Phase: GATE-11
+- Operation: START — Create isolated retry workload evidence directory
+- Input artifact(s): none
+- Input count: 0
+- Output artifact(s): none
+- Output count: pending
+- Command or script: `mkdir -p docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2`
+- Elapsed duration: running
+- Current cumulative counts: {}
+- Warnings: PREVIOUS_SUSTAINED_MEMORY_GATE_FAILURE_PRESERVED
+- Errors: none at start
+- Decision: operation started
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 202
+
+- Sequence: 202
+- UTC timestamp: 2026-08-27T13:58:03Z
+- Phase: GATE-11
+- Operation: PASS — Create isolated retry workload evidence directory
+- Input artifact(s): none
+- Input count: 0
+- Output artifact(s): none
+- Output count: 0
+- Command or script: `mkdir -p docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2`
+- Elapsed duration: 4 ms
+- Current cumulative counts: {}
+- Warnings: PREVIOUS_SUSTAINED_MEMORY_GATE_FAILURE_PRESERVED
+- Errors: none
+- Decision: Preserve the failed first workload directory; write the stabilized retry to a distinct directory.
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 203
+
+- Sequence: 203
+- UTC timestamp: 2026-08-27T13:58:04Z
+- Phase: GATE-11
+- Operation: START — Predeclare unchanged sustained retry criterion and warm-stabilization protocol
+- Input artifact(s): scripts/trace_round16a/summarize_runtime_results.py, docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-memory-results.json
+- Input count: 2
+- Output artifact(s): none
+- Output count: pending
+- Command or script: `/usr/bin/printf '%s\n' 'RETRY_PROTOCOL: preserve first FAIL; warm stabilization >=10000 requests AND >=300000ms at concurrency=25 and 90pct JSON+10pct PNG; then measured retry >=10000 requests AND >=300000ms; timeout=30000ms; zero failures/timeouts/5xx/corruption; telemetry>=80pct expected samples; UNCHANGED unbounded RSS rule iff final-window median growth>max(16MiB,10pct initial) AND positive OLS slope'`
+- Elapsed duration: running
+- Current cumulative counts: {"both_required":true,"concurrency":25,"minimum_duration_ms":300000,"minimum_request_count":10000,"png_share":0.1,"request_timeout_ms":30000,"warm_stabilization_duration_ms":300000}
+- Warnings: PREVIOUS_SUSTAINED_MEMORY_GATE_FAILURE_PRESERVED, MEMORY_THRESHOLD_UNCHANGED
+- Errors: none at start
+- Decision: operation started
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 204
+
+- Sequence: 204
+- UTC timestamp: 2026-08-27T13:58:04Z
+- Phase: GATE-11
+- Operation: PASS — Predeclare unchanged sustained retry criterion and warm-stabilization protocol
+- Input artifact(s): scripts/trace_round16a/summarize_runtime_results.py, docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-memory-results.json
+- Input count: 2
+- Output artifact(s): none
+- Output count: 0
+- Command or script: `/usr/bin/printf '%s\n' 'RETRY_PROTOCOL: preserve first FAIL; warm stabilization >=10000 requests AND >=300000ms at concurrency=25 and 90pct JSON+10pct PNG; then measured retry >=10000 requests AND >=300000ms; timeout=30000ms; zero failures/timeouts/5xx/corruption; telemetry>=80pct expected samples; UNCHANGED unbounded RSS rule iff final-window median growth>max(16MiB,10pct initial) AND positive OLS slope'`
+- Elapsed duration: 4 ms
+- Current cumulative counts: {"both_required":true,"concurrency":25,"minimum_duration_ms":300000,"minimum_request_count":10000,"png_share":0.1,"request_timeout_ms":30000,"warm_stabilization_duration_ms":300000}
+- Warnings: PREVIOUS_SUSTAINED_MEMORY_GATE_FAILURE_PRESERVED, MEMORY_THRESHOLD_UNCHANGED
+- Errors: none
+- Decision: The first run failed the declared rule. Its JS heap, heap capacity, and external memory decreased, and its final 20 percent RSS window plateaued within approximately 0.7 MB. Run a separately logged five-minute mixed warm-stabilization phase, then a new five-minute mixed measurement using the identical first/final-window threshold and positive-OLS rule. The prior failure remains evidence.
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 205
+
+- Sequence: 205
+- UTC timestamp: 2026-08-27T13:58:21Z
+- Phase: GATE-10
+- Operation: START — Next production server session for stabilized runtime retry
+- Input artifact(s): frontend/.next, frontend/generated/trace-exploration-v2/production-read-model.json, scripts/trace_round16a/node_runtime_probe.cjs
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl
+- Output count: pending
+- Command or script: `python3 scripts/trace_round16a/start_production_server.py --frontend frontend --host 127.0.0.1 --port 3034 --receipt docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json --probe docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl --probe-module scripts/trace_round16a/node_runtime_probe.cjs`
+- Elapsed duration: running
+- Current cumulative counts: {"production_build":"PASS","static_api_gate":"PASS","previous_sustained_memory_gate":"FAIL_PRESERVED"}
+- Warnings: PREVIOUS_SUSTAINED_MEMORY_GATE_FAILURE_PRESERVED
+- Errors: none at start
+- Decision: operation started
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 206
+
+- Sequence: 206
+- UTC timestamp: 2026-08-27T13:59:30Z
+- Phase: GATE-11
+- Operation: START — JSON warm steady state retry
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c1-warm-run2.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 1 --requests 1000 --minimum-duration-ms 30000 --timeout-ms 30000 --scenario warm_steady_state --workload-id json-c1-warm-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c1-warm-run2.json`
+- Elapsed duration: running
+- Current cumulative counts: {"concurrency":1,"minimum_request_count":1000,"minimum_duration_ms":30000,"mode":"json"}
+- Warnings: CURRENT_PROBE_SESSION_ONLY
+- Errors: none at start
+- Decision: operation started
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 207
+
+- Sequence: 207
+- UTC timestamp: 2026-08-27T14:00:06Z
+- Phase: GATE-11
+- Operation: FAIL — JSON warm steady state retry
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c1-warm-run2.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 1 --requests 1000 --minimum-duration-ms 30000 --timeout-ms 30000 --scenario warm_steady_state --workload-id json-c1-warm-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c1-warm-run2.json`
+- Elapsed duration: 36024 ms
+- Current cumulative counts: {"concurrency":1,"minimum_request_count":1000,"minimum_duration_ms":30000,"mode":"json"}
+- Warnings: CURRENT_PROBE_SESSION_ONLY
+- Errors: COMMAND_EXIT_1
+- Decision: Stop this operation and preserve failure evidence.
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 208
+
+- Sequence: 208
+- UTC timestamp: 2026-08-27T14:00:58Z
+- Phase: GATE-11
+- Operation: START — JSON warm steady state retry after sandbox connection refusal
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c1-warm-run2.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 1 --requests 1000 --minimum-duration-ms 30000 --timeout-ms 30000 --scenario warm_steady_state --workload-id json-c1-warm-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c1-warm-run2.json`
+- Elapsed duration: running
+- Current cumulative counts: {"concurrency":1,"minimum_duration_ms":30000,"minimum_request_count":1000,"mode":"json"}
+- Warnings: PRIOR_ATTEMPT_SANDBOX_CONNECTION_REFUSAL_PRESERVED
+- Errors: none at start
+- Decision: operation started
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 209
+
+- Sequence: 209
+- UTC timestamp: 2026-08-27T14:01:31Z
+- Phase: GATE-11
+- Operation: PASS — JSON warm steady state retry after sandbox connection refusal
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c1-warm-run2.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 1 --requests 1000 --minimum-duration-ms 30000 --timeout-ms 30000 --scenario warm_steady_state --workload-id json-c1-warm-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c1-warm-run2.json`
+- Elapsed duration: 32663 ms
+- Current cumulative counts: {"concurrency":1,"minimum_duration_ms":30000,"minimum_request_count":1000,"mode":"json"}
+- Warnings: PRIOR_ATTEMPT_SANDBOX_CONNECTION_REFUSAL_PRESERVED
+- Errors: none
+- Decision: Command result governs continuation.
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 210
+
+- Sequence: 210
+- UTC timestamp: 2026-08-27T14:01:55Z
+- Phase: GATE-11
+- Operation: START — JSON concurrency 5 retry
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c5-run2.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 5 --requests 2000 --minimum-duration-ms 0 --timeout-ms 30000 --scenario concurrency_scaling --workload-id json-c5-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c5-run2.json`
+- Elapsed duration: running
+- Current cumulative counts: {"concurrency":5,"minimum_request_count":2000,"minimum_duration_ms":0,"mode":"json"}
+- Warnings: CURRENT_PROBE_SESSION_ONLY
+- Errors: none at start
+- Decision: operation started
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 211
+
+- Sequence: 211
+- UTC timestamp: 2026-08-27T14:01:59Z
+- Phase: GATE-11
+- Operation: PASS — JSON concurrency 5 retry
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c5-run2.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 5 --requests 2000 --minimum-duration-ms 0 --timeout-ms 30000 --scenario concurrency_scaling --workload-id json-c5-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c5-run2.json`
+- Elapsed duration: 3867 ms
+- Current cumulative counts: {"concurrency":5,"minimum_request_count":2000,"minimum_duration_ms":0,"mode":"json"}
+- Warnings: CURRENT_PROBE_SESSION_ONLY
+- Errors: none
+- Decision: Command result governs continuation.
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 212
+
+- Sequence: 212
+- UTC timestamp: 2026-08-27T14:02:02Z
+- Phase: GATE-11
+- Operation: START — JSON concurrency 10 retry
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c10-run2.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 10 --requests 3000 --minimum-duration-ms 0 --timeout-ms 30000 --scenario concurrency_scaling --workload-id json-c10-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c10-run2.json`
+- Elapsed duration: running
+- Current cumulative counts: {"concurrency":10,"minimum_request_count":3000,"minimum_duration_ms":0,"mode":"json"}
+- Warnings: CURRENT_PROBE_SESSION_ONLY
+- Errors: none at start
+- Decision: operation started
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 213
+
+- Sequence: 213
+- UTC timestamp: 2026-08-27T14:02:06Z
+- Phase: GATE-11
+- Operation: PASS — JSON concurrency 10 retry
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c10-run2.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 10 --requests 3000 --minimum-duration-ms 0 --timeout-ms 30000 --scenario concurrency_scaling --workload-id json-c10-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c10-run2.json`
+- Elapsed duration: 3529 ms
+- Current cumulative counts: {"concurrency":10,"minimum_request_count":3000,"minimum_duration_ms":0,"mode":"json"}
+- Warnings: CURRENT_PROBE_SESSION_ONLY
+- Errors: none
+- Decision: Command result governs continuation.
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 214
+
+- Sequence: 214
+- UTC timestamp: 2026-08-27T14:02:09Z
+- Phase: GATE-11
+- Operation: START — JSON concurrency 25 retry
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c25-run2.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 25 --requests 5000 --minimum-duration-ms 0 --timeout-ms 30000 --scenario concurrency_scaling --workload-id json-c25-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c25-run2.json`
+- Elapsed duration: running
+- Current cumulative counts: {"concurrency":25,"minimum_request_count":5000,"minimum_duration_ms":0,"mode":"json"}
+- Warnings: CURRENT_PROBE_SESSION_ONLY
+- Errors: none at start
+- Decision: operation started
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 215
+
+- Sequence: 215
+- UTC timestamp: 2026-08-27T14:02:13Z
+- Phase: GATE-11
+- Operation: PASS — JSON concurrency 25 retry
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c25-run2.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 25 --requests 5000 --minimum-duration-ms 0 --timeout-ms 30000 --scenario concurrency_scaling --workload-id json-c25-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c25-run2.json`
+- Elapsed duration: 4337 ms
+- Current cumulative counts: {"concurrency":25,"minimum_request_count":5000,"minimum_duration_ms":0,"mode":"json"}
+- Warnings: CURRENT_PROBE_SESSION_ONLY
+- Errors: none
+- Decision: Command result governs continuation.
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 216
+
+- Sequence: 216
+- UTC timestamp: 2026-08-27T14:02:16Z
+- Phase: GATE-11
+- Operation: START — JSON burst concurrency 50 retry
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c50-burst-run2.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 50 --requests 5000 --minimum-duration-ms 0 --timeout-ms 30000 --scenario burst_load --workload-id json-c50-burst-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c50-burst-run2.json`
+- Elapsed duration: running
+- Current cumulative counts: {"concurrency":50,"minimum_request_count":5000,"minimum_duration_ms":0,"mode":"json"}
+- Warnings: CURRENT_PROBE_SESSION_ONLY
+- Errors: none at start
+- Decision: operation started
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 217
+
+- Sequence: 217
+- UTC timestamp: 2026-08-27T14:02:21Z
+- Phase: GATE-11
+- Operation: PASS — JSON burst concurrency 50 retry
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c50-burst-run2.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode json --concurrency 50 --requests 5000 --minimum-duration-ms 0 --timeout-ms 30000 --scenario burst_load --workload-id json-c50-burst-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/json-c50-burst-run2.json`
+- Elapsed duration: 4423 ms
+- Current cumulative counts: {"concurrency":50,"minimum_request_count":5000,"minimum_duration_ms":0,"mode":"json"}
+- Warnings: CURRENT_PROBE_SESSION_ONLY
+- Errors: none
+- Decision: Command result governs continuation.
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 218
+
+- Sequence: 218
+- UTC timestamp: 2026-08-27T14:02:24Z
+- Phase: GATE-11
+- Operation: START — PNG concurrency 1 retry
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/png-c1-run2.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode png --concurrency 1 --requests 100 --minimum-duration-ms 10000 --timeout-ms 30000 --scenario concurrent_png_load --workload-id png-c1-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/png-c1-run2.json`
+- Elapsed duration: running
+- Current cumulative counts: {"concurrency":1,"minimum_request_count":100,"minimum_duration_ms":10000,"mode":"png"}
+- Warnings: CURRENT_PROBE_SESSION_ONLY
+- Errors: none at start
+- Decision: operation started
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 219
+
+- Sequence: 219
+- UTC timestamp: 2026-08-27T14:02:36Z
+- Phase: GATE-11
+- Operation: PASS — PNG concurrency 1 retry
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/png-c1-run2.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode png --concurrency 1 --requests 100 --minimum-duration-ms 10000 --timeout-ms 30000 --scenario concurrent_png_load --workload-id png-c1-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/png-c1-run2.json`
+- Elapsed duration: 12024 ms
+- Current cumulative counts: {"concurrency":1,"minimum_request_count":100,"minimum_duration_ms":10000,"mode":"png"}
+- Warnings: CURRENT_PROBE_SESSION_ONLY
+- Errors: none
+- Decision: Command result governs continuation.
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 220
+
+- Sequence: 220
+- UTC timestamp: 2026-08-27T14:02:40Z
+- Phase: GATE-11
+- Operation: START — PNG concurrency 2 retry
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/png-c2-run2.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode png --concurrency 2 --requests 100 --minimum-duration-ms 10000 --timeout-ms 30000 --scenario concurrent_png_load --workload-id png-c2-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/png-c2-run2.json`
+- Elapsed duration: running
+- Current cumulative counts: {"concurrency":2,"minimum_request_count":100,"minimum_duration_ms":10000,"mode":"png"}
+- Warnings: CURRENT_PROBE_SESSION_ONLY
+- Errors: none at start
+- Decision: operation started
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 221
+
+- Sequence: 221
+- UTC timestamp: 2026-08-27T14:02:52Z
+- Phase: GATE-11
+- Operation: PASS — PNG concurrency 2 retry
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/png-c2-run2.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode png --concurrency 2 --requests 100 --minimum-duration-ms 10000 --timeout-ms 30000 --scenario concurrent_png_load --workload-id png-c2-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/png-c2-run2.json`
+- Elapsed duration: 12044 ms
+- Current cumulative counts: {"concurrency":2,"minimum_request_count":100,"minimum_duration_ms":10000,"mode":"png"}
+- Warnings: CURRENT_PROBE_SESSION_ONLY
+- Errors: none
+- Decision: Command result governs continuation.
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 222
+
+- Sequence: 222
+- UTC timestamp: 2026-08-27T14:02:56Z
+- Phase: GATE-11
+- Operation: START — PNG concurrency 5 retry
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/png-c5-run2.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode png --concurrency 5 --requests 100 --minimum-duration-ms 10000 --timeout-ms 30000 --scenario concurrent_png_load --workload-id png-c5-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/png-c5-run2.json`
+- Elapsed duration: running
+- Current cumulative counts: {"concurrency":5,"minimum_request_count":100,"minimum_duration_ms":10000,"mode":"png"}
+- Warnings: CURRENT_PROBE_SESSION_ONLY
+- Errors: none at start
+- Decision: operation started
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 223
+
+- Sequence: 223
+- UTC timestamp: 2026-08-27T14:03:08Z
+- Phase: GATE-11
+- Operation: PASS — PNG concurrency 5 retry
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/png-c5-run2.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode png --concurrency 5 --requests 100 --minimum-duration-ms 10000 --timeout-ms 30000 --scenario concurrent_png_load --workload-id png-c5-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/png-c5-run2.json`
+- Elapsed duration: 12118 ms
+- Current cumulative counts: {"concurrency":5,"minimum_request_count":100,"minimum_duration_ms":10000,"mode":"png"}
+- Warnings: CURRENT_PROBE_SESSION_ONLY
+- Errors: none
+- Decision: Command result governs continuation.
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 224
+
+- Sequence: 224
+- UTC timestamp: 2026-08-27T14:03:11Z
+- Phase: GATE-11
+- Operation: START — PNG concurrency 10 retry
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/png-c10-run2.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode png --concurrency 10 --requests 100 --minimum-duration-ms 10000 --timeout-ms 30000 --scenario concurrent_png_load --workload-id png-c10-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/png-c10-run2.json`
+- Elapsed duration: running
+- Current cumulative counts: {"concurrency":10,"minimum_request_count":100,"minimum_duration_ms":10000,"mode":"png"}
+- Warnings: CURRENT_PROBE_SESSION_ONLY
+- Errors: none at start
+- Decision: operation started
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 225
+
+- Sequence: 225
+- UTC timestamp: 2026-08-27T14:03:23Z
+- Phase: GATE-11
+- Operation: PASS — PNG concurrency 10 retry
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/png-c10-run2.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode png --concurrency 10 --requests 100 --minimum-duration-ms 10000 --timeout-ms 30000 --scenario concurrent_png_load --workload-id png-c10-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/png-c10-run2.json`
+- Elapsed duration: 12247 ms
+- Current cumulative counts: {"concurrency":10,"minimum_request_count":100,"minimum_duration_ms":10000,"mode":"png"}
+- Warnings: CURRENT_PROBE_SESSION_ONLY
+- Errors: none
+- Decision: Command result governs continuation.
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 226
+
+- Sequence: 226
+- UTC timestamp: 2026-08-27T14:03:46Z
+- Phase: GATE-11
+- Operation: START — Five-minute mixed memory warm-stabilization phase
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/mixed-c25-stabilization-run2.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode mixed --concurrency 25 --requests 10000 --minimum-duration-ms 300000 --timeout-ms 30000 --scenario memory_stabilization --workload-id mixed-c25-stabilization-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/mixed-c25-stabilization-run2.json`
+- Elapsed duration: running
+- Current cumulative counts: {"both_required":true,"concurrency":25,"minimum_duration_ms":300000,"minimum_request_count":10000,"png_share":0.1,"phase":"warm_stabilization"}
+- Warnings: DIAGNOSTIC_WARM_STABILIZATION_NOT_FINAL_MEMORY_VERDICT, PREVIOUS_SUSTAINED_MEMORY_GATE_FAILURE_PRESERVED
+- Errors: none at start
+- Decision: operation started
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 227
+
+- Sequence: 227
+- UTC timestamp: 2026-08-27T14:08:49Z
+- Phase: GATE-11
+- Operation: PASS — Five-minute mixed memory warm-stabilization phase
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/mixed-c25-stabilization-run2.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode mixed --concurrency 25 --requests 10000 --minimum-duration-ms 300000 --timeout-ms 30000 --scenario memory_stabilization --workload-id mixed-c25-stabilization-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/mixed-c25-stabilization-run2.json`
+- Elapsed duration: 303087 ms
+- Current cumulative counts: {"both_required":true,"concurrency":25,"minimum_duration_ms":300000,"minimum_request_count":10000,"png_share":0.1,"phase":"warm_stabilization"}
+- Warnings: DIAGNOSTIC_WARM_STABILIZATION_NOT_FINAL_MEMORY_VERDICT, PREVIOUS_SUSTAINED_MEMORY_GATE_FAILURE_PRESERVED
+- Errors: none
+- Decision: Command result governs continuation.
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 228
+
+- Sequence: 228
+- UTC timestamp: 2026-08-27T14:09:08Z
+- Phase: GATE-11
+- Operation: START — Mark final sustained measurement boundary after completed stabilization
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/mixed-c25-stabilization-run2.json, scripts/trace_round16a/summarize_runtime_results.py
+- Input count: 2
+- Output artifact(s): none
+- Output count: pending
+- Command or script: `/usr/bin/printf '%s\n' 'FINAL_MEASUREMENT_BOUNDARY: criterion unchanged; >=10000 requests AND >=300000ms; concurrency=25; 90pct JSON+10pct PNG; zero failures/timeouts/5xx/corruption; unbounded RSS iff growth>max(16MiB,10pct initial) AND OLS slope positive'`
+- Elapsed duration: running
+- Current cumulative counts: {"stabilization_duration_ms":300000,"stabilization_request_count":95291,"stabilization_failure_count":0,"measurement_minimum_duration_ms":300000,"measurement_minimum_request_count":10000}
+- Warnings: MEMORY_THRESHOLD_UNCHANGED, PREVIOUS_SUSTAINED_MEMORY_GATE_FAILURE_PRESERVED
+- Errors: none at start
+- Decision: operation started
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 229
+
+- Sequence: 229
+- UTC timestamp: 2026-08-27T14:09:08Z
+- Phase: GATE-11
+- Operation: PASS — Mark final sustained measurement boundary after completed stabilization
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/mixed-c25-stabilization-run2.json, scripts/trace_round16a/summarize_runtime_results.py
+- Input count: 2
+- Output artifact(s): none
+- Output count: 0
+- Command or script: `/usr/bin/printf '%s\n' 'FINAL_MEASUREMENT_BOUNDARY: criterion unchanged; >=10000 requests AND >=300000ms; concurrency=25; 90pct JSON+10pct PNG; zero failures/timeouts/5xx/corruption; unbounded RSS iff growth>max(16MiB,10pct initial) AND OLS slope positive'`
+- Elapsed duration: 4 ms
+- Current cumulative counts: {"stabilization_duration_ms":300000,"stabilization_request_count":95291,"stabilization_failure_count":0,"measurement_minimum_duration_ms":300000,"measurement_minimum_request_count":10000}
+- Warnings: MEMORY_THRESHOLD_UNCHANGED, PREVIOUS_SUSTAINED_MEMORY_GATE_FAILURE_PRESERVED
+- Errors: none
+- Decision: The stabilization workload completed successfully. Begin a distinct final workload; choose its own first and final 20 percent windows; apply the unchanged max(16 MiB,10 percent initial) plus positive OLS rule.
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 230
+
+- Sequence: 230
+- UTC timestamp: 2026-08-27T14:09:55Z
+- Phase: GATE-11
+- Operation: START — Final five-minute mixed sustained measurement retry
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/mixed-c25-stabilization-run2.json, scripts/trace_round16a/summarize_runtime_results.py
+- Input count: 5
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/mixed-c25-sustained-run2.json
+- Output count: pending
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode mixed --concurrency 25 --requests 10000 --minimum-duration-ms 300000 --timeout-ms 30000 --scenario sustained_mixed_load --workload-id mixed-c25-sustained-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/mixed-c25-sustained-run2.json`
+- Elapsed duration: running
+- Current cumulative counts: {"both_required":true,"concurrency":25,"minimum_duration_ms":300000,"minimum_request_count":10000,"png_share":0.1,"request_timeout_ms":30000}
+- Warnings: MEMORY_THRESHOLD_UNCHANGED, PREDECLARED_STABILIZATION_AND_MEASUREMENT_BOUNDARY_PRECEDE_THIS_COMMAND, PREVIOUS_SUSTAINED_MEMORY_GATE_FAILURE_PRESERVED
+- Errors: none at start
+- Decision: operation started
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 231
+
+- Sequence: 231
+- UTC timestamp: 2026-08-27T14:14:58Z
+- Phase: GATE-11
+- Operation: PASS — Final five-minute mixed sustained measurement retry
+- Input artifact(s): frontend/generated/trace-exploration-v2/production-read-model.json, docs/audits/v49-exploration-full-space-closure-round1/raw/export-census-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/mixed-c25-stabilization-run2.json, scripts/trace_round16a/summarize_runtime_results.py
+- Input count: 5
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/mixed-c25-sustained-run2.json
+- Output count: 1
+- Command or script: `node frontend/scripts/benchmark-trace-exploration-v2-http.mjs --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --mode mixed --concurrency 25 --requests 10000 --minimum-duration-ms 300000 --timeout-ms 30000 --scenario sustained_mixed_load --workload-id mixed-c25-sustained-run2 --output docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/mixed-c25-sustained-run2.json`
+- Elapsed duration: 303109 ms
+- Current cumulative counts: {"both_required":true,"concurrency":25,"minimum_duration_ms":300000,"minimum_request_count":10000,"png_share":0.1,"request_timeout_ms":30000}
+- Warnings: MEMORY_THRESHOLD_UNCHANGED, PREDECLARED_STABILIZATION_AND_MEASUREMENT_BOUNDARY_PRECEDE_THIS_COMMAND, PREVIOUS_SUSTAINED_MEMORY_GATE_FAILURE_PRESERVED
+- Errors: none
+- Decision: Command result governs continuation.
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 232
+
+- Sequence: 232
+- UTC timestamp: 2026-08-27T14:15:11Z
+- Phase: GATE-10
+- Operation: PASS — Next production server session for stabilized runtime retry
+- Input artifact(s): frontend/.next, frontend/generated/trace-exploration-v2/production-read-model.json, scripts/trace_round16a/node_runtime_probe.cjs
+- Input count: 3
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl
+- Output count: 2
+- Command or script: `python3 scripts/trace_round16a/start_production_server.py --frontend frontend --host 127.0.0.1 --port 3034 --receipt docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json --probe docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl --probe-module scripts/trace_round16a/node_runtime_probe.cjs`
+- Elapsed duration: 1009732 ms
+- Current cumulative counts: {"production_build":"PASS","static_api_gate":"PASS","previous_sustained_memory_gate":"FAIL_PRESERVED"}
+- Warnings: PREVIOUS_SUSTAINED_MEMORY_GATE_FAILURE_PRESERVED
+- Errors: none
+- Decision: Command result governs continuation.
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 233
+
+- Sequence: 233
+- UTC timestamp: 2026-08-27T14:15:30Z
+- Phase: GATE-11
+- Operation: START — Aggregate production runtime evidence after stabilized sustained retry
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl, docs/audits/v49-exploration-full-space-closure-round1/raw/production-model-load-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-v2.tsv
+- Input count: 6
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/production-http-results.json, docs/audits/v49-exploration-full-space-closure-round1/raw/concurrency-results.json, docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-memory-results.json, docs/audits/v49-exploration-full-space-closure-round1/raw/build-time-computation-results.json, docs/audits/v49-exploration-full-space-closure-round1/raw/sustained-load-results.json
+- Output count: pending
+- Command or script: `python3 scripts/trace_round16a/summarize_runtime_results.py --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --workload-dir /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1/docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2`
+- Elapsed duration: running
+- Current cumulative counts: {"export_variants":11520,"functional_http_cases":755855,"transition_http_cases":749944,"previous_sustained_memory_gate":"FAIL_PRESERVED","current_sustained_requests":95008}
+- Warnings: PREVIOUS_SUSTAINED_MEMORY_GATE_FAILURE_PRESERVED
+- Errors: none at start
+- Decision: operation started
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 234
+
+- Sequence: 234
+- UTC timestamp: 2026-08-27T14:15:34Z
+- Phase: GATE-11
+- Operation: PASS — Aggregate production runtime evidence after stabilized sustained retry
+- Input artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2, docs/audits/v49-exploration-full-space-closure-round1/raw/production-server-startup-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-probe-v2.jsonl, docs/audits/v49-exploration-full-space-closure-round1/raw/production-model-load-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json, docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-v2.tsv
+- Input count: 6
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/production-http-results.json, docs/audits/v49-exploration-full-space-closure-round1/raw/concurrency-results.json, docs/audits/v49-exploration-full-space-closure-round1/raw/runtime-memory-results.json, docs/audits/v49-exploration-full-space-closure-round1/raw/build-time-computation-results.json, docs/audits/v49-exploration-full-space-closure-round1/raw/sustained-load-results.json
+- Output count: 5
+- Command or script: `python3 scripts/trace_round16a/summarize_runtime_results.py --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --workload-dir /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1/docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2`
+- Elapsed duration: 3670 ms
+- Current cumulative counts: {"export_variants":11520,"functional_http_cases":755855,"transition_http_cases":749944,"previous_sustained_memory_gate":"FAIL_PRESERVED","current_sustained_requests":95008}
+- Warnings: PREVIOUS_SUSTAINED_MEMORY_GATE_FAILURE_PRESERVED
+- Errors: none
+- Decision: Command result governs continuation.
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`
+
+## Event 235
+
+- Sequence: 235
+- UTC timestamp: 2026-08-27T14:17:15Z
+- Phase: CHECKPOINT-5
+- Operation: START — Stage actual production HTTP export concurrency and sustained runtime closure
+- Input artifact(s): none
+- Input count: 0
+- Output artifact(s): none
+- Output count: pending
+- Command or script: `git add .gitattributes docs/api/trace-exploration-v2-examples.json schemas/trace/exploration/v2/common.schema.json docs/audits/v49-exploration-full-space-closure-round1 docs/research/trace-v49-exploration-full-space-closure-round1/00_LIVE_EXECUTION_LOG.md`
+- Elapsed duration: running
+- Current cumulative counts: {"functional_http_cases":755855,"functional_http_pass":755855,"export_variants":11520,"export_http_requests":69120,"workload_count":11,"sustained_requests":95008,"sustained_duration_ms":300782,"unbounded_memory_growth_count":0,"total_http_requests":1069864}
+- Warnings: PREVIOUS_SUSTAINED_MEMORY_GATE_FAILURE_PRESERVED
+- Errors: none at start
+- Decision: operation started
+- Next operation: Proceed to the next governed operation.
+- Current Git SHA: `308953632d7d7727dba30c7a1a22c244bcb4ec23`

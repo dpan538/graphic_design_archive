@@ -5,6 +5,8 @@ docs/audits/v49-exploration-full-space-closure-round1/raw/api-v2-transition-case
 docs/audits/v49-exploration-full-space-closure-round1/raw/api-v2-service-dto-case-ledger.tsv filter=lfs diff=lfs merge=lfs -text
 docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-http-case-ledger-v2.tsv filter=lfs diff=lfs merge=lfs -text
 docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json filter=lfs diff=lfs merge=lfs -text
+docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2/*.json filter=lfs diff=lfs merge=lfs -text
+docs/audits/v49-exploration-full-space-closure-round1/raw/workloads-v2-run2/*.json filter=lfs diff=lfs merge=lfs -text
 docs/audits/v49-exploration-full-space-closure-round1/raw/api-v2-*-case-ledger.tsv -whitespace
 docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification.json filter=lfs diff=lfs merge=lfs -text
 docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification-cases-v2.tsv filter=lfs diff=lfs merge=lfs -text

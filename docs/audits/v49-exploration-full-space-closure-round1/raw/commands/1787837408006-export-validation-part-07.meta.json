@@ -1,0 +1,40 @@
+{
+  "argv": [
+    "node",
+    "frontend/scripts/validate-trace-exploration-v2-http.mjs",
+    "--mode",
+    "export",
+    "--repo",
+    "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+    "--base-url",
+    "http://127.0.0.1:3034",
+    "--start",
+    "7000",
+    "--count",
+    "1000",
+    "--concurrency",
+    "2",
+    "--timeout-ms",
+    "30000",
+    "--replay",
+    "--output",
+    "docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-07-v2.tsv"
+  ],
+  "command": "node frontend/scripts/validate-trace-exploration-v2-http.mjs --mode export --repo /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --base-url http://127.0.0.1:3034 --start 7000 --count 1000 --concurrency 2 --timeout-ms 30000 --replay --output docs/audits/v49-exploration-full-space-closure-round1/raw/png-validation-part-07-v2.tsv",
+  "command_id": "1787837408006-export-validation-part-07",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 151473,
+  "end_timestamp_utc": "2026-08-27T13:32:39Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "export-validation-part-07",
+  "phase_id": "GATE-10",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-27T13:30:08Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "46681827a000ce7df40cbe023c15b6f1f39386e9f122366461733caf43168236",
+  "timed_out": false
+}
