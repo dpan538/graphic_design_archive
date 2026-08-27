@@ -481,3 +481,25 @@ SPACETIME_STATUS=FROZEN
 
 `PROJECT_FRONTEND_DESIGN_SAFE_TO_BEGIN=false`
 <!-- /TRACE_ROUND16A_PROJECT_AUTHORITY_RECONCILIATION_V2 -->
+
+<!-- TRACE_ROUND16A_PROJECT_LOG_V2 -->
+## TRACE v49 Round 16A — Exploration full-space census and functional closure
+
+- Froze 65 vocabulary candidates and 31 active product terms, enumerated all 465 unordered active pairs, and retained 21 evidence-qualified generic associations without database co-occurrence inference.
+- Enumerated 58 canonical association subgraphs, 81 valid topology compositions, 5760 states, 749944 transitions, 5760 canonical workflows, and 11520 export variants.
+- Grounded category entry directly in frozen database `v49:ef190d00b9b265ecc49924aea4d82f389decd0a003d5aa7cf2d46971430c007e` and evaluated the v2 Search/archive-object/Context/Spacetime dependency and public-exposure gates; the formal values are recorded in the Round 16A closure ledger.
+- Preserved Round 8–16 history and reconciled all 11 Round 16 legacy compositions through a versioned strict adapter. V1 is explicitly retired; v2 is documented and independently verified.
+- Final frontend implementation, public page, deployment, external human domain review, and overall project frontend readiness remain false/out of scope.
+
+`ROUND16A_DECISION=TRACE_EXPLORATION_FULLY_CLOSED`
+
+`FUNCTION3_FULL_SPACE_CENSUS_COMPLETE=true`
+
+`FUNCTION3_BACKEND_FUNCTIONALLY_COMPLETE=true`
+
+`TRACE_FUNCTION3_EXPLORATION_CLOSED=true`
+
+`MAIN_FAST_FORWARD_COMPLETED=false`
+
+`NEXT_GATE=SEPARATE_PROJECT_FRONTEND_READINESS_AND_EXTERNAL_REVIEW`
+<!-- /TRACE_ROUND16A_PROJECT_LOG_V2 -->

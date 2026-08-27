@@ -177,3 +177,33 @@ The full-space counts, functional/backend result, and closure decision are gover
 
 `PROJECT_FRONTEND_DESIGN_SAFE_TO_BEGIN=false`
 <!-- /TRACE_ROUND16A_AUTHORITY_CLARIFICATION_V2 -->
+
+<!-- TRACE_ROUND16A_CLOSURE_STATUS_V2 -->
+## TRACE v49 Round 16A — full-space closure status
+
+This later versioned clarification supersedes only the active Round 16 statements that made archive objects, Search manifests, Context references, or Spacetime references normative/public Exploration inputs, and the claim that 11 curated compositions, 52 states, or five workflows constituted full functional closure. Prior sealed packages remain historical evidence.
+
+The current v2 authority permits the frozen database only for snapshot identity and exactly four category-entry types. Its public contract prohibits archive object IDs/titles, record links, Context references, and Spacetime references; measured counts are `0`, `0`, `0`, `0`, and `0`. Its semantic layer is the frozen vocabulary/pair/graph/composition/state census; associations are generic evidence-qualified proximity only.
+
+`ROUND16A_DECISION=TRACE_EXPLORATION_FULLY_CLOSED`
+
+`FUNCTION3_FULL_SPACE_CENSUS_COMPLETE=true`
+
+`FUNCTION3_BACKEND_FUNCTIONALLY_COMPLETE=true`
+
+`TRACE_FUNCTION3_EXPLORATION_CLOSED=true`
+
+`EXTERNAL_HUMAN_DOMAIN_REVIEW_COMPLETED=false`
+
+`FINAL_EXPLORATION_FRONTEND_IMPLEMENTED=false`
+
+`PUBLIC_EXPLORATION_PAGE_ADDED=false`
+
+`PROJECT_FRONTEND_DESIGN_SAFE_TO_BEGIN=false`
+
+`DEPLOYED=false`
+
+Authoritative Round 16A package: `docs/research/trace-v49-exploration-full-space-closure-round1/`.
+
+`NEXT_GATE=SEPARATE_PROJECT_FRONTEND_READINESS_AND_EXTERNAL_REVIEW`
+<!-- /TRACE_ROUND16A_CLOSURE_STATUS_V2 -->

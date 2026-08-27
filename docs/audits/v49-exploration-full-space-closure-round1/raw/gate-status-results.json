@@ -1,0 +1,96 @@
+{
+  "failed_gates": [],
+  "log_evidence": {
+    "command_ledger_row_count": 164,
+    "execution_event_count": 326,
+    "live_log_bytes": 469447
+  },
+  "operation_evidence": {
+    "API_SCHEMA_VALIDATION": {
+      "command": "node --conditions=react-server --experimental-strip-types frontend/scripts/test-trace-exploration-v2.mjs --model-ledger /tmp/trace-round16a-api-schema/model.tsv --transition-ledger /tmp/trace-round16a-api-schema/transitions.tsv --workflow-ledger /tmp/trace-round16a-api-schema/workflows.tsv --export-ledger /tmp/trace-round16a-api-schema/exports.tsv --service-ledger /tmp/trace-round16a-api-schema/service.tsv --summary-json docs/audits/v49-exploration-full-space-closure-round1/raw/api-schema-validation-v2.json",
+      "command_exit_code": 0,
+      "command_id": "1787841350482-api-schema-validation",
+      "event_git_sha": "e0fd268ea8ce6e46a12f2da29c3bb261d3d37325",
+      "event_sequence": 292,
+      "event_status": "PASS",
+      "operation_id": "api-schema-validation"
+    },
+    "AUDIT_SEAL": {
+      "command": "python3 -B scripts/trace_round16a/seal_audit_package.py --repo-root /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --stage pre-report",
+      "command_exit_code": 0,
+      "command_id": "1787842443866-audit-seal-final",
+      "event_git_sha": "dfa9367a1fe9981945690f588909e1b14f0fb95d",
+      "event_sequence": 322,
+      "event_status": "PASS",
+      "operation_id": "audit-seal-final"
+    },
+    "DATABASE_FREEZE": {
+      "command": "python3 -B scripts/repository/verify_v49_database_freeze.py --repo .",
+      "command_exit_code": 0,
+      "command_id": "1787841322048-database-freeze-final",
+      "event_git_sha": "e0fd268ea8ce6e46a12f2da29c3bb261d3d37325",
+      "event_sequence": 288,
+      "event_status": "PASS",
+      "operation_id": "database-freeze-final"
+    },
+    "PRODUCTION_BUILD": {
+      "command": "npm run build",
+      "command_exit_code": 0,
+      "command_id": "1787841617789-production-build-retry1",
+      "event_git_sha": "e0fd268ea8ce6e46a12f2da29c3bb261d3d37325",
+      "event_sequence": 298,
+      "event_status": "PASS",
+      "operation_id": "production-build-retry1"
+    },
+    "REPOSITORY_HYGIENE": {
+      "command": "python3 -B scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-full-space-closure-round1/raw/repository-hygiene-final.json",
+      "command_exit_code": 0,
+      "command_id": "1787841329905-repository-hygiene-final",
+      "event_git_sha": "e0fd268ea8ce6e46a12f2da29c3bb261d3d37325",
+      "event_sequence": 290,
+      "event_status": "PASS",
+      "operation_id": "repository-hygiene-final"
+    },
+    "TYPECHECK": {
+      "command": "npx tsc --noEmit --pretty false",
+      "command_exit_code": 0,
+      "command_id": "1787841555910-typecheck-full",
+      "event_git_sha": "e0fd268ea8ce6e46a12f2da29c3bb261d3d37325",
+      "event_sequence": 294,
+      "event_status": "PASS",
+      "operation_id": "typecheck-full"
+    }
+  },
+  "receipt": {
+    "ACTIVE_EXPLORATION_AUTHORITY_COUNT": 1,
+    "API_SCHEMA_VALIDATION": "PASS",
+    "AUDIT_SEAL": "PASS",
+    "AUTHORITY_CONTRADICTION_COUNT": 0,
+    "AUTHORITY_RECONCILIATION_READY": true,
+    "CONTEXT_OVERRIDE_OF_ASSOCIATION_DECISION_COUNT": 0,
+    "CONTINUOUS_PROCESS_LOG_READY": true,
+    "DATABASE_FREEZE": "PASS",
+    "DEPLOYED": false,
+    "DIRECT_DATABASE_CATEGORY_BINDING_READY": true,
+    "DIRECT_DATABASE_SNAPSHOT_VALIDATED": true,
+    "EXTERNAL_HUMAN_DOMAIN_REVIEW_COMPLETED": false,
+    "FINAL_EXPLORATION_FRONTEND_IMPLEMENTED": false,
+    "FORCE_PUSH_USED": false,
+    "HISTORY_REWRITTEN": false,
+    "MERGE_COMMIT_CREATED": false,
+    "PRODUCTION_BUILD": "PASS",
+    "PROJECT_FRONTEND_DESIGN_SAFE_TO_BEGIN": false,
+    "PUBLIC_EXPLORATION_PAGE_ADDED": false,
+    "REPOSITORY_HYGIENE": "PASS",
+    "SPACETIME_OVERRIDE_OF_ASSOCIATION_DECISION_COUNT": 0,
+    "TYPECHECK": "PASS"
+  },
+  "schema_version": "trace-round16a-gate-status-results/v1",
+  "source_receipts": {
+    "audit_seal": "docs/audits/v49-exploration-full-space-closure-round1/raw/audit-seal-result.json",
+    "authority": "docs/audits/v49-exploration-full-space-closure-round1/raw/authority-reconciliation-result.json",
+    "database": "docs/audits/v49-exploration-full-space-closure-round1/raw/database-identity-v2.json",
+    "repository_boundary": "docs/audits/v49-exploration-full-space-closure-round1/raw/repository-boundary-receipt.json"
+  },
+  "status": "PASS"
+}
