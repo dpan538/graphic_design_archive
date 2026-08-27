@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace-v49-exploration-association-calibration/test_round1.py"
+  ],
+  "command": "python3 scripts/trace-v49-exploration-association-calibration/test_round1.py",
+  "command_id": "1787828641889-round14-baseline-regression",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 78,
+  "end_timestamp_utc": "2026-08-27T11:04:01Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "round14-baseline-regression",
+  "phase_id": "GATE_0_BASELINE",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-27T11:04:01Z",
+  "stderr_sha256": "6bdef956141848289c1d0c9dca6e01fbfaa127a5723d5944f1d6d4b69f6a1c5e",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}
