@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "scripts/trace_round16b/build_exploration_v3_runtime_read_model.py",
+    "--check"
+  ],
+  "command": "python3 -B scripts/trace_round16b/build_exploration_v3_runtime_read_model.py --check",
+  "command_id": "1787945193701-cp016-clean-check-v3-runtime-read-model",
+  "cwd": "/private/tmp/gda_round16b_cp016_clean_repro_d40ec811",
+  "duration_ms": 123,
+  "end_timestamp_utc": "2026-08-28T19:26:33Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp016-clean-check-v3-runtime-read-model",
+  "phase_id": "CHECKPOINT-016-FINAL-CLEAN-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:26:33Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "dcdcedaedfae31784d123a826072dac9d833272b19510060897b35b52a7c5002",
+  "timed_out": false
+}

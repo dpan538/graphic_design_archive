@@ -1,0 +1,30 @@
+{
+  "argv": [
+    "env",
+    "PATH=/Library/Frameworks/Python.framework/Versions/3.13/bin:/Applications/ChatGPT.app/Contents/Resources:/opt/homebrew/opt/postgresql@16/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "PGHOST=/private/tmp/gda-v50-round16b-cp016-final/socket",
+    "PGPORT=59474",
+    "PGUSER=jarlgiovanni",
+    "PGDATABASE=gda_v50_round16b_cp016_final_b",
+    "GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql",
+    "GDA_CREATEDB=/opt/homebrew/opt/postgresql@16/bin/createdb",
+    "GDA_DROPDB=/opt/homebrew/opt/postgresql@16/bin/dropdb",
+    "sh",
+    "database/scripts/replay_v50_round16b.sh"
+  ],
+  "command": "env PATH=/Library/Frameworks/Python.framework/Versions/3.13/bin:/Applications/ChatGPT.app/Contents/Resources:/opt/homebrew/opt/postgresql@16/bin:/usr/bin:/bin:/usr/sbin:/sbin PYTHONDONTWRITEBYTECODE=1 PGHOST=/private/tmp/gda-v50-round16b-cp016-final/socket PGPORT=59474 PGUSER=jarlgiovanni PGDATABASE=gda_v50_round16b_cp016_final_b GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql GDA_CREATEDB=/opt/homebrew/opt/postgresql@16/bin/createdb GDA_DROPDB=/opt/homebrew/opt/postgresql@16/bin/dropdb sh database/scripts/replay_v50_round16b.sh",
+  "command_id": "1787945576825-cp016-db-replay-final-b",
+  "cwd": "/private/tmp/gda_round16b_cp016_clean_repro_d40ec811",
+  "duration_ms": 2249,
+  "end_timestamp_utc": "2026-08-28T19:32:59Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp016-db-replay-final-b",
+  "phase_id": "CHECKPOINT-016-NATIVE-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:32:56Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "9a60062556eac128a15d62635eb8f638555dddb3eefd73c050963db9bf9d12ee",
+  "timed_out": false
+}

@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "set -eu; test \"$(git rev-parse HEAD)\" = d40ec811c2b60cfcbf6892ba79741d2ee0fec95b; test \"$(git rev-parse HEAD^{tree})\" = 9c08c85efcbc4fd4ce88c3c880c3e3e053f36b65; test -z \"$(git status --porcelain=v1 --untracked-files=all)\"; test ! -e frontend/node_modules; git check-ignore -q frontend/node_modules; git check-ignore -q frontend/node_modules/.cp16-probe; test -d /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules; printf \"%s\\n\" CP16_FRONTEND_DEPENDENCY_PREFLIGHT=PASS"
+  ],
+  "command": "/bin/sh -c 'set -eu; test \"$(git rev-parse HEAD)\" = d40ec811c2b60cfcbf6892ba79741d2ee0fec95b; test \"$(git rev-parse HEAD^{tree})\" = 9c08c85efcbc4fd4ce88c3c880c3e3e053f36b65; test -z \"$(git status --porcelain=v1 --untracked-files=all)\"; test ! -e frontend/node_modules; git check-ignore -q frontend/node_modules; git check-ignore -q frontend/node_modules/.cp16-probe; test -d /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules; printf \"%s\\n\" CP16_FRONTEND_DEPENDENCY_PREFLIGHT=PASS'",
+  "command_id": "1787945739489-cp016-frontend-dependency-preflight",
+  "cwd": "/private/tmp/gda_round16b_cp016_clean_repro_d40ec811",
+  "duration_ms": 334,
+  "end_timestamp_utc": "2026-08-28T19:35:39Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp016-frontend-dependency-preflight",
+  "phase_id": "CHECKPOINT-016-FRONTEND-AND-HTTP-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:35:39Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "c84598366ff73b0d672e1445a2f378fe47fb94176d159a8b8e4c26cc357afa63",
+  "timed_out": false
+}

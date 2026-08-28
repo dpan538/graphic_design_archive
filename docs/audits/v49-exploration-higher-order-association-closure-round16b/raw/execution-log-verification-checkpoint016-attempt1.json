@@ -1,0 +1,52 @@
+{
+  "checkpoint_verification": {
+    "checkpoint_count": 15,
+    "checkpoint_ids": [
+      "CHECKPOINT-001",
+      "CHECKPOINT-002",
+      "CHECKPOINT-003",
+      "CHECKPOINT-004",
+      "CHECKPOINT-005",
+      "CHECKPOINT-006",
+      "CHECKPOINT-007",
+      "CHECKPOINT-008",
+      "CHECKPOINT-009",
+      "CHECKPOINT-010",
+      "CHECKPOINT-011",
+      "CHECKPOINT-012",
+      "CHECKPOINT-013",
+      "CHECKPOINT-014",
+      "CHECKPOINT-015"
+    ],
+    "present": true
+  },
+  "command_count": 818,
+  "event_count": 1637,
+  "fail_event_count": 76,
+  "failure_codes": [
+    "LATEST_WRITER_HASH:1391:docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json",
+    "LATEST_WRITER_HASH:1463:/private/tmp/gda-v50-round16b-cp016-final/socket",
+    "LATEST_WRITER_HASH:1477:/private/tmp/gda-v50-round16b-cp016-final/data",
+    "LATEST_WRITER_HASH:1479:/private/tmp/gda-v50-round16b-cp016-final/server.log",
+    "LATEST_WRITER_HASH:1486:/private/tmp/gda-v50-round16b-cp016-final/data/postmaster.pid",
+    "LATEST_WRITER_HASH:1505:/private/tmp/gda-v50-round16b-cp016-final/capture",
+    "LATEST_WRITER_HASH:1505:/private/tmp/gda-v50-round16b-cp016-final/tmp",
+    "LATEST_WRITER_HASH:1521:/private/tmp/gda-v50-round16b-cp016-final/capture/gda_v50_round16b_cp016_final_a_schema.sql",
+    "LATEST_WRITER_HASH:1523:/private/tmp/gda-v50-round16b-cp016-final/capture/gda_v50_round16b_cp016_final_a_schema.normalized.sql",
+    "LATEST_WRITER_HASH:1525:/private/tmp/gda-v50-round16b-cp016-final/capture/gda_v50_round16b_cp016_final_b_schema.sql",
+    "LATEST_WRITER_HASH:1527:/private/tmp/gda-v50-round16b-cp016-final/capture/gda_v50_round16b_cp016_final_b_schema.normalized.sql",
+    "LATEST_WRITER_HASH:1559:frontend/.next",
+    "LATEST_WRITER_HASH:1613:docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-independent-verification-checkpoint016.json",
+    "LATEST_WRITER_HASH:1615:frontend/node_modules"
+  ],
+  "legacy_event_count": 2,
+  "pass_event_count": 742,
+  "schema_version": "trace-round16b-execution-log-verification/v1",
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "started_event_count": 819,
+  "status": "FAIL",
+  "warning_codes": [
+    "LEGACY_BOOTSTRAP_EVENTS_PRE_COMMAND_ID_SCHEMA=2",
+    "PINNED_INTERRUPTED_LOGGER_ENOSPC_EVENT_PRESERVED=1787942716881-cp015-db-capture-superseded-diagnostic"
+  ]
+}

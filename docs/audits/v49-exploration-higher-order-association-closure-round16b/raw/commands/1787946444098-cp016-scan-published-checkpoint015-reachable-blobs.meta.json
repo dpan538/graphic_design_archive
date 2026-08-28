@@ -1,0 +1,29 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "scripts/trace_round16b/verify_reachable_ordinary_blobs.py",
+    "--repo",
+    ".",
+    "--ref",
+    "d40ec811c2b60cfcbf6892ba79741d2ee0fec95b",
+    "--ledger",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/published-checkpoint015-reachable-ordinary-blob-ledger-checkpoint016.tsv",
+    "--receipt",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/published-checkpoint015-reachable-ordinary-blob-receipt-checkpoint016.json"
+  ],
+  "command": "python3 -B scripts/trace_round16b/verify_reachable_ordinary_blobs.py --repo . --ref d40ec811c2b60cfcbf6892ba79741d2ee0fec95b --ledger docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/published-checkpoint015-reachable-ordinary-blob-ledger-checkpoint016.tsv --receipt docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/published-checkpoint015-reachable-ordinary-blob-receipt-checkpoint016.json",
+  "command_id": "1787946444098-cp016-scan-published-checkpoint015-reachable-blobs",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 1341,
+  "end_timestamp_utc": "2026-08-28T19:47:25Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp016-scan-published-checkpoint015-reachable-blobs",
+  "phase_id": "CHECKPOINT-016-REPOSITORY-OBJECT-VERIFICATION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:47:24Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "298f8bebe8c037e0d456cf0b21e30c7c1cf049cd3a009a79f10b27b09143c293",
+  "timed_out": false
+}

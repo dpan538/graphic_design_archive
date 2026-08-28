@@ -1,0 +1,39 @@
+{
+  "checkpoint_verification": {
+    "checkpoint_count": 15,
+    "checkpoint_ids": [
+      "CHECKPOINT-001",
+      "CHECKPOINT-002",
+      "CHECKPOINT-003",
+      "CHECKPOINT-004",
+      "CHECKPOINT-005",
+      "CHECKPOINT-006",
+      "CHECKPOINT-007",
+      "CHECKPOINT-008",
+      "CHECKPOINT-009",
+      "CHECKPOINT-010",
+      "CHECKPOINT-011",
+      "CHECKPOINT-012",
+      "CHECKPOINT-013",
+      "CHECKPOINT-014",
+      "CHECKPOINT-015"
+    ],
+    "present": true
+  },
+  "command_count": 818,
+  "event_count": 1637,
+  "fail_event_count": 76,
+  "failure_codes": [
+    "LATEST_OBSERVATION_HASH:914:OUTPUT:frontend/node_modules:/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e/frontend/node_modules"
+  ],
+  "legacy_event_count": 2,
+  "pass_event_count": 742,
+  "schema_version": "trace-round16b-execution-log-verification/v1",
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "started_event_count": 819,
+  "status": "FAIL",
+  "warning_codes": [
+    "LEGACY_BOOTSTRAP_EVENTS_PRE_COMMAND_ID_SCHEMA=2",
+    "PINNED_INTERRUPTED_LOGGER_ENOSPC_EVENT_PRESERVED=1787942716881-cp015-db-capture-superseded-diagnostic"
+  ]
+}

@@ -1,0 +1,203 @@
+
+> archive-box-frontend@0.1.0 test:exploration-constraint-kernel
+> node --experimental-strip-types scripts/test-exploration-constraint-kernel.mjs
+
+{
+  "status": "PASS",
+  "compilerVersion": "trace-exploration-constraint-compiler-preprogram-v1",
+  "requiredAdversarialCaseCount": 20,
+  "requiredAdversarialPassCount": 20,
+  "totalCheckCount": 21,
+  "failOpenMutationCount": 0,
+  "mutationCaseCount": 10,
+  "currentRealBuildAttemptCount": 1,
+  "currentRealBuildSuccessCount": 0,
+  "currentRealBuildRejectionCount": 1,
+  "syntheticTestImageBuildCount": 3,
+  "syntheticTestImageBuildPass": true,
+  "syntheticInstanceCreation": "PASS",
+  "syntheticContainerLifecycle": "PASS",
+  "syntheticFixtureProductionImportCount": 0,
+  "realSemanticImageBuildCount": 0,
+  "realSemanticFlowBuildCount": 0,
+  "realSemanticClusterBuildCount": 0,
+  "realSemanticChainBuildCount": 0,
+  "syntheticBuildReplayCount": 2,
+  "syntheticBuildHashEquality": "PASS",
+  "imageImmutability": "PASS",
+  "imageHashMutationAfterContainerEditCount": 0,
+  "constraintPackageValidationMs": 10.535,
+  "syntheticCompileMs": 1.391,
+  "hashingMs": 0.331,
+  "testSuiteMs": 53.221,
+  "cases": [
+    {
+      "id": "A",
+      "name": "UNRESOLVED vocabulary rejects real build",
+      "status": "PASS",
+      "durationMs": 1.825
+    },
+    {
+      "id": "B",
+      "name": "RESEARCH_CANDIDATE_ONLY node rejects",
+      "status": "PASS",
+      "durationMs": 7.293
+    },
+    {
+      "id": "C",
+      "name": "unknown pair default denies",
+      "status": "PASS",
+      "durationMs": 1.805
+    },
+    {
+      "id": "D",
+      "name": "deferred pair rejects",
+      "status": "PASS",
+      "durationMs": 1.943
+    },
+    {
+      "id": "E",
+      "name": "wrong direction rejects",
+      "status": "PASS",
+      "durationMs": 1.792
+    },
+    {
+      "id": "F",
+      "name": "authorized directed reciprocal qualified synthetic compile passes",
+      "status": "PASS",
+      "durationMs": 1.77
+    },
+    {
+      "id": "G",
+      "name": "reciprocal pair cannot become one-way",
+      "status": "PASS",
+      "durationMs": 0.785
+    },
+    {
+      "id": "H",
+      "name": "structural condition cannot become binary Flow",
+      "status": "PASS",
+      "durationMs": 0.464
+    },
+    {
+      "id": "I",
+      "name": "universal ANY role rejects",
+      "status": "PASS",
+      "durationMs": 0.583
+    },
+    {
+      "id": "J",
+      "name": "required qualification drop rejects",
+      "status": "PASS",
+      "durationMs": 1.183
+    },
+    {
+      "id": "K",
+      "name": "unauthorized Cluster rejects",
+      "status": "PASS",
+      "durationMs": 1.274
+    },
+    {
+      "id": "L",
+      "name": "unauthorized transitive chain rejects",
+      "status": "PASS",
+      "durationMs": 0.675
+    },
+    {
+      "id": "M",
+      "name": "ARCHIVE_OBJECT contamination rejects",
+      "status": "PASS",
+      "durationMs": 1.01
+    },
+    {
+      "id": "N",
+      "name": "CONTEXT_PAYLOAD contamination rejects",
+      "status": "PASS",
+      "durationMs": 1.227
+    },
+    {
+      "id": "O",
+      "name": "SPACETIME_PAYLOAD contamination rejects",
+      "status": "PASS",
+      "durationMs": 0.587
+    },
+    {
+      "id": "P",
+      "name": "EXTERNAL_MODEL_PROVENANCE contamination rejects",
+      "status": "PASS",
+      "durationMs": 0.7
+    },
+    {
+      "id": "Q",
+      "name": "Container mutation leaves Image hash unchanged",
+      "status": "PASS",
+      "durationMs": 1.666
+    },
+    {
+      "id": "R",
+      "name": "same synthetic request replays identical Image hash",
+      "status": "PASS",
+      "durationMs": 2.279
+    },
+    {
+      "id": "S",
+      "name": "seed changes layout choice only, never authorization",
+      "status": "PASS",
+      "durationMs": 1.585
+    },
+    {
+      "id": "T",
+      "name": "current real semantic build rejects atomically",
+      "status": "PASS",
+      "durationMs": 0.274
+    },
+    {
+      "id": "ISOLATION",
+      "name": "synthetic fixtures are absent from production imports",
+      "status": "PASS",
+      "durationMs": 3.281
+    }
+  ],
+  "mutationResults": [
+    {
+      "name": "activation state",
+      "status": "REJECTED"
+    },
+    {
+      "name": "pair decision",
+      "status": "REJECTED"
+    },
+    {
+      "name": "directionality",
+      "status": "REJECTED"
+    },
+    {
+      "name": "qualification",
+      "status": "REJECTED"
+    },
+    {
+      "name": "sense ID",
+      "status": "REJECTED"
+    },
+    {
+      "name": "constraint package hash",
+      "status": "REJECTED"
+    },
+    {
+      "name": "provenance reference",
+      "status": "REJECTED"
+    },
+    {
+      "name": "synthetic flag",
+      "status": "REJECTED"
+    },
+    {
+      "name": "node role",
+      "status": "REJECTED"
+    },
+    {
+      "name": "cluster authorization",
+      "status": "REJECTED"
+    }
+  ]
+}

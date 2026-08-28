@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "npm",
+    "--prefix",
+    "frontend",
+    "run",
+    "test:exploration-composition-review"
+  ],
+  "command": "npm --prefix frontend run test:exploration-composition-review",
+  "command_id": "1787945779575-cp016-frontend-test-composition-review",
+  "cwd": "/private/tmp/gda_round16b_cp016_clean_repro_d40ec811",
+  "duration_ms": 312,
+  "end_timestamp_utc": "2026-08-28T19:36:19Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp016-frontend-test-composition-review",
+  "phase_id": "CHECKPOINT-016-FRONTEND-AND-HTTP-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:36:19Z",
+  "stderr_sha256": "71aa8b9e5ea4909e14fb9f8991da546be126981e0b917888147ec925fa40d968",
+  "stdout_sha256": "08d7372e65c64cf2ace8d9b334fb91ca120d2f1a7f3a8f57f490446494b92216",
+  "timed_out": false
+}

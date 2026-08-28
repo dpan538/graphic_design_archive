@@ -1,0 +1,24 @@
+{
+  "checked_utc": "2026-08-28T19:39:51.140Z",
+  "concurrency": 10,
+  "duration_completion_ratio": 0.9823395541985519,
+  "duration_ms": 9823.39554198552,
+  "failure_count": 0,
+  "latency_ms": {
+    "maximum": 21.058334037661552,
+    "minimum": 0.8380840299651027,
+    "p50": 6.555292056873441,
+    "p95": 14.325685752555724,
+    "p99": 18.424643353791904
+  },
+  "observed_duration_seconds": 9.82339554198552,
+  "performance_interpretation": "OBSERVATIONAL_NO_SLO_OR_PRODUCTION_CAPACITY_CLAIM",
+  "planned_duration_seconds": 10.0,
+  "request_cap": 500,
+  "request_count": 500,
+  "response_bytes": 519103,
+  "schema_version": "trace-exploration-v3-sustained-read-receipt-v1",
+  "status": "PASS",
+  "termination_reason": "REQUEST_CAP_AFTER_PACED_BOUNDED_DURATION",
+  "throughput_requests_per_second": 50.898897215630114
+}

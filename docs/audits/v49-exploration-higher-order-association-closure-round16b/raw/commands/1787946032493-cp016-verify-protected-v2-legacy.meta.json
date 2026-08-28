@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "git",
+    "diff",
+    "--exit-code",
+    "468105499c7be102deec7d6555aced688dea9901",
+    "--",
+    "schemas/trace/exploration/v2",
+    "frontend/generated/trace-exploration-v2",
+    "frontend/src/app/api/trace/v2/exploration",
+    "frontend/src/features/trace-v49/exploration-v2",
+    "docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv"
+  ],
+  "command": "git diff --exit-code 468105499c7be102deec7d6555aced688dea9901 -- schemas/trace/exploration/v2 frontend/generated/trace-exploration-v2 frontend/src/app/api/trace/v2/exploration frontend/src/features/trace-v49/exploration-v2 docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv",
+  "command_id": "1787946032493-cp016-verify-protected-v2-legacy",
+  "cwd": "/private/tmp/gda_round16b_cp016_clean_repro_d40ec811",
+  "duration_ms": 33,
+  "end_timestamp_utc": "2026-08-28T19:40:32Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp016-verify-protected-v2-legacy",
+  "phase_id": "CHECKPOINT-016-PROTECTED-SURFACE-VERIFICATION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:40:32Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

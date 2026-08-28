@@ -1,0 +1,470 @@
+{
+  "adversarialControls": {
+    "controlCount": 20,
+    "controls": [
+      {
+        "controlId": "REJECT_TRUE_PAIR_ASSOCIATION_CLOSURE",
+        "passed": true
+      },
+      {
+        "controlId": "REJECT_TRUE_HIGHER_ORDER_ASSOCIATION_CLOSURE",
+        "passed": true
+      },
+      {
+        "controlId": "REJECT_TRUE_GLOBAL_COMPOSITION_COHERENCE_CLOSURE",
+        "passed": true
+      },
+      {
+        "controlId": "REJECT_TRUE_PRODUCT_ASSOCIATION_REACHABILITY_CLOSURE",
+        "passed": true
+      },
+      {
+        "controlId": "REJECT_TRUE_COMPUTATIONAL_SPACE_CLOSURE",
+        "passed": true
+      },
+      {
+        "controlId": "REJECT_TRUE_FUNCTION3_CLOSURE",
+        "passed": true
+      },
+      {
+        "controlId": "REJECT_ZERO_UNRESOLVED_ASSOCIATIONS",
+        "passed": true
+      },
+      {
+        "controlId": "REJECT_NONZERO_ACTIVE_PENDING",
+        "passed": true
+      },
+      {
+        "controlId": "REJECT_ZERO_SCOPED_UNEXPLAINED_EXCLUSIONS",
+        "passed": true
+      },
+      {
+        "controlId": "REJECT_DETERMINATE_UNIVERSE_EXCLUSION_COUNT",
+        "passed": true
+      },
+      {
+        "controlId": "REJECT_ZERO_NONCOMPOSABLE_VOCABULARY",
+        "passed": true
+      },
+      {
+        "controlId": "REJECT_CANDIDATE_UNIVERSE_CLOSURE",
+        "passed": true
+      },
+      {
+        "controlId": "REJECT_FORCE_PUSH",
+        "passed": true
+      },
+      {
+        "controlId": "REJECT_HISTORY_REWRITE",
+        "passed": true
+      },
+      {
+        "controlId": "REJECT_DEPLOYMENT",
+        "passed": true
+      },
+      {
+        "controlId": "REJECT_COMPATIBILITY_ADAPTER",
+        "passed": true
+      },
+      {
+        "controlId": "REJECT_HTTP_FAILURE",
+        "passed": true
+      },
+      {
+        "controlId": "REJECT_EXTERNAL_NETWORK",
+        "passed": true
+      },
+      {
+        "controlId": "REJECT_CP16_EMBEDDED_COMMIT",
+        "passed": true
+      },
+      {
+        "controlId": "REJECT_FORBIDDEN_FINAL_SHA_KEY",
+        "passed": true
+      }
+    ],
+    "failureCount": 0
+  },
+  "checkpoint": "CHECKPOINT-016_PREPUBLICATION",
+  "checks": {
+    "checkCount": 24,
+    "checks": [
+      {
+        "checkId": "PRIMARY_SCHEMA",
+        "passed": true
+      },
+      {
+        "checkId": "PRIMARY_STATUS",
+        "passed": true
+      },
+      {
+        "checkId": "PRIMARY_CHECKPOINT",
+        "passed": true
+      },
+      {
+        "checkId": "PRIMARY_ACCEPTANCE_CONTRACT",
+        "passed": true
+      },
+      {
+        "checkId": "NO_FORBIDDEN_SELF_REFERENCE_KEYS",
+        "passed": true
+      },
+      {
+        "checkId": "INPUT_NAME_SET",
+        "passed": true
+      },
+      {
+        "checkId": "INPUT_DESCRIPTOR_checkpointLedger",
+        "passed": true
+      },
+      {
+        "checkId": "INPUT_DESCRIPTOR_closureIndependentReceipt",
+        "passed": true
+      },
+      {
+        "checkId": "INPUT_DESCRIPTOR_closureMetrics",
+        "passed": true
+      },
+      {
+        "checkId": "INPUT_DESCRIPTOR_databaseIndependentReceipt",
+        "passed": true
+      },
+      {
+        "checkId": "INPUT_DESCRIPTOR_databaseReceipt",
+        "passed": true
+      },
+      {
+        "checkId": "INPUT_DESCRIPTOR_environmentReceipt",
+        "passed": true
+      },
+      {
+        "checkId": "INPUT_DESCRIPTOR_httpIndependentReceipt",
+        "passed": true
+      },
+      {
+        "checkId": "INPUT_DESCRIPTOR_publicationManifest",
+        "passed": true
+      },
+      {
+        "checkId": "INPUT_DESCRIPTOR_publishedCp15BlobReceipt",
+        "passed": true
+      },
+      {
+        "checkId": "INPUT_DESCRIPTOR_round16aCensus",
+        "passed": true
+      },
+      {
+        "checkId": "INPUT_DESCRIPTOR_round16aIndependentReceipt",
+        "passed": true
+      },
+      {
+        "checkId": "INPUT_DESCRIPTOR_runtimeIndependentReceipt",
+        "passed": true
+      },
+      {
+        "checkId": "INPUT_DESCRIPTOR_semanticIndependentReceipt",
+        "passed": true
+      },
+      {
+        "checkId": "INPUT_DESCRIPTOR_worktreeIdentityReceipt",
+        "passed": true
+      },
+      {
+        "checkId": "HTTP_DIRECTORY_DESCRIPTOR",
+        "passed": true
+      },
+      {
+        "checkId": "PRIMARY_COMPARISON",
+        "passed": true
+      },
+      {
+        "checkId": "ADVERSARIAL_CONTROL_COUNT",
+        "passed": true
+      },
+      {
+        "checkId": "ADVERSARIAL_CONTROLS_PASS",
+        "passed": true
+      }
+    ],
+    "failureCount": 0
+  },
+  "comparison": {
+    "checkedFieldCount": 15,
+    "mismatchCount": 0,
+    "mismatches": []
+  },
+  "independentReconstruction": {
+    "authority": {
+      "originMain": "8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e",
+      "publishedReproductionSourceCommit": "d40ec811c2b60cfcbf6892ba79741d2ee0fec95b",
+      "publishedReproductionSourceTree": "9c08c85efcbc4fd4ce88c3c880c3e3e053f36b65",
+      "sourceCommit": "5419770959bdb8998b693fb2275b47e29b92367c",
+      "sourceTree": "977d7e8e045c71857959750b775cd4df3d036686",
+      "workBranch": "codex/trace-v49-exploration-higher-order-association-closure-round16b"
+    },
+    "checkpointEvidence": {
+      "checkpointLedgerSelfReferenceBoundary": true,
+      "committedCheckpointLedgerRowCount": 15,
+      "lastCommittedLedgerCheckpoint": "CHECKPOINT-015",
+      "lastPublishedCheckpoint": "CHECKPOINT-015",
+      "lastPublishedCommit": "d40ec811c2b60cfcbf6892ba79741d2ee0fec95b",
+      "lastPublishedTree": "9c08c85efcbc4fd4ce88c3c880c3e3e053f36b65",
+      "publicationReceiptCount": 19,
+      "publishedCheckpointCount": 15
+    },
+    "closure": {
+      "computational_space_closure": false,
+      "function3_closure": false,
+      "global_composition_coherence_closure": false,
+      "higher_order_association_closure": false,
+      "pair_association_closure": false,
+      "product_association_reachability_closure": false
+    },
+    "closureTrueCount": 0,
+    "database": {
+      "cleanSelfContainedReproduction": true,
+      "compatibilityAdapterUsed": false,
+      "databaseCount": 2,
+      "databaseNames": [
+        "gda_v50_round16b_cp016_final_a",
+        "gda_v50_round16b_cp016_final_b"
+      ],
+      "independentStatus": "PASS",
+      "normalizedSchemaBytes": 1090058,
+      "normalizedSchemaSha256": "1152a494e6b64595c9f9291c1d314a9434cb763c7f2a02512d2768e286f571b4",
+      "ownerCount": 1,
+      "raceChecksumsSha256": "595efb06ae1508b3f2cf952e3d0f1af2e9bd70b12bd4fcde93a530b3b70442ab",
+      "status": "PASS"
+    },
+    "governance": {
+      "autoMergePathOpened": false,
+      "deploymentPerformed": false,
+      "forcePushUsed": false,
+      "historyRewritten": false,
+      "mainUpdated": false,
+      "originMainRewritten": false,
+      "productionActivationPerformed": false,
+      "productionDataImported": false,
+      "publicExistingHistoryRewritten": false,
+      "rollbackTagPushed": false
+    },
+    "headlineCounts": {
+      "active_noncomposable_vocabulary_count": 5,
+      "active_pending_review_count": 0,
+      "known_unexplained_exclusion_count": 9,
+      "universe_wide_unexplained_exclusion_count": "INDETERMINATE",
+      "unresolved_association_count": 11
+    },
+    "http": {
+      "artifactSha256": {
+        "artifact-check-receipt.json": "8f2bd95c32510205e9da648a49ba4dc30ff04f3101a0dba790b6d58c709a92a4",
+        "concurrency-receipt.json": "7566ead53ab122a6501de37f8f30e584305ff9856275f6e628e8f6e338155ec9",
+        "control-export-replay-receipt.json": "94351a23c640c83fcbb7fd621c926ce298145dc14b3b8d86a555341da6124f69",
+        "functional-http-receipt.json": "ba97d097cbadf6d1b02378191c08ddc3056aa52403ff72df0f3d8f93a78e5751",
+        "http-cases.tsv": "df049baa288e1ff291364433ac61be7b50013bd1a05fd0237d91d5d35d04c8fc",
+        "runtime-memory-receipt.json": "5394541108362aa6425263ed8f2530095a5090b77a8f7f16d4900cd11a6a90c3",
+        "runtime-probe.jsonl": "f2ba8e60c0bd885b954d31cde763400b52d08d7e980f2e24ee35692281b89aa3",
+        "server-output.txt": "5060ea1768d25f8248d8ef102ccc809be702dc001c257fa26709714929d063a1",
+        "startup-receipt.json": "a149b974a3e9bbb13f4e551407c5b683a8f84842453cd5bfbe16c358b31dd1cc",
+        "sustained-read-receipt.json": "7efbd766581bebbf58359b00b25fe562d0bc5407041903ab29f1796849f30890"
+      },
+      "caseCount": 1168,
+      "caseFailureCount": 0,
+      "externalNetworkUsed": false,
+      "independentStatus": "PASS",
+      "loopbackOnly": true,
+      "phaseCounts": {
+        "ARTIFACT_CHECK": 1,
+        "CONCURRENCY_C1": 100,
+        "CONCURRENCY_C10": 100,
+        "CONCURRENCY_C25": 100,
+        "CONCURRENCY_C5": 100,
+        "CONCURRENCY_C50": 100,
+        "CONTROL_EXPORT_REPLAY_POSTLOAD": 2,
+        "CONTROL_EXPORT_REPLAY_PRELOAD": 5,
+        "FUNCTIONAL_HTTP": 160,
+        "SUSTAINED_READ": 500
+      },
+      "processGroupResidual": false,
+      "readModelSha256": "f1ae8a35895b27c15fb3d9b42828b8611633ee8ee7e2cbc825772b590304351b",
+      "status": "PASS",
+      "verificationSummarySha256": "22e39f5709bb74d4fb5d80e99eb89260439a3b88aac8bf4d1a3288b657221062"
+    },
+    "reachableBlobProof": {
+      "ledgerRowCount": 11156,
+      "ledgerSha256": "b808a6b22be3cd89a1a8cb30079aee108370f55d95a72dc81765e3b229096726",
+      "maximumOrdinaryBlobBytes": 90895254,
+      "maximumOrdinaryBlobObjectSha": "7efcc95620697d1938b491381d019cea8e8e318f",
+      "ordinaryBlobAtOrAbove100MBCount": 0,
+      "resolvedCommit": "d40ec811c2b60cfcbf6892ba79741d2ee0fec95b",
+      "resolvedTree": "9c08c85efcbc4fd4ce88c3c880c3e3e053f36b65",
+      "status": "PASS"
+    },
+    "worktreeIdentity": {
+      "detached": true,
+      "gitLfsClean": true,
+      "originMain": "8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e",
+      "repositoryClean": true,
+      "sourceCommit": "d40ec811c2b60cfcbf6892ba79741d2ee0fec95b",
+      "sourceTree": "9c08c85efcbc4fd4ce88c3c880c3e3e053f36b65",
+      "workBranch": "codex/trace-v49-exploration-higher-order-association-closure-round16b"
+    }
+  },
+  "inputEvidence": {
+    "files": {
+      "checkpointLedger": {
+        "bytes": 20242,
+        "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv",
+        "sha256": "fa97165ac68ff83d5475badc4c8dc8d282eda5ac5a46ac1707beb1ac8d88dabc"
+      },
+      "closureIndependentReceipt": {
+        "bytes": 17554,
+        "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-closure-independent-verification-checkpoint012-v1.json",
+        "sha256": "c9b34b7ce83bcb62b1fb0be988d0f0dd5872fe32e3cf8050ef2f05c608030f1a"
+      },
+      "closureMetrics": {
+        "bytes": 8810,
+        "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-closure-metrics-checkpoint012-v1.json",
+        "sha256": "7c72dfc318f2dcb78090946fabe7f56b2780d6a7ec2ee780c7703753a1b4a54f"
+      },
+      "databaseIndependentReceipt": {
+        "bytes": 8799,
+        "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-independent-verification-checkpoint016.json",
+        "sha256": "243e0b8b1c61782604c650147a270b5d69ef9b73be2a3bd327b2674a336efba6"
+      },
+      "databaseReceipt": {
+        "bytes": 7866,
+        "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-receipt-checkpoint016.json",
+        "sha256": "c201a7f04dc154a093bc05d39e414bda97cc8f9181dd2e33470dbae48619eb56"
+      },
+      "environmentReceipt": {
+        "bytes": 1633,
+        "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/environment.json",
+        "sha256": "90c5599cf3451a4ceb578b6aa563861722ae7bcd99dc0966bef35e783f47ee32"
+      },
+      "httpIndependentReceipt": {
+        "bytes": 3140,
+        "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-independent-verification-checkpoint016.json",
+        "sha256": "8cbc5042a68c43a5324fb976c2adab159669f5017c6594ee4d1391a9bb4bf013"
+      },
+      "publicationManifest": {
+        "bytes": 8900,
+        "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv",
+        "sha256": "2a63dc8044ae5a3a386134f27ec1072cc543a6da55531d4454a521aa608342b0"
+      },
+      "publishedCp15BlobReceipt": {
+        "bytes": 728207,
+        "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/published-checkpoint015-reachable-ordinary-blob-receipt-checkpoint016.json",
+        "sha256": "8e33a064483ee4fa07b1948b8e343d549b37aae70d13247dcf28f4e88bc52ccc"
+      },
+      "round16aCensus": {
+        "bytes": 3587,
+        "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/round16a-global-reconciliation-census-v1.json",
+        "sha256": "f2196eef23c560e24fd373956af6e711687440203edc4e0c96ab5de90c8c4537"
+      },
+      "round16aIndependentReceipt": {
+        "bytes": 2598,
+        "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/round16a-global-reconciliation-independent-verification-v1.json",
+        "sha256": "bf8d7c8f15d54d820c5fe8e83307c252e05291b1636e2a3b72fae4486ea97535"
+      },
+      "runtimeIndependentReceipt": {
+        "bytes": 27785,
+        "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json",
+        "sha256": "4839c5bf5492762478e1562c203db0dffc4b62886e1689f6eb7d37e3af2c0c38"
+      },
+      "semanticIndependentReceipt": {
+        "bytes": 308530,
+        "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-independent-verification.json",
+        "sha256": "c7fefce80505461e651a62ce7a71e1b307201c37d24faa454412b6b38687959f"
+      },
+      "worktreeIdentityReceipt": {
+        "bytes": 2865,
+        "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787946425425-cp016-clean-final-detached-and-runtime-proof.meta.json",
+        "sha256": "3a5a6054b8830dc23da1618b9d861a35d8d46ef6f12c423b6176185cb238af6e"
+      }
+    },
+    "httpDirectory": {
+      "aggregateSha256": "687567d698febd021a65f5e64c11e785de9d6a4db4e7296eb9f831d660edbd21",
+      "fileCount": 11,
+      "files": [
+        {
+          "bytes": 1843,
+          "path": "artifact-check-receipt.json",
+          "sha256": "8f2bd95c32510205e9da648a49ba4dc30ff04f3101a0dba790b6d58c709a92a4"
+        },
+        {
+          "bytes": 3087,
+          "path": "concurrency-receipt.json",
+          "sha256": "7566ead53ab122a6501de37f8f30e584305ff9856275f6e628e8f6e338155ec9"
+        },
+        {
+          "bytes": 1279,
+          "path": "control-export-replay-receipt.json",
+          "sha256": "94351a23c640c83fcbb7fd621c926ce298145dc14b3b8d86a555341da6124f69"
+        },
+        {
+          "bytes": 1373,
+          "path": "functional-http-receipt.json",
+          "sha256": "ba97d097cbadf6d1b02378191c08ddc3056aa52403ff72df0f3d8f93a78e5751"
+        },
+        {
+          "bytes": 201329,
+          "path": "http-cases.tsv",
+          "sha256": "df049baa288e1ff291364433ac61be7b50013bd1a05fd0237d91d5d35d04c8fc"
+        },
+        {
+          "bytes": 1418,
+          "path": "runtime-memory-receipt.json",
+          "sha256": "5394541108362aa6425263ed8f2530095a5090b77a8f7f16d4900cd11a6a90c3"
+        },
+        {
+          "bytes": 7886,
+          "path": "runtime-probe.jsonl",
+          "sha256": "f2ba8e60c0bd885b954d31cde763400b52d08d7e980f2e24ee35692281b89aa3"
+        },
+        {
+          "bytes": 145,
+          "path": "server-output.txt",
+          "sha256": "5060ea1768d25f8248d8ef102ccc809be702dc001c257fa26709714929d063a1"
+        },
+        {
+          "bytes": 1535,
+          "path": "startup-receipt.json",
+          "sha256": "a149b974a3e9bbb13f4e551407c5b683a8f84842453cd5bfbe16c358b31dd1cc"
+        },
+        {
+          "bytes": 819,
+          "path": "sustained-read-receipt.json",
+          "sha256": "7efbd766581bebbf58359b00b25fe562d0bc5407041903ab29f1796849f30890"
+        },
+        {
+          "bytes": 1812,
+          "path": "verification-summary.json",
+          "sha256": "22e39f5709bb74d4fb5d80e99eb89260439a3b88aac8bf4d1a3288b657221062"
+        }
+      ],
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint016-final"
+    }
+  },
+  "primaryReceipt": {
+    "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-clean-reproduction-receipt-checkpoint016.json",
+    "schema": "trace-round16b-final-clean-reproduction-prepublication-checkpoint016/v1",
+    "sha256": "a50cacc9046c22b462daf342048cc3f8d1cba555430c0a7f060c913f04e130bc",
+    "status": "PASS_EVIDENCE_BOUNDED_NONCLOSURE_AND_EXACT_CP15_CLEAN_REPRODUCTION"
+  },
+  "publicationBoundary": {
+    "checkpoint016CommitVerified": false,
+    "checkpoint016RemoteCommitVerified": false,
+    "externalPostpublicationReceiptRequired": true,
+    "reason": "PREPUBLICATION_SELF_REFERENCE_BOUNDARY"
+  },
+  "schema": "trace-round16b-final-clean-reproduction-independent-verification-checkpoint016/v1",
+  "status": "PASS_FOR_EVIDENCE_BOUNDED_NONCLOSURE_AND_EXACT_CP15_CLEAN_REPRODUCTION",
+  "verifier": {
+    "importsPrimaryBuilder": false,
+    "invokesPrimaryBuilder": false,
+    "path": "scripts/trace_round16b/verify_final_clean_reproduction_independent.py",
+    "sha256": "2b42222c247be4d8ccba3f38d601c20ed86290b8b411c56e60f084d6b0d91f51",
+    "version": "trace-round16b-final-clean-reproduction-independent-verifier-v1"
+  }
+}

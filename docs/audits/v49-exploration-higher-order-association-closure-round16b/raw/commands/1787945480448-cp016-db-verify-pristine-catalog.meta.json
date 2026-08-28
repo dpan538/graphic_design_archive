@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "set -eu; cp016_psql=/opt/homebrew/opt/postgresql@16/bin/psql; cp016_socket=/private/tmp/gda-v50-round16b-cp016-final/socket; cp016_roles=$($cp016_psql -X -Atq -v ON_ERROR_STOP=1 -h \"$cp016_socket\" -p 59474 -U jarlgiovanni -d postgres -c \"SELECT count(*) FROM pg_roles WHERE rolname = ANY (ARRAY['gda_v49_phase2a_schema_owner','gda_v49_phase2a_migrator','gda_v49_phase2a_ingest_writer','gda_v49_phase2a_reviewer','gda_v49_phase2a_publisher','gda_v49_phase2a_api_reader','gda_v49_phase2a_auditor']);\"); cp016_memberships=$($cp016_psql -X -Atq -v ON_ERROR_STOP=1 -h \"$cp016_socket\" -p 59474 -U jarlgiovanni -d postgres -c \"SELECT count(*) FROM pg_auth_members m JOIN pg_roles r ON r.oid=m.roleid JOIN pg_roles u ON u.oid=m.member WHERE r.rolname='gda_v49_phase2a_schema_owner' AND u.rolname='gda_v49_phase2a_migrator';\"); cp016_targets=$($cp016_psql -X -Atq -v ON_ERROR_STOP=1 -h \"$cp016_socket\" -p 59474 -U jarlgiovanni -d postgres -c \"SELECT count(*) FROM pg_database WHERE datname IN ('gda_v50_round16b_cp016_final_a','gda_v50_round16b_cp016_final_b') OR datname LIKE 'gda_v50_round16b_cp016_final_%_race_%';\"); test \"$cp016_roles\" = 7; test \"$cp016_memberships\" = 1; test \"$cp016_targets\" = 0; printf \"%s\\n\" \"GOVERNED_ROLE_COUNT=$cp016_roles\" \"SCHEMA_OWNER_MEMBERSHIP_COUNT=$cp016_memberships\" \"CP16_TARGET_AND_RACE_DATABASE_COUNT_BEFORE_CREATE=$cp016_targets\" CP16_PRISTINE_CATALOG=PASS"
+  ],
+  "command": "/bin/sh -c 'set -eu; cp016_psql=/opt/homebrew/opt/postgresql@16/bin/psql; cp016_socket=/private/tmp/gda-v50-round16b-cp016-final/socket; cp016_roles=$($cp016_psql -X -Atq -v ON_ERROR_STOP=1 -h \"$cp016_socket\" -p 59474 -U jarlgiovanni -d postgres -c \"SELECT count(*) FROM pg_roles WHERE rolname = ANY (ARRAY['\"'\"'gda_v49_phase2a_schema_owner'\"'\"','\"'\"'gda_v49_phase2a_migrator'\"'\"','\"'\"'gda_v49_phase2a_ingest_writer'\"'\"','\"'\"'gda_v49_phase2a_reviewer'\"'\"','\"'\"'gda_v49_phase2a_publisher'\"'\"','\"'\"'gda_v49_phase2a_api_reader'\"'\"','\"'\"'gda_v49_phase2a_auditor'\"'\"']);\"); cp016_memberships=$($cp016_psql -X -Atq -v ON_ERROR_STOP=1 -h \"$cp016_socket\" -p 59474 -U jarlgiovanni -d postgres -c \"SELECT count(*) FROM pg_auth_members m JOIN pg_roles r ON r.oid=m.roleid JOIN pg_roles u ON u.oid=m.member WHERE r.rolname='\"'\"'gda_v49_phase2a_schema_owner'\"'\"' AND u.rolname='\"'\"'gda_v49_phase2a_migrator'\"'\"';\"); cp016_targets=$($cp016_psql -X -Atq -v ON_ERROR_STOP=1 -h \"$cp016_socket\" -p 59474 -U jarlgiovanni -d postgres -c \"SELECT count(*) FROM pg_database WHERE datname IN ('\"'\"'gda_v50_round16b_cp016_final_a'\"'\"','\"'\"'gda_v50_round16b_cp016_final_b'\"'\"') OR datname LIKE '\"'\"'gda_v50_round16b_cp016_final_%_race_%'\"'\"';\"); test \"$cp016_roles\" = 7; test \"$cp016_memberships\" = 1; test \"$cp016_targets\" = 0; printf \"%s\\n\" \"GOVERNED_ROLE_COUNT=$cp016_roles\" \"SCHEMA_OWNER_MEMBERSHIP_COUNT=$cp016_memberships\" \"CP16_TARGET_AND_RACE_DATABASE_COUNT_BEFORE_CREATE=$cp016_targets\" CP16_PRISTINE_CATALOG=PASS'",
+  "command_id": "1787945480448-cp016-db-verify-pristine-catalog",
+  "cwd": "/private/tmp/gda_round16b_cp016_clean_repro_d40ec811",
+  "duration_ms": 40,
+  "end_timestamp_utc": "2026-08-28T19:31:20Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp016-db-verify-pristine-catalog",
+  "phase_id": "CHECKPOINT-016-NATIVE-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:31:20Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "c41ad746dfb6eadb7870142080fde5e5850c78cc596d701c28251e06a840ac9c",
+  "timed_out": false
+}

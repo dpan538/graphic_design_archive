@@ -8,6 +8,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import shlex
 import subprocess
 from typing import Any
 
@@ -342,18 +343,79 @@ def main() -> int:
     if meta_ids != set(row_by_command):
         failures.append("META_LEDGER_ID_SET_MISMATCH")
 
-    latest_writer: dict[str, dict[str, Any]] = {}
+    # Paths in the event stream are resolved from each command's recorded cwd,
+    # not from the primary checkout.  CP16 deliberately ran many commands in a
+    # detached reproduction worktree, so treating every relative path as
+    # primary-repository-relative conflates independent artifacts.  A later
+    # PASS input hash is also a valid terminal observation of a file that was
+    # intentionally edited between logged writer events (for example, the
+    # active-script allowlist consumed by the final hygiene gate).
+    latest_observation: dict[Path, dict[str, Any]] = {}
     for event in events:
         if event.get("status") == "PASS":
-            for path, digest in event.get("output_hashes", {}).items():
-                latest_writer[path] = {"digest": digest, "sequence": event.get("sequence")}
-    for raw_path, writer in latest_writer.items():
-        path = Path(raw_path)
-        if not path.is_absolute():
-            path = repo / path
+            cwd = Path(str(event.get("cwd", repo))).resolve()
+            observations = (
+                ("INPUT", event.get("input_hashes", {})),
+                ("OUTPUT", event.get("output_hashes", {})),
+            )
+            for source, values in observations:
+                for raw_path, digest in values.items():
+                    path = Path(raw_path)
+                    if not path.is_absolute():
+                        path = cwd / path
+                    path = path.resolve()
+                    # Inputs are terminal observations only for a path that a
+                    # prior governed command declared as an output.  This
+                    # permits a later verification gate to attest an
+                    # intentional edit without turning every historical input
+                    # into a false immutability promise.
+                    if source == "INPUT" and path not in latest_observation:
+                        continue
+                    if digest == "MISSING":
+                        for prior in list(latest_observation):
+                            if prior != path and path in prior.parents:
+                                del latest_observation[prior]
+                    latest_observation[path] = {
+                        "digest": digest,
+                        "sequence": event.get("sequence"),
+                        "source": source,
+                        "recorded_path": raw_path,
+                    }
+            # `git worktree remove` is itself a deterministic terminal writer:
+            # a successful command guarantees that its exact worktree root no
+            # longer exists even when an older logger invocation omitted that
+            # path from `--output`.  Model only this narrowly parsed Git form.
+            try:
+                command_tokens = shlex.split(str(event.get("command", "")))
+            except ValueError:
+                command_tokens = []
+            if (
+                len(command_tokens) in {4, 5}
+                and command_tokens[:3] == ["git", "worktree", "remove"]
+                and (len(command_tokens) == 4 or command_tokens[3] == "--force")
+            ):
+                raw_removed = command_tokens[-1]
+                removed = Path(raw_removed)
+                if not removed.is_absolute():
+                    removed = cwd / removed
+                removed = removed.resolve()
+                for prior in list(latest_observation):
+                    if prior != removed and removed in prior.parents:
+                        del latest_observation[prior]
+                latest_observation[removed] = {
+                    "digest": "MISSING",
+                    "sequence": event.get("sequence"),
+                    "source": "INFERRED_PASS_WORKTREE_REMOVE",
+                    "recorded_path": raw_removed,
+                }
+    for path, observation in latest_observation.items():
         actual = hash_path(path)
-        if actual != writer["digest"]:
-            failures.append(f"LATEST_WRITER_HASH:{writer['sequence']}:{raw_path}")
+        if actual != observation["digest"]:
+            failures.append(
+                "LATEST_OBSERVATION_HASH:"
+                f"{observation['sequence']}:{observation['source']}:"
+                f"{observation['recorded_path']}:{path}"
+            )
 
     checkpoint_result = verify_checkpoints(repo, raw / "checkpoint-ledger.tsv", failures)
     result = {

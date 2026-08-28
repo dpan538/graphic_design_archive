@@ -1,0 +1,29 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "scripts/trace_round16b/verify_v3_production_http.py",
+    "--repo-root",
+    ".",
+    "--output-dir",
+    "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint016-final",
+    "--port",
+    "45974",
+    "--request-timeout-seconds",
+    "10"
+  ],
+  "command": "python3 -B scripts/trace_round16b/verify_v3_production_http.py --repo-root . --output-dir /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint016-final --port 45974 --request-timeout-seconds 10",
+  "command_id": "1787945940757-cp016-http-full",
+  "cwd": "/private/tmp/gda_round16b_cp016_clean_repro_d40ec811",
+  "duration_ms": 143,
+  "end_timestamp_utc": "2026-08-28T19:39:00Z",
+  "exit_code": 1,
+  "launch_error": "",
+  "operation_id": "cp016-http-full",
+  "phase_id": "CHECKPOINT-016-FRONTEND-AND-HTTP-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:39:00Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "654f70884eb06dd747453de26c8e7c24072a348961cb53b0dbb67f307c672f94",
+  "timed_out": false
+}

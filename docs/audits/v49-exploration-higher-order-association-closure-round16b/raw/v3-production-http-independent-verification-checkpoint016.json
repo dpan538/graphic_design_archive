@@ -1,0 +1,67 @@
+{
+  "api_version": "trace-exploration/v3",
+  "case_count": 1168,
+  "case_failure_count": 0,
+  "case_pass_count": 1168,
+  "concurrency_case_count": 500,
+  "export_case_count": 7,
+  "functional_case_count": 160,
+  "governed_artifact_sha256": {
+    "CHECKSUMS.sha256": "002d13c9175354054ee550b4d55d275ea2fad1c10693991bd726897aa50e8173",
+    "manifest.json": "2ee550028cb60749bee7efa456ed21ea4f0c6170bb5c68d8888017fc948fdd2c",
+    "read-model.json": "f1ae8a35895b27c15fb3d9b42828b8611633ee8ee7e2cbc825772b590304351b"
+  },
+  "output_directory_name": "v3-production-http-checkpoint016-final",
+  "phase_counts": {
+    "ARTIFACT_CHECK": 1,
+    "CONCURRENCY_C1": 100,
+    "CONCURRENCY_C10": 100,
+    "CONCURRENCY_C25": 100,
+    "CONCURRENCY_C5": 100,
+    "CONCURRENCY_C50": 100,
+    "CONTROL_EXPORT_REPLAY_POSTLOAD": 2,
+    "CONTROL_EXPORT_REPLAY_PRELOAD": 5,
+    "FUNCTIONAL_HTTP": 160,
+    "SUSTAINED_READ": 500
+  },
+  "receipt_version": "trace-round16b-v3-production-http-checkpoint016-independent-verifier-v1",
+  "run_identity_observed_not_pinned": {
+    "build_id": "lZntmt1Kktih_Ub3NgT0X",
+    "completed_utc": "2026-08-28T19:39:51.163Z",
+    "port": 45974,
+    "probe_session_id": "ea46f61b-1341-4819-ad90-70c2f5dec13a",
+    "process_group_id": 82654,
+    "server_pid": 82654,
+    "started_utc": "2026-08-28T19:39:39.774Z"
+  },
+  "runtime_validation": {
+    "performance_interpretation": "OBSERVATIONAL_NO_SLO_OR_PRODUCTION_CAPACITY_CLAIM",
+    "probe_row_count": 13,
+    "process_count": 1,
+    "process_group_residual": false,
+    "sample_count": 11,
+    "terminated": true
+  },
+  "source_artifact_sha256": {
+    "artifact-check-receipt.json": "8f2bd95c32510205e9da648a49ba4dc30ff04f3101a0dba790b6d58c709a92a4",
+    "concurrency-receipt.json": "7566ead53ab122a6501de37f8f30e584305ff9856275f6e628e8f6e338155ec9",
+    "control-export-replay-receipt.json": "94351a23c640c83fcbb7fd621c926ce298145dc14b3b8d86a555341da6124f69",
+    "functional-http-receipt.json": "ba97d097cbadf6d1b02378191c08ddc3056aa52403ff72df0f3d8f93a78e5751",
+    "http-cases.tsv": "df049baa288e1ff291364433ac61be7b50013bd1a05fd0237d91d5d35d04c8fc",
+    "runtime-memory-receipt.json": "5394541108362aa6425263ed8f2530095a5090b77a8f7f16d4900cd11a6a90c3",
+    "runtime-probe.jsonl": "f2ba8e60c0bd885b954d31cde763400b52d08d7e980f2e24ee35692281b89aa3",
+    "server-output.txt": "5060ea1768d25f8248d8ef102ccc809be702dc001c257fa26709714929d063a1",
+    "startup-receipt.json": "a149b974a3e9bbb13f4e551407c5b683a8f84842453cd5bfbe16c358b31dd1cc",
+    "sustained-read-receipt.json": "7efbd766581bebbf58359b00b25fe562d0bc5407041903ab29f1796849f30890",
+    "verification-summary.json": "22e39f5709bb74d4fb5d80e99eb89260439a3b88aac8bf4d1a3288b657221062"
+  },
+  "stable_export": {
+    "presentation_sha256": "9ee6e1855ec26c4a6e40baec4b33f927ffaf296693dc6d4d3ace51179fc517c4",
+    "projection_preservation_record_count": 3,
+    "response_bytes": 2384,
+    "response_sha256": "9a1871de01e723a24ffb410dc33af0724db978abdf99e9b262050285754c8259",
+    "semantic_sha256": "cc480debb3605e2a471cad9a1cb0cbbe463f88a5753c98f2bf519338c4844827"
+  },
+  "status": "PASS",
+  "sustained_case_count": 500
+}
