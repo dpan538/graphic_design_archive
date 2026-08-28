@@ -80,6 +80,13 @@
     "AUTHORITY_RECONCILIATION_READY": [
       "gate_status#/receipt"
     ],
+    "AUTHORIZED_LFS_MIGRATION": [
+      "authorized_migration#/metrics",
+      "authorized_migration#/receipt"
+    ],
+    "AUTHORIZED_LFS_PATH_COUNT": [
+      "authorized_migration#/metrics"
+    ],
     "CANONICALISATION_DURATION_MS": [
       "build_time"
     ],
@@ -93,7 +100,11 @@
       "independent#/metrics"
     ],
     "CHECKPOINT_COMMIT_COUNT": [
-      "execution_log"
+      "execution_log",
+      "gate_status#/receipt"
+    ],
+    "CHECKPOINT_SEQUENCE_PRESERVED": [
+      "authorized_migration#/receipt"
     ],
     "CLEAN_WORKTREE_REPRODUCTION": [
       "reproduction#/"
@@ -144,6 +155,9 @@
     "CONTINUOUS_PROCESS_LOG_READY": [
       "gate_status#/receipt"
     ],
+    "COUNT_HASH_RECONCILIATION": [
+      "gate_status#/receipt"
+    ],
     "DATABASE_FREEZE": [
       "gate_status#/receipt"
     ],
@@ -152,6 +166,9 @@
     ],
     "DETERMINISTIC_ARTIFACT_MISMATCH_COUNT": [
       "reproduction#/"
+    ],
+    "DETERMINISTIC_REPRODUCTION": [
+      "gate_status#/receipt"
     ],
     "DIRECT_DATABASE_CATEGORY_BINDING_READY": [
       "gate_status#/receipt"
@@ -218,7 +235,12 @@
     "FIRST_REQUEST_MS": [
       "production_http"
     ],
+    "FORCE_PUSH_COMMAND_COUNT": [
+      "authorized_migration#/metrics"
+    ],
     "FORCE_PUSH_USED": [
+      "authorized_migration#/metrics",
+      "authorized_migration#/receipt",
       "gate_status#/receipt"
     ],
     "FROZEN_AUTHORITY_INPUT_HASH_MATCH": [
@@ -229,6 +251,13 @@
     ],
     "FULL_COMMAND_LOG_READY": [
       "execution_log"
+    ],
+    "GIT_FSCK": [
+      "authorized_migration#/receipt",
+      "gate_status#/receipt"
+    ],
+    "GIT_LFS_FSCK": [
+      "gate_status#/receipt"
     ],
     "GRAPH_BUILD_DURATION_MS": [
       "build_time"
@@ -255,7 +284,17 @@
     "HELD_DATA_LEAK_COUNT": [
       "api_functional"
     ],
+    "HISTORY_REWRITE_AUTHORIZED": [
+      "authorized_migration#/metrics",
+      "authorized_migration#/receipt"
+    ],
+    "HISTORY_REWRITE_SCOPE_EXACT": [
+      "authorized_migration#/metrics",
+      "authorized_migration#/receipt"
+    ],
     "HISTORY_REWRITTEN": [
+      "authorized_migration#/metrics",
+      "authorized_migration#/receipt",
       "gate_status#/receipt"
     ],
     "HTTP_FAILURE_COUNT": [
@@ -267,11 +306,20 @@
     "HTTP_TIMEOUT_COUNT": [
       "production_http"
     ],
+    "HYDRATED_CURRENT_PAYLOAD_HASH_MATCH_COUNT": [
+      "authorized_migration#/metrics"
+    ],
+    "HYDRATED_PAYLOAD_HASH_MATCH": [
+      "authorized_migration#/receipt"
+    ],
     "INDEPENDENT_COUNT_MISMATCH_COUNT": [
       "independent#/metrics"
     ],
     "INDEPENDENT_HASH_MISMATCH_COUNT": [
       "independent#/metrics"
+    ],
+    "INDEPENDENT_VERIFICATION": [
+      "gate_status#/receipt"
     ],
     "INDEPENDENT_VERIFICATION_HASH_MATCH": [
       "reproduction#/"
@@ -297,11 +345,47 @@
     "JSON_API_P99_MS": [
       "production_http"
     ],
+    "LFS_FSCK": [
+      "authorized_migration#/receipt"
+    ],
+    "LFS_POINTER_VALIDATION": [
+      "authorized_migration#/receipt"
+    ],
+    "LFS_POINTER_VERSION_COUNT": [
+      "authorized_migration#/metrics"
+    ],
+    "LOCAL_UNAUTHORIZED_REF_CHANGE_COUNT": [
+      "authorized_migration#/metrics"
+    ],
+    "MAPPED_COMMIT_COUNT": [
+      "authorized_migration#/metrics"
+    ],
     "MERGE_COMMIT_CREATED": [
       "gate_status#/receipt"
     ],
     "NETWORK_REQUEST_COUNT": [
+      "authorized_migration#/metrics",
       "reproduction#/"
+    ],
+    "ORDINARY_OVERSIZED_BLOB_COUNT_AFTER": [
+      "authorized_migration#/receipt"
+    ],
+    "ORIGINAL_CHECKPOINT_COUNT_AFTER": [
+      "authorized_migration#/receipt"
+    ],
+    "ORIGINAL_CHECKPOINT_COUNT_BEFORE": [
+      "authorized_migration#/receipt"
+    ],
+    "ORIGIN_MAIN_AFTER_SHA": [
+      "authorized_migration#/receipt"
+    ],
+    "ORIGIN_MAIN_BEFORE_SHA": [
+      "authorized_migration#/receipt"
+    ],
+    "ORIGIN_MAIN_REWRITTEN": [
+      "authorized_migration#/metrics",
+      "authorized_migration#/receipt",
+      "gate_status#/receipt"
     ],
     "PAIR_CANDIDATE_COUNT": [
       "independent#/metrics"
@@ -367,6 +451,18 @@
     "PNG_VALIDATION_FAILURE_COUNT": [
       "independent#/metrics"
     ],
+    "POST_MIGRATION_CHECKPOINT_APPEND_COUNT": [
+      "authorized_migration#/receipt"
+    ],
+    "POST_MIGRATION_HARDENED_SHA": [
+      "gate_status#/receipt"
+    ],
+    "POST_MIGRATION_OVERSIZED_GIT_BLOB_COUNT": [
+      "authorized_migration#/metrics"
+    ],
+    "PRE_MIGRATION_OVERSIZED_GIT_BLOB_COUNT": [
+      "authorized_migration#/metrics"
+    ],
     "PRIMARY_ROOT": [
       "reproduction#/"
     ],
@@ -406,6 +502,11 @@
     ],
     "PUBLIC_CONTEXT_SPACETIME_REFERENCE_COUNT": [
       "independent#/metrics"
+    ],
+    "PUBLIC_EXISTING_HISTORY_REWRITTEN": [
+      "authorized_migration#/metrics",
+      "authorized_migration#/receipt",
+      "gate_status#/receipt"
     ],
     "PUBLIC_EXPLORATION_ARCHIVE_OBJECT_ID_COUNT": [
       "api_functional",
@@ -455,6 +556,9 @@
     "PUBLIC_NAVIGATION_MUTATION_COUNT": [
       "repository_boundary#/receipt"
     ],
+    "PUBLIC_REMOTE_REF_MAP_HASH_MATCH": [
+      "authorized_migration#/receipt"
+    ],
     "PUBLIC_SEARCH_DEPENDENCY_COUNT": [
       "independent#/metrics"
     ],
@@ -464,7 +568,14 @@
     "PUBLIC_V2_FORBIDDEN_EXPOSURE_COUNT": [
       "repository_boundary#/receipt"
     ],
+    "REMOTE_BRANCH_EXISTED_BEFORE_MIGRATION": [
+      "authorized_migration#/receipt"
+    ],
+    "REMOTE_UNAUTHORIZED_REF_CHANGE_COUNT": [
+      "authorized_migration#/metrics"
+    ],
     "REPOSITORY_BOUNDARY": [
+      "gate_status#/receipt",
       "repository_boundary#/receipt"
     ],
     "REPOSITORY_HYGIENE": [
@@ -476,6 +587,9 @@
     ],
     "REPRODUCTION_ROOT": [
       "reproduction#/"
+    ],
+    "REWRITE_NONALLOWLIST_PATH_COUNT": [
+      "authorized_migration#/receipt"
     ],
     "ROUND10_REGRESSION": [
       "regression#/receipt"
@@ -494,6 +608,12 @@
     ],
     "ROUND15_REGRESSION": [
       "regression#/receipt"
+    ],
+    "ROUND16A_MAPPED_COMMIT_COUNT_AFTER": [
+      "authorized_migration#/receipt"
+    ],
+    "ROUND16A_MAPPED_COMMIT_COUNT_BEFORE": [
+      "authorized_migration#/receipt"
     ],
     "ROUND16_LEGACY_COMPOSITION_RECONCILED_COUNT": [
       "independent#/metrics"
@@ -537,8 +657,14 @@
     "SEMANTIC_HASH_MISMATCH_COUNT": [
       "production_http"
     ],
+    "SOURCE_SHA_PRESERVED": [
+      "authorized_migration#/receipt"
+    ],
     "SOURCE_TREE_SHA": [
       "reproduction#/"
+    ],
+    "SOURCE_TREE_SHA_PRESERVED": [
+      "authorized_migration#/receipt"
     ],
     "SPACETIME_API_MUTATION_COUNT": [
       "repository_boundary#/receipt"
@@ -629,12 +755,20 @@
     "UNATTESTED_ACTIVE_VOCABULARY_COUNT": [
       "independent#/metrics"
     ],
+    "UNAUTHORIZED_TREE_DELTA_COUNT": [
+      "authorized_migration#/metrics"
+    ],
     "UNBOUNDED_MEMORY_GROWTH_COUNT": [
       "runtime_memory"
     ],
     "UNEXPECTED_5XX_COUNT": [
       "api_functional",
       "production_http"
+    ],
+    "UNPUBLISHED_ROUND16A_HISTORY_REWRITTEN": [
+      "authorized_migration#/metrics",
+      "authorized_migration#/receipt",
+      "gate_status#/receipt"
     ],
     "UNREACHABLE_PRODUCTION_STATE_COUNT": [
       "independent#/metrics"
@@ -715,14 +849,17 @@
     "AUDIT_SEAL": "PASS",
     "AUTHORITY_CONTRADICTION_COUNT": 0,
     "AUTHORITY_RECONCILIATION_READY": true,
+    "AUTHORIZED_LFS_MIGRATION": "PASS",
+    "AUTHORIZED_LFS_PATH_COUNT": 2,
     "CANONICALISATION_DURATION_MS": 3.698,
     "CANONICAL_ASSOCIATION_SUBGRAPH_COUNT": 58,
     "CANONICAL_COMPOSITION_COUNT_INDEPENDENTLY_VERIFIED": true,
     "CATEGORY_ENTRY_COUNT": 81,
-    "CHECKPOINT_COMMIT_COUNT": 7,
+    "CHECKPOINT_COMMIT_COUNT": 9,
+    "CHECKPOINT_SEQUENCE_PRESERVED": true,
     "CLEAN_WORKTREE_REPRODUCTION": true,
     "COLD_START_MS": 1177.4265830172226,
-    "COMMAND_LOG_COUNT": 164,
+    "COMMAND_LOG_COUNT": 195,
     "COMPOSITION_ENUMERATION_DURATION_MS": 20.423,
     "COMPOSITION_REGISTRY_HASH_MATCH": true,
     "CONCURRENCY_TEST_COMPLETED": true,
@@ -736,14 +873,16 @@
     "CONTEXT_SCHEMA_MUTATION_COUNT": 0,
     "CONTEXT_SEMANTIC_INPUT_COUNT": 0,
     "CONTINUOUS_PROCESS_LOG_READY": true,
+    "COUNT_HASH_RECONCILIATION": "PASS",
     "DATABASE_FREEZE": "PASS",
     "DEPLOYED": false,
     "DETERMINISTIC_ARTIFACT_MISMATCH_COUNT": 0,
+    "DETERMINISTIC_REPRODUCTION": "PASS",
     "DIRECT_DATABASE_CATEGORY_BINDING_READY": true,
     "DIRECT_DATABASE_SNAPSHOT_VALIDATED": true,
     "ENUMERATION_PEAK_RSS_BYTES": 684081152,
     "ENUMERATION_TEMP_STORAGE_BYTES": 0,
-    "EXECUTION_EVENT_COUNT": 326,
+    "EXECUTION_EVENT_COUNT": 388,
     "EXECUTION_EVENT_HASH_FAILURE_COUNT": 0,
     "EXECUTION_LOG_SEQUENCE_GAP_COUNT": 0,
     "EXPORT_CENSUS_GENERATION_DURATION_MS": 57.955,
@@ -754,16 +893,19 @@
     "EXTERNAL_EVIDENCE_PROCESSING_DURATION_MS": 740440,
     "EXTERNAL_HUMAN_DOMAIN_REVIEW_COMPLETED": false,
     "FINAL_AUDIT_STORAGE_BYTES": 1449063337,
-    "FINAL_CODE_SHA": "dfa9367a1fe9981945690f588909e1b14f0fb95d",
+    "FINAL_CODE_SHA": "4df6a01eceab7e0fa53685d21601180d3e8fb67b",
     "FINAL_EXPLORATION_FRONTEND_IMPLEMENTED": false,
     "FINAL_GATE_CRITERION_FAILURE_COUNT": 0,
     "FINAL_GATE_SOURCE_FAILURE_COUNT": 0,
-    "FINAL_TREE_SHA": "784400c9af186d8a6c4f75c85a88d77b5f00963f",
+    "FINAL_TREE_SHA": "5821075a7e69c4332c7cfb6ff36cae53a077495a",
     "FIRST_REQUEST_MS": 916.7812920641154,
+    "FORCE_PUSH_COMMAND_COUNT": 0,
     "FORCE_PUSH_USED": false,
     "FROZEN_AUTHORITY_INPUT_HASH_MATCH": true,
     "FULL_AUDIT_CENSUS_BYTES": 1449063337,
     "FULL_COMMAND_LOG_READY": true,
+    "GIT_FSCK": "PASS",
+    "GIT_LFS_FSCK": "PASS",
     "GRAPH_BUILD_DURATION_MS": 136,
     "GRAPH_COMPONENT_COUNT": 15,
     "GRAPH_DENSITY": 0.04516129032258064,
@@ -772,12 +914,17 @@
     "GRAPH_ISOLATED_NODE_COUNT": 5,
     "GRAPH_NODE_COUNT": 31,
     "HELD_DATA_LEAK_COUNT": 0,
-    "HISTORY_REWRITTEN": false,
+    "HISTORY_REWRITE_AUTHORIZED": true,
+    "HISTORY_REWRITE_SCOPE_EXACT": true,
+    "HISTORY_REWRITTEN": true,
     "HTTP_FAILURE_COUNT": 0,
     "HTTP_SUCCESS_COUNT": 1069864,
     "HTTP_TIMEOUT_COUNT": 0,
+    "HYDRATED_CURRENT_PAYLOAD_HASH_MATCH_COUNT": 2,
+    "HYDRATED_PAYLOAD_HASH_MATCH": true,
     "INDEPENDENT_COUNT_MISMATCH_COUNT": 0,
     "INDEPENDENT_HASH_MISMATCH_COUNT": 0,
+    "INDEPENDENT_VERIFICATION": "PASS",
     "INDEPENDENT_VERIFICATION_HASH_MATCH": true,
     "INVALID_TARGET_ACCEPTED_COUNT": 0,
     "INVALID_TOPOLOGY_CANDIDATE_COUNT": 267,
@@ -786,8 +933,19 @@
     "JSON_API_P50_MS": 0.7902500000000146,
     "JSON_API_P95_MS": 21.36737499999981,
     "JSON_API_P99_MS": 27.072249999999713,
+    "LFS_FSCK": "PASS",
+    "LFS_POINTER_VALIDATION": "PASS",
+    "LFS_POINTER_VERSION_COUNT": 5,
+    "LOCAL_UNAUTHORIZED_REF_CHANGE_COUNT": 0,
+    "MAPPED_COMMIT_COUNT": 8,
     "MERGE_COMMIT_CREATED": false,
     "NETWORK_REQUEST_COUNT": 0,
+    "ORDINARY_OVERSIZED_BLOB_COUNT_AFTER": 0,
+    "ORIGINAL_CHECKPOINT_COUNT_AFTER": 7,
+    "ORIGINAL_CHECKPOINT_COUNT_BEFORE": 7,
+    "ORIGIN_MAIN_AFTER_SHA": "8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e",
+    "ORIGIN_MAIN_BEFORE_SHA": "8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e",
+    "ORIGIN_MAIN_REWRITTEN": false,
     "PAIR_CANDIDATE_COUNT": 465,
     "PAIR_CENSUS_DURATION_MS": 58,
     "PAIR_CENSUS_HASH_MATCH": true,
@@ -809,6 +967,10 @@
     "PNG_REPLAY_MATCH_COUNT": 11520,
     "PNG_VALIDATED_COUNT": 11520,
     "PNG_VALIDATION_FAILURE_COUNT": 0,
+    "POST_MIGRATION_CHECKPOINT_APPEND_COUNT": 1,
+    "POST_MIGRATION_HARDENED_SHA": "4df6a01eceab7e0fa53685d21601180d3e8fb67b",
+    "POST_MIGRATION_OVERSIZED_GIT_BLOB_COUNT": 0,
+    "PRE_MIGRATION_OVERSIZED_GIT_BLOB_COUNT": 5,
     "PRIMARY_ROOT": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
     "PRODUCTION_BUILD": "PASS",
     "PRODUCTION_COMPOSITION_COUNT": 228,
@@ -821,6 +983,7 @@
     "PROJECT_FRONTEND_DESIGN_SAFE_TO_BEGIN": false,
     "PUBLIC_ARCHIVE_OBJECT_REFERENCE_COUNT": 0,
     "PUBLIC_CONTEXT_SPACETIME_REFERENCE_COUNT": 0,
+    "PUBLIC_EXISTING_HISTORY_REWRITTEN": false,
     "PUBLIC_EXPLORATION_ARCHIVE_OBJECT_ID_COUNT": 0,
     "PUBLIC_EXPLORATION_ARCHIVE_OBJECT_REFERENCE_COUNT": 0,
     "PUBLIC_EXPLORATION_ARCHIVE_OBJECT_TITLE_COUNT": 0,
@@ -835,19 +998,25 @@
     "PUBLIC_EXPLORATION_SPACETIME_REFERENCE_COUNT": 0,
     "PUBLIC_EXPLORATION_THUMBNAIL_COUNT": 0,
     "PUBLIC_NAVIGATION_MUTATION_COUNT": 0,
+    "PUBLIC_REMOTE_REF_MAP_HASH_MATCH": true,
     "PUBLIC_SEARCH_DEPENDENCY_COUNT": 0,
     "PUBLIC_V2_ALLOWED_NEGATIVE_REFERENCE_COUNT": 10,
     "PUBLIC_V2_FORBIDDEN_EXPOSURE_COUNT": 0,
+    "REMOTE_BRANCH_EXISTED_BEFORE_MIGRATION": false,
+    "REMOTE_UNAUTHORIZED_REF_CHANGE_COUNT": 0,
     "REPOSITORY_BOUNDARY": "PASS",
     "REPOSITORY_HYGIENE": "PASS",
     "REPRODUCIBILITY_VERIFICATION": "PASS",
     "REPRODUCTION_ROOT": "/private/tmp/trace-round16a-final-reproduction",
+    "REWRITE_NONALLOWLIST_PATH_COUNT": 0,
     "ROUND10_REGRESSION": "PASS",
     "ROUND11_REGRESSION": "PASS",
     "ROUND12_REGRESSION": "PASS",
     "ROUND13_REGRESSION": "PASS",
     "ROUND14_REGRESSION": "PASS",
     "ROUND15_REGRESSION": "PASS",
+    "ROUND16A_MAPPED_COMMIT_COUNT_AFTER": 8,
+    "ROUND16A_MAPPED_COMMIT_COUNT_BEFORE": 8,
     "ROUND16_LEGACY_COMPOSITION_RECONCILED_COUNT": 11,
     "ROUND16_REGRESSION": "PASS",
     "ROUND8_REGRESSION": "PASS",
@@ -862,7 +1031,9 @@
     "SEARCH_STATUS": "OUT_OF_SCOPE_NOT_EVALUATED",
     "SEED_VARIANT_COUNT": 228,
     "SEMANTIC_HASH_MISMATCH_COUNT": 0,
+    "SOURCE_SHA_PRESERVED": true,
     "SOURCE_TREE_SHA": "86c2ed7771034f6d3f0f2e10e7a37aeec0552c71",
+    "SOURCE_TREE_SHA_PRESERVED": true,
     "SPACETIME_API_MUTATION_COUNT": 0,
     "SPACETIME_CODE_MUTATION_COUNT": 0,
     "SPACETIME_INDEX_MUTATION_COUNT": 0,
@@ -892,8 +1063,10 @@
     "TRANSITION_GENERATION_DURATION_MS": 2928.548,
     "TYPECHECK": "PASS",
     "UNATTESTED_ACTIVE_VOCABULARY_COUNT": 0,
+    "UNAUTHORIZED_TREE_DELTA_COUNT": 0,
     "UNBOUNDED_MEMORY_GROWTH_COUNT": 0,
     "UNEXPECTED_5XX_COUNT": 0,
+    "UNPUBLISHED_ROUND16A_HISTORY_REWRITTEN": true,
     "UNREACHABLE_PRODUCTION_STATE_COUNT": 0,
     "VALIDATED_ASSOCIATION_GRAPH_FROZEN": true,
     "VALID_TOPOLOGY_COMPOSITION_COUNT": 81,
@@ -913,7 +1086,7 @@
     "WORKFLOW_REPLAY_FAILURE_COUNT": 0
   },
   "missing_required_metrics": [],
-  "schema_version": "trace-round16a-final-gate-evidence/v1",
+  "schema_version": "trace-round16a-final-gate-evidence/v2",
   "sources": {
     "api_functional": {
       "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/api-functional-validation-v2.json",
@@ -925,6 +1098,12 @@
       "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/audit-seal-result.json",
       "schema_version": "trace-exploration-round16a-audit-seal-gate-v2",
       "sha256": "c21613c0486e7288d33c606e3f195e5a9363e60802d1814b50b4c94970c65a94",
+      "status": "PASS"
+    },
+    "authorized_migration": {
+      "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/authorized-lfs-migration-receipt.json",
+      "schema_version": "trace-round16a-authorized-lfs-migration-receipt/v1",
+      "sha256": "0d91721d84f0841fe0ec5d2e6ae4fc18c5cc2a8ac41c3ffe9f1d91a707d6d416",
       "status": "PASS"
     },
     "build_time": {
@@ -942,19 +1121,19 @@
     "execution_log": {
       "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/execution-log-verification.json",
       "schema_version": "trace-exploration-execution-log-verification-v1",
-      "sha256": "e6b5f471dc457f6c843da186d69660d73f170599dfcb1dd9f331c780b663e560",
+      "sha256": "72e5cb5fb604d9b8c1df81b4cf28594f674e45b232740b26eb0c595340bb9a6d",
       "status": "PASS"
     },
     "gate_status": {
       "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/gate-status-results.json",
-      "schema_version": "trace-round16a-gate-status-results/v1",
-      "sha256": "608db1b327dfcd30fc6f3291da6b8fe4826ede95dd4e61723cf3a559f33c7a00",
+      "schema_version": "trace-round16a-gate-status-results/v2",
+      "sha256": "3b51836037d17ed7e50b2a1ab343c02354ac0d1ce8920e5673348eb15425dcf6",
       "status": "PASS"
     },
     "independent": {
       "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification.json",
       "schema_version": "trace-exploration-independent-verification-v2",
-      "sha256": "f24b8eb9dfa327ea1066a6b2ab8afc20648751d7154e781274cab1cf83152ade",
+      "sha256": "794a16071edc9efce13c17de56c6b901aac86feb1dd5091fb490e1f20febf35f",
       "status": "PASS"
     },
     "production_http": {
@@ -966,19 +1145,19 @@
     "regression": {
       "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/regression-results.json",
       "schema_version": "trace-round16a-regression-results/v1",
-      "sha256": "e4980ed4fb825056bc92d93dee771d7c419e8840efa47e6594464691e8c0dace",
+      "sha256": "4d61a87eb40723f10e484471984247b8d14272dbb1f852907a387947519ab978",
       "status": "PASS"
     },
     "repository_boundary": {
       "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/repository-boundary-receipt.json",
       "schema_version": "trace-round16a-repository-boundary-receipt/v1",
-      "sha256": "cc34fa2b1bedb8a7f9af383a00ea4e614e420e7ad49087b7b06aea2956eff94d",
+      "sha256": "b6bcea0bd2e6389b5431873161877d860c69f253f7c0f2a18f356a97826921f8",
       "status": "PASS"
     },
     "reproduction": {
       "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/reproducibility-verification.json",
       "schema_version": "trace-exploration-round16a-reproducibility-verification-v2",
-      "sha256": "ddc11d5557e1524f3080ad7024a0fb6403b9b3ce4c78c0c0a82c3b21b0fbe25f",
+      "sha256": "100aa75156a9cc5b6a24181cd15d92e719f0348fa579590f8a15ef27651b64b7",
       "status": "PASS"
     },
     "runtime_memory": {

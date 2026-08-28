@@ -1,8 +1,8 @@
 {
   "checkpoint_ledger": {
-    "row_count": 7,
+    "row_count": 9,
     "shape_status": "PASS",
-    "unique_checkpoint_id_count": 7
+    "unique_checkpoint_id_count": 9
   },
   "command_ledger": {
     "artifact_inventory": [
@@ -2422,6 +2422,471 @@
         "sha256": "c1afa8a0a52fd0d2e35c854a6791cb728d0b1b66f3074ae5e3238d0774acb33e"
       },
       {
+        "byte_size": 2695,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787878687763-authorized-lfs-migration-verification.meta.json",
+        "sha256": "efd432468749dbfb8aa6ad0dc6e256b823fdc2d9a70aa22a47c725e1a39adfdf"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787878687763-authorized-lfs-migration-verification.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 213,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787878687763-authorized-lfs-migration-verification.stdout.log",
+        "sha256": "816f37bb6f4293bceff9d4beceb42e25917338dc32f3852974aba61a82b1ac9a"
+      },
+      {
+        "byte_size": 2695,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879120772-authorized-lfs-migration-verification.meta.json",
+        "sha256": "6f7dc84f042211429b55a33dc9f0e80e7b68a95efd2a3c4712cf638b6e2c2b51"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879120772-authorized-lfs-migration-verification.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 213,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879120772-authorized-lfs-migration-verification.stdout.log",
+        "sha256": "10c470f0559b7e5a9dc416756595d381e66a2ceecbe96f4cef4992e5eec1f570"
+      },
+      {
+        "byte_size": 1251,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879339583-round8-regression.meta.json",
+        "sha256": "2b8ed48b6b230c12c4600b6b2630f973b7bca83138b7c057d9b758f973195ffa"
+      },
+      {
+        "byte_size": 568,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879339583-round8-regression.stderr.log",
+        "sha256": "21c51b97415e4bdb29a7864905fdcae9fc5a2e8c6bdde570791bf74a248c5bf0"
+      },
+      {
+        "byte_size": 4078,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879339583-round8-regression.stdout.log",
+        "sha256": "cf27396c41762f0e936a8b64ae30e4c7ceb39107ca3f1443cf341c25e0015142"
+      },
+      {
+        "byte_size": 1787,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879342913-round9-regression.meta.json",
+        "sha256": "d52abe234ea5889b64162d178d36c2d28899b94def1e65ebe776d7a69b0e570d"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879342913-round9-regression.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 869,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879342913-round9-regression.stdout.log",
+        "sha256": "41fb7cba8246a8acd5c21b9ddb651bcce8f457b39210987eed219db1df9c3129"
+      },
+      {
+        "byte_size": 1813,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879372302-round10-regression.meta.json",
+        "sha256": "dc4e34a0acba3f4ee155f1790b5a66f57344ced0d78caf7a3435001e8e8ad2b8"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879372302-round10-regression.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1824,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879372302-round10-regression.stdout.log",
+        "sha256": "b0eca067a74530aafba6189a7a67e7ac7079c1cb67886a1f3910e7a3c75005d1"
+      },
+      {
+        "byte_size": 1826,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879376543-round11-regression.meta.json",
+        "sha256": "52e5a9266f9979f8b86ec9f63dec7c5eb7c9621b20ddeb296226308d023061ba"
+      },
+      {
+        "byte_size": 576,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879376543-round11-regression.stderr.log",
+        "sha256": "4fcf44e6eede7e514b16a3472f3ea041988a2fb227aad7cb74c1c9cb051204c4"
+      },
+      {
+        "byte_size": 5673,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879376543-round11-regression.stdout.log",
+        "sha256": "e63f656d4e2ff059c1f8e271b0757d91fa530f63dcea97729e625abb45eb78fb"
+      },
+      {
+        "byte_size": 2034,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879401088-round12-regression.meta.json",
+        "sha256": "bd279a89eec98b38b455e427bf5e314296b127245bb2ba6fc3315ee28d3efd46"
+      },
+      {
+        "byte_size": 1784,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879401088-round12-regression.stderr.log",
+        "sha256": "c08094262a04136c0c8c52068b81f7f5ca45d0c4f8265c3d3b97034278060148"
+      },
+      {
+        "byte_size": 3497,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879401088-round12-regression.stdout.log",
+        "sha256": "ce153a0a25753097541ca0e53c1ab409e3ab95d176d80d40bde23b63357f9ac0"
+      },
+      {
+        "byte_size": 2081,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879405227-round13-regression.meta.json",
+        "sha256": "b7f1b427c3a484f4f7317d71390673e1ec6ebb992d07db691858bd256d952396"
+      },
+      {
+        "byte_size": 1443,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879405227-round13-regression.stderr.log",
+        "sha256": "d7d84fc4fefaf4a331547476ef3aaf5ecd44efbbe379e4f07c7cbac20265fb14"
+      },
+      {
+        "byte_size": 2776,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879405227-round13-regression.stdout.log",
+        "sha256": "7b290373a3a8dbcd5c0b12f7ffaff6fed55c478ae1af897aa277336a5e81237a"
+      },
+      {
+        "byte_size": 2141,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879436953-round14-regression.meta.json",
+        "sha256": "958261c49acd9d1972d9fd46745e1c10549c60efbda0b94801c3041e346cbeba"
+      },
+      {
+        "byte_size": 2002,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879436953-round14-regression.stderr.log",
+        "sha256": "b8377fc6b69dd5fafbc8094486497309b654f895bee3aff92f44bfa9673777d8"
+      },
+      {
+        "byte_size": 1645,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879436953-round14-regression.stdout.log",
+        "sha256": "9dda20280bb48ac125feff989c2a2860f54f558f675cf057020680eb58937f55"
+      },
+      {
+        "byte_size": 1891,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879440082-round15-regression.meta.json",
+        "sha256": "a059f4d49c646e8290f091339d06ae411e17bc6241f955595275880ebf991694"
+      },
+      {
+        "byte_size": 2186,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879440082-round15-regression.stderr.log",
+        "sha256": "0ae69c58aabade8cad6cb4262cbf2c0889eb390058e05ba270cd8ed026d740c3"
+      },
+      {
+        "byte_size": 1076,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879440082-round15-regression.stdout.log",
+        "sha256": "b2857d5f4bde9bf892f1c534f66f42e329defbdd515f10ed92e77482c9f9b6e1"
+      },
+      {
+        "byte_size": 2002,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879440506-round16-regression.meta.json",
+        "sha256": "424ffda16df8fd5a442b76f00003e026f3a43314fd12e1a5436381374237b4ee"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879440506-round16-regression.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 806,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879440506-round16-regression.stdout.log",
+        "sha256": "3f0409c3d43e842e7889820644ff968e33be9782c73637c8025aaa63ae07e522"
+      },
+      {
+        "byte_size": 869,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879491535-database-freeze-final.meta.json",
+        "sha256": "d5a3663392410a2ffe97fcb2dd26640f22f223aaab02561201164f7143a85186"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879491535-database-freeze-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 236,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879491535-database-freeze-final.stdout.log",
+        "sha256": "8cc11301f4c091522e41e55755c16bfffd45b665b3cddfd93f2bbc186ca57a4e"
+      },
+      {
+        "byte_size": 1236,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879491535-repository-boundary-verification.meta.json",
+        "sha256": "3f93df7eb7dd7db5155358871cc39be3f11f9244d8ecf21aa96116fda5ebc3b6"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879491535-repository-boundary-verification.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 12249,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879491535-repository-boundary-verification.stdout.log",
+        "sha256": "b6bcea0bd2e6389b5431873161877d860c69f253f7c0f2a18f356a97826921f8"
+      },
+      {
+        "byte_size": 1076,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879491564-repository-hygiene-final.meta.json",
+        "sha256": "7477799161943ea8109080f6fce5092728cbae974ccbfead42098213a4f11b60"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879491564-repository-hygiene-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 360,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879491564-repository-hygiene-final.stdout.log",
+        "sha256": "64472f8c649c3271f5c85bee5cc1075520aa728da4fb62aa1ca908d9dcd06038"
+      },
+      {
+        "byte_size": 911,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879495586-git-lfs-fsck-final.meta.json",
+        "sha256": "964412c275b3ab710473da570c9c2d345af998d4aa9641238d8c22bbc400e978"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879495586-git-lfs-fsck-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 16,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879495586-git-lfs-fsck-final.stdout.log",
+        "sha256": "81f6819612dfaf9af7854c05c501e2a69e3852e47f0bfb0a82dfce8f3f6c5db9"
+      },
+      {
+        "byte_size": 797,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879497677-git-fsck-final.meta.json",
+        "sha256": "3a7aeaa1f89c8d47a8aad5651dea9f3a9ed0222631db85eee2482dc7af9011b8"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879497677-git-fsck-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879497677-git-fsck-final.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1113,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879600153-typecheck-full.meta.json",
+        "sha256": "f6a2979e21151d1523ea3bec8cb0eb28e5093825990c2e55bf4bb715ba8d2996"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879600153-typecheck-full.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 120,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879600153-typecheck-full.stdout.log",
+        "sha256": "00070d4ce43d38cf3ddb0e2fa1da3f095e29f19193a5d24a8a0ac7e131288bee"
+      },
+      {
+        "byte_size": 1096,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879607285-production-build-retry1.meta.json",
+        "sha256": "e6e716d02f8b6f164f1d7ebf2cb0b593e7324192d1d6c01464a7596928a8961a"
+      },
+      {
+        "byte_size": 910,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879607285-production-build-retry1.stderr.log",
+        "sha256": "294be6535fca1b16b77f7b418d4d47d3bedd8b0a314a8c3225a2ad785a2ef1ee"
+      },
+      {
+        "byte_size": 358,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879607285-production-build-retry1.stdout.log",
+        "sha256": "82fd43d9ff56aec794379c5a43188cd71624f01778094eee0674c9c9c9f8d7bc"
+      },
+      {
+        "byte_size": 1096,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879633481-production-build-retry1.meta.json",
+        "sha256": "252e55c98a15061cc5c9898bc07b06cef5d70a027ac28b2fbd514f001f32c532"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879633481-production-build-retry1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 3711,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879633481-production-build-retry1.stdout.log",
+        "sha256": "b0c28de2d9fb49c468029d4eacd000886ae9789f4cf99d41e6a674b70752d3b2"
+      },
+      {
+        "byte_size": 1076,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879764313-repository-hygiene-final.meta.json",
+        "sha256": "d5a32d1bcddfb968f4ee6b0f5c8581674c2421a4493b2d31247bbb027b864c81"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879764313-repository-hygiene-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 84,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879764313-repository-hygiene-final.stdout.log",
+        "sha256": "45208a52046f10734ba275e4588ad8d5aa035d45769dfd2028c9fb324c6ec88c"
+      },
+      {
+        "byte_size": 1837,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879797138-api-schema-validation.meta.json",
+        "sha256": "9ef74da658b872d4792a8f92438b569dce2035471a926e79cf0e2fbf887eea73"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879797138-api-schema-validation.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 2384,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787879797138-api-schema-validation.stdout.log",
+        "sha256": "ee0c182144087ac09a81432dac84619c9c44e0da66ca3d04152d7a688a446757"
+      },
+      {
+        "byte_size": 1075,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880013108-independent-verification-final.meta.json",
+        "sha256": "e992fd6e5eb59954cabc0062aeaa96840a9e1f1dbc18ffacd790e93910fbce29"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880013108-independent-verification-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880013108-independent-verification-final.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1658,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880136483-deterministic-clean-worktree-reproduction-final.meta.json",
+        "sha256": "34a1ebd323f71233d15bb3085d44d6394cbe7d54b0270444c5c386464313561e"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880136483-deterministic-clean-worktree-reproduction-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 43740,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880136483-deterministic-clean-worktree-reproduction-final.stdout.log",
+        "sha256": "5cfc0d3749509e53b8e23b603779c500068a828fde8638c147636bc7c068efa3"
+      },
+      {
+        "byte_size": 1658,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880217986-deterministic-clean-worktree-reproduction-final.meta.json",
+        "sha256": "3cfc365200e7a6010532e2768de893463c007ffd09efd4084588451a7428d52e"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880217986-deterministic-clean-worktree-reproduction-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 43519,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880217986-deterministic-clean-worktree-reproduction-final.stdout.log",
+        "sha256": "9834d612d090ce9ec982b6e19588d63acdf3f5716ea709457febca31c9e57da8"
+      },
+      {
+        "byte_size": 1084,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880305045-independent-verification-final.meta.json",
+        "sha256": "bc8d54a64b6663f19c9dd3af23e0382419037f554079e814d844881f325e8be9"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880305045-independent-verification-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880305045-independent-verification-final.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 2410,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880359691-count-hash-reconciliation-final.meta.json",
+        "sha256": "8bf9546f2f48df04fbfb9c30afd34dc30b6dfb98798d86bee5c85685ea799000"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880359691-count-hash-reconciliation-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 5,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880359691-count-hash-reconciliation-final.stdout.log",
+        "sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+      },
+      {
+        "byte_size": 920,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880381165-git-lfs-fsck-final.meta.json",
+        "sha256": "175fe2b0d34be25ca1e06acec98be6bf96bfb8db31aa76a7f9cc1853489d48da"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880381165-git-lfs-fsck-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 16,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880381165-git-lfs-fsck-final.stdout.log",
+        "sha256": "81f6819612dfaf9af7854c05c501e2a69e3852e47f0bfb0a82dfce8f3f6c5db9"
+      },
+      {
+        "byte_size": 806,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880390979-git-fsck-final.meta.json",
+        "sha256": "c859b99a3e88e25aa2ce3d3162b1ddc91614efd7d3e236f5171d00ca4315634e"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880390979-git-fsck-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880390979-git-fsck-final.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1071,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880506898-audit-seal-final.meta.json",
+        "sha256": "4a4446315b55ec89076ef26ba7be9033761442fcf581a78f9f0084675d8ec86a"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880506898-audit-seal-final.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 1068,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880506898-audit-seal-final.stdout.log",
+        "sha256": "e3e0a47f934d159c9844dc0a0a83fadbb8c47b4425377f9259dbe803f0b909cf"
+      },
+      {
+        "byte_size": 892,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880615992-final-research-reports.meta.json",
+        "sha256": "cb99c73eb8b604de8bf47449ea8036c9c41f0be1968338fe47d0de43eed7f451"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880615992-final-research-reports.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 2291,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880615992-final-research-reports.stdout.log",
+        "sha256": "9541cd8b5b4f7222b521339ed73947449e4c901d84d313f1807263458026635a"
+      },
+      {
+        "byte_size": 892,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880673922-final-research-reports.meta.json",
+        "sha256": "018aaf181d0969159da31f673d9bf29c9e75be403d845b5df3f1b672502ad5bf"
+      },
+      {
+        "byte_size": 0,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880673922-final-research-reports.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "byte_size": 2291,
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/1787880673922-final-research-reports.stdout.log",
+        "sha256": "9541cd8b5b4f7222b521339ed73947449e4c901d84d313f1807263458026635a"
+      },
+      {
         "byte_size": 490,
         "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/commands/bootstrap-0001.meta.json",
         "sha256": "f990a37367c8abfe667121492e958038fdbd49c7c12e45b635e695dd12879e69"
@@ -2467,45 +2932,45 @@
         "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
       }
     ],
-    "artifact_inventory_sha256": "e0f35456759a9ae2438146484d2a386771a7225578757189019dc0bffed2affd",
+    "artifact_inventory_sha256": "6533dbcb72013b7a03842a29a6470a67d36f5cc66504446f04419d12ae0f8f4c",
     "inflight_command_group_count": 0,
     "legacy_bootstrap_meta_compatibility_count": 1,
-    "meta_file_count": 164,
+    "meta_file_count": 195,
     "missing_recorded_stream_hash_count": 6,
-    "row_count": 164,
-    "stderr_log_count": 164,
-    "stdout_log_count": 164,
+    "row_count": 195,
+    "stderr_log_count": 195,
+    "stdout_log_count": 195,
     "truncation_policy_marker_count": 0,
-    "unique_command_id_count": 164,
+    "unique_command_id_count": 195,
     "unledgered_completed_artifact_count": 0,
-    "verified_stream_hash_count": 322
+    "verified_stream_hash_count": 384
   },
   "event_output_hashes": {
-    "completed_writer_observation_count": 387,
-    "existing_unhashed_started_output_count": 365,
-    "historical_local_file_hash_count": 359,
-    "historical_non_file_or_symbolic_output_hash_count": 20,
-    "historical_output_hash_observation_count": 384,
-    "latest_completed_writer_count": 145,
-    "latest_non_file_or_symbolic_writer_count": 14,
+    "completed_writer_observation_count": 440,
+    "existing_unhashed_started_output_count": 417,
+    "historical_local_file_hash_count": 411,
+    "historical_non_file_or_symbolic_output_hash_count": 21,
+    "historical_output_hash_observation_count": 437,
+    "latest_completed_writer_count": 154,
+    "latest_non_file_or_symbolic_writer_count": 15,
     "mismatch_count": 0,
-    "non_file_or_symbolic_output_hash_count": 20,
+    "non_file_or_symbolic_output_hash_count": 21,
     "reconciliation_rule": "APPEND_ONLY_LATEST_COMPLETED_WRITER_V1",
     "reconciliation_rule_description": "Execution events are append-only historical observations. For each mutable local file path, only the highest-sequence completed PASS or FAIL event that names that path is compared with the current file bytes; superseded event hashes remain schema-validated history and are never compared with later file contents.",
-    "superseded_completed_writer_count": 242,
+    "superseded_completed_writer_count": 286,
     "terminal_statuses": [
       "FAIL",
       "PASS"
     ],
     "verified": [
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "PROJECT_LOG.md",
-        "sha256": "ecb2f11ea74c9a85300cbe042e451ccf676b81d2f52811e9710c1b0395fbe447"
+        "sha256": "306fbefa51549041ac0328581d236b30f4c9fb29f21f409594e5374310d6d982"
       },
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/BRANDING_SAFE_METRICS.md",
         "sha256": "1a5184da2050a1763b729c031eebae49d8bea2ddc261f0567d2a1dbd6dba18b9"
@@ -2529,7 +2994,7 @@
         "sha256": "1c61513c2d2dbb75dc280fab2a9171f3b44106d6b4379dcefad0dc4db1c06a3f"
       },
       {
-        "event_sequence": 292,
+        "event_sequence": 368,
         "event_status": "PASS",
         "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/api-schema-validation-v2.json",
         "sha256": "62c83a0257b91462b0a07596f86f0497fa54430d1e2526e4c522a3432ea0e961"
@@ -2637,7 +3102,7 @@
         "sha256": "574553e6d71cf84b7a4c6205da6dccf1e759abe2da3ec0db861bd0ddb3b2808b"
       },
       {
-        "event_sequence": 322,
+        "event_sequence": 384,
         "event_status": "PASS",
         "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/audit-seal-result.json",
         "sha256": "c21613c0486e7288d33c606e3f195e5a9363e60802d1814b50b4c94970c65a94"
@@ -2647,6 +3112,12 @@
         "event_status": "PASS",
         "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/authority-reconciliation-result.json",
         "sha256": "3ba6c4e9428434d2a07e416fc4d0a3697cd79c32a0fc04f6b3704e282f2fd1a8"
+      },
+      {
+        "event_sequence": 330,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/authorized-lfs-migration-receipt.json",
+        "sha256": "0d91721d84f0841fe0ec5d2e6ae4fc18c5cc2a8ac41c3ffe9f1d91a707d6d416"
       },
       {
         "event_sequence": 234,
@@ -2709,10 +3180,10 @@
         "sha256": "3f30c47eafc89876b4e685e8a0f567f69bf4af79e521c916d64eff000cd8fe33"
       },
       {
-        "event_sequence": 322,
+        "event_sequence": 384,
         "event_status": "PASS",
         "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/deterministic-artifact-sha-manifest-v2.json",
-        "sha256": "cae5fb015eba94eb46ad88e824c96a6d433d5ef2a4c04a024dd0f5ff3f5a5866"
+        "sha256": "dacc1e7e37cd456ff2675c2c5d627448afb7de199d0420603a8c95e7d0a74db0"
       },
       {
         "event_sequence": 8,
@@ -2751,16 +3222,58 @@
         "sha256": "2a1189f9fcd5703c262a99bef646222df78511248c35309ed91b23e94c0ac3bc"
       },
       {
-        "event_sequence": 312,
+        "event_sequence": 330,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/old-to-new-object-map.csv",
+        "sha256": "0460dd05558c15a442c724699a5ec9cf1d6083028ae18796db78790781cbf6e5"
+      },
+      {
+        "event_sequence": 330,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/original-bundle.sha256",
+        "sha256": "5f7f8e5a84f0a86bdaef03b2ad3c2d4caa44920a350d8a26275b25a634419e8b"
+      },
+      {
+        "event_sequence": 330,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/post-checkpoint-ledger.tsv",
+        "sha256": "9642ccc7f1c39a49bfeed566c93379c1f641d85a36fed02a7a5cb6c846cc0f65"
+      },
+      {
+        "event_sequence": 330,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/post-ref-ledger.tsv",
+        "sha256": "6952125ee5307d66f65c7567863fdb0c068112ff15e61238ded824d1296f8f2f"
+      },
+      {
+        "event_sequence": 330,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/pre-checkpoint-ledger.tsv",
+        "sha256": "70ab54b2e9e7afdf9aff7642d82eb28e728f3178624a8c4c39bdd132dba70a5c"
+      },
+      {
+        "event_sequence": 330,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/pre-oversized-blobs.tsv",
+        "sha256": "f9bb0e9e01948609290c20f26b1c96b35c370aa3244fa82ce8803a1ad700174d"
+      },
+      {
+        "event_sequence": 330,
+        "event_status": "PASS",
+        "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/pre-ref-ledger.tsv",
+        "sha256": "a3a7895c535b064ace2d9645c06d35e485655a14695a035c9f3724e4a52faf7a"
+      },
+      {
+        "event_sequence": 376,
         "event_status": "PASS",
         "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification-cases-v2.tsv",
         "sha256": "f30a639b70a226a0d38ed60bce40597f286f00b057dd848ddb03b7b7e1dfceaa"
       },
       {
-        "event_sequence": 312,
+        "event_sequence": 376,
         "event_status": "PASS",
         "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification.json",
-        "sha256": "f24b8eb9dfa327ea1066a6b2ab8afc20648751d7154e781274cab1cf83152ade"
+        "sha256": "794a16071edc9efce13c17de56c6b901aac86feb1dd5091fb490e1f20febf35f"
       },
       {
         "event_sequence": 242,
@@ -2889,22 +3402,22 @@
         "sha256": "4b6c1134bd5079601b3b0fedffd55ab4012f5e4b403abc3809ac85366d8cb215"
       },
       {
-        "event_sequence": 286,
+        "event_sequence": 353,
         "event_status": "PASS",
         "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/repository-boundary-receipt.json",
-        "sha256": "cc34fa2b1bedb8a7f9af383a00ea4e614e420e7ad49087b7b06aea2956eff94d"
+        "sha256": "b6bcea0bd2e6389b5431873161877d860c69f253f7c0f2a18f356a97826921f8"
       },
       {
-        "event_sequence": 290,
+        "event_sequence": 366,
         "event_status": "PASS",
         "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/repository-hygiene-final.json",
-        "sha256": "35bd02eaa70d904b8fa583fea62696d116e9741a3ec22abb22131c1404a86779"
+        "sha256": "6be780b7489101545b577dab504552bd5ab0caeda18ebe00495d9bf5479e8329"
       },
       {
-        "event_sequence": 320,
+        "event_sequence": 374,
         "event_status": "PASS",
         "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/reproducibility-verification.json",
-        "sha256": "ddc11d5557e1524f3080ad7024a0fb6403b9b3ce4c78c0c0a82c3b21b0fbe25f"
+        "sha256": "100aa75156a9cc5b6a24181cd15d92e719f0348fa579590f8a15ef27651b64b7"
       },
       {
         "event_sequence": 234,
@@ -3111,10 +3624,10 @@
         "sha256": "244ae3161c3daa9ebb3dfb6dd80fd22df0188819be49ccff0dbb57597cf59614"
       },
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "docs/research/EXPLORATION_CURRENT.md",
-        "sha256": "9ba88adf40965d8e4c87c54cf527602f787974e73943de68a445f6af6fbeac72"
+        "sha256": "76fa5e01fa5e332cecd2d0c7b43919518393e94c5f271e006a0a41399c349463"
       },
       {
         "event_sequence": 12,
@@ -3159,7 +3672,7 @@
         "sha256": "ed5c542863ed92e273bdfe370b0b76fa3c8a9fa23030a72818f5228ae9d0f2fb"
       },
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "docs/research/trace-v49-exploration-full-space-closure-round1/06_VALIDATED_GRAPH_REPORT.md",
         "sha256": "6fcaf1e1475f332a8dc57b24a5422709fe3d833609e4921ab8a2ae7a5f18b923"
@@ -3171,7 +3684,7 @@
         "sha256": "4b991cc2481c72b0f5745745102d72419d766cc6ca8292a2a2c6b2f2d85613b2"
       },
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "docs/research/trace-v49-exploration-full-space-closure-round1/07_PARAMETER_UNIVERSE.md",
         "sha256": "76fa53daeb07ab5c58d563cdc481b63d36e816697f15326a0815707ae08339bf"
@@ -3183,97 +3696,97 @@
         "sha256": "03a5d95c0d8eb08280775adf10c09b1ceb5667627af659b20b3be91fdf305549"
       },
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "docs/research/trace-v49-exploration-full-space-closure-round1/08_COMPOSITION_ENUMERATION_METHOD.md",
         "sha256": "436d24a2d9b66aac83bb33c9d245bc76e2088f38d8669fcdbc2709903b6270ec"
       },
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "docs/research/trace-v49-exploration-full-space-closure-round1/09_CANONICALISATION_POLICY.md",
         "sha256": "299c8560c159600e0887ae0526b42a67c112140227c0b052057baa9ded77e438"
       },
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "docs/research/trace-v49-exploration-full-space-closure-round1/10_TOPOLOGY_CENSUS.md",
         "sha256": "8caf78e0f35f1558b2f291281353883ee1e4d7b5440c3eb243e57c013d2f5fed"
       },
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "docs/research/trace-v49-exploration-full-space-closure-round1/11_CATEGORY_ENTRY_CENSUS.md",
         "sha256": "21b7f2ac85e0ae064b2c12a87c11410bbf700ab29b55f3f5f35455695b168d61"
       },
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "docs/research/trace-v49-exploration-full-space-closure-round1/12_STATE_AND_TRANSITION_CENSUS.md",
         "sha256": "d78961c41fa9b41edf98c31de62ae9a6b41968d2ad1336edadf5e047f04bc5c2"
       },
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "docs/research/trace-v49-exploration-full-space-closure-round1/13_CANONICAL_WORKFLOW_CENSUS.md",
         "sha256": "a9e276d72a58d6d7fc78a57b7866b13cdc3658477d2576c053119da5f7724647"
       },
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "docs/research/trace-v49-exploration-full-space-closure-round1/14_EXPORT_CENSUS.md",
         "sha256": "abca9cc7902f2a55b551fe6993bde0fedf79139397db9ddebb42519cf4653996"
       },
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "docs/research/trace-v49-exploration-full-space-closure-round1/15_API_AND_READ_MODEL_DECISION.md",
         "sha256": "a568d589d5c178c522109262928f32396e0b35d3bd9587c256e2f7cbe58ca315"
       },
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "docs/research/trace-v49-exploration-full-space-closure-round1/16_PRODUCTION_LOAD_METHOD.md",
         "sha256": "dd5911f56d59f64bdd782c0dd371e51b48fa95488d6633153ed41e2c1ee31d06"
       },
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "docs/research/trace-v49-exploration-full-space-closure-round1/17_PRODUCTION_LOAD_RESULTS.md",
         "sha256": "716701436ae6ccf1d5b18e3e643c88126d4e31b8627d58a89654952d4357b93c"
       },
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "docs/research/trace-v49-exploration-full-space-closure-round1/18_STATISTICAL_CENSUS.md",
         "sha256": "77c29c48bb53ab3d862b252d43eabe65305b2e3378b7ed1793763cab2091380f"
       },
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "docs/research/trace-v49-exploration-full-space-closure-round1/19_INDEPENDENT_VERIFICATION.md",
         "sha256": "74a8b9df7807d0938ae64082862424a13fccaf0cd5713ca4c3a4a3fad826c25c"
       },
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "docs/research/trace-v49-exploration-full-space-closure-round1/20_REPRODUCIBILITY.md",
-        "sha256": "2f9707f70558240caee0b3db80806deccd1464e627ea942d854292b1489f02f6"
+        "sha256": "3f25782b5a5a24370374405fa44532c2f70f9978dccbfb562ee0549d9fd159bc"
       },
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "docs/research/trace-v49-exploration-full-space-closure-round1/21_LIMITATIONS.md",
-        "sha256": "dfb14ba539f3dc1b8f06babfcd665d88241295c623e658af29c0c43664e936ee"
+        "sha256": "12f5bbdbbd32d3070753cd09be62b8b3970d64f52581896bda500cae396a189e"
       },
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "docs/research/trace-v49-exploration-full-space-closure-round1/22_FUNCTION3_CLOSURE_DECISION.md",
-        "sha256": "525f185ba7626f75ab88e46b5c0fd0c34dc106450a1adb7ca32b63bb90a92e47"
+        "sha256": "63652697810d36078042e337d7850c20bf44c8da1b964d9499db7f49f50d413f"
       },
       {
-        "event_sequence": 326,
+        "event_sequence": 388,
         "event_status": "PASS",
         "path": "docs/research/trace-v49-exploration-full-space-closure-round1/23_BRANDING_SAFE_METRICS.md",
         "sha256": "1a5184da2050a1763b729c031eebae49d8bea2ddc261f0567d2a1dbd6dba18b9"
@@ -3285,42 +3798,42 @@
         "sha256": "53eaf59c95446eeb3781a7153183c54b3ff59fd52f21744cc917053959dfdcc9"
       }
     ],
-    "verified_local_file_hash_count": 131
+    "verified_local_file_hash_count": 139
   },
   "execution_event_hash_failure_count": 0,
   "execution_events": {
-    "event_count": 326,
+    "event_count": 388,
     "field_type_failure_count": 0,
     "first_sequence": 1,
-    "last_sequence": 326,
+    "last_sequence": 388,
     "required_field_failure_count": 0,
     "sequence_gap_count": 0,
     "status_counts": {
-      "FAIL": 19,
-      "PASS": 145,
-      "STARTED": 162
+      "FAIL": 22,
+      "PASS": 173,
+      "STARTED": 193
     },
-    "unique_sequence_count": 326
+    "unique_sequence_count": 388
   },
   "execution_log_sequence_gap_count": 0,
   "format": "trace-exploration-execution-log-verification-v1",
   "full_command_log_ready": true,
-  "input_inventory_sha256": "8242883b508ba60f62e3e9d9ecc0ba2352d532d03f841f1e9327a1b2ecde9a20",
+  "input_inventory_sha256": "a61adc638abeeab98703c838b126d529642331db599c546c98aac8ab39698c0d",
   "inputs": [
     {
-      "byte_size": 5780,
+      "byte_size": 7310,
       "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/checkpoint-ledger.tsv",
-      "sha256": "70ab54b2e9e7afdf9aff7642d82eb28e728f3178624a8c4c39bdd132dba70a5c"
+      "sha256": "e560af78f3efd4b259fab44cec9171cd098b83e8d5d25c00e61e36bef1612da2"
     },
     {
-      "byte_size": 135978,
+      "byte_size": 163199,
       "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/command-ledger.tsv",
-      "sha256": "2a0740716e746a471751337dbaad7fc1ab508e3419e912235d526966006f7552"
+      "sha256": "7361bd69a9fc74ef270150f39ad0380f6c1e01986fc78599a80ef8972dab0fec"
     },
     {
-      "byte_size": 684324,
+      "byte_size": 818994,
       "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/execution-events.jsonl",
-      "sha256": "84b8f2f8e3bede915a913fd29697c2aac0c72fd244c2cb4ff62a9e8680b0ecb4"
+      "sha256": "598e1038cb3059aef9789a0839221c8708bbd65261a518cb5301eb1c080425a6"
     }
   ],
   "status": "PASS",

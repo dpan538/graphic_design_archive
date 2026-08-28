@@ -1,62 +1,135 @@
 {
+  "authorized_migration_operation_evidence": {
+    "command_exit_code": 0,
+    "command_id": "1787879120772-authorized-lfs-migration-verification",
+    "event_git_sha": "02eb7055659714a0e5ebce85dabdcda02dce2cc1",
+    "event_sequence": 330,
+    "helper_sha256": "46a976db1661edd281a47f245eeddaf786e0007103cdf6a145eba9d61cb76d8a",
+    "operation_id": "authorized-lfs-migration-verification",
+    "output_hashes": {
+      "docs/audits/v49-exploration-full-space-closure-round1/raw/authorized-lfs-migration-receipt.json": "0d91721d84f0841fe0ec5d2e6ae4fc18c5cc2a8ac41c3ffe9f1d91a707d6d416",
+      "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/old-to-new-object-map.csv": "0460dd05558c15a442c724699a5ec9cf1d6083028ae18796db78790781cbf6e5",
+      "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/original-bundle.sha256": "5f7f8e5a84f0a86bdaef03b2ad3c2d4caa44920a350d8a26275b25a634419e8b",
+      "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/post-checkpoint-ledger.tsv": "9642ccc7f1c39a49bfeed566c93379c1f641d85a36fed02a7a5cb6c846cc0f65",
+      "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/post-ref-ledger.tsv": "6952125ee5307d66f65c7567863fdb0c068112ff15e61238ded824d1296f8f2f",
+      "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/pre-checkpoint-ledger.tsv": "70ab54b2e9e7afdf9aff7642d82eb28e728f3178624a8c4c39bdd132dba70a5c",
+      "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/pre-oversized-blobs.tsv": "f9bb0e9e01948609290c20f26b1c96b35c370aa3244fa82ce8803a1ad700174d",
+      "docs/audits/v49-exploration-full-space-closure-round1/raw/history-migration/pre-ref-ledger.tsv": "a3a7895c535b064ace2d9645c06d35e485655a14695a035c9f3724e4a52faf7a"
+    },
+    "receipt_sha256": "0d91721d84f0841fe0ec5d2e6ae4fc18c5cc2a8ac41c3ffe9f1d91a707d6d416"
+  },
   "failed_gates": [],
   "log_evidence": {
-    "command_ledger_row_count": 164,
-    "execution_event_count": 326,
-    "live_log_bytes": 469447
+    "command_ledger_row_count": 195,
+    "execution_event_count": 388,
+    "live_log_bytes": 555694
   },
   "operation_evidence": {
     "API_SCHEMA_VALIDATION": {
       "command": "node --conditions=react-server --experimental-strip-types frontend/scripts/test-trace-exploration-v2.mjs --model-ledger /tmp/trace-round16a-api-schema/model.tsv --transition-ledger /tmp/trace-round16a-api-schema/transitions.tsv --workflow-ledger /tmp/trace-round16a-api-schema/workflows.tsv --export-ledger /tmp/trace-round16a-api-schema/exports.tsv --service-ledger /tmp/trace-round16a-api-schema/service.tsv --summary-json docs/audits/v49-exploration-full-space-closure-round1/raw/api-schema-validation-v2.json",
       "command_exit_code": 0,
-      "command_id": "1787841350482-api-schema-validation",
-      "event_git_sha": "e0fd268ea8ce6e46a12f2da29c3bb261d3d37325",
-      "event_sequence": 292,
+      "command_id": "1787879797138-api-schema-validation",
+      "event_git_sha": "64790403dcbffe282b27ca1bc6447fb53e3744ba",
+      "event_sequence": 368,
       "event_status": "PASS",
       "operation_id": "api-schema-validation"
     },
     "AUDIT_SEAL": {
       "command": "python3 -B scripts/trace_round16a/seal_audit_package.py --repo-root /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --stage pre-report",
       "command_exit_code": 0,
-      "command_id": "1787842443866-audit-seal-final",
-      "event_git_sha": "dfa9367a1fe9981945690f588909e1b14f0fb95d",
-      "event_sequence": 322,
+      "command_id": "1787880506898-audit-seal-final",
+      "event_git_sha": "4df6a01eceab7e0fa53685d21601180d3e8fb67b",
+      "event_sequence": 384,
       "event_status": "PASS",
       "operation_id": "audit-seal-final"
+    },
+    "COUNT_HASH_RECONCILIATION": {
+      "command": "/usr/bin/jq -e -s '.[0].status == \"PASS\" and .[0].metrics.INDEPENDENT_COUNT_MISMATCH_COUNT == 0 and .[0].metrics.INDEPENDENT_HASH_MISMATCH_COUNT == 0 and (.[0].equations | all(.status == \"PASS\")) and .[1].status == \"PASS\" and .[1].deterministic_artifact_mismatch_count == 0 and .[1].all_required_hashes_match == true and .[1].all_deterministic_artifacts_match == true and ([.[1].VOCABULARY_CENSUS_HASH_MATCH, .[1].PAIR_CENSUS_HASH_MATCH, .[1].GRAPH_HASH_MATCH, .[1].COMPOSITION_REGISTRY_HASH_MATCH, .[1].STATE_CENSUS_HASH_MATCH, .[1].TRANSITION_CENSUS_HASH_MATCH, .[1].WORKFLOW_CENSUS_HASH_MATCH, .[1].EXPORT_CENSUS_HASH_MATCH] | all)' docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification.json docs/audits/v49-exploration-full-space-closure-round1/raw/reproducibility-verification.json",
+      "command_exit_code": 0,
+      "command_id": "1787880359691-count-hash-reconciliation-final",
+      "event_git_sha": "4df6a01eceab7e0fa53685d21601180d3e8fb67b",
+      "event_sequence": 378,
+      "event_status": "PASS",
+      "operation_id": "count-hash-reconciliation-final"
     },
     "DATABASE_FREEZE": {
       "command": "python3 -B scripts/repository/verify_v49_database_freeze.py --repo .",
       "command_exit_code": 0,
-      "command_id": "1787841322048-database-freeze-final",
-      "event_git_sha": "e0fd268ea8ce6e46a12f2da29c3bb261d3d37325",
-      "event_sequence": 288,
+      "command_id": "1787879491535-database-freeze-final",
+      "event_git_sha": "02eb7055659714a0e5ebce85dabdcda02dce2cc1",
+      "event_sequence": 352,
       "event_status": "PASS",
       "operation_id": "database-freeze-final"
     },
-    "PRODUCTION_BUILD": {
-      "command": "npm run build",
+    "DETERMINISTIC_REPRODUCTION": {
+      "command": "python3 -B scripts/trace_round16a/verify_reproducibility.py --primary-root /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --reproduction-root /private/tmp/trace-round16a-final-reproduction --final-sha 4df6a01eceab7e0fa53685d21601180d3e8fb67b --output docs/audits/v49-exploration-full-space-closure-round1/raw/reproducibility-verification.json --command-timeout-seconds 1800",
       "command_exit_code": 0,
-      "command_id": "1787841617789-production-build-retry1",
-      "event_git_sha": "e0fd268ea8ce6e46a12f2da29c3bb261d3d37325",
-      "event_sequence": 298,
+      "command_id": "1787880217986-deterministic-clean-worktree-reproduction-final",
+      "event_git_sha": "4df6a01eceab7e0fa53685d21601180d3e8fb67b",
+      "event_sequence": 374,
+      "event_status": "PASS",
+      "operation_id": "deterministic-clean-worktree-reproduction-final"
+    },
+    "GIT_FSCK": {
+      "command": "git fsck --full --strict --no-dangling",
+      "command_exit_code": 0,
+      "command_id": "1787880390979-git-fsck-final",
+      "event_git_sha": "4df6a01eceab7e0fa53685d21601180d3e8fb67b",
+      "event_sequence": 382,
+      "event_status": "PASS",
+      "operation_id": "git-fsck-final"
+    },
+    "GIT_LFS_FSCK": {
+      "command": "git lfs fsck 8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e..4df6a01eceab7e0fa53685d21601180d3e8fb67b",
+      "command_exit_code": 0,
+      "command_id": "1787880381165-git-lfs-fsck-final",
+      "event_git_sha": "4df6a01eceab7e0fa53685d21601180d3e8fb67b",
+      "event_sequence": 380,
+      "event_status": "PASS",
+      "operation_id": "git-lfs-fsck-final"
+    },
+    "INDEPENDENT_VERIFICATION": {
+      "command": "python3 -B scripts/trace_round16a/verify_full_space.py --case-tsv docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification-cases-v2.tsv",
+      "command_exit_code": 0,
+      "command_id": "1787880305045-independent-verification-final",
+      "event_git_sha": "4df6a01eceab7e0fa53685d21601180d3e8fb67b",
+      "event_sequence": 376,
+      "event_status": "PASS",
+      "operation_id": "independent-verification-final"
+    },
+    "PRODUCTION_BUILD": {
+      "command": "python3 /private/tmp/round16a_run_sequence.py --cwd /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1/frontend --commands-json '[\"npm run build\"]'",
+      "command_exit_code": 0,
+      "command_id": "1787879633481-production-build-retry1",
+      "event_git_sha": "02eb7055659714a0e5ebce85dabdcda02dce2cc1",
+      "event_sequence": 364,
       "event_status": "PASS",
       "operation_id": "production-build-retry1"
+    },
+    "REPOSITORY_BOUNDARY": {
+      "command": "python3 -B scripts/trace_round16a/verify_repository_boundary.py --repo . --source-sha 8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e --output docs/audits/v49-exploration-full-space-closure-round1/raw/repository-boundary-receipt.json",
+      "command_exit_code": 0,
+      "command_id": "1787879491535-repository-boundary-verification",
+      "event_git_sha": "02eb7055659714a0e5ebce85dabdcda02dce2cc1",
+      "event_sequence": 353,
+      "event_status": "PASS",
+      "operation_id": "repository-boundary-verification"
     },
     "REPOSITORY_HYGIENE": {
       "command": "python3 -B scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-full-space-closure-round1/raw/repository-hygiene-final.json",
       "command_exit_code": 0,
-      "command_id": "1787841329905-repository-hygiene-final",
-      "event_git_sha": "e0fd268ea8ce6e46a12f2da29c3bb261d3d37325",
-      "event_sequence": 290,
+      "command_id": "1787879764313-repository-hygiene-final",
+      "event_git_sha": "64790403dcbffe282b27ca1bc6447fb53e3744ba",
+      "event_sequence": 366,
       "event_status": "PASS",
       "operation_id": "repository-hygiene-final"
     },
     "TYPECHECK": {
-      "command": "npx tsc --noEmit --pretty false",
+      "command": "python3 /private/tmp/round16a_run_sequence.py --cwd /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1/frontend --commands-json '[\"npx tsc --noEmit --pretty false\"]'",
       "command_exit_code": 0,
-      "command_id": "1787841555910-typecheck-full",
-      "event_git_sha": "e0fd268ea8ce6e46a12f2da29c3bb261d3d37325",
-      "event_sequence": 294,
+      "command_id": "1787879600153-typecheck-full",
+      "event_git_sha": "02eb7055659714a0e5ebce85dabdcda02dce2cc1",
+      "event_sequence": 360,
       "event_status": "PASS",
       "operation_id": "typecheck-full"
     }
@@ -67,28 +140,40 @@
     "AUDIT_SEAL": "PASS",
     "AUTHORITY_CONTRADICTION_COUNT": 0,
     "AUTHORITY_RECONCILIATION_READY": true,
+    "CHECKPOINT_COMMIT_COUNT": 9,
     "CONTEXT_OVERRIDE_OF_ASSOCIATION_DECISION_COUNT": 0,
     "CONTINUOUS_PROCESS_LOG_READY": true,
+    "COUNT_HASH_RECONCILIATION": "PASS",
     "DATABASE_FREEZE": "PASS",
     "DEPLOYED": false,
+    "DETERMINISTIC_REPRODUCTION": "PASS",
     "DIRECT_DATABASE_CATEGORY_BINDING_READY": true,
     "DIRECT_DATABASE_SNAPSHOT_VALIDATED": true,
     "EXTERNAL_HUMAN_DOMAIN_REVIEW_COMPLETED": false,
     "FINAL_EXPLORATION_FRONTEND_IMPLEMENTED": false,
     "FORCE_PUSH_USED": false,
-    "HISTORY_REWRITTEN": false,
+    "GIT_FSCK": "PASS",
+    "GIT_LFS_FSCK": "PASS",
+    "HISTORY_REWRITTEN": true,
+    "INDEPENDENT_VERIFICATION": "PASS",
     "MERGE_COMMIT_CREATED": false,
+    "ORIGIN_MAIN_REWRITTEN": false,
+    "POST_MIGRATION_HARDENED_SHA": "4df6a01eceab7e0fa53685d21601180d3e8fb67b",
     "PRODUCTION_BUILD": "PASS",
     "PROJECT_FRONTEND_DESIGN_SAFE_TO_BEGIN": false,
+    "PUBLIC_EXISTING_HISTORY_REWRITTEN": false,
     "PUBLIC_EXPLORATION_PAGE_ADDED": false,
+    "REPOSITORY_BOUNDARY": "PASS",
     "REPOSITORY_HYGIENE": "PASS",
     "SPACETIME_OVERRIDE_OF_ASSOCIATION_DECISION_COUNT": 0,
-    "TYPECHECK": "PASS"
+    "TYPECHECK": "PASS",
+    "UNPUBLISHED_ROUND16A_HISTORY_REWRITTEN": true
   },
-  "schema_version": "trace-round16a-gate-status-results/v1",
+  "schema_version": "trace-round16a-gate-status-results/v2",
   "source_receipts": {
     "audit_seal": "docs/audits/v49-exploration-full-space-closure-round1/raw/audit-seal-result.json",
     "authority": "docs/audits/v49-exploration-full-space-closure-round1/raw/authority-reconciliation-result.json",
+    "authorized_lfs_migration": "docs/audits/v49-exploration-full-space-closure-round1/raw/authorized-lfs-migration-receipt.json",
     "database": "docs/audits/v49-exploration-full-space-closure-round1/raw/database-identity-v2.json",
     "repository_boundary": "docs/audits/v49-exploration-full-space-closure-round1/raw/repository-boundary-receipt.json"
   },

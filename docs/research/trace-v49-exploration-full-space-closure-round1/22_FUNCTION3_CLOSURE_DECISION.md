@@ -120,6 +120,15 @@ The decision is computed from every gate below. A missing value is a failure. Pa
 | TYPECHECK | PASS | PASS | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
 | PRODUCTION_BUILD | PASS | PASS | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
 | API_SCHEMA_VALIDATION | PASS | PASS | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
+| AUTHORIZED_LFS_MIGRATION | PASS | PASS | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
+| HISTORY_REWRITE_AUTHORIZED | true | true | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
+| HISTORY_REWRITE_SCOPE_EXACT | true | true | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
+| REPOSITORY_BOUNDARY | PASS | PASS | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
+| INDEPENDENT_VERIFICATION | PASS | PASS | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
+| COUNT_HASH_RECONCILIATION | PASS | PASS | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
+| DETERMINISTIC_REPRODUCTION | PASS | PASS | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
+| GIT_FSCK | PASS | PASS | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
+| GIT_LFS_FSCK | PASS | PASS | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
 | AUDIT_SEAL | PASS | PASS | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
 | SEARCH_MUTATION_COUNT | 0 | 0 | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
 | CONTEXT_MUTATION_COUNT | 0 | 0 | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
@@ -131,7 +140,10 @@ The decision is computed from every gate below. A missing value is a failure. Pa
 | EXTERNAL_HUMAN_DOMAIN_REVIEW_COMPLETED | false | false | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
 | FORCE_PUSH_USED | false | false | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
 | MERGE_COMMIT_CREATED | false | false | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
-| HISTORY_REWRITTEN | false | false | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
+| HISTORY_REWRITTEN | true | true | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
+| UNPUBLISHED_ROUND16A_HISTORY_REWRITTEN | true | true | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
+| PUBLIC_EXISTING_HISTORY_REWRITTEN | false | false | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
+| ORIGIN_MAIN_REWRITTEN | false | false | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
 | ROUND8_REGRESSION | PASS | PASS | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
 | ROUND9_REGRESSION | PASS | PASS | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
 | ROUND10_REGRESSION | PASS | PASS | PASS | docs/audits/v49-exploration-full-space-closure-round1/raw/final-gate-evidence.json |
@@ -173,4 +185,4 @@ Real database grounding is not object-facing Exploration. A generic association 
 
 `MAIN_FAST_FORWARD_COMPLETED=false`
 
-`NEXT_GATE=SEPARATE_PROJECT_FRONTEND_READINESS_AND_EXTERNAL_REVIEW`
+`NEXT_GATE=INDEPENDENT_REVIEW_OF_PUBLISHED_ROUND16A_RESEARCH_BRANCH`

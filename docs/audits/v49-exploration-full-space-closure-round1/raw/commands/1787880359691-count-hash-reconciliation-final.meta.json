@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "/usr/bin/jq",
+    "-e",
+    "-s",
+    ".[0].status == \"PASS\" and .[0].metrics.INDEPENDENT_COUNT_MISMATCH_COUNT == 0 and .[0].metrics.INDEPENDENT_HASH_MISMATCH_COUNT == 0 and (.[0].equations | all(.status == \"PASS\")) and .[1].status == \"PASS\" and .[1].deterministic_artifact_mismatch_count == 0 and .[1].all_required_hashes_match == true and .[1].all_deterministic_artifacts_match == true and ([.[1].VOCABULARY_CENSUS_HASH_MATCH, .[1].PAIR_CENSUS_HASH_MATCH, .[1].GRAPH_HASH_MATCH, .[1].COMPOSITION_REGISTRY_HASH_MATCH, .[1].STATE_CENSUS_HASH_MATCH, .[1].TRANSITION_CENSUS_HASH_MATCH, .[1].WORKFLOW_CENSUS_HASH_MATCH, .[1].EXPORT_CENSUS_HASH_MATCH] | all)",
+    "docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification.json",
+    "docs/audits/v49-exploration-full-space-closure-round1/raw/reproducibility-verification.json"
+  ],
+  "command": "/usr/bin/jq -e -s '.[0].status == \"PASS\" and .[0].metrics.INDEPENDENT_COUNT_MISMATCH_COUNT == 0 and .[0].metrics.INDEPENDENT_HASH_MISMATCH_COUNT == 0 and (.[0].equations | all(.status == \"PASS\")) and .[1].status == \"PASS\" and .[1].deterministic_artifact_mismatch_count == 0 and .[1].all_required_hashes_match == true and .[1].all_deterministic_artifacts_match == true and ([.[1].VOCABULARY_CENSUS_HASH_MATCH, .[1].PAIR_CENSUS_HASH_MATCH, .[1].GRAPH_HASH_MATCH, .[1].COMPOSITION_REGISTRY_HASH_MATCH, .[1].STATE_CENSUS_HASH_MATCH, .[1].TRANSITION_CENSUS_HASH_MATCH, .[1].WORKFLOW_CENSUS_HASH_MATCH, .[1].EXPORT_CENSUS_HASH_MATCH] | all)' docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification.json docs/audits/v49-exploration-full-space-closure-round1/raw/reproducibility-verification.json",
+  "command_id": "1787880359691-count-hash-reconciliation-final",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 1366,
+  "end_timestamp_utc": "2026-08-28T01:26:01Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "count-hash-reconciliation-final",
+  "phase_id": "POST_MIGRATION_RECONCILIATION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T01:25:59Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74",
+  "timed_out": false
+}

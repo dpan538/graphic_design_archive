@@ -207,3 +207,43 @@ Authoritative Round 16A package: `docs/research/trace-v49-exploration-full-space
 
 `NEXT_GATE=SEPARATE_PROJECT_FRONTEND_READINESS_AND_EXTERNAL_REVIEW`
 <!-- /TRACE_ROUND16A_CLOSURE_STATUS_V2 -->
+
+<!-- TRACE_ROUND16A_CLOSURE_STATUS_V3 -->
+## TRACE v49 Round 16A — post-migration review-branch handoff
+
+This additive handoff preserves the earlier Round 16A closure statement while recording the separately authorized, pre-publication LFS migration of the unpublished research branch. Prior sealed packages and every published Round 8–16 ref remain historical evidence; `origin/main` remains at the frozen source anchor.
+
+`HISTORY_REWRITTEN=true`
+
+`UNPUBLISHED_ROUND16A_HISTORY_REWRITTEN=true`
+
+`PUBLIC_EXISTING_HISTORY_REWRITTEN=false`
+
+`ORIGIN_MAIN_REWRITTEN=false`
+
+`FORCE_PUSH_USED=false`
+
+The current v2 authority permits the frozen database only for snapshot identity and exactly four category-entry types. Its public contract prohibits archive object IDs/titles, record links, Context references, and Spacetime references; measured counts are `0`, `0`, `0`, `0`, and `0`. Its semantic layer is the frozen vocabulary/pair/graph/composition/state census; associations are generic evidence-qualified proximity only.
+
+`ROUND16A_DECISION=TRACE_EXPLORATION_FULLY_CLOSED`
+
+`FUNCTION3_FULL_SPACE_CENSUS_COMPLETE=true`
+
+`FUNCTION3_BACKEND_FUNCTIONALLY_COMPLETE=true`
+
+`TRACE_FUNCTION3_EXPLORATION_CLOSED=true`
+
+`EXTERNAL_HUMAN_DOMAIN_REVIEW_COMPLETED=false`
+
+`FINAL_EXPLORATION_FRONTEND_IMPLEMENTED=false`
+
+`PUBLIC_EXPLORATION_PAGE_ADDED=false`
+
+`PROJECT_FRONTEND_DESIGN_SAFE_TO_BEGIN=false`
+
+`DEPLOYED=false`
+
+Authoritative Round 16A package: `docs/research/trace-v49-exploration-full-space-closure-round1/`.
+
+`NEXT_GATE=INDEPENDENT_REVIEW_OF_PUBLISHED_ROUND16A_RESEARCH_BRANCH`
+<!-- /TRACE_ROUND16A_CLOSURE_STATUS_V3 -->
