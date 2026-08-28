@@ -12,4 +12,6 @@ docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verificati
 docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification-cases-v2.tsv filter=lfs diff=lfs merge=lfs -text
 docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/large/** filter=lfs diff=lfs merge=lfs -text
 docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/search-shards/** filter=lfs diff=lfs merge=lfs -text
+docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787914024116-staged-diff-check-checkpoint008-final.stdout.log -whitespace
+docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787914394968-staged-diff-check-checkpoint008-corrected-final.stdout.log -whitespace
 frontend/generated/trace-exploration-v2-higher-order/*.json filter=lfs diff=lfs merge=lfs -text

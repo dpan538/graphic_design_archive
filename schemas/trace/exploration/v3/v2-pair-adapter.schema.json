@@ -1,0 +1,124 @@
+{
+  "$id": "https://trace.example/schemas/exploration/v3/v2-pair-adapter.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "adapter_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "direction": {
+      "const": "V2_PAIR_TO_V3_PAIR_ONLY"
+    },
+    "endpoint_crosswalk": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "source_endpoint_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "target_concept_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "target_incidence_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "target_sense_id": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_endpoint_id",
+          "target_incidence_id",
+          "target_concept_id",
+          "target_sense_id"
+        ],
+        "type": "object"
+      },
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array"
+    },
+    "higher_order_input_allowed": {
+      "const": false
+    },
+    "input_arity": {
+      "const": 2
+    },
+    "output_association_kind": {
+      "const": "PAIR"
+    },
+    "reverse_conversion_allowed": {
+      "const": false
+    },
+    "semantic_claims_added": {
+      "const": false
+    },
+    "semantic_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "source_contract": {
+      "const": "trace/exploration/v2"
+    },
+    "source_endpoint_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "source_pair_fixture_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "source_pair_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "target_association_revision_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "target_contract": {
+      "const": "trace/exploration/v3"
+    },
+    "target_incidence_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array",
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "adapter_id",
+    "direction",
+    "source_contract",
+    "target_contract",
+    "source_pair_id",
+    "source_pair_fixture_sha256",
+    "source_endpoint_ids",
+    "target_association_revision_id",
+    "target_incidence_ids",
+    "endpoint_crosswalk",
+    "input_arity",
+    "output_association_kind",
+    "higher_order_input_allowed",
+    "reverse_conversion_allowed",
+    "semantic_claims_added",
+    "semantic_sha256"
+  ],
+  "title": "TRACE Exploration v2 pair to v3 pair one-way adapter receipt",
+  "type": "object"
+}

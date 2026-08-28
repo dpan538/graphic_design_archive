@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "python3",
+    "scripts/repository/audit_repository_hygiene.py",
+    "--repo",
+    ".",
+    "--json",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint008.json",
+    "--markdown",
+    "docs/research/trace-v49-exploration-higher-order-association-closure-round16b/16_REPOSITORY_HYGIENE_CHECKPOINT008.md"
+  ],
+  "command": "python3 scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint008.json --markdown docs/research/trace-v49-exploration-higher-order-association-closure-round16b/16_REPOSITORY_HYGIENE_CHECKPOINT008.md",
+  "command_id": "1787913635315-repository-hygiene-checkpoint008-final",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 11063,
+  "end_timestamp_utc": "2026-08-28T10:40:46Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "repository-hygiene-checkpoint008-final",
+  "phase_id": "CHECKPOINT-008-INTEGRITY",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T10:40:35Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "ed6b470c03f4f9bbfcf88d6f02aa5ff3d5541d356922f33b57c8a69097984ce5",
+  "timed_out": false
+}

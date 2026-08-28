@@ -1,0 +1,135 @@
+{
+  "$id": "https://trace.example/schemas/exploration/v3/export-manifest.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "association_realization_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "association_revision_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "composition_revision_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "export_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "pair_projection_policy_preserved": {
+      "const": true,
+      "type": "boolean"
+    },
+    "presentation": {
+      "additionalProperties": false,
+      "properties": {
+        "format": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "theme": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "format",
+        "theme"
+      ],
+      "type": "object"
+    },
+    "presentation_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "projection_preservation_records": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "association_realization_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "association_revision_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "pair_projection_policy": {
+            "enum": [
+              "NOT_APPLICABLE",
+              "NONE"
+            ],
+            "type": "string"
+          },
+          "realization_kind": {
+            "enum": [
+              "PAIR_EDGE",
+              "HYPEREDGE_HUB",
+              "HYPEREDGE_CONTOUR",
+              "LIST_GROUP"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "association_revision_id",
+          "association_realization_id",
+          "pair_projection_policy",
+          "realization_kind"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "realm": {
+      "enum": [
+        "PRODUCTION",
+        "SYNTHETIC_CONTROL"
+      ],
+      "type": "string"
+    },
+    "semantic_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "state_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "workflow_id": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "export_id",
+    "realm",
+    "workflow_id",
+    "state_id",
+    "association_revision_ids",
+    "association_realization_ids",
+    "projection_preservation_records",
+    "composition_revision_id",
+    "semantic_sha256",
+    "presentation",
+    "presentation_sha256",
+    "pair_projection_policy_preserved"
+  ],
+  "title": "TRACE Exploration v3 export manifest",
+  "type": "object"
+}

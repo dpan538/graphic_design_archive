@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "ls",
+    "-ld",
+    "docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-output-manifest-v1.tsv"
+  ],
+  "command": "ls -ld docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-output-manifest-v1.tsv",
+  "command_id": "1787914721675-refresh-latest-writer-hashes-checkpoint008-final",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 7,
+  "end_timestamp_utc": "2026-08-28T10:58:41Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "refresh-latest-writer-hashes-checkpoint008-final",
+  "phase_id": "CHECKPOINT-008-EXECUTION-SEAL",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T10:58:41Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "d252319e1ccebc367b866689916cc4d704e7677d7ac0ec2e409baebb1062517d",
+  "timed_out": false
+}

@@ -1,0 +1,264 @@
+{
+  "$id": "https://trace.example/schemas/exploration/v3/hash-binding-contract.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "bindings": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "collection_pointer": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "hash_fields": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "hash_field": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "material_name": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "representation": {
+                  "const": "LOWERCASE_HEX_64"
+                }
+              },
+              "required": [
+                "hash_field",
+                "material_name",
+                "representation"
+              ],
+              "type": "object"
+            },
+            "minItems": 0,
+            "type": "array"
+          },
+          "identifiers": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "digest_hex_chars": {
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "digest_material_name": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "identifier_field": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "prefix": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "suffix_rule": {
+                  "enum": [
+                    "NONE",
+                    "ONE_BASED_CANONICAL_PARTICIPANT_POSITION_PAD2"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "identifier_field",
+                "prefix",
+                "digest_material_name",
+                "digest_hex_chars",
+                "suffix_rule"
+              ],
+              "type": "object"
+            },
+            "minItems": 0,
+            "type": "array"
+          },
+          "materials": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "field_mappings": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "item_field": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "operation": {
+                        "enum": [
+                          "COPY",
+                          "MAP_ARRAY_FIELD",
+                          "MERGE_OBJECT",
+                          "PROJECT_PARTICIPANT_IDENTITY",
+                          "PROJECT_SCOPE_IDENTITY"
+                        ],
+                        "type": "string"
+                      },
+                      "output_key": {
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "source_pointer": {
+                        "minLength": 1,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "output_key",
+                      "source_pointer",
+                      "operation",
+                      "item_field"
+                    ],
+                    "type": "object"
+                  },
+                  "minItems": 0,
+                  "type": "array"
+                },
+                "material_name": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "normalization_rules": {
+                  "items": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "minItems": 0,
+                  "type": "array"
+                },
+                "output_keys": {
+                  "items": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "recipe": {
+                  "enum": [
+                    "DIRECT_FIELD_OBJECT",
+                    "DIRECT_FIELD_VALUE",
+                    "ASSOCIATION_IDENTITY",
+                    "ASSOCIATION_REVISION",
+                    "REALIZATION_SEMANTIC_ALIASES",
+                    "COMPOSITION_IDENTITY_ALIASES",
+                    "COMPOSITION_REVISION",
+                    "INCIDENCE_IDENTIFIER",
+                    "STATIC_AUTHORITY_IDENTIFIER"
+                  ],
+                  "type": "string"
+                },
+                "source_fields": {
+                  "items": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "minItems": 0,
+                  "type": "array"
+                },
+                "wrapper": {
+                  "enum": [
+                    "NONE",
+                    "MERGE_ASSOCIATION_ID_WITH_SEMANTIC",
+                    "OBJECT_WITH_SEMANTIC_AND_REVISION_ONE"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "material_name",
+                "recipe",
+                "source_fields",
+                "output_keys",
+                "field_mappings",
+                "normalization_rules",
+                "wrapper"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "object_type": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "object_type",
+          "collection_pointer",
+          "materials",
+          "identifiers",
+          "hash_fields"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "canonicalization": {
+      "additionalProperties": false,
+      "properties": {
+        "array_order_default": {
+          "const": "PRESERVE_STORED_ORDER"
+        },
+        "digest_algorithm": {
+          "const": "SHA-256"
+        },
+        "digest_representation": {
+          "const": "LOWERCASE_HEX_64"
+        },
+        "item_separators": {
+          "const": [
+            ",",
+            ":"
+          ]
+        },
+        "json_ensure_ascii": {
+          "const": false
+        },
+        "object_key_order": {
+          "const": "LEXICOGRAPHIC_ASCENDING"
+        },
+        "text_encoding": {
+          "const": "UTF-8"
+        },
+        "trailing_newline_in_digest_material": {
+          "const": false
+        }
+      },
+      "required": [
+        "digest_algorithm",
+        "text_encoding",
+        "json_ensure_ascii",
+        "object_key_order",
+        "item_separators",
+        "trailing_newline_in_digest_material",
+        "array_order_default",
+        "digest_representation"
+      ],
+      "type": "object"
+    },
+    "contract_version": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "contract_version",
+    "canonicalization",
+    "bindings"
+  ],
+  "title": "TRACE Exploration v3 normative hash and identifier binding contract",
+  "type": "object"
+}

@@ -1,0 +1,988 @@
+{
+  "$id": "https://trace.example/schemas/exploration/v3/semantic-contract.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "api_namespace": {
+      "const": "trace/exploration/v3"
+    },
+    "associations": {
+      "items": {
+        "$ref": "association.schema.json"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "closure_flags": {
+      "additionalProperties": false,
+      "properties": {
+        "computational_space_closure": {
+          "type": "boolean"
+        },
+        "function3_closure": {
+          "type": "boolean"
+        },
+        "global_composition_coherence_closure": {
+          "type": "boolean"
+        },
+        "higher_order_association_closure": {
+          "type": "boolean"
+        },
+        "pair_association_closure": {
+          "type": "boolean"
+        },
+        "product_association_reachability_closure": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "pair_association_closure",
+        "higher_order_association_closure",
+        "global_composition_coherence_closure",
+        "product_association_reachability_closure",
+        "computational_space_closure",
+        "function3_closure"
+      ],
+      "type": "object"
+    },
+    "composition_coherence_reviews": {
+      "items": {
+        "$ref": "composition.schema.json#/$defs/compositionCoherenceReview"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "compositions": {
+      "items": {
+        "$ref": "composition.schema.json"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "concept_senses": {
+      "items": {
+        "$ref": "concept.schema.json#/$defs/conceptSense"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "concepts": {
+      "items": {
+        "$ref": "concept.schema.json#/$defs/concept"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "contract_version": {
+      "const": "trace-exploration-v3-semantic-contract-1.0.0"
+    },
+    "control_expectations": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "assertions": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "control_class": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "control_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "expected_result": {
+            "enum": [
+              "PASS",
+              "REJECT",
+              "INACTIVE"
+            ],
+            "type": "string"
+          },
+          "object_refs": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "control_id",
+          "control_class",
+          "object_refs",
+          "expected_result",
+          "assertions"
+        ],
+        "type": "object"
+      },
+      "minItems": 9,
+      "type": "array"
+    },
+    "count_taxonomy": {
+      "additionalProperties": false,
+      "properties": {
+        "associations": {
+          "additionalProperties": false,
+          "properties": {
+            "production_active_association_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "production_active_pending_review_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "production_higher_order_revision_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "production_pair_revision_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "synthetic_active_higher_order_revision_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "synthetic_active_pair_revision_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "synthetic_higher_order_revision_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "synthetic_pair_revision_count": {
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "synthetic_pair_revision_count",
+            "synthetic_higher_order_revision_count",
+            "synthetic_active_pair_revision_count",
+            "synthetic_active_higher_order_revision_count",
+            "production_pair_revision_count",
+            "production_higher_order_revision_count",
+            "production_active_association_count",
+            "production_active_pending_review_count"
+          ],
+          "type": "object"
+        },
+        "incidence": {
+          "additionalProperties": false,
+          "properties": {
+            "implicit_projected_pair_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "production_incidence_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "synthetic_incidence_count": {
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "synthetic_incidence_count",
+            "production_incidence_count",
+            "implicit_projected_pair_count"
+          ],
+          "type": "object"
+        },
+        "interaction": {
+          "additionalProperties": false,
+          "properties": {
+            "production_export_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "production_state_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "production_workflow_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "synthetic_export_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "synthetic_state_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "synthetic_workflow_count": {
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "synthetic_state_count",
+            "synthetic_workflow_count",
+            "synthetic_export_count",
+            "production_state_count",
+            "production_workflow_count",
+            "production_export_count"
+          ],
+          "type": "object"
+        },
+        "realizations_and_compositions": {
+          "additionalProperties": false,
+          "properties": {
+            "production_association_realization_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "production_composition_coherence_review_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "production_composition_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "production_product_eligible_composition_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "synthetic_association_realization_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "synthetic_composition_coherence_review_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "synthetic_composition_count": {
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "synthetic_association_realization_count",
+            "synthetic_composition_count",
+            "synthetic_composition_coherence_review_count",
+            "production_association_realization_count",
+            "production_composition_count",
+            "production_composition_coherence_review_count",
+            "production_product_eligible_composition_count"
+          ],
+          "type": "object"
+        },
+        "vocabulary": {
+          "additionalProperties": false,
+          "properties": {
+            "production_active_concept_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "synthetic_active_concept_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "synthetic_active_concept_sense_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "synthetic_concept_record_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "synthetic_concept_sense_record_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "synthetic_distinct_concept_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "synthetic_scope_count": {
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "synthetic_scope_count",
+            "synthetic_distinct_concept_count",
+            "synthetic_concept_record_count",
+            "synthetic_active_concept_count",
+            "synthetic_concept_sense_record_count",
+            "synthetic_active_concept_sense_count",
+            "production_active_concept_count"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "vocabulary",
+        "associations",
+        "incidence",
+        "realizations_and_compositions",
+        "interaction"
+      ],
+      "type": "object"
+    },
+    "exports": {
+      "items": {
+        "$ref": "export-manifest.schema.json"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "hash_binding_contract": {
+      "$ref": "hash-binding-contract.schema.json"
+    },
+    "hash_binding_contract_canonical_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "identity_branch_test_receipts": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "base_canonical_incidence_ids": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "minItems": 2,
+            "type": "array",
+            "uniqueItems": true
+          },
+          "base_identity_material": {
+            "additionalProperties": false,
+            "properties": {
+              "association_kind": {
+                "enum": [
+                  "PAIR",
+                  "HIGHER_ORDER"
+                ],
+                "type": "string"
+              },
+              "order_semantics": {
+                "enum": [
+                  "UNORDERED",
+                  "ORDERED"
+                ],
+                "type": "string"
+              },
+              "participants": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "concept_id": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "ordinal": {
+                      "minimum": 0,
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
+                    },
+                    "role_id": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "sense_id": {
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "concept_id",
+                    "sense_id",
+                    "ordinal",
+                    "role_id"
+                  ],
+                  "type": "object"
+                },
+                "minItems": 2,
+                "type": "array"
+              },
+              "roles_meaningful": {
+                "type": "boolean"
+              },
+              "scope_identity": {
+                "additionalProperties": false,
+                "properties": {
+                  "actors": {
+                    "items": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "geographies": {
+                    "items": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "historical_case_ids": {
+                    "items": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "institutions": {
+                    "items": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "mechanisms": {
+                    "items": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "scope_id": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "time_bounds": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "end": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "start": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "start",
+                      "end"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "scope_id",
+                  "historical_case_ids",
+                  "time_bounds",
+                  "geographies",
+                  "institutions",
+                  "actors",
+                  "mechanisms"
+                ],
+                "type": "object"
+              }
+            },
+            "required": [
+              "association_kind",
+              "participants",
+              "scope_identity",
+              "order_semantics",
+              "roles_meaningful"
+            ],
+            "type": "object"
+          },
+          "base_identity_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "branch": {
+            "enum": [
+              "UNORDERED_PERMUTATION_INVARIANT",
+              "ORDERED_CONTIGUOUS_ORDINAL_SENSITIVE",
+              "UNORDERED_MEANINGFUL_ROLE_PERMUTATION_INVARIANT",
+              "UNORDERED_MEANINGFUL_ROLE_REASSIGNMENT_SENSITIVE"
+            ],
+            "type": "string"
+          },
+          "comparison_canonical_incidence_ids": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "minItems": 2,
+            "type": "array",
+            "uniqueItems": true
+          },
+          "comparison_identity_material": {
+            "additionalProperties": false,
+            "properties": {
+              "association_kind": {
+                "enum": [
+                  "PAIR",
+                  "HIGHER_ORDER"
+                ],
+                "type": "string"
+              },
+              "order_semantics": {
+                "enum": [
+                  "UNORDERED",
+                  "ORDERED"
+                ],
+                "type": "string"
+              },
+              "participants": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "concept_id": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "ordinal": {
+                      "minimum": 0,
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
+                    },
+                    "role_id": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "sense_id": {
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "concept_id",
+                    "sense_id",
+                    "ordinal",
+                    "role_id"
+                  ],
+                  "type": "object"
+                },
+                "minItems": 2,
+                "type": "array"
+              },
+              "roles_meaningful": {
+                "type": "boolean"
+              },
+              "scope_identity": {
+                "additionalProperties": false,
+                "properties": {
+                  "actors": {
+                    "items": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "geographies": {
+                    "items": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "historical_case_ids": {
+                    "items": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "institutions": {
+                    "items": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "mechanisms": {
+                    "items": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "scope_id": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "time_bounds": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "end": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "start": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "start",
+                      "end"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "scope_id",
+                  "historical_case_ids",
+                  "time_bounds",
+                  "geographies",
+                  "institutions",
+                  "actors",
+                  "mechanisms"
+                ],
+                "type": "object"
+              }
+            },
+            "required": [
+              "association_kind",
+              "participants",
+              "scope_identity",
+              "order_semantics",
+              "roles_meaningful"
+            ],
+            "type": "object"
+          },
+          "comparison_identity_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "expected_relation": {
+            "enum": [
+              "EQUAL",
+              "NOT_EQUAL"
+            ],
+            "type": "string"
+          },
+          "observed_relation": {
+            "enum": [
+              "EQUAL",
+              "NOT_EQUAL"
+            ],
+            "type": "string"
+          },
+          "status": {
+            "const": "PASS"
+          },
+          "test_id": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "test_id",
+          "branch",
+          "base_identity_sha256",
+          "comparison_identity_sha256",
+          "base_identity_material",
+          "comparison_identity_material",
+          "expected_relation",
+          "observed_relation",
+          "base_canonical_incidence_ids",
+          "comparison_canonical_incidence_ids",
+          "status"
+        ],
+        "type": "object"
+      },
+      "minItems": 4,
+      "type": "array"
+    },
+    "invalid_attempts": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "association_revision_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "attempt_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "attempt_kind": {
+            "enum": [
+              "ILLEGAL_PAIR_PROJECTION",
+              "ACTIVE_WITH_NONFINAL_REVIEW"
+            ],
+            "type": "string"
+          },
+          "expected_decision": {
+            "const": "REJECT"
+          },
+          "expected_error_code": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "requested_value": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "attempt_id",
+          "attempt_kind",
+          "association_revision_id",
+          "requested_value",
+          "expected_decision",
+          "expected_error_code"
+        ],
+        "type": "object"
+      },
+      "minItems": 2,
+      "type": "array"
+    },
+    "navigation_states": {
+      "items": {
+        "$ref": "navigation-state.schema.json"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "object_boundaries": {
+      "additionalProperties": false,
+      "properties": {
+        "association_and_composition_counts_are_distinct": {
+          "const": true
+        },
+        "association_is_evidence_bearing_semantic_object": {
+          "const": true
+        },
+        "composition_is_governed_realization_object": {
+          "const": true
+        },
+        "implicit_pair_projection_forbidden": {
+          "const": true
+        },
+        "navigation_model": {
+          "const": "BIPARTITE_CONCEPT_ASSOCIATION_INCIDENCE"
+        }
+      },
+      "required": [
+        "association_is_evidence_bearing_semantic_object",
+        "composition_is_governed_realization_object",
+        "association_and_composition_counts_are_distinct",
+        "implicit_pair_projection_forbidden",
+        "navigation_model"
+      ],
+      "type": "object"
+    },
+    "parent_checkpoint_sha": {
+      "const": "e5ddbc443c4a0a28004034cba439340ecdeb9a75"
+    },
+    "schema_negative_probe_receipts": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "base_object_ref": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "expected_error_code": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "expected_rejected": {
+            "const": true
+          },
+          "mutation_pointer": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "mutation_value_json": {
+            "type": "string"
+          },
+          "observed_error_codes": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "observed_rejected": {
+            "const": true
+          },
+          "probe_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "target_schema": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "validator": {
+            "enum": [
+              "JSON_SCHEMA",
+              "SEMANTIC_INVARIANT",
+              "FIXTURE_SEMANTIC_INVARIANT"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "probe_id",
+          "target_schema",
+          "base_object_ref",
+          "mutation_pointer",
+          "mutation_value_json",
+          "validator",
+          "expected_error_code",
+          "expected_rejected",
+          "observed_rejected",
+          "observed_error_codes"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "scopes": {
+      "items": {
+        "$ref": "common.schema.json#/$defs/scope"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "source_sha": {
+      "const": "5419770959bdb8998b693fb2275b47e29b92367c"
+    },
+    "v2_pair_adapter_receipts": {
+      "items": {
+        "$ref": "v2-pair-adapter.schema.json"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "v2_pair_source_fixtures": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "endpoints": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "concept_id": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "sense_id": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "source_endpoint_id": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source_endpoint_id",
+                "concept_id",
+                "sense_id"
+              ],
+              "type": "object"
+            },
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array"
+          },
+          "source_pair_fixture_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "source_pair_id": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_pair_id",
+          "endpoints",
+          "source_pair_fixture_sha256"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "workflows": {
+      "items": {
+        "$ref": "workflow.schema.json"
+      },
+      "minItems": 1,
+      "type": "array"
+    }
+  },
+  "required": [
+    "contract_version",
+    "api_namespace",
+    "source_sha",
+    "parent_checkpoint_sha",
+    "hash_binding_contract",
+    "hash_binding_contract_canonical_sha256",
+    "object_boundaries",
+    "scopes",
+    "concepts",
+    "concept_senses",
+    "associations",
+    "composition_coherence_reviews",
+    "compositions",
+    "navigation_states",
+    "workflows",
+    "exports",
+    "v2_pair_source_fixtures",
+    "v2_pair_adapter_receipts",
+    "invalid_attempts",
+    "control_expectations",
+    "schema_negative_probe_receipts",
+    "identity_branch_test_receipts",
+    "count_taxonomy",
+    "closure_flags"
+  ],
+  "title": "TRACE Exploration v3 semantic contract fixture bundle",
+  "type": "object"
+}

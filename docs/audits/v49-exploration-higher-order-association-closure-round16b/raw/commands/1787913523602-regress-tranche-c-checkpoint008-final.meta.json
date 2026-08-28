@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/verify_evidence_disposition_tranche_c.py",
+    "--check"
+  ],
+  "command": "python3 scripts/trace_round16b/verify_evidence_disposition_tranche_c.py --check",
+  "command_id": "1787913523602-regress-tranche-c-checkpoint008-final",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 103,
+  "end_timestamp_utc": "2026-08-28T10:38:43Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "regress-tranche-c-checkpoint008-final",
+  "phase_id": "CHECKPOINT-008-REGRESSION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T10:38:43Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "9922427795b1a9a990fe6ad0fa2288be1b050cd798688a46bb7e5f8b26c6d1cf",
+  "timed_out": false
+}

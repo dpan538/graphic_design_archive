@@ -1,0 +1,77 @@
+{
+  "$id": "https://trace.example/schemas/exploration/v3/workflow.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "association_realization_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "association_revision_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "initial_state_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "reachable": {
+      "type": "boolean"
+    },
+    "realm": {
+      "enum": [
+        "PRODUCTION",
+        "SYNTHETIC_CONTROL"
+      ],
+      "type": "string"
+    },
+    "semantic_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "state_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "transition_kind": {
+      "enum": [
+        "FOLLOW_INCIDENCE",
+        "MOVE_FOCUS",
+        "EXPORT"
+      ],
+      "type": "string"
+    },
+    "workflow_id": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "workflow_id",
+    "realm",
+    "initial_state_id",
+    "transition_kind",
+    "association_revision_ids",
+    "association_realization_ids",
+    "state_ids",
+    "reachable",
+    "semantic_sha256"
+  ],
+  "title": "TRACE Exploration v3 workflow",
+  "type": "object"
+}
