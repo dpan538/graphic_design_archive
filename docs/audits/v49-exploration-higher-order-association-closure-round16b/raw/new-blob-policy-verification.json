@@ -1,5 +1,5 @@
 {
-  "changed_file_count": 30,
+  "changed_file_count": 34,
   "changed_files": [
     {
       "hydrated_bytes": 1726,
@@ -26,19 +26,27 @@
       "warning_threshold_reached": false
     },
     {
-      "hydrated_bytes": 1646,
+      "hydrated_bytes": 834,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
-      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv",
-      "sha256": "21f43ef433321e37409955b58027c01aedbe80a9cf7a3dcdf744e219f4b1c12d",
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv",
+      "sha256": "f12450f87932900acc579a9c199a2e9c0084c9b8d34a64c2bd39c2380345a9f0",
       "warning_threshold_reached": false
     },
     {
-      "hydrated_bytes": 4005,
+      "hydrated_bytes": 2097,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv",
+      "sha256": "a08f2df2233221fde750cc9ff24bc48246ef3b3e2d515a30a7e853ce261c6015",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 5521,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/command-ledger.tsv",
-      "sha256": "dafd3f30b0982e037eb2a2f83bf64f42e4eafc6ca367ef5c0aa04afad5ca56e5",
+      "sha256": "41ed9ad738b1130e0e22ede640ffa8f4a9e0f5c5b6f5b2a3a49ed3a2fbf344b1",
       "warning_threshold_reached": false
     },
     {
@@ -66,6 +74,14 @@
       "warning_threshold_reached": false
     },
     {
+      "hydrated_bytes": 2443,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787887745519-import-checkpoint-001-publication-receipts.meta.json",
+      "sha256": "b4b1b94b1630539a62e0ad936a65fc1286641e8cd86ab80b9c40d7c731452237",
+      "warning_threshold_reached": false
+    },
+    {
       "hydrated_bytes": 1633,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
@@ -74,19 +90,19 @@
       "warning_threshold_reached": false
     },
     {
-      "hydrated_bytes": 15205,
+      "hydrated_bytes": 21352,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-events.jsonl",
-      "sha256": "bafbb587556579a831c9501c9c3b086e6c2ace528b96177b913e5d9d97eb83b5",
+      "sha256": "5abc9cb786a9d823f855f092cc90c0291e31fb98291356b4f9c2abc25432ecf5",
       "warning_threshold_reached": false
     },
     {
-      "hydrated_bytes": 485,
+      "hydrated_bytes": 538,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-log-verification.json",
-      "sha256": "892246c397b3deba9d8a69036ffe0d986bef68aa3b2183163948fffe53a07af8",
+      "sha256": "437f9a9c4ab6666061d707d37ce3f51bfbd6aead4468393c02025d48b559c104",
       "warning_threshold_reached": false
     },
     {
@@ -98,11 +114,11 @@
       "warning_threshold_reached": false
     },
     {
-      "hydrated_bytes": 7317,
+      "hydrated_bytes": 11526,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification.json",
-      "sha256": "77fc91d8f143725be73b092baf082bad59745cd9333901340531f4a5516939f4",
+      "sha256": "44cc91d394dd139653bb56100f9af02233c7fc61aaad6bab1e0cc8de319568a7",
       "warning_threshold_reached": false
     },
     {
@@ -127,6 +143,14 @@
       "lfs_required_threshold_reached": false,
       "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts/003-1787887046000311000-governance-preflight-correction-2.json",
       "sha256": "de7472455de5f139f3f3fcb3c40564f4723a9faa8090df16f81c73f8f18e9213",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 2768,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts/004-1787887589995269000-checkpoint-001.json",
+      "sha256": "5149a920312b73a2e234b38af4e080367db4ccdbefa0c431bba44e336d4515bd",
       "warning_threshold_reached": false
     },
     {
@@ -178,11 +202,19 @@
       "warning_threshold_reached": false
     },
     {
-      "hydrated_bytes": 9535,
+      "hydrated_bytes": 13391,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "docs/research/trace-v49-exploration-higher-order-association-closure-round16b/00_LIVE_EXECUTION_LOG.md",
-      "sha256": "62906770ba2f428c19ddb450a39c9afe33257ef590712e19230d0e17c4fb2d33",
+      "sha256": "67fdc60befe82f9127b8e22b4e54e23db959910bc8d08fa999732a13c892787a",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 3473,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/research/trace-v49-exploration-higher-order-association-closure-round16b/01_BOOTSTRAP_RECOVERY_AND_LFS_POLICY.md",
+      "sha256": "b304503598ed58d56f43fb25bbaa555fe0fc41527dd918cabba02710e63bd067",
       "warning_threshold_reached": false
     },
     {
@@ -243,9 +275,9 @@
     }
   ],
   "failure_codes": [],
-  "maximum_new_committed_blob_bytes": 104756,
+  "maximum_new_committed_blob_bytes": 105919,
   "missing_lfs_rule_count": 0,
-  "new_committed_blob_count": 10,
+  "new_committed_blob_count": 34,
   "policy_path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json",
   "policy_sha256": "3edb4ec79f7c7d06cf145aebdd86fadba915b6bd75040edb65507578d06b441c",
   "schema_version": "trace-round16b-new-blob-policy-verification/v1",
