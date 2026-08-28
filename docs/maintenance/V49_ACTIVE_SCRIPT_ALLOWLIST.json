@@ -1,6 +1,6 @@
 {
   "format": "gda-v49-active-script-allowlist/v1",
-  "scriptCount": 279,
+  "scriptCount": 283,
   "unknownClassificationCount": 0,
   "scripts": [
     {
@@ -2709,6 +2709,46 @@
       "current_runtime_required": false,
       "current_api_required": true,
       "current_database_required": true,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/bootstrap_round16b.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/publish_checkpoint.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/run_logged.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_new_blob_policy.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
       "current_ci_required": false,
       "retained_audit_role": true,
       "decision": "KEEP_ACTIVE"
