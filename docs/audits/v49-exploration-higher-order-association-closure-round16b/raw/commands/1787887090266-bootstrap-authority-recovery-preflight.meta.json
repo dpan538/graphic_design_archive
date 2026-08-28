@@ -1,0 +1,32 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "scripts/trace_round16b/bootstrap_round16b.py",
+    "--repo",
+    "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+    "--bundle",
+    "/Users/jarlgiovanni/Desktop/trace_round16b_preservation/trace-round16b-source-lineage-54197709.bundle",
+    "--restore-repo",
+    "/private/tmp/trace-round16b-bundle-restore.MkeWle/repo",
+    "--expected-head",
+    "5e7db0676c62ff5a0cb27876f2160523a7a59ab5",
+    "--initial-publication-receipt",
+    "/Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json",
+    "--output-dir",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw"
+  ],
+  "command": "python3 -B scripts/trace_round16b/bootstrap_round16b.py --repo /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b --bundle /Users/jarlgiovanni/Desktop/trace_round16b_preservation/trace-round16b-source-lineage-54197709.bundle --restore-repo /private/tmp/trace-round16b-bundle-restore.MkeWle/repo --expected-head 5e7db0676c62ff5a0cb27876f2160523a7a59ab5 --initial-publication-receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw",
+  "command_id": "1787887090266-bootstrap-authority-recovery-preflight",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 13680,
+  "end_timestamp_utc": "2026-08-28T03:18:25Z",
+  "exit_code": 0,
+  "operation_id": "bootstrap-authority-recovery-preflight",
+  "phase_id": "BOOTSTRAP_AUTHORITY_LFS_PREFLIGHT",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T03:18:10Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "bffa5f19f344eb2433ddb7fa84454ff2e50170779253706f603ac15370e960f7",
+  "timed_out": false
+}

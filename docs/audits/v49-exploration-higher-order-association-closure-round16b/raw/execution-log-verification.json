@@ -1,0 +1,19 @@
+{
+  "checkpoint_verification": {
+    "checkpoint_count": 0,
+    "present": false
+  },
+  "command_count": 3,
+  "event_count": 6,
+  "fail_event_count": 0,
+  "failure_codes": [],
+  "legacy_event_count": 2,
+  "pass_event_count": 3,
+  "schema_version": "trace-round16b-execution-log-verification/v1",
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "started_event_count": 3,
+  "status": "PASS",
+  "warning_codes": [
+    "LEGACY_BOOTSTRAP_EVENTS_PRE_COMMAND_ID_SCHEMA=2"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "scripts/trace_round16b/capture_source_lfs_manifest.py",
+    "--repo",
+    "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+    "--manifest",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-lfs-manifest.tsv",
+    "--summary",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-lfs-verification.json"
+  ],
+  "command": "python3 -B scripts/trace_round16b/capture_source_lfs_manifest.py --repo /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-lfs-manifest.tsv --summary docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-lfs-verification.json",
+  "command_id": "1787887313513-source-lfs-manifest-verification",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 4562,
+  "end_timestamp_utc": "2026-08-28T03:21:58Z",
+  "exit_code": 0,
+  "operation_id": "source-lfs-manifest-verification",
+  "phase_id": "BOOTSTRAP_AUTHORITY_LFS_PREFLIGHT",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T03:21:53Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "b202ce62ab76c642a92149a35cbbcf93e52d1ae203e6d749c7777741de8eef40",
+  "timed_out": false
+}

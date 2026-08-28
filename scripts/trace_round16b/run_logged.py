@@ -137,6 +137,7 @@ def main() -> int:
     input_hashes = {path: hash_path(path, cwd) for path in args.input}
 
     start_event = {
+        "command_id": command_id,
         "timestamp_utc": started,
         "phase_id": args.phase,
         "operation_id": args.operation_id,
@@ -218,6 +219,7 @@ def main() -> int:
     }
     meta_path.write_text(json.dumps(meta, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     finish_event = {
+        "command_id": command_id,
         "timestamp_utc": ended,
         "phase_id": args.phase,
         "operation_id": args.operation_id,

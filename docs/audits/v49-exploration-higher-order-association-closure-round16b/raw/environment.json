@@ -1,0 +1,68 @@
+{
+  "captured_at_utc": "2026-08-28T03:18:11Z",
+  "captured_head_sha": "5e7db0676c62ff5a0cb27876f2160523a7a59ab5",
+  "captured_head_tree": "1fbc3bc087321c8bca8f3d3b2cafa24bbe5e2768",
+  "commands": {
+    "git": {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "git version 2.50.1 (Apple Git-155)"
+    },
+    "git_lfs": {
+      "argv": [
+        "git",
+        "lfs",
+        "version"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "git-lfs/3.7.1 (GitHub; darwin arm64; go 1.25.3)"
+    },
+    "node": {
+      "argv": [
+        "node",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "v22.21.0"
+    },
+    "npm": {
+      "argv": [
+        "npm",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "10.9.4"
+    },
+    "postgresql": {
+      "argv": [
+        "psql",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "psql (PostgreSQL) 16.13 (Homebrew)"
+    },
+    "sw_vers": {
+      "argv": [
+        "sw_vers"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.2\nBuildVersion:\t\t25F84"
+    }
+  },
+  "machine": "arm64",
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "python_runtime": "3.13.5",
+  "schema_version": "trace-round16b-environment/v1",
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
+  "work_branch": "codex/trace-v49-exploration-higher-order-association-closure-round16b"
+}
