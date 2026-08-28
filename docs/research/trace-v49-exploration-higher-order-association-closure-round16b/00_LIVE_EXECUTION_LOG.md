@@ -4262,3 +4262,757 @@
 - Decision: Command result governs continuation.
 - Next: Proceed to the next governed operation.
 - Git SHA: `e5ddbc443c4a0a28004034cba439340ecdeb9a75`
+
+## Event 329
+
+- UTC timestamp: 2026-08-28T11:05:38Z
+- Phase: CHECKPOINT-009-BOOTSTRAP
+- Operation: START — Import and validate complete publication chain through checkpoint008
+- Command: `python3 scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787902081597323000-checkpoint-004.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787906350663884000-checkpoint-006.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787908701362896000-checkpoint-007.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787914780509164000-checkpoint-008.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv`
+- Inputs: /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787914780509164000-checkpoint-008.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 330
+
+- UTC timestamp: 2026-08-28T11:05:38Z
+- Phase: CHECKPOINT-009-BOOTSTRAP
+- Operation: PASS — Import and validate complete publication chain through checkpoint008
+- Command: `python3 scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787902081597323000-checkpoint-004.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787906350663884000-checkpoint-006.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787908701362896000-checkpoint-007.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787914780509164000-checkpoint-008.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv`
+- Inputs: /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787914780509164000-checkpoint-008.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Duration: 44 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 331
+
+- UTC timestamp: 2026-08-28T11:18:39Z
+- Phase: CHECKPOINT-009-SOURCE-REVIEW
+- Operation: START — Regenerate expanded adaptive source-review shard 2 with candidate-universe and vocabulary-impact ledgers
+- Command: `python3 scripts/trace_round16b/build_adaptive_source_review_shard_2.py`
+- Inputs: scripts/trace_round16b/build_adaptive_source_review_shard_2.py, docs/research/trace-v49-design-history-relation-vocabulary-round1/03_SCHOLARLY_SOURCE_REGISTRY.tsv, docs/research/trace-v49-design-history-relation-vocabulary-round1/05_TERM_ATTESTATION_REGISTRY.tsv, docs/research/trace-v49-exploration-composition-review-round1/03_COMPOSITION_SCHOLARLY_SOURCE_REGISTRY.tsv, docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/concept-sense-crosswalk-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/isolated-active-term-audit-ledger-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-canonical-rights-queue-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-shard-1-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scholarly-source-rights-policy.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v2.tsv
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-search-query-log-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-trigger-occurrence-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-family-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-rights-ledger-shard-2-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-scope-reconciliation-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/active-vocabulary-evidence-impact-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-ledger-adaptive-source-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-census-shard-2-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-output-manifest-shard-2-v1.tsv, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/17_ADAPTIVE_SOURCE_REVIEW_SHARD_002_AND_SOURCE_SCOPE_RECONCILIATION.md, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-build-receipt-shard-2-v1.json
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 332
+
+- UTC timestamp: 2026-08-28T11:18:39Z
+- Phase: CHECKPOINT-009-SOURCE-REVIEW
+- Operation: FAIL — Regenerate expanded adaptive source-review shard 2 with candidate-universe and vocabulary-impact ledgers
+- Command: `python3 scripts/trace_round16b/build_adaptive_source_review_shard_2.py`
+- Inputs: scripts/trace_round16b/build_adaptive_source_review_shard_2.py, docs/research/trace-v49-design-history-relation-vocabulary-round1/03_SCHOLARLY_SOURCE_REGISTRY.tsv, docs/research/trace-v49-design-history-relation-vocabulary-round1/05_TERM_ATTESTATION_REGISTRY.tsv, docs/research/trace-v49-exploration-composition-review-round1/03_COMPOSITION_SCHOLARLY_SOURCE_REGISTRY.tsv, docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/concept-sense-crosswalk-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/isolated-active-term-audit-ledger-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-canonical-rights-queue-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-shard-1-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scholarly-source-rights-policy.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v2.tsv
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-search-query-log-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-trigger-occurrence-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-family-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-rights-ledger-shard-2-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-scope-reconciliation-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/active-vocabulary-evidence-impact-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-ledger-adaptive-source-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-census-shard-2-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-output-manifest-shard-2-v1.tsv, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/17_ADAPTIVE_SOURCE_REVIEW_SHARD_002_AND_SOURCE_SCOPE_RECONCILIATION.md, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-build-receipt-shard-2-v1.json
+- Duration: 47 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Delete only the obsolete untracked v1 rights artifact, inspect the expanded receipt, and build an independent verifier.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 333
+
+- UTC timestamp: 2026-08-28T11:19:45Z
+- Phase: CHECKPOINT-009-SOURCE-REVIEW
+- Operation: START — Regenerate expanded adaptive source-review shard 2 after canonical local-family field binding correction
+- Command: `python3 scripts/trace_round16b/build_adaptive_source_review_shard_2.py`
+- Inputs: scripts/trace_round16b/build_adaptive_source_review_shard_2.py, docs/research/trace-v49-design-history-relation-vocabulary-round1/03_SCHOLARLY_SOURCE_REGISTRY.tsv, docs/research/trace-v49-design-history-relation-vocabulary-round1/05_TERM_ATTESTATION_REGISTRY.tsv, docs/research/trace-v49-exploration-composition-review-round1/03_COMPOSITION_SCHOLARLY_SOURCE_REGISTRY.tsv, docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/concept-sense-crosswalk-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/isolated-active-term-audit-ledger-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-canonical-rights-queue-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-shard-1-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scholarly-source-rights-policy.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v2.tsv
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-search-query-log-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-trigger-occurrence-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-family-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-rights-ledger-shard-2-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-scope-reconciliation-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/active-vocabulary-evidence-impact-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-ledger-adaptive-source-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-census-shard-2-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-output-manifest-shard-2-v1.tsv, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/17_ADAPTIVE_SOURCE_REVIEW_SHARD_002_AND_SOURCE_SCOPE_RECONCILIATION.md, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-build-receipt-shard-2-v1.json
+- Warnings: PREVIOUS_ATTEMPT_SCHEMA_FIELD_BINDING_FAILED_CLOSED_AND_IS_PRESERVED
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 334
+
+- UTC timestamp: 2026-08-28T11:19:45Z
+- Phase: CHECKPOINT-009-SOURCE-REVIEW
+- Operation: PASS — Regenerate expanded adaptive source-review shard 2 after canonical local-family field binding correction
+- Command: `python3 scripts/trace_round16b/build_adaptive_source_review_shard_2.py`
+- Inputs: scripts/trace_round16b/build_adaptive_source_review_shard_2.py, docs/research/trace-v49-design-history-relation-vocabulary-round1/03_SCHOLARLY_SOURCE_REGISTRY.tsv, docs/research/trace-v49-design-history-relation-vocabulary-round1/05_TERM_ATTESTATION_REGISTRY.tsv, docs/research/trace-v49-exploration-composition-review-round1/03_COMPOSITION_SCHOLARLY_SOURCE_REGISTRY.tsv, docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/concept-sense-crosswalk-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/isolated-active-term-audit-ledger-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-canonical-rights-queue-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-shard-1-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scholarly-source-rights-policy.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v2.tsv
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-search-query-log-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-trigger-occurrence-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-family-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-rights-ledger-shard-2-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-scope-reconciliation-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/active-vocabulary-evidence-impact-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-ledger-adaptive-source-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-census-shard-2-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-output-manifest-shard-2-v1.tsv, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/17_ADAPTIVE_SOURCE_REVIEW_SHARD_002_AND_SOURCE_SCOPE_RECONCILIATION.md, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-build-receipt-shard-2-v1.json
+- Duration: 58 ms
+- Warnings: PREVIOUS_ATTEMPT_SCHEMA_FIELD_BINDING_FAILED_CLOSED_AND_IS_PRESERVED
+- Errors: none
+- Decision: Continue only if all 13 deterministic outputs are regenerated with zero activation, product paths, implicit pair projections, retained source payloads, or closure claims.
+- Next: Delete only the obsolete untracked v1 rights artifact, inspect the expanded receipt, and build an independent verifier.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 335
+
+- UTC timestamp: 2026-08-28T11:28:41Z
+- Phase: CHECKPOINT-009-SOURCE-REVIEW
+- Operation: START — Regenerate shard 2 with canonical seven-trigger coverage and complete applicability matrix
+- Command: `python3 scripts/trace_round16b/build_adaptive_source_review_shard_2.py`
+- Inputs: scripts/trace_round16b/build_adaptive_source_review_shard_2.py, docs/research/trace-v49-design-history-relation-vocabulary-round1/03_SCHOLARLY_SOURCE_REGISTRY.tsv, docs/research/trace-v49-design-history-relation-vocabulary-round1/05_TERM_ATTESTATION_REGISTRY.tsv, docs/research/trace-v49-exploration-composition-review-round1/03_COMPOSITION_SCHOLARLY_SOURCE_REGISTRY.tsv, docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/concept-sense-crosswalk-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/isolated-active-term-audit-ledger-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-canonical-rights-queue-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-shard-1-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scholarly-source-rights-policy.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/candidate-trigger-registry.tsv
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-search-query-log-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-trigger-occurrence-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-trigger-applicability-matrix-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-family-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-rights-ledger-shard-2-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-scope-reconciliation-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/active-vocabulary-evidence-impact-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-ledger-adaptive-source-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-census-shard-2-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-output-manifest-shard-2-v1.tsv, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/17_ADAPTIVE_SOURCE_REVIEW_SHARD_002_AND_SOURCE_SCOPE_RECONCILIATION.md, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-build-receipt-shard-2-v1.json
+- Warnings: PREVIOUS_UNSTAGED_TRIGGER_LEDGER_SEMANTICALLY_SUPERSEDED
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 336
+
+- UTC timestamp: 2026-08-28T11:28:41Z
+- Phase: CHECKPOINT-009-SOURCE-REVIEW
+- Operation: PASS — Regenerate shard 2 with canonical seven-trigger coverage and complete applicability matrix
+- Command: `python3 scripts/trace_round16b/build_adaptive_source_review_shard_2.py`
+- Inputs: scripts/trace_round16b/build_adaptive_source_review_shard_2.py, docs/research/trace-v49-design-history-relation-vocabulary-round1/03_SCHOLARLY_SOURCE_REGISTRY.tsv, docs/research/trace-v49-design-history-relation-vocabulary-round1/05_TERM_ATTESTATION_REGISTRY.tsv, docs/research/trace-v49-exploration-composition-review-round1/03_COMPOSITION_SCHOLARLY_SOURCE_REGISTRY.tsv, docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/concept-sense-crosswalk-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/isolated-active-term-audit-ledger-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-canonical-rights-queue-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-shard-1-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scholarly-source-rights-policy.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/candidate-trigger-registry.tsv
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-search-query-log-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-trigger-occurrence-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-trigger-applicability-matrix-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-family-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-rights-ledger-shard-2-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-scope-reconciliation-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/active-vocabulary-evidence-impact-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-ledger-adaptive-source-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-census-shard-2-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-output-manifest-shard-2-v1.tsv, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/17_ADAPTIVE_SOURCE_REVIEW_SHARD_002_AND_SOURCE_SCOPE_RECONCILIATION.md, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-build-receipt-shard-2-v1.json
+- Duration: 62 ms
+- Warnings: PREVIOUS_UNSTAGED_TRIGGER_LEDGER_SEMANTICALLY_SUPERSEDED
+- Errors: none
+- Decision: Continue only if the canonical registry maps all seven emitted trigger occurrences, all 24 applicability decisions are present, and activation/product/projection/payload/closure remain zero.
+- Next: Update the independent verifier to the corrected trigger contract and run deterministic build and verification checks.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 337
+
+- UTC timestamp: 2026-08-28T11:30:47Z
+- Phase: CHECKPOINT-009-INDEPENDENT-VERIFICATION
+- Operation: START — Independently reconstruct corrected shard-2 identities, trigger applicability, evidence quarantine, rights, counts, and hash contracts
+- Command: `python3 scripts/trace_round16b/verify_adaptive_source_review_shard_2.py`
+- Inputs: scripts/trace_round16b/verify_adaptive_source_review_shard_2.py, scripts/trace_round16b/build_adaptive_source_review_shard_2.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/candidate-trigger-registry.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/association-disposition-taxonomy.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-build-receipt-shard-2-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-output-manifest-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-trigger-occurrence-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-trigger-applicability-matrix-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-family-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-scope-reconciliation-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-rights-ledger-shard-2-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-census-shard-2-v1.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-independent-verification-shard-2-v1.json
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 338
+
+- UTC timestamp: 2026-08-28T11:30:47Z
+- Phase: CHECKPOINT-009-INDEPENDENT-VERIFICATION
+- Operation: PASS — Independently reconstruct corrected shard-2 identities, trigger applicability, evidence quarantine, rights, counts, and hash contracts
+- Command: `python3 scripts/trace_round16b/verify_adaptive_source_review_shard_2.py`
+- Inputs: scripts/trace_round16b/verify_adaptive_source_review_shard_2.py, scripts/trace_round16b/build_adaptive_source_review_shard_2.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/candidate-trigger-registry.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/association-disposition-taxonomy.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-build-receipt-shard-2-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-output-manifest-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-trigger-occurrence-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-trigger-applicability-matrix-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-family-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-scope-reconciliation-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-rights-ledger-shard-2-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-census-shard-2-v1.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-independent-verification-shard-2-v1.json
+- Duration: 76 ms
+- Warnings: none
+- Errors: none
+- Decision: Continue only if the implementation-independent verifier passes every reconstruction and fresh negative control.
+- Next: Correct and preserve any verifier failure, then run byte-identical generator and verifier checks.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 339
+
+- UTC timestamp: 2026-08-28T11:32:34Z
+- Phase: CHECKPOINT-009-DETERMINISM
+- Operation: START — Verify byte-identical corrected shard-2 generator outputs
+- Command: `python3 scripts/trace_round16b/build_adaptive_source_review_shard_2.py --check`
+- Inputs: scripts/trace_round16b/build_adaptive_source_review_shard_2.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/candidate-trigger-registry.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-output-manifest-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-build-receipt-shard-2-v1.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 340
+
+- UTC timestamp: 2026-08-28T11:32:34Z
+- Phase: CHECKPOINT-009-DETERMINISM
+- Operation: PASS — Verify byte-identical corrected shard-2 generator outputs
+- Command: `python3 scripts/trace_round16b/build_adaptive_source_review_shard_2.py --check`
+- Inputs: scripts/trace_round16b/build_adaptive_source_review_shard_2.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/candidate-trigger-registry.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-output-manifest-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-build-receipt-shard-2-v1.json
+- Outputs: none
+- Duration: 65 ms
+- Warnings: none
+- Errors: none
+- Decision: Continue only if all 14 generated files are byte-identical to a fresh in-memory reconstruction.
+- Next: Refresh and check the independent verification receipt against the corrected contract.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 341
+
+- UTC timestamp: 2026-08-28T11:32:49Z
+- Phase: CHECKPOINT-009-INDEPENDENT-VERIFICATION
+- Operation: START — Refresh independent shard-2 receipt after canonical trigger applicability remediation
+- Command: `python3 scripts/trace_round16b/verify_adaptive_source_review_shard_2.py`
+- Inputs: scripts/trace_round16b/verify_adaptive_source_review_shard_2.py, scripts/trace_round16b/build_adaptive_source_review_shard_2.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/candidate-trigger-registry.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-trigger-occurrence-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-trigger-applicability-matrix-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-build-receipt-shard-2-v1.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-independent-verification-shard-2-v1.json
+- Warnings: PREVIOUS_INDEPENDENT_RECEIPT_SUPERSEDED_BY_CANONICAL_TRIGGER_REMEDIATION
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 342
+
+- UTC timestamp: 2026-08-28T11:32:49Z
+- Phase: CHECKPOINT-009-INDEPENDENT-VERIFICATION
+- Operation: PASS — Refresh independent shard-2 receipt after canonical trigger applicability remediation
+- Command: `python3 scripts/trace_round16b/verify_adaptive_source_review_shard_2.py`
+- Inputs: scripts/trace_round16b/verify_adaptive_source_review_shard_2.py, scripts/trace_round16b/build_adaptive_source_review_shard_2.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/candidate-trigger-registry.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-trigger-occurrence-ledger-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/external-candidate-trigger-applicability-matrix-shard-2-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-build-receipt-shard-2-v1.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-independent-verification-shard-2-v1.json
+- Duration: 72 ms
+- Warnings: PREVIOUS_INDEPENDENT_RECEIPT_SUPERSEDED_BY_CANONICAL_TRIGGER_REMEDIATION
+- Errors: none
+- Decision: Continue only if independent reconstruction passes with exact seven-trigger and 24-decision applicability coverage.
+- Next: Run byte-identical independent-receipt check and compile both implementations.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 343
+
+- UTC timestamp: 2026-08-28T11:32:56Z
+- Phase: CHECKPOINT-009-DETERMINISM
+- Operation: START — Verify byte-identical independent shard-2 receipt
+- Command: `python3 scripts/trace_round16b/verify_adaptive_source_review_shard_2.py --check`
+- Inputs: scripts/trace_round16b/verify_adaptive_source_review_shard_2.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-independent-verification-shard-2-v1.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 344
+
+- UTC timestamp: 2026-08-28T11:32:56Z
+- Phase: CHECKPOINT-009-DETERMINISM
+- Operation: PASS — Verify byte-identical independent shard-2 receipt
+- Command: `python3 scripts/trace_round16b/verify_adaptive_source_review_shard_2.py --check`
+- Inputs: scripts/trace_round16b/verify_adaptive_source_review_shard_2.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-independent-verification-shard-2-v1.json
+- Outputs: none
+- Duration: 60 ms
+- Warnings: none
+- Errors: none
+- Decision: Continue only if 534 checks and 28 negative controls reproduce a byte-identical PASS receipt.
+- Next: Compile both independent implementations, then run all inherited narrow regressions.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 345
+
+- UTC timestamp: 2026-08-28T11:33:10Z
+- Phase: CHECKPOINT-009-COMPILE
+- Operation: START — Compile shard-2 generator and implementation-independent verifier
+- Command: `python3 -m py_compile scripts/trace_round16b/build_adaptive_source_review_shard_2.py scripts/trace_round16b/verify_adaptive_source_review_shard_2.py`
+- Inputs: scripts/trace_round16b/build_adaptive_source_review_shard_2.py, scripts/trace_round16b/verify_adaptive_source_review_shard_2.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 346
+
+- UTC timestamp: 2026-08-28T11:33:10Z
+- Phase: CHECKPOINT-009-COMPILE
+- Operation: PASS — Compile shard-2 generator and implementation-independent verifier
+- Command: `python3 -m py_compile scripts/trace_round16b/build_adaptive_source_review_shard_2.py scripts/trace_round16b/verify_adaptive_source_review_shard_2.py`
+- Inputs: scripts/trace_round16b/build_adaptive_source_review_shard_2.py, scripts/trace_round16b/verify_adaptive_source_review_shard_2.py
+- Outputs: none
+- Duration: 199 ms
+- Warnings: none
+- Errors: none
+- Decision: Continue only if both Python implementations compile successfully.
+- Next: Run all inherited evidence, method, local-candidate, deferred-surface, and v3 contract regressions.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 347
+
+- UTC timestamp: 2026-08-28T11:33:29Z
+- Phase: CHECKPOINT-009-REGRESSION
+- Operation: START — Regression-check evidence disposition tranche A
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_a.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-a-checkpoint009.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/family-evidence-disposition-tranche-a-v1.tsv
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-a-checkpoint009.json
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 348
+
+- UTC timestamp: 2026-08-28T11:33:29Z
+- Phase: CHECKPOINT-009-REGRESSION
+- Operation: START — Regression-check evidence disposition tranche C independent receipt
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_c.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-c-v1.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 349
+
+- UTC timestamp: 2026-08-28T11:33:29Z
+- Phase: CHECKPOINT-009-REGRESSION
+- Operation: START — Regression-check evidence disposition tranche B
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_b.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-b-checkpoint009.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/family-evidence-disposition-tranche-b-v1.tsv
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-b-checkpoint009.json
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 350
+
+- UTC timestamp: 2026-08-28T11:33:29Z
+- Phase: CHECKPOINT-009-REGRESSION
+- Operation: PASS — Regression-check evidence disposition tranche C independent receipt
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_c.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-c-v1.json
+- Outputs: none
+- Duration: 106 ms
+- Warnings: none
+- Errors: none
+- Decision: Block checkpoint009 if tranche C deterministic receipt changes.
+- Next: Continue regression matrix.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 351
+
+- UTC timestamp: 2026-08-28T11:33:29Z
+- Phase: CHECKPOINT-009-REGRESSION
+- Operation: PASS — Regression-check evidence disposition tranche A
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_a.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-a-checkpoint009.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/family-evidence-disposition-tranche-a-v1.tsv
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-a-checkpoint009.json
+- Duration: 192 ms
+- Warnings: none
+- Errors: none
+- Decision: Block checkpoint009 if tranche A reconstruction changes.
+- Next: Continue regression matrix.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 352
+
+- UTC timestamp: 2026-08-28T11:33:29Z
+- Phase: CHECKPOINT-009-REGRESSION
+- Operation: PASS — Regression-check evidence disposition tranche B
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_b.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-b-checkpoint009.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/family-evidence-disposition-tranche-b-v1.tsv
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-b-checkpoint009.json
+- Duration: 448 ms
+- Warnings: none
+- Errors: none
+- Decision: Block checkpoint009 if tranche B reconstruction changes.
+- Next: Continue regression matrix.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 353
+
+- UTC timestamp: 2026-08-28T11:33:55Z
+- Phase: CHECKPOINT-009-REGRESSION
+- Operation: START — Regression-check adaptive source review shard 1
+- Command: `python3 scripts/trace_round16b/verify_adaptive_source_review_shard_1.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-independent-verification-shard-1-v1.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 354
+
+- UTC timestamp: 2026-08-28T11:33:55Z
+- Phase: CHECKPOINT-009-REGRESSION
+- Operation: START — Regression-check deferred surface census
+- Command: `python3 scripts/trace_round16b/verify_deferred_surface_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-regression-checkpoint009.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-census-v1.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-regression-checkpoint009.json
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 355
+
+- UTC timestamp: 2026-08-28T11:33:55Z
+- Phase: CHECKPOINT-009-REGRESSION
+- Operation: START — Regression-check local candidate census
+- Command: `python3 scripts/trace_round16b/verify_local_candidate_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-regression-checkpoint009.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-census-v2.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-regression-checkpoint009.json
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 356
+
+- UTC timestamp: 2026-08-28T11:33:56Z
+- Phase: CHECKPOINT-009-REGRESSION
+- Operation: START — Regression-check Round 16B method checkpoint
+- Command: `python3 scripts/trace_round16b/verify_method_checkpoint.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-regression-checkpoint009.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/higher-order-method-census-v1.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-regression-checkpoint009.json
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 357
+
+- UTC timestamp: 2026-08-28T11:33:56Z
+- Phase: CHECKPOINT-009-REGRESSION
+- Operation: PASS — Regression-check adaptive source review shard 1
+- Command: `python3 scripts/trace_round16b/verify_adaptive_source_review_shard_1.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-independent-verification-shard-1-v1.json
+- Outputs: none
+- Duration: 87 ms
+- Warnings: none
+- Errors: none
+- Decision: Block checkpoint009 if shard 1 deterministic receipt changes.
+- Next: Continue regression matrix.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 358
+
+- UTC timestamp: 2026-08-28T11:33:56Z
+- Phase: CHECKPOINT-009-REGRESSION
+- Operation: PASS — Regression-check Round 16B method checkpoint
+- Command: `python3 scripts/trace_round16b/verify_method_checkpoint.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-regression-checkpoint009.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/higher-order-method-census-v1.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-regression-checkpoint009.json
+- Duration: 711 ms
+- Warnings: none
+- Errors: none
+- Decision: Block checkpoint009 if governed method reconstruction changes.
+- Next: Continue regression matrix.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 359
+
+- UTC timestamp: 2026-08-28T11:34:02Z
+- Phase: CHECKPOINT-009-REGRESSION
+- Operation: PASS — Regression-check deferred surface census
+- Command: `python3 scripts/trace_round16b/verify_deferred_surface_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-regression-checkpoint009.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-census-v1.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-regression-checkpoint009.json
+- Duration: 6561 ms
+- Warnings: none
+- Errors: none
+- Decision: Block checkpoint009 if deferred-surface reconstruction changes.
+- Next: Continue regression matrix.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 360
+
+- UTC timestamp: 2026-08-28T11:34:03Z
+- Phase: CHECKPOINT-009-REGRESSION
+- Operation: PASS — Regression-check local candidate census
+- Command: `python3 scripts/trace_round16b/verify_local_candidate_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-regression-checkpoint009.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-census-v2.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-regression-checkpoint009.json
+- Duration: 7826 ms
+- Warnings: none
+- Errors: none
+- Decision: Block checkpoint009 if local candidate reconstruction changes.
+- Next: Continue regression matrix.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 361
+
+- UTC timestamp: 2026-08-28T11:34:13Z
+- Phase: CHECKPOINT-009-REGRESSION
+- Operation: START — Regression-check v3 semantic contract independent verifier
+- Command: `python3 scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-independent-verification-v1.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 362
+
+- UTC timestamp: 2026-08-28T11:34:13Z
+- Phase: CHECKPOINT-009-REGRESSION
+- Operation: START — Regression-check v3 semantic contract generator
+- Command: `python3 scripts/trace_round16b/build_v3_semantic_contract.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-build-receipt-v1.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 363
+
+- UTC timestamp: 2026-08-28T11:34:13Z
+- Phase: CHECKPOINT-009-REGRESSION
+- Operation: PASS — Regression-check v3 semantic contract generator
+- Command: `python3 scripts/trace_round16b/build_v3_semantic_contract.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-build-receipt-v1.json
+- Outputs: none
+- Duration: 152 ms
+- Warnings: none
+- Errors: none
+- Decision: Block checkpoint009 if v3 semantic contract bytes change.
+- Next: Continue regression matrix.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 364
+
+- UTC timestamp: 2026-08-28T11:34:14Z
+- Phase: CHECKPOINT-009-REGRESSION
+- Operation: PASS — Regression-check v3 semantic contract independent verifier
+- Command: `python3 scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-independent-verification-v1.json
+- Outputs: none
+- Duration: 795 ms
+- Warnings: none
+- Errors: none
+- Decision: Block checkpoint009 if independent v3 reconstruction changes.
+- Next: Proceed to protected database and v2 surface immutability checks.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 365
+
+- UTC timestamp: 2026-08-28T11:34:29Z
+- Phase: CHECKPOINT-009-PROTECTED-SURFACES
+- Operation: START — Verify frozen Round 13 composition evidence registry was not mutated by additive quarantine
+- Command: `git diff --exit-code 5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3 -- docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv`
+- Inputs: docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 366
+
+- UTC timestamp: 2026-08-28T11:34:29Z
+- Phase: CHECKPOINT-009-PROTECTED-SURFACES
+- Operation: START — Verify v2 schemas, generated frontend, and database remain unchanged from checkpoint008
+- Command: `git diff --exit-code 5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3 -- schemas/trace/exploration/v2 frontend/generated/trace-exploration-v2 database`
+- Inputs: schemas/trace/exploration/v2, frontend/generated/trace-exploration-v2, database
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 367
+
+- UTC timestamp: 2026-08-28T11:34:29Z
+- Phase: CHECKPOINT-009-PROTECTED-SURFACES
+- Operation: START — Verify frozen v49 database authority remains unchanged
+- Command: `python3 scripts/repository/verify_v49_database_freeze.py --repo .`
+- Inputs: database
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 368
+
+- UTC timestamp: 2026-08-28T11:34:29Z
+- Phase: CHECKPOINT-009-PROTECTED-SURFACES
+- Operation: PASS — Verify v2 schemas, generated frontend, and database remain unchanged from checkpoint008
+- Command: `git diff --exit-code 5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3 -- schemas/trace/exploration/v2 frontend/generated/trace-exploration-v2 database`
+- Inputs: schemas/trace/exploration/v2, frontend/generated/trace-exploration-v2, database
+- Outputs: none
+- Duration: 34 ms
+- Warnings: none
+- Errors: none
+- Decision: Block checkpoint009 if any protected v2 or database surface differs from checkpoint008.
+- Next: Continue protected-surface checks.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 369
+
+- UTC timestamp: 2026-08-28T11:34:29Z
+- Phase: CHECKPOINT-009-PROTECTED-SURFACES
+- Operation: PASS — Verify frozen Round 13 composition evidence registry was not mutated by additive quarantine
+- Command: `git diff --exit-code 5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3 -- docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv`
+- Inputs: docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv
+- Outputs: none
+- Duration: 35 ms
+- Warnings: none
+- Errors: none
+- Decision: Block checkpoint009 if the inherited evidence registry changes; the correction must remain additive.
+- Next: Proceed to staging prerequisites and repository gates.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 370
+
+- UTC timestamp: 2026-08-28T11:34:30Z
+- Phase: CHECKPOINT-009-PROTECTED-SURFACES
+- Operation: PASS — Verify frozen v49 database authority remains unchanged
+- Command: `python3 scripts/repository/verify_v49_database_freeze.py --repo .`
+- Inputs: database
+- Outputs: none
+- Duration: 982 ms
+- Warnings: none
+- Errors: none
+- Decision: Block checkpoint009 if the frozen database authority changes.
+- Next: Continue protected-surface checks.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 371
+
+- UTC timestamp: 2026-08-28T11:34:43Z
+- Phase: CHECKPOINT-009-STAGING-PREREQUISITE
+- Operation: START — Stage only the two new shard-2 scripts and maintenance allowlist before repository hygiene
+- Command: `git add scripts/trace_round16b/build_adaptive_source_review_shard_2.py scripts/trace_round16b/verify_adaptive_source_review_shard_2.py docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json`
+- Inputs: scripts/trace_round16b/build_adaptive_source_review_shard_2.py, scripts/trace_round16b/verify_adaptive_source_review_shard_2.py, docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json
+- Declared outputs: scripts/trace_round16b/build_adaptive_source_review_shard_2.py, scripts/trace_round16b/verify_adaptive_source_review_shard_2.py, docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 372
+
+- UTC timestamp: 2026-08-28T11:34:43Z
+- Phase: CHECKPOINT-009-STAGING-PREREQUISITE
+- Operation: FAIL — Stage only the two new shard-2 scripts and maintenance allowlist before repository hygiene
+- Command: `git add scripts/trace_round16b/build_adaptive_source_review_shard_2.py scripts/trace_round16b/verify_adaptive_source_review_shard_2.py docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json`
+- Inputs: scripts/trace_round16b/build_adaptive_source_review_shard_2.py, scripts/trace_round16b/verify_adaptive_source_review_shard_2.py, docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json
+- Outputs: scripts/trace_round16b/build_adaptive_source_review_shard_2.py, scripts/trace_round16b/verify_adaptive_source_review_shard_2.py, docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json
+- Duration: 16 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_128
+- Decision: Preserve the failure and correct it additively.
+- Next: Run repository hygiene against the indexed script set.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 373
+
+- UTC timestamp: 2026-08-28T11:35:23Z
+- Phase: CHECKPOINT-009-REPOSITORY-HYGIENE
+- Operation: START — Audit repository hygiene with shard-2 scripts tracked and allowlisted
+- Command: `python3 scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint009.json --markdown docs/research/trace-v49-exploration-higher-order-association-closure-round16b/18_REPOSITORY_HYGIENE_CHECKPOINT009.md`
+- Inputs: docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json, scripts/trace_round16b/build_adaptive_source_review_shard_2.py, scripts/trace_round16b/verify_adaptive_source_review_shard_2.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint009.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/18_REPOSITORY_HYGIENE_CHECKPOINT009.md
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 374
+
+- UTC timestamp: 2026-08-28T11:35:35Z
+- Phase: CHECKPOINT-009-REPOSITORY-HYGIENE
+- Operation: PASS — Audit repository hygiene with shard-2 scripts tracked and allowlisted
+- Command: `python3 scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint009.json --markdown docs/research/trace-v49-exploration-higher-order-association-closure-round16b/18_REPOSITORY_HYGIENE_CHECKPOINT009.md`
+- Inputs: docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json, scripts/trace_round16b/build_adaptive_source_review_shard_2.py, scripts/trace_round16b/verify_adaptive_source_review_shard_2.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint009.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/18_REPOSITORY_HYGIENE_CHECKPOINT009.md
+- Duration: 11327 ms
+- Warnings: none
+- Errors: none
+- Decision: Block checkpoint009 unless repository hygiene passes with zero unknown active scripts.
+- Next: Run blob, LFS, secret, and Git object-integrity gates.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 375
+
+- UTC timestamp: 2026-08-28T11:35:54Z
+- Phase: CHECKPOINT-009-REPOSITORY-INTEGRITY
+- Operation: START — Verify all Git LFS objects and pointers
+- Command: `git lfs fsck --objects --pointers`
+- Inputs: .gitattributes
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 376
+
+- UTC timestamp: 2026-08-28T11:35:54Z
+- Phase: CHECKPOINT-009-REPOSITORY-INTEGRITY
+- Operation: START — Verify warning, LFS, and hard ordinary-blob thresholds for checkpoint009
+- Command: `python3 scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint009.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json, .gitattributes
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint009.json
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 377
+
+- UTC timestamp: 2026-08-28T11:35:54Z
+- Phase: CHECKPOINT-009-REPOSITORY-INTEGRITY
+- Operation: START — Scan repository for governed secret patterns
+- Command: `python3 scripts/audit_secret_patterns.py`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 378
+
+- UTC timestamp: 2026-08-28T11:35:54Z
+- Phase: CHECKPOINT-009-REPOSITORY-INTEGRITY
+- Operation: START — Run strict full Git object integrity verification
+- Command: `git fsck --full --strict --no-dangling`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 379
+
+- UTC timestamp: 2026-08-28T11:35:58Z
+- Phase: CHECKPOINT-009-REPOSITORY-INTEGRITY
+- Operation: PASS — Verify all Git LFS objects and pointers
+- Command: `git lfs fsck --objects --pointers`
+- Inputs: .gitattributes
+- Outputs: none
+- Duration: 3992 ms
+- Warnings: none
+- Errors: none
+- Decision: Block checkpoint009 on any missing or corrupt LFS object or pointer.
+- Next: Complete repository-integrity matrix.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 380
+
+- UTC timestamp: 2026-08-28T11:36:14Z
+- Phase: CHECKPOINT-009-REPOSITORY-INTEGRITY
+- Operation: PASS — Verify warning, LFS, and hard ordinary-blob thresholds for checkpoint009
+- Command: `python3 scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint009.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json, .gitattributes
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint009.json
+- Duration: 19785 ms
+- Warnings: none
+- Errors: none
+- Decision: Block checkpoint009 if any ordinary blob violates warning, LFS, or hosting thresholds.
+- Next: Complete repository-integrity matrix.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 381
+
+- UTC timestamp: 2026-08-28T11:37:30Z
+- Phase: CHECKPOINT-009-REPOSITORY-INTEGRITY
+- Operation: PASS — Scan repository for governed secret patterns
+- Command: `python3 scripts/audit_secret_patterns.py`
+- Inputs: none
+- Outputs: none
+- Duration: 95748 ms
+- Warnings: none
+- Errors: none
+- Decision: Block checkpoint009 on any detected secret pattern.
+- Next: Complete repository-integrity matrix.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 382
+
+- UTC timestamp: 2026-08-28T11:37:39Z
+- Phase: CHECKPOINT-009-REPOSITORY-INTEGRITY
+- Operation: PASS — Run strict full Git object integrity verification
+- Command: `git fsck --full --strict --no-dangling`
+- Inputs: none
+- Outputs: none
+- Duration: 104881 ms
+- Warnings: none
+- Errors: none
+- Decision: Block checkpoint009 on any Git object-integrity failure.
+- Next: Complete repository-integrity matrix.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 383
+
+- UTC timestamp: 2026-08-28T11:39:06Z
+- Phase: CHECKPOINT-009-STAGED-DIFF
+- Operation: START — Verify exact staged checkpoint009 diff for whitespace errors
+- Command: `git diff --check --cached`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 384
+
+- UTC timestamp: 2026-08-28T11:39:06Z
+- Phase: CHECKPOINT-009-STAGED-DIFF
+- Operation: PASS — Verify exact staged checkpoint009 diff for whitespace errors
+- Command: `git diff --check --cached`
+- Inputs: none
+- Outputs: none
+- Duration: 55 ms
+- Warnings: none
+- Errors: none
+- Decision: Block commit on any staged whitespace error.
+- Next: Stage this final diff-check evidence, seal the execution log, and repeat a direct cached diff check.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 385
+
+- UTC timestamp: 2026-08-28T11:40:40Z
+- Phase: CHECKPOINT-009-EXECUTION-SEAL
+- Operation: START — Refresh latest-writer hashes for authorized checkpoint009 governance and failure-evidence paths
+- Command: `ls -ld docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint009.tsv scripts/trace_round16b/build_adaptive_source_review_shard_2.py scripts/trace_round16b/verify_adaptive_source_review_shard_2.py docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-log-verification-checkpoint009-prelatest-writer-failure.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv, docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint009.tsv, scripts/trace_round16b/build_adaptive_source_review_shard_2.py, scripts/trace_round16b/verify_adaptive_source_review_shard_2.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-log-verification-checkpoint009-prelatest-writer-failure.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv, docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint009.tsv, scripts/trace_round16b/build_adaptive_source_review_shard_2.py, scripts/trace_round16b/verify_adaptive_source_review_shard_2.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-log-verification-checkpoint009-prelatest-writer-failure.json
+- Warnings: PREVIOUS_EXECUTION_SEAL_FAILED_ON_CHECKPOINT008_LATEST_WRITER_HASHES_AND_IS_PRESERVED
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`
+
+## Event 386
+
+- UTC timestamp: 2026-08-28T11:40:40Z
+- Phase: CHECKPOINT-009-EXECUTION-SEAL
+- Operation: PASS — Refresh latest-writer hashes for authorized checkpoint009 governance and failure-evidence paths
+- Command: `ls -ld docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint009.tsv scripts/trace_round16b/build_adaptive_source_review_shard_2.py scripts/trace_round16b/verify_adaptive_source_review_shard_2.py docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-log-verification-checkpoint009-prelatest-writer-failure.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv, docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint009.tsv, scripts/trace_round16b/build_adaptive_source_review_shard_2.py, scripts/trace_round16b/verify_adaptive_source_review_shard_2.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-log-verification-checkpoint009-prelatest-writer-failure.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv, docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint009.tsv, scripts/trace_round16b/build_adaptive_source_review_shard_2.py, scripts/trace_round16b/verify_adaptive_source_review_shard_2.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-log-verification-checkpoint009-prelatest-writer-failure.json
+- Duration: 8 ms
+- Warnings: PREVIOUS_EXECUTION_SEAL_FAILED_ON_CHECKPOINT008_LATEST_WRITER_HASHES_AND_IS_PRESERVED
+- Errors: none
+- Decision: The declared output hashes supersede checkpoint008 latest-writer records without changing governed content.
+- Next: Restage append-only evidence and rerun the direct execution-log seal.
+- Git SHA: `5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3`

@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "git",
+    "diff",
+    "--exit-code",
+    "5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3",
+    "--",
+    "schemas/trace/exploration/v2",
+    "frontend/generated/trace-exploration-v2",
+    "database"
+  ],
+  "command": "git diff --exit-code 5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3 -- schemas/trace/exploration/v2 frontend/generated/trace-exploration-v2 database",
+  "command_id": "1787916869029-verify-v2-protected-diff-checkpoint009",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 34,
+  "end_timestamp_utc": "2026-08-28T11:34:29Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "verify-v2-protected-diff-checkpoint009",
+  "phase_id": "CHECKPOINT-009-PROTECTED-SURFACES",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T11:34:29Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

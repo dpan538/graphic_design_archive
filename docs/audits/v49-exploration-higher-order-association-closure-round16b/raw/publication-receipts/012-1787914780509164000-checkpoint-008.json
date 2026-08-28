@@ -1,0 +1,59 @@
+{
+  "attempt_id": "1787914780509164000-checkpoint-008",
+  "branch": "codex/trace-v49-exploration-higher-order-association-closure-round16b",
+  "branch_ref": "refs/heads/codex/trace-v49-exploration-higher-order-association-closure-round16b",
+  "checkpoint_id": "CHECKPOINT-008",
+  "failure_codes": [],
+  "local_head_sha": "5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3",
+  "postconditions": {
+    "remote_branch_equals_local_head": true,
+    "remote_inventory_pass": true,
+    "remote_main_unchanged": true,
+    "rollback_tag_absent": true
+  },
+  "preconditions": {
+    "current_branch_exact": true,
+    "push_argv_has_no_force": true,
+    "push_refspec_exact": true,
+    "remote_inventory_pass": true,
+    "remote_main_exact": true,
+    "remote_prior_tip_is_ancestor_or_absent": true,
+    "rollback_tag_absent": true,
+    "source_is_ancestor": true,
+    "worktree_clean": true
+  },
+  "push_argv": [
+    "git",
+    "push",
+    "origin",
+    "HEAD:refs/heads/codex/trace-v49-exploration-higher-order-association-closure-round16b"
+  ],
+  "push_exit_code": 0,
+  "push_stderr_path": "/Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787914780509164000-checkpoint-008.stderr.log",
+  "push_stderr_sha256": "acc6e9fa7b2d6fc5b1dc444ad21c9866d16d283172aaaf4e76760b0b51a7e662",
+  "push_stdout_path": "/Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787914780509164000-checkpoint-008.stdout.log",
+  "push_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "receipt": {
+    "DEPLOYMENT_PERFORMED": false,
+    "FINAL_LOCAL_SHA": "5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3",
+    "FINAL_REMOTE_SHA": "5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3",
+    "FORCE_PUSH_USED": false,
+    "HISTORY_REWRITTEN": false,
+    "REMOTE_MAIN_SHA": "8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e",
+    "ROLLBACK_TAG_PUSHED": false,
+    "WORKTREE_CLEAN": true
+  },
+  "remote_branch_after": "5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3",
+  "remote_branch_before": "e5ddbc443c4a0a28004034cba439340ecdeb9a75",
+  "remote_main_after": "8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e",
+  "remote_main_before": "8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e",
+  "remote_ref_map_after_sha256": "ce649a1c07c0863f9ca0c0471b190cf4ecbb9d55ee7c9936aea58a46944ec327",
+  "remote_ref_map_before_sha256": "630597f695fa35c0a15534771f0fda2525a764549629479ed34702e66062100f",
+  "repo": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "schema_version": "trace-round16b-checkpoint-publication/v1",
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "started_at_utc": "2026-08-28T10:59:40Z",
+  "status": "PASS",
+  "unrelated_remote_ref_difference_count": 0,
+  "unrelated_remote_ref_differences": []
+}

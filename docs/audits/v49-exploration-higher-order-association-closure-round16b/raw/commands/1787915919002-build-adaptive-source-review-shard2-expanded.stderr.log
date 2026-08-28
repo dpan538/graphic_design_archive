@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/build_adaptive_source_review_shard_2.py", line 736, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/build_adaptive_source_review_shard_2.py", line 713, in main
+    output = build_outputs()
+  File "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/build_adaptive_source_review_shard_2.py", line 611, in build_outputs
+    validate_inputs()
+    ~~~~~~~~~~~~~~~^^
+  File "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/build_adaptive_source_review_shard_2.py", line 157, in validate_inputs
+    tuple(sorted(json.loads(row["participant_labels_json"])))
+                            ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'participant_labels_json'

@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/verify_v3_semantic_contract_independent.py",
+    "--check"
+  ],
+  "command": "python3 scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check",
+  "command_id": "1787916853629-regress-v3-independent-checkpoint009",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 795,
+  "end_timestamp_utc": "2026-08-28T11:34:14Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "regress-v3-independent-checkpoint009",
+  "phase_id": "CHECKPOINT-009-REGRESSION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T11:34:13Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "99e7cc9b34476c1cf5814835dca7a09f571413b15294a7181785a1f9cafcabd0",
+  "timed_out": false
+}

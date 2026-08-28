@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "git",
+    "add",
+    "scripts/trace_round16b/build_adaptive_source_review_shard_2.py",
+    "scripts/trace_round16b/verify_adaptive_source_review_shard_2.py",
+    "docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json"
+  ],
+  "command": "git add scripts/trace_round16b/build_adaptive_source_review_shard_2.py scripts/trace_round16b/verify_adaptive_source_review_shard_2.py docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json",
+  "command_id": "1787916883025-stage-shard2-scripts-and-allowlist-for-hygiene",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 16,
+  "end_timestamp_utc": "2026-08-28T11:34:43Z",
+  "exit_code": 128,
+  "launch_error": "",
+  "operation_id": "stage-shard2-scripts-and-allowlist-for-hygiene",
+  "phase_id": "CHECKPOINT-009-STAGING-PREREQUISITE",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T11:34:43Z",
+  "stderr_sha256": "38900e945abc87da2f0d7d7cc9c7bbe22b124c61ab5605d59267f04600108019",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

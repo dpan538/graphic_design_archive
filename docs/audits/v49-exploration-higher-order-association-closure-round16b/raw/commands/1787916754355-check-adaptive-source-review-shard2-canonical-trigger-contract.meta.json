@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/build_adaptive_source_review_shard_2.py",
+    "--check"
+  ],
+  "command": "python3 scripts/trace_round16b/build_adaptive_source_review_shard_2.py --check",
+  "command_id": "1787916754355-check-adaptive-source-review-shard2-canonical-trigger-contract",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 65,
+  "end_timestamp_utc": "2026-08-28T11:32:34Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "check-adaptive-source-review-shard2-canonical-trigger-contract",
+  "phase_id": "CHECKPOINT-009-DETERMINISM",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T11:32:34Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "b4b8d9196edf260f74e2b16d7379a08c3da001e1011eadb0f496b4e9f2d0e3e9",
+  "timed_out": false
+}

@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "ls",
+    "-ld",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv",
+    "docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint009.tsv",
+    "scripts/trace_round16b/build_adaptive_source_review_shard_2.py",
+    "scripts/trace_round16b/verify_adaptive_source_review_shard_2.py",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-log-verification-checkpoint009-prelatest-writer-failure.json"
+  ],
+  "command": "ls -ld docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint009.tsv scripts/trace_round16b/build_adaptive_source_review_shard_2.py scripts/trace_round16b/verify_adaptive_source_review_shard_2.py docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-log-verification-checkpoint009-prelatest-writer-failure.json",
+  "command_id": "1787917240544-refresh-latest-writer-hashes-checkpoint009",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 8,
+  "end_timestamp_utc": "2026-08-28T11:40:40Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "refresh-latest-writer-hashes-checkpoint009",
+  "phase_id": "CHECKPOINT-009-EXECUTION-SEAL",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T11:40:40Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "d22a6dcd47822a6c313a0d390a4e35d7b1f8b08a62e60a7c1592b7f813be0f44",
+  "timed_out": false
+}
