@@ -6,7 +6,7 @@ Authority base: `11412d23e309a647a3a2fb0b3db4369dcdd15993` (`9117d6fc189b8c8a986
 
 Function 3 is **not closed**. The complete governed prior-record census is superseded into explicit current obligations, but current evidence does not establish candidate-universe completeness, higher-order group closure, global composition coherence, product reachability, or computational closure. Checkpoint 011's database and runtime capability remains a zero-production-activation capability result, not a historical closure result.
 
-The primary build and a separate stdlib-only verifier agree byte-for-byte and by independently reconstructed source sets. The verifier does not import, invoke, or reuse the primary builder's enumeration. It passes 25 named checks and all 48 adversarial and normalization controls. Independent receipt SHA-256: `f978c06e92056c894eb320f373291f71fd87bca3606755e9a5d9c19d21a3a5e4`.
+The primary build and a separate stdlib-only verifier agree byte-for-byte and by independently reconstructed source sets. The verifier does not import, invoke, or reuse the primary builder's enumeration. It passes 25 named checks and all 48 adversarial and normalization controls. Independent receipt SHA-256: `c9b34b7ce83bcb62b1fb0be988d0f0dd5872fe32e3cf8050ef2f05c608030f1a`.
 
 ## Current evidence-bounded census
 
@@ -69,13 +69,13 @@ All open or partially reconciled rows name at least one of the 16 open current o
 
 | Primary artifact | SHA-256 |
 |---|---|
-| `docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-closure-build-receipt-checkpoint012-v1.json` | `547637254c0f4ea2fabed280f23f7c32dd7485409baa01fe86951e3d6eac7679` |
+| `docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-closure-build-receipt-checkpoint012-v1.json` | `a63f9f3236b82eec088be726a24b6921f20595c82d64b5bac82ef547cef0798a` |
 | `docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-closure-metrics-checkpoint012-v1.json` | `7c72dfc318f2dcb78090946fabe7f56b2780d6a7ec2ee780c7703753a1b4a54f` |
 | `docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-current-obligation-ledger-checkpoint012-v1.tsv` | `bb252c7152d50db49b81d687532237bf6b7b4fe731eaef48d089882c39e6d01d` |
-| `docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-input-manifest-checkpoint012-v1.tsv` | `e8e643d051fada492f9d5954c3542bbdb300fb898db95290d4140299887b1b30` |
+| `docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-input-manifest-checkpoint012-v1.tsv` | `0aa96c5f4f3b95c7f356d1d3acb9c11aef7243db0c69136bb8232c8bdfd2cfce` |
 | `docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-supersession-ledger-checkpoint012-v1.tsv` | `6d79364477c6236e66e0310100f656b6ff6edc47d9b11071551567d85a2df50d` |
 
-The input manifest contains 36 exact governed inputs. Four unchanged Checkpoint 011 capability artifacts are pinned to hashes recomputed from the committed `11412d23e309a647a3a2fb0b3db4369dcdd15993` bytes. The corrected Round 16A census and refreshed v3 runtime independent receipt are separately pinned as Checkpoint 012 prerequisite corrections. Primary check mode and independent check mode must reproduce these exact files without rewriting them.
+The input manifest contains 36 exact governed inputs. Three unchanged Checkpoint 011 capability artifacts are pinned to hashes recomputed from the committed `11412d23e309a647a3a2fb0b3db4369dcdd15993` bytes. The corrected Round 16A census and refreshed v3 runtime independent receipt are separately pinned as Checkpoint 012 prerequisite corrections. The database manifest is pinned as the Checkpoint 015 checkout-portability correction; that correction changes verifier path validation only and does not change SQL, the normalized schema hash, or any closure result. Primary check mode and independent check mode must reproduce these exact files without rewriting them.
 
 ## Closure receipt
 

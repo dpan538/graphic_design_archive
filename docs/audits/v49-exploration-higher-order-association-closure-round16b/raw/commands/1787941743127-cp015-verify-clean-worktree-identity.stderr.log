@@ -1,0 +1,8 @@
+Error cleaning Git LFS object: open /Users/jarlgiovanni/Desktop/modern_GD_history/.git/lfs/tmp/767173762: operation not permitted
+error: packet write failed: Broken pipe
+error: external filter 'git-lfs filter-process' failed
+fatal: generated/public_surfaces_prefreeze_candidate_v48.json: clean filter 'lfs' failed
+Failed to run `git update-index`: error running /Applications/Xcode.app/Contents/Developer/usr/libexec/git-core/git 'update-index' '-q' '--refresh': 'Error cleaning Git LFS object: open /Users/jarlgiovanni/Desktop/modern_GD_history/.git/lfs/tmp/419629197: operation not permitted
+error: packet write failed: Broken pipe
+error: external filter 'git-lfs filter-process' failed
+fatal: generated/public_surfaces_prefreeze_candidate_v48.json: clean filter 'lfs' failed' 'exit status 128'

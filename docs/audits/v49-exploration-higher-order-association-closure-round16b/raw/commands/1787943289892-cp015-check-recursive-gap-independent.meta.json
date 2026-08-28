@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "python3 -B scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py --check"
+  ],
+  "command": "/bin/sh -c 'python3 -B scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py --check'",
+  "command_id": "1787943289892-cp015-check-recursive-gap-independent",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 160,
+  "end_timestamp_utc": "2026-08-28T18:54:50Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-check-recursive-gap-independent",
+  "phase_id": "CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:54:49Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "f2af6256d9534ea22c8d91108ba2d0ac1289be473a9845c79d7cdf4b08016567",
+  "timed_out": false
+}

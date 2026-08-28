@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "set -eu; pid=59281; pgid=59281; if pid_rows=$(ps -p \"$pid\" -o pid=); then test -z \"$pid_rows\"; else rc=$?; test \"$rc\" -eq 1; fi; if group_rows=$(pgrep -g \"$pgid\"); then printf \"%s\\n\" \"$group_rows\" >&2; exit 1; else rc=$?; test \"$rc\" -eq 1; fi; if listener_rows=$(lsof -nP -iTCP:45973 -sTCP:LISTEN); then printf \"%s\\n\" \"$listener_rows\" >&2; exit 1; else rc=$?; test \"$rc\" -eq 1; fi; printf \"%s\\n\" SERVER_PID_59281_ABSENT=PASS PROCESS_GROUP_59281_EMPTY=PASS LOOPBACK_LISTENER_45973_ABSENT=PASS"
+  ],
+  "command": "/bin/sh -c 'set -eu; pid=59281; pgid=59281; if pid_rows=$(ps -p \"$pid\" -o pid=); then test -z \"$pid_rows\"; else rc=$?; test \"$rc\" -eq 1; fi; if group_rows=$(pgrep -g \"$pgid\"); then printf \"%s\\n\" \"$group_rows\" >&2; exit 1; else rc=$?; test \"$rc\" -eq 1; fi; if listener_rows=$(lsof -nP -iTCP:45973 -sTCP:LISTEN); then printf \"%s\\n\" \"$listener_rows\" >&2; exit 1; else rc=$?; test \"$rc\" -eq 1; fi; printf \"%s\\n\" SERVER_PID_59281_ABSENT=PASS PROCESS_GROUP_59281_EMPTY=PASS LOOPBACK_LISTENER_45973_ABSENT=PASS'",
+  "command_id": "1787942359885-cp015-v3-production-http-cleanup-proof-correction1",
+  "cwd": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+  "duration_ms": 68,
+  "end_timestamp_utc": "2026-08-28T18:39:19Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-v3-production-http-cleanup-proof-correction1",
+  "phase_id": "CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:39:19Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "b3d522fd90a63cc43d1b7c8cb21f3a66f56bf69f9e5b7c1cc959b15b08f6be57",
+  "timed_out": false
+}

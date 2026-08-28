@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "ln",
+    "-s",
+    "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules",
+    "frontend/node_modules"
+  ],
+  "command": "ln -s /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules frontend/node_modules",
+  "command_id": "1787941916950-cp015-create-ignored-frontend-node-modules-symlink-correction1",
+  "cwd": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+  "duration_ms": 5,
+  "end_timestamp_utc": "2026-08-28T18:31:56Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-create-ignored-frontend-node-modules-symlink-correction1",
+  "phase_id": "CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:31:56Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

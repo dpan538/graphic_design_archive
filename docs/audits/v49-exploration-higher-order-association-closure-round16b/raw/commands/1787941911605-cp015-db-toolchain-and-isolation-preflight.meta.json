@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "set -eu\nfor tool in initdb pg_ctl postgres psql createdb dropdb pg_dump pg_isready; do test -x \"/opt/homebrew/opt/postgresql@16/bin/$tool\"; done\nversion=$(/opt/homebrew/opt/postgresql@16/bin/postgres --version)\ncase \"$version\" in *\"16.13\"*) ;; *) printf \"%s\\n\" \"unexpected PostgreSQL version: $version\" >&2; exit 1 ;; esac\nif lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then printf \"%s\\n\" CP15_DATABASE_PORT_FREE=FAIL >&2; exit 1; fi\ncount=$(ipcs -m -a | rg -c \"^m[[:space:]]+\" || true)\ntest \"$count\" -le 31\nprintf \"%s\\n\" \"POSTGRESQL_TOOLCHAIN=$version\" CP15_DATABASE_PORT_59473_FREE=PASS \"SYSV_SHARED_MEMORY_IDENTIFIER_COUNT=$count\" BOOTSTRAP_IPC_SLOT_AVAILABLE=PASS"
+  ],
+  "command": "/bin/sh -c 'set -eu\nfor tool in initdb pg_ctl postgres psql createdb dropdb pg_dump pg_isready; do test -x \"/opt/homebrew/opt/postgresql@16/bin/$tool\"; done\nversion=$(/opt/homebrew/opt/postgresql@16/bin/postgres --version)\ncase \"$version\" in *\"16.13\"*) ;; *) printf \"%s\\n\" \"unexpected PostgreSQL version: $version\" >&2; exit 1 ;; esac\nif lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then printf \"%s\\n\" CP15_DATABASE_PORT_FREE=FAIL >&2; exit 1; fi\ncount=$(ipcs -m -a | rg -c \"^m[[:space:]]+\" || true)\ntest \"$count\" -le 31\nprintf \"%s\\n\" \"POSTGRESQL_TOOLCHAIN=$version\" CP15_DATABASE_PORT_59473_FREE=PASS \"SYSV_SHARED_MEMORY_IDENTIFIER_COUNT=$count\" BOOTSTRAP_IPC_SLOT_AVAILABLE=PASS'",
+  "command_id": "1787941911605-cp015-db-toolchain-and-isolation-preflight",
+  "cwd": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+  "duration_ms": 77,
+  "end_timestamp_utc": "2026-08-28T18:31:51Z",
+  "exit_code": 2,
+  "launch_error": "",
+  "operation_id": "cp015-db-toolchain-and-isolation-preflight",
+  "phase_id": "CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:31:51Z",
+  "stderr_sha256": "09149297506b7f6d125d21d57a2ead3ea4cfd0ab497faef2a29b50c5ce8a0c79",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

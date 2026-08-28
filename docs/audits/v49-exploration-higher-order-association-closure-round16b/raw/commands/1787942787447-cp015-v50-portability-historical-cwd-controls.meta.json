@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "-c",
+    "import importlib.util,json,pathlib; p=pathlib.Path('database/scripts/verify_v50_round16b_manifest.py'); s=importlib.util.spec_from_file_location('v50',p); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); receipt=json.loads((m.ROOT/m.EXECUTION_RECEIPT).read_text()); rows=m.command_ledger_rows(); checks=0\nfor replay in receipt['freshReplays']:\n meta,out=m.verified_command(replay['commandIds']['test'],rows); m.verify_race_evidence(replay,out,meta); checks+=1\n bad=dict(meta); bad['cwd']='/private/tmp/wrong-historical-root'\n try: m.verify_race_evidence(replay,out,bad)\n except SystemExit as exc: assert str(exc).startswith('V50_RACE_COMMAND_OUTPUT_MISMATCH:'); checks+=1\n else: raise AssertionError('wrong historical cwd accepted')\nprint({'status':'PASS','check_count':checks,'control':'historical stdout path is bound to verified historical meta.cwd, not current checkout ROOT'})"
+  ],
+  "command": "python3 -B -c 'import importlib.util,json,pathlib; p=pathlib.Path('\"'\"'database/scripts/verify_v50_round16b_manifest.py'\"'\"'); s=importlib.util.spec_from_file_location('\"'\"'v50'\"'\"',p); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); receipt=json.loads((m.ROOT/m.EXECUTION_RECEIPT).read_text()); rows=m.command_ledger_rows(); checks=0\nfor replay in receipt['\"'\"'freshReplays'\"'\"']:\n meta,out=m.verified_command(replay['\"'\"'commandIds'\"'\"']['\"'\"'test'\"'\"'],rows); m.verify_race_evidence(replay,out,meta); checks+=1\n bad=dict(meta); bad['\"'\"'cwd'\"'\"']='\"'\"'/private/tmp/wrong-historical-root'\"'\"'\n try: m.verify_race_evidence(replay,out,bad)\n except SystemExit as exc: assert str(exc).startswith('\"'\"'V50_RACE_COMMAND_OUTPUT_MISMATCH:'\"'\"'); checks+=1\n else: raise AssertionError('\"'\"'wrong historical cwd accepted'\"'\"')\nprint({'\"'\"'status'\"'\"':'\"'\"'PASS'\"'\"','\"'\"'check_count'\"'\"':checks,'\"'\"'control'\"'\"':'\"'\"'historical stdout path is bound to verified historical meta.cwd, not current checkout ROOT'\"'\"'})'",
+  "command_id": "1787942787447-cp015-v50-portability-historical-cwd-controls",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 47,
+  "end_timestamp_utc": "2026-08-28T18:46:27Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-v50-portability-historical-cwd-controls",
+  "phase_id": "CHECKPOINT-015-V50-PORTABILITY-CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:46:27Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "867410eed8aaf75b1773401691e8561d29457e4badfbcae9276509c1c0fa1a9b",
+  "timed_out": false
+}

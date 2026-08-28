@@ -1,0 +1,25 @@
+
+> archive-box-frontend@0.1.0 test:exploration-composition-review
+> node --experimental-strip-types scripts/test-exploration-composition-review.mjs
+
+{
+  "status": "PASS",
+  "treeStrategyCount": 6,
+  "topologyConformanceFixtureCount": 6,
+  "sharedNegativeTopologyFixtureCount": 12,
+  "topologyDuplicateCount": 0,
+  "instanceV2Count": 5,
+  "crossRuntimeDecisionMismatchCount": 0,
+  "crossRuntimeHashMismatchCount": 0,
+  "historicalClaimRejection": "PASS",
+  "structuralContaminationRejection": "PASS",
+  "fakeConvergenceRejection": "PASS",
+  "typescriptOnlySemanticRuleCount": 0,
+  "instanceHashes": [
+    "b35afffdb48619c8963a868d98b0008c85001e7a1813c61ed09fd666df349047",
+    "83a3bd0778ae6db5569942e43031e4c025adf160f247643562c02877044ce1dd",
+    "d0c683c57374eae4fe2c89f2865ced1f7b11fccae727da340cfcf14acedc83f8",
+    "f960d377d05b00ed1eb4e49832e1b836f3d90bd833a42a49310c9d2cc649413b",
+    "1142773adfe54817056be13c31befb1ffaff96955fc350ad9b35e5500c469398"
+  ]
+}

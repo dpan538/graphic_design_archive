@@ -259,10 +259,10 @@
   "implementation_independence": {
     "imports_primary_builder": false,
     "independent_verifier_path": "scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py",
-    "independent_verifier_sha256": "a73d58359bd904b591955582537c12014fea24ff98afd7c206a67c0c1cee1a3f",
+    "independent_verifier_sha256": "4354dec5af7628fe6bba0b347f8c38c893e2c270d6b02cc936067f3bab271dff",
     "invokes_primary_builder": false,
     "primary_builder_path": "scripts/trace_round16b/build_recursive_gap_closure_audit.py",
-    "primary_builder_sha256": "b447617be91973a528ae037376326329964bd24d4ac0c19ab6e45ca0e6fd6a58",
+    "primary_builder_sha256": "c79514baffe805a2693b56d34212bc308784063395bc21988e1275f9c22515f5",
     "reuses_primary_enumeration_module": false,
     "stdlib_only": true
   },
@@ -340,9 +340,8 @@
     "vocab": "4f150b6d2e551e305d7810321bd260096ff52bab29bd8c93d148d114481073c2"
   },
   "input_verification": {
-    "checkpoint011_pinned_artifact_count": 4,
+    "checkpoint011_pinned_artifact_count": 3,
     "checkpoint011_pinned_artifact_sha256": {
-      "database/schema-manifest-v50-round16b.json": "bac907114133ea9b261fdff426434365f020ba92bd0e377b8b2d9629438319c3",
       "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-census-v1.json": "7df89f2248d169c1f4e6358425a7f01afbcdb27c02d1d0e3f583f35c67322c6e",
       "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json": "7034cf1474d1baeec36d09033f28e35ae2d58f754009ebe194f5a9102725b83b",
       "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-v3-runtime-checkpoint011-receipt.json": "b7b2e0560823071129cb4c3cc6afa71275f76df7c189962ab36265ef3fc9861b"
@@ -352,7 +351,11 @@
       "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/round16a-global-reconciliation-census-v1.json": "f2196eef23c560e24fd373956af6e711687440203edc4e0c96ab5de90c8c4537",
       "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json": "4839c5bf5492762478e1562c203db0dffc4b62886e1689f6eb7d37e3af2c0c38"
     },
-    "manifest_sha256": "e8e643d051fada492f9d5954c3542bbdb300fb898db95290d4140299887b1b30",
+    "checkpoint015_corrected_artifact_count": 1,
+    "checkpoint015_corrected_artifact_sha256": {
+      "database/schema-manifest-v50-round16b.json": "5f11af95c21417846cd6a71b92173c2d265d5389365fcce08d8c1b7d5b456433"
+    },
+    "manifest_sha256": "0aa96c5f4f3b95c7f356d1d3acb9c11aef7243db0c69136bb8232c8bdfd2cfce",
     "path_set_sha256": "4a3bccffb9fa76de0acaa6986afbb3535442ac30ad4ffc71200b5a575c85d1c1",
     "record_count": 36
   },
@@ -368,14 +371,14 @@
   "origin_main_rewritten": false,
   "primary_artifact_verification": {
     "primary_artifact_sha256": {
-      "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-closure-build-receipt-checkpoint012-v1.json": "547637254c0f4ea2fabed280f23f7c32dd7485409baa01fe86951e3d6eac7679",
+      "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-closure-build-receipt-checkpoint012-v1.json": "a63f9f3236b82eec088be726a24b6921f20595c82d64b5bac82ef547cef0798a",
       "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-closure-metrics-checkpoint012-v1.json": "7c72dfc318f2dcb78090946fabe7f56b2780d6a7ec2ee780c7703753a1b4a54f",
       "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-current-obligation-ledger-checkpoint012-v1.tsv": "bb252c7152d50db49b81d687532237bf6b7b4fe731eaef48d089882c39e6d01d",
-      "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-input-manifest-checkpoint012-v1.tsv": "e8e643d051fada492f9d5954c3542bbdb300fb898db95290d4140299887b1b30",
+      "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-input-manifest-checkpoint012-v1.tsv": "0aa96c5f4f3b95c7f356d1d3acb9c11aef7243db0c69136bb8232c8bdfd2cfce",
       "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-supersession-ledger-checkpoint012-v1.tsv": "6d79364477c6236e66e0310100f656b6ff6edc47d9b11071551567d85a2df50d"
     },
-    "primary_output_aggregate_sha256": "a9bd269186b0ca8e6f2deecd8bf0365b62b24550e870e19808c728edb8bc8035",
-    "receipt_sha256": "547637254c0f4ea2fabed280f23f7c32dd7485409baa01fe86951e3d6eac7679"
+    "primary_output_aggregate_sha256": "f72cda39b8aff3436ec916632e49b2bdbb3368571b2be81dbaee1b3a84110b24",
+    "receipt_sha256": "a63f9f3236b82eec088be726a24b6921f20595c82d64b5bac82ef547cef0798a"
   },
   "primary_metrics_verification": {
     "closure_true_count": 0,

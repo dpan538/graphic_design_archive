@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "git",
+    "status",
+    "--short",
+    "--branch"
+  ],
+  "command": "git status --short --branch",
+  "command_id": "1787942164457-cp015-inspect-current-worktree-state",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 180,
+  "end_timestamp_utc": "2026-08-28T18:36:04Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-inspect-current-worktree-state",
+  "phase_id": "checkpoint015-final-reproduction",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:36:04Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "035076775aad1cfb7e00ce2eca0911f7ad786021f5a9d1d2fe070496c011b575",
+  "timed_out": false
+}

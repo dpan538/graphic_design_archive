@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/postgresql@16/bin/psql",
+    "-X",
+    "-Atq",
+    "-v",
+    "ON_ERROR_STOP=1",
+    "-h",
+    "/private/tmp/gda-v50-round16b-cp015-final/socket",
+    "-p",
+    "59473",
+    "-U",
+    "jarlgiovanni",
+    "-d",
+    "gda_v50_round16b_cp015_final_a",
+    "-c",
+    "SELECT table_schema||'.'||table_name FROM information_schema.views WHERE table_schema IN ('exploration_v3','api_v3') ORDER BY 1;"
+  ],
+  "command": "/opt/homebrew/opt/postgresql@16/bin/psql -X -Atq -v ON_ERROR_STOP=1 -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni -d gda_v50_round16b_cp015_final_a -c 'SELECT table_schema||'\"'\"'.'\"'\"'||table_name FROM information_schema.views WHERE table_schema IN ('\"'\"'exploration_v3'\"'\"','\"'\"'api_v3'\"'\"') ORDER BY 1;'",
+  "command_id": "1787942453632-cp015-db-inspect-metric-surface",
+  "cwd": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+  "duration_ms": 17,
+  "end_timestamp_utc": "2026-08-28T18:40:53Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-db-inspect-metric-surface",
+  "phase_id": "CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:40:53Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "97b931bc38fcdbc78d715c16d4bd8a66dc7a8f81384fb5952612cbe2504a0331",
+  "timed_out": false
+}

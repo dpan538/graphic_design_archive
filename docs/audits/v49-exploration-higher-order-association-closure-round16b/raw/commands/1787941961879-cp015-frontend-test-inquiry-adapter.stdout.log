@@ -1,0 +1,105 @@
+
+> archive-box-frontend@0.1.0 test:exploration-inquiry-adapter
+> node --experimental-strip-types scripts/test-exploration-inquiry-adapter.mjs
+
+{
+  "status": "PASS",
+  "crossRuntimeFixtureCount": 14,
+  "crossRuntimeDecisionMismatchCount": 0,
+  "crossRuntimeHashMismatchCount": 0,
+  "unknownFieldRejection": "PASS",
+  "duplicateIdRejection": "PASS",
+  "danglingReferenceRejection": "PASS",
+  "undeclaredArchiveContaminationRejection": "PASS",
+  "undeclaredContextContaminationRejection": "PASS",
+  "undeclaredSpacetimeContaminationRejection": "PASS",
+  "undeclaredModelContaminationRejection": "PASS",
+  "originPolicyEnforcement": "PASS",
+  "schemaAwareCanonicalization": "PASS",
+  "results": [
+    {
+      "fixtureId": "CONF-001",
+      "accepted": true,
+      "failureCode": "",
+      "status": "PASS"
+    },
+    {
+      "fixtureId": "CONF-002",
+      "accepted": true,
+      "failureCode": "",
+      "status": "PASS"
+    },
+    {
+      "fixtureId": "CONF-003",
+      "accepted": true,
+      "failureCode": "",
+      "status": "PASS"
+    },
+    {
+      "fixtureId": "CONF-004",
+      "accepted": true,
+      "failureCode": "",
+      "status": "PASS"
+    },
+    {
+      "fixtureId": "CONF-005",
+      "accepted": true,
+      "failureCode": "",
+      "status": "PASS"
+    },
+    {
+      "fixtureId": "CONF-006",
+      "accepted": true,
+      "failureCode": "",
+      "status": "PASS"
+    },
+    {
+      "fixtureId": "CONF-007",
+      "accepted": true,
+      "failureCode": "",
+      "status": "PASS"
+    },
+    {
+      "fixtureId": "CONF-008",
+      "accepted": true,
+      "failureCode": "",
+      "status": "PASS"
+    },
+    {
+      "fixtureId": "CONF-009",
+      "accepted": false,
+      "failureCode": "UNKNOWN_FIELD",
+      "status": "PASS"
+    },
+    {
+      "fixtureId": "CONF-010",
+      "accepted": false,
+      "failureCode": "DUPLICATE_ID",
+      "status": "PASS"
+    },
+    {
+      "fixtureId": "CONF-011",
+      "accepted": false,
+      "failureCode": "DANGLING_REFERENCE",
+      "status": "PASS"
+    },
+    {
+      "fixtureId": "CONF-012",
+      "accepted": false,
+      "failureCode": "ARCHIVE_OBJECT_CONTAMINATION",
+      "status": "PASS"
+    },
+    {
+      "fixtureId": "CONF-013",
+      "accepted": false,
+      "failureCode": "ORIGIN_POLICY_VIOLATION",
+      "status": "PASS"
+    },
+    {
+      "fixtureId": "CONF-014",
+      "accepted": false,
+      "failureCode": "HASH_MISMATCH",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "set -eu\npsql=/opt/homebrew/opt/postgresql@16/bin/psql\nsocket=/private/tmp/gda-v50-round16b-cp015-final/socket\nport=59473\nrace_count=$($psql -X -Atq -v ON_ERROR_STOP=1 -h \"$socket\" -p \"$port\" -U jarlgiovanni -d postgres -c \"SELECT count(*) FROM pg_database WHERE datname LIKE 'gda_v50_round16b_cp015_final_a_race_%';\")\nresidue=$($psql -X -Atq -v ON_ERROR_STOP=1 -h \"$socket\" -p \"$port\" -U jarlgiovanni -d gda_v50_round16b_cp015_final_a -c \"SELECT coalesce(sum(n_live_tup),0)::bigint FROM pg_stat_user_tables WHERE schemaname='exploration_v3';\")\ntest \"$race_count\" = 0\ntest \"$residue\" = 0\nprintf \"%s\\n\" \"FAILED_ATTEMPT_RACE_DATABASE_COUNT=$race_count\" \"FAILED_ATTEMPT_EXPLORATION_V3_STAT_RESIDUE=$residue\" FAILED_ATTEMPT_CLEANUP=PASS"
+  ],
+  "command": "/bin/sh -c 'set -eu\npsql=/opt/homebrew/opt/postgresql@16/bin/psql\nsocket=/private/tmp/gda-v50-round16b-cp015-final/socket\nport=59473\nrace_count=$($psql -X -Atq -v ON_ERROR_STOP=1 -h \"$socket\" -p \"$port\" -U jarlgiovanni -d postgres -c \"SELECT count(*) FROM pg_database WHERE datname LIKE '\"'\"'gda_v50_round16b_cp015_final_a_race_%'\"'\"';\")\nresidue=$($psql -X -Atq -v ON_ERROR_STOP=1 -h \"$socket\" -p \"$port\" -U jarlgiovanni -d gda_v50_round16b_cp015_final_a -c \"SELECT coalesce(sum(n_live_tup),0)::bigint FROM pg_stat_user_tables WHERE schemaname='\"'\"'exploration_v3'\"'\"';\")\ntest \"$race_count\" = 0\ntest \"$residue\" = 0\nprintf \"%s\\n\" \"FAILED_ATTEMPT_RACE_DATABASE_COUNT=$race_count\" \"FAILED_ATTEMPT_EXPLORATION_V3_STAT_RESIDUE=$residue\" FAILED_ATTEMPT_CLEANUP=PASS'",
+  "command_id": "1787942327606-cp015-db-prove-test-a-failure-cleanup",
+  "cwd": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+  "duration_ms": 29,
+  "end_timestamp_utc": "2026-08-28T18:38:47Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-db-prove-test-a-failure-cleanup",
+  "phase_id": "CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:38:47Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "d8135a0f29350352d437a2f8e17a86915ecdf574f464e8e23f196e622fcc1edd",
+  "timed_out": false
+}

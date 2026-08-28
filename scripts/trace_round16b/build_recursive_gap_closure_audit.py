@@ -91,8 +91,10 @@ DB_MANIFEST_PATH = "database/schema-manifest-v50-round16b.json"
 # Most hashes below were recomputed from ``git show 11412d23:<path>`` after
 # checkpoint 011 was committed.  Two prerequisite receipts were then
 # deterministically corrected in checkpoint 012: the Round 16A reconciliation
-# census and the v3 runtime independent receipt.  Their exact current hashes
-# are pinned here explicitly rather than treated as checkpoint-011 bytes.
+# census and the v3 runtime independent receipt.  The v50 manifest received a
+# checkout-portability-only verifier hash correction in checkpoint 015.  Their
+# exact current hashes are pinned here explicitly rather than treated as
+# checkpoint-011 bytes.
 PINNED_INPUT_SHA256 = {
     f"{RAW_REL}/recursive-gap-ledger-adaptive-source-shard-1-v1.tsv": "dfcf94990753ab8f7bcde4e3438de90f60fb8688b8777cf6f72f731d10ffe180",
     f"{RAW_REL}/recursive-gap-ledger-adaptive-source-shard-2-v1.tsv": "179e7896ad5fe6374303075da2072dc47afc3a2adb799f061d256e05126542fe",
@@ -129,7 +131,7 @@ PINNED_INPUT_SHA256 = {
     V50_REPLAY_PATH: "7034cf1474d1baeec36d09033f28e35ae2d58f754009ebe194f5a9102725b83b",
     CP11_RECEIPT_PATH: "b7b2e0560823071129cb4c3cc6afa71275f76df7c189962ab36265ef3fc9861b",
     EXTERNAL_REVIEW_PATH: "903369afab8486b9a7553898ef0cf1bcf858d87bea99bd96887e62aa17a478b6",
-    DB_MANIFEST_PATH: "bac907114133ea9b261fdff426434365f020ba92bd0e377b8b2d9629438319c3",
+    DB_MANIFEST_PATH: "5f11af95c21417846cd6a71b92173c2d265d5389365fcce08d8c1b7d5b456433",
 }
 
 OBL_CANDIDATE = "R16B-CURRENT-OBLIGATION:CANDIDATE_UNIVERSE_AND_EXCLUSION_PROOF"
@@ -286,9 +288,11 @@ def input_manifest() -> list[dict[str, str]]:
                 if relative == R16A_CENSUS_PATH else
                 "CHECKPOINT012_REFRESHED_RUNTIME_VERIFICATION_BYTES"
                 if relative == V3_RUNTIME_INDEPENDENT_PATH else
+                "CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION_BYTES"
+                if relative == DB_MANIFEST_PATH else
                 "COMMITTED_CHECKPOINT011_BYTES" if relative in {
                     V3_CENSUS_PATH, V50_REPLAY_PATH,
-                    CP11_RECEIPT_PATH, DB_MANIFEST_PATH,
+                    CP11_RECEIPT_PATH,
                 } else "COMMITTED_ROUND16B_PRE_CHECKPOINT011_BYTES"
             ),
         })

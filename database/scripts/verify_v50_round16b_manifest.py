@@ -145,6 +145,9 @@ def verified_command(
         or meta.get("timed_out") is not False
         or meta.get("launch_error") != ""
         or meta.get("command") != row.get("command")
+        or meta.get("cwd") != row.get("cwd")
+        or not isinstance(meta.get("cwd"), str)
+        or not Path(str(meta["cwd"])).is_absolute()
         or meta.get("stdout_sha256") != sha256(stdout_path)
         or meta.get("stderr_sha256") != sha256(stderr_path)
     ):
@@ -156,7 +159,7 @@ def verified_command(
 
 
 def verify_race_evidence(
-    replay: dict[str, object], test_stdout: str
+    replay: dict[str, object], test_stdout: str, test_meta: dict[str, object]
 ) -> None:
     database = replay["database"]
     evidence = replay.get("concurrencyEvidence")
@@ -234,7 +237,15 @@ def verify_race_evidence(
     }
     if any(evidence.get(key) != value for key, value in expected_facts.items()):
         raise SystemExit(f"V50_RACE_RECEIPT_FACT_MISMATCH:{database}")
-    absolute_directory = str(evidence_directory)
+    path_markers = re.findall(
+        r"^V50_SEAL_RACE_EVIDENCE_DIR=(\S+) CHECKSUMS_SHA256="
+        + re.escape(str(expected_checksums_hash))
+        + r"$",
+        test_stdout,
+        flags=re.MULTILINE,
+    )
+    recorded_command_root = Path(str(test_meta["cwd"]))
+    expected_recorded_directory = str(recorded_command_root / expected_directory)
     if (
         "V50_SEAL_RACE_CHILD_FIRST=PASS LOSER_SQLSTATE=40001 "
         "RETRY_SEAL=PASS CHILD_INCLUDED=1" not in test_stdout
@@ -243,8 +254,7 @@ def verify_race_evidence(
         or "V50_SEAL_ISOLATION_GUARDS=PASS REPEATABLE_READ_SQLSTATE=25000 "
         "SERIALIZABLE_SQLSTATE=25000" not in test_stdout
         or "V50_RACE_DATABASE_DISPOSED=PASS" not in test_stdout
-        or f"V50_SEAL_RACE_EVIDENCE_DIR={absolute_directory} "
-        f"CHECKSUMS_SHA256={expected_checksums_hash}" not in test_stdout
+        or path_markers != [expected_recorded_directory]
     ):
         raise SystemExit(f"V50_RACE_COMMAND_OUTPUT_MISMATCH:{database}")
 
@@ -419,7 +429,7 @@ def verify_execution_receipt(
             raise SystemExit(f"V50_TEST_COMMAND_MARKER_INVALID:{database}")
         if hash_stdout.strip() != normalized_hash:
             raise SystemExit(f"V50_SCHEMA_HASH_COMMAND_OUTPUT_MISMATCH:{database}")
-        verify_race_evidence(replay, test_stdout)
+        verify_race_evidence(replay, test_stdout, test_meta)
     if len(normalized_hashes) != 1 or receipt.get("normalizedSchemasIdentical") is not True:
         raise SystemExit("V50_EXECUTION_RECEIPT_NORMALIZATION_MISMATCH")
     if database_names != EXPECTED_REPLAY_DATABASES:

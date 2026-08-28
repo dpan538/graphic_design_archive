@@ -1,0 +1,15 @@
+
+> archive-box-frontend@0.1.0 test:exploration-association-calibration
+> node --experimental-strip-types scripts/test-exploration-association-calibration.mjs
+
+{
+  "status": "PASS",
+  "assessmentCount": 35,
+  "crossRuntimeDecisionMismatchCount": 0,
+  "crossRuntimeHashMismatchCount": 0,
+  "typescriptOnlySemanticRuleCount": 0,
+  "mirrorMode": "SCHEMA_AND_FROZEN_DECISION_VALIDATION_ONLY",
+  "hashMutationRejection": "PASS",
+  "qualificationLossRejection": "PASS",
+  "cooccurrenceActivationRejection": "PASS"
+}

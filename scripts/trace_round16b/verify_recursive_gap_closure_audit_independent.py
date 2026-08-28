@@ -123,11 +123,13 @@ PINNED_CP11_SHA256 = {
     V3_CENSUS_PATH: "7df89f2248d169c1f4e6358425a7f01afbcdb27c02d1d0e3f583f35c67322c6e",
     V50_REPLAY_PATH: "7034cf1474d1baeec36d09033f28e35ae2d58f754009ebe194f5a9102725b83b",
     CP11_RECEIPT_PATH: "b7b2e0560823071129cb4c3cc6afa71275f76df7c189962ab36265ef3fc9861b",
-    DB_MANIFEST_PATH: "bac907114133ea9b261fdff426434365f020ba92bd0e377b8b2d9629438319c3",
 }
 PINNED_CHECKPOINT012_CORRECTED_SHA256 = {
     R16A_CENSUS_PATH: "f2196eef23c560e24fd373956af6e711687440203edc4e0c96ab5de90c8c4537",
     V3_RUNTIME_PATH: "4839c5bf5492762478e1562c203db0dffc4b62886e1689f6eb7d37e3af2c0c38",
+}
+PINNED_CHECKPOINT015_CORRECTED_SHA256 = {
+    DB_MANIFEST_PATH: "5f11af95c21417846cd6a71b92173c2d265d5389365fcce08d8c1b7d5b456433",
 }
 
 CLOSURE_KEYS = (
@@ -323,6 +325,8 @@ def expected_manifest_authority(relative: str) -> str:
         return "CHECKPOINT012_CORRECTED_ROUND16A_RECONCILIATION_BYTES"
     if relative == V3_RUNTIME_PATH:
         return "CHECKPOINT012_REFRESHED_RUNTIME_VERIFICATION_BYTES"
+    if relative == DB_MANIFEST_PATH:
+        return "CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION_BYTES"
     if relative in PINNED_CP11_SHA256:
         return "COMMITTED_CHECKPOINT011_BYTES"
     return "COMMITTED_ROUND16B_PRE_CHECKPOINT011_BYTES"
@@ -358,6 +362,8 @@ def verify_input_manifest() -> dict[str, Any]:
         require(sha256_file(relative), expected, f"committed Checkpoint 011 trust anchor {relative}")
     for relative, expected in PINNED_CHECKPOINT012_CORRECTED_SHA256.items():
         require(sha256_file(relative), expected, f"Checkpoint 012 corrected trust anchor {relative}")
+    for relative, expected in PINNED_CHECKPOINT015_CORRECTED_SHA256.items():
+        require(sha256_file(relative), expected, f"Checkpoint 015 corrected trust anchor {relative}")
     return {
         "record_count": len(rows),
         "path_set_sha256": id_set_hash(EXPECTED_INPUT_PATHS),
@@ -367,6 +373,10 @@ def verify_input_manifest() -> dict[str, Any]:
         "checkpoint012_corrected_artifact_count": len(PINNED_CHECKPOINT012_CORRECTED_SHA256),
         "checkpoint012_corrected_artifact_sha256": dict(
             sorted(PINNED_CHECKPOINT012_CORRECTED_SHA256.items())
+        ),
+        "checkpoint015_corrected_artifact_count": len(PINNED_CHECKPOINT015_CORRECTED_SHA256),
+        "checkpoint015_corrected_artifact_sha256": dict(
+            sorted(PINNED_CHECKPOINT015_CORRECTED_SHA256.items())
         ),
     }
 
@@ -2115,7 +2125,7 @@ All open or partially reconciled rows name at least one of the {obligation['reco
 |---|---|
 {primary_table}
 
-The input manifest contains 36 exact governed inputs. Four unchanged Checkpoint 011 capability artifacts are pinned to hashes recomputed from the committed `{AUTHORITY_BASE_SHA}` bytes. The corrected Round 16A census and refreshed v3 runtime independent receipt are separately pinned as Checkpoint 012 prerequisite corrections. Primary check mode and independent check mode must reproduce these exact files without rewriting them.
+The input manifest contains 36 exact governed inputs. Three unchanged Checkpoint 011 capability artifacts are pinned to hashes recomputed from the committed `{AUTHORITY_BASE_SHA}` bytes. The corrected Round 16A census and refreshed v3 runtime independent receipt are separately pinned as Checkpoint 012 prerequisite corrections. The database manifest is pinned as the Checkpoint 015 checkout-portability correction; that correction changes verifier path validation only and does not change SQL, the normalized schema hash, or any closure result. Primary check mode and independent check mode must reproduce these exact files without rewriting them.
 
 ## Closure receipt
 

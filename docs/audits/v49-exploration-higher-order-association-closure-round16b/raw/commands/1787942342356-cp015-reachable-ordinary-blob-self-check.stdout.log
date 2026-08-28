@@ -1,0 +1,18 @@
+{
+  "check_count": 10,
+  "checks": {
+    "canonical_lfs_pointer_accepted": true,
+    "canonical_lfs_pointer_with_extension_accepted": true,
+    "historical_aliases_cover_rename_and_shared_subtree": true,
+    "noncanonical_lfs_pointer_extra_line_rejected": true,
+    "noncanonical_lfs_pointer_missing_size_rejected": true,
+    "noncanonical_lfs_pointer_uppercase_oid_rejected": true,
+    "threshold_boundaries_are_inclusive": true,
+    "threshold_receipts_are_deterministic": true,
+    "violation_containing_commits_are_complete": true,
+    "violation_source_range_filter_is_exact": true
+  },
+  "failure_codes": [],
+  "schema_version": "trace-round16b-reachable-blob-self-check/v1",
+  "status": "PASS"
+}

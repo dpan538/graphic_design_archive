@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "set -eu; test -L frontend/node_modules; test \"$(readlink frontend/node_modules)\" = /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules; git check-ignore -q frontend/node_modules; test -z \"$(git status --porcelain=v1 --untracked-files=all)\"; printf \"%s\\n\" FRONTEND_NODE_MODULES_LINK=PASS FRONTEND_NODE_MODULES_LINK_TARGET=/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules FRONTEND_NODE_MODULES_IGNORE=PASS TRACKED_WORKTREE_CLEAN=PASS"
+  ],
+  "command": "/bin/sh -c 'set -eu; test -L frontend/node_modules; test \"$(readlink frontend/node_modules)\" = /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules; git check-ignore -q frontend/node_modules; test -z \"$(git status --porcelain=v1 --untracked-files=all)\"; printf \"%s\\n\" FRONTEND_NODE_MODULES_LINK=PASS FRONTEND_NODE_MODULES_LINK_TARGET=/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules FRONTEND_NODE_MODULES_IGNORE=PASS TRACKED_WORKTREE_CLEAN=PASS'",
+  "command_id": "1787941926033-cp015-verify-ignored-frontend-node-modules-symlink",
+  "cwd": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+  "duration_ms": 178,
+  "end_timestamp_utc": "2026-08-28T18:32:06Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-verify-ignored-frontend-node-modules-symlink",
+  "phase_id": "CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:32:06Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "ab3fe1decbba29bf620f34d4e72a465462687e463524df408d55973adad05b3a",
+  "timed_out": false
+}

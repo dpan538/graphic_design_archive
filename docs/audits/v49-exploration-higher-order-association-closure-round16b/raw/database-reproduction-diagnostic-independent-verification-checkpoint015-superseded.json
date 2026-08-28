@@ -1,0 +1,246 @@
+{
+  "checkCount": 35,
+  "checks": [
+    {
+      "checkId": "SCHEMA",
+      "observed": "trace-round16b-cp015-database-diagnostic/v1",
+      "ok": true
+    },
+    {
+      "checkId": "SUPERSEDED_STATUS",
+      "observed": "SUPERSEDED_DIAGNOSTIC_ONLY",
+      "ok": true
+    },
+    {
+      "checkId": "NO_CLEAN_REPRODUCTION_CLAIM",
+      "observed": false,
+      "ok": true
+    },
+    {
+      "checkId": "NO_PASS_CLAIM",
+      "observed": false,
+      "ok": true
+    },
+    {
+      "checkId": "SOURCE_NATIVE_PREFLIGHT_FALSE",
+      "observed": false,
+      "ok": true
+    },
+    {
+      "checkId": "ADAPTER_DISCLOSED",
+      "observed": true,
+      "ok": true
+    },
+    {
+      "checkId": "SOURCE_HEAD",
+      "observed": "024935e8d0c36cf0c4724b1960c71f28afef6595",
+      "ok": true
+    },
+    {
+      "checkId": "SOURCE_TREE",
+      "observed": "28f8ab204378d75d16d98334bbd105d47641f37e",
+      "ok": true
+    },
+    {
+      "checkId": "SOURCE_CLEAN_CAPTURE",
+      "observed": true,
+      "ok": true
+    },
+    {
+      "checkId": "POSTGRESQL_16_13",
+      "observed": "16.13 (Homebrew)",
+      "ok": true
+    },
+    {
+      "checkId": "SOCKET_ONLY",
+      "observed": false,
+      "ok": true
+    },
+    {
+      "checkId": "ADAPTER_HASH",
+      "observed": "578cbab2a2833ed4980864bfafabea51937d8246384e4cddbd2f04bd8b67498b",
+      "ok": true
+    },
+    {
+      "checkId": "ABSOLUTE_PATH_DEFECT_EXPLICIT",
+      "observed": "The frozen checkpoint11 verifier compares a historical absolute race-evidence path to the current checkout root. The adapter validated the exact byte-identical recorded locus, but this creates a hybrid run and cannot prove clean-checkout self-containment. A new run from an additive portability-correction commit is required.",
+      "ok": true
+    },
+    {
+      "checkId": "DATABASE_SET",
+      "observed": [
+        "gda_v50_round16b_cp015_final_a",
+        "gda_v50_round16b_cp015_final_b"
+      ],
+      "ok": true
+    },
+    {
+      "checkId": "gda_v50_round16b_cp015_final_a:OWNER",
+      "observed": "gda_v49_phase2a_schema_owner",
+      "ok": true
+    },
+    {
+      "checkId": "gda_v50_round16b_cp015_final_a:METRICS",
+      "observed": {
+        "API_V3_VIEW_COUNT": 24,
+        "FIXTURE_RESIDUE": 0,
+        "GOVERNED_TABLE_COUNT": 278,
+        "NONZERO_API_V3_VIEW_COUNT": 0,
+        "NONZERO_GOVERNED_TABLE_COUNT": 0,
+        "PROJECT_SCHEMA_COUNT": 11,
+        "REVIEWER_QUEUE_COUNT": 0,
+        "V3_CONSTRAINT_TRIGGER": 29,
+        "V3_ENUM": 21,
+        "V3_FUNCTION": 28,
+        "V3_INVENTORY_NONZERO_METRIC_COUNT": 0,
+        "V3_REGULAR_TRIGGER": 1,
+        "V3_TABLE": 35,
+        "V50_ADDITIVE_VIEW": 26
+      },
+      "ok": true
+    },
+    {
+      "checkId": "gda_v50_round16b_cp015_final_a:SCHEMA_HASH",
+      "observed": "1152a494e6b64595c9f9291c1d314a9434cb763c7f2a02512d2768e286f571b4",
+      "ok": true
+    },
+    {
+      "checkId": "gda_v50_round16b_cp015_final_a:RACE_HASH",
+      "observed": "595efb06ae1508b3f2cf952e3d0f1af2e9bd70b12bd4fcde93a530b3b70442ab",
+      "ok": true
+    },
+    {
+      "checkId": "gda_v50_round16b_cp015_final_a:RACE_LEDGER_FILE",
+      "observed": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/CHECKSUMS.sha256",
+      "ok": true
+    },
+    {
+      "checkId": "gda_v50_round16b_cp015_final_a:RACE_LEDGER_PAYLOAD",
+      "observed": "595efb06ae1508b3f2cf952e3d0f1af2e9bd70b12bd4fcde93a530b3b70442ab",
+      "ok": true
+    },
+    {
+      "checkId": "gda_v50_round16b_cp015_final_a:RACE_FILE_SET",
+      "observed": [
+        "child-first.contender.log",
+        "child-first.owner.log",
+        "child-first.retry-and-invariant.log",
+        "createdb.log",
+        "dropdb.log",
+        "repeatable-read.log",
+        "seal-first.contender.log",
+        "seal-first.invariant.log",
+        "seal-first.owner.log",
+        "seal-first.retry.log",
+        "serializable.log",
+        "setup-owner.log"
+      ],
+      "ok": true
+    },
+    {
+      "checkId": "gda_v50_round16b_cp015_final_a:RACE_PAYLOADS",
+      "observed": [],
+      "ok": true
+    },
+    {
+      "checkId": "gda_v50_round16b_cp015_final_b:OWNER",
+      "observed": "gda_v49_phase2a_schema_owner",
+      "ok": true
+    },
+    {
+      "checkId": "gda_v50_round16b_cp015_final_b:METRICS",
+      "observed": {
+        "API_V3_VIEW_COUNT": 24,
+        "FIXTURE_RESIDUE": 0,
+        "GOVERNED_TABLE_COUNT": 278,
+        "NONZERO_API_V3_VIEW_COUNT": 0,
+        "NONZERO_GOVERNED_TABLE_COUNT": 0,
+        "PROJECT_SCHEMA_COUNT": 11,
+        "REVIEWER_QUEUE_COUNT": 0,
+        "V3_CONSTRAINT_TRIGGER": 29,
+        "V3_ENUM": 21,
+        "V3_FUNCTION": 28,
+        "V3_INVENTORY_NONZERO_METRIC_COUNT": 0,
+        "V3_REGULAR_TRIGGER": 1,
+        "V3_TABLE": 35,
+        "V50_ADDITIVE_VIEW": 26
+      },
+      "ok": true
+    },
+    {
+      "checkId": "gda_v50_round16b_cp015_final_b:SCHEMA_HASH",
+      "observed": "1152a494e6b64595c9f9291c1d314a9434cb763c7f2a02512d2768e286f571b4",
+      "ok": true
+    },
+    {
+      "checkId": "gda_v50_round16b_cp015_final_b:RACE_HASH",
+      "observed": "595efb06ae1508b3f2cf952e3d0f1af2e9bd70b12bd4fcde93a530b3b70442ab",
+      "ok": true
+    },
+    {
+      "checkId": "gda_v50_round16b_cp015_final_b:RACE_LEDGER_FILE",
+      "observed": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/CHECKSUMS.sha256",
+      "ok": true
+    },
+    {
+      "checkId": "gda_v50_round16b_cp015_final_b:RACE_LEDGER_PAYLOAD",
+      "observed": "595efb06ae1508b3f2cf952e3d0f1af2e9bd70b12bd4fcde93a530b3b70442ab",
+      "ok": true
+    },
+    {
+      "checkId": "gda_v50_round16b_cp015_final_b:RACE_FILE_SET",
+      "observed": [
+        "child-first.contender.log",
+        "child-first.owner.log",
+        "child-first.retry-and-invariant.log",
+        "createdb.log",
+        "dropdb.log",
+        "repeatable-read.log",
+        "seal-first.contender.log",
+        "seal-first.invariant.log",
+        "seal-first.owner.log",
+        "seal-first.retry.log",
+        "serializable.log",
+        "setup-owner.log"
+      ],
+      "ok": true
+    },
+    {
+      "checkId": "gda_v50_round16b_cp015_final_b:RACE_PAYLOADS",
+      "observed": [],
+      "ok": true
+    },
+    {
+      "checkId": "SCHEMA_RECONCILED",
+      "observed": "1152a494e6b64595c9f9291c1d314a9434cb763c7f2a02512d2768e286f571b4",
+      "ok": true
+    },
+    {
+      "checkId": "RACE_DATABASES_DISPOSED",
+      "observed": 0,
+      "ok": true
+    },
+    {
+      "checkId": "FROZEN_MANIFEST_UNMODIFIED",
+      "observed": false,
+      "ok": true
+    },
+    {
+      "checkId": "FROZEN_RECEIPT_UNMODIFIED",
+      "observed": false,
+      "ok": true
+    },
+    {
+      "checkId": "NO_DEPLOYMENT",
+      "observed": false,
+      "ok": true
+    }
+  ],
+  "cleanSelfContainedReproduction": false,
+  "failureCount": 0,
+  "receipt": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-diagnostic-checkpoint015-superseded.json",
+  "receiptSha256": "354022a7f8994d21500397243269eb751d316be765b18c53726a152e4dc05656",
+  "reproductionPassClaimed": false,
+  "schema": "trace-round16b-cp015-database-diagnostic-independent-verification/v1",
+  "status": "VERIFIED_SUPERSEDED_DIAGNOSTIC_ONLY"
+}

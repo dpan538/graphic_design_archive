@@ -1,0 +1,126 @@
+{
+  "cleanSelfContainedReproduction": false,
+  "compatibilityAdapter": {
+    "path": "/private/tmp/gda-v50-round16b-cp015-final/bin/python3",
+    "scope": "verify_v50_round16b_manifest.py preflight and replay-sequence emission only",
+    "sha256": "578cbab2a2833ed4980864bfafabea51937d8246384e4cddbd2f04bd8b67498b"
+  },
+  "compatibilityAdapterUsed": true,
+  "databases": [
+    {
+      "apiV3ViewCountSetSha256": "c554e5b84815a12a8e51dd39ee6f5ca077e3f63d1dc26d9f2218c913bbef44cb",
+      "database": "gda_v50_round16b_cp015_final_a",
+      "governedTableCountSetSha256": "99a84ebc8bf6416a2c9cf0f35fba3fa76156681c48cb03a5599e41f1799d8cbc",
+      "metrics": {
+        "API_V3_VIEW_COUNT": 24,
+        "FIXTURE_RESIDUE": 0,
+        "GOVERNED_TABLE_COUNT": 278,
+        "NONZERO_API_V3_VIEW_COUNT": 0,
+        "NONZERO_GOVERNED_TABLE_COUNT": 0,
+        "PROJECT_SCHEMA_COUNT": 11,
+        "REVIEWER_QUEUE_COUNT": 0,
+        "V3_CONSTRAINT_TRIGGER": 29,
+        "V3_ENUM": 21,
+        "V3_FUNCTION": 28,
+        "V3_INVENTORY_NONZERO_METRIC_COUNT": 0,
+        "V3_REGULAR_TRIGGER": 1,
+        "V3_TABLE": 35,
+        "V50_ADDITIVE_VIEW": 26
+      },
+      "normalizedSchemaBytes": 1090058,
+      "normalizedSchemaSha256": "1152a494e6b64595c9f9291c1d314a9434cb763c7f2a02512d2768e286f571b4",
+      "owner": "gda_v49_phase2a_schema_owner",
+      "raceEvidence": {
+        "checksumsSha256": "595efb06ae1508b3f2cf952e3d0f1af2e9bd70b12bd4fcde93a530b3b70442ab",
+        "fileCount": 12,
+        "perFileSha256": {
+          "child-first.contender.log": "c8d909961d06e09cb09824d8607233dbdd4025620503568d0b28baa6f8dcab57",
+          "child-first.owner.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "child-first.retry-and-invariant.log": "0f4a3ef3ad41d0b137c7d91280c935b22d58bbfd62a253f1fe61344233e5ae53",
+          "createdb.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "dropdb.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "repeatable-read.log": "c63d48f91c995d643abcb7208960908529d44e0573f12815ff727c76c8451d33",
+          "seal-first.contender.log": "e7e8847ac0d1283b12e99e9dbdd8462a35b48d9cadc4edb458a88188ae7360e9",
+          "seal-first.invariant.log": "1ed4bc734b568d639c279b5e8f9254d90a82fe070c4b710445cf6184a106e9bd",
+          "seal-first.owner.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "seal-first.retry.log": "2e313721a75e64d9f7ebace13a9d46a54a9b2a0b24dd0cab81a62a6f108474d5",
+          "serializable.log": "7e533e3ac08ac435bed4b48521a533a5f3bcf3ee34a56e0ed3c3070da5aa9507",
+          "setup-owner.log": "b738151362df7655d7db652c3a28d620ce0a748966c555847ce37e233f68f392"
+        },
+        "relativeDirectory": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317"
+      },
+      "rawSchemaDumpBytes": 1355543,
+      "rawSchemaDumpSha256": "18bbf3b791154ff0260381fb9fd40ff0b4ec3e2e95d8c69619a1bc4335754817"
+    },
+    {
+      "apiV3ViewCountSetSha256": "c554e5b84815a12a8e51dd39ee6f5ca077e3f63d1dc26d9f2218c913bbef44cb",
+      "database": "gda_v50_round16b_cp015_final_b",
+      "governedTableCountSetSha256": "99a84ebc8bf6416a2c9cf0f35fba3fa76156681c48cb03a5599e41f1799d8cbc",
+      "metrics": {
+        "API_V3_VIEW_COUNT": 24,
+        "FIXTURE_RESIDUE": 0,
+        "GOVERNED_TABLE_COUNT": 278,
+        "NONZERO_API_V3_VIEW_COUNT": 0,
+        "NONZERO_GOVERNED_TABLE_COUNT": 0,
+        "PROJECT_SCHEMA_COUNT": 11,
+        "REVIEWER_QUEUE_COUNT": 0,
+        "V3_CONSTRAINT_TRIGGER": 29,
+        "V3_ENUM": 21,
+        "V3_FUNCTION": 28,
+        "V3_INVENTORY_NONZERO_METRIC_COUNT": 0,
+        "V3_REGULAR_TRIGGER": 1,
+        "V3_TABLE": 35,
+        "V50_ADDITIVE_VIEW": 26
+      },
+      "normalizedSchemaBytes": 1090058,
+      "normalizedSchemaSha256": "1152a494e6b64595c9f9291c1d314a9434cb763c7f2a02512d2768e286f571b4",
+      "owner": "gda_v49_phase2a_schema_owner",
+      "raceEvidence": {
+        "checksumsSha256": "595efb06ae1508b3f2cf952e3d0f1af2e9bd70b12bd4fcde93a530b3b70442ab",
+        "fileCount": 12,
+        "perFileSha256": {
+          "child-first.contender.log": "c8d909961d06e09cb09824d8607233dbdd4025620503568d0b28baa6f8dcab57",
+          "child-first.owner.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "child-first.retry-and-invariant.log": "0f4a3ef3ad41d0b137c7d91280c935b22d58bbfd62a253f1fe61344233e5ae53",
+          "createdb.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "dropdb.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "repeatable-read.log": "c63d48f91c995d643abcb7208960908529d44e0573f12815ff727c76c8451d33",
+          "seal-first.contender.log": "e7e8847ac0d1283b12e99e9dbdd8462a35b48d9cadc4edb458a88188ae7360e9",
+          "seal-first.invariant.log": "1ed4bc734b568d639c279b5e8f9254d90a82fe070c4b710445cf6184a106e9bd",
+          "seal-first.owner.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "seal-first.retry.log": "2e313721a75e64d9f7ebace13a9d46a54a9b2a0b24dd0cab81a62a6f108474d5",
+          "serializable.log": "7e533e3ac08ac435bed4b48521a533a5f3bcf3ee34a56e0ed3c3070da5aa9507",
+          "setup-owner.log": "b738151362df7655d7db652c3a28d620ce0a748966c555847ce37e233f68f392"
+        },
+        "relativeDirectory": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318"
+      },
+      "rawSchemaDumpBytes": 1355543,
+      "rawSchemaDumpSha256": "36bc53baf6ca11bbfa63891eed621a760e4eb3efda89a1289384a964d0ebec34"
+    }
+  ],
+  "deploymentPerformed": false,
+  "frozenCheckpoint11ManifestModified": false,
+  "frozenCheckpoint11ReceiptModified": false,
+  "normalizedSchemaSha256": "1152a494e6b64595c9f9291c1d314a9434cb763c7f2a02512d2768e286f571b4",
+  "normalizedSchemasIdentical": true,
+  "observationalRunCompleted": true,
+  "raceDatabaseCountAtCapture": 0,
+  "reproductionPassClaimed": false,
+  "runtime": {
+    "adminUser": "jarlgiovanni",
+    "host": "/private/tmp/gda-v50-round16b-cp015-final/socket",
+    "port": 59473,
+    "postgresqlVersion": "16.13 (Homebrew)",
+    "tcpListenerUsed": false
+  },
+  "schema": "trace-round16b-cp015-database-diagnostic/v1",
+  "source": {
+    "cleanAtCapture": true,
+    "head": "024935e8d0c36cf0c4724b1960c71f28afef6595",
+    "tree": "28f8ab204378d75d16d98334bbd105d47641f37e",
+    "worktree": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8"
+  },
+  "sourceNativeManifestPreflight": false,
+  "status": "SUPERSEDED_DIAGNOSTIC_ONLY",
+  "supersessionReason": "The frozen checkpoint11 verifier compares a historical absolute race-evidence path to the current checkout root. The adapter validated the exact byte-identical recorded locus, but this creates a hybrid run and cannot prove clean-checkout self-containment. A new run from an additive portability-correction commit is required."
+}

@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "npm",
+    "--prefix",
+    "frontend",
+    "run",
+    "build"
+  ],
+  "command": "npm --prefix frontend run build",
+  "command_id": "1787943364899-cp015-regress-frontend-production-build-network-correction1",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 89477,
+  "end_timestamp_utc": "2026-08-28T18:57:34Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-regress-frontend-production-build-network-correction1",
+  "phase_id": "CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:56:04Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "96c1ada8590fe058f66259564d91a120bbeb1e55449cfc07095a8b49f3c742f5",
+  "timed_out": false
+}

@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "set -eu\nmain=/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b\ncount=0\nfor path in $(git ls-files database); do\n  test -f \"$main/$path\"\n  cmp -s \"$path\" \"$main/$path\"\n  count=$((count + 1))\ndone\nmain_dirty=$(git -C \"$main\" diff --name-only HEAD -- database | wc -l | tr -d \" \")\ntest \"$main_dirty\" = 0\nprintf \"%s\\n\" \"TRACKED_DATABASE_PATHS_BYTE_IDENTICAL=$count\" MAIN_DATABASE_WORKTREE_DRIFT_COUNT=0 DETACHED_DATABASE_SOURCE_IDENTITY=PASS"
+  ],
+  "command": "/bin/sh -c 'set -eu\nmain=/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b\ncount=0\nfor path in $(git ls-files database); do\n  test -f \"$main/$path\"\n  cmp -s \"$path\" \"$main/$path\"\n  count=$((count + 1))\ndone\nmain_dirty=$(git -C \"$main\" diff --name-only HEAD -- database | wc -l | tr -d \" \")\ntest \"$main_dirty\" = 0\nprintf \"%s\\n\" \"TRACKED_DATABASE_PATHS_BYTE_IDENTICAL=$count\" MAIN_DATABASE_WORKTREE_DRIFT_COUNT=0 DETACHED_DATABASE_SOURCE_IDENTITY=PASS'",
+  "command_id": "1787942200507-cp015-db-prove-recorded-locus-byte-identity",
+  "cwd": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+  "duration_ms": 350,
+  "end_timestamp_utc": "2026-08-28T18:36:40Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-db-prove-recorded-locus-byte-identity",
+  "phase_id": "CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:36:40Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "349c1a8212996791b2b0ff7d18d83637d254eb1d6a9a553e847fc6ad157252c6",
+  "timed_out": false
+}

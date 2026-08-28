@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "python3 -B database/scripts/verify_v50_round16b_manifest.py --preflight"
+  ],
+  "command": "/bin/sh -c 'python3 -B database/scripts/verify_v50_round16b_manifest.py --preflight'",
+  "command_id": "1787943266337-cp015-v50-portability-direct-preflight",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 381,
+  "end_timestamp_utc": "2026-08-28T18:54:26Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-v50-portability-direct-preflight",
+  "phase_id": "CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:54:26Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "8be3e10bcb8df0bac2eb7de72218a18b1ec47e67373f333af2cee0192b18e777",
+  "timed_out": false
+}

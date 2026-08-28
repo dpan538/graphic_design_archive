@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "npm",
+    "--prefix",
+    "frontend",
+    "run",
+    "test:exploration-domain"
+  ],
+  "command": "npm --prefix frontend run test:exploration-domain",
+  "command_id": "1787941961850-cp015-frontend-test-domain",
+  "cwd": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+  "duration_ms": 979,
+  "end_timestamp_utc": "2026-08-28T18:32:42Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-frontend-test-domain",
+  "phase_id": "CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:32:41Z",
+  "stderr_sha256": "ff5e0a8ec040dc66bf1fac9d4f17199ce696cb626c5daf7adf506d1b6eb9c8a1",
+  "stdout_sha256": "ed92fd8fe43d33c4d927d2c8984d82da7efe3c7ba2796647916c3ed4cb2aa889",
+  "timed_out": false
+}

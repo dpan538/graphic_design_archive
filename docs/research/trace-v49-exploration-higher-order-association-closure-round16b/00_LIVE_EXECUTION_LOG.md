@@ -13948,3 +13948,4506 @@ printf "%s\n" STALE_IPC_ID=65537 STALE_IPC_OWNER=jarlgiovanni STALE_IPC_NATTCH=0
 - Decision: Bind the diagnostic ledger after recording the successful direct-verifier correction, then stop logger mutations for the checkpoint seal.
 - Next: cp014-final-direct-execution-log-verification
 - Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1069
+
+- UTC timestamp: 2026-08-28T18:27:50Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-import-publication-chain-through-checkpoint014
+- Command: `python3 -B scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787902081597323000-checkpoint-004.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787906350663884000-checkpoint-006.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787908701362896000-checkpoint-007.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787914780509164000-checkpoint-008.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787917453487486000-checkpoint-009.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787920754083087000-checkpoint-010.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787934365737642000-checkpoint-011.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787939431323648000-checkpoint-012.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787940387063722000-checkpoint-013.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787941576153459000-checkpoint-014.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv`
+- Inputs: /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1070
+
+- UTC timestamp: 2026-08-28T18:27:50Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-import-publication-chain-through-checkpoint014
+- Command: `python3 -B scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787902081597323000-checkpoint-004.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787906350663884000-checkpoint-006.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787908701362896000-checkpoint-007.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787914780509164000-checkpoint-008.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787917453487486000-checkpoint-009.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787920754083087000-checkpoint-010.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787934365737642000-checkpoint-011.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787939431323648000-checkpoint-012.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787940387063722000-checkpoint-013.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787941576153459000-checkpoint-014.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv`
+- Inputs: /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Duration: 54 ms
+- Warnings: none
+- Errors: none
+- Decision: Validate and bind the complete external ordinary-push receipt chain through published checkpoint 14 before final reproduction.
+- Next: cp015-recreate-clean-detached-worktree
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1071
+
+- UTC timestamp: 2026-08-28T18:28:04Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-remove-superseded-cp013-detached-worktree
+- Command: `git worktree remove /private/tmp/gda_round16b_cp014_clean_repro_ec7b847e`
+- Inputs: /private/tmp/gda_round16b_cp014_clean_repro_ec7b847e
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1072
+
+- UTC timestamp: 2026-08-28T18:28:11Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-remove-superseded-cp013-detached-worktree
+- Command: `git worktree remove /private/tmp/gda_round16b_cp014_clean_repro_ec7b847e`
+- Inputs: /private/tmp/gda_round16b_cp014_clean_repro_ec7b847e
+- Outputs: none
+- Duration: 3380 ms
+- Warnings: none
+- Errors: none
+- Decision: Remove only the exact clean superseded detached checkpoint-13 worktree after publishing the additive correction; all history remains in the repository and remote branch.
+- Next: cp015-create-cp014-detached-worktree
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1073
+
+- UTC timestamp: 2026-08-28T18:28:25Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-prove-clean-worktree-target-absent
+- Command: `/bin/sh -c 'test ! -e /private/tmp/gda_round16b_cp015_clean_repro_024935e8 && printf "%s\n" CP015_CLEAN_WORKTREE_TARGET_ABSENT=PASS'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1074
+
+- UTC timestamp: 2026-08-28T18:28:25Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-prove-clean-worktree-target-absent
+- Command: `/bin/sh -c 'test ! -e /private/tmp/gda_round16b_cp015_clean_repro_024935e8 && printf "%s\n" CP015_CLEAN_WORKTREE_TARGET_ABSENT=PASS'`
+- Inputs: none
+- Outputs: none
+- Duration: 7 ms
+- Warnings: none
+- Errors: none
+- Decision: Prove the final detached worktree target is absent before creation.
+- Next: cp015-create-cp014-detached-worktree
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1075
+
+- UTC timestamp: 2026-08-28T18:28:35Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-create-cp014-detached-worktree
+- Command: `git worktree add --detach /private/tmp/gda_round16b_cp015_clean_repro_024935e8 024935e8d0c36cf0c4724b1960c71f28afef6595`
+- Inputs: 024935e8d0c36cf0c4724b1960c71f28afef6595
+- Declared outputs: /private/tmp/gda_round16b_cp015_clean_repro_024935e8
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1076
+
+- UTC timestamp: 2026-08-28T18:28:47Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-create-cp014-detached-worktree
+- Command: `git worktree add --detach /private/tmp/gda_round16b_cp015_clean_repro_024935e8 024935e8d0c36cf0c4724b1960c71f28afef6595`
+- Inputs: 024935e8d0c36cf0c4724b1960c71f28afef6595
+- Outputs: /private/tmp/gda_round16b_cp015_clean_repro_024935e8
+- Duration: 12324 ms
+- Warnings: none
+- Errors: none
+- Decision: Create the final isolated detached worktree from the exact published checkpoint-14 SHA.
+- Next: cp015-verify-clean-worktree-identity
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1077
+
+- UTC timestamp: 2026-08-28T18:29:03Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-verify-clean-worktree-identity
+- Command: `/bin/sh -c 'set -eu; test "$(git rev-parse HEAD)" = 024935e8d0c36cf0c4724b1960c71f28afef6595; test "$(git rev-parse HEAD^{tree})" = 28f8ab204378d75d16d98334bbd105d47641f37e; test -z "$(git status --porcelain=v1 --untracked-files=all)"; test -z "$(git lfs status --porcelain)"; printf "%s\n" CLEAN_HEAD=024935e8d0c36cf0c4724b1960c71f28afef6595 CLEAN_TREE=28f8ab204378d75d16d98334bbd105d47641f37e CLEAN_GIT_STATUS=PASS CLEAN_LFS_STATUS=PASS'`
+- Inputs: 024935e8d0c36cf0c4724b1960c71f28afef6595
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1078
+
+- UTC timestamp: 2026-08-28T18:29:03Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-verify-clean-worktree-identity
+- Command: `/bin/sh -c 'set -eu; test "$(git rev-parse HEAD)" = 024935e8d0c36cf0c4724b1960c71f28afef6595; test "$(git rev-parse HEAD^{tree})" = 28f8ab204378d75d16d98334bbd105d47641f37e; test -z "$(git status --porcelain=v1 --untracked-files=all)"; test -z "$(git lfs status --porcelain)"; printf "%s\n" CLEAN_HEAD=024935e8d0c36cf0c4724b1960c71f28afef6595 CLEAN_TREE=28f8ab204378d75d16d98334bbd105d47641f37e CLEAN_GIT_STATUS=PASS CLEAN_LFS_STATUS=PASS'`
+- Inputs: 024935e8d0c36cf0c4724b1960c71f28afef6595
+- Outputs: none
+- Duration: 408 ms
+- Warnings: none
+- Errors: none
+- Decision: Require exact HEAD, tree, empty Git status, and empty Git LFS status before final reproduction.
+- Next: cp015-final-deterministic-foundation-replay
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1079
+
+- UTC timestamp: 2026-08-28T18:29:20Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-verify-clean-worktree-identity-correction1
+- Command: `/bin/sh -c 'set -eu; head_sha=$(git rev-parse HEAD); tree_sha=$(git rev-parse HEAD^{tree}); git_status=$(git status --porcelain=v1 --untracked-files=all); lfs_status=$(git lfs status --porcelain); test "$head_sha" = 024935e8d0c36cf0c4724b1960c71f28afef6595; test "$tree_sha" = 28f8ab204378d75d16d98334bbd105d47641f37e; test -z "$git_status"; test -z "$lfs_status"; printf "%s\n" CLEAN_HEAD=$head_sha CLEAN_TREE=$tree_sha CLEAN_GIT_STATUS=PASS CLEAN_LFS_STATUS=PASS'`
+- Inputs: 024935e8d0c36cf0c4724b1960c71f28afef6595
+- Declared outputs: none
+- Warnings: SANDBOX_BLOCKED_LFS_FILTER_TMP
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1080
+
+- UTC timestamp: 2026-08-28T18:29:21Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-verify-clean-worktree-identity-correction1
+- Command: `/bin/sh -c 'set -eu; head_sha=$(git rev-parse HEAD); tree_sha=$(git rev-parse HEAD^{tree}); git_status=$(git status --porcelain=v1 --untracked-files=all); lfs_status=$(git lfs status --porcelain); test "$head_sha" = 024935e8d0c36cf0c4724b1960c71f28afef6595; test "$tree_sha" = 28f8ab204378d75d16d98334bbd105d47641f37e; test -z "$git_status"; test -z "$lfs_status"; printf "%s\n" CLEAN_HEAD=$head_sha CLEAN_TREE=$tree_sha CLEAN_GIT_STATUS=PASS CLEAN_LFS_STATUS=PASS'`
+- Inputs: 024935e8d0c36cf0c4724b1960c71f28afef6595
+- Outputs: none
+- Duration: 1211 ms
+- Warnings: SANDBOX_BLOCKED_LFS_FILTER_TMP
+- Errors: none
+- Decision: Repeat the exact clean checkout proof with repository-filter access because the first LFS status emitted a denied temporary-filter error despite the shell test masking its nonzero substitution.
+- Next: cp015-final-deterministic-foundation-replay
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1081
+
+- UTC timestamp: 2026-08-28T18:29:58Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — cp015-validate-stale-ipc-65537-before-scoped-removal
+- Command: `/bin/sh -c 'set -eu; line=$(ipcs -m -a | rg "^m[[:space:]]+65537[[:space:]]"); test -n "$line"; set -- $line; test "$2" = 65537; test "$5" = jarlgiovanni; test "$9" = 0; creator_pid=${11}; if ps -p "$creator_pid" >/dev/null 2>&1; then printf "%s\n" STALE_IPC_CREATOR_ABSENT=FAIL >&2; exit 1; fi; printf "%s\n" STALE_IPC_ID=65537 STALE_IPC_OWNER=jarlgiovanni STALE_IPC_NATTCH=0 STALE_IPC_CREATOR_PID=$creator_pid STALE_IPC_CREATOR_ABSENT=PASS'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1082
+
+- UTC timestamp: 2026-08-28T18:29:58Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — cp015-validate-stale-ipc-65537-before-scoped-removal
+- Command: `/bin/sh -c 'set -eu; line=$(ipcs -m -a | rg "^m[[:space:]]+65537[[:space:]]"); test -n "$line"; set -- $line; test "$2" = 65537; test "$5" = jarlgiovanni; test "$9" = 0; creator_pid=${11}; if ps -p "$creator_pid" >/dev/null 2>&1; then printf "%s\n" STALE_IPC_CREATOR_ABSENT=FAIL >&2; exit 1; fi; printf "%s\n" STALE_IPC_ID=65537 STALE_IPC_OWNER=jarlgiovanni STALE_IPC_NATTCH=0 STALE_IPC_CREATOR_PID=$creator_pid STALE_IPC_CREATOR_ABSENT=PASS'`
+- Inputs: none
+- Outputs: none
+- Duration: 31 ms
+- Warnings: none
+- Errors: none
+- Decision: Revalidate the exact oldest user-owned unattached stale System V segment and absent creator immediately before requesting its scoped removal to permit the required fresh PostgreSQL cluster.
+- Next: cp015-remove-stale-ipc-65537
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1083
+
+- UTC timestamp: 2026-08-28T18:30:13Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — cp015-remove-stale-ipc-65537
+- Command: `ipcrm -m 65537`
+- Inputs: SYSV_SHM_ID_65537
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1084
+
+- UTC timestamp: 2026-08-28T18:30:13Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — cp015-remove-stale-ipc-65537
+- Command: `ipcrm -m 65537`
+- Inputs: SYSV_SHM_ID_65537
+- Outputs: none
+- Duration: 4 ms
+- Warnings: none
+- Errors: none
+- Decision: Remove only System V shared-memory ID 65537 after proving it is user-owned, unattached, and its creator PID is absent; leave every other IPC segment and process untouched.
+- Next: cp015-prove-stale-ipc-65537-absent
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1085
+
+- UTC timestamp: 2026-08-28T18:30:23Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — cp015-prove-stale-ipc-65537-absent
+- Command: `/bin/sh -c 'set -eu; test -z "$(ipcs -m -a | rg "^m[[:space:]]+65537[[:space:]]" || true)"; count=$(ipcs -m -a | rg -c "^m[[:space:]]+"); test "$count" -eq 31; printf "%s\n" STALE_IPC_ID_65537_ABSENT=PASS SYSV_SHARED_MEMORY_IDENTIFIER_COUNT=$count'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1086
+
+- UTC timestamp: 2026-08-28T18:30:23Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — cp015-prove-stale-ipc-65537-absent
+- Command: `/bin/sh -c 'set -eu; test -z "$(ipcs -m -a | rg "^m[[:space:]]+65537[[:space:]]" || true)"; count=$(ipcs -m -a | rg -c "^m[[:space:]]+"); test "$count" -eq 31; printf "%s\n" STALE_IPC_ID_65537_ABSENT=PASS SYSV_SHARED_MEMORY_IDENTIFIER_COUNT=$count'`
+- Inputs: none
+- Outputs: none
+- Duration: 14 ms
+- Warnings: none
+- Errors: none
+- Decision: Prove only the exact stale segment is absent and one host identifier is now available.
+- Next: cp015-fresh-database-reproduction
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1087
+
+- UTC timestamp: 2026-08-28T18:31:03Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-build-local-candidate-census
+- Command: `python3 -B scripts/trace_round16b/build_local_candidate_census.py`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1088
+
+- UTC timestamp: 2026-08-28T18:31:03Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-build-deferred-surface-census
+- Command: `python3 -B scripts/trace_round16b/build_deferred_surface_census.py`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1089
+
+- UTC timestamp: 2026-08-28T18:31:03Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-build-method
+- Command: `python3 -B scripts/trace_round16b/build_method_checkpoint.py`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1090
+
+- UTC timestamp: 2026-08-28T18:31:03Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-build-method
+- Command: `python3 -B scripts/trace_round16b/build_method_checkpoint.py`
+- Inputs: none
+- Outputs: none
+- Duration: 535 ms
+- Warnings: none
+- Errors: none
+- Decision: Rebuild a foundational governed Round 16B artifact from the exact published checkpoint-14 clean checkout.
+- Next: cp015-clean-foundation-independent-verification
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1091
+
+- UTC timestamp: 2026-08-28T18:31:10Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-build-local-candidate-census
+- Command: `python3 -B scripts/trace_round16b/build_local_candidate_census.py`
+- Inputs: none
+- Outputs: none
+- Duration: 7805 ms
+- Warnings: none
+- Errors: none
+- Decision: Rebuild a foundational governed Round 16B artifact from the exact published checkpoint-14 clean checkout.
+- Next: cp015-clean-foundation-independent-verification
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1092
+
+- UTC timestamp: 2026-08-28T18:31:38Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Prove detached frontend dependency path is ignored and clean before dependency reuse
+- Command: `/bin/sh -c 'set -eu; test "$(git rev-parse HEAD)" = 024935e8d0c36cf0c4724b1960c71f28afef6595; test -z "$(git status --porcelain=v1 --untracked-files=all)"; test ! -e frontend/node_modules; git check-ignore -q frontend/node_modules; git check-ignore -q frontend/node_modules/.cp15-probe; test -d /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules; printf "%s\n" FRONTEND_NODE_MODULES_TARGET_ABSENT=PASS FRONTEND_NODE_MODULES_IGNORE=PASS FRONTEND_NODE_MODULES_DESCENDANT_IGNORE=PASS INITIAL_GIT_STATUS=PASS MAIN_DEPENDENCY_DIRECTORY=PASS'`
+- Inputs: frontend/.gitignore
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1093
+
+- UTC timestamp: 2026-08-28T18:31:38Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Prove detached frontend dependency path is ignored and clean before dependency reuse
+- Command: `/bin/sh -c 'set -eu; test "$(git rev-parse HEAD)" = 024935e8d0c36cf0c4724b1960c71f28afef6595; test -z "$(git status --porcelain=v1 --untracked-files=all)"; test ! -e frontend/node_modules; git check-ignore -q frontend/node_modules; git check-ignore -q frontend/node_modules/.cp15-probe; test -d /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules; printf "%s\n" FRONTEND_NODE_MODULES_TARGET_ABSENT=PASS FRONTEND_NODE_MODULES_IGNORE=PASS FRONTEND_NODE_MODULES_DESCENDANT_IGNORE=PASS INITIAL_GIT_STATUS=PASS MAIN_DEPENDENCY_DIRECTORY=PASS'`
+- Inputs: frontend/.gitignore
+- Outputs: none
+- Duration: 198 ms
+- Warnings: none
+- Errors: none
+- Decision: Only an exact ignored frontend/node_modules path may be linked to the already-installed main-worktree dependencies.
+- Next: Create the scoped ignored dependency symlink if the path is absent.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1094
+
+- UTC timestamp: 2026-08-28T18:31:42Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Prove the exact CP15 cluster root is absent before creation.
+- Command: `/bin/sh -c 'test ! -e /private/tmp/gda-v50-round16b-cp015-final && printf "%s\n" CP15_DATABASE_CLUSTER_ROOT_ABSENT=PASS'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1095
+
+- UTC timestamp: 2026-08-28T18:31:42Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Prove the exact CP15 cluster root is absent before creation.
+- Command: `/bin/sh -c 'test ! -e /private/tmp/gda-v50-round16b-cp015-final && printf "%s\n" CP15_DATABASE_CLUSTER_ROOT_ABSENT=PASS'`
+- Inputs: none
+- Outputs: none
+- Duration: 6 ms
+- Warnings: none
+- Errors: none
+- Decision: Create only the exact isolated cluster root.
+- Next: Verify the PostgreSQL 16.13 toolchain and isolation port.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1096
+
+- UTC timestamp: 2026-08-28T18:31:51Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Verify exact PostgreSQL 16.13 binaries, port isolation, and the freed bootstrap IPC slot.
+- Command: `/bin/sh -c 'set -eu
+for tool in initdb pg_ctl postgres psql createdb dropdb pg_dump pg_isready; do test -x "/opt/homebrew/opt/postgresql@16/bin/$tool"; done
+version=$(/opt/homebrew/opt/postgresql@16/bin/postgres --version)
+case "$version" in *"16.13"*) ;; *) printf "%s\n" "unexpected PostgreSQL version: $version" >&2; exit 1 ;; esac
+if lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then printf "%s\n" CP15_DATABASE_PORT_FREE=FAIL >&2; exit 1; fi
+count=$(ipcs -m -a | rg -c "^m[[:space:]]+" || true)
+test "$count" -le 31
+printf "%s\n" "POSTGRESQL_TOOLCHAIN=$version" CP15_DATABASE_PORT_59473_FREE=PASS "SYSV_SHARED_MEMORY_IDENTIFIER_COUNT=$count" BOOTSTRAP_IPC_SLOT_AVAILABLE=PASS'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1097
+
+- UTC timestamp: 2026-08-28T18:31:51Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: FAIL — Verify exact PostgreSQL 16.13 binaries, port isolation, and the freed bootstrap IPC slot.
+- Command: `/bin/sh -c 'set -eu
+for tool in initdb pg_ctl postgres psql createdb dropdb pg_dump pg_isready; do test -x "/opt/homebrew/opt/postgresql@16/bin/$tool"; done
+version=$(/opt/homebrew/opt/postgresql@16/bin/postgres --version)
+case "$version" in *"16.13"*) ;; *) printf "%s\n" "unexpected PostgreSQL version: $version" >&2; exit 1 ;; esac
+if lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then printf "%s\n" CP15_DATABASE_PORT_FREE=FAIL >&2; exit 1; fi
+count=$(ipcs -m -a | rg -c "^m[[:space:]]+" || true)
+test "$count" -le 31
+printf "%s\n" "POSTGRESQL_TOOLCHAIN=$version" CP15_DATABASE_PORT_59473_FREE=PASS "SYSV_SHARED_MEMORY_IDENTIFIER_COUNT=$count" BOOTSTRAP_IPC_SLOT_AVAILABLE=PASS'`
+- Inputs: none
+- Outputs: none
+- Duration: 77 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_2
+- Decision: Preserve the failure and correct it additively.
+- Next: Create the exact cluster and socket directories.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1098
+
+- UTC timestamp: 2026-08-28T18:31:56Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Create scoped ignored dependency symlink after correcting logger path typo
+- Command: `ln -s /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules frontend/node_modules`
+- Inputs: frontend/.gitignore
+- Declared outputs: none
+- Warnings: PRIOR_UNLOGGED_LOGGER_PATH_TYPO_EXIT_2, DEPENDENCIES_REUSED_FROM_EXACT_MAIN_WORKTREE_INSTALL
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1099
+
+- UTC timestamp: 2026-08-28T18:31:56Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Create scoped ignored dependency symlink after correcting logger path typo
+- Command: `ln -s /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules frontend/node_modules`
+- Inputs: frontend/.gitignore
+- Outputs: none
+- Duration: 5 ms
+- Warnings: PRIOR_UNLOGGED_LOGGER_PATH_TYPO_EXIT_2, DEPENDENCIES_REUSED_FROM_EXACT_MAIN_WORKTREE_INSTALL
+- Errors: none
+- Decision: The prior wrapper invocation failed before the logger ran; this corrected command is authoritative.
+- Next: Verify link identity, ignore behavior, and clean tracked status.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1100
+
+- UTC timestamp: 2026-08-28T18:31:57Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-build-deferred-surface-census
+- Command: `python3 -B scripts/trace_round16b/build_deferred_surface_census.py`
+- Inputs: none
+- Outputs: none
+- Duration: 54523 ms
+- Warnings: none
+- Errors: none
+- Decision: Rebuild a foundational governed Round 16B artifact from the exact published checkpoint-14 clean checkout.
+- Next: cp015-clean-foundation-independent-verification
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1101
+
+- UTC timestamp: 2026-08-28T18:32:06Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Verify ignored dependency symlink and detached source cleanliness
+- Command: `/bin/sh -c 'set -eu; test -L frontend/node_modules; test "$(readlink frontend/node_modules)" = /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules; git check-ignore -q frontend/node_modules; test -z "$(git status --porcelain=v1 --untracked-files=all)"; printf "%s\n" FRONTEND_NODE_MODULES_LINK=PASS FRONTEND_NODE_MODULES_LINK_TARGET=/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules FRONTEND_NODE_MODULES_IGNORE=PASS TRACKED_WORKTREE_CLEAN=PASS'`
+- Inputs: frontend/.gitignore
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1102
+
+- UTC timestamp: 2026-08-28T18:32:06Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Verify ignored dependency symlink and detached source cleanliness
+- Command: `/bin/sh -c 'set -eu; test -L frontend/node_modules; test "$(readlink frontend/node_modules)" = /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules; git check-ignore -q frontend/node_modules; test -z "$(git status --porcelain=v1 --untracked-files=all)"; printf "%s\n" FRONTEND_NODE_MODULES_LINK=PASS FRONTEND_NODE_MODULES_LINK_TARGET=/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules FRONTEND_NODE_MODULES_IGNORE=PASS TRACKED_WORKTREE_CLEAN=PASS'`
+- Inputs: frontend/.gitignore
+- Outputs: none
+- Duration: 178 ms
+- Warnings: none
+- Errors: none
+- Decision: Frontend gates may run only while the dependency link resolves to the authorized main-worktree install and remains ignored.
+- Next: Run the reset guard and governed frontend test inventory.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1103
+
+- UTC timestamp: 2026-08-28T18:32:08Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-verify-method-independent
+- Command: `python3 -B scripts/trace_round16b/verify_method_checkpoint.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-independent-verification.json`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1104
+
+- UTC timestamp: 2026-08-28T18:32:08Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-verify-local-candidate-independent
+- Command: `python3 -B scripts/trace_round16b/verify_local_candidate_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-independent-verification.json`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1105
+
+- UTC timestamp: 2026-08-28T18:32:08Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-verify-deferred-surface-independent
+- Command: `python3 -B scripts/trace_round16b/verify_deferred_surface_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-independent-verification-v1.json`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1106
+
+- UTC timestamp: 2026-08-28T18:32:08Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-verify-method-independent
+- Command: `python3 -B scripts/trace_round16b/verify_method_checkpoint.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-independent-verification.json`
+- Inputs: none
+- Outputs: none
+- Duration: 484 ms
+- Warnings: none
+- Errors: none
+- Decision: Independently reconstruct a foundational Round 16B artifact from committed governed inputs in the clean checkout.
+- Next: cp015-clean-full-replay
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1107
+
+- UTC timestamp: 2026-08-28T18:32:09Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Correct the sandbox-limited preflight by verifying PostgreSQL 16.13, port isolation, and the freed bootstrap IPC slot on the host.
+- Command: `/bin/sh -c 'set -eu
+for tool in initdb pg_ctl postgres psql createdb dropdb pg_dump pg_isready; do test -x "/opt/homebrew/opt/postgresql@16/bin/$tool"; done
+version=$(/opt/homebrew/opt/postgresql@16/bin/postgres --version)
+case "$version" in *"16.13"*) ;; *) printf "%s\n" "unexpected PostgreSQL version: $version" >&2; exit 1 ;; esac
+if lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then printf "%s\n" CP15_DATABASE_PORT_FREE=FAIL >&2; exit 1; fi
+count=$(ipcs -m -a | rg -c "^m[[:space:]]+" || true)
+test "$count" -le 31
+printf "%s\n" "POSTGRESQL_TOOLCHAIN=$version" CP15_DATABASE_PORT_59473_FREE=PASS "SYSV_SHARED_MEMORY_IDENTIFIER_COUNT=$count" BOOTSTRAP_IPC_SLOT_AVAILABLE=PASS'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: PRESERVED_SANDBOX_IPCS_PERMISSION_FAILURE
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1108
+
+- UTC timestamp: 2026-08-28T18:32:09Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Correct the sandbox-limited preflight by verifying PostgreSQL 16.13, port isolation, and the freed bootstrap IPC slot on the host.
+- Command: `/bin/sh -c 'set -eu
+for tool in initdb pg_ctl postgres psql createdb dropdb pg_dump pg_isready; do test -x "/opt/homebrew/opt/postgresql@16/bin/$tool"; done
+version=$(/opt/homebrew/opt/postgresql@16/bin/postgres --version)
+case "$version" in *"16.13"*) ;; *) printf "%s\n" "unexpected PostgreSQL version: $version" >&2; exit 1 ;; esac
+if lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then printf "%s\n" CP15_DATABASE_PORT_FREE=FAIL >&2; exit 1; fi
+count=$(ipcs -m -a | rg -c "^m[[:space:]]+" || true)
+test "$count" -le 31
+printf "%s\n" "POSTGRESQL_TOOLCHAIN=$version" CP15_DATABASE_PORT_59473_FREE=PASS "SYSV_SHARED_MEMORY_IDENTIFIER_COUNT=$count" BOOTSTRAP_IPC_SLOT_AVAILABLE=PASS'`
+- Inputs: none
+- Outputs: none
+- Duration: 59 ms
+- Warnings: PRESERVED_SANDBOX_IPCS_PERMISSION_FAILURE
+- Errors: none
+- Decision: Initialize a fresh UTF-8 cluster after host-level isolation checks pass.
+- Next: Create the exact cluster and socket directories.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1109
+
+- UTC timestamp: 2026-08-28T18:32:14Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-verify-deferred-surface-independent
+- Command: `python3 -B scripts/trace_round16b/verify_deferred_surface_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-independent-verification-v1.json`
+- Inputs: none
+- Outputs: none
+- Duration: 6439 ms
+- Warnings: none
+- Errors: none
+- Decision: Independently reconstruct a foundational Round 16B artifact from committed governed inputs in the clean checkout.
+- Next: cp015-clean-full-replay
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1110
+
+- UTC timestamp: 2026-08-28T18:32:15Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-verify-local-candidate-independent
+- Command: `python3 -B scripts/trace_round16b/verify_local_candidate_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-independent-verification.json`
+- Inputs: none
+- Outputs: none
+- Duration: 7324 ms
+- Warnings: none
+- Errors: none
+- Decision: Independently reconstruct a foundational Round 16B artifact from committed governed inputs in the clean checkout.
+- Next: cp015-clean-full-replay
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1111
+
+- UTC timestamp: 2026-08-28T18:32:16Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Create the exact CP15 cluster root and unique socket directory.
+- Command: `mkdir -p /private/tmp/gda-v50-round16b-cp015-final/socket`
+- Inputs: none
+- Declared outputs: /private/tmp/gda-v50-round16b-cp015-final
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1112
+
+- UTC timestamp: 2026-08-28T18:32:16Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Create the exact CP15 cluster root and unique socket directory.
+- Command: `mkdir -p /private/tmp/gda-v50-round16b-cp015-final/socket`
+- Inputs: none
+- Outputs: /private/tmp/gda-v50-round16b-cp015-final
+- Duration: 4 ms
+- Warnings: none
+- Errors: none
+- Decision: Initialize only this exact new root.
+- Next: Run initdb with the governed locale, encoding, and authentication modes.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1113
+
+- UTC timestamp: 2026-08-28T18:32:27Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Initialize the exact fresh PostgreSQL 16.13 CP15 cluster as jarlgiovanni.
+- Command: `env LC_ALL=C.UTF-8 /opt/homebrew/opt/postgresql@16/bin/initdb -D /private/tmp/gda-v50-round16b-cp015-final/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject --username=jarlgiovanni`
+- Inputs: database/roles/001_cluster_roles.sql
+- Declared outputs: /private/tmp/gda-v50-round16b-cp015-final/data
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1114
+
+- UTC timestamp: 2026-08-28T18:32:28Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Initialize the exact fresh PostgreSQL 16.13 CP15 cluster as jarlgiovanni.
+- Command: `env LC_ALL=C.UTF-8 /opt/homebrew/opt/postgresql@16/bin/initdb -D /private/tmp/gda-v50-round16b-cp015-final/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject --username=jarlgiovanni`
+- Inputs: database/roles/001_cluster_roles.sql
+- Outputs: /private/tmp/gda-v50-round16b-cp015-final/data
+- Duration: 788 ms
+- Warnings: none
+- Errors: none
+- Decision: Start the initialized cluster on the unique socket and non-default port.
+- Next: Start PostgreSQL with mmap shared memory and no TCP listener.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1115
+
+- UTC timestamp: 2026-08-28T18:32:29Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Run governed Exploration reset guard from detached published source
+- Command: `npm --prefix frontend run verify:exploration-reset`
+- Inputs: frontend/package.json, frontend/scripts/exploration-reset-guard.mjs
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1116
+
+- UTC timestamp: 2026-08-28T18:32:29Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Run governed Exploration reset guard from detached published source
+- Command: `npm --prefix frontend run verify:exploration-reset`
+- Inputs: frontend/package.json, frontend/scripts/exploration-reset-guard.mjs
+- Outputs: none
+- Duration: 716 ms
+- Warnings: none
+- Errors: none
+- Decision: Any reset-guard failure blocks frontend and HTTP verification.
+- Next: Run the complete governed Exploration frontend test inventory.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1117
+
+- UTC timestamp: 2026-08-28T18:32:33Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-verify-evidence-a-independent
+- Command: `python3 -B scripts/trace_round16b/verify_evidence_disposition_tranche_a.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-a-v1.json`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1118
+
+- UTC timestamp: 2026-08-28T18:32:33Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-check-evidence-b
+- Command: `python3 -B scripts/trace_round16b/build_evidence_disposition_tranche_b.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1119
+
+- UTC timestamp: 2026-08-28T18:32:33Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-verify-evidence-b-independent
+- Command: `python3 -B scripts/trace_round16b/verify_evidence_disposition_tranche_b.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-b-v1.json`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1120
+
+- UTC timestamp: 2026-08-28T18:32:33Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-check-evidence-a
+- Command: `python3 -B scripts/trace_round16b/build_evidence_disposition_tranche_a.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1121
+
+- UTC timestamp: 2026-08-28T18:32:33Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-check-source-shard1
+- Command: `python3 -B scripts/trace_round16b/build_adaptive_source_review_shard_1.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1122
+
+- UTC timestamp: 2026-08-28T18:32:33Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-check-evidence-c
+- Command: `python3 -B scripts/trace_round16b/build_evidence_disposition_tranche_c.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1123
+
+- UTC timestamp: 2026-08-28T18:32:33Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-verify-evidence-c-independent
+- Command: `python3 -B scripts/trace_round16b/verify_evidence_disposition_tranche_c.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1124
+
+- UTC timestamp: 2026-08-28T18:32:33Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-verify-evidence-a-independent
+- Command: `python3 -B scripts/trace_round16b/verify_evidence_disposition_tranche_a.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-a-v1.json`
+- Inputs: none
+- Outputs: none
+- Duration: 276 ms
+- Warnings: none
+- Errors: none
+- Decision: Reproduce and independently verify a governed evidence or adaptive-source tranche from the exact clean published checkpoint.
+- Next: cp015-clean-round16a-and-v3-replay
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1125
+
+- UTC timestamp: 2026-08-28T18:32:33Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-check-source-shard1
+- Command: `python3 -B scripts/trace_round16b/build_adaptive_source_review_shard_1.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 120 ms
+- Warnings: none
+- Errors: none
+- Decision: Reproduce and independently verify a governed evidence or adaptive-source tranche from the exact clean published checkpoint.
+- Next: cp015-clean-round16a-and-v3-replay
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1126
+
+- UTC timestamp: 2026-08-28T18:32:33Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-check-evidence-a
+- Command: `python3 -B scripts/trace_round16b/build_evidence_disposition_tranche_a.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 188 ms
+- Warnings: none
+- Errors: none
+- Decision: Reproduce and independently verify a governed evidence or adaptive-source tranche from the exact clean published checkpoint.
+- Next: cp015-clean-round16a-and-v3-replay
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1127
+
+- UTC timestamp: 2026-08-28T18:32:33Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-verify-source-shard1-independent
+- Command: `python3 -B scripts/trace_round16b/verify_adaptive_source_review_shard_1.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1128
+
+- UTC timestamp: 2026-08-28T18:32:33Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-check-source-shard2
+- Command: `python3 -B scripts/trace_round16b/build_adaptive_source_review_shard_2.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1129
+
+- UTC timestamp: 2026-08-28T18:32:33Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-verify-evidence-c-independent
+- Command: `python3 -B scripts/trace_round16b/verify_evidence_disposition_tranche_c.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 196 ms
+- Warnings: none
+- Errors: none
+- Decision: Reproduce and independently verify a governed evidence or adaptive-source tranche from the exact clean published checkpoint.
+- Next: cp015-clean-round16a-and-v3-replay
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1130
+
+- UTC timestamp: 2026-08-28T18:32:34Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-verify-source-shard2-independent
+- Command: `python3 -B scripts/trace_round16b/verify_adaptive_source_review_shard_2.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1131
+
+- UTC timestamp: 2026-08-28T18:32:34Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-verify-source-shard1-independent
+- Command: `python3 -B scripts/trace_round16b/verify_adaptive_source_review_shard_1.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 163 ms
+- Warnings: none
+- Errors: none
+- Decision: Reproduce and independently verify a governed evidence or adaptive-source tranche from the exact clean published checkpoint.
+- Next: cp015-clean-round16a-and-v3-replay
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1132
+
+- UTC timestamp: 2026-08-28T18:32:34Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-verify-evidence-b-independent
+- Command: `python3 -B scripts/trace_round16b/verify_evidence_disposition_tranche_b.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-b-v1.json`
+- Inputs: none
+- Outputs: none
+- Duration: 562 ms
+- Warnings: none
+- Errors: none
+- Decision: Reproduce and independently verify a governed evidence or adaptive-source tranche from the exact clean published checkpoint.
+- Next: cp015-clean-round16a-and-v3-replay
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1133
+
+- UTC timestamp: 2026-08-28T18:32:34Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-check-source-shard2
+- Command: `python3 -B scripts/trace_round16b/build_adaptive_source_review_shard_2.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 138 ms
+- Warnings: none
+- Errors: none
+- Decision: Reproduce and independently verify a governed evidence or adaptive-source tranche from the exact clean published checkpoint.
+- Next: cp015-clean-round16a-and-v3-replay
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1134
+
+- UTC timestamp: 2026-08-28T18:32:34Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-verify-source-shard2-independent
+- Command: `python3 -B scripts/trace_round16b/verify_adaptive_source_review_shard_2.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 112 ms
+- Warnings: none
+- Errors: none
+- Decision: Reproduce and independently verify a governed evidence or adaptive-source tranche from the exact clean published checkpoint.
+- Next: cp015-clean-round16a-and-v3-replay
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1135
+
+- UTC timestamp: 2026-08-28T18:32:34Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-check-evidence-c
+- Command: `python3 -B scripts/trace_round16b/build_evidence_disposition_tranche_c.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 655 ms
+- Warnings: none
+- Errors: none
+- Decision: Reproduce and independently verify a governed evidence or adaptive-source tranche from the exact clean published checkpoint.
+- Next: cp015-clean-round16a-and-v3-replay
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1136
+
+- UTC timestamp: 2026-08-28T18:32:34Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-check-evidence-b
+- Command: `python3 -B scripts/trace_round16b/build_evidence_disposition_tranche_b.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 1021 ms
+- Warnings: none
+- Errors: none
+- Decision: Reproduce and independently verify a governed evidence or adaptive-source tranche from the exact clean published checkpoint.
+- Next: cp015-clean-round16a-and-v3-replay
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1137
+
+- UTC timestamp: 2026-08-28T18:32:41Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Run governed frontend constraint-kernel test from detached published source
+- Command: `npm --prefix frontend run test:exploration-constraint-kernel`
+- Inputs: frontend/package.json, frontend/scripts/test-exploration-constraint-kernel.mjs
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1138
+
+- UTC timestamp: 2026-08-28T18:32:41Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Run governed frontend domain test from detached published source
+- Command: `npm --prefix frontend run test:exploration-domain`
+- Inputs: frontend/package.json, frontend/scripts/test-exploration-domain.mjs
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1139
+
+- UTC timestamp: 2026-08-28T18:32:41Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Run governed frontend inquiry-adapter test from detached published source
+- Command: `npm --prefix frontend run test:exploration-inquiry-adapter`
+- Inputs: frontend/package.json, frontend/scripts/test-exploration-inquiry-adapter.mjs
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1140
+
+- UTC timestamp: 2026-08-28T18:32:41Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Run governed frontend composition-review test from detached published source
+- Command: `npm --prefix frontend run test:exploration-composition-review`
+- Inputs: frontend/package.json, frontend/scripts/test-exploration-composition-review.mjs
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1141
+
+- UTC timestamp: 2026-08-28T18:32:41Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Run governed frontend composition-engine test from detached published source
+- Command: `npm --prefix frontend run test:exploration-composition-engine`
+- Inputs: frontend/package.json, frontend/scripts/test-exploration-composition-engine.mjs
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1142
+
+- UTC timestamp: 2026-08-28T18:32:41Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Run governed frontend association-calibration test from detached published source
+- Command: `npm --prefix frontend run test:exploration-association-calibration`
+- Inputs: frontend/package.json, frontend/scripts/test-exploration-association-calibration.mjs
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1143
+
+- UTC timestamp: 2026-08-28T18:32:42Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Run governed frontend composition-review test from detached published source
+- Command: `npm --prefix frontend run test:exploration-composition-review`
+- Inputs: frontend/package.json, frontend/scripts/test-exploration-composition-review.mjs
+- Outputs: none
+- Duration: 296 ms
+- Warnings: none
+- Errors: none
+- Decision: Any governed frontend test failure blocks final HTTP verification.
+- Next: Complete the remaining frontend inventory before the production build.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1144
+
+- UTC timestamp: 2026-08-28T18:32:42Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Run governed frontend inquiry-adapter test from detached published source
+- Command: `npm --prefix frontend run test:exploration-inquiry-adapter`
+- Inputs: frontend/package.json, frontend/scripts/test-exploration-inquiry-adapter.mjs
+- Outputs: none
+- Duration: 353 ms
+- Warnings: none
+- Errors: none
+- Decision: Any governed frontend test failure blocks final HTTP verification.
+- Next: Complete the remaining frontend inventory before the production build.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1145
+
+- UTC timestamp: 2026-08-28T18:32:42Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Run governed frontend constraint-kernel test from detached published source
+- Command: `npm --prefix frontend run test:exploration-constraint-kernel`
+- Inputs: frontend/package.json, frontend/scripts/test-exploration-constraint-kernel.mjs
+- Outputs: none
+- Duration: 415 ms
+- Warnings: none
+- Errors: none
+- Decision: Any governed frontend test failure blocks final HTTP verification.
+- Next: Complete the remaining frontend inventory before the production build.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1146
+
+- UTC timestamp: 2026-08-28T18:32:42Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Run governed frontend composition-engine test from detached published source
+- Command: `npm --prefix frontend run test:exploration-composition-engine`
+- Inputs: frontend/package.json, frontend/scripts/test-exploration-composition-engine.mjs
+- Outputs: none
+- Duration: 320 ms
+- Warnings: none
+- Errors: none
+- Decision: Any governed frontend test failure blocks final HTTP verification.
+- Next: Complete the remaining frontend inventory before the production build.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1147
+
+- UTC timestamp: 2026-08-28T18:32:42Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Run governed frontend association-calibration test from detached published source
+- Command: `npm --prefix frontend run test:exploration-association-calibration`
+- Inputs: frontend/package.json, frontend/scripts/test-exploration-association-calibration.mjs
+- Outputs: none
+- Duration: 366 ms
+- Warnings: none
+- Errors: none
+- Decision: Any governed frontend test failure blocks final HTTP verification.
+- Next: Complete the remaining frontend inventory before the production build.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1148
+
+- UTC timestamp: 2026-08-28T18:32:42Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Start the exact CP15 cluster on socket-only port 59473 with mmap shared memory.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_ctl -D /private/tmp/gda-v50-round16b-cp015-final/data -l /private/tmp/gda-v50-round16b-cp015-final/server.log -w -t 60 -o '-p 59473 -k /private/tmp/gda-v50-round16b-cp015-final/socket -c listen_addresses='"'"''"'"' -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix -c unix_socket_permissions=0700' start`
+- Inputs: /private/tmp/gda-v50-round16b-cp015-final/data
+- Declared outputs: /private/tmp/gda-v50-round16b-cp015-final/server.log
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1149
+
+- UTC timestamp: 2026-08-28T18:32:42Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Run governed frontend domain test from detached published source
+- Command: `npm --prefix frontend run test:exploration-domain`
+- Inputs: frontend/package.json, frontend/scripts/test-exploration-domain.mjs
+- Outputs: none
+- Duration: 979 ms
+- Warnings: none
+- Errors: none
+- Decision: Any governed frontend test failure blocks final HTTP verification.
+- Next: Complete the remaining frontend inventory before the production build.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1150
+
+- UTC timestamp: 2026-08-28T18:32:42Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Start the exact CP15 cluster on socket-only port 59473 with mmap shared memory.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_ctl -D /private/tmp/gda-v50-round16b-cp015-final/data -l /private/tmp/gda-v50-round16b-cp015-final/server.log -w -t 60 -o '-p 59473 -k /private/tmp/gda-v50-round16b-cp015-final/socket -c listen_addresses='"'"''"'"' -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix -c unix_socket_permissions=0700' start`
+- Inputs: /private/tmp/gda-v50-round16b-cp015-final/data
+- Outputs: /private/tmp/gda-v50-round16b-cp015-final/server.log
+- Duration: 213 ms
+- Warnings: none
+- Errors: none
+- Decision: Verify identity, version, listener confinement, and readiness.
+- Next: Run an exact runtime-isolation proof before applying roles.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1151
+
+- UTC timestamp: 2026-08-28T18:32:47Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-verify-round16a-reconciliation-independent
+- Command: `python3 -B scripts/trace_round16b/verify_round16a_global_reconciliation.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1152
+
+- UTC timestamp: 2026-08-28T18:32:47Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-check-round16a-reconciliation
+- Command: `python3 -B scripts/trace_round16b/build_round16a_global_reconciliation.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1153
+
+- UTC timestamp: 2026-08-28T18:32:47Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-check-v3-semantic-contract
+- Command: `python3 -B scripts/trace_round16b/build_v3_semantic_contract.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1154
+
+- UTC timestamp: 2026-08-28T18:32:47Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-verify-v3-semantic-contract-independent
+- Command: `python3 -B scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1155
+
+- UTC timestamp: 2026-08-28T18:32:47Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-verify-v3-runtime-independent
+- Command: `python3 -B scripts/trace_round16b/verify_v3_runtime_independent.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1156
+
+- UTC timestamp: 2026-08-28T18:32:47Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-check-v3-runtime-read-model
+- Command: `python3 -B scripts/trace_round16b/build_exploration_v3_runtime_read_model.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1157
+
+- UTC timestamp: 2026-08-28T18:32:47Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-check-recursive-gap-audit
+- Command: `python3 -B scripts/trace_round16b/build_recursive_gap_closure_audit.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1158
+
+- UTC timestamp: 2026-08-28T18:32:47Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-verify-recursive-gap-audit-independent
+- Command: `python3 -B scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1159
+
+- UTC timestamp: 2026-08-28T18:32:47Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-check-v3-runtime-read-model
+- Command: `python3 -B scripts/trace_round16b/build_exploration_v3_runtime_read_model.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 134 ms
+- Warnings: none
+- Errors: none
+- Decision: Reproduce and independently verify the global reconciliation, semantic runtime, or recursive non-closure artifact from the exact clean published checkpoint.
+- Next: cp015-clean-protected-and-status-proof
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1160
+
+- UTC timestamp: 2026-08-28T18:32:47Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-check-v3-semantic-contract
+- Command: `python3 -B scripts/trace_round16b/build_v3_semantic_contract.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 324 ms
+- Warnings: none
+- Errors: none
+- Decision: Reproduce and independently verify the global reconciliation, semantic runtime, or recursive non-closure artifact from the exact clean published checkpoint.
+- Next: cp015-clean-protected-and-status-proof
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1161
+
+- UTC timestamp: 2026-08-28T18:32:47Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-check-recursive-gap-audit
+- Command: `python3 -B scripts/trace_round16b/build_recursive_gap_closure_audit.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 224 ms
+- Warnings: none
+- Errors: none
+- Decision: Reproduce and independently verify the global reconciliation, semantic runtime, or recursive non-closure artifact from the exact clean published checkpoint.
+- Next: cp015-clean-protected-and-status-proof
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1162
+
+- UTC timestamp: 2026-08-28T18:32:48Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-verify-recursive-gap-audit-independent
+- Command: `python3 -B scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 352 ms
+- Warnings: none
+- Errors: none
+- Decision: Reproduce and independently verify the global reconciliation, semantic runtime, or recursive non-closure artifact from the exact clean published checkpoint.
+- Next: cp015-clean-protected-and-status-proof
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1163
+
+- UTC timestamp: 2026-08-28T18:32:48Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-verify-v3-runtime-independent
+- Command: `python3 -B scripts/trace_round16b/verify_v3_runtime_independent.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 596 ms
+- Warnings: none
+- Errors: none
+- Decision: Reproduce and independently verify the global reconciliation, semantic runtime, or recursive non-closure artifact from the exact clean published checkpoint.
+- Next: cp015-clean-protected-and-status-proof
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1164
+
+- UTC timestamp: 2026-08-28T18:32:48Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-verify-v3-semantic-contract-independent
+- Command: `python3 -B scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 1325 ms
+- Warnings: none
+- Errors: none
+- Decision: Reproduce and independently verify the global reconciliation, semantic runtime, or recursive non-closure artifact from the exact clean published checkpoint.
+- Next: cp015-clean-protected-and-status-proof
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1165
+
+- UTC timestamp: 2026-08-28T18:32:54Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Run governed Exploration v3 API contract tests
+- Command: `/bin/sh -c 'npm --prefix frontend run test:exploration-api-v3'`
+- Inputs: frontend/package.json, frontend/scripts/test-trace-exploration-v3.mjs
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1166
+
+- UTC timestamp: 2026-08-28T18:32:54Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Verify the governed Exploration v3 deterministic projection
+- Command: `/bin/sh -c 'npm --prefix frontend run verify:exploration-v3-projection'`
+- Inputs: frontend/package.json, scripts/trace_round16b/build_exploration_v3_runtime_read_model.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1167
+
+- UTC timestamp: 2026-08-28T18:32:54Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Run frontend runtime acceptance typecheck
+- Command: `/bin/sh -c 'npm --prefix frontend run typecheck:runtime'`
+- Inputs: frontend/package.json, frontend/tsconfig.runtime-acceptance.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1168
+
+- UTC timestamp: 2026-08-28T18:32:55Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Verify the governed Exploration v3 deterministic projection
+- Command: `/bin/sh -c 'npm --prefix frontend run verify:exploration-v3-projection'`
+- Inputs: frontend/package.json, scripts/trace_round16b/build_exploration_v3_runtime_read_model.py
+- Outputs: none
+- Duration: 587 ms
+- Warnings: none
+- Errors: none
+- Decision: Any projection, API, or typecheck failure blocks the production build.
+- Next: Build the detached frontend only after all static and contract gates pass.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1169
+
+- UTC timestamp: 2026-08-28T18:32:56Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Run governed Exploration v3 API contract tests
+- Command: `/bin/sh -c 'npm --prefix frontend run test:exploration-api-v3'`
+- Inputs: frontend/package.json, frontend/scripts/test-trace-exploration-v3.mjs
+- Outputs: none
+- Duration: 1583 ms
+- Warnings: none
+- Errors: none
+- Decision: Any projection, API, or typecheck failure blocks the production build.
+- Next: Build the detached frontend only after all static and contract gates pass.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1170
+
+- UTC timestamp: 2026-08-28T18:33:01Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Prove CP15 PostgreSQL identity, version, socket confinement, admin user, and readiness.
+- Command: `/bin/sh -c 'set -eu
+socket=/private/tmp/gda-v50-round16b-cp015-final/socket
+port=59473
+/opt/homebrew/opt/postgresql@16/bin/pg_isready -h "$socket" -p "$port" -d postgres -U jarlgiovanni
+identity=$(/opt/homebrew/opt/postgresql@16/bin/psql -X -Atq -v ON_ERROR_STOP=1 -h "$socket" -p "$port" -U jarlgiovanni -d postgres -c "SELECT current_user||E'"'"'|'"'"'||current_setting('"'"'server_version'"'"')||E'"'"'|'"'"'||current_setting('"'"'port'"'"')||E'"'"'|'"'"'||current_setting('"'"'listen_addresses'"'"')||E'"'"'|'"'"'||current_setting('"'"'unix_socket_directories'"'"')||E'"'"'|'"'"'||current_setting('"'"'shared_memory_type'"'"');")
+test "$identity" = "jarlgiovanni|16.13|59473||$socket|mmap"
+if lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then exit 1; fi
+pid=$(sed -n '"'"'1p'"'"' /private/tmp/gda-v50-round16b-cp015-final/data/postmaster.pid)
+ps -p "$pid" -o command= | rg -F "/private/tmp/gda-v50-round16b-cp015-final/data" >/dev/null
+printf "%s\n" "POSTGRESQL_IDENTITY=$identity" "POSTMASTER_PID=$pid" TCP_LISTENER_59473_ABSENT=PASS SOCKET_ONLY_RUNTIME=PASS'`
+- Inputs: /private/tmp/gda-v50-round16b-cp015-final/data/postmaster.pid, /private/tmp/gda-v50-round16b-cp015-final/server.log
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1171
+
+- UTC timestamp: 2026-08-28T18:33:02Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: FAIL — Prove CP15 PostgreSQL identity, version, socket confinement, admin user, and readiness.
+- Command: `/bin/sh -c 'set -eu
+socket=/private/tmp/gda-v50-round16b-cp015-final/socket
+port=59473
+/opt/homebrew/opt/postgresql@16/bin/pg_isready -h "$socket" -p "$port" -d postgres -U jarlgiovanni
+identity=$(/opt/homebrew/opt/postgresql@16/bin/psql -X -Atq -v ON_ERROR_STOP=1 -h "$socket" -p "$port" -U jarlgiovanni -d postgres -c "SELECT current_user||E'"'"'|'"'"'||current_setting('"'"'server_version'"'"')||E'"'"'|'"'"'||current_setting('"'"'port'"'"')||E'"'"'|'"'"'||current_setting('"'"'listen_addresses'"'"')||E'"'"'|'"'"'||current_setting('"'"'unix_socket_directories'"'"')||E'"'"'|'"'"'||current_setting('"'"'shared_memory_type'"'"');")
+test "$identity" = "jarlgiovanni|16.13|59473||$socket|mmap"
+if lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then exit 1; fi
+pid=$(sed -n '"'"'1p'"'"' /private/tmp/gda-v50-round16b-cp015-final/data/postmaster.pid)
+ps -p "$pid" -o command= | rg -F "/private/tmp/gda-v50-round16b-cp015-final/data" >/dev/null
+printf "%s\n" "POSTGRESQL_IDENTITY=$identity" "POSTMASTER_PID=$pid" TCP_LISTENER_59473_ABSENT=PASS SOCKET_ONLY_RUNTIME=PASS'`
+- Inputs: /private/tmp/gda-v50-round16b-cp015-final/data/postmaster.pid, /private/tmp/gda-v50-round16b-cp015-final/server.log
+- Outputs: none
+- Duration: 68 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Apply database/roles/001_cluster_roles.sql to postgres.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1172
+
+- UTC timestamp: 2026-08-28T18:33:19Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-verify-round16a-reconciliation-independent
+- Command: `python3 -B scripts/trace_round16b/verify_round16a_global_reconciliation.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 32110 ms
+- Warnings: none
+- Errors: none
+- Decision: Reproduce and independently verify the global reconciliation, semantic runtime, or recursive non-closure artifact from the exact clean published checkpoint.
+- Next: cp015-clean-protected-and-status-proof
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1173
+
+- UTC timestamp: 2026-08-28T18:33:20Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Run frontend runtime acceptance typecheck
+- Command: `/bin/sh -c 'npm --prefix frontend run typecheck:runtime'`
+- Inputs: frontend/package.json, frontend/tsconfig.runtime-acceptance.json
+- Outputs: none
+- Duration: 25837 ms
+- Warnings: none
+- Errors: none
+- Decision: Any projection, API, or typecheck failure blocks the production build.
+- Next: Build the detached frontend only after all static and contract gates pass.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1174
+
+- UTC timestamp: 2026-08-28T18:33:21Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Diagnose the failed exact runtime identity assertion without changing the cluster.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -Atq -v ON_ERROR_STOP=1 -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni -d postgres -c 'SELECT current_user, current_setting('"'"'server_version'"'"'), current_setting('"'"'port'"'"'), quote_nullable(current_setting('"'"'listen_addresses'"'"')), current_setting('"'"'unix_socket_directories'"'"'), current_setting('"'"'shared_memory_type'"'"'), current_setting('"'"'dynamic_shared_memory_type'"'"');'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: PRESERVED_RUNTIME_IDENTITY_ASSERTION_FAILURE
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1175
+
+- UTC timestamp: 2026-08-28T18:33:22Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Diagnose the failed exact runtime identity assertion without changing the cluster.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -Atq -v ON_ERROR_STOP=1 -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni -d postgres -c 'SELECT current_user, current_setting('"'"'server_version'"'"'), current_setting('"'"'port'"'"'), quote_nullable(current_setting('"'"'listen_addresses'"'"')), current_setting('"'"'unix_socket_directories'"'"'), current_setting('"'"'shared_memory_type'"'"'), current_setting('"'"'dynamic_shared_memory_type'"'"');'`
+- Inputs: none
+- Outputs: none
+- Duration: 24 ms
+- Warnings: PRESERVED_RUNTIME_IDENTITY_ASSERTION_FAILURE
+- Errors: none
+- Decision: Use the observed exact server settings in a corrected isolation proof.
+- Next: Rerun the isolation proof with corrected expected serialization.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1176
+
+- UTC timestamp: 2026-08-28T18:33:31Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-check-round16a-reconciliation
+- Command: `python3 -B scripts/trace_round16b/build_round16a_global_reconciliation.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 43967 ms
+- Warnings: none
+- Errors: none
+- Decision: Reproduce and independently verify the global reconciliation, semantic runtime, or recursive non-closure artifact from the exact clean published checkpoint.
+- Next: cp015-clean-protected-and-status-proof
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1177
+
+- UTC timestamp: 2026-08-28T18:33:40Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Correctly prove CP15 PostgreSQL identity, version, socket confinement, admin user, and readiness.
+- Command: `/bin/sh -c 'set -eu
+socket=/private/tmp/gda-v50-round16b-cp015-final/socket
+port=59473
+/opt/homebrew/opt/postgresql@16/bin/pg_isready -h "$socket" -p "$port" -d postgres -U jarlgiovanni
+identity=$(/opt/homebrew/opt/postgresql@16/bin/psql -X -Atq -v ON_ERROR_STOP=1 -h "$socket" -p "$port" -U jarlgiovanni -d postgres -c "SELECT current_user||E'"'"'|'"'"'||current_setting('"'"'server_version'"'"')||E'"'"'|'"'"'||current_setting('"'"'port'"'"')||E'"'"'|'"'"'||current_setting('"'"'listen_addresses'"'"')||E'"'"'|'"'"'||current_setting('"'"'unix_socket_directories'"'"')||E'"'"'|'"'"'||current_setting('"'"'shared_memory_type'"'"')||E'"'"'|'"'"'||current_setting('"'"'dynamic_shared_memory_type'"'"');")
+test "$identity" = "jarlgiovanni|16.13 (Homebrew)|59473||$socket|mmap|posix"
+if lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then exit 1; fi
+pid=$(sed -n '"'"'1p'"'"' /private/tmp/gda-v50-round16b-cp015-final/data/postmaster.pid)
+ps -p "$pid" -o command= | rg -F "/private/tmp/gda-v50-round16b-cp015-final/data" >/dev/null
+printf "%s\n" "POSTGRESQL_IDENTITY=$identity" "POSTMASTER_PID=$pid" TCP_LISTENER_59473_ABSENT=PASS SOCKET_ONLY_RUNTIME=PASS'`
+- Inputs: /private/tmp/gda-v50-round16b-cp015-final/data/postmaster.pid, /private/tmp/gda-v50-round16b-cp015-final/server.log
+- Declared outputs: none
+- Warnings: PRESERVED_VERSION_SERIALIZATION_ASSERTION_FAILURE
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1178
+
+- UTC timestamp: 2026-08-28T18:33:41Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Correctly prove CP15 PostgreSQL identity, version, socket confinement, admin user, and readiness.
+- Command: `/bin/sh -c 'set -eu
+socket=/private/tmp/gda-v50-round16b-cp015-final/socket
+port=59473
+/opt/homebrew/opt/postgresql@16/bin/pg_isready -h "$socket" -p "$port" -d postgres -U jarlgiovanni
+identity=$(/opt/homebrew/opt/postgresql@16/bin/psql -X -Atq -v ON_ERROR_STOP=1 -h "$socket" -p "$port" -U jarlgiovanni -d postgres -c "SELECT current_user||E'"'"'|'"'"'||current_setting('"'"'server_version'"'"')||E'"'"'|'"'"'||current_setting('"'"'port'"'"')||E'"'"'|'"'"'||current_setting('"'"'listen_addresses'"'"')||E'"'"'|'"'"'||current_setting('"'"'unix_socket_directories'"'"')||E'"'"'|'"'"'||current_setting('"'"'shared_memory_type'"'"')||E'"'"'|'"'"'||current_setting('"'"'dynamic_shared_memory_type'"'"');")
+test "$identity" = "jarlgiovanni|16.13 (Homebrew)|59473||$socket|mmap|posix"
+if lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then exit 1; fi
+pid=$(sed -n '"'"'1p'"'"' /private/tmp/gda-v50-round16b-cp015-final/data/postmaster.pid)
+ps -p "$pid" -o command= | rg -F "/private/tmp/gda-v50-round16b-cp015-final/data" >/dev/null
+printf "%s\n" "POSTGRESQL_IDENTITY=$identity" "POSTMASTER_PID=$pid" TCP_LISTENER_59473_ABSENT=PASS SOCKET_ONLY_RUNTIME=PASS'`
+- Inputs: /private/tmp/gda-v50-round16b-cp015-final/data/postmaster.pid, /private/tmp/gda-v50-round16b-cp015-final/server.log
+- Outputs: none
+- Duration: 82 ms
+- Warnings: PRESERVED_VERSION_SERIALIZATION_ASSERTION_FAILURE
+- Errors: none
+- Decision: Apply the governed cluster roles exactly once.
+- Next: Apply database/roles/001_cluster_roles.sql to postgres.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1179
+
+- UTC timestamp: 2026-08-28T18:33:44Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-prove-no-untracked-files
+- Command: `/bin/sh -c 'test -z "$(git status --porcelain=v1 --untracked-files=all)" && printf "%s\n" CLEAN_REPRODUCED_WORKTREE_STATUS=PASS'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1180
+
+- UTC timestamp: 2026-08-28T18:33:44Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-prove-reproduced-bytes-identical
+- Command: `git diff --exit-code HEAD --`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1181
+
+- UTC timestamp: 2026-08-28T18:33:44Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-verify-governed-v49-freeze
+- Command: `python3 -B scripts/repository/verify_v49_database_freeze.py --repo .`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1182
+
+- UTC timestamp: 2026-08-28T18:33:44Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-verify-protected-v2-and-legacy-surfaces
+- Command: `git diff --exit-code 468105499c7be102deec7d6555aced688dea9901 -- schemas/trace/exploration/v2 frontend/generated/trace-exploration-v2 frontend/src/app/api/trace/v2/exploration frontend/src/features/trace-v49/exploration-v2 docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1183
+
+- UTC timestamp: 2026-08-28T18:33:44Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: START — cp015-clean-verify-v50-manifest
+- Command: `python3 -B database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1184
+
+- UTC timestamp: 2026-08-28T18:33:44Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-verify-protected-v2-and-legacy-surfaces
+- Command: `git diff --exit-code 468105499c7be102deec7d6555aced688dea9901 -- schemas/trace/exploration/v2 frontend/generated/trace-exploration-v2 frontend/src/app/api/trace/v2/exploration frontend/src/features/trace-v49/exploration-v2 docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv`
+- Inputs: none
+- Outputs: none
+- Duration: 64 ms
+- Warnings: none
+- Errors: none
+- Decision: Prove final clean-reproduction byte identity and protected database/runtime boundaries.
+- Next: cp015-final-db-frontend-http
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1185
+
+- UTC timestamp: 2026-08-28T18:33:44Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-prove-reproduced-bytes-identical
+- Command: `git diff --exit-code HEAD --`
+- Inputs: none
+- Outputs: none
+- Duration: 277 ms
+- Warnings: none
+- Errors: none
+- Decision: Prove final clean-reproduction byte identity and protected database/runtime boundaries.
+- Next: cp015-final-db-frontend-http
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1186
+
+- UTC timestamp: 2026-08-28T18:33:44Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-prove-no-untracked-files
+- Command: `/bin/sh -c 'test -z "$(git status --porcelain=v1 --untracked-files=all)" && printf "%s\n" CLEAN_REPRODUCED_WORKTREE_STATUS=PASS'`
+- Inputs: none
+- Outputs: none
+- Duration: 481 ms
+- Warnings: none
+- Errors: none
+- Decision: Prove final clean-reproduction byte identity and protected database/runtime boundaries.
+- Next: cp015-final-db-frontend-http
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1187
+
+- UTC timestamp: 2026-08-28T18:33:44Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: FAIL — cp015-clean-verify-v50-manifest
+- Command: `python3 -B database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: none
+- Outputs: none
+- Duration: 544 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: cp015-final-db-frontend-http
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1188
+
+- UTC timestamp: 2026-08-28T18:33:44Z
+- Phase: CHECKPOINT-015-FINAL-CLEAN-REPRODUCTION
+- Operation: PASS — cp015-clean-verify-governed-v49-freeze
+- Command: `python3 -B scripts/repository/verify_v49_database_freeze.py --repo .`
+- Inputs: none
+- Outputs: none
+- Duration: 717 ms
+- Warnings: none
+- Errors: none
+- Decision: Prove final clean-reproduction byte identity and protected database/runtime boundaries.
+- Next: cp015-final-db-frontend-http
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1189
+
+- UTC timestamp: 2026-08-28T18:33:50Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Build production frontend from exact detached published source
+- Command: `npm --prefix frontend run build`
+- Inputs: frontend/package.json, frontend/package-lock.json
+- Declared outputs: frontend/.next
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1190
+
+- UTC timestamp: 2026-08-28T18:34:04Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Apply the governed cluster roles exactly once to the fresh CP15 cluster.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -v ON_ERROR_STOP=1 -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni -d postgres -f database/roles/001_cluster_roles.sql`
+- Inputs: database/roles/001_cluster_roles.sql
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1191
+
+- UTC timestamp: 2026-08-28T18:34:04Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Apply the governed cluster roles exactly once to the fresh CP15 cluster.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -v ON_ERROR_STOP=1 -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni -d postgres -f database/roles/001_cluster_roles.sql`
+- Inputs: database/roles/001_cluster_roles.sql
+- Outputs: none
+- Duration: 32 ms
+- Warnings: none
+- Errors: none
+- Decision: Verify the exact governed role set before creating databases.
+- Next: Prove roles and both target database names are absent.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1192
+
+- UTC timestamp: 2026-08-28T18:34:04Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: FAIL — Build production frontend from exact detached published source
+- Command: `npm --prefix frontend run build`
+- Inputs: frontend/package.json, frontend/package-lock.json
+- Outputs: frontend/.next
+- Duration: 14074 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Run production HTTP verification only after a successful build.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1193
+
+- UTC timestamp: 2026-08-28T18:34:18Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Retry production frontend build with network access for governed Google font fetch
+- Command: `npm --prefix frontend run build`
+- Inputs: frontend/package.json, frontend/package-lock.json
+- Declared outputs: frontend/.next
+- Warnings: PRIOR_RESTRICTED_NETWORK_FONT_FETCH_FAILURE
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1194
+
+- UTC timestamp: 2026-08-28T18:34:25Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Verify exact governed roles and prove CP15 target and race databases are absent.
+- Command: `/bin/sh -c 'set -eu
+psql=/opt/homebrew/opt/postgresql@16/bin/psql
+socket=/private/tmp/gda-v50-round16b-cp015-final/socket
+port=59473
+role_count=$($psql -X -Atq -v ON_ERROR_STOP=1 -h "$socket" -p "$port" -U jarlgiovanni -d postgres -c "SELECT count(*) FROM pg_roles WHERE rolname = ANY (ARRAY['"'"'gda_v49_phase2a_schema_owner'"'"','"'"'gda_v49_phase2a_migrator'"'"','"'"'gda_v49_phase2a_ingest_writer'"'"','"'"'gda_v49_phase2a_reviewer'"'"','"'"'gda_v49_phase2a_publisher'"'"','"'"'gda_v49_phase2a_api_reader'"'"','"'"'gda_v49_phase2a_auditor'"'"']);")
+membership_count=$($psql -X -Atq -v ON_ERROR_STOP=1 -h "$socket" -p "$port" -U jarlgiovanni -d postgres -c "SELECT count(*) FROM pg_auth_members m JOIN pg_roles r ON r.oid=m.roleid JOIN pg_roles u ON u.oid=m.member WHERE r.rolname='"'"'gda_v49_phase2a_schema_owner'"'"' AND u.rolname='"'"'gda_v49_phase2a_migrator'"'"';")
+target_count=$($psql -X -Atq -v ON_ERROR_STOP=1 -h "$socket" -p "$port" -U jarlgiovanni -d postgres -c "SELECT count(*) FROM pg_database WHERE datname IN ('"'"'gda_v50_round16b_cp015_final_a'"'"','"'"'gda_v50_round16b_cp015_final_b'"'"') OR datname LIKE '"'"'gda_v50_round16b_cp015_final_%_race_%'"'"';")
+test "$role_count" = 7
+test "$membership_count" = 1
+test "$target_count" = 0
+printf "%s\n" "GOVERNED_ROLE_COUNT=$role_count" "SCHEMA_OWNER_MEMBERSHIP_COUNT=$membership_count" "CP15_TARGET_AND_RACE_DATABASE_COUNT_BEFORE_CREATE=$target_count" CP15_PRISTINE_CATALOG=PASS'`
+- Inputs: database/roles/001_cluster_roles.sql
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1195
+
+- UTC timestamp: 2026-08-28T18:34:25Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Verify exact governed roles and prove CP15 target and race databases are absent.
+- Command: `/bin/sh -c 'set -eu
+psql=/opt/homebrew/opt/postgresql@16/bin/psql
+socket=/private/tmp/gda-v50-round16b-cp015-final/socket
+port=59473
+role_count=$($psql -X -Atq -v ON_ERROR_STOP=1 -h "$socket" -p "$port" -U jarlgiovanni -d postgres -c "SELECT count(*) FROM pg_roles WHERE rolname = ANY (ARRAY['"'"'gda_v49_phase2a_schema_owner'"'"','"'"'gda_v49_phase2a_migrator'"'"','"'"'gda_v49_phase2a_ingest_writer'"'"','"'"'gda_v49_phase2a_reviewer'"'"','"'"'gda_v49_phase2a_publisher'"'"','"'"'gda_v49_phase2a_api_reader'"'"','"'"'gda_v49_phase2a_auditor'"'"']);")
+membership_count=$($psql -X -Atq -v ON_ERROR_STOP=1 -h "$socket" -p "$port" -U jarlgiovanni -d postgres -c "SELECT count(*) FROM pg_auth_members m JOIN pg_roles r ON r.oid=m.roleid JOIN pg_roles u ON u.oid=m.member WHERE r.rolname='"'"'gda_v49_phase2a_schema_owner'"'"' AND u.rolname='"'"'gda_v49_phase2a_migrator'"'"';")
+target_count=$($psql -X -Atq -v ON_ERROR_STOP=1 -h "$socket" -p "$port" -U jarlgiovanni -d postgres -c "SELECT count(*) FROM pg_database WHERE datname IN ('"'"'gda_v50_round16b_cp015_final_a'"'"','"'"'gda_v50_round16b_cp015_final_b'"'"') OR datname LIKE '"'"'gda_v50_round16b_cp015_final_%_race_%'"'"';")
+test "$role_count" = 7
+test "$membership_count" = 1
+test "$target_count" = 0
+printf "%s\n" "GOVERNED_ROLE_COUNT=$role_count" "SCHEMA_OWNER_MEMBERSHIP_COUNT=$membership_count" "CP15_TARGET_AND_RACE_DATABASE_COUNT_BEFORE_CREATE=$target_count" CP15_PRISTINE_CATALOG=PASS'`
+- Inputs: database/roles/001_cluster_roles.sql
+- Outputs: none
+- Duration: 59 ms
+- Warnings: none
+- Errors: none
+- Decision: Create only the two exact target databases with the governed schema owner.
+- Next: Create database A and database B.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1196
+
+- UTC timestamp: 2026-08-28T18:34:39Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Create exact fresh CP15 database A owned by the governed schema owner.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/createdb -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni --owner=gda_v49_phase2a_schema_owner gda_v50_round16b_cp015_final_a`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1197
+
+- UTC timestamp: 2026-08-28T18:34:39Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Create exact fresh CP15 database A owned by the governed schema owner.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/createdb -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni --owner=gda_v49_phase2a_schema_owner gda_v50_round16b_cp015_final_a`
+- Inputs: none
+- Outputs: none
+- Duration: 256 ms
+- Warnings: none
+- Errors: none
+- Decision: Prove database A ownership and freshness before replay.
+- Next: Create exact fresh database B.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1198
+
+- UTC timestamp: 2026-08-28T18:34:49Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Create exact fresh CP15 database B owned by the governed schema owner.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/createdb -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni --owner=gda_v49_phase2a_schema_owner gda_v50_round16b_cp015_final_b`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1199
+
+- UTC timestamp: 2026-08-28T18:34:50Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Create exact fresh CP15 database B owned by the governed schema owner.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/createdb -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni --owner=gda_v49_phase2a_schema_owner gda_v50_round16b_cp015_final_b`
+- Inputs: none
+- Outputs: none
+- Duration: 119 ms
+- Warnings: none
+- Errors: none
+- Decision: Prove both database identities, owners, and empty project schemas.
+- Next: Run a joint freshness proof before deterministic replay.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1200
+
+- UTC timestamp: 2026-08-28T18:35:07Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Prove both exact CP15 databases have the governed owner and zero project schemas before replay.
+- Command: `/bin/sh -c 'set -eu
+psql=/opt/homebrew/opt/postgresql@16/bin/psql
+socket=/private/tmp/gda-v50-round16b-cp015-final/socket
+port=59473
+for db in gda_v50_round16b_cp015_final_a gda_v50_round16b_cp015_final_b; do
+  owner=$($psql -X -Atq -v ON_ERROR_STOP=1 -h "$socket" -p "$port" -U jarlgiovanni -d postgres -c "SELECT pg_get_userbyid(datdba) FROM pg_database WHERE datname='"'"'$db'"'"';")
+  schemas=$($psql -X -Atq -v ON_ERROR_STOP=1 -h "$socket" -p "$port" -U jarlgiovanni -d "$db" -c "SELECT count(*) FROM pg_namespace WHERE nspname = ANY (ARRAY['"'"'raw'"'"','"'"'core'"'"','"'"'provenance'"'"','"'"'research'"'"','"'"'rights'"'"','"'"'workflow'"'"','"'"'release'"'"','"'"'audit'"'"','"'"'api_v1'"'"','"'"'exploration_v3'"'"','"'"'api_v3'"'"']);")
+  test "$owner" = gda_v49_phase2a_schema_owner
+  test "$schemas" = 0
+  printf "%s\n" "DATABASE=$db OWNER=$owner PROJECT_SCHEMA_COUNT_BEFORE_REPLAY=$schemas FRESH=PASS"
+done'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1201
+
+- UTC timestamp: 2026-08-28T18:35:07Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Prove both exact CP15 databases have the governed owner and zero project schemas before replay.
+- Command: `/bin/sh -c 'set -eu
+psql=/opt/homebrew/opt/postgresql@16/bin/psql
+socket=/private/tmp/gda-v50-round16b-cp015-final/socket
+port=59473
+for db in gda_v50_round16b_cp015_final_a gda_v50_round16b_cp015_final_b; do
+  owner=$($psql -X -Atq -v ON_ERROR_STOP=1 -h "$socket" -p "$port" -U jarlgiovanni -d postgres -c "SELECT pg_get_userbyid(datdba) FROM pg_database WHERE datname='"'"'$db'"'"';")
+  schemas=$($psql -X -Atq -v ON_ERROR_STOP=1 -h "$socket" -p "$port" -U jarlgiovanni -d "$db" -c "SELECT count(*) FROM pg_namespace WHERE nspname = ANY (ARRAY['"'"'raw'"'"','"'"'core'"'"','"'"'provenance'"'"','"'"'research'"'"','"'"'rights'"'"','"'"'workflow'"'"','"'"'release'"'"','"'"'audit'"'"','"'"'api_v1'"'"','"'"'exploration_v3'"'"','"'"'api_v3'"'"']);")
+  test "$owner" = gda_v49_phase2a_schema_owner
+  test "$schemas" = 0
+  printf "%s\n" "DATABASE=$db OWNER=$owner PROJECT_SCHEMA_COUNT_BEFORE_REPLAY=$schemas FRESH=PASS"
+done'`
+- Inputs: none
+- Outputs: none
+- Duration: 121 ms
+- Warnings: none
+- Errors: none
+- Decision: Replay the full byte-frozen v49 prefix and additive v50 capability into database A.
+- Next: Replay database A.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1202
+
+- UTC timestamp: 2026-08-28T18:35:26Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Replay the complete frozen v49 prefix and additive v50 Round16B capability into fresh database A from the exact detached source.
+- Command: `env PGHOST=/private/tmp/gda-v50-round16b-cp015-final/socket PGPORT=59473 PGUSER=jarlgiovanni PGDATABASE=gda_v50_round16b_cp015_final_a GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql GDA_CREATEDB=/opt/homebrew/opt/postgresql@16/bin/createdb GDA_DROPDB=/opt/homebrew/opt/postgresql@16/bin/dropdb sh database/scripts/replay_v50_round16b.sh`
+- Inputs: database/v50-round16b-replay-manifest.sha256, database/scripts/replay_v50_round16b.sh
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1203
+
+- UTC timestamp: 2026-08-28T18:35:30Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: FAIL — Replay the complete frozen v49 prefix and additive v50 Round16B capability into fresh database A from the exact detached source.
+- Command: `env PGHOST=/private/tmp/gda-v50-round16b-cp015-final/socket PGPORT=59473 PGUSER=jarlgiovanni PGDATABASE=gda_v50_round16b_cp015_final_a GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql GDA_CREATEDB=/opt/homebrew/opt/postgresql@16/bin/createdb GDA_DROPDB=/opt/homebrew/opt/postgresql@16/bin/dropdb sh database/scripts/replay_v50_round16b.sh`
+- Inputs: database/v50-round16b-replay-manifest.sha256, database/scripts/replay_v50_round16b.sh
+- Outputs: none
+- Duration: 4490 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Test database A with deterministic race evidence directory 2317.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1204
+
+- UTC timestamp: 2026-08-28T18:35:50Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Retry production frontend build with network access for governed Google font fetch
+- Command: `npm --prefix frontend run build`
+- Inputs: frontend/package.json, frontend/package-lock.json
+- Outputs: frontend/.next
+- Duration: 92038 ms
+- Warnings: PRIOR_RESTRICTED_NETWORK_FONT_FETCH_FAILURE
+- Errors: none
+- Decision: This retry is limited to the same production build after the recorded fonts.googleapis.com DNS failure.
+- Next: Run production HTTP verification only after a successful build.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1205
+
+- UTC timestamp: 2026-08-28T18:36:04Z
+- Phase: checkpoint015-final-reproduction
+- Operation: START — inspect-current-worktree-state
+- Command: `git status --short --branch`
+- Inputs: none
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/cp015-main-status.txt
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1206
+
+- UTC timestamp: 2026-08-28T18:36:04Z
+- Phase: checkpoint015-final-reproduction
+- Operation: PASS — inspect-current-worktree-state
+- Command: `git status --short --branch`
+- Inputs: none
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/cp015-main-status.txt
+- Duration: 180 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1207
+
+- UTC timestamp: 2026-08-28T18:36:13Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Prove production HTTP output and loopback port isolation
+- Command: `/bin/sh -c 'set -eu; output=/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final; test ! -e "$output"; test -f frontend/.next/BUILD_ID; if lsof -nP -iTCP:45973 -sTCP:LISTEN >/dev/null 2>&1; then printf "%s\n" HTTP_PORT_FREE=FAIL >&2; exit 1; fi; printf "%s\n" HTTP_OUTPUT_TARGET_ABSENT=PASS HTTP_PORT_45973_FREE=PASS PRODUCTION_BUILD_PRESENT=PASS'`
+- Inputs: frontend/.next/BUILD_ID
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1208
+
+- UTC timestamp: 2026-08-28T18:36:13Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Prove production HTTP output and loopback port isolation
+- Command: `/bin/sh -c 'set -eu; output=/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final; test ! -e "$output"; test -f frontend/.next/BUILD_ID; if lsof -nP -iTCP:45973 -sTCP:LISTEN >/dev/null 2>&1; then printf "%s\n" HTTP_PORT_FREE=FAIL >&2; exit 1; fi; printf "%s\n" HTTP_OUTPUT_TARGET_ABSENT=PASS HTTP_PORT_45973_FREE=PASS PRODUCTION_BUILD_PRESENT=PASS'`
+- Inputs: frontend/.next/BUILD_ID
+- Outputs: none
+- Duration: 47 ms
+- Warnings: none
+- Errors: none
+- Decision: The HTTP harness may start only on a free nondefault loopback port and into an absent task-owned output directory.
+- Next: Run the full 1,168-case production HTTP and bounded-load verifier.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1209
+
+- UTC timestamp: 2026-08-28T18:36:26Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Run full Exploration v3 production HTTP, concurrency, sustained-load, export-replay, memory, and cleanup verification
+- Command: `python3 -B scripts/trace_round16b/verify_v3_production_http.py --repo-root . --output-dir /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final --port 45973 --request-timeout-seconds 10`
+- Inputs: frontend/.next/BUILD_ID, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256
+- Declared outputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1210
+
+- UTC timestamp: 2026-08-28T18:36:26Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Diagnose detached-root preflight coupling by proving the frozen checkpoint11 manifest still passes at its recorded repository locus.
+- Command: `python3 -B database/scripts/verify_v50_round16b_manifest.py --preflight`
+- Inputs: database/schema-manifest-v50-round16b.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json
+- Declared outputs: none
+- Warnings: PRESERVED_DETACHED_ROOT_ABSOLUTE_PATH_COUPLING_FAILURE
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1211
+
+- UTC timestamp: 2026-08-28T18:36:26Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: FAIL — Run full Exploration v3 production HTTP, concurrency, sustained-load, export-replay, memory, and cleanup verification
+- Command: `python3 -B scripts/trace_round16b/verify_v3_production_http.py --repo-root . --output-dir /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final --port 45973 --request-timeout-seconds 10`
+- Inputs: frontend/.next/BUILD_ID, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256
+- Outputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final
+- Duration: 603 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Independently reconcile receipt counts, hashes, and process cleanup; then prove detached worktree cleanliness.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1212
+
+- UTC timestamp: 2026-08-28T18:36:27Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Diagnose detached-root preflight coupling by proving the frozen checkpoint11 manifest still passes at its recorded repository locus.
+- Command: `python3 -B database/scripts/verify_v50_round16b_manifest.py --preflight`
+- Inputs: database/schema-manifest-v50-round16b.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json
+- Outputs: none
+- Duration: 522 ms
+- Warnings: PRESERVED_DETACHED_ROOT_ABSOLUTE_PATH_COUPLING_FAILURE
+- Errors: none
+- Decision: Do not mutate the frozen checkpoint11 manifest or receipt; use a scoped compatibility launcher for that verifier only.
+- Next: Prove all governed database source bytes match the detached CP15 source.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1213
+
+- UTC timestamp: 2026-08-28T18:36:39Z
+- Phase: checkpoint015-final-reproduction
+- Operation: START — inspect-known-diagnostic-metadata
+- Command: `python3 -c 'import json,pathlib; p=pathlib.Path('"'"'docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands'"'"'); terms=('"'"'cp015-verify-clean-worktree-identity'"'"','"'"'cp015-validate-stale-ipc'"'"','"'"'cp015-remove-stale-ipc'"'"','"'"'cp015-clean-verify-v50-manifest'"'"','"'"'cp015-db-runtime-isolation-proof'"'"','"'"'cp015-frontend-production-build'"'"'); fs=[x for x in p.glob('"'"'*.meta.json'"'"') if any(t in x.name for t in terms)]; print('"'"'\n'"'"'.join(json.dumps({'"'"'file'"'"':x.name,**{k:json.loads(x.read_text()).get(k) for k in ('"'"'operation_id'"'"','"'"'started_at_utc'"'"','"'"'ended_at_utc'"'"','"'"'exit_code'"'"','"'"'status'"'"')}},sort_keys=True) for x in sorted(fs)))'`
+- Inputs: none
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/cp015-known-diagnostic-metadata.txt
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1214
+
+- UTC timestamp: 2026-08-28T18:36:39Z
+- Phase: checkpoint015-final-reproduction
+- Operation: PASS — inspect-known-diagnostic-metadata
+- Command: `python3 -c 'import json,pathlib; p=pathlib.Path('"'"'docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands'"'"'); terms=('"'"'cp015-verify-clean-worktree-identity'"'"','"'"'cp015-validate-stale-ipc'"'"','"'"'cp015-remove-stale-ipc'"'"','"'"'cp015-clean-verify-v50-manifest'"'"','"'"'cp015-db-runtime-isolation-proof'"'"','"'"'cp015-frontend-production-build'"'"'); fs=[x for x in p.glob('"'"'*.meta.json'"'"') if any(t in x.name for t in terms)]; print('"'"'\n'"'"'.join(json.dumps({'"'"'file'"'"':x.name,**{k:json.loads(x.read_text()).get(k) for k in ('"'"'operation_id'"'"','"'"'started_at_utc'"'"','"'"'ended_at_utc'"'"','"'"'exit_code'"'"','"'"'status'"'"')}},sort_keys=True) for x in sorted(fs)))'`
+- Inputs: none
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/cp015-known-diagnostic-metadata.txt
+- Duration: 39 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1215
+
+- UTC timestamp: 2026-08-28T18:36:40Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Prove every tracked database path in the recorded main locus is byte-identical to the exact detached CP15 source.
+- Command: `/bin/sh -c 'set -eu
+main=/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b
+count=0
+for path in $(git ls-files database); do
+  test -f "$main/$path"
+  cmp -s "$path" "$main/$path"
+  count=$((count + 1))
+done
+main_dirty=$(git -C "$main" diff --name-only HEAD -- database | wc -l | tr -d " ")
+test "$main_dirty" = 0
+printf "%s\n" "TRACKED_DATABASE_PATHS_BYTE_IDENTICAL=$count" MAIN_DATABASE_WORKTREE_DRIFT_COUNT=0 DETACHED_DATABASE_SOURCE_IDENTITY=PASS'`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py
+- Declared outputs: none
+- Warnings: LEGACY_CHECKPOINT011_RECEIPT_BINDS_ABSOLUTE_REPOSITORY_LOCUS
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1216
+
+- UTC timestamp: 2026-08-28T18:36:40Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Preserve sandbox loopback-bind failure artifacts under a diagnostic suffix
+- Command: `mv /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure-round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final-sandbox-bind-failure`
+- Inputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final
+- Declared outputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure-round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final-sandbox-bind-failure
+- Warnings: PRIOR_SANDBOX_LOOPBACK_BIND_FAILURE
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1217
+
+- UTC timestamp: 2026-08-28T18:36:40Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: FAIL — Preserve sandbox loopback-bind failure artifacts under a diagnostic suffix
+- Command: `mv /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure-round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final-sandbox-bind-failure`
+- Inputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final
+- Outputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure-round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final-sandbox-bind-failure
+- Duration: 5 ms
+- Warnings: PRIOR_SANDBOX_LOOPBACK_BIND_FAILURE
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Retry the identical loopback-only verifier with narrowly escalated local-socket permission.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1218
+
+- UTC timestamp: 2026-08-28T18:36:40Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Prove every tracked database path in the recorded main locus is byte-identical to the exact detached CP15 source.
+- Command: `/bin/sh -c 'set -eu
+main=/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b
+count=0
+for path in $(git ls-files database); do
+  test -f "$main/$path"
+  cmp -s "$path" "$main/$path"
+  count=$((count + 1))
+done
+main_dirty=$(git -C "$main" diff --name-only HEAD -- database | wc -l | tr -d " ")
+test "$main_dirty" = 0
+printf "%s\n" "TRACKED_DATABASE_PATHS_BYTE_IDENTICAL=$count" MAIN_DATABASE_WORKTREE_DRIFT_COUNT=0 DETACHED_DATABASE_SOURCE_IDENTITY=PASS'`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py
+- Outputs: none
+- Duration: 350 ms
+- Warnings: LEGACY_CHECKPOINT011_RECEIPT_BINDS_ABSOLUTE_REPOSITORY_LOCUS
+- Errors: none
+- Decision: Use a temporary narrowly scoped verifier launcher while replaying all SQL from the detached source.
+- Next: Create and validate the scoped compatibility launcher.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1219
+
+- UTC timestamp: 2026-08-28T18:36:52Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Preserve sandbox loopback-bind failure artifacts after correcting destination path
+- Command: `mv /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final-sandbox-bind-failure`
+- Inputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final
+- Declared outputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final-sandbox-bind-failure
+- Warnings: PRIOR_SANDBOX_LOOPBACK_BIND_FAILURE, PRIOR_PRESERVATION_DESTINATION_PATH_TYPO
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1220
+
+- UTC timestamp: 2026-08-28T18:36:52Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Preserve sandbox loopback-bind failure artifacts after correcting destination path
+- Command: `mv /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final-sandbox-bind-failure`
+- Inputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final
+- Outputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final-sandbox-bind-failure
+- Duration: 6 ms
+- Warnings: PRIOR_SANDBOX_LOOPBACK_BIND_FAILURE, PRIOR_PRESERVATION_DESTINATION_PATH_TYPO
+- Errors: none
+- Decision: The failed receipt set must remain reviewable while the canonical final output path is released for one corrected run.
+- Next: Retry the identical loopback-only verifier with narrowly escalated local-socket permission.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1221
+
+- UTC timestamp: 2026-08-28T18:36:58Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Correct the launcher-path typo and create the exact temporary verifier-launcher directory.
+- Command: `mkdir -p /private/tmp/gda-v50-round16b-cp015-final/bin`
+- Inputs: none
+- Declared outputs: /private/tmp/gda-v50-round16b-cp015-final/bin
+- Warnings: PRESERVED_UNLOGGED_RUN_LOGGER_PATH_TYPO_FAILURE
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1222
+
+- UTC timestamp: 2026-08-28T18:36:58Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Correct the launcher-path typo and create the exact temporary verifier-launcher directory.
+- Command: `mkdir -p /private/tmp/gda-v50-round16b-cp015-final/bin`
+- Inputs: none
+- Outputs: /private/tmp/gda-v50-round16b-cp015-final/bin
+- Duration: 7 ms
+- Warnings: PRESERVED_UNLOGGED_RUN_LOGGER_PATH_TYPO_FAILURE
+- Errors: none
+- Decision: Write only the narrow Python launcher into this temporary root.
+- Next: Validate launcher routing and no source mutation.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1223
+
+- UTC timestamp: 2026-08-28T18:37:07Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Retry full Exploration v3 production HTTP verification with local loopback permission
+- Command: `python3 -B scripts/trace_round16b/verify_v3_production_http.py --repo-root . --output-dir /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final --port 45973 --request-timeout-seconds 10`
+- Inputs: frontend/.next/BUILD_ID, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256
+- Declared outputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final
+- Warnings: PRIOR_SANDBOX_LOOPBACK_BIND_FAILURE
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1224
+
+- UTC timestamp: 2026-08-28T18:37:17Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Make the scoped checkpoint11 verifier launcher executable.
+- Command: `chmod 0700 /private/tmp/gda-v50-round16b-cp015-final/bin/python3`
+- Inputs: /private/tmp/gda-v50-round16b-cp015-final/bin/python3
+- Declared outputs: /private/tmp/gda-v50-round16b-cp015-final/bin/python3
+- Warnings: LEGACY_RECEIPT_RECORDED_LOCUS_COMPATIBILITY_LAUNCHER
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1225
+
+- UTC timestamp: 2026-08-28T18:37:17Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Make the scoped checkpoint11 verifier launcher executable.
+- Command: `chmod 0700 /private/tmp/gda-v50-round16b-cp015-final/bin/python3`
+- Inputs: /private/tmp/gda-v50-round16b-cp015-final/bin/python3
+- Outputs: /private/tmp/gda-v50-round16b-cp015-final/bin/python3
+- Duration: 5 ms
+- Warnings: LEGACY_RECEIPT_RECORDED_LOCUS_COMPATIBILITY_LAUNCHER
+- Errors: none
+- Decision: Validate exact routing, source identity, and clean-worktree preservation.
+- Next: Run the launcher validation proof.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1226
+
+- UTC timestamp: 2026-08-28T18:37:19Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Retry full Exploration v3 production HTTP verification with local loopback permission
+- Command: `python3 -B scripts/trace_round16b/verify_v3_production_http.py --repo-root . --output-dir /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final --port 45973 --request-timeout-seconds 10`
+- Inputs: frontend/.next/BUILD_ID, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256
+- Outputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final
+- Duration: 12135 ms
+- Warnings: PRIOR_SANDBOX_LOOPBACK_BIND_FAILURE
+- Errors: none
+- Decision: This corrected run is limited to a task-owned Next process on 127.0.0.1:45973 and must terminate its complete process group.
+- Next: Independently reconcile 1,168 cases, receipt hashes, and complete process cleanup.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1227
+
+- UTC timestamp: 2026-08-28T18:37:29Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Validate the scoped checkpoint11 verifier launcher and prove detached-source cleanliness.
+- Command: `/bin/sh -c 'set -eu
+launcher=/private/tmp/gda-v50-round16b-cp015-final/bin/python3
+PATH=/private/tmp/gda-v50-round16b-cp015-final/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH
+$launcher database/scripts/verify_v50_round16b_manifest.py --preflight
+prefix_count=$($launcher database/scripts/verify_v50_round16b_manifest.py --emit-v49-replay-prefix | wc -w | tr -d " ")
+additive_count=$($launcher database/scripts/verify_v50_round16b_manifest.py --emit-additive-replay | wc -w | tr -d " ")
+test "$prefix_count" -gt 0
+test "$additive_count" = 4
+test -z "$(git status --porcelain=v1 --untracked-files=all)"
+launcher_sha=$(shasum -a 256 "$launcher" | awk '"'"'{print $1}'"'"')
+printf "%s\n" "VERIFIER_LAUNCHER_SHA256=$launcher_sha" "V49_REPLAY_PREFIX_FILE_COUNT=$prefix_count" "V50_ADDITIVE_REPLAY_FILE_COUNT=$additive_count" DETACHED_WORKTREE_CLEAN=PASS SCOPED_VERIFIER_LAUNCHER=PASS'`
+- Inputs: /private/tmp/gda-v50-round16b-cp015-final/bin/python3, database/scripts/verify_v50_round16b_manifest.py
+- Declared outputs: none
+- Warnings: LEGACY_CHECKPOINT011_RECEIPT_BINDS_ABSOLUTE_REPOSITORY_LOCUS
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1228
+
+- UTC timestamp: 2026-08-28T18:37:30Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: FAIL — Validate the scoped checkpoint11 verifier launcher and prove detached-source cleanliness.
+- Command: `/bin/sh -c 'set -eu
+launcher=/private/tmp/gda-v50-round16b-cp015-final/bin/python3
+PATH=/private/tmp/gda-v50-round16b-cp015-final/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH
+$launcher database/scripts/verify_v50_round16b_manifest.py --preflight
+prefix_count=$($launcher database/scripts/verify_v50_round16b_manifest.py --emit-v49-replay-prefix | wc -w | tr -d " ")
+additive_count=$($launcher database/scripts/verify_v50_round16b_manifest.py --emit-additive-replay | wc -w | tr -d " ")
+test "$prefix_count" -gt 0
+test "$additive_count" = 4
+test -z "$(git status --porcelain=v1 --untracked-files=all)"
+launcher_sha=$(shasum -a 256 "$launcher" | awk '"'"'{print $1}'"'"')
+printf "%s\n" "VERIFIER_LAUNCHER_SHA256=$launcher_sha" "V49_REPLAY_PREFIX_FILE_COUNT=$prefix_count" "V50_ADDITIVE_REPLAY_FILE_COUNT=$additive_count" DETACHED_WORKTREE_CLEAN=PASS SCOPED_VERIFIER_LAUNCHER=PASS'`
+- Inputs: /private/tmp/gda-v50-round16b-cp015-final/bin/python3, database/scripts/verify_v50_round16b_manifest.py
+- Outputs: none
+- Duration: 920 ms
+- Warnings: LEGACY_CHECKPOINT011_RECEIPT_BINDS_ABSOLUTE_REPOSITORY_LOCUS
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Replay database A from the detached source.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1229
+
+- UTC timestamp: 2026-08-28T18:37:49Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Correct the launcher relative-path match and validate exact routing plus detached-source cleanliness.
+- Command: `/bin/sh -c 'set -eu
+launcher=/private/tmp/gda-v50-round16b-cp015-final/bin/python3
+$launcher database/scripts/verify_v50_round16b_manifest.py --preflight
+prefix_count=$($launcher database/scripts/verify_v50_round16b_manifest.py --emit-v49-replay-prefix | wc -w | tr -d " ")
+additive_count=$($launcher database/scripts/verify_v50_round16b_manifest.py --emit-additive-replay | wc -w | tr -d " ")
+test "$prefix_count" -gt 0
+test "$additive_count" = 4
+test -z "$(git status --porcelain=v1 --untracked-files=all)"
+launcher_sha=$(shasum -a 256 "$launcher" | awk '"'"'{print $1}'"'"')
+printf "%s\n" "VERIFIER_LAUNCHER_SHA256=$launcher_sha" "V49_REPLAY_PREFIX_FILE_COUNT=$prefix_count" "V50_ADDITIVE_REPLAY_FILE_COUNT=$additive_count" DETACHED_WORKTREE_CLEAN=PASS SCOPED_VERIFIER_LAUNCHER=PASS'`
+- Inputs: /private/tmp/gda-v50-round16b-cp015-final/bin/python3, database/scripts/verify_v50_round16b_manifest.py
+- Declared outputs: none
+- Warnings: PRESERVED_LAUNCHER_RELATIVE_PATH_MATCH_FAILURE, LEGACY_CHECKPOINT011_RECEIPT_BINDS_ABSOLUTE_REPOSITORY_LOCUS
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1230
+
+- UTC timestamp: 2026-08-28T18:37:50Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Correct the launcher relative-path match and validate exact routing plus detached-source cleanliness.
+- Command: `/bin/sh -c 'set -eu
+launcher=/private/tmp/gda-v50-round16b-cp015-final/bin/python3
+$launcher database/scripts/verify_v50_round16b_manifest.py --preflight
+prefix_count=$($launcher database/scripts/verify_v50_round16b_manifest.py --emit-v49-replay-prefix | wc -w | tr -d " ")
+additive_count=$($launcher database/scripts/verify_v50_round16b_manifest.py --emit-additive-replay | wc -w | tr -d " ")
+test "$prefix_count" -gt 0
+test "$additive_count" = 4
+test -z "$(git status --porcelain=v1 --untracked-files=all)"
+launcher_sha=$(shasum -a 256 "$launcher" | awk '"'"'{print $1}'"'"')
+printf "%s\n" "VERIFIER_LAUNCHER_SHA256=$launcher_sha" "V49_REPLAY_PREFIX_FILE_COUNT=$prefix_count" "V50_ADDITIVE_REPLAY_FILE_COUNT=$additive_count" DETACHED_WORKTREE_CLEAN=PASS SCOPED_VERIFIER_LAUNCHER=PASS'`
+- Inputs: /private/tmp/gda-v50-round16b-cp015-final/bin/python3, database/scripts/verify_v50_round16b_manifest.py
+- Outputs: none
+- Duration: 1424 ms
+- Warnings: PRESERVED_LAUNCHER_RELATIVE_PATH_MATCH_FAILURE, LEGACY_CHECKPOINT011_RECEIPT_BINDS_ABSOLUTE_REPOSITORY_LOCUS
+- Errors: none
+- Decision: Retry database A replay with only verifier invocations routed to the byte-identical recorded locus.
+- Next: Replay database A from the detached source.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1231
+
+- UTC timestamp: 2026-08-28T18:38:08Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Retry the complete deterministic database A replay using the scoped immutable checkpoint11 verifier locus and detached SQL source.
+- Command: `env PATH=/private/tmp/gda-v50-round16b-cp015-final/bin:/usr/bin:/bin:/usr/sbin:/sbin PGHOST=/private/tmp/gda-v50-round16b-cp015-final/socket PGPORT=59473 PGUSER=jarlgiovanni PGDATABASE=gda_v50_round16b_cp015_final_a GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql GDA_CREATEDB=/opt/homebrew/opt/postgresql@16/bin/createdb GDA_DROPDB=/opt/homebrew/opt/postgresql@16/bin/dropdb sh database/scripts/replay_v50_round16b.sh`
+- Inputs: database/v50-round16b-replay-manifest.sha256, database/scripts/replay_v50_round16b.sh, /private/tmp/gda-v50-round16b-cp015-final/bin/python3
+- Declared outputs: none
+- Warnings: PRESERVED_DETACHED_ROOT_ABSOLUTE_PATH_COUPLING_FAILURE
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1232
+
+- UTC timestamp: 2026-08-28T18:38:11Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Retry the complete deterministic database A replay using the scoped immutable checkpoint11 verifier locus and detached SQL source.
+- Command: `env PATH=/private/tmp/gda-v50-round16b-cp015-final/bin:/usr/bin:/bin:/usr/sbin:/sbin PGHOST=/private/tmp/gda-v50-round16b-cp015-final/socket PGPORT=59473 PGUSER=jarlgiovanni PGDATABASE=gda_v50_round16b_cp015_final_a GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql GDA_CREATEDB=/opt/homebrew/opt/postgresql@16/bin/createdb GDA_DROPDB=/opt/homebrew/opt/postgresql@16/bin/dropdb sh database/scripts/replay_v50_round16b.sh`
+- Inputs: database/v50-round16b-replay-manifest.sha256, database/scripts/replay_v50_round16b.sh, /private/tmp/gda-v50-round16b-cp015-final/bin/python3
+- Outputs: none
+- Duration: 2669 ms
+- Warnings: PRESERVED_DETACHED_ROOT_ABSOLUTE_PATH_COUPLING_FAILURE
+- Errors: none
+- Decision: Run the complete contract, residue, race, and isolation tests against database A.
+- Next: Test database A with deterministic race evidence directory 2317.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1233
+
+- UTC timestamp: 2026-08-28T18:38:26Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Run complete v50 contract, fixture-residue, concurrency-race, and isolation-guard tests against database A.
+- Command: `env PATH=/usr/bin:/bin:/usr/sbin:/sbin PGHOST=/private/tmp/gda-v50-round16b-cp015-final/socket PGPORT=59473 PGUSER=jarlgiovanni PGDATABASE=gda_v50_round16b_cp015_final_a GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql GDA_CREATEDB=/opt/homebrew/opt/postgresql@16/bin/createdb GDA_DROPDB=/opt/homebrew/opt/postgresql@16/bin/dropdb GDA_RACE_EVIDENCE_DIR=/private/tmp/gda_round16b_cp015_clean_repro_024935e8/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317 sh database/scripts/run_v50_round16b_tests.sh`
+- Inputs: database/tests/014_exploration_v3_higher_order_associations.sql, database/scripts/run_v50_round16b_tests.sh
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1234
+
+- UTC timestamp: 2026-08-28T18:38:28Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: FAIL — Run complete v50 contract, fixture-residue, concurrency-race, and isolation-guard tests against database A.
+- Command: `env PATH=/usr/bin:/bin:/usr/sbin:/sbin PGHOST=/private/tmp/gda-v50-round16b-cp015-final/socket PGPORT=59473 PGUSER=jarlgiovanni PGDATABASE=gda_v50_round16b_cp015_final_a GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql GDA_CREATEDB=/opt/homebrew/opt/postgresql@16/bin/createdb GDA_DROPDB=/opt/homebrew/opt/postgresql@16/bin/dropdb GDA_RACE_EVIDENCE_DIR=/private/tmp/gda_round16b_cp015_clean_repro_024935e8/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317 sh database/scripts/run_v50_round16b_tests.sh`
+- Inputs: database/tests/014_exploration_v3_higher_order_associations.sql, database/scripts/run_v50_round16b_tests.sh
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317
+- Duration: 2047 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_127
+- Decision: Preserve the failure and correct it additively.
+- Next: Prove database A counts, residue, and race cleanup.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1235
+
+- UTC timestamp: 2026-08-28T18:38:36Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Independently reconcile HTTP case phases, receipt metrics, and artifact hashes
+- Command: `python3 -B -c 'import collections,csv,hashlib,json; from pathlib import Path; p=Path("/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final"); s=json.loads((p/"verification-summary.json").read_text()); rows=list(csv.DictReader((p/"http-cases.tsv").open(),delimiter="\t")); phases=collections.Counter(r["phase"] for r in rows); expected={"ARTIFACT_CHECK":1,"FUNCTIONAL_HTTP":160,"CONCURRENCY_C1":100,"CONCURRENCY_C5":100,"CONCURRENCY_C10":100,"CONCURRENCY_C25":100,"CONCURRENCY_C50":100,"SUSTAINED_READ":500,"CONTROL_EXPORT_REPLAY_PRELOAD":5,"CONTROL_EXPORT_REPLAY_POSTLOAD":2}; assert s["status"]=="PASS" and s["case_count"]==1168 and s["case_pass_count"]==1168 and s["case_failure_count"]==0 and not s["errors"]; assert len(rows)==1168 and len({r["case_id"] for r in rows})==1168 and all(r["outcome"]=="PASS" for r in rows) and phases==expected; f=json.loads((p/"functional-http-receipt.json").read_text()); c=json.loads((p/"concurrency-receipt.json").read_text()); u=json.loads((p/"sustained-read-receipt.json").read_text()); e=json.loads((p/"control-export-replay-receipt.json").read_text()); a=json.loads((p/"artifact-check-receipt.json").read_text()); r=json.loads((p/"runtime-memory-receipt.json").read_text()); assert f["status"]=="PASS" and f["case_count"]==160 and f["pass_count"]==160 and f["failure_count"]==0; assert c["status"]=="PASS" and sum(x["request_count"] for x in c["workloads"])==500 and sum(x["failure_count"] for x in c["workloads"])==0; assert u["status"]=="PASS" and u["request_count"]==500 and u["failure_count"]==0; assert e["status"]=="PASS" and e["preload_replay"]["replay_count"]==5 and e["postload_replay"]["replay_count"]==2 and e["preload_and_postload_bytes_equal"] is True; assert a["status"]=="PASS" and r["status"]=="PASS" and r["termination"]["terminated"] is True and r["termination"]["process_group_residual"] is False; actual={n:hashlib.sha256((p/n).read_bytes()).hexdigest() for n in s["artifact_sha256"]}; assert actual==s["artifact_sha256"]; print(json.dumps({"status":"PASS","case_count":len(rows),"case_failure_count":0,"functional_case_count":f["case_count"],"concurrency_case_count":sum(x["request_count"] for x in c["workloads"]),"sustained_case_count":u["request_count"],"export_case_count":e["preload_replay"]["replay_count"]+e["postload_replay"]["replay_count"],"artifact_case_count":expected["ARTIFACT_CHECK"],"phase_counts":dict(sorted(phases.items())),"artifact_hashes":actual,"verification_summary_sha256":hashlib.sha256((p/"verification-summary.json").read_bytes()).hexdigest(),"server_pid":json.loads((p/"startup-receipt.json").read_text())["server_pid"],"process_group_id":json.loads((p/"startup-receipt.json").read_text())["process_group_id"],"process_group_residual":s["server_termination"]["process_group_residual"]},sort_keys=True))'`
+- Inputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1236
+
+- UTC timestamp: 2026-08-28T18:38:36Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Independently reconcile HTTP case phases, receipt metrics, and artifact hashes
+- Command: `python3 -B -c 'import collections,csv,hashlib,json; from pathlib import Path; p=Path("/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final"); s=json.loads((p/"verification-summary.json").read_text()); rows=list(csv.DictReader((p/"http-cases.tsv").open(),delimiter="\t")); phases=collections.Counter(r["phase"] for r in rows); expected={"ARTIFACT_CHECK":1,"FUNCTIONAL_HTTP":160,"CONCURRENCY_C1":100,"CONCURRENCY_C5":100,"CONCURRENCY_C10":100,"CONCURRENCY_C25":100,"CONCURRENCY_C50":100,"SUSTAINED_READ":500,"CONTROL_EXPORT_REPLAY_PRELOAD":5,"CONTROL_EXPORT_REPLAY_POSTLOAD":2}; assert s["status"]=="PASS" and s["case_count"]==1168 and s["case_pass_count"]==1168 and s["case_failure_count"]==0 and not s["errors"]; assert len(rows)==1168 and len({r["case_id"] for r in rows})==1168 and all(r["outcome"]=="PASS" for r in rows) and phases==expected; f=json.loads((p/"functional-http-receipt.json").read_text()); c=json.loads((p/"concurrency-receipt.json").read_text()); u=json.loads((p/"sustained-read-receipt.json").read_text()); e=json.loads((p/"control-export-replay-receipt.json").read_text()); a=json.loads((p/"artifact-check-receipt.json").read_text()); r=json.loads((p/"runtime-memory-receipt.json").read_text()); assert f["status"]=="PASS" and f["case_count"]==160 and f["pass_count"]==160 and f["failure_count"]==0; assert c["status"]=="PASS" and sum(x["request_count"] for x in c["workloads"])==500 and sum(x["failure_count"] for x in c["workloads"])==0; assert u["status"]=="PASS" and u["request_count"]==500 and u["failure_count"]==0; assert e["status"]=="PASS" and e["preload_replay"]["replay_count"]==5 and e["postload_replay"]["replay_count"]==2 and e["preload_and_postload_bytes_equal"] is True; assert a["status"]=="PASS" and r["status"]=="PASS" and r["termination"]["terminated"] is True and r["termination"]["process_group_residual"] is False; actual={n:hashlib.sha256((p/n).read_bytes()).hexdigest() for n in s["artifact_sha256"]}; assert actual==s["artifact_sha256"]; print(json.dumps({"status":"PASS","case_count":len(rows),"case_failure_count":0,"functional_case_count":f["case_count"],"concurrency_case_count":sum(x["request_count"] for x in c["workloads"]),"sustained_case_count":u["request_count"],"export_case_count":e["preload_replay"]["replay_count"]+e["postload_replay"]["replay_count"],"artifact_case_count":expected["ARTIFACT_CHECK"],"phase_counts":dict(sorted(phases.items())),"artifact_hashes":actual,"verification_summary_sha256":hashlib.sha256((p/"verification-summary.json").read_bytes()).hexdigest(),"server_pid":json.loads((p/"startup-receipt.json").read_text())["server_pid"],"process_group_id":json.loads((p/"startup-receipt.json").read_text())["process_group_id"],"process_group_residual":s["server_termination"]["process_group_residual"]},sort_keys=True))'`
+- Inputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final
+- Outputs: none
+- Duration: 36 ms
+- Warnings: none
+- Errors: none
+- Decision: Any independent count, status, phase, or hash mismatch blocks acceptance of the primary HTTP verifier.
+- Next: Prove the task-owned server PID, process group, and listener are absent.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1237
+
+- UTC timestamp: 2026-08-28T18:38:47Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Prove the failed database A race-harness attempt left no disposable database or governed fixture residue.
+- Command: `/bin/sh -c 'set -eu
+psql=/opt/homebrew/opt/postgresql@16/bin/psql
+socket=/private/tmp/gda-v50-round16b-cp015-final/socket
+port=59473
+race_count=$($psql -X -Atq -v ON_ERROR_STOP=1 -h "$socket" -p "$port" -U jarlgiovanni -d postgres -c "SELECT count(*) FROM pg_database WHERE datname LIKE '"'"'gda_v50_round16b_cp015_final_a_race_%'"'"';")
+residue=$($psql -X -Atq -v ON_ERROR_STOP=1 -h "$socket" -p "$port" -U jarlgiovanni -d gda_v50_round16b_cp015_final_a -c "SELECT coalesce(sum(n_live_tup),0)::bigint FROM pg_stat_user_tables WHERE schemaname='"'"'exploration_v3'"'"';")
+test "$race_count" = 0
+test "$residue" = 0
+printf "%s\n" "FAILED_ATTEMPT_RACE_DATABASE_COUNT=$race_count" "FAILED_ATTEMPT_EXPLORATION_V3_STAT_RESIDUE=$residue" FAILED_ATTEMPT_CLEANUP=PASS'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: PRESERVED_RG_PATH_OMISSION_FAILURE
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1238
+
+- UTC timestamp: 2026-08-28T18:38:47Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Prove the failed database A race-harness attempt left no disposable database or governed fixture residue.
+- Command: `/bin/sh -c 'set -eu
+psql=/opt/homebrew/opt/postgresql@16/bin/psql
+socket=/private/tmp/gda-v50-round16b-cp015-final/socket
+port=59473
+race_count=$($psql -X -Atq -v ON_ERROR_STOP=1 -h "$socket" -p "$port" -U jarlgiovanni -d postgres -c "SELECT count(*) FROM pg_database WHERE datname LIKE '"'"'gda_v50_round16b_cp015_final_a_race_%'"'"';")
+residue=$($psql -X -Atq -v ON_ERROR_STOP=1 -h "$socket" -p "$port" -U jarlgiovanni -d gda_v50_round16b_cp015_final_a -c "SELECT coalesce(sum(n_live_tup),0)::bigint FROM pg_stat_user_tables WHERE schemaname='"'"'exploration_v3'"'"';")
+test "$race_count" = 0
+test "$residue" = 0
+printf "%s\n" "FAILED_ATTEMPT_RACE_DATABASE_COUNT=$race_count" "FAILED_ATTEMPT_EXPLORATION_V3_STAT_RESIDUE=$residue" FAILED_ATTEMPT_CLEANUP=PASS'`
+- Inputs: none
+- Outputs: none
+- Duration: 29 ms
+- Warnings: PRESERVED_RG_PATH_OMISSION_FAILURE
+- Errors: none
+- Decision: Retry the full test with the exact ripgrep binary directory included in PATH.
+- Next: Rerun database A tests additively.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1239
+
+- UTC timestamp: 2026-08-28T18:38:49Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Independently prove production server PID, process group, and listener cleanup
+- Command: `/bin/sh -c 'set -eu; pid=59281; pgid=59281; test -z "$(ps -p "$pid" -o pid= || true)"; test -z "$(pgrep -g "$pgid" || true)"; test -z "$(lsof -nP -iTCP:45973 -sTCP:LISTEN || true)"; printf "%s\n" SERVER_PID_59281_ABSENT=PASS PROCESS_GROUP_59281_EMPTY=PASS LOOPBACK_LISTENER_45973_ABSENT=PASS'`
+- Inputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final/startup-receipt.json, /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final/verification-summary.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1240
+
+- UTC timestamp: 2026-08-28T18:38:49Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Independently prove production server PID, process group, and listener cleanup
+- Command: `/bin/sh -c 'set -eu; pid=59281; pgid=59281; test -z "$(ps -p "$pid" -o pid= || true)"; test -z "$(pgrep -g "$pgid" || true)"; test -z "$(lsof -nP -iTCP:45973 -sTCP:LISTEN || true)"; printf "%s\n" SERVER_PID_59281_ABSENT=PASS PROCESS_GROUP_59281_EMPTY=PASS LOOPBACK_LISTENER_45973_ABSENT=PASS'`
+- Inputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final/startup-receipt.json, /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final/verification-summary.json
+- Outputs: none
+- Duration: 43 ms
+- Warnings: none
+- Errors: none
+- Decision: Any residual PID, process-group member, or TCP listener blocks final acceptance.
+- Next: Remove only the ignored dependency symlink and prove detached source cleanliness.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1241
+
+- UTC timestamp: 2026-08-28T18:38:57Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Locate the exact ripgrep binary omitted from the database A test PATH.
+- Command: `/bin/sh -c 'set -eu
+rg_path=$(command -v rg)
+test -x "$rg_path"
+printf "%s\n" "RG_PATH=$rg_path"'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: PRESERVED_RG_PATH_OMISSION_FAILURE
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1242
+
+- UTC timestamp: 2026-08-28T18:38:57Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Locate the exact ripgrep binary omitted from the database A test PATH.
+- Command: `/bin/sh -c 'set -eu
+rg_path=$(command -v rg)
+test -x "$rg_path"
+printf "%s\n" "RG_PATH=$rg_path"'`
+- Inputs: none
+- Outputs: none
+- Duration: 6 ms
+- Warnings: PRESERVED_RG_PATH_OMISSION_FAILURE
+- Errors: none
+- Decision: Prepend the exact containing directory for the test retry.
+- Next: Retry the complete database A contract and race suite.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1243
+
+- UTC timestamp: 2026-08-28T18:39:02Z
+- Phase: CHECKPOINT-015-REACHABLE-BLOB-PROOF
+- Operation: START — self-check-reachable-ordinary-blob-verifier
+- Command: `python3 -B scripts/trace_round16b/verify_reachable_ordinary_blobs.py --self-check`
+- Inputs: scripts/trace_round16b/verify_reachable_ordinary_blobs.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/reachable-ordinary-blob-self-check-checkpoint015.txt
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1244
+
+- UTC timestamp: 2026-08-28T18:39:02Z
+- Phase: CHECKPOINT-015-REACHABLE-BLOB-PROOF
+- Operation: PASS — self-check-reachable-ordinary-blob-verifier
+- Command: `python3 -B scripts/trace_round16b/verify_reachable_ordinary_blobs.py --self-check`
+- Inputs: scripts/trace_round16b/verify_reachable_ordinary_blobs.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/reachable-ordinary-blob-self-check-checkpoint015.txt
+- Duration: 48 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1245
+
+- UTC timestamp: 2026-08-28T18:39:12Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Retry the complete database A contract, residue, race, and isolation suite with the exact ripgrep path.
+- Command: `env PATH=/Applications/ChatGPT.app/Contents/Resources:/usr/bin:/bin:/usr/sbin:/sbin PGHOST=/private/tmp/gda-v50-round16b-cp015-final/socket PGPORT=59473 PGUSER=jarlgiovanni PGDATABASE=gda_v50_round16b_cp015_final_a GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql GDA_CREATEDB=/opt/homebrew/opt/postgresql@16/bin/createdb GDA_DROPDB=/opt/homebrew/opt/postgresql@16/bin/dropdb GDA_RACE_EVIDENCE_DIR=/private/tmp/gda_round16b_cp015_clean_repro_024935e8/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317 sh database/scripts/run_v50_round16b_tests.sh`
+- Inputs: database/tests/014_exploration_v3_higher_order_associations.sql, database/scripts/run_v50_round16b_tests.sh
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317
+- Warnings: PRESERVED_RG_PATH_OMISSION_FAILURE
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1246
+
+- UTC timestamp: 2026-08-28T18:39:13Z
+- Phase: CHECKPOINT-015-REACHABLE-BLOB-PROOF
+- Operation: START — scan-entire-published-cp014-ancestry
+- Command: `python3 -B /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/verify_reachable_ordinary_blobs.py --repo /private/tmp/gda_round16b_cp015_clean_repro_024935e8 --ref HEAD --ledger /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-ledger-checkpoint015.tsv --receipt /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-receipt-checkpoint015.json`
+- Inputs: scripts/trace_round16b/verify_reachable_ordinary_blobs.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-ledger-checkpoint015.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-receipt-checkpoint015.json
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1247
+
+- UTC timestamp: 2026-08-28T18:39:14Z
+- Phase: CHECKPOINT-015-REACHABLE-BLOB-PROOF
+- Operation: PASS — scan-entire-published-cp014-ancestry
+- Command: `python3 -B /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/verify_reachable_ordinary_blobs.py --repo /private/tmp/gda_round16b_cp015_clean_repro_024935e8 --ref HEAD --ledger /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-ledger-checkpoint015.tsv --receipt /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-receipt-checkpoint015.json`
+- Inputs: scripts/trace_round16b/verify_reachable_ordinary_blobs.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-ledger-checkpoint015.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-receipt-checkpoint015.json
+- Duration: 749 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1248
+
+- UTC timestamp: 2026-08-28T18:39:14Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Retry the complete database A contract, residue, race, and isolation suite with the exact ripgrep path.
+- Command: `env PATH=/Applications/ChatGPT.app/Contents/Resources:/usr/bin:/bin:/usr/sbin:/sbin PGHOST=/private/tmp/gda-v50-round16b-cp015-final/socket PGPORT=59473 PGUSER=jarlgiovanni PGDATABASE=gda_v50_round16b_cp015_final_a GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql GDA_CREATEDB=/opt/homebrew/opt/postgresql@16/bin/createdb GDA_DROPDB=/opt/homebrew/opt/postgresql@16/bin/dropdb GDA_RACE_EVIDENCE_DIR=/private/tmp/gda_round16b_cp015_clean_repro_024935e8/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317 sh database/scripts/run_v50_round16b_tests.sh`
+- Inputs: database/tests/014_exploration_v3_higher_order_associations.sql, database/scripts/run_v50_round16b_tests.sh
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317
+- Duration: 1969 ms
+- Warnings: PRESERVED_RG_PATH_OMISSION_FAILURE
+- Errors: none
+- Decision: Require deterministic race evidence and zero governed fixture residue before proceeding.
+- Next: Prove database A counts, residue, checksum, and race cleanup.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1249
+
+- UTC timestamp: 2026-08-28T18:39:19Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Repeat independent process cleanup proof with full process-table visibility
+- Command: `/bin/sh -c 'set -eu; pid=59281; pgid=59281; if pid_rows=$(ps -p "$pid" -o pid=); then test -z "$pid_rows"; else rc=$?; test "$rc" -eq 1; fi; if group_rows=$(pgrep -g "$pgid"); then printf "%s\n" "$group_rows" >&2; exit 1; else rc=$?; test "$rc" -eq 1; fi; if listener_rows=$(lsof -nP -iTCP:45973 -sTCP:LISTEN); then printf "%s\n" "$listener_rows" >&2; exit 1; else rc=$?; test "$rc" -eq 1; fi; printf "%s\n" SERVER_PID_59281_ABSENT=PASS PROCESS_GROUP_59281_EMPTY=PASS LOOPBACK_LISTENER_45973_ABSENT=PASS'`
+- Inputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final/startup-receipt.json, /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final/verification-summary.json
+- Declared outputs: none
+- Warnings: PRIOR_SANDBOX_PROCESS_VISIBILITY_DENIED
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1250
+
+- UTC timestamp: 2026-08-28T18:39:19Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Repeat independent process cleanup proof with full process-table visibility
+- Command: `/bin/sh -c 'set -eu; pid=59281; pgid=59281; if pid_rows=$(ps -p "$pid" -o pid=); then test -z "$pid_rows"; else rc=$?; test "$rc" -eq 1; fi; if group_rows=$(pgrep -g "$pgid"); then printf "%s\n" "$group_rows" >&2; exit 1; else rc=$?; test "$rc" -eq 1; fi; if listener_rows=$(lsof -nP -iTCP:45973 -sTCP:LISTEN); then printf "%s\n" "$listener_rows" >&2; exit 1; else rc=$?; test "$rc" -eq 1; fi; printf "%s\n" SERVER_PID_59281_ABSENT=PASS PROCESS_GROUP_59281_EMPTY=PASS LOOPBACK_LISTENER_45973_ABSENT=PASS'`
+- Inputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final/startup-receipt.json, /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint015-final/verification-summary.json
+- Outputs: none
+- Duration: 68 ms
+- Warnings: PRIOR_SANDBOX_PROCESS_VISIBILITY_DENIED
+- Errors: none
+- Decision: This corrected proof distinguishes expected no-match exit status 1 from process-inspection errors.
+- Next: Remove only the ignored dependency symlink and prove detached source cleanliness.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1251
+
+- UTC timestamp: 2026-08-28T18:39:27Z
+- Phase: CHECKPOINT-015-REACHABLE-BLOB-PROOF
+- Operation: START — repeat-entire-published-cp014-ancestry-scan
+- Command: `python3 -B /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/verify_reachable_ordinary_blobs.py --repo /private/tmp/gda_round16b_cp015_clean_repro_024935e8 --ref HEAD --ledger /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-ledger-checkpoint015.tsv --receipt /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-receipt-checkpoint015.json`
+- Inputs: scripts/trace_round16b/verify_reachable_ordinary_blobs.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-ledger-checkpoint015.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-receipt-checkpoint015.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-ledger-checkpoint015.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-receipt-checkpoint015.json
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1252
+
+- UTC timestamp: 2026-08-28T18:39:27Z
+- Phase: CHECKPOINT-015-REACHABLE-BLOB-PROOF
+- Operation: PASS — repeat-entire-published-cp014-ancestry-scan
+- Command: `python3 -B /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/verify_reachable_ordinary_blobs.py --repo /private/tmp/gda_round16b_cp015_clean_repro_024935e8 --ref HEAD --ledger /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-ledger-checkpoint015.tsv --receipt /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-receipt-checkpoint015.json`
+- Inputs: scripts/trace_round16b/verify_reachable_ordinary_blobs.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-ledger-checkpoint015.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-receipt-checkpoint015.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-ledger-checkpoint015.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-reachable-ordinary-blob-receipt-checkpoint015.json
+- Duration: 721 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1253
+
+- UTC timestamp: 2026-08-28T18:39:29Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Replay the complete deterministic v49 prefix and additive v50 capability into fresh database B from detached SQL source.
+- Command: `env PATH=/private/tmp/gda-v50-round16b-cp015-final/bin:/usr/bin:/bin:/usr/sbin:/sbin PGHOST=/private/tmp/gda-v50-round16b-cp015-final/socket PGPORT=59473 PGUSER=jarlgiovanni PGDATABASE=gda_v50_round16b_cp015_final_b GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql GDA_CREATEDB=/opt/homebrew/opt/postgresql@16/bin/createdb GDA_DROPDB=/opt/homebrew/opt/postgresql@16/bin/dropdb sh database/scripts/replay_v50_round16b.sh`
+- Inputs: database/v50-round16b-replay-manifest.sha256, database/scripts/replay_v50_round16b.sh, /private/tmp/gda-v50-round16b-cp015-final/bin/python3
+- Declared outputs: none
+- Warnings: LEGACY_CHECKPOINT011_RECEIPT_BINDS_ABSOLUTE_REPOSITORY_LOCUS
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1254
+
+- UTC timestamp: 2026-08-28T18:39:31Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Remove only the ignored task-created frontend dependency symlink
+- Command: `unlink frontend/node_modules`
+- Inputs: frontend/.gitignore
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1255
+
+- UTC timestamp: 2026-08-28T18:39:31Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Remove only the ignored task-created frontend dependency symlink
+- Command: `unlink frontend/node_modules`
+- Inputs: frontend/.gitignore
+- Outputs: none
+- Duration: 5 ms
+- Warnings: none
+- Errors: none
+- Decision: Only the exact ignored symlink created for this verification lane may be removed; the target dependency directory remains untouched.
+- Next: Prove final detached HEAD, tree, Git status, LFS status, and dependency target integrity.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1256
+
+- UTC timestamp: 2026-08-28T18:39:32Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Replay the complete deterministic v49 prefix and additive v50 capability into fresh database B from detached SQL source.
+- Command: `env PATH=/private/tmp/gda-v50-round16b-cp015-final/bin:/usr/bin:/bin:/usr/sbin:/sbin PGHOST=/private/tmp/gda-v50-round16b-cp015-final/socket PGPORT=59473 PGUSER=jarlgiovanni PGDATABASE=gda_v50_round16b_cp015_final_b GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql GDA_CREATEDB=/opt/homebrew/opt/postgresql@16/bin/createdb GDA_DROPDB=/opt/homebrew/opt/postgresql@16/bin/dropdb sh database/scripts/replay_v50_round16b.sh`
+- Inputs: database/v50-round16b-replay-manifest.sha256, database/scripts/replay_v50_round16b.sh, /private/tmp/gda-v50-round16b-cp015-final/bin/python3
+- Outputs: none
+- Duration: 2810 ms
+- Warnings: LEGACY_CHECKPOINT011_RECEIPT_BINDS_ABSOLUTE_REPOSITORY_LOCUS
+- Errors: none
+- Decision: Run the complete contract, residue, race, and isolation tests against database B.
+- Next: Test database B with deterministic race evidence directory 2318.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1257
+
+- UTC timestamp: 2026-08-28T18:39:45Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Run complete v50 contract, fixture-residue, concurrency-race, and isolation-guard tests against database B.
+- Command: `env PATH=/Applications/ChatGPT.app/Contents/Resources:/usr/bin:/bin:/usr/sbin:/sbin PGHOST=/private/tmp/gda-v50-round16b-cp015-final/socket PGPORT=59473 PGUSER=jarlgiovanni PGDATABASE=gda_v50_round16b_cp015_final_b GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql GDA_CREATEDB=/opt/homebrew/opt/postgresql@16/bin/createdb GDA_DROPDB=/opt/homebrew/opt/postgresql@16/bin/dropdb GDA_RACE_EVIDENCE_DIR=/private/tmp/gda_round16b_cp015_clean_repro_024935e8/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318 sh database/scripts/run_v50_round16b_tests.sh`
+- Inputs: database/tests/014_exploration_v3_higher_order_associations.sql, database/scripts/run_v50_round16b_tests.sh
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1258
+
+- UTC timestamp: 2026-08-28T18:39:46Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Prove final detached frontend worktree identity and clean source state
+- Command: `/bin/sh -c 'set -eu; head_sha=$(git rev-parse HEAD); tree_sha=$(git rev-parse HEAD^{tree}); git_status=$(git status --porcelain=v1 --untracked-files=all); lfs_status=$(git lfs status --porcelain); test "$head_sha" = 024935e8d0c36cf0c4724b1960c71f28afef6595; test "$tree_sha" = 28f8ab204378d75d16d98334bbd105d47641f37e; test -z "$git_status"; test -z "$lfs_status"; test ! -e frontend/node_modules; test -d /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules; printf "%s\n" FINAL_HEAD=$head_sha FINAL_TREE=$tree_sha FINAL_GIT_STATUS=PASS FINAL_LFS_STATUS=PASS FRONTEND_DEPENDENCY_SYMLINK_ABSENT=PASS MAIN_DEPENDENCY_TARGET_UNCHANGED=PASS'`
+- Inputs: 024935e8d0c36cf0c4724b1960c71f28afef6595
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1259
+
+- UTC timestamp: 2026-08-28T18:39:46Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: FAIL — Prove final detached frontend worktree identity and clean source state
+- Command: `/bin/sh -c 'set -eu; head_sha=$(git rev-parse HEAD); tree_sha=$(git rev-parse HEAD^{tree}); git_status=$(git status --porcelain=v1 --untracked-files=all); lfs_status=$(git lfs status --porcelain); test "$head_sha" = 024935e8d0c36cf0c4724b1960c71f28afef6595; test "$tree_sha" = 28f8ab204378d75d16d98334bbd105d47641f37e; test -z "$git_status"; test -z "$lfs_status"; test ! -e frontend/node_modules; test -d /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules; printf "%s\n" FINAL_HEAD=$head_sha FINAL_TREE=$tree_sha FINAL_GIT_STATUS=PASS FINAL_LFS_STATUS=PASS FRONTEND_DEPENDENCY_SYMLINK_ABSENT=PASS MAIN_DEPENDENCY_TARGET_UNCHANGED=PASS'`
+- Inputs: 024935e8d0c36cf0c4724b1960c71f28afef6595
+- Outputs: none
+- Duration: 479 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_2
+- Decision: Preserve the failure and correct it additively.
+- Next: Report final command IDs, counts, hashes, and preserved corrections to the coordinating agent.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1260
+
+- UTC timestamp: 2026-08-28T18:39:48Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Run complete v50 contract, fixture-residue, concurrency-race, and isolation-guard tests against database B.
+- Command: `env PATH=/Applications/ChatGPT.app/Contents/Resources:/usr/bin:/bin:/usr/sbin:/sbin PGHOST=/private/tmp/gda-v50-round16b-cp015-final/socket PGPORT=59473 PGUSER=jarlgiovanni PGDATABASE=gda_v50_round16b_cp015_final_b GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql GDA_CREATEDB=/opt/homebrew/opt/postgresql@16/bin/createdb GDA_DROPDB=/opt/homebrew/opt/postgresql@16/bin/dropdb GDA_RACE_EVIDENCE_DIR=/private/tmp/gda_round16b_cp015_clean_repro_024935e8/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318 sh database/scripts/run_v50_round16b_tests.sh`
+- Inputs: database/tests/014_exploration_v3_higher_order_associations.sql, database/scripts/run_v50_round16b_tests.sh
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318
+- Duration: 2559 ms
+- Warnings: none
+- Errors: none
+- Decision: Require deterministic race evidence and zero governed fixture residue before schema reconciliation.
+- Next: Capture exact counts, normalized schema hashes, and race evidence for both databases.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1261
+
+- UTC timestamp: 2026-08-28T18:40:03Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: START — Repeat final detached worktree proof with Git LFS index-refresh permission
+- Command: `/bin/sh -c 'set -eu; head_sha=$(git rev-parse HEAD); tree_sha=$(git rev-parse HEAD^{tree}); git_status=$(git status --porcelain=v1 --untracked-files=all); lfs_status=$(git lfs status --porcelain); test "$head_sha" = 024935e8d0c36cf0c4724b1960c71f28afef6595; test "$tree_sha" = 28f8ab204378d75d16d98334bbd105d47641f37e; test -z "$git_status"; test -z "$lfs_status"; test ! -e frontend/node_modules; test -d /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules; printf "%s\n" FINAL_HEAD=$head_sha FINAL_TREE=$tree_sha FINAL_GIT_STATUS=PASS FINAL_LFS_STATUS=PASS FRONTEND_DEPENDENCY_SYMLINK_ABSENT=PASS MAIN_DEPENDENCY_TARGET_UNCHANGED=PASS'`
+- Inputs: 024935e8d0c36cf0c4724b1960c71f28afef6595
+- Declared outputs: none
+- Warnings: PRIOR_SANDBOX_LFS_INDEX_REFRESH_FAILURE
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1262
+
+- UTC timestamp: 2026-08-28T18:40:03Z
+- Phase: CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION
+- Operation: PASS — Repeat final detached worktree proof with Git LFS index-refresh permission
+- Command: `/bin/sh -c 'set -eu; head_sha=$(git rev-parse HEAD); tree_sha=$(git rev-parse HEAD^{tree}); git_status=$(git status --porcelain=v1 --untracked-files=all); lfs_status=$(git lfs status --porcelain); test "$head_sha" = 024935e8d0c36cf0c4724b1960c71f28afef6595; test "$tree_sha" = 28f8ab204378d75d16d98334bbd105d47641f37e; test -z "$git_status"; test -z "$lfs_status"; test ! -e frontend/node_modules; test -d /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules; printf "%s\n" FINAL_HEAD=$head_sha FINAL_TREE=$tree_sha FINAL_GIT_STATUS=PASS FINAL_LFS_STATUS=PASS FRONTEND_DEPENDENCY_SYMLINK_ABSENT=PASS MAIN_DEPENDENCY_TARGET_UNCHANGED=PASS'`
+- Inputs: 024935e8d0c36cf0c4724b1960c71f28afef6595
+- Outputs: none
+- Duration: 333 ms
+- Warnings: PRIOR_SANDBOX_LFS_INDEX_REFRESH_FAILURE
+- Errors: none
+- Decision: This corrected run is read-only and exists only because Git LFS status needs access to the linked worktree index.
+- Next: Report final command IDs, counts, hashes, and preserved corrections to the coordinating agent.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1263
+
+- UTC timestamp: 2026-08-28T18:40:53Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Inspect the v50 catalog names needed to define exact CP15 reproduction metrics.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -Atq -v ON_ERROR_STOP=1 -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni -d gda_v50_round16b_cp015_final_a -c 'SELECT table_schema||'"'"'.'"'"'||table_name FROM information_schema.views WHERE table_schema IN ('"'"'exploration_v3'"'"','"'"'api_v3'"'"') ORDER BY 1;'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1264
+
+- UTC timestamp: 2026-08-28T18:40:53Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Inspect the v50 catalog names needed to define exact CP15 reproduction metrics.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -Atq -v ON_ERROR_STOP=1 -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni -d gda_v50_round16b_cp015_final_a -c 'SELECT table_schema||'"'"'.'"'"'||table_name FROM information_schema.views WHERE table_schema IN ('"'"'exploration_v3'"'"','"'"'api_v3'"'"') ORDER BY 1;'`
+- Inputs: none
+- Outputs: none
+- Duration: 17 ms
+- Warnings: none
+- Errors: none
+- Decision: Encode only catalog-derived, exact-row-count metrics in the capture script.
+- Next: Create and run the canonical live database capture.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1265
+
+- UTC timestamp: 2026-08-28T18:41:21Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Create the exact temporary CP15 schema-capture directory.
+- Command: `mkdir -p /private/tmp/gda-v50-round16b-cp015-final/capture`
+- Inputs: none
+- Declared outputs: /private/tmp/gda-v50-round16b-cp015-final/capture
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1266
+
+- UTC timestamp: 2026-08-28T18:41:21Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Create the exact temporary CP15 schema-capture directory.
+- Command: `mkdir -p /private/tmp/gda-v50-round16b-cp015-final/capture`
+- Inputs: none
+- Outputs: /private/tmp/gda-v50-round16b-cp015-final/capture
+- Duration: 5 ms
+- Warnings: none
+- Errors: none
+- Decision: Dump database A schema without owner or privilege noise.
+- Next: Run schema-only pg_dump for database A.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1267
+
+- UTC timestamp: 2026-08-28T18:41:32Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Capture database A schema-only dump without ownership or privilege noise.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_dump -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni -d gda_v50_round16b_cp015_final_a --schema-only --no-owner --no-privileges --file=/private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.sql`
+- Inputs: none
+- Declared outputs: /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.sql
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1268
+
+- UTC timestamp: 2026-08-28T18:41:32Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Capture database A schema-only dump without ownership or privilege noise.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_dump -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni -d gda_v50_round16b_cp015_final_a --schema-only --no-owner --no-privileges --file=/private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.sql`
+- Inputs: none
+- Outputs: /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.sql
+- Duration: 206 ms
+- Warnings: none
+- Errors: none
+- Decision: Normalize and hash database A schema using the committed schema hash implementation.
+- Next: Compute database A normalized schema hash.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1269
+
+- UTC timestamp: 2026-08-28T18:41:40Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Normalize and hash database A schema with the exact committed schema_hash.py implementation.
+- Command: `python3 -B database/scripts/schema_hash.py /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.sql --write-normalized /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.normalized.sql`
+- Inputs: /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.sql, database/scripts/schema_hash.py
+- Declared outputs: /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.normalized.sql
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1270
+
+- UTC timestamp: 2026-08-28T18:41:40Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Normalize and hash database A schema with the exact committed schema_hash.py implementation.
+- Command: `python3 -B database/scripts/schema_hash.py /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.sql --write-normalized /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.normalized.sql`
+- Inputs: /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.sql, database/scripts/schema_hash.py
+- Outputs: /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.normalized.sql
+- Duration: 57 ms
+- Warnings: none
+- Errors: none
+- Decision: Require the governed normalized schema hash, then independently dump database B.
+- Next: Run schema-only pg_dump for database B.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1271
+
+- UTC timestamp: 2026-08-28T18:41:53Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Capture database B schema-only dump without ownership or privilege noise.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_dump -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni -d gda_v50_round16b_cp015_final_b --schema-only --no-owner --no-privileges --file=/private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.sql`
+- Inputs: none
+- Declared outputs: /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.sql
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1272
+
+- UTC timestamp: 2026-08-28T18:41:53Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Capture database B schema-only dump without ownership or privilege noise.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_dump -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni -d gda_v50_round16b_cp015_final_b --schema-only --no-owner --no-privileges --file=/private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.sql`
+- Inputs: none
+- Outputs: /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.sql
+- Duration: 203 ms
+- Warnings: none
+- Errors: none
+- Decision: Normalize and hash database B schema using the committed schema hash implementation.
+- Next: Compute database B normalized schema hash.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1273
+
+- UTC timestamp: 2026-08-28T18:42:01Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Normalize and hash database B schema with the exact committed schema_hash.py implementation.
+- Command: `python3 -B database/scripts/schema_hash.py /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.sql --write-normalized /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.normalized.sql`
+- Inputs: /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.sql, database/scripts/schema_hash.py
+- Declared outputs: /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.normalized.sql
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1274
+
+- UTC timestamp: 2026-08-28T18:42:01Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Normalize and hash database B schema with the exact committed schema_hash.py implementation.
+- Command: `python3 -B database/scripts/schema_hash.py /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.sql --write-normalized /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.normalized.sql`
+- Inputs: /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.sql, database/scripts/schema_hash.py
+- Outputs: /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.normalized.sql
+- Duration: 56 ms
+- Warnings: none
+- Errors: none
+- Decision: Require both normalized schemas to match the governed deterministic hash.
+- Next: Run a byte-for-byte normalized schema equality proof.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1275
+
+- UTC timestamp: 2026-08-28T18:42:12Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Prove normalized database A and B schema dumps are byte-identical and match the governed hash.
+- Command: `/bin/sh -c 'set -eu
+a=/private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.normalized.sql
+b=/private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.normalized.sql
+cmp -s "$a" "$b"
+hash=$(shasum -a 256 "$a" | awk '"'"'{print $1}'"'"')
+test "$hash" = 1152a494e6b64595c9f9291c1d314a9434cb763c7f2a02512d2768e286f571b4
+bytes=$(wc -c < "$a" | tr -d " ")
+printf "%s\n" NORMALIZED_SCHEMAS_IDENTICAL=PASS "NORMALIZED_SCHEMA_SHA256=$hash" "NORMALIZED_SCHEMA_BYTES=$bytes"'`
+- Inputs: /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.normalized.sql, /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.normalized.sql
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1276
+
+- UTC timestamp: 2026-08-28T18:42:12Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Prove normalized database A and B schema dumps are byte-identical and match the governed hash.
+- Command: `/bin/sh -c 'set -eu
+a=/private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.normalized.sql
+b=/private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.normalized.sql
+cmp -s "$a" "$b"
+hash=$(shasum -a 256 "$a" | awk '"'"'{print $1}'"'"')
+test "$hash" = 1152a494e6b64595c9f9291c1d314a9434cb763c7f2a02512d2768e286f571b4
+bytes=$(wc -c < "$a" | tr -d " ")
+printf "%s\n" NORMALIZED_SCHEMAS_IDENTICAL=PASS "NORMALIZED_SCHEMA_SHA256=$hash" "NORMALIZED_SCHEMA_BYTES=$bytes"'`
+- Inputs: /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.normalized.sql, /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.normalized.sql
+- Outputs: none
+- Duration: 37 ms
+- Warnings: none
+- Errors: none
+- Decision: Capture exact catalog and row-count metrics for both databases.
+- Next: Run the canonical live database capture.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1277
+
+- UTC timestamp: 2026-08-28T18:42:36Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Measure database A catalog inventory to bind exact CP15 capture definitions.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -Atq -v ON_ERROR_STOP=1 -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni -d gda_v50_round16b_cp015_final_a -c 'SELECT metric||'"'"'='"'"'||value FROM (SELECT '"'"'PROJECT_SCHEMA_COUNT'"'"' metric,count(*)::bigint value FROM pg_namespace WHERE nspname = ANY (ARRAY['"'"'raw'"'"','"'"'core'"'"','"'"'provenance'"'"','"'"'research'"'"','"'"'rights'"'"','"'"'workflow'"'"','"'"'release'"'"','"'"'audit'"'"','"'"'api_v1'"'"','"'"'exploration_v3'"'"','"'"'api_v3'"'"']) UNION ALL SELECT '"'"'V3_ENUM'"'"',count(*) FROM pg_type t JOIN pg_namespace n ON n.oid=t.typnamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND t.typtype='"'"'e'"'"' UNION ALL SELECT '"'"'V3_TABLE'"'"',count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND c.relkind='"'"'r'"'"' UNION ALL SELECT '"'"'V3_FUNCTION'"'"',count(*) FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='"'"'exploration_v3'"'"' UNION ALL SELECT '"'"'V3_CONSTRAINT_TRIGGER'"'"',count(*) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND NOT t.tgisinternal AND t.tgconstraint<>0 UNION ALL SELECT '"'"'V3_REGULAR_TRIGGER'"'"',count(*) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND NOT t.tgisinternal AND t.tgconstraint=0 UNION ALL SELECT '"'"'V50_ADDITIVE_VIEW'"'"',count(*) FROM pg_views WHERE schemaname IN ('"'"'api_v3'"'"','"'"'exploration_v3'"'"') OR (schemaname='"'"'audit'"'"' AND viewname='"'"'exploration_v3_inventory'"'"') UNION ALL SELECT '"'"'GOVERNED_TABLE_COUNT'"'"',count(*) FROM pg_tables WHERE schemaname = ANY (ARRAY['"'"'raw'"'"','"'"'core'"'"','"'"'provenance'"'"','"'"'research'"'"','"'"'rights'"'"','"'"'workflow'"'"','"'"'release'"'"','"'"'audit'"'"','"'"'exploration_v3'"'"']) UNION ALL SELECT '"'"'API_V3_VIEW_COUNT'"'"',count(*) FROM pg_views WHERE schemaname='"'"'api_v3'"'"' UNION ALL SELECT '"'"'REVIEWER_QUEUE_COUNT'"'"',(SELECT count(*) FROM exploration_v3.reviewer_association_queue) UNION ALL SELECT '"'"'V3_INVENTORY_NONZERO_METRIC_COUNT'"'"',(SELECT count(*) FROM audit.exploration_v3_inventory i CROSS JOIN LATERAL jsonb_each_text(to_jsonb(i)) e WHERE e.value::bigint<>0)) m ORDER BY metric;'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1278
+
+- UTC timestamp: 2026-08-28T18:42:36Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Measure database A catalog inventory to bind exact CP15 capture definitions.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -Atq -v ON_ERROR_STOP=1 -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni -d gda_v50_round16b_cp015_final_a -c 'SELECT metric||'"'"'='"'"'||value FROM (SELECT '"'"'PROJECT_SCHEMA_COUNT'"'"' metric,count(*)::bigint value FROM pg_namespace WHERE nspname = ANY (ARRAY['"'"'raw'"'"','"'"'core'"'"','"'"'provenance'"'"','"'"'research'"'"','"'"'rights'"'"','"'"'workflow'"'"','"'"'release'"'"','"'"'audit'"'"','"'"'api_v1'"'"','"'"'exploration_v3'"'"','"'"'api_v3'"'"']) UNION ALL SELECT '"'"'V3_ENUM'"'"',count(*) FROM pg_type t JOIN pg_namespace n ON n.oid=t.typnamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND t.typtype='"'"'e'"'"' UNION ALL SELECT '"'"'V3_TABLE'"'"',count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND c.relkind='"'"'r'"'"' UNION ALL SELECT '"'"'V3_FUNCTION'"'"',count(*) FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='"'"'exploration_v3'"'"' UNION ALL SELECT '"'"'V3_CONSTRAINT_TRIGGER'"'"',count(*) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND NOT t.tgisinternal AND t.tgconstraint<>0 UNION ALL SELECT '"'"'V3_REGULAR_TRIGGER'"'"',count(*) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND NOT t.tgisinternal AND t.tgconstraint=0 UNION ALL SELECT '"'"'V50_ADDITIVE_VIEW'"'"',count(*) FROM pg_views WHERE schemaname IN ('"'"'api_v3'"'"','"'"'exploration_v3'"'"') OR (schemaname='"'"'audit'"'"' AND viewname='"'"'exploration_v3_inventory'"'"') UNION ALL SELECT '"'"'GOVERNED_TABLE_COUNT'"'"',count(*) FROM pg_tables WHERE schemaname = ANY (ARRAY['"'"'raw'"'"','"'"'core'"'"','"'"'provenance'"'"','"'"'research'"'"','"'"'rights'"'"','"'"'workflow'"'"','"'"'release'"'"','"'"'audit'"'"','"'"'exploration_v3'"'"']) UNION ALL SELECT '"'"'API_V3_VIEW_COUNT'"'"',count(*) FROM pg_views WHERE schemaname='"'"'api_v3'"'"' UNION ALL SELECT '"'"'REVIEWER_QUEUE_COUNT'"'"',(SELECT count(*) FROM exploration_v3.reviewer_association_queue) UNION ALL SELECT '"'"'V3_INVENTORY_NONZERO_METRIC_COUNT'"'"',(SELECT count(*) FROM audit.exploration_v3_inventory i CROSS JOIN LATERAL jsonb_each_text(to_jsonb(i)) e WHERE e.value::bigint<>0)) m ORDER BY metric;'`
+- Inputs: none
+- Outputs: none
+- Duration: 26 ms
+- Warnings: none
+- Errors: none
+- Decision: Require the measured inventory to equal the governed v50 manifest and closure expectations.
+- Next: Encode exact metrics in the canonical live capture.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1279
+
+- UTC timestamp: 2026-08-28T18:43:04Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Inspect non-internal exploration_v3 trigger classes after the catalog count exposed a definition ambiguity.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -Atq -v ON_ERROR_STOP=1 -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni -d gda_v50_round16b_cp015_final_a -c 'SELECT c.relname||'"'"'|'"'"'||t.tgname||'"'"'|'"'"'||t.tgconstraint||'"'"'|'"'"'||coalesce(t.tgparentid,0) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND NOT t.tgisinternal AND t.tgconstraint=0 ORDER BY c.relname,t.tgname;'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: V3_REGULAR_TRIGGER_RAW_CATALOG_COUNT_INCLUDES_56_CLONED_PARTITION_TRIGGERS
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1280
+
+- UTC timestamp: 2026-08-28T18:43:04Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Inspect non-internal exploration_v3 trigger classes after the catalog count exposed a definition ambiguity.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -Atq -v ON_ERROR_STOP=1 -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni -d gda_v50_round16b_cp015_final_a -c 'SELECT c.relname||'"'"'|'"'"'||t.tgname||'"'"'|'"'"'||t.tgconstraint||'"'"'|'"'"'||coalesce(t.tgparentid,0) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND NOT t.tgisinternal AND t.tgconstraint=0 ORDER BY c.relname,t.tgname;'`
+- Inputs: none
+- Outputs: none
+- Duration: 18 ms
+- Warnings: V3_REGULAR_TRIGGER_RAW_CATALOG_COUNT_INCLUDES_56_CLONED_PARTITION_TRIGGERS
+- Errors: none
+- Decision: Distinguish root trigger definitions from partition clones in the diagnostic receipt.
+- Next: Capture exact root and clone-aware trigger metrics.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1281
+
+- UTC timestamp: 2026-08-28T18:44:42Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: START — verify-checkout-independent-evidence-path-matcher
+- Command: `python3 -B -c 'import importlib.util,pathlib; p=pathlib.Path('"'"'database/scripts/verify_v50_round16b_manifest.py'"'"'); s=importlib.util.spec_from_file_location('"'"'v50'"'"',p); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); rel='"'"'docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317'"'"'; cases={ '"'"'relocated_absolute'"'"':m.checkout_independent_evidence_path_matches('"'"'/private/tmp/another-clean-checkout/'"'"'+rel,rel), '"'"'recorded_absolute'"'"':m.checkout_independent_evidence_path_matches('"'"'/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/'"'"'+rel,rel), '"'"'relative_rejected'"'"':not m.checkout_independent_evidence_path_matches(rel,rel), '"'"'wrong_database_rejected'"'"':not m.checkout_independent_evidence_path_matches('"'"'/private/tmp/another-clean-checkout/'"'"'+rel.replace('"'"'2317'"'"','"'"'2318'"'"'),rel), '"'"'extra_suffix_rejected'"'"':not m.checkout_independent_evidence_path_matches('"'"'/private/tmp/another-clean-checkout/'"'"'+rel+'"'"'/extra'"'"',rel)}; assert all(cases.values()),cases; print({'"'"'status'"'"':'"'"'PASS'"'"','"'"'check_count'"'"':len(cases),'"'"'checks'"'"':cases})'`
+- Inputs: database/scripts/verify_v50_round16b_manifest.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1282
+
+- UTC timestamp: 2026-08-28T18:44:42Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: PASS — verify-checkout-independent-evidence-path-matcher
+- Command: `python3 -B -c 'import importlib.util,pathlib; p=pathlib.Path('"'"'database/scripts/verify_v50_round16b_manifest.py'"'"'); s=importlib.util.spec_from_file_location('"'"'v50'"'"',p); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); rel='"'"'docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317'"'"'; cases={ '"'"'relocated_absolute'"'"':m.checkout_independent_evidence_path_matches('"'"'/private/tmp/another-clean-checkout/'"'"'+rel,rel), '"'"'recorded_absolute'"'"':m.checkout_independent_evidence_path_matches('"'"'/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/'"'"'+rel,rel), '"'"'relative_rejected'"'"':not m.checkout_independent_evidence_path_matches(rel,rel), '"'"'wrong_database_rejected'"'"':not m.checkout_independent_evidence_path_matches('"'"'/private/tmp/another-clean-checkout/'"'"'+rel.replace('"'"'2317'"'"','"'"'2318'"'"'),rel), '"'"'extra_suffix_rejected'"'"':not m.checkout_independent_evidence_path_matches('"'"'/private/tmp/another-clean-checkout/'"'"'+rel+'"'"'/extra'"'"',rel)}; assert all(cases.values()),cases; print({'"'"'status'"'"':'"'"'PASS'"'"','"'"'check_count'"'"':len(cases),'"'"'checks'"'"':cases})'`
+- Inputs: database/scripts/verify_v50_round16b_manifest.py
+- Outputs: none
+- Duration: 45 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1283
+
+- UTC timestamp: 2026-08-28T18:44:48Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: START — verify-corrected-v50-manifest
+- Command: `python3 -B database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1284
+
+- UTC timestamp: 2026-08-28T18:44:48Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: PASS — verify-corrected-v50-manifest
+- Command: `python3 -B database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json
+- Outputs: none
+- Duration: 381 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1285
+
+- UTC timestamp: 2026-08-28T18:45:16Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Capture exact live catalog, row-count, schema-hash, race-evidence, and source-cleanliness facts as a superseded diagnostic only.
+- Command: `python3 -B /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/capture_cp015_database_diagnostic.py --source-repo /private/tmp/gda_round16b_cp015_clean_repro_024935e8 --psql /opt/homebrew/opt/postgresql@16/bin/psql --host /private/tmp/gda-v50-round16b-cp015-final/socket --port 59473 --user jarlgiovanni --database-a gda_v50_round16b_cp015_final_a --database-b gda_v50_round16b_cp015_final_b --capture-dir /private/tmp/gda-v50-round16b-cp015-final/capture --adapter /private/tmp/gda-v50-round16b-cp015-final/bin/python3 --output /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-diagnostic-checkpoint015-superseded.json`
+- Inputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/capture_cp015_database_diagnostic.py, /private/tmp/gda-v50-round16b-cp015-final/bin/python3, /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.normalized.sql, /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.normalized.sql
+- Declared outputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-diagnostic-checkpoint015-superseded.json
+- Warnings: HYBRID_RECORDED_LOCUS_ADAPTER_USED, CLEAN_SELF_CONTAINED_REPRODUCTION_FALSE
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1286
+
+- UTC timestamp: 2026-08-28T18:45:19Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: START — rebuild-v3-semantic-contract-after-portability-fix
+- Command: `python3 -B scripts/trace_round16b/build_v3_semantic_contract.py`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-input-manifest-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-output-manifest-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-census-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-build-receipt-v1.json
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1287
+
+- UTC timestamp: 2026-08-28T18:45:20Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: PASS — rebuild-v3-semantic-contract-after-portability-fix
+- Command: `python3 -B scripts/trace_round16b/build_v3_semantic_contract.py`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-input-manifest-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-output-manifest-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-census-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-build-receipt-v1.json
+- Duration: 175 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1288
+
+- UTC timestamp: 2026-08-28T18:46:27Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: START — verify-historical-cwd-bound-race-evidence
+- Command: `python3 -B -c 'import importlib.util,json,pathlib; p=pathlib.Path('"'"'database/scripts/verify_v50_round16b_manifest.py'"'"'); s=importlib.util.spec_from_file_location('"'"'v50'"'"',p); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); receipt=json.loads((m.ROOT/m.EXECUTION_RECEIPT).read_text()); rows=m.command_ledger_rows(); checks=0
+for replay in receipt['"'"'freshReplays'"'"']:
+ meta,out=m.verified_command(replay['"'"'commandIds'"'"']['"'"'test'"'"'],rows); m.verify_race_evidence(replay,out,meta); checks+=1
+ bad=dict(meta); bad['"'"'cwd'"'"']='"'"'/private/tmp/wrong-historical-root'"'"'
+ try: m.verify_race_evidence(replay,out,bad)
+ except SystemExit as exc: assert str(exc).startswith('"'"'V50_RACE_COMMAND_OUTPUT_MISMATCH:'"'"'); checks+=1
+ else: raise AssertionError('"'"'wrong historical cwd accepted'"'"')
+print({'"'"'status'"'"':'"'"'PASS'"'"','"'"'check_count'"'"':checks,'"'"'control'"'"':'"'"'historical stdout path is bound to verified historical meta.cwd, not current checkout ROOT'"'"'})'`
+- Inputs: database/scripts/verify_v50_round16b_manifest.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1289
+
+- UTC timestamp: 2026-08-28T18:46:27Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: PASS — verify-historical-cwd-bound-race-evidence
+- Command: `python3 -B -c 'import importlib.util,json,pathlib; p=pathlib.Path('"'"'database/scripts/verify_v50_round16b_manifest.py'"'"'); s=importlib.util.spec_from_file_location('"'"'v50'"'"',p); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); receipt=json.loads((m.ROOT/m.EXECUTION_RECEIPT).read_text()); rows=m.command_ledger_rows(); checks=0
+for replay in receipt['"'"'freshReplays'"'"']:
+ meta,out=m.verified_command(replay['"'"'commandIds'"'"']['"'"'test'"'"'],rows); m.verify_race_evidence(replay,out,meta); checks+=1
+ bad=dict(meta); bad['"'"'cwd'"'"']='"'"'/private/tmp/wrong-historical-root'"'"'
+ try: m.verify_race_evidence(replay,out,bad)
+ except SystemExit as exc: assert str(exc).startswith('"'"'V50_RACE_COMMAND_OUTPUT_MISMATCH:'"'"'); checks+=1
+ else: raise AssertionError('"'"'wrong historical cwd accepted'"'"')
+print({'"'"'status'"'"':'"'"'PASS'"'"','"'"'check_count'"'"':checks,'"'"'control'"'"':'"'"'historical stdout path is bound to verified historical meta.cwd, not current checkout ROOT'"'"'})'`
+- Inputs: database/scripts/verify_v50_round16b_manifest.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json
+- Outputs: none
+- Duration: 47 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1290
+
+- UTC timestamp: 2026-08-28T18:46:28Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Retry exact live database capture after preserving the transient logger disk-full failure; retain superseded diagnostic classification only.
+- Command: `python3 -B /private/tmp/graphic_design_archive_v49_exploration_higher_order-association-closure-round16b/scripts/trace_round16b/capture_cp015_database_diagnostic.py --source-repo /private/tmp/gda_round16b_cp015_clean_repro_024935e8 --psql /opt/homebrew/opt/postgresql@16/bin/psql --host /private/tmp/gda-v50-round16b-cp015-final/socket --port 59473 --user jarlgiovanni --database-a gda_v50_round16b_cp015_final_a --database-b gda_v50_round16b_cp015_final_b --capture-dir /private/tmp/gda-v50-round16b-cp015-final/capture --adapter /private/tmp/gda-v50-round16b-cp015-final/bin/python3 --output /private/tmp/graphic_design_archive_v49_exploration_higher_order-association-closure-round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-diagnostic-checkpoint015-superseded.json`
+- Inputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/capture_cp015_database_diagnostic.py, /private/tmp/gda-v50-round16b-cp015-final/bin/python3, /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.normalized.sql, /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.normalized.sql
+- Declared outputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-diagnostic-checkpoint015-superseded.json
+- Warnings: PRESERVED_TRANSIENT_LOGGER_ENOSPC_FAILURE, HYBRID_RECORDED_LOCUS_ADAPTER_USED, CLEAN_SELF_CONTAINED_REPRODUCTION_FALSE
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1291
+
+- UTC timestamp: 2026-08-28T18:46:28Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: FAIL — Retry exact live database capture after preserving the transient logger disk-full failure; retain superseded diagnostic classification only.
+- Command: `python3 -B /private/tmp/graphic_design_archive_v49_exploration_higher_order-association-closure-round16b/scripts/trace_round16b/capture_cp015_database_diagnostic.py --source-repo /private/tmp/gda_round16b_cp015_clean_repro_024935e8 --psql /opt/homebrew/opt/postgresql@16/bin/psql --host /private/tmp/gda-v50-round16b-cp015-final/socket --port 59473 --user jarlgiovanni --database-a gda_v50_round16b_cp015_final_a --database-b gda_v50_round16b_cp015_final_b --capture-dir /private/tmp/gda-v50-round16b-cp015-final/capture --adapter /private/tmp/gda-v50-round16b-cp015-final/bin/python3 --output /private/tmp/graphic_design_archive_v49_exploration_higher_order-association-closure-round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-diagnostic-checkpoint015-superseded.json`
+- Inputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/capture_cp015_database_diagnostic.py, /private/tmp/gda-v50-round16b-cp015-final/bin/python3, /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.normalized.sql, /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.normalized.sql
+- Outputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-diagnostic-checkpoint015-superseded.json
+- Duration: 25 ms
+- Warnings: PRESERVED_TRANSIENT_LOGGER_ENOSPC_FAILURE, HYBRID_RECORDED_LOCUS_ADAPTER_USED, CLEAN_SELF_CONTAINED_REPRODUCTION_FALSE
+- Errors: COMMAND_EXIT_2
+- Decision: Preserve the failure and correct it additively.
+- Next: Verify the diagnostic classification, then tear down the exact isolated runtime.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1292
+
+- UTC timestamp: 2026-08-28T18:46:34Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: START — verify-final-corrected-v50-manifest
+- Command: `python3 -B database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1293
+
+- UTC timestamp: 2026-08-28T18:46:34Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: PASS — verify-final-corrected-v50-manifest
+- Command: `python3 -B database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json
+- Outputs: none
+- Duration: 372 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1294
+
+- UTC timestamp: 2026-08-28T18:46:42Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: START — rebuild-v3-semantic-contract-final-portability-fix
+- Command: `python3 -B scripts/trace_round16b/build_v3_semantic_contract.py`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-input-manifest-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-output-manifest-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-census-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-build-receipt-v1.json
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1295
+
+- UTC timestamp: 2026-08-28T18:46:42Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: PASS — rebuild-v3-semantic-contract-final-portability-fix
+- Command: `python3 -B scripts/trace_round16b/build_v3_semantic_contract.py`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-input-manifest-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-output-manifest-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-census-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-build-receipt-v1.json
+- Duration: 156 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1296
+
+- UTC timestamp: 2026-08-28T18:46:46Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Correct the diagnostic capture path typo and capture exact facts under superseded-only classification.
+- Command: `python3 -B /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/capture_cp015_database_diagnostic.py --source-repo /private/tmp/gda_round16b_cp015_clean_repro_024935e8 --psql /opt/homebrew/opt/postgresql@16/bin/psql --host /private/tmp/gda-v50-round16b-cp015-final/socket --port 59473 --user jarlgiovanni --database-a gda_v50_round16b_cp015_final_a --database-b gda_v50_round16b_cp015_final_b --capture-dir /private/tmp/gda-v50-round16b-cp015-final/capture --adapter /private/tmp/gda-v50-round16b-cp015-final/bin/python3 --output /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-diagnostic-checkpoint015-superseded.json`
+- Inputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/capture_cp015_database_diagnostic.py, /private/tmp/gda-v50-round16b-cp015-final/bin/python3, /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.normalized.sql, /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.normalized.sql
+- Declared outputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-diagnostic-checkpoint015-superseded.json
+- Warnings: PRESERVED_TRANSIENT_LOGGER_ENOSPC_FAILURE, PRESERVED_CAPTURE_SCRIPT_PATH_TYPO_FAILURE, HYBRID_RECORDED_LOCUS_ADAPTER_USED, CLEAN_SELF_CONTAINED_REPRODUCTION_FALSE
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1297
+
+- UTC timestamp: 2026-08-28T18:46:54Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Correct the diagnostic capture path typo and capture exact facts under superseded-only classification.
+- Command: `python3 -B /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/capture_cp015_database_diagnostic.py --source-repo /private/tmp/gda_round16b_cp015_clean_repro_024935e8 --psql /opt/homebrew/opt/postgresql@16/bin/psql --host /private/tmp/gda-v50-round16b-cp015-final/socket --port 59473 --user jarlgiovanni --database-a gda_v50_round16b_cp015_final_a --database-b gda_v50_round16b_cp015_final_b --capture-dir /private/tmp/gda-v50-round16b-cp015-final/capture --adapter /private/tmp/gda-v50-round16b-cp015-final/bin/python3 --output /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-diagnostic-checkpoint015-superseded.json`
+- Inputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/capture_cp015_database_diagnostic.py, /private/tmp/gda-v50-round16b-cp015-final/bin/python3, /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.normalized.sql, /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.normalized.sql
+- Outputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-diagnostic-checkpoint015-superseded.json
+- Duration: 8233 ms
+- Warnings: PRESERVED_TRANSIENT_LOGGER_ENOSPC_FAILURE, PRESERVED_CAPTURE_SCRIPT_PATH_TYPO_FAILURE, HYBRID_RECORDED_LOCUS_ADAPTER_USED, CLEAN_SELF_CONTAINED_REPRODUCTION_FALSE
+- Errors: none
+- Decision: Treat all captured facts as observational only, never as a clean-checkout PASS receipt.
+- Next: Verify the diagnostic classification, then tear down the exact isolated runtime.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1298
+
+- UTC timestamp: 2026-08-28T18:47:10Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: START — rebuild-independent-v3-semantic-verification
+- Command: `python3 -B scripts/trace_round16b/verify_v3_semantic_contract_independent.py`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-independent-verification.json
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1299
+
+- UTC timestamp: 2026-08-28T18:47:11Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: PASS — rebuild-independent-v3-semantic-verification
+- Command: `python3 -B scripts/trace_round16b/verify_v3_semantic_contract_independent.py`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-independent-verification.json
+- Duration: 752 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1300
+
+- UTC timestamp: 2026-08-28T18:47:18Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: START — rebuild-v3-runtime-after-portability-fix
+- Command: `python3 -B scripts/trace_round16b/build_exploration_v3_runtime_read_model.py`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-independent-verification.json
+- Declared outputs: frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1301
+
+- UTC timestamp: 2026-08-28T18:47:18Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: PASS — rebuild-v3-runtime-after-portability-fix
+- Command: `python3 -B scripts/trace_round16b/build_exploration_v3_runtime_read_model.py`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-independent-verification.json
+- Outputs: frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256
+- Duration: 49 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1302
+
+- UTC timestamp: 2026-08-28T18:47:59Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Independently verify the CP15 database artifact is internally consistent and expressly superseded diagnostic only.
+- Command: `python3 -B scripts/trace_round16b/verify_cp015_database_diagnostic.py --repo /private/tmp/gda_round16b_cp015_clean_repro_024935e8 --receipt docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-diagnostic-checkpoint015-superseded.json --adapter /private/tmp/gda-v50-round16b-cp015-final/bin/python3 --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-diagnostic-independent-verification-checkpoint015-superseded.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-diagnostic-checkpoint015-superseded.json, scripts/trace_round16b/verify_cp015_database_diagnostic.py, /private/tmp/gda-v50-round16b-cp015-final/bin/python3
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-diagnostic-independent-verification-checkpoint015-superseded.json
+- Warnings: CLEAN_SELF_CONTAINED_REPRODUCTION_FALSE, REPRODUCTION_PASS_NOT_CLAIMED
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1303
+
+- UTC timestamp: 2026-08-28T18:47:59Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Independently verify the CP15 database artifact is internally consistent and expressly superseded diagnostic only.
+- Command: `python3 -B scripts/trace_round16b/verify_cp015_database_diagnostic.py --repo /private/tmp/gda_round16b_cp015_clean_repro_024935e8 --receipt docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-diagnostic-checkpoint015-superseded.json --adapter /private/tmp/gda-v50-round16b-cp015-final/bin/python3 --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-diagnostic-independent-verification-checkpoint015-superseded.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-diagnostic-checkpoint015-superseded.json, scripts/trace_round16b/verify_cp015_database_diagnostic.py, /private/tmp/gda-v50-round16b-cp015-final/bin/python3
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-reproduction-diagnostic-independent-verification-checkpoint015-superseded.json
+- Duration: 38 ms
+- Warnings: CLEAN_SELF_CONTAINED_REPRODUCTION_FALSE, REPRODUCTION_PASS_NOT_CLAIMED
+- Errors: none
+- Decision: Retain this only as observational failure/correction evidence; proceed to exact teardown.
+- Next: Drop only exact target databases A and B.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1304
+
+- UTC timestamp: 2026-08-28T18:48:12Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Drop only the exact superseded CP15 diagnostic database A.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/dropdb -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni --force gda_v50_round16b_cp015_final_a`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1305
+
+- UTC timestamp: 2026-08-28T18:48:12Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Drop only the exact superseded CP15 diagnostic database A.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/dropdb -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni --force gda_v50_round16b_cp015_final_a`
+- Inputs: none
+- Outputs: none
+- Duration: 196 ms
+- Warnings: none
+- Errors: none
+- Decision: Drop only exact database B next.
+- Next: Drop gda_v50_round16b_cp015_final_b.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1306
+
+- UTC timestamp: 2026-08-28T18:48:21Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Drop only the exact superseded CP15 diagnostic database B.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/dropdb -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni --force gda_v50_round16b_cp015_final_b`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1307
+
+- UTC timestamp: 2026-08-28T18:48:22Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Drop only the exact superseded CP15 diagnostic database B.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/dropdb -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni --force gda_v50_round16b_cp015_final_b`
+- Inputs: none
+- Outputs: none
+- Duration: 168 ms
+- Warnings: none
+- Errors: none
+- Decision: Prove no target or disposable race databases remain.
+- Next: Query the cluster catalog for exact database absence.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1308
+
+- UTC timestamp: 2026-08-28T18:48:26Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: START — rebuild-recursive-gap-audit-portability-authority
+- Command: `python3 -B scripts/trace_round16b/build_recursive_gap_closure_audit.py`
+- Inputs: database/schema-manifest-v50-round16b.json, scripts/trace_round16b/build_recursive_gap_closure_audit.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-input-manifest-checkpoint012-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-closure-build-receipt-checkpoint012-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-closure-metrics-checkpoint012-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-current-obligation-ledger-checkpoint012-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-supersession-ledger-checkpoint012-v1.tsv
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1309
+
+- UTC timestamp: 2026-08-28T18:48:26Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: PASS — rebuild-recursive-gap-audit-portability-authority
+- Command: `python3 -B scripts/trace_round16b/build_recursive_gap_closure_audit.py`
+- Inputs: database/schema-manifest-v50-round16b.json, scripts/trace_round16b/build_recursive_gap_closure_audit.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-input-manifest-checkpoint012-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-closure-build-receipt-checkpoint012-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-closure-metrics-checkpoint012-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-current-obligation-ledger-checkpoint012-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-supersession-ledger-checkpoint012-v1.tsv
+- Duration: 93 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1310
+
+- UTC timestamp: 2026-08-28T18:48:34Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: START — rebuild-independent-recursive-gap-verification
+- Command: `python3 -B scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py`
+- Inputs: database/schema-manifest-v50-round16b.json, scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-closure-independent-verification-checkpoint012-v1.json
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1311
+
+- UTC timestamp: 2026-08-28T18:48:34Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: PASS — rebuild-independent-recursive-gap-verification
+- Command: `python3 -B scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py`
+- Inputs: database/schema-manifest-v50-round16b.json, scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-closure-independent-verification-checkpoint012-v1.json
+- Duration: 161 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1312
+
+- UTC timestamp: 2026-08-28T18:48:34Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Prove both exact CP15 databases and every derived race database are absent before server shutdown.
+- Command: `/bin/sh -c 'set -eu
+psql=/opt/homebrew/opt/postgresql@16/bin/psql
+count=$($psql -X -Atq -v ON_ERROR_STOP=1 -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni -d postgres -c "SELECT count(*) FROM pg_database WHERE datname IN ('"'"'gda_v50_round16b_cp015_final_a'"'"','"'"'gda_v50_round16b_cp015_final_b'"'"') OR datname LIKE '"'"'gda_v50_round16b_cp015_final_%_race_%'"'"';")
+test "$count" = 0
+printf "%s\n" "CP15_TARGET_AND_RACE_DATABASE_COUNT_AFTER_DROP=$count" DATABASE_TEARDOWN=PASS'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1313
+
+- UTC timestamp: 2026-08-28T18:48:34Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Prove both exact CP15 databases and every derived race database are absent before server shutdown.
+- Command: `/bin/sh -c 'set -eu
+psql=/opt/homebrew/opt/postgresql@16/bin/psql
+count=$($psql -X -Atq -v ON_ERROR_STOP=1 -h /private/tmp/gda-v50-round16b-cp015-final/socket -p 59473 -U jarlgiovanni -d postgres -c "SELECT count(*) FROM pg_database WHERE datname IN ('"'"'gda_v50_round16b_cp015_final_a'"'"','"'"'gda_v50_round16b_cp015_final_b'"'"') OR datname LIKE '"'"'gda_v50_round16b_cp015_final_%_race_%'"'"';")
+test "$count" = 0
+printf "%s\n" "CP15_TARGET_AND_RACE_DATABASE_COUNT_AFTER_DROP=$count" DATABASE_TEARDOWN=PASS'`
+- Inputs: none
+- Outputs: none
+- Duration: 24 ms
+- Warnings: none
+- Errors: none
+- Decision: Stop only the exact CP15 cluster.
+- Next: Stop PostgreSQL using the exact data directory.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1314
+
+- UTC timestamp: 2026-08-28T18:48:45Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Stop only the exact isolated CP15 PostgreSQL cluster.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_ctl -D /private/tmp/gda-v50-round16b-cp015-final/data -m fast -w -t 60 stop`
+- Inputs: /private/tmp/gda-v50-round16b-cp015-final/data/postmaster.pid
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1315
+
+- UTC timestamp: 2026-08-28T18:48:45Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Stop only the exact isolated CP15 PostgreSQL cluster.
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_ctl -D /private/tmp/gda-v50-round16b-cp015-final/data -m fast -w -t 60 stop`
+- Inputs: /private/tmp/gda-v50-round16b-cp015-final/data/postmaster.pid
+- Outputs: none
+- Duration: 111 ms
+- Warnings: none
+- Errors: none
+- Decision: Prove process, readiness, socket, and port absence before deleting the validated root.
+- Next: Run exact stopped-runtime proof.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1316
+
+- UTC timestamp: 2026-08-28T18:49:05Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Prove the exact CP15 server process, socket, lock, readiness, and TCP listener are absent after shutdown.
+- Command: `/bin/sh -c 'set -eu
+socket_dir=/private/tmp/gda-v50-round16b-cp015-final/socket
+if /opt/homebrew/opt/postgresql@16/bin/pg_isready -h "$socket_dir" -p 59473 -d postgres -U jarlgiovanni >/dev/null 2>&1; then exit 1; fi
+test ! -S "$socket_dir/.s.PGSQL.59473"
+test ! -e "$socket_dir/.s.PGSQL.59473.lock"
+test ! -e /private/tmp/gda-v50-round16b-cp015-final/data/postmaster.pid
+if ps -p 57865 >/dev/null 2>&1; then exit 1; fi
+if lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then exit 1; fi
+printf "%s\n" POSTMASTER_PID_57865_ABSENT=PASS SOCKET_59473_ABSENT=PASS SOCKET_LOCK_59473_ABSENT=PASS PG_ISREADY_NOT_ACCEPTING=PASS TCP_LISTENER_59473_ABSENT=PASS'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1317
+
+- UTC timestamp: 2026-08-28T18:49:05Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Prove the exact CP15 server process, socket, lock, readiness, and TCP listener are absent after shutdown.
+- Command: `/bin/sh -c 'set -eu
+socket_dir=/private/tmp/gda-v50-round16b-cp015-final/socket
+if /opt/homebrew/opt/postgresql@16/bin/pg_isready -h "$socket_dir" -p 59473 -d postgres -U jarlgiovanni >/dev/null 2>&1; then exit 1; fi
+test ! -S "$socket_dir/.s.PGSQL.59473"
+test ! -e "$socket_dir/.s.PGSQL.59473.lock"
+test ! -e /private/tmp/gda-v50-round16b-cp015-final/data/postmaster.pid
+if ps -p 57865 >/dev/null 2>&1; then exit 1; fi
+if lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then exit 1; fi
+printf "%s\n" POSTMASTER_PID_57865_ABSENT=PASS SOCKET_59473_ABSENT=PASS SOCKET_LOCK_59473_ABSENT=PASS PG_ISREADY_NOT_ACCEPTING=PASS TCP_LISTENER_59473_ABSENT=PASS'`
+- Inputs: none
+- Outputs: none
+- Duration: 53 ms
+- Warnings: none
+- Errors: none
+- Decision: Remove only the fully validated exact CP15 cluster root.
+- Next: Delete /private/tmp/gda-v50-round16b-cp015-final only.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1318
+
+- UTC timestamp: 2026-08-28T18:49:14Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Delete only the fully stopped and validated exact CP15 temporary cluster root.
+- Command: `rm -rf /private/tmp/gda-v50-round16b-cp015-final`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1319
+
+- UTC timestamp: 2026-08-28T18:49:14Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Delete only the fully stopped and validated exact CP15 temporary cluster root.
+- Command: `rm -rf /private/tmp/gda-v50-round16b-cp015-final`
+- Inputs: none
+- Outputs: none
+- Duration: 252 ms
+- Warnings: none
+- Errors: none
+- Decision: Prove the exact root remains absent and the detached source remains clean.
+- Next: Run final root-absence and clean-worktree checks.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1320
+
+- UTC timestamp: 2026-08-28T18:49:35Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: START — Prove exact CP15 root absence, process/port absence, frozen-file preservation, and detached-source cleanliness after teardown.
+- Command: `/bin/sh -c 'set -eu
+test ! -e /private/tmp/gda-v50-round16b-cp015-final
+test ! -e /private/tmp/gda-v50-round16b-cp015-final/socket/.s.PGSQL.59473
+if ps -p 57865 >/dev/null 2>&1; then exit 1; fi
+if lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then exit 1; fi
+test -z "$(git status --porcelain=v1 --untracked-files=all)"
+test -z "$(git lfs status --porcelain)"
+git diff --exit-code HEAD -- database/schema-manifest-v50-round16b.json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json
+printf "%s\n" CP15_CLUSTER_ROOT_ABSENT=PASS POSTMASTER_PROCESS_ABSENT=PASS TCP_LISTENER_59473_ABSENT=PASS DETACHED_GIT_STATUS_CLEAN=PASS DETACHED_LFS_STATUS_CLEAN=PASS FROZEN_CHECKPOINT011_MANIFEST_AND_RECEIPT_UNMODIFIED=PASS REPRODUCTION_STATUS=SUPERSEDED_DIAGNOSTIC_ONLY'`
+- Inputs: database/schema-manifest-v50-round16b.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1321
+
+- UTC timestamp: 2026-08-28T18:49:35Z
+- Phase: CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION
+- Operation: PASS — Prove exact CP15 root absence, process/port absence, frozen-file preservation, and detached-source cleanliness after teardown.
+- Command: `/bin/sh -c 'set -eu
+test ! -e /private/tmp/gda-v50-round16b-cp015-final
+test ! -e /private/tmp/gda-v50-round16b-cp015-final/socket/.s.PGSQL.59473
+if ps -p 57865 >/dev/null 2>&1; then exit 1; fi
+if lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then exit 1; fi
+test -z "$(git status --porcelain=v1 --untracked-files=all)"
+test -z "$(git lfs status --porcelain)"
+git diff --exit-code HEAD -- database/schema-manifest-v50-round16b.json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json
+printf "%s\n" CP15_CLUSTER_ROOT_ABSENT=PASS POSTMASTER_PROCESS_ABSENT=PASS TCP_LISTENER_59473_ABSENT=PASS DETACHED_GIT_STATUS_CLEAN=PASS DETACHED_LFS_STATUS_CLEAN=PASS FROZEN_CHECKPOINT011_MANIFEST_AND_RECEIPT_UNMODIFIED=PASS REPRODUCTION_STATUS=SUPERSEDED_DIAGNOSTIC_ONLY'`
+- Inputs: database/schema-manifest-v50-round16b.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json
+- Outputs: none
+- Duration: 253 ms
+- Warnings: none
+- Errors: none
+- Decision: Close this lane only as a fully cleaned superseded diagnostic; await additive portability correction for a real clean reproduction.
+- Next: Return evidence paths, command IDs, metrics, and the portability defect to the parent.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1322
+
+- UTC timestamp: 2026-08-28T18:49:44Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: START — rebuild-independent-recursive-gap-verification-final
+- Command: `python3 -B scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py`
+- Inputs: scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py, database/schema-manifest-v50-round16b.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-closure-independent-verification-checkpoint012-v1.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/23_RECURSIVE_GAP_AUDIT_AND_CLOSURE_DECISION.md
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1323
+
+- UTC timestamp: 2026-08-28T18:49:44Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: PASS — rebuild-independent-recursive-gap-verification-final
+- Command: `python3 -B scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py`
+- Inputs: scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py, database/schema-manifest-v50-round16b.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-closure-independent-verification-checkpoint012-v1.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/23_RECURSIVE_GAP_AUDIT_AND_CLOSURE_DECISION.md
+- Duration: 153 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1324
+
+- UTC timestamp: 2026-08-28T18:49:51Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: START — rebuild-v3-runtime-independent-verification
+- Command: `python3 -B scripts/trace_round16b/verify_v3_runtime_independent.py`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-independent-verification.json, frontend/generated/trace-exploration-v3/manifest.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1325
+
+- UTC timestamp: 2026-08-28T18:49:51Z
+- Phase: CHECKPOINT-015-V50-PORTABILITY-CORRECTION
+- Operation: PASS — rebuild-v3-runtime-independent-verification
+- Command: `python3 -B scripts/trace_round16b/verify_v3_runtime_independent.py`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-independent-verification.json, frontend/generated/trace-exploration-v3/manifest.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json
+- Duration: 278 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1326
+
+- UTC timestamp: 2026-08-28T18:54:03Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Prove superseded Checkpoint 14 detached worktree removal
+- Command: `/bin/test '!' -e /private/tmp/gda_round16b_cp015_clean_repro_024935e8`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1327
+
+- UTC timestamp: 2026-08-28T18:54:03Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Prove superseded Checkpoint 14 detached worktree removal
+- Command: `/bin/test '!' -e /private/tmp/gda_round16b_cp015_clean_repro_024935e8`
+- Inputs: none
+- Outputs: none
+- Duration: 4 ms
+- Warnings: none
+- Errors: none
+- Decision: The verified-clean superseded scratch checkout is absent; Checkpoint 15 will receive a fresh checkout after publication.
+- Next: Run direct correction gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1328
+
+- UTC timestamp: 2026-08-28T18:54:25Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Direct v50 portability verifier full mode
+- Command: `/bin/sh -c 'python3 -B database/scripts/verify_v50_round16b_manifest.py'`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1329
+
+- UTC timestamp: 2026-08-28T18:54:26Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Direct v50 portability verifier full mode
+- Command: `/bin/sh -c 'python3 -B database/scripts/verify_v50_round16b_manifest.py'`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py
+- Outputs: none
+- Duration: 374 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit proves the corrected verifier mode is internally consistent in the long-lived source checkout.
+- Next: Continue correction acceptance gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1330
+
+- UTC timestamp: 2026-08-28T18:54:26Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Direct v50 portability verifier preflight mode
+- Command: `/bin/sh -c 'python3 -B database/scripts/verify_v50_round16b_manifest.py --preflight'`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1331
+
+- UTC timestamp: 2026-08-28T18:54:26Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Direct v50 portability verifier preflight mode
+- Command: `/bin/sh -c 'python3 -B database/scripts/verify_v50_round16b_manifest.py --preflight'`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py
+- Outputs: none
+- Duration: 381 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit proves the corrected verifier mode is internally consistent in the long-lived source checkout.
+- Next: Continue correction acceptance gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1332
+
+- UTC timestamp: 2026-08-28T18:54:26Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Direct v50 portability verifier prefix mode
+- Command: `/bin/sh -c 'python3 -B database/scripts/verify_v50_round16b_manifest.py --emit-v49-replay-prefix'`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1333
+
+- UTC timestamp: 2026-08-28T18:54:27Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Direct v50 portability verifier prefix mode
+- Command: `/bin/sh -c 'python3 -B database/scripts/verify_v50_round16b_manifest.py --emit-v49-replay-prefix'`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py
+- Outputs: none
+- Duration: 374 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit proves the corrected verifier mode is internally consistent in the long-lived source checkout.
+- Next: Continue correction acceptance gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1334
+
+- UTC timestamp: 2026-08-28T18:54:27Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Direct v50 portability verifier additive mode
+- Command: `/bin/sh -c 'python3 -B database/scripts/verify_v50_round16b_manifest.py --emit-additive-replay'`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1335
+
+- UTC timestamp: 2026-08-28T18:54:27Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Direct v50 portability verifier additive mode
+- Command: `/bin/sh -c 'python3 -B database/scripts/verify_v50_round16b_manifest.py --emit-additive-replay'`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py
+- Outputs: none
+- Duration: 373 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit proves the corrected verifier mode is internally consistent in the long-lived source checkout.
+- Next: Continue correction acceptance gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1336
+
+- UTC timestamp: 2026-08-28T18:54:47Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Check v3 semantic primary artifact stability
+- Command: `/bin/sh -c 'python3 -B scripts/trace_round16b/build_v3_semantic_contract.py --check'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1337
+
+- UTC timestamp: 2026-08-28T18:54:47Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Check v3 semantic primary artifact stability
+- Command: `/bin/sh -c 'python3 -B scripts/trace_round16b/build_v3_semantic_contract.py --check'`
+- Inputs: none
+- Outputs: none
+- Duration: 140 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required before the portability correction can be sealed.
+- Next: Continue Checkpoint 015 correction acceptance gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1338
+
+- UTC timestamp: 2026-08-28T18:54:48Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Check v3 semantic independent verification stability
+- Command: `/bin/sh -c 'python3 -B scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1339
+
+- UTC timestamp: 2026-08-28T18:54:48Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Check v3 semantic independent verification stability
+- Command: `/bin/sh -c 'python3 -B scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check'`
+- Inputs: none
+- Outputs: none
+- Duration: 717 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required before the portability correction can be sealed.
+- Next: Continue Checkpoint 015 correction acceptance gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1340
+
+- UTC timestamp: 2026-08-28T18:54:48Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Check v3 runtime read model stability
+- Command: `/bin/sh -c 'python3 -B scripts/trace_round16b/build_exploration_v3_runtime_read_model.py --check'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1341
+
+- UTC timestamp: 2026-08-28T18:54:49Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Check v3 runtime read model stability
+- Command: `/bin/sh -c 'python3 -B scripts/trace_round16b/build_exploration_v3_runtime_read_model.py --check'`
+- Inputs: none
+- Outputs: none
+- Duration: 53 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required before the portability correction can be sealed.
+- Next: Continue Checkpoint 015 correction acceptance gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1342
+
+- UTC timestamp: 2026-08-28T18:54:49Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Check v3 runtime independent verification stability
+- Command: `/bin/sh -c 'python3 -B scripts/trace_round16b/verify_v3_runtime_independent.py --check'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1343
+
+- UTC timestamp: 2026-08-28T18:54:49Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Check v3 runtime independent verification stability
+- Command: `/bin/sh -c 'python3 -B scripts/trace_round16b/verify_v3_runtime_independent.py --check'`
+- Inputs: none
+- Outputs: none
+- Duration: 275 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required before the portability correction can be sealed.
+- Next: Continue Checkpoint 015 correction acceptance gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1344
+
+- UTC timestamp: 2026-08-28T18:54:49Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Check recursive gap primary artifacts
+- Command: `/bin/sh -c 'python3 -B scripts/trace_round16b/build_recursive_gap_closure_audit.py --check'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1345
+
+- UTC timestamp: 2026-08-28T18:54:49Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Check recursive gap primary artifacts
+- Command: `/bin/sh -c 'python3 -B scripts/trace_round16b/build_recursive_gap_closure_audit.py --check'`
+- Inputs: none
+- Outputs: none
+- Duration: 90 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required before the portability correction can be sealed.
+- Next: Continue Checkpoint 015 correction acceptance gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1346
+
+- UTC timestamp: 2026-08-28T18:54:49Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Check recursive gap independent artifacts
+- Command: `/bin/sh -c 'python3 -B scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py --check'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1347
+
+- UTC timestamp: 2026-08-28T18:54:50Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Check recursive gap independent artifacts
+- Command: `/bin/sh -c 'python3 -B scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py --check'`
+- Inputs: none
+- Outputs: none
+- Duration: 160 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required before the portability correction can be sealed.
+- Next: Continue Checkpoint 015 correction acceptance gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1348
+
+- UTC timestamp: 2026-08-28T18:54:50Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Verify governed v49 database freeze
+- Command: `/bin/sh -c 'python3 -B scripts/repository/verify_v49_database_freeze.py --repo .'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1349
+
+- UTC timestamp: 2026-08-28T18:54:50Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Verify governed v49 database freeze
+- Command: `/bin/sh -c 'python3 -B scripts/repository/verify_v49_database_freeze.py --repo .'`
+- Inputs: none
+- Outputs: none
+- Duration: 460 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required before the portability correction can be sealed.
+- Next: Continue Checkpoint 015 correction acceptance gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1350
+
+- UTC timestamp: 2026-08-28T18:54:50Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Verify protected v2 and legacy evidence surfaces
+- Command: `/bin/sh -c 'git diff --exit-code 468105499c7be102deec7d6555aced688dea9901 -- schemas/trace/exploration/v2 frontend/generated/trace-exploration-v2 frontend/src/app/api/trace/v2/exploration frontend/src/features/trace-v49/exploration-v2 docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1351
+
+- UTC timestamp: 2026-08-28T18:54:50Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Verify protected v2 and legacy evidence surfaces
+- Command: `/bin/sh -c 'git diff --exit-code 468105499c7be102deec7d6555aced688dea9901 -- schemas/trace/exploration/v2 frontend/generated/trace-exploration-v2 frontend/src/app/api/trace/v2/exploration frontend/src/features/trace-v49/exploration-v2 docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv'`
+- Inputs: none
+- Outputs: none
+- Duration: 25 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required before the portability correction can be sealed.
+- Next: Continue Checkpoint 015 correction acceptance gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1352
+
+- UTC timestamp: 2026-08-28T18:55:12Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Round 16B frontend governed reset and domain suite
+- Command: `/bin/sh -c 'npm --prefix frontend run test:exploration-domain'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1353
+
+- UTC timestamp: 2026-08-28T18:55:13Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Round 16B frontend governed reset and domain suite
+- Command: `/bin/sh -c 'npm --prefix frontend run test:exploration-domain'`
+- Inputs: none
+- Outputs: none
+- Duration: 917 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required before sealing the portability correction.
+- Next: Continue Checkpoint 015 frontend gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1354
+
+- UTC timestamp: 2026-08-28T18:55:13Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Exploration inquiry adapter suite
+- Command: `/bin/sh -c 'npm --prefix frontend run test:exploration-inquiry-adapter'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1355
+
+- UTC timestamp: 2026-08-28T18:55:13Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Exploration inquiry adapter suite
+- Command: `/bin/sh -c 'npm --prefix frontend run test:exploration-inquiry-adapter'`
+- Inputs: none
+- Outputs: none
+- Duration: 197 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required before sealing the portability correction.
+- Next: Continue Checkpoint 015 frontend gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1356
+
+- UTC timestamp: 2026-08-28T18:55:13Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Exploration constraint kernel suite
+- Command: `/bin/sh -c 'npm --prefix frontend run test:exploration-constraint-kernel'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1357
+
+- UTC timestamp: 2026-08-28T18:55:13Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Exploration constraint kernel suite
+- Command: `/bin/sh -c 'npm --prefix frontend run test:exploration-constraint-kernel'`
+- Inputs: none
+- Outputs: none
+- Duration: 192 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required before sealing the portability correction.
+- Next: Continue Checkpoint 015 frontend gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1358
+
+- UTC timestamp: 2026-08-28T18:55:13Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Exploration composition engine suite
+- Command: `/bin/sh -c 'npm --prefix frontend run test:exploration-composition-engine'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1359
+
+- UTC timestamp: 2026-08-28T18:55:14Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Exploration composition engine suite
+- Command: `/bin/sh -c 'npm --prefix frontend run test:exploration-composition-engine'`
+- Inputs: none
+- Outputs: none
+- Duration: 169 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required before sealing the portability correction.
+- Next: Continue Checkpoint 015 frontend gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1360
+
+- UTC timestamp: 2026-08-28T18:55:14Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Exploration v3 projection verifier
+- Command: `/bin/sh -c 'npm --prefix frontend run verify:exploration-v3-projection'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1361
+
+- UTC timestamp: 2026-08-28T18:55:14Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Exploration v3 projection verifier
+- Command: `/bin/sh -c 'npm --prefix frontend run verify:exploration-v3-projection'`
+- Inputs: none
+- Outputs: none
+- Duration: 241 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required before sealing the portability correction.
+- Next: Continue Checkpoint 015 frontend gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1362
+
+- UTC timestamp: 2026-08-28T18:55:14Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Exploration association calibration suite
+- Command: `/bin/sh -c 'npm --prefix frontend run test:exploration-association-calibration'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1363
+
+- UTC timestamp: 2026-08-28T18:55:14Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Exploration association calibration suite
+- Command: `/bin/sh -c 'npm --prefix frontend run test:exploration-association-calibration'`
+- Inputs: none
+- Outputs: none
+- Duration: 155 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required before sealing the portability correction.
+- Next: Continue Checkpoint 015 frontend gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1364
+
+- UTC timestamp: 2026-08-28T18:55:14Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Exploration composition review suite
+- Command: `/bin/sh -c 'npm --prefix frontend run test:exploration-composition-review'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1365
+
+- UTC timestamp: 2026-08-28T18:55:15Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Exploration composition review suite
+- Command: `/bin/sh -c 'npm --prefix frontend run test:exploration-composition-review'`
+- Inputs: none
+- Outputs: none
+- Duration: 220 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required before sealing the portability correction.
+- Next: Continue Checkpoint 015 frontend gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1366
+
+- UTC timestamp: 2026-08-28T18:55:15Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Exploration v3 API suite
+- Command: `/bin/sh -c 'npm --prefix frontend run test:exploration-api-v3'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1367
+
+- UTC timestamp: 2026-08-28T18:55:15Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Exploration v3 API suite
+- Command: `/bin/sh -c 'npm --prefix frontend run test:exploration-api-v3'`
+- Inputs: none
+- Outputs: none
+- Duration: 623 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required before sealing the portability correction.
+- Next: Continue Checkpoint 015 frontend gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1368
+
+- UTC timestamp: 2026-08-28T18:55:16Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Frontend runtime typecheck
+- Command: `/bin/sh -c 'npm --prefix frontend run typecheck:runtime'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1369
+
+- UTC timestamp: 2026-08-28T18:55:36Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Frontend runtime typecheck
+- Command: `/bin/sh -c 'npm --prefix frontend run typecheck:runtime'`
+- Inputs: none
+- Outputs: none
+- Duration: 20717 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required before sealing the portability correction.
+- Next: Continue Checkpoint 015 frontend gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1370
+
+- UTC timestamp: 2026-08-28T18:55:42Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Frontend production build after portability correction
+- Command: `npm --prefix frontend run build`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1371
+
+- UTC timestamp: 2026-08-28T18:55:54Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: FAIL — Frontend production build after portability correction
+- Command: `npm --prefix frontend run build`
+- Inputs: none
+- Outputs: none
+- Duration: 11409 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Run repository integrity gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1372
+
+- UTC timestamp: 2026-08-28T18:56:04Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Frontend production build after portability correction with required font network
+- Command: `npm --prefix frontend run build`
+- Inputs: none
+- Declared outputs: none
+- Warnings: SANDBOX_DNS_BLOCKED_GOOGLE_FONTS
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1373
+
+- UTC timestamp: 2026-08-28T18:57:34Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Frontend production build after portability correction with required font network
+- Command: `npm --prefix frontend run build`
+- Inputs: none
+- Outputs: none
+- Duration: 89477 ms
+- Warnings: SANDBOX_DNS_BLOCKED_GOOGLE_FONTS
+- Errors: none
+- Decision: A successful 46-page production build with only required font access supersedes the sandbox DNS failure.
+- Next: Run repository integrity gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1374
+
+- UTC timestamp: 2026-08-28T18:58:58Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Run isolated adversarial portability controls
+- Command: `python3 -B scripts/trace_round16b/verify_v50_round16b_manifest_portability_controls.py`
+- Inputs: scripts/trace_round16b/verify_v50_round16b_manifest_portability_controls.py, database/scripts/verify_v50_round16b_manifest.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1375
+
+- UTC timestamp: 2026-08-28T18:59:02Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Run isolated adversarial portability controls
+- Command: `python3 -B scripts/trace_round16b/verify_v50_round16b_manifest_portability_controls.py`
+- Inputs: scripts/trace_round16b/verify_v50_round16b_manifest_portability_controls.py, database/scripts/verify_v50_round16b_manifest.py
+- Outputs: none
+- Duration: 4575 ms
+- Warnings: none
+- Errors: none
+- Decision: The valid baselines must pass, five adversarial mutations must fail closed with exact markers, and governed source mutation count must remain zero.
+- Next: Seal Checkpoint 015 correction evidence.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1376
+
+- UTC timestamp: 2026-08-28T19:03:46Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Compile all Checkpoint 015 Python changes without bytecode writes
+- Command: `/bin/sh -c 'python3 -B -c "from pathlib import Path; paths=[Path(p) for p in ['"'"'database/scripts/verify_v50_round16b_manifest.py'"'"','"'"'scripts/trace_round16b/verify_execution_log.py'"'"','"'"'scripts/trace_round16b/capture_cp015_database_diagnostic.py'"'"','"'"'scripts/trace_round16b/verify_cp015_database_diagnostic.py'"'"','"'"'scripts/trace_round16b/verify_reachable_ordinary_blobs.py'"'"','"'"'scripts/trace_round16b/verify_v50_round16b_manifest_portability_controls.py'"'"','"'"'scripts/trace_round16b/build_recursive_gap_closure_audit.py'"'"','"'"'scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py'"'"']]; [compile(p.read_text(encoding='"'"'utf-8'"'"'),str(p),'"'"'exec'"'"') for p in paths]; print('"'"'CP15_PYTHON_SYNTAX_COMPILE=PASS files='"'"'+str(len(paths)))"'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1377
+
+- UTC timestamp: 2026-08-28T19:03:46Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Compile all Checkpoint 015 Python changes without bytecode writes
+- Command: `/bin/sh -c 'python3 -B -c "from pathlib import Path; paths=[Path(p) for p in ['"'"'database/scripts/verify_v50_round16b_manifest.py'"'"','"'"'scripts/trace_round16b/verify_execution_log.py'"'"','"'"'scripts/trace_round16b/capture_cp015_database_diagnostic.py'"'"','"'"'scripts/trace_round16b/verify_cp015_database_diagnostic.py'"'"','"'"'scripts/trace_round16b/verify_reachable_ordinary_blobs.py'"'"','"'"'scripts/trace_round16b/verify_v50_round16b_manifest_portability_controls.py'"'"','"'"'scripts/trace_round16b/build_recursive_gap_closure_audit.py'"'"','"'"'scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py'"'"']]; [compile(p.read_text(encoding='"'"'utf-8'"'"'),str(p),'"'"'exec'"'"') for p in paths]; print('"'"'CP15_PYTHON_SYNTAX_COMPILE=PASS files='"'"'+str(len(paths)))"'`
+- Inputs: none
+- Outputs: none
+- Duration: 64 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required for Checkpoint 015.
+- Next: Continue Checkpoint 015 repository gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1378
+
+- UTC timestamp: 2026-08-28T19:03:46Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Run repository secret-pattern scan
+- Command: `/bin/sh -c 'python3 scripts/audit_secret_patterns.py'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1379
+
+- UTC timestamp: 2026-08-28T19:05:28Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Run repository secret-pattern scan
+- Command: `/bin/sh -c 'python3 scripts/audit_secret_patterns.py'`
+- Inputs: none
+- Outputs: none
+- Duration: 101712 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required for Checkpoint 015.
+- Next: Continue Checkpoint 015 repository gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1380
+
+- UTC timestamp: 2026-08-28T19:06:12Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Run strict Git object integrity check
+- Command: `/bin/sh -c 'git fsck --strict'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1381
+
+- UTC timestamp: 2026-08-28T19:07:43Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Run strict Git object integrity check
+- Command: `/bin/sh -c 'git fsck --strict'`
+- Inputs: none
+- Outputs: none
+- Duration: 90570 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required for Checkpoint 015.
+- Next: Continue Checkpoint 015 repository gates.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1382
+
+- UTC timestamp: 2026-08-28T19:07:49Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Run Git LFS object integrity check
+- Command: `git lfs fsck`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1383
+
+- UTC timestamp: 2026-08-28T19:07:51Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Run Git LFS object integrity check
+- Command: `git lfs fsck`
+- Inputs: none
+- Outputs: none
+- Duration: 2696 ms
+- Warnings: none
+- Errors: none
+- Decision: A zero exit is required for Checkpoint 015.
+- Next: Stage intended checkpoint files before repository hygiene.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1384
+
+- UTC timestamp: 2026-08-28T19:11:06Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Generate final staged repository hygiene checkpoint
+- Command: `python3 -B scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint015.json --markdown docs/research/trace-v49-exploration-higher-order-association-closure-round16b/30_REPOSITORY_HYGIENE_CHECKPOINT015.md`
+- Inputs: docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint015.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/30_REPOSITORY_HYGIENE_CHECKPOINT015.md
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1385
+
+- UTC timestamp: 2026-08-28T19:11:16Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Generate final staged repository hygiene checkpoint
+- Command: `python3 -B scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint015.json --markdown docs/research/trace-v49-exploration-higher-order-association-closure-round16b/30_REPOSITORY_HYGIENE_CHECKPOINT015.md`
+- Inputs: docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint015.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/30_REPOSITORY_HYGIENE_CHECKPOINT015.md
+- Duration: 10418 ms
+- Warnings: none
+- Errors: none
+- Decision: Repository hygiene must pass against the staged 315-script inventory.
+- Next: Run the one-shot Checkpoint 015 new-blob policy.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1386
+
+- UTC timestamp: 2026-08-28T19:11:29Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Run final one-shot Checkpoint 015 new-blob policy
+- Command: `python3 -B scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint015.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint015.json
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1387
+
+- UTC timestamp: 2026-08-28T19:12:13Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Run final one-shot Checkpoint 015 new-blob policy
+- Command: `python3 -B scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint015.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint015.json
+- Duration: 44243 ms
+- Warnings: none
+- Errors: none
+- Decision: Every staged and untracked Checkpoint 015 file must remain below the governed LFS and hosting boundaries.
+- Next: Stage the policy receipt and run final staged diff and execution seals.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1388
+
+- UTC timestamp: 2026-08-28T19:12:24Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Run final staged whitespace and patch-integrity check
+- Command: `git diff --cached --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1389
+
+- UTC timestamp: 2026-08-28T19:12:24Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Run final staged whitespace and patch-integrity check
+- Command: `git diff --cached --check`
+- Inputs: none
+- Outputs: none
+- Duration: 177 ms
+- Warnings: none
+- Errors: none
+- Decision: The fully staged Checkpoint 015 diff must contain no whitespace errors.
+- Next: Refresh latest-writer hashes and seal execution evidence.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1390
+
+- UTC timestamp: 2026-08-28T19:12:59Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Refresh exact final latest-writer hashes before execution seal
+- Command: `/usr/bin/true`
+- Inputs: none
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv, frontend/.next/BUILD_ID, /private/tmp/gda_round16b_cp015_clean_repro_024935e8, /private/tmp/gda-v50-round16b-cp015-final, /private/tmp/gda-v50-round16b-cp015-final/data, /private/tmp/gda-v50-round16b-cp015-final/server.log, frontend/.next, /private/tmp/gda-v50-round16b-cp015-final/bin, /private/tmp/gda-v50-round16b-cp015-final/bin/python3, /private/tmp/gda-v50-round16b-cp015-final/capture, /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.sql, /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.normalized.sql, /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.sql, /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.normalized.sql, docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json, scripts/trace_round16b/build_recursive_gap_closure_audit.py, scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1391
+
+- UTC timestamp: 2026-08-28T19:12:59Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Refresh exact final latest-writer hashes before execution seal
+- Command: `/usr/bin/true`
+- Inputs: none
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv, frontend/.next/BUILD_ID, /private/tmp/gda_round16b_cp015_clean_repro_024935e8, /private/tmp/gda-v50-round16b-cp015-final, /private/tmp/gda-v50-round16b-cp015-final/data, /private/tmp/gda-v50-round16b-cp015-final/server.log, frontend/.next, /private/tmp/gda-v50-round16b-cp015-final/bin, /private/tmp/gda-v50-round16b-cp015-final/bin/python3, /private/tmp/gda-v50-round16b-cp015-final/capture, /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.sql, /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_a_schema.normalized.sql, /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.sql, /private/tmp/gda-v50-round16b-cp015-final/capture/gda_v50_round16b_cp015_final_b_schema.normalized.sql, docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json, scripts/trace_round16b/build_recursive_gap_closure_audit.py, scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py
+- Duration: 5 ms
+- Warnings: none
+- Errors: none
+- Decision: The final execution verifier must compare each governed output to its current hash or exact MISSING state.
+- Next: Run the direct final execution-log verifier and stop using the logger.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1392
+
+- UTC timestamp: 2026-08-28T19:15:41Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Run corrected final Checkpoint 015 new-blob policy after audit-lock disclosure
+- Command: `python3 -B scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint015-final.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint015-final.json
+- Warnings: SUPERSEDES_PRESEAL_BLOB_POLICY_RECEIPT
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1393
+
+- UTC timestamp: 2026-08-28T19:16:25Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Run corrected final Checkpoint 015 new-blob policy after audit-lock disclosure
+- Command: `python3 -B scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint015-final.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint015-final.json
+- Duration: 43998 ms
+- Warnings: SUPERSEDES_PRESEAL_BLOB_POLICY_RECEIPT
+- Errors: none
+- Decision: The corrected final receipt must cover every post-seal-diagnostic file and remain free of warnings and failures.
+- Next: Run final staged diff, refresh latest writers, remove the runtime lock, and seal directly.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1394
+
+- UTC timestamp: 2026-08-28T19:16:35Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: START — Run corrected final staged whitespace and patch-integrity check
+- Command: `git diff --cached --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`
+
+## Event 1395
+
+- UTC timestamp: 2026-08-28T19:16:35Z
+- Phase: CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION
+- Operation: PASS — Run corrected final staged whitespace and patch-integrity check
+- Command: `git diff --cached --check`
+- Inputs: none
+- Outputs: none
+- Duration: 68 ms
+- Warnings: none
+- Errors: none
+- Decision: The complete post-diagnostic staged diff must contain no whitespace errors.
+- Next: Refresh final latest-writer hashes, stop the logger, remove its exact lock, and seal directly.
+- Git SHA: `024935e8d0c36cf0c4724b1960c71f28afef6595`

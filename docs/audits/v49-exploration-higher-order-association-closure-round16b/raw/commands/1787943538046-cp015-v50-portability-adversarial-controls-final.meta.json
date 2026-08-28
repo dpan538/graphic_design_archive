@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "scripts/trace_round16b/verify_v50_round16b_manifest_portability_controls.py"
+  ],
+  "command": "python3 -B scripts/trace_round16b/verify_v50_round16b_manifest_portability_controls.py",
+  "command_id": "1787943538046-cp015-v50-portability-adversarial-controls-final",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 4575,
+  "end_timestamp_utc": "2026-08-28T18:59:02Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-v50-portability-adversarial-controls-final",
+  "phase_id": "CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:58:58Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "766d632c46420c6867bb153405977243a85abb4bc5783d9bbae7e306b769189d",
+  "timed_out": false
+}

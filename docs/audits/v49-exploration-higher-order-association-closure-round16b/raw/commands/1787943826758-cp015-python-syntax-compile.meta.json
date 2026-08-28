@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "python3 -B -c \"from pathlib import Path; paths=[Path(p) for p in ['database/scripts/verify_v50_round16b_manifest.py','scripts/trace_round16b/verify_execution_log.py','scripts/trace_round16b/capture_cp015_database_diagnostic.py','scripts/trace_round16b/verify_cp015_database_diagnostic.py','scripts/trace_round16b/verify_reachable_ordinary_blobs.py','scripts/trace_round16b/verify_v50_round16b_manifest_portability_controls.py','scripts/trace_round16b/build_recursive_gap_closure_audit.py','scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py']]; [compile(p.read_text(encoding='utf-8'),str(p),'exec') for p in paths]; print('CP15_PYTHON_SYNTAX_COMPILE=PASS files='+str(len(paths)))\""
+  ],
+  "command": "/bin/sh -c 'python3 -B -c \"from pathlib import Path; paths=[Path(p) for p in ['\"'\"'database/scripts/verify_v50_round16b_manifest.py'\"'\"','\"'\"'scripts/trace_round16b/verify_execution_log.py'\"'\"','\"'\"'scripts/trace_round16b/capture_cp015_database_diagnostic.py'\"'\"','\"'\"'scripts/trace_round16b/verify_cp015_database_diagnostic.py'\"'\"','\"'\"'scripts/trace_round16b/verify_reachable_ordinary_blobs.py'\"'\"','\"'\"'scripts/trace_round16b/verify_v50_round16b_manifest_portability_controls.py'\"'\"','\"'\"'scripts/trace_round16b/build_recursive_gap_closure_audit.py'\"'\"','\"'\"'scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py'\"'\"']]; [compile(p.read_text(encoding='\"'\"'utf-8'\"'\"'),str(p),'\"'\"'exec'\"'\"') for p in paths]; print('\"'\"'CP15_PYTHON_SYNTAX_COMPILE=PASS files='\"'\"'+str(len(paths)))\"'",
+  "command_id": "1787943826758-cp015-python-syntax-compile",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 64,
+  "end_timestamp_utc": "2026-08-28T19:03:46Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-python-syntax-compile",
+  "phase_id": "CHECKPOINT015_V50_MANIFEST_PORTABILITY_CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T19:03:46Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "f1bbd37f497377219918264d21ff5cb9d296c00a537b20f52a91c268eaafcec7",
+  "timed_out": false
+}

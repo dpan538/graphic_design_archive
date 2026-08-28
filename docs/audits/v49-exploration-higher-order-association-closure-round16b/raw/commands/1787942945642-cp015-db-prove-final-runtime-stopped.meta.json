@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "set -eu\nsocket_dir=/private/tmp/gda-v50-round16b-cp015-final/socket\nif /opt/homebrew/opt/postgresql@16/bin/pg_isready -h \"$socket_dir\" -p 59473 -d postgres -U jarlgiovanni >/dev/null 2>&1; then exit 1; fi\ntest ! -S \"$socket_dir/.s.PGSQL.59473\"\ntest ! -e \"$socket_dir/.s.PGSQL.59473.lock\"\ntest ! -e /private/tmp/gda-v50-round16b-cp015-final/data/postmaster.pid\nif ps -p 57865 >/dev/null 2>&1; then exit 1; fi\nif lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then exit 1; fi\nprintf \"%s\\n\" POSTMASTER_PID_57865_ABSENT=PASS SOCKET_59473_ABSENT=PASS SOCKET_LOCK_59473_ABSENT=PASS PG_ISREADY_NOT_ACCEPTING=PASS TCP_LISTENER_59473_ABSENT=PASS"
+  ],
+  "command": "/bin/sh -c 'set -eu\nsocket_dir=/private/tmp/gda-v50-round16b-cp015-final/socket\nif /opt/homebrew/opt/postgresql@16/bin/pg_isready -h \"$socket_dir\" -p 59473 -d postgres -U jarlgiovanni >/dev/null 2>&1; then exit 1; fi\ntest ! -S \"$socket_dir/.s.PGSQL.59473\"\ntest ! -e \"$socket_dir/.s.PGSQL.59473.lock\"\ntest ! -e /private/tmp/gda-v50-round16b-cp015-final/data/postmaster.pid\nif ps -p 57865 >/dev/null 2>&1; then exit 1; fi\nif lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then exit 1; fi\nprintf \"%s\\n\" POSTMASTER_PID_57865_ABSENT=PASS SOCKET_59473_ABSENT=PASS SOCKET_LOCK_59473_ABSENT=PASS PG_ISREADY_NOT_ACCEPTING=PASS TCP_LISTENER_59473_ABSENT=PASS'",
+  "command_id": "1787942945642-cp015-db-prove-final-runtime-stopped",
+  "cwd": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+  "duration_ms": 53,
+  "end_timestamp_utc": "2026-08-28T18:49:05Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp015-db-prove-final-runtime-stopped",
+  "phase_id": "CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:49:05Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "6f9975e70744b9c45381cb4215d28895dbd50a5520d28ff3380dedf8a71ded0e",
+  "timed_out": false
+}

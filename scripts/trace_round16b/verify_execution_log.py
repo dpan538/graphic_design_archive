@@ -16,6 +16,13 @@ SOURCE_SHA = "5419770959bdb8998b693fb2275b47e29b92367c"
 ROUND_SLUG = "v49-exploration-higher-order-association-closure-round16b"
 RAW_REL = Path(f"docs/audits/{ROUND_SLUG}/raw")
 RESEARCH_REL = Path(f"docs/research/trace-{ROUND_SLUG}")
+INTERRUPTED_LOGGER_COMMAND_ID = "1787942716881-cp015-db-capture-superseded-diagnostic"
+INTERRUPTED_LOGGER_EVENT_SEQUENCE = 1285
+INTERRUPTED_LOGGER_DIAGNOSTIC_ID = "R16B-CP015-DIAG-015"
+INTERRUPTED_LOGGER_EVENT_CANONICAL_SHA256 = (
+    "02897f6bbb225effcacae70c31fb0e21fedb6a8d092130745af64097af6a6411"
+)
+EMPTY_SHA256 = hashlib.sha256(b"").hexdigest()
 FORBIDDEN_COMMAND_PATTERNS = {
     "FORCE_PUSH": re.compile(r"(?:^|\s)git\s+push\s+[^\n]*(?:--force(?:-with-lease)?|-f(?:\s|$)|\+refs/)", re.I),
     "AMEND": re.compile(r"(?:^|\s)git\s+commit\s+[^\n]*--amend", re.I),
@@ -47,6 +54,12 @@ def hash_path(path: Path) -> str:
         digest.update(sha256(child).encode())
         digest.update(b"\0")
     return digest.hexdigest()
+
+
+def canonical_sha256(value: object) -> str:
+    return hashlib.sha256(
+        json.dumps(value, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()
 
 
 def run(repo: Path, *argv: str) -> subprocess.CompletedProcess[bytes]:
@@ -102,6 +115,103 @@ def resolve_recorded(repo: Path, value: str) -> Path:
     if direct.exists():
         return direct
     return repo / "docs/audits" / path
+
+
+def verify_pinned_interrupted_logger_event(
+    repo: Path,
+    raw: Path,
+    command_id: str,
+    group: list[dict[str, Any]],
+    row_by_command: dict[str, dict[str, str]],
+) -> bool:
+    """Accept one disclosed ENOSPC interruption without inventing completion data."""
+    if command_id != INTERRUPTED_LOGGER_COMMAND_ID:
+        return False
+    if len(group) != 1:
+        return False
+    event = group[0]
+    if canonical_sha256(event) != INTERRUPTED_LOGGER_EVENT_CANONICAL_SHA256:
+        return False
+    expected_event_fields = {
+        "sequence": INTERRUPTED_LOGGER_EVENT_SEQUENCE,
+        "status": "STARTED",
+        "phase_id": "CHECKPOINT-015-FRESH-DATABASE-REPRODUCTION",
+        "operation_id": "cp015-db-capture-superseded-diagnostic",
+        "git_sha": "024935e8d0c36cf0c4724b1960c71f28afef6595",
+        "duration_ms": 0,
+    }
+    if any(event.get(key) != value for key, value in expected_event_fields.items()):
+        return False
+    if event.get("output_hashes") != {} or command_id in row_by_command:
+        return False
+    command_dir = raw / "commands"
+    stdout_path = command_dir / f"{command_id}.stdout.log"
+    stderr_path = command_dir / f"{command_id}.stderr.log"
+    meta_path = command_dir / f"{command_id}.meta.json"
+    if (
+        not stdout_path.is_file()
+        or not stderr_path.is_file()
+        or meta_path.exists()
+        or sha256(stdout_path) != EMPTY_SHA256
+        or sha256(stderr_path) != EMPTY_SHA256
+    ):
+        return False
+    diagnostic_path = raw / "parallel-diagnostic-event-ledger-checkpoint015.tsv"
+    if not diagnostic_path.is_file():
+        return False
+    diagnostic_rows = [
+        line.split("\t")
+        for line in diagnostic_path.read_text(encoding="utf-8").splitlines()[1:]
+        if line
+    ]
+    matching_rows = [
+        row for row in diagnostic_rows
+        if len(row) == 8
+        and row[0] == INTERRUPTED_LOGGER_DIAGNOSTIC_ID
+        and row[1] == "2026-08-28T18:45:16Z"
+        and row[3] == "LOGGER_ENOSPC_ZERO_BYTE_PARTIAL_OUTPUTS"
+        and command_id in row[4]
+        and row[6] == "PASS_INTERRUPTED_EVENT_AND_PARTIAL_FILES_PRESERVED_LATER_CAPTURE_REISSUED"
+        and row[7] == "PRESERVED_LOGGER_INFRASTRUCTURE_FAILURE_WITH_PINNED_EXCEPTION_AND_NO_SYNTHETIC_COMPLETION"
+    ]
+    return len(matching_rows) == 1
+
+
+def verify_command_artifact_set(
+    raw: Path,
+    row_by_command: dict[str, dict[str, str]],
+    failures: list[str],
+) -> None:
+    """Reject every ungoverned command artifact except the pinned interruption."""
+    command_dir = raw / "commands"
+    artifact_suffixes: dict[str, set[str]] = {}
+    expected_suffixes = {"stdout.log", "stderr.log", "meta.json"}
+    if not command_dir.is_dir():
+        failures.append("COMMAND_DIRECTORY_MISSING")
+        return
+    pattern = re.compile(r"^(.+)\.(stdout\.log|stderr\.log|meta\.json)$")
+    for path in command_dir.iterdir():
+        if not path.is_file():
+            failures.append(f"COMMAND_DIRECTORY_NONFILE:{path.name}")
+            continue
+        match = pattern.fullmatch(path.name)
+        if match is None:
+            failures.append(f"COMMAND_ARTIFACT_NAME_INVALID:{path.name}")
+            continue
+        artifact_suffixes.setdefault(match.group(1), set()).add(match.group(2))
+    expected_ids = set(row_by_command) | {INTERRUPTED_LOGGER_COMMAND_ID}
+    for command_id in sorted(set(artifact_suffixes) - expected_ids):
+        failures.append(f"ORPHAN_COMMAND_ARTIFACT_ID:{command_id}")
+    for command_id in sorted(expected_ids - set(artifact_suffixes)):
+        failures.append(f"COMMAND_ARTIFACT_ID_MISSING:{command_id}")
+    for command_id, suffixes in sorted(artifact_suffixes.items()):
+        expected = (
+            {"stdout.log", "stderr.log"}
+            if command_id == INTERRUPTED_LOGGER_COMMAND_ID
+            else expected_suffixes
+        )
+        if command_id in expected_ids and suffixes != expected:
+            failures.append(f"COMMAND_ARTIFACT_SUFFIX_SET:{command_id}")
 
 
 def verify_checkpoints(repo: Path, path: Path, failures: list[str]) -> dict[str, Any]:
@@ -160,6 +270,7 @@ def main() -> int:
     row_by_command = {row["command_id"]: row for row in rows}
     if len(row_by_command) != len(rows):
         failures.append("DUPLICATE_COMMAND_LEDGER_ID")
+    verify_command_artifact_set(raw, row_by_command, failures)
     event_groups: dict[str, list[dict[str, Any]]] = {}
     legacy_events: list[dict[str, Any]] = []
     for event in events:
@@ -189,6 +300,13 @@ def main() -> int:
     for command_id, group in event_groups.items():
         ordered = sorted(group, key=lambda event: int(event.get("sequence", 0)))
         if len(ordered) != 2:
+            if verify_pinned_interrupted_logger_event(
+                repo, raw, command_id, ordered, row_by_command
+            ):
+                warnings.append(
+                    "PINNED_INTERRUPTED_LOGGER_ENOSPC_EVENT_PRESERVED=" + command_id
+                )
+                continue
             failures.append(f"EVENT_PAIR_COUNT:{command_id}:{len(ordered)}")
             continue
         start, finish = ordered

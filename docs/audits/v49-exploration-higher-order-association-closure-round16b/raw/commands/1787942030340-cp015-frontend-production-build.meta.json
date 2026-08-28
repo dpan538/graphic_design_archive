@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "npm",
+    "--prefix",
+    "frontend",
+    "run",
+    "build"
+  ],
+  "command": "npm --prefix frontend run build",
+  "command_id": "1787942030340-cp015-frontend-production-build",
+  "cwd": "/private/tmp/gda_round16b_cp015_clean_repro_024935e8",
+  "duration_ms": 14074,
+  "end_timestamp_utc": "2026-08-28T18:34:04Z",
+  "exit_code": 1,
+  "launch_error": "",
+  "operation_id": "cp015-frontend-production-build",
+  "phase_id": "CHECKPOINT-015-FINAL-FRONTEND-HTTP-VERIFICATION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:33:50Z",
+  "stderr_sha256": "294be6535fca1b16b77f7b418d4d47d3bedd8b0a314a8c3225a2ad785a2ef1ee",
+  "stdout_sha256": "1c214a1bf8c6941ee524b7125198143cce362d47ecd20c4255b5fcad831306df",
+  "timed_out": false
+}
