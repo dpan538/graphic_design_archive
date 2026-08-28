@@ -124,6 +124,7 @@ def main() -> int:
     restore = args.restore_repo.resolve()
     initial_publication_path = args.initial_publication_receipt.resolve()
     initial_publication = json.loads(initial_publication_path.read_text(encoding="utf-8"))
+    initial_publication_head = str(initial_publication.get("local_head_sha", ""))
     output_dir = args.output_dir if args.output_dir.is_absolute() else repo / args.output_dir
     output_dir.mkdir(parents=True, exist_ok=True)
     captured_at = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
@@ -146,6 +147,10 @@ def main() -> int:
         if not any(line[3:].startswith(prefix) for prefix in logger_owned_prefixes)
     ]
     source_ancestor = run(repo, "git", "merge-base", "--is-ancestor", SOURCE_SHA, head).returncode == 0
+    initial_head_ancestor = (
+        bool(initial_publication_head)
+        and run(repo, "git", "merge-base", "--is-ancestor", initial_publication_head, head).returncode == 0
+    )
     remote_result = run(repo, "git", "ls-remote", "--refs", "origin")
     remote_map = parse_remote_map(text(remote_result)) if remote_result.returncode == 0 else {}
     remote_ref_path = output_dir / "source-remote-ref-map.tsv"
@@ -179,7 +184,8 @@ def main() -> int:
         "remote_rollback_tag_absent": ROLLBACK_REF not in remote_map,
         "initial_publication_receipt_pass": initial_publication.get("status") == "PASS",
         "initial_remote_work_branch_was_absent": initial_publication.get("remote_branch_before") == "ABSENT",
-        "initial_publication_head_exact": initial_publication.get("local_head_sha") == args.expected_head,
+        "initial_publication_remote_after_exact": initial_publication.get("remote_branch_after") == initial_publication_head,
+        "initial_publication_head_is_ancestor_of_current": initial_head_ancestor,
         "initial_publication_used_no_force": initial_publication.get("receipt", {}).get("FORCE_PUSH_USED") is False,
         "bundle_exists": bundle.is_file(),
         "bundle_verify_pass": bundle_verify.returncode == 0,
