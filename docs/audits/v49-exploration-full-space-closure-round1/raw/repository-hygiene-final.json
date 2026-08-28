@@ -1,7 +1,7 @@
 {
   "format": "gda-v49-repository-hygiene/v1",
-  "status": "FAIL",
-  "trackedFileCount": 4864,
+  "status": "PASS",
+  "trackedFileCount": 4892,
   "checks": {
     "activeDatabaseRootCount": 1,
     "activeDatabaseRoot": "database",
@@ -15,16 +15,14 @@
     "brokenDocumentationLinks": [],
     "brokenScriptReferences": [],
     "brokenFrontendImports": [],
-    "activeScriptAllowlistPass": false,
+    "activeScriptAllowlistPass": true,
     "activeScriptAllowlistDeclaredCount": 279,
     "activeScriptAllowlistRowCount": 279,
-    "activeScriptAllowlistTrackedCount": 278,
+    "activeScriptAllowlistTrackedCount": 279,
     "activeScriptAllowlistMissingScripts": [],
-    "activeScriptAllowlistUnexpectedScripts": [
-      "scripts/trace_round16a/verify_authorized_lfs_migration.py"
-    ],
+    "activeScriptAllowlistUnexpectedScripts": [],
     "activeScriptAllowlistDuplicatePathCount": 0,
-    "unreferencedActiveScriptPolicy": "FAIL",
+    "unreferencedActiveScriptPolicy": "DOCUMENTED_ALLOWLIST",
     "historicalPromptActiveCount": 0,
     "unreferencedProjectAssetCount": 0,
     "brokenLfsPointerCount": 0,
@@ -197,7 +195,5 @@
     "sourceTagCommit": "d78f496bcdf2cd6941791986007cd7a885c4c532",
     "sourceTagResolvable": true
   },
-  "violations": [
-    "ACTIVE_SCRIPT_ALLOWLIST"
-  ]
+  "violations": []
 }

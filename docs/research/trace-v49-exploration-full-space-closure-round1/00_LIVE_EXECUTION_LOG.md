@@ -6973,3 +6973,117 @@ Next gate: enumerate and assess all 465 unordered active-vocabulary pairs.'`
 - Decision: Production build must pass without source mutation.
 - Next operation: Run exhaustive API and independent verifier gates.
 - Current Git SHA: `02eb7055659714a0e5ebce85dabdcda02dce2cc1`
+
+## Event 365
+
+- Sequence: 365
+- UTC timestamp: 2026-08-28T01:16:04Z
+- Phase: POST_MIGRATION_GATES
+- Operation: START — Rerun repository hygiene after tracking the authorized migration verifier
+- Input artifact(s): scripts/repository/audit_repository_hygiene.py, docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json, docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.csv, docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.md, scripts/trace_round16a
+- Input count: 5
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/repository-hygiene-final.json
+- Output count: pending
+- Command or script: `python3 -B scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-full-space-closure-round1/raw/repository-hygiene-final.json`
+- Elapsed duration: running
+- Current cumulative counts: {}
+- Warnings: PREVIOUS_UNTRACKED_HELPER_FAILURE_PRESERVED
+- Errors: none at start
+- Decision: operation started
+- Next operation: Run exhaustive API and independent verifier gates.
+- Current Git SHA: `64790403dcbffe282b27ca1bc6447fb53e3744ba`
+
+## Event 366
+
+- Sequence: 366
+- UTC timestamp: 2026-08-28T01:16:12Z
+- Phase: POST_MIGRATION_GATES
+- Operation: PASS — Rerun repository hygiene after tracking the authorized migration verifier
+- Input artifact(s): scripts/repository/audit_repository_hygiene.py, docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json, docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.csv, docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.md, scripts/trace_round16a
+- Input count: 5
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/repository-hygiene-final.json
+- Output count: 1
+- Command or script: `python3 -B scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-full-space-closure-round1/raw/repository-hygiene-final.json`
+- Elapsed duration: 7786 ms
+- Current cumulative counts: {}
+- Warnings: PREVIOUS_UNTRACKED_HELPER_FAILURE_PRESERVED
+- Errors: none
+- Decision: Repository hygiene must pass with 279 tracked and classified scripts.
+- Next operation: Run exhaustive API and independent verifier gates.
+- Current Git SHA: `64790403dcbffe282b27ca1bc6447fb53e3744ba`
+
+## Event 367
+
+- Sequence: 367
+- UTC timestamp: 2026-08-28T01:16:37Z
+- Phase: POST_MIGRATION_GATES
+- Operation: START — Rerun exhaustive trace-exploration v2 API schema and service verification after authorized LFS migration
+- Input artifact(s): frontend/scripts/test-trace-exploration-v2.mjs, frontend/src/features/trace-v49/exploration-v2, frontend/src/app/api/trace/v2/exploration, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2, docs/api/trace-exploration-v2-openapi.yaml
+- Input count: 6
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/api-schema-validation-v2.json
+- Output count: pending
+- Command or script: `node --conditions=react-server --experimental-strip-types frontend/scripts/test-trace-exploration-v2.mjs --model-ledger /tmp/trace-round16a-api-schema/model.tsv --transition-ledger /tmp/trace-round16a-api-schema/transitions.tsv --workflow-ledger /tmp/trace-round16a-api-schema/workflows.tsv --export-ledger /tmp/trace-round16a-api-schema/exports.tsv --service-ledger /tmp/trace-round16a-api-schema/service.tsv --summary-json docs/audits/v49-exploration-full-space-closure-round1/raw/api-schema-validation-v2.json`
+- Elapsed duration: running
+- Current cumulative counts: {}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Run independent full-space verification.
+- Current Git SHA: `64790403dcbffe282b27ca1bc6447fb53e3744ba`
+
+## Event 368
+
+- Sequence: 368
+- UTC timestamp: 2026-08-28T01:20:00Z
+- Phase: POST_MIGRATION_GATES
+- Operation: PASS — Rerun exhaustive trace-exploration v2 API schema and service verification after authorized LFS migration
+- Input artifact(s): frontend/scripts/test-trace-exploration-v2.mjs, frontend/src/features/trace-v49/exploration-v2, frontend/src/app/api/trace/v2/exploration, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2, docs/api/trace-exploration-v2-openapi.yaml
+- Input count: 6
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/api-schema-validation-v2.json
+- Output count: 1
+- Command or script: `node --conditions=react-server --experimental-strip-types frontend/scripts/test-trace-exploration-v2.mjs --model-ledger /tmp/trace-round16a-api-schema/model.tsv --transition-ledger /tmp/trace-round16a-api-schema/transitions.tsv --workflow-ledger /tmp/trace-round16a-api-schema/workflows.tsv --export-ledger /tmp/trace-round16a-api-schema/exports.tsv --service-ledger /tmp/trace-round16a-api-schema/service.tsv --summary-json docs/audits/v49-exploration-full-space-closure-round1/raw/api-schema-validation-v2.json`
+- Elapsed duration: 202871 ms
+- Current cumulative counts: {}
+- Warnings: none
+- Errors: none
+- Decision: All model, transition, workflow, export, and service API cases must pass.
+- Next operation: Run independent full-space verification.
+- Current Git SHA: `64790403dcbffe282b27ca1bc6447fb53e3744ba`
+
+## Event 369
+
+- Sequence: 369
+- UTC timestamp: 2026-08-28T01:20:13Z
+- Phase: POST_MIGRATION_GATES
+- Operation: START — Rerun independent full-space verifier after authorized LFS migration
+- Input artifact(s): scripts/trace_round16a/verify_full_space.py, scripts/trace_round16a, frontend/src/features/trace-v49/exploration-v2, frontend/src/app/api/trace/v2/exploration, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2, docs/api/trace-exploration-v2-openapi.yaml, docs/audits/v49-exploration-full-space-closure-round1/raw
+- Input count: 8
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification.json, docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification-cases-v2.tsv
+- Output count: pending
+- Command or script: `python3 -B scripts/trace_round16a/verify_full_space.py --case-tsv docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification-cases-v2.tsv`
+- Elapsed duration: running
+- Current cumulative counts: {}
+- Warnings: none
+- Errors: none at start
+- Decision: operation started
+- Next operation: Commit the post-migration hardened code/artifact checkpoint for clean reproduction.
+- Current Git SHA: `64790403dcbffe282b27ca1bc6447fb53e3744ba`
+
+## Event 370
+
+- Sequence: 370
+- UTC timestamp: 2026-08-28T01:20:44Z
+- Phase: POST_MIGRATION_GATES
+- Operation: PASS — Rerun independent full-space verifier after authorized LFS migration
+- Input artifact(s): scripts/trace_round16a/verify_full_space.py, scripts/trace_round16a, frontend/src/features/trace-v49/exploration-v2, frontend/src/app/api/trace/v2/exploration, frontend/generated/trace-exploration-v2/production-read-model.json, schemas/trace/exploration/v2, docs/api/trace-exploration-v2-openapi.yaml, docs/audits/v49-exploration-full-space-closure-round1/raw
+- Input count: 8
+- Output artifact(s): docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification.json, docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification-cases-v2.tsv
+- Output count: 2
+- Command or script: `python3 -B scripts/trace_round16a/verify_full_space.py --case-tsv docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification-cases-v2.tsv`
+- Elapsed duration: 30522 ms
+- Current cumulative counts: {}
+- Warnings: none
+- Errors: none
+- Decision: Independent count, hash, topology, transition, workflow, export, and audit-source checks must all pass.
+- Next operation: Commit the post-migration hardened code/artifact checkpoint for clean reproduction.
+- Current Git SHA: `64790403dcbffe282b27ca1bc6447fb53e3744ba`
