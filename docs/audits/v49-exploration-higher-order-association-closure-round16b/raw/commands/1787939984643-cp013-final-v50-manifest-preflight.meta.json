@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "database/scripts/verify_v50_round16b_manifest.py",
+    "--preflight"
+  ],
+  "command": "python3 database/scripts/verify_v50_round16b_manifest.py --preflight",
+  "command_id": "1787939984643-cp013-final-v50-manifest-preflight",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 439,
+  "end_timestamp_utc": "2026-08-28T17:59:45Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp013-final-v50-manifest-preflight",
+  "phase_id": "CHECKPOINT-013-FINAL-INTEGRITY",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T17:59:44Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "8be3e10bcb8df0bac2eb7de72218a18b1ec47e67373f333af2cee0192b18e777",
+  "timed_out": false
+}

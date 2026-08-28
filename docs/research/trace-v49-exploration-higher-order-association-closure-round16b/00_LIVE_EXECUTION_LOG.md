@@ -11438,3 +11438,315 @@
 - Decision: No common secret pattern may remain in the repository surface.
 - Next: Seal the final execution ledger and commit.
 - Git SHA: `11412d23e309a647a3a2fb0b3db4369dcdd15993`
+
+## Event 881
+
+- UTC timestamp: 2026-08-28T17:54:29Z
+- Phase: CHECKPOINT-013-CLEAN-REPRODUCTION
+- Operation: START — Import complete ordinary publication chain through Checkpoint 012
+- Command: `python3 scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787902081597323000-checkpoint-004.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787906350663884000-checkpoint-006.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787908701362896000-checkpoint-007.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787914780509164000-checkpoint-008.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787917453487486000-checkpoint-009.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787920754083087000-checkpoint-010.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787934365737642000-checkpoint-011.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787939431323648000-checkpoint-012.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv`
+- Inputs: /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787902081597323000-checkpoint-004.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787906350663884000-checkpoint-006.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787908701362896000-checkpoint-007.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787914780509164000-checkpoint-008.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787917453487486000-checkpoint-009.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787920754083087000-checkpoint-010.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787934365737642000-checkpoint-011.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787939431323648000-checkpoint-012.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Warnings: none
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 882
+
+- UTC timestamp: 2026-08-28T17:54:29Z
+- Phase: CHECKPOINT-013-CLEAN-REPRODUCTION
+- Operation: PASS — Import complete ordinary publication chain through Checkpoint 012
+- Command: `python3 scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787902081597323000-checkpoint-004.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787906350663884000-checkpoint-006.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787908701362896000-checkpoint-007.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787914780509164000-checkpoint-008.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787917453487486000-checkpoint-009.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787920754083087000-checkpoint-010.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787934365737642000-checkpoint-011.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787939431323648000-checkpoint-012.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv`
+- Inputs: /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787902081597323000-checkpoint-004.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787906350663884000-checkpoint-006.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787908701362896000-checkpoint-007.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787914780509164000-checkpoint-008.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787917453487486000-checkpoint-009.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787920754083087000-checkpoint-010.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787934365737642000-checkpoint-011.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787939431323648000-checkpoint-012.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Duration: 41 ms
+- Warnings: none
+- Errors: none
+- Decision: The complete external receipt chain must remain ordinary, contiguous, exact-main, no-force, no-history-rewrite, no-tag, and no-deploy through Checkpoint 012.
+- Next: Record the Checkpoint 012 commit in the additive checkpoint ledger and run detached clean reproduction.
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 883
+
+- UTC timestamp: 2026-08-28T17:56:47Z
+- Phase: CHECKPOINT-013-REPRODUCIBILITY-PREFLIGHT-CORRECTION
+- Operation: START — Verify committed v50 race evidence checksums for gda_v50_round16b_2318
+- Command: `shasum -a 256 -c CHECKSUMS.sha256`
+- Inputs: CHECKSUMS.sha256
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 884
+
+- UTC timestamp: 2026-08-28T17:56:47Z
+- Phase: CHECKPOINT-013-REPRODUCIBILITY-PREFLIGHT-CORRECTION
+- Operation: START — Verify committed v50 race evidence checksums for gda_v50_round16b_2317
+- Command: `shasum -a 256 -c CHECKSUMS.sha256`
+- Inputs: CHECKSUMS.sha256
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 885
+
+- UTC timestamp: 2026-08-28T17:56:47Z
+- Phase: CHECKPOINT-013-REPRODUCIBILITY-PREFLIGHT-CORRECTION
+- Operation: PASS — Verify committed v50 race evidence checksums for gda_v50_round16b_2318
+- Command: `shasum -a 256 -c CHECKSUMS.sha256`
+- Inputs: CHECKSUMS.sha256
+- Outputs: none
+- Duration: 19 ms
+- Warnings: none
+- Errors: none
+- Decision: All twelve previously ignored race logs must exactly match their committed checksum ledger before tracking.
+- Next: Run the v50 manifest preflight over the now checkout-complete evidence set.
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 886
+
+- UTC timestamp: 2026-08-28T17:56:47Z
+- Phase: CHECKPOINT-013-REPRODUCIBILITY-PREFLIGHT-CORRECTION
+- Operation: PASS — Verify committed v50 race evidence checksums for gda_v50_round16b_2317
+- Command: `shasum -a 256 -c CHECKSUMS.sha256`
+- Inputs: CHECKSUMS.sha256
+- Outputs: none
+- Duration: 16 ms
+- Warnings: none
+- Errors: none
+- Decision: All twelve previously ignored race logs must exactly match their committed checksum ledger before tracking.
+- Next: Run the v50 manifest preflight over the now checkout-complete evidence set.
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 887
+
+- UTC timestamp: 2026-08-28T17:56:56Z
+- Phase: CHECKPOINT-013-REPRODUCIBILITY-PREFLIGHT-CORRECTION
+- Operation: START — Verify v50 manifest with checkout-complete race evidence
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py --preflight`
+- Inputs: database/schema-manifest-v50-round16b.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 888
+
+- UTC timestamp: 2026-08-28T17:56:56Z
+- Phase: CHECKPOINT-013-REPRODUCIBILITY-PREFLIGHT-CORRECTION
+- Operation: PASS — Verify v50 manifest with checkout-complete race evidence
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py --preflight`
+- Inputs: database/schema-manifest-v50-round16b.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race
+- Outputs: none
+- Duration: 544 ms
+- Warnings: none
+- Errors: none
+- Decision: The v50 manifest must pass from a candidate clean-checkout evidence surface after the twenty-four required logs are made trackable.
+- Next: Stage the narrow correction and rerun repository integrity gates before an additive checkpoint.
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 889
+
+- UTC timestamp: 2026-08-28T17:57:46Z
+- Phase: CHECKPOINT-013-REPRODUCIBILITY-PREFLIGHT-CORRECTION
+- Operation: START — Prove all required v50 race logs are present in the candidate Git index
+- Command: `git ls-files --error-unmatch -- docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/child-first.contender.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/child-first.owner.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/child-first.retry-and-invariant.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/createdb.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/dropdb.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/repeatable-read.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/seal-first.contender.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/seal-first.invariant.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/seal-first.owner.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/seal-first.retry.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/serializable.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/setup-owner.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/child-first.contender.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/child-first.owner.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/child-first.retry-and-invariant.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/createdb.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/dropdb.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/repeatable-read.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/seal-first.contender.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/seal-first.invariant.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/seal-first.owner.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/seal-first.retry.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/serializable.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/setup-owner.log`
+- Inputs: .gitignore, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 890
+
+- UTC timestamp: 2026-08-28T17:57:46Z
+- Phase: CHECKPOINT-013-REPRODUCIBILITY-PREFLIGHT-CORRECTION
+- Operation: PASS — Prove all required v50 race logs are present in the candidate Git index
+- Command: `git ls-files --error-unmatch -- docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/child-first.contender.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/child-first.owner.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/child-first.retry-and-invariant.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/createdb.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/dropdb.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/repeatable-read.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/seal-first.contender.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/seal-first.invariant.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/seal-first.owner.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/seal-first.retry.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/serializable.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/setup-owner.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/child-first.contender.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/child-first.owner.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/child-first.retry-and-invariant.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/createdb.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/dropdb.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/repeatable-read.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/seal-first.contender.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/seal-first.invariant.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/seal-first.owner.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/seal-first.retry.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/serializable.log docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/setup-owner.log`
+- Inputs: .gitignore, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race
+- Outputs: none
+- Duration: 16 ms
+- Warnings: none
+- Errors: none
+- Decision: All twenty-four checksum-listed v50 race logs must resolve in the candidate Git index before commit.
+- Next: Rerun the manifest, hygiene, blob, secret, and Git integrity gates.
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 891
+
+- UTC timestamp: 2026-08-28T17:59:44Z
+- Phase: CHECKPOINT-013-FINAL-INTEGRITY
+- Operation: START — Verify Checkpoint 013 staged new-blob policy
+- Command: `python3 scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint013.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint013.json
+- Warnings: none
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 892
+
+- UTC timestamp: 2026-08-28T17:59:44Z
+- Phase: CHECKPOINT-013-FINAL-INTEGRITY
+- Operation: START — Verify checkout-complete v50 manifest on final candidate index
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py --preflight`
+- Inputs: database/schema-manifest-v50-round16b.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 893
+
+- UTC timestamp: 2026-08-28T17:59:44Z
+- Phase: CHECKPOINT-013-FINAL-INTEGRITY
+- Operation: START — Audit Checkpoint 013 staged repository hygiene
+- Command: `python3 scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint013.json --markdown docs/research/trace-v49-exploration-higher-order-association-closure-round16b/26_REPOSITORY_HYGIENE_CHECKPOINT013.md`
+- Inputs: docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint013.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/26_REPOSITORY_HYGIENE_CHECKPOINT013.md
+- Warnings: none
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 894
+
+- UTC timestamp: 2026-08-28T17:59:45Z
+- Phase: CHECKPOINT-013-FINAL-INTEGRITY
+- Operation: PASS — Verify checkout-complete v50 manifest on final candidate index
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py --preflight`
+- Inputs: database/schema-manifest-v50-round16b.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race
+- Outputs: none
+- Duration: 439 ms
+- Warnings: none
+- Errors: none
+- Decision: The final candidate index must carry every v50 manifest dependency needed by a clean checkout.
+- Next: Complete repository and execution integrity gates.
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 895
+
+- UTC timestamp: 2026-08-28T17:59:55Z
+- Phase: CHECKPOINT-013-FINAL-INTEGRITY
+- Operation: PASS — Audit Checkpoint 013 staged repository hygiene
+- Command: `python3 scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint013.json --markdown docs/research/trace-v49-exploration-higher-order-association-closure-round16b/26_REPOSITORY_HYGIENE_CHECKPOINT013.md`
+- Inputs: docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint013.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/26_REPOSITORY_HYGIENE_CHECKPOINT013.md
+- Duration: 10958 ms
+- Warnings: none
+- Errors: none
+- Decision: The exact reproducibility-preflight correction must preserve zero repository hygiene violations.
+- Next: Complete blob, Git, LFS, secret, and execution-log gates.
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 896
+
+- UTC timestamp: 2026-08-28T18:00:17Z
+- Phase: CHECKPOINT-013-FINAL-INTEGRITY
+- Operation: PASS — Verify Checkpoint 013 staged new-blob policy
+- Command: `python3 scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint013.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint013.json
+- Duration: 33321 ms
+- Warnings: none
+- Errors: none
+- Decision: The correction checkpoint must add no ordinary blob near any warning, LFS, hard-block, or hosting limit.
+- Next: Complete Git, LFS, secret, and execution-log gates.
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 897
+
+- UTC timestamp: 2026-08-28T18:00:56Z
+- Phase: CHECKPOINT-013-FINAL-INTEGRITY
+- Operation: START — Strict full Git fsck for Checkpoint 013
+- Command: `git fsck --full --strict --no-dangling`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 898
+
+- UTC timestamp: 2026-08-28T18:00:56Z
+- Phase: CHECKPOINT-013-FINAL-INTEGRITY
+- Operation: START — Git LFS object and pointer fsck for Checkpoint 013
+- Command: `git lfs fsck --objects --pointers`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 899
+
+- UTC timestamp: 2026-08-28T18:00:56Z
+- Phase: CHECKPOINT-013-FINAL-INTEGRITY
+- Operation: START — Common secret-pattern scan for Checkpoint 013
+- Command: `python3 scripts/audit_secret_patterns.py`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 900
+
+- UTC timestamp: 2026-08-28T18:00:59Z
+- Phase: CHECKPOINT-013-FINAL-INTEGRITY
+- Operation: PASS — Git LFS object and pointer fsck for Checkpoint 013
+- Command: `git lfs fsck --objects --pointers`
+- Inputs: none
+- Outputs: none
+- Duration: 3428 ms
+- Warnings: none
+- Errors: none
+- Decision: Every required LFS object and pointer must pass fsck.
+- Next: Seal execution history and commit the additive preflight correction.
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 901
+
+- UTC timestamp: 2026-08-28T18:02:39Z
+- Phase: CHECKPOINT-013-FINAL-INTEGRITY
+- Operation: PASS — Strict full Git fsck for Checkpoint 013
+- Command: `git fsck --full --strict --no-dangling`
+- Inputs: none
+- Outputs: none
+- Duration: 102965 ms
+- Warnings: none
+- Errors: none
+- Decision: The complete local object database must pass strict full fsck.
+- Next: Seal execution history and commit the additive preflight correction.
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 902
+
+- UTC timestamp: 2026-08-28T18:02:52Z
+- Phase: CHECKPOINT-013-FINAL-INTEGRITY
+- Operation: PASS — Common secret-pattern scan for Checkpoint 013
+- Command: `python3 scripts/audit_secret_patterns.py`
+- Inputs: none
+- Outputs: none
+- Duration: 116048 ms
+- Warnings: none
+- Errors: none
+- Decision: No common secret pattern may be present in the correction checkpoint.
+- Next: Seal execution history and commit the additive preflight correction.
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 903
+
+- UTC timestamp: 2026-08-28T18:03:24Z
+- Phase: CHECKPOINT-013-EXECUTION-SEAL
+- Operation: START — Bind reproducibility-preflight correction and refresh final latest-writer hashes
+- Command: `/usr/bin/true`
+- Inputs: none
+- Declared outputs: .gitignore, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/clean-reproduction-preflight-checkpoint013.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint013.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint013.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint013.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-log-verification-checkpoint013-prelatest-writer-failure.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/25_CLEAN_REPRODUCTION_PREFLIGHT_CORRECTION.md, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/26_REPOSITORY_HYGIENE_CHECKPOINT013.md
+- Warnings: none
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 904
+
+- UTC timestamp: 2026-08-28T18:03:24Z
+- Phase: CHECKPOINT-013-EXECUTION-SEAL
+- Operation: PASS — Bind reproducibility-preflight correction and refresh final latest-writer hashes
+- Command: `/usr/bin/true`
+- Inputs: none
+- Outputs: .gitignore, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/clean-reproduction-preflight-checkpoint013.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint013.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint013.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint013.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-log-verification-checkpoint013-prelatest-writer-failure.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/25_CLEAN_REPRODUCTION_PREFLIGHT_CORRECTION.md, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/26_REPOSITORY_HYGIENE_CHECKPOINT013.md
+- Duration: 4 ms
+- Warnings: none
+- Errors: none
+- Decision: All correction artifacts and the preserved expected pre-seal failure must be hash-bound without altering their governed bytes.
+- Next: Run final direct execution verification, staged whitespace/scope review, commit, and ordinary publication.
+- Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
