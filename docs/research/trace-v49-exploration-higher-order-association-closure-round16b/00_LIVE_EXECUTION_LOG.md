@@ -1142,3 +1142,419 @@
 - Decision: Event 74's 2026-08-28T05:23:29Z end timestamp is the append time of the repaired receipt; its reconstructed 0 ms duration describes the immediate process-launch failure, while the 66-second timestamp interval is repair latency and not child-command runtime.
 - Next: Preserve this clarification additively, rerun execution-log verification, and finalize checkpoint publication.
 - Git SHA: `af056edadb43c1eb9e219217c42fd58b74ac5efd`
+
+## Event 89
+
+- UTC timestamp: 2026-08-28T05:37:29Z
+- Phase: CHECKPOINT-004
+- Operation: START — Import and verify checkpoint 003 publication receipt
+- Command: `python3 scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv`
+- Inputs: scripts/trace_round16b/import_publication_receipts.py, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Warnings: none
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 90
+
+- UTC timestamp: 2026-08-28T05:37:29Z
+- Phase: CHECKPOINT-004
+- Operation: FAIL — Import and verify checkpoint 003 publication receipt
+- Command: `python3 scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv`
+- Inputs: scripts/trace_round16b/import_publication_receipts.py, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Duration: 55 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Record checkpoint 003 in the ledger and execute all deferred local/database selectors.
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 91
+
+- UTC timestamp: 2026-08-28T05:38:16Z
+- Phase: CHECKPOINT-004
+- Operation: START — Retry checkpoint 003 receipt import with the complete ordered publication chain
+- Command: `python3 scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv`
+- Inputs: scripts/trace_round16b/import_publication_receipts.py, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Warnings: PRIOR_SINGLE_RECEIPT_CHAIN_FAILURE_PRESERVED
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 92
+
+- UTC timestamp: 2026-08-28T05:38:16Z
+- Phase: CHECKPOINT-004
+- Operation: PASS — Retry checkpoint 003 receipt import with the complete ordered publication chain
+- Command: `python3 scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv`
+- Inputs: scripts/trace_round16b/import_publication_receipts.py, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Duration: 51 ms
+- Warnings: PRIOR_SINGLE_RECEIPT_CHAIN_FAILURE_PRESERVED
+- Errors: none
+- Decision: Continue only if all seven receipts form an exact ordinary-push chain through checkpoint 003 with unchanged main, no force, no rollback tag, no deployment, and no unrelated ref difference.
+- Next: Record checkpoint 003 in the ledger and execute all deferred local/database selectors.
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 93
+
+- UTC timestamp: 2026-08-28T07:16:44Z
+- Phase: CHECKPOINT-004
+- Operation: START — Build corrected deferred-surface and frozen-database census
+- Command: `python3 scripts/trace_round16b/build_deferred_surface_census.py`
+- Inputs: scripts/trace_round16b/build_deferred_surface_census.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-surface-inventory.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/concept-sense-crosswalk-v1.tsv, data/prefreeze_candidate_v48.sqlite
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-execution-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-zero-emission-control-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-identity-membership-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-canonical-rights-queue-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/round16a-evidence-alias-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/round16a-query-result-alias-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/metadata-search-lead-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parameter-reconciliation-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-discovery-occurrence-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-discovery-family-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-search-document-rejection-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-capture-locus-control-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/candidate-trigger-occurrence-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-surface-disposition-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint003-receipt-import-failure-disposition-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-ledger-checkpoint004-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-census-v2.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/07_DEFERRED_SURFACE_AND_DATABASE_CENSUS.md, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-build-receipt-v2.json
+- Warnings: DATABASE_OUTPUTS_ARE_DISCOVERY_ONLY_NOT_EVIDENCE
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 94
+
+- UTC timestamp: 2026-08-28T07:17:42Z
+- Phase: CHECKPOINT-004
+- Operation: PASS — Build corrected deferred-surface and frozen-database census
+- Command: `python3 scripts/trace_round16b/build_deferred_surface_census.py`
+- Inputs: scripts/trace_round16b/build_deferred_surface_census.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-surface-inventory.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/concept-sense-crosswalk-v1.tsv, data/prefreeze_candidate_v48.sqlite
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-execution-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-zero-emission-control-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-identity-membership-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/source-canonical-rights-queue-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/round16a-evidence-alias-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/round16a-query-result-alias-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/metadata-search-lead-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parameter-reconciliation-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-discovery-occurrence-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-discovery-family-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-search-document-rejection-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/database-capture-locus-control-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/candidate-trigger-occurrence-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-surface-disposition-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint003-receipt-import-failure-disposition-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-ledger-checkpoint004-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-census-v2.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/07_DEFERRED_SURFACE_AND_DATABASE_CENSUS.md, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-build-receipt-v2.json
+- Duration: 57357 ms
+- Warnings: DATABASE_OUTPUTS_ARE_DISCOVERY_ONLY_NOT_EVIDENCE
+- Errors: none
+- Decision: Continue only if all 44 surfaces are selector-accounted, database discovery is 11/4 with two explicit lexical controls, merged census is 359/35, active facts are zero, and every closure flag is false.
+- Next: Run the independently implemented deferred-surface verifier.
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 95
+
+- UTC timestamp: 2026-08-28T07:19:16Z
+- Phase: CHECKPOINT-004
+- Operation: START — Independently reconstruct and verify deferred-surface census
+- Command: `python3 scripts/trace_round16b/verify_deferred_surface_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-independent-verification-v1.json`
+- Inputs: scripts/trace_round16b/verify_deferred_surface_census.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-build-receipt-v2.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-census-v2.json, data/prefreeze_candidate_v48.sqlite
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-independent-verification-v1.json
+- Warnings: none
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 96
+
+- UTC timestamp: 2026-08-28T07:19:22Z
+- Phase: CHECKPOINT-004
+- Operation: PASS — Independently reconstruct and verify deferred-surface census
+- Command: `python3 scripts/trace_round16b/verify_deferred_surface_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-independent-verification-v1.json`
+- Inputs: scripts/trace_round16b/verify_deferred_surface_census.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-build-receipt-v2.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-census-v2.json, data/prefreeze_candidate_v48.sqlite
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-independent-verification-v1.json
+- Duration: 5831 ms
+- Warnings: none
+- Errors: none
+- Decision: Continue only on an independent PASS with exact source reconstruction, exact output reconciliation, zero activation, and all closure flags false.
+- Next: Run checkpoint 003 and method regressions.
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 97
+
+- UTC timestamp: 2026-08-28T07:19:44Z
+- Phase: CHECKPOINT-004
+- Operation: START — Regress higher-order method checkpoint after v2 discovery
+- Command: `python3 scripts/trace_round16b/verify_method_checkpoint.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-independent-verification.json`
+- Inputs: scripts/trace_round16b/verify_method_checkpoint.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/higher-order-association-method-v1.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-independent-verification.json
+- Warnings: none
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 98
+
+- UTC timestamp: 2026-08-28T07:19:44Z
+- Phase: CHECKPOINT-004
+- Operation: START — Regress checkpoint 003 local census against v2 additive discovery
+- Command: `python3 scripts/trace_round16b/verify_local_candidate_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-independent-verification.json`
+- Inputs: scripts/trace_round16b/verify_local_candidate_census.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-census-v1.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-independent-verification.json
+- Warnings: none
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 99
+
+- UTC timestamp: 2026-08-28T07:19:45Z
+- Phase: CHECKPOINT-004
+- Operation: PASS — Regress higher-order method checkpoint after v2 discovery
+- Command: `python3 scripts/trace_round16b/verify_method_checkpoint.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-independent-verification.json`
+- Inputs: scripts/trace_round16b/verify_method_checkpoint.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/higher-order-association-method-v1.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-independent-verification.json
+- Duration: 473 ms
+- Warnings: none
+- Errors: none
+- Decision: The checkpoint 002 method contract must remain independently valid and fail closed.
+- Next: Run repository terminal gates.
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 100
+
+- UTC timestamp: 2026-08-28T07:19:52Z
+- Phase: CHECKPOINT-004
+- Operation: PASS — Regress checkpoint 003 local census against v2 additive discovery
+- Command: `python3 scripts/trace_round16b/verify_local_candidate_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-independent-verification.json`
+- Inputs: scripts/trace_round16b/verify_local_candidate_census.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-census-v1.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-independent-verification.json
+- Duration: 7819 ms
+- Warnings: none
+- Errors: none
+- Decision: The immutable checkpoint 003 v1 census must remain independently reproducible after additive v2 discovery.
+- Next: Run repository terminal gates.
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 101
+
+- UTC timestamp: 2026-08-28T07:20:47Z
+- Phase: CHECKPOINT-004
+- Operation: START — Audit repository hygiene and exact active-script classification
+- Command: `python3 scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint004.json --markdown docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint004.md`
+- Inputs: docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json, scripts/trace_round16b/build_deferred_surface_census.py, scripts/trace_round16b/verify_deferred_surface_census.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint004.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint004.md
+- Warnings: none
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 102
+
+- UTC timestamp: 2026-08-28T07:20:47Z
+- Phase: CHECKPOINT-004
+- Operation: START — Verify Git LFS objects and pointers
+- Command: `git lfs fsck --objects --pointers`
+- Inputs: .gitattributes
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 103
+
+- UTC timestamp: 2026-08-28T07:20:47Z
+- Phase: CHECKPOINT-004
+- Operation: START — Verify proactive ordinary-blob and LFS policy
+- Command: `python3 scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification.json
+- Warnings: none
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 104
+
+- UTC timestamp: 2026-08-28T07:20:51Z
+- Phase: CHECKPOINT-004
+- Operation: PASS — Verify Git LFS objects and pointers
+- Command: `git lfs fsck --objects --pointers`
+- Inputs: .gitattributes
+- Outputs: none
+- Duration: 3540 ms
+- Warnings: none
+- Errors: none
+- Decision: Continue only if every LFS object and pointer is valid.
+- Next: Run strict Git object integrity.
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 105
+
+- UTC timestamp: 2026-08-28T07:20:54Z
+- Phase: CHECKPOINT-004
+- Operation: PASS — Verify proactive ordinary-blob and LFS policy
+- Command: `python3 scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification.json
+- Duration: 6950 ms
+- Warnings: none
+- Errors: none
+- Decision: Continue only with zero hard-limit blobs, zero warnings, and every governed LFS path represented by a pointer.
+- Next: Run Git object integrity and execution-log gates.
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 106
+
+- UTC timestamp: 2026-08-28T07:20:58Z
+- Phase: CHECKPOINT-004
+- Operation: PASS — Audit repository hygiene and exact active-script classification
+- Command: `python3 scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint004.json --markdown docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint004.md`
+- Inputs: docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json, scripts/trace_round16b/build_deferred_surface_census.py, scripts/trace_round16b/verify_deferred_surface_census.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint004.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint004.md
+- Duration: 11200 ms
+- Warnings: none
+- Errors: none
+- Decision: Continue only if all tracked scripts are exactly classified and repository hygiene reports zero violations.
+- Next: Run Git object integrity and execution-log gates.
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 107
+
+- UTC timestamp: 2026-08-28T07:21:16Z
+- Phase: CHECKPOINT-004
+- Operation: START — Run full strict Git object integrity check
+- Command: `git fsck --full --strict --no-dangling`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 108
+
+- UTC timestamp: 2026-08-28T07:22:56Z
+- Phase: CHECKPOINT-004
+- Operation: PASS — Run full strict Git object integrity check
+- Command: `git fsck --full --strict --no-dangling`
+- Inputs: none
+- Outputs: none
+- Duration: 100504 ms
+- Warnings: none
+- Errors: none
+- Decision: Continue only on a clean full strict fsck with no dangling objects.
+- Next: Verify the append-only execution ledger and finalize checkpoint publication.
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 109
+
+- UTC timestamp: 2026-08-28T07:23:12Z
+- Phase: CHECKPOINT-004
+- Operation: START — Rerun stabilized independent deferred-surface verifier with receipt reconciliation
+- Command: `python3 scripts/trace_round16b/verify_deferred_surface_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-independent-verification-v1.json`
+- Inputs: scripts/trace_round16b/verify_deferred_surface_census.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-build-receipt-v2.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-census-v2.json, data/prefreeze_candidate_v48.sqlite
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-independent-verification-v1.json
+- Warnings: PRIOR_44_CHECK_RUN_SUPERSEDED_BY_STABILIZED_60_CHECK_RUN
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 110
+
+- UTC timestamp: 2026-08-28T07:23:18Z
+- Phase: CHECKPOINT-004
+- Operation: PASS — Rerun stabilized independent deferred-surface verifier with receipt reconciliation
+- Command: `python3 scripts/trace_round16b/verify_deferred_surface_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-independent-verification-v1.json`
+- Inputs: scripts/trace_round16b/verify_deferred_surface_census.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-build-receipt-v2.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-census-v2.json, data/prefreeze_candidate_v48.sqlite
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-independent-verification-v1.json
+- Duration: 5835 ms
+- Warnings: PRIOR_44_CHECK_RUN_SUPERSEDED_BY_STABILIZED_60_CHECK_RUN
+- Errors: none
+- Decision: Continue only on 60 independent passing checks, exact 19-output receipt reconciliation, zero activation, and all closure flags false.
+- Next: Rerun final repository, blob, LFS, Git, and execution-log gates.
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 111
+
+- UTC timestamp: 2026-08-28T07:23:41Z
+- Phase: CHECKPOINT-004
+- Operation: START — Record unavailable process-list diagnostic and evidence-ledger fallback
+- Command: `/usr/bin/true`
+- Inputs: none
+- Declared outputs: none
+- Warnings: PGREP_SYSMOND_UNAVAILABLE_IN_SANDBOX
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 112
+
+- UTC timestamp: 2026-08-28T07:23:41Z
+- Phase: CHECKPOINT-004
+- Operation: PASS — Record unavailable process-list diagnostic and evidence-ledger fallback
+- Command: `/usr/bin/true`
+- Inputs: none
+- Outputs: none
+- Duration: 4 ms
+- Warnings: PGREP_SYSMOND_UNAVAILABLE_IN_SANDBOX
+- Errors: none
+- Decision: The failed diagnostic is preserved in the task transcript; command completion was instead verified from the governed execution-events finish record and command meta receipt.
+- Next: Rerun final checkpoint gates.
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 113
+
+- UTC timestamp: 2026-08-28T07:24:03Z
+- Phase: CHECKPOINT-004
+- Operation: START — Final repository hygiene and active-script classification after stabilized verifier
+- Command: `python3 scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint004.json --markdown docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint004.md`
+- Inputs: docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json, scripts/trace_round16b/build_deferred_surface_census.py, scripts/trace_round16b/verify_deferred_surface_census.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint004.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint004.md
+- Warnings: none
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 114
+
+- UTC timestamp: 2026-08-28T07:24:03Z
+- Phase: CHECKPOINT-004
+- Operation: START — Final proactive ordinary-blob and LFS policy verification
+- Command: `python3 scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification.json
+- Warnings: none
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 115
+
+- UTC timestamp: 2026-08-28T07:24:03Z
+- Phase: CHECKPOINT-004
+- Operation: START — Final Git LFS object and pointer integrity check
+- Command: `git lfs fsck --objects --pointers`
+- Inputs: .gitattributes
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 116
+
+- UTC timestamp: 2026-08-28T07:24:06Z
+- Phase: CHECKPOINT-004
+- Operation: PASS — Final Git LFS object and pointer integrity check
+- Command: `git lfs fsck --objects --pointers`
+- Inputs: .gitattributes
+- Outputs: none
+- Duration: 2925 ms
+- Warnings: none
+- Errors: none
+- Decision: Continue only if every LFS object and pointer is valid.
+- Next: Run final strict Git integrity and execution-log verification.
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 117
+
+- UTC timestamp: 2026-08-28T07:24:10Z
+- Phase: CHECKPOINT-004
+- Operation: PASS — Final proactive ordinary-blob and LFS policy verification
+- Command: `python3 scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification.json
+- Duration: 6303 ms
+- Warnings: none
+- Errors: none
+- Decision: Continue only with zero hard-limit blobs, zero warnings, and every governed LFS path represented by a pointer.
+- Next: Run final strict Git integrity and execution-log verification.
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 118
+
+- UTC timestamp: 2026-08-28T07:24:13Z
+- Phase: CHECKPOINT-004
+- Operation: PASS — Final repository hygiene and active-script classification after stabilized verifier
+- Command: `python3 scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint004.json --markdown docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint004.md`
+- Inputs: docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json, scripts/trace_round16b/build_deferred_surface_census.py, scripts/trace_round16b/verify_deferred_surface_census.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint004.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint004.md
+- Duration: 9681 ms
+- Warnings: none
+- Errors: none
+- Decision: Continue only if all tracked scripts are exactly classified and repository hygiene reports zero violations.
+- Next: Run final strict Git integrity and execution-log verification.
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 119
+
+- UTC timestamp: 2026-08-28T07:24:25Z
+- Phase: CHECKPOINT-004
+- Operation: START — Final full strict Git object integrity after stabilized verifier
+- Command: `git fsck --full --strict --no-dangling`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 120
+
+- UTC timestamp: 2026-08-28T07:25:58Z
+- Phase: CHECKPOINT-004
+- Operation: PASS — Final full strict Git object integrity after stabilized verifier
+- Command: `git fsck --full --strict --no-dangling`
+- Inputs: none
+- Outputs: none
+- Duration: 93041 ms
+- Warnings: none
+- Errors: none
+- Decision: Continue only on a clean full strict fsck with no dangling objects.
+- Next: Run final direct append-only execution-log verification.
+- Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
