@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/build_local_candidate_census.py"
+  ],
+  "command": "python3 scripts/trace_round16b/build_local_candidate_census.py",
+  "command_id": "1787892290484-build-local-candidate-census-selector-correction",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 5838,
+  "end_timestamp_utc": "2026-08-28T04:44:56Z",
+  "exit_code": 0,
+  "operation_id": "build-local-candidate-census-selector-correction",
+  "phase_id": "LOCAL_CANDIDATE_UNIVERSE_CENSUS",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T04:44:50Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "66e34dbd05fe59e2438187ab840f3acddc11a5bc89f15b42fc9fe1bc245f011f",
+  "timed_out": false
+}

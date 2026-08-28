@@ -1,0 +1,1564 @@
+{
+  "active_candidate_family_count": 0,
+  "candidate_arity_distribution": {
+    "3": 21,
+    "4": 4,
+    "5": 1,
+    "6": 4,
+    "8": 1
+  },
+  "candidate_universe_status": "INITIAL_LOCAL_LOWER_BOUND_NOT_CLOSED",
+  "candidates": [
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:b63bdc2ca9694ca8e682cf6d1b38b65c8154eed366c405ab76391683e0b3c35b",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "consumer culture",
+        "gendering",
+        "commodification"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "27b0062d78197f7d6371b2977d1fbc171a1ef32759fdcbac960e5d376fa9f66a",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:049324b7a1f8dd02995e20043357b090b2357eb23e8fe588e78928f5306a82e1",
+        "R16B-SENSE:14bd96e324918cf3d87ed84253055004be79647294bf62a305ccf9a65a46b863",
+        "R16B-SENSE:f1dafc6df9c9a66b0b7c19d34606a2ed638c193dc7047afb8a1f83b3d564ebc1"
+      ],
+      "participant_set_key": "b63bdc2ca9694ca8e682cf6d1b38b65c8154eed366c405ab76391683e0b3c35b",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-002"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:044561834c2e1a6ce33250531129dd5aac02f59f9deb78c35df471e1a87c887d"
+      ]
+    },
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:7e0a0ee4f78d2f565c4f7771653ecc5a27828dd9fb704139d1e068f2a5fdce64",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "consumption",
+        "mediation",
+        "production"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "a024f019da1d2a294fcf0600eee6517871268a8ed41e9cf8e48fcc6a0c47c7b7",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:06c230c771547ee49390903e0bad7aaf44063613309c93bcbd72e808116af4c6",
+        "R16B-SENSE:35489187871bfd7b7be6e2d5268a3a922984d3bdad9e9a8ca61ea6edee84a5a7",
+        "R16B-SENSE:419a96e12217bfa4ed031510c32033cb2408489e3abb14eb28291b13c068e159"
+      ],
+      "participant_set_key": "7e0a0ee4f78d2f565c4f7771653ecc5a27828dd9fb704139d1e068f2a5fdce64",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-002",
+        "TRG-003",
+        "TRG-004",
+        "TRG-007"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:00092231636d6b65883c8310029e26dc1cdf75dcfb090d159b6efd93fc7c48b7",
+        "R16B-TRIGGER-OCC:02a36b6fac32133b3874f430d02fdb486ebb9b9330fa8e135b4c3e8ac9fda378",
+        "R16B-TRIGGER-OCC:09dbb2fac83076e85d7b540db395dc0b457d5d53480fdc11763d65743d41b513",
+        "R16B-TRIGGER-OCC:0cda4f7f480e99b80083a30bf570b3e017b0d0e3b902a86ef93fb8d4dbfaba65",
+        "R16B-TRIGGER-OCC:155b9e43f2600a0a9873b07a72216ec28db5dc5e42606ef54e6942730bc022aa",
+        "R16B-TRIGGER-OCC:2bed360065a9b474b662e8264edbb68c853652ece971a593cefdaf35acb89aac",
+        "R16B-TRIGGER-OCC:2cf8a6e148f975dfa6da48ab90d77f3fa8724d605f2287cbcca505299a88e102",
+        "R16B-TRIGGER-OCC:2d931d05adfe0de47acbe7b1d4d9371c8c06657e879eb3851c02aae60f56776e",
+        "R16B-TRIGGER-OCC:36329c919b0e442efa8c2938f2115975e681cd025a8abdf876de517a70e7588f",
+        "R16B-TRIGGER-OCC:36d649bc0fe0ea5124bc3f2036bb53427b21e2b3054e18342be9d3bc8e30a986",
+        "R16B-TRIGGER-OCC:3dee7e6d24b0e01541565a815aa31d540480d2a6f3c8bb138f871899d6eafc14",
+        "R16B-TRIGGER-OCC:46d6c6fed1b94ab4e391f7445eb87ffb081908eed911ab86e13b94202f5739da",
+        "R16B-TRIGGER-OCC:4cfc9f09f61a00274c4a8b9838bc07f00ecb190c6564d019b7998a8deba04163",
+        "R16B-TRIGGER-OCC:586d3a6d5cf5a86346f09a2acc3c012995d96969344029be49a7cb358e8645a2",
+        "R16B-TRIGGER-OCC:58b5dbb2f897a729623f42f1e04e5c816a4a31af8fcd5eac453bcc85031c1664",
+        "R16B-TRIGGER-OCC:5e3fd73dc271a70f569c0a8f42cf15541ed1857edf8c687c1ae433cc250b8d43",
+        "R16B-TRIGGER-OCC:5e8c00dc1a507a071d5cbc17d7667e88d040705008ff161fce485fbcb2910cc3",
+        "R16B-TRIGGER-OCC:5e8ce92a931c30585b86ae4cd339288455d83a17b93467f2f59408941105fead",
+        "R16B-TRIGGER-OCC:61ad00846aeb8b4874c0462f67408059a2282c56a6253d86e80ad2a1fe0be315",
+        "R16B-TRIGGER-OCC:66fbdbd1bccb2d3e6d8a509c0320b1434cba04147ada60f6e995a66b2a2dba77",
+        "R16B-TRIGGER-OCC:6841d3f0bce1153d13aead70e969a7907aa101aad34d1ea9ff621a9818394fae",
+        "R16B-TRIGGER-OCC:6b815da116e4c885b4198447462d9ac90d0381567945f792b34090425a95ddaa",
+        "R16B-TRIGGER-OCC:702e4379f69dd7c264acb0f89704520a9b6051d95a432211641862f509935fcf",
+        "R16B-TRIGGER-OCC:850e8fdf7a35bd9785778d61be40f30dc01302c2ad1c517cdbcb3a0de0c6e2dd",
+        "R16B-TRIGGER-OCC:86d36966d329f83aca2f039fcd8f24e297ca18244c99ab3aff450a219097d880",
+        "R16B-TRIGGER-OCC:8c69c7f8383868b6bd634989dab77b26ff187c5799dc923691aa581e7e7becd6",
+        "R16B-TRIGGER-OCC:93cfa754a47302252a3315afd97ab07340081cfcfd5246a683a436c10f650b5e",
+        "R16B-TRIGGER-OCC:98aefe9c2de3604d9955dca224c4408ba453157b6f39b58bf8f8dda6c320e4f0",
+        "R16B-TRIGGER-OCC:9f22a09e69347587587e1316916b9b471a4b87958875f3633436f488a0264d9f",
+        "R16B-TRIGGER-OCC:a126aaae19de1dcf17f2dab893b1ff0194e662d7b40296ae7badf263986b8427",
+        "R16B-TRIGGER-OCC:a58e8899db8095adc5e2f787c08897f8da6460c27f49cddd98bf1b88cfc47a84",
+        "R16B-TRIGGER-OCC:a6d100ea0eae61a5670ef2ae151b3d25ca536b7023fc0aa032367d186bd02c6a",
+        "R16B-TRIGGER-OCC:b033e8a9836dba626d8f5a8b51f5fdc81561cd0fd26698e1f602118262912dda",
+        "R16B-TRIGGER-OCC:b2cedc8d85b6f9246ddc35929f97b08664ece545a67f24d2d23643f338e71abe",
+        "R16B-TRIGGER-OCC:bd62dcbc9d5d75d2dbd1df21b9ecd01e28d2b2ef392f97563c16cd77f671599d",
+        "R16B-TRIGGER-OCC:c4a9ff1620a25821335fe92576e26710036d7b35f5410aa98e881d17386bc3f8",
+        "R16B-TRIGGER-OCC:c7a349042ce3fb62faaa602537aaaa49dd33703df46ae1bf53a78f4a93855039",
+        "R16B-TRIGGER-OCC:c9e0b7e398b59951a24fc3c728c8b4dd5d15f8f5a9b271cfaeb118c03399a243",
+        "R16B-TRIGGER-OCC:ca16104e86eb305eb7250e1e103bec77b73cff8cd899d9d85f08f6554a55fcfb",
+        "R16B-TRIGGER-OCC:dfbcb6f7543e9fd89f8fd24185f2adc85815c74af4782bd9efb2f0bb2f8a0bb3",
+        "R16B-TRIGGER-OCC:e7f070550d2d65302eb903d576b80307774a46588061f891892f367f28745328",
+        "R16B-TRIGGER-OCC:eaff769301dd300ccbf28422ff5bfe28eb451d8406f27123afb8dd8715782fb6",
+        "R16B-TRIGGER-OCC:ec9ba0a23c0967bd005e8e6d20f2267152df24cd0384b00365decf390e2a8ed5",
+        "R16B-TRIGGER-OCC:edd630ab55ebfa4be225c7b8d6f7d26e6cfcd3d9f501f6c1c702146caef7bf35",
+        "R16B-TRIGGER-OCC:f198ba498a88a78d823ff4f8774bbecdaba89c8ac83e8a0a0eafb3873788e2a7",
+        "R16B-TRIGGER-OCC:f3e66e2737129361cf1eedd945c433ecfbf24a16451ddbffc8168ac03fbd97bc",
+        "R16B-TRIGGER-OCC:fb46aba791e87a17d47e56a9391ef885ec354a5848b099095e0ffb7c33323918",
+        "R16B-TRIGGER-OCC:fe646c4dfe2c7f82dc662925d843255f8ae2786743f549f25a1c2de796f56f29",
+        "R16B-TRIGGER-OCC:ffb19a271560e97d57d2f21e4ebda1d0acd621ffba4a327b0c2fb0c64fddcebb"
+      ]
+    },
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:b19df183e2e9eb0dd6b0a3bccc95944aebf625d45faf01908eaddae994c97e67",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "consumption",
+        "production",
+        "mediating devices"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "3041e7605d34b12f7ff4d46e7a8a05c90a1866ebb6beb54259593d79269fcab5",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:06c230c771547ee49390903e0bad7aaf44063613309c93bcbd72e808116af4c6",
+        "R16B-SENSE:419a96e12217bfa4ed031510c32033cb2408489e3abb14eb28291b13c068e159",
+        "R16B-SENSE:5e7794a5a8ffdd590f850eef513993204d95e59ae28e9b35eb74c2124a47ee5b"
+      ],
+      "participant_set_key": "b19df183e2e9eb0dd6b0a3bccc95944aebf625d45faf01908eaddae994c97e67",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-002"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:2d582e66de4757f64de92f01d048fc8259763ca1e9ad4b001c08bf8b3fa678c7",
+        "R16B-TRIGGER-OCC:57947a0bbabcbf9a5ef7018e3dc25fd37fd0ae8c6584aa39f7dd77daa7fb2607"
+      ]
+    },
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:3cd10180090e141ef9c63f03a217b2bae056c52da1a52850736c3b580dd533b7",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "consumption",
+        "production",
+        "mediating channels"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "21ad75105b01fe06692d12af66195b951bc34427a846b64484af9eac83cc4ee7",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:06c230c771547ee49390903e0bad7aaf44063613309c93bcbd72e808116af4c6",
+        "R16B-SENSE:419a96e12217bfa4ed031510c32033cb2408489e3abb14eb28291b13c068e159",
+        "R16B-SENSE:5ea36372086b196bba3dc36bef959a30618df567e74bf17256365b21c301ec4c"
+      ],
+      "participant_set_key": "3cd10180090e141ef9c63f03a217b2bae056c52da1a52850736c3b580dd533b7",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-002"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:fe71e5e89a9d62c4e3c067c7ac6ecc7053828c3e81b45ac6c557016cfc09180e"
+      ]
+    },
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:1d76bf657bbdec293265d051268a2a1153be0108b15a8d63ebbf2cb98cf6f06a",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "production site",
+        "material displacement",
+        "supply chain"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "39657a3677739fd47d5cafd1b6df89880da6584ecba6ee50451eab1070562dac",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:0ebc966b965fc5703be0f4bae727d337f32d83eb7db9066e926a2530dcfa0171",
+        "R16B-SENSE:61aaade597c45243fcdef0d2514fc52f58a066ae5c9f4ad550727cb75b124f64",
+        "R16B-SENSE:697603bbe891d791295d478b3b16d10add9bdab1fd92826d63d8b630f3779cfb"
+      ],
+      "participant_set_key": "1d76bf657bbdec293265d051268a2a1153be0108b15a8d63ebbf2cb98cf6f06a",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-003",
+        "TRG-004",
+        "TRG-007"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:02157aea489f4236a5c75793a4fc786b027a524ff1b4f537f40b6e75b9224e71",
+        "R16B-TRIGGER-OCC:13fe0f9e45df076e888436a648a294f31d785fe1734992f4c0f860a860a0fad1",
+        "R16B-TRIGGER-OCC:16fba79b93d1adb190ddc6635bc854b75dce6a8e03aa75fb88151d91fa395578",
+        "R16B-TRIGGER-OCC:282e8e805e9f2ead8ea4fffb9a747da7bd08b9604415730dfe4926377019237c",
+        "R16B-TRIGGER-OCC:3026595d2c61e40db4ccd4e588b9a28a2f8c0edb0e2bbe18505d9b0a7f483e5c",
+        "R16B-TRIGGER-OCC:415fdac7398a929e81a79f078b1a923be2c8392c0eae9bdf91a933219192700e",
+        "R16B-TRIGGER-OCC:44ab8101ea838eacf35a41c99f0a364d7c0d200f7628c040bf6f128a7e90c83d",
+        "R16B-TRIGGER-OCC:486a04327d4372eafddcfc7ba3bc14f100a0305381daa6c0a0a1ef871c78dd1a",
+        "R16B-TRIGGER-OCC:48928be15ef31d4a2629a17ead579f26f55195b8724d54035d7938fb388cadaf",
+        "R16B-TRIGGER-OCC:4d162efd7efa1b4af2ee4a9df76d1432fae9af7c0f1e6ca801ad87c3a8527a0b",
+        "R16B-TRIGGER-OCC:52d88e2c3617d8cfee05f938bae8fa441fbc2234a90938c439046580853eb717",
+        "R16B-TRIGGER-OCC:52f1f687662501d617d51e7b7752566c84e288ca2728c90936d5af2e3566ce85",
+        "R16B-TRIGGER-OCC:535549309c881c24496a1f72ba698e51d4bdea0982f0ef4bb7951641ae784329",
+        "R16B-TRIGGER-OCC:6077a280389cfe741dbcc8903d6b6ec4821bea7ec58be1e0f46a84786c2a42c2",
+        "R16B-TRIGGER-OCC:6d8ddd75389be728b90cabbdce459bae431147aa8a8ce336de1a774749e1f9de",
+        "R16B-TRIGGER-OCC:6e53d7c32390ce2f6b9564eef5d275137a04b71ce857d6051764a1a433bd0063",
+        "R16B-TRIGGER-OCC:70d9310e0d521a915ebc7386f95a13af7e8ffedb91020f9eaac3bd4b4bb82040",
+        "R16B-TRIGGER-OCC:715f70115a6dbd78222a62bba04f49f0c40f40677e9b1d223dbb2dcc8f386607",
+        "R16B-TRIGGER-OCC:849eef865b1c4531699c207c68c03762dfbb9d322f9d7ca0ec41d3ef90705118",
+        "R16B-TRIGGER-OCC:92e0d65ed2eb6bb8ed97ba6793209200cf7a8651e366672246c5a9c4d8e656e1",
+        "R16B-TRIGGER-OCC:935ac84f58e6957fc674f625374fe3422d04d9986bddf35ee79ae888e8ea32cf",
+        "R16B-TRIGGER-OCC:96e2eeb5fbeddf8c0bca2e2c46ebedd93da90ab43aec90f1d13723911f01bbff",
+        "R16B-TRIGGER-OCC:987db5e0e8ec91871cd4c72ac58a3a9656b45968fa46c0ddc32b4ed51ef7e6f7",
+        "R16B-TRIGGER-OCC:9a59bff96efcfddd2023ee035e230d6d4c4995b2cba49fe34b4784403165d3c5",
+        "R16B-TRIGGER-OCC:a4ad23d3ab52ddf2a94e27133095aac353447f58b06028b5e5120175453c0e7e",
+        "R16B-TRIGGER-OCC:a57ac6de28e2959672d808e610c5b3fb25e3dca75569481f0c2755352820f89c",
+        "R16B-TRIGGER-OCC:ad9b22a73bef71cc84d99a4c26fd9070bbc34b18236370d2dbddbeebb3f1b428",
+        "R16B-TRIGGER-OCC:bbaeac80c6d64ba80291227ce1eb12f756a73a8486796134d904e74aae031bf9",
+        "R16B-TRIGGER-OCC:bd153d55df54c5af2f1fb68a4a87b088dda75162ffa4d5dfe5f5ccd4210c7fdd",
+        "R16B-TRIGGER-OCC:bd8b986a1f8ded9bdc7cbc871ad4a641b2dc45844bb70580d0ce126af20bbdaa",
+        "R16B-TRIGGER-OCC:bf6ef2ab871c62ed2e82503ec9ca4998e249f4b1f32ce9f4a324ea4e9a120567",
+        "R16B-TRIGGER-OCC:c1c81af6e2fd4c1f34cbdc5e01bfa7c798c035b049cc3b64e12678b1496af649",
+        "R16B-TRIGGER-OCC:c53f55987eb60575acec926329712e2eb0c83fba4f17adb6a330b1b31a81489d",
+        "R16B-TRIGGER-OCC:cbf8ac0888c36dd7bde9ac0ef2906ca6fb374b6e9e415bd72a32eb1d8eb5ccc9",
+        "R16B-TRIGGER-OCC:ceea60bb048f3cd2d2db9f599c62f0ac3460d760b53b95659bee5a7113554667",
+        "R16B-TRIGGER-OCC:cfca09742535dfc31b204ee3937fea818a027de07600e976672b178e5f33891f",
+        "R16B-TRIGGER-OCC:d1e34d829137ff9b35ef2888cd735fa86d93dd01e9947fc58cedf90b368e2053",
+        "R16B-TRIGGER-OCC:d2cd204af8ffdf2231bbdb686dbb3e8695e55a67a44adf9e730b87fa1b94bcaa",
+        "R16B-TRIGGER-OCC:d6ef4a12d0decb1ef6cea41f4caef9f88d5f6d4cbd63c8a8db86837caa87e1a9",
+        "R16B-TRIGGER-OCC:d827891ac9d7f3620910ae895de74f282a8d35f8ce0e7bf51f243935dc3182c6",
+        "R16B-TRIGGER-OCC:db582051d88bef7d0830b282f464666fa696f57ceac8ac6f2957c97d400e0097",
+        "R16B-TRIGGER-OCC:dd5dd90e71a08219b5080077d0b71d71d5630aed926ef5313ee5ba149e95e620",
+        "R16B-TRIGGER-OCC:e7576d2b070a7ddc628a4a17cfb697c1846e21aa66dfff6fa889b234d0f7a928",
+        "R16B-TRIGGER-OCC:e7e7061cb2ea6476707d189e710afe4e2e9a018c00aa3f4bc54a2e17381877ba",
+        "R16B-TRIGGER-OCC:efa1df8b2a6f2371f030f119d98b56f0860a21a9147450752dde264a9f5e0829",
+        "R16B-TRIGGER-OCC:f49f2492ccf007e4b937cef03da0ac22267c2943dd565eef0848c45c7723161a",
+        "R16B-TRIGGER-OCC:f8f4f8f4cadc67b12e097111ba1f2cc44aa0886e070196e3632f69da63d270f7",
+        "R16B-TRIGGER-OCC:fbcf4890457991e9c6d7c04452e139de91e821ba376ee21bc860fa7d3588ce61"
+      ]
+    },
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:de6643ced4014989a08d0517a4c72ea1ccb91d6f95be3303c35997dd8c3df9c1",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "gendering",
+        "Brazilian exposition",
+        "commodification"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "a296af818132d34138630c11783de372686981282a2b6beccec22382eb2526ad",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "CONTROL_ONLY_REJECTED_PARTICIPANT",
+      "participant_sense_ids": [
+        "R16B-SENSE:14bd96e324918cf3d87ed84253055004be79647294bf62a305ccf9a65a46b863",
+        "R16B-SENSE:eaa21928082dae77f8ed71bcf1d7f7c5409020e0b599c7cb9621380f5a3ae42d",
+        "R16B-SENSE:f1dafc6df9c9a66b0b7c19d34606a2ed638c193dc7047afb8a1f83b3d564ebc1"
+      ],
+      "participant_set_key": "de6643ced4014989a08d0517a4c72ea1ccb91d6f95be3303c35997dd8c3df9c1",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-002"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:b00ad15cf61cacd84e52e538acfeacfb4ee0b42e14d32b343c2c87ee6aff87c8"
+      ]
+    },
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:33a113b724e4e0088fd1c0fa77ea8757112a289ca51e8a441f9111b96697646a",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "design exchanges",
+        "appropriation",
+        "creative appropriation"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "1427b25d99fea36588bcadee756a21de3b5239cae3cc97a002ad04729bf229fc",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:1ccf80ed841858129d779749dbe51f60404ff6350be17abe450dfb79232bbffb",
+        "R16B-SENSE:558fbce86fd52c24f8d10f6d63fa017bd5356266e29792d4b3bd06a96ca7f67b",
+        "R16B-SENSE:d64e354e773ad525c74ef0abf45d30833bbdfbf850a823a632965c89574c529d"
+      ],
+      "participant_set_key": "33a113b724e4e0088fd1c0fa77ea8757112a289ca51e8a441f9111b96697646a",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-002"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:d9e45fcc8872a7adb28cd464937dc5e704d4762a7e81379f3ecaa30f9e546ed9"
+      ]
+    },
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:c0a6431919578166078d9823cb9994e5819ab7d56a9bad39a0dcb45d056d892c",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "cultural transformation",
+        "imitation",
+        "piracy"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "607591c65df9a260140bc5ad3f58869c3bc6f0e4478fa484cb63c1e3814eb0a1",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:1e7045ac788667d54d6b65cd2d78f8c378eb10d531dd198692143840ff9d766b",
+        "R16B-SENSE:3d5f8270a50edbaf14edbc7ae48c1cd8d230d94dbd0d1e60e116afca491720d7",
+        "R16B-SENSE:c6a305bac0ba3a375015fd389d830c7eb5ed46f883ed720ddfcb0dfff588055a"
+      ],
+      "participant_set_key": "c0a6431919578166078d9823cb9994e5819ab7d56a9bad39a0dcb45d056d892c",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-004",
+        "TRG-007"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:5136878da5cd62f226077bf948c79dbf833a5883ed8e98adacfef60b53dc82d7",
+        "R16B-TRIGGER-OCC:c33d3473b3510426220ed216ecc0a664801752831b957b57c618bf4a98d05d2b",
+        "R16B-TRIGGER-OCC:d72e89efc7bf1c467e7c3ae1da7ac7a1945ebcc11f50f9a8f57f0c650d487cbe"
+      ]
+    },
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:eaa73d3eac5e2a533cb50baf9955efb5a9c848bddbecdd05b6b59d30a1aa508b",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "mediation",
+        "mobile object",
+        "cultural mobility"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "81261079d9cfde2059bb249e1a97f8075d7a5cd6dcbef47cbbee6c33005e6a35",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:35489187871bfd7b7be6e2d5268a3a922984d3bdad9e9a8ca61ea6edee84a5a7",
+        "R16B-SENSE:74959afea7f94773eca66c42bbaabe55d3f5ac814d8b2f8efd05921e7e76aa78",
+        "R16B-SENSE:e49dd7c1bc4c519c2b2b6f27fda45281c12357afea73b60459f8f35cb7334e22"
+      ],
+      "participant_set_key": "eaa73d3eac5e2a533cb50baf9955efb5a9c848bddbecdd05b6b59d30a1aa508b",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-002"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:a1a38cdef01d804e81c40d530291da7c0d5584c04582943eb8ff1f13cb26bc4f"
+      ]
+    },
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:80a8ae28dc2c532a9ee8fb3293fbfa310d5e9b9042b7d8d3d1dc9612eb7fb941",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "imitation",
+        "piracy",
+        "commodification"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "76c286ff9a19512edaad01a42e218ceb64ac5023ca11ca485c9730ffc4e195eb",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:3d5f8270a50edbaf14edbc7ae48c1cd8d230d94dbd0d1e60e116afca491720d7",
+        "R16B-SENSE:c6a305bac0ba3a375015fd389d830c7eb5ed46f883ed720ddfcb0dfff588055a",
+        "R16B-SENSE:f1dafc6df9c9a66b0b7c19d34606a2ed638c193dc7047afb8a1f83b3d564ebc1"
+      ],
+      "participant_set_key": "80a8ae28dc2c532a9ee8fb3293fbfa310d5e9b9042b7d8d3d1dc9612eb7fb941",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-007"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:1f09c20a0ea635f399c35a8d02f6b7b2c89c170e2a301b943165a3be7528fef0"
+      ]
+    },
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:00244f87a89799f75a57307b7eecd35f40bd1f74c99f8e31f4c23fa56855c27a",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "exhibition",
+        "photography",
+        "typography"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "8ac913af12d211adc3e0432d017e4efb3c6a4ea7f520db1f2f5a92ceaba5ea54",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:4e14e64610176c44c8a9775fba3a7d484b4eee0fb06ee9553c17675cb7f0b634",
+        "R16B-SENSE:b25cab95ecf4ca503def2a66d5d89c36131f18c819b00e5c0c06737222baf067",
+        "R16B-SENSE:fd509f4a9f5aea51e88d869076b1534b55b173e8fd71bf4eb97c1c907a76859a"
+      ],
+      "participant_set_key": "00244f87a89799f75a57307b7eecd35f40bd1f74c99f8e31f4c23fa56855c27a",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-002"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:3a64a716813a1ff05e827eab67704bef9e89602be7feb65035237b37edf1ff7e",
+        "R16B-TRIGGER-OCC:7b9cb1b860b572ea90efd2dcf6d46434fb5486410b513c898c1dbaacb1c18a1b",
+        "R16B-TRIGGER-OCC:7c8cb35ba685083550a9eb9ce22cafd55e772bf984f4d91b121d667b2d15d184",
+        "R16B-TRIGGER-OCC:c8c9e3e959ca5cd318a81be81edf41285defcc4dff6a72ba083d8c74c790dc96"
+      ]
+    },
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:e33bd6538eb80f04087e13b1896ff995a5523453a10e8f4aec460ef9fdd87376",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "exhibition",
+        "trade",
+        "propaganda"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "cfa805658641315cd97aba1305bd8cd95e06b134ba7f7dfe584bf2332e393a9c",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:4e14e64610176c44c8a9775fba3a7d484b4eee0fb06ee9553c17675cb7f0b634",
+        "R16B-SENSE:f0e28e13851d04c13b701f53d9b3911cb50fc572cc6203c64527804f0b37e909",
+        "R16B-SENSE:f26224717160ca63c45ca85fe7c23e1469baa3e10672a68beafb13d195d0915d"
+      ],
+      "participant_set_key": "e33bd6538eb80f04087e13b1896ff995a5523453a10e8f4aec460ef9fdd87376",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-004"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:2853d6967bcbae21d6632aa246ab13fe697e4ec79315dc0dd503d5900efce1e0",
+        "R16B-TRIGGER-OCC:406c613516a692b6a854355b3ea0a83722c1d7bf706d3b8d05ae1db7c4010b95",
+        "R16B-TRIGGER-OCC:6cd8d5fcb0efae9aed862531c3a0b2c55e71d5a6b4b4efd096be0e211c119186",
+        "R16B-TRIGGER-OCC:748de6cb0ed481192a42c5d2f0bbf4aadabb51470374d0a34d3df43148786c24",
+        "R16B-TRIGGER-OCC:74a4900d94eecf849e086a54a842dbac4bb0cd96ca1b8e724c07dce566a8761d",
+        "R16B-TRIGGER-OCC:84abd4013a944e75989c468d935dfe6039b4de9fa8392c9a48a3987d10df42dc",
+        "R16B-TRIGGER-OCC:875cc15efb5c7d2bed9059cc19fcbdb4128a57b96da3a6ab924377fee0fbccd8",
+        "R16B-TRIGGER-OCC:c0c339b1b7fdb64d9158fabf34c37df736008193149c0f12748778dc23c60927",
+        "R16B-TRIGGER-OCC:de464000e259fceab6d7fa3a1cd610457547f771b59410d2794cddb3f6daddbe",
+        "R16B-TRIGGER-OCC:de47a1803d387cac4d096f88c898ab833bfa3cdbfb4412cc301a464a42aeaa44",
+        "R16B-TRIGGER-OCC:e2948b4ca4b56eceb5d1bef761b97ce865db0ece560ae1a20f4683797c1b9246",
+        "R16B-TRIGGER-OCC:e464d1c433a8964390803d0ad1cb77a86cb8c89df5a57a90b20e862b3197f7d3",
+        "R16B-TRIGGER-OCC:efeb1453ffbbc6c638cd3fd4c1b09b5293f2e57defea4009165a80e997e84749"
+      ]
+    },
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:3648ab4f374cda7a490244914de785b764e7e4f7c872f094e8a2d3f03a71a560",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "exhibition",
+        "trade",
+        "design diplomacy"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "e1583fe3bf07d85f19454358de8d282bbc20799680f05a437e24ccd5a637c1ab",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:4e14e64610176c44c8a9775fba3a7d484b4eee0fb06ee9553c17675cb7f0b634",
+        "R16B-SENSE:f0e28e13851d04c13b701f53d9b3911cb50fc572cc6203c64527804f0b37e909",
+        "R16B-SENSE:fa3369a6eb4bebe96ee289987f963e539b8da9c27ea0f454e8a24b6bddf9306f"
+      ],
+      "participant_set_key": "3648ab4f374cda7a490244914de785b764e7e4f7c872f094e8a2d3f03a71a560",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-004"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:17a83ad880d24f5cf60c61ca64fce1fad2752f782ee859d0a3abefe611dbaf84",
+        "R16B-TRIGGER-OCC:183939060f508e3d9112a8359a10b33b4799774a2041bf049a9c1c0b655785f0",
+        "R16B-TRIGGER-OCC:25cbc66e8a72bf60ea337122b1f2d1b637e6bde13d68dd917559a4ab223ab82f",
+        "R16B-TRIGGER-OCC:2afe89f415fd7c7a8a6c9ac953515e514c0e7fa12e26f108fd404759d54cb0db",
+        "R16B-TRIGGER-OCC:33e672269b7a9ffc80b986b70c81b238d2287c83d913a48fea77b722ccb25e87",
+        "R16B-TRIGGER-OCC:5392e56d1e320cb8ca46a3e23b630d8ccb89e3ab329d79aebf82ef075dab1167",
+        "R16B-TRIGGER-OCC:5836f177e523ae19c77da4176b580c5200b017a2e055e2ec8cd6541ec5927491",
+        "R16B-TRIGGER-OCC:5b58527ea38a36aff9c86b488d2150aadd05abbb2c629df552c8c938e39ae00e",
+        "R16B-TRIGGER-OCC:85613b3f3f354b9a0efa711b7b2410702f85453831d110cdd4f0cf36d2bb64cb",
+        "R16B-TRIGGER-OCC:a9ad39ffa4e83207561871b9aa75e7ccfca218c991275de69a41eb4ee998a0e7",
+        "R16B-TRIGGER-OCC:b8a981e3826b38dd499973aea875008113e42996136a0666f6fee03b0943f7fa",
+        "R16B-TRIGGER-OCC:d55dae023b20b2402ecfbd13214c7f51ada5320be890c06a53ebd4a2d0e232f5",
+        "R16B-TRIGGER-OCC:da890b5f614cef0a839445d05cb0fb416d416363ba0b2eb0c93919b00d2cfddd"
+      ]
+    },
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:23b72032e8165ac9f164a43ac0e1932f2fe4354f1b89f62d67ebe7d497de7af1",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "exhibition",
+        "propaganda",
+        "design diplomacy"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "f0cbfa023d336eb772bddbeb258faa5b376502529170e7aeff421d156eba654b",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:4e14e64610176c44c8a9775fba3a7d484b4eee0fb06ee9553c17675cb7f0b634",
+        "R16B-SENSE:f26224717160ca63c45ca85fe7c23e1469baa3e10672a68beafb13d195d0915d",
+        "R16B-SENSE:fa3369a6eb4bebe96ee289987f963e539b8da9c27ea0f454e8a24b6bddf9306f"
+      ],
+      "participant_set_key": "23b72032e8165ac9f164a43ac0e1932f2fe4354f1b89f62d67ebe7d497de7af1",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-003",
+        "TRG-004",
+        "TRG-007"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:1283c39e330c3c572347d63d5003f98d32b8c40177392a8370a528c307167ea4",
+        "R16B-TRIGGER-OCC:1c4e997c4af1e171f3c97cbf86b620a8a29377d9dbcd0baaf20bf98a12d3a217",
+        "R16B-TRIGGER-OCC:1dd565bc4cf5c584ef4969a399f8ace56dfd1a3fe6d95802aae745adbde623b9",
+        "R16B-TRIGGER-OCC:2231dc6473db839812d4b33b29b220144c896fe41802f3ba7cbbfe59552f0968",
+        "R16B-TRIGGER-OCC:24f5fb5073af31a6b56c329ec431fdb9a0e3bc168a7f541810dd5ee4d000901a",
+        "R16B-TRIGGER-OCC:2750a796077c0a3d25fae2d1776f2f017e59cc491fa78a9486f7cde5676d4794",
+        "R16B-TRIGGER-OCC:28e5f9c7863ed588d61faa86c5d91d32b811641bdd6c5ffa01beb6f811624b5f",
+        "R16B-TRIGGER-OCC:2e38bae1f85dcbfb6ba87e93c3bfb1794f7773f84d7d2b55488ecd8e3f00b3fb",
+        "R16B-TRIGGER-OCC:3160e385c661b65e2f5d451b65066f8349f1343a45fd9d436ba9283333ec8766",
+        "R16B-TRIGGER-OCC:31f7d59b05fdc0462e4993e5034e9c2a50c79c6ac98964dbaf6a6962561a1653",
+        "R16B-TRIGGER-OCC:321458e7f84ea22b3920b5e83e3d88bcaf73def1a62dd1802a33c8e16ea22df6",
+        "R16B-TRIGGER-OCC:434e38d98601f4d3786cbfe58a8104dc2b2e0eb14db1ea80c68e2422aadc4408",
+        "R16B-TRIGGER-OCC:4435b28a9c9340f8ab2f13b327cd460953b7efd42427257b059ba1b5c6585b34",
+        "R16B-TRIGGER-OCC:4a30e070993f4f440619bcb43e26facb8bf845e776fd1f4807cea9f6f5080572",
+        "R16B-TRIGGER-OCC:4a552b0837b9dc70ac753b2f548c898160a6230d19801079190a28ff8b208071",
+        "R16B-TRIGGER-OCC:4d507cb520e42772fc098dd40b515028e7b28bd08de43bcb4178db6d225ed752",
+        "R16B-TRIGGER-OCC:4dfc8774e100d8adeb51649e431dd4227e044bc3fb3ffcc8d68ec8fc7899c0ea",
+        "R16B-TRIGGER-OCC:4e68b3362e6bbb32e06e5cd1c30f50ad1d104b524bbec6ecbecab04488a43b94",
+        "R16B-TRIGGER-OCC:51477dbb9fc6830d6b6f2bdf42e270ec74ac7058815bf1a2e200d47cfdf68d05",
+        "R16B-TRIGGER-OCC:58e6eea78c8213e4675bb7c1f08586ea4059aca563e2329d596a1316e3f42c27",
+        "R16B-TRIGGER-OCC:5edf4303c5bc7a8cba368c311c24a4d3240812f80716d9f430a6b37f8e494bd9",
+        "R16B-TRIGGER-OCC:60ed58970bc9ba609913b26ddc61f6cb66ba8306c68512702623ab682466849c",
+        "R16B-TRIGGER-OCC:62c73e625af26f0b1f7d9ce16eae15ec1351b4746b78eaf621f7d3a4f51814da",
+        "R16B-TRIGGER-OCC:6e8c96ff1d670541fe7f2cb9be7115bebf60f86458cf6c44522ec3516b03c4de",
+        "R16B-TRIGGER-OCC:75be54720c8efb1022921041c0759d89ba3137d7b8e77c1fc50546b3129845ac",
+        "R16B-TRIGGER-OCC:7fc3e25d56b7ef117091a95e3bb5f92a73825ef9ea98f7064855b7c8ebf5b46b",
+        "R16B-TRIGGER-OCC:870f33db193d81cd61cf4757d6065d4723f3bd529761858b2677a860d06d840a",
+        "R16B-TRIGGER-OCC:8a2081465295e7bbf53d258131b8ca890ce63d45e56ae17d44773f87aa0ee654",
+        "R16B-TRIGGER-OCC:8bdcfbc38a9e800899c6573f6e00174fd45ecf108684caf510a4e8e4d86dabbb",
+        "R16B-TRIGGER-OCC:93b1382451bc0d02967606f55e6ab9e2611bef2339e3bece8b46a95f5852486b",
+        "R16B-TRIGGER-OCC:a1f85f12c0b1f88d8c56f0c29643320e2266e0230e8898f502976793ff7bae07",
+        "R16B-TRIGGER-OCC:a84efdc62b7355538561f3cb1121dd8e6683100da45ffd5860e2b9549d8cf748",
+        "R16B-TRIGGER-OCC:acfcfb0239367b9bcb02542a4bba107cdd43a2c956cb71baf129d20a9c522507",
+        "R16B-TRIGGER-OCC:b37f0052aa6f36dd68a4fa5463f35830e3efdaae5e8f8793885b3f59874c5027",
+        "R16B-TRIGGER-OCC:b4234c1d1f08f9c0f71abfe4f892432d85529829552a5a314c7d4e5a5e1aefbd",
+        "R16B-TRIGGER-OCC:b4bba36c64805ac955d5be0835ed1558cc31b71e22fe448d13b7e2a4b417d1e1",
+        "R16B-TRIGGER-OCC:c594f97928d75ca284a9dac7738d2bab5eb905ea14c77be9e07f2e4613bec5b6",
+        "R16B-TRIGGER-OCC:e03084a77f6db34fad36bad02b8bc58e516004eb3a697ef4bb3561eb2b4780f3",
+        "R16B-TRIGGER-OCC:e1a385b9fd4848262622ad4a839ecb99a1bf047c6c9ef7ddb1ec725511d4c0c3",
+        "R16B-TRIGGER-OCC:e6487c8bc58a03ff7237832fd5a1ae4ab5d32e779f0f9ae820aac23dc9e8a9f9",
+        "R16B-TRIGGER-OCC:edeeb0bd4556fe3a2a7a9e248ceea18298385bfa5f8e18c91ce7a43531c9e8bf",
+        "R16B-TRIGGER-OCC:eee00213e2a29c2083d16d4ccb4a273257b8151b6cf494cfecf32d0338f7b790",
+        "R16B-TRIGGER-OCC:f3a2545a99e82c6901bb06d5d4b70d7ba8ff7e741c4c7aa1195ce13e3c76fcbb",
+        "R16B-TRIGGER-OCC:faabaf76edef6fedf059402edf05d769d48d224b1228815bc1bba9a1b215496c",
+        "R16B-TRIGGER-OCC:ffbcb6b5555f09e81cfbabfa9d51baed7564bb33366d7e81c78cc61d4456b1ef"
+      ]
+    },
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:07d5c44f285178774f70755012d2745feec81d240210c340b5910a738ae0a837",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "material displacement",
+        "supply chain",
+        "professionalization"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "21b70852305c703f0403f5303a746ef45209d7a51ca42a8e0112ec957efed615",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:61aaade597c45243fcdef0d2514fc52f58a066ae5c9f4ad550727cb75b124f64",
+        "R16B-SENSE:697603bbe891d791295d478b3b16d10add9bdab1fd92826d63d8b630f3779cfb",
+        "R16B-SENSE:aaba242b61f07fc7756aa5d54b3d132896c230e138451ec96ac3b40b8c2c3ec3"
+      ],
+      "participant_set_key": "07d5c44f285178774f70755012d2745feec81d240210c340b5910a738ae0a837",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-004"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:4a78500427266d1cb966b287072f42aa9b041973be551154a2ff489d47ca9f7d"
+      ]
+    },
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:d6dfcd4e355294899be8838eb8ec71439d8911ea19f8aa92401d1a52becf76c0",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "institutionalization",
+        "education",
+        "professionalization"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "c72cbeff6c82df825bf5ff0270a2ab55fdf1f5eacfd67e043577cb16b6ecf34e",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:6672e4d46dd04d497061cde0fb1319f2795e43fafb72f047ac8a663d5c0dabfb",
+        "R16B-SENSE:8b4838ede22f2afe50260d73a4ee4b986be96dd92b53e980d8f6312b9e8ca51a",
+        "R16B-SENSE:aaba242b61f07fc7756aa5d54b3d132896c230e138451ec96ac3b40b8c2c3ec3"
+      ],
+      "participant_set_key": "d6dfcd4e355294899be8838eb8ec71439d8911ea19f8aa92401d1a52becf76c0",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-002"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:2e9463db546d0aad24ef246324b3f96eb09469bae822017d05f7ef35ad20ec19"
+      ]
+    },
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:2770b6b66713cd3191cec7b14915b14624cbda9b7307b53bb230ea7f29d8caec",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "institutionalization",
+        "canonization",
+        "professionalization"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "768a5b9b568924966b69468718042268abac426ca7fa5ee06be5f5984acc2244",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:6672e4d46dd04d497061cde0fb1319f2795e43fafb72f047ac8a663d5c0dabfb",
+        "R16B-SENSE:94c4f5d3fe61b3ac4c6a1540f918207e423a9abe9823bb4ddb0466ce033cda4d",
+        "R16B-SENSE:aaba242b61f07fc7756aa5d54b3d132896c230e138451ec96ac3b40b8c2c3ec3"
+      ],
+      "participant_set_key": "2770b6b66713cd3191cec7b14915b14624cbda9b7307b53bb230ea7f29d8caec",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-007"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:5c167ce72b236bce0926a8dedeafd50e1a809f792e3c7c23c96b370ea06240ce"
+      ]
+    },
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:15f5757830dfe043fb27e73c28ff3bfd902aaa9c938ab254fda8682d359a7249",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "institutionalization",
+        "design education",
+        "professionalization"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "361253d89209e9ce83d82fbec3f2257972d53b0f82996367093871f396cd297c",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:6672e4d46dd04d497061cde0fb1319f2795e43fafb72f047ac8a663d5c0dabfb",
+        "R16B-SENSE:9f5a38a6fb1ca9212921419af18b59d535ee2f944c89ce002dfa6db54090b9c8",
+        "R16B-SENSE:aaba242b61f07fc7756aa5d54b3d132896c230e138451ec96ac3b40b8c2c3ec3"
+      ],
+      "participant_set_key": "15f5757830dfe043fb27e73c28ff3bfd902aaa9c938ab254fda8682d359a7249",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-003",
+        "TRG-004"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:0a6d40780c0f8b39df2c21df31c45c3ae5aaf2f5e06d67e83c1aa8579116d5df",
+        "R16B-TRIGGER-OCC:0ddb4edb7d857631cd55dc5a7c805648026003dbc384462f35d46e5634762958",
+        "R16B-TRIGGER-OCC:28d14d96ee357c9981d3b8d501546780a015f5319240ae629d41aa1da5bf6f0a",
+        "R16B-TRIGGER-OCC:33d6f65237ed1f69928a271db7a45af38d9f44e5f56bed5d38e9c114e4a228e5",
+        "R16B-TRIGGER-OCC:4dd37a5cfaa475f53c3e0c6fc0388e5c2721275c6736ce8a6338fbc7f6eae4d3",
+        "R16B-TRIGGER-OCC:73d9538d23a8aac4af675ac436a18e3df481682285653c7a07e82bbea609beeb",
+        "R16B-TRIGGER-OCC:892b93c58f273429248854b7937d1875df916676348133a9cbaee32d394190ca",
+        "R16B-TRIGGER-OCC:8f510f8102ef769304271a83f7f4e6c4442642b1e6f49f1865b862975c531263",
+        "R16B-TRIGGER-OCC:ae27800f2f02dfff92f31369366c3ea8d50d45cbe86b354829da815d01aa2bf8",
+        "R16B-TRIGGER-OCC:aeb06099ce9f1b0b01b06eeae4a3fc39b8bccc35aac02c98e6954f722c2e7b6c",
+        "R16B-TRIGGER-OCC:b0ca83c5f44d025d1b0df4651ef0bcabed7265a497ff385d06ed85e6fa1a5822",
+        "R16B-TRIGGER-OCC:b630055e16e82ad4c4326517a18ddb863171293b45be83ebbef49f46b9874db5",
+        "R16B-TRIGGER-OCC:bb8035cbdeffd3f57494c32f44e77a1bf9049aa1013cc0aae3318553cee92cd8",
+        "R16B-TRIGGER-OCC:d5de7b727fd415997b54d0d62154b43e4f52186c524e3ba8aa01a209f7cf574d",
+        "R16B-TRIGGER-OCC:fe60bb8d7d6a36d249653c889a3dcf97c41e33005cce13a1ab16e290bcc7cbec"
+      ]
+    },
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:83009b1d124d4635a57866eeffba5e1a1a33e499bd60b30c6346b94ff1a04f8e",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "adaptation",
+        "cultural negotiation",
+        "rejection"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "6e49d975d83a4083489bbfc4092b510042ad5a77fea1f9d39a3559a4c5553929",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:698710ef66f0d551cde028b8e54bdbf6051b96902a736be6b9ab45d1ad91f848",
+        "R16B-SENSE:9415fd18554090ac9dd2dfc28a1ec541d67a94b8421b1cefafa578a03302257d",
+        "R16B-SENSE:9c499c8b62d5222b0be4049597c613d82925ede87bf34656671a6b1e4e491bc3"
+      ],
+      "participant_set_key": "83009b1d124d4635a57866eeffba5e1a1a33e499bd60b30c6346b94ff1a04f8e",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-002",
+        "TRG-003",
+        "TRG-004",
+        "TRG-007"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:05a80edbaa427826c7ac7438102cd6665a5fbcdbaec9103c94836695d645a9d6",
+        "R16B-TRIGGER-OCC:091c209f6ebf55d222df78f0960d224eff2217f1d50327da2b13e66ff8652d79",
+        "R16B-TRIGGER-OCC:11722a3819abe84244fb77f9811461136eb2bcf8105ab3aa253598008974b077",
+        "R16B-TRIGGER-OCC:12a1a72be48fe11293318458ed834ada9ffc4c074630aac433cda945117125e3",
+        "R16B-TRIGGER-OCC:16eb227abdf88bde17866438967c57d510ef793ddea1acc1442613e7cbc7b241",
+        "R16B-TRIGGER-OCC:1b02d78cf0343bc0334f24e25a0b1ca38c18ec46a8f502b2f57e27a3655a9698",
+        "R16B-TRIGGER-OCC:27a0e1545e987b981c765a7a6dffc1e69ab7494e439488f671bce1035b1d10ba",
+        "R16B-TRIGGER-OCC:2ee6b5e35f848132fecd72e41f8a6af7862f9334994f020b3434e7aa896d4dec",
+        "R16B-TRIGGER-OCC:2ef46d6480de7ff4d031186007acdea679a08e3c12c059362b1637525d9f9c6c",
+        "R16B-TRIGGER-OCC:33a4625c84e102035a06490eaa336b3b4bb4d6334c61fbcdac753713e80c036b",
+        "R16B-TRIGGER-OCC:3556daca4338ccbfea8a272ca4c576e286cb705370d49acc693bf1e6dee16a1c",
+        "R16B-TRIGGER-OCC:479c326b3024cd1a0fbe90349e9c987c67bf702d37a9e3085f873eaab27c7132",
+        "R16B-TRIGGER-OCC:484f8ed0f6e4ab268eae4252213d7abf035d5aae354d791e4490a2240532377c",
+        "R16B-TRIGGER-OCC:4bb8afd942a21213f663bd004d73f3bfa54ef0b312f980d77335f609e0214772",
+        "R16B-TRIGGER-OCC:5a737b1a3dcdcc20de9bd7ee0d60d1d27edae73e48ca7c437a525b891c652cfb",
+        "R16B-TRIGGER-OCC:5a88d05da44eff3d7fccd13b9614f9ccc7bf855bcb70cd5348afd209defb91e3",
+        "R16B-TRIGGER-OCC:6aad8b98c16a2eba32ac69020cdc9ed9f5321d608e6e571e42a08e6e86946473",
+        "R16B-TRIGGER-OCC:6f59bf9645c611e4849c49688cac526b7439bf37587cf28216028e761ff9e8fa",
+        "R16B-TRIGGER-OCC:713c1c8fa7afd5472d81e34ce525c97bc83d9ad877728c13a28c341620264356",
+        "R16B-TRIGGER-OCC:742458399510d6a33489d93df9770d380eda4885ba9d4b0c2da285f863ad8b4b",
+        "R16B-TRIGGER-OCC:76c4d299645348d6f0c7b07642f277daef1d18a282c0e662bfc23e6ae2b8ac46",
+        "R16B-TRIGGER-OCC:78d03ab72e8a3e8eaa8337b4a1661712d144119c8c547f942d2be159874a6b85",
+        "R16B-TRIGGER-OCC:78d3f9c3bb15d21cce0380a00447d2ca01a2ee535f21b0d914566b616ce5a952",
+        "R16B-TRIGGER-OCC:7ae5b18ed4ea465c930c46b9c65ef08cbdb6d7ed646abcb8f2090b60abc4a7ed",
+        "R16B-TRIGGER-OCC:7b0c06180c3ba6718a078e0251c77a5f4189f32ea76819440c96f9a7f80f3de4",
+        "R16B-TRIGGER-OCC:840fdf9b8712f6fdea5e7487afc8d8265b9af74a2d7fc4f328c569721d1ae918",
+        "R16B-TRIGGER-OCC:98888801fddf6384e080d34b662b5c60ca647bdd81916a3755d33efa696ea047",
+        "R16B-TRIGGER-OCC:98b10196642d31799b2067e6d6e4e78eb0eb71234fbcbb4a6c0ea1735f6e3ab7",
+        "R16B-TRIGGER-OCC:9b014b46b2180773276ff73a19a82f5963fce3dcf5144f0a9882a7215eead437",
+        "R16B-TRIGGER-OCC:9df31a7d35b1c7b1b0eff08e97edd3cdeee60b993bb5fd3123c85359209dda88",
+        "R16B-TRIGGER-OCC:a1819f55cf2b425cd3ad37677f4e2724249c78df778efe05f9e222d347abaf3c",
+        "R16B-TRIGGER-OCC:a5df206c2233c371cc3bd03399bb60aa19d7dfd9e23b0be8080191ea52e65e7a",
+        "R16B-TRIGGER-OCC:b142e40dfa5aac5141401e59af2bd2329250c5007b10f0d1f81ee133fd512c01",
+        "R16B-TRIGGER-OCC:b393b9f0c4d67bf3d5c04cbc823f94f1d30f370e3340b10bfa4d86600b1c5460",
+        "R16B-TRIGGER-OCC:bbf2f806cb1af6dd022aaf5d8ee371750bfdb11e616a7f835c646a7b2953d330",
+        "R16B-TRIGGER-OCC:bd8202b5f69dfd3b0b24a509fa4e0b5ce676cb899fd587458c0bcfdcda9016d5",
+        "R16B-TRIGGER-OCC:c5914d70b6805ff5a7960cfc5405254c5a9eafb82bbf2c182cbdbac4d2739458",
+        "R16B-TRIGGER-OCC:d1cb1a52cfcf57ba00bd1ff81c2c076dc73ff81d8410f51dd4c987a4321471c0",
+        "R16B-TRIGGER-OCC:d83e279a20c4bbf31e28d2b7ed727ce6330ddc261e66646a794e26897ea9cb14",
+        "R16B-TRIGGER-OCC:dadf3b58e32fddb4a69d2b90ff80294b46c52c595560899f63fbaaf1dab00680",
+        "R16B-TRIGGER-OCC:e2ffb0f13d21c2bb6435ea8d4303bcd300d2d308ac2559e1edb4dbf5a8c44b6a",
+        "R16B-TRIGGER-OCC:ecd41329fce846f012baaaacc937752e3319f7e97be83fc054d23214a51c21de",
+        "R16B-TRIGGER-OCC:f24c99ab35f87d43719b528865f0794d04fcbcf0bdd976d124392d5bddb91461",
+        "R16B-TRIGGER-OCC:f7bdcc6550b74dfcd4c6827643eb09e7075405e28cd155e49a153bd98247b568",
+        "R16B-TRIGGER-OCC:fec2245a66bb460a7e897638bb07d440847f104389d1cadd478fc41ebc55fbaf",
+        "R16B-TRIGGER-OCC:fee67f1c8cffc7bef9c749926da6be237e63d5df80449dcaf52d833fc586fe60"
+      ]
+    },
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:7696ac77a3bd8ac70e8e0181b3ae969502426a44200925dffb65ef88312e954a",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "education",
+        "design education",
+        "craft"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "035b2e8ad42594ae5762fdb8031329ad1f8edb0b3fc65fac2453303d89f0b247",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:8b4838ede22f2afe50260d73a4ee4b986be96dd92b53e980d8f6312b9e8ca51a",
+        "R16B-SENSE:9f5a38a6fb1ca9212921419af18b59d535ee2f944c89ce002dfa6db54090b9c8",
+        "R16B-SENSE:ffbea4357064ed41f3937f9e81c7425cc705fec020515cef904f2473a6e9302b"
+      ],
+      "participant_set_key": "7696ac77a3bd8ac70e8e0181b3ae969502426a44200925dffb65ef88312e954a",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-006"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:14c991561fa8bd73251faacbe1ee407c3fedcaac1d4b81242273c59e650d66e9"
+      ]
+    },
+    {
+      "arity": 3,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:af25d1d4c93f79886769d53d071805bd5b6726130b153e4484121321d1122e3a",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "trade",
+        "propaganda",
+        "design diplomacy"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "405517c64697a0783f30065dc78576f244b97d89671ef0f703a9fa07961e9248",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:f0e28e13851d04c13b701f53d9b3911cb50fc572cc6203c64527804f0b37e909",
+        "R16B-SENSE:f26224717160ca63c45ca85fe7c23e1469baa3e10672a68beafb13d195d0915d",
+        "R16B-SENSE:fa3369a6eb4bebe96ee289987f963e539b8da9c27ea0f454e8a24b6bddf9306f"
+      ],
+      "participant_set_key": "af25d1d4c93f79886769d53d071805bd5b6726130b153e4484121321d1122e3a",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-004"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:059b993e73fdc1907474b77e1817e2e9633a549495c1641ab59aca8bff142806",
+        "R16B-TRIGGER-OCC:0b1f9cb951eb48c1d12215ae2dd5135f814df0e43800928c9e5fd7b307edf5ad",
+        "R16B-TRIGGER-OCC:10f3a227d409a8dd0b2bcbd8f6f5901644ca86afa1aa3b0a82dcc712bbea20e2",
+        "R16B-TRIGGER-OCC:198305f416194bad2b9f6b8d52815b55c13381fc153a70cbf1d2706754d0ffb5",
+        "R16B-TRIGGER-OCC:1ba75f72415c80eb57114fdf83af84c0a98e0798aaae1897d4d7f40fbf8861a5",
+        "R16B-TRIGGER-OCC:1d1446d637138be108d88473982a331cae243a7c433f475072399565f5762d9e",
+        "R16B-TRIGGER-OCC:1dff9b9263525b6dd1968ed566e000c484edf4fea22d217a878ac195dc62331c",
+        "R16B-TRIGGER-OCC:227bd6ff33246f26b57f596650164486c6118956bc0dbf95538126d983db4bb3",
+        "R16B-TRIGGER-OCC:23c609a8f485003fbffa4e9f4e52abf3cdf349462533e38365f493a548778371",
+        "R16B-TRIGGER-OCC:34a24709478269aa9dfd00d47adbdf74386d72a31c8fc55037cba7f4ea726cbc",
+        "R16B-TRIGGER-OCC:353ef6f4743656bef6b7de1ed8b0b63c4b1735a69c5525731784c80935c89d69",
+        "R16B-TRIGGER-OCC:3e5c2508241b6207e6d7210d98dc119186554768f6495f50848bba87b17ea5f2",
+        "R16B-TRIGGER-OCC:45e834943e45ec963340c8860bca5018d4a8d1a2f2d0b3bba2042ef485b32a71",
+        "R16B-TRIGGER-OCC:49cb9d069aea84c9d51b82c5b1aac592d22b64e75d1f7ddbaebae7370c40eef4",
+        "R16B-TRIGGER-OCC:4bfdc2db99ed7ceb7fb34cd97be705ecb8c0ac006a6c96456493a5c605a4b109",
+        "R16B-TRIGGER-OCC:5a6d8203334ce0e6b884df7eb6bbc906e2a6d41e8c24320884842aa8cc032be6",
+        "R16B-TRIGGER-OCC:5f02f183e284dc87ab8ed0b21f6f737095be280bd8681047a00ffe9db1f4c6c9",
+        "R16B-TRIGGER-OCC:60963c9d2596504f59ebec9b49bd81323135fd921e3f1f7477233599bad18df8",
+        "R16B-TRIGGER-OCC:6123eabd8bea1e111dcd2d38d19d91ff8e674fa4b53b6a479b84c222f195e1f8",
+        "R16B-TRIGGER-OCC:64b234d2c3d0f06042d1375454ddec5166ae6f263bba529d13600efb3410b8f3",
+        "R16B-TRIGGER-OCC:67bad5be83d3b314eb2b6ffd3a01dc93c88260d7fbd5c1a3a377890ceb74d775",
+        "R16B-TRIGGER-OCC:688b8182f709ff9ab48d6092423b120f8d55d0956ddb61f2a2dc9acbe975e9ea",
+        "R16B-TRIGGER-OCC:6f3a3bc39d28dac7a1639375c4002fdb159c0d35a87ff6bc8dec2a7d98f87a5d",
+        "R16B-TRIGGER-OCC:74b0a079b9279d840667341793e15e79ffbce5cda78f772d5ce90b360b164084",
+        "R16B-TRIGGER-OCC:7a62f702617a7cdf74118948758fc77cbe32089aa15a4940af452b23c724d396",
+        "R16B-TRIGGER-OCC:7ae8b2eb8dd1ac0f10ec3aeb3f65ee97c07c3859c156ca199db570298953bb89",
+        "R16B-TRIGGER-OCC:80b86e5e1e43dab762e0f18dba1cf27ed919079770cbf571b3df51ff580d6f61",
+        "R16B-TRIGGER-OCC:8251af23000f494741606339ef8c4a99cac34a655c476b7f4acbaee97f8e2290",
+        "R16B-TRIGGER-OCC:865cda08da075e7ad0eec89c8e41abef1537f8e798e521360e698f62359a1bdb",
+        "R16B-TRIGGER-OCC:a8e53b0065f8deedf45a905a4edea9aea39f7f27127b5665396da396e327d49f",
+        "R16B-TRIGGER-OCC:b1eb1b6aa9538111d8e465fa01a9050c04eef56eee57685799e4023b05c31159",
+        "R16B-TRIGGER-OCC:b3db36c8408f440587568c9900f9faa8651277148a3a331804885d47dd313436",
+        "R16B-TRIGGER-OCC:c3e22ab90af9e6ba14e945d6155e68fa97b49fd5774aaf013052a01732c564d5",
+        "R16B-TRIGGER-OCC:c4974aca760033b13ac35f4d15e5fdb199f24c95eaa394ee44db0e1e0aa22d7f",
+        "R16B-TRIGGER-OCC:cc2fd31b4dd8edbf530a681a2440053b9af230e00a078b7445e7e0196276fcf0",
+        "R16B-TRIGGER-OCC:ceeed4bfb73ed7ace9a8c41f2a54cf3ca1dad085afd28d3fde4eafef85ebec47",
+        "R16B-TRIGGER-OCC:d9e4161d905e9e2e0bcecfc474916d8f9baaabda0c536d57ee6d1ed33c658b99",
+        "R16B-TRIGGER-OCC:e10219d25d67eecc5a820ed1512e897d2b4d71403561c84a10da9a5e8a8c9d49",
+        "R16B-TRIGGER-OCC:f208bf96cd25417e856812186a26f56375ec6f12ebd51f2ce6e72d3e344910db",
+        "R16B-TRIGGER-OCC:fbc4882d4b4336df86db10b6441f4c1d6d6b38714de9489b0be4689198dc3535"
+      ]
+    },
+    {
+      "arity": 4,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:9ba898462d422755c40d8ef6228e8a7faa6e74dd9b4b0499f82694e8ae4515da",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "gendering",
+        "institutionalization",
+        "design education",
+        "commodification"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "b898b102623071b22f235e6efe8e414b4f76bdfbac877afa9b39b0c533b05594",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:14bd96e324918cf3d87ed84253055004be79647294bf62a305ccf9a65a46b863",
+        "R16B-SENSE:6672e4d46dd04d497061cde0fb1319f2795e43fafb72f047ac8a663d5c0dabfb",
+        "R16B-SENSE:9f5a38a6fb1ca9212921419af18b59d535ee2f944c89ce002dfa6db54090b9c8",
+        "R16B-SENSE:f1dafc6df9c9a66b0b7c19d34606a2ed638c193dc7047afb8a1f83b3d564ebc1"
+      ],
+      "participant_set_key": "9ba898462d422755c40d8ef6228e8a7faa6e74dd9b4b0499f82694e8ae4515da",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-004",
+        "TRG-007"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:126e2931395b21c25b6141ad70cddb5fe56d2dc031ab2c4fe42902ffd239749d",
+        "R16B-TRIGGER-OCC:44c51d6b1a795bd8bd0f86c23b67bc8d28f2138f38ca5fc3f9d0f081da6dd887",
+        "R16B-TRIGGER-OCC:7d3f95aedb7a15e34dc59499adabe55dd3069cc9fc2f55c9c5457a5056f5bb40"
+      ]
+    },
+    {
+      "arity": 4,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:0c335e4ef6d612535b516a59ac96442d3cbf17affbbd517d57c6d74388f8fd2d",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "cultural transfer",
+        "adaptation",
+        "cultural negotiation",
+        "rejection"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "631dce4c2ccc72ed797ec990f9e79f955ab3536b2b07b92eba6c0589a2804828",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:1aa96f9aba9b8704f69327d5cdc34c2eff1c7e3d74643cddbf9ad8f507d7a5fb",
+        "R16B-SENSE:698710ef66f0d551cde028b8e54bdbf6051b96902a736be6b9ab45d1ad91f848",
+        "R16B-SENSE:9415fd18554090ac9dd2dfc28a1ec541d67a94b8421b1cefafa578a03302257d",
+        "R16B-SENSE:9c499c8b62d5222b0be4049597c613d82925ede87bf34656671a6b1e4e491bc3"
+      ],
+      "participant_set_key": "0c335e4ef6d612535b516a59ac96442d3cbf17affbbd517d57c6d74388f8fd2d",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-008"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:962b74f290c61658aed1afbf35b154e36f453ec7872dff13b6c2eb3c0a9da36b"
+      ]
+    },
+    {
+      "arity": 4,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:89817e7a449f1cc7b574fb1b89c9541f765e52825c5cb62bf0a2bb833e8f970a",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "exhibition",
+        "trade",
+        "propaganda",
+        "design diplomacy"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "1d0223456eb5fab43e8545c9883da6393a61a70ee8ef8a9db9d530bee6cfa786",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:4e14e64610176c44c8a9775fba3a7d484b4eee0fb06ee9553c17675cb7f0b634",
+        "R16B-SENSE:f0e28e13851d04c13b701f53d9b3911cb50fc572cc6203c64527804f0b37e909",
+        "R16B-SENSE:f26224717160ca63c45ca85fe7c23e1469baa3e10672a68beafb13d195d0915d",
+        "R16B-SENSE:fa3369a6eb4bebe96ee289987f963e539b8da9c27ea0f454e8a24b6bddf9306f"
+      ],
+      "participant_set_key": "89817e7a449f1cc7b574fb1b89c9541f765e52825c5cb62bf0a2bb833e8f970a",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-002",
+        "TRG-003",
+        "TRG-004"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:01bde87d61f3a372bf1aa3ac8c5ed01b4ccbfa4021ef03ddf336c8deff4ee43d",
+        "R16B-TRIGGER-OCC:032c9e51f000f49802decd4dab3fe9e6ab37015cbdd21d8685250c54c5314b13",
+        "R16B-TRIGGER-OCC:0a06a3c2056a6614a33b7778a79dfbc4f939af1d04c7633e37e203c1e8f967fa",
+        "R16B-TRIGGER-OCC:1826f68aa42a92bc6dca9d860b71f6023175d5f4f0c28713fd354e2069c54ff8",
+        "R16B-TRIGGER-OCC:2425f4be2faac27d2e4781ff9d9e0e377205735f0d3ac0d8d1007057c8982c3a",
+        "R16B-TRIGGER-OCC:246b2d51a66e6b509f2240966e16bb96057d7b8eb40d97d39461b22cc8c61251",
+        "R16B-TRIGGER-OCC:2ce2399b4948ecd97f37ee4e1726b41b60f885e1bf190d2d8f0120d9460a46a9",
+        "R16B-TRIGGER-OCC:2f30c0c9c59404c0e63526ef824929f5d2584c62f4588ffe199055a51da5b099",
+        "R16B-TRIGGER-OCC:34a3a57a448dbf9cf3adf1018c7812139f5a2fd0e5cc4157e7ef058d88d4324e",
+        "R16B-TRIGGER-OCC:3b3df5abb473472f96bdf2f5864f318eac96213b2dda7f4a3192aee639c66d26",
+        "R16B-TRIGGER-OCC:3fdcca663191ef12d5b7806888eeb26e0a95eecc7d73e98f5cc7ab2b4f5b403f",
+        "R16B-TRIGGER-OCC:463b8c81a96010d9e0dbad5d001d8784c3f0dde91ca2be1d644804c65970869a",
+        "R16B-TRIGGER-OCC:46f134c8d09b178d1550ae7fff01581b03f2a902eb245432fe7e7b09fc66b0ab",
+        "R16B-TRIGGER-OCC:47e7d90435105f248eb86d56bc27d2a1a121914976cf1d447171abc5befc262b",
+        "R16B-TRIGGER-OCC:4b3633a82fb5e23ad1706e555c6092c915533da4040ca62b6195a45facbb2f24",
+        "R16B-TRIGGER-OCC:4c092749b453ee6576120fda2fc88ba3f3711430059d0df4f9b673b8253ad68b",
+        "R16B-TRIGGER-OCC:529b01ade349fc5ec1e7352f7d90dac74d15382bb52cf6ffd68ed264ba939864",
+        "R16B-TRIGGER-OCC:562ba9002cc843378e5acf57cd2f8d892b9efe9e0331d905370dbb9dd448a421",
+        "R16B-TRIGGER-OCC:5d4db12993718682a36d32c492e3561b0320913ee2689008acaa2b9026387f0c",
+        "R16B-TRIGGER-OCC:6e94764052209c640fefd08b47df3440599535ff7046228f61bc6a7e2a5ebdf7",
+        "R16B-TRIGGER-OCC:704c0c889f83a43f3a8b1a73f98d5b624b9afcc5676938f58519a06cd7f26d34",
+        "R16B-TRIGGER-OCC:704ee7e707d4dd67b7b9fff13ed8d8b03c30483b8f5e9a2171930ff90852c13a",
+        "R16B-TRIGGER-OCC:71a9486c5f28a487812fc2c8744a6fc94d06606b864378dee2ceffe313708fdb",
+        "R16B-TRIGGER-OCC:756576c1436cbd1430355909b0e718756454cfaabf9ed06750ba4a48115d060a",
+        "R16B-TRIGGER-OCC:8537da1ab1ccf449516b1f3de1296868c171d9e1b872eea3b4353550c59faa0b",
+        "R16B-TRIGGER-OCC:8587f30de7a623f9e6485777758faab880124a187251e351ae924b2fd3ace114",
+        "R16B-TRIGGER-OCC:901e02775f1927e6c3447c1a292ce29fad6addc0cc8a0aed55a4cb9c2ba78662",
+        "R16B-TRIGGER-OCC:903b604e73a3977efb4751634361b3d7ed28587c2c86392b97abb6b98c406dc1",
+        "R16B-TRIGGER-OCC:96b2892dc4da76ec991acee1a8d95a03bb0156242330197190e1c142f671ed91",
+        "R16B-TRIGGER-OCC:9da9533aefee2b79b53218480fa69dea03168ec0f57208784ec07a488ac17b3a",
+        "R16B-TRIGGER-OCC:a3c1c52773986e6cb4b1daed5cd83a0f978ecf2bc5c518f6cc3af5fe355928fe",
+        "R16B-TRIGGER-OCC:aa7ed8700db3ecfcbcb89d105bfb0528d16a011e469d9a22eb98d98c612d72d4",
+        "R16B-TRIGGER-OCC:b0f432481cb6b776e9e09f9af09c0c34b0087952771f54488a55183ca9ffc6c9",
+        "R16B-TRIGGER-OCC:b1d252ae01fa65a4f2c04437e770fe4f3de8cd8156f7477d39a1ac666a03c7c3",
+        "R16B-TRIGGER-OCC:cfe3f05f4ca5550c8a1ff51ef5cc3914fb44577de09ae1b298f28fcd75897b9c",
+        "R16B-TRIGGER-OCC:d4da77ad36989006372cf1c339da3a933045c043f994ede284ad3a57986dcb77",
+        "R16B-TRIGGER-OCC:d70b958ebb88cbae6a0feadc21e91a3ea46f195e386fda7c350857ad3c3bfa1e",
+        "R16B-TRIGGER-OCC:da2bcfe907343507c993595146367fb73e3e9069da81802e6adbc24079ddb8ef",
+        "R16B-TRIGGER-OCC:dd78eb8c32132fe7b6ffaf695e1ed20bcc6eb68de60ded1d8c86a03a8f89937e",
+        "R16B-TRIGGER-OCC:e2ae18f559c630994377d2f392f996562172f3a7cd580a69a9589155d306e116",
+        "R16B-TRIGGER-OCC:e2b2323a75ebf0477c51b60eb4dc69324d13efa8d9d2a4ab8fba96c611556d2a",
+        "R16B-TRIGGER-OCC:e66a4cb068f15fc05498e960e6f8e04f715913259c566021c6489c8f4bc30dec",
+        "R16B-TRIGGER-OCC:e71deb02d2c7d8d2630dc628395740935778186becf515f48e138647d34bae40",
+        "R16B-TRIGGER-OCC:ec5243197131a6703d448475d40e3ad9d14bac2a45a2aa6d93656d49855e8057",
+        "R16B-TRIGGER-OCC:ee0efb4e632ad08b52a170ebfd755f90e668dd82ab611de3838f10f7216a8703",
+        "R16B-TRIGGER-OCC:f1251e1667abc539e752de573a9972d5418459b288f7b94fe1b06aaabf0221ad",
+        "R16B-TRIGGER-OCC:f336f2c37c92fc84fe6c5fae9a1afd2e6d801f2edb1fe5c6d01741279f9ac033",
+        "R16B-TRIGGER-OCC:f67ba2e0f02f33e87febfc00b9ca3fa47a8d0b33de18f60c8f72e6c109ba0722",
+        "R16B-TRIGGER-OCC:fed4ef9c8cd5c0462bb3b28ea9cea69e0728a0b664322a1ce8e8ed28209d706f"
+      ]
+    },
+    {
+      "arity": 4,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:08555e0036d8fa72ac6454261ba70bfa4ad09988a59f17c92c3401fd0d1d907d",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "institutionalization",
+        "professionalization",
+        "photography",
+        "typography"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "c84c42dfe0a4a9fcacf7db3316d2d6e7f168273d3b9262625bc1f0c7f8439232",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:6672e4d46dd04d497061cde0fb1319f2795e43fafb72f047ac8a663d5c0dabfb",
+        "R16B-SENSE:aaba242b61f07fc7756aa5d54b3d132896c230e138451ec96ac3b40b8c2c3ec3",
+        "R16B-SENSE:b25cab95ecf4ca503def2a66d5d89c36131f18c819b00e5c0c06737222baf067",
+        "R16B-SENSE:fd509f4a9f5aea51e88d869076b1534b55b173e8fd71bf4eb97c1c907a76859a"
+      ],
+      "participant_set_key": "08555e0036d8fa72ac6454261ba70bfa4ad09988a59f17c92c3401fd0d1d907d",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-004"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:409236449c87a416ec5fab0c633bc84cf7d9e9e7953c1ea815af1fef9c8e3f42"
+      ]
+    },
+    {
+      "arity": 5,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:d936154cb902968e2e5e0404e3dffaa3b61b47480b69f600b766b96351b66148",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "consumption",
+        "production site",
+        "production",
+        "material displacement",
+        "supply chain"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "10f832cabcb7c93994f6290728139083a88641aa48dd30be17462d61c26536f9",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:06c230c771547ee49390903e0bad7aaf44063613309c93bcbd72e808116af4c6",
+        "R16B-SENSE:0ebc966b965fc5703be0f4bae727d337f32d83eb7db9066e926a2530dcfa0171",
+        "R16B-SENSE:419a96e12217bfa4ed031510c32033cb2408489e3abb14eb28291b13c068e159",
+        "R16B-SENSE:61aaade597c45243fcdef0d2514fc52f58a066ae5c9f4ad550727cb75b124f64",
+        "R16B-SENSE:697603bbe891d791295d478b3b16d10add9bdab1fd92826d63d8b630f3779cfb"
+      ],
+      "participant_set_key": "d936154cb902968e2e5e0404e3dffaa3b61b47480b69f600b766b96351b66148",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-002"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:98f857b3241fd9c59078ac9e724da7bc86c2d76fbf2c4698fbed0f71f098a6e7"
+      ]
+    },
+    {
+      "arity": 6,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:6bd3485742a465105a9adb73f09f1d700f9601abf114d49ba37d02cbbe0337f7",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "consumer culture",
+        "education",
+        "photography",
+        "advertising",
+        "typography",
+        "craft"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "92e0c17dc5c3c505e93f7c032055f2651bd13a280e0ef43f37228cabfe3328b0",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:049324b7a1f8dd02995e20043357b090b2357eb23e8fe588e78928f5306a82e1",
+        "R16B-SENSE:8b4838ede22f2afe50260d73a4ee4b986be96dd92b53e980d8f6312b9e8ca51a",
+        "R16B-SENSE:b25cab95ecf4ca503def2a66d5d89c36131f18c819b00e5c0c06737222baf067",
+        "R16B-SENSE:f587f40fcb14f9230306986bb2b2ea917544385afefe2e818002f3f3e7af0f2a",
+        "R16B-SENSE:fd509f4a9f5aea51e88d869076b1534b55b173e8fd71bf4eb97c1c907a76859a",
+        "R16B-SENSE:ffbea4357064ed41f3937f9e81c7425cc705fec020515cef904f2473a6e9302b"
+      ],
+      "participant_set_key": "6bd3485742a465105a9adb73f09f1d700f9601abf114d49ba37d02cbbe0337f7",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-004"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:feabb940c6254e3d5c7c3a7e7819f206c3982b7c7a37dff2b77556974f568aac"
+      ]
+    },
+    {
+      "arity": 6,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:b2f6aef3aded759512be2f639056c7dacb37707ae596bf8c078035ccd5cd96d5",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "gendering",
+        "institutionalization",
+        "mobile object",
+        "photography",
+        "design diplomacy",
+        "craft"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "583db2ef6fc6034a1aba1c0e05045d15d786862b0596bfabff899b59f08a32dd",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:14bd96e324918cf3d87ed84253055004be79647294bf62a305ccf9a65a46b863",
+        "R16B-SENSE:6672e4d46dd04d497061cde0fb1319f2795e43fafb72f047ac8a663d5c0dabfb",
+        "R16B-SENSE:74959afea7f94773eca66c42bbaabe55d3f5ac814d8b2f8efd05921e7e76aa78",
+        "R16B-SENSE:b25cab95ecf4ca503def2a66d5d89c36131f18c819b00e5c0c06737222baf067",
+        "R16B-SENSE:fa3369a6eb4bebe96ee289987f963e539b8da9c27ea0f454e8a24b6bddf9306f",
+        "R16B-SENSE:ffbea4357064ed41f3937f9e81c7425cc705fec020515cef904f2473a6e9302b"
+      ],
+      "participant_set_key": "b2f6aef3aded759512be2f639056c7dacb37707ae596bf8c078035ccd5cd96d5",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-004"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:6d3ed44071968e56ac9061bc547b9fb45166dd0be1c754cf1203544149316b2b"
+      ]
+    },
+    {
+      "arity": 6,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:ed83d4054c6d0fa7f02d620e5253572e58205ac5d7839b870b10748486883188",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "cultural transfer",
+        "cultural transformation",
+        "cultural negotiation",
+        "design education",
+        "piracy",
+        "commodification"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "6996b458504377903847b88e3a16bfaa7c3f65e438d4907bf499bf2336ec4dc4",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "REVIEW_ELIGIBLE_NOT_VALIDATED",
+      "participant_sense_ids": [
+        "R16B-SENSE:1aa96f9aba9b8704f69327d5cdc34c2eff1c7e3d74643cddbf9ad8f507d7a5fb",
+        "R16B-SENSE:1e7045ac788667d54d6b65cd2d78f8c378eb10d531dd198692143840ff9d766b",
+        "R16B-SENSE:9415fd18554090ac9dd2dfc28a1ec541d67a94b8421b1cefafa578a03302257d",
+        "R16B-SENSE:9f5a38a6fb1ca9212921419af18b59d535ee2f944c89ce002dfa6db54090b9c8",
+        "R16B-SENSE:c6a305bac0ba3a375015fd389d830c7eb5ed46f883ed720ddfcb0dfff588055a",
+        "R16B-SENSE:f1dafc6df9c9a66b0b7c19d34606a2ed638c193dc7047afb8a1f83b3d564ebc1"
+      ],
+      "participant_set_key": "ed83d4054c6d0fa7f02d620e5253572e58205ac5d7839b870b10748486883188",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-004"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:1e97c0aeb96380ca3f2a7ae43372ba361d2bbd3dff6ee1bb293c9631e1e4d066"
+      ]
+    },
+    {
+      "arity": 6,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:5f28402103d5315b59cf0f022e43f679658b1e4d1e960072ae945a66c87d5669",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "Swiss typography",
+        "Bauhaus",
+        "Arts and Crafts",
+        "desktop publishing",
+        "digital interface",
+        "Brazilian exposition"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "6b4929b4ac0286b80cf952d79260983af833aad8af454d3ce547db374c8c14ad",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "CONTROL_ONLY_REJECTED_PARTICIPANT",
+      "participant_sense_ids": [
+        "R16B-SENSE:7273ba8b655b1b1d6833f2630dbce1cd0c14880b61802394b1e4fe1b5768713b",
+        "R16B-SENSE:c0e153c5cf186e6a7ee6e1475c6308e43a26f61945cb9bf2c5d6d4a194c9316b",
+        "R16B-SENSE:c73ec782faca3d72e6105bf118c92c2edf8b7a96293190326fc572ba962d0323",
+        "R16B-SENSE:d86c1d587eab45572d058061fe6b86c7eba2cadcc7dcdc51cd0bb4572b304682",
+        "R16B-SENSE:e8c2227b6d790a48079a74abfca3f3ea364e80d20835f39602db5ada5259e77f",
+        "R16B-SENSE:eaa21928082dae77f8ed71bcf1d7f7c5409020e0b599c7cb9621380f5a3ae42d"
+      ],
+      "participant_set_key": "5f28402103d5315b59cf0f022e43f679658b1e4d1e960072ae945a66c87d5669",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-004"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:d36676aec41bda897e96d7dcd4a57df62c5fe6ffb505e83d8b7a191964c143f2"
+      ]
+    },
+    {
+      "arity": 8,
+      "association_identity_frozen": false,
+      "candidate_id": "R16B-LOCAL-FAMILY:3d978cc2b2ed5a65ad9841e04307657d41e0a23034f54b821fa59ce974e43e00",
+      "candidate_object_kind": "LOCAL_PARTICIPANT_SET_REVIEW_FAMILY_NOT_ASSOCIATION",
+      "canonical_labels": [
+        "gendering",
+        "cultural transformation",
+        "imitation",
+        "institutionalization",
+        "design education",
+        "professionalization",
+        "photomontage",
+        "commodification"
+      ],
+      "case_resolution_status": "UNRESOLVED",
+      "evidence_review_status": "NOT_STARTED",
+      "family_content_sha256": "4785126c6e571f5a9c79dc0f29a0ac4a30cecd5ef61c259f6c2a520340f126d4",
+      "global_coherence_status": "NOT_REVIEWED",
+      "lifecycle_state": "DISCOVERED",
+      "order_semantics": "UNRESOLVED",
+      "participant_eligibility": "CONTROL_ONLY_REJECTED_PARTICIPANT",
+      "participant_sense_ids": [
+        "R16B-SENSE:14bd96e324918cf3d87ed84253055004be79647294bf62a305ccf9a65a46b863",
+        "R16B-SENSE:1e7045ac788667d54d6b65cd2d78f8c378eb10d531dd198692143840ff9d766b",
+        "R16B-SENSE:3d5f8270a50edbaf14edbc7ae48c1cd8d230d94dbd0d1e60e116afca491720d7",
+        "R16B-SENSE:6672e4d46dd04d497061cde0fb1319f2795e43fafb72f047ac8a663d5c0dabfb",
+        "R16B-SENSE:9f5a38a6fb1ca9212921419af18b59d535ee2f944c89ce002dfa6db54090b9c8",
+        "R16B-SENSE:aaba242b61f07fc7756aa5d54b3d132896c230e138451ec96ac3b40b8c2c3ec3",
+        "R16B-SENSE:abdf8e421dc88285b6bf170f6731ac49ea253947d483aa568b90b6dcb13a40a5",
+        "R16B-SENSE:f1dafc6df9c9a66b0b7c19d34606a2ed638c193dc7047afb8a1f83b3d564ebc1"
+      ],
+      "participant_set_key": "3d978cc2b2ed5a65ad9841e04307657d41e0a23034f54b821fa59ce974e43e00",
+      "product_eligibility": "INELIGIBLE_PENDING_GOVERNED_REVIEW",
+      "proposed_disposition": "PENDING_GOVERNED_REVIEW",
+      "role_semantics": "UNRESOLVED",
+      "scope_resolution_status": "UNRESOLVED_MAY_SPLIT_BY_CASE",
+      "trigger_ids": [
+        "TRG-004"
+      ],
+      "trigger_occurrence_ids": [
+        "R16B-TRIGGER-OCC:a6472a30f570d36980dc7d8f6ddedb7a4161c7a11ecc7a48786ad1bb5e4ecb43"
+      ]
+    }
+  ],
+  "closure": {
+    "COMPUTATIONAL_SPACE_CLOSURE": false,
+    "FUNCTION3_CLOSURE": false,
+    "GLOBAL_COMPOSITION_COHERENCE_CLOSURE": false,
+    "HIGHER_ORDER_ASSOCIATION_CLOSURE": false,
+    "PAIR_ASSOCIATION_CLOSURE": false,
+    "PRODUCT_ASSOCIATION_REACHABILITY_CLOSURE": false
+  },
+  "control_only_candidate_family_count": 3,
+  "crosswalk_disposition_distribution": {
+    "ACTIVE": 31,
+    "MERGED_SUPERSEDED": 1,
+    "REJECTED": 12,
+    "RESEARCH_ONLY": 21
+  },
+  "crosswalk_record_count": 65,
+  "deferred_method_surface_count": 21,
+  "evidence_review_complete_candidate_count": 0,
+  "format": "trace-round16b-local-candidate-census-v1",
+  "global_coherence_pass_candidate_count": 0,
+  "input_surface_count": 34,
+  "isolated_active_vocabulary_count": 5,
+  "isolated_active_vocabulary_proven_composable_count": 0,
+  "local_candidate_family_count": 31,
+  "method_surface_count": 44,
+  "method_surface_disposition_distribution": {
+    "DEFERRED_HUMAN_REVIEW_PENDING": 1,
+    "DEFERRED_LOCAL_SELECTOR_REVIEW": 15,
+    "DEFERRED_METADATA_QUERY_LOG_REVIEW": 1,
+    "DEFERRED_SOURCE_RIGHTS_AND_EVIDENCE_REVIEW": 3,
+    "DEFERRED_TRG009_DATABASE_DISCOVERY": 1,
+    "INSPECTED_ZERO_HIGHER_ORDER_EMISSION": 1,
+    "SELECTED_EXECUTION_INPUT": 22
+  },
+  "open_blockers": [
+    "Candidate scopes and cases may split participant-set review families into multiple semantic association candidates.",
+    "Twenty-one method-inventory surfaces are hash-accounted but remain explicitly deferred from executable selector review, so local trigger completeness is open.",
+    "Local evidence, rights, negative evidence, and source-bundle synthesis have not yet received final dispositions.",
+    "Database discovery and adaptive external scholarly searches have not yet been completed.",
+    "Ten n-ary role templates lack closed governed participant sets.",
+    "Five pair-isolated active terms lack final product-accessibility dispositions.",
+    "Every prior composition and downstream v2 object remains pending global-coherence and v3 regeneration review."
+  ],
+  "open_participant_resolution_queue_count": 10,
+  "parent_checkpoint_sha": "af056edadb43c1eb9e219217c42fd58b74ac5efd",
+  "prior_artifact_file_count": 1464,
+  "prior_artifact_namespace_count": 16,
+  "prior_row_exact_reconciliation_distribution": {
+    "ROUND15_FIXTURE": 25,
+    "ROUND15_FIXTURE_RESULT": 25,
+    "ROUND15_SEMANTIC_IMAGE": 25,
+    "ROUND16A_ACTIVE_PAIR_ASSOCIATION": 21,
+    "ROUND16A_ASSOCIATION_REPRESENTATION": 21,
+    "ROUND16A_ASSOCIATION_SUBGRAPH": 58,
+    "ROUND16A_CAPABILITY_FIELD": 16,
+    "ROUND16A_CATEGORY_ENTRY": 81,
+    "ROUND16A_CATEGORY_REPRESENTATION": 81,
+    "ROUND16A_DATABASE_AUTHORITY_FIELD": 6,
+    "ROUND16A_EXPORT": 11520,
+    "ROUND16A_LEGACY_RECONCILIATION": 11,
+    "ROUND16A_PAIR_CENSUS": 465,
+    "ROUND16A_PRODUCTION_COMPOSITION": 228,
+    "ROUND16A_ROUND15_ADAPTER_RECORD": 58,
+    "ROUND16A_SEED_VARIANT": 228,
+    "ROUND16A_STATE": 5760,
+    "ROUND16A_STATE_HASH_INDEX": 5760,
+    "ROUND16A_TOPOLOGY_COMPOSITION": 81,
+    "ROUND16A_TOPOLOGY_ENUMERATION_RESULT": 348,
+    "ROUND16A_TOPOLOGY_REJECTION": 277,
+    "ROUND16A_TRANSITION_DESCRIPTOR_FIELD": 3,
+    "ROUND16A_VOCABULARY_CANDIDATE": 65,
+    "ROUND16A_VOCABULARY_REPRESENTATION": 31,
+    "ROUND16A_WORKFLOW": 5760,
+    "ROUND16_ASSOCIATION_REPRESENTATION": 21,
+    "ROUND16_CAPABILITY_FIELD": 11,
+    "ROUND16_CATEGORY_REPRESENTATION": 4,
+    "ROUND16_DATABASE_AUTHORITY_FIELD": 14,
+    "ROUND16_EMBEDDED_SEMANTIC_IMAGE": 11,
+    "ROUND16_EXPORT": 104,
+    "ROUND16_FAILED_ASSOCIATION_AUDIT": 14,
+    "ROUND16_LEGACY_COMPOSITION": 11,
+    "ROUND16_MAP": 4,
+    "ROUND16_SOURCE_INVENTORY_ENTRY": 10,
+    "ROUND16_STATE": 52,
+    "ROUND16_STATE_HASH_INDEX": 52,
+    "ROUND16_TRANSITION": 816,
+    "ROUND16_TREE": 26,
+    "ROUND16_VOCABULARY_REPRESENTATION": 26,
+    "ROUND16_WORKFLOW": 5
+  },
+  "prior_row_exact_reconciliation_object_count": 32135,
+  "prior_transition_set_count": 749944,
+  "prior_transition_set_sha256": "27328cf72733c5454c41c8b396f19a5934a82068a45e4de42de396e166a06fe9",
+  "selected_method_surface_count": 23,
+  "selector_version": "trace-round16b-local-candidate-selector-v1",
+  "semantic_boundary": "These are participant-set review families emitted by the implemented local selectors, not a complete trigger universe, governed associations, evidence dispositions, or product-active facts.",
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
+  "status": "PASS_WITH_OPEN_RESEARCH_BLOCKERS",
+  "trigger_occurrence_count": 348,
+  "trigger_occurrence_distribution": {
+    "EXPLICIT_CLUSTER_NEAR_MISS": 2,
+    "ROUND10_DIRECT_PASSAGE": 3,
+    "ROUND13_DIRECT_POSITIVE_FIELD_PASSAGE": 6,
+    "ROUND13_INCIDENTAL_CASE_LABEL_CONTROL": 1,
+    "ROUND13_QUALIFICATION_CONTEXT_EXTENSION": 1,
+    "ROUND14_ACTIVE_PAIR_SHARED_LOCUS_BUNDLE": 10,
+    "ROUND14_ARCHIVE_EXACT_CONTEXT_DUPLICATE": 4,
+    "ROUND14_CONCEPT_ONLY_HIGHER_ORDER_LEAD": 1,
+    "ROUND14_NARY_FIXTURE": 6,
+    "ROUND14_QUALIFIED_SHARED_LOCUS_OVERLAP": 1,
+    "ROUND15_COMPOSITION_FIXTURE": 24,
+    "ROUND16A_CONNECTED_SUBGRAPH": 37,
+    "ROUND16A_PRODUCTION_COMPOSITION": 186,
+    "ROUND16A_TOPOLOGY_COMPOSITION": 60,
+    "ROUND16_LEGACY_COMPOSITION": 4,
+    "ROUND16_VOCABULARY_ONLY_MULTI_TERM": 1,
+    "ROUND9_SOURCE_LOCATOR_CONTEXT_COLLISION": 1
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "/bin/test",
+    "!",
+    "-e",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/prior-object-reconciliation-universe-v1.tsv"
+  ],
+  "command": "/bin/test '!' -e docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/prior-object-reconciliation-universe-v1.tsv",
+  "command_id": "1787894753189-record-superseded-monolithic-ledger-absent-retry",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 4,
+  "end_timestamp_utc": "2026-08-28T05:25:53Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "record-superseded-monolithic-ledger-absent-retry",
+  "phase_id": "CHECKPOINT-003",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T05:25:53Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

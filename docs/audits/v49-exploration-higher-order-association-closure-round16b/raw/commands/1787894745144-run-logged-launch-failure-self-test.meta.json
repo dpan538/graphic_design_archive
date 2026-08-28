@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "/definitely/nonexistent/round16b-command"
+  ],
+  "command": "/definitely/nonexistent/round16b-command",
+  "command_id": "1787894745144-run-logged-launch-failure-self-test",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 2,
+  "end_timestamp_utc": "2026-08-28T05:25:45Z",
+  "exit_code": 127,
+  "launch_error": "FileNotFoundError: [Errno 2] No such file or directory: '/definitely/nonexistent/round16b-command'",
+  "operation_id": "run-logged-launch-failure-self-test",
+  "phase_id": "CHECKPOINT-003",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T05:25:45Z",
+  "stderr_sha256": "9070da17ebaa16df217ecf97beb6edfc747aecb12a0fbdb7e89ca34b1d1a3cb0",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

@@ -168,28 +168,38 @@ def main() -> int:
     usage_before = resource.getrusage(resource.RUSAGE_CHILDREN)
     clock = time.monotonic()
     timed_out = False
+    launch_error = ""
     with stdout_path.open("wb") as stdout_handle, stderr_path.open("wb") as stderr_handle:
-        process = subprocess.Popen(args.command, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        out_thread = threading.Thread(
-            target=stream_pipe, args=(process.stdout, stdout_handle, sys.stdout), daemon=True
-        )
-        err_thread = threading.Thread(
-            target=stream_pipe, args=(process.stderr, stderr_handle, sys.stderr), daemon=True
-        )
-        out_thread.start()
-        err_thread.start()
         try:
-            return_code = process.wait(timeout=args.timeout_seconds or None)
-        except subprocess.TimeoutExpired:
-            timed_out = True
-            process.terminate()
+            process = subprocess.Popen(args.command, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        except OSError as error:
+            launch_error = f"{type(error).__name__}: {error}"
+            stderr_handle.write((launch_error + "\n").encode("utf-8", "replace"))
+            stderr_handle.flush()
+            sys.stderr.write(launch_error + "\n")
+            sys.stderr.flush()
+            return_code = 127
+        else:
+            out_thread = threading.Thread(
+                target=stream_pipe, args=(process.stdout, stdout_handle, sys.stdout), daemon=True
+            )
+            err_thread = threading.Thread(
+                target=stream_pipe, args=(process.stderr, stderr_handle, sys.stderr), daemon=True
+            )
+            out_thread.start()
+            err_thread.start()
             try:
-                return_code = process.wait(timeout=10)
+                return_code = process.wait(timeout=args.timeout_seconds or None)
             except subprocess.TimeoutExpired:
-                process.kill()
-                return_code = process.wait()
-        out_thread.join()
-        err_thread.join()
+                timed_out = True
+                process.terminate()
+                try:
+                    return_code = process.wait(timeout=10)
+                except subprocess.TimeoutExpired:
+                    process.kill()
+                    return_code = process.wait()
+            out_thread.join()
+            err_thread.join()
 
     ended = utc_now()
     duration_ms = round((time.monotonic() - clock) * 1000)
@@ -197,6 +207,8 @@ def main() -> int:
     errors: list[str] = []
     if return_code:
         errors.append(f"COMMAND_EXIT_{return_code}")
+    if launch_error:
+        errors.append(f"COMMAND_LAUNCH_ERROR:{launch_error.split(':', 1)[0]}")
     if timed_out:
         errors.append("COMMAND_TIMEOUT")
     status = "PASS" if not errors else "FAIL"
@@ -212,6 +224,7 @@ def main() -> int:
         "command": command_text,
         "exit_code": return_code,
         "timed_out": timed_out,
+        "launch_error": launch_error,
         "duration_ms": duration_ms,
         "stdout_sha256": sha256_file(stdout_path),
         "stderr_sha256": sha256_file(stderr_path),

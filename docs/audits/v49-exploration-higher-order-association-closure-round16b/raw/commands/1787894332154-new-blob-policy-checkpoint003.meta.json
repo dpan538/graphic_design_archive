@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/verify_new_blob_policy.py",
+    "--repo",
+    ".",
+    "--policy",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/large-file-policy.json",
+    "--output",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification.json"
+  ],
+  "command": "python3 scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification.json",
+  "command_id": "1787894332154-new-blob-policy-checkpoint003",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 55,
+  "end_timestamp_utc": "2026-08-28T05:18:52Z",
+  "exit_code": 1,
+  "operation_id": "new-blob-policy-checkpoint003",
+  "phase_id": "CHECKPOINT-003",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T05:18:52Z",
+  "stderr_sha256": "2abfe59b5e458eda973cc768c4d6f362146a4f1f3dc3e9241cf33d8fdfc0378d",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

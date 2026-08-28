@@ -1,5 +1,5 @@
 {
-  "changed_file_count": 69,
+  "changed_file_count": 206,
   "changed_files": [
     {
       "hydrated_bytes": 1726,
@@ -7,6 +7,14 @@
       "lfs_required_threshold_reached": false,
       "path": ".gitattributes",
       "sha256": "9a6d01388ebd78fcc36c4b040252c057e6f83fd4165df8cd19d87d68ac1fc3f2",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 2217,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": ".gitignore",
+      "sha256": "fa057d6718d0661c2d73b1543b9fc5fa572d1ed91afafd930e05dc146c41a121",
       "warning_threshold_reached": false
     },
     {
@@ -58,6 +66,14 @@
       "warning_threshold_reached": false
     },
     {
+      "hydrated_bytes": 495579,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/candidate-trigger-occurrence-ledger-v1.tsv",
+      "sha256": "ddc7a4506ad71e476ebb633ce096d58b5ed43d2ea032b81dac63ab0b54db644c",
+      "warning_threshold_reached": false
+    },
+    {
       "hydrated_bytes": 211,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
@@ -74,27 +90,27 @@
       "warning_threshold_reached": false
     },
     {
-      "hydrated_bytes": 834,
+      "hydrated_bytes": 1709,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv",
-      "sha256": "f12450f87932900acc579a9c199a2e9c0084c9b8d34a64c2bd39c2380345a9f0",
+      "sha256": "e17b35ffd660d93edcae1851189e6799d55897dde5ccdf58f9cb85c137c24b5b",
       "warning_threshold_reached": false
     },
     {
-      "hydrated_bytes": 2576,
+      "hydrated_bytes": 3027,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv",
-      "sha256": "22c8a9115df15b74ef39400168d9a805e8fc4a55b6e7210fc43d1a2a11f69672",
+      "sha256": "31a091c625d64f224c20b25e1388b50c17383b5d45914c0685bd5438014536f6",
       "warning_threshold_reached": false
     },
     {
-      "hydrated_bytes": 12100,
+      "hydrated_bytes": 36585,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/command-ledger.tsv",
-      "sha256": "7344b5a0a9195d1543b20cad74be46eace8bc49260a7ff92e4689323d643a553",
+      "sha256": "0a9b3f25961d8204e7d76d029da927e62c42849d6cc26505e4a4a65222b7a31b",
       "warning_threshold_reached": false
     },
     {
@@ -106,11 +122,43 @@
       "warning_threshold_reached": false
     },
     {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787887090266-bootstrap-authority-recovery-preflight.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 53,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787887090266-bootstrap-authority-recovery-preflight.stdout.log",
+      "sha256": "bffa5f19f344eb2433ddb7fa84454ff2e50170779253706f603ac15370e960f7",
+      "warning_threshold_reached": false
+    },
+    {
       "hydrated_bytes": 1505,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787887313513-source-lfs-manifest-verification.meta.json",
       "sha256": "d67f8922a65e67989aef6ff8221db546311777fc620b2a71d2f1a697a24ec1ec",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787887313513-source-lfs-manifest-verification.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 57,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787887313513-source-lfs-manifest-verification.stdout.log",
+      "sha256": "b202ce62ab76c642a92149a35cbbcf93e52d1ae203e6d749c7777741de8eef40",
       "warning_threshold_reached": false
     },
     {
@@ -122,11 +170,43 @@
       "warning_threshold_reached": false
     },
     {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787887393125-import-checkpoint-publication-receipts.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 60,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787887393125-import-checkpoint-publication-receipts.stdout.log",
+      "sha256": "5725f1f68683a328e9b30aae36b7258feb10025c0e6b6d65e92d77ac68339a70",
+      "warning_threshold_reached": false
+    },
+    {
       "hydrated_bytes": 2443,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787887745519-import-checkpoint-001-publication-receipts.meta.json",
       "sha256": "b4b1b94b1630539a62e0ad936a65fc1286641e8cd86ab80b9c40d7c731452237",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787887745519-import-checkpoint-001-publication-receipts.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 60,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787887745519-import-checkpoint-001-publication-receipts.stdout.log",
+      "sha256": "8362453b74d31566ff38147307ff7ecd075e66270aefaa57e888f10b48be3344",
       "warning_threshold_reached": false
     },
     {
@@ -138,11 +218,43 @@
       "warning_threshold_reached": false
     },
     {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787889108933-import-checkpoint-001-record-publication-receipts.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 60,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787889108933-import-checkpoint-001-record-publication-receipts.stdout.log",
+      "sha256": "2b6af3933a3ad24df407b7305f27a76074135254af296f585b6fa89121aa15ec",
+      "warning_threshold_reached": false
+    },
+    {
       "hydrated_bytes": 803,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787889124836-build-higher-order-method-checkpoint.meta.json",
       "sha256": "cbbbf348ae2beabc709b36cf5e8ee87d4aa76e4e57eebdce4bd6c6b2f7ce115a",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787889124836-build-higher-order-method-checkpoint.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 2616,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787889124836-build-higher-order-method-checkpoint.stdout.log",
+      "sha256": "42a3eb6e23bb242e5d7cc212c42e35189014e865309ed38def258bb76b4443c3",
       "warning_threshold_reached": false
     },
     {
@@ -154,11 +266,43 @@
       "warning_threshold_reached": false
     },
     {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787889135215-verify-higher-order-method-checkpoint.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 97,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787889135215-verify-higher-order-method-checkpoint.stdout.log",
+      "sha256": "2582359f71f597975105e726ef77ca378167e01a831fecd084f9d2063b661763",
+      "warning_threshold_reached": false
+    },
+    {
       "hydrated_bytes": 825,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787889166420-build-higher-order-method-checkpoint-correction.meta.json",
       "sha256": "197a2bf7093d36fc8553a420acd69c342135c3a2a92d45b3f4d9d4b958f0910b",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787889166420-build-higher-order-method-checkpoint-correction.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 2616,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787889166420-build-higher-order-method-checkpoint-correction.stdout.log",
+      "sha256": "2b059c7faa0eb99ac3fd1e3432fa6a5abd7b513fe5e6dc5e385b1c54db3f3040",
       "warning_threshold_reached": false
     },
     {
@@ -170,6 +314,22 @@
       "warning_threshold_reached": false
     },
     {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787889176840-verify-higher-order-method-checkpoint-retry.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 97,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787889176840-verify-higher-order-method-checkpoint-retry.stdout.log",
+      "sha256": "e521fbaffa9560d47dc96c0e00df9709e46fd24ab733540f023e3495f1b18f21",
+      "warning_threshold_reached": false
+    },
+    {
       "hydrated_bytes": 829,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
@@ -178,11 +338,763 @@
       "warning_threshold_reached": false
     },
     {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787889316351-build-higher-order-method-checkpoint-correction-2.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 2616,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787889316351-build-higher-order-method-checkpoint-correction-2.stdout.log",
+      "sha256": "c153d0fb5d4950b235687e2c03cccbc19e9320a92ac4e6f986e776f6e8bc353b",
+      "warning_threshold_reached": false
+    },
+    {
       "hydrated_bytes": 1109,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787889326460-verify-higher-order-method-checkpoint-retry-2.meta.json",
       "sha256": "4d61fff33ba0d0a09a22f0e21aa0ddf702b6ca43237e9c2404f7d7bce38a55de",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787889326460-verify-higher-order-method-checkpoint-retry-2.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 97,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787889326460-verify-higher-order-method-checkpoint-retry-2.stdout.log",
+      "sha256": "e521fbaffa9560d47dc96c0e00df9709e46fd24ab733540f023e3495f1b18f21",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 2988,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787890080582-import-checkpoint-002-publication-receipts.meta.json",
+      "sha256": "613977c72192bcf4c0409b6e0ae4abd7cd9550b1b207f4c14413fbf987019528",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787890080582-import-checkpoint-002-publication-receipts.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 60,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787890080582-import-checkpoint-002-publication-receipts.stdout.log",
+      "sha256": "6b61717bd0608db19aabce71a9790e52799d35b3837b6a6b88db8f18190694e8",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 796,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787890871981-build-local-candidate-census.meta.json",
+      "sha256": "fa2b0c4ff644384903c40cba5047a08861ce56a11f7afc3f67dd20631d3361c2",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787890871981-build-local-candidate-census.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 6220,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787890871981-build-local-candidate-census.stdout.log",
+      "sha256": "431e33c01b4d9e62a992098a22d42ece67ddb908f62eb35d09297aae27174a4d",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 812,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787890951009-build-local-candidate-census-sharded.meta.json",
+      "sha256": "c261dab873729cc48c7b1f9d2347466a402319967dc5ee9a3d44f889deaaf54e",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787890951009-build-local-candidate-census-sharded.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 6589,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787890951009-build-local-candidate-census-sharded.stdout.log",
+      "sha256": "54a2fb9fd97df0781bc3d6081c42636338c14aafe1982cfb40ca9c2f0c9d8748",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 1104,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787891365788-verify-local-candidate-census.meta.json",
+      "sha256": "1b71f80b2e974dd1dac1b3704734ed1e24dc334279340a0f8072bc4b098fe062",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787891365788-verify-local-candidate-census.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 79,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787891365788-verify-local-candidate-census.stdout.log",
+      "sha256": "a2d8154c0f5914c74f1e4c1d251b0fe4c41814c66ab87e9260325699bb0186ae",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 1122,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892018825-verify-local-candidate-census-hardened.meta.json",
+      "sha256": "515f310c086b0f25a5dd8df34b0c1d224299969da406dd4d8c1f48df8a5542b0",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892018825-verify-local-candidate-census-hardened.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 79,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892018825-verify-local-candidate-census-hardened.stdout.log",
+      "sha256": "31ba3761af99247aefba0470fe6a78f3f8b32ed68cfca68d124d9fc43c6b404e",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 834,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892134020-build-local-candidate-census-no-loss-correction.meta.json",
+      "sha256": "2962122fa4d33a3a7ca94551b9227ee8cc986b02b005e8b757ed11ce29bb95db",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892134020-build-local-candidate-census-no-loss-correction.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 6589,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892134020-build-local-candidate-census-no-loss-correction.stdout.log",
+      "sha256": "e6308d4249e13e79e42bb8488e4831c962f8059e18ee3cbb84104baf5a9dd949",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 836,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892290484-build-local-candidate-census-selector-correction.meta.json",
+      "sha256": "d50e4dde51b821ec7bd89255f653bba2c90856d3ad72bc07810e37b5b9dff24d",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892290484-build-local-candidate-census-selector-correction.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 6589,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892290484-build-local-candidate-census-selector-correction.stdout.log",
+      "sha256": "66e34dbd05fe59e2438187ab840f3acddc11a5bc89f15b42fc9fe1bc245f011f",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 854,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892519011-build-local-candidate-census-v2-representation-correction.meta.json",
+      "sha256": "afeca2e672d358651a507b5cf82942b53d79b419344792385ae7d128085c93d2",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892519011-build-local-candidate-census-v2-representation-correction.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 6589,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892519011-build-local-candidate-census-v2-representation-correction.stdout.log",
+      "sha256": "2a2e6c5d1c131eff8181b96bb0598d2770694c1fd53f7ba935086d1295b920d8",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 852,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892601475-build-local-candidate-census-sparse-hyperedge-correction.meta.json",
+      "sha256": "ecf8b871c2cd629e1dda04fa227b2b329decdda9fda9662a27a90b414d9ce7eb",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892601475-build-local-candidate-census-sparse-hyperedge-correction.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 6589,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892601475-build-local-candidate-census-sparse-hyperedge-correction.stdout.log",
+      "sha256": "2a417929f77c5df95b1c21e17b487c70a12ec71328a73736f3590793995d22f9",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 854,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892763431-build-local-candidate-census-state-index-shard-correction.meta.json",
+      "sha256": "1fe4f77712e65454259732c041372f71b91aa629c59d8a7da0dc757ed2b0d8d7",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892763431-build-local-candidate-census-state-index-shard-correction.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 6589,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892763431-build-local-candidate-census-state-index-shard-correction.stdout.log",
+      "sha256": "61f139e85ef95b63263ce19c3a19174ffee5e29f3bd2b5ae761fd3c873707301",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 1116,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892819935-verify-local-candidate-census-final.meta.json",
+      "sha256": "a7f6cf8afc045aeb8c5d525bebe59328421946b8678d7716cf699a8b5947371c",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892819935-verify-local-candidate-census-final.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 79,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892819935-verify-local-candidate-census-final.stdout.log",
+      "sha256": "3cbf5028176a22fd9ff0d61dc51ca9418a95cebff4e64c5a4981af15449aeb1a",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 1115,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892918778-verify-method-checkpoint-regression-checkpoint003.meta.json",
+      "sha256": "8e6a58f65b27022625102e1a0ace291b5f29458a9dbe4301c170d8c328b02705",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892918778-verify-method-checkpoint-regression-checkpoint003.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 97,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892918778-verify-method-checkpoint-regression-checkpoint003.stdout.log",
+      "sha256": "e521fbaffa9560d47dc96c0e00df9709e46fd24ab733540f023e3495f1b18f21",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 1328,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892927565-repository-hygiene-checkpoint003.meta.json",
+      "sha256": "4f82f763a69640d00406728e6aa2d97d38325de98cc33fe554ef1e03f2b5ca07",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892927565-repository-hygiene-checkpoint003.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 416,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892927565-repository-hygiene-checkpoint003.stdout.log",
+      "sha256": "224a24f7f364e16e0cf3cb6accbf88aeb3905bdc11e9fa7f4e6956e2893d4579",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 1340,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892956425-repository-hygiene-checkpoint003-retry.meta.json",
+      "sha256": "d155e73738daa350a46f3193bad49055c114c8279794e829410861f6e81fede5",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892956425-repository-hygiene-checkpoint003-retry.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 84,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892956425-repository-hygiene-checkpoint003-retry.stdout.log",
+      "sha256": "3fb1c46fe7d3d040093f41ea617d44709bf3d86eb3f5c5884ac7b619e8937dd8",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 755,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892986623-git-lfs-fsck-checkpoint003.meta.json",
+      "sha256": "64f4fdcb49fc67f81cc09c1d346fbac186c81487d120a9ec98ab6d5bfc2d52b5",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892986623-git-lfs-fsck-checkpoint003.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 16,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892986623-git-lfs-fsck-checkpoint003.stdout.log",
+      "sha256": "81f6819612dfaf9af7854c05c501e2a69e3852e47f0bfb0a82dfce8f3f6c5db9",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 758,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892994248-git-fsck-checkpoint003.meta.json",
+      "sha256": "383b6976df13b3b83daec46060851b279183e5b891441f7d3ae472aa531572e5",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892994248-git-fsck-checkpoint003.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787892994248-git-fsck-checkpoint003.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 853,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787893557329-build-local-candidate-census-surface-and-file-coverage-correction.meta.json",
+      "sha256": "4fc90ba8a610fc441c1bf5ed71002db08f27e56bde41cca325214dbb4aa812dc",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787893557329-build-local-candidate-census-surface-and-file-coverage-correction.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 7624,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787893557329-build-local-candidate-census-surface-and-file-coverage-correction.stdout.log",
+      "sha256": "3fd7427538b6d4f2e160364024e563776a491186e88f84030eb3d789aae6b515",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 831,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787893723913-build-local-candidate-census-final-boundary-correction.meta.json",
+      "sha256": "d375bd5e0c1145aa474450377d5407f48b0b6f1725bf3f563d296cfe68126615",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787893723913-build-local-candidate-census-final-boundary-correction.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 7624,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787893723913-build-local-candidate-census-final-boundary-correction.stdout.log",
+      "sha256": "19ecb2e42396c6b9b473baa0a06a21f31cd0e57ab7c641512b4a8e5175e3bb20",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 1151,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894163648-verify-local-candidate-census-surface-and-file-coverage-final.meta.json",
+      "sha256": "46a938387a8e1855bf452c783b6ea396acd377be8b6f70839f29a8bd4e600587",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894163648-verify-local-candidate-census-surface-and-file-coverage-final.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 80,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894163648-verify-local-candidate-census-surface-and-file-coverage-final.stdout.log",
+      "sha256": "d51192e89df20a174546cf3691320c6aa2d1e294ff1948e140af9524a2cb8d0e",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 1324,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894307832-repository-hygiene-checkpoint003-final.meta.json",
+      "sha256": "16f4e484b2b1fbb47c74107533b284f06de1e2dfeca7a4b743de182d0bcf160c",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894307832-repository-hygiene-checkpoint003-final.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 84,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894307832-repository-hygiene-checkpoint003-final.stdout.log",
+      "sha256": "526fb367b626250667ed75ae8e66884a9410ea2d30eb78b6b23de1903d1959f2",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 1273,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894332154-new-blob-policy-checkpoint003.meta.json",
+      "sha256": "80ff8de04463613cc607ce3de637d4d4c5e91f5d95d2e7c082bcf31e67b6afb7",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 1589,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894332154-new-blob-policy-checkpoint003.stderr.log",
+      "sha256": "2abfe59b5e458eda973cc768c4d6f362146a4f1f3dc3e9241cf33d8fdfc0378d",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894332154-new-blob-policy-checkpoint003.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 1279,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894347031-new-blob-policy-checkpoint003-retry.meta.json",
+      "sha256": "6cdc87cecef55bab157baf55ad3111e0e4ef9d70e6ddc2ab4289d6650ab96e08",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894347031-new-blob-policy-checkpoint003-retry.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 103,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894347031-new-blob-policy-checkpoint003-retry.stdout.log",
+      "sha256": "7f1cf734a0ad9c01bc89f037f3cc39a374449fab27911112a2d3d169dce599d2",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 750,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894359283-git-lfs-fsck-checkpoint003-final.meta.json",
+      "sha256": "d0cb3ed8dc3a7daa976d55f909d795f96ed87e0c6af31b4af1ea8512a39ac536",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894359283-git-lfs-fsck-checkpoint003-final.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 16,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894359283-git-lfs-fsck-checkpoint003-final.stdout.log",
+      "sha256": "81f6819612dfaf9af7854c05c501e2a69e3852e47f0bfb0a82dfce8f3f6c5db9",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 681,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894371219-clarify-prior-artifact-file-scope.meta.json",
+      "sha256": "db7a48590a393a461f0d9d0ac33a9d16a11ff007639779d565132f815135b3b4",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894371219-clarify-prior-artifact-file-scope.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894371219-clarify-prior-artifact-file-scope.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 753,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894378332-git-fsck-checkpoint003-final.meta.json",
+      "sha256": "4febf8d4714e894998e97950ded36e2b4f8c4ef0f147168f55274f72af55b799",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894378332-git-fsck-checkpoint003-final.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894378332-git-fsck-checkpoint003-final.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 1063,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894543509-record-superseded-monolithic-ledger-absent.meta.json",
+      "sha256": "1fd223a1d9b35d890a4dade7b6edc50cc493805ff63d821cfb9228b84a0ad4da",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 72,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894543509-record-superseded-monolithic-ledger-absent.stderr.log",
+      "sha256": "c38dd162cd3b858bba2209e8d27e874a73b72e2b35eb28628f56ac64d72ddf0a",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894543509-record-superseded-monolithic-ledger-absent.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 861,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894745144-run-logged-launch-failure-self-test.meta.json",
+      "sha256": "f72d8938ae0ece3bb22fad5c120204c334dc7488e4ef0647359d41d0277bfe3a",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 99,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894745144-run-logged-launch-failure-self-test.stderr.log",
+      "sha256": "9070da17ebaa16df217ecf97beb6edfc747aecb12a0fbdb7e89ca34b1d1a3cb0",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894745144-run-logged-launch-failure-self-test.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 994,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894753189-record-superseded-monolithic-ledger-absent-retry.meta.json",
+      "sha256": "c880c40d04b051c3efb96d985e3a668c1ac646b55c50b13c0c0d673be9cdf9e8",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894753189-record-superseded-monolithic-ledger-absent-retry.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894753189-record-superseded-monolithic-ledger-absent-retry.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 1382,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894821560-repository-hygiene-checkpoint003-after-harness-hardening.meta.json",
+      "sha256": "87cc024bf53e3b81117d74bc0d05aed53bc3bdb4236cbf6afd6c12e1dd59bd91",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894821560-repository-hygiene-checkpoint003-after-harness-hardening.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 84,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894821560-repository-hygiene-checkpoint003-after-harness-hardening.stdout.log",
+      "sha256": "38a8ef0bbff44de09a05bca6b212d5d0dcef6880f7ee23b9b4153c8a03f60a64",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894842834-new-blob-policy-checkpoint003-after-harness-hardening.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 0,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/1787894842834-new-blob-policy-checkpoint003-after-harness-hardening.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 75857,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/concept-sense-crosswalk-v1.tsv",
+      "sha256": "dfc1751482f3e74de78c2a94fd46f20eb3538d26e8c6bbf94482cac9534e770a",
       "warning_threshold_reached": false
     },
     {
@@ -226,19 +1138,19 @@
       "warning_threshold_reached": false
     },
     {
-      "hydrated_bytes": 73078,
+      "hydrated_bytes": 190304,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-events.jsonl",
-      "sha256": "102516451d735e2730aee6a3fd1a79e4404805894ec58d45e767733e1a0017a7",
+      "sha256": "0066ebec8cee9b3b30c52200e8776f1b6cce6bb640906acc249458064aa63b94",
       "warning_threshold_reached": false
     },
     {
-      "hydrated_bytes": 542,
+      "hydrated_bytes": 566,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-log-verification.json",
-      "sha256": "400923ea088ebfd5df84e6f838adcb2dbadba0a9edf0601d4eb8b59ddbb42ac7",
+      "sha256": "4848eadb4f678ef7f73768c7b8637c7d0424d89e4aec9ac16c5e3325ebda5435",
       "warning_threshold_reached": false
     },
     {
@@ -250,11 +1162,67 @@
       "warning_threshold_reached": false
     },
     {
+      "hydrated_bytes": 2970,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/isolated-active-term-audit-ledger-v1.tsv",
+      "sha256": "67eaf0d1a519163d6c6d54a1c728e9f3fdc502c6bac93b1b59b7593a384803d2",
+      "warning_threshold_reached": false
+    },
+    {
       "hydrated_bytes": 554,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/large-object-preflight.json",
       "sha256": "ce942d6f3cc6451b8e5845aa6ceed3355a986e9c9b09accc77db025767a6568c",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 8046,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-build-receipt.json",
+      "sha256": "496bb00bf0c748bdbbbf52d681f466c9a76b612d1c99be120ecd4c99e16c1be3",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 86822,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-census-v1.json",
+      "sha256": "6f854c52b9c5b87c05e260255bc84026aa25c153de2961496bfffa036270bc3a",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 59087,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v1.tsv",
+      "sha256": "f505cb6414b136e3901da6594a220c066a656ac42f0016589dbec1ba6d289a9a",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 16807,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-independent-verification.json",
+      "sha256": "f885192acd2a5fbaddaf662a0dad30fdcc4c054213f19249919733d11aac3749",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 10686,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-input-manifest-v1.tsv",
+      "sha256": "8737f76fe0e94ac2ec801b5fa4183fcb171dc5b11ce5e35b6115275d7c191ed2",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 23055,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-surface-disposition-ledger-v1.tsv",
+      "sha256": "c536f4343ea538674bac4676d4553903f93b2e2cb6bd4f155daec1ccd0957a80",
       "warning_threshold_reached": false
     },
     {
@@ -274,11 +1242,75 @@
       "warning_threshold_reached": false
     },
     {
-      "hydrated_bytes": 25274,
+      "hydrated_bytes": 72063,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification.json",
-      "sha256": "6f05ec81e6f90e2a2d0ba413011d1acfdc49c21213b1660f3af3f9ba365ad7f2",
+      "sha256": "d5bb0ed398e912ea86790a82c1d241bd03e448d9803dbdd684968990034bac76",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 9086,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/open-participant-resolution-ledger-v1.tsv",
+      "sha256": "f680797194ef66b0520a7c3c730a2ad50acc28c1f5de992aeb46b63cec2fed5f",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 1078598,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/prior-artifact-file-manifest-v1.tsv",
+      "sha256": "cb7bd7522c613064af048fcbb04874bfb9b6a316b334c1611873eaaebed4997c",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 3363890,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/prior-object-reconciliation-universe-v1-core.tsv",
+      "sha256": "fd143cc01ec943967cd497efbfb341a994b4d08ed488cf47f1eb345b5845e713",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 11541976,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/prior-object-reconciliation-universe-v1-exports.tsv",
+      "sha256": "d0e7ee1eb8c44b74ec50246509f686e023d5b3bc7f38aa479b8e199521d4b836",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 12307984,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/prior-object-reconciliation-universe-v1-states.tsv",
+      "sha256": "fab7057bb7c59feeb91a09d08fee55dd843cf2059dac683f89760a8a64354c87",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 6110968,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/prior-object-reconciliation-universe-v1-workflows.tsv",
+      "sha256": "991569c0e8ab1c8eca040877387db44bf67fb09359fabf7266ba8fb99d8373cc",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 17543,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/prior-object-set-manifest-v1.tsv",
+      "sha256": "9e61df859f8266024920c03fd1f76c791d67fa50338362da3736457357ea7764",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 97729,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/prior-production-descendant-manifest-v1.tsv",
+      "sha256": "34ea6417e76ba8ef411994dcc6d65ca0efe651e377f7dbd16e31e637c981606d",
       "warning_threshold_reached": false
     },
     {
@@ -322,11 +1354,43 @@
       "warning_threshold_reached": false
     },
     {
+      "hydrated_bytes": 2768,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts/006-1787889513336433000-checkpoint-002.json",
+      "sha256": "83397a171738e7ad3a2d8c1d6cd07c364f23c6901c090c8be9dfcc84931eb1c3",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 16649,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-ledger-checkpoint003-v1.tsv",
+      "sha256": "774533194295bf769162072ed6279aac37324f5116ad5b5f92ff3bf613f7a3c7",
+      "warning_threshold_reached": false
+    },
+    {
       "hydrated_bytes": 3774,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-ledger.tsv",
       "sha256": "cc571fbd38cf196a09af92c1c159843b965e7f4926cfaebcd31759c17e3d0d1b",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 10586,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint003.json",
+      "sha256": "da50167e67b73d6cab2d633378778f4814b3cd1ab7fded1d54546c693916b10a",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 10625,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint003.md",
+      "sha256": "cbec1ef00fc4f8d6261cc774bac1442963a5491c332c07368bef55a7dbf2c5a7",
       "warning_threshold_reached": false
     },
     {
@@ -386,11 +1450,11 @@
       "warning_threshold_reached": false
     },
     {
-      "hydrated_bytes": 106692,
+      "hydrated_bytes": 107475,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json",
-      "sha256": "896a84891eaf2f22a9a69cd3207284a417e8c3675951babc9a67029cb1b8a058",
+      "sha256": "404ba22110fbb3724cc159114e67233d20b93414c030c4acb1d5ba77351be0ea",
       "warning_threshold_reached": false
     },
     {
@@ -418,11 +1482,11 @@
       "warning_threshold_reached": false
     },
     {
-      "hydrated_bytes": 40756,
+      "hydrated_bytes": 110884,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "docs/research/trace-v49-exploration-higher-order-association-closure-round16b/00_LIVE_EXECUTION_LOG.md",
-      "sha256": "b8c8bce453a75841121a53dba5738ad8a63e125c8964af71bcb4de2a2a87da2f",
+      "sha256": "d7a10113fb9018da4321582e0a70054b3b9cb048c66fbfc8f1d83589587b0bdf",
       "warning_threshold_reached": false
     },
     {
@@ -458,6 +1522,22 @@
       "warning_threshold_reached": false
     },
     {
+      "hydrated_bytes": 8358,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/research/trace-v49-exploration-higher-order-association-closure-round16b/05_LOCAL_CANDIDATE_UNIVERSE_CENSUS.md",
+      "sha256": "75ad6981e82eaab750c41c926b37e226f4d6bcd813f18c59a418b013a0f446cc",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 3451,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "docs/research/trace-v49-exploration-higher-order-association-closure-round16b/06_RECURSIVE_GAP_AUDIT_001.md",
+      "sha256": "c2d00ef78927dcc3fb651de779b62f5b6903f62d6c3f68575e2637123b0e347a",
+      "warning_threshold_reached": false
+    },
+    {
       "hydrated_bytes": 7162,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
@@ -487,6 +1567,14 @@
       "lfs_required_threshold_reached": false,
       "path": "scripts/trace_round16b/bootstrap_round16b.py",
       "sha256": "126c280e856bbf61464c628913533207c260dd9cbc83711770991e0fb6066915",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 94798,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "scripts/trace_round16b/build_local_candidate_census.py",
+      "sha256": "a65fcd739ecd27978161b44a6e774f0766b37b56fd9b2c621c3575ca6f8faba0",
       "warning_threshold_reached": false
     },
     {
@@ -522,11 +1610,11 @@
       "warning_threshold_reached": false
     },
     {
-      "hydrated_bytes": 10434,
+      "hydrated_bytes": 11027,
       "lfs_filter": "unspecified",
       "lfs_required_threshold_reached": false,
       "path": "scripts/trace_round16b/run_logged.py",
-      "sha256": "44334f14f0d2ca3674691c25343aa2c30cb84dcd0576a6424b52d498b58fe358",
+      "sha256": "dc2bdba9e60f971b2176a51be957228999ef745e5fe35c255308110b95085b12",
       "warning_threshold_reached": false
     },
     {
@@ -535,6 +1623,14 @@
       "lfs_required_threshold_reached": false,
       "path": "scripts/trace_round16b/verify_execution_log.py",
       "sha256": "f72698640bedcb2e3ac67988ce58ec1e1f94a27620d1f6b4ffb669d72f161404",
+      "warning_threshold_reached": false
+    },
+    {
+      "hydrated_bytes": 100196,
+      "lfs_filter": "unspecified",
+      "lfs_required_threshold_reached": false,
+      "path": "scripts/trace_round16b/verify_local_candidate_census.py",
+      "sha256": "98cb93b16eea674b75a0204602ca4108782f3a4dd8bb20c601d4302226241f58",
       "warning_threshold_reached": false
     },
     {
@@ -555,9 +1651,9 @@
     }
   ],
   "failure_codes": [],
-  "maximum_new_committed_blob_bytes": 105919,
+  "maximum_new_committed_blob_bytes": 106692,
   "missing_lfs_rule_count": 0,
-  "new_committed_blob_count": 43,
+  "new_committed_blob_count": 85,
   "policy_path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json",
   "policy_sha256": "3edb4ec79f7c7d06cf145aebdd86fadba915b6bd75040edb65507578d06b441c",
   "schema_version": "trace-round16b-new-blob-policy-verification/v1",

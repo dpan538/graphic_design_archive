@@ -39,6 +39,8 @@ local-downloads/
 # Temporary files
 *.tmp
 *.log
+!docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/*.stdout.log
+!docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/*.stderr.log
 *.coverage
 .coverage
 .coverage.*

@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/verify_local_candidate_census.py",
+    "--repo",
+    ".",
+    "--output",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-independent-verification.json"
+  ],
+  "command": "python3 scripts/trace_round16b/verify_local_candidate_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-independent-verification.json",
+  "command_id": "1787892819935-verify-local-candidate-census-final",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 6698,
+  "end_timestamp_utc": "2026-08-28T04:53:46Z",
+  "exit_code": 0,
+  "operation_id": "verify-local-candidate-census-final",
+  "phase_id": "LOCAL_CANDIDATE_UNIVERSE_CENSUS",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T04:53:39Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "3cbf5028176a22fd9ff0d61dc51ca9418a95cebff4e64c5a4981af15449aeb1a",
+  "timed_out": false
+}

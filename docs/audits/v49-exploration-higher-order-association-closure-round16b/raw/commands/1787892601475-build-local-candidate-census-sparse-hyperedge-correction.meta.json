@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/build_local_candidate_census.py"
+  ],
+  "command": "python3 scripts/trace_round16b/build_local_candidate_census.py",
+  "command_id": "1787892601475-build-local-candidate-census-sparse-hyperedge-correction",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 6722,
+  "end_timestamp_utc": "2026-08-28T04:50:08Z",
+  "exit_code": 0,
+  "operation_id": "build-local-candidate-census-sparse-hyperedge-correction",
+  "phase_id": "LOCAL_CANDIDATE_UNIVERSE_CENSUS",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T04:50:01Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "2a417929f77c5df95b1c21e17b487c70a12ec71328a73736f3590793995d22f9",
+  "timed_out": false
+}

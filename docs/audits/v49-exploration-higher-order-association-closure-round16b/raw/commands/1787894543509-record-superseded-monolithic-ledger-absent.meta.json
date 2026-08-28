@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "/usr/bin/test",
+    "!",
+    "-e",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/prior-object-reconciliation-universe-v1.tsv"
+  ],
+  "command": "/usr/bin/test '!' -e docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/prior-object-reconciliation-universe-v1.tsv",
+  "command_id": "1787894543509-record-superseded-monolithic-ledger-absent",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 0,
+  "end_timestamp_utc": "2026-08-28T05:23:29Z",
+  "exit_code": 127,
+  "launch_error": "FileNotFoundError: [Errno 2] No such file or directory: '/usr/bin/test'",
+  "operation_id": "record-superseded-monolithic-ledger-absent",
+  "phase_id": "CHECKPOINT-003",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T05:22:23Z",
+  "stderr_sha256": "c38dd162cd3b858bba2209e8d27e874a73b72e2b35eb28628f56ac64d72ddf0a",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}
