@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "python3",
+    "database/scripts/verify_v50_round16b_manifest.py"
+  ],
+  "command": "python3 database/scripts/verify_v50_round16b_manifest.py",
+  "command_id": "1787936488132-cp012-check-v50-manifest",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 776,
+  "end_timestamp_utc": "2026-08-28T17:01:28Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp012-check-v50-manifest",
+  "phase_id": "CHECKPOINT-012-REGRESSION-GATES",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T17:01:28Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "23834016e318ef1f5bb3b891644f09232150d17c278657f0edc423bc0f0ff7cc",
+  "timed_out": false
+}

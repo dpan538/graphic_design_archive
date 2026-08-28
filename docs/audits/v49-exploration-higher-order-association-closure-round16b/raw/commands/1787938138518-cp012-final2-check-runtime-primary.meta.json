@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/build_exploration_v3_runtime_read_model.py",
+    "--check"
+  ],
+  "command": "python3 scripts/trace_round16b/build_exploration_v3_runtime_read_model.py --check",
+  "command_id": "1787938138518-cp012-final2-check-runtime-primary",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 96,
+  "end_timestamp_utc": "2026-08-28T17:28:58Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp012-final2-check-runtime-primary",
+  "phase_id": "CHECKPOINT-012-FINAL-CORRECTED-GATES",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T17:28:58Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "dcdcedaedfae31784d123a826072dac9d833272b19510060897b35b52a7c5002",
+  "timed_out": false
+}

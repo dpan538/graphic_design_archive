@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/verify_v3_semantic_contract_independent.py",
+    "--check"
+  ],
+  "command": "python3 scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check",
+  "command_id": "1787936558895-cp012-recheck-v3-semantic-independent",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 721,
+  "end_timestamp_utc": "2026-08-28T17:02:39Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp012-recheck-v3-semantic-independent",
+  "phase_id": "CHECKPOINT-012-CORRECTIVE-REGRESSION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T17:02:38Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "c1284b21b9da7e197fd4828f61c95aeb77b41ad717f451c622a4ecdb024e3337",
+  "timed_out": false
+}

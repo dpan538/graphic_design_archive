@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/build_exploration_v3_runtime_read_model.py"
+  ],
+  "command": "python3 scripts/trace_round16b/build_exploration_v3_runtime_read_model.py",
+  "command_id": "1787937991297-cp012-refresh-v3-runtime-primary",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 47,
+  "end_timestamp_utc": "2026-08-28T17:26:31Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp012-refresh-v3-runtime-primary",
+  "phase_id": "CHECKPOINT-012-CORRECTIVE-RUNTIME-BINDING",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T17:26:31Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "7dfd2f65fe0cc5d6556746d31585512122992220adb16adba4fbcc06115f01c4",
+  "timed_out": false
+}

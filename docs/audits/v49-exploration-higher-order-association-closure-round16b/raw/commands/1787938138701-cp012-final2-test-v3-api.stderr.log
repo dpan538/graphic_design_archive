@@ -1,0 +1,21 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: independent frozen manifest trust pin
++ actual - expected
+
++ '2ee550028cb60749bee7efa456ed21ea4f0c6170bb5c68d8888017fc948fdd2c'
+- '8346574defad9dcb16f49202f88d0aeb25c11440deb41fe5623f515f6c28e9a1'
+
+    at equal (file:///private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/scripts/test-trace-exploration-v3.mjs:75:10)
+    at file:///private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/scripts/test-trace-exploration-v3.mjs:265:1 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: '2ee550028cb60749bee7efa456ed21ea4f0c6170bb5c68d8888017fc948fdd2c',
+  expected: '8346574defad9dcb16f49202f88d0aeb25c11440deb41fe5623f515f6c28e9a1',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.21.0

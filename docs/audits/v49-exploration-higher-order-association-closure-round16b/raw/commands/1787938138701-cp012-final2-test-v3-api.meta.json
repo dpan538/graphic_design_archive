@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "npm",
+    "--prefix",
+    "frontend",
+    "run",
+    "test:exploration-api-v3"
+  ],
+  "command": "npm --prefix frontend run test:exploration-api-v3",
+  "command_id": "1787938138701-cp012-final2-test-v3-api",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 359,
+  "end_timestamp_utc": "2026-08-28T17:28:59Z",
+  "exit_code": 1,
+  "launch_error": "",
+  "operation_id": "cp012-final2-test-v3-api",
+  "phase_id": "CHECKPOINT-012-FINAL-CORRECTED-GATES",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T17:28:58Z",
+  "stderr_sha256": "180d464c0ece5c647d5bd5e24e93263604c9179bd64913684dad63c548ba3910",
+  "stdout_sha256": "2568811f318e3e065f9d1bbc2cfe57298a1a4f0bdde3c143f8ab77e819f7766f",
+  "timed_out": false
+}

@@ -11,8 +11,8 @@ const scriptPath = fileURLToPath(import.meta.url);
 const frontendRoot = resolve(dirname(scriptPath), "..");
 const generatedRoot = resolve(frontendRoot, "generated/trace-exploration-v3");
 const EXPECTED_READ_MODEL_SHA256 = "f1ae8a35895b27c15fb3d9b42828b8611633ee8ee7e2cbc825772b590304351b";
-const EXPECTED_MANIFEST_SHA256 = "8346574defad9dcb16f49202f88d0aeb25c11440deb41fe5623f515f6c28e9a1";
-const EXPECTED_CHECKSUMS_SHA256 = "45b0d047fa103ae3fb56b31909d8aa3bfa4f3fc586131891b60ab5bdfa70b243";
+const EXPECTED_MANIFEST_SHA256 = "2ee550028cb60749bee7efa456ed21ea4f0c6170bb5c68d8888017fc948fdd2c";
+const EXPECTED_CHECKSUMS_SHA256 = "002d13c9175354054ee550b4d55d275ea2fad1c10693991bd726897aa50e8173";
 const jiti = createRequire(import.meta.url)("jiti")(import.meta.url, {
   interopDefault: true,
   alias: {

@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/build_round16a_global_reconciliation.py", line 908, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/build_round16a_global_reconciliation.py", line 885, in main
+    context = load_context()
+  File "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/build_round16a_global_reconciliation.py", line 495, in load_context
+    verify_inputs()
+    ~~~~~~~~~~~~~^^
+  File "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/build_round16a_global_reconciliation.py", line 220, in verify_inputs
+    raise ValueError(f"pinned input drift: {relative}: {observed} != {expected}")
+ValueError: pinned input drift: .gitattributes: 986c47b85349d7589c537507c53ca768a53b7fac1059fd0a434b2366f9e2b65b != 39220b2b34b02184bc84ff293163c874819305b6cbf1005faac573d5bab48098

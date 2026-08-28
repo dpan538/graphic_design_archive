@@ -35,8 +35,8 @@ LARGE_REL = f"{RAW_REL}/large/round16a-transition-reconciliation-v1"
 SOURCE_SHA = "5419770959bdb8998b693fb2275b47e29b92367c"
 SOURCE_TREE = "977d7e8e045c71857959750b775cd4df3d036686"
 AUTHORITY_BASE_SHA = "468105499c7be102deec7d6555aced688dea9901"
-BUILDER_VERSION = "trace-round16b-round16a-global-reconciliation-builder-v1"
-VERIFIER_VERSION = "trace-round16b-round16a-global-reconciliation-independent-verifier-v1"
+BUILDER_VERSION = "trace-round16b-round16a-global-reconciliation-builder-v2"
+VERIFIER_VERSION = "trace-round16b-round16a-global-reconciliation-independent-verifier-v2"
 
 REGISTRY_PATH = f"{R16A_RAW}/canonical-composition-registry-v2.json"
 ENUMERATION_PATH = f"{R16A_RAW}/composition-enumeration-v2.tsv"
@@ -89,7 +89,7 @@ OBJECT_OUTPUTS = {
 
 # This order is part of the primary input-manifest contract.
 PINNED_INPUT_SHA256 = {
-    ".gitattributes": "39220b2b34b02184bc84ff293163c874819305b6cbf1005faac573d5bab48098",
+    ".gitattributes": "986c47b85349d7589c537507c53ca768a53b7fac1059fd0a434b2366f9e2b65b",
     REGISTRY_PATH: "51c3e29909a8aa5226a7d18ebaef896aa52c48be6725d722c869515874c6c24d",
     ENUMERATION_PATH: "75efbe8f0e5d18d431b1e525900da6eb30ff6abe1a97d407058e637680ada2cd",
     REJECTION_PATH: "dc10dbb41a9e4492ca682507bfa9b46df318039f83f022e16b7b3f3d8d485951",

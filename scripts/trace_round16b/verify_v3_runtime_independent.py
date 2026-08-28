@@ -38,13 +38,13 @@ SEMANTIC_PARENT_SHA = "e5ddbc443c4a0a28004034cba439340ecdeb9a75"
 CONTRACT_VERSION = "trace-exploration-v3-semantic-contract-1.0.0"
 READ_MODEL_VERSION = "trace-exploration-runtime-read-model-v3-1.0.0"
 MANIFEST_VERSION = "trace-exploration-runtime-manifest-v3-1.0.0"
-VERIFIER_VERSION = "trace-round16b-v3-runtime-independent-verifier-v3"
+VERIFIER_VERSION = "trace-round16b-v3-runtime-independent-verifier-v4"
 API_VERSION = "trace-exploration/v3"
 SEMANTIC_NAMESPACE = "trace/exploration/v3"
 CANONICAL_SERIALIZATION = "recursive-key-sort;array-order-preserved;json-minified;final-lf;utf8"
 EXPECTED_READ_MODEL_SHA256 = "f1ae8a35895b27c15fb3d9b42828b8611633ee8ee7e2cbc825772b590304351b"
-EXPECTED_MANIFEST_SHA256 = "8346574defad9dcb16f49202f88d0aeb25c11440deb41fe5623f515f6c28e9a1"
-EXPECTED_CHECKSUMS_SHA256 = "45b0d047fa103ae3fb56b31909d8aa3bfa4f3fc586131891b60ab5bdfa70b243"
+EXPECTED_MANIFEST_SHA256 = "2ee550028cb60749bee7efa456ed21ea4f0c6170bb5c68d8888017fc948fdd2c"
+EXPECTED_CHECKSUMS_SHA256 = "002d13c9175354054ee550b4d55d275ea2fad1c10693991bd726897aa50e8173"
 
 SURFACE_COLLECTIONS = {
     "scopes",

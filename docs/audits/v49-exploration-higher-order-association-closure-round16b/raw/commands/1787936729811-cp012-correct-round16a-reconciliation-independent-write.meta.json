@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/verify_round16a_global_reconciliation.py"
+  ],
+  "command": "python3 scripts/trace_round16b/verify_round16a_global_reconciliation.py",
+  "command_id": "1787936729811-cp012-correct-round16a-reconciliation-independent-write",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 26467,
+  "end_timestamp_utc": "2026-08-28T17:05:56Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp012-correct-round16a-reconciliation-independent-write",
+  "phase_id": "CHECKPOINT-012-CORRECTIVE-REGRESSION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T17:05:29Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "0baf28c38cebd375296899f550666702bfa1e6e31860ac5ba4f7b1c1c31120db",
+  "timed_out": false
+}

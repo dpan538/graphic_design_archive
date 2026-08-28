@@ -1,6 +1,6 @@
 {
   "format": "gda-v49-active-script-allowlist/v1",
-  "scriptCount": 309,
+  "scriptCount": 311,
   "unknownClassificationCount": 0,
   "scripts": [
     {
@@ -2854,6 +2854,16 @@
       "decision": "KEEP_ACTIVE"
     },
     {
+      "path": "scripts/trace_round16b/build_recursive_gap_closure_audit.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
       "path": "scripts/trace_round16b/build_v3_semantic_contract.py",
       "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
       "current_runtime_required": false,
@@ -2975,6 +2985,16 @@
     },
     {
       "path": "scripts/trace_round16b/verify_round16a_global_reconciliation.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py",
       "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
       "current_runtime_required": false,
       "current_api_required": false,

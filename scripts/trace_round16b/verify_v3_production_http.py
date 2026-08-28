@@ -42,8 +42,8 @@ LOOPBACK_HOST = "127.0.0.1"
 DEFAULT_NEXT_PORT = 3000
 PERFORMANCE_INTERPRETATION = "OBSERVATIONAL_NO_SLO_OR_PRODUCTION_CAPACITY_CLAIM"
 EXPECTED_READ_MODEL_SHA256 = "f1ae8a35895b27c15fb3d9b42828b8611633ee8ee7e2cbc825772b590304351b"
-EXPECTED_MANIFEST_SHA256 = "8346574defad9dcb16f49202f88d0aeb25c11440deb41fe5623f515f6c28e9a1"
-EXPECTED_CHECKSUMS_SHA256 = "45b0d047fa103ae3fb56b31909d8aa3bfa4f3fc586131891b60ab5bdfa70b243"
+EXPECTED_MANIFEST_SHA256 = "2ee550028cb60749bee7efa456ed21ea4f0c6170bb5c68d8888017fc948fdd2c"
+EXPECTED_CHECKSUMS_SHA256 = "002d13c9175354054ee550b4d55d275ea2fad1c10693991bd726897aa50e8173"
 COMMON_HEADER_EXPECTATIONS = {
     "allow": "GET, HEAD, OPTIONS",
     "cache-control": "private, no-store",
@@ -275,10 +275,19 @@ def write_json(path: Path, value: Mapping[str, Any]) -> None:
 
 def write_case_ledger(path: Path, cases: Sequence[Mapping[str, Any]]) -> None:
     with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=CASE_FIELDS, dialect="excel-tab", extrasaction="ignore")
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=CASE_FIELDS,
+            dialect="excel-tab",
+            extrasaction="ignore",
+            lineterminator="\n",
+        )
         writer.writeheader()
         for row in sorted(cases, key=lambda item: str(item["case_id"])):
-            writer.writerow({key: row.get(key, "") for key in CASE_FIELDS})
+            output_row = {key: row.get(key, "") for key in CASE_FIELDS}
+            if not output_row["error"]:
+                output_row["error"] = "NONE"
+            writer.writerow(output_row)
 
 
 def parse_json_object(raw: bytes, code: str) -> dict[str, Any]:

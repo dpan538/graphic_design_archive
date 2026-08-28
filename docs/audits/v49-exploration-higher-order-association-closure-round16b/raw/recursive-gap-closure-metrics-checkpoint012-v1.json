@@ -1,0 +1,187 @@
+{
+  "association_review_queue": {
+    "baseline_record_count": 59,
+    "current_open_review_count": 39,
+    "current_open_review_id_set_sha256": "fc1497ae93a4da880c0d919b4c174bc15bb7aebb3fc22f364a7a41174a67c1dd",
+    "derivative_reconciled_id_set_sha256": "d0cba564ad24365cdbba049f205aa87f5ee624faa8da3c6c3739d2c29472eb86",
+    "derivative_reconciled_successor_open_count": 7,
+    "queue_rows_are_associations": false,
+    "terminal_control_count": 13,
+    "terminal_control_id_set_sha256": "fc5c97257691144de308f695e595248ab80dfdd941c83b7320112a9290968b11"
+  },
+  "authority": {
+    "checkpoint011_sha": "11412d23e309a647a3a2fb0b3db4369dcdd15993",
+    "checkpoint011_tree": "9117d6fc189b8c8a986f6ba26e6879184d58eb12",
+    "expected_origin_main_sha": "8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e",
+    "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+    "source_tree": "977d7e8e045c71857959750b775cd4df3d036686"
+  },
+  "builder_version": "trace-round16b-recursive-gap-closure-audit-builder-v2",
+  "candidate_universe": {
+    "candidate_exclusion_ledger_record_count": 0,
+    "candidate_universe_closure": false,
+    "covered_research_only_sense_count": 12,
+    "governed_product_maximum_arity": null,
+    "known_unexplained_exclusion_count": 9,
+    "known_unexplained_exclusion_count_scope": "RESEARCH_ONLY_SENSES_WITHOUT_TRIGGER_HYPOTHESIS_PARTICIPANT_OBLIGATION_OR_EXCLUSION",
+    "local_candidate_family_arity_distribution": {
+      "3": 25,
+      "4": 4,
+      "5": 1,
+      "6": 4,
+      "8": 1
+    },
+    "open_nary_participant_obligation_count": 10,
+    "open_nary_participant_obligation_id_set_sha256": "027745b18d40dfe7f186d9d3774b3d20cf6bde72fcdbdecfe3aceaa900474077",
+    "research_only_sense_count": 21,
+    "uncovered_research_only_sense_id_set_sha256": "d1b846638f45b1fbf4587c60ad71a6e9ecd285d1fa0d498c6615783bf86b4fb4",
+    "universe_wide_unexplained_exclusion_count": "INDETERMINATE"
+  },
+  "checkpoint011_capability_boundary": {
+    "active_pending_review_count": 0,
+    "active_product_record_count": 0,
+    "database_replay_status": "PASS",
+    "deployment_performed": false,
+    "normalized_database_schemas_identical": true,
+    "production_activation_count": 0,
+    "production_activation_performed": false,
+    "production_data_imported": false,
+    "research_capability_is_historical_closure": false,
+    "runtime_independent_status": "PASS"
+  },
+  "closure": {
+    "computational_space_closure": false,
+    "function3_closure": false,
+    "global_composition_coherence_closure": false,
+    "higher_order_association_closure": false,
+    "pair_association_closure": false,
+    "product_association_reachability_closure": false
+  },
+  "closure_true_count": 0,
+  "format": "trace-round16b-recursive-gap-closure-metrics-checkpoint012-v2",
+  "headline_receipt_projection": {
+    "active_noncomposable_vocabulary_count": 5,
+    "active_pending_review_count": 0,
+    "unexplained_exclusion_count": 9,
+    "unexplained_exclusion_count_scope": "KNOWN_RESEARCH_ONLY_SENSE_COVERAGE_GAPS_ONLY",
+    "universe_wide_unexplained_exclusion_count": "INDETERMINATE",
+    "unresolved_association_count": 11
+  },
+  "human_authority": {
+    "current_record_level_blocker_count": 47,
+    "current_record_level_blocker_id_set_sha256": "303ab3c6bd4e17a27c697d62211d2dce6b01a0acd4ea1fa1eb8a4f8da1be5357",
+    "legacy_not_completed_count": 36,
+    "legacy_review_unit_id_set_sha256": "02f55c12bbe394d352b37a511f9d8b7592ee4f62bca4420c47e5a6586abf2ccc",
+    "namespaced_member_format": "LEGACY:<review_unit_id>|R16B:<hypothesis_id>",
+    "round16b_hypothesis_external_review_open_count": 11,
+    "round16b_hypothesis_id_set_sha256": "4dde1a4d5ae3cc5facc407bfaafc1813581b14d5f3c9382a119de93584360118"
+  },
+  "hypotheses": {
+    "active_association_count": 0,
+    "active_pending_review_count": 0,
+    "arity_distribution": {
+      "2": 3,
+      "3": 6,
+      "4": 1,
+      "5": 1
+    },
+    "governed_association_id_set_sha256": "c61d2dda5b1237cfdb5748d34361d9631a2c79b23c98a1261222b86a4ab6f007",
+    "governed_association_identity_count": 4,
+    "hypothesis_id_set_sha256": "4dde1a4d5ae3cc5facc407bfaafc1813581b14d5f3c9382a119de93584360118",
+    "implicit_pair_projection_count": 0,
+    "product_eligible_association_count": 0,
+    "ungoverned_hypothesis_count": 7,
+    "ungoverned_hypothesis_id_set_sha256": "99437d954b3e02621ba1846f50b828373cbfd195d0c6386a45d095ed8010f9d4",
+    "unresolved_association_count": 11,
+    "unresolved_association_count_scope": "CURRENT_SCOPED_ASSOCIATION_HYPOTHESES"
+  },
+  "independent_verification_status": "PENDING_SEPARATE_IMPLEMENTATION",
+  "limitations": [
+    "No external design historian supplied activation authority.",
+    "No new scholarly search or source-text review was performed by this computational audit.",
+    "The candidate-exclusion ledger is header-only and the universe-wide exclusion count is indeterminate.",
+    "Reviewed remote source payloads were not committed, so source-byte reproduction remains open.",
+    "Checkpoint011 proves schema and runtime capability with zero historical production activation.",
+    "Final clean-worktree reproduction and full repository gates remain a later checkpoint obligation."
+  ],
+  "metadata": {
+    "baseline_lead_count": 101,
+    "baseline_lead_id_set_sha256": "0717c3e32ee2734ced197d9c40bb1a85b863fedfa123c591260cfd8ae97b6327",
+    "current_metadata_only_unreviewed_count": 100,
+    "current_metadata_only_unreviewed_id_set_sha256": "a0a6fa675ead9c98e56c52f387a2468876960b25fe65885f6ceaaf284309a0bd",
+    "superseded_by_text_review_count": 1,
+    "superseded_lead_id_set_sha256": "aabd39be261ca4e0161164418a613d9dab8983788ff1ee8957becc670665cc6f"
+  },
+  "reproducibility_status": "PRIMARY_DETERMINISTIC_BUILD_PASS_FINAL_CLEAN_WORKTREE_GATE_PENDING",
+  "round16a_reconciliation": {
+    "active_fact_created_count": 0,
+    "association_subgraph_count": 58,
+    "association_subgraph_distribution": {
+      "CORRECTED": 11,
+      "INQUIRY": 18,
+      "REJECTED": 8,
+      "RETAINED": 21
+    },
+    "product_activation_count": 0,
+    "reconciled_row_count_including_topology_audit_records": 774296,
+    "semantic_carry_forward_authorized_count": 0,
+    "transition_count": 749944
+  },
+  "semantic_bounds": {
+    "higher_order_semantic_obligation_count": 9,
+    "parameter_name_set_sha256": "73b91c15b7aa08ebfea18fd2b06a5130c09d77713c9e679aeee354684f121eb9",
+    "product_maximum_arity_audited": false
+  },
+  "source_rights": {
+    "baseline_canonical_identity_count": 94,
+    "baseline_canonical_identity_id_set_sha256": "c95c03fff1a4e84379ade0842547e8c7ef897bed9e0369defdd100877228f408",
+    "baseline_identities_superseded_by_locator_bearing_text_review_count": 9,
+    "baseline_review_records_not_text_completion_count": 2,
+    "baseline_review_records_not_text_completion_source_ids": [
+      "COMP-SRC-017",
+      "COMP-SRC-023"
+    ],
+    "current_unresolved_canonical_identity_count": 85,
+    "current_unresolved_canonical_identity_id_set_sha256": "dd257baf10240263b03216da4729752458c854585e11344ad965af9aac909e45",
+    "incomplete_review_record_count": 2,
+    "known_canonical_identity_union_count": 95,
+    "locator_bearing_text_review_outside_baseline_queue_count": 1,
+    "locator_bearing_text_review_outside_baseline_source_ids": [
+      "R16-SRC-005"
+    ],
+    "review_record_count": 12,
+    "rights_text_completion_count": 10,
+    "superseded_identity_id_set_sha256": "17d1c8debb36357f5dcf72380d49510dda6d33fb13549ea8cd63cbaf0341ba1a"
+  },
+  "status": "PASS_EVIDENCE_BOUNDED_NONCLOSURE",
+  "supersession": {
+    "current_disposition_distribution": {
+      "PARTIALLY_RECONCILED_REMAINDER_OPEN": 44,
+      "PRESERVED_HISTORICAL_LIMITATION": 2,
+      "PRESERVED_TERMINAL_CONTROL": 25,
+      "RESOLVED_BY_COMMITTED_ARTIFACT": 22,
+      "SUPERSEDED_BY_OPEN_OBLIGATION": 321
+    },
+    "membership_id_set_sha256": "3324de09faab9a1362e2eac97293298a2b9e8d06808f6741df76815f66882497",
+    "membership_key_format": "kind<TAB>repo_relative_path<TAB>prior_id<LF>",
+    "prior_kind_distribution": {
+      "ASSOCIATION_REVIEW_QUEUE": 59,
+      "EXTERNAL_HUMAN_REVIEW_OBLIGATION": 36,
+      "GAP": 105,
+      "METADATA_LEAD_OBLIGATION": 101,
+      "NARY_PARTICIPANT_OBLIGATION": 10,
+      "SEMANTIC_PARAMETER_OBLIGATION": 9,
+      "SOURCE_RIGHTS_QUEUE": 94
+    },
+    "prior_record_count": 414,
+    "prior_record_key_unique_count": 414
+  },
+  "vocabulary_reachability": {
+    "active_noncomposable_vocabulary_count": 5,
+    "active_product_path_count": 0,
+    "count_scope": "INHERITED_ROUND16A_ACTIVE_ZERO_PAIR_DEGREE_AND_ZERO_ACTIVE_V3_PATH",
+    "higher_order_composability_proven_count": 0,
+    "participant_sense_id_set_sha256": "7282457df9db29a6ef9055fa06cab8f9d37dd666b619d1dae7357b65260d028a",
+    "vocabulary_id_set_sha256": "4f150b6d2e551e305d7810321bd260096ff52bab29bd8c93d148d114481073c2"
+  }
+}

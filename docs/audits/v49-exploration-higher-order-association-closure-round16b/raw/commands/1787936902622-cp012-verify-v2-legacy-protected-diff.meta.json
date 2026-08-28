@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "git",
+    "diff",
+    "--exit-code",
+    "468105499c7be102deec7d6555aced688dea9901",
+    "--",
+    "schemas/trace/exploration/v2",
+    "frontend/generated/trace-exploration-v2",
+    "frontend/src/app/api/trace/v2/exploration",
+    "frontend/src/features/trace-v49/exploration-v2",
+    "docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv"
+  ],
+  "command": "git diff --exit-code 468105499c7be102deec7d6555aced688dea9901 -- schemas/trace/exploration/v2 frontend/generated/trace-exploration-v2 frontend/src/app/api/trace/v2/exploration frontend/src/features/trace-v49/exploration-v2 docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv",
+  "command_id": "1787936902622-cp012-verify-v2-legacy-protected-diff",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 25,
+  "end_timestamp_utc": "2026-08-28T17:08:22Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp012-verify-v2-legacy-protected-diff",
+  "phase_id": "CHECKPOINT-012-PROTECTED-REGRESSIONS",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T17:08:22Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

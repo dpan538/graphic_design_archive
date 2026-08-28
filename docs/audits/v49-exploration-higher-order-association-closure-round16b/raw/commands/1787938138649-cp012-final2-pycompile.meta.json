@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "env",
+    "PYTHONPYCACHEPREFIX=/private/tmp/trace_round16b_cp012_final2_pycache",
+    "python3",
+    "-m",
+    "py_compile",
+    "scripts/trace_round16b/build_recursive_gap_closure_audit.py",
+    "scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py",
+    "scripts/trace_round16b/build_round16a_global_reconciliation.py",
+    "scripts/trace_round16b/verify_round16a_global_reconciliation.py",
+    "scripts/trace_round16b/verify_v3_runtime_independent.py"
+  ],
+  "command": "env PYTHONPYCACHEPREFIX=/private/tmp/trace_round16b_cp012_final2_pycache python3 -m py_compile scripts/trace_round16b/build_recursive_gap_closure_audit.py scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py scripts/trace_round16b/build_round16a_global_reconciliation.py scripts/trace_round16b/verify_round16a_global_reconciliation.py scripts/trace_round16b/verify_v3_runtime_independent.py",
+  "command_id": "1787938138649-cp012-final2-pycompile",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 337,
+  "end_timestamp_utc": "2026-08-28T17:28:59Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp012-final2-pycompile",
+  "phase_id": "CHECKPOINT-012-FINAL-CORRECTED-GATES",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T17:28:58Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

@@ -1,0 +1,412 @@
+{
+  "adversarial_probe_count": 48,
+  "adversarial_probes": [
+    {
+      "probe": "STALE_RIGHTS_BASELINE_94_AS_CURRENT",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "STALE_METADATA_BASELINE_101_AS_CURRENT",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "STALE_LEGACY_HUMAN_36_AS_CURRENT",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "UNRESOLVED_ASSOCIATIONS_REDUCED_TO_GOVERNED_IDENTITIES_4",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "UNIVERSE_WIDE_EXCLUSION_COUNT_FALSELY_NUMERIC",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "KNOWN_UNCOVERED_RESEARCH_SENSE_REMOVED",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "PROPOSED_SENSE_TREATED_AS_GOVERNED_COVERAGE",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "ACTIVE_NONCOMPOSABLE_VOCABULARY_ROW_DROPPED",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "GOVERNED_ASSOCIATION_IDS_REPLACED_WITH_HYPOTHESIS_IDS",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "ACTIVE_PENDING_REVIEW_ONE",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "ACTIVE_HYPOTHESIS",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "PRODUCT_ELIGIBLE_HYPOTHESIS",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "IMPLICIT_HYPEREDGE_PAIR_PROJECTION",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "CANDIDATE_UNIVERSE_FALSELY_CLOSED",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "FUNCTION3_FALSELY_CLOSED",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "SUPERSESSION_MEMBER_MISSING",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "SUPERSESSION_MEMBER_EXTRA",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "SUPERSESSION_MEMBER_DUPLICATED",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "SUPERSESSION_KIND_MISSPELLED",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "SUPERSESSION_ABSOLUTE_PATH",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "SUPERSESSION_DOT_RELATIVE_PATH",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "SUPERSESSION_WRONG_NATIVE_ID",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "SUPERSESSION_GAP_IDS_DEDUPLICATED_ACROSS_PHYSICAL_FILES",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "SUPERSESSION_MEMBERSHIP_FINAL_LF_MISSING",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "TCQ004_DERIVATIVE_MISCLASSIFIED_OPEN",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "TCQ007_OPEN_MISCLASSIFIED_BY_RECONCILIATION_SUBSTRING",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "SEMANTIC_CLASS_11_USED_INSTEAD_OF_EXPLICIT_OBLIGATION_9",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "RIGHTS_DOI_ONLY_JOIN_LOSES_STABLE_URL_IDENTITY",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "RIGHTS_ALL_12_REVIEWS_BLINDLY_SUBTRACTED",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "RIGHTS_DUPLICATE_CANONICAL_IDENTITY",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "RIGHTS_TWO_REVIEWS_MATCH_ONE_CANONICAL_IDENTITY",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "RIGHTS_ONE_REVIEW_MAPS_TWO_CANONICAL_IDENTITIES",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "METADATA_DUPLICATE_LEAD_IDENTITY",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "HYPOTHESIS_PARTICIPANT_LENGTH_DIFFERS_FROM_ARITY",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "HYPOTHESIS_DUPLICATE_PARTICIPANT",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "HYPOTHESIS_ASSOCIATION_REVISION_PARITY_BROKEN",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "STALE_LOCAL_CANDIDATE_FAMILY_V1_SELECTED",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "HEADER_ONLY_CROSSWALK_PLACEHOLDER_SELECTED",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "INPUT_MANIFEST_AUTHORITY_BOUNDARY_DOWNGRADED",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "GAP_SUCCESSOR_ROUTES_SWAPPED_WITH_AGGREGATES_PRESERVED",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "RIGHTS_PRIOR_STATUS_PROJECTION_ERASED",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "OBLIGATION_REQUIRED_ACTION_CORRUPTED",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "OBLIGATION_EXACT_CLOSURE_BLOCKERS_CORRUPTED",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "RIGHTS_FULL_TEXT_STATUS_WITHOUT_TEXT_LOCATOR",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "RIGHTS_ABSTRACT_LOCATOR_NOT_PROMOTED_BY_ACCESS_LABEL",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "METADATA_ABSTRACT_ONLY_DOI_FALSELY_SUPERSEDED",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "probe": "RIGHTS_DOI_RESOLVER_PREFIX_NORMALIZED",
+      "status": "PASS_NORMALIZED"
+    },
+    {
+      "probe": "METADATA_DOI_RESOLVER_PREFIX_NORMALIZED",
+      "status": "PASS_NORMALIZED"
+    }
+  ],
+  "authority": {
+    "checkpoint011_sha": "11412d23e309a647a3a2fb0b3db4369dcdd15993",
+    "checkpoint011_tree": "9117d6fc189b8c8a986f6ba26e6879184d58eb12",
+    "expected_origin_main_sha": "8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e",
+    "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+    "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
+    "work_branch": "codex/trace-v49-exploration-higher-order-association-closure-round16b"
+  },
+  "check_count": 25,
+  "checks": {
+    "active_vocabulary_reachability": "PASS",
+    "association_arity_reconstruction": "PASS",
+    "association_review_queue_partition": "PASS",
+    "checkpoint011_capability_nonclosure_boundary": "PASS",
+    "complete_prior_record_supersession": "PASS",
+    "current_hypothesis_reconstruction": "PASS",
+    "current_obligation_exact_semantic_contract": "PASS",
+    "current_obligation_membership": "PASS",
+    "every_gap_semantic_disposition_and_successor_route": "PASS",
+    "every_prior_status_structured_projection": "PASS",
+    "exclusion_proof_boundary": "PASS",
+    "fail_closed_adversarial_probes": "PASS",
+    "governed_ungoverned_identity_partition": "PASS",
+    "human_authority_namespaced_union": "PASS",
+    "implementation_separation": "PASS",
+    "input_manifest_and_committed_trust_anchors": "PASS",
+    "input_manifest_authority_boundaries": "PASS",
+    "metadata_baseline_current_supersession": "PASS",
+    "primary_metrics_reconciliation": "PASS",
+    "primary_output_byte_seals": "PASS",
+    "research_only_sense_coverage": "PASS",
+    "rights_baseline_current_supersession": "PASS",
+    "rights_locator_bearing_text_completion_predicate": "PASS",
+    "round16a_semantic_quarantine": "PASS",
+    "semantic_bound_obligations": "PASS"
+  },
+  "closure": {
+    "computational_space_closure": false,
+    "function3_closure": false,
+    "global_composition_coherence_closure": false,
+    "higher_order_association_closure": false,
+    "pair_association_closure": false,
+    "product_association_reachability_closure": false
+  },
+  "closure_true_count": 0,
+  "current_obligation_verification": {
+    "ledger_sha256": "bb252c7152d50db49b81d687532237bf6b7b4fe731eaef48d089882c39e6d01d",
+    "obligation_id_set_sha256": "b0127c2480e3c4be880513d5dc5f65659d1aee4246030691f28767160974e2ab",
+    "open_closure_blocker_count_by_closure": {
+      "computational_space_closure": 16,
+      "function3_closure": 16,
+      "global_composition_coherence_closure": 10,
+      "higher_order_association_closure": 12,
+      "pair_association_closure": 9,
+      "product_association_reachability_closure": 13
+    },
+    "record_count": 16
+  },
+  "deployment_performed": false,
+  "force_push_used": false,
+  "format": "trace-round16b-recursive-gap-closure-independent-verification-checkpoint012-v2",
+  "history_rewritten": false,
+  "implementation_independence": {
+    "imports_primary_builder": false,
+    "independent_verifier_path": "scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py",
+    "independent_verifier_sha256": "a73d58359bd904b591955582537c12014fea24ff98afd7c206a67c0c1cee1a3f",
+    "invokes_primary_builder": false,
+    "primary_builder_path": "scripts/trace_round16b/build_recursive_gap_closure_audit.py",
+    "primary_builder_sha256": "b447617be91973a528ae037376326329964bd24d4ac0c19ab6e45ca0e6fd6a58",
+    "reuses_primary_enumeration_module": false,
+    "stdlib_only": true
+  },
+  "independent_metrics": {
+    "active_association_count": 0,
+    "active_noncomposable_vocabulary_count": 5,
+    "active_pending_review_count": 0,
+    "association_review_queue_baseline_count": 59,
+    "association_review_queue_current_open_count": 39,
+    "association_review_queue_derivative_reconciled_successor_open_count": 7,
+    "association_review_queue_terminal_control_count": 13,
+    "candidate_exclusion_proof_record_count": 0,
+    "closure": {
+      "computational_space_closure": false,
+      "function3_closure": false,
+      "global_composition_coherence_closure": false,
+      "higher_order_association_closure": false,
+      "pair_association_closure": false,
+      "product_association_reachability_closure": false
+    },
+    "covered_research_only_sense_count": 12,
+    "current_namespaced_human_review_blocker_count": 47,
+    "governed_association_identity_count": 4,
+    "governed_product_maximum_arity": null,
+    "hypothesis_arity_distribution": {
+      "2": 3,
+      "3": 6,
+      "4": 1,
+      "5": 1
+    },
+    "implicit_pair_projection_count": 0,
+    "known_unexplained_exclusion_count": 9,
+    "known_unexplained_exclusion_count_scope": "RESEARCH_ONLY_SENSES_WITHOUT_TRIGGER_HYPOTHESIS_PARTICIPANT_OBLIGATION_OR_EXCLUSION",
+    "legacy_human_review_blocker_count": 36,
+    "metadata_baseline_lead_count": 101,
+    "metadata_current_unreviewed_count": 100,
+    "metadata_superseded_by_text_review_count": 1,
+    "open_nary_participant_resolution_count": 10,
+    "product_eligible_association_count": 0,
+    "production_activation_count": 0,
+    "research_only_sense_count": 21,
+    "rights_baseline_canonical_identity_count": 94,
+    "rights_current_unresolved_canonical_identity_count": 85,
+    "rights_incomplete_review_record_count": 2,
+    "rights_known_canonical_identity_union_count": 95,
+    "rights_locator_bearing_text_review_matched_to_baseline_count": 9,
+    "rights_locator_bearing_text_review_outside_baseline_count": 1,
+    "rights_review_record_count": 12,
+    "rights_text_completion_count": 10,
+    "round16a_association_subgraph_count": 58,
+    "round16a_semantic_carry_forward_authorized_count": 0,
+    "round16b_hypothesis_human_review_blocker_count": 11,
+    "semantic_parameter_obligation_count": 9,
+    "ungoverned_hypothesis_count": 7,
+    "universe_wide_unexplained_exclusion_count": "INDETERMINATE",
+    "unresolved_association_count": 11,
+    "unresolved_association_count_scope": "CURRENT_SCOPED_ASSOCIATION_HYPOTHESES"
+  },
+  "independent_set_hashes": {
+    "governed": "c61d2dda5b1237cfdb5748d34361d9631a2c79b23c98a1261222b86a4ab6f007",
+    "governed_hypotheses": "53308df373dfe229f34f82a80fdc5d9ba2fbe1c1bdcfcb04abf4bfae9a1a21e7",
+    "human": "303ab3c6bd4e17a27c697d62211d2dce6b01a0acd4ea1fa1eb8a4f8da1be5357",
+    "hypotheses": "4dde1a4d5ae3cc5facc407bfaafc1813581b14d5f3c9382a119de93584360118",
+    "metadata_open": "a0a6fa675ead9c98e56c52f387a2468876960b25fe65885f6ceaaf284309a0bd",
+    "nary": "027745b18d40dfe7f186d9d3774b3d20cf6bde72fcdbdecfe3aceaa900474077",
+    "parameters": "73b91c15b7aa08ebfea18fd2b06a5130c09d77713c9e679aeee354684f121eb9",
+    "queue_all": "46ae8c3ba4395d99d04e9bd3a9d9118e0cbdfd9cadbf3786bb684b99d0278d54",
+    "queue_derivative": "d0cba564ad24365cdbba049f205aa87f5ee624faa8da3c6c3739d2c29472eb86",
+    "queue_open": "fc1497ae93a4da880c0d919b4c174bc15bb7aebb3fc22f364a7a41174a67c1dd",
+    "queue_terminal": "fc5c97257691144de308f695e595248ab80dfdd941c83b7320112a9290968b11",
+    "rights_open": "dd257baf10240263b03216da4729752458c854585e11344ad965af9aac909e45",
+    "supersession": "3324de09faab9a1362e2eac97293298a2b9e8d06808f6741df76815f66882497",
+    "uncovered_research": "d1b846638f45b1fbf4587c60ad71a6e9ecd285d1fa0d498c6615783bf86b4fb4",
+    "ungoverned": "99437d954b3e02621ba1846f50b828373cbfd195d0c6386a45d095ed8010f9d4",
+    "vocab": "4f150b6d2e551e305d7810321bd260096ff52bab29bd8c93d148d114481073c2"
+  },
+  "input_verification": {
+    "checkpoint011_pinned_artifact_count": 4,
+    "checkpoint011_pinned_artifact_sha256": {
+      "database/schema-manifest-v50-round16b.json": "bac907114133ea9b261fdff426434365f020ba92bd0e377b8b2d9629438319c3",
+      "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-census-v1.json": "7df89f2248d169c1f4e6358425a7f01afbcdb27c02d1d0e3f583f35c67322c6e",
+      "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json": "7034cf1474d1baeec36d09033f28e35ae2d58f754009ebe194f5a9102725b83b",
+      "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-v3-runtime-checkpoint011-receipt.json": "b7b2e0560823071129cb4c3cc6afa71275f76df7c189962ab36265ef3fc9861b"
+    },
+    "checkpoint012_corrected_artifact_count": 2,
+    "checkpoint012_corrected_artifact_sha256": {
+      "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/round16a-global-reconciliation-census-v1.json": "f2196eef23c560e24fd373956af6e711687440203edc4e0c96ab5de90c8c4537",
+      "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json": "4839c5bf5492762478e1562c203db0dffc4b62886e1689f6eb7d37e3af2c0c38"
+    },
+    "manifest_sha256": "e8e643d051fada492f9d5954c3542bbdb300fb898db95290d4140299887b1b30",
+    "path_set_sha256": "4a3bccffb9fa76de0acaa6986afbb3535442ac30ad4ffc71200b5a575c85d1c1",
+    "record_count": 36
+  },
+  "limitations": [
+    "This verifier proves the scoped census and evidence-bounded non-closure decision; it does not prove universe-wide candidate completeness.",
+    "The universe-wide unexplained-exclusion count remains INDETERMINATE because no complete complement proof exists.",
+    "No external design historian supplied activation authority.",
+    "No new scholarly search or source-text review was performed in this computational checkpoint.",
+    "Reviewed remote source payloads were not committed, leaving source-byte reproduction open.",
+    "Final clean-worktree reproduction and full repository gates remain Checkpoint 013 work.",
+    "Branch-tip, clean-worktree, commit, and publication fields cannot be finalized before the Checkpoint 012 commit and ordinary push."
+  ],
+  "origin_main_rewritten": false,
+  "primary_artifact_verification": {
+    "primary_artifact_sha256": {
+      "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-closure-build-receipt-checkpoint012-v1.json": "547637254c0f4ea2fabed280f23f7c32dd7485409baa01fe86951e3d6eac7679",
+      "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-closure-metrics-checkpoint012-v1.json": "7c72dfc318f2dcb78090946fabe7f56b2780d6a7ec2ee780c7703753a1b4a54f",
+      "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-current-obligation-ledger-checkpoint012-v1.tsv": "bb252c7152d50db49b81d687532237bf6b7b4fe731eaef48d089882c39e6d01d",
+      "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-input-manifest-checkpoint012-v1.tsv": "e8e643d051fada492f9d5954c3542bbdb300fb898db95290d4140299887b1b30",
+      "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-supersession-ledger-checkpoint012-v1.tsv": "6d79364477c6236e66e0310100f656b6ff6edc47d9b11071551567d85a2df50d"
+    },
+    "primary_output_aggregate_sha256": "a9bd269186b0ca8e6f2deecd8bf0365b62b24550e870e19808c728edb8bc8035",
+    "receipt_sha256": "547637254c0f4ea2fabed280f23f7c32dd7485409baa01fe86951e3d6eac7679"
+  },
+  "primary_metrics_verification": {
+    "closure_true_count": 0,
+    "metrics_sha256": "7c72dfc318f2dcb78090946fabe7f56b2780d6a7ec2ee780c7703753a1b4a54f",
+    "status": "PASS_EVIDENCE_BOUNDED_NONCLOSURE"
+  },
+  "reproducibility_status": "PASS_PINNED_COMMITTED_INPUT_AND_GENERATED_BYTE_REPRODUCTION_FINAL_CLEAN_WORKTREE_GATE_PENDING",
+  "rollback_tag_pushed": false,
+  "status": "PASS_FOR_EVIDENCE_BOUNDED_NONCLOSURE_DECISION",
+  "supersession_verification": {
+    "current_disposition_distribution": {
+      "PARTIALLY_RECONCILED_REMAINDER_OPEN": 44,
+      "PRESERVED_HISTORICAL_LIMITATION": 2,
+      "PRESERVED_TERMINAL_CONTROL": 25,
+      "RESOLVED_BY_COMMITTED_ARTIFACT": 22,
+      "SUPERSEDED_BY_OPEN_OBLIGATION": 321
+    },
+    "gap_semantic_route_count": 105,
+    "gap_semantic_route_id_set_sha256": "dca31e025acf92de8acc51efb4396ebcbd61686c682ea0baa29a926c47884260",
+    "ledger_sha256": "6d79364477c6236e66e0310100f656b6ff6edc47d9b11071551567d85a2df50d",
+    "membership_id_set_sha256": "3324de09faab9a1362e2eac97293298a2b9e8d06808f6741df76815f66882497",
+    "prior_kind_distribution": {
+      "ASSOCIATION_REVIEW_QUEUE": 59,
+      "EXTERNAL_HUMAN_REVIEW_OBLIGATION": 36,
+      "GAP": 105,
+      "METADATA_LEAD_OBLIGATION": 101,
+      "NARY_PARTICIPANT_OBLIGATION": 10,
+      "SEMANTIC_PARAMETER_OBLIGATION": 9,
+      "SOURCE_RIGHTS_QUEUE": 94
+    },
+    "prior_record_count": 414
+  },
+  "verifier_version": "trace-round16b-recursive-gap-closure-audit-independent-verifier-v2"
+}

@@ -6822,58 +6822,58 @@
       "status": "PASS"
     },
     {
+      "check_id": "v50_git_status_field_count_A\tdatabase/ROUND16B_V50.md",
+      "observed": 2,
+      "status": "PASS"
+    },
+    {
       "check_id": "v50_git_status_field_count_M\tdatabase/VERSION",
       "observed": 2,
       "status": "PASS"
     },
     {
-      "check_id": "v50_untracked_status_not_duplicate_database/ROUND16B_V50.md",
-      "observed": "database/ROUND16B_V50.md",
+      "check_id": "v50_git_status_field_count_A\tdatabase/functions/020_exploration_v3_integrity.sql",
+      "observed": 2,
       "status": "PASS"
     },
     {
-      "check_id": "v50_untracked_status_not_duplicate_database/functions/020_exploration_v3_integrity.sql",
-      "observed": "database/functions/020_exploration_v3_integrity.sql",
+      "check_id": "v50_git_status_field_count_A\tdatabase/migrations/014_exploration_v3_higher_order_associations.sql",
+      "observed": 2,
       "status": "PASS"
     },
     {
-      "check_id": "v50_untracked_status_not_duplicate_database/migrations/014_exploration_v3_higher_order_associations.sql",
-      "observed": "database/migrations/014_exploration_v3_higher_order_associations.sql",
+      "check_id": "v50_git_status_field_count_A\tdatabase/roles/008_exploration_v3_grants.sql",
+      "observed": 2,
       "status": "PASS"
     },
     {
-      "check_id": "v50_untracked_status_not_duplicate_database/roles/008_exploration_v3_grants.sql",
-      "observed": "database/roles/008_exploration_v3_grants.sql",
+      "check_id": "v50_git_status_field_count_A\tdatabase/schema-manifest-v50-round16b.json",
+      "observed": 2,
       "status": "PASS"
     },
     {
-      "check_id": "v50_untracked_status_not_duplicate_database/schema-manifest-v50-round16b.json",
-      "observed": "database/schema-manifest-v50-round16b.json",
+      "check_id": "v50_git_status_field_count_A\tdatabase/scripts/replay_v50_round16b.sh",
+      "observed": 2,
       "status": "PASS"
     },
     {
-      "check_id": "v50_untracked_status_not_duplicate_database/scripts/replay_v50_round16b.sh",
-      "observed": "database/scripts/replay_v50_round16b.sh",
+      "check_id": "v50_git_status_field_count_A\tdatabase/scripts/run_v50_round16b_tests.sh",
+      "observed": 2,
       "status": "PASS"
     },
     {
-      "check_id": "v50_untracked_status_not_duplicate_database/scripts/run_v50_round16b_tests.sh",
-      "observed": "database/scripts/run_v50_round16b_tests.sh",
+      "check_id": "v50_git_status_field_count_A\tdatabase/scripts/verify_v50_round16b_manifest.py",
+      "observed": 2,
       "status": "PASS"
     },
     {
-      "check_id": "v50_untracked_status_not_duplicate_database/scripts/verify_v50_round16b_manifest.py",
-      "observed": "database/scripts/verify_v50_round16b_manifest.py",
+      "check_id": "v50_git_status_field_count_A\tdatabase/tests/014_exploration_v3_higher_order_associations.sql",
+      "observed": 2,
       "status": "PASS"
     },
     {
-      "check_id": "v50_untracked_status_not_duplicate_database/tests/014_exploration_v3_higher_order_associations.sql",
-      "observed": "database/tests/014_exploration_v3_higher_order_associations.sql",
-      "status": "PASS"
-    },
-    {
-      "check_id": "v50_untracked_status_not_duplicate_database/views/003_exploration_v3_read_contract.sql",
-      "observed": "database/views/003_exploration_v3_read_contract.sql",
+      "check_id": "v50_git_status_field_count_A\tdatabase/views/003_exploration_v3_read_contract.sql",
+      "observed": 2,
       "status": "PASS"
     },
     {

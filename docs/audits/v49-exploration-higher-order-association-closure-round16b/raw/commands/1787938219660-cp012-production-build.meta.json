@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "npm",
+    "--prefix",
+    "frontend",
+    "run",
+    "build"
+  ],
+  "command": "npm --prefix frontend run build",
+  "command_id": "1787938219660-cp012-production-build",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 11940,
+  "end_timestamp_utc": "2026-08-28T17:30:31Z",
+  "exit_code": 1,
+  "launch_error": "",
+  "operation_id": "cp012-production-build",
+  "phase_id": "CHECKPOINT-012-FINAL-CORRECTED-GATES",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T17:30:19Z",
+  "stderr_sha256": "294be6535fca1b16b77f7b418d4d47d3bedd8b0a314a8c3225a2ad785a2ef1ee",
+  "stdout_sha256": "1c214a1bf8c6941ee524b7125198143cce362d47ecd20c4255b5fcad831306df",
+  "timed_out": false
+}

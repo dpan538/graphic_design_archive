@@ -1,0 +1,35 @@
+{
+  "checkpoint_verification": {
+    "checkpoint_count": 11,
+    "checkpoint_ids": [
+      "CHECKPOINT-001",
+      "CHECKPOINT-002",
+      "CHECKPOINT-003",
+      "CHECKPOINT-004",
+      "CHECKPOINT-005",
+      "CHECKPOINT-006",
+      "CHECKPOINT-007",
+      "CHECKPOINT-008",
+      "CHECKPOINT-009",
+      "CHECKPOINT-010",
+      "CHECKPOINT-011"
+    ],
+    "present": true
+  },
+  "command_count": 434,
+  "event_count": 868,
+  "fail_event_count": 37,
+  "failure_codes": [
+    "LATEST_WRITER_HASH:864:docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint012.tsv",
+    "LATEST_WRITER_HASH:864:scripts/trace_round16b/verify_v3_production_http.py"
+  ],
+  "legacy_event_count": 2,
+  "pass_event_count": 397,
+  "schema_version": "trace-round16b-execution-log-verification/v1",
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "started_event_count": 434,
+  "status": "FAIL",
+  "warning_codes": [
+    "LEGACY_BOOTSTRAP_EVENTS_PRE_COMMAND_ID_SCHEMA=2"
+  ]
+}

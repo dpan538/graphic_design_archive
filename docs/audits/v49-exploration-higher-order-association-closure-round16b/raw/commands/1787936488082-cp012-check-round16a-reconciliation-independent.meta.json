@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/verify_round16a_global_reconciliation.py",
+    "--check"
+  ],
+  "command": "python3 scripts/trace_round16b/verify_round16a_global_reconciliation.py --check",
+  "command_id": "1787936488082-cp012-check-round16a-reconciliation-independent",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 151,
+  "end_timestamp_utc": "2026-08-28T17:01:28Z",
+  "exit_code": 1,
+  "launch_error": "",
+  "operation_id": "cp012-check-round16a-reconciliation-independent",
+  "phase_id": "CHECKPOINT-012-REGRESSION-GATES",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T17:01:28Z",
+  "stderr_sha256": "e603c4a3b2bf923d155a9812f831079a4ca220a56f2d7064d83a6fab942d11fd",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}
