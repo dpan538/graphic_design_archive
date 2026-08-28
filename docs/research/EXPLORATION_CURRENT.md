@@ -158,6 +158,28 @@ The server-only API materializes four deterministic maps, 52 immutable states, 8
 
 Next gate after Round 16: **Claude frontend design and frontend integration**. Final visual layout, production interaction components, public navigation, deployment, and any external academic-release review remain separate.
 
+## Round 16B current authority — higher-order correction
+
+Round 16A is now governed as the reproducible baseline for pair-association closure and a pair-derived finite computational space. Its 31 active terms, 465 unordered pairs, 21 active pair associations, 58 connected pair-edge subgraphs, 81 topology compositions, 228 production compositions, 5,760 states, 749,944 transitions, 5,760 workflows, and 11,520 exports do not establish complete all-arity association closure.
+
+Round 16B distinguishes vocabulary concepts, pair associations, higher-order associations, compositions, interaction states, workflows, and exports. A higher-order association is a first-class evidence-bearing object and never manufactures its internal pairs; a connected pair graph or renderable composition never manufactures group coherence. The governed method inventories 44 Round 9–16A and database surfaces, defines 12 candidate triggers, preserves 14 exclusion classes, and records 11 currently open closure-blocking gaps. It also separates stable semantic association identity from append-only evidence and review revisions.
+
+The concept-sense crosswalk, trigger-occurrence ledger, evidence ledger, rights ledger, candidate census, global-coherence review, production v3 incidence model, independent census verification, and clean reproduction remain incomplete at this method checkpoint. Existing v2 remains immutable baseline behavior. No higher-order association, product association, or Function 3 closure claim is active.
+
+`PAIR_ASSOCIATION_CLOSURE=ROUND16A_BASELINE_ONLY`
+
+`HIGHER_ORDER_ASSOCIATION_CLOSURE=false`
+
+`GLOBAL_COMPOSITION_COHERENCE_CLOSURE=false`
+
+`PRODUCT_ASSOCIATION_REACHABILITY_CLOSURE=false`
+
+`FUNCTION3_CLOSURE=false`
+
+`EXTERNAL_HUMAN_DOMAIN_REVIEW_COMPLETED=false`
+
+Next Round 16B gate: **stable concept-sense crosswalk, deterministic trigger occurrences, and resumable candidate-census tranches**.
+
 Governed Round 16 package: `docs/research/trace-v49-exploration-real-database-round1/`.
 
 <!-- TRACE_ROUND16A_AUTHORITY_CLARIFICATION_V2 -->

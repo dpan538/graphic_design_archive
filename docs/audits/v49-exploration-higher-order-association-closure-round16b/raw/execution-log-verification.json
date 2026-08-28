@@ -6,15 +6,15 @@
     ],
     "present": true
   },
-  "command_count": 4,
-  "event_count": 8,
-  "fail_event_count": 0,
+  "command_count": 11,
+  "event_count": 22,
+  "fail_event_count": 1,
   "failure_codes": [],
   "legacy_event_count": 2,
-  "pass_event_count": 4,
+  "pass_event_count": 10,
   "schema_version": "trace-round16b-execution-log-verification/v1",
   "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
-  "started_event_count": 4,
+  "started_event_count": 11,
   "status": "PASS",
   "warning_codes": [
     "LEGACY_BOOTSTRAP_EVENTS_PRE_COMMAND_ID_SCHEMA=2"

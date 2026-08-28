@@ -1,0 +1,13 @@
+round16a_metric	baseline_value	source_artifact	round16b_reconciliation_requirement
+VOCABULARY_CANDIDATES	65	vocabulary-census-v2.json	Retain all four Round 16A vocabulary dispositions; do not silently drop candidates.
+ACTIVE_VOCABULARY	31	vocabulary-census-v2.json	Reassess product reachability, including five isolated active concepts.
+UNORDERED_PAIR_UNIVERSE	465	association-census-v2.tsv	Preserve as complete pair-only baseline, not total association universe.
+ACTIVE_PAIR_ASSOCIATIONS	21	validated-association-graph-v2.json	Keep separately counted pair objects; do not infer group edges.
+CANONICAL_PAIR_EDGE_SUBGRAPHS	58	canonical-composition-registry-v2.json	Review every three-plus-node semantic set for global coherence.
+TOPOLOGY_COMPOSITIONS	81	canonical-composition-registry-v2.json	Reconcile topology as render realization, not association identity.
+PRODUCTION_COMPOSITIONS	228	space-generation-summary-v2.json	Trace each product composition to reviewed association objects.
+STATES	5760	state-census-v2.tsv	Regenerate only after v3 visibility/navigation semantics are frozen.
+TRANSITIONS	749944	transition-census-v2.tsv	Regenerate from higher-order-aware legal actions; baseline remains reproducible.
+WORKFLOWS	5760	workflow-census-v2.tsv	Regenerate and replay; never call this an association count.
+EXPORTS	11520	export-census-v2.tsv	Regenerate manifests from governed realizations; never call this an association count.
+LEGACY_COMPOSITIONS	11	real-composition-registry-v1.json	Retain identifiers and issue one explicit new disposition for every record.

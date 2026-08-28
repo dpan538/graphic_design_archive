@@ -528,3 +528,30 @@ SPACETIME_STATUS=FROZEN
 
 `NEXT_GATE=INDEPENDENT_REVIEW_OF_PUBLISHED_ROUND16A_RESEARCH_BRANCH`
 <!-- /TRACE_ROUND16A_PROJECT_LOG_V3 -->
+
+<!-- TRACE_ROUND16B_METHOD_CHECKPOINT -->
+## TRACE v49 Round 16B — higher-order association method checkpoint
+
+- Reclassified Round 16A as pair-association and pair-derived computational baseline evidence rather than complete all-arity association closure.
+- Defined first-class pair and higher-order association objects separately from compositions, states, workflows, and exports; prohibited both automatic group-to-pair projection and pair-connectivity-to-group inference.
+- Hashed and counted 44 governed Round 9–16A/database evidence surfaces, including the Round 10 n-ary and Round 15/16 multi-node surfaces omitted by the Round 16A pair census input inventory.
+- Defined 12 candidate triggers, 12 disposition records, 14 exclusion classes, stable semantic association IDs, append-only revision IDs, source-rights controls, and independent method verification.
+- Recorded 11 open closure-blocking gaps. The concept-sense crosswalk, executable trigger occurrences, evidence and rights ledgers, candidate review, global coherence, v3 incidence product model, independent verification, and clean reproduction remain future checkpoints.
+- Preserved v2 and all Round 16A counts as immutable baseline receipts. No main update, tag push, force push, history rewrite, deployment, or Function 3 closure is authorized.
+
+`ROUND16B_METHOD_CHECKPOINT_READY=true`
+
+`ROUND16A_COMPLETE_ASSOCIATION_CLOSURE_SUPERSEDED=true`
+
+`PAIR_ASSOCIATION_CLOSURE=ROUND16A_BASELINE_ONLY`
+
+`HIGHER_ORDER_ASSOCIATION_CLOSURE=false`
+
+`GLOBAL_COMPOSITION_COHERENCE_CLOSURE=false`
+
+`PRODUCT_ASSOCIATION_REACHABILITY_CLOSURE=false`
+
+`FUNCTION3_CLOSURE=false`
+
+`NEXT_GATE=CONCEPT_SENSE_CROSSWALK_AND_TRIGGERED_CANDIDATE_CENSUS`
+<!-- /TRACE_ROUND16B_METHOD_CHECKPOINT -->

@@ -71,3 +71,11 @@ The corresponding research package is `docs/research/trace-v49-exploration-compo
 | `docs/audits/v49-exploration-real-database-round1` | FUNCTION3_BACKEND_PRODUCT_AND_WORKFLOW_VALIDATION | Frozen database/projection identity, exact four-category resolution, real public-object bindings, 26 attested and academically supported vocabulary records, all 21 qualified Round 14 associations, 11 Python-composed real structures, four maps, immutable browse transitions, OpenAPI/schema/client parity, evidence and error APIs, five real same-state tree/PNG workflows, exactly five top-level test groups, performance samples, regressions, held-data and injection boundaries, and checksum seals. |
 
 The paired research and handoff packages are `docs/research/trace-v49-exploration-real-database-round1/` and `docs/handoff/trace-v49-exploration-real-database-round1/`. The audit completes Function 3 backend readiness only. Final frontend visual design, public page integration, deployment, and external human domain review remain outside the decision.
+
+## TRACE Round 16B higher-order method audit — 2026-08-28
+
+| Package | Classification | Scope |
+|---|---|---|
+| `docs/audits/v49-exploration-higher-order-association-closure-round16b` | ACTIVE_RESEARCH_METHOD_AND_EXECUTION_EVIDENCE | Exact-source recovery, ordinary publication controls, proactive LFS/large-object policy, 44-surface evidence inventory, field contracts, higher-order candidate/review/association schemas, 12 triggers, 14 exclusion classes, rights controls, Round 16A baseline correction, recursive gaps, and independent method verification. |
+
+The corresponding research package is `docs/research/trace-v49-exploration-higher-order-association-closure-round16b/`. This checkpoint authorizes candidate-census work only. Higher-order association closure, global-composition-coherence closure, product reachability, Function 3 closure, main integration, tags, deployment, and completed external human review remain false.

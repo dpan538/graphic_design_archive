@@ -1,0 +1,13 @@
+disposition	status_class	meaning	potentially_active	mandatory_condition
+DIRECT_HIGHER_ORDER_SUPPORT	FINAL_SUPPORTING	Locator-bearing evidence directly treats the exact concept set as one bounded historical configuration.	true	Evidence, rights, coherence, review, and product-policy gates must all pass.
+COHERENT_COMPOSITE_SUPPORT	FINAL_SUPPORTING	A documented same-case source bundle coherently supports the complete group without unsupported bridges.	true	Every synthesis step and scope equality must be explicit; unrelated pair sources are forbidden.
+MIXED_DIRECT_AND_COMPOSITE_SUPPORT	FINAL_SUPPORTING	Direct group evidence and compatible composite evidence jointly support the exact bounded configuration.	true	Direct and composite claims must be separately traceable and mutually scope-compatible.
+PAIRWISE_SUPPORT_WITHOUT_GROUP_COHERENCE	FINAL_NON_SUPPORTING	Some or all pair claims are supported, but the group has not passed independent global-coherence review.	false	No group-active or product-active status; pair records remain separately governed.
+INQUIRY_ONLY_OR_UNRESOLVED	FINAL_NON_SUPPORTING	The structure has bounded research value but unresolved evidence, authority, sense, rights, or review requirements.	false	May be exposed only through an explicitly research-only path.
+INSUFFICIENT_EVIDENCE	FINAL_NON_SUPPORTING	Reviewable material does not support the proposed exact group.	false	Record searched sources, locators, and rejection reasons.
+COOCCURRENCE_ONLY	FINAL_NON_SUPPORTING	Concept labels share metadata, source, category, or passage without one coherent configuration.	false	Co-occurrence is never association support.
+BOUNDED_SENSE_OR_SCOPE_CONFLICT	FINAL_NON_SUPPORTING	At least one member sense or time/place/institution/actor/case/mechanism scope conflicts with the group.	false	Split or reformulate only through a new candidate identity.
+TOPOLOGY_OR_ROLE_CONFLICT	FINAL_NON_SUPPORTING	The proposed roles, order, or render topology are unsupported or contradictory.	false	A semantic group may survive only with corrected separately governed realization.
+HARD_NEGATIVE	FINAL_NON_SUPPORTING	Direct negative evidence defeats the exact proposed group under its bounded scope.	false	A negative pair blocks pair projection but does not automatically defeat a separately supported hyperedge.
+PENDING_GOVERNED_REVIEW	NONFINAL	The candidate has been generated but one or more mandatory review gates are incomplete.	false	Any pending candidate blocks candidate-universe closure.
+DUPLICATE_IDENTITY_MERGED	FINAL_ADMINISTRATIVE	The candidate duplicates an exact canonical participant, role/order, scope, and authority identity.	false	Point to the surviving candidate; never merge merely overlapping or nested groups.
