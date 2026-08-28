@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "python3",
+    "database/scripts/verify_v50_round16b_manifest.py"
+  ],
+  "command": "python3 database/scripts/verify_v50_round16b_manifest.py",
+  "command_id": "1787932356642-cp011-v50-manifest-final-frozen",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 391,
+  "end_timestamp_utc": "2026-08-28T15:52:37Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp011-v50-manifest-final-frozen",
+  "phase_id": "CHECKPOINT-011-DATABASE",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T15:52:36Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "23834016e318ef1f5bb3b891644f09232150d17c278657f0edc423bc0f0ff7cc",
+  "timed_out": false
+}

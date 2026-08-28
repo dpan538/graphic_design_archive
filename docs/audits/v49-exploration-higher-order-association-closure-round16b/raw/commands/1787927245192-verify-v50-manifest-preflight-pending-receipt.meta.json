@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "database/scripts/verify_v50_round16b_manifest.py",
+    "--preflight"
+  ],
+  "command": "python3 database/scripts/verify_v50_round16b_manifest.py --preflight",
+  "command_id": "1787927245192-verify-v50-manifest-preflight-pending-receipt",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 474,
+  "end_timestamp_utc": "2026-08-28T14:27:25Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "verify-v50-manifest-preflight-pending-receipt",
+  "phase_id": "CHECKPOINT-011-DATABASE-CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T14:27:25Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "4c5db85a37d9072234cb9bb86240211c4f72017a10415df848a88a3ffb591f76",
+  "timed_out": false
+}

@@ -1,0 +1,5 @@
+
+> archive-box-frontend@0.1.0 verify:exploration-v3-projection
+> python3 ../scripts/trace_round16b/build_exploration_v3_runtime_read_model.py --check
+
+{"active_product_association_count": 0, "active_product_composition_count": 0, "control_association_count": 14, "control_composition_count": 2, "higher_order_pair_projection_count": 0, "mode": "CHECK", "read_model_sha256": "df452f70e5d4806fed3274cce68df861ded5d92b57f0129746ae326d92dafb7d", "status": "PASS"}

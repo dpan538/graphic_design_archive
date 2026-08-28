@@ -1,0 +1,30 @@
+{
+  "api_version": "trace-exploration/v3",
+  "artifact_sha256": {
+    "artifact-check-receipt.json": "11d58ecc1a7dd4178e853f7c3fa101e8da18136da9b1161d827a992d6329e40d",
+    "http-cases.tsv": "4325df3cf12272e4acc67a919bca1ff48a519a4c3674d09ad0a0e073478e64c8",
+    "startup-receipt.json": "68b1e615f2c761230f77d0dd7e7a83973c6072478277153568664eba6d1618a6"
+  },
+  "case_count": 1,
+  "case_failure_count": 0,
+  "case_pass_count": 1,
+  "completed_utc": "2026-08-28T15:58:44.027Z",
+  "errors": [
+    "SERVER_STARTUP:VerificationFailure:LOOPBACK_PORT_UNAVAILABLE:59441:[Errno 1] Operation not permitted"
+  ],
+  "external_network_used": false,
+  "loopback_only": true,
+  "mode": "PRODUCTION_HTTP",
+  "performance_interpretation": "OBSERVATIONAL_NO_SLO_OR_PRODUCTION_CAPACITY_CLAIM",
+  "port": 59441,
+  "read_model_sha256": "f1ae8a35895b27c15fb3d9b42828b8611633ee8ee7e2cbc825772b590304351b",
+  "schema_version": "trace-exploration-v3-production-http-verification-summary-v1",
+  "server_termination": {
+    "return_code": null,
+    "sigkill_used": false,
+    "terminated": true,
+    "termination_requested": false
+  },
+  "started_utc": "2026-08-28T15:58:44.022Z",
+  "status": "FAIL"
+}

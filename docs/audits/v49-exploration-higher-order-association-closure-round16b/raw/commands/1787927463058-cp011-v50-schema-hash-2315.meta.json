@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "database/scripts/schema_hash.py",
+    "/private/tmp/gda_v50_round16b_2315_schema.sql"
+  ],
+  "command": "python3 database/scripts/schema_hash.py /private/tmp/gda_v50_round16b_2315_schema.sql",
+  "command_id": "1787927463058-cp011-v50-schema-hash-2315",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 56,
+  "end_timestamp_utc": "2026-08-28T14:31:03Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp011-v50-schema-hash-2315",
+  "phase_id": "checkpoint011",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T14:31:03Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "d9df7dde87f2ac0c5b59abad4a0d8c2c8000eaa8e7d2b5d9a5ad956a6f8cae1f",
+  "timed_out": false
+}

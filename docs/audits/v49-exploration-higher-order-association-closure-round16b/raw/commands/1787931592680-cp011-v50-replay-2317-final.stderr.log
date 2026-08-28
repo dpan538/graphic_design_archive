@@ -1,0 +1,3 @@
+psql:/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/database/functions/020_exploration_v3_integrity.sql:237: ERROR:  record variable cannot be part of multiple-item INTO list
+LINE 16:   INTO STRICT v_association, v_scope_id
+                                    ^

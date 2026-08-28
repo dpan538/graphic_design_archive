@@ -34,7 +34,7 @@ SOURCE_TREE = "977d7e8e045c71857959750b775cd4df3d036686"
 PARENT_CHECKPOINT_SHA = "e5ddbc443c4a0a28004034cba439340ecdeb9a75"
 CONTRACT_VERSION = "trace-exploration-v3-semantic-contract-1.0.0"
 HASH_CONTRACT_VERSION = "trace-exploration-v3-hash-binding-contract-1.0.0"
-VERIFIER_VERSION = "trace-round16b-v3-semantic-contract-independent-verifier-v1"
+VERIFIER_VERSION = "trace-round16b-v3-semantic-contract-independent-verifier-v2"
 AUTHORITY_CUTOFF_UTC = "2026-08-28T09:18:21Z"
 
 FIXTURE_REL = RAW_REL / "v3-semantic-contract-fixtures-v1.json"
@@ -48,13 +48,30 @@ GAP_REL = RAW_REL / "recursive-gap-ledger-checkpoint008-v1.tsv"
 OUTPUT_REL = RAW_REL / "v3-semantic-contract-independent-verification.json"
 VERIFIER_REL = Path("scripts/trace_round16b/verify_v3_semantic_contract_independent.py")
 
-EXPECTED_FIXTURE_SHA256 = "290647400b83fef83896631ba5a9a9647cd36997eec20b3c8e6efec61e212e33"
-EXPECTED_HASH_CONTRACT_FILE_SHA256 = "f2eb70dddc38da506a6380253c17fe66fda457ea0c37a591a4a0a832ea6e0186"
-EXPECTED_HASH_CONTRACT_CANONICAL_SHA256 = "1da5396fb18dd49c328c30ee03386bebb07c7837beda38496b099b5c5e514962"
-EXPECTED_OUTPUT_MANIFEST_SHA256 = "29583bde333d6b3f35a19dc3140ce40f09da5ec48a1ea23bbc3e71a6c669d1f2"
-EXPECTED_BUILD_RECEIPT_SHA256 = "3724b45cbf2d3c53504fe0c5ba1f21807458cacaef39eb482dcd311734c2a114"
-EXPECTED_OUTPUT_AGGREGATE_SHA256 = "8e789a36b739c298ccb8ce2f4e2762443ff78247026662f96f12602d90419ced"
+EXPECTED_FIXTURE_SHA256 = "6e01a274dce52ebbfd008574136577e891c4f5d482d0761fe0c9a320afd26f3d"
+EXPECTED_HASH_CONTRACT_FILE_SHA256 = "d5a8608316c768eb0e3c6ea597919f9de788ba2e7792ee4c43bb28edc7a5f70b"
+EXPECTED_HASH_CONTRACT_CANONICAL_SHA256 = "8d3c5416dbd74b015d578e7de4a638f2d6de1901b700443a384207136ca71e24"
+EXPECTED_OUTPUT_MANIFEST_SHA256 = "c16b00c914ff5cfc76d1a157a3ebc3abc981b061b3a42c84af37deee0cc538e5"
+EXPECTED_BUILD_RECEIPT_SHA256 = "bffacc1f0a26b108f4297eb44e206a4df217cca60798dd1148b47355fa37d5d4"
+EXPECTED_OUTPUT_AGGREGATE_SHA256 = "16c725774afa24af435d1fa749cc0de38aeb408ac646d5b26c8c3c1fdf7c548f"
 EXPECTED_V49_FREEZE_MANIFEST_SHA256 = "f0dda59dd515ba243eaf213bce9f42513727f1ab0a44685635921c3759a7d22e"
+
+# These are the only Round 16B database changes permitted relative to the
+# semantic-contract checkpoint.  Every v49 file remains pinned separately by
+# FREEZE_V49.json; this exact set records the governed, additive v50 surface.
+V50_ADDITIVE_DATABASE_PATHS = (
+    "database/VERSION",
+    "database/ROUND16B_V50.md",
+    "database/functions/020_exploration_v3_integrity.sql",
+    "database/migrations/014_exploration_v3_higher_order_associations.sql",
+    "database/roles/008_exploration_v3_grants.sql",
+    "database/schema-manifest-v50-round16b.json",
+    "database/scripts/replay_v50_round16b.sh",
+    "database/scripts/run_v50_round16b_tests.sh",
+    "database/scripts/verify_v50_round16b_manifest.py",
+    "database/tests/014_exploration_v3_higher_order_associations.sql",
+    "database/views/003_exploration_v3_read_contract.sql",
+)
 
 EXPECTED_SCHEMA_NAMES = {
     "association.schema.json",
@@ -65,6 +82,7 @@ EXPECTED_SCHEMA_NAMES = {
     "hash-binding-contract.schema.json",
     "navigation-state.schema.json",
     "semantic-contract.schema.json",
+    "transition.schema.json",
     "v2-pair-adapter.schema.json",
     "workflow.schema.json",
 }
@@ -88,6 +106,7 @@ EXPECTED_HASH_BINDING_OBJECT_TYPES = {
     "COMPOSITION_REVISION",
     "COMPOSITION_COHERENCE_REVIEW",
     "NAVIGATION_STATE",
+    "TRANSITION",
     "WORKFLOW",
     "EXPORT",
     "V2_PAIR_ADAPTER_RECEIPT",
@@ -103,6 +122,7 @@ EXPECTED_BINDING_POINTERS = {
     "COMPOSITION_REVISION": "/compositions/*",
     "COMPOSITION_COHERENCE_REVIEW": "/composition_coherence_reviews/*",
     "NAVIGATION_STATE": "/navigation_states/*",
+    "TRANSITION": "/transitions/*",
     "WORKFLOW": "/workflows/*",
     "EXPORT": "/exports/*",
     "V2_PAIR_ADAPTER_RECEIPT": "/v2_pair_adapter_receipts/*",
@@ -110,6 +130,8 @@ EXPECTED_BINDING_POINTERS = {
 }
 
 V2_PINNED_SHA256 = {
+    "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts": "fa0fc26a89bcd0a4962be05c8d264cbf575037bb865d615b652b7cbed921c689",
+    "frontend/src/app/api/trace/v2/exploration/route.ts": "e653b11afc890351c6d29e0b29b431fe3ddfe394858167bd0a7886852f624582",
     "schemas/trace/exploration/v2/action-request.schema.json": "14231eb95b74a925f9cf4489918b175c1e6aad05453cb62a5f33d855e6b9be9b",
     "schemas/trace/exploration/v2/association-response.schema.json": "930918be48147c723d48464006c697add13c8d44e42f2e61fb101c13068518af",
     "schemas/trace/exploration/v2/capabilities-response.schema.json": "02b8f1c6be7d397fadda7e2e4cabfc92bbc278652c076f3e95a3b780e4fa3409",
@@ -199,9 +221,11 @@ EXPECTED_RECONSTRUCTED_COUNTS = {
     },
     "interaction": {
         "synthetic_state_count": 1,
+        "synthetic_transition_count": 0,
         "synthetic_workflow_count": 1,
         "synthetic_export_count": 1,
         "production_state_count": 0,
+        "production_transition_count": 0,
         "production_workflow_count": 0,
         "production_export_count": 0,
     },
@@ -651,7 +675,9 @@ def hash_contract_semantic_issues(contract: dict[str, Any]) -> list[str]:
         (row for row in workflow_binding.get("materials", []) if row.get("material_name") == "workflow_semantic"),
         None,
     )
-    if workflow_semantic is None or "association_realization_ids" not in workflow_semantic.get("source_fields", []):
+    if workflow_semantic is None or not {
+        "association_realization_ids", "transition_ids"
+    }.issubset(workflow_semantic.get("source_fields", [])):
         issues.append("WORKFLOW_REALIZATION_HASH_BINDING")
 
     critical_direct_fields = {
@@ -675,7 +701,12 @@ def hash_contract_semantic_issues(contract: dict[str, Any]) -> list[str]:
         },
         "WORKFLOW": {
             "realm", "initial_state_id", "transition_kind", "association_revision_ids",
-            "association_realization_ids", "state_ids", "reachable",
+            "association_realization_ids", "state_ids", "transition_ids", "reachable",
+        },
+        "TRANSITION": {
+            "realm", "from_state_id", "to_state_id", "transition_kind",
+            "incidence_id", "association_revision_id", "association_realization_id",
+            "state_mutated",
         },
         "EXPORT": {
             "realm", "workflow_id", "state_id", "association_revision_ids",
@@ -837,6 +868,8 @@ def binding_objects(fixture: dict[str, Any], object_type: str) -> list[tuple[dic
         return [(row, {}) for row in fixture["composition_coherence_reviews"]]
     if object_type == "NAVIGATION_STATE":
         return [(row, {}) for row in fixture["navigation_states"]]
+    if object_type == "TRANSITION":
+        return [(row, {}) for row in fixture["transitions"]]
     if object_type == "WORKFLOW":
         return [(row, {}) for row in fixture["workflows"]]
     if object_type == "EXPORT":
@@ -1608,9 +1641,11 @@ def reconstruct_counts(fixture: dict[str, Any]) -> dict[str, Any]:
         },
         "interaction": {
             "synthetic_state_count": sum(row["realm"] == "SYNTHETIC_CONTROL" for row in fixture["navigation_states"]),
+            "synthetic_transition_count": sum(row["realm"] == "SYNTHETIC_CONTROL" for row in fixture["transitions"]),
             "synthetic_workflow_count": sum(row["realm"] == "SYNTHETIC_CONTROL" for row in fixture["workflows"]),
             "synthetic_export_count": sum(row["realm"] == "SYNTHETIC_CONTROL" for row in fixture["exports"]),
             "production_state_count": sum(row["realm"] == "PRODUCTION" for row in fixture["navigation_states"]),
+            "production_transition_count": sum(row["realm"] == "PRODUCTION" for row in fixture["transitions"]),
             "production_workflow_count": sum(row["realm"] == "PRODUCTION" for row in fixture["workflows"]),
             "production_export_count": sum(row["realm"] == "PRODUCTION" for row in fixture["exports"]),
         },
@@ -1935,12 +1970,33 @@ def build_receipt() -> dict[str, Any]:
         checks.equal(f"navigation_focus_terminal_{state['state_id']}", previous_to, state["focus_navigation_node_id"])
         checks.equal(f"navigation_derived_alternation_{state['state_id']}", state["bipartite_alternation_valid"], derived_alternation)
 
+    transitions = fixture["transitions"]
+    transition_by_id = {row["transition_id"]: row for row in transitions}
+    checks.equal("transition_id_uniqueness", len(transition_by_id), len(transitions))
+    for transition in transitions:
+        transition_id = transition["transition_id"]
+        checks.true(
+            f"transition_endpoint_refs_{transition_id}",
+            transition["from_state_id"] in state_by_id
+            and transition["to_state_id"] in state_by_id,
+            [transition["from_state_id"], transition["to_state_id"]],
+        )
+        checks.equal(
+            f"transition_state_mutated_{transition_id}",
+            transition["state_mutated"],
+            transition["from_state_id"] != transition["to_state_id"],
+        )
+
     workflows = fixture["workflows"]
     workflow_by_id = {row["workflow_id"]: row for row in workflows}
     checks.equal("workflow_id_uniqueness", len(workflow_by_id), len(workflows))
+    selected_transition_ids: set[str] = set()
     for workflow in workflows:
         checks.true(f"workflow_initial_state_{workflow['workflow_id']}", workflow["initial_state_id"] in workflow["state_ids"] and workflow["initial_state_id"] in state_by_id, workflow["initial_state_id"])
         checks.true(f"workflow_state_refs_{workflow['workflow_id']}", set(workflow["state_ids"]).issubset(state_by_id), workflow["state_ids"])
+        checks.equal(f"workflow_state_id_uniqueness_{workflow['workflow_id']}", len(workflow["state_ids"]), len(set(workflow["state_ids"])))
+        checks.equal(f"workflow_transition_id_uniqueness_{workflow['workflow_id']}", len(workflow["transition_ids"]), len(set(workflow["transition_ids"])))
+        checks.true(f"workflow_transition_refs_{workflow['workflow_id']}", set(workflow["transition_ids"]).issubset(transition_by_id), workflow["transition_ids"])
         checks.true(f"workflow_association_refs_{workflow['workflow_id']}", set(workflow["association_revision_ids"]).issubset(association_by_revision), workflow["association_revision_ids"])
         checks.true(f"workflow_realization_refs_{workflow['workflow_id']}", set(workflow["association_realization_ids"]).issubset(realization_by_id), workflow["association_realization_ids"])
         workflow_realization_associations = {
@@ -1966,8 +2022,37 @@ def build_receipt() -> dict[str, Any]:
             all(state_by_id[state_id]["realm"] == workflow["realm"] for state_id in workflow["state_ids"]),
             workflow["realm"],
         )
-        if workflow["reachable"]:
-            checks.true(f"workflow_reachable_path_{workflow['workflow_id']}", all(state_by_id[state_id]["path"] for state_id in workflow["state_ids"]), workflow["state_ids"])
+        selected = [transition_by_id[transition_id] for transition_id in workflow["transition_ids"]]
+        selected_transition_ids.update(workflow["transition_ids"])
+        checks.true(
+            f"workflow_transition_scope_{workflow['workflow_id']}",
+            all(
+                row["realm"] == workflow["realm"]
+                and row["transition_kind"] == workflow["transition_kind"]
+                and row["from_state_id"] in workflow["state_ids"]
+                and row["to_state_id"] in workflow["state_ids"]
+                for row in selected
+            ),
+            workflow["transition_ids"],
+        )
+        reached = {workflow["initial_state_id"]}
+        pending = [workflow["initial_state_id"]]
+        while pending:
+            current = pending.pop()
+            for transition in selected:
+                if transition["from_state_id"] == current and transition["to_state_id"] not in reached:
+                    reached.add(transition["to_state_id"])
+                    pending.append(transition["to_state_id"])
+        checks.equal(
+            f"workflow_reachability_derived_{workflow['workflow_id']}",
+            workflow["reachable"],
+            set(workflow["state_ids"]).issubset(reached),
+        )
+    checks.equal(
+        "transition_workflow_selection_coverage",
+        selected_transition_ids,
+        set(transition_by_id),
+    )
 
     for export in fixture["exports"]:
         workflow = workflow_by_id[export["workflow_id"]]
@@ -2417,7 +2502,7 @@ def build_receipt() -> dict[str, Any]:
     checks.equal("zero_production_taxonomy", set(zero_production_fields.values()), {0})
 
     checks.equal("census_count_taxonomy", census["count_taxonomy"], reconstructed_counts)
-    checks.equal("census_schema_document_count", census["schema_document_count"], 10)
+    checks.equal("census_schema_document_count", census["schema_document_count"], 11)
     checks.equal("census_control_count", census["control_count"], 10)
     checks.equal("census_negative_probe_count", [census["negative_probe_count"], census["negative_probe_rejection_count"]], [37, 37])
     checks.equal("census_zero_boundaries", [census["production_activation_count"], census["production_product_eligible_count"], census["implicit_pair_projection_count"], census["closure_true_count"]], [0, 0, 0, 0])
@@ -2425,7 +2510,7 @@ def build_receipt() -> dict[str, Any]:
 
     checks.equal("build_receipt_status", build_receipt["status"], "PASS")
     checks.equal("build_receipt_output_aggregate", build_receipt["output_aggregate_sha256"], EXPECTED_OUTPUT_AGGREGATE_SHA256)
-    checks.equal("build_receipt_counts", [build_receipt["schema_document_count"], build_receipt["control_count"], build_receipt["negative_probe_count"], build_receipt["negative_probe_rejection_count"], build_receipt["output_artifact_count_excluding_receipt"]], [10, 10, 37, 37, 19])
+    checks.equal("build_receipt_counts", [build_receipt["schema_document_count"], build_receipt["control_count"], build_receipt["negative_probe_count"], build_receipt["negative_probe_rejection_count"], build_receipt["output_artifact_count_excluding_receipt"]], [11, 10, 37, 37, 20])
     checks.equal("build_receipt_non_authorizations", [build_receipt["production_activation_count"], build_receipt["production_product_eligible_count"], build_receipt["implicit_pair_projection_count"], build_receipt["closure_true_count"], build_receipt["v2_files_modified"], build_receipt["frozen_v49_artifacts_modified"], build_receipt["database_implemented"], build_receipt["runtime_implemented"], build_receipt["deployment_performed"], build_receipt["history_rewritten"], build_receipt["force_push_used"]], [0, 0, 0, 0, 0, 0, False, False, False, False, False])
 
     output_paths = [row["path"] for row in output_manifest]
@@ -2453,7 +2538,7 @@ def build_receipt() -> dict[str, Any]:
         observed_sha = sha256_file(REPO / relative)
         checks.equal(f"v2_pinned_sha_{relative}", observed_sha, expected_sha)
         v2_inventory.append({"path": relative, "sha256": observed_sha})
-    checks.equal("v2_pinned_file_count", len(v2_inventory), 22)
+    checks.equal("v2_pinned_file_count", len(v2_inventory), 24)
 
     freeze_path = REPO / "database/FREEZE_V49.json"
     checks.equal("v49_freeze_manifest_sha256", sha256_file(freeze_path), EXPECTED_V49_FREEZE_MANIFEST_SHA256)
@@ -2474,17 +2559,56 @@ def build_receipt() -> dict[str, Any]:
     all_changes = tracked_changes | untracked_changes
     v2_protected_prefixes = (
         "schemas/trace/exploration/v2/",
+        "frontend/src/app/api/trace/v2/exploration/",
         "frontend/src/features/trace-v49/exploration-v2/",
         "frontend/generated/trace-exploration-v2/production-read-model.json",
     )
+    v50_additive_database_paths = set(V50_ADDITIVE_DATABASE_PATHS)
+    observed_database_changes = sorted(path for path in all_changes if path.startswith("database/"))
+    checks.equal(
+        "checkpoint_diff_v50_additive_database_change_set",
+        observed_database_changes,
+        sorted(v50_additive_database_paths),
+    )
+    expected_v50_status_by_path = {
+        relative: "M" if relative == "database/VERSION" else "A"
+        for relative in V50_ADDITIVE_DATABASE_PATHS
+    }
+    observed_v50_status_by_path: dict[str, str] = {}
+    for row in run_git(["diff", "--name-status", PARENT_CHECKPOINT_SHA, "--", "database"]):
+        fields = row.split("\t")
+        checks.equal(f"v50_git_status_field_count_{row}", len(fields), 2)
+        observed_v50_status_by_path[fields[1]] = fields[0]
+    for relative in run_git(["ls-files", "--others", "--exclude-standard", "--", "database"]):
+        checks.true(f"v50_untracked_status_not_duplicate_{relative}", relative not in observed_v50_status_by_path, relative)
+        observed_v50_status_by_path[relative] = "A"
+    ignored_database_paths = sorted(
+        run_git(["ls-files", "--others", "--ignored", "--exclude-standard", "--", "database"])
+    )
+    checks.equal("checkpoint_diff_ignored_database_path_count", len(ignored_database_paths), 0)
+    checks.equal(
+        "checkpoint_diff_v50_additive_database_status_map",
+        observed_v50_status_by_path,
+        expected_v50_status_by_path,
+    )
+    v50_additive_database_inventory: list[dict[str, Any]] = []
+    for relative in sorted(v50_additive_database_paths):
+        path = REPO / relative
+        checks.true(f"v50_additive_database_file_exists_{relative}", path.is_file(), relative)
+        v50_additive_database_inventory.append(
+            {"bytes": path.stat().st_size, "path": relative, "sha256": sha256_file(path)}
+        )
     frozen_exact = set(freeze["perFileSha256"])
     frozen_prefixes = tuple(path.rstrip("/") + "/" for path in freeze["frozenPaths"] if (REPO / path).is_dir())
     protected_changes = sorted(
         path
         for path in all_changes
-        if path in frozen_exact
-        or any(path.startswith(prefix) for prefix in frozen_prefixes)
-        or any(path == prefix.rstrip("/") or path.startswith(prefix) for prefix in v2_protected_prefixes)
+        if path not in v50_additive_database_paths
+        and (
+            path in frozen_exact
+            or any(path.startswith(prefix) for prefix in frozen_prefixes)
+            or any(path == prefix.rstrip("/") or path.startswith(prefix) for prefix in v2_protected_prefixes)
+        )
     )
     checks.equal("checkpoint_diff_protected_change_count", len(protected_changes), 0)
 
@@ -2594,6 +2718,11 @@ def build_receipt() -> dict[str, Any]:
             "v49_freeze_manifest_sha256": EXPECTED_V49_FREEZE_MANIFEST_SHA256,
             "v49_frozen_file_count": len(v49_rows),
             "v49_inventory_canonical_sha256": v49_inventory_sha,
+            "v50_additive_database_file_count": len(v50_additive_database_inventory),
+            "v50_additive_database_inventory": v50_additive_database_inventory,
+            "v50_additive_database_inventory_canonical_sha256": digest(v50_additive_database_inventory),
+            "v50_additive_database_status_by_path": observed_v50_status_by_path,
+            "ignored_database_paths": ignored_database_paths,
             "checkpoint_diff_protected_changes": protected_changes,
         },
         "failed_probes_and_corrections": FAILED_PROBES_AND_CORRECTIONS,

@@ -1,0 +1,67 @@
+ assert_true 
+-------------
+ 
+(1 row)
+
+ assert_true 
+-------------
+ 
+(1 row)
+
+ assert_true 
+-------------
+ 
+(1 row)
+
+ assert_true 
+-------------
+ 
+(1 row)
+
+ assert_true 
+-------------
+ 
+(1 row)
+
+ assert_true 
+-------------
+ 
+(1 row)
+
+ assert_true 
+-------------
+ 
+(1 row)
+
+ assert_true 
+-------------
+ 
+(1 row)
+
+ assert_true 
+-------------
+ 
+(1 row)
+
+ assert_true 
+-------------
+ 
+(1 row)
+
+ assert_true 
+-------------
+ 
+(1 row)
+
+ assert_true 
+-------------
+ 
+(1 row)
+
+V50_EXPLORATION_V3_HIGHER_ORDER_ASSOCIATION_TESTS=PASS
+V50_SEAL_RACE_CHILD_FIRST=PASS LOSER_SQLSTATE=40001 RETRY_SEAL=PASS CHILD_INCLUDED=1
+V50_SEAL_RACE_SEAL_FIRST=PASS LOSER_SQLSTATE=40001 RETRY_CHILD_SQLSTATE=55000 CHILD_COUNT=0
+V50_SEAL_ISOLATION_GUARDS=PASS REPEATABLE_READ_SQLSTATE=25000 SERIALIZABLE_SQLSTATE=25000
+V50_RACE_DATABASE_DISPOSED=PASS
+V50_SEAL_RACE_EVIDENCE_DIR=/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318 CHECKSUMS_SHA256=595efb06ae1508b3f2cf952e3d0f1af2e9bd70b12bd4fcde93a530b3b70442ab
+V50_ROUND16B_CONTRACT_TESTS=PASS SEAL_RACE_MATRIX=PASS ISOLATION_GUARDS=PASS FIXTURE_RESIDUE=0

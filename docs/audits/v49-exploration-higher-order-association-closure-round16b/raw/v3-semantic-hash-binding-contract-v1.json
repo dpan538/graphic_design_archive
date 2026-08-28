@@ -499,6 +499,55 @@
       "object_type": "NAVIGATION_STATE"
     },
     {
+      "collection_pointer": "/transitions/*",
+      "hash_fields": [
+        {
+          "hash_field": "semantic_sha256",
+          "material_name": "transition_semantic",
+          "representation": "LOWERCASE_HEX_64"
+        }
+      ],
+      "identifiers": [
+        {
+          "digest_hex_chars": 24,
+          "digest_material_name": "transition_semantic",
+          "identifier_field": "transition_id",
+          "prefix": "transition:v3:",
+          "suffix_rule": "NONE"
+        }
+      ],
+      "materials": [
+        {
+          "field_mappings": [],
+          "material_name": "transition_semantic",
+          "normalization_rules": [],
+          "output_keys": [
+            "realm",
+            "from_state_id",
+            "to_state_id",
+            "transition_kind",
+            "incidence_id",
+            "association_revision_id",
+            "association_realization_id",
+            "state_mutated"
+          ],
+          "recipe": "DIRECT_FIELD_OBJECT",
+          "source_fields": [
+            "realm",
+            "from_state_id",
+            "to_state_id",
+            "transition_kind",
+            "incidence_id",
+            "association_revision_id",
+            "association_realization_id",
+            "state_mutated"
+          ],
+          "wrapper": "NONE"
+        }
+      ],
+      "object_type": "TRANSITION"
+    },
+    {
       "collection_pointer": "/workflows/*",
       "hash_fields": [
         {
@@ -528,6 +577,7 @@
             "association_revision_ids",
             "association_realization_ids",
             "state_ids",
+            "transition_ids",
             "reachable"
           ],
           "recipe": "DIRECT_FIELD_OBJECT",
@@ -538,6 +588,7 @@
             "association_revision_ids",
             "association_realization_ids",
             "state_ids",
+            "transition_ids",
             "reachable"
           ],
           "wrapper": "NONE"

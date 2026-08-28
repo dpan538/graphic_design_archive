@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "python3",
+    "database/scripts/verify_v50_round16b_manifest.py"
+  ],
+  "command": "python3 database/scripts/verify_v50_round16b_manifest.py",
+  "command_id": "1787926609857-verify-v50-manifest-mid-correction-expected-failure",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 373,
+  "end_timestamp_utc": "2026-08-28T14:16:50Z",
+  "exit_code": 1,
+  "launch_error": "",
+  "operation_id": "verify-v50-manifest-mid-correction-expected-failure",
+  "phase_id": "CHECKPOINT-011-DATABASE-CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T14:16:49Z",
+  "stderr_sha256": "84fae44db937d1c8781eea5f7059d5d117b0102990e522812c810693ca8de9ba",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

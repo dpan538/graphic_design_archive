@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "npm",
+    "--prefix",
+    "frontend",
+    "run",
+    "build"
+  ],
+  "command": "npm --prefix frontend run build",
+  "command_id": "1787923968879-production-build-checkpoint011",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 12200,
+  "end_timestamp_utc": "2026-08-28T13:33:01Z",
+  "exit_code": 1,
+  "launch_error": "",
+  "operation_id": "production-build-checkpoint011",
+  "phase_id": "CHECKPOINT-011-BUILD",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T13:32:48Z",
+  "stderr_sha256": "294be6535fca1b16b77f7b418d4d47d3bedd8b0a314a8c3225a2ad785a2ef1ee",
+  "stdout_sha256": "e73d8f3dbc2a924eba925cdd036302d833e29a1f424845ab6aa3c05111fdc44f",
+  "timed_out": false
+}

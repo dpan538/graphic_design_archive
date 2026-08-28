@@ -1,0 +1,30 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/postgresql@16/bin/psql",
+    "-X",
+    "-q",
+    "-At",
+    "-h",
+    "/private/tmp",
+    "-p",
+    "55439",
+    "-d",
+    "gda_v50_round16b_2318",
+    "-c",
+    "SELECT current_database(),pg_get_userbyid(d.datdba),(SELECT count(*) FROM pg_namespace WHERE nspname IN ('research','corpus','api','app','license','audit','job','exploration','governance','authority','exploration_v3')) FROM pg_database d WHERE d.datname=current_database();"
+  ],
+  "command": "/opt/homebrew/opt/postgresql@16/bin/psql -X -q -At -h /private/tmp -p 55439 -d gda_v50_round16b_2318 -c 'SELECT current_database(),pg_get_userbyid(d.datdba),(SELECT count(*) FROM pg_namespace WHERE nspname IN ('\"'\"'research'\"'\"','\"'\"'corpus'\"'\"','\"'\"'api'\"'\"','\"'\"'app'\"'\"','\"'\"'license'\"'\"','\"'\"'audit'\"'\"','\"'\"'job'\"'\"','\"'\"'exploration'\"'\"','\"'\"'governance'\"'\"','\"'\"'authority'\"'\"','\"'\"'exploration_v3'\"'\"')) FROM pg_database d WHERE d.datname=current_database();'",
+  "command_id": "1787931951890-cp011-verify-pristine-v50-database-2318",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 17,
+  "end_timestamp_utc": "2026-08-28T15:45:51Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp011-verify-pristine-v50-database-2318",
+  "phase_id": "CHECKPOINT-011-DATABASE",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T15:45:51Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "2f30e2694cf3d3c0e2cb13ba6d2192b644ae9222a3a79492a9d950945c3924c4",
+  "timed_out": false
+}

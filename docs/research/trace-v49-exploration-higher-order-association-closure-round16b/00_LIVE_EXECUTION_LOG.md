@@ -5770,3 +5770,3435 @@
 - Decision: Execution sealing requires the current exact hashes of manually maintained ledgers.
 - Next: Run the independent execution-log verifier.
 - Git SHA: `468105499c7be102deec7d6555aced688dea9901`
+
+## Event 445
+
+- UTC timestamp: 2026-08-28T12:45:29Z
+- Phase: CHECKPOINT-011-BOOTSTRAP
+- Operation: START — Import publication chain through checkpoint 010
+- Command: `python3 scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787902081597323000-checkpoint-004.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787906350663884000-checkpoint-006.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787908701362896000-checkpoint-007.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787914780509164000-checkpoint-008.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787917453487486000-checkpoint-009.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787920754083087000-checkpoint-010.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv`
+- Inputs: /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787920754083087000-checkpoint-010.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 446
+
+- UTC timestamp: 2026-08-28T12:45:29Z
+- Phase: CHECKPOINT-011-BOOTSTRAP
+- Operation: PASS — Import publication chain through checkpoint 010
+- Command: `python3 scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787902081597323000-checkpoint-004.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787906350663884000-checkpoint-006.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787908701362896000-checkpoint-007.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787914780509164000-checkpoint-008.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787917453487486000-checkpoint-009.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787920754083087000-checkpoint-010.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv`
+- Inputs: /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787920754083087000-checkpoint-010.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Duration: 49 ms
+- Warnings: none
+- Errors: none
+- Decision: The immutable publication chain is complete through checkpoint 010.
+- Next: Freeze checkpoint 011 runtime inputs.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 447
+
+- UTC timestamp: 2026-08-28T12:47:02Z
+- Phase: CHECKPOINT-011-RUNTIME
+- Operation: START — Capture runtime and database toolchain preflight
+- Command: `sh -c 'for tool in node npm python3 psql postgres initdb pg_ctl createdb; do if command -v "$tool" >/dev/null 2>&1; then "$tool" --version 2>/dev/null | head -n 1 | sed "s#^#$tool=#"; else echo "$tool=MISSING"; fi; done; if test -d frontend/node_modules; then echo frontend_node_modules=PRESENT; else echo frontend_node_modules=MISSING; fi'`
+- Inputs: frontend/package-lock.json, database/FROZEN_V49.md
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 448
+
+- UTC timestamp: 2026-08-28T12:47:03Z
+- Phase: CHECKPOINT-011-RUNTIME
+- Operation: PASS — Capture runtime and database toolchain preflight
+- Command: `sh -c 'for tool in node npm python3 psql postgres initdb pg_ctl createdb; do if command -v "$tool" >/dev/null 2>&1; then "$tool" --version 2>/dev/null | head -n 1 | sed "s#^#$tool=#"; else echo "$tool=MISSING"; fi; done; if test -d frontend/node_modules; then echo frontend_node_modules=PRESENT; else echo frontend_node_modules=MISSING; fi'`
+- Inputs: frontend/package-lock.json, database/FROZEN_V49.md
+- Outputs: none
+- Duration: 493 ms
+- Warnings: none
+- Errors: none
+- Decision: Use only available local toolchains; record missing integration dependencies as explicit limits.
+- Next: Build additive v50 and v3 runtime contracts.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 449
+
+- UTC timestamp: 2026-08-28T12:47:34Z
+- Phase: CHECKPOINT-011-RUNTIME
+- Operation: START — Install lockfile-pinned frontend dependencies
+- Command: `npm ci --ignore-scripts`
+- Inputs: package-lock.json
+- Declared outputs: none
+- Warnings: EXTERNAL_PACKAGE_REGISTRY_ACCESS
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 450
+
+- UTC timestamp: 2026-08-28T12:47:39Z
+- Phase: CHECKPOINT-011-RUNTIME
+- Operation: PASS — Install lockfile-pinned frontend dependencies
+- Command: `npm ci --ignore-scripts`
+- Inputs: package-lock.json
+- Outputs: none
+- Duration: 5174 ms
+- Warnings: EXTERNAL_PACKAGE_REGISTRY_ACCESS
+- Errors: none
+- Decision: Use the exact package-lock dependency graph for build and runtime verification.
+- Next: Run v3 runtime typecheck and API tests.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 451
+
+- UTC timestamp: 2026-08-28T13:20:13Z
+- Phase: CHECKPOINT-011-RUNTIME
+- Operation: START — Run Exploration v3 focused API and corruption suite
+- Command: `npm run test:exploration-api-v3`
+- Inputs: generated/trace-exploration-v3, src/features/trace-v49/exploration-v3, scripts/test-trace-exploration-v3.mjs
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 452
+
+- UTC timestamp: 2026-08-28T13:20:13Z
+- Phase: CHECKPOINT-011-RUNTIME
+- Operation: FAIL — Run Exploration v3 focused API and corruption suite
+- Command: `npm run test:exploration-api-v3`
+- Inputs: generated/trace-exploration-v3, src/features/trace-v49/exploration-v3, scripts/test-trace-exploration-v3.mjs
+- Outputs: none
+- Duration: 326 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Run TypeScript and independent reconstruction gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 453
+
+- UTC timestamp: 2026-08-28T13:25:17Z
+- Phase: CHECKPOINT-011-RUNTIME
+- Operation: START — Rerun Exploration v3 focused API and corruption suite after order-independent eligibility probes
+- Command: `npm run test:exploration-api-v3`
+- Inputs: generated/trace-exploration-v3, src/features/trace-v49/exploration-v3, scripts/test-trace-exploration-v3.mjs
+- Declared outputs: generated/trace-exploration-v3
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 454
+
+- UTC timestamp: 2026-08-28T13:25:17Z
+- Phase: CHECKPOINT-011-RUNTIME
+- Operation: PASS — Rerun Exploration v3 focused API and corruption suite after order-independent eligibility probes
+- Command: `npm run test:exploration-api-v3`
+- Inputs: generated/trace-exploration-v3, src/features/trace-v49/exploration-v3, scripts/test-trace-exploration-v3.mjs
+- Outputs: generated/trace-exploration-v3
+- Duration: 315 ms
+- Warnings: none
+- Errors: none
+- Decision: Every encoded corruption is rejected independently and the v3 API remains fail closed.
+- Next: Run TypeScript and independent reconstruction gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 455
+
+- UTC timestamp: 2026-08-28T13:31:53Z
+- Phase: CHECKPOINT-011-RUNTIME
+- Operation: START — Verify deterministic Exploration v3 projection
+- Command: `npm --prefix frontend run verify:exploration-v3-projection`
+- Inputs: scripts/trace_round16b/build_exploration_v3_runtime_read_model.py, frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 456
+
+- UTC timestamp: 2026-08-28T13:31:53Z
+- Phase: CHECKPOINT-011-RUNTIME
+- Operation: PASS — Verify deterministic Exploration v3 projection
+- Command: `npm --prefix frontend run verify:exploration-v3-projection`
+- Inputs: scripts/trace_round16b/build_exploration_v3_runtime_read_model.py, frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256
+- Outputs: none
+- Duration: 389 ms
+- Warnings: none
+- Errors: none
+- Decision: Any projection drift blocks Checkpoint 011.
+- Next: Run the independent reconstruction.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 457
+
+- UTC timestamp: 2026-08-28T13:31:59Z
+- Phase: CHECKPOINT-011-INDEPENDENT-VERIFICATION
+- Operation: START — Independently reconstruct Exploration v3 runtime
+- Command: `python3 scripts/trace_round16b/verify_v3_runtime_independent.py`
+- Inputs: scripts/trace_round16b/verify_v3_runtime_independent.py, frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/manifest.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 458
+
+- UTC timestamp: 2026-08-28T13:32:00Z
+- Phase: CHECKPOINT-011-INDEPENDENT-VERIFICATION
+- Operation: PASS — Independently reconstruct Exploration v3 runtime
+- Command: `python3 scripts/trace_round16b/verify_v3_runtime_independent.py`
+- Inputs: scripts/trace_round16b/verify_v3_runtime_independent.py, frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/manifest.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json
+- Duration: 111 ms
+- Warnings: none
+- Errors: none
+- Decision: Any reconstruction or adversarial-control mismatch blocks Checkpoint 011.
+- Next: Check receipt determinism.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 459
+
+- UTC timestamp: 2026-08-28T13:32:06Z
+- Phase: CHECKPOINT-011-INDEPENDENT-VERIFICATION
+- Operation: START — Check Exploration v3 independent receipt determinism
+- Command: `python3 scripts/trace_round16b/verify_v3_runtime_independent.py --check`
+- Inputs: scripts/trace_round16b/verify_v3_runtime_independent.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 460
+
+- UTC timestamp: 2026-08-28T13:32:06Z
+- Phase: CHECKPOINT-011-INDEPENDENT-VERIFICATION
+- Operation: PASS — Check Exploration v3 independent receipt determinism
+- Command: `python3 scripts/trace_round16b/verify_v3_runtime_independent.py --check`
+- Inputs: scripts/trace_round16b/verify_v3_runtime_independent.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json
+- Outputs: none
+- Duration: 108 ms
+- Warnings: none
+- Errors: none
+- Decision: Receipt drift blocks Checkpoint 011.
+- Next: Compile the verifier and type-check the runtime.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 461
+
+- UTC timestamp: 2026-08-28T13:32:12Z
+- Phase: CHECKPOINT-011-INDEPENDENT-VERIFICATION
+- Operation: START — Compile Exploration v3 generators and verifier
+- Command: `python3 -m py_compile scripts/trace_round16b/build_exploration_v3_runtime_read_model.py scripts/trace_round16b/verify_v3_runtime_independent.py`
+- Inputs: scripts/trace_round16b/build_exploration_v3_runtime_read_model.py, scripts/trace_round16b/verify_v3_runtime_independent.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 462
+
+- UTC timestamp: 2026-08-28T13:32:12Z
+- Phase: CHECKPOINT-011-INDEPENDENT-VERIFICATION
+- Operation: PASS — Compile Exploration v3 generators and verifier
+- Command: `python3 -m py_compile scripts/trace_round16b/build_exploration_v3_runtime_read_model.py scripts/trace_round16b/verify_v3_runtime_independent.py`
+- Inputs: scripts/trace_round16b/build_exploration_v3_runtime_read_model.py, scripts/trace_round16b/verify_v3_runtime_independent.py
+- Outputs: none
+- Duration: 55 ms
+- Warnings: none
+- Errors: none
+- Decision: Syntax failure blocks Checkpoint 011.
+- Next: Run TypeScript runtime acceptance.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 463
+
+- UTC timestamp: 2026-08-28T13:32:18Z
+- Phase: CHECKPOINT-011-RUNTIME
+- Operation: START — Type-check Exploration v3 runtime acceptance
+- Command: `npm --prefix frontend run typecheck:runtime`
+- Inputs: frontend/src/features/trace-v49/exploration-v3, frontend/src/app/api/trace/v3, frontend/tsconfig.runtime-acceptance.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 464
+
+- UTC timestamp: 2026-08-28T13:32:40Z
+- Phase: CHECKPOINT-011-RUNTIME
+- Operation: PASS — Type-check Exploration v3 runtime acceptance
+- Command: `npm --prefix frontend run typecheck:runtime`
+- Inputs: frontend/src/features/trace-v49/exploration-v3, frontend/src/app/api/trace/v3, frontend/tsconfig.runtime-acceptance.json
+- Outputs: none
+- Duration: 22254 ms
+- Warnings: none
+- Errors: none
+- Decision: Any type error blocks Checkpoint 011.
+- Next: Run the production build.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 465
+
+- UTC timestamp: 2026-08-28T13:32:48Z
+- Phase: CHECKPOINT-011-BUILD
+- Operation: START — Build the production Next.js application with Exploration v3 API
+- Command: `npm --prefix frontend run build`
+- Inputs: frontend/src/features/trace-v49/exploration-v3, frontend/src/app/api/trace/v3, frontend/generated/trace-exploration-v3, frontend/next.config.ts
+- Declared outputs: frontend/.next
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 466
+
+- UTC timestamp: 2026-08-28T13:33:01Z
+- Phase: CHECKPOINT-011-BUILD
+- Operation: FAIL — Build the production Next.js application with Exploration v3 API
+- Command: `npm --prefix frontend run build`
+- Inputs: frontend/src/features/trace-v49/exploration-v3, frontend/src/app/api/trace/v3, frontend/generated/trace-exploration-v3, frontend/next.config.ts
+- Outputs: frontend/.next
+- Duration: 12200 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Start the built server for HTTP verification.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 467
+
+- UTC timestamp: 2026-08-28T13:33:14Z
+- Phase: CHECKPOINT-011-BUILD
+- Operation: START — Retry production Next.js build with font-fetch network access
+- Command: `npm --prefix frontend run build`
+- Inputs: frontend/src/features/trace-v49/exploration-v3, frontend/src/app/api/trace/v3, frontend/generated/trace-exploration-v3, frontend/next.config.ts
+- Declared outputs: frontend/.next
+- Warnings: INITIAL_SANDBOX_DNS_FAILURE_PRESERVED
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 468
+
+- UTC timestamp: 2026-08-28T13:34:40Z
+- Phase: CHECKPOINT-011-BUILD
+- Operation: PASS — Retry production Next.js build with font-fetch network access
+- Command: `npm --prefix frontend run build`
+- Inputs: frontend/src/features/trace-v49/exploration-v3, frontend/src/app/api/trace/v3, frontend/generated/trace-exploration-v3, frontend/next.config.ts
+- Outputs: frontend/.next
+- Duration: 85432 ms
+- Warnings: INITIAL_SANDBOX_DNS_FAILURE_PRESERVED
+- Errors: none
+- Decision: Any build, route compilation, or output-tracing failure blocks Checkpoint 011.
+- Next: Start the built server for HTTP verification.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 469
+
+- UTC timestamp: 2026-08-28T13:42:51Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Verify v50 manifest and exact frozen v49 replay prefix
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: database/FREEZE_V49.json, database/FREEZE_V49.sha256, database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py, database/scripts/replay_v50_round16b.sh
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 470
+
+- UTC timestamp: 2026-08-28T13:42:51Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Verify v50 manifest and exact frozen v49 replay prefix
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: database/FREEZE_V49.json, database/FREEZE_V49.sha256, database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py, database/scripts/replay_v50_round16b.sh
+- Outputs: none
+- Duration: 385 ms
+- Warnings: none
+- Errors: none
+- Decision: Any frozen hash, sequence, or additive-order mismatch blocks Checkpoint 011.
+- Next: Replay into two fresh databases.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 471
+
+- UTC timestamp: 2026-08-28T13:43:01Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Create first fresh v50 independent replay database
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -v ON_ERROR_STOP=1 -h /private/tmp -p 55439 -d postgres -c 'CREATE DATABASE gda_v50_round16b_contract_2311 OWNER gda_v49_phase2a_schema_owner'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 472
+
+- UTC timestamp: 2026-08-28T13:43:01Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Create first fresh v50 independent replay database
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -v ON_ERROR_STOP=1 -h /private/tmp -p 55439 -d postgres -c 'CREATE DATABASE gda_v50_round16b_contract_2311 OWNER gda_v49_phase2a_schema_owner'`
+- Inputs: none
+- Outputs: none
+- Duration: 195 ms
+- Warnings: none
+- Errors: none
+- Decision: A pre-existing or failed database identity blocks this replay.
+- Next: Apply the exact v49 prefix and additive v50 sequence.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 473
+
+- UTC timestamp: 2026-08-28T13:43:13Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Replay exact frozen v49 prefix and additive v50 contract into database 2311
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_contract_2311 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/replay_v50_round16b.sh`
+- Inputs: database/FREEZE_V49.json, database/schema-manifest-v50-round16b.json, database/scripts/replay_v50_round16b.sh, database/migrations/014_exploration_v3_higher_order_associations.sql, database/functions/020_exploration_v3_integrity.sql, database/views/003_exploration_v3_read_contract.sql, database/roles/008_exploration_v3_grants.sql
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 474
+
+- UTC timestamp: 2026-08-28T13:43:16Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Replay exact frozen v49 prefix and additive v50 contract into database 2311
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_contract_2311 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/replay_v50_round16b.sh`
+- Inputs: database/FREEZE_V49.json, database/schema-manifest-v50-round16b.json, database/scripts/replay_v50_round16b.sh, database/migrations/014_exploration_v3_higher_order_associations.sql, database/functions/020_exploration_v3_integrity.sql, database/views/003_exploration_v3_read_contract.sql, database/roles/008_exploration_v3_grants.sql
+- Outputs: none
+- Duration: 2751 ms
+- Warnings: none
+- Errors: none
+- Decision: Any SQL or manifest failure blocks Checkpoint 011.
+- Next: Run the transaction-scoped adversarial suite.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 475
+
+- UTC timestamp: 2026-08-28T13:43:26Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Run v50 adversarial database contract suite on replay 2311
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_contract_2311 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/run_v50_round16b_tests.sh`
+- Inputs: database/tests/014_exploration_v3_higher_order_associations.sql, database/scripts/run_v50_round16b_tests.sh
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 476
+
+- UTC timestamp: 2026-08-28T13:43:26Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Run v50 adversarial database contract suite on replay 2311
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_contract_2311 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/run_v50_round16b_tests.sh`
+- Inputs: database/tests/014_exploration_v3_higher_order_associations.sql, database/scripts/run_v50_round16b_tests.sh
+- Outputs: none
+- Duration: 143 ms
+- Warnings: none
+- Errors: none
+- Decision: Any integrity, projection, privilege, activation, or fixture-residue failure blocks Checkpoint 011.
+- Next: Capture the normalized schema hash.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 477
+
+- UTC timestamp: 2026-08-28T13:43:35Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Create second fresh v50 independent replay database
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -v ON_ERROR_STOP=1 -h /private/tmp -p 55439 -d postgres -c 'CREATE DATABASE gda_v50_round16b_contract_2312 OWNER gda_v49_phase2a_schema_owner'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 478
+
+- UTC timestamp: 2026-08-28T13:43:36Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Create second fresh v50 independent replay database
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -v ON_ERROR_STOP=1 -h /private/tmp -p 55439 -d postgres -c 'CREATE DATABASE gda_v50_round16b_contract_2312 OWNER gda_v49_phase2a_schema_owner'`
+- Inputs: none
+- Outputs: none
+- Duration: 167 ms
+- Warnings: none
+- Errors: none
+- Decision: A pre-existing or failed database identity blocks this replay.
+- Next: Apply the exact v49 prefix and additive v50 sequence.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 479
+
+- UTC timestamp: 2026-08-28T13:43:46Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Replay exact frozen v49 prefix and additive v50 contract into database 2312
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_contract_2312 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/replay_v50_round16b.sh`
+- Inputs: database/FREEZE_V49.json, database/schema-manifest-v50-round16b.json, database/scripts/replay_v50_round16b.sh, database/migrations/014_exploration_v3_higher_order_associations.sql, database/functions/020_exploration_v3_integrity.sql, database/views/003_exploration_v3_read_contract.sql, database/roles/008_exploration_v3_grants.sql
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 480
+
+- UTC timestamp: 2026-08-28T13:43:49Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Replay exact frozen v49 prefix and additive v50 contract into database 2312
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_contract_2312 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/replay_v50_round16b.sh`
+- Inputs: database/FREEZE_V49.json, database/schema-manifest-v50-round16b.json, database/scripts/replay_v50_round16b.sh, database/migrations/014_exploration_v3_higher_order_associations.sql, database/functions/020_exploration_v3_integrity.sql, database/views/003_exploration_v3_read_contract.sql, database/roles/008_exploration_v3_grants.sql
+- Outputs: none
+- Duration: 2686 ms
+- Warnings: none
+- Errors: none
+- Decision: Any SQL or manifest failure blocks deterministic replay.
+- Next: Run the transaction-scoped adversarial suite.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 481
+
+- UTC timestamp: 2026-08-28T13:43:58Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Run v50 adversarial database contract suite on replay 2312
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_contract_2312 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/run_v50_round16b_tests.sh`
+- Inputs: database/tests/014_exploration_v3_higher_order_associations.sql, database/scripts/run_v50_round16b_tests.sh
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 482
+
+- UTC timestamp: 2026-08-28T13:43:58Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Run v50 adversarial database contract suite on replay 2312
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_contract_2312 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/run_v50_round16b_tests.sh`
+- Inputs: database/tests/014_exploration_v3_higher_order_associations.sql, database/scripts/run_v50_round16b_tests.sh
+- Outputs: none
+- Duration: 143 ms
+- Warnings: none
+- Errors: none
+- Decision: Any integrity, projection, privilege, activation, or fixture-residue failure blocks deterministic replay.
+- Next: Compare normalized schemas.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 483
+
+- UTC timestamp: 2026-08-28T13:44:12Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Dump normalized-comparison schema for replay 2311
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_dump --schema-only --no-owner --no-privileges --file=/private/tmp/r16b-v50-2311-schema.sql -h /private/tmp -p 55439 -d gda_v50_round16b_contract_2311`
+- Inputs: none
+- Declared outputs: /private/tmp/r16b-v50-2311-schema.sql
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 484
+
+- UTC timestamp: 2026-08-28T13:44:12Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Dump normalized-comparison schema for replay 2311
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_dump --schema-only --no-owner --no-privileges --file=/private/tmp/r16b-v50-2311-schema.sql -h /private/tmp -p 55439 -d gda_v50_round16b_contract_2311`
+- Inputs: none
+- Outputs: /private/tmp/r16b-v50-2311-schema.sql
+- Duration: 198 ms
+- Warnings: none
+- Errors: none
+- Decision: Schema dump failure blocks deterministic replay comparison.
+- Next: Dump the second replay schema.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 485
+
+- UTC timestamp: 2026-08-28T13:44:21Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Dump normalized-comparison schema for replay 2312
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_dump --schema-only --no-owner --no-privileges --file=/private/tmp/r16b-v50-2312-schema.sql -h /private/tmp -p 55439 -d gda_v50_round16b_contract_2312`
+- Inputs: none
+- Declared outputs: /private/tmp/r16b-v50-2312-schema.sql
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 486
+
+- UTC timestamp: 2026-08-28T13:44:21Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Dump normalized-comparison schema for replay 2312
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_dump --schema-only --no-owner --no-privileges --file=/private/tmp/r16b-v50-2312-schema.sql -h /private/tmp -p 55439 -d gda_v50_round16b_contract_2312`
+- Inputs: none
+- Outputs: /private/tmp/r16b-v50-2312-schema.sql
+- Duration: 168 ms
+- Warnings: none
+- Errors: none
+- Decision: Schema dump failure blocks deterministic replay comparison.
+- Next: Hash and compare both normalized schemas.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 487
+
+- UTC timestamp: 2026-08-28T13:44:29Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Hash both normalized v50 replay schemas
+- Command: `zsh -c 'set -eu; left=$(python3 database/scripts/schema_hash.py /private/tmp/r16b-v50-2311-schema.sql); right=$(python3 database/scripts/schema_hash.py /private/tmp/r16b-v50-2312-schema.sql); expected=$(python3 -c '"'"'import json; print(json.load(open("database/schema-manifest-v50-round16b.json"))["normalizedSchemaSha256"])'"'"'); test "$left" = "$right"; test "$left" = "$expected"; print -r -- "V50_SCHEMA_REPLAY_EQUIVALENCE=PASS hash=$left replay_count=2"'`
+- Inputs: /private/tmp/r16b-v50-2311-schema.sql, /private/tmp/r16b-v50-2312-schema.sql, database/scripts/schema_hash.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 488
+
+- UTC timestamp: 2026-08-28T13:44:29Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Hash both normalized v50 replay schemas
+- Command: `zsh -c 'set -eu; left=$(python3 database/scripts/schema_hash.py /private/tmp/r16b-v50-2311-schema.sql); right=$(python3 database/scripts/schema_hash.py /private/tmp/r16b-v50-2312-schema.sql); expected=$(python3 -c '"'"'import json; print(json.load(open("database/schema-manifest-v50-round16b.json"))["normalizedSchemaSha256"])'"'"'); test "$left" = "$right"; test "$left" = "$expected"; print -r -- "V50_SCHEMA_REPLAY_EQUIVALENCE=PASS hash=$left replay_count=2"'`
+- Inputs: /private/tmp/r16b-v50-2311-schema.sql, /private/tmp/r16b-v50-2312-schema.sql, database/scripts/schema_hash.py
+- Outputs: none
+- Duration: 133 ms
+- Warnings: none
+- Errors: none
+- Decision: Both hashes must be identical and equal the governed manifest hash.
+- Next: Run catalog and least-privilege probes.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 489
+
+- UTC timestamp: 2026-08-28T13:45:09Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Audit v50 catalog inventory and least-privilege boundary
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -Atq -v ON_ERROR_STOP=1 -h /private/tmp -p 55439 -d gda_v50_round16b_contract_2312 -c 'WITH catalog AS (SELECT (SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND c.relkind IN ('"'"'r'"'"','"'"'p'"'"')) AS table_count,(SELECT count(*) FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='"'"'exploration_v3'"'"') AS function_count,(SELECT count(*) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND NOT t.tgisinternal) AS deferred_trigger_count,(SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname IN ('"'"'exploration_v3'"'"','"'"'api_v3'"'"') AND c.relkind='"'"'v'"'"') AS view_count,(SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'api_v3'"'"' AND c.relkind='"'"'v'"'"') AS api_view_count,(SELECT count(*) FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND p.prosecdef) AS security_definer_count,(SELECT count(*) FROM information_schema.role_table_grants WHERE grantee='"'"'gda_v49_phase2a_api_reader'"'"' AND table_schema='"'"'exploration_v3'"'"' AND privilege_type='"'"'SELECT'"'"') AS api_base_select_grant_count,(SELECT count(*) FROM information_schema.role_table_grants WHERE grantee='"'"'gda_v49_phase2a_reviewer'"'"' AND table_schema='"'"'exploration_v3'"'"' AND privilege_type IN ('"'"'INSERT'"'"','"'"'UPDATE'"'"','"'"'DELETE'"'"','"'"'TRUNCATE'"'"','"'"'REFERENCES'"'"','"'"'TRIGGER'"'"')) AS reviewer_dml_grant_count) SELECT json_build_object('"'"'status'"'"',CASE WHEN table_count=34 AND function_count=17 AND deferred_trigger_count=25 AND view_count=15 AND api_view_count=13 AND security_definer_count=0 AND api_base_select_grant_count=0 AND reviewer_dml_grant_count=0 AND NOT has_schema_privilege('"'"'public'"'"','"'"'exploration_v3'"'"','"'"'USAGE'"'"') AND NOT has_schema_privilege('"'"'public'"'"','"'"'api_v3'"'"','"'"'USAGE'"'"') THEN '"'"'PASS'"'"' ELSE '"'"'FAIL'"'"' END,'"'"'table_count'"'"',table_count,'"'"'function_count'"'"',function_count,'"'"'deferred_trigger_count'"'"',deferred_trigger_count,'"'"'view_count'"'"',view_count,'"'"'api_view_count'"'"',api_view_count,'"'"'security_definer_count'"'"',security_definer_count,'"'"'api_base_select_grant_count'"'"',api_base_select_grant_count,'"'"'reviewer_dml_grant_count'"'"',reviewer_dml_grant_count,'"'"'public_exploration_v3_usage'"'"',has_schema_privilege('"'"'public'"'"','"'"'exploration_v3'"'"','"'"'USAGE'"'"'),'"'"'public_api_v3_usage'"'"',has_schema_privilege('"'"'public'"'"','"'"'api_v3'"'"','"'"'USAGE'"'"')) FROM catalog;'`
+- Inputs: database/roles/008_exploration_v3_grants.sql, database/views/003_exploration_v3_read_contract.sql
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 490
+
+- UTC timestamp: 2026-08-28T13:45:09Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Audit v50 catalog inventory and least-privilege boundary
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -Atq -v ON_ERROR_STOP=1 -h /private/tmp -p 55439 -d gda_v50_round16b_contract_2312 -c 'WITH catalog AS (SELECT (SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND c.relkind IN ('"'"'r'"'"','"'"'p'"'"')) AS table_count,(SELECT count(*) FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='"'"'exploration_v3'"'"') AS function_count,(SELECT count(*) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND NOT t.tgisinternal) AS deferred_trigger_count,(SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname IN ('"'"'exploration_v3'"'"','"'"'api_v3'"'"') AND c.relkind='"'"'v'"'"') AS view_count,(SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'api_v3'"'"' AND c.relkind='"'"'v'"'"') AS api_view_count,(SELECT count(*) FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND p.prosecdef) AS security_definer_count,(SELECT count(*) FROM information_schema.role_table_grants WHERE grantee='"'"'gda_v49_phase2a_api_reader'"'"' AND table_schema='"'"'exploration_v3'"'"' AND privilege_type='"'"'SELECT'"'"') AS api_base_select_grant_count,(SELECT count(*) FROM information_schema.role_table_grants WHERE grantee='"'"'gda_v49_phase2a_reviewer'"'"' AND table_schema='"'"'exploration_v3'"'"' AND privilege_type IN ('"'"'INSERT'"'"','"'"'UPDATE'"'"','"'"'DELETE'"'"','"'"'TRUNCATE'"'"','"'"'REFERENCES'"'"','"'"'TRIGGER'"'"')) AS reviewer_dml_grant_count) SELECT json_build_object('"'"'status'"'"',CASE WHEN table_count=34 AND function_count=17 AND deferred_trigger_count=25 AND view_count=15 AND api_view_count=13 AND security_definer_count=0 AND api_base_select_grant_count=0 AND reviewer_dml_grant_count=0 AND NOT has_schema_privilege('"'"'public'"'"','"'"'exploration_v3'"'"','"'"'USAGE'"'"') AND NOT has_schema_privilege('"'"'public'"'"','"'"'api_v3'"'"','"'"'USAGE'"'"') THEN '"'"'PASS'"'"' ELSE '"'"'FAIL'"'"' END,'"'"'table_count'"'"',table_count,'"'"'function_count'"'"',function_count,'"'"'deferred_trigger_count'"'"',deferred_trigger_count,'"'"'view_count'"'"',view_count,'"'"'api_view_count'"'"',api_view_count,'"'"'security_definer_count'"'"',security_definer_count,'"'"'api_base_select_grant_count'"'"',api_base_select_grant_count,'"'"'reviewer_dml_grant_count'"'"',reviewer_dml_grant_count,'"'"'public_exploration_v3_usage'"'"',has_schema_privilege('"'"'public'"'"','"'"'exploration_v3'"'"','"'"'USAGE'"'"'),'"'"'public_api_v3_usage'"'"',has_schema_privilege('"'"'public'"'"','"'"'api_v3'"'"','"'"'USAGE'"'"')) FROM catalog;'`
+- Inputs: database/roles/008_exploration_v3_grants.sql, database/views/003_exploration_v3_read_contract.sql
+- Outputs: none
+- Duration: 45 ms
+- Warnings: none
+- Errors: none
+- Decision: Unexpected object inventory, SECURITY DEFINER use, public schema access, base-table API access, or reviewer DML blocks Checkpoint 011.
+- Next: Verify the frozen v49 tree and independent runtime boundary.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 491
+
+- UTC timestamp: 2026-08-28T13:45:59Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Corrected v50 catalog inventory and least-privilege audit
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -Atq -v ON_ERROR_STOP=1 -h /private/tmp -p 55439 -d gda_v50_round16b_contract_2312 -c 'WITH catalog AS (SELECT (SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND c.relkind IN ('"'"'r'"'"','"'"'p'"'"')) AS table_count,(SELECT count(*) FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='"'"'exploration_v3'"'"') AS function_count,(SELECT count(*) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND NOT t.tgisinternal AND t.tgconstraint<>0) AS deferred_constraint_trigger_count,(SELECT count(*) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND NOT t.tgisinternal AND t.tgconstraint=0) AS regular_trigger_count,(SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname IN ('"'"'exploration_v3'"'"','"'"'api_v3'"'"') AND c.relkind='"'"'v'"'"')+(SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'audit'"'"' AND c.relkind='"'"'v'"'"' AND c.relname='"'"'exploration_v3_inventory'"'"') AS new_view_count,(SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'api_v3'"'"' AND c.relkind='"'"'v'"'"') AS api_view_count,(SELECT count(*) FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND p.prosecdef) AS security_definer_count,(SELECT count(*) FROM information_schema.role_table_grants WHERE grantee='"'"'gda_v49_phase2a_api_reader'"'"' AND table_schema='"'"'exploration_v3'"'"' AND privilege_type='"'"'SELECT'"'"') AS api_base_select_grant_count,(SELECT count(*) FROM information_schema.role_table_grants WHERE grantee='"'"'gda_v49_phase2a_reviewer'"'"' AND table_schema='"'"'exploration_v3'"'"' AND privilege_type IN ('"'"'INSERT'"'"','"'"'UPDATE'"'"','"'"'DELETE'"'"','"'"'TRUNCATE'"'"','"'"'REFERENCES'"'"','"'"'TRIGGER'"'"')) AS reviewer_dml_grant_count) SELECT json_build_object('"'"'status'"'"',CASE WHEN table_count=34 AND function_count=17 AND deferred_constraint_trigger_count=25 AND regular_trigger_count=34 AND new_view_count=15 AND api_view_count=13 AND security_definer_count=0 AND api_base_select_grant_count=0 AND reviewer_dml_grant_count=0 AND NOT has_schema_privilege('"'"'public'"'"','"'"'exploration_v3'"'"','"'"'USAGE'"'"') AND NOT has_schema_privilege('"'"'public'"'"','"'"'api_v3'"'"','"'"'USAGE'"'"') THEN '"'"'PASS'"'"' ELSE '"'"'FAIL'"'"' END,'"'"'table_count'"'"',table_count,'"'"'function_count'"'"',function_count,'"'"'deferred_constraint_trigger_count'"'"',deferred_constraint_trigger_count,'"'"'regular_trigger_count'"'"',regular_trigger_count,'"'"'new_view_count'"'"',new_view_count,'"'"'api_view_count'"'"',api_view_count,'"'"'security_definer_count'"'"',security_definer_count,'"'"'api_base_select_grant_count'"'"',api_base_select_grant_count,'"'"'reviewer_dml_grant_count'"'"',reviewer_dml_grant_count,'"'"'public_exploration_v3_usage'"'"',has_schema_privilege('"'"'public'"'"','"'"'exploration_v3'"'"','"'"'USAGE'"'"'),'"'"'public_api_v3_usage'"'"',has_schema_privilege('"'"'public'"'"','"'"'api_v3'"'"','"'"'USAGE'"'"')) FROM catalog;'`
+- Inputs: database/roles/008_exploration_v3_grants.sql, database/views/003_exploration_v3_read_contract.sql
+- Declared outputs: none
+- Warnings: PRIOR_PROBE_COUNTED_REGULAR_TRIGGERS_AND_OMITTED_AUDIT_VIEW
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 492
+
+- UTC timestamp: 2026-08-28T13:45:59Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Corrected v50 catalog inventory and least-privilege audit
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -Atq -v ON_ERROR_STOP=1 -h /private/tmp -p 55439 -d gda_v50_round16b_contract_2312 -c 'WITH catalog AS (SELECT (SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND c.relkind IN ('"'"'r'"'"','"'"'p'"'"')) AS table_count,(SELECT count(*) FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='"'"'exploration_v3'"'"') AS function_count,(SELECT count(*) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND NOT t.tgisinternal AND t.tgconstraint<>0) AS deferred_constraint_trigger_count,(SELECT count(*) FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND NOT t.tgisinternal AND t.tgconstraint=0) AS regular_trigger_count,(SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname IN ('"'"'exploration_v3'"'"','"'"'api_v3'"'"') AND c.relkind='"'"'v'"'"')+(SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'audit'"'"' AND c.relkind='"'"'v'"'"' AND c.relname='"'"'exploration_v3_inventory'"'"') AS new_view_count,(SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='"'"'api_v3'"'"' AND c.relkind='"'"'v'"'"') AS api_view_count,(SELECT count(*) FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='"'"'exploration_v3'"'"' AND p.prosecdef) AS security_definer_count,(SELECT count(*) FROM information_schema.role_table_grants WHERE grantee='"'"'gda_v49_phase2a_api_reader'"'"' AND table_schema='"'"'exploration_v3'"'"' AND privilege_type='"'"'SELECT'"'"') AS api_base_select_grant_count,(SELECT count(*) FROM information_schema.role_table_grants WHERE grantee='"'"'gda_v49_phase2a_reviewer'"'"' AND table_schema='"'"'exploration_v3'"'"' AND privilege_type IN ('"'"'INSERT'"'"','"'"'UPDATE'"'"','"'"'DELETE'"'"','"'"'TRUNCATE'"'"','"'"'REFERENCES'"'"','"'"'TRIGGER'"'"')) AS reviewer_dml_grant_count) SELECT json_build_object('"'"'status'"'"',CASE WHEN table_count=34 AND function_count=17 AND deferred_constraint_trigger_count=25 AND regular_trigger_count=34 AND new_view_count=15 AND api_view_count=13 AND security_definer_count=0 AND api_base_select_grant_count=0 AND reviewer_dml_grant_count=0 AND NOT has_schema_privilege('"'"'public'"'"','"'"'exploration_v3'"'"','"'"'USAGE'"'"') AND NOT has_schema_privilege('"'"'public'"'"','"'"'api_v3'"'"','"'"'USAGE'"'"') THEN '"'"'PASS'"'"' ELSE '"'"'FAIL'"'"' END,'"'"'table_count'"'"',table_count,'"'"'function_count'"'"',function_count,'"'"'deferred_constraint_trigger_count'"'"',deferred_constraint_trigger_count,'"'"'regular_trigger_count'"'"',regular_trigger_count,'"'"'new_view_count'"'"',new_view_count,'"'"'api_view_count'"'"',api_view_count,'"'"'security_definer_count'"'"',security_definer_count,'"'"'api_base_select_grant_count'"'"',api_base_select_grant_count,'"'"'reviewer_dml_grant_count'"'"',reviewer_dml_grant_count,'"'"'public_exploration_v3_usage'"'"',has_schema_privilege('"'"'public'"'"','"'"'exploration_v3'"'"','"'"'USAGE'"'"'),'"'"'public_api_v3_usage'"'"',has_schema_privilege('"'"'public'"'"','"'"'api_v3'"'"','"'"'USAGE'"'"')) FROM catalog;'`
+- Inputs: database/roles/008_exploration_v3_grants.sql, database/views/003_exploration_v3_read_contract.sql
+- Outputs: none
+- Duration: 47 ms
+- Warnings: PRIOR_PROBE_COUNTED_REGULAR_TRIGGERS_AND_OMITTED_AUDIT_VIEW
+- Errors: none
+- Decision: Unexpected object inventory, SECURITY DEFINER use, public schema access, base-table API access, or reviewer DML blocks Checkpoint 011.
+- Next: Verify the frozen v49 tree and independent runtime boundary.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 493
+
+- UTC timestamp: 2026-08-28T13:46:17Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Verify immutable v49 database freeze after v50 addition
+- Command: `python3 scripts/repository/verify_v49_database_freeze.py`
+- Inputs: database/FREEZE_V49.json, database/FREEZE_V49.sha256, scripts/repository/verify_v49_database_freeze.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 494
+
+- UTC timestamp: 2026-08-28T13:46:17Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Verify immutable v49 database freeze after v50 addition
+- Command: `python3 scripts/repository/verify_v49_database_freeze.py`
+- Inputs: database/FREEZE_V49.json, database/FREEZE_V49.sha256, scripts/repository/verify_v49_database_freeze.py
+- Outputs: none
+- Duration: 485 ms
+- Warnings: none
+- Errors: none
+- Decision: Any frozen v49 path drift blocks Checkpoint 011.
+- Next: Complete production HTTP verification.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 495
+
+- UTC timestamp: 2026-08-28T13:50:16Z
+- Phase: CHECKPOINT-011-RUNTIME
+- Operation: START — Verify advertised Exploration v3 route boundary after item-surface correction
+- Command: `npm --prefix frontend run test:exploration-api-v3`
+- Inputs: frontend/src/features/trace-v49/exploration-v3/controller.server.ts, frontend/scripts/test-trace-exploration-v3.mjs, frontend/generated/trace-exploration-v3
+- Declared outputs: none
+- Warnings: UNADVERTISED_GENERIC_ITEM_ROUTE_CORRECTED
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 496
+
+- UTC timestamp: 2026-08-28T13:50:17Z
+- Phase: CHECKPOINT-011-RUNTIME
+- Operation: PASS — Verify advertised Exploration v3 route boundary after item-surface correction
+- Command: `npm --prefix frontend run test:exploration-api-v3`
+- Inputs: frontend/src/features/trace-v49/exploration-v3/controller.server.ts, frontend/scripts/test-trace-exploration-v3.mjs, frontend/generated/trace-exploration-v3
+- Outputs: none
+- Duration: 634 ms
+- Warnings: UNADVERTISED_GENERIC_ITEM_ROUTE_CORRECTED
+- Errors: none
+- Decision: Any runtime, API, fail-closed, or route-capability mismatch blocks Checkpoint 011.
+- Next: Run production HTTP verification.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 497
+
+- UTC timestamp: 2026-08-28T13:50:42Z
+- Phase: CHECKPOINT-011-BUILD
+- Operation: START — Rebuild production application after exact route-surface correction
+- Command: `npm --prefix frontend run build`
+- Inputs: frontend/src/features/trace-v49/exploration-v3/controller.server.ts, frontend/scripts/test-trace-exploration-v3.mjs, frontend/generated/trace-exploration-v3
+- Declared outputs: frontend/.next
+- Warnings: PRIOR_PRODUCTION_BUILD_PASSED_BEFORE_ROUTE_CORRECTION
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 498
+
+- UTC timestamp: 2026-08-28T13:52:08Z
+- Phase: CHECKPOINT-011-BUILD
+- Operation: PASS — Rebuild production application after exact route-surface correction
+- Command: `npm --prefix frontend run build`
+- Inputs: frontend/src/features/trace-v49/exploration-v3/controller.server.ts, frontend/scripts/test-trace-exploration-v3.mjs, frontend/generated/trace-exploration-v3
+- Outputs: frontend/.next
+- Duration: 85767 ms
+- Warnings: PRIOR_PRODUCTION_BUILD_PASSED_BEFORE_ROUTE_CORRECTION
+- Errors: none
+- Decision: Any build, route compilation, or output-tracing failure blocks Checkpoint 011.
+- Next: Run production HTTP, concurrency, replay, and memory verification.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 499
+
+- UTC timestamp: 2026-08-28T13:54:23Z
+- Phase: CHECKPOINT-011-PRODUCTION-HTTP
+- Operation: START — Verify v3 production HTTP, bounded load, and runtime memory
+- Command: `python3 scripts/trace_round16b/verify_v3_production_http.py --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint011 --port 59433 --request-timeout-seconds 30`
+- Inputs: scripts/trace_round16b/verify_v3_production_http.py, scripts/trace_round16a/node_runtime_probe.cjs, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/read-model.json, frontend/.next/BUILD_ID
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint011
+- Warnings: PERFORMANCE_RESULTS_OBSERVATIONAL
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 500
+
+- UTC timestamp: 2026-08-28T13:54:42Z
+- Phase: CHECKPOINT-011-PRODUCTION-HTTP
+- Operation: PASS — Verify v3 production HTTP, bounded load, and runtime memory
+- Command: `python3 scripts/trace_round16b/verify_v3_production_http.py --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint011 --port 59433 --request-timeout-seconds 30`
+- Inputs: scripts/trace_round16b/verify_v3_production_http.py, scripts/trace_round16a/node_runtime_probe.cjs, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/read-model.json, frontend/.next/BUILD_ID
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint011
+- Duration: 19882 ms
+- Warnings: PERFORMANCE_RESULTS_OBSERVATIONAL
+- Errors: none
+- Decision: Any HTTP, hash, schema, fail-closed, replay, load, probe, or cleanup mismatch blocks Checkpoint 011.
+- Next: Review the complete receipt set before checkpoint publication.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 501
+
+- UTC timestamp: 2026-08-28T13:57:51Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: START — Verify higher-order method regression at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_method_checkpoint.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-regression-checkpoint011.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/higher-order-association-method-v1.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-regression-checkpoint011.json
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 502
+
+- UTC timestamp: 2026-08-28T13:57:51Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: PASS — Verify higher-order method regression at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_method_checkpoint.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-regression-checkpoint011.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/higher-order-association-method-v1.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-regression-checkpoint011.json
+- Duration: 597 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 503
+
+- UTC timestamp: 2026-08-28T13:58:12Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: START — Verify local candidate census at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_local_candidate_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-regression-checkpoint011.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-census-v2.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-regression-checkpoint011.json
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 504
+
+- UTC timestamp: 2026-08-28T13:58:12Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: START — Verify evidence tranche A at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_a.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-a-checkpoint011.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-census-tranche-a-v1.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-a-checkpoint011.json
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 505
+
+- UTC timestamp: 2026-08-28T13:58:12Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: START — Verify deferred evidence surface census at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_deferred_surface_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-regression-checkpoint011.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-build-receipt-v2.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-regression-checkpoint011.json
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 506
+
+- UTC timestamp: 2026-08-28T13:58:12Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: START — Check evidence tranche C determinism at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_c.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-census-tranche-c-v1.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 507
+
+- UTC timestamp: 2026-08-28T13:58:12Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: START — Verify evidence tranche B at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_b.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-b-checkpoint011.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-census-tranche-b-v1.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-b-checkpoint011.json
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 508
+
+- UTC timestamp: 2026-08-28T13:58:12Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: PASS — Verify evidence tranche A at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_a.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-a-checkpoint011.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-census-tranche-a-v1.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-a-checkpoint011.json
+- Duration: 190 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 509
+
+- UTC timestamp: 2026-08-28T13:58:12Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: PASS — Check evidence tranche C determinism at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_c.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-census-tranche-c-v1.json
+- Outputs: none
+- Duration: 138 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 510
+
+- UTC timestamp: 2026-08-28T13:58:13Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: PASS — Verify evidence tranche B at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_b.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-b-checkpoint011.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-census-tranche-b-v1.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-b-checkpoint011.json
+- Duration: 369 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 511
+
+- UTC timestamp: 2026-08-28T13:58:19Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: PASS — Verify deferred evidence surface census at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_deferred_surface_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-regression-checkpoint011.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-build-receipt-v2.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-regression-checkpoint011.json
+- Duration: 6538 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 512
+
+- UTC timestamp: 2026-08-28T13:58:20Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: PASS — Verify local candidate census at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_local_candidate_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-regression-checkpoint011.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-census-v2.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-regression-checkpoint011.json
+- Duration: 7653 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 513
+
+- UTC timestamp: 2026-08-28T13:58:43Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: START — Check adaptive source shard 2 determinism at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_adaptive_source_review_shard_2.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-census-shard-2-v1.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 514
+
+- UTC timestamp: 2026-08-28T13:58:43Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: START — Check adaptive source shard 1 determinism at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_adaptive_source_review_shard_1.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-census-shard-1-v1.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 515
+
+- UTC timestamp: 2026-08-28T13:58:43Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: START — Check v3 semantic independent verifier at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-fixtures-v1.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 516
+
+- UTC timestamp: 2026-08-28T13:58:43Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: START — Check v3 semantic primary generator determinism at checkpoint 11
+- Command: `python3 scripts/trace_round16b/build_v3_semantic_contract.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-census-v1.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 517
+
+- UTC timestamp: 2026-08-28T13:58:43Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: START — Check Round 16A reconciliation generator determinism at checkpoint 11
+- Command: `python3 scripts/trace_round16b/build_round16a_global_reconciliation.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/round16a-global-reconciliation-census-v1.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 518
+
+- UTC timestamp: 2026-08-28T13:58:43Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: START — Verify v50 replay manifest at checkpoint 11
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: database/schema-manifest-v50-round16b.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 519
+
+- UTC timestamp: 2026-08-28T13:58:43Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: START — Check v3 runtime projection determinism at checkpoint 11
+- Command: `python3 scripts/trace_round16b/build_exploration_v3_runtime_read_model.py --check`
+- Inputs: frontend/generated/trace-exploration-v3/read-model.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 520
+
+- UTC timestamp: 2026-08-28T13:58:43Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: START — Check v3 runtime independent verifier at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_v3_runtime_independent.py --check`
+- Inputs: frontend/generated/trace-exploration-v3/read-model.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 521
+
+- UTC timestamp: 2026-08-28T13:58:43Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: START — Check Round 16A reconciliation independent verifier at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_round16a_global_reconciliation.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/round16a-global-reconciliation-census-v1.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 522
+
+- UTC timestamp: 2026-08-28T13:58:43Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: PASS — Check adaptive source shard 1 determinism at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_adaptive_source_review_shard_1.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-census-shard-1-v1.json
+- Outputs: none
+- Duration: 259 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 523
+
+- UTC timestamp: 2026-08-28T13:58:43Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: PASS — Check adaptive source shard 2 determinism at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_adaptive_source_review_shard_2.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/adaptive-source-review-census-shard-2-v1.json
+- Outputs: none
+- Duration: 329 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 524
+
+- UTC timestamp: 2026-08-28T13:58:43Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: PASS — Check v3 runtime projection determinism at checkpoint 11
+- Command: `python3 scripts/trace_round16b/build_exploration_v3_runtime_read_model.py --check`
+- Inputs: frontend/generated/trace-exploration-v3/read-model.json
+- Outputs: none
+- Duration: 104 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 525
+
+- UTC timestamp: 2026-08-28T13:58:43Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: PASS — Check v3 semantic primary generator determinism at checkpoint 11
+- Command: `python3 scripts/trace_round16b/build_v3_semantic_contract.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-census-v1.json
+- Outputs: none
+- Duration: 416 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 526
+
+- UTC timestamp: 2026-08-28T13:58:43Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: PASS — Check v3 runtime independent verifier at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_v3_runtime_independent.py --check`
+- Inputs: frontend/generated/trace-exploration-v3/read-model.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json
+- Duration: 211 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 527
+
+- UTC timestamp: 2026-08-28T13:58:44Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: PASS — Verify v50 replay manifest at checkpoint 11
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: database/schema-manifest-v50-round16b.json
+- Outputs: none
+- Duration: 543 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 528
+
+- UTC timestamp: 2026-08-28T13:58:44Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: FAIL — Check v3 semantic independent verifier at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-fixtures-v1.json
+- Outputs: none
+- Duration: 955 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 529
+
+- UTC timestamp: 2026-08-28T13:59:12Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: PASS — Check Round 16A reconciliation independent verifier at checkpoint 11
+- Command: `python3 scripts/trace_round16b/verify_round16a_global_reconciliation.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/round16a-global-reconciliation-census-v1.json
+- Outputs: none
+- Duration: 28606 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 530
+
+- UTC timestamp: 2026-08-28T13:59:24Z
+- Phase: CHECKPOINT-011-REGRESSION
+- Operation: PASS — Check Round 16A reconciliation generator determinism at checkpoint 11
+- Command: `python3 scripts/trace_round16b/build_round16a_global_reconciliation.py --check`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/round16a-global-reconciliation-census-v1.json
+- Outputs: none
+- Duration: 40816 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 531
+
+- UTC timestamp: 2026-08-28T14:06:58Z
+- Phase: CHECKPOINT-011-PERFORMANCE-CORRECTION
+- Operation: START — Run focused v3 runtime/API regression after bounded production-entry preload correction
+- Command: `npm --prefix frontend run test:exploration-api-v3`
+- Inputs: frontend/next.config.ts, frontend/scripts/test-trace-exploration-v3.mjs, frontend/src/app/api/trace/v3/exploration/route.ts, frontend/src/app/api/trace/v3/exploration/[...path]/route.ts, frontend/generated/trace-exploration-v3, scripts/trace_round16b/verify_v3_production_http.py
+- Declared outputs: none
+- Warnings: R16B-CP011-DIAG-030
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 532
+
+- UTC timestamp: 2026-08-28T14:06:59Z
+- Phase: CHECKPOINT-011-PERFORMANCE-CORRECTION
+- Operation: PASS — Run focused v3 runtime/API regression after bounded production-entry preload correction
+- Command: `npm --prefix frontend run test:exploration-api-v3`
+- Inputs: frontend/next.config.ts, frontend/scripts/test-trace-exploration-v3.mjs, frontend/src/app/api/trace/v3/exploration/route.ts, frontend/src/app/api/trace/v3/exploration/[...path]/route.ts, frontend/generated/trace-exploration-v3, scripts/trace_round16b/verify_v3_production_http.py
+- Outputs: none
+- Duration: 436 ms
+- Warnings: R16B-CP011-DIAG-030
+- Errors: none
+- Decision: Focused v3 runtime/API test passes with production entry preloading disabled and root HEAD semantics covered.
+- Next: Build the corrected Next.js production application.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 533
+
+- UTC timestamp: 2026-08-28T14:07:12Z
+- Phase: CHECKPOINT-011-PERFORMANCE-CORRECTION
+- Operation: START — Build corrected Next.js production application with bounded on-demand route loading
+- Command: `npm --prefix frontend run build`
+- Inputs: frontend/next.config.ts, frontend/package.json, frontend/package-lock.json, frontend/src, frontend/generated/trace-exploration-v3, scripts/trace_round16b/verify_v3_production_http.py
+- Declared outputs: frontend/.next
+- Warnings: R16B-CP011-DIAG-030
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 534
+
+- UTC timestamp: 2026-08-28T14:07:23Z
+- Phase: CHECKPOINT-011-PERFORMANCE-CORRECTION
+- Operation: FAIL — Build corrected Next.js production application with bounded on-demand route loading
+- Command: `npm --prefix frontend run build`
+- Inputs: frontend/next.config.ts, frontend/package.json, frontend/package-lock.json, frontend/src, frontend/generated/trace-exploration-v3, scripts/trace_round16b/verify_v3_production_http.py
+- Outputs: frontend/.next
+- Duration: 10672 ms
+- Warnings: R16B-CP011-DIAG-030
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Verify the built configuration and run the immutable correction1 production audit.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 535
+
+- UTC timestamp: 2026-08-28T14:07:37Z
+- Phase: CHECKPOINT-011-PERFORMANCE-CORRECTION
+- Operation: START — Retry corrected Next.js production build after sandbox-blocked Google Fonts fetch
+- Command: `npm --prefix frontend run build`
+- Inputs: frontend/next.config.ts, frontend/package.json, frontend/package-lock.json, frontend/src, frontend/generated/trace-exploration-v3, scripts/trace_round16b/verify_v3_production_http.py
+- Declared outputs: frontend/.next
+- Warnings: R16B-CP011-DIAG-030, SANDBOX_NETWORK_RETRY
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 536
+
+- UTC timestamp: 2026-08-28T14:09:03Z
+- Phase: CHECKPOINT-011-PERFORMANCE-CORRECTION
+- Operation: PASS — Retry corrected Next.js production build after sandbox-blocked Google Fonts fetch
+- Command: `npm --prefix frontend run build`
+- Inputs: frontend/next.config.ts, frontend/package.json, frontend/package-lock.json, frontend/src, frontend/generated/trace-exploration-v3, scripts/trace_round16b/verify_v3_production_http.py
+- Outputs: frontend/.next
+- Duration: 85682 ms
+- Warnings: R16B-CP011-DIAG-030, SANDBOX_NETWORK_RETRY
+- Errors: none
+- Decision: Production build records preloadEntriesOnStart=false and is eligible for corrected HTTP/load/memory verification.
+- Next: Verify the built configuration and run the immutable correction1 production audit.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 537
+
+- UTC timestamp: 2026-08-28T14:09:30Z
+- Phase: CHECKPOINT-011-PERFORMANCE-CORRECTION
+- Operation: START — Run corrected v3 production HTTP, concurrency, sustained-read, memory, and event-loop verification
+- Command: `python3 scripts/trace_round16b/verify_v3_production_http.py --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint011-correction1 --port 59437 --request-timeout-seconds 10`
+- Inputs: scripts/trace_round16b/verify_v3_production_http.py, scripts/trace_round16a/node_runtime_probe.cjs, frontend/next.config.ts, frontend/.next/BUILD_ID, frontend/.next/required-server-files.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/read-model.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint011-correction1
+- Warnings: R16B-CP011-DIAG-030, PERFORMANCE_RESULTS_OBSERVATIONAL
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 538
+
+- UTC timestamp: 2026-08-28T14:09:41Z
+- Phase: CHECKPOINT-011-PERFORMANCE-CORRECTION
+- Operation: PASS — Run corrected v3 production HTTP, concurrency, sustained-read, memory, and event-loop verification
+- Command: `python3 scripts/trace_round16b/verify_v3_production_http.py --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint011-correction1 --port 59437 --request-timeout-seconds 10`
+- Inputs: scripts/trace_round16b/verify_v3_production_http.py, scripts/trace_round16a/node_runtime_probe.cjs, frontend/next.config.ts, frontend/.next/BUILD_ID, frontend/.next/required-server-files.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/read-model.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint011-correction1
+- Duration: 11294 ms
+- Warnings: R16B-CP011-DIAG-030, PERFORMANCE_RESULTS_OBSERVATIONAL
+- Errors: none
+- Decision: The corrected production server remains functionally deterministic while avoiding eager loading of unrelated archival route entries.
+- Next: Compare the original and corrected immutable receipts and report the performance gap disposition.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 539
+
+- UTC timestamp: 2026-08-28T14:16:49Z
+- Phase: CHECKPOINT-011-DATABASE-CORRECTION
+- Operation: START — Preserve mid-correction v50 managed-file drift probe
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: database/schema-manifest-v50-round16b.json
+- Declared outputs: none
+- Warnings: EXPECTED_MANAGED_HASH_DRIFT_DURING_ACTIVE_CORRECTION
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 540
+
+- UTC timestamp: 2026-08-28T14:16:50Z
+- Phase: CHECKPOINT-011-DATABASE-CORRECTION
+- Operation: FAIL — Preserve mid-correction v50 managed-file drift probe
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: database/schema-manifest-v50-round16b.json
+- Outputs: none
+- Duration: 373 ms
+- Warnings: EXPECTED_MANAGED_HASH_DRIFT_DURING_ACTIVE_CORRECTION
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 541
+
+- UTC timestamp: 2026-08-28T14:19:32Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: START — Restart established isolated PostgreSQL 16 cluster with mmap shared memory
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_ctl start -D /private/tmp/round3i-audit-pg.7bOBg4 -l /private/tmp/round3i-audit-pg.7bOBg4/postgresql-round16b-restart.log -o '-p 55439 -k /private/tmp -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix'`
+- Inputs: /private/tmp/round3i-audit-pg.7bOBg4/PG_VERSION
+- Declared outputs: /private/tmp/round3i-audit-pg.7bOBg4/postgresql-round16b-restart.log
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 542
+
+- UTC timestamp: 2026-08-28T14:19:32Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: FAIL — Restart established isolated PostgreSQL 16 cluster with mmap shared memory
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_ctl start -D /private/tmp/round3i-audit-pg.7bOBg4 -l /private/tmp/round3i-audit-pg.7bOBg4/postgresql-round16b-restart.log -o '-p 55439 -k /private/tmp -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix'`
+- Inputs: /private/tmp/round3i-audit-pg.7bOBg4/PG_VERSION
+- Outputs: /private/tmp/round3i-audit-pg.7bOBg4/postgresql-round16b-restart.log
+- Duration: 137 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 543
+
+- UTC timestamp: 2026-08-28T14:19:55Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: START — Preserve stale postmaster PID lock after dead-process verification
+- Command: `mv /private/tmp/round3i-audit-pg.7bOBg4/postmaster.pid /private/tmp/round3i-audit-pg.7bOBg4/postmaster.pid.stale-round16b-20260829T001932AEST`
+- Inputs: /private/tmp/round3i-audit-pg.7bOBg4/postmaster.pid
+- Declared outputs: /private/tmp/round3i-audit-pg.7bOBg4/postmaster.pid.stale-round16b-20260829T001932AEST
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 544
+
+- UTC timestamp: 2026-08-28T14:19:55Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: PASS — Preserve stale postmaster PID lock after dead-process verification
+- Command: `mv /private/tmp/round3i-audit-pg.7bOBg4/postmaster.pid /private/tmp/round3i-audit-pg.7bOBg4/postmaster.pid.stale-round16b-20260829T001932AEST`
+- Inputs: /private/tmp/round3i-audit-pg.7bOBg4/postmaster.pid
+- Outputs: /private/tmp/round3i-audit-pg.7bOBg4/postmaster.pid.stale-round16b-20260829T001932AEST
+- Duration: 5 ms
+- Warnings: none
+- Errors: none
+- Decision: PID_19300_KILL_ZERO_EXIT_1_PG_CTL_NO_SERVER
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 545
+
+- UTC timestamp: 2026-08-28T14:20:29Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: START — Restart established isolated PostgreSQL 16 cluster after preserving stale PID lock
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_ctl start -D /private/tmp/round3i-audit-pg.7bOBg4 -l /private/tmp/round3i-audit-pg.7bOBg4/postgresql-round16b-restart-correction1.log -o '-p 55439 -k /private/tmp -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix'`
+- Inputs: /private/tmp/round3i-audit-pg.7bOBg4/PG_VERSION
+- Declared outputs: /private/tmp/round3i-audit-pg.7bOBg4/postgresql-round16b-restart-correction1.log
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 546
+
+- UTC timestamp: 2026-08-28T14:20:30Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: PASS — Restart established isolated PostgreSQL 16 cluster after preserving stale PID lock
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_ctl start -D /private/tmp/round3i-audit-pg.7bOBg4 -l /private/tmp/round3i-audit-pg.7bOBg4/postgresql-round16b-restart-correction1.log -o '-p 55439 -k /private/tmp -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix'`
+- Inputs: /private/tmp/round3i-audit-pg.7bOBg4/PG_VERSION
+- Outputs: /private/tmp/round3i-audit-pg.7bOBg4/postgresql-round16b-restart-correction1.log
+- Duration: 888 ms
+- Warnings: none
+- Errors: none
+- Decision: REUSE_EXISTING_ISOLATED_CLUSTER_MMAP_NO_INITDB_NO_UNRELATED_PROCESS_CHANGE
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 547
+
+- UTC timestamp: 2026-08-28T14:23:26Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: START — Preserve second stale postmaster PID after managed supervisor stopped detached server
+- Command: `mv /private/tmp/round3i-audit-pg.7bOBg4/postmaster.pid /private/tmp/round3i-audit-pg.7bOBg4/postmaster.pid.stale-round16b-20260829T002029AEST`
+- Inputs: /private/tmp/round3i-audit-pg.7bOBg4/postmaster.pid
+- Declared outputs: /private/tmp/round3i-audit-pg.7bOBg4/postmaster.pid.stale-round16b-20260829T002029AEST
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 548
+
+- UTC timestamp: 2026-08-28T14:23:26Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: PASS — Preserve second stale postmaster PID after managed supervisor stopped detached server
+- Command: `mv /private/tmp/round3i-audit-pg.7bOBg4/postmaster.pid /private/tmp/round3i-audit-pg.7bOBg4/postmaster.pid.stale-round16b-20260829T002029AEST`
+- Inputs: /private/tmp/round3i-audit-pg.7bOBg4/postmaster.pid
+- Outputs: /private/tmp/round3i-audit-pg.7bOBg4/postmaster.pid.stale-round16b-20260829T002029AEST
+- Duration: 6 ms
+- Warnings: none
+- Errors: none
+- Decision: PID_57034_KILL_ZERO_EXIT_1_PG_CTL_NO_SERVER
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 549
+
+- UTC timestamp: 2026-08-28T14:23:44Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: START — Run established isolated PostgreSQL 16 cluster in persistent foreground session
+- Command: `/opt/homebrew/opt/postgresql@16/bin/postgres -D /private/tmp/round3i-audit-pg.7bOBg4 -p 55439 -k /private/tmp -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix`
+- Inputs: /private/tmp/round3i-audit-pg.7bOBg4/PG_VERSION
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 550
+
+- UTC timestamp: 2026-08-28T14:27:18Z
+- Phase: CHECKPOINT-011-DATABASE-CORRECTION
+- Operation: START — Preserve unsupported pending-execution option probe
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py --allow-pending-execution`
+- Inputs: database/scripts/verify_v50_round16b_manifest.py
+- Declared outputs: none
+- Warnings: COMMAND_INTERFACE_PROBE_FAILURE
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 551
+
+- UTC timestamp: 2026-08-28T14:27:18Z
+- Phase: CHECKPOINT-011-DATABASE-CORRECTION
+- Operation: FAIL — Preserve unsupported pending-execution option probe
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py --allow-pending-execution`
+- Inputs: database/scripts/verify_v50_round16b_manifest.py
+- Outputs: none
+- Duration: 43 ms
+- Warnings: COMMAND_INTERFACE_PROBE_FAILURE
+- Errors: COMMAND_EXIT_2
+- Decision: Preserve the failure and correct it additively.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 552
+
+- UTC timestamp: 2026-08-28T14:27:25Z
+- Phase: CHECKPOINT-011-DATABASE-CORRECTION
+- Operation: START — Verify v50 manifest in documented preflight mode while replay receipt is pending
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py --preflight`
+- Inputs: database/schema-manifest-v50-round16b.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 553
+
+- UTC timestamp: 2026-08-28T14:27:25Z
+- Phase: CHECKPOINT-011-DATABASE-CORRECTION
+- Operation: PASS — Verify v50 manifest in documented preflight mode while replay receipt is pending
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py --preflight`
+- Inputs: database/schema-manifest-v50-round16b.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json
+- Outputs: none
+- Duration: 474 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 554
+
+- UTC timestamp: 2026-08-28T14:30:33Z
+- Phase: checkpoint011
+- Operation: START — V50 fresh replay 2315
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2315 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/replay_v50_round16b.sh`
+- Inputs: database/schema-manifest-v50-round16b.json, database/migrations/014_exploration_v3_higher_order_associations.sql, database/functions/020_exploration_v3_integrity.sql, database/views/003_exploration_v3_read_contract.sql, database/roles/008_exploration_v3_grants.sql
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 555
+
+- UTC timestamp: 2026-08-28T14:30:36Z
+- Phase: checkpoint011
+- Operation: PASS — V50 fresh replay 2315
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2315 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/replay_v50_round16b.sh`
+- Inputs: database/schema-manifest-v50-round16b.json, database/migrations/014_exploration_v3_higher_order_associations.sql, database/functions/020_exploration_v3_integrity.sql, database/views/003_exploration_v3_read_contract.sql, database/roles/008_exploration_v3_grants.sql
+- Outputs: none
+- Duration: 2619 ms
+- Warnings: none
+- Errors: none
+- Decision: A pass establishes the first governed fresh replay.
+- Next: Run the transaction-scoped adversarial suite.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 556
+
+- UTC timestamp: 2026-08-28T14:30:47Z
+- Phase: checkpoint011
+- Operation: START — V50 adversarial test 2315
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2315 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/run_v50_round16b_tests.sh`
+- Inputs: database/tests/014_exploration_v3_higher_order_associations.sql, database/functions/020_exploration_v3_integrity.sql
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 557
+
+- UTC timestamp: 2026-08-28T14:30:47Z
+- Phase: checkpoint011
+- Operation: PASS — V50 adversarial test 2315
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2315 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/run_v50_round16b_tests.sh`
+- Inputs: database/tests/014_exploration_v3_higher_order_associations.sql, database/functions/020_exploration_v3_integrity.sql
+- Outputs: none
+- Duration: 158 ms
+- Warnings: none
+- Errors: none
+- Decision: A pass requires every negative probe and zero fixture residue.
+- Next: Dump and normalize the first governed schema.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 558
+
+- UTC timestamp: 2026-08-28T14:30:57Z
+- Phase: checkpoint011
+- Operation: START — V50 schema dump 2315
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_dump --schema-only --no-owner --no-privileges -h /private/tmp -p 55439 -d gda_v50_round16b_2315 -f /private/tmp/gda_v50_round16b_2315_schema.sql`
+- Inputs: none
+- Declared outputs: /private/tmp/gda_v50_round16b_2315_schema.sql
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 559
+
+- UTC timestamp: 2026-08-28T14:30:57Z
+- Phase: checkpoint011
+- Operation: PASS — V50 schema dump 2315
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_dump --schema-only --no-owner --no-privileges -h /private/tmp -p 55439 -d gda_v50_round16b_2315 -f /private/tmp/gda_v50_round16b_2315_schema.sql`
+- Inputs: none
+- Outputs: /private/tmp/gda_v50_round16b_2315_schema.sql
+- Duration: 148 ms
+- Warnings: none
+- Errors: none
+- Decision: A pass captures the first schema-only replay result.
+- Next: Normalize and hash the first governed schema.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 560
+
+- UTC timestamp: 2026-08-28T14:31:03Z
+- Phase: checkpoint011
+- Operation: START — V50 normalized schema hash 2315
+- Command: `python3 database/scripts/schema_hash.py /private/tmp/gda_v50_round16b_2315_schema.sql`
+- Inputs: /private/tmp/gda_v50_round16b_2315_schema.sql
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 561
+
+- UTC timestamp: 2026-08-28T14:31:03Z
+- Phase: checkpoint011
+- Operation: PASS — V50 normalized schema hash 2315
+- Command: `python3 database/scripts/schema_hash.py /private/tmp/gda_v50_round16b_2315_schema.sql`
+- Inputs: /private/tmp/gda_v50_round16b_2315_schema.sql
+- Outputs: none
+- Duration: 56 ms
+- Warnings: none
+- Errors: none
+- Decision: Record the first deterministic normalized schema hash.
+- Next: Run the second governed fresh replay.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 562
+
+- UTC timestamp: 2026-08-28T14:31:24Z
+- Phase: checkpoint011
+- Operation: START — V50 fresh replay 2316
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2316 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/replay_v50_round16b.sh`
+- Inputs: database/schema-manifest-v50-round16b.json, database/migrations/014_exploration_v3_higher_order_associations.sql, database/functions/020_exploration_v3_integrity.sql, database/views/003_exploration_v3_read_contract.sql, database/roles/008_exploration_v3_grants.sql
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 563
+
+- UTC timestamp: 2026-08-28T14:31:27Z
+- Phase: checkpoint011
+- Operation: PASS — V50 fresh replay 2316
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2316 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/replay_v50_round16b.sh`
+- Inputs: database/schema-manifest-v50-round16b.json, database/migrations/014_exploration_v3_higher_order_associations.sql, database/functions/020_exploration_v3_integrity.sql, database/views/003_exploration_v3_read_contract.sql, database/roles/008_exploration_v3_grants.sql
+- Outputs: none
+- Duration: 2714 ms
+- Warnings: none
+- Errors: none
+- Decision: A pass establishes the second governed fresh replay.
+- Next: Run the transaction-scoped adversarial suite.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 564
+
+- UTC timestamp: 2026-08-28T14:31:36Z
+- Phase: checkpoint011
+- Operation: START — V50 adversarial test 2316
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2316 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/run_v50_round16b_tests.sh`
+- Inputs: database/tests/014_exploration_v3_higher_order_associations.sql, database/functions/020_exploration_v3_integrity.sql
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 565
+
+- UTC timestamp: 2026-08-28T14:31:36Z
+- Phase: checkpoint011
+- Operation: PASS — V50 adversarial test 2316
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2316 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/run_v50_round16b_tests.sh`
+- Inputs: database/tests/014_exploration_v3_higher_order_associations.sql, database/functions/020_exploration_v3_integrity.sql
+- Outputs: none
+- Duration: 148 ms
+- Warnings: none
+- Errors: none
+- Decision: A pass requires every negative probe and zero fixture residue.
+- Next: Dump and normalize the second governed schema.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 566
+
+- UTC timestamp: 2026-08-28T14:31:46Z
+- Phase: checkpoint011
+- Operation: START — V50 schema dump 2316
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_dump --schema-only --no-owner --no-privileges -h /private/tmp -p 55439 -d gda_v50_round16b_2316 -f /private/tmp/gda_v50_round16b_2316_schema.sql`
+- Inputs: none
+- Declared outputs: /private/tmp/gda_v50_round16b_2316_schema.sql
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 567
+
+- UTC timestamp: 2026-08-28T14:31:46Z
+- Phase: checkpoint011
+- Operation: PASS — V50 schema dump 2316
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_dump --schema-only --no-owner --no-privileges -h /private/tmp -p 55439 -d gda_v50_round16b_2316 -f /private/tmp/gda_v50_round16b_2316_schema.sql`
+- Inputs: none
+- Outputs: /private/tmp/gda_v50_round16b_2316_schema.sql
+- Duration: 136 ms
+- Warnings: none
+- Errors: none
+- Decision: A pass captures the second schema-only replay result.
+- Next: Normalize and compare the second governed schema.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 568
+
+- UTC timestamp: 2026-08-28T14:31:58Z
+- Phase: checkpoint011
+- Operation: START — V50 normalized schema hash 2316
+- Command: `python3 database/scripts/schema_hash.py /private/tmp/gda_v50_round16b_2316_schema.sql`
+- Inputs: /private/tmp/gda_v50_round16b_2316_schema.sql
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 569
+
+- UTC timestamp: 2026-08-28T14:31:58Z
+- Phase: checkpoint011
+- Operation: PASS — V50 normalized schema hash 2316
+- Command: `python3 database/scripts/schema_hash.py /private/tmp/gda_v50_round16b_2316_schema.sql`
+- Inputs: /private/tmp/gda_v50_round16b_2316_schema.sql
+- Outputs: none
+- Duration: 51 ms
+- Warnings: none
+- Errors: none
+- Decision: Require identity with the first deterministic normalized schema hash.
+- Next: Finalize the hashed execution receipt and manifest.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 570
+
+- UTC timestamp: 2026-08-28T14:35:17Z
+- Phase: checkpoint011
+- Operation: START — V50 final manifest and execution receipt verification
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: database/schema-manifest-v50-round16b.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 571
+
+- UTC timestamp: 2026-08-28T14:35:17Z
+- Phase: checkpoint011
+- Operation: PASS — V50 final manifest and execution receipt verification
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: database/schema-manifest-v50-round16b.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json
+- Outputs: none
+- Duration: 467 ms
+- Warnings: none
+- Errors: none
+- Decision: Require exact managed hashes, frozen prefix, object inventory, and complete two-replay receipt.
+- Next: Hand off the frozen database checkpoint correction.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 572
+
+- UTC timestamp: 2026-08-28T14:36:53Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: START — Stop the recovered PostgreSQL 16 replay server after final governed database evidence
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_ctl stop -D /private/tmp/round3i-audit-pg.7bOBg4 -m fast`
+- Inputs: /private/tmp/round3i-audit-pg.7bOBg4; port 55439
+- Declared outputs: graceful fast shutdown and paired persistent-server execution event
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 573
+
+- UTC timestamp: 2026-08-28T14:36:53Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: PASS — Run established isolated PostgreSQL 16 cluster in persistent foreground session
+- Command: `/opt/homebrew/opt/postgresql@16/bin/postgres -D /private/tmp/round3i-audit-pg.7bOBg4 -p 55439 -k /private/tmp -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix`
+- Inputs: /private/tmp/round3i-audit-pg.7bOBg4/PG_VERSION
+- Outputs: none
+- Duration: 789096 ms
+- Warnings: none
+- Errors: none
+- Decision: REUSE_EXISTING_ISOLATED_CLUSTER_PERSISTENT_FOREGROUND_MMAP_NO_INITDB
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 574
+
+- UTC timestamp: 2026-08-28T14:36:53Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: PASS — Stop the recovered PostgreSQL 16 replay server after final governed database evidence
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_ctl stop -D /private/tmp/round3i-audit-pg.7bOBg4 -m fast`
+- Inputs: /private/tmp/round3i-audit-pg.7bOBg4; port 55439
+- Outputs: graceful fast shutdown and paired persistent-server execution event
+- Duration: 444 ms
+- Warnings: none
+- Errors: none
+- Decision: Stop only the recovered isolated Round 16B replay cluster after both final databases and manifest pass
+- Next: Close the persistent run session and run checkpoint-wide verification
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 575
+
+- UTC timestamp: 2026-08-28T15:00:22Z
+- Phase: CHECKPOINT-011-RUNTIME-INDEPENDENT-AUDIT-CORRECTION
+- Operation: START — verify-v3-runtime-interaction-integrity
+- Command: `node scripts/test-trace-exploration-v3.mjs`
+- Inputs: frontend/src/features/trace-v49/exploration-v3/types.ts, frontend/src/features/trace-v49/exploration-v3/read-model.server.ts, frontend/scripts/test-trace-exploration-v3.mjs, frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 576
+
+- UTC timestamp: 2026-08-28T15:00:22Z
+- Phase: CHECKPOINT-011-RUNTIME-INDEPENDENT-AUDIT-CORRECTION
+- Operation: PASS — verify-v3-runtime-interaction-integrity
+- Command: `node scripts/test-trace-exploration-v3.mjs`
+- Inputs: frontend/src/features/trace-v49/exploration-v3/types.ts, frontend/src/features/trace-v49/exploration-v3/read-model.server.ts, frontend/scripts/test-trace-exploration-v3.mjs, frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256
+- Outputs: none
+- Duration: 362 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 577
+
+- UTC timestamp: 2026-08-28T15:00:30Z
+- Phase: CHECKPOINT-011-RUNTIME-INDEPENDENT-AUDIT-CORRECTION
+- Operation: START — verify-v3-runtime-independent
+- Command: `python3 scripts/trace_round16b/verify_v3_runtime_independent.py --check`
+- Inputs: scripts/trace_round16b/verify_v3_runtime_independent.py, frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 578
+
+- UTC timestamp: 2026-08-28T15:00:30Z
+- Phase: CHECKPOINT-011-RUNTIME-INDEPENDENT-AUDIT-CORRECTION
+- Operation: PASS — verify-v3-runtime-independent
+- Command: `python3 scripts/trace_round16b/verify_v3_runtime_independent.py --check`
+- Inputs: scripts/trace_round16b/verify_v3_runtime_independent.py, frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json
+- Duration: 198 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 579
+
+- UTC timestamp: 2026-08-28T15:00:37Z
+- Phase: CHECKPOINT-011-RUNTIME-INDEPENDENT-AUDIT-CORRECTION
+- Operation: START — pycompile-v3-runtime-independent
+- Command: `env PYTHONPYCACHEPREFIX=/private/tmp/trace_round16b_cp011_pycache python3 -m py_compile scripts/trace_round16b/verify_v3_runtime_independent.py`
+- Inputs: scripts/trace_round16b/verify_v3_runtime_independent.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 580
+
+- UTC timestamp: 2026-08-28T15:00:37Z
+- Phase: CHECKPOINT-011-RUNTIME-INDEPENDENT-AUDIT-CORRECTION
+- Operation: PASS — pycompile-v3-runtime-independent
+- Command: `env PYTHONPYCACHEPREFIX=/private/tmp/trace_round16b_cp011_pycache python3 -m py_compile scripts/trace_round16b/verify_v3_runtime_independent.py`
+- Inputs: scripts/trace_round16b/verify_v3_runtime_independent.py
+- Outputs: none
+- Duration: 82 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 581
+
+- UTC timestamp: 2026-08-28T15:00:43Z
+- Phase: CHECKPOINT-011-RUNTIME-INDEPENDENT-AUDIT-CORRECTION
+- Operation: START — typecheck-v3-runtime-interaction-integrity
+- Command: `npm run typecheck:runtime`
+- Inputs: frontend/src/features/trace-v49/exploration-v3/types.ts, frontend/src/features/trace-v49/exploration-v3/read-model.server.ts, frontend/tsconfig.runtime-acceptance.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 582
+
+- UTC timestamp: 2026-08-28T15:01:07Z
+- Phase: CHECKPOINT-011-RUNTIME-INDEPENDENT-AUDIT-CORRECTION
+- Operation: PASS — typecheck-v3-runtime-interaction-integrity
+- Command: `npm run typecheck:runtime`
+- Inputs: frontend/src/features/trace-v49/exploration-v3/types.ts, frontend/src/features/trace-v49/exploration-v3/read-model.server.ts, frontend/tsconfig.runtime-acceptance.json
+- Outputs: none
+- Duration: 23391 ms
+- Warnings: none
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 583
+
+- UTC timestamp: 2026-08-28T15:01:17Z
+- Phase: CHECKPOINT-011-RUNTIME-INDEPENDENT-AUDIT-CORRECTION
+- Operation: START — build-v3-runtime-interaction-integrity
+- Command: `npm run build`
+- Inputs: frontend/src/features/trace-v49/exploration-v3/types.ts, frontend/src/features/trace-v49/exploration-v3/read-model.server.ts, frontend/next.config.ts, frontend/package.json, frontend/package-lock.json, frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256
+- Declared outputs: frontend/.next/BUILD_ID, frontend/.next/required-server-files.json
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 584
+
+- UTC timestamp: 2026-08-28T15:01:29Z
+- Phase: CHECKPOINT-011-RUNTIME-INDEPENDENT-AUDIT-CORRECTION
+- Operation: FAIL — build-v3-runtime-interaction-integrity
+- Command: `npm run build`
+- Inputs: frontend/src/features/trace-v49/exploration-v3/types.ts, frontend/src/features/trace-v49/exploration-v3/read-model.server.ts, frontend/next.config.ts, frontend/package.json, frontend/package-lock.json, frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256
+- Outputs: frontend/.next/BUILD_ID, frontend/.next/required-server-files.json
+- Duration: 12064 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 585
+
+- UTC timestamp: 2026-08-28T15:01:43Z
+- Phase: CHECKPOINT-011-RUNTIME-INDEPENDENT-AUDIT-CORRECTION
+- Operation: START — build-v3-runtime-interaction-integrity-network-retry
+- Command: `npm run build`
+- Inputs: frontend/src/features/trace-v49/exploration-v3/types.ts, frontend/src/features/trace-v49/exploration-v3/read-model.server.ts, frontend/next.config.ts, frontend/package.json, frontend/package-lock.json, frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256
+- Declared outputs: frontend/.next/BUILD_ID, frontend/.next/required-server-files.json
+- Warnings: APPROVED_NETWORK_RETRY_AFTER_PRESERVED_SANDBOX_DNS_FAILURE
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 586
+
+- UTC timestamp: 2026-08-28T15:03:07Z
+- Phase: CHECKPOINT-011-RUNTIME-INDEPENDENT-AUDIT-CORRECTION
+- Operation: PASS — build-v3-runtime-interaction-integrity-network-retry
+- Command: `npm run build`
+- Inputs: frontend/src/features/trace-v49/exploration-v3/types.ts, frontend/src/features/trace-v49/exploration-v3/read-model.server.ts, frontend/next.config.ts, frontend/package.json, frontend/package-lock.json, frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256
+- Outputs: frontend/.next/BUILD_ID, frontend/.next/required-server-files.json
+- Duration: 84370 ms
+- Warnings: APPROVED_NETWORK_RETRY_AFTER_PRESERVED_SANDBOX_DNS_FAILURE
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 587
+
+- UTC timestamp: 2026-08-28T15:04:39Z
+- Phase: CHECKPOINT-011-RUNTIME-INDEPENDENT-AUDIT-CORRECTION
+- Operation: START — verify-v3-runtime-interaction-integrity-metadata-correction
+- Command: `node frontend/scripts/test-trace-exploration-v3.mjs`
+- Inputs: frontend/src/features/trace-v49/exploration-v3/types.ts, frontend/src/features/trace-v49/exploration-v3/read-model.server.ts, frontend/scripts/test-trace-exploration-v3.mjs, frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256
+- Declared outputs: none
+- Warnings: CORRECTED_REPOSITORY_ROOT_INPUT_BINDINGS_AFTER_PRESERVED_CWD_METADATA_GAP
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 588
+
+- UTC timestamp: 2026-08-28T15:04:39Z
+- Phase: CHECKPOINT-011-RUNTIME-INDEPENDENT-AUDIT-CORRECTION
+- Operation: PASS — verify-v3-runtime-interaction-integrity-metadata-correction
+- Command: `node frontend/scripts/test-trace-exploration-v3.mjs`
+- Inputs: frontend/src/features/trace-v49/exploration-v3/types.ts, frontend/src/features/trace-v49/exploration-v3/read-model.server.ts, frontend/scripts/test-trace-exploration-v3.mjs, frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256
+- Outputs: none
+- Duration: 365 ms
+- Warnings: CORRECTED_REPOSITORY_ROOT_INPUT_BINDINGS_AFTER_PRESERVED_CWD_METADATA_GAP
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 589
+
+- UTC timestamp: 2026-08-28T15:04:47Z
+- Phase: CHECKPOINT-011-RUNTIME-INDEPENDENT-AUDIT-CORRECTION
+- Operation: START — typecheck-v3-runtime-interaction-integrity-metadata-correction
+- Command: `npm --prefix frontend run typecheck:runtime`
+- Inputs: frontend/src/features/trace-v49/exploration-v3/types.ts, frontend/src/features/trace-v49/exploration-v3/read-model.server.ts, frontend/tsconfig.runtime-acceptance.json, frontend/package.json, frontend/package-lock.json
+- Declared outputs: none
+- Warnings: CORRECTED_REPOSITORY_ROOT_INPUT_BINDINGS_AFTER_PRESERVED_CWD_METADATA_GAP
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 590
+
+- UTC timestamp: 2026-08-28T15:05:09Z
+- Phase: CHECKPOINT-011-RUNTIME-INDEPENDENT-AUDIT-CORRECTION
+- Operation: PASS — typecheck-v3-runtime-interaction-integrity-metadata-correction
+- Command: `npm --prefix frontend run typecheck:runtime`
+- Inputs: frontend/src/features/trace-v49/exploration-v3/types.ts, frontend/src/features/trace-v49/exploration-v3/read-model.server.ts, frontend/tsconfig.runtime-acceptance.json, frontend/package.json, frontend/package-lock.json
+- Outputs: none
+- Duration: 21950 ms
+- Warnings: CORRECTED_REPOSITORY_ROOT_INPUT_BINDINGS_AFTER_PRESERVED_CWD_METADATA_GAP
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 591
+
+- UTC timestamp: 2026-08-28T15:05:22Z
+- Phase: CHECKPOINT-011-RUNTIME-INDEPENDENT-AUDIT-CORRECTION
+- Operation: START — build-v3-runtime-interaction-integrity-metadata-correction
+- Command: `npm --prefix frontend run build`
+- Inputs: frontend/src/features/trace-v49/exploration-v3/types.ts, frontend/src/features/trace-v49/exploration-v3/read-model.server.ts, frontend/next.config.ts, frontend/package.json, frontend/package-lock.json, frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256
+- Declared outputs: frontend/.next/BUILD_ID, frontend/.next/required-server-files.json
+- Warnings: CORRECTED_REPOSITORY_ROOT_INPUT_BINDINGS_AFTER_PRESERVED_CWD_METADATA_GAP, APPROVED_NETWORK_FOR_CONFIGURED_IBM_PLEX_FONT_ASSETS
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 592
+
+- UTC timestamp: 2026-08-28T15:06:52Z
+- Phase: CHECKPOINT-011-RUNTIME-INDEPENDENT-AUDIT-CORRECTION
+- Operation: PASS — build-v3-runtime-interaction-integrity-metadata-correction
+- Command: `npm --prefix frontend run build`
+- Inputs: frontend/src/features/trace-v49/exploration-v3/types.ts, frontend/src/features/trace-v49/exploration-v3/read-model.server.ts, frontend/next.config.ts, frontend/package.json, frontend/package-lock.json, frontend/generated/trace-exploration-v3/read-model.json, frontend/generated/trace-exploration-v3/manifest.json, frontend/generated/trace-exploration-v3/CHECKSUMS.sha256
+- Outputs: frontend/.next/BUILD_ID, frontend/.next/required-server-files.json
+- Duration: 90527 ms
+- Warnings: CORRECTED_REPOSITORY_ROOT_INPUT_BINDINGS_AFTER_PRESERVED_CWD_METADATA_GAP, APPROVED_NETWORK_FOR_CONFIGURED_IBM_PLEX_FONT_ASSETS
+- Errors: none
+- Decision: Command result governs continuation.
+- Next: Proceed to the next governed operation.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 593
+
+- UTC timestamp: 2026-08-28T15:37:53Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: START — Run recovered isolated PostgreSQL 16.13 cluster for final fresh replays
+- Command: `/opt/homebrew/opt/postgresql@16/bin/postgres -D /private/tmp/round3i-audit-pg.7bOBg4 -p 55439 -k /private/tmp -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix`
+- Inputs: /private/tmp/round3i-audit-pg.7bOBg4/PG_VERSION
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 594
+
+- UTC timestamp: 2026-08-28T15:38:01Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: START — Verify recovered PostgreSQL 16.13 readiness
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_isready -h /private/tmp -p 55439`
+- Inputs: /private/tmp/round3i-audit-pg.7bOBg4/PG_VERSION
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 595
+
+- UTC timestamp: 2026-08-28T15:38:01Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: FAIL — Verify recovered PostgreSQL 16.13 readiness
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_isready -h /private/tmp -p 55439`
+- Inputs: /private/tmp/round3i-audit-pg.7bOBg4/PG_VERSION
+- Outputs: none
+- Duration: 14 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_2
+- Decision: Preserve the failure and correct it additively.
+- Next: Create the two exact fresh replay databases with the governed schema owner.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 596
+
+- UTC timestamp: 2026-08-28T15:38:54Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: START — Verify recovered PostgreSQL 16.13 readiness after startup wait
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_isready -h /private/tmp -p 55439`
+- Inputs: /private/tmp/round3i-audit-pg.7bOBg4/PG_VERSION
+- Declared outputs: none
+- Warnings: Preserved immediate readiness probe exit 2 before the foreground server reached ready state.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 597
+
+- UTC timestamp: 2026-08-28T15:38:54Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: FAIL — Verify recovered PostgreSQL 16.13 readiness after startup wait
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_isready -h /private/tmp -p 55439`
+- Inputs: /private/tmp/round3i-audit-pg.7bOBg4/PG_VERSION
+- Outputs: none
+- Duration: 13 ms
+- Warnings: Preserved immediate readiness probe exit 2 before the foreground server reached ready state.
+- Errors: COMMAND_EXIT_2
+- Decision: Preserve the failure and correct it additively.
+- Next: Create the two exact fresh replay databases with the governed schema owner.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 598
+
+- UTC timestamp: 2026-08-28T15:39:05Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: START — Verify recovered PostgreSQL 16.13 readiness outside managed sandbox
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_isready -h /private/tmp -p 55439`
+- Inputs: /private/tmp/round3i-audit-pg.7bOBg4/PG_VERSION
+- Declared outputs: none
+- Warnings: Preserved two managed-sandbox readiness probes that could not reach the elevated foreground Unix-socket server.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 599
+
+- UTC timestamp: 2026-08-28T15:39:05Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: PASS — Verify recovered PostgreSQL 16.13 readiness outside managed sandbox
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_isready -h /private/tmp -p 55439`
+- Inputs: /private/tmp/round3i-audit-pg.7bOBg4/PG_VERSION
+- Outputs: none
+- Duration: 14 ms
+- Warnings: Preserved two managed-sandbox readiness probes that could not reach the elevated foreground Unix-socket server.
+- Errors: none
+- Decision: Require the exact dedicated Unix socket and port to accept connections before any database mutation.
+- Next: Create the two exact fresh replay databases with the governed schema owner.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 600
+
+- UTC timestamp: 2026-08-28T15:39:24Z
+- Phase: CHECKPOINT-011-DATABASE-REPLAY
+- Operation: START — Verify fresh replay database identities are absent
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -At -h /private/tmp -p 55439 -d postgres -c 'SELECT datname FROM pg_catalog.pg_database WHERE datname IN ('"'"'gda_v50_round16b_2317'"'"','"'"'gda_v50_round16b_2318'"'"') ORDER BY datname COLLATE "C"'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 601
+
+- UTC timestamp: 2026-08-28T15:39:24Z
+- Phase: CHECKPOINT-011-DATABASE-REPLAY
+- Operation: PASS — Verify fresh replay database identities are absent
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -At -h /private/tmp -p 55439 -d postgres -c 'SELECT datname FROM pg_catalog.pg_database WHERE datname IN ('"'"'gda_v50_round16b_2317'"'"','"'"'gda_v50_round16b_2318'"'"') ORDER BY datname COLLATE "C"'`
+- Inputs: none
+- Outputs: none
+- Duration: 28 ms
+- Warnings: none
+- Errors: none
+- Decision: Both exact replay database identities must be absent before creation; no existing database may be dropped.
+- Next: Create both exact databases with gda_v49_phase2a_schema_owner.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 602
+
+- UTC timestamp: 2026-08-28T15:39:36Z
+- Phase: CHECKPOINT-011-DATABASE-REPLAY
+- Operation: START — Create fresh owner-bound v50 replay database 2318
+- Command: `/opt/homebrew/opt/postgresql@16/bin/createdb -h /private/tmp -p 55439 -O gda_v49_phase2a_schema_owner gda_v50_round16b_2318`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 603
+
+- UTC timestamp: 2026-08-28T15:39:36Z
+- Phase: CHECKPOINT-011-DATABASE-REPLAY
+- Operation: PASS — Create fresh owner-bound v50 replay database 2318
+- Command: `/opt/homebrew/opt/postgresql@16/bin/createdb -h /private/tmp -p 55439 -O gda_v49_phase2a_schema_owner gda_v50_round16b_2318`
+- Inputs: none
+- Outputs: none
+- Duration: 153 ms
+- Warnings: none
+- Errors: none
+- Decision: Create only the exact fresh replay identity with the governed frozen-prefix schema owner.
+- Next: Replay the complete frozen v49 prefix followed by additive v50 SQL.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 604
+
+- UTC timestamp: 2026-08-28T15:39:39Z
+- Phase: CHECKPOINT-011-DATABASE-REPLAY
+- Operation: START — Create fresh owner-bound v50 replay database 2317
+- Command: `/opt/homebrew/opt/postgresql@16/bin/createdb -h /private/tmp -p 55439 -O gda_v49_phase2a_schema_owner gda_v50_round16b_2317`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 605
+
+- UTC timestamp: 2026-08-28T15:39:39Z
+- Phase: CHECKPOINT-011-DATABASE-REPLAY
+- Operation: PASS — Create fresh owner-bound v50 replay database 2317
+- Command: `/opt/homebrew/opt/postgresql@16/bin/createdb -h /private/tmp -p 55439 -O gda_v49_phase2a_schema_owner gda_v50_round16b_2317`
+- Inputs: none
+- Outputs: none
+- Duration: 66 ms
+- Warnings: none
+- Errors: none
+- Decision: Create only the exact fresh replay identity with the governed frozen-prefix schema owner.
+- Next: Replay the complete frozen v49 prefix followed by additive v50 SQL.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 606
+
+- UTC timestamp: 2026-08-28T15:39:52Z
+- Phase: CHECKPOINT-011-DATABASE-REPLAY
+- Operation: START — Final fresh v50 replay 2317
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2317 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/replay_v50_round16b.sh`
+- Inputs: database/schema-manifest-v50-round16b.json, database/migrations/014_exploration_v3_higher_order_associations.sql, database/functions/020_exploration_v3_integrity.sql, database/views/003_exploration_v3_read_contract.sql, database/roles/008_exploration_v3_grants.sql
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 607
+
+- UTC timestamp: 2026-08-28T15:39:55Z
+- Phase: CHECKPOINT-011-DATABASE-REPLAY
+- Operation: FAIL — Final fresh v50 replay 2317
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2317 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/replay_v50_round16b.sh`
+- Inputs: database/schema-manifest-v50-round16b.json, database/migrations/014_exploration_v3_higher_order_associations.sql, database/functions/020_exploration_v3_integrity.sql, database/views/003_exploration_v3_read_contract.sql, database/roles/008_exploration_v3_grants.sql
+- Outputs: none
+- Duration: 2519 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_3
+- Decision: Preserve the failure and correct it additively.
+- Next: Run the exact contract, race, isolation, API, residue, and supersession suite.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 608
+
+- UTC timestamp: 2026-08-28T15:41:28Z
+- Phase: CHECKPOINT-011-DATABASE-REPLAY
+- Operation: START — Drop only partial failed replay database 2317
+- Command: `/opt/homebrew/opt/postgresql@16/bin/dropdb -h /private/tmp -p 55439 --force gda_v50_round16b_2317`
+- Inputs: none
+- Declared outputs: none
+- Warnings: Preserve failed replay command 1787931592680; discard only its disposable partially populated database.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 609
+
+- UTC timestamp: 2026-08-28T15:41:28Z
+- Phase: CHECKPOINT-011-DATABASE-REPLAY
+- Operation: PASS — Drop only partial failed replay database 2317
+- Command: `/opt/homebrew/opt/postgresql@16/bin/dropdb -h /private/tmp -p 55439 --force gda_v50_round16b_2317`
+- Inputs: none
+- Outputs: none
+- Duration: 159 ms
+- Warnings: Preserve failed replay command 1787931592680; discard only its disposable partially populated database.
+- Errors: none
+- Decision: Drop exactly gda_v50_round16b_2317 and no other database so the identity can be recreated fresh.
+- Next: Recreate 2317 with the governed schema owner and rerun corrected SQL.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 610
+
+- UTC timestamp: 2026-08-28T15:41:39Z
+- Phase: CHECKPOINT-011-DATABASE-REPLAY
+- Operation: START — Recreate fresh owner-bound v50 replay database 2317 after preserved compile correction
+- Command: `/opt/homebrew/opt/postgresql@16/bin/createdb -h /private/tmp -p 55439 -O gda_v49_phase2a_schema_owner gda_v50_round16b_2317`
+- Inputs: none
+- Declared outputs: none
+- Warnings: The earlier disposable 2317 was dropped only after its failed replay evidence was preserved.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 611
+
+- UTC timestamp: 2026-08-28T15:41:39Z
+- Phase: CHECKPOINT-011-DATABASE-REPLAY
+- Operation: PASS — Recreate fresh owner-bound v50 replay database 2317 after preserved compile correction
+- Command: `/opt/homebrew/opt/postgresql@16/bin/createdb -h /private/tmp -p 55439 -O gda_v49_phase2a_schema_owner gda_v50_round16b_2317`
+- Inputs: none
+- Outputs: none
+- Duration: 74 ms
+- Warnings: The earlier disposable 2317 was dropped only after its failed replay evidence was preserved.
+- Errors: none
+- Decision: Create only the exact fresh replay identity with the governed frozen-prefix schema owner.
+- Next: Replay the corrected complete frozen v49 prefix followed by additive v50 SQL.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 612
+
+- UTC timestamp: 2026-08-28T15:41:51Z
+- Phase: CHECKPOINT-011-DATABASE-REPLAY
+- Operation: START — Final corrected fresh v50 replay 2317
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2317 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/replay_v50_round16b.sh`
+- Inputs: database/schema-manifest-v50-round16b.json, database/migrations/014_exploration_v3_higher_order_associations.sql, database/functions/020_exploration_v3_integrity.sql, database/views/003_exploration_v3_read_contract.sql, database/roles/008_exploration_v3_grants.sql
+- Declared outputs: none
+- Warnings: Preserved the first 2317 compile failure and recreated only that disposable database from empty.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 613
+
+- UTC timestamp: 2026-08-28T15:41:54Z
+- Phase: CHECKPOINT-011-DATABASE-REPLAY
+- Operation: FAIL — Final corrected fresh v50 replay 2317
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2317 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/replay_v50_round16b.sh`
+- Inputs: database/schema-manifest-v50-round16b.json, database/migrations/014_exploration_v3_higher_order_associations.sql, database/functions/020_exploration_v3_integrity.sql, database/views/003_exploration_v3_read_contract.sql, database/roles/008_exploration_v3_grants.sql
+- Outputs: none
+- Duration: 2520 ms
+- Warnings: Preserved the first 2317 compile failure and recreated only that disposable database from empty.
+- Errors: COMMAND_EXIT_3
+- Decision: Preserve the failure and correct it additively.
+- Next: Run the exact contract, real race, isolation, API, residue, and supersession suite.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 614
+
+- UTC timestamp: 2026-08-28T15:43:53Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Drop only the partial correction1 v50 database before a clean correction2 replay
+- Command: `/opt/homebrew/opt/postgresql@16/bin/dropdb -h /private/tmp -p 55439 --force gda_v50_round16b_2317`
+- Inputs: none
+- Declared outputs: none
+- Warnings: PRESERVED_FAILED_CORRECTION1
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 615
+
+- UTC timestamp: 2026-08-28T15:43:54Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Drop only the partial correction1 v50 database before a clean correction2 replay
+- Command: `/opt/homebrew/opt/postgresql@16/bin/dropdb -h /private/tmp -p 55439 --force gda_v50_round16b_2317`
+- Inputs: none
+- Outputs: none
+- Duration: 100 ms
+- Warnings: PRESERVED_FAILED_CORRECTION1
+- Errors: none
+- Decision: Continue only if exact partial database gda_v50_round16b_2317 is removed; keep pristine 2318 untouched.
+- Next: Recreate exact 2317 with the governed schema owner.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 616
+
+- UTC timestamp: 2026-08-28T15:44:22Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Recreate exact fresh v50 replay database 2317 for correction2
+- Command: `/opt/homebrew/opt/postgresql@16/bin/createdb -h /private/tmp -p 55439 -O gda_v49_phase2a_schema_owner gda_v50_round16b_2317`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 617
+
+- UTC timestamp: 2026-08-28T15:44:22Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Recreate exact fresh v50 replay database 2317 for correction2
+- Command: `/opt/homebrew/opt/postgresql@16/bin/createdb -h /private/tmp -p 55439 -O gda_v49_phase2a_schema_owner gda_v50_round16b_2317`
+- Inputs: none
+- Outputs: none
+- Duration: 62 ms
+- Warnings: none
+- Errors: none
+- Decision: Continue only if exact empty database gda_v50_round16b_2317 is created with schema-owner ownership.
+- Next: Replay v50 into fresh 2317; do not touch 2318 until 2317 passes.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 618
+
+- UTC timestamp: 2026-08-28T15:44:34Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Replay v50 schema into fresh 2317 after final-disposition syntax correction2
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2317 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/replay_v50_round16b.sh`
+- Inputs: database/schema-manifest-v50-round16b.json, database/functions/020_exploration_v3_integrity.sql, database/scripts/replay_v50_round16b.sh
+- Declared outputs: none
+- Warnings: TWO_PRIOR_COMPILE_FAILURES_PRESERVED
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 619
+
+- UTC timestamp: 2026-08-28T15:44:37Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Replay v50 schema into fresh 2317 after final-disposition syntax correction2
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2317 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/replay_v50_round16b.sh`
+- Inputs: database/schema-manifest-v50-round16b.json, database/functions/020_exploration_v3_integrity.sql, database/scripts/replay_v50_round16b.sh
+- Outputs: none
+- Duration: 2700 ms
+- Warnings: TWO_PRIOR_COMPILE_FAILURES_PRESERVED
+- Errors: none
+- Decision: Continue only on a complete v49 prefix plus additive v50 replay PASS in fresh 2317.
+- Next: Run the exhaustive v50 database suite on 2317 before touching pristine 2318.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 620
+
+- UTC timestamp: 2026-08-28T15:44:59Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Run exhaustive v50 contract and real seal-race suite on clean replay 2317
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2317 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/run_v50_round16b_tests.sh`
+- Inputs: database/tests/014_exploration_v3_higher_order_associations.sql, database/scripts/run_v50_round16b_tests.sh
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 621
+
+- UTC timestamp: 2026-08-28T15:45:01Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Run exhaustive v50 contract and real seal-race suite on clean replay 2317
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2317 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/run_v50_round16b_tests.sh`
+- Inputs: database/tests/014_exploration_v3_higher_order_associations.sql, database/scripts/run_v50_round16b_tests.sh
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317
+- Duration: 2416 ms
+- Warnings: none
+- Errors: none
+- Decision: Continue to pristine 2318 only if exact SQL oracles, zero fixture residue, concurrency schedules, isolation guards, and race evidence all pass.
+- Next: Replay and test pristine 2318 independently.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 622
+
+- UTC timestamp: 2026-08-28T15:45:51Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Verify pristine second v50 replay database identity and emptiness
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -q -At -h /private/tmp -p 55439 -d gda_v50_round16b_2318 -c 'SELECT current_database(),pg_get_userbyid(d.datdba),(SELECT count(*) FROM pg_namespace WHERE nspname IN ('"'"'research'"'"','"'"'corpus'"'"','"'"'api'"'"','"'"'app'"'"','"'"'license'"'"','"'"'audit'"'"','"'"'job'"'"','"'"'exploration'"'"','"'"'governance'"'"','"'"'authority'"'"','"'"'exploration_v3'"'"')) FROM pg_database d WHERE d.datname=current_database();'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 623
+
+- UTC timestamp: 2026-08-28T15:45:51Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Verify pristine second v50 replay database identity and emptiness
+- Command: `/opt/homebrew/opt/postgresql@16/bin/psql -X -q -At -h /private/tmp -p 55439 -d gda_v50_round16b_2318 -c 'SELECT current_database(),pg_get_userbyid(d.datdba),(SELECT count(*) FROM pg_namespace WHERE nspname IN ('"'"'research'"'"','"'"'corpus'"'"','"'"'api'"'"','"'"'app'"'"','"'"'license'"'"','"'"'audit'"'"','"'"'job'"'"','"'"'exploration'"'"','"'"'governance'"'"','"'"'authority'"'"','"'"'exploration_v3'"'"')) FROM pg_database d WHERE d.datname=current_database();'`
+- Inputs: none
+- Outputs: none
+- Duration: 17 ms
+- Warnings: none
+- Errors: none
+- Decision: Proceed only if database 2318 is owned by the schema owner and contains none of the governed replay schemas.
+- Next: Replay v50 independently into pristine 2318.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 624
+
+- UTC timestamp: 2026-08-28T15:46:01Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Replay frozen v50 schema independently into pristine 2318
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2318 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/replay_v50_round16b.sh`
+- Inputs: database/schema-manifest-v50-round16b.json, database/functions/020_exploration_v3_integrity.sql, database/scripts/replay_v50_round16b.sh
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 625
+
+- UTC timestamp: 2026-08-28T15:46:04Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Replay frozen v50 schema independently into pristine 2318
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2318 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/replay_v50_round16b.sh`
+- Inputs: database/schema-manifest-v50-round16b.json, database/functions/020_exploration_v3_integrity.sql, database/scripts/replay_v50_round16b.sh
+- Outputs: none
+- Duration: 2677 ms
+- Warnings: none
+- Errors: none
+- Decision: Continue only on a complete v49 prefix plus additive v50 replay PASS in the independently pristine 2318 database.
+- Next: Run the exhaustive v50 contract and real race suite independently on 2318.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 626
+
+- UTC timestamp: 2026-08-28T15:46:14Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Run exhaustive v50 contract and real seal-race suite on independent replay 2318
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2318 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/run_v50_round16b_tests.sh`
+- Inputs: database/tests/014_exploration_v3_higher_order_associations.sql, database/scripts/run_v50_round16b_tests.sh
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 627
+
+- UTC timestamp: 2026-08-28T15:46:16Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Run exhaustive v50 contract and real seal-race suite on independent replay 2318
+- Command: `env PGHOST=/private/tmp PGPORT=55439 PGDATABASE=gda_v50_round16b_2318 GDA_PSQL=/opt/homebrew/opt/postgresql@16/bin/psql database/scripts/run_v50_round16b_tests.sh`
+- Inputs: database/tests/014_exploration_v3_higher_order_associations.sql, database/scripts/run_v50_round16b_tests.sh
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318
+- Duration: 2206 ms
+- Warnings: none
+- Errors: none
+- Decision: Continue only if exact SQL oracles, zero fixture residue, concurrency schedules, isolation guards, and independent race evidence all pass.
+- Next: Dump both clean schemas, compare hashes, and generate the final replay receipt.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 628
+
+- UTC timestamp: 2026-08-28T15:46:35Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Dump normalized-comparison schema from clean v50 replay 2317
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_dump --schema-only --no-owner --no-privileges -h /private/tmp -p 55439 -d gda_v50_round16b_2317 -f /private/tmp/gda_v50_round16b_2317_schema.sql`
+- Inputs: none
+- Declared outputs: /private/tmp/gda_v50_round16b_2317_schema.sql
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 629
+
+- UTC timestamp: 2026-08-28T15:46:35Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Dump normalized-comparison schema from clean v50 replay 2317
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_dump --schema-only --no-owner --no-privileges -h /private/tmp -p 55439 -d gda_v50_round16b_2317 -f /private/tmp/gda_v50_round16b_2317_schema.sql`
+- Inputs: none
+- Outputs: /private/tmp/gda_v50_round16b_2317_schema.sql
+- Duration: 198 ms
+- Warnings: none
+- Errors: none
+- Decision: Continue only if pg_dump succeeds from the exact 2317 replay database.
+- Next: Hash the 2317 schema dump with the governed normalizer.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 630
+
+- UTC timestamp: 2026-08-28T15:46:41Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Normalize and hash clean v50 replay schema 2317
+- Command: `python3 database/scripts/schema_hash.py /private/tmp/gda_v50_round16b_2317_schema.sql`
+- Inputs: /private/tmp/gda_v50_round16b_2317_schema.sql
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 631
+
+- UTC timestamp: 2026-08-28T15:46:41Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Normalize and hash clean v50 replay schema 2317
+- Command: `python3 database/scripts/schema_hash.py /private/tmp/gda_v50_round16b_2317_schema.sql`
+- Inputs: /private/tmp/gda_v50_round16b_2317_schema.sql
+- Outputs: none
+- Duration: 50 ms
+- Warnings: none
+- Errors: none
+- Decision: Record the governed normalized schema hash for replay 2317.
+- Next: Dump and independently hash replay 2318.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 632
+
+- UTC timestamp: 2026-08-28T15:46:50Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Dump normalized-comparison schema from independent v50 replay 2318
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_dump --schema-only --no-owner --no-privileges -h /private/tmp -p 55439 -d gda_v50_round16b_2318 -f /private/tmp/gda_v50_round16b_2318_schema.sql`
+- Inputs: none
+- Declared outputs: /private/tmp/gda_v50_round16b_2318_schema.sql
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 633
+
+- UTC timestamp: 2026-08-28T15:46:51Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Dump normalized-comparison schema from independent v50 replay 2318
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_dump --schema-only --no-owner --no-privileges -h /private/tmp -p 55439 -d gda_v50_round16b_2318 -f /private/tmp/gda_v50_round16b_2318_schema.sql`
+- Inputs: none
+- Outputs: /private/tmp/gda_v50_round16b_2318_schema.sql
+- Duration: 146 ms
+- Warnings: none
+- Errors: none
+- Decision: Continue only if pg_dump succeeds from the exact independent 2318 replay database.
+- Next: Hash the 2318 schema dump with the governed normalizer.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 634
+
+- UTC timestamp: 2026-08-28T15:46:55Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Normalize and hash independent v50 replay schema 2318
+- Command: `python3 database/scripts/schema_hash.py /private/tmp/gda_v50_round16b_2318_schema.sql`
+- Inputs: /private/tmp/gda_v50_round16b_2318_schema.sql
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 635
+
+- UTC timestamp: 2026-08-28T15:46:55Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Normalize and hash independent v50 replay schema 2318
+- Command: `python3 database/scripts/schema_hash.py /private/tmp/gda_v50_round16b_2318_schema.sql`
+- Inputs: /private/tmp/gda_v50_round16b_2318_schema.sql
+- Outputs: none
+- Duration: 52 ms
+- Warnings: none
+- Errors: none
+- Decision: Require exact normalized schema hash equality with replay 2317.
+- Next: Generate the canonical final replay receipt and verify its complete evidence graph.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 636
+
+- UTC timestamp: 2026-08-28T15:52:36Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: START — Verify final v50 manifest, frozen v49 prefix, replay receipt, command evidence, race evidence, and normalized schema equality
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: database/schema-manifest-v50-round16b.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/command-ledger.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 637
+
+- UTC timestamp: 2026-08-28T15:52:37Z
+- Phase: CHECKPOINT-011-DATABASE
+- Operation: PASS — Verify final v50 manifest, frozen v49 prefix, replay receipt, command evidence, race evidence, and normalized schema equality
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: database/schema-manifest-v50-round16b.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/command-ledger.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race
+- Outputs: none
+- Duration: 391 ms
+- Warnings: none
+- Errors: none
+- Decision: Database checkpoint may proceed only if the complete final evidence graph verifies as PASS.
+- Next: Independent final DB review, then stop the recovered PostgreSQL cluster gracefully.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 638
+
+- UTC timestamp: 2026-08-28T15:52:54Z
+- Phase: CHECKPOINT-011-DATABASE-RECEIPT
+- Operation: START — Verify final v50 Round16B manifest, replay receipt, governed command evidence, race logs, v49 freeze, and normalized schema identity
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/CHECKSUMS.sha256, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/CHECKSUMS.sha256
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 639
+
+- UTC timestamp: 2026-08-28T15:52:55Z
+- Phase: CHECKPOINT-011-DATABASE-RECEIPT
+- Operation: PASS — Verify final v50 Round16B manifest, replay receipt, governed command evidence, race logs, v49 freeze, and normalized schema identity
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: database/schema-manifest-v50-round16b.json, database/scripts/verify_v50_round16b_manifest.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317/CHECKSUMS.sha256, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318/CHECKSUMS.sha256
+- Outputs: none
+- Duration: 388 ms
+- Warnings: none
+- Errors: none
+- Decision: PASS
+- Next: Freeze database artifacts and hand off for final independent review
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 640
+
+- UTC timestamp: 2026-08-28T15:53:42Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: START — Stop recovered PostgreSQL 16 test cluster after final v50 evidence freeze
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_ctl stop -D /private/tmp/round3i-audit-pg.7bOBg4 -m fast`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 641
+
+- UTC timestamp: 2026-08-28T15:53:42Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: PASS — Run recovered isolated PostgreSQL 16.13 cluster for final fresh replays
+- Command: `/opt/homebrew/opt/postgresql@16/bin/postgres -D /private/tmp/round3i-audit-pg.7bOBg4 -p 55439 -k /private/tmp -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix`
+- Inputs: /private/tmp/round3i-audit-pg.7bOBg4/PG_VERSION
+- Outputs: none
+- Duration: 949543 ms
+- Warnings: none
+- Errors: none
+- Decision: Use only the recovered isolated data directory on the dedicated socket and port.
+- Next: Verify readiness, then create only fresh owner-bound replay databases 2317 and 2318.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 642
+
+- UTC timestamp: 2026-08-28T15:53:42Z
+- Phase: CHECKPOINT-011-DATABASE-ENVIRONMENT
+- Operation: PASS — Stop recovered PostgreSQL 16 test cluster after final v50 evidence freeze
+- Command: `/opt/homebrew/opt/postgresql@16/bin/pg_ctl stop -D /private/tmp/round3i-audit-pg.7bOBg4 -m fast`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json
+- Outputs: none
+- Duration: 136 ms
+- Warnings: none
+- Errors: none
+- Decision: Require a clean pg_ctl shutdown after every governed replay and verifier has passed.
+- Next: Confirm the persistent foreground server process exits; preserve all replay databases on disk for recovery.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 643
+
+- UTC timestamp: 2026-08-28T16:00:22Z
+- Phase: CHECKPOINT-011-RUNTIME-INTEGRATION
+- Operation: START — Remove two ignored Python bytecode cache artifacts that invalidate the semantic-contract database hygiene gate
+- Command: `rm -f database/scripts/__pycache__/schema_hash.cpython-313.pyc database/scripts/__pycache__/verify_v50_round16b_manifest.cpython-313.pyc`
+- Inputs: database/scripts/__pycache__/schema_hash.cpython-313.pyc, database/scripts/__pycache__/verify_v50_round16b_manifest.cpython-313.pyc
+- Declared outputs: none
+- Warnings: GENERATED_IGNORED_CACHE_ONLY
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 644
+
+- UTC timestamp: 2026-08-28T16:00:22Z
+- Phase: CHECKPOINT-011-RUNTIME-INTEGRATION
+- Operation: PASS — Remove two ignored Python bytecode cache artifacts that invalidate the semantic-contract database hygiene gate
+- Command: `rm -f database/scripts/__pycache__/schema_hash.cpython-313.pyc database/scripts/__pycache__/verify_v50_round16b_manifest.cpython-313.pyc`
+- Inputs: database/scripts/__pycache__/schema_hash.cpython-313.pyc, database/scripts/__pycache__/verify_v50_round16b_manifest.cpython-313.pyc
+- Outputs: none
+- Duration: 7 ms
+- Warnings: GENERATED_IGNORED_CACHE_ONLY
+- Errors: none
+- Decision: Remove only the two exact ignored bytecode files; preserve every source and governed evidence file.
+- Next: Rerun semantic-contract independent verification without importing database verifier modules.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 645
+
+- UTC timestamp: 2026-08-28T16:00:30Z
+- Phase: CHECKPOINT-011-RUNTIME-INTEGRATION
+- Operation: START — Rerun semantic-contract independent verifier after exact ignored-cache hygiene correction
+- Command: `python3 scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check`
+- Inputs: scripts/trace_round16b/verify_v3_semantic_contract_independent.py, database/schema-manifest-v50-round16b.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-independent-verification.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 646
+
+- UTC timestamp: 2026-08-28T16:00:31Z
+- Phase: CHECKPOINT-011-RUNTIME-INTEGRATION
+- Operation: FAIL — Rerun semantic-contract independent verifier after exact ignored-cache hygiene correction
+- Command: `python3 scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check`
+- Inputs: scripts/trace_round16b/verify_v3_semantic_contract_independent.py, database/schema-manifest-v50-round16b.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-independent-verification.json
+- Outputs: none
+- Duration: 649 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: If check reports only receipt drift, regenerate once then require a second clean check.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 647
+
+- UTC timestamp: 2026-08-28T16:00:45Z
+- Phase: CHECKPOINT-011-RUNTIME-INTEGRATION
+- Operation: START — Regenerate semantic-contract independent receipt with final additive v50 inventory after cache hygiene correction
+- Command: `python3 scripts/trace_round16b/verify_v3_semantic_contract_independent.py`
+- Inputs: scripts/trace_round16b/verify_v3_semantic_contract_independent.py, database/schema-manifest-v50-round16b.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-independent-verification.json
+- Warnings: EXPECTED_RECEIPT_REFRESH_AFTER_V50_IMPLEMENTATION
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 648
+
+- UTC timestamp: 2026-08-28T16:00:45Z
+- Phase: CHECKPOINT-011-RUNTIME-INTEGRATION
+- Operation: PASS — Regenerate semantic-contract independent receipt with final additive v50 inventory after cache hygiene correction
+- Command: `python3 scripts/trace_round16b/verify_v3_semantic_contract_independent.py`
+- Inputs: scripts/trace_round16b/verify_v3_semantic_contract_independent.py, database/schema-manifest-v50-round16b.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-independent-verification.json
+- Duration: 683 ms
+- Warnings: EXPECTED_RECEIPT_REFRESH_AFTER_V50_IMPLEMENTATION
+- Errors: none
+- Decision: Write only the derived independent receipt after every source/freeze/inventory invariant has passed.
+- Next: Rerun check mode and require exact byte identity.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 649
+
+- UTC timestamp: 2026-08-28T16:00:51Z
+- Phase: CHECKPOINT-011-RUNTIME-INTEGRATION
+- Operation: START — Check final semantic-contract independent receipt byte identity
+- Command: `python3 scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check`
+- Inputs: scripts/trace_round16b/verify_v3_semantic_contract_independent.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-independent-verification.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 650
+
+- UTC timestamp: 2026-08-28T16:00:52Z
+- Phase: CHECKPOINT-011-RUNTIME-INTEGRATION
+- Operation: PASS — Check final semantic-contract independent receipt byte identity
+- Command: `python3 scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check`
+- Inputs: scripts/trace_round16b/verify_v3_semantic_contract_independent.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-independent-verification.json
+- Outputs: none
+- Duration: 647 ms
+- Warnings: none
+- Errors: none
+- Decision: Checkpoint 11 may proceed only if independent reconstruction exactly matches the committed receipt.
+- Next: Freeze all checkpoint 11 runtime/database artifacts and perform a separate final runtime audit.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 651
+
+- UTC timestamp: 2026-08-28T16:02:06Z
+- Phase: CHECKPOINT-011-RUNTIME-FINAL
+- Operation: START — Run final governed production HTTP, route, concurrency, sustained-read, export-replay, memory, and termination verification
+- Command: `python3 scripts/trace_round16b/verify_v3_production_http.py --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint011-correction4-final --port 59447 --request-timeout-seconds 10`
+- Inputs: frontend/.next/BUILD_ID, frontend/.next/required-server-files.json, frontend/generated/trace-exploration-v3, scripts/trace_round16b/verify_v3_production_http.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint011-correction4-final
+- Warnings: LOOPBACK_ONLY_NO_EXTERNAL_NETWORK
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 652
+
+- UTC timestamp: 2026-08-28T16:02:17Z
+- Phase: CHECKPOINT-011-RUNTIME-FINAL
+- Operation: PASS — Run final governed production HTTP, route, concurrency, sustained-read, export-replay, memory, and termination verification
+- Command: `python3 scripts/trace_round16b/verify_v3_production_http.py --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint011-correction4-final --port 59447 --request-timeout-seconds 10`
+- Inputs: frontend/.next/BUILD_ID, frontend/.next/required-server-files.json, frontend/generated/trace-exploration-v3, scripts/trace_round16b/verify_v3_production_http.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint011-correction4-final
+- Duration: 11364 ms
+- Warnings: LOOPBACK_ONLY_NO_EXTERNAL_NETWORK
+- Errors: none
+- Decision: Checkpoint 11 may proceed only if all production-mode HTTP cases, bounded load, memory collection, export replay, and process-group cleanup pass.
+- Next: Independently audit the final receipt set and freeze checkpoint 11 evidence.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 653
+
+- UTC timestamp: 2026-08-28T16:02:59Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — Final deterministic v3 runtime read-model reconstruction check
+- Command: `python3 scripts/trace_round16b/build_exploration_v3_runtime_read_model.py --check`
+- Inputs: scripts/trace_round16b/build_exploration_v3_runtime_read_model.py, frontend/generated/trace-exploration-v3
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 654
+
+- UTC timestamp: 2026-08-28T16:02:59Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — Final independent v3 runtime reconstruction and corruption audit
+- Command: `python3 scripts/trace_round16b/verify_v3_runtime_independent.py --check`
+- Inputs: scripts/trace_round16b/verify_v3_runtime_independent.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 655
+
+- UTC timestamp: 2026-08-28T16:02:59Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — Final deterministic semantic-contract reconstruction check
+- Command: `python3 scripts/trace_round16b/build_v3_semantic_contract.py --check`
+- Inputs: scripts/trace_round16b/build_v3_semantic_contract.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-output-manifest-v1.tsv
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 656
+
+- UTC timestamp: 2026-08-28T16:02:59Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — Final TypeScript v3 API and adversarial test matrix
+- Command: `npm --prefix frontend run test:exploration-api-v3`
+- Inputs: frontend/scripts/test-trace-exploration-v3.mjs, frontend/src/features/trace-v49/exploration-v3, frontend/src/app/api/trace/v3/exploration
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 657
+
+- UTC timestamp: 2026-08-28T16:02:59Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — Final deterministic v3 runtime read-model reconstruction check
+- Command: `python3 scripts/trace_round16b/build_exploration_v3_runtime_read_model.py --check`
+- Inputs: scripts/trace_round16b/build_exploration_v3_runtime_read_model.py, frontend/generated/trace-exploration-v3
+- Outputs: none
+- Duration: 72 ms
+- Warnings: none
+- Errors: none
+- Decision: Require deterministic rebuild and exact committed read-model/manifest/checksum identity.
+- Next: Continue final checkpoint gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 658
+
+- UTC timestamp: 2026-08-28T16:02:59Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — Final deterministic semantic-contract reconstruction check
+- Command: `python3 scripts/trace_round16b/build_v3_semantic_contract.py --check`
+- Inputs: scripts/trace_round16b/build_v3_semantic_contract.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-output-manifest-v1.tsv
+- Outputs: none
+- Duration: 207 ms
+- Warnings: none
+- Errors: none
+- Decision: Require two in-memory reconstructions and exact committed artifact identity.
+- Next: Continue final checkpoint gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 659
+
+- UTC timestamp: 2026-08-28T16:02:59Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — Final independent v3 runtime reconstruction and corruption audit
+- Command: `python3 scripts/trace_round16b/verify_v3_runtime_independent.py --check`
+- Inputs: scripts/trace_round16b/verify_v3_runtime_independent.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json
+- Outputs: none
+- Duration: 356 ms
+- Warnings: none
+- Errors: none
+- Decision: Require independent reconstruction, frozen trust anchors, and all corruption controls to match.
+- Next: Continue final checkpoint gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 660
+
+- UTC timestamp: 2026-08-28T16:03:00Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — Final TypeScript v3 API and adversarial test matrix
+- Command: `npm --prefix frontend run test:exploration-api-v3`
+- Inputs: frontend/scripts/test-trace-exploration-v3.mjs, frontend/src/features/trace-v49/exploration-v3, frontend/src/app/api/trace/v3/exploration
+- Outputs: none
+- Duration: 791 ms
+- Warnings: none
+- Errors: none
+- Decision: Require the complete list/item/HEAD/isolation/hash/workflow/fact-boundary matrix to pass.
+- Next: Continue final checkpoint gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 661
+
+- UTC timestamp: 2026-08-28T16:03:16Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — Final independent semantic-contract reconstruction check
+- Command: `python3 scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check`
+- Inputs: scripts/trace_round16b/verify_v3_semantic_contract_independent.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-independent-verification.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 662
+
+- UTC timestamp: 2026-08-28T16:03:16Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — Final v50 manifest and replay evidence verification
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: database/schema-manifest-v50-round16b.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 663
+
+- UTC timestamp: 2026-08-28T16:03:16Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — Final Round 16A reconciliation primary determinism check
+- Command: `python3 scripts/trace_round16b/build_round16a_global_reconciliation.py --check`
+- Inputs: scripts/trace_round16b/build_round16a_global_reconciliation.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 664
+
+- UTC timestamp: 2026-08-28T16:03:16Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — Final Round 16A reconciliation independent check
+- Command: `python3 scripts/trace_round16b/verify_round16a_global_reconciliation.py --check`
+- Inputs: scripts/trace_round16b/verify_round16a_global_reconciliation.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 665
+
+- UTC timestamp: 2026-08-28T16:03:17Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — Final v50 manifest and replay evidence verification
+- Command: `python3 database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: database/schema-manifest-v50-round16b.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json
+- Outputs: none
+- Duration: 538 ms
+- Warnings: none
+- Errors: none
+- Decision: Require frozen v49, additive v50, command, race, and schema evidence to pass.
+- Next: Continue final checkpoint gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 666
+
+- UTC timestamp: 2026-08-28T16:03:17Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — Final independent semantic-contract reconstruction check
+- Command: `python3 scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check`
+- Inputs: scripts/trace_round16b/verify_v3_semantic_contract_independent.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-independent-verification.json
+- Outputs: none
+- Duration: 967 ms
+- Warnings: none
+- Errors: none
+- Decision: Require exact independent receipt reconstruction including additive v50 inventory and protected boundaries.
+- Next: Continue final checkpoint gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 667
+
+- UTC timestamp: 2026-08-28T16:03:46Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — Final Round 16A reconciliation independent check
+- Command: `python3 scripts/trace_round16b/verify_round16a_global_reconciliation.py --check`
+- Inputs: scripts/trace_round16b/verify_round16a_global_reconciliation.py
+- Outputs: none
+- Duration: 29239 ms
+- Warnings: none
+- Errors: none
+- Decision: Require independent reconstruction of every Round 16A reconciliation count and hash.
+- Next: Continue final checkpoint gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 668
+
+- UTC timestamp: 2026-08-28T16:03:58Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — Final Round 16A reconciliation primary determinism check
+- Command: `python3 scripts/trace_round16b/build_round16a_global_reconciliation.py --check`
+- Inputs: scripts/trace_round16b/build_round16a_global_reconciliation.py
+- Outputs: none
+- Duration: 41441 ms
+- Warnings: none
+- Errors: none
+- Decision: Require every prior Round 16A object reconciliation artifact to remain byte-identical.
+- Next: Continue final checkpoint gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 669
+
+- UTC timestamp: 2026-08-28T16:04:20Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — Final evidence disposition tranche B regression
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_b.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-b-checkpoint011.json`
+- Inputs: scripts/trace_round16b/verify_evidence_disposition_tranche_b.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-b-checkpoint011.json
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 670
+
+- UTC timestamp: 2026-08-28T16:04:20Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — Final higher-order method regression
+- Command: `python3 scripts/trace_round16b/verify_method_checkpoint.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-regression-checkpoint011.json`
+- Inputs: scripts/trace_round16b/verify_method_checkpoint.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-regression-checkpoint011.json
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 671
+
+- UTC timestamp: 2026-08-28T16:04:20Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — Final evidence disposition tranche A regression
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_a.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-a-checkpoint011.json`
+- Inputs: scripts/trace_round16b/verify_evidence_disposition_tranche_a.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-a-checkpoint011.json
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 672
+
+- UTC timestamp: 2026-08-28T16:04:20Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — Final local candidate census regression
+- Command: `python3 scripts/trace_round16b/verify_local_candidate_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-regression-checkpoint011.json`
+- Inputs: scripts/trace_round16b/verify_local_candidate_census.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-regression-checkpoint011.json
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 673
+
+- UTC timestamp: 2026-08-28T16:04:20Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — Final evidence disposition tranche A regression
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_a.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-a-checkpoint011.json`
+- Inputs: scripts/trace_round16b/verify_evidence_disposition_tranche_a.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-a-checkpoint011.json
+- Duration: 184 ms
+- Warnings: none
+- Errors: none
+- Decision: Require row conservation and fail-closed dispositions.
+- Next: Continue final checkpoint gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 674
+
+- UTC timestamp: 2026-08-28T16:04:20Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — Final evidence disposition tranche B regression
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_b.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-b-checkpoint011.json`
+- Inputs: scripts/trace_round16b/verify_evidence_disposition_tranche_b.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-regression-tranche-b-checkpoint011.json
+- Duration: 400 ms
+- Warnings: none
+- Errors: none
+- Decision: Require row conservation and fail-closed dispositions.
+- Next: Continue final checkpoint gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 675
+
+- UTC timestamp: 2026-08-28T16:04:20Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — Final higher-order method regression
+- Command: `python3 scripts/trace_round16b/verify_method_checkpoint.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-regression-checkpoint011.json`
+- Inputs: scripts/trace_round16b/verify_method_checkpoint.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-regression-checkpoint011.json
+- Duration: 519 ms
+- Warnings: none
+- Errors: none
+- Decision: Require the governed method contract and gap framework to remain valid.
+- Next: Continue final checkpoint gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 676
+
+- UTC timestamp: 2026-08-28T16:04:27Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — Final local candidate census regression
+- Command: `python3 scripts/trace_round16b/verify_local_candidate_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-regression-checkpoint011.json`
+- Inputs: scripts/trace_round16b/verify_local_candidate_census.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-regression-checkpoint011.json
+- Duration: 7711 ms
+- Warnings: none
+- Errors: none
+- Decision: Require local candidate occurrence and participant-set conservation.
+- Next: Continue final checkpoint gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 677
+
+- UTC timestamp: 2026-08-28T16:04:42Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — Final deferred evidence-surface census regression
+- Command: `python3 scripts/trace_round16b/verify_deferred_surface_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-regression-checkpoint011.json`
+- Inputs: scripts/trace_round16b/verify_deferred_surface_census.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-regression-checkpoint011.json
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 678
+
+- UTC timestamp: 2026-08-28T16:04:42Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — Final adaptive source review shard 1 deterministic check
+- Command: `python3 scripts/trace_round16b/verify_adaptive_source_review_shard_1.py --check`
+- Inputs: scripts/trace_round16b/verify_adaptive_source_review_shard_1.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 679
+
+- UTC timestamp: 2026-08-28T16:04:42Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — Final evidence disposition tranche C deterministic check
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_c.py --check`
+- Inputs: scripts/trace_round16b/verify_evidence_disposition_tranche_c.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 680
+
+- UTC timestamp: 2026-08-28T16:04:42Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — Final adaptive source review shard 2 deterministic check
+- Command: `python3 scripts/trace_round16b/verify_adaptive_source_review_shard_2.py --check`
+- Inputs: scripts/trace_round16b/verify_adaptive_source_review_shard_2.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 681
+
+- UTC timestamp: 2026-08-28T16:04:42Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — Final adaptive source review shard 1 deterministic check
+- Command: `python3 scripts/trace_round16b/verify_adaptive_source_review_shard_1.py --check`
+- Inputs: scripts/trace_round16b/verify_adaptive_source_review_shard_1.py
+- Outputs: none
+- Duration: 93 ms
+- Warnings: none
+- Errors: none
+- Decision: Require source, locator, rights, and disposition receipts to remain byte-identical.
+- Next: Continue final checkpoint gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 682
+
+- UTC timestamp: 2026-08-28T16:04:42Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — Final adaptive source review shard 2 deterministic check
+- Command: `python3 scripts/trace_round16b/verify_adaptive_source_review_shard_2.py --check`
+- Inputs: scripts/trace_round16b/verify_adaptive_source_review_shard_2.py
+- Outputs: none
+- Duration: 85 ms
+- Warnings: none
+- Errors: none
+- Decision: Require canonical trigger and source-scope reconciliation receipts to remain byte-identical.
+- Next: Continue final checkpoint gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 683
+
+- UTC timestamp: 2026-08-28T16:04:42Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — Final evidence disposition tranche C deterministic check
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_c.py --check`
+- Inputs: scripts/trace_round16b/verify_evidence_disposition_tranche_c.py
+- Outputs: none
+- Duration: 98 ms
+- Warnings: none
+- Errors: none
+- Decision: Require higher-arity tranche C receipts and dispositions to remain byte-identical.
+- Next: Continue final checkpoint gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 684
+
+- UTC timestamp: 2026-08-28T16:04:48Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — Final deferred evidence-surface census regression
+- Command: `python3 scripts/trace_round16b/verify_deferred_surface_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-regression-checkpoint011.json`
+- Inputs: scripts/trace_round16b/verify_deferred_surface_census.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-regression-checkpoint011.json
+- Duration: 6310 ms
+- Warnings: none
+- Errors: none
+- Decision: Require every local method surface and database selector to remain accounted.
+- Next: Continue final checkpoint gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 685
+
+- UTC timestamp: 2026-08-28T16:05:08Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — Final runtime TypeScript typecheck
+- Command: `npm --prefix frontend run typecheck:runtime`
+- Inputs: frontend/tsconfig.runtime-acceptance.json, frontend/src/features/trace-v49/exploration-v3, frontend/src/app/api/trace/v3/exploration
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 686
+
+- UTC timestamp: 2026-08-28T16:05:08Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — Compile all checkpoint 11 semantic, runtime, HTTP, and v50 verifier Python sources without repository bytecode
+- Command: `env PYTHONPYCACHEPREFIX=/private/tmp/trace_round16b_cp011_final_pycache python3 -m py_compile scripts/trace_round16b/build_v3_semantic_contract.py scripts/trace_round16b/verify_v3_semantic_contract_independent.py scripts/trace_round16b/build_exploration_v3_runtime_read_model.py scripts/trace_round16b/verify_v3_runtime_independent.py scripts/trace_round16b/verify_v3_production_http.py database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: scripts/trace_round16b/build_v3_semantic_contract.py, scripts/trace_round16b/verify_v3_semantic_contract_independent.py, scripts/trace_round16b/build_exploration_v3_runtime_read_model.py, scripts/trace_round16b/verify_v3_runtime_independent.py, scripts/trace_round16b/verify_v3_production_http.py, database/scripts/verify_v50_round16b_manifest.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 687
+
+- UTC timestamp: 2026-08-28T16:05:08Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — Final v49 database freeze verification
+- Command: `python3 scripts/repository/verify_v49_database_freeze.py --repo .`
+- Inputs: database/FREEZE_V49.json, database/FREEZE_V49.sha256
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 688
+
+- UTC timestamp: 2026-08-28T16:05:08Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — Verify protected v2 runtime/schema and legacy evidence registry remain unchanged from checkpoint 009
+- Command: `git diff --exit-code 468105499c7be102deec7d6555aced688dea9901 -- schemas/trace/exploration/v2 frontend/generated/trace-exploration-v2 frontend/src/app/api/trace/v2/exploration frontend/src/features/trace-v49/exploration-v2 docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 689
+
+- UTC timestamp: 2026-08-28T16:05:08Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — Verify protected v2 runtime/schema and legacy evidence registry remain unchanged from checkpoint 009
+- Command: `git diff --exit-code 468105499c7be102deec7d6555aced688dea9901 -- schemas/trace/exploration/v2 frontend/generated/trace-exploration-v2 frontend/src/app/api/trace/v2/exploration frontend/src/features/trace-v49/exploration-v2 docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv`
+- Inputs: none
+- Outputs: none
+- Duration: 31 ms
+- Warnings: none
+- Errors: none
+- Decision: Require zero mutation to v2 APIs/schemas/generated model and the legacy composition evidence registry.
+- Next: Continue final checkpoint gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 690
+
+- UTC timestamp: 2026-08-28T16:05:08Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — Compile all checkpoint 11 semantic, runtime, HTTP, and v50 verifier Python sources without repository bytecode
+- Command: `env PYTHONPYCACHEPREFIX=/private/tmp/trace_round16b_cp011_final_pycache python3 -m py_compile scripts/trace_round16b/build_v3_semantic_contract.py scripts/trace_round16b/verify_v3_semantic_contract_independent.py scripts/trace_round16b/build_exploration_v3_runtime_read_model.py scripts/trace_round16b/verify_v3_runtime_independent.py scripts/trace_round16b/verify_v3_production_http.py database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: scripts/trace_round16b/build_v3_semantic_contract.py, scripts/trace_round16b/verify_v3_semantic_contract_independent.py, scripts/trace_round16b/build_exploration_v3_runtime_read_model.py, scripts/trace_round16b/verify_v3_runtime_independent.py, scripts/trace_round16b/verify_v3_production_http.py, database/scripts/verify_v50_round16b_manifest.py
+- Outputs: none
+- Duration: 301 ms
+- Warnings: none
+- Errors: none
+- Decision: Require syntax compilation while routing bytecode outside the repository.
+- Next: Continue final checkpoint gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 691
+
+- UTC timestamp: 2026-08-28T16:05:09Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — Final v49 database freeze verification
+- Command: `python3 scripts/repository/verify_v49_database_freeze.py --repo .`
+- Inputs: database/FREEZE_V49.json, database/FREEZE_V49.sha256
+- Outputs: none
+- Duration: 587 ms
+- Warnings: none
+- Errors: none
+- Decision: Require every one of 126 frozen v49 artifacts and schema hash to remain unchanged.
+- Next: Continue final checkpoint gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 692
+
+- UTC timestamp: 2026-08-28T16:05:31Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — Final runtime TypeScript typecheck
+- Command: `npm --prefix frontend run typecheck:runtime`
+- Inputs: frontend/tsconfig.runtime-acceptance.json, frontend/src/features/trace-v49/exploration-v3, frontend/src/app/api/trace/v3/exploration
+- Outputs: none
+- Duration: 22541 ms
+- Warnings: none
+- Errors: none
+- Decision: Require the frozen v3 DTO/service/controller/route graph to typecheck.
+- Next: Continue final checkpoint gates.
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 693
+
+- UTC timestamp: 2026-08-28T16:16:47Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: START — repository-hygiene-final-staged
+- Command: `python3 scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint011.json --markdown docs/research/trace-v49-exploration-higher-order-association-closure-round16b/22_REPOSITORY_HYGIENE_CHECKPOINT011.md`
+- Inputs: none
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint011.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/22_REPOSITORY_HYGIENE_CHECKPOINT011.md
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 694
+
+- UTC timestamp: 2026-08-28T16:17:04Z
+- Phase: CHECKPOINT-011-FINAL-GATES
+- Operation: PASS — repository-hygiene-final-staged
+- Command: `python3 scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint011.json --markdown docs/research/trace-v49-exploration-higher-order-association-closure-round16b/22_REPOSITORY_HYGIENE_CHECKPOINT011.md`
+- Inputs: none
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint011.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/22_REPOSITORY_HYGIENE_CHECKPOINT011.md
+- Duration: 17305 ms
+- Warnings: none
+- Errors: none
+- Decision: PASS_REQUIRED
+- Next: stage-hygiene-receipts
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 695
+
+- UTC timestamp: 2026-08-28T16:18:25Z
+- Phase: CHECKPOINT-011-FINAL-INTEGRITY
+- Operation: START — verify-new-blob-policy
+- Command: `python3 scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint011.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json, .gitattributes
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint011.json
+- Warnings: ALL_CLOSURE_FLAGS_REMAIN_FALSE
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 696
+
+- UTC timestamp: 2026-08-28T16:18:53Z
+- Phase: CHECKPOINT-011-FINAL-INTEGRITY
+- Operation: PASS — verify-new-blob-policy
+- Command: `python3 scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint011.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json, .gitattributes
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint011.json
+- Duration: 27914 ms
+- Warnings: ALL_CLOSURE_FLAGS_REMAIN_FALSE
+- Errors: none
+- Decision: PASS_REQUIRED
+- Next: git-lfs-fsck
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 697
+
+- UTC timestamp: 2026-08-28T16:19:00Z
+- Phase: CHECKPOINT-011-FINAL-INTEGRITY
+- Operation: START — git-lfs-fsck
+- Command: `git lfs fsck --objects --pointers`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 698
+
+- UTC timestamp: 2026-08-28T16:19:03Z
+- Phase: CHECKPOINT-011-FINAL-INTEGRITY
+- Operation: PASS — git-lfs-fsck
+- Command: `git lfs fsck --objects --pointers`
+- Inputs: none
+- Outputs: none
+- Duration: 2811 ms
+- Warnings: none
+- Errors: none
+- Decision: PASS_REQUIRED
+- Next: git-fsck
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 699
+
+- UTC timestamp: 2026-08-28T16:19:09Z
+- Phase: CHECKPOINT-011-FINAL-INTEGRITY
+- Operation: START — git-fsck-full-strict
+- Command: `git fsck --full --strict --no-dangling`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 700
+
+- UTC timestamp: 2026-08-28T16:19:55Z
+- Phase: CHECKPOINT-011-FINAL-INTEGRITY
+- Operation: START — secret-pattern-scan
+- Command: `python3 scripts/audit_secret_patterns.py`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 701
+
+- UTC timestamp: 2026-08-28T16:20:50Z
+- Phase: CHECKPOINT-011-FINAL-INTEGRITY
+- Operation: PASS — git-fsck-full-strict
+- Command: `git fsck --full --strict --no-dangling`
+- Inputs: none
+- Outputs: none
+- Duration: 101116 ms
+- Warnings: none
+- Errors: none
+- Decision: PASS_REQUIRED
+- Next: secret-scan
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 702
+
+- UTC timestamp: 2026-08-28T16:21:45Z
+- Phase: CHECKPOINT-011-FINAL-INTEGRITY
+- Operation: PASS — secret-pattern-scan
+- Command: `python3 scripts/audit_secret_patterns.py`
+- Inputs: none
+- Outputs: none
+- Duration: 109617 ms
+- Warnings: none
+- Errors: none
+- Decision: PASS_REQUIRED
+- Next: execution-log-verification
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 703
+
+- UTC timestamp: 2026-08-28T16:23:27Z
+- Phase: CHECKPOINT-011-EXECUTION-SEAL
+- Operation: START — refresh-latest-writer-hashes
+- Command: `true`
+- Inputs: none
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-fixtures-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-build-receipt-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-output-manifest-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv, docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json, generated/trace-exploration-v3, frontend/.next, /private/tmp/round3i-audit-pg.7bOBg4/postgresql-round16b-restart-correction1.log, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json, frontend/.next/BUILD_ID, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint011.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-log-verification-checkpoint011-prelatest-writer-failure.json
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 704
+
+- UTC timestamp: 2026-08-28T16:23:27Z
+- Phase: CHECKPOINT-011-EXECUTION-SEAL
+- Operation: PASS — refresh-latest-writer-hashes
+- Command: `true`
+- Inputs: none
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-fixtures-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-build-receipt-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-output-manifest-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv, docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json, generated/trace-exploration-v3, frontend/.next, /private/tmp/round3i-audit-pg.7bOBg4/postgresql-round16b-restart-correction1.log, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json, frontend/.next/BUILD_ID, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint011.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-log-verification-checkpoint011-prelatest-writer-failure.json
+- Duration: 7 ms
+- Warnings: none
+- Errors: none
+- Decision: CURRENT_HASHES_OR_MISSING_STATES_BOUND
+- Next: final-direct-execution-log-verification
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 705
+
+- UTC timestamp: 2026-08-28T16:23:53Z
+- Phase: CHECKPOINT-011-EXECUTION-SEAL
+- Operation: START — bind-final-diagnostic-ledger
+- Command: `true`
+- Inputs: none
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint011.tsv
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 706
+
+- UTC timestamp: 2026-08-28T16:23:53Z
+- Phase: CHECKPOINT-011-EXECUTION-SEAL
+- Operation: PASS — bind-final-diagnostic-ledger
+- Command: `true`
+- Inputs: none
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint011.tsv
+- Duration: 3 ms
+- Warnings: none
+- Errors: none
+- Decision: FINAL_DIAGNOSTIC_LEDGER_BOUND
+- Next: final-direct-execution-log-verification
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 707
+
+- UTC timestamp: 2026-08-28T16:24:13Z
+- Phase: CHECKPOINT-011-STAGED-DIFF
+- Operation: START — staged-diff-check-final
+- Command: `git diff --check --cached`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`
+
+## Event 708
+
+- UTC timestamp: 2026-08-28T16:24:13Z
+- Phase: CHECKPOINT-011-STAGED-DIFF
+- Operation: PASS — staged-diff-check-final
+- Command: `git diff --check --cached`
+- Inputs: none
+- Outputs: none
+- Duration: 79 ms
+- Warnings: none
+- Errors: none
+- Decision: PASS_REQUIRED
+- Next: stage-final-command-records
+- Git SHA: `dbf0fed447c5398468714e49d5322587f29983e3`

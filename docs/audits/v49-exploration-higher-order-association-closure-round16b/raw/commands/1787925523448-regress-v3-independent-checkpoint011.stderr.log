@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/verify_v3_semantic_contract_independent.py", line 2628, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/verify_v3_semantic_contract_independent.py", line 2610, in main
+    receipt = build_receipt()
+  File "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/verify_v3_semantic_contract_independent.py", line 2489, in build_receipt
+    checks.equal("checkpoint_diff_protected_change_count", len(protected_changes), 0)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/scripts/trace_round16b/verify_v3_semantic_contract_independent.py", line 378, in equal
+    raise AssertionError(f"{check_id}: observed={observed!r} expected={expected!r}")
+AssertionError: checkpoint_diff_protected_change_count: observed=8 expected=0

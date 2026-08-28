@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "database/scripts/verify_v50_round16b_manifest.py",
+    "--allow-pending-execution"
+  ],
+  "command": "python3 database/scripts/verify_v50_round16b_manifest.py --allow-pending-execution",
+  "command_id": "1787927238932-v50-manifest-unsupported-allow-pending-option",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 43,
+  "end_timestamp_utc": "2026-08-28T14:27:18Z",
+  "exit_code": 2,
+  "launch_error": "",
+  "operation_id": "v50-manifest-unsupported-allow-pending-option",
+  "phase_id": "CHECKPOINT-011-DATABASE-CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T14:27:18Z",
+  "stderr_sha256": "b7ce2a33315b86244e454c26d043675a3ca2965aa823e438b9f0bc50ab08c73d",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

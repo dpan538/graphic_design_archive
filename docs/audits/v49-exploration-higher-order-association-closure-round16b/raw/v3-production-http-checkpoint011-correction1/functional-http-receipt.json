@@ -1,0 +1,21 @@
+{
+  "active_empty_collection_count": 12,
+  "allowed_methods": "GET, HEAD, OPTIONS",
+  "api_base": "/api/trace/v3/exploration",
+  "case_count": 45,
+  "checked_utc": "2026-08-28T14:09:30.980Z",
+  "control_collection_count": 12,
+  "failure_count": 0,
+  "pass_count": 45,
+  "performance_interpretation": "OBSERVATIONAL_NO_SLO_OR_PRODUCTION_CAPACITY_CLAIM",
+  "read_model_sha256": "df452f70e5d4806fed3274cce68df861ded5d92b57f0129746ae326d92dafb7d",
+  "representative_control_ids": {
+    "associations": "association:v3:f7ce2e398d04ce4ae2292216",
+    "compositions": "composition:v3:afb08a5e8c8e7524e633d455"
+  },
+  "root_redirect_location": "/api/trace/v3/exploration/capabilities",
+  "root_redirect_status": 308,
+  "schema_version": "trace-exploration-v3-functional-http-receipt-v1",
+  "status": "PASS",
+  "unknown_route_status": 404
+}

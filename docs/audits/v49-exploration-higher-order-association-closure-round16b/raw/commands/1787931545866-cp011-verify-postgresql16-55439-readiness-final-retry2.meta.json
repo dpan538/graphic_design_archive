@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/postgresql@16/bin/pg_isready",
+    "-h",
+    "/private/tmp",
+    "-p",
+    "55439"
+  ],
+  "command": "/opt/homebrew/opt/postgresql@16/bin/pg_isready -h /private/tmp -p 55439",
+  "command_id": "1787931545866-cp011-verify-postgresql16-55439-readiness-final-retry2",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 14,
+  "end_timestamp_utc": "2026-08-28T15:39:05Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp011-verify-postgresql16-55439-readiness-final-retry2",
+  "phase_id": "CHECKPOINT-011-DATABASE-ENVIRONMENT",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T15:39:05Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "75b492bfbaefb6ec7edd6af53458eafbf82fb464810a207426215c400b1a681e",
+  "timed_out": false
+}

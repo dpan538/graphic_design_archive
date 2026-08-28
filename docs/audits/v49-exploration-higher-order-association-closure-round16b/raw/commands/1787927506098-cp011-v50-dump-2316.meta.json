@@ -1,0 +1,30 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/postgresql@16/bin/pg_dump",
+    "--schema-only",
+    "--no-owner",
+    "--no-privileges",
+    "-h",
+    "/private/tmp",
+    "-p",
+    "55439",
+    "-d",
+    "gda_v50_round16b_2316",
+    "-f",
+    "/private/tmp/gda_v50_round16b_2316_schema.sql"
+  ],
+  "command": "/opt/homebrew/opt/postgresql@16/bin/pg_dump --schema-only --no-owner --no-privileges -h /private/tmp -p 55439 -d gda_v50_round16b_2316 -f /private/tmp/gda_v50_round16b_2316_schema.sql",
+  "command_id": "1787927506098-cp011-v50-dump-2316",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 136,
+  "end_timestamp_utc": "2026-08-28T14:31:46Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp011-v50-dump-2316",
+  "phase_id": "checkpoint011",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T14:31:46Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

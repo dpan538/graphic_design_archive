@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "mv",
+    "/private/tmp/round3i-audit-pg.7bOBg4/postmaster.pid",
+    "/private/tmp/round3i-audit-pg.7bOBg4/postmaster.pid.stale-round16b-20260829T001932AEST"
+  ],
+  "command": "mv /private/tmp/round3i-audit-pg.7bOBg4/postmaster.pid /private/tmp/round3i-audit-pg.7bOBg4/postmaster.pid.stale-round16b-20260829T001932AEST",
+  "command_id": "1787926795026-preserve-stale-postmaster-pid-19300",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 5,
+  "end_timestamp_utc": "2026-08-28T14:19:55Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "preserve-stale-postmaster-pid-19300",
+  "phase_id": "CHECKPOINT-011-DATABASE-ENVIRONMENT",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T14:19:55Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

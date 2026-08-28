@@ -1,0 +1,53 @@
+{
+  "active_product_counts": {
+    "association_realizations": 0,
+    "associations": 0,
+    "composition_coherence_reviews": 0,
+    "compositions": 0,
+    "concept_senses": 0,
+    "concepts": 0,
+    "exports": 0,
+    "incidences": 0,
+    "navigation_states": 0,
+    "scopes": 0,
+    "transitions": 0,
+    "workflows": 0
+  },
+  "api_version": "trace-exploration/v3",
+  "checked_utc": "2026-08-28T13:54:23.155Z",
+  "checksum_ledger_path": "frontend/generated/trace-exploration-v3/CHECKSUMS.sha256",
+  "checksum_ledger_sha256": "4598cfc1842dc4671e6b5f39a9e6268efb436ef6096f3e95ca2b8f052fa864f3",
+  "closure_flags": {
+    "computational_space_closure": false,
+    "function3_closure": false,
+    "global_composition_coherence_closure": false,
+    "higher_order_association_closure": false,
+    "pair_association_closure": false,
+    "product_association_reachability_closure": false
+  },
+  "manifest_path": "frontend/generated/trace-exploration-v3/manifest.json",
+  "manifest_sha256": "b53ab1a7959c2230d273fcde1de2b5a60c54266560263ea09c2039b42f34da9d",
+  "mode": "PRODUCTION_HTTP",
+  "production_activation_count": 0,
+  "read_model_bytes": 149033,
+  "read_model_path": "frontend/generated/trace-exploration-v3/read-model.json",
+  "read_model_sha256": "df452f70e5d4806fed3274cce68df861ded5d92b57f0129746ae326d92dafb7d",
+  "research_control_counts": {
+    "association_realizations": 10,
+    "associations": 14,
+    "composition_coherence_reviews": 2,
+    "compositions": 2,
+    "concept_senses": 21,
+    "concepts": 21,
+    "exports": 1,
+    "incidences": 37,
+    "navigation_states": 1,
+    "scopes": 6,
+    "transitions": 0,
+    "workflows": 1
+  },
+  "research_controls_only": true,
+  "schema_version": "trace-exploration-v3-production-artifact-check-v1",
+  "status": "PASS",
+  "transition_status": "FAIL_CLOSED_NO_ACTIVE_PRODUCT_STATE_GRAPH"
+}

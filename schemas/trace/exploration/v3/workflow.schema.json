@@ -48,6 +48,15 @@
       "type": "array",
       "uniqueItems": true
     },
+    "transition_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 0,
+      "type": "array",
+      "uniqueItems": true
+    },
     "transition_kind": {
       "enum": [
         "FOLLOW_INCIDENCE",
@@ -69,6 +78,7 @@
     "association_revision_ids",
     "association_realization_ids",
     "state_ids",
+    "transition_ids",
     "reachable",
     "semantic_sha256"
   ],

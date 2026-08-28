@@ -12,15 +12,15 @@
     ]
   },
   "artifact_pins": {
-    "build_receipt_sha256": "3724b45cbf2d3c53504fe0c5ba1f21807458cacaef39eb482dcd311734c2a114",
-    "fixture_sha256": "290647400b83fef83896631ba5a9a9647cd36997eec20b3c8e6efec61e212e33",
-    "hash_contract_canonical_sha256": "1da5396fb18dd49c328c30ee03386bebb07c7837beda38496b099b5c5e514962",
-    "hash_contract_file_sha256": "f2eb70dddc38da506a6380253c17fe66fda457ea0c37a591a4a0a832ea6e0186",
-    "output_aggregate_sha256": "8e789a36b739c298ccb8ce2f4e2762443ff78247026662f96f12602d90419ced",
-    "output_manifest_sha256": "29583bde333d6b3f35a19dc3140ce40f09da5ec48a1ea23bbc3e71a6c669d1f2"
+    "build_receipt_sha256": "bffacc1f0a26b108f4297eb44e206a4df217cca60798dd1148b47355fa37d5d4",
+    "fixture_sha256": "6e01a274dce52ebbfd008574136577e891c4f5d482d0761fe0c9a320afd26f3d",
+    "hash_contract_canonical_sha256": "8d3c5416dbd74b015d578e7de4a638f2d6de1901b700443a384207136ca71e24",
+    "hash_contract_file_sha256": "d5a8608316c768eb0e3c6ea597919f9de788ba2e7792ee4c43bb28edc7a5f70b",
+    "output_aggregate_sha256": "16c725774afa24af435d1fa749cc0de38aeb408ac646d5b26c8c3c1fdf7c548f",
+    "output_manifest_sha256": "c16b00c914ff5cfc76d1a157a3ebc3abc981b061b3a42c84af37deee0cc538e5"
   },
   "authority_cutoff_utc": "2026-08-28T09:18:21Z",
-  "check_count": 762,
+  "check_count": 798,
   "checks": [
     {
       "check_id": "source_sha",
@@ -44,22 +44,22 @@
     },
     {
       "check_id": "fixture_file_sha256",
-      "observed": "290647400b83fef83896631ba5a9a9647cd36997eec20b3c8e6efec61e212e33",
+      "observed": "6e01a274dce52ebbfd008574136577e891c4f5d482d0761fe0c9a320afd26f3d",
       "status": "PASS"
     },
     {
       "check_id": "hash_contract_file_sha256",
-      "observed": "f2eb70dddc38da506a6380253c17fe66fda457ea0c37a591a4a0a832ea6e0186",
+      "observed": "d5a8608316c768eb0e3c6ea597919f9de788ba2e7792ee4c43bb28edc7a5f70b",
       "status": "PASS"
     },
     {
       "check_id": "output_manifest_file_sha256",
-      "observed": "29583bde333d6b3f35a19dc3140ce40f09da5ec48a1ea23bbc3e71a6c669d1f2",
+      "observed": "c16b00c914ff5cfc76d1a157a3ebc3abc981b061b3a42c84af37deee0cc538e5",
       "status": "PASS"
     },
     {
       "check_id": "build_receipt_file_sha256",
-      "observed": "3724b45cbf2d3c53504fe0c5ba1f21807458cacaef39eb482dcd311734c2a114",
+      "observed": "bffacc1f0a26b108f4297eb44e206a4df217cca60798dd1148b47355fa37d5d4",
       "status": "PASS"
     },
     {
@@ -73,6 +73,7 @@
         "hash-binding-contract.schema.json",
         "navigation-state.schema.json",
         "semantic-contract.schema.json",
+        "transition.schema.json",
         "v2-pair-adapter.schema.json",
         "workflow.schema.json"
       ],
@@ -601,6 +602,55 @@
             "object_type": "NAVIGATION_STATE"
           },
           {
+            "collection_pointer": "/transitions/*",
+            "hash_fields": [
+              {
+                "hash_field": "semantic_sha256",
+                "material_name": "transition_semantic",
+                "representation": "LOWERCASE_HEX_64"
+              }
+            ],
+            "identifiers": [
+              {
+                "digest_hex_chars": 24,
+                "digest_material_name": "transition_semantic",
+                "identifier_field": "transition_id",
+                "prefix": "transition:v3:",
+                "suffix_rule": "NONE"
+              }
+            ],
+            "materials": [
+              {
+                "field_mappings": [],
+                "material_name": "transition_semantic",
+                "normalization_rules": [],
+                "output_keys": [
+                  "realm",
+                  "from_state_id",
+                  "to_state_id",
+                  "transition_kind",
+                  "incidence_id",
+                  "association_revision_id",
+                  "association_realization_id",
+                  "state_mutated"
+                ],
+                "recipe": "DIRECT_FIELD_OBJECT",
+                "source_fields": [
+                  "realm",
+                  "from_state_id",
+                  "to_state_id",
+                  "transition_kind",
+                  "incidence_id",
+                  "association_revision_id",
+                  "association_realization_id",
+                  "state_mutated"
+                ],
+                "wrapper": "NONE"
+              }
+            ],
+            "object_type": "TRANSITION"
+          },
+          {
             "collection_pointer": "/workflows/*",
             "hash_fields": [
               {
@@ -630,6 +680,7 @@
                   "association_revision_ids",
                   "association_realization_ids",
                   "state_ids",
+                  "transition_ids",
                   "reachable"
                 ],
                 "recipe": "DIRECT_FIELD_OBJECT",
@@ -640,6 +691,7 @@
                   "association_revision_ids",
                   "association_realization_ids",
                   "state_ids",
+                  "transition_ids",
                   "reachable"
                 ],
                 "wrapper": "NONE"
@@ -1014,12 +1066,12 @@
     },
     {
       "check_id": "hash_contract_canonical_sha256",
-      "observed": "1da5396fb18dd49c328c30ee03386bebb07c7837beda38496b099b5c5e514962",
+      "observed": "8d3c5416dbd74b015d578e7de4a638f2d6de1901b700443a384207136ca71e24",
       "status": "PASS"
     },
     {
       "check_id": "fixture_hash_contract_canonical_sha256",
-      "observed": "1da5396fb18dd49c328c30ee03386bebb07c7837beda38496b099b5c5e514962",
+      "observed": "8d3c5416dbd74b015d578e7de4a638f2d6de1901b700443a384207136ca71e24",
       "status": "PASS"
     },
     {
@@ -1050,6 +1102,7 @@
         "EXPORT",
         "NAVIGATION_STATE",
         "PARTICIPANT_INCIDENCE",
+        "TRANSITION",
         "V2_PAIR_ADAPTER_RECEIPT",
         "V2_PAIR_SOURCE_FIXTURE",
         "VOCABULARY_CONCEPT",
@@ -3815,24 +3868,44 @@
       "status": "PASS"
     },
     {
+      "check_id": "transition_id_uniqueness",
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
       "check_id": "workflow_id_uniqueness",
       "observed": 1,
       "status": "PASS"
     },
     {
-      "check_id": "workflow_initial_state_workflow:v3:7979d590f9157acacfe4fb8d",
+      "check_id": "workflow_initial_state_workflow:v3:9be9541212f241d7d9b676e7",
       "observed": "state:v3:d5454be64eb5ad08d6c9f7a7",
       "status": "PASS"
     },
     {
-      "check_id": "workflow_state_refs_workflow:v3:7979d590f9157acacfe4fb8d",
+      "check_id": "workflow_state_refs_workflow:v3:9be9541212f241d7d9b676e7",
       "observed": [
         "state:v3:d5454be64eb5ad08d6c9f7a7"
       ],
       "status": "PASS"
     },
     {
-      "check_id": "workflow_association_refs_workflow:v3:7979d590f9157acacfe4fb8d",
+      "check_id": "workflow_state_id_uniqueness_workflow:v3:9be9541212f241d7d9b676e7",
+      "observed": 1,
+      "status": "PASS"
+    },
+    {
+      "check_id": "workflow_transition_id_uniqueness_workflow:v3:9be9541212f241d7d9b676e7",
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "check_id": "workflow_transition_refs_workflow:v3:9be9541212f241d7d9b676e7",
+      "observed": [],
+      "status": "PASS"
+    },
+    {
+      "check_id": "workflow_association_refs_workflow:v3:9be9541212f241d7d9b676e7",
       "observed": [
         "association-revision:v3:b8f161fbbac6555150f57e25",
         "association-revision:v3:c3f591227b24c2c4a59ac2e2",
@@ -3841,7 +3914,7 @@
       "status": "PASS"
     },
     {
-      "check_id": "workflow_realization_refs_workflow:v3:7979d590f9157acacfe4fb8d",
+      "check_id": "workflow_realization_refs_workflow:v3:9be9541212f241d7d9b676e7",
       "observed": [
         "realization:v3:6099a20f0d340c6692112b3e",
         "realization:v3:7cfad04c58e818d7e9648ab7",
@@ -3850,7 +3923,7 @@
       "status": "PASS"
     },
     {
-      "check_id": "workflow_realization_association_trace_workflow:v3:7979d590f9157acacfe4fb8d",
+      "check_id": "workflow_realization_association_trace_workflow:v3:9be9541212f241d7d9b676e7",
       "observed": [
         "association-revision:v3:b8f161fbbac6555150f57e25",
         "association-revision:v3:c3f591227b24c2c4a59ac2e2",
@@ -3859,7 +3932,7 @@
       "status": "PASS"
     },
     {
-      "check_id": "workflow_realizations_reachable_from_states_workflow:v3:7979d590f9157acacfe4fb8d",
+      "check_id": "workflow_realizations_reachable_from_states_workflow:v3:9be9541212f241d7d9b676e7",
       "observed": [
         "realization:v3:6099a20f0d340c6692112b3e",
         "realization:v3:7cfad04c58e818d7e9648ab7",
@@ -3868,29 +3941,37 @@
       "status": "PASS"
     },
     {
-      "check_id": "workflow_realm_trace_workflow:v3:7979d590f9157acacfe4fb8d",
+      "check_id": "workflow_realm_trace_workflow:v3:9be9541212f241d7d9b676e7",
       "observed": "SYNTHETIC_CONTROL",
       "status": "PASS"
     },
     {
-      "check_id": "workflow_reachable_path_workflow:v3:7979d590f9157acacfe4fb8d",
-      "observed": [
-        "state:v3:d5454be64eb5ad08d6c9f7a7"
-      ],
+      "check_id": "workflow_transition_scope_workflow:v3:9be9541212f241d7d9b676e7",
+      "observed": [],
       "status": "PASS"
     },
     {
-      "check_id": "export_state_in_workflow_export:v3:988252318e9039aeb84790d4",
+      "check_id": "workflow_reachability_derived_workflow:v3:9be9541212f241d7d9b676e7",
+      "observed": true,
+      "status": "PASS"
+    },
+    {
+      "check_id": "transition_workflow_selection_coverage",
+      "observed": [],
+      "status": "PASS"
+    },
+    {
+      "check_id": "export_state_in_workflow_export:v3:cc480debb3605e2a471cad9a",
       "observed": "state:v3:d5454be64eb5ad08d6c9f7a7",
       "status": "PASS"
     },
     {
-      "check_id": "export_state_composition_export:v3:988252318e9039aeb84790d4",
+      "check_id": "export_state_composition_export:v3:cc480debb3605e2a471cad9a",
       "observed": "composition-revision:v3:1400d8c2cd5ea2fbb60531d4",
       "status": "PASS"
     },
     {
-      "check_id": "export_association_refs_export:v3:988252318e9039aeb84790d4",
+      "check_id": "export_association_refs_export:v3:cc480debb3605e2a471cad9a",
       "observed": [
         "association-revision:v3:b8f161fbbac6555150f57e25",
         "association-revision:v3:c3f591227b24c2c4a59ac2e2",
@@ -3899,7 +3980,7 @@
       "status": "PASS"
     },
     {
-      "check_id": "export_realization_refs_export:v3:988252318e9039aeb84790d4",
+      "check_id": "export_realization_refs_export:v3:cc480debb3605e2a471cad9a",
       "observed": [
         "realization:v3:6099a20f0d340c6692112b3e",
         "realization:v3:7cfad04c58e818d7e9648ab7",
@@ -3908,7 +3989,7 @@
       "status": "PASS"
     },
     {
-      "check_id": "export_workflow_realization_trace_export:v3:988252318e9039aeb84790d4",
+      "check_id": "export_workflow_realization_trace_export:v3:cc480debb3605e2a471cad9a",
       "observed": [
         "realization:v3:6099a20f0d340c6692112b3e",
         "realization:v3:7cfad04c58e818d7e9648ab7",
@@ -3917,7 +3998,7 @@
       "status": "PASS"
     },
     {
-      "check_id": "export_association_realization_trace_export:v3:988252318e9039aeb84790d4",
+      "check_id": "export_association_realization_trace_export:v3:cc480debb3605e2a471cad9a",
       "observed": [
         "association-revision:v3:b8f161fbbac6555150f57e25",
         "association-revision:v3:c3f591227b24c2c4a59ac2e2",
@@ -3926,7 +4007,7 @@
       "status": "PASS"
     },
     {
-      "check_id": "export_composition_realization_trace_export:v3:988252318e9039aeb84790d4",
+      "check_id": "export_composition_realization_trace_export:v3:cc480debb3605e2a471cad9a",
       "observed": [
         "realization:v3:6099a20f0d340c6692112b3e",
         "realization:v3:7cfad04c58e818d7e9648ab7",
@@ -3935,12 +4016,12 @@
       "status": "PASS"
     },
     {
-      "check_id": "export_projection_record_uniqueness_export:v3:988252318e9039aeb84790d4",
+      "check_id": "export_projection_record_uniqueness_export:v3:cc480debb3605e2a471cad9a",
       "observed": 3,
       "status": "PASS"
     },
     {
-      "check_id": "export_projection_record_coverage_export:v3:988252318e9039aeb84790d4",
+      "check_id": "export_projection_record_coverage_export:v3:cc480debb3605e2a471cad9a",
       "observed": [
         "realization:v3:6099a20f0d340c6692112b3e",
         "realization:v3:7cfad04c58e818d7e9648ab7",
@@ -3949,57 +4030,57 @@
       "status": "PASS"
     },
     {
-      "check_id": "export_higher_order_no_projection_export:v3:988252318e9039aeb84790d4_association-revision:v3:f02ac42a681d040c725235e9",
+      "check_id": "export_higher_order_no_projection_export:v3:cc480debb3605e2a471cad9a_association-revision:v3:f02ac42a681d040c725235e9",
       "observed": "NONE",
       "status": "PASS"
     },
     {
-      "check_id": "export_projection_record_association_export:v3:988252318e9039aeb84790d4_realization:v3:6099a20f0d340c6692112b3e",
+      "check_id": "export_projection_record_association_export:v3:cc480debb3605e2a471cad9a_realization:v3:6099a20f0d340c6692112b3e",
       "observed": "association-revision:v3:b8f161fbbac6555150f57e25",
       "status": "PASS"
     },
     {
-      "check_id": "export_projection_record_policy_export:v3:988252318e9039aeb84790d4_realization:v3:6099a20f0d340c6692112b3e",
+      "check_id": "export_projection_record_policy_export:v3:cc480debb3605e2a471cad9a_realization:v3:6099a20f0d340c6692112b3e",
       "observed": "NOT_APPLICABLE",
       "status": "PASS"
     },
     {
-      "check_id": "export_projection_record_realization_kind_export:v3:988252318e9039aeb84790d4_realization:v3:6099a20f0d340c6692112b3e",
+      "check_id": "export_projection_record_realization_kind_export:v3:cc480debb3605e2a471cad9a_realization:v3:6099a20f0d340c6692112b3e",
       "observed": "PAIR_EDGE",
       "status": "PASS"
     },
     {
-      "check_id": "export_projection_record_association_export:v3:988252318e9039aeb84790d4_realization:v3:7cfad04c58e818d7e9648ab7",
+      "check_id": "export_projection_record_association_export:v3:cc480debb3605e2a471cad9a_realization:v3:7cfad04c58e818d7e9648ab7",
       "observed": "association-revision:v3:c3f591227b24c2c4a59ac2e2",
       "status": "PASS"
     },
     {
-      "check_id": "export_projection_record_policy_export:v3:988252318e9039aeb84790d4_realization:v3:7cfad04c58e818d7e9648ab7",
+      "check_id": "export_projection_record_policy_export:v3:cc480debb3605e2a471cad9a_realization:v3:7cfad04c58e818d7e9648ab7",
       "observed": "NOT_APPLICABLE",
       "status": "PASS"
     },
     {
-      "check_id": "export_projection_record_realization_kind_export:v3:988252318e9039aeb84790d4_realization:v3:7cfad04c58e818d7e9648ab7",
+      "check_id": "export_projection_record_realization_kind_export:v3:cc480debb3605e2a471cad9a_realization:v3:7cfad04c58e818d7e9648ab7",
       "observed": "PAIR_EDGE",
       "status": "PASS"
     },
     {
-      "check_id": "export_projection_record_association_export:v3:988252318e9039aeb84790d4_realization:v3:a21199e030c9776fcfaaa5f7",
+      "check_id": "export_projection_record_association_export:v3:cc480debb3605e2a471cad9a_realization:v3:a21199e030c9776fcfaaa5f7",
       "observed": "association-revision:v3:f02ac42a681d040c725235e9",
       "status": "PASS"
     },
     {
-      "check_id": "export_projection_record_policy_export:v3:988252318e9039aeb84790d4_realization:v3:a21199e030c9776fcfaaa5f7",
+      "check_id": "export_projection_record_policy_export:v3:cc480debb3605e2a471cad9a_realization:v3:a21199e030c9776fcfaaa5f7",
       "observed": "NONE",
       "status": "PASS"
     },
     {
-      "check_id": "export_projection_record_realization_kind_export:v3:988252318e9039aeb84790d4_realization:v3:a21199e030c9776fcfaaa5f7",
+      "check_id": "export_projection_record_realization_kind_export:v3:cc480debb3605e2a471cad9a_realization:v3:a21199e030c9776fcfaaa5f7",
       "observed": "HYPEREDGE_HUB",
       "status": "PASS"
     },
     {
-      "check_id": "export_projection_policy_derived_export:v3:988252318e9039aeb84790d4",
+      "check_id": "export_projection_policy_derived_export:v3:cc480debb3605e2a471cad9a",
       "observed": true,
       "status": "PASS"
     },
@@ -5041,7 +5122,7 @@
         "composition-revision:v3:1400d8c2cd5ea2fbb60531d4:COMPOSITION_SEMANTIC_HASH_MISMATCH",
         "composition-revision:v3:1400d8c2cd5ea2fbb60531d4:composition_revision_id:CONTRACT_ID_MISMATCH",
         "composition-revision:v3:1400d8c2cd5ea2fbb60531d4:semantic_sha256:CONTRACT_HASH_MISMATCH",
-        "export:v3:988252318e9039aeb84790d4:EXPORT_TRACE_NOT_DERIVED",
+        "export:v3:cc480debb3605e2a471cad9a:EXPORT_TRACE_NOT_DERIVED",
         "realization:v3:a21199e030c9776fcfaaa5f7:HIGHER_ORDER_PAIR_EDGE_FORBIDDEN",
         "realization:v3:a21199e030c9776fcfaaa5f7:REALIZATION_ID_MISMATCH",
         "realization:v3:a21199e030c9776fcfaaa5f7:REALIZATION_SEMANTIC_HASH_MISMATCH",
@@ -5106,7 +5187,7 @@
         "composition-revision:v3:1400d8c2cd5ea2fbb60531d4:COMPOSITION_SEMANTIC_HASH_MISMATCH",
         "composition-revision:v3:1400d8c2cd5ea2fbb60531d4:composition_revision_id:CONTRACT_ID_MISMATCH",
         "composition-revision:v3:1400d8c2cd5ea2fbb60531d4:semantic_sha256:CONTRACT_HASH_MISMATCH",
-        "export:v3:988252318e9039aeb84790d4:EXPORT_TRACE_NOT_DERIVED",
+        "export:v3:cc480debb3605e2a471cad9a:EXPORT_TRACE_NOT_DERIVED",
         "realization:v3:6099a20f0d340c6692112b3e:PAIR_REALIZATION_NOT_EDGE",
         "realization:v3:6099a20f0d340c6692112b3e:REALIZATION_ID_MISMATCH",
         "realization:v3:6099a20f0d340c6692112b3e:REALIZATION_SEMANTIC_HASH_MISMATCH",
@@ -5824,9 +5905,11 @@
         "interaction": {
           "production_export_count": 0,
           "production_state_count": 0,
+          "production_transition_count": 0,
           "production_workflow_count": 0,
           "synthetic_export_count": 1,
           "synthetic_state_count": 1,
+          "synthetic_transition_count": 0,
           "synthetic_workflow_count": 1
         },
         "realizations_and_compositions": {
@@ -5871,9 +5954,11 @@
         "interaction": {
           "production_export_count": 0,
           "production_state_count": 0,
+          "production_transition_count": 0,
           "production_workflow_count": 0,
           "synthetic_export_count": 1,
           "synthetic_state_count": 1,
+          "synthetic_transition_count": 0,
           "synthetic_workflow_count": 1
         },
         "realizations_and_compositions": {
@@ -5942,9 +6027,11 @@
         "interaction": {
           "production_export_count": 0,
           "production_state_count": 0,
+          "production_transition_count": 0,
           "production_workflow_count": 0,
           "synthetic_export_count": 1,
           "synthetic_state_count": 1,
+          "synthetic_transition_count": 0,
           "synthetic_workflow_count": 1
         },
         "realizations_and_compositions": {
@@ -5970,7 +6057,7 @@
     },
     {
       "check_id": "census_schema_document_count",
-      "observed": 10,
+      "observed": 11,
       "status": "PASS"
     },
     {
@@ -6008,17 +6095,17 @@
     },
     {
       "check_id": "build_receipt_output_aggregate",
-      "observed": "8e789a36b739c298ccb8ce2f4e2762443ff78247026662f96f12602d90419ced",
+      "observed": "16c725774afa24af435d1fa749cc0de38aeb408ac646d5b26c8c3c1fdf7c548f",
       "status": "PASS"
     },
     {
       "check_id": "build_receipt_counts",
       "observed": [
-        10,
+        11,
         10,
         37,
         37,
-        19
+        20
       ],
       "status": "PASS"
     },
@@ -6041,7 +6128,7 @@
     },
     {
       "check_id": "output_manifest_path_uniqueness",
-      "observed": 18,
+      "observed": 19,
       "status": "PASS"
     },
     {
@@ -6081,12 +6168,12 @@
     },
     {
       "check_id": "output_manifest_sha_docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-census-v1.json",
-      "observed": "0a93a10fc8b28f81311f44f2782ccee5961eb9789f1417d167fa25a87efbf1d9",
+      "observed": "7df89f2248d169c1f4e6358425a7f01afbcdb27c02d1d0e3f583f35c67322c6e",
       "status": "PASS"
     },
     {
       "check_id": "output_manifest_bytes_docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-census-v1.json",
-      "observed": 3163,
+      "observed": 3242,
       "status": "PASS"
     },
     {
@@ -6111,12 +6198,12 @@
     },
     {
       "check_id": "output_manifest_sha_docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-fixtures-v1.json",
-      "observed": "290647400b83fef83896631ba5a9a9647cd36997eec20b3c8e6efec61e212e33",
+      "observed": "6e01a274dce52ebbfd008574136577e891c4f5d482d0761fe0c9a320afd26f3d",
       "status": "PASS"
     },
     {
       "check_id": "output_manifest_bytes_docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-fixtures-v1.json",
-      "observed": 218994,
+      "observed": 220641,
       "status": "PASS"
     },
     {
@@ -6141,12 +6228,12 @@
     },
     {
       "check_id": "output_manifest_sha_docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-hash-binding-contract-v1.json",
-      "observed": "f2eb70dddc38da506a6380253c17fe66fda457ea0c37a591a4a0a832ea6e0186",
+      "observed": "d5a8608316c768eb0e3c6ea597919f9de788ba2e7792ee4c43bb28edc7a5f70b",
       "status": "PASS"
     },
     {
       "check_id": "output_manifest_bytes_docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-hash-binding-contract-v1.json",
-      "observed": 27362,
+      "observed": 28779,
       "status": "PASS"
     },
     {
@@ -6156,7 +6243,7 @@
     },
     {
       "check_id": "output_manifest_sha_docs/research/trace-v49-exploration-higher-order-association-closure-round16b/15_V3_SEMANTIC_CONTRACT.md",
-      "observed": "b143aa5948e2dcc2ec6fb1b9924b80a4824f41c30923ed6123d1ebe745cb1638",
+      "observed": "8a4d4410ea017f2ed98733effa4ef15dbd3e43d3dc074df38eb18c40fc1d8a9f",
       "status": "PASS"
     },
     {
@@ -6276,12 +6363,27 @@
     },
     {
       "check_id": "output_manifest_sha_schemas/trace/exploration/v3/semantic-contract.schema.json",
-      "observed": "b75eb23479303cd6b86e73a4ce80ccb3adf81bb99265991c94f2aa225373ef62",
+      "observed": "96c99a59d366de74032e16266181e307938f911a08971cecaf5db043d39286ba",
       "status": "PASS"
     },
     {
       "check_id": "output_manifest_bytes_schemas/trace/exploration/v3/semantic-contract.schema.json",
-      "observed": 28156,
+      "observed": 28637,
+      "status": "PASS"
+    },
+    {
+      "check_id": "output_manifest_file_exists_schemas/trace/exploration/v3/transition.schema.json",
+      "observed": "schemas/trace/exploration/v3/transition.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check_id": "output_manifest_sha_schemas/trace/exploration/v3/transition.schema.json",
+      "observed": "f19480800be113c8fe6fce56a5e85acdefd46ef0c3b44f5e13adb7c88db3196e",
+      "status": "PASS"
+    },
+    {
+      "check_id": "output_manifest_bytes_schemas/trace/exploration/v3/transition.schema.json",
+      "observed": 1443,
       "status": "PASS"
     },
     {
@@ -6306,17 +6408,17 @@
     },
     {
       "check_id": "output_manifest_sha_schemas/trace/exploration/v3/workflow.schema.json",
-      "observed": "e2bfae4359d3523b1a93a7c7624247236b1048d27dfa31af4f7c450e703ea8fd",
+      "observed": "a029c737cece0c232f1af925d467d22631e3dc0ec27b6274adbd6c2476421654",
       "status": "PASS"
     },
     {
       "check_id": "output_manifest_bytes_schemas/trace/exploration/v3/workflow.schema.json",
-      "observed": 1588,
+      "observed": 1786,
       "status": "PASS"
     },
     {
       "check_id": "output_manifest_aggregate",
-      "observed": "8e789a36b739c298ccb8ce2f4e2762443ff78247026662f96f12602d90419ced",
+      "observed": "16c725774afa24af435d1fa749cc0de38aeb408ac646d5b26c8c3c1fdf7c548f",
       "status": "PASS"
     },
     {
@@ -6338,6 +6440,7 @@
         "schemas/trace/exploration/v3/hash-binding-contract.schema.json",
         "schemas/trace/exploration/v3/navigation-state.schema.json",
         "schemas/trace/exploration/v3/semantic-contract.schema.json",
+        "schemas/trace/exploration/v3/transition.schema.json",
         "schemas/trace/exploration/v3/v2-pair-adapter.schema.json",
         "schemas/trace/exploration/v3/workflow.schema.json"
       ],
@@ -6362,6 +6465,7 @@
         "schemas/trace/exploration/v3/hash-binding-contract.schema.json",
         "schemas/trace/exploration/v3/navigation-state.schema.json",
         "schemas/trace/exploration/v3/semantic-contract.schema.json",
+        "schemas/trace/exploration/v3/transition.schema.json",
         "schemas/trace/exploration/v3/v2-pair-adapter.schema.json",
         "schemas/trace/exploration/v3/workflow.schema.json"
       ],
@@ -6386,6 +6490,7 @@
         "schemas/trace/exploration/v3/hash-binding-contract.schema.json",
         "schemas/trace/exploration/v3/navigation-state.schema.json",
         "schemas/trace/exploration/v3/semantic-contract.schema.json",
+        "schemas/trace/exploration/v3/transition.schema.json",
         "schemas/trace/exploration/v3/v2-pair-adapter.schema.json",
         "schemas/trace/exploration/v3/workflow.schema.json"
       ],
@@ -6557,6 +6662,16 @@
       "status": "PASS"
     },
     {
+      "check_id": "v2_pinned_sha_frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "observed": "fa0fc26a89bcd0a4962be05c8d264cbf575037bb865d615b652b7cbed921c689",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v2_pinned_sha_frontend/src/app/api/trace/v2/exploration/route.ts",
+      "observed": "e653b11afc890351c6d29e0b29b431fe3ddfe394858167bd0a7886852f624582",
+      "status": "PASS"
+    },
+    {
       "check_id": "v2_pinned_sha_frontend/src/features/trace-v49/exploration-v2/client.ts",
       "observed": "bfabdee0322f4f35fc032986764b0da40f0fb8431c8b03c2a34c0c1060a2ba2c",
       "status": "PASS"
@@ -6663,7 +6778,7 @@
     },
     {
       "check_id": "v2_pinned_file_count",
-      "observed": 22,
+      "observed": 24,
       "status": "PASS"
     },
     {
@@ -6687,6 +6802,155 @@
     {
       "check_id": "v49_schema_hash",
       "observed": "df1e7741e59e5e6bf1ca80f2a33edfad1abb2fc6d95b57d4d6993b49917020dd",
+      "status": "PASS"
+    },
+    {
+      "check_id": "checkpoint_diff_v50_additive_database_change_set",
+      "observed": [
+        "database/ROUND16B_V50.md",
+        "database/VERSION",
+        "database/functions/020_exploration_v3_integrity.sql",
+        "database/migrations/014_exploration_v3_higher_order_associations.sql",
+        "database/roles/008_exploration_v3_grants.sql",
+        "database/schema-manifest-v50-round16b.json",
+        "database/scripts/replay_v50_round16b.sh",
+        "database/scripts/run_v50_round16b_tests.sh",
+        "database/scripts/verify_v50_round16b_manifest.py",
+        "database/tests/014_exploration_v3_higher_order_associations.sql",
+        "database/views/003_exploration_v3_read_contract.sql"
+      ],
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_git_status_field_count_M\tdatabase/VERSION",
+      "observed": 2,
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_untracked_status_not_duplicate_database/ROUND16B_V50.md",
+      "observed": "database/ROUND16B_V50.md",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_untracked_status_not_duplicate_database/functions/020_exploration_v3_integrity.sql",
+      "observed": "database/functions/020_exploration_v3_integrity.sql",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_untracked_status_not_duplicate_database/migrations/014_exploration_v3_higher_order_associations.sql",
+      "observed": "database/migrations/014_exploration_v3_higher_order_associations.sql",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_untracked_status_not_duplicate_database/roles/008_exploration_v3_grants.sql",
+      "observed": "database/roles/008_exploration_v3_grants.sql",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_untracked_status_not_duplicate_database/schema-manifest-v50-round16b.json",
+      "observed": "database/schema-manifest-v50-round16b.json",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_untracked_status_not_duplicate_database/scripts/replay_v50_round16b.sh",
+      "observed": "database/scripts/replay_v50_round16b.sh",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_untracked_status_not_duplicate_database/scripts/run_v50_round16b_tests.sh",
+      "observed": "database/scripts/run_v50_round16b_tests.sh",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_untracked_status_not_duplicate_database/scripts/verify_v50_round16b_manifest.py",
+      "observed": "database/scripts/verify_v50_round16b_manifest.py",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_untracked_status_not_duplicate_database/tests/014_exploration_v3_higher_order_associations.sql",
+      "observed": "database/tests/014_exploration_v3_higher_order_associations.sql",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_untracked_status_not_duplicate_database/views/003_exploration_v3_read_contract.sql",
+      "observed": "database/views/003_exploration_v3_read_contract.sql",
+      "status": "PASS"
+    },
+    {
+      "check_id": "checkpoint_diff_ignored_database_path_count",
+      "observed": 0,
+      "status": "PASS"
+    },
+    {
+      "check_id": "checkpoint_diff_v50_additive_database_status_map",
+      "observed": {
+        "database/ROUND16B_V50.md": "A",
+        "database/VERSION": "M",
+        "database/functions/020_exploration_v3_integrity.sql": "A",
+        "database/migrations/014_exploration_v3_higher_order_associations.sql": "A",
+        "database/roles/008_exploration_v3_grants.sql": "A",
+        "database/schema-manifest-v50-round16b.json": "A",
+        "database/scripts/replay_v50_round16b.sh": "A",
+        "database/scripts/run_v50_round16b_tests.sh": "A",
+        "database/scripts/verify_v50_round16b_manifest.py": "A",
+        "database/tests/014_exploration_v3_higher_order_associations.sql": "A",
+        "database/views/003_exploration_v3_read_contract.sql": "A"
+      },
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_additive_database_file_exists_database/ROUND16B_V50.md",
+      "observed": "database/ROUND16B_V50.md",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_additive_database_file_exists_database/VERSION",
+      "observed": "database/VERSION",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_additive_database_file_exists_database/functions/020_exploration_v3_integrity.sql",
+      "observed": "database/functions/020_exploration_v3_integrity.sql",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_additive_database_file_exists_database/migrations/014_exploration_v3_higher_order_associations.sql",
+      "observed": "database/migrations/014_exploration_v3_higher_order_associations.sql",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_additive_database_file_exists_database/roles/008_exploration_v3_grants.sql",
+      "observed": "database/roles/008_exploration_v3_grants.sql",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_additive_database_file_exists_database/schema-manifest-v50-round16b.json",
+      "observed": "database/schema-manifest-v50-round16b.json",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_additive_database_file_exists_database/scripts/replay_v50_round16b.sh",
+      "observed": "database/scripts/replay_v50_round16b.sh",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_additive_database_file_exists_database/scripts/run_v50_round16b_tests.sh",
+      "observed": "database/scripts/run_v50_round16b_tests.sh",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_additive_database_file_exists_database/scripts/verify_v50_round16b_manifest.py",
+      "observed": "database/scripts/verify_v50_round16b_manifest.py",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_additive_database_file_exists_database/tests/014_exploration_v3_higher_order_associations.sql",
+      "observed": "database/tests/014_exploration_v3_higher_order_associations.sql",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v50_additive_database_file_exists_database/views/003_exploration_v3_read_contract.sql",
+      "observed": "database/views/003_exploration_v3_read_contract.sql",
       "status": "PASS"
     },
     {
@@ -7682,7 +7946,7 @@
   },
   "normative_hash_verification": {
     "assertion_count": 245,
-    "binding_count": 12,
+    "binding_count": 13,
     "object_verification_count": 75,
     "results": [
       {
@@ -7962,7 +8226,7 @@
       },
       {
         "material_hashes": {
-          "workflow_semantic": "7979d590f9157acacfe4fb8d8b21b9e3dc58505fe915ea16a9cebd5591d8fc2c"
+          "workflow_semantic": "9be9541212f241d7d9b676e74b544df45f74c581005afd4dea55d83ac40eecc5"
         },
         "object_ordinal": 1,
         "object_type": "WORKFLOW",
@@ -7971,7 +8235,7 @@
       {
         "material_hashes": {
           "export_presentation": "9ee6e1855ec26c4a6e40baec4b33f927ffaf296693dc6d4d3ace51179fc517c4",
-          "export_semantic": "988252318e9039aeb84790d4e26835d8bc311b98063cae8324de420395fd91c3"
+          "export_semantic": "cc480debb3605e2a471cad9a1cb0cbbe463f88a5753c98f2bf519338c4844827"
         },
         "object_ordinal": 1,
         "object_type": "EXPORT",
@@ -8372,10 +8636,19 @@
   },
   "protected_authority": {
     "checkpoint_diff_protected_changes": [],
+    "ignored_database_paths": [],
     "v2_inventory": [
       {
         "path": "frontend/generated/trace-exploration-v2/production-read-model.json",
         "sha256": "53eaf59c95446eeb3781a7153183c54b3ff59fd52f21744cc917053959dfdcc9"
+      },
+      {
+        "path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+        "sha256": "fa0fc26a89bcd0a4962be05c8d264cbf575037bb865d615b652b7cbed921c689"
+      },
+      {
+        "path": "frontend/src/app/api/trace/v2/exploration/route.ts",
+        "sha256": "e653b11afc890351c6d29e0b29b431fe3ddfe394858167bd0a7886852f624582"
       },
       {
         "path": "frontend/src/features/trace-v49/exploration-v2/client.ts",
@@ -8462,12 +8735,84 @@
         "sha256": "ee5365a1b45ece3e93330196f3336e81abc1869c7ec9d44ae7b8e5e6c15884b7"
       }
     ],
-    "v2_pinned_file_count": 22,
+    "v2_pinned_file_count": 24,
     "v49_freeze_manifest_sha256": "f0dda59dd515ba243eaf213bce9f42513727f1ab0a44685635921c3759a7d22e",
     "v49_frozen_file_count": 126,
-    "v49_inventory_canonical_sha256": "f27c22cfeb4ab3b50ed140b603d5ed8eea57ed4dcf4fc27046a98c4725e0bb28"
+    "v49_inventory_canonical_sha256": "f27c22cfeb4ab3b50ed140b603d5ed8eea57ed4dcf4fc27046a98c4725e0bb28",
+    "v50_additive_database_file_count": 11,
+    "v50_additive_database_inventory": [
+      {
+        "bytes": 6226,
+        "path": "database/ROUND16B_V50.md",
+        "sha256": "ad96b38eef5212ebd14386fba4ea2170b1987b7bc0e56a7b4149f8c3bfb691f6"
+      },
+      {
+        "bytes": 3,
+        "path": "database/VERSION",
+        "sha256": "7ea9844ae84eccbf55e8330640865e36c43521e45a1baec24233327aab7e6595"
+      },
+      {
+        "bytes": 100009,
+        "path": "database/functions/020_exploration_v3_integrity.sql",
+        "sha256": "a7b8dff684f5a2b77eda64ccbd6b50454d1d62ad6b2009805a34c2d5792eb2d8"
+      },
+      {
+        "bytes": 35906,
+        "path": "database/migrations/014_exploration_v3_higher_order_associations.sql",
+        "sha256": "cbec97b5f76c9b4722e498c5e190d0e91d49a5004dd2caeffb1a9f16c9cdc241"
+      },
+      {
+        "bytes": 2294,
+        "path": "database/roles/008_exploration_v3_grants.sql",
+        "sha256": "3212b5f95db5a828861ad32fd823900b9ad1242c936facde9043e50bd3b5d6d7"
+      },
+      {
+        "bytes": 3537,
+        "path": "database/schema-manifest-v50-round16b.json",
+        "sha256": "bac907114133ea9b261fdff426434365f020ba92bd0e377b8b2d9629438319c3"
+      },
+      {
+        "bytes": 2698,
+        "path": "database/scripts/replay_v50_round16b.sh",
+        "sha256": "a215bd3a8bf6030a8ab4d77db12bb90a6e6301352f582322917ca637889ef9de"
+      },
+      {
+        "bytes": 10949,
+        "path": "database/scripts/run_v50_round16b_tests.sh",
+        "sha256": "f73e1645cfbe95bac75cda49ea1ab4bf8b7571f84032309e3895e1f4561458d6"
+      },
+      {
+        "bytes": 25972,
+        "path": "database/scripts/verify_v50_round16b_manifest.py",
+        "sha256": "95d1a7a08b7877d8ac0e93817b19f90aca78d8da7397e59f2584ea9f2eeba72e"
+      },
+      {
+        "bytes": 129996,
+        "path": "database/tests/014_exploration_v3_higher_order_associations.sql",
+        "sha256": "05926f3eba5ba26998b7ae180442c8221373c6d4bdade005242e50852e217be8"
+      },
+      {
+        "bytes": 24464,
+        "path": "database/views/003_exploration_v3_read_contract.sql",
+        "sha256": "66736c4f25961bc68ea511d07714114e51cf08e301ad5df9ea6a4d65906ba3f0"
+      }
+    ],
+    "v50_additive_database_inventory_canonical_sha256": "419d11928a4a4c5e8d722a95f135b99ffa6546e3ea0cfb854a55e561c5f40c2b",
+    "v50_additive_database_status_by_path": {
+      "database/ROUND16B_V50.md": "A",
+      "database/VERSION": "M",
+      "database/functions/020_exploration_v3_integrity.sql": "A",
+      "database/migrations/014_exploration_v3_higher_order_associations.sql": "A",
+      "database/roles/008_exploration_v3_grants.sql": "A",
+      "database/schema-manifest-v50-round16b.json": "A",
+      "database/scripts/replay_v50_round16b.sh": "A",
+      "database/scripts/run_v50_round16b_tests.sh": "A",
+      "database/scripts/verify_v50_round16b_manifest.py": "A",
+      "database/tests/014_exploration_v3_higher_order_associations.sql": "A",
+      "database/views/003_exploration_v3_read_contract.sql": "A"
+    }
   },
-  "receipt_version": "trace-round16b-v3-semantic-contract-independent-verifier-v1",
+  "receipt_version": "trace-round16b-v3-semantic-contract-independent-verifier-v2",
   "reconstructed_count_taxonomy": {
     "associations": {
       "production_active_association_count": 0,
@@ -8487,9 +8832,11 @@
     "interaction": {
       "production_export_count": 0,
       "production_state_count": 0,
+      "production_transition_count": 0,
       "production_workflow_count": 0,
       "synthetic_export_count": 1,
       "synthetic_state_count": 1,
+      "synthetic_transition_count": 0,
       "synthetic_workflow_count": 1
     },
     "realizations_and_compositions": {
@@ -8515,12 +8862,12 @@
     "fixture_schema_errors": [],
     "hash_contract_schema_errors": [],
     "hash_contract_semantic_failures": [],
-    "schema_document_count": 10,
+    "schema_document_count": 11,
     "schema_document_failures": []
   },
   "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
   "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
   "status": "PASS",
   "verifier_path": "scripts/trace_round16b/verify_v3_semantic_contract_independent.py",
-  "verifier_sha256": "6f191be1d4025c90daf527f0fdfa1193941b62a03aa2c4b981662c4e31509f42"
+  "verifier_sha256": "9f0eea8ab07a78bb370cc779c0604a72297646fea0f1ef1ea5eb7df9fc462cb1"
 }

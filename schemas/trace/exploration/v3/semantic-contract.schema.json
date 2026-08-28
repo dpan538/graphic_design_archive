@@ -210,6 +210,10 @@
               "minimum": 0,
               "type": "integer"
             },
+            "production_transition_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
             "production_workflow_count": {
               "minimum": 0,
               "type": "integer"
@@ -222,6 +226,10 @@
               "minimum": 0,
               "type": "integer"
             },
+            "synthetic_transition_count": {
+              "minimum": 0,
+              "type": "integer"
+            },
             "synthetic_workflow_count": {
               "minimum": 0,
               "type": "integer"
@@ -229,9 +237,11 @@
           },
           "required": [
             "synthetic_state_count",
+            "synthetic_transition_count",
             "synthetic_workflow_count",
             "synthetic_export_count",
             "production_state_count",
+            "production_transition_count",
             "production_workflow_count",
             "production_export_count"
           ],
@@ -891,6 +901,13 @@
     "source_sha": {
       "const": "5419770959bdb8998b693fb2275b47e29b92367c"
     },
+    "transitions": {
+      "items": {
+        "$ref": "transition.schema.json"
+      },
+      "minItems": 0,
+      "type": "array"
+    },
     "v2_pair_adapter_receipts": {
       "items": {
         "$ref": "v2-pair-adapter.schema.json"
@@ -972,6 +989,7 @@
     "composition_coherence_reviews",
     "compositions",
     "navigation_states",
+    "transitions",
     "workflows",
     "exports",
     "v2_pair_source_fixtures",

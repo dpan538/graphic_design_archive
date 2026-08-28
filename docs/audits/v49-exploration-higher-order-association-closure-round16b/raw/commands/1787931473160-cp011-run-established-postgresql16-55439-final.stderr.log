@@ -1,0 +1,628 @@
+2026-08-29 01:37:53.217 AEST [72362] LOG:  starting PostgreSQL 16.13 (Homebrew) on aarch64-apple-darwin25.2.0, compiled by Apple clang version 17.0.0 (clang-1700.6.3.2), 64-bit
+2026-08-29 01:37:53.219 AEST [72362] LOG:  listening on IPv6 address "::1", port 55439
+2026-08-29 01:37:53.219 AEST [72362] LOG:  listening on IPv4 address "127.0.0.1", port 55439
+2026-08-29 01:37:53.219 AEST [72362] LOG:  listening on Unix socket "/private/tmp/.s.PGSQL.55439"
+2026-08-29 01:37:53.278 AEST [72365] LOG:  database system was shut down at 2026-08-29 00:36:53 AEST
+2026-08-29 01:37:53.285 AEST [72362] LOG:  database system is ready to accept connections
+2026-08-29 01:39:05.898 AEST [72549] FATAL:  database "jarlgiovanni" does not exist
+2026-08-29 01:39:55.215 AEST [72780] ERROR:  record variable cannot be part of multiple-item INTO list at character 417
+2026-08-29 01:39:55.215 AEST [72780] STATEMENT:  CREATE FUNCTION exploration_v3.association_revision_identity_sha(
+	  p_association_revision_id text
+	) RETURNS core.sha256_hex
+	LANGUAGE plpgsql STABLE STRICT
+	SET search_path = pg_catalog
+	AS $function$
+	DECLARE
+	  v_association exploration_v3.association%ROWTYPE;
+	  v_scope_id text;
+	  v_concepts text[];
+	  v_senses text[];
+	  v_ordinals integer[];
+	  v_roles text[];
+	BEGIN
+	  SELECT a, r.scope_id
+	  INTO STRICT v_association, v_scope_id
+	  FROM exploration_v3.association_revision r
+	  JOIN exploration_v3.association a ON a.association_id = r.association_id
+	  WHERE r.association_revision_id = p_association_revision_id;
+	  SELECT array_agg(concept_id ORDER BY incidence_id COLLATE "C"),
+	    array_agg(sense_id ORDER BY incidence_id COLLATE "C"),
+	    array_agg(ordinal ORDER BY incidence_id COLLATE "C"),
+	    array_agg(role_id ORDER BY incidence_id COLLATE "C")
+	  INTO v_concepts, v_senses, v_ordinals, v_roles
+	  FROM exploration_v3.association_incidence
+	  WHERE association_revision_id = p_association_revision_id;
+	  RETURN exploration_v3.association_identity_sha(
+	    v_association.association_kind, v_association.order_semantics,
+	    v_association.roles_meaningful, v_scope_id,
+	    v_concepts, v_senses, v_ordinals, v_roles);
+	END
+	$function$;
+2026-08-29 01:41:28.224 AEST [72363] LOG:  checkpoint starting: immediate force wait
+2026-08-29 01:41:28.293 AEST [72363] LOG:  checkpoint complete: wrote 976 buffers (6.0%); 0 WAL file(s) added, 0 removed, 2 recycled; write=0.058 s, sync=0.009 s, total=0.070 s; sync files=307, longest=0.001 s, average=0.001 s; distance=21180 kB, estimate=21180 kB; lsn=0/12138028, redo lsn=0/12137FD8
+2026-08-29 01:41:54.530 AEST [73102] ERROR:  mismatched parentheses at or near ";" at character 14329
+2026-08-29 01:41:54.530 AEST [73102] STATEMENT:  CREATE FUNCTION exploration_v3.assert_association_revision(
+	  p_association_revision_id text
+	) RETURNS void
+	LANGUAGE plpgsql
+	SET search_path = pg_catalog
+	AS $function$
+	DECLARE
+	  v_revision exploration_v3.association_revision%ROWTYPE;
+	  v_association exploration_v3.association%ROWTYPE;
+	  v_incidence_count integer;
+	  v_review exploration_v3.association_review%ROWTYPE;
+	  v_authority exploration_v3.governed_authority%ROWTYPE;
+	  v_superseded_revision_number integer;
+	  v_scope_realm exploration_v3.realm;
+	  v_scope_context_qualifications text[];
+	  v_identity_hash core.sha256_hex;
+	  v_positive_disposition boolean;
+	BEGIN
+	  SELECT * INTO v_revision
+	  FROM exploration_v3.association_revision
+	  WHERE association_revision_id = p_association_revision_id;
+	  IF NOT FOUND THEN RETURN; END IF;
+	
+	  SELECT * INTO STRICT v_association
+	  FROM exploration_v3.association
+	  WHERE association_id = v_revision.association_id;
+	
+	  SELECT realm, context_qualifications
+	  INTO STRICT v_scope_realm, v_scope_context_qualifications
+	  FROM exploration_v3.governed_scope WHERE scope_id = v_revision.scope_id;
+	  IF v_scope_realm <> v_association.realm THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'ASSOCIATION_SCOPE_REALM_MISMATCH';
+	  END IF;
+	  IF (v_association.realm = 'PRODUCTION' AND (
+	      (v_revision.product_eligible
+	        AND v_revision.product_eligibility_disposition <> 'ELIGIBLE')
+	      OR (NOT v_revision.product_eligible
+	        AND v_revision.product_eligibility_disposition NOT IN ('INELIGIBLE','DEFERRED'))
+	    )) OR (v_association.realm = 'SYNTHETIC_CONTROL' AND (
+	      v_revision.product_eligible
+	      OR v_revision.product_eligibility_disposition <> 'NOT_APPLICABLE_SYNTHETIC'
+	    )) THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514',
+	      MESSAGE = 'ASSOCIATION_PRODUCT_DISPOSITION_MATRIX_INVALID';
+	  END IF;
+	
+	  -- The immutable scope row carries the identity-bearing scope fields.  Each
+	  -- association revision carries the complete context-qualification snapshot
+	  -- used by that revision's semantic material.  Revision one must reproduce
+	  -- the source scope; successors may change qualifications without changing
+	  -- the stable association identity.
+	  IF v_revision.revision_number = 1
+	    AND v_revision.scope_context_qualifications IS DISTINCT FROM
+	      v_scope_context_qualifications THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514',
+	      MESSAGE = 'ASSOCIATION_REVISION_SCOPE_CONTEXT_SNAPSHOT_INVALID';
+	  END IF;
+	
+	  IF v_revision.revision_number = 1
+	    AND v_revision.supersedes_association_revision_id IS NOT NULL THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'ASSOCIATION_REVISION_LINEAGE_INVALID';
+	  ELSIF v_revision.revision_number > 1 THEN
+	    IF v_revision.supersedes_association_revision_id IS NULL THEN
+	      RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'ASSOCIATION_REVISION_LINEAGE_INVALID';
+	    END IF;
+	    SELECT revision_number INTO v_superseded_revision_number
+	    FROM exploration_v3.association_revision
+	    WHERE association_id = v_revision.association_id
+	      AND association_revision_id = v_revision.supersedes_association_revision_id;
+	    IF NOT FOUND OR v_superseded_revision_number <> v_revision.revision_number - 1 THEN
+	      RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'ASSOCIATION_REVISION_LINEAGE_INVALID';
+	    END IF;
+	  END IF;
+	
+	  SELECT count(*) INTO v_incidence_count
+	  FROM exploration_v3.association_incidence
+	  WHERE association_revision_id = p_association_revision_id;
+	  IF v_incidence_count <> v_association.arity THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514',
+	      MESSAGE = 'ASSOCIATION_ARITY_INCIDENCE_MISMATCH';
+	  END IF;
+	
+	  IF EXISTS (
+	    SELECT 1
+	    FROM exploration_v3.association_incidence i
+	    JOIN exploration_v3.concept c ON c.concept_id = i.concept_id
+	    JOIN exploration_v3.concept_sense s ON s.sense_id = i.sense_id
+	    JOIN exploration_v3.governed_scope ps ON ps.scope_id = i.participant_scope_id
+	    JOIN exploration_v3.governed_scope rs ON rs.scope_id = v_revision.scope_id
+	    WHERE i.association_revision_id = p_association_revision_id
+	      AND (c.realm <> v_association.realm OR s.realm <> v_association.realm
+	        OR ps.realm <> v_association.realm OR rs.realm <> v_association.realm
+	        OR i.participant_scope_id <> v_revision.scope_id)
+	  ) THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'ASSOCIATION_REALM_MISMATCH';
+	  END IF;
+	
+	  IF v_association.order_semantics = 'ORDERED' AND (
+	    EXISTS (SELECT 1 FROM exploration_v3.association_incidence
+	      WHERE association_revision_id = p_association_revision_id AND ordinal IS NULL)
+	    OR (SELECT min(ordinal) FROM exploration_v3.association_incidence
+	        WHERE association_revision_id = p_association_revision_id) <> 0
+	    OR (SELECT max(ordinal) FROM exploration_v3.association_incidence
+	        WHERE association_revision_id = p_association_revision_id) <> v_association.arity - 1
+	  ) THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'ORDERED_INCIDENCE_ORDINALS_NOT_CONTIGUOUS';
+	  ELSIF v_association.order_semantics = 'UNORDERED' AND EXISTS (
+	    SELECT 1 FROM exploration_v3.association_incidence
+	    WHERE association_revision_id = p_association_revision_id AND ordinal IS NOT NULL
+	  ) THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'UNORDERED_INCIDENCE_HAS_ORDINAL';
+	  END IF;
+	
+	  IF v_association.roles_meaningful AND EXISTS (
+	    SELECT 1 FROM exploration_v3.association_incidence
+	    WHERE association_revision_id = p_association_revision_id AND role_id IS NULL
+	  ) THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'MEANINGFUL_ROLE_MISSING';
+	  ELSIF NOT v_association.roles_meaningful AND EXISTS (
+	    SELECT 1 FROM exploration_v3.association_incidence
+	    WHERE association_revision_id = p_association_revision_id AND role_id IS NOT NULL
+	  ) THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'UNMEANINGFUL_ROLE_INVENTED';
+	  END IF;
+	
+	  v_identity_hash := exploration_v3.association_revision_identity_sha(
+	    p_association_revision_id);
+	  IF v_association.identity_material_sha256 <> v_identity_hash
+	    OR v_association.association_id <>
+	      'association:v3:' || left(v_identity_hash::text, 24) THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514',
+	      MESSAGE = 'ASSOCIATION_STABLE_IDENTITY_MISMATCH';
+	  END IF;
+	
+	  IF v_association.association_kind = 'PAIR'
+	    AND v_revision.support_mode NOT IN ('DIRECT_PAIR', 'PAIR_ONLY', 'NONE') THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'PAIR_SUPPORT_MODE_INVALID';
+	  ELSIF v_association.association_kind = 'HIGHER_ORDER'
+	    AND v_revision.support_mode = 'DIRECT_PAIR' THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'HIGHER_ORDER_DIRECT_PAIR_MODE_INVALID';
+	  END IF;
+	
+	  -- A final conflict resolution is itself a governed decision.  Production
+	  -- resolutions may never be finalized by synthetic authority, regardless of
+	  -- lifecycle state or eventual review disposition.
+	  IF EXISTS (
+	    SELECT 1
+	    FROM exploration_v3.association_conflict_resolution cr
+	    JOIN exploration_v3.governed_authority ca ON ca.authority_id = cr.authority_id
+	    WHERE cr.association_revision_id = p_association_revision_id
+	      AND cr.resolution_state = 'FINAL'
+	      AND (ca.authority_state <> 'FINAL'
+	        OR (v_association.realm = 'PRODUCTION'
+	          AND ca.authority_kind = 'SYNTHETIC_TEST_AUTHORITY'))
+	  ) THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514',
+	      MESSAGE = 'FINAL_CONFLICT_RESOLUTION_AUTHORITY_INVALID';
+	  END IF;
+	
+	  SELECT * INTO v_review
+	  FROM exploration_v3.association_review
+	  WHERE association_revision_id = p_association_revision_id;
+	  IF FOUND AND v_review.review_state = 'FINAL' THEN
+	    IF NOT EXISTS (
+	      SELECT 1 FROM exploration_v3.aggregate_seal
+	      WHERE aggregate_kind = 'ASSOCIATION_REVISION'
+	        AND aggregate_id = p_association_revision_id
+	    ) THEN
+	      RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'FINAL_ASSOCIATION_REVIEW_UNSEALED';
+	    END IF;
+	    SELECT * INTO STRICT v_authority
+	    FROM exploration_v3.governed_authority WHERE authority_id = v_review.authority_id;
+	    IF v_authority.authority_state <> 'FINAL'
+	      OR (v_association.realm = 'PRODUCTION'
+	        AND v_authority.authority_kind = 'SYNTHETIC_TEST_AUTHORITY')
+	      OR v_review.disposition = 'PENDING_GOVERNED_REVIEW' THEN
+	      RAISE EXCEPTION USING ERRCODE = '23514',
+	        MESSAGE = 'FINAL_ASSOCIATION_DISPOSITION_PARITY_INVALID';
+	    END IF;
+	    -- Final decisions, including negative and unresolved dispositions, must be
+	    -- traceable to at least one sealed, locator-bearing, rights-cleared
+	    -- evidence reference in the same governed realm.
+	    IF NOT EXISTS (
+	      SELECT 1 FROM exploration_v3.association_revision_evidence e
+	      WHERE e.association_revision_id = p_association_revision_id
+	    ) OR EXISTS (
+	      SELECT 1
+	      FROM exploration_v3.association_revision_evidence e
+	      JOIN exploration_v3.evidence_reference er
+	        ON er.evidence_reference_id = e.evidence_reference_id
+	      WHERE e.association_revision_id = p_association_revision_id
+	        AND (er.realm <> v_association.realm
+	          OR NOT er.rights_cleared_for_governed_use
+	          OR NOT EXISTS (
+	            SELECT 1 FROM exploration_v3.evidence_locator locator
+	            WHERE locator.evidence_reference_id = er.evidence_reference_id)
+	          OR NOT EXISTS (
+	            SELECT 1 FROM exploration_v3.aggregate_seal evidence_seal
+	            WHERE evidence_seal.aggregate_kind = 'EVIDENCE_REFERENCE'
+	              AND evidence_seal.aggregate_id = er.evidence_reference_id))
+	    ) THEN
+	      RAISE EXCEPTION USING ERRCODE = '23514',
+	        MESSAGE = 'FINAL_ASSOCIATION_EVIDENCE_TRACE_INVALID';
+	    END IF;
+	    v_positive_disposition := v_review.disposition IN (
+	      'DIRECT_PAIRWISE_SUPPORT', 'DIRECT_HIGHER_ORDER_SUPPORT',
+	      'COHERENT_COMPOSITE_SUPPORT', 'MIXED_DIRECT_AND_COMPOSITE_SUPPORT');
+	    IF v_positive_disposition THEN
+	      IF v_review.global_coherence <> 'PASS'
+	        OR NOT v_review.bounded_senses_compatible
+	        OR NOT v_review.case_scope_compatible
+	        OR NOT v_review.roles_and_topology_supported
+	        OR v_review.unsupported_bridge_count <> 0
+	        OR NOT v_revision.evidence_complete
+	        OR NOT v_revision.same_configuration
+	        OR NOT v_revision.conflicts_resolved
+	        OR NOT v_revision.rights_cleared_for_governed_use
+	        OR NOT v_revision.synthesis_complete
+	        OR NOT (
+	          (v_association.association_kind = 'PAIR'
+	            AND v_revision.support_mode = 'DIRECT_PAIR'
+	            AND v_review.disposition = 'DIRECT_PAIRWISE_SUPPORT')
+	          OR (v_association.association_kind = 'HIGHER_ORDER'
+	            AND v_revision.support_mode = 'DIRECT_GROUP'
+	            AND v_review.disposition = 'DIRECT_HIGHER_ORDER_SUPPORT')
+	          OR (v_association.association_kind = 'HIGHER_ORDER'
+	            AND v_revision.support_mode = 'COHERENT_COMPOSITE'
+	            AND v_review.disposition = 'COHERENT_COMPOSITE_SUPPORT')
+	          OR (v_association.association_kind = 'HIGHER_ORDER'
+	            AND v_revision.support_mode = 'MIXED'
+	            AND v_review.disposition = 'MIXED_DIRECT_AND_COMPOSITE_SUPPORT')
+	        )
+	        OR NOT EXISTS (
+	          SELECT 1 FROM exploration_v3.association_revision_evidence e
+	          JOIN exploration_v3.evidence_reference er
+	            ON er.evidence_reference_id = e.evidence_reference_id
+	          WHERE e.association_revision_id = p_association_revision_id
+	            AND e.evidence_role = 'supports'
+	            AND er.realm = v_association.realm
+	            AND er.rights_cleared_for_governed_use
+	            AND EXISTS (SELECT 1 FROM exploration_v3.evidence_locator l
+	              WHERE l.evidence_reference_id = er.evidence_reference_id)
+	            AND EXISTS (SELECT 1 FROM exploration_v3.aggregate_seal es
+	              WHERE es.aggregate_kind = 'EVIDENCE_REFERENCE'
+	                AND es.aggregate_id = er.evidence_reference_id)
+	        )
+	        OR EXISTS (
+	          SELECT 1
+	          FROM exploration_v3.association_revision_evidence e
+	          JOIN exploration_v3.evidence_reference er
+	            ON er.evidence_reference_id = e.evidence_reference_id
+	          WHERE e.association_revision_id = p_association_revision_id
+	            AND (e.evidence_role = 'contradicts' OR er.negative_or_conflicting)
+	            AND NOT EXISTS (
+	              SELECT 1 FROM exploration_v3.association_conflict_resolution cr
+	              JOIN exploration_v3.governed_authority ca ON ca.authority_id = cr.authority_id
+	              WHERE cr.association_revision_id = e.association_revision_id
+	                AND cr.evidence_reference_id = e.evidence_reference_id
+	                AND cr.resolution_state = 'FINAL' AND ca.authority_state = 'FINAL'
+	                AND (v_association.realm = 'SYNTHETIC_CONTROL'
+	                  OR ca.authority_kind <> 'SYNTHETIC_TEST_AUTHORITY'))
+	        )
+	        OR (v_revision.support_mode IN ('COHERENT_COMPOSITE','MIXED') AND (
+	          NOT EXISTS (SELECT 1 FROM exploration_v3.association_synthesis_step s
+	            WHERE s.association_revision_id = p_association_revision_id)
+	          OR EXISTS (SELECT 1 FROM exploration_v3.association_synthesis_step s
+	            WHERE s.association_revision_id = p_association_revision_id
+	              AND NOT s.bridge_supported)
+	          OR EXISTS (
+	            SELECT 1 FROM exploration_v3.association_synthesis_step s
+	            WHERE s.association_revision_id = p_association_revision_id
+	              AND NOT EXISTS (
+	                SELECT 1 FROM exploration_v3.association_synthesis_step_evidence se
+	                JOIN exploration_v3.association_revision_evidence ae
+	                  ON ae.association_revision_id = se.association_revision_id
+	                 AND ae.evidence_reference_id = se.evidence_reference_id
+	                 AND ae.evidence_role IN ('supports','contextualises')
+	                WHERE se.association_revision_id = s.association_revision_id
+	                  AND se.step_ordinal = s.step_ordinal)))
+	        OR (v_revision.support_mode IN ('DIRECT_PAIR','DIRECT_GROUP') AND EXISTS (
+	          SELECT 1 FROM exploration_v3.association_synthesis_step s
+	          WHERE s.association_revision_id = p_association_revision_id)) THEN
+	        RAISE EXCEPTION USING ERRCODE = '23514',
+	          MESSAGE = 'FINAL_ASSOCIATION_DISPOSITION_PARITY_INVALID';
+	      END IF;
+	    ELSIF v_review.global_coherence = 'PASS'
+	      OR v_revision.activation_decision = 'ALLOW'
+	      OR v_revision.all_activation_gates_pass
+	      OR v_revision.lifecycle_state = 'ACTIVE'
+	      OR v_revision.product_eligible THEN
+	      RAISE EXCEPTION USING ERRCODE = '23514',
+	        MESSAGE = 'FINAL_ASSOCIATION_DISPOSITION_PARITY_INVALID';
+	    END IF;
+	  END IF;
+	
+	  IF v_revision.lifecycle_state <> 'ACTIVE' THEN RETURN; END IF;
+	
+	  IF v_revision.activation_decision <> 'ALLOW'
+	    OR NOT v_revision.all_activation_gates_pass
+	    OR NOT v_revision.evidence_complete
+	    OR NOT v_revision.same_configuration
+	    OR NOT v_revision.conflicts_resolved
+	    OR NOT v_revision.rights_cleared_for_governed_use
+	    OR NOT v_revision.synthesis_complete
+	    OR v_revision.uncertainty_status <> 'RESOLVED_BOUNDED'
+	    OR v_revision.uncertainty_level = 'UNKNOWN'
+	    OR v_revision.uncertainty_activation_policy <> 'ALLOWED_BOUNDED' THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'ACTIVE_ASSOCIATION_GATE_FAILURE';
+	  END IF;
+	
+	  IF NOT EXISTS (
+	    SELECT 1 FROM exploration_v3.association_revision_evidence e
+	    WHERE e.association_revision_id = p_association_revision_id
+	      AND e.evidence_role = 'supports'
+	  ) OR EXISTS (
+	    SELECT 1
+	    FROM exploration_v3.association_revision_evidence e
+	    JOIN exploration_v3.evidence_reference r
+	      ON r.evidence_reference_id = e.evidence_reference_id
+	    WHERE e.association_revision_id = p_association_revision_id
+	      AND (NOT r.rights_cleared_for_governed_use
+	        OR r.realm <> v_association.realm
+	        OR NOT EXISTS (
+	          SELECT 1 FROM exploration_v3.evidence_locator l
+	          WHERE l.evidence_reference_id = r.evidence_reference_id)
+	        OR NOT EXISTS (
+	          SELECT 1 FROM exploration_v3.aggregate_seal es
+	          WHERE es.aggregate_kind = 'EVIDENCE_REFERENCE'
+	            AND es.aggregate_id = r.evidence_reference_id))
+	  ) THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'ACTIVE_ASSOCIATION_EVIDENCE_INVALID';
+	  END IF;
+	
+	  IF EXISTS (
+	    SELECT 1
+	    FROM exploration_v3.association_revision_evidence e
+	    JOIN exploration_v3.evidence_reference r
+	      ON r.evidence_reference_id = e.evidence_reference_id
+	    WHERE e.association_revision_id = p_association_revision_id
+	      AND (e.evidence_role = 'contradicts' OR r.negative_or_conflicting)
+	      AND NOT EXISTS (
+	        SELECT 1
+	        FROM exploration_v3.association_conflict_resolution cr
+	        JOIN exploration_v3.governed_authority ca ON ca.authority_id = cr.authority_id
+	        WHERE cr.association_revision_id = e.association_revision_id
+	          AND cr.evidence_reference_id = e.evidence_reference_id
+	          AND cr.resolution_state = 'FINAL' AND ca.authority_state = 'FINAL'
+	          AND (v_association.realm = 'SYNTHETIC_CONTROL'
+	            OR ca.authority_kind <> 'SYNTHETIC_TEST_AUTHORITY'))
+	  ) THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'ACTIVE_ASSOCIATION_CONFLICT_UNRESOLVED';
+	  END IF;
+	  IF EXISTS (
+	    SELECT 1
+	    FROM exploration_v3.association_conflict_resolution cr
+	    JOIN exploration_v3.governed_authority ca ON ca.authority_id = cr.authority_id
+	    WHERE cr.association_revision_id = p_association_revision_id
+	      AND (cr.resolution_state <> 'FINAL' OR ca.authority_state <> 'FINAL'
+	        OR (v_association.realm = 'PRODUCTION'
+	          AND ca.authority_kind = 'SYNTHETIC_TEST_AUTHORITY')
+	        OR NOT EXISTS (
+	          SELECT 1 FROM exploration_v3.association_revision_evidence e
+	          JOIN exploration_v3.evidence_reference r
+	            ON r.evidence_reference_id = e.evidence_reference_id
+	          WHERE e.association_revision_id = cr.association_revision_id
+	            AND e.evidence_reference_id = cr.evidence_reference_id
+	            AND (e.evidence_role = 'contradicts' OR r.negative_or_conflicting)))
+	  ) THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'ACTIVE_ASSOCIATION_CONFLICT_RESOLUTION_INVALID';
+	  END IF;
+	
+	  IF EXISTS (
+	    SELECT 1
+	    FROM exploration_v3.association_incidence i
+	    JOIN exploration_v3.concept c ON c.concept_id = i.concept_id
+	    JOIN exploration_v3.concept_sense s ON s.sense_id = i.sense_id
+	    JOIN exploration_v3.governed_authority ca ON ca.authority_id = c.authority_id
+	    JOIN exploration_v3.governed_authority sa ON sa.authority_id = s.authority_id
+	    WHERE i.association_revision_id = p_association_revision_id
+	      AND (c.lifecycle_state <> 'ACTIVE' OR NOT c.association_eligible
+	        OR s.lifecycle_state <> 'ACTIVE' OR NOT s.association_eligible
+	        OR ca.authority_state <> 'FINAL' OR sa.authority_state <> 'FINAL'
+	        OR (v_association.realm = 'PRODUCTION'
+	          AND (ca.authority_kind = 'SYNTHETIC_TEST_AUTHORITY'
+	            OR sa.authority_kind = 'SYNTHETIC_TEST_AUTHORITY'))
+	        OR NOT EXISTS (
+	          SELECT 1 FROM exploration_v3.concept_sense_scope css
+	          WHERE css.sense_id = s.sense_id AND css.scope_id = i.participant_scope_id)
+	        OR NOT EXISTS (
+	          SELECT 1 FROM exploration_v3.aggregate_seal ss
+	          WHERE ss.aggregate_kind = 'CONCEPT_SENSE'
+	            AND ss.aggregate_id = s.sense_id))
+	  ) THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'ACTIVE_ASSOCIATION_PARTICIPANT_INVALID';
+	  END IF;
+	  IF v_revision.product_eligible AND EXISTS (
+	    SELECT 1
+	    FROM exploration_v3.association_incidence i
+	    JOIN exploration_v3.concept c ON c.concept_id = i.concept_id
+	    JOIN exploration_v3.concept_sense s ON s.sense_id = i.sense_id
+	    WHERE i.association_revision_id = p_association_revision_id
+	      AND (NOT c.product_eligible OR NOT s.product_eligible)
+	  ) THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514',
+	      MESSAGE = 'ACTIVE_PRODUCT_ASSOCIATION_PARTICIPANT_INELIGIBLE';
+	  END IF;
+	
+	  SELECT * INTO v_review
+	  FROM exploration_v3.association_review
+	  WHERE association_revision_id = p_association_revision_id;
+	  IF NOT FOUND THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'ACTIVE_ASSOCIATION_REVIEW_MISSING';
+	  END IF;
+	  IF NOT EXISTS (
+	    SELECT 1 FROM exploration_v3.aggregate_seal
+	    WHERE aggregate_kind = 'ASSOCIATION_REVISION'
+	      AND aggregate_id = p_association_revision_id
+	  ) THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'ACTIVE_ASSOCIATION_UNSEALED';
+	  END IF;
+	  SELECT * INTO STRICT v_authority
+	  FROM exploration_v3.governed_authority WHERE authority_id = v_review.authority_id;
+	  IF v_review.review_state <> 'FINAL' OR v_authority.authority_state <> 'FINAL'
+	    OR v_review.global_coherence <> 'PASS'
+	    OR NOT v_review.bounded_senses_compatible
+	    OR NOT v_review.case_scope_compatible
+	    OR NOT v_review.roles_and_topology_supported
+	    OR v_review.unsupported_bridge_count <> 0 THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'ACTIVE_ASSOCIATION_REVIEW_INVALID';
+	  END IF;
+	  IF v_association.realm = 'PRODUCTION'
+	    AND v_authority.authority_kind = 'SYNTHETIC_TEST_AUTHORITY' THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'SYNTHETIC_AUTHORITY_CANNOT_ACTIVATE_PRODUCTION';
+	  ELSIF v_association.realm = 'SYNTHETIC_CONTROL'
+	    AND (v_revision.product_eligible
+	      OR v_revision.product_eligibility_disposition <> 'NOT_APPLICABLE_SYNTHETIC') THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'SYNTHETIC_ASSOCIATION_PRODUCT_FORBIDDEN';
+	  END IF;
+	
+	  IF v_association.association_kind = 'PAIR' AND (
+	    v_revision.support_mode <> 'DIRECT_PAIR'
+	    OR v_review.disposition <> 'DIRECT_PAIRWISE_SUPPORT'
+	  ) THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'ACTIVE_PAIR_DISPOSITION_INVALID';
+	  ELSIF v_association.association_kind = 'HIGHER_ORDER' AND NOT (
+	    (v_revision.support_mode = 'DIRECT_GROUP'
+	      AND v_review.disposition = 'DIRECT_HIGHER_ORDER_SUPPORT')
+	    OR (v_revision.support_mode = 'COHERENT_COMPOSITE'
+	      AND v_review.disposition = 'COHERENT_COMPOSITE_SUPPORT')
+	    OR (v_revision.support_mode = 'MIXED'
+	      AND v_review.disposition = 'MIXED_DIRECT_AND_COMPOSITE_SUPPORT')
+	  ) THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'ACTIVE_HIGHER_ORDER_DISPOSITION_INVALID';
+	  END IF;
+	
+	  IF v_revision.support_mode IN ('COHERENT_COMPOSITE', 'MIXED') AND (
+	    NOT EXISTS (SELECT 1 FROM exploration_v3.association_synthesis_step
+	      WHERE association_revision_id = p_association_revision_id)
+	    OR EXISTS (SELECT 1 FROM exploration_v3.association_synthesis_step
+	      WHERE association_revision_id = p_association_revision_id AND NOT bridge_supported)
+	    OR EXISTS (
+	      SELECT 1 FROM exploration_v3.association_synthesis_step s
+	      WHERE s.association_revision_id = p_association_revision_id
+	        AND NOT EXISTS (
+	          SELECT 1 FROM exploration_v3.association_synthesis_step_evidence se
+	          JOIN exploration_v3.association_revision_evidence ae
+	            ON ae.association_revision_id = se.association_revision_id
+	           AND ae.evidence_reference_id = se.evidence_reference_id
+	           AND ae.evidence_role IN ('supports','contextualises')
+	          WHERE se.association_revision_id = s.association_revision_id
+	            AND se.step_ordinal = s.step_ordinal))
+	  ) THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'ACTIVE_SYNTHESIS_STEPS_INVALID';
+	  ELSIF v_revision.support_mode IN ('DIRECT_PAIR', 'DIRECT_GROUP') AND EXISTS (
+	    SELECT 1 FROM exploration_v3.association_synthesis_step
+	    WHERE association_revision_id = p_association_revision_id
+	  ) THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'DIRECT_SUPPORT_HAS_SYNTHESIS_STEPS';
+	  END IF;
+	
+	  IF v_revision.product_eligible AND v_association.realm <> 'PRODUCTION' THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'PRODUCT_ASSOCIATION_NOT_PRODUCTION';
+	  ELSIF v_revision.product_eligible AND EXISTS (
+	    SELECT 1 FROM exploration_v3.association_revision successor
+	    WHERE successor.association_id = v_revision.association_id
+	      AND successor.supersedes_association_revision_id = p_association_revision_id
+	  ) THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514',
+	      MESSAGE = 'PRODUCT_ASSOCIATION_REVISION_NOT_CURRENT_HEAD';
+	  ELSIF NOT v_revision.product_eligible
+	    AND v_association.realm = 'PRODUCTION'
+	    AND v_revision.product_eligibility_disposition NOT IN ('INELIGIBLE', 'DEFERRED') THEN
+	    RAISE EXCEPTION USING ERRCODE = '23514', MESSAGE = 'ACTIVE_PRODUCTION_PRODUCT_DISPOSITION_INVALID';
+	  END IF;
+	END
+	$function$;
+2026-08-29 01:43:53.952 AEST [72363] LOG:  checkpoint starting: immediate force wait
+2026-08-29 01:43:53.957 AEST [72363] LOG:  checkpoint complete: wrote 39 buffers (0.2%); 0 WAL file(s) added, 0 removed, 1 recycled; write=0.003 s, sync=0.001 s, total=0.005 s; sync files=9, longest=0.001 s, average=0.001 s; distance=17079 kB, estimate=20770 kB; lsn=0/131E5DE8, redo lsn=0/131E5DB0
+2026-08-29 01:45:01.029 AEST [73775] ERROR:  AGGREGATE_MEMBERSHIP_CONCURRENT_WRITE_RETRY
+2026-08-29 01:45:01.029 AEST [73775] CONTEXT:  PL/pgSQL function exploration_v3.acquire_aggregate_membership_lock(text,text) line 12 at RAISE
+	SQL statement "SELECT exploration_v3.acquire_aggregate_membership_lock(
+	    NEW.aggregate_kind, NEW.aggregate_id)"
+	PL/pgSQL function exploration_v3.enforce_aggregate_seal_insert() line 4 at PERFORM
+2026-08-29 01:45:01.029 AEST [73775] STATEMENT:  INSERT INTO exploration_v3.aggregate_seal VALUES
+	   ('EVIDENCE_REFERENCE','evidence:race:child-first',
+	    exploration_v3.aggregate_content_sha('EVIDENCE_REFERENCE','evidence:race:child-first'),
+	    '2026-08-28T00:00:00Z');
+2026-08-29 01:45:01.164 AEST [73793] ERROR:  AGGREGATE_MEMBERSHIP_CONCURRENT_WRITE_RETRY
+2026-08-29 01:45:01.164 AEST [73793] CONTEXT:  PL/pgSQL function exploration_v3.acquire_aggregate_membership_lock(text,text) line 12 at RAISE
+	SQL statement "SELECT exploration_v3.acquire_aggregate_membership_lock(v_kind, v_id)"
+	PL/pgSQL function exploration_v3.reject_sealed_child_insert() line 57 at PERFORM
+2026-08-29 01:45:01.164 AEST [73793] STATEMENT:  INSERT INTO exploration_v3.evidence_locator VALUES
+	   ('locator:race:seal-first:contender','evidence:race:seal-first',
+	    'synthetic://race/seal-first/contender',repeat('2',64),'SYNTHETIC_ONLY');
+2026-08-29 01:45:01.188 AEST [73798] ERROR:  SEALED_AGGREGATE_CHILD_INSERT_FORBIDDEN
+2026-08-29 01:45:01.188 AEST [73798] CONTEXT:  PL/pgSQL function exploration_v3.reject_sealed_child_insert() line 65 at RAISE
+2026-08-29 01:45:01.188 AEST [73798] STATEMENT:  INSERT INTO exploration_v3.evidence_locator VALUES
+	   ('locator:race:seal-first:retry','evidence:race:seal-first',
+	    'synthetic://race/seal-first/retry',repeat('3',64),'SYNTHETIC_ONLY');
+2026-08-29 01:45:01.224 AEST [73805] ERROR:  AGGREGATE_MEMBERSHIP_WRITES_REQUIRE_READ_COMMITTED
+2026-08-29 01:45:01.224 AEST [73805] CONTEXT:  PL/pgSQL function exploration_v3.acquire_aggregate_membership_lock(text,text) line 4 at RAISE
+	SQL statement "SELECT exploration_v3.acquire_aggregate_membership_lock(v_kind, v_id)"
+	PL/pgSQL function exploration_v3.reject_sealed_child_insert() line 57 at PERFORM
+2026-08-29 01:45:01.224 AEST [73805] STATEMENT:  INSERT INTO exploration_v3.evidence_locator VALUES
+	   ('locator:race:repeatable-read','evidence:race:repeatable-read',
+	    'synthetic://race/repeatable-read',repeat('4',64),'SYNTHETIC_ONLY');
+2026-08-29 01:45:01.246 AEST [73810] ERROR:  AGGREGATE_MEMBERSHIP_WRITES_REQUIRE_READ_COMMITTED
+2026-08-29 01:45:01.246 AEST [73810] CONTEXT:  PL/pgSQL function exploration_v3.acquire_aggregate_membership_lock(text,text) line 4 at RAISE
+	SQL statement "SELECT exploration_v3.acquire_aggregate_membership_lock(
+	    NEW.aggregate_kind, NEW.aggregate_id)"
+	PL/pgSQL function exploration_v3.enforce_aggregate_seal_insert() line 4 at PERFORM
+2026-08-29 01:45:01.246 AEST [73810] STATEMENT:  INSERT INTO exploration_v3.aggregate_seal VALUES
+	   ('EVIDENCE_REFERENCE','evidence:race:serializable',
+	    exploration_v3.aggregate_content_sha('EVIDENCE_REFERENCE','evidence:race:serializable'),
+	    '2026-08-28T00:00:00Z');
+2026-08-29 01:45:01.266 AEST [72363] LOG:  checkpoint starting: immediate force wait
+2026-08-29 01:45:01.428 AEST [72363] LOG:  checkpoint complete: wrote 2131 buffers (13.0%); 0 WAL file(s) added, 0 removed, 1 recycled; write=0.119 s, sync=0.041 s, total=0.162 s; sync files=1673, longest=0.001 s, average=0.001 s; distance=28466 kB, estimate=28466 kB; lsn=0/14DB2680, redo lsn=0/14DB2648
+2026-08-29 01:46:15.984 AEST [74225] ERROR:  AGGREGATE_MEMBERSHIP_CONCURRENT_WRITE_RETRY
+2026-08-29 01:46:15.984 AEST [74225] CONTEXT:  PL/pgSQL function exploration_v3.acquire_aggregate_membership_lock(text,text) line 12 at RAISE
+	SQL statement "SELECT exploration_v3.acquire_aggregate_membership_lock(
+	    NEW.aggregate_kind, NEW.aggregate_id)"
+	PL/pgSQL function exploration_v3.enforce_aggregate_seal_insert() line 4 at PERFORM
+2026-08-29 01:46:15.984 AEST [74225] STATEMENT:  INSERT INTO exploration_v3.aggregate_seal VALUES
+	   ('EVIDENCE_REFERENCE','evidence:race:child-first',
+	    exploration_v3.aggregate_content_sha('EVIDENCE_REFERENCE','evidence:race:child-first'),
+	    '2026-08-28T00:00:00Z');
+2026-08-29 01:46:16.123 AEST [74243] ERROR:  AGGREGATE_MEMBERSHIP_CONCURRENT_WRITE_RETRY
+2026-08-29 01:46:16.123 AEST [74243] CONTEXT:  PL/pgSQL function exploration_v3.acquire_aggregate_membership_lock(text,text) line 12 at RAISE
+	SQL statement "SELECT exploration_v3.acquire_aggregate_membership_lock(v_kind, v_id)"
+	PL/pgSQL function exploration_v3.reject_sealed_child_insert() line 57 at PERFORM
+2026-08-29 01:46:16.123 AEST [74243] STATEMENT:  INSERT INTO exploration_v3.evidence_locator VALUES
+	   ('locator:race:seal-first:contender','evidence:race:seal-first',
+	    'synthetic://race/seal-first/contender',repeat('2',64),'SYNTHETIC_ONLY');
+2026-08-29 01:46:16.145 AEST [74248] ERROR:  SEALED_AGGREGATE_CHILD_INSERT_FORBIDDEN
+2026-08-29 01:46:16.145 AEST [74248] CONTEXT:  PL/pgSQL function exploration_v3.reject_sealed_child_insert() line 65 at RAISE
+2026-08-29 01:46:16.145 AEST [74248] STATEMENT:  INSERT INTO exploration_v3.evidence_locator VALUES
+	   ('locator:race:seal-first:retry','evidence:race:seal-first',
+	    'synthetic://race/seal-first/retry',repeat('3',64),'SYNTHETIC_ONLY');
+2026-08-29 01:46:16.181 AEST [74255] ERROR:  AGGREGATE_MEMBERSHIP_WRITES_REQUIRE_READ_COMMITTED
+2026-08-29 01:46:16.181 AEST [74255] CONTEXT:  PL/pgSQL function exploration_v3.acquire_aggregate_membership_lock(text,text) line 4 at RAISE
+	SQL statement "SELECT exploration_v3.acquire_aggregate_membership_lock(v_kind, v_id)"
+	PL/pgSQL function exploration_v3.reject_sealed_child_insert() line 57 at PERFORM
+2026-08-29 01:46:16.181 AEST [74255] STATEMENT:  INSERT INTO exploration_v3.evidence_locator VALUES
+	   ('locator:race:repeatable-read','evidence:race:repeatable-read',
+	    'synthetic://race/repeatable-read',repeat('4',64),'SYNTHETIC_ONLY');
+2026-08-29 01:46:16.203 AEST [74260] ERROR:  AGGREGATE_MEMBERSHIP_WRITES_REQUIRE_READ_COMMITTED
+2026-08-29 01:46:16.203 AEST [74260] CONTEXT:  PL/pgSQL function exploration_v3.acquire_aggregate_membership_lock(text,text) line 4 at RAISE
+	SQL statement "SELECT exploration_v3.acquire_aggregate_membership_lock(
+	    NEW.aggregate_kind, NEW.aggregate_id)"
+	PL/pgSQL function exploration_v3.enforce_aggregate_seal_insert() line 4 at PERFORM
+2026-08-29 01:46:16.203 AEST [74260] STATEMENT:  INSERT INTO exploration_v3.aggregate_seal VALUES
+	   ('EVIDENCE_REFERENCE','evidence:race:serializable',
+	    exploration_v3.aggregate_content_sha('EVIDENCE_REFERENCE','evidence:race:serializable'),
+	    '2026-08-28T00:00:00Z');
+2026-08-29 01:46:16.224 AEST [72363] LOG:  checkpoint starting: immediate force wait
+2026-08-29 01:46:16.355 AEST [72363] LOG:  checkpoint complete: wrote 1398 buffers (8.5%); 0 WAL file(s) added, 0 removed, 2 recycled; write=0.079 s, sync=0.034 s, total=0.131 s; sync files=1454, longest=0.001 s, average=0.001 s; distance=24922 kB, estimate=28111 kB; lsn=0/16608F40, redo lsn=0/16608F08
+2026-08-29 01:51:16.366 AEST [72363] LOG:  checkpoint starting: time
+2026-08-29 01:52:38.240 AEST [72363] LOG:  checkpoint complete: wrote 803 buffers (4.9%); 0 WAL file(s) added, 0 removed, 0 recycled; write=81.864 s, sync=0.003 s, total=81.874 s; sync files=66, longest=0.001 s, average=0.001 s; distance=2289 kB, estimate=25529 kB; lsn=0/168454E0, redo lsn=0/168454A8
+2026-08-29 01:53:42.769 AEST [72362] LOG:  received fast shutdown request
+2026-08-29 01:53:42.769 AEST [72362] LOG:  aborting any active transactions
+2026-08-29 01:53:42.770 AEST [72362] LOG:  background worker "logical replication launcher" (PID 72368) exited with exit code 1
+2026-08-29 01:53:42.770 AEST [72363] LOG:  shutting down
+2026-08-29 01:53:42.770 AEST [72363] LOG:  checkpoint starting: shutdown immediate
+2026-08-29 01:53:42.771 AEST [72363] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=22976 kB; lsn=0/16845590, redo lsn=0/16845590
+2026-08-29 01:53:42.775 AEST [72362] LOG:  database system is shut down

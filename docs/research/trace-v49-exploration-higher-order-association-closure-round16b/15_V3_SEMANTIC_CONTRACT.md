@@ -8,7 +8,7 @@ This checkpoint establishes an additive `trace/exploration/v3` semantic boundary
 
 ## Implemented boundary
 
-The 10 Draft 2020-12 schemas distinguish governed scopes, vocabulary concepts, bounded concept senses, pair and higher-order association revisions, participant incidences, evidence and governed review, fact-derived activation, uncertainty, first-class composition-coherence review, association realizations, compositions, bipartite navigation, workflows, exports, the normative hash-binding contract, and the one-way v2-pair adapter. Higher-order projection is explicitly `NONE`.
+The 11 Draft 2020-12 schemas distinguish governed scopes, vocabulary concepts, bounded concept senses, pair and higher-order association revisions, participant incidences, evidence and governed review, fact-derived activation, uncertainty, first-class composition-coherence review, association realizations, compositions, bipartite navigation, workflows, exports, the normative hash-binding contract, and the one-way v2-pair adapter. Higher-order projection is explicitly `NONE`.
 
 Association semantic hashes and presentation hashes are independently bound. Composition and association counts are separate. The input manifest pins the v2 compatibility surface and the checkpoint-007 method and review evidence used to define this contract.
 

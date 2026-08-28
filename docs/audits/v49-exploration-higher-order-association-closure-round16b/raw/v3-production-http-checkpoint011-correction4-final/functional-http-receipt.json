@@ -1,0 +1,30 @@
+{
+  "active_empty_collection_count": 12,
+  "allowed_methods": "GET, HEAD, OPTIONS",
+  "api_base": "/api/trace/v3/exploration",
+  "case_count": 160,
+  "checked_utc": "2026-08-28T16:02:07.433Z",
+  "control_collection_count": 12,
+  "failure_count": 0,
+  "pass_count": 160,
+  "performance_interpretation": "OBSERVATIONAL_NO_SLO_OR_PRODUCTION_CAPACITY_CLAIM",
+  "read_model_sha256": "f1ae8a35895b27c15fb3d9b42828b8611633ee8ee7e2cbc825772b590304351b",
+  "representative_control_ids": {
+    "association-realizations": "realization:v3:01f16337458b5f2c47a06979",
+    "associations": "association:v3:f7ce2e398d04ce4ae2292216",
+    "composition-coherence-reviews": "composition-review:v3:4f3fcd11a046c03ab04d53fc",
+    "compositions": "composition:v3:afb08a5e8c8e7524e633d455",
+    "concept-senses": "sense:bounded-sense-conflict:1",
+    "concepts": "concept:bounded-sense-conflict:1",
+    "exports": "export:v3:cc480debb3605e2a471cad9a",
+    "incidences": "incidence:068707cd9c4c7f46:01",
+    "navigation-states": "state:v3:d5454be64eb5ad08d6c9f7a7",
+    "scopes": "scope:bounded-sense-conflict",
+    "workflows": "workflow:v3:9be9541212f241d7d9b676e7"
+  },
+  "root_redirect_location": "/api/trace/v3/exploration/capabilities",
+  "root_redirect_status": 308,
+  "schema_version": "trace-exploration-v3-functional-http-receipt-v1",
+  "status": "PASS",
+  "unknown_route_status": 404
+}

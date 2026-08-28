@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "rm",
+    "-f",
+    "database/scripts/__pycache__/schema_hash.cpython-313.pyc",
+    "database/scripts/__pycache__/verify_v50_round16b_manifest.cpython-313.pyc"
+  ],
+  "command": "rm -f database/scripts/__pycache__/schema_hash.cpython-313.pyc database/scripts/__pycache__/verify_v50_round16b_manifest.cpython-313.pyc",
+  "command_id": "1787932822904-cp011-remove-ignored-database-pycaches",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 7,
+  "end_timestamp_utc": "2026-08-28T16:00:22Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp011-remove-ignored-database-pycaches",
+  "phase_id": "CHECKPOINT-011-RUNTIME-INTEGRATION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T16:00:22Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

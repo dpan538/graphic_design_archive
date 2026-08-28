@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "sh",
+    "-c",
+    "for tool in node npm python3 psql postgres initdb pg_ctl createdb; do if command -v \"$tool\" >/dev/null 2>&1; then \"$tool\" --version 2>/dev/null | head -n 1 | sed \"s#^#$tool=#\"; else echo \"$tool=MISSING\"; fi; done; if test -d frontend/node_modules; then echo frontend_node_modules=PRESENT; else echo frontend_node_modules=MISSING; fi"
+  ],
+  "command": "sh -c 'for tool in node npm python3 psql postgres initdb pg_ctl createdb; do if command -v \"$tool\" >/dev/null 2>&1; then \"$tool\" --version 2>/dev/null | head -n 1 | sed \"s#^#$tool=#\"; else echo \"$tool=MISSING\"; fi; done; if test -d frontend/node_modules; then echo frontend_node_modules=PRESENT; else echo frontend_node_modules=MISSING; fi'",
+  "command_id": "1787921222831-runtime-database-toolchain-preflight",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 493,
+  "end_timestamp_utc": "2026-08-28T12:47:03Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "runtime-database-toolchain-preflight",
+  "phase_id": "CHECKPOINT-011-RUNTIME",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T12:47:02Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "ef964d42d821c40078e0c4052efdd180c5b9cab532db79b237b0b072056cdf12",
+  "timed_out": false
+}

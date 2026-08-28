@@ -24,9 +24,11 @@
     "interaction": {
       "production_export_count": 0,
       "production_state_count": 0,
+      "production_transition_count": 0,
       "production_workflow_count": 0,
       "synthetic_export_count": 1,
       "synthetic_state_count": 1,
+      "synthetic_transition_count": 0,
       "synthetic_workflow_count": 1
     },
     "realizations_and_compositions": {
@@ -48,15 +50,15 @@
       "synthetic_scope_count": 6
     }
   },
-  "count_taxonomy_canonical_sha256": "2d21482dadf13979da10d01a04c24733f66964572e90ef43beac04aae614138f",
+  "count_taxonomy_canonical_sha256": "1866bbf8e86b85cc063ce144ceb2d2f189c4d018c47293b13b4ca6d507f83cc3",
   "count_taxonomy_reconstruction_status": "PASS",
   "fixture_json_schema_validation_failure_count": 0,
   "fixture_json_schema_validation_status": "PASS",
   "governed_concept_count": 21,
   "governed_concept_sense_count": 21,
   "governed_scope_count": 6,
-  "hash_binding_contract_canonical_sha256": "1da5396fb18dd49c328c30ee03386bebb07c7837beda38496b099b5c5e514962",
-  "hash_binding_count": 12,
+  "hash_binding_contract_canonical_sha256": "8d3c5416dbd74b015d578e7de4a638f2d6de1901b700443a384207136ca71e24",
+  "hash_binding_count": 13,
   "identity_branch_test_receipt_count": 4,
   "implicit_pair_projection_count": 0,
   "independent_verification_status": "PENDING_SEPARATE_IMPLEMENTATION",
@@ -70,7 +72,7 @@
   "production_active_concept_sense_count": 0,
   "production_active_pending_review_count": 0,
   "production_product_eligible_count": 0,
-  "schema_document_count": 10,
+  "schema_document_count": 11,
   "schema_validation_failure_count": 0,
   "schema_validation_status": "PASS",
   "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",

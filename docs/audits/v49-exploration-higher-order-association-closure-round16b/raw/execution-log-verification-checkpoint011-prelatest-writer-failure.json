@@ -1,0 +1,42 @@
+{
+  "checkpoint_verification": {
+    "checkpoint_count": 10,
+    "checkpoint_ids": [
+      "CHECKPOINT-001",
+      "CHECKPOINT-002",
+      "CHECKPOINT-003",
+      "CHECKPOINT-004",
+      "CHECKPOINT-005",
+      "CHECKPOINT-006",
+      "CHECKPOINT-007",
+      "CHECKPOINT-008",
+      "CHECKPOINT-009",
+      "CHECKPOINT-010"
+    ],
+    "present": true
+  },
+  "command_count": 351,
+  "event_count": 702,
+  "fail_event_count": 28,
+  "failure_codes": [
+    "LATEST_WRITER_HASH:248:docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-fixtures-v1.json",
+    "LATEST_WRITER_HASH:302:docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-build-receipt-v1.json",
+    "LATEST_WRITER_HASH:328:docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-output-manifest-v1.tsv",
+    "LATEST_WRITER_HASH:444:docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv",
+    "LATEST_WRITER_HASH:444:docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json",
+    "LATEST_WRITER_HASH:454:generated/trace-exploration-v3",
+    "LATEST_WRITER_HASH:536:frontend/.next",
+    "LATEST_WRITER_HASH:546:/private/tmp/round3i-audit-pg.7bOBg4/postgresql-round16b-restart-correction1.log",
+    "LATEST_WRITER_HASH:578:docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json",
+    "LATEST_WRITER_HASH:592:frontend/.next/BUILD_ID"
+  ],
+  "legacy_event_count": 2,
+  "pass_event_count": 323,
+  "schema_version": "trace-round16b-execution-log-verification/v1",
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "started_event_count": 351,
+  "status": "FAIL",
+  "warning_codes": [
+    "LEGACY_BOOTSTRAP_EVENTS_PRE_COMMAND_ID_SCHEMA=2"
+  ]
+}

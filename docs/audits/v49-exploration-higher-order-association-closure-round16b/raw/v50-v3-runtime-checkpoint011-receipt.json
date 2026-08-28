@@ -1,0 +1,412 @@
+{
+  "artifact_hashes": {
+    "database_freeze_manifest": {
+      "path": "database/FREEZE_V49.json",
+      "sha256": "f0dda59dd515ba243eaf213bce9f42513727f1ab0a44685635921c3759a7d22e"
+    },
+    "database_integrity_function": {
+      "path": "database/functions/020_exploration_v3_integrity.sql",
+      "sha256": "a7b8dff684f5a2b77eda64ccbd6b50454d1d62ad6b2009805a34c2d5792eb2d8"
+    },
+    "database_manifest": {
+      "path": "database/schema-manifest-v50-round16b.json",
+      "sha256": "bac907114133ea9b261fdff426434365f020ba92bd0e377b8b2d9629438319c3"
+    },
+    "database_replay_receipt": {
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011.json",
+      "sha256": "7034cf1474d1baeec36d09033f28e35ae2d58f754009ebe194f5a9102725b83b"
+    },
+    "http_verification_summary": {
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-production-http-checkpoint011-correction4-final/verification-summary.json",
+      "sha256": "44f2999a1f417f723b660e54bf8d979965bc5cd88a12849c51ec492be2521607"
+    },
+    "report": {
+      "path": "docs/research/trace-v49-exploration-higher-order-association-closure-round16b/21_V50_DATABASE_AND_V3_RUNTIME.md",
+      "sha256": "718d0853093e03e7340588ed3341c12342d15e3facb335b1df3a25e73cabc5ce"
+    },
+    "runtime_checksum_ledger": {
+      "path": "frontend/generated/trace-exploration-v3/CHECKSUMS.sha256",
+      "sha256": "45b0d047fa103ae3fb56b31909d8aa3bfa4f3fc586131891b60ab5bdfa70b243"
+    },
+    "runtime_independent_receipt": {
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-runtime-independent-verification-v1.json",
+      "sha256": "978c12415b6cd8e4406c557598b5e5c71ee91d2a45565f1b7c0f60f47ba3046c"
+    },
+    "runtime_manifest": {
+      "path": "frontend/generated/trace-exploration-v3/manifest.json",
+      "sha256": "8346574defad9dcb16f49202f88d0aeb25c11440deb41fe5623f515f6c28e9a1"
+    },
+    "runtime_read_model": {
+      "path": "frontend/generated/trace-exploration-v3/read-model.json",
+      "sha256": "f1ae8a35895b27c15fb3d9b42828b8611633ee8ee7e2cbc825772b590304351b"
+    },
+    "semantic_independent_receipt": {
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v3-semantic-contract-independent-verification.json",
+      "sha256": "bcd87f7bf83d86e86b274909c067f6c073463f11f33c4d1b70c1e170b0f60668"
+    }
+  },
+  "authority": {
+    "expected_origin_main_sha": "8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e",
+    "parent_checkpoint_sha": "dbf0fed447c5398468714e49d5322587f29983e3",
+    "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+    "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
+    "work_branch": "codex/trace-v49-exploration-higher-order-association-closure-round16b"
+  },
+  "capability_boundary": {
+    "association_and_composition_identity_separate": true,
+    "backend_association_arity_support": "PAIR_2_OR_HIGHER_ORDER_3_PLUS_NO_FIXED_SCHEMA_MAXIMUM",
+    "evidence_claim": "RESEARCH_SCHEMA_AND_RUNTIME_CAPABILITY_ONLY",
+    "governed_product_arity_bound": null,
+    "implicit_pair_projection_allowed": false,
+    "production_fact_claim": false,
+    "research_controls_are_active_facts": false
+  },
+  "checkpoint": {
+    "id": "checkpoint-011",
+    "number": 11
+  },
+  "closure_flags": {
+    "computational_space_closure": false,
+    "function3_closure": false,
+    "global_composition_coherence_closure": false,
+    "higher_order_association_closure": false,
+    "pair_association_closure": false,
+    "product_association_reachability_closure": false
+  },
+  "command_ids": {
+    "database_manifest_verification": [
+      "1787932356642-cp011-v50-manifest-final-frozen",
+      "1787932374931-cp011-v50-manifest-final-independent-audit-correction",
+      "1787932996914-cp011-final-check-v50-manifest"
+    ],
+    "database_replay_2317": {
+      "dump": "1787931995633-cp011-v50-dump-2317-final",
+      "replay": "1787931874817-cp011-v50-replay-2317-final-correction2",
+      "schema_hash": "1787932001611-cp011-v50-schema-hash-2317-final",
+      "test": "1787931899343-cp011-v50-test-2317-final-correction2"
+    },
+    "database_replay_2318": {
+      "dump": "1787932010894-cp011-v50-dump-2318-final",
+      "replay": "1787931961518-cp011-v50-replay-2318-final",
+      "schema_hash": "1787932015817-cp011-v50-schema-hash-2318-final",
+      "test": "1787931974425-cp011-v50-test-2318-final"
+    },
+    "http_final_governed": "1787932926489-cp011-v3-production-http-load-memory-final-governed",
+    "runtime_final": {
+      "independent": "1787932979590-cp011-final-check-v3-runtime-independent",
+      "primary": "1787932979567-cp011-final-check-v3-runtime-primary",
+      "typescript_api": "1787932979641-cp011-final-test-v3-runtime-api"
+    },
+    "semantic_independent_final": {
+      "check": "1787932851796-cp011-check-v3-semantic-contract-independent-final-v50",
+      "final_gate": "1787932996893-cp011-final-check-v3-semantic-independent",
+      "write": "1787932845165-cp011-write-v3-semantic-contract-independent-final-v50"
+    }
+  },
+  "database": {
+    "database_version": 50,
+    "fresh_replays": [
+      {
+        "database": "gda_v50_round16b_2317",
+        "fixture_residue": 0,
+        "normalized_schema_sha256": "1152a494e6b64595c9f9291c1d314a9434cb763c7f2a02512d2768e286f571b4",
+        "replay_status": "PASS",
+        "schema_count": 11,
+        "test_status": "PASS"
+      },
+      {
+        "database": "gda_v50_round16b_2318",
+        "fixture_residue": 0,
+        "normalized_schema_sha256": "1152a494e6b64595c9f9291c1d314a9434cb763c7f2a02512d2768e286f571b4",
+        "replay_status": "PASS",
+        "schema_count": 11,
+        "test_status": "PASS"
+      }
+    ],
+    "normalized_schema_sha256": "1152a494e6b64595c9f9291c1d314a9434cb763c7f2a02512d2768e286f571b4",
+    "normalized_schemas_identical": true,
+    "object_inventory": {
+      "integrity_function_count": 28,
+      "table_count": 35,
+      "view_count": 26
+    },
+    "postgresql_version": "16.13",
+    "race_evidence": {
+      "checksums_sha256_2317": "595efb06ae1508b3f2cf952e3d0f1af2e9bd70b12bd4fcde93a530b3b70442ab",
+      "checksums_sha256_2318": "595efb06ae1508b3f2cf952e3d0f1af2e9bd70b12bd4fcde93a530b3b70442ab",
+      "child_first_included_count": 1,
+      "child_first_loser_sqlstate": "40001",
+      "disposable_databases_dropped": true,
+      "repeatable_read_sqlstate": "25000",
+      "seal_first_child_count": 0,
+      "seal_first_loser_sqlstate": "40001",
+      "seal_first_retry_sqlstate": "55000",
+      "serializable_sqlstate": "25000"
+    },
+    "v49_freeze": {
+      "frozen_file_count": 126,
+      "frozen_file_mutation_count": 0,
+      "replay_prefix_file_count": 40,
+      "replay_prefix_order_sha256": "4d7ad0949a89d9d685908df1425951d032d310c7c21b7cc08c25960f1b4f684f"
+    }
+  },
+  "evidence_cutoff_utc": "2026-08-28T16:03:17Z",
+  "history_and_delivery": {
+    "deployment_performed": false,
+    "force_push_used": false,
+    "history_rewritten": false,
+    "origin_main_rewritten": false,
+    "production_activation_performed": false,
+    "production_data_imported": false,
+    "rollback_tag_pushed": false
+  },
+  "http_verification": {
+    "canonical_command_id": "1787932926489-cp011-v3-production-http-load-memory-final-governed",
+    "case_count": 1168,
+    "case_failure_count": 0,
+    "case_pass_count": 1168,
+    "case_phase_counts": {
+      "artifact_check": 1,
+      "concurrency": 500,
+      "control_export_replay": 7,
+      "functional_http": 160,
+      "sustained_read": 500
+    },
+    "concurrency": {
+      "failure_count": 0,
+      "levels": [
+        {
+          "concurrency": 1,
+          "duration_ms": 168.387999990955,
+          "failure_count": 0,
+          "latency_ms": {
+            "maximum": 3.1510000117123127,
+            "minimum": 1.0911669814959168,
+            "p50": 1.5191659913398325,
+            "p95": 2.21635868656449,
+            "p99": 2.491494561545554
+          },
+          "request_count": 100,
+          "response_bytes": 104793,
+          "throughput_requests_per_second": 593.866546341613
+        },
+        {
+          "concurrency": 5,
+          "duration_ms": 104.12758309394121,
+          "failure_count": 0,
+          "latency_ms": {
+            "maximum": 8.682291954755783,
+            "minimum": 2.259791945107281,
+            "p50": 4.901583539322019,
+            "p95": 7.423960097366943,
+            "p99": 8.348166946088897
+          },
+          "request_count": 100,
+          "response_bytes": 112892,
+          "throughput_requests_per_second": 960.3603294026577
+        },
+        {
+          "concurrency": 10,
+          "duration_ms": 90.55924997664988,
+          "failure_count": 0,
+          "latency_ms": {
+            "maximum": 12.342042056843638,
+            "minimum": 2.278083935379982,
+            "p50": 8.436916978098452,
+            "p95": 10.71843394311145,
+            "p99": 11.668718222063038
+          },
+          "request_count": 100,
+          "response_bytes": 99971,
+          "throughput_requests_per_second": 1104.2494281454888
+        },
+        {
+          "concurrency": 25,
+          "duration_ms": 94.97558395378292,
+          "failure_count": 0,
+          "latency_ms": {
+            "maximum": 24.888125015422702,
+            "minimum": 4.635541001334786,
+            "p50": 22.129645512904972,
+            "p95": 24.37928119325079,
+            "p99": 24.81358597637154
+          },
+          "request_count": 100,
+          "response_bytes": 108069,
+          "throughput_requests_per_second": 1052.9021864046877
+        },
+        {
+          "concurrency": 50,
+          "duration_ms": 106.73175007104874,
+          "failure_count": 0,
+          "latency_ms": {
+            "maximum": 55.21129094995558,
+            "minimum": 7.580125005915761,
+            "p50": 40.87893752148375,
+            "p95": 54.486532969167456,
+            "p99": 55.19710134132765
+          },
+          "request_count": 100,
+          "response_bytes": 109571,
+          "throughput_requests_per_second": 936.92832670159
+        }
+      ],
+      "requests_per_level": 100
+    },
+    "external_network_used": false,
+    "functional_http": {
+      "active_empty_collection_count": 12,
+      "case_count": 160,
+      "control_collection_count": 12,
+      "failure_count": 0,
+      "pass_count": 160
+    },
+    "loopback_only": true,
+    "memory": {
+      "peak_cpu_percent_interval": 130.31579861865254,
+      "peak_event_loop_delay_max_ms": 137.625599,
+      "peak_event_loop_delay_mean_ms": 15.397100307692307,
+      "peak_event_loop_delay_p95_ms": 12.091391,
+      "peak_event_loop_delay_p99_ms": 111.083519,
+      "peak_external_bytes": 3995463,
+      "peak_heap_total_bytes": 111722496,
+      "peak_heap_used_bytes": 82718456,
+      "peak_rss_bytes": 232816640,
+      "probe_row_count": 13,
+      "process_count": 1
+    },
+    "mode": "PRODUCTION_HTTP",
+    "performance_interpretation": "OBSERVATIONAL_NO_SLO_OR_PRODUCTION_CAPACITY_CLAIM",
+    "port": 59447,
+    "read_model_sha256": "f1ae8a35895b27c15fb3d9b42828b8611633ee8ee7e2cbc825772b590304351b",
+    "server_termination": {
+      "process_group_residual": false,
+      "return_code": 0,
+      "sigkill_used": false,
+      "terminated": true,
+      "termination_requested": true
+    },
+    "summary_sha256": "44f2999a1f417f723b660e54bf8d979965bc5cd88a12849c51ec492be2521607",
+    "sustained_read": {
+      "concurrency": 10,
+      "duration_completion_ratio": 0.9814637750037946,
+      "duration_ms": 9814.637750037946,
+      "failure_count": 0,
+      "latency_ms": {
+        "maximum": 23.60520896036178,
+        "minimum": 1.2891249498352408,
+        "p50": 4.867124545853585,
+        "p95": 10.780605662148444,
+        "p99": 18.262569144135327
+      },
+      "observed_duration_seconds": 9.814637750037946,
+      "planned_duration_seconds": 10.0,
+      "request_cap": 500,
+      "request_count": 500,
+      "response_bytes": 519103,
+      "termination_reason": "REQUEST_CAP_AFTER_PACED_BOUNDED_DURATION",
+      "throughput_requests_per_second": 50.94431529050238
+    }
+  },
+  "preserved_failures_and_corrections": [
+    {
+      "correction": "Split the composite and scope SELECT targets, repinned the function, discarded the partial database, and recreated 2317 from empty.",
+      "current_status": "SUPERSEDED_BY_PASSING_CORRECTION2_REPLAY",
+      "failure_evidence": "1787931592680-cp011-v50-replay-2317-final",
+      "failure_kind": "PLPGSQL_COMPOSITE_MULTI_TARGET_INTO"
+    },
+    {
+      "correction": "Split the unclosed boolean expression into equivalent fail-closed checks, repinned the function, discarded the partial database, and recreated 2317 from empty.",
+      "current_status": "SUPERSEDED_BY_PASSING_CORRECTION2_REPLAY",
+      "failure_evidence": "1787931711992-cp011-v50-replay-2317-final-correction1",
+      "failure_kind": "PLPGSQL_FINAL_DISPOSITION_PARENTHESIS"
+    },
+    {
+      "correction": "Added frozen trust anchors, complete normative hash and identifier reconstruction, participant-scope parity, twelve collection list/item routes, explicit workflow transition membership, exact DTO boundaries, and derived metrics.",
+      "current_status": "PASS_TS_408_RUNTIME_INDEPENDENT_15_OF_15_CORRUPTIONS_84_OF_84_HTTP_1168_OF_1168",
+      "failure_evidence": "R16B-CP011-DIAG-057",
+      "failure_kind": "RUNTIME_FINAL_AUDIT_GAPS"
+    },
+    {
+      "correction": "Repeated the production build with approved network access after preserving the sandbox-only DNS failure.",
+      "current_status": "PASS_APPROVED_NETWORK_PRODUCTION_BUILD",
+      "failure_evidence": "R16B-CP011-DIAG-059",
+      "failure_kind": "SANDBOX_GOOGLE_FONT_DNS"
+    },
+    {
+      "correction": "Preserved the bind-denied correction2 receipts and ran the finalized verifier with approved loopback access; correction4-final is the canonical governed result.",
+      "current_status": "PASS_CORRECTION4_FINAL_1168_OF_1168",
+      "failure_evidence": "R16B-CP011-DIAG-060",
+      "failure_kind": "SANDBOX_LOOPBACK_BIND_DENIAL"
+    }
+  ],
+  "remaining_work": {
+    "next_checkpoint": "FRESH_RECURSIVE_GAP_AUDIT_AND_EVIDENCE_BOUNDED_CLOSURE_DECISION",
+    "resolved_by_this_checkpoint": false,
+    "unresolved_boundaries": [
+      "candidate_association_universe_completeness",
+      "higher_order_evidence_review_completeness",
+      "global_composition_coherence",
+      "governed_product_arity_bound",
+      "product_association_reachability",
+      "recursive_gap_audit"
+    ]
+  },
+  "runtime": {
+    "active_counts": {
+      "association_realizations": 0,
+      "associations": 0,
+      "composition_coherence_reviews": 0,
+      "compositions": 0,
+      "concept_senses": 0,
+      "concepts": 0,
+      "exports": 0,
+      "incidences": 0,
+      "navigation_states": 0,
+      "scopes": 0,
+      "transitions": 0,
+      "workflows": 0
+    },
+    "active_pending_review_count": 0,
+    "active_product_collection_count": 12,
+    "active_product_record_count": 0,
+    "control_counts": {
+      "association_realizations": 10,
+      "associations": 14,
+      "composition_coherence_reviews": 2,
+      "compositions": 2,
+      "concept_senses": 21,
+      "concepts": 21,
+      "exports": 1,
+      "incidences": 37,
+      "navigation_states": 1,
+      "scopes": 6,
+      "transitions": 0,
+      "workflows": 1
+    },
+    "implicit_hyperedge_projection_count": 0,
+    "independent_verification": {
+      "check_count": 15,
+      "corruption_control_count": 84,
+      "primary_generator_imported": false,
+      "primary_generator_invoked": false,
+      "primary_projection_code_reuse_reviewed_absent": true,
+      "status": "PASS"
+    },
+    "production_activation_count": 0,
+    "research_controls_only": true,
+    "semantic_independent_verification": {
+      "check_count": 798,
+      "receipt_sha256": "bcd87f7bf83d86e86b274909c067f6c073463f11f33c4d1b70c1e170b0f60668",
+      "status": "PASS"
+    },
+    "transition_derivation_policy": "NONE_NO_V2_INHERITANCE",
+    "transitions_available": false,
+    "typescript_runtime_api_verification": {
+      "check_count": 408,
+      "status": "PASS"
+    }
+  },
+  "schema": "trace-round16b-v50-v3-runtime-checkpoint011-receipt/v1",
+  "status": "PASS_RESEARCH_CAPABILITY_CLOSURE_WITHHELD"
+}

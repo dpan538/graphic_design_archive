@@ -1,0 +1,36 @@
+{
+  "api_version": "trace-exploration/v3",
+  "artifact_sha256": {
+    "artifact-check-receipt.json": "dc0939ddbb9ecc55c9daf97740d1079eb3a07a49b4fdf563fbf7d1fd09a9c005",
+    "concurrency-receipt.json": "846e946fca51cac703b04241c7717ae37efe504acc7a83fa73896004a84ea720",
+    "control-export-replay-receipt.json": "28f8d10375f68f362c19fa514ff9b973d8ac2e2ba6bb21d84d2fd64ac8413804",
+    "functional-http-receipt.json": "becbe1c75fc06856013d727c0205bf3aac0af728b34894b1c9ad3e066043251f",
+    "http-cases.tsv": "9066db4445afbf6bdef3ac93b0a8e85b8de41172bf9a85729dcd8f36aada896f",
+    "runtime-memory-receipt.json": "e53d169f43695e9d29d6e3d414b18de314398c90b32c163d35d06b550dd5a34d",
+    "runtime-probe.jsonl": "940595707fd4f23a1d3db30235b6c58f8f0b382c6d124fe9c3ab8e6c51c2f3c7",
+    "server-output.txt": "c4979b3902f9f75fbe093d4742a03cf5bbfad4d9beca8ce4f6df8450c4af5c8b",
+    "startup-receipt.json": "cff39cc24a016f9c4ae0ea9b65cb2367536528f915d4219793c39b1fa9e107e0",
+    "sustained-read-receipt.json": "bebcb9da025b893607092a8f2fdffe629eca276232bdc3b439b0c96ef459da8e"
+  },
+  "case_count": 1168,
+  "case_failure_count": 0,
+  "case_pass_count": 1168,
+  "completed_utc": "2026-08-28T15:59:09.295Z",
+  "errors": [],
+  "external_network_used": false,
+  "loopback_only": true,
+  "mode": "PRODUCTION_HTTP",
+  "performance_interpretation": "OBSERVATIONAL_NO_SLO_OR_PRODUCTION_CAPACITY_CLAIM",
+  "port": 59443,
+  "read_model_sha256": "f1ae8a35895b27c15fb3d9b42828b8611633ee8ee7e2cbc825772b590304351b",
+  "schema_version": "trace-exploration-v3-production-http-verification-summary-v1",
+  "server_termination": {
+    "process_group_residual": false,
+    "return_code": 0,
+    "sigkill_used": false,
+    "terminated": true,
+    "termination_requested": true
+  },
+  "started_utc": "2026-08-28T15:58:57.593Z",
+  "status": "PASS"
+}

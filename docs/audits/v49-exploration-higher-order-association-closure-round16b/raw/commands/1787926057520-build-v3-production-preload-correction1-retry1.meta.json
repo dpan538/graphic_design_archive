@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "npm",
+    "--prefix",
+    "frontend",
+    "run",
+    "build"
+  ],
+  "command": "npm --prefix frontend run build",
+  "command_id": "1787926057520-build-v3-production-preload-correction1-retry1",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 85682,
+  "end_timestamp_utc": "2026-08-28T14:09:03Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "build-v3-production-preload-correction1-retry1",
+  "phase_id": "CHECKPOINT-011-PERFORMANCE-CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T14:07:37Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "722d2f5102f78b5b4111ed27ebe5a86d5ccb1f8f4cd78c600978d332996ce5f2",
+  "timed_out": false
+}

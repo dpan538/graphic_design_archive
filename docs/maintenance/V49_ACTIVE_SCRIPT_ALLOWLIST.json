@@ -1,6 +1,6 @@
 {
   "format": "gda-v49-active-script-allowlist/v1",
-  "scriptCount": 306,
+  "scriptCount": 309,
   "unknownClassificationCount": 0,
   "scripts": [
     {
@@ -2864,6 +2864,16 @@
       "decision": "KEEP_ACTIVE"
     },
     {
+      "path": "scripts/trace_round16b/build_exploration_v3_runtime_read_model.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": true,
+      "current_api_required": true,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
       "path": "scripts/trace_round16b/capture_source_lfs_manifest.py",
       "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
       "current_runtime_required": false,
@@ -2978,6 +2988,26 @@
       "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
       "current_runtime_required": false,
       "current_api_required": false,
+      "current_database_required": true,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_v3_runtime_independent.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": true,
+      "current_api_required": true,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_v3_production_http.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": true,
+      "current_api_required": true,
       "current_database_required": false,
       "current_ci_required": false,
       "retained_audit_role": true,

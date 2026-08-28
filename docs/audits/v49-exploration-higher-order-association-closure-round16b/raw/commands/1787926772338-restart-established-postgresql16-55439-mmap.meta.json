@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/postgresql@16/bin/pg_ctl",
+    "start",
+    "-D",
+    "/private/tmp/round3i-audit-pg.7bOBg4",
+    "-l",
+    "/private/tmp/round3i-audit-pg.7bOBg4/postgresql-round16b-restart.log",
+    "-o",
+    "-p 55439 -k /private/tmp -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix"
+  ],
+  "command": "/opt/homebrew/opt/postgresql@16/bin/pg_ctl start -D /private/tmp/round3i-audit-pg.7bOBg4 -l /private/tmp/round3i-audit-pg.7bOBg4/postgresql-round16b-restart.log -o '-p 55439 -k /private/tmp -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix'",
+  "command_id": "1787926772338-restart-established-postgresql16-55439-mmap",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 137,
+  "end_timestamp_utc": "2026-08-28T14:19:32Z",
+  "exit_code": 1,
+  "launch_error": "",
+  "operation_id": "restart-established-postgresql16-55439-mmap",
+  "phase_id": "CHECKPOINT-011-DATABASE-ENVIRONMENT",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T14:19:32Z",
+  "stderr_sha256": "b912a1064609329e80feb4491b30d87f32f0a1e3ac2816dab8684fc280bcea87",
+  "stdout_sha256": "acf6663bfb9ac711bf408caab8ba4de54161af5877454b1e1c4b3abca6050efd",
+  "timed_out": false
+}

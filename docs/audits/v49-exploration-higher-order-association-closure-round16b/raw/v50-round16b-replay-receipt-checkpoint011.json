@@ -1,0 +1,102 @@
+{
+  "schema": "gda-v50.round16b-replay-receipt/v1",
+  "databaseVersion": 50,
+  "checkpoint": 11,
+  "status": "PASS",
+  "postgresqlVersion": "16.13",
+  "freshReplays": [
+    {
+      "database": "gda_v50_round16b_2317",
+      "replayStatus": "PASS",
+      "schemaCount": 11,
+      "testStatus": "PASS",
+      "fixtureResidue": 0,
+      "normalizedSchemaSha256": "1152a494e6b64595c9f9291c1d314a9434cb763c7f2a02512d2768e286f571b4",
+      "commandIds": {
+        "replay": "1787931874817-cp011-v50-replay-2317-final-correction2",
+        "test": "1787931899343-cp011-v50-test-2317-final-correction2",
+        "dump": "1787931995633-cp011-v50-dump-2317-final",
+        "schemaHash": "1787932001611-cp011-v50-schema-hash-2317-final"
+      },
+      "concurrencyEvidence": {
+        "directory": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2317",
+        "checksumsSha256": "595efb06ae1508b3f2cf952e3d0f1af2e9bd70b12bd4fcde93a530b3b70442ab",
+        "perFileSha256": {
+          "child-first.contender.log": "c8d909961d06e09cb09824d8607233dbdd4025620503568d0b28baa6f8dcab57",
+          "child-first.owner.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "child-first.retry-and-invariant.log": "0f4a3ef3ad41d0b137c7d91280c935b22d58bbfd62a253f1fe61344233e5ae53",
+          "createdb.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "dropdb.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "repeatable-read.log": "c63d48f91c995d643abcb7208960908529d44e0573f12815ff727c76c8451d33",
+          "seal-first.contender.log": "e7e8847ac0d1283b12e99e9dbdd8462a35b48d9cadc4edb458a88188ae7360e9",
+          "seal-first.invariant.log": "1ed4bc734b568d639c279b5e8f9254d90a82fe070c4b710445cf6184a106e9bd",
+          "seal-first.owner.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "seal-first.retry.log": "2e313721a75e64d9f7ebace13a9d46a54a9b2a0b24dd0cab81a62a6f108474d5",
+          "serializable.log": "7e533e3ac08ac435bed4b48521a533a5f3bcf3ee34a56e0ed3c3070da5aa9507",
+          "setup-owner.log": "b738151362df7655d7db652c3a28d620ce0a748966c555847ce37e233f68f392"
+        },
+        "childFirstLoserSqlstate": "40001",
+        "sealFirstLoserSqlstate": "40001",
+        "sealFirstRetrySqlstate": "55000",
+        "repeatableReadSqlstate": "25000",
+        "serializableSqlstate": "25000",
+        "childFirstIncludedCount": 1,
+        "sealFirstChildCount": 0,
+        "disposableDatabaseDropped": true
+      }
+    },
+    {
+      "database": "gda_v50_round16b_2318",
+      "replayStatus": "PASS",
+      "schemaCount": 11,
+      "testStatus": "PASS",
+      "fixtureResidue": 0,
+      "normalizedSchemaSha256": "1152a494e6b64595c9f9291c1d314a9434cb763c7f2a02512d2768e286f571b4",
+      "commandIds": {
+        "replay": "1787931961518-cp011-v50-replay-2318-final",
+        "test": "1787931974425-cp011-v50-test-2318-final",
+        "dump": "1787932010894-cp011-v50-dump-2318-final",
+        "schemaHash": "1787932015817-cp011-v50-schema-hash-2318-final"
+      },
+      "concurrencyEvidence": {
+        "directory": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-seal-race/gda_v50_round16b_2318",
+        "checksumsSha256": "595efb06ae1508b3f2cf952e3d0f1af2e9bd70b12bd4fcde93a530b3b70442ab",
+        "perFileSha256": {
+          "child-first.contender.log": "c8d909961d06e09cb09824d8607233dbdd4025620503568d0b28baa6f8dcab57",
+          "child-first.owner.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "child-first.retry-and-invariant.log": "0f4a3ef3ad41d0b137c7d91280c935b22d58bbfd62a253f1fe61344233e5ae53",
+          "createdb.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "dropdb.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "repeatable-read.log": "c63d48f91c995d643abcb7208960908529d44e0573f12815ff727c76c8451d33",
+          "seal-first.contender.log": "e7e8847ac0d1283b12e99e9dbdd8462a35b48d9cadc4edb458a88188ae7360e9",
+          "seal-first.invariant.log": "1ed4bc734b568d639c279b5e8f9254d90a82fe070c4b710445cf6184a106e9bd",
+          "seal-first.owner.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "seal-first.retry.log": "2e313721a75e64d9f7ebace13a9d46a54a9b2a0b24dd0cab81a62a6f108474d5",
+          "serializable.log": "7e533e3ac08ac435bed4b48521a533a5f3bcf3ee34a56e0ed3c3070da5aa9507",
+          "setup-owner.log": "b738151362df7655d7db652c3a28d620ce0a748966c555847ce37e233f68f392"
+        },
+        "childFirstLoserSqlstate": "40001",
+        "sealFirstLoserSqlstate": "40001",
+        "sealFirstRetrySqlstate": "55000",
+        "repeatableReadSqlstate": "25000",
+        "serializableSqlstate": "25000",
+        "childFirstIncludedCount": 1,
+        "sealFirstChildCount": 0,
+        "disposableDatabaseDropped": true
+      }
+    }
+  ],
+  "normalizedSchemasIdentical": true,
+  "normalizedSchemaSha256": "1152a494e6b64595c9f9291c1d314a9434cb763c7f2a02512d2768e286f571b4",
+  "governedCommandIds": [
+    "1787931874817-cp011-v50-replay-2317-final-correction2",
+    "1787931899343-cp011-v50-test-2317-final-correction2",
+    "1787931995633-cp011-v50-dump-2317-final",
+    "1787932001611-cp011-v50-schema-hash-2317-final",
+    "1787931961518-cp011-v50-replay-2318-final",
+    "1787931974425-cp011-v50-test-2318-final",
+    "1787932010894-cp011-v50-dump-2318-final",
+    "1787932015817-cp011-v50-schema-hash-2318-final"
+  ],
+  "supersedes": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/v50-round16b-replay-receipt-checkpoint011-superseded-2315-2316.json"
+}

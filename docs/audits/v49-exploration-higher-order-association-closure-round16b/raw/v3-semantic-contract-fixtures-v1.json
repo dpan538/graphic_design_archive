@@ -3668,9 +3668,11 @@
     "interaction": {
       "production_export_count": 0,
       "production_state_count": 0,
+      "production_transition_count": 0,
       "production_workflow_count": 0,
       "synthetic_export_count": 1,
       "synthetic_state_count": 1,
+      "synthetic_transition_count": 0,
       "synthetic_workflow_count": 1
     },
     "realizations_and_compositions": {
@@ -3705,7 +3707,7 @@
         "association-revision:v3:f02ac42a681d040c725235e9"
       ],
       "composition_revision_id": "composition-revision:v3:1400d8c2cd5ea2fbb60531d4",
-      "export_id": "export:v3:988252318e9039aeb84790d4",
+      "export_id": "export:v3:cc480debb3605e2a471cad9a",
       "pair_projection_policy_preserved": true,
       "presentation": {
         "format": "TRACE_V3_SYNTHETIC_JSON",
@@ -3733,9 +3735,9 @@
         }
       ],
       "realm": "SYNTHETIC_CONTROL",
-      "semantic_sha256": "988252318e9039aeb84790d4e26835d8bc311b98063cae8324de420395fd91c3",
+      "semantic_sha256": "cc480debb3605e2a471cad9a1cb0cbbe463f88a5753c98f2bf519338c4844827",
       "state_id": "state:v3:d5454be64eb5ad08d6c9f7a7",
-      "workflow_id": "workflow:v3:7979d590f9157acacfe4fb8d"
+      "workflow_id": "workflow:v3:9be9541212f241d7d9b676e7"
     }
   ],
   "hash_binding_contract": {
@@ -4239,6 +4241,55 @@
         "object_type": "NAVIGATION_STATE"
       },
       {
+        "collection_pointer": "/transitions/*",
+        "hash_fields": [
+          {
+            "hash_field": "semantic_sha256",
+            "material_name": "transition_semantic",
+            "representation": "LOWERCASE_HEX_64"
+          }
+        ],
+        "identifiers": [
+          {
+            "digest_hex_chars": 24,
+            "digest_material_name": "transition_semantic",
+            "identifier_field": "transition_id",
+            "prefix": "transition:v3:",
+            "suffix_rule": "NONE"
+          }
+        ],
+        "materials": [
+          {
+            "field_mappings": [],
+            "material_name": "transition_semantic",
+            "normalization_rules": [],
+            "output_keys": [
+              "realm",
+              "from_state_id",
+              "to_state_id",
+              "transition_kind",
+              "incidence_id",
+              "association_revision_id",
+              "association_realization_id",
+              "state_mutated"
+            ],
+            "recipe": "DIRECT_FIELD_OBJECT",
+            "source_fields": [
+              "realm",
+              "from_state_id",
+              "to_state_id",
+              "transition_kind",
+              "incidence_id",
+              "association_revision_id",
+              "association_realization_id",
+              "state_mutated"
+            ],
+            "wrapper": "NONE"
+          }
+        ],
+        "object_type": "TRANSITION"
+      },
+      {
         "collection_pointer": "/workflows/*",
         "hash_fields": [
           {
@@ -4268,6 +4319,7 @@
               "association_revision_ids",
               "association_realization_ids",
               "state_ids",
+              "transition_ids",
               "reachable"
             ],
             "recipe": "DIRECT_FIELD_OBJECT",
@@ -4278,6 +4330,7 @@
               "association_revision_ids",
               "association_realization_ids",
               "state_ids",
+              "transition_ids",
               "reachable"
             ],
             "wrapper": "NONE"
@@ -4643,7 +4696,7 @@
     },
     "contract_version": "trace-exploration-v3-hash-binding-contract-1.0.0"
   },
-  "hash_binding_contract_canonical_sha256": "1da5396fb18dd49c328c30ee03386bebb07c7837beda38496b099b5c5e514962",
+  "hash_binding_contract_canonical_sha256": "8d3c5416dbd74b015d578e7de4a638f2d6de1901b700443a384207136ca71e24",
   "identity_branch_test_receipts": [
     {
       "base_canonical_incidence_ids": [
@@ -5543,7 +5596,7 @@
         "composition-revision:v3:1400d8c2cd5ea2fbb60531d4:COMPOSITION_SEMANTIC_HASH_MISMATCH",
         "composition-revision:v3:1400d8c2cd5ea2fbb60531d4:composition_revision_id:CONTRACT_ID_MISMATCH",
         "composition-revision:v3:1400d8c2cd5ea2fbb60531d4:semantic_sha256:CONTRACT_HASH_MISMATCH",
-        "export:v3:988252318e9039aeb84790d4:EXPORT_TRACE_NOT_DERIVED",
+        "export:v3:cc480debb3605e2a471cad9a:EXPORT_TRACE_NOT_DERIVED",
         "realization:v3:a21199e030c9776fcfaaa5f7:HIGHER_ORDER_PAIR_EDGE_FORBIDDEN",
         "realization:v3:a21199e030c9776fcfaaa5f7:REALIZATION_ID_MISMATCH",
         "realization:v3:a21199e030c9776fcfaaa5f7:REALIZATION_SEMANTIC_HASH_MISMATCH",
@@ -5591,7 +5644,7 @@
         "composition-revision:v3:1400d8c2cd5ea2fbb60531d4:COMPOSITION_SEMANTIC_HASH_MISMATCH",
         "composition-revision:v3:1400d8c2cd5ea2fbb60531d4:composition_revision_id:CONTRACT_ID_MISMATCH",
         "composition-revision:v3:1400d8c2cd5ea2fbb60531d4:semantic_sha256:CONTRACT_HASH_MISMATCH",
-        "export:v3:988252318e9039aeb84790d4:EXPORT_TRACE_NOT_DERIVED",
+        "export:v3:cc480debb3605e2a471cad9a:EXPORT_TRACE_NOT_DERIVED",
         "realization:v3:6099a20f0d340c6692112b3e:PAIR_REALIZATION_NOT_EDGE",
         "realization:v3:6099a20f0d340c6692112b3e:REALIZATION_ID_MISMATCH",
         "realization:v3:6099a20f0d340c6692112b3e:REALIZATION_SEMANTIC_HASH_MISMATCH",
@@ -5604,7 +5657,7 @@
       "validator": "FIXTURE_SEMANTIC_INVARIANT"
     },
     {
-      "base_object_ref": "workflow:v3:7979d590f9157acacfe4fb8d",
+      "base_object_ref": "workflow:v3:9be9541212f241d7d9b676e7",
       "expected_error_code": "$/association_realization_ids:MIN_ITEMS",
       "expected_rejected": true,
       "mutation_pointer": "/association_realization_ids",
@@ -5669,7 +5722,7 @@
       "validator": "FIXTURE_SEMANTIC_INVARIANT"
     },
     {
-      "base_object_ref": "export:v3:988252318e9039aeb84790d4",
+      "base_object_ref": "export:v3:cc480debb3605e2a471cad9a",
       "expected_error_code": "$/pair_projection_policy_preserved:CONST",
       "expected_rejected": true,
       "mutation_pointer": "/pair_projection_policy_preserved",
@@ -5916,6 +5969,7 @@
     }
   ],
   "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "transitions": [],
   "v2_pair_adapter_receipts": [
     {
       "adapter_id": "adapter:v3:9e157a206a366de3a5ba0a31",
@@ -5988,12 +6042,13 @@
       "initial_state_id": "state:v3:d5454be64eb5ad08d6c9f7a7",
       "reachable": true,
       "realm": "SYNTHETIC_CONTROL",
-      "semantic_sha256": "7979d590f9157acacfe4fb8d8b21b9e3dc58505fe915ea16a9cebd5591d8fc2c",
+      "semantic_sha256": "9be9541212f241d7d9b676e74b544df45f74c581005afd4dea55d83ac40eecc5",
       "state_ids": [
         "state:v3:d5454be64eb5ad08d6c9f7a7"
       ],
+      "transition_ids": [],
       "transition_kind": "FOLLOW_INCIDENCE",
-      "workflow_id": "workflow:v3:7979d590f9157acacfe4fb8d"
+      "workflow_id": "workflow:v3:9be9541212f241d7d9b676e7"
     }
   ]
 }

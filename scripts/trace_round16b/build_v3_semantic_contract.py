@@ -926,6 +926,25 @@ def build_schemas() -> dict[Path, dict[str, Any]]:
         ),
     )
 
+    transition = schema_document(
+        "transition.schema.json",
+        "TRACE Exploration v3 governed state transition",
+        object_schema(
+            {
+                "transition_id": STRING,
+                "realm": enum("PRODUCTION", "SYNTHETIC_CONTROL"),
+                "from_state_id": STRING,
+                "to_state_id": STRING,
+                "transition_kind": enum("FOLLOW_INCIDENCE", "MOVE_FOCUS", "EXPORT"),
+                "incidence_id": {"type": ["string", "null"]},
+                "association_revision_id": {"type": ["string", "null"]},
+                "association_realization_id": {"type": ["string", "null"]},
+                "state_mutated": {"type": "boolean"},
+                "semantic_sha256": SHA256,
+            }
+        ),
+    )
+
     workflow = schema_document(
         "workflow.schema.json",
         "TRACE Exploration v3 workflow",
@@ -938,6 +957,7 @@ def build_schemas() -> dict[Path, dict[str, Any]]:
                 "association_revision_ids": array(STRING, minimum=1, unique=True),
                 "association_realization_ids": array(STRING, minimum=1, unique=True),
                 "state_ids": array(STRING, minimum=1, unique=True),
+                "transition_ids": array(STRING, unique=True),
                 "reachable": {"type": "boolean"},
                 "semantic_sha256": SHA256,
             }
@@ -1147,9 +1167,11 @@ def build_schemas() -> dict[Path, dict[str, Any]]:
             "interaction": object_schema(
                 {
                     "synthetic_state_count": nonnegative,
+                    "synthetic_transition_count": nonnegative,
                     "synthetic_workflow_count": nonnegative,
                     "synthetic_export_count": nonnegative,
                     "production_state_count": nonnegative,
+                    "production_transition_count": nonnegative,
                     "production_workflow_count": nonnegative,
                     "production_export_count": nonnegative,
                 }
@@ -1228,6 +1250,7 @@ def build_schemas() -> dict[Path, dict[str, Any]]:
                 ),
                 "compositions": array({"$ref": "composition.schema.json"}, minimum=1),
                 "navigation_states": array({"$ref": "navigation-state.schema.json"}, minimum=1),
+                "transitions": array({"$ref": "transition.schema.json"}),
                 "workflows": array({"$ref": "workflow.schema.json"}, minimum=1),
                 "exports": array({"$ref": "export-manifest.schema.json"}, minimum=1),
                 "v2_pair_source_fixtures": array(
@@ -1330,6 +1353,7 @@ def build_schemas() -> dict[Path, dict[str, Any]]:
         SCHEMA_REL / "association.schema.json": association,
         SCHEMA_REL / "composition.schema.json": composition,
         SCHEMA_REL / "navigation-state.schema.json": navigation,
+        SCHEMA_REL / "transition.schema.json": transition,
         SCHEMA_REL / "workflow.schema.json": workflow,
         SCHEMA_REL / "export-manifest.schema.json": export_manifest,
         SCHEMA_REL / "v2-pair-adapter.schema.json": adapter,
@@ -1521,7 +1545,8 @@ def build_hash_binding_contract() -> dict[str, Any]:
     ]
     direct_bindings = [
         ("NAVIGATION_STATE", "/navigation_states/*", "state_id", "state:v3:", ["realm", "composition_revision_id", "nodes", "path", "focus_navigation_node_id", "bipartite_alternation_valid"], "presentation"),
-        ("WORKFLOW", "/workflows/*", "workflow_id", "workflow:v3:", ["realm", "initial_state_id", "transition_kind", "association_revision_ids", "association_realization_ids", "state_ids", "reachable"], None),
+        ("TRANSITION", "/transitions/*", "transition_id", "transition:v3:", ["realm", "from_state_id", "to_state_id", "transition_kind", "incidence_id", "association_revision_id", "association_realization_id", "state_mutated"], None),
+        ("WORKFLOW", "/workflows/*", "workflow_id", "workflow:v3:", ["realm", "initial_state_id", "transition_kind", "association_revision_ids", "association_realization_ids", "state_ids", "transition_ids", "reachable"], None),
         ("EXPORT", "/exports/*", "export_id", "export:v3:", ["realm", "workflow_id", "state_id", "association_revision_ids", "association_realization_ids", "projection_preservation_records", "composition_revision_id", "pair_projection_policy_preserved"], "presentation"),
         ("V2_PAIR_ADAPTER_RECEIPT", "/v2_pair_adapter_receipts/*", "adapter_id", "adapter:v3:", ["direction", "source_contract", "target_contract", "source_pair_id", "source_pair_fixture_sha256", "source_endpoint_ids", "target_association_revision_id", "target_incidence_ids", "endpoint_crosswalk", "input_arity", "output_association_kind", "higher_order_input_allowed", "reverse_conversion_allowed", "semantic_claims_added"], None),
     ]
@@ -2361,6 +2386,7 @@ def build_fixture() -> dict[str, Any]:
             for row in sparse_composition["association_realizations"]
         ),
         "state_ids": [nav_state["state_id"]],
+        "transition_ids": [],
         "reachable": True,
     }
     workflow = {
@@ -2560,6 +2586,7 @@ def build_fixture() -> dict[str, Any]:
         "composition_coherence_reviews": composition_coherence_reviews,
         "compositions": [sparse_composition, renderable_invalid],
         "navigation_states": [nav_state],
+        "transitions": [],
         "workflows": [workflow],
         "exports": [export],
         "v2_pair_source_fixtures": [source_pair_fixture],
@@ -2638,9 +2665,11 @@ def build_fixture() -> dict[str, Any]:
         },
         "interaction": {
             "synthetic_state_count": len(fixture["navigation_states"]),
+            "synthetic_transition_count": len(fixture["transitions"]),
             "synthetic_workflow_count": len(fixture["workflows"]),
             "synthetic_export_count": len(fixture["exports"]),
             "production_state_count": 0,
+            "production_transition_count": 0,
             "production_workflow_count": 0,
             "production_export_count": 0,
         },
@@ -2766,6 +2795,9 @@ def reconstruct_count_taxonomy(fixture: dict[str, Any]) -> dict[str, Any]:
             "synthetic_state_count": sum(
                 row["realm"] == "SYNTHETIC_CONTROL" for row in fixture["navigation_states"]
             ),
+            "synthetic_transition_count": sum(
+                row["realm"] == "SYNTHETIC_CONTROL" for row in fixture["transitions"]
+            ),
             "synthetic_workflow_count": sum(
                 row["realm"] == "SYNTHETIC_CONTROL" for row in fixture["workflows"]
             ),
@@ -2774,6 +2806,9 @@ def reconstruct_count_taxonomy(fixture: dict[str, Any]) -> dict[str, Any]:
             ),
             "production_state_count": sum(
                 row["realm"] == "PRODUCTION" for row in fixture["navigation_states"]
+            ),
+            "production_transition_count": sum(
+                row["realm"] == "PRODUCTION" for row in fixture["transitions"]
             ),
             "production_workflow_count": sum(
                 row["realm"] == "PRODUCTION" for row in fixture["workflows"]
@@ -3619,6 +3654,7 @@ def validate_hash_binding_reconstruction(fixture: dict[str, Any]) -> list[str]:
         "CONCEPT_SENSE": fixture["concept_senses"],
         "COMPOSITION_COHERENCE_REVIEW": fixture["composition_coherence_reviews"],
         "NAVIGATION_STATE": fixture["navigation_states"],
+        "TRANSITION": fixture["transitions"],
         "WORKFLOW": fixture["workflows"],
         "EXPORT": fixture["exports"],
         "V2_PAIR_ADAPTER_RECEIPT": fixture["v2_pair_adapter_receipts"],
@@ -4158,12 +4194,43 @@ def validate_fixture(fixture: dict[str, Any]) -> list[str]:
         if state["bipartite_alternation_valid"] != derived_bipartite:
             failures.append(f"{state['state_id']}:BIPARTITE_FLAG_NOT_DERIVED")
     state_by_id = {row["state_id"]: row for row in fixture["navigation_states"]}
+    transition_by_id: dict[str, dict[str, Any]] = {}
+    for transition in fixture["transitions"]:
+        transition_semantic = {
+            key: transition[key]
+            for key in (
+                "realm", "from_state_id", "to_state_id", "transition_kind",
+                "incidence_id", "association_revision_id",
+                "association_realization_id", "state_mutated",
+            )
+        }
+        transition_id = transition["transition_id"]
+        if transition_id in transition_by_id:
+            failures.append(f"{transition_id}:TRANSITION_ID_DUPLICATE")
+        transition_by_id[transition_id] = transition
+        if (
+            transition_id != f"transition:v3:{digest(transition_semantic)[:24]}"
+            or transition["semantic_sha256"] != digest(transition_semantic)
+        ):
+            failures.append(f"{transition_id}:TRANSITION_SEMANTIC_BINDING_MISMATCH")
+        source = state_by_id.get(transition["from_state_id"])
+        target = state_by_id.get(transition["to_state_id"])
+        if source is None or target is None:
+            failures.append(f"{transition_id}:TRANSITION_ENDPOINT_MISSING")
+            continue
+        if not (
+            source["realm"] == transition["realm"] == target["realm"]
+            and transition["state_mutated"]
+            is (transition["from_state_id"] != transition["to_state_id"])
+        ):
+            failures.append(f"{transition_id}:TRANSITION_REALM_OR_MUTATION_MISMATCH")
+    selected_transition_ids: set[str] = set()
     for workflow in fixture["workflows"]:
         semantic = {
             key: workflow[key]
             for key in (
                 "realm", "initial_state_id", "transition_kind", "association_revision_ids",
-                "association_realization_ids", "state_ids", "reachable",
+                "association_realization_ids", "state_ids", "transition_ids", "reachable",
             )
         }
         if workflow["workflow_id"] != f"workflow:v3:{digest(semantic)[:24]}" or workflow["semantic_sha256"] != digest(semantic):
@@ -4174,6 +4241,30 @@ def validate_fixture(fixture: dict[str, Any]) -> list[str]:
         ):
             failures.append(f"{workflow['workflow_id']}:WORKFLOW_STATE_REFERENCE_MISSING")
             continue
+        if len(workflow["state_ids"]) != len(set(workflow["state_ids"])):
+            failures.append(f"{workflow['workflow_id']}:WORKFLOW_STATE_ID_DUPLICATE")
+        if len(workflow["transition_ids"]) != len(set(workflow["transition_ids"])):
+            failures.append(f"{workflow['workflow_id']}:WORKFLOW_TRANSITION_ID_DUPLICATE")
+        selected_transitions = [
+            transition_by_id.get(transition_id)
+            for transition_id in workflow["transition_ids"]
+        ]
+        selected_transition_ids.update(workflow["transition_ids"])
+        if any(row is None for row in selected_transitions):
+            failures.append(f"{workflow['workflow_id']}:WORKFLOW_TRANSITION_REFERENCE_MISSING")
+            selected_transitions = []
+        state_id_set = set(workflow["state_ids"])
+        if any(
+            transition is not None
+            and (
+                transition["realm"] != workflow["realm"]
+                or transition["transition_kind"] != workflow["transition_kind"]
+                or transition["from_state_id"] not in state_id_set
+                or transition["to_state_id"] not in state_id_set
+            )
+            for transition in selected_transitions
+        ):
+            failures.append(f"{workflow['workflow_id']}:WORKFLOW_SELECTED_TRANSITION_MISMATCH")
         workflow_compositions = {
             composition_by_revision[row["composition_revision_id"]]["composition_revision_id"]
             for row in workflow_states if row is not None
@@ -4192,6 +4283,22 @@ def validate_fixture(fixture: dict[str, Any]) -> list[str]:
         }
         if set(workflow["association_revision_ids"]) != derived_associations:
             failures.append(f"{workflow['workflow_id']}:WORKFLOW_ASSOCIATION_SET_MISMATCH")
+        reached = {workflow["initial_state_id"]}
+        pending_states = [workflow["initial_state_id"]]
+        while pending_states:
+            current = pending_states.pop()
+            for transition in selected_transitions:
+                if (
+                    transition is not None
+                    and transition["from_state_id"] == current
+                    and transition["to_state_id"] not in reached
+                ):
+                    reached.add(transition["to_state_id"])
+                    pending_states.append(transition["to_state_id"])
+        if workflow["reachable"] is not state_id_set.issubset(reached):
+            failures.append(f"{workflow['workflow_id']}:WORKFLOW_REACHABILITY_NOT_DERIVED")
+    for transition_id in sorted(set(transition_by_id) - selected_transition_ids):
+        failures.append(f"{transition_id}:TRANSITION_UNLISTED_BY_WORKFLOW")
     workflow_by_id = {row["workflow_id"]: row for row in fixture["workflows"]}
     for export in fixture["exports"]:
         semantic = {
