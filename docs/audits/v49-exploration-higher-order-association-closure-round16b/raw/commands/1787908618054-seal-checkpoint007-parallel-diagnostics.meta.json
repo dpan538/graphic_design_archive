@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "wc",
+    "-l",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint007.tsv"
+  ],
+  "command": "wc -l docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint007.tsv",
+  "command_id": "1787908618054-seal-checkpoint007-parallel-diagnostics",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 4,
+  "end_timestamp_utc": "2026-08-28T09:16:58Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "seal-checkpoint007-parallel-diagnostics",
+  "phase_id": "CHECKPOINT-007-INTEGRITY",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T09:16:58Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "f86c84633a6eb2160adf0ec18444d0147dc9a2dd31fafe88b950c9e34af2078f",
+  "timed_out": false
+}

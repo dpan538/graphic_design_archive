@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/build_adaptive_source_review_shard_1.py",
+    "--check"
+  ],
+  "command": "python3 scripts/trace_round16b/build_adaptive_source_review_shard_1.py --check",
+  "command_id": "1787908160356-check-adaptive-source-review-shard-1-determinism",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 95,
+  "end_timestamp_utc": "2026-08-28T09:09:20Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "check-adaptive-source-review-shard-1-determinism",
+  "phase_id": "CHECKPOINT-007-EVIDENCE-AND-SOURCE",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T09:09:20Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "77fc54c327fb2b9a5f4e93774d2a2f506038e437fc1bb566329c681581ced574",
+  "timed_out": false
+}
