@@ -115,20 +115,37 @@ def main() -> int:
     parser.add_argument("--repo", type=Path, required=True)
     parser.add_argument("--bundle", type=Path, required=True)
     parser.add_argument("--restore-repo", type=Path, required=True)
+    parser.add_argument("--expected-head", required=True)
+    parser.add_argument("--initial-publication-receipt", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args()
     repo = args.repo.resolve()
     bundle = args.bundle.resolve()
     restore = args.restore_repo.resolve()
+    initial_publication_path = args.initial_publication_receipt.resolve()
+    initial_publication = json.loads(initial_publication_path.read_text(encoding="utf-8"))
     output_dir = args.output_dir if args.output_dir.is_absolute() else repo / args.output_dir
     output_dir.mkdir(parents=True, exist_ok=True)
     captured_at = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     failures: list[str] = []
 
     head = text(run(repo, "git", "rev-parse", "HEAD"))
-    tree = text(run(repo, "git", "rev-parse", "HEAD^{tree}"))
+    head_tree = text(run(repo, "git", "rev-parse", "HEAD^{tree}"))
+    source_tree = text(run(repo, "git", "rev-parse", f"{SOURCE_SHA}^{{tree}}"))
     branch = text(run(repo, "git", "branch", "--show-current"))
-    status = text(run(repo, "git", "status", "--porcelain=v1"))
+    status_lines = text(run(repo, "git", "status", "--porcelain=v1", "--untracked-files=all")).splitlines()
+    logger_owned_prefixes = (
+        "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/commands/",
+        "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-events.jsonl",
+        "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/command-ledger.tsv",
+        "docs/research/trace-v49-exploration-higher-order-association-closure-round16b/00_LIVE_EXECUTION_LOG.md",
+    )
+    non_logger_status = [
+        line
+        for line in status_lines
+        if not any(line[3:].startswith(prefix) for prefix in logger_owned_prefixes)
+    ]
+    source_ancestor = run(repo, "git", "merge-base", "--is-ancestor", SOURCE_SHA, head).returncode == 0
     remote_result = run(repo, "git", "ls-remote", "--refs", "origin")
     remote_map = parse_remote_map(text(remote_result)) if remote_result.returncode == 0 else {}
     remote_ref_path = output_dir / "source-remote-ref-map.tsv"
@@ -150,15 +167,20 @@ def main() -> int:
     attributes = (repo / ".gitattributes").read_text(encoding="utf-8").splitlines()
 
     checks = {
-        "head_matches_authorized_source": head == SOURCE_SHA,
-        "tree_matches_authorized_source": tree == SOURCE_TREE,
+        "head_matches_expected_governance_commit": head == args.expected_head,
+        "authorized_source_is_ancestor": source_ancestor,
+        "source_tree_matches_authorized_source": source_tree == SOURCE_TREE,
         "work_branch_exact": branch == WORK_BRANCH,
-        "worktree_clean_before_outputs": status == "",
+        "worktree_clean_except_current_logger_outputs": not non_logger_status,
         "remote_query_pass": remote_result.returncode == 0,
         "remote_source_exact": remote_map.get(SOURCE_REF) == SOURCE_SHA,
         "remote_main_exact": remote_map.get("refs/heads/main") == MAIN_SHA,
-        "remote_work_branch_absent": WORK_REF not in remote_map,
+        "remote_work_branch_matches_expected_governance_commit": remote_map.get(WORK_REF) == args.expected_head,
         "remote_rollback_tag_absent": ROLLBACK_REF not in remote_map,
+        "initial_publication_receipt_pass": initial_publication.get("status") == "PASS",
+        "initial_remote_work_branch_was_absent": initial_publication.get("remote_branch_before") == "ABSENT",
+        "initial_publication_head_exact": initial_publication.get("local_head_sha") == args.expected_head,
+        "initial_publication_used_no_force": initial_publication.get("receipt", {}).get("FORCE_PUSH_USED") is False,
         "bundle_exists": bundle.is_file(),
         "bundle_verify_pass": bundle_verify.returncode == 0,
         "restore_head_exact": restore_head == SOURCE_SHA,
@@ -188,6 +210,8 @@ def main() -> int:
         },
         "source_sha": SOURCE_SHA,
         "source_tree": SOURCE_TREE,
+        "captured_head_sha": head,
+        "captured_head_tree": head_tree,
         "work_branch": WORK_BRANCH,
     }
     write_json(output_dir / "environment.json", environment)
@@ -208,11 +232,20 @@ def main() -> int:
         "captured_at_utc": captured_at,
         "source_sha": SOURCE_SHA,
         "source_tree": SOURCE_TREE,
+        "captured_head_sha": head,
+        "captured_head_tree": head_tree,
         "expected_origin_main_sha": MAIN_SHA,
         "work_branch": WORK_BRANCH,
         "remote_ref_count": len(remote_map),
         "remote_ref_map_path": str(remote_ref_path.relative_to(repo)),
         "remote_ref_map_sha256": sha256(remote_ref_path),
+        "initial_publication_receipt": {
+            "path": str(initial_publication_path),
+            "sha256": sha256(initial_publication_path),
+            "status": initial_publication.get("status"),
+            "remote_branch_before": initial_publication.get("remote_branch_before"),
+            "remote_branch_after": initial_publication.get("remote_branch_after"),
+        },
         "bundle": {
             "path": str(bundle),
             "bytes": bundle.stat().st_size if bundle.is_file() else 0,
