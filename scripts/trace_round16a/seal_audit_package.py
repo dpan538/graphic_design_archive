@@ -98,6 +98,7 @@ REQUIRED_RAW_FILES = (
     "independent-verification.json",
     "independent-verification-cases-v2.tsv",
     "reproducibility-verification.json",
+    "authorized-lfs-migration-receipt.json",
     "quantitative-audit.json",
     "api-functional-http-case-ledger-v2.tsv",
 )
@@ -110,6 +111,16 @@ REQUIRED_FINAL_RAW_FILES = (
     "gate-status-results.json",
     "final-gate-evidence.json",
     "BRANDING_SAFE_METRICS.md",
+)
+
+REQUIRED_HISTORY_MIGRATION_FILES = (
+    "original-bundle.sha256",
+    "pre-ref-ledger.tsv",
+    "post-ref-ledger.tsv",
+    "pre-checkpoint-ledger.tsv",
+    "post-checkpoint-ledger.tsv",
+    "old-to-new-object-map.csv",
+    "pre-oversized-blobs.tsv",
 )
 
 
@@ -230,6 +241,106 @@ def validate_machine_gates(
     ]
     require(not missing, "REQUIRED_RAW_FILES_MISSING:" + ",".join(missing))
     require(not empty, "REQUIRED_RAW_FILES_EMPTY:" + ",".join(empty))
+    history_dir = raw / "history-migration"
+    history_missing = [
+        name for name in REQUIRED_HISTORY_MIGRATION_FILES
+        if not (history_dir / name).is_file()
+    ]
+    history_empty = [
+        name for name in REQUIRED_HISTORY_MIGRATION_FILES
+        if (history_dir / name).is_file() and (history_dir / name).stat().st_size == 0
+    ]
+    require(
+        not history_missing,
+        "REQUIRED_HISTORY_MIGRATION_FILES_MISSING:" + ",".join(history_missing),
+    )
+    require(
+        not history_empty,
+        "REQUIRED_HISTORY_MIGRATION_FILES_EMPTY:" + ",".join(history_empty),
+    )
+    migration = read_json(raw / "authorized-lfs-migration-receipt.json")
+    require(
+        migration.get("schema_version")
+        == "trace-round16a-authorized-lfs-migration-receipt/v1",
+        "AUTHORIZED_LFS_MIGRATION_SCHEMA_INVALID",
+    )
+    require(migration.get("status") == "PASS", "AUTHORIZED_LFS_MIGRATION_NOT_PASS")
+    migration_material = dict(migration)
+    migration_embedded_hash = migration_material.pop("receipt_hash", None)
+    require(
+        migration_embedded_hash == canonical_hash(migration_material),
+        "AUTHORIZED_LFS_MIGRATION_RECEIPT_HASH_INVALID",
+    )
+    expected_migration_paths = sorted((
+        "docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification-cases-v2.tsv",
+        "docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification.json",
+    ))
+    require(
+        migration.get("source_sha") == SOURCE_SHA
+        and migration.get("source_tree_sha")
+        == "86c2ed7771034f6d3f0f2e10e7a37aeec0552c71"
+        and migration.get("new_head_sha")
+        == "02eb7055659714a0e5ebce85dabdcda02dce2cc1"
+        and migration.get("branch")
+        == "codex/trace-v49-exploration-full-space-closure-round1"
+        and sorted(migration.get("migrated_paths", [])) == expected_migration_paths,
+        "AUTHORIZED_LFS_MIGRATION_IDENTITY_INVALID",
+    )
+    migration_receipt = migration.get("receipt")
+    migration_expected = {
+        "HISTORY_REWRITE_AUTHORIZED": True,
+        "HISTORY_REWRITTEN": True,
+        "UNPUBLISHED_ROUND16A_HISTORY_REWRITTEN": True,
+        "PUBLIC_EXISTING_HISTORY_REWRITTEN": False,
+        "ORIGIN_MAIN_REWRITTEN": False,
+        "FORCE_PUSH_USED": False,
+        "REWRITE_NONALLOWLIST_PATH_COUNT": 0,
+        "ORDINARY_OVERSIZED_BLOB_COUNT_AFTER": 0,
+        "ROUND16A_MAPPED_COMMIT_COUNT_BEFORE": 8,
+        "ROUND16A_MAPPED_COMMIT_COUNT_AFTER": 8,
+    }
+    require(
+        isinstance(migration_receipt, dict)
+        and all(
+            migration_receipt.get(name) == expected
+            for name, expected in migration_expected.items()
+        ),
+        "AUTHORIZED_LFS_MIGRATION_RECEIPT_INVALID",
+    )
+    require(
+        migration.get("topology", {}).get("post_migration_ordinary_blob_scope")
+        == "ALL_HISTORY_REACHABLE_FROM_REWRITTEN_BRANCH"
+        and migration.get("topology", {}).get(
+            "post_migration_ordinary_blob_over_limit_count"
+        ) == 0
+        and migration.get("current_repository_fsck", {}).get("lfs_fsck_scope")
+        == (
+            "8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e"
+            "..02eb7055659714a0e5ebce85dabdcda02dce2cc1"
+        ),
+        "AUTHORIZED_LFS_MIGRATION_FULL_SCOPE_FSCK_INVALID",
+    )
+    copied_evidence = migration.get("copied_evidence")
+    require(isinstance(copied_evidence, dict), "AUTHORIZED_LFS_MIGRATION_COPIES_INVALID")
+    expected_copy_labels = {
+        "bundle_sha256": "original-bundle.sha256",
+        "pre_ref_ledger": "pre-ref-ledger.tsv",
+        "post_ref_ledger": "post-ref-ledger.tsv",
+        "pre_checkpoint_ledger": "pre-checkpoint-ledger.tsv",
+        "post_checkpoint_ledger": "post-checkpoint-ledger.tsv",
+        "object_map": "old-to-new-object-map.csv",
+        "pre_oversized_ledger": "pre-oversized-blobs.tsv",
+    }
+    require(
+        set(copied_evidence) == set(expected_copy_labels),
+        "AUTHORIZED_LFS_MIGRATION_COPY_SET_INVALID",
+    )
+    for label, filename in expected_copy_labels.items():
+        record = copied_evidence[label]
+        path = history_dir / filename
+        require(isinstance(record, dict), f"AUTHORIZED_LFS_MIGRATION_COPY_RECORD:{label}")
+        require(record.get("bytes") == path.stat().st_size, f"AUTHORIZED_LFS_MIGRATION_COPY_BYTES:{label}")
+        require(record.get("sha256") == sha256_file(path), f"AUTHORIZED_LFS_MIGRATION_COPY_HASH:{label}")
     if require_final_evidence:
         final_missing = [
             name for name in REQUIRED_FINAL_RAW_FILES if not (raw / name).is_file()
@@ -259,6 +370,11 @@ def validate_machine_gates(
 
     reproduction = read_json(raw / "reproducibility-verification.json")
     require(reproduction.get("status") == "PASS", "REPRODUCIBILITY_NOT_PASS")
+    require(
+        reproduction.get("schema_version")
+        == "trace-exploration-round16a-reproducibility-verification-v2",
+        "REPRODUCIBILITY_SCHEMA_INVALID",
+    )
     named_reproduction_gates = (
         "VOCABULARY_CENSUS_HASH_MATCH",
         "PAIR_CENSUS_HASH_MATCH",
@@ -320,6 +436,36 @@ def validate_machine_gates(
         isinstance(reproduction_independent, dict)
         and reproduction_independent.get("pass") is True,
         "REPRODUCIBILITY_INDEPENDENT_VERIFIER_NOT_PASS",
+    )
+    with (raw / "checkpoint-ledger.tsv").open(
+        encoding="utf-8", newline=""
+    ) as handle:
+        checkpoint_rows = list(csv.DictReader(handle, delimiter="\t"))
+    require(
+        [row.get("checkpoint_id") for row in checkpoint_rows]
+        == [f"CHECKPOINT-{index:03d}" for index in range(1, 10)],
+        "POST_MIGRATION_CHECKPOINT_SEQUENCE_INVALID",
+    )
+    hardened_checkpoint = checkpoint_rows[8]
+    hardened_sha = str(hardened_checkpoint.get("commit_sha", ""))
+    reproduction_worktree = reproduction.get("worktree")
+    require(
+        "POST_MIGRATION" in hardened_checkpoint.get("phase", "").upper()
+        and "HARDENED" in hardened_checkpoint.get("phase", "").upper()
+        and "supersedes_checkpoint_007_as_post_migration_final_code_sha=true"
+        in hardened_checkpoint.get("known_limitations", "").casefold()
+        and reproduction.get("final_code_sha") == hardened_sha
+        and isinstance(reproduction_worktree, dict)
+        and reproduction_worktree.get("primary_head") == hardened_sha
+        and reproduction_worktree.get("reproduction_head") == hardened_sha
+        and subprocess.run(
+            ["git", "cat-file", "-e", f"{hardened_sha}^{{commit}}"],
+            cwd=repo,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            check=False,
+        ).returncode == 0,
+        "POST_MIGRATION_REPRODUCTION_CHECKPOINT_BINDING_INVALID",
     )
 
     quantitative = read_json(raw / "quantitative-audit.json")

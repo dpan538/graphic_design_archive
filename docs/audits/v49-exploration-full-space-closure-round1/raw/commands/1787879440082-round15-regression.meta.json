@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "python3",
+    "/private/tmp/round16a_run_sequence.py",
+    "--cwd",
+    "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+    "--commands-json",
+    "[\"git diff --exit-code 8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e HEAD -- docs/research/trace-v49-exploration-composition-engine-round1 docs/audits/v49-exploration-composition-engine-round1 scripts/trace-v49-exploration-composition-engine\",\"python3 /private/tmp/trace-round16a-regression-history/scripts/trace-v49-exploration-composition-engine/test_round1.py\",\"npm --prefix frontend run test:exploration-composition-engine\"]"
+  ],
+  "command": "python3 /private/tmp/round16a_run_sequence.py --cwd /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --commands-json '[\"git diff --exit-code 8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e HEAD -- docs/research/trace-v49-exploration-composition-engine-round1 docs/audits/v49-exploration-composition-engine-round1 scripts/trace-v49-exploration-composition-engine\",\"python3 /private/tmp/trace-round16a-regression-history/scripts/trace-v49-exploration-composition-engine/test_round1.py\",\"npm --prefix frontend run test:exploration-composition-engine\"]'",
+  "command_id": "1787879440082-round15-regression",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 284,
+  "end_timestamp_utc": "2026-08-28T01:10:40Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "round15-regression",
+  "phase_id": "POST_MIGRATION_REGRESSION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T01:10:40Z",
+  "stderr_sha256": "0ae69c58aabade8cad6cb4262cbf2c0889eb390058e05ba270cd8ed026d740c3",
+  "stdout_sha256": "b2857d5f4bde9bf892f1c534f66f42e329defbdd515f10ed92e77482c9f9b6e1",
+  "timed_out": false
+}

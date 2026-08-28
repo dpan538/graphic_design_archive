@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "python3",
+    "/private/tmp/round16a_run_sequence.py",
+    "--cwd",
+    "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+    "--commands-json",
+    "[\"npm --prefix frontend run verify:exploration-reset\",\"npm --prefix frontend run test:exploration-domain\"]"
+  ],
+  "command": "python3 /private/tmp/round16a_run_sequence.py --cwd /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --commands-json '[\"npm --prefix frontend run verify:exploration-reset\",\"npm --prefix frontend run test:exploration-domain\"]'",
+  "command_id": "1787879339583-round8-regression",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 781,
+  "end_timestamp_utc": "2026-08-28T01:09:00Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "round8-regression",
+  "phase_id": "POST_MIGRATION_REGRESSION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T01:08:59Z",
+  "stderr_sha256": "21c51b97415e4bdb29a7864905fdcae9fc5a2e8c6bdde570791bf74a248c5bf0",
+  "stdout_sha256": "cf27396c41762f0e936a8b64ae30e4c7ceb39107ca3f1443cf341c25e0015142",
+  "timed_out": false
+}

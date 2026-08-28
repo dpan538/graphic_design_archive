@@ -1,7 +1,7 @@
 {
   "format": "gda-v49-repository-hygiene/v1",
-  "status": "PASS",
-  "trackedFileCount": 4783,
+  "status": "FAIL",
+  "trackedFileCount": 4864,
   "checks": {
     "activeDatabaseRootCount": 1,
     "activeDatabaseRoot": "database",
@@ -15,14 +15,16 @@
     "brokenDocumentationLinks": [],
     "brokenScriptReferences": [],
     "brokenFrontendImports": [],
-    "activeScriptAllowlistPass": true,
-    "activeScriptAllowlistDeclaredCount": 278,
-    "activeScriptAllowlistRowCount": 278,
+    "activeScriptAllowlistPass": false,
+    "activeScriptAllowlistDeclaredCount": 279,
+    "activeScriptAllowlistRowCount": 279,
     "activeScriptAllowlistTrackedCount": 278,
     "activeScriptAllowlistMissingScripts": [],
-    "activeScriptAllowlistUnexpectedScripts": [],
+    "activeScriptAllowlistUnexpectedScripts": [
+      "scripts/trace_round16a/verify_authorized_lfs_migration.py"
+    ],
     "activeScriptAllowlistDuplicatePathCount": 0,
-    "unreferencedActiveScriptPolicy": "DOCUMENTED_ALLOWLIST",
+    "unreferencedActiveScriptPolicy": "FAIL",
     "historicalPromptActiveCount": 0,
     "unreferencedProjectAssetCount": 0,
     "brokenLfsPointerCount": 0,
@@ -61,14 +63,14 @@
       },
       {
         "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification-cases-v2.tsv",
-        "byteSize": 186158959,
-        "sha256": "5d8e1b8e70eda56edb2804473c1127383357d98f1ad19fc4eaa1c1b6972bb5ed",
+        "byteSize": 186160119,
+        "sha256": "f30a639b70a226a0d38ed60bce40597f286f00b057dd848ddb03b7b7e1dfceaa",
         "category": "final_audit_evidence"
       },
       {
         "path": "docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification.json",
         "byteSize": 182907607,
-        "sha256": "16f62b30792cc69f2ea62855ba3975ac8b90593124d695ad1e402f4baefc7e35",
+        "sha256": "f24b8eb9dfa327ea1066a6b2ab8afc20648751d7154e781274cab1cf83152ade",
         "category": "final_audit_evidence"
       },
       {
@@ -185,7 +187,7 @@
       }
     ],
     "secretPatternMatches": [],
-    "projectLogBytes": 31370,
+    "projectLogBytes": 32828,
     "projectLogPolicyPass": true,
     "readmeV49ArchitecturePass": true,
     "releaseManifestPass": true,
@@ -195,5 +197,7 @@
     "sourceTagCommit": "d78f496bcdf2cd6941791986007cd7a885c4c532",
     "sourceTagResolvable": true
   },
-  "violations": []
+  "violations": [
+    "ACTIVE_SCRIPT_ALLOWLIST"
+  ]
 }

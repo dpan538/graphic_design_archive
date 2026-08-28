@@ -1,6 +1,6 @@
 {
   "format": "gda-v49-active-script-allowlist/v1",
-  "scriptCount": 278,
+  "scriptCount": 279,
   "unknownClassificationCount": 0,
   "scripts": [
     {
@@ -2658,6 +2658,16 @@
       "category": "CURRENT_V49_EXPLORATION_RUNTIME_VERIFICATION",
       "current_runtime_required": true,
       "current_api_required": true,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16a/verify_authorized_lfs_migration.py",
+      "category": "AUDIT_PROVENANCE_REPRODUCTION",
+      "current_runtime_required": false,
+      "current_api_required": false,
       "current_database_required": false,
       "current_ci_required": false,
       "retained_audit_role": true,

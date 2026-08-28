@@ -40,6 +40,7 @@ full pass) fast-forwarded.
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
 import json
 import re
@@ -49,13 +50,14 @@ from typing import Any, Iterable, Mapping
 
 REPO = Path(__file__).resolve().parents[2]
 RAW_RELATIVE = Path("docs/audits/v49-exploration-full-space-closure-round1/raw")
-SCHEMA_VERSION = "trace-round16a-final-gate-evidence/v1"
+SCHEMA_VERSION = "trace-round16a-final-gate-evidence/v2"
 
 DEFAULT_INPUTS = {
     "repository_boundary": "repository-boundary-receipt.json",
     "execution_log": "execution-log-verification.json",
     "regression": "regression-results.json",
     "gate_status": "gate-status-results.json",
+    "authorized_migration": "authorized-lfs-migration-receipt.json",
     "audit_seal": "audit-seal-result.json",
     "api_functional": "api-functional-validation-v2.json",
     "production_http": "production-http-results.json",
@@ -79,6 +81,7 @@ REQUIRED_DECLARED_METRICS = {
     "TYPECHECK",
     "PRODUCTION_BUILD",
     "API_SCHEMA_VALIDATION",
+    "DETERMINISTIC_REPRODUCTION",
     "FINAL_EXPLORATION_FRONTEND_IMPLEMENTED",
     "PUBLIC_EXPLORATION_PAGE_ADDED",
     "PROJECT_FRONTEND_DESIGN_SAFE_TO_BEGIN",
@@ -87,6 +90,9 @@ REQUIRED_DECLARED_METRICS = {
     "FORCE_PUSH_USED",
     "MERGE_COMMIT_CREATED",
     "HISTORY_REWRITTEN",
+    "UNPUBLISHED_ROUND16A_HISTORY_REWRITTEN",
+    "PUBLIC_EXISTING_HISTORY_REWRITTEN",
+    "ORIGIN_MAIN_REWRITTEN",
 }
 
 REQUIRED_BOUNDARY_METRICS = {
@@ -426,6 +432,88 @@ def main() -> int:
             "schema_version": value.get("schema_version", value.get("format", "NOT_RECORDED")),
             "status": evidence_status,
         }
+
+    migration = documents["authorized_migration"]
+    migration_receipt = migration.get("receipt")
+    migration_material = dict(migration)
+    migration_embedded_hash = migration_material.pop("receipt_hash", None)
+    expected_embedded_hash = hashlib.sha256(
+        (canonical(migration_material) + "\n").encode("utf-8")
+    ).hexdigest()
+    expected_migration_paths = sorted((
+        "docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification-cases-v2.tsv",
+        "docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification.json",
+    ))
+    expected_migration_receipt = {
+        "HISTORY_REWRITTEN": True,
+        "UNPUBLISHED_ROUND16A_HISTORY_REWRITTEN": True,
+        "PUBLIC_EXISTING_HISTORY_REWRITTEN": False,
+        "ORIGIN_MAIN_REWRITTEN": False,
+        "FORCE_PUSH_USED": False,
+        "REWRITE_NONALLOWLIST_PATH_COUNT": 0,
+        "ORDINARY_OVERSIZED_BLOB_COUNT_AFTER": 0,
+    }
+    if (
+        migration_embedded_hash != expected_embedded_hash
+        or
+        migration.get("schema_version")
+        != "trace-round16a-authorized-lfs-migration-receipt/v1"
+        or migration.get("status") != "PASS"
+        or migration.get("source_sha")
+        != "8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e"
+        or migration.get("source_tree_sha")
+        != "86c2ed7771034f6d3f0f2e10e7a37aeec0552c71"
+        or migration.get("new_head_sha")
+        != "02eb7055659714a0e5ebce85dabdcda02dce2cc1"
+        or migration.get("branch")
+        != "codex/trace-v49-exploration-full-space-closure-round1"
+        or sorted(migration.get("migrated_paths", [])) != expected_migration_paths
+        or not isinstance(migration_receipt, Mapping)
+        or any(
+            migration_receipt.get(name) != expected
+            for name, expected in expected_migration_receipt.items()
+        )
+        or migration.get("topology", {}).get("post_migration_ordinary_blob_scope")
+        != "ALL_HISTORY_REACHABLE_FROM_REWRITTEN_BRANCH"
+        or migration.get("topology", {}).get(
+            "post_migration_ordinary_blob_over_limit_count"
+        ) != 0
+        or migration.get("current_repository_fsck", {}).get("lfs_fsck_scope")
+        != (
+            "8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e"
+            "..02eb7055659714a0e5ebce85dabdcda02dce2cc1"
+        )
+    ):
+        raise ValueError("ROUND16A_FINAL_GATE_AUTHORIZED_MIGRATION_INVALID")
+
+    checkpoint_path = raw / "checkpoint-ledger.tsv"
+    with checkpoint_path.open(encoding="utf-8", newline="") as handle:
+        checkpoints = list(csv.DictReader(handle, delimiter="\t"))
+    if [row.get("checkpoint_id") for row in checkpoints] != [
+        f"CHECKPOINT-{index:03d}" for index in range(1, 10)
+    ]:
+        raise ValueError("ROUND16A_FINAL_GATE_CHECKPOINT_SEQUENCE_INVALID")
+    hardened_checkpoint = checkpoints[8]
+    hardened_sha = str(hardened_checkpoint.get("commit_sha", ""))
+    reproduction = documents["reproduction"]
+    reproduction_worktree = reproduction.get("worktree")
+    reproduction_evidence = nested(
+        documents["gate_status"], "operation_evidence", "DETERMINISTIC_REPRODUCTION",
+        default={},
+    )
+    if (
+        reproduction.get("schema_version")
+        != "trace-exploration-round16a-reproducibility-verification-v2"
+        or reproduction.get("status") != "PASS"
+        or reproduction.get("final_code_sha") != hardened_sha
+        or not isinstance(reproduction_worktree, Mapping)
+        or reproduction_worktree.get("primary_head") != hardened_sha
+        or reproduction_worktree.get("reproduction_head") != hardened_sha
+        or not isinstance(reproduction_evidence, Mapping)
+        or reproduction_evidence.get("event_status") != "PASS"
+        or reproduction_evidence.get("event_git_sha") != hardened_sha
+    ):
+        raise ValueError("ROUND16A_FINAL_GATE_REPRODUCTION_BINDING_INVALID")
 
     collector = Collector()
     for label, document in documents.items():

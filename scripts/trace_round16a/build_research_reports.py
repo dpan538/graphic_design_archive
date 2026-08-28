@@ -61,6 +61,7 @@ JSON_INPUTS = (
     "headline-numbers.json",
     "independent-verification.json",
     "reproducibility-verification.json",
+    "authorized-lfs-migration-receipt.json",
     "quantitative-audit.json",
     "final-gate-evidence.json",
 )
@@ -244,7 +245,8 @@ RECEIPT_SECTIONS: tuple[tuple[str | None, tuple[str, ...]], ...] = (
     )),
     ("Main", (
         "MAIN_BEFORE_SHA", "MAIN_FAST_FORWARD_COMPLETED", "MAIN_AFTER_SHA", "FORCE_PUSH_USED",
-        "MERGE_COMMIT_CREATED", "HISTORY_REWRITTEN",
+        "MERGE_COMMIT_CREATED", "HISTORY_REWRITTEN", "UNPUBLISHED_ROUND16A_HISTORY_REWRITTEN",
+        "PUBLIC_EXISTING_HISTORY_REWRITTEN", "ORIGIN_MAIN_REWRITTEN",
     )),
     ("Final decision", (
         "ROUND16A_DECISION", "FUNCTION3_FULL_SPACE_CENSUS_COMPLETE", "FUNCTION3_BACKEND_FUNCTIONALLY_COMPLETE",
@@ -257,6 +259,8 @@ FINAL_INTEGRATION_KEYS = {
     "FINAL_LOCAL_SHA", "FINAL_REMOTE_SHA", "WORKTREE", "WORKTREE_CLEAN", "BRANCH",
     "ROLLBACK_TAG", "ROLLBACK_TAG_TARGET", "MAIN_BEFORE_SHA", "MAIN_FAST_FORWARD_COMPLETED",
     "MAIN_AFTER_SHA", "FORCE_PUSH_USED", "MERGE_COMMIT_CREATED", "HISTORY_REWRITTEN",
+    "UNPUBLISHED_ROUND16A_HISTORY_REWRITTEN", "PUBLIC_EXISTING_HISTORY_REWRITTEN",
+    "ORIGIN_MAIN_REWRITTEN",
 }
 
 
@@ -572,6 +576,15 @@ def load_integration_evidence(path: Path | None) -> dict[str, Any]:
     value = json.loads(resolved.read_text(encoding="utf-8"))
     if not isinstance(value, dict):
         raise ValueError("ROUND16A_FINAL_INTEGRATION_EVIDENCE_NOT_OBJECT")
+    if (
+        value.get("schema_version")
+        != "trace-round16a-final-integration-evidence/v2"
+        or value.get("integration_mode") != "review-branch"
+        or value.get("main_integration_expected") is not False
+        or value.get("remote_rollback_tag_present") is not False
+        or value.get("validation_failures") != []
+    ):
+        raise ValueError("ROUND16A_FINAL_INTEGRATION_EVIDENCE_CONTRACT_INVALID")
     if str(value.get("status", "")).upper() != "PASS":
         raise ValueError("ROUND16A_FINAL_INTEGRATION_EVIDENCE_NOT_PASS")
     receipt = value.get("receipt", value.get("metrics"))
@@ -640,6 +653,80 @@ def main() -> int:
     api = json_docs["api-functional-validation-v2.json"]
     independent = json_docs["independent-verification.json"]
     reproduction = json_docs["reproducibility-verification.json"]
+    authorized_migration = json_docs["authorized-lfs-migration-receipt.json"]
+    migration_material = dict(authorized_migration)
+    migration_embedded_hash = migration_material.pop("receipt_hash", None)
+    expected_migration_hash = hashlib.sha256(
+        (
+            json.dumps(
+                migration_material,
+                ensure_ascii=False,
+                sort_keys=True,
+                separators=(",", ":"),
+            )
+            + "\n"
+        ).encode("utf-8")
+    ).hexdigest()
+    migration_receipt = authorized_migration.get("receipt")
+    expected_migration_paths = sorted((
+        "docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification-cases-v2.tsv",
+        "docs/audits/v49-exploration-full-space-closure-round1/raw/independent-verification.json",
+    ))
+    expected_migration_receipt = {
+        "HISTORY_REWRITTEN": True,
+        "UNPUBLISHED_ROUND16A_HISTORY_REWRITTEN": True,
+        "PUBLIC_EXISTING_HISTORY_REWRITTEN": False,
+        "ORIGIN_MAIN_REWRITTEN": False,
+        "FORCE_PUSH_USED": False,
+    }
+    if (
+        migration_embedded_hash != expected_migration_hash
+        or authorized_migration.get("schema_version")
+        != "trace-round16a-authorized-lfs-migration-receipt/v1"
+        or authorized_migration.get("status") != "PASS"
+        or authorized_migration.get("source_sha") != SOURCE_SHA
+        or authorized_migration.get("source_tree_sha")
+        != "86c2ed7771034f6d3f0f2e10e7a37aeec0552c71"
+        or authorized_migration.get("new_head_sha")
+        != "02eb7055659714a0e5ebce85dabdcda02dce2cc1"
+        or authorized_migration.get("branch")
+        != "codex/trace-v49-exploration-full-space-closure-round1"
+        or sorted(authorized_migration.get("migrated_paths", [])) != expected_migration_paths
+        or not isinstance(migration_receipt, Mapping)
+        or any(migration_receipt.get(key) is not expected for key, expected in expected_migration_receipt.items())
+        or authorized_migration.get("topology", {}).get(
+            "post_migration_ordinary_blob_scope"
+        ) != "ALL_HISTORY_REACHABLE_FROM_REWRITTEN_BRANCH"
+        or authorized_migration.get("topology", {}).get(
+            "post_migration_ordinary_blob_over_limit_count"
+        ) != 0
+    ):
+        raise ValueError("ROUND16A_AUTHORIZED_LFS_MIGRATION_REPORT_INPUT_INVALID")
+    checkpoints = tsv_docs["checkpoint-ledger.tsv"]
+    if [row.get("checkpoint_id") for row in checkpoints] != [
+        f"CHECKPOINT-{index:03d}" for index in range(1, 10)
+    ]:
+        raise ValueError("ROUND16A_POST_MIGRATION_CHECKPOINT_SEQUENCE_INVALID")
+    hardened_checkpoint = checkpoints[8]
+    hardened_sha = str(hardened_checkpoint.get("commit_sha", ""))
+    reproduction_worktree = reproduction.get("worktree")
+    if (
+        reproduction.get("schema_version")
+        != "trace-exploration-round16a-reproducibility-verification-v2"
+        or reproduction.get("status") != "PASS"
+        or reproduction.get("reproducibility_verification") != "PASS"
+        or reproduction.get("all_required_hashes_match") is not True
+        or reproduction.get("clean_worktree_reproduction") is not True
+        or "POST_MIGRATION" not in hardened_checkpoint.get("phase", "").upper()
+        or "HARDENED" not in hardened_checkpoint.get("phase", "").upper()
+        or "supersedes_checkpoint_007_as_post_migration_final_code_sha=true"
+        not in hardened_checkpoint.get("known_limitations", "").casefold()
+        or reproduction.get("final_code_sha") != hardened_sha
+        or not isinstance(reproduction_worktree, Mapping)
+        or reproduction_worktree.get("primary_head") != hardened_sha
+        or reproduction_worktree.get("reproduction_head") != hardened_sha
+    ):
+        raise ValueError("ROUND16A_POST_MIGRATION_REPRODUCTION_REPORT_INPUT_INVALID")
 
     vocab_rows = vocabulary_census.get("candidates", tsv_docs["vocabulary-census-v2.tsv"])
     active_rows = active_vocabulary.get("active_vocabulary", [])
@@ -1114,6 +1201,15 @@ def main() -> int:
         ("TYPECHECK", "PASS", ()),
         ("PRODUCTION_BUILD", "PASS", ()),
         ("API_SCHEMA_VALIDATION", "PASS", ()),
+        ("AUTHORIZED_LFS_MIGRATION", "PASS", ()),
+        ("HISTORY_REWRITE_AUTHORIZED", True, ()),
+        ("HISTORY_REWRITE_SCOPE_EXACT", True, ()),
+        ("REPOSITORY_BOUNDARY", "PASS", ()),
+        ("INDEPENDENT_VERIFICATION", "PASS", ()),
+        ("COUNT_HASH_RECONCILIATION", "PASS", ()),
+        ("DETERMINISTIC_REPRODUCTION", "PASS", ()),
+        ("GIT_FSCK", "PASS", ()),
+        ("GIT_LFS_FSCK", "PASS", ()),
         ("AUDIT_SEAL", "PASS", ()),
         ("SEARCH_MUTATION_COUNT", 0, ()),
         ("CONTEXT_MUTATION_COUNT", 0, ()),
@@ -1125,7 +1221,10 @@ def main() -> int:
         ("EXTERNAL_HUMAN_DOMAIN_REVIEW_COMPLETED", False, ()),
         ("FORCE_PUSH_USED", False, ()),
         ("MERGE_COMMIT_CREATED", False, ()),
-        ("HISTORY_REWRITTEN", False, ()),
+        ("HISTORY_REWRITTEN", True, ()),
+        ("UNPUBLISHED_ROUND16A_HISTORY_REWRITTEN", True, ()),
+        ("PUBLIC_EXISTING_HISTORY_REWRITTEN", False, ()),
+        ("ORIGIN_MAIN_REWRITTEN", False, ()),
     ]
     for round_number in range(8, 17):
         gate_specs.append((f"ROUND{round_number}_REGRESSION", "PASS", ()))
@@ -1209,7 +1308,7 @@ def main() -> int:
     trace_closed = all(row["passed"] for row in gate_results)
     if trace_closed:
         decision = "TRACE_EXPLORATION_FULLY_CLOSED"
-        next_gate = "SEPARATE_PROJECT_FRONTEND_READINESS_AND_EXTERNAL_REVIEW"
+        next_gate = "INDEPENDENT_REVIEW_OF_PUBLISHED_ROUND16A_RESEARCH_BRANCH"
     elif full_space_complete:
         decision = "TRACE_EXPLORATION_READY_WITH_EXPLICIT_LIMITATIONS"
         next_gate = "ROUND16A_REMEDIATE_FAILED_FUNCTIONAL_CLOSURE_GATES"
@@ -1247,20 +1346,20 @@ def main() -> int:
             integration_failures.append("LOCAL_REMOTE_SHA_MISMATCH")
         if as_bool(integration_evidence.get("WORKTREE_CLEAN")) is not True:
             integration_failures.append("WORKTREE_NOT_CLEAN")
-        for key in ("FORCE_PUSH_USED", "MERGE_COMMIT_CREATED", "HISTORY_REWRITTEN"):
+        for key in (
+            "FORCE_PUSH_USED", "MERGE_COMMIT_CREATED",
+            "PUBLIC_EXISTING_HISTORY_REWRITTEN", "ORIGIN_MAIN_REWRITTEN",
+        ):
             if as_bool(integration_evidence.get(key)) is not False:
                 integration_failures.append(f"{key}_NOT_FALSE")
+        for key in ("HISTORY_REWRITTEN", "UNPUBLISHED_ROUND16A_HISTORY_REWRITTEN"):
+            if as_bool(integration_evidence.get(key)) is not True:
+                integration_failures.append(f"{key}_NOT_TRUE")
         main_fast_forward = as_bool(integration_evidence.get("MAIN_FAST_FORWARD_COMPLETED")) is True
-        if trace_closed:
-            if not main_fast_forward:
-                integration_failures.append("CLOSED_ROUND_MAIN_NOT_FAST_FORWARDED")
-            if integration_evidence.get("MAIN_AFTER_SHA") != integration_evidence.get("FINAL_LOCAL_SHA"):
-                integration_failures.append("CLOSED_ROUND_MAIN_AFTER_MISMATCH")
-        else:
-            if main_fast_forward:
-                integration_failures.append("OPEN_ROUND_MAIN_WAS_FAST_FORWARDED")
-            if integration_evidence.get("MAIN_AFTER_SHA") != integration_evidence.get("MAIN_BEFORE_SHA"):
-                integration_failures.append("OPEN_ROUND_MAIN_CHANGED")
+        if main_fast_forward:
+            integration_failures.append("REVIEW_BRANCH_MAIN_WAS_FAST_FORWARDED")
+        if integration_evidence.get("MAIN_AFTER_SHA") != integration_evidence.get("MAIN_BEFORE_SHA"):
+            integration_failures.append("REVIEW_BRANCH_MAIN_CHANGED")
         if integration_failures:
             raise ValueError(f"ROUND16A_FINAL_INTEGRATION_GATE:{integration_failures}")
 
@@ -1714,11 +1813,27 @@ The clean-worktree reproduction rebuilds the semantic and census artifacts from 
 
 `SOURCE_TREE_SHA={environment.get('source_tree_sha', UNKNOWN)}`
 
+`POST_MIGRATION_HARDENED_FINAL_CODE_SHA={hardened_sha}`
+
 `DATABASE_SNAPSHOT={database.get('database_snapshot_id', DATABASE_SNAPSHOT)}`
+
+## Authorized unpublished-branch LFS migration
+
+The eight original Round 16A commits were preserved in a verified standalone Git bundle before the narrowly scoped LFS conversion. Checkpoint order, messages, authorship, timestamps, and phase boundaries remain one-to-one mapped. Only `.gitattributes` and the two authorized independent-verifier audit paths differ at the Git-tree layer; hydrated payload SHA-256 values remain identical.
+
+`HISTORY_REWRITTEN={yesno(resolver.get('HISTORY_REWRITTEN'))}`
+
+`UNPUBLISHED_ROUND16A_HISTORY_REWRITTEN={yesno(resolver.get('UNPUBLISHED_ROUND16A_HISTORY_REWRITTEN'))}`
+
+`PUBLIC_EXISTING_HISTORY_REWRITTEN={yesno(resolver.get('PUBLIC_EXISTING_HISTORY_REWRITTEN'))}`
+
+`ORIGIN_MAIN_REWRITTEN={yesno(resolver.get('ORIGIN_MAIN_REWRITTEN'))}`
+
+`ORIGINAL_LINEAGE_BUNDLE_SHA256={authorized_migration.get('bundle', {}).get('sha256', UNKNOWN)}`
 
 The reproduction must match vocabulary, pair census, graph, canonical composition registry, state census, transition census, workflow census, and export census. Independent verification is rerun in the reproduction worktree. Any absent or false match keeps Round 16A open.
 
-Source: `{source_path('reproducibility-verification.json')}`.
+Sources: `{source_path('reproducibility-verification.json')}` and `{source_path('authorized-lfs-migration-receipt.json')}`.
 """
 
     failed_gates = [row for row in gate_results if not row["passed"]]
@@ -1734,6 +1849,7 @@ Round 16A closes only the finite governed Function 3 computational/backend space
 - Source-supported associations remain explicitly qualified generic proximities.
 - Graph centrality is not historical importance.
 - Reference SVG/PNG output validates backend/export behavior; it is not final visual design.
+- One explicitly authorized pre-publication history rewrite converted only `raw/independent-verification.json` and `raw/independent-verification-cases-v2.tsv` to Git LFS on the unpublished Round 16A branch. Existing public history and `origin/main` remain unchanged, no force push was used, and the original lineage bundle is retained locally at `{authorized_migration.get('bundle', {}).get('local_path', UNKNOWN)}` with SHA-256 `{authorized_migration.get('bundle', {}).get('sha256', UNKNOWN)}`.
 - Main remains un-fast-forwarded at report generation unless a later sealed receipt records otherwise: `MAIN_FAST_FORWARD_COMPLETED={yesno(resolver.get('MAIN_FAST_FORWARD_COMPLETED', default=False))}`.
 
 Formal gate failures at report time: `{len(failed_gates)}`. If non-zero, consult `22_FUNCTION3_CLOSURE_DECISION.md`; limitations never convert a failed closure gate into a pass.
@@ -1831,11 +1947,21 @@ Canonical sources: `{source_path('metric-dictionary.json')}` and `{source_path('
             content = reports[name].rstrip() + "\n"
             (RESEARCH / name).write_text(content, encoding="utf-8")
 
-        current_marker = "<!-- TRACE_ROUND16A_CLOSURE_STATUS_V2 -->"
+        current_marker = "<!-- TRACE_ROUND16A_CLOSURE_STATUS_V3 -->"
         current_block = f"""{current_marker}
-## TRACE v49 Round 16A — full-space closure status
+## TRACE v49 Round 16A — post-migration review-branch handoff
 
-This later versioned clarification supersedes only the active Round 16 statements that made archive objects, Search manifests, Context references, or Spacetime references normative/public Exploration inputs, and the claim that 11 curated compositions, 52 states, or five workflows constituted full functional closure. Prior sealed packages remain historical evidence.
+This additive handoff preserves the earlier Round 16A closure statement while recording the separately authorized, pre-publication LFS migration of the unpublished research branch. Prior sealed packages and every published Round 8–16 ref remain historical evidence; `origin/main` remains at the frozen source anchor.
+
+`HISTORY_REWRITTEN={yesno(resolver.get('HISTORY_REWRITTEN'))}`
+
+`UNPUBLISHED_ROUND16A_HISTORY_REWRITTEN={yesno(resolver.get('UNPUBLISHED_ROUND16A_HISTORY_REWRITTEN'))}`
+
+`PUBLIC_EXISTING_HISTORY_REWRITTEN={yesno(resolver.get('PUBLIC_EXISTING_HISTORY_REWRITTEN'))}`
+
+`ORIGIN_MAIN_REWRITTEN={yesno(resolver.get('ORIGIN_MAIN_REWRITTEN'))}`
+
+`FORCE_PUSH_USED={yesno(resolver.get('FORCE_PUSH_USED'))}`
 
 The current v2 authority permits the frozen database only for snapshot identity and exactly four category-entry types. Its public contract prohibits archive object IDs/titles, record links, Context references, and Spacetime references; measured counts are `{resolver.get('PUBLIC_EXPLORATION_ARCHIVE_OBJECT_ID_COUNT')}`, `{resolver.get('PUBLIC_EXPLORATION_ARCHIVE_OBJECT_TITLE_COUNT')}`, `{resolver.get('PUBLIC_EXPLORATION_RECORD_LINK_COUNT')}`, `{resolver.get('PUBLIC_EXPLORATION_CONTEXT_REFERENCE_COUNT')}`, and `{resolver.get('PUBLIC_EXPLORATION_SPACETIME_REFERENCE_COUNT')}`. Its semantic layer is the frozen vocabulary/pair/graph/composition/state census; associations are generic evidence-qualified proximity only.
 
@@ -1860,14 +1986,17 @@ The current v2 authority permits the frozen database only for snapshot identity 
 Authoritative Round 16A package: `docs/research/trace-v49-exploration-full-space-closure-round1/`.
 
 `NEXT_GATE={next_gate}`
-<!-- /TRACE_ROUND16A_CLOSURE_STATUS_V2 -->
+<!-- /TRACE_ROUND16A_CLOSURE_STATUS_V3 -->
 """
         append_once(CURRENT, current_marker, current_block)
 
-        project_marker = "<!-- TRACE_ROUND16A_PROJECT_LOG_V2 -->"
+        project_marker = "<!-- TRACE_ROUND16A_PROJECT_LOG_V3 -->"
         project_block = f"""{project_marker}
-## TRACE v49 Round 16A — Exploration full-space census and functional closure
+## TRACE v49 Round 16A — authorized LFS migration and review publication
 
+- Preserved the complete original unpublished Round 16A lineage in a verified local Git bundle, restored it cleanly, and recorded the bundle SHA-256 plus the five-blob oversized-object ledger.
+- Rewrote only the unpublished Round 16A branch and only the two authorized independent-verification paths, preserving all eight original checkpoint commits in order with identical authorship, timestamps, messages, and logical phase boundaries.
+- Left every existing public ref and `origin/main` unchanged, used no force push, pushed no rollback tag, and performed no deployment.
 - Froze {len(vocab_rows)} vocabulary candidates and {len(active_rows)} active product terms, enumerated all {len(pair_rows)} unordered active pairs, and retained {len(active_associations)} evidence-qualified generic associations without database co-occurrence inference.
 - Enumerated {len(registry.get('association_subgraphs', []))} canonical association subgraphs, {len(valid_topologies)} valid topology compositions, {len(state_rows)} states, {transition_summary['count']} transitions, {len(workflow_rows)} canonical workflows, and {len(export_rows)} export variants.
 - Grounded category entry directly in frozen database `{database.get('database_snapshot_id', DATABASE_SNAPSHOT)}` and evaluated the v2 Search/archive-object/Context/Spacetime dependency and public-exposure gates; the formal values are recorded in the Round 16A closure ledger.
@@ -1885,7 +2014,7 @@ Authoritative Round 16A package: `docs/research/trace-v49-exploration-full-space
 `MAIN_FAST_FORWARD_COMPLETED={yesno(resolver.get('MAIN_FAST_FORWARD_COMPLETED', default=False))}`
 
 `NEXT_GATE={next_gate}`
-<!-- /TRACE_ROUND16A_PROJECT_LOG_V2 -->
+<!-- /TRACE_ROUND16A_PROJECT_LOG_V3 -->
 """
         append_once(PROJECT_LOG, project_marker, project_block)
 

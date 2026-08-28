@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "python3",
+    "/private/tmp/round16a_run_sequence.py",
+    "--cwd",
+    "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+    "--commands-json",
+    "[\"git diff --exit-code 8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e HEAD -- docs/research/trace-v49-exploration-real-database-round1 docs/audits/v49-exploration-real-database-round1 scripts/trace-v49-exploration-real-database frontend/generated/trace-exploration-v1\",\"python3 -B /private/tmp/trace-round16a-regression-history/scripts/trace-v49-exploration-real-database/generate_round1.py --check\",\"python3 -B scripts/trace-v49-exploration-real-database/generate_round1.py --check\"]"
+  ],
+  "command": "python3 /private/tmp/round16a_run_sequence.py --cwd /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --commands-json '[\"git diff --exit-code 8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e HEAD -- docs/research/trace-v49-exploration-real-database-round1 docs/audits/v49-exploration-real-database-round1 scripts/trace-v49-exploration-real-database frontend/generated/trace-exploration-v1\",\"python3 -B /private/tmp/trace-round16a-regression-history/scripts/trace-v49-exploration-real-database/generate_round1.py --check\",\"python3 -B scripts/trace-v49-exploration-real-database/generate_round1.py --check\"]'",
+  "command_id": "1787879440506-round16-regression",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 9925,
+  "end_timestamp_utc": "2026-08-28T01:10:50Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "round16-regression",
+  "phase_id": "POST_MIGRATION_REGRESSION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T01:10:40Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "3f0409c3d43e842e7889820644ff968e33be9782c73637c8025aaa63ae07e522",
+  "timed_out": false
+}

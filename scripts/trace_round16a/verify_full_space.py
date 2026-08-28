@@ -135,6 +135,7 @@ GENERATOR_SOURCE_RELS = (
     Path("scripts/trace_round16a/seal_audit_package.py"),
     Path("scripts/trace_round16a/start_production_server.py"),
     Path("scripts/trace_round16a/summarize_runtime_results.py"),
+    Path("scripts/trace_round16a/verify_authorized_lfs_migration.py"),
     Path("scripts/trace_round16a/verify_execution_log.py"),
     Path("scripts/trace_round16a/verify_full_space.py"),
     Path("scripts/trace_round16a/verify_repository_boundary.py"),

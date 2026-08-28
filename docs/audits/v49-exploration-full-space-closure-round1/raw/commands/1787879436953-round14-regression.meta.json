@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "python3",
+    "/private/tmp/round16a_run_sequence.py",
+    "--cwd",
+    "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+    "--commands-json",
+    "[\"git diff --exit-code cf4490e9 HEAD -- docs/research/trace-v49-exploration-association-calibration-round1 docs/audits/v49-exploration-association-calibration-round1 scripts/trace-v49-exploration-association-calibration\",\"python3 /private/tmp/trace-round16a-regression-history/scripts/trace-v49-exploration-association-calibration/validate_round1.py\",\"python3 /private/tmp/trace-round16a-regression-history/scripts/trace-v49-exploration-association-calibration/test_round1.py\",\"npm --prefix frontend run test:exploration-association-calibration\"]"
+  ],
+  "command": "python3 /private/tmp/round16a_run_sequence.py --cwd /private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1 --commands-json '[\"git diff --exit-code cf4490e9 HEAD -- docs/research/trace-v49-exploration-association-calibration-round1 docs/audits/v49-exploration-association-calibration-round1 scripts/trace-v49-exploration-association-calibration\",\"python3 /private/tmp/trace-round16a-regression-history/scripts/trace-v49-exploration-association-calibration/validate_round1.py\",\"python3 /private/tmp/trace-round16a-regression-history/scripts/trace-v49-exploration-association-calibration/test_round1.py\",\"npm --prefix frontend run test:exploration-association-calibration\"]'",
+  "command_id": "1787879436953-round14-regression",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_full_space_closure_round1",
+  "duration_ms": 394,
+  "end_timestamp_utc": "2026-08-28T01:10:37Z",
+  "environment_versions": {
+    "platform": "darwin",
+    "python": "3.13.5"
+  },
+  "exit_code": 0,
+  "operation_id": "round14-regression",
+  "phase_id": "POST_MIGRATION_REGRESSION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T01:10:36Z",
+  "stderr_sha256": "b8377fc6b69dd5fafbc8094486497309b654f895bee3aff92f44bfa9673777d8",
+  "stdout_sha256": "9dda20280bb48ac125feff989c2a2860f54f558f675cf057020680eb58937f55",
+  "timed_out": false
+}
