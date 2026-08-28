@@ -1,0 +1,129 @@
+{
+  "active_fact_created_count": 0,
+  "authority_base_sha": "468105499c7be102deec7d6555aced688dea9901",
+  "builder_version": "trace-round16b-round16a-global-reconciliation-builder-v1",
+  "checkpoint009_correction_round16a_subgraph_overlap_count": 0,
+  "checkpoint009_quarantined_source_scope_correction_count": 1,
+  "closure": {
+    "computational_space_closure": false,
+    "function3_closure": false,
+    "global_composition_coherence_closure": false,
+    "higher_order_association_closure": false,
+    "pair_association_closure": false,
+    "product_association_reachability_closure": false
+  },
+  "focus_node_self_transition_count": 5760,
+  "focus_node_transition_count": 18480,
+  "format": "trace-round16b-round16a-global-reconciliation-census-v1",
+  "main_object_count": 773671,
+  "main_object_distributions": {
+    "ROUND16A_ASSOCIATION_SUBGRAPH": {
+      "CORRECTED": 11,
+      "INQUIRY": 18,
+      "REJECTED": 8,
+      "RETAINED": 21
+    },
+    "ROUND16A_CATEGORY_ENTRY": {
+      "CORRECTED": 27,
+      "INQUIRY": 15,
+      "REJECTED": 18,
+      "RETAINED": 21
+    },
+    "ROUND16A_EXPORT": {
+      "CORRECTED": 3888,
+      "INQUIRY": 4368,
+      "REJECTED": 2592,
+      "RETAINED": 672
+    },
+    "ROUND16A_LEGACY_RECONCILIATION": {
+      "INQUIRY": 2,
+      "REJECTED": 2,
+      "RETAINED": 7
+    },
+    "ROUND16A_PRODUCTION_COMPOSITION": {
+      "CORRECTED": 81,
+      "INQUIRY": 51,
+      "REJECTED": 54,
+      "RETAINED": 42
+    },
+    "ROUND16A_SEED_VARIANT": {
+      "CORRECTED": 81,
+      "INQUIRY": 51,
+      "REJECTED": 54,
+      "RETAINED": 42
+    },
+    "ROUND16A_STATE": {
+      "CORRECTED": 1944,
+      "INQUIRY": 2184,
+      "REJECTED": 1296,
+      "RETAINED": 336
+    },
+    "ROUND16A_TOPOLOGY_COMPOSITION": {
+      "CORRECTED": 27,
+      "INQUIRY": 15,
+      "REJECTED": 18,
+      "RETAINED": 21
+    },
+    "ROUND16A_WORKFLOW": {
+      "CORRECTED": 1944,
+      "INQUIRY": 2184,
+      "REJECTED": 1296,
+      "RETAINED": 336
+    }
+  },
+  "main_object_total_distribution": {
+    "CORRECTED": 203639,
+    "INQUIRY": 290372,
+    "REJECTED": 270370,
+    "RETAINED": 9290
+  },
+  "mapped_governed_family_count": 9,
+  "pair_projection_created_count": 0,
+  "product_activation_count": 0,
+  "reconciled_row_count_including_topology_audit_records": 774296,
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
+  "status": "PASS_WITH_OPEN_CLOSURE_BLOCKERS",
+  "topology_attempt_count": 348,
+  "topology_attempt_distribution": {
+    "CORRECTED": 66,
+    "INQUIRY": 108,
+    "REJECTED": 48,
+    "RETAINED": 126
+  },
+  "topology_rejection_count": 277,
+  "topology_rejection_distribution": {
+    "CORRECTED": 39,
+    "INQUIRY": 103,
+    "REJECTED": 30,
+    "RETAINED": 105
+  },
+  "transition_action_distribution": {
+    "COLLAPSE_NODE": 9240,
+    "EXPAND_NODE": 8112,
+    "EXPORT_CURRENT_STATE": 5760,
+    "FOCUS_NODE": 18480,
+    "MOVE_FOCUS": 7824,
+    "RESET_CATEGORY": 5760,
+    "SELECT_CATEGORY": 23040,
+    "SELECT_COMPOSITION": 671728
+  },
+  "transition_baseline_state_mutated_distribution": {
+    "false": 749944
+  },
+  "transition_count": 749944,
+  "transition_outcome_distribution": {
+    "CORRECTED": 195636,
+    "INQUIRY": 281484,
+    "REJECTED": 265032,
+    "RETAINED": 7792
+  },
+  "transition_same_state_distribution": {
+    "false": 738188,
+    "true": 11756
+  },
+  "transition_shard_count": 64,
+  "transition_shard_record_count_max": 11940,
+  "transition_shard_record_count_min": 11455,
+  "transition_sorted_id_set_sha256": "27328cf72733c5454c41c8b396f19a5934a82068a45e4de42de396e166a06fe9"
+}

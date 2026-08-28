@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "git",
+    "check-attr",
+    "filter",
+    "diff",
+    "merge",
+    "text",
+    "--",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/large/round16a-transition-reconciliation-v1/shard-00-03.tsv"
+  ],
+  "command": "git check-attr filter diff merge text -- docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/large/round16a-transition-reconciliation-v1/shard-00-03.tsv",
+  "command_id": "1787918016355-verify-checkpoint010-transition-shard-lfs-routing",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 32,
+  "end_timestamp_utc": "2026-08-28T11:53:36Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "verify-checkpoint010-transition-shard-lfs-routing",
+  "phase_id": "CHECKPOINT-010-LARGE-ARTIFACT-PREFLIGHT",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T11:53:36Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "db0482e819298f8e0f679a8a5f1ab81a4fcff1851efafc1bca8986deccbe8850",
+  "timed_out": false
+}

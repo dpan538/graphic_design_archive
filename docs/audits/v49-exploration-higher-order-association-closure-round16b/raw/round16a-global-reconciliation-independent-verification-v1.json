@@ -1,0 +1,72 @@
+{
+  "active_fact_created_count": 0,
+  "authority_base_sha": "468105499c7be102deec7d6555aced688dea9901",
+  "check_count": 143165,
+  "check_id_set_sha256": "ee085008da55fac0e289f9bad8b0870a0aacf1638ebb440efc2018058d24704c",
+  "closure_flags_true_count": 0,
+  "format": "trace-round16b-round16a-global-reconciliation-independent-verification-v1",
+  "generic_object_ledger_count": 11,
+  "main_object_count": 773671,
+  "mapped_governed_family_count": 9,
+  "negative_controls": [
+    {
+      "control": "ALL_INTERNAL_PAIRS_ACTIVE_GROUP_NOT_RETAINED",
+      "status": "PASS"
+    },
+    {
+      "control": "RENDERABLE_TOPOLOGY_NOT_GROUP_VALIDITY",
+      "status": "PASS"
+    },
+    {
+      "control": "HYPEREDGE_NOT_PROJECTED_TO_PAIR_EDGES",
+      "status": "PASS"
+    },
+    {
+      "control": "PENDING_OR_INQUIRY_NEVER_ACTIVE",
+      "status": "PASS"
+    },
+    {
+      "control": "BOTH_TRANSITION_ENDPOINTS_CONTROL_SEVERITY",
+      "status": "PASS"
+    },
+    {
+      "control": "MALFORMED_TRANSITION_ID_REJECTED",
+      "status": "PASS"
+    },
+    {
+      "control": "RECORD_HASH_CORRUPTION_DETECTED",
+      "status": "PASS"
+    }
+  ],
+  "object_exact_identity_sets_verified": true,
+  "pair_projection_created_count": 0,
+  "primary_build_receipt_sha256": "b95e52cc0e07a5ae2f758645fa0dda7d4d9212535eafd2cb3c68232b940151fe",
+  "primary_output_manifest_sha256": "745f93a5a3e4032ef8e3eadbb98dc0d4c56d4d1e2a1a4a540456d0ccfa3fa31a",
+  "product_activation_count": 0,
+  "reconciled_row_count_including_topology_audit_records": 774296,
+  "semantic_carry_forward_authorized_count": 0,
+  "source_parent_conservation_verified": true,
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
+  "status": "PASS_WITH_OPEN_CLOSURE_BLOCKERS",
+  "topology_attempt_count": 348,
+  "topology_attempt_invalid_count": 267,
+  "topology_attempt_valid_count": 81,
+  "topology_rejection_count": 277,
+  "topology_rejection_invalid_count": 267,
+  "topology_rejection_pruned_count": 8,
+  "topology_rejection_unresolved_count": 2,
+  "transition_count": 749944,
+  "transition_endpoint_matrix_verified": true,
+  "transition_exact_identity_set_verified": true,
+  "transition_outcome_distribution": {
+    "CORRECTED": 195636,
+    "INQUIRY": 281484,
+    "REJECTED": 265032,
+    "RETAINED": 7792
+  },
+  "transition_shard_count": 64,
+  "verified_primary_output_count_including_receipt": 84,
+  "verifier_sha256": "310ccafef7581fb4e42c64dc61215d810ac3b607b4ff0be665a6111b8a6d6c55",
+  "verifier_version": "trace-round16b-round16a-global-reconciliation-independent-verifier-v1"
+}

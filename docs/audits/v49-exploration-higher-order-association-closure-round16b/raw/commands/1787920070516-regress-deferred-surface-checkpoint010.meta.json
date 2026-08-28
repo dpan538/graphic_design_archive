@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/verify_deferred_surface_census.py",
+    "--repo",
+    ".",
+    "--output",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-regression-checkpoint010.json"
+  ],
+  "command": "python3 scripts/trace_round16b/verify_deferred_surface_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-regression-checkpoint010.json",
+  "command_id": "1787920070516-regress-deferred-surface-checkpoint010",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 6024,
+  "end_timestamp_utc": "2026-08-28T12:27:56Z",
+  "exit_code": 1,
+  "launch_error": "",
+  "operation_id": "regress-deferred-surface-checkpoint010",
+  "phase_id": "CHECKPOINT-010-REGRESSION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T12:27:50Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "d6d35e9cf131e1f8c53248f24e23e5bcfed456bc880d239991bdbd2889e5bf48",
+  "timed_out": false
+}

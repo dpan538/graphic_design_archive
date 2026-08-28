@@ -1,6 +1,6 @@
 {
   "format": "gda-v49-active-script-allowlist/v1",
-  "scriptCount": 304,
+  "scriptCount": 306,
   "unknownClassificationCount": 0,
   "scripts": [
     {
@@ -2844,6 +2844,16 @@
       "decision": "KEEP_ACTIVE"
     },
     {
+      "path": "scripts/trace_round16b/build_round16a_global_reconciliation.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
       "path": "scripts/trace_round16b/build_v3_semantic_contract.py",
       "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
       "current_runtime_required": false,
@@ -2945,6 +2955,16 @@
     },
     {
       "path": "scripts/trace_round16b/verify_method_checkpoint.py",
+      "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
+      "current_runtime_required": false,
+      "current_api_required": false,
+      "current_database_required": false,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b/verify_round16a_global_reconciliation.py",
       "category": "CURRENT_V49_EXPLORATION_HIGHER_ORDER_ASSOCIATION_VERIFICATION",
       "current_runtime_required": false,
       "current_api_required": false,

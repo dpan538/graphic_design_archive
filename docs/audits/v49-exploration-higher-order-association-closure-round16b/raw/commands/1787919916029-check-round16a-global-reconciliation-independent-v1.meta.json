@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/verify_round16a_global_reconciliation.py",
+    "--check"
+  ],
+  "command": "python3 scripts/trace_round16b/verify_round16a_global_reconciliation.py --check",
+  "command_id": "1787919916029-check-round16a-global-reconciliation-independent-v1",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 32030,
+  "end_timestamp_utc": "2026-08-28T12:25:48Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "check-round16a-global-reconciliation-independent-v1",
+  "phase_id": "CHECKPOINT-010-INDEPENDENT-REPRODUCTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T12:25:16Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "1c712b77670e4f7233688653a00c396304bf40543fec00701c64a07e753eaff2",
+  "timed_out": false
+}
