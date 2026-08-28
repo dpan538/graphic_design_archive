@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "wc",
+    "-l",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv"
+  ],
+  "command": "wc -l docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv",
+  "command_id": "1787905287625-reconcile-checkpoint006-parallel-diagnostics",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 4,
+  "end_timestamp_utc": "2026-08-28T08:21:27Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "reconcile-checkpoint006-parallel-diagnostics",
+  "phase_id": "LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T08:21:27Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e68d9c03b6faaf1f62302e1e3cfb97b698a49c3ede009558bd002af9e0853a9e",
+  "timed_out": false
+}

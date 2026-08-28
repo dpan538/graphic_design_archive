@@ -1,0 +1,230 @@
+{
+  "check_count": 40,
+  "checks": [
+    {
+      "check_id": "REQUIRED_ARTIFACTS_PRESENT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "CHECKPOINT004_UNIVERSE_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "TRANCHE_B_SELECTOR_EXACT_14_ARITY3",
+      "status": "PASS"
+    },
+    {
+      "check_id": "TRANCHE_B_OCCURRENCE_SELECTOR_EXACT_187",
+      "status": "PASS"
+    },
+    {
+      "check_id": "SELECTED_V2_OCCURRENCE_HASHES_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ALL_SOURCE_SURFACES_INDEPENDENTLY_CLASSIFIED",
+      "status": "PASS"
+    },
+    {
+      "check_id": "SOURCE_CLASS_COUNTS_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "EVIDENCE_CLASS_COUNTS_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "OUTPUT_OCCURRENCE_COVERAGE_EXACT_187",
+      "status": "PASS"
+    },
+    {
+      "check_id": "OUTPUT_OCCURRENCE_RECORD_HASHES_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "OUTPUT_OCCURRENCES_FAIL_CLOSED_AND_SOURCE_BOUND",
+      "status": "PASS"
+    },
+    {
+      "check_id": "OUTPUT_FAMILY_COVERAGE_EXACT_14",
+      "status": "PASS"
+    },
+    {
+      "check_id": "OUTPUT_FAMILY_RECORD_HASHES_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "FAMILY_ROWS_AND_ACTIVE_PAIRS_INDEPENDENTLY_RECONSTRUCTED",
+      "status": "PASS"
+    },
+    {
+      "check_id": "FINAL_PARENT_DISPOSITION_COUNTS_EXACT",
+      "detail": {
+        "BOUNDED_SENSE_OR_SCOPE_CONFLICT": 6,
+        "COOCCURRENCE_ONLY": 1,
+        "HARD_NEGATIVE": 1,
+        "INSUFFICIENT_EVIDENCE": 1,
+        "PAIRWISE_SUPPORT_WITHOUT_GROUP_COHERENCE": 5
+      },
+      "status": "PASS"
+    },
+    {
+      "check_id": "PAIRWISE_CLIQUES_REMAIN_GROUP_INVALID",
+      "detail": [
+        "23b72032e8165ac9f164a43ac0e1932f2fe4354f1b89f62d67ebe7d497de7af1",
+        "83009b1d124d4635a57866eeffba5e1a1a33e499bd60b30c6346b94ff1a04f8e",
+        "af25d1d4c93f79886769d53d071805bd5b6726130b153e4484121321d1122e3a"
+      ],
+      "status": "PASS"
+    },
+    {
+      "check_id": "HARD_NEGATIVE_PARENT_REMAINS_INACTIVE",
+      "status": "PASS"
+    },
+    {
+      "check_id": "QUEUE_REFS_EXACT_TBQ001_037",
+      "status": "PASS"
+    },
+    {
+      "check_id": "QUEUE_RECORD_HASHES_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "QUEUE_KIND_COUNTS_EXACT",
+      "detail": {
+        "CONDITIONAL_SCOPED_CHILD_REVIEW": 13,
+        "DERIVATIVE_RECONCILIATION": 6,
+        "PAIR_OR_SCOPE_REROUTE": 13,
+        "PARENT_CLOSE_CONTROL": 5
+      },
+      "status": "PASS"
+    },
+    {
+      "check_id": "QUEUE_IS_NONCANDIDATE_FAIL_CLOSED_AND_PROVENANCED",
+      "status": "PASS"
+    },
+    {
+      "check_id": "EVERY_QUEUE_PARENT_IS_A_TRANCHE_B_FAMILY",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ARITY4_SWEDEN_REROUTES_NEVER_PROJECT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "INPUT_MANIFEST_25_PATHS_HASHED_AND_PINNED",
+      "status": "PASS"
+    },
+    {
+      "check_id": "INPUT_MANIFEST_BINDS_BUILDER_SOURCE",
+      "status": "PASS"
+    },
+    {
+      "check_id": "TRANCHES_A_B_PARTITION_EXACT_25_OF_35",
+      "status": "PASS"
+    },
+    {
+      "check_id": "TRANCHES_A_B_OCCURRENCE_PARTITION_EXACT_299_OF_359",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ALL_REMAINING_FAMILIES_ARITY4_OR_GREATER",
+      "detail": {
+        "4": 4,
+        "5": 1,
+        "6": 4,
+        "8": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "check_id": "CUMULATIVE_PARENT_DISPOSITIONS_EXACT",
+      "detail": {
+        "BOUNDED_SENSE_OR_SCOPE_CONFLICT": 11,
+        "COOCCURRENCE_ONLY": 2,
+        "HARD_NEGATIVE": 1,
+        "INQUIRY_ONLY_OR_UNRESOLVED": 3,
+        "INSUFFICIENT_EVIDENCE": 2,
+        "PAIRWISE_SUPPORT_WITHOUT_GROUP_COHERENCE": 5,
+        "TOPOLOGY_OR_ROLE_CONFLICT": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "check_id": "GAP_LEDGER_GAP017_024_EXACT_AND_HASHED",
+      "status": "PASS"
+    },
+    {
+      "check_id": "GAPS_RETAIN_CLOSURE_BLOCKERS",
+      "status": "PASS"
+    },
+    {
+      "check_id": "CENSUS_AUTHORITY_AND_COUNTS_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "CENSUS_CLOSURE_KEYS_ALL_FALSE",
+      "detail": {
+        "computational_space_closure": false,
+        "function3_closure": false,
+        "global_composition_coherence_closure": false,
+        "higher_order_association_closure": false,
+        "pair_association_closure": false,
+        "product_association_reachability_closure": false
+      },
+      "status": "PASS"
+    },
+    {
+      "check_id": "CENSUS_ZERO_ACTIVATION_METRICS",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ARITHMETIC_CONTRADICTION_PRESERVED_FAIL_CLOSED",
+      "status": "PASS"
+    },
+    {
+      "check_id": "RECEIPT_OUTPUT_HASHES_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "RECEIPT_AGGREGATE_HASH_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "RECEIPT_INPUT_MANIFEST_HASH_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "RECEIPT_FAIL_CLOSED_HEADLINE_EXACT",
+      "status": "PASS"
+    },
+    {
+      "check_id": "RESEARCH_NOTE_BOUND_TO_RECEIPT",
+      "status": "PASS"
+    }
+  ],
+  "failure_count": 0,
+  "failures": [],
+  "format": "trace-round16b-evidence-disposition-tranche-b-independent-verification-v1",
+  "parent_checkpoint_sha": "adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e",
+  "pass_count": 40,
+  "reconstructed_metrics": {
+    "association_activation_count": 0,
+    "association_identity_created_count": 0,
+    "closure_flags_true_count": 0,
+    "cumulative_disposed_family_count": 25,
+    "cumulative_disposed_occurrence_count": 299,
+    "family_count": 14,
+    "occurrence_count": 187,
+    "pair_projection_created_count": 0,
+    "product_eligible_count": 0,
+    "queue_count": 37,
+    "remaining_family_count": 10,
+    "remaining_occurrence_count": 60
+  },
+  "review_tranche": "CHECKPOINT-006-EVIDENCE-TRANCHE-B",
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
+  "status": "PASS",
+  "verifier_implementation": "standalone-no-builder-import-or-execution"
+}

@@ -1922,3 +1922,575 @@
 - Decision: Any possible secret finding blocks checkpoint publication.
 - Next: Verify the append-only execution log, stage exact checkpoint artifacts, and commit.
 - Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 149
+
+- UTC timestamp: 2026-08-28T08:02:11Z
+- Phase: CHECKPOINT-006-BOOTSTRAP
+- Operation: START — import verified checkpoint 005 publication receipt
+- Command: `python3 scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv`
+- Inputs: /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts/009-1787904080195907000-checkpoint-005.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Warnings: none
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 150
+
+- UTC timestamp: 2026-08-28T08:02:11Z
+- Phase: CHECKPOINT-006-BOOTSTRAP
+- Operation: FAIL — import verified checkpoint 005 publication receipt
+- Command: `python3 scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv`
+- Inputs: /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts/009-1787904080195907000-checkpoint-005.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Duration: 38 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Record checkpoint 005 and build evidence disposition tranche B.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 151
+
+- UTC timestamp: 2026-08-28T08:02:58Z
+- Phase: CHECKPOINT-006-BOOTSTRAP
+- Operation: START — import full verified checkpoint publication receipt chain through checkpoint 005
+- Command: `python3 scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787902081597323000-checkpoint-004.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv`
+- Inputs: /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787902081597323000-checkpoint-004.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts/009-1787904080195907000-checkpoint-005.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Warnings: PREVIOUS_SINGLE_RECEIPT_IMPORT_FAILED_FULL_CHAIN_REQUIRED
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 152
+
+- UTC timestamp: 2026-08-28T08:02:58Z
+- Phase: CHECKPOINT-006-BOOTSTRAP
+- Operation: PASS — import full verified checkpoint publication receipt chain through checkpoint 005
+- Command: `python3 scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787902081597323000-checkpoint-004.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv`
+- Inputs: /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787902081597323000-checkpoint-004.json, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts/009-1787904080195907000-checkpoint-005.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Duration: 43 ms
+- Warnings: PREVIOUS_SINGLE_RECEIPT_IMPORT_FAILED_FULL_CHAIN_REQUIRED
+- Errors: none
+- Decision: Any receipt-chain mismatch blocks tranche B.
+- Next: Record checkpoint 005 and complete evidence disposition tranche B.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 153
+
+- UTC timestamp: 2026-08-28T08:19:30Z
+- Phase: LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002
+- Operation: START — Materialize fail-closed evidence-disposition tranche B
+- Command: `python3 scripts/trace_round16b/build_evidence_disposition_tranche_b.py`
+- Inputs: scripts/trace_round16b/build_evidence_disposition_tranche_b.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/candidate-trigger-occurrence-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-build-receipt-tranche-a-v1.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-occurrence-disposition-tranche-b-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/family-evidence-disposition-tranche-b-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/conditional-scoped-child-reroute-queue-tranche-b-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-census-tranche-b-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-input-manifest-tranche-b-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-ledger-checkpoint006-tranche-b-v1.tsv, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/10_EVIDENCE_DISPOSITION_TRANCHE_B.md, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-build-receipt-tranche-b-v1.json
+- Warnings: PARALLEL_DIRECT_RUNS_RECORDED_SEPARATELY
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 154
+
+- UTC timestamp: 2026-08-28T08:19:31Z
+- Phase: LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002
+- Operation: PASS — Materialize fail-closed evidence-disposition tranche B
+- Command: `python3 scripts/trace_round16b/build_evidence_disposition_tranche_b.py`
+- Inputs: scripts/trace_round16b/build_evidence_disposition_tranche_b.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/candidate-trigger-occurrence-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-build-receipt-tranche-a-v1.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-occurrence-disposition-tranche-b-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/family-evidence-disposition-tranche-b-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/conditional-scoped-child-reroute-queue-tranche-b-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-census-tranche-b-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-input-manifest-tranche-b-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-ledger-checkpoint006-tranche-b-v1.tsv, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/10_EVIDENCE_DISPOSITION_TRANCHE_B.md, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-build-receipt-tranche-b-v1.json
+- Duration: 931 ms
+- Warnings: PARALLEL_DIRECT_RUNS_RECORDED_SEPARATELY
+- Errors: none
+- Decision: Proceed only if all 14 parents, 187 occurrences, 37 queue controls, input pins, output hashes, and zero-activation invariants pass.
+- Next: Run independent tranche-B verification.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 155
+
+- UTC timestamp: 2026-08-28T08:19:37Z
+- Phase: LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002
+- Operation: START — Check tranche-B deterministic artifact bytes
+- Command: `python3 scripts/trace_round16b/build_evidence_disposition_tranche_b.py --check`
+- Inputs: scripts/trace_round16b/build_evidence_disposition_tranche_b.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-build-receipt-tranche-b-v1.json
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 156
+
+- UTC timestamp: 2026-08-28T08:19:38Z
+- Phase: LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002
+- Operation: PASS — Check tranche-B deterministic artifact bytes
+- Command: `python3 scripts/trace_round16b/build_evidence_disposition_tranche_b.py --check`
+- Inputs: scripts/trace_round16b/build_evidence_disposition_tranche_b.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-build-receipt-tranche-b-v1.json
+- Outputs: none
+- Duration: 769 ms
+- Warnings: none
+- Errors: none
+- Decision: Any byte mismatch blocks checkpoint 006.
+- Next: Run independent implementation verification.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 157
+
+- UTC timestamp: 2026-08-28T08:20:17Z
+- Phase: LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002
+- Operation: START — Preserve parallel diagnostic failures and direct-run limitations
+- Command: `wc -l docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv
+- Warnings: PARALLEL_BUILDER_FIRST_RUN_FAILED_UNLOGGED, PARALLEL_CUSTOM_QA_FIRST_RUN_FAILED_UNLOGGED, PARALLEL_PATH_PROBES_FAILED_BEFORE_LAUNCH, DIRECT_PARALLEL_SUCCESS_RUNS_REPEATED_UNDER_APPEND_ONLY_LOGGER
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 158
+
+- UTC timestamp: 2026-08-28T08:20:18Z
+- Phase: LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002
+- Operation: PASS — Preserve parallel diagnostic failures and direct-run limitations
+- Command: `wc -l docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv
+- Duration: 6 ms
+- Warnings: PARALLEL_BUILDER_FIRST_RUN_FAILED_UNLOGGED, PARALLEL_CUSTOM_QA_FIRST_RUN_FAILED_UNLOGGED, PARALLEL_PATH_PROBES_FAILED_BEFORE_LAUNCH, DIRECT_PARALLEL_SUCCESS_RUNS_REPEATED_UNDER_APPEND_ONLY_LOGGER
+- Errors: none
+- Decision: Retain all five reported diagnostic events; logged reruns, not unlogged probes, govern checkpoint continuation.
+- Next: Run independent verifier and checkpoint gates.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 159
+
+- UTC timestamp: 2026-08-28T08:21:27Z
+- Phase: LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002
+- Operation: START — Reconcile complete parallel diagnostic event ledger after root path-probe correction
+- Command: `wc -l docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv
+- Warnings: SIX_DIAGNOSTIC_EVENTS_RETAINED
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 160
+
+- UTC timestamp: 2026-08-28T08:21:27Z
+- Phase: LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002
+- Operation: PASS — Reconcile complete parallel diagnostic event ledger after root path-probe correction
+- Command: `wc -l docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv
+- Duration: 4 ms
+- Warnings: SIX_DIAGNOSTIC_EVENTS_RETAINED
+- Errors: none
+- Decision: Treat the corrected seven-line ledger as the complete checkpoint-006 diagnostic disclosure.
+- Next: Run independent verifier.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 161
+
+- UTC timestamp: 2026-08-28T08:25:33Z
+- Phase: LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002
+- Operation: START — Regress deferred surface census independent verifier
+- Command: `python3 scripts/trace_round16b/verify_deferred_surface_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-independent-verification-v1.json`
+- Inputs: scripts/trace_round16b/verify_deferred_surface_census.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-independent-verification-v1.json
+- Warnings: none
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 162
+
+- UTC timestamp: 2026-08-28T08:25:33Z
+- Phase: LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002
+- Operation: START — Regress local candidate census independent verifier
+- Command: `python3 scripts/trace_round16b/verify_local_candidate_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-independent-verification.json`
+- Inputs: scripts/trace_round16b/verify_local_candidate_census.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-independent-verification.json
+- Warnings: none
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 163
+
+- UTC timestamp: 2026-08-28T08:25:34Z
+- Phase: LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002
+- Operation: START — Regress higher-order method independent verifier
+- Command: `python3 scripts/trace_round16b/verify_method_checkpoint.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-independent-verification.json`
+- Inputs: scripts/trace_round16b/verify_method_checkpoint.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-independent-verification.json
+- Warnings: none
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 164
+
+- UTC timestamp: 2026-08-28T08:25:33Z
+- Phase: LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002
+- Operation: START — Regress tranche-A independent verifier
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_a.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-a-v1.json`
+- Inputs: scripts/trace_round16b/verify_evidence_disposition_tranche_a.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-a-v1.json
+- Warnings: none
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 165
+
+- UTC timestamp: 2026-08-28T08:25:34Z
+- Phase: LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002
+- Operation: PASS — Regress tranche-A independent verifier
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_a.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-a-v1.json`
+- Inputs: scripts/trace_round16b/verify_evidence_disposition_tranche_a.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-a-v1.json
+- Duration: 372 ms
+- Warnings: none
+- Errors: none
+- Decision: Any regression blocks checkpoint 006.
+- Next: Continue checkpoint-006 gates.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 166
+
+- UTC timestamp: 2026-08-28T08:25:35Z
+- Phase: LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002
+- Operation: PASS — Regress higher-order method independent verifier
+- Command: `python3 scripts/trace_round16b/verify_method_checkpoint.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-independent-verification.json`
+- Inputs: scripts/trace_round16b/verify_method_checkpoint.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-independent-verification.json
+- Duration: 1186 ms
+- Warnings: none
+- Errors: none
+- Decision: Any method regression blocks checkpoint 006.
+- Next: Continue checkpoint-006 gates.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 167
+
+- UTC timestamp: 2026-08-28T08:25:41Z
+- Phase: LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002
+- Operation: PASS — Regress deferred surface census independent verifier
+- Command: `python3 scripts/trace_round16b/verify_deferred_surface_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-independent-verification-v1.json`
+- Inputs: scripts/trace_round16b/verify_deferred_surface_census.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-independent-verification-v1.json
+- Duration: 7398 ms
+- Warnings: none
+- Errors: none
+- Decision: Any deferred-surface regression blocks checkpoint 006.
+- Next: Continue checkpoint-006 gates.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 168
+
+- UTC timestamp: 2026-08-28T08:25:42Z
+- Phase: LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002
+- Operation: PASS — Regress local candidate census independent verifier
+- Command: `python3 scripts/trace_round16b/verify_local_candidate_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-independent-verification.json`
+- Inputs: scripts/trace_round16b/verify_local_candidate_census.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-independent-verification.json
+- Duration: 8640 ms
+- Warnings: none
+- Errors: none
+- Decision: Any candidate universe regression blocks checkpoint 006.
+- Next: Continue checkpoint-006 gates.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 169
+
+- UTC timestamp: 2026-08-28T08:29:41Z
+- Phase: LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002
+- Operation: START — Independently reconstruct and verify evidence-disposition tranche B
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_b.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-b-v1.json`
+- Inputs: scripts/trace_round16b/verify_evidence_disposition_tranche_b.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-build-receipt-tranche-b-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/candidate-trigger-occurrence-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v2.tsv
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-b-v1.json
+- Warnings: none
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 170
+
+- UTC timestamp: 2026-08-28T08:29:42Z
+- Phase: LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002
+- Operation: FAIL — Independently reconstruct and verify evidence-disposition tranche B
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_b.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-b-v1.json`
+- Inputs: scripts/trace_round16b/verify_evidence_disposition_tranche_b.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-build-receipt-tranche-b-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/candidate-trigger-occurrence-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v2.tsv
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-b-v1.json
+- Duration: 706 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Correct verifier or artifacts additively, then rerun all checkpoint gates.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 171
+
+- UTC timestamp: 2026-08-28T08:31:05Z
+- Phase: LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002
+- Operation: START — Rerun independent tranche-B reconstruction after verifier-oracle correction
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_b.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-b-v1.json`
+- Inputs: scripts/trace_round16b/verify_evidence_disposition_tranche_b.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-build-receipt-tranche-b-v1.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-b-v1.json
+- Warnings: PRIOR_VERIFIER_ORACLE_STRING_MISMATCH_RETAINED
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 172
+
+- UTC timestamp: 2026-08-28T08:31:06Z
+- Phase: LOCAL_EVIDENCE_DISPOSITION_TRANCHE_002
+- Operation: PASS — Rerun independent tranche-B reconstruction after verifier-oracle correction
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_b.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-b-v1.json`
+- Inputs: scripts/trace_round16b/verify_evidence_disposition_tranche_b.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-build-receipt-tranche-b-v1.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-b-v1.json
+- Duration: 452 ms
+- Warnings: PRIOR_VERIFIER_ORACLE_STRING_MISMATCH_RETAINED
+- Errors: none
+- Decision: Only a 40-of-40 independent reconstruction permits checkpoint continuation.
+- Next: Run repository and Git integrity gates.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 173
+
+- UTC timestamp: 2026-08-28T08:31:34Z
+- Phase: CHECKPOINT-006-INTEGRITY
+- Operation: START — Compile tranche-B builder and verifier
+- Command: `python3 -m py_compile scripts/trace_round16b/build_evidence_disposition_tranche_b.py scripts/trace_round16b/verify_evidence_disposition_tranche_b.py`
+- Inputs: scripts/trace_round16b/build_evidence_disposition_tranche_b.py, scripts/trace_round16b/verify_evidence_disposition_tranche_b.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 174
+
+- UTC timestamp: 2026-08-28T08:31:34Z
+- Phase: CHECKPOINT-006-INTEGRITY
+- Operation: START — Check staged whitespace integrity
+- Command: `git diff --check --cached`
+- Inputs: scripts/trace_round16b/build_evidence_disposition_tranche_b.py, scripts/trace_round16b/verify_evidence_disposition_tranche_b.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 175
+
+- UTC timestamp: 2026-08-28T08:31:34Z
+- Phase: CHECKPOINT-006-INTEGRITY
+- Operation: PASS — Check staged whitespace integrity
+- Command: `git diff --check --cached`
+- Inputs: scripts/trace_round16b/build_evidence_disposition_tranche_b.py, scripts/trace_round16b/verify_evidence_disposition_tranche_b.py
+- Outputs: none
+- Duration: 33 ms
+- Warnings: none
+- Errors: none
+- Decision: Whitespace errors block checkpoint 006.
+- Next: Continue integrity gates.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 176
+
+- UTC timestamp: 2026-08-28T08:31:34Z
+- Phase: CHECKPOINT-006-INTEGRITY
+- Operation: PASS — Compile tranche-B builder and verifier
+- Command: `python3 -m py_compile scripts/trace_round16b/build_evidence_disposition_tranche_b.py scripts/trace_round16b/verify_evidence_disposition_tranche_b.py`
+- Inputs: scripts/trace_round16b/build_evidence_disposition_tranche_b.py, scripts/trace_round16b/verify_evidence_disposition_tranche_b.py
+- Outputs: none
+- Duration: 48 ms
+- Warnings: none
+- Errors: none
+- Decision: Syntax failure blocks checkpoint 006.
+- Next: Continue integrity gates.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 177
+
+- UTC timestamp: 2026-08-28T08:31:58Z
+- Phase: CHECKPOINT-006-INTEGRITY
+- Operation: START — Audit repository hygiene for checkpoint 006
+- Command: `python3 scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint006.json --markdown docs/research/trace-v49-exploration-higher-order-association-closure-round16b/11_REPOSITORY_HYGIENE_CHECKPOINT006.md`
+- Inputs: docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint006.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/11_REPOSITORY_HYGIENE_CHECKPOINT006.md
+- Warnings: none
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 178
+
+- UTC timestamp: 2026-08-28T08:31:58Z
+- Phase: CHECKPOINT-006-INTEGRITY
+- Operation: START — Run strict Git object integrity check for checkpoint 006
+- Command: `git fsck --strict`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 179
+
+- UTC timestamp: 2026-08-28T08:31:58Z
+- Phase: CHECKPOINT-006-INTEGRITY
+- Operation: START — Run Git LFS integrity check for checkpoint 006
+- Command: `git lfs fsck`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 180
+
+- UTC timestamp: 2026-08-28T08:31:58Z
+- Phase: CHECKPOINT-006-INTEGRITY
+- Operation: START — Verify new ordinary-blob policy for checkpoint 006
+- Command: `python3 scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint006.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint006.json
+- Warnings: none
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 181
+
+- UTC timestamp: 2026-08-28T08:31:58Z
+- Phase: CHECKPOINT-006-INTEGRITY
+- Operation: START — Scan checkpoint 006 for secret patterns
+- Command: `python3 scripts/audit_secret_patterns.py`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 182
+
+- UTC timestamp: 2026-08-28T08:32:06Z
+- Phase: CHECKPOINT-006-INTEGRITY
+- Operation: PASS — Run Git LFS integrity check for checkpoint 006
+- Command: `git lfs fsck`
+- Inputs: none
+- Outputs: none
+- Duration: 8331 ms
+- Warnings: none
+- Errors: none
+- Decision: Any missing or corrupt LFS object blocks checkpoint 006.
+- Next: Repair LFS availability before commit.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 183
+
+- UTC timestamp: 2026-08-28T08:32:15Z
+- Phase: CHECKPOINT-006-INTEGRITY
+- Operation: PASS — Verify new ordinary-blob policy for checkpoint 006
+- Command: `python3 scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint006.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint006.json
+- Duration: 17156 ms
+- Warnings: none
+- Errors: none
+- Decision: Any warning-threshold or hard-limit ordinary blob blocks checkpoint 006.
+- Next: Correct storage or shard before commit.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 184
+
+- UTC timestamp: 2026-08-28T08:32:15Z
+- Phase: CHECKPOINT-006-INTEGRITY
+- Operation: PASS — Audit repository hygiene for checkpoint 006
+- Command: `python3 scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint006.json --markdown docs/research/trace-v49-exploration-higher-order-association-closure-round16b/11_REPOSITORY_HYGIENE_CHECKPOINT006.md`
+- Inputs: docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint006.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/11_REPOSITORY_HYGIENE_CHECKPOINT006.md
+- Duration: 17368 ms
+- Warnings: none
+- Errors: none
+- Decision: Hygiene failure blocks checkpoint 006.
+- Next: Correct additively and rerun.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 185
+
+- UTC timestamp: 2026-08-28T08:33:42Z
+- Phase: CHECKPOINT-006-INTEGRITY
+- Operation: PASS — Scan checkpoint 006 for secret patterns
+- Command: `python3 scripts/audit_secret_patterns.py`
+- Inputs: none
+- Outputs: none
+- Duration: 104416 ms
+- Warnings: none
+- Errors: none
+- Decision: Any secret-pattern finding blocks checkpoint 006.
+- Next: Remove or rotate secret material before commit.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 186
+
+- UTC timestamp: 2026-08-28T08:33:59Z
+- Phase: CHECKPOINT-006-INTEGRITY
+- Operation: PASS — Run strict Git object integrity check for checkpoint 006
+- Command: `git fsck --strict`
+- Inputs: none
+- Outputs: none
+- Duration: 121635 ms
+- Warnings: none
+- Errors: none
+- Decision: Any corrupt or missing Git object blocks checkpoint 006.
+- Next: Investigate integrity failures before commit.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 187
+
+- UTC timestamp: 2026-08-28T08:35:02Z
+- Phase: CHECKPOINT-006-INTEGRITY
+- Operation: START — Seal complete checkpoint-006 diagnostic disclosure
+- Command: `wc -l docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv
+- Warnings: EIGHT_DIAGNOSTIC_EVENTS_DISCLOSED
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 188
+
+- UTC timestamp: 2026-08-28T08:35:02Z
+- Phase: CHECKPOINT-006-INTEGRITY
+- Operation: PASS — Seal complete checkpoint-006 diagnostic disclosure
+- Command: `wc -l docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv
+- Duration: 5 ms
+- Warnings: EIGHT_DIAGNOSTIC_EVENTS_DISCLOSED
+- Errors: none
+- Decision: Use this nine-line ledger plus append-only command logs as the truthful failure and correction record.
+- Next: Verify execution log integrity.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 189
+
+- UTC timestamp: 2026-08-28T08:36:32Z
+- Phase: CHECKPOINT-006-INTEGRITY
+- Operation: START — Refresh publication-receipt directory snapshot after checkpoint-005 import correction
+- Command: `ls -1 docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts
+- Warnings: PRIOR_DIRECTORY_SNAPSHOT_SUPERSEDED_BY_ADDITIVE_RECEIPT_IMPORTS
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 190
+
+- UTC timestamp: 2026-08-28T08:36:32Z
+- Phase: CHECKPOINT-006-INTEGRITY
+- Operation: PASS — Refresh publication-receipt directory snapshot after checkpoint-005 import correction
+- Command: `ls -1 docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts
+- Duration: 4 ms
+- Warnings: PRIOR_DIRECTORY_SNAPSHOT_SUPERSEDED_BY_ADDITIVE_RECEIPT_IMPORTS
+- Errors: none
+- Decision: Bind the current complete receipt directory, including the preserved failed-import artifact, before execution-log verification.
+- Next: Rerun execution-log verifier.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 191
+
+- UTC timestamp: 2026-08-28T08:37:26Z
+- Phase: CHECKPOINT-006-INTEGRITY
+- Operation: START — Finalize diagnostic ledger after execution-snapshot corrections
+- Command: `wc -l docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv
+- Warnings: TEN_DIAGNOSTIC_EVENTS_DISCLOSED
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`
+
+## Event 192
+
+- UTC timestamp: 2026-08-28T08:37:26Z
+- Phase: CHECKPOINT-006-INTEGRITY
+- Operation: PASS — Finalize diagnostic ledger after execution-snapshot corrections
+- Command: `wc -l docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint006.tsv
+- Duration: 10 ms
+- Warnings: TEN_DIAGNOSTIC_EVENTS_DISCLOSED
+- Errors: none
+- Decision: Do not append further diagnostic rows unless a new failure occurs; this snapshot governs the next execution-log verification.
+- Next: Run execution-log verifier directly to avoid a self-referential in-flight event.
+- Git SHA: `adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e`

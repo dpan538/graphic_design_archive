@@ -1,0 +1,115 @@
+{
+  "active_pending_review_count": 0,
+  "association_activation_count": 0,
+  "association_identity_created_count": 0,
+  "builder_version": "trace-round16b-evidence-disposition-tranche-b-v1",
+  "checkpoint004_candidate_family_count": 35,
+  "checkpoint004_trigger_occurrence_count": 359,
+  "closure": {
+    "computational_space_closure": false,
+    "function3_closure": false,
+    "global_composition_coherence_closure": false,
+    "higher_order_association_closure": false,
+    "pair_association_closure": false,
+    "product_association_reachability_closure": false
+  },
+  "conditional_scoped_child_review_count": 13,
+  "cumulative_tranche_a_b": {
+    "disposed_family_count": 25,
+    "disposed_occurrence_count": 299,
+    "final_parent_disposition_counts": {
+      "BOUNDED_SENSE_OR_SCOPE_CONFLICT": 11,
+      "COOCCURRENCE_ONLY": 2,
+      "HARD_NEGATIVE": 1,
+      "INQUIRY_ONLY_OR_UNRESOLVED": 3,
+      "INSUFFICIENT_EVIDENCE": 2,
+      "PAIRWISE_SUPPORT_WITHOUT_GROUP_COHERENCE": 5,
+      "TOPOLOGY_OR_ROLE_CONFLICT": 1
+    },
+    "remaining_family_arity_distribution": {
+      "4": 4,
+      "5": 1,
+      "6": 4,
+      "8": 1
+    },
+    "remaining_undisposed_family_count": 10,
+    "remaining_undisposed_occurrence_count": 60
+  },
+  "derivative_reconciliation_count": 6,
+  "final_parent_disposition_counts": {
+    "BOUNDED_SENSE_OR_SCOPE_CONFLICT": 6,
+    "COOCCURRENCE_ONLY": 1,
+    "HARD_NEGATIVE": 1,
+    "INSUFFICIENT_EVIDENCE": 1,
+    "PAIRWISE_SUPPORT_WITHOUT_GROUP_COHERENCE": 5
+  },
+  "format": "trace-round16b-evidence-disposition-tranche-b-census-v1",
+  "instruction_count_reconciliation": {
+    "count_mismatch_detected": true,
+    "earlier_summary_claims": {
+      "BOUNDED_SENSE_OR_SCOPE_CONFLICT": 7,
+      "PAIRWISE_SUPPORT_WITHOUT_GROUP_COHERENCE": 4
+    },
+    "explicit_family_key_lists_and_exact_v2_rows": {
+      "BOUNDED_SENSE_OR_SCOPE_CONFLICT": 6,
+      "PAIRWISE_SUPPORT_WITHOUT_GROUP_COHERENCE": 5
+    },
+    "resolution_status": "FAIL_CLOSED_EXACT_LISTED_FAMILY_KEYS_AND_ROW_EVIDENCE_CONTROL",
+    "resolved_distribution": {
+      "BOUNDED_SENSE_OR_SCOPE_CONFLICT": 6,
+      "COOCCURRENCE_ONLY": 1,
+      "HARD_NEGATIVE": 1,
+      "INSUFFICIENT_EVIDENCE": 1,
+      "PAIRWISE_SUPPORT_WITHOUT_GROUP_COHERENCE": 5
+    },
+    "semantic_effect": "No supporting disposition, association identity, activation, pair projection, product eligibility, or closure is created by resolving the arithmetic contradiction."
+  },
+  "internal_active_pair_count_distribution": {
+    "0": 2,
+    "1": 6,
+    "2": 3,
+    "3": 3
+  },
+  "memo_queue_association_candidate_count": 0,
+  "memo_queue_record_count": 37,
+  "memo_queue_record_kind_counts": {
+    "CONDITIONAL_SCOPED_CHILD_REVIEW": 13,
+    "DERIVATIVE_RECONCILIATION": 6,
+    "PAIR_OR_SCOPE_REROUTE": 13,
+    "PARENT_CLOSE_CONTROL": 5
+  },
+  "occurrence_evidence_class_counts": {
+    "EVIDENCE_BEARING_INPUT": 7,
+    "EXPLICIT_NEAR_MISS": 1,
+    "HARD_NEGATIVE_CONTROL": 1,
+    "METADATA_DISCOVERY": 11,
+    "STRUCTURAL_ECHO": 164,
+    "SYNTHETIC_CONTROL": 2,
+    "VOCABULARY_ONLY_COOCCURRENCE": 1
+  },
+  "occurrence_source_class_counts": {
+    "DATABASE_DISCOVERY_LOCUS": 11,
+    "R10_CLUSTER_HANDOFF": 1,
+    "R10_GRAMMAR_ATTESTATION": 1,
+    "R13_EXACT_EVIDENCE_RECORD": 1,
+    "R14_SHARED_LOCATOR_PROVENANCE": 5,
+    "R14_SYNTHETIC_NARY_CONTROL": 2,
+    "R15_RESEARCH_FIXTURE": 5,
+    "R16A_CONNECTED_SUBGRAPH": 15,
+    "R16A_PRESENTATION_TOPOLOGY": 36,
+    "R16A_PRODUCT_COMPOSITION": 108,
+    "R16_LEGACY_PRODUCT_COMPOSITION": 1,
+    "R16_SCHOLARLY_SOURCE_METADATA": 1
+  },
+  "pair_or_scope_reroute_count": 13,
+  "pair_projection_created_count": 0,
+  "parent_checkpoint_sha": "adf3cc7a214aa1b8fdaef75b7a9e8888c39c906e",
+  "parent_close_control_count": 5,
+  "product_eligible_count": 0,
+  "review_tranche": "CHECKPOINT-006-EVIDENCE-TRANCHE-B",
+  "semantic_boundary": "Final dispositions apply only to fourteen unchanged arity-three parent review families. The 37 queue rows are conditional review, reroute, reconciliation, or closure controls; they are not association candidates, identities, support decisions, or product paths.",
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "source_tree": "977d7e8e045c71857959750b775cd4df3d036686",
+  "tranche_family_count": 14,
+  "tranche_linked_occurrence_count": 187
+}

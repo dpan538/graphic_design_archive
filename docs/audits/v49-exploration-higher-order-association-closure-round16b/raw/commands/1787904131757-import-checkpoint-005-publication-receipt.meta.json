@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/import_publication_receipts.py",
+    "--receipt",
+    "/Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json",
+    "--output-dir",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts",
+    "--manifest",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv"
+  ],
+  "command": "python3 scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv",
+  "command_id": "1787904131757-import-checkpoint-005-publication-receipt",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 38,
+  "end_timestamp_utc": "2026-08-28T08:02:11Z",
+  "exit_code": 1,
+  "launch_error": "",
+  "operation_id": "import-checkpoint-005-publication-receipt",
+  "phase_id": "CHECKPOINT-006-BOOTSTRAP",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T08:02:11Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "86bb083f9fa3ce47cb0d01b840c5a92332f345b14a8716c0239ceecf3a204f22",
+  "timed_out": false
+}
