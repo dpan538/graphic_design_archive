@@ -11750,3 +11750,2201 @@
 - Decision: All correction artifacts and the preserved expected pre-seal failure must be hash-bound without altering their governed bytes.
 - Next: Run final direct execution verification, staged whitespace/scope review, commit, and ordinary publication.
 - Git SHA: `76d826100df3a23fce1765ca62245eb348bff1c3`
+
+## Event 905
+
+- UTC timestamp: 2026-08-28T18:10:20Z
+- Phase: CP14
+- Operation: START — Inspect detached frontend dependency path
+- Command: `/bin/ls -ld /private/tmp/gda_round16b_cp014_clean_repro_ec7b847e/frontend/node_modules`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 906
+
+- UTC timestamp: 2026-08-28T18:10:20Z
+- Phase: CP14
+- Operation: START — Inspect main frontend dependency directory
+- Command: `/bin/ls -ld /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 907
+
+- UTC timestamp: 2026-08-28T18:10:20Z
+- Phase: CP14
+- Operation: FAIL — Inspect detached frontend dependency path
+- Command: `/bin/ls -ld /private/tmp/gda_round16b_cp014_clean_repro_ec7b847e/frontend/node_modules`
+- Inputs: none
+- Outputs: none
+- Duration: 5 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Verify ignore policy before any symlink.
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 908
+
+- UTC timestamp: 2026-08-28T18:10:20Z
+- Phase: CP14
+- Operation: PASS — Inspect main frontend dependency directory
+- Command: `/bin/ls -ld /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules`
+- Inputs: none
+- Outputs: none
+- Duration: 4 ms
+- Warnings: none
+- Errors: none
+- Decision: The published dependency installation may be reused read-only by the detached reproduction.
+- Next: Inspect the detached worktree dependency path.
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 909
+
+- UTC timestamp: 2026-08-28T18:10:28Z
+- Phase: CP14
+- Operation: START — Verify frontend node_modules ignore policy
+- Command: `git check-ignore -v frontend/node_modules`
+- Inputs: .gitignore
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 910
+
+- UTC timestamp: 2026-08-28T18:10:28Z
+- Phase: CP14
+- Operation: PASS — Verify frontend node_modules ignore policy
+- Command: `git check-ignore -v frontend/node_modules`
+- Inputs: .gitignore
+- Outputs: none
+- Duration: 23 ms
+- Warnings: none
+- Errors: none
+- Decision: Only an ignored dependency symlink may be introduced in the disposable detached worktree.
+- Next: Create the ignored symlink and verify clean status.
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 911
+
+- UTC timestamp: 2026-08-28T18:10:31Z
+- Phase: CHECKPOINT-014-CLEAN-DATABASE-REPRODUCTION
+- Operation: START — Prove exact CP14 temporary PostgreSQL cluster root is absent before creation
+- Command: `sh -c 'test ! -e /private/tmp/gda-v50-round16b-cp014-repro && printf "%s\n" CP14_DATABASE_CLUSTER_ROOT_ABSENT=PASS'`
+- Inputs: /private/tmp/gda-v50-round16b-cp014-repro
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 912
+
+- UTC timestamp: 2026-08-28T18:10:31Z
+- Phase: CHECKPOINT-014-CLEAN-DATABASE-REPRODUCTION
+- Operation: PASS — Prove exact CP14 temporary PostgreSQL cluster root is absent before creation
+- Command: `sh -c 'test ! -e /private/tmp/gda-v50-round16b-cp014-repro && printf "%s\n" CP14_DATABASE_CLUSTER_ROOT_ABSENT=PASS'`
+- Inputs: /private/tmp/gda-v50-round16b-cp014-repro
+- Outputs: none
+- Duration: 6 ms
+- Warnings: none
+- Errors: none
+- Decision: Proceed only if the exact isolated CP14 cluster root does not exist.
+- Next: cp014-db-toolchain-preflight
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 913
+
+- UTC timestamp: 2026-08-28T18:10:35Z
+- Phase: CP14
+- Operation: START — Link detached frontend dependencies
+- Command: `/bin/ln -s /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules /private/tmp/gda_round16b_cp014_clean_repro_ec7b847e/frontend/node_modules`
+- Inputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules
+- Declared outputs: frontend/node_modules
+- Warnings: REPRODUCTION_ONLY_IGNORED_DEPENDENCY_SYMLINK
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 914
+
+- UTC timestamp: 2026-08-28T18:10:38Z
+- Phase: CP14
+- Operation: PASS — Link detached frontend dependencies
+- Command: `/bin/ln -s /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules /private/tmp/gda_round16b_cp014_clean_repro_ec7b847e/frontend/node_modules`
+- Inputs: /private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b/frontend/node_modules
+- Outputs: frontend/node_modules
+- Duration: 4 ms
+- Warnings: REPRODUCTION_ONLY_IGNORED_DEPENDENCY_SYMLINK
+- Errors: none
+- Decision: The detached checkout reuses the existing immutable dependency installation without changing tracked source.
+- Next: Verify the symlink is ignored and the detached worktree remains clean.
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 915
+
+- UTC timestamp: 2026-08-28T18:10:44Z
+- Phase: CHECKPOINT-014-CLEAN-DATABASE-REPRODUCTION
+- Operation: START — Verify PostgreSQL 16.13 toolchain and dedicated port preconditions
+- Command: `sh -c 'set -eu
+for tool in initdb pg_ctl postgres psql createdb dropdb pg_dump pg_isready; do test -x "/opt/homebrew/opt/postgresql@16/bin/$tool"; done
+version=$(/opt/homebrew/opt/postgresql@16/bin/postgres --version)
+case "$version" in *"16.13"*) ;; *) printf "%s\n" "unexpected PostgreSQL version: $version" >&2; exit 1 ;; esac
+if lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then printf "%s\n" CP14_DATABASE_PORT_FREE=FAIL >&2; exit 1; fi
+printf "%s\n" "POSTGRESQL_TOOLCHAIN=$version" CP14_DATABASE_PORT_59473_FREE=PASS'`
+- Inputs: /opt/homebrew/opt/postgresql@16/bin
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 916
+
+- UTC timestamp: 2026-08-28T18:10:44Z
+- Phase: CHECKPOINT-014-CLEAN-DATABASE-REPRODUCTION
+- Operation: PASS — Verify PostgreSQL 16.13 toolchain and dedicated port preconditions
+- Command: `sh -c 'set -eu
+for tool in initdb pg_ctl postgres psql createdb dropdb pg_dump pg_isready; do test -x "/opt/homebrew/opt/postgresql@16/bin/$tool"; done
+version=$(/opt/homebrew/opt/postgresql@16/bin/postgres --version)
+case "$version" in *"16.13"*) ;; *) printf "%s\n" "unexpected PostgreSQL version: $version" >&2; exit 1 ;; esac
+if lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then printf "%s\n" CP14_DATABASE_PORT_FREE=FAIL >&2; exit 1; fi
+printf "%s\n" "POSTGRESQL_TOOLCHAIN=$version" CP14_DATABASE_PORT_59473_FREE=PASS'`
+- Inputs: /opt/homebrew/opt/postgresql@16/bin
+- Outputs: none
+- Duration: 71 ms
+- Warnings: none
+- Errors: none
+- Decision: Use only PostgreSQL 16.13 and require no TCP listener on dedicated port 59473.
+- Next: cp014-db-create-cluster-directories
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 917
+
+- UTC timestamp: 2026-08-28T18:10:48Z
+- Phase: CP14
+- Operation: START — Verify detached frontend dependency symlink target
+- Command: `/usr/bin/readlink frontend/node_modules`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 918
+
+- UTC timestamp: 2026-08-28T18:10:48Z
+- Phase: CP14
+- Operation: START — Verify linked dependency path remains ignored
+- Command: `git check-ignore -v frontend/node_modules`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 919
+
+- UTC timestamp: 2026-08-28T18:10:48Z
+- Phase: CP14
+- Operation: PASS — Verify detached frontend dependency symlink target
+- Command: `/usr/bin/readlink frontend/node_modules`
+- Inputs: none
+- Outputs: none
+- Duration: 5 ms
+- Warnings: none
+- Errors: none
+- Decision: The dependency symlink targets the existing main-worktree installation.
+- Next: Proceed to ignore verification.
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 920
+
+- UTC timestamp: 2026-08-28T18:10:48Z
+- Phase: CP14
+- Operation: START — Verify detached worktree cleanliness before frontend tests
+- Command: `git status --porcelain=v1 --untracked-files=all`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 921
+
+- UTC timestamp: 2026-08-28T18:10:48Z
+- Phase: CP14
+- Operation: PASS — Verify linked dependency path remains ignored
+- Command: `git check-ignore -v frontend/node_modules`
+- Inputs: none
+- Outputs: none
+- Duration: 23 ms
+- Warnings: none
+- Errors: none
+- Decision: The reproduction-only symlink is excluded from the tracked tree.
+- Next: Proceed to detached status verification.
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 922
+
+- UTC timestamp: 2026-08-28T18:10:48Z
+- Phase: CP14
+- Operation: PASS — Verify detached worktree cleanliness before frontend tests
+- Command: `git status --porcelain=v1 --untracked-files=all`
+- Inputs: none
+- Outputs: none
+- Duration: 63 ms
+- Warnings: none
+- Errors: none
+- Decision: The dependency link creates no tracked or untracked repository delta.
+- Next: Run the frontend verification inventory.
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 923
+
+- UTC timestamp: 2026-08-28T18:10:50Z
+- Phase: CHECKPOINT-014-CLEAN-DATABASE-REPRODUCTION
+- Operation: START — Create exact isolated CP14 cluster and socket directories
+- Command: `mkdir -p /private/tmp/gda-v50-round16b-cp014-repro/socket`
+- Inputs: none
+- Declared outputs: /private/tmp/gda-v50-round16b-cp014-repro
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 924
+
+- UTC timestamp: 2026-08-28T18:10:50Z
+- Phase: CHECKPOINT-014-CLEAN-DATABASE-REPRODUCTION
+- Operation: PASS — Create exact isolated CP14 cluster and socket directories
+- Command: `mkdir -p /private/tmp/gda-v50-round16b-cp014-repro/socket`
+- Inputs: none
+- Outputs: /private/tmp/gda-v50-round16b-cp014-repro
+- Duration: 4 ms
+- Warnings: none
+- Errors: none
+- Decision: Create only the previously proven-absent CP14 root and its private socket directory.
+- Next: cp014-db-initdb
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 925
+
+- UTC timestamp: 2026-08-28T18:10:53Z
+- Phase: CHECKPOINT-014-CLEAN-REPRODUCTION
+- Operation: START — cp014-import-publication-chain-through-checkpoint013
+- Command: `python3 -B scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787902081597323000-checkpoint-004.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787906350663884000-checkpoint-006.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787908701362896000-checkpoint-007.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787914780509164000-checkpoint-008.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787917453487486000-checkpoint-009.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787920754083087000-checkpoint-010.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787934365737642000-checkpoint-011.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787939431323648000-checkpoint-012.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787940387063722000-checkpoint-013.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv`
+- Inputs: /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 926
+
+- UTC timestamp: 2026-08-28T18:10:53Z
+- Phase: CHECKPOINT-014-CLEAN-REPRODUCTION
+- Operation: PASS — cp014-import-publication-chain-through-checkpoint013
+- Command: `python3 -B scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787902081597323000-checkpoint-004.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787904080195907000-checkpoint-005.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787906350663884000-checkpoint-006.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787908701362896000-checkpoint-007.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787914780509164000-checkpoint-008.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787917453487486000-checkpoint-009.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787920754083087000-checkpoint-010.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787934365737642000-checkpoint-011.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787939431323648000-checkpoint-012.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787940387063722000-checkpoint-013.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv`
+- Inputs: /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Duration: 46 ms
+- Warnings: none
+- Errors: none
+- Decision: Validate and bind the complete external ordinary-push receipt chain through published checkpoint 13 before final reproduction.
+- Next: cp014-record-checkpoint013-ledger
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 927
+
+- UTC timestamp: 2026-08-28T18:11:00Z
+- Phase: CP14
+- Operation: START — Run Exploration domain tests
+- Command: `npm --prefix frontend run test:exploration-domain`
+- Inputs: frontend/package.json, frontend/generated/trace-exploration-v3
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 928
+
+- UTC timestamp: 2026-08-28T18:11:00Z
+- Phase: CP14
+- Operation: FAIL — Run Exploration domain tests
+- Command: `npm --prefix frontend run test:exploration-domain`
+- Inputs: frontend/package.json, frontend/generated/trace-exploration-v3
+- Outputs: none
+- Duration: 617 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Run the constraint-kernel tests.
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 929
+
+- UTC timestamp: 2026-08-28T18:11:05Z
+- Phase: CHECKPOINT-014-CLEAN-DATABASE-REPRODUCTION
+- Operation: START — Initialize fresh PostgreSQL 16.13 cluster with deterministic locale and trust-local auth
+- Command: `env LC_ALL=C.UTF-8 /opt/homebrew/opt/postgresql@16/bin/initdb -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject`
+- Inputs: none
+- Declared outputs: /private/tmp/gda-v50-round16b-cp014-repro/data
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 930
+
+- UTC timestamp: 2026-08-28T18:11:06Z
+- Phase: CHECKPOINT-014-CLEAN-DATABASE-REPRODUCTION
+- Operation: FAIL — Initialize fresh PostgreSQL 16.13 cluster with deterministic locale and trust-local auth
+- Command: `env LC_ALL=C.UTF-8 /opt/homebrew/opt/postgresql@16/bin/initdb -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject`
+- Inputs: none
+- Outputs: /private/tmp/gda-v50-round16b-cp014-repro/data
+- Duration: 1058 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: cp014-db-start-cluster
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 931
+
+- UTC timestamp: 2026-08-28T18:11:14Z
+- Phase: CP14
+- Operation: START — Inspect failing Exploration domain assertion
+- Command: `sed -n 130,175p frontend/scripts/test-exploration-domain.mjs`
+- Inputs: frontend/scripts/test-exploration-domain.mjs
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 932
+
+- UTC timestamp: 2026-08-28T18:11:14Z
+- Phase: CP14
+- Operation: START — Inspect v49 database-freeze verifier contract
+- Command: `sed -n 1,280p scripts/repository/verify_v49_database_freeze.py`
+- Inputs: scripts/repository/verify_v49_database_freeze.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 933
+
+- UTC timestamp: 2026-08-28T18:11:14Z
+- Phase: CP14
+- Operation: PASS — Inspect failing Exploration domain assertion
+- Command: `sed -n 130,175p frontend/scripts/test-exploration-domain.mjs`
+- Inputs: frontend/scripts/test-exploration-domain.mjs
+- Outputs: none
+- Duration: 4 ms
+- Warnings: none
+- Errors: none
+- Decision: Identify the exact legacy freeze contract used by the failed gate.
+- Next: Inspect the governed database-freeze verifier.
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 934
+
+- UTC timestamp: 2026-08-28T18:11:14Z
+- Phase: CP14
+- Operation: PASS — Inspect v49 database-freeze verifier contract
+- Command: `sed -n 1,280p scripts/repository/verify_v49_database_freeze.py`
+- Inputs: scripts/repository/verify_v49_database_freeze.py
+- Outputs: none
+- Duration: 4 ms
+- Warnings: none
+- Errors: none
+- Decision: Determine whether the verifier supports authorized additive v50 changes or requires an explicit baseline.
+- Next: Classify the failure and report the required correction.
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 935
+
+- UTC timestamp: 2026-08-28T18:11:19Z
+- Phase: CHECKPOINT-014-CLEAN-DATABASE-REPRODUCTION
+- Operation: START — Retry fresh PostgreSQL 16.13 cluster initialization outside shared-memory sandbox
+- Command: `env LC_ALL=C.UTF-8 /opt/homebrew/opt/postgresql@16/bin/initdb -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject`
+- Inputs: none
+- Declared outputs: /private/tmp/gda-v50-round16b-cp014-repro/data
+- Warnings: SANDBOX_SHARED_MEMORY_BLOCKED_INITIAL_INITDB
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 936
+
+- UTC timestamp: 2026-08-28T18:11:20Z
+- Phase: CP14
+- Operation: START — Locate active repository guard implementation
+- Command: `rg -n 'auditActiveRepository|databaseFilesChanged' frontend/src frontend/scripts`
+- Inputs: frontend/src
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 937
+
+- UTC timestamp: 2026-08-28T18:11:20Z
+- Phase: CP14
+- Operation: PASS — Locate active repository guard implementation
+- Command: `rg -n 'auditActiveRepository|databaseFilesChanged' frontend/src frontend/scripts`
+- Inputs: frontend/src
+- Outputs: none
+- Duration: 65 ms
+- Warnings: none
+- Errors: none
+- Decision: Locate the precise guard responsible for the databaseFilesChanged failure.
+- Next: Inspect its baseline and permitted-change policy.
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 938
+
+- UTC timestamp: 2026-08-28T18:11:20Z
+- Phase: CHECKPOINT-014-CLEAN-DATABASE-REPRODUCTION
+- Operation: FAIL — Retry fresh PostgreSQL 16.13 cluster initialization outside shared-memory sandbox
+- Command: `env LC_ALL=C.UTF-8 /opt/homebrew/opt/postgresql@16/bin/initdb -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject`
+- Inputs: none
+- Outputs: /private/tmp/gda-v50-round16b-cp014-repro/data
+- Duration: 540 ms
+- Warnings: SANDBOX_SHARED_MEMORY_BLOCKED_INITIAL_INITDB
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: cp014-db-start-cluster
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 939
+
+- UTC timestamp: 2026-08-28T18:11:25Z
+- Phase: CP14
+- Operation: START — Inspect active repository guard policy
+- Command: `sed -n 1,285p frontend/scripts/exploration-reset-guard.mjs`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 940
+
+- UTC timestamp: 2026-08-28T18:11:25Z
+- Phase: CP14
+- Operation: PASS — Inspect active repository guard policy
+- Command: `sed -n 1,285p frontend/scripts/exploration-reset-guard.mjs`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Outputs: none
+- Duration: 4 ms
+- Warnings: none
+- Errors: none
+- Decision: Classify whether the legacy guard can distinguish authorized additive v50 database files.
+- Next: Report the preserved gate failure to the coordinating agent.
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 941
+
+- UTC timestamp: 2026-08-28T18:11:37Z
+- Phase: CHECKPOINT-014-CLEAN-DATABASE-REPRODUCTION
+- Operation: START — Initialize fresh cluster with mmap shared-memory bootstrap correction
+- Command: `env LC_ALL=C.UTF-8 /opt/homebrew/opt/postgresql@16/bin/initdb -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix`
+- Inputs: none
+- Declared outputs: /private/tmp/gda-v50-round16b-cp014-repro/data
+- Warnings: SYSTEM_V_SHARED_MEMORY_UNAVAILABLE
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 942
+
+- UTC timestamp: 2026-08-28T18:11:38Z
+- Phase: CHECKPOINT-014-CLEAN-DATABASE-REPRODUCTION
+- Operation: FAIL — Initialize fresh cluster with mmap shared-memory bootstrap correction
+- Command: `env LC_ALL=C.UTF-8 /opt/homebrew/opt/postgresql@16/bin/initdb -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix`
+- Inputs: none
+- Outputs: /private/tmp/gda-v50-round16b-cp014-repro/data
+- Duration: 1089 ms
+- Warnings: SYSTEM_V_SHARED_MEMORY_UNAVAILABLE
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: cp014-db-start-cluster
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 943
+
+- UTC timestamp: 2026-08-28T18:11:38Z
+- Phase: CHECKPOINT-014-CLEAN-REPRODUCTION
+- Operation: START — cp014-clean-build-method
+- Command: `python3 -B scripts/trace_round16b/build_method_checkpoint.py`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 944
+
+- UTC timestamp: 2026-08-28T18:11:38Z
+- Phase: CHECKPOINT-014-CLEAN-REPRODUCTION
+- Operation: START — cp014-clean-build-local-candidate-census
+- Command: `python3 -B scripts/trace_round16b/build_local_candidate_census.py`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 945
+
+- UTC timestamp: 2026-08-28T18:11:38Z
+- Phase: CHECKPOINT-014-CLEAN-REPRODUCTION
+- Operation: START — cp014-clean-build-deferred-surface-census
+- Command: `python3 -B scripts/trace_round16b/build_deferred_surface_census.py`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 946
+
+- UTC timestamp: 2026-08-28T18:11:38Z
+- Phase: CHECKPOINT-014-CLEAN-REPRODUCTION
+- Operation: PASS — cp014-clean-build-method
+- Command: `python3 -B scripts/trace_round16b/build_method_checkpoint.py`
+- Inputs: none
+- Outputs: none
+- Duration: 569 ms
+- Warnings: none
+- Errors: none
+- Decision: Rebuild the governed higher-order association method from the corrected published clean checkout.
+- Next: cp014-clean-independent-foundation-verification
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 947
+
+- UTC timestamp: 2026-08-28T18:11:46Z
+- Phase: CHECKPOINT-014-CLEAN-REPRODUCTION
+- Operation: PASS — cp014-clean-build-local-candidate-census
+- Command: `python3 -B scripts/trace_round16b/build_local_candidate_census.py`
+- Inputs: none
+- Outputs: none
+- Duration: 7879 ms
+- Warnings: none
+- Errors: none
+- Decision: Rebuild the complete local candidate census from the corrected published clean checkout.
+- Next: cp014-clean-independent-foundation-verification
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 948
+
+- UTC timestamp: 2026-08-28T18:11:59Z
+- Phase: CP14
+- Operation: START — Run governed v49 database freeze verifier for diagnosis
+- Command: `python3 -B scripts/repository/verify_v49_database_freeze.py --repo .`
+- Inputs: scripts/repository/verify_v49_database_freeze.py, database/FREEZE_V49.json, database/FREEZE_V49.sha256
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 949
+
+- UTC timestamp: 2026-08-28T18:11:59Z
+- Phase: CP14
+- Operation: START — Enumerate files rejected by legacy Exploration guard
+- Command: `git diff --name-only 3d7536b4588032d806b6492a1be97b59891ca031 -- database`
+- Inputs: database
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 950
+
+- UTC timestamp: 2026-08-28T18:11:59Z
+- Phase: CP14
+- Operation: PASS — Enumerate files rejected by legacy Exploration guard
+- Command: `git diff --name-only 3d7536b4588032d806b6492a1be97b59891ca031 -- database`
+- Inputs: database
+- Outputs: none
+- Duration: 26 ms
+- Warnings: none
+- Errors: none
+- Decision: Bind the failure to the exact authorized additive v50 file set.
+- Next: Compare against the governed v49 freeze verifier.
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 951
+
+- UTC timestamp: 2026-08-28T18:11:59Z
+- Phase: CP14
+- Operation: PASS — Run governed v49 database freeze verifier for diagnosis
+- Command: `python3 -B scripts/repository/verify_v49_database_freeze.py --repo .`
+- Inputs: scripts/repository/verify_v49_database_freeze.py, database/FREEZE_V49.json, database/FREEZE_V49.sha256
+- Outputs: none
+- Duration: 548 ms
+- Warnings: none
+- Errors: none
+- Decision: The governed verifier proves frozen v49 paths remain unchanged while recognizing additive v50 files.
+- Next: Await additive compatibility correction before frontend rerun.
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 952
+
+- UTC timestamp: 2026-08-28T18:12:09Z
+- Phase: CHECKPOINT-014-CLEAN-DATABASE-REPRODUCTION
+- Operation: START — Diagnose System V shared-memory exhaustion after repeated initdb bootstrap failure
+- Command: `sh -c 'set +e
+ipcs -m
+printf "%s\n" POSTGRES_PROCESSES_BEGIN
+ps -axo pid,ppid,command | rg "[p]ostgres|[p]ostmaster"
+printf "%s\n" POSTGRES_PROCESSES_END
+sysctl kern.sysv.shmmax kern.sysv.shmmin kern.sysv.shmmni kern.sysv.shmseg kern.sysv.shmall
+exit 0'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: SYSTEM_V_SHARED_MEMORY_UNAVAILABLE
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 953
+
+- UTC timestamp: 2026-08-28T18:12:09Z
+- Phase: CHECKPOINT-014-CLEAN-DATABASE-REPRODUCTION
+- Operation: PASS — Diagnose System V shared-memory exhaustion after repeated initdb bootstrap failure
+- Command: `sh -c 'set +e
+ipcs -m
+printf "%s\n" POSTGRES_PROCESSES_BEGIN
+ps -axo pid,ppid,command | rg "[p]ostgres|[p]ostmaster"
+printf "%s\n" POSTGRES_PROCESSES_END
+sysctl kern.sysv.shmmax kern.sysv.shmmin kern.sysv.shmmni kern.sysv.shmseg kern.sysv.shmall
+exit 0'`
+- Inputs: none
+- Outputs: none
+- Duration: 48 ms
+- Warnings: SYSTEM_V_SHARED_MEMORY_UNAVAILABLE
+- Errors: none
+- Decision: Inspect only; do not stop or alter any unrelated process or IPC object.
+- Next: cp014-db-initdb-correction3
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 954
+
+- UTC timestamp: 2026-08-28T18:12:36Z
+- Phase: CHECKPOINT-014-CLEAN-REPRODUCTION
+- Operation: PASS — cp014-clean-build-deferred-surface-census
+- Command: `python3 -B scripts/trace_round16b/build_deferred_surface_census.py`
+- Inputs: none
+- Outputs: none
+- Duration: 57844 ms
+- Warnings: none
+- Errors: none
+- Decision: Rebuild the deferred evidence-surface and database census from the corrected published clean checkout.
+- Next: cp014-clean-independent-foundation-verification
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 955
+
+- UTC timestamp: 2026-08-28T18:12:38Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: START — Retry initdb with process-level mmap bootstrap settings after System V ID exhaustion
+- Command: `env LC_ALL=C.UTF-8 'PGOPTIONS=-c shared_memory_type=mmap -c dynamic_shared_memory_type=posix' /opt/homebrew/opt/postgresql@16/bin/initdb -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix`
+- Inputs: none
+- Declared outputs: /private/tmp/gda-v50-round16b-cp014-repro/data
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY, SYSTEM_V_SHARED_MEMORY_IDS_EXHAUSTED
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 956
+
+- UTC timestamp: 2026-08-28T18:12:39Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: FAIL — Retry initdb with process-level mmap bootstrap settings after System V ID exhaustion
+- Command: `env LC_ALL=C.UTF-8 'PGOPTIONS=-c shared_memory_type=mmap -c dynamic_shared_memory_type=posix' /opt/homebrew/opt/postgresql@16/bin/initdb -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix`
+- Inputs: none
+- Outputs: /private/tmp/gda-v50-round16b-cp014-repro/data
+- Duration: 1064 ms
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY, SYSTEM_V_SHARED_MEMORY_IDS_EXHAUSTED
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: cp014-db-start-cluster-pre-correction
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 957
+
+- UTC timestamp: 2026-08-28T18:13:20Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: START — Capture initdb debug invocation to isolate ignored bootstrap shared-memory settings
+- Command: `env LC_ALL=C.UTF-8 /opt/homebrew/opt/postgresql@16/bin/initdb -d -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix`
+- Inputs: none
+- Declared outputs: /private/tmp/gda-v50-round16b-cp014-repro/data
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY, SYSTEM_V_SHARED_MEMORY_IDS_EXHAUSTED
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 958
+
+- UTC timestamp: 2026-08-28T18:13:21Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: FAIL — Capture initdb debug invocation to isolate ignored bootstrap shared-memory settings
+- Command: `env LC_ALL=C.UTF-8 /opt/homebrew/opt/postgresql@16/bin/initdb -d -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix`
+- Inputs: none
+- Outputs: /private/tmp/gda-v50-round16b-cp014-repro/data
+- Duration: 1119 ms
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY, SYSTEM_V_SHARED_MEMORY_IDS_EXHAUSTED
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: cp014-db-bootstrap-wrapper-preflight
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 959
+
+- UTC timestamp: 2026-08-28T18:13:31Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: START — Create temporary initdb bootstrap wrapper directory
+- Command: `mkdir -p /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin`
+- Inputs: none
+- Declared outputs: /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 960
+
+- UTC timestamp: 2026-08-28T18:13:31Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: PASS — Create temporary initdb bootstrap wrapper directory
+- Command: `mkdir -p /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin`
+- Inputs: none
+- Outputs: /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin
+- Duration: 4 ms
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY
+- Errors: none
+- Decision: Create wrapper tooling only inside the exact disposable CP14 cluster root.
+- Next: cp014-db-copy-initdb-binary
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 961
+
+- UTC timestamp: 2026-08-28T18:13:34Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-check-corrected-reset-guard-syntax
+- Command: `node --check frontend/scripts/exploration-reset-guard.mjs`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs, scripts/repository/verify_v49_database_freeze.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 962
+
+- UTC timestamp: 2026-08-28T18:13:35Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-check-corrected-reset-guard-syntax
+- Command: `node --check frontend/scripts/exploration-reset-guard.mjs`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs, scripts/repository/verify_v49_database_freeze.py
+- Outputs: none
+- Duration: 203 ms
+- Warnings: none
+- Errors: none
+- Decision: Parse the additive governed-database-freeze correction before executing the guard.
+- Next: cp014-correction-regression-suite
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 963
+
+- UTC timestamp: 2026-08-28T18:13:35Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-verify-corrected-exploration-reset-guard
+- Command: `npm --prefix frontend run verify:exploration-reset`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs, scripts/repository/verify_v49_database_freeze.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 964
+
+- UTC timestamp: 2026-08-28T18:13:36Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-verify-corrected-exploration-reset-guard
+- Command: `npm --prefix frontend run verify:exploration-reset`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs, scripts/repository/verify_v49_database_freeze.py
+- Outputs: none
+- Duration: 1062 ms
+- Warnings: none
+- Errors: none
+- Decision: Require the corrected legacy reset guard to accept authorized additive v50 files only through the governed v49 freeze verifier.
+- Next: cp014-correction-regression-suite
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 965
+
+- UTC timestamp: 2026-08-28T18:13:36Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-test-corrected-exploration-domain
+- Command: `npm --prefix frontend run test:exploration-domain`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs, scripts/repository/verify_v49_database_freeze.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 966
+
+- UTC timestamp: 2026-08-28T18:13:37Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-test-corrected-exploration-domain
+- Command: `npm --prefix frontend run test:exploration-domain`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs, scripts/repository/verify_v49_database_freeze.py
+- Outputs: none
+- Duration: 855 ms
+- Warnings: none
+- Errors: none
+- Decision: Rerun the first failed frontend boundary after the governed database-freeze correction.
+- Next: cp014-correction-regression-suite
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 967
+
+- UTC timestamp: 2026-08-28T18:13:38Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: START — Copy version-matched initdb binary into disposable wrapper directory
+- Command: `cp /opt/homebrew/opt/postgresql@16/bin/initdb /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb`
+- Inputs: /opt/homebrew/opt/postgresql@16/bin/initdb
+- Declared outputs: /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 968
+
+- UTC timestamp: 2026-08-28T18:13:38Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: PASS — Copy version-matched initdb binary into disposable wrapper directory
+- Command: `cp /opt/homebrew/opt/postgresql@16/bin/initdb /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb`
+- Inputs: /opt/homebrew/opt/postgresql@16/bin/initdb
+- Outputs: /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb
+- Duration: 5 ms
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY
+- Errors: none
+- Decision: Use the exact PostgreSQL 16.13 initdb binary; copy only into disposable temp root.
+- Next: cp014-db-create-postgres-bootstrap-wrapper
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 969
+
+- UTC timestamp: 2026-08-28T18:13:54Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: START — Validate and enable temporary mmap PostgreSQL bootstrap wrapper
+- Command: `sh -c 'set -eu
+chmod 700 /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres
+rg -q "^exec /opt/homebrew/opt/postgresql@16/bin/postgres" /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres
+/opt/homebrew/opt/postgresql@16/bin/postgres --version
+printf "%s\n" CP14_MMAP_BOOTSTRAP_WRAPPER=PASS'`
+- Inputs: /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres
+- Declared outputs: /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 970
+
+- UTC timestamp: 2026-08-28T18:13:54Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: PASS — Validate and enable temporary mmap PostgreSQL bootstrap wrapper
+- Command: `sh -c 'set -eu
+chmod 700 /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres
+rg -q "^exec /opt/homebrew/opt/postgresql@16/bin/postgres" /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres
+/opt/homebrew/opt/postgresql@16/bin/postgres --version
+printf "%s\n" CP14_MMAP_BOOTSTRAP_WRAPPER=PASS'`
+- Inputs: /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres
+- Outputs: /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres
+- Duration: 40 ms
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY
+- Errors: none
+- Decision: Wrapper may only inject shared-memory settings and invoke exact PostgreSQL 16.13 binary.
+- Next: cp014-db-initdb-correction4-pre-correction
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 971
+
+- UTC timestamp: 2026-08-28T18:14:05Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: START — Initialize fresh cluster through temporary mmap bootstrap wrapper
+- Command: `env LC_ALL=C.UTF-8 /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb -L /opt/homebrew/opt/postgresql@16/share/postgresql@16 -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix`
+- Inputs: none
+- Declared outputs: /private/tmp/gda-v50-round16b-cp014-repro/data
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY, SYSTEM_V_SHARED_MEMORY_IDS_EXHAUSTED
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 972
+
+- UTC timestamp: 2026-08-28T18:14:06Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: FAIL — Initialize fresh cluster through temporary mmap bootstrap wrapper
+- Command: `env LC_ALL=C.UTF-8 /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb -L /opt/homebrew/opt/postgresql@16/share/postgresql@16 -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix`
+- Inputs: none
+- Outputs: /private/tmp/gda-v50-round16b-cp014-repro/data
+- Duration: 656 ms
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY, SYSTEM_V_SHARED_MEMORY_IDS_EXHAUSTED
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: cp014-db-start-cluster-pre-correction
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 973
+
+- UTC timestamp: 2026-08-28T18:14:12Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-check-corrected-reset-guard-syntax-final
+- Command: `node --check frontend/scripts/exploration-reset-guard.mjs`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs, frontend/scripts/test-exploration-domain.mjs, scripts/repository/verify_v49_database_freeze.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 974
+
+- UTC timestamp: 2026-08-28T18:14:12Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-check-corrected-reset-guard-syntax-final
+- Command: `node --check frontend/scripts/exploration-reset-guard.mjs`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs, frontend/scripts/test-exploration-domain.mjs, scripts/repository/verify_v49_database_freeze.py
+- Outputs: none
+- Duration: 29 ms
+- Warnings: none
+- Errors: none
+- Decision: Parse the final governed-database-freeze guard and its additive regression fixtures.
+- Next: cp014-correction-integrity-gates
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 975
+
+- UTC timestamp: 2026-08-28T18:14:12Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-check-corrected-domain-test-syntax-final
+- Command: `node --check frontend/scripts/test-exploration-domain.mjs`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs, frontend/scripts/test-exploration-domain.mjs, scripts/repository/verify_v49_database_freeze.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 976
+
+- UTC timestamp: 2026-08-28T18:14:12Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-check-corrected-domain-test-syntax-final
+- Command: `node --check frontend/scripts/test-exploration-domain.mjs`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs, frontend/scripts/test-exploration-domain.mjs, scripts/repository/verify_v49_database_freeze.py
+- Outputs: none
+- Duration: 28 ms
+- Warnings: none
+- Errors: none
+- Decision: Parse the final exploration-domain regression suite.
+- Next: cp014-correction-integrity-gates
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 977
+
+- UTC timestamp: 2026-08-28T18:14:13Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-verify-corrected-exploration-reset-guard-final
+- Command: `npm --prefix frontend run verify:exploration-reset`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs, frontend/scripts/test-exploration-domain.mjs, scripts/repository/verify_v49_database_freeze.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 978
+
+- UTC timestamp: 2026-08-28T18:14:14Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-verify-corrected-exploration-reset-guard-final
+- Command: `npm --prefix frontend run verify:exploration-reset`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs, frontend/scripts/test-exploration-domain.mjs, scripts/repository/verify_v49_database_freeze.py
+- Outputs: none
+- Duration: 1060 ms
+- Warnings: none
+- Errors: none
+- Decision: Require the final reset guard to accept additive v50 files only with a passing governed freeze receipt.
+- Next: cp014-correction-integrity-gates
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 979
+
+- UTC timestamp: 2026-08-28T18:14:14Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-test-corrected-exploration-domain-final
+- Command: `npm --prefix frontend run test:exploration-domain`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs, frontend/scripts/test-exploration-domain.mjs, scripts/repository/verify_v49_database_freeze.py
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 980
+
+- UTC timestamp: 2026-08-28T18:14:15Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-test-corrected-exploration-domain-final
+- Command: `npm --prefix frontend run test:exploration-domain`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs, frontend/scripts/test-exploration-domain.mjs, scripts/repository/verify_v49_database_freeze.py
+- Outputs: none
+- Duration: 747 ms
+- Warnings: none
+- Errors: none
+- Decision: Verify the corrected boundary, including positive additive-v50 and negative frozen-drift controls.
+- Next: cp014-correction-integrity-gates
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 981
+
+- UTC timestamp: 2026-08-28T18:14:23Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: START — Correct wrapper version passthrough and validate exact binary identity
+- Command: `/private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres -V`
+- Inputs: /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres
+- Declared outputs: /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 982
+
+- UTC timestamp: 2026-08-28T18:14:23Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: PASS — Correct wrapper version passthrough and validate exact binary identity
+- Command: `/private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres -V`
+- Inputs: /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres
+- Outputs: /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres
+- Duration: 47 ms
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY
+- Errors: none
+- Decision: Pass through version probes unchanged; inject mmap settings only for server/bootstrap invocations.
+- Next: cp014-db-initdb-correction5-pre-correction
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 983
+
+- UTC timestamp: 2026-08-28T18:14:32Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: START — Initialize fresh cluster through corrected mmap bootstrap wrapper
+- Command: `env LC_ALL=C.UTF-8 /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb -L /opt/homebrew/opt/postgresql@16/share/postgresql@16 -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix`
+- Inputs: none
+- Declared outputs: /private/tmp/gda-v50-round16b-cp014-repro/data
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY, SYSTEM_V_SHARED_MEMORY_IDS_EXHAUSTED
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 984
+
+- UTC timestamp: 2026-08-28T18:14:33Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: FAIL — Initialize fresh cluster through corrected mmap bootstrap wrapper
+- Command: `env LC_ALL=C.UTF-8 /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb -L /opt/homebrew/opt/postgresql@16/share/postgresql@16 -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix`
+- Inputs: none
+- Outputs: /private/tmp/gda-v50-round16b-cp014-repro/data
+- Duration: 1117 ms
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY, SYSTEM_V_SHARED_MEMORY_IDS_EXHAUSTED
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: cp014-db-start-cluster-pre-correction
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 985
+
+- UTC timestamp: 2026-08-28T18:14:41Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-regress-exploration-inquiry-adapter
+- Command: `npm --prefix frontend run test:exploration-inquiry-adapter`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 986
+
+- UTC timestamp: 2026-08-28T18:14:41Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-regress-exploration-constraint-kernel
+- Command: `npm --prefix frontend run test:exploration-constraint-kernel`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 987
+
+- UTC timestamp: 2026-08-28T18:14:41Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-regress-exploration-composition-engine
+- Command: `npm --prefix frontend run test:exploration-composition-engine`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 988
+
+- UTC timestamp: 2026-08-28T18:14:41Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-regress-exploration-v3-projection
+- Command: `npm --prefix frontend run verify:exploration-v3-projection`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 989
+
+- UTC timestamp: 2026-08-28T18:14:41Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-regress-exploration-association-calibration
+- Command: `npm --prefix frontend run test:exploration-association-calibration`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 990
+
+- UTC timestamp: 2026-08-28T18:14:41Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-regress-exploration-composition-review
+- Command: `npm --prefix frontend run test:exploration-composition-review`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 991
+
+- UTC timestamp: 2026-08-28T18:14:41Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-regress-exploration-api-v3
+- Command: `npm --prefix frontend run test:exploration-api-v3`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 992
+
+- UTC timestamp: 2026-08-28T18:14:41Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-regress-frontend-runtime-typecheck
+- Command: `npm --prefix frontend run typecheck:runtime`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 993
+
+- UTC timestamp: 2026-08-28T18:14:42Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-regress-exploration-v3-projection
+- Command: `npm --prefix frontend run verify:exploration-v3-projection`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Outputs: none
+- Duration: 430 ms
+- Warnings: none
+- Errors: none
+- Decision: Run the relevant frontend and Exploration regression boundary after the governed freeze guard correction.
+- Next: cp014-correction-integrity-gates
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 994
+
+- UTC timestamp: 2026-08-28T18:14:42Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-regress-exploration-constraint-kernel
+- Command: `npm --prefix frontend run test:exploration-constraint-kernel`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Outputs: none
+- Duration: 560 ms
+- Warnings: none
+- Errors: none
+- Decision: Run the relevant frontend and Exploration regression boundary after the governed freeze guard correction.
+- Next: cp014-correction-integrity-gates
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 995
+
+- UTC timestamp: 2026-08-28T18:14:42Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-regress-exploration-composition-engine
+- Command: `npm --prefix frontend run test:exploration-composition-engine`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Outputs: none
+- Duration: 552 ms
+- Warnings: none
+- Errors: none
+- Decision: Run the relevant frontend and Exploration regression boundary after the governed freeze guard correction.
+- Next: cp014-correction-integrity-gates
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 996
+
+- UTC timestamp: 2026-08-28T18:14:42Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-regress-exploration-inquiry-adapter
+- Command: `npm --prefix frontend run test:exploration-inquiry-adapter`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Outputs: none
+- Duration: 621 ms
+- Warnings: none
+- Errors: none
+- Decision: Run the relevant frontend and Exploration regression boundary after the governed freeze guard correction.
+- Next: cp014-correction-integrity-gates
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 997
+
+- UTC timestamp: 2026-08-28T18:14:42Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-regress-exploration-association-calibration
+- Command: `npm --prefix frontend run test:exploration-association-calibration`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Outputs: none
+- Duration: 458 ms
+- Warnings: none
+- Errors: none
+- Decision: Run the relevant frontend and Exploration regression boundary after the governed freeze guard correction.
+- Next: cp014-correction-integrity-gates
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 998
+
+- UTC timestamp: 2026-08-28T18:14:42Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-regress-exploration-composition-review
+- Command: `npm --prefix frontend run test:exploration-composition-review`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Outputs: none
+- Duration: 463 ms
+- Warnings: none
+- Errors: none
+- Decision: Run the relevant frontend and Exploration regression boundary after the governed freeze guard correction.
+- Next: cp014-correction-integrity-gates
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 999
+
+- UTC timestamp: 2026-08-28T18:14:42Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-regress-exploration-api-v3
+- Command: `npm --prefix frontend run test:exploration-api-v3`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Outputs: none
+- Duration: 1025 ms
+- Warnings: none
+- Errors: none
+- Decision: Run the relevant frontend and Exploration regression boundary after the governed freeze guard correction.
+- Next: cp014-correction-integrity-gates
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1000
+
+- UTC timestamp: 2026-08-28T18:14:58Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: START — Initialize fresh cluster with pre-bootstrap mmap argument ordering
+- Command: `env LC_ALL=C.UTF-8 /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb -L /opt/homebrew/opt/postgresql@16/share/postgresql@16 -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix`
+- Inputs: none
+- Declared outputs: /private/tmp/gda-v50-round16b-cp014-repro/data
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY, SYSTEM_V_SHARED_MEMORY_IDS_EXHAUSTED
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1001
+
+- UTC timestamp: 2026-08-28T18:15:00Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: FAIL — Initialize fresh cluster with pre-bootstrap mmap argument ordering
+- Command: `env LC_ALL=C.UTF-8 /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb -L /opt/homebrew/opt/postgresql@16/share/postgresql@16 -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix`
+- Inputs: none
+- Outputs: /private/tmp/gda-v50-round16b-cp014-repro/data
+- Duration: 1409 ms
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY, SYSTEM_V_SHARED_MEMORY_IDS_EXHAUSTED
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: cp014-db-start-cluster-pre-correction
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1002
+
+- UTC timestamp: 2026-08-28T18:15:05Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-regress-frontend-runtime-typecheck
+- Command: `npm --prefix frontend run typecheck:runtime`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Outputs: none
+- Duration: 23415 ms
+- Warnings: none
+- Errors: none
+- Decision: Run the relevant frontend and Exploration regression boundary after the governed freeze guard correction.
+- Next: cp014-correction-integrity-gates
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1003
+
+- UTC timestamp: 2026-08-28T18:15:19Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-regress-frontend-production-build
+- Command: `npm --prefix frontend run build`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1004
+
+- UTC timestamp: 2026-08-28T18:15:21Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: START — Initialize fresh cluster with boot-mode-aware mmap wrapper
+- Command: `env LC_ALL=C.UTF-8 /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb -L /opt/homebrew/opt/postgresql@16/share/postgresql@16 -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix`
+- Inputs: none
+- Declared outputs: /private/tmp/gda-v50-round16b-cp014-repro/data
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY, SYSTEM_V_SHARED_MEMORY_IDS_EXHAUSTED
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1005
+
+- UTC timestamp: 2026-08-28T18:15:22Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: FAIL — Initialize fresh cluster with boot-mode-aware mmap wrapper
+- Command: `env LC_ALL=C.UTF-8 /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb -L /opt/homebrew/opt/postgresql@16/share/postgresql@16 -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix`
+- Inputs: none
+- Outputs: /private/tmp/gda-v50-round16b-cp014-repro/data
+- Duration: 1264 ms
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY, SYSTEM_V_SHARED_MEMORY_IDS_EXHAUSTED
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: cp014-db-start-cluster-pre-correction
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1006
+
+- UTC timestamp: 2026-08-28T18:15:32Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: FAIL — cp014-regress-frontend-production-build
+- Command: `npm --prefix frontend run build`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Outputs: none
+- Duration: 13325 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: cp014-correction-integrity-gates
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1007
+
+- UTC timestamp: 2026-08-28T18:15:39Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: START — Capture exact initdb postgres bootstrap argv through disposable wrapper
+- Command: `env LC_ALL=C.UTF-8 /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb -L /opt/homebrew/opt/postgresql@16/share/postgresql@16 -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix`
+- Inputs: none
+- Declared outputs: /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-postgres-argv.log
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1008
+
+- UTC timestamp: 2026-08-28T18:15:40Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: FAIL — Capture exact initdb postgres bootstrap argv through disposable wrapper
+- Command: `env LC_ALL=C.UTF-8 /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb -L /opt/homebrew/opt/postgresql@16/share/postgresql@16 -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix`
+- Inputs: none
+- Outputs: /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-postgres-argv.log
+- Duration: 1165 ms
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: cp014-db-bootstrap-wrapper-correction2
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1009
+
+- UTC timestamp: 2026-08-28T18:15:44Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-regress-frontend-production-build-network-correction
+- Command: `npm --prefix frontend run build`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Declared outputs: none
+- Warnings: SANDBOX_DNS_BLOCKED_GOOGLE_FONTS
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1010
+
+- UTC timestamp: 2026-08-28T18:16:11Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: START — Inspect shared-memory attachment counts to distinguish live from stale IPC segments
+- Command: `ipcs -m -a`
+- Inputs: none
+- Declared outputs: none
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1011
+
+- UTC timestamp: 2026-08-28T18:16:11Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: PASS — Inspect shared-memory attachment counts to distinguish live from stale IPC segments
+- Command: `ipcs -m -a`
+- Inputs: none
+- Outputs: none
+- Duration: 6 ms
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY
+- Errors: none
+- Decision: Read-only inspection; do not remove any segment or stop any unrelated cluster.
+- Next: cp014-db-cleanup-after-environment-blocker
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1012
+
+- UTC timestamp: 2026-08-28T18:17:00Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: START — Prove exact stale IPC segment 65537 is unattached and creator process is absent
+- Command: `sh -c 'set -eu
+line=$(ipcs -m -a | rg "^m[[:space:]]+65537[[:space:]]")
+test -n "$line"
+set -- $line
+test "$2" = 65537
+test "$5" = jarlgiovanni
+test "$9" = 0
+test "$11" = 21829
+if ps -p 21829 >/dev/null 2>&1; then printf "%s\n" STALE_IPC_CREATOR_ABSENT=FAIL >&2; exit 1; fi
+printf "%s\n" STALE_IPC_ID=65537 STALE_IPC_OWNER=jarlgiovanni STALE_IPC_NATTCH=0 STALE_IPC_CREATOR_PID=21829 STALE_IPC_CREATOR_ABSENT=PASS'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY, LOGGER_PATH_TYPO_PREVIOUS_UNLOGGED_INVOCATION
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1013
+
+- UTC timestamp: 2026-08-28T18:17:00Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: FAIL — Prove exact stale IPC segment 65537 is unattached and creator process is absent
+- Command: `sh -c 'set -eu
+line=$(ipcs -m -a | rg "^m[[:space:]]+65537[[:space:]]")
+test -n "$line"
+set -- $line
+test "$2" = 65537
+test "$5" = jarlgiovanni
+test "$9" = 0
+test "$11" = 21829
+if ps -p 21829 >/dev/null 2>&1; then printf "%s\n" STALE_IPC_CREATOR_ABSENT=FAIL >&2; exit 1; fi
+printf "%s\n" STALE_IPC_ID=65537 STALE_IPC_OWNER=jarlgiovanni STALE_IPC_NATTCH=0 STALE_IPC_CREATOR_PID=21829 STALE_IPC_CREATOR_ABSENT=PASS'`
+- Inputs: none
+- Outputs: none
+- Duration: 35 ms
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY, LOGGER_PATH_TYPO_PREVIOUS_UNLOGGED_INVOCATION
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: cp014-db-remove-stale-ipc-65537
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1014
+
+- UTC timestamp: 2026-08-28T18:17:12Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-regress-frontend-production-build-network-correction
+- Command: `npm --prefix frontend run build`
+- Inputs: frontend/scripts/exploration-reset-guard.mjs
+- Outputs: none
+- Duration: 88010 ms
+- Warnings: SANDBOX_DNS_BLOCKED_GOOGLE_FONTS
+- Errors: none
+- Decision: Repeat the identical production build with narrowly approved network access after the sandbox could not resolve the two declared Google Fonts.
+- Next: cp014-correction-integrity-gates
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1015
+
+- UTC timestamp: 2026-08-28T18:17:20Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: START — Correct positional-field parsing and prove stale IPC segment 65537
+- Command: `sh -c 'set -eu
+line=$(ipcs -m -a | rg "^m[[:space:]]+65537[[:space:]]")
+test -n "$line"
+set -- $line
+test "$2" = 65537
+test "$5" = jarlgiovanni
+test "$9" = 0
+test "${11}" = 21829
+if ps -p 21829 >/dev/null 2>&1; then printf "%s\n" STALE_IPC_CREATOR_ABSENT=FAIL >&2; exit 1; fi
+printf "%s\n" STALE_IPC_ID=65537 STALE_IPC_OWNER=jarlgiovanni STALE_IPC_NATTCH=0 STALE_IPC_CREATOR_PID=21829 STALE_IPC_CREATOR_ABSENT=PASS'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY, SHELL_POSITIONAL_PARSE_CORRECTED
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1016
+
+- UTC timestamp: 2026-08-28T18:17:20Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: PASS — Correct positional-field parsing and prove stale IPC segment 65537
+- Command: `sh -c 'set -eu
+line=$(ipcs -m -a | rg "^m[[:space:]]+65537[[:space:]]")
+test -n "$line"
+set -- $line
+test "$2" = 65537
+test "$5" = jarlgiovanni
+test "$9" = 0
+test "${11}" = 21829
+if ps -p 21829 >/dev/null 2>&1; then printf "%s\n" STALE_IPC_CREATOR_ABSENT=FAIL >&2; exit 1; fi
+printf "%s\n" STALE_IPC_ID=65537 STALE_IPC_OWNER=jarlgiovanni STALE_IPC_NATTCH=0 STALE_IPC_CREATOR_PID=21829 STALE_IPC_CREATOR_ABSENT=PASS'`
+- Inputs: none
+- Outputs: none
+- Duration: 14 ms
+- Warnings: PRE_CORRECTION_DIAGNOSTIC_ONLY, SHELL_POSITIONAL_PARSE_CORRECTED
+- Errors: none
+- Decision: Permit removal only if exact owner, NATTCH zero, and absent creator PID checks all pass.
+- Next: cp014-db-remove-stale-ipc-65537
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1017
+
+- UTC timestamp: 2026-08-28T18:17:55Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: START — cp014-db-validate-no-created-runtime
+- Command: `/bin/sh -c 'set -eu; test ! -d /private/tmp/gda-v50-round16b-cp014-repro/data; test -z "$(find /private/tmp/gda-v50-round16b-cp014-repro -type s -print -quit)"; if pgrep -fl "gda-v50-round16b-cp014-repro|59473"; then exit 1; fi; if lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then exit 1; fi; printf "%s\n" CP14_PRECORRECTION_DATABASE_RUNTIME_ABSENT=PASS'`
+- Inputs: /private/tmp/gda-v50-round16b-cp014-repro
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1018
+
+- UTC timestamp: 2026-08-28T18:17:56Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: PASS — cp014-db-validate-no-created-runtime
+- Command: `/bin/sh -c 'set -eu; test ! -d /private/tmp/gda-v50-round16b-cp014-repro/data; test -z "$(find /private/tmp/gda-v50-round16b-cp014-repro -type s -print -quit)"; if pgrep -fl "gda-v50-round16b-cp014-repro|59473"; then exit 1; fi; if lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then exit 1; fi; printf "%s\n" CP14_PRECORRECTION_DATABASE_RUNTIME_ABSENT=PASS'`
+- Inputs: /private/tmp/gda-v50-round16b-cp014-repro
+- Outputs: none
+- Duration: 43 ms
+- Warnings: none
+- Errors: none
+- Decision: Before removing the exact failed pre-correction bootstrap root, prove there is no process, socket, data directory, or listener associated with it.
+- Next: cp014-db-remove-failed-bootstrap-root
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1019
+
+- UTC timestamp: 2026-08-28T18:18:41Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: START — cp014-db-validate-no-created-runtime-correction2
+- Command: `/bin/sh -c 'set -eu; test ! -d /private/tmp/gda-v50-round16b-cp014-repro/data; test -z "$(find /private/tmp/gda-v50-round16b-cp014-repro -type s -print -quit)"; process_rows=$(pgrep -fl "gda-v50-round16b-cp014-repro|59473" || true); test -z "$process_rows"; if lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then exit 1; fi; printf "%s\n" CP14_PRECORRECTION_DATABASE_RUNTIME_ABSENT=PASS'`
+- Inputs: /private/tmp/gda-v50-round16b-cp014-repro
+- Declared outputs: none
+- Warnings: SANDBOX_PROCESS_LIST_UNAVAILABLE, PRIOR_ORCHESTRATION_WORKDIR_TYPO
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1020
+
+- UTC timestamp: 2026-08-28T18:18:41Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: PASS — cp014-db-validate-no-created-runtime-correction2
+- Command: `/bin/sh -c 'set -eu; test ! -d /private/tmp/gda-v50-round16b-cp014-repro/data; test -z "$(find /private/tmp/gda-v50-round16b-cp014-repro -type s -print -quit)"; process_rows=$(pgrep -fl "gda-v50-round16b-cp014-repro|59473" || true); test -z "$process_rows"; if lsof -nP -iTCP:59473 -sTCP:LISTEN >/dev/null 2>&1; then exit 1; fi; printf "%s\n" CP14_PRECORRECTION_DATABASE_RUNTIME_ABSENT=PASS'`
+- Inputs: /private/tmp/gda-v50-round16b-cp014-repro
+- Outputs: none
+- Duration: 62 ms
+- Warnings: SANDBOX_PROCESS_LIST_UNAVAILABLE, PRIOR_ORCHESTRATION_WORKDIR_TYPO
+- Errors: none
+- Decision: Repeat the runtime-absence proof from the exact worktree after correcting the prior orchestration path typo.
+- Next: cp014-db-remove-failed-bootstrap-root
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1021
+
+- UTC timestamp: 2026-08-28T18:18:53Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: START — cp014-db-remove-failed-bootstrap-root
+- Command: `rm -rf /private/tmp/gda-v50-round16b-cp014-repro`
+- Inputs: /private/tmp/gda-v50-round16b-cp014-repro
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1022
+
+- UTC timestamp: 2026-08-28T18:18:53Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: PASS — cp014-db-remove-failed-bootstrap-root
+- Command: `rm -rf /private/tmp/gda-v50-round16b-cp014-repro`
+- Inputs: /private/tmp/gda-v50-round16b-cp014-repro
+- Outputs: none
+- Duration: 5 ms
+- Warnings: none
+- Errors: none
+- Decision: Remove only the exact validated failed-bootstrap root after proving that it contains no data directory, socket, listener, or process.
+- Next: cp014-db-prove-failed-bootstrap-root-absent
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1023
+
+- UTC timestamp: 2026-08-28T18:18:59Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: START — cp014-db-prove-failed-bootstrap-root-absent
+- Command: `/bin/sh -c 'test ! -e /private/tmp/gda-v50-round16b-cp014-repro && printf "%s\n" CP14_FAILED_BOOTSTRAP_ROOT_ABSENT=PASS'`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1024
+
+- UTC timestamp: 2026-08-28T18:18:59Z
+- Phase: CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC
+- Operation: PASS — cp014-db-prove-failed-bootstrap-root-absent
+- Command: `/bin/sh -c 'test ! -e /private/tmp/gda-v50-round16b-cp014-repro && printf "%s\n" CP14_FAILED_BOOTSTRAP_ROOT_ABSENT=PASS'`
+- Inputs: none
+- Outputs: none
+- Duration: 6 ms
+- Warnings: none
+- Errors: none
+- Decision: Prove the exact failed-bootstrap root is absent after scoped cleanup.
+- Next: cp014-record-diagnostic-events
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1025
+
+- UTC timestamp: 2026-08-28T18:20:44Z
+- Phase: CP14
+- Operation: START — Verify detached worktree after preserved frontend failure
+- Command: `git status --porcelain=v1 --untracked-files=all`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1026
+
+- UTC timestamp: 2026-08-28T18:20:45Z
+- Phase: CP14
+- Operation: PASS — Verify detached worktree after preserved frontend failure
+- Command: `git status --porcelain=v1 --untracked-files=all`
+- Inputs: none
+- Outputs: none
+- Duration: 328 ms
+- Warnings: none
+- Errors: none
+- Decision: The failed gate left no tracked or untracked source delta; the ignored dependency link remains the only local convenience.
+- Next: Await a published additive guard correction before restarting clean reproduction.
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1027
+
+- UTC timestamp: 2026-08-28T18:20:46Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-verify-governed-v49-database-freeze
+- Command: `python3 -B scripts/repository/verify_v49_database_freeze.py --repo .`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1028
+
+- UTC timestamp: 2026-08-28T18:20:46Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-validate-correction-receipt-json
+- Command: `python3 -m json.tool docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/frontend-governed-database-freeze-correction-checkpoint014.json`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1029
+
+- UTC timestamp: 2026-08-28T18:20:46Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-check-recursive-gap-audit-unchanged
+- Command: `python3 -B scripts/trace_round16b/build_recursive_gap_closure_audit.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1030
+
+- UTC timestamp: 2026-08-28T18:20:46Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-verify-recursive-gap-audit-independent
+- Command: `python3 -B scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1031
+
+- UTC timestamp: 2026-08-28T18:20:46Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-validate-correction-receipt-json
+- Command: `python3 -m json.tool docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/frontend-governed-database-freeze-correction-checkpoint014.json`
+- Inputs: none
+- Outputs: none
+- Duration: 75 ms
+- Warnings: none
+- Errors: none
+- Decision: Verify the additive frontend guard correction without changing governed semantic or protected historical surfaces.
+- Next: cp014-correction-final-integrity
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1032
+
+- UTC timestamp: 2026-08-28T18:20:46Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-verify-v50-round16b-manifest
+- Command: `python3 -B database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1033
+
+- UTC timestamp: 2026-08-28T18:20:46Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-verify-v3-semantic-contract-independent
+- Command: `python3 -B scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1034
+
+- UTC timestamp: 2026-08-28T18:20:46Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-check-v3-semantic-contract-unchanged
+- Command: `python3 -B scripts/trace_round16b/build_v3_semantic_contract.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1035
+
+- UTC timestamp: 2026-08-28T18:20:46Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-verify-v3-runtime-independent
+- Command: `python3 -B scripts/trace_round16b/verify_v3_runtime_independent.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1036
+
+- UTC timestamp: 2026-08-28T18:20:46Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-check-v3-runtime-read-model-unchanged
+- Command: `python3 -B scripts/trace_round16b/build_exploration_v3_runtime_read_model.py --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1037
+
+- UTC timestamp: 2026-08-28T18:20:46Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: START — cp014-verify-protected-v2-and-legacy-surfaces
+- Command: `git diff --exit-code 468105499c7be102deec7d6555aced688dea9901 -- schemas/trace/exploration/v2 frontend/generated/trace-exploration-v2 frontend/src/app/api/trace/v2/exploration frontend/src/features/trace-v49/exploration-v2 docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1038
+
+- UTC timestamp: 2026-08-28T18:20:46Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-check-recursive-gap-audit-unchanged
+- Command: `python3 -B scripts/trace_round16b/build_recursive_gap_closure_audit.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 512 ms
+- Warnings: none
+- Errors: none
+- Decision: Verify the additive frontend guard correction without changing governed semantic or protected historical surfaces.
+- Next: cp014-correction-final-integrity
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1039
+
+- UTC timestamp: 2026-08-28T18:20:46Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-check-v3-runtime-read-model-unchanged
+- Command: `python3 -B scripts/trace_round16b/build_exploration_v3_runtime_read_model.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 157 ms
+- Warnings: none
+- Errors: none
+- Decision: Verify the additive frontend guard correction without changing governed semantic or protected historical surfaces.
+- Next: cp014-correction-final-integrity
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1040
+
+- UTC timestamp: 2026-08-28T18:20:46Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-verify-protected-v2-and-legacy-surfaces
+- Command: `git diff --exit-code 468105499c7be102deec7d6555aced688dea9901 -- schemas/trace/exploration/v2 frontend/generated/trace-exploration-v2 frontend/src/app/api/trace/v2/exploration frontend/src/features/trace-v49/exploration-v2 docs/research/trace-v49-exploration-composition-review-round1/04_COMPOSITION_EVIDENCE_REGISTRY.tsv`
+- Inputs: none
+- Outputs: none
+- Duration: 131 ms
+- Warnings: none
+- Errors: none
+- Decision: Verify the additive frontend guard correction without changing governed semantic or protected historical surfaces.
+- Next: cp014-correction-final-integrity
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1041
+
+- UTC timestamp: 2026-08-28T18:20:46Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-verify-recursive-gap-audit-independent
+- Command: `python3 -B scripts/trace_round16b/verify_recursive_gap_closure_audit_independent.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 683 ms
+- Warnings: none
+- Errors: none
+- Decision: Verify the additive frontend guard correction without changing governed semantic or protected historical surfaces.
+- Next: cp014-correction-final-integrity
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1042
+
+- UTC timestamp: 2026-08-28T18:20:46Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-check-v3-semantic-contract-unchanged
+- Command: `python3 -B scripts/trace_round16b/build_v3_semantic_contract.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 455 ms
+- Warnings: none
+- Errors: none
+- Decision: Verify the additive frontend guard correction without changing governed semantic or protected historical surfaces.
+- Next: cp014-correction-final-integrity
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1043
+
+- UTC timestamp: 2026-08-28T18:20:47Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-verify-v50-round16b-manifest
+- Command: `python3 -B database/scripts/verify_v50_round16b_manifest.py`
+- Inputs: none
+- Outputs: none
+- Duration: 1076 ms
+- Warnings: none
+- Errors: none
+- Decision: Verify the additive frontend guard correction without changing governed semantic or protected historical surfaces.
+- Next: cp014-correction-final-integrity
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1044
+
+- UTC timestamp: 2026-08-28T18:20:47Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-verify-v3-runtime-independent
+- Command: `python3 -B scripts/trace_round16b/verify_v3_runtime_independent.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 853 ms
+- Warnings: none
+- Errors: none
+- Decision: Verify the additive frontend guard correction without changing governed semantic or protected historical surfaces.
+- Next: cp014-correction-final-integrity
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1045
+
+- UTC timestamp: 2026-08-28T18:20:47Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-verify-governed-v49-database-freeze
+- Command: `python3 -B scripts/repository/verify_v49_database_freeze.py --repo .`
+- Inputs: none
+- Outputs: none
+- Duration: 1352 ms
+- Warnings: none
+- Errors: none
+- Decision: Verify the additive frontend guard correction without changing governed semantic or protected historical surfaces.
+- Next: cp014-correction-final-integrity
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1046
+
+- UTC timestamp: 2026-08-28T18:20:47Z
+- Phase: CHECKPOINT-014-FRONTEND-GUARD-CORRECTION
+- Operation: PASS — cp014-verify-v3-semantic-contract-independent
+- Command: `python3 -B scripts/trace_round16b/verify_v3_semantic_contract_independent.py --check`
+- Inputs: none
+- Outputs: none
+- Duration: 1418 ms
+- Warnings: none
+- Errors: none
+- Decision: Verify the additive frontend guard correction without changing governed semantic or protected historical surfaces.
+- Next: cp014-correction-final-integrity
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1047
+
+- UTC timestamp: 2026-08-28T18:21:34Z
+- Phase: CHECKPOINT-014-FINAL-INTEGRITY
+- Operation: START — cp014-final-repository-hygiene-staged
+- Command: `python3 -B scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint014.json --markdown docs/research/trace-v49-exploration-higher-order-association-closure-round16b/28_REPOSITORY_HYGIENE_CHECKPOINT014.md`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1048
+
+- UTC timestamp: 2026-08-28T18:21:34Z
+- Phase: CHECKPOINT-014-FINAL-INTEGRITY
+- Operation: START — cp014-final-new-blob-policy
+- Command: `python3 -B scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint014.json`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1049
+
+- UTC timestamp: 2026-08-28T18:21:34Z
+- Phase: CHECKPOINT-014-FINAL-INTEGRITY
+- Operation: START — cp014-final-secret-pattern-scan
+- Command: `python3 scripts/audit_secret_patterns.py`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1050
+
+- UTC timestamp: 2026-08-28T18:21:34Z
+- Phase: CHECKPOINT-014-FINAL-INTEGRITY
+- Operation: START — cp014-final-staged-diff-check
+- Command: `git diff --cached --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1051
+
+- UTC timestamp: 2026-08-28T18:21:34Z
+- Phase: CHECKPOINT-014-FINAL-INTEGRITY
+- Operation: START — cp014-final-git-lfs-fsck
+- Command: `git lfs fsck`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1052
+
+- UTC timestamp: 2026-08-28T18:21:34Z
+- Phase: CHECKPOINT-014-FINAL-INTEGRITY
+- Operation: PASS — cp014-final-staged-diff-check
+- Command: `git diff --cached --check`
+- Inputs: none
+- Outputs: none
+- Duration: 76 ms
+- Warnings: none
+- Errors: none
+- Decision: Run the checkpoint-14 final integrity boundary before the additive ordinary publication.
+- Next: cp014-execution-log-seal
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1053
+
+- UTC timestamp: 2026-08-28T18:21:34Z
+- Phase: CHECKPOINT-014-FINAL-INTEGRITY
+- Operation: START — cp014-final-git-fsck
+- Command: `git fsck --strict`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1054
+
+- UTC timestamp: 2026-08-28T18:21:34Z
+- Phase: CHECKPOINT-014-FINAL-INTEGRITY
+- Operation: START — cp014-final-worktree-diff-check
+- Command: `git diff --check`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1055
+
+- UTC timestamp: 2026-08-28T18:21:34Z
+- Phase: CHECKPOINT-014-FINAL-INTEGRITY
+- Operation: PASS — cp014-final-worktree-diff-check
+- Command: `git diff --check`
+- Inputs: none
+- Outputs: none
+- Duration: 81 ms
+- Warnings: none
+- Errors: none
+- Decision: Run the checkpoint-14 final integrity boundary before the additive ordinary publication.
+- Next: cp014-execution-log-seal
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1056
+
+- UTC timestamp: 2026-08-28T18:21:40Z
+- Phase: CHECKPOINT-014-FINAL-INTEGRITY
+- Operation: PASS — cp014-final-git-lfs-fsck
+- Command: `git lfs fsck`
+- Inputs: none
+- Outputs: none
+- Duration: 5576 ms
+- Warnings: none
+- Errors: none
+- Decision: Run the checkpoint-14 final integrity boundary before the additive ordinary publication.
+- Next: cp014-execution-log-seal
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1057
+
+- UTC timestamp: 2026-08-28T18:21:49Z
+- Phase: CHECKPOINT-014-FINAL-INTEGRITY
+- Operation: PASS — cp014-final-repository-hygiene-staged
+- Command: `python3 -B scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint014.json --markdown docs/research/trace-v49-exploration-higher-order-association-closure-round16b/28_REPOSITORY_HYGIENE_CHECKPOINT014.md`
+- Inputs: none
+- Outputs: none
+- Duration: 15479 ms
+- Warnings: none
+- Errors: none
+- Decision: Run the checkpoint-14 final integrity boundary before the additive ordinary publication.
+- Next: cp014-execution-log-seal
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1058
+
+- UTC timestamp: 2026-08-28T18:22:29Z
+- Phase: CHECKPOINT-014-FINAL-INTEGRITY
+- Operation: PASS — cp014-final-new-blob-policy
+- Command: `python3 -B scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint014.json`
+- Inputs: none
+- Outputs: none
+- Duration: 54617 ms
+- Warnings: none
+- Errors: none
+- Decision: Run the checkpoint-14 final integrity boundary before the additive ordinary publication.
+- Next: cp014-execution-log-seal
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1059
+
+- UTC timestamp: 2026-08-28T18:23:24Z
+- Phase: CHECKPOINT-014-FINAL-INTEGRITY
+- Operation: PASS — cp014-final-git-fsck
+- Command: `git fsck --strict`
+- Inputs: none
+- Outputs: none
+- Duration: 109661 ms
+- Warnings: none
+- Errors: none
+- Decision: Run the checkpoint-14 final integrity boundary before the additive ordinary publication.
+- Next: cp014-execution-log-seal
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1060
+
+- UTC timestamp: 2026-08-28T18:23:38Z
+- Phase: CHECKPOINT-014-FINAL-INTEGRITY
+- Operation: PASS — cp014-final-secret-pattern-scan
+- Command: `python3 scripts/audit_secret_patterns.py`
+- Inputs: none
+- Outputs: none
+- Duration: 123822 ms
+- Warnings: none
+- Errors: none
+- Decision: Run the checkpoint-14 final integrity boundary before the additive ordinary publication.
+- Next: cp014-execution-log-seal
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1061
+
+- UTC timestamp: 2026-08-28T18:24:05Z
+- Phase: CHECKPOINT-014-EXECUTION-SEAL
+- Operation: START — cp014-execution-log-verification-prelatest
+- Command: `python3 -B scripts/trace_round16b/verify_execution_log.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-log-verification-checkpoint014-prelatest-writer.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/command-ledger.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-events.jsonl
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1062
+
+- UTC timestamp: 2026-08-28T18:24:10Z
+- Phase: CHECKPOINT-014-EXECUTION-SEAL
+- Operation: FAIL — cp014-execution-log-verification-prelatest
+- Command: `python3 -B scripts/trace_round16b/verify_execution_log.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-log-verification-checkpoint014-prelatest-writer.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/command-ledger.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/execution-events.jsonl
+- Outputs: none
+- Duration: 5819 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: cp014-refresh-latest-writer-boundary
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1063
+
+- UTC timestamp: 2026-08-28T18:24:27Z
+- Phase: CHECKPOINT-014-EXECUTION-SEAL
+- Operation: START — cp014-refresh-latest-writer-boundary
+- Command: `/usr/bin/true`
+- Inputs: none
+- Declared outputs: frontend/.next, frontend/.next/BUILD_ID, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv, /private/tmp/gda-v50-round16b-cp014-repro, /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin, /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb, /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres
+- Warnings: PRIOR_PRELATEST_EXPECTED_SELF_PAIR_AND_STALE_WRITER_HASHES
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1064
+
+- UTC timestamp: 2026-08-28T18:24:27Z
+- Phase: CHECKPOINT-014-EXECUTION-SEAL
+- Operation: PASS — cp014-refresh-latest-writer-boundary
+- Command: `/usr/bin/true`
+- Inputs: none
+- Outputs: frontend/.next, frontend/.next/BUILD_ID, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv, /private/tmp/gda-v50-round16b-cp014-repro, /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin, /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb, /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres
+- Duration: 6 ms
+- Warnings: PRIOR_PRELATEST_EXPECTED_SELF_PAIR_AND_STALE_WRITER_HASHES
+- Errors: none
+- Decision: Bind the current build payload, checkpoint ledger, and proven-missing temporary database paths as the latest writer state after the expected prelatest verifier exposed stale hashes.
+- Next: cp014-final-direct-execution-log-verification
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1065
+
+- UTC timestamp: 2026-08-28T18:24:51Z
+- Phase: CHECKPOINT-014-EXECUTION-SEAL
+- Operation: START — cp014-bind-diagnostic-ledger-final-state
+- Command: `/usr/bin/true`
+- Inputs: none
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint014.tsv
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1066
+
+- UTC timestamp: 2026-08-28T18:24:51Z
+- Phase: CHECKPOINT-014-EXECUTION-SEAL
+- Operation: PASS — cp014-bind-diagnostic-ledger-final-state
+- Command: `/usr/bin/true`
+- Inputs: none
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint014.tsv
+- Duration: 4 ms
+- Warnings: none
+- Errors: none
+- Decision: Bind the complete checkpoint-14 failure-and-correction diagnostic ledger before the direct execution seal.
+- Next: cp014-final-direct-execution-log-verification
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1067
+
+- UTC timestamp: 2026-08-28T18:25:23Z
+- Phase: CHECKPOINT-014-EXECUTION-SEAL
+- Operation: START — cp014-bind-diagnostic-ledger-completed-state
+- Command: `/usr/bin/true`
+- Inputs: none
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint014.tsv
+- Warnings: none
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`
+
+## Event 1068
+
+- UTC timestamp: 2026-08-28T18:25:23Z
+- Phase: CHECKPOINT-014-EXECUTION-SEAL
+- Operation: PASS — cp014-bind-diagnostic-ledger-completed-state
+- Command: `/usr/bin/true`
+- Inputs: none
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/parallel-diagnostic-event-ledger-checkpoint014.tsv
+- Duration: 4 ms
+- Warnings: none
+- Errors: none
+- Decision: Bind the diagnostic ledger after recording the successful direct-verifier correction, then stop logger mutations for the checkpoint seal.
+- Next: cp014-final-direct-execution-log-verification
+- Git SHA: `ec7b847e3ca05d5e022a8b95a2a14801f23d8643`

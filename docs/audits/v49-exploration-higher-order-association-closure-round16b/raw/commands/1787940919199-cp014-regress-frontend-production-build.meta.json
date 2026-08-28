@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "npm",
+    "--prefix",
+    "frontend",
+    "run",
+    "build"
+  ],
+  "command": "npm --prefix frontend run build",
+  "command_id": "1787940919199-cp014-regress-frontend-production-build",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 13325,
+  "end_timestamp_utc": "2026-08-28T18:15:32Z",
+  "exit_code": 1,
+  "launch_error": "",
+  "operation_id": "cp014-regress-frontend-production-build",
+  "phase_id": "CHECKPOINT-014-FRONTEND-GUARD-CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:15:19Z",
+  "stderr_sha256": "294be6535fca1b16b77f7b418d4d47d3bedd8b0a314a8c3225a2ad785a2ef1ee",
+  "stdout_sha256": "1c214a1bf8c6941ee524b7125198143cce362d47ecd20c4255b5fcad831306df",
+  "timed_out": false
+}

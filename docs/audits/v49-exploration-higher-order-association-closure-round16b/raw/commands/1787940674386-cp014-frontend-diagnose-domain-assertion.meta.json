@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "sed",
+    "-n",
+    "130,175p",
+    "frontend/scripts/test-exploration-domain.mjs"
+  ],
+  "command": "sed -n 130,175p frontend/scripts/test-exploration-domain.mjs",
+  "command_id": "1787940674386-cp014-frontend-diagnose-domain-assertion",
+  "cwd": "/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e",
+  "duration_ms": 4,
+  "end_timestamp_utc": "2026-08-28T18:11:14Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-frontend-diagnose-domain-assertion",
+  "phase_id": "CP14",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:11:14Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "2d7a606b98e4328f7e88a805d0b9aa4c3bb98c568e9ac73b267c7018bb46a142",
+  "timed_out": false
+}

@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "env",
+    "LC_ALL=C.UTF-8",
+    "/private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb",
+    "-L",
+    "/opt/homebrew/opt/postgresql@16/share/postgresql@16",
+    "-D",
+    "/private/tmp/gda-v50-round16b-cp014-repro/data",
+    "--locale=C.UTF-8",
+    "--encoding=UTF8",
+    "--auth-local=trust",
+    "--auth-host=reject",
+    "-c",
+    "shared_memory_type=mmap",
+    "-c",
+    "dynamic_shared_memory_type=posix"
+  ],
+  "command": "env LC_ALL=C.UTF-8 /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb -L /opt/homebrew/opt/postgresql@16/share/postgresql@16 -D /private/tmp/gda-v50-round16b-cp014-repro/data --locale=C.UTF-8 --encoding=UTF8 --auth-local=trust --auth-host=reject -c shared_memory_type=mmap -c dynamic_shared_memory_type=posix",
+  "command_id": "1787940898717-cp014-db-initdb-correction6-pre-correction",
+  "cwd": "/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e",
+  "duration_ms": 1409,
+  "end_timestamp_utc": "2026-08-28T18:15:00Z",
+  "exit_code": 1,
+  "launch_error": "",
+  "operation_id": "cp014-db-initdb-correction6-pre-correction",
+  "phase_id": "CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:14:58Z",
+  "stderr_sha256": "d89542ba9e23d893289c323fccdb7dd19cef355235d12bf97105d14e8bc2fb3d",
+  "stdout_sha256": "d476e3dedcf0df6397e72b918f50cd2e793053dc9be4db536555a55d47cfb83c",
+  "timed_out": false
+}

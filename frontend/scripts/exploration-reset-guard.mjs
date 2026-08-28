@@ -21,6 +21,13 @@ const SEALED_EVIDENCE_DIRS = [
   "docs/audits/v49-exploration-nlp-round1",
 ];
 
+const MEASUREMENT_ONLY_METRICS = new Set([
+  "implementationFileCount",
+  "databaseFilesChanged",
+  "databaseVersion",
+  "databaseUnmanifestedAdditiveFileCount",
+]);
+
 const EXTERNAL_MODEL_DEPENDENCIES = new Set([
   "transformers",
   "sentence-transformers",
@@ -119,6 +126,37 @@ function collectImplementationFiles() {
   return roots.flatMap(walkFiles).filter((path) => /\.(?:ts|tsx|js|mjs|cjs)$/.test(path));
 }
 
+export function evaluateGovernedDatabaseFreezeReceipt(receipt, launchFailure = "") {
+  const failures = [];
+  if (launchFailure) failures.push(`governed database freeze verification failed: ${launchFailure}`);
+  if (!receipt) {
+    if (!launchFailure) failures.push("governed database freeze verifier returned no receipt");
+    return { receipt: null, failures };
+  }
+  if (receipt.status !== "PASS") failures.push(`database freeze status is ${receipt.status}`);
+  if (receipt.frozenPathDriftCount !== 0) {
+    failures.push(`database frozen-path drift count is ${receipt.frozenPathDriftCount}`);
+  }
+  return { receipt, failures };
+}
+
+function auditGovernedDatabaseFreeze() {
+  const verifier = join(REPOSITORY_ROOT, "scripts/repository/verify_v49_database_freeze.py");
+  try {
+    const output = execFileSync(
+      "python3",
+      ["-B", verifier, "--repo", REPOSITORY_ROOT],
+      { cwd: REPOSITORY_ROOT, encoding: "utf8" },
+    ).trim();
+    const receipt = JSON.parse(output);
+    return evaluateGovernedDatabaseFreezeReceipt(receipt);
+  } catch (error) {
+    const stderr = typeof error?.stderr === "string" ? error.stderr.trim() : "";
+    const message = stderr || error?.message || "unknown verifier failure";
+    return evaluateGovernedDatabaseFreezeReceipt(null, message);
+  }
+}
+
 function auditPolicyDocuments() {
   const projectLogPath = join(REPOSITORY_ROOT, "PROJECT_LOG.md");
   const pointerPath = join(REPOSITORY_ROOT, "docs/research/EXPLORATION_CURRENT.md");
@@ -199,6 +237,7 @@ export function auditActiveRepository() {
   const contextChanges = gitChangedFiles(["frontend/src/features/trace-v49/context"]);
   const spacetimeChanges = gitChangedFiles(["frontend/src/features/trace-v49/spacetime"]);
   const databaseChanges = gitChangedFiles(["database"]);
+  const databaseFreeze = auditGovernedDatabaseFreeze();
 
   const metrics = {
     implementationFileCount: implementationFiles.length,
@@ -225,11 +264,19 @@ export function auditActiveRepository() {
     contextFilesChanged: contextChanges.length,
     spacetimeFilesChanged: spacetimeChanges.length,
     databaseFilesChanged: databaseChanges.length,
+    databaseVersion: databaseFreeze.receipt?.databaseVersion ?? -1,
+    databaseUnmanifestedAdditiveFileCount:
+      databaseFreeze.receipt?.unmanifestedV49DatabaseFileCount ?? -1,
+    databaseFrozenPathDriftCount: databaseFreeze.receipt?.frozenPathDriftCount ?? 1,
+    databaseFreezeFailureCount: databaseFreeze.failures.length,
     policyDocumentFailureCount: policyDocuments.failures.length,
   };
-  const failures = Object.entries(metrics)
-    .filter(([key, value]) => key !== "implementationFileCount" && value !== 0)
-    .map(([key, value]) => `${key}=${value}`);
+  const failures = [
+    ...Object.entries(metrics)
+      .filter(([key, value]) => !MEASUREMENT_ONLY_METRICS.has(key) && value !== 0)
+      .map(([key, value]) => `${key}=${value}`),
+    ...databaseFreeze.failures,
+  ];
   return {
     status: failures.length === 0 ? "PASS" : "FAIL",
     sourceSha: REQUIRED_SOURCE_SHA,
@@ -250,6 +297,7 @@ export function auditActiveRepository() {
       context: contextChanges,
       spacetime: spacetimeChanges,
       database: databaseChanges,
+      databaseFreeze: databaseFreeze.receipt,
       sealedEvidence: sealedEvidenceChanges,
     },
     legacyExecutionDirsRemaining,

@@ -1,0 +1,84 @@
+{
+  "format": "trace-round16b-frontend-governed-database-freeze-correction-v1",
+  "checkpoint": 14,
+  "parent_sha": "ec7b847e3ca05d5e022a8b95a2a14801f23d8643",
+  "parent_tree": "3e19b7168f31a533ce33b63b47b574c9c5738543",
+  "status": "PASS_WITH_FINAL_CLEAN_REPRODUCTION_PENDING",
+  "trigger_failure": {
+    "command_id": "1787940660136-cp014-frontend-test-exploration-domain",
+    "exit_code": 1,
+    "failure": "databaseFilesChanged=11",
+    "clean_checkout": "/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e"
+  },
+  "diagnosis": {
+    "legacy_guard_baseline_sha": "3d7536b4588032d806b6492a1be97b59891ca031",
+    "database_changed_path_count": 11,
+    "governed_freeze_status": "PASS",
+    "database_version": 50,
+    "frozen_file_count": 126,
+    "frozen_path_drift_count": 0,
+    "unmanifested_additive_database_file_count": 8,
+    "freeze_manifest_sha256": "f0dda59dd515ba243eaf213bce9f42513727f1ab0a44685635921c3759a7d22e",
+    "diagnostic_command_ids": [
+      "1787940719036-cp014-frontend-diagnose-legacy-database-diff",
+      "1787940719050-cp014-frontend-diagnose-governed-v49-freeze"
+    ]
+  },
+  "correction": {
+    "policy": "MEASURE_ALL_DATABASE_DIFFS_BUT_GATE_ON_GOVERNED_V49_FROZEN_PATH_INTEGRITY",
+    "guard_path": "frontend/scripts/exploration-reset-guard.mjs",
+    "guard_sha256": "e7d6dc08ffd95c0deb4fe1b1c735cbc4c81e67fed293894819af72f7e346f505",
+    "test_path": "frontend/scripts/test-exploration-domain.mjs",
+    "test_sha256": "ce1e74ca67a45bdd8ed280d40c01d7ee467c7bd016078a5036dca2d6922a5f17",
+    "governed_verifier_path": "scripts/repository/verify_v49_database_freeze.py",
+    "governed_verifier_sha256": "fa1f9085a1d77304eaf3b8a74266c6feec6c286120ce81fd084588a201f9b7fb",
+    "positive_additive_v50_control": "PASS",
+    "negative_frozen_path_drift_control": "PASS"
+  },
+  "regression": {
+    "reset_guard_status": "PASS",
+    "domain_structural_check_count": 8,
+    "domain_structural_failure_count": 0,
+    "domain_red_team_case_count": 12,
+    "domain_red_team_rejected_count": 12,
+    "constraint_kernel_total_check_count": 21,
+    "constraint_kernel_required_adversarial_pass_count": 20,
+    "inquiry_cross_runtime_fixture_count": 14,
+    "composition_review_topology_fixture_count": 6,
+    "association_calibration_assessment_count": 35,
+    "composition_engine_image_count": 25,
+    "v3_projection_status": "PASS",
+    "v3_api_check_count": 408,
+    "runtime_typecheck_status": "PASS",
+    "production_build_status": "PASS_AFTER_NETWORK_CORRECTION",
+    "production_static_page_count": 46
+  },
+  "precorrection_database_diagnostic": {
+    "status": "NOT_A_REPRODUCTION_RESULT",
+    "root_cause": "HOST_SYSTEM_V_SHARED_MEMORY_IDENTIFIER_EXHAUSTION",
+    "configured_identifier_limit": 32,
+    "allocated_identifier_count": 32,
+    "database_created": false,
+    "role_created": false,
+    "server_started": false,
+    "socket_created": false,
+    "unrelated_ipc_or_process_altered": false,
+    "temporary_root_removed": true
+  },
+  "closure_flags": {
+    "pair_association_closure": false,
+    "higher_order_association_closure": false,
+    "global_composition_coherence_closure": false,
+    "product_association_reachability_closure": false,
+    "computational_space_closure": false,
+    "function3_closure": false
+  },
+  "governance": {
+    "force_push_used": false,
+    "history_rewritten": false,
+    "rollback_tag_pushed": false,
+    "origin_main_rewritten": false,
+    "deployment_performed": false
+  },
+  "next_required_action": "PUBLISH_ADDITIVE_CHECKPOINT_THEN_RESTART_FINAL_CLEAN_REPRODUCTION_FROM_ITS_EXACT_SHA"
+}

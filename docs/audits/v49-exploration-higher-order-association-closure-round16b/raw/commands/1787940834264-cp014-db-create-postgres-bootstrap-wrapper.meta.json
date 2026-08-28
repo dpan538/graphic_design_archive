@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "sh",
+    "-c",
+    "set -eu\nchmod 700 /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres\nrg -q \"^exec /opt/homebrew/opt/postgresql@16/bin/postgres\" /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres\n/opt/homebrew/opt/postgresql@16/bin/postgres --version\nprintf \"%s\\n\" CP14_MMAP_BOOTSTRAP_WRAPPER=PASS"
+  ],
+  "command": "sh -c 'set -eu\nchmod 700 /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres\nrg -q \"^exec /opt/homebrew/opt/postgresql@16/bin/postgres\" /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres\n/opt/homebrew/opt/postgresql@16/bin/postgres --version\nprintf \"%s\\n\" CP14_MMAP_BOOTSTRAP_WRAPPER=PASS'",
+  "command_id": "1787940834264-cp014-db-create-postgres-bootstrap-wrapper",
+  "cwd": "/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e",
+  "duration_ms": 40,
+  "end_timestamp_utc": "2026-08-28T18:13:54Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-db-create-postgres-bootstrap-wrapper",
+  "phase_id": "CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:13:54Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "62c95f9476f7b7f503c0b1f71fc62eb2cd46589e80b2b33db3a1cfc78701a9ea",
+  "timed_out": false
+}

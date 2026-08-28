@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "ipcs",
+    "-m",
+    "-a"
+  ],
+  "command": "ipcs -m -a",
+  "command_id": "1787940971797-cp014-db-inspect-ipc-attachments",
+  "cwd": "/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e",
+  "duration_ms": 6,
+  "end_timestamp_utc": "2026-08-28T18:16:11Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-db-inspect-ipc-attachments",
+  "phase_id": "CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:16:11Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "30bb10e97809a540f6760e2a96aeeda8952eae24c16a6726db8e9c4911e88354",
+  "timed_out": false
+}

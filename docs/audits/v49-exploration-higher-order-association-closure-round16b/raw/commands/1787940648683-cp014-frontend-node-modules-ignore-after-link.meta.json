@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "git",
+    "check-ignore",
+    "-v",
+    "frontend/node_modules"
+  ],
+  "command": "git check-ignore -v frontend/node_modules",
+  "command_id": "1787940648683-cp014-frontend-node-modules-ignore-after-link",
+  "cwd": "/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e",
+  "duration_ms": 23,
+  "end_timestamp_utc": "2026-08-28T18:10:48Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-frontend-node-modules-ignore-after-link",
+  "phase_id": "CP14",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:10:48Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "928ea0418da1c6cfe59b6a321c3b0d8d9bede124c5f7561a799c24be71f46ad9",
+  "timed_out": false
+}

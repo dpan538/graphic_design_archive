@@ -1,0 +1,43 @@
+{
+  "checkpoint_verification": {
+    "checkpoint_count": 13,
+    "checkpoint_ids": [
+      "CHECKPOINT-001",
+      "CHECKPOINT-002",
+      "CHECKPOINT-003",
+      "CHECKPOINT-004",
+      "CHECKPOINT-005",
+      "CHECKPOINT-006",
+      "CHECKPOINT-007",
+      "CHECKPOINT-008",
+      "CHECKPOINT-009",
+      "CHECKPOINT-010",
+      "CHECKPOINT-011",
+      "CHECKPOINT-012",
+      "CHECKPOINT-013"
+    ],
+    "present": true
+  },
+  "command_count": 530,
+  "event_count": 1061,
+  "fail_event_count": 51,
+  "failure_codes": [
+    "EVENT_PAIR_COUNT:1787941445041-cp014-execution-log-verification-prelatest:1",
+    "LATEST_WRITER_HASH:840:frontend/.next",
+    "LATEST_WRITER_HASH:858:frontend/.next/BUILD_ID",
+    "LATEST_WRITER_HASH:904:docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-ledger.tsv",
+    "LATEST_WRITER_HASH:924:/private/tmp/gda-v50-round16b-cp014-repro",
+    "LATEST_WRITER_HASH:960:/private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin",
+    "LATEST_WRITER_HASH:968:/private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb",
+    "LATEST_WRITER_HASH:982:/private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/postgres"
+  ],
+  "legacy_event_count": 2,
+  "pass_event_count": 479,
+  "schema_version": "trace-round16b-execution-log-verification/v1",
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "started_event_count": 531,
+  "status": "FAIL",
+  "warning_codes": [
+    "LEGACY_BOOTSTRAP_EVENTS_PRE_COMMAND_ID_SCHEMA=2"
+  ]
+}

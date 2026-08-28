@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "git",
+    "fsck",
+    "--strict"
+  ],
+  "command": "git fsck --strict",
+  "command_id": "1787941294645-cp014-final-git-fsck",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 109661,
+  "end_timestamp_utc": "2026-08-28T18:23:24Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-final-git-fsck",
+  "phase_id": "CHECKPOINT-014-FINAL-INTEGRITY",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:21:34Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "ca06701f913b37462862ce1e9d74f8d8020a72be9fac17d9880e666e0cfd7773",
+  "timed_out": false
+}

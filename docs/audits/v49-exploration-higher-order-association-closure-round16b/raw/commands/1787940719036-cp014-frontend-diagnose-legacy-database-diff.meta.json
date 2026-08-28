@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "git",
+    "diff",
+    "--name-only",
+    "3d7536b4588032d806b6492a1be97b59891ca031",
+    "--",
+    "database"
+  ],
+  "command": "git diff --name-only 3d7536b4588032d806b6492a1be97b59891ca031 -- database",
+  "command_id": "1787940719036-cp014-frontend-diagnose-legacy-database-diff",
+  "cwd": "/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e",
+  "duration_ms": 26,
+  "end_timestamp_utc": "2026-08-28T18:11:59Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-frontend-diagnose-legacy-database-diff",
+  "phase_id": "CP14",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:11:59Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "1b4448c36a0c2df9452be0b40266e04f2686c0b9c8d0f07e44bbf290fe5b51bc",
+  "timed_out": false
+}

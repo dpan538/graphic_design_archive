@@ -1,0 +1,34 @@
+{
+  "checkpoint_verification": {
+    "checkpoint_count": 13,
+    "checkpoint_ids": [
+      "CHECKPOINT-001",
+      "CHECKPOINT-002",
+      "CHECKPOINT-003",
+      "CHECKPOINT-004",
+      "CHECKPOINT-005",
+      "CHECKPOINT-006",
+      "CHECKPOINT-007",
+      "CHECKPOINT-008",
+      "CHECKPOINT-009",
+      "CHECKPOINT-010",
+      "CHECKPOINT-011",
+      "CHECKPOINT-012",
+      "CHECKPOINT-013"
+    ],
+    "present": true
+  },
+  "command_count": 534,
+  "event_count": 1068,
+  "fail_event_count": 52,
+  "failure_codes": [],
+  "legacy_event_count": 2,
+  "pass_event_count": 482,
+  "schema_version": "trace-round16b-execution-log-verification/v1",
+  "source_sha": "5419770959bdb8998b693fb2275b47e29b92367c",
+  "started_event_count": 534,
+  "status": "PASS",
+  "warning_codes": [
+    "LEGACY_BOOTSTRAP_EVENTS_PRE_COMMAND_ID_SCHEMA=2"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "test ! -e /private/tmp/gda-v50-round16b-cp014-repro && printf \"%s\\n\" CP14_FAILED_BOOTSTRAP_ROOT_ABSENT=PASS"
+  ],
+  "command": "/bin/sh -c 'test ! -e /private/tmp/gda-v50-round16b-cp014-repro && printf \"%s\\n\" CP14_FAILED_BOOTSTRAP_ROOT_ABSENT=PASS'",
+  "command_id": "1787941139413-cp014-db-prove-failed-bootstrap-root-absent",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 6,
+  "end_timestamp_utc": "2026-08-28T18:18:59Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-db-prove-failed-bootstrap-root-absent",
+  "phase_id": "CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:18:59Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "5668bd960d3a622c9f7ef23a273396beea24e920c0be7cdeb259ccb58e9bdbe9",
+  "timed_out": false
+}

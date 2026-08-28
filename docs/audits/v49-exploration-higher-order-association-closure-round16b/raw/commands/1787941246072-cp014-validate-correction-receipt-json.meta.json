@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "python3",
+    "-m",
+    "json.tool",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/frontend-governed-database-freeze-correction-checkpoint014.json"
+  ],
+  "command": "python3 -m json.tool docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/frontend-governed-database-freeze-correction-checkpoint014.json",
+  "command_id": "1787941246072-cp014-validate-correction-receipt-json",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 75,
+  "end_timestamp_utc": "2026-08-28T18:20:46Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-validate-correction-receipt-json",
+  "phase_id": "CHECKPOINT-014-FRONTEND-GUARD-CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:20:46Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "13bf5bd99925fc129cd8b309d4bd51883c3ed0501682902a80a093033b550e7f",
+  "timed_out": false
+}

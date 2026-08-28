@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "cp",
+    "/opt/homebrew/opt/postgresql@16/bin/initdb",
+    "/private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb"
+  ],
+  "command": "cp /opt/homebrew/opt/postgresql@16/bin/initdb /private/tmp/gda-v50-round16b-cp014-repro/bootstrap-bin/initdb",
+  "command_id": "1787940818636-cp014-db-copy-initdb-binary",
+  "cwd": "/private/tmp/gda_round16b_cp014_clean_repro_ec7b847e",
+  "duration_ms": 5,
+  "end_timestamp_utc": "2026-08-28T18:13:38Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-db-copy-initdb-binary",
+  "phase_id": "CHECKPOINT-014-PRE-CORRECTION-DATABASE-DIAGNOSTIC",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:13:38Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timed_out": false
+}

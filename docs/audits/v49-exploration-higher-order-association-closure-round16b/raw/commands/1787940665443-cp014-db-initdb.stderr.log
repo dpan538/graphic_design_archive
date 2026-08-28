@@ -1,0 +1,4 @@
+2026-08-29 04:11:06.513 AEST [42868] FATAL:  could not create shared memory segment: Operation not permitted
+2026-08-29 04:11:06.513 AEST [42868] DETAIL:  Failed system call was shmget(key=235420961, size=56, 03600).
+child process exited with exit code 1
+initdb: removing data directory "/private/tmp/gda-v50-round16b-cp014-repro/data"

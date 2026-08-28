@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "npm",
+    "--prefix",
+    "frontend",
+    "run",
+    "test:exploration-composition-review"
+  ],
+  "command": "npm --prefix frontend run test:exploration-composition-review",
+  "command_id": "1787940881759-cp014-regress-exploration-composition-review",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 463,
+  "end_timestamp_utc": "2026-08-28T18:14:42Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "cp014-regress-exploration-composition-review",
+  "phase_id": "CHECKPOINT-014-FRONTEND-GUARD-CORRECTION",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T18:14:41Z",
+  "stderr_sha256": "a7bbb14f379f1c5085dcb2875bf82a10c713f8ec8ce91e75ff9be9390d45fcfa",
+  "stdout_sha256": "08d7372e65c64cf2ace8d9b334fb91ca120d2f1a7f3a8f57f490446494b92216",
+  "timed_out": false
+}
