@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "python3",
+    "scripts/trace_round16b/verify_evidence_disposition_tranche_a.py",
+    "--repo",
+    ".",
+    "--output",
+    "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-a-v1.json"
+  ],
+  "command": "python3 scripts/trace_round16b/verify_evidence_disposition_tranche_a.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-a-v1.json",
+  "command_id": "1787903610937-verify-evidence-disposition-tranche-a-final",
+  "cwd": "/private/tmp/graphic_design_archive_v49_exploration_higher_order_association_closure_round16b",
+  "duration_ms": 143,
+  "end_timestamp_utc": "2026-08-28T07:53:31Z",
+  "exit_code": 0,
+  "launch_error": "",
+  "operation_id": "verify-evidence-disposition-tranche-a-final",
+  "phase_id": "EVIDENCE-DISPOSITION-TRANCHE-A",
+  "sanitized": true,
+  "start_timestamp_utc": "2026-08-28T07:53:30Z",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "f98fbdd75e6392d1275f23a28ac8ff4f0b70c08b52d25d93471eb62954a79fef",
+  "timed_out": false
+}

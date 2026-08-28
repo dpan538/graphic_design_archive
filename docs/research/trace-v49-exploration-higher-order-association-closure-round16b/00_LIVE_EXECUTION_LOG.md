@@ -1558,3 +1558,367 @@
 - Decision: Continue only on a clean full strict fsck with no dangling objects.
 - Next: Run final direct append-only execution-log verification.
 - Git SHA: `df8aa185910d501daf5a4a5dded8674fdc8a0d87`
+
+## Event 121
+
+- UTC timestamp: 2026-08-28T07:28:57Z
+- Phase: CHECKPOINT-005
+- Operation: START — Import and verify checkpoint 004 publication receipt with complete ordered chain
+- Command: `python3 scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787902081597323000-checkpoint-004.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv`
+- Inputs: scripts/trace_round16b/import_publication_receipts.py, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787902081597323000-checkpoint-004.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Warnings: FAILED_CHECKPOINT003_SINGLE_IMPORT_DUPLICATE_REMAINS_PRESERVED
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 122
+
+- UTC timestamp: 2026-08-28T07:28:57Z
+- Phase: CHECKPOINT-005
+- Operation: PASS — Import and verify checkpoint 004 publication receipt with complete ordered chain
+- Command: `python3 scripts/trace_round16b/import_publication_receipts.py --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886827950748000-governance-preflight.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787886967000709000-governance-preflight-correction.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887046000311000-governance-preflight-correction-2.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887589995269000-checkpoint-001.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787887963842043000-checkpoint-001-record.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787889513336433000-checkpoint-002.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787895386177547000-checkpoint-003.json --receipt /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787902081597323000-checkpoint-004.json --output-dir docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts --manifest docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv`
+- Inputs: scripts/trace_round16b/import_publication_receipts.py, /Users/jarlgiovanni/Desktop/trace_round16b_preservation/publication-ledger/1787902081597323000-checkpoint-004.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/publication-receipts, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/checkpoint-publication-manifest.tsv
+- Duration: 43 ms
+- Warnings: FAILED_CHECKPOINT003_SINGLE_IMPORT_DUPLICATE_REMAINS_PRESERVED
+- Errors: none
+- Decision: Continue only if all eight publication receipts form an exact ordinary-push chain through checkpoint 004 with unchanged main, no force, no rollback tag, no deployment, and no unrelated ref difference.
+- Next: Record checkpoint 004 and build the first evidence-disposition tranche.
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 123
+
+- UTC timestamp: 2026-08-28T07:43:00Z
+- Phase: CHECKPOINT-005-EVIDENCE-TRANCHE-A
+- Operation: START — Build deterministic local evidence-disposition tranche A
+- Command: `python3 scripts/trace_round16b/build_evidence_disposition_tranche_a.py`
+- Inputs: scripts/trace_round16b/build_evidence_disposition_tranche_a.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/candidate-trigger-occurrence-ledger-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/association-census-v2.tsv
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-occurrence-disposition-tranche-a-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/family-evidence-disposition-tranche-a-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/conditional-scoped-child-reroute-queue-tranche-a-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-input-manifest-tranche-a-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-ledger-checkpoint005-tranche-a-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-census-tranche-a-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-build-receipt-tranche-a-v1.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/08_EVIDENCE_DISPOSITION_TRANCHE_A.md
+- Warnings: none
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 124
+
+- UTC timestamp: 2026-08-28T07:43:00Z
+- Phase: CHECKPOINT-005-EVIDENCE-TRANCHE-A
+- Operation: PASS — Build deterministic local evidence-disposition tranche A
+- Command: `python3 scripts/trace_round16b/build_evidence_disposition_tranche_a.py`
+- Inputs: scripts/trace_round16b/build_evidence_disposition_tranche_a.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v2.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/candidate-trigger-occurrence-ledger-v2.tsv, docs/audits/v49-exploration-full-space-closure-round1/raw/association-census-v2.tsv
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-occurrence-disposition-tranche-a-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/family-evidence-disposition-tranche-a-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/conditional-scoped-child-reroute-queue-tranche-a-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-input-manifest-tranche-a-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/recursive-gap-ledger-checkpoint005-tranche-a-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-census-tranche-a-v1.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-build-receipt-tranche-a-v1.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/08_EVIDENCE_DISPOSITION_TRANCHE_A.md
+- Duration: 103 ms
+- Warnings: none
+- Errors: none
+- Decision: A PASS creates no association but freezes eleven fail-closed unsplit-parent dispositions and ten inactive scoped-review obligations.
+- Next: Run independent tranche-A reconstruction and verifier.
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 125
+
+- UTC timestamp: 2026-08-28T07:43:47Z
+- Phase: CHECKPOINT-005-EVIDENCE-TRANCHE-A
+- Operation: START — Record non-mutating shell glob diagnostic failure and safe correction
+- Command: `/usr/bin/true`
+- Inputs: none
+- Declared outputs: none
+- Warnings: UNQUOTED_VERIFIER_GLOB_NO_MATCH_DIAGNOSTIC
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 126
+
+- UTC timestamp: 2026-08-28T07:43:47Z
+- Phase: CHECKPOINT-005-EVIDENCE-TRANCHE-A
+- Operation: PASS — Record non-mutating shell glob diagnostic failure and safe correction
+- Command: `/usr/bin/true`
+- Inputs: none
+- Outputs: none
+- Duration: 3 ms
+- Warnings: UNQUOTED_VERIFIER_GLOB_NO_MATCH_DIAGNOSTIC
+- Errors: none
+- Decision: The failed read-only diagnostic produced no mutation; subsequent file discovery uses find or quoted patterns.
+- Next: Continue independent verifier stabilization.
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 127
+
+- UTC timestamp: 2026-08-28T07:53:30Z
+- Phase: EVIDENCE-DISPOSITION-TRANCHE-A
+- Operation: START — independently verify tranche A evidence dispositions
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_a.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-a-v1.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-trigger-occurrences-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-occurrence-disposition-tranche-a-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/family-evidence-disposition-tranche-a-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/conditional-scoped-child-reroute-queue-tranche-a-v1.tsv
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-a-v1.json
+- Warnings: none
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 128
+
+- UTC timestamp: 2026-08-28T07:53:31Z
+- Phase: EVIDENCE-DISPOSITION-TRANCHE-A
+- Operation: PASS — independently verify tranche A evidence dispositions
+- Command: `python3 scripts/trace_round16b/verify_evidence_disposition_tranche_a.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-a-v1.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-trigger-occurrences-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-occurrence-disposition-tranche-a-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/family-evidence-disposition-tranche-a-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/conditional-scoped-child-reroute-queue-tranche-a-v1.tsv
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-disposition-independent-verification-tranche-a-v1.json
+- Duration: 143 ms
+- Warnings: none
+- Errors: none
+- Decision: Any mismatch blocks checkpoint publication.
+- Next: Run deterministic generation check and inherited regressions.
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 129
+
+- UTC timestamp: 2026-08-28T07:53:43Z
+- Phase: EVIDENCE-DISPOSITION-TRANCHE-A
+- Operation: START — check deterministic regeneration of tranche A artifacts
+- Command: `python3 scripts/trace_round16b/build_evidence_disposition_tranche_a.py --check`
+- Inputs: scripts/trace_round16b/build_evidence_disposition_tranche_a.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-occurrence-disposition-tranche-a-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/family-evidence-disposition-tranche-a-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/conditional-scoped-child-reroute-queue-tranche-a-v1.tsv
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 130
+
+- UTC timestamp: 2026-08-28T07:53:43Z
+- Phase: EVIDENCE-DISPOSITION-TRANCHE-A
+- Operation: PASS — check deterministic regeneration of tranche A artifacts
+- Command: `python3 scripts/trace_round16b/build_evidence_disposition_tranche_a.py --check`
+- Inputs: scripts/trace_round16b/build_evidence_disposition_tranche_a.py, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-occurrence-disposition-tranche-a-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/family-evidence-disposition-tranche-a-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/conditional-scoped-child-reroute-queue-tranche-a-v1.tsv
+- Outputs: none
+- Duration: 93 ms
+- Warnings: none
+- Errors: none
+- Decision: Byte divergence blocks checkpoint publication.
+- Next: Run inherited checkpoint regressions.
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 131
+
+- UTC timestamp: 2026-08-28T07:54:04Z
+- Phase: CHECKPOINT-005-REGRESSION
+- Operation: START — regress deferred surface census
+- Command: `python3 scripts/trace_round16b/verify_deferred_surface_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-regression-checkpoint005.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-trigger-occurrences-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-census-v1.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-regression-checkpoint005.json
+- Warnings: none
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 132
+
+- UTC timestamp: 2026-08-28T07:54:10Z
+- Phase: CHECKPOINT-005-REGRESSION
+- Operation: PASS — regress deferred surface census
+- Command: `python3 scripts/trace_round16b/verify_deferred_surface_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-regression-checkpoint005.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-trigger-occurrences-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-census-v1.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/deferred-surface-regression-checkpoint005.json
+- Duration: 6025 ms
+- Warnings: none
+- Errors: none
+- Decision: Any regression blocks checkpoint publication.
+- Next: Continue checkpoint 005 integrity gates.
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 133
+
+- UTC timestamp: 2026-08-28T07:54:10Z
+- Phase: CHECKPOINT-005-REGRESSION
+- Operation: START — regress local candidate census
+- Command: `python3 scripts/trace_round16b/verify_local_candidate_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-regression-checkpoint005.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-trigger-occurrences-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-census-v1.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-regression-checkpoint005.json
+- Warnings: none
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 134
+
+- UTC timestamp: 2026-08-28T07:54:17Z
+- Phase: CHECKPOINT-005-REGRESSION
+- Operation: PASS — regress local candidate census
+- Command: `python3 scripts/trace_round16b/verify_local_candidate_census.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-regression-checkpoint005.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-family-ledger-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-trigger-occurrences-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-census-v1.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/local-candidate-regression-checkpoint005.json
+- Duration: 7340 ms
+- Warnings: none
+- Errors: none
+- Decision: Any regression blocks checkpoint publication.
+- Next: Continue checkpoint 005 integrity gates.
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 135
+
+- UTC timestamp: 2026-08-28T07:54:17Z
+- Phase: CHECKPOINT-005-REGRESSION
+- Operation: START — regress higher-order association method checkpoint
+- Command: `python3 scripts/trace_round16b/verify_method_checkpoint.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-regression-checkpoint005.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-checkpoint-census.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/02_HIGHER_ORDER_ASSOCIATION_METHOD.md
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-regression-checkpoint005.json
+- Warnings: none
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 136
+
+- UTC timestamp: 2026-08-28T07:54:18Z
+- Phase: CHECKPOINT-005-REGRESSION
+- Operation: PASS — regress higher-order association method checkpoint
+- Command: `python3 scripts/trace_round16b/verify_method_checkpoint.py --repo . --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-regression-checkpoint005.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-checkpoint-census.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/02_HIGHER_ORDER_ASSOCIATION_METHOD.md
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/method-regression-checkpoint005.json
+- Duration: 397 ms
+- Warnings: none
+- Errors: none
+- Decision: Any regression blocks checkpoint publication.
+- Next: Continue checkpoint 005 integrity gates.
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 137
+
+- UTC timestamp: 2026-08-28T07:54:43Z
+- Phase: CHECKPOINT-005-INTEGRITY
+- Operation: START — audit repository hygiene for checkpoint 005
+- Command: `python3 scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint005.json --markdown docs/research/trace-v49-exploration-higher-order-association-closure-round16b/09_REPOSITORY_HYGIENE_CHECKPOINT005.md`
+- Inputs: docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-occurrence-disposition-tranche-a-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/family-evidence-disposition-tranche-a-v1.tsv
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint005.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/09_REPOSITORY_HYGIENE_CHECKPOINT005.md
+- Warnings: none
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 138
+
+- UTC timestamp: 2026-08-28T07:54:53Z
+- Phase: CHECKPOINT-005-INTEGRITY
+- Operation: FAIL — audit repository hygiene for checkpoint 005
+- Command: `python3 scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint005.json --markdown docs/research/trace-v49-exploration-higher-order-association-closure-round16b/09_REPOSITORY_HYGIENE_CHECKPOINT005.md`
+- Inputs: docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/evidence-occurrence-disposition-tranche-a-v1.tsv, docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/family-evidence-disposition-tranche-a-v1.tsv
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint005.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/09_REPOSITORY_HYGIENE_CHECKPOINT005.md
+- Duration: 9546 ms
+- Warnings: none
+- Errors: COMMAND_EXIT_1
+- Decision: Preserve the failure and correct it additively.
+- Next: Continue checkpoint 005 integrity gates.
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 139
+
+- UTC timestamp: 2026-08-28T07:55:16Z
+- Phase: CHECKPOINT-005-INTEGRITY
+- Operation: START — reaudit repository hygiene after exact script staging
+- Command: `python3 scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint005.json --markdown docs/research/trace-v49-exploration-higher-order-association-closure-round16b/09_REPOSITORY_HYGIENE_CHECKPOINT005.md`
+- Inputs: docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json, scripts/trace_round16b/build_evidence_disposition_tranche_a.py, scripts/trace_round16b/verify_evidence_disposition_tranche_a.py
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint005.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/09_REPOSITORY_HYGIENE_CHECKPOINT005.md
+- Warnings: PREVIOUS_HYGIENE_FAIL_UNTRACKED_ALLOWLISTED_SCRIPTS
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 140
+
+- UTC timestamp: 2026-08-28T07:55:25Z
+- Phase: CHECKPOINT-005-INTEGRITY
+- Operation: PASS — reaudit repository hygiene after exact script staging
+- Command: `python3 scripts/repository/audit_repository_hygiene.py --repo . --json docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint005.json --markdown docs/research/trace-v49-exploration-higher-order-association-closure-round16b/09_REPOSITORY_HYGIENE_CHECKPOINT005.md`
+- Inputs: docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json, scripts/trace_round16b/build_evidence_disposition_tranche_a.py, scripts/trace_round16b/verify_evidence_disposition_tranche_a.py
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint005.json, docs/research/trace-v49-exploration-higher-order-association-closure-round16b/09_REPOSITORY_HYGIENE_CHECKPOINT005.md
+- Duration: 9245 ms
+- Warnings: PREVIOUS_HYGIENE_FAIL_UNTRACKED_ALLOWLISTED_SCRIPTS
+- Errors: none
+- Decision: Any integrity failure blocks checkpoint publication.
+- Next: Continue checkpoint 005 integrity gates.
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 141
+
+- UTC timestamp: 2026-08-28T07:55:26Z
+- Phase: CHECKPOINT-005-INTEGRITY
+- Operation: START — enforce new blob size and LFS policy for checkpoint 005
+- Command: `python3 scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint005.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json
+- Declared outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint005.json
+- Warnings: none
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 142
+
+- UTC timestamp: 2026-08-28T07:55:32Z
+- Phase: CHECKPOINT-005-INTEGRITY
+- Operation: PASS — enforce new blob size and LFS policy for checkpoint 005
+- Command: `python3 scripts/trace_round16b/verify_new_blob_policy.py --repo . --policy docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json --output docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint005.json`
+- Inputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json
+- Outputs: docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/new-blob-policy-verification-checkpoint005.json
+- Duration: 5993 ms
+- Warnings: none
+- Errors: none
+- Decision: Any integrity failure blocks checkpoint publication.
+- Next: Continue checkpoint 005 integrity gates.
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 143
+
+- UTC timestamp: 2026-08-28T07:55:38Z
+- Phase: CHECKPOINT-005-INTEGRITY
+- Operation: START — verify local Git LFS object integrity
+- Command: `git lfs fsck`
+- Inputs: .gitattributes
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 144
+
+- UTC timestamp: 2026-08-28T07:55:39Z
+- Phase: CHECKPOINT-005-INTEGRITY
+- Operation: PASS — verify local Git LFS object integrity
+- Command: `git lfs fsck`
+- Inputs: .gitattributes
+- Outputs: none
+- Duration: 1499 ms
+- Warnings: none
+- Errors: none
+- Decision: Any LFS integrity failure blocks checkpoint publication.
+- Next: Run strict Git object integrity verification.
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 145
+
+- UTC timestamp: 2026-08-28T07:55:49Z
+- Phase: CHECKPOINT-005-INTEGRITY
+- Operation: START — verify strict Git object integrity
+- Command: `git fsck --strict`
+- Inputs: none
+- Declared outputs: none
+- Warnings: none
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 146
+
+- UTC timestamp: 2026-08-28T07:57:38Z
+- Phase: CHECKPOINT-005-INTEGRITY
+- Operation: PASS — verify strict Git object integrity
+- Command: `git fsck --strict`
+- Inputs: none
+- Outputs: none
+- Duration: 109329 ms
+- Warnings: none
+- Errors: none
+- Decision: Any Git object integrity failure blocks checkpoint publication.
+- Next: Verify the append-only execution log, stage exact checkpoint artifacts, and commit.
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 147
+
+- UTC timestamp: 2026-08-28T07:58:11Z
+- Phase: CHECKPOINT-005-INTEGRITY
+- Operation: START — scan governed repository surfaces for common secret patterns
+- Command: `python3 scripts/audit_secret_patterns.py`
+- Inputs: scripts/audit_secret_patterns.py
+- Declared outputs: none
+- Warnings: SECRET_SCAN_HELP_FLAG_NOT_SUPPORTED_UNLOGGED_PROBE_REPEATED
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
+
+## Event 148
+
+- UTC timestamp: 2026-08-28T07:59:39Z
+- Phase: CHECKPOINT-005-INTEGRITY
+- Operation: PASS — scan governed repository surfaces for common secret patterns
+- Command: `python3 scripts/audit_secret_patterns.py`
+- Inputs: scripts/audit_secret_patterns.py
+- Outputs: none
+- Duration: 88187 ms
+- Warnings: SECRET_SCAN_HELP_FLAG_NOT_SUPPORTED_UNLOGGED_PROBE_REPEATED
+- Errors: none
+- Decision: Any possible secret finding blocks checkpoint publication.
+- Next: Verify the append-only execution log, stage exact checkpoint artifacts, and commit.
+- Git SHA: `068c92151a935cfb9e4adc36b150c6800a6de9a2`
