@@ -1,25 +1,40 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import { Baskervville, Instrument_Sans, Inter } from "next/font/google";
 import "./globals.css";
 
-const plexSans = IBM_Plex_Sans({
+/* Display / large headings — transitional serif, size-driven hierarchy. */
+const baskervville = Baskervville({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-plex-sans",
+  weight: ["400"],
+  style: ["normal", "italic"],
+  variable: "--font-baskervville",
   display: "swap",
 });
 
-const plexMono = IBM_Plex_Mono({
+/* Body — humanist grotesque, minimum 16px. */
+const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-plex-mono",
+  weight: ["400", "500", "600"],
+  variable: "--font-instrument",
+  display: "swap",
+});
+
+/* Numerals only — weights 200 / 300 / 400. */
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["200", "300", "400"],
+  variable: "--font-inter",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Archive Box — Modern Graphic Design History",
+  metadataBase: new URL("https://mgdarchive.com"),
+  title: {
+    default: "Modern Graphic Design Archive",
+    template: "%s — Modern Graphic Design Archive",
+  },
   description:
-    "Rights-aware archive index for modern graphic design history. A reading and source-navigation prototype.",
+    "A verified, extensible platform for reading, locating, and exploring modern graphic design history — for design researchers, learners, and AI research tools.",
 };
 
 export default function RootLayout({
@@ -28,12 +43,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-theme="archive">
-      <body
-        className={`${plexSans.variable} ${plexMono.variable} font-sans antialiased`}
-      >
-        {children}
-      </body>
+    <html
+      lang="en"
+      className={`${baskervville.variable} ${instrumentSans.variable} ${inter.variable}`}
+    >
+      <body>{children}</body>
     </html>
   );
 }
