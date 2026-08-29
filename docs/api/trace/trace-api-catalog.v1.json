@@ -1,0 +1,3696 @@
+{
+  "canonical_product": "TRACE",
+  "catalog_version": "TRACE_API_CATALOG_V1",
+  "group_order": [
+    "TRACE Function 1",
+    "TRACE Function 2",
+    "TRACE Function 3 — Validated Exploration",
+    "TRACE Function 3 — Open Inquiry",
+    "shared TRACE infrastructure"
+  ],
+  "routes": [
+    {
+      "api_id": "trace.f1.context.object-context.v1",
+      "authentication": "None; governed public release identity is enforced through the release pair and optional integrity header.",
+      "caching": "Cache-Control: no-store; Vary: Archive-Research-Manifest-Sha256.",
+      "explicit_nonclaims": [
+        "Project-curated context is not an influence or semantic edge.",
+        "Held UUIDs and full-corpus data are not exposed.",
+        "Context Canvas is independent from Exploration."
+      ],
+      "frontend_use": "Context Canvas can load the selected public record and governed medium, theme, and movement-context representations; the current workspace reads the same governed source server-side.",
+      "function": "TRACE_FUNCTION_1",
+      "function_name": "Context Canvas",
+      "group": "TRACE Function 1",
+      "handler_path": "frontend/src/features/trace-v49/context/governed/read-api-runtime.server.ts",
+      "implementation_status": "IMPLEMENTED_GOVERNED_READ_ONLY",
+      "layer": "CONTEXT_CANVAS",
+      "limitations": [
+        "No pagination or client sorting.",
+        "The workspace is not linked into public navigation by this integration."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Release path and public stable object ID; an exact release requires Archive-Research-Manifest-Sha256; no body or query parameters.",
+        "source": "frontend/src/features/trace-v49/context/governed/read-api-runtime.server.ts",
+        "symbol": "tryReadGovernedContextApiResource"
+      },
+      "response_schema": {
+        "description": "Read API v1 envelope containing PublicContextDataset.",
+        "source": "frontend/src/features/trace-v49/context/governed/types.ts",
+        "symbol": "PublicContextDataset"
+      },
+      "route": "/api/v1/releases/{release}/trace/objects/{id}/context",
+      "service_repository_path": "frontend/src/features/trace-v49/context/governed/reader.server.ts",
+      "sorting": "Deterministic committed projection order.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "states": {
+        "empty": "availability=empty is a valid governed result.",
+        "error": "400 invalid ID; 404 held/unknown/unavailable; 409 release mismatch; 503 integrity failure.",
+        "loading": "SSR or request pending.",
+        "partial": "No partial protocol state."
+      },
+      "test_path": "frontend/scripts/verify-context-api-v1.mjs"
+    },
+    {
+      "api_id": "trace.f2.spacetime.atlas.v1",
+      "authentication": "None; exact-release requests require the committed release manifest identity.",
+      "caching": "Cache-Control: no-store; Vary: Archive-Research-Manifest-Sha256.",
+      "explicit_nonclaims": [
+        "Recorded region/date context is not an object coordinate or historical-presence claim.",
+        "Aggregate marks do not assert movement, influence, or an Exploration association.",
+        "realSemanticEdgeCount remains zero."
+      ],
+      "frontend_use": "Loads governed aggregate geographic marks for one selected period.",
+      "function": "TRACE_FUNCTION_2",
+      "function_name": "Spacetime",
+      "group": "TRACE Function 2",
+      "handler_path": "frontend/src/features/trace-v49/spacetime/governed/read-api-runtime.server.ts",
+      "implementation_status": "IMPLEMENTED_GOVERNED_READ_ONLY",
+      "layer": "SPACETIME",
+      "limitations": [
+        "Governed periods and geography identities are fixed by the committed projection.",
+        "The workspace is not linked into public navigation by this integration."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Exactly one required period query parameter; no body.",
+        "source": "frontend/src/features/trace-v49/spacetime/governed/read-api-runtime.server.ts",
+        "symbol": "atlas request"
+      },
+      "response_schema": {
+        "description": "Read API v1 envelope containing PublicSpacetimeAtlasDataset.",
+        "source": "frontend/src/features/trace-v49/spacetime/governed/types.ts",
+        "symbol": "PublicSpacetimeAtlasDataset"
+      },
+      "route": "/api/v1/releases/{release}/trace/spacetime/atlas",
+      "service_repository_path": "frontend/src/features/trace-v49/spacetime/governed/reader.server.ts",
+      "sorting": "Committed geography/mark order.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "states": {
+        "empty": "A period with no governed marks is valid empty data.",
+        "error": "400 query error; 404 period/release error; 503 integrity failure.",
+        "loading": "Atlas request pending after period selection.",
+        "partial": "No partial protocol state."
+      },
+      "test_path": "frontend/scripts/verify-spacetime-api-v1.mjs"
+    },
+    {
+      "api_id": "trace.f2.spacetime.geography-records.v1",
+      "authentication": "None; exact-release requests require the committed release manifest identity.",
+      "caching": "Cache-Control: no-store; Vary: Archive-Research-Manifest-Sha256.",
+      "explicit_nonclaims": [
+        "Recorded region/date context is not an object coordinate or historical-presence claim.",
+        "Aggregate marks do not assert movement, influence, or an Exploration association.",
+        "realSemanticEdgeCount remains zero."
+      ],
+      "frontend_use": "Loads and incrementally extends the selected geography's recorded-object list.",
+      "function": "TRACE_FUNCTION_2",
+      "function_name": "Spacetime",
+      "group": "TRACE Function 2",
+      "handler_path": "frontend/src/features/trace-v49/spacetime/governed/read-api-runtime.server.ts",
+      "implementation_status": "IMPLEMENTED_GOVERNED_READ_ONLY",
+      "layer": "SPACETIME",
+      "limitations": [
+        "Governed periods and geography identities are fixed by the committed projection.",
+        "The workspace is not linked into public navigation by this integration."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "Deterministic cursor pagination; first defaults to 24 and is bounded 1..100; hasNextPage/endCursor signal continuation.",
+      "request_schema": {
+        "description": "Geography path ID; exactly one period; optional first 1..100 (default 24) and projection-bound after cursor up to 2048 characters.",
+        "source": "frontend/src/features/trace-v49/spacetime/governed/read-api-runtime.server.ts",
+        "symbol": "geography-record request"
+      },
+      "response_schema": {
+        "description": "Read API v1 envelope containing PublicSpacetimeRecordPage.",
+        "source": "frontend/src/features/trace-v49/spacetime/governed/types.ts",
+        "symbol": "PublicSpacetimeRecordPage"
+      },
+      "route": "/api/v1/releases/{release}/trace/spacetime/geographies/{geographyId}/records",
+      "service_repository_path": "frontend/src/features/trace-v49/spacetime/governed/reader.server.ts",
+      "sorting": "Committed projection order; no caller-selected sort.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "states": {
+        "empty": "A zero-record page is valid.",
+        "error": "400 invalid query/cursor; 404 geography/period/release; 503 integrity failure.",
+        "loading": "Selected-geography page request pending.",
+        "partial": "hasNextPage=true is an explicit partial state until load-more completes."
+      },
+      "test_path": "frontend/scripts/verify-spacetime-api-v1.mjs"
+    },
+    {
+      "api_id": "trace.f2.spacetime.periods.v1",
+      "authentication": "None; exact-release requests require the committed release manifest identity.",
+      "caching": "Cache-Control: no-store; Vary: Archive-Research-Manifest-Sha256.",
+      "explicit_nonclaims": [
+        "Recorded region/date context is not an object coordinate or historical-presence claim.",
+        "Aggregate marks do not assert movement, influence, or an Exploration association.",
+        "realSemanticEdgeCount remains zero."
+      ],
+      "frontend_use": "Initializes the discrete Spacetime period selector.",
+      "function": "TRACE_FUNCTION_2",
+      "function_name": "Spacetime",
+      "group": "TRACE Function 2",
+      "handler_path": "frontend/src/features/trace-v49/spacetime/governed/read-api-runtime.server.ts",
+      "implementation_status": "IMPLEMENTED_GOVERNED_READ_ONLY",
+      "layer": "SPACETIME",
+      "limitations": [
+        "Governed periods and geography identities are fixed by the committed projection.",
+        "The workspace is not linked into public navigation by this integration."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Release path; no query or body.",
+        "source": "frontend/src/features/trace-v49/spacetime/governed/read-api-runtime.server.ts",
+        "symbol": "periods request"
+      },
+      "response_schema": {
+        "description": "Read API v1 envelope containing PublicSpacetimePeriodsDataset.",
+        "source": "frontend/src/features/trace-v49/spacetime/governed/types.ts",
+        "symbol": "PublicSpacetimePeriodsDataset"
+      },
+      "route": "/api/v1/releases/{release}/trace/spacetime/periods",
+      "service_repository_path": "frontend/src/features/trace-v49/spacetime/governed/reader.server.ts",
+      "sorting": "Committed period display order.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "states": {
+        "empty": "An empty governed period inventory is displayable.",
+        "error": "400 query error; 404 release error; 503 integrity failure.",
+        "loading": "Periods request pending.",
+        "partial": "No partial protocol state."
+      },
+      "test_path": "frontend/scripts/verify-spacetime-api-v1.mjs"
+    },
+    {
+      "api_id": "trace.f3.open-inquiry.v1.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store; Vary: Accept; registry digest response header.",
+      "explicit_nonclaims": [
+        "Every record is unresolved and not validated.",
+        "No record generates pair edges or changes validated graph, composition, topology, export, or metrics.",
+        "No truth probability, likelihood score, confidence percentage, or stochastic display exists."
+      ],
+      "frontend_use": "Future explicitly labelled inquiry inventory and detail surfaces; no visual design or mounted page is added here.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Open Inquiry",
+      "handler_path": "frontend/src/features/trace-v49/open-inquiry-v1/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_READ_ONLY_ISOLATED",
+      "layer": "OPEN_INQUIRY",
+      "limitations": [
+        "No pagination, filtering, caller sorting, randomization, mutation, or include-unresolved flag.",
+        "External human review remains pending."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Exact R16B-HYPOTHESIS or R16B-SCOPED-HYPOTHESIS stable ID; no body or query.",
+        "source": "schemas/trace/exploration/open-inquiry/v1/detail-response.schema.json",
+        "symbol": "OpenInquiry detail request"
+      },
+      "response_schema": {
+        "description": "OpenInquiryResponseEnvelope<OpenInquiryDetailData>.",
+        "source": "schemas/trace/exploration/open-inquiry/v1/detail-response.schema.json",
+        "symbol": "OpenInquiryDetailData"
+      },
+      "route": "/api/trace/v1/open-inquiry/{inquiryId}",
+      "service_repository_path": "frontend/src/features/trace-v49/open-inquiry-v1/service.server.ts",
+      "sorting": "Canonical code-point order by stable inquiry ID; no caller-selected sort.",
+      "source_route_path": "frontend/src/app/api/trace/v1/open-inquiry/[inquiryId]/route.ts",
+      "states": {
+        "empty": "List is governed at exactly 11; detail has no empty success state.",
+        "error": "400 any query; 404 malformed/unknown ID; 405 unsupported method; 503 registry integrity failure.",
+        "loading": "Request pending with Open Inquiry label retained.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-open-inquiry-v1.mjs"
+    },
+    {
+      "api_id": "trace.f3.open-inquiry.v1.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store; Vary: Accept; registry digest response header.",
+      "explicit_nonclaims": [
+        "Every record is unresolved and not validated.",
+        "No record generates pair edges or changes validated graph, composition, topology, export, or metrics.",
+        "No truth probability, likelihood score, confidence percentage, or stochastic display exists."
+      ],
+      "frontend_use": "Future explicitly labelled inquiry inventory and detail surfaces; no visual design or mounted page is added here.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Open Inquiry",
+      "handler_path": "frontend/src/features/trace-v49/open-inquiry-v1/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_READ_ONLY_ISOLATED",
+      "layer": "OPEN_INQUIRY",
+      "limitations": [
+        "No pagination, filtering, caller sorting, randomization, mutation, or include-unresolved flag.",
+        "External human review remains pending."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body and no query parameters.",
+        "source": "schemas/trace/exploration/open-inquiry/v1/list-response.schema.json",
+        "symbol": "OpenInquiry list request"
+      },
+      "response_schema": {
+        "description": "OpenInquiryResponseEnvelope<OpenInquiryListData> with exactly 11 items.",
+        "source": "schemas/trace/exploration/open-inquiry/v1/list-response.schema.json",
+        "symbol": "OpenInquiryListData"
+      },
+      "route": "/api/trace/v1/open-inquiry",
+      "service_repository_path": "frontend/src/features/trace-v49/open-inquiry-v1/service.server.ts",
+      "sorting": "Canonical code-point order by stable inquiry ID; no caller-selected sort.",
+      "source_route_path": "frontend/src/app/api/trace/v1/open-inquiry/route.ts",
+      "states": {
+        "empty": "List is governed at exactly 11; detail has no empty success state.",
+        "error": "400 any query; 404 malformed/unknown ID; 405 unsupported method; 503 registry integrity failure.",
+        "loading": "Request pending with Open Inquiry label retained.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-open-inquiry-v1.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v1.retired-catchall",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store; successor Link and Sunset headers.",
+      "explicit_nonclaims": [
+        "The retired catch-all is not an implemented product data surface.",
+        "Retirement does not create a fourth function."
+      ],
+      "frontend_use": "Compatibility-only retirement signal; clients must use v2.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/app/api/trace/v1/exploration/[...path]/route.ts",
+      "implementation_status": "RETIRED_410",
+      "layer": "VALIDATED_EXPLORATION_V1_RETIRED",
+      "limitations": [
+        "OPTIONS intentionally returns the retirement payload rather than 204.",
+        "No v1 data remains available."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Any request to the retired v1 root or catch-all.",
+        "source": "frontend/src/app/api/trace/v1/exploration/route.ts",
+        "symbol": "retired request"
+      },
+      "response_schema": {
+        "description": "HTTP 410 trace-exploration-api-retirement-v1 payload; HEAD is bodyless.",
+        "source": "frontend/src/app/api/trace/v1/exploration/route.ts",
+        "symbol": "RETIREMENT_PAYLOAD"
+      },
+      "route": "/api/trace/v1/exploration/{...path}",
+      "service_repository_path": "frontend/src/app/api/trace/v1/exploration/[...path]/route.ts",
+      "sorting": "None.",
+      "source_route_path": "frontend/src/app/api/trace/v1/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Not applicable.",
+        "error": "Every method returns 410 API_VERSION_RETIRED; HEAD has no body.",
+        "loading": "No loading data contract; response is immediate retirement.",
+        "partial": "Not applicable."
+      },
+      "test_path": "frontend/scripts/validate-trace-exploration-v2-http.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v1.retired-root",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store; successor Link and Sunset headers.",
+      "explicit_nonclaims": [
+        "The retired catch-all is not an implemented product data surface.",
+        "Retirement does not create a fourth function."
+      ],
+      "frontend_use": "Compatibility-only retirement signal; clients must use v2.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/app/api/trace/v1/exploration/route.ts",
+      "implementation_status": "RETIRED_410",
+      "layer": "VALIDATED_EXPLORATION_V1_RETIRED",
+      "limitations": [
+        "OPTIONS intentionally returns the retirement payload rather than 204.",
+        "No v1 data remains available."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Any request to the retired v1 root or catch-all.",
+        "source": "frontend/src/app/api/trace/v1/exploration/route.ts",
+        "symbol": "retired request"
+      },
+      "response_schema": {
+        "description": "HTTP 410 trace-exploration-api-retirement-v1 payload; HEAD is bodyless.",
+        "source": "frontend/src/app/api/trace/v1/exploration/route.ts",
+        "symbol": "RETIREMENT_PAYLOAD"
+      },
+      "route": "/api/trace/v1/exploration",
+      "service_repository_path": "frontend/src/app/api/trace/v1/exploration/route.ts",
+      "sorting": "None.",
+      "source_route_path": "frontend/src/app/api/trace/v1/exploration/route.ts",
+      "states": {
+        "empty": "Not applicable.",
+        "error": "Every method returns 410 API_VERSION_RETIRED; HEAD has no body.",
+        "loading": "No loading data contract; response is immediate retirement.",
+        "partial": "Not applicable."
+      },
+      "test_path": "frontend/scripts/validate-trace-exploration-v2-http.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v2.associations.get",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Exactly 21 evidence-qualified generic pair associations are validated.",
+        "No Open Inquiry record is mixed into v2.",
+        "No causal, directional, hierarchical, temporal, equivalence, strength, pair-closure, higher-order-closure, computational-space, or Function 3 closure claim."
+      ],
+      "frontend_use": "Typed client support exists; no final mounted visual page or navigation is added by this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v2/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "layer": "VALIDATED_EXPLORATION_V2",
+      "limitations": [
+        "A map exposes at most eight visible nodes.",
+        "Map GET recognizes state_id; other query keys are currently ignored.",
+        "PNG is fixed at 1080×1620."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Association ID; no body/query.",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "ExplorationV2AssociationDto"
+      },
+      "response_schema": {
+        "description": "ExplorationV2AssociationDto",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "ExplorationV2AssociationDto"
+      },
+      "route": "/api/trace/v2/exploration/associations/{associationId}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "sorting": "No caller-selected sorting; governed deterministic order.",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Endpoint-specific empty arrays are valid; no unresolved fallback is inserted.",
+        "error": "400/404/409/413/503 fail closed; binary render capacity may return 503.",
+        "loading": "Request or server render pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v2.capabilities.get",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Exactly 21 evidence-qualified generic pair associations are validated.",
+        "No Open Inquiry record is mixed into v2.",
+        "No causal, directional, hierarchical, temporal, equivalence, strength, pair-closure, higher-order-closure, computational-space, or Function 3 closure claim."
+      ],
+      "frontend_use": "Typed client support exists; no final mounted visual page or navigation is added by this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v2/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "layer": "VALIDATED_EXPLORATION_V2",
+      "limitations": [
+        "A map exposes at most eight visible nodes.",
+        "Map GET recognizes state_id; other query keys are currently ignored.",
+        "PNG is fixed at 1080×1620."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body/query.",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "ExplorationV2CapabilitiesResponse"
+      },
+      "response_schema": {
+        "description": "ExplorationV2CapabilitiesResponse",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "ExplorationV2CapabilitiesResponse"
+      },
+      "route": "/api/trace/v2/exploration/capabilities",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "sorting": "No caller-selected sorting; governed deterministic order.",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Endpoint-specific empty arrays are valid; no unresolved fallback is inserted.",
+        "error": "400/404/409/413/503 fail closed; binary render capacity may return 503.",
+        "loading": "Request or server render pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v2.categories.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Exactly 21 evidence-qualified generic pair associations are validated.",
+        "No Open Inquiry record is mixed into v2.",
+        "No causal, directional, hierarchical, temporal, equivalence, strength, pair-closure, higher-order-closure, computational-space, or Function 3 closure claim."
+      ],
+      "frontend_use": "Typed client support exists; no final mounted visual page or navigation is added by this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v2/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "layer": "VALIDATED_EXPLORATION_V2",
+      "limitations": [
+        "A map exposes at most eight visible nodes.",
+        "Map GET recognizes state_id; other query keys are currently ignored.",
+        "PNG is fixed at 1080×1620."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body/query.",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "ExplorationV2CategoriesResponse"
+      },
+      "response_schema": {
+        "description": "ExplorationV2CategoriesResponse",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "ExplorationV2CategoriesResponse"
+      },
+      "route": "/api/trace/v2/exploration/categories",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "sorting": "No caller-selected sorting; governed deterministic order.",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Endpoint-specific empty arrays are valid; no unresolved fallback is inserted.",
+        "error": "400/404/409/413/503 fail closed; binary render capacity may return 503.",
+        "loading": "Request or server render pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v2.exports.manifest",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Exactly 21 evidence-qualified generic pair associations are validated.",
+        "No Open Inquiry record is mixed into v2.",
+        "No causal, directional, hierarchical, temporal, equivalence, strength, pair-closure, higher-order-closure, computational-space, or Function 3 closure claim."
+      ],
+      "frontend_use": "Typed client support exists; no final mounted visual page or navigation is added by this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v2/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "layer": "VALIDATED_EXPLORATION_V2",
+      "limitations": [
+        "A map exposes at most eight visible nodes.",
+        "Map GET recognizes state_id; other query keys are currently ignored.",
+        "PNG is fixed at 1080×1620."
+      ],
+      "method": [
+        "POST",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "JSON ExplorationV2ExportRequest; body <=65536 bytes.",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "ExplorationV2ExportRequest"
+      },
+      "response_schema": {
+        "description": "ExplorationV2ExportManifestDto",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "ExplorationV2ExportManifestDto"
+      },
+      "route": "/api/trace/v2/exploration/exports/manifest",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "sorting": "No caller-selected sorting; governed deterministic order.",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Endpoint-specific empty arrays are valid; no unresolved fallback is inserted.",
+        "error": "400/404/409/413/503 fail closed; binary render capacity may return 503.",
+        "loading": "Request or server render pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v2.exports.png",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Exactly 21 evidence-qualified generic pair associations are validated.",
+        "No Open Inquiry record is mixed into v2.",
+        "No causal, directional, hierarchical, temporal, equivalence, strength, pair-closure, higher-order-closure, computational-space, or Function 3 closure claim."
+      ],
+      "frontend_use": "Typed client support exists; no final mounted visual page or navigation is added by this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v2/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "layer": "VALIDATED_EXPLORATION_V2",
+      "limitations": [
+        "A map exposes at most eight visible nodes.",
+        "Map GET recognizes state_id; other query keys are currently ignored.",
+        "PNG is fixed at 1080×1620."
+      ],
+      "method": [
+        "POST",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "JSON ExplorationV2ExportRequest; body <=65536 bytes.",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "ExplorationV2ExportRequest"
+      },
+      "response_schema": {
+        "description": "image/png bytes with semantic/presentation/state/export headers",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "PNG bytes"
+      },
+      "route": "/api/trace/v2/exploration/exports/png",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "sorting": "No caller-selected sorting; governed deterministic order.",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Endpoint-specific empty arrays are valid; no unresolved fallback is inserted.",
+        "error": "400/404/409/413/503 fail closed; binary render capacity may return 503.",
+        "loading": "Request or server render pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v2.exports.svg",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Exactly 21 evidence-qualified generic pair associations are validated.",
+        "No Open Inquiry record is mixed into v2.",
+        "No causal, directional, hierarchical, temporal, equivalence, strength, pair-closure, higher-order-closure, computational-space, or Function 3 closure claim."
+      ],
+      "frontend_use": "Typed client support exists; no final mounted visual page or navigation is added by this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v2/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "layer": "VALIDATED_EXPLORATION_V2",
+      "limitations": [
+        "A map exposes at most eight visible nodes.",
+        "Map GET recognizes state_id; other query keys are currently ignored.",
+        "PNG is fixed at 1080×1620."
+      ],
+      "method": [
+        "POST",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "JSON ExplorationV2ExportRequest; body <=65536 bytes.",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "ExplorationV2ExportRequest"
+      },
+      "response_schema": {
+        "description": "image/svg+xml bytes with semantic/presentation/state/export headers",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "SVG bytes"
+      },
+      "route": "/api/trace/v2/exploration/export/svg",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "sorting": "No caller-selected sorting; governed deterministic order.",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Endpoint-specific empty arrays are valid; no unresolved fallback is inserted.",
+        "error": "400/404/409/413/503 fail closed; binary render capacity may return 503.",
+        "loading": "Request or server render pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v2.maps.actions",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Exactly 21 evidence-qualified generic pair associations are validated.",
+        "No Open Inquiry record is mixed into v2.",
+        "No causal, directional, hierarchical, temporal, equivalence, strength, pair-closure, higher-order-closure, computational-space, or Function 3 closure claim."
+      ],
+      "frontend_use": "Typed client support exists; no final mounted visual page or navigation is added by this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v2/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "layer": "VALIDATED_EXPLORATION_V2",
+      "limitations": [
+        "A map exposes at most eight visible nodes.",
+        "Map GET recognizes state_id; other query keys are currently ignored.",
+        "PNG is fixed at 1080×1620."
+      ],
+      "method": [
+        "POST",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Map ID and JSON ExplorationV2ActionRequest; body <=65536 bytes.",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "ExplorationV2ActionRequest"
+      },
+      "response_schema": {
+        "description": "ExplorationV2MapDto",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "ExplorationV2MapDto"
+      },
+      "route": "/api/trace/v2/exploration/maps/{mapId}/actions",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "sorting": "No caller-selected sorting; governed deterministic order.",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Endpoint-specific empty arrays are valid; no unresolved fallback is inserted.",
+        "error": "400/404/409/413/503 fail closed; binary render capacity may return 503.",
+        "loading": "Request or server render pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v2.maps.create",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Exactly 21 evidence-qualified generic pair associations are validated.",
+        "No Open Inquiry record is mixed into v2.",
+        "No causal, directional, hierarchical, temporal, equivalence, strength, pair-closure, higher-order-closure, computational-space, or Function 3 closure claim."
+      ],
+      "frontend_use": "Typed client support exists; no final mounted visual page or navigation is added by this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v2/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "layer": "VALIDATED_EXPLORATION_V2",
+      "limitations": [
+        "A map exposes at most eight visible nodes.",
+        "Map GET recognizes state_id; other query keys are currently ignored.",
+        "PNG is fixed at 1080×1620."
+      ],
+      "method": [
+        "POST",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "JSON ExplorationV2MapRequest; body <=65536 bytes.",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "ExplorationV2MapRequest"
+      },
+      "response_schema": {
+        "description": "ExplorationV2MapDto",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "ExplorationV2MapDto"
+      },
+      "route": "/api/trace/v2/exploration/maps",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "sorting": "No caller-selected sorting; governed deterministic order.",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Endpoint-specific empty arrays are valid; no unresolved fallback is inserted.",
+        "error": "400/404/409/413/503 fail closed; binary render capacity may return 503.",
+        "loading": "Request or server render pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v2.maps.get",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Exactly 21 evidence-qualified generic pair associations are validated.",
+        "No Open Inquiry record is mixed into v2.",
+        "No causal, directional, hierarchical, temporal, equivalence, strength, pair-closure, higher-order-closure, computational-space, or Function 3 closure claim."
+      ],
+      "frontend_use": "Typed client support exists; no final mounted visual page or navigation is added by this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v2/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "layer": "VALIDATED_EXPLORATION_V2",
+      "limitations": [
+        "A map exposes at most eight visible nodes.",
+        "Map GET recognizes state_id; other query keys are currently ignored.",
+        "PNG is fixed at 1080×1620."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Map ID; optional state_id.",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "ExplorationV2MapDto"
+      },
+      "response_schema": {
+        "description": "ExplorationV2MapDto",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "ExplorationV2MapDto"
+      },
+      "route": "/api/trace/v2/exploration/maps/{mapId}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "sorting": "No caller-selected sorting; governed deterministic order.",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Endpoint-specific empty arrays are valid; no unresolved fallback is inserted.",
+        "error": "400/404/409/413/503 fail closed; binary render capacity may return 503.",
+        "loading": "Request or server render pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v2.root",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Exactly 21 evidence-qualified generic pair associations are validated.",
+        "No Open Inquiry record is mixed into v2.",
+        "No causal, directional, hierarchical, temporal, equivalence, strength, pair-closure, higher-order-closure, computational-space, or Function 3 closure claim."
+      ],
+      "frontend_use": "Typed client support exists; no final mounted visual page or navigation is added by this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v2/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "layer": "VALIDATED_EXPLORATION_V2",
+      "limitations": [
+        "A map exposes at most eight visible nodes.",
+        "Map GET recognizes state_id; other query keys are currently ignored.",
+        "PNG is fixed at 1080×1620."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body/query.",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "root redirect"
+      },
+      "response_schema": {
+        "description": "HTTP 308 to /capabilities.",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "root redirect"
+      },
+      "route": "/api/trace/v2/exploration",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "sorting": "No caller-selected sorting; governed deterministic order.",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/route.ts",
+      "states": {
+        "empty": "Endpoint-specific empty arrays are valid; no unresolved fallback is inserted.",
+        "error": "400/404/409/413/503 fail closed; binary render capacity may return 503.",
+        "loading": "Request or server render pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v2.vocabulary.get",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Exactly 21 evidence-qualified generic pair associations are validated.",
+        "No Open Inquiry record is mixed into v2.",
+        "No causal, directional, hierarchical, temporal, equivalence, strength, pair-closure, higher-order-closure, computational-space, or Function 3 closure claim."
+      ],
+      "frontend_use": "Typed client support exists; no final mounted visual page or navigation is added by this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v2/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_VALIDATED_BASELINE",
+      "layer": "VALIDATED_EXPLORATION_V2",
+      "limitations": [
+        "A map exposes at most eight visible nodes.",
+        "Map GET recognizes state_id; other query keys are currently ignored.",
+        "PNG is fixed at 1080×1620."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Vocabulary ID; no body/query.",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "ExplorationV2VocabularyDto"
+      },
+      "response_schema": {
+        "description": "ExplorationV2VocabularyDto",
+        "source": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+        "symbol": "ExplorationV2VocabularyDto"
+      },
+      "route": "/api/trace/v2/exploration/vocabulary/{vocabularyId}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "sorting": "No caller-selected sorting; governed deterministic order.",
+      "source_route_path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Endpoint-specific empty arrays are valid; no unresolved fallback is inserted.",
+        "error": "400/404/409/413/503 fail closed; binary render capacity may return 503.",
+        "loading": "Request or server render pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v2.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.association-realizations.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3AssociationRealizationDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3AssociationRealizationDto"
+      },
+      "route": "/api/trace/v3/exploration/association-realizations/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.association-realizations.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3AssociationRealizationDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3AssociationRealizationDto"
+      },
+      "route": "/api/trace/v3/exploration/association-realizations",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.associations.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3AssociationDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3AssociationDto"
+      },
+      "route": "/api/trace/v3/exploration/associations/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.associations.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3AssociationDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3AssociationDto"
+      },
+      "route": "/api/trace/v3/exploration/associations",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.composition-coherence-reviews.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3CompositionCoherenceReviewDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3CompositionCoherenceReviewDto"
+      },
+      "route": "/api/trace/v3/exploration/composition-coherence-reviews/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.composition-coherence-reviews.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3CompositionCoherenceReviewDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3CompositionCoherenceReviewDto"
+      },
+      "route": "/api/trace/v3/exploration/composition-coherence-reviews",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.compositions.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3CompositionDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3CompositionDto"
+      },
+      "route": "/api/trace/v3/exploration/compositions/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.compositions.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3CompositionDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3CompositionDto"
+      },
+      "route": "/api/trace/v3/exploration/compositions",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.concept-senses.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3ConceptSenseDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3ConceptSenseDto"
+      },
+      "route": "/api/trace/v3/exploration/concept-senses/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.concept-senses.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3ConceptSenseDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3ConceptSenseDto"
+      },
+      "route": "/api/trace/v3/exploration/concept-senses",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.concepts.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3ConceptDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3ConceptDto"
+      },
+      "route": "/api/trace/v3/exploration/concepts/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.concepts.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3ConceptDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3ConceptDto"
+      },
+      "route": "/api/trace/v3/exploration/concepts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.exports.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3ExportDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3ExportDto"
+      },
+      "route": "/api/trace/v3/exploration/exports/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.exports.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3ExportDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3ExportDto"
+      },
+      "route": "/api/trace/v3/exploration/exports",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.incidences.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3IncidenceDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3IncidenceDto"
+      },
+      "route": "/api/trace/v3/exploration/incidences/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.incidences.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3IncidenceDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3IncidenceDto"
+      },
+      "route": "/api/trace/v3/exploration/incidences",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.navigation-states.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3NavigationStateDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3NavigationStateDto"
+      },
+      "route": "/api/trace/v3/exploration/navigation-states/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.navigation-states.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3NavigationStateDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3NavigationStateDto"
+      },
+      "route": "/api/trace/v3/exploration/navigation-states",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.scopes.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3ScopeDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3ScopeDto"
+      },
+      "route": "/api/trace/v3/exploration/scopes/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.scopes.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3ScopeDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3ScopeDto"
+      },
+      "route": "/api/trace/v3/exploration/scopes",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.transitions.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3TransitionDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3TransitionDto"
+      },
+      "route": "/api/trace/v3/exploration/transitions/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.transitions.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3TransitionDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3TransitionDto"
+      },
+      "route": "/api/trace/v3/exploration/transitions",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.workflows.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3WorkflowDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3WorkflowDto"
+      },
+      "route": "/api/trace/v3/exploration/workflows/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.active.workflows.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3WorkflowDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3WorkflowDto"
+      },
+      "route": "/api/trace/v3/exploration/workflows",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.baseline-reconciliation.get",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope<{baseline_reconciliation}>",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3ResponseEnvelope"
+      },
+      "route": "/api/trace/v3/exploration/baseline/reconciliation",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.capabilities.get",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ACTIVE",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope<{capabilities,contract_version,source_authority}>",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3ResponseEnvelope"
+      },
+      "route": "/api/trace/v3/exploration/capabilities",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.association-realizations.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3AssociationRealizationDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3AssociationRealizationDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/association-realizations/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.association-realizations.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3AssociationRealizationDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3AssociationRealizationDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/association-realizations",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.associations.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3AssociationDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3AssociationDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/associations/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.associations.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3AssociationDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3AssociationDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/associations",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.composition-coherence-reviews.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3CompositionCoherenceReviewDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3CompositionCoherenceReviewDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/composition-coherence-reviews/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.composition-coherence-reviews.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3CompositionCoherenceReviewDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3CompositionCoherenceReviewDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/composition-coherence-reviews",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.compositions.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3CompositionDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3CompositionDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/compositions/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.compositions.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3CompositionDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3CompositionDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/compositions",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.concept-senses.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3ConceptSenseDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3ConceptSenseDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/concept-senses/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.concept-senses.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3ConceptSenseDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3ConceptSenseDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/concept-senses",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.concepts.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3ConceptDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3ConceptDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/concepts/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.concepts.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3ConceptDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3ConceptDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/concepts",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.exports.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3ExportDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3ExportDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/exports/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.exports.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3ExportDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3ExportDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/exports",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.incidences.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3IncidenceDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3IncidenceDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/incidences/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.incidences.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3IncidenceDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3IncidenceDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/incidences",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.navigation-states.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3NavigationStateDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3NavigationStateDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/navigation-states/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.navigation-states.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3NavigationStateDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3NavigationStateDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/navigation-states",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.scopes.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3ScopeDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3ScopeDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/scopes/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.scopes.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3ScopeDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3ScopeDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/scopes",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.transitions.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3TransitionDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3TransitionDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/transitions/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.transitions.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3TransitionDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3TransitionDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/transitions",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.workflows.detail",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Path identifier, non-empty and <=512 characters; no body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-detail request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope containing one ExplorationV3WorkflowDto and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3WorkflowDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/workflows/{id}",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.control.workflows.list",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_SYNTHETIC_CONTROL",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body; query currently ignored.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 collection-list request"
+      },
+      "response_schema": {
+        "description": "ExplorationV3ResponseEnvelope list of ExplorationV3WorkflowDto records with collection, count, and data_class.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3WorkflowDto"
+      },
+      "route": "/api/trace/v3/exploration/controls/workflows",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.f3.validated.v3.root",
+      "authentication": "None.",
+      "caching": "Cache-Control: private, no-store.",
+      "explicit_nonclaims": [
+        "Synthetic controls are not Open Inquiry records and are not active product facts.",
+        "V3 does not inherit v2 transitions.",
+        "V3 does not establish any closure claim."
+      ],
+      "frontend_use": "Integrity and evidence infrastructure only; no mounted frontend consumes v3 in this integration.",
+      "function": "TRACE_FUNCTION_3",
+      "function_name": "Exploration",
+      "group": "TRACE Function 3 — Validated Exploration",
+      "handler_path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "implementation_status": "IMPLEMENTED_FAIL_CLOSED_READ_ONLY",
+      "layer": "VALIDATED_EXPLORATION_V3_ROOT",
+      "limitations": [
+        "Query parameters are currently ignored.",
+        "Identifiers are non-empty and limited to 512 characters.",
+        "Active-product lists are empty under FAIL_CLOSED_NO_PRODUCTION_ACTIVATIONS."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body/query.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3 request"
+      },
+      "response_schema": {
+        "description": "HTTP 308 to /capabilities.",
+        "source": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+        "symbol": "ExplorationV3ResponseEnvelope"
+      },
+      "route": "/api/trace/v3/exploration",
+      "service_repository_path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "sorting": "Fixed read-model order; no caller-selected sorting.",
+      "source_route_path": "frontend/src/app/api/trace/v3/exploration/route.ts",
+      "states": {
+        "empty": "Active-product collection lists are intentionally empty while activation remains fail closed.",
+        "error": "404 invalid/not-active identifier; 405 unsupported method; 503 read-model integrity failure.",
+        "loading": "Request pending.",
+        "partial": "No partial-response protocol."
+      },
+      "test_path": "frontend/scripts/test-trace-exploration-v3.mjs"
+    },
+    {
+      "api_id": "trace.shared.read-v1.atlas",
+      "authentication": "None; exact release integrity uses Archive-Research-Manifest-Sha256.",
+      "caching": "Cache-Control: no-store; Vary: Archive-Research-Manifest-Sha256.",
+      "explicit_nonclaims": [
+        "Legacy TRACE infrastructure is not Validated Exploration or Open Inquiry.",
+        "Zero typed relations must not be conflated with the 21 validated generic pair associations."
+      ],
+      "frontend_use": "Legacy Evidence Atlas/read-platform compatibility; shared infrastructure is not a fourth TRACE function.",
+      "function": "SHARED_TRACE_INFRASTRUCTURE",
+      "function_name": "shared TRACE infrastructure",
+      "group": "shared TRACE infrastructure",
+      "handler_path": "frontend/src/lib/read-platform/server/read-api-controller.ts",
+      "implementation_status": "IMPLEMENTED_LEGACY_READ_PLATFORM",
+      "layer": "LEGACY_TRACE_READ_PLATFORM",
+      "limitations": [
+        "Neighborhood and relation-type detail dispatch currently tolerate trailing path segments; only canonical templates are cataloged.",
+        "Current relation and neighborhood baselines are empty or unavailable."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body/query.",
+        "source": "frontend/src/lib/read-platform/types.ts",
+        "symbol": "Read API v1 request"
+      },
+      "response_schema": {
+        "description": "Read API v1 envelope containing TraceAtlas; errors use the repository problem body.",
+        "source": "frontend/src/lib/read-platform/types.ts",
+        "symbol": "TraceAtlas"
+      },
+      "route": "/api/v1/releases/{release}/trace/atlas",
+      "service_repository_path": "frontend/src/lib/read-platform/repository.ts",
+      "sorting": "Fixed repository order.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "states": {
+        "empty": "Trace overview is currently zero/message; no partial state.",
+        "error": "400 invalid argument/cursor; 404 unavailable resource; 409 release mismatch; 503 repository unavailable.",
+        "loading": "Request pending.",
+        "partial": "Trace overview is currently zero/message; no partial state."
+      },
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs"
+    },
+    {
+      "api_id": "trace.shared.read-v1.objects.list",
+      "authentication": "None; exact release integrity uses Archive-Research-Manifest-Sha256.",
+      "caching": "Cache-Control: no-store; Vary: Archive-Research-Manifest-Sha256.",
+      "explicit_nonclaims": [
+        "Legacy TRACE infrastructure is not Validated Exploration or Open Inquiry.",
+        "Zero typed relations must not be conflated with the 21 validated generic pair associations."
+      ],
+      "frontend_use": "Legacy Evidence Atlas/read-platform compatibility; shared infrastructure is not a fourth TRACE function.",
+      "function": "SHARED_TRACE_INFRASTRUCTURE",
+      "function_name": "shared TRACE infrastructure",
+      "group": "shared TRACE infrastructure",
+      "handler_path": "frontend/src/lib/read-platform/server/read-api-controller.ts",
+      "implementation_status": "IMPLEMENTED_LEGACY_READ_PLATFORM",
+      "layer": "LEGACY_TRACE_READ_PLATFORM",
+      "limitations": [
+        "Neighborhood and relation-type detail dispatch currently tolerate trailing path segments; only canonical templates are cataloged.",
+        "Current relation and neighborhood baselines are empty or unavailable."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "Keyset cursor pagination.",
+      "request_schema": {
+        "description": "Optional layer, first (default 50, 1..100), and after cursor.",
+        "source": "frontend/src/lib/read-platform/types.ts",
+        "symbol": "Read API v1 request"
+      },
+      "response_schema": {
+        "description": "Read API v1 envelope containing Page<TraceObjectSummary>; errors use the repository problem body.",
+        "source": "frontend/src/lib/read-platform/types.ts",
+        "symbol": "Page<TraceObjectSummary>"
+      },
+      "route": "/api/v1/releases/{release}/trace/objects",
+      "service_repository_path": "frontend/src/lib/read-platform/repository.ts",
+      "sorting": "Fixed ID keyset order.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "states": {
+        "empty": "Empty page is valid; hasNextPage/endCursor represents partial pagination.",
+        "error": "400 invalid argument/cursor; 404 unavailable resource; 409 release mismatch; 503 repository unavailable.",
+        "loading": "Request pending.",
+        "partial": "Empty page is valid; hasNextPage/endCursor represents partial pagination."
+      },
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs"
+    },
+    {
+      "api_id": "trace.shared.read-v1.objects.neighborhood",
+      "authentication": "None; exact release integrity uses Archive-Research-Manifest-Sha256.",
+      "caching": "Cache-Control: no-store; Vary: Archive-Research-Manifest-Sha256.",
+      "explicit_nonclaims": [
+        "Legacy TRACE infrastructure is not Validated Exploration or Open Inquiry.",
+        "Zero typed relations must not be conflated with the 21 validated generic pair associations."
+      ],
+      "frontend_use": "Legacy Evidence Atlas/read-platform compatibility; shared infrastructure is not a fourth TRACE function.",
+      "function": "SHARED_TRACE_INFRASTRUCTURE",
+      "function_name": "shared TRACE infrastructure",
+      "group": "shared TRACE infrastructure",
+      "handler_path": "frontend/src/lib/read-platform/server/read-api-controller.ts",
+      "implementation_status": "IMPLEMENTED_LEGACY_READ_PLATFORM",
+      "layer": "LEGACY_TRACE_READ_PLATFORM",
+      "limitations": [
+        "Neighborhood and relation-type detail dispatch currently tolerate trailing path segments; only canonical templates are cataloged.",
+        "Current relation and neighborhood baselines are empty or unavailable."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Object ID; no body/query.",
+        "source": "frontend/src/lib/read-platform/types.ts",
+        "symbol": "Read API v1 request"
+      },
+      "response_schema": {
+        "description": "Read API v1 envelope containing TraceGraph; errors use the repository problem body.",
+        "source": "frontend/src/lib/read-platform/types.ts",
+        "symbol": "TraceGraph"
+      },
+      "route": "/api/v1/releases/{release}/trace/objects/{id}/neighborhood",
+      "service_repository_path": "frontend/src/lib/read-platform/repository.ts",
+      "sorting": "Fixed repository order.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "states": {
+        "empty": "Current baseline returns 404/no nodes; no partial state.",
+        "error": "400 invalid argument/cursor; 404 unavailable resource; 409 release mismatch; 503 repository unavailable.",
+        "loading": "Request pending.",
+        "partial": "Current baseline returns 404/no nodes; no partial state."
+      },
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs"
+    },
+    {
+      "api_id": "trace.shared.read-v1.relation-types.detail",
+      "authentication": "None; exact release integrity uses Archive-Research-Manifest-Sha256.",
+      "caching": "Cache-Control: no-store; Vary: Archive-Research-Manifest-Sha256.",
+      "explicit_nonclaims": [
+        "Legacy TRACE infrastructure is not Validated Exploration or Open Inquiry.",
+        "Zero typed relations must not be conflated with the 21 validated generic pair associations."
+      ],
+      "frontend_use": "Legacy Evidence Atlas/read-platform compatibility; shared infrastructure is not a fourth TRACE function.",
+      "function": "SHARED_TRACE_INFRASTRUCTURE",
+      "function_name": "shared TRACE infrastructure",
+      "group": "shared TRACE infrastructure",
+      "handler_path": "frontend/src/lib/read-platform/server/read-api-controller.ts",
+      "implementation_status": "IMPLEMENTED_LEGACY_READ_PLATFORM",
+      "layer": "LEGACY_TRACE_READ_PLATFORM",
+      "limitations": [
+        "Neighborhood and relation-type detail dispatch currently tolerate trailing path segments; only canonical templates are cataloged.",
+        "Current relation and neighborhood baselines are empty or unavailable."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "Relation-type ID; no body/query.",
+        "source": "frontend/src/lib/read-platform/types.ts",
+        "symbol": "Read API v1 request"
+      },
+      "response_schema": {
+        "description": "Read API v1 envelope containing RelationTypeDefinition; errors use the repository problem body.",
+        "source": "frontend/src/lib/read-platform/types.ts",
+        "symbol": "RelationTypeDefinition"
+      },
+      "route": "/api/v1/releases/{release}/trace/relation-types/{id}",
+      "service_repository_path": "frontend/src/lib/read-platform/repository.ts",
+      "sorting": "None.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "states": {
+        "empty": "Current baseline returns 404; no partial state.",
+        "error": "400 invalid argument/cursor; 404 unavailable resource; 409 release mismatch; 503 repository unavailable.",
+        "loading": "Request pending.",
+        "partial": "Current baseline returns 404; no partial state."
+      },
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs"
+    },
+    {
+      "api_id": "trace.shared.read-v1.relation-types.list",
+      "authentication": "None; exact release integrity uses Archive-Research-Manifest-Sha256.",
+      "caching": "Cache-Control: no-store; Vary: Archive-Research-Manifest-Sha256.",
+      "explicit_nonclaims": [
+        "Legacy TRACE infrastructure is not Validated Exploration or Open Inquiry.",
+        "Zero typed relations must not be conflated with the 21 validated generic pair associations."
+      ],
+      "frontend_use": "Legacy Evidence Atlas/read-platform compatibility; shared infrastructure is not a fourth TRACE function.",
+      "function": "SHARED_TRACE_INFRASTRUCTURE",
+      "function_name": "shared TRACE infrastructure",
+      "group": "shared TRACE infrastructure",
+      "handler_path": "frontend/src/lib/read-platform/server/read-api-controller.ts",
+      "implementation_status": "IMPLEMENTED_LEGACY_READ_PLATFORM",
+      "layer": "LEGACY_TRACE_READ_PLATFORM",
+      "limitations": [
+        "Neighborhood and relation-type detail dispatch currently tolerate trailing path segments; only canonical templates are cataloged.",
+        "Current relation and neighborhood baselines are empty or unavailable."
+      ],
+      "method": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "pagination": "None.",
+      "request_schema": {
+        "description": "No body/query.",
+        "source": "frontend/src/lib/read-platform/types.ts",
+        "symbol": "Read API v1 request"
+      },
+      "response_schema": {
+        "description": "Read API v1 envelope containing RelationTypeDefinition[]; errors use the repository problem body.",
+        "source": "frontend/src/lib/read-platform/types.ts",
+        "symbol": "RelationTypeDefinition[]"
+      },
+      "route": "/api/v1/releases/{release}/trace/relation-types",
+      "service_repository_path": "frontend/src/lib/read-platform/repository.ts",
+      "sorting": "Fixed repository order.",
+      "source_route_path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "states": {
+        "empty": "Current list is empty; no partial state.",
+        "error": "400 invalid argument/cursor; 404 unavailable resource; 409 release mismatch; 503 repository unavailable.",
+        "loading": "Request pending.",
+        "partial": "Current list is empty; no partial state."
+      },
+      "test_path": "frontend/scripts/run-v49-api-read-contract-closure.mjs"
+    }
+  ],
+  "schema_version": "trace-api-catalog/v1",
+  "summary": {
+    "catalog_duplicate_method_route_count": 0,
+    "catalog_implemented_without_real_route_count": 0,
+    "catalog_source_path_missing_count": 0,
+    "catalog_test_path_missing_count": 0,
+    "expanded_method_route_pair_count": 228,
+    "implemented_trace_api_uncatalogued_count": 0,
+    "logical_route_template_count": 75,
+    "trace_top_level_function_count": 3
+  },
+  "top_level_functions": [
+    {
+      "canonical_name": "Context Canvas",
+      "function": "TRACE_FUNCTION_1"
+    },
+    {
+      "canonical_name": "Spacetime",
+      "function": "TRACE_FUNCTION_2"
+    },
+    {
+      "canonical_name": "Exploration",
+      "function": "TRACE_FUNCTION_3"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "CATALOG_DUPLICATE_API_ID_COUNT": 0,
+  "CATALOG_DUPLICATE_METHOD_ROUTE_COUNT": 0,
+  "CATALOG_HANDLER_PATH_MISSING_COUNT": 0,
+  "CATALOG_IMPLEMENTED_WITHOUT_REAL_ROUTE_COUNT": 0,
+  "CATALOG_SCHEMA_PATH_MISSING_COUNT": 0,
+  "CATALOG_SERVICE_REPOSITORY_PATH_MISSING_COUNT": 0,
+  "CATALOG_SOURCE_PATH_MISSING_COUNT": 0,
+  "CATALOG_TEST_PATH_MISSING_COUNT": 0,
+  "FUNCTION_GROUP_COUNT": 5,
+  "IMPLEMENTED_TRACE_API_UNCATALOGUED_COUNT": 0,
+  "TRACE_EXPANDED_METHOD_ROUTE_PAIR_COUNT": 228,
+  "TRACE_LOGICAL_ROUTE_TEMPLATE_COUNT": 75,
+  "TRACE_TOP_LEVEL_FUNCTION_COUNT": 3,
+  "catalog_sha256": "6373e77a6a6670383e0a952c7b78a8036fc9b11954212ebb2a92dc10df87fcd7",
+  "closure_claim": "evidence-bounded-nonclosure",
+  "deployment": "none",
+  "details": {
+    "handler_paths_missing": [],
+    "method_source_failures": [],
+    "nonimplemented_catalog_method_routes": [],
+    "schema_paths_missing": [],
+    "service_repository_paths_missing": [],
+    "source_paths_missing": [],
+    "test_paths_missing": [],
+    "uncatalogued_method_routes": []
+  },
+  "markdown_sha256": "1b4e0dee135dd1a23a34fc7d85f1a84ab51464894a7815a92358cd7ef223e399",
+  "round": "TRACE v49 Round 16B Clean Main Integration",
+  "schema_version": "trace-api-catalog-verification-receipt/v1",
+  "status": "PASS"
+}
