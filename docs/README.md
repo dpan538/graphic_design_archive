@@ -6,7 +6,8 @@
 - `design/` — frontend design handoff boundary.
 - `releases/v49/` — immutable source, data-input, audit, and release indexes.
 - `maintenance/` — repository layout, retention/archive policy, inventories, and ref/worktree ledgers.
-- `audits/` — indexed self-contained v49 evidence packages.
-- `methodology/`, `system/`, `frontend/`, `capture/`, `research/`, `research-reviews/`, and `handoff/` — indexed historical methodology and supporting decisions.
+- `audits/` — indexed self-contained v49 evidence packages, including the active Round 16B clean-integration audit.
+- `research/` — current TRACE Exploration authority and governed research packages; older entries remain historical evidence.
+- `methodology/`, `system/`, `frontend/`, `capture/`, `research-reviews/`, and `handoff/` — indexed historical methodology and supporting decisions.
 
-Current entry points are `docs/maintenance/DOCUMENTATION_MAP.md`, `docs/releases/v49/RELEASE_INDEX.md`, `database/FROZEN_V49.md`, and the compact root `PROJECT_LOG.md`. Historical paths removed from the active tip are recoverable at tag `v49-data-api-closure-20260821`.
+Current entry points are `docs/maintenance/DOCUMENTATION_MAP.md`, `docs/releases/v49/RELEASE_INDEX.md`, `docs/research/EXPLORATION_CURRENT.md`, `database/FROZEN_V49.md`, and the compact root `PROJECT_LOG.md`. The bounded Round 16B integration entry point is `docs/research/trace-v49-exploration-round16b-main-integration/00_PUBLIC_LANGUAGE_AND_STATUS.md`. Historical paths removed from the active tip are recoverable at tag `v49-data-api-closure-20260821`.

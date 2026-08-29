@@ -15,7 +15,8 @@ git show v49-data-api-closure-20260821:PROJECT_LOG.md
 - Release projection digest: `11d92b70bd3a87113d4daabac2b5e4e38a3416cc55be894b42b0dd3d072ca640`.
 - Canonical objects / proposed curated folder-membership assignments: 15,923 / 47,982.
 - Eligible / held: 7,995 / 7,928.
-- Accepted TRACE / positive visual rights: 0 / 0.
+- Accepted typed historical TRACE relations / positive visual rights: 0 / 0.
+- Validated evidence-qualified pairwise generic associations: 21.
 - Public Read API templates: 18; all tested with no 5xx/search 503.
 
 ## Current decisions
@@ -23,7 +24,7 @@ git show v49-data-api-closure-20260821:PROJECT_LOG.md
 - `database/` is the only active database root; legacy `db/` is source-tag history only.
 - v49 database implementation and canonical inputs are frozen byte-for-byte.
 - `generated/public_surfaces_prefreeze_candidate_v48.json` is the sole canonical population input.
-- SQLite/search/TRACE/manifests remain reconciliation-only and cannot repair canonical state.
+- The frozen SQLite and legacy migration/search/TRACE manifests remain reconciliation-only and cannot repair canonical state; governed v2/v3 TRACE read models are runtime products with separately pinned sources.
 - The browser never connects directly to PostgreSQL; `api_v1`/release-derived reads form the public boundary.
 - Historical raw captures, backups, pre-v49 generated output, prompts, reports, and unrelated archive material are recoverable by immutable ref rather than duplicated in the active tip.
 - Future database changes require v50+, a new forward-only migration, and an ADR.
@@ -483,7 +484,7 @@ SPACETIME_STATUS=FROZEN
 <!-- /TRACE_ROUND16A_PROJECT_AUTHORITY_RECONCILIATION_V2 -->
 
 <!-- TRACE_ROUND16A_PROJECT_LOG_V2 -->
-## TRACE v49 Round 16A — Exploration full-space census and functional closure
+## TRACE v49 Round 16A — historical pair-space census and functional claim
 
 - Froze 65 vocabulary candidates and 31 active product terms, enumerated all 465 unordered active pairs, and retained 21 evidence-qualified generic associations without database co-occurrence inference.
 - Enumerated 58 canonical association subgraphs, 81 valid topology compositions, 5760 states, 749944 transitions, 5760 canonical workflows, and 11520 export variants.
@@ -505,7 +506,7 @@ SPACETIME_STATUS=FROZEN
 <!-- /TRACE_ROUND16A_PROJECT_LOG_V2 -->
 
 <!-- TRACE_ROUND16A_PROJECT_LOG_V3 -->
-## TRACE v49 Round 16A — authorized LFS migration and review publication
+## TRACE v49 Round 16A — historical LFS migration and review publication
 
 - Preserved the complete original unpublished Round 16A lineage in a verified local Git bundle, restored it cleanly, and recorded the bundle SHA-256 plus the five-blob oversized-object ledger.
 - Rewrote only the unpublished Round 16A branch and only the two authorized independent-verification paths, preserving all eight original checkpoint commits in order with identical authorship, timestamps, messages, and logical phase boundaries.
@@ -530,7 +531,7 @@ SPACETIME_STATUS=FROZEN
 <!-- /TRACE_ROUND16A_PROJECT_LOG_V3 -->
 
 <!-- TRACE_ROUND16B_METHOD_CHECKPOINT -->
-## TRACE v49 Round 16B — higher-order association method checkpoint
+## TRACE v49 Round 16B — historical higher-order association method checkpoint
 
 - Reclassified Round 16A as pair-association and pair-derived computational baseline evidence rather than complete all-arity association closure.
 - Defined first-class pair and higher-order association objects separately from compositions, states, workflows, and exports; prohibited both automatic group-to-pair projection and pair-connectivity-to-group inference.
@@ -555,3 +556,54 @@ SPACETIME_STATUS=FROZEN
 
 `NEXT_GATE=CONCEPT_SENSE_CROSSWALK_AND_TRIGGERED_CANDIDATE_CENSUS`
 <!-- /TRACE_ROUND16B_METHOD_CHECKPOINT -->
+
+<!-- TRACE_ROUND16B_MAIN_INTEGRATION_PUBLIC_STATUS -->
+## TRACE v49 Round 16B — current evidence-bounded public status
+
+The earlier Round 16A closure values and the Round 16B method checkpoint above
+are retained as historical records. This final block is the active public
+authority.
+
+“TRACE Exploration is an evidence-bounded system rather than a claim of
+complete historical closure. Its validated mode currently uses 21
+evidence-qualified pairwise generic associations. Round 16B additionally
+records 11 scoped higher-order association hypotheses as unresolved open
+inquiries. These hypotheses are not counted as validated relations, do not
+generate implicit pairwise edges, and may appear only in explicitly labelled
+inquiry contexts. Nine further excluded higher-order structures are currently
+known, while the complete exclusion universe remains indeterminate.”
+
+```text
+TRACE Exploration
+├── Validated Exploration
+└── Open Inquiry
+```
+
+`PAIR_ASSOCIATION_CLOSURE=false`
+
+`HIGHER_ORDER_ASSOCIATION_CLOSURE=false`
+
+`GLOBAL_COMPOSITION_COHERENCE_CLOSURE=false`
+
+`PRODUCT_ASSOCIATION_REACHABILITY_CLOSURE=false`
+
+`COMPUTATIONAL_SPACE_CLOSURE=false`
+
+`FUNCTION3_CLOSURE=false`
+
+`VALIDATED_PAIR_ASSOCIATION_COUNT=21`
+
+`SCOPED_HIGHER_ORDER_HYPOTHESIS_COUNT=11`
+
+`ACTIVE_PENDING_REVIEW_COUNT=0`
+
+`EXTERNAL_HUMAN_REVIEW_STATUS=PENDING`
+
+`FRONTEND_VISUAL_DESIGN_IMPLEMENTED=false`
+
+`DEPLOYMENT_PERFORMED=false`
+
+Current integration package:
+`docs/research/trace-v49-exploration-round16b-main-integration/` and
+`docs/audits/v49-exploration-round16b-main-integration/`.
+<!-- /TRACE_ROUND16B_MAIN_INTEGRATION_PUBLIC_STATUS -->

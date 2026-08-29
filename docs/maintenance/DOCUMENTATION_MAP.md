@@ -7,6 +7,9 @@
 - Read API: `READ_API_V1.md`, `docs/api/v49-read-api-catalog.md`, `docs/api/v49-read-api-openapi.yaml`, `docs/api/v49-read-interface-map.md`
 - Operations: `docs/operations/README.md`
 - Design handoff: `docs/design/README.md`, `FRONTEND_DESIGN_LICENSE.md`
+- TRACE Exploration authority: `docs/research/EXPLORATION_CURRENT.md`
+- Round 16B clean-integration status: `docs/research/trace-v49-exploration-round16b-main-integration/00_PUBLIC_LANGUAGE_AND_STATUS.md`
+- Round 16B clean-integration audit: `docs/audits/v49-exploration-round16b-main-integration/`
 
 ## Release and maintenance
 
@@ -19,4 +22,3 @@
 - Database freeze: `database/FROZEN_V49.md`
 
 Older methodology, capture, research-review, system, frontend, and handoff documents remain indexed historical context. Plain references inside self-contained audit packages describe their original execution tree and are interpreted relative to the immutable source anchor, not as active runtime dependencies.
-

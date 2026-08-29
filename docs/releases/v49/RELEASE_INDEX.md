@@ -74,3 +74,15 @@ The integration is documentation and reachability closure only. It performs no d
 - Contract: exactly four approved categories, 26 attested and academically supported visible terms, 21 qualified associations, 11 real compositions, four maps, 52 immutable states, 816 transitions, nine API capabilities, 12 schemas, OpenAPI, typed client, deterministic trees, and five validated portrait PNG exports.
 - Boundary: generic association only; no typed/causal/directional relation, held-data disclosure, fixture fallback, external model, vector store, final frontend, public page, deployment, or completed external human review.
 - Decision: `FUNCTION3_BACKEND_COMPLETE_READY_FOR_FRONTEND`; next gate is Claude frontend design and integration.
+
+## TRACE Round 16B evidence-bounded baseline and clean integration — 2026-08-29
+
+- Published research source: `codex/trace-v49-exploration-higher-order-association-closure-round16b` at `8c3588e422a3650b634693b409a9c0b13714d58f`.
+- Clean-integration old-main anchor: `8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e`.
+- Research package: `docs/research/trace-v49-exploration-higher-order-association-closure-round16b/`.
+- Integration package: `docs/research/trace-v49-exploration-round16b-main-integration/`.
+- Integration audit: `docs/audits/v49-exploration-round16b-main-integration/`.
+- Product distinction: exactly three TRACE functions, with Function 3 split into Validated Exploration and the isolated Open Inquiry layer.
+- Evidence boundary: 21 evidence-qualified pairwise generic associations are validated; 11 scoped higher-order hypotheses are unresolved Open Inquiry records; nine further exclusions are known within an indeterminate complete exclusion universe.
+- Closure: pair, higher-order, global-composition, product-reachability, computational-space, and Function 3 closure all remain false.
+- External human review remains pending. Frontend visual design and deployment are not part of this integration.

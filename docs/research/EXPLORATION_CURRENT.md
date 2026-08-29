@@ -1,4 +1,4 @@
-# Exploration Field — current authority
+# TRACE Exploration — current authority
 
 As of TRACE v49 Round 8, Exploration Field is a non-object-facing conceptual relation inspiration field. Its primary unit is `CONCEPTUAL_RELATION_NODE`; its renderer-neutral primitives are Node, Flow, Cluster, TreeMap, Image, Instance, Container, and RenderedPng.
 
@@ -158,7 +158,7 @@ The server-only API materializes four deterministic maps, 52 immutable states, 8
 
 Next gate after Round 16: **Claude frontend design and frontend integration**. Final visual layout, production interaction components, public navigation, deployment, and any external academic-release review remain separate.
 
-## Round 16B current authority — higher-order correction
+## Round 16B historical method checkpoint — higher-order correction
 
 Round 16A is now governed as the reproducible baseline for pair-association closure and a pair-derived finite computational space. Its 31 active terms, 465 unordered pairs, 21 active pair associations, 58 connected pair-edge subgraphs, 81 topology compositions, 228 production compositions, 5,760 states, 749,944 transitions, 5,760 workflows, and 11,520 exports do not establish complete all-arity association closure.
 
@@ -269,3 +269,65 @@ Authoritative Round 16A package: `docs/research/trace-v49-exploration-full-space
 
 `NEXT_GATE=INDEPENDENT_REVIEW_OF_PUBLISHED_ROUND16A_RESEARCH_BRANCH`
 <!-- /TRACE_ROUND16A_CLOSURE_STATUS_V3 -->
+
+## Round 16B clean main integration — current public authority
+
+The Round 16A closure blocks and the earlier Round 16B method checkpoint above
+are immutable historical evidence, not the current closure decision. The
+published Round 16B research lineage is preserved separately; this clean
+integration presents its verified final content without rewriting that
+history.
+
+“TRACE Exploration is an evidence-bounded system rather than a claim of
+complete historical closure. Its validated mode currently uses 21
+evidence-qualified pairwise generic associations. Round 16B additionally
+records 11 scoped higher-order association hypotheses as unresolved open
+inquiries. These hypotheses are not counted as validated relations, do not
+generate implicit pairwise edges, and may appear only in explicitly labelled
+inquiry contexts. Nine further excluded higher-order structures are currently
+known, while the complete exclusion universe remains indeterminate.”
+
+```text
+TRACE Exploration
+├── Validated Exploration
+└── Open Inquiry
+```
+
+`PAIR_ASSOCIATION_CLOSURE=false`
+
+`HIGHER_ORDER_ASSOCIATION_CLOSURE=false`
+
+`GLOBAL_COMPOSITION_COHERENCE_CLOSURE=false`
+
+`PRODUCT_ASSOCIATION_REACHABILITY_CLOSURE=false`
+
+`COMPUTATIONAL_SPACE_CLOSURE=false`
+
+`FUNCTION3_CLOSURE=false`
+
+`VALIDATED_PAIR_ASSOCIATION_COUNT=21`
+
+`SCOPED_HIGHER_ORDER_HYPOTHESIS_COUNT=11`
+
+`ACTIVE_PENDING_REVIEW_COUNT=0`
+
+`KNOWN_EXCLUDED_HIGHER_ORDER_STRUCTURE_COUNT=9`
+
+`COMPLETE_EXCLUSION_UNIVERSE=INDETERMINATE`
+
+`EXTERNAL_HUMAN_REVIEW_STATUS=PENDING`
+
+`FRONTEND_VISUAL_DESIGN_IMPLEMENTED=false`
+
+`DEPLOYMENT_PERFORMED=false`
+
+The validated layer retains exactly the evidence-qualified pairwise generic
+associations. Open Inquiry records remain unresolved, do not count as
+validated relations, and cannot alter validated composition, topology,
+exports, or metrics.
+
+Integration authority:
+`docs/research/trace-v49-exploration-round16b-main-integration/`.
+
+Integration audit:
+`docs/audits/v49-exploration-round16b-main-integration/`.

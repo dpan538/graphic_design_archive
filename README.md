@@ -7,16 +7,51 @@ Graphic Design Archive is a rights-aware PostgreSQL-backed research archive for 
 - PostgreSQL schema and release projection: closed and frozen.
 - Canonical objects / assignments: 15,923 / 47,982.
 - Publicly eligible / held: 7,995 / 7,928.
-- Accepted TRACE relations / positive visual rights: 0 / 0, fail-closed.
+- Accepted typed historical TRACE relations / positive visual rights: 0 / 0, fail-closed.
+- Validated evidence-qualified pairwise generic associations: 21.
 - Public Read API: 18 documented endpoint templates; search and pagination closed.
 - Frontend: consumes the API/repository boundary and never connects directly to PostgreSQL.
 - Immutable source anchor: `v49-data-api-closure-20260821`.
 
+## TRACE Exploration — current public status
+
+“TRACE Exploration is an evidence-bounded system rather than a claim of
+complete historical closure. Its validated mode currently uses 21
+evidence-qualified pairwise generic associations. Round 16B additionally
+records 11 scoped higher-order association hypotheses as unresolved open
+inquiries. These hypotheses are not counted as validated relations, do not
+generate implicit pairwise edges, and may appear only in explicitly labelled
+inquiry contexts. Nine further excluded higher-order structures are currently
+known, while the complete exclusion universe remains indeterminate.”
+
+```text
+TRACE Exploration
+├── Validated Exploration
+└── Open Inquiry
+```
+
+`PAIR_ASSOCIATION_CLOSURE=false`
+
+`HIGHER_ORDER_ASSOCIATION_CLOSURE=false`
+
+`GLOBAL_COMPOSITION_COHERENCE_CLOSURE=false`
+
+`PRODUCT_ASSOCIATION_REACHABILITY_CLOSURE=false`
+
+`COMPUTATIONAL_SPACE_CLOSURE=false`
+
+`FUNCTION3_CLOSURE=false`
+
+Open Inquiry is an explicitly labelled, unresolved layer. It is not part of
+validated results and cannot add pair edges, validated compositions, topology,
+exports, or metrics. External human review remains pending; frontend visual
+design and deployment have not been performed.
+
 ## v49 research-history main integration
 
-On 2026-08-25, the complete linear v49 research and engineering chain was prepared for fast-forward-only integration from the old `main` anchor `592c765d0af5bf15b1666784dce784ac8e22624d`. The 72 existing commits through Round 9 tip `47978c519c3c7141690e3894315a1ef1b7a403db` are preserved without rewriting; the new `main` anchor is the documentation commit identified by annotated tag `v49-research-main-integration-20260825`.
+This section records the historical 2026-08-25 integration state. The complete linear v49 research and engineering chain was prepared for fast-forward-only integration from the old `main` anchor `592c765d0af5bf15b1666784dce784ac8e22624d`. The 72 existing commits through Round 9 tip `47978c519c3c7141690e3894315a1ef1b7a403db` are preserved without rewriting; the resulting `main` anchor is identified by annotated tag `v49-research-main-integration-20260825`.
 
-The integration ledger and receipts are under `docs/releases/v49/main-integration-20260825/` and `docs/audits/v49-main-integration-20260825/`. Integration does not reactivate the superseded Round 6 object-similarity or Round 7 object-NLP approaches. Round 9 supplies grammar-research candidates only; it does not define active product vocabulary. The next research step is Round 10, `DESIGN_HISTORY_RELATION_GRAMMAR_ROUND1`.
+The integration ledger and receipts are under `docs/releases/v49/main-integration-20260825/` and `docs/audits/v49-main-integration-20260825/`. Integration does not reactivate the superseded Round 6 object-similarity or Round 7 object-NLP approaches. Round 9 supplied grammar-research candidates only; it did not define active product vocabulary. Its then-next Round 10 gate is historical and has been completed.
 
 ## Repository layout
 
@@ -74,6 +109,9 @@ This repository is a metadata, citation, and source-return layer, not a source-i
 
 - `docs/releases/v49/RELEASE_INDEX.md`
 - `docs/releases/v49/AUDIT_INDEX.md`
+- `docs/research/EXPLORATION_CURRENT.md`
+- `docs/research/trace-v49-exploration-round16b-main-integration/00_PUBLIC_LANGUAGE_AND_STATUS.md`
+- `docs/audits/v49-exploration-round16b-main-integration/`
 - `docs/releases/v49/main-integration-20260825/00_EXECUTIVE_DECISION.md`
 - `docs/maintenance/DOCUMENTATION_MAP.md`
 - `docs/maintenance/REPOSITORY_LAYOUT.md`

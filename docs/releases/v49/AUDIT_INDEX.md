@@ -78,4 +78,16 @@ The paired research and handoff packages are `docs/research/trace-v49-exploratio
 |---|---|---|
 | `docs/audits/v49-exploration-higher-order-association-closure-round16b` | ACTIVE_RESEARCH_METHOD_AND_EXECUTION_EVIDENCE | Exact-source recovery, ordinary publication controls, proactive LFS/large-object policy, 44-surface evidence inventory, field contracts, higher-order candidate/review/association schemas, 12 triggers, 14 exclusion classes, rights controls, Round 16A baseline correction, recursive gaps, and independent method verification. |
 
-The corresponding research package is `docs/research/trace-v49-exploration-higher-order-association-closure-round16b/`. This checkpoint authorizes candidate-census work only. Higher-order association closure, global-composition-coherence closure, product reachability, Function 3 closure, main integration, tags, deployment, and completed external human review remain false.
+The corresponding research package is `docs/research/trace-v49-exploration-higher-order-association-closure-round16b/`. The published branch now contains the completed Round 16B research, v50 database, v3 runtime/API, audit, LFS, independent-verification, clean-reproduction, and evidence-bounded nonclosure lineage. It is preserved without rewriting. Pair, higher-order, global-composition-coherence, product-reachability, computational-space, and Function 3 closure remain false; deployment and completed external human review remain false.
+
+## TRACE Round 16B clean main-integration audit — 2026-08-29
+
+| Package | Classification | Scope |
+|---|---|---|
+| `docs/audits/v49-exploration-round16b-main-integration` | EVIDENCE_BOUNDED_MAIN_INTEGRATION | Stale-session preservation, path-equivalent clean baseline import, public-language correction, isolated Open Inquiry registry/API, complete three-function API catalog, bounded frontend handoff, isolation verification, commit-description ledger, and final integration seal. |
+
+The paired integration research package is
+`docs/research/trace-v49-exploration-round16b-main-integration/`. The original
+Round 16B research branch remains the detailed scientific and engineering
+lineage; the clean integration imports verified content without merging,
+cherry-picking, squashing, rebasing, or amending that branch.
