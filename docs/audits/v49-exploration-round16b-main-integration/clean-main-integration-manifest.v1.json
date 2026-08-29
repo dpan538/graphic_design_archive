@@ -1,0 +1,496 @@
+{
+  "schema_version": "trace-round16b-clean-main-integration-manifest/v1",
+  "status": "PASS",
+  "round": "TRACE v49 Round 16B Clean Main Integration",
+  "closure_claim": "evidence-bounded-nonclosure",
+  "deployment": "none",
+  "identities": {
+    "old_main_sha": "8de5d1dedffc6fd70d8b03cd63fdec74c0d40f6e",
+    "old_main_tree": "86c2ed7771034f6d3f0f2e10e7a37aeec0552c71",
+    "research_branch": "codex/trace-v49-exploration-higher-order-association-closure-round16b",
+    "research_source_sha": "8c3588e422a3650b634693b409a9c0b13714d58f",
+    "research_source_tree": "ae5db940828f0536a10f37607d6d1cf34de13dee",
+    "integration_branch": "codex/trace-v49-round16b-evidence-bounded-main-integration",
+    "baseline_import_sha": "c2735cac6f8f057e058f7b64c43de7bfd5c8595b",
+    "verification_commit_sha": "647219588f22d848f47a5e5c56889abc6fb965fd",
+    "seal_commit_sha": "SELF_BOUND_EXTERNALLY_AFTER_PUBLICATION"
+  },
+  "lineage": {
+    "baseline_import_parent_equals_old_main": true,
+    "integration_research_merge_base_equals_old_main": true,
+    "published_research_history_rewritten": false,
+    "research_branch_merged": false,
+    "research_commits_cherry_picked": false
+  },
+  "commit_description_ledger": {
+    "path": "docs/audits/v49-exploration-round16b-main-integration/commit-description-ledger.v1.json",
+    "sha256": "84e7da11788ed3ee5dc3620c658f6a84a653c020d0c88f65c0dc54961adb8609",
+    "entry_count": 7,
+    "TITLE_ONLY_NEW_COMMIT_COUNT": 0,
+    "NEW_COMMIT_MISSING_REQUIRED_SECTION_COUNT": 0
+  },
+  "sealed_group_count": 9,
+  "sealed_unique_artifact_count": 64,
+  "sealed_artifact_missing_count": 0,
+  "historical_round16b_seal_modified_count": 0,
+  "self_excluded_generated_paths": [
+    "docs/audits/v49-exploration-round16b-main-integration/clean-main-integration-manifest.v1.json",
+    "docs/audits/v49-exploration-round16b-main-integration/CLEAN_MAIN_INTEGRATION_SEAL.md"
+  ],
+  "self_exclusion_reason": "The manifest and its human rendering are excluded from their own artifact hash set to avoid a cryptographic hash cycle. Their exact bytes are verified by this sealed deterministic builder.",
+  "sealed_groups": [
+    {
+      "group": "clean_baseline_import",
+      "artifact_count": 4,
+      "artifacts": [
+        {
+          "path": "STALE_SESSION_RECOVERY_REPORT.md",
+          "git_mode": "100644",
+          "bytes": 5343,
+          "sha256": "ac805a93f29d20ee45061cc2954d13b8675457ed6277d5b0ca5102b6d788e198"
+        },
+        {
+          "path": "STALE_SESSION_RECOVERY_RECEIPT.json",
+          "git_mode": "100644",
+          "bytes": 7115710,
+          "sha256": "d9986b4e39b30ffe7ac335fab262d0e52bf0cb08cb4caf25abd323a34be80535"
+        },
+        {
+          "path": "docs/audits/v49-exploration-round16b-main-integration/round16b-path-equivalence-ledger.v1.json",
+          "git_mode": "100644",
+          "bytes": 3161434,
+          "sha256": "b8328001ebcd16f9ce916035731aa81585903104ca69ceb94e97b48c60a3b7fd"
+        },
+        {
+          "path": "docs/audits/v49-exploration-round16b-main-integration/verify_commit1_evidence.py",
+          "git_mode": "100644",
+          "bytes": 9775,
+          "sha256": "459104b15201523e78ff175129d7d20fc67f8fe38806a3d1d4673e29123efadd"
+        }
+      ]
+    },
+    {
+      "group": "public_language_and_status",
+      "artifact_count": 9,
+      "artifacts": [
+        {
+          "path": "README.md",
+          "git_mode": "100644",
+          "bytes": 6901,
+          "sha256": "0f024cc3be763f6c7f3d7a3d5420b8a0a1bbd22804405c1fb86300231f9db772"
+        },
+        {
+          "path": "PROJECT_LOG.md",
+          "git_mode": "100644",
+          "bytes": 38458,
+          "sha256": "f42f56bd5a5c54480ad6615e11250303ff6dd5b15f1f52f8d52da7e305dc5b24"
+        },
+        {
+          "path": "docs/README.md",
+          "git_mode": "100644",
+          "bytes": 1361,
+          "sha256": "1e4aa748100636200529fd64b005407603eea51b04e5f30874424eb10bbc1992"
+        },
+        {
+          "path": "docs/maintenance/DOCUMENTATION_MAP.md",
+          "git_mode": "100644",
+          "bytes": 1502,
+          "sha256": "3e7f9214b2403a2c73fc727d16d39b3be37ddb9294a9782d61bb980c88d6e4e3"
+        },
+        {
+          "path": "docs/releases/v49/AUDIT_INDEX.md",
+          "git_mode": "100644",
+          "bytes": 8839,
+          "sha256": "34ef729eb19d1e85cf90ef3489d0669db3afb9bbcc810735e23753485f284df5"
+        },
+        {
+          "path": "docs/releases/v49/RELEASE_INDEX.md",
+          "git_mode": "100644",
+          "bytes": 8318,
+          "sha256": "26780e1f281ff21ad6234b4b102ef3a4b2e5a388b182be34126f1cd25d6c3fdf"
+        },
+        {
+          "path": "docs/research/EXPLORATION_CURRENT.md",
+          "git_mode": "100644",
+          "bytes": 22309,
+          "sha256": "48e678fdf89fde61ed46bb8cdfdff18b51b15bf758b5e2d36301bd08a6320536"
+        },
+        {
+          "path": "docs/research/trace-v49-exploration-round16b-main-integration/00_PUBLIC_LANGUAGE_AND_STATUS.md",
+          "git_mode": "100644",
+          "bytes": 2255,
+          "sha256": "9924ab59e12e444e2ba70bbb59fbe70b8d3584044feb1bdb9a9ef2c8c055da83"
+        },
+        {
+          "path": "docs/audits/v49-exploration-round16b-main-integration/public-language-status-receipt.v1.json",
+          "git_mode": "100644",
+          "bytes": 1247,
+          "sha256": "432d2f1ab3027e72844a41a39d7449c66c85419e02d768f2dea9720257d39e56"
+        }
+      ]
+    },
+    {
+      "group": "open_inquiry_registry_and_api",
+      "artifact_count": 18,
+      "artifacts": [
+        {
+          "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-1-v1.tsv",
+          "git_mode": "100644",
+          "bytes": 13131,
+          "sha256": "f16deeca67663b05262640cba1512bb46acb0a36ffe8dcae006fd45dc475bed3"
+        },
+        {
+          "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-2-v1.tsv",
+          "git_mode": "100644",
+          "bytes": 4544,
+          "sha256": "5b7e04bde8fc0c91f7d141f0ecdccf23579394dafba21e33e91ad512f9ab5a4d"
+        },
+        {
+          "path": "docs/maintenance/V49_ACTIVE_SCRIPT_ALLOWLIST.json",
+          "git_mode": "100644",
+          "bytes": 119827,
+          "sha256": "2cfaf0e18c2dbd2b4cd27ac38ab7ecbc8363a4c3ebd066487d8f14858db64b9f"
+        },
+        {
+          "path": "frontend/generated/trace-open-inquiry-v1/open-inquiry-registry.v1.json",
+          "git_mode": "100644",
+          "bytes": 42665,
+          "sha256": "46d03365a3405e8475fccdce0c2e8f42884a4e0a6a9088f7043ac3a022183b77"
+        },
+        {
+          "path": "frontend/src/app/api/trace/v1/open-inquiry/route.ts",
+          "git_mode": "100644",
+          "bytes": 595,
+          "sha256": "9480f8ab8a5055289b1188df6d4ec60fb9f2f7cc828ed44d18055a46c52e598a"
+        },
+        {
+          "path": "frontend/src/app/api/trace/v1/open-inquiry/[inquiryId]/route.ts",
+          "git_mode": "100644",
+          "bytes": 814,
+          "sha256": "41b61fa781927e08ba40788d5fde595865e7c4538281167099ee0ce8fcd66f6f"
+        },
+        {
+          "path": "frontend/src/features/trace-v49/open-inquiry-v1/controller.server.ts",
+          "git_mode": "100644",
+          "bytes": 4739,
+          "sha256": "e47321fe28b564e80bc780a305a0b6bb1fe6c58ba655fe267b81d9c2a434ef56"
+        },
+        {
+          "path": "frontend/src/features/trace-v49/open-inquiry-v1/registry.server.ts",
+          "git_mode": "100644",
+          "bytes": 18902,
+          "sha256": "96a6b81fba45061b422aea011a079a2375d97ab8287b43c18fceaf605056772d"
+        },
+        {
+          "path": "frontend/src/features/trace-v49/open-inquiry-v1/service.server.ts",
+          "git_mode": "100644",
+          "bytes": 2263,
+          "sha256": "0fec67dc069e62f756adb9a72b8a1a12e1d04c126dbbc7a74f3f008f1413001f"
+        },
+        {
+          "path": "frontend/src/features/trace-v49/open-inquiry-v1/types.ts",
+          "git_mode": "100644",
+          "bytes": 6327,
+          "sha256": "fb3407f32adcbd5f2a53f20d6b2b7059b121ed8ca6e691a97c824c59ff72d60e"
+        },
+        {
+          "path": "frontend/scripts/test-trace-open-inquiry-v1.mjs",
+          "git_mode": "100644",
+          "bytes": 45767,
+          "sha256": "5678fbf47054f900ae39510eb7db91e552f75976b37044146073447beab5a834"
+        },
+        {
+          "path": "schemas/trace/exploration/open-inquiry/v1/detail-response.schema.json",
+          "git_mode": "100644",
+          "bytes": 1507,
+          "sha256": "c343cc2c4172248416121979775e509adbcd0f337aa8c9473019337ab26ec640"
+        },
+        {
+          "path": "schemas/trace/exploration/open-inquiry/v1/error.schema.json",
+          "git_mode": "100644",
+          "bytes": 1172,
+          "sha256": "989a1d59d73414043ef1a456d806657bdbd3d3ef1d512f7da9a5c7ad7bf655af"
+        },
+        {
+          "path": "schemas/trace/exploration/open-inquiry/v1/list-response.schema.json",
+          "git_mode": "100644",
+          "bytes": 1896,
+          "sha256": "e2b2ed239f84e769626ffe27f7043fb1ca36fa0f526ed4cfc7c1b52401d220ac"
+        },
+        {
+          "path": "schemas/trace/exploration/open-inquiry/v1/registry.schema.json",
+          "git_mode": "100644",
+          "bytes": 9946,
+          "sha256": "96ae5bdd050fd2004946e9fb07de833dc9ea9b0a3ad126b1b671764251a2b6b3"
+        },
+        {
+          "path": "scripts/trace_round16b_integration/build_open_inquiry_registry.py",
+          "git_mode": "100644",
+          "bytes": 20428,
+          "sha256": "a9ba7756bc906a8b144167c8efa690fbd8f12edfb5c90e12fe95880d492b7c83"
+        },
+        {
+          "path": "docs/audits/v49-exploration-round16b-main-integration/open-inquiry-registry-api-receipt.v1.json",
+          "git_mode": "100644",
+          "bytes": 3231,
+          "sha256": "1dae1b7da143f8543cb75990270f6c58f701c9993f071447d6c6ea80437dec7b"
+        },
+        {
+          "path": "docs/research/trace-v49-exploration-round16b-main-integration/01_OPEN_INQUIRY_REGISTRY_AND_API.md",
+          "git_mode": "100644",
+          "bytes": 3345,
+          "sha256": "865ee7af134e794340ddfa80106d909217dc42e45dc89fa46c1ae86497538a42"
+        }
+      ]
+    },
+    {
+      "group": "trace_api_catalog",
+      "artifact_count": 4,
+      "artifacts": [
+        {
+          "path": "docs/api/trace/TRACE_API_CATALOG.md",
+          "git_mode": "100644",
+          "bytes": 143074,
+          "sha256": "1b4e0dee135dd1a23a34fc7d85f1a84ab51464894a7815a92358cd7ef223e399"
+        },
+        {
+          "path": "docs/api/trace/trace-api-catalog.v1.json",
+          "git_mode": "100644",
+          "bytes": 186432,
+          "sha256": "6373e77a6a6670383e0a952c7b78a8036fc9b11954212ebb2a92dc10df87fcd7"
+        },
+        {
+          "path": "docs/audits/v49-exploration-round16b-main-integration/build_trace_api_catalog.py",
+          "git_mode": "100644",
+          "bytes": 41288,
+          "sha256": "40a3d285c487d97c24b89e878bd5f00956f5f7670640492ac2dadf5846f8241a"
+        },
+        {
+          "path": "docs/audits/v49-exploration-round16b-main-integration/trace-api-catalog-verification-receipt.v1.json",
+          "git_mode": "100644",
+          "bytes": 1274,
+          "sha256": "027cd4beefe6a8a521ddf6d4c9b96452b9dfc9de126890ceed6205d892cd7feb"
+        }
+      ]
+    },
+    {
+      "group": "trace_function_tree",
+      "artifact_count": 2,
+      "artifacts": [
+        {
+          "path": "docs/frontend/trace-v49-handoff/TRACE_FUNCTION_TREE.md",
+          "git_mode": "100644",
+          "bytes": 5110,
+          "sha256": "afcd6c41e262b2d372aa0bc6b31ba3ee70426ecb071f69bb5130c8d2765a2982"
+        },
+        {
+          "path": "docs/frontend/trace-v49-handoff/trace-function-tree.v1.json",
+          "git_mode": "100644",
+          "bytes": 2040,
+          "sha256": "eac8776c6aa79a1c9a81b69f835da5cc54188f3a93074dcaa665f96b02611ba3"
+        }
+      ]
+    },
+    {
+      "group": "bounded_frontend_handoff",
+      "artifact_count": 12,
+      "artifacts": [
+        {
+          "path": "docs/audits/v49-exploration-round16b-main-integration/build_frontend_handoff.py",
+          "git_mode": "100644",
+          "bytes": 17956,
+          "sha256": "6bafd476a2f8d71f2da84767c28b763f6214e5b1ec8cfbb110024b0e61b94fd0"
+        },
+        {
+          "path": "docs/frontend/trace-v49-handoff/ACCESSIBILITY_AND_RESPONSIVE_CONSTRAINTS.md",
+          "git_mode": "100644",
+          "bytes": 8567,
+          "sha256": "ccc202f35435abfa6e3ad204005f651a451c1b108f6fd9e815e98d90c95a46ed"
+        },
+        {
+          "path": "docs/frontend/trace-v49-handoff/DATA_CONTRACTS_AND_EXAMPLES.md",
+          "git_mode": "100644",
+          "bytes": 12703,
+          "sha256": "3646e80d197dd0ef93d67867ee4775b02eba3966dc8dd790d2b930e947b8530c"
+        },
+        {
+          "path": "docs/frontend/trace-v49-handoff/EXPORT_CONTRACT.md",
+          "git_mode": "100644",
+          "bytes": 7512,
+          "sha256": "af02b429c5d63ac88425ea29a229ab1baea0e141738f979e3be42ee70459ab45"
+        },
+        {
+          "path": "docs/frontend/trace-v49-handoff/FRONTEND_STATE_MATRIX.md",
+          "git_mode": "100644",
+          "bytes": 9685,
+          "sha256": "6523f01d06f17f08b4045751a6f4cc9b1479c46456a6b88cd84e0cf31026cd08"
+        },
+        {
+          "path": "docs/frontend/trace-v49-handoff/HANDOFF_INTEGRITY_REPORT.md",
+          "git_mode": "100644",
+          "bytes": 1473,
+          "sha256": "714e9ad30a246fcd6bc2a45ecf6734725afc5dcbad2ded17cd65c941235a60cc"
+        },
+        {
+          "path": "docs/frontend/trace-v49-handoff/KNOWN_LIMITATIONS_AND_OPEN_DESIGN_QUESTIONS.md",
+          "git_mode": "100644",
+          "bytes": 9985,
+          "sha256": "a9bcc6c365293eae1947f8970b39c62558f887a21ea84f95b9aaee00d61791d1"
+        },
+        {
+          "path": "docs/frontend/trace-v49-handoff/NAVIGATION_AND_CROSS_FUNCTION_STATE.md",
+          "git_mode": "100644",
+          "bytes": 7967,
+          "sha256": "3adde05593dea47eda262257a44b6fc389e54e28c9b91dd5716094c9b8c210d1"
+        },
+        {
+          "path": "docs/frontend/trace-v49-handoff/OPEN_INQUIRY_UX_CONTRACT.md",
+          "git_mode": "100644",
+          "bytes": 7995,
+          "sha256": "561ce364ab810808fcacf4647858d079f92fa3aa17563b2fa83e080161fd6f66"
+        },
+        {
+          "path": "docs/frontend/trace-v49-handoff/SOURCE_MANIFEST.json",
+          "git_mode": "100644",
+          "bytes": 17140,
+          "sha256": "025f182e0543abe0b7c94518263c5b494f6f0c0a1af2fc3ce72fd6bd90b4013f"
+        },
+        {
+          "path": "docs/frontend/trace-v49-handoff/START_HERE.md",
+          "git_mode": "100644",
+          "bytes": 4628,
+          "sha256": "a3ef762a08bdccf6184268136c667fcbba8980ae5443830e58f1b5aa480fcaae"
+        },
+        {
+          "path": "docs/frontend/trace-v49-handoff/TERMINOLOGY_AND_UI_COPY.md",
+          "git_mode": "100644",
+          "bytes": 7364,
+          "sha256": "0325f03b20e5e2aa3092cc3796c56c3778a1e59b9efdf4090254f13ef9c6849d"
+        }
+      ]
+    },
+    {
+      "group": "integration_verification",
+      "artifact_count": 5,
+      "artifacts": [
+        {
+          "path": "docs/audits/v49-exploration-round16b-main-integration/integration-isolation-verification-receipt.v1.json",
+          "git_mode": "100644",
+          "bytes": 8783,
+          "sha256": "d8041f26a3add67b434b0a3973b665fdb5daf6101fc461056f9451d87a1c0f27"
+        },
+        {
+          "path": "docs/audits/v49-exploration-round16b-main-integration/verify_clean_integration.py",
+          "git_mode": "100644",
+          "bytes": 34513,
+          "sha256": "30cab73fe3463036a2ed54fb6cdf9fdc5e546528eea16b733ef41fe40aa2cb0f"
+        },
+        {
+          "path": "docs/research/trace-v49-exploration-round16b-main-integration/02_INTEGRATION_AND_ISOLATION_VERIFICATION.md",
+          "git_mode": "100644",
+          "bytes": 4613,
+          "sha256": "142a49638fc57e7f8af7676e5b5a0d3a5664bd75f3ebf3a7b436a04217f1649a"
+        },
+        {
+          "path": "frontend/scripts/validate-trace-open-inquiry-v1-http.mjs",
+          "git_mode": "100644",
+          "bytes": 8722,
+          "sha256": "ab40d17444afda0fdc02b5ce23321b5775d456a4897255e9035ef8ea87281e39"
+        },
+        {
+          "path": "frontend/package.json",
+          "git_mode": "100644",
+          "bytes": 5295,
+          "sha256": "daa3e96a2ae2de96bc8e7dbac648d3bef1c82f61e8a0c4f2c6d4b255bae4662f"
+        }
+      ]
+    },
+    {
+      "group": "historical_round16b_seal_unchanged",
+      "artifact_count": 8,
+      "artifacts": [
+        {
+          "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/MANIFEST.json",
+          "git_mode": "100644",
+          "bytes": 602768,
+          "sha256": "4f7a628985fa430ba2b819965574eabdb5ca3ffc81398fb48335289134bb02ee"
+        },
+        {
+          "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/CHECKSUMS.sha256",
+          "git_mode": "100644",
+          "bytes": 408733,
+          "sha256": "fcc590dd500cb6b5d57e52411119aadbcd6f804116bab8a03c8a179365cd2bcf"
+        },
+        {
+          "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/large-file-policy.json",
+          "git_mode": "100644",
+          "bytes": 2150,
+          "sha256": "3edb4ec79f7c7d06cf145aebdd86fadba915b6bd75040edb65507578d06b441c"
+        },
+        {
+          "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-clean-reproduction-receipt-checkpoint016.json",
+          "git_mode": "100644",
+          "bytes": 13967,
+          "sha256": "a50cacc9046c22b462daf342048cc3f8d1cba555430c0a7f060c913f04e130bc"
+        },
+        {
+          "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/final-clean-reproduction-independent-verification-checkpoint016.json",
+          "git_mode": "100644",
+          "bytes": 17472,
+          "sha256": "ed8789b5eb9fb3b43f4fd9a270528943199f4efb8dff3c20ec3dd85cd4767670"
+        },
+        {
+          "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/repository-hygiene-checkpoint016.json",
+          "git_mode": "100644",
+          "bytes": 34005,
+          "sha256": "193645fc9650837dc24e65e26dac42496b4a3c8121809b046eebeb5cef9d57fb"
+        },
+        {
+          "path": "docs/research/trace-v49-exploration-higher-order-association-closure-round16b/31_FINAL_CLEAN_REPRODUCTION_AND_EVIDENCE_BOUNDED_NONCLOSURE.md",
+          "git_mode": "100644",
+          "bytes": 3025,
+          "sha256": "0cecef2b9feddc182236f5ceab36a5c92e4f803692881c977f6b4c815c49d9d4"
+        },
+        {
+          "path": "docs/research/trace-v49-exploration-higher-order-association-closure-round16b/32_REPOSITORY_HYGIENE_CHECKPOINT016.md",
+          "git_mode": "100644",
+          "bytes": 34044,
+          "sha256": "c8ca10c0d70a44ec374bfad87049a691c2b39189b16ffc95053a6ffe64e7aa0c"
+        }
+      ]
+    },
+    {
+      "group": "commit_description_ledger",
+      "artifact_count": 2,
+      "artifacts": [
+        {
+          "path": "docs/audits/v49-exploration-round16b-main-integration/build_clean_integration_seal.py",
+          "git_mode": "100644",
+          "bytes": 24309,
+          "sha256": "eeb2a73ef42ebef66128185d7868c39e3d41aac81a4a5c53bdadc1e7ed195ede"
+        },
+        {
+          "path": "docs/audits/v49-exploration-round16b-main-integration/commit-description-ledger.v1.json",
+          "git_mode": "100644",
+          "bytes": 20750,
+          "sha256": "84e7da11788ed3ee5dc3620c658f6a84a653c020d0c88f65c0dc54961adb8609"
+        }
+      ]
+    }
+  ],
+  "closure_flags": {
+    "PAIR_ASSOCIATION_CLOSURE": false,
+    "HIGHER_ORDER_ASSOCIATION_CLOSURE": false,
+    "GLOBAL_COMPOSITION_COHERENCE_CLOSURE": false,
+    "PRODUCT_ASSOCIATION_REACHABILITY_CLOSURE": false,
+    "COMPUTATIONAL_SPACE_CLOSURE": false,
+    "FUNCTION3_CLOSURE": false
+  },
+  "publication_boundary": {
+    "external_postpublication_receipt_required": true,
+    "rollback_tag_creation_requires_no_auto_deployment_proof": true,
+    "main_fast_forward_requires_no_auto_deployment_proof": true,
+    "deployment_authorized": false
+  },
+  "failure_codes": []
+}
