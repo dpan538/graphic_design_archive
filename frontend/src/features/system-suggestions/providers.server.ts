@@ -21,7 +21,12 @@ function fallbackNote(request: SystemSuggestionsRequest): string {
   }
   if (request.surface === "TRACE_CONTEXT") return "Review the current public context, then choose an available context action to continue.";
   if (request.surface === "TRACE_SPACETIME") return "Read the current period and geography together, then use an available selection to narrow the public aggregate view.";
-  if (request.surface === "TRACE_VALIDATED_EXPLORATION") return "Continue from the current validated composition using only the available validated nodes and associations.";
+  if (request.surface === "TRACE_VALIDATED_EXPLORATION") {
+    const counts = (request.context as { counts?: Readonly<Record<string, number>> }).counts;
+    return (counts?.validatedCompositions ?? 0) === 0
+      ? "No validated composition is active in this release. No validated next action is available."
+      : "Continue from the current validated composition using only the available validated nodes and associations.";
+  }
   return "Review the stated evidence gap and source boundary before choosing an available inquiry action.";
 }
 

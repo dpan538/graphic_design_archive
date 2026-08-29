@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
-import { SpacetimeWorkspace } from "@/features/trace-v49/spacetime/map";
-import {
-  getGovernedSpacetimePeriodsDataset,
-  lookupGovernedSpacetimeAtlas,
-} from "@/features/trace-v49/spacetime/governed/reader.server";
+import { isLikelyMobileTraceRequest, TraceDesktopRequired } from "@/features/trace-v49/mobile.server";
 import styles from "./page.module.css";
 
 export const dynamic = "force-dynamic";
@@ -28,8 +24,14 @@ function Failure({ message }: Readonly<{ message: string }>) {
   );
 }
 
-export default function SpacetimePage() {
+export default async function SpacetimePage() {
+  if (await isLikelyMobileTraceRequest()) return <TraceDesktopRequired functionName="Spacetime" />;
   try {
+    const [{ SpacetimeWorkspace }, spacetimeReader] = await Promise.all([
+      import("@/features/trace-v49/spacetime/map"),
+      import("@/features/trace-v49/spacetime/governed/reader.server"),
+    ]);
+    const { getGovernedSpacetimePeriodsDataset, lookupGovernedSpacetimeAtlas } = spacetimeReader;
     const periods = getGovernedSpacetimePeriodsDataset();
     const atlas = lookupGovernedSpacetimeAtlas(periods.defaultPeriodId);
     if (!atlas.ok) return <Failure message={atlas.message} />;

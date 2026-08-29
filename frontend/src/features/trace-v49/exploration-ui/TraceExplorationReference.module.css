@@ -1,0 +1,74 @@
+.workspace {
+  width: min(68rem, calc(100% - 3rem));
+  margin: 0 auto;
+  padding: clamp(5rem, 12vh, 8rem) 0 5rem;
+  color: var(--ink);
+  font-family: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.eyebrow {
+  color: var(--ink-soft);
+  font: .78rem var(--font-plex-mono), ui-monospace, monospace;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.workspace h1 {
+  margin: .2rem 0 .75rem;
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  line-height: .95;
+  letter-spacing: -.04em;
+}
+
+.functionLinks,
+.layers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.functionLinks a,
+.layer {
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: color-mix(in srgb, var(--paper) 90%, transparent);
+}
+
+.functionLinks a strong,
+.functionLinks a span {
+  display: block;
+}
+
+.functionLinks a span {
+  margin-top: .35rem;
+  color: var(--ink-soft);
+}
+
+.layer h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem 1rem;
+  padding: 0;
+  list-style: none;
+  color: var(--ink-soft);
+  font: .76rem var(--font-plex-mono), ui-monospace, monospace;
+}
+
+.focusTarget:focus {
+  outline: 3px solid var(--focus-coral);
+  outline-offset: .25rem;
+}
+
+@media (max-width: 760px) {
+  .functionLinks,
+  .layers {
+    grid-template-columns: 1fr;
+  }
+}

@@ -8,6 +8,8 @@ import {
   useRef,
   useState,
 } from "react";
+import SystemSuggestionsPanel from "@/features/system-suggestions/ui/SystemSuggestionsPanel";
+import type { ApprovedSuggestion, TraceSuggestionContext } from "@/features/system-suggestions/types";
 import {
   deriveNativePatternFillUrl,
   deriveSpacetimeRendererModel,
@@ -472,6 +474,32 @@ export default function SpacetimeWorkspace({
     setSelectedGeographyId(null);
     setViewBox(FULL_MAP_VIEWBOX);
   }, [clearRecords]);
+  const suggestionContext = useMemo<TraceSuggestionContext>(() => ({
+    stateType: `SPACETIME_${mode.toUpperCase()}_VIEW`,
+    labels: [atlas.selectedPeriod.label, ...(selectedGeography ? [selectedGeography.label] : [])],
+    counts: {
+      publicDenominator: atlas.counts.denominator,
+      mappedRecords: atlas.counts.mappedRecords,
+      unmappedRecords: atlas.counts.unmappedRecords,
+      selectedRecords: selectedGeography?.recordCount ?? 0,
+    },
+    validActionIds: [
+      ...(atlas.accessibleRows.length ? ["SELECT_GEOGRAPHY", "COMPARE_PUBLIC_COUNTS"] : []),
+      ...(selectedGeographyId ? ["RESET_VIEW"] : []),
+    ],
+    evidenceClass: "PUBLIC_AGGREGATE",
+  }), [atlas.accessibleRows.length, atlas.counts.denominator, atlas.counts.mappedRecords, atlas.counts.unmappedRecords, atlas.selectedPeriod.label, mode, selectedGeography, selectedGeographyId]);
+  const applySuggestion = useCallback((suggestion: ApprovedSuggestion) => {
+    const actionId = suggestion.action.parameters.actionId;
+    if (actionId === "SELECT_GEOGRAPHY") {
+      const row = atlas.accessibleRows.find((candidate) => candidate.geographyId !== selectedGeographyId);
+      if (row) selectGeography(row.geographyId);
+    } else if (actionId === "COMPARE_PUBLIC_COUNTS") {
+      const table = document.getElementById("spacetime-accessible-table");
+      table?.scrollIntoView({ behavior: "smooth", block: "start" });
+      table?.focus();
+    } else if (actionId === "RESET_VIEW") resetMap();
+  }, [atlas.accessibleRows, resetMap, selectGeography, selectedGeographyId]);
 
   return (
     <main className={styles.workspace}>
@@ -531,6 +559,8 @@ export default function SpacetimeWorkspace({
         </button>
       </section>
 
+      <SystemSuggestionsPanel surface="TRACE_SPACETIME" context={suggestionContext} onAction={applySuggestion} />
+
       <div className={styles.contentGrid}>
         <section
           className={styles.mapPanel}
@@ -587,7 +617,7 @@ export default function SpacetimeWorkspace({
         </aside>
       </div>
 
-      <details className={styles.accessiblePanel} open>
+      <details id="spacetime-accessible-table" className={styles.accessiblePanel} open tabIndex={-1}>
         <summary>Accessible geography table ({atlas.accessibleRows.length})</summary>
         <div className={styles.tableWrap}>
           <table>

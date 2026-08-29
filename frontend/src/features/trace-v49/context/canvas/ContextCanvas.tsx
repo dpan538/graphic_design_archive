@@ -9,6 +9,8 @@ import {
   useRef,
   useState,
 } from "react";
+import SystemSuggestionsPanel from "@/features/system-suggestions/ui/SystemSuggestionsPanel";
+import type { ApprovedSuggestion, TraceSuggestionContext } from "@/features/system-suggestions/types";
 import type { TraceContextDataset } from "../types";
 import { deriveVisibleContextCanvasConnections } from "./connections";
 import { ContextCanvasInspector } from "./ContextCanvasInspector";
@@ -161,6 +163,30 @@ function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProp
   const interactionLocked = state.phase === "INITIALIZING"
     || state.phase === "EXPORTING"
     || state.interaction.mode !== "READY";
+  const suggestionContext = useMemo<TraceSuggestionContext>(() => {
+    const availableKinds = new Set(availableEntities.flatMap((entity) => {
+      const representation = representationByEntityId.get(contextCanvasEntityId(entity));
+      return representation ? [representation.kind] : [];
+    }));
+    return {
+      stateType: `CONTEXT_CANVAS_${composition.templateId.toUpperCase().replaceAll("-", "_")}`,
+      labels: [
+        dataset.selectedRecord.label ?? dataset.selectedRecord.stableId,
+        ...(governed?.representations.map((representation) => representation.label) ?? []),
+      ].slice(0, 12),
+      counts: {
+        publicContextRepresentations: governed?.representations.length ?? 0,
+        visibleRepresentations: visibleConnections.length,
+        availableRepresentations: availableEntities.length,
+      },
+      validActionIds: [
+        ...(availableKinds.has("medium") ? ["EXPAND_MEDIUM"] : []),
+        ...(availableKinds.has("theme") ? ["EXPAND_THEME"] : []),
+        ...(availableKinds.has("movement_context") ? ["EXPAND_MOVEMENT"] : []),
+      ],
+      evidenceClass: "PUBLIC_CONTEXT",
+    };
+  }, [availableEntities, composition.templateId, dataset.selectedRecord.label, dataset.selectedRecord.stableId, governed?.representations, representationByEntityId, visibleConnections.length]);
 
   const handleViewportSizeChange = useCallback((size: ContextCanvasViewportSize) => {
     setViewportSize((current) =>
@@ -293,6 +319,17 @@ function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProp
   function addEntity(entityId: string) {
     setPendingFocusTarget(contextCanvasNodeDomId(entityId));
     dispatch({ type: "ADD_ENTITY", entityId, position: defaultAddPosition() });
+  }
+
+  function applySuggestion(suggestion: ApprovedSuggestion) {
+    const actionId = suggestion.action.parameters.actionId;
+    const kind = actionId === "EXPAND_MEDIUM" ? "medium"
+      : actionId === "EXPAND_THEME" ? "theme"
+      : actionId === "EXPAND_MOVEMENT" ? "movement_context"
+      : null;
+    if (!kind) return;
+    const entity = availableEntities.find((candidate) => representationByEntityId.get(contextCanvasEntityId(candidate))?.kind === kind);
+    if (entity) addEntity(contextCanvasEntityId(entity));
   }
 
   function endPaletteDrag(
@@ -444,6 +481,10 @@ function ContextCanvasSession({ dataset, dataMode, metadata }: ContextCanvasProp
         onResetCanvas={resetCanvas}
         onExportPng={exportPng}
       />
+
+      {dataMode === "governed_context_v1" && governed ? (
+        <SystemSuggestionsPanel surface="TRACE_CONTEXT" context={suggestionContext} onAction={applySuggestion} />
+      ) : null}
 
       <div className={styles.workspace}>
         <ContextEntityPalette

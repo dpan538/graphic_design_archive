@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
-import ContextCanvas from "@/features/trace-v49/context/canvas/ContextCanvas";
-import { adaptPublicContextDatasetForCanvas } from "@/features/trace-v49/context/governed/canvas";
-import {
-  getGovernedContextSampleOptions,
-  lookupGovernedContextDataset,
-} from "@/features/trace-v49/context/governed/index.server";
+import { isLikelyMobileTraceRequest, TraceDesktopRequired } from "@/features/trace-v49/mobile.server";
 import styles from "./page.module.css";
 
 export const dynamic = "force-dynamic";
@@ -103,6 +98,13 @@ function LookupFailure({
 export default async function ContextCanvasGovernedPage({
   searchParams,
 }: ContextCanvasPageProps) {
+  if (await isLikelyMobileTraceRequest()) return <div className={styles.pageShell}><TraceDesktopRequired functionName="Context Canvas" /></div>;
+  const [{ default: ContextCanvas }, { adaptPublicContextDatasetForCanvas }, contextIndex] = await Promise.all([
+    import("@/features/trace-v49/context/canvas/ContextCanvas"),
+    import("@/features/trace-v49/context/governed/canvas"),
+    import("@/features/trace-v49/context/governed/index.server"),
+  ]);
+  const { getGovernedContextSampleOptions, lookupGovernedContextDataset } = contextIndex;
   const query = await searchParams;
   const parsedRecord = parseRecordParameter(query.record);
   const samples = getGovernedContextSampleOptions();

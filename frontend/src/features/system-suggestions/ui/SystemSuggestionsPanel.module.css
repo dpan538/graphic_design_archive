@@ -1,0 +1,54 @@
+.panel {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-left: .35rem solid var(--focus-coral);
+  color: var(--ink);
+  background: color-mix(in srgb, var(--paper-2) 78%, transparent);
+  font-family: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.panel h2 {
+  margin: 0;
+  font: 700 .78rem var(--font-plex-mono), ui-monospace, monospace;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.panel p {
+  max-width: 62rem;
+  margin: .45rem 0 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-top: .75rem;
+}
+
+.actions button {
+  min-height: 44px;
+  padding: .45rem .65rem;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font: .78rem var(--font-plex-mono), ui-monospace, monospace;
+}
+
+.disclosure {
+  margin: 1rem 0 0;
+  padding: 1rem;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+}
+
+.disclosure h2 {
+  margin: 0 0 .5rem;
+  font-size: 1.1rem;
+}
+
+.disclosure p {
+  margin: .2rem 0;
+  font-weight: 600;
+}
