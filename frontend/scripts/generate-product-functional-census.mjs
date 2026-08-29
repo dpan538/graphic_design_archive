@@ -207,6 +207,10 @@ function buildCensus() {
     };
   });
   const routeCounts = Object.fromEntries(["ACTIVE_PUBLIC_PRODUCT", "ACTIVE_REFERENCE_IMPLEMENTATION", "DOCUMENTATION_OR_METHOD", "LEGACY_PUBLIC", "RETIRED", "INTERNAL_TEST_OR_DEMO", "PLACEHOLDER", "ERROR_OR_UTILITY"].map((classification) => [classification, pages.filter((page) => page.classification === classification).length]));
+  const productAreaIds = ["Global Search", "Shared product", "TRACE"];
+  const userFacingFunctionZoneIds = zones.filter((zone) => !["zone.home", "zone.global-navigation", "zone.shared-states"].includes(zone.zone_id)).map((zone) => zone.zone_id);
+  const activeProductScreenCount = pages.filter((page) => page.CLAUDE_MUST_DESIGN).length;
+  const referenceOrLegacyScreenCount = pages.filter((page) => ["ACTIVE_REFERENCE_IMPLEMENTATION", "LEGACY_PUBLIC"].includes(page.classification)).length;
   const api_routes = apiMap.routes.map((route) => ({
     ...route, route_template: route.route, route_file: route.source_route_path, handler: route.source_route_path,
     frontend_consumption_class: apiClass(route.api_id), functional_zone_ids: apiZones(route.api_id), desktop_mobile_consumer: route.availability,
@@ -252,6 +256,9 @@ function buildCensus() {
     metric("guidance.maximum_suggestions", 4, "suggestions", "System Suggestions", "frontend/src/features/system-suggestions/service.server.ts", "Maximum approved suggestion IDs in a response.", "No arbitrary provider actions."),
     metric("frontend.page_route_template_count", pages.length, "routes", "Frontend", "frontend/src/app/page.tsx", "Discovered Next.js page route templates.", "Includes legacy and internal routes; not a product feature count."),
     metric("frontend.active_product_route_count", routeCounts.ACTIVE_PUBLIC_PRODUCT, "routes", "Frontend", "frontend/src/app/page.tsx", "Page routes classified as active public product.", "Final navigation candidate baseline."),
+    metric("frontend.active_product_screen_count", activeProductScreenCount, "screens", "Frontend", "frontend/scripts/generate-product-functional-census.mjs", "Finite pages/workspaces marked CLAUDE_MUST_DESIGN.", "Final visual design scope, including two functional TRACE reference workspaces."),
+    metric("frontend.user_facing_function_count", userFacingFunctionZoneIds.length, "functions", "Frontend", "frontend/scripts/generate-product-functional-census.mjs", "Zones with a user goal, entry, action, state, and frontend/API dependency; excludes homepage entry, shared navigation, and shared states.", "Product capability scope rather than JavaScript function count."),
+    metric("frontend.user_action_count", zones.flatMap((zone) => zone.primary_user_actions).length, "actions", "Frontend", "frontend/scripts/generate-product-functional-census.mjs", "Enumerated primary user actions across all functional zones.", "Interaction inventory; not feature count."),
     metric("frontend.functional_zone_count", zones.length, "zones", "Frontend", "frontend/scripts/generate-product-functional-census.mjs", "Enumerated frontend functional zones.", "Finite design scope."),
     metric("api.route_template_count", apiMap.summary.logical_route_template_count, "routes", "API", "docs/api/product-api-map.v1.json", "Logical API route templates in canonical product map.", "Only classified frontend subset belongs in design."),
     metric("api.method_route_pair_count", apiMap.summary.method_route_pair_count, "method-route pairs", "API", "docs/api/product-api-map.v1.json", "Expanded HTTP method-route pairs in canonical product map.", "Validation metric, not a screen count."),
@@ -284,7 +291,7 @@ function buildCensus() {
   return {
     schema_version: "gda-product-functional-census/v1", census_version: "GLOBAL_PRODUCT_CENSUS_20260829", repository_identity: { repository: "dpan538/graphic_design_archive", source_sha: sourceSha, source_tree_sha: "7307745b7844035784ad1ab6906837d874b164fb" },
     release_identity: { database_version: "50", database_freeze_hash: "f0dda59dd515ba243eaf213bce9f42513727f1ab0a44685635921c3759a7d22e", release_id: searchManifest.release_id, release_manifest_sha256: searchManifest.release_manifest_sha256, frontend_build_version: "0.1.0" },
-    product_hierarchy: { product: "Graphic Design Archive", global_search_is_trace_child: false, trace_top_level_function_count: 3, global_search_mobile_available: true, trace_full_mobile_runtime_enabled: false, system_suggestions_is_product_guidance_not_core_evidence: true, tree: ["Global Search", "TRACE > Context Canvas", "TRACE > Spacetime", "TRACE > Exploration > Validated Exploration", "TRACE > Exploration > Open Inquiry"] },
+    product_hierarchy: { product: "Graphic Design Archive", product_area_ids: productAreaIds, product_area_count: productAreaIds.length, active_product_screen_count: activeProductScreenCount, active_product_route_template_count: routeCounts.ACTIVE_PUBLIC_PRODUCT, reference_or_legacy_screen_count: referenceOrLegacyScreenCount, user_facing_function_zone_ids: userFacingFunctionZoneIds, user_facing_function_count: userFacingFunctionZoneIds.length, user_action_count: zones.flatMap((zone) => zone.primary_user_actions).length, global_search_is_trace_child: false, trace_top_level_function_count: 3, global_search_mobile_available: true, trace_full_mobile_runtime_enabled: false, system_suggestions_is_product_guidance_not_core_evidence: true, tree: ["Global Search", "TRACE > Context Canvas", "TRACE > Spacetime", "TRACE > Exploration > Validated Exploration", "TRACE > Exploration > Open Inquiry"] },
     page_routes: pages, functional_zones: zones,
     user_actions: zones.flatMap((zone) => zone.primary_user_actions.map((action) => ({ action_id: `${zone.zone_id}.${action.replaceAll(/[^a-z0-9]+/gi, "-").toLowerCase()}`, zone_id: zone.zone_id, label: action }))),
     navigation_edges, api_routes, api_classifications: apiCounts, frontend_required_api_ids: api_routes.filter((route) => route.frontend_consumption_class === "FRONTEND_REQUIRED_NOW").map((route) => route.api_id),
@@ -294,7 +301,7 @@ function buildCensus() {
     readiness: zones.map((zone) => ({ zone_id: zone.zone_id, BACKEND_READY: zone.implementation_readiness !== "BLOCKED", API_READY: zone.required_API_ids.length > 0 || zone.zone_id === "zone.about-methodology", REFERENCE_UI_EXISTS: ["zone.context-canvas", "zone.spacetime", "zone.validated-exploration", "zone.open-inquiry"].includes(zone.zone_id), FINAL_UI_DESIGNED: false, MOBILE_READY: zone.desktop_mobile_policy === "DESKTOP_AND_MOBILE", DESKTOP_READY: zone.desktop_mobile_policy !== "NOT_USER_FACING", EXPORT_READY: zone.zone_id === "zone.trace-exports" || zone.zone_id === "zone.context-canvas", SYSTEM_SUGGESTIONS_READY: ["zone.search", "zone.context-canvas", "zone.spacetime", "zone.validated-exploration", "zone.open-inquiry", "zone.system-suggestions"].includes(zone.zone_id), BLOCKER: zone.zone_id === "zone.validated-exploration" ? "V3 active production activation count is zero; do not invent a V3 active product screen." : "None" })),
     legacy_internal_retired: pages.filter((page) => !["ACTIVE_PUBLIC_PRODUCT", "ACTIVE_REFERENCE_IMPLEMENTATION", "DOCUMENTATION_OR_METHOD"].includes(page.classification)).map((page) => ({ route: page.exact_route, classification: page.classification, why: page.reason, visible_navigation: false, CLAUDE_MUST_DESIGN: false, component_reuse: "Only if reused without importing legacy data or visual-rights assumptions." })),
     source_manifest,
-    validation_receipt: { discovered_page_route_template_count: pages.length, unclassified_page_route_count: 0, unclassified_functional_zone_count: 0, unclassified_api_route_count: 0, implemented_api_uncatalogued_count: apiMap.summary.implemented_product_api_uncatalogued_count, catalog_route_without_implementation_count: apiMap.summary.catalog_route_without_implementation_count, catalog_duplicate_method_route_count: apiMap.summary.catalog_duplicate_method_route_count, catalog_source_path_missing_count: apiMap.summary.catalog_source_path_missing_count, catalog_test_path_missing_count: apiMap.summary.catalog_test_path_missing_count, dangling_function_api_reference_count: zones.flatMap((zone) => zone.required_API_ids).filter((id) => !api_routes.some((route) => route.api_id === id)).length, route_counts: routeCounts, api_counts: apiCounts },
+    validation_receipt: { discovered_page_route_template_count: pages.length, unclassified_page_route_count: 0, unclassified_functional_zone_count: 0, unclassified_api_route_count: 0, implemented_api_uncatalogued_count: apiMap.summary.implemented_product_api_uncatalogued_count, catalog_route_without_implementation_count: apiMap.summary.catalog_route_without_implementation_count, catalog_duplicate_method_route_count: apiMap.summary.catalog_duplicate_method_route_count, catalog_source_path_missing_count: apiMap.summary.catalog_source_path_missing_count, catalog_test_path_missing_count: apiMap.summary.catalog_test_path_missing_count, dangling_function_api_reference_count: zones.flatMap((zone) => zone.required_API_ids).filter((id) => !api_routes.some((route) => route.api_id === id)).length, route_counts: routeCounts, api_counts: apiCounts, user_action_count: zones.flatMap((zone) => zone.primary_user_actions).length },
   };
 }
 
@@ -317,8 +324,12 @@ Graphic Design Archive has two parallel product strategies: Global Search and TR
 
 | Measure | Exact value |
 |---|---:|
-| Active public product routes | ${census.validation_receipt.route_counts.ACTIVE_PUBLIC_PRODUCT} |
-| Final design screens | 7 |
+| Product areas | ${census.product_hierarchy.product_area_count} |
+| Active public product route templates | ${census.product_hierarchy.active_product_route_template_count} |
+| Final design screens | ${census.product_hierarchy.active_product_screen_count} |
+| Reference or legacy screens | ${census.product_hierarchy.reference_or_legacy_screen_count} |
+| User-facing product functions | ${census.product_hierarchy.user_facing_function_count} |
+| User actions | ${census.product_hierarchy.user_action_count} |
 | Functional zones | ${census.functional_zones.length} |
 | Public Search documents | ${census.data_metrics.find((item) => item.metric_id === "search.public_document_count").exact_value} |
 | API route templates / method pairs | ${census.validation_receipt.api_counts.FRONTEND_REQUIRED_NOW + census.validation_receipt.api_counts.FRONTEND_OPTIONAL + census.validation_receipt.api_counts.SERVER_SIDE_SUPPORT + census.validation_receipt.api_counts.INTERNAL_RESEARCH_CONTROL + census.validation_receipt.api_counts.LEGACY_COMPATIBILITY + census.validation_receipt.api_counts.RETIRED + census.validation_receipt.api_counts.FAIL_CLOSED} / ${census.data_metrics.find((item) => item.metric_id === "api.method_route_pair_count").exact_value} |

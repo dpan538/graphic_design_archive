@@ -15,6 +15,32 @@
   },
   "product_hierarchy": {
     "product": "Graphic Design Archive",
+    "product_area_ids": [
+      "Global Search",
+      "Shared product",
+      "TRACE"
+    ],
+    "product_area_count": 3,
+    "active_product_screen_count": 7,
+    "active_product_route_template_count": 5,
+    "reference_or_legacy_screen_count": 6,
+    "user_facing_function_zone_ids": [
+      "zone.search",
+      "zone.search-filters",
+      "zone.search-results",
+      "zone.search-pagination",
+      "zone.object-detail",
+      "zone.about-methodology",
+      "zone.trace-entry",
+      "zone.context-canvas",
+      "zone.spacetime",
+      "zone.validated-exploration",
+      "zone.open-inquiry",
+      "zone.trace-exports",
+      "zone.system-suggestions"
+    ],
+    "user_facing_function_count": 13,
+    "user_action_count": 47,
     "global_search_is_trace_child": false,
     "trace_top_level_function_count": 3,
     "global_search_mobile_available": true,
@@ -5616,13 +5642,49 @@
       "caveat": ""
     },
     {
+      "metric_id": "frontend.active_product_screen_count",
+      "formal_definition": "Finite pages/workspaces marked CLAUDE_MUST_DESIGN.",
+      "exact_value": 7,
+      "unit": "screens",
+      "product_or_research_layer": "Frontend",
+      "source_path": "frontend/scripts/generate-product-functional-census.mjs",
+      "source_SHA256": "0e34243bfc9de4423cf6431d07a9e5eded844137cc98ab7741ad82485d03682a",
+      "generation_method": "frontend/scripts/generate-product-functional-census.mjs",
+      "frontend_significance": "Final visual design scope, including two functional TRACE reference workspaces.",
+      "caveat": ""
+    },
+    {
+      "metric_id": "frontend.user_facing_function_count",
+      "formal_definition": "Zones with a user goal, entry, action, state, and frontend/API dependency; excludes homepage entry, shared navigation, and shared states.",
+      "exact_value": 13,
+      "unit": "functions",
+      "product_or_research_layer": "Frontend",
+      "source_path": "frontend/scripts/generate-product-functional-census.mjs",
+      "source_SHA256": "0e34243bfc9de4423cf6431d07a9e5eded844137cc98ab7741ad82485d03682a",
+      "generation_method": "frontend/scripts/generate-product-functional-census.mjs",
+      "frontend_significance": "Product capability scope rather than JavaScript function count.",
+      "caveat": ""
+    },
+    {
+      "metric_id": "frontend.user_action_count",
+      "formal_definition": "Enumerated primary user actions across all functional zones.",
+      "exact_value": 47,
+      "unit": "actions",
+      "product_or_research_layer": "Frontend",
+      "source_path": "frontend/scripts/generate-product-functional-census.mjs",
+      "source_SHA256": "0e34243bfc9de4423cf6431d07a9e5eded844137cc98ab7741ad82485d03682a",
+      "generation_method": "frontend/scripts/generate-product-functional-census.mjs",
+      "frontend_significance": "Interaction inventory; not feature count.",
+      "caveat": ""
+    },
+    {
       "metric_id": "frontend.functional_zone_count",
       "formal_definition": "Enumerated frontend functional zones.",
       "exact_value": 16,
       "unit": "zones",
       "product_or_research_layer": "Frontend",
       "source_path": "frontend/scripts/generate-product-functional-census.mjs",
-      "source_SHA256": "861170c9319410cdc468abc3f46d65ad9d93179df038dffeb81bc6a2a5d40a64",
+      "source_SHA256": "0e34243bfc9de4423cf6431d07a9e5eded844137cc98ab7741ad82485d03682a",
       "generation_method": "frontend/scripts/generate-product-functional-census.mjs",
       "frontend_significance": "Finite design scope.",
       "caveat": ""
@@ -5867,6 +5929,24 @@
       "metric_id": "frontend.active_product_route_count",
       "definition": "Page routes classified as active public product.",
       "source": "frontend/src/app/page.tsx",
+      "generation_method": "frontend/scripts/generate-product-functional-census.mjs"
+    },
+    {
+      "metric_id": "frontend.active_product_screen_count",
+      "definition": "Finite pages/workspaces marked CLAUDE_MUST_DESIGN.",
+      "source": "frontend/scripts/generate-product-functional-census.mjs",
+      "generation_method": "frontend/scripts/generate-product-functional-census.mjs"
+    },
+    {
+      "metric_id": "frontend.user_facing_function_count",
+      "definition": "Zones with a user goal, entry, action, state, and frontend/API dependency; excludes homepage entry, shared navigation, and shared states.",
+      "source": "frontend/scripts/generate-product-functional-census.mjs",
+      "generation_method": "frontend/scripts/generate-product-functional-census.mjs"
+    },
+    {
+      "metric_id": "frontend.user_action_count",
+      "definition": "Enumerated primary user actions across all functional zones.",
+      "source": "frontend/scripts/generate-product-functional-census.mjs",
       "generation_method": "frontend/scripts/generate-product-functional-census.mjs"
     },
     {
@@ -6616,6 +6696,7 @@
       "LEGACY_COMPATIBILITY": 13,
       "RETIRED": 2,
       "FAIL_CLOSED": 28
-    }
+    },
+    "user_action_count": 47
   }
 }

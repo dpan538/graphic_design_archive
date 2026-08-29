@@ -8,8 +8,12 @@ Graphic Design Archive has two parallel product strategies: Global Search and TR
 
 | Measure | Exact value |
 |---|---:|
-| Active public product routes | 5 |
+| Product areas | 3 |
+| Active public product route templates | 5 |
 | Final design screens | 7 |
+| Reference or legacy screens | 6 |
+| User-facing product functions | 13 |
+| User actions | 47 |
 | Functional zones | 16 |
 | Public Search documents | 7995 |
 | API route templates / method pairs | 91 / 275 |
@@ -353,6 +357,9 @@ The canonical complete map remains [PRODUCT_API_MAP.md](../../api/PRODUCT_API_MA
 | guidance.maximum_suggestions | 4 suggestions | `frontend/src/features/system-suggestions/service.server.ts` | No arbitrary provider actions. |
 | frontend.page_route_template_count | 28 routes | `frontend/src/app/page.tsx` | Includes legacy and internal routes; not a product feature count. |
 | frontend.active_product_route_count | 5 routes | `frontend/src/app/page.tsx` | Final navigation candidate baseline. |
+| frontend.active_product_screen_count | 7 screens | `frontend/scripts/generate-product-functional-census.mjs` | Final visual design scope, including two functional TRACE reference workspaces. |
+| frontend.user_facing_function_count | 13 functions | `frontend/scripts/generate-product-functional-census.mjs` | Product capability scope rather than JavaScript function count. |
+| frontend.user_action_count | 47 actions | `frontend/scripts/generate-product-functional-census.mjs` | Interaction inventory; not feature count. |
 | frontend.functional_zone_count | 16 zones | `frontend/scripts/generate-product-functional-census.mjs` | Finite design scope. |
 | api.route_template_count | 91 routes | `docs/api/product-api-map.v1.json` | Only classified frontend subset belongs in design. |
 | api.method_route_pair_count | 275 method-route pairs | `docs/api/product-api-map.v1.json` | Validation metric, not a screen count. |
