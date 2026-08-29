@@ -1,0 +1,87 @@
+{
+  "schema_version": "trace-round16b-open-inquiry-registry-api-receipt-v1",
+  "round": "TRACE v49 Round 16B Clean Main Integration",
+  "closure_claim": "evidence-bounded-nonclosure",
+  "status": "PASS",
+  "canonical_sources": [
+    {
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-1-v1.tsv",
+      "sha256": "f16deeca67663b05262640cba1512bb46acb0a36ffe8dcae006fd45dc475bed3",
+      "bytes": 13131,
+      "record_count": 9
+    },
+    {
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-2-v1.tsv",
+      "sha256": "5b7e04bde8fc0c91f7d141f0ecdccf23579394dafba21e33e91ad512f9ab5a4d",
+      "bytes": 4544,
+      "record_count": 2
+    }
+  ],
+  "registry": {
+    "path": "frontend/generated/trace-open-inquiry-v1/open-inquiry-registry.v1.json",
+    "records_sha256": "4a8109c9f4b4296522aead0227331ee5e117fa26a40a9782605192adccdcb44e",
+    "scoped_higher_order_hypothesis_count": 11,
+    "arity_2_count": 3,
+    "arity_3_count": 6,
+    "arity_4_count": 1,
+    "arity_5_count": 1,
+    "active_pending_review_count": 0,
+    "implicit_pair_projection_count": 0,
+    "governed_inquiry_only_association_identity_count": 4,
+    "ungoverned_hypothesis_count": 7
+  },
+  "api": {
+    "api_version": "trace-open-inquiry/v1",
+    "list_route": "/api/trace/v1/open-inquiry",
+    "detail_route": "/api/trace/v1/open-inquiry/{inquiryId}",
+    "allowed_methods": [
+      "GET",
+      "HEAD",
+      "OPTIONS"
+    ],
+    "read_only": true,
+    "independent_from_validated_exploration": true,
+    "include_unresolved_flag_implemented": false,
+    "stochastic_display_implemented": false,
+    "authentication": "none",
+    "pagination": "none",
+    "sorting": "fixed canonical inquiry-id order",
+    "caching": "private, no-store"
+  },
+  "required_record_policy": {
+    "epistemic_status": "UNRESOLVED_OPEN_INQUIRY",
+    "validated_relation": false,
+    "counts_as_validated": false,
+    "eligible_for_validated_graph": false,
+    "eligible_for_validated_composition": false,
+    "may_generate_pair_edges": false,
+    "may_modify_validated_topology": false,
+    "display_eligible": true,
+    "display_layer": "OPEN_INQUIRY",
+    "default_in_validated_results": false
+  },
+  "forbidden_probability_field_count": 0,
+  "verification": {
+    "deterministic_builder_check": "PASS",
+    "source_byte_and_row_digest_check": "PASS",
+    "runtime_registry_integrity_check": "PASS",
+    "api_contract_assertion_count": 1130,
+    "api_contract_test": "PASS",
+    "runtime_typecheck": "PASS",
+    "validated_pair_association_count": 21,
+    "open_inquiry_leak_into_validated_association_count": 0,
+    "open_inquiry_leak_into_validated_composition_count": 0,
+    "open_inquiry_validated_topology_mutation_count": 0,
+    "open_inquiry_validated_export_leak_count": 0,
+    "open_inquiry_validated_metric_contamination_count": 0
+  },
+  "closure": {
+    "pair_association": false,
+    "higher_order_association": false,
+    "global_composition_coherence": false,
+    "product_association_reachability": false,
+    "computational_space": false,
+    "function3": false
+  },
+  "deployment_performed": false
+}

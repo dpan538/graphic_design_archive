@@ -1,0 +1,282 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://graphic-design-archive.invalid/schemas/trace/exploration/open-inquiry/v1/registry.schema.json",
+  "title": "TRACE Open Inquiry Registry v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "registry_version",
+    "api_version",
+    "canonical_serialization",
+    "input_bindings",
+    "counts",
+    "closure_flags",
+    "records_sha256",
+    "records"
+  ],
+  "properties": {
+    "registry_version": { "const": "trace-open-inquiry-registry/v1" },
+    "api_version": { "const": "trace-open-inquiry/v1" },
+    "canonical_serialization": { "const": "UTF8_SORTED_KEYS_COMPACT_JSON_RECORD_DIGEST" },
+    "input_bindings": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": { "$ref": "#/$defs/input_binding" }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scoped_higher_order_hypothesis_count",
+        "arity_2_count",
+        "arity_3_count",
+        "arity_4_count",
+        "arity_5_count",
+        "governed_inquiry_only_association_identity_count",
+        "ungoverned_hypothesis_count",
+        "active_pending_review_count",
+        "implicit_pair_projection_count"
+      ],
+      "properties": {
+        "scoped_higher_order_hypothesis_count": { "const": 11 },
+        "arity_2_count": { "const": 3 },
+        "arity_3_count": { "const": 6 },
+        "arity_4_count": { "const": 1 },
+        "arity_5_count": { "const": 1 },
+        "governed_inquiry_only_association_identity_count": { "const": 4 },
+        "ungoverned_hypothesis_count": { "const": 7 },
+        "active_pending_review_count": { "const": 0 },
+        "implicit_pair_projection_count": { "const": 0 }
+      }
+    },
+    "closure_flags": { "$ref": "#/$defs/closure_flags" },
+    "records_sha256": { "$ref": "#/$defs/sha256" },
+    "records": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11,
+      "items": { "$ref": "#/$defs/open_inquiry_record" }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "nullable_string": {
+      "type": ["string", "null"]
+    },
+    "nullable_string_array": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      ]
+    },
+    "input_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "bytes", "record_count"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "bytes": { "type": "integer", "minimum": 1 },
+        "record_count": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "closure_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "PAIR_ASSOCIATION_CLOSURE",
+        "HIGHER_ORDER_ASSOCIATION_CLOSURE",
+        "GLOBAL_COMPOSITION_COHERENCE_CLOSURE",
+        "PRODUCT_ASSOCIATION_REACHABILITY_CLOSURE",
+        "COMPUTATIONAL_SPACE_CLOSURE",
+        "FUNCTION3_CLOSURE"
+      ],
+      "properties": {
+        "PAIR_ASSOCIATION_CLOSURE": { "const": false },
+        "HIGHER_ORDER_ASSOCIATION_CLOSURE": { "const": false },
+        "GLOBAL_COMPOSITION_COHERENCE_CLOSURE": { "const": false },
+        "PRODUCT_ASSOCIATION_REACHABILITY_CLOSURE": { "const": false },
+        "COMPUTATIONAL_SPACE_CLOSURE": { "const": false },
+        "FUNCTION3_CLOSURE": { "const": false }
+      }
+    },
+    "participant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "sense_id"],
+      "properties": {
+        "label": { "type": "string", "minLength": 1 },
+        "sense_id": { "type": "string", "minLength": 1 }
+      }
+    },
+    "association_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "association_id",
+        "association_revision_id",
+        "authority_path",
+        "authority_queue_ref"
+      ],
+      "properties": {
+        "association_id": { "type": "string", "minLength": 1 },
+        "association_revision_id": { "type": "string", "minLength": 1 },
+        "authority_path": { "$ref": "#/$defs/nullable_string" },
+        "authority_queue_ref": { "$ref": "#/$defs/nullable_string" }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "support_mode",
+        "disposition",
+        "exact_group_support_status",
+        "global_coherence_status",
+        "sense_scope_status",
+        "locators",
+        "synthesis_steps",
+        "counterevidence",
+        "qualifications",
+        "nonclaims"
+      ],
+      "properties": {
+        "support_mode": { "type": "string", "minLength": 1 },
+        "disposition": { "type": "string", "minLength": 1 },
+        "exact_group_support_status": { "$ref": "#/$defs/nullable_string" },
+        "global_coherence_status": { "$ref": "#/$defs/nullable_string" },
+        "sense_scope_status": { "$ref": "#/$defs/nullable_string" },
+        "locators": { "$ref": "#/$defs/nullable_string_array" },
+        "synthesis_steps": { "$ref": "#/$defs/nullable_string_array" },
+        "counterevidence": { "$ref": "#/$defs/nullable_string_array" },
+        "qualifications": { "$ref": "#/$defs/nullable_string_array" },
+        "nonclaims": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authority_base_sha",
+        "shard_id",
+        "source_ledger_path",
+        "source_ledger_sha256",
+        "source_row_number",
+        "source_record_sha256",
+        "source_ids",
+        "rights_record_ids",
+        "linked_parent_candidate_id",
+        "parent_disposition_preserved",
+        "source_external_human_review_status",
+        "source_activation_status"
+      ],
+      "properties": {
+        "authority_base_sha": { "type": "string", "minLength": 1 },
+        "shard_id": { "type": "string", "minLength": 1 },
+        "source_ledger_path": { "type": "string", "minLength": 1 },
+        "source_ledger_sha256": { "$ref": "#/$defs/sha256" },
+        "source_row_number": { "type": "integer", "minimum": 2 },
+        "source_record_sha256": { "$ref": "#/$defs/sha256" },
+        "source_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "rights_record_ids": { "$ref": "#/$defs/nullable_string_array" },
+        "linked_parent_candidate_id": { "$ref": "#/$defs/nullable_string" },
+        "parent_disposition_preserved": { "$ref": "#/$defs/nullable_string" },
+        "source_external_human_review_status": { "type": "string", "minLength": 1 },
+        "source_activation_status": { "type": "string", "minLength": 1 }
+      }
+    },
+    "open_inquiry_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_version",
+        "inquiry_id",
+        "inquiry_key",
+        "arity",
+        "participants",
+        "bounded_scope",
+        "relation_form",
+        "epistemic_status",
+        "validated_relation",
+        "counts_as_validated",
+        "eligible_for_validated_graph",
+        "eligible_for_validated_composition",
+        "may_generate_pair_edges",
+        "may_modify_validated_topology",
+        "display_eligible",
+        "display_layer",
+        "default_in_validated_results",
+        "active",
+        "external_human_review_status",
+        "product_eligible",
+        "product_path",
+        "participant_order_meaningful",
+        "relation_roles_asserted",
+        "pair_projection_policy",
+        "implicit_pair_projection_count",
+        "inquiry_only_association_identity",
+        "evidence",
+        "provenance",
+        "record_sha256"
+      ],
+      "properties": {
+        "record_version": { "const": "trace-open-inquiry/v1" },
+        "inquiry_id": {
+          "type": "string",
+          "pattern": "^R16B-(SCOPED-)?HYPOTHESIS:[0-9a-f]{64}$"
+        },
+        "inquiry_key": { "type": "string", "minLength": 1 },
+        "arity": { "enum": [2, 3, 4, 5] },
+        "participants": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 5,
+          "items": { "$ref": "#/$defs/participant" }
+        },
+        "bounded_scope": { "type": "string", "minLength": 1 },
+        "relation_form": { "type": "string", "minLength": 1 },
+        "epistemic_status": { "const": "UNRESOLVED_OPEN_INQUIRY" },
+        "validated_relation": { "const": false },
+        "counts_as_validated": { "const": false },
+        "eligible_for_validated_graph": { "const": false },
+        "eligible_for_validated_composition": { "const": false },
+        "may_generate_pair_edges": { "const": false },
+        "may_modify_validated_topology": { "const": false },
+        "display_eligible": { "const": true },
+        "display_layer": { "const": "OPEN_INQUIRY" },
+        "default_in_validated_results": { "const": false },
+        "active": { "const": false },
+        "external_human_review_status": { "const": "PENDING" },
+        "product_eligible": { "const": false },
+        "product_path": { "type": "null" },
+        "participant_order_meaningful": { "const": false },
+        "relation_roles_asserted": { "const": false },
+        "pair_projection_policy": { "const": "NONE" },
+        "implicit_pair_projection_count": { "const": 0 },
+        "inquiry_only_association_identity": {
+          "oneOf": [
+            { "type": "null" },
+            { "$ref": "#/$defs/association_identity" }
+          ]
+        },
+        "evidence": { "$ref": "#/$defs/evidence" },
+        "provenance": { "$ref": "#/$defs/provenance" },
+        "record_sha256": { "$ref": "#/$defs/sha256" }
+      }
+    }
+  }
+}

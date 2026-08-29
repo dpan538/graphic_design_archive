@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://graphic-design-archive.invalid/schemas/trace/exploration/open-inquiry/v1/error.schema.json",
+  "title": "TRACE Open Inquiry Error v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "api_version",
+    "layer",
+    "code",
+    "message",
+    "status",
+    "retryable",
+    "instance",
+    "registry_sha256"
+  ],
+  "properties": {
+    "schema_version": { "const": "trace-open-inquiry-error/v1" },
+    "api_version": { "const": "trace-open-inquiry/v1" },
+    "layer": { "const": "OPEN_INQUIRY" },
+    "code": {
+      "enum": [
+        "OPEN_INQUIRY_NOT_FOUND",
+        "UNSUPPORTED_QUERY_PARAMETER",
+        "METHOD_NOT_ALLOWED",
+        "REGISTRY_INTEGRITY_FAILURE"
+      ]
+    },
+    "message": { "type": "string", "minLength": 1 },
+    "status": { "type": "integer", "minimum": 400, "maximum": 599 },
+    "retryable": { "type": "boolean" },
+    "instance": { "type": "string", "minLength": 1 },
+    "registry_sha256": {
+      "oneOf": [
+        { "type": "null" },
+        { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      ]
+    }
+  }
+}

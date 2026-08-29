@@ -1,0 +1,911 @@
+{
+  "api_version": "trace-open-inquiry/v1",
+  "canonical_serialization": "UTF8_SORTED_KEYS_COMPACT_JSON_RECORD_DIGEST",
+  "closure_flags": {
+    "COMPUTATIONAL_SPACE_CLOSURE": false,
+    "FUNCTION3_CLOSURE": false,
+    "GLOBAL_COMPOSITION_COHERENCE_CLOSURE": false,
+    "HIGHER_ORDER_ASSOCIATION_CLOSURE": false,
+    "PAIR_ASSOCIATION_CLOSURE": false,
+    "PRODUCT_ASSOCIATION_REACHABILITY_CLOSURE": false
+  },
+  "counts": {
+    "active_pending_review_count": 0,
+    "arity_2_count": 3,
+    "arity_3_count": 6,
+    "arity_4_count": 1,
+    "arity_5_count": 1,
+    "governed_inquiry_only_association_identity_count": 4,
+    "implicit_pair_projection_count": 0,
+    "scoped_higher_order_hypothesis_count": 11,
+    "ungoverned_hypothesis_count": 7
+  },
+  "input_bindings": [
+    {
+      "bytes": 13131,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-1-v1.tsv",
+      "record_count": 9,
+      "sha256": "f16deeca67663b05262640cba1512bb46acb0a36ffe8dcae006fd45dc475bed3"
+    },
+    {
+      "bytes": 4544,
+      "path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-2-v1.tsv",
+      "record_count": 2,
+      "sha256": "5b7e04bde8fc0c91f7d141f0ecdccf23579394dafba21e33e91ad512f9ab5a4d"
+    }
+  ],
+  "records": [
+    {
+      "active": false,
+      "arity": 3,
+      "bounded_scope": "Meza's commissioned Peruvian painting and its seizure, sale, painting-to-print disassembly, republication, auction history, and market-conditioned reinterpretation, 1790-1836",
+      "counts_as_validated": false,
+      "default_in_validated_results": false,
+      "display_eligible": true,
+      "display_layer": "OPEN_INQUIRY",
+      "eligible_for_validated_composition": false,
+      "eligible_for_validated_graph": false,
+      "epistemic_status": "UNRESOLVED_OPEN_INQUIRY",
+      "evidence": {
+        "counterevidence": [
+          "violence and warfare, not markets alone, caused key movements",
+          "the exact word commodification is absent"
+        ],
+        "disposition": "COHERENT_GROUP_SUPPORT_INQUIRY_ONLY_EXACT_COMMODIFICATION_LABEL_AND_HUMAN_REVIEW_OPEN",
+        "exact_group_support_status": null,
+        "global_coherence_status": null,
+        "locators": [
+          "official abstract and introduction",
+          "publisher PDF pp.9-11",
+          "publisher PDF pp.17-18",
+          "publisher PDF conclusion"
+        ],
+        "nonclaims": [
+          "not every mobile object is mediated or commodified",
+          "no direction or causal topology activated",
+          "no pair projection from the group"
+        ],
+        "qualifications": [
+          "same object and linked afterlives only",
+          "commodification remains a bounded interpretive mapping",
+          "external design-history review remains pending"
+        ],
+        "sense_scope_status": null,
+        "support_mode": "COHERENT_SINGLE_SOURCE_MULTI_LOCUS_SYNTHESIS",
+        "synthesis_steps": [
+          "one object's bounded itinerary supplies mobile-object identity",
+          "painting-to-print and publisher reuse shape reception and meaning",
+          "purchase, auction, investment framing, commercial demand, and market forces supply the bounded market-value mechanism"
+        ]
+      },
+      "external_human_review_status": "PENDING",
+      "implicit_pair_projection_count": 0,
+      "inquiry_id": "R16B-HYPOTHESIS:656fef1cfac074d6b21d87e2c6306733ad0a80b97a73875fdb96fcc47b7c9540",
+      "inquiry_key": "MEZA_PAINTING_MOBILITY_MEDIATION_MARKET_1790_1836",
+      "inquiry_only_association_identity": {
+        "association_id": "R16B-ASSOC:50fff54fb9f2bce36f97eb694adade6a35c865d5d6fafe35d5572951106a82f8",
+        "association_revision_id": "R16B-ASSOC-REV:07335a2015c40e9c4541302d97f440cce5f0f029ab4615598426f88e0eda3b25",
+        "authority_path": null,
+        "authority_queue_ref": null
+      },
+      "may_generate_pair_edges": false,
+      "may_modify_validated_topology": false,
+      "pair_projection_policy": "NONE",
+      "participant_order_meaningful": false,
+      "participants": [
+        {
+          "label": "commodification",
+          "sense_id": "R16B-SENSE:35489187871bfd7b7be6e2d5268a3a922984d3bdad9e9a8ca61ea6edee84a5a7"
+        },
+        {
+          "label": "mediation",
+          "sense_id": "R16B-SENSE:74959afea7f94773eca66c42bbaabe55d3f5ac814d8b2f8efd05921e7e76aa78"
+        },
+        {
+          "label": "mobile object",
+          "sense_id": "R16B-SENSE:f1dafc6df9c9a66b0b7c19d34606a2ed638c193dc7047afb8a1f83b3d564ebc1"
+        }
+      ],
+      "product_eligible": false,
+      "product_path": null,
+      "provenance": {
+        "authority_base_sha": "5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3",
+        "linked_parent_candidate_id": null,
+        "parent_disposition_preserved": null,
+        "rights_record_ids": [
+          "R16B-SOURCE-RIGHTS:43a09a2a57bd33641d23a12a863fe2422a6322564b5d351ecca52def42c6c38e"
+        ],
+        "shard_id": "R16B-ADAPTIVE-SOURCE-SHARD-002",
+        "source_activation_status": "INQUIRY_ONLY",
+        "source_external_human_review_status": "PENDING_NOT_ACTIVE",
+        "source_ids": [
+          "COMP-SRC-022"
+        ],
+        "source_ledger_path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-2-v1.tsv",
+        "source_ledger_sha256": "5b7e04bde8fc0c91f7d141f0ecdccf23579394dafba21e33e91ad512f9ab5a4d",
+        "source_record_sha256": "d0b14b68df9b313cfa7a3303dce7ec0c2ad1e5805cbf77dd8fb35ec688d99d71",
+        "source_row_number": 3
+      },
+      "record_sha256": "9f70bbe6dd4a5a95f83629fafdc97e95037074e406a75d13782041139890281d",
+      "record_version": "trace-open-inquiry/v1",
+      "relation_form": "HIGHER_ORDER",
+      "relation_roles_asserted": false,
+      "validated_relation": false
+    },
+    {
+      "active": false,
+      "arity": 3,
+      "bounded_scope": "Visible Language volumes 1-49 and the graphic/visual-communication historiographic canon reviewed by Griffin; no general canon law",
+      "counts_as_validated": false,
+      "default_in_validated_results": false,
+      "display_eligible": true,
+      "display_layer": "OPEN_INQUIRY",
+      "eligible_for_validated_composition": false,
+      "eligible_for_validated_graph": false,
+      "epistemic_status": "UNRESOLVED_OPEN_INQUIRY",
+      "evidence": {
+        "counterevidence": [
+          "the journal also critiques and extends canonical boundaries",
+          "gendering is a governed interpretation rather than the source's exact relation label"
+        ],
+        "disposition": "DIRECT_GROUP_SUPPORT_INQUIRY_ONLY_BOUNDED_SENSE_AND_HUMAN_REVIEW_OPEN",
+        "exact_group_support_status": null,
+        "global_coherence_status": null,
+        "locators": [
+          "official abstract",
+          "publisher PDF p.7",
+          "publisher PDF pp.16-17",
+          "publisher PDF p.20"
+        ],
+        "nonclaims": [
+          "no causal or universal canonization rule",
+          "no direction or role semantics activated",
+          "no internal pair support manufactured"
+        ],
+        "qualifications": [
+          "exclusion is research-only vocabulary",
+          "external design-history review remains pending",
+          "not every omission is intentional exclusion"
+        ],
+        "sense_scope_status": null,
+        "support_mode": "DIRECT_HIGHER_ORDER_SUPPORT_BOUNDED_CORPUS",
+        "synthesis_steps": [
+          "canon construction through selection",
+          "inclusion and exclusion establish corpus boundaries",
+          "male-dominated qualification supplies gendered normative positioning"
+        ]
+      },
+      "external_human_review_status": "PENDING",
+      "implicit_pair_projection_count": 0,
+      "inquiry_id": "R16B-HYPOTHESIS:801109bf849868a8419ec96ffb4f8b111820e4892b62699936851b59915b6f43",
+      "inquiry_key": "VISIBLE_LANGUAGE_CANON_CRITIQUE_1967_2015",
+      "inquiry_only_association_identity": {
+        "association_id": "R16B-ASSOC:da747c8a19121053ac9ca05da4bb2258e8c7b32665b5924ec8c429dcbb52617a",
+        "association_revision_id": "R16B-ASSOC-REV:6fb5163edfed733351996aba789811d15d7b33b7ca6e6549a6cc788b29761e3e",
+        "authority_path": null,
+        "authority_queue_ref": null
+      },
+      "may_generate_pair_edges": false,
+      "may_modify_validated_topology": false,
+      "pair_projection_policy": "NONE",
+      "participant_order_meaningful": false,
+      "participants": [
+        {
+          "label": "canonization",
+          "sense_id": "R16B-SENSE:14bd96e324918cf3d87ed84253055004be79647294bf62a305ccf9a65a46b863"
+        },
+        {
+          "label": "exclusion",
+          "sense_id": "R16B-SENSE:51949ccda89c423bfca99e114d57880bdab2a25181a617884774e748bd18ae89"
+        },
+        {
+          "label": "gendering",
+          "sense_id": "R16B-SENSE:94c4f5d3fe61b3ac4c6a1540f918207e423a9abe9823bb4ddb0466ce033cda4d"
+        }
+      ],
+      "product_eligible": false,
+      "product_path": null,
+      "provenance": {
+        "authority_base_sha": "5d9ebf6918cf0fd09450608289ebc5a05ed3c8c3",
+        "linked_parent_candidate_id": null,
+        "parent_disposition_preserved": null,
+        "rights_record_ids": [
+          "R16B-SOURCE-RIGHTS:92d2748b46d894a8fc6b8ff4c2a35cc30422224e2766ca4ea875620340e5e30d"
+        ],
+        "shard_id": "R16B-ADAPTIVE-SOURCE-SHARD-002",
+        "source_activation_status": "INQUIRY_ONLY",
+        "source_external_human_review_status": "PENDING_NOT_ACTIVE",
+        "source_ids": [
+          "SRC-0007"
+        ],
+        "source_ledger_path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-2-v1.tsv",
+        "source_ledger_sha256": "5b7e04bde8fc0c91f7d141f0ecdccf23579394dafba21e33e91ad512f9ab5a4d",
+        "source_record_sha256": "e4f91aa865f9e785f1966aebcb9f537d2c081aa8ded26026f2ff3014dd0f8d17",
+        "source_row_number": 2
+      },
+      "record_sha256": "fc74732eff3dd419ab0fe6ef2b74557a4a0e5f562c57116b2b6bcede8b217a00",
+      "record_version": "trace-open-inquiry/v1",
+      "relation_form": "HIGHER_ORDER",
+      "relation_roles_asserted": false,
+      "validated_relation": false
+    },
+    {
+      "active": false,
+      "arity": 2,
+      "bounded_scope": "Brussels Expo 1958; Soviet exhibition organizers, designers, and Western audiences",
+      "counts_as_validated": false,
+      "default_in_validated_results": false,
+      "display_eligible": true,
+      "display_layer": "OPEN_INQUIRY",
+      "eligible_for_validated_composition": false,
+      "eligible_for_validated_graph": false,
+      "epistemic_status": "UNRESOLVED_OPEN_INQUIRY",
+      "evidence": {
+        "counterevidence": null,
+        "disposition": "PAIR_SUPPORT_ONLY_EXACT_TRIAD_NOT_SUPPORTED",
+        "exact_group_support_status": "PAIR_OR_IDENTITY_ACTION_NOT_HIGHER_ORDER_GROUP_SUPPORT",
+        "global_coherence_status": "NOT_APPLICABLE_PAIR_OR_IDENTITY_ACTION",
+        "locators": null,
+        "nonclaims": [
+          "design diplomacy is not equivalent to propaganda",
+          "do not mix Brussels, Turin, and Sweden cases",
+          "no triad or reception claim"
+        ],
+        "qualifications": null,
+        "sense_scope_status": "PROPAGANDA_PARTICIPANT_UNRESOLVED",
+        "support_mode": "ABSTRACT_BEARING_SCOPED_PAIR_SUPPORT",
+        "synthesis_steps": null
+      },
+      "external_human_review_status": "PENDING",
+      "implicit_pair_projection_count": 0,
+      "inquiry_id": "R16B-SCOPED-HYPOTHESIS:0fe29f358c06b38af17d854967de28874292c4159c7c3f16ca424313966cf341",
+      "inquiry_key": "BRUSSELS_EXPO_1958",
+      "inquiry_only_association_identity": null,
+      "may_generate_pair_edges": false,
+      "may_modify_validated_topology": false,
+      "pair_projection_policy": "NONE",
+      "participant_order_meaningful": false,
+      "participants": [
+        {
+          "label": "exhibition",
+          "sense_id": "R16B-SENSE:4e14e64610176c44c8a9775fba3a7d484b4eee0fb06ee9553c17675cb7f0b634"
+        },
+        {
+          "label": "design diplomacy",
+          "sense_id": "R16B-SENSE:fa3369a6eb4bebe96ee289987f963e539b8da9c27ea0f454e8a24b6bddf9306f"
+        }
+      ],
+      "product_eligible": false,
+      "product_path": null,
+      "provenance": {
+        "authority_base_sha": "f97d20b37b58a509d04cdf3bc3385486fc8d173c",
+        "linked_parent_candidate_id": "R16B-LOCAL-FAMILY:23b72032e8165ac9f164a43ac0e1932f2fe4354f1b89f62d67ebe7d497de7af1",
+        "parent_disposition_preserved": "PAIRWISE_SUPPORT_WITHOUT_GROUP_COHERENCE",
+        "rights_record_ids": null,
+        "shard_id": "R16B-ADAPTIVE-SOURCE-SHARD-001",
+        "source_activation_status": "INACTIVE",
+        "source_external_human_review_status": "OPEN",
+        "source_ids": [
+          "COMP-SRC-023"
+        ],
+        "source_ledger_path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-1-v1.tsv",
+        "source_ledger_sha256": "f16deeca67663b05262640cba1512bb46acb0a36ffe8dcae006fd45dc475bed3",
+        "source_record_sha256": "ffa021f4bfdad824c8a97b7d11db0b2715a4762d3974efc0f46f4591c49a936f",
+        "source_row_number": 5
+      },
+      "record_sha256": "f2d7ad69677209e05d7ef3ff257b7d555910c1322f038fb4b4b7d51ec1b609eb",
+      "record_version": "trace-open-inquiry/v1",
+      "relation_form": "PAIR_SCOPE_REROUTE",
+      "relation_roles_asserted": false,
+      "validated_relation": false
+    },
+    {
+      "active": false,
+      "arity": 2,
+      "bounded_scope": "Keraton Surakarta; Javanese patrons and design actors; colonial institutions and unequal power",
+      "counts_as_validated": false,
+      "default_in_validated_results": false,
+      "display_eligible": true,
+      "display_layer": "OPEN_INQUIRY",
+      "eligible_for_validated_composition": false,
+      "eligible_for_validated_graph": false,
+      "epistemic_status": "UNRESOLVED_OPEN_INQUIRY",
+      "evidence": {
+        "counterevidence": null,
+        "disposition": "DIRECT_SCOPED_PAIR_SUPPORT_NO_REJECTION_PARTICIPANT",
+        "exact_group_support_status": "PAIR_OR_IDENTITY_ACTION_NOT_HIGHER_ORDER_GROUP_SUPPORT",
+        "global_coherence_status": "NOT_APPLICABLE_PAIR_OR_IDENTITY_ACTION",
+        "locators": null,
+        "nonclaims": [
+          "no generalization beyond the Keraton case",
+          "no direction or pair projection from a larger group",
+          "resistance is not converted into a new governed vocabulary node here"
+        ],
+        "qualifications": null,
+        "sense_scope_status": "CURRENT_SENSES_BOUNDED",
+        "support_mode": "DIRECT_SCOPED_PAIR_SUPPORT",
+        "synthesis_steps": null
+      },
+      "external_human_review_status": "PENDING",
+      "implicit_pair_projection_count": 0,
+      "inquiry_id": "R16B-SCOPED-HYPOTHESIS:22ad79d53f782e7d7465c2b97e18887f1b2707c97dda4862010c179bec1406fd",
+      "inquiry_key": "KERATON_SURAKARTA",
+      "inquiry_only_association_identity": null,
+      "may_generate_pair_edges": false,
+      "may_modify_validated_topology": false,
+      "pair_projection_policy": "NONE",
+      "participant_order_meaningful": false,
+      "participants": [
+        {
+          "label": "adaptation",
+          "sense_id": "R16B-SENSE:698710ef66f0d551cde028b8e54bdbf6051b96902a736be6b9ab45d1ad91f848"
+        },
+        {
+          "label": "cultural negotiation",
+          "sense_id": "R16B-SENSE:9415fd18554090ac9dd2dfc28a1ec541d67a94b8421b1cefafa578a03302257d"
+        }
+      ],
+      "product_eligible": false,
+      "product_path": null,
+      "provenance": {
+        "authority_base_sha": "f97d20b37b58a509d04cdf3bc3385486fc8d173c",
+        "linked_parent_candidate_id": "R16B-LOCAL-FAMILY:83009b1d124d4635a57866eeffba5e1a1a33e499bd60b30c6346b94ff1a04f8e",
+        "parent_disposition_preserved": "BOUNDED_SENSE_OR_SCOPE_CONFLICT",
+        "rights_record_ids": null,
+        "shard_id": "R16B-ADAPTIVE-SOURCE-SHARD-001",
+        "source_activation_status": "INACTIVE",
+        "source_external_human_review_status": "OPEN",
+        "source_ids": [
+          "COMP-SRC-014"
+        ],
+        "source_ledger_path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-1-v1.tsv",
+        "source_ledger_sha256": "f16deeca67663b05262640cba1512bb46acb0a36ffe8dcae006fd45dc475bed3",
+        "source_record_sha256": "e2649eca4f5db4328148dcd6636fc0eb96c15d1ebf0845b33a4b32617fdd49a9",
+        "source_row_number": 4
+      },
+      "record_sha256": "3f4dbbc7dd010758b2ce6fa3fce22a44f70501797174de2863de6f22a03c935d",
+      "record_version": "trace-open-inquiry/v1",
+      "relation_form": "PAIR_SCOPE_REROUTE",
+      "relation_roles_asserted": false,
+      "validated_relation": false
+    },
+    {
+      "active": false,
+      "arity": 3,
+      "bounded_scope": "built-environment professional work, education, and training; source-scoped interweaving",
+      "counts_as_validated": false,
+      "default_in_validated_results": false,
+      "display_eligible": true,
+      "display_layer": "OPEN_INQUIRY",
+      "eligible_for_validated_composition": false,
+      "eligible_for_validated_graph": false,
+      "epistemic_status": "UNRESOLVED_OPEN_INQUIRY",
+      "evidence": {
+        "counterevidence": null,
+        "disposition": "DIRECT_LOCAL_ATTESTATION_NEW_SENSE_AND_HUMAN_REVIEW_OPEN",
+        "exact_group_support_status": "DIRECT_LOCAL_ATTESTATION_NEW_SENSE_REQUIRED",
+        "global_coherence_status": "CONDITIONAL_NEW_SENSE_DESIGN_HISTORY_ALIGNMENT_AND_HUMAN_REVIEW",
+        "locators": null,
+        "nonclaims": [
+          "not the canonical Bauhaus education sense",
+          "no universal sequence, chronology, or direction",
+          "no pair projection"
+        ],
+        "qualifications": null,
+        "sense_scope_status": "NEW_PROFESSIONAL_EDUCATION_SENSE_REQUIRED",
+        "support_mode": "DIRECT_LOCAL_ATTESTATION",
+        "synthesis_steps": null
+      },
+      "external_human_review_status": "PENDING",
+      "implicit_pair_projection_count": 0,
+      "inquiry_id": "R16B-SCOPED-HYPOTHESIS:6323d405ac092f64fefd009439529b1c1a3c136e42b0e29523ff9a7107071d2a",
+      "inquiry_key": "PROFESSIONAL_EDUCATION_TRAINING_SENSE",
+      "inquiry_only_association_identity": null,
+      "may_generate_pair_edges": false,
+      "may_modify_validated_topology": false,
+      "pair_projection_policy": "NONE",
+      "participant_order_meaningful": false,
+      "participants": [
+        {
+          "label": "institutionalization",
+          "sense_id": "R16B-SENSE:6672e4d46dd04d497061cde0fb1319f2795e43fafb72f047ac8a663d5c0dabfb"
+        },
+        {
+          "label": "professional education or training NEW",
+          "sense_id": "R16B-PROPOSED-SENSE:7860942669c1076d0445f61ff85289b9dd43b652c677bcb49de9eb2f04f11aad"
+        },
+        {
+          "label": "professionalization",
+          "sense_id": "R16B-SENSE:aaba242b61f07fc7756aa5d54b3d132896c230e138451ec96ac3b40b8c2c3ec3"
+        }
+      ],
+      "product_eligible": false,
+      "product_path": null,
+      "provenance": {
+        "authority_base_sha": "f97d20b37b58a509d04cdf3bc3385486fc8d173c",
+        "linked_parent_candidate_id": "R16B-LOCAL-FAMILY:d6dfcd4e355294899be8838eb8ec71439d8911ea19f8aa92401d1a52becf76c0",
+        "parent_disposition_preserved": "BOUNDED_SENSE_OR_SCOPE_CONFLICT",
+        "rights_record_ids": null,
+        "shard_id": "R16B-ADAPTIVE-SOURCE-SHARD-001",
+        "source_activation_status": "INACTIVE",
+        "source_external_human_review_status": "OPEN",
+        "source_ids": [
+          "GRAM-SRC-025"
+        ],
+        "source_ledger_path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-1-v1.tsv",
+        "source_ledger_sha256": "f16deeca67663b05262640cba1512bb46acb0a36ffe8dcae006fd45dc475bed3",
+        "source_record_sha256": "fdbca5d0ae3cf3c8229903b63eb321d4ec8051b3ee913c055a49ccfe8654d00a",
+        "source_row_number": 8
+      },
+      "record_sha256": "82a848acad2c3f527e6f326c112955da9127351f691746eeb65af11795b01a55",
+      "record_version": "trace-open-inquiry/v1",
+      "relation_form": "INCIDENCE_HYPEREDGE_REVIEW",
+      "relation_roles_asserted": false,
+      "validated_relation": false
+    },
+    {
+      "active": false,
+      "arity": 3,
+      "bounded_scope": "architectural contact zones; specific encounters, actors, and unequal power relations",
+      "counts_as_validated": false,
+      "default_in_validated_results": false,
+      "display_eligible": true,
+      "display_layer": "OPEN_INQUIRY",
+      "eligible_for_validated_composition": false,
+      "eligible_for_validated_graph": false,
+      "epistemic_status": "UNRESOLVED_OPEN_INQUIRY",
+      "evidence": {
+        "counterevidence": null,
+        "disposition": "DIRECT_HIGHER_ORDER_SUPPORT_NEW_SENSE_AND_HUMAN_REVIEW_OPEN",
+        "exact_group_support_status": "DIRECT_GROUP_SUPPORT_NEW_SENSE_REQUIRED",
+        "global_coherence_status": "CONDITIONAL_NEW_SENSE_AND_HUMAN_REVIEW",
+        "locators": null,
+        "nonclaims": [
+          "alternatives are not successive stages",
+          "no general topology, direction, or pair projection",
+          "does not support the canonical Keraton-bounded sense"
+        ],
+        "qualifications": null,
+        "sense_scope_status": "NEW_NEGOTIATION_SENSE_REQUIRED",
+        "support_mode": "DIRECT_HIGHER_ORDER_SUPPORT",
+        "synthesis_steps": null
+      },
+      "external_human_review_status": "PENDING",
+      "implicit_pair_projection_count": 0,
+      "inquiry_id": "R16B-SCOPED-HYPOTHESIS:67ac66f329e9e99eea98f88b5774af991f86151074a17a42ae6a0b878e8f223b",
+      "inquiry_key": "ARCHITECTURAL_CONTACT_ZONE",
+      "inquiry_only_association_identity": null,
+      "may_generate_pair_edges": false,
+      "may_modify_validated_topology": false,
+      "pair_projection_policy": "NONE",
+      "participant_order_meaningful": false,
+      "participants": [
+        {
+          "label": "adaptation",
+          "sense_id": "R16B-SENSE:698710ef66f0d551cde028b8e54bdbf6051b96902a736be6b9ab45d1ad91f848"
+        },
+        {
+          "label": "contact-zone negotiation NEW",
+          "sense_id": "R16B-PROPOSED-SENSE:6f6e166d0b56a20840de17d77112daf0829dff92428395f0d3e8c37264c7c310"
+        },
+        {
+          "label": "rejection",
+          "sense_id": "R16B-SENSE:9c499c8b62d5222b0be4049597c613d82925ede87bf34656671a6b1e4e491bc3"
+        }
+      ],
+      "product_eligible": false,
+      "product_path": null,
+      "provenance": {
+        "authority_base_sha": "f97d20b37b58a509d04cdf3bc3385486fc8d173c",
+        "linked_parent_candidate_id": "R16B-LOCAL-FAMILY:83009b1d124d4635a57866eeffba5e1a1a33e499bd60b30c6346b94ff1a04f8e",
+        "parent_disposition_preserved": "BOUNDED_SENSE_OR_SCOPE_CONFLICT",
+        "rights_record_ids": null,
+        "shard_id": "R16B-ADAPTIVE-SOURCE-SHARD-001",
+        "source_activation_status": "INACTIVE",
+        "source_external_human_review_status": "OPEN",
+        "source_ids": [
+          "COMP-SRC-013"
+        ],
+        "source_ledger_path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-1-v1.tsv",
+        "source_ledger_sha256": "f16deeca67663b05262640cba1512bb46acb0a36ffe8dcae006fd45dc475bed3",
+        "source_record_sha256": "1e3a88798b8a59da3e9408f2a449f4106c8868a6f12cb2ea7dac3d203bf81742",
+        "source_row_number": 3
+      },
+      "record_sha256": "cb1688e4b4c99b625f5f5c9cdf415275587e13f89fd7ec1fcb2504bddcaa9524",
+      "record_version": "trace-open-inquiry/v1",
+      "relation_form": "INCIDENCE_HYPEREDGE_REVIEW",
+      "relation_roles_asserted": false,
+      "validated_relation": false
+    },
+    {
+      "active": false,
+      "arity": 4,
+      "bounded_scope": "Sweden at David Jones, Sydney, 1954; retail exposition, state and exhibition intermediaries, Australian publics and commercial counterparts",
+      "counts_as_validated": false,
+      "default_in_validated_results": false,
+      "display_eligible": true,
+      "display_layer": "OPEN_INQUIRY",
+      "eligible_for_validated_composition": false,
+      "eligible_for_validated_graph": false,
+      "epistemic_status": "UNRESOLVED_OPEN_INQUIRY",
+      "evidence": {
+        "counterevidence": null,
+        "disposition": "DIRECT_HIGHER_ORDER_SUPPORT_EXACT_CURRENT_SENSES",
+        "exact_group_support_status": "DIRECT_EXACT_GROUP_SUPPORT_CURRENT_SENSES_SAME_CASE",
+        "global_coherence_status": "PASS_SOURCE_LEVEL_SAME_CASE_HUMAN_REVIEW_OPEN",
+        "locators": null,
+        "nonclaims": [
+          "no audience acceptance, diplomatic outcome, or general law",
+          "no internal pair or subset projection",
+          "the identity remains inquiry-only pending external human review"
+        ],
+        "qualifications": null,
+        "sense_scope_status": "CURRENT_SENSES_BOUNDED",
+        "support_mode": "DIRECT_HIGHER_ORDER_SUPPORT",
+        "synthesis_steps": null
+      },
+      "external_human_review_status": "PENDING",
+      "implicit_pair_projection_count": 0,
+      "inquiry_id": "R16B-SCOPED-HYPOTHESIS:952e179084b06cee685b8b8bde81bb78d4b3e13fd7cd914647dd8f5908be4a71",
+      "inquiry_key": "SWEDEN_IN_SYDNEY_1954",
+      "inquiry_only_association_identity": {
+        "association_id": "R16B-ASSOC:4dcabb459b575457929aa565dc7579f43c0e78167fe466f0d0bd777835c19742",
+        "association_revision_id": "R16B-ASSOC-REV:d22c9c9aae73bfcf3609e48a226c054aaad13dea9e477a3388224851beb35689",
+        "authority_path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-higher-order-review-queue-tranche-c-v1.tsv",
+        "authority_queue_ref": "TCQ-003"
+      },
+      "may_generate_pair_edges": false,
+      "may_modify_validated_topology": false,
+      "pair_projection_policy": "NONE",
+      "participant_order_meaningful": false,
+      "participants": [
+        {
+          "label": "exhibition",
+          "sense_id": "R16B-SENSE:4e14e64610176c44c8a9775fba3a7d484b4eee0fb06ee9553c17675cb7f0b634"
+        },
+        {
+          "label": "trade",
+          "sense_id": "R16B-SENSE:f0e28e13851d04c13b701f53d9b3911cb50fc572cc6203c64527804f0b37e909"
+        },
+        {
+          "label": "propaganda",
+          "sense_id": "R16B-SENSE:f26224717160ca63c45ca85fe7c23e1469baa3e10672a68beafb13d195d0915d"
+        },
+        {
+          "label": "design diplomacy",
+          "sense_id": "R16B-SENSE:fa3369a6eb4bebe96ee289987f963e539b8da9c27ea0f454e8a24b6bddf9306f"
+        }
+      ],
+      "product_eligible": false,
+      "product_path": null,
+      "provenance": {
+        "authority_base_sha": "f97d20b37b58a509d04cdf3bc3385486fc8d173c",
+        "linked_parent_candidate_id": "R16B-LOCAL-FAMILY:89817e7a449f1cc7b574fb1b89c9541f765e52825c5cb62bf0a2bb833e8f970a",
+        "parent_disposition_preserved": "INQUIRY_ONLY_OR_UNRESOLVED_AT_CHECKPOINT004",
+        "rights_record_ids": null,
+        "shard_id": "R16B-ADAPTIVE-SOURCE-SHARD-001",
+        "source_activation_status": "INACTIVE",
+        "source_external_human_review_status": "OPEN",
+        "source_ids": [
+          "COMP-SRC-025"
+        ],
+        "source_ledger_path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-1-v1.tsv",
+        "source_ledger_sha256": "f16deeca67663b05262640cba1512bb46acb0a36ffe8dcae006fd45dc475bed3",
+        "source_record_sha256": "63df41708d304de9d2dc045be0ba23177de92b950a22d30f2bc3c3e8d00779f3",
+        "source_row_number": 9
+      },
+      "record_sha256": "228e8c3d3737c9173a12ff27a2862b9ae9d2c581cc46e524871108825b815adb",
+      "record_version": "trace-open-inquiry/v1",
+      "relation_form": "GOVERNED_INQUIRY_HYPEREDGE",
+      "relation_roles_asserted": false,
+      "validated_relation": false
+    },
+    {
+      "active": false,
+      "arity": 3,
+      "bounded_scope": "Western interior design, 1870–1970; named education, association, accreditation, and occupational-trust mechanisms",
+      "counts_as_validated": false,
+      "default_in_validated_results": false,
+      "display_eligible": true,
+      "display_layer": "OPEN_INQUIRY",
+      "eligible_for_validated_composition": false,
+      "eligible_for_validated_graph": false,
+      "epistemic_status": "UNRESOLVED_OPEN_INQUIRY",
+      "evidence": {
+        "counterevidence": null,
+        "disposition": "COHERENT_COMPOSITE_SUPPORT_SCOPE_BOUNDED_HUMAN_REVIEW_OPEN",
+        "exact_group_support_status": "COHERENT_MULTI_LOCUS_SOURCE_SYNTHESIS_SCOPE_REVIEW_OPEN",
+        "global_coherence_status": "CONDITIONAL_MULTI_LOCUS_SCOPE_AND_HUMAN_REVIEW",
+        "locators": null,
+        "nonclaims": [
+          "not generic or all-period",
+          "education is not asserted as a cause",
+          "no direction, chronology, hierarchy, or pair relation is manufactured"
+        ],
+        "qualifications": null,
+        "sense_scope_status": "CURRENT_SENSE_SCOPE_REVIEW_OPEN",
+        "support_mode": "COHERENT_COMPOSITE_SUPPORT",
+        "synthesis_steps": null
+      },
+      "external_human_review_status": "PENDING",
+      "implicit_pair_projection_count": 0,
+      "inquiry_id": "R16B-SCOPED-HYPOTHESIS:a0e30d08141918154af4f53f880ac05f3569b12c48e62c5543248d2f14fbd576",
+      "inquiry_key": "FORMAL_DESIGN_EDUCATION_1870_1970",
+      "inquiry_only_association_identity": null,
+      "may_generate_pair_edges": false,
+      "may_modify_validated_topology": false,
+      "pair_projection_policy": "NONE",
+      "participant_order_meaningful": false,
+      "participants": [
+        {
+          "label": "institutionalization",
+          "sense_id": "R16B-SENSE:6672e4d46dd04d497061cde0fb1319f2795e43fafb72f047ac8a663d5c0dabfb"
+        },
+        {
+          "label": "design education",
+          "sense_id": "R16B-SENSE:9f5a38a6fb1ca9212921419af18b59d535ee2f944c89ce002dfa6db54090b9c8"
+        },
+        {
+          "label": "professionalization",
+          "sense_id": "R16B-SENSE:aaba242b61f07fc7756aa5d54b3d132896c230e138451ec96ac3b40b8c2c3ec3"
+        }
+      ],
+      "product_eligible": false,
+      "product_path": null,
+      "provenance": {
+        "authority_base_sha": "f97d20b37b58a509d04cdf3bc3385486fc8d173c",
+        "linked_parent_candidate_id": "R16B-LOCAL-FAMILY:15f5757830dfe043fb27e73c28ff3bfd902aaa9c938ab254fda8682d359a7249",
+        "parent_disposition_preserved": "PAIRWISE_SUPPORT_WITHOUT_GROUP_COHERENCE",
+        "rights_record_ids": null,
+        "shard_id": "R16B-ADAPTIVE-SOURCE-SHARD-001",
+        "source_activation_status": "INACTIVE",
+        "source_external_human_review_status": "OPEN",
+        "source_ids": [
+          "COMP-SRC-001"
+        ],
+        "source_ledger_path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-1-v1.tsv",
+        "source_ledger_sha256": "f16deeca67663b05262640cba1512bb46acb0a36ffe8dcae006fd45dc475bed3",
+        "source_record_sha256": "b405f3f409a3b1f9195b58d6e8364c460875fca9269a41a7952299d7e6e0a2f0",
+        "source_row_number": 2
+      },
+      "record_sha256": "cf810cce20896273753078f12caf9decd85a6b5ac78a54c09ff5a3553193df12",
+      "record_version": "trace-open-inquiry/v1",
+      "relation_form": "INCIDENCE_HYPEREDGE_REVIEW",
+      "relation_roles_asserted": false,
+      "validated_relation": false
+    },
+    {
+      "active": false,
+      "arity": 2,
+      "bounded_scope": "Bauhaus arts-crafts integration, design education, and post-pandemic workplace-learning comparison",
+      "counts_as_validated": false,
+      "default_in_validated_results": false,
+      "display_eligible": true,
+      "display_layer": "OPEN_INQUIRY",
+      "eligible_for_validated_composition": false,
+      "eligible_for_validated_graph": false,
+      "epistemic_status": "UNRESOLVED_OPEN_INQUIRY",
+      "evidence": {
+        "counterevidence": null,
+        "disposition": "DIRECT_SCOPED_PAIR_SUPPORT_TRIAD_IDENTITY_CONFLICT",
+        "exact_group_support_status": "PAIR_OR_IDENTITY_ACTION_NOT_HIGHER_ORDER_GROUP_SUPPORT",
+        "global_coherence_status": "NOT_APPLICABLE_PAIR_OR_IDENTITY_ACTION",
+        "locators": null,
+        "nonclaims": [
+          "not a harmonious or universal Bauhaus model",
+          "no equivalence or causal sequence",
+          "no three-role group, product path, or pair projection"
+        ],
+        "qualifications": null,
+        "sense_scope_status": "EDUCATION_DESIGN_EDUCATION_IDENTITY_OPEN",
+        "support_mode": "DIRECT_SCOPED_PAIR_SUPPORT",
+        "synthesis_steps": null
+      },
+      "external_human_review_status": "PENDING",
+      "implicit_pair_projection_count": 0,
+      "inquiry_id": "R16B-SCOPED-HYPOTHESIS:a297b080573533c028d2ee743579da4f5ba0f310694f83ab7836d61ae94f887c",
+      "inquiry_key": "BAUHAUS_CRAFT_DESIGN_EDUCATION",
+      "inquiry_only_association_identity": null,
+      "may_generate_pair_edges": false,
+      "may_modify_validated_topology": false,
+      "pair_projection_policy": "NONE",
+      "participant_order_meaningful": false,
+      "participants": [
+        {
+          "label": "craft",
+          "sense_id": "R16B-SENSE:ffbea4357064ed41f3937f9e81c7425cc705fec020515cef904f2473a6e9302b"
+        },
+        {
+          "label": "design education",
+          "sense_id": "R16B-SENSE:9f5a38a6fb1ca9212921419af18b59d535ee2f944c89ce002dfa6db54090b9c8"
+        }
+      ],
+      "product_eligible": false,
+      "product_path": null,
+      "provenance": {
+        "authority_base_sha": "f97d20b37b58a509d04cdf3bc3385486fc8d173c",
+        "linked_parent_candidate_id": "R16B-LOCAL-FAMILY:7696ac77a3bd8ac70e8e0181b3ae969502426a44200925dffb65ef88312e954a",
+        "parent_disposition_preserved": "COOCCURRENCE_ONLY",
+        "rights_record_ids": null,
+        "shard_id": "R16B-ADAPTIVE-SOURCE-SHARD-001",
+        "source_activation_status": "INACTIVE",
+        "source_external_human_review_status": "OPEN",
+        "source_ids": [
+          "R16-SRC-005"
+        ],
+        "source_ledger_path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-1-v1.tsv",
+        "source_ledger_sha256": "f16deeca67663b05262640cba1512bb46acb0a36ffe8dcae006fd45dc475bed3",
+        "source_record_sha256": "5021621c97cb93a8642c89b8ef5cea5aa122bcf0c1b8f6887fcb69d8ed0fe5e8",
+        "source_row_number": 7
+      },
+      "record_sha256": "2eeec299ab018df28bb96e7e793b239cb2496ecdea83ebad16d51f9aa9e08af8",
+      "record_version": "trace-open-inquiry/v1",
+      "relation_form": "PAIR_SCOPE_AND_IDENTITY_REVIEW",
+      "relation_roles_asserted": false,
+      "validated_relation": false
+    },
+    {
+      "active": false,
+      "arity": 3,
+      "bounded_scope": "International Labour Exhibition, Turin, 1961; Polish welfare-state display and diplomatic narrative",
+      "counts_as_validated": false,
+      "default_in_validated_results": false,
+      "display_eligible": true,
+      "display_layer": "OPEN_INQUIRY",
+      "eligible_for_validated_composition": false,
+      "eligible_for_validated_graph": false,
+      "epistemic_status": "UNRESOLVED_OPEN_INQUIRY",
+      "evidence": {
+        "counterevidence": null,
+        "disposition": "DIRECT_HIGHER_ORDER_SUPPORT_HUMAN_REVIEW_OPEN",
+        "exact_group_support_status": "DIRECT_EXACT_GROUP_SUPPORT_CURRENT_SENSES_SAME_CASE",
+        "global_coherence_status": "PASS_SOURCE_LEVEL_SAME_CASE_HUMAN_REVIEW_OPEN",
+        "locators": null,
+        "nonclaims": [
+          "no cross-case or general equivalence",
+          "no audience success or reception outcome",
+          "no pair projection"
+        ],
+        "qualifications": null,
+        "sense_scope_status": "CURRENT_SENSES_BOUNDED",
+        "support_mode": "DIRECT_HIGHER_ORDER_SUPPORT",
+        "synthesis_steps": null
+      },
+      "external_human_review_status": "PENDING",
+      "implicit_pair_projection_count": 0,
+      "inquiry_id": "R16B-SCOPED-HYPOTHESIS:d1246bca6141726a7750164794993a29ed5a70da59d6c8dd3a3eabae6a2555c5",
+      "inquiry_key": "TURIN_INTERNATIONAL_LABOUR_EXHIBITION_1961",
+      "inquiry_only_association_identity": null,
+      "may_generate_pair_edges": false,
+      "may_modify_validated_topology": false,
+      "pair_projection_policy": "NONE",
+      "participant_order_meaningful": false,
+      "participants": [
+        {
+          "label": "exhibition",
+          "sense_id": "R16B-SENSE:4e14e64610176c44c8a9775fba3a7d484b4eee0fb06ee9553c17675cb7f0b634"
+        },
+        {
+          "label": "propaganda",
+          "sense_id": "R16B-SENSE:f26224717160ca63c45ca85fe7c23e1469baa3e10672a68beafb13d195d0915d"
+        },
+        {
+          "label": "design diplomacy",
+          "sense_id": "R16B-SENSE:fa3369a6eb4bebe96ee289987f963e539b8da9c27ea0f454e8a24b6bddf9306f"
+        }
+      ],
+      "product_eligible": false,
+      "product_path": null,
+      "provenance": {
+        "authority_base_sha": "f97d20b37b58a509d04cdf3bc3385486fc8d173c",
+        "linked_parent_candidate_id": "R16B-LOCAL-FAMILY:23b72032e8165ac9f164a43ac0e1932f2fe4354f1b89f62d67ebe7d497de7af1",
+        "parent_disposition_preserved": "PAIRWISE_SUPPORT_WITHOUT_GROUP_COHERENCE",
+        "rights_record_ids": null,
+        "shard_id": "R16B-ADAPTIVE-SOURCE-SHARD-001",
+        "source_activation_status": "INACTIVE",
+        "source_external_human_review_status": "OPEN",
+        "source_ids": [
+          "COMP-SRC-024"
+        ],
+        "source_ledger_path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-1-v1.tsv",
+        "source_ledger_sha256": "f16deeca67663b05262640cba1512bb46acb0a36ffe8dcae006fd45dc475bed3",
+        "source_record_sha256": "f76a1d5702143943b619989052383623859f1c2ef09c5e360dd5aafb9db74728",
+        "source_row_number": 6
+      },
+      "record_sha256": "c2164ded629655ac9e3030f9072b2a3655d7ca1da3a73c05e76a69e745606ddd",
+      "record_version": "trace-open-inquiry/v1",
+      "relation_form": "INCIDENCE_HYPEREDGE_REVIEW",
+      "relation_roles_asserted": false,
+      "validated_relation": false
+    },
+    {
+      "active": false,
+      "arity": 5,
+      "bounded_scope": "article-method level across three distinct material-movement cases; any case child must be separately bounded",
+      "counts_as_validated": false,
+      "default_in_validated_results": false,
+      "display_eligible": true,
+      "display_layer": "OPEN_INQUIRY",
+      "eligible_for_validated_composition": false,
+      "eligible_for_validated_graph": false,
+      "epistemic_status": "UNRESOLVED_OPEN_INQUIRY",
+      "evidence": {
+        "counterevidence": null,
+        "disposition": "METHOD_LEVEL_RESEARCH_VALUE_EXACT_CURRENT_SENSE_GROUP_CONFLICT",
+        "exact_group_support_status": "EXACT_CURRENT_SENSE_GROUP_NOT_SUPPORTED_METHOD_LEVEL_VALUE_ONLY",
+        "global_coherence_status": "FAIL_EXACT_ARITY5_CASE_AND_SENSE_CONFLICT",
+        "locators": null,
+        "nonclaims": [
+          "not one exact five-member single-case association",
+          "no unrelated pair-source synthesis",
+          "no pair projection, product activation, or redistribution of the PDF"
+        ],
+        "qualifications": null,
+        "sense_scope_status": "PRODUCTION_CONSUMPTION_SENSE_AND_CASE_CONFLICT",
+        "support_mode": "METHOD_LEVEL_RESEARCH_VALUE_EXACT_GROUP_BLOCKED",
+        "synthesis_steps": null
+      },
+      "external_human_review_status": "PENDING",
+      "implicit_pair_projection_count": 0,
+      "inquiry_id": "R16B-SCOPED-HYPOTHESIS:d9a20fb3c74b9bc084660e7c6a0bbeadbfc17d1bbf9ebc0ad6291f1d461dcb47",
+      "inquiry_key": "HUTTON_RECIPROCAL_LANDSCAPES_ARTICLE_METHOD_2013",
+      "inquiry_only_association_identity": {
+        "association_id": "R16B-ASSOC:b2d7f71d946768a35ee4de75b912d325fbf778f950c9679ef32696596794933a",
+        "association_revision_id": "R16B-ASSOC-REV:f6104d746a20cfb56943be568b578f3efc1add4dcd54647d3b3021f30381c46a",
+        "authority_path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-higher-order-review-queue-tranche-c-v1.tsv",
+        "authority_queue_ref": "TCQ-006"
+      },
+      "may_generate_pair_edges": false,
+      "may_modify_validated_topology": false,
+      "pair_projection_policy": "NONE",
+      "participant_order_meaningful": false,
+      "participants": [
+        {
+          "label": "consumption",
+          "sense_id": "R16B-SENSE:06c230c771547ee49390903e0bad7aaf44063613309c93bcbd72e808116af4c6"
+        },
+        {
+          "label": "production site",
+          "sense_id": "R16B-SENSE:0ebc966b965fc5703be0f4bae727d337f32d83eb7db9066e926a2530dcfa0171"
+        },
+        {
+          "label": "production",
+          "sense_id": "R16B-SENSE:419a96e12217bfa4ed031510c32033cb2408489e3abb14eb28291b13c068e159"
+        },
+        {
+          "label": "material displacement",
+          "sense_id": "R16B-SENSE:61aaade597c45243fcdef0d2514fc52f58a066ae5c9f4ad550727cb75b124f64"
+        },
+        {
+          "label": "supply chain",
+          "sense_id": "R16B-SENSE:697603bbe891d791295d478b3b16d10add9bdab1fd92826d63d8b630f3779cfb"
+        }
+      ],
+      "product_eligible": false,
+      "product_path": null,
+      "provenance": {
+        "authority_base_sha": "f97d20b37b58a509d04cdf3bc3385486fc8d173c",
+        "linked_parent_candidate_id": "R16B-LOCAL-FAMILY:d936154cb902968e2e5e0404e3dffaa3b61b47480b69f600b766b96351b66148",
+        "parent_disposition_preserved": "INQUIRY_ONLY_OR_UNRESOLVED_AT_CHECKPOINT004",
+        "rights_record_ids": null,
+        "shard_id": "R16B-ADAPTIVE-SOURCE-SHARD-001",
+        "source_activation_status": "INACTIVE",
+        "source_external_human_review_status": "OPEN",
+        "source_ids": [
+          "COMP-SRC-020"
+        ],
+        "source_ledger_path": "docs/audits/v49-exploration-higher-order-association-closure-round16b/raw/scoped-association-hypothesis-ledger-shard-1-v1.tsv",
+        "source_ledger_sha256": "f16deeca67663b05262640cba1512bb46acb0a36ffe8dcae006fd45dc475bed3",
+        "source_record_sha256": "1f69383b50cc630a9b50447b92b6af0e8fdffa132c4920844ba00e965de9960a",
+        "source_row_number": 10
+      },
+      "record_sha256": "3d016ec1060e93a859ab9086615146f127cdb4aac520a9299e8052ef280d9e40",
+      "record_version": "trace-open-inquiry/v1",
+      "relation_form": "SPARSE_HYPEREDGE_OR_CASE_SPLIT_REVIEW",
+      "relation_roles_asserted": false,
+      "validated_relation": false
+    }
+  ],
+  "records_sha256": "4a8109c9f4b4296522aead0227331ee5e117fa26a40a9782605192adccdcb44e",
+  "registry_version": "trace-open-inquiry-registry/v1"
+}

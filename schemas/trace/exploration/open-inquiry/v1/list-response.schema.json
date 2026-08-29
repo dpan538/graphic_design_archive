@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://graphic-design-archive.invalid/schemas/trace/exploration/open-inquiry/v1/list-response.schema.json",
+  "title": "TRACE Open Inquiry List Response v1",
+  "allOf": [
+    { "$ref": "#/$defs/envelope" }
+  ],
+  "$defs": {
+    "envelope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_version", "api_version", "layer", "registry_sha256", "boundary", "data"],
+      "properties": {
+        "schema_version": { "const": "trace-open-inquiry-response/v1" },
+        "api_version": { "const": "trace-open-inquiry/v1" },
+        "layer": { "const": "OPEN_INQUIRY" },
+        "registry_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "boundary": { "$ref": "#/$defs/boundary" },
+        "data": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["count", "items"],
+          "properties": {
+            "count": { "const": 11 },
+            "items": {
+              "type": "array",
+              "minItems": 11,
+              "maxItems": 11,
+              "items": { "$ref": "registry.schema.json#/$defs/open_inquiry_record" }
+            }
+          }
+        }
+      }
+    },
+    "boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_bounded",
+        "validated_layer_contamination_allowed",
+        "implicit_pair_projection_allowed",
+        "validated_topology_mutation_allowed",
+        "stochastic_display"
+      ],
+      "properties": {
+        "evidence_bounded": { "const": true },
+        "validated_layer_contamination_allowed": { "const": false },
+        "implicit_pair_projection_allowed": { "const": false },
+        "validated_topology_mutation_allowed": { "const": false },
+        "stochastic_display": { "const": false }
+      }
+    }
+  }
+}

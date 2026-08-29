@@ -1,6 +1,6 @@
 {
   "format": "gda-v49-active-script-allowlist/v1",
-  "scriptCount": 320,
+  "scriptCount": 321,
   "unknownClassificationCount": 0,
   "scripts": [
     {
@@ -3119,6 +3119,16 @@
       "current_runtime_required": false,
       "current_api_required": false,
       "current_database_required": true,
+      "current_ci_required": false,
+      "retained_audit_role": true,
+      "decision": "KEEP_ACTIVE"
+    },
+    {
+      "path": "scripts/trace_round16b_integration/build_open_inquiry_registry.py",
+      "category": "CURRENT_V49_TRACE_OPEN_INQUIRY_RUNTIME_BUILD",
+      "current_runtime_required": true,
+      "current_api_required": true,
+      "current_database_required": false,
       "current_ci_required": false,
       "retained_audit_role": true,
       "decision": "KEEP_ACTIVE"
