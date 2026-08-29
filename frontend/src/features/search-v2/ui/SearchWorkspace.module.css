@@ -1,0 +1,195 @@
+.workspace {
+  max-width: 72rem;
+}
+
+.intro {
+  max-width: 52rem;
+}
+
+.searchForm {
+  max-width: 66rem;
+}
+
+.queryRow {
+  display: flex;
+  gap: .5rem;
+}
+
+.secondaryButton,
+.pagination button {
+  color: var(--ink) !important;
+  background: var(--paper) !important;
+}
+
+.invalid {
+  color: #9b241d !important;
+  font-weight: 700;
+}
+
+.filters {
+  margin: .75rem 0 0;
+  padding: 1rem;
+  border: 1px solid var(--line);
+}
+
+.filters legend {
+  padding: 0 .4rem;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.filterGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .75rem;
+}
+
+.filterGrid label {
+  display: grid;
+  gap: .3rem;
+  color: var(--ink-soft);
+  font-size: .76rem;
+}
+
+.filterGrid select,
+.yearInputs input {
+  width: 100%;
+  min-height: 44px;
+  padding: .45rem .55rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font: .82rem var(--font-plex-mono), ui-monospace, monospace;
+}
+
+.yearInputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .35rem;
+}
+
+.formActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: .75rem;
+}
+
+.help {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .4rem 1rem;
+  color: var(--ink-soft);
+}
+
+.starters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.starters a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: .45rem .65rem;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font: .75rem var(--font-plex-mono), ui-monospace, monospace;
+}
+
+.status {
+  min-height: 2.5rem;
+  max-width: 66rem;
+}
+
+.status button {
+  margin-left: .5rem;
+}
+
+.results {
+  max-width: 66rem;
+}
+
+.resultTitle {
+  display: inline-block;
+}
+
+.meta,
+.taxonomies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .9rem;
+  margin-top: .45rem;
+  color: var(--ink-soft);
+  font: .75rem var(--font-plex-mono), ui-monospace, monospace;
+}
+
+.meta code {
+  color: inherit;
+  font: inherit;
+  overflow-wrap: anywhere;
+}
+
+.reason {
+  color: var(--ink-soft);
+  font-size: .84rem;
+}
+
+.missing {
+  font-style: italic;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.pagination span {
+  color: var(--ink-soft);
+  font: .76rem var(--font-plex-mono), ui-monospace, monospace;
+}
+
+.algorithm {
+  max-width: 66rem;
+  margin-top: 2rem;
+  color: var(--ink-soft);
+  font-size: .78rem;
+}
+
+@media (max-width: 760px) {
+  .workspace {
+    width: min(100% - 1.25rem, 42rem);
+    padding-top: 5rem;
+  }
+
+  .queryRow {
+    flex-wrap: wrap;
+  }
+
+  .queryRow input {
+    flex-basis: 100%;
+  }
+
+  .queryRow button {
+    flex: 1;
+  }
+
+  .filterGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .formActions button {
+    flex: 1;
+  }
+}
