@@ -1,0 +1,76 @@
+{
+  "closure_flags": {
+    "COMPUTATIONAL_SPACE_CLOSURE": false,
+    "FUNCTION3_CLOSURE": false,
+    "GLOBAL_COMPOSITION_COHERENCE_CLOSURE": false,
+    "HIGHER_ORDER_ASSOCIATION_CLOSURE": false,
+    "PAIR_ASSOCIATION_CLOSURE": false,
+    "PRODUCT_ASSOCIATION_REACHABILITY_CLOSURE": false
+  },
+  "deployment_performed": false,
+  "excluded_top_level_products": [
+    "Search",
+    "legacy Evidence Atlas"
+  ],
+  "frontend_visual_design_implemented": false,
+  "functions": [
+    {
+      "api_references": [
+        "trace.f1.context.object-context.v1"
+      ],
+      "children": [
+        "selected public record",
+        "governed context representations",
+        "provenance and explanations"
+      ],
+      "function": "TRACE_FUNCTION_1",
+      "name": "Context Canvas"
+    },
+    {
+      "api_references": [
+        "trace.f2.spacetime.periods.v1",
+        "trace.f2.spacetime.atlas.v1",
+        "trace.f2.spacetime.geography-records.v1"
+      ],
+      "children": [
+        "period inventory",
+        "period atlas",
+        "geography record pages"
+      ],
+      "function": "TRACE_FUNCTION_2",
+      "name": "Spacetime"
+    },
+    {
+      "api_references": [
+        "trace.f3.validated.v2.capabilities.get",
+        "trace.f3.open-inquiry.v1.list",
+        "trace.f3.open-inquiry.v1.detail"
+      ],
+      "children": [
+        {
+          "children": [
+            "validated vocabulary and associations",
+            "composition and map state",
+            "plain-text tree",
+            "validated PNG export"
+          ],
+          "name": "Validated Exploration"
+        },
+        {
+          "children": [
+            "inquiry inventory",
+            "inquiry detail",
+            "evidence-incomplete disclosure",
+            "provenance access",
+            "no validated-layer contamination"
+          ],
+          "name": "Open Inquiry"
+        }
+      ],
+      "function": "TRACE_FUNCTION_3",
+      "name": "Exploration"
+    }
+  ],
+  "schema_version": "trace-function-tree/v1",
+  "trace_top_level_function_count": 3
+}

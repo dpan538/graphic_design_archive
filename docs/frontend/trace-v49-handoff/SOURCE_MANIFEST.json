@@ -1,0 +1,451 @@
+{
+  "bounded_instruction": "Do not scan the entire repository. Begin with this bounded handoff package. Expand to implementation source only through the paths listed in SOURCE_MANIFEST.json.",
+  "catalog_binding": {
+    "expanded_method_route_pair_count": 228,
+    "logical_route_template_count": 75,
+    "path": "docs/api/trace/trace-api-catalog.v1.json",
+    "sha256": "6373e77a6a6670383e0a952c7b78a8036fc9b11954212ebb2a92dc10df87fcd7"
+  },
+  "closure_flags": {
+    "COMPUTATIONAL_SPACE_CLOSURE": false,
+    "FUNCTION3_CLOSURE": false,
+    "GLOBAL_COMPOSITION_COHERENCE_CLOSURE": false,
+    "HIGHER_ORDER_ASSOCIATION_CLOSURE": false,
+    "PAIR_ASSOCIATION_CLOSURE": false,
+    "PRODUCT_ASSOCIATION_REACHABILITY_CLOSURE": false
+  },
+  "deployment_performed": false,
+  "external_human_review_status": "PENDING",
+  "frontend_visual_design_implemented": false,
+  "handoff_files": [
+    {
+      "bytes": 4628,
+      "path": "docs/frontend/trace-v49-handoff/START_HERE.md",
+      "required": true,
+      "role": "bounded handoff document",
+      "sha256": "a3ef762a08bdccf6184268136c667fcbba8980ae5443830e58f1b5aa480fcaae"
+    },
+    {
+      "bytes": 5110,
+      "path": "docs/frontend/trace-v49-handoff/TRACE_FUNCTION_TREE.md",
+      "required": true,
+      "role": "bounded handoff document",
+      "sha256": "afcd6c41e262b2d372aa0bc6b31ba3ee70426ecb071f69bb5130c8d2765a2982"
+    },
+    {
+      "bytes": 9685,
+      "path": "docs/frontend/trace-v49-handoff/FRONTEND_STATE_MATRIX.md",
+      "required": true,
+      "role": "bounded handoff document",
+      "sha256": "6523f01d06f17f08b4045751a6f4cc9b1479c46456a6b88cd84e0cf31026cd08"
+    },
+    {
+      "bytes": 7995,
+      "path": "docs/frontend/trace-v49-handoff/OPEN_INQUIRY_UX_CONTRACT.md",
+      "required": true,
+      "role": "bounded handoff document",
+      "sha256": "561ce364ab810808fcacf4647858d079f92fa3aa17563b2fa83e080161fd6f66"
+    },
+    {
+      "bytes": 12703,
+      "path": "docs/frontend/trace-v49-handoff/DATA_CONTRACTS_AND_EXAMPLES.md",
+      "required": true,
+      "role": "bounded handoff document",
+      "sha256": "3646e80d197dd0ef93d67867ee4775b02eba3966dc8dd790d2b930e947b8530c"
+    },
+    {
+      "bytes": 7512,
+      "path": "docs/frontend/trace-v49-handoff/EXPORT_CONTRACT.md",
+      "required": true,
+      "role": "bounded handoff document",
+      "sha256": "af02b429c5d63ac88425ea29a229ab1baea0e141738f979e3be42ee70459ab45"
+    },
+    {
+      "bytes": 7967,
+      "path": "docs/frontend/trace-v49-handoff/NAVIGATION_AND_CROSS_FUNCTION_STATE.md",
+      "required": true,
+      "role": "bounded handoff document",
+      "sha256": "3adde05593dea47eda262257a44b6fc389e54e28c9b91dd5716094c9b8c210d1"
+    },
+    {
+      "bytes": 8567,
+      "path": "docs/frontend/trace-v49-handoff/ACCESSIBILITY_AND_RESPONSIVE_CONSTRAINTS.md",
+      "required": true,
+      "role": "bounded handoff document",
+      "sha256": "ccc202f35435abfa6e3ad204005f651a451c1b108f6fd9e815e98d90c95a46ed"
+    },
+    {
+      "bytes": 7364,
+      "path": "docs/frontend/trace-v49-handoff/TERMINOLOGY_AND_UI_COPY.md",
+      "required": true,
+      "role": "bounded handoff document",
+      "sha256": "0325f03b20e5e2aa3092cc3796c56c3778a1e59b9efdf4090254f13ef9c6849d"
+    },
+    {
+      "bytes": 9985,
+      "path": "docs/frontend/trace-v49-handoff/KNOWN_LIMITATIONS_AND_OPEN_DESIGN_QUESTIONS.md",
+      "required": true,
+      "role": "bounded handoff document",
+      "sha256": "a9bcc6c365293eae1947f8970b39c62558f887a21ea84f95b9aaee00d61791d1"
+    },
+    {
+      "bytes": 2040,
+      "path": "docs/frontend/trace-v49-handoff/trace-function-tree.v1.json",
+      "required": true,
+      "role": "canonical machine function tree",
+      "sha256": "eac8776c6aa79a1c9a81b69f835da5cc54188f3a93074dcaa665f96b02611ba3"
+    }
+  ],
+  "handoff_files_sha256": "d32dfa5b2361be708cdbfa08e24c7f827e3c035694f91f23a2ff44b435d9cc93",
+  "handoff_version": "TRACE_V49_ROUND16B_FRONTEND_HANDOFF_V1",
+  "required_handoff_source_file_count": 11,
+  "required_source_count": 49,
+  "schema_version": "trace-frontend-handoff-source-manifest/v1",
+  "sources": [
+    {
+      "bytes": 186432,
+      "path": "docs/api/trace/trace-api-catalog.v1.json",
+      "required": true,
+      "role": "complete machine API catalog",
+      "sha256": "6373e77a6a6670383e0a952c7b78a8036fc9b11954212ebb2a92dc10df87fcd7"
+    },
+    {
+      "bytes": 143074,
+      "path": "docs/api/trace/TRACE_API_CATALOG.md",
+      "required": true,
+      "role": "complete human API catalog",
+      "sha256": "1b4e0dee135dd1a23a34fc7d85f1a84ab51464894a7815a92358cd7ef223e399"
+    },
+    {
+      "bytes": 813,
+      "path": "frontend/src/app/api/v1/[...path]/route.ts",
+      "required": true,
+      "role": "Context, Spacetime, and shared read route",
+      "sha256": "c5f1144c433afef821fd86a9d30a8071bc603b422d3eeb82fbac07d3648654ac"
+    },
+    {
+      "bytes": 3624,
+      "path": "frontend/src/features/trace-v49/context/governed/read-api-runtime.server.ts",
+      "required": true,
+      "role": "Context API handler",
+      "sha256": "e86d55bace7dba66bd90a06e588636d5480602bf255e8043949228ba4a3f25f9"
+    },
+    {
+      "bytes": 35968,
+      "path": "frontend/src/features/trace-v49/context/governed/reader.server.ts",
+      "required": true,
+      "role": "Context governed reader",
+      "sha256": "bcd61cab97d941497f198b0440b96efc0f37e8a570472678156ecb9d7824700d"
+    },
+    {
+      "bytes": 4154,
+      "path": "frontend/src/features/trace-v49/context/governed/types.ts",
+      "required": true,
+      "role": "Context data contracts",
+      "sha256": "c78a46e53f3b90f00c4f781e7c2631db779c4de72193ec0b8151a6d6deccb301"
+    },
+    {
+      "bytes": 17013,
+      "path": "frontend/scripts/verify-context-api-v1.mjs",
+      "required": true,
+      "role": "Context API test",
+      "sha256": "45e2053cec318dc30dff9ff138e2448f83d1ead7cac6b483cc3e5e185e2abbbd"
+    },
+    {
+      "bytes": 7669,
+      "path": "frontend/src/features/trace-v49/spacetime/governed/read-api-runtime.server.ts",
+      "required": true,
+      "role": "Spacetime API handler",
+      "sha256": "8863ab075b2804dc484171d91839a44a33e44251ff61197eb35e70d528fbd1e6"
+    },
+    {
+      "bytes": 55772,
+      "path": "frontend/src/features/trace-v49/spacetime/governed/reader.server.ts",
+      "required": true,
+      "role": "Spacetime governed reader",
+      "sha256": "77bbbc6a36dd0e801b3e0be2d946398d9c4e8f6e48d8b0e7673d36c0b688601e"
+    },
+    {
+      "bytes": 6659,
+      "path": "frontend/src/features/trace-v49/spacetime/governed/types.ts",
+      "required": true,
+      "role": "Spacetime data contracts",
+      "sha256": "600c15f32c62c1703b3ae4cbeab759895230dc7d5ddc851d401d965e78db69b3"
+    },
+    {
+      "bytes": 29174,
+      "path": "frontend/scripts/verify-spacetime-api-v1.mjs",
+      "required": true,
+      "role": "Spacetime API test",
+      "sha256": "37f35bdb2d7c0b38655f2f2530c35be9f25bd9debc4767952bbcb6187b07ade9"
+    },
+    {
+      "bytes": 1420,
+      "path": "frontend/src/app/api/trace/v1/exploration/route.ts",
+      "required": true,
+      "role": "retired Exploration v1 root",
+      "sha256": "0adc5baf78345793c50e43dbfe210eaa98bc43e99ee8d3286506bd3d07c056b9"
+    },
+    {
+      "bytes": 1420,
+      "path": "frontend/src/app/api/trace/v1/exploration/[...path]/route.ts",
+      "required": true,
+      "role": "retired Exploration v1 catch-all",
+      "sha256": "0adc5baf78345793c50e43dbfe210eaa98bc43e99ee8d3286506bd3d07c056b9"
+    },
+    {
+      "bytes": 930,
+      "path": "frontend/src/app/api/trace/v2/exploration/route.ts",
+      "required": true,
+      "role": "Validated Exploration v2 root",
+      "sha256": "e653b11afc890351c6d29e0b29b431fe3ddfe394858167bd0a7886852f624582"
+    },
+    {
+      "bytes": 1178,
+      "path": "frontend/src/app/api/trace/v2/exploration/[...path]/route.ts",
+      "required": true,
+      "role": "Validated Exploration v2 resources",
+      "sha256": "fa0fc26a89bcd0a4962be05c8d264cbf575037bb865d615b652b7cbed921c689"
+    },
+    {
+      "bytes": 12931,
+      "path": "frontend/src/features/trace-v49/exploration-v2/types.ts",
+      "required": true,
+      "role": "Validated Exploration v2 data contracts",
+      "sha256": "696a3752690707efea193f5a06de4fc3f568ebf7decd75020c58640b4553603d"
+    },
+    {
+      "bytes": 11340,
+      "path": "frontend/src/features/trace-v49/exploration-v2/controller.server.ts",
+      "required": true,
+      "role": "Validated Exploration v2 handler",
+      "sha256": "677a8c8d12831d4cda28446fe4d3c3011a22f53fc33f9b41511c6f1a8bcc3c3d"
+    },
+    {
+      "bytes": 13811,
+      "path": "frontend/src/features/trace-v49/exploration-v2/service.server.ts",
+      "required": true,
+      "role": "Validated Exploration v2 service",
+      "sha256": "59e6b137f630516b3449f22d65dc7fe09a0fae84ac636490cf28b5fd4b5f77c1"
+    },
+    {
+      "bytes": 21440,
+      "path": "frontend/src/features/trace-v49/exploration-v2/read-model.server.ts",
+      "required": true,
+      "role": "Validated Exploration v2 read model",
+      "sha256": "e1931a0ffa6f9c2eb20ba459038463a8e133dc3d0b8f192ba87dc2d2f707272e"
+    },
+    {
+      "bytes": 8251,
+      "path": "frontend/src/features/trace-v49/exploration-v2/renderer.server.ts",
+      "required": true,
+      "role": "Validated Exploration SVG/PNG renderer",
+      "sha256": "d1fe026217180765832c026f1fe4f72cf21e849cb2368a67a110dd66e9ac54b7"
+    },
+    {
+      "bytes": 10916,
+      "path": "frontend/src/features/trace-v49/exploration-v2/transition.server.ts",
+      "required": true,
+      "role": "Validated Exploration state transitions",
+      "sha256": "d9d91807d98a8fbe00daa63b68a11709513741745d3e2dbe923b7c004e7df35d"
+    },
+    {
+      "bytes": 5085,
+      "path": "frontend/src/features/trace-v49/exploration-v2/client.ts",
+      "required": true,
+      "role": "Validated Exploration typed client",
+      "sha256": "bfabdee0322f4f35fc032986764b0da40f0fb8431c8b03c2a34c0c1060a2ba2c"
+    },
+    {
+      "bytes": 8802929,
+      "path": "frontend/generated/trace-exploration-v2/production-read-model.json",
+      "required": true,
+      "role": "Validated Exploration canonical product model",
+      "sha256": "53eaf59c95446eeb3781a7153183c54b3ff59fd52f21744cc917053959dfdcc9"
+    },
+    {
+      "bytes": 97091,
+      "path": "frontend/scripts/test-trace-exploration-v2.mjs",
+      "required": true,
+      "role": "Validated Exploration v2 test",
+      "sha256": "ac49d1a4742388804530d35437845663a05e78d5c9941bbacc1a9db1416fae53"
+    },
+    {
+      "bytes": 47175,
+      "path": "frontend/scripts/validate-trace-exploration-v2-http.mjs",
+      "required": true,
+      "role": "Validated Exploration v2 HTTP test",
+      "sha256": "a9dddfcfa9df77949225bbe69fbafc0256bd40b2d69990ff733e3bad7c4875d2"
+    },
+    {
+      "bytes": 930,
+      "path": "frontend/src/app/api/trace/v3/exploration/route.ts",
+      "required": true,
+      "role": "Exploration v3 fail-closed root",
+      "sha256": "195f88e71e44824f321e4f0a62f9ac53fd756deb5828f51d03b7c4a1aca7a8a9"
+    },
+    {
+      "bytes": 1038,
+      "path": "frontend/src/app/api/trace/v3/exploration/[...path]/route.ts",
+      "required": true,
+      "role": "Exploration v3 collection resources",
+      "sha256": "eb949eb9a5d139b644bfdcea58af5c869ff12d952d73849bf5a62d2bdc2333b8"
+    },
+    {
+      "bytes": 19847,
+      "path": "frontend/src/features/trace-v49/exploration-v3/types.ts",
+      "required": true,
+      "role": "Exploration v3 data contracts",
+      "sha256": "b7f042f85148f7fed454c2218e5601b596d6f91b0f474eb6ebb3e584ce20fdb6"
+    },
+    {
+      "bytes": 5562,
+      "path": "frontend/src/features/trace-v49/exploration-v3/controller.server.ts",
+      "required": true,
+      "role": "Exploration v3 handler",
+      "sha256": "25835e1f22c3c2f11f661c34c8337f7e1c6478d93c3b99746a590a815bc7d53d"
+    },
+    {
+      "bytes": 6532,
+      "path": "frontend/src/features/trace-v49/exploration-v3/service.server.ts",
+      "required": true,
+      "role": "Exploration v3 service",
+      "sha256": "d28c544b59e0bb77a36c56d10bcce35a741b020f2797b3973cd8c1b43b7e927d"
+    },
+    {
+      "bytes": 71111,
+      "path": "frontend/src/features/trace-v49/exploration-v3/read-model.server.ts",
+      "required": true,
+      "role": "Exploration v3 read-model validator",
+      "sha256": "7d7f5d25af8db1aa6c1d041afb36b018b8560266a558bbe3ca0077ce9aa8a932"
+    },
+    {
+      "bytes": 151170,
+      "path": "frontend/generated/trace-exploration-v3/read-model.json",
+      "required": true,
+      "role": "Exploration v3 fail-closed read model",
+      "sha256": "f1ae8a35895b27c15fb3d9b42828b8611633ee8ee7e2cbc825772b590304351b"
+    },
+    {
+      "bytes": 55471,
+      "path": "frontend/scripts/test-trace-exploration-v3.mjs",
+      "required": true,
+      "role": "Exploration v3 API test",
+      "sha256": "e6f688e9675d53d6ffbda24c487832be5af06206817783aff1de29ebae59906c"
+    },
+    {
+      "bytes": 595,
+      "path": "frontend/src/app/api/trace/v1/open-inquiry/route.ts",
+      "required": true,
+      "role": "Open Inquiry inventory route",
+      "sha256": "9480f8ab8a5055289b1188df6d4ec60fb9f2f7cc828ed44d18055a46c52e598a"
+    },
+    {
+      "bytes": 814,
+      "path": "frontend/src/app/api/trace/v1/open-inquiry/[inquiryId]/route.ts",
+      "required": true,
+      "role": "Open Inquiry detail route",
+      "sha256": "41b61fa781927e08ba40788d5fde595865e7c4538281167099ee0ce8fcd66f6f"
+    },
+    {
+      "bytes": 6327,
+      "path": "frontend/src/features/trace-v49/open-inquiry-v1/types.ts",
+      "required": true,
+      "role": "Open Inquiry data contracts",
+      "sha256": "fb3407f32adcbd5f2a53f20d6b2b7059b121ed8ca6e691a97c824c59ff72d60e"
+    },
+    {
+      "bytes": 18902,
+      "path": "frontend/src/features/trace-v49/open-inquiry-v1/registry.server.ts",
+      "required": true,
+      "role": "Open Inquiry registry validator",
+      "sha256": "96a6b81fba45061b422aea011a079a2375d97ab8287b43c18fceaf605056772d"
+    },
+    {
+      "bytes": 2263,
+      "path": "frontend/src/features/trace-v49/open-inquiry-v1/service.server.ts",
+      "required": true,
+      "role": "Open Inquiry service",
+      "sha256": "0fec67dc069e62f756adb9a72b8a1a12e1d04c126dbbc7a74f3f008f1413001f"
+    },
+    {
+      "bytes": 4739,
+      "path": "frontend/src/features/trace-v49/open-inquiry-v1/controller.server.ts",
+      "required": true,
+      "role": "Open Inquiry handler",
+      "sha256": "e47321fe28b564e80bc780a305a0b6bb1fe6c58ba655fe267b81d9c2a434ef56"
+    },
+    {
+      "bytes": 42665,
+      "path": "frontend/generated/trace-open-inquiry-v1/open-inquiry-registry.v1.json",
+      "required": true,
+      "role": "canonical Open Inquiry registry",
+      "sha256": "46d03365a3405e8475fccdce0c2e8f42884a4e0a6a9088f7043ac3a022183b77"
+    },
+    {
+      "bytes": 9946,
+      "path": "schemas/trace/exploration/open-inquiry/v1/registry.schema.json",
+      "required": true,
+      "role": "Open Inquiry registry schema",
+      "sha256": "96ae5bdd050fd2004946e9fb07de833dc9ea9b0a3ad126b1b671764251a2b6b3"
+    },
+    {
+      "bytes": 1896,
+      "path": "schemas/trace/exploration/open-inquiry/v1/list-response.schema.json",
+      "required": true,
+      "role": "Open Inquiry list schema",
+      "sha256": "e2b2ed239f84e769626ffe27f7043fb1ca36fa0f526ed4cfc7c1b52401d220ac"
+    },
+    {
+      "bytes": 1507,
+      "path": "schemas/trace/exploration/open-inquiry/v1/detail-response.schema.json",
+      "required": true,
+      "role": "Open Inquiry detail schema",
+      "sha256": "c343cc2c4172248416121979775e509adbcd0f337aa8c9473019337ab26ec640"
+    },
+    {
+      "bytes": 1172,
+      "path": "schemas/trace/exploration/open-inquiry/v1/error.schema.json",
+      "required": true,
+      "role": "Open Inquiry error schema",
+      "sha256": "989a1d59d73414043ef1a456d806657bdbd3d3ef1d512f7da9a5c7ad7bf655af"
+    },
+    {
+      "bytes": 45767,
+      "path": "frontend/scripts/test-trace-open-inquiry-v1.mjs",
+      "required": true,
+      "role": "Open Inquiry API/isolation test",
+      "sha256": "5678fbf47054f900ae39510eb7db91e552f75976b37044146073447beab5a834"
+    },
+    {
+      "bytes": 9804,
+      "path": "frontend/src/lib/read-platform/server/read-api-controller.ts",
+      "required": true,
+      "role": "shared TRACE read handler",
+      "sha256": "a105a7eaedd87c014eea2004808a0a5f61bf4c8e41ea414c8f9fe3f70d806105"
+    },
+    {
+      "bytes": 2422,
+      "path": "frontend/src/lib/read-platform/repository.ts",
+      "required": true,
+      "role": "shared TRACE repository contract",
+      "sha256": "f2e4ce08749f378a8f27f613fd3c2a58030090fd0e85200d81471a2e4be372d4"
+    },
+    {
+      "bytes": 4171,
+      "path": "frontend/src/lib/read-platform/types.ts",
+      "required": true,
+      "role": "shared TRACE data contracts",
+      "sha256": "7a98f4c2dd6cde588223744b977cfb91f2a681b21304574ad98ad0f98b5849fe"
+    },
+    {
+      "bytes": 33573,
+      "path": "frontend/scripts/run-v49-api-read-contract-closure.mjs",
+      "required": true,
+      "role": "shared TRACE API test",
+      "sha256": "81b624e1a3929b34456a8a175c95de1b716b53915b6050212d68dd7e1d1dcff8"
+    }
+  ],
+  "sources_sha256": "249a46e8d9715084054fc7b16d7ba895765bd5a55f9efb38658098ca01fe19cd",
+  "trace_top_level_function_count": 3
+}
