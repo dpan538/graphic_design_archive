@@ -23,6 +23,8 @@ check(workspace.includes("Not recorded") && workspace.includes("No public object
 check(workspace.includes("result.objectPageRoute"), "Search results must link to canonical object pages");
 check(!/audit\.score|explanation\.score|raw score/i.test(workspace), "normal Search UI must not expose numeric audit scores");
 check(!/DeepSeek|Powered by AI|Ask AI|AI suggests|model-generated/.test(`${home}\n${workspace}\n${shellSearch}`), "public Search surfaces must not expose provider or AI labels");
+check(workspace.includes("System suggests") && workspace.includes("/api/system-suggestions/v1"), "Search results must request optional guidance under the shared public label");
+check(!/guidance\.(?:sourceClass|providerStatus)|body\.(?:sourceClass|providerStatus)/.test(workspace), "normal Search UI must not display source class or provider status");
 check(!/features\/trace|lib\/trace|generated\/trace|public\/data\/trace/.test(`${page}\n${workspace}`), "Search client boundary must not import TRACE code or data");
 
 console.log(`Search v2 UI contract: ${checks} checks passed`);

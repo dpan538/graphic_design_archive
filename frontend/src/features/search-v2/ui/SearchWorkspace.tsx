@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { FormEvent, useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import type { SystemSuggestionsResponse } from "@/features/system-suggestions/types";
 import styles from "./SearchWorkspace.module.css";
 
 type FacetValue = { value: string; count: number };
@@ -40,9 +41,24 @@ type SearchResult = {
 
 type SearchResponse = {
   release: { algorithmVersion: string };
-  query: { text: string };
+  query: { text: string; filters: SearchWorkspaceRequestFilters };
+  stateHash: string;
   results: readonly SearchResult[];
   pageInfo: { hasNextPage: boolean; nextCursor: string | null; totalExact: number };
+  aggregateSummary: {
+    topDecades: readonly FacetValue[];
+    topObjectTypes: readonly FacetValue[];
+    topThemes: readonly FacetValue[];
+    topMovements: readonly FacetValue[];
+  };
+};
+
+type SearchWorkspaceRequestFilters = {
+  yearFrom?: number;
+  yearTo?: number;
+  objectType?: string;
+  theme?: string;
+  movement?: string;
 };
 
 type SearchState = "idle" | "loading" | "ready" | "error";
@@ -90,6 +106,7 @@ export default function SearchWorkspace({ facets }: { facets: SearchWorkspaceFac
   const hasCriteria = URL_FIELDS.some((field) => Boolean(url.get(field)?.trim()));
   const [draft, setDraft] = useState<Draft>(current);
   const [response, setResponse] = useState<SearchResponse | null>(null);
+  const [guidance, setGuidance] = useState<SystemSuggestionsResponse | null>(null);
   const [state, setState] = useState<SearchState>(hasCriteria ? "loading" : "idle");
   const [error, setError] = useState("");
   const [retryVersion, setRetryVersion] = useState(0);
@@ -116,11 +133,44 @@ export default function SearchWorkspace({ facets }: { facets: SearchWorkspaceFac
     return body;
   }, []);
 
+  const requestGuidance = useCallback(async (result: SearchResponse, signal: AbortSignal) => {
+    try {
+      const response = await fetch("/api/system-suggestions/v1", {
+        method: "POST",
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify({
+          schemaVersion: "gda-system-suggestions-request/v1",
+          surface: "SEARCH_RESULTS",
+          stateHash: result.stateHash,
+          context: {
+            query: result.query.text,
+            filters: result.query.filters,
+            exactResultCount: result.pageInfo.totalExact,
+            aggregates: {
+              topDecades: result.aggregateSummary.topDecades,
+              topObjectTypes: result.aggregateSummary.topObjectTypes,
+              topThemes: result.aggregateSummary.topThemes,
+              topMovements: result.aggregateSummary.topMovements,
+            },
+          },
+        }),
+        cache: "no-store",
+        signal,
+      });
+      if (!response.ok) return;
+      const body = await response.json() as SystemSuggestionsResponse;
+      if (!signal.aborted && body.stateHash === result.stateHash && body.surface === "SEARCH_RESULTS") setGuidance(body);
+    } catch {
+      // Guidance is optional. Deterministic Search remains complete when this request fails.
+    }
+  }, []);
+
   useEffect(() => {
     setDraft(current);
     requestRef.current?.abort();
     if (!hasCriteria) {
       setResponse(null);
+      setGuidance(null);
       setState("idle");
       setError("");
       return;
@@ -129,20 +179,23 @@ export default function SearchWorkspace({ facets }: { facets: SearchWorkspaceFac
     requestRef.current = controller;
     setState("loading");
     setError("");
+    setGuidance(null);
     void runSearch(new URLSearchParams(canonicalState), controller.signal)
       .then((result) => {
         if (controller.signal.aborted) return;
         setResponse(result);
         setState("ready");
+        void requestGuidance(result, controller.signal);
       })
       .catch((cause) => {
         if (controller.signal.aborted) return;
         setResponse(null);
+        setGuidance(null);
         setState("error");
         setError(userMessage(cause));
       });
     return () => controller.abort();
-  }, [canonicalState, current, hasCriteria, retryVersion, runSearch]);
+  }, [canonicalState, current, hasCriteria, requestGuidance, retryVersion, runSearch]);
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -170,6 +223,21 @@ export default function SearchWorkspace({ facets }: { facets: SearchWorkspaceFac
     const next = new URLSearchParams(canonicalState);
     next.set("after", cursor);
     router.push(`/search?${next.toString()}`, { scroll: true });
+  }
+
+  function applySuggestion(suggestion: SystemSuggestionsResponse["suggestions"][number]) {
+    const next = new URLSearchParams(canonicalState);
+    next.delete("after");
+    if (suggestion.action.kind === "SET_SEARCH_FILTER") {
+      for (const [key, value] of Object.entries(suggestion.action.parameters)) next.set(key, String(value));
+    } else if (suggestion.action.kind === "REMOVE_SEARCH_FILTER") {
+      const field = suggestion.action.parameters.field;
+      if (field === "year") {
+        next.delete("yearFrom");
+        next.delete("yearTo");
+      } else if (typeof field === "string") next.delete(field);
+    } else return;
+    router.push(`/search?${next.toString()}`, { scroll: false });
   }
 
   return (
@@ -250,6 +318,18 @@ export default function SearchWorkspace({ facets }: { facets: SearchWorkspaceFac
         {state === "ready" && response?.pageInfo.totalExact === 0 ? <p>No public objects match this Search. Remove a filter or try a shorter text fragment.</p> : null}
         {state === "ready" && response && response.pageInfo.totalExact > 0 ? <p>{response.pageInfo.totalExact.toLocaleString("en-US")} {response.pageInfo.totalExact === 1 ? "object" : "objects"} found{after ? " · later page" : ""}</p> : null}
       </div>
+
+      {guidance ? (
+        <aside className={styles.guidance} aria-labelledby="search-guidance-title">
+          <h2 id="search-guidance-title">System suggests</h2>
+          <p>{guidance.note}</p>
+          {guidance.suggestions.length ? (
+            <div className={styles.suggestionActions}>
+              {guidance.suggestions.map((suggestion) => <button type="button" key={suggestion.id} onClick={() => applySuggestion(suggestion)}>{suggestion.label}</button>)}
+            </div>
+          ) : null}
+        </aside>
+      ) : null}
 
       <ol className={`read-platform__results ${styles.results}`}>
         {response?.results.map((result) => (

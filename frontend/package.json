@@ -24,6 +24,7 @@
     "test:search-v2-core": "node scripts/test-search-v2-core.mjs",
     "test:search-v2-api": "node scripts/test-search-v2-api.mjs",
     "test:search-v2-ui": "node scripts/test-search-v2-ui.mjs",
+    "test:system-suggestions": "node --conditions=react-server --experimental-strip-types scripts/test-system-suggestions.mjs",
     "generate:context-v1": "node scripts/generate-trace-context-v1.mjs",
     "verify:context-v1-projection": "node scripts/generate-trace-context-v1.mjs --check",
     "test:context-api-v1": "node --conditions=react-server scripts/verify-context-api-v1.mjs",

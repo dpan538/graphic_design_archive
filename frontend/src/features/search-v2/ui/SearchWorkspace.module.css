@@ -114,6 +114,40 @@
   margin-left: .5rem;
 }
 
+.guidance {
+  max-width: 66rem;
+  margin: .5rem 0 1.25rem;
+  padding: 1rem;
+  border-left: .35rem solid var(--focus-coral);
+  background: color-mix(in srgb, var(--paper-2) 76%, transparent);
+}
+
+.guidance h2 {
+  margin: 0;
+  font: 700 .78rem var(--font-plex-mono), ui-monospace, monospace;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.guidance p {
+  margin: .45rem 0 0;
+}
+
+.suggestionActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-top: .75rem;
+}
+
+.suggestionActions button {
+  min-height: 44px;
+  padding: .45rem .65rem;
+  color: var(--ink);
+  background: var(--paper);
+  font-size: .78rem;
+}
+
 .results {
   max-width: 66rem;
 }
